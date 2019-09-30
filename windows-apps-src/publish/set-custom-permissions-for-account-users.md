@@ -7,10 +7,10 @@ ms.topic: article
 keywords: Windows 10, uwp, rôles d’utilisateur, autorisation d’utilisateur, rôles personnalisés, accès utilisateur, personnaliser les autorisations, rôles standard
 ms.localizationpriority: medium
 ms.openlocfilehash: ead8012c6d4b9243e70dcc09f7ef174a3d907356
-ms.sourcegitcommit: afb5157ec4bcb6588ac4cf74352688b30ed32257
+ms.sourcegitcommit: 035b03f1247eae4e9359ee7db66429d4e1c1d09b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/19/2019
+ms.lasthandoff: 09/30/2019
 ms.locfileid: "68349221"
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>Définir des rôles ou des autorisations personnalisés pour les utilisateurs de compte
@@ -239,7 +239,7 @@ Remarque : certaines autorisations ne peuvent pas être définies pour les modu
     <tr><td align="left">    <b>Services partenaires</b>&nbsp;*</td><td>    Peut afficher la page des services Web d’un compte.  </td><td>    Permet d’afficher et de modifier la page des services Web d’un compte.      </td><td>    N/A    </td><td>    N/A                      </td></tr>
     <tr><td align="left">    <b>Comptes de test Xbox</b>&nbsp;*</td><td>    Peut afficher la page comptes de test Xbox d’un compte.  </td><td>    Permet d’afficher et de modifier la page des comptes de test Xbox d’un compte.    </td><td>    N/A    </td><td>    N/A                      </td></tr>
     <tr><td align="left">    <b>Comptes de test Xbox par bac à sable</b>&nbsp;*</td><td>    Peut afficher la page comptes de test Xbox uniquement pour les bacs à sable spécifiés d’un compte.  </td><td>    Peut afficher et modifier le test Xbox.   <tr><td align="left">    <b>Page comptes uniquement pour les bacs à sable (sandbox) spécifiés d’un compte    </td><td>    N/A    </td><td>    N/A                      </td></tr>
-    <tr><td align="left">    <b>Appareils Xbox</b>&nbsp;*</td><td>    Peut afficher la page consoles de développement Xbox One d’un compte.  </td><td>    Permet d’afficher et de modifier la page consoles de développement Xbox One d’un compte.    </td><td>    N/A    </td><td>    N/A                      </td></tr>
+    <tr><td align="left"><b>appareils Xbox</b>&nbsp; @ no__t-3</td><td>    Peut afficher la page consoles de développement Xbox One d’un compte.  </td><td>    Permet d’afficher et de modifier la page consoles de développement Xbox One d’un compte.    </td><td>    N/A    </td><td>    N/A                      </td></tr>
     <tr><td align="left">    <b>Appareils Xbox par bac à sable</b>&nbsp;*</td><td>    Peut afficher la page consoles de développement Xbox One uniquement pour les bacs à sable spécifiés d’un compte.  </td><td>    Permet d’afficher et de modifier la page consoles de développement Xbox One uniquement pour les bacs à sable spécifiés d’un compte.    </td><td>    N/A    </td><td>    N/A                      </td></tr>
     <tr><td align="left">    <b>Canaux d’application</b>&nbsp;*</td><td>    N/A  </td><td>    Peut publier des canaux de vidéos promotionnelles sur la console Xbox, à afficher via OneGuide.    </td><td>    N/A    </td><td>    N/A                      </td></tr>
     <tr><td align="left">    <b>Configuration du service</b>&nbsp;*</td><td>    Peut afficher la page de configuration du service Xbox Live d’un produit.  </td><td>    Permet d’afficher et de modifier la page de configuration du service Xbox Live d’un produit.    </td><td>    N/A    </td><td>    N/A                      </td></tr>
