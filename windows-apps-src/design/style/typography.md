@@ -7,10 +7,10 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 1d162fcf9a0f1023c58792e8c9f7a0e22fac4440
-ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
+ms.sourcegitcommit: f7ef7e894d7b7fc24483b4485605686abf8f2e93
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/09/2019
+ms.lasthandoff: 09/30/2019
 ms.locfileid: "68867757"
 ---
 # <a name="typography"></a>Typographie
@@ -318,7 +318,7 @@ Les polices serif sont parfaites pour présenter de grandes quantités de texte.
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Ressources Segoe MDL2</td>
+<td align="left">Segoe MDL2 Assets</td>
 <td align="left">Normale</td>
 <td align="left">Police d’interface utilisateur pour les icônes d’application. Pour plus d’informations, voir l’article <a href="segoe-ui-symbol-font.md">Recommandations en matière d’icônes Segoe MDL2</a>.</td>
 </tr>

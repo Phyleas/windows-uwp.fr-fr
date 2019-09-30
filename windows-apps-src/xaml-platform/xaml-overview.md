@@ -11,12 +11,12 @@ dev_langs:
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: 5c846d0e0110a1285e67f6f21e1eeb7a0d9c2624
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 6d45e70afa5b0dc6e903dbd253c09042bb2046c2
+ms.sourcegitcommit: f7ef7e894d7b7fc24483b4485605686abf8f2e93
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339282"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71679212"
 ---
 # <a name="xaml-overview"></a>Vue d’ensemble du langage XAML
 
@@ -144,10 +144,10 @@ Le langage XAML est un langage déclaratif pour les objets et leurs propriétés
 Voici un exemple simple. La classe <xref:Windows.UI.Xaml.Controls.Button> prend en charge un événement nommé <xref:Windows.UI.Xaml.Controls.Primitives.ButtonBase.Click>. Vous pouvez écrire un gestionnaire pour **Click** qui exécute du code appelé dès que l’utilisateur clique sur l’objet **Button**. En XAML, vous spécifiez **Click** comme attribut de **Button**. Pour la valeur d’attribut, indiquez une chaîne représentant le nom de méthode de votre gestionnaire.
 
 ```xml
-<Button Click="showUpdatesButton-Click">Show updates</Button>
+<Button Click="showUpdatesButton_Click">Show updates</Button>
 ```
 
-Au moment de la compilation, le compilateur suppose qu’une méthode nommée `showUpdatesButton-Click` est définie dans le fichier code-behind, dans l’espace de noms déclaré dans la valeur [x:Class](x-class-attribute.md) de la page XAML. En outre, cette méthode doit satisfaire le contrat de délégué pour l’événement <xref:Windows.UI.Xaml.Controls.Primitives.ButtonBase.Click>. Exemple :
+Au moment de la compilation, le compilateur suppose qu’une méthode nommée `showUpdatesButton_Click` est définie dans le fichier code-behind, dans l’espace de noms déclaré dans la valeur [x:Class](x-class-attribute.md) de la page XAML. En outre, cette méthode doit satisfaire le contrat de délégué pour l’événement <xref:Windows.UI.Xaml.Controls.Primitives.ButtonBase.Click>. Exemple :
 
 ```csharp
 namespace App1
