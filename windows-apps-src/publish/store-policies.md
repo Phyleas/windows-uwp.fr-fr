@@ -7,19 +7,19 @@ ms.topic: article
 keywords: contrat définissant les politiques du microsoft store
 ms.localizationpriority: high
 ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
-ms.openlocfilehash: 3511fb221e1e087f7ced5ce11aca8d53bd027079
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 26c7a7a123d8892bf1c3584685db49f2d86c654a
+ms.sourcegitcommit: 98343e851f25a11ae02fc739477f5316fe8fcb95
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66826476"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71705556"
 ---
 # <a name="microsoft-store-policies"></a>Politiques du Microsoft Store
 
 
-**Version du document : 7.11**
+**Version du document : 7.12**
 
-**Date du document : 5 mars 2019**
+**Date du document : 1er octobre 2019**
 
 > [!NOTE]
 > Pour obtenir un résumé des modifications récentes apportées à ce contrat, consultez [Historique des modifications](store-policies-change-history.md).
@@ -72,9 +72,9 @@ Si vous avez des commentaires à formuler sur nos politiques, veuillez nous en f
 - [11.9 Propos blasphématoires excessifs et contenu inapproprié](#119-excessive-profanity-and-inappropriate-content)
 - [11.10 Critères propres à certains pays/certaines régions](#1110-countryregion-specific-requirements)
 - [11.11 Évaluations de l'âge](#1111-age-ratings)
+- [11.12 Contenu généré par l’utilisateur](#1112-user-generated-content)
 
 ## <a name="product-policies"></a>Politiques relatives aux produits
-
 
 ### <a name="101-distinct-function--value-accurate-representation"></a>10.1 Exactitude de la déclaration de la valeur et de la fonction distinctives
 
@@ -128,6 +128,9 @@ Votre produit peut dépendre d’un logiciel non intégré (par exemple, un autr
 
 L’ensemble de vos produits et extensions doivent être installés et mis à jour via le Store exclusivement.
 
+**10.2.6**
+
+Les applications qui activent l’exploration de la cryptomonnaie sur l’appareil ne sont pas autorisées. Les applications qui permettent de gérer à distance l’exploration de la cryptomonnaie sont autorisées.
 
 ### <a name="103-product-is-testable"></a>10.3 Nécessité de pouvoir tester le produit
 
@@ -238,7 +241,9 @@ Si votre produit nécessite des informations financières sur un compte, vous de
 
 **10.8.4**
 
-Votre produit et les métadonnées associées doivent inclure des informations sur les types d’achat proposés dans le produit et sur l’éventail des tarifs. Vous ne pouvez pas induire les clients en erreur et devez être clair quant à la nature des offres et des promotions intégrées à votre produit, notamment leur champ d’application et les conditions des versions d’évaluation. Si votre produit limite l’accès au contenu créé par l’utilisateur pendant ou après une évaluation, vous devez avertir les utilisateurs à l’avance. De plus, votre produit doit clairement indiquer aux utilisateurs qu’ils effectuent un achat dans le produit. 
+Votre produit et les métadonnées associées doivent inclure des informations sur les types d’achat proposés dans le produit et sur l’éventail des tarifs. Vous ne pouvez pas induire les clients en erreur et devez être clair quant à la nature des offres et des promotions intégrées à votre produit, notamment leur champ d’application et les conditions des versions d’évaluation. Si votre produit limite l’accès au contenu créé par l’utilisateur pendant ou après une évaluation, vous devez avertir les utilisateurs à l’avance. De plus, votre produit doit clairement indiquer aux utilisateurs qu’ils effectuent un achat dans le produit.
+
+Si votre jeu propose des « coffres à butin » (loot boxes) ou d’autres mécanismes qui fournissent des éléments virtuels aléatoires, vous devez indiquer aux clients avant l’achat les chances qu’il a de recevoir chaque élément. Vous avez plusieurs moyens d’indiquer ces informations : dans le produit, par exemple, dans un magasin dans l’application, dans la page de description de produit du Microsoft Store et/ou sur le site web d’un développeur ou d’un éditeur, à l’aide d’un lien de la page de description de produit du Store et/ou dans l’application.
 
 **10.8.6**
 
@@ -246,6 +251,9 @@ Vous devez utiliser l’API de facturation périodique Microsoft pour facturer l
 - Vous pouvez ajouter des avantages à un abonnement, mais vous ne pouvez pas supprimer d’avantages pour les utilisateurs qui y ont déjà souscrit.
 - Si vous mettez fin à un abonnement actif, vous devez continuer à fournir les produits ou services numériques achetés jusqu’à expiration dudit abonnement.
 
+**10.8.7**
+
+Tous les prix, y compris les soldes ou les remises, de vos produits ou services numériques doivent être conformes à l’ensemble des lois, réglementations et directives réglementaires applicables, y compris et sans s’y limiter, la section [Guides against Deceptive Pricing](https://www.ecfr.gov/cgi-bin/text-idx?SID=676bd39fe43a808fcb417973b3d0247e&mc=true&tpl=/ecfrbrowse/Title16/16cfr233_main_02.tpl) de la Federal Trade Commission. 
 
 ### <a name="109-notifications"></a>10.9 Notifications
 
@@ -279,6 +287,7 @@ Pour toutes les activités publicitaires, les critères suivants s'appliquent :
 - L'objectif principal de votre produit ne doit pas être d'encourager les utilisateurs à cliquer sur des publicités.
 - Votre produit ne doit pas interférer avec la publicité qu'elle affiche ni en diminuer la visibilité, la valeur ou la qualité.
 - Votre produit doit respecter les paramètres d'identifiant de publicité sélectionnés par l'utilisateur.
+- Toute publicité doit être véridique, sans équivoque et conforme à l’ensemble des lois, réglementations et directives réglementaires applicables.
 
 **10.10.2**
 
@@ -302,11 +311,9 @@ Votre déclaration de confidentialité ou vos conditions d'utilisation doi(ven)t
 
 Si votre produit est destiné à des enfants de moins de 13 ans (conformément à la définition figurant dans la loi des États-Unis sur la protection de la vie privée des enfants sur Internet, [Children’s Online Privacy Protection Act](http://go.microsoft.com/fwlink/p/?LinkID=623015)), vous devez en notifier Microsoft dans l'Espace partenaires et veiller à ce que tous les contenus publicitaires affichés dans votre produit soient appropriés pour des enfants de moins de 13 ans.
 
-
 ### <a name="1011-mobile-voice-plans"></a>10.11 Forfaits de téléphonie mobile vocale
 
 Votre produit ne peut pas vendre, faire figurer des liens vers des forfaits de téléphonie mobile vocale ou les promouvoir.
-
 
 ### <a name="1012-edge-extensions"></a>10.12 Extensions Edge
 
@@ -317,14 +324,13 @@ Les extensions Edge sont soumises aux critères supplémentaires ci-après :
 - Si votre Extension collecte les activités de navigation web, elle ne doit procéder à cette opération que si elle y est invitée, et uniquement à des fins d'utilisation dans le cadre d'une fonctionnalité divulguée de manière évidente, à laquelle l'utilisateur est confronté.
 - L'extension ne doit pas modifier, ou sembler modifier par programme les fonctionnalités du navigateur ou ses paramètres. Cela inclut, sans limitation : les suggestions et le moteur de recherche de la barre d'adresse, la page d'accueil ou initiale, et l'ajout ou la suppression de favoris et d’éléments de liste de lectures.
 
-
 ### <a name="1013-gaming-and-xbox"></a>10.13 Jeux et Xbox
 
 Pour les produits qui sont principalement des expériences de jeu ou qui ciblent Xbox One, les conditions suivantes s'appliquent :
 
 **10.13.1**
 
-Les produits de jeux qui ciblent Xbox One doivent utiliser les services Xbox Live à travers les programmes [Xbox Live Creators](https://go.microsoft.com/fwlink/?linkid=844722) ou [ID@Xbox](http://go.microsoft.com/fwlink/?LinkId=821742).
+Les produits de jeu, y compris les produits offrant principalement des fonctionnalités de jeu/contrôle à distance pour des jeux s’exécutant sur d’autres appareils ou plateformes, qui ciblent Xbox One doivent utiliser les services Xbox Live à travers le programme [Xbox Live Creators](https://go.microsoft.com/fwlink/?linkid=844722) ou [ID@Xbox](http://go.microsoft.com/fwlink/?LinkId=821742).
 
 **10.13.2**
 
@@ -379,11 +385,9 @@ Les exigences de confidentialité suivantes s'appliquent aux données utilisateu
 - Les services et les données utilisateur doivent être utilisés de manière appropriée dans les jeux. Ces données incluent (sans limitation) les données d'utilisation, les identificateurs de compte et toutes autres données permettant de vous identifier personnellement, les statistiques, les scores, les évaluations, les classements, les connexions avec d'autres utilisateurs et toutes autres données relatives à l'activité sociale d'un utilisateur.
 - Ne stockez pas les données graphiques sociales Xbox Live (par exemple, des listes d'amis), à l'exception des identificateurs de compte pour les utilisateurs qui ont lié leur compte Xbox Live avec votre jeu.
 - Supprimez tous les identificateurs de compte lorsque vous supprimez votre jeu de notre service, ou lorsqu'un utilisateur annule la liaison de son compte Xbox Live à votre jeu. Ne partagez pas de services ou de données utilisateur (même s'il s'agit de données anonymes, agrégées ou dérivées) sur des réseaux publicitaires, des services de courtage de données ou d'autres services de publicité ou de monétisation.
-- Lorsque Microsoft reçoit les demandes des utilisateurs finaux pour supprimer leurs données personnelles, nous leur communiquerons vos demandes en leur fournissant une liste d’utilisateurs finaux. Vous devez vérifier la liste au moins tous les 30 jours pour vous assurer que vous recevez toutes les demandes de suppression et vous devez utiliser les informations fournies dans la liste uniquement pour satisfaire les demandes de suppression des utilisateurs finaux. Vous trouverez plus d’informations sur ce processus dans la rubrique [Outils de liste de comptes supprimés](https://aka.ms/xbox-deleted). 
+- Lorsque Microsoft reçoit les demandes des utilisateurs finaux pour supprimer leurs données personnelles, nous leur communiquerons vos demandes en leur fournissant une liste d’utilisateurs finaux. Vous devez vérifier la liste au moins tous les 30 jours pour vous assurer que vous recevez toutes les demandes de suppression et vous devez utiliser les informations fournies dans la liste uniquement pour satisfaire les demandes de suppression des utilisateurs finaux. Vous trouverez plus d’informations sur ce processus dans la rubrique [Outils de liste de comptes supprimés](https://aka.ms/xbox-deleted).
 
 ### <a name="1014-account-type"></a>10.14 Type de compte
-
-À compter du 17 avril 2018, les produits nouvellement publiés qui nécessitent une authentification pour accéder à leurs fonctionnalités principales doivent faire appel à un fournisseur d’authentification tiers dédié ou être publiés à partir d’un compte société. Notez que toutes les applications doivent utiliser ce type de compte si elles nécessitent des informations financières sur un compte, comme décrit dans la section 10.8.3.
 
 Si un consommateur raisonnable risque de considérer le nom de votre compte éditeur comme étant celui d'une entité commerciale, vous devez publier vos produits à partir d'un compte société et non d'un compte personnel.
 
@@ -400,7 +404,6 @@ Les métadonnées et tout autre contenu fournis avec votre produit ne peuvent co
 ### <a name="112-content-including-names-logos-original-and-third-party"></a>11.2 Contenu comportant des noms ou des logos d’origine ou tiers
 
 Le contenu de votre produit et les métadonnées associées doivent être intégralement créés par le fournisseur de l’application, utilisés dans le cadre d’un contrat de licence conclu avec le tiers détenteur des droits, exploités conformément aux conditions autorisées par le détenteur des droits ou utilisés dans les conditions prévues par la loi.
-
 
 ### <a name="113-risk-of-harm"></a>11.3 Risque de blessure
 
@@ -443,7 +446,6 @@ Votre produit ne doit pas inclure de contenu ou de fonctionnalité qui encourage
 - Votre produit ne doit pas contenir de propos blasphématoires excessifs ou gratuits.
 - Votre produit ne doit pas inclure ou afficher du contenu considéré par une personne raisonnable comme obscène.
 
-
 ### <a name="1110-countryregion-specific-requirements"></a>11.10 Critères propres à certains pays/certaines régions
 
 Aucun contenu choquant dans un pays ou une région ciblé(e) par votre produit n’est autorisé. Un contenu peut être considéré comme choquant dans certains pays ou certaines régions selon les législations locales ou les normes culturelles. Voici quelques exemples de contenu potentiellement choquant dans certains pays ou certaines régions :
@@ -454,7 +456,6 @@ Chine
 - Références à une région ou un territoire faisant l’objet de contestation
 - Fournir ou permettre l'accès à du contenu ou des services interdits par la législation locale en vigueur
 
-
 ### <a name="1111-age-ratings"></a>11.11 Évaluations de l'âge
 
 Vous devez obtenir une évaluation de l'âge pour votre produit lorsque vous le soumettez dans l'Espace partenaires. Il vous incombe de remplir précisément le questionnaire d'évaluation pour obtenir l'évaluation appropriée.
@@ -463,6 +464,12 @@ Vous devez obtenir une évaluation de l'âge pour votre produit lorsque vous le 
 
 Si votre produit offre du contenu (publié par les utilisateurs, de nature commerciale ou provenant du web, entre autres), il est possible que ces éléments correspondent à une évaluation de l'âge plus élevée que celle qui leur est attribuée. Vous devez alors permettre aux utilisateurs de choisir s'ils souhaitent recevoir ou non ce contenu à l'aide d'un filtre ou en se connectant via un compte existant.
 
+### <a name="1112-user-generated-content"></a>11.12 Contenu généré par l’utilisateur
+
+Le contenu généré par l’utilisateur est du contenu que les utilisateurs ajoutent dans une application ou un produit, et qui est consultable ou accessible par certains ou l’ensemble des utilisateurs. Si votre produit contient du contenu généré par l’utilisateur, vous devez
+
+- Publier et mettre à la disposition des utilisateurs les conditions de service et/ou les règles de contenu du produit
+- Fournir aux utilisateurs un moyen de signaler le contenu inapproprié dans le produit
 
 ---
 <sup>1</sup>Le terme « Store » ou « Microsoft Store » désigne une plateforme détenue ou opérée par Microsoft, quel que soit son libellé, via laquelle les Applications sont proposées aux Clients en vue d’une acquisition. Sauf indication contraire, le Store inclut le Microsoft Store, le Windows Store, le Marché Xbox, le Microsoft Store pour Entreprises et Microsoft Store pour Éducation.

@@ -7,12 +7,12 @@ ms.topic: article
 keywords: contrat définissant les politiques du microsoft store
 ms.localizationpriority: high
 ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
-ms.openlocfilehash: a846b48565a6029656ecfdd21763931df74b5375
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 879a400d22b3032bb4ee3f3f378a85f04ad73355
+ms.sourcegitcommit: 98343e851f25a11ae02fc739477f5316fe8fcb95
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66826456"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71705568"
 ---
 # <a name="change-history-for-microsoft-store-policies"></a>Historique des modifications des politiques du Microsoft Store
 
@@ -31,6 +31,18 @@ ms.locfileid: "66826456"
 </tr>
 </thead>
 <tbody>
+<tr class="odd">
+<td>1er octobre 2019</td>
+<td>7.12</td>
+<td><p>Ajout d’une nouvelle stratégie 10.2.6 interdisant les applications qui explorent la cryptomonnaie sur l’appareil.</p>
+<p>Mise à jour de la section 10.8.4 pour ajouter l’obligation de divulgation des chances dans les produits proposant des « coffres à butin » (loot boxes) ou d’autres éléments virtuels aléatoires.</p>
+<p>Mise à jour de la section 10.8.7 pour ajouter des exigences concernant la réglementation des prix.</p>
+<p>Mise à jour de la section 10.10.1 pour ajouter des exigences relatives à la véracité de la publicité.</p>
+<p>Mise à jour de la section 10.13.1 pour clarifier que les produits de jeu incluent aussi des produits qui offrent principalement des fonctionnalités de jeu/commande à distance.</p>
+<p>Suppression de la spécification du compte d’entreprise pour certains types d’applications dans la section 10.14. </p>
+<p>Ajout de la section 11.12 avec les exigences relatives au contenu généré par l’utilisateur.</p>
+</td>
+</tr>
 <tr class="even">
 <td>5 mars 2019</td>
 <td>7.11</td>
