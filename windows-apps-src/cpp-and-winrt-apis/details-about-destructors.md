@@ -1,20 +1,24 @@
 ---
-description: C++/WinRT 2.0 vous permet de différer la destruction de vos types implémentation et de créer des requêtes en toute sécurité pendant la destruction. Cette rubrique décrit ces fonctionnalités et explique quand les utiliser.
-title: Détails sur les destructeurs
-ms.date: 07/19/2019
+description: Ces points d’extension en C++/WinRT 2.0 vous permettent de différer la destruction de vos types d’implémentation, d’interroger en toute sécurité pendant la destruction et de raccorder l’entrée et la sortie de vos méthodes projetées.
+title: Points d’extension pour vos types d’implémentation
+ms.date: 09/26/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, destruction différée, requêtes sécurisées
 ms.localizationpriority: medium
-ms.openlocfilehash: 9806ea54665b24c246f2023714a14d94ec3bcc8e
-ms.sourcegitcommit: 02cc7aaa408efe280b089ff27484e8bc879adf23
+ms.openlocfilehash: 76068ffc655c20aa13b50cce9ac49af9afd50805
+ms.sourcegitcommit: 50b0b6d6571eb80aaab3cc36ab4e8d84ac4b7416
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68387796"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71329560"
 ---
-# <a name="details-about-destructors"></a>Détails sur les destructeurs
+# <a name="extension-points-for-your-implementation-types"></a>Points d’extension pour vos types d’implémentation
 
-C++/WinRT 2.0 vous permet de différer la destruction de vos types implémentation et de créer des requêtes en toute sécurité pendant la destruction. Cette rubrique décrit ces fonctionnalités et explique quand les utiliser.
+Le modèle [modèle de struct winrt::implements](/uwp/cpp-ref-for-winrt/implements) est la base à partir de laquelle vos propres implémentations [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) (de classes runtime et de fabriques d’activation) dérivent directement ou indirectement.
+
+Cette rubrique décrit les points d’extension de **winrt::implements** dans C++/WinRT 2.0. Vous pouvez choisir d’implémenter ces points d’extension sur vos types d’implémentation pour personnaliser le comportement par défaut des objets inspectable (*inspectable* au sens de l’interface [IInspectable](/windows/win32/api/inspectable/nn-inspectable-iinspectable)).
+
+Ces points d’extension vous permettent de différer la destruction de vos types d’implémentation, de lancer des requêtes de manière sécurisée pendant la destruction et de raccorder l’entrée et la sortie de vos méthodes projetées. Cette rubrique décrit ces fonctionnalités et explique plus en détail quand et comment les utiliser.
 
 ## <a name="deferred-destruction"></a>Destruction différée
 
@@ -89,7 +93,11 @@ struct Sample : implements<Sample, IStringable>
 };
 ```
 
-Vous pouvez considérer qu'il s'agit d'un récupérateur de mémoire déterministe. De manière plus concrète et plus performante, vous pouvez transformer la fonction **final_release** en coroutine et gérer son éventuelle destruction à un même emplacement, tout en conservant la possibilité de suspendre et de basculer les threads, si besoin.
+Vous pouvez considérer qu'il s'agit d'un récupérateur de mémoire déterministe.
+
+Normalement, l’objet est détruit quand **std::unique_ptr** est détruit. Vous pouvez toutefois accélérer sa destruction en appelant **std::unique_ptr::reset** ou la différer en enregistrant **std::unique_ptr** quelque part.
+
+De manière plus concrète et plus performante, vous pouvez transformer la fonction **final_release** en coroutine et gérer son éventuelle destruction à un même emplacement, tout en conservant la possibilité de suspendre et de basculer les threads, si besoin.
 
 ```cppwinrt
 struct Sample : implements<Sample, IStringable>
@@ -111,7 +119,7 @@ Une suspension pointera les causes du thread appelant&mdash;qui a initié l'appe
 
 En s'appuyant sur la notion de destruction différée, il est possible d'interroger en toute sécurité les interfaces lors de la destruction.
 
-COM classique repose sur deux concepts centraux. Le premier correspond au décompte des références, et le second à l'interrogation des interfaces. En plus de **AddRef** et **Release**, l'interface **IUnknown** fournit [**QueryInterface**](/windows/win32/api/unknwn/nf-unknwn-iunknown-queryinterface(refiid_void). Cette méthode est particulièrement sollicitée par certaines infrastructures d'interface utilisateur&mdash;telles que XAML, pour parcourir la hiérarchie XAML lorsqu’elle simule son système de type composable. Voici un exemple simple.
+COM classique repose sur deux concepts centraux. Le premier correspond au décompte des références, et le second à l'interrogation des interfaces. Outre **AddRef** et **Release**, l’interface **IUnknown** fournit [**QueryInterface**](/windows/win32/api/unknwn/nf-unknwn-iunknown-queryinterface(refiid_void)). Cette méthode est particulièrement sollicitée par certaines infrastructures d'interface utilisateur&mdash;telles que XAML, pour parcourir la hiérarchie XAML lorsqu’elle simule son système de type composable. Voici un exemple simple.
 
 ```cppwinrt
 struct MainPage : PageT<MainPage>
@@ -172,3 +180,59 @@ Tout d’abord, la fonction **final_release** est appelée, ce qui informe l'imp
 À l’intérieur du destructeur, nous effaçons le contexte de données, ce qui, comme nous le savons, requiert une requête pour la classe de base **FrameworkElement**.
 
 Tout cela est possible grâce à l'anti-rebond du décompte des références (ou à la stabilisation du décompte des références) offert par C++/WinRT 2.0.
+
+## <a name="method-entry-and-exit-hooks"></a>Raccordements d’entrée et de sortie de méthode
+
+Parmi les points d’extension moins utilisés, citons le struct **abi_guard** et les fonctions **abi_enter** et **abi_exit**.
+
+Si votre type d’implémentation définit une fonction **abi_enter**, celle-ci est appelée à l’entrée de chacune de vos méthodes d’interface projetée (sans compter les méthodes de [IInspectable](/windows/win32/api/inspectable/nn-inspectable-iinspectable)).
+
+De même, si vous définissez une fonction **abi_exit**, celle-ci est appelée à la sortie de chaque méthode de ce type. Toutefois, elle n’est pas appelée si votre **abi_enter** lève une exception. Elle *est* appelée si une exception est levée par votre méthode d’interface projetée.
+
+Par exemple, vous pouvez utiliser **abi_enter** pour lever une exception hypothétique **invalid_state_error** si un client essaie d’utiliser un objet alors que celui-ci vient d’être placé dans un état inutilisable (par exemple, après un appel de méthode **Shut­Down** ou **Disconnect**). Les classes d’itérateurs C++/WinRT utilisent cette fonctionnalité pour lever une exception d’état non valide dans la fonction **abi_enter** si la collection sous-jacente a changé.
+
+Au-delà des simples fonctions **abi_enter** et **abi_exit**, vous pouvez définir un type imbriqué nommé **abi_guard**. Dans ce cas, une instance d’**abi_guard** est créée à l’entrée à chacune de vos méthodes d’interface projetée (non-**IInspectable**), avec une référence à l’objet comme paramètre de constructeur. Le type **abi_guard** est ensuite détruit à la sortie de la méthode. Vous pouvez placer d’autres états de votre choix dans votre type **abi_guard**.
+
+Si vous ne définissez pas votre propre type **abi_guard**, un type par défaut appelle **abi_enter** au moment de la construction et **abi_exit** au moment de la destruction.
+
+Ces protections sont uniquement utilisées quand une méthode est appelée *par le biais de l’interface projetée*. Si vous appelez des méthodes directement sur l’objet d’implémentation, ces appels passent directement à l’implémentation sans aucune protection.
+
+Voici un exemple de code.
+
+```cppwinrt
+struct Sample : SampleT<Sample, IClosable>
+{
+    void abi_enter();
+    void abi_exit();
+
+    void Close();
+};
+
+void example1()
+{
+    auto sampleObj1{ winrt::make<Sample>() };
+    sampleObj1.Close(); // Calls abi_enter and abi_exit.
+}
+
+void example2()
+{
+    auto sampleObj2{ winrt::make_self<Sample>() };
+    sampleObj2->Close(); // Doesn't call abi_enter nor abi_exit.
+}
+
+// A guard is used only for the duration of the method call.
+// If the method is a coroutine, then the guard applies only until
+// the IAsyncXxx is returned; not until the coroutine completes.
+
+IAsyncAction CloseAsync()
+{
+    // Guard is active here.
+    DoWork();
+
+    // Guard becomes inactive once DoOtherWorkAsync
+    // returns an IAsyncAction.
+    co_await DoOtherWorkAsync();
+
+    // Guard is not active here.
+}
+```

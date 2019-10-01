@@ -6,12 +6,12 @@ keywords: Commencer avec une licence de développeur Visual Studio, appareil ave
 ms.date: 04/09/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 705ff7fab00d13123211feb747ea9a9f95b0cc43
-ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
+ms.openlocfilehash: 1a4c1f90c0fa8304f95b1dc958fe5a75e74301dd
+ms.sourcegitcommit: 7791596c25baf9d222729e057ecdf81b45a59f0c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68867613"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71205931"
 ---
 # <a name="enable-your-device-for-development"></a>Activer votre appareil pour le développement
 
@@ -47,7 +47,7 @@ Voici la page de paramètres pour la famille d’appareils de bureau.
 ## <a name="which-setting-should-i-choose-sideload-apps-or-developer-mode"></a>Quel paramètre choisir : Charger la version test des applications ou Mode développeur ?
 
 > [!NOTE]
-> Depuis l’arrivée de Windows Insider Build 18956, l’option de chargement de version test a été supprimée et le Mode développeur est maintenant une bascule. Pour plus d’informations sur le chargement de version test, consultez la section suivante. 
+> Depuis l’arrivée de Windows Insider Build 18956, l’option de chargement de version test a été supprimée et le Mode développeur est maintenant une bascule. Pour plus d’informations sur le chargement de version test, consultez la section suivante.
 
  Vous pouvez activer un appareil pour le développement ou simplement pour le chargement indépendant.
 
@@ -60,7 +60,7 @@ Par défaut, vous pouvez uniquement installer des applications de plateforme Win
 ### <a name="sideload-apps"></a>Charger la version test des applications
 
 > [!NOTE]
-> Depuis l’arrivée de Windows Insider Build 18956, le chargement de version test est activé par défaut. Désormais, vous pouvez déployer un package MSIX signé sur un appareil sans configuration particulière. 
+> Depuis l’arrivée de Windows Insider Build 18956, le chargement de version test est activé par défaut. Désormais, vous pouvez déployer un package MSIX signé sur un appareil sans configuration particulière.
 
 Le paramètre Charger la version test des applications est généralement utilisé par des sociétés ou des écoles qui ont besoin d’installer des applications personnalisées sur des appareils gérés, sans passer par le Microsoft Store, ou par toute personne devant exécuter des applications à partir de sources tierces. Dans ce cas, l’organisation applique généralement une stratégie visant à désactiver le paramètre *Applications UWP*, comme le montre l’image précédente de la page des paramètres. L’organisation fournit aussi le certificat nécessaire et l’emplacement d’installation pour le chargement indépendant des applications. Pour plus d’informations, voir les articles TechNet [Charger la version test des applications dans Windows 10](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10) et [Prendre en main le déploiement d’applications dans Microsoft Intune](https://docs.microsoft.com/intune/deploy-use/add-apps).
 
@@ -100,7 +100,7 @@ Pour en savoir plus sur Portail d’appareil, consultez [Vue d’ensemble du por
 
 Pour obtenir des instructions d’installation spécifiques pour l’appareil, voir :
 - [Portail d’appareil pour Bureau](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-desktop)
-- [Portail d’appareil pour HoloLens](https://developer.microsoft.com/mixed-reality)
+- [Portail d’appareil pour HoloLens](https://docs.microsoft.com/windows/mixed-reality/using-the-windows-device-portal)
 - [Portail d’appareil pour IoT](https://developer.microsoft.com/windows/iot/docs/DevicePortal)
 - [Portail d’appareil pour appareils mobiles](../debug-test-perf/device-portal-mobile.md)
 - [Portail d’appareil pour Xbox](../xbox-apps/device-portal-xbox.md)
@@ -207,26 +207,26 @@ Vous pouvez utiliser gpedit.msc pour définir les stratégies de groupe visant �
 1.  Exécutez **regedit**.
 2.  Pour activer le chargement indépendant, définissez cette valeur DWORD sur 1 :
 
-    -   **HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowAllTrustedApps**
+    -   `HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowAllTrustedApps`
 
     - \- ou -
 
     Pour activer le mode développeur, définissez ces valeurs DWORD sur 1 :
 
-    -   **HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowDevelopmentWithoutDevLicense**
+    -   `HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowDevelopmentWithoutDevLicense`
 
 **Utiliser PowerShell pour activer votre appareil**
 
 1.  Exécutez PowerShell avec des privilèges administrateur.
 2.  Pour activer le chargement indépendant, exécutez cette commande :
 
-    -   **PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowAllTrustedApps" /d "1"**
+    -   `PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowAllTrustedApps" /d "1"`
 
     - \- ou -
 
     Pour activer le mode développeur, exécutez cette commande :
 
-    -   **PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowDevelopmentWithoutDevLicense" /d "1"**
+    -   `PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowDevelopmentWithoutDevLicense" /d "1"`
 
 ## <a name="upgrade-your-device-from-windows-81-to-windows-10"></a>Mettre à niveau votre appareil de Windows 8.1 vers Windows 10
 
@@ -235,7 +235,7 @@ Après avoir créé des applications ou effectué un chargement indépendant d�
 **Pour annuler l’inscription d’une licence de développeur**
 
 1.  Exécutez PowerShell avec des privilèges administrateur.
-2.  Exécutez la commande suivante : **unregister-windowsdeveloperlicense**.
+2.  Exécutez la commande suivante : `unregister-windowsdeveloperlicense`.
 
 Après cela, vous devez activer votre appareil pour le développement, comme décrit dans cette rubrique, afin de pouvoir continuer à développer dessus. Si vous ne le faites, vous risquez d’obtenir une erreur quand vous déboguez votre application ou tentez de créer un package pour celle-ci. Voici un exemple de cette erreur :
 

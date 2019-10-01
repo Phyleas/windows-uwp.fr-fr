@@ -5,12 +5,12 @@ ms.date: 07/08/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projeté, projection, implémentation, implémenter, classe runtime, activation
 ms.localizationpriority: medium
-ms.openlocfilehash: ae8aca92d7eb7bc93ba4be99449d5e813238d744
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: eba0e6312bc22153d8cb62eb97d32635184f0fdc
+ms.sourcegitcommit: f34deba1d4460d85ed08fe9648999fe03ff6a3dd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393495"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71317112"
 ---
 # <a name="author-apis-with-cwinrt"></a>Créer des API avec C++/WinRT
 
@@ -430,7 +430,7 @@ Comme vous l’avez vu précédemment dans cette rubrique, une classe runtime C+
 
 Ce tableau montre la qualification d’espace de noms minimale à utiliser dans différents contextes.
 
-|Espace de noms qui est dans le contexte|Pour spécifier le type projeté|Pour spécifier le type projeté|
+|Espace de noms qui est dans le contexte|Pour spécifier le type projeté|Pour spécifier le type d’implémentation|
 |-|-|-|
 |**winrt::MyProject**|`MyRuntimeClass`|`implementation::MyRuntimeClass`|
 |**winrt::MyProject::implementation**|`MyProject::MyRuntimeClass`|`MyRuntimeClass`|

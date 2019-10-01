@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, actualités, nouveautés, nouveau
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: e1fd738435b8622a2db2e849abf1c4984bb7ae64
-ms.sourcegitcommit: fccefde61a155a4a5a866acd1c4c9de42a14ddfd
+ms.openlocfilehash: fb869f4705210ab1fec28186b377ad68068b5877
+ms.sourcegitcommit: 50b0b6d6571eb80aaab3cc36ab4e8d84ac4b7416
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68507726"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71329583"
 ---
 # <a name="whats-new-in-cwinrt"></a>Nouveautés de C++/WinRT
 
@@ -255,7 +255,7 @@ struct MainPage : PageT<MainPage>
 };
 ```
 
-Pour plus d’informations, [Détails sur les destructeurs](/windows/uwp/cpp-and-winrt-apis/details-about-destructors).
+Pour plus d’informations, consultez [Destruction différée](/windows/uwp/cpp-and-winrt-apis/details-about-destructors#deferred-destruction).
 
 #### <a name="improved-support-for-com-style-single-interface-inheritance"></a>Prise en charge améliorée de l’héritage d’interface unique de style COM
 

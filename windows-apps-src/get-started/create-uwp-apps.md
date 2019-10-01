@@ -5,12 +5,12 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10, uwp, prise en main
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a5cec4c53d05e14537c5cc965b795a5eab8382f
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: d3d52429d4d91aa646f19aad5444f895f71504de
+ms.sourcegitcommit: 7791596c25baf9d222729e057ecdf81b45a59f0c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64564449"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71205924"
 ---
 # <a name="start-coding"></a>Commencer le codage
 
@@ -44,18 +44,18 @@ Pour une présentation plus détaillée des bases du codage, du langage C#, de V
 **Documentation :**
 
 * [Prise en main de C#](https://docs.microsoft.com/dotnet/csharp/getting-started/)
-* [Guides de démarrage rapide de C#](https://docs.microsoft.com/dotnet/csharp/quick-starts/index)
+* [Guides de démarrage rapide de C#](https://docs.microsoft.com/dotnet/csharp/quick-starts/)
 * [Prise en main de Visual Studio](https://docs.microsoft.com/visualstudio/ide/)
 
-**Vidéos :**
+**Tutoriels :**
 
-* [LinkedIn Learning](https://www.linkedin.com/learning/learning-universal-windows-app-development/welcome)
+* [Windows sur Microsoft Learn](https://docs.microsoft.com/learn/browse/?products=windows&resource_type=module)
 
 ## <a name="using-the-docs"></a>Utilisation de la documentation
 
 Si vous avez déjà exploré nos pistes d'apprentissage, ou si vous vous intéressez à un sujet qu'elles ne couvrent pas, vous pouvez consulter notre documentation. Voici un aperçu rapide de ce qui vous attend dans chaque section :
 
-| Section | Description |
+| Zone | Description |
 | --- | --- |
 | **Nouveautés** | Chaque mise à jour majeure de Windows 10 enrichit notre documentation avec de nouveaux conseils. Cette documentation contient des informations sur la fonctionnalité, les conseils de développement qui accompagnent chaque version, ainsi que des listes de nouvelles API : </br>   [Nouveautés de la dernière version de Windows 10 pour les développeurs](../whats-new/windows-10-version-latest.md) </br> Cependant, les versions majeures ne représentent pas les seules occasions où nous mettons à jour notre documentation. Nous ajoutons en permanence de nouvelles informations à découvrir et vous tenons toujours au courant des dernières nouveautés : </br>   [Nouveautés de la documentation](../whats-new/windows-docs-latest.md) |
 | **Conception et IU** | Toutes les informations associées à la présentation visuelle et à l'interface utilisateur de votre application sont contenues dans cette section de la documentation. Si vous vous intéressez aux spécificités du langage de balisage XAML ou si vous souhaitez simplement créer un style unique pour vos documents, commencez ici : </br>   [Notions de base sur la conception d'applications UWP](../design/basics/index.md) |
