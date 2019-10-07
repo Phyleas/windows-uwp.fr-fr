@@ -6,25 +6,26 @@ ms.date: 09/23/2019
 ms.localizationpriority: medium
 ms.author: quradic
 author: QuinnRadich
-ms.openlocfilehash: 37e771d12dd2cb49cc9f82ea1ef3a0db25de9a54
-ms.sourcegitcommit: 571467a27884ef51fa802cee6a238dafb84dbb6d
+ms.openlocfilehash: e74b04525524593d0134587bd09b2334882a138e
+ms.sourcegitcommit: dafda665fd3d25136194e452e7500b5bab076638
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71409185"
+ms.lasthandoff: 10/06/2019
+ms.locfileid: "71982207"
 ---
 # <a name="latest-updates-to-the-windows-developer-docs"></a>Dernières mises à jour des documents des développeurs Windows
 
-Les documents des développeurs Windows sont régulièrement mis à jour avec des informations et du contenu nouveaux et améliorés. Les documents suivants ont constaté des mises à jour significatives au cours de la dernière semaine du 27 septembre, 2019 :
+
+Les documents des développeurs Windows sont régulièrement mis à jour avec des informations et du contenu nouveaux et améliorés. Les documents suivants ont constaté des mises à jour significatives au cours de la semaine dernière, jusqu’au 4 octobre 2019 :
+
 
 ## <a name="uwp-conceptual"></a>Conceptuel UWP
 
 <ul>
-<li><a href="https://docs.microsoft.com/windows/uwp/design/layout/layout-panels">Panneaux de disposition pour les applications de plateforme Windows universelle (UWP)</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/design/style/sound">Son</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/get-started/create-uwp-apps">Créer des applications avec le plateforme Windows universelle</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/get-started/index">Prise en main de la plateforme Windows universelle (UWP)</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/get-started/index">Prise en main de la plateforme Windows universelle (UWP)</a></li></ul>
 </ul>
+
 
 
 ## <a name="win32-conceptual"></a>Conceptuel Win32
@@ -47,6 +48,6 @@ Les documents des développeurs Windows sont régulièrement mis à jour avec de
 <li><a href="https://docs.microsoft.com/windows/desktop/com/aggregation">Agréger</a></li>
 <li><a href="https://docs.microsoft.com/windows/desktop/com/com-error-codes-9">Codes d’erreur COM (WPN, MBN, P2P, Bluetooth)</a></li>
 <li><a href="https://docs.microsoft.com/windows/desktop/direct3dtools/pixelhistoryoperation">PixelHistoryOperation, structure</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/wic/-wic-codec-native-pixel-formats">Vue d’ensemble des formats de pixel natifs</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wic/-wic-codec-native-pixel-formats">Vue d’ensemble des formats de pixel natifs</a></li></ul>
 </ul>
 

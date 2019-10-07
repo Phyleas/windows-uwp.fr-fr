@@ -5,14 +5,17 @@ ms.date: 06/28/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 67a96b8423d589036ef1c6896f056d097282dc33
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: f54cb261f6ef94545d656d5bd4f624622cc6dfff
+ms.sourcegitcommit: dafda665fd3d25136194e452e7500b5bab076638
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820223"
+ms.lasthandoff: 10/06/2019
+ms.locfileid: "71982229"
 ---
 # <a name="adding-my-people-support-to-an-application"></a>Ajout de la prise en charge de Mes Contacts à une application
+
+> [!Note]
+> À compter de la mise à jour Windows 10 mai 2019 (version 1903), les nouvelles installations de Windows 10 n’afficheront plus les « personnes dans la barre des tâches » par défaut. Les clients peuvent activer la fonctionnalité en cliquant avec le bouton droit sur la barre des tâches et en appuyant sur « Afficher les personnes dans la barre des tâches ». Les développeurs sont déconseillés d’ajouter un support technique à leurs applications et doivent visiter le [blog du développeur Windows](https://blogs.windows.com/windowsdeveloper/) pour plus d’informations sur l’optimisation des applications pour Windows 10.
 
 La fonctionnalité Mes contacts permet aux utilisateurs d’épingler les contacts d’une application directement à la barre des tâches, ce qui crée un nouvel objet contact avec lequel ils peuvent interagir de plusieurs façons. Cet article explique comment ajouter la prise en charge de cette fonctionnalité permettant aux utilisateurs d’épingler des contacts directement à partir de votre application. Lorsque les contacts sont épinglés, de nouveaux types d’interaction utilisateur deviennent disponibles, comme [le partage](my-people-sharing.md) et [les notifications de mes contacts](my-people-notifications.md).
 
@@ -27,8 +30,8 @@ La fonctionnalité Mes contacts permet aux utilisateurs d’épingler les contac
 
 Il y a trois choses à faire pour activer votre application afin d’utiliser la fonctionnalité Mes contacts :
 
-1. [Déclarer la prise en charge pour le contrat d’activation shareTarget dans votre manifeste d’application.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
-2. [Annoter les contacts que les utilisateurs peuvent partager à l’aide de votre application.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
+1. [Déclarez la prise en charge du contrat d’activation shareTarget dans le manifeste de votre application.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
+2. [Annotez les contacts que les utilisateurs peuvent partager avec votre application.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
 3.  Prendre en charge plusieurs instances de votre application en cours d’exécution en même temps. Les utilisateurs doivent pouvoir interagir avec une version complète de votre application lors de son utilisation dans un volet de contact.  Ils peuvent même l’utiliser dans plusieurs volets de contact à la fois.  Pour ce faire, votre application doit être en mesure d’exécuter plusieurs vues simultanément. Pour savoir comment procéder, consultez l’article [« afficher plusieurs vues d’une application »](https://docs.microsoft.com/windows/uwp/design/layout/show-multiple-views).
 
 Lorsque vous avez terminé, votre application s’affiche dans le volet de contact pour les contacts annotés.
@@ -185,11 +188,11 @@ Si vous souhaitez que les contacts épinglés à la barre des tâches reçoivent
 
 Pour qu'un badge soit appliqué à une contact, le nœud toast de niveau supérieur doit inclure le paramètre hint-people pour indiquer le contact expéditeur ou associé. Ce paramètre peut prendre l'une des valeurs suivantes :
 + **Adresse de messagerie** 
-    + Par exemple, [https://doi.org/10.13012/J8PN93H8](mailto:johndoe@mydomain.com)
+    + Exemple [https://doi.org/10.13012/J8PN93H8](mailto:johndoe@mydomain.com)
 + **Numéro de téléphone** 
-    + Par exemple, tél : 888-888-8888
+    + Exemple tél : 888-888-8888
 + **ID distant** 
-    + Par exemple, remoteid:1234
+    + Exemple remoteid:1234
 
 Voici un exemple de procédure pour voir si une notification toast est liée à une personne spécifique :
 ```XML
@@ -250,9 +253,9 @@ async Task PinMultipleContacts(Contact[] contacts)
 
 ## <a name="see-also"></a>Voir aussi
 + [Partage de Mes Contacts](my-people-sharing.md)
-+ [Mes notifications de personnes](my-people-notifications.md)
-+ [Vidéo Channel 9 sur l’ajout de personnes de mon prennent en charge à une application](https://channel9.msdn.com/Events/Build/2017/P4056)
-+ [Mon exemple d’intégration de personnes](https://aka.ms/mypeoplebuild2017)
-+ [Exemple de carte de contact](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
++ [Mes contacts Notificatons](my-people-notifications.md)
++ [Vidéo Channel 9 sur l’ajout du support technique de mes personnes à une application](https://channel9.msdn.com/Events/Build/2017/P4056)
++ [Exemple d’intégration de My People](https://aka.ms/mypeoplebuild2017)
++ [Exemple de carte de visite](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
 + [Documentation de la classe PinnedContactManager](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager)
 + [Connecter votre application à des actions sur une carte de visite](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/integrating-with-contacts)
