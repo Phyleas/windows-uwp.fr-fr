@@ -5,12 +5,12 @@ ms.date: 07/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, concurrence, asynchrone, async
 ms.localizationpriority: medium
-ms.openlocfilehash: 1170b8e1291afd166f210feb291b644d1c7ed546
-ms.sourcegitcommit: e5a154c7b6c1b236943738febdb17a4815853de5
+ms.openlocfilehash: 9484b61aae91ae426efb1963cd37ebf276ef7c6c
+ms.sourcegitcommit: f8634aad3a3675c2f0eac62f56df3def4285a7b0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71164825"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71720432"
 ---
 # <a name="more-advanced-concurrency-and-asynchrony-with-cwinrt"></a>Concurrence et opérations asynchrones plus avancées avec C++/WinRT
 
@@ -787,6 +787,51 @@ case AsyncStatus::Started:
 - **AsyncStatus::Canceled** signifie que l’objet asynchrone a été annulé. Normalement, une annulation est demandée par l’appelant et il est donc rare de gérer cet état. En règle générale, un objet asynchrone annulé est tout simplement ignoré.
 - **AsyncStatus::Error** signifie que l’objet asynchrone a échoué. Vous pouvez **demander** à lever à nouveau l’exception, si vous le souhaitez.
 - **AsyncStatus::Started** signifie que l’objet asynchrone est toujours en cours d’exécution. Le modèle Windows Runtime asynchrone n’autorise ni les attentes multiples, ni les objets waiter. Dès lors, vous ne pouvez pas appeler **wait_for** dans une boucle. En cas de dépassement du délai d'attente, plusieurs options s'offrent à vous. Vous pouvez abandonner l’objet ou interroger son état avant d'appeler **get** pour récupérer les éventuels résultats. Mais à ce stade, il est préférable d'ignorer l’objet.
+
+## <a name="returning-an-array-asynchronously"></a>Retour d’un tableau de manière asynchrone
+
+Voici un exemple de code [MIDL 3.0](/uwp/midl-3/) qui produit *error MIDL2025: [msg]syntax error [context]: expecting > or, near "["* .
+
+```idl
+Windows.Foundation.IAsyncOperation<Int32[]> RetrieveArrayAsync();
+```
+
+Cela est dû au fait qu’il n’est pas possible d’utiliser un tableau en tant qu’argument de type de paramètre dans une interface paramétrée. Nous avons donc besoin d’une méthode moins évidente pour passer un tableau de manière asynchrone à partir d’une méthode de classe de runtime. 
+
+Vous pouvez retourner le tableau boxed dans un objet [PropertyValue](/uwp/api/windows.foundation.propertyvalue). Le code appelant annule ensuite le boxing. Vous pouvez essayer l’exemple de code suivant en ajoutant la classe de runtime **SampleComponent** à un projet **Windows Runtime Component (C++/WinRT)** , classe que vous pouvez ensuite consommer à partir d’un projet **Core App (C++/WinRT)** par exemple.
+
+```cppwinrt
+// SampleComponent.idl
+namespace MyComponentProject
+{
+    runtimeclass SampleComponent
+    {
+        Windows.Foundation.IAsyncOperation<IInspectable> RetrieveCollectionAsync();
+    };
+}
+
+// SampleComponent.h
+...
+struct SampleComponent : SampleComponentT<SampleComponent>
+{
+    ...
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::IInspectable> RetrieveCollectionAsync()
+    {
+        co_return Windows::Foundation::PropertyValue::CreateInt32Array({ 99, 101 }); // Box an array into a PropertyValue.
+    }
+}
+...
+
+// SampleCoreApp.cpp
+...
+MyComponentProject::SampleComponent m_sample_component;
+...
+auto boxed_array{ co_await m_sample_component.RetrieveCollectionAsync() };
+auto property_value{ boxed_array.as<winrt::Windows::Foundation::IPropertyValue>() };
+winrt::com_array<int32_t> my_array;
+property_value.GetInt32Array(my_array); // Unbox back into an array.
+...
+```
 
 ## <a name="important-apis"></a>API importantes
 * [IAsyncAction, interface](/uwp/api/windows.foundation.iasyncaction)
