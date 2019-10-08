@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
-ms.openlocfilehash: 08ad21d3ddc73499bb2b97b300e635fe0a6c148d
-ms.sourcegitcommit: 698a86640b365dc1ca772fb6f53ca556dc284ed6
+ms.openlocfilehash: b7d38464a26af0df03c1aa381b16fbddf1de55cc
+ms.sourcegitcommit: e0644abf76a2535ea24758d1904ff00dfcd86a51
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68935776"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72008041"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>Configuration de builds automatisées pour votre application UWP
 
@@ -31,14 +31,14 @@ Dans la liste des modèles de définition de build, choisissez le modèle **Plat
 
 ![Sélectionner le modèle UWP](images/select-yaml-template.png)
 
-Ce modèle comprend la configuration de base pour générer votre projet UWP:
+Ce modèle comprend la configuration de base pour générer votre projet UWP :
 
 ```yml
 trigger:
 - master
 
 pool:
-  vmImage: 'VS2017-Win2016'
+  vmImage: 'windows-latest'
 
 variables:
   solution: '**/*.sln'
@@ -62,13 +62,13 @@ steps:
 
 ```
 
-Le modèle par défaut tente de signer le package avec le certificat spécifié dans le fichier. csproj. Si vous souhaitez signer votre package pendant la génération, vous devez avoir accès à la clé privée. Sinon, vous pouvez désactiver la signature en ajoutant le `/p:AppxPackageSigningEnabled=false` paramètre à `msbuildArgs` la section dans le fichier YAML.
+Le modèle par défaut tente de signer le package avec le certificat spécifié dans le fichier. csproj. Si vous souhaitez signer votre package pendant la génération, vous devez avoir accès à la clé privée. Sinon, vous pouvez désactiver la signature en ajoutant le paramètre `/p:AppxPackageSigningEnabled=false` à la section `msbuildArgs` dans le fichier YAML.
 
 ## <a name="add-your-project-certificate-to-the-secure-files-library"></a>Ajouter votre certificat de projet à la bibliothèque de fichiers sécurisés
 
 Vous devez éviter de soumettre des certificats à votre référentiel si possible, et git les ignore par défaut. Pour gérer la gestion sécurisée des fichiers sensibles tels que les certificats, Azure DevOps prend en charge la fonctionnalité de [fichiers sécurisés](https://docs.microsoft.com/azure/devops/pipelines/library/secure-files?view=azure-devops) .
 
-Pour télécharger un certificat pour votre Build automatisée:
+Pour télécharger un certificat pour votre Build automatisée :
 
 1. Dans Azure Pipelines, développez **pipelines** dans le volet de navigation et cliquez sur **bibliothèque**.
 2. Cliquez sur l’onglet **fichiers sécurisés** , puis sur **+ fichier sécurisé**.
@@ -76,7 +76,7 @@ Pour télécharger un certificat pour votre Build automatisée:
     ![Téléchargement d’un fichier sécurisé](images/secure-file1.png)
 
 3. Accédez au fichier de certificat, puis cliquez sur **OK**.
-4. Une fois le certificat téléchargé, sélectionnez-le pour afficher ses propriétés. Sous **autorisations**de pipeline, activez la bascule **autoriser pour une utilisation dans tous les pipelines** .
+4. Une fois le certificat téléchargé, sélectionnez-le pour afficher ses propriétés. Sous **autorisations de pipeline**, activez la bascule **autoriser pour une utilisation dans tous les pipelines** .
 
     ![Téléchargement d’un fichier sécurisé](images/secure-file2.png)
 
@@ -99,7 +99,7 @@ Cette tâche compile toutes les solutions qui se trouvent dans le dossier de tra
 | UapAppxPackageBuildMode | SideloadOnly | Génère le dossier **_Test** pour chargement uniquement. |
 | AppxPackageSigningEnabled | true | Active la signature de package. |
 | PackageCertificateThumbprint | Empreinte de certificat | Cette valeur **doit** correspondre à l’empreinte numérique du certificat de signature ou être une chaîne vide. |
-| PackageCertificateKeyFile | path | Chemin d’accès du certificat à utiliser. Elle est extraite des métadonnées de fichier sécurisé. |
+| PackageCertificateKeyFile | Path | Chemin d’accès du certificat à utiliser. Elle est extraite des métadonnées de fichier sécurisé. |
 | PackageCertificatePassword | Mot de passe | Mot de passe de la clé privée dans le certificat. Nous vous recommandons de stocker votre mot de passe dans [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) et de lier le mot de passe au [groupe de variables](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups). Vous pouvez passer la variable à cet argument. |
 
 ### <a name="configure-the-build"></a>Configurer la Build
@@ -116,7 +116,7 @@ Si vous souhaitez générer votre solution à l’aide de la ligne de commande, 
 ### <a name="configure-package-signing"></a>Configurer la signature du package
 
 Pour signer le package MSIX (ou APPX), le pipeline doit récupérer le certificat de signature. Pour ce faire, ajoutez une tâche DownloadSecureFile avant la tâche VSBuild.
-Vous obtiendrez ainsi l’accès au certificat de signature ```signingCert```via.
+Vous obtiendrez ainsi l’accès au certificat de signature via ```signingCert```.
 
 ```yml
 - task: DownloadSecureFile@1
@@ -126,7 +126,7 @@ Vous obtiendrez ainsi l’accès au certificat de signature ```signingCert```via
     secureFile: '[Your_Pfx].pfx'
 ```
 
-Ensuite, mettez à jour la tâche VSBuild pour référencer le certificat de signature:
+Ensuite, mettez à jour la tâche VSBuild pour référencer le certificat de signature :
 
 ```yml
 - task: VSBuild@1
@@ -144,15 +144,15 @@ Ensuite, mettez à jour la tâche VSBuild pour référencer le certificat de sig
 ```
 
 > [!NOTE]
-> L’argument PackageCertificateThumbprint est défini intentionnellement sur une chaîne vide comme précaution. Si l’empreinte numérique est définie dans le projet, mais ne correspond pas au certificat de signature, la génération échoue avec l' `Certificate does not match supplied signing thumbprint`erreur:.
+> L’argument PackageCertificateThumbprint est défini intentionnellement sur une chaîne vide comme précaution. Si l’empreinte numérique est définie dans le projet, mais ne correspond pas au certificat de signature, la génération échoue avec l’erreur : `Certificate does not match supplied signing thumbprint`.
 
 ### <a name="review-parameters"></a>Passer en revue les paramètres
 
-Les paramètres définis avec la `$()` syntaxe sont des variables définies dans la définition de build et sont modifiés dans d’autres systèmes de génération.
+Les paramètres définis avec la syntaxe `$()` sont des variables définies dans la définition de build et changent dans d’autres systèmes de génération.
 
 ![variables par défaut](images/building-screen5.png)
 
-Pour afficher toutes les variables prédéfinies, consultez [variables de build](https://docs.microsoft.com/azure/devops/pipelines/build/variables)prédéfinies.
+Pour afficher toutes les variables prédéfinies, consultez [variables de build prédéfinies](https://docs.microsoft.com/azure/devops/pipelines/build/variables).
 
 ## <a name="configure-the-publish-build-artifacts-task"></a>Configurer la tâche publier les artefacts de build
 
@@ -172,11 +172,11 @@ Le pipeline UWP par défaut n’enregistre pas les artefacts générés. Pour aj
     PathtoPublish: '$(build.artifactstagingdirectory)'
 ```
 
-Vous pouvez voir les artefacts générés dans l’option artefacts de la page résultats de la Build.
+Vous pouvez voir les artefacts générés dans l’option **artefacts** de la page résultats de la Build.
 
 ![artefacts](images/building-screen6.png)
 
-Étant donné que nous avons `UapAppxPackageBuildMode` défini l' `StoreUpload`argument sur, le dossier artefacts comprend le package à envoyer au magasin (. msixupload/. appxupload). Notez que vous pouvez également envoyer un package d’application standard (. msix/. AppX) ou un bundle d’applications (. msixbundle/. appxbundle/) au magasin. Dans le cadre de cet article, nous allons utiliser le fichier .appxupload.
+Étant donné que nous avons défini l’argument `UapAppxPackageBuildMode` sur `StoreUpload`, le dossier artefacts comprend le package à envoyer au magasin (. msixupload/. appxupload). Notez que vous pouvez également envoyer un package d’application standard (. msix/. AppX) ou un bundle d’applications (. msixbundle/. appxbundle/) au magasin. Dans le cadre de cet article, nous allons utiliser le fichier .appxupload.
 
 ## <a name="address-bundle-errors"></a>Erreurs du groupe d’adresses
 
@@ -184,14 +184,14 @@ Si vous ajoutez plusieurs projets UWP à votre solution, puis que vous essayez d
 
   `MakeAppx(0,0): Error : Error info: error 80080204: The package with file name "AppOne.UnitTests_0.1.2595.0_x86.appx" and package full name "8ef641d1-4557-4e33-957f-6895b122f1e6_0.1.2595.0_x86__scrj5wvaadcy6" is not valid in the bundle because it has a different package family name than other packages in the bundle`
 
-Cette erreur s’affiche car l’application qui doit apparaître dans l’offre groupée n’est pas clairement définie au niveau de la solution. Pour résoudre ce problème, ouvrez chaque fichier projet et ajoutez les propriétés suivantes à la fin du premier `<PropertyGroup>` élément.
+Cette erreur s’affiche car l’application qui doit apparaître dans l’offre groupée n’est pas clairement définie au niveau de la solution. Pour résoudre ce problème, ouvrez chaque fichier projet et ajoutez les propriétés suivantes à la fin du premier élément `<PropertyGroup>`.
 
 |**Projection**|**Propriétés**|
 |-------|----------|
-|Application|`<AppxBundle>Always</AppxBundle>`|
+|App|`<AppxBundle>Always</AppxBundle>`|
 |UnitTests|`<AppxBundle>Never</AppxBundle>`|
 
-Ensuite, supprimez `AppxBundle` l’argument MSBuild de l’étape de génération.
+Ensuite, supprimez l’argument MSBuild `AppxBundle` de l’étape de génération.
 
 ## <a name="related-topics"></a>Rubriques connexes
 

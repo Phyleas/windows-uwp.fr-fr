@@ -6,12 +6,12 @@ ms.date: 06/22/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 21477938b584e4fa66c815224f25af1f6e2a160c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 51fc077342694b9ddbdbc03863c0db3b8cd9e1c5
+ms.sourcegitcommit: 3f7432afaa73083cb9b8331e30c885068c6f6dbf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360521"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72023264"
 ---
 # <a name="composition-native-interoperation-with-directx-and-direct2d"></a>Interopération de la composition en mode natif avec DirectX et Direct2D
 
@@ -39,11 +39,11 @@ Pour des raisons de performances, lorsqu’une application appelle [**BeginDraw*
 
 ## <a name="usage-example"></a>Exemple d’utilisation
 
-L’exemple de code suivant illustre un scénario d’interopérabilité. L’exemple combine des types à partir de la zone de surface Windows Runtime de Composition de Windows, ainsi que les types à partir de l’interopérabilité en-têtes et le code qui restitue le texte à l’aide de DirectWrite basé sur COM et l’API de Direct2D. L’exemple utilise [ **BeginDraw** ](https://docs.microsoft.com/windows/desktop/api/windows.ui.composition.interop/nf-windows-ui-composition-interop-icompositiondrawingsurfaceinterop-begindraw) et [ **EndDraw** ](https://docs.microsoft.com/windows/desktop/api/windows.ui.composition.interop/nf-windows-ui-composition-interop-icompositiondrawingsurfaceinterop-enddraw) pour le rendre transparente pour interagir entre ces technologies. L’exemple utilise DirectWrite pour disposer le texte, et puis elle utilise Direct2D pour l’afficher. Le périphérique graphique de composition accepte directement le périphérique Direct2D au moment de l’initialisation. Cela permet de **BeginDraw** pour retourner un **ID2D1DeviceContext** pointeur d’interface, qui est beaucoup plus efficace que l’application créer un contexte de Direct2D pour encapsuler un retourné Interface ID3D11Texture2D à chaque opération de dessin.
+L’exemple de code suivant illustre un scénario d’interopérabilité. L’exemple combine les types de la surface d’exposition Windows Runtime de la composition Windows, ainsi que les types des en-têtes Interop, et le code qui restitue le texte à l’aide des API DirectWrite et Direct2D basées sur COM. L’exemple utilise [**BeginDraw**](https://docs.microsoft.com/windows/desktop/api/windows.ui.composition.interop/nf-windows-ui-composition-interop-icompositiondrawingsurfaceinterop-begindraw) et [**EndDraw**](https://docs.microsoft.com/windows/desktop/api/windows.ui.composition.interop/nf-windows-ui-composition-interop-icompositiondrawingsurfaceinterop-enddraw) pour le rendre transparent pour l’interopérabilité entre ces technologies. L’exemple utilise DirectWrite pour disposer le texte, puis il utilise Direct2D pour le rendre. Le périphérique graphique de composition accepte directement le périphérique Direct2D au moment de l’initialisation. Cela permet à **BeginDraw** de retourner un pointeur d’interface **ID2D1DeviceContext** , ce qui est beaucoup plus efficace que l’application de créer un contexte Direct2D pour encapsuler une interface ID3D11Texture2D retournée à chaque opération de dessin.
 
-Il existe deux exemples de code ci-dessous. Tout d’abord, un [C++ / c++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) exemple (qui est terminée), puis C + c++ / exemple de code CX (qui omet les parties DirectWrite et Direct2D de l’exemple).
+Il existe deux exemples de code ci-dessous. Tout d’abord [ C++](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) , un exemple/WinRT (qui est complet), puis C++un exemple de code/CX (qui omet les parties DirectWrite et Direct2D de l’exemple).
 
-À utiliser C++ / c++ / WinRT, exemple de code ci-dessous, commencez par créer un **application Core (C++ / c++ / WinRT)** projet dans Visual Studio (pour la configuration requise, consultez [prise en charge de Visual Studio pour C / c++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)). Lors de la création du projet, sélectionnez votre version cible **Windows 10, version 1803 (10.0 ; Build 17134)** . C’est la version par rapport à laquelle ce code a été conçu et testé. Remplacez le contenu de votre `App.cpp` fichier de code source avec le code ci-dessous, puis générez et exécutez. L’application affiche la chaîne « Hello, World ! » en texte noir sur un arrière-plan transparent.
+Pour utiliser l' C++exemple de code/WinRT ci-dessous, commencez par créer un nouveau projet d' **application principale (C++/WinRT)** dans Visual Studio (pour connaître la configuration requise, consultez [prise en charge de Visual Studio pour C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)). Lors de la création du projet, sélectionnez comme version cible **Windows 10, version 1803 (10,0 ; Build 17134)** . Il s’agit de la version sur laquelle ce code a été généré et testé. Remplacez le contenu de votre fichier de code source `App.cpp` par le code ci-dessous, puis générez et exécutez. L’application affiche la chaîne « Hello, World ! » en texte noir sur un arrière-plan transparent.
 
 ```cppwinrt
 // App.cpp
@@ -248,7 +248,7 @@ struct DeviceLostHelper
         m_onDeviceLostHandler = ::CreateThreadpoolWait(DeviceLostHelper::OnDeviceLost, (PVOID)this, nullptr);
 
         // Create a handle and a cookie.
-        m_eventHandle = ::CreateEvent(nullptr, false, false, nullptr);
+        m_eventHandle.attach(::CreateEvent(nullptr, false, false, nullptr));
         winrt::check_bool(bool{ m_eventHandle });
         m_cookie = 0;
 
@@ -523,7 +523,7 @@ private:
 
 int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 {
-    CoreApplication::Run(SampleApp());
+    CoreApplication::Run(winrt::make<SampleApp>());
 }
 ```
 
