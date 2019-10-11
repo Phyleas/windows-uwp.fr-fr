@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 330cbaab4a1c8313fb0b298dea55176eb66d4803
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 55bf6360f09ba4ab6c7878543ecfa0c80c4558e3
+ms.sourcegitcommit: 74c674c70b86bafeac7c8c749b1662fae838c428
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340522"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72252310"
 ---
 # <a name="diagnosing-windows-runtime-component-error-conditions"></a>Diagnostic des conditions d’erreur d’un composant Windows Runtime
 
@@ -69,7 +69,7 @@ Dans l’UWP, les méthodes surchargées peuvent avoir le même nombre de param�
 
 Dans la plateforme Windows universelle, tous les types publics dans un fichier de métadonnées Windows (.winmd) doivent se trouver dans un espace de noms qui partage le nom du fichier .winmd, ou dans des sous-espaces de noms du nom de fichier. Par exemple, si votre projet Visual Studio est nommé A.B (autrement dit, votre composant Windows Runtime est A.B.winmd), il peut contenir des classes publiques A.B.Class1 et A.B.C.Class2, mais pas A.Class3 (WME0006) ou D.Class4 (WME1044).
 
-> **Notez**que les restrictions   These s’appliquent uniquement aux types publics, pas aux types privés utilisés dans votre implémentation.
+> **Remarque**  Ces restrictions s’appliquent uniquement aux types publics, non aux types privés utilisés dans votre implémentation.
 
 Dans le cas de A.Class3, vous pouvez déplacer Class3 dans un autre espace de noms ou remplacer le nom du composant Windows Runtime par A.winmd. Bien que WME0006 soit un avertissement, vous devez le traiter comme une erreur. Dans l’exemple précédent, le code qui appelle A.B.winmd ne pourra pas localiser A.Class3.
 
@@ -81,7 +81,7 @@ Votre composant doit contenir au moins un type **public sealed** (**Public NotIn
 
 Un type dans un composant Windows Runtime ne peut pas avoir un nom identique à un espace de noms (WME1068).
 
-> **Attention**  Si vous appelez Winmdexp. exe directement et n’utilisez pas l’option/out pour spécifier un nom pour votre composant Windows Runtime, Winmdexp. exe essaie de générer un nom qui comprend tous les espaces de noms dans le composant. Le fait de renommer les espaces de noms peut modifier le nom de votre composant.
+> **Attention**  Si vous appelez Winmdexp.exe directement et n’utilisez pas l’option /out pour spécifier un nom pour votre composant Windows Runtime, Winmdexp.exe essaie de générer un nom qui inclut tous les espaces de noms dans le composant. Le fait de renommer les espaces de noms peut modifier le nom de votre composant.
 
  
 
@@ -102,9 +102,9 @@ Bon nombre de ces mappages sont des interfaces. Par exemple, [IList&lt;T&gt;](ht
 
 En général, le meilleur choix est l’interface qui est la plus proche du type. Par exemple, pour Dictionary&lt;int, string&gt;, le meilleur choix est sans doute IDictionary&lt;int, string&gt;.
 
-> **Important**  JavaScript utilise l’interface qui apparaît en premier dans la liste des interfaces implémentées par un type managé. Par exemple, si vous retournez Dictionary&lt;int, string&gt; au code JavaScript, il apparaît comme IDictionary&lt;int, string&gt;, quelle que soit l’interface que vous spécifiez comme type de retour. Cela signifie que si la première interface n’inclut pas un membre qui apparaît sur les interfaces ultérieures, ce membre n’est pas visible pour JavaScript.
+> **Important** JavaScript utilise l’interface qui s’affiche en premier dans la liste des interfaces implémentées par un type managé. Par exemple, si vous retournez Dictionary&lt;int, string&gt; au code JavaScript, il apparaît comme IDictionary&lt;int, string&gt;, quelle que soit l’interface que vous spécifiez comme type de retour. Cela signifie que si la première interface n’inclut pas un membre qui apparaît sur les interfaces ultérieures, ce membre n’est pas visible pour JavaScript.
 
-> **Attention**  Avoid à l’aide des interfaces [IList](https://docs.microsoft.com/dotnet/api/system.collections.ilist) et [IEnumerable](https://docs.microsoft.com/dotnet/api/system.collections.ienumerable) non génériques si votre composant sera utilisé par JavaScript. Ces interfaces mappent vers [IBindableVector](https://docs.microsoft.com/uwp/api/windows.ui.xaml.interop.ibindablevector) et [IBindableIterator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.interop.ibindableiterator), respectivement. Elles prennent en charge la liaison pour les contrôles XAML et sont invisibles dans JavaScript. JavaScript émet l’erreur d’exécution « La fonction “X” a une signature non valide et ne peut pas être appelée ».
+> **Attention**  Évitez d’utiliser les interfaces non génériques [IList](https://docs.microsoft.com/dotnet/api/system.collections.ilist) et [IEnumerable](https://docs.microsoft.com/dotnet/api/system.collections.ienumerable) si votre composant doit être utilisé par JavaScript. Ces interfaces mappent vers [IBindableVector](https://docs.microsoft.com/uwp/api/windows.ui.xaml.interop.ibindablevector) et [IBindableIterator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.interop.ibindableiterator), respectivement. Elles prennent en charge la liaison pour les contrôles XAML et sont invisibles dans JavaScript. JavaScript émet l’erreur d’exécution « La fonction “X” a une signature non valide et ne peut pas être appelée ».
 
  
 
@@ -131,7 +131,7 @@ En général, le meilleur choix est l’interface qui est la plus proche du type
 <tr class="odd">
 <td align="left">WME1039</td>
 <td align="left"><p>La méthode « {0} » a un paramètre de type « {1} » dans sa signature. Bien que ce type générique ne soit pas un type Windows Runtime valide, ce type ou ses paramètres génériques implémentent les interfaces qui sont des types Windows Runtime valides. [https://doi.org/10.13012/J8PN93H8]({2})</p>
-> **Note @ no__t-1 @ no__t-2For {2}, Winmdexp. exe ajoute une liste d’alternatives, par exemple « remplacez le type System. Collections. Generic. List @ no__t-4T @ no__t-5 » dans la signature de la méthode par l’un des types suivants à la place : 'System. Collections. Generic. IList @ no__t-0T @ no__t-1, System. Collections. Generic. IReadOnlyList @ no__t-2T @ no__t-3, System. Collections. Generic. IEnumerable @ no__t-4T @ no__t-5 '.
+> **Note @ no__t-1 pour {2}, Winmdexp. exe ajoute une liste d’alternatives, telles que « vous pouvez remplacer le type System. Collections. Generic. List @ no__t-3T @ no__t-4 » dans la signature de méthode par l’un des types suivants à la place : 'System. Collections. Generic. IList @ no__t-0T @ no__t-1, System. Collections. Generic. IReadOnlyList @ no__t-2T @ no__t-3, System. Collections. Generic. IEnumerable @ no__t-4T @ no__t-5 '.
 </td>
 </tr>
 <tr class="even">
@@ -210,7 +210,7 @@ Dans l’UWP, les valeurs de retour sont considérées comme des paramètres de 
     > <Out> ByRef highValue As Integer) As <ReturnValueName("average")> String
     > ```
 
-> **Remarque**  Si vous modifiez le nom de la valeur de retour et que le nouveau nom est en conflit avec le nom d’un autre paramètre, vous obtiendrez l’erreur WME1091.
+> **Remarque**  Si vous modifiez le nom de la valeur de retour, et que ce nouveau nom est en conflit avec le nom d’un autre paramètre, vous obtenez l’erreur WME1091.
 
 Le code JavaScript peut accéder aux paramètres de sortie d’une méthode par nom, notamment la valeur de retour. Pour obtenir un exemple, voir l’attribut [ReturnValueNameAttribute](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime.returnvaluenameattribute).
 
@@ -219,7 +219,7 @@ Le code JavaScript peut accéder aux paramètres de sortie d’une méthode par 
 | WME1091 | La méthode « \{0} » a la valeur de retour nommée « \{1} » qui est identique à un nom de paramètre. Les paramètres de méthode Windows Runtime et la valeur de retour doivent avoir des noms uniques. |
 | WME1092 | La méthode « \{0} » a un paramètre nommé « \{1} » qui est identique au nom de la valeur de retour par défaut. Fournissez un autre nom pour le paramètre ou utilisez System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute pour spécifier explicitement le nom de la valeur de retour. |
 
-**Remarque**  Le nom par défaut est « returnValue » pour les accesseurs de propriété et « value » pour toutes les autres méthodes.
+**Remarque**  Le nom par défaut est « returnValue » pour les accesseurs de propriété, et « value » pour toutes les autres méthodes.
 
 ## <a name="related-topics"></a>Rubriques connexes
 

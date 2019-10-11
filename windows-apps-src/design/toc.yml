@@ -86,7 +86,7 @@
           href: controls-and-patterns/buttons.md
         - name: Check box
           href: controls-and-patterns/checkbox.md
-        - name: Combo box
+        - name: Zones de liste modifiables et zones de liste
           href: controls-and-patterns/combo-box.md
         - name: Liens hypertexte
           href: controls-and-patterns/hyperlinks.md
@@ -102,16 +102,15 @@
       items:
         - name: Vue d’ensemble
           href: controls-and-patterns/lists.md
-        - name: Commandes de collection
-          href: controls-and-patterns/collection-commanding.md
-        - name: Vues de collection personnalisées
-          href: controls-and-patterns/items-repeater.md
-        - name: Vue symétrique
-          href: controls-and-patterns/flipview.md
-        - name: Listes inversées
-          href: controls-and-patterns/inverted-lists.md
         - name: Affichage Liste et affichage Grille
           href: controls-and-patterns/listview-and-gridview.md
+        - name: Vue symétrique
+          href: controls-and-patterns/flipview.md
+        - name: Arborescence
+          href: controls-and-patterns/tree-view.md
+        - name: ItemsRepeater
+          href: controls-and-patterns/items-repeater.md
+        - name: Modèles et des conteneurs d’éléments
           items:
             - name: Modèles et des conteneurs d’éléments
               href: controls-and-patterns/item-containers-templates.md
@@ -119,14 +118,22 @@
               href: controls-and-patterns/item-templates-listview.md
             - name: Modèles d’éléments d’affichage Grille
               href: controls-and-patterns/item-templates-gridview.md
-        - name: Interface utilisateur imbriquée
-          href: controls-and-patterns/nested-ui.md
-        - name: Tirer pour actualiser
-          href: controls-and-patterns/pull-to-refresh.md
-        - name: Balayer
-          href: controls-and-patterns/swipe.md
-        - name: Arborescence
-          href: controls-and-patterns/tree-view.md
+        - name: Sélection et interaction
+          items:
+            - name: Commandes de collection
+              href: controls-and-patterns/collection-commanding.md
+            - name: Vue d’ensemble du mode de sélection
+              href: controls-and-patterns/selection-modes.md
+            - name: Balayer
+              href: controls-and-patterns/swipe.md
+            - name: Tirer pour actualiser
+              href: controls-and-patterns/pull-to-refresh.md
+        - name: Autres options de collecte et personnalisations
+          items:
+            - name: Listes inversées
+              href: controls-and-patterns/inverted-lists.md
+            - name: Interface utilisateur imbriquée
+              href: controls-and-patterns/nested-ui.md
     - name: Boîtes de dialogue et menus volants
       items:
         - name: Vue d’ensemble

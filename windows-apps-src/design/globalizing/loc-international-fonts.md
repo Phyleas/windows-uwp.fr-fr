@@ -1,21 +1,21 @@
 ---
-Description: Cette rubrique répertorie les polices disponibles pour les applications UWP qui sont traduites dans des langues autres que des États-Unis Anglais.
+Description: Cette rubrique répertorie les polices disponibles pour les applications UWP qui sont localisées dans des langues autres que les États-Unis. Anglais.
 title: Polices internationales
 template: detail.hbs
 ms.date: 11/02/2017
 ms.topic: article
 keywords: windows 10, uwp, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f1d618a111ee207eacfceb52680859c8272e0ed
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 06284481ccecbc3c9cd7d7a78d83ccd6e97a49a7
+ms.sourcegitcommit: f3c1a81b50f4a372a15996ac71b3f408a8ee1409
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57601134"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72237524"
 ---
 # <a name="international-fonts"></a>Polices internationales
 
-Cette rubrique répertorie les polices disponibles pour les applications UWP qui sont traduites dans des langues autres que des États-Unis Anglais.
+Cette rubrique répertorie les polices disponibles pour les applications UWP qui sont localisées dans des langues autres que les États-Unis. Anglais.
 
 Dans le tableau suivant, la colonne « Balise de langue » répertorie la [balise de langue BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302) de la langue. Pour obtenir la liste des balises de langue prises en charge par le Microsoft Store, voir [Langues prises en charge](../../publish/supported-languages.md).
 
@@ -37,9 +37,9 @@ Dans le tableau suivant, la colonne « Balise de langue » répertorie la [bal
 | Catalan | ca-ES | Segoe UI |
 | Kurde central (arabe) | ku-ARAB-IQ | Segoe UI |
 | Cherokee (Cherokee) | chr-CHER-US | Gadugi |
-| Chinois simplifié | zh-CN | MS YaHei UI |
-| Chinois traditionnel (Hong-Kong (R.A.S.)) | zh-HK | MS JhengHei UI |
-| Chinois traditionnel (Taïwan) | zh-TW | MS JhengHei UI |
+| Chinois simplifié | zh-CN | Microsoft YaHei UI |
+| Chinois traditionnel (Hong Kong) | zh-HK | Microsoft JhengHei UI |
+| Chinois traditionnel (Taïwan) | zh-TW | Microsoft JhengHei UI |
 | Croate | hr-HR | Segoe UI |
 | Tchèque | cs-CZ | Segoe UI |
 | Danois | da-DK | Segoe UI |
@@ -66,7 +66,7 @@ Dans le tableau suivant, la colonne « Balise de langue » répertorie la [bal
 | isiXhosa | xh-ZA | Segoe UI |
 | isiZulu | zu-ZA | Segoe UI |
 | Italien | it-IT | Segoe UI |
-| Japonais | ja-JP | Meiryo UI (voir les remarques ci-dessous) |
+| Japonais | ja-JP | Yu Gothic UI |
 | Kannada | kn-IN | Nirmala UI |
 | Kazakh | kk-KZ | Segoe UI |
 | Khmer | km-KH | Leelawadee UI |
@@ -129,11 +129,7 @@ Dans le tableau suivant, la colonne « Balise de langue » répertorie la [bal
 | Wolof | wo-SN | Segoe UI |
 | Yorouba | yo-NG | Segoe UI |
 
-## <a name="japanese-fonts"></a>Polices japonaises
-
-La police Meiryo UI est utilisée dans Windows. Windows inclut Yu Gothic et Yu Mincho, deux familles de polices pour prendre en charge l’affichage et l’édition de documents japonais. Yu Gothic n’est pas recommandé pour l’interface utilisateur d’application.
-
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Balise de langue de BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
+* [Balise de langue BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
 * [Langues prises en charge](../../publish/supported-languages.md)

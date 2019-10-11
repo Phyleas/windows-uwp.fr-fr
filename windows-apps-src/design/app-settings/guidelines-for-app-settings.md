@@ -1,6 +1,6 @@
 ---
 Description: Cet article décrit les meilleures pratiques pour créer et afficher des paramètres d’application.
-title: Recommandations en matière de paramètres de l’application
+title: Recommandations en matière de paramètres d’application
 ms.assetid: 2D765E90-3FA0-42F5-A5CB-BEDC14C3F60A
 label: Guidelines
 template: detail.hbs
@@ -8,14 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 72da3d17f3584d0c295926880b949591b83b47a7
-ms.sourcegitcommit: 2fa2d2236870eaabc95941a95fd4e358d3668c0c
+ms.openlocfilehash: c08dad36929c7889f1896404df862230040e3499
+ms.sourcegitcommit: 9625f8fb86ff6473ac2851e600bc02e996993660
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70076399"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72163703"
 ---
-# <a name="guidelines-for-app-settings"></a>Recommandations en matière de paramètres de l’application
+# <a name="guidelines-for-app-settings"></a>Recommandations en matière de paramètres d’application
 
 Les paramètres d’application sont les parties personnalisables de votre application plateforme Windows universelle (UWP) accessibles par l’utilisateur via une page de paramètres d’application. Par exemple, une application de lecteur d’actualités peut permettre à l’utilisateur de spécifier les sources d’actualités à afficher ou le nombre de colonnes à afficher à l’écran, tandis qu’une application météorologique peut permettre à l’utilisateur de choisir entre Celsius et Fahrenheit. Cet article fournit des recommandations et les meilleures pratiques pour la création et l’affichage des paramètres d’application.
 
@@ -82,8 +82,8 @@ Mobile :
 ## <a name="color-mode-settings"></a>Paramètres du « Mode couleur »
 
 
-Si votre application permet aux utilisateurs de choisir le mode couleur de l’application, présentez ces options à l’aide de [cases d’option](../controls-and-patterns/radio-button.md) ou d’une [zone de liste modifiable](../controls-and-patterns/lists.md#drop-down-lists) avec l’en-tête « Choisir un mode d’application ». Les options doivent être les suivantes :
-- Maigre
+Si votre application permet aux utilisateurs de choisir le mode couleur de l’application, présentez ces options à l’aide de [cases d’option](../controls-and-patterns/radio-button.md) ou d’une [zone de liste modifiable](../controls-and-patterns/combo-box.md) avec l’en-tête « Choisir un mode d’application ». Les options doivent être les suivantes :
+- Light
 - Sombre
 - Windows par défaut
 
@@ -124,7 +124,7 @@ Une fois que vous avez répertorié les éléments à inclure dans votre page de
 - Présentez le contenu de haut en bas dans une seule colonne que l’utilisateur pourra faire défiler, si nécessaire. Limitez le défilement à un maximum de deux fois la hauteur de l’écran.
 - Utilisez les contrôles suivants pour les paramètres d’application :
 
-    - [Basculer](../controls-and-patterns/toggles.md)les commutateurs: Pour permettre aux utilisateurs de définir des valeurs activées ou désactivées.
+    - [Basculer les commutateurs](../controls-and-patterns/toggles.md): Pour permettre aux utilisateurs de définir des valeurs activées ou désactivées.
     - [Cases d’option](../controls-and-patterns/radio-button.md): Pour permettre aux utilisateurs de choisir un élément parmi un ensemble allant jusqu’à 5 options associées mutuellement exclusives.
     - [Zone d’entrée de texte](../controls-and-patterns/text-block.md): Pour permettre aux utilisateurs d’entrer du texte. Utilisez le type de zone de texte qui correspond au type de texte que vous obtenez de l’utilisateur, tel qu’un message électronique ou un mot de passe.
     - [Liens hypertexte](../controls-and-patterns/hyperlinks.md): Pour faire passer l’utilisateur à une autre page de l’application ou à un site Web externe. Quand un utilisateur clique sur un lien hypertexte, le menu volant des paramètres se ferme.
