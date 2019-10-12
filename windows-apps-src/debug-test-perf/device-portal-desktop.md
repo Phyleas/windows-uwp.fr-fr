@@ -4,14 +4,14 @@ title: Portail d’appareil pour Windows Desktop
 description: Découvrez comment Windows Device Portal ouvre les diagnostics et l’automatisation sur votre bureau Windows.
 ms.date: 02/06/2019
 ms.topic: article
-keywords: Windows 10, uwp, le portail de l’appareil
+keywords: Windows 10, UWP, portail des appareils
 ms.localizationpriority: medium
-ms.openlocfilehash: 00cf497d5d57f5a3cdc5c52ecfeead7885ff7d56
-ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
+ms.openlocfilehash: 0f25e882f53bb4f673aa5003495f37d553208721
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67713808"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282006"
 ---
 # <a name="device-portal-for-windows-desktop"></a>Portail d’appareil pour Windows Desktop
 
@@ -81,21 +81,21 @@ Le portail d’appareil sur Windows Desktop propose les ensembles de pages stan
 Si vous souhaitez sélectionner des numéros de port pour Device Portal (par exemple, 80 et 443), vous pouvez définir les clés de Registre suivantes :
 
 - Sous `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WebManagement\Service`
-    - `UseDynamicPorts`: Un valeur DWORD requis. Définissez ce paramètre sur 0 pour conserver les numéros de port que vous avez choisis.
-    - `HttpPort`: Un valeur DWORD requis. Contient le numéro de port que Device Portal va écouter pour les connexions HTTP.    
-    - `HttpsPort`: Un valeur DWORD requis. Contient le numéro de port que Device Portal va écouter pour les connexions HTTPS.
+    - `UseDynamicPorts`: Valeur DWORD obligatoire. Définissez ce paramètre sur 0 pour conserver les numéros de port que vous avez choisis.
+    - `HttpPort`: Valeur DWORD obligatoire. Contient le numéro de port que Device Portal va écouter pour les connexions HTTP.    
+    - `HttpsPort`: Valeur DWORD obligatoire. Contient le numéro de port que Device Portal va écouter pour les connexions HTTPS.
     
 Dans le chemin d’accès de la même clé de Registre, vous pouvez également désactiver l’obligation d’authentification :
-- `UseDefaultAuthorizer` - `0` pour désactivé, `1` pour activé.  
+- `UseDefaultAuthorizer` @ no__t-1 @ no__t-2 pour désactivé, `1` pour activé.  
     - Ce paramètre contrôle les deux exigences d’authentification de base pour chaque connexion et le transfert de HTTP vers HTTPS.  
     
 ### <a name="command-line-options-for-device-portal"></a>Options de ligne de commande pour le portail d’appareil
-À partir d’une invite de commandes d’administration, vous pouvez activer et configurer des parties du portail d’appareil. Pour afficher la dernière série de commandes prises en charge sur votre build, vous pouvez exécuter `webmanagement /?`
+À partir d’une invite de commandes d’administration, vous pouvez activer et configurer des parties du portail d’appareil. Pour afficher le dernier jeu de commandes pris en charge sur votre Build, vous pouvez exécuter `webmanagement /?`
 
 - `sc start webmanagement` ou `sc stop webmanagement` 
     - Activez ou désactivez le service. Le mode développeur doit toujours être activé. 
 - `-Credentials <username> <password>` 
-    - Définissez un nom d’utilisateur et un mot de passe pour le portail d’appareil. Le nom d’utilisateur doit être conforme aux normes de l’authentification de base. Par conséquent, il ne peut pas contenir de signe deux-points (:). Il doit, par ailleurs, comporter des caractères ASCII standard, par exemple [a-zA-Z0-9], car les navigateurs n’analysent pas le jeu de caractères complet de manière standard.  
+    - Définissez un nom d’utilisateur et un mot de passe pour le portail d’appareil. Le nom d’utilisateur doit être conforme aux normes d’authentification de base, et ne peut donc pas contenir de deux-points ( :) et doivent être créés à partir de caractères ASCII standard, par exemple, [a-zA-z0-9], car les navigateurs n’analysent pas le jeu de caractères complet de manière standard.  
 - `-DeleteSSL` 
     - Cela réinitialise le cache de certificat SSL utilisé pour les connexions HTTPS. Si vous rencontrez des erreurs de connexion TLS qui ne peuvent pas être évitées (par opposition à l’avertissement de certificat attendu), cette option peut résoudre le problème à votre place. 
 - `-SetCert <pfxPath> <pfxPassword>`
@@ -105,31 +105,31 @@ Dans le chemin d’accès de la même clé de Registre, vous pouvez également d
     - Exécutez une version autonome du portail d’appareil avec une configuration spécifique et des messages de débogage visibles. Cela est particulièrement utile pour la création d’un [plug-in empaqueté](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-plugin). 
     - Pour plus d’informations sur cette exécution en tant que système pour tester complètement votre plug-in empaqueté, voir [l’article du MSDN Magazine](https://msdn.microsoft.com/en-us/magazine/mt826332.aspx).
 
-## <a name="common-errors-and-issues"></a>Les erreurs et les problèmes courants
+## <a name="common-errors-and-issues"></a>Erreurs et problèmes courants
 
-Voici quelques erreurs courantes que vous pouvez rencontrer lorsque vous configurez le portail de l’appareil.
+Voici quelques-unes des erreurs courantes que vous pouvez rencontrer lors de la configuration du portail des appareils.
 
-### <a name="windowsupdatesearch-returns-invalid-number-of-updates-0x800f0950-cbseinvalidwindowsupdatecount"></a>WindowsUpdateSearch retourne le nombre de mises à jour non valide (0x800f0950 CBS_E_INVALID_WINDOWS_UPDATE_COUNT)
+### <a name="windowsupdatesearch-returns-invalid-number-of-updates-0x800f0950-cbs_e_invalid_windows_update_count"></a>WindowsUpdateSearch retourne un nombre non valide de mises à jour (0x800f0950 CBS_E_INVALID_WINDOWS_UPDATE_COUNT)
 
-Vous pouvez obtenir cette erreur lorsque vous tentez d’installer les packages de développeur sur une build de la version préliminaire de Windows 10. Ces packages de fonctionnalité-on-Demand (DOM) sont hébergés sur Windows Update et les télécharger sur les versions préliminaires nécessite que vous choisissez dans la version d’évaluation. Si votre installation n’est pas choisie dans la version d’évaluation pour la génération de droite et de la combinaison de l’anneau, la charge utile ne seront pas téléchargeable. Vérifiez les éléments suivants :
+Vous pouvez obtenir cette erreur lorsque vous tentez d’installer les packages de développement dans une version préliminaire de Windows 10. Ces packages de fonctionnalités à la demande (DOM) sont hébergés sur Windows Update et leur téléchargement sur des versions préliminaires requiert que vous vous abonniez à la fonctionnalité de vol. Si votre installation n’est pas en cours de vol pour la combinaison de construction et de sonnerie appropriée, la charge utile ne sera pas téléchargeable. Vérifiez les éléments suivants :
 
-1. Accédez à **Paramètres > mise à jour & sécurité > programme Insider de Windows** et vérifiez que le **compte de Windows Insider** section a vos informations de compte correct. Si vous ne voyez pas cette section, sélectionnez **lier un compte Windows Insider**, ajoutez votre compte de messagerie et vérifiez qu’il s’affiche sous le **compte de Windows Insider** en-tête (vous devrez peut-être sélectionner **Lier un compte Windows Insider** une seconde fois pour lien réellement un compte qui vient d’être ajouté).
+1. Accédez à **paramètres > mettre à jour & Security > programme Windows Insider** et vérifiez que la section **compte Windows Insider** contient vos informations de compte correctes. Si vous ne voyez pas cette section, sélectionnez **lier un compte Windows Insider**, ajoutez votre compte de messagerie et confirmez qu’il s’affiche sous le titre **compte Windows Insider** (vous devrez peut-être sélectionner **lier un compte Windows Insider** une deuxième fois pour Liez en fait un compte récemment ajouté).
  
-2. Sous **le type de contenu vous souhaitez recevoir ?** , assurez-vous que **cours de développement de Windows** est sélectionné.
+2. Sous **quel type de contenu souhaitez-vous recevoir ?** , assurez-vous que l’option **développement actif de Windows** est sélectionnée.
  
-3. Sous **rythme vous souhaitez obtenir de nouvelles builds ?** , assurez-vous que **Windows Insider rapide** est sélectionné.
+3. Sous **quel rythme voulez-vous obtenir de nouvelles builds ?** , assurez-vous que **Windows Insider Fast** est sélectionné.
  
-4. Vous devez maintenant être en mesure d’installer le FoDs. Si vous avez confirmé que vous êtes sur Windows Insider rapide et toujours ne peut pas installer le FoDs, veuillez fournir des commentaires et attacher les fichiers journaux sous **C:\Windows\Logs\CBS**.
+4. Vous devez maintenant être en mesure d’installer FoDs. Si vous avez confirmé que vous êtes sur Windows Insider rapidement et que vous ne pouvez toujours pas installer le FoDs, fournissez des commentaires et joignez les fichiers journaux sous **C:\Windows\Logs\CBS**.
 
-### <a name="sc-startservice-openservice-failed-1060-the-specified-service-does-not-exist-as-an-installed-service"></a>[SC] StartService : OpenService échec 1060 : Le service spécifié n’existe pas comme un service installé
+### <a name="sc-startservice-openservice-failed-1060-the-specified-service-does-not-exist-as-an-installed-service"></a>SC StartService ÉCHEC de OpenService 1060 : Le service spécifié n’existe pas en tant que service installé
 
-Vous pouvez obtenir cette erreur si les packages de développeur ne sont pas installés. Sans les packages de développeur, il n’existe aucun service de gestion web. Réessayez d’installer les packages de développeur.
+Vous pouvez recevoir cette erreur si les packages de développement ne sont pas installés. Sans les packages de développement, il n’existe aucun service de gestion Web. Essayez de réinstaller les packages de développement.
 
-### <a name="cbs-cannot-start-download-because-the-system-is-on-metered-network-cbsemeterednetwork"></a>CBS ne peut pas démarrer de téléchargement, car le système est sur le réseau limitées (CBS_E_METERED_NETWORK)
+### <a name="cbs-cannot-start-download-because-the-system-is-on-metered-network-cbs_e_metered_network"></a>CBS ne peut pas démarrer le téléchargement, car le système est sur un réseau contrôlé (CBS_E_METERED_NETWORK)
 
-Vous pouvez obtenir cette erreur si vous êtes sur une connexion internet limitée. Il se peut que vous ne pourrez pas télécharger les packages de développeur sur une connexion limitée.
+Vous pouvez obtenir cette erreur si vous utilisez une connexion Internet facturée à l’accès. Vous ne pourrez pas télécharger les packages de développement sur une connexion limitée.
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Vue d’ensemble de Windows Device Portal](device-portal.md)
-* [Core de portail appareil référence de l’API](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)
+* [Vue d’ensemble du portail de périphériques Windows](device-portal.md)
+* [Informations de référence sur l’API principale du portail des appareils](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, sécurité
 ms.localizationpriority: medium
-ms.openlocfilehash: df1660f16127c2bc33a893a6e411b12e432272a1
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: b350aa58d7fed0bb78965dcd4742d759b8e9d988
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372634"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282447"
 ---
 # <a name="authentication-and-user-identity"></a>Authentification et identité des utilisateurs
 
@@ -21,7 +21,7 @@ Les applications de plateforme Windows universelle (UWP) disposent de plusieurs 
 
 Pour les connexions d’applications régulières aux services de fournisseur d’identité tiers, tels que Facebook, Twitter, Flickr et ainsi de suite, utilisez le [service Broker d’authentification web](web-authentication-broker.md). Pour plus de commodité, utilisez la fonctionnalité [Stockage sécurisé des informations d’identification](credential-locker.md) pour enregistrer et rendre itinérantes les informations d’ouverture de session de l’utilisateur.
 
-Les entreprises à l’aide de Windows 10 doivent sérieusement envisager d’utiliser [Microsoft Passport et Windows Hello](microsoft-passport.md), ce qui permet une authentification à deux facteurs hautement sécurisée. Si l’utilisation de Microsoft Passport se révèle impossible, l’emploi de [cartes à puce](smart-cards.md) et de l’[empreinte digitale biométrique](fingerprint-biometrics.md) peut contribuer à ajouter une couche de sécurité supplémentaire.
+Les entreprises qui utilisent Windows 10 doivent fortement envisager d’utiliser [Microsoft Passport et Windows Hello](microsoft-passport.md), ce qui permet une authentification à deux facteurs hautement sécurisée. Si l’utilisation de Microsoft Passport se révèle impossible, l’emploi de [cartes à puce](smart-cards.md) et de l’[empreinte digitale biométrique](fingerprint-biometrics.md) peut contribuer à ajouter une couche de sécurité supplémentaire.
 
 <table>
 <tr><th>Rubrique</th><th>Description</th></tr>
@@ -33,8 +33,8 @@ Les entreprises à l’aide de Windows 10 doivent sérieusement envisager d’ut
 <tr><td><a href="microsoft-passport-login-auth-service.md">Créer un service de connexion Microsoft Passport</a></td><td>Deuxième partie de la procédure complète sur l’utilisation de Microsoft Passport comme alternative aux systèmes d’authentification par nom d’utilisateur et mot de passe traditionnels dans des applications UWP Windows 10.</td></tr>
 <tr><td><a href="smart-cards.md">Cartes à puce</a></td><td>Cette rubrique explique comment les applications peuvent utiliser des cartes à puce pour connecter des utilisateurs à des services réseau sécurisés, notamment comment accéder aux lecteurs de carte à puce physiques, créer des cartes à puce virtuelles, communiquer avec des cartes à puce, authentifier des utilisateurs, réinitialiser des PIN d’utilisateur, et supprimer ou déconnecter des cartes à puce.</td></tr>
 <tr><td><a href="share-certificates.md">Partager des certificats entre applications</a></td><td>Les applications UWP qui nécessitent une authentification sécurisée en plus de l’identifiant et du mot de passe de l’utilisateur peuvent utiliser des certificats à des fins d’authentification. L’authentification par certificat permet d’authentifier un utilisateur avec un niveau de confiance élevé. Dans certains cas, un groupe de services peut authentifier un utilisateur pour plusieurs applications. Cet article montre comment authentifier plusieurs applications à l’aide du même certificat. Vous apprendrez également à écrire du code pour permettre à un utilisateur d’importer un certificat fourni pour accéder à des services web sécurisés.</td></tr>
-<tr><td><a href="companion-device-unlock.md">Déverrouillage Windows avec appareils IoT complémentaires</a></td><td>Un appareil complémentaire est un appareil pouvant agir avec votre ordinateur de bureau Windows 10 pour améliorer l’expérience d’authentification utilisateur. S’appuyant sur l’infrastructure Companion Device Framework, un dispositif complémentaire peut enrichir considérablement l’expérience Microsoft Passport, même en l’absence de Windows Hello (par exemple, si l’ordinateur de bureau Windows 10 ne dispose pas d’appareil photo pour l’authentification faciale ou d’un lecteur d’empreintes digitales).</td></tr>
-<tr><td><a href="web-account-manager.md">Responsable de compte Web</a></td><td>Cet article explique comment afficher la classe AccountsSettingsPane et connecter votre application de plateforme Windows universelle (UWP) à des fournisseurs d’identité externes, tels que Microsoft ou Facebook, à l’aide des nouvelles API du Gestionnaire de comptes web de Windows 10. Vous découvrirez comment demander l’autorisation d’un utilisateur pour utiliser son compte Microsoft, obtenir un jeton d’accès et l’utiliser pour effectuer des opérations de base (par exemple, obtenir des données de profil ou télécharger des fichiers dans OneDrive). </td></tr>
+<tr><td><a href="companion-device-unlock.md">Déverrouillage Windows avec appareils IoT complémentaires</a></td><td>Un appareil complémentaire est un appareil pouvant agir avec votre ordinateur de bureau Windows 10 pour améliorer l’expérience d’authentification utilisateur. À l’aide de l’infrastructure de l’appareil, un appareil auxiliaire peut fournir une expérience riche pour Microsoft Passport même lorsque Windows Hello n’est pas disponible (par exemple, si le bureau Windows 10 ne dispose pas d’une caméra pour l’authentification face ou le lecteur d’empreinte digitale, pour exemple).</td></tr>
+<tr><td><a href="web-account-manager.md">Gestionnaire de compte Web</a></td><td>Cet article explique comment afficher la classe AccountsSettingsPane et connecter votre application de plateforme Windows universelle (UWP) à des fournisseurs d’identité externes, tels que Microsoft ou Facebook, à l’aide des nouvelles API du Gestionnaire de comptes web de Windows 10. Vous découvrirez comment demander l’autorisation d’un utilisateur pour utiliser son compte Microsoft, obtenir un jeton d’accès et l’utiliser pour effectuer des opérations de base (par exemple, obtenir des données de profil ou télécharger des fichiers dans OneDrive). </td></tr>
 <tr><td><a href="web-authentication-broker.md">Service Broker d’authentification web</a></td><td>Cet article explique comment connecter votre application à un fournisseur d’identité en ligne qui utilise des protocoles d’authentification comme OpenID ou OAuth, par exemple, Facebook, Twitter, Flickr, Instagram, etc. La méthode <a href="https://docs.microsoft.com/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync">AuthenticateAsync</a> envoie une demande au fournisseur d’identité en ligne, puis obtient un jeton d’accès en retour qui décrit les ressources du fournisseur auxquelles l’application a accès.</td></tr>
 </table>
 

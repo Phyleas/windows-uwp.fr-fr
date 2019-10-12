@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, rendez-vous, calendrier
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e4eeaf486738996ce5a860f567fc18a7d41cca2
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 5fd4fc62a393e6439458ddc38f37bbb0680fb9b1
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361253"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282234"
 ---
 # <a name="manage-appointments"></a>Gérer des rendez-vous
 
@@ -156,7 +156,7 @@ private void Create-Click(object sender, RoutedEventArgs e)
         }
         else
         {
-            // Organizer Address (e.g. Email Address)
+            // Organizer Address (for example, Email Address)
             organizer.Address = OrganizerAddressTextBox.Text;
 
             if (organizer.Address.Length > 321)
@@ -192,7 +192,7 @@ private void Create-Click(object sender, RoutedEventArgs e)
         }
         else
         {
-            // Invitee Address (e.g. Email Address)
+            // Invitee Address (for example, Email Address)
             invitee.Address = InviteeAddressTextBox.Text;
 
             if (invitee.Address.Length > 321)
@@ -282,7 +282,7 @@ private async void Add-Click(object sender, RoutedEventArgs e)
 }
 ```
 
-**Remarque**  applications pour Windows Phone Store, [ **ShowAddAppointment** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) fonctionne exactement comme [ **ShowEditNewAppointment** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) dans la mesure où la boîte de dialogue affichée pour l’ajout du rendez-vous est modifiable.
+**Notez**  pour les applications du windows Store Windows Phone, [**ShowAddAppointment**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) fonctionne comme [**ShowEditNewAppointment**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) en ce que la boîte de dialogue qui s’affiche pour ajouter le rendez-vous est modifiable.
 
 ## <a name="replace-an-appointment-in-the-users-calendar"></a>Remplacer un rendez-vous dans le calendrier d’un utilisateur
 
@@ -507,7 +507,7 @@ private void Create-Click(object sender, RoutedEventArgs e)
 
 ## <a name="add-a-new-editable-appointment"></a>Ajouter un rendez-vous modifiable
 
-[**ShowEditNewAppointmentAsync** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) fonctionne comme [ **ShowAddAppointmentAsync** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) , sauf que la boîte de dialogue pour ajouter le rendez-vous est modifiable afin que l’utilisateur peut modifier. les données de rendez-vous avant de l’enregistrer.
+[**ShowEditNewAppointmentAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) fonctionne de la même façon que [**ShowAddAppointmentAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) , sauf que la boîte de dialogue permettant d’ajouter le rendez-vous est modifiable afin que l’utilisateur puisse modifier les données de rendez-vous avant de l’enregistrer.
 
 ``` cs
 private async void AddAndEdit-Click(object sender, RoutedEventArgs e)
@@ -542,7 +542,7 @@ private async void AddAndEdit-Click(object sender, RoutedEventArgs e)
 
 ## <a name="show-appointment-details"></a>Afficher les détails des rendez-vous
 
-[**ShowAppointmentDetailsAsync** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showappointmentdetailsasync) , le système afficher les détails du rendez-vous spécifié. Une application qui implémente des calendriers d’application peut s’activer pour afficher les détails des rendez-vous dans ses propres calendriers. Sinon, le système affiche les détails des rendez-vous. Une surcharge de la méthode qui accepte un argument de date de début est fournie pour afficher les détails d’une instance de rendez-vous périodique.
+[**ShowAppointmentDetailsAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showappointmentdetailsasync) indique au système d’afficher les détails du rendez-vous spécifié. Une application qui implémente des calendriers d’application peut s’activer pour afficher les détails des rendez-vous dans ses propres calendriers. Sinon, le système affiche les détails des rendez-vous. Une surcharge de la méthode qui accepte un argument de date de début est fournie pour afficher les détails d’une instance de rendez-vous périodique.
 
 ```cs
 private async void ShowAppointmentDetails-Click(object sender, RoutedEventArgs e)

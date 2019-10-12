@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 81b3930c-6af9-406d-9d1e-8ee6a13ec38a
 ms.localizationpriority: medium
-ms.openlocfilehash: 16996a8706018bde89d3eb08249ee496d7e25bb9
-ms.sourcegitcommit: e7c95c156f970fe9fdf7ff98ea81508360a64c12
+ms.openlocfilehash: f6eda179a3fea0c24f3a9de0d674800bd3d2015c
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172836"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282318"
 ---
 # <a name="brokered-windows-runtime-components-for-a-side-loaded-uwp-app"></a>Composants de Windows Runtime réparties pour une application UWP chargée
 
@@ -181,7 +181,7 @@ La catégorie est inProcessServer, car il existe plusieurs entrées dans la cat�
 
 La section <ActivatableClass> est identique à une classe Runtime véritablement in-process préférée par un composant Windows Runtime dans le package d’application. <ActivatableClassAttribute> est un nouvel élément, et les attributs Name = "DesktopApplicationPath" et type = "String" sont obligatoires et invariants. L’attribut Value pointe vers l’emplacement où réside le fichier winmd d’implémentation du composant de bureau (décrit en détail dans la section suivante). Chaque classe Runtime préférée par le composant de bureau doit avoir son arborescence d’éléments <ActivatableClass>. ActivatableClassId doit correspondre au nom complet d’espace de noms de la classe Runtime.
 
-Comme indiqué dans la section « Définition du contrat », une référence de projet au winmd de référence du composant de bureau doit être créée. Le système de projet Visual Studio crée une structure de répertoires à deux niveaux portant le même nom. Dans l’exemple, il s’agit de EnterpriseIPCApplication @ no__t-0EnterpriseIPCApplication. La référence **winmd** est manuellement copiée dans le répertoire de deuxième niveau, puis la boîte de dialogue Références du projet est utilisée (cliquez sur le bouton **Parcourir..** ) pour rechercher et référencer ce **winmd**. L’espace de noms de premier niveau du composant de bureau (Fabrikam) doit ensuite s’afficher sous la forme d’un nœud de premier niveau dans la partie Références du projet.
+Comme indiqué dans la section « Définition du contrat », une référence de projet au winmd de référence du composant de bureau doit être créée. Le système de projet Visual Studio crée une structure de répertoires à deux niveaux portant le même nom. Dans l’exemple, il s’agit de EnterpriseIPCApplication @ no__t-0EnterpriseIPCApplication. La référence **winmd** est manuellement copiée dans le répertoire de deuxième niveau, puis la boîte de dialogue Références du projet est utilisée (cliquez sur le bouton **Parcourir..** ) pour rechercher et référencer ce **winmd**. Après cela, l’espace de noms de niveau supérieur du composant Desktop (par exemple, Fabrikam) doit apparaître en tant que nœud de niveau supérieur dans la partie références du projet.
 
 >**Remarque** Vous devez absolument utiliser la **reference winmd** dans l’application installée hors Windows Store. Si vous placez accidentellement l’**implementation winmd** dans le répertoire de l’application installée hors Windows Store et que vous y faites référence, vous recevrez probablement une erreur de type « IStringable introuvable ». Cela indique à coup sûr qu’un **winmd** incorrect a été référencé. Les règles post-build dans l’application serveur IPC (décrites dans la section suivante) placent ces deux **winmd** dans des répertoires distincts.
 
@@ -491,7 +491,7 @@ Suivez les étapes ci-dessous, le composant serveur s’appelle **MyWinRTCompone
 
 a) Dlldata.c
 
-b) Un fichier d’en-tête (MyWinRTComponent.h)
+b) un fichier d’en-tête (par exemple, MyWinRTComponent. h)
 
 c) un fichier \* @ no__t-1i. c (par exemple, MyWinRTComponent @ no__t-2i. c)
 

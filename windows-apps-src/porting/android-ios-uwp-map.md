@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 082736c8-2ac3-41b3-b246-e705edc23f34
 ms.localizationpriority: medium
-ms.openlocfilehash: ebfaab1c8fe3ec3cf8893022a8f4e8dae7deac63
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: f8ace0d56e6e647ed5f977cbe6860d8f91bb2b5f
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340583"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282360"
 ---
 # <a name="windows-apps-concept-mapping-for-android-and-ios-developers"></a>Mappage de concepts d’applications Windows pour développeurs iOS et Android
 
@@ -87,7 +87,7 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 <td align="left">Vous pouvez créer des <strong><a href="https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style">styles</a></strong> réutilisables, qui peuvent être appliqués à plusieurs contrôles et stockés dans un <strong><a href="https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary">ResourceDictionary</a></strong> pour faciliter leur réutilisation.<br/><br/><a href="https://docs.microsoft.com/previous-versions/windows/apps/hh465381(v=win.10)">Démarrage rapide : Stylisation des contrôles @ no__t-0</td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Modification de la structure visuelle des contrôles.</strong>  <br><br>Personnalisation de la structure visuelle d’un contrôle au-delà de la simple modification des propriétés ou des attributs, par exemple, déplacement d’un texte de case à cocher sous cette dernière.</td>
+<td align="left"><strong>Modification de la structure visuelle des contrôles.</strong>  <br><br>Personnaliser la structure visuelle d’un contrôle au-delà de la simple modification des propriétés ou des attributs, par exemple, en déplaçant le texte de la case à cocher sous la case à cocher.</td>
 <td align="left">Il n’existe aucune méthode de modification simple de la structure visuelle des contrôles dans Android.</td>
 <td align="left">Il n’existe aucune méthode de modification simple de la structure visuelle des contrôles dans iOS.</td>
 <td align="left">Pour personnaliser la structure visuelle d’un contrôle, vous pouvez copier et modifier son <strong><a href="https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate">modèle de contrôle</a></strong> dans le balisage XAML.<br/><br/><a href="https://docs.microsoft.com/previous-versions/windows/apps/hh465374(v=win.10)">Démarrage rapide : Modèles de contrôle @ no__t-0</td>
@@ -348,7 +348,7 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 <td align="left"><strong>Programmation asynchrone.</strong>  <br><br>Éviter la complexité des threads en tirant parti des modèles de programmation asynchrones pour garantir la réactivité du thread de l’interface utilisateur.</td>
 <td align="left">L’utilisation des <strong>threads est requise</strong> pour créer vos propres classes asynchrones. Certaines classes intégrées sont asynchrones.</td>
 <td align="left">L’utilisation des <strong>threads est requise</strong> pour créer vos propres classes asynchrones. Certaines classes intégrées sont asynchrones.</td>
-<td align="left">Vous pouvez utiliser les modèles asynchrones pour éviter le blocage du thread principal lorsque vous créez vos propres API, par exemple, à l’aide de <strong>async</strong> et <strong>await</strong> en C# et Visual Basic. Vous pouvez utiliser les API asynchrones intégrées qui se terminent par le mot <strong>Async</strong>.<br/><br/><a href="https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-universal-windows-platform-apps">Programmation asynchrone</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic">Appeler des API asynchrones en C# ou Visual Basic</a></td>
+<td align="left">Vous pouvez utiliser des modèles asynchrones pour éviter de bloquer le thread principal lorsque vous créez vos propres API, par exemple en utilisant Async C# et <strong>await</strong> dans et Visual Basic. Vous pouvez utiliser les API asynchrones intégrées qui se terminent par le mot <strong>Async</strong>.<br/><br/><a href="https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-universal-windows-platform-apps">Programmation asynchrone</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic">Appeler des API asynchrones en C# ou Visual Basic</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>Optimisation de la vue liste.</strong>  <br><br>Modèles intégrés permettant d’optimiser des listes de données, qui sont souvent peu performantes pour l’affichage de grandes quantités de données</td>

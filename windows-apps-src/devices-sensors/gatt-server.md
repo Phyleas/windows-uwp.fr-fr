@@ -5,19 +5,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f59ae45486ee72f9d901898f6b03674e6b3e299c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 3cded3ee7fb2cc3157caa61939e022c3869f5232
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370088"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282372"
 ---
 # <a name="bluetooth-gatt-server"></a>Serveur GATT Bluetooth
 
 
 **API importantes**
-- [**Windows.Devices.Bluetooth**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth)
-- [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile)
+- [**Windows. Devices. Bluetooth**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth)
+- [**Windows. Devices. Bluetooth. GenericAttributeProfile**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile)
 
 
 Cet article présente les API du serveur de profil d’attribut générique (GATT) Bluetooth pour les applications de plateforme Windows universelle (UWP), ainsi qu’un exemple de code illustrant les tâches de serveur GATT courantes : 
@@ -31,7 +31,7 @@ Cet article présente les API du serveur de profil d’attribut générique (GAT
 Windows joue généralement le rôle de client. Toutefois, de nombreux scénarios nécessitent que Windows se comporte également comme un serveur GATT Bluetooth Low Energy (BLE). La quasi-totalité des scénarios relatifs aux appareils IoT, ainsi que la plupart des communications BLE multiplateforme, exigent que Windows joue le rôle de serveur GATT. En outre, l’envoi de notifications aux appareils wearable à proximité constitue un scénario de plus en plus courant qui nécessite également l’emploi de cette technologie.  
 > Avant de poursuivre, veillez à assimiler tous les concepts abordés dans la [documentation relative au client GATT](gatt-client.md).  
 
-Les opérations de serveur concerneront le fournisseur de services et l’objet GattLocalCharacteristic. Ces deux classes fournit les fonctionnalités nécessaires pour déclarer, implémenter et exposer une hiérarchie de données à un périphérique distant.
+Les opérations de serveur concerneront le fournisseur de services et l’objet GattLocalCharacteristic. Ces deux classes fournissent les fonctionnalités nécessaires à la déclaration, à l’implémentation et à l’exposition d’une hiérarchie de données à un appareil distant.
 
 ## <a name="define-the-supported-services"></a>Définir les services pris en charge
 Votre application peut déclarer un ou plusieurs services qui seront publiés par Windows. Chaque service est identifié de manière unique par un identificateur unique universel (UUID). 
@@ -40,7 +40,7 @@ Votre application peut déclarer un ou plusieurs services qui seront publiés pa
 Chacun des services, caractéristiques et descripteurs est défini par son propre UUID 128 bits unique.
 > Toutes les API Windows utilisent le terme GUID, mais la norme Bluetooth désigne cet identificateur sous le terme d’UUID. Dans notre cas, ces deux termes sont interchangeables, et nous continuerons donc à employer le terme UUID. 
 
-Si l’attribut est standard et défini par le groupe d’intérêt spécial (SIG) Bluetooth, un identificateur court 16 bits lui est associé (par exemple, l’UUID du niveau de batterie est 0000**2A19**-0000-1000-8000-00805F9B34FB, et l’ID court correspondant est 0x2A19). Ces UUID standard sont utilisés dans les articles concernant [GattServiceUuids](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattserviceuuids) et [GattCharacteristicUuids](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattcharacteristicuuids).
+Si l’attribut est standard et défini par le SIG Bluetooth, il aura également un ID abrégé de 16 bits correspondant (par exemple, l’UUID de niveau de batterie est 0000**2A19**-0000-1000-8000-00805F9B34FB et l’ID abrégé est 0x2A19). Ces UUID standard sont utilisés dans les articles concernant [GattServiceUuids](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattserviceuuids) et [GattCharacteristicUuids](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattcharacteristicuuids).
 
 Si votre application implémente son propre service personnalisé, vous devrez générer un UUID personnalisé. Vous pouvez effectuer cette opération très facilement dans Visual Studio à l’aide des commandes Outils -> Créer un Guid (en utilisant l’option 5 pour obtenir ce GUID au format « xxxxxxxx-xxxx-...xxxx »). Vous pourrez alors utiliser cet UUID pour déclarer de nouveaux services, caractéristiques ou descripteurs locaux.
 
@@ -68,7 +68,7 @@ Selon les éléments GattLocalCharacteristicParameters fournis lors de la créat
 
 > Notez que la diffusion n’est pas prise en charge pour l’instant.  La définition de la propriété de caractéristique GATT sur la valeur Broadcast entraînera une exception.
 
-### <a name="build-up-the-hierarchy-of-services-and-characteristics"></a>Générer la hiérarchie des services et les caractéristiques
+### <a name="build-up-the-hierarchy-of-services-and-characteristics"></a>Développer la hiérarchie des services et caractéristiques
 L’objet GattServiceProvider permet de créer et de publier la définition des services principaux racines.  Chaque service requiert son propre objet ServiceProvider qui accepte un GUID : 
 
 ```csharp
@@ -144,8 +144,8 @@ GattServiceProviderAdvertisingParameters advParameters = new GattServiceProvider
 };
 serviceProvider.StartAdvertising(advParameters);
 ```
-- **IsDiscoverable**: Publie le nom convivial pour les appareils distants dans la publication, en rendant l’appareil détectable.
-- **IsConnectable**:  Publie une publication connectable pour une utilisation dans le rôle de périphérique.
+- **IsDiscoverable**: Publie le nom convivial sur les appareils distants dans la publication, ce qui rend l’appareil détectable.
+- **IsConnectable**:  Publie une publication connectable à utiliser dans le rôle périphérique.
 
 > Lorsqu’un service est à la fois détectable et connectable, le système ajoute l’UUID du service au paquet d’annonce.  Le paquet d’annonce ne comprend que 31 octets, et un UUID 128 bits utilise 16 d’entre eux.
 

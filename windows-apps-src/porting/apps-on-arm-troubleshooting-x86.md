@@ -5,12 +5,12 @@ ms.date: 05/09/2018
 ms.topic: article
 keywords: windows 10 s, toujours connecté, émulation x86 sur ARM, résolution des problèmes
 ms.localizationpriority: medium
-ms.openlocfilehash: 480d9cd6508b149e0d4966bae8835c05d30db7af
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: 20aa5943fc1f3f0176cde33983da1fceca8a49ba
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682747"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282348"
 ---
 # <a name="troubleshooting-x86-desktop-apps"></a>Résolution des problèmes relatifs aux applications de bureau x86
 >[!IMPORTANT]
@@ -40,7 +40,7 @@ Une application est susceptible de disposer les clés de registre sous l'afficha
 Tous les pilotes en mode noyau, les pilotes [Infrastructure de pilote en mode utilisateur (UMDF)](https://docs.microsoft.com/windows-hardware/drivers/wdf/overview-of-the-umdf) et les pilotes d'impression doivent être compilés pour correspondre à l'architecture du système d'exploitation. Si une application x86 dispose d’un pilote, ce dernier doit être recompilé pour ARM64. L'application x86 peut très bien s'exécuter sous émulation. Néanmoins, son pilote devra être recompilé pour ARM64, et toute expérience d'application dépendant du pilote sera indisponible. Pour plus d’informations sur la compilation de votre pilote pour ARM64, consultez [Génération de pilotes ARM64 avec le kit WDK](https://docs.microsoft.com/windows-hardware/drivers/develop/building-arm64-drivers).
 
 ## <a name="shell-extensions"></a>Extensions d'environnement 
-Les applications qui tentent d'attacher des composants Windows ou de charger leurs fichiers DLL dans des processus Windows devront recompiler ces DLL afin de les faire correspondre à l'architecture du système, c'est-à-dire ARM64. En général, ces éléments sont utilisés par les éditeurs de méthodes d'entrée (IME), par les technologies d'assistance et par les applications d'extension d'environnement (par ex., pour afficher les icônes de stockage cloud dans Explorer ou dans le menu local à clic droit). Pour savoir comment recompiler vos applications ou les DLL ARM64, voir le billet de blog [Version préliminaire de la prise en charge de Visual Studio du développement de Windows 10 sur ARM](https://blogs.windows.com/buildingapps/2018/05/08/visual-studio-support-for-windows-10-on-arm-development/). 
+Les applications qui tentent d'attacher des composants Windows ou de charger leurs fichiers DLL dans des processus Windows devront recompiler ces DLL afin de les faire correspondre à l'architecture du système, c'est-à-dire ARM64. En règle générale, ils sont utilisés par les éditeurs de méthode d’entrée (IME), les technologies d’assistance et les applications d’extension de Shell (par exemple, pour afficher les icônes de stockage cloud dans l’Explorateur ou un menu contextuel de clic droit). Pour savoir comment recompiler vos applications ou les DLL ARM64, voir le billet de blog [Version préliminaire de la prise en charge de Visual Studio du développement de Windows 10 sur ARM](https://blogs.windows.com/buildingapps/2018/05/08/visual-studio-support-for-windows-10-on-arm-development/). 
 
 ## <a name="debugging"></a>Débogage
 Pour étudier le comportement de votre application plus en détail, consultez [Débogage sur ARM](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugging-arm64) pour en savoir plus sur les outils et stratégies de débogage sur ARM.
@@ -51,4 +51,4 @@ La plateforme Windows Hypervisor n'est pas prise en charge sur la plateforme PC
 ## <a name="dynamic-code-generation"></a>Génération de code dynamique
 Les applications de bureau x86 sont émulées sur ARM64 par le système générant des instructions ARM64 au moment de l’exécution. Cela signifie que si une application de bureau x86 empêche la génération ou la modification de code dynamique dans son processus, cette application ne peut pas être prise en charge pour s’exécuter en tant que x86 sur ARM64. 
 
-Il s’agit d’une atténuation de la sécurité que certaines applications activent sur leur processus `ProcessDynamicCodePolicy` à l’aide de l’API [SetProcessMitigationPolicy](https://docs.microsoft.com/en-us/windows/desktop/api/processthreadsapi/nf-processthreadsapi-setprocessmitigationpolicy) avec l’indicateur. Pour s’exécuter correctement sur ARM64 en tant que processus x86, cette stratégie d’atténuation doit être désactivée. 
+Il s’agit d’une atténuation de la sécurité que certaines applications activent sur leur processus à l’aide de l’API [SetProcessMitigationPolicy](https://docs.microsoft.com/en-us/windows/desktop/api/processthreadsapi/nf-processthreadsapi-setprocessmitigationpolicy) avec l’indicateur `ProcessDynamicCodePolicy`. Pour s’exécuter correctement sur ARM64 en tant que processus x86, cette stratégie d’atténuation doit être désactivée. 

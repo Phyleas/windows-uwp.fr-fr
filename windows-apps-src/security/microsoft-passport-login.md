@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, sécurité
 ms.localizationpriority: medium
-ms.openlocfilehash: 24ae3fb7442ac955b5edf4127dfdf66176c81a43
-ms.sourcegitcommit: 4ca51472d0474be96fa3184e311b729f58998234
+ms.openlocfilehash: 8248e17a342563a0746e3c54c3a69a52f027d072
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67399630"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282436"
 ---
 # <a name="create-a-windows-hello-login-app"></a>Créer une application de connexion Windows Hello
 
@@ -24,16 +24,16 @@ Avant de commencer, consultez la vue d’ensemble [Windows Hello](microsoft-pass
 ## <a name="get-started"></a>Prise en main
 
 
-Pour créer ce projet, il vous faut connaître C# et XAML. Vous devez également être à l’aide de Visual Studio 2015 (Community Edition ou version ultérieure), ou une version ultérieure de Visual Studio, sur un ordinateur Windows 10. Bien que Visual Studio 2015 est la version minimale requise, nous vous recommandons d’utiliser la dernière version de Visual Studio pour les dernières mises à jour de sécurité et de développement.
+Pour créer ce projet, il vous faut connaître C# et XAML. Vous devez également utiliser Visual Studio 2015 (édition Community ou supérieure) ou une version ultérieure de Visual Studio sur un ordinateur Windows 10. Alors que Visual Studio 2015 est la version minimale requise, nous vous recommandons d’utiliser la dernière version de Visual Studio pour les dernières mises à jour de sécurité et de développement.
 
--   Ouvrez Visual Studio et sélectionnez Fichier > Nouveau > projet.
+-   Ouvrez Visual Studio et sélectionnez Fichier > nouveau projet >.
 -   Une fenêtre Nouveau projet s’ouvre. Navigation vers Modèles &gt; Visual C#.
 -   Choisissez une application vide (Windows universelle) et appelez-la « PassportLogin ».
 -   Générez et exécutez la nouvelle application (F5). Une fenêtre vide doit s’afficher sur l’écran. Fermez l’application.
 
 ![Nouveau projet Windows Hello](images/passport-login-1.png)
 
-## <a name="exercise-1-login-with-microsoft-passport"></a>Exercice 1 : Connexion avec Microsoft Passport
+## <a name="exercise-1-login-with-microsoft-passport"></a>Exercice 1 : Se connecter avec Microsoft Passport
 
 
 Dans cet exercice, vous découvrirez comment vérifier que Windows Hello est bien installé sur l’ordinateur et comment vous connecter à un compte à l’aide de Windows Hello.
@@ -490,7 +490,7 @@ Dans cet exercice, vous découvrirez comment vérifier que Windows Hello est bie
 
     ![Invite de connexion Windows Hello](images/passport-login-8.png)
 
-## <a name="exercise-2-welcome-and-user-selection-pages"></a>Exercice 2 : Bienvenue et Pages de sélection de l’utilisateur
+## <a name="exercise-2-welcome-and-user-selection-pages"></a>Exercice 2 : Pages d’accueil et de sélection de l’utilisateur
 
 
 Cet exercice est la suite de l’exercice précédent. Lorsqu’un utilisateur réussit à se connecter, il arrive sur une page d’accueil sur laquelle il peut se déconnecter ou supprimer son compte. Puisque Windows Hello crée une clé pour chaque ordinateur, un écran de sélection utilisateur affichant tous les utilisateurs qui se sont connectés à cet ordinateur peut être créé. Un utilisateur peut ensuite sélectionner l’un de ces comptes et accéder directement à l’écran d’accueil sans devoir saisir de nouveau un mot de passe, puisqu’il a déjà été authentifié pour accéder à l’ordinateur.
@@ -577,7 +577,7 @@ Cet exercice est la suite de l’exercice précédent. Lorsqu’un utilisateur r
         if (keyOpenResult.Status == KeyCredentialStatus.Success)
         {
             // In the real world you would send key information to server to unregister
-            //e.g. RemovePassportAccountOnServer(account);
+            //for example, RemovePassportAccountOnServer(account);
         }
 
         // Then delete the account from the machines list of Passport Accounts
@@ -815,7 +815,7 @@ Cet exercice est la suite de l’exercice précédent. Lorsqu’un utilisateur r
             // If it does here you would Request a challenge from the Server. The client would sign this challenge and the server
             // would check the signed challenge. If it is correct it would allow the user access to the backend.
             // You would likely make a new method called RequestSignAsync to handle all this
-            // e.g. RequestSignAsync(openKeyResult);
+            // for example, RequestSignAsync(openKeyResult);
             // Refer to the second Microsoft Passport sample for information on how to do this.
 
             // For this sample there is not concept of a server implemented so just return true.
@@ -876,7 +876,7 @@ Cet exercice est la suite de l’exercice précédent. Lorsqu’un utilisateur r
 
     ![Liste de sélection des utilisateurs Windows Hello](images/passport-login-10.png)
 
-## <a name="exercise-3-registering-a-new-windows-hello-user"></a>Exercice 3 : Inscription d’un utilisateur Windows Hello nouveau
+## <a name="exercise-3-registering-a-new-windows-hello-user"></a>Exercice 3 : Inscription d’un nouvel utilisateur Windows Hello
 
 
 Dans cet exercice, vous créerez une page pour créer un compte avec Windows Hello. Son fonctionnement sera identique à celui de la page de connexion. La page de connexion est implémentée pour un utilisateur existant qui migre pour utiliser Windows Hello. Une page PassportRegister crée l’inscription auprès de Windows Hello pour un nouvel utilisateur.

@@ -4,14 +4,14 @@ title: Device Portal pour appareils mobiles
 description: Découvrez comment Windows Device Portal vous permet de configurer et de gérer à distance votre appareil mobile.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, le portail de l’appareil
+keywords: Windows 10, UWP, portail des appareils
 ms.localizationpriority: medium
-ms.openlocfilehash: 879f4b9fd8806565eedeabda95f0c24c5b7931d7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: fb9cd2861fe826d9e8d112f2729d2922c68194ce
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57597224"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72281893"
 ---
 # <a name="device-portal-for-mobile"></a>Device Portal pour appareils mobiles
 
@@ -31,9 +31,9 @@ La première fois que vous vous connectez à Device Portal, vous êtes invité �
 
 ![Paramètres de détection d’appareils en mode développeur](images/device-portal/mob-dev-mode-pairing.png)
 
-Vous pouvez choisir à partir de 3 façons de vous connecter au portail de l’appareil : Port USB, un hôte local et sur le réseau local (y compris les VPN et la connexion).
+Vous pouvez choisir entre trois méthodes pour vous connecter au portail de l’appareil : USB, hôte local et sur le réseau local (y compris VPN et connexion).
 
-**Se connecter au portail de l’appareil**
+**Pour vous connecter au portail de l’appareil**
 
 1. Dans votre navigateur, entrez l’adresse indiquée ici selon le type de connexion que vous utilisez.
 
@@ -49,7 +49,7 @@ Vous pouvez choisir à partir de 3 façons de vous connecter au portail de l’a
 
     utilisez cette adresse pour établir la connexion par le biais d’un réseau local.
 
-    L’adresse IP du téléphone est affichée dans les paramètres Device Portal sur le téléphone. Une connexion HTTPS est requise pour l’authentification et la communication sécurisée. Le nom d’hôte (modifiable dans Paramètres > Système > À propos de) peut également être utilisé pour accéder au portail d’appareil sur le réseau local (par exemple http://Phone360), ce qui est utile pour les appareils qui peuvent changer fréquemment de réseau ou d’adresse IP, ou qui doivent être partagés). 
+    L’adresse IP du téléphone est affichée dans les paramètres Device Portal sur le téléphone. Une connexion HTTPS est requise pour l’authentification et la communication sécurisée. Le nom d’hôte (modifiable dans Paramètres > système > à propos de) peut également être utilisé pour accéder au portail des appareils sur le réseau local (par exemple, http://Phone360), ce qui est utile pour les appareils qui peuvent modifier fréquemment des réseaux ou des adresses IP, ou doivent être partagés. 
 
 2. Appuyez sur le bouton Coupler de votre téléphone pour générer et afficher le code de sécurité requis.
 
@@ -81,7 +81,7 @@ Device Portal sur les appareils mobiles propose les pages standard. Pour obtenir
 - Appareils
 - Mise en réseau
 
-## <a name="see-also"></a>Voir également
+## <a name="see-also"></a>Voir aussi
 
-* [Vue d’ensemble de Windows Device Portal](device-portal.md)
-* [Core de portail appareil référence de l’API](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)
+* [Vue d’ensemble du portail de périphériques Windows](device-portal.md)
+* [Informations de référence sur l’API principale du portail des appareils](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

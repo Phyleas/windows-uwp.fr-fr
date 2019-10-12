@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, sécurité
 ms.localizationpriority: medium
-ms.openlocfilehash: 98251ecba05dd27cbe3112a94b6cfcd36440d380
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 6d15173471b7f1ef3f1c6b042671eb85b7a53dc4
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371229"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282343"
 ---
 # <a name="create-a-windows-hello-login-service"></a>Créer un service de connexion Windows Hello
 
@@ -661,7 +661,7 @@ Dans cet exercice, vous allez modifier les vues et les classes d’assistance c�
             //If it does here you would Request a challenge from the Server. The client would sign this challenge and the server
             //would check the signed challenge. If it is correct it would allow the user access to the backend.
             //You would likely make a new method called RequestSignAsync to handle all this
-            //e.g. RequestSignAsync(openKeyResult);
+            //for example, RequestSignAsync(openKeyResult);
             //Refer to the second Windows Hello sample for information on how to do this.
 
             //For this sample there is not concept of a server implemented so just return true.
@@ -804,7 +804,7 @@ Dans cet exercice, vous allez modifier les vues et les classes d’assistance c�
     }
     ```
 
--   Comme vous l’utiliserez le AuthService lors de la suppression d’un compte de la référence à la AccountHelper dans le bouton\_oublier\_utilisateur\_cliquez méthode peut être supprimée. La méthode doit maintenant se présenter comme suit.
+-   Comme vous allez utiliser le AuthService lors de la suppression d’un compte, la référence à AccountHelper dans la méthode Button @ no__t-0Forget @ no__t-1User @ no__t-2Click peut être supprimée. La méthode doit maintenant se présenter comme suit.
 
     ```cs
     private void Button_Forget_User_Click(object sender, RoutedEventArgs e)
@@ -1139,7 +1139,7 @@ Dans cet exercice, vous allez modifier les vues et les classes d’assistance c�
             //If it does here you would Request a challenge from the Server. The client would sign this challenge and the server
             //would check the signed challenge. If it is correct it would allow the user access to the backend.
             //You would likely make a new method called RequestSignAsync to handle all this
-            //e.g. RequestSignAsync(openKeyResult);
+            //for example, RequestSignAsync(openKeyResult);
             //Refer to the second Windows Hello sample for information on how to do this.
 
             return await RequestSignAsync(account.UserId, openKeyResult);
@@ -1174,4 +1174,4 @@ Nous avons laissé en guise d’exercice les détails sur la manière d’implé
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Windows Hello](microsoft-passport.md)
-* [Application de la connexion Windows Hello](microsoft-passport-login.md)
+* [Application de connexion Windows Hello](microsoft-passport-login.md)

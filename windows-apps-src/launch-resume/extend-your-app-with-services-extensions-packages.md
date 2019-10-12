@@ -5,23 +5,23 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: Windows 10, uwp, étendre, agencer, service d’application, package, extension
 ms.localizationpriority: medium
-ms.openlocfilehash: 038f78182095546219152298b043fe876c2c18c8
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: a72b175e672b44d0dace0b4bf04956792edfadd0
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682719"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282511"
 ---
 # <a name="extend-your-app-with-services-extensions-and-packages"></a>Étendre votre application avec des services, des extensions et des packages
 
 Windows 10 propose de nombreuses technologies permettant d’étendre et de composant votre application. Ce tableau doit vous aider à déterminer la technologie à utiliser en fonction de vos besoins. Il est suivi par une brève description des scénarios et des technologies.
 
-| Scénario                           | Package de ressources   | Package d'actifs      | Package facultatif   | Ensemble plat        | Extension d’application      | App Service        | Installation en continu  |
+| Scénario                           | Package de ressources   | Package d'actifs      | Package facultatif   | Ensemble plat        | Extension d’application      | Service d’application        | Installation en continu  |
 |------------------------------------|:------------------:|:------------------:|:------------------:|:------------------:|:------------------:|:------------------:|:------------------:|
 | Plug-ins de code tiers            |                    |                    |                    |                    | :heavy_check_mark: |                    |                    |
 | Plug-ins in-process dédiés au code              |                    |                    | :heavy_check_mark: |                    |                    |                    |                    |
 | Ressources d’expérience utilisateur (chaînes/images)         | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |                    | :heavy_check_mark: |                    | :heavy_check_mark: |
-| Contenu à la demande <br/> (par exemple, des niveaux supplémentaires) |      |                    | :heavy_check_mark: |                    | :heavy_check_mark: |                    | :heavy_check_mark: |
+| Contenu à la demande <br/> (par exemple, niveaux supplémentaires) |      |                    | :heavy_check_mark: |                    | :heavy_check_mark: |                    | :heavy_check_mark: |
 | Licence et acquisition distinctes |                    |                    | :heavy_check_mark: |                    | :heavy_check_mark: | :heavy_check_mark: |                    |
 | Acquisition dans l’application                 |                    |                    | :heavy_check_mark: |                    | :heavy_check_mark: |                    |                    |
 | Optimisation de la durée d’installation              | :heavy_check_mark: |                    | :heavy_check_mark: |                    | :heavy_check_mark: |                    | :heavy_check_mark: |
@@ -61,7 +61,7 @@ Fournit une fonctionnalité permettant de réduire le temps nécessaire à l’a
 
 **Réduction de l’encombrement du disque** réduit la taille d’une application en incluant uniquement les applications ou ressources nécessaires.
 
-**Optimiser** l’empaquetage Optimise le processus d’empaquetage d’application pour les applications à grande échelle ou complexes.
+**Optimiser l’empaquetage** Optimise le processus d’empaquetage d’application pour les applications à grande échelle ou complexes.
 
 **Réduction de la durée de publication** réduit le temps nécessaire pour publier votre application dans le Store, un partage local ou un serveur web.
 

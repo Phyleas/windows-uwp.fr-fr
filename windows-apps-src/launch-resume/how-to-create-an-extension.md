@@ -5,12 +5,12 @@ keywords: extension d’application, service d’application, arrière-plan
 ms.date: 10/05/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: bdd6d3fb875e95f251e02f07e7af563c95a400a6
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: 1cb5395238ad6813556b7ae254ca4a86bc8f5b28
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682788"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282396"
 ---
 # <a name="create-and-host-an-app-extension"></a>Créer et héberger une extension d’application
 
@@ -19,7 +19,7 @@ Cet article vous montre comment créer une extension d’application UWP et l�
 Cet article est accompagné d’un exemple de code :
 - Téléchargez et décompressez [Exemple de code Math Extension](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/MathExtensionSample.zip).
 - Dans Visual Studio 2019, ouvrez MathExtensionSample. sln. Définissez le type de build sur x86 (**Générer** > **Gestionnaire de configurations**, puis modifiez la **Plateforme** sur **x86** pour les deux projets).
-- Déployer la solution:Créer > une**solution de déploiement**.
+- Déployer la solution : **Build** > **solution de déploiement**.
 
 ## <a name="introduction-to-app-extensions"></a>Présentation des extensions d’applications
 
@@ -74,7 +74,7 @@ _Package. appxmanifest dans le projet MathExtensionHost_
 
 Notez le `xmlns:uap3="http://..."` et la présence de `uap3` dans `IgnorableNamespaces`. Ces éléments sont nécessaires, car nous utilisons l’espace de noms uap3.
 
-`<uap3:Extension Category="windows.appExtensionHost">`identifie cette application en tant qu’hôte d’extension.
+`<uap3:Extension Category="windows.appExtensionHost">` identifie cette application en tant qu’hôte d’extension.
 
 L'élément **Name** dans `<uap3:AppExtensionHost>` désigne le nom du _contrat d'extension_. Lorsqu’une extension spécifie le même nom de contrat d’extension, l’hôte sera en mesure de la trouver. Par convention, nous vous recommandons de créer le nom du contrat d’extension en utilisant le nom de votre application ou de votre éditeur, afin d'éviter tout conflit potentiel avec d’autres noms de contrat d’extension.
 
@@ -84,7 +84,7 @@ Vous pouvez définir plusieurs hôtes et plusieurs extensions dans la même appl
 
 Une application s’identifie elle-même comme une extension d’application par la déclaration de l'élément `<uap3:AppExtension>` dans son fichier **Package.appxmanifest**. Ouvrez le fichier **Package.appxmanifest** dans le projet **MathExtension** pour voir comment procéder.
 
-_Package. appxmanifest dans le projet MathExtension:_
+_Package. appxmanifest dans le projet MathExtension :_
 ```xml
 <Package
   ...
@@ -116,7 +116,7 @@ _Package. appxmanifest dans le projet MathExtension:_
 
 De nouveau, notez la ligne `xmlns:uap3="http://..."` et la présence de `uap3` dans `IgnorableNamespaces`. Ces éléments sont nécessaires, car nous utilisons l’espace de noms `uap3`.
 
-`<uap3:Extension Category="windows.appExtension">`identifie cette application en tant qu’extension.
+`<uap3:Extension Category="windows.appExtension">` identifie cette application en tant qu’extension.
 
 La signification des attributs `<uap3:AppExtension>` est la suivante :
 
@@ -128,7 +128,7 @@ La signification des attributs `<uap3:AppExtension>` est la suivante :
 |**Description** | Peut servir à partir de votre application hôte pour décrire l’extension pour l’utilisateur. Il peut être interrogé à partir du [nouveau système de gestion de ressources](https://docs.microsoft.com/windows/uwp/app-resources/using-mrt-for-converted-desktop-apps-and-games) (`ms-resource:TokenName`) et utiliser ce dernier à des fins de localisation. Le contenu localisé est chargé à partir du package d’extension d’application, et non de l’application hôte. | |
 |**PublicFolder**|Nom d’un dossier, relatif à la racine de package, où vous pouvez partager du contenu avec l’hôte d’extension. Par convention, le nom est « Public », mais vous pouvez utiliser n’importe quel nom qui correspond à un dossier dans votre extension.| :heavy_check_mark: |
 
-`<uap3:Properties>`est un élément facultatif qui contient des métadonnées personnalisées que les hôtes peuvent lire au moment de l’exécution. Dans l’exemple de code, l’extension est implémentée comme un service d’application, de sorte que l’hôte a besoin d’un moyen pour obtenir le nom de ce service d’application afin de pouvoir l’appeler. Le nom du service d’application est défini dans l'élément <Service>, que nous avons défini (nous aurions pu l'appeler comme nous le souhaitions). L’hôte dans l’exemple de code recherche cette propriété lors de l’exécution pour connaître le nom du service d’application.
+`<uap3:Properties>` est un élément facultatif qui contient des métadonnées personnalisées que les hôtes peuvent lire au moment de l’exécution. Dans l’exemple de code, l’extension est implémentée comme un service d’application, de sorte que l’hôte a besoin d’un moyen pour obtenir le nom de ce service d’application afin de pouvoir l’appeler. Le nom du service d’application est défini dans l'élément <Service>, que nous avons défini (nous aurions pu l'appeler comme nous le souhaitions). L’hôte dans l’exemple de code recherche cette propriété lors de l’exécution pour connaître le nom du service d’application.
 
 ## <a name="decide-how-you-will-implement-the-extension"></a>Décidez comment vous allez implémenter l’extension.
 
@@ -211,7 +211,7 @@ Vous pouvez définir votre propre code XML dans l'élément `<uap3:Properties>`.
 
 Lorsque l’hôte charge une extension, du code tel que celui-ci extrait le nom du service à partir des propriétés définies dans le fichier Package.appxmanifest de l’extension :
 
-_`Update()`dans ExtensionManager.cs, dans le projet MathExtensionHost_
+_`Update()` dans ExtensionManager.cs, dans le projet MathExtensionHost_
 ```cs
 ...
 var properties = await ext.GetExtensionPropertiesAsync() as PropertySet;
@@ -233,13 +233,13 @@ if (_properties != null)
 
 Avec le nom du service d’application stocké dans `_serviceName`, l’hôte est en mesure de l’utiliser pour appeler le service d’application.
 
-Appeler un service d’application requiert également le nom de famille du package qui contient le service d’application. Heureusement, l’API d’extension d’application fournit ces informations qui sont obtenues sur la ligne:`connection.PackageFamilyName = AppExtension.Package.Id.FamilyName;`
+Appeler un service d’application requiert également le nom de famille du package qui contient le service d’application. Heureusement, l’API d’extension d’application fournit ces informations qui sont obtenues sur la ligne : `connection.PackageFamilyName = AppExtension.Package.Id.FamilyName;`
 
 ### <a name="define-how-the-host-and-the-extension-will-communicate"></a>Définir le mode de communication de l’hôte et de l’extension
 
 Les services d’application utilisent une classe [ValueSet](https://docs.microsoft.com/uwp/api/windows.foundation.collections.valueset) pour échanger des informations. En tant qu’auteur de l’hôte, vous devez élaborer un protocole flexible pour communiquer avec les extensions. Dans l’exemple de code, cela signifie prendre en compte les extensions qui peuvent avoir un ou plusieurs arguments dans le futur.
 
-Dans cet exemple, le protocole pour les arguments est une classe **ValueSet** contenant les paires clé-valeur nommées « Arg » + le numéro de l’argument, par exemple `Arg1` et `Arg2`. L’hôte transmet tous les arguments dans la classe **ValueSet** et l’extension utilise ceux dont elle a besoin. Si l’extension est en mesure de calculer un résultat, alors l’hôte s'attend à ce que la classe **ValueSet** retournée par l’extension ait une clé nommée `Result` contenant la valeur du calcul. Si cette clé n’est pas présente, l’hôte suppose que l’extension n’a pas pu effectuer le calcul.
+Pour cet exemple, le protocole des arguments est un **ValueSet** contenant les paires clé/valeur nommées’arg' + le numéro d’argument, par exemple, `Arg1` et `Arg2`. L’hôte transmet tous les arguments dans la classe **ValueSet** et l’extension utilise ceux dont elle a besoin. Si l’extension est en mesure de calculer un résultat, alors l’hôte s'attend à ce que la classe **ValueSet** retournée par l’extension ait une clé nommée `Result` contenant la valeur du calcul. Si cette clé n’est pas présente, l’hôte suppose que l’extension n’a pas pu effectuer le calcul.
 
 ### <a name="extension-app-service-code"></a>Code de service de l’application d’extension
 
@@ -357,7 +357,7 @@ Dans l’exemple de code, l’hôte et l’extension sont dans la même solution
 
 Si votre hôte d’extension a des difficultés pour se connecter au service d’application pour votre extension, vérifiez que l’attribut `<uap:AppService Name="...">` correspond au contenu que vous avez placé dans votre élément `<Service>`. S’ils ne correspondent pas, le nom du service fourni par votre extension à l’hôte ne correspondra pas au nom du service d’application que vous avez implémenté, et l’hôte ne sera pas en mesure d’activer votre extension.
 
-_Package. appxmanifest dans le projet MathExtension:_
+_Package. appxmanifest dans le projet MathExtension :_
 ```xml
 <Extensions>
    <uap:Extension Category="windows.appService">
@@ -386,7 +386,7 @@ Lorsque vous créez un hôte d’extension et que vous êtes prêt à tester la 
 - Exécutez l’hôte, puis mettez à jour l’application d’extension pour une version plus récente.
     - L’hôte détecte-t-il la modification et décharge-t-il les anciennes versions de l’extension correctement ?  
 
-**Scénarios avancés à tester:**
+**Scénarios avancés à tester :**
 
 - Exécutez l’hôte, déplacez l’application d’extension vers un support amovible, puis retirez le support.
     - L’hôte détecte-t-il la modification de l’état du package et désactive-t-il l’extension ?
@@ -395,7 +395,7 @@ Lorsque vous créez un hôte d’extension et que vous êtes prêt à tester la 
 - Exécutez l’hôte, puis déployez une application d’extension qui possède un contenu ou des propriétés non valides.
     - L’hôte détecte-t-il le contenu non valide et le gère-t-il correctement ?
 
-## <a name="design-considerations"></a>Considérations relatives à la conception
+## <a name="design-considerations"></a>Remarques relatives à la conception
 
 - Fournissez une interface utilisateur qui indique à l’utilisateur les extensions disponibles et lui permet de les activer/désactiver. Vous pouvez également envisager d'ajouter des glyphes pour les extensions, qui deviennent indisponibles lorsqu'un package passe hors ligne, etc.
 - Dirigez l’utilisateur vers l’endroit où il peut obtenir des extensions. Votre page d’extension peut peut-être fournir une requête de recherche Microsoft Store qui affiche la liste des extensions qui peuvent être utilisées avec votre application.

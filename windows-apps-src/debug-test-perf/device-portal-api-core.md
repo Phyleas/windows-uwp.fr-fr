@@ -5,14 +5,14 @@ description: Découvrez les API REST principales Windows Device Portal que vou
 ms.custom: 19H1
 ms.date: 04/19/2019
 ms.topic: article
-keywords: Windows 10, uwp, le portail de l’appareil
+keywords: Windows 10, UWP, portail des appareils
 ms.localizationpriority: medium
-ms.openlocfilehash: b2e1e2dfdb1dd52e1dd07a146badd78a6bb809fa
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 2e6b505dfd24a57f03169df3ed38402e7b3e9bb0
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359933"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282126"
 ---
 # <a name="device-portal-core-api-reference"></a>Informations de référence sur les API principales Device Portal
 
@@ -47,9 +47,9 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 - Fichier .appx ou .appxbundle, ainsi que toutes les dépendances dont l’application a besoin. 
 - Certificat utilisé pour signer l’application, s’il s’agit d’un appareil IoT ou de bureau Windows. Les autres plateformes n’exigent pas le certificat. 
 
-**Réponse**
+**Lutte**
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -59,7 +59,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -96,9 +96,9 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 - Fichier .appx ou .appxbundle, ainsi que toutes les dépendances dont l’application a besoin. 
 - Certificat utilisé pour signer l’application, s’il s’agit d’un appareil IoT ou de bureau Windows. Les autres plateformes n’exigent pas le certificat. 
 
-**Réponse**
+**Lutte**
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -108,7 +108,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -149,9 +149,9 @@ Vous pouvez inscrire une application dans un dossier isolé en utilisant le form
 }
 ```
 
-**Réponse**
+**Lutte**
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -161,7 +161,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Bureau Windows
 * Xbox
@@ -210,9 +210,9 @@ Vous pouvez enregistrer un [ensemble connexe](https://blogs.msdn.microsoft.com/a
 }
 ```
 
-**Réponse**
+**Lutte**
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -222,7 +222,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Bureau Windows
 * Xbox
@@ -253,9 +253,9 @@ Vous pouvez obtenir l’état d’installation d’une application actuellement 
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -265,7 +265,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 204 | L’installation est en cours d’exécution |
 | 404 | Aucune action d’installation n’a été détectée |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -299,9 +299,9 @@ Vous pouvez désinstaller une application en utilisant le format de requête sui
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -311,7 +311,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -344,7 +344,7 @@ Vous pouvez obtenir une liste des applications installées sur le système en ut
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
 La réponse comprend une liste des packages installés avec les détails associés. Le modèle de cette réponse est le suivant.
 ```json
@@ -371,7 +371,7 @@ La réponse comprend une liste des packages installés avec les détails associ�
     },...
 ]}
 ```
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -381,7 +381,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -399,12 +399,12 @@ Cette API comporte les codes d’état attendus suivants.
 
 **Demande**
 
-Vous pouvez obtenir une liste des adaptateurs Bluetooth installés sur l’ordinateur en utilisant le format de requête suivant. Cela peut mis à niveau vers une connexion de WebSocket, avec les mêmes données JSON.
+Vous pouvez obtenir une liste des adaptateurs Bluetooth installés sur l’ordinateur en utilisant le format de requête suivant. Cela peut également être mis à niveau vers une connexion WebSocket avec les mêmes données JSON.
  
 | Méthode        | URI de requête |
 | :------          | :------ |
-| GET           | /API/BT/getradios |
-| GET/WebSocket | /API/BT/getradios |
+| GET           | /api/bt/getradios |
+| GET/WebSocket | /api/bt/getradios |
 
 
 **Paramètres d’URI**
@@ -419,7 +419,7 @@ Vous pouvez obtenir une liste des adaptateurs Bluetooth installés sur l’ordin
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
 La réponse inclut un tableau d’appareils JSON d'adaptateurs Bluetooth joint à l’appareil.
 ```json
@@ -435,7 +435,7 @@ La réponse inclut un tableau d’appareils JSON d'adaptateurs Bluetooth joint �
     },...
 ]}
 ```
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -445,7 +445,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX              | Codes d’erreur |
 | 5XX              | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Bureau Windows
 * HoloLens
@@ -470,7 +470,7 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 | Paramètre d’URI | Description |
 | :------          | :------ |
 | ID            | (**requis**) ID de l'appareil de l'adaptateur Bluetooth ; il doit être codé en base 64. |
-| État         | (**requis**) il peut s’agir `"On"` ou `"Off"`. |
+| État         | (**obligatoire**) Il peut s’agir de `"On"` ou `"Off"`. |
 
 **En-têtes de demande**
 
@@ -480,9 +480,9 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -492,23 +492,23 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX              | Codes d’erreur |
 | 5XX              | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Bureau Windows
 * HoloLens
 * IoT
 
 ---
-### <a name="get-a-list-of-paired-bluetooth-devices"></a>Obtenir la liste des appareils Bluetooth appariés
+### <a name="get-a-list-of-paired-bluetooth-devices"></a>Obtenir la liste des appareils Bluetooth jumelés
 
 **Demande**
 
-Vous pouvez obtenir une liste des périphériques Bluetooth actuellement associés à l’aide du format de demande suivant. Cela peut être mis à niveau vers une connexion WebSocket avec les mêmes données JSON. Pendant la durée de vie de la connexion WebSocket, la liste des appareils peut changer. Une liste complète des périphériques sera envoyée via la connexion WebSocket chaque fois qu’il existe une mise à jour.
+Vous pouvez obtenir la liste des appareils Bluetooth couplés actuellement en utilisant le format de requête suivant. Cela peut être mis à niveau vers une connexion WebSocket avec les mêmes données JSON. Pendant la durée de vie de la connexion WebSocket, la liste des appareils peut changer. Une liste complète des appareils est envoyée via la connexion WebSocket chaque fois qu’une mise à jour est effectuée.
 
 | Méthode        | URI de requête       |
 | :---          | :---              |
-| GET           | /API/BT/getpaired |
-| GET/WebSocket | /API/BT/getpaired |
+| GET           | /api/bt/getpaired |
+| GET/WebSocket | /api/bt/getpaired |
 
 **Paramètres d’URI**
 
@@ -522,9 +522,9 @@ Vous pouvez obtenir une liste des périphériques Bluetooth actuellement associ�
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
-La réponse inclut un tableau JSON des périphériques Bluetooth qui sont actuellement associés.
+La réponse comprend un tableau JSON de périphériques Bluetooth actuellement couplés.
 ```json
 {"PairedDevices": [
     {
@@ -534,14 +534,14 @@ La réponse inclut un tableau JSON des périphériques Bluetooth qui sont actuel
     },...
 ]}
 ```
-Le *AudioConnectionStatus* champ sera présent si l’appareil peut être utilisé pour l’audio sur ce système. (Les stratégies et des composants facultatifs peuvent affecter cela.) *AudioConnectionStatus* sera « Connecté » ou « Déconnecté ».
+Le champ *AudioConnectionStatus* est présent si l’appareil peut être utilisé pour l’audio sur ce système. (Les stratégies et les composants facultatifs peuvent affecter cela.) *AudioConnectionStatus* sera « connecté » ou « déconnecté ».
 
 ---
-### <a name="get-a-list-of-available-bluetooth-devices"></a>Obtenir la liste des périphériques Bluetooth disponibles
+### <a name="get-a-list-of-available-bluetooth-devices"></a>Obtenir la liste des appareils Bluetooth disponibles
 
 **Demande**
 
-Vous pouvez obtenir une liste des périphériques Bluetooth disponibles pour l’appairage en utilisant le format de demande suivant. Cela peut être mis à niveau vers une connexion WebSocket avec les mêmes données JSON. Pendant la durée de vie de la connexion WebSocket, la liste des appareils peut changer. Une liste complète des périphériques sera envoyée via la connexion WebSocket chaque fois qu’il existe une mise à jour.
+Vous pouvez obtenir la liste des périphériques Bluetooth disponibles pour le jumelage en utilisant le format de requête suivant. Cela peut être mis à niveau vers une connexion WebSocket avec les mêmes données JSON. Pendant la durée de vie de la connexion WebSocket, la liste des appareils peut changer. Une liste complète des appareils est envoyée via la connexion WebSocket chaque fois qu’une mise à jour est effectuée.
 
 | Méthode        | URI de requête          |
 | :---          | :---                 |
@@ -560,9 +560,9 @@ Vous pouvez obtenir une liste des périphériques Bluetooth disponibles pour l�
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
-La réponse inclut un tableau JSON des périphériques Bluetooth qui sont actuellement disponibles pour l’appairage.
+La réponse comprend un tableau JSON de périphériques Bluetooth actuellement disponibles pour le jumelage.
 ```json
 {"AvailableDevices": [
     {
@@ -577,17 +577,17 @@ La réponse inclut un tableau JSON des périphériques Bluetooth qui sont actuel
 
 **Demande**
 
-Se connecte à l’appareil si l’appareil peut être utilisé pour l’audio sur ce système. (Les stratégies et des composants facultatifs peuvent affecter cela.)
+Se connectera à l’appareil si ce dernier peut être utilisé pour l’audio sur ce système. (Les stratégies et les composants facultatifs peuvent affecter cela.)
 
 | Méthode       | URI de requête           |
 | :---         | :---                  |
-| PUBLIER         | /API/BT/connectdevice |
+| PUBLIER         | /api/bt/connectdevice |
 
 **Paramètres d’URI**
 
 | Paramètre d’URI | Description |
 | :---          | :--- |
-| ID            | (**requis**) l’ID de point de terminaison d’Association pour le périphérique Bluetooth et doit être codée en Base64. |
+| ID            | (**obligatoire**) L’ID de point de terminaison d’association pour le périphérique Bluetooth et doit être encodé en base64. |
 
 **En-têtes de demande**
 
@@ -597,9 +597,9 @@ Se connecte à l’appareil si l’appareil peut être utilisé pour l’audio s
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -609,7 +609,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX              | Codes d’erreur |
 | 5XX              | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Bureau Windows
 * HoloLens
@@ -617,11 +617,11 @@ Cette API comporte les codes d’état attendus suivants.
 
 
 ---
-### <a name="disconnect-a-bluetooth-device"></a>Déconnecter un périphérique Bluetooth
+### <a name="disconnect-a-bluetooth-device"></a>Déconnecter un appareil Bluetooth
 
 **Demande**
 
-Déconnectera l’appareil si l’appareil peut être utilisé pour l’audio sur ce système. (Les stratégies et des composants facultatifs peuvent affecter cela.)
+Déconnectera l’appareil si celui-ci peut être utilisé pour l’audio sur ce système. (Les stratégies et les composants facultatifs peuvent affecter cela.)
 
 | Méthode       | URI de requête              |
 | :---         | :---                     |
@@ -631,7 +631,7 @@ Déconnectera l’appareil si l’appareil peut être utilisé pour l’audio su
 
 | Paramètre d’URI | Description |
 | :---          | :--- |
-| ID            | (**requis**) l’ID de point de terminaison d’Association pour le périphérique Bluetooth et doit être codée en Base64. |
+| ID            | (**obligatoire**) L’ID de point de terminaison d’association pour le périphérique Bluetooth et doit être encodé en base64. |
 
 **En-têtes de demande**
 
@@ -641,9 +641,9 @@ Déconnectera l’appareil si l’appareil peut être utilisé pour l’audio su
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -653,7 +653,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX              | Codes d’erreur |
 | 5XX              | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Bureau Windows
 * HoloLens
@@ -685,7 +685,7 @@ Vous pouvez obtenir une liste des périphériques installés sur l’ordinateur 
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
 La réponse inclut un tableau d’appareils JSON joint à l’appareil.
 ```json
@@ -702,7 +702,7 @@ La réponse inclut un tableau d’appareils JSON joint à l’appareil.
 ]}
 ```
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -712,7 +712,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -743,7 +743,7 @@ Vous pouvez obtenir la liste des descripteurs USB des hubs et appareils USB en
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
 La réponse est JSON. Elle inclut des ID de périphérique pour le périphérique USB, ainsi que des descripteurs USB et des informations de port pour les hubs.
 ```json
@@ -762,7 +762,7 @@ La réponse est JSON. Elle inclut des ID de périphérique pour le périphériqu
 }
 ```
 
-**Exemples de données retournés**
+**Exemple de données de retour**
 ```json
 {
     "DeviceList": [{
@@ -789,7 +789,7 @@ La réponse est JSON. Elle inclut des ID de périphérique pour le périphériqu
 }
 ```
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -798,7 +798,7 @@ Cette API comporte les codes d’état attendus suivants.
 |  200 | OK | 
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Bureau Windows
 * IoT
@@ -832,11 +832,11 @@ Vous pouvez obtenir la liste de tous les vidages sur incident disponibles pour t
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
 La réponse comprend une liste des vidages sur incident pour chaque application chargée de manière indépendante.
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -846,7 +846,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile (dans le programme Windows Insider)
 * Bureau Windows
@@ -882,14 +882,14 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
 La réponse a le format suivant.
 ```json
 {"CrashDumpEnabled": bool}
 ```
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -899,7 +899,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile (dans le programme Windows Insider)
 * Bureau Windows
@@ -936,9 +936,9 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -948,7 +948,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile (dans le programme Windows Insider)
 * Bureau Windows
@@ -984,9 +984,9 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -996,7 +996,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile (dans le programme Windows Insider)
 * Bureau Windows
@@ -1033,11 +1033,11 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
 La réponse comprend un fichier de vidage. Vous pouvez utiliser WinDbg ou Visual Studio pour examiner le fichier de vidage.
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -1047,7 +1047,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile (dans le programme Windows Insider)
 * Bureau Windows
@@ -1083,9 +1083,9 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -1093,7 +1093,7 @@ Cette API comporte les codes d’état attendus suivants.
 | :------     | :----- |
 |  200 | OK | 
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile (dans le programme Windows Insider)
 * Bureau Windows
@@ -1125,7 +1125,7 @@ Vous pouvez obtenir la liste des fichiers minidump de vérification d’erreur e
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
 La réponse comprend une liste des noms de fichier de vidage et leur taille. Cette liste doit avoir le format suivant. 
 ```json
@@ -1137,7 +1137,7 @@ La réponse comprend une liste des noms de fichier de vidage et leur taille. Cet
 ]}
 ```
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -1145,7 +1145,7 @@ Cette API comporte les codes d’état attendus suivants.
 | :------     | :----- |
 |  200 | OK | 
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Bureau Windows
 * IoT
@@ -1180,11 +1180,11 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
 La réponse comprend le fichier de vidage. Vous pouvez examiner ce fichier à l’aide de WinDbg.
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -1194,7 +1194,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Bureau Windows
 * IoT
@@ -1224,7 +1224,7 @@ Vous pouvez obtenir la liste des paramètres de contrôle d’incident de la vé
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
 La réponse comprend les paramètres de contrôle d’incident. Pour plus d’informations sur CrashControl, voir l’article [CrashControl](https://technet.microsoft.com/library/cc951703.aspx). Le modèle de la réponse est le suivant.
 ```json
@@ -1236,17 +1236,17 @@ La réponse comprend les paramètres de contrôle d’incident. Pour plus d’in
 }
 ```
 
-**Types d’images**
+**Types de vidage**
 
-0: Désactivée
+0 : Désactivé
 
-1 : Image mémoire complète (collecte de toute la mémoire en cours d’utilisation)
+1 : Terminer le vidage de la mémoire (collecte toute la mémoire en cours d’utilisation)
 
-2 : Vidage de la mémoire du noyau (ignore la mémoire en mode utilisateur)
+2 : Image mémoire du noyau (ignore la mémoire du mode utilisateur)
 
-3 : Minidump de noyau limitée
+3 : Minidump du noyau limité
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -1256,7 +1256,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Bureau Windows
 * IoT
@@ -1286,11 +1286,11 @@ Vous pouvez obtenir un vidage du noyau dynamique en utilisant le format de requ�
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
 La réponse comprend le vidage en mode noyau complet. Vous pouvez examiner ce fichier à l’aide de WinDbg.
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -1300,7 +1300,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Bureau Windows
 * IoT
@@ -1334,11 +1334,11 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
 La réponse comprend le fichier de vidage du processus. Vous pouvez examiner ce fichier à l’aide de WinDbg ou de Visual Studio.
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -1348,7 +1348,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Bureau Windows
 * IoT
@@ -1385,9 +1385,9 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -1397,7 +1397,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Bureau Windows
 * IoT
@@ -1431,11 +1431,11 @@ Vous pouvez créer une session ETW en temps réel en utilisant le format de requ
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
 La réponse comprend les événements ETW issus des fournisseurs activés.  Voir les commandes WebSocket ETW ci-dessous. 
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -1445,7 +1445,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -1526,7 +1526,7 @@ Vous pouvez énumérer les fournisseurs enregistrés en utilisant le format de r
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
 La réponse comprend la liste des fournisseurs ETW. La liste comprend le nom convivial et le GUID de chaque fournisseur au format suivant.
 ```json
@@ -1538,7 +1538,7 @@ La réponse comprend la liste des fournisseurs ETW. La liste comprend le nom con
 ]}
 ```
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -1546,7 +1546,7 @@ Cette API comporte les codes d’état attendus suivants.
 | :------     | :----- |
 |  200 | OK | 
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -1578,7 +1578,7 @@ Vous pouvez énumérer les fournisseurs enregistrés en utilisant le format de r
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
 200 OK. La réponse comprend la liste des fournisseurs ETW. La liste comprend le nom convivial et le GUID de chaque fournisseur.
 
@@ -1591,11 +1591,11 @@ Vous pouvez énumérer les fournisseurs enregistrés en utilisant le format de r
 ]}
 ```
 
-**Code d’état**
+**Code d’État**
 
 - Codes d’état standard.
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -1631,7 +1631,7 @@ Vous pouvez obtenir l'état de remplacement de la pile d'emplacements de l'appar
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
 La réponse inclut l'état de remplacement de l'appareil au format suivant. 
 
@@ -1639,7 +1639,7 @@ La réponse inclut l'état de remplacement de l'appareil au format suivant.
 {"Override" : bool}
 ```
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -1649,7 +1649,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -1682,7 +1682,7 @@ Vous pouvez définir l'état de remplacement de la pile d'emplacements de l'appa
 {"Override" : bool}
 ```
 
-**Réponse**
+**Lutte**
 
 La réponse inclut l'état de remplacement auquel l'appareil a été défini, au format suivant. 
 
@@ -1690,7 +1690,7 @@ La réponse inclut l'état de remplacement auquel l'appareil a été défini, au
 {"Override" : bool}
 ```
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -1700,7 +1700,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -1731,7 +1731,7 @@ Vous pouvez obtenir l'emplacement injecté (falsifié) de l'appareil en utilisan
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
 La réponse comprend les valeurs de longitude et de latitude actuelles injectées au format suivant. 
 
@@ -1742,7 +1742,7 @@ La réponse comprend les valeurs de longitude et de latitude actuelles injectée
 }
 ```
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -1752,7 +1752,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -1788,7 +1788,7 @@ Vous pouvez définir l'emplacement injecté (falsifié) de l'appareil en utilisa
 }
 ```
 
-**Réponse**
+**Lutte**
 
 La réponse inclut l'emplacement qui a été défini au format suivant. 
 
@@ -1799,7 +1799,7 @@ La réponse inclut l'emplacement qui a été défini au format suivant.
 }
 ```
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -1809,7 +1809,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -1846,7 +1846,7 @@ Vous pouvez obtenir le nom d’un ordinateur en utilisant le format de requête 
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
 La réponse inclut le nom de l’ordinateur au format suivant. 
 
@@ -1854,7 +1854,7 @@ La réponse inclut le nom de l’ordinateur au format suivant.
 {"ComputerName": string}
 ```
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -1864,7 +1864,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -1897,7 +1897,7 @@ Vous pouvez obtenir les informations du système d’exploitation pour un ordina
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
 La réponse inclut des informations sur le système d’exploitation au format suivant.
 
@@ -1911,7 +1911,7 @@ La réponse inclut des informations sur le système d’exploitation au format s
 }
 ```
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -1921,7 +1921,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -1954,7 +1954,7 @@ Vous pouvez obtenir la famille d’appareils (Xbox, téléphone, ordinateur de b
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
 La réponse comprend la famille d’appareils (référence : ordinateur de bureau, Xbox, etc.).
 
@@ -1966,7 +1966,7 @@ La réponse comprend la famille d’appareils (référence : ordinateur de bure
 
 DeviceType aura pour valeur une chaîne du type « Windows.Xbox », « Windows.Desktop », etc. 
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -1976,7 +1976,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -2013,9 +2013,9 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -2023,7 +2023,7 @@ Cette API comporte les codes d’état attendus suivants.
 | :------     | :----- |
 | 200 | OK |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -2060,7 +2060,7 @@ Vous pouvez obtenir le nom de l'utilisateur actif en utilisant le format de requ
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
 La réponse inclut des informations sur l'utilisateur au format suivant. 
 
@@ -2081,7 +2081,7 @@ En cas d'échec :
 }
 ```
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -2091,7 +2091,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Bureau Windows
 * HoloLens
@@ -2127,7 +2127,7 @@ Vous pouvez obtenir la liste des processus en cours d’exécution en utilisant 
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
 La réponse comprend une liste des processus et les détails associés. Les informations sont au format JSON et suivent le modèle suivant.
 ```json
@@ -2146,7 +2146,7 @@ La réponse comprend une liste des processus et les détails associés. Les info
 ]}
 ```
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -2156,7 +2156,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -2190,7 +2190,7 @@ Ce format peut être mis à niveau vers une connexion WebSocket.  Il fournit les
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
 La réponse comprend les statistiques relatives aux performances du système, notamment sur l’utilisation du processeur et du GPU, ainsi que sur l’accès à la mémoire et au réseau. Ces informations sont au format JSON et suivent le modèle suivant.
 ```json
@@ -2225,7 +2225,7 @@ La réponse comprend les statistiques relatives aux performances du système, no
 }
 ```
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -2235,7 +2235,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -2272,7 +2272,7 @@ Vous pouvez obtenir l’état actuel de la batterie en utilisant le format de re
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
 Les informations d’état actuel de la batterie sont renvoyées à l’aide du format suivant.
 ```json
@@ -2288,7 +2288,7 @@ Les informations d’état actuel de la batterie sont renvoyées à l’aide du 
 }
 ```
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -2298,7 +2298,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -2330,14 +2330,14 @@ Vous pouvez obtenir le schéma d’alimentation actif en utilisant le format de 
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
 Le schéma d’alimentation actif a le format suivant.
 ```json
 {"ActivePowerScheme": string (guid of scheme)}
 ```
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -2347,7 +2347,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Bureau Windows
 * IoT
@@ -2379,9 +2379,9 @@ Options :
 
 Liste complète des états d’alimentation disponibles déterminée par application et paramètres de marquage des différents états d’alimentation comme le niveau faible ou critique de la batterie. 
 
-**Réponse**
+**Lutte**
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -2391,7 +2391,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Bureau Windows
 * IoT
@@ -2421,14 +2421,14 @@ Vous pouvez obtenir l’état d’alimentation du système en utilisant le forma
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
 Les informations sur l’état d’alimentation suivent le modèle suivant.
 ```json
 {"LowPowerState" : false, "LowPowerStateAvailable" : true }
 ```
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -2438,7 +2438,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Bureau Windows
 * HoloLens
@@ -2473,9 +2473,9 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -2485,7 +2485,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Bureau Windows
 * IoT
@@ -2520,9 +2520,9 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -2530,7 +2530,7 @@ Cette API comporte les codes d’état attendus suivants.
 | :------     | :----- |
 | 200 | OK |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Bureau Windows
 * IoT
@@ -2560,11 +2560,11 @@ Vous pouvez obtenir un rapport d’étude sur la suspension d’activité en uti
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
 La réponse est un fichier contenant l’étude de veille. 
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -2574,7 +2574,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Bureau Windows
 * IoT
@@ -2604,7 +2604,7 @@ Vous pouvez obtenir les rapports d’étude sur la suspension d’activité disp
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
 La liste des rapports disponibles suit le modèle suivant.
 
@@ -2616,7 +2616,7 @@ La liste des rapports disponibles suit le modèle suivant.
 ]}
 ```
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -2626,7 +2626,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Bureau Windows
 * IoT
@@ -2656,11 +2656,11 @@ Vous pouvez obtenir la transformation de l’étude sur la suspension d’activi
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
 La réponse contient la transformation de l’étude de veille.
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -2670,7 +2670,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Bureau Windows
 * IoT
@@ -2704,9 +2704,9 @@ Vous pouvez redémarrer l’ordinateur cible en utilisant le format de requête 
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -2714,7 +2714,7 @@ Cette API comporte les codes d’état attendus suivants.
 | :------     | :----- |
 | 200 | OK |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -2747,9 +2747,9 @@ Vous pouvez éteindre l’ordinateur cible en utilisant le format de requête su
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -2759,7 +2759,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -2801,9 +2801,9 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -2813,7 +2813,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -2851,9 +2851,9 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -2863,7 +2863,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -2900,9 +2900,9 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -2912,7 +2912,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Bureau Windows
 * HoloLens
@@ -2947,7 +2947,7 @@ Vous pouvez obtenir la configuration IP actuelle en utilisant le format de requ�
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
 La réponse inclut la configuration IP dans le modèle suivant.
 
@@ -2991,7 +2991,7 @@ La réponse inclut la configuration IP dans le modèle suivant.
 ]}
 ```
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -3001,7 +3001,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -3015,7 +3015,7 @@ Cette API comporte les codes d’état attendus suivants.
 
 **Demande**
 
-Définit la configuration IPV4 avec statique IP et DNS. Si une adresse IP statique n’est pas spécifiée, puis il active le protocole DHCP. Si une adresse IP statique est spécifiée, le DNS doit être spécifié d’également.
+Définit la configuration IPV4 avec une adresse IP statique et DNS. Si aucune adresse IP statique n’est spécifiée, le protocole DHCP est activé. Si une adresse IP statique est spécifiée, DNS doit également être spécifié.
  
 | Méthode      | URI de requête |
 | :------     | :----- |
@@ -3026,14 +3026,14 @@ Définit la configuration IPV4 avec statique IP et DNS. Si une adresse IP statiq
 
 | Paramètre d’URI | Description |
 | :---          | :--- |
-| AdapterName | (**requis**) le GUID d’interface réseau. |
-| AdresseIP | L’adresse IP statique à définir. |
-| SubnetMask | (**requis** si *IPAddress* n’est pas null) le masque de sous-réseau statique. |
-| DefaultGateway | (**requis** si *IPAddress* n’est pas null) la passerelle par défaut statique. |
-| PrimaryDNS | (**requis** si *IPAddress* n’est pas null) du DNS principal statique à définir. |
-| SecondayDNS | (**requis** si *PrimaryDNS* n’est pas null) serveur DNS secondaire statique à définir. |
+| AdapterName | (**obligatoire**) GUID de l’interface réseau. |
+| AdresseIP | Adresse IP statique à définir. |
+| Masque_sous_réseau | (**obligatoire** si *IPAddress* n’a pas la valeur null) Masque de sous-réseau statique. |
+| DefaultGateway | (**obligatoire** si *IPAddress* n’a pas la valeur null) Passerelle par défaut statique. |
+| PrimaryDNS | (**obligatoire** si *IPAddress* n’a pas la valeur null) Le DNS principal statique à définir. |
+| SecondayDNS | (**obligatoire** si *PrimaryDNS* n’a pas la valeur null) DNS secondaire statique à définir. |
 
-Pour plus de clarté, pour définir une interface pour DHCP, sérialiser uniquement le `AdapterName` sur le câble :
+Pour plus de clarté, pour définir une interface sur DHCP, sérialisez uniquement le `AdapterName` sur le réseau :
 
 ```json
 {
@@ -3049,9 +3049,9 @@ Pour plus de clarté, pour définir une interface pour DHCP, sérialiser uniquem
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -3061,7 +3061,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -3094,7 +3094,7 @@ Vous pouvez énumérer les interfaces sans fil disponibles en utilisant le forma
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
 Liste des interfaces sans fil disponibles et leurs détails au format suivant.
 
@@ -3114,7 +3114,7 @@ Liste des interfaces sans fil disponibles et leurs détails au format suivant.
 ]}
 ```
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -3124,7 +3124,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -3161,7 +3161,7 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
 Liste des réseaux sans fil détectés sur l’*interface* fournie. Cela comprend les détails pour les réseaux au format suivant.
 
@@ -3171,7 +3171,7 @@ Liste des réseaux sans fil détectés sur l’*interface* fournie. Cela compren
         "AlreadyConnected": bool,
         "AuthenticationAlgorithm": string, (WPA2, etc)
         "Channel": int,
-        "CipherAlgorithm": string, (e.g. AES)
+        "CipherAlgorithm": string, (for example, AES)
         "Connectable": int, (0 | 1)
         "InfrastructureType": string,
         "ProfileAvailable": bool,
@@ -3185,7 +3185,7 @@ Liste des réseaux sans fil détectés sur l’*interface* fournie. Cela compren
 ]}
 ```
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -3195,7 +3195,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -3236,9 +3236,9 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -3246,7 +3246,7 @@ Cette API comporte les codes d’état attendus suivants.
 | :------     | :----- |
 | 200 | OK |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -3264,7 +3264,7 @@ Vous pouvez supprimer un profil associé à un réseau sur une interface spécif
  
 | Méthode      | URI de requête |
 | :------     | :----- |
-| Suppression | /API/WiFi/Profile |
+| Suppression | /api/wifi/profile |
 
 
 **Paramètres d’URI**
@@ -3284,9 +3284,9 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -3294,7 +3294,7 @@ Cette API comporte les codes d’état attendus suivants.
 | :------     | :----- |
 | 200 | OK |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -3338,11 +3338,11 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
 - La réponse contient le fichier demandé. 
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -3352,7 +3352,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Bureau Windows
 * HoloLens
@@ -3396,9 +3396,9 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 ]}
 ```
 
-**Réponse**
+**Lutte**
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -3408,7 +3408,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Bureau Windows
 * HoloLens
@@ -3439,7 +3439,7 @@ Vous pouvez obtenir les rapports d’erreurs Windows en utilisant le format de r
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
 Les rapports d’erreur suivants sont présentés au format suivant.
 
@@ -3457,7 +3457,7 @@ Les rapports d’erreur suivants sont présentés au format suivant.
 ]}
 ```
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -3467,7 +3467,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Bureau Windows
 * HoloLens
@@ -3502,7 +3502,7 @@ Vous pouvez charger un profil WPR et démarrer le suivi à l’aide de ce profil
 
 - Corps HTTP à parties multiples conforme contenant le profil WPR personnalisé.
 
-**Réponse**
+**Lutte**
 
 L’état de session WPR au format suivant.
 
@@ -3513,7 +3513,7 @@ L’état de session WPR au format suivant.
 }
 ```
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -3523,7 +3523,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -3559,7 +3559,7 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
 Au démarrage, cette API renvoie l’état de session WPR au format suivant.
 
@@ -3570,7 +3570,7 @@ Au démarrage, cette API renvoie l’état de session WPR au format suivant.
 }
 ```
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -3580,7 +3580,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -3612,11 +3612,11 @@ Vous pouvez arrêter une session de suivi WPR en utilisant le format de requête
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
--  Aucun.  **Remarque :** Il s’agit d’une opération longue.  Elle renverra une réponse à la fin de l’écriture de l’ETL sur le disque.
+-  Aucun.  **Remarque :** Il s’agit d’une opération de longue durée.  Elle renverra une réponse à la fin de l’écriture de l’ETL sur le disque.
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -3626,7 +3626,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -3662,7 +3662,7 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
 Au démarrage, cette API renvoie l’état de session WPR au format suivant.
 
@@ -3673,7 +3673,7 @@ Au démarrage, cette API renvoie l’état de session WPR au format suivant.
 }
 ```
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -3683,7 +3683,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -3715,11 +3715,11 @@ Vous pouvez arrêter une session de suivi WPR en utilisant le format de requête
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
-- Aucun.  **Remarque :** Il s’agit d’une opération longue.  Elle renverra une réponse à la fin de l’écriture de l’ETL sur le disque.  
+- Aucun.  **Remarque :** Il s’agit d’une opération de longue durée.  Elle renverra une réponse à la fin de l’écriture de l’ETL sur le disque.  
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -3729,7 +3729,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -3761,7 +3761,7 @@ Vous pouvez récupérer l’état de la session WPR actuelle en utilisant le for
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
 L’état de la session de suivi WPR au format suivant.
 
@@ -3772,7 +3772,7 @@ L’état de la session de suivi WPR au format suivant.
 }
 ```
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -3782,7 +3782,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -3814,7 +3814,7 @@ Vous pouvez obtenir une liste des traces ETL sur l’appareil en utilisant le fo
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
 La liste des sessions de suivi terminées est fournie dans le format suivant.
 
@@ -3830,7 +3830,7 @@ La liste des sessions de suivi terminées est fournie dans le format suivant.
 }]}
 ```
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -3840,7 +3840,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -3876,11 +3876,11 @@ Vous pouvez spécifier le paramètre supplémentaire suivant dans l’URI de req
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
 - Renvoie le fichier ETL de suivi.
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -3890,7 +3890,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -3926,11 +3926,11 @@ Vous pouvez spécifier le paramètre supplémentaire suivant dans l’URI de req
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
 - Renvoie le fichier ETL de suivi.
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -3940,7 +3940,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -3987,7 +3987,7 @@ Affichez les balises actuellement appliquées pour l’appareil.  Ces balises so
 }
 ```
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -3997,7 +3997,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 5XX | Erreur de serveur |
 
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -4030,10 +4030,10 @@ Supprimez toutes les balises actuellement signalées par DNS-SD.
 
 - Aucune
 
-**Réponse**
+**Lutte**
  - Aucune
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -4043,7 +4043,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 5XX | Erreur de serveur |
 
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -4078,10 +4078,10 @@ Supprimez une balise actuellement signalée par DNS-SD.
 
 - Aucune
 
-**Réponse**
+**Lutte**
  - Aucune
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -4090,7 +4090,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 200 | OK |
 
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -4125,10 +4125,10 @@ Ajoutez une balise à l’annonce DNS-SD.
 
 - Aucune
 
-**Réponse**
+**Lutte**
  - Aucune
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -4138,7 +4138,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 401 | Dépassement de capacité pour l’espace de balise.  Survient lorsque la balise proposée est trop longue pour l’enregistrement de service DNS-SD résultant. |
 
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -4180,7 +4180,7 @@ Obtenez la liste des dossiers de niveau supérieur accessibles.
     "folder1",...
 ]}
 ```
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -4191,7 +4191,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 5XX | Codes d’erreur |
 
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -4242,7 +4242,7 @@ Obtenez la liste des fichiers d’un dossier.
     },...
 ]}
 ```
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -4252,7 +4252,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -4289,9 +4289,9 @@ Obtenir un fichier à partir d’un dossier connu ou d’appLocalData.
 
 - Fichier demandé, le cas échéant
 
-**Réponse**
+**Lutte**
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -4301,7 +4301,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 404 | Fichier introuvable |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -4340,11 +4340,11 @@ Renommez un fichier dans un dossier.
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
 - Aucune
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -4354,7 +4354,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 404 | Fichier introuvable |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -4391,11 +4391,11 @@ Supprimez un fichier dans un dossier.
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
 - Aucune 
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -4405,7 +4405,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 404 | Fichier introuvable |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -4441,9 +4441,9 @@ Chargez un fichier dans un dossier.  Ce fichier remplace un fichier existant du 
 
 - Aucune
 
-**Réponse**
+**Lutte**
 
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
@@ -4453,7 +4453,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Mobile
 * Bureau Windows

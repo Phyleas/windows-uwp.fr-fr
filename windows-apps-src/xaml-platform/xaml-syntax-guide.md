@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ab2ed7bea6a353ae30bb3c245e00c77365fb5af
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: b70a3f9f9fad2d81716c22ab2f383e72ea363341
+ms.sourcegitcommit: cbd900f350569a3901086a44b2d5007bb6fb7bed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339918"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72276303"
 ---
 # <a name="xaml-syntax-guide"></a>Guide de la syntaxe XAML
 
@@ -105,7 +105,7 @@ Certaines propriétés d’objets ne peuvent en aucune manière être définies 
 
 Une propriété en lecture seule ne peut pas être définie en XAML. Même dans du code, le type propriétaire doit prendre en charge une autre façon de la définir, comme une surcharge de constructeur, une méthode d’assistance ou la prise en charge des propriétés calculées. Une propriété calculée repose sur les valeurs d’autres propriétés définissables et aussi, parfois, sur un événement avec gestion intégrée ; ces fonctionnalités sont disponibles dans le système de propriétés de dépendance. Pour plus d’informations sur l’utilité des propriétés de dépendance pour la prise en charge des propriétés calculées, voir [Vue d’ensemble des propriétés de dépendance](dependency-properties-overview.md).
 
-La syntaxe de collection en langage XAML donne l’impression de définir une propriété en lecture seule, ce qui, en fait, n’est pas le cas. Voir la section « Définition d’une propriété à l’aide de la syntaxe de collection », plus loin dans cette rubrique.
+La syntaxe de collection en langage XAML donne l’impression de définir une propriété en lecture seule, ce qui, en fait, n’est pas le cas. Consultez «[syntaxe de collection](#collection-syntax)» plus loin dans cette rubrique.
 
 ### <a name="setting-a-property-by-using-attribute-syntax"></a>Définition d’une propriété à l’aide d’une syntaxe d’attribut
 

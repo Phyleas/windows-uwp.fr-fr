@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, sécurité
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
-ms.openlocfilehash: f567637f3d38ce80c320bfe92fff392efadeda8d
-ms.sourcegitcommit: 7803f11ba4c9194c350217cc06069a4707f15ed6
+ms.openlocfilehash: 557f5c03bda68d11507ba3b3b3b12823dbe6fd9f
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69017434"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282400"
 ---
 # <a name="web-account-manager"></a>Gestionnaire de comptes web
 
@@ -80,7 +80,7 @@ Le volet est vide, car le système propose uniquement un interpréteur de comman
 
 ## <a name="register-for-accountcommandsrequested"></a>S’inscrire à AccountCommandsRequested
 
-Pour ajouter des commandes au volet, il faut tout d’abord s’inscrire au gestionnaire d’événements AccountCommandsRequested. Cela indique au système d’exécuter notre logique de build lorsque l’utilisateur demande à afficher le volet (par exemple, en cliquant sur notre bouton XAML). 
+Pour ajouter des commandes au volet, il faut tout d’abord s’inscrire au gestionnaire d’événements AccountCommandsRequested. Cela indique au système d’exécuter la logique de génération quand l’utilisateur demande à afficher le volet (par exemple, clique sur notre bouton XAML). 
 
 Dans votre code-behind, remplacez les événements OnNavigatedTo et OnNavigatedFrom et ajoutez-y le code suivant : 
 
@@ -116,7 +116,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s,
 }
 ```
 
-Ensuite, obtenez un fournisseur à l’aide de la méthode WebAuthenticationCoreManager.FindAccountProviderAsync. L’URL du fournisseur varie en fonction du fournisseur et figure dans la documentation correspondante. Pour les comptes et Azure Active Directory Microsoft, il s’agit de\:«https//login.Microsoft.com». 
+Ensuite, obtenez un fournisseur à l’aide de la méthode WebAuthenticationCoreManager.FindAccountProviderAsync. L’URL du fournisseur varie en fonction du fournisseur et figure dans la documentation correspondante. Pour les comptes et Azure Active Directory Microsoft, il s’agit de « https @ no__t-0//login. Microsoft. com ». 
 
 ```csharp
 private async void BuildPaneAsync(AccountsSettingsPane s,
@@ -338,7 +338,7 @@ Dans la mesure où il est très simple d’obtenir un jeton silencieusement, nou
 
 ## <a name="remove-a-stored-account"></a>Supprimer un compte stocké
 
-Si vous conservez un compte web, vous pouvez permettre à vos utilisateurs de dissocier leur compte de votre application. De cette façon, ils peuvent «se déconnecter» de l’application: leurs informations de compte ne seront plus chargées automatiquement lors du lancement. Pour ce faire, commencez par supprimer du stockage les comptes enregistrés et les informations sur le fournisseur. Appelez ensuite **[SignOutAsync](https://docs.microsoft.com/uwp/api/windows.security.credentials.webaccount.SignOutAsync)** pour vider le cache et invalider des jetons existants dont votre application dispose. 
+Si vous conservez un compte web, vous pouvez permettre à vos utilisateurs de dissocier leur compte de votre application. De cette façon, ils peuvent « se déconnecter » de l’application : leurs informations de compte ne seront plus chargées automatiquement lors du lancement. Pour ce faire, commencez par supprimer du stockage les comptes enregistrés et les informations sur le fournisseur. Appelez ensuite **[SignOutAsync](https://docs.microsoft.com/uwp/api/windows.security.credentials.webaccount.SignOutAsync)** pour vider le cache et invalider des jetons existants dont votre application dispose. 
 
 ```csharp
 private async Task SignOutAccountAsync(WebAccount account)

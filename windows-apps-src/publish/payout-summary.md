@@ -6,12 +6,12 @@ ms.date: 08/02/2019
 ms.topic: article
 keywords: windows 10, uwp, résumé du paiement, instruction, paiements, bénéfices, revenus, paiement
 ms.localizationpriority: medium
-ms.openlocfilehash: 68a7de0692d05ffe8d1b489e75a58c16b3c826df
-ms.sourcegitcommit: 9779be4a1075e924dca7585808722d95cda99aff
+ms.openlocfilehash: 89cb689f0dce4f7dbaec96e9ce109e60d4292f92
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70118060"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282479"
 ---
 # <a name="payout-summary"></a>Résumé du paiement
 
@@ -24,7 +24,7 @@ Si vous vendez des produits dans Place de marché Microsoft Azure, la page **R�
 
 ## <a name="access-the-payout-summary-pages"></a>Accéder aux pages de résumé de paiement
 
-Pour ouvrir l’une des pages de résumé de paiement:
+Pour ouvrir l’une des pages de résumé de paiement :
 
 1. Sélectionnez l’icône Money dans le coin supérieur droit.
 2. Sélectionnez paiements, historique des transactions ou exporter des données.
@@ -53,13 +53,13 @@ Pour exporter les données de transaction sur cette page, sélectionnez Exporter
 
 ## <a name="payment-status"></a>Statut du paiement
 
-| État de l’obtention           | Reason                                                                                                                                      | Action de partenaire requise?                                   |
+| État de l’obtention           | Reason                                                                                                                                      | Action de partenaire requise ?                                   |
 |--------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------|
 | Non traité              | Le bénéfice est éligible au paiement. Il reste dans cet État pour une période de refroidissement telle que définie dans le Guide du programme d’incentives. | Non                                                         |
 | À venir                 | Commande de paiement générée en attente de révisions internes avant le traitement du paiement.                                                               | Non                                                         |
 | Facture d’impôt en attente      | Votre facture fiscale est incomplète ou non valide.                                                                                                  | Vous devez mettre à jour votre facture fiscale avant de pouvoir payer |
 | Rejeté pendant la révision   | Le paiement a été rejeté pendant la révision.                                                                                                     | Contacter le [support Microsoft](https://developer.microsoft.com/en-us/windows/support) pour plus d’informations                      |
-| Échec                   | Le paiement a échoué en raison d’une erreur système Microsoft.                                                                                         | Contacter le [support Microsoft](https://developer.microsoft.com/en-us/windows/support) pour plus d’informations                      |
+| Failed                   | Le paiement a échoué en raison d’une erreur système Microsoft.                                                                                         | Contacter le [support Microsoft](https://developer.microsoft.com/en-us/windows/support) pour plus d’informations                      |
 | En cours              | Le paiement est en cours.                                                                                                                 | Non                                                         |
 | Paiement incorrect        | Le remboursement est en cours.                                                                                                       | Non                                                         |
 | Échangé                     | Le paiement a été envoyé à votre banque.                                                                                                     | Non                                                         |
@@ -73,7 +73,7 @@ Pour exporter les données de transaction sur cette page, sélectionnez Exporter
 
 Suivez les instructions de cette page pour exporter les données souhaitées.
 
-Remarques :
+Remarques :
 
 - La page exporter des données n’est pas actualisée automatiquement. Vous devrez peut-être actualiser la page manuellement pour afficher les données les plus récentes.
 - Votre filtre peut entraîner une erreur aucune donnée n’est disponible. Cela signifie probablement que vous avez laissé la période de temps par défaut sélectionnée à trois mois, puis que vous avez sélectionné un ID de paiement d’un gain en dehors de cette période. Développez votre période, puis réessayez.
@@ -95,7 +95,7 @@ Cette option permet de télécharger les paiements que vous avez reçus dans vot
 | serviceFeeTax            | Montant total de serviceFeeTax dans payer à la devise pour le programme/participantID (applicable aux programmes de stockage et à la place de marché Azure uniquement) |
 | totalPayment             | Paiement total en devise locale, à l’exclusion de la taxe à retenir et des taxes de vente (le cas échéant) pour le programme/participantID   |
 | currencyCode             | Paiement à code devise                                                                                                                      |
-| paymentMethod            | Méthode utilisée pour payer le partenaire, par exemple, virement bancaire, note de crédit                                                             |
+| paymentMethod            | Méthode utilisée pour payer le partenaire, par exemple, transfert bancaire électronique, note de crédit                                                             |
 | paymentID                | Identificateur unique du paiement. Ce nombre est généralement visible dans votre relevé bancaire. (applicable uniquement aux paiements SAP)              |
 | paymentStatus            | Statut du paiement                                                                                                                            |
 | paymentStatusDescription | Description conviviale de l’état du paiement                                                                                                    |
@@ -122,7 +122,7 @@ Cette option fournit un téléchargement de chaque élément de ligne en cours d
 | situés                          | Indique une règle d’entreprise pour le bénéfice                                                                                                  | Tous                                                            |
 | earningRate                    | Taux d’incentives appliqué au montant de la transaction pour générer un gain                                                                      | Tous                                                            |
 | quantity                       | Varie selon le programme. Indique la quantité facturée pour les programmes transactionnels                                                            | Tous                                                            |
-| quantityType                   | Indique le type de quantité, par exemple quantité facturée, MAU                                                                                     | Tous                                                            |
+| quantityType                   | Indique le type de quantité par exemple, quantité facturée, MAU                                                                                     | Tous                                                            |
 | earningType                    | Indique s’il s’agit de frais, de remise, de Coop, de vente, etc.                                                                                          | Tous                                                            |
 | earningAmount                  | Montant de l’obtention dans la devise de la transaction d’origine                                                                                      | Tous                                                            |
 | earningAmountUSD               | Montant de gain en USD                                                                                                                    | Tous                                                            |
@@ -130,7 +130,7 @@ Cette option fournit un téléchargement de chaque élément de ligne en cours d
 | calculationDate                | Date à laquelle l’obtention a été calculée dans le système                                                                                            | Tous                                                            |
 | earningExchangeRate            | Taux de change utilisé pour afficher la quantité USD correspondante                                                                                  | Tous                                                            |
 | exchangeRateDate               | Date du taux de change utilisée pour calculer EarningAmount USD                                                                                   | Tous                                                            |
-| paymentAmountWOTax             | Gain de montant (sans taxe) dans le paiement de la devise pour les paiements «envoyés» uniquement                                                                 | Tous                                                            |
+| paymentAmountWOTax             | Gain de montant (sans taxe) dans le paiement de la devise pour les paiements « envoyés » uniquement                                                                 | Tous                                                            |
 | paymentCurrency                | Paiement à la devise choisie par le partenaire dans le profil de paiement. Affiché uniquement pour les paiements envoyés                                                   | Tous                                                            |
 | paymentExchangeRate            | Taux de change utilisé pour calculer paymentAmountWOTax dans la devise de paiement à l’aide de ExchangeRateDate                                            | Tous                                                            |
 | claimId                        | Identificateur unique de la revendication                                                                                                              | Incentives-certains programmes uniquement                                |
@@ -138,8 +138,8 @@ Cette option fournit un téléchargement de chaque élément de ligne en cours d
 | paymentId                      | Identificateur unique du paiement. Ce nombre est généralement visible dans votre relevé bancaire                                                 | Paiements SAP uniquement                                              |
 | paymentStatus                  | Statut du paiement                                                                                                                           | Tous                                                            |
 | paymentStatusDescription       | Description conviviale de l’état du paiement                                                                                                   | Tous                                                            |
-| customerId                     | Est toujours vide                                                                                                                     | Programmes d’incentives uniquement (exception: OEM) et place de marché Azure |
-| Souhaite                   | Est toujours vide                                                                                                                     | Programmes d’incentives uniquement (exception: OEM) et place de marché Azure |
+| customerId                     | Est toujours vide                                                                                                                     | Programmes d’incentives uniquement (exception : OEM) et place de marché Azure |
+| Souhaite                   | Est toujours vide                                                                                                                     | Programmes d’incentives uniquement (exception : OEM) et place de marché Azure |
 | partNumber                     | Est toujours vide                                                                                                                     | Certains programmes d’incentives et de boutiques et la place de marché Azure        |
 | productName                    | Nom de produit lié à la transaction                                                                                                       | Tous                                                            |
 | productId                      | Identificateur de produit unique                                                                                                                | Store et place de marché Azure                                    |

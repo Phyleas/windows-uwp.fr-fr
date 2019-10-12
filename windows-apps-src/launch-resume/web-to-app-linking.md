@@ -6,12 +6,12 @@ ms.date: 08/25/2017
 ms.topic: article
 ms.assetid: 260cf387-88be-4a3d-93bc-7e4560f90abc
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d8550d346833559ccea1e8aea4ae73a8c6d4e7c
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 5807cdc19e4b38c8cc8fa4ca45c4ef47e79b7742
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318661"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282250"
 ---
 # <a name="enable-apps-for-websites-using-app-uri-handlers"></a>Activer les applications pour les sites web à l’aide de gestionnaires d’URI d’application
 
@@ -23,7 +23,7 @@ Pour activer la liaison application-site web, vous devez :
 - gérer l’activation dans l’application.
 
 > [!Note]
-> À compter de la mise à jour Windows 10 Creators, pris en charge des liens cliqués dans Microsoft Edge lancera l’application correspondante. S'il a été cliqué dans d’autres navigateurs sur les liens pris en charge (par exemple, Internet Explorer, etc.), vous resterez dans le navigateur.
+> À compter de Windows 10 Creators Update, les liens pris en charge sur Microsoft Edge lanceront l’application correspondante. Les liens pris en charge sur les autres navigateurs (par exemple, Internet Explorer, etc.) vous empêcheront de naviguer.
 
 ## <a name="register-to-handle-http-and-https-links-in-the-app-manifest"></a>S’inscrire pour bénéficier du traitement des liens http et https dans le manifeste de l’application
 
@@ -46,7 +46,7 @@ Par exemple, si l’adresse de votre site web est « msn.com », vous devez sa
 </Applications>
 ```
 
-La déclaration ci-dessus inscrit votre application afin qu’elle puisse gérer des liens à partir de l’hôte spécifié. Si votre site Web a plusieurs adresses (par exemple : m.example.com, www\.example.com et example.com) puis ajoutez un distinct `<uap3:Host Name=... />` entrée à l’intérieur de la `<uap3:AppUriHandler>` pour chaque adresse.
+La déclaration ci-dessus inscrit votre application afin qu’elle puisse gérer des liens à partir de l’hôte spécifié. Si votre site Web comporte plusieurs adresses (par exemple : m.example.com, www\.example.com et example.com), ajoutez une entrée `<uap3:Host Name=... />` distincte à l’intérieur du `<uap3:AppUriHandler>` pour chaque adresse.
 
 ## <a name="associate-your-app-and-website-with-a-json-file"></a>Associer votre application et votre site web à un fichier JSON
 
@@ -71,12 +71,12 @@ Windows utilisera une connexion https vers votre site web et recherchera le fich
 
 L’exemple de fichier JSON ci-dessus illustre l’utilisation des caractères génériques. Les caractères génériques vous permettent de prendre en charge une grande diversité de liens, avec moins de lignes de code. La liaison application-site web prend en charge deux types de caractères génériques dans le fichier JSON :
 
-| **Wildcard** | **Description**               |
+| **Caractère générique** | **Description**               |
 |--------------|-------------------------------|
 | **\***       | Représente une sous-chaîne      |
 | **?**        | Représente un caractère unique |
 
-Par exemple, avec la ligne `"excludePaths" : [ "/news/*", "/blog/*" ]` donnée dans l’exemple ci-dessus, votre application prendra en charge tous les chemins d’accès qui commencent par l’adresse de votre site web (par exemple, msn.com), **sauf** ceux qui se trouvent sous `/news/` et `/blog/`. **MSN.com/Weather.HTML** sera être pris en charge, mais pas **msn.com/news/topnews.html**.
+Par exemple, étant donné `"excludePaths" : [ "/news/*", "/blog/*" ]` dans l’exemple ci-dessus, votre application prend en charge tous les chemins d’accès qui commencent par l’adresse de votre site Web (par exemple, msn.com), **à l’exception** de ceux sous `/news/` et `/blog/`. **MSN.com/Weather.html** sera pris en charge, mais pas **MSN.com/news/topnews.html**.
 
 ### <a name="multiple-apps"></a>Applications multiples
 
@@ -89,14 +89,14 @@ Si vous avez deux applications que vous voulez lier à votre site web, répertor
   "excludePaths" : [ "/news/*", "/blog/*" ]
  },
  {
-  "packageFamilyName": "Your second app's package family name, e.g. MyApp2_8jmtgj2pbbz6e",
+  "packageFamilyName": "Your second app's package family name, for example, MyApp2_8jmtgj2pbbz6e",
   "paths": [ "/example/*", "/links/*" ]
  }]
 ```
 
 Pour offrir à vos utilisateurs la meilleure expérience possible, utilisez les chemins d’accès des exclusions pour vous assurer que le contenu uniquement en ligne est exclu des chemins d’accès pris en charge dans votre fichier JSON.
 
-Les chemins d’accès des exclusions sont vérifiés en premier lieu et, s’il existe une correspondance, la page correspondante s’ouvre avec le navigateur au lieu de l’application désignée. Dans l’exemple ci-dessus, ' /news/\*» inclut toutes les pages sous ce chemin d’accès lors de la ' / news\*» (aucune barre oblique ne pistes « Actualités ») inclut des chemins d’accès sous ' news\*' comme ' newslocal /', ' newsinternational /', et ainsi de suite.
+Les chemins d’accès des exclusions sont vérifiés en premier lieu et, s’il existe une correspondance, la page correspondante s’ouvre avec le navigateur au lieu de l’application désignée. Dans l’exemple ci-dessus, « /News/\* » comprend toutes les pages sous ce chemin d’accès, tandis que « /News @ no__t-1 » (pas de « Actualités » de barres obliques inverses) comprend les chemins d’accès sous « News @ no__t-2 », tels que « newslocal/ », « NewsInternational/ », et ainsi de suite.
 
 ## <a name="handle-links-on-activation-to-link-to-content"></a>Gérer les liens à l’activation pour créer un lien vers le contenu
 
@@ -150,19 +150,19 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 **Important** Veillez à remplacer la dernière logique `if (rootFrame.Content == null)` par `rootFrame.Navigate(deepLinkPageType, e);`, comme indiqué dans l’exemple ci-dessus.
 
-## <a name="test-it-out-local-validation-tool"></a>Le tester : Outil de validation locale
+## <a name="test-it-out-local-validation-tool"></a>Testez-le : Outil de validation locale
 
 Vous pouvez tester la configuration de votre application et de votre site web en exécutant l’outil de vérification de l’inscription de l’hôte de l’application disponible dans :
 
-%windir%\\system32\\**AppHostRegistrationVerifier.exe**
+% windir% \\system32 @ no__t-1**AppHostRegistrationVerifier. exe**
 
 Testez la configuration de votre application et de votre site web en exécutant cet outil avec les paramètres suivants :
 
-**AppHostRegistrationVerifier.exe** *filepath packagefamilyname de nom d’hôte*
+Nom d’hôte **AppHostRegistrationVerifier. exe** *packagefamilyname FilePath*
 
--   Nom d’hôte : Votre site Web (par exemple, microsoft.com)
--   Nom de famille de packages (NFP) : NFP de votre application
--   Chemin d’accès du fichier : Le fichier JSON pour la validation locale (par exemple, C:\\SomeFolder\\windows-application-web-link)
+-   Nom d’hôte : Votre site Web (par exemple, microsoft.com)
+-   Nom de la famille de packages (PFN) : PFN de votre application
+-   Chemin du fichier : Fichier JSON pour la validation locale (par exemple, C : \\SomeFolder @ no__t-1Windows-App-Web-Link)
 
 Si l’outil ne retourne rien, la validation fonctionnera sur ce fichier lors du téléchargement. S’il existe un code d’erreur, il ne fonctionnera pas.
 
@@ -171,11 +171,11 @@ Vous pouvez activer la clé de Registre suivante afin qu'elle force la correspon
 `HKCU\Software\Classes\LocalSettings\Software\Microsoft\Windows\CurrentVersion\
 AppModel\SystemAppData\YourApp\AppUriHandlers`
 
-KeyName : `ForceValidation` Valeur : `1`
+KeyName Valeur `ForceValidation` : `1`
 
-## <a name="test-it-web-validation"></a>Testez-le : Validation de Web
+## <a name="test-it-web-validation"></a>Testez-le : Validation Web
 
-Fermez votre application pour vérifier que l’application est activée lorsque vous cliquez sur un lien. Copiez ensuite l’adresse de l’un des chemins d’accès pris en charge dans votre site web. Par exemple, si l’adresse de votre site Web est « msn.com » et qu’un des chemins d’accès des prise en charge est « chemin1 », vous utiliseriez `http://msn.com/path1`
+Fermez votre application pour vérifier que l’application est activée lorsque vous cliquez sur un lien. Copiez ensuite l’adresse de l’un des chemins d’accès pris en charge dans votre site web. Par exemple, si l’adresse de votre site Web est « msn.com » et que l’un des chemins d’accès de support est « chemin1 », vous devez utiliser `http://msn.com/path1`
 
 Vérifiez que votre application est fermée. Appuyez sur la **touche Windows + R** pour ouvrir la boîte de dialogue **Exécuter**, puis collez le lien dans la fenêtre. Votre application doit alors démarrer à la place du navigateur web.
 

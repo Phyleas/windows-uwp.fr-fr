@@ -1,7 +1,7 @@
 ---
 author: knicholasa
-description: Z en profondeur ou relative à la profondeur et clichés instantanés sont deux façons d’incorporer la profondeur à votre application pour aider les utilisateurs à se concentrer naturellement et efficacement.
-title: Z en profondeur et les clichés instantanés pour les applications UWP
+description: La profondeur Z, ou la profondeur relative, et l’ombre sont deux manières d’incorporer la profondeur dans votre application pour aider les utilisateurs à se concentrer naturellement et efficacement.
+title: Profondeur Z et ombre pour les applications UWP
 template: detail.hbs
 ms.author: nichola
 ms.date: 04/19/2019
@@ -10,73 +10,73 @@ ms.custom: 19H1
 keywords: windows 10, uwp
 pm-contact: chigy
 ms.localizationpriority: medium
-ms.openlocfilehash: ab49f13d3938e55750ce523f9e0d4ae241304763
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 5e9197be38d1edfdad41a434132f318cdf3f45ea
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63817706"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282414"
 ---
 # <a name="z-depth-and-shadow"></a>Profondeur de tampon et ombre
 
-![Format gif montrant quatre rectangles gris qui sont empilées en diagonale, les unes sur les autres. L’image gif est animé afin que les ombres apparaissent et disparaissent.](images/elevation-shadow/shadow.gif)
+![Image gif montrant quatre rectangles gris empilés en diagonale, l’un au-dessus de l’autre. Le GIF est animé afin que les ombres apparaissent et disparaissent.](images/elevation-shadow/shadow.gif)
 
-Création d’une hiérarchie visuelle des éléments dans votre interface utilisateur facilite l’analyse de l’interface utilisateur et transmet ce qui est important pour vous concentrer sur. Élévation, le fait de mettre la sélection d’éléments de votre interface utilisateur vers l’avant, est souvent utilisée pour obtenir une telle hiérarchie dans le logiciel. Cet article explique comment créer une élévation dans une application UWP à l’aide de la profondeur z et les clichés instantanés.
+La création d’une hiérarchie visuelle d’éléments dans votre interface utilisateur facilite l’analyse de l’interface utilisateur et transmet ce qui est important pour se concentrer sur. L’élévation, qui consiste à mettre en avant les éléments sélectionnés de votre interface utilisateur, est souvent utilisée pour obtenir une telle hiérarchie dans le logiciel. Cet article explique comment créer une élévation dans une application UWP à l’aide de la profondeur z et de l’ombre.
 
-Profondeur de Z est un terme utilisé entre les créateurs d’application 3D pour désigner la distance entre deux surfaces le long de l’axe z. Il illustre comment fermer un objet est dans l’Observateur. Considérez-la comme un concept similaire à x / y coordonnées, mais dans la direction z.
+Z-Depth est un terme utilisé parmi les créateurs d’applications en 3D pour indiquer la distance entre deux surfaces le long de l’axe z. Il montre comment fermer un objet dans la visionneuse. Considérez-le comme un concept similaire aux coordonnées x/y, mais dans la direction z.
 
-## <a name="why-use-z-depth"></a>Pourquoi utiliser z en profondeur ?
+## <a name="why-use-z-depth"></a>Pourquoi utiliser z-Depth ?
 
-Dans le monde physique, nous avons tendance à se concentrer sur les objets qui sont plus proches pour nous. Nous pouvons appliquer cet instinct spatial à l’interface utilisateur digital. Par exemple, si vous ajoutez un élément plus proche à l’utilisateur, puis l’utilisateur sera instinctivement vous concentrer sur l’élément. En déplacement éléments d’interface utilisateur plus proche de l’axe z, vous pouvez établir une hiérarchie visuelle entre les objets, aider les utilisateurs à effectuer des tâches naturellement et efficacement dans votre application.
+Dans le monde physique, nous avons tendance à nous concentrer sur les objets qui sont plus proches de nous. Nous pouvons également appliquer cet instinct spatial à l’interface utilisateur numérique. Par exemple, si vous rapprochez un élément de l’utilisateur, l’utilisateur instinctivement le focus sur l’élément. En déplaçant les éléments d’interface utilisateur plus près de l’axe z, vous pouvez établir une hiérarchie visuelle entre les objets, ce qui aide les utilisateurs à effectuer des tâches naturellement et efficacement dans votre application.
 
-## <a name="what-is-shadow"></a>Nouveautés de clichés instantanés ?
+## <a name="what-is-shadow"></a>Qu’est-ce que le cliché instantané ?
 
-Clichés instantanés est une façon qu'un utilisateur perçoit une élévation. Pour créer une ombre sur l’aire sous lumière au-dessus d’un objet avec élévation de privilèges. Plus l’objet, le plus grand et plus doux l’ombre devient. Les objets avec élévation de privilèges dans votre interface utilisateur n’avez pas besoin d’avoir des ombres, mais ils permettent de créer l’apparence d’élévation.
+Shadow est un moyen pour un utilisateur de percevoir l’élévation. Clair au-dessus d’un objet élevé crée une ombre sur l’aire ci-dessous. Plus l’objet est élevé, plus l’ombre est grande et lisse. Les objets élevés dans votre interface utilisateur n’ont pas besoin d’avoir des ombres, mais ils permettent de créer l’apparence de l’élévation.
 
-Dans les applications UWP, ombres doivent être utilisés de façon délibérée, plutôt qu’esthétique. L’utilisation des ombres trop pour réduire ou éliminer la possibilité de vous concentrer l’utilisateur de l’ombre.
+Dans les applications UWP, les ombres doivent être utilisées dans un sens volontaire plutôt que esthétique. L’utilisation d’un trop grand nombre d’ombres diminue ou élimine la capacité de l’ombre à concentrer l’utilisateur.
 
-Si vous utilisez des contrôles standard, ThemeShadow ombres sont incorporées automatiquement dans votre interface utilisateur. Toutefois, vous pouvez manuellement inclure des ombres dans votre interface utilisateur à l’aide de la ThemeShadow ou les APIs DropShadow. 
+Si vous utilisez des contrôles standard, les ombres ThemeShadow seront incorporées automatiquement dans votre interface utilisateur. Toutefois, vous pouvez inclure manuellement les ombres dans votre interface utilisateur à l’aide des API ThemeShadow ou DropShadow. 
 
 ## <a name="themeshadow"></a>ThemeShadow
 
-Le type peut être appliqué à n’importe quel élément XAML pour dessiner de ThemeShadow occulte appropriée en fonction de x, y, les coordonnées z. ThemeShadow ajuste aussi automatiquement pour les autres spécifications de l’environnement :
+Le type ThemeShadow peut être appliqué à n’importe quel élément XAML pour dessiner des Shadows de manière appropriée en fonction des coordonnées x, y, z. ThemeShadow s’ajuste également automatiquement pour d’autres spécifications environnementales :
 
-- S’adapte aux modifications de l’éclairage, thème de l’utilisateur, l’environnement de l’application et shell.
-- Applique des ombres à des éléments automatiquement en fonction de leur profondeur z. 
-- Synchronise éléments lorsqu’ils déplacent et modifier une élévation.
-- Conserve les ombres cohérent au sein et entre les applications.
+- S’adapte aux modifications de l’éclairage, du thème de l’utilisateur, de l’environnement de l’application et de l’interpréteur de commandes.
+- Applique automatiquement des ombres aux éléments en fonction de leur profondeur z. 
+- Maintient la synchronisation des éléments à mesure qu’ils se déplacent et modifient l’élévation.
+- Garantit la cohérence des Shadows dans et entre les applications.
 
-Voici comment ThemeShadow a été implémenté sur un MenuFlyout. MenuFlyout intègre un expérience où la surface principale est élevée à 32 px et chaque menu en cascade supplémentaires est ouvert + 8px au-dessus du menu de que s’ouvre à partir.
+Voici comment ThemeShadow a été implémenté sur un MenuFlyout. MenuFlyout a une expérience intégrée dans laquelle l’aire principale est élevée à 32px et chaque menu en cascade supplémentaire est ouvert + 8px au-dessus du menu à partir duquel il s’ouvre.
 
-![Capture d’écran ThemeShadow appliqué à un MenuFlyout avec trois menus open, imbriquées. Le premier menu est 32 px avec élévation de privilèges et chaque menu suivants qui s’ouvre dans le menu précédent est 8px avec élévation de privilèges plus telle qu’elle laisse une ombre distincte sur l’arrière-plan.](images/elevation-shadow/themeshadow-menuflyout.png)
+![Capture d’écran de ThemeShadow appliquée à un MenuFlyout avec trois menus imbriqués ouverts. Le premier menu est élevé 32px et chaque menu suivant qui s’ouvre à partir du menu précédent est élevé 8px de manière à ce qu’il quitte une ombre distincte sur l’arrière-plan.](images/elevation-shadow/themeshadow-menuflyout.png)
 
-### <a name="themeshadow-in-common-controls"></a>ThemeShadow contrôle en commun
+### <a name="themeshadow-in-common-controls"></a>ThemeShadow dans les contrôles communs
 
-Les contrôles communs suivants utilisent automatiquement ThemeShadow pour effectuer un cast des ombres à partir de la profondeur de 32 px, sauf indication contraire :
+Les contrôles communs suivants utilisent automatiquement ThemeShadow pour effectuer un cast des Shadows de 32px Depth, sauf indication contraire :
 
-- [Menu contextuel](../controls-and-patterns/menus.md), [barre de commandes](../controls-and-patterns/app-bars.md), [menu volant de la barre de commandes](../controls-and-patterns/command-bar-flyout.md), [barre de menus](../controls-and-patterns/menus.md#create-a-menu-bar)
-- [Boîtes de dialogue et menus volants](../controls-and-patterns/dialogs.md) (boîte de dialogue à 64px)
+- [Menu contextuel](../controls-and-patterns/menus.md), [barre de commandes](../controls-and-patterns/app-bars.md), menu [volant de barre de commandes](../controls-and-patterns/command-bar-flyout.md), [BarreMenus](../controls-and-patterns/menus.md#create-a-menu-bar)
+- [Boîtes de dialogue et lanceurs](../controls-and-patterns/dialogs.md) (boîte de dialogue sur 64px)
 - [NavigationView](../controls-and-patterns/navigationview.md)
 - [ComboBox](../controls-and-patterns/combo-box.md), [DropDownButton, SplitButton, ToggleSplitButton](../controls-and-patterns/buttons.md)
 - [TeachingTip](../controls-and-patterns/dialogs-and-flyouts/teaching-tip.md)
 - [AutoSuggestBox](../controls-and-patterns/auto-suggest-box.md) 
-- [Sélecteurs/Date/heure de calendrier](../controls-and-patterns/date-and-time.md)
+- [Sélecteurs de calendrier/date/heure](../controls-and-patterns/date-and-time.md)
 - [Info-bulle](../controls-and-patterns/tooltips.md) (16px)
-- [Contrôle de transport de supports](../controls-and-patterns/media-playback.md#media-transport-controls), [InkToolbar](../controls-and-patterns/inking-controls.md)
+- [Contrôle du transport multimédia](../controls-and-patterns/media-playback.md#media-transport-controls), [InkToolbar](../controls-and-patterns/inking-controls.md)
 - [Animation connectée](../motion/connected-animation.md)
 
-Remarque: Menus volants s’applique uniquement ThemeShadow lors de la compilation par rapport à Windows 10 version 1903 ou un kit de développement logiciel plus récent.
+Remarque : Les lanceurs appliquent uniquement ThemeShadow lorsqu’ils sont compilés avec Windows 10 version 1903 ou un SDK plus récent.
 
 ### <a name="themeshadow-in-popups"></a>ThemeShadow dans les fenêtres contextuelles
 
-Il est souvent le cas que l’interface utilisateur de votre application utilise une fenêtre contextuelle pour les scénarios où vous avez besoin d’attention et l’action rapide de l’utilisateur. Il s’agit d’exemples intéressants lorsque le cliché instantané doit être utilisé pour aider à créer la hiérarchie dans l’interface utilisateur de votre application.
+C’est souvent le cas lorsque l’interface utilisateur de votre application utilise une fenêtre contextuelle pour les scénarios où vous avez besoin d’attirer l’attention de l’utilisateur et de l’action rapide. Il s’agit de bons exemples qui illustrent l’utilisation de Shadow pour créer une hiérarchie dans l’interface utilisateur de votre application.
 
-ThemeShadow convertit automatiquement les ombres lorsqu’il est appliqué à un élément XAML dans un [contextuelle](/uwp/api/windows.ui.xaml.controls.primitives.popup). Elle sera convertie ombres sur le contenu de l’application en arrière-plan derrière elle et tous autres ouvrir les menus contextuels en dessous.
+ThemeShadow convertit automatiquement les ombres quand il est appliqué à un élément XAML dans une [fenêtre contextuelle](/uwp/api/windows.ui.xaml.controls.primitives.popup). Il effectue un cast des ombres sur le contenu en arrière-plan de l’application derrière celui-ci, ainsi que d’autres menus contextuels ouverts en dessous.
 
-Pour utiliser ThemeShadow avec les menus contextuels, utilisez le `Shadow` propriété pour appliquer un ThemeShadow à un élément XAML. Puis, l’élever l’élément à partir d’autres éléments derrière lui, par exemple en utilisant le composant z de la `Translation` propriété.
-Pour la plupart des interface utilisateur du menu contextuel, l’élévation par défaut recommandée par rapport à du contenu d’arrière-plan de l’application est 32 pixels efficaces.
+Pour utiliser ThemeShadow avec des fenêtres contextuelles, utilisez la propriété `Shadow` pour appliquer un ThemeShadow à un élément XAML. Ensuite, élevez l’élément à partir d’autres éléments en arrière-plan, par exemple en utilisant le composant z de la propriété `Translation`.
+Pour la plupart de l’interface utilisateur, l’élévation recommandée par défaut par rapport au contenu en arrière-plan de l’application est de 32 pixels effectifs.
 
-Cet exemple montre un Rectangle dans une fenêtre contextuelle projette une ombre sur le contenu d’arrière-plan de l’application et tous les autres menus contextuels derrière lui :
+Cet exemple montre un rectangle dans une fenêtre contextuelle qui convertit une ombre sur le contenu en arrière-plan de l’application et tous les autres menus contextuels qu’il contient :
 
 ```xaml
 <Popup>
@@ -93,13 +93,13 @@ Cet exemple montre un Rectangle dans une fenêtre contextuelle projette une ombr
 PopupRectangle.Translation += new Vector3(0, 0, 32);
 ```
 
-![Une seule contextuelle rectangulaire avec une ombre.](images/elevation-shadow/PopupRectangle.png)
+![Popup rectangulaire unique avec une ombre.](images/elevation-shadow/PopupRectangle.png)
 
-### <a name="disabling-default-themeshadow-on-custom-flyout-controls"></a>La désactivation par défaut le contrôle ThemeShadow sur le menu volant personnalisé
+### <a name="disabling-default-themeshadow-on-custom-flyout-controls"></a>Désactivation de ThemeShadow par défaut sur les contrôles de menu volant personnalisés
 
-Les contrôles basés sur [Flyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.flyout), [DatePickerFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.datepickerflyout), [MenuFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.menuflyout) ou [TimePickerFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.timepickerflyout) automatiquement utiliser ThemeShadow pour convertir un clichés instantanés.
+Les contrôles basés sur le [menu volant](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.flyout), [DatePickerFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.datepickerflyout), [MenuFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.menuflyout) ou [TimePickerFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.timepickerflyout) utilisent automatiquement ThemeShadow pour effectuer un cast d’une ombre.
 
-Si les clichés instantanés par défaut ne semble pas correct sur votre contenu du contrôle, puis vous pouvez le désactiver en définissant le [IsDefaultShadowEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flyoutpresenter.isdefaultshadowenabled) propriété `false` sur le FlyoutPresenter associé :
+Si l’ombre par défaut ne semble pas correcte sur le contenu de votre contrôle, vous pouvez la désactiver en affectant à la propriété [IsDefaultShadowEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flyoutpresenter.isdefaultshadowenabled) la valeur `false` sur le FlyoutPresenter associé :
 
 ```xaml
 <Flyout>
@@ -113,11 +113,11 @@ Si les clichés instantanés par défaut ne semble pas correct sur votre contenu
 
 ### <a name="themeshadow-in-other-elements"></a>ThemeShadow dans d’autres éléments
 
-En général nous vous encourageons à réfléchir à votre utilisation des clichés instantanés et limiter son utilisation au cas où il introduit significative hiérarchie d’objets visuel. Toutefois, nous fournissons un moyen de convertir une ombre à partir de n’importe quel élément d’interface utilisateur dans le cas où vous avez scénarios avancés qui nécessitent l’il.
+En général, nous vous encourageons à réfléchir soigneusement à votre utilisation de l’ombre et à limiter son utilisation aux cas où elle introduit une hiérarchie visuelle significative. Toutefois, nous fournissons un moyen d’effectuer un cast d’une ombre à partir de n’importe quel élément d’interface utilisateur si vous avez des scénarios avancés qui l’exigent.
 
-Pour effectuer un cast d’un cliché instantané à partir d’un élément XAML qui n’est pas dans une fenêtre contextuelle, vous devez spécifier explicitement les autres éléments qui peuvent recevoir les clichés instantanés dans le `ThemeShadow.Receivers` collection. Les récepteurs ne peut pas être un ancêtre de la roulettes dans l’arborescence visuelle.
+Pour effectuer un cast d’une ombre à partir d’un élément XAML qui n’est pas dans un popup, vous devez spécifier explicitement les autres éléments qui peuvent recevoir l’ombre dans la collection `ThemeShadow.Receivers`. Les destinataires ne peuvent pas être un ancêtre du casteur dans l’arborescence d’éléments visuels.
 
-Cet exemple montre deux Rectangles qui ombres dans une grille derrière les portées :
+Cet exemple montre deux rectangles qui effectuent un cast des ombres dans une grille derrière :
 
 ```xaml
 <Grid>
@@ -141,33 +141,33 @@ Rectangle1.Translation += new Vector3(0, 0, 16);
 Rectangle2.Translation += new Vector3(120, 0, 32);
 ```
 
-![Deux rectangles turquoise en regard de chacun des autres, tous deux avec des ombres.](images/elevation-shadow/SharedShadow.png)
+![Deux rectangles turquoise les uns à côté des autres, avec des ombres.](images/elevation-shadow/SharedShadow.png)
 
-### <a name="performance-best-practices-for-themeshadow"></a>Meilleures pratiques relatives aux performances ThemeShadow
+### <a name="performance-best-practices-for-themeshadow"></a>Meilleures pratiques en matière de performances pour ThemeShadow
 
-1. Le système définit une limite de 5 paires roulettes et le destinataire et s’arrête de clichés instantanés, si cette valeur est dépassée. Respecter la limite appliquée par le système de 5 paires roulettes et le destinataire.
+1. Le système définit une limite de 5 paires de transtypageur-récepteur et désactive l’ombre si cette opération est dépassée. Respectez la limite imposée par le système de 5 paires caster-Receiver.
 
-2. Limiter le nombre d’éléments de récepteur personnalisée au minimum nécessaire.
+2. Limitez le nombre d’éléments de récepteur personnalisés au minimum nécessaire.
 
-3. Si plusieurs éléments receiver sont à l’élévation même, essayez de les combiner en ciblant un élément parent unique à la place.
+3. Si plusieurs éléments Receiver sont à la même altitude, essayez de les combiner en ciblant un seul élément parent à la place.
 
-4. Si plusieurs éléments chargé de convertir le même type d’ombre sur les mêmes éléments de récepteur ajouter l’ombre comme une ressource partagée, puis la réutiliser.
+4. Si plusieurs éléments effectuent un cast du même type d’ombre sur les mêmes éléments de récepteur, ajoutez l’ombre en tant que ressource partagée et réutilisez-la.
 
 ## <a name="drop-shadow"></a>Ombre portée
 
-DropShadow n’est pas automatiquement réactif à son environnement et n’utilise pas de sources de lumière. Par exemple les implémentations, consultez le [DropShadow classe](https://docs.microsoft.com/uwp/api/windows.ui.composition.dropshadow).
+DropShadow ne répond pas automatiquement à son environnement et n’utilise pas de sources lumineuses. Pour obtenir des exemples d’implémentation, consultez la [classe DropShadow](https://docs.microsoft.com/uwp/api/windows.ui.composition.dropshadow).
 
-## <a name="which-shadow-should-i-use"></a>Les clichés instantanés dois-je utiliser ?
+## <a name="which-shadow-should-i-use"></a>Quelle ombre dois-je utiliser ?
 
 | Propriété | ThemeShadow | DropShadow |
 | - | - | - | - |
-| **Min SDK** | Windows 10 version 1903 | 14393 |
-| **Adaptability** | Oui | Non |
+| **SDK min.** | Windows 10 version 1903 | 14393 |
+| **Adaptabilité** | Oui | Non |
 | **Personnalisation** | Non | Oui |
-| **Source de lumière** | Automatique (global par défaut, mais vous pouvez remplacer par application) | Aucune |
-| **Prise en charge dans les environnements 3D** | Oui | Non |
+| **Source de lumière** | Automatique (global par défaut, mais peut être remplacé par l’application) | Aucune |
+| **Pris en charge dans les environnements 3D** | Oui | Non |
 
-- N’oubliez pas que l’objectif de clichés instantanés est de fournir une hiérarchie explicite, non comme un simple traitement visual.
-- En règle générale, nous vous recommandons d’utiliser ThemeShadow, qui s’adapte automatiquement à son environnement.
-- Pour les problèmes sur les performances, limiter le nombre des ombres, utiliser tout autre traitement visual ou utiliser DropShadow.
-- Si vous avez des scénarios plus avancés pour atteindre la hiérarchie d’objets visuel, envisagez d’utiliser tout autre traitement visual (par exemple, couleur). Si les clichés instantanés est nécessaire, utilisez DropShadow.
+- Gardez à l’esprit que l’objectif de l’ombre est de fournir une hiérarchie significative, et non un simple traitement visuel.
+- En général, nous vous recommandons d’utiliser ThemeShadow, qui s’adapte automatiquement à son environnement.
+- Pour les problèmes de performances, limitez le nombre d’ombres, utilisez un autre traitement visuel ou utilisez DropShadow.
+- Si vous avez des scénarios plus avancés pour obtenir une hiérarchie visuelle, envisagez d’utiliser un autre traitement visuel (par exemple, la couleur). Si une ombre est nécessaire, utilisez DropShadow.

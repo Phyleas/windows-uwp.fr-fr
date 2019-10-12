@@ -8,12 +8,12 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 316682ba136b5b3249d26abd0a5c5a877abbcf12
-ms.sourcegitcommit: 76357092f90b70bdb21ee43a5a416fe1fbfd9b89
+ms.openlocfilehash: c99d05a701f41e24663d116773b000017b805d81
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72257940"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72281803"
 ---
 # <a name="integrate-your-packaged-desktop-app-with-windows-10-and-uwp"></a>Intégrer votre application de bureau packagée à Windows 10 et UWP
 
@@ -247,7 +247,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 |Verb |Le nom qui apparaît dans le menu contextuel Explorateur de fichiers. Cette chaîne est localisable en utilisant ```ms-resource```.|
 |Id |L’ID unique du verbe. Si votre application est une application UWP, elle est transmise à votre application dans le cadre de ses arguments d’événement d’activation afin de pouvoir gérer la sélection de l’utilisateur de manière appropriée. Si votre application est une application empaquetée de confiance totale, elle reçoit des paramètres à la place (voir la puce suivante). |
 |Paramètres |La liste des paramètres et des valeurs d’arguments associés au verbe. Si votre application est une application empaquetée avec un niveau de confiance totale, ces paramètres sont passés à l’application en tant qu’arguments d’événement lorsque l’application est activée. Vous pouvez personnaliser le comportement de votre application en fonction de différents verbes d’activation. Si une variable peut contenir un chemin d’accès de fichier, placez la valeur du paramètre entre guillemets. Vous éviterez les problèmes qui se produisent dans les cas où le chemin d’accès contient des espaces. Si votre application est une application UWP, vous ne pouvez pas passer de paramètres. L’application reçoit l’ID à la place (voir la puce précédente).|
-|Extended |Indique que le verbe doit seulement apparaître, si l’utilisateur maintient enfoncée la touche **Maj** avant de cliquer avec le bouton droit sur le fichier pour afficher le menu contextuel. Cet attribut est facultatif et est défini par défaut sur la valeur **False** (c’est-à-dire que le verbe est toujours affiché) s’il n’est pas répertorié. Vous devez spécifier ce comportement individuellement pour chaque verbe (à l’exception de « Ouvrir », qui est toujours défini sur **False**).|
+|Extended |Indique que le verbe doit seulement apparaître, si l’utilisateur maintient enfoncée la touche **Maj** avant de cliquer avec le bouton droit sur le fichier pour afficher le menu contextuel. Cet attribut est facultatif et sa valeur par défaut est **false** (par exemple, toujours afficher le verbe) s’il n’est pas listé. Vous devez spécifier ce comportement individuellement pour chaque verbe (à l’exception de « Ouvrir », qui est toujours défini sur **False**).|
 
 #### <a name="example"></a>Exemple
 
