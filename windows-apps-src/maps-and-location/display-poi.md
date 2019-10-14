@@ -6,18 +6,18 @@ ms.date: 08/11/2017
 ms.topic: article
 keywords: windows 10, uwp, carte, emplacement, clics-infos
 ms.localizationpriority: medium
-ms.openlocfilehash: 2aca8f4daea39a190af4dd1007a6b961198994dd
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: b8e14693dd6ef23714da53d652b9083f202cd62d
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370543"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340430"
 ---
 # <a name="display-points-of-interest-on-a-map"></a>Afficher les points d’intérêt sur une carte
 
 Ajoutez des points d’intérêt à une carte à l’aide des punaises, des images, des formes et des éléments d’interface utilisateur XAML. Un point d’intérêt est un point spécifique sur la carte, qui représente un élément intéressant. Il peut s’agir, par exemple, de l’emplacement d’une entreprise, d’une localité ou d’un ami.
 
-Pour en savoir plus sur l’affichage POI sur votre application, téléchargez l’exemple suivant à partir de la [référentiel de Windows-universal-samples](https://go.microsoft.com/fwlink/p/?LinkId=619979) sur GitHub : [Exemple de mappage Universal Windows Platform (UWP)](https://go.microsoft.com/fwlink/p/?LinkId=619977).
+Pour en savoir plus sur l’affichage de la valeur de votre application, téléchargez l’exemple suivant à partir du [référentiel Windows-Universal-Samples](https://go.microsoft.com/fwlink/p/?LinkId=619979) sur GitHub : [Exemple de carte de plateforme Windows universelle (UWP)](https://go.microsoft.com/fwlink/p/?LinkId=619977).
 
 Affichez des punaises, des images et des formes sur la carte en ajoutant des objets [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon), [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard),  [**MapPolygon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolygon) et [**MapPolyline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolyline) à une collection **MapElements** d'un objet [**MapElementsLayer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelementslayer). Ensuite, ajoutez cet objet de couche à la collection **Couches** d’un contrôle de carte.
 
@@ -163,7 +163,7 @@ public void AddLandmarkPhoto()
 }
 ```
 
-Il existe trois parties de ce code intéressant d’examiner plus attentivement : L’image, l’appareil photo de référence et le [ **NormalizedAnchorPoint** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.NormalizedAnchorPoint) propriété.
+Il y a trois parties de ce code qui méritent d’être examinées un peu plus près : L’image, l’appareil photo de référence et la propriété [**NormalizedAnchorPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.NormalizedAnchorPoint) .
 
 ### <a name="image"></a>Image
 
@@ -352,7 +352,7 @@ Cet exemple affiche une collection d’éléments XAML liés à un [**MapItemsCo
 </maps:MapControl>
 ```
 
-La propriété ``ItemsSource``propriété dans l’exemple ci-dessus est liée à une propriété de type [IList](https://docs.microsoft.com/dotnet/api/system.collections.ilist?view=netframework-4.70) dans le fichier code-behind.
+La propriété ``ItemsSource``propriété dans l’exemple ci-dessus est liée à une propriété de type [IList](https://docs.microsoft.com/dotnet/api/system.collections.ilist) dans le fichier code-behind.
 
 ```csharp
 public sealed partial class Scenario1 : Page
@@ -480,4 +480,4 @@ Dans votre page XAML, associez la propriété dans votre classe de modèle d’a
 * [Exemple d’application de trafic UWP](https://go.microsoft.com/fwlink/p/?LinkId=619982)
 * [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon)
 * [**MapPolygon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolygon)
-* [**MapPolyline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolyline)
+* [**Polyligne**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolyline)

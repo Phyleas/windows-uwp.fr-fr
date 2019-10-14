@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, sécurité
 ms.localizationpriority: medium
-ms.openlocfilehash: b3537b0d0186a80a5332a28a61f3775227c911e2
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: cb5687c1a6744c34231c9b368da7c691c8e77642
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371352"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282437"
 ---
 # <a name="security"></a>Sécurité
 
