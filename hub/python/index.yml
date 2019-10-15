@@ -10,51 +10,59 @@ metadata:
   ms.prod: dev-environment
   ms.technology: windows-python
   ms.topic: landing-page
-  ms.openlocfilehash: 60c0905a87d5089cccf5a525a6d29f87c327fd62
-  ms.sourcegitcommit: 7104ad5d01ad1c69a4ea0b3ba6732c1b2a98ec09
+  ms.openlocfilehash: 568c8f2eb6d7dc9c6f010e8a7c2c5d6d71fda9c7
+  ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
   ms.translationtype: HT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 09/25/2019
-  ms.locfileid: "71251116"
+  ms.lasthandoff: 10/15/2019
+  ms.locfileid: "72313403"
 landingContent:
 - title: Bien démarrer pour les débutants
   linkLists:
   - linkListType: how-to-guide
     links:
     - text: Configurer votre environnement de développement
-      url: get-started/python-for-education.md#set-up-your-development-environment
+      url: ./beginners.md
   - linkListType: tutorial
     links:
     - text: Exécuter du code python de base
-      url: get-started/python-for-education.md#hello-world-tutorial-for-some-python-basics
+      url: ./beginners.md#hello-world-tutorial-for-some-python-basics
     - text: HelloWorld avec VS Code
-      url: get-started/python-for-education.md#hello-world-tutorial-for-using-python-with-vs-code
+      url: ./beginners.md#hello-world-tutorial-for-using-python-with-vs-code
     - text: Créer un jeu simple avec Pygame
-      url: get-started/python-for-education.md#create-a-simple-game-with-pygame
+      url: ./beginners.md#create-a-simple-game-with-pygame
 - title: Bien démarrer avec le développement web
   linkLists:
   - linkListType: how-to-guide
     links:
     - text: Configurer votre environnement de développement
-      url: get-started/python-for-web.md#set-up-your-development-environment
+      url: ./web-frameworks.md#set-up-your-development-environment
   - linkListType: tutorial
     links:
     - text: HelloWorld avec Flask
-      url: get-started/python-for-web.md#hello-world-tutorial-for-flask
+      url: ./web-frameworks.md#hello-world-tutorial-for-flask
     - text: HelloWorld avec Django
-      url: get-started/python-for-web.md#hello-world-tutorial-for-django
+      url: ./web-frameworks.md#hello-world-tutorial-for-django
 - title: Bien démarrer avec les scripts d’automatisation
   linkLists:
   - linkListType: how-to-guide
     links:
     - text: Configurer votre environnement de développement
-      url: get-started/python-for-scripting.md#set-up-your-development-environment
+      url: ./scripting.md#set-up-your-development-environment
   - linkListType: tutorial
     links:
     - text: Exemple de script - Afficher mon système de fichiers
-      url: get-started/python-for-scripting.md#example-script-to-display-the-structure-of-your-file-system-directory
+      url: ./scripting.md#example-script-to-display-the-structure-of-your-file-system-directory
     - text: Exemple de script - Modifier tous les fichiers d’un répertoire
-      url: get-started/python-for-scripting.md#example-script-to-modify-all-files-in-a-directory
+      url: ./scripting.md#example-script-to-modify-all-files-in-a-directory
+- title: Bien démarrer avec les bases de données
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Installer et exécuter PostgreSQL
+      url: ./databases.md#install-postgresql
+    - text: Installer et exécuter MongoDB
+      url: ./databases.md#install-mongodb
 - title: Ressources supplémentaires
   linkLists:
   - linkListType: reference
@@ -71,17 +79,3 @@ landingContent:
       url: resources.md#online-courses
     - text: Liens de développement web recommandés
       url: resources.md#web-development
-- title: Guide de prise en charge de Mac sur Windows
-  linkLists:
-  - linkListType: reference
-    links:
-    - text: Changement de votre environnement de développement
-      url: ../mac-to-windows.md
-    - text: Raccourcis clavier
-      url: ../mac-to-windows.md#keyboard-shortcuts
-    - text: Raccourcis sur pavé tactile
-      url: ../mac-to-windows.md#trackpad-shortcuts
-    - text: Terminal et shell
-      url: ../mac-to-windows.md#terminal-and-shell
-    - text: Applications et utilitaires
-      url: ../mac-to-windows.md#apps-and-utilities
