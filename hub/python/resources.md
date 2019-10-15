@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Python, Microsoft, Windows 10, didacticiels, cours en ligne, Blogs, événements
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 3320cef0d3aaf48a2f93d65d93bf8876f1f997d6
-ms.sourcegitcommit: 7104ad5d01ad1c69a4ea0b3ba6732c1b2a98ec09
+ms.openlocfilehash: 64d4fc1c85ae4056da02f987ca654305a883d2c6
+ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71249241"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72313410"
 ---
 # <a name="resources-for-developing-with-python-on-windows"></a>Ressources pour le développement avec Python sur Windows
 
@@ -21,7 +21,7 @@ Liste de liens que nous recommandons pour les développeurs Python qui travaille
 
 ## <a name="general"></a>Général
 
-- [Blogs de développement Microsoft: Python](https://devblogs.microsoft.com/python/): Lisez les dernières mises à jour relatives à tous les éléments de Python chez Microsoft.
+- Blogs de développement @no__t 0Microsoft : Python @ no__t-0 : Lisez les dernières mises à jour relatives à tous les éléments de Python chez Microsoft.
 
 - [Didacticiel détaillé sur le développement Linux sur Windows avec WSL et Visual Studio code](https://devblogs.microsoft.com/commandline/an-in-depth-tutorial-on-linux-development-on-windows-with-wsl-and-visual-studio-code/): Procédure pas à pas de configuration de votre environnement dev, création d’une application Python et débogage.
 
@@ -29,13 +29,13 @@ Liste de liens que nous recommandons pour les développeurs Python qui travaille
 
 - [Azure pour les développeurs de Cloud python](https://docs.microsoft.com/azure/python/): Documentation couvrant tout, de la création et du déploiement d’une application Web Python sur Azure à l’exécution de code Python en tant que fonction sans serveur.
 
-- [Publications StackOverflow contenant «Python» et «Windows»](https://stackoverflow.com/questions/4750806/how-do-i-install-pip-on-windows/12476379): La communauté StackOverflow est extrêmement utile pour les questions d’adressage. Nous souhaitons surveiller activement et soutenir cette communauté.
+- [Publications StackOverflow contenant « Python » et « Windows »](https://stackoverflow.com/questions/4750806/how-do-i-install-pip-on-windows/12476379): La communauté StackOverflow est extrêmement utile pour les questions d’adressage. Nous souhaitons surveiller activement et soutenir cette communauté.
 
 - [Événements Python à venir](https://www.python.org/events/python-events): Connectez-vous avec d’autres Pythonistas et Pythoneers.
 
 - [Livres, sites Web, didacticiels sur Python.org ](https://wiki.python.org/moin/BeginnersGuide/Programmers): Une autre liste de ressources pour l’apprentissage de Python fournies par la communauté des utilisateurs.
 
-- [FAQ de Python.org](https://docs.python.org/3/faq/): Tout couvre de «qu’est-ce que Python?» pour', existe-t- [il un équivalent de l' «?:» de l’opérateur ternaire?»](https://docs.python.org/3/faq/programming.html#is-there-an-equivalent-of-c-s-ternary-operator).
+- [FAQ de Python.org](https://docs.python.org/3/faq/): Tout couvre de « qu’est-ce que Python ? » pour', existe-t- [il un équivalent de l' «  ?: » de l’opérateur ternaire ?»](https://docs.python.org/3/faq/programming.html#is-there-an-equivalent-of-c-s-ternary-operator).
 
 - [Langages de documentation python](https://wiki.python.org/moin/Languages): Liens vers les documents python dans des langues autres que l’anglais.
 
@@ -49,7 +49,7 @@ Liste de liens que nous recommandons pour les développeurs Python qui travaille
 
 - [Présentation de Python sur Microsoft Learn](https://docs.microsoft.com/en-us/learn/modules/intro-to-python/): Essayez la plateforme de Microsoft Learn interactive et gagnez des points d’expérience pour terminer ce module en couvrant les principes fondamentaux de l’écriture de code python de base, de la déclaration de variables et de l’utilisation de l’entrée et de la sortie de la console. L’environnement du bac à sable (sandbox) interactif permet de démarrer facilement pour les personnes qui n’ont pas encore installé leur environnement de développement Python.
 
-- [Python sur Pluralsight: 8 cours, 29 heures](https://app.pluralsight.com/paths/skills/python): Le parcours d’apprentissage Python sur Pluralsight offre des cours en ligne couvrant une variété de sujets liés à python, y compris un outil permettant de mesurer vos compétences et de trouver vos lacunes.
+- [Python sur Pluralsight : 8 cours, 29 heures @ no__t-0 : Le parcours d’apprentissage Python sur Pluralsight offre des cours en ligne couvrant une variété de sujets liés à python, y compris un outil permettant de mesurer vos compétences et de trouver vos lacunes.
 
 - [Didacticiels LearnPython.org](https://www.learnpython.org/): Commencez à apprendre à utiliser Python sans avoir besoin d’installer ou de définir d’autres éléments à l’aide de ces didacticiels interactifs interactifs de la part des gens de DataCamp.
 
@@ -65,7 +65,7 @@ Liste de liens que nous recommandons pour les développeurs Python qui travaille
 
 - [Autres frameworks web python](https://wiki.python.org/moin/WebFrameworks): Liste de frameworks web Python avec de brèves descriptions de Python.org.
 
-- [Tutoriel : Créez une application ballon avec Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/translator/tutorial-build-flask-app-translation-synthesis): Créez une application Web de ballon qui utilise Azure Cognitive Services pour traduire du texte, analyser le sentiment et synthétiser le texte traduit en voix.
+- [Tutoriel : Créer une application ballon avec Azure Cognitive Services @ no__t-0 : Créez une application Web de ballon qui utilise Azure Cognitive Services pour traduire du texte, analyser le sentiment et synthétiser le texte traduit en voix.
 
 - [Déployez une application Web Python sur une machine virtuelle dans Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-dev-start-howto-vm-python): Créez une machine virtuelle pour héberger votre application Web python dans Azure Stack.
 
@@ -75,21 +75,4 @@ Liste de liens que nous recommandons pour les développeurs Python qui travaille
 
 - [Générez des applications Django Python avec Microsoft Graph](https://docs.microsoft.com/graph/tutorials/python): Générez une application Web python django qui utilise l’API Microsoft Graph pour récupérer des informations de calendrier pour un utilisateur.
 
-- [Procédure pas à pas : Application Web API Bing ADS dans python](https://docs.microsoft.com/advertising/guides/walkthrough-web-application-python?view=bingads-13): Commencez à exécuter une application Web Microsoft Advertising à l’aide du kit de développement logiciel (SDK) python ADS de Bing, de l’IDE Visual Studio Code et de l’infrastructure Web Django.
-
-<!-- ## Data Science and Machine Learning
-
-- Anaconda - brief description
-- Canopy - brief description
-- TensorFlow - brief description
-- Scikit-Learn, Keras, PyTorch, etc - brief descriptions
-
-## Desktop GUI app and IoT development
-
-- PyQT - brief description
-- PyJs - brief description
-- PyGUI - brief descriptio
-- Kivy - brief descriptio
-- PyGTK - brief descriptio
-- WxPython - brief description
-- PyGame - brief description (with links to our internal games once they're done?) -->
+- [Procédure pas à pas : Application Web API Bing ADS dans python @ no__t-0 : Commencez à exécuter une application Web Microsoft Advertising à l’aide du kit de développement logiciel (SDK) python ADS de Bing, de l’IDE Visual Studio Code et de l’infrastructure Web Django.

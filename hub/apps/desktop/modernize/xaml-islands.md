@@ -6,20 +6,20 @@ ms.topic: article
 keywords: Windows 10, UWP, Windows Forms, WPF, îlots XAML
 ms.author: mcleans
 author: mcleanbyron
-ms.localizationpriority: medium
+ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: bd49417d110759dc9fec4ff4c9003e842bf1d7bb
-ms.sourcegitcommit: 6bb794c6e309ba543de6583d96627fbf1c177bef
-ms.translationtype: MT
+ms.openlocfilehash: 52287576dbc395af60e15b5f4b4a403db7e92900
+ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69643350"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72313448"
 ---
 # <a name="host-uwp-xaml-controls-in-desktop-apps-xaml-islands"></a>Héberger des contrôles XAML UWP dans les applications de bureau (îlots XAML)
 
 À compter de Windows 10, version 1903, vous pouvez héberger des contrôles UWP dans des applications de bureau non UWP à l’aide d’une fonctionnalité appelée *îlots XAML*. Cette fonctionnalité vous permet d’améliorer l’apparence, la convivialité et les fonctionnalités de vos applications WPF, Windows Forms et C++ Win32 existantes avec les dernières fonctionnalités de l’interface utilisateur de Windows 10 qui sont uniquement disponibles via les contrôles UWP. Cela signifie que vous pouvez utiliser des fonctionnalités UWP telles que [Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions) et des contrôles qui prennent en charge le [système de conception Fluent](/windows/uwp/design/fluent-design-system/index) dans vos applications C++ WPF, Windows Forms et Win32 existantes.
 
-Vous pouvez héberger n’importe quel contrôle UWP dérivé de [Windows. UI. Xaml. UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement), y compris:
+Vous pouvez héberger n’importe quel contrôle UWP dérivé de [Windows. UI. Xaml. UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement), y compris :
 
 * Tout contrôle UWP de première partie fourni par la bibliothèque SDK Windows ou WinUI.
 * Tout contrôle UWP personnalisé (par exemple, un contrôle utilisateur qui se compose de plusieurs contrôles UWP qui fonctionnent ensemble). Vous devez disposer du code source du contrôle personnalisé pour pouvoir le compiler avec votre application.
@@ -35,7 +35,7 @@ La façon dont vous utilisez les îlots XAML dépend de votre type d’applicati
 
 Nous recommandons que les applications WPF et Windows Forms utilisent les contrôles .NET îlot .NET disponibles dans le kit de pratiques de la communauté Windows. Ces contrôles fournissent un modèle objet qui imite (ou donne accès à) les propriétés, les méthodes et les événements des contrôles UWP correspondants. Ils gèrent également les comportements tels que la navigation au clavier et les modifications de disposition.
 
-Il existe deux jeux de contrôles d’îlot XAML pour les applications WPF et Windows Forms: les *contrôles encapsulés* et les *contrôles hôtes*. À compter de Windows 10, la version 1903, ces contrôles sont [disponibles en version préliminaire](#feature-roadmap)pour les développeurs.
+Il existe deux jeux de contrôles d’îlot XAML pour les applications WPF et Windows Forms : les *contrôles encapsulés* et les *contrôles hôtes*. À compter de Windows 10, la version 1903, ces contrôles sont [disponibles en version préliminaire](#feature-roadmap)pour les développeurs.
 
 ### <a name="wrapped-controls"></a>Contrôles encapsulés
 
@@ -72,16 +72,16 @@ Les contrôles .NET de l’îlot XAML requièrent Windows 10, version 1903 ou un
 
 | Type de contrôle | Package NuGet  | Articles connexes |
 |-----------------|----------------|---------------------|
-| [Contrôles encapsulés](#wrapped-controls) | Version 6.0.0-preview7 ou ultérieure de ces packages: <ul><li>WPF [Microsoft. Toolkit. WPF. UI. Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls)</li><li>Windows Forms: [Microsoft. Toolkit. Forms. UI. Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls)</li></ul>  | [Héberger un contrôle UWP standard dans une application WPF](host-standard-control-with-xaml-islands.md)  |
-| [Contrôle hôte](#host-controls) | Version 6.0.0-preview7 ou ultérieure de ces packages: <ul><li>WPF [Microsoft. Toolkit. WPF. UI. XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.XamlHost)</li><li>Windows Forms: [Microsoft. Toolkit. Forms. UI. XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.XamlHost)</li></ul>  | [Héberger un contrôle UWP standard dans une application WPF](host-standard-control-with-xaml-islands.md)<br/>[Héberger un contrôle UWP personnalisé dans une application WPF](host-custom-control-with-xaml-islands.md)  |
+| [Contrôles encapsulés](#wrapped-controls) | Version 6.0.0-preview7 ou ultérieure de ces packages : <ul><li>WPF [Microsoft. Toolkit. WPF. UI. Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls)</li><li>Windows Forms : [Microsoft. Toolkit. Forms. UI. Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls)</li></ul>  | [Héberger un contrôle UWP standard dans une application WPF](host-standard-control-with-xaml-islands.md)  |
+| [Contrôle hôte](#host-controls) | Version 6.0.0-preview7 ou ultérieure de ces packages : <ul><li>WPF [Microsoft. Toolkit. WPF. UI. XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.XamlHost)</li><li>Windows Forms : [Microsoft. Toolkit. Forms. UI. XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.XamlHost)</li></ul>  | [Héberger un contrôle UWP standard dans une application WPF](host-standard-control-with-xaml-islands.md)<br/>[Héberger un contrôle UWP personnalisé dans une application WPF](host-custom-control-with-xaml-islands.md)  |
 
-Tenez compte des détails suivants:
+Tenez compte des détails suivants :
 
 * Les packages de contrôle hôte sont également inclus dans les packages de contrôle encapsulé. Vous pouvez installer les packages de contrôle encapsulé si vous souhaitez utiliser les deux ensembles de contrôles.
 
 * Si vous hébergez un contrôle UWP personnalisé, votre projet WPF ou Windows Forms doit cibler .NET Core 3. L’hébergement de contrôles UWP personnalisés n’est pas pris en charge dans les applications qui ciblent le .NET Framework. Vous devez également effectuer quelques étapes supplémentaires pour référencer le contrôle personnalisé. Pour plus d’informations, consultez [héberger un contrôle UWP personnalisé dans une application WPF à l’aide des îlots XAML](host-custom-control-with-xaml-islands.md).
 
-* Dans les versions antérieures de ces instructions, vous `maxversiontested` aviez ajouté l’élément à un manifeste d’application dans votre projet WPF ou Windows Forms. Tant que vous utilisez les versions préliminaires les plus récentes des packages NuGet listés ci-dessus, vous n’avez plus besoin d’ajouter cet élément à votre manifeste.
+* Dans les versions antérieures de ces instructions, vous aviez ajouté l’élément `maxversiontested` à un manifeste d’application dans votre projet WPF ou Windows Forms. Tant que vous utilisez les versions préliminaires les plus récentes des packages NuGet listés ci-dessus, vous n’avez plus besoin d’ajouter cet élément à votre manifeste.
 
 ### <a name="architecture-of-xaml-island-net-controls"></a>Architecture des contrôles .NET (îlot XAML)
 
@@ -100,10 +100,10 @@ La boîte à outils de la communauté Windows fournit également les contrôles 
 | [WebView](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webview) | Windows 10, version 1803 | Utilise le moteur de rendu Microsoft Edge pour afficher le contenu Web. |
 | [WebViewCompatible](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webviewcompatible) | Windows 7 | Fournit une version de **WebView** qui est compatible avec d’autres versions de système d’exploitation. Ce contrôle utilise le moteur de rendu Microsoft Edge pour afficher le contenu Web sur Windows 10 version 1803 et ultérieure, et le moteur de rendu d’Internet Explorer pour afficher le contenu Web sur les versions antérieures de Windows 10, Windows 8. x et Windows 7. |
 
-Pour utiliser ces contrôles, installez l’un de ces packages NuGet:
+Pour utiliser ces contrôles, installez l’un de ces packages NuGet :
 
 * WPF [Microsoft. Toolkit. WPF. UI. Controls. WebView](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls.WebView)
-* Windows Forms: [Microsoft. Toolkit. Forms. UI. Controls. WebView](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls.WebView)
+* Windows Forms : [Microsoft. Toolkit. Forms. UI. Controls. WebView](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls.WebView)
 
 ## <a name="c-win32-applications"></a>C++Applications Win32
 
@@ -126,7 +126,7 @@ Pour plus d’informations, consultez [ce billet de blog](https://blogs.windows.
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-Pour plus d’informations générales et pour obtenir des didacticiels sur l’utilisation des îlots XAML, consultez les articles et ressources suivants:
+Pour plus d’informations générales et pour obtenir des didacticiels sur l’utilisation des îlots XAML, consultez les articles et ressources suivants :
 
 * [Didacticiel de modernisation d’une application WPF](modernize-wpf-tutorial.md): Ce didacticiel fournit des instructions pas à pas pour l’utilisation des contrôles encapsulés et des contrôles hôtes dans la boîte à outils de la communauté Windows pour ajouter des contrôles UWP à une application métier WPF existante. Ce didacticiel comprend le code complet de l’application WPF, ainsi que des instructions détaillées pour chaque étape du processus.
-* [Îlots XAML v1-mises à jour et](https://blogs.windows.com/windowsdeveloper/2019/06/13/xaml-islands-v1-updates-and-roadmap)feuille de route: Ce billet de blog présente de nombreuses questions courantes sur les îlots XAML et fournit un plan de développement détaillé.
+* [Îlots XAML v1-mises à jour et](https://blogs.windows.com/windowsdeveloper/2019/06/13/xaml-islands-v1-updates-and-roadmap)feuille de route : Ce billet de blog présente de nombreuses questions courantes sur les îlots XAML et fournit un plan de développement détaillé.
