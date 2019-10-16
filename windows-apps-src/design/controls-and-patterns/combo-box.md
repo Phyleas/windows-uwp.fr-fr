@@ -1,7 +1,7 @@
 ---
 Description: Zone de texte qui fournit une suggestion à mesure que l’utilisateur tape.
-title: Liste déroulante
-label: Combo box
+title: Zone de liste modifiable et zone de liste
+label: Combo box and list box
 template: detail.hbs
 ms.date: 10/02/2018
 ms.topic: article
@@ -10,16 +10,16 @@ pm-contact: stmoy
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f053be1aeb88454b94d7c04ba2627818ea43736
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 351e234577b1a07b33bdcdbb92642c3697342503
+ms.sourcegitcommit: 9625f8fb86ff6473ac2851e600bc02e996993660
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339402"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72163699"
 ---
-# <a name="combo-box"></a>Combo box
+# <a name="combo-box-and-list-box"></a>Zone de liste modifiable et zone de liste
 
-Utilisez une liste déroulante pour présenter à l’utilisateur une liste d’éléments parmi lesquels il peut effectuer son choix. Une liste déroulante démarre à l’état compact et se développe pour afficher une liste d’éléments sélectionnables.
+Utilisez une liste déroulante pour présenter à l’utilisateur une liste d’éléments parmi lesquels il peut effectuer son choix. Une liste déroulante démarre à l’état compact et se développe pour afficher une liste d’éléments sélectionnables. Un ListBox est semblable à une zone de liste modifiable, mais il n’est pas réductible et n’a donc pas d’état compact. Vous trouverez d’autres informations sur les zones de liste à la fin de cet article.
 
 Quand la liste déroulante est fermée, elle affiche la sélection actuelle ou elle est vide si aucun élément n’est sélectionné. Quand l’utilisateur développe la liste déroulante, elle affiche la liste des éléments sélectionnables.
 
@@ -294,6 +294,32 @@ bool IsValid(string Text)
 
 - Limitez le contenu texte des éléments de zone de liste déroulante à une seule ligne.
 - Triez les éléments d’une zone de liste déroulante dans l’ordre le plus logique. Regroupez les options associées et placez les options les plus courantes en haut. Triez les noms par ordre alphabétique, les nombres par ordre numérique et les dates par ordre chronologique.
+
+## <a name="list-boxes"></a>Zones de liste
+
+Une zone de liste permet à l’utilisateur de choisir un ou plusieurs éléments d’une collection. Les zones de liste sont similaires aux listes déroulantes, sauf qu’elles sont toujours ouvertes, c’est-à-dire qu’elles n’ont pas d’état compact (non développé). Les éléments de la liste peuvent défiler si l’espace est insuffisant pour les afficher tous.
+
+### <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
+
+- Une zone de liste peut être utile quand des éléments de la liste sont suffisamment importants pour être mis en avant, et quand l’écran offre suffisamment d’espace pour afficher la liste complète.
+- Une zone de liste doit attirer l’attention de l’utilisateur sur toutes les possibilités d’un choix important. En revanche, une liste déroulante attire initialement l’attention de l’utilisateur sur l’élément sélectionné.
+- Évitez d’utiliser une zone de liste dans les cas suivants :
+    - Il existe un très petit nombre d’éléments pour la liste. Si une zone de liste à sélection unique comporte toujours les deux mêmes options, mieux vaut utiliser des [cases d’option](radio-button.md). Pensez également à utiliser des cases d’option quand 3 ou 4 éléments statiques figurent dans la liste.
+    - La zone de liste est à sélection unique, et propose toujours les deux mêmes options, l’une étant l’inverse de l’autre (par exemple, « activé » et « désactivé »). Utilisez une case à cocher ou un bouton bascule.
+    - Le nombre d’éléments est très élevé. Pour les longues listes, mieux vaut utiliser un affichage Grille ou Liste. Pour les très longues listes de données groupées, utilisez de préférence un zoom sémantique.
+    - Les éléments sont des valeurs numériques contiguës. Si tel est le cas, pensez à utiliser un [curseur](slider.md).
+    - Les éléments de sélection ont une importance secondaire dans le flux de votre application, ou l’option par défaut est recommandée pour la plupart des utilisateurs dans la majorité des situations. Dans ce cas, utilisez plutôt une liste déroulante.
+
+### <a name="recommendations"></a>Recommandations
+
+- La plage idéale d’éléments dans une zone de liste est de 3 à 9.
+- Une zone de liste est efficace quand ses éléments peuvent varier de manière dynamique.
+- Dans la mesure du possible, la taille de la zone de liste doit être suffisante pour que vous n’ayez pas à faire défiler la liste des éléments.
+- Vérifiez qu’il n’y a aucune ambiguïté quand à la fonction de la zone de liste et aux éléments sélectionnés actuellement.
+- Réservez les effets visuels et les animations pour le retour tactile et pour l’état sélectionné des éléments.
+- Limitez le contenu textuel de l’élément de zone de liste à une seule ligne. Si les éléments sont visuels, vous pouvez personnaliser la taille. Si un élément contient plusieurs lignes de texte ou images, utilisez plutôt un affichage de Grille ou Liste.
+- Utilisez la police par défaut à moins que vos instructions de personnalisation imposent d’en utiliser une autre.
+- N’utilisez pas une zone de liste pour exécuter des commandes ou pour afficher ou masquer de manière dynamique d’autres contrôles.
 
 ## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
 

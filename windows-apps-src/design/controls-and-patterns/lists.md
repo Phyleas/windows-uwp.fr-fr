@@ -1,36 +1,42 @@
 ---
 Description: Les listes affichent et activent l’interaction avec du contenu basé sur des collections.
-title: Listes
+title: Collections et listes
 ms.assetid: C73125E8-3768-46A5-B078-FDDF42AB1077
-label: Lists
+label: Collections and Lists
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 10/08/2019
 ms.topic: article
 keywords: windows 10, uwp
-pm-contact: predavid
+pm-contact: anawish
 design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f45edc213d8abdfc43e834d023993b89249844d
-ms.sourcegitcommit: 98343e851f25a11ae02fc739477f5316fe8fcb95
+ms.openlocfilehash: e1167a57da6a3f54cabcc946cfbf7a592f301d2c
+ms.sourcegitcommit: 9625f8fb86ff6473ac2851e600bc02e996993660
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71061957"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72163756"
 ---
-# <a name="lists"></a>Listes
+# <a name="collections-and-lists"></a>Collections et listes
 
-Les listes affichent et activent l’interaction avec du contenu basé sur des collections. Les quatre modèles de liste traités dans cet article sont les suivants :
+Les collections et les listes font référence à la représentation de plusieurs éléments de données associés qui apparaissent ensemble. Les collections peuvent être représentées de plusieurs façons, par différents contrôles de collection (également appelés affichages Collection). Les contrôles de collection affichent et permettent des interactions avec le contenu basé sur des collections (liste de contacts, liste de dates, collection d’images, etc.).  Les contrôles traités dans cet article sont les suivants :
 
 - Affichages Liste, principalement utilisés pour afficher des collections de contenus riches en texte
 - Affichages Grille, principalement utilisés pour afficher des collections de contenus riches en images
-- Listes déroulantes, permettant aux utilisateurs de choisir un élément dans une liste développée
-- Zones de liste, permettant aux utilisateurs de choisir un ou plusieurs éléments dans une zone pouvant défiler
+- Affichages symétriques, principalement utilisés pour afficher des collections de contenus comportant beaucoup d’images qui nécessitent la mise au point d’exactement un élément à la fois
+- Arborescences, principalement utilisées pour afficher des collections de contenus riches en texte dans une hiérarchie spécifique
+- ItemsRepeater, composant personnalisable permettant de créer des contrôles de collection personnalisés
 
-Des recommandations en matière de conception, des fonctionnalités et des exemples sont fournis pour chaque modèle de liste.
 
-> **API importantes** : [classe ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), [classe GridView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView), [classe ComboBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
+Des recommandations en matière de conception, des fonctionnalités et des exemples sont fournis ci-dessous pour chaque contrôle.
+
+Chacun de ces contrôles (à l’exception d’ItemsRepeater) intègre des fonctionnalités de style et d’interaction. Toutefois, pour personnaliser davantage l’apparence visuelle de votre affichage de collection et des éléments qu’il contient, un [DataTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate) est utilisé. Vous trouverez des informations détaillées sur les modèles de données et sur la personnalisation de l’apparence d’un affichage de collection dans la page [Modèles et conteneurs d’éléments](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/item-containers-templates).
+
+Chacun de ces contrôles (à l’exception d’ItemsRepeater) a également un comportement intégré permettant la sélection d’un ou de plusieurs éléments. Pour en savoir plus, consultez [Vue d’ensemble des modes de sélection](selection-modes.md).
+
+> **API importantes** : [Classe ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), [classe GridView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView), [classe FlipView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flipview), [classe TreeView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview), [classe ItemsRepeater](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2)
 
 > <div id="main">
 > <strong>Windows 10 Fall Creators Update - Changement de comportement</strong>
@@ -45,7 +51,7 @@ Des recommandations en matière de conception, des fonctionnalités et des exemp
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, observez les contrôles <a href="xamlcontrolsgallery:/item/ListView">ListView</a>, <a href="xamlcontrolsgallery:/item/GridView">GridView</a>, <a href="xamlcontrolsgallery:/item/ComboBox">ComboBox</a> et <a href="xamlcontrolsgallery:/item/ListBox">ListBox</a> en action.</p>
+    <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, observez les contrôles <a href="xamlcontrolsgallery:/item/ListView">ListView</a>, <a href="xamlcontrolsgallery:/item/GridView">GridView</a>, <a href="xamlcontrolsgallery:/item/FlipView">FlipView</a>, <a href="xamlcontrolsgallery:/item/TreeView">TreeView</a> et <a href="xamlcontrolsgalley:/item/ItemsRepeater">ItemsRepeater</a> en action.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
@@ -56,28 +62,31 @@ Des recommandations en matière de conception, des fonctionnalités et des exemp
 
 ## <a name="list-views"></a>Affichages de liste
 
-Les affichages Liste permettent de classer des éléments et d’affecter des en-têtes de groupe, de glisser-déplacer des éléments, de traiter du contenu et de réorganiser des éléments.
+Les affichages de liste représentent des éléments contenant beaucoup de texte, en général dans une disposition empilée verticalement à une seule colonne. Ils vous permettent de classer des éléments et d’affecter des en-têtes de groupe, de glisser-déposer des éléments, de traiter du contenu et de réorganiser des éléments.
 
 ### <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
 Utilisez un affichage Liste pour :
 
-- Afficher une collection de contenus principalement composée de texte.
-- Naviguer dans une collection de contenu unique ou catégorisée.
-- Créer le volet principal dans le [modèle Maître/Détails](master-details.md). Un modèle Maître/Détails est souvent utilisé dans les applications de messagerie, dans lesquelles un volet (maître) contient une liste d’éléments sélectionnables, tandis que l’autre (détails) affiche une vue détaillée de l’élément sélectionné.
+- Afficher une collection constituée principalement d’éléments textuels, où tous les éléments doivent avoir le même comportement visuel et d’interaction.
+- Représenter une collection de contenus unique ou catégorisée.
+- Prendre en charge un grand nombre de cas d’usage, notamment les suivants (les plus courants) :
+    - Créer une liste de messages ou un journal de messages.
+    - Créer une liste de contacts.
+    - Créer le volet principal dans le [modèle Maître/Détails](master-details.md). Un modèle Maître/Détails est souvent utilisé dans les applications de messagerie, dans lesquelles un volet (maître) contient une liste d’éléments sélectionnables, tandis que l’autre (détails) affiche une vue détaillée de l’élément sélectionné.
+    
 
 ### <a name="examples"></a>Exemples
 
-Voici un affichage Liste simple montrant des données regroupées sur un téléphone.
+Voici un affichage de liste simple qui montre une liste de contacts et regroupe les éléments de données par ordre alphabétique. Les en-têtes de groupe (chaque lettre de l’alphabet dans cet exemple) peuvent également être personnalisés pour rester « rémanents ». Dans ce cas, ils apparaissent toujours en haut du ListView pendant le défilement.
 
-![Un affichage Liste avec des données regroupées](images/simple-list-view-phone.png)
+![Un affichage Liste avec des données regroupées](images/listview-grouped-example-resized-final.png)
 
-### <a name="recommendations"></a>Recommandations
+Il s’agit d’un ListView qui a été inversé pour afficher un journal des messages, les plus récents apparaissant en bas. Avec un ListView inversé, les éléments apparaissent au bas de l’écran avec une animation intégrée.
 
-- Les éléments d’une liste doivent avoir le même comportement.
-- Si votre liste est répartie en groupes, vous pouvez utiliser un [zoom sémantique](semantic-zoom.md) pour permettre aux utilisateurs de naviguer plus facilement dans un contenu regroupé.
+![Affichage de liste inversée](images/listview-inverted-2.png)
 
-### <a name="list-view-articles"></a>Articles sur l’affichage Liste
+### <a name="related-articles"></a>Articles connexes
 <table>
 <colgroup>
 <col width="50%" />
@@ -96,7 +105,7 @@ Voici un affichage Liste simple montrant des données regroupées sur un télép
 </tr>
 <tr class="even">
 <td align="left"><p><a href="item-containers-templates.md">Modèles et conteneurs d’éléments</a></p></td>
-<td align="left"><p>Les éléments que vous affichez dans une liste ou une grille peuvent jouer un rôle majeur dans l’apparence générale de votre application. Modifiez les modèles de contrôle et les modèles de données pour définir l’apparence des éléments et donner un aspect satisfaisant à votre application.</p></td>
+<td align="left"><p>Les éléments que vous affichez dans un affichage de liste ou de grille peuvent jouer un rôle majeur dans l’apparence générale de votre application. Pour rendre votre application plus attrayante, personnalisez l’apparence des éléments de votre collection en modifiant les modèles de contrôle et les modèles de données.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="item-templates-listview.md">Modèles d’éléments pour le mode Liste</a></p></td>
@@ -104,11 +113,11 @@ Voici un affichage Liste simple montrant des données regroupées sur un télép
 </tr>
 <tr class="even">
 <td align="left"><p><a href="inverted-lists.md">Listes inversées</a></p></td>
-<td align="left"><p>Les listes inversées placent les nouveaux éléments ajoutés en bas, comme dans une application de chat. Suivez ces conseils pour utiliser une liste inversée dans votre application.</p></td>
+<td align="left"><p>Les listes inversées placent les nouveaux éléments ajoutés en bas, comme dans une application de chat. Suivez les recommandations de cet article pour utiliser une liste inversée dans votre application.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="pull-to-refresh.md">Balayer pour actualiser</a></p></td>
-<td align="left"><p>Le modèle Tirer pour actualiser permet à l’utilisateur de dérouler une liste de données à l’aide de la fonction tactile pour récupérer plus de données. Utilisez ces instructions pour implémenter le modèle tirer pour actualiser dans votre affichage Liste.</p></td>
+<td align="left"><p>Le mécanisme Balayer pour actualiser permet à l’utilisateur de dérouler une liste de données à l’aide de la fonction tactile pour récupérer plus de données. Lisez cet article pour implémenter le modèle Balayer pour actualiser dans votre affichage de liste.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="nested-ui.md">Interface utilisateur imbriquée</a></p></td>
@@ -119,15 +128,18 @@ Voici un affichage Liste simple montrant des données regroupées sur un télép
 
 ## <a name="grid-views"></a>Affichages Grille
 
-Les affichages Grille conviennent pour l’organisation et l’exploration des collections de contenus à base d’images. Une disposition de liste Grille défile verticalement et s’étend horizontalement. Les éléments sont disposés dans un ordre de lecture de gauche à droite, puis de haut en bas.
+Les affichages Grille conviennent pour l’organisation et l’exploration des collections de contenus à base d’images. Une disposition de liste Grille défile verticalement et s’étend horizontalement. Les éléments se trouvent dans une disposition enveloppée, car ils s’affichent dans un ordre de lecture de gauche à droite, puis de haut en bas.
 
 ### <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
-Utilisez un affichage Liste pour :
+Utilisez un affichage de grille pour :
 
-- Afficher une collection de contenus composée essentiellement d’images.
+- Afficher une collection de contenus dans laquelle le point focal de chaque élément est une image et où chaque élément doit avoir le même comportement visuel et d’interaction.
 - Afficher des bibliothèques de contenu.
 - Mettre en forme les deux affichages de contenu associés à un [zoom sémantique](semantic-zoom.md).
+- Prendre en charge un grand nombre de cas d’usage, notamment les suivants (les plus courants) :
+    - Interface utilisateur de type vitrine (par exemple, exploration d’applications, de chansons, de produits)
+    - Bibliothèques de photos interactives
 
 ### <a name="examples"></a>Exemples
 
@@ -137,14 +149,9 @@ Cet exemple illustre une disposition d’affichage Grille standard, dans ce cas 
 
 Un affichage Grille est une solution idéale pour une bibliothèque de contenu, souvent utilisée pour présenter du contenu multimédia tel que des images et vidéos. Dans une bibliothèque de contenu, l’utilisateur s’attend à pouvoir appuyer sur un élément pour appeler une action.
 
-![Exemple de bibliothèque de contenu](images/controls_list_contentlibrary.png)
+![Exemple de bibliothèque de contenu](images/gridview-simple-example-final.png)
 
-### <a name="recommendations"></a>Recommandations
-
-- Les éléments d’une liste doivent avoir le même comportement.
-- Si votre liste est répartie en groupes, vous pouvez utiliser un [zoom sémantique](semantic-zoom.md) pour permettre aux utilisateurs de naviguer plus facilement dans un contenu regroupé.
-
-### <a name="grid-view-articles"></a>Articles sur l’affichage Grille
+### <a name="related-articles"></a>Articles connexes
 <table>
 <colgroup>
 <col width="50%" />
@@ -163,7 +170,7 @@ Un affichage Grille est une solution idéale pour une bibliothèque de contenu, 
 </tr>
 <tr class="even">
 <td align="left"><p><a href="item-containers-templates.md">Modèles et conteneurs d’éléments</a></p></td>
-<td align="left"><p>Les éléments que vous affichez dans une liste ou une grille peuvent jouer un rôle majeur dans l’apparence générale de votre application. Modifiez les modèles de contrôle et les modèles de données pour définir l’apparence des éléments et donner un aspect satisfaisant à votre application.</p></td>
+<td align="left"><p>Les éléments que vous affichez dans un affichage de liste ou de grille peuvent jouer un rôle majeur dans l’apparence générale de votre application. Pour rendre votre application plus attrayante, personnalisez l’apparence des éléments de votre collection en modifiant les modèles de contrôle et les modèles de données.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="item-templates-gridview.md">Modèles d’éléments pour le mode Grille</a></p></td>
@@ -171,94 +178,131 @@ Un affichage Grille est une solution idéale pour une bibliothèque de contenu, 
 </tr>
 <tr class="even">
 <td align="left"><p><a href="nested-ui.md">Interface utilisateur imbriquée</a></p></td>
-<td align="left"><p>L’interface utilisateur imbriquée est une interface utilisateur qui expose des contrôles exploitables inclus dans un conteneur, lequel peut également être actionné par l’utilisateur. Par exemple, si un élément de l’affichage Liste contient un bouton, l’utilisateur peut sélectionner l’élément de liste ou appuyer sur le bouton imbriqué à l’intérieur. Suivez ces bonnes pratiques pour fournir la meilleure expérience d’interface utilisateur imbriquée à vos utilisateurs.</p></td>
+<td align="left"><p>L’interface utilisateur imbriquée est une interface utilisateur qui expose des contrôles exploitables inclus dans un conteneur, lequel peut également être actionné par l’utilisateur. Par exemple, si un élément de l’affichage de grille contient un bouton, l’utilisateur peut sélectionner l’élément de grille ou appuyer sur le bouton imbriqué à l’intérieur. Suivez ces bonnes pratiques pour fournir la meilleure expérience d’interface utilisateur imbriquée à vos utilisateurs.</p></td>
 </tr>
 </tbody>
 </table>
 
-## <a name="drop-down-lists"></a>Listes déroulantes
+## <a name="flip-views"></a>Affichages symétriques
 
-Les listes déroulantes, également appelées zones de liste déroulante, démarrent dans un état compact et se développent pour afficher une liste d’éléments sélectionnables. L’élément sélectionné est toujours visible, et les éléments non visibles peuvent s’afficher lorsque l’utilisateur appuie sur la zone de liste déroulante pour la développer.
+Les affichages symétriques sont adaptés à la consultation de collections de contenus basés sur des images, en particulier quand l’expérience souhaitée est d’afficher une seule image à la fois. Un affichage symétrique permet à l’utilisateur de déplacer ou de « retourner » les éléments de la collection (verticalement ou horizontalement), chaque élément apparaissant l’un après l’autre après l’interaction de l’utilisateur.
 
 ### <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
-- Utilisez une liste déroulante pour permettre aux utilisateurs de sélectionner une valeur unique parmi un ensemble d’éléments qui peuvent être représentés correctement à l’aide de simples lignes de texte.
-- Utilisez un affichage Liste ou Grille au lieu d’une zone de liste déroulante pour afficher des éléments contenant plusieurs lignes de texte ou images.
-- En présence de moins de cinq éléments, utilisez des [cases d’option](radio-button.md) (si un seul élément peut être sélectionné) ou des [cases à cocher](checkbox.md) (si plusieurs éléments peuvent être sélectionnés).
-- Utilisez cette zone de liste déroulante pour les éléments de sélection d’importance secondaire au sein de votre application. Si l’option par défaut est recommandée pour la plupart des utilisateurs dans la majorité des situations, l’affichage de tous les éléments à l’aide d’un affichage Liste risque d’attirer l’attention sur les options plus qu’il n’est nécessaire. Pour économiser de l’espace et éviter de distraire l’utilisateur, utilisez une zone de liste déroulante.
+Utilisez un affichage symétrique pour :
+
+- Afficher une collection de petite à moyenne taille (moins de 25 éléments), composée d’images avec peu ou pas de métadonnées.
+- Afficher des éléments un par un et autoriser l’utilisateur final à parcourir les éléments à son rythme.
+- Prendre en charge un grand nombre de cas d’usage, notamment les suivants (les plus courants) :
+    - Galeries de photos
+    - Galeries ou vitrines de produits
 
 ### <a name="examples"></a>Exemples
 
-Une zone de liste déroulante en état compact peut afficher un en-tête.
+Les deux exemples suivants illustrent un FlipView qui se retourne des éléments horizontalement et verticalement, respectivement.
 
-![Exemple de liste déroulante à l’état compact](images/combo_box_collapsed.png)
+![Affichage symétrique horizontal](images/controls_flipview_horizonal.jpg)
 
-Bien que les zones de listes déroulantes se développent pour prendre en charge des chaînes plus longues, évitez les chaînes excessivement longues qui rendent la lecture difficile.
+![Affichage symétrique vertical](images/controls_flipview_vertical.jpg)
 
-![Exemple de liste déroulante avec une longue chaîne de texte](images/combo_box_listitemstate.png)
+### <a name="related-articles"></a>Articles connexes
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Rubrique</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><p><a href="flipview.md">Vue symétrique</a></p></td>
+<td align="left"><p>Découvrez les bases de l’utilisation d’un affichage symétrique dans votre application, ainsi que la façon de personnaliser l’apparence de vos éléments dans cet affichage.</p></td>
+</tr>
+</tbody>
+</table>
 
-Si la collection figurant dans une zone de liste déroulante est suffisamment longue, une barre de défilement s’affiche. Regroupez les éléments logiquement dans la liste.
+## <a name="tree-views"></a>Arborescences
 
-![Exemple de barre de défilement dans une liste déroulante](images/combo_box_scroll.png)
-
-### <a name="recommendations"></a>Recommandations
-
-- Limitez le contenu texte des éléments de zone de liste déroulante à une seule ligne.
-- Triez les éléments d’une zone de liste déroulante dans l’ordre le plus logique. Regroupez les options associées et placez les options les plus courantes en haut. Triez les noms par ordre alphabétique, les nombres par ordre numérique et les dates par ordre chronologique.
-- Pour créer une liste déroulante avec mise à jour dynamique pendant que l’utilisateur utilise les touches de direction (comme une liste déroulante de sélection de police), définissez SelectionChangedTrigger sur « Toujours ».  
-
-### <a name="text-search"></a>Recherche en texte
-
-Les zones de liste déroulante prennent automatiquement en charge la recherche au sein de leurs collections. Lorsque les utilisateurs tapent des caractères sur un clavier physique dans une zone de liste déroulante ouverte ou fermée, des candidats correspondant à la chaîne entrée apparaissent. Cette fonctionnalité est particulièrement utile lors de la navigation dans une liste longue. Par exemple, lorsqu’un utilisateur interagit avec une liste déroulante contenant une liste des États américains, le fait d’appuyer sur la touche « W » affiche « Washington » pour une sélection rapide.
-
-
-## <a name="list-boxes"></a>Zones de liste
-
-Une zone de liste permet à l’utilisateur de choisir un ou plusieurs éléments d’une collection. Les zones de liste sont similaires aux listes déroulantes, sauf qu’elles sont toujours ouvertes, c’est-à-dire qu’elles n’ont pas d’état compact (non développé). Les éléments de la liste peuvent défiler si l’espace est insuffisant pour les afficher tous.
+Les arborescences sont adaptées à l’affichage de collections textuelles associées à une hiérarchie importante qui doit être présentée. Les éléments d’arborescence sont réductibles/développables, s’affichent dans une hiérarchie visuelle, peuvent être complétés par des icônes et peuvent être déplacés par glisser-déposer entre arborescences. Les arborescences autorisent l’imbrication de niveau N.
 
 ### <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
-- Une zone de liste peut être utile quand des éléments de la liste sont suffisamment importants pour être mis en avant, et quand l’écran offre suffisamment d’espace pour afficher la liste complète.
-- Une zone de liste doit attirer l’attention de l’utilisateur sur toutes les possibilités d’un choix important. En revanche, une liste déroulante attire initialement l’attention de l’utilisateur sur l’élément sélectionné.
-- Évitez d’utiliser une zone de liste dans les cas suivants :
-    - Il existe un très petit nombre d’éléments pour la liste. Si une zone de liste à sélection unique comporte toujours les deux mêmes options, mieux vaut utiliser des [cases d’option](radio-button.md). Pensez également à utiliser des cases d’option quand 3 ou 4 éléments statiques figurent dans la liste.
-    - La zone de liste est à sélection unique, et propose toujours les deux mêmes options, l’une étant l’inverse de l’autre (par exemple, « activé » et « désactivé »). Utilisez une case à cocher ou un bouton bascule.
-    - Le nombre d’éléments est très élevé. Pour les longues listes, mieux vaut utiliser un affichage Grille ou Liste. Pour les très longues listes de données groupées, utilisez de préférence un zoom sémantique.
-    - Les éléments sont des valeurs numériques contiguës. Si tel est le cas, pensez à utiliser un [curseur](slider.md).
-    - Les éléments de sélection ont une importance secondaire dans le flux de votre application, ou l’option par défaut est recommandée pour la plupart des utilisateurs dans la majorité des situations. Dans ce cas, utilisez plutôt une liste déroulante.
+Utilisez une arborescence pour :
 
-### <a name="recommendations"></a>Recommandations
+- Afficher une collection d’éléments imbriqués dont le contexte et la signification dépendent d’une hiérarchie ou d’une chaîne d’organisation spécifique.
+- Prendre en charge un grand nombre de cas d’usage, notamment les suivants (les plus courants) :
+    - Explorateur de fichiers
+    - Organigramme d’entreprise
 
-- La plage idéale d’éléments dans une zone de liste est de 3 à 9.
-- Une zone de liste est efficace quand ses éléments peuvent varier de manière dynamique.
-- Dans la mesure du possible, la taille de la zone de liste doit être suffisante pour que vous n’ayez pas à faire défiler la liste des éléments.
-- Vérifiez qu’il n’y a aucune ambiguïté quand à la fonction de la zone de liste et aux éléments sélectionnés actuellement.
-- Réservez les effets visuels et les animations pour le retour tactile et pour l’état sélectionné des éléments.
-- Limitez le contenu textuel de l’élément de zone de liste à une seule ligne. Si les éléments sont visuels, vous pouvez personnaliser la taille. Si un élément contient plusieurs lignes de texte ou images, utilisez plutôt un affichage de Grille ou Liste.
-- Utilisez la police par défaut à moins que vos instructions de personnalisation imposent d’en utiliser une autre.
-- N’utilisez pas une zone de liste pour exécuter des commandes ou pour afficher ou masquer de manière dynamique d’autres contrôles.
+### <a name="examples"></a>Exemples
 
-## <a name="selection-mode"></a>Mode de sélection
+Voici un exemple d’arborescence qui représente un explorateur de fichiers et qui affiche de nombreux éléments imbriqués complétés par des icônes.
 
-Le mode de sélection permet aux utilisateurs de sélectionner et d’exécuter une action sur un ou plusieurs éléments. Il peut être appelé par le biais d’un menu contextuel, à l’aide de la combinaison CTRL+clic ou MAJ+clic sur un élément, ou par la substitution d’une cible sur un élément dans un affichage Galerie. Quand le mode de sélection est actif, des cases à cocher s’affichent à côté de chaque élément de la liste, et des actions peuvent apparaître en haut ou en bas de l’écran.
+![Arborescence avec des icônes](images/treeview-icons.png)
 
-Il existe trois modes de sélection :
+### <a name="related-articles"></a>Articles connexes
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Rubrique</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><p><a href="tree-view.md">Arborescence</a></p></td>
+<td align="left"><p>Découvrez les bases de l’utilisation d’une arborescence dans votre application, ainsi que la façon de personnaliser l’apparence et l’interaction de vos éléments dans une arborescence.</p></td>
+</tr>
+</tbody>
+</table>
 
-- Unique : l’utilisateur ne peut sélectionner qu’un seul élément à la fois.
-- Multiple : l’utilisateur peut sélectionner plusieurs éléments sans utiliser de modificateur.
-- Étendu : l’utilisateur peut sélectionner plusieurs éléments avec un modificateur, par exemple, en maintenant la touche MAJ enfoncée.
+## <a name="itemsrepeater"></a>ItemsRepeater
 
-L’appui sur un emplacement quelconque d’un élément entraîne la sélection de celui-ci. L’appui sur une action de la barre de commandes affecte tous les éléments sélectionnés. Si aucun élément n’est sélectionné, toutes les actions de la barre de commandes doivent être inactives, à l’exception de l’action Sélectionner tout.
+ItemsRepeater est différent du reste des contrôles de collection mentionnés dans cette page en ce sens qu’il ne fournit pas d’interaction ni de style prêt à l’emploi. Il est simplement placé dans une page sans définir de propriétés. ItemsRepeater est plutôt un composant que vous pouvez utiliser en tant que développeur pour créer votre propre contrôle de collection personnalisé, en particulier un contrôle que vous ne pouvez pas obtenir avec les autres contrôles de cet article. ItemsRepeater est un panneau piloté par les données aux performances élevées que vous pouvez adapter à vos besoins exacts.
 
-Le mode Sélection ne comporte pas de modèle d’abandon interactif ; l’appui sur une zone à l’extérieur du cadre dans lequel le mode Sélection est actif ne permet pas d’annuler ce mode. Ceci empêche toute désactivation accidentelle du mode. En cliquant sur le bouton Précédent, vous fermez le mode de sélection multiple.
+### <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
-Affichez une confirmation visuelle lors de la sélection d’une action. Envisagez d’afficher une boîte de dialogue de confirmation pour certaines actions, notamment pour les opérations destructrices, comme la suppression.
+Utilisez un ItemsRepeater si :
 
-Le mode Sélection est limité à la page dans laquelle il est actif et ne peut pas affecter les éléments situés à l’extérieur de cette page.
+- Vous avez à l’esprit une interface et une expérience utilisateur spécifiques que vous ne pouvez pas créer à l’aide de contrôles de collection existants.
+- Vous disposez d’une source de données existante pour vos éléments (par exemple, des données extraites d’Internet, d’une base de données ou d’une collection préexistante dans votre code-behind).
 
-Le point d’entrée du mode Sélection doit être juxtaposé au contenu concerné.
+### <a name="examples"></a>Exemples
 
-Pour des recommandations relatives à la barre de commandes, voir [Recommandations en matière de barres de commandes](app-bars.md).
+Les trois exemples suivants sont tous des contrôles ItemsRepeater liés à la même source de données (une collection de nombres). La collection de nombres est représentée de trois façons, chaque ItemsRepeaters ci-dessous utilisant un [Layout](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.layout) et un [ItemTemplate](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate?view=winui-2.2) personnalisé différent.
+
+![ItemsRepeater avec barres horizontales](images/itemsrepeater-1.png)
+![ItemsRepeater avec barres verticales](images/itemsrepeater-2.png)
+![ItemsRepeater avec représentation circulaire](images/itemsrepeater-3.png)
+
+### <a name="related-articles"></a>Articles connexes
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Rubrique</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><p><a href="items-repeater.md">ItemsRepeater</a></p></td>
+<td align="left"><p>Apprenez les bases de l’utilisation d’un ItemsRepeater dans votre application, et découvrez comment implémenter tous les composants d’interaction et visuels nécessaires pour votre affichage de collection.</p></td>
+</tr>
+</tbody>
+</table>
+
 
 ## <a name="globalization-and-localization-checklist"></a>Liste de contrôle de globalisation et de localisation
 
@@ -267,10 +311,10 @@ Pour des recommandations relatives à la barre de commandes, voir [Recommandatio
 <th>Renvoi à la ligne</th><td>Autorisez deux lignes pour l’étiquette de liste.</td>
 </tr>
 <tr>
-<th>Extension horizontale</th><td>Assurez-vous que les champs prennent en charge l’extension de texte et sont défilants.</td>
+<th>Extension horizontale</th><td>Vérifiez que les champs prennent en charge l’extension de texte et qu’ils peuvent défiler.</td>
 </tr>
 <tr>
-<th>Espacement vertical</th><td>Utilisez les caractères non latins d’espacement vertical pour assurer un affichage correct des scripts non latins.</td>
+<th>Espacement vertical</th><td>Utilisez les caractères non latins pour l’espacement vertical afin d’assurer un affichage correct des scripts non latins.</td>
 </tr>
 </table>
 
@@ -280,13 +324,14 @@ Pour des recommandations relatives à la barre de commandes, voir [Recommandatio
 
 ## <a name="related-articles"></a>Articles connexes
 
+**Conception et recommandations en matière d’expérience utilisateur**
 - [Maître/détails](master-details.md)
 - [Volet de navigation](navigationview.md)
 - [Zoom sémantique](semantic-zoom.md)
 - [Glisser-déplacer](https://docs.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
 - [Images miniatures](../../files/thumbnails.md)
 
-**Pour les développeurs**
+**Informations de référence sur les API**
 - [ListView, classe](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)
 - [GridView, classe](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)
 - [ComboBox, classe](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox)

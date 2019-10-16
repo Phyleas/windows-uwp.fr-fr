@@ -5,12 +5,12 @@ keywords: application web hébergée, HWA, API REST, application avec page uniqu
 ms.date: 05/10/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b1b837d6585507311dc2246d42f3094ce8b07421
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 3f5195cc3ed84116797c0b424a637c255b082386
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321173"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72281865"
 ---
 # <a name="create-a-single-page-web-app-with-rest-api-backend"></a>Créer une application web avec page unique avec une API REST principale
 
@@ -213,7 +213,7 @@ Appuyez maintenant sur F5 et ouvrez votre navigateur sur [https://localhost:8000
 
 ### <a name="3-set-up-your-route-handlers"></a>3. Configurer vos gestionnaires d’itinéraire
 
-Le fichier Swagger (config\swagger.json) indique à notre serveur comment gérer les diverses demandes des clients HTTP en cartographiant chaque chemin d’accès URL qu’il définit pour un fichier de gestionnaire (dans \handlers) et chaque méthode définie pour ce chemin d’accès à notre serveur (par exemple, **OBTENIR**, **PUBLIER**) pour une `operationId` (fonction) dans le fichier gestionnaire.
+Le fichier Swagger (config\swagger.json) indique à notre serveur comment gérer diverses demandes des clients HTTP en mappant chaque chemin URL qu’il définit à un fichier de gestionnaire (dans \handlers) et chaque méthode définie pour ce chemin (par exemple, **GET**, **POST**) à une fonction `operationId` dans ce fichier gestionnaire.
 
 Dans cette couche de notre programme, nous allons ajouter une vérification d’entrée avant de transmettre les diverses demandes des clients à notre modèle de données. Télécharger (ou copier et coller) :
 

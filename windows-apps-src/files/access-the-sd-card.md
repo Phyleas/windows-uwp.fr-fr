@@ -6,12 +6,12 @@ ms.date: 03/08/2017
 ms.topic: article
 keywords: windows 10, uwp, carte sd, stockage
 ms.localizationpriority: medium
-ms.openlocfilehash: 4573e0959cf9d4af9b3cef8ffbbce14847a9e521
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: a6f94f0f417225ae154fc65c6beb5a6e2c1812fb
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66369492"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282380"
 ---
 # <a name="access-the-sd-card"></a>Accéder à la carte SD
 
@@ -86,7 +86,7 @@ else
 ```
 
 > [!NOTE]
-> Si votre lecteur de carte SD est intégré (emplacement sur l’ordinateur portable ou le PC), il peut ne pas être accessible via KnownFolders.RemovableDevices.
+> Si votre lecteur de carte SD est intégré (par exemple, un emplacement sur l’ordinateur portable ou le PC), il peut ne pas être accessible par le biais de KnownFolders.RemovableDevices.
 
 ### <a name="querying-the-contents-of-the-sd-card"></a>Interrogation du contenu de la carte SD
 

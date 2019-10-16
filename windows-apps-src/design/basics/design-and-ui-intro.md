@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 2b0f5918b240bf5c28e49f2ede6f10dbeefcbbfc
-ms.sourcegitcommit: e13f06042a28a8455a211b8693a009098e150cd1
+ms.openlocfilehash: 8568a4613b5bb62b98edc7edd302a42153e5e33b
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68522088"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72281794"
 ---
 # <a name="introduction-to-uwp-app-design"></a>Présentation de la conception des applications UWP
 
@@ -49,7 +49,7 @@ Vous pouvez ignorer la densité de pixels et la résolution d’écran réelle l
     :::column span:::
 Les tailles, les marges et les positions des éléments de l’interface utilisateur doivent toujours être des **multiples de 4 epx** dans vos applications UWP.
 
-UWP prend en charge différents appareils avec plateaux d'échelle de 100 %, 125 %, 150 %, 175 %, 200 %, 225 %, 250 %, 300 %, 350 % et 400 %. L’unité de base est 4, car il s’agit du seul entier pouvant être mis à l’échelle par des nombres non entiers (par exemple, 4*1,5 = 6). L’utilisation de multiples de quatre aligne tous les éléments d’interface utilisateur à pixels entiers et leur garantit des bords nets et vifs. (Notez que le texte n’est pas assujetti à cette exigence ; il peut en effet avoir n’importe quelle taille et position.)
+UWP prend en charge différents appareils avec plateaux d'échelle de 100 %, 125 %, 150 %, 175 %, 200 %, 225 %, 250 %, 300 %, 350 % et 400 %. L’unité de base est 4, car il s’agit du seul entier pouvant être mis à l’échelle par des nombres non entiers (par exemple, 4*1,5 = 6). L’utilisation de multiples de quatre aligne tous les éléments d’interface utilisateur à pixels entiers et leur garantit des bords nets et vifs. (Notez que le texte n’est pas assujetti à cette exigence ; il peut en effet avoir n’importe quelle taille et position.)
     :::column-end:::
     :::column:::
 ![Grille](images/4epx.svg)

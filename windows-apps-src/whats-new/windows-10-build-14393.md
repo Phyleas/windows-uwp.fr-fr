@@ -6,12 +6,12 @@ ms.date: 11/02/2017
 ms.topic: article
 ms.assetid: f95cd87b-f959-4148-a9bd-ba0b90d16e71
 ms.localizationpriority: medium
-ms.openlocfilehash: 037963109fd6f70a60c17dc1b6c1b4eef82fb080
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: b4b887ad49cfdbdea89397105809db0fe6a5ab57
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67821105"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282333"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-14393"></a>Nouveautés de Windows 10 pour les développeurs, build 14393
 
@@ -60,5 +60,5 @@ Liaison application-site web | Associez votre application à un site web. Lorsqu
 WebSockets | La prise en charge de [**MessageWebSocket**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.messagewebsocket) et [**Streamwebsocket**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamwebsocket) a été ajoutée pour afficher le certificat du serveur, afficher les certificats intermédiaires envoyés par le serveur pendant la négociation SSL, valider le certificat de serveur personnalisé et indiquer que certaines erreurs de certificat de serveur doivent être ignorées.
 API Protection des informations Windows (WIP) | [**WIP**](https://docs.microsoft.com/windows/uwp/enterprise/wip-hub) est un ensemble de fonctionnalités pour la gestion des périphériques mobiles (GPM) sur les postes de travail, les ordinateurs de bureau, les tablettes et les téléphones. WIP offre aux entreprises un meilleur contrôle sur la façon dont leurs données sont traitées sur des appareils d’entreprise gérés. <br/><br/>Vous pouvez utiliser les API WIP pour créer des applications qui respectent les stratégies de données tout en séparant les données personnelles d’un employé pour ne pas qu’elles soient affectées par ces stratégies. Les administrateurs de stratégie feront confiance à votre application pour consommer leurs données d’organisation. De plus, les employés apprécieront que vous ayez conservé leurs données personnelles intactes sur leur appareil même s’ils se sont désinscrits de la gestion des périphériques mobiles (GPM) de leur organisation ou s’ils ont quitté totalement l’organisation.
 Windows IoT Core | Windows IoT Core prend maintenant complètement en charge Raspberry Pi 3 ainsi qu’une expérience d’affichage à distance, ce qui permet aux utilisateurs d’afficher à distance et de contrôler les applications UWP en cours d’exécution sur un appareil IoT standard.
-Déverrouillage Windows avec appareils (IoT) complémentaires | Un appareil complémentaire est un appareil pouvant agir avec votre ordinateur de bureau Windows 10 pour améliorer l’expérience d’authentification utilisateur. S’appuyant sur l’infrastructure [Companion Device Framework](https://docs.microsoft.com/windows/uwp/security/companion-device-unlock), un appareil complémentaire peut enrichir considérablement l’expérience Microsoft Passport, même en l’absence de Windows Hello (par exemple, si l’ordinateur de bureau Windows 10 ne dispose pas d’appareil photo pour l’authentification faciale ou d’un lecteur d’empreintes digitales).
+Déverrouillage Windows avec appareils (IoT) complémentaires | Un appareil complémentaire est un appareil pouvant agir avec votre ordinateur de bureau Windows 10 pour améliorer l’expérience d’authentification utilisateur. S’appuyant sur [Companion Device Framework](https://docs.microsoft.com/windows/uwp/security/companion-device-unlock),un appareil complémentaire peut enrichir considérablement l’expérience Microsoft Passport, même en l’absence de Windows Hello (par exemple, si l’ordinateur de bureau Windows 10 ne dispose pas d’appareil photo pour l’authentification faciale ou d’un lecteur d’empreintes digitales).
 Winsock | Les sockets TCP peuvent désormais être configurés avec [Winsock](https://tools.ietf.org/html/rfc7413) pour utiliser [RFC 7413](https://tools.ietf.org/html/rfc7413) TCP Fast Open en définissant l’option de socket TCP_FASTOPEN.

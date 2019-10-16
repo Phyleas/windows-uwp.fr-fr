@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bc422f57cdc268ea517aff729a9c3e57c80acf69
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 6ac962476ace10e08ef92ed4fff9fb9bf48f0006
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320610"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282260"
 ---
 # <a name="rssatom-feeds"></a>Flux RSS/Atom
 
@@ -199,7 +199,7 @@ function displayCurrentItem() {
                 //displayCurrentItem is continued below.
 ```
 
-Comme mentionné plus haut, le type de contenu représenté par un objet [**SyndicationItem**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication.SyndicationItem) sera différent en fonction de la norme de flux (RSS ou Atom) utilisée pour publier le flux. Par exemple, un flux Atom est capable de fournir une liste de [**Contributors**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationitem.contributors), ce qui n’est pas le cas d’un flux RSS. Toutefois, les éléments d’extension inclus dans un élément de flux qui ne sont pas pris en charge par l’une ou l’autre norme (par exemple les éléments d’extension Dublin Core) sont accessibles à l’aide de la propriété [**SyndicationItem.ElementExtensions**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationitem.elementextensions), puis affichés comme dans l’exemple de code suivant.
+Comme mentionné plus haut, le type de contenu représenté par un objet [**SyndicationItem**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication.SyndicationItem) sera différent en fonction de la norme de flux (RSS ou Atom) utilisée pour publier le flux. Par exemple, un flux Atom est capable de fournir une liste de [**Contributors**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationitem.contributors), ce qui n’est pas le cas d’un flux RSS. Toutefois, les éléments d’extension inclus dans un élément de flux qui ne sont pas pris en charge par l’une ou l’autre norme (par exemple, les éléments d’extension Dublin Core) sont accessibles à l’aide de la propriété [**SyndicationItem.ElementExtensions**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationitem.elementextensions), puis affichés comme dans l’exemple de code suivant.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
