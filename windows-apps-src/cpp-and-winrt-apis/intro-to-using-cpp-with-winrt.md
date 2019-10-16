@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, introduction
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b6fd3f3085449c57dafdcedc60f63997e3ec807
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: 1a9bb432ce7c856a6c54305f657f06a23dab14f1
+ms.sourcegitcommit: 805420bb7ec6850ec3576b21193a3681054c9754
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393430"
+ms.lasthandoff: 10/06/2019
+ms.locfileid: "71976335"
 ---
 # <a name="introduction-to-cwinrt"></a>Introduction à C++/WinRT
 &nbsp;
@@ -71,7 +71,7 @@ Voici les modèles de projet Visual Studio fournis par l’extension VSIX.
 ### <a name="blank-app-cwinrt"></a>Application vide (C++/WinRT)
 Modèle de projet pour une application de plateforme Windows universelle (UWP) qui possède une interface utilisateur XAML.
 
-Visual Studio fournit la prise en charge du compilateur XAML pour générer des stubs d’implémentation et d’en-tête à partir du fichier IDL (Interface Definition Language) (`.idl`) qui se trouve derrière chaque fichier de balisage XAML. Dans un fichier IDL, définissez toutes les classes runtime locales que vous souhaitez référencer dans les pages XAML de votre application, puis générez une fois le projet pour générer les modèles d’implémentation dans `Generated Files` et les définitions de type de stub dans `Generated Files\sources`. Utilisez ensuite ces définitions de type de stub comme référence pour implémenter vos classes runtime locales. Consultez [Factorisation des classes runtime dans des fichiers Midl (.idl)](/windows/uwp/cpp-and-winrt-apis/author-apis#factoring-runtime-classes-into-midl-files-idl).
+Visual Studio fournit la prise en charge du compilateur XAML pour générer des stubs d’implémentation et d’en-tête à partir du fichier IDL (Interface Definition Language) (`.idl`) qui se trouve derrière chaque fichier de balisage XAML. Dans un fichier IDL, définissez toutes les classes runtime locales que vous souhaitez référencer dans les pages XAML de votre application, puis générez une fois le projet pour générer les modèles d’implémentation dans `Generated Files` et les définitions de type de stub dans `Generated Files\sources`. Utilisez ensuite les définitions de type de stub comme référence pour implémenter vos classes runtime locales. Consultez [Factorisation des classes runtime dans des fichiers Midl (.idl)](/windows/uwp/cpp-and-winrt-apis/author-apis#factoring-runtime-classes-into-midl-files-idl).
 
 La prise en charge de l’aire de conception XAML dans Visual Studio 2019 pour C++/WinRT est proche de la parité avec C#. Dans Visual Studio 2019, vous pouvez utiliser l’onglet **Événements** de la fenêtre **Propriétés** pour ajouter des gestionnaires d’événements dans un projet C++/WinRT. Vous pouvez également ajouter manuellement des gestionnaires d’événements à votre code. Pour plus d’informations, consultez [Gérer des événements en utilisant des délégués en C++/WinRT](handle-events.md).
 
