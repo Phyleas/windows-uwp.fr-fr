@@ -8,12 +8,12 @@ ms.topic: article
 keywords: NodeJS, node. js, Windows 10, Microsoft, formation NodeJS, node sur Windows, node sur WSL, node sur Linux sur Windows, installer le nœud sur Windows, NodeJS avec vs code, développer avec un nœud sur Windows, développer avec NodeJS sur Windows, installer le nœud sur WSL, NodeJS sur Windows Sous-système pour Linux
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: 917192d782e0a44c6de7e549960161a003c646e5
-ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
+ms.openlocfilehash: e5875f0bf7ce73d3615aa131d57c2384c73dd8a1
+ms.sourcegitcommit: 60d2d15dd0d365f82e4e90e4bc34b40cf5b4a247
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72315063"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72517835"
 ---
 # <a name="set-up-your-nodejs-development-environment-with-wsl-2"></a>Configurer votre environnement de développement node. js avec WSL 2
 
@@ -24,11 +24,11 @@ Vous trouverez ci-dessous un guide pas à pas pour vous aider à configurer votr
 
 ## <a name="install-windows-10-insider-preview-build"></a>Installer la version préliminaire de Windows 10 Insider
 
-1. **[Installez la version la plus récente de Windows 10](https://www.microsoft.com/software-download/windows10)** : Sélectionnez **mettre à jour maintenant** pour télécharger l’Assistant Mise à jour. Une fois le téléchargement terminé, ouvrez l’Assistant Mise à jour pour voir si vous exécutez actuellement la dernière version de Windows et, si ce n’est pas le cas, sélectionnez **mettre à jour maintenant** dans la fenêtre de l’Assistant pour mettre à jour votre machine. *(Cette étape est facultative si vous exécutez une version assez récente de Windows 10.)*
+1. **[Installez la version la plus récente de Windows 10](https://www.microsoft.com/software-download/windows10)** : sélectionnez **mettre à jour maintenant** pour télécharger l’Assistant Mise à jour. Une fois le téléchargement terminé, ouvrez l’Assistant Mise à jour pour voir si vous exécutez actuellement la dernière version de Windows et, si ce n’est pas le cas, sélectionnez **mettre à jour maintenant** dans la fenêtre de l’Assistant pour mettre à jour votre machine. *(Cette étape est facultative si vous exécutez une version assez récente de Windows 10.)*
 
     ![Assistant Windows Update](../images/windows-update-assistant2019.png)
 
-2. **[Accédez à démarrer > paramètres > programme Windows Insider](ms-settings:windowsinsider)** : Dans la fenêtre du programme Windows Insider, sélectionnez **prise en main** , puis **liez un compte**.
+2. **[Accédez à démarrer > paramètres > programme Windows Insider](ms-settings:windowsinsider)** : dans la fenêtre du programme Windows Insider, sélectionnez **prise en main** , puis **liez un compte**.
 
     ![Paramètres du programme Windows Insider](../images/windows-insider-program-settings.png)
 
@@ -102,6 +102,10 @@ Il existe plusieurs façons d’installer node. js. Nous vous recommandons d’u
 > [!TIP]
 > Si vous utilisez NVM pour installer node. js et NPM, vous n’avez pas besoin d’utiliser la commande SUDO pour installer de nouveaux packages.
 
+> [!NOTE]
+> Au moment de la publication, NVM v 0.34.0 était la version la plus récente disponible. Vous pouvez consulter la [page de projet GitHub pour obtenir la dernière version d’NVM](https://github.com/nvm-sh/nvm)et ajuster la commande ci-dessus pour inclure la version la plus récente.
+L’installation de la version la plus récente d’NVM à l’aide de la boucle remplacera celle qui était la plus ancienne, en laissant la version du nœud que vous avez utilisée pour installer l’État inchangé. Par exemple : `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.0/install.sh | bash`
+
 ## <a name="alternative-version-managers"></a>Gestionnaires de versions alternatifs
 
 Si NVM est actuellement le gestionnaire de version le plus populaire pour node, il existe quelques alternatives à prendre en compte :
@@ -114,7 +118,7 @@ Si NVM est actuellement le gestionnaire de version le plus populaire pour node, 
 
 ## <a name="install-your-favorite-code-editor"></a>Installer votre éditeur de code favori
 
-Nous vous recommandons d’utiliser [**Visual Studio code**] avec l' **extension WSL à distance** pour les projets de développement node. js. Cela divise VS Code en architecture « client-serveur », avec le client (l’interface utilisateur) exécuté sur votre ordinateur Windows et le serveur (votre code, git, plug-ins, etc.) exécuté à distance.
+Nous vous recommandons d’utiliser **Visual Studio code** avec l' **extension Remote-WSL** pour les projets node. js. Cela divise VS Code en architecture « client-serveur », avec le client (l’interface utilisateur) exécuté sur votre ordinateur Windows et le serveur (votre code, git, plug-ins, etc.) exécuté à distance.
 
 - La prise en charge des fonctionnalités IntelliSense et des linters basés sur Linux est prise en charge.
 - Votre projet sera automatiquement créé dans Linux.
@@ -129,50 +133,41 @@ Pour installer VS Code et l’extension WSL distante :
 
 1. [Téléchargez et installez vs code pour Windows](https://code.visualstudio.com). VS Code est également disponible pour Linux, mais le sous-système Windows pour Linux ne prend pas en charge les applications GUI. nous devons donc l’installer sur Windows. Ne vous inquiétez pas, vous serez toujours en mesure de l’intégrer à vos outils et à la ligne de commande Linux à l’aide de l’extension WSL distante.
 
-2. Installez l' [extension WSL à distance](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) sur vs code. Cela vous permet d’utiliser WSL comme environnement de développement intégré et de gérer la compatibilité et le chemin d’accès pour vous. [Plus d’informations](https://code.visualstudio.com/docs/remote/remote-overview)
+2. Installez l' [extension WSL à distance](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) sur vs code. Cela vous permet d’utiliser WSL comme environnement de développement intégré et de gérer la compatibilité et le chemin d’accès pour vous. [En savoir plus](https://code.visualstudio.com/docs/remote/remote-overview).
 
 > [!IMPORTANT]
-> Si vous avez déjà VS Code installé, vous devez vous assurer que vous disposez de la [version 1,35](https://code.visualstudio.com/updates/v1_35) ou ultérieure pour pouvoir installer l' [extension WSL distante](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl). Nous vous déconseillons d’utiliser WSL dans VS Code sans l’extension WSL distante, car vous perdrez la prise en charge de la saisie semi-automatique, du débogage, du découpage, etc. Fait amusant : Cette extension WSL est installée dans $HOME/.vscode-Server/Extensions.
+> Si vous avez déjà VS Code installé, vous devez vous assurer que vous disposez de la [version 1,35](https://code.visualstudio.com/updates/v1_35) ou ultérieure pour pouvoir installer l' [extension WSL distante](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl). Nous vous déconseillons d’utiliser WSL dans VS Code sans l’extension WSL distante, car vous perdrez la prise en charge de la saisie semi-automatique, du débogage, du découpage, etc. Fait amusant : cette extension WSL est installée dans $HOME/.vscode-Server/Extensions.
 
 ### <a name="helpful-vs-code-extensions"></a>Extensions VS Code utiles
 
-Si VS Code est fourni avec de nombreuses fonctionnalités pour le développement node. js, il existe des extensions utiles pour envisager l’installation de disponibles dans le [Pack d’extension node. js](https://marketplace.visualstudio.com/items?itemName=waderyan.nodejs-extension-pack). Elles incluent notamment :
-
-- ES Lint-outil pour « décoder » votre code. Le déformatage analyse votre code et vous avertit des erreurs potentielles.
-- NPM : exécutez des scripts NPM à partir de la palette de commandes et validez les modules installés définis dans package. JSON.
-- Extraits JavaScript (ES6) : ajoute des extraits de code pour le développement JavaScript dans la syntaxe ES6.
-- Rechercher node_modules : recherchez rapidement les modules de nœud dans votre projet.
-- NPM IntelliSense : ajoute IntelliSense pour les modules NPM dans votre code.
-- Chemin d’accès IntelliSense : complète automatiquement les noms de fichiers dans votre code.
-
-Installez-les tous ou choisissez ce qui vous semble le plus utile.
+Si VS Code est fourni avec de nombreuses fonctionnalités pour le développement node. js, il existe des extensions utiles pour envisager l’installation de disponibles dans le [Pack d’extension node. js](https://marketplace.visualstudio.com/items?itemName=waderyan.nodejs-extension-pack). Installez-les tous ou choisissez ce qui vous semble le plus utile.
 
 Pour installer le pack d’extension node. js :
 
 1. Ouvrez la fenêtre **Extensions** (Ctrl + Maj + X) dans vs code.
 
     La fenêtre extensions est désormais divisée en trois sections (car vous avez installé l’extension WSL distante).
-    - « Local-installé » : Les extensions installées pour une utilisation avec votre système d’exploitation Windows.
-    - « WSL : Ubuntu-18,04-installed » : Les extensions installées pour une utilisation avec votre système d’exploitation Ubuntu (WSL).
-    - « Recommandé » : Les extensions recommandées par VS Code basées sur les types de fichiers dans votre projet actuel.
+    - « Local-installed » : les extensions installées pour une utilisation avec votre système d’exploitation Windows.
+    - « WSL : Ubuntu-18,04-installed » : les extensions installées pour une utilisation avec votre système d’exploitation Ubuntu (WSL).
+    - « Recommandé » : extensions recommandées par VS Code en fonction des types de fichiers dans votre projet actuel.
 
     ![VS Code extensions locales et distantes](../images/vscode-extensions-local-remote.png)
 
-2. Dans la zone de recherche en haut de la fenêtre extensions, entrez : **Pack d’extension de nœud** (ou nom de l’extension que vous recherchez). L’extension (ou les extensions s’il s’agit d’un Pack) sera installée pour vos instances locales ou WSL de VS Code selon l’endroit où vous avez ouvert le projet actuel. Vous pouvez le savoir en sélectionnant le lien distant dans le coin inférieur gauche de la fenêtre de VS Code (en vert). Elle vous donne la possibilité d’ouvrir ou de fermer une connexion à distance. Installez vos extensions node. js dans l’environnement « WSL : Ubuntu-18,04 ».
+2. Dans la zone de recherche en haut de la fenêtre extensions, entrez : **node extension Pack** (ou nom de l’extension que vous recherchez). L’extension sera installée pour vos instances locales ou WSL de VS Code selon l’endroit où vous avez ouvert le projet actuel. Vous pouvez le savoir en sélectionnant le lien distant dans le coin inférieur gauche de la fenêtre de VS Code (en vert). Elle vous donne la possibilité d’ouvrir ou de fermer une connexion à distance. Installez vos extensions node. js dans l’environnement « WSL : Ubuntu-18,04 ».
 
     ![Lien VS Code distant](../images/wsl-remote-extension.png)
 
 Voici quelques-unes des extensions supplémentaires que vous pouvez envisager :
 
-- [Débogueur pour Chrome](https://code.visualstudio.com/blogs/2016/02/23/introducing-chrome-debugger-for-vs-code): Une fois que vous avez terminé le développement côté serveur avec node. js, vous devez développer et tester le côté client. Cette extension intègre votre éditeur de VS Code avec votre service de débogage de navigateur Chrome, ce qui rend les choses un peu plus efficaces.
-- [Cartes à partir d’autres éditeurs](https://marketplace.visualstudio.com/search?target=VSCode&category=Keymaps&sortBy=Downloads): Ces extensions peuvent vous aider dans votre environnement à la racine si vous effectuez une transition à partir d’un autre éditeur de texte (comme Atom, Subvert, vim, eMacs, Notepad + +, etc.).
-- [Synchronisation des paramètres](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync): Vous permet de synchroniser vos paramètres de VS Code sur différentes installations à l’aide de GitHub. Si vous travaillez sur des ordinateurs différents, cela permet de garantir la cohérence de votre environnement entre eux.
+- [Débogueur pour Chrome](https://code.visualstudio.com/blogs/2016/02/23/introducing-chrome-debugger-for-vs-code): une fois que vous avez terminé le développement côté serveur avec node. js, vous devez développer et tester le côté client. Cette extension intègre votre éditeur de VS Code avec votre service de débogage de navigateur Chrome, ce qui rend les choses un peu plus efficaces.
+- [Cartes à partir d’autres éditeurs](https://marketplace.visualstudio.com/search?target=VSCode&category=Keymaps&sortBy=Downloads): ces extensions peuvent vous aider dans votre environnement à la racine si vous effectuez une transition à partir d’un autre éditeur de texte (comme Atom, Subvert, vim, EMacs, Notepad + +, etc.).
+- [Synchronisation des paramètres](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync): vous permet de synchroniser vos paramètres de vs code sur différentes installations à l’aide de github. Si vous travaillez sur des ordinateurs différents, cela permet de garantir la cohérence de votre environnement entre eux.
 
 ## <a name="install-windows-terminal-optional"></a>Installer Windows Terminal (facultatif)
 
-Le nouveau terminal Windows active plusieurs onglets (basculer rapidement entre l’invite de commandes, PowerShell ou plusieurs distributions Linux), les combinaisons de touches personnalisées (créez vos propres touches de raccourci pour ouvrir ou fermer les onglets, copier + coller, etc.), les Emoji ☺ et les thèmes personnalisés ( Jeux de couleurs, styles et tailles de police, image d’arrière-plan/flou/transparence). [Plus d’informations](https://devblogs.microsoft.com/commandline/)
+Le nouveau terminal Windows active plusieurs onglets (basculer rapidement entre l’invite de commandes, PowerShell ou plusieurs distributions Linux), les combinaisons de touches personnalisées (créez vos propres touches de raccourci pour ouvrir ou fermer les onglets, copier + coller, etc.), les Emoji ☺ et les thèmes personnalisés ( Jeux de couleurs, styles et tailles de police, image d’arrière-plan/flou/transparence). [En savoir plus](https://devblogs.microsoft.com/commandline/).
 
-1. Obtenir [Windows Terminal (version préliminaire) dans le Microsoft Store](https://www.microsoft.com/store/apps/9n0dx20hk701): En installant via le Store, les mises à jour sont gérées automatiquement.
+1. Obtenir [Windows Terminal (version préliminaire) dans le Microsoft Store](https://www.microsoft.com/store/apps/9n0dx20hk701): en installant via le Store, les mises à jour sont gérées automatiquement.
 
 2. Une fois l’installation terminée, ouvrez Windows Terminal et sélectionnez **paramètres** pour personnaliser votre terminal à l’aide du fichier `profile.json`. [En savoir plus sur la modification des paramètres de Windows Terminal Server](https://github.com/microsoft/terminal/blob/master/doc/user-docs/UsingJsonSettings.md).
 
@@ -190,7 +185,7 @@ Si vous envisagez de collaborer avec d’autres personnes ou d’héberger votre
 
 Vous disposez maintenant d’un environnement de développement node. js configuré. Pour commencer à utiliser votre environnement node. js, pensez à essayer l’un de ces didacticiels :
 
-- [Prise en main de node. js pour les débutants](./beginners.md): Guide pas à pas pour vous aider à démarrer si vous êtes novice dans le développement node. js.
-- [Prise en main des infrastructures Web node. js sur Windows](./web-frameworks.md): Guide pas à pas pour vous aider à commencer à utiliser les framworks Web node. js sur Windows, y compris Next. js, Nuxt. js et Gatsby.
-- [Prise en main de la connexion des applications node. js à une base de données](./databases.md): Guide pas à pas pour vous aider à commencer à connecter votre application node. js à une base de données, comme MongoDB ou postgres.
-- [Prise en main des conteneurs de l’arrimeur avec node. js](./containers.md): Guide pas à pas pour vous aider à prendre en main les conteneurs de l’arrimeur avec vos applications node. js.
+- [Prise en main de node. js pour les débutants](./beginners.md)
+- [Prise en main des infrastructures Web node. js sur Windows](./web-frameworks.md)
+- [Prise en main de la connexion des applications node. js à une base de données](./databases.md)
+- [Prise en main des conteneurs de l’arrimeur avec node. js](./containers.md)

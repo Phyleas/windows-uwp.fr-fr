@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Node. js, Windows 10, Windows natif, directement sur Windows
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: eaeee6e2d55bcb9221d88bd87ebeafc7c45d0a5d
-ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
+ms.openlocfilehash: 18a8d07f790c391a6e10577ff512347106e1cf21
+ms.sourcegitcommit: 60d2d15dd0d365f82e4e90e4bc34b40cf5b4a247
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72315083"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72517831"
 ---
 # <a name="set-up-your-nodejs-development-environment-directly-on-windows"></a>Configurer votre environnement de développement node. js directement sur Windows
 
@@ -70,30 +70,19 @@ Pour en savoir plus sur l’utilisation de Volta pour installer plusieurs versio
 
 ## <a name="install-your-favorite-code-editor"></a>Installer votre éditeur de code favori
 
-Nous vous recommandons d' [installer vs code](https://code.visualstudio.com), ainsi que le [Pack d’extension node. js](https://marketplace.visualstudio.com/items?itemName=waderyan.nodejs-extension-pack), pour le développement avec node. js sur Windows.
-
-Le pack d’extension node. js comprend les éléments suivants :
-
-- ES Lint-outil pour « décoder » votre code. Le déformatage analyse votre code et vous avertit des erreurs potentielles.
-- NPM : exécutez des scripts NPM à partir de la palette de commandes et validez les modules installés définis dans package. JSON.
-- Extraits JavaScript (ES6) : ajoute des extraits de code pour le développement JavaScript dans la syntaxe ES6.
-- Rechercher node_modules : recherchez rapidement les modules de nœud dans votre projet.
-- NPM IntelliSense : ajoute IntelliSense pour les modules NPM dans votre code.
-- Chemin d’accès IntelliSense : complète automatiquement les noms de fichiers dans votre code.
-
-Installez-les tous ou choisissez ce qui vous semble le plus utile.
+Nous vous recommandons d' [installer vs code](https://code.visualstudio.com), ainsi que le [Pack d’extension node. js](https://marketplace.visualstudio.com/items?itemName=waderyan.nodejs-extension-pack), pour le développement avec node. js sur Windows. Installez-les tous ou choisissez ce qui vous semble le plus utile.
 
 Pour installer le pack d’extension node. js :
 
 1. Ouvrez la fenêtre **Extensions** (Ctrl + Maj + X) dans vs code.
-2. Dans la zone de recherche en haut de la fenêtre extensions, entrez : « Pack d’extension de nœud » (ou le nom de l’extension que vous recherchez).
+2. Dans la zone de recherche en haut de la fenêtre extensions, entrez « node extension Pack » (ou le nom de l’extension que vous recherchez).
 3. Sélectionnez **installer**. Une fois l’installation terminée, votre extension s’affiche dans le dossier « activé » de votre fenêtre **Extensions** . Vous pouvez désactiver, désinstaller ou configurer des paramètres en sélectionnant l’icône d’engrenage en regard de la description de votre nouvelle extension.
 
 Voici quelques-unes des extensions supplémentaires que vous pouvez envisager :
 
-- [Débogueur pour Chrome](https://code.visualstudio.com/blogs/2016/02/23/introducing-chrome-debugger-for-vs-code): Une fois que vous avez terminé le développement côté serveur avec node. js, vous devez développer et tester le côté client. Cette extension intègre votre éditeur de VS Code avec votre service de débogage de navigateur Chrome, ce qui rend les choses un peu plus efficaces.
-- [Cartes à partir d’autres éditeurs](https://marketplace.visualstudio.com/search?target=VSCode&category=Keymaps&sortBy=Downloads): Ces extensions peuvent vous aider dans votre environnement à la racine si vous effectuez une transition à partir d’un autre éditeur de texte (comme Atom, Subvert, vim, eMacs, Notepad + +, etc.).
-- [Synchronisation des paramètres](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync): Vous permet de synchroniser vos paramètres de VS Code sur différentes installations à l’aide de GitHub. Si vous travaillez sur des ordinateurs différents, cela permet de garantir la cohérence de votre environnement entre eux.
+- [Débogueur pour Chrome](https://code.visualstudio.com/blogs/2016/02/23/introducing-chrome-debugger-for-vs-code): une fois que vous avez terminé le développement côté serveur avec node. js, vous devez développer et tester le côté client. Cette extension intègre votre éditeur de VS Code avec votre service de débogage de navigateur Chrome, ce qui rend les choses un peu plus efficaces.
+- [Cartes à partir d’autres éditeurs](https://marketplace.visualstudio.com/search?target=VSCode&category=Keymaps&sortBy=Downloads): ces extensions peuvent vous aider dans votre environnement à la racine si vous effectuez une transition à partir d’un autre éditeur de texte (comme Atom, Subvert, vim, EMacs, Notepad + +, etc.).
+- [Synchronisation des paramètres](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync): vous permet de synchroniser vos paramètres de vs code sur différentes installations à l’aide de github. Si vous travaillez sur des ordinateurs différents, cela permet de garantir la cohérence de votre environnement entre eux.
 
 ## <a name="install-git-optional"></a>Installer Git (facultatif)
 

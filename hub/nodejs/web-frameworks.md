@@ -8,18 +8,18 @@ ms.topic: article
 keywords: NodeJS, node. js, Windows 10, Microsoft, formation NodeJS, node sur Windows, node sur WSL, node sur Linux sur Windows, installer le nœud sur Windows, NodeJS avec vs code, développer avec un nœud sur Windows, développer avec NodeJS sur Windows, installer le nœud sur WSL, NodeJS sur Windows Sous-système pour Linux
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: a3c1cd980884dc50107c05207665d0c1ef88938e
-ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
+ms.openlocfilehash: a8ce1d08136a74504e1b3bad26feadd61b72068f
+ms.sourcegitcommit: 60d2d15dd0d365f82e4e90e4bc34b40cf5b4a247
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72314953"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72517791"
 ---
 # <a name="get-started-with-nodejs-web-frameworks-on-windows"></a>Prise en main des infrastructures Web node. js sur Windows
 
 Guide pas à pas pour vous aider à commencer à utiliser les infrastructures Web node. js sur Windows, notamment Next. js, Nuxt. js et Gatsby.
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Conditions préalables
 
 Ce guide part du principe que vous avez déjà effectué les étapes pour [configurer votre environnement de développement node. js avec WSL 2](./setup-on-wsl2.md), notamment :
 
@@ -29,7 +29,7 @@ Ce guide part du principe que vous avez déjà effectué les étapes pour [confi
 - Assurez-vous que votre distribution Ubuntu 18,04 s’exécute en mode WSL 2. (WSL peut exécuter des distributions en mode v1 ou v2.) Vous pouvez le vérifier en ouvrant PowerShell et en entrant : `wsl -l -v`
 - À l’aide de PowerShell, définissez Ubuntu 18,04 comme distribution par défaut, avec : `wsl -s ubuntu 18.04`
 
-## <a name="get-started-with-nextjs"></a>Prise en main de Next. js
+## <a name="get-started-with-nextjs"></a>Bien démarrer avec Next.js
 
 Next. js est une infrastructure qui vous aide à créer des applications JavaScript à rendu serveur basées sur REACT. js, sur Node. js, sur WebPack et sur Babel. js. En fait, il s’agit d’un projet souvent utilisé pour réagir, conçu avec une attention particulière aux meilleures pratiques, qui vous permet de créer des applications Web « universelles » de manière simple et cohérente, avec peu de configuration. Ces applications Web « universelles » de rendu de serveur sont parfois appelées « isomorphes », ce qui signifie que le code est partagé entre le client et le serveur.
 
@@ -61,13 +61,13 @@ Pour créer un projet. js suivant, qui comprend l’installation de Next, REACT 
 
 8. Voyons comment Next. js gère les erreurs. Supprimez la balise de fermeture `</h1>` afin que votre code de titre ressemble maintenant à ceci : `<h1 className='title'>This is my new Next.js app!`. Enregistrez cette modification et Notez qu’une erreur « Échec de la compilation » s’affiche dans votre navigateur, et dans votre terminal, vous savez qu’une balise de fermeture pour `<h1>` est attendue. Remplacez la balise de fermeture `</h1>`, Save, et la page se recharge.
 
-Vous pouvez utiliser le débogueur de VS Code avec votre application. js suivante en sélectionnant la touche F5, ou en accédant à **afficher > débogage** (Ctrl + Maj + D) et **Afficher > console de débogage** (CTRL + MAJ + Y) dans la barre de menus. Si vous sélectionnez l’icône d’engrenage dans la fenêtre de débogage, un fichier de configuration de lancement (`launch.json`) sera créé pour vous permettre d’enregistrer les détails du programme d’installation du débogage. Pour plus d’informations, consultez [vs code le débogage](https://code.visualstudio.com/docs/editor/debugging#_launch-configurations).
+Vous pouvez utiliser le débogueur de VS Code avec votre application. js suivante en sélectionnant la touche F5, ou en accédant à **afficher > débogage** (Ctrl + Maj + D) et **Afficher > console de débogage** (CTRL + MAJ + Y) dans la barre de menus. Si vous sélectionnez l’icône d’engrenage dans la fenêtre de débogage, un fichier de configuration de lancement (`launch.json`) sera créé pour vous permettre d’enregistrer les détails du programme d’installation du débogage. Pour plus d’informations, consultez [vs code le débogage](https://code.visualstudio.com/docs/nodejs/nodejs-debugging).
 
 ![Icône de débogage VS Code et de configuration de Launch. JSON](../images/vscode-debug-launch-configuration.png)
 
 Pour en savoir plus sur Next. js, consultez les [documents suivants. js](https://nextjs.org/docs).
 
-## <a name="get-started-with-nuxtjs"></a>Prise en main de Nuxt. js
+## <a name="get-started-with-nuxtjs"></a>Bien démarrer avec Nuxt.js
 
 Nuxt. js est une infrastructure permettant de créer des applications JavaScript à rendu serveur basées sur vue. js, sur Node. js, sur WebPack et sur Babel. js. Il a été inspiré par Next. js. Il s’agit fondamentalement d’un projet réutilisable pour la vue. Tout comme Next. js, il est conçu avec une attention particulière aux meilleures pratiques et vous permet de créer des applications Web « universelles » de manière simple et cohérente, avec peu de configuration. Ces applications Web « universelles » de rendu de serveur sont parfois appelées « isomorphes », ce qui signifie que le code est partagé entre le client et le serveur.
 
@@ -81,15 +81,15 @@ Pour créer un projet Nuxt. js, qui inclut la réponse à une série de question
 
 4. Le programme d’installation de Nuxt. js vous demandera à présent les questions suivantes :
     - Nom du projet : My-nuxtjs-App
-    - Description du projet : Description de mon application Nuxt. js.
+    - Description du projet : description de mon application Nuxt. js.
     - Nom de l’auteur : J’utilise mon alias GitHub.
-    - Choisissez le gestionnaire de package : Fils ou **NPM** : nous utilisons NPM pour nos exemples.
-    - Choisir une infrastructure d’interface utilisateur : None, conception ant vue, bootstrap vue, etc. Nous allons choisir **Vuetify** pour cet exemple, mais la communauté vue a créé un [récapitulatif intéressant qui compare ces FRAMEWORKS d’interface utilisateur](https://vue-community.org/guide/ecosystem/ui-libraries.html#summary-tldr) pour vous aider à choisir le mieux adapté à votre projet.
-    - Choisir des frameworks de serveur personnalisés : None, AdonisJs, Express, Fastify, etc. Nous allons choisir **aucun** pour cet exemple, mais vous trouverez une [comparaison 2019-2020 Server Framework](https://dev.to/santypk4/introducing-the-best-10-node-js-frameworks-for-2019-and-2020-mcm) sur le site dev.to.
-    - Choisissez les modules Nuxt. js (utilisez la barre d’espace pour sélectionner des modules ou simplement entrer si vous ne souhaitez pas les utiliser) : Axios (pour simplifier les requêtes HTTP) ou la [prise en charge de PWA](https://pwa.nuxtjs.org/) (pour l’ajout d’un service-Worker, d’un fichier manifest. JSON, etc.). Nous allons ajouter un module pour cet exemple.
-    - Choisissez des outils non pelucheants : ESLint, améliorer, fichiers non **comés**. Nous allons choisir **ESLint** (un outil pour analyser votre code et vous avertir des erreurs potentielles).
-    - Choisir une infrastructure de test : **None**, Jest, Ava. Nous allons choisir **aucun** , car nous n’aborderons pas les tests dans ce guide de démarrage rapide.
-    - Choisir le mode de rendu : **Universal (SSR)** ou une application à page unique (Spa). Pour notre exemple, nous allons choisir **Universal (SSR)** . Toutefois, les [documents Nuxt. js](https://nuxtjs.org/guide#server-rendered-universal-ssr-) signalent certaines des différences entre les différences entre un serveur node. js et un serveur node. js qui exécutent votre application et Spa pour l’hébergement statique.
+    - Choisissez le gestionnaire de package : fils ou **NPM** -nous utilisons NPM pour nos exemples.
+    - Choisissez l’infrastructure d’interface utilisateur : aucune, conception ant. vue, bootstrap vue, etc. Nous allons choisir **Vuetify** pour cet exemple, mais la communauté vue a créé un [récapitulatif intéressant qui compare ces FRAMEWORKS d’interface utilisateur](https://vue-community.org/guide/ecosystem/ui-libraries.html#summary-tldr) pour vous aider à choisir le mieux adapté à votre projet.
+    - Choisissez des frameworks de serveur personnalisés : None, AdonisJs, Express, Fastify, etc. Nous allons choisir **aucun** pour cet exemple, mais vous trouverez une [comparaison 2019-2020 Server Framework](https://dev.to/santypk4/introducing-the-best-10-node-js-frameworks-for-2019-and-2020-mcm) sur le site dev.to.
+    - Choisissez les modules Nuxt. js (utilisez la barre d’espace pour sélectionner des modules ou simplement entrer si vous ne souhaitez pas) : Axios (pour simplifier les requêtes HTTP) ou la [prise en charge de PWA](https://pwa.nuxtjs.org/) (pour ajouter un service-Worker, un fichier manifest. JSON, etc.). Nous allons ajouter un module pour cet exemple.
+    - Choisissez des outils de non-entropie : ESLint, améliorer, fichiers **pas**. Nous allons choisir **ESLint** (un outil pour analyser votre code et vous avertir des erreurs potentielles).
+    - Choisissez une infrastructure de test : **None**, Jest, Ava. Nous allons choisir **aucun** , car nous n’aborderons pas les tests dans ce guide de démarrage rapide.
+    - Choisissez mode de rendu : **universel (SSR)** ou application à page unique (Spa). Pour notre exemple, nous allons choisir **Universal (SSR)** . Toutefois, les [documents Nuxt. js](https://nuxtjs.org/guide#server-rendered-universal-ssr-) signalent certaines des différences entre les différences entre un serveur node. js et un serveur node. js qui exécutent votre application et Spa pour l’hébergement statique.
     - Choisir les outils de développement : **jsconfig. JSON** (recommandé pour vs code pour que la saisie semi-automatique du code IntelliSense fonctionne)
 
 5. Une fois votre projet créé, `cd my-nuxtjs-app` pour accéder au répertoire de votre projet Nuxt. js, puis entrez `code .` pour ouvrir le projet dans l’environnement distant VS Code WSL.
@@ -112,13 +112,13 @@ Pour créer un projet Nuxt. js, qui inclut la réponse à une série de question
 
 8. Voyons comment Nuxt. js gère les erreurs. Supprimez la balise de fermeture `</v-card-title>` afin que votre code de titre ressemble maintenant à ceci : `<v-card-title class="headline">This is my new Nuxt.js app!`. Enregistrez cette modification et remarquez qu’une erreur de compilation s’affiche dans votre navigateur, et dans votre terminal, vous savez qu’une balise de fermeture pour `<v-card-title>` est manquante, ainsi que les numéros de ligne où l’erreur se trouve dans votre code. Remplacez la balise de fermeture `</v-card-title>`, Save, et la page se recharge.
 
-Vous pouvez utiliser le débogueur de VS Code avec votre application Nuxt. js en sélectionnant la touche F5, ou en accédant à **afficher > débogage** (Ctrl + Maj + D) et **Afficher > console de débogage** (CTRL + MAJ + Y) dans la barre de menus. Si vous sélectionnez l’icône d’engrenage dans la fenêtre de débogage, un fichier de configuration de lancement (`launch.json`) sera créé pour vous permettre d’enregistrer les détails du programme d’installation du débogage. Pour plus d’informations, consultez [vs code le débogage](https://code.visualstudio.com/docs/editor/debugging#_launch-configurations).
+Vous pouvez utiliser le débogueur de VS Code avec votre application Nuxt. js en sélectionnant la touche F5, ou en accédant à **afficher > débogage** (Ctrl + Maj + D) et **Afficher > console de débogage** (CTRL + MAJ + Y) dans la barre de menus. Si vous sélectionnez l’icône d’engrenage dans la fenêtre de débogage, un fichier de configuration de lancement (`launch.json`) sera créé pour vous permettre d’enregistrer les détails du programme d’installation du débogage. Pour plus d’informations, consultez [vs code le débogage](https://code.visualstudio.com/docs/nodejs/nodejs-debugging).
 
 ![Icône de débogage VS Code et de configuration de Launch. JSON](../images/vscode-debug-launch-configuration.png)
 
 Pour en savoir plus sur Nuxt. js, consultez le [Guide Nuxt. js](https://nuxtjs.org/guide).
 
-## <a name="get-started-with-gatsbyjs"></a>Prise en main de Gatsby. js
+## <a name="get-started-with-gatsbyjs"></a>Bien démarrer avec Gatsby.js
 
 Gatsby. js est une infrastructure de génération de site statique basée sur REACT. js, par opposition à un rendu serveur comme Next. js et Nuxt. js. Un générateur de site statique génère du code HTML statique au moment de la génération. Il ne nécessite pas de serveur. Next. js et Nuxt. js génèrent du code HTML au moment de l’exécution (chaque fois qu’une nouvelle requête arrive). Ils requièrent l’exécution d’un serveur. Gatsby détermine également comment gérer les données dans votre application (avec GraphQL), tandis que Next. js et Nuxt. js laissent cette décision à vous.
 
@@ -151,7 +151,7 @@ Pour créer un projet Gatsby. js :
 
 9. Voyons comment Next. js gère les erreurs. Supprimez la balise de fermeture `</h1>` afin que votre code de titre ressemble maintenant à ceci : `<h1>Hi (Your Name)!`. Enregistrez cette modification et Notez qu’une erreur « Échec de la compilation » s’affiche dans votre navigateur, et dans votre terminal, vous savez qu’une balise de fermeture pour `<h1>` est attendue. Remplacez la balise de fermeture `</h1>`, Save, et la page se recharge.
 
-Vous pouvez utiliser le débogueur de VS Code avec votre application. js suivante en sélectionnant la touche F5, ou en accédant à **afficher > débogage** (Ctrl + Maj + D) et **Afficher > console de débogage** (CTRL + MAJ + Y) dans la barre de menus. Si vous sélectionnez l’icône d’engrenage dans la fenêtre de débogage, un fichier de configuration de lancement (`launch.json`) sera créé pour vous permettre d’enregistrer les détails du programme d’installation du débogage. Pour plus d’informations, consultez [vs code le débogage](https://code.visualstudio.com/docs/editor/debugging#_launch-configurations).
+Vous pouvez utiliser le débogueur de VS Code avec votre application. js suivante en sélectionnant la touche F5, ou en accédant à **afficher > débogage** (Ctrl + Maj + D) et **Afficher > console de débogage** (CTRL + MAJ + Y) dans la barre de menus. Si vous sélectionnez l’icône d’engrenage dans la fenêtre de débogage, un fichier de configuration de lancement (`launch.json`) sera créé pour vous permettre d’enregistrer les détails du programme d’installation du débogage. Pour plus d’informations, consultez [vs code le débogage](https://code.visualstudio.com/docs/nodejs/nodejs-debugging).
 
 ![Icône de débogage VS Code et de configuration de Launch. JSON](../images/vscode-debug-launch-configuration.png)
 
