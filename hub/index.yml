@@ -9,12 +9,12 @@ metadata:
   ms.author: tedhudek
   ms.topic: hub-page
   uhfHeaderId: MSDocsHeader-DocsL1
-  ms.openlocfilehash: 0cdab14a7301cdb20ca6986854523c5b6e834b21
-  ms.sourcegitcommit: bac5574a1f47a5b38c984a5482272c9e49a9c91e
+  ms.openlocfilehash: 2b0eee6f53445ce2f0a0bcc3f35b756ab231a888
+  ms.sourcegitcommit: 00cd8a6616e358479a63e56126c62ef02b8da75b
   ms.translationtype: HT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 09/18/2019
-  ms.locfileid: "71100831"
+  ms.lasthandoff: 10/17/2019
+  ms.locfileid: "72548388"
 highlightedContent:
   items:
   - title: Obtenir Visual Studio et le kit SDK Windows
@@ -38,10 +38,10 @@ additionalContent:
         url: https://docs.microsoft.com/windows/apps
       - text: Ajouter des fonctionnalités Windows 10 à vos applications
         url: https://docs.microsoft.com/windows/apps/desktop/modernize/
-      - text: Développer avec Python sur Windows
-        url: https://docs.microsoft.com/windows/python/index
-      - text: Configurer le sous-système Windows pour Linux
-        url: https://docs.microsoft.com/windows/wsl/about
+      - text: Créer des applications de bureau
+        url: https://docs.microsoft.com/windows/apps/desktop/
+      - text: Configurer votre environnement de développement
+        url: https://docs.microsoft.com/windows/dev-environment/
       - text: Rechercher des exemples de code
         url: https://developer.microsoft.com/windows/samples
     - title: Développement de matériel
