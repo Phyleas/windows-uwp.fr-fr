@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, norme, c++, cpp, winrt, projection, bien démarrer, prise en main
 ms.localizationpriority: medium
-ms.openlocfilehash: e900cdddaa86857554c11605d00f59fd45a7e5ee
-ms.sourcegitcommit: b186f70f0b1601b6b6a5db91d87d034f6b155e3b
+ms.openlocfilehash: ab582d0528d6af8c9a8ae97e43fda2714f8e2fe6
+ms.sourcegitcommit: 2442a5f5b0c4275204063162f0f379fa90ff13b4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70063784"
+ms.lasthandoff: 10/12/2019
+ms.locfileid: "72292775"
 ---
 # <a name="get-started-with-cwinrt"></a>Bien démarrer avec C++/WinRT
 
