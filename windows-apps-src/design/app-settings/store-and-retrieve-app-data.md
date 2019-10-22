@@ -6,20 +6,20 @@ label: App settings and data
 template: detail.hbs
 ms.date: 11/14/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3958d69dc3142702eb2d2a41d6dba5ebeb9fa8ce
-ms.sourcegitcommit: 2fa2d2236870eaabc95941a95fd4e358d3668c0c
+ms.openlocfilehash: 0eb7ef49d0ce1876635dc36e84f43432c13e1791
+ms.sourcegitcommit: f561efbda5c1d47b85601d91d70d86c5332bbf8c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70076380"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72690368"
 ---
 # <a name="store-and-retrieve-settings-and-other-app-data"></a>Stocker et récupérer des paramètres et autres données d’application
 
 Les *données d’application* sont des données mutables qui sont créées et gérées par une application spécifique. Il comprend l’état d’exécution, les paramètres d’application, les préférences de l’utilisateur, le contenu de référence (par exemple, les définitions de dictionnaire dans une application de dictionnaire) et d’autres paramètres. Les données d’application diffèrent des *données utilisateur* que l’utilisateur crée et gère en utilisant l’application. Elles incluent les fichiers de documents ou multimédias, les transcriptions de courrier électronique ou de communication ou les enregistrements de base de données dont le contenu a été créé par l’utilisateur. Les données utilisateur peuvent s’avérer utiles ou judicieuses pour plusieurs applications. Il s’agit souvent de données que l’utilisateur veut manipuler ou transmettre sous forme d’entité indépendante de l’application elle-même, par exemple un document.
 
-**Remarque importante à propos des données d’application:** La durée de vie des données d’application est liée à celle de l’application. Si l’application est supprimée, toutes les données d’application sont par conséquent perdues. N’utilisez pas les données d’application pour stocker des données utilisateur ni d’autres éléments que les utilisateurs peuvent considérer comme précieux et irremplaçables. Nous vous conseillons d’utiliser les bibliothèques de l’utilisateur et Microsoft OneDrive pour stocker ce type d’informations. Les données d’application sont idéales pour le stockage des préférences utilisateur, paramètres et favoris spécifiques à l’application.
+**Remarque importante sur les données d’application :** la durée de vie des données d’application est liée à celle de l’application. Si l’application est supprimée, toutes les données d’application sont par conséquent perdues. N’utilisez pas les données d’application pour stocker des données utilisateur ni d’autres éléments que les utilisateurs peuvent considérer comme précieux et irremplaçables. Nous vous conseillons d’utiliser les bibliothèques de l’utilisateur et Microsoft OneDrive pour stocker ce type d’informations. Les données d’application sont idéales pour le stockage des préférences utilisateur, paramètres et favoris spécifiques à l’application.
 
 ## <a name="types-of-app-data"></a>Types de données d’application
 
@@ -32,11 +32,12 @@ Utilisez les paramètres pour stocker les préférences de l’utilisateur et le
 Voici les types de données que vous pouvez utiliser pour les paramètres d’application :
 
 - **UInt8**, **Int16**, **UInt16**, **Int32**, **UInt32**, **Int64**, **UInt64**, **Single**, **Double**
-- **Boolean**
+- **Expression**
 - **Char16**, **String**
-- [**DateTime**](https://docs.microsoft.com/uwp/api/Windows.Foundation.DateTime), [ **TimeSpan**](https://docs.microsoft.com/uwp/api/Windows.Foundation.TimeSpan)
+- [**DateTime**](/uwp/api/Windows.Foundation.DateTime), [ **TimeSpan**](/uwp/api/Windows.Foundation.TimeSpan)
+    - Pour C#/.net, utilisez : [**System. DateTimeOffset**](/dotnet/api/system.datetimeoffset?view=dotnet-uwp-10.0), [**System. TimeSpan**](/dotnet/api/system.timespan?view=dotnet-uwp-10.0)
 - **GUID**, [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point), [**Size**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size), [**Rect**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Rect)
-- [**ApplicationDataCompositeValue**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataCompositeValue): Ensemble de paramètres d’application connexes qui doivent être sérialisés et désérialisés atomiquement. Utilisez des paramètres composites pour gérer facilement les mises à jour atomiques des paramètres interdépendants. Le système assure l’intégrité des paramètres composites lors d’accès simultanés et dans le cadre de l’itinérance. Les paramètres composites étant optimisés pour de faibles volumes de données, leur utilisation pour des jeux de données volumineux peut nuire aux performances.
+- [**ApplicationDataCompositeValue**](/uwp/api/Windows.Storage.ApplicationDataCompositeValue): ensemble de paramètres d’application associés qui doivent être sérialisés et désérialisés atomiquement. Utilisez des paramètres composites pour gérer facilement les mises à jour atomiques des paramètres interdépendants. Le système assure l’intégrité des paramètres composites lors d’accès simultanés et dans le cadre de l’itinérance. Les paramètres composites étant optimisés pour de faibles volumes de données, leur utilisation pour des jeux de données volumineux peut nuire aux performances.
 
 ### <a name="files"></a>Fichiers
 
@@ -432,7 +433,7 @@ localSettings.DeleteContainer("exampleContainer");
 
 Vous pouvez éventuellement créer différentes versions des données d’application pour votre application. Vous pouvez par exemple créer une nouvelle version de votre application qui aura pour effet de changer le format de ses données d’application sans pour autant causer de problèmes de compatibilité avec la version précédente de l’application. L’application examine la version des données d’application dans le magasin de données et si la version est antérieure à la version attendue par l’application, celle-ci doit mettre à jour les données d’application vers le nouveau format et mettre à jour la version. Pour en savoir plus, consultez la propriété [**Application.Version**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.version) et la méthode [**ApplicationData.SetVersionAsync**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.setversionasync).
 
-## <a name="related-articles"></a>Articles connexes
+## <a name="related-articles"></a>Articles associés
 
 * [**Windows. Storage. ApplicationData**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationData)
 * [**Windows. Storage. ApplicationData. RoamingSettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingsettings)
