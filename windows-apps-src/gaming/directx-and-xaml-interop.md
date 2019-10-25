@@ -6,28 +6,25 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, jeux, directx, interopérabilité xaml
 ms.localizationpriority: medium
-ms.openlocfilehash: ad03a86ba18f11d8d63c2c98649e7f159f3d4f52
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 174cb7f2608c1da89ebacc21e5032d03f7701f15
+ms.sourcegitcommit: 0179e2ccb59a14abc1676da0662e2def54af24ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321289"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72796225"
 ---
 # <a name="directx-and-xaml-interop"></a>Interopérabilité DirectX et XAML
-
-
 
 Vous pouvez utiliser XAML (Extensible Application Markup Language) et Microsoft DirectX conjointement dans votre jeu ou application de plateforme Windows universelle (UWP). En combinant XAML et DirectX, vous pouvez générer des infrastructures d’interface utilisateur flexibles qui interopèrent avec votre contenu DirectX, ce qui s’avère particulièrement utile dans le cas d’applications qui utilisent beaucoup de ressources graphiques. Cette rubrique décrit la structure d’une application UWP qui utilise DirectX et identifie les types qu’il est important d’utiliser au moment de générer votre application UWP pour la faire fonctionner avec DirectX.
 
 Si votre application se concentre principalement sur le rendu 2D, il peut être judicieux d’utiliser la bibliothèque Windows Runtime [Win2D](https://github.com/microsoft/win2d). Gérée par Microsoft, cette bibliothèque est basée sur les technologies Direct2D principales. Elle simplifie considérablement simplifie le modèle d’utilisation pour implémenter des graphismes 2D et comprend des abstractions utiles pour certaines des techniques décrites dans ce document. Pour en savoir plus, voir la page du projet. Ce document fournit des recommandations pour les développeurs d’applications qui choisissent de ne *pas* utiliser Win2D.
 
-> **Remarque**  APIs DirectX ne sont pas définies en tant que types Windows Runtime, vous utiliserez généralement des extensions du composant Visual C++ (C++ / c++ / CX) pour développer des composants XAML UWP qui interopèrent avec DirectX. En outre, vous pouvez créer une application UWP en XAML et C# qui utilise DirectX, à condition d’inclure les appels DirectX dans un wrapper au sein d’un fichier de métadonnées Windows Runtime distinct.
-
- 
+> [!NOTE]
+> Les API DirectX ne sont pas définies en tant que types de Windows Runtime, mais vous pouvez généralement utiliser [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/index) pour développer des composants XAML UWP qui interagissent avec DirectX. En outre, vous pouvez créer une application UWP en XAML et C# qui utilise DirectX, à condition d’inclure les appels DirectX dans un wrapper au sein d’un fichier de métadonnées Windows Runtime distinct.
 
 ## <a name="xaml-and-directx"></a>XAML et DirectX
 
-DirectX fournit deux bibliothèques puissantes pour les graphiques 2D et 3D : Direct2D et Direct3D de Microsoft. Bien que XAML assure une prise en charge des primitives et des effets 2D de base, nombreuses sont les applications, notamment de modélisation et de jeux, qui nécessitent une prise en charge de graphismes plus complexes. Pour celles-ci, vous pouvez utiliser Direct2D et Direct3D pour restituer tout ou partie des graphismes et utiliser XAML pour tout le reste.
+DirectX fournit deux bibliothèques complètes pour les graphismes 2D et 3D : Direct2D et Microsoft Direct3D. Bien que XAML assure une prise en charge des primitives et des effets 2D de base, nombreuses sont les applications, notamment de modélisation et de jeux, qui nécessitent une prise en charge de graphismes plus complexes. Pour celles-ci, vous pouvez utiliser Direct2D et Direct3D pour restituer tout ou partie des graphismes et utiliser XAML pour tout le reste.
 
 Si vous implémentez une interopérabilité de XAML et DirectX personnalisée, vous devez connaître les deux concepts suivants :
 
@@ -46,14 +43,13 @@ Une fois que vous avez déterminé comment vous envisagez d’utiliser DirectX, 
 
 ## <a name="surfaceimagesource"></a>SurfaceImageSource
 
-
 [SurfaceImageSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource) propose des surfaces partagées DirectX dans lesquelles il est possible de dessiner et compose les éléments de contenu de l’application.
 
 Voici le processus de base de création et de mise à jour d’un objet [SurfaceImageSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource) dans le code-behind :
 
 1.  Définissez la taille de la surface partagée en passant la hauteur et la largeur au constructeur [SurfaceImageSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource). Vous pouvez également indiquer si la surface a besoin d’une prise en charge alpha (opacité).
 
-    Exemple :
+    Exemple :
 
     `SurfaceImageSource^ surfaceImageSource = ref new SurfaceImageSource(400, 300);`
 
@@ -77,7 +73,7 @@ Voici le processus de base de création et de mise à jour d’un objet [Surface
     > [!NOTE]
     > Si vous comptez dessiner votre **SurfaceImageSource** à partir d’un thread en arrière-plan, vous devez également vous assurer que le périphérique DXGI a activé l’accès multithread. Cette opération doit uniquement être réalisée si vous comptez dessiner depuis un thread d’arrière-plan, pour des raisons de performances.
 
-    Exemple :
+    Exemple :
 
     ```cpp
     Microsoft::WRL::ComPtr<ID3D11Device> m_d3dDevice;
@@ -180,7 +176,7 @@ Voici le processus de base de création et de mise à jour d’un objet [Surface
 
 Voici le processus de base de création et de mise à jour d’un objet [VirtualSurfaceImageSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource) dans le code-behind :
 
-1.  Créez une instance de [VirtualSurfaceImageSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource) avec la taille que vous voulez. Exemple :
+1.  Créez une instance de [VirtualSurfaceImageSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource) avec la taille que vous voulez. Exemple :
 
     ```cpp
     VirtualSurfaceImageSource^ virtualSIS = 
@@ -212,7 +208,7 @@ Voici le processus de base de création et de mise à jour d’un objet [Virtual
     > [!NOTE]
     > Si vous comptez dessiner votre **VirtualSurfaceImageSource** à partir d’un thread en arrière-plan, vous devez également vous assurer que le périphérique DXGI a activé l’accès multithread. Cette opération doit uniquement être réalisée si vous comptez dessiner depuis un thread d’arrière-plan, pour des raisons de performances.
 
-    Exemple :
+    Exemple :
 
     ```cpp
     Microsoft::WRL::ComPtr<ID3D11Device> m_d3dDevice;
@@ -369,9 +365,8 @@ Voici le processus de base de création et de mise à jour d’un objet [Virtual
 Afin de garantir de bonnes performances, le type [SwapChainPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) impose certaines limitations :
 
 -   Le nombre maximal d’instances de [SwapChainPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) par application est de 4.
--   Vous devez définir la hauteur et la largeur de la chaîne de permutation DirectX (dans [DXGI\_échange\_chaîne\_DESC1](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/ns-dxgi1_2-dxgi_swap_chain_desc1)) pour les dimensions de l’élément de chaîne de permutation. Si vous n’est pas le cas, le contenu de l’affichage est mis à l’échelle (à l’aide de **DXGI\_mise à l’échelle\_STRETCH**) pour tenir.
--   Vous devez définir le mode de mise à l’échelle de la chaîne de permutation DirectX (dans [DXGI\_échange\_chaîne\_DESC1](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/ns-dxgi1_2-dxgi_swap_chain_desc1)) à **DXGI\_mise à l’échelle\_STRETCH**.
--   Impossible de définir un mode alpha de la chaîne de permutation DirectX (dans [DXGI\_échange\_chaîne\_DESC1](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/ns-dxgi1_2-dxgi_swap_chain_desc1)) à **DXGI\_ALPHA\_MODE\_ PRÉMULTIPLIÉES**.
+-   Vous devez définir la hauteur et la largeur de la chaîne d’échange DirectX ( [DXGI\_swap\_chain\_DESC1](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/ns-dxgi1_2-dxgi_swap_chain_desc1)) sur les dimensions actuelles de l’élément de chaîne de permutation. Si vous ne le faites pas, le contenu d’affichage sera mis à l’échelle (à l’aide de **DXGI\_la mise à l’échelle\_Stretch**).
+-   Vous devez définir le mode de mise à l’échelle de la chaîne d’échange DirectX (dans [DXGI\_swap\_chain\_DESC1](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/ns-dxgi1_2-dxgi_swap_chain_desc1)) à **DXGI\_adapter\_Stretch**.
 -   Vous devez créer la chaîne de permutation DirectX en appelant [IDXGIFactory2::CreateSwapChainForComposition](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgifactory2-createswapchainforcomposition).
 
 Vous mettez à jour [SwapChainPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) en fonction des besoins de votre application et non des mises à jour de l’infrastructure XAML. Si vous avez besoin de synchroniser les mises à jour de **SwapChainPanel** avec celles de l’infrastructure XAML, inscrivez-vous à l’événement [Windows::UI::Xaml::Media::CompositionTarget::Rendering](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.compositiontarget.rendering). Sinon, vous devez prévoir des problèmes inter-threads si vous essayez de mettre à jour les éléments XAML à partir d’un thread différent de celui qui met à jour **SwapChainPanel**.
@@ -466,11 +461,3 @@ Voici le processus de base de création et de mise à jour d’un objet [SwapCha
 * [SwapChainPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel)
 * [ISwapChainPanelNative](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nn-windows-ui-xaml-media-dxinterop-iswapchainpanelnative)
 * [Guide de programmation pour Direct3D 11](https://docs.microsoft.com/windows/desktop/direct3d11/dx-graphics-overviews)
-
- 
-
- 
-
-
-
-
