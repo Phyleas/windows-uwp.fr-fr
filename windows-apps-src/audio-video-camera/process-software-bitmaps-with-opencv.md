@@ -1,19 +1,19 @@
 ---
 ms.assetid: ''
 description: Cet article explique comment utiliser la classe SoftwareBitmap avec la bibliothèque Open Source Computer Vision Library (OpenCV).
-title: Traiter les images bitmaps avec OpenCV
+title: Traiter les images bitmap avec OpenCV
 ms.date: 03/19/2018
 ms.topic: article
 keywords: windows 10, uwp, opencv, softwarebitmap
 ms.localizationpriority: medium
-ms.openlocfilehash: ed8d6572fb280b2cfecf1cf035d68a739c5bc92d
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: 349326ba458999b2b1e299e8260d52d608d5af1f
+ms.sourcegitcommit: e189166dea855ce330bd0634cc158b51cb4fbd69
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393519"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72811639"
 ---
-# <a name="process-bitmaps-with-opencv"></a>Traiter les images bitmaps avec OpenCV
+# <a name="process-bitmaps-with-opencv"></a>Traiter les images bitmap avec OpenCV
 
 Cet article explique comment utiliser la classe **[SoftwareBitmap](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap)** , utilisée par de nombreuses API UWP différentes pour représenter des images, avec l’Open Source Computer Vision Library (OpenCV), une bibliothèque open source de code natif qui fournit un large éventail d’algorithmes de traitement d’image. 
 
@@ -35,19 +35,19 @@ Les exemples de cet article vous guident dans la création d’un code natif Win
 2. Dans la catégorie **Visual C++** , sélectionnez **Composant Windows Runtime (Windows universel)** . Pour cet exemple, nommez le projet « OpenCVBridge » et cliquez sur **OK**. 
 3. Dans la boîte de dialogue **Nouveau projet Windows universel**, sélectionnez la cible et la version minimale du système d’exploitation pour votre application et cliquez sur **OK**.
 4. Cliquez avec le bouton droit sur le fichier autogénéré Class1.cpp dans l’Explorateur de solutions, puis sélectionnez **Supprimer**. Lorsque la boîte de dialogue de confirmation s’affiche, choisissez **Supprimer**. Supprimez ensuite le fichier d’en-tête Class1.h.
-5. Cliquez avec le bouton droit sur l’icône du projet OpenCVBridge et sélectionnez **Ajouter-> la classe...** . Dans la boîte de dialogue **Ajouter une classe** , entrez « OpenCVHelper » dans le champ nom de la **classe** , puis cliquez sur **OK**. Le code sera ajouté aux fichiers de la classe créée dans une étape ultérieure.
+5. Cliquez avec le bouton droit sur l’icône de projet OpenCVBridge et sélectionnez **Ajouter ->Classe...** . Dans la boîte de dialogue **Ajouter une classe**, saisissez « OpenCVHelper » dans le champ **Nom de la classe**, puis cliquez sur **OK**. Le code sera ajouté aux fichiers de la classe créée dans une étape ultérieure.
 
-### <a name="2-add-the-opencv-nuget-packages-to-your-component-project"></a>2. Ajouter les packages NuGet OpenCV à votre projet de composant
+### <a name="2-add-the-opencv-nuget-packages-to-your-component-project"></a>2. Ajoutez les packages OpenCV NuGet à votre projet de composant
 
 1. Cliquez avec le bouton droit sur le projet OpenCVBridge dans l’Explorateur de solutions et sélectionnez **Gérer les packages NuGet...**
 2. Lorsque la boîte de dialogue Gestionnaire de package NuGet s’ouvre, sélectionnez l’onglet **Parcourir** et tapez « OpenCV.Win » dans la zone de recherche.
 3. Sélectionnez « OpenCV.Win.Core » et cliquez sur **Installer**. Dans la boîte de dialogue **Aperçu**, cliquez sur **OK**.
 4. Utilisez la même procédure pour installer le package « OpenCV.Win.ImgProc ».
 
-> [!NOTE]
-> Les packages OpenCV.Win.Core et OpenCV.Win.ImgProc ne sont pas régulièrement mis à jour, mais sont toujours recommandés pour créer un OpenCVHelper, comme décrit dans cette page.
+>[!NOTE]
+>OpenCV. win. Core et OpenCV. win. ImgProc ne sont pas régulièrement mis à jour et ne réussissent pas les vérifications de conformité de la Banque. par conséquent, ces packages sont destinés uniquement à l’expérimentation.
 
-### <a name="3-implement-the-opencvhelper-class"></a>3. Implémenter la classe OpenCVHelper
+### <a name="3-implement-the-opencvhelper-class"></a>3. Implémentez la classe OpenCVHelper
 
 Collez le code suivant dans le fichier d’en-tête OpenCVHelper.h. Ce code comprend les fichiers d’en-tête OpenCV pour les packages *Core* et *ImgProc* que nous avons installés et déclare trois méthodes que nous verrons dans les étapes suivantes.
 
@@ -82,7 +82,7 @@ Enfin, cet exemple de classe d’assistance implémente une méthode de traiteme
 
 
 ## <a name="a-simple-softwarebitmap-opencv-example-using-the-helper-component"></a>Un exemple simple de SoftwareBitmap OpenCV utilisant le composant d’assistance
-Maintenant que le composant OpenCVBridge a été créé, nous pouvons créer une application simple en C# qui utilise la méthode **flou** d'OpenCV pour modifier un **SoftwareBitmap**. Pour accéder au composant Windows Runtime à partir de votre application UWP, vous devez d’abord ajouter une référence au composant. Dans Explorateur de solutions, cliquez avec le bouton droit sur le nœud **références** dans votre projet d’application UWP, puis sélectionnez **Ajouter une référence...** . Dans la boîte de dialogue Gestionnaire de références, sélectionnez **projets-> solution**. Cochez la case en regard de votre projet OpenCVBridge, puis cliquez sur **OK**.
+Maintenant que le composant OpenCVBridge a été créé, nous pouvons créer une application simple en C# qui utilise la méthode **flou** d'OpenCV pour modifier un **SoftwareBitmap**. Pour accéder au composant Windows Runtime à partir de votre application UWP, vous devez d’abord ajouter une référence au composant. Dans l’Explorateur de solutions, cliquez sur le nœud **Références** sous votre projet d’application UWP, puis sélectionnez **Ajouter une référence...** . Dans la boîte de dialogue Gestionnaire de références, sélectionnez **Projets -> Solution**. Cochez la case en regard de votre projet OpenCVBridge, puis cliquez sur **OK**.
 
 L’exemple de code ci-dessous permet à l’utilisateur de sélectionner un fichier image, puis utilise **[BitmapDecoder](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapencoder)** pour créer une représentation **SoftwareBitmap** de l’image. Pour plus d’informations sur l’utilisation de la méthode **SoftwareBitmap**, consultez la section [Créer, modifier et enregistrer des images bitmap](https://docs.microsoft.com/windows/uwp/audio-video-camera/imaging).
 
