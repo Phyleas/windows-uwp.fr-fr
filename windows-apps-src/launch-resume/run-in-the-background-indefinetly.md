@@ -2,16 +2,16 @@
 title: Exécuter indéfiniment en arrière-plan
 description: Utilisez la fonctionnalité extendedExecutionUnconstrained pour exécuter indéfiniment une tâche en arrière-plan ou une session d’exécution étendue en arrière-plan.
 ms.assetid: 6E48B8B6-D3BF-4AE2-85FB-D463C448C9D3
-keywords: tâche en arrière-plan, étendue d’exécution, les ressources, les limites, tâche en arrière-plan
+keywords: tâche en arrière-plan, exécution étendue, ressources, limites, tâche en arrière-plan
 ms.date: 10/03/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: faac1d8d47ddcff4e5ec32d35f2e46bab7a3f4aa
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: dee95e02e43f3a541bd332f5150765ca76bb0955
+ms.sourcegitcommit: 234dce5fb67e435ae14eb0052d94ab01611ac5e4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57630244"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72822445"
 ---
 # <a name="run-in-the-background-indefinitely"></a>Exécuter indéfiniment en arrière-plan
 
@@ -19,7 +19,7 @@ Pour fournir la meilleure expérience aux utilisateurs, Windows impose des limit
 
 Toutefois, les développeurs qui écrivent des applications UWP pour une utilisation personnelle (autrement dit, des applications chargées indépendamment qui ne seront pas publiées dans le Microsoft Store) ou les développeurs qui écrivent des applications UWP d’entreprise peuvent souhaiter utiliser toutes les ressources disponibles sur l’appareil sans limitation d'exécution étendue ou en arrière-plan. Les applications UWP métier et personnelles peuvent utiliser des API dans Windows Creators Update (version 1703) pour désactiver la fonctionnalité de limitation. N’oubliez pas que vous ne pouvez pas placer une application dans le Microsoft Store si elle utilise ces API.
 
-## <a name="run-while-minimized"></a>Exécution en mode réduit
+## <a name="run-while-minimized"></a>Exécuter en mode réduit
 
 Les applications UWP basculent à l’état « suspendue » lorsqu’elles ne s’exécutent pas au premier plan. Sur le Bureau, cela se produit lorsqu’un utilisateur réduit l’application. Les applications utilisent une session d’exécution étendue pour continuer à s’exécuter en mode réduit. Les API d’exécution étendue qui sont acceptées par le Microsoft Store sont détaillées dans [Reporter la suspension d’une application avec l’exécution étendue](https://docs.microsoft.com/windows/uwp/launch-resume/run-minimized-with-extended-execution).
 
@@ -31,30 +31,30 @@ _Package.appxmanifest_
 ```xml
 <Package ...>
 ...
-  <Capabilities>  
-    <rescap:Capability Name="extendedExecutionUnconstrained"/>  
-  </Capabilities>  
+  <Capabilities>
+    <rescap:Capability Name="extendedExecutionUnconstrained"/>
+  </Capabilities>
 </Package>
 ```
 
 Lorsque vous utilisez la fonctionnalité `extendedExecutionUnconstrained`, [ExtendedExecutionForegroundSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession) et [ExtendedExecutionForegroundReason](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundreason) sont utilisés plutôt que [ExtendedExecutionSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionsession) et [ExtendedExecutionReason](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionreason). Le même modèle pour créer la session, définir les membres et demander l’extension de façon asynchrone s’applique toujours : 
 
 ```cs
-var newSession = new ExtendedExecutionForegroundSession();  
-newSession.Reason = ExtendedExecutionForegroundReason.Unconstrained;  
-newSession.Description = "Long Running Processing";  
-newSession.Revoked += SessionRevoked;  
-ExtendedExecutionResult result = await newSession.RequestExtensionAsync();  
-switch (result)  
-{  
-    case ExtendedExecutionResult.Allowed:  
-        DoLongRunningWork();  
-        break;  
+var newSession = new ExtendedExecutionForegroundSession();
+newSession.Reason = ExtendedExecutionForegroundReason.Unconstrained;
+newSession.Description = "Long Running Processing";
+newSession.Revoked += SessionRevoked;
+ExtendedExecutionResult result = await newSession.RequestExtensionAsync();
+switch (result)
+{
+    case ExtendedExecutionResult.Allowed:
+        DoLongRunningWork();
+        break;
 
-    default:  
-    case ExtendedExecutionResult.Denied:  
-        DoShortRunningWork();  
-        break;  
+    default:
+    case ExtendedExecutionResult.Denied:
+        DoShortRunningWork();
+        break;
 }
 ```
 
@@ -69,18 +69,18 @@ Dans la plateforme Windows universelle, les tâches en arrière-plan sont des pr
 _Package.appxmanifest_
 ```xml
 <Package ...>
-   <Capabilities>  
-       <rescap:Capability Name="extendedBackgroundTaskTime"/>  
-   </Capabilities>  
+  <Capabilities>
+    <rescap:Capability Name="extendedBackgroundTaskTime"/>
+  </Capabilities>
 </Package>
 ```
 
-Cette fonctionnalité supprime les limites de durée d’exécution et la surveillance des tâches inactives. Lorsqu’une tâche en arrière-plan a démarré, que ce soit par un déclencheur ou un appel au service d’application, une fois qu’elle effectue un report sur le [BackgroundTaskInstance](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance) fourni par la méthode **Exécuter**, elle peut s’exécuter indéfiniment. Si l’application est définie sur **Géré par Windows**, alors un quota d’énergie peut encore lui être appliqué et ses tâches en arrière-plan ne sont pas activées lorsque l’économiseur de batterie est actif. Cela peut être modifié avec les paramètres du système d’exploitation. Des informations supplémentaires sont disponibles dans [Optimiser l’activité en arrière-plan](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity).
+Cette fonctionnalité supprime les limites de durée d’exécution et la surveillance des tâches inactives. Lorsqu’une tâche en arrière-plan a démarré, que ce soit par un déclencheur ou un appel au service d’application, une fois qu’elle effectue un report sur le [BackgroundTaskInstance](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance) fourni par la méthode **Exécuter**, elle peut s’exécuter indéfiniment. Si l’application est définie sur **Géré par Windows**, alors un quota d’énergie peut encore lui être appliqué et ses tâches en arrière-plan ne sont pas activées lorsque l’économiseur de batterie est actif. Cela peut être modifié avec les paramètres de système d’exploitation. Des informations supplémentaires sont disponibles dans [Optimiser l’activité en arrière-plan](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity).
 
 La plateforme Windows universelle surveille l’exécution des tâches en arrière-plan afin de garantir une bonne autonomie de la batterie et une expérience fluide avec les applications de premier plan. Toutefois, les applications personnelles et les applications métier d’entreprise peuvent utiliser l’exécution étendue et la fonctionnalité **extendedBackgroundTaskTime** pour créer des applications qui seront exécutées tant que nécessaire, quelle que soit la disponibilité des ressources de l’appareil.
 
 N’oubliez pas que les fonctionnalités **extendedExecutionUnconstrained** et **extendedBackgroundTaskTime** peuvent remplacer la stratégie par défaut pour les applications UWP et risquent de décharger rapidement la batterie Avant d’utiliser ces fonctionnalités, confirmez tout d’abord que les stratégies de durée par défaut pour l'exécution étendue et les tâches en arrière-plan ne correspondent pas à vos besoins, et exécutez des tests en conditions de batterie restreinte afin de comprendre l’impact de votre application sur un appareil.
 
-## <a name="see-also"></a>Voir également
+## <a name="see-also"></a>Articles associés
 
 [Supprimer les restrictions de ressources de tâche en arrière-plan](https://docs.microsoft.com/windows/application-management/enterprise-background-activity-controls)
