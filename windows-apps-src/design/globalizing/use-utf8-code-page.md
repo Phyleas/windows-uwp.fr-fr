@@ -1,37 +1,37 @@
 ---
-Description: Utiliser des caractères UTF-8 encodage pour la compatibilité optimale entre les applications web et autres * nix-plates-formes (Unix, Linux et variantes), de minimiser les bogues de localisation et de réduire le test de charge.
-title: Utilisez la page de codes Windows UTF-8
+Description: Utilisez l’encodage de caractères UTF-8 pour une compatibilité optimale entre les applications Web et d’autres plateformes basées sur * Nix (UNIX, Linux et variantes), réduisez les bogues de localisation et réduisez la charge de test.
+title: Utiliser la page de codes Windows UTF-8
 template: detail.hbs
 ms.date: 06/12/2019
 ms.topic: article
 keywords: windows 10, uwp, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
-ms.openlocfilehash: a9386b31d16796c68d41a27ab48a5b2c9a9a342b
-ms.sourcegitcommit: 734aa941dc675157c07bdeba5059cb76a5626b39
+ms.openlocfilehash: be3aade0289911f878d960fb62bde49b8ef840a8
+ms.sourcegitcommit: 3a06cf3f8bd00e5e6eac3b38ee7e3c7cf4bc5197
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68141805"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72888744"
 ---
 # <a name="use-the-utf-8-code-page"></a>Utiliser la page de codes UTF-8
 
-Utilisez [UTF-8](http://www.utf-8.com/) codage pour la compatibilité optimale entre les applications web et d’autres caractères * nix-plates-formes (Unix, Linux et variantes), de minimiser les bogues de localisation et de réduire le test de charge.
+Utilisez l’encodage de caractères [UTF-8](http://www.utf-8.com/) pour une compatibilité optimale entre les applications Web et d’autres plateformes basées sur * Nix (UNIX, Linux et variantes), réduisez les bogues de localisation et réduisez la charge de test.
 
-UTF-8 est la page de codes universelle pour l’internationalisation et prend en charge tous les points de code Unicode à l’aide de l’encodage de largeur variable 1 à 4 octets. Elle est utilisée de manière omniprésente sur le web et est la valeur par défaut pour * nix plates-formes.
+UTF-8 est la page de codes universelle pour l’internationalisation et prend en charge tous les points de code Unicode à l’aide de l’encodage de largeur variable de 1-6 octets. Il est utilisé de façon omniprésente sur le Web et est la valeur par défaut pour les plateformes * nix.
 
-## <a name="-a-vs--w-apis"></a>-A et API -W
+## <a name="-a-vs--w-apis"></a>API-A et-W
   
-API Win32 prennent souvent en charge les variantes - un et -W.
+Les API Win32 prennent souvent en charge les variantes-A et-W.
 
--A variantes reconnaissent la page de codes ANSI configurée sur le système et la prise en charge `char*`, tandis que les variantes -W fonctionnent en UTF-16 et la prise en charge `WCHAR`.
+-Les variantes reconnaissent la page de codes ANSI configurée sur le système et prennent en charge les `char*`, tandis que les variantes-W fonctionnent en UTF-16 et prennent en charge les `WCHAR`.
 
-Jusqu'à récemment, Windows a mis en évidence les variantes -W « Unicode » sur - une API. Toutefois, les versions récentes ont utilisé la page de codes ANSI et - une API comme un moyen d’introduire UTF-8 prend en charge pour les applications. Si la page de codes ANSI est configurée pour UTF-8, - une API fonctionnent en UTF-8. Ce modèle présente l’avantage de prendre en charge le code existant intègrent - une API sans modification du code.
+Jusqu’à récemment, Windows a mis en évidence « Unicode »-W variantes par rapport à des API. Toutefois, les versions récentes ont utilisé la page de codes ANSI et les API-A comme moyen d’introduire la prise en charge d’UTF-8 pour les applications. Si la page de codes ANSI est configurée pour UTF-8,-les API fonctionnent en UTF-8. Ce modèle présente l’avantage de prendre en charge le code existant généré à l’aide d’API-A sans modification du code.
 
-## <a name="set-a-process-code-page-to-utf-8"></a>Définir une page de codes de processus au format UTF-8
+## <a name="set-a-process-code-page-to-utf-8"></a>Définir une page de code de processus en UTF-8
 
-Depuis la Version 1903 (peut 2019 mettre à jour) de Windows, vous pouvez utiliser la propriété ActiveCodePage dans le fichier appxmanifest pour les applications packagées ou le manifeste de fusion pour les applications décompressées, pour forcer un processus à utiliser UTF-8 en tant que la page de codes de processus.
+À partir de Windows version 1903 (mai 2019 Update), vous pouvez utiliser la propriété ActiveCodePage dans le appxmanifest pour les applications empaquetées, ou le manifeste fusion pour les applications non empaquetées, afin de forcer un processus à utiliser UTF-8 comme page de code de processus.
 
-Vous pouvez déclarer cette propriété et cible/exécuter sur Windows antérieures les builds, mais vous devez gérer la détection des pages code hérité et conversion comme d’habitude. Avec une version cible minimale de Windows Version 1903, la page de codes du processus sera toujours UTF-8 afin de la conversion et la détection de page de code hérité peuvent être évités.
+Vous pouvez déclarer cette propriété et la cible/exécuter sur des versions précédentes de Windows, mais vous devez gérer la détection et la conversion de pages de codes héritées comme d’habitude. Avec une version cible minimale de Windows version 1903, la page de codes de processus sera toujours UTF-8, de sorte que la détection et la conversion des pages de codes héritées peuvent être évitées.
 
 ## <a name="examples"></a>Exemples
 
@@ -56,7 +56,7 @@ Vous pouvez déclarer cette propriété et cible/exécuter sur Windows antérieu
 </Package>
 ```
 
-**Manifeste de fusion pour une application Win32 décompressée :**
+**Manifeste de fusion pour une application Win32 non empaquetée :**
 
 ``` xaml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -71,18 +71,18 @@ Vous pouvez déclarer cette propriété et cible/exécuter sur Windows antérieu
 ```
 
 > [!NOTE]
-> Ajouter un manifeste pour un exécutable existant à partir de la ligne de commande avec `mt.exe -manifest <MANIFEST> -outputresource:<EXE>;#1`
+> Ajoutez un manifeste à un fichier exécutable existant à partir de la ligne de commande avec `mt.exe -manifest <MANIFEST> -outputresource:<EXE>;#1`
 
-## <a name="code-page-conversion"></a>Conversion des pages de code
+## <a name="code-page-conversion"></a>Conversion de page de codes
 
-Comme Windows fonctionne en mode natif en UTF-16 (`WCHAR`), vous devrez peut-être convertir des données UTF-8 en UTF-16 (ou inversement) pour interagir avec les API Windows.
+Comme Windows fonctionne en mode natif au format UTF-16 (`WCHAR`), vous devrez peut-être convertir les données UTF-8 en UTF-16 (ou vice versa) pour interagir avec les API Windows.
 
-[MultiByteToWideChar](https://docs.microsoft.com/windows/desktop/api/stringapiset/nf-stringapiset-multibytetowidechar) et [WideCharToMultiByte](https://docs.microsoft.com/windows/desktop/api/stringapiset/nf-stringapiset-widechartomultibyte) permettent de vous effectuer une conversion entre UTF-8 et UTF-16 (`WCHAR`) (et d’autres pages de codes). Cela est particulièrement utile lorsqu’un héritage API Win32 peut comprendre uniquement `WCHAR`. Ces fonctions permettent de convertir l’entrée de UTF-8 au `WCHAR` pour passer à une API -W, puis convertir tous les résultats si nécessaire.
-Lors de l’utilisation de ces fonctions avec `CodePage` définie sur `CP_UTF8`, utilisez `dwFlags` du `0` ou `MB_ERR_INVALID_CHARS`, sinon une `ERROR_INVALID_FLAGS` se produit.
+[MultiByteToWideChar](https://docs.microsoft.com/windows/desktop/api/stringapiset/nf-stringapiset-multibytetowidechar) et [WideCharToMultiByte](https://docs.microsoft.com/windows/desktop/api/stringapiset/nf-stringapiset-widechartomultibyte) vous permettent d’effectuer une conversion entre UTF-8 et utf-16 (`WCHAR`) (et d’autres pages de codes). Cela s’avère particulièrement utile quand une API Win32 héritée peut uniquement comprendre `WCHAR`. Ces fonctions vous permettent de convertir une entrée UTF-8 en `WCHAR` à transmettre dans une API-W, puis de convertir tous les résultats si nécessaire.
+Lors de l’utilisation de ces fonctions avec `CodePage` défini sur `CP_UTF8`, utilisez `dwFlags` de `0` ou de `MB_ERR_INVALID_CHARS`, sinon une `ERROR_INVALID_FLAGS` se produit.
 
-Remarque : `CP_ACP` équivaut à `CP_UTF8` uniquement s’exécutant sur Windows Version 1903 (peut 2019 mettre à jour) ou une version ultérieure et la propriété ActiveCodePage décrit ci-dessus est définie sur UTF-8. Sinon, il respecte la page de codes système hérité. Nous vous recommandons d’utiliser `CP_UTF8` explicitement.
+Remarque : `CP_ACP` équivaut à `CP_UTF8` uniquement si l’exécution sur Windows version 1903 (mise à jour 2019 mai) ou supérieure et que la propriété ActiveCodePage décrite ci-dessus est définie sur UTF-8. Dans le cas contraire, elle honore la page de codes système héritée. Nous vous recommandons d’utiliser `CP_UTF8` explicitement.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
 - [Pages de codes](https://docs.microsoft.com/windows/desktop/Intl/code-pages)
-- [Code Page Identifiers](https://docs.microsoft.com/windows/desktop/Intl/code-page-identifiers)
+- [Identificateurs de page de codes](https://docs.microsoft.com/windows/desktop/Intl/code-page-identifiers)
