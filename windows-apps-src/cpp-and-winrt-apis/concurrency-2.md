@@ -5,12 +5,12 @@ ms.date: 07/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, concurrence, asynchrone, async
 ms.localizationpriority: medium
-ms.openlocfilehash: 9484b61aae91ae426efb1963cd37ebf276ef7c6c
-ms.sourcegitcommit: f8634aad3a3675c2f0eac62f56df3def4285a7b0
+ms.openlocfilehash: 4a671a319be49e07d3a8fcdacb569c4ae76e299b
+ms.sourcegitcommit: 6fbf645466278c1f014c71f476408fd26c620e01
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71720432"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72816671"
 ---
 # <a name="more-advanced-concurrency-and-asynchrony-with-cwinrt"></a>Concurrence et opérations asynchrones plus avancées avec C++/WinRT
 
@@ -359,7 +359,7 @@ L'expression `co_await` retourne `true`, ce qui indique que la reprise aura lieu
 
 La puissance dont vous disposez augmente considérablement lorsque vous combinez C++/WinRT avec des coroutines, notamment lorsque vous développez des applications de bureau classiques de style Petzold.
 
-## <a name="canceling-an-asychronous-operation-and-cancellation-callbacks"></a>Annulation d’une opération asynchrone et rappels d’annulation
+## <a name="canceling-an-asynchronous-operation-and-cancellation-callbacks"></a>Annulation d’une opération asynchrone et rappels d’annulation
 
 Les fonctionnalités du Windows Runtime pour la programmation asynchrone vous permettent d’annuler une opération ou une action asynchrone en cours. Voici un exemple qui appelle [**StorageFolder::GetFilesAsync**](/uwp/api/windows.storage.storagefolder.getfilesasync) pour récupérer une collection de fichiers potentiellement volumineuse. Il stocke l’objet d’opération asynchrone résultant dans un membre de données. L’utilisateur a la possibilité d’annuler l’opération.
 

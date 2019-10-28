@@ -1,17 +1,17 @@
 ---
-title: Nouveautés de Windows 10 pour les développeurs - Outils et fonctionnalités
+title: Nouveautés de Windows 10, build 17763
 description: Windows 10, build 17763 et les nouveaux outils de développement offrent les outils, fonctionnalités et expériences optimisés par la plateforme Windows universelle.
 keywords: nouveautés, nouveauté, mise à jour, mises à jour, fonctionnalités, nouveau, Windows 10, plus récent, développeurs, 17763
 ms.date: 10/03/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: faf3cdc1a3fab3bd0332b995c25b081d296a55bb
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: c7387a7a66d2492bf6f228c662a48b19a19afe3d
+ms.sourcegitcommit: a7740ebb14c98cd5afadd52db5cf714522821b49
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682779"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72893019"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17763"></a>Nouveautés de Windows 10 pour les développeurs, build 17763
 

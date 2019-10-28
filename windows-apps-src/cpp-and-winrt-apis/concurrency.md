@@ -5,12 +5,12 @@ ms.date: 07/08/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, concurrence, asynchrone, async
 ms.localizationpriority: medium
-ms.openlocfilehash: 1dd6ac2760189578932fc22db89c7091f2e527ab
-ms.sourcegitcommit: 8179902299df0f124dd770a09a5a332397970043
+ms.openlocfilehash: 06fadae3e33da3289726f45e7222617d51843015
+ms.sourcegitcommit: 6fbf645466278c1f014c71f476408fd26c620e01
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68428637"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72816681"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrt"></a>Opérations concurrentes et asynchrones avec C++/WinRT
 
@@ -27,7 +27,7 @@ Les API Windows Runtime dont l’exécution est susceptible de prendre plus de 5
 - [**IAsyncOperation&lt;TResult&gt;** ](/uwp/api/windows.foundation.iasyncoperation_tresult_) et
 - [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;** ](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_).
 
-Chacun de ces types d’opérations asynchrones est projeté en un type correspondant dans l’espace de noms C++/WinRT **winrt::Windows::Foundation**. C++/WinRT contient également un struct d’adaptateur await interne. Vous ne l’utilisez pas directement, mais grâce à cette structure, vous pouvez écrire une instruction `co_await` pour attendre de manière coopérative le résultat de n’importe quelle fonction qui retourne l’un de ces types d’opérations asynchrones. Et vous pouvez créer vos propres coroutines qui retournent ces types.
+Chacun de ces types d’opérations asynchrones est projeté en un type correspondant dans l’espace de noms C++/WinRT **winrt::Windows::Foundation**. C++/WinRT contient également un struct d’adaptateur await interne. Vous ne l’utilisez pas directement, mais avec cette structure, vous pouvez écrire une instruction `co_await` pour attendre de manière coopérative le résultat de n’importe quelle fonction qui retourne l’un de ces types d’opérations asynchrones. Et vous pouvez créer vos propres coroutines qui retournent ces types.
 
 Un exemple de fonction Windows asynchrone est [**SyndicationClient::RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync), qui retourne un objet d’opération asynchrone de type [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;** ](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_). Examinons des façons, tout d’abord bloquantes, puis non bloquantes, d’utiliser C++/WinRT pour appeler une API similaire.
 
@@ -112,7 +112,7 @@ Vous pouvez agréger une coroutine dans d’autres coroutines. Ou vous pouvez ap
 
 Il est également possible de gérer les événements terminés et/ou en cours des actions et des opérations asynchrones à l’aide de délégués. Pour plus d’informations et pour obtenir des exemples de code, consultez [Types délégués pour les actions et opérations asynchrones](handle-events.md#delegate-types-for-asynchronous-actions-and-operations).
 
-## <a name="asychronously-return-a-windows-runtime-type"></a>Retourner de façon asynchrone un type Windows Runtime
+## <a name="asynchronously-return-a-windows-runtime-type"></a>Retourner de façon asynchrone un type Windows Runtime
 
 Dans l’exemple suivant, nous allons encapsuler un appel à **RetrieveFeedAsync**, pour un URI spécifique, afin d’obtenir une fonction **RetrieveBlogFeedAsync** qui retourne de façon asynchrone un [**SyndicationFeed**](/uwp/api/windows.web.syndication.syndicationfeed).
 
@@ -153,7 +153,7 @@ int main()
 
 Dans l’exemple ci-dessus, **RetrieveBlogFeedAsync** retourne un **IAsyncOperationWithProgress**, qui a une progression et une valeur de retour. Nous pouvons effectuer d’autres tâches pendant que **RetrieveBlogFeedAsync** effectue le traitement et récupère le flux. Ensuite, nous allons appeler **get** sur cet objet d’opération asynchrone à bloquer, attendre qu’il se termine et obtenir les résultats de l’opération.
 
-Si vous retournez de façon asynchrone un type Windows Runtime, vous devez retourner un [**IAsyncOperation&lt;TResult&gt;** ](/uwp/api/windows.foundation.iasyncoperation_tresult_) ou un [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;** ](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_). Toute classe runtime interne ou tierce est appropriée, ou tout type qui peut être transmis vers ou à partir d’une fonction Windows Runtime (par exemple `int` ou **winrt::hstring**). Le compilateur vous aidera en affichant une erreur « *must be WinRT type* » (doit être de type WinRT) si vous essayez d’utiliser l’un de ces types d’opérations asynchrones avec un type non Windows Runtime.
+Si vous retournez de façon asynchrone un type Windows Runtime, vous devez retourner un [**IAsyncOperation&lt;TResult&gt;** ](/uwp/api/windows.foundation.iasyncoperation_tresult_) ou un [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;** ](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_). Toute classe runtime interne ou tierce est appropriée, ou tout type qui peut être transmis vers ou à partir d’une fonction Windows Runtime (par exemple `int` ou **winrt::hstring**). Le compilateur vous aidera en affichant une erreur « *must be WinRT type* » (doit être de type WinRT) si vous essayez d’utiliser l’un de ces types d’opérations asynchrones avec un type non-Windows Runtime.
 
 Si une coroutine ne possède pas au moins une instruction `co_await`, pour être appropriée en tant que coroutine elle doit avoir au moins une instruction `co_return` ou `co_yield`. Il y aura des cas où votre coroutine peut retourner une valeur sans présenter de comportement asynchrone et donc sans blocage ni changement de contexte. Voici un exemple qui le fait (au deuxième appel et aux suivants) en mettant une valeur en cache.
 
@@ -170,7 +170,7 @@ IAsyncOperation<winrt::hstring> ReadAsync()
 }
 ``` 
 
-## <a name="asychronously-return-a-non-windows-runtime-type"></a>Retourner de façon asynchrone un type non Windows Runtime
+## <a name="asynchronously-return-a-non-windows-runtime-type"></a>Retourner de façon asynchrone un type non-Windows Runtime
 
 Si vous retournez de façon asynchrone un type qui n’est *pas* un type Windows Runtime, vous devez retourner une bibliothèque de modèles parallèles (PPL, Parallel Patterns Library) [**concurrency::task**](/cpp/parallel/concrt/reference/task-class). Nous vous recommandons **concurrency::task**, car elle vous donne de meilleures performances (et une meilleure compatibilité à l’avenir) que **std::future**.
 

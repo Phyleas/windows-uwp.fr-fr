@@ -10,12 +10,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 348d563322baf03aabc0e30fd9b39ee11673f271
-ms.sourcegitcommit: 61194375c0889b73ee2b978c444c4b90a576b3e4
+ms.openlocfilehash: bb6cc29260f5891cda74879618b59bb3762b7f18
+ms.sourcegitcommit: f561efbda5c1d47b85601d91d70d86c5332bbf8c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71039117"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72690420"
 ---
 # <a name="rating-control"></a>Contrôle d’évaluation
 
@@ -86,7 +86,7 @@ Pour ce faire, vous procéderiez comme suit :
 
 ## <a name="additional-functionality"></a>Fonctionnalités supplémentaires
 
-Le contrôle d’évaluation offre de nombreuses fonctionnalités supplémentaires. Vous trouverez des détails concernant l’utilisation de ces fonctionnalités dans notre documentation de référence sur MSDN.
+Le contrôle d’évaluation offre de nombreuses fonctionnalités supplémentaires. Vous trouverez des détails concernant l’utilisation de ces fonctionnalités dans notre documentation de référence.
 Voici une liste non exhaustive des fonctionnalités supplémentaires :
 -   Excellentes performances pour les listes longues
 -   Dimensionnement compact pour scénarios d’interface utilisateur réduite

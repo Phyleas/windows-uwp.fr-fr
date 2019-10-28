@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, actualités, nouveautés, nouveau
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: fb869f4705210ab1fec28186b377ad68068b5877
-ms.sourcegitcommit: 50b0b6d6571eb80aaab3cc36ab4e8d84ac4b7416
+ms.openlocfilehash: 525110a09c56f48f9f9ce3d2521c98e2297a8372
+ms.sourcegitcommit: 6fbf645466278c1f014c71f476408fd26c620e01
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71329583"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72816708"
 ---
 # <a name="whats-new-in-cwinrt"></a>Nouveautés de C++/WinRT
 
@@ -283,7 +283,7 @@ Le tableau ci-dessous contient les nouveautés et les modifications concernant C
 | Le format du système de projet Visual Studio a changé. | Consultez [Guide pratique pour recibler votre projet C++/WinRT vers une version ultérieure du SDK Windows](#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk), ci-dessous. |
 | Il existe de nouvelles fonctions et classes de base pour vous aider à passer un objet de collection à une fonction Windows Runtime ou pour implémenter vos propres propriétés et types de collection. | Consultez [Collections avec C++/WinRT](collections.md). |
 | Vous pouvez utiliser l’extension de balisage [{Binding}](/windows/uwp/xaml-platform/binding-markup-extension) avec vos classes d’exécution C++/WinRT. | Pour plus d’informations et des exemples de code, consultez [Vue d’ensemble de la liaison de données](/windows/uwp/data-binding/data-binding-quickstart). |
-| La prise en charge de l’annulation d’une coroutine vous permet d’inscrire un rappel d’annulation. | Pour plus d’informations et des exemples de code, consultez [Annulation d’une opération asynchrone et rappels d’annulation](concurrency-2.md#canceling-an-asychronous-operation-and-cancellation-callbacks). |
+| La prise en charge de l’annulation d’une coroutine vous permet d’inscrire un rappel d’annulation. | Pour plus d’informations et des exemples de code, consultez [Annulation d’une opération asynchrone et rappels d’annulation](concurrency-2.md#canceling-an-asynchronous-operation-and-cancellation-callbacks). |
 | Quand vous créez un délégué qui pointe vers une fonction membre, vous pouvez établir une référence forte ou faible à l’objet actuel (au lieu d’un pointeur *this* brut) au point où le gestionnaire est inscrit. | Pour plus d’informations et des exemples de code, consultez la sous-section **Si vous utilisez une fonction membre en tant que délégué** dans la section [Accès sécurisé au pointeur *this* avec un délégué de gestion des événements](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate). |
 | Des bogues découverts par la conformité améliorée de Visual Studio à la norme C++ sont corrigés. La chaîne d’outils LLVM et Clang est également mieux exploitée pour valider la conformité aux normes C++/WinRT. | Vous ne rencontrerez plus le problème décrit dans [Pourquoi la compilation de mon nouveau projet échoue-t-elle ? J’utilise Visual Studio 2017 (version 15.8.0 ou ultérieure) et le SDK version 17134](faq.md#why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134) |
 

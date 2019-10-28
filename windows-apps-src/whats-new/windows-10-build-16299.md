@@ -1,16 +1,16 @@
 ---
-title: Nouveautés de Windows 10 pour les développeurs - Outils et fonctionnalités
+title: Nouveautés de Windows 10, build 16299
 description: Windows 10, build 16299 et les nouveaux outils de développement offrent les outils, fonctionnalités et expériences optimisés par la plateforme Windows universelle.
 keywords: nouveautés, nouveauté, mise à jour, mises à jour, fonctionnalités, nouveau, Windows 10, 1709, octobre, plus récente, développeurs, 16299, Fall Creators
 ms.date: 11/02/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: bc0172246c14459113ae1952f5db880ecf44e9d9
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: 56061fa30e9581be278c710c29b19f0f90ea99cb
+ms.sourcegitcommit: a7740ebb14c98cd5afadd52db5cf714522821b49
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820988"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72893018"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-16299"></a>Nouveautés de Windows 10 pour les développeurs, build 16299
 

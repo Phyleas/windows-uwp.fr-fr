@@ -5,12 +5,12 @@ keywords: XAML, UWP, Bien démarrer
 ms.date: 08/31/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 804f1994e187d3b09ed4dcb2186105cf615f5de0
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: f2c63c90170a633ae718db618c502efa41fb3f7d
+ms.sourcegitcommit: 807dadf5eceb576aba3ad898a6e9bf12129e94a4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820502"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72680764"
 ---
 # <a name="tutorial-create-custom-styles"></a>Tutoriel : Créer des styles personnalisés
 
@@ -36,10 +36,7 @@ La plateforme Windows universelle (UWP) fournit un certain nombre de méthodes p
 
 Pour la première partie de ce tutoriel, nous allons égayer quelques uns de nos contrôles d’édition de photos. 
 
-<figure>
-    <img src="../basics/images/xaml-basics/slider-start.png" />
-    <figure>*Curseur modeste avec le style par défaut.*</figure>
-</figure>
+![Curseur modeste avec le style par défaut.](../basics/images/xaml-basics/slider-start.png)
 
 Ces curseurs sont très bien, ils font tout ce qu'un curseur doit faire, mais ils ne sont pas très fantaisistes. Nous allons arranger ça. 
 
@@ -748,8 +745,7 @@ Nous avons bien travaillé, mais il existe un meilleur moyen d’obtenir le mêm
             Grid.Row="2" Background="Transparent" Foreground="Transparent"
             Value="{x:Bind item.Exposure, Mode=TwoWay}"
             Minimum="-2"
-            Maximum="2"
-            Template="{StaticResource FancySliderControlTemplate}"/>    
+            Maximum="2" />    
     ```
     
     **Après**
