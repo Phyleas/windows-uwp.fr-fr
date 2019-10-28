@@ -102,7 +102,7 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
   <tr>
     <td>Territoires britanniques de l’océan Indien</td>
     <td>Îles Vierges britanniques</td>
-    <td>Brunei</td>
+    <td>Brunéi Darussalam</td>
     <td>Bulgarie</td>
   </tr>
   <tr>
@@ -402,7 +402,7 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
   <tr>
     <td>Ouzbékistan</td>
     <td>Vanuatu</td>
-    <td>Vatican (État de la Cité du)</td>
+    <td>État de la Cité du Vatican</td>
     <td>Venezuela</td>
   </tr>
   <tr>
@@ -523,7 +523,7 @@ Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants 
     <td>Bouvet (Île)</td>
     <td>Territoires britanniques de l’océan Indien</td>
     <td>Îles Vierges britanniques</td>
-    <td>Brunei</td>
+    <td>Brunéi Darussalam</td>
   </tr>
   <tr>
     <td>Burkina-Faso</td>
@@ -719,7 +719,7 @@ Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants 
   </tr>
   <tr>
     <td>Ouzbékistan</td>
-    <td>Vatican (État de la Cité du)</td>
+    <td>État de la Cité du Vatican</td>
     <td>Venezuela</td>
     <td>Vietnam</td>
   </tr>

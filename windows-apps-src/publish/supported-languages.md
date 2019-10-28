@@ -8,7 +8,7 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 716a6e86e03feb6edcbc5cde5aa37d0282df6aca
 ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 04/08/2019
 ms.locfileid: "59244285"
@@ -76,7 +76,7 @@ Les codes de langue qui ne sont pas incluses ici ne sont pas pris en charge par 
 | Kannada               | kn, kn-in                                                                                                                                                                                             |
 | Kazakh                | kk, kk-kz                                                                                                                                                                                             |
 | Khmer                 | km, km-kh                                                                                                                                                                                             |
-| K’iche’               | quc-latn, qut-gt, qut-latn                                                                                                                                                                            |
+| Quiché               | quc-latn, qut-gt, qut-latn                                                                                                                                                                            |
 | Kinyarwanda           | rw, rw-rw                                                                                                                                                                                             |
 | Kiswahili             | sw, sw-ke                                                                                                                                                                                             |
 | Konkani               | kok, kok-in                                                                                                                                                                                           |
@@ -92,7 +92,7 @@ Les codes de langue qui ne sont pas incluses ici ne sont pas pris en charge par 
 | Malayalam             | ml, ml-in                                                                                                                                                                                             |
 | Maltais               | mt, mt-mt                                                                                                                                                                                             |
 | Maori                 | mi, mi-latn, mi-nz                                                                                                                                                                                    |
-| Marathe               | mr, mr-in                                                                                                                                                                                             |
+| Marathi               | mr, mr-in                                                                                                                                                                                             |
 | Mongole (cyrillique)  | mn-cyrl, mn-mong, mn-mn, mn-phag                                                                                                                                                                      |
 | Népalais                | ne, ne-np                                                                                                                                                                                             |
 | Norvégien             | nb, nb-no, nn, nn-no, no, no-no,                                                                                                                                                                      |
@@ -108,10 +108,10 @@ Les codes de langue qui ne sont pas incluses ici ne sont pas pris en charge par 
 | Gaélique écossais       | gd-gb, gd-latn                                                                                                                                                                                        |
 | Serbe (latin)       | sr-Latn, sr-latn-cs, sr, sr-latn-ba, sr-latn-me, sr-latn-rs                                                                                                                                           |
 | Serbe (cyrillique)    | sr-cyrl, sr-cyrl-ba, sr-cyrl-cs, sr-cyrl-me, sr-cyrl-rs                                                                                                                                               |
-| Sesotho sa leboa      | nso, nso-za                                                                                                                                                                                           |
+| Sotho du Nord      | nso, nso-za                                                                                                                                                                                           |
 | Setswana              | tn, tn-bw, tn-za                                                                                                                                                                                      |
 | Sindhi                | sd-arab, sd-arab-pk, sd-deva                                                                                                                                                                          |
-| Sinhala               | si, si-lk                                                                                                                                                                                             |
+| Cingalais               | si, si-lk                                                                                                                                                                                             |
 | Slovaque                | sk, sk-sk                                                                                                                                                                                             |
 | Slovène             | sl, sl-si                                                                                                                                                                                             |
 | Espagnol               | es, es-cl, es-co, es-es, es-mx, es-ar, es-bo, es-cr, es-do, es-ec, es-gt, es-hn, es-ni, es-pa, es-pe, es-pr, es-py, es-sv, es-us, es-uy, es-ve, es-019, es-419                                        |

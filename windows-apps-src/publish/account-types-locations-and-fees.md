@@ -73,7 +73,7 @@ Dans le tableau suivant, les **frais d’inscription** correspondent au coût ac
 | Bosnie-Herzégovine            | 19 USD              | 99 USD           |  
 | Botswana                          | 19 USD              | 99 USD           |  
 | Brésil                            | 46 BRL              | 160 BRL          |  
-| Brunei                            | 19 USD              | 99 USD           |  
+| Brunéi Darussalam                            | 19 USD              | 99 USD           |  
 | Bulgarie                          | 28 BGN              | 160 BGN          |  
 | Burkina-Faso                      | 19 USD              | 99 USD           |  
 | Burundi                           | 19 USD              | 99 USD           |  

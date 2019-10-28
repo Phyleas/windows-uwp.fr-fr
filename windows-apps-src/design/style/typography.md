@@ -203,7 +203,7 @@ Utilisez les API de [mappage de police LanguageFont](https://docs.microsoft.com/
 <tr class="even">
 <td align="left" style="font-family: Nirmala UI;">Nirmala UI</td>
 <td align="left">Normal, Semi-fin, Gras</td>
-<td align="left">Police d’interface utilisateur pour les scripts d’Asie du Sud (bangla, dévanâgarî, goudjrati, gurmukhi, kannada, malayalam, odia, ol tchiki, cinghalais, sora sompeng, tamoul et telugu)</td>
+<td align="left">Police d’interface utilisateur pour les scripts d’Asie du Sud (bangla, dévanâgarî, goudjrati, gurmukhi, kannada, malayalam, odia, ol tchiki, cingalais, sora sompeng, tamoul et telugu)</td>
 </tr>
 <tr class="odd">
 <td align="left" style="font-family: SimSun;">SimSun</td>

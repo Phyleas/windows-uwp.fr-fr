@@ -70,7 +70,7 @@ Dans le tableau suivant, la colonne « Balise de langue » répertorie la [bal
 | Kannada | kn-IN | Nirmala UI |
 | Kazakh | kk-KZ | Segoe UI |
 | Khmer | km-KH | Leelawadee UI |
-| K’iche’ | qut-GT | Segoe UI |
+| Quiché | qut-GT | Segoe UI |
 | Kinyarwanda | rw-RW | Segoe UI |
 | Kiswahili | sw-KE | Segoe UI |
 | Konkani | kok-IN | Nirmala UI |
@@ -84,7 +84,7 @@ Dans le tableau suivant, la colonne « Balise de langue » répertorie la [bal
 | Malayalam | ml-IN | Nirmala UI |
 | Maltais | mt-MT | Segoe UI |
 | Maori | mi-NZ | Segoe UI |
-| Marathe | mr-IN | Nirmala UI |
+| Marathi | mr-IN | Nirmala UI |
 | Mongole (cyrillique) | mn-MN | Segoe UI |
 | Népalais | ne-NP | Nirmala UI |
 | Norvégien (Bokmal) | Nb-NO | Segoe UI |
@@ -103,10 +103,10 @@ Dans le tableau suivant, la colonne « Balise de langue » répertorie la [bal
 | Serbe (cyrillique, Bosnie-Herzégovine) | sr-Cyrl-BA | Segoe UI |
 | Serbe (cyrillique, Serbie) | sr-Cyrl-CS | Segoe UI |
 | Serbe (latin) | sr-Latn-CS | Segoe UI |
-| Sesotho sa leboa | nso-ZA | Segoe UI |
+| Sotho du Nord | nso-ZA | Segoe UI |
 | Setswana | tn-ZA | Segoe UI |
 | Sindhi (arabe) | sd-Arab-PK | Segoe UI |
-| Sinhala | si-LK | Nirmala UI |
+| Cingalais | si-LK | Nirmala UI |
 | Slovaque | sk-SK | Segoe UI |
 | Slovène | sl-SI | Segoe UI |
 | Espagnol | es-ES | Segoe UI |
