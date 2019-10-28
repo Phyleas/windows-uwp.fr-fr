@@ -46,7 +46,7 @@ Les objets de liaison créés par **{x :bind}** et **{Binding}** sont en grande
 <object property="{x:Bind pathToFunction.functionName(functionParameter1, functionParameter2, ...), bindingProperties}" .../>
 ```
 
-| Conditions | Description |
+| Terme | Description |
 |------|-------------|
 | _propertyPath_ | Chaîne qui spécifie le chemin d’accès de la propriété pour la liaison. Pour plus d’informations, reportez-vous à la section [chemin de propriété](#property-path) ci-dessous. |
 | _bindingProperties_ |

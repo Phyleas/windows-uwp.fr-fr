@@ -68,7 +68,7 @@ Chacun des éléments du document XML suivant est expliqué dans le tableau qui 
 ### <a name="terms-and-notations"></a>Termes et notations
 Vous trouverez ci-dessous des explications sur les notations et les éléments utilisés dans l’extrait de code XML ci-dessus.
 
-| Conditions | Explication |
+| Terme | Explication |
 |---|---|
 | **Point-notation décimale (par exemple, 64.4.28.0/26)** | La notation à points décimaux est un moyen de décrire la plage d’adresses IP. Par exemple, 64.4.28.0/26 signifie que les 26 premiers bits de 64.4.28.0 sont constants, tandis que les 6 derniers bits sont variables.  Dans ce cas, la plage IPv4 est 64.4.28.0-64.4.28.63. |
 | **ClientDNS** | Il s’agit des filtres de nom de domaine complet (FQDN) pour les périphériques clients (PC Windows, ordinateurs de bureau) recevant des notifications de WNS. Elles doivent être autorisées par le biais du pare-feu pour permettre aux clients WNS d’utiliser la fonctionnalité WNS.  Il est recommandé d’autoriser la liste des noms de domaine complets au lieu des plages IP/VIP, puisque celles-ci ne seront jamais modifiées. |
