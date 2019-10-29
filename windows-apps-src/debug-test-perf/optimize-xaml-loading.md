@@ -4,14 +4,14 @@ title: Optimiser votre balisage XAML
 description: L’analyse du balisage XAML pour la construction d’objets en mémoire est chronophage pour une interface utilisateur complexe. Voici quelques astuces pour améliorer l’analyse du balisage XAML ainsi que l’efficacité du temps de chargement et de la mémoire de votre application.
 ms.date: 08/10/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f46967cd26f10510e2620229fee0eec13ca7f52a
-ms.sourcegitcommit: 7bbc24d770bf23a8d7e2b234503aad743eb354f3
+ms.openlocfilehash: beb6dde4036019e004d94e5f60e8f3583c78d775
+ms.sourcegitcommit: de34aabd90a92a083dfa17d4f8a98578597763f4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67852054"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72980024"
 ---
 # <a name="optimize-your-xaml-markup"></a>Optimiser votre balisage XAML
 
@@ -126,7 +126,7 @@ ListView et ses éléments enfants ne sont pas chargés en mémoire.
 
 Les panneaux de disposition ont une propriété [Background](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.panel.background), il n’est donc pas nécessaire de placer un [Rectangle](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) devant un panneau dans le but de le colorier.
 
-**Inefficient**
+**Inefficace**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -135,7 +135,7 @@ Les panneaux de disposition ont une propriété [Background](https://docs.micros
 </Grid>
 ```
 
-**Efficace**
+**Possible**
 
 ```xaml
 <Grid Background="Black"/>
@@ -159,7 +159,7 @@ Utilisez l'[attribut x:Key](../xaml-platform/x-key-attribute.md) pour référenc
 
 ### <a name="resourcedictionary-in-a-usercontrol"></a>ResourceDictionary dans un UserControl
 
-Un ResourceDictionary défini dans un [UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol) entraîne une pénalité. La plateforme crée une copie d’un tel ResourceDictionary pour chaque instance du UserControl. Si vous avez un composant UserControl qui est très utilisé, puis déplacer le ResourceDictionary hors le UserControl et mettez-la à niveau de la page.
+Un ResourceDictionary défini dans un [UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol) entraîne une pénalité. La plateforme crée une copie d’un tel ResourceDictionary pour chaque instance du UserControl. Si vous avez un UserControl qui est utilisé beaucoup, déplacez le ResourceDictionary hors du UserControl et placez-le au niveau de la page.
 
 ### <a name="resource-and-resourcedictionary-scope"></a>Étendue Ressource et ResourceDictionary
 
@@ -167,7 +167,7 @@ Si une page référence un contrôle utilisateur ou une ressource définis dans 
 
 Dans cet exemple, étant donné que le fichier _InitialPage.xaml_ utilise une ressource provenant du fichier _ExampleResourceDictionary.xaml_, la totalité du fichier _ExampleResourceDictionary.xaml_ doit être analysée au démarrage.
 
-**InitialPage.xaml.**
+**InitialPage. Xaml.**
 
 ```xaml
 <Page x:Class="ExampleNamespace.InitialPage" ...>
@@ -185,7 +185,7 @@ Dans cet exemple, étant donné que le fichier _InitialPage.xaml_ utilise une re
 </Page>
 ```
 
-**ExampleResourceDictionary.xaml.**
+**ExampleResourceDictionary. Xaml.**
 
 ```xaml
 <ResourceDictionary>
@@ -198,7 +198,7 @@ Dans cet exemple, étant donné que le fichier _InitialPage.xaml_ utilise une re
 
 Si vous utilisez une ressource sur plusieurs pages au sein de votre application, l’enregistrer dans _App.xaml_ constitue une bonne pratique qui permet d’éviter les doublons. Mais _App.xaml_ est analysé lors du démarrage de l’application afin que toutes les ressources qui ne sont utilisées que dans une seule page (à moins qu’il ne s’agisse de la page d’accueil) soient placées dans les ressources locales de la page. Cet exemple montre _App.xaml_ contenant des ressources qui ne sont utilisées que par une seule page (qui n’est pas la page d’accueil). Cela augmente inutilement le temps de démarrage de l’application.
 
-**App.xaml**
+**App. Xaml**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -212,7 +212,7 @@ Si vous utilisez une ressource sur plusieurs pages au sein de votre application,
 </Application>
 ```
 
-**InitialPage.xaml.**
+**InitialPage. Xaml.**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -223,7 +223,7 @@ Si vous utilisez une ressource sur plusieurs pages au sein de votre application,
 </Page>
 ```
 
-**SecondPage.xaml.**
+**SecondPage. Xaml.**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -234,13 +234,13 @@ Si vous utilisez une ressource sur plusieurs pages au sein de votre application,
 </Page>
 ```
 
-Afin de rendre cet exemple plus efficace, déplacez `SecondPageTextBrush` dans _SecondPage.xaml_ et `ThirdPageTextBrush` dans _ThirdPage.xaml_. `InitialPageTextBrush` peut rester dans _App.xaml_ , car les ressources d’application doivent être analysées au démarrage de l’application dans tous les cas.
+Afin de rendre cet exemple plus efficace, déplacez `SecondPageTextBrush` dans _SecondPage.xaml_ et `ThirdPageTextBrush` dans _ThirdPage.xaml_. `InitialPageTextBrush` peut rester dans _app. Xaml_ , car les ressources d’application doivent être analysées au démarrage de l’application dans tous les cas.
 
 ### <a name="consolidate-multiple-brushes-that-look-the-same-into-one-resource"></a>Consolider plusieurs pinceaux ayant la même apparence dans une même ressource
 
 La plateforme XAML essaie de mettre en cache les objets couramment utilisés afin qu’ils puissent l’être aussi souvent que possible. Toutefois, le code XAML ne peut pas facilement identifier si un pinceau déclaré dans un balisage est le même qu’un pinceau déclaré dans un balisage différent. L’exemple ci-dessous utilise [SolidColorBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush), mais c’est encore plus probable et important avec [GradientBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.GradientBrush). Recherchez également les pinceaux utilisant des couleurs prédéfinies, par exemple : `"Orange"` et `"#FFFFA500"` sont de la même couleur.
 
-**Inefficient.**
+**Inefficace.**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -250,7 +250,7 @@ La plateforme XAML essaie de mettre en cache les objets couramment utilisés afi
             <TextBlock.Foreground>
                 <SolidColorBrush Color="#FFFFA500"/>
             </TextBlock.Foreground>
-        </TextBox>
+        </TextBlock>
         <Button Content="Submit">
             <Button.Foreground>
                 <SolidColorBrush Color="#FFFFA500"/>
@@ -262,7 +262,7 @@ La plateforme XAML essaie de mettre en cache les objets couramment utilisés afi
 
 Pour éviter les doublons, définissez le pinceau en tant que ressource. Si des contrôles figurant dans d’autres pages utilisent le même pinceau, déplacez-le dans _App.xaml_.
 
-**Efficace.**
+**Possible.**
 
 ```xaml
 <Page ... >
@@ -291,7 +291,7 @@ Si un élément est invisible, car il est transparent ou masqué derrière d’a
 
 Utilisez un élément composite au lieu de disposer en couches les différents éléments pour créer un effet. Dans cet exemple, le résultat est une forme bicolore dans laquelle la moitié supérieure est noire (depuis l’arrière-plan de la [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)) et la moitié inférieure est grise (depuis le [Rectangle](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) blanc semi-transparent fusionné à l’aide du canal alpha sur l’arrière-plan noir de la **Grid**). Ici, 150 % des pixels nécessaires pour obtenir le résultat sont remplis.
 
-**Inefficient.**
+**Inefficace.**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -304,7 +304,7 @@ Utilisez un élément composite au lieu de disposer en couches les différents �
 </Grid>
 ```
 
-**Efficace.**
+**Possible.**
 
 ```xaml
 <Grid>
@@ -321,7 +321,7 @@ Utilisez un élément composite au lieu de disposer en couches les différents �
 
 Un panneau de disposition peut servir à deux choses : colorier une zone et disposer les éléments enfants. Si un élément plus éloigné dans l’ordre Z colore déjà une zone, alors un panneau de disposition situé au premier plan n’a pas besoin de la colorer également. À la place, il peut simplement se concentrer sur la disposition de ses enfants. En voici un exemple.
 
-**Inefficient.**
+**Inefficace.**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -334,7 +334,7 @@ Un panneau de disposition peut servir à deux choses : colorier une zone et disp
 </GridView>
 ```
 
-**Efficace.**
+**Possible.**
 
 ```xaml
 <GridView Background="Blue">
@@ -352,7 +352,7 @@ Si la [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) d
 
 Utilisez un élément [Border](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border) pour dessiner une bordure autour d’un objet. Dans cet exemple, une [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) est utilisée comme bordure autour d’une [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox). Mais tous les pixels de la cellule centrale sont surdessinés.
 
-**Inefficient.**
+**Inefficace.**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -371,7 +371,7 @@ Utilisez un élément [Border](https://docs.microsoft.com/uwp/api/windows.ui.xam
 </Grid>
 ```
 
-**Efficace.**
+**Possible.**
 
 ```xaml
  <Border BorderBrush="Blue" BorderThickness="5" Width="300" Height="45">
@@ -387,7 +387,7 @@ Tenez compte des marges. Deux éléments voisins risquent de se chevaucher si de
 
 Une forme constituée de nombreux éléments qui se chevauchent peut également occasionner un surdessin. Si vous configurez [CacheMode](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.CacheMode) sur **BitmapCache** sur l’[UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) contenant la forme composite, la plateforme affiche alors l’élément dans une image bitmap une seule fois, puis utilise cette image bitmap dans chaque image au lieu d’avoir recours au surdessin.
 
-**Inefficient.**
+**Inefficace.**
 
 ```xaml
 <Canvas Background="White">
@@ -403,7 +403,7 @@ L'image ci-dessus présente le résultat, mais voici une carte indiquant les zon
 
 ![Diagramme de Venn illustrant les zones de superposition](images/translucentvenn.png)
 
-**Efficace.**
+**Possible.**
 
 ```xaml
 <Canvas Background="White" CacheMode="BitmapCache">
@@ -423,9 +423,9 @@ Les contrôles et dictionnaires intégrés dans XAML, qui sont fournis par l’i
 
 Pour vérifier si vous possédez XBF2, ouvrez votre application dans un éditeur binaire ; les 12e et 13e octets correspondent à 00 02 si vous possédez XBF2.
 
-## <a name="related-articles"></a>Articles connexes
+## <a name="related-articles"></a>Articles associés
 
 - [Meilleures pratiques pour les performances de démarrage de votre application](best-practices-for-your-app-s-startup-performance.md)
 - [Optimiser votre disposition XAML](optimize-your-xaml-layout.md)
-- [Optimisation de ListView et GridView UI](optimize-gridview-and-listview.md)
-- [Outils de profilage et performances](tools-for-profiling-and-performance.md)
+- [Optimisation de l’interface utilisateur de ListView et de GridView](optimize-gridview-and-listview.md)
+- [Outils pour le profilage et les performances](tools-for-profiling-and-performance.md)
