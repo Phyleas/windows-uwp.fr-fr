@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp, contacts, carte de visite, annotation
 ms.assetid: 0edabd9c-ecfb-4525-bc38-53f219d744ff
 ms.localizationpriority: medium
-ms.openlocfilehash: 506f0d2c778a934c3f8861493f4a512a39fe66fc
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 8310b7c5b629d8d3a35a05b1124b140ebf35cf17
+ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360454"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73061873"
 ---
 # <a name="connect-your-app-to-actions-on-a-contact-card"></a>Connecter votre application à des actions sur une carte de visite
 
@@ -185,7 +185,7 @@ Remplacez la méthode [Application.OnActivated](https://docs.microsoft.com/uwp/a
 
 Dans le fichier code-behind de la page, remplacez la méthode [Page.OnNavigatedTo](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto). La carte de visite transmet à cette méthode le nom de l’opération et l’identifiant de l’utilisateur.
 
-Pour démarrer un appel audio ou vidéo, consultez l’exemple : [Exemple de VoIP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/VoIP). Vous trouverez l’API complète dans l’espace de noms [WIndows.ApplicationModel.Calls](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls).
+Pour démarrer une vidéo ou un appel audio, consultez cet exemple : [exemple VoIP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/VoIP). Vous trouverez l’API complète dans l’espace de noms [WIndows.ApplicationModel.Calls](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls).
 
 Pour simplifier la messagerie, consultez l’espace de noms [Windows.ApplicationModel.Chat](https://docs.microsoft.com/uwp/api/windows.applicationmodel.chat).
 
@@ -204,7 +204,7 @@ protected override async void OnNavigatedTo(NavigationEventArgs e)
         var options = new Windows.System.LauncherOptions();
         options.DisplayApplicationPicker = true;
 
-        options.TargetApplicationPackageFamilyName = “ContosoApp”;
+        options.TargetApplicationPackageFamilyName = "ContosoApp";
 
         string launchString = args.uri.Scheme + ":" + args.uri.Query;
         var launchUri = new Uri(launchString);

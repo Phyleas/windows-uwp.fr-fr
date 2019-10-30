@@ -8,12 +8,12 @@ keywords: voix, vocal, reconnaissance vocale, langage naturel, dictée, saisie, 
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 778aa04861fa7704f4235763a429bb77f92a8b65
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 1aa57af7e51fd7d6ef151909eccc444da2c44707
+ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365327"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73062044"
 ---
 # <a name="specify-the-speech-recognizer-language"></a>Spécifier la langue de reconnaissance vocale
 
@@ -25,18 +25,18 @@ Découvrez comment sélectionner une langue installée à utiliser pour la recon
 
 Nous avons répertorié les langues installées sur un système. Identifiez la langue par défaut et sélectionnez une autre langue pour la reconnaissance.
 
-**Conditions préalables :**
+**Conditions préalables**
 
 Cette rubrique s’appuie sur l’article [Reconnaissance vocale](speech-recognition.md).
 
 Vous devez posséder des connaissances de base sur la reconnaissance vocale et ses contraintes.
 
-Si vous débutez dans le développement d’applications de plateforme Windows universelle (UWP), consultez les rubriques ci-dessous pour vous familiariser avec les technologies décrites ici.
+Si vous débutez dans le développement d’applications pour plateforme Windows universelle (UWP), consultez les rubriques ci-dessous pour vous familiariser avec les technologies décrites ici.
 
 -   [Créer votre première application](https://docs.microsoft.com/windows/uwp/get-started/your-first-app)
--   Découvrir les événements avec [Vue d’ensemble des événements et des événements routés](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview).
+-   Découvrir les événements avec [Vue d’ensemble des événements et des événements routés](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview)
 
-**Recommandations pour l’expérience utilisateur :**
+**Instructions relatives à l’expérience utilisateur :**
 
 Pour obtenir de précieux conseils concernant la conception d’une application dotée de fonctions vocales à la fois utile et conviviale, voir [Recommandations en matière de conception](https://docs.microsoft.com/windows/uwp/input-and-devices/speech-interactions).
 
@@ -56,15 +56,15 @@ var language = SpeechRecognizer.SystemSpeechLanguage;
 
 Les langues installées peuvent varier entre les appareils. Vérifiez l’existence d’une langue avant de vous en servir pour une contrainte particulière.
 
-**Remarque**  un redémarrage est nécessaire après l’installation d’un nouveau pack de langue. Une exception avec le code d’erreur SPERR\_pas\_trouvé (0x8004503a) est générée si la langue spécifiée n’est pas pris en charge ou n’a pas terminé l’installation.
+**Notez**  un redémarrage est nécessaire après l’installation d’un nouveau module linguistique. Une exception avec le code d’erreur SPERR\_\_introuvable (0x8004503a) est levée si la langue spécifiée n’est pas prise en charge ou n’a pas terminé l’installation de.
 
  
 
 Déterminez les langues prises en charge sur un appareil en vérifiant l’une des deux propriétés statiques de la classe [**SpeechRecognizer**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer) :
 
--   [**SupportedTopicLanguages**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.supportedtopiclanguages)— la collection de [ **langage** ](https://docs.microsoft.com/uwp/api/Windows.Globalization.Language) objets utilisés avec la dictée prédéfinie et les grammaires de recherche web.
+-   [**SupportedTopicLanguages**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.supportedtopiclanguages): collection d’objets de [**langage**](https://docs.microsoft.com/uwp/api/Windows.Globalization.Language) utilisée avec les grammaires prédéfinies et les grammaires de recherche Web.
 
--   [**SupportedGrammarLanguages**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.supportedgrammarlanguages)— la collection de [ **langage** ](https://docs.microsoft.com/uwp/api/Windows.Globalization.Language) objets utilisés avec une contrainte de liste ou un fichier Speech Recognition Grammar Specification (SRGS).
+-   [**SupportedGrammarLanguages**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.supportedgrammarlanguages): collection d’objets [**Language**](https://docs.microsoft.com/uwp/api/Windows.Globalization.Language) utilisés avec une contrainte List ou un fichier SRGS (Speech Recognition Grammar Specification).
 
 ## <a name="specify-a-language"></a>Spécifier une langue
 
@@ -75,7 +75,7 @@ Ici, nous spécifions « en-US » comme langue de reconnaissance.
 
 
 ```CSharp
-var language = new Windows.Globalization.Language(“en-US”); 
+var language = new Windows.Globalization.Language("en-US"); 
 var recognizer = new SpeechRecognizer(language); 
 ```
 
@@ -86,21 +86,21 @@ Une contrainte de rubrique peut être configurée en ajoutant une [**SpeechRecog
 
 Une contrainte de liste peut être configurée en ajoutant une [**SpeechRecognitionListConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint) à la collection [**Constraints**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.constraints) de la [**SpeechRecognizer**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer), puis en appelant [**CompileConstraintsAsync**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.compileconstraintsasync). Vous ne pouvez pas spécifier directement la langue d’une liste personnalisée. La liste est traitée à l’aide de la langue du module de reconnaissance.
 
-Une grammaire SRGS est un format XML standard ouvert représenté par la classe [**SpeechRecognitionGrammarFileConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint). Contrairement aux listes personnalisées, vous pouvez spécifier la langue de la grammaire dans le balisage SRGS. [**CompileConstraintsAsync** ](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.compileconstraintsasync) échoue avec un [ **SpeechRecognitionResultStatus** ](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResultStatus) de **TopicLanguageNotSupported** si le module de reconnaissance n’est pas initialisée avec la même langue que la balise SRGS.
+Une grammaire SRGS est un format XML standard ouvert représenté par la classe [**SpeechRecognitionGrammarFileConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint). Contrairement aux listes personnalisées, vous pouvez spécifier la langue de la grammaire dans le balisage SRGS. [**CompileConstraintsAsync**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.compileconstraintsasync) échoue avec un [**SpeechRecognitionResultStatus**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResultStatus) de **TopicLanguageNotSupported** si le module de reconnaissance n’est pas initialisé dans la même langue que le balisage SRGS.
 
-## <a name="related-articles"></a>Articles connexes
+## <a name="related-articles"></a>Articles associés
 
-**Développeurs**
+**Les développeurs**
 
 * [Interactions vocales](speech-interactions.md)
 
-**Concepteurs**
+**Contrôles**
 
 * [Recommandations en matière de conception de fonctions vocales](https://docs.microsoft.com/windows/uwp/input-and-devices/speech-interactions)
 
 **Exemples**
 
-* [La reconnaissance vocale et exemple de synthèse vocale](https://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [Exemple de reconnaissance vocale et de synthèse vocale](https://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  

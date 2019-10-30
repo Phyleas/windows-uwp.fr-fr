@@ -5,12 +5,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, animation
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e00aa383bcce17b7cd6b67514647c2f6137cc32
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f86ab8b3e55b7680c5ba3e47c37d1cda8c42cebb
+ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57601944"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73062003"
 ---
 # <a name="spring-animations"></a>Animations à effet ressort
 
@@ -26,8 +26,8 @@ L’article montre comment utiliser des NaturalMotionAnimations à effet ressort
 
 Les effets ressort sont une expérience de mouvement courante, que nous avons tous expérimentée à un moment de nos vies, que ce soit avec des jouets à ressort ou en classe de physique en faisant des expériences avec un bloc attaché à un ressort. Le mouvement d'oscillation d'un ressort provoque souvent une réaction émotionnelle ludique et enjouée chez l'observateur. Par conséquent, le mouvement d’un ressort se traduit bien en interface utilisateur d’application pour ceux qui souhaitent créer une expérience de mouvement plus vivante qui « parle » plus à l’utilisateur final qu'une courbe de Bézier cubique classique. Dans ce cas, le mouvement de ressort non seulement crée une expérience de mouvement plus vivante, mais peut également contribuer à attirer l’attention sur le contenu d'animation nouveau ou en cours. Selon la personnalisation de l'application ou le langage du mouvement, l’oscillation est plus prononcée et visible, mais dans d’autres cas, elle est plus subtile.
 
-![Mouvement avec l’animation spring](images/animation/offset-spring.gif)
-![Motion avec l’animation de Bézier cubique](images/animation/offset-cubic-bezier.gif)
+![motion avec l’animation Spring](images/animation/offset-spring.gif)
+![mouvement avec une animation de Bézier cubique](images/animation/offset-cubic-bezier.gif)
 
 ## <a name="using-springs-in-your-ui"></a>Utilisation d'effets ressort dans votre interface utilisateur
 
@@ -92,12 +92,12 @@ private void Button_Clicked(object sender, RoutedEventArgs e)
  {
  _expanded = true;
  _propSet.InsertBoolean("expanded", true);
- _springAnimation.InitialValueExpression[“FinalValue”] = “this.StartingValue + 250”;
+ _springAnimation.InitialValueExpression["FinalValue"] = "this.StartingValue + 250";
  } else
  {
  _expanded = false;
  _propSet.InsertBoolean("expanded", false);
-_springAnimation.InitialValueExpression[“FinalValue”] = “this.StartingValue - 250”;
+_springAnimation.InitialValueExpression["FinalValue"] = "this.StartingValue - 250";
  }
  _naviPane.StartAnimation("Offset.X", _springAnimation);
 }

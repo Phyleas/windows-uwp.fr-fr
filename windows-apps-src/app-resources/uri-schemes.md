@@ -6,12 +6,12 @@ ms.date: 10/16/2017
 ms.topic: article
 keywords: windows 10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: f199d70fc9194f211533820a7b23e20de929752d
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 7564060e28d3e78608c6f30b1400179087db2b86
+ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359341"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73061852"
 ---
 # <a name="uri-schemes"></a>Schémas d’URI
 
@@ -112,7 +112,7 @@ Vous pouvez bien entendu récupérer également ce même fichier physique en y f
 
 À l’instar des URI génériques, le composant de chemin d’accès de `ms-appx(-web)` respecte la casse. Toutefois, lorsque le système de fichiers sous-jacent via lequel la ressource est accessible ne respecte pas la casse (par exemple, NTFS), la ressource est récupérée sans respect de la casse.
 
-La forme normalisée de l’URI conserve la casse et décode les caractères RFC 3986 non réservés à l’aide du percent encoding (symbole « % » suivi d’une représentation hexadécimale à deux chiffres). Les caractères « ? », « # », « / », « * » et « ” » (le caractère de guillemet double) doivent être codés à l’aide du percent encoding dans un chemin d’accès pour représenter des données telles que les noms de fichier ou de dossier. Tous les caractères codés à l’aide du percent encoding sont décodés avant la récupération. Par conséquent, pour récupérer un fichier nommé Hello#World.html, utilisez cet URI.
+La forme normalisée de l’URI conserve la casse et décode les caractères RFC 3986 non réservés à l’aide du percent encoding (symbole « % » suivi d’une représentation hexadécimale à deux chiffres). Les caractères «  ? », « # », « / », « * » et «» (guillemet double) doivent être encodés en pourcentage dans un chemin d’accès pour représenter des données telles que des noms de fichiers ou de dossiers. Tous les caractères codés à l’aide du percent encoding sont décodés avant la récupération. Par conséquent, pour récupérer un fichier nommé Hello#World.html, utilisez cet URI.
 
 ```xml
 ms-appx:///Hello%23World.html
@@ -185,7 +185,7 @@ ms-appdata:///roaming/
 
 À l’instar des URI génériques, le composant de chemin d’accès de `ms-appdata` respecte la casse. Toutefois, lorsque le système de fichiers sous-jacent via lequel la ressource est accessible ne respecte pas la casse (par exemple, NTFS), la ressource est récupérée sans respect de la casse.
 
-La forme normalisée de l’URI conserve la casse et décode les caractères RFC 3986 non réservés à l’aide du percent encoding (symbole « % » suivi d’une représentation hexadécimale à deux chiffres). Les caractères « ? », « # », « / », « * » et « ” » (le caractère de guillemet double) doivent être codés à l’aide du percent encoding dans un chemin d’accès pour représenter des données telles que les noms de fichier ou de dossier. Tous les caractères codés à l’aide du percent encoding sont décodés avant la récupération. Par conséquent, pour récupérer un fichier local nommé Hello#World.html, utilisez cet URI.
+La forme normalisée de l’URI conserve la casse et décode les caractères RFC 3986 non réservés à l’aide du percent encoding (symbole « % » suivi d’une représentation hexadécimale à deux chiffres). Les caractères «  ? », « # », « / », « * » et «» (guillemet double) doivent être encodés en pourcentage dans un chemin d’accès pour représenter des données telles que des noms de fichiers ou de dossiers. Tous les caractères codés à l’aide du percent encoding sont décodés avant la récupération. Par conséquent, pour récupérer un fichier local nommé Hello#World.html, utilisez cet URI.
 
 ```xml
 ms-appdata://local/Hello%23World.html
@@ -253,9 +253,9 @@ Le chemin d’accès identifie l’emplacement hiérarchique de la sous-arboresc
 
 Pour en savoir plus et voir des exemples, voir [Localiser les chaînes dans l’interface utilisateur et le manifeste du package d’application](localize-strings-ui-manifest.md) et [Prise en charge des vignettes et notifications toast pour la langue, l’échelle et le contraste élevé](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md).
 
-À l’instar des URI génériques, le composant de chemin d’accès de `ms-resource` respecte la casse. Cependant, la récupération sous-jacent n’est un [CompareStringOrdinal](https://docs.microsoft.com/windows/desktop/api/winstring/nf-winstring-windowscomparestringordinal) avec *ignoreCase* défini sur `true`.
+À l’instar des URI génériques, le composant de chemin d’accès de `ms-resource` respecte la casse. Toutefois, la récupération sous-jacente fait un [comparestringordinal,](https://docs.microsoft.com/windows/desktop/api/winstring/nf-winstring-windowscomparestringordinal) avec *ignoreCase* défini sur `true`.
 
-La forme normalisée de l’URI conserve la casse et décode les caractères RFC 3986 non réservés à l’aide du percent encoding (symbole « % » suivi d’une représentation hexadécimale à deux chiffres). Les caractères « ? », « # », « / », « * » et « ” » (le caractère de guillemet double) doivent être codés à l’aide du percent encoding dans un chemin d’accès pour représenter des données telles que les noms de fichier ou de dossier. Tous les caractères codés à l’aide du percent encoding sont décodés avant la récupération. Par conséquent, pour récupérer une ressource de chaîne à partir d’un fichier de ressources nommé `Hello#World.resw`, utiliser cet URI.
+La forme normalisée de l’URI conserve la casse et décode les caractères RFC 3986 non réservés à l’aide du percent encoding (symbole « % » suivi d’une représentation hexadécimale à deux chiffres). Les caractères «  ? », « # », « / », « * » et «» (guillemet double) doivent être encodés en pourcentage dans un chemin d’accès pour représenter des données telles que des noms de fichiers ou de dossiers. Tous les caractères codés à l’aide du percent encoding sont décodés avant la récupération. Par conséquent, pour récupérer une ressource de type chaîne à partir d’un fichier de ressources nommé `Hello#World.resw`, utilisez cet URI.
 
 ```xml
 ms-resource:///Hello%23World/String1
@@ -269,10 +269,10 @@ Les développeurs de composants spécifiques situés dans une couche au-dessus d
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Uniform Resource Identifier (URI) : Syntaxe générique](https://go.microsoft.com/fwlink/p/?LinkId=263444)
+* [Uniform Resource Identifier (URI) : syntaxe générique](https://go.microsoft.com/fwlink/p/?LinkId=263444)
 * [Empaquetage d’applications](../packaging/index.md)
-* [Référencer une image ou un autre actif à partir de code et le balisage XAML](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)
-* [Store et de récupérer les paramètres et autres données d’application](../design/app-settings/store-and-retrieve-app-data.md)
+* [Référencer une image ou une autre ressource à partir du balisage et du code XAML](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)
+* [Stocker et récupérer des paramètres et autres données d’application](../design/app-settings/store-and-retrieve-app-data.md)
 * [Localiser les chaînes dans l’interface utilisateur et le manifeste du package d’application](localize-strings-ui-manifest.md)
 * [Système de gestion des ressources](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10))
-* [Prise en charge de la notification vignette et de toast de langage, de mise à l’échelle et de contraste élevé](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)
+* [Prise en charge des notifications par vignette et toast pour la langue, la mise à l’échelle et le contraste élevé](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)

@@ -1,24 +1,24 @@
 ---
-title: Notifications de mes contacts
+title: Notifications de Mes Contacts
 description: Explique comment créer et utiliser les notifications de mes contacts, qui sont un nouveau type de notification toast.
 ms.date: 10/25/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bd9071eaaea0dd88a3dad06de78eff82b29725ec
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: 41f1c19f62482dc28bc067adb2e60b2c6fafa509
+ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820240"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73061892"
 ---
-# <a name="my-people-notifications"></a>Notifications de mes contacts
+# <a name="my-people-notifications"></a>Notifications de Mes Contacts
 
 Les notifications de mes contacts offrent une nouvelle façon pour les utilisateurs d’entrer en relation avec les personnes qui les intéressent par le biais de mouvements expressifs rapides. Cet article montre comment concevoir et implémenter les notifications de mes contacts dans votre application. Pour les implémentations complètes, voir l’[Exemple de notifications de mes contacts](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/MyPeopleNotifications).
 
 ![notification par emoji représentant un cœur](images/heart-emoji-notification-small.gif)
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Conditions préalables
 
 + Windows 10 et Microsoft Visual Studio 2019. Pour en savoir plus sur l’installation, voir [Prendre en main Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
 + Connaissances de base de C# ou d’un langage de programmation orienté objet similaire. Pour vous familiariser avec C#, voir [Créer une application « Hello, world »](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
@@ -42,24 +42,24 @@ Comme alternative aux notifications toast génériques, vous pouvez désormais e
 Les notifications de mes contacts utilisent l’infrastructure de la [notification toast](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md), mais nécessitent un nœud de liaison supplémentaire dans la charge utile de la notification toast. La deuxième liaison doit inclure le paramètre suivant :
 
 ```xml
-experienceType=”shoulderTap”
+experienceType="shoulderTap"
 ```
 
 Cela indique que la notification toast doit être traitée comme une notification de mes contacts.
 
 Le nœud de l’image à l’intérieur de la liaison doit inclure les paramètres suivants :
 
-+ **src**
++ **sources**
     + L’URI de la ressource. Il peut s’agir d’un URI web HTTP/HTTPS, d’un URI msappx ou d’un chemin d’accès à un fichier local.
-+ **spritesheet-src**
++ **SpriteSheet-SRC**
     + L’URI de la ressource. Il peut s’agir d’un URI web HTTP/HTTPS, d’un URI msappx ou d’un chemin d’accès à un fichier local. Requis uniquement pour les animations Spritesheet.
-+ **spritesheet-height**
++ **SpriteSheet-hauteur**
     + La hauteur de l’image (en pixels). Requis uniquement pour les animations Spritesheet.
-+ **spritesheet-fps**
++ **SpriteSheet-fps**
     + Images par seconde (FPS). Requis uniquement pour les animations Spritesheet. Seules les valeurs de 1 à 120 sont prises en charge.
 + **spritesheet-startingFrame**
     + Numéro de l’image pour commencer l’animation. Uniquement utilisé pour les animations Spritesheet et a pour valeur par défaut 0 si le numéro n’est pas indiqué.
-+ **alt**
++ **Appuyez**
     + Chaîne de texte utilisée pour la narration du lecteur d’écran.
 
 > [!NOTE]
@@ -68,11 +68,11 @@ Le nœud de l’image à l’intérieur de la liaison doit inclure les paramètr
 En outre, le nœud toast de niveau supérieur doit inclure le paramètre **hint-people** pour spécifier le contact d’envoi. Ce paramètre peut prendre les valeurs suivantes :
 
 + **Adresse de messagerie** 
-    + Par exemple, ` mailto:johndoe@mydomain.com `
+    + Exemple ` mailto:johndoe@mydomain.com `
 + **Numéro de téléphone** 
-    + Par exemple, tél : 888-888-8888
+    + Exemple tél : 888-888-8888
 + **ID distant** 
-    + Par exemple, remoteid:1234
+    + Exemple remoteid:1234
 
 > [!NOTE]
 > Si votre application utilise les [API ContactStore](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.contactstore) et la propriété [StoredContact.RemoteId](https://docs.microsoft.com/en-us/uwp/api/Windows.Phone.PersonalInformation.StoredContact.RemoteId) pour lier des contacts stockés sur le PC avec des contacts stockés à distance, il est essentiel que la valeur de la propriété RemoteID soit stable et unique. Cela signifie que l’ID distant doit identifier de manière cohérente un compte d’utilisateur unique et doit contenir une balise unique afin de garantir qu’il n’est pas en conflit avec les ID distants des autres contacts sur le PC, y compris les contacts qui appartiennent à d’autres applications.
@@ -150,8 +150,8 @@ Il existe certains cas dans lesquels une notification de mes contacts s’affich
 
 Si une notification de mes contacts remplace une notification toast, la deuxième liaison spécifique de mes contacts est ignorée, et seule la première liaison est utilisée pour afficher la notification toast. C’est pourquoi il est essentiel de fournir une charge utile de secours dans la première liaison toast.
 
-## <a name="see-also"></a>Voir aussi
-+ [Mon exemple de Notifications de personnes](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/MyPeopleNotifications)
-+ [Ajout de personnes mes prennent en charge](my-people-support.md)
-+ [Notifications toast ADAPTATIF](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)
-+ [Classe de ToastNotification](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastnotification)
+## <a name="see-also"></a>Articles associés
++ [Exemple de notifications My People](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/MyPeopleNotifications)
++ [Ajout de la prise en charge de mes contacts](my-people-support.md)
++ [Notifications de Toast adaptatif](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)
++ [ToastNotification, classe](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastnotification)

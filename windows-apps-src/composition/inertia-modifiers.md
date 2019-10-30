@@ -5,12 +5,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, animation
 ms.localizationpriority: medium
-ms.openlocfilehash: f99ebc4b98c87a4bc6d77fd2c626f481563e50c5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 196c6d98b0944bbc22c3d0f652853ecab28bd3c6
+ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57639634"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73061910"
 ---
 # <a name="create-snap-points-with-inertia-modifiers"></a>Créer des points d’ancrage à l'aide de modificateurs d'inertie
 
@@ -20,9 +20,9 @@ Dans cet article, nous expliquons plus en détail comment utiliser la fonctionna
 
 À ce stade, nous partons du principe que vous êtes familiarisé avec les concepts abordés dans les articles suivants :
 
-- [Animations contrôlée par l’entrée](input-driven-animations.md)
-- [Expériences de manipulation personnalisée avec InteractionTracker](interaction-tracker-manipulations.md)
-- [Animations en fonction de relation](relation-animations.md)
+- [Animations pilotées par l’entrée](input-driven-animations.md)
+- [Expériences de manipulation personnalisées avec InteractionTracker](interaction-tracker-manipulations.md)
+- [Animations basées sur les relations](relation-animations.md)
 
 ## <a name="what-are-snap-points-and-why-are-they-useful"></a>Quels sont les points d’ancrage et pourquoi sont-ils utiles ?
 
@@ -93,11 +93,13 @@ L'ancrage vers le haut ou vers le bas est déterminé par l'endroit où l'Intera
 ```csharp
 // Is NaturalRestingPosition less than the halfway point between Snap Points?
 snapUpModifier.Condition = _compositor.CreateExpressionAnimation(
-"this.Target.NaturalRestingPosition.y < (this.StartingValue – ” + “mod(this.StartingValue, prop.snapDistance) + prop.snapDistance / 2)");
+"this.Target.NaturalRestingPosition.y < (this.StartingValue – " + 
+"mod(this.StartingValue, prop.snapDistance) + prop.snapDistance / 2)");
 snapUpModifier.Condition.SetReferenceParameter("prop", _propSet);
 // Is NaturalRestingPosition greater than the halfway point between Snap Points?
 snapDownModifier.Condition = _compositor.CreateExpressionAnimation(
-"this.Target.NaturalRestingPosition.y >= (this.StartingValue – ” + “mod(this.StartingValue, prop.snapDistance) + prop.snapDistance / 2)");
+"this.Target.NaturalRestingPosition.y >= (this.StartingValue – " + 
+"mod(this.StartingValue, prop.snapDistance) + prop.snapDistance / 2)");
 snapDownModifier.Condition.SetReferenceParameter("prop", _propSet);
 ```
 
@@ -112,7 +114,8 @@ snapUpModifier.RestingValue = _compositor.CreateExpressionAnimation(
 "this.StartingValue - mod(this.StartingValue, prop.snapDistance)");
 snapUpModifier.RestingValue.SetReferenceParameter("prop", _propSet);
 snapForwardModifier.RestingValue = _compositor.CreateExpressionAnimation(
-"this.StartingValue + prop.snapDistance - mod(this.StartingValue, ” + “prop.snapDistance)");
+"this.StartingValue + prop.snapDistance - mod(this.StartingValue, " + 
+"prop.snapDistance)");
 snapForwardModifier.RestingValue.SetReferenceParameter("prop", _propSet);
 ```
 
