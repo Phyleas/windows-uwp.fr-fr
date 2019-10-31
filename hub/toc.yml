@@ -48,6 +48,8 @@
               href: apps/desktop/modernize/desktop-to-uwp-extend.md
             - name: Distribuer votre application empaquetée
               href: apps/desktop/modernize/desktop-to-uwp-distribute.md
+        - name: Accorder une identité à des applications de bureau non empaquetées
+          href: apps/desktop/modernize/grant-identity-to-nonpackaged-apps.md
         - name: "Tutoriel\_: Moderniser une application WPF"
           items:
             - name: Vue d’ensemble

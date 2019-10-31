@@ -6,12 +6,12 @@ ms.date: 04/17/2019
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: b8ad9726397671bcb2b641d6769f014721a27a72
-ms.sourcegitcommit: f34deba1d4460d85ed08fe9648999fe03ff6a3dd
+ms.openlocfilehash: 7403c0a3fd9f822ee24411aa88d8fd91994748dd
+ms.sourcegitcommit: d7eccdb27c22bccac65bd014e62b6572a6b44602
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71317096"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73142517"
 ---
 # <a name="modernize-your-desktop-apps"></a>Moderniser vos applications de bureau
 
@@ -54,11 +54,14 @@ Vous pouvez maintenant utiliser des API UWP dans des applications de bureau non 
 
 Pour plus d’informations, consultez [Moderniser votre application de bureau à l’aide de la couche Visuel](visual-layer-in-desktop-apps.md).
 
-## <a name="additional-features-available-to-packaged-apps"></a>Fonctionnalités supplémentaires disponibles pour les applications empaquetées
+## <a name="additional-features-available-to-apps-with-package-identity"></a>Fonctionnalités supplémentaires disponibles pour les applications avec une identité de package
 
-Certaines expériences Windows 10 modernes sont uniquement offertes dans les applications de bureau empaquetées dans un [package MSIX](/windows/msix/desktop/desktop-to-uwp-root). Si vous empaquetez votre application de bureau dans un package MSIX, vous pouvez ensuite utiliser les API UWP qui nécessitent l’identité du package, les extensions du package et les composants UWP dans votre application empaquetée.
+Certaines expériences Windows 10 modernes sont uniquement offertes dans les applications de bureau qui ont une [identité de package](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity). Ces fonctionnalités incluent certaines API UWP, extensions de package et composants UWP. Pour plus d’informations, consultez [Fonctionnalités nécessitant l’identité du package](modernize-packaged-apps.md).
 
-Pour plus d’informations, consultez [Fonctionnalités nécessitant l’identité du package](modernize-packaged-apps.md).
+Il existe plusieurs façons d’accorder une identité à une application de bureau :
+
+* Empaquetez-la dans un package [MSIX](/windows/msix/desktop/desktop-to-uwp-root). MSIX est un format de package d’application moderne qui permet de créer des packages universels pour toutes les applications Windows, WPF, Windows Forms et Win32. Il offre une expérience d’installation et de mise à jour fiable, un modèle de sécurité managé avec un système de capacité flexible, une prise en charge du Microsoft Store, une gestion d’entreprise et de nombreux modèles de distribution personnalisés. Pour plus d’informations, consultez [Empaqueter des applications de bureau](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root) dans la documentation MSIX.
+* Si vous ne parvenez pas à adopter l’empaquetage MSIX pour le déploiement de votre application de bureau, à compter de Windows 10 Insider Preview Build 10.0.19000.0, vous pouvez accorder une identité de package en créant un *package MSIX partiel* contenant uniquement un manifeste de package. Pour plus d’informations, consultez [Accorder une identité à des applications de bureau non empaquetées](grant-identity-to-nonpackaged-apps.md).
 
 <a id="desktop-uwp-controls"/>
 
