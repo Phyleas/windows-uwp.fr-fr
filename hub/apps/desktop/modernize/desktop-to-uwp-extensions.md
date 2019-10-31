@@ -3,28 +3,28 @@ Description: Vous pouvez utiliser des extensions pour intégrer votre applicatio
 title: Intégrer votre application de bureau packagée à Windows 10 et UWP (Desktop Bridge)
 ms.date: 04/18/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: c99d05a701f41e24663d116773b000017b805d81
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: f51fc081c5cc18132a386197feb2ae76a22d2088
+ms.sourcegitcommit: d7eccdb27c22bccac65bd014e62b6572a6b44602
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72281803"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73142500"
 ---
-# <a name="integrate-your-packaged-desktop-app-with-windows-10-and-uwp"></a>Intégrer votre application de bureau packagée à Windows 10 et UWP
+# <a name="integrate-your-desktop-app-with-windows-10-and-uwp"></a>Intégrer votre application de bureau avec Windows 10 et UWP
 
-Si vous [empaquetez votre application de bureau dans un conteneur MSIX](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root), vous pouvez utiliser des extensions pour intégrer votre application de bureau empaqueté à Windows 10 en utilisant des extensions prédéfinies dans le [manifeste de package d’application](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root).
+Si votre application de bureau a une [identité de package](modernize-packaged-apps.md), vous pouvez utiliser des extensions pour intégrer votre application à Windows 10 en utilisant des extensions prédéfinies dans le [manifeste du package](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root).
 
-Par exemple, utilisez une extension pour créer une exception de pare-feu, faire de votre application l’application par défaut pour un type de fichier ou des vignettes de démarrage de point vers la version empaquetée de votre application. Pour utiliser une extension, il suffit d’ajouter un peu de XML au fichier manifeste du package de votre application. Aucun code n’est nécessaire.
+Par exemple, utilisez une extension pour créer une exception de pare-feu, faire de votre application l’application par défaut pour un type de fichier ou des vignettes de démarrage de pointage vers votre application. Pour utiliser une extension, il suffit d’ajouter un peu de XML au fichier manifeste du package de votre application. Aucun code n’est nécessaire.
 
 Cet article décrit ces extensions et les tâches que vous pouvez effectuer à l’aide de celles-ci.
 
 > [!NOTE]
-> Les fonctionnalités décrites dans cet article requièrent la création d’un package d’application Windows pour votre application de bureau. Si vous ne l’avez pas encore fait, consultez [packages d’applications de bureau](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root).
+> Les fonctionnalités décrites dans cet article requièrent que votre application de bureau ait une [identité de package](modernize-packaged-apps.md), soit en [empaquetant votre application de bureau dans un package MSIX](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root) , soit en lui [accordant l’identité de votre application à l’aide d’un package fragmenté](grant-identity-to-nonpackaged-apps.md).
 
 ## <a name="transition-users-to-your-app"></a>Migrer les utilisateurs vers votre application
 
@@ -44,7 +44,7 @@ Vos utilisateurs peuvent avoir épinglé votre application de bureau à la barre
 
 #### <a name="xml-namespace"></a>Espace de noms XML
 
-http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities/3
+`http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities/3`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Éléments et attributs de cette extension
 
@@ -103,8 +103,8 @@ Pour ce faire, vous devez spécifier l’[identificateur programmatique (ProgID)
 
 #### <a name="xml-namespaces"></a>Espaces de noms XML
 
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/3
-* http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities/3
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
+* `http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities/3`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Éléments et attributs de cette extension
 
@@ -160,10 +160,10 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 
 Vous pouvez associer votre application empaquetée à des extensions de type de fichier. Si un utilisateur clique avec le bouton droit sur un fichier, puis sélectionne l’option **Ouvrir avec** , votre application s’affiche dans la liste des suggestions.
 
-#### <a name="xml-namespace"></a>Espace de noms XML
+#### <a name="xml-namespaces"></a>Espaces de noms XML
 
-* http://schemas.microsoft.com/appx/manifest/uap/windows10
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/3
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10`
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Éléments et attributs de cette extension
 
@@ -222,9 +222,9 @@ Vous pouvez ajouter des options à ce menu. Ces options donnent aux utilisateurs
 
 #### <a name="xml-namespaces"></a>Espaces de noms XML
 
-* http://schemas.microsoft.com/appx/manifest/uap/windows10
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/2
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/3
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10`
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/2`
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Éléments et attributs de cette extension
 
@@ -287,8 +287,8 @@ Vous pouvez vous assurer que les utilisateurs ouvrent par défaut votre nouvelle
 
 #### <a name="xml-namespaces"></a>Espaces de noms XML
 
-* http : \//schemas. Microsoft. com/AppX/manifest/UAP/Windows 10
-* http : \//schemas. Microsoft. com/AppX/manifest/UAP/Windows 10/3»
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10`
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Éléments et attributs de cette extension
 
@@ -349,7 +349,7 @@ Si votre application nécessite une communication via un port, vous pouvez ajout
 
 #### <a name="xml-namespace"></a>Espace de noms XML
 
-http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
+`http://schemas.microsoft.com/appx/manifest/desktop/windows10/2`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Éléments et attributs de cette extension
 
@@ -415,7 +415,7 @@ Chaque package peut contenir uniquement l'une de ces extensions. En d'autres ter
 
 #### <a name="xml-namespace"></a>Espace de noms XML
 
-http://schemas.microsoft.com/appx/manifest/uap/windows10/6
+`http://schemas.microsoft.com/appx/manifest/uap/windows10/6`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Éléments et attributs de cette extension
 
@@ -475,9 +475,9 @@ Spécifiez le comportement de votre application lorsqu’un utilisateur ouvre pl
 
 #### <a name="xml-namespaces"></a>Espaces de noms XML
 
-* http://schemas.microsoft.com/appx/manifest/uap/windows10
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/2
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/3
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10`
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/2`
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Éléments et attributs de cette extension
 
@@ -506,9 +506,9 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 
 Les applications de bureau empaquetées présentent les trois mêmes options que les applications de bureau standard.
 
-* ``Player``: Votre application est activée une fois. Tous les fichiers sélectionnés sont passés à votre application en tant que paramètres d’argument.
-* ``Single``: Votre application est activée une fois pour le premier fichier sélectionné. Les autres fichiers sont ignorés.
-* ``Document``: Une nouvelle instance distincte de votre application est activée pour chaque fichier sélectionné.
+* ``Player``: votre application est activée une fois. Tous les fichiers sélectionnés sont passés à votre application en tant que paramètres d’argument.
+* ``Single``: votre application est activée une fois pour le premier fichier sélectionné. Les autres fichiers sont ignorés.
+* ``Document``: une nouvelle instance distincte de votre application est activée pour chaque fichier sélectionné.
 
  Vous pouvez définir des préférences spécifiques pour les différents types de fichiers et d’actions. Par exemple, il se peut que vous souhaitiez ouvrir les *documents* en mode *Document* et les *images* en mode *Player*.
 
@@ -549,10 +549,10 @@ Permettez aux utilisateurs d’afficher une image miniature du contenu du fichie
 
 #### <a name="xml-namespace"></a>Espace de noms XML
 
-* http://schemas.microsoft.com/appx/manifest/uap/windows10
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/2
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/3
-* http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10`
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/2`
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
+* `http://schemas.microsoft.com/appx/manifest/desktop/windows10/2`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Éléments et attributs de cette extension
 
@@ -612,10 +612,10 @@ Permettez aux utilisateurs d’afficher un aperçu du contenu d’un fichier dan
 
 #### <a name="xml-namespace"></a>Espace de noms XML
 
-* http://schemas.microsoft.com/appx/manifest/uap/windows10
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/2
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/3
-* http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10`
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/2`
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
+* `http://schemas.microsoft.com/appx/manifest/desktop/windows10/2`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Éléments et attributs de cette extension
 
@@ -677,8 +677,8 @@ Pour plus d’informations sur le champ **Type** et les valeurs que vous pouvez 
 
 #### <a name="xml-namespaces"></a>Espaces de noms XML
 
-* http://schemas.microsoft.com/appx/manifest/uap/windows10
-* http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities/3
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10`
+* `http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities/3`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Éléments et attributs de cette extension
 
@@ -702,7 +702,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 |Catégorie |Toujours ``windows.fileTypeAssociation``.
 |Nom |Nom de l’Association de types de fichiers. Vous pouvez utiliser ce nom pour organiser et regrouper des types de fichiers. Le nom doit contenir tous les caractères minuscules, sans espace. |
 |FileType |Les extensions de fichier appropriées. |
-|valeur |Une [Valeur de type](https://docs.microsoft.com/windows/desktop/properties/building-property-handlers-user-friendly-kind-names) valide. |
+|value |Une [Valeur de type](https://docs.microsoft.com/windows/desktop/properties/building-property-handlers-user-friendly-kind-names) valide. |
 
 #### <a name="example"></a>Exemple
 
@@ -739,9 +739,9 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 
 #### <a name="xml-namespace"></a>Espace de noms XML
 
-* http://schemas.microsoft.com/appx/manifest/uap/windows10
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/3
-* http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10`
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
+* `http://schemas.microsoft.com/appx/manifest/desktop/windows10/2`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Éléments et attributs de cette extension
 
@@ -798,8 +798,8 @@ Si votre application de bureau définit un [Gestionnaire de menu contextuel](htt
 
 #### <a name="xml-namespaces"></a>Espaces de noms XML
 
-* http://schemas.microsoft.com/appx/manifest/foundation/windows10
-* http://schemas.microsoft.com/appx/manifest/desktop/windows10/4
+* `http://schemas.microsoft.com/appx/manifest/foundation/windows10`
+* `http://schemas.microsoft.com/appx/manifest/desktop/windows10/4`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Éléments et attributs de cette extension
 
@@ -896,7 +896,7 @@ Inscrivez les gestionnaires que vous souhaitez implémenter dans votre applicati
 
 #### <a name="xml-namespace"></a>Espace de noms XML
 
-* http://schemas.microsoft.com/appx/manifest/desktop/windows10
+* `http://schemas.microsoft.com/appx/manifest/desktop/windows10`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Éléments et attributs de cette extension
 
@@ -969,7 +969,7 @@ Les associations de protocole permettent l’interopérabilité entre votre appl
 
 #### <a name="xml-namespace"></a>Espace de noms XML
 
-http://schemas.microsoft.com/appx/manifest/uap/windows10/3
+`http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Éléments et attributs de cette extension
 
@@ -1020,8 +1020,8 @@ Les utilisateurs et autres processus peuvent utiliser un alias pour démarrer vo
 
 #### <a name="xml-namespaces"></a>Espaces de noms XML
 
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/3
-* http://schemas.microsoft.com/appx/manifest/desktop/windows10
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
+* `http://schemas.microsoft.com/appx/manifest/desktop/windows10`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Éléments et attributs de cette extension
 
@@ -1083,7 +1083,7 @@ Les utilisateurs peuvent désactiver manuellement la tâche de démarrage de vot
 
 #### <a name="xml-namespace"></a>Espace de noms XML
 
-http://schemas.microsoft.com/appx/manifest/desktop/windows10
+`http://schemas.microsoft.com/appx/manifest/desktop/windows10`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Éléments et attributs de cette extension
 
@@ -1104,7 +1104,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10
 |Catégorie |Toujours ``windows.startupTask``.|
 |Exécutable |Le chemin d’accès relatif au fichier exécutable à démarrer. |
 |TaskId |Un identificateur unique pour votre tâche. À l’aide de cet identificateur, votre application peut appeler les API de la classe [Windows. ApplicationModel. StartupTask](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.StartupTask) pour activer ou désactiver par programme une tâche de démarrage. |
-|Enabled |Indique si la tâche est activée ou désactivée au démarrage. Les tâches activées seront exécutées la prochaine fois que l’utilisateur se connecte (sauf si celui-ci les désactive). |
+|Activé |Indique si la tâche est activée ou désactivée au démarrage. Les tâches activées seront exécutées la prochaine fois que l’utilisateur se connecte (sauf si celui-ci les désactive). |
 |DisplayName |Le nom de la tâche qui s’affiche dans le Gestionnaire des tâches. Vous pouvez localiser cette chaîne à l’aide de ```ms-resource```. |
 
 #### <a name="example"></a>Exemple
@@ -1139,7 +1139,7 @@ La lecture automatique peut présenter votre application en tant qu’option lor
 
 #### <a name="xml-namespace"></a>Espace de noms XML
 
-http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
+`http://schemas.microsoft.com/appx/manifest/desktop/windows10/3`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Éléments et attributs de cette extension
 
@@ -1157,8 +1157,8 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
 |Nom |Description |
 |-------|-------------|
 |Catégorie |Toujours ``windows.autoPlayHandler``.
-|ActionDisplayName |Chaîne qui représente l’action que les utilisateurs peuvent effectuer avec un appareil qu’ils se connectent à un PC (par exemple : « Importer des fichiers » ou « lire la vidéo »). |
-|ProviderDisplayName | Chaîne qui représente votre application ou service (par exemple : « Lecteur vidéo contoso »). |
+|ActionDisplayName |Une chaîne représentant l'action que les utilisateurs peuvent choisir avec un appareil qu'ils connectent à un PC (par exemple : « Importer les fichiers » ou « Lire la vidéo »). |
+|ProviderDisplayName | Chaîne qui représente votre application ou service (par exemple : « lecteur vidéo contoso »). |
 |ContentEvent |Le nom d’un événement de contenu qui envoie une invite aux utilisateurs avec vos éléments ``ActionDisplayName`` et ``ProviderDisplayName``. Les événements de contenu se déclenchent lorsqu’un périphérique de volume, tel que la carte mémoire d’un appareil photo, une clé USB ou un DVD, est inséré dans le PC. Vous trouverez la liste complète de ces événements [ici](https://docs.microsoft.com/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference).  |
 |Verb |Le paramètre Verb identifie une valeur qui est transmise à votre application pour l’option sélectionnée. Vous pouvez spécifier plusieurs options de lancement pour un événement de lecture automatique et utiliser le paramètre Verbe pour déterminer l’option sélectionnée par l’utilisateur pour votre application. Vous pouvez vérifier quelle option a été sélectionnée par l’utilisateur par le biais de la propriété verb des arguments d’événement de démarrage transmis à votre application. Vous pouvez attribuer n’importe quelle valeur au paramètre Verbe, sauf la valeur Open qui est réservée. |
 |DropTargetHandler |ID de classe de l’application qui implémente l’interface [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) . Les fichiers du média amovibles sont transmis à la méthode [Drop](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget.drop?view=visualstudiosdk-2017#Microsoft_VisualStudio_OLE_Interop_IDropTarget_Drop_Microsoft_VisualStudio_OLE_Interop_IDataObject_System_UInt32_Microsoft_VisualStudio_OLE_Interop_POINTL_System_UInt32__) de votre implémentation [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017).  |
@@ -1227,7 +1227,7 @@ Vous devrez modifier votre application pour qu’elle reçoive des données d’
 
 #### <a name="xml-namespaces"></a>Espaces de noms XML
 
-http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
+`http://schemas.microsoft.com/appx/manifest/desktop/windows10/2`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Éléments et attributs de cette extension
 
@@ -1277,7 +1277,7 @@ Partagez vos polices personnalisées avec d’autres applications Windows.
 
 #### <a name="xml-namespaces"></a>Espaces de noms XML
 
-http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
+`http://schemas.microsoft.com/appx/manifest/desktop/windows10/2`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Éléments et attributs de cette extension
 
@@ -1325,7 +1325,7 @@ Démarrer un processus Win32 qui s’exécute en mode de confiance totale.
 
 #### <a name="xml-namespaces"></a>Espaces de noms XML
 
-http://schemas.microsoft.com/appx/manifest/desktop/windows10
+`http://schemas.microsoft.com/appx/manifest/desktop/windows10`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Éléments et attributs de cette extension
 

@@ -3,58 +3,55 @@ Description: Les applications de bureau empaquetées peuvent utiliser un large �
 title: API UWP disponibles pour une application de bureau empaquetée (Pont du bureau)
 ms.date: 04/19/2019
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 3deb89a8eba60e5c4f67b18091d78d24d9179aa3
-ms.sourcegitcommit: e9dc2711f0a0758727468f7ccd0d0f0eee3363e3
+ms.openlocfilehash: 481b326c3f4b3608d0d3f5f7a8cec943f1d6c437
+ms.sourcegitcommit: d7eccdb27c22bccac65bd014e62b6572a6b44602
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69979340"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73142524"
 ---
 # <a name="uwp-apis-available-to-desktop-apps"></a>API UWP disponibles pour les applications de bureau
 
 Les applications de bureau peuvent utiliser une large gamme d’API plateforme Windows universelle (UWP), même si elles n’ont pas été totalement migrées vers une application UWP. Cet article répertorie les classes disponibles que votre application de bureau peut utiliser.
 
-> [!NOTE]
-> De nombreuses API UWP requièrent l’utilisation d’une [identité de package](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) dans une application de bureau. L’identité du package est disponible lorsque l’application de bureau est empaquetée dans un [package MSIX](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root). Dans cet article, ces applications sont appelées *applications*empaquetées.
-
-La plupart des API UWP fonctionnent bien sur les applications empaquetées. Certains domaines de fonctionnalités n’ont cependant pas été totalement testés ou ne fonctionnent actuellement pas comme prévu.
+De nombreuses API UWP requièrent l’utilisation d’une [identité de package](modernize-packaged-apps.md) dans une application de bureau. La plupart des API UWP fonctionnent avec des applications bien connues qui ont une identité de package. Certains domaines de fonctionnalités n’ont cependant pas été totalement testés ou ne fonctionnent actuellement pas comme prévu.
 
 | Domaine de fonctionnalité | Détails |
 |--------------|---------|
-| Rendez-vous, contacts et messages électroniques | Toutes les API ne sont pas actuellement prises en charge pour les applications empaquetées. |
-| Authentification et identité des utilisateurs | Toutes les API ne sont pas actuellement prises en charge pour les applications empaquetées. |
-| Tâches en arrière-plan | Bien que les applications empaquetées puissent inscrire des tâches en arrière-plan, seules les applications UWP peuvent s’exécuter <i>en tant que</i> tâches en arrière-plan. Pour plus d’informations, voir [l’exemple de tâche en arrière-plan sur GitHub](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTasksSample). |
-| Bluetooth | Toutes les API ne sont pas actuellement prises en charge pour les applications empaquetées. |
-| Chat et appels téléphoniques | Les applications empaquetées ne peuvent pas s’exécuter sur un appareil mobile tant qu’elles n’ont pas été entièrement transférées vers UWP. |
+| Rendez-vous, contacts et messages électroniques | Toutes les API ne sont pas prises en charge actuellement. |
+| Authentification et identité des utilisateurs | Toutes les API ne sont pas prises en charge actuellement. |
+| Tâches en arrière-plan | Alors que les applications de bureau peuvent enregistrer des tâches en arrière-plan, seules les applications UWP complètes peuvent s’exécuter <i>en tant que tâche en</i> arrière-plan. Pour plus d’informations, voir [Exemple de tâche en arrière-plan sur GitHub](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTasksSample). |
+| Bluetooth | Toutes les API ne sont pas prises en charge actuellement. |
+| Chat et appels téléphoniques | Les applications de bureau ne peuvent pas s’exécuter sur mobile tant qu’elles ne sont pas entièrement portées sur UWP. |
 | Activation des contrats | Seules les applications UWP complètes peuvent être activées par un contrat. |
-| Chiffrement | Toutes les API ne sont pas actuellement prises en charge pour les applications empaquetées. |
-| Géolocalisation | Toutes les API ne sont pas actuellement prises en charge pour les applications empaquetées. |
-| Sélecteurs de fichiers et de dossiers | Les applications empaquetées disposent d’un accès complet au système de fichiers et n’ont pas besoin de sélecteurs UWP. |
-| Support | Toutes les API ne sont pas actuellement prises en charge pour les applications empaquetées. |
-| Point de service | Toutes les API ne sont pas actuellement prises en charge pour les applications empaquetées. |
-| Cartes à puce | Toutes les API ne sont pas actuellement prises en charge pour les applications empaquetées. |
-| PlayReady | Toutes les API ne sont pas actuellement prises en charge pour les applications empaquetées. |
-| VPN | Toutes les API ne sont pas actuellement prises en charge pour les applications empaquetées. |
-| Portefeuille | Les applications empaquetées ne peuvent pas s’exécuter sur un appareil mobile tant qu’elles n’ont pas été entièrement transférées vers UWP. |
+| Chiffrement | Toutes les API ne sont pas prises en charge actuellement. |
+| Géolocalisation | Toutes les API ne sont pas prises en charge actuellement. |
+| Sélecteurs de fichiers et de dossiers | Les applications avec une identité ont un accès complet au système de fichiers et n’ont pas besoin de sélecteurs UWP. |
+| Multimédia | Toutes les API ne sont pas prises en charge actuellement. |
+| Point de service | Toutes les API ne sont pas prises en charge actuellement. |
+| Cartes à puce | Toutes les API ne sont pas prises en charge actuellement. |
+| PlayReady | Toutes les API ne sont pas prises en charge actuellement. |
+| VPN | Toutes les API ne sont pas prises en charge actuellement. |
+| Portefeuille | Les applications de bureau ne peuvent pas s’exécuter sur mobile tant qu’elles ne sont pas entièrement portées sur UWP. |
 | Interface utilisateur XAML | Windows 10, version 1809 et les versions antérieures ne prennent pas en charge l’hébergement de contenu XAML UWP dans les applications de bureau. À partir de Windows 10, version 1903, vous pouvez utiliser des [îlots XAML](xaml-islands.md) pour héberger le contenu XAML UWP.  |
 
 Parfois, les API dans ces domaines peuvent sembler fonctionner correctement. Toutefois, si une API n’apparaît pas explicitement comme étant prise en charge, vous devez évitez de l’utiliser car elle pourrait avoir des effets ou un comportement inattendus. Ces API pourraient être prises en charge dans les versions futures. En attendant, votre application doit utiliser les API Win32 ou .NET applicables.
 
 ## <a name="list-of-apis"></a>Liste des API
 
-Voici une liste complète des API UWP prises en charge dans les applications de bureau. Vous pouvez afficher les [API prises en charge uniquement dans](#new) les applications empaquetées ou [les API prises en charge dans les applications de bureau et les](#both)applications empaquetées.
+Voici une liste complète des API UWP prises en charge dans les applications de bureau. Vous pouvez afficher les [API prises en charge uniquement dans les applications avec l’identité du package](#new) ou [les API prises en charge dans toutes les applications de bureau](#both).
 
 Pour obtenir des exemples d’utilisation des API UWP, consultez les exemples d’application [Desktop Bridge Samples](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) and [plateforme Windows universelle (UWP)](https://github.com/Microsoft/Windows-universal-samples) sur GitHub. Vous pouvez également consulter le billet de blog de création d’application pour Windows [Appel d’API Windows 10 à partir d’une application de bureau](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application/).
 
 <a id="new" />
 
-### <a name="apis-supported-only-in-packaged-apps"></a>API prises en charge uniquement dans les applications empaquetées
+### <a name="apis-supported-only-in-apps-with-package-identity"></a>API prises en charge uniquement dans les applications avec l’identité du package
 
 * [Windows. ApplicationModel. DataTransfer. DataProviderHandler](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.dataproviderhandler)
 * [Windows. ApplicationModel. DataTransfer. DataRequest](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataRequest)
@@ -380,9 +377,9 @@ Pour obtenir des exemples d’utilisation des API UWP, consultez les exemples d�
 
 <a id="both" />
 
-### <a name="apis-supported-in-both-packaged-apps-and-desktop-applications"></a>API prises en charge dans les applications empaquetées et dans les applications de bureau
+### <a name="apis-supported-in-all-desktop-applications"></a>API prises en charge dans toutes les applications de bureau
 
-Les API qui ont les [DualApiPartition](https://docs.microsoft.com/uwp/api/Windows.Foundation.Metadata.DualApiPartitionAttribute) sont prises en charge dans les applications empaquetées et les applications de bureau décompressées. Pour déterminer si une API que vous souhaitez appeler à partir de votre application de bureau est prise en charge, recherchez l’article de référence pour la classe ou le membre qui vous intéresse dans la [documentation de référence pour les espaces de noms WinRT](https://docs.microsoft.com/uwp/api/). Vérifiez ensuite si la section **attributs** de l’article de référence comprend l’attribut [DualApiPartition](https://docs.microsoft.com/uwp/api/Windows.Foundation.Metadata.DualApiPartitionAttribute) .
+Les API qui ont les [DualApiPartition](https://docs.microsoft.com/uwp/api/Windows.Foundation.Metadata.DualApiPartitionAttribute) sont prises en charge dans toutes les applications de bureau, y compris celles avec l’identité de package et celles sans identité de package. Pour déterminer si une API que vous souhaitez appeler à partir de votre application de bureau est prise en charge, recherchez l’article de référence pour la classe ou le membre qui vous intéresse dans la [documentation de référence pour les espaces de noms WinRT](https://docs.microsoft.com/uwp/api/). Vérifiez ensuite si la section **attributs** de l’article de référence comprend l’attribut [DualApiPartition](https://docs.microsoft.com/uwp/api/Windows.Foundation.Metadata.DualApiPartitionAttribute) .
 
 ## <a name="next-steps"></a>Étapes suivantes
 

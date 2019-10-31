@@ -3,16 +3,16 @@ Description: Étendre votre application de bureau avec des interfaces utilisateu
 title: Étendre votre application de bureau avec des interfaces utilisateur et des composants Windows
 ms.date: 06/08/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 7359d28d968a2948e9f4049e2acc3c655edcfcb3
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 0a404f2d9f58fc283cf47f47860362c0f5bc8164
+ms.sourcegitcommit: d7eccdb27c22bccac65bd014e62b6572a6b44602
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339200"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73142547"
 ---
 # <a name="extend-your-desktop-app-with-modern-uwp-components"></a>Étendez votre application de bureau avec des composants UWP modernes
 
@@ -21,7 +21,7 @@ Certaines expériences Windows 10 (par exemple: une page d'interface utilisateu
 Dans de nombreux cas, vous pouvez appeler des API Windows Runtime directement à partir de votre application de bureau. par conséquent, avant de passer en revue ce guide, consultez [améliorer pour Windows 10](desktop-to-uwp-enhance.md).
 
 > [!NOTE]
-> Les fonctionnalités décrites dans cet article requièrent la création d’un package d’application Windows pour votre application de bureau. Si vous ne l’avez pas encore fait, consultez [packages d’applications de bureau](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root).
+> Les fonctionnalités décrites dans cet article requièrent que votre application de bureau ait une [identité de package](modernize-packaged-apps.md), soit en [empaquetant votre application de bureau dans un package MSIX](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root) , soit en lui [accordant l’identité de votre application à l’aide d’un package fragmenté](grant-identity-to-nonpackaged-apps.md).
 
 Si vous êtes prêt, commençons.
 
@@ -100,15 +100,15 @@ Cette image montre une application Windows Forms qui ouvre une interface utilisa
 
 Pour afficher une interface utilisateur XAML, procédez comme suit :
 
-:one: [Configurer votre solution](#solution-setup)
+:one: [Configurez votre solution](#solution-setup)
 
-:two: [Créer une interface utilisateur XAML](#xaml-UI)
+:two: [Créez une interface utilisateur avec XAML](#xaml-UI)
 
-:three: [Ajouter une extension de protocole au projet UWP](#add-a-protocol-extension)
+:three: [Ajoutez une extension de protocole au projet UWP](#add-a-protocol-extension)
 
-:four: [Démarrer l’application UWP à partir de votre application de bureau](#start)
+:four: [Démarrez l’application UWP à partir de votre application de bureau](#start)
 
-:five: [Dans le projet UWP, affichez la page que vous souhaitez](#parse)
+:five: [Dans le projet UWP, affichez la page que vous voulez](#parse)
 
 <a id="solution-setup" />
 
@@ -220,7 +220,7 @@ protected override void OnActivated(Windows.ApplicationModel.Activation.IActivat
 }
 ```
 
-Dans le code derrière votre page XAML, remplacez la méthode ``OnNavigatedTo`` pour utiliser les paramètres transmis à la page. Dans ce cas, nous allons utiliser la latitude et la longitude qui ont été transmises à cette page pour afficher un emplacement dans une carte.
+Dans le code derrière votre page XAML, remplacez la méthode ``OnNavigatedTo`` pour utiliser les paramètres passés dans la page. Dans ce cas, nous allons utiliser la latitude et la longitude qui ont été transmises à cette page pour afficher un emplacement dans une carte.
 
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -263,13 +263,13 @@ Pour faire de votre application une cible de partage, procédez comme suit :
 
 :one: [Ajouter une extension de cible de partage](#share-extension)
 
-:two: [Remplacer le gestionnaire d’événements OnShareTargetActivated](#override)
+: deux : [substituer le gestionnaire d’événements OnShareTargetActivated](#override)
 
-:three: [Ajouter des extensions de bureau au projet UWP](#desktop-extensions)
+: trois : [Ajouter des extensions de bureau au projet UWP](#desktop-extensions)
 
-:four: [Ajouter l’extension de processus de confiance totale](#full-trust)
+: quatre : [Ajouter l’extension de processus de confiance totale](#full-trust)
 
-:five: [Modifier l’application de bureau pour récupérer le fichier partagé](#modify-desktop)
+: cinq : [modifier l’application de bureau pour récupérer le fichier partagé](#modify-desktop)
 
 <a id="share-extension" />
 
@@ -412,7 +412,7 @@ Pour créer un service en arrière-plan, procédez comme suit :
 
 :two: [Configurer la tâche en arrière-plan](#configure-background-task)
 
-:three: [Inscrire la tâche en arrière-plan](#register-background-task)
+:three: [Enregistrer la tâche en arrière-plan](#register-background-task)
 
 <a id="implement-task" />
 
