@@ -5,12 +5,12 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: Windows 10, uwp, étendre, agencer, service d’application, package, extension
 ms.localizationpriority: medium
-ms.openlocfilehash: a72b175e672b44d0dace0b4bf04956792edfadd0
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: d9a98ef8e0ec53668277face05d83c08f6421cb7
+ms.sourcegitcommit: c7e10793cbef55ace959ac8fc6ddd08e683602bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282511"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73329508"
 ---
 # <a name="extend-your-app-with-services-extensions-and-packages"></a>Étendre votre application avec des services, des extensions et des packages
 
@@ -37,7 +37,7 @@ Code que vous pouvez télécharger dans le Store et exécuter depuis votre appli
 
 **Plug-ins de code in-proc**  
 
-Code qui s’exécute in-process avec votre application. Le langage C++ est le seul pris en charge. Peut également intégrer du contenu. Étant donné que le code s’exécute in-process, on suppose un niveau supérieur de confiance. Vous pouvez choisir de ne pas exposer ce type d’extensibilité à une tierce partie.
+Code qui s’exécute in-process avec votre application. Peut également intégrer du contenu. Étant donné que le code s’exécute in-process, on suppose un niveau supérieur de confiance. Vous pouvez choisir de ne pas exposer ce type d’extensibilité à une tierce partie.
 
 **Ressources UX (chaînes/images)**  
 
@@ -98,7 +98,7 @@ Les services d’application sont des applications UWP qui fournissent des servi
 
 L’installation en continu est un moyen d’optimiser la manière dont votre application est fournie aux utilisateurs. Au lieu d’attendre le téléchargement complet de l’application pour pouvoir l’utiliser, les utilisateurs peuvent commencer à profiter de l’application dès qu’une partie requise a été téléchargée. C’est à vous, en tant que développeur, de segmenter votre application en une section requise pour son activation de base et son lancement, et en contenu supplémentaire pour le reste de l’application. Voir [Installation en continu d’une application UWP](/windows/msix/package/streaming-install) pour obtenir plus d’informations et des détails sur l’implémentation.
 
-## <a name="see-also"></a>Voir aussi
+## <a name="see-also"></a>Articles associés
 
 [Créer et consommer un service d’application](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)  
 [Présentation des packages d’actifs](/windows/msix/package/asset-packages)  

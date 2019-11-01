@@ -6,42 +6,39 @@ ms.date: 10/13/2019
 ms.localizationpriority: medium
 ms.author: quradic
 author: QuinnRadich
-ms.openlocfilehash: e90d1239b48c91583dbe47f1e345a4acd7fa629c
-ms.sourcegitcommit: 8923daa8b930f4d01c772c14a1f159332c4a5ba5
+ms.openlocfilehash: 19028ca868c05ac0a1de39b3187a30f95567d915
+ms.sourcegitcommit: c7e10793cbef55ace959ac8fc6ddd08e683602bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/14/2019
-ms.locfileid: "72303918"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73329505"
 ---
 # <a name="latest-updates-to-the-windows-developer-docs"></a>Dernières mises à jour des documents des développeurs Windows
 
 
-Les documents des développeurs Windows sont régulièrement mis à jour avec des informations et du contenu nouveaux et améliorés. Les documents suivants sont certains qui ont constaté des mises à jour significatives au cours de la dernière semaine qui se termine le 11 octobre 2019 :
+Les documents des développeurs Windows sont régulièrement mis à jour avec des informations et du contenu nouveaux et améliorés. Les documents suivants sont certains qui ont constaté des mises à jour significatives au cours du dernier mois, jusqu’au 31 octobre 2019 :
 
 
-## <a name="uwp-conceptual"></a>Conceptuel UWP
+## <a name="winrt-conceptual"></a>Conceptuel WinRT
 
 <ul>
-<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/author-apis">Créer des API avec C++/WinRT</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/faq">Questions fréquentes sur C++/WinRT</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/index">C++/WinRT</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/app-resources/uri-schemes">Schémas d’URI</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/composition/inertia-modifiers">Utiliser les modificateurs d’inertie pour créer des points d’alignement</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/composition/spring-animations">Animations Spring</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/concurrency">Opérations concurrentes et asynchrones avec C++/WinRT</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/news">Nouveautés de C++/WinRT</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/data-access/index">Accès aux données</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/data-access/sqlite-databases">Utiliser une base de données SQLite dans une application UWP</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/design/input/access-keys">Règles de conception des clés d’accès</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/design/input/keyboard-events">Événements de clavier</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/design/layout/layout-panels">Panneaux de disposition pour les applications de plateforme Windows universelle (UWP)</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/design/layout/transforms">Vue d’ensemble des transformations</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/devices-sensors/generate-3mf">Générer un package 3MF</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/enterprise/index">Entreprise</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/maps-and-location/display-poi">Afficher des POI (centres d’intérêt) sur une carte</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/networking/httpclient">HttpClient</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/porting/android-ios-uwp-map">Mappage de concepts d’applications Windows pour développeurs Android et iOS</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/publish/store-policies">Politiques du Microsoft Store</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-overview">Vue d’ensemble du langage XAML</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/app-analysis">Analyse d’application</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/pgo-for-uwp">Exécution de l’optimisation guidée par profil (PGO) sur les applications de plateforme Windows universelle (UWP)</a></li>
 </ul>
 
 
+
+## <a name="winrt-api-reference"></a>Informations de référence sur l’API WinRT
+
+<ul>
+<li><a href="https://docs.microsoft.com/windows/win32/api/d3d12/nn-d3d12-id3d12fence">ID3D12Fence (d3d12. h)</a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/d3d12/nn-d3d12-id3d12fence1">ID3D12Fence1 (d3d12. h)</a></li>
+</ul>
 
 ## <a name="win32-conceptual"></a>Conceptuel Win32
 
@@ -89,19 +86,10 @@ Les documents des développeurs Windows sont régulièrement mis à jour avec de
 ## <a name="win32-api-reference"></a>Informations de référence sur l’API Win32
 
 <ul>
-<li><a href="https://docs.microsoft.com/windows/win32/api/d3d12/nn-d3d12-id3d12fence">ID3D12Fence (d3d12. h)</a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/d3d12/nn-d3d12-id3d12fence1">ID3D12Fence1 (d3d12. h)</a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/index_bkp">Référence de programmation pour l’API Windows</a></li>
-</ul>
-
-## <a name="winrt-api-reference"></a>Informations de référence sur l’API WinRT
-
-<ul>
 <li><a href="https://docs.microsoft.com/uwp/api/windows.devices.lights.lamparraykind">Windows. Devices. Lights. LampArrayKind</a></li>
 <li><a href="https://docs.microsoft.com/uwp/api/windows.devices.lights.lamppurposes">Windows. Devices. Lights. LampPurposes</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.devices.usb.usbdeviceclass">Windows. Devices. USB. UsbDeviceClass</a></li>
 <li><a href="https://docs.microsoft.com/uwp/api/windows.foundation.numerics.matrix3x2">Windows. Foundation. Numerics. Matrix3x2</a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.graphics.directx.direct3d11.idirect3ddevice">Windows. Graphics. DirectX. Direct3D11. IDirect3DDevice</a></li>
 <li><a href="https://docs.microsoft.com/uwp/api/windows.graphics.directx.directxpixelformat">Windows. Graphics. DirectX. DirectXPixelFormat</a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegetpropertystatus">Windows.Media.Capture.Frames.MediaFrameSourceGetPropertyStatus</a></li>
-
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.textreadingorder">Windows. UI. Xaml. TextReadingOrder</a></li>
 </ul>
