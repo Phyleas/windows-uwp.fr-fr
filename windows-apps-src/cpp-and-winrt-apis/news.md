@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, actualités, nouveautés, nouveau
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 525110a09c56f48f9f9ce3d2521c98e2297a8372
-ms.sourcegitcommit: 6fbf645466278c1f014c71f476408fd26c620e01
+ms.openlocfilehash: 24abdb26cf884367d9a9521d30b09b443d2e4e00
+ms.sourcegitcommit: 5dfa98a80eee41d97880dba712673168070c4ec8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72816708"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72998614"
 ---
 # <a name="whats-new-in-cwinrt"></a>Nouveautés de C++/WinRT
 
@@ -269,7 +269,7 @@ Il peut s’avérer difficile d’utiliser des paramètres `out`, notamment des 
 
 L’implémentation [**winrt::event**](/uwp/cpp-ref-for-winrt/event) gère maintenant le cas où sa méthode **remove** est appelée avec une valeur de jeton non valide (une valeur qui n’est pas présente dans le tableau).
 
-#### <a name="coroutine-locals-are-now-destroyed-before-the-coroutine-returns"></a>Destruction des variables locales de coroutine avant le retour de la coroutine
+#### <a name="coroutine-local-variables-are-now-destroyed-before-the-coroutine-returns"></a>Destruction des variables locales de coroutine avant le retour de la coroutine
 
 La façon traditionnelle d’implémenter un type de coroutine peut permettre à des variables locales au sein de la coroutine d’être détruites *après* le retour/la fin de la coroutine (plutôt qu’avant la suspension finale). La reprise d’objets waiter est désormais différée jusqu’à la suspension finale, afin d’éviter ce problème et de bénéficier d’autres avantages.
 
@@ -296,7 +296,7 @@ Autres modifications.
 - **Changement cassant**. Le [**constructeur winrt::handle_type**](/uwp/cpp-ref-for-winrt/handle-type#handle_typehandle_type-constructor) a été renforcé en devenant plus explicite (il est désormais plus difficile d’écrire du code incorrect avec lui). Si vous avez besoin d’assigner une valeur de handle brute, appelez la [**fonction handle_type::attach**](/uwp/cpp-ref-for-winrt/handle-type#handle_typeattach-function) à la place.
 - **Changement cassant**. Les signatures de **WINRT_CanUnloadNow** et **WINRT_GetActivationFactory** ont changé. Vous ne devez pas du tout déclarer ces fonctions. Incluez plutôt `winrt/base.h` (qui est automatiquement inclus si vous incluez des fichiers d’en-tête d’espace de noms Windows C++/WinRT) pour inclure les déclarations de ces fonctions.
 - Pour le [**struct winrt::clock**](/uwp/cpp-ref-for-winrt/clock), **from_FILETIME/to_FILETIME** sont dépréciés en faveur de **from_file_time/to_file_time**.
-- Les API qui attendent des paramètres **IBuffer** sont simplifiées. Bien que la plupart des API préfèrent les collections ou les tableaux, il en existe suffisamment qui s’appuient sur **IBuffer** pour qu’il soit nécessaire de simplifier leur utilisation à partir de C++. Cette mise à jour offre un accès direct aux données situées derrière une implémentation **IBuffer**, en utilisant la même convention de nommage de données que celle utilisée par les conteneurs des bibliothèques standard C++. Les conflits avec les noms de métadonnées qui commencent traditionnellement par une lettre majuscule sont ainsi évités.
+- Les API simplifiées attendent des paramètres **IBuffer**. La plupart des API préfèrent les collections ou les tableaux. Toutefois, nous avons pensé que ce serait bien de simplifier l’appel des API qui reposent sur **IBuffer**. Cette mise à jour fournit un accès direct aux données qui sont derrière une implémentation **IBuffer**. Elle utilise la même convention de nommage de données que celle utilisée par les conteneurs de bibliothèque standard C++. Les conflits avec les noms de métadonnées qui commencent conventionnellement par une lettre majuscule sont ainsi évités.
 - Génération de code améliorée : diverses améliorations permettent de réduire la taille du code, d’améliorer l’incorporation (inlining) et d’optimiser la mise en cache de la fabrique.
 - Récursivité inutile supprimée. Quand la ligne de commande fait référence à un dossier, plutôt qu’à un `.winmd` spécifique, l’outil `cppwinrt.exe` ne recherche plus des fichiers `.winmd` de manière récursive. L’outil `cppwinrt.exe` gère à présent aussi les doublons plus intelligemment, en renforçant leur résilience face aux erreurs des utilisateurs et aux fichiers `.winmd` mal formés.
 - Pointeurs intelligents renforcés. Auparavant, les révocateurs d’événements échouaient quand une nouvelle valeur était déplacée ou affectée. Cela a permis de découvrir un problème où les classes de pointeur intelligent ne géraient pas de façon fiable l’auto-affectation ; rootée dans le [**modèle de struct winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr). **winrt::com_ptr** a été corrigé, ainsi que les révocateurs d’événements, pour gérer la sémantique de déplacement correctement afin que la révocation s’effectue au moment de l’affectation.
