@@ -5,16 +5,16 @@ ms.date: 06/19/2018
 ms.topic: article
 keywords: windows 10, uwp, point de vente, pdv
 ms.localizationpriority: medium
-ms.openlocfilehash: aba44cec7081d05f66e90b2540f0e9609b87ab83
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a2fa7e107d890a5be7c8d27af03289b839ec3c09
+ms.sourcegitcommit: 5dfa98a80eee41d97880dba712673168070c4ec8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57596874"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73052006"
 ---
 # <a name="pointofservice-device-objects"></a>Objets appareil PointOfService
 
-## <a name="creating-a-device-object"></a>Création d'un objet appareil
+## <a name="creating-a-device-object"></a>Création d’un objet appareil
 Une fois que vous avez identifié l'appareil PointOfService que vous souhaitez utiliser, soit à partir d’une nouvelle énumération, soit d'un ID d’appareil stocké, vous appelez simplement [**FromIdAsync**](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.fromidasync) avec le [**DeviceID**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.id) que vous avez choisi par programme ou que l’utilisateur a sélectionné pour créer un objet appareil de point de service.
 
 Cet exemple tente de créer un nouvel objet BarcodeScanner avec FromIdAsync à l’aide d’un ID d’appareil. Si un échec se produit lors de la création de l’objet, un message de débogage est écrit.
@@ -41,10 +41,10 @@ Avant Windows 8, les applications avaient un cycle de vie simple. Les applicati
 
 Windows 8 a mis en place un nouveau modèle d’application, avec les applications UWP. Globalement, un état suspendu a été ajouté. Une application UWP est suspendue, lorsque l’utilisateur la réduit ou bascule vers une autre application. Autrement dit, les threads de l’application sont arrêtés et l’application reste en mémoire, sauf si le système d’exploitation a besoin de récupérer des ressources et tous les objets appareils représentant des périphériques PointOfService sont automatiquement fermés pour autoriser d’autres applications à accéder aux périphériques. Lorsque l’utilisateur revient à l’application, celle-ci peut rapidement reprendre un état d’exécution et restaurer les connexions des périphériques PointOfService, à condition que celles-ci soient toujours disponibles à la reprise.
 
-Vous pouvez détecter la fermeture d’un objet pour une raison quelconque avec un <DeviceObject>. Le gestionnaire de l'événement Fermé note l’ID de l'appareil pour rétablir la connexion à l’avenir.   Vous pouvez également souhaiter gérer cette situation sur une notification de Suspension d'une application pour enregistrer l'ID de l'appareil afin de rétablir les connexions du périphérique sur une notification de Reprise d'une application.  Assurez-vous de ne pas doubler les gestionnaires d’événements et de ne pas dupliquer les actions pour l’objet appareil sur les deux <DeviceObject>.Fermé et Suspension d'une application.
+Vous pouvez détecter quand un objet est fermé pour une raison quelconque avec un \<DeviceObject\>. Le gestionnaire d’événements fermés note l’ID de l’appareil pour réétablir la connexion à l’avenir.   Vous pouvez également souhaiter gérer cette situation sur une notification de Suspension d'une application pour enregistrer l'ID de l'appareil afin de rétablir les connexions du périphérique sur une notification de Reprise d'une application.  Veillez à ne pas doubler sur les gestionnaires d’événements et les actions dupliquées pour l’objet appareil sur \<DeviceObject\>. Fermé et interruption de l’application.
 
 > [!TIP]
 > Reportez-vous aux rubriques suivantes pour plus d’informations sur le cycle de vie d’une application de plateforme Windows universelle (UWP) Windows 10 :
-> - [Cycle de vie des applications plateforme Windows universelle (UWP) de Windows 10](../launch-resume/app-lifecycle.md)
-> - [Gérer la suspension d’application](../launch-resume/suspend-an-app.md)
+> - [Cycle de vie des applications Windows 10 plateforme Windows universelle (UWP)](../launch-resume/app-lifecycle.md)
+> - [Gérer la suspension de l’application](../launch-resume/suspend-an-app.md)
 > - [Gérer la reprise d’une application](../launch-resume/resume-an-app.md)
