@@ -11,12 +11,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 662f23c5ab201a44669b2e4e4a454aa73ebd3b43
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 31b4a02f3307909f325b71cdc0540d44054adf4c
+ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340194"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73061972"
 ---
 # <a name="resourcedictionary-and-xaml-resource-references"></a>Références aux ressources ResourceDictionary et XAML
 
@@ -77,7 +77,7 @@ Ici, un pinceau et une chaîne sont marqués en tant que ressources et utilisés
 </Page>
 ```
 
-Toutes les ressources doivent présenter une clé. Généralement, cette clé est une chaîne définie avec `x:Key=”myString”`. Toutefois, il existe d’autres moyens de spécifier une clé :
+Toutes les ressources doivent présenter une clé. Généralement, cette clé est une chaîne définie avec `x:Key="myString"`. Toutefois, il existe d’autres moyens de spécifier une clé :
 
 -   [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) et [ControlTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) nécessitent un composant **TargetType**, et utilisent le composant **TargetType** en tant que clé si [x:Key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute) n’est pas spécifié. Dans ce cas, la clé est l’objet réel Type, pas une chaîne. (Voir les exemples ci-dessous)
 -   Les ressources [DataTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate) qui ont un composant **TargetType** utilisent **TargetType** en tant que clé si [x:Key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute) n’est pas spécifié. Dans ce cas, la clé est l’objet réel Type, pas une chaîne.

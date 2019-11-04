@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: bcdeafc3f30f5b385c6feeddee78cf31635177a0
-ms.sourcegitcommit: d7eccdb27c22bccac65bd014e62b6572a6b44602
+ms.openlocfilehash: ca9e91233206f0e97d17fdbdd7b0fd09a2897cd8
+ms.sourcegitcommit: 3710117f24adb8555aa94b372db814e5d30ae45a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73142536"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73427089"
 ---
 # <a name="call-uwp-apis-in-desktop-apps"></a>Appeler les API UWP dans les applications de bureau
 
@@ -43,13 +43,13 @@ Il existe deux options pour les projets .NET :
 
 2. Une fois votre projet ouvert dans Visual Studio, cliquez avec le bouton droit sur votre projet dans **Explorateur de solutions** , puis choisissez **gérer les packages NuGet**.
 
-3. Dans la fenêtre **Gestionnaire de package NuGet** , assurez-vous que l’option **inclure la version préliminaire** est sélectionnée. Ensuite, sélectionnez l’onglet **Parcourir** et recherchez `Microsoft.Windows.SDK.Contracts`.
+3. Dans la fenêtre **Gestionnaire de package NuGet** , sélectionnez l’onglet **parcourir** et recherchez `Microsoft.Windows.SDK.Contracts`.
 
 4. Une fois le package `Microsoft.Windows.SDK.Contracts` trouvé, dans le volet droit de la fenêtre **Gestionnaire de package NuGet** , sélectionnez la **version** du package que vous souhaitez installer en fonction de la version de Windows 10 que vous souhaitez cibler :
 
-    * **10.0.18362. xxxx-Preview**: choisissez cette version pour Windows 10, version 1903.
-    * **10.0.17763. xxxx-Preview**: choisissez cette version pour Windows 10, version 1809.
-    * **10.0.17134. xxxx-Preview**: choisissez cette version pour Windows 10, version 1803.
+    * **10.0.18362. xxxx**: choisissez cette version pour Windows 10, version 1903.
+    * **10.0.17763. xxxx**: choisissez cette version pour Windows 10, version 1809.
+    * **10.0.17134. xxxx**: choisissez cette version pour Windows 10, version 1803.
 
 5. Cliquez sur **Installer**.
 

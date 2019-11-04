@@ -11,12 +11,12 @@ design-contact: ksulliv
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 215a15e3a8e1b0264987adcf6228ec52a696f50c
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: b791768d4ccd78b46fef2d4e494ce06ef9f6ca6a
+ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63801326"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73062215"
 ---
 # <a name="color-picker"></a>Sélecteur de couleurs
 
@@ -67,7 +67,7 @@ Dans cet exemple, vous liez la propriété Color de l’objet SolidColorBrush, u
 
 ```xaml
 <ColorPicker x:Name="myColorPicker"
-             ColorSpectrumShape=”Ring”
+             ColorSpectrumShape="Ring"
              IsColorPreviewVisible="False"
              IsColorChannelTextInputVisible="False"
              IsHexInputVisible="False"/>
@@ -217,7 +217,7 @@ Valeurs hexadécimales | IsHexInputVisible
 - [Entrée manuscrite](inking-controls.md)
 
 <!--
-<div class=”microsoft-internal-note”>
+<div class="microsoft-internal-note">
 <p>
 <p>
 Note: For more info, see the [color picker redlines](https://uni/DesignDepot.FrontEnd/#/ProductNav/3666/15/dv/?t=Windows%7CControls&f=RS2) on UNI.
