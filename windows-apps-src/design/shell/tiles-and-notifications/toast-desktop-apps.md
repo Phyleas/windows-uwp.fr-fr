@@ -7,12 +7,12 @@ ms.date: 05/01/2018
 ms.topic: article
 keywords: windows 10, uwp, win32, bureau, notifications toast, pont du bureau, options pour l’envoi de notifications toast, serveur com, activateur com, com, com faux, aucune com, sans com, envoyer toast
 ms.localizationpriority: medium
-ms.openlocfilehash: 030f8b1380dc28a41e65989ccbda688523fad965
-ms.sourcegitcommit: bac5574a1f47a5b38c984a5482272c9e49a9c91e
+ms.openlocfilehash: 31501d2dc3ac255897e374ca81b05558be7bc2fc
+ms.sourcegitcommit: 545d5d864d89650a00a496ac4e52def9a13b14cd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71100816"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73560659"
 ---
 # <a name="toast-notifications-from-desktop-apps"></a>Notifications toast à partir d'applications de bureau
 
@@ -81,6 +81,6 @@ Pour les applications Win32 classique, configurez l’AUMID afin de pouvoir env
 
 ## <a name="resources"></a>Ressources
 
-* [Envoyer une notification Toast locale à partir C# d’applications destkop](send-local-toast-desktop.md)
-* [Envoyer une notification Toast locale à partir C++ d’applications destkop WRL](send-local-toast-desktop-cpp-wrl.md)
+* [Envoyer une notification Toast locale à partir C# d’applications de bureau](send-local-toast-desktop.md)
+* [Envoyer une notification Toast locale à partir C++ d’applications Desktop WRL](send-local-toast-desktop-cpp-wrl.md)
 * [Documentation sur le contenu Toast](adaptive-interactive-toasts.md)
