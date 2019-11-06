@@ -114,6 +114,8 @@
           items:
             - name: Modèles et des conteneurs d’éléments
               href: controls-and-patterns/item-containers-templates.md
+            - name: Sélection du modèle de données
+              href: controls-and-patterns/data-template-selector.md
             - name: Modèles d’éléments d’affichage Liste
               href: controls-and-patterns/item-templates-listview.md
             - name: Modèles d’éléments d’affichage Grille
