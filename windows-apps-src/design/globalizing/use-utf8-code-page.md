@@ -1,23 +1,26 @@
 ---
-Description: Utilisez l’encodage de caractères UTF-8 pour une compatibilité optimale entre les applications Web et d’autres plateformes basées sur * Nix (UNIX, Linux et variantes), réduisez les bogues de localisation et réduisez la charge de test.
+Description: Utilisez l’encodage de caractères UTF-8 pour une compatibilité optimale entre les applications Web et d’autres plateformes basées sur \*Nix (UNIX, Linux et variantes), réduisez les bogues de localisation et réduisez la charge de test.
 title: Utiliser la page de codes Windows UTF-8
 template: detail.hbs
 ms.date: 06/12/2019
 ms.topic: article
 keywords: windows 10, uwp, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
-ms.openlocfilehash: be3aade0289911f878d960fb62bde49b8ef840a8
-ms.sourcegitcommit: 3a06cf3f8bd00e5e6eac3b38ee7e3c7cf4bc5197
+ms.openlocfilehash: 4b4050dfea1589fbe79db08061bcc56e392173f1
+ms.sourcegitcommit: 13ce25364201223e21e2e5e89f99bc7aa4d93f56
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72888744"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73847599"
 ---
 # <a name="use-the-utf-8-code-page"></a>Utiliser la page de codes UTF-8
 
-Utilisez l’encodage de caractères [UTF-8](http://www.utf-8.com/) pour une compatibilité optimale entre les applications Web et d’autres plateformes basées sur * Nix (UNIX, Linux et variantes), réduisez les bogues de localisation et réduisez la charge de test.
+Utilisez l’encodage de caractères [UTF-8](http://www.utf-8.com/) pour une compatibilité optimale entre les applications Web et d’autres plateformes basées sur \*Nix (UNIX, Linux et variantes), réduisez les bogues de localisation et réduisez la charge de test.
 
-UTF-8 est la page de codes universelle pour l’internationalisation et prend en charge tous les points de code Unicode à l’aide de l’encodage de largeur variable de 1-6 octets. Il est utilisé de façon omniprésente sur le Web et est la valeur par défaut pour les plateformes * nix.
+UTF-8 est la page de codes universelle pour l’internationalisation et peut encoder l’ensemble du jeu de caractères Unicode. Il est utilisé de façon omniprésente sur le Web et est la valeur par défaut pour les plateformes * nix.
+
+> [!NOTE]
+> Un caractère encodé prend entre 1 et 4 octets. L’encodage UTF-8 prend en charge les séquences d’octets plus longues, jusqu’à 6 octets, mais le plus grand point de code de l’Unicode 6,0 (U + 10FFFF) ne prend que 4 octets.
 
 ## <a name="-a-vs--w-apis"></a>API-A et-W
   
@@ -80,7 +83,8 @@ Comme Windows fonctionne en mode natif au format UTF-16 (`WCHAR`), vous devrez p
 [MultiByteToWideChar](https://docs.microsoft.com/windows/desktop/api/stringapiset/nf-stringapiset-multibytetowidechar) et [WideCharToMultiByte](https://docs.microsoft.com/windows/desktop/api/stringapiset/nf-stringapiset-widechartomultibyte) vous permettent d’effectuer une conversion entre UTF-8 et utf-16 (`WCHAR`) (et d’autres pages de codes). Cela s’avère particulièrement utile quand une API Win32 héritée peut uniquement comprendre `WCHAR`. Ces fonctions vous permettent de convertir une entrée UTF-8 en `WCHAR` à transmettre dans une API-W, puis de convertir tous les résultats si nécessaire.
 Lors de l’utilisation de ces fonctions avec `CodePage` défini sur `CP_UTF8`, utilisez `dwFlags` de `0` ou de `MB_ERR_INVALID_CHARS`, sinon une `ERROR_INVALID_FLAGS` se produit.
 
-Remarque : `CP_ACP` équivaut à `CP_UTF8` uniquement si l’exécution sur Windows version 1903 (mise à jour 2019 mai) ou supérieure et que la propriété ActiveCodePage décrite ci-dessus est définie sur UTF-8. Dans le cas contraire, elle honore la page de codes système héritée. Nous vous recommandons d’utiliser `CP_UTF8` explicitement.
+> [!NOTE]
+> `CP_ACP` équivaut à `CP_UTF8` uniquement si l’exécution sur Windows version 1903 (mise à jour 2019 mai) ou supérieure et que la propriété ActiveCodePage décrite ci-dessus est définie sur UTF-8. Dans le cas contraire, elle honore la page de codes système héritée. Nous vous recommandons d’utiliser `CP_UTF8` explicitement.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
