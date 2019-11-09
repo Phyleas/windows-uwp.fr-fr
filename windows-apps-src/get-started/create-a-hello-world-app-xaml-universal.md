@@ -6,12 +6,12 @@ ms.date: 03/06/2017
 ms.topic: article
 keywords: windows 10, uwp, première application, hello world
 ms.localizationpriority: medium
-ms.openlocfilehash: b0d2ad6f0370867159054d77c7e68201d4799037
-ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
+ms.openlocfilehash: 93c78845a218620a8a46fc4439733734099b9853
+ms.sourcegitcommit: 13ce25364201223e21e2e5e89f99bc7aa4d93f56
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73062888"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73847602"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>Créer une application « Hello World » (XAML)
 
@@ -123,7 +123,7 @@ Ajoutons un bouton à la page. Dans ce didacticiel, vous n’utilisez qu’une p
     Si vous regardez dans la fenêtre de code XAML, vous constaterez que le contrôle Button y a été aussi ajouté :
 
  ```XAML
-<Button x:name="button" Content="Button" HorizontalAlignment="Left" Margin = "152,293,0,0" VerticalAlignment="Top"/>
+<Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin = "152,293,0,0" VerticalAlignment="Top"/>
  ```
 
 4.  Modifiez le texte du bouton.
@@ -131,7 +131,7 @@ Ajoutons un bouton à la page. Dans ce didacticiel, vous n’utilisez qu’une p
     Cliquez dans l’affichage de code XAML et modifiez la valeur de Content en remplaçant « Button » par « Hello World ! ».
 
 ```XAML
-<Button x:name="button" Content="Hello, world!" HorizontalAlignment="Left" Margin = "152,293,0,0" VerticalAlignment="Top"/>
+<Button x:Name="button" Content="Hello, world!" HorizontalAlignment="Left" Margin = "152,293,0,0" VerticalAlignment="Top"/>
 ```
 
 Le bouton figurant dans l’aire de conception est alors mis à jour pour présenter le nouveau texte.
