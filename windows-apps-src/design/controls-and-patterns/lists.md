@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: e1167a57da6a3f54cabcc946cfbf7a592f301d2c
-ms.sourcegitcommit: 9625f8fb86ff6473ac2851e600bc02e996993660
+ms.openlocfilehash: d309ce7e18a8dc62a24bc0e7f51f0015042a5f84
+ms.sourcegitcommit: 3bb982f35c057e30c742ab9f1eea119bae627a5f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72163756"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74086862"
 ---
 # <a name="collections-and-lists"></a>Collections et listes
 
@@ -38,11 +38,11 @@ Chacun de ces contrôles (à l’exception d’ItemsRepeater) a également un co
 
 > **API importantes** : [Classe ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), [classe GridView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView), [classe FlipView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flipview), [classe TreeView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview), [classe ItemsRepeater](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2)
 
-> <div id="main">
-> <strong>Windows 10 Fall Creators Update - Changement de comportement</strong>
-> </div>
-> Par défaut, au lieu d’effectuer la sélection, un stylet actif fait défiler ou parcourt une liste dans les applications UWP (comme l’interaction tactile, le pavé tactile et le stylet passif).
-> Si votre application repose sur le comportement précédent, vous pouvez remplacer le défilement du stylet et rétablir le comportement précédent. Pour plus d’informations, consultez la rubrique de référence de l’API pour la <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer">classe ScrollViewer</a>.
+> <div id="main">  
+> <strong>Windows 10 Fall Creators Update - Changement de comportement</strong>  
+> </div>  
+> Par défaut, au lieu d’effectuer la sélection, un stylet actif fait défiler ou parcourt une liste dans les applications UWP (comme l’interaction tactile, le pavé tactile et le stylet passif).  
+> Si votre application repose sur le comportement précédent, vous pouvez remplacer le défilement du stylet et rétablir le comportement précédent. Pour plus d’informations, consultez la rubrique d’informations de référence sur les API pour la <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer">classe Scroll Viewer</a>.  
 
 ## <a name="examples"></a>Exemples
 
