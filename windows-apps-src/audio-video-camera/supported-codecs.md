@@ -4,14 +4,14 @@ description: Cet article répertorie la prise en charge des codecs et formats au
 title: Codecs pris en charge
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 92511c1f5b7ad8991900d80d4ec52659d6e74f88
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 4b122aa6436e55c80276cdd684b7c10cc3c47d28
+ms.sourcegitcommit: 49a34e957433966ac8d4822b5822f21087aa61c3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361412"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74153714"
 ---
 # <a name="supported-codecs"></a>Codecs pris en charge
 
@@ -2749,7 +2749,7 @@ Les tableaux suivants indiquent la prise en charge des codecs et formats vidéo 
 <tr class="even">
 <td align="left">RAW (appareil photo)</td>
 <td align="left">D<sup>3</sup></td>
-<td align="left">Non</td>
+<td align="left">non</td>
 </tr>
 </table>
 
