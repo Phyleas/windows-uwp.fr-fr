@@ -1,23 +1,23 @@
 ---
 ms.assetid: 0186EA01-8446-45BA-A109-C5EB4B80F368
 description: Cet article vous explique comment utiliser la classe AdvancedPhotoCapture pour capturer des photos avec plage dynamique élevée (HDR) et en basse lumière.
-title: Capture photo avec plage dynamique élevée (HDR) et en basse lumière
+title: Capture de photos avec plage dynamique étendue (HDR) et en faible luminosité
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b5a8e19961fa7cd1dd67e52339f49fd012f21f06
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 04133cc4a58ddbdbd45ba68b4c0635cd47ca2ca8
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361735"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257003"
 ---
-# <a name="high-dynamic-range-hdr-and-low-light-photo-capture"></a>Capture photo avec plage dynamique élevée (HDR) et en basse lumière
+# <a name="high-dynamic-range-hdr-and-low-light-photo-capture"></a>Capture de photos avec plage dynamique étendue (HDR) et en faible luminosité
 
 
 
-Cet article vous explique comment utiliser la classe [**AdvancedPhotoCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.AdvancedPhotoCapture) pour capturer des photos avec plage dynamique élevée. Cette API permet aussi d’obtenir une image de référence à partir de la capture HDR avant la fin du traitement de l’image finale.
+Cet article vous explique comment utiliser la classe [**AdvancedPhotoCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.AdvancedPhotoCapture) pour capturer des photos avec plage dynamique élevée (HDR). Cette API permet aussi d’obtenir une image de référence à partir de la capture HDR avant la fin du traitement de l’image finale.
 
 Les articles suivants concernent également la capture HDR :
 
@@ -37,9 +37,9 @@ Les articles suivants concernent également la capture HDR :
 > À partir de Windows 10, version 1709, lorsque l’objet **AdvancedPhotoCapture** est défini sur le mode HDR, la définition de la propriété [**FlashControl.Enabled**](https://docs.microsoft.com/uwp/api/windows.media.devices.flashcontrol.enabled) est ignorée et le Flash n’est jamais déclenché. Pour les autres modes de capture, si la propriété **FlashControl.Enabled** est définie sur true, elle remplace les paramètres **AdvancedPhotoCapture** et entraîne la capture avec flash d’une photo standard. Si [**Auto**](https://docs.microsoft.com/uwp/api/windows.media.devices.flashcontrol.auto) est défini sur true, l’objet **AdvancedPhotoCapture** peut ou non utiliser un flash, en fonction du comportement par défaut du pilote de l’appareil photo pour les conditions de la scène actuelle. Dans les versions précédentes, le paramètre de flash **AdvancedPhotoCapture** remplace toujours le paramètre **FlashControl.Enabled**.
 
 > [!NOTE] 
-> Cet article repose sur les concepts et le code décrits dans [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md), qui décrit comment implémenter la capture photo et vidéo de base. Nous vous recommandons de vous familiariser avec le modèle de capture simple de contenu multimédia de cet article avant d’adopter des scénarios de capture plus avancés. Le code de cet article part du principe que votre application possède déjà une instance de MediaCapture initialisée correctement.
+> Cet article repose sur les concepts et le code décrits dans [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md), qui décrit comment implémenter la capture photo et vidéo de base. Nous vous recommandons de vous familiariser avec le modèle de capture simple de contenu multimédia de cet article avant d’adopter des scénarios de capture plus avancés. Le code de cet article suppose que votre application possède déjà une instance de MediaCapture correctement lancée.
 
-Un exemple Windows universel démontre l’utilisation de la classe **AdvancedPhotoCapture**, que vous pouvez utiliser pour voir l’API employée en contexte ou en tant que point de départ pour votre propre application. Pour plus d’informations, consultez la section [Exemple de capture avancée d’appareil photo](https://go.microsoft.com/fwlink/?LinkID=620517).
+Un exemple Windows universel démontre l’utilisation de la classe **AdvancedPhotoCapture**, que vous pouvez utiliser pour voir l’API employée en contexte ou en tant que point de départ pour votre propre application. Pour plus d’informations, consultez la section [Exemple de capture avancée d’appareil photo](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraAdvancedCapture).
 
 ## <a name="advanced-photo-capture-namespaces"></a>Espaces de noms de capture avancée d’appareil photo
 
@@ -51,7 +51,7 @@ Les exemples de code de cet article utilisent les API des espaces de noms suivan
 
 ### <a name="determine-if-hdr-photo-capture-is-supported-on-the-current-device"></a>Déterminer si la capture photo HDR est prise en charge sur l’appareil actuel
 
-La technique de capture HDR décrite dans cet article est effectuée à l’aide de l’objet [**AdvancedPhotoCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.AdvancedPhotoCapture). Tous les appareils ne prennent pas en charge la capture HDR avec **AdvancedPhotoCapture**. Déterminez si l’appareil sur lequel votre application est en cours d’exécution prend en charge la technique en obtenant l’objet **MediaCapture** et sa [**VideoDeviceController**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.VideoDeviceController), puis en obtenant la propriété [**AdvancedPhotoControl**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoControl). Vérifiez la collection [**SupportedModes**](https://docs.microsoft.com/uwp/api/windows.media.devices.advancedphotocontrol.supportedmodes) du contrôleur d’appareil vidéo pour voir si elle inclut [**AdvancedPhotoMode.Hdr**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoMode). Si tel est le cas, la capture HDR à l’aide de **AdvancedPhotoCapture** est prise en charge.
+La technique de capture HDR décrite dans cet article est effectuée à l’aide de l’objet [**AdvancedPhotoCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.AdvancedPhotoCapture). Tous les appareils ne prennent pas en charge la capture HDR avec **AdvancedPhotoCapture**. Déterminez si l’appareil sur lequel votre application est en cours d’exécution prend en charge la technique en obtenant l’objet **MediaCapture** et sa [**VideoDeviceController**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.VideoDeviceController), puis en obtenant la propriété [**AdvancedPhotoControl**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoControl). Vérifiez la collection [**SupportedModes**](https://docs.microsoft.com/uwp/api/windows.media.devices.advancedphotocontrol.supportedmodes) du contrôleur de l’appareil vidéo pour voir si elle inclut [**AdvancedPhotoMode.Hdr**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoMode). Si tel est le cas, la capture HDR à l’aide de **AdvancedPhotoCapture** est prise en charge.
 
 [!code-cs[HdrSupported](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetHdrSupported)]
 
@@ -61,7 +61,7 @@ La technique de capture HDR décrite dans cet article est effectuée à l’aide
 
 [!code-cs[DeclareAdvancedCapture](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDeclareAdvancedCapture)]
 
-Dans votre application, une fois l’objet **MediaCapture** initialisé, créez un objet [**AdvancedPhotoCaptureSettings**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoCaptureSettings) et définissez le mode sur [**AdvancedPhotoMode.Hdr**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoMode). Appelez l’objet [**AdvancedPhotoControl**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoControl) et sa méthode [**Configure**](https://docs.microsoft.com/uwp/api/windows.media.devices.advancedphotocontrol.configure), en passant l’objet **AdvancedPhotoCaptureSettings** que vous avez créé.
+Dans votre application, une fois que vous avez initialisé l’objet **MediaCapture**, créez un objet [**AdvancedPhotoCaptureSettings**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoCaptureSettings) et définissez le mode sur [**AdvancedPhotoMode.Hdr**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoMode). Appelez la méthode [**Configure**](https://docs.microsoft.com/uwp/api/windows.media.devices.advancedphotocontrol.configure) de l’objet [**AdvancedPhotoControl**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoControl), en passant l’objet **AdvancedPhotoCaptureSettings** que vous avez créé.
 
 Appelez l’objet **MediaCapture** et sa méthode [**PrepareAdvancedPhotoCaptureAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.prepareadvancedphotocaptureasync), en passant un objet [**ImageEncodingProperties**](https://docs.microsoft.com/uwp/api/Windows.Media.MediaProperties.ImageEncodingProperties) indiquant le type d’encodage que la capture doit utiliser. La classe **ImageEncodingProperties** fournit des méthodes statiques pour la création d’encodages d’image pris en charge par **MediaCapture**.
 
@@ -84,7 +84,7 @@ La méthode d’assistance **SaveCapturedFrameAsync**, qui enregistre l’image 
 Le processus HDR capture plusieurs images, puis les transforme en une seule image une fois toutes les images capturées. Vous pouvez accéder à une image après l’avoir capturée, mais sans devoir attendre la fin du processus HDR, en gérant l’événement [**OptionalReferencePhotoCaptured**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.optionalreferencephotocaptured). Cette étape n’est pas nécessaire si vous êtes uniquement intéressé par le résultat de la photo HDR finale.
 
 > [!IMPORTANT]
-> [**OptionalReferencePhotoCaptured** ](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.optionalreferencephotocaptured) n’est pas déclenché sur les appareils qui prennent en charge de matériel HDR et par conséquent ne génèrent pas de trames de référence. Votre application doit gérer le cas où cet événement n’est pas déclenché.
+> [**OptionalReferencePhotoCaptured**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.optionalreferencephotocaptured) is not raised on devices that support hardware HDR and therefore do not generate reference frames. Votre application doit gérer le cas où cet événement n’est pas déclenché.
 
 Étant donné que l’image de référence arrive hors du contexte de l’appel à **CaptureAsync**, un mécanisme permet de passer des informations de contexte au gestionnaire **OptionalReferencePhotoCaptured**. Vous devez tout d’abord appeler un objet qui contiendra vos informations de contexte. À vous de décider du nom et du contenu de cet objet. Cet exemple définit un objet qui possède des membres pour effectuer le suivi du nom de fichier et de l’orientation de l’appareil photo de la capture.
 
@@ -142,7 +142,7 @@ Vous pouvez capturer plusieurs photos en basse lumière sans reconfigurer l’ob
 [!code-cs[CleanUpAdvancedPhotoCapture](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanUpAdvancedPhotoCapture)]
 
 ## <a name="working-with-advancedcapturedphoto-objects"></a>Utilisation des objets AdvancedCapturedPhoto
-[**AdvancedPhotoCapture.CaptureAsync** ](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.captureasync) retourne un [ **AdvancedCapturedPhoto** ](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.AdvancedCapturedPhoto) objet représentant la photo capturée. Cet objet expose la propriété [**Frame**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedcapturedphoto.frame), qui renvoie un objet [**CapturedFrame**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.CapturedFrame) représentant l’image. L’événement [**OptionalReferencePhotoCaptured**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.optionalreferencephotocaptured) fournit également un objet **CapturedFrame** dans ses arguments d’événement. Une fois que vous avez récupéré un objet de ce type, vous pouvez effectuer diverses actions, notamment la création d’une méthode [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap) ou l’enregistrement de l’image dans un fichier. 
+[**AdvancedPhotoCapture.CaptureAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.captureasync) returns an [**AdvancedCapturedPhoto**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.AdvancedCapturedPhoto) object representing the captured photo. Cet objet expose la propriété [**Frame**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedcapturedphoto.frame), qui renvoie un objet [**CapturedFrame**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.CapturedFrame) représentant l’image. L’événement [**OptionalReferencePhotoCaptured**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.optionalreferencephotocaptured) fournit également un objet **CapturedFrame** dans ses arguments d’événement. Une fois que vous avez récupéré un objet de ce type, vous pouvez effectuer diverses actions, notamment la création d’une méthode [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap) ou l’enregistrement de l’image dans un fichier. 
 
 ## <a name="get-a-softwarebitmap-from-a-capturedframe"></a>Obtenir une classe SoftwareBitmap à partir d’un CapturedFrame
 Il n’est pas difficile de récupérer une méthode **SoftwareBitmap** d’un objet **CapturedFrame**. Pour ce faire, accédez à la propriété [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedframe.softwarebitmap) de l’objet. Toutefois, la plupart des formats d’encodage ne prenant pas en charge **SoftwareBitmap** avec **AdvancedPhotoCapture**, vous devez examiner la propriété et vérifier qu’elle n’est pas définie sur null avant de l’utiliser.
@@ -153,7 +153,7 @@ Dans la version actuelle, le seul format d’encodage qui prenne en charge **Sof
 
 [!code-cs[UncompressedNv12](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUncompressedNv12)]
 
-Bien entendu, vous pouvez toujours enregistrer l’image dans un fichier, avant de charger le fichier dans une méthode **classe SoftwareBitmap** dans le cadre d’une étape distincte. Pour plus d’informations sur l’utilisation de la méthode **SoftwareBitmap**, consultez la section [**Créer, modifier et enregistrer des images bitmap**](imaging.md).
+Bien entendu, vous pouvez toujours enregistrer l’image dans un fichier, avant de charger le fichier dans une méthode **SoftwareBitmap** dans le cadre d’une étape distincte. Pour plus d’informations sur l’utilisation de la méthode **SoftwareBitmap**, consultez la section [**Créer, modifier et enregistrer des images bitmap**](imaging.md).
 
 ## <a name="save-a-capturedframe-to-a-file"></a>Enregistrer une classe CapturedFrame dans un fichier
 La classe [**CapturedFrame**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.CapturedFrame) implémente l’interface IInputStream interface, afin qu’elle puisse être utilisée en tant qu’entrée pour une instance [**BitmapDecoder**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.BitmapDecoder). Ensuite, une classe [**BitmapEncoder**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.BitmapEncoder) peut être utilisée pour écrire les données de l’image sur le disque.
@@ -169,4 +169,4 @@ Enfin, l’image est écrite sur le fichier avec un appel à [**FlushAsync**](ht
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Appareil photo](camera.md)
-* [Photo de base, vidéo, audio et de capture à MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)

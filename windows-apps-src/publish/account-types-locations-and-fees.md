@@ -6,21 +6,21 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, compte de développeur, individuel, société, entreprise
 ms.localizationpriority: medium
-ms.openlocfilehash: b8a02079e7589d7c92ececa03496600a82ef427e
-ms.sourcegitcommit: dafda665fd3d25136194e452e7500b5bab076638
+ms.openlocfilehash: 1ac6c3e7c89c091d1080364b8fbbb35d484aee49
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71982242"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260054"
 ---
 # <a name="account-types-locations-and-fees"></a>Types de compte, emplacements et frais
 
-Le programme Windows de l' [espace partenaires](https://partner.microsoft.com/dashboard) offre à la fois des comptes individuels et des comptes d’entreprise dans de nombreux [pays et régions](#developer-account-and-app-submission-markets). Chaque type de compte vous donne accès à la publication d’applications dans le Windows Store et à la participation à d’autres programmes Microsoft.
+The Windows program in [Partner Center](https://partner.microsoft.com/dashboard) offers both individual and company accounts in many [countries and regions](#developer-account-and-app-submission-markets). Either type of account gives you access to publish apps to the Store and to participate in additional Microsoft programs.
 
 > [!NOTE]
-> Lorsque vous ouvrez votre compte de développeur, veillez à vous connecter à l' [espace partenaires](https://partner.microsoft.com/dashboard) à l’aide de la compte Microsoft que vous souhaitez utiliser pour votre compte de développeur. Vous pourrez [ajouter d’autres utilisateurs au compte](manage-account-users.md) ultérieurement.
+> When opening your developer account, make sure to sign in to [Partner Center](https://partner.microsoft.com/dashboard) with the Microsoft account that you want to use for your developer account. Vous pourrez [ajouter d’autres utilisateurs au compte](manage-account-users.md) ultérieurement.
 
-Au [début du processus d’inscription](https://go.microsoft.com/fwlink/p/?LinkId=615100), vous devez déterminer si vous souhaitez créer un compte individuel ou un compte d’entreprise. Les deux types de comptes vous permettent de soumettre des applications, des jeux, des compléments et des services.
+Au [début du processus d’inscription](https://developer.microsoft.com/store/register), vous devez déterminer si vous souhaitez créer un compte individuel ou un compte d’entreprise. Les deux types de comptes vous permettent de soumettre des applications, des jeux, des compléments et des services.
 
 Les comptes d’entreprise s’adressent quant à eux aux organismes et aux entreprises. Pour les comptes d’entreprise, nous mettons en place une [vérification](#account-verification) renforcée afin de nous assurer que vous êtes bien habilité à créer un compte au nom de votre entreprise. Les comptes individuels sont généralement adaptés aux développeurs indépendants, même si vous avez la possibilité d’ajouter d’autres utilisateurs de compte aux deux types de comptes.
 
@@ -33,11 +33,11 @@ Voici les principales différences entre les deux types de compte.
 |--------------------|-----------------|
 | <ul><li>Coûte environ 19 USD (frais d’inscription ponctuels ; le montant exact varie en fonction de votre pays ou région)</li><li>Processus de vérification de compte plus court</li></ul> | <ul><li>Coûte environ 99 USD (frais d’inscription ponctuels ; le montant exact varie en fonction de votre pays ou région)</li><li>Nécessite une vérification renforcée du compte</li><li>Votre entreprise doit être reconnue en tant que telle dans le pays ou la région où elle est située</li><li>En mesure de soumettre des applications avec des fonctionnalités restreintes (comme décrit dans les [Stratégies du Microsoft Store](store-policies.md#1014-account-type))</li></ul> |
 
-Les comptes d’entreprise sont un peu plus onéreux, car des étapes supplémentaires sont nécessaires pour vérifier que vous êtes autorisé à configurer le compte au nom de votre entreprise. Selon les [stratégies](store-policies.md#1014-account-type)du Windows Store, les applications avec certaines fonctionnalités, telles que celles qui accèdent aux informations du compte financier ou qui requièrent une authentification pour accéder aux fonctionnalités principales (sans utiliser un fournisseur d’authentification tiers sécurisé dédié), peut uniquement être publié par des comptes d’entreprise.
+Les comptes d’entreprise sont un peu plus onéreux, car des étapes supplémentaires sont nécessaires pour vérifier que vous êtes autorisé à configurer le compte au nom de votre entreprise. Per the [Store Policies](store-policies.md#1014-account-type), apps with certain functionality, such as those that access financial account information or that require authentication to access primary functionality (without using a secure dedicated third party authentication provider), can only be published by company accounts.
 
 ## <a name="account-verification"></a>Vérification de compte
 
-Une fois le processus d’inscription terminé, votre compte est soumis au processus de vérification. Pour les comptes individuels, nous vérifions qu’aucune autre société n’utilise déjà votre nom d’éditeur complet. Pour les comptes d’entreprise, notre partenaire de vérification Dun & Bradstreet vérifiera que vous êtes autorisé à créer un compte pour l’entreprise que vous représentez. La durée de ce processus peut varier de quelques jours à quelques semaines. Il implique souvent un appel téléphonique à votre entreprise (vérifiez que toutes les coordonnées que vous avez fournies dans les formulaires d’inscription sont à jour). Vous ne pouvez pas envoyer d’applications à partir d’un compte d’entreprise tant qu’elle n’a pas été vérifiée, mais pendant que vous attendez, vous pouvez [réserver un nom d’application](create-your-app-by-reserving-a-name.md) continuer à générer et tester des applications et travailler sur la préparation de vos envois.
+Une fois le processus d’inscription terminé, votre compte est soumis au processus de vérification. Pour les comptes individuels, nous vérifions qu’aucune autre société n’utilise déjà votre nom d’éditeur complet. Pour les comptes d’entreprise, notre partenaire de vérification Dun & Bradstreet vérifiera que vous êtes autorisé à créer un compte pour l’entreprise que vous représentez. La durée de ce processus peut varier de quelques jours à quelques semaines. Il implique souvent un appel téléphonique à votre entreprise (vérifiez que toutes les coordonnées que vous avez fournies dans les formulaires d’inscription sont à jour). You can't submit apps from a company account until it's been verified, but while you're waiting, you can [reserve an app name](create-your-app-by-reserving-a-name.md) continue building and testing apps, and work on getting your submissions ready.
 
 Vous pouvez vérifier l’état de la vérification dans la page **Paramètres du compte**. 
 
@@ -60,7 +60,7 @@ Dans le tableau suivant, les **frais d’inscription** correspondent au coût ac
 | Australie                         | 21 AUD              | 110 AUD          |  
 | Autriche                           | 14 EUR              | 75 EUR           |  
 | Azerbaïdjan                        | 19 USD              | 99 USD           |  
-| Bahamas                       | 19 USD              | 99 USD           |  
+| Les Bahamas                       | 19 USD              | 99 USD           |  
 | Bahreïn                           | 7 BHD               | 38 BHD           |  
 | Bangladesh                        | 1468 BDT            | 7600 BDT         |  
 | Barbade (La)                          | 19 USD              | 99 USD           |  
@@ -73,7 +73,7 @@ Dans le tableau suivant, les **frais d’inscription** correspondent au coût ac
 | Bosnie-Herzégovine            | 19 USD              | 99 USD           |  
 | Botswana                          | 19 USD              | 99 USD           |  
 | Brésil                            | 46 BRL              | 160 BRL          |  
-| Brunéi Darussalam                            | 19 USD              | 99 USD           |  
+| Brunei                            | 19 USD              | 99 USD           |  
 | Bulgarie                          | 28 BGN              | 160 BGN          |  
 | Burkina-Faso                      | 19 USD              | 99 USD           |  
 | Burundi                           | 19 USD              | 99 USD           |  
@@ -87,7 +87,7 @@ Dans le tableau suivant, les **frais d’inscription** correspondent au coût ac
 | Chine                             | 116 CNY             | 600 CNY          |  
 | Colombie                          | 36543 COP           | 180000 COP       |  
 | Comores (Les)                           | 19 USD              | 99 USD           |  
-| Congo                             | 19 USD              | 99 USD           |  
+| République démocratique du Congo                             | 19 USD              | 99 USD           |  
 | Congo (RDC)                       | 19 USD              | 99 USD           |  
 | Costa Rica                        | 9578 CRC            | 49725 CRC        |  
 | Côte d’Ivoire                     | 19 USD              | 99 USD           |  
@@ -98,14 +98,14 @@ Dans le tableau suivant, les **frais d’inscription** correspondent au coût ac
 | Djibouti                          | 19 USD              | 99 USD           | 
 | Dominique                          | 19 USD              | 99 USD           | 
 | République dominicaine                | 19 USD              | 99 USD           |  
-| Équateur (République de)                           | 19 USD              | 99 USD           |  
+| Équateur (République de l’)                           | 19 USD              | 99 USD           |  
 | Égypte                             | 133 EGP             | 600 EGP          |  
 | Salvador                       | 19 USD              | 99 USD           |  
 | Guinée équatoriale                 | 19 USD              | 99 USD           |  
 | Érythrée                           | 19 USD              | 99 USD           |  
 | Estonie                           | 14 EUR              | 75 EUR           |  
 | Éthiopie                          | 19 USD              | 99 USD           |  
-| Féroé (îles)                     | 19 USD              | 99 USD           |  
+| Îles Féroé                     | 19 USD              | 99 USD           |  
 | Fidji                              | 19 USD              | 99 USD           |  
 | Finlande                           | 14 EUR              | 75 EUR           |  
 | France                            | 14 EUR              | 75 EUR           |  
@@ -151,13 +151,13 @@ Dans le tableau suivant, les **frais d’inscription** correspondent au coût ac
 | Lituanie                         | 14 EUR              | 75 EUR           |  
 | Luxembourg                        | 14 EUR              | 75 EUR           |  
 | Macao R.A.S.                         | 19 USD              | 99 USD           |  
-| Macédoine (Ex-République yougoslave de)                 | 19 USD              | 99 USD           |  
+| Macédoine (Ex-République yougoslave de Macédoine)                 | 19 USD              | 99 USD           |  
 | Madagascar                        | 19 USD              | 99 USD           |  
 | Malawi                            | 19 USD              | 99 USD           |  
 | Malaisie                          | 62 MYR              | 300 MYR          |  
 | Maldives                          | 19 USD              | 99 USD           |  
 | Mali                              | 19 USD              | 99 USD           |  
-| Malte                             | 14 EUR              | 75 EUR           |  
+| Malte (République de)                             | 14 EUR              | 75 EUR           |  
 | Marshall (îles)                  | 19 USD              | 99 USD           |  
 | Mauritanie                        | 5681 MRO            | 30046 MRO        |  
 | Maurice                         | 19 USD              | 99 USD           |  
@@ -176,7 +176,7 @@ Dans le tableau suivant, les **frais d’inscription** correspondent au coût ac
 | Nouvelle-Zélande                       | 24 NZD              | 140 NZD          |  
 | Nicaragua                         | 19 USD              | 99 USD           |  
 | Niger                             | 19 USD              | 99 USD           |  
-| Nigeria                           | 3700 NGN            | 19500 NGN        |  
+| Nigéria                           | 3700 NGN            | 19500 NGN        |  
 | Norvège                            | 113 NOK             | 580 NOK          |  
 | Oman                              | 7 OMR               | 40 OMR           |  
 | Pakistan                          | 1959 PKR            | 9000 PKR         |  
@@ -198,7 +198,7 @@ Dans le tableau suivant, les **frais d’inscription** correspondent au coût ac
 | Samoa                             | 19 USD              | 99 USD           |  
 | Saint-Marin                        | 14 EUR              | 75 EUR           |  
 | São Tomé et Príncipe             | 19 USD              | 99 USD           |  
-| Arabie saoudite                      | 71 SAR              | 380 SAR          |  
+| Arabie saoudite                      | 71 SAR              | 380 SAR          |  
 | Sénégal                           | 19 USD              | 99 USD           |  
 | Serbie                            | 1619 RSD            | 7000 RSD         |  
 | Seychelles                        | 19 USD              | 99 USD           |  

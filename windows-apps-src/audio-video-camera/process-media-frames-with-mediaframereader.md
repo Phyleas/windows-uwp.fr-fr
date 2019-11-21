@@ -4,14 +4,14 @@ description: Utiliser une instance MediaFrameReader avec MediaCapture pour récu
 title: Traiter des images multimédias avec MediaFrameReader
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ddd35e0365efcc8c224e717b66f53734af32123d
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 2a13f0779414f60784ac1703fa32ac1ef5c89635
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339755"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74256542"
 ---
 # <a name="process-media-frames-with-mediaframereader"></a>Traiter des images multimédias avec MediaFrameReader
 
@@ -23,7 +23,7 @@ Si vous souhaitez simplement capturer du contenu vidéo ou des photos, comme c�
 > Les fonctionnalités décrites dans cet article sont disponibles uniquement à partir de Windows 10, version 1607.
 
 > [!NOTE] 
-> Il existe un exemple d’application Windows universelle qui illustre l’utilisation de **MediaFrameReader** pour afficher des images de différentes sources, notamment d’appareils photos couleur, de profondeur et infrarouges. Pour plus d’informations voir [Profils d’appareil photo](https://go.microsoft.com/fwlink/?LinkId=823230).
+> Il existe un exemple d’application Windows universelle qui illustre l’utilisation de **MediaFrameReader** pour afficher des images de différentes sources, notamment d’appareils photos couleur, de profondeur et infrarouges. Pour plus d’informations voir [Profils d’appareil photo](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraFrames).
 
 > [!NOTE] 
 > Un nouvel ensemble d’API permettant d’utiliser **MediaFrameReader** avec des données audio a été introduit dans Windows 10, version 1803. Pour plus d’informations, voir [Traiter des trames audio avec MediaFrameReader](process-audio-frames-with-mediaframereader.md).
@@ -32,7 +32,7 @@ Si vous souhaitez simplement capturer du contenu vidéo ou des photos, comme c�
 ## <a name="setting-up-your-project"></a>Configuration de votre projet
 Comme avec toute application utilisant **MediaCapture**, vous devez déclarer que votre application utilise la fonctionnalité *webcam* avant de tenter d’accéder à un appareil photo. Si votre application capture à partir d’un périphérique audio, vous devez également déclarer la fonctionnalité *microphone*. 
 
-**Ajouter des fonctionnalités au manifeste d’application**
+**Add capabilities to the app manifest**
 
 1.  Dans Microsoft Visual Studio, dans l’**Explorateur de solutions**, ouvrez le concepteur pour le manifeste de l’application en double-cliquant sur l’élément **package.appxmanifest**.
 2.  Sélectionnez l’onglet **Fonctionnalités**.
@@ -43,12 +43,12 @@ L’exemple de code de cet article utilise des API des espaces de noms suivants,
 
 [!code-cs[FramesUsing](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFramesUsing)]
 
-## <a name="select-frame-sources-and-frame-source-groups"></a>Sélectionnez des sources d’images et des groupes de sources d’images
-De nombreuses applications qui traitent des images multimédias doivent récupérer ces éléments de plusieurs sources simultanément, comme des appareils photos couleur et de profondeur d’un appareil. L’objet [**MediaFrameSourceGroup**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameSourceGroup) représente un ensemble de sources de cadre de média qui peuvent être utilisées simultanément. Appelez la méthode statique [**MediaFrameSourceGroup.FindAllAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.findallasync) afin de récupérer une liste de l’ensemble des groupes de sources d’images pris en charge par l’appareil actuel.
+## <a name="select-frame-sources-and-frame-source-groups"></a>Sélectionner des sources d’images et des groupes de sources d’images
+De nombreuses applications qui traitent des images multimédias doivent récupérer ces éléments de plusieurs sources simultanément, comme des appareils photos couleur et de profondeur d’un appareil. The [**MediaFrameSourceGroup**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameSourceGroup) object represents a set of media frame sources that can be used simultaneously. Appelez la méthode statique [**MediaFrameSourceGroup.FindAllAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.findallasync) afin de récupérer une liste de l’ensemble des groupes de sources d’images pris en charge par l’appareil actuel.
 
 [!code-cs[FindAllAsync](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFindAllAsync)]
 
-Vous pouvez également créer un [**DeviceWatcher**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher) à l’aide de [**DeviceInformation. CreateWatcher**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.createwatcher) et la valeur retournée à partir de [**MediaFrameSourceGroup. GetDeviceSelector**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.getdeviceselector) pour recevoir des notifications lorsque les groupes de sources de frame disponibles sur l’appareil modifications, par exemple lorsqu’une caméra externe est branchée. Pour plus d’informations, consultez la page [**Énumérer les appareils**](https://docs.microsoft.com/windows/uwp/devices-sensors/enumerate-devices).
+You can also create a [**DeviceWatcher**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher) using [**DeviceInformation.CreateWatcher**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.createwatcher) and the value returned from [**MediaFrameSourceGroup.GetDeviceSelector**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.getdeviceselector) to receive notifications when the available frame source groups on the device changes, such as when an external camera is plugged in. Pour plus d’informations, consultez la page [**Énumérer les appareils**](https://docs.microsoft.com/windows/uwp/devices-sensors/enumerate-devices).
 
 Une instance [**MediaFrameSourceGroup**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameSourceGroup) dispose d’une collection d’objets [**MediaFrameSourceInfo**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameSourceInfo) qui décrivent les sources d’images incluses dans le groupe. Une fois les groupes de sources d’images disponibles sur cet appareil récupérés, vous pouvez sélectionner le groupe exposant les sources d’images qui vous intéressent.
 
@@ -79,12 +79,12 @@ L’objet **MediaCapture** étant généralement utilisé à partir de multiples
 
 [!code-cs[DeclareMediaCapture](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetDeclareMediaCapture)]
 
-Créez une instance de l’objet **MediaCapture** en appelant le constructeur. Ensuite, créez un objet [**MediaCaptureInitializationSettings**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings) qui sera utilisé pour initialiser l’objet **MediaCapture** . Dans cet exemple, les paramètres suivants sont utilisés :
+Créez une instance de l’objet **MediaCapture** en appelant le constructeur. Next, create a [**MediaCaptureInitializationSettings**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings) object that will be used to initialize the **MediaCapture** object. Dans cet exemple, les paramètres suivants sont utilisés :
 
-* [**SourceGroup**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.sourcegroup) : indique au système le groupe source que vous allez utiliser pour recevoir des trames. N’oubliez pas que le groupe de sources définir un ensemble de sources d’images multimédias pouvant être utilisées simultanément.
-* [**SharingMode**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.sharingmode) : indique au système si vous avez besoin d’un contrôle exclusif sur les appareils source de capture. Si vous le définissez sur [**ExclusiveControl**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCaptureSharingMode), cela signifie que vous pouvez modifier les paramètres du périphérique de capture, par exemple le format des images produites. Par ailleurs, si une autre application dispose d’ores et déjà du contrôle exclusif, votre application sera mise en échec lors de la tentative d’initialisation du périphérique de capture multimédia. Si vous le définissez sur [**SharedReadOnly**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCaptureSharingMode), vous pouvez recevoir des images des sources d’images, même si elles sont utilisées par une autre application, mais vous ne pouvez pas modifier les paramètres des appareils.
-* [**MemoryPreference**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.memorypreference) : Si vous spécifiez l' [**UC**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCaptureMemoryPreference), le système utilise la mémoire de l’UC, ce qui garantit que lorsque les trames arrivent, elles sont disponibles en tant qu’objets [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap) . Si vous spécifiez [**Auto**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCaptureMemoryPreference), le système sélectionne dynamiquement l’emplacement optimal de mémoire dédié au stockage des images. Si le système choisit d’utiliser la mémoire GPU, les images multimédias arrivent en tant qu’objets [**IDirect3DSurface**](https://docs.microsoft.com/uwp/api/Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface), et non en tant qu’instances **SoftwareBitmap**.
-* [**StreamingCaptureMode**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.streamingcapturemode) : définissez cette valeur sur [**Video**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.StreamingCaptureMode) pour indiquer que l’audio n’a pas besoin d’être diffusé en continu.
+* [**SourceGroup**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.sourcegroup) - This tells the system which source group you will be using to get frames. N’oubliez pas que le groupe de sources définir un ensemble de sources d’images multimédias pouvant être utilisées simultanément.
+* [**SharingMode**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.sharingmode) - This tells the system whether you need exclusive control over the capture source devices. Si vous le définissez sur [**ExclusiveControl**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCaptureSharingMode), cela signifie que vous pouvez modifier les paramètres du périphérique de capture, par exemple le format des images produites. Par ailleurs, si une autre application dispose d’ores et déjà du contrôle exclusif, votre application sera mise en échec lors de la tentative d’initialisation du périphérique de capture multimédia. Si vous le définissez sur [**SharedReadOnly**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCaptureSharingMode), vous pouvez recevoir des images des sources d’images, même si elles sont utilisées par une autre application, mais vous ne pouvez pas modifier les paramètres des appareils.
+* [**MemoryPreference**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.memorypreference) - If you specify [**CPU**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCaptureMemoryPreference), the system will use CPU memory which guarantees that when frames arrive, they will be available as [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap) objects. Si vous spécifiez [**Auto**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCaptureMemoryPreference), le système sélectionne dynamiquement l’emplacement optimal de mémoire dédié au stockage des images. Si le système choisit d’utiliser la mémoire GPU, les images multimédias arrivent en tant qu’objets [**IDirect3DSurface**](https://docs.microsoft.com/uwp/api/Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface), et non en tant qu’instances **SoftwareBitmap**.
+* [**StreamingCaptureMode**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.streamingcapturemode) - Set this to [**Video**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.StreamingCaptureMode) to indicate that audio doesn't need to be streamed.
 
 Appelez [**InitializeAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.initializeasync) afin d’initialiser **MediaCapture** avec vos paramètres souhaités. Assurez-vous d’effectuer votre appel au sein d’un bloc *try*, ceci pour vous protéger en cas de mise en échec de l’initialisation.
 
@@ -148,10 +148,10 @@ Lorsque vous avez fini de lire les images, assurez-vous d’arrêter le lecteur 
 
 [!code-cs[Cleanup](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetCleanup)]
 
-Pour plus d’informations sur le nettoyage de vos objets de capture multimédia lorsque votre application est interrompue, consultez la section [**Accès à l’aperçu simple de l’appareil photo**](simple-camera-preview-access.md).
+Pour plus d’informations sur le nettoyage de vos objets de capture multimédia lorsque votre application est interrompue, consultez la section [**Afficher l’aperçu de l’appareil photo**](simple-camera-preview-access.md).
 
 ## <a name="the-framerenderer-helper-class"></a>La classe d’assistance FrameRenderer
-Le [profil d’appareil photo](https://go.microsoft.com/fwlink/?LinkId=823230) Windows universel fournit une classe d’assistance qui facilite l’affichage d’images de sources couleur, infrarouges et de profondeur dans votre application. Généralement, vous ne vous contentez pas d’afficher les données infrarouge et de profondeur à l’écran, mais cette classe d’assistance est un outil utile permettant d’illustrer la fonctionnalité du lecteur d’images et de déboguer votre propre implémentation du lecteur d’images.
+Le [profil d’appareil photo](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraFrames) Windows universel fournit une classe d’assistance qui facilite l’affichage d’images de sources couleur, infrarouges et de profondeur dans votre application. Généralement, vous ne vous contentez pas d’afficher les données infrarouge et de profondeur à l’écran, mais cette classe d’assistance est un outil utile permettant d’illustrer la fonctionnalité du lecteur d’images et de déboguer votre propre implémentation du lecteur d’images.
 
 La classe d’assistance **FrameRenderer** implémente les méthodes suivantes.
 
@@ -252,8 +252,8 @@ Pour plus d’informations sur l’utilisation des profils d’appareil photo, v
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Appareil photo](camera.md)
-* [Capture de photos, vidéo et audio de base avec MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [Exemple de trames d’appareil photo](https://go.microsoft.com/fwlink/?LinkId=823230)
+* [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Camera frames sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraFrames)
  
 
  

@@ -6,15 +6,15 @@ Search.Product: eADQiWindows 10XVcnh
 title: Effets vidéo personnalisés
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.assetid: 40a6bd32-a756-400f-ba34-2c5f507262c0
 ms.localizationpriority: medium
-ms.openlocfilehash: 819f0b4a5ba17a866eb50539f5138460eefd0eec
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 1be4bf71d99bd6560ce4ed753b55dacdfcceb868
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318401"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257194"
 ---
 # <a name="custom-video-effects"></a>Effets vidéo personnalisés
 
@@ -28,14 +28,14 @@ Cet article explique comment créer un composant Windows Runtime implémentant 
 
 Un effet vidéo personnalisé est défini dans une classe qui implémente l’interface [**IBasicVideoEffect**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.IBasicVideoEffect). Cette classe ne peut pas être incluse directement dans le projet de votre application. À la place, vous devez utiliser un composant Windows Runtime pour héberger votre classe d’effet vidéo.
 
-**Ajouter un composant Windows Runtime pour votre effet vidéo**
+**Add a Windows Runtime component for your video effect**
 
 1.  Dans Microsoft Visual Studio, quand votre solution est ouverte, accédez au menu **Fichier**, sélectionnez **Ajouter-&gt;Nouveau projet.**
 2.  Sélectionnez le type de projet **Composant Windows Runtime (Windows universel)** .
 3.  Pour cet exemple, nommez le projet *VideoEffectComponent*. Ce nom sera référencé dans le code ultérieurement.
-4.  Cliquez sur **OK**.
+4.  Cliquez sur **OK**.
 5.  Le modèle de projet crée une classe appelée Class1.cs. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur l’icône de Class1.cs et sélectionnez **Renommer**.
-6.  Renommez le fichier *ExampleVideoEffect.cs*. Visual Studio affiche une invite vous demandant si vous voulez mettre à jour toutes les références sous le nouveau nom. Cliquez sur **Oui**.
+6.  Renommez le fichier *ExampleVideoEffect.cs*. Visual Studio affiche une invite vous demandant si vous voulez mettre à jour toutes les références sous le nouveau nom. cliquez sur **Oui**.
 7.  Ouvrez **ExampleVideoEffect.cs** et mettez à jour la définition de classe pour implémenter l’interface [**IBasicVideoEffect**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.IBasicVideoEffect).
 
 [!code-cs[ImplementIBasicVideoEffect](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetImplementIBasicVideoEffect)]
@@ -162,17 +162,17 @@ Maintenant que les tampons de données ont été obtenus, vous pouvez lire à pa
 ## <a name="implement-the-ibasicvideoeffect-interface-using-hardware-processing"></a>Implémenter l’interface IBasicVideoEffect à l’aide du traitement matériel
 
 
-La création d’un effet vidéo personnalisé à l’aide du traitement matériel (GPU) est presque identique à l’utilisation du traitement logiciel tel que décrit ci-dessus. Cette section vous explique les différences dans un effet qui utilise le traitement matériel. Cet exemple utilise l’API Windows Runtime Win2D. Pour plus d’informations sur l’utilisation de Win2D, voir la [documentation Win2D](https://go.microsoft.com/fwlink/?LinkId=519078).
+La création d’un effet vidéo personnalisé à l’aide du traitement matériel (GPU) est presque identique à l’utilisation du traitement logiciel tel que décrit ci-dessus. Cette section vous explique les différences dans un effet qui utilise le traitement matériel. Cet exemple utilise l’API Windows Runtime Win2D. Pour plus d’informations sur l’utilisation de Win2D, voir la [documentation Win2D](https://microsoft.github.io/Win2D/html/Introduction.htm).
 
 Utilisez les étapes suivantes pour ajouter le package NuGet Win2D au projet que vous avez créé comme décrit dans la section **Ajouter un effet personnalisé à votre application** au début de cet article.
 
-**Pour ajouter le package NuGet de Win2D à votre projet d’effet**
+**To add the Win2D NuGet package to your effect project**
 
 1.  Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le projet **VideoEffectComponent** et sélectionnez **Gérer les packages NuGet**.
 2.  Dans la partie supérieure de la fenêtre, sélectionnez l’onglet **Parcourir**.
 3.  Dans la zone de recherche, entrez **Win2D**.
 4.  Sélectionnez **Win2D.uwp**, puis **Installer** dans le volet droit.
-5.  La boîte de dialogue **Examiner les modifications** vous indique le package à installer. Cliquez sur **OK**.
+5.  La boîte de dialogue **Examiner les modifications** vous indique le package à installer. Cliquez sur **OK**.
 6.  Acceptez la licence du package.
 
 Outre les espaces de noms inclus dans l’installation de base du projet, vous devez inclure les espaces de noms suivants fournis par Win2D.
@@ -216,7 +216,7 @@ Pour utiliser votre effet vidéo dans votre application, vous devez ajouter une 
 
 1.  Dans l’Explorateur de solutions, sous votre projet d’application, cliquez avec le bouton droit sur **Références**, puis sélectionnez **Ajouter une référence**.
 2.  Développez l’onglet **Projets**, sélectionnez **Solution**, puis cochez la case du nom de votre projet d’effet. Dans cet exemple, le nom est *VideoEffectComponent*.
-3.  Cliquez sur **OK**.
+3.  Cliquez sur **OK**.
 
 ### <a name="add-your-custom-effect-to-a-camera-video-stream"></a>Ajouter un effet personnalisé à un flux vidéo de caméra
 
@@ -239,7 +239,7 @@ Pour obtenir des instructions générales sur la création des compositions mult
 
 
 ## <a name="related-topics"></a>Rubriques connexes
-* [Accès à la préversion simple pour caméra](simple-camera-preview-access.md)
+* [Simple camera preview access](simple-camera-preview-access.md)
 * [Compositions multimédias et modification](media-compositions-and-editing.md)
-* [Documentation de Win2D](https://go.microsoft.com/fwlink/p/?LinkId=519078)
+* [Win2D documentation](https://microsoft.github.io/Win2D/html/Introduction.htm)
 * [Lecture de contenu multimédia](media-playback.md)

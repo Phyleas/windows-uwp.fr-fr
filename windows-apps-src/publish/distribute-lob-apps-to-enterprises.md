@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, cœur de métier, métier, applications d’entreprise, store pour entreprises, store pour éducation, entreprise
 ms.localizationpriority: medium
-ms.openlocfilehash: cf970c1812b4200cea4e4902ad883ef8b0b5e141
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: accf4e8dbc19e5858148bcf0cf62d0e1cc95ab82
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319997"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260005"
 ---
 # <a name="distribute-lob-apps-to-enterprises"></a>Distribuer des applications métier aux entreprises
 
@@ -22,7 +22,7 @@ Vous pouvez publier des applications métiers directement à l’attention des e
 > Pour l’instant, seules les applications gratuites peuvent être distribuées de façon exclusive aux entreprises par le biais de Microsoft Store pour Entreprises ou de Microsoft Store pour Éducation. Si vous soumettez une application payante en tant qu’application métier, elle ne sera pas disponible pour l’entreprise. 
 
 > [!IMPORTANT]
-> Vous ne pouvez pas utiliser l'[API de soumission au Microsoft Store](../monetize/create-and-manage-submissions-using-windows-store-services.md) pour publier des applications métier directement à destination des entreprises. Toutes les soumissions pour les applications métier doivent être publiées via des partenaires.
+> Vous ne pouvez pas utiliser l'[API de soumission au Microsoft Store](../monetize/create-and-manage-submissions-using-windows-store-services.md) pour publier des applications métier directement à destination des entreprises. All submissions for LOB apps must be published through Partner Center.
 
 
 ## <a name="set-up-the-enterprise-association"></a>Configurer l’association d’entreprise
@@ -30,7 +30,7 @@ Vous pouvez publier des applications métiers directement à l’attention des e
 Lorsque vous envisagez de publier des applications métier exclusivement à l’attention d’une entreprise, la première étape consiste à établir l’association entre votre compte et le magasin privé de l’entreprise.
 
 > [!IMPORTANT]
-> Ce processus d’association doit être lancé par l’entreprise et doit utiliser l’adresse de messagerie associée au compte Microsoft qui a été utilisé pour créer le compte de développeur. Pour plus d’informations, voir [Utilisation des applications métier](https://go.microsoft.com/fwlink/p/?LinkId=698846).
+> Ce processus d’association doit être lancé par l’entreprise et doit utiliser l’adresse de messagerie associée au compte Microsoft qui a été utilisé pour créer le compte de développeur. Pour plus d’informations, voir [Utilisation des applications métier](https://docs.microsoft.com/microsoft-store/working-with-line-of-business-apps).
 
 Lorsqu'une entreprise vous invite à publier des applications destinées à son utilisation exclusive, vous recevez un e-mail contenant un lien pour confirmer l'association. Vous pouvez également confirmer ces associations en accédant à la section **Associations d’entreprise** de vos **Paramètres de compte** (pour autant que vous êtes connecté avec le compte Microsoft qui a été utilisé pour ouvrir le compte de développeur).
 
@@ -73,7 +73,7 @@ Lorsque vous cliquez sur **Envoyer au Store**, le processus de certification de 
 > [!NOTE]
 > Pour obtenir votre application métier, l’organisation doit se trouver dans un [marché pris en charge](https://docs.microsoft.com/windows/whats-new/windows-store-for-business-overview#supported-markets), et vous ne devez pas avoir [exclu ce marché](define-pricing-and-market-selection.md) lorsque vous avez soumis l’application. 
 
-Pour plus d’informations, consultez les articles [Utilisation des applications cœur de métier](https://go.microsoft.com/fwlink/p/?LinkId=698846) et [Distribuer des applications à l’aide de votre magasin privé](https://go.microsoft.com/fwlink/p/?LinkId=698847).
+Pour plus d’informations, consultez les articles [Utilisation des applications cœur de métier](https://docs.microsoft.com/microsoft-store/working-with-line-of-business-apps) et [Distribuer des applications à l’aide de votre magasin privé](https://docs.microsoft.com/microsoft-store/distribute-apps-from-your-private-store).
 
 
 ## <a name="update-lob-apps"></a>Mettre à jour des applications métiers
@@ -92,9 +92,9 @@ Une fois le processus de certification appliqué à la soumission, l’applicati
 
 En mettant vos applications à la disposition d’une entreprise par le biais de Microsoft Store pour Entreprises ou de Microsoft Store pour Éducation, vous offrez l’assurance que ces applications ont été signées par le Windows Store et qu’elles sont conformes aux politiques standard du Windows Store.
 
-Dans certains cas, les entreprises ne souhaitent pas leurs applications métier devant être soumis via des partenaires (par exemple, que pour des raisons de conformité ou pour les applications qui ont besoin de fonctionnalités supplémentaires). Ces entreprises peuvent alors déployer les applications directement sur des machines par chargement indépendant, sans utiliser Microsoft Store pour Entreprises ni Microsoft Store pour Éducation.
+In some cases, companies may not want their LOB apps to be submitted through Partner Center (such as for compliance reasons or for apps that need additional capabilities). Ces entreprises peuvent alors déployer les applications directement sur des machines par chargement indépendant, sans utiliser Microsoft Store pour Entreprises ni Microsoft Store pour Éducation.
 
-Pour plus d’informations, consultez l’article [Chargement indépendant d’applications métier dans Windows 10](https://go.microsoft.com/fwlink/p/?LinkId=623433).
+Pour plus d’informations, consultez l’article [Chargement indépendant d’applications métier dans Windows 10](https://docs.microsoft.com/windows/application-management/sideload-apps-in-windows-10).
 
  
 

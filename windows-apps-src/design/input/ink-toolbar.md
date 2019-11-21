@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.assetid: d888f75f-c2a0-4134-81db-907b5e24fcc5
 ms.localizationpriority: medium
-ms.openlocfilehash: 05e10fd728930ea23615e11ffd5a004a420c9b64
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 8ae67e5d4d6da3cc9716c5f0efd276023bae9af0
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365839"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258381"
 ---
 # <a name="add-an-inktoolbar-to-a-universal-windows-platform-uwp-app"></a>Ajouter un élément InkToolbar à une application de plateforme Windows universelle (UWP)
 
 
 
-Il existe deux différents contrôles qui facilitent l’écriture manuscrite dans les applications Universal Windows Platform (UWP) : [**InkCanvas** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) et [ **InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar).
+Il existe deux contrôles différents qui facilitent l’entrée manuscrite dans les applications de plateforme Windows universelle (UWP) : [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) et [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar).
 
 Le contrôle [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) fournit les fonctionnalités Windows Ink de base. Utilisez-le pour restituer une entrée de stylet sous la forme d’un trait d’encre (via les paramètres par défaut de couleur et d’épaisseur) ou d’un trait d’effacement.
 
@@ -35,14 +35,14 @@ En tant que superposition totalement transparente, le contrôle InkCanvas ne fou
 
   Cette rubrique est dédiée au contrôle InkToolbar.
 
-> **API importantes** : [**InkCanvas (classe)** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas), [ **InkToolbar classe**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar), [ **InkPresenter classe**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter), [ **Windows.UI.Input.Inking**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking)
+> **API importantes** : [**classe InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas), [**classe InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar), [**classe InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter), [**Windows.UI.Input.Inking**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking)
 
 ## <a name="default-inktoolbar"></a>Contrôle InkToolbar par défaut
 
 Par défaut, l’élément [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) comprend des boutons pour dessiner, effacer, surligner et afficher un gabarit (règle ou rapporteur). Selon la fonctionnalité, d’autres paramètres et commandes tels que la couleur de l’encre, l’épaisseur du trait, la suppression totale, sont fournis dans un menu volant.
 
 ![InkToolbar](./images/ink/ink-tools-invoked-toolbar-small.png)  
-*Barre d’outils de l’encre Windows par défaut*
+*Default Windows Ink toolbar*
 
 Pour ajouter une valeur par défaut [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) à une application d’entrée manuscrite, placez-la simplement sur la même page que votre [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) et associez les deux contrôles.
 
@@ -87,10 +87,10 @@ Lorsque vous ajoutez une barre d’outils d'entrée manuscrite à votre applicat
 
 Spécifiez explicitement l’emplacement et l’orientation de la barre d’outils via ses propriétés [VerticalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.VerticalAlignment), [HorizontalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.HorizontalAlignment) et [Orientation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar?branch=rs3.Orientation).
 
-| Par défaut | Explicite |
+| Default | Explicite |
 | --- | --- |
 | ![Orientation et emplacement de la barre d’outils d’entrée manuscrite par défaut](./images/ink/location-default-small.png) | ![Orientation et emplacement de la barre d’outils d’entrée manuscrite explicite](./images/ink/location-explicit-small.png) |
-| *L’orientation et l’emplacement par défaut de barre d’outils Windows Ink* | *L’orientation et l’emplacement explicite de barre d’outils Windows Ink* |
+| *Windows Ink toolbar default location and orientation* | *Windows Ink toolbar explicit location and orientation* |
 
 Voici le code afin de définir explicitement l’emplacement et l’orientation de la barre d’outils d’entrée manuscrite en XAML.
 ```xaml
@@ -101,16 +101,16 @@ Voici le code afin de définir explicitement l’emplacement et l’orientation 
     TargetInkCanvas="{x:Bind inkCanvas}" />
 ```
 
-**Initialize selon les préférences de l’utilisateur ou l’état de l’appareil**
+**Initialize based on user preferences or device state**
 
 Dans certains cas, vous souhaiterez peut-être définir l’emplacement et l’orientation de la barre d’outils d'entrée manuscrite en fonction des préférences utilisateur ou de l’état d’appareil. L’exemple suivant montre comment définir l’emplacement et l’orientation de la barre d’outils d'entrée manuscrite en fonction des préférences d’écriture avec la main droite ou avec la main gauche via **Paramètres > Appareils > Stylet et Windows Ink > Stylet > Indiquer avec quelle main vous écrivez**.
 
-![Paramètre de main dominant](./images/ink/location-handedness-setting.png)  
-*Paramètre de main dominant*
+![Dominant hand setting](./images/ink/location-handedness-setting.png)  
+*Dominant hand setting*
 
 Vous pouvez interroger ce paramètre via la propriété HandPreference de Windows.UI.ViewManagement et définir [HorizontalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.HorizontalAlignment) en fonction de la valeur renvoyée. Dans cet exemple, nous localisons la barre d’outils sur le côté gauche de l’application pour un utilisateur gaucher, et sur le côté droit pour un utilisateur droitier.
 
-**Télécharger cet exemple à partir de [exemple d’entrée manuscrite barre d’outils emplacement et l’orientation (basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness.zip)**
+**Download this sample from [Ink toolbar location and orientation sample (basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness.zip)**
 
 ```csharp
 public MainPage()
@@ -127,11 +127,11 @@ public MainPage()
 }
 ```
 
-**Ajuster dynamiquement à l’état utilisateur ou périphérique**
+**Dynamically adjust to user or device state**
 
 Vous pouvez également utiliser une liaison pour rechercher les mises à jour de l’interface utilisateur basées sur les modifications apportées aux préférences utilisateur, aux paramètres d’appareil ou aux états d’appareil. Dans l’exemple suivant, nous développons l’exemple précédent et montrons comment positionner dynamiquement la barre d’outils d’entrée manuscrite en fonction de l’orientation de l’appareil en utilisant une liaison, un objet ViewMOdel et l’interface [INotifyPropertyChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.inotifypropertychanged). 
 
-**Télécharger cet exemple à partir de [exemple d’entrée manuscrite barre d’outils emplacement et l’orientation (dynamique)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness-dynamic.zip)**
+**Download this sample from [Ink toolbar location and orientation sample (dynamic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness-dynamic.zip)**
 
 1. Tout d’abord, nous allons ajouter notre ViewModel.
     1. Ajoutez un nouveau dossier à votre projet et appelez-le **ViewModels**.
@@ -170,7 +170,7 @@ Vous pouvez également utiliser une liaison pour rechercher les mises à jour de
         }
         ```
 
-    1. Ajoutez deux propriétés bool à la classe InkToolbarSnippetHostViewModel : **LeftHandedLayout** (même fonctionnalité que l’exemple précédent XAML uniquement) et **PortraitLayout** (orientation de l’appareil).
+    1. Ajoutez deux propriétés booléennes à la classe InkToolbarSnippetHostViewModel : **LeftHandedLayout** (même fonctionnalité que l’exemple XAML précédent) et **PortraitLayout** (orientation de l’appareil).
         >[!NOTE] 
         > La propriété PortraitLayout est définissable et inclut la définition pour l’événement [PropertyChanged](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged).
 
@@ -279,11 +279,11 @@ Vous pouvez également utiliser une liaison pour rechercher les mises à jour de
         }
         ```
 
-1. À présent, ouvrez le fichier MainPage.xaml.cs.
-    1. Ajouter `using using locationandorientation.ViewModels` à la liste des espaces de noms à associer notre ViewModel.
-    1. Ajouter `using Windows.UI.ViewManagement` à la liste des espaces de noms à activer l’écoute des modifications apportées à l’orientation du périphérique.
-    1. Ajouter le [WindowSizeChangedEventHandler](https://docs.microsoft.com/uwp/api/windows.ui.xaml.windowsizechangedeventhandler) code.
-    1. Définir le [DataContext](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement.DataContext) pour l’affichage de l’instance singleton de la classe InkToolbarSnippetHostViewModel. 
+1. Now, open the MainPage.xaml.cs file.
+    1. Add `using using locationandorientation.ViewModels` to the list of namespaces to associate our ViewModel.
+    1. Add `using Windows.UI.ViewManagement` to the list of namespaces to enable listening for changes to the device orientation.
+    1. Add the [WindowSizeChangedEventHandler](https://docs.microsoft.com/uwp/api/windows.ui.xaml.windowsizechangedeventhandler) code.
+    1. Set the [DataContext](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement.DataContext) for the view to the singleton instance of the InkToolbarSnippetHostViewModel class. 
     ```csharp
     using Windows.UI.Xaml;
     using Windows.UI.Xaml.Controls;
@@ -319,8 +319,8 @@ Vous pouvez également utiliser une liaison pour rechercher les mises à jour de
     }
     ```
 
-1. Ensuite, ouvrez le fichier MainPage.xaml.
-    1. Ajouter `xmlns:converters="using:locationandorientation.Converters"` à la `Page` élément pour la liaison à notre convertisseurs.
+1. Next, open the MainPage.xaml file.
+    1. Add `xmlns:converters="using:locationandorientation.Converters"` to the `Page` element for binding to our converters.
         ```xaml
         <Page
         x:Class="locationandorientation.MainPage"
@@ -333,7 +333,7 @@ Vous pouvez également utiliser une liaison pour rechercher les mises à jour de
         mc:Ignorable="d">
         ```
 
-    1. Ajouter un `PageResources` élément et spécifiez les références à notre convertisseurs.
+    1. Add a `PageResources` element and specify references to our converters.
         ```xaml
         <Page.Resources>
             <converters:HorizontalAlignmentFromHandednessConverter x:Key="HorizontalAlignmentConverter"/>
@@ -341,7 +341,7 @@ Vous pouvez également utiliser une liaison pour rechercher les mises à jour de
         </Page.Resources>
         ```
 
-    1. Ajoutez les éléments InkCanvas et InkToolbar et lier les propriétés de la InkToolbar VerticalAlignment et HorizontalAlignment.
+    1. Add the InkCanvas and InkToolbar elements and bind the VerticalAlignment and HorizontalAlignment properties of the InkToolbar.
         ```xaml
         <InkCanvas x:Name="inkCanvas" />
         <InkToolbar x:Name="inkToolbar" 
@@ -351,7 +351,7 @@ Vous pouvez également utiliser une liaison pour rechercher les mises à jour de
                     TargetInkCanvas="{x:Bind inkCanvas}" />
         ```
 
-1. Revenez dans le fichier InkToolbarSnippetHostViewModel.cs pour ajouter notre `PortraitLayout` et `LeftHandedLayout` propriétés bool à la `InkToolbarSnippetHostViewModel` (classe), ainsi que de la prise en charge de la reliaison `PortraitLayout` lorsque la valeur de cette propriété change. 
+1. Return to the InkToolbarSnippetHostViewModel.cs file to add our `PortraitLayout` and `LeftHandedLayout` bool properties to the `InkToolbarSnippetHostViewModel` class, along with support for rebinding `PortraitLayout` when that property value changes. 
     ```csharp
     public bool LeftHandedLayout
     {
@@ -398,11 +398,11 @@ Vous pouvez également utiliser une liaison pour rechercher les mises à jour de
     #endregion
     ```
 
-Vous devez maintenant avoir une application pour l’écriture manuscrite qui s’adapte à la préférence de main dominante de l’utilisateur et répond dynamiquement à l’orientation du périphérique de l’utilisateur.
+You should now have an inking app that adapts to both the dominant hand preference of the user and dynamically responds to the orientation of the user's device.
 
 ### <a name="specify-the-selected-button"></a>Spécifier le bouton sélectionné  
-![Bouton crayon sélectionné lors de l’initialisation](./images/ink/ink-tools-default-toolbar.png)  
-*Barre d’outils de l’encre Windows avec le bouton crayon sélectionné lors de l’initialisation*
+![Pencil button selected at initialization](./images/ink/ink-tools-default-toolbar.png)  
+*Windows Ink toolbar with pencil button selected at initialization*
 
 Par défaut, le premier bouton (ou celui le plus à gauche) est sélectionné lorsque votre application est lancée et que la barre d’outils est initialisée. Dans la barre d’outils Windows Ink par défaut, il s’agit du bouton de stylo à bille.
 
@@ -452,8 +452,8 @@ private void inkToolbar_Loaded(object sender, RoutedEventArgs e)
 
 ### <a name="specify-the-built-in-buttons"></a>Spécifier les boutons intégrés
 
-![Boutons spécifiques inclus lors de l’initialisation](./images/ink/ink-tools-specific.png)  
-*Boutons spécifiques inclus lors de l’initialisation*
+![Specific buttons included at initialization](./images/ink/ink-tools-specific.png)  
+*Specific buttons included at initialization*
 
 Comme mentionné précédemment, la barre d’outils Windows Ink comprend une collection de boutons intégrés par défaut. Ces boutons sont affichés dans l’ordre suivant (de gauche à droite) :
 
@@ -593,10 +593,10 @@ Vous pouvez personnaliser et étendre la collection de boutons (et de fonctionna
 Le contrôle InkToolbar se compose de deux groupes de types de boutons :
 
 1. Un groupe de boutons « outil » comprenant les boutons intégrés de dessin, d’effacement et de surlignage. Les outils et stylets personnalisés sont ajoutés ici.
-> **Remarque**&nbsp;&nbsp;sélection des fonctionnalités s’excluent mutuellement.
+> **Note**&nbsp;&nbsp;Feature selection is mutually exclusive.
 
-2. Un groupe de boutons « bascules » contenant le bouton intégré de règle. Les boutons bascule personnalisés sont ajoutés ici.
-> **Remarque**&nbsp;&nbsp;fonctionnalités ne sont pas mutuellement exclusifs et peut être utilisées en même temps que d’autres outils actives.
+2. Un groupe de boutons « bascules » contenant le bouton intégré de règle. Les boutons bascules personnalisés sont ajoutés ici.
+> **Note**&nbsp;&nbsp;Features are not mutually exclusive and can be used concurrently with other active tools.
 
 En fonction de votre application et de la fonctionnalité d’entrée manuscrite requise, vous pouvez ajouter n’importe lequel des boutons suivants (liés à vos fonctionnalités d’entrée manuscrite personnalisées) au contrôle InkToolbar :
 
@@ -604,14 +604,14 @@ En fonction de votre application et de la fonctionnalité d’entrée manuscrite
 - Outil personnalisé : un outil autre qu’un stylet, défini par l’application hôte.
 - Bascule personnalisée : définit l’état d’une fonctionnalité définie par l’application sur activé ou désactivé. Lorsqu’elle est activée, la fonctionnalité fonctionne conjointement avec l’outil actif.
 
-> **Remarque**&nbsp;&nbsp;vous ne pouvez pas modifier l’ordre d’affichage des boutons intégrés. L’ordre d’affichage par défaut est : Stylo à bille, Crayon, surligneur, gomme et règle. Les stylets personnalisés sont ajoutés au dernier stylet par défaut, les boutons d’outil personnalisé sont ajoutés entre le dernier bouton de stylet et le bouton de gomme, et les boutons de bascule personnalisés sont ajoutés après le bouton de règle. (Les boutons personnalisés sont ajoutés dans l’ordre que vous avez spécifié.)
+> **Note**&nbsp;&nbsp;You cannot change the display order of the built-in buttons. L’ordre d’affichage par défaut est le suivant : stylo à bille, crayon, surligneur, gomme et règle. Les stylets personnalisés sont ajoutés au dernier stylet par défaut, les boutons d’outil personnalisé sont ajoutés entre le dernier bouton de stylet et le bouton de gomme, et les boutons de bascule personnalisés sont ajoutés après le bouton de règle. (Les boutons personnalisés sont ajoutés dans l’ordre que vous avez spécifié.)
 
 ### <a name="custom-pen"></a>Stylet personnalisé
 
 Vous pouvez créer un stylet personnalisé (activé par le biais d’un bouton de stylet personnalisé) dans lequel vous définissez la palette de couleurs d’entrée manuscrite et les propriétés de la pointe du stylet, telles que la forme, la rotation et la taille.
 
-![Bouton de stylet calligraphique personnalisé](./images/ink/ink-tools-custompen.png)  
-*Bouton de stylet calligraphique personnalisé*
+![Custom calligraphic pen button](./images/ink/ink-tools-custompen.png)  
+*Custom calligraphic pen button*
 
 Ici, nous définissons un stylet personnalisé à pointe large qui permet de tracer des traits de calligraphie de base. Nous personnalisons également la collection de pinceaux dans la palette affichée dans le menu volant de bouton.
 
@@ -919,7 +919,7 @@ Dans cet exemple, nous définissons un bouton d’outil personnalisé qui, lorsq
 
    Ce gestionnaire configure [**InkPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter) pour transmettre les entrées non traitées à l’application. 
 
-   Pour une étape plus détaillée par le biais de ce code :  Consultez l’entrée directe pour la section traitement avancé des [Windows Ink et les interactions du stylet dans les applications UWP](pen-and-stylus-interactions.md).
+   Pour une procédure plus détaillée de ce code, voir la section Entrée directe pour traitement avancé de [Interactions avec le stylet et Windows Ink dans les applications UWP](pen-and-stylus-interactions.md).
 
    Nous avons également spécifié une icône pour le bouton à l’aide de l’élément SymbolIcon et de l’extension de balisage {x:Bind} qui l’associe à un champ défini dans le fichier code-behind (SelectIcon).
 
@@ -1116,23 +1116,23 @@ La plateforme d’entrée manuscrite vous permet de remplacer ce comportement et
 Pour plus d’informations sur le séchage personnalisé, voir [Interactions avec le stylet et Windows Ink dans les applications UWP](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions#custom-ink-rendering).
 
 > [!NOTE]
-> Séchage personnalisé et élément [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar)  
+> Séchage personnalisé et [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar)  
 > Si votre application remplace le comportement par défaut du rendu d’entrée manuscrite de l’élément [**InkPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter) par une implémentation de séchage personnalisé, les traits d’encre restitués ne sont plus disponibles pour l’élément InkToolbar et les commandes d’effacement intégrées de l’élément InkToolbar ne fonctionneront pas comme prévu. Pour fournir des fonctionnalités d’effacement, vous devez gérer tous les événements de pointeur, effectuer le test de positionnement sur chaque trait et remplacer la commande intégrée « Effacer toutes les entrées manuscrites ».
 
-## <a name="related-articles"></a>Articles connexes
+## <a name="related-articles"></a>Articles associés
 
-- [Interactions de stylet et du stylet](pen-and-stylus-interactions.md)
+- [Pen and stylus interactions](pen-and-stylus-interactions.md)
 
 ### <a name="topic-samples"></a>Exemples de la rubrique
 
-- [Exemple d’entrée manuscrite barre d’outils emplacement et l’orientation (base)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness.zip)
-- [Exemple d’entrée manuscrite barre d’outils emplacement et l’orientation (dynamique)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness-dynamic.zip)
+- [Ink toolbar location and orientation sample (basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness.zip)
+- [Ink toolbar location and orientation sample (dynamic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness-dynamic.zip)
 
 ### <a name="other-samples"></a>Autres exemples
 
-- [Exemple d’entrée manuscrite simple (C#/C++)](https://go.microsoft.com/fwlink/p/?LinkID=620312)
-- [Exemple de l’encre complexes (C++)](https://go.microsoft.com/fwlink/p/?LinkID=620314)
-- [Exemple de l’encre (JavaScript)](https://go.microsoft.com/fwlink/p/?LinkID=620308)
-- [Prise en main didacticiel : Prise en charge de l’encre dans votre application UWP](https://aka.ms/appsample-ink)
-- [Coloration du carnet d’exemple](https://aka.ms/cpubsample-coloringbook)
-- [Exemple de la famille de notes](https://aka.ms/cpubsample-familynotessample)
+- [Simple ink sample (C#/C++)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk)
+- [Complex ink sample (C++)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk)
+- [Ink sample (JavaScript)](https://go.microsoft.com/fwlink/p/?LinkID=620308)
+- [Get Started Tutorial: Support ink in your UWP app](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-Ink)
+- [Coloring book sample](https://github.com/Microsoft/Windows-appsample-coloringbook)
+- [Family notes sample](https://github.com/Microsoft/Windows-appsample-familynotes)

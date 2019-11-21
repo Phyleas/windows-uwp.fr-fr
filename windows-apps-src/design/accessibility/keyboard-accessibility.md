@@ -6,14 +6,14 @@ label: Keyboard accessibility
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fd8fa2b5264328619619df862d21f02f70f52e0
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: 1fd0f00d74d62816ff347265936f6b066a0316b0
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393759"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257754"
 ---
 # <a name="keyboard-accessibility"></a>Accessibilité du clavier  
 
@@ -96,10 +96,10 @@ XAML
 ## <a name="keyboard-shortcuts"></a>Raccourcis clavier  
 Outre l’implémentation de la navigation au clavier et l’activation du clavier pour votre application, il est recommandé de mettre en œuvre des raccourcis pour les fonctionnalités de votre application. La navigation par tabulation fournit un bon niveau de prise en charge de base du clavier, mais avec des formulaires complexes vous souhaiterez peut-être ajouter une prise en charge de raccourcis clavier. Cela peut rendre l’utilisation de votre application plus efficace, même pour les personnes qui utilisent à la fois un clavier et des appareils de pointage.
 
-Un *raccourci* est une combinaison de touches qui améliore la productivité en fournissant à l’utilisateur un moyen efficace d’accéder aux fonctionnalités de l’application. Il existe deux types de raccourcis :
+Un *raccourci* est une combinaison de touches qui améliore la productivité en fournissant à l’utilisateur un moyen efficace d’accéder aux fonctionnalités de l’application. Il existe deux types de raccourcis :
 
-* Une *touche d’accès rapide* est un raccourci vers un élément de l’interface utilisateur de votre application. Les touches d’accès rapide sont formées à partir de la touche Alt et d’une lettre.
-* Une *touche accélérateur* est un raccourci vers une commande d’application. Votre application peut avoir ou non une interface utilisateur qui correspond exactement à la commande. Les touches accélérateur sont formées avec la touche Ctrl et une lettre.
+* Une *touche d’accès rapide* est un raccourci vers un élément de l’interface utilisateur de votre application. Les touches d’accès rapide associent la touche Alt et une lettre.
+* Une *touche de raccourci* est un raccourci vers une commande d’application. Votre application peut avoir ou non une interface utilisateur qui correspond exactement à la commande. Les touches de raccourci associent la touche Ctrl et une lettre.
 
 Il est impératif de permettre aux utilisateurs qui se font aider de lecteurs d’écran et d’autres technologies d’assistance de découvrir facilement les touches de raccourci de votre application. Communiquez les touches de raccourci à l’aide d’info-bulles, de noms accessibles, de descriptions accessibles ou d’autres formes de communication à l’écran. Les touches de raccourci doivent au minimum être bien documentées dans le contenu d’aide de votre application.
 
@@ -144,11 +144,11 @@ XAML
 ```
 
 > [!IMPORTANT]
-> La définition de [**AutomationProperties. AcceleratorKey**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.acceleratorkeyproperty) ou de [**AutomationProperties. AccessKey**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.accesskeyproperty) n’active pas la fonctionnalité du clavier. Elle n’indique à l’infrastructure UI Automation que les raccourcis à utiliser, de sorte que ces informations puissent être transmises aux utilisateurs via des technologies d’assistance. L’implémentation de la gestion des raccourcis doit encore être effectuée dans le code, pas en XAML. Vous devrez quand même associer des gestionnaires pour les événements [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) ou [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) au contrôle approprié afin de mettre véritablement en œuvre le comportement de la touche de raccourci dans votre application. De même, l’ornement de soulignement du texte n’est pas fourni automatiquement pour une touche d’accès. Si vous voulez afficher du texte souligné dans l’interface utilisateur, vous devez souligner le texte de manière explicite pour la touche en question dans votre mnémonique en insérant une mise en forme [**Underline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Underline).
+> Setting the [**AutomationProperties.AcceleratorKey**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.acceleratorkeyproperty) or [**AutomationProperties.AccessKey**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.accesskeyproperty) doesn't enable keyboard functionality. Elle n’indique à l’infrastructure UI Automation que les raccourcis à utiliser, de sorte que ces informations puissent être transmises aux utilisateurs via des technologies d’assistance. L’implémentation de la gestion des raccourcis doit encore être effectuée dans le code, pas en XAML. Vous devrez quand même associer des gestionnaires pour les événements [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) ou [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) au contrôle approprié afin de mettre véritablement en œuvre le comportement de la touche de raccourci dans votre application. De même, l’ornement de soulignement du texte n’est pas fourni automatiquement pour une touche d’accès. Si vous voulez afficher du texte souligné dans l’interface utilisateur, vous devez souligner le texte de manière explicite pour la touche en question dans votre mnémonique en insérant une mise en forme [**Underline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Underline).
 
 Pour des raisons de simplicité, l’exemple précédent omet l’utilisation de ressources pour des chaînes telles que Ctrl+A. Toutefois, vous devez également tenir compte des touches de raccourci durant la localisation. La localisation des touches de raccourci est pertinente car le choix de la touche à utiliser dépend généralement de l’étiquette de texte visible pour l’élément.
 
-Pour obtenir de l’aide supplémentaire sur l’implémentation de touches de raccourci, voir la section [Touches de raccourci](https://go.microsoft.com/fwlink/p/?linkid=221825) dans la rubrique Recommandations en matière d’interactions utilisateur Windows.
+Pour obtenir de l’aide supplémentaire sur l’implémentation de touches de raccourci, voir la section [Touches de raccourci](https://docs.microsoft.com/windows/win32/uxguide/inter-keyboard?redirectedfrom=MSDN) dans la rubrique Recommandations en matière d’interactions utilisateur Windows.
 
 <span id="Implementing_a_key_event_handler"/>
 <span id="implementing_a_key_event_handler"/>
@@ -175,7 +175,7 @@ En règle générale, on met en œuvre la gestion des touches personnalisée pou
 ## <a name="an-example-of-a-visual-state-for-a-focus-indicator"></a>Exemple d’un état visuel pour un indicateur de focus  
 Nous avons précédemment indiqué que tout contrôle personnalisé qui permet à l’utilisateur d’ajouter un focus doit être doté d’un indicateur de focus visuel. Généralement, cet indicateur de focus se matérialise simplement par le dessin d’une forme rectangulaire dans le proche contour du rectangle de délimitation normal du contrôle. L’élément [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) du focus visuel est un élément homologue par rapport au reste de la composition du contrôle dans un modèle de contrôle, mais à l’origine, la valeur **Collapsed** est affectée à la propriété [**Visibility**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.visibility) car le contrôle n’a pas encore le focus. Ensuite, lorsque le contrôle reçoit le focus, un état visuel est appelé. Ce dernier affecte **Visible** spécifiquement à la propriété **Visibility** de l’état visuel du focus. Une fois que le focus est déplacé ailleurs, un autre état visuel est appelé, et la propriété **Visibility** devient **Collapsed**.
 
-Les contrôles XAML par défaut affichent tous un indicateur de focus visuel approprié lorsqu’ils ont le focus (s’ils peuvent recevoir le focus). Il y a également des différences potentiellement différentes selon le thème sélectionné de l’utilisateur (en particulier si l’utilisateur utilise un mode de contraste élevé). Si vous utilisez les contrôles XAML dans votre interface utilisateur sans remplacer les modèles de contrôle, vous n’avez rien d’autre à faire pour obtenir les indicateurs de focus visuel sur les contrôles qui se comportent et s’affichent correctement. Mais si vous avez l’intention de redéfinir le modèle d’un contrôle ou si vous souhaitez savoir comment les contrôles XAML fournissent leurs indicateurs de focus visuels, le reste de cette section examine ce qui se passe dans le code XAML et dans la logique des contrôles.
+Les contrôles XAML par défaut affichent tous un indicateur de focus visuel approprié lorsqu’ils ont le focus (s’ils peuvent recevoir le focus). Ils peuvent aussi avoir des apparences différentes selon le thème sélectionné par l’utilisateur (en particulier si ce dernier utilise un mode de contraste élevé). Si vous utilisez les contrôles XAML dans votre interface utilisateur et que vous ne remplacez pas les modèles de contrôle, aucune opération supplémentaire n’est requise pour obtenir les indicateurs de focus visuels sur les contrôles qui se comportent et qui s’affichent correctement. Mais si vous avez l’intention de redéfinir le modèle d’un contrôle ou si vous souhaitez savoir comment les contrôles XAML fournissent leurs indicateurs de focus visuels, le reste de cette section examine ce qui se passe dans le code XAML et dans la logique des contrôles.
 
 Voici un exemple XAML issu du modèle XAML par défaut pour un élément [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button).
 
@@ -203,7 +203,7 @@ XAML
 </ControlTemplate>
 ```
 
-Jusqu’à présent, il s’agit simplement de la composition. Pour contrôler la visibilité de l’indicateur de focus, vous définissez les états visuels qui activent ou désactivent la propriété [**Visibility**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.visibility). Cette opération s’effectue à l’aide de la propriété jointe [VisualStateManager](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateManager) et VisualStateManager. VisualStateGroups, telle qu’elle est appliquée à l’élément racine qui définit la composition.
+Jusqu’à présent, il s’agit simplement de la composition. Pour contrôler la visibilité de l’indicateur de focus, vous définissez les états visuels qui activent ou désactivent la propriété [**Visibility**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.visibility). This is done using the [VisualStateManager](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateManager) and the VisualStateManager.VisualStateGroups attached property, as applied to the root element that defines the composition.
 
 XAML
 ```xml
@@ -248,6 +248,6 @@ En règle générale, les raccourcis clavier ne concernent pas les applications 
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Accessibilité](accessibility.md)
-* [Interactions du clavier](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)
-* [Exemple de clavier tactile](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
-* [Exemple d’accessibilité XAML](https://go.microsoft.com/fwlink/p/?linkid=238570)
+* [Keyboard interactions](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)
+* [Touch keyboard sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
+* [XAML accessibility sample](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d)

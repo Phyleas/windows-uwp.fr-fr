@@ -1,27 +1,27 @@
 ---
-Description: En savoir plus sur la réception de paiements pour vos applications, les modules complémentaires (produits dans l’application) et les revenus de la publicité.
+Description: Learn about receiving payments for your apps, add-ons (in-app products), and advertising earnings.
 title: Rémunération
 ms.assetid: 37D1EF45-C4A8-4849-8819-3D4A4898215C
 ms.date: 03/05/2019
 ms.topic: article
 keywords: windows 10, uwp, paiements, ventes d’applications, revenu de l’application, revenu, frais d’utilisation du Store, mise en attente des paiements, pourcentage
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a3c8bf0d2d203b650b2706c24dc4c20e88e2576
-ms.sourcegitcommit: 36f502e2449f49e82bd593d6aea0b71ac48d6bec
+ms.openlocfilehash: 853554a0a3a0507f1a8b9d8994618d16aa44bccc
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70750560"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259994"
 ---
 # <a name="getting-paid"></a>Rémunération
-Voici quelques informations importantes sur la réception des paiements pour vos applications, modules complémentaires et revenus publicitaires.
+Here’s some important info about receiving payment for your apps, add-ons, and advertising earnings.
 
 > [!IMPORTANT]
-> Avant de pouvoir recevoir des sommes de l’application Sales dans le Microsoft Store, vous devez [configurer votre compte de paiement et remplir les formulaires fiscaux nécessaires](setting-up-your-payout-account-and-tax-forms.md).
+> Before you can receive money from app sales in the Microsoft Store, you need to [set up your payout account and fill out the necessary tax forms](setting-up-your-payout-account-and-tax-forms.md).
 
 ## <a name="store-fee"></a>Frais d’utilisation du Windows Store
 
-Quand vous [créez un compte de développeur](https://go.microsoft.com/fwlink/p/?LinkID=615100), vous acceptez le [Contrat développeur d’applications](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). Ce contrat détaille la relation qui vous unit à Microsoft en ce qui concerne la vente d'applications dans le Microsoft Store, notamment les frais facturés par Microsoft pour chaque vente réalisée par le biais du Store.
+Quand vous [créez un compte de développeur](https://developer.microsoft.com/store/register), vous acceptez le [Contrat développeur d’applications](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). Ce contrat détaille la relation qui vous unit à Microsoft en ce qui concerne la vente d'applications dans le Microsoft Store, notamment les frais facturés par Microsoft pour chaque vente réalisée par le biais du Store.
 
 Ces frais sont officiellement définis dans le [Contrat développeur d’applications](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). Pour toute question, reportez-vous à ce document.
 
@@ -46,7 +46,7 @@ N'oubliez pas que le prix que vous sélectionnez peut inclure la taxe de vente o
 
 ## <a name="payout-reporting"></a>Rapports sur les paiements
 
-Vous pouvez accéder à des détails sur vos informations de paiement et télécharger des rapports dans le **Résumé** de paiement de l' [espace partenaires](https://partner.microsoft.com/dashboard). Pour plus d'informations sur les données figurant sur cette page et sur la façon dont nous classons vos revenus, consultez l'article [Synthèse des paiements](payout-summary.md).
+You can access details about your payment info and download reports in the **Payout summary** of [Partner Center](https://partner.microsoft.com/dashboard). Pour plus d'informations sur les données figurant sur cette page et sur la façon dont nous classons vos revenus, consultez l'article [Synthèse des paiements](payout-summary.md).
 
 
 ## <a name="payout-timeframe"></a>Période de paiement
@@ -56,14 +56,14 @@ Les paiements sont effectués sur une base mensuelle (à condition que le seuil 
 
 ##  <a name="payout-hold-status"></a>État de mise en attente des paiements
 
-Par défaut, nous envoyons les paiements sur une base mensuelle comme décrit ci-dessus. Toutefois, vous avez la possibilité de mettre vos paiements pour un programme en attente, ce qui nous empêchera d’envoyer des paiements à votre compte. Si vous choisissez de mettre vos paiements en attente, nous continuons à enregistrer les revenus que vous gagnez et à en fournir les détails dans votre **Résumé du paiement**. Toutefois, nous n’envoyons pas de paiement vers votre compte tant que vous n’avez pas annulé la mise en attente.
+Par défaut, nous envoyons les paiements sur une base mensuelle comme décrit ci-dessus. However, you have the option to put your payouts for a program on hold, which will prevent us from sending payments to your account. Si vous choisissez de mettre vos paiements en attente, nous continuons à enregistrer les revenus que vous gagnez et à en fournir les détails dans votre **Résumé du paiement**. Toutefois, nous n’envoyons pas de paiement vers votre compte tant que vous n’avez pas annulé la mise en attente.
 
-Pour mettre vos paiements en attente, accédez à **paramètres du développeur**. Sous **paiement et taxes**, dans la section **attribution de profil de paiement et de taxe** , localisez le programme pour lequel vous souhaitez payer vos paiements. Cochez la case **conserver mon paiement** pour conserver les paiements pour ce programme. Vous pouvez modifier l’état de mise en attente du paiement à tout moment, mais n’oubliez pas que votre décision a un impact sur le paiement mensuel suivant. Par exemple, si vous voulez mettre en attente le paiement du mois d’avril, configurez l’état de mise en attente des paiements sur **Activé** avant la fin du mois de mars.
+To place your payments on hold, go to **Developer settings**. Under **Payout and tax**, in the **Payout and tax profile assignment** section, locate the program for which you would like payments held. Click the **Hold my Payment** checkbox to hold payments for this program. Vous pouvez modifier l’état de mise en attente du paiement à tout moment, mais n’oubliez pas que votre décision a un impact sur le paiement mensuel suivant. Par exemple, si vous voulez mettre en attente le paiement du mois d’avril, configurez l’état de mise en attente des paiements sur **Activé** avant la fin du mois de mars.
 
-Une fois que vous avez défini votre état de blocage de paiement sur **activé**, tous les versements pour ce programme sont en attente jusqu’à ce que vous basculiez le curseur sur **désactivé**. Lorsque vous procédez ainsi, vous êtes inclus dans le cycle de paiement mensuel suivant (à condition que les seuils de paiement applicables aient été atteints). Par exemple, si vous avez mis vos paiements en attente, mais que vous souhaitez qu’un paiement soit généré en juin, vous devez configurer l’état de mise en attente des paiements sur **Désactivé** avant la fin du mois de mai.
+Once you have set your payout hold status to **On**, all payouts for this program will be on hold until you toggle the slider back to **Off**. Lorsque vous procédez ainsi, vous êtes inclus dans le cycle de paiement mensuel suivant (à condition que les seuils de paiement applicables aient été atteints). Par exemple, si vous avez mis vos paiements en attente, mais que vous souhaitez qu’un paiement soit généré en juin, vous devez configurer l’état de mise en attente des paiements sur **Désactivé** avant la fin du mois de mai.
 
 > [!NOTE]
-> L' **État d’attente de paiement** s’applique à chaque programme individuellement (Microsoft Store, publicité, place de marché Azure, etc.). Si vous souhaitez conserver les paiements sur tous vos programmes, vous devez conserver les paiements sur chaque programme individuellement.
+> Your **Payout hold status** applies to each program individually (Microsoft Store, advertising, Azure Marketplace, etc.). If you wish to hold payments on all of your programs, you must hold payments on each program individually.
 
 
  
