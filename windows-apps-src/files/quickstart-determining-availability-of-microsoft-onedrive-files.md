@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: effb28fa453ec884152dbc404245f00f4893ef5a
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 36835a198d03a8ad5f5e811a74e120c9bbd25c08
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66369426"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258586"
 ---
 # <a name="determining-availability-of-microsoft-onedrive-files"></a>Détermination de la disponibilité des fichiers Microsoft OneDrive
 
@@ -53,7 +53,7 @@ Les étapes suivantes illustrent comment déterminer si un fichier est actuellem
 
 1.  Déclarez une fonctionnalité appropriée pour la bibliothèque à laquelle vous voulez accéder.
 2.  Incluez l’espace de noms [**Windows.Storage**](https://docs.microsoft.com/uwp/api/Windows.Storage). Cet espace de noms comprend les types qui permettent de gérer les fichiers, les dossiers et les paramètres d’application. Il comprend également le type [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) nécessaire.
-3.  Obtenez un objet [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) pour le ou les fichiers souhaités. Si vous énumérez une bibliothèque, vous devez généralement effectuer cette étape en appelant la méthode [**StorageFolder.CreateFileQuery**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.createfilequery), puis la méthode [**GetFilesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfilesasync) de l’objet [**StorageFileQueryResult**](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.StorageFileQueryResult) résultant. La méthode **GetFilesAsync** retourne une collection [IReadOnlyList](https://go.microsoft.com/fwlink/p/?LinkId=324970) d’objets **StorageFile**.
+3.  Obtenez un objet [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) pour le ou les fichiers souhaités. Si vous énumérez une bibliothèque, vous devez généralement effectuer cette étape en appelant la méthode [**StorageFolder.CreateFileQuery**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.createfilequery), puis la méthode [**GetFilesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfilesasync) de l’objet [**StorageFileQueryResult**](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.StorageFileQueryResult) résultant. La méthode **GetFilesAsync** retourne une collection [IReadOnlyList](https://msdn.microsoft.com/library/hh192385.aspx) d’objets **StorageFile**.
 4.  Une fois que vous avez accès à un objet [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) qui représente le ou les fichiers souhaités, la valeur de la propriété [**StorageFile.IsAvailable**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.isavailable) indique si le fichier est disponible ou non.
 
 La méthode générique suivante montre comment énumérer un dossier et retourner la collection d’objets [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) pour ce dossier. La méthode d’appel itère la collection retournée en référençant la propriété [**StorageFile.IsAvailable**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.isavailable) pour chaque fichier.

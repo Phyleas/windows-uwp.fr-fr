@@ -12,12 +12,12 @@ design-contact: jeffarn
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a409c4b940ad0e194428981f536823d880e56302
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 67315518238bda1359862f36acd398e25e8481e3
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66364490"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258153"
 ---
 # <a name="progress-controls"></a>Contrôles de progression
 
@@ -192,4 +192,4 @@ Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows
 
 **Pour les développeurs (XAML)**
 - [Ajout de contrôles de progression](https://docs.microsoft.com/previous-versions/windows/apps/hh780651(v=win.10))
-- [Guide pratique pour créer une barre de progression indéterminée personnalisée pour Windows Phone](https://go.microsoft.com/fwlink/p/?LinkID=392426)
+- [Guide pratique pour créer une barre de progression indéterminée personnalisée pour Windows Phone](https://msdn.microsoft.com/library/windows/apps/gg442303.aspx)

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: f384ca56-f2b2-4793-b251-f7f5735376bb
 ms.localizationpriority: medium
-ms.openlocfilehash: 478c4a16902329e1dd9267e0339dca0e0dcf3539
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 1a2b22df2610191636d258dc48838e0bc5be6ee4
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321966"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259784"
 ---
 # <a name="application-development-for-windows-as-a-service"></a>Développement d’applications pour Windows en tant que service
 
@@ -50,7 +50,7 @@ L’approche traditionnelle de prise en charge des applications consiste à publ
 
 Dans le modèle Windows en tant que service, Microsoft s’engage à maintenir la compatibilité du système d’exploitation sous-jacent. En d’autres termes, Microsoft s’efforce, de manière concertée, qu’aucune modification fondamentale ne nuise à l’écosystème d’applications. Dans ce scénario, lorsqu’une nouvelle build Windows est publiée, la plupart des applications (celles qui sont dépourvues de dépendances vis-à-vis du noyau) continuent de fonctionner.
 
-Dans la perspective de cette modification, nous recommandons à nos partenaires éditeurs de logiciels indépendants de dissocier la publication et le support de leur application des builds Windows spécifiques. Une approche de type cycle de vie des applications est plus utile à nos clients mutuels. Cela signifie que lorsqu’une version d’une application est publiée, elle reste prise en charge pendant une période donnée, indépendamment du nombre de versions Windows publiées pendant ce temps. L’éditeur de logiciels indépendant s’engage à assurer la prise en charge de cette version spécifique de l’application tant qu’elle est prise en charge dans le cycle de vie. Pour Windows, Microsoft suit une approche de type cycle de vie similaire, qui peut être référencée [ici](https://go.microsoft.com/fwlink/?LinkID=780549).
+Dans la perspective de cette modification, nous recommandons à nos partenaires éditeurs de logiciels indépendants de dissocier la publication et le support de leur application des builds Windows spécifiques. Une approche de type cycle de vie des applications est plus utile à nos clients mutuels. Cela signifie que lorsqu’une version d’une application est publiée, elle reste prise en charge pendant une période donnée, indépendamment du nombre de versions Windows publiées pendant ce temps. L’éditeur de logiciels indépendant s’engage à assurer la prise en charge de cette version spécifique de l’application tant qu’elle est prise en charge dans le cycle de vie. Pour Windows, Microsoft suit une approche de type cycle de vie similaire, qui peut être référencée [ici](https://support.microsoft.com/hub/4095338/microsoft-lifecycle-policy?C2=14019).
 
 Cette approche permet de réduire la charge de la maintenance d’une planification d’application qui s’aligne sur les publications de Windows. Les partenaires éditeurs de logiciels indépendants doivent pouvoir publier librement des fonctionnalités ou des mises à jour à leur propre rythme. Nous pensons que nos partenaires peuvent maintenir leur clientèle à jour avec les dernières mises à jour d’application indépendantes d’une publication de Windows. Par ailleurs, nos clients n’ont pas à rechercher une déclaration de prise en charge explicite à chaque publication d’une build Windows. Voici un exemple de déclaration de prise en charge qui indique dans quelle mesure une application peut être prise en charge dans différentes versions du système d’exploitation :
 
@@ -90,7 +90,7 @@ Certaines applications effectuent une vérification de version et transmettent s
 -   Si l’application dépend de fonctionnalités d’API spécifiques, assurez-vous de cibler la version d’API correcte.
 -   Assurez-vous de détecter la modification via APISet ou une autre API publique, et n’utilisez pas la version comme proxy pour certaines fonctionnalités ou correctifs. En cas de modifications fondamentales et si une vérification correcte n’est pas exposée, il s’agit d’un bogue.
 -   Veillez à ce que l’application ne vérifie PAS la version de manière curieuse, par exemple via le Registre, les versions de fichiers, les décalages, le mode noyau, les pilotes ou tout autre moyen. Si l’application doit absolument vérifier la version, utilisez les API GetVersion, qui doivent renvoyer le numéro majeur, le numéro mineur et le numéro de build.
--   Si vous utilisez l’API [GetVersion](https://go.microsoft.com/fwlink/?LinkID=780555), n’oubliez pas que le comportement de cette API a changé depuis Windows 8.1.
+-   Si vous utilisez l’API [GetVersion](https://docs.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getversion?redirectedfrom=MSDN), n’oubliez pas que le comportement de cette API a changé depuis Windows 8.1.
 
 Si vous possédez des applications telles que des applications anti-programme malveillant ou de pare-feu, vous devez utiliser vos canaux de commentaires habituels et le programme Windows Insider.
 
@@ -100,9 +100,9 @@ Vos applications ne doivent pas appeler des API Windows non documentées ni dé
 
 ### <a name="develop-universal-windows-platform-uwp-and-centennial-apps"></a>Développer des applications Centennial et de plateforme Windows universelle (UWP)
 
-Nous encourageons tous les éditeurs d’applications Win32 indépendants à développer dorénavant des applications de [plateforme Windows universelle (UWP)](https://go.microsoft.com/fwlink/?LinkID=780560) et, plus spécifiquement, des applications [Centennial](https://go.microsoft.com/fwlink/?LinkID=780562). Les avantages sont nombreux à développer ces packages d’applications plutôt qu’à utiliser des programmes d’installation Win32 traditionnels. Comme les applications UWP sont également prises en charge dans le [Microsoft Store](https://go.microsoft.com/fwlink/?LinkID=780563), il vous est plus facile de mettre à jour automatiquement les applications de vos utilisateurs vers une version cohérente, ce qui réduit vos coûts de support technique.
+Nous encourageons tous les éditeurs d’applications Win32 indépendants à développer dorénavant des applications de [plateforme Windows universelle (UWP)](https://blogs.windows.com/windowsdeveloper/2016/02/25/an-update-on-the-developer-opportunity-and-windows-10/) et, plus spécifiquement, des applications [Centennial](https://channel9.msdn.com/Events/Build/2015/2-692). Les avantages sont nombreux à développer ces packages d’applications plutôt qu’à utiliser des programmes d’installation Win32 traditionnels. Comme les applications UWP sont également prises en charge dans le [Microsoft Store](https://blogs.windows.com/windowsdeveloper/2016/02/04/windows-store-trends-february-2016/), il vous est plus facile de mettre à jour automatiquement les applications de vos utilisateurs vers une version cohérente, ce qui réduit vos coûts de support technique.
 
-Si vos types d’application Win32 ne fonctionnent pas avec le modèle Centennial, nous vous recommandons vivement d’utiliser le programme d’installation approprié et de vous assurer qu’il a été complètement testé. Un programme d’installation représente la première expérience de votre utilisateur ou de votre client avec votre application ; vous devez donc vous assurer de son bon fonctionnement. Il arrive trop souvent qu’il ne fonctionne pas correctement ou qu’il n’ait pas été complètement testé. Le [Kit de certification des applications Windows](https://go.microsoft.com/fwlink/?LinkID=780565) peut vous aider à tester l’installation et la désinstallation de votre application Win32. Il peut également vous permettre d’identifier l’utilisation d’API non documentées, ainsi que d’autres problèmes de base liés aux performances, avant vos utilisateurs.
+Si vos types d’application Win32 ne fonctionnent pas avec le modèle Centennial, nous vous recommandons vivement d’utiliser le programme d’installation approprié et de vous assurer qu’il a été complètement testé. Un programme d’installation représente la première expérience de votre utilisateur ou de votre client avec votre application ; vous devez donc vous assurer de son bon fonctionnement. Il arrive trop souvent qu’il ne fonctionne pas correctement ou qu’il n’ait pas été complètement testé. Le [Kit de certification des applications Windows](https://developer.microsoft.com/windows/develop/app-certification-kit) peut vous aider à tester l’installation et la désinstallation de votre application Win32. Il peut également vous permettre d’identifier l’utilisation d’API non documentées, ainsi que d’autres problèmes de base liés aux performances, avant vos utilisateurs.
 
 **Meilleures pratiques :**
 -   Utilisez des programmes d’installation qui fonctionnent pour les versions 32 bits et 64 bits de Windows.
@@ -117,7 +117,7 @@ La distribution de version d’évaluation du système d’exploitation Windows 
 Si votre application figure dans le Windows Store, vous pouvez distribuer une version d’évaluation de votre application par son intermédiaire, ce qui signifie que votre application pourra être installée par nos Windows Insiders. Les utilisateurs peuvent installer votre application et vous envoyer des commentaires préliminaires sur celle-ci avant que vous ne la publiiez à destination de la population. Les sections suivantes décrivent les étapes permettant de tester vos applications par rapport aux builds avec version d’évaluation de Windows.
 
 ### <a name="step-1-become-a-windows-insider-and-participate-in-flighting"></a>Étape 1 : Devenez un Windows Insider et prenez part à la distribution de version d’évaluation
-Au titre de [Windows Insider](https://go.microsoft.com/fwlink/p/?LinkId=521639), vous pouvez nous aider à façonner l’avenir de Windows : vos commentaires nous aideront à améliorer les fonctions et fonctionnalités de la plateforme. Il s’agit d’une communauté active dans laquelle vous pouvez communiquer avec d’autres passionnés, rejoindre des forums, échanger des conseils et découvrir les prochains événements destinés uniquement aux Insiders.
+Au titre de [Windows Insider](https://insider.windows.com/), vous pouvez nous aider à façonner l’avenir de Windows : vos commentaires nous aideront à améliorer les fonctions et fonctionnalités de la plateforme. Il s’agit d’une communauté active dans laquelle vous pouvez communiquer avec d’autres passionnés, rejoindre des forums, échanger des conseils et découvrir les prochains événements destinés uniquement aux Insiders.
 
 Comme vous avez accès aux versions d’évaluation de Windows 10, de Windows 10 Mobile, et à la dernière version du SDK Windows et de l’émulateur, vous disposez de tous les outils nécessaires pour développer des applications réussies et explorer les nouveautés de la plateforme Windows universelle et du Microsoft Store.
 
@@ -157,7 +157,7 @@ Une fois que vous avez procédé à une mise à jour vers une build avec version
 Faites-nous savoir comment votre application se comporte par rapport aux builds avec version d’évaluation. Lorsque vous découvrez des problèmes avec votre application au cours des tests, consignez les bogues via le portail du partenaire si vous y avez accès ou en contactant votre représentant Microsoft. Nous vous encourageons à nous transmettre ces informations afin que nous puissions générer une expérience de qualité pour nos utilisateurs.
 
 ### <a name="step-4-register-on-ready-for-windows"></a>Étape 4 : Inscrivez-vous sur Ready for Windows
-Le site web [Ready for Windows](https://go.microsoft.com/fwlink/?LinkID=780580) est un répertoire de logiciels prenant en charge Windows 10. Il est destiné aux administrateurs informatiques d’entreprises et d’organisations du monde entier qui envisagent d’utiliser Windows 10 pour leurs déploiements. Les administrateurs informatiques peuvent consulter le site pour voir si les logiciels déployés dans leur entreprise sont pris en charge dans Windows 10.
+Le site web [Ready for Windows](https://docs.microsoft.com/configmgr/desktop-analytics/ready-for-windows) est un répertoire de logiciels prenant en charge Windows 10. Il est destiné aux administrateurs informatiques d’entreprises et d’organisations du monde entier qui envisagent d’utiliser Windows 10 pour leurs déploiements. Les administrateurs informatiques peuvent consulter le site pour voir si les logiciels déployés dans leur entreprise sont pris en charge dans Windows 10.
 
 ## <a name="related-topics"></a>Rubriques connexes
 [Options de maintenance de Windows 10 pour les mises à jour et les mises à niveau](https://docs.microsoft.com/windows/manage/introduction-to-windows-10-servicing)

@@ -6,12 +6,12 @@ ms.date: 06/03/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8278e02de4d0f9a0efa301051a57bf59bce8d520
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 49e126ea0212499361fea58b58237ee13fb76ca2
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66363299"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259181"
 ---
 # <a name="sockets"></a>Sockets
 Les sockets constituent une technologie de transfert de données de bas niveau sur laquelle repose l’implémentation d’un grand nombre de protocoles réseau. UWP propose des classes de socket TCP et UDP pour les applications client/serveur ou (P2P) pair à pair, qu’il s’agisse de connexions longue durée ou non établies.
@@ -521,7 +521,7 @@ void StreamSocketListener_ConnectionReceived(Windows::Networking::Sockets::Strea
 }
 ```
 
-Du point de vue du **StreamSocket**, le gestionnaire d’achèvement termine son exécution (et le socket est éligible pour être cédé) avant l’exécution du corps de la continuation. Par conséquent, pour que votre socket ne soit pas cédé si vous souhaitez l’utiliser à l’intérieur de cette continuation, vous devez soit faire référence au socket de manière directe (via une capture lambda) et l’utiliser, soit de manière indirecte (en poursuivant l’accès `args->Socket` à l’intérieur des continuations), ou forcer l’incorporation des tâches de continuation. Vous pouvez découvrir la première technique (capture lambda) en action dans l’[Exemple de StreamSocket](https://go.microsoft.com/fwlink/p/?LinkId=620609). Le code C++/CX de la section [Générer un client et un serveur de socket TCP de base](#build-a-basic-tcp-socket-client-and-server) ci-dessus utilise la deuxième technique&mdash;il fait écho à la demande en réponse et il accède `args->Socket` à partir de l’une des continuations les plus intérieures.
+Du point de vue du **StreamSocket**, le gestionnaire d’achèvement termine son exécution (et le socket est éligible pour être cédé) avant l’exécution du corps de la continuation. Par conséquent, pour que votre socket ne soit pas cédé si vous souhaitez l’utiliser à l’intérieur de cette continuation, vous devez soit faire référence au socket de manière directe (via une capture lambda) et l’utiliser, soit de manière indirecte (en poursuivant l’accès `args->Socket` à l’intérieur des continuations), ou forcer l’incorporation des tâches de continuation. Vous pouvez découvrir la première technique (capture lambda) en action dans l’[Exemple de StreamSocket](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/StreamSocket). Le code C++/CX de la section [Générer un client et un serveur de socket TCP de base](#build-a-basic-tcp-socket-client-and-server) ci-dessus utilise la deuxième technique&mdash;il fait écho à la demande en réponse et il accède `args->Socket` à partir de l’une des continuations les plus intérieures.
 
 La troisième technique est appropriée lorsque vous ne faites pas écho à une réponse en retour. Vous utilisez l’option `task_continuation_context::use_synchronous_execution()` pour forcer PPL à exécuter le corps de continuation incorporé. Voici un exemple de code illustrant comment procéder.
 
@@ -1384,4 +1384,4 @@ Le constructeur [**HostName**](/uwp/api/Windows.Networking.HostName) peut lever 
 * [Windows Sockets 2 (Winsock)](https://docs.microsoft.com/windows/desktop/WinSock/windows-sockets-start-page-2)
 
 ## <a name="samples"></a>Exemples
-* [Exemple StreamSocket](https://go.microsoft.com/fwlink/p/?LinkId=620609)
+* [Exemple StreamSocket](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/StreamSocket)

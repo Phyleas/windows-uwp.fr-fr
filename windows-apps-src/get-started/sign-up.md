@@ -6,18 +6,18 @@ ms.date: 04/04/2018
 ms.topic: article
 keywords: windows 10, uwp, s’inscrire, compte de développeur
 ms.localizationpriority: medium
-ms.openlocfilehash: 1eac2ad42b277c8cea5d571e08018d62ba338011
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 6249de5bd039545073fdd8af6be3291e7e0136c4
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66370640"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260548"
 ---
 # <a name="create-a-developer-account"></a>Créer un compte de développeur
 
 Inscrivez-vous maintenant pour obtenir un compte de développeur qui vous permettra d’ajouter vos applications au Microsoft Store et de participer à d’autres programmes Microsoft.
 
-[S’inscrire maintenant](https://go.microsoft.com/fwlink/p/?LinkId=615100)
+[S’inscrire maintenant](https://developer.microsoft.com/store/register)
 
 ## <a name="opening-your-developer-account"></a>Ouverture de votre compte de développeur
 

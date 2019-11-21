@@ -6,12 +6,12 @@ ms.date: 08/30/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: eec1de013efce7b23cd89e81f659a5cc530638c4
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 152a1bf2a751c2d2c78818b85868bfea3be911ac
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339968"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259643"
 ---
 # <a name="enterprise"></a>Entreprise
 
@@ -146,7 +146,7 @@ Aujourd’hui, de nombreux utilisateurs travaillent avec leur propre téléphone
 | Rubrique | Description |
 |-------|-------------|
 | [Guide des applications UWP](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) | Dans ce guide introductif, vous allez vous familiariser avec la plateforme UWP Windows 10. Vous découvrirez, entre autres, ce qu’est une famille d’appareils et comment déterminer celle à cibler, quels sont les nouveaux volets et contrôles d’interface utilisateur permettant d’adapter votre interface utilisateur à différents facteurs de forme d’appareil, et comment utiliser et contrôler la surface d’API disponible dans votre application. |
-| [Exemple de code d’IU XAML adaptative](https://go.microsoft.com/fwlink/p/?LinkId=619992) | Cet exemple de code montre toutes les options de disposition et tous les contrôles possibles pour votre application, quel que soit le type d’appareil. Il vous permet d’interagir avec les panneaux pour découvrir comment obtenir les dispositions que vous recherchez. En plus de vous présenter la façon dont chaque contrôle répond à différents facteurs de forme, l’application réagit et indique les différentes méthodes permettant d’obtenir une interface utilisateur adaptative. |
+| [Exemple de code d’IU XAML adaptative](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) | Cet exemple de code montre toutes les options de disposition et tous les contrôles possibles pour votre application, quel que soit le type d’appareil. Il vous permet d’interagir avec les panneaux pour découvrir comment obtenir les dispositions que vous recherchez. En plus de vous présenter la façon dont chaque contrôle répond à différents facteurs de forme, l’application réagit et indique les différentes méthodes permettant d’obtenir une interface utilisateur adaptative. |
 | [Rubrique Xamarin](/xamarin/) | Xamarin pour le ciblage du téléphone |
 
 ## <a name="deployment"></a>Déploiement

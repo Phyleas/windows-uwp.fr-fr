@@ -6,12 +6,12 @@ ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c1480c17d97cb8b5e227cc44b384f13095bfd469
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 2293907b3088890ac01d9037609054961aa95992
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66369252"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259576"
 ---
 # <a name="save-a-file-with-a-picker"></a>Enregistrer un fichier avec un sélecteur
 
@@ -23,7 +23,7 @@ ms.locfileid: "66369252"
 Utilisez [**FileSavePicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileSavePicker) pour permettre aux utilisateurs de spécifier le nom et l’emplacement où ils souhaitent que votre application enregistre un fichier.
 
 > [!NOTE]
-> Pour un exemple complet, consultez l'[Exemple de sélecteur de fichiers](https://go.microsoft.com/fwlink/p/?linkid=619994).
+> Pour un exemple complet, consultez l'[Exemple de sélecteur de fichiers](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FilePicker).
 
  
 

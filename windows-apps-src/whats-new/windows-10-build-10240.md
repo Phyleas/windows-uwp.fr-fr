@@ -6,16 +6,16 @@ ms.date: 11/02/2017
 ms.topic: article
 ms.assetid: 4853e55b-2232-4589-903a-ccb60e07aeb8
 ms.localizationpriority: medium
-ms.openlocfilehash: 28eb1dfecf9f6648bd43606c541daf7b57960771
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 986fa1b14fcb3b1ada150a232fb0d42f7eafa133
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320443"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258902"
 ---
 # <a name="whats-new-in-windows10-for-developers-build-10240"></a>Nouveautés de Windows 10 pour les développeurs, build 10240
 
-Windows 10, build 10240 et le SDK mis à jour offrent les outils, fonctionnalités et expériences pour créer de remarquables applications sur la plateforme Windows universelle. Après avoir [installé les outils et le Kit de développement logiciel](https://go.microsoft.com/fwlink/?LinkId=821431) sur Windows 10, vous êtes prêt à [créer une nouvelle application Windows universelle](../get-started/create-uwp-apps.md) ou à découvrir comment utiliser votre [code d’application existant sur Windows](../porting/index.md).
+Windows 10, build 10240 et le SDK mis à jour offrent les outils, fonctionnalités et expériences pour créer de remarquables applications sur la plateforme Windows universelle. Après avoir [installé les outils et le Kit de développement logiciel](https://developer.microsoft.com/windows/downloads#_blank) sur Windows 10, vous êtes prêt à [créer une nouvelle application Windows universelle](../get-started/create-uwp-apps.md) ou à découvrir comment utiliser votre [code d’application existant sur Windows](../porting/index.md).
 
 Voici un aperçu, fonction par fonction, des nouveautés qui vous attendent dans Windows 10, build 10240 (également appelé Windows 10, version 1507).
 

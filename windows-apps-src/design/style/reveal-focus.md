@@ -9,12 +9,12 @@ pm-contact: chphilip
 design-contact: ''
 dev-contact: stevenki
 ms.localizationpriority: medium
-ms.openlocfilehash: 2cb91b37b1d2a6924a80bbe666129343ad778d8e
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: f416db0266c4ab2ec959c926c0bf0b676b66dd95
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66370475"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258704"
 ---
 # <a name="reveal-focus"></a>Révéler focus
 
@@ -163,7 +163,7 @@ Si vous voulez utiliser seulement la lumière sans le visuel du focus principal 
 
 ## <a name="use-your-own-focus-visuals"></a>Utiliser vos propres visuels de focus
 
-Une autre façon de personnaliser Révéler focus consiste à choisir de ne pas utiliser les visuels de focus fournis par le système en dessinant vos propres états visuels. Pour plus d’informations, consultez [Exemples de visuels de focus](https://go.microsoft.com/fwlink/p/?LinkID=619895).
+Une autre façon de personnaliser Révéler focus consiste à choisir de ne pas utiliser les visuels de focus fournis par le système en dessinant vos propres états visuels. Pour plus d’informations, consultez [Exemples de visuels de focus](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals).
 
 
 ## <a name="reveal-focus-and-the-fluent-design-system"></a>Révéler focus et le système Fluent Design
@@ -175,7 +175,7 @@ Révéler focus est un composant du système Fluent Design qui ajoute des effets
 - [Effet Révéler](https://docs.microsoft.com/windows/uwp/design/style/reveal)
 - [Conception pour Xbox et TV](/windows/uwp/design/devices/designing-for-tv)
 - [Interactions entre le boîtier de commande et la télécommande](https://docs.microsoft.com/windows/uwp/design/input/gamepad-and-remote-interactions)
-- [Exemples de visuels de focus](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+- [Exemples de visuels de focus](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
 - [Effets de composition](https://docs.microsoft.com/windows/uwp/graphics/composition-effects)
 - [Science in the System: Fluent Design and Depth](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
 - [Science in the System: Fluent Design and Light](https://medium.com/microsoft-design/the-science-in-the-system-fluent-design-and-light-94a17e0b3a4f)

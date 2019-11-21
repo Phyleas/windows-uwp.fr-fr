@@ -6,12 +6,12 @@ ms.date: 06/05/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8dd1fce4e8a5c18af93df32b12ce8b20c8bc69f9
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 57927ff77f060a1ea1bd7720d8831f31c5355264
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340565"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259207"
 ---
 # <a name="httpclient"></a>HttpClient
 
@@ -39,7 +39,7 @@ Les classes dans l’espace de noms [**Windows.Web.Http**](https://docs.microsof
 
 -   informations de progression de requête HTTP disponibles sur des méthodes asynchrones.
 
-La classe [**Windows.Web.Http.HttpRequestMessage**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpRequestMessage) représente un message de requête HTTP envoyé par [**Windows.Web.Http.HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient). La classe [**Windows.Web.Http.HttpResponseMessage**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpResponseMessage) représente un message de réponse HTTP reçu d’une requête HTTP. Les messages HTTP sont définis par la norme [RFC 2616](https://go.microsoft.com/fwlink/p/?linkid=241642) de l’IETF (Internet Engineering Task Force).
+La classe [**Windows.Web.Http.HttpRequestMessage**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpRequestMessage) représente un message de requête HTTP envoyé par [**Windows.Web.Http.HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient). La classe [**Windows.Web.Http.HttpResponseMessage**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpResponseMessage) représente un message de réponse HTTP reçu d’une requête HTTP. Les messages HTTP sont définis par la norme [RFC 2616](https://tools.ietf.org/html/rfc2616) de l’IETF (Internet Engineering Task Force).
 
 L’espace de noms [**Windows.Web.Http**](https://docs.microsoft.com/uwp/api/Windows.Web.Http) représente le contenu HTTP comme corps d’entité HTTP et en-têtes, y compris les cookies. Le contenu HTTP peut être associé à une requête HTTP ou à une réponse HTTP. L’espace de noms **Windows.Web.Http** fournit plusieurs classes pour représenter le contenu HTTP.
 

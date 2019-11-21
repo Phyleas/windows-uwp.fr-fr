@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, norme, c++, cpp, winrt, projection, bien démarrer, prise en main
 ms.localizationpriority: medium
-ms.openlocfilehash: ab582d0528d6af8c9a8ae97e43fda2714f8e2fe6
-ms.sourcegitcommit: 2442a5f5b0c4275204063162f0f379fa90ff13b4
+ms.openlocfilehash: c058a727e09f00e01664c314d8c198f3f25e841e
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2019
-ms.locfileid: "72292775"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74255133"
 ---
 # <a name="get-started-with-cwinrt"></a>Bien démarrer avec C++/WinRT
 
@@ -121,7 +121,7 @@ Vous n’avez pas non plus besoin de prendre en charge les codes de retour HRESU
 
 Cette section vous montre comment ajouter la prise en charge de C++/WinRT à un projet d’application de bureau Windows. Si vous n’avez pas de projet d’application de bureau Windows, suivez les étapes indiquées en commençant par en créer un. Par exemple, ouvrez Visual Studio, puis créez un projet via **Visual C++** \> **Windows Desktop** \> **Application de bureau Windows**.
 
-Vous pouvez éventuellement installer l’[extension VSIX (Visual Studio Extension) C++/WinRT](https://aka.ms/cppwinrt/vsix) et le package NuGet. Pour plus d’informations, consultez [Prise en charge de Visual Studio pour C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+Vous pouvez éventuellement installer l’[extension VSIX (Visual Studio Extension) C++/WinRT](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) et le package NuGet. Pour plus d’informations, consultez [Prise en charge de Visual Studio pour C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 ### <a name="set-project-properties"></a>Définir les propriétés du projet
 

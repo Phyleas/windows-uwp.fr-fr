@@ -5,18 +5,18 @@ keywords: nouveautés, mise à jour, fonctionnalités, conseils aux développeur
 ms.date: 07/05/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 03bc41ca76f6c6b20f06c98b0e71e2bc5a361992
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 0fa773cdb174369e14c12c4f805f3a57e2ff6eef
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65984202"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258826"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2017"></a>Nouveautés apportées dans la documentation du développeur Windows en juillet 2017
 
 La documentation du développeur Windows est constamment mise à jour avec des informations sur les nouvelles fonctionnalités mises à la disposition des développeurs sur la plateforme Windows. Les présentations de fonctionnalités, les conseils aux développeurs et les vidéos qui suivent ont été récemment mis à disposition. Ils contiennent des informations nouvelles et des mises à jour destinées aux développeurs Windows.
 
-[Installez les outils et le kit de développement logiciel (SDK)](https://go.microsoft.com/fwlink/?LinkId=821431) sur Windows 10 et vous pourrez ainsi [créer une application universelle Windows](../get-started/your-first-app.md) ou explorer la procédure permettant d’utiliser votre [code d’application existant sur Windows](../porting/index.md).
+[Installez les outils et le kit de développement logiciel (SDK)](https://developer.microsoft.com/windows/downloads#_blank) sur Windows 10 et vous pourrez ainsi [créer une application universelle Windows](../get-started/your-first-app.md) ou explorer la procédure permettant d’utiliser votre [code d’application existant sur Windows](../porting/index.md).
 
 ## <a name="features"></a>Fonctionnalités
 

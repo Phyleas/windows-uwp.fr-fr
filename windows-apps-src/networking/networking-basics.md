@@ -6,12 +6,12 @@ ms.date: 06/01/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c1c23bc205c5f9e2ad24e201e9583e19f2d6ec35
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 8d6bafc9a21e3950974615078af24989aab7da9e
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320672"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259189"
 ---
 # <a name="networking-basics"></a>Notions de base en matière de réseau
 Ce que vous devez faire pour toute application réseau.
@@ -45,7 +45,7 @@ Le broker de socket est destiné à remplacer les déclencheurs de canal de cont
 ### <a name="choosing-a-network-trigger"></a>Choix d’un déclencheur réseau
 Il existe des cas où les deux types de déclencheurs seraient appropriés. Lorsque vous choisissez le type de déclencheur à utiliser dans votre application, tenez compte des conseils suivants.
 
--   Si vous utilisez [**IXMLHTTPRequest2**](https://docs.microsoft.com/previous-versions/windows/desktop/api/msxml6/nn-msxml6-ixmlhttprequest2), [**System.Net.Http.HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) ou [System.Net.Http.HttpClientHandler](https://go.microsoft.com/fwlink/p/?linkid=241638), vous devez opter pour [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger).
+-   Si vous utilisez [**IXMLHTTPRequest2**](https://docs.microsoft.com/previous-versions/windows/desktop/api/msxml6/nn-msxml6-ixmlhttprequest2), [**System.Net.Http.HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) ou [System.Net.Http.HttpClientHandler](https://msdn.microsoft.com/library/system.net.http.httpclienthandler(VS.110).aspx), vous devez opter pour [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger).
 -   Si vous utilisez des **StreamSockets** compatibles avec les notifications push, vous pouvez utiliser des déclencheurs de canal de contrôle. Toutefois, il est préférable d’utiliser [**SocketActivityTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SocketActivityTrigger). Cela permet au système de libérer de la mémoire et de réduire la consommation d’énergie quand la connexion n’est pas activement utilisée.
 -   Si vous souhaitez réduire l’encombrement mémoire de votre application quand celle-ci ne traite pas activement de demandes réseau, préférez [**SocketActivityTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SocketActivityTrigger) chaque fois que possible.
 -   Si vous souhaitez que votre application puisse recevoir des données quand le système est en mode de veille connectée, utilisez [**SocketActivityTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SocketActivityTrigger).

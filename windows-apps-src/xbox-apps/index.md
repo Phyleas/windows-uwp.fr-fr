@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 2d935f53-84db-4108-86dc-cb6a0749782f
 ms.localizationpriority: medium
-ms.openlocfilehash: f8f31630fed64e2a22b21e4572eaba76440a82fc
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 0b5ca136b969ca238226d6f6b63b8e2fcff3207f
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334767"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259738"
 ---
 # <a name="uwp-on-xbox-one"></a>UWP sur Xbox One
 
@@ -40,7 +40,7 @@ Cette section comprend la procédure de configuration, un guide détaillant le p
 |[Présentation des applications multi-utilisateurs](multi-user-applications.md)| Décrit les applications multi-utilisateurs sur Xbox One. |
 | [Automatisation des tâches de développement Xbox One](https://github.com/Microsoft/WindowsDevicePortalWrapper/tree/v0.9.4) | Le projet WindowsDevicePortalWrapper sur GitHub fournit une bibliothèque qui vous permet d’automatiser les tâches de développement courantes comme le déploiement ou le lancement d’une application. Le projet inclut un exemple, XboxWdpDriver.exe, qui montre comment utiliser les API pour les tâches courantes. |
 |[Intégration de jeux existants dans Xbox](development-lanes-landing.md)|Selon la technologie sur laquelle est basé votre jeu, nous pouvons vous fournir des instructions détaillées permettant d’accélérer le processus de publication de votre jeu sur Xbox à l’aide des UWP.|
-|[Fonctionnalités UWP qui ne sont pas encore prises en charge sur Xbox One](https://go.microsoft.com/fwlink/p/?LinkId=760755)|  Décrit les fonctionnalités UWP qui ne sont pas encore entièrement fonctionnelles sur Xbox One.|
+|[Fonctionnalités UWP qui ne sont pas encore prises en charge sur Xbox One](https://docs.microsoft.com/uwp/extension-sdks/uwp-limitations-on-xbox?redirectedfrom=MSDN)|  Décrit les fonctionnalités UWP qui ne sont pas encore entièrement fonctionnelles sur Xbox One.|
 
 ## <a name="videos"></a>Vidéos
 

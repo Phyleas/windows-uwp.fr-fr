@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 59678dc5eca7dec0857cadd9249dd19e25b3430b
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: a07fc5c669d3c9cd374a4a031fba2ee6ef6d5756
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319049"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257286"
 ---
 # <a name="images-and-image-brushes"></a>Images et pinceaux image
 
@@ -155,7 +155,7 @@ Pour plus d’informations sur la conception prenant en charge la mise à l’é
 
 Il est courant de spécifier les éléments Image et ImageBrush en XAML plutôt que sous forme de code. Cela est dû au fait que ces éléments sont souvent la sortie d’outils de conception dans le cadre d’une définition d’interface utilisateur XAML.
 
-Si vous définissez un élément Image ou ImageBrush à l’aide de code, utilisez les constructeurs par défaut, puis définissez la propriété Source appropriée ([Image.Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.source) ou [ImageBrush.ImageSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imagebrush.imagesource)). Celle-ci nécessite un élément [BitmapImage](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage) (et non un URI) quand vous la définissez à l’aide de code. Si votre source est un flux, utilisez la méthode [SetSourceAsync](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync) pour initialiser la valeur. Si votre source est un URI incluant du contenu de votre application qui utilise les modèles **ms-appx** ou **ms-resource**, utilisez le constructeur [BitmapImage](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage) qui prend un URI. Vous pouvez également envisager de gérer l’événement [ImageOpened](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.imageopened) s’il existe des problèmes de délai liés à la récupération ou au décodage de la source de l’image, auquel cas un contenu alternatif peut s’avérer nécessaire à afficher tant que la source de l’image n’est pas disponible. Pour obtenir un exemple de code, voir [Exemples d’images XAML](https://go.microsoft.com/fwlink/p/?linkid=238575).
+Si vous définissez un élément Image ou ImageBrush à l’aide de code, utilisez les constructeurs par défaut, puis définissez la propriété Source appropriée ([Image.Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.source) ou [ImageBrush.ImageSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imagebrush.imagesource)). Celle-ci nécessite un élément [BitmapImage](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage) (et non un URI) quand vous la définissez à l’aide de code. Si votre source est un flux, utilisez la méthode [SetSourceAsync](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync) pour initialiser la valeur. Si votre source est un URI incluant du contenu de votre application qui utilise les modèles **ms-appx** ou **ms-resource**, utilisez le constructeur [BitmapImage](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage) qui prend un URI. Vous pouvez également envisager de gérer l’événement [ImageOpened](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.imageopened) s’il existe des problèmes de délai liés à la récupération ou au décodage de la source de l’image, auquel cas un contenu alternatif peut s’avérer nécessaire à afficher tant que la source de l’image n’est pas disponible. Pour obtenir un exemple de code, voir [Exemples d’images XAML](https://code.msdn.microsoft.com/windowsapps/0f5d56ae-5e57-48e1-9cd9-993115b027b9).
 
 > [!NOTE]
 > Si vous établissez des images à l’aide de code, vous pouvez utiliser la gestion automatique pour accéder à des ressources non qualifiées avec les qualificateurs d’échelle et de culture actuels, ou vous pouvez utiliser [ResourceManager](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceManager) et [ResourceMap](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap) avec des qualificateurs pour la culture et l’échelle afin d’obtenir les ressources directement. Pour plus d’informations, voir [Système de gestion des ressources](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10)).

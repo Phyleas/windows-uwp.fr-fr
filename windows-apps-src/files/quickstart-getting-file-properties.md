@@ -6,12 +6,12 @@ ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 01eda8eefea7e1b3b1102ef154a019e1630e80c2
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 81fcb4b62f9a10e8ff1fcb233c95317746cdb3b0
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66369316"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259586"
 ---
 # <a name="get-file-properties"></a>Obtenir les propriétés du fichier
 
@@ -24,7 +24,7 @@ ms.locfileid: "66369316"
 Obtenez les propriétés (de niveau supérieur, de base et étendues) d’un fichier représenté par un objet [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile).
 
 > [!NOTE]
-> Pour un exemple complet, consultez l'[Exemple d'accès aux fichiers](https://go.microsoft.com/fwlink/p/?linkid=619995).
+> Pour un exemple complet, consultez l'[Exemple d'accès aux fichiers](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess).
 
 ## <a name="prerequisites"></a>Conditions préalables
 
@@ -88,9 +88,9 @@ foreach (Windows.Storage.StorageFile file in files)
 
 ## <a name="getting-a-files-extended-properties"></a>Obtention des propriétés étendues d’un fichier
 
-Outre les propriétés de fichier de haut niveau et de base, il existe de nombreuses propriétés associées au contenu du fichier. Ces propriétés étendues sont accessibles en appelant la méthode [**BasicProperties.RetrievePropertiesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.basicproperties.retrievepropertiesasync). (Un objet [**BasicProperties**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileProperties.BasicProperties) est obtenu en appelant la propriété [**StorageFile.Properties**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.properties).) Alors que les propriétés de fichier de niveau supérieur et de base sont accessibles en tant que propriétés d'une classe ([**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) et **BasicProperties**, respectivement), les propriétés étendues sont obtenues en passant une collection [IEnumerable](https://go.microsoft.com/fwlink/p/?LinkID=313091) d'objets [String](https://go.microsoft.com/fwlink/p/?LinkID=325032) qui représentent les noms des propriétés à récupérer à la méthode **BasicProperties.RetrievePropertiesAsync**. Cette méthode retourne ensuite une collection [IDictionary](https://go.microsoft.com/fwlink/p/?LinkId=325238). Chaque propriété étendue est ensuite récupérée à partir de la collection par nom ou par index.
+Outre les propriétés de fichier de haut niveau et de base, il existe de nombreuses propriétés associées au contenu du fichier. Ces propriétés étendues sont accessibles en appelant la méthode [**BasicProperties.RetrievePropertiesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.basicproperties.retrievepropertiesasync). (Un objet [**BasicProperties**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileProperties.BasicProperties) est obtenu en appelant la propriété [**StorageFile.Properties**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.properties).) Alors que les propriétés de fichier de niveau supérieur et de base sont accessibles en tant que propriétés d'une classe ([**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) et **BasicProperties**, respectivement), les propriétés étendues sont obtenues en passant une collection [IEnumerable](https://msdn.microsoft.com/library/system.collections.ienumerable.aspx) d'objets [String](https://msdn.microsoft.com/library/system.string.aspx) qui représentent les noms des propriétés à récupérer à la méthode **BasicProperties.RetrievePropertiesAsync**. Cette méthode retourne ensuite une collection [IDictionary](https://msdn.microsoft.com/library/system.collections.idictionary.aspx). Chaque propriété étendue est ensuite récupérée à partir de la collection par nom ou par index.
 
-Cet exemple énumère tous les fichiers de la bibliothèque d’images, spécifie les noms des propriétés souhaitées (**DataAccessed** et **FileOwner**) dans un objet [List](https://go.microsoft.com/fwlink/p/?LinkID=325246), passe cet objet [List](https://go.microsoft.com/fwlink/p/?LinkID=325246) à [**BasicProperties.RetrievePropertiesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.basicproperties.retrievepropertiesasync) pour récupérer ces propriétés, puis extrait celles-ci par nom de l’objet [IDictionary](https://go.microsoft.com/fwlink/p/?LinkId=325238) retourné.
+Cet exemple énumère tous les fichiers de la bibliothèque d’images, spécifie les noms des propriétés souhaitées (**DataAccessed** et **FileOwner**) dans un objet [List](https://msdn.microsoft.com/library/6sh2ey19.aspx), passe cet objet [List](https://msdn.microsoft.com/library/6sh2ey19.aspx) à [**BasicProperties.RetrievePropertiesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.basicproperties.retrievepropertiesasync) pour récupérer ces propriétés, puis extrait celles-ci par nom de l’objet [IDictionary](https://msdn.microsoft.com/library/system.collections.idictionary.aspx) retourné.
 
 Pour obtenir la liste complète des propriétés étendues d'un fichier consultez [Propriétés principales de Windows](https://docs.microsoft.com/windows/desktop/properties/core-bumper).
 

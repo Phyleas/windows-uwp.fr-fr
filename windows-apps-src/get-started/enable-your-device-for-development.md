@@ -6,12 +6,12 @@ keywords: Commencer avec une licence de développeur Visual Studio, appareil ave
 ms.date: 04/09/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a4c1f90c0fa8304f95b1dc958fe5a75e74301dd
-ms.sourcegitcommit: 7791596c25baf9d222729e057ecdf81b45a59f0c
+ms.openlocfilehash: a2d1719379302dd8e996c37e05d7ddaf35a0cf18
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71205931"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258419"
 ---
 # <a name="enable-your-device-for-development"></a>Activer votre appareil pour le développement
 
@@ -74,7 +74,7 @@ Informations spécifiques à la famille d’appareils
 Le paramètre **Charger la version test des applications** est une option plus sécurisée que le mode développeur, car vous ne pouvez pas installer d’applications sans certificat approuvé sur l’appareil.
 
 > [!NOTE]
-> Si vous effectuez un chargement indépendant des applications, veillez à ce que les applications que vous installez proviennent toujours de sources fiables. Quand vous procédez au chargement d’une version test d’une application qui n’a pas été certifiée par le Microsoft Store, vous indiquez que vous avez obtenu l’ensemble des droits nécessaires au chargement d’une version test de cette application et que vous êtes l’unique responsable des dommages résultant de l’installation et de l’exécution de cette application. Voir la section Windows &gt; Microsoft Store de cette [déclaration de confidentialité](https://go.microsoft.com/fwlink/?LinkId=521839).
+> Si vous effectuez un chargement indépendant des applications, veillez à ce que les applications que vous installez proviennent toujours de sources fiables. Quand vous procédez au chargement d’une version test d’une application qui n’a pas été certifiée par le Microsoft Store, vous indiquez que vous avez obtenu l’ensemble des droits nécessaires au chargement d’une version test de cette application et que vous êtes l’unique responsable des dommages résultant de l’installation et de l’exécution de cette application. Voir la section Windows &gt; Microsoft Store de cette [déclaration de confidentialité](https://privacy.microsoft.com/privacystatement).
 
 
 ### <a name="developer-mode"></a>Mode développeur

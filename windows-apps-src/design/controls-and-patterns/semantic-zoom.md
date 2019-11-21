@@ -11,12 +11,12 @@ pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: c655fbf5582ae5abbb3f415e6e0778b9c64ca7fd
-ms.sourcegitcommit: 04683376dbdbff987601f546f058748442170068
+ms.openlocfilehash: 0821ebaa300d6641cf4efe8f96f1ae8878877a88
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68340832"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258133"
 ---
 # <a name="semantic-zoom"></a>Zoom sémantique
 
@@ -98,7 +98,7 @@ Avant d’utiliser un zoom sémantique, vous devez comprendre comment utiliser u
 </SemanticZoom>
  ```
  
-Ces exemples sont tirés de la page SemanticZoom de l’[Exemple d’éléments de base d’une interface utilisateur XAML](https://go.microsoft.com/fwlink/p/?LinkId=619992). Vous pouvez télécharger l’exemple pour voir le code complet, y compris la source de données. Le zoom sémantique utilise un contrôle GridView pour fournir la vue avec zoom avant et un contrôle ListView pour la vue avec zoom arrière.
+Ces exemples sont tirés de la page SemanticZoom de l’[Exemple d’éléments de base d’une interface utilisateur XAML](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics). Vous pouvez télécharger l’exemple pour voir le code complet, y compris la source de données. Le zoom sémantique utilise un contrôle GridView pour fournir la vue avec zoom avant et un contrôle ListView pour la vue avec zoom arrière.
   
 **Définir la vue avec zoom avant**
 

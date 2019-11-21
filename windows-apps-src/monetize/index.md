@@ -6,12 +6,12 @@ ms.date: 11/29/2017
 ms.topic: article
 keywords: windows 10, uwp, monétiser, engager, promouvoir, services du Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 460179f7f57e17f78fdb3fd3bd289e761a8a7b4f
-ms.sourcegitcommit: 2dba9b4e81151d14ca90d36341274a3b59926197
+ms.openlocfilehash: 7beee974bceceab02984ae6499a9c5db0b0281b9
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74057447"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259299"
 ---
 # <a name="monetization-engagement-and-store-services"></a>Monétisation, engagement et services du Store
 
@@ -72,7 +72,7 @@ Que votre application soit payante ou gratuite, vous pouvez utiliser les achats 
 Nous prenons en charge un large éventail d'expériences publicitaires adaptées à la plupart des besoins, notamment des bannières publicitaires, des spots publicitaires (bannières et vidéos), des vidéos publicitaires linéaires, des publicités jouables et des publicités natives. Notre plateforme est conforme aux normes OpenRTB, VAST 2.x, MRAID 2, et VPAID 3 et est compatible avec MOAT et IAS.
 
 [Explorer les options publicitaires](../publish/create-an-ad-campaign-for-your-app.md)
-[Installer le SDK publicitaire](https://aka.ms/ads-sdk-uwp)
+[Installer le SDK publicitaire](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK)
     :::column-end:::
 :::row-end:::
 
@@ -85,7 +85,7 @@ Nous prenons en charge un large éventail d'expériences publicitaires adaptées
 
 Optimisez les revenus publicitaires dans vos applications grâce au service de médiation publicitaire de Microsoft qui permet de diffuser des publicités à partir de plusieurs réseaux publicitaires populaires. Vous pouvez configurer vos paramètres de médiation dans le tableau de bord de l’Espace partenaires, sans toucher une ligne de code. Si vous nous laissez configurer la médiation pour votre compte, nos algorithmes d’apprentissage vous aideront à optimiser vos revenus publicitaires sur tous les marchés pris en charge par votre application.
 
-[Utiliser le service publicitaire](https://aka.ms/admediationblog)
+[Utiliser le service publicitaire](https://blogs.windows.com/windowsdeveloper/2017/05/08/announcing-microsofts-ad-mediation-service/)
     :::column-end:::
 :::row-end:::
 
@@ -110,8 +110,8 @@ Vous êtes à la recherche d'autres moyens d'augmenter votre monétisation ? En
 
  Rubrique                | Description                 |
 |--------------------|-----------------------------|
-| [Programme d’affiliation Microsoft](https://go.microsoft.com/fwlink/p/?LinkId=617665) | Gagnez des commissions en ajoutant des liens vers les produits Microsoft depuis votre application, votre blog, votre page web ou d’autres supports de communication. Ces liens peuvent renvoyer vers des applications, des jeux, de la musique, des films, du matériel, des accessoires et d’autres produits vendus sur le Microsoft Store.
-| [Expérimentation A/B](https://go.microsoft.com/fwlink/p/?LinkId=722784) | Effectuez des tests A/B sur vos applications afin de mesurer l’efficacité des modifications apportées aux fonctionnalités pour certains clients, avant d’effectuer la modification globale pour le reste des clients.
+| [Programme d’affiliation Microsoft](https://www.microsoftaffiliates.com/) | Gagnez des commissions en ajoutant des liens vers les produits Microsoft depuis votre application, votre blog, votre page web ou d’autres supports de communication. Ces liens peuvent renvoyer vers des applications, des jeux, de la musique, des films, du matériel, des accessoires et d’autres produits vendus sur le Microsoft Store.
+| [Expérimentation A/B](https://docs.microsoft.com/windows/uwp/monetize/run-app-experiments-with-a-b-testing) | Effectuez des tests A/B sur vos applications afin de mesurer l’efficacité des modifications apportées aux fonctionnalités pour certains clients, avant d’effectuer la modification globale pour le reste des clients.
 | [Engager les clients avec le kit Microsoft Store Services SDK](microsoft-store-services-sdk.md) | Le kit Microsoft Store Services SDK contient des bibliothèques et des outils qui vous permettent de doter vos applications de fonctionnalités conçues pour vous aider à susciter l’engagement chez vos clients. Ces fonctionnalités incluent les notifications ciblées, les tests A/B et le lancement du hub de commentaires depuis votre application.
 | [Démarrer le Hub de commentaires à partir de votre application](launch-feedback-hub-from-your-app.md) | Ajoutez du code dans vos applications UWP pour diriger vos clients Windows 10 vers le Hub de commentaires, qui leur permettra de soumettre leurs problèmes, suggestions et votes pour. Gérez ensuite ces commentaires dans le [Rapport sur les commentaires](../publish/feedback-report.md) affiché dans l’Espace partenaires. Cette fonctionnalité nécessite Microsoft Store Services SDK. 
 | [Configurer votre application pour recevoir des notifications Push de l’Espace partenaires](configure-your-app-to-receive-dev-center-notifications.md) | Inscrivez un canal de notification pour votre application UWP pour qu’elle puisse recevoir les [notifications Push de l’Espace partenaires](../publish/send-push-notifications-to-your-apps-customers.md), et effectuez le suivi du taux de lancement d’applications résultant des notifications Push. Cette fonctionnalité nécessite Microsoft Store Services SDK.

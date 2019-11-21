@@ -6,12 +6,12 @@ ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 97ad2485abab0bd4733699bc4ffcf29e17a22844
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 318c58b393a33916df7bab51a4ef2690494d14fb
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66369444"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259605"
 ---
 # <a name="track-recently-used-files-and-folders"></a>Suivre les fichiers et dossiers récemment utilisés
 
@@ -25,7 +25,7 @@ Effectuez le suivi des fichiers auxquels l’utilisateur accède fréquemment en
 Les éléments récents de votre application sont représentés par la classe [**StorageItemMostRecentlyUsedList**](https://docs.microsoft.com/uwp/api/Windows.Storage.AccessCache.StorageItemMostRecentlyUsedList), que vous pouvez obtenir à partir de la propriété [**StorageApplicationPermissions.MostRecentlyUsedList**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageapplicationpermissions.mostrecentlyusedlist) statique. Les éléments récents sont stockés en tant qu’objets [**IStorageItem**](https://docs.microsoft.com/uwp/api/Windows.Storage.IStorageItem), ce qui signifie que des objets [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) (qui représentent des fichiers) et [**StorageFolder**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFolder) (qui représentent des dossiers) peuvent être ajoutés aux éléments récents.
 
 > [!NOTE]
-> Pour obtenir des exemples complets, reportez-vous à l’[exemple de sélecteur de fichiers](https://go.microsoft.com/fwlink/p/?linkid=619994) et à l’[exemple d’accès aux fichiers](https://go.microsoft.com/fwlink/p/?linkid=619995).
+> Pour obtenir des exemples complets, reportez-vous à l’[exemple de sélecteur de fichiers](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FilePicker) et à l’[exemple d’accès aux fichiers](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess).
 
 ## <a name="prerequisites"></a>Conditions préalables
 
@@ -33,7 +33,7 @@ Les éléments récents de votre application sont représentés par la classe [*
 
     Pour apprendre à écrire des applications asynchrones en C# ou Visual Basic, voir [Appeler des API asynchrones en C# ou Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). Pour apprendre à écrire des applications asynchrones en C++, voir [Programmation asynchrone en C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
 
--   **Autorisations d’accès à l’emplacement**
+-   **Autorisations d'accès à l'emplacement**
 
     Voir [Autorisations d’accès aux fichiers](file-access-permissions.md).
 

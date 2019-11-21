@@ -5,18 +5,18 @@ keywords: nouveautés, mise à jour, fonctionnalités, conseils aux développeur
 ms.date: 01/17/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: beb80c28866b8f8207f203b70cb504dcd034098d
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: ac5f7e058a616117e73defde2c48bf4c66f68d2e
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63800582"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259749"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-january-2019"></a>Nouveautés apportées dans la documentation du développeur Windows en janvier 2019
 
 La documentation du développeur Windows est constamment mise à jour avec des informations sur les nouvelles fonctionnalités mises à la disposition des développeurs sur la plateforme Windows. Les présentations de fonctionnalités, conseils aux développeurs et vidéos ci-dessous ont été mis à disposition au mois de janvier.
 
-[Installez les outils et le kit de développement logiciel (SDK)](https://go.microsoft.com/fwlink/?LinkId=821431) sur Windows 10 et vous pourrez ainsi [créer une application universelle Windows](../get-started/create-uwp-apps.md) ou explorer la procédure permettant d’utiliser votre [code d’application existant sur Windows](../porting/index.md).
+[Installez les outils et le kit de développement logiciel (SDK)](https://developer.microsoft.com/windows/downloads#_blank) sur Windows 10 et vous pourrez ainsi [créer une application universelle Windows](../get-started/create-uwp-apps.md) ou explorer la procédure permettant d’utiliser votre [code d’application existant sur Windows](../porting/index.md).
 
 ## <a name="features"></a>Fonctionnalités
 
@@ -38,7 +38,7 @@ Windows 10 version 1809 a amélioré la prise en charge des [packages de modific
 
 ### <a name="open-source-of-wpf-windows-forms-and-winui"></a>Open source de WPF, Windows Forms et WinUI
 
-Les infrastructures WPF, Windows Forms et WinUI UX sont désormais disponibles pour les contributions open source sur GitHub. Pour plus d’informations et des liens, voir le [blog sur la création d’applications Windows](https://blogs.windows.com/buildingapps/2018/12/04/announcing-open-source-of-wpf-windows-forms-and-winui-at-microsoft-connect-2018/#OKZjJs1VVTrMMtkL.97).
+Les infrastructures WPF, Windows Forms et WinUI UX sont désormais disponibles pour les contributions open source sur GitHub. Pour obtenir plus d’informations et des liens, voir le [blog sur la création d’applications Windows](https://blogs.windows.com/buildingapps/2018/12/04/announcing-open-source-of-wpf-windows-forms-and-winui-at-microsoft-connect-2018/#OKZjJs1VVTrMMtkL.97).
 
 ### <a name="progressive-web-apps-for-xbox"></a>Applications web progressives (PWA) pour Xbox
 
@@ -56,7 +56,7 @@ La rubrique [Former un modèle avec PyTorch](https://docs.microsoft.com/windows/
 
 ### <a name="choose-your-platform"></a>Choisir votre plateforme
 
-Vous souhaitez créer une application de bureau ? Découvrez notre page revisitée [Choisir votre plateforme](https://docs.microsoft.com/windows/desktop/choose-your-technology) qui fournit des descriptions et comparaisons détaillées des plateformes UWP, WPF et Windows Forms, ainsi que des informations supplémentaires sur l’API Win32.
+Vous souhaitez créer une application de bureau ? Découvrez notre page revisitée [Choisir votre plateforme](https://docs.microsoft.com/windows/desktop/choose-your-technology) qui fournit des descriptions et comparaisons détaillées des plateformes UWP, WPF et Windows Forms, ainsi que des informations supplémentaires sur l’API Win32.
 
 ### <a name="faqs-on-win32-webview"></a>FAQ sur Win32 WebView
 
@@ -70,7 +70,7 @@ La rubrique [Préparer votre application pour le changement d’ère du Japon](.
 
 ### <a name="progressive-web-apps"></a>Applications Web progressives
 
-Les Applications web progressives sont des sites web qui fonctionnent comme des applications natives dans différents navigateurs et sur un vaste éventail d’appareils Windows 10. [Regardez la vidéo](https://youtu.be/ugAewC3308Y) pour en savoir plus, puis [consultez les documents](https://aka.ms/Windows-PWA) pour commencer.
+Les Applications web progressives sont des sites web qui fonctionnent comme des applications natives dans différents navigateurs et sur un vaste éventail d’appareils Windows 10. [Regardez la vidéo](https://youtu.be/ugAewC3308Y) pour en savoir plus, puis [consultez les documents](https://developer.microsoft.com/windows/pwa) pour vous lancer.
 
 ### <a name="vs-code-series"></a>Série sur Visual Studio Code
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, carte, emplacement, services de carte
 ms.localizationpriority: medium
-ms.openlocfilehash: b35fcca29089e366817889757254531ff243159f
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 6a27eeeb9aa7349e532dcd76e5b7a7176ac20c08
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371704"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259350"
 ---
 # <a name="maps-and-location-overview"></a>Vue d’ensemble des cartes et de l’emplacement
 
@@ -21,9 +21,9 @@ ms.locfileid: "66371704"
 Cette section explique comment afficher des cartes, utiliser les services de carte, rechercher l’emplacement et configurer une limite géographique dans votre application. Cette section vous montre également comment lancer l’application Cartes Windows pour obtenir une carte, un itinéraire ou un ensemble d’itinéraires détaillés spécifique.
 
 > [!TIP]
-> Pour en savoir plus sur l’utilisation des cartes et de l’emplacement dans votre application, téléchargez les exemples suivants à partir du [dépôt Windows-universal-samples](https://go.microsoft.com/fwlink/p/?LinkId=619979) sur GitHub :
--   [Exemple de carte pour UWP (plateforme Windows universelle)](https://go.microsoft.com/fwlink/p/?LinkId=619977)
--   [Exemple de géolocalisation UWP](https://go.microsoft.com/fwlink/p/?linkid=533278)
+> Pour en savoir plus sur l’utilisation des cartes et de l’emplacement dans votre application, téléchargez les exemples suivants à partir du [dépôt Windows-universal-samples](https://github.com/Microsoft/Windows-universal-samples) sur GitHub :
+-   [Exemple de carte pour UWP (plateforme Windows universelle)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
+-   [Exemple de géolocalisation UWP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Geolocation)
 
  
 
@@ -51,7 +51,7 @@ Ajoutez des itinéraires, des indications et des fonctionnalités de géocodage 
 | [Afficher des POI (centres d’intérêt) sur une carte](display-poi.md) | Ajoutez des points d’intérêt à une carte à l’aide de punaises, d’images, de formes et d’éléments d’interface utilisateur XAML. |
 | [Afficher des itinéraires et des indications](routes-and-directions.md) | Demandez des itinéraires et indications, et affichez-les dans votre application. |
 | [Effectuer un géocodage et un géocodage inverse](geocoding.md) | Convertissez des adresses en emplacements géographiques (géocodage) et des emplacements géographiques en adresses (géocodage inverse) en appelant les méthodes de la classe [**MapLocationFinder**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinder) dans l’espace de noms [**Windows.Services.Maps**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps). |
-| [Rechercher et télécharger des packages de cartes pour une utilisation hors connexion](https://docs.microsoft.com/uwp/api/windows.services.maps.offlinemaps)| Avant, votre application devait diriger les utilisateurs vers Paramètres pour télécharger des cartes hors connexion. Vous pouvez désormais utiliser les classes de l’espace de noms [Windows.Services.Maps.OfflineMaps](https://docs.microsoft.com/en-us/uwp/api/windows.services.maps.offlinemaps) pour rechercher les packages téléchargés dans une zone donnée (en fonction de [Geopoint](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geopoint), [GeoboundingBox](https://docs.microsoft.com/en-us/uwp/api/windows.devices.geolocation.geoboundingbox), etc.). <br> Vous pouvez également vérifier et écouter l’état de téléchargement des packages de cartes, et démarrer un téléchargement sans demander à l’utilisateur de quitter votre application. <br> Vous trouverez des exemples montrant comment procéder dans le contenu de référence et dans l’[exemple de carte UWP (plateforme Windows universelle)](https://go.microsoft.com/fwlink/p/?LinkId=619977).
+| [Rechercher et télécharger des packages de cartes pour une utilisation hors connexion](https://docs.microsoft.com/uwp/api/windows.services.maps.offlinemaps)| Avant, votre application devait diriger les utilisateurs vers Paramètres pour télécharger des cartes hors connexion. Vous pouvez désormais utiliser les classes de l’espace de noms [Windows.Services.Maps.OfflineMaps](https://docs.microsoft.com/en-us/uwp/api/windows.services.maps.offlinemaps) pour rechercher les packages téléchargés dans une zone donnée (en fonction de [Geopoint](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geopoint), [GeoboundingBox](https://docs.microsoft.com/en-us/uwp/api/windows.devices.geolocation.geoboundingbox), etc.). <br> Vous pouvez également vérifier et écouter l’état de téléchargement des packages de cartes, et démarrer un téléchargement sans demander à l’utilisateur de quitter votre application. <br> Vous trouverez des exemples montrant comment procéder dans le contenu de référence et dans l’[exemple de carte UWP (plateforme Windows universelle)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl).
 
 ## <a name="get-the-users-location"></a>Obtenir l’emplacement de l’utilisateur
 
@@ -74,12 +74,12 @@ Votre application peut lancer l’application Cartes Windows, comme illustré ic
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Exemple de carte UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [Exemple de géolocalisation UWP](https://go.microsoft.com/fwlink/p/?linkid=533278)
+* [Exemple de carte UWP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
+* [Exemple de géolocalisation UWP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Geolocation)
 * [Espace partenaires Bing Cartes](https://www.bingmapsportal.com/)
 * [Obtenir l’emplacement actuel](get-location.md)
 * [Recommandations de conception pour les applications prenant en charge la géolocalisation](guidelines-and-checklist-for-detecting-location.md)
 * [Recommandations de conception pour les cartes](controls-map.md)
 * [Recommandations de conception pour les applications prenant en charge la confidentialité](https://docs.microsoft.com/windows/uwp/security/index)
 * [Vidéo de la build 2015 : Utilisation de cartes et de la localisation sur un téléphone, une tablette et un PC dans vos applications Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [Exemple d’application de trafic UWP](https://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [Exemple d’application de trafic UWP](https://github.com/Microsoft/Windows-appsample-trafficapp)

@@ -6,12 +6,12 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10, uwp, contacts, calendrier, rendez-vous, e-mails
 ms.localizationpriority: medium
-ms.openlocfilehash: 6356e20966fc3899196e00ba5a99ebcf0104f8d6
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 8abb3773b2fa18a25716baf641d04c7ad37a293c
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361256"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74255440"
 ---
 # <a name="contacts-my-people-and-calendar"></a>Contacts, Mes Contacts et Calendrier
 
@@ -35,8 +35,8 @@ Pour en savoir plus sur les différentes façons d’accéder aux contacts et au
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Exemple d’API de rendez-vous](https://go.microsoft.com/fwlink/p/?linkid=309836)
-* [Exemple d’API du Gestionnaire de contacts](https://go.microsoft.com/fwlink/p/?LinkID=310079)
-* [Exemple d’application du sélecteur de contacts](https://go.microsoft.com/fwlink/p/?linkid=231575)
-* [Exemple de gestion des actions de contact](https://go.microsoft.com/fwlink/p/?LinkID=320151)
+* [Exemple d’API de rendez-vous](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Appointments)
+* [Exemple d’API du Gestionnaire de contacts](https://code.msdn.microsoft.com/windowsapps/Contact-manager-API-sample-319bdcef)
+* [Exemple d’application du sélecteur de contacts](https://code.msdn.microsoft.com/windowsapps/Contact-Picker-App-sample-fc6677a1)
+* [Exemple de gestion des actions de contact](https://code.msdn.microsoft.com/windowsapps/Handling-Contact-Actions-359380e2)
 * [Exemple d’intégration à une carte de visite](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration)

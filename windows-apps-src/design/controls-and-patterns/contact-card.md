@@ -9,12 +9,12 @@ design-contact: tbd
 dev-contact: tbd
 doc-status: not-published
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c227629ace1f3fdbb2af8582401f9273cf11c2e
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 36c8c6248b356bbb17da72b53b0480a27999b875
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63799630"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257693"
 ---
 # <a name="contact-card"></a>Carte de visite
 
@@ -181,5 +181,5 @@ Les exemples de cet article créent un contact simple. Dans une application rée
 
 ## <a name="related-articles"></a>Articles connexes
 - [Contacts et calendriers](/windows/uwp/contacts-and-calendar/)
-- [Exemples de cartes de visite](https://go.microsoft.com/fwlink/p/?LinkId=624040)
+- [Exemples de cartes de visite](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCards)
 - [Contrôle de photo de personne](/windows/uwp/controls-and-patterns/person-picture/)

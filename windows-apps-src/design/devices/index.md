@@ -8,12 +8,12 @@ keywords: appareil, entrées, interactions
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6333345a79d92394539d337f1f2390118cff1153
-ms.sourcegitcommit: 09edf480f2224e29e190fad8518f680c16e21c6d
+ms.openlocfilehash: 0808b5173f697fcca8d5e117f857d3861c327ae3
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65065349"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258121"
 ---
 #  <a name="ui-considerations-for-uwp-devices"></a>Considérations relatives à l’interface utilisateur des appareils UWP
 
@@ -131,7 +131,7 @@ Fonctionnalités de l’appareil type
 
 Appareils informatiques parmi les plus utilisés actuellement, les téléphones peuvent proposer de nombreuses fonctions, malgré un espace à l’écran réduit et des commandes d’entrée limitées. Les téléphones sont disponibles dans différentes tailles. Les téléphones de grande taille sont appelés des phablettes. L’expérience liée à l’utilisation de l’application sur une phablette est similaire à celle que propose un téléphone, mais l’espace disponible sur l’écran d’une phablette permet d’apporter des modifications significatives au comportement de consommation du contenu de l’utilisateur.
 
-Avec Continuum pour téléphones, une nouvelle expérience pour les appareils mobiles Windows 10 compatibles, les utilisateurs peuvent connecter leurs téléphones à un écran et même à une souris et un clavier pour les utiliser comme un ordinateur portable. (Pour plus d’informations, voir l’article [Continuum pour téléphones](https://go.microsoft.com/fwlink/p/?LinkID=699431).)
+Avec Continuum pour téléphones, une nouvelle expérience pour les appareils mobiles Windows 10 compatibles, les utilisateurs peuvent connecter leurs téléphones à un écran et même à une souris et un clavier pour les utiliser comme un ordinateur portable. (Pour plus d’informations, voir l’article [Continuum pour téléphones](https://docs.microsoft.com/windows-hardware/design/device-experiences/continuum-phone?redirectedfrom=MSDN).)
 
 Tailles d’écran
 -   De 4 à 5 pouces pour les téléphones

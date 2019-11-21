@@ -12,12 +12,12 @@ design-contact: mattben
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ce81088495716e43a32dab94d1d47d399dd6a309
-ms.sourcegitcommit: bf95c8b29145a224957a940512394e6aa97cb90f
+ms.openlocfilehash: 31f527cff7588ccf6da2594566cfa3cf13a214f1
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71061917"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258681"
 ---
 # <a name="sound"></a>Son
 
@@ -69,7 +69,7 @@ Pour plus d’informations sur l’audio spatial et la façon dont XAML le gère
 ### <a name="sound-for-tv-and-xbox"></a>Son pour Xbox et télévision
 
 Le son constitue un aspect essentiel de l’expérience d’interface à 3 mètres (ou « 10-foot ») et, par défaut, le système **ElementSoundPlayer** présente l’état **Auto**, ce qui signifie que vous n’entendrez le son que si votre application est exécutée sur Xbox.
-Pour plus d’informations sur la conception pour Xbox et télévision, voir [Conception pour Xbox et télévision](https://go.microsoft.com/fwlink/?LinkId=760736).
+Pour plus d’informations sur la conception pour Xbox et télévision, voir [Conception pour Xbox et télévision](https://docs.microsoft.com/windows/uwp/design/devices/designing-for-tv?redirectedfrom=MSDN).
 
 ## <a name="sound-volume-override"></a>Substitution du volume sonore
 

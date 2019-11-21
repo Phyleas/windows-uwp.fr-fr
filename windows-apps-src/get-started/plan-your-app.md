@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 97407ec48eaac3415980b9313092b21e9532250a
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 834bea47a566789926648098086c05c0a47b6065
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321108"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260555"
 ---
 #  <a name="building-a-complex-universal-windows-platform-uwp-app"></a>Création d’une application de plateforme Windows universelle (UWP) complexe
 
@@ -65,7 +65,7 @@ Le terme « entonnoir » provient de la forme de cette technique. À l’extrém
 
 Quand vous êtes satisfait de votre concept, vous êtes prêt pour la prochaine étape : la création du plan de votre application. L’architecture de l’information donne à votre contenu l’intégrité structurelle dont il a besoin. Il permet de définir le modèle de navigation de votre application et, en fin de compte, son identité. En planifiant l’organisation de votre contenu et la façon dont vos utilisateurs vont le découvrir, vous pouvez vous faire une meilleure idée du ressenti des utilisateurs face à votre application.
 
-Une bonne architecture de l’information facilite les scénarios d’utilisation et vous aide à envisager les écrans principaux. L’application [Audible](https://go.microsoft.com/fwlink/p/?LinkID=268089), par exemple, se lance directement dans une page Hub, qui permet d’accéder à la bibliothèque, au magasin, aux informations et aux statistiques de l’utilisateur. L’expérience est ciblée, pour permettre aux utilisateurs d’obtenir rapidement des livres audio et d’en profiter. À des niveaux plus profonds, l’application se concentre sur des tâches plus spécifiques.
+Une bonne architecture de l’information facilite les scénarios d’utilisation et vous aide à envisager les écrans principaux. L’application [Audible](https://www.windowsphone.com/store/app/audible-for-windows-phone/bdc813dd-c20b-41f8-8646-de72fa0b365d), par exemple, se lance directement dans une page Hub, qui permet d’accéder à la bibliothèque, au magasin, aux informations et aux statistiques de l’utilisateur. L’expérience est ciblée, pour permettre aux utilisateurs d’obtenir rapidement des livres audio et d’en profiter. À des niveaux plus profonds, l’application se concentre sur des tâches plus spécifiques.
 
 Pour obtenir des recommandations à ce sujet, voir [Informations de base relatives à la conception de la navigation](../design/basics/navigation-basics.md).
 

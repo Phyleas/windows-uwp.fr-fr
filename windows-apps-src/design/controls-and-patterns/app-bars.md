@@ -13,12 +13,12 @@ design-contact: ksulliv
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 5559e4204dd50ff989d48ff4508862489f9d3180
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 9f5fd3408657047c3d1d102c65f6264954983134
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66361237"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257744"
 ---
 # <a name="command-bar"></a>Barre de commandes
 
@@ -264,7 +264,7 @@ Les barres de commandes peuvent être placées en haut et en bas de la fenêtre 
 
 ![Exemple 1 de placement de la barre d’application](images/AppbarGuidelines_Placement1.png)
 
--   Pour les petits appareils de poche, nous vous recommandons de positionner les barres de commandes en bas de l’écran pour faciliter leur accessibilité.
+-   Pour les petits appareils de poche, nous vous recommandons de positionner les barres de commande en bas de l’écran pour faciliter leur accessibilité.
 -   Pour les écrans de plus grande taille, le fait de placer les barres de commandes près du haut de la fenêtre les rend plus détectables et plus accessibles.
 
 Utilisez l’API [DiagonalSizeInInches](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.diagonalsizeininches) pour déterminer la taille physique de l’écran.
@@ -278,7 +278,7 @@ Les barres de commandes peuvent être placées dans les zones d’écran suivant
 ## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
 
 - [Exemple de Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) : tous les contrôles XAML dans un format interactif.
-- [Exemple de commandes XAML](https://go.microsoft.com/fwlink/p/?LinkId=620019)
+- [Exemple de commandes XAML](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlCommanding)
 
 ## <a name="related-articles"></a>Articles connexes
 

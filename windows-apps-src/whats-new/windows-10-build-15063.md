@@ -6,18 +6,18 @@ ms.date: 11/02/2017
 ms.topic: article
 ms.assetid: ea855480-874d-431f-94bf-13d81eacc010
 ms.localizationpriority: medium
-ms.openlocfilehash: 4395ed9113b85d53ce464bd085b168c806fc281c
-ms.sourcegitcommit: a7740ebb14c98cd5afadd52db5cf714522821b49
+ms.openlocfilehash: 53604de72eb32f7f6a8162b0cdb9cf481f6e9537
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72893053"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258880"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-15063"></a>Nouveautés de Windows 10 pour les développeurs, build 15063
 
-Windows 10, build 15063 (également appelé Creators Update ou version 1703), en combinaison avec Visual Studio 2019 et le SDK mis à jour, fournit des outils, des fonctionnalités et une expérience propres à produire des applications remarquables dédiées à la plateforme Windows universelle. [Installez les outils et le kit de développement logiciel (SDK)](https://go.microsoft.com/fwlink/?LinkId=821431) sur Windows 10 et vous pourrez ainsi [créer une application universelle Windows](../get-started/create-uwp-apps.md) ou explorer la procédure permettant d’utiliser votre [code d’application existant sur Windows](../porting/index.md).
+Windows 10, build 15063 (également appelé Creators Update ou version 1703), en combinaison avec Visual Studio 2019 et le SDK mis à jour, fournit des outils, des fonctionnalités et une expérience propres à produire des applications remarquables dédiées à la plateforme Windows universelle. [Installez les outils et le kit de développement logiciel (SDK)](https://developer.microsoft.com/windows/downloads#_blank) sur Windows 10 et vous pourrez ainsi [créer une application universelle Windows](../get-started/create-uwp-apps.md) ou explorer la procédure permettant d’utiliser votre [code d’application existant sur Windows](../porting/index.md).
 
-Voici une collection des fonctionnalités nouvelles et améliorées pouvant intéresser les développeurs. Pour obtenir une liste complète des nouveaux espaces de noms ajoutés au kit de développement logiciel (SDK) Windows, consultez [Modifications apportées aux API de Windows 10 build 15063](windows-10-build-15063-api-diff.md). Pour en savoir plus sur les fonctionnalités phares de Windows 10, consultez [Nouveautés intéressantes de Windows 10](https://go.microsoft.com/fwlink/?LinkId=823181). Consultez également [Fonctionnalités de la plateforme de développement Windows](https://developer.microsoft.com/windows/platform/features) pour bénéficier d’une vue d’ensemble des ajouts passés et futurs relatifs à la plateforme Windows.
+Voici une collection des fonctionnalités nouvelles et améliorées pouvant intéresser les développeurs. Pour obtenir une liste complète des nouveaux espaces de noms ajoutés au kit de développement logiciel (SDK) Windows, consultez [Modifications apportées aux API de Windows 10 build 15063](windows-10-build-15063-api-diff.md). Pour en savoir plus sur les fonctionnalités phares de Windows 10, consultez [Nouveautés intéressantes de Windows 10](https://developer.microsoft.com/windows/windows-10-for-developers). Consultez également [Fonctionnalités de la plateforme de développement Windows](https://developer.microsoft.com/windows/platform/features) pour bénéficier d’une vue d’ensemble des ajouts passés et futurs relatifs à la plateforme Windows.
 
 ## <a name="windows-10-build-15063---march-2017"></a>Windows 10, build 15063 - Mars 2017
 

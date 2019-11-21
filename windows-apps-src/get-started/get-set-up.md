@@ -6,12 +6,12 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 30ffec0f2a5e771e649eda6240d9e7ef90f50890
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 7c95d915c8906e2052243fee509e260fc8864454
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318792"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258370"
 ---
 # <a name="get-set-up"></a>Préparation
 
@@ -28,7 +28,7 @@ Microsoft Visual Studio 2019 vous permet de concevoir, coder, tester et débogue
 
 Si vous ne possédez pas Visual Studio 2019, vous pouvez installer gratuitement Microsoft Visual Studio Community 2019. Ce téléchargement comprend des simulateurs d’appareil pour tester vos applications :
 
--   [Télécharger les outils de développement de Windows 10](https://go.microsoft.com/fwlink/p/?LinkID=534189)
+-   [Télécharger les outils de développement de Windows 10](https://developer.microsoft.com/windows/downloads)
 
 Lorsque vous installez Visual Studio, veillez à sélectionner l’option Outils de développement d’applications Windows universelles, comme illustré ici :
 
@@ -67,7 +67,7 @@ Si vous souhaitez personnaliser votre appareil et installer d’autres fonctionn
 
 ## <a name="want-more-tools-and-downloads"></a>Vous souhaitez davantage d’outils et de téléchargements ?
 
-Pour obtenir la liste complète des outils et des téléchargements, visitez la page [Téléchargements](https://go.microsoft.com/fwlink/p/?linkid=285935).
+Pour obtenir la liste complète des outils et des téléchargements, visitez la page [Téléchargements](https://developer.microsoft.com/windows/downloads).
 
 ## <a name="see-also"></a>Voir aussi
 

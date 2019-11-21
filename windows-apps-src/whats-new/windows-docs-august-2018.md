@@ -5,18 +5,18 @@ keywords: nouveautés, mise à jour, fonctionnalités, conseils aux développeur
 ms.date: 08/14/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9922aa1ad2442153dcc2c13d05520c05c3b56d31
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 723cae783ba16fe5be9bb2076f96d4a5f823d733
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63780242"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258836"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2018"></a>Nouveautés apportées dans la documentation du développeur Windows en août 2018
 
 La documentation du développeur Windows est constamment mise à jour avec des informations sur les nouvelles fonctionnalités mises à la disposition des développeurs sur la plateforme Windows. Les présentations de fonctionnalités, conseils aux développeurs et vidéos ci-dessous ont été mis à disposition au mois d'août.
 
-[Installez les outils et le kit de développement logiciel (SDK)](https://go.microsoft.com/fwlink/?LinkId=821431) sur Windows 10 et vous pourrez ainsi [créer une application universelle Windows](../get-started/create-uwp-apps.md) ou explorer la procédure permettant d’utiliser votre [code d’application existant sur Windows](../porting/index.md).
+[Installez les outils et le kit de développement logiciel (SDK)](https://developer.microsoft.com/windows/downloads#_blank) sur Windows 10 et vous pourrez ainsi [créer une application universelle Windows](../get-started/create-uwp-apps.md) ou explorer la procédure permettant d’utiliser votre [code d’application existant sur Windows](../porting/index.md).
 
 ## <a name="features"></a>Fonctionnalités
 
@@ -24,7 +24,7 @@ La documentation du développeur Windows est constamment mise à jour avec des i
 
 Les fonctionnalités suivantes ont été ajoutées aux builds Windows Insider Preview, disponibles via le programme [Windows Insider](https://insider.windows.com/).
 
-* La [bibliothèque de l'interface utilisateur de Windows](https://aka.ms/winui-docs) est un ensemble de packages NuGet qui fournissent des contrôles et autres éléments d'interface utilisateur pour les applications UWP. Ces packages sont également compatibles avec les versions antérieures de Windows 10, pour que votre application fonctionne même si vos utilisateurs ne disposent pas de la dernière version du système d'exploitation.
+* La [bibliothèque de l'interface utilisateur de Windows](https://docs.microsoft.com/uwp/toolkits/winui/) est un ensemble de packages NuGet qui fournissent des contrôles et autres éléments d'interface utilisateur pour les applications UWP. Ces packages sont également compatibles avec les versions antérieures de Windows 10, pour que votre application fonctionne même si vos utilisateurs ne disposent pas de la dernière version du système d'exploitation.
 
 * [DropDownButton](../design/controls-and-patterns/buttons.md#create-a-drop-down-button), [SplitButton](../design/controls-and-patterns/buttons.md#create-a-split-button) et [ToggleSplitButton](../design/controls-and-patterns/buttons.md#create-a-toggle-split-button) fournissent des commandes de bouton avec des fonctionnalités spécialisées permettant d'améliorer l'interface utilisateur de votre application.
 
@@ -62,7 +62,7 @@ Le plug-in Xbox Live pour Unity prend en charge l'ajout de signatures, de statis
 
 ### <a name="one-dev-question"></a>One Dev Question
 
-Dans le cadre de la série de vidéos One Dev Question, des développeurs Microsoft expérimentés répondent à des questions sur le développement, la culture d'équipe et l'histoire de Windows. Voici les dernières questions auxquelles nous avons répondu !
+Dans le cadre de la série de vidéos One Dev Question, des développeurs Microsoft expérimentés répondent à toutes sortes de questions sur le développement, la culture d’équipe et l’histoire de Windows. Voici les dernières questions auxquelles nous avons répondu !
 
 Raymond Chen :
 

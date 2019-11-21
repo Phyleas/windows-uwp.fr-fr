@@ -5,12 +5,12 @@ keywords: nouveautés, mise à jour, fonctionnalités, conseils aux développeur
 ms.date: 09/06/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1312c55d98d3e1df2c9e583422df7938c994c2b5
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: bf88814e00e81608f698231f31c2f4ab52cd4ea6
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320378"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258780"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-september-2017"></a>Nouveautés apportées dans la documentation du développeur Windows en septembre 2017
 
@@ -18,7 +18,7 @@ La documentation du développeur Windows est constamment mise à jour avec des i
 
 Bien entendu, la mise à jour Fall Creators Update est imminente. Par conséquent, restez à l’écoute car une nouvelle documentation volumineuse arrivera le mois prochain !
 
-[Installez les outils et le kit de développement logiciel (SDK)](https://go.microsoft.com/fwlink/?LinkId=821431) sur Windows 10 et vous pourrez ainsi [créer une application universelle Windows](../get-started/your-first-app.md) ou explorer la procédure permettant d’utiliser votre [code d’application existant sur Windows](../porting/index.md).
+[Installez les outils et le kit de développement logiciel (SDK)](https://developer.microsoft.com/windows/downloads#_blank) sur Windows 10 et vous pourrez ainsi [créer une application universelle Windows](../get-started/your-first-app.md) ou explorer la procédure permettant d’utiliser votre [code d’application existant sur Windows](../porting/index.md).
 
 ## <a name="features"></a>Fonctionnalités
 

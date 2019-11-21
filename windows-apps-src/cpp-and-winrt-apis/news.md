@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, actualités, nouveautés, nouveau
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 24abdb26cf884367d9a9521d30b09b443d2e4e00
-ms.sourcegitcommit: 5dfa98a80eee41d97880dba712673168070c4ec8
+ms.openlocfilehash: d5a2c3d10f2cbfcc608d212a9465ca738e1ca15e
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72998614"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74255045"
 ---
 # <a name="whats-new-in-cwinrt"></a>Nouveautés de C++/WinRT
 
@@ -19,7 +19,7 @@ Au fur et à mesure que de nouvelles versions de C++/WinRT sont publiées, cette
 
 ## <a name="news-and-changes-in-cwinrt-20"></a>Nouveautés et modifications dans C++/WinRT 2.0
 
-Pour plus d’informations sur l’[ extension Visual Studio C++/WinRT (VSIX)](https://aka.ms/cppwinrt/vsix), le [package NuGet Microsoft.Windows.CppWinRT](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) et l’outil `cppwinrt.exe` (notamment sur la manière de les acquérir et de les installer), consultez [Prise en charge Visual Studio pour C++/WinRT, XAML, l’extension VSIX et le package NuGet](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+Pour plus d’informations sur l’[ extension Visual Studio C++/WinRT (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264), le [package NuGet Microsoft.Windows.CppWinRT](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) et l’outil `cppwinrt.exe` (notamment sur la manière de les acquérir et de les installer), consultez [Prise en charge Visual Studio pour C++/WinRT, XAML, l’extension VSIX et le package NuGet](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 ### <a name="changes-to-the-cwinrt-visual-studio-extension-vsix-for-version-20"></a>Modifications apportées à l’extension Visual Studio C++/WinRT (VSIX) pour la version 2.0
 
@@ -302,7 +302,7 @@ Autres modifications.
 - Pointeurs intelligents renforcés. Auparavant, les révocateurs d’événements échouaient quand une nouvelle valeur était déplacée ou affectée. Cela a permis de découvrir un problème où les classes de pointeur intelligent ne géraient pas de façon fiable l’auto-affectation ; rootée dans le [**modèle de struct winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr). **winrt::com_ptr** a été corrigé, ainsi que les révocateurs d’événements, pour gérer la sémantique de déplacement correctement afin que la révocation s’effectue au moment de l’affectation.
 
 > [!IMPORTANT]
-> Des modifications importantes ont été apportées à la l’[extension Visual Studio C++/WinRT (VSIX)](https://aka.ms/cppwinrt/vsix), à la fois dans la version 1.0.181002.2, puis plus tard dans la version 1.0.190128.4. Pour plus d’informations sur ces modifications et la manière dont elles affectent vos projets existants, consultez [Prise en charge Visual Studio pour C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package) et [Versions antérieures de l’extension VSIX](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension).
+> Des modifications importantes ont été apportées à la l’[extension Visual Studio C++/WinRT (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264), à la fois dans la version 1.0.181002.2, puis plus tard dans la version 1.0.190128.4. Pour plus d’informations sur ces modifications et la manière dont elles affectent vos projets existants, consultez [Prise en charge Visual Studio pour C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package) et [Versions antérieures de l’extension VSIX](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension).
 
 ### <a name="isolation-from-windows-sdk-header-files"></a>Isolation des fichiers d’en-tête du SDK Windows
 

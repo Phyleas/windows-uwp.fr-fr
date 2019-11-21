@@ -11,12 +11,12 @@ dev_langs:
 - cppwinrt
 - cpp
 - vb
-ms.openlocfilehash: 6ff7b37eee4f2b9228a635a117e164d7d9859629
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 0dbe5e2f1cc32a3d1b52572f71fba7547af99f17
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63803620"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258563"
 ---
 # <a name="create-write-and-read-a-file"></a>Créer, écrire et lire un fichier
 
@@ -29,7 +29,7 @@ ms.locfileid: "63803620"
 Lisez et écrivez un fichier à l’aide d’un objet [**StorageFile**](/uwp/api/windows.storage.storagefile).
 
 > [!NOTE]
-> Pour un exemple complet, voir l’[Exemple d’accès aux fichiers](https://go.microsoft.com/fwlink/p/?linkid=619995).
+> Pour un exemple complet, voir l’[Exemple d’accès aux fichiers](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess).
 
 ## <a name="prerequisites"></a>Conditions préalables
 

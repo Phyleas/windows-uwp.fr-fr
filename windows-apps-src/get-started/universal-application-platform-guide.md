@@ -6,12 +6,12 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10, uwp, universelle
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b1f6e0e04cdf81512918e0cd3e33ec0f93e2245
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 5b0d226a9492a2218edf20e68b8216ea513ca12a
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321002"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260536"
 ---
 # <a name="whats-a-universal-windows-platform-uwp-app"></a>Qu’est-ce qu’une application de plateforme Windows universelle (UWP) ?
 
@@ -115,7 +115,7 @@ Consultez [Se préparer](get-set-up.md) pour télécharger les outils dont vous 
 
 Le nom du système de conception Microsoft est Fluent. Le système Fluent Design est un ensemble de fonctionnalités UWP combinées avec les meilleures pratiques pour créer des applications qui s’exécutent parfaitement sur tous les types d’appareils fonctionnant sous Windows. Les expériences Fluent s’adaptent parfaitement aux différents appareils (tablettes ou ordinateurs portables, PC ou téléviseurs, ainsi que sur des appareils de réalité virtuelle). Consultez la section [Système Fluent Design pour les applications UWP](https://docs.microsoft.com/windows/uwp/design/fluent-design-system) pour obtenir une présentation du système Fluent Design.
 
-Une bonne [conception](https://go.microsoft.com/fwlink/?LinkId=258848) est le processus consistant à décider comment les utilisateurs doivent interagir avec votre application, ainsi que la manière dont cette dernière se présentera et fonctionnera. L’expérience utilisateur jouant un rôle considérable dans la satisfaction que procurera votre application, ne lésinez pas sur cette étape. La rubrique [Notions de base de la conception](https://developer.microsoft.com/en-us/windows/apps/design) présente la conception d’une application Windows universelle. Pour plus d’informations sur la conception d’applications UWP susceptibles d’enchanter les utilisateurs, voir [Présentation des applications de la plateforme Windows universelle (UWP) pour les concepteurs](https://docs.microsoft.com/windows/uwp/layout/design-and-ui-intro). Avant de commencer à coder, voir [Notions fondamentales sur les appareils](../design/devices/index.md) pour réfléchir à l’expérience d’interaction de l’utilisation de votre application sur les différents facteurs de forme que vous voulez cibler.
+Une bonne [conception](http://design.windows.com/) est le processus consistant à décider comment les utilisateurs doivent interagir avec votre application, ainsi que la manière dont cette dernière se présentera et fonctionnera. L’expérience utilisateur jouant un rôle considérable dans la satisfaction que procurera votre application, ne lésinez pas sur cette étape. La rubrique [Notions de base de la conception](https://developer.microsoft.com/en-us/windows/apps/design) présente la conception d’une application Windows universelle. Pour plus d’informations sur la conception d’applications UWP susceptibles d’enchanter les utilisateurs, voir [Présentation des applications de la plateforme Windows universelle (UWP) pour les concepteurs](https://docs.microsoft.com/windows/uwp/layout/design-and-ui-intro). Avant de commencer à coder, voir [Notions fondamentales sur les appareils](../design/devices/index.md) pour réfléchir à l’expérience d’interaction de l’utilisation de votre application sur les différents facteurs de forme que vous voulez cibler.
 
 En plus de l’interaction sur différents appareils, [planifiez votre application](https://docs.microsoft.com/windows/uwp/get-started/plan-your-app) pour bénéficier des avantages liés à l’utilisation de plusieurs appareils. Par exemple :
 
@@ -125,7 +125,7 @@ En plus de l’interaction sur différents appareils, [planifiez votre applicati
 
 ### <a name="add-services"></a>Ajouter des services
 
-- Utilisez les [services cloud](https://go.microsoft.com/fwlink/?LinkId=526377) pour synchroniser les données sur tous les appareils.
+- Utilisez les [services cloud](https://azure.microsoft.com/documentation/services/cloud-services) pour synchroniser les données sur tous les appareils.
 - Découvrez comment vous [connecter aux services web](https://docs.microsoft.com/previous-versions/windows/apps/hh761504(v=win.10)) pour renforcer l’expérience de votre application.
 - Incluez des [notifications Push](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview) et des [achats dans l’application](https://docs.microsoft.com/windows/uwp/monetize/enable-in-app-product-purchases) dans votre planification. Ces fonctionnalités doivent opérer sur tous les appareils.
 

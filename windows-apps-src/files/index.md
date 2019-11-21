@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c7296923b3e991a56fed115527b28a6b62b3ffd6
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 15e6ebd45d4f7069e09169a437476b0f785ea959
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66369459"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259600"
 ---
  # <a name="files-folders-and-libraries"></a>Fichiers, dossiers et bibliothèques
 
@@ -36,11 +36,11 @@ Vous utilisez les API dans les espaces de noms [Windows.Storage](https://docs.mi
 | [Accès rapide aux propriétés de fichier dans UWP](fast-file-properties.md) | Rassemblez efficacement une liste de fichiers et leurs propriétés à partir d’une bibliothèque à utiliser dans une application UWP. |
 
 ## <a name="related-samples"></a>Exemples connexes
-[Exemple d’énumération de dossier](https://go.microsoft.com/fwlink/p/?linkid=619993)
+[Exemple d’énumération de dossier](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FolderEnumeration)
 
-[Exemple d’accès aux fichiers](https://go.microsoft.com/fwlink/p/?linkid=619995)
+[Exemple d’accès aux fichiers](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess)
 
-[Exemple de sélecteur de fichiers](https://go.microsoft.com/fwlink/p/?linkid=619994)
+[Exemple de sélecteur de fichiers](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FilePicker)
  
 
  

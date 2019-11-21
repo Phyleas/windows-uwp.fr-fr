@@ -5,18 +5,18 @@ keywords: nouveautés, mise à jour, fonctionnalités, conseils aux développeur
 ms.date: 02/05/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: e02c253e9fe2e3bd25485c8af0429b19a65886cf
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 4cac61f398fff17ecfb824f2d869364097f38d5d
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320403"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258819"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-february-2018"></a>Nouveautés apportées dans la documentation du développeur Windows en février 2018
 
 La documentation du développeur Windows est constamment mise à jour avec des informations sur les nouvelles fonctionnalités mises à la disposition des développeurs sur la plateforme Windows. Les présentations de fonctionnalités, les conseils aux développeurs et les vidéos qui suivent ont été mis à disposition en janvier. Ils contiennent des informations nouvelles et mises à jour destinées aux développeurs Windows.
 
-[Installez les outils et le kit de développement logiciel (SDK)](https://go.microsoft.com/fwlink/?LinkId=821431) sur Windows 10 et vous pourrez ainsi [créer une application universelle Windows](../get-started/create-uwp-apps.md) ou explorer la procédure permettant d’utiliser votre [code d’application existant sur Windows](../porting/index.md).
+[Installez les outils et le kit de développement logiciel (SDK)](https://developer.microsoft.com/windows/downloads#_blank) sur Windows 10 et vous pourrez ainsi [créer une application universelle Windows](../get-started/create-uwp-apps.md) ou explorer la procédure permettant d’utiliser votre [code d’application existant sur Windows](../porting/index.md).
 
 
 ## <a name="features"></a>Fonctionnalités

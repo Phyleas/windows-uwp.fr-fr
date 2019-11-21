@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 41c42a058398539701cc1df003717eec99d1b2cd
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 74735b15ec53cf04e33dcb850c6cb174082ac438
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66362857"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257260"
 ---
 # <a name="create-custom-transport-controls"></a>Créer des contrôles de transport personnalisés
 
@@ -26,7 +26,7 @@ MediaPlayerElement dispose de contrôles de transport XAML personnalisables perm
 Avant de démarrer, prenez le temps de vous familiariser avec les classes MediaPlayerElement et MediaTransportControls. Pour plus d’informations, voir le Guide du contrôle MediaPlayerElement.
 
 > [!TIP]
-> Les exemples de cette rubrique sont basés sur l’[Exemple de contrôles de transport de média](https://go.microsoft.com/fwlink/p/?LinkId=620023). Vous pouvez télécharger l’exemple pour afficher et exécuter le code validé.
+> Les exemples de cette rubrique sont basés sur l’[Exemple de contrôles de transport de média](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlCustomMediaTransportControls). Vous pouvez télécharger l’exemple pour afficher et exécuter le code validé.
 
 > [!NOTE]
 > **MediaPlayerElement** est uniquement disponible dans Windows 10, version 1607 ou ultérieure. Si vous développez une application pour une version antérieure de Windows 10, vous devez utiliser [**MediaElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement) à la place. Tous les exemples de cette page fonctionnent avec **MediaElement** également.
@@ -95,7 +95,7 @@ Pour en savoir plus sur la modification des styles et des modèles, voir [Contr�
 
 ### <a name="create-a-derived-control"></a>Créer un contrôle dérivé
 
-Pour ajouter ou modifier les fonctionnalités des contrôles de transport, vous devez créer une nouvelle classe dérivée de MediaTransportControls. Une classe dérivée appelée `CustomMediaTransportControls` est illustrée dans [l’Exemple de contrôles de transport de média](https://go.microsoft.com/fwlink/p/?LinkId=620023) et dans les autres exemples sur cette page.
+Pour ajouter ou modifier les fonctionnalités des contrôles de transport, vous devez créer une nouvelle classe dérivée de MediaTransportControls. Une classe dérivée appelée `CustomMediaTransportControls` est illustrée dans [l’Exemple de contrôles de transport de média](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlCustomMediaTransportControls) et dans les autres exemples sur cette page.
 
 **Pour créer une classe dérivée de MediaTransportControls**
 1. Ajoutez un nouveau fichier de classe à votre projet.
@@ -202,7 +202,7 @@ Pour déplacer un élément des commandes principales de la barre de commandes v
 
 ### <a name="adding-a-custom-button"></a>Ajout d’un bouton personnalisé
 
-Il se peut que vous souhaitiez personnaliser la classe MediaTransportControls pour pouvoir ajouter une commande personnalisée au contrôle. Que vous l’ajoutiez en tant que commande principale ou secondaire, la procédure de création du bouton de commande et de modification de son comportement est la même. Dans [l’Exemple de contrôles de transport de média](https://go.microsoft.com/fwlink/p/?LinkId=620023), un bouton « rating » est ajouté aux commandes principales.
+Il se peut que vous souhaitiez personnaliser la classe MediaTransportControls pour pouvoir ajouter une commande personnalisée au contrôle. Que vous l’ajoutiez en tant que commande principale ou secondaire, la procédure de création du bouton de commande et de modification de son comportement est la même. Dans [l’Exemple de contrôles de transport de média](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlCustomMediaTransportControls), un bouton « rating » est ajouté aux commandes principales.
 
 **Pour ajouter un bouton de commande personnalisé**
 1. Créez un objet AppBarButton et ajoutez-le à la classe CommandBar dans le modèle de contrôle.
