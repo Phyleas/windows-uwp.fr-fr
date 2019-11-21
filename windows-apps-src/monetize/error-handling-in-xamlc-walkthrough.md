@@ -1,19 +1,19 @@
 ---
 ms.assetid: cf0d2709-21a1-4d56-9341-d4897e405f5d
 description: Découvrez comment intercepter les erreurs AdControl dans votre application.
-title: Procédure pas à pas pour gérer les erreurs dans XAML/C#
+title: Gestion des erreurs dans la procédure pas à pas pour XAML/C#
 ms.date: 05/11/2018
 ms.topic: article
 keywords: windows 10, uwp, annonces publicitaires, publicité, gestion des erreurs, XAML, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: c0b8389d2319a670dd314417726b24e98378cd49
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 0c9f29cacd740392e3cfd4b5b4b63d1f7ce9c5cd
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334467"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260276"
 ---
-# <a name="error-handling-in-xamlc-walkthrough"></a>Procédure pas à pas pour gérer les erreurs dans XAML/C#
+# <a name="error-handling-in-xamlc-walkthrough"></a>Gestion des erreurs dans la procédure pas à pas pour XAML/C#
 
 Cette procédure pas à pas montre comment intercepter les erreurs liées à aux publicités dans votre application. Cette procédure pas à pas utilise un [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) pour afficher une bannière, mais les concepts généraux s’appliquent également aux spots publicitaires et aux publicités natives.
 
@@ -75,4 +75,4 @@ Ces exemples partent du principe que vous disposez d’une application XAML/C# q
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Exemples de publicité sur GitHub](https://aka.ms/githubads)
+* [Exemples de publicité sur GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)

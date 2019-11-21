@@ -6,19 +6,19 @@ ms.topic: article
 keywords: windows 10, uwp, sécurité
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
-ms.openlocfilehash: 557f5c03bda68d11507ba3b3b3b12823dbe6fd9f
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: c90a3257f8a54202e7ac50395e7e73f0538a484a
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282400"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259875"
 ---
 # <a name="web-account-manager"></a>Gestionnaire de comptes web
 
 Cet article explique comment utiliser la classe **[AccountsSettingsPane](https://docs.microsoft.com/uwp/api/Windows.UI.ApplicationSettings.AccountsSettingsPane)** pour connecter votre application de plateforme Windows universelle (UWP) à des fournisseurs d’identité externes, tels que Microsoft ou Facebook, à l’aide des API du Gestionnaire de comptes web de Windows 10. Vous découvrirez comment demander l’autorisation d’un utilisateur pour utiliser son compte Microsoft, obtenir un jeton d’accès et l’utiliser pour effectuer des opérations de base (par exemple, obtenir des données de profil ou télécharger des fichiers sur leur compte OneDrive). Pour obtenir l’autorisation et l’accès utilisateur, les étapes sont similaires quel que soit le fournisseur d’identité, à condition qu’il prenne en charge le Gestionnaire de compte web.
 
 > [!NOTE]
-> Pour obtenir un exemple du code complet, voir l’[exemple WebAccountManagement sur GitHub](https://go.microsoft.com/fwlink/p/?LinkId=620621).
+> Pour obtenir un exemple du code complet, voir l’[exemple WebAccountManagement sur GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAccountManagement).
 
 ## <a name="get-set-up"></a>Préparation
 
@@ -116,7 +116,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s,
 }
 ```
 
-Ensuite, obtenez un fournisseur à l’aide de la méthode WebAuthenticationCoreManager.FindAccountProviderAsync. L’URL du fournisseur varie en fonction du fournisseur et figure dans la documentation correspondante. Pour les comptes et Azure Active Directory Microsoft, il s’agit de « https @ no__t-0//login. Microsoft. com ». 
+Ensuite, obtenez un fournisseur à l’aide de la méthode WebAuthenticationCoreManager.FindAccountProviderAsync. L’URL du fournisseur varie en fonction du fournisseur et figure dans la documentation correspondante. Pour les comptes et Azure Active Directory Microsoft, il s’agit de « https\://login.microsoft.com ». 
 
 ```csharp
 private async void BuildPaneAsync(AccountsSettingsPane s,
@@ -398,7 +398,7 @@ Ne développez pas trop le texte de l’en-tête ; il doit rester bref et conci
 
 Vous pouvez ajouter des commandes personnalisées à la classe AccountsSettingsPane. Elles apparaissent sous forme de liens sous vos WebAccountProviders pris en charge. Les commandes personnalisées sont parfaites pour les tâches simples sur les comptes d’utilisateurs, telles que l’affichage d’une politique de confidentialité ou l’ouverture d’une page de support pour les utilisateurs rencontrant des difficultés. 
 
-Voici un exemple : 
+Voici un exemple : 
 
 ```csharp
 private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCommandsRequestedEventArgs e)
@@ -420,7 +420,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 
 En théorie, vous pouvez utiliser les commandes de paramètres pour tout. Toutefois, nous vous recommandons d’en limiter l’utilisation aux scénarios intuitifs liés aux comptes, tels que ceux décrits ci-dessus. 
 
-## <a name="see-also"></a>Voir aussi
+## <a name="see-also"></a>Voir également
 
 [Espace de noms Windows. Security. Authentication. Web. Core](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core)
 
@@ -430,6 +430,6 @@ En théorie, vous pouvez utiliser les commandes de paramètres pour tout. Toutef
 
 [Service Broker d’authentification web](web-authentication-broker.md)
 
-[Exemple de gestion de compte Web](https://go.microsoft.com/fwlink/p/?LinkId=620621)
+[Exemple de gestion de compte Web](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAccountManagement)
 
 [Application du planificateur du déjeuner](https://github.com/Microsoft/Windows-appsample-lunch-scheduler)

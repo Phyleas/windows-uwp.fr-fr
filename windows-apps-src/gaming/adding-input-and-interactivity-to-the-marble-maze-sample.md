@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, jeux, entrée, exemple
 ms.localizationpriority: medium
-ms.openlocfilehash: 8daada2424dfc7a1bbe0a227449911f1fbb3b34d
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: f078cd721406120105efb35d1519e7fd0b36e74c
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66369183"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258605"
 ---
 # <a name="adding-input-and-interactivity-to-the-marble-maze-sample"></a>Ajout d’entrées et d’interactivité à l’exemple Marble Maze
 
@@ -21,7 +21,7 @@ ms.locfileid: "66369183"
 Les jeux de plateforme Windows universelle (UWP) s’exécutent sur différents appareils, tels que des ordinateurs de bureau, des ordinateurs portables et des tablettes. Un appareil peut utiliser de nombreux mécanismes de contrôle et d’entrée. Ce document décrit les pratiques clés à prendre en compte quand vous utilisez des périphériques d’entrée et comment appliquer ces pratiques à l’exemple Marble Maze.
 
 > [!NOTE]
-> L’exemple de code correspondant à ce document est disponible dans [l’exemple de jeu Marble Maze en DirectX](https://go.microsoft.com/fwlink/?LinkId=624011).
+> L’exemple de code correspondant à ce document est disponible dans [l’exemple de jeu Marble Maze en DirectX](https://github.com/microsoft/Windows-appsample-marble-maze).
 
  
 Voici quelques éléments clés présentés dans ce document que vous devez prendre en compte quand vous travaillez avec les entrées dans votre jeu :
@@ -324,7 +324,7 @@ case GameState::InGamePaused:
 
 ### <a name="tracking-touch-and-mouse-input"></a>Suivi des entrées tactiles et de la souris
 
-Pour les entrées tactiles et de la souris, un élément de menu est choisi quand l’utilisateur le touche ou clique dessus. L’exemple suivant montre comment la méthode **MarbleMazeMain::Update** traite les entrées de pointeur pour sélectionner des éléments de menu. Le **m\_pointQueue** variable membre effectue le suivi les emplacements où l’utilisateur couvertes ou cliqué sur l’écran. La façon dont Marble Maze collecte les entrées de pointeur est décrite en détail plus loin dans ce document, dans la section [Traitement des entrées de pointeur](#processing-pointer-input).
+Pour les entrées tactiles et de la souris, un élément de menu est choisi quand l’utilisateur le touche ou clique dessus. L’exemple suivant montre comment la méthode **MarbleMazeMain::Update** traite les entrées de pointeur pour sélectionner des éléments de menu. La variable de membre **m\_pointQueue** effectue le suivi des emplacements où l’utilisateur a touché ou cliqué sur l’écran. La façon dont Marble Maze collecte les entrées de pointeur est décrite en détail plus loin dans ce document, dans la section [Traitement des entrées de pointeur](#processing-pointer-input).
 
 ```cpp
 // Check whether the user chose a button from the UI. 
@@ -541,7 +541,7 @@ Nous vérifions si l’entrée provenant du stick analogique gauche est en dehor
 
 ###  <a name="applying-input-to-the-game-state"></a>Application des entrées à l’état du jeu
 
-Les périphériques indiquent les valeurs d’entrée de différentes manières. Par exemple, les entrées du pointeur peuvent être des coordonnées d’écran, tandis que les entrées de manette peuvent être dans un format complètement différent. L’un des problèmes liés à la combinaison des entrées de plusieurs périphériques en un ensemble de valeurs d’entrée est la normalisation, c’est-à-dire la conversion de valeurs dans un format commun. Marble Maze normalise les valeurs en mise à l’échelle à la plage \[-1.0, 1.0\]. La fonction **PointToTouch**, décrite précédemment dans cette section, convertit les coordonnées écran en valeurs normalisées comprises dans la plage -1,0 et +1,0.
+Les périphériques indiquent les valeurs d’entrée de différentes manières. Par exemple, les entrées du pointeur peuvent être des coordonnées d’écran, tandis que les entrées de manette peuvent être dans un format complètement différent. L’un des problèmes liés à la combinaison des entrées de plusieurs périphériques en un ensemble de valeurs d’entrée est la normalisation, c’est-à-dire la conversion de valeurs dans un format commun. Le labyrinthe de marbre normalise les valeurs en les mettant à l’échelle jusqu’à la plage \[-1,0, 1,0\]. La fonction **PointToTouch**, décrite précédemment dans cette section, convertit les coordonnées écran en valeurs normalisées comprises dans la plage -1,0 et +1,0.
 
 > [!TIP]
 > Même si votre application utilise une méthode d’entrée, nous recommandons toujours de normaliser les valeurs d’entrée. Cela permet de simplifier l’interprétation des entrées par d’autres composants de votre jeu, par exemple des simulations physiques, et de faciliter l’écriture de jeux qui fonctionnent sur différentes résolutions d’écran.
@@ -613,9 +613,9 @@ Consultez [Ajout d’audio à l’exemple Marble Maze](adding-audio-to-the-marbl
 ## <a name="related-topics"></a>Rubriques connexes
 
 
-* [Ajout de données audio à l’exemple de labyrinthe de billes](adding-audio-to-the-marble-maze-sample.md)
-* [Ajout de contenu visuel à l’exemple de labyrinthe de billes](adding-visual-content-to-the-marble-maze-sample.md)
-* [Développement du labyrinthe de billes, un jeu UWP en C++ et DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+* [Ajout de l’audio à l’exemple de labyrinthe de marbre](adding-audio-to-the-marble-maze-sample.md)
+* [Ajout de contenu visuel à l’exemple de labyrinthe de marbre](adding-visual-content-to-the-marble-maze-sample.md)
+* [Développement de labyrinthe, un jeu UWP dans C++ et DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
  
 

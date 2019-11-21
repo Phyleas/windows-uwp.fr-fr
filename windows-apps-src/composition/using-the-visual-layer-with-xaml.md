@@ -6,17 +6,17 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c11a812aaa62e9fa4d27fddc1d55739fe491bd20
-ms.sourcegitcommit: 04683376dbdbff987601f546f058748442170068
+ms.openlocfilehash: 1d6c1b4c477bfe5c4f584227491ef5a94e375fa2
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68340848"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74255659"
 ---
 # <a name="using-the-visual-layer-with-xaml"></a>Utilisation de la couche visuelle avec le contenu XAML
 
 La plupart des applications qui utilisent des fonctionnalités de couche visuelle font appel à l’infrastructure XAML pour définir le contenu d’interface utilisateur principal. Dans la mise à jour anniversaire Windows 10, il existe de nouvelles fonctionnalités dans l’infrastructure XAML et la couche visuelle qui facilitent la combinaison de ces deux technologies pour créer des expériences utilisateur incroyables.
-La fonctionnalité d’interopérabilité entre l’infrastructure XAML et la couche visuelle permet de créer des effets et des animations avancés qui ne sont pas disponibles à l’aide des API XAML seules. notamment :
+La fonctionnalité d’interopérabilité entre l’infrastructure XAML et la couche visuelle permet de créer des effets et des animations avancés qui ne sont pas disponibles à l’aide des API XAML seules. Cela comprend les éléments suivants :
 
 - Effets de pinceau comme le flou et le verre givré
 - Effets d’éclairage dynamique
@@ -33,7 +33,7 @@ Les animations de disposition, les ombres et les effets de flou sont abordés da
 
 Consultez la section [**Pinceaux**](/windows/uwp/design/style/brushes#xamlcompositionbrushbase) pour en savoir plus sur l’utilisation des pinceaux avec l’interface utilisateur XAML.
 
-Pour obtenir des exemples de code, voir la page de référence de la classe [**XamlCompositionBrushBase**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase).
+Pour obtenir des exemples de code, consultez la page de référence de la classe [**XamlCompositionBrushBase**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase).
 
 ## <a name="the-xamllight-class"></a>Classe XamlLight
 
@@ -47,10 +47,10 @@ Pour obtenir des exemples de code, voir la page de référence de la classe [**X
 
 [**ElementCompositionPreview**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview) est une classe statique qui fournit des fonctionnalités d’interopérabilité des couches visuelles et XAML. Pour une vue d’ensemble de la couche visuelle et de ses fonctionnalités, consultez [Couche visuelle](https://docs.microsoft.com/windows/uwp/graphics/visual-layer). La classe **ElementCompositionPreview** propose les méthodes suivantes :
 
--   [**GetElementVisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): Obtenir un visuel «document» utilisé pour restituer cet élément
--   [**SetElementChildVisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.setelementchildvisual): Définit un visuel «main» comme dernier enfant de l’arborescence d’éléments visuels de cet élément. Ce visuel pourra dessiner par-dessus le reste de l’élément. 
--   [**GetElementChildVisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): Récupérer le jeu visuel à l’aide de **SetElementChildVisual**
--   [**GetScrollViewerManipulationPropertySet**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): Obtenir un objet qui peut être utilisé pour créer des animations 60fps basées sur le décalage de défilement dans un **ScrollViewer**
+-   [**GetElementVisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): obtenir un visuel « document » utilisé pour restituer cet élément
+-   [**SetElementChildVisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.setelementchildvisual): définit un visuel « main » comme dernier enfant de l’arborescence d’éléments visuels de cet élément. Ce visuel pourra dessiner par-dessus le reste de l’élément. 
+-   [**GetElementChildVisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): récupère le jeu visuel à l’aide de **SetElementChildVisual**
+-   [**GetScrollViewerManipulationPropertySet**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): obtenir un objet qui peut être utilisé pour créer des animations 60fps basées sur un décalage de défilement dans un **ScrollViewer**
 
 ## <a name="remarks-on-elementcompositionpreviewgetelementvisual"></a>Remarques sur ElementCompositionPreview.GetElementVisual
 
@@ -199,7 +199,7 @@ private void InitializeDropShadow(UIElement shadowHost, Shape shadowTarget)
 }
 ```
 
-Les deux listes suivantes montrent les équivalents [C++/WinRT](https://aka.ms/cppwinrt) et [C++/CX](https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx) du code C&#35; précédent à l’aide de la même structure XAML.
+Les deux listes suivantes montrent les équivalents [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/index) et [C++/CX](https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx) du code C&#35; précédent à l’aide de la même structure XAML.
 
 ```cppwinrt
 #include <winrt/Windows.UI.Composition.h>
@@ -360,7 +360,7 @@ private void InitializeFrostedGlass(UIElement glassHost)
 }
 ```
 
-## <a name="additional-resources"></a>Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources complémentaires
 
 - [Vue d’ensemble des couches visuelles](https://docs.microsoft.com/windows/uwp/composition/visual-layer)
 - [**ElementCompositionPreview** , classe](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Hosting.ElementCompositionPreview)

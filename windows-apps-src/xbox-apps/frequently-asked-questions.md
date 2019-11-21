@@ -6,16 +6,16 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 265fe827-bd4a-48d4-b362-8793b9b25705
 ms.localizationpriority: medium
-ms.openlocfilehash: 38b5144d9b70e6e2825ef11a64be8873ec5b7d63
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e134e64c441aececdc50b1ac868efeb2b31bd5e5
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57614554"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259829"
 ---
 # <a name="frequently-asked-questions"></a>Forum Aux Questions
 
-Vous n’obtenez pas les résultats escomptés ? Parcourez cette page répertoriant les questions fréquemment posées. Consultez également la rubrique [Problèmes connus](known-issues.md) et le forum [Développement d’applications Windows universelles](https://go.microsoft.com/fwlink/?linkid=839446). 
+Vous n’obtenez pas les résultats escomptés ? Parcourez cette page répertoriant les questions fréquemment posées. Consultez également la rubrique [Problèmes connus](known-issues.md) et le forum [Développement d’applications Windows universelles](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop). 
 
 ### <a name="why-arent-my-games-and-apps-working"></a>Pourquoi mes jeux et mes applications ne fonctionnent-ils pas ?
 
@@ -59,15 +59,15 @@ Pour plus d’informations la manière de quitter le programme pour les dévelop
 
 ### <a name="i-sold-my-xbox-one-and-left-it-in-developer-mode-how-do-i-deactivate-developer-mode"></a>J’ai vendu ma console Xbox One en la laissant en mode développeur. Comment désactiver le mode développeur ?
 
-Si vous n’avez plus accès à votre Xbox One, vous pouvez le désactiver dans Windows Partner Center. Pour plus d’informations, consultez le **désactiver votre console à l’aide de partenaires** section dans le [une désactivation de Mode développeur Xbox](devkit-deactivation.md#deactivate-your-console-using-partner-center) rubrique. 
+Si vous n’avez plus accès à votre Xbox, vous pouvez le désactiver dans l’espace partenaires Windows. Pour plus d’informations, consultez la section **désactiver votre console à l’aide de l’espace partenaires** dans la rubrique sur la [désactivation de Xbox One Developer mode](devkit-deactivation.md#deactivate-your-console-using-partner-center) . 
 
-### <a name="i-left-the-developer-program-using-partner-center-but-im-in-still-developer-mode-what-do-i-do"></a>J’ai laissé le programme de développeurs à l’aide de partenaires, mais je suis toujours le mode développeur. Que dois-je faire ?
+### <a name="i-left-the-developer-program-using-partner-center-but-im-in-still-developer-mode-what-do-i-do"></a>J’ai laissé le programme pour développeurs à l’aide de l’espace partenaires, mais je suis en mode développeur. Que dois-je faire ?
 
 Démarrez l’outil Accueil du développeur et sélectionnez le bouton **Quitter le mode développeur**. Cette action a pour effet de redémarrer votre console en mode commercial. 
 
 ### <a name="can-i-publish-my-app"></a>Puis-je publier mon application ?
 
-Vous pouvez [publier des applications](../publish/index.md) via des partenaires si vous avez un [compte de développeur](https://developer.microsoft.com/store/register). Les applications UWP créées et testées sur une console Xbox One commerciale feront l’objet des mêmes processus d’ingestion, de révision et de publication que ceux actuellement effectués par Windows. Elles seront également soumises à des vérifications supplémentaires pour répondre aux normes Xbox One en vigueur.
+Vous pouvez [publier des applications](../publish/index.md) via l’espace partenaires si vous disposez d’un [compte de développeur](https://developer.microsoft.com/store/register). Les applications UWP créées et testées sur une console Xbox One commerciale feront l’objet des mêmes processus d’ingestion, de révision et de publication que ceux actuellement effectués par Windows. Elles seront également soumises à des vérifications supplémentaires pour répondre aux normes Xbox One en vigueur.
 
 ### <a name="can-i-publish-my-game"></a>Puis-je publier mon jeu ?
 
@@ -107,7 +107,7 @@ Si Visual Studio ne peut pas se connecter à votre console Xbox One :
   > [!NOTE]
   > Pour des performances de déploiement optimales, nous vous recommandons d’utiliser une connexion câblée à votre console.
 
-5. Assurez-vous que vous utilisez l’option Universel (protocole non chiffré) dans la liste déroulante Authentification de l’onglet **Déboguer**. Pour plus d’informations, voir [Configuration de l’environnement de développement](development-environment-setup.md).
+5. Assurez-vous d'utilisez l’option Universel (protocole non chiffré) dans la liste déroulante Authentification de l’onglet **Déboguer** tab. Pour plus d'informations, consultez [Configuration de l'environnement de développement](development-environment-setup.md).
 
 
 ### <a name="if-im-building-an-app-using-htmljavascript-how-do-i-enable-gamepad-navigation"></a>Si je crée une application en HTML/JavaScript, comment puis-je activer la navigation par boîtier de commande ?

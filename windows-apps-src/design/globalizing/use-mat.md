@@ -1,21 +1,21 @@
 ---
-Description: Le Multilingual App Toolkit (MAT) 4.0 s’intègre à Microsoft Visual Studio 2019 pour fournir des applications UWP avec la prise en charge, la gestion de fichier de traduction et outils d’édition.
+Description: Multilingual App Toolkit (MAT) 4,0 s’intègre avec Microsoft Visual Studio 2019 pour fournir des applications UWP avec prise en charge de la traduction, la gestion des fichiers de traduction et les outils de l’éditeur.
 title: Utiliser le kit de ressources Multilingual App Toolkit
 template: detail.hbs
 ms.date: 01/23/2018
 ms.topic: article
 keywords: windows 10, uwp, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
-ms.openlocfilehash: 428238f9d8a3468ab308841850ac13e8da22961f
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: 802a7a925a08dde94ab59d79e01df94fbbcf495d
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820583"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258036"
 ---
 # <a name="use-the-multilingual-app-toolkit-40"></a>Utiliser le Kit de ressources Multilingual App Toolkit 4.0
 
-Le Multilingual App Toolkit (MAT) 4.0 s’intègre à Microsoft Visual Studio 2019 pour fournir des applications UWP avec la prise en charge, la gestion de fichier de traduction et outils d’édition. Voici quelques-unes des propositions de valeur du kit de ressources.
+Multilingual App Toolkit (MAT) 4,0 s’intègre avec Microsoft Visual Studio 2019 pour fournir des applications UWP avec prise en charge de la traduction, la gestion des fichiers de traduction et les outils de l’éditeur. Voici quelques-unes des propositions de valeur du kit de ressources.
 
 - Assistance dans la gestion des modifications de ressources et d'état de la traduction lors du développement.
 - Fourniture d'une interface utilisateur pour le choix des langues en fonction des fournisseurs de traduction configurés.
@@ -26,7 +26,7 @@ Le Multilingual App Toolkit (MAT) 4.0 s’intègre à Microsoft Visual Studio 20
 
 ## <a name="how-to-use-the-toolkit"></a>Utilisation du kit de ressources
 
-### <a name="step-1-design-your-app-for-globalization-and-localization"></a>Étape 1. Concevoir votre application pour la globalisation et la localisation
+### <a name="step-1-design-your-app-for-globalization-and-localization"></a>Étape 1. Concevoir votre application pour la globalisation et la localisation
 
 Pour pouvoir utiliser MAT efficacement, votre application doit être localisable. Plus précisément, votre projet doit contenir au moins un fichier Ressource (.resw) contenant les chaînes de votre application dans la langue par défaut. Pour plus de détails, consultez [Localiser les chaînes dans l’interface utilisateur et le manifeste du package d’application](../../app-resources/localize-strings-ui-manifest.md). Cela étant, le kit de ressources accélère et facilite l'ajout de langues supplémentaires.
 
@@ -34,16 +34,16 @@ Pour la proposition de valeur de globalisation et de localisation&mdash;, ainsi 
 
 Consultez également [Directives en matière de globalisation](guidelines-and-checklist-for-globalizing-your-app.md) et [Rendre votre application localisable](prepare-your-app-for-localization.md).
 
-### <a name="step-2-download-and-install-the-multilingual-app-toolkit-40"></a>Étape 2. Télécharger et installer le kit de ressources Multilingual App Toolkit 4.0
+### <a name="step-2-download-and-install-the-multilingual-app-toolkit-40"></a>Étape 2. Télécharger et installer le kit de ressources Multilingual App Toolkit 4.0
 
 Le kit de ressources Multilingual App Toolkit 4.0 (MAT 4.0) est divisé en deux parties, chacune équipée de son propre installateur.
 
-- [Multilingual App Toolkit 4.0 Extension pour Visual Studio 2017 et versions ultérieures](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308). Il contient l’extension de fond 4.0 pour 2019 a Visual Studio, sous la forme d’un programme d’installation .vsix.
+- [Extension multilingue d’application Toolkit 4,0 pour Visual Studio 2017 et versions ultérieures](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308). Contient l’extension MAT 4,0 pour Visual Studio 2019, sous la forme d’un programme d’installation. vsix.
 - [Éditeur Multilingual App Toolkit 4.0](https://developer.microsoft.com/en-us/windows/develop/multilingual-app-toolkit). Cette partie contient l'outil Multilingual Editor autonome pour MAT 4.0 sous la forme d'un installateur .msi. Il comprend également l'extension MAT 4.0 pour Visual Studio 2015 et pour Visual Studio 2013.
 
-Si vous utilisez Visual Studio 2017 ou Visual Studio 2019, puis téléchargez et exécutez les deux programmes d’installation, une après l’autre. Si vous utilisez Visual Studio 2015 ou Visual Studio 2013, téléchargez et exécutez l'installateur .msi.
+Si vous utilisez Visual Studio 2017 ou Visual Studio 2019, téléchargez et exécutez les deux programmes d’installation, l’un après l’autre. Si vous utilisez Visual Studio 2015 ou Visual Studio 2013, téléchargez et exécutez l'installateur .msi.
 
-### <a name="step-3-enable-the-multilingual-app-toolkit-for-your-project"></a>Étape 3. Activer le kit de ressources Multilingual App Toolkit pour votre projet
+### <a name="step-3-enable-the-multilingual-app-toolkit-for-your-project"></a>Étape 3. Activer le kit de ressources Multilingual App Toolkit pour votre projet
 
 Avant que vous ne puissiez commencer à localiser l'application, le MAT doit être activé pour votre projet. Voici comment activer le kit de ressources.
 
@@ -53,7 +53,7 @@ Avant que vous ne puissiez commencer à localiser l'application, le MAT doit êt
 
 Dans la fenêtre Sortie (affichant la sortie du kit de ressources Multilingual App Toolkit), recherchez le message `Project '<project-name>' was enabled. The project's source culture is '<language-tag>' <language-name>`. Si ce message apparaît, le MAT est prêt à être utilisé.
 
-### <a name="step-4-add-languages-to-your-project"></a>Étape 4. Ajouter des langues à votre projet
+### <a name="step-4-add-languages-to-your-project"></a>Étape 4. Ajouter des langues à votre projet
 
 Suivez ces étapes pour ajouter des langues à votre projet.
 
@@ -63,13 +63,13 @@ Suivez ces étapes pour ajouter des langues à votre projet.
 
 Voici les actions par lesquelles le kit de ressources répond.
 
-- Pour chaque langue que vous ajoutez, un nouveau dossier est créé. Il est nommé d'après la [balise de langue BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302) de la langue. Dans ce dossier, les nouveaux fichiers Ressources (.resw) sont créés pour correspondre aux fichiers contenant les chaînes en langue par défaut.
+- Pour chaque langue que vous ajoutez, un nouveau dossier est créé. Il est nommé d'après la [balise de langue BCP-47](https://tools.ietf.org/html/bcp47) de la langue. Dans ce dossier, les nouveaux fichiers Ressources (.resw) sont créés pour correspondre aux fichiers contenant les chaînes en langue par défaut.
 - Si c’est la première fois que vous ajoutez une langue, un nouveau dossier nommé `MultilingualResources` est ajouté au projet. Dans ce dossier, un fichier .xlf est ajouté pour chaque langue. Les fichiers .xlf contiennent une unité de traduction pour chaque chaîne dans chaque fichier Ressources (.resw) de votre projet.
 - La fenêtre Sortie confirme votre ajout des langues.
 
 Chaque fois que vous ajoutez/supprimer un fichier Ressources (.resw) de langue par défaut, ou chaque fois que ajoutez/supprimez une chaîne dans un fichier Ressources (.resw) de langue par défaut, générez à nouveau le projet pour synchroniser à nouveau les fichiers .xlf. Ainsi, les fichiers .xlf contiennent l'association des chaînes dans la langue par défaut.
 
-Les fournisseurs de traduction installés&mdash;tels que le [Portail linguistique Microsoft](https://go.microsoft.com/fwlink/p/?LinkId=330295) et [Microsoft Translator](https://go.microsoft.com/fwlink/p/?LinkId=258220)&mdash;peuvent être utilisés pour traduire les ressources de votre application. Lorsqu'un fournisseur prend en charge une langue spécifique, l'icône du fournisseur s'affiche en regard du nom de la langue dans la boîte de dialogue Langues de traduction.
+Les fournisseurs de traduction installés&mdash;tels que le [Portail linguistique Microsoft](https://www.microsoft.com/Language/) et [Microsoft Translator](https://www.microsofttranslator.com/)&mdash;peuvent être utilisés pour traduire les ressources de votre application. Lorsqu'un fournisseur prend en charge une langue spécifique, l'icône du fournisseur s'affiche en regard du nom de la langue dans la boîte de dialogue Langues de traduction.
 
 Dans la boîte de dialogue Langues de traduction, les cases de toutes les langues basées sur .xlf découvertes par le kit de ressources sont cochées au préalable pour indique que la langue est déjà incluse dans le projet.
 
@@ -117,9 +117,9 @@ Vous pouvez également lancer Multilingual Editor de la manière suivante. Reve
 
 Pour sous-traiter la traduction et la tâche de modification aux traducteurs, sélectionnez les fichiers .xlf souhaités dans l’Explorateur de solutions, cliquez dessus avec le bouton droit, puis cliquez sur **Multilingual App Toolkit** > **Exporter les traductions...** .
 
-Sélectionnez **sortie : Destinataire du message** dans la boîte de dialogue Exportation chaîne ressources, puis cliquez sur OK et vos fichiers seront compressés et attaché à un nouveau message électronique. Sélectionnez **sortie : Emplacement du dossier de fichiers**navigateur pour un dossier et cliquez sur OK, si vous le souhaitez choisir pour les fichiers à être compressés, et cliquez sur OK à nouveau vos fichiers seront (compressé et) enregistré à l’emplacement que vous avez choisi, à l’intérieur d’un nouveau dossier nommé pour votre projet.
+Dans la boîte de dialogue Exporter les chaînes de ressource, sélectionnez **Sortie : destinataire par e-mail**, puis cliquez sur OK. Vos fichiers seront compressés et joints dans un nouvel e-mail. Sélectionnez **Sortie : emplacement du dossier du fichier**, trouvez le chemin d'un dossier et cliquez sur OK. Choisissez éventuellement les fichiers à compresser, cliquez à nouveau sur OK et vos fichiers sont alors (compressés et) enregistrés à l'emplacement choisi, dans un nouveau dossier nommé d'après votre projet.
 
-Lorsque vos traducteurs ont terminé la traduction et vous ont envoyé les fichiers .xlf traduits, vous pouvez les importer dans votre projet. Sélectionnez les fichiers .xlf souhaité dans l’Explorateur de solutions, effectuez un clic droit, puis cliquez sur **Multilingual App Toolkit** >  **/recyclage de l’importation des traductions...** . Cliquez sur **ajouter**, accédez aux fichiers .xlf ou .zip, puis cliquez sur **importation**.
+Lorsque vos traducteurs ont terminé la traduction et vous ont envoyé les fichiers .xlf traduits, vous pouvez les importer dans votre projet. Dans l'Explorateur de solutions, sélectionnez les fichiers .xlf souhaités, cliquez dessus avec le bouton droit, puis cliquez sur **Multilingual App Toolkit** > **Importer/recycler les traduction...** . Cliquez sur **Ajouter**, naviguez vers les fichiers .xlf ou .zip, et cliquez sur **Importer**.
 
 **Remarque** le processus d'importation réalise une validation de base préalable à l'importation. Ainsi, les informations culturelles de la cible dans les fichiers en cours d'importation correspondent aux fichiers .xlf existants.
 
@@ -147,10 +147,10 @@ L'outil Multilingual Editor fournit le même support de traduction, ainsi que l
 
 Deux fournisseurs sont acheminés avec le kit de ressources Multilingual App Toolkit.
 
-- Le fournisseur [Portail linguistique Microsoft](https://go.microsoft.com/fwlink/p/?LinkId=330295) permet le recyclage de la traduction et la concordance terminologique en fonction des traductions du texte de l'interface utilisateur pour les produits et services Microsoft.
-- Le fournisseur [Microsoft Translator](https://go.microsoft.com/fwlink/p/?LinkId=258220) permet l'utilisation de services de traduction automatique à la demande.
+- Le fournisseur [Portail linguistique Microsoft](https://www.microsoft.com/Language/) permet le recyclage de la traduction et la concordance terminologique en fonction des traductions du texte de l'interface utilisateur pour les produits et services Microsoft.
+- Le fournisseur [Microsoft Translator](https://www.microsofttranslator.com/) permet l'utilisation de services de traduction automatique à la demande.
 
-Vous ainsi que vos traducteurs êtes en mesure de gérer le statut des traductions dans Multilingual Editor fin de réviser ultérieurement les traductions incertaines. Vous pouvez définir l’état de chaque chaîne dans le **propriétés** onglet. Valeurs d’état sont : **Nouvelle**, **nécessite révision**, **traduit**, **finale**, et **déconnectés**. L'indicateur situé à gauche de la ligne affiche le statut. Dans Multilingual Editor, lorsque toutes les lignes sont vertes, la tâche de traduction est terminée.
+Vous ainsi que vos traducteurs êtes en mesure de gérer le statut des traductions dans Multilingual Editor fin de réviser ultérieurement les traductions incertaines. Vous pouvez définir le statut de chaque chaîne dans l'onglet **Propriétés**. Les statuts peuvent prendre les valeurs suivantes : **Nouveau**, **Révision nécessaire**, **Traduit**, **Final**, et **Validé**. L'indicateur situé à gauche de la ligne affiche le statut. Dans Multilingual Editor, lorsque toutes les lignes sont vertes, la tâche de traduction est terminée.
 
 Générez à nouveau votre projet pour engendrer la copie des chaînes traduites dans le fichier Ressources (.resw) correspondant au fichier .xlf que vous venez d'éditer.
 
@@ -163,15 +163,15 @@ Avant de commencer le processus de certification du Microsoft Store, vous devez
 * [Localiser les chaînes dans l’interface utilisateur et le manifeste du package d’application](../../app-resources/localize-strings-ui-manifest.md)
 * [Globalisation et localisation](globalizing-portal.md)
 * [Instructions pour la globalisation](guidelines-and-checklist-for-globalizing-your-app.md)
-* [Rendez votre application localisable](prepare-your-app-for-localization.md)
-* [Balise de langue de BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
+* [Rendre votre application localisable](prepare-your-app-for-localization.md)
+* [Balise de langue BCP-47](https://tools.ietf.org/html/bcp47)
 
 ## <a name="downloads"></a>Téléchargements
 
-* [Le programme d’installation de Multilingual App Toolkit 4.0 .vsix](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308)
-* [Le programme d’installation de Multilingual App Toolkit 4.0 .msi](https://developer.microsoft.com/en-us/windows/develop/multilingual-app-toolkit)
+* [Programme d’installation de l’application multilingue 4,0. vsix](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308)
+* [Programme d’installation du kit d’outils d’application multilingue 4,0. msi](https://developer.microsoft.com/en-us/windows/develop/multilingual-app-toolkit)
 
 ## <a name="translation-services"></a>Services de traduction
 
-* [Portail de langue de Microsoft](https://go.microsoft.com/fwlink/p/?LinkId=330295)
-* [Microsoft Translator](https://go.microsoft.com/fwlink/p/?LinkId=258220)
+* [Portail des langues Microsoft](https://www.microsoft.com/Language/)
+* [Microsoft Translator](https://www.microsofttranslator.com/)

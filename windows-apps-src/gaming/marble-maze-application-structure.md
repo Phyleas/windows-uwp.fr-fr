@@ -6,12 +6,12 @@ ms.date: 09/08/2017
 ms.topic: article
 keywords: windows 10, uwp, jeux, exemple, directx, structure
 ms.localizationpriority: medium
-ms.openlocfilehash: a04e6714772d9b17c281f81ad93582d1fb691c9b
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: d248d8737f32d35cf0a25f4ad0c9138a1d334365
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368503"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258496"
 ---
 # <a name="marble-maze-application-structure"></a>Structure de l’application Marble Maze
 
@@ -21,7 +21,7 @@ ms.locfileid: "66368503"
 La structure d’une application de plateforme Windows universelle (UWP) en DirectX diffère de celle d’une application de bureau classique. Au lieu de fonctionner avec des types de handle tels que [HWND](https://docs.microsoft.com/windows/desktop/WinProg/windows-data-types) et des fonctions telles que [CreateWindow](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-createwindowa), Windows Runtime fournit des interfaces comme [Windows::UI::Core::ICoreWindow](https://docs.microsoft.com/uwp/api/Windows.UI.Core.ICoreWindow). Vous pouvez ainsi développer des applications pour UWP grâce à une approche orientée objet plus moderne. Cette section montre comment le code de l’application Marble Maze est structuré.
 
 > [!NOTE]
-> L’exemple de code correspondant à ce document est disponible dans [l’exemple de jeu Marble Maze en DirectX](https://go.microsoft.com/fwlink/?LinkId=624011).
+> L’exemple de code correspondant à ce document est disponible dans [l’exemple de jeu Marble Maze en DirectX](https://github.com/microsoft/Windows-appsample-marble-maze).
 
  
 ## 
@@ -123,7 +123,7 @@ Le chargement asynchrone des composants commence par la méthode **App::Load**. 
     });
 ```
 
-Le **MarbleMazeMain** classe définit la *m\_deferredResourcesReady* indicateur pour indiquer que le chargement asynchrone est terminé. La méthode **MarbleMazeMain::LoadDeferredResources** charge les ressources du jeu, puis définit cet indicateur. Les phases de mise à jour (**MarbleMazeMain::Update**) et de rendu (**MarbleMazeMain::Render**) de l’application vérifient cet indicateur. Quand cet indicateur est défini, le jeu continue à s’exécuter normalement. S’il n’est pas encore défini, le jeu affiche l’écran de chargement.
+La classe **MarbleMazeMain** définit l’indicateur *m\_deferredResourcesReady* pour indiquer que le chargement asynchrone est terminé. La méthode **MarbleMazeMain::LoadDeferredResources** charge les ressources du jeu, puis définit cet indicateur. Les phases de mise à jour (**MarbleMazeMain::Update**) et de rendu (**MarbleMazeMain::Render**) de l’application vérifient cet indicateur. Quand cet indicateur est défini, le jeu continue à s’exécuter normalement. S’il n’est pas encore défini, le jeu affiche l’écran de chargement.
 
 Pour plus d’informations sur la programmation asynchrone dans les applications UWP, voir [Programmation asynchrone en C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
 
@@ -195,7 +195,7 @@ enum class GameState
 };
 ```
 
-Par exemple, l’état **MainMenu** définit que le menu principal s’affiche et que le jeu n’est pas actif. Inversement, l’état **InGameActive** définit que le jeu est actif et que le menu ne s’affiche pas. Le **MarbleMazeMain** classe définit la **m\_gameState** variable membre pour conserver l’état du jeu actif.
+Par exemple, l’état **MainMenu** définit que le menu principal s’affiche et que le jeu n’est pas actif. Inversement, l’état **InGameActive** définit que le jeu est actif et que le menu ne s’affiche pas. La classe **MarbleMazeMain** définit la variable de membre **m\_gameState** pour conserver l’état du jeu actif.
 
 Les méthodes **MarbleMazeMain::Update** et **MarbleMazeMain::Render** utilisent les instructions switch pour exécuter la logique relative à l’état actuel. L’exemple suivant illustre une instruction switch dans le cas de la méthode **MarbleMazeMain::Update** (les détails sont supprimés pour représenter la structure).
 
@@ -423,9 +423,9 @@ Pour plus d’informations sur certaines pratiques importantes à garder à l’
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Ajout de contenu visuel à l’exemple de labyrinthe de billes](adding-visual-content-to-the-marble-maze-sample.md)
-* [Principes de base exemple de labyrinthe de billes](marble-maze-sample-fundamentals.md)
-* [Développement du labyrinthe de billes, un jeu UWP en C++ et DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+* [Ajout de contenu visuel à l’exemple de labyrinthe de marbre](adding-visual-content-to-the-marble-maze-sample.md)
+* [Exemples de notions de base du labyrinthe](marble-maze-sample-fundamentals.md)
+* [Développement de labyrinthe, un jeu UWP dans C++ et DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
  
 

@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 55879c33e30564f4639b8880c3a12f4b4181245e
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 2f9aab8c4b627b9a4952e7e3e292f1e4b528f992
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365918"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258389"
 ---
 # <a name="interaction-primer"></a>Notions fondamentales sur les interactions
 
@@ -43,7 +43,7 @@ Effectuez le suivi du pointage du regard, de l'attention et de la présence de l
 
 ### <a name="more-info"></a>Informations supplémentaires
 
-[Utilisation des interactions et suivi de le œil](gaze-interactions.md)
+[Interactions de regard et suivi oculaire](gaze-interactions.md)
 
 ## <a name="surface-dial"></a>Surface Dial
 
@@ -60,11 +60,11 @@ Avec un format appelant à une action de rotation (ou un mouvement), Surface Dia
 
 ### <a name="more-info"></a>Informations supplémentaires
 
-[Surface de conception de l’accès à distance](windows-wheel-interactions.md)
+[Indications pour la conception des surfaces de surface](windows-wheel-interactions.md)
 
 ## <a name="cortana"></a>Cortana
 
-Dans Windows 10, **Cortana** extensibilité vous permet de gérer les commandes vocales à partir d’un utilisateur et de lancer votre application pour exécuter une action unique.
+Dans Windows 10, l’extensibilité **Cortana** vous permet de gérer les commandes vocales d’un utilisateur et de lancer votre application pour exécuter une seule action.
 
 ### <a name="device-support"></a>Prise en charge des appareils
 
@@ -127,7 +127,7 @@ La commande et le contrôle représentent l’utilisation de commandes verbales 
 
 Ce sont des aspects essentiels d’une expérience utilisateur réussie. Par conséquent, il n’est pas recommandé de prévoir un seul type d’entrée. Les fonctions vocales sont généralement proposées en complément d’autres options d’entrée, selon les préférences de l’utilisateur ou les fonctionnalités matérielles.
 
-**Dictation**
+**Dictée**
 
 La méthode d’entrée vocale la plus simple. Chaque énoncé est converti en texte.
 
@@ -142,7 +142,7 @@ La dictée est généralement utilisée lorsqu’une application n’a pas besoi
 
 Un stylet peut servir de dispositif de pointage précis au niveau des pixels, tel que la souris. Il constitue également l’appareil d’entrée manuscrite numérique optimal.
 
-**Remarque**  il existe deux types de périphériques de stylet : actifs et passifs.
+**Notez**  il existe deux types d’appareils Pen : actif et passif.
   -   Les stylets passifs ne contiennent pas d’éléments électroniques et peuvent émuler efficacement des entrées tactiles au doigt. Ils requièrent un écran de base reconnaissant les entrées en fonction de la pression de contact. Dans la mesure où les utilisateurs posent souvent leur main lorsqu’ils écrivent sur la surface d’entrée, les données d’entrée peuvent être altérées en raison d’une mauvaise élimination des interférences de la paume.
   -   Les stylets actifs contiennent des éléments électroniques et peuvent fonctionner avec des écrans d’appareil complexes. Ils peuvent ainsi fournir des données d’entrée beaucoup plus étendues (pointage ou données de proximité, par exemple) au système et à votre application. L’élimination des interférences de la paume est beaucoup plus robuste.
 
@@ -227,14 +227,14 @@ Il est recommandé de fournir des commandes d’interface utilisateur spécifiqu
 
 ### <a name="more-info"></a>Informations supplémentaires
 
-[Instructions de conception du pavé tactile](https://docs.microsoft.com/windows/uwp/input-and-devices/touch-interactions)
+[Recommandations en matière de conception de pavé tactile](https://docs.microsoft.com/windows/uwp/input-and-devices/touch-interactions)
  
 
 ## <a name="keyboard"></a>Clavier
 
 Le clavier, principal périphérique d’entrée de texte, est indispensable pour les personnes souffrant de certains handicaps et les utilisateurs qui le considèrent simplement comme un mode d’interaction plus rapide et plus efficace avec une application.
 
-Avec [Continuum pour Phone](https://go.microsoft.com/fwlink/p/?LinkID=699431), une nouvelle expérience pour les appareils mobiles compatibles Windows 10, les utilisateurs peuvent se connecter leurs téléphones à une souris et le clavier pour rendre leurs téléphones fonctionnent comme un ordinateur portable.
+Avec [continuum pour téléphone](https://docs.microsoft.com/windows-hardware/design/device-experiences/continuum-phone?redirectedfrom=MSDN), une nouvelle expérience pour les appareils Windows 10 Mobile compatibles, les utilisateurs peuvent connecter leurs téléphones à la souris et au clavier pour que leurs téléphones fonctionnent comme un ordinateur portable.
 
 ### <a name="device-support"></a>Prise en charge des appareils
 
@@ -256,7 +256,7 @@ Le clavier visuel est un clavier logiciel visuel que vous pouvez utiliser à la 
 
 Le clavier tactile est un clavier logiciel visuel permettant d’entrer du texte à l’aide de la fonction tactile. Le clavier tactile ne se substitue pas au clavier visuel car il n’est utilisé que pour la saisie de texte (il n’émule pas le clavier matériel) et apparaît seulement quand un champ textuel ou un autre contrôle textuel modifiable reçoit le focus. Le clavier tactile ne gère pas les commandes système ou de l’application.
 
-**Remarque**  le clavier visuel est prioritaire sur le clavier tactile, qui ne sera pas affiché si le clavier visuel est présent.
+**Notez**  le OSK a priorité sur le clavier tactile, qui ne s’affiche pas si le OSK est présent.
 
 En règle générale, un clavier répond aux critères suivants :
 
@@ -267,7 +267,7 @@ En règle générale, un clavier répond aux critères suivants :
 
 ### <a name="more-info"></a>Informations supplémentaires
 
-[Instructions de conception de clavier](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)
+[Instructions pour la conception du clavier](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)
  
 
 ## <a name="mouse"></a>Souris
@@ -294,7 +294,7 @@ Il est recommandé de fournir des commandes d’interface utilisateur spécifiqu
 
 ### <a name="more-info"></a>Informations supplémentaires
 
-[Instructions de conception de la souris](https://docs.microsoft.com/windows/uwp/input-and-devices/mouse-interactions)
+[Instructions pour la conception de la souris](https://docs.microsoft.com/windows/uwp/input-and-devices/mouse-interactions)
  
 
 ## <a name="gesture"></a>Mouvement

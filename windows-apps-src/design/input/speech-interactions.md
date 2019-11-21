@@ -8,12 +8,12 @@ keywords: voix, vocal, reconnaissance vocale, langage naturel, dictée, saisie, 
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ef8cdad247a57ce5fab461e70c2725fda4231efd
-ms.sourcegitcommit: ed32219e04f814a12ea018348e9cf678fcfd5e3a
+ms.openlocfilehash: 4d36368fab267370e2301e52731d99bc7b146fbd
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/19/2019
-ms.locfileid: "67253062"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258246"
 ---
 # <a name="speech-interactions"></a>Interactions vocales
 
@@ -58,7 +58,7 @@ Arrêtez la reconnaissance si une entrée en provenance d’un appareil autre qu
 
 Spécifiez la durée maximale sans entrée vocale indiquant que la reconnaissance est terminée. Ne redémarrez pas automatiquement la reconnaissance après cette période de temps, car cela indique généralement que l’utilisateur a cessé d’interagir avec votre application.
 
-Désactivez la reconnaissance vocale continue de l’interface utilisateur et mettez fin à la session de reconnaissance si aucune connexion réseau n’est disponible. Reconnaissance continue nécessite une connexion réseau.
+Désactivez la reconnaissance vocale continue de l’interface utilisateur et mettez fin à la session de reconnaissance si aucune connexion réseau n’est disponible. La reconnaissance continue nécessite une connexion réseau.
 
 ## <a name="commanding"></a>Commandes
 
@@ -157,7 +157,7 @@ Ces grammaires prédéfinies peuvent être utilisées pour reconnaître jusqu’
 Une grammaire personnalisée est conçue et créée par vous-même, et installé sur votre application. La reconnaissance vocale à l’aide d’une contrainte personnalisée est effectuée sur l’appareil.
 
 -   Les contraintes de liste de programmation permettent de créer facilement une grammaire simple sous la forme d’une liste de mots ou d’expressions. Une contrainte de liste fonctionne correctement pour la reconnaissance d’expressions distinctes courtes. En indiquant explicitement des mots dans une grammaire, vous améliorez également la précision de la reconnaissance, car le traitement de la parole par le moteur de reconnaissance se limite à la confirmation d’une correspondance. La liste peut également être mise à jour par programme.
--   Contrairement à une contrainte de liste de programmation, une grammaire SRGS est un document statique au format XML défini par la norme [SRGS version 1.0](https://go.microsoft.com/fwlink/p/?LinkID=262302). Une grammaire SRGS permet de contrôler au maximum l’expérience de la reconnaissance vocale en capturant plusieurs significations sémantiques dans une même reconnaissance.
+-   Contrairement à une contrainte de liste de programmation, une grammaire SRGS est un document statique au format XML défini par la norme [SRGS version 1.0](https://www.w3.org/TR/speech-grammar/). Une grammaire SRGS permet de contrôler au maximum l’expérience de la reconnaissance vocale en capturant plusieurs significations sémantiques dans une même reconnaissance.
 
     Voici quelques conseils pour la création de grammaires SRGS :
 
@@ -200,7 +200,7 @@ Vous devez écouter toutes les chaînes de texte TTS pour vous assurer qu’elle
 -   En reliant une séquence de mots inhabituels ou en prononçant des numéros de référence ou des signes de ponctuation, l’expression risque de devenir incompréhensible.
 -   La parole peut manquer de naturel lorsque la prosodie ou l’intonation est différente de la façon dont un locuteur natif prononcerait une expression.
 
-Ces deux problèmes peuvent être adressés à l’aide de SSML au lieu de texte brut en tant qu’entrée du synthétiseur vocal. Pour plus d’informations sur le langage SSML, voir [Utiliser le langage SSML pour contrôler la voix synthétisée](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378454(v=office.14)) et [Informations de référence sur le langage SSML (Speech Synthesis Markup Language)](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378377(v=office.14)).
+Les deux problèmes peuvent être résolus en utilisant SSML au lieu de texte brut comme entrée pour le synthétiseur vocal. Pour plus d’informations sur le langage SSML, voir [Utiliser le langage SSML pour contrôler la voix synthétisée](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378454(v=office.14)) et [Informations de référence sur le langage SSML (Speech Synthesis Markup Language)](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378377(v=office.14)).
 
 ## <a name="other-articles-in-this-section"></a>Autres articles de cette section 
 
@@ -210,8 +210,8 @@ Ces deux problèmes peuvent être adressés à l’aide de SSML au lieu de texte
 | [Spécifier la langue du module de reconnaissance vocale](specify-the-speech-recognizer-language.md) | Découvrez comment sélectionner une langue installée à utiliser pour la reconnaissance vocale. |
 | [Définir des contraintes de reconnaissance vocale personnalisées](define-custom-recognition-constraints.md) | Découvrez comment définir et utiliser des contraintes personnalisées pour la reconnaissance vocale. |
 | [Activer la dictée continue](enable-continuous-dictation.md) |Découvrez comment capturer et reconnaître une entrée vocale dictée en continu et sur une longue durée. |
-| [Gérer les problèmes avec l’entrée audio](manage-issues-with-audio-input.md) | Découvrez comment gérer les problèmes liés à la précision de la reconnaissance vocale qu’entraîne une baisse de qualité des entrées audio. |
-| [Définir des délais d’expiration de la reconnaissance vocale](set-speech-recognition-timeouts.md) | Définissez la durée pendant laquelle un moteur de reconnaissance vocale ignore les silences ou les sons incompréhensibles (brouhaha) et continue à écouter la saisie vocale. |
+| [Gérer les problèmes d’entrée audio](manage-issues-with-audio-input.md) | Découvrez comment gérer les problèmes liés à la précision de la reconnaissance vocale qu’entraîne une baisse de qualité des entrées audio. |
+| [Définir des délais d’expiration de reconnaissance vocale](set-speech-recognition-timeouts.md) | Définissez la durée pendant laquelle un moteur de reconnaissance vocale ignore les silences ou les sons incompréhensibles (brouhaha) et continue à écouter la saisie vocale. |
 
 ## <a name="related-articles"></a>Articles connexes
 
@@ -220,7 +220,7 @@ Ces deux problèmes peuvent être adressés à l’aide de SSML au lieu de texte
 
  **Exemples**
 
-* [La reconnaissance vocale et exemple de synthèse vocale](https://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [Exemple de reconnaissance vocale et de synthèse vocale](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)
  
 
  

@@ -6,12 +6,12 @@ ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 36ebabbfd8f7e5f40e31be44d6dc7e4483a199ee
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 833949effd311c707de8dd1823ec6eee06e91e87
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66363711"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257976"
 ---
 # <a name="guidelines-for-cross-slide"></a>Recommandations en matière de glisser transversal
 
@@ -22,18 +22,18 @@ ms.locfileid: "66363711"
 
 -   [**CrossSliding**](https://docs.microsoft.com/uwp/api/windows.ui.input.gesturerecognizer.crosssliding)
 -   [**CrossSlideThresholds**](https://docs.microsoft.com/uwp/api/windows.ui.input.gesturerecognizer.crossslidethresholds)
--   [**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
+-   [**Windows. UI. Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
 
 Utilisez le glisser transversal pour prendre en charge la sélection avec le mouvement de balayage et les interactions de glissement (déplacement) avec le mouvement de glissement.
 
-## <a name="span-iddosanddontsspanspan-iddosanddontsspanspan-iddosanddontsspandos-and-donts"></a><span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>Choses à faire et
+## <a name="span-iddos_and_don_tsspanspan-iddos_and_don_tsspanspan-iddos_and_don_tsspandos-and-donts"></a><span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>Dos et inversement
 
 
 -   Utilisez le glisser transversal pour les listes ou les collections qui défilent dans une seule direction.
 -   Utilisez le glisser transversal pour la sélection d’éléments lorsque l’interaction d’appui n’est pas possible.
 -   N’utilisez pas le glisser transversal pour ajouter des éléments à une file d’attente.
 
-## <a name="span-idadditionalusageguidancespanspan-idadditionalusageguidancespanspan-idadditionalusageguidancespanadditional-usage-guidance"></a><span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>Instructions d’utilisation supplémentaires
+## <a name="span-idadditional_usage_guidancespanspan-idadditional_usage_guidancespanspan-idadditional_usage_guidancespanadditional-usage-guidance"></a><span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>Conseils d’utilisation supplémentaires
 
 
 La sélection et le déplacement par glissement sont possibles uniquement à l’intérieur d’une zone de contenu capable de défiler en panoramique dans une direction (verticale or horizontale). Pour que chacune de ces interactions fonctionne, l’une des directions de mouvement panoramique doit être verrouillée. De plus, le mouvement doit être effectué perpendiculairement à la direction du mouvement panoramique.
@@ -56,7 +56,7 @@ Voici quelques recommandations à prendre en compte quand vous ajoutez la foncti
 
 Utilisez le glisser transversal pour les listes ou les collections qui défilent dans une seule direction. Pour plus d’informations, voir [Ajout de contrôles ListView](https://docs.microsoft.com/previous-versions/windows/apps/hh465382(v=win.10)).
 
-**Remarque**  dans les cas où la zone de contenu peut être panoramique dans deux directions, tels que des navigateurs web ou liseuses, l’interaction chronométrée appuyer et maintenir doit être utilisée pour appeler le menu contextuel pour les objets tels que des images et des liens hypertexte.
+**Notez**  dans les cas où la zone de contenu peut être panoramique dans deux directions, telles que des navigateurs Web ou des lecteurs e-Reader, l’interaction chronométrée de type « appuyer et maintenir » doit être utilisée pour appeler le menu contextuel pour des objets tels que des images et des liens hypertexte.
 
  
 
@@ -69,7 +69,7 @@ Utilisez le glisser transversal pour les listes ou les collections qui défilent
 
 ### <span id="selection"></span><span id="SELECTION"></span>
 
-**En sélectionnant**
+**Sélectionnés**
 
 La sélection consiste à marquer un ou plusieurs objets sans les lancer ni les activer. Cette action est comparable à celle qui consiste à cliquer avec la souris ou à utiliser la touche Maj + un clic sur un ou plusieurs objets.
 
@@ -97,7 +97,7 @@ Les captures d’écran suivantes expliquent le fonctionnement de l’animation 
 
 Appuyez une fois pour effectuer une sélection dans une application qui ne comporte pas d’autre action principale que celle-ci. L’animation auto-révélatrice du glisser transversal s’affiche pour résoudre les ambiguïtés de cette fonctionnalité par rapport à l’interaction d’appui standard utilisée pour l’activation et la navigation.
 
-**Panier**
+**Panier de sélection**
 
 Le panier de sélection est une représentation dynamique et visuellement distincte des éléments qui ont été sélectionnés dans la liste ou la collection principale de l’application. Cette fonctionnalité est utile pour suivre les éléments sélectionnés et doit être utilisée par les applications dans les cas suivants :
 
@@ -123,29 +123,29 @@ C’est la raison pour laquelle l’interaction de sélection par glisser transv
 
 ### <span id="draganddrop"></span><span id="DRAGANDDROP"></span>
 
-**Drag**
+**Déplacez**
 
 Utilisez l’action de glissement pour déplacer un ou plusieurs objets d’un emplacement à l’autre.
 
 Si plusieurs objets doivent être déplacés, permettez aux utilisateurs de sélectionner plusieurs éléments, puis de les faire glisser en même temps.
 
-## <a name="span-idrelatedtopicsspanrelated-articles"></a><span id="related_topics"></span>Articles connexes
+## <a name="span-idrelated_topicsspanrelated-articles"></a><span id="related_topics"></span>Articles connexes
 
 
 **Exemples**
-* [Exemple d’entrée de base](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Exemple d’entrée à faible latence](https://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [Exemple de mode d’interaction utilisateur](https://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Exemple de visuels de focus](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [Exemple d’entrée de base](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+* [Exemple d’entrée à faible latence](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+* [Exemple de mode d’interaction utilisateur](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
+* [Exemple de visuels de focus](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
 **Exemples d’archive**
-* [Entrée : Exemple d’événements d’entrée utilisateur XAML](https://go.microsoft.com/fwlink/p/?linkid=226855)
-* [Entrée : Exemples de fonctionnalités d’appareil](https://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Entrée : Exemple de test d’atteinte tactile](https://go.microsoft.com/fwlink/p/?linkid=231590)
-* [XAML de défilement, panoramique et zoom d’exemple](https://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Entrée : Exemple d’entrée manuscrite simplifiée](https://go.microsoft.com/fwlink/p/?linkid=246570)
-* [Entrée : Exemple de mouvements de Windows 8](https://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [Entrée : Manipulations et exemple de mouvements (C++)](https://go.microsoft.com/fwlink/p/?linkid=231605)
-* [Exemple d’entrée tactile de DirectX](https://go.microsoft.com/fwlink/p/?LinkID=231627)
+* [Entrée : exemple d’événements d’entrée d’utilisateur XAML](https://code.msdn.microsoft.com/windowsapps/Input-3dff271b)
+* [Entrée : exemple de fonctionnalités de l’appareil](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
+* [Entrée : exemple de test de positionnement tactile](https://code.msdn.microsoft.com/windowsapps/Touch-Hit-Testing-sample-5e35c690)
+* [Exemple de défilement XAML, panoramique et zoom](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9)
+* [Entrée : exemple d’encre simplifiée](https://code.msdn.microsoft.com/windowsapps/Input-simplified-ink-sample-11614bbf)
+* [Entrée : exemple de gestes Windows 8](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
+* [Entrée : manipulations et mouvements (C++), exemple](https://code.msdn.microsoft.com/windowsapps/Manipulations-and-gestures-362b6b59)
+* [Exemple d’entrée tactile DirectX](https://code.msdn.microsoft.com/windowsapps/Simple-Direct3D-Touch-f98db97e)
  
 
  

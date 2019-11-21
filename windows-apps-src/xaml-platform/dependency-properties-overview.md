@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: adb80c3396002a76b3c22a9ce8a8e2893ea728ac
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 279f0d007be927e29632986ce8178c4e0b9778b3
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340508"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259856"
 ---
 # <a name="dependency-properties-overview"></a>Vue d’ensemble des propriétés de dépendance
 
@@ -30,7 +30,7 @@ Le but des propriétés de dépendance est de fournir un moyen systémique pour 
 - modèles à utilisation multiples tels que ressources et styles ;
 - valeurs connues par le biais de relations parent-enfant avec d’autres éléments dans l’arborescence d’objets.
 
-Une propriété de dépendance représente ou prend en charge une fonctionnalité spécifique du modèle de programmation pour la définition d’une application Windows Runtime C#avec XAML pour l’interface C++ utilisateur et,C++Microsoft Visual Basic ou les extensions de composants visuels (/CX) pour le code. Ces fonctions incluent :
+Une propriété de dépendance représente ou prend en charge une fonctionnalité spécifique du modèle de programmation pour la définition d’une application Windows Runtime C#avec XAML pour l’interface C++ utilisateur et,C++Microsoft Visual Basic ou les extensions de composants visuels (/CX) pour le code. Ces fonctionnalités comprennent :
 
 - Liaison de données
 - Styles
@@ -86,11 +86,11 @@ Par exemple, les styles et modèles ont vocation à constituer un point de dépa
 
 La liste suivante indique l’ordre définitif utilisé par le système de propriétés pour assigner les valeurs d’exécution d’une propriété de dépendance. La priorité la plus élevée est répertoriée en premier. Vous trouverez des explications détaillées au bas de cette liste.
 
-1. **Valeurs animées :** Animations actives, animations d’état visuel ou animations avec un comportement [**HoldEnd**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FillBehavior) . Pour avoir un effet pratique, l’animation d’une propriété doit être prioritaire par rapport à la valeur de base (inanimée), même si cette valeur a été définie localement.
-1. **Valeur locale :** Une valeur locale peut être définie par le biais de la commodité du wrapper de propriété, qui équivaut également à définir en tant qu’attribut ou élément de propriété en XAML, ou par un appel à la méthode [**SetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.setvalue) à l’aide d’une propriété d’une instance spécifique. Si vous définissez une valeur locale à l’aide d’une liaison ou d’une ressource statique, celle-ci fonctionne dans la priorité comme si une valeur locale avait été définie, et les liaisons ou références de ressources sont effacées si une nouvelle valeur locale est définie.
-1. **Propriétés basées sur un modèle :** Un élément a ces éléments s’il a été créé dans le cadre d’un modèle (à partir d’un [**ControlTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) ou d’un [**DataTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate)).
-1. **Accesseurs set de style :** Valeurs d’un [**accesseur Set**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter) dans les styles des ressources de page ou d’application.
-1. **Valeur par défaut :** Une propriété de dépendance peut avoir une valeur par défaut dans le cadre de ses métadonnées.
+1. **Valeurs animées :** animations actives, animations de l’état visuel ou animations avec un comportement [**HoldEnd**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FillBehavior). Pour avoir un effet pratique, l’animation d’une propriété doit être prioritaire par rapport à la valeur de base (inanimée), même si cette valeur a été définie localement.
+1. **Valeur locale :** elle peut être affectée à partir du wrapper de propriété, ce qui est comparable à la définition d’un attribut ou d’un élément de propriété en XAML ou par un appel de la méthode [**SetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.setvalue) à l’aide d’une propriété d’une instance spécifique. Si vous définissez une valeur locale à l’aide d’une liaison ou d’une ressource statique, celle-ci fonctionne dans la priorité comme si une valeur locale avait été définie, et les liaisons ou références de ressources sont effacées si une nouvelle valeur locale est définie.
+1. **Propriétés basées sur un modèle :** un élément en comporte s’il a été créé dans le cadre d’un modèle (à partir d’une classe [**ControlTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) ou [**DataTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate)).
+1. **Méthodes setter de style :** valeurs provenant d’une classe [**Setter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter) au sein de styles à partir de ressources d’application ou de page.
+1. **Valeur par défaut :** une propriété de dépendance peut avoir une valeur par défaut définie dans le cadre de ses métadonnées.
 
 ### <a name="templated-properties"></a>Propriétés basées sur un modèle
 
@@ -188,7 +188,7 @@ Windows 10 introduit la méthode [**RegisterPropertyChangedCallback**](https://
 
 ### <a name="default-value-and-clearvalue"></a>Valeur par défaut et **ClearValue**
 
-Une propriété de dépendance peut avoir une valeur par défaut définie dans le cadre de ses métadonnées. Dans le cas d’une propriété de dépendance, sa valeur par défaut ne perd pas de sa pertinence après la définition de la valeur pour la première fois. La valeur par défaut peut s’appliquer à nouveau au moment de l’exécution dès lors qu’un autre déterminant de la priorité de la valeur disparaît. (La priorité de la valeur de propriété de dépendance est décrite dans la section suivante.) Par exemple, vous pouvez supprimer délibérément une valeur de style ou une animation qui s’applique à une propriété, mais vous souhaitez que la valeur soit une valeur par défaut raisonnable après cela. La valeur par défaut de la propriété de dépendance peut fournir cette valeur, sans qu’il soit nécessaire de définir spécifiquement la valeur de chaque propriété dans le cadre d’une étape supplémentaire.
+Une propriété de dépendance peut avoir une valeur par défaut définie dans le cadre de ses métadonnées. Dans le cas d’une propriété de dépendance, sa valeur par défaut ne perd pas de sa pertinence après la définition de la valeur pour la première fois. La valeur par défaut peut s’appliquer à nouveau au moment de l’exécution dès lors qu’un autre déterminant de la priorité de la valeur disparaît. (La priorité de la valeur de la propriété de dépendance est expliquée dans la section suivante.) Par exemple, vous pouvez volontairement supprimer une valeur de style ou une animation qui s’applique à une propriété, tout en souhaitant que la valeur soit une valeur par défaut raisonnable par la suite. La valeur par défaut de la propriété de dépendance peut fournir cette valeur, sans qu’il soit nécessaire de définir spécifiquement la valeur de chaque propriété dans le cadre d’une étape supplémentaire.
 
 Vous pouvez délibérément affecter à la propriété la valeur par défaut même si vous lui avez déjà affecté une valeur locale. Pour réinitialiser une valeur en valeur par défaut, mais aussi pour activer d’autres participants en priorité qui seraient susceptibles de remplacer la valeur par défaut mais pas une valeur locale, appelez la méthode [**ClearValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.clearvalue) (référencez la propriété à effacer en tant que paramètre de méthode). Il n’est pas toujours souhaitable que la propriété utilise littéralement la valeur par défaut, mais la suppression de la valeur locale et le rétablissement de la valeur par défaut peuvent activer un autre élément en priorité, comme la valeur provenant d’un Style Setter dans un modèle de contrôle.
 
@@ -207,7 +207,7 @@ Les aspects relatifs aux threads de [**DependencyObject**](https://docs.microsof
 - [Présentation détaillée de la liaison de données](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)
 - [Animations de Storyboard](https://docs.microsoft.com/windows/uwp/graphics/storyboarded-animations)
 - [Création de composants Windows Runtime](https://docs.microsoft.com/previous-versions/windows/apps/hh441572(v=vs.140))
-- [Exemple d’utilisateur et de contrôles personnalisés XAML](https://go.microsoft.com/fwlink/p/?linkid=238581)
+- [Exemple d’utilisateur et de contrôles personnalisés XAML](https://code.msdn.microsoft.com/windowsapps/XAML-user-and-custom-a8a9505e)
 
 ## <a name="apis-related-to-dependency-properties"></a>API liées aux propriétés de dépendance
 

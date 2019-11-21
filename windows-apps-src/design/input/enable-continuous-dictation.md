@@ -8,18 +8,18 @@ keywords: voix, vocal, reconnaissance vocale, langage naturel, dictée, saisie, 
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ad23831372b638e6afb36355e3ea8ca322e5d91d
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 73cfb6fd56b5ae06118ea01ef7ef0b3882db60da
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340272"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257992"
 ---
 # <a name="continuous-dictation"></a>Dictée continue
 
 Découvrez comment capturer et reconnaître une entrée vocale dictée en continu et sur une longue durée.
 
-> **API importantes** : [**SpeechContinuousRecognitionSession**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession), [ **ContinuousRecognitionSession**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.continuousrecognitionsession)
+> **API importantes** : [**SpeechContinuousRecognitionSession**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession), [**ContinuousRecognitionSession**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.continuousrecognitionsession)
 
 Dans [Reconnaissance vocale](speech-recognition.md), vous avez appris à capturer et à reconnaître des saisies vocales de durée relativement courte à l’aide des méthodes [**RecognizeAsync**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.recognizeasync) ou [**RecognizeWithUIAsync**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.recognizewithuiasync) d’un objet [**SpeechRecognizer**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer), par exemple, lorsque l’utilisateur compose un SMS ou pose une question.
 
@@ -125,7 +125,7 @@ speechRecognizer.ContinuousRecognitionSession.ResultGenerated +=
 
 2.  Nous vérifions ensuite la propriété [**Confidence**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognitionresult.confidence). Si la valeur de confiance est de [**Medium**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionConfidence) ou plus, nous ajoutons du texte au StringBuilder. Nous mettons également à jour l’interface utilisateur lorsque nous collectons des entrées.
 
-    **Remarque**@no__t événement-1La [**ResultGenerated**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated) est déclenché sur un thread d’arrière-plan qui ne peut pas mettre à jour directement l’interface utilisateur. Si un gestionnaire doit mettre à jour l’interface utilisateur (comme l’exemple \[Speech et TTS @ no__t-1), vous devez distribuer les mises à jour au thread d’interface utilisateur par le biais de la méthode [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) du répartiteur.
+    **Notez**  l’événement [**ResultGenerated**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated) est déclenché sur un thread d’arrière-plan qui ne peut pas mettre à jour directement l’interface utilisateur. Si un gestionnaire a besoin de mettre à jour l’interface utilisateur (comme le fait l’exemple \[\] de synthèse vocale et TTS), vous devez distribuer les mises à jour au thread d’interface utilisateur par le biais de la méthode [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) du répartiteur.
 ```csharp
 private async void ContinuousRecognitionSession_ResultGenerated(
       SpeechContinuousRecognitionSession sender,
@@ -165,7 +165,7 @@ speechRecognizer.ContinuousRecognitionSession.Completed +=
 
 4.  Le gestionnaire d’événements vérifie la propriété d’état afin de savoir si la reconnaissance a réussi. Il gère également le cas où l’utilisateur cesse de parler. Souvent, un [**TimeoutExceeded**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResultStatus) est considérée comme réussi lorsque l’utilisateur a fini de parler. Vous devez gérer ce cas dans votre code afin d’offrir une expérience optimale.
 
-    **Remarque**@no__t événement-1La [**ResultGenerated**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated) est déclenché sur un thread d’arrière-plan qui ne peut pas mettre à jour directement l’interface utilisateur. Si un gestionnaire doit mettre à jour l’interface utilisateur (comme l’exemple \[Speech et TTS @ no__t-1), vous devez distribuer les mises à jour au thread d’interface utilisateur par le biais de la méthode [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) du répartiteur.
+    **Notez**  l’événement [**ResultGenerated**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated) est déclenché sur un thread d’arrière-plan qui ne peut pas mettre à jour directement l’interface utilisateur. Si un gestionnaire a besoin de mettre à jour l’interface utilisateur (comme le fait l’exemple \[\] de synthèse vocale et TTS), vous devez distribuer les mises à jour au thread d’interface utilisateur par le biais de la méthode [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) du répartiteur.
 ```csharp
 private async void ContinuousRecognitionSession_Completed(
       SpeechContinuousRecognitionSession sender,
@@ -269,7 +269,7 @@ if (speechRecognizer.State != SpeechRecognizerState.Idle)
 * [Interactions vocales](speech-interactions.md)
 
 **Exemples**
-* [Exemple de reconnaissance vocale et de synthèse vocale](https://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [Exemple de reconnaissance vocale et de synthèse vocale](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)
  
 
  

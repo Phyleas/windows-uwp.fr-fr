@@ -6,12 +6,12 @@ ms.date: 11/02/2017
 ms.topic: article
 keywords: windows 10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: ccbfa5f06d336604160f98dd44c27cc0cf1b0aed
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 2db4c7d98924ffb25800b1c615e929495b279fdc
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57659144"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74254658"
 ---
 # <a name="how-the-resource-management-system-matches-language-tags"></a>Comment le système de gestion des ressources met en correspondance les balises de langue
 
@@ -21,9 +21,9 @@ La rubrique précédente ([Comment le système de gestion des ressources met en 
 
 Les ressources dotées de qualificateurs de balise de langue sont comparées et notées en fonction de la liste de langues d’exécution de l’application. Pour obtenir des définitions des listes de langues différentes, consultez [Comprendre les langues de profil utilisateur et les langues du manifeste de l’application](../design/globalizing/manage-language-and-region.md). La mise en correspondance pour la première langue d’une liste se produit avant la mise en correspondance de la deuxième langue d’une liste, même pour d’autres variantes régionales. Par exemple, une ressource pour en-GB est choisie à la place d’une ressource fr-CA si la langue d’exécution de l’application est en-US. Une ressource fr-CA est choisie uniquement s’il n’y aucune ressource pour une forme d’en (notez que la langue par défaut de l’application n’a pas pu être définie sur une forme d’en dans ce cas).
 
-Le mécanisme de notation utilise les données incluses dans le registre de sous-balises [BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302) et d’autres sources de données. Il utilise une échelle de notation avec différentes qualités de correspondance et, lorsque plusieurs candidats sont disponibles, il sélectionne le candidat avec le meilleur score.
+Le mécanisme de notation utilise les données incluses dans le registre de sous-balises [BCP-47](https://tools.ietf.org/html/bcp47) et d’autres sources de données. Il utilise une échelle de notation avec différentes qualités de correspondance et, lorsque plusieurs candidats sont disponibles, il sélectionne le candidat avec le meilleur score.
 
-Ainsi, vous pouvez utiliser des balises avec des termes génériques pour un contenu linguistique, avec néanmoins la possibilité de spécifier un contenu spécifique si nécessaire. Par exemple, votre application peut contenir plusieurs chaînes anglaises qui sont communes aux États-Unis, à la Royaume-Uni et à d’autres régions. Le marquage de ces chaînes avec la balise « en » (Anglais) réduit les besoins en espace et en localisation. Lorsqu’une distinction s’avère nécessaire, par exemple dans une chaîne contenant le mot « color/colour » en anglais, les versions américaine et britannique peuvent être marquées séparément à l’aide des sous-balises de langue et de région, « en-US » et « en-GB «, respectivement.
+Ainsi, vous pouvez utiliser des balises avec des termes génériques pour un contenu linguistique, avec néanmoins la possibilité de spécifier un contenu spécifique si nécessaire. Par exemple, votre application peut contenir plusieurs chaînes anglaises qui sont communes aux États-Unis, à la Grande-Bretagne et à d’autres régions. Le marquage de ces chaînes avec la balise « en » (Anglais) réduit les besoins en espace et en localisation. Lorsqu’une distinction s’avère nécessaire, par exemple dans une chaîne contenant le mot « color/colour » en anglais, les versions américaine et britannique peuvent être marquées séparément à l’aide des sous-balises de langue et de région, « en-US » et « en-GB «, respectivement.
 
 ## <a name="language-tags"></a>Balises de langue
 
@@ -70,11 +70,11 @@ Les balises correspondent pour les sous-balises de langue, script, et variante, 
 
 ### <a name="partial-matches"></a>Correspondances partielles
 
-Les balises correspondent pour les sous-balises de langue et de script, mais elles diffèrent pour la région ou une autre sous-balise. Par exemple, en-US correspond fr, soit au fr-fr - fr\*.
+Les balises correspondent pour les sous-balises de langue et de script, mais elles diffèrent pour la région ou une autre sous-balise. Par exemple, en-US correspond à, ou en-US correspond à en-\*.
 
 #### <a name="macro-region-match"></a>Correspondance de macrorégion
 
-Les balises correspondent pour les sous-balises de langue et de script, les deux balises ont des sous-balises de région et l’une de ces sous-balises correspond à une macrorégion qui englobe l’autre région. Les sous-balises de macrorégion sont toujours numériques et sont dérivées des codes de pays et de région de la Classification M49 de la Division de statistique de l’ONU. Pour plus d’informations sur les relations englobantes, voir [Composition des régions macro-géographiques (continentales), des sous-régions géographiques et des groupements économiques ou autres sélectionnés](https://go.microsoft.com/fwlink/p/?LinkId=247929).
+Les balises correspondent pour les sous-balises de langue et de script, les deux balises ont des sous-balises de région et l’une de ces sous-balises correspond à une macrorégion qui englobe l’autre région. Les sous-balises de macrorégion sont toujours numériques et sont dérivées des codes de pays et de région de la Classification M49 de la Division de statistique de l’ONU. Pour plus d’informations sur les relations englobantes, voir [Composition des régions macro-géographiques (continentales), des sous-régions géographiques et des groupements économiques ou autres sélectionnés](https://unstats.un.org/unsd/methods/m49/m49regin.htm).
 
 **Remarque :**  les codes de l’ONU pour les « groupements économiques » ou les « autres groupements » ne sont pas pris en charge dans BCP-47.
  
@@ -131,7 +131,7 @@ Lorsque la liste de langues contient deux ou plusieurs variantes régionales aya
 - Liste de langues (dans l’ordre) : « pt-PT » (Portugais (Portugal)), « en-US » (Anglais (États-Unis)), « pt-BR » (Portugais (Brésil)).
 - Ressources : « en-US », « pt-BR ».
 - Ressource avec le score le plus élevé : « en-US ».
-- Description : La comparaison commence par « pt-PT », mais ne trouve pas une correspondance exacte. En raison de la présence de « pt-BR » dans la liste de langues de l’utilisateur, la correspondance partielle est reportée jusqu’à la comparaison avec « pt-BR ». La comparaison de langue suivante est « en-US », qui a une correspondance exacte. Par conséquent, la ressource qui l’emporte est « en-US ».
+- Description : la comparaison commence par « pt-PT », mais ne trouve pas de correspondance exacte. En raison de la présence de « pt-BR » dans la liste de langues de l’utilisateur, la correspondance partielle est reportée jusqu’à la comparaison avec « pt-BR ». La comparaison de langue suivante est « en-US », qui a une correspondance exacte. Par conséquent, la ressource qui l’emporte est « en-US ».
 
 OU
 
@@ -141,26 +141,26 @@ OU
 
 ## <a name="undetermined-language-und"></a>Langue indéterminée (« und »)
 
-La balise de langue « und » peut être utilisée pour spécifier une ressource qui correspond à n’importe quelle langue en l’absence d’une meilleure correspondance. Elle peut être considérée comme similaire à la plage de langues BCP-47 «  *» ou «*-&lt;script&gt; ». Voici un exemple :
+La balise de langue « und » peut être utilisée pour spécifier une ressource qui correspond à n’importe quelle langue en l’absence d’une meilleure correspondance. Elle peut être considérée comme similaire à la plage de langues BCP-47 «  *» ou «* -&lt;script&gt; ». Voici un exemple :
 
 - Liste de langues : « en-US », « zh-Hans-CN ».
 - Ressources : « zh-Hans-CN », « und ».
 - Ressource avec le score le plus élevé : « und ».
-- Description : La comparaison commence par « en-US », mais ne trouve pas une correspondance basée sur « en » (partielle au minimum). Dans la mesure où il existe une ressource marquée « und », l’algorithme de correspondance l’utilise.
+- Description : la comparaison commence par « en-US », mais ne trouve pas de correspondance basée sur « en » (partielle ou meilleure). Dans la mesure où il existe une ressource marquée « und », l’algorithme de correspondance l’utilise.
 
 La balise « und » permet à plusieurs langues de partager une seule ressource et à des langues individuelles d’être considérées comme des exceptions. Voici un exemple.
 
 - Liste de langues : « zh-Hans-CN », « en-US ».
 - Ressources : « zh-Hans-CN », « und ».
 - Ressource avec le score le plus élevé : « zh-Hans-CN ».
-- Description : La comparaison est une correspondance exacte pour le premier élément, et par conséquent, il ne vérifie pas la ressource étiquetée « und ».
+- Description : la comparaison trouve une correspondance exacte pour le premier élément et par conséquent, elle ne recherche pas la ressource marquée « und ».
 
 Vous pouvez utiliser « und » avec une balise de script pour filtrer les ressources par script. Voici un exemple.
 
 - Liste de langues : « ru ».
 - Ressources : « und-Latn », « und-Cyrl », « und-Arab ».
 - Ressource avec le score le plus élevé : « und-Cyrl ».
-- Description : La comparaison ne trouve une correspondance pour « ru » (partielle ou une meilleure) et ainsi, correspond à la balise de langue « und ». La valeur de script de suppression « Cyrl » associée à la balise de langue « ru » correspond à la ressource « und-Cyrl ».
+- Description : la comparaison ne trouve pas de correspondance pour « ru » (partielle ou meilleure) et par conséquent, sélectionne la correspondance avec la balise de langue « und ». La valeur de script de suppression « Cyrl » associée à la balise de langue « ru » correspond à la ressource « und-Cyrl ».
 
 ## <a name="orthographic-regional-affinity"></a>Affinité régionale orthographique
 
@@ -170,7 +170,7 @@ Lorsque deux balises de langue dotées de sous-balises de région différentes s
 
 Quelques langues ont des communautés plus importantes dans certaines régions qui utilisent des variantes de cette langue, par exemple l’anglais, le français et l’espagnol, qui comptent parmi les langues le plus souvent prises en charge dans les applications multilingues. Les différences régionales peuvent inclure des différences orthographiques (par exemple, « color » et « colour » en anglais), ou des différences dialectales comme le vocabulaire (par exemple, « truck » et « lorry » en anglais).
 
-Ces langages avec des variantes régionales significatives présentent certaines difficultés lors de l’établissement d’une application mondialisable : « Combien différentes variantes régionales doivent être pris en charge ? » « Lesquelles ? » « Quelle est la solution la plus rentable pour gérer ces ressources de variantes régionales pour mon application ? » Les réponses à ces questions sortent du cadre de cette rubrique. Toutefois, les mécanismes de correspondance de langues de Windows offrent des fonctionnalités susceptibles de faciliter la gestion des variantes régionales.
+Ces langues avec des variantes régionales importantes représentent un défi lors de la conception d’une application destinée au marché international : « combien de variantes régionales faut-il prendre en charge ? » « Lesquelles ? » « Quelle est la solution la plus rentable pour gérer ces ressources de variantes régionales pour mon application ? » Les réponses à ces questions sortent du cadre de cette rubrique. Toutefois, les mécanismes de correspondance de langues de Windows offrent des fonctionnalités susceptibles de faciliter la gestion des variantes régionales.
 
 Les applications prennent souvent en charge une seule variante d’une langue donnée. Prenons l’exemple d’une application qui inclut des ressources pour une seule variante d’anglais qui doivent être utilisées par des anglophones, quelle que soit leur région. Dans ce cas, la balise « en », sans aucune sous-balise de région reflète l’utilisation anticipée. Mais, auparavant, les applications ont peut-être utilisé une balise comme « en-US » qui inclut une sous-balise de région. Dans ce cas, le scénario suivant fonctionne également : l’application utilise une seule variante de langue anglaise et Windows gère la correspondance d’une ressource marquée pour une variante régionale avec une préférence de langue utilisateur pour une autre variante régionale de façon appropriée.
 
@@ -184,11 +184,11 @@ Autre exemple, supposons que vous voulez fournir des localisations espagnoles di
 
 Les balises de langue indépendantes de la région et les sous-balises de macrorégion peuvent s’avérer très efficaces lorsque vous souhaitez prendre en charge plusieurs variantes régionales. Pour réduire le nombre de ressources distinctes nécessaires, vous pouvez qualifier une ressource spécifique de façon à refléter la plus large couverture voulue pour celle-ci. Ensuite, affectez à une ressource applicable à grande échelle une variante plus spécifique, comme requis. Une ressource avec un qualificateur de langue indépendant de la région sera utilisée pour les utilisateurs de toutes les variantes régionales, sauf s’il existe une autre ressource avec un qualificateur plus spécifique à une région qui s’applique à cet utilisateur. Par exemple, une ressource « en » correspond à un utilisateur dont la langue est l’anglais australien, mais une ressource avec « en-053 » (Anglais tel qu’utilisé en Australie ou en Nouvelle-Zélande) sera une meilleure correspondance pour cet utilisateur, tandis qu’une ressource dotée de la balise « en-AU » sera la meilleure correspondance possible.
 
-L’anglais requiert une attention particulière. Si une application ajoute la localisation pour deux variantes d’anglais, il s’agira probablement de l’anglais des États-Unis et du Royaume-Uni, ou l’anglais « international ». Comme indiqué plus haut, certaines régions situées hors des États-Unis utilisent les conventions orthographiques de ce pays et ceci est pris en considération dans les correspondances de langues effectuées par Windows. Dans ce scénario, il n’est pas recommandé d’utiliser la balise indépendante de la région « en » pour une des variantes ; il est préférable d’utiliser « en-GB » et « en-US » à la place. (Si une ressource donnée ne nécessite pas variantes distincts, cependant, « fr » peut servir.) Si « en-GB » ou « en-US » est remplacé par « fr », puis qui interfère avec l’affinité régionale orthographique fournie par Windows. Si une troisième localisation en anglais est ajoutée, utilisez une sous-balise spécifique ou de macrorégion pour les variantes supplémentaires, comme nécessaire (par exemple, « en-CA », « en-AU » ou « en-053 »), mais continuez à utiliser en-GB » et « en-US ».
+L’anglais requiert une attention particulière. Si une application ajoute la localisation pour deux variantes d’anglais, il s’agira probablement de l’anglais des États-Unis et du Royaume-Uni, ou l’anglais « international ». Comme indiqué plus haut, certaines régions situées hors des États-Unis utilisent les conventions orthographiques de ce pays et ceci est pris en considération dans les correspondances de langues effectuées par Windows. Dans ce scénario, il n’est pas recommandé d’utiliser la balise indépendante de la région « en » pour une des variantes ; il est préférable d’utiliser « en-GB » et « en-US » à la place. (Si une ressource donnée ne requiert pas de variantes séparées, la balise « en » peut toutefois être utilisée.) Si la balise « en-GB » ou « en-US » est remplacée par « en », cela interférera avec l’affinité régionale orthographique fournie par Windows. Si une troisième localisation en anglais est ajoutée, utilisez une sous-balise spécifique ou de macrorégion pour les variantes supplémentaires, comme nécessaire (par exemple, « en-CA », « en-AU » ou « en-053 »), mais continuez à utiliser en-GB » et « en-US ».
 
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Comment le système de gestion des ressources met en correspondance et sélectionne les ressources](how-rms-matches-and-chooses-resources.md)
-* [BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
-* [Comprendre les langues de profil utilisateur et les langues de manifeste d’application](../design/globalizing/manage-language-and-region.md)
-* [Composition de macro (continental) à des régions géographiques, sous-régions géographiques et sélectionné les regroupements économiques et autres](https://go.microsoft.com/fwlink/p/?LinkId=247929)
+* [BCP-47](https://tools.ietf.org/html/bcp47)
+* [Comprendre les langages de profil utilisateur et les langages du manifeste d’application](../design/globalizing/manage-language-and-region.md)
+* [Composition de régions géographiques (continent), de sous-régions géographiques et de regroupements économiques et autres sélectionnés](https://unstats.un.org/unsd/methods/m49/m49regin.htm)

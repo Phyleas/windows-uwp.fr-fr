@@ -9,12 +9,12 @@ ms.topic: article
 keywords: Windows 10, uwp, Protection des informations Windows, données d’entreprise, protection des données d’entreprise, PDE, applications compatibles
 ms.assetid: 08f0cfad-f15d-46f7-ae7c-824a8b1c44ea
 ms.localizationpriority: medium
-ms.openlocfilehash: 42f08127567704b1c8623ac64857cc5afe0ef882
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: f6e3839ac2c15c1f976a9135b121ffea26174d41
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321391"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259617"
 ---
 # <a name="windows-information-protection-wip"></a>Protection des informations Windows (WIP)
 
@@ -43,7 +43,7 @@ Si les utilisateurs désinscrivent leur appareil à partir du système de gestio
 
 > **En savoir plus sur les travaux en cours** <br>
 * [Présentation de Windows Information Protection](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/bg-p/Windows10Blog)
-* [Protéger vos données d’entreprise à l’aide de la Protection des informations Windows (WIP)](https://docs.microsoft.com/windows/whats-new/edp-whats-new-overview)
+* [Protéger vos données d’entreprise à l’aide de Windows Information Protection (WIP)](https://docs.microsoft.com/windows/whats-new/edp-whats-new-overview)
 
 Si votre application se trouve sur la liste autorisée, toutes les données générées par votre application sont soumises aux restrictions de stratégie. Cela signifie que si les administrateurs révoquent l’accès de l’utilisateur aux données d’entreprise, ces utilisateurs perdent l’accès à toutes les données produites par votre application.
 
@@ -61,13 +61,13 @@ Par exemple, si la stratégie permet aux utilisateurs de coller des données d�
 
 Si vous êtes prêt à rendre votre application compatible, reportez-vous à l’un de ces guides :
 
-**Pour les applications Universal Windows Platform (UWP) que vous créez à l’aide deC#**
+**Pour les applications plateforme Windows universelle (UWP) que vous créez à l’aide deC#**
 
 [Guide du développeur sur la Protection des informations Windows](wip-dev-guide.md).
 
-**Pour les applications de bureau que vous générez à l’aide de C++**
+**Pour les applications de bureau que vous créez à l’aide deC++**
 
-[Guide du développeur sur la Protection des informations Windows (C++)](https://go.microsoft.com/fwlink/?LinkId=822192).
+[Guide du développeur sur la Protection des informations Windows (C++)](https://docs.microsoft.com/previous-versions/windows/desktop/EDP/wip-developer-guide?redirectedfrom=MSDN).
 
 
 ## <a name="create-non-enlightened-enterprise-app"></a>Créer une application non compatible qui utilise des données d’entreprise

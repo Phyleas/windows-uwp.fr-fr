@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 360faf3f-7e73-4db4-8324-3391f801d827
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bebf9533ab045822902d44f87f68eec55c11074
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: e4bcd5294031e64aa9f21371fa389978b5e708ab
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318574"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257413"
 ---
 # <a name="custom-audio-effects"></a>Effets audio personnalisés
 
@@ -27,9 +27,9 @@ Un effet audio personnalisé est défini dans une classe qui implémente l’int
 1.  Dans Microsoft Visual Studio, quand votre solution est ouverte, accédez au menu **Fichier**, sélectionnez **Ajouter-&gt;Nouveau projet.**
 2.  Sélectionnez le type de projet **Composant Windows Runtime (Windows universel)** .
 3.  Pour cet exemple, nommez le projet *AudioEffectComponent*. Ce nom sera référencé dans le code ultérieurement.
-4.  Cliquez sur **OK**.
-5.  Le modèle de projet crée une classe appelée Class1.cs. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur l’icône de Class1.cs et sélectionnez **Renommer**.
-6.  Renommez le fichier *ExampleAudioEffect.cs*. Visual Studio affiche une invite vous demandant si vous voulez mettre à jour toutes les références sous le nouveau nom. Cliquez sur **Oui**.
+4.  Cliquez sur **OK**.
+5.  Le modèle de projet crée une classe appelée Class1.cs. Dans **l’Explorateur de solutions**, cliquez avec le bouton droit sur l’icône de Class1.cs et sélectionnez **Renommer**.
+6.  Renommez le fichier *ExampleAudioEffect.cs*. Visual Studio affiche une invite vous demandant si vous voulez mettre à jour toutes les références sous le nouveau nom. cliquez sur **Oui**.
 7.  Ouvrez **ExampleAudioEffect.cs** et mettez à jour la définition de classe pour implémenter l’interface [**IBasicAudioEffect**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.IBasicAudioEffect).
 
 
@@ -93,7 +93,7 @@ Maintenant que les tampons de données ont été obtenus, vous pouvez lire à pa
 
 ### <a name="close-method"></a>Méthode Close
 
-Le système appelle le [ **fermer** ](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicaudioeffect.close) [ **fermer** ](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicaudioeffect.close) méthode sur votre classe lors de l’effet doit être fermé. Vous devez utiliser cette méthode pour supprimer les ressources que vous avez créées. L’argument de la méthode est un [**MediaEffectClosedReason**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.MediaEffectClosedReason) qui vous permet de savoir si l’effet a été fermé normalement, si une erreur s’est produite, ou si l’effet ne prend pas en charge le format de codage nécessaire.
+Le système appellera la méthode [**Close**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicaudioeffect.close) [**Close**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicaudioeffect.close) sur votre classe lorsque l’effet doit s’arrêter. Vous devez utiliser cette méthode pour supprimer les ressources que vous avez créées. L’argument de la méthode est un [**MediaEffectClosedReason**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.MediaEffectClosedReason) qui vous permet de savoir si l’effet a été fermé normalement, si une erreur s’est produite, ou si l’effet ne prend pas en charge le format de codage nécessaire.
 
 [!code-cs[Close](./code/AudioGraph/AudioEffectComponent/ExampleAudioEffect.cs#SnippetClose)]
 
@@ -123,7 +123,7 @@ Pour utiliser votre effet audio dans votre application, vous devez ajouter une r
 
 1.  Dans l’Explorateur de solutions, sous votre projet d’application, cliquez avec le bouton droit sur **Références**, puis sélectionnez **Ajouter une référence**.
 2.  Développez l’onglet **Projets**, sélectionnez **Solution**, puis cochez la case du nom de votre projet d’effet. Dans cet exemple, le nom est *AudioEffectComponent*.
-3.  Cliquez sur **OK**
+3.  Cliquez sur **OK**.
 
 Si votre classe d’effet audio est déclarée dans un autre espace de noms, veillez à inclure cet espace de noms dans votre fichier de code.
 
@@ -145,9 +145,9 @@ L’extrait de code suivant illustre l’ajout de l’effet audio personnalisé 
 
 
 ## <a name="related-topics"></a>Rubriques connexes
-* [Accès à la préversion simple pour caméra](simple-camera-preview-access.md)
+* [Accès en préversion simple de l’appareil photo](simple-camera-preview-access.md)
 * [Compositions multimédias et modification](media-compositions-and-editing.md)
-* [Documentation de Win2D](https://go.microsoft.com/fwlink/p/?LinkId=519078)
+* [Documentation Win2D](https://microsoft.github.io/Win2D/html/Introduction.htm)
 * [Lecture de contenu multimédia](media-playback.md)
 
  

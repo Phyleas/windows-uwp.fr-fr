@@ -4,14 +4,14 @@ description: Les rubriques de cette section expliquent comment exécuter du code
 ms.assetid: EFF7CBFB-D309-4ACB-A2A5-28E19D447E32
 ms.date: 08/21/2017
 ms.topic: article
-keywords: Windows 10, uwp, les tâches en arrière-plan
+keywords: Windows 10, UWP, tâche en arrière-plan
 ms.localizationpriority: medium
-ms.openlocfilehash: 73d279ca0afe67fa6c7d2240fb62c91d1ab3c4c3
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 7ca567d34c98deb75d7ebfa5ec9f70688ad18fdb
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370573"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259417"
 ---
 # <a name="support-your-app-with-background-tasks"></a>Prendre en charge votre application avec des tâches en arrière-plan
 
@@ -42,7 +42,7 @@ Pour savoir comment créer des tâches en arrière-plan in-process, consultez la
 Pour savoir comment créer des tâches en arrière-plan hors processus, consultez la rubrique [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-a-background-task.md).
 
 > [!TIP]
-> À compter de Windows 10, vous n’avez plus besoin de placer une application sur l’écran de verrouillage comme condition préalable à l’inscription d’une tâche en arrière-plan pour celui-ci.
+> à partir de Windows 10, vous n’avez plus besoin de placer une application sur l’écran de verrouillage comme condition préalable à l’inscription d’une tâche en arrière-plan pour celle-ci.
 
 ## <a name="background-tasks-for-system-events"></a>Tâches en arrière-plan pour événements système
 
@@ -71,9 +71,9 @@ Vous pouvez contrôler à quel moment la tâche en arrière-plan est exécutée,
 | **UserNotPresent**       | L’utilisateur doit être absent.            |
 | **UserPresent**          | L’utilisateur doit être présent.         |
 
-Ajoutez la condition **InternetAvailable** à votre tâche en arrière-plan [BackgroundTaskBuilder.AddCondition](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) pour retarder le déclenchement de la tâche en arrière-plan jusqu'à ce que la pile réseau s’exécute. Cette condition économise l’énergie car la tâche en arrière-plan ne s’exécute pas avant que le réseau soit disponible. Cette condition ne fournit pas d’activation en temps réel.
+Ajoutez la condition **InternetAvailable** à votre tâche en arrière-plan [BackgroundTaskBuilder.AddCondition](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) pour retarder le déclenchement de la tâche en arrière-plan jusqu’à ce que la pile réseau s’exécute. Cette condition économise l’énergie car la tâche en arrière-plan ne s’exécute pas avant que le réseau soit disponible. Cette condition ne fournit pas d’activation en temps réel.
 
-Si votre tâche en arrière-plan nécessite une connectivité réseau, définissez [IsNetworkRequested](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) pour vous assurer que le réseau reste opérationnel pendant que cette tâche s’exécute. Cela indique à l’infrastructure de tâches en arrière-plan qu’elle doit maintenir le réseau actif pendant l’exécution de la tâche, même si le périphérique est passé en mode de veille connectée. Si votre tâche en arrière-plan ne définit pas **IsNetworkRequested**, votre tâche en arrière-plan ne sera pas en mesure d’accéder au réseau en mode de veille connectée (par exemple, lors de l’écran d’un téléphone est désactivée.)  
+Si votre tâche en arrière-plan nécessite une connectivité réseau, définissez [IsNetworkRequested](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) pour vous assurer que le réseau reste opérationnel pendant que cette tâche s’exécute. Cela indique à l’infrastructure de tâches en arrière-plan qu’elle doit maintenir le réseau actif pendant l’exécution de la tâche, même si le périphérique est passé en mode de veille connectée. Si votre tâche en arrière-plan ne définit pas **IsNetworkRequested**, votre tâche en arrière-plan ne sera pas en mesure d’accéder au réseau en mode veille connectée (par exemple, lorsque l’écran d’un téléphone est désactivé).  
 Pour plus d’informations sur les conditions des tâches en arrière-plan, voir [Définir des conditions pour exécuter une tâche en arrière-plan](set-conditions-for-running-a-background-task.md).
 
 ## <a name="application-manifest-requirements"></a>Conditions requises pour le manifeste de l’application
@@ -87,7 +87,7 @@ Les déclencheurs en temps réel suivants peuvent être utilisés pour exécuter
 | Déclencheur en temps réel  | Description |
 |--------------------|-------------|
 | **Canal de contrôle** | Les tâches en arrière-plan peuvent conserver une connexion active et recevoir des messages sur le canal de contrôle en utilisant l’objet [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger). Si votre application est à l’écoute d’un socket, vous pouvez utiliser le Broker de socket à la place du **ControlChannelTrigger**. Pour plus d’informations sur l’utilisation du Broker de socket, voir [SocketActivityTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SocketActivityTrigger). La classe **ControlChannelTrigger** n’est pas prise en charge sur Windows Phone. |
-| **Minuteur** | Vous pouvez exécuter des tâches en arrière-plan toutes les 15 minutes et programmer leur exécution à l’aide du [**TimeTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.TimeTrigger). Pour plus d’informations, voir [Exécuter une tâche en arrière-plan en fonction d’un minuteur](run-a-background-task-on-a-timer-.md). |
+| **Minute** | Vous pouvez exécuter des tâches en arrière-plan toutes les 15 minutes et programmer leur exécution à l’aide du [**TimeTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.TimeTrigger). Pour plus d’informations, voir [Exécuter une tâche en arrière-plan en fonction d’un minuteur](run-a-background-task-on-a-timer-.md). |
 | **Notification push** | Les tâches en arrière-plan répondent à l’objet [**PushNotificationTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger) pour recevoir des notifications Push brutes. |
 
 **Remarque**  
@@ -96,7 +96,7 @@ Les applications Windows universelles doivent appeler l’élément [**RequestAc
 
 Pour vous assurer que votre application Windows universelle continue de s’exécuter correctement après la publication d’une mise à jour, appelez [**RemoveAccess**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.removeaccess), puis [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) lorsque votre application est lancée après avoir été mise à jour. Pour plus d’informations, voir [Recommandations en matière de tâches en arrière-plan](guidelines-for-background-tasks.md).
 
-**Limite le nombre d’instances de déclencheur :** Il existe des limites au nombre d’instances de certains déclencheurs une application peut s’inscrire. Une application peut inscrire [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger), [MediaProcessingTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger) et [DeviceUseTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.deviceusetrigger?f=255&MSPPError=-2147217396) une seule fois par instance de l’application. Si une application dépasse cette limite, l’inscription lève une exception.
+**Limites du nombre d’instances de déclencheur :** des limites régissent le nombre d’instances de certains déclencheurs qu’une application peut inscrire. Une application peut inscrire [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger), [MediaProcessingTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger) et [DeviceUseTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.deviceusetrigger?f=255&MSPPError=-2147217396) une seule fois par instance de l’application. Si une application dépasse cette limite, l’inscription lève une exception.
 
 ## <a name="system-event-triggers"></a>Déclencheurs d’événements système
 
@@ -138,7 +138,7 @@ Sur les appareils à faible capacité de mémoire, le nombre d’applications po
 
 Sauf si vous appliquez une exception à votre application pour qu’elle puisse continuer à exécuter des tâches en arrière-plan et à recevoir des notifications push lorsque l’Économiseur de batterie est activé, la fonctionnalité Économiseur de batterie, lorsqu’elle est activée, empêche l’exécution de tâches en arrière-plan quand l’appareil n’est pas connecté à une source d’énergie externe et que la batterie passe sous une quantité d’énergie restante spécifiée. Cela ne vous empêche pas d’inscrire des tâches en arrière-plan.
 
-Toutefois, pour les applications d’entreprise et les applications qui ne seront pas publiées dans le Microsoft Store, consultez [s’exécutent en arrière-plan indéfiniment](run-in-the-background-indefinetly.md) pour apprendre à utiliser une fonctionnalités pour exécuter une tâche en arrière-plan ou la session de l’exécution étendue en arrière-plan indéfiniment.
+Toutefois, pour les applications d’entreprise et les applications qui ne seront pas publiées dans le Microsoft Store, consultez [exécuter en arrière-plan indéfiniment](run-in-the-background-indefinetly.md) pour savoir comment utiliser les fonctionnalités pour exécuter une tâche en arrière-plan ou une session d’exécution étendue en arrière-plan indéfiniment.
 
 ## <a name="background-task-resource-guarantees-for-real-time-communication"></a>Garanties de ressources des tâches en arrière-plan pour la communication en temps réel
 
@@ -157,7 +157,7 @@ Votre application peut accéder à des capteurs et des périphériques à partir
 > [!IMPORTANT]
 > Les déclencheurs **DeviceUseTrigger** et **DeviceServicingTrigger** ne peuvent pas être utilisés avec des tâches en arrière-plan in-process.
 
-Certaines opérations d’appareil critiques, comme les longues mises à jour de microprogrammes, ne peuvent pas être exécutées avec le déclencheur [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger). De telles opérations ne peuvent être effectuées que sur le PC, et uniquement par une application privilégiée utilisant le [**DeviceServicingTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceServicingTrigger). Une *application privilégiée* est une application autorisée par le fabricant de l’appareil à effectuer ces opérations. Les métadonnées de périphérique permettent de spécifier l’application définie, le cas échéant, comme application privilégiée d’un appareil. Pour plus d’informations, consultez [synchronisation de l’appareil et de mise à jour pour les applications d’appareil de Microsoft Store](https://go.microsoft.com/fwlink/p/?LinkId=306619)
+Certaines opérations d’appareil critiques, comme les longues mises à jour de microprogrammes, ne peuvent pas être exécutées avec le déclencheur [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger). De telles opérations ne peuvent être effectuées que sur le PC, et uniquement par une application privilégiée utilisant le [**DeviceServicingTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceServicingTrigger). Une *application privilégiée* est une application autorisée par le fabricant de l’appareil à effectuer ces opérations. Les métadonnées de périphérique permettent de spécifier l’application définie, le cas échéant, comme application privilégiée d’un appareil. Pour plus d’informations, consultez [synchronisation et mise à jour des appareils pour Microsoft Store applications pour appareils](https://msdn.microsoft.com/library/windows/hardware/dn265139(v=vs.85).aspx)
 
 ## <a name="managing-background-tasks"></a>Gestion des tâches en arrière-plan
 
@@ -170,28 +170,28 @@ Vérifiez l’inscription des tâches en arrière-plan pendant le lancement de l
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-**Obtenir des conseils conceptuels pour le multitâche dans Windows 10**
+**Aide conceptuelle sur le multitâche dans Windows 10**
 
-* [Lancement de la reprise et multitâche](index.md)
+* [Lancement, reprise et multitâche](index.md)
 
-**Conseils de tâche en arrière-plan connexes**
+**Aide sur les tâches en arrière-plan associées**
 
 * [Recommandations relatives aux tâches en arrière-plan](guidelines-for-background-tasks.md)
 * [Accéder à des capteurs et des appareils à partir d’une tâche en arrière-plan](access-sensors-and-devices-from-a-background-task.md)
 * [Créer et inscrire une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md)
 * [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-a-background-task.md)
-* [Convertir une tâche en arrière-plan out-of-process à une tâche en arrière-plan dans le processus](convert-out-of-process-background-task.md)
+* [Convertir une tâche en arrière-plan out-of-process en tâche d’arrière-plan in-process](convert-out-of-process-background-task.md)
 * [Déboguer une tâche en arrière-plan](debug-a-background-task.md)
 * [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md)
 * [Regrouper l’inscription de tâches en arrière-plan](group-background-tasks.md)
 * [Gérer une tâche en arrière-plan annulée](handle-a-cancelled-background-task.md)
-* [Comment déclencher suspendre, reprendre, événements et d’arrière-plan dans les applications UWP (lors du débogage)](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio)
+* [Comment déclencher des événements de suspension, de reprise et d’arrière-plan dans des applications UWP (lors du débogage)](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio)
 * [Superviser la progression et l’exécution des tâches en arrière-plan](monitor-background-task-progress-and-completion.md)
-* [Lire des médias dans l’arrière-plan](https://docs.microsoft.com/windows/uwp/audio-video-camera/background-audio)
+* [Lire le média en arrière-plan](https://docs.microsoft.com/windows/uwp/audio-video-camera/background-audio)
 * [Inscrire une tâche en arrière-plan](register-a-background-task.md)
 * [Répondre aux événements système avec des tâches en arrière-plan](respond-to-system-events-with-background-tasks.md)
 * [Exécuter une tâche en arrière-plan en fonction d’un minuteur](run-a-background-task-on-a-timer-.md)
-* [Exécuter une tâche en arrière-plan lorsque votre application UWP est mis à jour](run-a-background-task-during-updatetask.md)
+* [Exécuter une tâche en arrière-plan lors de la mise à jour de votre application UWP](run-a-background-task-during-updatetask.md)
 * [Exécuter en arrière-plan indéfiniment](run-in-the-background-indefinetly.md)
 * [Définir des conditions pour l’exécution d’une tâche en arrière-plan](set-conditions-for-running-a-background-task.md)
 * [Déclencher une tâche en arrière-plan à partir de votre application](trigger-background-task-from-app.md)

@@ -1,47 +1,47 @@
 ---
-Description: Vous pouvez aider les clients à découvrir votre application en liant à la publication de votre application dans le Microsoft Store.
+Description: Vous pouvez aider les clients à découvrir votre application en établissant un lien vers la liste de votre application dans la Microsoft Store.
 title: Créer un lien vers votre application
 ms.assetid: 5420B65C-7ECE-4364-8959-D1683684E146
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, lien, protocole windows store, lien vers une application, lien vers application
 ms.localizationpriority: medium
-ms.openlocfilehash: 56bc051c3c5a935f3b6b26e478731fcde9c06902
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: de22505cf42193932a5bbd951c983e02eea37bd7
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57661534"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259988"
 ---
 # <a name="link-to-your-app"></a>Créer un lien vers votre application
 
 
-Vous pouvez aider les clients à découvrir votre application en liant à la publication de votre application dans le Microsoft Store.
+Vous pouvez aider les clients à découvrir votre application en établissant un lien vers la liste de votre application dans la Microsoft Store.
 
 ## <a name="getting-the-link-to-your-apps-store-listing"></a>Obtention du lien vers la description de votre application dans le Store
 
-Pour obtenir l’URL de la description de votre application dans le Windows Store, accédez à la page [Identité de l’application](view-app-identity-details.md) de l’application dans la section **Gestion des applications**. L’URL présente le format **`https://www.microsoft.com/store/apps/<your app's Store ID>`**.
+Pour obtenir l’URL de la description de votre application dans le Windows Store, accédez à la page [Identité de l’application](view-app-identity-details.md) de l’application dans la section **Gestion des applications**. L’URL présente le format **`https://www.microsoft.com/store/apps/<your app's Store ID>`** .
 
 Lorsqu’un client clique sur ce lien, la page de description web de votre application s’affiche. Sur les appareils Windows, l’application du Windows Store lancera et affichera également la description de votre application.
 
 
-## <a name="linking-to-your-apps-store-listing-with-the-microsoft-store-badge"></a>Liaison à la liste de Store de votre application avec le badge Microsoft Store
+## <a name="linking-to-your-apps-store-listing-with-the-microsoft-store-badge"></a>Liaison au Listing Store de votre application avec le badge Microsoft Store
 
-Vous pouvez lier directement à la liste de votre application avec un badge personnalisé d’informer les clients de que votre application se trouve dans le Microsoft Store.
+Vous pouvez lier directement à la liste de votre application avec un badge personnalisé pour permettre aux clients de savoir que votre application se trouve dans la Microsoft Store.
 
-Pour créer votre badge, visitez le [Microsoft Store badges](https://go.microsoft.com/fwlink/p/?LinkID=534236) page. Pour générer le badge et le lien, vous devez disposer de **l’ID Store** de 12 caractères de votre application. Vous trouverez **l’ID Store** de votre application sur la page [Identité de l’application](view-app-identity-details.md) de la section **Gestion des applications**.
+Pour créer votre badge, accédez à la page [badges Microsoft Store](https://developer.microsoft.com/store/badges) . Pour générer le badge et le lien, vous devez disposer de **l’ID Store** de 12 caractères de votre application. Vous trouverez **l’ID Store** de votre application sur la page [Identité de l’application](view-app-identity-details.md) de la section **Gestion des applications**.
 
 > [!NOTE]
-> Consultez [application marketing instructions](app-marketing-guidelines.md) informations et les exigences liées à votre utilisation du badge Microsoft Store.
+> Pour obtenir des informations et des exigences relatives à l’utilisation du badge Microsoft Store, consultez les [instructions marketing d’application](app-marketing-guidelines.md) .
 
 
-## <a name="linking-directly-to-your-app-in-the-microsoft-store"></a>Liaison directement à votre application dans le Microsoft Store
+## <a name="linking-directly-to-your-app-in-the-microsoft-store"></a>Liaison directe à votre application dans le Microsoft Store
 
-Vous pouvez créer un lien qui lance le Microsoft Store et accède directement à la page de liste de votre application sans ouvrir un navigateur à l’aide de la **ms-windows-store :** Schéma d’URI.
+Vous pouvez créer un lien qui lance le Microsoft Store et accède directement à la page de liste de votre application sans ouvrir de navigateur à l’aide du schéma **MS-Windows-Store :** URI.
 
 Ces liens sont utiles si vous savez que vos utilisateurs travaillent sur un appareil Windows et que vous voulez qu’ils accèdent directement à la page de description dans le Windows Store. Par exemple, vous pouvez utiliser ce lien après la vérification des chaînes de l’agent utilisateur dans un navigateur pour confirmer que le système d’exploitation de l’utilisateur prend en charge le Windows Store, ou lorsque vous communiquez déjà par le biais d’une application UWP.
 
-Pour utiliser ce schéma d’URI pour accéder au Store de votre application répertoriant, ajoutez votre ID d’application Store sur ce lien :
+Pour utiliser ce schéma d’URI pour établir une liaison directe avec la liste de la boutique de votre application, ajoutez l’ID du magasin de votre application à ce lien :
 
 `ms-windows-store://pdp/?ProductId=`
 

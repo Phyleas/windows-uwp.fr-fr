@@ -8,12 +8,12 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 60be53bfcb351866a0cf124fe4ef6f21ff889f88
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: fb9480740746b6e6ec792d4b88f4d84e4acb7c0e
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318967"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257799"
 ---
 # <a name="accessibility-testing"></a>Test de l’accessibilité  
 
@@ -42,7 +42,7 @@ L’outil [**AccScope**](https://docs.microsoft.com/windows/desktop/WinAuto/accs
 
 ### <a name="inspect"></a>**Inspect**  
 
-[**Inspecter** ](https://docs.microsoft.com/windows/desktop/WinAuto/inspect-objects) vous permet de sélectionner n’importe quel élément d’interface utilisateur et afficher ses données d’accessibilité. Vous pouvez afficher les propriétés et modèles de contrôles Microsoft UI Automation, et tester la structure de navigation des éléments d’automatisation dans l’arborescence UI Automation. Utilisez **Inspect** lors du développement de l’interface utilisateur pour vérifier comment les attributs d’accessibilité sont exposés dans UI Automation. Dans certains cas, les attributs proviennent de la prise en charge UI Automation déjà implémentée pour les contrôles XAML par défaut. Dans d’autres cas, ils proviennent de valeurs spécifiques que vous avez définies dans votre balisage XAML, en tant que propriétés jointes [**AutomationProperties**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties).
+[**Inspect**](https://docs.microsoft.com/windows/desktop/WinAuto/inspect-objects) vous permet de sélectionner n’importe quel élément d’interface utilisateur et d’afficher ses données d’accessibilité. Vous pouvez afficher les propriétés et modèles de contrôles Microsoft UI Automation, et tester la structure de navigation des éléments d’automatisation dans l’arborescence UI Automation. Utilisez **Inspect** lors du développement de l’interface utilisateur pour vérifier comment les attributs d’accessibilité sont exposés dans UI Automation. Dans certains cas, les attributs proviennent de la prise en charge UI Automation déjà implémentée pour les contrôles XAML par défaut. Dans d’autres cas, ils proviennent de valeurs spécifiques que vous avez définies dans votre balisage XAML, en tant que propriétés jointes [**AutomationProperties**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties).
 
 L’image suivante illustre l’outil [**Inspect**](https://docs.microsoft.com/windows/desktop/WinAuto/inspect-objects) qui interroge les propriétés UI Automation de l’élément de menu **Modifier** dans le Bloc-notes.
 
@@ -64,7 +64,7 @@ L’image suivante illustre l’outil [**Inspect**](https://docs.microsoft.com/w
 <span id="ACCESSIBLE_EVENT_WATCHER"/>
 
 ### <a name="accessible-event-watcher"></a>**Accessible Event Watcher**  
-[**Observateur d’événement accessible (AccEvent)** ](https://docs.microsoft.com/windows/desktop/WinAuto/accessible-event-watcher) teste si les éléments d’interface utilisateur d’une application déclenchent événements UI Automation et Microsoft Active Accessibility appropriés lorsque des modifications de l’interface utilisateur se produisent. De telles modifications peuvent se produire quand le focus change ou quand un élément d’interface utilisateur est appelé, sélectionné ou subit une modification d’état ou de propriété.
+L' [**Observateur d’événements accessible (AccEvent)** ](https://docs.microsoft.com/windows/desktop/WinAuto/accessible-event-watcher) teste si les éléments d’interface utilisateur d’une application déclenchent des événements UI Automation et Microsoft Active Accessibility corrects lorsque des modifications de l’interface utilisateur se produisent. De telles modifications peuvent se produire quand le focus change ou quand un élément d’interface utilisateur est appelé, sélectionné ou subit une modification d’état ou de propriété.
 
 > [!NOTE]
 > La plupart des outils de test d’accessibilité mentionnés dans la documentation s’exécutent sur un PC, et non sur un téléphone. Vous pouvez exécuter certains des outils tout en développant et en utilisant un émulateur, mais la plupart d’entre eux ne peuvent pas exposer l’arborescence UI Automation au sein de l’émulateur.
@@ -95,7 +95,7 @@ Utilisez votre application lorsqu’un thème à contraste élevé est actif pou
 
 ## <a name="verify-your-app-with-display-settings"></a>Vérifier votre application avec des paramètres d’affichage  
 
-Utilisez les options d’affichage système qui ajustent la valeur en haute résolution de l’affichage et assurez-vous que l’interface utilisateur de votre application est correctement mise à l’échelle lorsque cette valeur est modifiée. (Certains utilisateurs modifient les valeurs de résolution comme une option d’accessibilité, il est disponible à partir de **d’ergonomie** ainsi qu’afficher les propriétés.) Si vous rencontrez des problèmes, suivez la [instructions pour la mise à l’échelle d’une disposition](https://developer.microsoft.com/windows/apps/design) et fournir des ressources supplémentaires pour différents facteurs de mise à l’échelle.
+Utilisez les options d’affichage système qui ajustent la valeur en haute résolution de l’affichage et assurez-vous que l’interface utilisateur de votre application est correctement mise à l’échelle lorsque cette valeur est modifiée. (Certains utilisateurs modifient les valeurs ppp en tant qu’option d’accessibilité. Celle-ci est disponible dans **Options d’ergonomie**, ainsi que les propriétés d’affichage.) Si vous détectez des problèmes, suivez [Recommandations en matière d’expérience utilisateur pour la disposition et la mise à l’échelle](https://developer.microsoft.com/windows/apps/design) et fournissez des ressources supplémentaires pour les différents facteurs de mise à l’échelle.
 
 <span id="verify_main_app_scenarios_by_using_narrator"/>
 <span id="VERIFY_MAIN_APP_SCENARIOS_BY_USING_NARRATOR"/>
@@ -105,9 +105,9 @@ Utilisez le Narrateur pour tester l’expérience de lecture d’écran pour vot
 
 > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Narrator-and-Dev-Mode/player]
 
-**Suivez ces étapes pour tester votre application avec le Narrateur avec une souris et du clavier :**
+**Utilisez ces étapes pour tester votre application à l’aide du narrateur avec la souris et le clavier :**
 1.  Démarrez le Narrateur en appuyant sur la _touche de logo Windows + Ctrl + Entrée_. Dans les versions antérieures à Windows 10 version 1607, utilisez la _touche de logo Windows + Entrée_ pour démarrer le Narrateur.
-2.  Naviguez dans votre application à l’aide du clavier en utilisant la touche _Tab_, les touches de direction et la _touche Verr. maj + les touches de direction_.
+2.  Naviguez dans votre application à l’aide du clavier en utilisant la touche _Tab_, les touches de direction et la _touche Verr. maj + les touches de direction_.
 3.  À mesure que vous naviguez dans votre application, écoutez le Narrateur lire les éléments de votre interface utilisateur et vérifiez les points suivants :
     * Pour chaque contrôle, vérifiez que le Narrateur lit tout le contenu visible. Vérifiez également qu’il lit le nom de chaque contrôle, tout état applicable (coché, sélectionné, etc.) et le type du contrôle (bouton, case à cocher, élément de liste, etc.).
     * Si l’élément est interactif, vérifiez que vous pouvez utiliser le Narrateur pour appeler son action en appuyant sur _Verr. maj + Entrée_.
@@ -118,16 +118,16 @@ Utilisez le Narrateur pour tester l’expérience de lecture d’écran pour vot
 
 À compter de Windows 10 version 1607, nous avons introduit un nouveau mode développeur dans le Narrateur. Activez le mode développeur quand le Narrateur est déjà en cours d’exécution en appuyant sur _Verr. maj + Maj + F12_. Quand le mode développeur est activé, l’écran est masqué et met en évidence uniquement les objets accessibles et le texte associé exposé par programmation au Narrateur. Vous avez ainsi une bonne représentation visuelle des informations qui sont exposées au Narrateur.
 
-**Suivez ces étapes pour tester votre application avec le mode tactile du Narrateur :**
+**Utilisez ces étapes pour tester votre application à l’aide du mode tactile du narrateur :**
 
 > [!NOTE]
 > Le Narrateur passe automatiquement en mode tactile sur les appareils qui prennent en charge les contacts 4+. Le Narrateur ne prend pas en charge les scénarios à plusieurs moniteurs ou les numériseurs d’interaction tactile multipoint sur l’écran principal.
 
 1.  Familiarisez-vous avec l’interface utilisateur et explorez la disposition.
 
-    * **Naviguer dans l’interface utilisateur à l’aide de mouvements de balayage d’un seul doigt.** Effectuez des mouvements de balayage vers la gauche ou la droite pour naviguer entre les éléments et vers le haut ou le bas pour changer la catégorie des éléments parmi lesquels vous naviguez. Les catégories incluent tous les éléments, liens, tableaux, en-têtes, etc. La navigation par mouvements de balayage à l’aide d’un seul doigt est similaire à la navigation avec _Verr. maj + les touches de direction_.
-    * **Mouvements de l’onglet permet de naviguer parmi les éléments pouvant être actif.** Un balayage à trois doigts vers la droite ou la gauche est équivalent à l’utilisation de la touche _Tab_ et des touches _Maj + Tab_ sur un clavier.
-    * **Dans l’espace examiner l’interface utilisateur avec un seul doigt.** Déplacez un seul doigt vers le haut et le bas, ou la gauche et la droite, pour que le Narrateur lise les éléments placés sous votre doigt. Vous pouvez utiliser la souris comme alternative, car elle utilise la même logique de test de positionnement avancé que le déplacement d’un seul doigt.
+    * **Parcourez l’interface utilisateur à l’aide des gestes de balayage à un seul doigt.** Effectuez des mouvements de balayage vers la gauche ou la droite pour naviguer entre les éléments et vers le haut ou le bas pour changer la catégorie des éléments parmi lesquels vous naviguez. Les catégories incluent tous les éléments, liens, tableaux, en-têtes, etc. La navigation par mouvements de balayage à l’aide d’un seul doigt est similaire à la navigation avec _Verr. maj + les touches de direction_.
+    * **Utilisez des mouvements de tabulation pour naviguer parmi les éléments pouvant être actifs.** Un balayage à trois doigts vers la droite ou la gauche est équivalent à l’utilisation de la touche _Tab_ et des touches _Maj + Tab_ sur un clavier.
+    * **Examinez l’interface utilisateur de façon spatiale avec un seul doigt.** Déplacez un seul doigt vers le haut et le bas, ou la gauche et la droite, pour que le Narrateur lise les éléments placés sous votre doigt. Vous pouvez utiliser la souris comme alternative, car elle utilise la même logique de test de positionnement avancé que le déplacement d’un seul doigt.
     * **Lisez la fenêtre entière et tout son contenu en balayant l’écran vers le haut avec trois doigts**. Ceci est équivalent à l’utilisation de _Verr. maj + W_.
 
     Si des éléments d’interface utilisateur importants sont inaccessibles, il s’agit peut-être d’un problème d’accessibilité.
@@ -136,9 +136,9 @@ Utilisez le Narrateur pour tester l’expérience de lecture d’écran pour vot
 
     Les actions principales incluent des choses telles que l’activation d’un bouton, le positionnement d’un curseur de texte et le placement du focus sur le contrôle. Les actions secondaires incluent des actions telles que la sélection d’un élément de liste ou le développement d’un bouton qui propose plusieurs options.
 
-    * Pour tester une action principale : Double cliquez, ou appuyez sur avec un doigt et appuyez sur avec un autre.
-    * Pour tester une action secondaire : Le triple de drainage, ou appuyez sur avec un doigt et appuyer deux fois avec un autre.
-    * Pour tester le comportement de défilement : Utilisez où les balayages deux doigts pour faire défiler dans la direction voulue.
+    * Pour tester une action principale : appuyez deux fois ou effectuez un appui prolongé avec un doigt et appuyez avec un autre doigt.
+    * Pour tester une action secondaire : appuyez trois fois ou effectuez un appui prolongé avec un doigt et appuyez deux fois avec un autre doigt.
+    * Pour tester le comportement de défilement : balayez l’écran avec deux doigts pour effectuer un défilement dans la direction de votre choix.
 
     Certains contrôles fournissent des actions supplémentaires. Pour afficher la liste complète, touchez l’écran avec quatre doigts.
 
@@ -163,5 +163,5 @@ La présence d’éléments apparaissant à tort dans l’affichage des élémen
 * [Accessibilité](accessibility.md)
 * [Pratiques à éviter](practices-to-avoid.md)
 * [UI Automation](https://docs.microsoft.com/windows/desktop/WinAuto/entry-uiauto-win32)
-* [Accessibilité dans Windows](https://go.microsoft.com/fwlink/p/?LinkId=320802)
-* [Prise en main du Narrateur](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator)
+* [Accessibilité dans Windows](https://www.microsoft.com/accessibility/)
+* [Prise en main du narrateur](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator)

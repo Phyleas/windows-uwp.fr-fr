@@ -6,12 +6,12 @@ ms.date: 04/09/2019
 ms.topic: article
 keywords: Windows 10, UWP, portail des appareils
 ms.localizationpriority: medium
-ms.openlocfilehash: e2d149faaa967846244553ed53ed5e8255dae276
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: 2292d97166d34905bb895aa3f53f864510a21f46
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282283"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74254760"
 ---
 # <a name="windows-device-portal-overview"></a>Vue d’ensemble de Windows Device Portal
 
@@ -23,7 +23,7 @@ Le portail de périphériques Windows est disponible sur chaque famille d’appa
 
 La fonctionnalité du portail de périphériques Windows est implémentée avec les [API REST](device-portal-api-core.md) que vous pouvez utiliser directement pour accéder aux données et contrôler votre appareil par programme.
 
-## <a name="setup"></a>Installation
+## <a name="setup"></a>Configurer
 
 Chaque appareil possède des instructions spécifiques concernant la connexion à Device Portal. Toutefois, chacun nécessite d’effectuer les étapes générales suivantes.
 
@@ -37,16 +37,16 @@ Famille d’appareils | Activé par défaut ? | HTTP | HTTPS | USB
 --------------|----------------|------|-------|----
 HoloLens | Oui, en mode de développement | 80 (par défaut) | 443 (par défaut) | http://127.0.0.1:10080
 IoT | Oui, en mode de développement | 8080 | Activer via la clé de registre | N/A
-Xbox | Activer dans le mode de développement | Désactivé | 11443 | N/A
-Bureau| Activer dans le mode de développement | 50080 @ no__t-0 | 50043 @ no__t-0 | N/A
-Phone | Activer dans le mode de développement | 80| 443 | http://127.0.0.1:10080
+Xbox | Activer dans le mode de développement | Désactivée | 11443 | N/A
+Bureau| Activer dans le mode de développement | 50080\* | 50043\* | N/A
+Téléphone | Activer dans le mode de développement | 80| 443 | http://127.0.0.1:10080
 
 \* ce n’est pas toujours le cas, en tant que portail des appareils sur les ports de revendications de bureau dans la plage éphémère (> 50000), afin d’éviter les collisions avec les revendications de port existantes sur l’appareil. Pour plus d’informations, consultez la section [Paramètres de port](device-portal-desktop.md#registry-based-configuration-for-device-portal) pour le bureau.  
 
 Pour obtenir des instructions d’installation propres à chaque appareil, consultez :
 
 - [Portail d’appareil pour HoloLens](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-hololens)
-- [Portail d’appareil pour IoT](https://go.microsoft.com/fwlink/?LinkID=616499)
+- [Portail d’appareil pour IoT](https://docs.microsoft.com/windows/iot-core/manage-your-device/DevicePortal)
 - [Portail d’appareil pour appareils mobiles](device-portal-mobile.md)
 - [Portail d’appareil pour Xbox](../xbox-apps/device-portal-xbox.md)
 - [Portail d’appareil pour Bureau](device-portal-desktop.md#set-up-device-portal-on-windows-desktop)
@@ -57,10 +57,10 @@ Pour obtenir des instructions d’installation propres à chaque appareil, consu
 
 La barre d’outils en haut de la page permet d’accéder aux fonctionnalités couramment utilisées.
 
-- **Puissance**: Accédez aux options d’alimentation.
-  - **Arrêt**: Désactive l’appareil.
-  - **Redémarrage**: Recycle l’alimentation de l’appareil.
-- **Aide**: Ouvre la page d’aide.
+- **Puissance**: accéder aux options d’alimentation.
+  - **Arrêt** : éteint l’appareil.
+  - **Redémarrer** : mise sous tension de l’appareil par cycle.
+- **Aide** : ouvre la page d’aide.
 
 Utilisez les liens du volet de navigation sur le côté gauche de la page pour naviguer vers les outils d’analyse et de gestion disponibles pour votre appareil.
 
@@ -72,9 +72,9 @@ Le gestionnaire des applications fournit des fonctionnalités d’installation/d
 
 ![Page Gestionnaire d’applications du portail des appareils](images/device-portal/WDP_AppsManager2.png)
 
-* **Déployer des applications**: Déployez des applications empaquetées à partir d’hôtes locaux, réseau ou Web et inscrivez des fichiers libres à partir de partages réseau.
-* **Applications installées**: Utilisez le menu déroulant pour supprimer ou démarrer les applications qui sont installées sur l’appareil.
-* **Applications en cours d’exécution**: Obtenir des informations sur les applications en cours d’exécution et les fermer en fonction des besoins.
+* **Déployer des applications**: déployez des applications empaquetées à partir d’hôtes locaux, réseau ou Web et inscrivez des fichiers libres à partir de partages réseau.
+* **Applications installées**: utilisez le menu déroulant pour supprimer ou démarrer les applications qui sont installées sur l’appareil.
+* **Applications en cours d’exécution**: obtenir des informations sur les applications en cours d’exécution et les fermer en fonction des besoins.
 
 #### <a name="install-sideload-an-app"></a>Installer (chargement) une application
 
@@ -136,11 +136,11 @@ La page performances affiche des graphiques en temps réel des informations de d
 
 Voici les mesures disponibles :
 
-- **UC**: Pourcentage du total d’utilisation du processeur disponible
-- **Mémoire**: Total, en cours d’utilisation, disponible, validé, paginé et non paginé
-- **E/S**: Lire et écrire des quantités de données
-- **Réseau** : Données reçues et envoyées
-- **GPU**: Pourcentage du total d’utilisation du moteur GPU disponible
+- **UC**: pourcentage du total d’utilisation du processeur disponible
+- **Mémoire**: total, en cours d’utilisation, disponible, validé, paginé et non paginé
+- **E/s**: lire et écrire les quantités de données
+- **Réseau**: données reçues et envoyées
+- **GPU**: pourcentage du total d’utilisation du moteur GPU disponible
 
 ![Page performance du portail de l’appareil](images/device-portal/mob-device-portal-perf.png)
 
@@ -152,7 +152,7 @@ La page journalisation ETW gère les informations de Suivi d’v nements pour Wi
 
 Cochez la case **Masquer les fournisseurs** pour n’afficher que la liste des événements.
 
-- **Fournisseurs inscrits**: Sélectionnez le fournisseur d’événements et le niveau de suivi. Le niveau de suivi est l’une des valeurs suivantes :
+- **Fournisseurs inscrits**: sélectionnez le fournisseur d’événements et le niveau de suivi. Le niveau de suivi est l’une des valeurs suivantes :
   1. Sortie ou arrêt anormal
   2. Erreurs graves
   3. Avertissements
@@ -160,10 +160,10 @@ Cochez la case **Masquer les fournisseurs** pour n’afficher que la liste des �
   5. Suivi détaillé
 
   Cliquez ou appuyez sur **Activer** pour démarrer le suivi. Le fournisseur est ajouté à la liste déroulante **Fournisseurs activés**.
-- **Fournisseurs personnalisés**: Sélectionnez un fournisseur ETW personnalisé et le niveau de suivi. Identifiez le fournisseur par son GUID. N’incluez pas de crochets dans le GUID.
-- **Fournisseurs activés**: La liste répertorie les fournisseurs activés. Sélectionnez un fournisseur dans la liste déroulante, puis cliquez sur ou appuyez sur **Désactiver** pour arrêter le suivi. Cliquez ou appuyez sur **Arrêter tout** pour suspendre tout le suivi.
-- **Historique des fournisseurs**: Cela montre les fournisseurs ETW qui ont été activés au cours de la session active. Cliquez ou appuyez sur **Activer** pour activer un fournisseur qui a été désactivé. Cliquez ou appuyez sur **Effacer** pour supprimer l’historique.
-- **Filtres/événements**: La section **événements** répertorie les événements ETW des fournisseurs sélectionnés sous forme de table. La table est mise à jour en temps réel. Utilisez le menu **filtres** pour configurer des filtres personnalisés pour les événements à afficher. Cliquez sur le bouton **Effacer** pour supprimer tous les événements ETW de la table. Cela ne désactive pas les fournisseurs. Vous pouvez cliquer sur **enregistrer dans un fichier** pour exporter les événements ETW actuellement collectés dans un fichier CSV local.
+- **Fournisseurs personnalisés** sélectionnez un fournisseur ETW personnalisé et le niveau de suivi. Identifiez le fournisseur par son GUID. N’incluez pas de crochets dans le GUID.
+- **Fournisseurs activés**: répertorie les fournisseurs activés. Sélectionnez un fournisseur dans la liste déroulante, puis cliquez sur ou appuyez sur **Désactiver** pour arrêter le suivi. Cliquez ou appuyez sur **Arrêter tout** pour suspendre tout le suivi.
+- **Historique des fournisseurs**: affiche les fournisseurs ETW qui ont été activés au cours de la session active. Cliquez ou appuyez sur **Activer** pour activer un fournisseur qui a été désactivé. Cliquez ou appuyez sur **Effacer** pour supprimer l’historique.
+- **Filtres/événements**: la section **événements** répertorie les événements ETW des fournisseurs sélectionnés sous forme de table. La table est mise à jour en temps réel. Utilisez le menu **filtres** pour configurer des filtres personnalisés pour les événements à afficher. Cliquez sur le bouton **Effacer** pour supprimer tous les événements ETW de la table. Cela ne désactive pas les fournisseurs. Vous pouvez cliquer sur **enregistrer dans un fichier** pour exporter les événements ETW actuellement collectés dans un fichier CSV local.
 
 Pour plus d’informations sur l’utilisation de la journalisation ETW, consultez le billet [de blog utiliser le portail de l’appareil pour afficher les journaux de débogage](https://blogs.windows.com/buildingapps/2016/06/10/using-device-portal-to-view-debug-logs-for-uwp/) .
 
@@ -173,8 +173,8 @@ La page suivi des performances vous permet d’afficher les traces de l' [enregi
 
 ![Page de suivi des performances du portail d’appareils](images/device-portal/mob-device-portal-perf-tracing.png)
 
-- **Profils disponibles**: Sélectionnez le profil WPR dans la liste déroulante, puis cliquez ou appuyez sur **Démarrer** pour démarrer le suivi.
-- **Profils personnalisés**: Cliquez ou appuyez sur **Parcourir** pour choisir un profil WPR sur votre PC. Cliquez ou appuyez sur **Charger et démarrer** pour commencer le suivi.
+- **Profils disponibles** : sélectionnez le profil WPR dans la liste déroulante, puis cliquez ou appuyez sur **Démarrer** pour commencer le suivi.
+- **Profils personnalisés** : cliquez ou appuyez sur **Parcourir** pour choisir un profil WPR depuis votre PC. Cliquez ou appuyez sur **Charger et démarrer** pour commencer le suivi.
 
 Pour arrêter le suivi, cliquez sur **Arrêter**. Restez sur cette page jusqu’au fichier de trace (. ETL) a terminé le téléchargement.
 
@@ -190,8 +190,8 @@ La page Gestionnaire de périphériques énumère tous les périphériques conne
 
 La page mise en réseau gère les connexions réseau sur l’appareil. À moins que vous ne soyez connecté au portail des appareils via USB, la modification de ces paramètres vous déconnectera probablement du portail de l’appareil.
 
-- **Réseaux disponibles**: Affiche les réseaux Wi-Fi disponibles pour l’appareil. Appuyez ou cliquez sur un réseau pour vous y connecter et fournir une clé d’accès si nécessaire. Le portail des appareils ne prend pas encore en charge l’authentification d’entreprise. Vous pouvez également utiliser la liste déroulante des **profils** pour tenter de vous connecter à l’un des profils WiFi connus de l’appareil.
-- **Configuration IP**: Affiche des informations d’adresse sur chacun des ports réseau de l’appareil hôte.
+- **Réseaux disponibles**: affiche les réseaux Wi-Fi disponibles pour l’appareil. Appuyez ou cliquez sur un réseau pour vous y connecter et fournir une clé d’accès si nécessaire. Le portail des appareils ne prend pas encore en charge l’authentification d’entreprise. Vous pouvez également utiliser la liste déroulante des **profils** pour tenter de vous connecter à l’un des profils WiFi connus de l’appareil.
+- **Configuration IP**: affiche des informations d’adresse sur chacun des ports réseau de l’appareil hôte.
 
 ![Page mise en réseau du portail des appareils](images/device-portal/mob-device-portal-network.png)
 
@@ -203,7 +203,7 @@ Device Portal signale sa présence sur le réseau local à l’aide de DNS-SD.
 
 Touche | Type | Description
 ----|------|-------------
-S | int | Port sécurisé pour Device Portal. Si la valeur est égale à 0 (zéro), Device Portal ne détecte pas les connexions HTTPS.
+S | entier | Port sécurisé pour Device Portal. Si la valeur est égale à 0 (zéro), Device Portal ne détecte pas les connexions HTTPS.
 D | chaîne | Type d’appareil. Le format est « Windows. * », par exemple, Windows. Xbox ou Windows. Desktop
 A | chaîne | Architecture d’appareil. Par exemple ARM, x 86 ou AMD64.  
 T | liste de chaînes délimitées par des caractères Null | Balises appliquées par l’utilisateur pour l’appareil. Reportez-vous à l’API REST Tags pour apprendre à l’utiliser. La liste se termine par deux caractères Null.  
@@ -216,7 +216,7 @@ Afin d’offrir une protection contre les [attaques CSRF](https://en.wikipedia.
 
 > [!IMPORTANT]
 > Cette protection empêche les utilisations des API REST à partir d’un client autonome (tels que les utilitaires de ligne de commande). Cette situation peut être résolue de 3 manières différentes :
-> - Utilisez un nom d’utilisateur « automatique ». Les clients qui font précéder leur nom d’utilisateur du préfixe « auto-» contournent la protection CSRF. Ce nom d’utilisateur ne doit pas servir à se connecter à Device Portal par le biais du navigateur, car il rend le service vulnérable aux attaques CSRF. Exemple : Si le nom d’utilisateur du portail de périphérique est « admin », ```curl -u auto-admin:password <args>``` doit être utilisé pour contourner la protection CSRF.
+> - Utilisez un nom d’utilisateur « automatique ». Les clients qui font précéder leur nom d’utilisateur du préfixe « auto-» contournent la protection CSRF. Ce nom d’utilisateur ne doit pas servir à se connecter à Device Portal par le biais du navigateur, car il rend le service vulnérable aux attaques CSRF. Exemple : Si le nom d’utilisateur Device Portal est « admin », ```curl -u auto-admin:password <args>``` doit être utilisé pour contourner la protection CSRF.
 > - Implémentez le schéma de type cookie vers en-tête dans le client. Cette opération nécessite une requête GET afin d’établir le cookie de session, puis l’inclusion de l’en-tête et du cookie sur toutes les requêtes ultérieures.
 > - Désactivez l’authentification et utilisez le protocole HTTP. La protection CSRF s’applique uniquement aux points de terminaison HTTPS : les connexions au niveau des points de terminaison HTTP n’ont donc pas besoin de satisfaire les conditions ci-dessus.
 

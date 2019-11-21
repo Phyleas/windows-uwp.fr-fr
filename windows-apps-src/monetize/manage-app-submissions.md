@@ -6,12 +6,12 @@ ms.date: 04/30/2018
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au Microsoft Store, soumissions d’app
 ms.localizationpriority: medium
-ms.openlocfilehash: 433c9589876ef7dac1c5c2b862176ff0eb47b1b3
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 0575127096a016c54c1ee84c1e57c2f22054384b
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339943"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260226"
 ---
 # <a name="manage-app-submissions"></a>Gérer les soumissions d’applications
 
@@ -55,7 +55,7 @@ Pour obtenir, créer, mettre à jour, valider ou supprimer une soumission d’ap
 <td align="left"><a href="get-status-for-an-app-submission.md">Obtient l’état d’une soumission d’application existante</a></td>
 </tr>
 <tr>
-<td align="left">PUBLIER</td>
+<td align="left">POST</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions</td>
 <td align="left"><a href="create-an-app-submission.md">Créer une soumission d’application</a></td>
 </tr>
@@ -65,12 +65,12 @@ Pour obtenir, créer, mettre à jour, valider ou supprimer une soumission d’ap
 <td align="left"><a href="update-an-app-submission.md">Mettre à jour une soumission d’application existante</a></td>
 </tr>
 <tr>
-<td align="left">PUBLIER</td>
+<td align="left">POST</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/commit</td>
 <td align="left"><a href="commit-an-app-submission.md">Valider une soumission d’application nouvelle ou mise à jour</a></td>
 </tr>
 <tr>
-<td align="left">Suppression</td>
+<td align="left">DELETE</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}</td>
 <td align="left"><a href="delete-an-app-submission.md">Supprimer une soumission d’application</a></td>
 </tr>
@@ -98,7 +98,7 @@ Pour créer une soumission pour une application, suivez ce processus.
     Le corps de la réponse contient une ressource de [soumission d'application](#app-submission-object) qui inclut l'ID de la nouvelle soumission, l’URI de signature d’accès partagé (SAS) pour le chargement de tous les fichiers associés à la soumission vers le Stockage Blob Azure (notamment les packages d'application, les images de description et les fichiers de bande-annonce), ainsi que toutes les données de la nouvelle soumission (notamment les descriptions et les informations tarifaires).
 
     > [!NOTE]
-    > Un URI SAS permet d’accéder à une ressource sécurisée dans le stockage Azure sans besoin de clés de compte. Pour obtenir des informations générales sur les URI SAS et leur utilisation avec le stockage d’objets BLOB Azure, consultez signatures d’accès [Shared, partie 1 : Comprendre le modèle SAS @ no__t-0 et les signatures d’accès [Shared, partie 2 : Créez et utilisez une signature d’accès partagé avec le stockage d’objets BLOB @ no__t-0.
+    > Un URI SAS permet d’accéder à une ressource sécurisée dans le stockage Azure sans besoin de clés de compte. Pour obtenir des informations générales sur les URI SAS et leur utilisation avec le stockage d’objets blob Azure, consultez [Signatures d’accès partagé, partie 1 : présentation du modèle SAS](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/) et [Signatures d’accès partagé, partie 2 : créer et utiliser une SAS avec le stockage d’objets blob](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/).
 
 4. Si vous ajoutez de nouveaux packages, images de description ou fichiers de bande-annonce pour la soumission, [préparez les packages d’application](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements) et [préparez les captures d’écran, les images et les bandes-annonces de l’application](https://docs.microsoft.com/windows/uwp/publish/app-screenshots-and-images). Ajoutez tous ces fichiers à une archive ZIP.
 
@@ -175,17 +175,17 @@ Après avoir activé un lancement de packages progressif pour une soumission d�
 <td align="left"><a href="get-package-rollout-info-for-an-app-submission.md">Obtenir les informations de déploiement progressif pour une soumission d’application</a></td>
 </tr>
 <tr>
-<td align="left">PUBLIER</td>
+<td align="left">POST</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/updatepackagerolloutpercentage</td>
 <td align="left"><a href="update-the-package-rollout-percentage-for-an-app-submission.md">Mettre à jour le pourcentage de déploiement graduel pour une soumission d’application</a></td>
 </tr>
 <tr>
-<td align="left">PUBLIER</td>
+<td align="left">POST</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/haltpackagerollout</td>
 <td align="left"><a href="halt-the-package-rollout-for-an-app-submission.md">Arrêter le déploiement graduel pour une soumission d’application</a></td>
 </tr>
 <tr>
-<td align="left">PUBLIER</td>
+<td align="left">POST</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/finalizepackagerollout</td>
 <td align="left"><a href="finalize-the-package-rollout-for-an-app-submission.md">Finaliser le déploiement graduel pour une soumission d’application</a></td>
 </tr>
@@ -206,9 +206,9 @@ Les articles suivants fournissent des exemples de code détaillés qui montrent 
 
 ## <a name="storebroker-powershell-module"></a>module StoreBroker PowerShell
 
-Au lieu d'appeler l'API de soumission au Microsoft Store directement, nous fournissons également un module PowerShell Open Source qui implémente une interface de ligne de commande sur l’API. Ce module est appelé [StoreBroker](https://aka.ms/storebroker). Vous pouvez utiliser ce module pour gérer les soumissions de votre app, de votre version et de vos modules complémentaires à partir de la ligne de commande, en lieu et place de l'appel direct de l'API de soumission au Microsoft Store. Sinon, vous pouvez simplement parcourir la source pour consulter des exemples supplémentaires d'appel de cette API. Le module StoreBroker est activement utilisé au sein de Microsoft en tant que vecteur principal de soumission de nombreuses applications internes dans le Windows Store.
+Au lieu d'appeler l'API de soumission au Microsoft Store directement, nous fournissons également un module PowerShell Open Source qui implémente une interface de ligne de commande sur l’API. Ce module est appelé [StoreBroker](https://github.com/Microsoft/StoreBroker). Vous pouvez utiliser ce module pour gérer les soumissions de votre app, de votre version et de vos modules complémentaires à partir de la ligne de commande, en lieu et place de l'appel direct de l'API de soumission au Microsoft Store. Sinon, vous pouvez simplement parcourir la source pour consulter des exemples supplémentaires d'appel de cette API. Le module StoreBroker est activement utilisé au sein de Microsoft en tant que vecteur principal de soumission de nombreuses applications internes dans le Windows Store.
 
-Pour plus d’informations, consultez notre [page StoreBroker sur GitHub](https://aka.ms/storebroker).
+Pour plus d’informations, consultez notre [page StoreBroker sur GitHub](https://github.com/Microsoft/StoreBroker).
 
 <span/>
 
@@ -335,16 +335,16 @@ Cette ressource décrit une soumission d’applications.
 
 Cette ressource a les valeurs suivantes.
 
-| Value      | Type   | Description      |
+| Valeur      | Type   | Description      |
 |------------|--------|-------------------|
 | id            | chaîne  | ID de la soumission. Cet ID est disponible dans les données de réponse des requêtes pour [créer une soumission d’apps](create-an-app-submission.md), [obtenir toutes les apps](get-all-apps.md) et [obtenir une app](get-an-app.md). Pour une soumission qui a été créée dans l’espace partenaires, cet ID est également disponible dans l’URL de la page de soumission dans l’espace partenaires.  |
 | applicationCategory           | chaîne  |   Chaîne qui spécifie la [catégorie et/ou sous-catégorie](https://docs.microsoft.com/windows/uwp/publish/category-and-subcategory-table) pour votre application. Les catégories et sous-catégories sont combinées en une seule chaîne à l’aide du caractère trait de soulignement « _ », par exemple **BooksAndReference_EReader**.      |  
 | pricing           |  objet  | [Ressource de tarification](#pricing-object) qui contient les informations de tarification de l’application.        |   
 | visibility           |  chaîne  |  Visibilité de l’application. Les valeurs possibles sont les suivantes : <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>       |   
-| targetPublishMode           | chaîne  | Mode de publication pour la soumission. Les valeurs possibles sont les suivantes : <ul><li>Immediate</li><li>Manuel</li><li>SpecificDate</li></ul> |
+| targetPublishMode           | chaîne  | Mode de publication pour la soumission. Les valeurs possibles sont les suivantes : <ul><li>Immediate</li><li>Manuelle</li><li>SpecificDate</li></ul> |
 | targetPublishDate           | chaîne  | Date de publication de la soumission au format ISO 8601, si le paramètre *targetPublishMode* a la valeur SpecificDate.  |  
 | listings           |   objet  |  Dictionnaire de paires clé/valeur, où chaque clé est un code de pays et chaque valeur est une [ressource de référencement](#listing-object) qui contient des informations de référencement de l’application.       |   
-| hardwarePreferences           |  tableau  |   Tableau de chaînes qui définissent les [préférences matérielles](https://docs.microsoft.com/windows/uwp/publish/enter-app-properties) pour votre application. Les valeurs possibles sont les suivantes : <ul><li>Entrées tactiles</li><li>Clavier</li><li>Souris</li><li>Appareil photo</li><li>NfcHce</li><li>NFC</li><li>BluetoothLE</li><li>Telephony</li></ul>     |   
+| hardwarePreferences           |  tableau  |   Tableau de chaînes qui définissent les [préférences matérielles](https://docs.microsoft.com/windows/uwp/publish/enter-app-properties) pour votre application. Les valeurs possibles sont les suivantes : <ul><li>Touch</li><li>Clavier</li><li>Souris</li><li>Appareil photo</li><li>NfcHce</li><li>NFC</li><li>BluetoothLE</li><li>Telephony</li></ul>     |   
 | automaticBackupEnabled           |  booléenne  |   Indique si Windows peut inclure les données de votre application dans les sauvegardes automatiques sur OneDrive. Pour plus d’informations, voir [Déclarations d’application](https://docs.microsoft.com/windows/uwp/publish/app-declarations).   |   
 | canInstallOnRemovableMedia           |  booléenne  |   Indique si les clients peuvent installer votre application sur un stockage amovible. Pour plus d’informations, voir [Déclarations d’application](https://docs.microsoft.com/windows/uwp/publish/app-declarations).     |   
 | isGameDvrEnabled           |  booléenne |   Indique si les jeux DVR sont activés pour l’application.    |   
@@ -352,7 +352,7 @@ Cette ressource a les valeurs suivantes.
 | hasExternalInAppProducts           |     booléenne          |   Indique si votre app permet aux utilisateurs d’effectuer des achats hors du système de commerce du Microsoft Store. Pour plus d’informations, voir [Déclarations d’application](https://docs.microsoft.com/windows/uwp/publish/app-declarations).     |   
 | meetAccessibilityGuidelines           |    booléenne           |  Indique si votre application a fait l’objet de tests pour voir si elle est conforme aux recommandations d’accessibilité. Pour plus d’informations, voir [Déclarations d’application](https://docs.microsoft.com/windows/uwp/publish/app-declarations).      |   
 | notesForCertification           |  chaîne  |   Contient des [notes de certification](https://docs.microsoft.com/windows/uwp/publish/notes-for-certification) pour votre application.    |    
-| status           |   chaîne  |  État de la soumission. Les valeurs possibles sont les suivantes : <ul><li>Aucune</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publication</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Libérer</li><li>ReleaseFailed</li></ul>      |    
+| status           |   chaîne  |  État de la soumission. Les valeurs possibles sont les suivantes : <ul><li>Aucune</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publication</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>      |    
 | statusDetails           |   objet  | [Ressource des détails d’état](#status-details-object) qui contient des détails supplémentaires sur l’état de la soumission, notamment des informations sur les éventuelles erreurs.       |    
 | fileUploadUrl           |   chaîne  | URI de la signature d’accès partagé (SAS) pour le chargement des packages de la soumission. Si vous ajoutez de nouveaux packages, images de description ou fichiers de bande-annonce à la soumission, chargez l’archive ZIP qui les contient vers cet URI. Pour plus d’informations, voir [Créer une soumission d’application](#create-an-app-submission).       |    
 | applicationPackages           |   tableau  | Tableau des [ressources de package d’application](#application-package-object) qui fournissent des détails sur chaque package de la soumission. |    
@@ -370,7 +370,7 @@ Cette ressource a les valeurs suivantes.
 
 Cette ressource contient des informations de tarification pour l’application. Cette ressource a les valeurs suivantes.
 
-| Value           | Type    | Description        |
+| Valeur           | Type    | Description        |
 |-----------------|---------|------|
 |  trialPeriod               |    chaîne     |  Chaîne qui spécifie la période d’évaluation de l’application. Les valeurs possibles sont les suivantes : <ul><li>NoFreeTrial</li><li>OneDay</li><li>TrialNeverExpires</li><li>SevenDays</li><li>FifteenDays</li><li>ThirtyDays</li></ul>    |
 |  marketSpecificPricings               |    objet     |  Dictionnaire de paires clé/valeur, où chaque clé est un code de pays à deux lettres ISO 3166-1 alpha-2 et chaque valeur est un [niveau de prix](#price-tiers). Ces éléments représentent les [prix personnalisés de votre application sur des marchés spécifiques](https://docs.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection). Tous les éléments de ce dictionnaire remplacent le prix de base spécifié par la valeur *priceId* du marché spécifié.      |     
@@ -392,7 +392,7 @@ Cette ressource contient des informations commerciales pour une application.
 
 Cette ressource a les valeurs suivantes.
 
-| Value           | Type    | Description    |
+| Valeur           | Type    | Description    |
 |-----------------|---------|------|
 |  name               |    chaîne     |   Nom de la vente.    |     
 |  basePriceId               |   chaîne      |  [Niveau de prix](#price-tiers) à utiliser pour le prix de base de la vente.    |     
@@ -407,7 +407,7 @@ Cette ressource a les valeurs suivantes.
 
 Cette ressource contient des informations de listing pour une application. Cette ressource a les valeurs suivantes.
 
-| Value           | Type    | Description                  |
+| Valeur           | Type    | Description                  |
 |-----------------|---------|------|
 |  baseListing               |   objet      |  Informations de [listing de base](#base-listing-object) pour l’application, qui définissent les informations de listing par défaut pour toutes les plateformes.   |     
 |  platformOverrides               | objet |   Dictionnaire de paires clé/valeur, où chaque clé est une chaîne qui identifie une plateforme pour laquelle remplacer les informations de référencement et chaque valeur est une ressource de [référencement de base](#base-listing-object) (contenant uniquement les valeurs de la description au titre) qui spécifie les informations de référencement à remplacer pour la plateforme spécifiée. Les clés peuvent avoir les valeurs suivantes : <ul><li>Inconnu</li><li>Windows80</li><li>Windows81</li><li>WindowsPhone71</li><li>WindowsPhone80</li><li>WindowsPhone81</li></ul>     |      |     
@@ -418,7 +418,7 @@ Cette ressource contient des informations de listing pour une application. Cette
 
 Cette ressource contient des informations de référencement de base pour une application. Cette ressource a les valeurs suivantes.
 
-| Value           | Type    | Description       |
+| Valeur           | Type    | Description       |
 |-----------------|---------|------|
 |  copyrightAndTrademarkInfo                |   chaîne      |  [Informations de copyright et/ou de marque](https://docs.microsoft.com/windows/uwp/publish/create-app-descriptions) facultatives.  |
 |  keywords                |  tableau       |  Tableau de [mots clés](https://docs.microsoft.com/windows/uwp/publish/create-app-descriptions) facilitant l’apparition de l’application dans les résultats de recherche.    |
@@ -445,7 +445,7 @@ Cette ressource contient des informations de référencement de base pour une ap
 
 Cette ressource contient les données d’image et d’icône d’une description d’application. Pour plus d’informations sur les images et icônes pour un listing d'app, voir [Images et captures d’écran de l’app](../publish/app-screenshots-and-images.md). Cette ressource a les valeurs suivantes.
 
-| Value           | Type    | Description           |
+| Valeur           | Type    | Description           |
 |-----------------|---------|------|
 |  fileName               |    chaîne     |   Nom du fichier image dans l’archive ZIP que vous avez chargé pour la soumission.    |     
 |  fileStatus               |   chaîne      |  État du fichier image. Les valeurs possibles sont les suivantes : <ul><li>Aucune</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>   |
@@ -486,20 +486,20 @@ Cette ressource contient des paramètres relatifs au jeu pour l’application. L
 
 Cette ressource a les valeurs suivantes.
 
-| Value           | Type    | Description        |
+| Valeur           | Type    | Description        |
 |-----------------|---------|------|
 |  genres               |    tableau     |  Un tableau d’un ou plusieurs des chaînes suivantes qui décrivent les genres du jeu : <ul><li>Games_ActionAndAdventure</li><li>Games_CardAndBoard</li><li>Games_Casino</li><li>Games_Educational</li><li>Games_FamilyAndKids</li><li>Games_Fighting</li><li>Games_Music</li><li>Games_Platformer</li><li>Games_PuzzleAndTrivia</li><li>Games_RacingAndFlying</li><li>Games_RolePlaying</li><li>Games_Shooter</li><li>Games_Simulation</li><li>Games_Sports</li><li>Games_Strategy</li><li>Games_Word</li></ul>    |
 |  isLocalMultiplayer               |    booléenne     |  Indique si le jeu prend en charge le mode multijoueur local.      |     
 |  isLocalCooperative               |   booléenne      |  Indique si le jeu prend en charge le mode coopération local.    |     
 |  isOnlineMultiplayer               |   booléenne      |  Indique si le jeu prend en charge le mode multijoueur en ligne.    |     
 |  isOnlineCooperative               |   booléenne      |  Indique si le jeu prend en charge le mode coopération en ligne.    |     
-|  localMultiplayerMinPlayers               |   int      |   Spécifie le nombre minimal de joueurs que le jeu prend en charge pour le mode multijoueur local.   |     
-|  localMultiplayerMaxPlayers               |   int      |   Spécifie le nombre maximal de joueurs que le jeu prend en charge pour le mode multijoueur local.  |     
-|  localCooperativeMinPlayers               |   int      |   Spécifie le nombre minimal de joueurs que le jeu prend en charge pour le mode coopération local.  |     
-|  localCooperativeMaxPlayers               |   int      |   Spécifie le nombre maximal de joueurs que le jeu prend en charge pour le mode coopération local.  |     
+|  localMultiplayerMinPlayers               |   entier      |   Spécifie le nombre minimal de joueurs que le jeu prend en charge pour le mode multijoueur local.   |     
+|  localMultiplayerMaxPlayers               |   entier      |   Spécifie le nombre maximal de joueurs que le jeu prend en charge pour le mode multijoueur local.  |     
+|  localCooperativeMinPlayers               |   entier      |   Spécifie le nombre minimal de joueurs que le jeu prend en charge pour le mode coopération local.  |     
+|  localCooperativeMaxPlayers               |   entier      |   Spécifie le nombre maximal de joueurs que le jeu prend en charge pour le mode coopération local.  |     
 |  isBroadcastingPrivilegeGranted               |   booléenne      |  Indique si le jeu prend en charge la diffusion.   |     
 |  isCrossPlayEnabled               |   booléenne      |   Indique si le jeu prend en charge des sessions multijoueurs entre joueurs sur PC Windows 10 et Xbox.  |     
-|  kinectDataForExternal               |   chaîne      |  Une des valeurs de chaîne suivantes qui indique si le jeu peut collecter des données de Kinect et les envoyer à des services externes : <ul><li>NotSet</li><li>Inconnu</li><li>Enabled</li><li>Désactivé</li></ul>   |
+|  kinectDataForExternal               |   chaîne      |  Une des valeurs de chaîne suivantes qui indique si le jeu peut collecter des données de Kinect et les envoyer à des services externes : <ul><li>NotSet</li><li>Inconnu</li><li>Activé</li><li>Désactivée</li></ul>   |
 
 > [!NOTE]
 > La ressource *gamingOptions* a été ajoutée en mai 2017, après que l'API de soumission au Microsoft Store a été diffusée pour la première fois auprès des développeurs. Si vous avez créé une soumission pour une app via l’API de soumission avant l'introduction de cette ressource et que cette soumission est toujours en cours, cette ressource sera nulle pour la soumission de l'app tant que vous n'aurez pas validé correctement ou supprimé la soumission. Si la ressource *gamingOptions* n'est pas disponible pour les soumissions d'une app, le champ *hasAdvancedListingPermission* de la [ressource de l'application](get-app-data.md#application_object) retourné par la méthode [obtenir une app](get-an-app.md) sera false.
@@ -510,7 +510,7 @@ Cette ressource a les valeurs suivantes.
 
 Cette ressource contient des détails supplémentaires sur l’état d’une soumission. Cette ressource a les valeurs suivantes.
 
-| Value           | Type    | Description         |
+| Valeur           | Type    | Description         |
 |-----------------|---------|------|
 |  erreurs               |    objet     |   Tableau des [ressources des détails d’état](#status-detail-object) qui contiennent les détails d’erreur de la soumission.    |     
 |  warnings               |   objet      | Tableau des [ressources des détails d’état](#status-detail-object) qui contiennent les détails d’avertissement de la soumission.      |
@@ -523,10 +523,10 @@ Cette ressource contient des détails supplémentaires sur l’état d’une sou
 
 Cette ressource contient des informations supplémentaires sur les éventuels erreurs ou avertissements pour une soumission. Cette ressource a les valeurs suivantes.
 
-| Value           | Type    | Description        |
+| Valeur           | Type    | Description        |
 |-----------------|---------|------|
 |  code               |    chaîne     |   [Code d’état de soumission](#submission-status-code) qui décrit le type d’erreur ou d’avertissement.   |     
-|  détails               |     chaîne    |  Message contenant des détails sur le problème.     |
+|  details               |     chaîne    |  Message contenant des détails sur le problème.     |
 
 
 <span id="application-package-object" />
@@ -567,7 +567,7 @@ Cette ressource a les valeurs suivantes.
 > [!NOTE]
 > Quand vous appelez la méthode de [mise à jour d’une soumission d’applications](update-an-app-submission.md), seules les valeurs *fileName*, *fileStatus*, *minimumDirectXVersion* et *minimumSystemRam* de cet objet sont obligatoires dans le corps de la requête. Les autres valeurs sont remplies par l’espace partenaires.
 
-| Value           | Type    | Description                   |
+| Valeur           | Type    | Description                   |
 |-----------------|---------|------|
 | fileName   |   chaîne      |  Nom du package.    |  
 | fileStatus    | chaîne    |  État du package. Les valeurs possibles sont les suivantes : <ul><li>Aucune</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>    |  
@@ -588,7 +588,7 @@ Cette ressource a les valeurs suivantes.
 
 Cette ressource donne accès aux données du rapport de certification d’une soumission. Cette ressource a les valeurs suivantes.
 
-| Value           | Type    | Description             |
+| Valeur           | Type    | Description             |
 |-----------------|---------|------|
 |     date            |    chaîne     |  Date et heure de génération du rapport, au format ISO 8601.    |
 |     reportUrl            |    chaîne     |  URL vous permettant d’accéder au rapport.    |
@@ -617,7 +617,7 @@ Cette ressource contient les paramètres de déploiement de package progressif e
 
 Cette ressource a les valeurs suivantes.
 
-| Value           | Type    | Description        |
+| Valeur           | Type    | Description        |
 |-----------------|---------|------|
 | packageRollout   |   objet      |  [Ressource de lancement de packages](#package-rollout-object) qui contient les paramètres de lancement de packages progressif de la soumission.   |  
 | isMandatoryUpdate    | booléenne    |  Indique si vous souhaitez traiter les packages de cette soumission comme obligatoires pour l’installation automatique des mises à jour de l’application. Pour plus d’informations sur les packages obligatoires pour l’installation automatique des mises à jour de l’application, consultez [Télécharger et installer les mises à jour de package pour votre application](../packaging/self-install-package-updates.md).    |  
@@ -629,10 +629,10 @@ Cette ressource a les valeurs suivantes.
 
 Contient les [paramètres de déploiement de package](#manage-gradual-package-rollout) de la soumission. Cette ressource a les valeurs suivantes.
 
-| Value           | Type    | Description        |
+| Valeur           | Type    | Description        |
 |-----------------|---------|------|
 | isPackageRollout   |   booléenne      |  Indique si le déploiement de package progressif est activé pour la soumission.    |  
-| packageRolloutPercentage    | float    |  Pourcentage d’utilisateurs qui recevront les packages de déploiement progressif.    |  
+| packageRolloutPercentage    | flottant    |  Pourcentage d’utilisateurs qui recevront les packages de déploiement progressif.    |  
 | packageRolloutStatus    |  chaîne   |  Une des chaînes suivantes qui indique l’état de déploiement de package progressif : <ul><li>PackageRolloutNotStarted</li><li>PackageRolloutInProgress</li><li>PackageRolloutComplete</li><li>PackageRolloutStopped</li></ul>  |  
 | fallbackSubmissionId    |  chaîne   |  ID de la soumission qui sera reçue par les clients n’obtenant pas les packages de déploiement progressif.   |          
 
@@ -673,7 +673,7 @@ Vous pouvez ajouter jusqu'à 15 ressources de bande-annonce pour le tableau *tr
 
 Cette ressource a les valeurs suivantes.
 
-| Value           | Type    | Description        |
+| Valeur           | Type    | Description        |
 |-----------------|---------|------|
 |  id               |    chaîne     |   ID de la bande-annonce. Cette valeur est fournie par l’espace partenaires.   |
 |  videoFileName               |    chaîne     |    Nom du fichier vidéo de bande-annonce dans l’archive ZIP qui contient les fichiers pour la soumission.    |     
@@ -689,7 +689,7 @@ Cette ressource a les valeurs suivantes.
 
 Cette ressource contient des références supplémentaires spécifiques aux paramètres régionaux pour une bande-annonce définie dans une [ressource de bande-annonce](#trailer-object). Cette ressource a les valeurs suivantes.
 
-| Value           | Type    | Description        |
+| Valeur           | Type    | Description        |
 |-----------------|---------|------|
 | title   |   chaîne      |  Titre localisé de la bande-annonce. Le titre s'affiche lorsque l’utilisateur lit la bande-annonce en mode plein écran.     |  
 | imageList    | tableau    |   Tableau contenant une ressource [image](#image-for-trailer-object) qui fournit l’image miniature pour la bande-annonce. Vous ne pouvez inclure qu'une seule ressource [image](#image-for-trailer-object) dans ce tableau.  |   
@@ -701,7 +701,7 @@ Cette ressource contient des références supplémentaires spécifiques aux para
 
 Cette ressource décrit l’image miniature d'une bande-annonce. Cette ressource a les valeurs suivantes.
 
-| Value           | Type    | Description           |
+| Valeur           | Type    | Description           |
 |-----------------|---------|------|
 |  fileName               |    chaîne     |   Nom du fichier d'image miniature dans l’archive ZIP que vous avez chargée pour la soumission.    |     
 |  id  |  chaîne  | ID de l'image miniature. Cette valeur est fournie par l’espace partenaires.  |
@@ -709,7 +709,7 @@ Cette ressource décrit l’image miniature d'une bande-annonce. Cette ressource
 
 <span/>
 
-## <a name="enums"></a>Enums
+## <a name="enums"></a>Énumérations
 
 Ces méthodes utilisent les énumérations suivantes.
 
@@ -719,12 +719,12 @@ Ces méthodes utilisent les énumérations suivantes.
 
 Les valeurs suivantes représentent les niveaux de prix disponibles dans la [ressource de tarification](#pricing-object) pour une soumission d’application.
 
-| Value           | Description        |
+| Valeur           | Description        |
 |-----------------|------|
 |  Base               |   Le niveau de prix n’est pas défini ; utilisez le prix de base de l’application.      |     
 |  NotAvailable              |   L’application n’est pas disponible dans la région spécifiée.    |     
 |  Libre              |   Cette application est gratuite.    |    
-|  Tier*xxxx*               |   Une chaîne spécifiant le niveau de prix d’une application, au format **Tier<em>xxxx</em>** . Actuellement, les plages suivantes de tarification sont prises en charge :<br/><br/><ul><li>Si la valeur *isAdvancedPricingModel* de la [ressource de tarification](#pricing-object) est **true**, les valeurs de tarification disponibles pour votre compte sont **Tier1012** - **Tier1424**.</li><li>Si la valeur *isAdvancedPricingModel* de la [ressource de tarification](#pricing-object) est **false**, les valeurs de tarification disponibles pour votre compte sont **Tier2** - **Tier96**.</li></ul>Pour afficher le tableau complet des niveaux de prix disponibles pour votre compte de développeur, y compris les prix spécifiques au marché qui sont associés à chaque niveau, accédez à la page **tarification et disponibilité** pour l’une de vos soumissions d’applications dans l’espace partenaires et Cliquez sur le lien **afficher la table** dans la section **marchés et prix personnalisés** (pour certains comptes de développeurs, ce lien est dans la section de **tarification** ).    |
+|  Tier*xxxx*               |   Une chaîne spécifiant le niveau de prix d’une application, au format **Tier<em>xxxx</em>** . Actuellement, les plages suivantes de tarification sont prises en charge :<br/><br/><ul><li>Si la valeur *isAdvancedPricingModel* de la [ressource de tarification](#pricing-object) est **true**, les valeurs de tarification disponibles pour votre compte sont **Tier1012** - **Tier1424**.</li><li>Si la valeur *isAdvancedPricingModel* de la [ressource de tarification](#pricing-object) est **false**, les valeurs de tarification disponibles pour votre compte sont **Tier2** - **Tier96**.</li></ul>Pour afficher le tableau complet des niveaux de prix disponibles pour votre compte de développeur, y compris les prix spécifiques au marché qui sont associés à chaque niveau, accédez à la page **tarification et disponibilité** pour l’une de vos soumissions d’application dans l’espace partenaires, puis cliquez sur le lien afficher **la** **table** dans la section **marchés et prix personnalisés** .    |
 
 
 <span id="enterprise-licensing" />
@@ -737,7 +737,7 @@ Les valeurs suivantes représentent le comportement de gestion des licences orga
 > Vous pouvez configurer les options de gestion des licences organisationnelles pour une soumission d’apps via l’API de soumission, toutefois vous ne pouvez pas utiliser cette API pour publier des soumissions pour [les achats en volume par le biais du Microsoft Store pour Entreprises et Microsoft Store pour Éducation](../publish/organizational-licensing.md). Pour publier des envois aux Microsoft Store pour les entreprises et les Microsoft Store pour l’éducation, vous devez utiliser l’espace partenaires.
 
 
-| Value           |  Description      |
+| Valeur           |  Description      |
 |-----------------|---------------|
 | Aucune            |     Ne mets pas votre application à la disposition des entreprises dont les licences en volume sont gérées par le Windows Store (en ligne).         |     
 | La licence        |     Mets votre application à la disposition des entreprises dont les licences en volume sont gérées par le Windows Store (en ligne).  |
@@ -750,7 +750,7 @@ Les valeurs suivantes représentent le comportement de gestion des licences orga
 
 Les valeurs suivantes représentent le code d’état d’une soumission.
 
-| Value           |  Description      |
+| Valeur           |  Description      |
 |-----------------|---------------|
 | Aucune            |     Aucun code n’a été spécifié.         |     
 | InvalidArchive        |     L’archive ZIP contenant le package n’est pas valide ou a un format d’archive non reconnu.  |

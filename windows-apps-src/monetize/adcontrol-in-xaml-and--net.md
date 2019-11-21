@@ -6,12 +6,12 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: Windows 10, uwp, annonces, publicité, AdControl, contrôle de publicité, XAML, .net, procédure pas à pas
 ms.localizationpriority: medium
-ms.openlocfilehash: 8784de7025a2e9efa8e9e02be14c94579730a1dd
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: beafc002888605ddebac99a67ae1cdac9715de14
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608644"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259307"
 ---
 # <a name="adcontrol-in-xaml-and-net"></a>AdControl en XAML et .NET
 
@@ -19,11 +19,11 @@ ms.locfileid: "57608644"
 Cette procédure pas à pas montre comment utiliser la classe [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) pour afficher des bannières publicitaires dans une application de plateforme Windows universelle (UWP) XAML pour Windows 10 implémentées avec C#.
 
 > [!NOTE]
-> Le Kit de développement Microsoft Advertising prend également en charge les applications XAML qui sont implémentées à l’aide de C++. Pour obtenir un exemple de projet complet, consultez les [exemples de publicité sur GitHub](https://aka.ms/githubads).
+> Le Kit de développement Microsoft Advertising prend également en charge les applications XAML qui sont implémentées à l’aide de C++. Pour obtenir un exemple de projet complet, consultez les [exemples de publicité sur GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising).
 
 ## <a name="prerequisites"></a>Conditions préalables
 
-* Installer le [SDK Microsoft Advertising](https://aka.ms/ads-sdk-uwp) avec Visual Studio 2015 ou une version ultérieure de Visual Studio. Pour des instructions d’installation, voir [cet article](install-the-microsoft-advertising-libraries.md).
+* Installer le [SDK Microsoft Advertising](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) avec Visual Studio 2015 ou une version ultérieure de Visual Studio. Pour des instructions d’installation, voir [cet article](install-the-microsoft-advertising-libraries.md).
 
 ## <a name="integrate-a-banner-ad-into-your-app"></a>Intégrer une bannière publicitaire dans votre application
 
@@ -78,7 +78,7 @@ Cette procédure pas à pas montre comment utiliser la classe [AdControl](https:
 5. Dans la balise **Grid**, ajoutez le code correspondant à la classe **AdControl**. Affectez les propriétés [AdUnitId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.adunitid) et [ApplicationId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) aux [valeurs de l'unité publicitaire test](set-up-ad-units-in-your-app.md#test-ad-units). Ajustez également les valeurs **Height** (hauteur) et **Width** (largeur) de la commande pour qu’elle corresponde à l’une des [tailles de publicités prises en charge pour les bannières publicitaires](supported-ad-sizes-for-banner-ads.md).
 
     > [!NOTE]
-    > Chaque **AdControl** est associé à une *unité publicitaire* qui est utilisée par nos services pour servir des publicités au contrôle, et chaque unité publicitaire se compose d’un *ID d'unité publicitaire* et d'un *ID d'application*. Dans ces étapes, vous attribuez à votre contrôle des valeurs de test ID d’unité publicitaire et ID d'application. Ces valeurs de test ne peuvent être utilisées que dans une version de test de votre application. Avant de publier votre application dans le Store, vous devez [remplacer ces valeurs avec les valeurs en direct de test](#release) à partir du centre de partenaires.
+    > Chaque **AdControl** est associé à une *unité publicitaire* qui est utilisée par nos services pour servir des publicités au contrôle, et chaque unité publicitaire se compose d’un *ID d'unité publicitaire* et d'un *ID d'application*. Dans ces étapes, vous attribuez à votre contrôle des valeurs de test ID d’unité publicitaire et ID d'application. Ces valeurs de test ne peuvent être utilisées que dans une version de test de votre application. Avant de publier votre application dans le Windows Store, vous devez [remplacer ces valeurs de test par des valeurs dynamiques](#release) de l’espace partenaires.
 
     La balise **Grid** complète ressemble à ce code.
 
@@ -124,17 +124,17 @@ Cette procédure pas à pas montre comment utiliser la classe [AdControl](https:
 
 1. Assurez-vous que votre utilisation des bannières publicitaires dans votre app respecte nos [recommandations en matière de bannières publicitaires](ui-and-user-experience-guidelines.md#guidelines-for-banner-ads).
 
-2.  Dans le centre de partenaires, accédez à la [les publicités dans l’application](../publish/in-app-ads.md) page et [créer une unité ad](set-up-ad-units-in-your-app.md#live-ad-units). Pour le type d’unité publicitaire, spécifiez **Bannière**. Prenez note de l’ID d’unité publicitaire et de l’ID de l’application.
+2.  Dans l’espace partenaires, accédez à la page [annonces dans l’application](../publish/in-app-ads.md) et [créez une unité ad](set-up-ad-units-in-your-app.md#live-ad-units). Pour le type d’unité publicitaire, spécifiez **Bannière**. Prenez note de l’ID d’unité publicitaire et de l’ID de l’application.
     > [!NOTE]
-    > Les valeurs d'ID d’application pour les unités publicitaires de test et les unités publicitaires dynamiques UWP ont des formats différents. Les valeurs d’ID d'application tests sont des GUID. Lorsque vous créez une unité d’ad UWP en direct dans l’espace partenaires, la valeur d’ID application pour l’unité ad correspond toujours à l’ID de Store pour votre application (un exemple de valeur d’ID de Store ressemble à 9NBLGGH4R315).
+    > Les valeurs d'ID d’application pour les unités publicitaires de test et les unités publicitaires dynamiques UWP ont des formats différents. Les valeurs d’ID d'application tests sont des GUID. Lorsque vous créez une unité ad UWP en temps réel dans l’espace partenaires, la valeur de l’ID d’application pour l’unité ad correspond toujours à l’ID de magasin de votre application (un exemple de valeur d’ID de magasin ressemble à 9NBLGGH4R315).
 
 3. Vous pouvez, si vous le souhaitez, activer la médiation publicitaire pour **AdControl** en configurant ces paramètres dans la section [Paramètres de médiation](../publish/in-app-ads.md#mediation) de la page [Publicités dans l'app](../publish/in-app-ads.md). La médiation publicitaire vous permet d’optimiser vos revenus publicitaires et vos capacités de promotion d’application en affichant des spots issus de plusieurs réseaux publicitaires, y compris les publicités d’autres réseaux payants tels que Taboola et Smaato et les publicités des campagnes de promotion d’applications Microsoft.
 
-4.  Dans votre code, remplacez les valeurs d’unit test ad (**ApplicationId** et **AdUnitId**) avec les valeurs en direct, vous avez généré dans le centre de partenaires.
+4.  Dans votre code, remplacez les valeurs de l’unité ad du test (**ApplicationID** et **AdUnitId**) par les valeurs dynamiques que vous avez générées dans l’espace partenaires.
 
-5.  [Soumettre votre application](../publish/app-submissions.md) vers le Store à l’aide de partenaires.
+5.  [Soumettez votre application](../publish/app-submissions.md) au magasin à l’aide de l’espace partenaires.
 
-6.  Examinez votre [rapports de performances de publicité](../publish/advertising-performance-report.md) dans Partner Center.
+6.  Passez en revue les [rapports de performances publicitaires](../publish/advertising-performance-report.md) dans l’espace partenaires.
 
 <span id="manage" />
 
@@ -147,7 +147,7 @@ Vous pouvez utiliser plusieurs objets **AdControl** dans une seule application (
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Instructions pour les annonces de bannière](ui-and-user-experience-guidelines.md#guidelines-for-banner-ads)
+* [Instructions pour les bannières publicitaires](ui-and-user-experience-guidelines.md#guidelines-for-banner-ads)
 * [Procédure pas à pas pour gérer les erreurs dans XAML/C#](error-handling-in-xamlc-walkthrough.md).
-* [Exemples de publicité sur GitHub](https://aka.ms/githubads)
-* [Configurer des unités d’ad pour votre application](set-up-ad-units-in-your-app.md)
+* [Exemples de publicité sur GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)
+* [Configurer des unités AD pour votre application](set-up-ad-units-in-your-app.md)

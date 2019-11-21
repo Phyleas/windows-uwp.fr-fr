@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 01754d94cf413317cf204d04f8590028eeabcfc8
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 945368e27c4f6215d2f5df20d52d916ead3597dd
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317309"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257948"
 ---
 # <a name="guidelines-for-panning"></a>Recommandations en matière de mouvement panoramique
 
@@ -26,17 +26,17 @@ Le mouvement panoramique ou défilement permet à l’utilisateur de naviguer au
 ## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
 
 
-**Indicateurs de panoramique et de barres de défilement**
+**Panoramique des indicateurs et des barres de défilement**
 
 -   Vérifiez que le mouvement panoramique/défilement est possible avant de charger du contenu dans votre application.
 
--   Affichez des indicateurs de mouvement panoramique et des barres de défilement pour offrir des repères d’emplacement et de taille. Masquez-les si vous fournissez une fonction de navigation personnalisée.
+-   Affichez les indicateurs de mouvement panoramique et des barres de défilement pour offrir des repères d’emplacement et de taille. Masquez-les si vous fournissez une fonction de navigation personnalisée.
 
-    **Remarque**  Contrairement à défilement standard barres, indicateurs de panoramique sont purement informatifs. Ils ne sont pas exposés aux périphériques d’entrée et ne peuvent pas être manipulés de quelque manière que ce soit.
+    **Notez**  contrairement aux barres de défilement standard, les indicateurs panoramiques sont purement informatifs. Ils ne sont pas exposés aux périphériques d’entrée et ne peuvent pas être manipulés de quelque manière que ce soit.
 
      
 
-**Avec un seul axe panoramique (dépassement de capacité unidimensionnel)**
+**Panoramique à un seul axe (débordement unidimensionnel)**
 
 -   Utilisez le mouvement panoramique sur un axe pour les régions de contenu qui s’étendent au-delà des contours de la fenêtre d’affichage (vertical ou horizontal).
 
@@ -44,27 +44,27 @@ Le mouvement panoramique ou défilement permet à l’utilisateur de naviguer au
     -   Mouvement panoramique horizontal pour afficher une grille d’éléments.
 -   Si l’utilisateur doit pouvoir faire défiler et s’arrêter entre des points d’ancrage, n’utilisez pas de points d’ancrage obligatoires avec le mouvement panoramique sur un seul axe. Les points d’ancrage obligatoires permettent de garantir que l’utilisateur sera arrêté à ces points. Privilégiez, dans ce cas, les points d’ancrage de proximité.
 
-**Panoramique de forme libre (dépassement de capacité à deux dimensions)**
+**Panoramique de forme libre (débordement à deux dimensions)**
 
 -   Utilisez le mouvement panoramique sur deux axes pour les régions de contenu qui s’étendent au-delà des contours de la fenêtre d’affichage (à la fois vertical et horizontal).
 
     -   Annulez le comportement de rails par défaut et utilisez le mouvement panoramique libre pour afficher du contenu non structuré dans lequel l’utilisateur sera probablement amené à se déplacer dans plusieurs directions.
 -   Le mouvement panoramique libre est tout à fait adapté à la navigation entre les images ou les cartes.
 
-**Vue avec pages**
+**Affichage paginé**
 
 -   Utilisez des points d’ancrage obligatoires lorsque le contenu est composé d’éléments distincts ou si vous souhaitez afficher un élément dans son intégralité. Par exemple, les pages d’un livre ou d’un magazine, une colonne d’articles ou des images individuelles.
 
     -   Placez un point d’ancrage à chaque limite logique.
     -   Dimensionnez ou mettez à l’échelle chaque élément pour qu’il tienne dans la vue.
 
-**Points clés et logiques**
+**Points de clé et logique**
 
 -   Utilisez des points d’ancrage de proximité si le contenu comporte des points clés ou des points logiques auxquels l’utilisateur sera susceptible de s’arrêter. Par exemple, un en-tête de section.
 
 -   Si des limites ou des contraintes de tailles maximale et minimale sont définies, utilisez le retour visuel pour indiquer quand l’utilisateur atteint ou dépasse ces limites.
 
-**Le chaînage de contenu incorporé ou imbriqué**
+**Chaînage de contenu incorporé ou imbriqué**
 
 -   Utilisez le mouvement panoramique sur un seul axe (généralement horizontal) et les dispositions en colonne pour le texte et le contenu basé sur la grille. Dans ces cas, le contenu est généralement renvoyé à la ligne et le texte circule naturellement d’une colonne à l’autre. L’expérience utilisateur est ainsi cohérente et détectable parmi les applications UWP.
 
@@ -76,11 +76,11 @@ Le mouvement panoramique ou défilement permet à l’utilisateur de naviguer au
 
 ## <a name="additional-usage-guidance"></a>Indications d’utilisation supplémentaires
 
-Le mouvement panoramique tactile, par un mouvement de glissement ou de balayage avec un ou plusieurs doigts, ressemble à un défilement à l’aide de la souris. L’interaction de type panoramique ressemble plus à la rotation de la roulette de la souris ou au glissement de la case de défilement qu’à un clic sur la barre de défilement. Sauf si une distinction est effectuée dans une API ou requis par la partie d’interface utilisateur Windows spécifique à l’appareil, nous appelons simplement les deux interactions en tant que l’affichage panoramique.
+Le mouvement panoramique tactile, par un mouvement de glissement ou de balayage avec un ou plusieurs doigts, ressemble à un défilement à l’aide de la souris. L’interaction de type panoramique ressemble plus à la rotation de la roulette de la souris ou au glissement de la case de défilement qu’à un clic sur la barre de défilement. À moins qu’une distinction ne soit faite dans une API ou requise par une interface utilisateur Windows spécifique à l’appareil, nous faisons simplement référence aux deux interactions comme panoramiques.
 
 > <div id="main">
-> <strong>Windows 10 Fall Creators Update - changement de comportement</strong> par défaut, au lieu de la sélection de texte, un stylet active maintenant défile/PAN dans les applications UWP (par exemple, tactile, un pavé tactile et stylet passif).  
-> Si votre application repose sur le comportement précédent, vous pouvez remplacer le défilement du stylet et rétablir le comportement précédent. Pour plus d’informations, consultez la rubrique de référence des API pour le <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer">ScrollViewer classe</a>.
+> <strong>Mise à jour des créateurs de automne Windows 10-modification du comportement</strong> Par défaut, à la place de la sélection de texte, un stylet actif défile à présent dans les applications UWP (comme Touch, pavé tactile et stylet passif).  
+> Si votre application repose sur le comportement précédent, vous pouvez remplacer le défilement du stylet et rétablir le comportement précédent. Pour plus d’informations, consultez la rubrique de référence de l’API pour la <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer">classe ScrollViewer</a>.
 > </div>
 
 Selon le périphérique d’entrée utilisé, l’utilisateur effectue un mouvement panoramique au sein d’une région de mouvement panoramique à l’aide de l’un des éléments suivants :
@@ -93,18 +93,18 @@ Selon le périphérique d’entrée utilisé, l’utilisateur effectue un mouvem
 
 Le glissement implique un déplacement lent des doigts dans la direction du mouvement panoramique. Cela crée une relation directe dans laquelle le contenu défile à la même vitesse et à la même distance que les doigts. Le balayage, qui implique un glissement rapide suivi d’une levée des doigts, entraîne l’application des mouvements physiques suivants sur l’animation de mouvement panoramique :
 
--   Décélération (inertie) : Capture les causes de doigts panoramique pour démarrer la décélération. Cette action s’apparente à glisser sur une surface glissante jusqu’à l’arrêt.
--   Absorption : Panoramique momentum pendant la décélération de provoque un léger impact retour à si un point d’alignement ou une limite de la zone de contenu est atteinte.
+-   Décélération (inertie) : la levée des doigts génère le démarrage de la décélération du mouvement panoramique. Cette action s’apparente à glisser sur une surface glissante jusqu’à l’arrêt.
+-   Absorption : l’impulsion du mouvement panoramique au cours de la décélération provoque un léger effet de rebond au contact d’un point d’ancrage ou d’une limite de la zone de contenu.
 
-**Types de panoramique**
+**Types de panoramiques**
 
-Windows 8 prend en charge trois types de panoramique :
+Windows 8 prend en charge trois types de Panorama :
 
 -   Un seul axe : le mouvement panoramique est pris en charge dans une seule direction (horizontale ou verticale).
 -   Rails : le mouvement panoramique est pris en charge dans toutes les directions. En revanche, dès lors que l’utilisateur croise un seuil de distance dans une direction spécifique, le défilement est limité à cet axe.
 -   Libre : le mouvement panoramique est pris en charge dans toutes les directions.
 
-**Panoramique de l’interface utilisateur**
+**Interface utilisateur panoramique**
 
 L’expérience d’interaction pour le mouvement panoramique est propre au périphérique d’entrée tout en étant similaire en termes de fonctionnalité.
 
@@ -115,7 +115,7 @@ Il existe deux modes d’affichage du mouvement panoramique qui dépendent du p
 -   Des indicateurs de mouvement panoramique pour l’interaction tactile.
 -   Des barres de défilement pour d’autres périphériques d’entrée comme la souris, le pavé tactile, le clavier et le stylet.
 
-**Remarque**  indicateurs de panoramique sont visibles uniquement lorsque le contact tactile se trouve dans la région pannable. De même, la barre de défilement est seulement visible quand le curseur de la souris, le curseur du stylo/stylet ou le focus du clavier se trouve dans la région de défilement.
+**Notez**  les indicateurs panoramiques sont visibles uniquement lorsque le contact tactile est dans la région pannable. De même, la barre de défilement est seulement visible quand le curseur de la souris, le curseur du stylo/stylet ou le focus du clavier se trouve dans la région de défilement.
 
  
 
@@ -152,7 +152,7 @@ Le schéma suivant explique le concept des rails.
 
 ![diagramme d’un écran doté de rails qui restreignent le mouvement panoramique](images/ux-panning-rails.png)
 
-**Le chaînage de contenu incorporé ou imbriqué**
+**Chaînage de contenu incorporé ou imbriqué**
 
 Une fois qu’un utilisateur atteint une limite de zoom ou de défilement sur un élément qui a été imbriqué dans un autre élément avec zoom ou défilement, vous pouvez spécifier si cet élément parent doit continuer l’opération de zoom ou de défilement commencée dans son élément enfant. Cela s’appelle le chaînage de zoom ou de défilement.
 
@@ -168,28 +168,28 @@ Si la surface est insuffisante, comme dans le schéma suivant, la région de mou
 
 Ces recommandations s’avèrent utiles pour des applications telles que les albums photo ou les applications de mappage qui prennent en charge en même temps le mouvement panoramique libre dans chaque image et le mouvement panoramique sur un seul axe dans l’album (vers les images précédentes ou suivantes) ou la zone de détails. Dans les applications qui fournissent une zone de détails ou d’options correspondant à une image de défilement libre ou carte, nous recommandons que la disposition de la page commence avec la même zone de détails et d’options. En effet, la zone de défilement libre de l’image ou carte peut interférer avec le mouvement panoramique vers la zone de détails.
 
-## <a name="related-articles"></a>Articles associés
+## <a name="related-articles"></a>Articles connexes
 
 
-* [Interactions de l’utilisateur personnalisé](https://docs.microsoft.com/windows/uwp/design/layout/index)
-* [Optimiser le ListView et GridView](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview)
+* [Interactions utilisateur personnalisées](https://docs.microsoft.com/windows/uwp/design/layout/index)
+* [Optimiser ListView et GridView](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview)
 * [Accessibilité du clavier](https://docs.microsoft.com/windows/uwp/accessibility/keyboard-accessibility)
 
 **Exemples**
-* [Exemple d’entrée de base](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Exemple d’entrée à faible latence](https://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [Exemple de mode d’interaction utilisateur](https://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Exemple d’éléments visuels de focus](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [Exemple d’entrée de base](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+* [Exemple d’entrée à faible latence](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+* [Exemple de mode d’interaction utilisateur](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
+* [Exemples de visuels de focus](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
 
-**Exemples d’archive**
-* [Entrée : Exemple d’événements d’entrée utilisateur XAML](https://go.microsoft.com/fwlink/p/?linkid=226855)
-* [Entrée : Exemples de fonctionnalités d’appareil](https://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Entrée : Exemple de test d’atteinte tactile](https://go.microsoft.com/fwlink/p/?linkid=231590)
-* [XAML de défilement, panoramique et zoom d’exemple](https://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Entrée : Exemple d’entrée manuscrite simplifiée](https://go.microsoft.com/fwlink/p/?linkid=246570)
-* [Entrée : Exemple de mouvements de Windows 8](https://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [Entrée : Manipulations et exemple de mouvements (C++)](https://go.microsoft.com/fwlink/p/?linkid=231605)
-* [Exemple d’entrée tactile de DirectX](https://go.microsoft.com/fwlink/p/?LinkID=231627)
+**Exemples d’archives**
+* [Entrée : exemple d’événements d’entrée d’utilisateur XAML](https://code.msdn.microsoft.com/windowsapps/Input-3dff271b)
+* [Entrée : exemple de fonctionnalités de l’appareil](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
+* [Entrée : exemple de test de positionnement tactile](https://code.msdn.microsoft.com/windowsapps/Touch-Hit-Testing-sample-5e35c690)
+* [Exemple de défilement XAML, panoramique et zoom](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9)
+* [Entrée : exemple d’encre simplifiée](https://code.msdn.microsoft.com/windowsapps/Input-simplified-ink-sample-11614bbf)
+* [Entrée : exemple de gestes Windows 8](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
+* [Entrée : manipulations et mouvements (C++), exemple](https://code.msdn.microsoft.com/windowsapps/Manipulations-and-gestures-362b6b59)
+* [Exemple d’entrée tactile DirectX](https://code.msdn.microsoft.com/windowsapps/Simple-Direct3D-Touch-f98db97e)
  
 
  

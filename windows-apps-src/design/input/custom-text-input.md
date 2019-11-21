@@ -8,12 +8,12 @@ keywords: clavier, texte, Core Text, texte personnalisé, Text Services Framewor
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 91015294c595987e14189f85f3bd2cbed3ba8423
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 6313fb4deed76c61d5fb8309da72417b92bff503
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66363819"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258017"
 ---
 # <a name="custom-text-input"></a>Saisie de texte personnalisé
 
@@ -56,12 +56,12 @@ Les plages de texte et les sélections sont représentées par la structure [**C
 
 | Champ                  | Type de données                                                                 | Description                                                                      |
 |------------------------|---------------------------------------------------------------------------|----------------------------------------------------------------------------------|
-| **StartCaretPosition** | **Nombre** \[JavaScript\] | **System.Int32** \[.NET\] | **int32** \[C++\] | La position de départ d’une plage correspond à l’ACP située juste avant le premier caractère. |
-| **EndCaretPosition**   | **Nombre** \[JavaScript\] | **System.Int32** \[.NET\] | **int32** \[C++\] | La position de fin d’une plage correspond à l’ACP située juste après le dernier caractère.     |
+| **StartCaretPosition** | **Nombre** \[\] JavaScript | **System. Int32** \[.net\] | \] \[C++ Int32 | La position de départ d’une plage correspond à l’ACP située juste avant le premier caractère. |
+| **EndCaretPosition**   | **Nombre** \[\] JavaScript | **System. Int32** \[.net\] | \] \[C++ Int32 | La position de fin d’une plage correspond à l’ACP située juste après le dernier caractère.     |
 
  
 
-Par exemple, dans la plage de texte indiquée précédemment, la plage \[0, 5\] Spécifie le mot « Hello ». **StartCaretPosition** doit toujours être inférieur ou égal à **EndCaretPosition**. La plage \[5, 0\] n’est pas valide.
+Par exemple, dans la plage de texte indiquée précédemment, la plage \[0,5\] spécifie le mot « hello ». **StartCaretPosition** doit toujours être inférieur ou égal à **EndCaretPosition**. La plage \[5\] n’est pas valide.
 
 ### <a name="insertion-point"></a>Point d’insertion
 
@@ -73,7 +73,7 @@ Certains contrôles d’édition prennent en charge les sélections non contigu�
 
 Prenons l’exemple du flux de texte suivant :
 
-![exemple de diagramme de flux de données texte](images/coretext/stream-2.png) il existe deux options : \[0, 1\] et \[6, 11\]. Le contrôle d’édition doit signaler qu’un seul d'entre eux ; soit \[0, 1\] ou \[6, 11\].
+![exemple de diagramme de flux de texte](images/coretext/stream-2.png) il y a deux sélections : \[0, 1\] et \[6, 11\]. Le contrôle d’édition ne doit signaler qu’un seul d’entre eux ; \[0, 1\] ou \[6, 11\].
 
 ## <a name="working-with-text"></a>Utilisation du texte
 
@@ -94,11 +94,11 @@ Votre système de contrôle d’édition accepte généralement les demandes de 
 2.  Placer la sélection à la position indiquée dans [**CoreTextTextUpdatingEventArgs.NewSelection**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexttextupdatingeventargs.newselection).
 3.  Indiquer au système que la mise à jour a été correctement effectuée en définissant [**CoreTextTextUpdatingEventArgs.Result**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexttextupdatingeventargs.result) sur [**CoreTextTextUpdatingResult.Succeeded**](https://docs.microsoft.com/uwp/api/Windows.UI.Text.Core.CoreTextTextUpdatingResult).
 
-Par exemple, voici l’état d’un contrôle d’édition avant que l’utilisateur tape « d ». Le point d’insertion est à \[10, 10\].
+Par exemple, voici l’état d’un contrôle d’édition avant que l’utilisateur tape « d ». Le point d’insertion est à \[10\].
 
-![exemple de diagramme de flux de données texte](images/coretext/stream-3.png) lorsque l’utilisateur tape « d », un [ **TextUpdating** ](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexteditcontext.textupdating) événement est déclenché par le code suivant [ **CoreTextTextUpdatingEventArgs** ](https://docs.microsoft.com/uwp/api/Windows.UI.Text.Core.CoreTextTextUpdatingEventArgs) données :
+![exemple de diagramme de flux de texte](images/coretext/stream-3.png) lorsque l’utilisateur tape « d », un événement [**TextUpdating**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexteditcontext.textupdating) est déclenché avec les données [**CoreTextTextUpdatingEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Text.Core.CoreTextTextUpdatingEventArgs) suivantes :
 
--   [**Plage**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexttextupdatingeventargs.range) = \[10, 10\]
+-   [**Plage**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexttextupdatingeventargs.range) = \[10\]
 -   [**Text**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexttextupdatingeventargs.text) = "d"
 -   [**NewSelection**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexttextupdatingeventargs.newselection) = \[11, 11\]
 
@@ -115,11 +115,11 @@ Par exemple, imaginons un système de contrôle d’édition qui accepte uniquem
 
 Parfois, votre système de contrôle d’édition apporte des modifications au texte lorsque le texte est collé ou corrigé automatiquement. Dans ces cas, vous devez signaler ces modifications aux services de texte en appelant la méthode [**NotifyTextChanged**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexteditcontext.notifytextchanged).
 
-Par exemple, voici l’état d’un contrôle d’édition avant que l’utilisateur colle le mot « World ». Le point d’insertion est à \[6, 6\].
+Par exemple, voici l’état d’un contrôle d’édition avant que l’utilisateur colle le mot « World ». Le point d’insertion se trouve à \[6, 6\].
 
-![exemple de diagramme de flux de données texte](images/coretext/stream-5.png) l’utilisateur exécute l’action de collage et finit par le contrôle d’édition avec le texte suivant :
+![exemple de diagramme de flux de texte](images/coretext/stream-5.png) l’utilisateur exécute l’action coller et le contrôle d’édition finit par le texte suivant :
 
-![exemple de diagramme de flux de données texte](images/coretext/stream-4.png) dans ce cas, vous devez appeler [ **NotifyTextChanged** ](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexteditcontext.notifytextchanged) avec ces arguments :
+![exemple de diagramme de flux de texte](images/coretext/stream-4.png) quand cela se produit, vous devez appeler [**NotifyTextChanged**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexteditcontext.notifytextchanged) avec ces arguments :
 
 -   *modifiedRange* = \[6, 6\]
 -   *newLength* = 5
@@ -131,13 +131,13 @@ Un ou plusieurs événements [**TextRequested**](https://docs.microsoft.com/uwp/
 
 Dans votre système de contrôle d’édition, vous souhaiterez peut-être ignorer une mise à jour de texte pour utiliser des fonctionnalités de correction automatique.
 
-Par exemple, imaginons un système de contrôle d’édition qui fournit une fonctionnalité de correction qui formalise les contractions. Voici l’état du contrôle d’édition avant que l’utilisateur appuie sur la touche Espace pour déclencher la correction. Le point d’insertion est à \[3, 3\].
+Par exemple, imaginons un système de contrôle d’édition qui fournit une fonctionnalité de correction qui formalise les contractions. Voici l’état du contrôle d’édition avant que l’utilisateur appuie sur la touche Espace pour déclencher la correction. Le point d’insertion se trouve à \[3, 3\].
 
-![exemple de diagramme de flux de données texte](images/coretext/stream-6.png) l’utilisateur appuie sur la touche espace et une [ **TextUpdating** ](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexteditcontext.textupdating) événement est déclenché. Le système de contrôle d’édition accepte la mise à jour de texte. Voici l’état que le contrôle d’édition affiche pendant un court instant avant la fin de la correction. Le point d’insertion est à \[4, 4\].
+![exemple de diagramme de flux de texte](images/coretext/stream-6.png) l’utilisateur appuie sur la touche espace et un événement [**TextUpdating**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexteditcontext.textupdating) correspondant est déclenché. Le système de contrôle d’édition accepte la mise à jour de texte. Voici l’état que le contrôle d’édition affiche pendant un court instant avant la fin de la correction. Le point d’insertion se trouve à \[4\].
 
-![exemple de diagramme de flux de données texte](images/coretext/stream-7.png) en dehors de la [ **TextUpdating** ](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexteditcontext.textupdating) Gestionnaire d’événements, le contrôle d’édition effectue la correction suivante. Voici l’état du contrôle d’édition après la fin de la correction. Le point d’insertion est à \[5, 5\].
+![exemple de diagramme de flux de texte](images/coretext/stream-7.png) en dehors du gestionnaire d’événements [**TextUpdating**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexteditcontext.textupdating) , le contrôle d’édition effectue la correction suivante. Voici l’état du contrôle d’édition après la fin de la correction. Le point d’insertion se trouve à \[5\].
 
-![exemple de diagramme de flux de données texte](images/coretext/stream-8.png) dans ce cas, vous devez appeler [ **NotifyTextChanged** ](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexteditcontext.notifytextchanged) avec ces arguments :
+![exemple de diagramme de flux de texte](images/coretext/stream-8.png) quand cela se produit, vous devez appeler [**NotifyTextChanged**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexteditcontext.notifytextchanged) avec ces arguments :
 
 -   *modifiedRange* = \[1, 2\]
 -   *newLength* = 2
@@ -154,8 +154,8 @@ Il peut arriver que le champ [**Range**](https://docs.microsoft.com/uwp/api/wind
 ## <a name="related-articles"></a>Articles connexes
 
 **Exemples**
-* [Exemple de contrôle Edit personnalisé](https://go.microsoft.com/fwlink/?linkid=831024)  
- **archiver des exemples**
-* [Exemple de modification de texte XAML](https://go.microsoft.com/fwlink/p/?LinkID=251417)
+* **Exemples d’archives** du [contrôle d’édition personnalisé](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomEditControl)  
+
+* [Exemple d’édition de texte XAML](https://code.msdn.microsoft.com/windowsapps/XAML-text-editing-sample-fb0493ad)
 
 

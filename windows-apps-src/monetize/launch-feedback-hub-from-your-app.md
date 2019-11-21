@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Hub de commentaires, lancer
 ms.localizationpriority: medium
-ms.openlocfilehash: 4190c8af5c8cb7db6b80b1149dff631a8454015b
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 589cad0c5055f0bfbade457e035702ee2cffd43d
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371070"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259246"
 ---
 # <a name="launch-feedback-hub-from-your-app"></a>Lancer le Hub de commentaires à partir de votre application
 
-Vous pouvez encourager vos clients à laisser des commentaires en ajoutant à votre application de plateforme Windows universelle (UWP) un contrôle (tel qu’un bouton) lançant le Hub de commentaires. Le Hub de commentaires est une application préinstallée qui centralise le recueil de commentaires concernant Windows et les applications installées. Tous les commentaires des clients qui sont soumis pour votre application via le Hub de commentaires est collectée et présentée sous la [rapport de commentaires](../publish/feedback-report.md) dans Partner Center, par conséquent, vous pouvez voir les problèmes, et les suggestions upvotes vos clients disposent soumis dans un rapport.
+Vous pouvez encourager vos clients à laisser des commentaires en ajoutant à votre application de plateforme Windows universelle (UWP) un contrôle (tel qu’un bouton) lançant le Hub de commentaires. Le Hub de commentaires est une application préinstallée qui centralise le recueil de commentaires concernant Windows et les applications installées. Tous les commentaires des clients qui sont envoyés pour votre application par le biais de feedback Hub sont collectés et présentés dans le [rapport de commentaires](../publish/feedback-report.md) de l’espace partenaires. vous pouvez ainsi voir les problèmes, les suggestions et les votes que vos clients ont soumis dans un rapport.
 
-Pour lancer le Hub de commentaires à partir de votre application, utilisez une API fournie par [Microsoft Store Services SDK](https://aka.ms/store-em-sdk). Nous vous recommandons d’utiliser cette API pour lancer le Hub de commentaires à partir d’un élément d’interface utilisateur de votre application qui respecte nos recommandations en matière de conception.
+Pour lancer le Hub de commentaires à partir de votre application, utilisez une API fournie par [Microsoft Store Services SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftStoreServicesSDK). Nous vous recommandons d’utiliser cette API pour lancer le Hub de commentaires à partir d’un élément d’interface utilisateur de votre application qui respecte nos recommandations en matière de conception.
 
 > [!NOTE]
 > Le Hub de commentaires est disponible uniquement sur les appareils exécutant la version 10.0.14271 ou une version ultérieure d’un système d’exploitation Windows 10 basé sur les [familles d’appareils](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) mobiles et de bureau. Nous vous recommandons de n’afficher un contrôle de commentaires dans votre application que si le Hub de commentaires est disponible sur l’appareil de l’utilisateur. Le code de cette rubrique illustre comment procéder.

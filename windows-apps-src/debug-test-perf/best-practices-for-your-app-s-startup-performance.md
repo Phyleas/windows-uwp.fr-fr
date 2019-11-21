@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ecb325566733e57c1ae9d1a13c68b25794e9e87
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: ae37ab763b6705fbb3f341569904972ebb181412
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360036"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74254683"
 ---
 # <a name="best-practices-for-your-apps-startup-performance"></a>Meilleures pratiques en matière de performances lors du démarrage de votre application
 
@@ -32,7 +32,7 @@ Bien entendu, vous devez obtenir des évaluations représentatives de ce que l�
 
 La procédure suivante décrit comment exécuter Ngen.exe pour précompiler votre application.
 
-**Pour exécuter Ngen.exe**
+**Pour exécuter Ngen. exe**
 
 1.  Exécutez votre application au moins une fois pour vérifier que Ngen.exe la détecte.
 2.  Ouvrez le **Planificateur de tâches** en effectuant l’une des opérations suivantes :
@@ -323,7 +323,7 @@ Il est essentiel de prévoir l’affichage d’une page de chargement dans toute
 > End Class
 > ```
 
-Pour obtenir un exemple d’utilisation d’un écran de démarrage étendu, voir cet [exemple d’écran de démarrage](https://go.microsoft.com/fwlink/p/?linkid=234889).
+Pour obtenir un exemple d’utilisation d’un écran de démarrage étendu, voir cet [exemple d’écran de démarrage](https://code.msdn.microsoft.com/windowsapps/Splash-screen-sample-89c1dc78).
 
 ### <a name="phase-3"></a>Phase 3
 
@@ -339,7 +339,7 @@ C’est vous qui définissez le comportement de l’application à chaque phase 
 
 Le code réutilisable prend souvent la forme de modules (DLL) inclus dans un projet. Le chargement de ces modules nécessite des accès au disque, ce qui peut évidemment être coûteux en ressources. Cela peut avoir un impact sur les démarrages à chaud, même si c’est dans une moindre mesure que lors des démarrages à froid. En C# et Visual Basic, le CLR essaie le plus possible de différer ce coût en chargeant les assemblys à la demande : il ne charge un module que si celui-ci est référencé par une méthode exécutée. Par conséquent, dans le code de démarrage, référencez uniquement les assemblys nécessaires au lancement de votre application afin que le CLR ne charge pas de modules inutiles. Si le chemin de démarrage comporte des chemins de code inutilisés avec des références superflues, vous pouvez déplacer ces chemins de code vers d’autres méthodes pour éviter les chargements non nécessaires.
 
-Pour réduire les chargements de modules, vous pouvez aussi combiner les modules de votre application. En effet, le chargement d’un assembly volumineux est généralement plus rapide que celui de deux assemblys plus petits. Notez que la combinaison des modules n’est pas toujours possible. Par ailleurs, optez pour cette solution seulement si elle n’a pas d’impact significatif sur la productivité du développeur ni sur la réutilisation du code. Utilisez des outils tels que [PerfView](https://go.microsoft.com/fwlink/p/?linkid=251609) ou l’[Analyseur de performance Windows](https://docs.microsoft.com/previous-versions/windows/desktop/xperf/windows-performance-analyzer--wpa-) pour identifier les modules chargés au démarrage.
+Pour réduire les chargements de modules, vous pouvez aussi combiner les modules de votre application. En effet, le chargement d’un assembly volumineux est généralement plus rapide que celui de deux assemblys plus petits. Notez que la combinaison des modules n’est pas toujours possible. Par ailleurs, optez pour cette solution seulement si elle n’a pas d’impact significatif sur la productivité du développeur ni sur la réutilisation du code. Utilisez des outils tels que [PerfView](https://www.microsoft.com/download/details.aspx?id=28567) ou l’[Analyseur de performance Windows](https://docs.microsoft.com/previous-versions/windows/desktop/xperf/windows-performance-analyzer--wpa-) pour identifier les modules chargés au démarrage.
 
 ### <a name="make-smart-web-requests"></a>Effectuer des requêtes Web intelligentes
 

@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e5ff5d8e1a63522a70b37c3226b01a2fc680c368
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 30f361aad321feb44240e66c03003646c560a4f5
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318974"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257813"
 ---
 # <a name="accessibility-overview"></a>Vue d’ensemble de l’accessibilité  
 
@@ -103,7 +103,7 @@ Trois principaux aspects du texte sont pertinents en ce qui concerne l’accessi
 
 * Des outils doivent déterminer si le texte doit être lu dans le cadre d’une traversée de séquence de tabulation ou uniquement dans le cadre d’une représentation de document globale. Vous pouvez aider à contrôler cette détermination en choisissant l’élément approprié pour l’affichage du texte ou en ajustant les propriétés de ces éléments de texte. Chaque élément de texte disponible remplit une fonction donnée, souvent associée à un rôle UI Automation particulier. L’utilisation de l’élément incorrect peut entraîner le signalement du rôle incorrect à UI Automation et la création d’une expérience confuse pour un utilisateur de technologie d’assistance.
 * De nombreux utilisateurs souffrent de limitations visuelles qui font que le texte est difficile à lire en cas d’insuffisance du contraste par rapport à l’arrière-plan. L’impact sur l’utilisateur est délicat à évaluer pour un concepteur d’application qui ne souffre pas de la même limitation visuelle. Par exemple, un choix des couleurs inapproprié lors de la conception peut empêcher certains utilisateurs daltoniens de pouvoir lire le texte. Les recommandations en matière d’accessibilité effectuées initialement pour le contenu Web définissent des normes de contraste qui peuvent éviter ces problèmes également dans les applications. Pour plus d’informations, consultez la rubrique [Exigences de texte accessible](accessible-text-requirements.md).
-* De nombreux utilisateurs éprouvent des difficultés à lire du texte trop petit. Vous pouvez éviter que ce problème ne se produise en faisant en sorte que la police du texte de l’interface utilisateur de votre application soit suffisamment grande. Toutefois, ceci est difficile avec les applications qui affichent une grande quantité de texte ou du texte combiné à d’autres éléments visuels. Dans les cas de ce type, assurez-vous que l’application interagit correctement avec les fonctionnalités système qui peuvent agrandir l’affichage ainsi que le texte qu’elle contient. (Certains utilisateurs modifient les valeurs ppp comme option d’accessibilité.) (Cette option est disponible dans la zone **Agrandir les éléments affichés à l’écran** de la fenêtre **Options d’ergonomie**, qui redirige l’utilisateur vers une interface utilisateur du **Panneau de configuration** pour les options **Apparence et personnalisation** / **Affichage**.)
+* De nombreux utilisateurs éprouvent des difficultés à lire du texte trop petit. Vous pouvez éviter que ce problème ne se produise en faisant en sorte que le texte de l’interface utilisateur de votre application soit suffisamment grand en premier lieu. Toutefois, ceci est difficile avec les applications qui affichent une grande quantité de texte ou du texte combiné à d’autres éléments visuels. Dans les cas de ce type, assurez-vous que l’application interagit correctement avec les fonctionnalités système qui peuvent agrandir l’affichage ainsi que le texte qu’elle contient. (Certains utilisateurs modifient les valeurs ppp comme option d’accessibilité.) (Cette option est disponible dans la zone **Agrandir les éléments affichés à l’écran** de la fenêtre **Options d’ergonomie**, qui redirige l’utilisateur vers une interface utilisateur du **Panneau de configuration** pour les options **Apparence et personnalisation** / **Affichage**.)
 
 <span id="Supporting_high-contrast_themes"/>
 <span id="supporting_high-contrast_themes"/>
@@ -138,7 +138,7 @@ XAML
 </StackPanel>
 ```
 
-Visual Basic
+Visual Basic
 ```vb
 Private Sub ShowAccessibleUICheckBox_Click(ByVal sender As Object,
     ByVal e As RoutedEventArgs)
@@ -188,11 +188,11 @@ Lorsque vous créez un contrôle personnalisé, nous vous recommandons de mettre
 <span id="ASSISTIVE_TECHNOLOGY_SUPPORT_IN_APPS_THAT_SUPPORT_XAML___MICROSOFT_DIRECTX_INTEROP"/>
 
 ## <a name="assistive-technology-support-in-apps-that-support-xaml--microsoft-directx-interop"></a>Prise en charge de la technologie d’assistance dans les applications qui gèrent l’interopérabilité entre XAML et Microsoft DirectX  
-Par défaut, le contenu Microsoft DirectX hébergé dans une interface utilisateur XAML (à l’aide de la classe [**SwapChainPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) ou [**SurfaceImageSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource)) n’est pas accessible. L’[exemple XAML SwapChainPanel DirectX interop](https://go.microsoft.com/fwlink/p/?LinkID=309155) montre comment créer des homologues UI Automation pour le contenu DirectX hébergé. Cette technique permet de rendre le contenu hébergé accessible via UI Automation.
+Par défaut, le contenu Microsoft DirectX hébergé dans une interface utilisateur XAML (à l’aide de la classe [**SwapChainPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) ou [**SurfaceImageSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource)) n’est pas accessible. L’[exemple XAML SwapChainPanel DirectX interop](https://code.msdn.microsoft.com/windowsapps/XAML-SwapChainPanel-00cb688b) montre comment créer des homologues UI Automation pour le contenu DirectX hébergé. Cette technique permet de rendre le contenu hébergé accessible via UI Automation.
 
 ## <a name="related-topics"></a>Rubriques connexes  
-* [**Windows.UI.Xaml.Automation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation)
+* [**Windows. UI. Xaml. Automation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation)
 * [Conception pour l’accessibilité](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-overview)
-* [Exemple d’accessibilité XAML](https://go.microsoft.com/fwlink/p/?linkid=238570)
+* [Exemple d’accessibilité XAML](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d)
 * [Accessibilité](accessibility.md)
-* [Prise en main du Narrateur](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator)
+* [Prise en main du narrateur](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator)

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bf23926a1c17615db5ef838d21f9a46a8921c8c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a76b451a3d268e418ae24998afdd29d32bb43ed6
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57655784"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260136"
 ---
 # <a name="selecting-an-approach-to-ios-and-uwp-app-development"></a>Sélection d’une approche d’iOS et développement d’applications pour UWP
 
@@ -26,19 +26,19 @@ Windows et iOS peuvent sembler très différents, mais de plus en plus d'outils 
 
 Avec une nouvelle tablette, vous disposez de nombreuses options à votre disposition, notamment :
 
--   [Xamarin](https://go.microsoft.com/fwlink/p/?LinkID=320484)
+-   [Xamarin](https://xamarin.com/)
 
     Avec Xamarin, vous pouvez écrire votre application en C#, l’exécuter sous Windows et créer également des applications iOS natives. La prise en charge de Xamarin est intégrée à Visual Studio ; sélectionnez simplement le type de projet approprié.
 
--   [Apache Cordova](https://go.microsoft.com/fwlink/p/?LinkID=400439)
+-   [Apache Cordova](https://www.microsoft.com/?ref=go)
 
     Si vous préférez Javascript et HTML, Apache Cordova (également appelé PhoneGap) vous aidera à créer des applications multiplateformes pour iOS, Windows et Android. Ce type de projet est également intégré à Visual Studio.
 
 -   Moteurs de jeu
 
-    Avec des outils comme [Unity3D](https://go.microsoft.com/fwlink/p/?LinkID=320479) et [Unreal Engine](https://go.microsoft.com/fwlink/p/?LinkID=394062) à votre disposition, vous pouvez écrire des jeux de qualité AAA pour Windows et de nombreuses autres plateformes, y compris iOS. Unity prend en charge l’écriture de script en C#, Unreal utilise C++.
+    Avec des outils comme [Unity3D](https://www.unity3d.com/) et [Unreal Engine](https://www.unrealengine.com/en-US/) à votre disposition, vous pouvez écrire des jeux de qualité AAA pour Windows et de nombreuses autres plateformes, y compris iOS. Unity prend en charge l’écriture de script en C#, Unreal utilise C++.
 
--   [MonoGame](https://go.microsoft.com/fwlink/p/?LinkID=320483)
+-   [MonoGame](http://www.monogame.net/)
 
     Le successeur spirituel de XNA. C’est maintenant une infrastructure multiplateforme open source, ce qui signifie que vous pouvez écrire des applications en C# pour de nombreuses plateformes avec prise en charge des moteurs physiques et des graphismes 2D et 3D.
 
@@ -46,7 +46,7 @@ Avec une nouvelle tablette, vous disposez de nombreuses options à votre disposi
 
 Avec une application iOS existante, les options sont un peu plus limitées. Néanmoins, tout n’est pas perdu.
 
--   [Pont Windows pour iOS](https://go.microsoft.com/fwlink/p/?LinkId=619014)
+-   [Pont Windows pour iOS](https://github.com/Microsoft/WinObjC)
 
     Également connu sous le nom Project Islandwood, c’est un outil en cours de développement qui permet d’importer des projets Xcode directement dans Visual Studio. Le code Objective-C peut être généré et débogué dans Visual Studio. Si votre projet utilise des bibliothèques telles que Cocos pour les graphiques, cela peut s'avérer un moyen utile pour un portage rapide de votre application.
 
@@ -54,45 +54,45 @@ Avec une application iOS existante, les options sont un peu plus limitées. Néa
 
     Si votre logique d'entreprise est écrite en C++, plutôt qu’en Objective-C ou Swift, vous pouvez souvent utiliser ce code avec des modifications mineures de votre projet. Vous pouvez ensuite utiliser XAML pour définir votre interface utilisateur, comme avec d'autres applications Windows, et appeler le code C++ lorsque cela est nécessaire.
 
--   [ANGLE permet d’exécuter OpenGL ES sur Windows](https://go.microsoft.com/fwlink/p/?linkid=618387)
+-   [Utiliser l’ANGLE pour exécuter OpenGL ES sur Windows](https://github.com/microsoft/angle/wiki)
 
     Une étape intermédiaire pour le portage de votre projet OpenGL ES 2.0 consiste à utiliser ANGLE. ANGLE pour Windows Store vous permet d’exécuter le contenu OpenGL ES sous Windows en convertissant les appels d’API OpenGL ES en appels d’API DirectX 11.
 
 ## <a name="other-cross-platform-authoring-tools"></a>Autres outils de création multiplateformes
 
--   [GameSalad](https://go.microsoft.com/fwlink/p/?LinkID=320480)
+-   [GameSalad](https://gamesalad.com/)
 
     Environnement de création de jeux.
 
--   [Construct 2]( https://go.microsoft.com/fwlink/p/?LinkID=320481)
+-   [Construction 2]( https://go.microsoft.com/fwlink/p/?LinkID=320481)
 
     Environnement de création de jeux.
 
--   [Studio de titane](https://go.microsoft.com/fwlink/p/?LinkID=320482)
+-   [Titan Studio](https://www.appcelerator.com/platform/titanium-studio/)
 
     Environnement de création multiplateforme.
 
--   [Cocos2D-x](https://go.microsoft.com/fwlink/p/?LinkID=320485)
+-   [Cocos2D-x](https://www.cocos2d-x.org/)
 
     Bibliothèque de code interplateforme pour la gestion des sprites et la modélisation physique.
 
--   [Impact.js](https://go.microsoft.com/fwlink/p/?LinkID=320486)
+-   [Impact. js](https://impactjs.com/)
 
     Bibliothèque de jeux HTML.
 
--   [Marmalade](https://go.microsoft.com/fwlink/p/?LinkID=320487)
+-   [Marmelade](http://madewithmarmalade.com/)
 
     Kit de développement logiciel interplateforme.
 
--   [OpenFL](https://go.microsoft.com/fwlink/p/?LinkID=320488)
+-   [OpenFL](https://www.openfl.org/)
 
     Outil de développement multiplateforme.
 
--   [GameMaker](https://go.microsoft.com/fwlink/p/?LinkID=320490)
+-   [GameMaker](https://www.yoyogames.com/gamemaker/studio)
 
     Environnement de création spécifique aux jeux.
 
--   [PlayCanvas](https://go.microsoft.com/fwlink/p/?LinkID=394061)
+-   [PlayCanvas](https://playcanvas.com/)
 
     Outil de développement de jeux HTML.
 

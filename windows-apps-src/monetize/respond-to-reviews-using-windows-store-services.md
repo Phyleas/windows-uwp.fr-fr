@@ -6,16 +6,16 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: windows 10, uwp, API d'avis du Microsoft Store, répondre aux avis
 ms.localizationpriority: medium
-ms.openlocfilehash: 677108e692bbc702778cad3c42a45b4f5408b8cd
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b5462f5b98cee202e32b8266539f929127434a4e
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653164"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260195"
 ---
 # <a name="respond-to-reviews-using-store-services"></a>Répondre aux avis à l’aide des services du Windows Store
 
-Utilisez l'*API d'avis du Microsoft Store* pour répondre par programmation aux avis sur votre app dans le Microsoft Store. Cette API est particulièrement utile pour les développeurs qui souhaitent en bloc répondent aux nombreux révisions sans utiliser de partenaires. Cette API utilise Azure Active Directory (Azure AD) pour authentifier les appels en provenance de votre application ou service.
+Utilisez l'*API d'avis du Microsoft Store* pour répondre par programmation aux avis sur votre app dans le Microsoft Store. Cette API est particulièrement utile pour les développeurs qui souhaitent répondre en bloc à de nombreuses révisions sans utiliser l’espace partenaires. Cette API utilise Azure Active Directory (Azure AD) pour authentifier les appels en provenance de votre application ou service.
 
 Les étapes suivantes décrivent le processus de bout en bout :
 
@@ -24,25 +24,25 @@ Les étapes suivantes décrivent le processus de bout en bout :
 3.  [Appelez l’API d’avis du Microsoft Store](#call-the-windows-store-reviews-api).
 
 > [!NOTE]
-> Outre l’utilisation du Microsoft Store passe en revue les API répondre par programmation aux révisions, vous pouvez également répondre aux révisions [à l’aide de partenaires](../publish/respond-to-customer-reviews.md).
+> Outre l’utilisation de l’API de révisions de Microsoft Store pour répondre par programmation aux révisions, vous pouvez également répondre aux révisions à [l’aide de l’espace partenaires](../publish/respond-to-customer-reviews.md).
 
 <span id="prerequisites" />
 
-## <a name="step-1-complete-prerequisites-for-using-the-microsoft-store-reviews-api"></a>Étape 1 : Conditions préalables pour l’utilisation du Microsoft Store passe en revue les API
+## <a name="step-1-complete-prerequisites-for-using-the-microsoft-store-reviews-api"></a>Étape 1 : Remplir les conditions préalables à l’utilisation de l’API d’avis du Microsoft Store
 
 Avant d’écrire le code d’appel de l’API d’avis du Microsoft Store, vérifiez que vous remplissez bien les conditions préalables suivantes.
 
-* Vous (ou votre organisation) devez disposer d’un annuaire Azure AD et d’une autorisation [Administrateur global](https://go.microsoft.com/fwlink/?LinkId=746654) pour l’annuaire. Si vous utilisez déjà Office 365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’un annuaire Azure AD. Sinon, vous pouvez [créer un nouvelle application Azure AD dans partenaires](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) sans aucun frais supplémentaire.
+* Vous (ou votre organisation) devez disposer d’un annuaire Azure AD et d’une autorisation [Administrateur global](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) pour l’annuaire. Si vous utilisez déjà Office 365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’un annuaire Azure AD. Dans le cas contraire, vous pouvez [créer un nouveau Azure ad dans l’espace partenaires](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) sans frais supplémentaires.
 
-* Vous devez associer une application Azure AD à votre compte espace partenaires, récupérer l’ID client et ID client pour l’application et générer une clé. L’application Azure AD est l’app ou le service à partir duquel vous allez appeler l’API d’avis du Microsoft Store. Vous avez besoin de l’ID de locataire, de l’ID client et de la clé pour obtenir le jeton d’accès Azure AD à transmettre à l’API.
+* Vous devez associer une application Azure AD à votre compte espace partenaires, récupérer l’ID de locataire et l’ID client pour l’application et générer une clé. L’application Azure AD est l’app ou le service à partir duquel vous allez appeler l’API d’avis du Microsoft Store. Vous avez besoin de l’ID de locataire, de l’ID client et de la clé pour obtenir le jeton d’accès Azure AD à transmettre à l’API.
     > [!NOTE]
     > Cette tâche ne doit être effectuée qu’une seule fois. Une fois que vous avez l’ID de locataire, l’ID client et la clé à disposition, vous pouvez les réutiliser chaque fois que vous avez besoin de créer un nouveau jeton d’accès Azure AD.
 
 Pour associer une application Azure AD à votre compte espace partenaires et récupérer les valeurs requises :
 
-1.  Dans le centre de partenaires, [associer un compte espace partenaires de votre organisation avec un annuaire Azure AD de votre organisation](../publish/associate-azure-ad-with-partner-center.md).
+1.  Dans l’espace partenaires, [associez le compte de l’espace partenaires de votre organisation au répertoire Azure AD de votre organisation](../publish/associate-azure-ad-with-partner-center.md).
 
-2.  Ensuite, à partir de la **utilisateurs** page dans le **paramètres du compte** section de partenaires, [ajouter l’application Azure AD](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account) qui représente l’application ou le service que vous utiliserez pour répondre aux révisions. Assurez-vous d'attribuer à cette application le rôle **Manager**. Si l’application n’existe pas encore dans votre annuaire Azure AD, vous pouvez [créer une nouvelle application Azure AD dans le centre partenaires](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account). 
+2.  Ensuite, dans la page **utilisateurs** de la section **paramètres du compte** de l’espace partenaires, [Ajoutez l’application Azure ad](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account) qui représente l’application ou le service que vous utiliserez pour répondre aux révisions. Assurez-vous d'attribuer à cette application le rôle **Manager**. Si l’application n’existe pas encore dans votre répertoire Azure AD, vous pouvez [créer une nouvelle application Azure ad dans l’espace partenaires](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account). 
 
 3.  Revenez à la page **Utilisateurs**, cliquez sur le nom de votre application Azure AD pour accéder aux paramètres de l’application, puis notez les valeurs des champs **ID de locataire** et **ID client**.
 
@@ -50,7 +50,7 @@ Pour associer une application Azure AD à votre compte espace partenaires et ré
 
 <span id="obtain-an-azure-ad-access-token" />
 
-## <a name="step-2-obtain-an-azure-ad-access-token"></a>Étape 2 : Obtenir un jeton d’accès Azure AD
+## <a name="step-2-obtain-an-azure-ad-access-token"></a>Étape 2 : Obtenir un jeton d’accès Azure AD
 
 Avant d’appeler l’une des méthodes dans l’API d’avis du Microsoft Store, vous devez d’abord obtenir un jeton d’accès Azure AD pour le passer à l’en-tête **Authorization** de chaque méthode de l’API. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez l’actualiser pour pouvoir continuer à l’utiliser dans d’autres appels à l’API.
 
@@ -67,13 +67,13 @@ grant_type=client_credentials
 &resource=https://manage.devcenter.microsoft.com
 ```
 
-Pour le *locataire\_id* valeur dans l’URI de la publication et la *client\_id* et *client\_secret* paramètres, spécifiez le locataire ID, ID de client et la clé de votre application que vous avez récupérées à partir du centre de partenaires dans la section précédente. Pour le paramètre *resource*, vous devez spécifier ```https://manage.devcenter.microsoft.com```.
+Pour la valeur de l' *ID de\_* du client dans l’URI de publication et les paramètres client *\_ID* et *\_de secret client* , spécifiez l’ID de locataire, l’ID client et la clé de votre application que vous avez récupérée dans l’espace partenaires dans la section précédente. Pour le paramètre *resource*, vous devez spécifier ```https://manage.devcenter.microsoft.com```.
 
 Une fois votre jeton d’accès arrivé à expiration, vous pouvez l’actualiser en suivant les instructions fournies [ici](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens).
 
 <span id="call-the-windows-store-reviews-api" />
 
-## <a name="step-3-call-the-microsoft-store-reviews-api"></a>Étape 3 : Appeler les API de révisions Microsoft Store
+## <a name="step-3-call-the-microsoft-store-reviews-api"></a>Étape 3 : Appeler l’API d’avis du Microsoft Store
 
 Une fois que vous disposez d’un jeton d’accès Azure AD, vous pouvez appeler l’API d’avis du Microsoft Store. Vous devez transmettre le jeton d’accès à l’en-tête **Authorization** de chaque méthode.
 
@@ -86,8 +86,8 @@ L’API d’avis du Microsoft Store contient plusieurs méthodes que vous pouve
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Obtenir les révisions d’application](get-app-reviews.md)
-* [Obtenir les informations de réponse pour les révisions d’application](get-response-info-for-app-reviews.md)
-* [Envoie les réponses à des révisions d’application](submit-responses-to-app-reviews.md)
+* [Recevoir des révisions d’application](get-app-reviews.md)
+* [Obtenir des informations de réponse pour les révisions d’application](get-response-info-for-app-reviews.md)
+* [Envoyer des réponses aux révisions d’application](submit-responses-to-app-reviews.md)
 
  

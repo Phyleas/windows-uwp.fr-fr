@@ -6,26 +6,26 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 19b3aa80bee643087a0aa92f714349004f6ec1c1
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: fb43e5b7006c7c81875651a926e87eb8f76621fe
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359161"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74254301"
 ---
 # <a name="play-media-in-the-background"></a>Lire du contenu multimédia en arrière-plan
 Cet article vous explique comment configurer votre application de telle sorte que le contenu multimédia continue à être lu quand votre application est déplacée du premier plan vers l’arrière-plan. Cela signifie que même après que l’utilisateur a réduit votre application, est revenu à l’écran d’accueil ou a quitté votre application d’une autre manière, votre application peut continuer à lire le contenu audio. 
 
 Scénarios de lecture audio en arrière-plan :
 
--   **Sélections de longs :** L’utilisateur affiche brièvement une application de premier plan pour sélectionner et démarrer une sélection, après laquelle l’utilisateur s’attend à la sélection de continuer la lecture en arrière-plan.
+-   **Playslist de longue durée :** l’utilisateur affiche brièvement une application au premier plan pour sélectionner et lancer une playslist, puis veut que la lecture de la playslist continue en arrière-plan.
 
--   **À l’aide du sélecteur de tâches :** L’utilisateur fait apparaître une application de premier plan pour démarrer la lecture audio brièvement, puis bascule vers une autre application ouverte à l’aide du sélecteur de tâches. Il veut que la lecture du contenu audio continue en arrière-plan.
+-   **Utilisation du Sélecteur de tâches :** l’utilisateur affiche brièvement une application au premier plan pour démarrer la lecture d’un contenu audio, puis passe dans une autre application ouverte à l’aide du Sélecteur de tâches. Il veut que la lecture du contenu audio continue en arrière-plan.
 
 L’implémentation audio en arrière-plan décrite dans cet article permettra à votre application de s’exécuter universellement sur tous les appareils Windows, y compris les appareils mobiles, de bureau et Xbox.
 
 > [!NOTE]
-> Le code de cet article a été adapté de [l’exemple Contenu audio en arrière-plan](https://go.microsoft.com/fwlink/p/?LinkId=800141) UWP.
+> Le code de cet article a été adapté de [l’exemple Contenu audio en arrière-plan](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundMediaPlayback) UWP.
 
 ## <a name="explanation-of-one-process-model"></a>Explication du modèle à processus unique
 Avec Windows 10, version 1607, un nouveau modèle à processus unique simplifie considérablement la prise en charge de l’audio d’arrière-plan. Auparavant, votre application devait gérer un processus en arrière-plan en plus de l’application de premier plan. De votre côté, vous deviez communiquer manuellement les modifications d’état de communication entre les deux processus. Sous le nouveau modèle, vous ajoutez simplement la capacité d’audio d’arrière-plan à votre manifeste d’application, de manière à ce que votre application continue à lire le contenu audio lorsqu’elle se déplace vers l’arrière-plan. Deux événements de cycle de vie d’application, [**EnteredBackground**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.enteredbackground) et [**LeavingBackground**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.leavingbackground), indiquent à votre application les moments d’entrée et de sortie de l’arrière-plan. Quand votre application se déplace au sein des transitions à destination et en provenance de l’arrière-plan, les contraintes de mémoire mises en place par le système peuvent être modifiées, afin que vous puissiez utiliser ces événements pour évaluer votre consommation courante de mémoire et libérer des ressources vous permettant de rester sous la limite.
@@ -42,7 +42,7 @@ Votre application doit satisfaire les exigences suivantes associées à la lectu
 ## <a name="background-media-playback-manifest-capability"></a>Fonctionnalité de manifeste de lecture de médias en arrière-plan
 Pour activer l’audio en arrière-plan, vous devez ajouter la fonctionnalité de lecture de médias en arrière-plan au fichier du manifeste d’application, Package.appxmanifest. 
 
-**Pour ajouter des fonctionnalités pour le manifeste d’application à l’aide du Concepteur de manifeste**
+**Pour ajouter des fonctionnalités au manifeste d’application à l’aide du concepteur de manifeste**
 
 1.  Dans Microsoft Visual Studio, dans l’**Explorateur de solutions**, ouvrez le concepteur pour le manifeste de l’application en double-cliquant sur l’élément **package.appxmanifest**.
 2.  Sélectionnez l’onglet **Fonctionnalités**.
@@ -86,15 +86,15 @@ Dans le gestionnaire d’événement [**LeavingBackground**](https://docs.micros
 La partie la plus importante du traitement de la transition entre le premier plan et l’arrière-plan consiste à gérer la mémoire utilisée par votre application. L’exécution en arrière-plan impliquant la réduction des ressources de mémoire que votre application est autorisée à conserver au niveau du système, vous devez également procéder à une inscription pour les événements [**AppMemoryUsageIncreased**](https://docs.microsoft.com/uwp/api/windows.system.memorymanager.appmemoryusageincreased) et [**AppMemoryUsageLimitChanging**](https://docs.microsoft.com/uwp/api/windows.system.memorymanager.appmemoryusagelimitchanging). Lorsque ces événements sont déclenchés, vous devez vérifier la quantité de mémoire actuellement utilisée par votre application ainsi que la limite actuelle, et réduire votre consommation de mémoire si nécessaire. Pour plus d’informations sur la manière de réduire votre consommation de mémoire pendant une exécution en arrière-plan, consultez la page [Libérer de la mémoire lorsque votre application bascule en arrière-plan](../launch-resume/reduce-memory-usage.md).
 
 ## <a name="network-availability-for-background-media-apps"></a>Disponibilité du réseau pour les applications multimédias en arrière-plan
-L’ensemble des sources multimédias reconnaissant le réseau, celles qui ne sont pas créées à partir d’un flux ou d’un fichier, maintiennent l’activité de la connexion réseau pendant la récupération du contenu à distance et abandonnent l’activité dans le cas contraire. [**MediaStreamSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaStreamSource), en particulier, s’appuie sur l’application pour signaler correctement la plage de mise en mémoire tampon correcte pour la plateforme à l’aide [ **SetBufferedRange**](https://docs.microsoft.com/uwp/api/windows.media.core.mediastreamsource.setbufferedrange). Une fois que l’intégralité du contenu est mis en tampon, le réseau n’est plus réservé pour le compte de l’application.
+L’ensemble des sources multimédias reconnaissant le réseau, celles qui ne sont pas créées à partir d’un flux ou d’un fichier, maintiennent l’activité de la connexion réseau pendant la récupération du contenu à distance et abandonnent l’activité dans le cas contraire. [**Source**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaStreamSource), en particulier, s’appuie sur l’application pour signaler correctement la plage mise en mémoire tampon correcte à la plateforme à l’aide de [**SetBufferedRange**](https://docs.microsoft.com/uwp/api/windows.media.core.mediastreamsource.setbufferedrange). Une fois que l’intégralité du contenu est mis en tampon, le réseau n’est plus réservé pour le compte de l’application.
 
 SI vous avez besoin d’effectuer des appels réseau intervenant en arrière-plan lorsqu’aucun contenu multimédia n’est en cours de téléchargement, ces opérations doivent être encapsulées dans une tâche appropriée telle que [**MaintenanceTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.MaintenanceTrigger) ou [**TimeTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.TimeTrigger). Pour plus d’informations, voir [Prendre en charge votre application avec des tâches en arrière-plan](https://docs.microsoft.com/windows/uwp/launch-resume/support-your-app-with-background-tasks).
 
 ## <a name="related-topics"></a>Rubriques connexes
 * [Lecture de contenu multimédia](media-playback.md)
-* [Lecture audio et vidéo MediaPlayer.](play-audio-and-video-with-mediaplayer.md)
-* [Intégrer avec le support du système de contrôles de Transport](integrate-with-systemmediatransportcontrols.md)
-* [Exemple de l’Audio d’arrière-plan](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundMediaPlayback)
+* [Lire des fichiers audio et vidéo avec MediaPlayer](play-audio-and-video-with-mediaplayer.md)
+* [Intégration aux contrôles de transport des médias système](integrate-with-systemmediatransportcontrols.md)
+* [Exemple audio d’arrière-plan](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundMediaPlayback)
 
  
 

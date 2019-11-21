@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 84835449c7c259c45423a93716b4fbc85fa0a7ab
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 85d42e69b376e2f3f455e44eb1dce3d41e890971
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66369954"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258648"
 ---
 # <a name="pair-devices"></a>Jumeler des appareils
 
@@ -20,7 +20,7 @@ ms.locfileid: "66369954"
 
 **API importantes**
 
-- [**Windows.Devices.Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
+- [**Windows. Devices. Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
 
 Pour pouvoir être utilisés, certains appareils doivent être jumelés. L’espace de noms [**Windows.Devices.Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration) prend en charge trois méthodes différentes de jumelage des appareils.
 
@@ -28,7 +28,7 @@ Pour pouvoir être utilisés, certains appareils doivent être jumelés. L’esp
 -   Jumelage de base
 -   Jumelage personnalisé
 
-**Conseil**  certains appareils n’êtes pas obligé d’être associés pour pouvoir être utilisé. Ce sujet est abordé dans la section sur le jumelage automatique.
+**Conseil**  certains périphériques n’ont pas besoin d’être appariés pour pouvoir être utilisés. Ce sujet est abordé dans la section sur le jumelage automatique.
 
  
 
@@ -59,7 +59,7 @@ Pour prendre en charge le jumelage personnalisé, il vous faudra créer un gesti
 
 Il est important de garder à l’esprit que le jumelage personnalisé est toujours une opération de niveau système. Pour cette raison, lorsque vous utilisez un ordinateur de bureau ou un appareil Windows Phone, une boîte de dialogue système apparaît juste avant l’opération de jumelage. En effet, ces deux plateformes valorisent une expérience utilisateur qui nécessite le consentement de l’utilisateur. Dans la mesure où cette boîte de dialogue est automatiquement générée, vous n’aurez pas besoin de créer votre propre boîte de dialogue lorsque vous sélectionnez un élément [**DevicePairingKinds**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DevicePairingKinds) de **ConfirmOnly** avec ces plateformes. Pour les autres **DevicePairingKinds**, vous devrez exécuter certaines opérations spécifiques de gestion, en fonction de la valeur **DevicePairingKinds** spécifique. Pour savoir comment gérer le jumelage personnalisé associé à différentes valeurs **DevicePairingKinds**, voir les exemples.
 
-En commençant par Windows 10, la version 1903, un nouveau **DevicePairingKinds** est pris en charge, **ProvidePasswordCredential**. Cette valeur signifie que l’application doit demander un nom d’utilisateur et le mot de passe de l’utilisateur pour s’authentifier auprès de l’appareil associé. Pour gérer ce cas, appelez le [ **AcceptWithPasswordCredential** ](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepairingrequestedeventargs.acceptwithpasswordcredential?branch=release-19h1#Windows_Devices_Enumeration_DevicePairingRequestedEventArgs_AcceptWithPasswordCredential_Windows_Security_Credentials_PasswordCredential_) méthode les arguments d’événement de la **PairingRequested** Gestionnaire d’événements pour accepter l’association. Passez un [ **PasswordCredential** ](https://docs.microsoft.com/uwp/api/windows.security.credentials.passwordcredential) objet qui encapsule le nom d’utilisateur et le mot de passe en tant que paramètre. Notez que le nom d’utilisateur et le mot de passe pour le périphérique distant diffèrent et souvent pas le même que les informations d’identification pour l’utilisateur connecté localement.
+À compter de Windows 10, version 1903, un nouveau **DevicePairingKinds** est pris en charge, **ProvidePasswordCredential**. Cette valeur signifie que l’application doit demander un nom d’utilisateur et un mot de passe auprès de l’utilisateur afin de s’authentifier auprès de l’appareil couplé. Pour gérer ce cas, appelez la méthode [**AcceptWithPasswordCredential**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepairingrequestedeventargs.acceptwithpasswordcredential?branch=release-19h1#Windows_Devices_Enumeration_DevicePairingRequestedEventArgs_AcceptWithPasswordCredential_Windows_Security_Credentials_PasswordCredential_) des arguments d’événement du gestionnaire d’événements **PairingRequested** pour accepter le jumelage. Transmettez un objet [**PasswordCredential**](https://docs.microsoft.com/uwp/api/windows.security.credentials.passwordcredential) qui encapsule le nom d’utilisateur et le mot de passe en tant que paramètre. Notez que le nom d’utilisateur et le mot de passe de l’appareil distant sont différents de ceux de l’utilisateur connecté localement et qu’ils ne le sont pas.
 
 ## <a name="unpairing"></a>Annulation du jumelage
 
@@ -71,7 +71,7 @@ Si vous souhaitez annuler le jumelage d’un appareil, vous devez commencer par 
 ## <a name="sample"></a>Exemple
 
 
-Pour télécharger un exemple illustrant comment utiliser les API [**Windows.Devices.Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration), cliquez [ici](https://go.microsoft.com/fwlink/?LinkID=620536).
+Pour télécharger un exemple illustrant comment utiliser les API [**Windows.Devices.Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration), cliquez [ici](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/DeviceEnumerationAndPairing).
 
  
 

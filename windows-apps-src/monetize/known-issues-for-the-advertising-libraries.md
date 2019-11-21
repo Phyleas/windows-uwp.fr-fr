@@ -6,19 +6,19 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: windows 10, uwp, annonces, publicité, problèmes connus, résolution des problèmes
 ms.localizationpriority: medium
-ms.openlocfilehash: 029d595c41301e62f74c9b08b633bb22bfb12786
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 51192e13c63bf3141989cfbf5d9ebd7fbaf13641
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57641064"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260242"
 ---
 # <a name="known-issues-and-troubleshooting-for-ads-in-apps"></a>Problèmes connus et résolution des problèmes des publicités dans les applications
 
 Cette rubrique répertorie les problèmes connus de la version actuelle du SDK Microsoft Advertising. Pour plus d'aide à la résolution des problèmes, consultez les rubriques suivantes.
 
-* [HTML et JavaScript, guide de dépannage](html-and-javascript-troubleshooting-guide.md)
-* [XAML et C# guide de dépannage](xaml-and-c-troubleshooting-guide.md)
+* [Guide de résolution des problèmes HTML et JavaScript](html-and-javascript-troubleshooting-guide.md)
+* [XAML et C# Guide de dépannage](xaml-and-c-troubleshooting-guide.md)
 
 ## <a name="adcontrol-interface-unknown-in-xaml"></a>Interface AdControl inconnue en XAML
 
@@ -40,15 +40,15 @@ Si vous avez créé une publicité récemment (moins d’un jour), elle peut ne 
 
 Plusieurs raisons peuvent provoquer le non-affichage des publicités, notamment des erreurs réseau. Autres raisons possibles :
 
-* En sélectionnant une unité ad dans le centre de partenaires dont la taille est supérieure ou inférieure à la taille de la **classe AdControl** dans le code de votre application.
+* Sélection d’une unité ad dans l’espace partenaires dont la taille est supérieure ou inférieure à la taille du **classe AdControl** dans le code de votre application.
 
 * Les publicités ne s’affichent pas si vous utilisez une [valeur du mode test](set-up-ad-units-in-your-app.md#test-ad-units) pour votre ID d’unité publicitaire lors de l’exécution d’une application dynamique.
 
 * Si vous avez créé un ID d’unité publicitaire dans la dernière demi-heure, la publicité risque de ne pas s’afficher tant que les serveurs n’ont pas propagé les nouvelles données dans le système. Les ID existants qui affichaient des publicités précédemment doivent en afficher immédiatement.
 
-Si vous pouvez voir des publicités de test dans l’application, c’est que votre code fonctionne et qu’il peut afficher des publicités. Si vous rencontrez des problèmes, contactez le [support produit](https://developer.microsoft.com/en-us/windows/support). Dans cette page, choisissez **contactez-nous**.
+Si vous pouvez voir des publicités de test dans l’application, c’est que votre code fonctionne et qu’il peut afficher des publicités. Si vous rencontrez des problèmes, contactez le [support produit](https://developer.microsoft.com/en-us/windows/support). Sur cette page, choisissez **nous contacter**.
 
-Vous pouvez également publier une question sur le [forum](https://go.microsoft.com/fwlink/p/?LinkId=401266).
+Vous pouvez également publier une question sur le [forum](https://go.microsoft.com/fwlink/?LinkID=401264).
 
 ## <a name="test-ads-are-showing-in-your-app-instead-of-live-ads"></a>Les publicités de test s’affichent dans votre application à la place des publicités dynamiques
 
@@ -58,7 +58,7 @@ Les publicités de test peuvent s’afficher même lorsque vous attendez des pub
 
 * Les applications chargées indépendamment ou les applications qui sont exécutées dans l’émulateur n’affichent pas de publicités dynamiques.
 
-Lorsqu’une unité d’annonce en ligne affiche des publicités de test, d’état de l’unité ad affiche **actif et les serveurs de test publicités** dans Partner Center. Pour le moment, cela ne s’applique pas aux applications téléphoniques.
+Quand une unité ad active traite des annonces de test, l’état de l’unité ad affiche **actif et** traite les publicités de test dans l’espace partenaires. Pour le moment, cela ne s’applique pas aux applications téléphoniques.
 
 
 <span id="reference_errors"/>
@@ -67,7 +67,7 @@ Lorsqu’une unité d’annonce en ligne affiche des publicités de test, d’é
 
 Lorsque vous utilisez le SDK Microsoft Advertising, vous ne pouvez pas cibler **Toute UC** dans votre projet. Si votre projet cible la plateforme **Toute UC**, un message d’avertissement peut s’afficher après que vous avez ajouté une référence semblable à ce qui suit.
 
-![ReferenceError\-solutionexplorer](images/13-19629921-023c-42ec-b8f5-bc0b63d5a191.jpg)
+![ReferenceError\-SolutionExplorer](images/13-19629921-023c-42ec-b8f5-bc0b63d5a191.jpg)
 
 Pour supprimer cet avertissement, mettez à jour votre projet pour utiliser une sortie de génération propre à l’architecture (par exemple, **x86**). Utilisez le **Gestionnaire de configurations** pour définir les cibles de plateforme pour déboguer et publier les configurations.
 
@@ -91,7 +91,7 @@ La définition des propriétés associées aux bordures, héritées par la class
 
 ## <a name="more-information"></a>Plus d’informations
 
-Pour plus d’informations sur les derniers problèmes connus et pour publier des questions liées au SDK Microsoft Advertising, visitez le [forum](https://go.microsoft.com/fwlink/p/?LinkId=401266).
+Pour plus d’informations sur les derniers problèmes connus et pour publier des questions liées au SDK Microsoft Advertising, visitez le [forum](https://go.microsoft.com/fwlink/?LinkID=401264).
 
  
 

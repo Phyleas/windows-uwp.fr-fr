@@ -1,23 +1,23 @@
 ---
-Description: Cette rubrique répertorie les polices disponibles pour les applications UWP qui sont localisées dans des langues autres que les États-Unis. Anglais.
+Description: Cette rubrique répertorie les polices disponibles pour les applications UWP qui sont localisées dans des langues autres que l’anglais des États-Unis.
 title: Polices internationales
 template: detail.hbs
 ms.date: 11/02/2017
 ms.topic: article
 keywords: windows 10, uwp, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
-ms.openlocfilehash: 06284481ccecbc3c9cd7d7a78d83ccd6e97a49a7
-ms.sourcegitcommit: f3c1a81b50f4a372a15996ac71b3f408a8ee1409
+ms.openlocfilehash: eb12ea0bb7966813413d29908c4974a7c4c97486
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72237524"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258076"
 ---
 # <a name="international-fonts"></a>Polices internationales
 
-Cette rubrique répertorie les polices disponibles pour les applications UWP qui sont localisées dans des langues autres que les États-Unis. Anglais.
+Cette rubrique répertorie les polices disponibles pour les applications UWP qui sont localisées dans des langues autres que l’anglais des États-Unis.
 
-Dans le tableau suivant, la colonne « Balise de langue » répertorie la [balise de langue BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302) de la langue. Pour obtenir la liste des balises de langue prises en charge par le Microsoft Store, voir [Langues prises en charge](../../publish/supported-languages.md).
+Dans le tableau suivant, la colonne « Balise de langue » répertorie la [balise de langue BCP-47](https://tools.ietf.org/html/bcp47) de la langue. Pour obtenir la liste des balises de langue prises en charge par le Microsoft Store, voir [Langues prises en charge](../../publish/supported-languages.md).
 
 | Langue | Balise de langue | Police utilisé dans Windows |
 | --------- | ----------- | -------------------- |
@@ -131,5 +131,5 @@ Dans le tableau suivant, la colonne « Balise de langue » répertorie la [bal
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Balise de langue BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
+* [Balise de langue BCP-47](https://tools.ietf.org/html/bcp47)
 * [Langues prises en charge](../../publish/supported-languages.md)

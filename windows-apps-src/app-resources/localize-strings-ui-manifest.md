@@ -1,5 +1,5 @@
 ---
-Description: Si vous souhaitez que votre application prenne en charge différentes langues d’affichage et si des opérateurs de chaîne figurent dans votre code, votre balisage XAML ou dans le manifeste du package d’application, déplacez ces chaînes dans un fichier de ressources (.resw). Vous pouvez ensuite effectuer une copie traduite de ce fichier de ressources pour chaque langue prise en charge par votre application.
+Description: Si vous souhaitez que votre application prenne en charge différentes langues d’affichage et si des opérateurs de chaîne figurent dans votre code, votre balisage XAML ou le manifeste du package d’application, déplacez ces chaînes dans un fichier de ressources (.resw). Vous pouvez ensuite effectuer une copie traduite de ce fichier de ressources pour chaque langue prise en charge par votre application.
 title: Localiser les chaînes dans l’interface utilisateur et le manifeste du package d’application
 ms.assetid: E420B9BB-C0F6-4EC0-BA3A-BA2875B69722
 label: Localize strings in your UI and app package manifest
@@ -8,34 +8,34 @@ ms.date: 11/01/2017
 ms.topic: article
 keywords: windows 10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: 6412416fe2d73c4fc313a32fdc2929fff9dc51c4
-ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
+ms.openlocfilehash: c40e909f0f6411be054a5e534325d801656002c5
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68270086"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74254704"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>Localiser les chaînes dans l’interface utilisateur et le manifeste du package d’application
 
-Pour plus d’informations sur la proposition de valeur de la localisation de votre application, voir [Internationalisation et localisation](../design/globalizing/globalizing-portal.md).
+Pour plus d’informations sur la proposition de valeur de la localisation de votre application, consultez [Internationalisation et localisation](../design/globalizing/globalizing-portal.md).
 
-Si vous souhaitez que votre application prenne en charge différentes langues d’affichage et si des opérateurs de chaîne figurent dans votre code, votre balisage XAML ou dans le manifeste du package d’application, déplacez ces chaînes dans un fichier de ressources (.resw). Vous pouvez ensuite effectuer une copie traduite de ce fichier de ressources pour chaque langue prise en charge par votre application.
+Si vous souhaitez que votre application prenne en charge différentes langues d’affichage et si des opérateurs de chaîne figurent dans votre code, votre balisage XAML ou le manifeste du package d’application, déplacez ces chaînes dans un fichier de ressources (.resw). Vous pouvez ensuite effectuer une copie traduite de ce fichier de ressources pour chaque langue prise en charge par votre application.
 
 Des opérateurs de chaîne codés en dur peuvent apparaître dans le code impératif ou dans le balisage XAML, par exemple en tant que propriété **Text** d’un **TextBlock**. Ils peuvent également apparaître dans le fichier source du manifeste de votre package d’application (fichier `Package.appxmanifest`), par exemple, en tant que valeur de nom d’affichage sur l’onglet Application du Concepteur de manifeste de Visual Studio. Déplacez ces chaînes dans un fichier de ressources (.resw) et remplacez les opérateurs de chaîne codés en dur dans votre application et dans votre manifeste par des références à des identificateurs de ressources.
 
 Contrairement aux ressources d’image, où un fichier de ressource d’image contient une seule ressource d’image, un fichier de ressources de chaîne contient *plusieurs* ressources de type chaîne. Un fichier de ressources de chaîne est un fichier de ressources (.resw), et vous créez généralement ce type de fichier de ressources dans un dossier \Strings dans votre projet. Pour obtenir des informations générales sur l’utilisation de qualificateurs dans les noms de vos fichiers de ressources (.resw), voir [Personnaliser vos ressources pour la langue, l’échelle et d’autres qualificateurs](tailor-resources-lang-scale-contrast.md).
 
-## <a name="store-strings-in-a-resources-file"></a>Chaînes de Store dans un fichier de ressources
+## <a name="store-strings-in-a-resources-file"></a>Stocker des chaînes dans un fichier de ressources
 
 1. Définissez la langue par défaut de votre application.
     1. Votre solution de jeu étant ouverte dans Visual Studio, ouvrez `Package.appxmanifest`.
     2. Sous l’onglet Application, vérifiez que la langue par défaut est correctement définie (par exemple, « en » ou « en-US »). Les étapes restantes supposent que vous avez défini la langue par défaut sur « en-US ».
-    <br>**Remarque** au minimum, vous devez fournir des ressources de type chaîne localisées pour cette langue par défaut. Il s’agit des ressources qui seront chargées en l’absence d’une meilleure correspondance pour les paramètres de langue ou de langue d’affichage par défaut de l’utilisateur.
+    <br>**Notez** au minimum, vous devez fournir des ressources de type chaîne localisées pour cette langue par défaut. Il s’agit des ressources qui seront chargées en l’absence d’une meilleure correspondance pour les paramètres de langue ou de langue d’affichage par défaut de l’utilisateur.
 2. Créez un fichier de ressources (.resw) pour la langue par défaut.
     1. Sous le nœud de votre projet, créez un dossier et nommez-le « Strings ».
     2. Sous `Strings`, créez un sous-dossier et nommez-le « en-US ».
     3. Sous `en-US`, créez un fichier de ressources (.resw) et vérifiez qu’il est nommé « Resources.resw ».
-    <br>**Remarque** si vous avez des fichiers de ressources .NET (.resx) que vous souhaitez déplacer, consultez [XAML de portage et de l’interface utilisateur](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization).
+    <br>**Notez** si vous avez des fichiers de ressources .net (. resx) que vous souhaitez porter, consultez [Portage de code XAML et d’interface utilisateur](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization).
 3. Ouvrez `Resources.resw` et ajoutez ces ressources de chaîne.
 
     `Strings/en-US/Resources.resw`
@@ -56,13 +56,13 @@ Vous utilisez une [directive x :Uid](../xaml-platform/x-uid-directive.md) pour 
 <TextBlock x:Uid="Greeting"/>
 ```
 
-Lors de l’exécution, `\Strings\en-US\Resources.resw` est chargé (étant donné qu’il est le seul fichier de ressources dans le projet pour le moment). La **directive x:Uid** sur **TextBlock** génère une recherche des identificateurs de propriété à l’intérieur du `Resources.resw` qui contient l’identificateur de ressource de chaîne « Greeting ». Les identificateurs de propriété « Greeting.Text » et « Greeting.Width » sont trouvés et leurs valeurs sont appliquées au **TextBlock**, en remplaçant les valeurs définies localement dans le balisage. La valeur « Greeting.Foreground » serait également appliquée, si nous l’avions ajoutée. Mais seuls les identificateurs de propriété sont utilisés pour définir les propriétés des éléments de balisage XAML. Par conséquent, la définition de la directive **x:Uid** sur « Farewell » sur ce TextBlock n’aurait aucun effet. `Resources.resw` *est* contiennent l’identificateur de ressource de chaîne « Adieu », mais il ne contient aucun identificateur de propriété pour celui-ci.
+Lors de l’exécution, `\Strings\en-US\Resources.resw` est chargé (étant donné qu’il est le seul fichier de ressources dans le projet pour le moment). La **directive x:Uid** sur **TextBlock** génère une recherche des identificateurs de propriété à l’intérieur du `Resources.resw` qui contient l’identificateur de ressource de chaîne « Greeting ». Les identificateurs de propriété « Greeting.Text » et « Greeting.Width » sont trouvés et leurs valeurs sont appliquées au **TextBlock**, en remplaçant les valeurs définies localement dans le balisage. La valeur « Greeting.Foreground » serait également appliquée, si nous l’avions ajoutée. Mais seuls les identificateurs de propriété sont utilisés pour définir les propriétés des éléments de balisage XAML. Par conséquent, la définition de la directive **x:Uid** sur « Farewell » sur ce TextBlock n’aurait aucun effet. `Resources.resw` contient l’identificateur de ressource de chaîne « adieu », mais *il ne contient* aucun identificateur de propriété.
 
 Lorsque vous affectez un identificateur de ressource de chaîne à un élément XAML, assurez-vous que *tous* les identificateurs de propriété de cet identificateur sont corrects pour l’élément XAML. Par exemple, si vous définissez `x:Uid="Greeting"` sur un **TextBlock**, « Greeting.Text » sera résolu, car le type **TextBlock** a une propriété Text. Mais si vous définissez `x:Uid="Greeting"` sur un **Button**, alors « Greeting.Text » provoquera une erreur d’exécution, car le type **Button** n’a pas de propriété Text. Dans ce cas, une solution consiste à créer un identificateur de propriété nommé « ButtonGreeting.Content » et à définir `x:Uid="ButtonGreeting"` sur le **Button**.
 
 Au lieu de définir **Width** à partir d’un fichier de ressources, vous souhaiterez probablement autoriser les contrôles à se redimensionner de manière dynamique en fonction du contenu.
 
-**Remarque** pour [propriétés jointes](../xaml-platform/attached-properties-overview.md), vous avez besoin d’une syntaxe spéciale dans la colonne de nom d’un fichier .resw. Par exemple, pour définir une valeur pour la propriété jointe [**AutomationProperties.Name**](/uwp/api/windows.ui.xaml.automation.automationproperties.NameProperty) de l’identificateur « Greeting », voici ce que vous devez entrer dans la colonne Nom.
+**Remarque** pour les [propriétés jointes](../xaml-platform/attached-properties-overview.md), vous avez besoin d’une syntaxe spéciale dans la colonne Name d’un fichier. resw. Par exemple, pour définir une valeur pour la propriété jointe [**AutomationProperties.Name**](/uwp/api/windows.ui.xaml.automation.automationproperties.NameProperty) de l’identificateur « Greeting », voici ce que vous devez entrer dans la colonne Nom.
 
 ```xml
 Greeting.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name
@@ -92,13 +92,13 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("Farewell");
 
 Vous pouvez utiliser ce même code à partir d’un projet de bibliothèque de classes (Windows universel) ou de [bibliothèque Windows Runtime (Windows universel)](../winrt-components/index.md). Lors de l’exécution, les ressources de l’application qui héberge la bibliothèque sont chargées. Il est recommandé qu’une bibliothèque charge les ressources à partir de l’application qui l’héberge, car l’application est susceptible d’avoir un niveau plus élevé de localisation. Si une bibliothèque doit fournir des ressources, elle doit donner à l’application qui l’héberge l’option de remplacer ces ressources en tant qu’entrée.
 
-Si un nom de ressource est segmenté (il contient «. » caractères), puis remplacez points avec barre oblique (« / ») en caractères dans le nom de ressource. Identificateurs de propriété, par exemple, contient des points ; Par conséquent, vous devez effectuer cette substitution afin de charger l’un de ceux à partir du code.
+Si un nom de ressource est segmenté (il contient des caractères « . »), remplacez les points par des barres obliques (« / ») dans le nom de la ressource. Les identificateurs de propriété, par exemple, contiennent des points ; vous devez donc effectuer cette substition afin de charger l’un d’eux à partir du code.
 
 ```csharp
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <data name="Fare.Well" ...> ...
 ```
 
-Si vous avez des doutes, vous pouvez utiliser [MakePri.exe](makepri-exe-command-options.md) pour faire un dump du fichier PRI de votre application. De chaque ressource `uri` est indiqué dans le fichier objet.
+En cas de doute, vous pouvez utiliser [MakePri. exe](makepri-exe-command-options.md) pour vider le fichier PRI de votre application. Le `uri` de chaque ressource est indiqué dans le fichier vidé.
 
 ```xml
 <ResourceMapSubtree name="Fare"><NamedResource name="Well" uri="ms-resource://<GUID>/Resources/Fare/Well">...
@@ -106,7 +106,7 @@ Si vous avez des doutes, vous pouvez utiliser [MakePri.exe](makepri-exe-command-
 
 ## <a name="refer-to-a-string-resource-identifier-from-your-app-package-manifest"></a>Faire référence à un identificateur de ressource de chaîne à partir du manifeste du package d’application
 
-1. Ouvrez votre fichier manifeste source package d’application (le `Package.appxmanifest` fichier), dans lequel par défaut de votre application `Display name` est exprimée sous la forme d’un littéral de chaîne.
+1. Ouvrez le fichier source du manifeste du package d’application (fichier `Package.appxmanifest`), dans lequel le `Display name` de l’application par défaut est exprimé sous la forme d’un littéral de chaîne.
 
    ![ajouter une ressource, anglais](images/display-name-before.png)
 
@@ -122,7 +122,7 @@ Si vous avez des doutes, vous pouvez utiliser [MakePri.exe](makepri-exe-command-
 
 1. Faites une copie de votre fichier de ressources (.resw) pour une autre langue.
     1. Sous « Strings », créez un sous-dossier et nommez-le « de-DE » pour Allemand (Allemagne).
-   <br>**Remarque** pour le nom du dossier, vous pouvez utiliser les [balise de langue BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302). Voir [Personnaliser vos ressources pour la langue, l’échelle et d’autres qualificateurs](tailor-resources-lang-scale-contrast.md) pour plus d’informations sur le qualificateur de langue et une liste des balises de langue courantes.
+   <br>**Remarque** pour le nom du dossier, vous pouvez utiliser n’importe quelle [balise de langue BCP-47](https://tools.ietf.org/html/bcp47). Voir [Personnaliser vos ressources pour la langue, l’échelle et d’autres qualificateurs](tailor-resources-lang-scale-contrast.md) pour plus d’informations sur le qualificateur de langue et une liste des balises de langue courantes.
    2. Faites une copie de `Strings/en-US/Resources.resw` dans le dossier `Strings/de-DE`.
 2. Traduisez les chaînes.
     1. Ouvrez `Strings/de-DE/Resources.resw` et traduisez les valeurs dans la colonne Valeur. Il n’est pas nécessaire de traduire les commentaires.
@@ -155,7 +155,7 @@ Pour définir l’étendue d’une référence d’identificateur de ressource c
 <TextBlock x:Uid="/ErrorMessages/PasswordTooWeak"/>
 ```
 
-Vous devez uniquement ajouter `/<resources-file-name>/` avant l’identificateur de ressource de chaîne pour les fichiers de ressources *autre que* `Resources.resw`. En effet, « Resources.resw » est le nom de fichier par défaut et c’est donc ce qui est supposé si vous omettez le nom de fichier (comme nous l’avons fait dans les exemples précédents de cette rubrique).
+Il vous suffit d’ajouter `/<resources-file-name>/` avant l’identificateur de ressource de chaîne pour les fichiers de ressources *autres que* `Resources.resw`. En effet, « Resources.resw » est le nom de fichier par défaut et c’est donc ce qui est supposé si vous omettez le nom de fichier (comme nous l’avons fait dans les exemples précédents de cette rubrique).
 
 L’exemple de code suivant suppose que `ErrorMessages.resw` contient une ressource nommée « MismatchedPasswords » dont la valeur décrit l’erreur.
 
@@ -179,13 +179,13 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("MismatchedPasswo
 
 Si vous déplacez la ressource « AppDisplayName » de `Resources.resw` vers `ManifestResources.resw`, puis dans le manifeste de votre package d’application, vous devez remplacer `ms-resource:AppDisplayName` par `ms-resource:/ManifestResources/AppDisplayName`.
 
-Si un nom de fichier de ressources est segmenté (il contient «. » caractères), puis laissez les points dans le nom lorsque vous le référencez. **Ne** replace points avec barre oblique (« / ») en caractères, comme vous le feriez pour un nom de ressource.
+Si un nom de fichier de ressources est segmenté (il contient des caractères « . »), laissez les points dans le nom lorsque vous le référencez. **Ne remplacez pas** les points par des barres obliques (« / »), comme vous le feriez pour un nom de ressource.
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Err.Msgs");
 ```
 
-Si vous avez des doutes, vous pouvez utiliser [MakePri.exe](makepri-exe-command-options.md) pour faire un dump du fichier PRI de votre application. De chaque ressource `uri` est indiqué dans le fichier objet.
+En cas de doute, vous pouvez utiliser [MakePri. exe](makepri-exe-command-options.md) pour vider le fichier PRI de votre application. Le `uri` de chaque ressource est indiqué dans le fichier vidé.
 
 ```xml
 <ResourceMapSubtree name="Err.Msgs"><NamedResource name="MismatchedPasswords" uri="ms-resource://<GUID>/Err.Msgs/MismatchedPasswords">...
@@ -264,24 +264,24 @@ private void RefreshUIText()
 }
 ```
 
-## <a name="load-strings-from-a-class-library-or-a-windows-runtime-library"></a>Charger des chaînes à partir d’une bibliothèque de classes ou d’une bibliothèque de Runtime Windows
+## <a name="load-strings-from-a-class-library-or-a-windows-runtime-library"></a>Charger des chaînes à partir d’une bibliothèque de classes ou d’une bibliothèque de Windows Runtime
 
 Les ressources de chaîne d’une bibliothèque de classes (Windows universel) ou d’une [bibliothèque Windows Runtime (Windows universel)](../winrt-components/index.md) référencée sont généralement ajoutées dans un sous-dossier du package dans lequel elles sont incluses pendant le processus de génération. L’identificateur de ressource d’une telle chaîne prend généralement la forme *NomDeBibliothèque/NomFichierRessources/IdentificateurRessource*.
 
-Une bibliothèque peut obtenir un ResourceLoader pour ses propres ressources. Par exemple, le code suivant illustre comment une bibliothèque ou une application qui y fait référence peut vous aider à obtenir un ResourceLoader pour les ressources de chaîne de la bibliothèque.
+Une bibliothèque peut obtenir un ResourceLoader pour ses propres ressources. Par exemple, le code suivant illustre comment une bibliothèque ou une application qui y fait référence peut obtenir un ResourceLoader pour les ressources de type chaîne de la bibliothèque.
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("ContosoControl/Resources");
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("exampleResourceName");
 ```
 
-Pour une bibliothèque de Runtime Windows (Universal Windows), si l’espace de noms par défaut est segmenté (il contient «. » caractères), puis utilisez des points dans le nom de mappage des ressources.
+Pour une bibliothèque de Windows Runtime (Windows universel), si l’espace de noms par défaut est segmenté (il contient des caractères « . »), utilisez des points dans le nom de la carte de ressources.
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Contoso.Control/Resources");
 ```
 
-Vous n’avez pas besoin de faire pour une bibliothèque de classes (Universal Windows). Si vous avez des doutes, vous pouvez spécifier [options de ligne de commande MakePri.exe](makepri-exe-command-options.md) pour faire un dump de votre composant ou fichier PRI de la bibliothèque. De chaque ressource `uri` est indiqué dans le fichier objet.
+Vous n’avez pas besoin de le faire pour une bibliothèque de classes (Windows universel). En cas de doute, vous pouvez spécifier des [options de ligne de commande MakePri. exe](makepri-exe-command-options.md) pour vider le fichier PRI de votre composant ou de votre bibliothèque. Le `uri` de chaque ressource est indiqué dans le fichier vidé.
 
 ```xml
 <NamedResource name="exampleResourceName" uri="ms-resource://Contoso.Control/Contoso.Control/ReswFileName/exampleResourceName">...
@@ -289,44 +289,44 @@ Vous n’avez pas besoin de faire pour une bibliothèque de classes (Universal W
 
 ## <a name="loading-strings-from-other-packages"></a>Chargement de chaînes à partir d’autres packages
 
-Les ressources pour un package d’application sont gérés et accessibles par le biais du package propre niveau supérieur [**ResourceMap** ](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live) qui est accessible à partir du [**ResourceManager** ](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live). Dans chaque package, différents composants peuvent avoir leurs propres sous-arborescences ResourceMap, auquel vous pouvez accéder via [ **ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live).
+Les ressources d’un package d’application sont gérées et accessibles par le biais de l' [**ResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live) de niveau supérieur du package, accessible à partir du [**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live)actuel. Dans chaque package, différents composants peuvent avoir leurs propres sous-arbres ResourceMap, auxquels vous pouvez accéder via [**ResourceMap. GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live).
 
 Un package d’infrastructure peut accéder à ses propres ressources avec un URI d’identificateur de ressource absolu. Voir également [Schémas d’URI](uri-schemes.md).
 
-## <a name="loading-strings-in-non-packaged-applications"></a>Chargement des chaînes dans les applications non emballés
+## <a name="loading-strings-in-non-packaged-applications"></a>Chargement de chaînes dans des applications non empaquetées
 
-Depuis la Version 1903 (peut 2019 mettre à jour) de Windows, les applications non emballés peuvent aussi exploiter le système de gestion de ressources.
+À compter de Windows version 1903 (mise à jour de mai 2019), les applications non empaquetées peuvent également tirer parti du système de gestion des ressources.
 
-Créez simplement vos contrôles/bibliothèques utilisateur UWP et [stocker toutes les chaînes dans un fichier de ressources](#store-strings-in-a-resources-file). Vous pouvez ensuite [font référence à un identificateur de ressource de chaîne à partir de XAML](#refer-to-a-string-resource-identifier-from-xaml), [font référence à un identificateur de ressource de chaîne à partir du code](#refer-to-a-string-resource-identifier-from-code), ou [charger des chaînes à partir d’une bibliothèque de classes ou d’une bibliothèque de Runtime Windows](#load-strings-from-a-class-library-or-a-windows-runtime-library).
+Créez simplement vos bibliothèques/contrôles utilisateur UWP et [stockez toutes les chaînes dans un fichier de ressources](#store-strings-in-a-resources-file). Vous pouvez ensuite [faire référence à un identificateur de ressource de chaîne à partir de XAML](#refer-to-a-string-resource-identifier-from-xaml), [faire référence à un identificateur de ressource de chaîne à partir du code](#refer-to-a-string-resource-identifier-from-code), ou [charger des chaînes à partir d’une bibliothèque de classes ou d’une bibliothèque de Windows Runtime](#load-strings-from-a-class-library-or-a-windows-runtime-library).
 
-Pour utiliser des ressources dans les applications non empaqueté, vous devez effectuer quelques éléments :
+Pour utiliser des ressources dans des applications non empaquetées, vous devez effectuer quelques opérations :
 
-1. Utilisez [GetForViewIndependentUse](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforviewindependentuse) au lieu de [GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) lors de la résolution des ressources à partir du code comme il en existe aucun *affichage actuel* dans les scénarios non empaqueté. L’exception suivante se produit si vous appelez [GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) dans les scénarios non emballés : *Les contextes de ressources peut ne pas être créées sur les threads qui n’ont pas un CoreWindow.*
-1. Utilisez [MakePri.exe](https://docs.microsoft.com/windows/uwp/app-resources/compile-resources-manually-with-makepri) pour générer manuellement le fichier de votre application resources.pri.
+1. Utilisez [GetForViewIndependentUse](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforviewindependentuse) au lieu de [GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) lors de la résolution de ressources à partir du code, car il n’existe pas d' *affichage actuel* dans les scénarios non packagés. L’exception suivante se produit si vous appelez [GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) dans des scénarios non packagés : les *contextes de ressources ne peuvent pas être créés sur des threads qui n’ont pas de CoreWindow.*
+1. Utilisez [MakePri. exe](https://docs.microsoft.com/windows/uwp/app-resources/compile-resources-manually-with-makepri) pour générer manuellement le fichier Resources. pri de votre application.
     - Exécutez `makepri new /pr <PROJECTROOT> /cf <PRICONFIG> /of resources.pri`
-    - Le &lt;PRICONFIG&gt; doit omettre la «&lt;empaquetage&gt;« section afin que toutes les ressources sont regroupés dans un fichier resources.pri unique. Si vous utilisez la valeur par défaut [fichier de configuration MakePri.exe](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration) créé par [createconfig](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-command-options#createconfig-command), vous devez supprimer le «&lt;empaquetage&gt;« section manuellement après sa création.
-    - Le &lt;PRICONFIG&gt; doit contenir tous les indexeurs pertinentes nécessaires pour fusionner toutes les ressources dans votre projet dans un fichier resources.pri unique. La valeur par défaut [fichier de configuration MakePri.exe](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration) créé par [createconfig](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-command-options#createconfig-command) inclut tous les indexeurs.
-    - Si vous n’utilisez pas la configuration par défaut, vérifiez que l’indexeur PRI est activé (passez en revue la configuration par défaut pour savoir comment procéder) pour fusionner PRIs localisés à partir des références de projet UWP, les références NuGet, etc., qui sont situés dans la racine du projet.
+    - Le&gt; &lt;fichier PRICONFIG doit omettre la section «&lt;Packaging&gt;» afin que toutes les ressources soient regroupées dans un seul fichier Resources. pri. Si vous utilisez le [fichier de configuration MakePri. exe](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration) par défaut créé par [createconfig](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-command-options#createconfig-command), vous devez supprimer manuellement la section «&lt;&gt;de Packaging » après sa création.
+    - Le&gt; &lt;fichier PRICONFIG doit contenir tous les indexeurs appropriés nécessaires à la fusion de toutes les ressources de votre projet dans un seul fichier Resources. pri. Le [fichier de configuration MakePri. exe](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration) par défaut créé par [createconfig](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-command-options#createconfig-command) comprend tous les indexeurs.
+    - Si vous n’utilisez pas la configuration par défaut, assurez-vous que l’indexeur PRI est activé (consultez la configuration par défaut pour savoir comment procéder) pour fusionner les informations trouvées dans les références de projet UWP, les références NuGet, etc., qui se trouvent dans la racine du projet.
         > [!NOTE]
-        > En omettant `/IndexName`, et par le projet n’a ne pas un manifeste d’application, l’espace de noms IndexName/racine du fichier PRI est automatiquement défini sur *Application*, qui comprend de l’exécution pour les applications empaquetées non (cette opération supprime le précédente dépendance dure sur l’ID de package). Lors de la spécification de ressource URI, ms-resource : / / / les références qui omettent l’espace de noms racine déduire *Application* en tant que l’espace de noms racine pour les applications non empaquetée (ou vous pouvez spécifier *Application* explicitement en tant que dans ms-resource://Application/).
-1. Copiez le fichier PRI dans le répertoire de sortie de la .exe
-1. Exécutez le fichier .exe 
+        > En omettant `/IndexName`et que le projet n’a pas de manifeste d’application, l’espace de noms IndexName/root du fichier PRI est automatiquement défini sur *application*, que le runtime comprend pour les applications non empaquetées (cela supprime la dépendance matérielle précédente sur l’ID de package). Lorsque vous spécifiez des URI de ressource, les références de MS-Resource:///qui omettent l’espace de noms racine déduirent l' *application* en tant qu’espace de noms racine pour les applications non empaquetées (ou vous pouvez spécifier *application* explicitement comme dans MS-Resource://application/).
+1. Copiez le fichier PRI dans le répertoire de sortie de génération du fichier. exe.
+1. Exécuter le fichier. exe 
     > [!NOTE]
-    > Le système de gestion de ressources utilise la langue d’affichage système plutôt que la liste de langue par défaut utilisateur lors de la résolution des ressources basée sur le langage dans les applications empaquetées non. La liste des utilisateurs langue par défaut est utilisée uniquement pour les applications UWP.
+    > Le système de gestion des ressources utilise la langue d’affichage du système plutôt que la liste langue par défaut de l’utilisateur lors de la résolution des ressources en fonction de la langue des applications non empaquetées. La liste langue par défaut de l’utilisateur est utilisée uniquement pour les applications UWP.
 
 > [!Important]
-> Vous devez recréer manuellement les fichiers PRI chaque fois que les ressources sont modifiées. Nous recommandons d’utiliser un script de post-build qui gère la [MakePri.exe](https://docs.microsoft.com/windows/uwp/app-resources/compile-resources-manually-with-makepri) commande et copie la sortie de resources.pri dans le répertoire .exe.
+> Vous devez régénérer manuellement les fichiers PRI chaque fois que des ressources sont modifiées. Nous vous recommandons d’utiliser un script postérieur à la génération qui gère la commande [MakePri. exe](https://docs.microsoft.com/windows/uwp/app-resources/compile-resources-manually-with-makepri) et copie la sortie Resources. pri dans le répertoire. exe.
 
 ## <a name="important-apis"></a>API importantes
-* [ApplicationModel.Resources.ResourceLoader](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.ResourceLoader)
-* [ResourceContext.SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_)
+* [ApplicationModel. resources. ResourceLoader](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.ResourceLoader)
+* [ResourceContext. SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_)
 * [MapChanged](/uwp/api/windows.foundation.collections.iobservablemap-2.mapchanged?branch=live)
 
 ## <a name="related-topics"></a>Rubriques connexes
-* [Portage du XAML et l’interface utilisateur](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization)
-* [x : Uid, directive](../xaml-platform/x-uid-directive.md)
+* [Portage du XAML et de l’interface utilisateur](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization)
+* [x :Uid (directive)](../xaml-platform/x-uid-directive.md)
 * [Propriétés jointes](../xaml-platform/attached-properties-overview.md)
 * [Éléments de manifeste localisables](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live)
-* [Balise de langue de BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
-* [Adapter vos ressources de langue, mise à l’échelle et autres qualificateurs](tailor-resources-lang-scale-contrast.md)
+* [Balise de langue BCP-47](https://tools.ietf.org/html/bcp47)
+* [Adaptez vos ressources à la langue, à la mise à l’échelle et à d’autres qualificateurs](tailor-resources-lang-scale-contrast.md)
 * [Comment charger des ressources de type chaîne](https://docs.microsoft.com/previous-versions/windows/apps/hh965323(v=win.10))

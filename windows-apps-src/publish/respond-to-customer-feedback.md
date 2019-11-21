@@ -6,23 +6,23 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 04983b80-2a18-4ace-93d3-e8c33c04bfb9
 ms.localizationpriority: medium
-ms.openlocfilehash: 93d4da26dbb4c5eee1856b3a594214aabbbbaa00
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9bc305834381fcdddac6e4eacf12144fd9f189c2
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645074"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259944"
 ---
 # <a name="respond-to-customer-feedback"></a>Répondre aux retours des clients
 
 Vous pouvez utiliser le [rapport de commentaires](feedback-report.md) pour passer en revue les commentaires formulés par les clients Windows 10 au sujet de votre application qu’ils ont publiés dans le Hub de commentaires, puis répondre directement à ces commentaires. Vous avez la possibilité de publier vos réponses dans le Hub de commentaires afin qu’elles soient visibles à tous (soit sous forme de commentaires individuels, soit en mettant à jour l’état d’une partie du commentaire et en ajoutant une description). Dans vos réponses, vous pouvez informer les clients sur de nouvelles fonctionnalités ou des correctifs de bogues, ou leur demander des commentaires plus précis sur la façon d’améliorer votre application. Vous pouvez également envoyer votre réponse par courrier électronique directement au client qui a laissé le commentaire.
 
 > [!TIP]
-> Vous pouvez encourager les clients à laisser des commentaires à l’aide de l’API de commentaires du [Microsoft Store Services SDK](https://aka.ms/store-em-sdk) pour ajouter un contrôle qui permettra aux clients de [lancer directement l’application Hub de commentaires à partir de votre application UWP](../monetize/launch-feedback-hub-from-your-app.md). N’oubliez pas que tout client ayant téléchargé votre application sur un appareil Windows 10 prenant en charge le Hub de commentaires a la possibilité de laisser des commentaires à son sujet directement à partir de cette application. C’est la raison pour laquelle vous pouvez voir des commentaires de clients dans ce rapport, même si vous n’avez pas spécifiquement demandé de commentaires depuis votre application.
+> Vous pouvez encourager les clients à laisser des commentaires à l’aide de l’API de commentaires du [Microsoft Store Services SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftStoreServicesSDK) pour ajouter un contrôle qui permettra aux clients de [lancer directement l’application Hub de commentaires à partir de votre application UWP](../monetize/launch-feedback-hub-from-your-app.md). N’oubliez pas que tout client ayant téléchargé votre application sur un appareil Windows 10 prenant en charge le Hub de commentaires a la possibilité de laisser des commentaires à son sujet directement à partir de cette application. C’est la raison pour laquelle vous pouvez voir des commentaires de clients dans ce rapport, même si vous n’avez pas spécifiquement demandé de commentaires depuis votre application.
 
 Pour répondre à n’importe quel commentaire, cliquez sur le lien **Répondre aux commentaires** qui s’affiche en regard du commentaire dans votre **rapport de commentaires**.
 
-[Partenaires](https://partner.microsoft.com/dashboard) prend en charge trois options pour répondre aux clients qui fournissent des commentaires concernant votre application. Quelle que soit l’option que vous choisissez, n’oubliez pas que chaque réponse est soumise à une restriction de 1 000 caractères.
+L' [espace partenaires](https://partner.microsoft.com/dashboard) prend en charge trois options pour répondre aux clients qui fournissent des commentaires sur votre application. Quelle que soit l’option que vous choisissez, n’oubliez pas que chaque réponse est soumise à une restriction de 1 000 caractères.
 
 ## <a name="public-comments-in-feedback-hub"></a>Publication de commentaires publics dans le Hub de commentaires
 
@@ -44,9 +44,9 @@ Pour les réponses publiques, vous disposez d’une troisième option qui consis
 
 Pour utiliser cette option, sélectionnez la case **Mettre à jour l’état**. Sélectionnez ensuite l’une des options suivantes :
 
-- **Examen**: Vous êtes conscient d’un problème et que vous recherchez dans celui-ci.
-- **Travailler dessus**: Vous êtes en train de résoudre un problème ou l’ajout d’une fonctionnalité demandée.
-- **Terminé**: Vous avez publié une mise à jour pour résoudre le problème ou d’ajouter la fonctionnalité demandée.
+- **Investigation** : vous connaissez le problème et êtes en train de l’examiner.
+- **En cours** : vous êtes en train de résoudre un problème ou d’ajouter une fonctionnalité qui vous a été demandée.
+- **Terminé** : vous avez publié une mise à jour pour corriger le problème ou ajouter la fonctionnalité demandée.
 
 Tout en mettant à jour l’état, vous pouvez entrer un commentaire pour fournir davantage d’informations, par exemple une estimation du délai de résolution du problème ou des informations complémentaires sur les dernières modifications apportées. Cette description s’affiche en haut de la liste des commentaires (et le rapport de commentaires indique l’état actuel et la description).
 
@@ -66,4 +66,4 @@ Quelle que soit la méthode utilisée pour répondre à des commentaires d’un 
 > [!NOTE]
 > En cas de réponse inappropriée à un commentaire, les clients peuvent signaler un développeur à Microsoft. Ils peuvent également choisir de ne plus recevoir de réponses à leurs commentaires par e-mail.
 
-Votre relation avec vos clients est de votre responsabilité. Microsoft ne prend pas parti en cas de litiges entre les développeurs et les clients. Toutefois, si vous pensez que le contenu d’un commentaire client concernant votre produit est inapproprié, veuillez soumettre un [ticket de support](https://go.microsoft.com/fwlink/p/?LinkID=401178).
+Votre relation avec vos clients est de votre responsabilité. Microsoft ne prend pas parti en cas de litiges entre les développeurs et les clients. Toutefois, si vous pensez que le contenu d’un commentaire client concernant votre produit est inapproprié, veuillez soumettre un [ticket de support](https://developer.microsoft.com/windows/support).

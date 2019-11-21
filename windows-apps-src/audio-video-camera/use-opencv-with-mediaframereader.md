@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, openCV
 ms.localizationpriority: medium
-ms.openlocfilehash: e8f4fd041eae30269e8b876c108151e4aae45d91
-ms.sourcegitcommit: e189166dea855ce330bd0634cc158b51cb4fbd69
+ms.openlocfilehash: a6594898dff1bf5f2262034b10e262082335f1b2
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72811644"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74255957"
 ---
 # <a name="use-the-open-source-computer-vision-library-opencv-with-mediaframereader"></a>Utiliser la bibliothèque Open Source Computer Vision Library (OpenCV) avec MediaFrameReader
 
@@ -24,9 +24,9 @@ Cet article repose sur le contenu de deux autres articles :
 
 * [Traiter des images multimédias avec MediaFrameReader](process-media-frames-with-mediaframereader.md) : cet article fournit des informations détaillées sur l’utilisation de **MediaFrameReader** pour obtenir des images à partir d’une ou de plusieurs images multimédias sources et décrit en détail l'essentiel de l'exemple de code de cet article. En particulier, **Traiter des images multimédias avec MediaFrameReader** fournit la description du code pour une classe d’assistance, **FrameRenderer**, qui gère la présentation des images multimédias dans un élément **Image** XAML. L’exemple de code dans cet article utilise également cette classe d’assistance.
 
-* [Traitement des bitmaps logicielles avec OpenCV](process-software-bitmaps-with-opencv.md) : cet article vous guide dans la création d’un code natif Windows Runtime composant, **OpenCVBridge**, qui permet de convertir l’objet **SoftwareBitmap** , utilisé par **MediaFrameReader** et le type de **tapis** utilisé par la bibliothèque OpenCV. L’exemple de code de cet article suppose que vous avez suivi les étapes permettant d'ajouter le composant **OpenCVBridge** à votre solution d’application UWP.
+* [Traitement des bitmaps logicielles avec OpenCV](process-software-bitmaps-with-opencv.md) : cet article vous guide tout au long de la création d’un composant Windows Runtime de code natif, **OpenCVBridge**, qui permet de convertir l’objet **SoftwareBitmap** , utilisé par **MediaFrameReader**et le type de **tapis** utilisé par la bibliothèque OpenCV. L’exemple de code de cet article suppose que vous avez suivi les étapes permettant d'ajouter le composant **OpenCVBridge** à votre solution d’application UWP.
 
-Outre ces articles, pour afficher et télécharger un exemple de travail complet, de bout en bout, du scénario décrit dans cet article, voir la [Profils d’appareil photo + OpenCV](https://go.microsoft.com/fwlink/?linkid=854003) dans le référentiel Windows Universal Samples GitHub.
+Outre ces articles, pour afficher et télécharger un exemple de travail complet, de bout en bout, du scénario décrit dans cet article, voir la [Profils d’appareil photo + OpenCV](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraOpenCV) dans le référentiel Windows Universal Samples GitHub.
 
 Pour commencer à développer rapidement, vous pouvez inclure la bibliothèque OpenCV dans un projet d’application UWP à l’aide de packages NuGet, mais ces packages peuvent ne pas réussir le processus certficication de l’application lorsque vous envoyez votre application au Windows Store. il est donc recommandé de télécharger le OpenCV code source de la bibliothèque et générez les binaires vous-même avant de soumettre votre application. Vous trouverez des informations sur le développement avec OpenCV à l’adresse [https://opencv.org](https://opencv.org)
 
@@ -68,8 +68,8 @@ L’événement **FrameArrived** est déclenché quand une nouvelle image est di
 * [Capture de photos, vidéo et audio de base avec MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [Traiter des frames multimédias avec MediaFrameReader](process-media-frames-with-mediaframereader.md)
 * [Traitement des bitmaps logicielles avec OpenCV](process-software-bitmaps-with-opencv.md)
-* [Exemple de trames d’appareil photo](https://go.microsoft.com/fwlink/?LinkId=823230)
-* [Trames de l’appareil photo + OpenCV](https://go.microsoft.com/fwlink/?linkid=854003)
+* [Exemple de trames d’appareil photo](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraFrames)
+* [Trames de l’appareil photo + OpenCV](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraOpenCV)
  
 
  

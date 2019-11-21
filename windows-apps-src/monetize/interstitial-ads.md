@@ -6,16 +6,16 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: Windows 10, uwp, pub, publicité, contrôle de publicités, spot
 ms.localizationpriority: medium
-ms.openlocfilehash: 6283c4d69a511e4dd4aa342b547c18624952be29
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 98800f1a9a94de20910e932032d8b949bac52dde
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58335117"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259280"
 ---
 # <a name="interstitial-ads"></a>Spots publicitaires
 
-Cette procédure pas à pas montre comment insérer des spots publicitaires dans les jeux et les applications de plateforme Windows universelle (UWP) pour Windows 10. Pour obtenir des exemples complets de projet qui montrent comment ajouter des spots publicitaires à des applications JavaScript/HTML et XAML en C# et C++, voir [Exemples de publicité sur GitHub](https://aka.ms/githubads).
+Cette procédure pas à pas montre comment insérer des spots publicitaires dans les jeux et les applications de plateforme Windows universelle (UWP) pour Windows 10. Pour obtenir des exemples complets de projet qui montrent comment ajouter des spots publicitaires à des applications JavaScript/HTML et XAML en C# et C++, voir [Exemples de publicité sur GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising).
 
 <span id="whatareinterstitialads10"/>
 
@@ -34,9 +34,9 @@ Nous proposons deux types de spots publicitaires à utiliser dans vos applicatio
 > [!NOTE]
 > L’API pour les spots ne gère pas d’interface utilisateur sauf au moment de la lecture vidéo. Reportez-vous aux [meilleures pratiques Spots](ui-and-user-experience-guidelines.md#interstitialbestpractices10) pour obtenir des recommandations sur les choses à faire et à ne pas faire, si vous envisagez d’intégrer des spots publicitaires dans votre application.
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Conditions préalables
 
-* Installer le [SDK Microsoft Advertising](https://aka.ms/ads-sdk-uwp) avec Visual Studio 2015 ou une version ultérieure de Visual Studio. Pour des instructions d’installation, voir [cet article](install-the-microsoft-advertising-libraries.md).
+* Installer le [SDK Microsoft Advertising](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) avec Visual Studio 2015 ou une version ultérieure de Visual Studio. Pour des instructions d’installation, voir [cet article](install-the-microsoft-advertising-libraries.md).
 
 ## <a name="integrate-an-interstitial-ad-into-your-app"></a>Intégrer un spot publicitaire dans votre application
 
@@ -44,7 +44,7 @@ Pour afficher des spots publicitaires dans votre application, suivez les instruc
 
 * [XAML/.NET](#interstitialadsxaml10)
 * [HTML/JavaScript](#interstitialadshtml10)
-* [C++ (interopérabilité DirectX)](#interstitialadsdirectx10)
+* [C++(DirectX Interop)](#interstitialadsdirectx10)
 
 <span id="interstitialadsxaml10"/>
 
@@ -71,7 +71,7 @@ Cette section fournit des exemples en C#, mais Visual Basic et C++ sont égalem
 4.  À un emplacement approprié de votre application (par exemple, dans ```MainPage``` ou dans une autre page), déclarez un objet [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) et plusieurs champs de chaîne représentant l’ID de l’application et l’ID d’unité publicitaire de votre spot publicitaire. L’exemple de code suivant affecte les champs `myAppId` et `myAdUnitId` aux [valeurs de test](set-up-ad-units-in-your-app.md#test-ad-units) des spots publicitaires.
 
     > [!NOTE]
-    > Chaque **InterstitialAd** est associé à une *unité publicitaire* qui est utilisée par nos services pour servir des publicités au contrôle, et chaque unité publicitaire se compose d’un *ID d'unité publicitaire* et d'un *ID d'application*. Dans ces étapes, vous attribuez à votre contrôle des valeurs de test ID d’unité publicitaire et ID d'application. Ces valeurs de test ne peuvent être utilisées que dans une version de test de votre application. Avant de publier votre application dans le Store, vous devez [remplacer ces valeurs avec les valeurs en direct de test](#release) à partir du centre de partenaires.
+    > Chaque **InterstitialAd** est associé à une *unité publicitaire* qui est utilisée par nos services pour servir des publicités au contrôle, et chaque unité publicitaire se compose d’un *ID d'unité publicitaire* et d'un *ID d'application*. Dans ces étapes, vous attribuez à votre contrôle des valeurs de test ID d’unité publicitaire et ID d'application. Ces valeurs de test ne peuvent être utilisées que dans une version de test de votre application. Avant de publier votre application dans le Windows Store, vous devez [remplacer ces valeurs de test par des valeurs dynamiques](#release) de l’espace partenaires.
 
     [!code-csharp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet2)]
 
@@ -79,11 +79,11 @@ Cette section fournit des exemples en C#, mais Visual Basic et C++ sont égalem
 
     [!code-csharp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet3)]
 
-6.  Si vous souhaitez afficher un *vidéo INTERSTITIELLE* ad : Environ 30 à 60 secondes avant que vous avez besoin de la publicité, utilisez le [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) méthode pré-extrait la publicité. Cela laisse suffisamment de temps pour demander et préparer la publicité avant qu’elle ne soit affichée. Veillez à spécifier **AdType.Video** pour le type d’annonce.
+6.  Si vous souhaitez afficher un *spot vidéo* : récupérez d’abord le spot publicitaire à l’aide de la méthode [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) environ 30 à 60 secondes avant que vous n’en ayez besoin. Cela laisse suffisamment de temps pour demander et préparer la publicité avant qu’elle ne soit affichée. Veillez à spécifier **AdType.Video** pour le type d’annonce.
 
     [!code-csharp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet4)]
 
-    Si vous souhaitez afficher un *bannière INTERSTITIELLE* ad : Environ 5 à 8 secondes avant que vous avez besoin de la publicité, utilisez le [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) méthode pré-extrait la publicité. Cela laisse suffisamment de temps pour demander et préparer la publicité avant qu’elle ne soit affichée. Veillez à spécifier **AdType.Display** pour le type d’annonce.
+    Si vous souhaitez afficher un *spot de bannière* publicitaire : récupérez d’abord le spot publicitaire à l’aide de la méthode [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) environ 5 à 8 secondes avant que vous n’en ayez besoin. Cela laisse suffisamment de temps pour demander et préparer la publicité avant qu’elle ne soit affichée. Veillez à spécifier **AdType.Display** pour le type d’annonce.
 
     ```csharp
     myInterstitialAd.RequestAd(AdType.Display, myAppId, myAdUnitId);
@@ -124,7 +124,7 @@ Les instructions ci-dessous partent du principe que vous avez créé un projet W
 4.  Dans un fichier .js de votre projet, déclarez un objet [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) et plusieurs champs contenant l’ID de l’application et l’ID d’unité publicitaire de votre spot publicitaire. L’exemple de code suivant affecte les champs `applicationId` et `adUnitId` aux [valeurs de test](set-up-ad-units-in-your-app.md#test-ad-units) des spots publicitaires.
 
     > [!NOTE]
-    > Chaque **InterstitialAd** est associé à une *unité publicitaire* qui est utilisée par nos services pour servir des publicités au contrôle, et chaque unité publicitaire se compose d’un *ID d'unité publicitaire* et d'un *ID d'application*. Dans ces étapes, vous attribuez à votre contrôle des valeurs de test ID d’unité publicitaire et ID d'application. Ces valeurs de test ne peuvent être utilisées que dans une version de test de votre application. Avant de publier votre application dans le Store, vous devez [remplacer ces valeurs avec les valeurs en direct de test](#release) à partir du centre de partenaires.
+    > Chaque **InterstitialAd** est associé à une *unité publicitaire* qui est utilisée par nos services pour servir des publicités au contrôle, et chaque unité publicitaire se compose d’un *ID d'unité publicitaire* et d'un *ID d'application*. Dans ces étapes, vous attribuez à votre contrôle des valeurs de test ID d’unité publicitaire et ID d'application. Ces valeurs de test ne peuvent être utilisées que dans une version de test de votre application. Avant de publier votre application dans le Windows Store, vous devez [remplacer ces valeurs de test par des valeurs dynamiques](#release) de l’espace partenaires.
 
     [!code-javascript[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/script.js#Snippet1)]
 
@@ -132,11 +132,11 @@ Les instructions ci-dessous partent du principe que vous avez créé un projet W
 
     [!code-javascript[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/script.js#Snippet2)]
 
-5. Si vous souhaitez afficher un *vidéo INTERSTITIELLE* ad : Environ 30 à 60 secondes avant que vous avez besoin de la publicité, utilisez le [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) méthode pré-extrait la publicité. Cela laisse suffisamment de temps pour demander et préparer la publicité avant qu’elle ne soit affichée. Veillez à spécifier **InterstitialAdType.video** pour le type d’annonce.
+5. Si vous souhaitez afficher un *spot vidéo* : récupérez d’abord le spot publicitaire à l’aide de la méthode [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) environ 30 à 60 secondes avant que vous n’en ayez besoin. Cela laisse suffisamment de temps pour demander et préparer la publicité avant qu’elle ne soit affichée. Veillez à spécifier **InterstitialAdType.video** pour le type d’annonce.
 
     [!code-javascript[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/script.js#Snippet3)]
 
-    Si vous souhaitez afficher un *bannière INTERSTITIELLE* ad : Environ 5 à 8 secondes avant que vous avez besoin de la publicité, utilisez le [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) méthode pré-extrait la publicité. Cela laisse suffisamment de temps pour demander et préparer la publicité avant qu’elle ne soit affichée. Veillez à spécifier **InterstitialAdType.display** pour le type d’annonce.
+    Si vous souhaitez afficher un *spot de bannière* publicitaire : récupérez d’abord le spot publicitaire à l’aide de la méthode [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) environ 5 à 8 secondes avant que vous n’en ayez besoin. Cela laisse suffisamment de temps pour demander et préparer la publicité avant qu’elle ne soit affichée. Veillez à spécifier **InterstitialAdType.display** pour le type d’annonce.
 
     ```js
     if (interstitialAd) {
@@ -175,7 +175,7 @@ Cet exemple part du principe que vous avez créé un projet C++ **application Di
 3.  Dans le même fichier d’en-tête, déclarez plusieurs champs de chaîne représentant l’ID de l’application et l’ID d’unité publicitaire de votre spot publicitaire. L’exemple de code suivant affecte les champs `myAppId` et `myAdUnitId` aux [valeurs de test](set-up-ad-units-in-your-app.md#test-ad-units) des spots publicitaires.
 
     > [!NOTE]
-    > Chaque **InterstitialAd** est associé à une *unité publicitaire* qui est utilisée par nos services pour servir des publicités au contrôle, et chaque unité publicitaire se compose d’un *ID d'unité publicitaire* et d'un *ID d'application*. Dans ces étapes, vous attribuez à votre contrôle des valeurs de test ID d’unité publicitaire et ID d'application. Ces valeurs de test ne peuvent être utilisées que dans une version de test de votre application. Avant de publier votre application dans le Store, vous devez [remplacer ces valeurs avec les valeurs en direct de test](#release) à partir du centre de partenaires.
+    > Chaque **InterstitialAd** est associé à une *unité publicitaire* qui est utilisée par nos services pour servir des publicités au contrôle, et chaque unité publicitaire se compose d’un *ID d'unité publicitaire* et d'un *ID d'application*. Dans ces étapes, vous attribuez à votre contrôle des valeurs de test ID d’unité publicitaire et ID d'application. Ces valeurs de test ne peuvent être utilisées que dans une version de test de votre application. Avant de publier votre application dans le Windows Store, vous devez [remplacer ces valeurs de test par des valeurs dynamiques](#release) de l’espace partenaires.
 
     [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.h#Snippet2)]
 
@@ -187,11 +187,11 @@ Cet exemple part du principe que vous avez créé un projet C++ **application Di
 
     [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.cpp#Snippet4)]
 
-7. Si vous souhaitez afficher un *vidéo INTERSTITIELLE* ad : Récupérez d’abord le spot publicitaire à l’aide de la méthode [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) environ 30 à 60 secondes avant que vous n’en ayez besoin. Cela laisse suffisamment de temps pour demander et préparer la publicité avant qu’elle ne soit affichée. Veillez à spécifier **AdType::Video** pour le type d’annonce.
+7. Si vous souhaitez afficher un *spot vidéo* : récupérez d’abord le spot à l’aide de la méthode [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) environ 30 à 60 secondes avant que vous n’en ayez besoin. Cela laisse suffisamment de temps pour demander et préparer la publicité avant qu’elle ne soit affichée. Veillez à spécifier **AdType::Video** pour le type d’annonce.
 
     [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.cpp#Snippet5)]
 
-    Si vous souhaitez afficher un *bannière INTERSTITIELLE* ad : Environ 5 à 8 secondes avant que vous avez besoin de la publicité, utilisez le [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) méthode pré-extrait la publicité. Cela laisse suffisamment de temps pour demander et préparer la publicité avant qu’elle ne soit affichée. Veillez à spécifier **AdType::Display** pour le type d’annonce.
+    Si vous souhaitez afficher un *spot de bannière* publicitaire : récupérez d’abord le spot publicitaire à l’aide de la méthode [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) environ 5 à 8 secondes avant que vous n’en ayez besoin. Cela laisse suffisamment de temps pour demander et préparer la publicité avant qu’elle ne soit affichée. Veillez à spécifier **AdType::Display** pour le type d’annonce.
 
     ```cpp
     m_interstitialAd->RequestAd(AdType::Display, myAppId, myAdUnitId);
@@ -213,17 +213,17 @@ Cet exemple part du principe que vous avez créé un projet C++ **application Di
 
 1. Assurez-vous que votre utilisation des spots publicitaires dans votre app respecte nos [recommandations en matière de spots publicitaires](ui-and-user-experience-guidelines.md#interstitialbestpractices10).
 
-2.  Dans le centre de partenaires, accédez à la [les publicités dans l’application](../publish/in-app-ads.md) page et [créer une unité ad](set-up-ad-units-in-your-app.md#live-ad-units). Pour le type d’unité publicitaire, choisissez **Spot vidéo** ou **Bannière**, en fonction du type de spot que vous diffusez. Prenez note de l’ID d’unité publicitaire et de l’ID de l’application.
+2.  Dans l’espace partenaires, accédez à la page [annonces dans l’application](../publish/in-app-ads.md) et [créez une unité ad](set-up-ad-units-in-your-app.md#live-ad-units). Pour le type d’unité publicitaire, choisissez **Spot vidéo** ou **Bannière**, en fonction du type de spot que vous diffusez. Prenez note de l’ID d’unité publicitaire et de l’ID de l’application.
     > [!NOTE]
-    > Les valeurs d'ID d’application pour les unités publicitaires de test et les unités publicitaires dynamiques UWP ont des formats différents. Les valeurs d’ID d'application tests sont des GUID. Lorsque vous créez une unité d’ad UWP en direct dans l’espace partenaires, la valeur d’ID application pour l’unité ad correspond toujours à l’ID de Store pour votre application (un exemple de valeur d’ID de Store ressemble à 9NBLGGH4R315).
+    > Les valeurs d'ID d’application pour les unités publicitaires de test et les unités publicitaires dynamiques UWP ont des formats différents. Les valeurs d’ID d'application tests sont des GUID. Lorsque vous créez une unité ad UWP en temps réel dans l’espace partenaires, la valeur de l’ID d’application pour l’unité ad correspond toujours à l’ID de magasin de votre application (un exemple de valeur d’ID de magasin ressemble à 9NBLGGH4R315).
 
 3. Vous pouvez éventuellement activer la médiation publicitaire pour l'**InterstitialAd** en configurant les paramètres de la section [Paramètres de médiation](../publish/in-app-ads.md#mediation) sur la page [Publicités In-app](../publish/in-app-ads.md). La médiation publicitaire vous permet d’optimiser vos revenus publicitaires et vos capacités de promotion d’application en affichant des spots issus de plusieurs réseaux publicitaires, y compris les publicités d’autres réseaux payants tels que Taboola et Smaato et les publicités des campagnes de promotion d’applications Microsoft.
 
-4.  Dans votre code, remplacez les valeurs d’unit test ad par les valeurs en direct, que vous avez généré dans le centre de partenaires.
+4.  Dans votre code, remplacez les valeurs de l’unité ad du test par les valeurs dynamiques que vous avez générées dans l’espace partenaires.
 
-5.  [Soumettre votre application](../publish/app-submissions.md) vers le Store à l’aide de partenaires.
+5.  [Soumettez votre application](../publish/app-submissions.md) au magasin à l’aide de l’espace partenaires.
 
-6.  Examinez votre [rapports de performances de publicité](../publish/advertising-performance-report.md) dans Partner Center.
+6.  Passez en revue les [rapports de performances publicitaires](../publish/advertising-performance-report.md) dans l’espace partenaires.
 
 <span id="manage" />
 
@@ -236,8 +236,8 @@ Vous pouvez utiliser plusieurs contrôles **InterstitialAd** dans une seule appl
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Instructions pour les publicités INTERSTITIELLES](ui-and-user-experience-guidelines.md#interstitialbestpractices10)
-* [Exemple de code ad INTERSTITIELLE dansC#](interstitial-ad-sample-code-in-c.md)
-* [Exemple de code ad INTERSTITIELLE dans JavaScript](interstitial-ad-sample-code-in-javascript.md)
-* [Exemples de publicité sur GitHub](https://aka.ms/githubads)
-* [Configurer des unités d’ad pour votre application](set-up-ad-units-in-your-app.md)
+* [Instructions pour les publicités interstitielles](ui-and-user-experience-guidelines.md#interstitialbestpractices10)
+* [Exemple de code de publicité interstitielle dansC#](interstitial-ad-sample-code-in-c.md)
+* [Exemple de code de publicité interstitielle en JavaScript](interstitial-ad-sample-code-in-javascript.md)
+* [Exemples de publicité sur GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)
+* [Configurer des unités AD pour votre application](set-up-ad-units-in-your-app.md)

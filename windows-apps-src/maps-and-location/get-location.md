@@ -6,12 +6,12 @@ ms.date: 11/28/2017
 ms.topic: article
 keywords: windows 10, uwp, carte, emplacement, fonctionnalité de localisation
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f57af61c13b6c8d9658b444bff83098cbbbac2c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 50f605164a496d00113b73ffeae669e3ff145535
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371944"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260392"
 ---
 # <a name="get-the-users-location"></a>Obtenir l’emplacement de l’utilisateur
 
@@ -20,9 +20,9 @@ ms.locfileid: "66371944"
 
 Déterminez l’emplacement de l’utilisateur et réagissez aux changements d’emplacement. L’accès à l’emplacement de l’utilisateur est géré par les paramètres de confidentialité définis dans l’application Paramètres. Cette rubrique montre également comment vérifier si votre application est autorisée à accéder à l’emplacement de l’utilisateur.
 
-**Conseil** Pour en savoir plus sur l’accès à l’emplacement de l’utilisateur dans votre application, téléchargez l’exemple suivant à partir du [référentiel Windows-universal-samples](https://go.microsoft.com/fwlink/p/?LinkId=619979) sur GitHub.
+**Conseil** Pour en savoir plus sur l’accès à l’emplacement de l’utilisateur dans votre application, téléchargez l’exemple suivant à partir du [référentiel Windows-universal-samples](https://github.com/Microsoft/Windows-universal-samples) sur GitHub.
 
--   [Exemple de carte pour UWP (plateforme Windows universelle)](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [Exemple de carte pour UWP (plateforme Windows universelle)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
 
 ## <a name="enable-the-location-capability"></a>Activer la fonctionnalité de localisation
 
@@ -44,7 +44,7 @@ Cette section décrit comment détecter l’emplacement géographique de l’uti
 
 ### <a name="step-1-request-access-to-the-users-location"></a>Étape 1 : Demander l’accès à l’emplacement de l’utilisateur
 
-À moins que votre application a la fonctionnalité de localisation grossier (voir la Remarque), vous devez demander l’accès à l’emplacement de l’utilisateur à l’aide de la [ **RequestAccessAsync** ](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.requestaccessasync) méthode avant de tenter d’accéder à l’emplacement. Vous devez appeler la méthode **RequestAccessAsync** à partir du thread de l’interface utilisateur et votre application doit être au premier plan. Votre application ne sera pas en mesure d’accéder aux informations d’emplacement de l’utilisateur jusqu'à ce que l’utilisateur accorde l’autorisation à votre application.\*
+À moins que votre application ait une fonctionnalité d’emplacement grossière (voir la remarque), vous devez demander l’accès à l’emplacement de l’utilisateur à l’aide de la méthode [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.requestaccessasync) avant d’essayer d’accéder à l’emplacement. Vous devez appeler la méthode **RequestAccessAsync** à partir du thread de l’interface utilisateur et votre application doit être au premier plan. Votre application ne sera pas en mesure d’accéder aux informations relatives à l’emplacement de l’utilisateur tant que l’utilisateur n’aura pas accordé l’autorisation à votre application.\*
 
 ```csharp
 using Windows.Devices.Geolocation;
@@ -56,9 +56,9 @@ var accessStatus = await Geolocator.RequestAccessAsync();
 
 La méthode [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.requestaccessasync) demande à l’utilisateur l’autorisation d’accéder à son emplacement. L’utilisateur est invité une fois seulement (par application). Une fois la première autorisation accordée ou refusée, cette méthode ne demande plus d’autorisation. Pour aider l’utilisateur à modifier les autorisations d’emplacement une fois qu’il a été invité, nous vous recommandons de fournir un lien vers les paramètres d’emplacement, comme illustré plus loin dans cette rubrique.
 
->Remarque:  La fonctionnalité d’emplacement grossier permet à votre application obtenir un emplacement (imprécis) obscurci intentionnellement sans donner l’autorisation explicite de l’utilisateur (le commutateur de l’emplacement de l’échelle du système doit toujours être **sur**, toutefois). Pour savoir comment utiliser un emplacement grossière dans votre application, consultez le [ **AllowFallbackToConsentlessPositions** ](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.allowfallbacktoconsentlesspositions) méthode dans le [ **Geolocator** ](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator)classe.
+>Remarque : la fonctionnalité d’emplacement grossiste permet à votre application d’obtenir un emplacement masqué intentionnellement (non précis) sans obtenir l’autorisation explicite de l’utilisateur (le commutateur d’emplacement à l’ensemble du système doit néanmoins être **activé**). Pour savoir comment utiliser l’emplacement grossiste dans votre application, consultez la méthode [**AllowFallbackToConsentlessPositions**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.allowfallbacktoconsentlesspositions) dans la classe [**géolocator**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator) .
 
-### <a name="step-2-get-the-users-location-and-register-for-changes-in-location-permissions"></a>Étape 2 : Obtenir l’emplacement de l’utilisateur et l’enregistrement des changements dans les autorisations de localisation
+### <a name="step-2-get-the-users-location-and-register-for-changes-in-location-permissions"></a>Étape 2 : Obtenir l’emplacement de l’utilisateur et inscrire les changements d’autorisation de localisation
 
 La méthode [**GetGeopositionAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync) effectue une lecture unique de l’emplacement actuel. Ici, une instruction **switch** est utilisée avec l’élément **accessStatus** (de l’exemple précédent) afin d’agir uniquement lorsque l’accès à l’emplacement de l’utilisateur est autorisé. Si cette opération est autorisée, le code crée un objet [**Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator), inscrit les modifications dans les autorisations d’emplacement et demande l’emplacement de l’utilisateur.
 
@@ -94,7 +94,7 @@ switch (accessStatus)
 }
 ```
 
-### <a name="step-3-handle-changes-in-location-permissions"></a>Étape 3 : Gérer les changements dans les autorisations de localisation
+### <a name="step-3-handle-changes-in-location-permissions"></a>Étape 3 : Gérer les modifications apportées aux autorisations d’emplacement
 
 L’objet [**Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator) déclenche l’événement [**StatusChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.statuschanged) afin d’indiquer que les paramètres d’emplacement de l’utilisateur ont changé. Cet événement transmet l’état correspondant par le biais de la propriété **Status** de l’argument (de type [**PositionStatus**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.PositionStatus)). Notez que cette méthode n’est pas appelée à partir du thread d’interface utilisateur et que l’objet [**Dispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher) invoque les modifications de l’interface utilisateur.
 
@@ -169,7 +169,7 @@ Cette section décrit comment utiliser l’événement [**PositionChanged**](htt
 
 Cette section suppose que vous avez déjà activé la fonctionnalité de localisation et appelé [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.requestaccessasync) à partir du thread d’interface utilisateur de votre application au premier plan.
 
-### <a name="step-1-define-the-report-interval-and-register-for-location-updates"></a>Étape 1 : Définir l’intervalle de rapport et enregistrer les mises à jour de l’emplacement
+### <a name="step-1-define-the-report-interval-and-register-for-location-updates"></a>Étape 1 :Définir l’intervalle de rapport et inscrire les mises à jour d’emplacement
 
 Dans cet exemple, une instruction **switch** est utilisée avec l’élément **accessStatus** (de l’exemple précédent) afin d’agir uniquement lorsque l’accès à l’emplacement de l’utilisateur est autorisé. Si cette opération est autorisée, le code crée un objet [**Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator), spécifie le type de suivi et inscrit les mises à jour d’emplacement.
 
@@ -214,7 +214,7 @@ switch (accessStatus)
 }
 ```
 
-### <a name="step-2-handle-location-updates"></a>Étape 2 : Gérer les mises à jour de l’emplacement
+### <a name="step-2-handle-location-updates"></a>Étape 2 : Gérer les mises à jour d’emplacement
 
 L’objet [**Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator) déclenche l’événement [**PositionChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.positionchanged) pour indiquer que l’emplacement de l’utilisateur a changé ou qu’une certaine période s’est écoulée, selon la configuration que vous avez choisie. Cet événement transmet l’emplacement correspondant via la propriété de l’argument **Position** (de type [**Geoposition**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geoposition)). Dans cet exemple, la méthode n’est pas appelée à partir du thread d’interface utilisateur, et l’objet [**Dispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher) invoque les modifications de l’interface utilisateur.
 
@@ -261,12 +261,12 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 
 Pour que votre application puisse accéder à l’emplacement de l’utilisateur, l’option **Localisation** doit être activée sur l’appareil. Dans l’application **Paramètres**, vérifiez que les **paramètres de confidentialité relatifs à la géolocalisation** suivants sont bien activés :
 
--   **Emplacement pour cet appareil...**  est activé **sur** (non applicable dans Windows 10 Mobile)
+-   **Emplacement de cet appareil...** est activé **(non** applicable dans Windows 10 mobile)
 -   Le paramètre des services de localisation **Emplacement** est **activé**.
 -   Sous **Choisir les applications qui peuvent utiliser votre emplacement**, votre application est **activée**.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Exemple de géolocalisation UWP](https://go.microsoft.com/fwlink/p/?linkid=533278)
-* [Instructions de conception pour gardiennage virtuel](https://docs.microsoft.com/windows/uwp/maps-and-location/guidelines-for-geofencing)
+* [Exemple de géolocalisation UWP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Geolocation)
+* [Instructions de conception pour le géorepérage](https://docs.microsoft.com/windows/uwp/maps-and-location/guidelines-for-geofencing)
 * [Recommandations de conception pour les applications prenant en charge la géolocalisation](https://docs.microsoft.com/windows/uwp/maps-and-location/guidelines-and-checklist-for-detecting-location)

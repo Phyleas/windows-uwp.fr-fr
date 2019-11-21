@@ -5,12 +5,12 @@ ms.date: 08/23/2017
 ms.topic: article
 keywords: Windows 10, uwp, publicités, publicité, AdControl, bannières publicitaires
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f8aea8f204127a0f783f9b751a9f4178667753e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: cd3e57ebf5a7f7770adf2a8defcd92e66ad1e3a0
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57627244"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260336"
 ---
 # <a name="banner-ads"></a>Bannières publicitaires
 
@@ -24,12 +24,12 @@ Les bannières publicitaires sont des publicités à affichage statique qui util
 
 |  Rubrique    | Description |               
 |----------|-------|
-| [Classe AdControl dans XAML et .NET](adcontrol-in-xaml-and--net.md)     | Ajoutez une bannière publicitaire dans votre application XAML/.NET.        |
-| [Classe AdControl au format HTML 5 et Javascript](adcontrol-in-html-5-and-javascript.md)     | Ajoutez une bannière publicitaire dans votre application HTML5/JavaScript.        |
-| [Tailles d’ad bannière pris en charge](supported-ad-sizes-for-banner-ads.md)    |  Vérifier les tailles prises en charge pour les bannières publicitaires dans les applications UWP.        |
+| [Classe AdControl en XAML et .NET](adcontrol-in-xaml-and--net.md)     | Ajoutez une bannière publicitaire dans votre application XAML/.NET.        |
+| [Classe AdControl en HTML 5 et JavaScript](adcontrol-in-html-5-and-javascript.md)     | Ajoutez une bannière publicitaire dans votre application HTML5/JavaScript.        |
+| [Tailles de bannières publicitaires prises en charge](supported-ad-sizes-for-banner-ads.md)    |  Vérifier les tailles prises en charge pour les bannières publicitaires dans les applications UWP.        |
 
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Exemples de publicité sur GitHub](https://aka.ms/githubads)
-* [Configurer des unités d’ad pour votre application](set-up-ad-units-in-your-app.md)
+* [Exemples de publicité sur GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)
+* [Configurer des unités AD pour votre application](set-up-ad-units-in-your-app.md)

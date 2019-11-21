@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b68e736cc6d413196205f84467b7e159c53cb98e
-ms.sourcegitcommit: e7589fa25d8de86c36b6ce6d90d360337718ef93
+ms.openlocfilehash: 0d54ab79926ef20bb54a83346c12df2ea383167d
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71311240"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258343"
 ---
 # <a name="mouse-interactions"></a>Interactions avec la souris
 
@@ -59,7 +59,7 @@ Un ensemble concis d’interactions avec la souris est utilisé de façon unifor
 <td align="left"><p>Cliquer avec le bouton droit pour sélectionner une commande</p></td>
 <td align="left"><p>Cliquez avec le bouton droit sur la barre de navigation (si elle est disponible) et la barre de l’application avec des commandes globales. Cliquez avec le bouton droit sur un élément pour le sélectionner et afficher la barre de l’application contenant des commandes contextuelles pour l’élément sélectionné.</p>
 <div class="alert">
-<strong></strong>Remarque  cliquez avec le bouton droit pour afficher un menu contextuel si les commandes de sélection ou de barre d’application ne sont pas des comportements d’interface utilisateur appropriés. Toutefois, nous vous recommandons vivement d’utiliser la barre de l’application pour tous les comportements des commandes.
+<strong>Notez</strong>  cliquez avec le bouton droit pour afficher un menu contextuel si les commandes de sélection ou de barre d’application ne sont pas des comportements d’interface utilisateur appropriés. Toutefois, nous vous recommandons vivement d’utiliser la barre de l’application pour tous les comportements des commandes.
 </div>
 <div>
  
@@ -86,7 +86,7 @@ Un ensemble concis d’interactions avec la souris est utilisé de façon unifor
 
 ## <a name="mouse-input-events"></a>Événements d’entrée de la souris
 
-La plupart des entrées de la souris peuvent être gérées par le biais des événements d’entrée routés communs pris en charge par tous les objets [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) . Elles incluent notamment :
+La plupart des entrées de la souris peuvent être gérées par le biais des événements d’entrée routés communs pris en charge par tous les objets [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) . Par exemple :
 
 - [**BringIntoViewRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)
 - [**CharacterReceived**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.characterreceived)
@@ -127,7 +127,7 @@ La plupart des entrées de la souris peuvent être gérées par le biais des év
 
 Toutefois, vous pouvez tirer parti des fonctionnalités spécifiques de chaque appareil (telles que les événements de roulette de la souris) à l’aide des événements pointeur, geste et manipulation dans [Windows. UI. Input](https://docs.microsoft.com/uwp/api/windows.ui.input).
 
-**Extraits** Consultez notre [exemple BasicInput](https://go.microsoft.com/fwlink/p/?LinkID=620302)pour.
+**Exemples :** Consultez notre [exemple BasicInput](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)pour.
 
 ## <a name="guidelines-for-visual-feedback"></a>Recommandations en matière de retour visuel
 
@@ -162,7 +162,7 @@ Si vous avez besoin de personnaliser le curseur de la souris :
 
 ### <a name="samples"></a>Exemples
 
-- [Exemple d’entrée de base](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-- [Exemple d’entrée à faible latence](https://go.microsoft.com/fwlink/p/?LinkID=620304)
-- [Exemple de mode d’interaction utilisateur](https://go.microsoft.com/fwlink/p/?LinkID=619894)
-- [Exemples de visuels de focus](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+- [Exemple d’entrée de base](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+- [Exemple d’entrée à faible latence](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+- [Exemple de mode d’interaction utilisateur](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
+- [Exemples de visuels de focus](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)

@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b63c9191489ecae54b17cb75b8aa1af32f09fcb8
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: fbcb4510a5b3ecca80b388172fe30028ac511452
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66363598"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257986"
 ---
 # <a name="optical-zoom-and-resizing"></a>Zoom optique et redimensionnement
 
@@ -29,15 +29,15 @@ Les interactions de zoom optique et de redimensionnement s’effectuent à l’a
 
 Les schémas suivants montrent les différences entre le redimensionnement et le zoom optique.
 
-**Zoom optique**: Utilisateur sélectionne une zone, puis effectue un zoom avant dans la zone entière.
+**Zoom optique** : l’utilisateur sélectionne une zone, puis effectue un zoom sur la totalité de la zone.
 
 ![resserrez les doigts pour faire un zoom avant et écartez-les pour faire un zoom arrière.](images/areazoom.png)
 
-**Redimensionner**: Utilisateur sélectionne un objet dans une zone et redimensionne cet objet.
+**Redimensionnement** : l’utilisateur sélectionne un objet au sein d’une zone et le redimensionne.
 
 ![resserrer les doigts pour rétrécir un objet et les écarter pour l’agrandir](images/objectresize.png)
 
-**Remarque**    zoom optique ne doit pas être confondu avec [Zoom sémantique](../controls-and-patterns/semantic-zoom.md). Même si les mêmes gestes sont utilisés pour les deux interactions, le zoom sémantique désigne la présentation et la navigation du contenu organisé au sein d’une seule vue (par exemple, la structure de dossiers d’un ordinateur, une bibliothèque de documents ou un album photo).
+**Notez**   le zoom optique ne doit pas être confondu avec le [Zoom sémantique](../controls-and-patterns/semantic-zoom.md). Même si les mêmes gestes sont utilisés pour les deux interactions, le zoom sémantique désigne la présentation et la navigation du contenu organisé au sein d’une seule vue (par exemple, la structure de dossiers d’un ordinateur, une bibliothèque de documents ou un album photo).
 
  
 
@@ -56,8 +56,8 @@ Pour les applications prenant en charge le redimensionnement ou le zoom optique,
     -   De proximité : lorsque l’utilisateur met fin au contact, un point d’ancrage est sélectionné si l’inertie s’arrête au sein du seuil de distance du point d’ancrage. Les points d’ancrage de proximité permettent à un zoom ou à un redimensionnement de se terminer entre des points d’ancrage.
     -   Obligatoire : le point d’ancrage sélectionné est celui qui précède ou qui suit immédiatement le dernier point d’ancrage rencontré avant que l’utilisateur ait mis fin au contact (en fonction de la direction et de la vitesse du mouvement). Une manipulation doit prendre fin sur un point d’ancrage obligatoire.
 -   Utilisez les principes d’inertie, notamment :
-    -   Décélération : Se produit lorsque l’utilisateur arrête de pincement ou étirement. Cette action s’apparente à glisser sur une surface glissante jusqu’à l’arrêt.
-    -   Rebond : Un effet de retour à légère se produit lorsqu’une contrainte de taille ou limite est passée.
+    -   Décélération : se produit dès que l’utilisateur arrête le pincement ou l’étirement. Cette action s’apparente à glisser sur une surface glissante jusqu’à l’arrêt.
+    -   Rebond : un léger effet de rebond se produit lorsqu’une limite ou une contrainte de taille est dépassée.
 -   Espacez les contrôles conformément aux [Recommandations en matière de ciblage](guidelines-for-targeting.md).
 -   Fournissez des poignées de redimensionnement pour le redimensionnement contraint. Le redimensionnement isométrique, ou proportionnel, est l’option par défaut si les poignées ne sont pas spécifiées.
 -   N’utilisez pas la fonction de zoom pour parcourir l’interface utilisateur ou exposer des contrôles supplémentaires au sein de votre application ; utilisez plutôt une région de mouvement panoramique. Pour plus d’informations sur le mouvement panoramique, voir [Recommandations en matière de mouvement panoramique](guidelines-for-panning.md).
@@ -65,7 +65,7 @@ Pour les applications prenant en charge le redimensionnement ou le zoom optique,
     -   Applications de dessin dans lesquelles des éléments redimensionnables peuvent s’afficher sur une zone de dessin ou un carton redimensionnable.
     -   Pages web comportant un objet incorporé, tel qu’une carte.
 
-    **Remarque**    dans tous les cas, la zone de contenu est redimensionnée, sauf si tous les points tactiles sont dans l’objet redimensionnable.
+    **Notez**   dans tous les cas, la zone de contenu est redimensionnée, sauf si tous les points tactiles se trouvent dans l’objet redimensionnable.
 
      
 
@@ -73,20 +73,20 @@ Pour les applications prenant en charge le redimensionnement ou le zoom optique,
 
 
 **Exemples**
-* [Exemple d’entrée de base](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Exemple d’entrée à faible latence](https://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [Exemple de mode d’interaction utilisateur](https://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Exemple d’éléments visuels de focus](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [Exemple d’entrée de base](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+* [Exemple d’entrée à faible latence](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+* [Exemple de mode d’interaction utilisateur](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
+* [Exemples de visuels de focus](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
 
-**Exemples d’archive**
-* [Entrée : Exemple d’événements d’entrée utilisateur XAML](https://go.microsoft.com/fwlink/p/?linkid=226855)
-* [Entrée : Exemples de fonctionnalités d’appareil](https://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Entrée : Exemple de test d’atteinte tactile](https://go.microsoft.com/fwlink/p/?linkid=231590)
-* [XAML de défilement, panoramique et zoom d’exemple](https://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Entrée : Exemple d’entrée manuscrite simplifiée](https://go.microsoft.com/fwlink/p/?linkid=246570)
-* [Entrée : Exemple de mouvements de Windows 8](https://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [Entrée : Manipulations et exemple de mouvements (C++)](https://go.microsoft.com/fwlink/p/?linkid=231605)
-* [Exemple d’entrée tactile de DirectX](https://go.microsoft.com/fwlink/p/?LinkID=231627)
+**Exemples d’archives**
+* [Entrée : exemple d’événements d’entrée d’utilisateur XAML](https://code.msdn.microsoft.com/windowsapps/Input-3dff271b)
+* [Entrée : exemple de fonctionnalités de l’appareil](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
+* [Entrée : exemple de test de positionnement tactile](https://code.msdn.microsoft.com/windowsapps/Touch-Hit-Testing-sample-5e35c690)
+* [Exemple de défilement XAML, panoramique et zoom](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9)
+* [Entrée : exemple d’encre simplifiée](https://code.msdn.microsoft.com/windowsapps/Input-simplified-ink-sample-11614bbf)
+* [Entrée : exemple de gestes Windows 8](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
+* [Entrée : manipulations et mouvements (C++), exemple](https://code.msdn.microsoft.com/windowsapps/Manipulations-and-gestures-362b6b59)
+* [Exemple d’entrée tactile DirectX](https://code.msdn.microsoft.com/windowsapps/Simple-Direct3D-Touch-f98db97e)
  
 
  

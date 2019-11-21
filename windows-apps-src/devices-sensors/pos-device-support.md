@@ -5,19 +5,19 @@ ms.date: 06/13/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d67dd7bc7d2f6323679dd7c69a98df841b2848c
-ms.sourcegitcommit: 769ec7811aaaa79fe521e3e984a2e1a2a9671caf
+ms.openlocfilehash: 11dadd91c3106f6881c357d5a13e09b451f2a1e8
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70057817"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259654"
 ---
 # <a name="supported-point-of-service-peripherals"></a>Appareils de point de service pris en charge
 
 ## <a name="barcode-scanner"></a>Scanneur de codes-barres
-| Connectivité | Assistance |
+| Connectivité | Support |
 | -------------|-------------|
-| USB          | <p>Windows contient un pilote de classe intégré pour les scanneurs de codes-barres connectés USB qui est basé sur la spécification de la table d’utilisation du scanneur HID POS (8c) définie par [USB.org](https://www.usb.org/hid). Pour connaître la liste des appareils compatibles connus, reportez-vous au tableau ci-après.  Consultez le manuel de votre scanneur de code-barres ou contactez le fabricant pour savoir comment configurer votre scanneur en mode **Scanneur USB.HID.POS**. </p><p>Windows prend également en charge l’implémentation des pilotes spécifiques du fournisseur pour gérer des scanneurs de code-barres supplémentaires qui ne reconnaissent pas la norme de scanneur USB.HID.POS. Pour connaître la disponibilité des pilotes spécifiques du fournisseur, contactez le fabricant de votre scanneur de code-barres.</p><p>Les fabricants de scanneur de code-barres peuvent consulter le [Guide de conception de pilote de scanneur de code-barres](https://aka.ms/pointofservice-drv) pour en savoir plus sur la création d’un pilote de scanneur de code-barres personnalisé</p> |
+| USB          | <p>Windows contient un pilote de classe prêt à l'emploi pour les scanneurs de codes-barres connectés par USB. Il repose sur la spécification du tableau d’utilisation des scanneurs pour point de service (POS) HID (8c) définie par [USB.org](https://www.usb.org/hid). Consultez le tableau ci-dessous pour obtenir la liste des appareils compatibles connus.  Consultez le manuel de votre scanneur de code-barres ou contactez le fabricant pour savoir comment configurer votre scanneur en mode **Scanneur USB.HID.POS**. </p><p>Windows prend également en charge l’implémentation des pilotes spécifiques du fournisseur pour gérer des scanneurs de code-barres supplémentaires qui ne reconnaissent pas la norme de scanneur USB.HID.POS. Pour connaître la disponibilité des pilotes spécifiques du fournisseur, contactez le fabricant de votre scanneur de code-barres.</p><p>Les fabricants de scanneur de code-barres peuvent consulter le [Guide de conception de pilote de scanneur de code-barres](https://docs.microsoft.com/windows-hardware/drivers/ddi/_pos/index) pour en savoir plus sur la création d’un pilote de scanneur de code-barres personnalisé</p> |
 | Bluetooth    | <p>Windows prend en charge les scanneurs de codes-barres Bluetooth basés sur le protocole et l'interface SPP-SSI (Serial Port Protocol - Simple Serial Interface). Pour connaître la liste des appareils compatibles connus, reportez-vous au tableau ci-après. Consultez le manuel de votre scanneur de code-barres ou contactez le fabricant pour savoir comment configurer votre scanneur en mode **SPP-SSI**.</p> |
 | Webcam       | <p>À partir de Windows 10, version 1803, vous pouvez lire des codes-barres via un objectif de caméra standard à partir d’une application Windows universelle. Il est recommandé d'utiliser une caméra qui prend en charge la mise au point automatique et une résolution minimale de 1 920 x 1 440.  Certaines caméras à résolution plus faible peuvent lire les codes-barres standards s'ils sont imprimés suffisamment grands.  Les codes-barres comportant des éléments plus fins peuvent nécessiter des caméras d'une résolution supérieure.</p>| 
 |
@@ -25,29 +25,29 @@ ms.locfileid: "70057817"
 
 | Fabricant  | Modèle                          | Fonctionnalité | Connexion    | Type         | Mode                      |
 |---------------|--------------------------------|------------|--------------|--------------|---------------------------|
-| Code          | Lecteur™ 950                    | DIMENSIONNEL         | USB          | Poche     | Scanneur de PDV HID           |
-| Code          | Lecteur™ 1021                   | DIMENSIONNEL         | USB          | Poche     | Scanneur de PDV HID           |
-| Code          | Lecteur™ 1421                   | DIMENSIONNEL         | USB          | Poche     | Scanneur de PDV HID           |
-| Code          | Lecteur™ 5000                   | DIMENSIONNEL         | USB          | La présentation | Scanneur de PDV HID           |
-| Honeywell     | Genesis 7580g                  | DIMENSIONNEL         | USB          | La présentation | Scanneur de PDV HID           |
-| Honeywell     | Granit 198Xi                   | DIMENSIONNEL         | USB          | Poche     | Scanneur de PDV HID           |
-| Honeywell     | Granit 191Xi                   | DIMENSIONNEL         | USB          | Poche     | Scanneur de PDV HID           |
-| Honeywell     | N5680                          | DIMENSIONNEL         | Interne     | Composant    | Scanneur de PDV HID           |
-| Honeywell     | N3680                          | DIMENSIONNEL         | Interne     | Composant    | Scanneur de PDV HID           |
-| Honeywell     | Orbite 7190g                    | DIMENSIONNEL         | USB          | La présentation | Scanneur de PDV HID           |
-| Honeywell     | Stratos 2700                   | DIMENSIONNEL         | USB          | Dans le compteur   | Scanneur de PDV HID           |
+| Code          | Lecteur™ 950                    | Dimensionnel         | USB          | Poche     | Scanneur de PDV HID           |
+| Code          | Lecteur™ 1021                   | Dimensionnel         | USB          | Poche     | Scanneur de PDV HID           |
+| Code          | Lecteur™ 1421                   | Dimensionnel         | USB          | Poche     | Scanneur de PDV HID           |
+| Code          | Lecteur™ 5000                   | Dimensionnel         | USB          | Présentation | Scanneur de PDV HID           |
+| Honeywell     | Genesis 7580g                  | Dimensionnel         | USB          | Présentation | Scanneur de PDV HID           |
+| Honeywell     | Granit 198Xi                   | Dimensionnel         | USB          | Poche     | Scanneur de PDV HID           |
+| Honeywell     | Granit 191Xi                   | Dimensionnel         | USB          | Poche     | Scanneur de PDV HID           |
+| Honeywell     | N5680                          | Dimensionnel         | Interne     | Component    | Scanneur de PDV HID           |
+| Honeywell     | N3680                          | Dimensionnel         | Interne     | Component    | Scanneur de PDV HID           |
+| Honeywell     | Orbite 7190g                    | Dimensionnel         | USB          | Présentation | Scanneur de PDV HID           |
+| Honeywell     | Stratos 2700                   | Dimensionnel         | USB          | Dans le compteur   | Scanneur de PDV HID           |
 | Honeywell     | Voyager 1200g                  | 1D         | USB          | Poche     | Scanneur de PDV HID           |
 | Honeywell     | Voyager 1202g                  | 1D         | USB          | Poche     | Scanneur de PDV HID           |
 | Honeywell     | Voyager 1202-BF                | 1D         | USB          | Poche     | Scanneur de PDV HID           |
 | Honeywell     | Voyager 145Xg                  | 1D/2D<sup>1</sup>   | USB          | Poche     | Scanneur de PDV HID           |
-| Honeywell     | Voyager 1602g                  | DIMENSIONNEL         | USB          | Poche     | Scanneur de PDV HID           |
-| Honeywell     | 1900g du xénon                    | DIMENSIONNEL         | USB          | Poche     | Scanneur de PDV HID           |
-| Honeywell     | 1902g du xénon                    | DIMENSIONNEL         | USB          | Poche     | Scanneur de PDV HID           |
-| Honeywell     | 1902g du xénon-BF                 | DIMENSIONNEL         | USB          | Poche     | Scanneur de PDV HID           |
-| Honeywell     | 1900h du xénon                    | DIMENSIONNEL         | USB          | Poche     | Scanneur de PDV HID           |
-| Honeywell     | 1902h du xénon                    | DIMENSIONNEL         | USB          | Poche     | Scanneur de PDV HID           |
-| HP            | Scanner de codes-barres de valeur (HR2150) | DIMENSIONNEL         | USB          | Poche     | Scanneur de PDV HID           |
-| Intermec      | SG20                           | DIMENSIONNEL         | USB          | Poche     | Scanneur de PDV HID           |
+| Honeywell     | Voyager 1602g                  | Dimensionnel         | USB          | Poche     | Scanneur de PDV HID           |
+| Honeywell     | 1900g du xénon                    | Dimensionnel         | USB          | Poche     | Scanneur de PDV HID           |
+| Honeywell     | 1902g du xénon                    | Dimensionnel         | USB          | Poche     | Scanneur de PDV HID           |
+| Honeywell     | 1902g du xénon-BF                 | Dimensionnel         | USB          | Poche     | Scanneur de PDV HID           |
+| Honeywell     | 1900h du xénon                    | Dimensionnel         | USB          | Poche     | Scanneur de PDV HID           |
+| Honeywell     | 1902h du xénon                    | Dimensionnel         | USB          | Poche     | Scanneur de PDV HID           |
+| HP            | Scanner de codes-barres de valeur (HR2150) | Dimensionnel         | USB          | Poche     | Scanneur de PDV HID           |
+| Intermec      | SG20                           | Dimensionnel         | USB          | Poche     | Scanneur de PDV HID           |
 | Socket Mobile | CHS 7Ci                        | 1D         | Bluetooth    | Poche     | Profil de port série (SPP) |
 | Socket Mobile | CHS 7Di                        | 1D         | Bluetooth    | Poche     | Profil de port série (SPP) |
 | Socket Mobile | CHS 7Mi                        | 1D         | Bluetooth    | Poche     | Profil de port série (SPP) |
@@ -55,16 +55,16 @@ ms.locfileid: "70057817"
 | Socket Mobile | CHS 8Ci                        | 1D         | Bluetooth    | Poche     | Profil de port série (SPP) |
 | Socket Mobile | DuraScan D700                  | 1D         | Bluetooth    | Poche     | Profil de port série (SPP) |
 | Socket Mobile | DuraScan D730                  | 1D         | Bluetooth    | Poche     | Profil de port série (SPP) |
-| Socket Mobile | DuraScan D740                  | DIMENSIONNEL         | Bluetooth    | Poche     | Profil de port série (SPP) |
+| Socket Mobile | DuraScan D740                  | Dimensionnel         | Bluetooth    | Poche     | Profil de port série (SPP) |
 | Socket Mobile | SocketScan S700                | 1D         | Bluetooth    | Poche     | Profil de port série (SPP) |
 | Socket Mobile | SocketScan S730                | 1D         | Bluetooth    | Poche     | Profil de port série (SPP) |
-| Socket Mobile | SocketScan S740                | DIMENSIONNEL         | Bluetooth    | Poche     | Profil de port série (SPP) |
+| Socket Mobile | SocketScan S740                | Dimensionnel         | Bluetooth    | Poche     | Profil de port série (SPP) |
 | Socket Mobile | SocketScan S800                | 1D         | Bluetooth    | Poche     | Profil de port série (SPP) |
-| Socket Mobile | SocketScan S850                | DIMENSIONNEL         | Bluetooth    | Poche     | Profil de port série (SPP) |
-| Rayures         | DS2208<sup>2</sup>                        | DIMENSIONNEL         | USB          | Poche     | Scanneur de PDV HID           |
-| Rayures         | DS2278                         | DIMENSIONNEL         | USB          | Poche     | Scanneur de PDV HID           |
-| Rayures         | DS8108<sup>3</sup>                        | DIMENSIONNEL         | USB          | Poche     | Scanneur de PDV HID           |
-| Rayures         | DS8178<sup>4</sup>                         | DIMENSIONNEL         | USB          | Poche     | Scanneur de PDV HID           | 
+| Socket Mobile | SocketScan S850                | Dimensionnel         | Bluetooth    | Poche     | Profil de port série (SPP) |
+| Rayures         | DS2208<sup>2</sup>                        | Dimensionnel         | USB          | Poche     | Scanneur de PDV HID           |
+| Rayures         | DS2278                         | Dimensionnel         | USB          | Poche     | Scanneur de PDV HID           |
+| Rayures         | DS8108<sup>3</sup>                        | Dimensionnel         | USB          | Poche     | Scanneur de PDV HID           |
+| Rayures         | DS8178<sup>4</sup>                         | Dimensionnel         | USB          | Poche     | Scanneur de PDV HID           | 
 
 
 <sup>1</sup> mise à niveau pour prendre en charge les codes-barres 2D via Honeywell <br/>
@@ -75,12 +75,12 @@ ms.locfileid: "70057817"
 <hr>
 
 ### <a name="windows-devices-with-built-in-barcode-scanner"></a>Appareils Windows avec un scanneur de codes-barres intégré
-| Fabricant   | Modèle | Système d’exploitation |
+| Fabricant   | Modèle | Système d’exploitation |
 |----------------|-------|------------------|
 | Innowi         | ChecOut-M | Windows 10   |
 
 ### <a name="windows-mobile-devices-with-built-in-barcode-scanner"></a>Appareils Windows Mobile avec un scanneur de codes-barres intégré
-| Fabricant   | Modèle | Système d’exploitation |
+| Fabricant   | Modèle | Système d’exploitation |
 |----------------|-------|------------------|
 | Rouge       | EF400 | Windows Mobile   |
 | Rouge       | EF500 | Windows Mobile   |
@@ -98,9 +98,9 @@ ms.locfileid: "70057817"
 
 
 ## <a name="cash-drawer"></a>Caisse enregistreuse
-| Connectivité | Assistance |
+| Connectivité | Support |
 | -------------|-------------|
-| Réseau/Bluetooth | <p> La connexion directe à la caisse enregistreuse peut être établie via le réseau ou par le biais de Bluetooth, selon les fonctionnalités de la caisse enregistreuse. </p><p>APG Caisse:  NetPRO, BluePRO</p> |
+| Réseau/Bluetooth | <p> La connexion directe à la caisse enregistreuse peut être établie via le réseau ou par le biais de Bluetooth, selon les fonctionnalités de la caisse enregistreuse. </p><p>Caisse enregistreuse APG : NetPRO, BluePRO</p> |
 | Port DK | <p> Les caisses enregistreuses qui sont dépourvues de fonctionnalités Bluetooth ou réseau peuvent être connectées par le biais du port DK sur une imprimante de reçus prise en charge, ou de l’accessoire DK-AirCash de Star Micronics. </p>
 | OPOS    | <p> Prend en charge toutes les caisses enregistreuses compatibles OPOS par le biais des objets de service OPOS fournis par le fabricant. Installez les pilotes OPOS conformément aux instructions d’installation des fabricants des appareils. </p> |
 
@@ -118,12 +118,12 @@ Windows fournit une prise en charge pour les lecteurs de bande magnétique ci-ap
 | Magtek | MagneSafe (ID fournisseur : 0801 ID produit : 0011) |  210730xx |
 | | Dynamag (ID fournisseur : 0801 ID produit : 0002) |   210401xx |
 
- Windows supporte l’implémentation de pilotes supplémentaires spécifiques aux fournisseurs, pour la prise en charge d’autres lecteurs de bande magnétique. Vérifiez la disponibilité auprès de votre fabricant de lecteur de bande magnétique. Les fabricants de lecteur de bande magnétique peuvent consulter le [Guide de conception de pilote de lecteur de bande magnétique](https://aka.ms/pointofservice-drv) pour en savoir plus sur la création d’un pilote de lecteur de bande magnétique personnalisé.
+ Windows supporte l’implémentation de pilotes supplémentaires spécifiques aux fournisseurs, pour la prise en charge d’autres lecteurs de bande magnétique. Vérifiez la disponibilité auprès de votre fabricant de lecteur de bande magnétique. Les fabricants de lecteur de bande magnétique peuvent consulter le [Guide de conception de pilote de lecteur de bande magnétique](https://docs.microsoft.com/windows-hardware/drivers/ddi/_pos/index) pour en savoir plus sur la création d’un pilote de lecteur de bande magnétique personnalisé.
 
 ## <a name="receipt-printer-posprinter"></a>Imprimante de reçus (POSPrinter)
-| Connectivité | Assistance |
+| Connectivité | Support |
 | -------------|-------------|
-| Réseau et Bluetooth | <p>Windows prend en charge les imprimantes de reçus connectées au réseau et Bluetooth à l’aide du langage de contrôle d’imprimante ESC/POS Epson.  Les imprimantes répertoriées ci-dessous sont détectées automatiquement à l’aide des API POSPrinter. D'autres imprimantes de reçus qui fournissent une émulation ESC/POS peuvent également fonctionner, mais doivent être associées à l’aide un processus de [couplage hors-bande](https://aka.ms/pointofservice-oobpairing).</p><p>Remarque : les stations de tickets et de feuilles ne sont pas prises en charge par le biais de cette méthode.</p> |
+| Réseau et Bluetooth | <p>Windows prend en charge les imprimantes de reçus connectées au réseau et Bluetooth à l’aide du langage de contrôle d’imprimante ESC/POS Epson.  Les imprimantes répertoriées ci-dessous sont détectées automatiquement à l’aide des API POSPrinter. D'autres imprimantes de reçus qui fournissent une émulation ESC/POS peuvent également fonctionner, mais doivent être associées à l’aide un processus de [couplage hors-bande](https://docs.microsoft.com/windows/uwp/devices-sensors/point-of-service#out-of-band-pairing).</p><p>Remarque : les stations de tickets et de feuilles ne sont pas prises en charge par le biais de cette méthode.</p> |
 | OPOS    | <p> Prend en charge toutes les imprimantes de reçus compatibles OPOS via des objets de service OPOS. Installez les pilotes OPOS conformément aux instructions d’installation des fabricants des appareils. </p> |
 
 ### <a name="stationary-receipt-printers-networkbluetooth"></a>Imprimantes de reçus fixes (réseau/Bluetooth)

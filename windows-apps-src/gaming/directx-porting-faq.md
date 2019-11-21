@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, jeux, directx 11
 ms.localizationpriority: medium
-ms.openlocfilehash: 2452d4bfcce01dfc86e44c9f57a82baa6beb8ce7
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: e99aec682ee02463fc282a70a183776d13dd58a8
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368793"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258526"
 ---
 # <a name="directx-11-porting-faq"></a>Portage DirectX 11 : FAQ
 
@@ -28,12 +28,12 @@ Direct3D 11 est une mise à jour importante de Direct3D 9. Elle engendre plusieu
 ## <a name="what-is-the-new-device-context-for-am-i-supposed-to-replace-my-direct3d-9-device-with-the-direct3d-11-device-the-device-context-or-both"></a>Quel est le rôle du nouveau contexte de périphérique ? Dois-je remplacer mon périphérique Direct3D 9 par le périphérique Direct3D 11, le contexte de périphérique, ou les deux ?
 
 
-Le périphérique Direct3D est désormais utilisé pour créer des ressources dans la mémoire vidéo, alors que le contexte de périphérique sert à définir l’état du pipeline et générer des commandes de rendu. Pour plus d’informations, voir : [Quelles sont les plus importants changements depuis Direct3D 9 ?](understand-direct3d-11-1-concepts.md)
+Le périphérique Direct3D est désormais utilisé pour créer des ressources dans la mémoire vidéo, alors que le contexte de périphérique sert à définir l’état du pipeline et générer des commandes de rendu. Pour plus d’informations, voir : [Quelles modifications majeures ont été apportées depuis la version Direct3D 9 ?](understand-direct3d-11-1-concepts.md)
 
 ##  <a name="do-i-have-to-update-my-game-timer-for-uwp"></a>Dois-je mettre à jour le minuteur de mon jeu pour UWP ?
 
 
-[**QueryPerformanceCounter**](https://docs.microsoft.com/windows/desktop/api/profileapi/nf-profileapi-queryperformancecounter), avec [ **QueryPerformanceFrequency**](https://docs.microsoft.com/windows/desktop/api/profileapi/nf-profileapi-queryperformancefrequency), est toujours la meilleure façon d’implémenter une horloge de jeu pour les applications UWP.
+[**QueryPerformanceCounter**](https://docs.microsoft.com/windows/desktop/api/profileapi/nf-profileapi-queryperformancecounter), avec [**QueryPerformanceFrequency**](https://docs.microsoft.com/windows/desktop/api/profileapi/nf-profileapi-queryperformancefrequency), est toujours la meilleure façon d’implémenter un minuteur de jeu pour les applications UWP.
 
 Toutefois, on observe une nuance avec les minuteurs et le cycle de vie des applications UWP. Les commandes suspendre/reprendre sont différentes pour un joueur qui relance un jeu de bureau, car votre jeu reprendra sur une capture instantanée de la dernière fois que le jeu a été exécuté. Si le laps de temps avant la reprise est important, quelques semaines, par exemple, certaines implémentations du minuteur de jeu peuvent ne pas se comporter de façon fluide. Vous pouvez utiliser les événements de cycle de vie de l’application pour réinitialiser votre minuteur au moment de la reprise du jeu.
 
@@ -42,12 +42,12 @@ Les jeux qui utilisent encore l’instruction RDTSC doivent être mis à jour. V
 ## <a name="my-game-code-is-based-on-d3dx-and-dxut-is-there-anything-available-that-can-help-me-migrate-my-code"></a>Le code de mon jeu est basé sur D3DX et DXUT. Existe-t-il des ressources pour m’aider à migrer mon code ?
 
 
-Le projet de la communauté [Kit de ressources DirectX (DirectXTK)](https://go.microsoft.com/fwlink/p/?LinkID=248929) propose des classes d’assistance pour Direct3D 11.
+Le projet de la communauté [Kit de ressources DirectX (DirectXTK)](https://github.com/Microsoft/DirectXTK) propose des classes d’assistance pour Direct3D 11.
 
-##  <a name="how-do-i-maintain-code-paths-for-the-desktop-and-the-microsoft-store"></a>Comment conserver les chemins de code pour le bureau et le Microsoft Store ?
+##  <a name="how-do-i-maintain-code-paths-for-the-desktop-and-the-microsoft-store"></a>Comment faire conserver les chemins de code pour le bureau et le Microsoft Store ?
 
 
-Série d’articles de Chuck Walbourn intitulée [double utilisation des Techniques de codage pour les jeux](https://go.microsoft.com/fwlink/p/?LinkID=286210) propose des conseils sur le partage de code entre le bureau et les chemins d’accès du code Microsoft Store.
+La série d’Articles de Chuck Walbourn intitulée [techniques de codage à double utilisation pour les jeux](https://blogs.msdn.com/b/chuckw/archive/2012/09/17/dual-use-coding-techniques-for-games.aspx) offre des conseils sur le partage de code entre le bureau et les chemins de code Microsoft Store.
 
 ##  <a name="how-do-i-load-image-resources-in-my-directx-uwp-app"></a>Comment charger des ressources d’image dans mon jeu UWP DirectX ?
 
@@ -57,7 +57,7 @@ Il existe deux chemins d’API pour le chargement d’image :
 -   Le pipeline de contenu convertit les images en fichiers DDS utilisés comme ressources de texture Direct3D. Voir [Utilisation de composants 3D dans votre jeu ou application](https://docs.microsoft.com/visualstudio/designers/using-3-d-assets-in-your-game-or-app?view=vs-2015).
 -   Le [composant Imagerie Windows](https://docs.microsoft.com/windows/desktop/wic/-wic-lh) peut servir à charger des images de plusieurs formats et convient aussi bien aux bitmaps Direct2D qu’aux ressources de texture Direct3D.
 
-Vous pouvez aussi utiliser DDSTextureLoader et WICTextureLoader, à partir du [DirectXTK](https://go.microsoft.com/fwlink/p/?LinkID=248929) ou [DirectXTex](https://go.microsoft.com/fwlink/p/?LinkID=248926).
+Vous pouvez aussi utiliser DDSTextureLoader et WICTextureLoader, à partir du [DirectXTK](https://github.com/Microsoft/DirectXTK) ou [DirectXTex](https://github.com/Microsoft/DirectXTex).
 
 ## <a name="where-is-the-directx-sdk"></a>Où est le Kit de développement logiciel (SDK) DirectX ?
 
@@ -74,7 +74,7 @@ Les applications de bureau Win32 utilisent encore DirectSetup, donc si vous mett
 ## <a name="is-there-any-way-i-can-update-my-desktop-code-to-directx-11-before-moving-away-from-effects"></a>Existe-t-il un moyen de mettre à jour mon code d’application de bureau vers DirectX 11 avant de quitter Effects ?
 
 
-Voir [Mise à jour d’Effects pour Direct3D 11](https://go.microsoft.com/fwlink/p/?LinkId=271568). Effects 11 vous aide à supprimer les dépendances sur les en-têtes hérités du kit de développement logiciel DirectX. Son rôle est d’aider au portage et il ne peut être utilisé qu’avec les applications de bureau.
+Voir [Mise à jour d’Effects pour Direct3D 11](https://github.com/Microsoft/FX11). Effects 11 vous aide à supprimer les dépendances sur les en-têtes hérités du kit de développement logiciel DirectX. Son rôle est d’aider au portage et il ne peut être utilisé qu’avec les applications de bureau.
 
 ##  <a name="is-there-a-path-for-porting-my-directx-8-game-to-uwp"></a>Existe-t-il un chemin d’accès pour porter mon jeu DirectX 8 vers UWP ?
 
@@ -83,7 +83,7 @@ Oui :
 
 -   Voir [Conversion vers Direct3D 9](https://docs.microsoft.com/windows/desktop/direct3d9/converting-to-directx-9).
 -   Assurez-vous que votre jeu ne contient aucune bribe du pipeline corrigé. voir [Fonctionnalités déconseillées](https://docs.microsoft.com/windows/desktop/direct3d10/d3d10-graphics-programming-guide-api-features-deprecated).
--   Prenez ensuite le chemin d’accès de portage de DirectX 9 : [Port à partir de D3D 9 pour UWP](walkthrough--simple-port-from-direct3d-9-to-11-1.md).
+-   Ensuite, suivez le chemin de portage DirectX 9 : [Effectuer le portage de D3D 9 vers UWP](walkthrough--simple-port-from-direct3d-9-to-11-1.md).
 
 ##  <a name="can-i-port-my-directx-10-or-11-game-to-uwp"></a>Puis-je porter mon jeu DirectX 10 ou 11 vers UWP ?
 
@@ -98,7 +98,7 @@ L’utilisateur sélectionne le moniteur sur lequel afficher votre application. 
 ## <a name="how-do-i-turn-on-antialiasing"></a>Comment activer l’anticrénelage ?
 
 
-L’anticrénelage (échantillonnage multiple) est activé quand vous créez le périphérique Direct3D. Énumérer l’échantillonnage multiple prise en charge en appelant [ **CheckMultisampleQualityLevels**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkmultisamplequalitylevels), puis définissez les options d’échantillonnage multiple dans le [ **DXGI\_exemple\_Structure DESC** ](https://docs.microsoft.com/windows/desktop/api/dxgicommon/ns-dxgicommon-dxgi_sample_desc) lorsque vous appelez [ **CreateSurface**](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgidevice-createsurface).
+L’anticrénelage (échantillonnage multiple) est activé quand vous créez le périphérique Direct3D. Énumérez la prise en charge de l’échantillonnage multiple en appelant [**CheckMultisampleQualityLevels**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkmultisamplequalitylevels), puis définissez les options d’échantillonnage multiple dans l' [**exemple dxgi\_\_structure DESC**](https://docs.microsoft.com/windows/desktop/api/dxgicommon/ns-dxgicommon-dxgi_sample_desc) lorsque vous appelez [**CreateSurface**](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgidevice-createsurface).
 
 ## <a name="my-game-renders-using-multithreading-andor-deferred-rendering-what-do-i-need-to-know-for-direct3d-11"></a>Le rendu de mon jeu s’appuie sur le multithreading et/ou le rendu différé. Que dois savoir pour Direct3D 11 ?
 
@@ -110,25 +110,25 @@ Consultez [Introduction au multithreading dans Direct3D 11](https://docs.microso
 
 Consultez les rubriques suivantes :
 
--   [Guide de programmation pour HLSL](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-pguide)
--   [Direct3D 10 Questions fréquentes](https://docs.microsoft.com/windows/desktop/DxTechArts/direct3d10-frequently-asked-questions)
+-   [Guide de programmation pour le HLSL](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-pguide)
+-   [Forum aux questions sur Direct3D 10](https://docs.microsoft.com/windows/desktop/DxTechArts/direct3d10-frequently-asked-questions)
 
 ## <a name="what-should-i-use-instead-of-the-x-file-format-for-my-models"></a>Quel autre format de fichier puis-je utiliser pour remplacer le format .x de mes modèles ?
 
 
-Il n’existe pas de format de remplacement officiel pour les fichiers .x, mais bon nombre des exemples utilisent le format SDKMesh. Visual Studio comprend aussi un [pipeline de contenu](https://docs.microsoft.com/visualstudio/designers/using-3-d-assets-in-your-game-or-app?view=vs-2015) qui compile plusieurs formats courants en fichiers CMO. Ces fichiers peuvent être chargés avec du code à partir du starter kit 3D de Visual Studio, ou à l’aide du [DirectXTK](https://go.microsoft.com/fwlink/p/?LinkID=248929).
+Il n’existe pas de format de remplacement officiel pour les fichiers .x, mais bon nombre des exemples utilisent le format SDKMesh. Visual Studio comprend aussi un [pipeline de contenu](https://docs.microsoft.com/visualstudio/designers/using-3-d-assets-in-your-game-or-app?view=vs-2015) qui compile plusieurs formats courants en fichiers CMO. Ces fichiers peuvent être chargés avec du code à partir du starter kit 3D de Visual Studio, ou à l’aide du [DirectXTK](https://github.com/Microsoft/DirectXTK).
 
 ## <a name="how-do-i-debug-my-shaders"></a>Comment déboguer mes nuanceurs ?
 
 
-Microsoft Visual Studio 2015 inclut des outils de diagnostic pour les graphiques de DirectX. Voir [Débogage des graphiques DirectX](https://docs.microsoft.com/visualstudio/debugger/visual-studio-graphics-diagnostics?view=vs-2015).
+Microsoft Visual Studio 2015 comprend des outils de diagnostic pour DirectX Graphics. Voir [Débogage des graphiques DirectX](https://docs.microsoft.com/visualstudio/debugger/visual-studio-graphics-diagnostics?view=vs-2015).
 
 ##  <a name="what-is-the-direct3d-11-equivalent-for-x-function"></a>Quel est l’équivalent Direct3D 11 de la fonction *x* ?
 
 
 Voir le [mappage des fonctions](feature-mapping.md#function-mapping) de la rubrique Mapper les fonctionnalités DirectX 9 aux API DirectX 11.
 
-##  <a name="what-is-the-dxgiformat-equivalent-of-y-surface-format"></a>Quelle est la DXGI\_équivalent FORMAT de *y* surface format ?
+##  <a name="what-is-the-dxgi_format-equivalent-of-y-surface-format"></a>Quel est le FORMAT DXGI\_équivalent au format surface *y* ?
 
 
 Voir le [mappage des formats de surface](feature-mapping.md#surface-format-mapping) de la rubrique Mapper les fonctionnalités DirectX 9 aux API DirectX 11.

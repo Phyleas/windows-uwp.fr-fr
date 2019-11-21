@@ -6,16 +6,16 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: fce2c9230add569c4494b01546f1b3ced81d488b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 37d0ca71adf43891628a02d60d6873e7934d749b
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57612924"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258186"
 ---
 #  <a name="screen-sizes-and-breakpoints"></a>Tailles d’écran et points d’arrêt
 
-Les applications UWP peuvent s’exécuter sur n’importe quel appareil exécutant Windows 10, y compris les téléphones, tablettes, ordinateurs de bureau, téléviseurs et plus encore. Avec un très grand nombre de périphériques cibles et des tailles d’écran sur l’écosystème Windows 10, au lieu d’optimisation de votre interface utilisateur pour chaque périphérique, nous vous recommandons de conception pour plusieurs catégories de largeur de la clé (également appelé « points d’arrêt ») : 
+Les applications UWP peuvent s’exécuter sur n’importe quel appareil exécutant Windows 10, y compris les téléphones, tablettes, ordinateurs de bureau, téléviseurs et plus encore. Avec un grand nombre de cibles d’appareils et de tailles d’écran dans l’écosystème Windows 10, plutôt que d’optimiser votre interface utilisateur pour chaque périphérique, nous vous recommandons de concevoir pour quelques catégories de largeur de clé (également appelées « points d’arrêt ») : 
 - Petite (inférieure à 640 pixels)
 - Moyenne (641 px à 1007 px)
 - Grande (supérieure ou égale à 1008 px)
@@ -90,7 +90,7 @@ Les applications UWP mettent automatiquement à l’échelle votre interface uti
 - Utilisez jusqu’à deux colonnes/zones.
 - Affichez la zone de recherche.
 - Placez le [volet de navigation](../controls-and-patterns/navigationview.md) en mode partiel de manière à ce qu’une bande étroite d’icônes soit toujours affichée.
-- Pensez à personnaliser davantage votre application pour les [expériences télévisuelles](https://go.microsoft.com/fwlink/?LinkId=760736).
+- Pensez à personnaliser davantage votre application pour les [expériences télévisuelles](https://docs.microsoft.com/windows/uwp/design/devices/designing-for-tv?redirectedfrom=MSDN).
 
 ### <a name="large"></a>Grande
 - Définissez une marge de 24 px de part et d’autre de la fenêtre afin de créer une séparation visuelle au niveau des bords gauche et droit de la fenêtre de l’application.
@@ -100,6 +100,6 @@ Les applications UWP mettent automatiquement à l’échelle votre interface uti
 - Placez le [volet de navigation](../controls-and-patterns/navigationview.md) en mode ancré pour qu’il soit toujours affiché.
 
 >[!TIP] 
-> Avec [ **Continuum pour les téléphones**](https://go.microsoft.com/fwlink/p/?LinkID=699431), utilisateurs peuvent se connecter à des appareils mobiles Windows 10 compatibles pour un moniteur, souris et clavier pour optimiser leurs téléphones portables. N’oubliez pas cette nouvelle fonctionnalité lorsque vous concevez des points d’arrêt spécifiques : un téléphone mobile ne reste pas toujours dans la classe de taille.
+> Avec [**continuum pour les téléphones**](https://docs.microsoft.com/windows-hardware/design/device-experiences/continuum-phone?redirectedfrom=MSDN), les utilisateurs peuvent connecter des appareils Windows 10 Mobile compatibles à une analyse, une souris et un clavier pour que leurs téléphones fonctionnent comme des ordinateurs portables. N’oubliez pas cette nouvelle fonctionnalité lorsque vous concevez des points d’arrêt spécifiques : un téléphone mobile ne reste pas toujours dans la classe de taille.
 
 

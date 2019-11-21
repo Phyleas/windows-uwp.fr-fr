@@ -6,12 +6,12 @@ ms.date: 10/16/2017
 ms.topic: article
 keywords: windows 10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: 7564060e28d3e78608c6f30b1400179087db2b86
-ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
+ms.openlocfilehash: 8627bd7f9f405509cb1bff40d94f10552241f4ce
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73061852"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74254596"
 ---
 # <a name="uri-schemes"></a>Schémas d’URI
 
@@ -19,9 +19,9 @@ Vous pouvez utiliser plusieurs schémas d’URI (Uniform Resource Identifier) po
 
 ## <a name="common-features-of-the-uri-schemes"></a>Fonctionnalités courantes des schémas d’URI
 
-Tous les schémas décrits dans cette rubrique suivent les règles de schéma d’URI standard pour la normalisation et l’extraction des ressources. Voir [RFC 3986](https://go.microsoft.com/fwlink/p/?LinkId=263444) pour la syntaxe générale d’un URI.
+Tous les schémas décrits dans cette rubrique suivent les règles de schéma d’URI standard pour la normalisation et l’extraction des ressources. Voir [RFC 3986](https://www.ietf.org/rfc/rfc3986.txt) pour la syntaxe générale d’un URI.
 
-Tous les schémas d’URI définissent la partie hiérarchique conformément à [RFC 3986](https://go.microsoft.com/fwlink/p/?LinkId=263444) en tant que composants d’autorité et de chemin d’accès de l’URI.
+Tous les schémas d’URI définissent la partie hiérarchique conformément à [RFC 3986](https://www.ietf.org/rfc/rfc3986.txt) en tant que composants d’autorité et de chemin d’accès de l’URI.
 
 ```syntax
 URI         = scheme ":" hier-part [ "?" query ] [ "#" fragment ]
@@ -269,7 +269,7 @@ Les développeurs de composants spécifiques situés dans une couche au-dessus d
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Uniform Resource Identifier (URI) : syntaxe générique](https://go.microsoft.com/fwlink/p/?LinkId=263444)
+* [Uniform Resource Identifier (URI) : syntaxe générique](https://www.ietf.org/rfc/rfc3986.txt)
 * [Empaquetage d’applications](../packaging/index.md)
 * [Référencer une image ou une autre ressource à partir du balisage et du code XAML](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)
 * [Stocker et récupérer des paramètres et autres données d’application](../design/app-settings/store-and-retrieve-app-data.md)

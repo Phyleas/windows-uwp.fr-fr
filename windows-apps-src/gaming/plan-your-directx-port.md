@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, directx , portage
 ms.localizationpriority: medium
-ms.openlocfilehash: 247c7cb05027520cb7a39e04ff65579297b66dc9
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 032eeaf2a17ef244287e25e6d9ff32a12c61e137
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368301"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258467"
 ---
 # <a name="plan-your-directx-port"></a>Planifier votre portage DirectX
 
@@ -20,8 +20,8 @@ ms.locfileid: "66368301"
 **Résumé**
 
 -   Planifier votre portage DirectX
--   [Modifications importantes par rapport à partir de Direct3D 9 à Direct3D 11](understand-direct3d-11-1-concepts.md)
--   [Mappage de fonction](feature-mapping.md)
+-   [Modifications importantes de Direct3D 9 à Direct3D 11](understand-direct3d-11-1-concepts.md)
+-   [Mappage des fonctionnalités](feature-mapping.md)
 
 
 Planifiez le portage de votre jeu DirectX 9 sur DirectX 11 et la plateforme Windows universelle (UWP) : mettez à niveau votre code graphique et préparez votre jeu pour l’environnement Windows Runtime.
@@ -35,11 +35,11 @@ La mise à niveau de Direct3D 9 vers Direct3D 11 ne se limite pas à une simple 
 
 Vous devez remplacer les bibliothèques d’applications auxiliaires D3DX et DXUT par vos propres bibliothèques d’applications auxiliaires ou par des outils de la communauté. Pour plus d’informations, voir la section [Mappage des fonctionnalités](feature-mapping.md).
 
-> **Remarque**    vous pouvez utiliser la [DirectX Tool Kit](https://go.microsoft.com/fwlink/p/?LinkID=248929) ou [DirectXTex](https://go.microsoft.com/fwlink/p/?LinkID=248926) pour remplacer certaines fonctionnalités qui ont été précédemment fournies par D3DX et DXUT.
+> **Notez**   vous pouvez utiliser le [Kit d’outils DirectX](https://github.com/Microsoft/DirectXTK) ou [DirectXTex](https://github.com/Microsoft/DirectXTex) pour remplacer certaines fonctionnalités précédemment fournies par D3DX et DXUT.
 
  
 
-Nuanceurs écrites en langage assembleur doivent être mis à niveau au langage HLSL à l’aide du niveau de modèle 4 nuanceur 9\_1 ou 9\_3 fonctionnalités et des nuanceurs écrites pour la bibliothèque d’effets doivent être mis à jour vers une version plus récente de la syntaxe du langage HLSL. Pour plus d’informations, voir la section [Mappage des fonctionnalités](feature-mapping.md).
+Les nuanceurs écrits en langage assembleur doivent être mis à niveau vers le langage HLSL à l’aide du nuancier modèle 4 niveau 9\_1 ou 9\_3, et les nuanceurs écrits pour la bibliothèque d’effets devront être mis à jour vers une version plus récente de la syntaxe HLSL. Pour plus d’informations, voir la section [Mappage des fonctionnalités](feature-mapping.md).
 
 Familiarisez-vous avec les différents [niveaux de fonctionnalité Direct3D](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro). Ces niveaux de fonctionnalité permettent de classer les divers matériels vidéo selon des ensembles définis de fonctionnalités prises en charge. Chaque ensemble correspond globalement à une version de Direct3D (versions 9.1 à 11.2). Tous les niveaux de fonctionnalité s’appliquent à l’API DirectX 11.
 

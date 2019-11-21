@@ -1,40 +1,40 @@
 ---
-title: Rapport de campagne publicitaire
+title: Rapport de campagne de publicité
 ms.assetid: 8C5907A6-8059-4CAF-951F-C97301A5EEDF
-description: Le rapport de campagne Ad dans Partner Center vous permet de voir le fonctionnement de vos campagnes de promotion application.
+description: Le rapport de la campagne Active Directory dans l’espace partenaires vous permet de voir comment les campagnes publicitaires de la promotion de votre application sont exécutées.
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, promotion, application, campagne, rapport, installations
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b798abf88805ef3c693149149be958ba0cc1de9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: fef1c148db8a1c53be6c7ffd15cd8cd2992868ee
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653544"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260065"
 ---
-# <a name="ad-campaign-report"></a>Rapport de campagne publicitaire
+# <a name="ad-campaign-report"></a>Rapport de campagne de publicité
 
-Le **campagne de publicité** signaler dans [partenaires](https://partner.microsoft.com/dashboard) vous permet de voir comment la promotion de votre application [campagnes de publicité](create-an-ad-campaign-for-your-app.md) effectuez. Pour afficher le rapport, développez **attraction** dans le menu de navigation gauche, puis sélectionnez **campagnes marketing**.
+Le rapport de la **campagne Active Directory** dans l' [espace partenaires](https://partner.microsoft.com/dashboard) vous permet de voir comment les [campagnes publicitaires](create-an-ad-campaign-for-your-app.md) de la promotion de votre application sont exécutées. Pour afficher le rapport, développez **attirer** dans le menu de navigation gauche et sélectionnez **campagnes Active Directory**.
 
 ## <a name="definitions"></a>DÉFINITIONS
 
 Ce rapport affiche les données relatives aux éléments suivants :
 
--   **Les expositions**: Le nombre de fois que votre annonce a été indiqué pour les clients.
--   **Clique sur**: Le nombre de fois où un utilisateur a cliqué sur votre annonce.
--   **Conversions**: Si votre objectif de la campagne est d’augmenter les installations de votre application, une conversion est le nombre de fois que quelqu'un a affiché votre annonce et ensuite installé votre application dans les 24 heures. Si votre objectif de campagne consiste à augmenter l’intérêt pour votre application, une conversion est le nombre de fois où quelqu’un a consulté votre publicité puis ouvert votre application dans les 24 heures. Vous trouverez ci-dessous davantage d’informations sur le suivi d’installation et la méthode utilisée pour mesurer les conversions.
--   **Dépenses**: La somme d’argent que vous avez passé sur chaque campagne.
+-   **Expositions** : nombre de fois où votre publicité a été présentée à des clients.
+-   **Clics** : nombre de fois où un client a cliqué sur votre publicité.
+-   **Conversions** : si votre objectif de campagne consiste à augmenter le nombre d’installations de votre application, une conversion est le nombre de fois où quelqu’un a consulté votre publicité puis installé votre application dans les 24 heures. Si votre objectif de campagne consiste à augmenter l’intérêt pour votre application, une conversion est le nombre de fois où quelqu’un a consulté votre publicité puis ouvert votre application dans les 24 heures. Vous trouverez ci-dessous davantage d’informations sur le suivi d’installation et la méthode utilisée pour mesurer les conversions.
+-   **Dépense** : somme d’argent que vous avez dépensée pour chaque campagne.
 
 ## <a name="apply-filters"></a>Appliquer les filtres
 
 En haut du rapport, vous pouvez utiliser les **Filtres de section** pour ajuster l’étendue des données affichées dans le rapport :
 
--   **Date** : La sélection par défaut est **30 derniers jours**, mais vous pouvez choisir d’afficher les données pour 3, 6 ou 12 mois.
--   **Objectif de la campagne**: Vous pouvez afficher toutes les campagnes marketing, ou limiter les données pour afficher uniquement celles dont l’objectif est **application installe** ou **engagement envers l’application**.
--   **Nom de l’application**: La sélection par défaut est **tous les**, mais vous pouvez choisir d’afficher les campagnes pour seulement une application spécifique.
--   **Type de campagne**: Vous pouvez afficher tous les types de campagne ou limiter les données à afficher uniquement payé, maison ou des campagnes de publicité Communauté.
--   **Statut** : La sélection par défaut est **tous les**, mais vous pouvez choisir d’afficher les données uniquement pour les campagnes qui appartiennent à un état particulier (**Active**, **Draft**, **suspendu**, **Terminé**, ou **nécessite une attention**).
+-   **Date** : la sélection par défaut est **30 derniers jours**, mais vous pouvez choisir d’afficher les données portant sur 3, 6 ou 12 mois.
+-   **Objectif de campagne** : vous pouvez afficher toutes les campagnes ou restreindre les données pour ne visualiser que celles dont l’objectif est **App installs** ou **App engagement**.
+-   **Nom de l’application** : la sélection par défaut est **Tous**, mais vous pouvez choisir d’afficher les campagnes qui ne concernent qu’une application donnée.
+-   **Type de campagne** : vous pouvez afficher tous les types de campagnes ou restreindre les données pour ne visualiser que les campagnes de publicité payantes, maison ou de la communauté.
+-   **État** : la sélection par défaut est **Tous**, mais vous pouvez choisir d’afficher les données qui ne concernent que les campagnes présentant un état spécifique (**Actif**, **Brouillon**, **Suspendu**, **Terminé** ou **Requiert votre attention**).
 
 
 ## <a name="ad-campaign-metrics"></a>Métriques de campagne de publicité
@@ -48,7 +48,7 @@ Vous pouvez afficher des données de performances concernant jusqu’à six camp
 
 ## <a name="install-tracking"></a>Suivi d’installation
 
-Une campagne de publicité installation en cours d’exécution via des partenaires présente très utile pour publier vos applications. Les expositions publicitaires sont proposées aux clients les plus susceptibles d’être intéressés par l’application, et ces clients peuvent cliquer sur la publicité et installer l’application à partir du Windows Store. Auparavant, il était difficile de distinguer les installations provenant d’une campagne de publicité de celles issues d’autres sources.
+L’exécution d’une campagne d’installation Active Directory via l’espace partenaires offre une exposition nécessaire pour publier vos applications. Les expositions publicitaires sont proposées aux clients les plus susceptibles d’être intéressés par l’application, et ces clients peuvent cliquer sur la publicité et installer l’application à partir du Windows Store. Auparavant, il était difficile de distinguer les installations provenant d’une campagne de publicité de celles issues d’autres sources.
 
 Ce rapport affiche le nombre d’installations que vous avez obtenues en exécutant vos campagnes de publicité. Il s’agit uniquement des téléchargements qui sont une source directe de revenus dans le cadre de vos campagnes de publicité, et non des téléchargements provenant d’autres sources.
 
@@ -65,9 +65,9 @@ Le suivi de l’installation s’effectue dans le Windows Store sur un téléph
 
 1.  Le client n’a pas désactivé le ciblage.
 2.  Le client est connecté à un compte Microsoft.
-3.  Le client répond aux exigences [COPPA](https://go.microsoft.com/fwlink?LinkId=536558) (aucun suivi n’est possible pour les clients qui ne répondent pas aux exigences COPPA).
+3.  Le client répond aux exigences [COPPA](https://www.ftc.gov/enforcement/rules/rulemaking-regulatory-reform-proceedings/childrens-online-privacy-protection-rule) (aucun suivi n’est possible pour les clients qui ne répondent pas aux exigences COPPA).
 
-Par conséquent, il est possible que le suivi d’installation d’application sous-estime le nombre réel d’installations générées par une campagne de publicité. Veuillez noter que vous pouvez afficher le nombre total d’installations pour une application (par le biais des campagnes et sinon) dans le [Acquisitions](acquisitions-report.md) rapport dans l’espace partenaires.
+Par conséquent, il est possible que le suivi d’installation d’application sous-estime le nombre réel d’installations générées par une campagne de publicité. Notez que vous pouvez afficher le nombre total d’installations pour une application (par le biais de campagnes et autres) dans le rapport [acquisitions](acquisitions-report.md) de l’espace partenaires.
 
 
 ## <a name="account-billing-history"></a>Historique de facturation du compte
@@ -80,7 +80,7 @@ Vous pouvez télécharger l’historique de facturation de votre compte sous la 
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Créer une campagne de publicité pour votre application](create-an-ad-campaign-for-your-app.md)
+* [Créer une campagne publicitaire pour votre application](create-an-ad-campaign-for-your-app.md)
 
  
 

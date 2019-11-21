@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: windows 10, uwp, jeux, développement de jeux
 ms.localizationpriority: medium
-ms.openlocfilehash: db510c1dc084fd1af986d618716854ed09cfc618
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: c05a973dc9a954569531be6e0fea212135532b84
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393609"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258506"
 ---
 # <a name="windows-10-game-development-guide"></a>Guide de développement de jeux Windows 10
 
@@ -134,7 +134,7 @@ Si vous souhaitez accéder à d’autres fonctionnalités Xbox Live, bénéficie
 
 #### <a name="idxbox"></a>ID@Xbox
 
-Le programme ID@Xbox permet aux développeurs de jeux qualifiés de publier eux-mêmes sur Windows et Xbox One. Si vous voulez développer des jeux pour Xbox One ou ajouter des fonctionnalités Xbox Live telles que les scores des joueurs, les succès et les classements à votre jeu Windows 10, inscrivez-vous sur ID@Xbox. Devenez développeur ID@Xbox afin d’obtenir les outils et l’aide dont vous avez besoin pour laisser libre cours à votre créativité et optimiser vos chances de succès. Nous vous recommandons d' ID@Xbox appliquer avant d’inscrire un compte de développeur dans l’espace partenaires.
+Le programme ID@Xbox permet aux développeurs de jeux qualifiés de publier eux-mêmes sur Windows et Xbox One. Si vous voulez développer des jeux pour Xbox One ou ajouter des fonctionnalités Xbox Live telles que les scores des joueurs, les succès et les classements à votre jeu Windows 10, inscrivez-vous sur ID@Xbox. Devenez développeur ID@Xbox afin d’obtenir les outils et l’aide dont vous avez besoin pour laisser libre cours à votre créativité et optimiser vos chances de succès. Nous vous recommandons d’appliquer la ID@Xbox avant de vous inscrire à un compte de développeur dans l’espace partenaires.
 
 <table>
     <colgroup>
@@ -143,7 +143,7 @@ Le programme ID@Xbox permet aux développeurs de jeux qualifiés de publier eux-
     </colgroup>
     <tr>
         <td>Programme pour développeurs ID@Xbox</td>
-        <td><a href="https://go.microsoft.com/fwlink/p/?LinkID=526271">Programme de développement indépendant pour Xbox One</a></td>
+        <td><a href="https://www.xbox.com/Developers/id">Programme de développement indépendant pour Xbox One</a></td>
     </tr>
     <tr>
         <td>Site grand public ID@Xbox</td>
@@ -194,15 +194,15 @@ De nombreux exemples de jeu et d’application Windows 10 sont disponibles pour
     </tr>
     <tr>
         <td>Exemple d’effets d’image personnalisés de Direct2D</td>
-        <td><a href="https://go.microsoft.com/fwlink/p/?LinkId=620531">D2DCustomEffects</a></td>
+        <td><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/D2DCustomEffects">D2DCustomEffects</a></td>
     </tr>
     <tr>
         <td>Exemple de maillage dégradé Direct2D</td>
-        <td><a href="https://go.microsoft.com/fwlink/p/?LinkId=620532">D2DGradientMesh</a></td>
+        <td><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/D2DGradientMesh">D2DGradientMesh</a></td>
     </tr>
     <tr>
         <td>Exemple d’ajustement de photo Direct2D</td>
-        <td><a href="https://go.microsoft.com/fwlink/p/?LinkId=620533">D2DPhotoAdjustment</a></td>
+        <td><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/D2DPhotoAdjustment">D2DPhotoAdjustment</a></td>
     </tr>
     <tr>
         <td>Exemples publics Xbox Advanced Technology Group</td>
@@ -262,7 +262,7 @@ Les forums de développement sont un lieu d’échange intéressant pour poser d
     </tr>
     <tr>
         <td>Forums de développeurs partenaires gérés Windows 10</td>
-        <td><a href="https://aka.ms/win10devforums">Forums de développement XBOX : Windows 10</a></td>
+        <td><a href="https://forums.xboxlive.com/users/login.html">Forums de développement XBOX : Windows 10</a></td>
     </tr>
     <tr>
         <td>Forums DirectX</td>
@@ -428,7 +428,7 @@ Les fonctionnalités complètes et la solide intégration à la plateforme de Di
         <td><a href="directx-programming.md">Programmation DirectX</a></td>
     </tr>
     <tr>
-        <td>Tutoriel : Comment créer un jeu DirectX UWP</td>
+        <td>Didacticiel : comment créer un jeu UWP DirectX</td>
         <td><a href="tutorial--create-your-first-uwp-directx-game.md">Créez un jeu UWP simple avec DirectX</a></td>
     </tr>
     <tr>
@@ -481,7 +481,7 @@ Le langage HTML (HyperText Markup Language) est un langage de balisage d’inte
     </tr>
     <tr>
         <td>Recommandation du W3C sur HTML5</td>
-        <td><a href="https://go.microsoft.com/fwlink/p/?linkid=221374">HTML5</a></td>
+        <td><a href="https://www.w3.org/TR/html5/">HTML5</a></td>
     </tr>
 </table>
  
@@ -732,7 +732,7 @@ Unity prend en charge le développement de Direct3D 12 à partir d’Unity 5.4.
     </tr>
     <tr>
         <td>Développement de jeux Unity à l’aide de Visual Studio (série de vidéos)</td>
-        <td><a href="https://go.microsoft.com/fwlink/?LinkId=722359">Utilisation d’Unity avec Visual Studio 2015</a></td>
+        <td><a href="https://www.youtube.com/playlist?list=PLReL099Y5nRfseAg0k1SJOlpqdcsDs8Em">Utilisation d’Unity avec Visual Studio 2015</a></td>
     </tr>
 </table>
  
@@ -910,7 +910,7 @@ Si vous disposez d’un jeu, nombre de ressources et de guides disponibles vous 
     </tr>
     <tr>
         <td>Passer d’OpenGL ES à Direct3D 11 en utilisant ANGLE</td>
-        <td><a href="https://go.microsoft.com/fwlink/p/?linkid=618387">ANGLE</a></td>
+        <td><a href="https://github.com/microsoft/angle/wiki">ANGLE</a></td>
     </tr>
     <tr>
         <td>Équivalents des API Windows classiques dans UWP</td>
@@ -1018,7 +1018,7 @@ Voici quelques liens pour vous aider à faire migrer votre jeu de bureau Windows
     </colgroup>
     <tr>
         <td>Utilisez le code C++ existant pour le développement de jeux UWP</td>
-        <td><a href="https://docs.microsoft.com/cpp/porting/how-to-use-existing-cpp-code-in-a-universal-windows-platform-app">Guide pratique pour Utiliser le C++ code existant dans une application UWP</a></td>
+        <td><a href="https://docs.microsoft.com/cpp/porting/how-to-use-existing-cpp-code-in-a-universal-windows-platform-app">Comment : utiliser le code C++ existant dans une application UWP</a></td>
     </tr>
     <tr>
         <td>API UWP pour les API Win32 et COM</td>
@@ -1026,7 +1026,7 @@ Voici quelques liens pour vous aider à faire migrer votre jeu de bureau Windows
     </tr>
     <tr>
         <td>Fonctions CRT non prises en charge dans UWP</td>
-        <td><a href="https://docs.microsoft.com/cpp/cppcx/crt-functions-not-supported-in-universal-windows-platform-apps">Fonctions CRT non prises en charge dans les applications de la plateforme Windows universelle</a></td>
+        <td><a href="https://docs.microsoft.com/cpp/cppcx/crt-functions-not-supported-in-universal-windows-platform-apps">Fonctions CRT non prises en charge dans les applications plateforme Windows universelle</a></td>
     </tr>
     <tr>
         <td>Alternatives aux API Windows</td>
@@ -1098,7 +1098,7 @@ Le respect de recommandations de couleur cohérentes dans votre jeu lui apporte 
     </colgroup>
     <tr>
         <td>Guide des couleurs</td>
-        <td><a href="https://assets.windowsphone.com/499cd2be-64ed-4b05-a4f5-cd0c9ad3f6a3/101_BestPractices_Color_InvariantCulture_Default.zip">Meilleures pratiques : Couleur</a></td>
+        <td><a href="https://assets.windowsphone.com/499cd2be-64ed-4b05-a4f5-cd0c9ad3f6a3/101_BestPractices_Color_InvariantCulture_Default.zip">Meilleures pratiques : couleur</a></td>
     </tr>
 </table>
  
@@ -1114,7 +1114,7 @@ L’utilisation appropriée de la typographie améliore de nombreux aspects de v
     </colgroup>
     <tr>
         <td>Guide de la typographie</td>
-        <td><a href="https://go.microsoft.com/fwlink/?LinkId=535007">Meilleures pratiques : Typographie</a></td>
+        <td><a href="https://cmsresources.windowsphone.com/devcenter/common/resources/content/101_BestPractices_Typography.pdf">Meilleures pratiques : typographie</a></td>
     </tr>
 </table>
  
@@ -1130,7 +1130,7 @@ Une carte d’interface utilisateur est une disposition de la navigation et des 
     </colgroup>
     <tr>
         <td>Guide sur la carte d’interface utilisateur</td>
-        <td><a href="https://go.microsoft.com/fwlink/?LinkId=535008">Meilleures pratiques : Mappage d’IU</a></td>
+        <td><a href="https://cmsresources.windowsphone.com/devcenter/common/resources/content/101_BestPractices_UI_Map.pdf">Meilleures pratiques : mappage d’IU</a></td>
     </tr>
 </table>
 
@@ -1183,7 +1183,7 @@ Guides et références pour le développement de jeux DirectX.
         <td><a href="directx-programming.md">Programmation DirectX</a></td>
     </tr>
     <tr>
-        <td>Tutoriel : Comment créer un jeu DirectX UWP</td>
+        <td>Didacticiel : comment créer un jeu UWP DirectX</td>
         <td><a href="tutorial--create-your-first-uwp-directx-game.md">Créez un jeu UWP simple avec DirectX</a></td>
     </tr>
     <tr>
@@ -1204,7 +1204,7 @@ Guides et références pour le développement de jeux DirectX.
     </tr>
     <tr>
         <td>Notions fondamentales sur DirectX 12 (vidéo)</td>
-        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Better-Power-Better-Performance-Your-Game-on-DirectX12">Meilleure puissance, meilleures performances : Votre jeu sur DirectX 12</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Better-Power-Better-Performance-Your-Game-on-DirectX12">Meilleure puissance, meilleures performances : votre jeu sur DirectX 12</a></td>
     </tr>
 </table>
 
@@ -1255,27 +1255,27 @@ Le kit de ressources DirectX, la bibliothèque de traitement des textures Direct
     </colgroup>
     <tr>
         <td>Obtenir le kit de ressources DirectX pour DirectX 11</td>
-        <td><a href="https://go.microsoft.com/fwlink/?LinkId=248929">DirectXTK</a></td>
+        <td><a href="https://github.com/Microsoft/DirectXTK">DirectXTK</a></td>
     </tr>
     <tr>
         <td>Obtenir le kit de ressources DirectX pour DirectX 12</td>
-        <td><a href="https://go.microsoft.com/fwlink/?LinkID=615561">DirectXTK 12</a></td>
+        <td><a href="https://github.com/Microsoft/DirectXTK12">DirectXTK 12</a></td>
     </tr>
     <tr>
         <td>Obtenir la bibliothèque de traitement des textures DirectX</td>
-        <td><a href="https://go.microsoft.com/fwlink/?LinkId=248926">DirectXTex</a></td>
+        <td><a href="https://github.com/Microsoft/DirectXTex">DirectXTex</a></td>
     </tr>
     <tr>
         <td>Obtenir la bibliothèque de traitement des géométries DirectXMesh</td>
-        <td><a href="https://go.microsoft.com/fwlink/?LinkID=324981">DirectXMesh</a></td>
+        <td><a href="https://github.com/Microsoft/DirectXMesh">DirectXMesh</a></td>
     </tr>
     <tr>
         <td>Obtenir UVAtlas pour la création et la compression d’atlas de textures isochart</td>
-        <td><a href="https://go.microsoft.com/fwlink/?LinkID=512686">UVAtlas</a></td>
+        <td><a href="https://github.com/Microsoft/UVAtlas">UVAtlas</a></td>
     </tr>
     <tr>
         <td>Obtenir la bibliothèque DirectXMath</td>
-        <td><a href="https://go.microsoft.com/fwlink/?LinkID=615560">DirectXMath</a></td>
+        <td><a href="https://github.com/Microsoft/DirectXMath">DirectXMath</a></td>
     </tr>
     <tr>
         <td>Prise en charge Direct3D 12 dans DirectXTK (billet de blog)</td>
@@ -1293,19 +1293,19 @@ Voici des documentations supplémentaires sur DirectX, créées par des partenai
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Signé DX12 do et not (billet de blog) </td>
+        <td>Nvidia: DX12 Do’s and Don’ts (billet de blog en anglais) </td>
         <td><a href="https://developer.nvidia.com/dx12-dos-and-donts-updated">DirectX 12 sur les GPU NVIDIA</a></td>
     </tr>
     <tr>
-        <td>Cartes Rendu efficace avec DirectX 12</td>
+        <td>Intel: Efficient rendering with DirectX 12 (en anglais)</td>
         <td><a href="https://software.intel.com/sites/default/files/managed/4a/38/Efficient-Rendering-with-DirectX-12-on-Intel-Graphics.pdf">Rendu DirectX 12 sur Intel Graphics</a></td>
     </tr>
     <tr>
-        <td>Cartes Prise en charge de plusieurs adaptateurs dans DirectX 12</td>
+        <td>Intel: Multi adapter support in DirectX 12 (en anglais)</td>
         <td><a href="https://software.intel.com/articles/multi-adapter-support-in-directx-12">Comment implémenter une application multi-adaptateur explicite à l’aide de DirectX 12</a></td>
     </tr>
     <tr>
-        <td>Cartes Didacticiel DirectX 12</td>
+        <td>Intel: DirectX 12 tutorial (en anglais)</td>
         <td><a href="https://software.intel.com/articles/tutorial-migrating-your-apps-to-directx-12-part-1">Livre blanc sur la collaboration d’Intel, Suzhou escargot et Microsoft</a></td>
     </tr>
 </table>
@@ -1388,7 +1388,7 @@ Un module complémentaire (produit dans l’application) est un élément suppl�
 
 Pour optimiser les performances, tirez parti du mode jeu de Windows 10 pour proposer à vos joueurs la meilleure expérience de jeu possible en exploitant au mieux la capacité de leur matériel actuel.
 
-Le Kit Windows Performance Toolkit est composé d’outils d’analyse des performances qui génèrent des profils de performances détaillés des applications et des systèmes d’exploitation Windows. Il s’avère particulièrement précieux pour surveiller l’utilisation de la mémoire et améliorer les performances des jeux. Le Kit Windows Performance Toolkit est inclus dans le Kit de développement logiciel Windows 10 et dans Windows ADK. Ce kit est constitué de deux outils indépendants : L’enregistreur de performances Windows (WPR) et l’analyseur de performances Windows (WPA). ProcDump, qui fait partie de [Windows Sysinternals](https://technet.microsoft.com/sysinternals/default), est un utilitaire de ligne de commande qui surveille les pics d’utilisation d’UC et génère des fichiers de vidage lors des plantages de jeux. 
+Le Kit Windows Performance Toolkit est composé d’outils d’analyse des performances qui génèrent des profils de performances détaillés des applications et des systèmes d’exploitation Windows. Il s’avère particulièrement précieux pour surveiller l’utilisation de la mémoire et améliorer les performances des jeux. Le Kit Windows Performance Toolkit est inclus dans le Kit de développement logiciel Windows 10 et dans Windows ADK. Ce kit d’outils comprend deux outils indépendants : l’enregistreur de performance Windows et Windows Performance Analyzer. ProcDump, qui fait partie de [Windows Sysinternals](https://technet.microsoft.com/sysinternals/default), est un utilitaire de ligne de commande qui surveille les pics d’utilisation d’UC et génère des fichiers de vidage lors des plantages de jeux. 
 
 <table>
     <colgroup>
@@ -1409,7 +1409,7 @@ Le Kit Windows Performance Toolkit est composé d’outils d’analyse des pe
     </tr>
     <tr>
         <td>Obtenir le Kit Windows Performance Toolkit à partir de Windows 10 SDK</td>
-        <td><a href="https://developer.microsoft.com/windows/downloads/windows-10-sdk">SDK Windows 10</a></td>
+        <td><a href="https://developer.microsoft.com/windows/downloads/windows-10-sdk">SDK Windows 10</a></td>
     </tr>
     <tr>
         <td>Obtenir le Kit Windows Performance Toolkit à partir de Windows ADK.</td>
@@ -1555,7 +1555,7 @@ Vous allez utiliser l' [espace partenaires](https://partner.microsoft.com/dashbo
     </colgroup>
     <tr>
         <td>Apprenez à utiliser l’installation en continu et les packages facultatifs (vidéos)</td>
-        <td><a href="https://channel9.msdn.com/Events/Build/2017/B8093">Distribution d’applications UWP NextGen Firewall : Création d’applications basées sur des composants, extensibles et en continu</a></td>
+        <td><a href="https://channel9.msdn.com/Events/Build/2017/B8093">Distribution d’applications UWP NextGen Firewall : création d’applications extensibles, en flux continu, basées sur des composants</a></td>
     </tr>
     <tr>
         <td>Diviser et regrouper du contenu pour activer l’installation en continu</td>
@@ -1739,7 +1739,7 @@ Pour mettre à jour votre jeu publié, soumettez un nouveau package d’applicat
 
 ## <a name="adding-xbox-live-to-your-game"></a>Ajout de Xbox Live à votre jeu
 
-Xbox Live est le premier réseau de jeux qui connecte des millions de joueurs dans le monde entier. Les développeurs peuvent accéder à des fonctionnalités Xbox Live capables d’augmenter le public de leur jeu de façon drastique. Il s’agit notamment de la présence Xbox Live, des classements, des sauvegardes dans le cloud, des hubs de jeux, des clubs, des tchats de groupe, des jeux DVR et plus encore.
+Xbox Live est un réseau de jeux Premier qui connecte des millions de joueurs dans le monde entier. Les développeurs peuvent accéder à des fonctionnalités Xbox Live capables d’augmenter le public de leur jeu de façon drastique. Il s’agit notamment de la présence Xbox Live, des classements, des sauvegardes dans le cloud, des hubs de jeux, des clubs, des tchats de groupe, des jeux DVR et plus encore.
 
 > [!Note]
 > Si vous souhaitez développer des titres Xbox Live, plusieurs options s’offrent à vous. Pour en savoir plus sur les divers programmes, voir [vue d’ensemble du programme pour les développeurs](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview).
@@ -1755,7 +1755,7 @@ Xbox Live est le premier réseau de jeux qui connecte des millions de joueurs da
     </tr>
     <tr>
         <td>Comprendre quelles fonctionnalités sont disponibles en fonction du programme</td>
-        <td><a href="https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#feature-table">Vue d’ensemble du programme de développement : Tableau des fonctionnalités</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#feature-table">Vue d’ensemble du programme de développement : tableau des fonctionnalités</a></td>
     </tr>
     <tr>
         <td>Liens vers des ressources utiles pour développer des jeux Xbox Live</td>
@@ -1776,7 +1776,7 @@ Xbox Live est le premier réseau de jeux qui connecte des millions de joueurs da
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Vue d'ensemble</td>
+        <td>Vue d’ensemble</td>
         <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md">Prise en main du programme de créateurs Xbox Live</a></td>
     </tr>
     <tr>
@@ -1813,7 +1813,7 @@ Xbox Live est le premier réseau de jeux qui connecte des millions de joueurs da
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Vue d'ensemble</td>
+        <td>Vue d’ensemble</td>
         <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-partner/get-started-with-xbox-live-partner.md">Prise en main de Xbox Live en tant que partenaire géré ou développeur d’ID</a></td>
     </tr>
     <tr>
@@ -1830,11 +1830,11 @@ Xbox Live est le premier réseau de jeux qui connecte des millions de joueurs da
     </tr>
     <tr>
         <td>Configuration requise pour les jeux utilisant Xbox Live (GDN)</td>
-        <td><a href="https://go.microsoft.com/fwlink/?LinkId=533217">Configuration Xbox requise pour Xbox Live sur Windows 10</a></td>
+        <td><a href="https://edadfs.partners.extranet.microsoft.com/adfs/ls/?wa=wsignin1.0&wtrealm=https%3a%2f%2fdeveloper.xboxlive.com&wctx=rm%3d0%26id%3dpassive%26ru%3d%252fen-us%252flive%252fcertification%252frequirements%252fPages%252fTCR.aspx&wct=2019-11-20T19%3a55%3a26Z">Configuration Xbox requise pour Xbox Live sur Windows 10</a></td>
     </tr>
     <tr>
         <td>Exemples</td>
-        <td><a href="https://github.com/Microsoft/xbox-live-samples/tree/master/Samples/ID%40XboxSDK">Exemples de code ID@Xbox pour les développeurs</a></td>
+        <td><a href="https://github.com/Microsoft/xbox-live-samples/tree/master/Samples/ID%40XboxSDK">Exemples de code pour les développeurs ID@Xbox</a></td>
     </tr>  
     <tr>
         <td>Vue d’ensemble du développement de jeux Xbox Live (vidéo)</td>
@@ -1842,11 +1842,11 @@ Xbox Live est le premier réseau de jeux qui connecte des millions de joueurs da
     </tr>
     <tr>
         <td>Matchmaking multiplateforme (vidéo)</td>
-        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Xbox-Live-Multiplayer-Introducing-services-for-cross-platform-matchmaking-and-gameplay">Xbox Live multijoueur : Présentation des services de la connexion et du jeu interplateformes</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Xbox-Live-Multiplayer-Introducing-services-for-cross-platform-matchmaking-and-gameplay">Xbox Live multijoueur : présentation des services pour la mise en jeu et le jeu interplateformes</a></td>
     </tr>
     <tr>
         <td>Jeu multiplateforme dans Fable Legends (vidéo)</td>
-        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Fable-Legends-Cross-device-Gameplay-with-Xbox-Live">Légendes Fable : Jeu entre appareils avec Xbox Live</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Fable-Legends-Cross-device-Gameplay-with-Xbox-Live">Légendes Fable : jeu entre appareils avec Xbox Live</a></td>
     </tr>
     <tr>
         <td>Xbox Live : Statistiques et succès (vidéo)</td>

@@ -7,12 +7,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d66962971844f1983b527c6cea436dba03d63b8b
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 266a5f147b57e522088dab2ec298b54596ef77b7
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67322332"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260158"
 ---
 # <a name="move-from-ios-to-uwp"></a>Migrer d’iOS vers UWP
 
@@ -26,12 +26,12 @@ Aujourd’hui, Windows est exécuté sur un nombre considérable d’appareils. 
 
 | Rubrique | Description |
 |-------|-------------|
-| [Sélection d’une approche pour iOS et le développement d’applications UWP](selecting-an-approach-to-ios-and-uwp-app-development.md) | Quels sont les choix possibles lors du développement d’applications multiplateformes ? |
-| [Bien démarrer avec UWP pour les développeurs iOS](getting-started-with-uwp-for-ios-developers.md) | Si vous êtes un développeur iOS et envisagez de développer des applications pour Windows 10, ces documents constituent un bon point de départ. |
+| [Sélection d’une approche pour le développement d’applications iOS et UWP](selecting-an-approach-to-ios-and-uwp-app-development.md) | Quels sont les choix possibles lors du développement d’applications multiplateformes ? |
+| [Prise en main de UWP pour les développeurs iOS](getting-started-with-uwp-for-ios-developers.md) | Si vous êtes un développeur iOS et envisagez de développer des applications pour Windows 10, ces documents constituent un bon point de départ. |
 | [Configuration de votre Mac avec Windows 10](setting-up-your-mac-with-windows-10.md) | Utilisez votre ordinateur Mac actuel pour développer des applications pour Windows. |
 
 ## <a name="related-topics"></a>Rubriques connexes
 
 **Pour les concepteurs et les développeurs**
-* [Création d’applications Windows universelles pour tous les appareils Windows](https://go.microsoft.com/fwlink/p/?LinkID=397871)
-* [Télécharger des ressources de conception pour les applications UWP](https://docs.microsoft.com/windows/uwp/design/downloads/index)
+* [Création d’applications Windows universelles pour tous les appareils Windows](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
+* [Télécharger les ressources de conception pour les applications UWP](https://docs.microsoft.com/windows/uwp/design/downloads/index)

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e02d74df59bae4dd4bdaa909c97866da754db93
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 1af36b43e02c9ee08373098f57ba29c10badb6c8
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339924"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259068"
 ---
 # <a name="windowsphone-silverlight-to-uwp-api-mappings"></a>Windows Phone des mappages d’API Silverlight vers UWP
 
@@ -22,7 +22,7 @@ La table de mappage vous aide quand vous travaillez dans un projet UWP et que vo
 
 **Comment utiliser la table :  ** Commencez par Rechercher le nom de la classe que vous utilisez. Les classes sont indiquées lorsque le mappage est plus complexe qu’un simple changement de nom de l’espace de noms. Si votre classe n’est pas répertoriée, le mappage correspond simplement à une modification de l’espace de noms. Recherchez le nom de l’espace de noms de votre classe pour trouver son équivalent UWP. Votre classe figurera dans cet espace de noms. Si votre espace de noms n’est pas indiqué, son nom n’a pas changé.
 
-**Remarque**  Windows 10 prend en charge une grande partie des .NET Framework qu’une application Windows Phone Store. Par exemple, Windows 10 possède plusieurs espaces de noms System. ServiceModel. \*, ainsi que System.Net, System .net. NetworkInformation et System .net. Sockets.
+**Notez**  Windows 10 prend en charge un plus grand nombre de .NET Framework qu’une application Windows Phone Store. Par exemple, Windows 10 possède plusieurs System. ServiceModel.\* les espaces de noms, ainsi que System.Net, System .net. NetworkInformation et System .net. Sockets.
 En outre, dans une application Windows 10, vous tirerez parti de .NET Native, qui est une technologie de compilation à l’avance qui convertit le langage MSIL en code machine exécutable en mode natif. Les applications .NET Native démarrent plus vite, utilisent moins de mémoire et consomment moins de batterie que leurs équivalents MSIL.
 
 | Windows Phone Silverlight | Windows Runtime |
@@ -52,11 +52,11 @@ En outre, dans une application Windows 10, vous tirerez parti de .NET Native, qu
 | (SWT = **System.Windows.Threading**) <br/> Classe **SWT.DispatcherTimer** | [**DispatcherTimer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DispatcherTimer) (classe) |
 | Blend pour Visual Studio | |
 | (MEDC = **Microsoft.Expression.Drawing.Core**) <br/> Classe **MEDC.GeometryHelper** | Aucun équivalent direct |
-| Espace de noms **Microsoft.Expression.Interactivity** | Espace de noms [Microsoft.Xaml.Interactivity](https://go.microsoft.com/fwlink/p/?LinkId=328776) |
-| Espace de noms **Microsoft.Expression.Interactivity.Core** | Espace de noms [Microsoft.Xaml.Interactions.Core](https://go.microsoft.com/fwlink/p/?LinkId=328773) |
+| Espace de noms **Microsoft.Expression.Interactivity** | Espace de noms [Microsoft.Xaml.Interactivity](https://msdn.microsoft.com/library/windows/apps/microsoft.xaml.interactivity.aspx) |
+| Espace de noms **Microsoft.Expression.Interactivity.Core** | Espace de noms [Microsoft.Xaml.Interactions.Core](https://msdn.microsoft.com/library/windows/apps/microsoft.xaml.interactions.core.aspx) |
 | (MEIC = **Microsoft.Expression.Interactivity.Core**) <br/> Classe **MEIC.ExtendedVisualStateManager** | Aucun équivalent direct |
 | Espace de noms **Microsoft.Expression.Interactivity.Input** | Aucun équivalent direct |
-| Espace de noms **Microsoft.Expression.Interactivity.Media** | Espace de noms [Microsoft.Xaml.Interactions.Media](https://go.microsoft.com/fwlink/p/?LinkId=328775) |
+| Espace de noms **Microsoft.Expression.Interactivity.Media** | Espace de noms [Microsoft.Xaml.Interactions.Media](https://msdn.microsoft.com/library/windows/apps/microsoft.xaml.interactions.media.aspx) |
 | Espace de noms **Microsoft.Expression.Shapes** | Aucun équivalent direct |
 | (MI = **Microsoft.Internal**) <br/> Interface **MI.IManagedFrameworkInternalHelper** | Aucun équivalent direct |
 | Données de contacts et calendrier | |
@@ -121,7 +121,7 @@ En outre, dans une application Windows 10, vous tirerez parti de .NET Native, qu
 | (ST = **System.Threading**) <br/> Propriété **ST.Thread.CurrentCulture** | (SG = **System.Globalization**) <br/> Propriété **S.CultureInfo.CurrentCulture** |
 | (ST = **System.Threading**) <br/> Propriété **ST.Thread.CurrentUICulture** | (SG = **System.Globalization**) <br/> Propriété **S.CultureInfo.CurrentUICulture** |
 | Graphismes et animation | |
-| Espaces **de noms Microsoft. XNA. Framework. \*** , [bibliothèque de classes XNA Framework](https://go.microsoft.com/fwlink/p/?LinkId=263769), [bibliothèque de classes de pipeline de contenu](https://go.microsoft.com/fwlink/p/?LinkId=263770) | Aucun équivalent direct. En règle générale, utilisez [Microsoft DirectX](https://docs.microsoft.com/windows/desktop/directx) avec C++. Voir [Développement de jeux](https://docs.microsoft.com/previous-versions/windows/apps/hh452744(v=win.10)) et [Interopérabilité de DirectX et XAML](https://docs.microsoft.com/previous-versions/windows/apps/hh825871(v=win.10)). |
+| Espaces de noms **Microsoft. XNA. Framework.\*** , [bibliothèque de classes XNA Framework](https://msdn.microsoft.com/library/bb203940.aspx), [bibliothèque de classes de pipeline de contenu](https://msdn.microsoft.com/library/bb195587(v=XNAGameStudio.40).aspx) | Aucun équivalent direct. En règle générale, utilisez [Microsoft DirectX](https://docs.microsoft.com/windows/desktop/directx) avec C++. Voir [Développement de jeux](https://docs.microsoft.com/previous-versions/windows/apps/hh452744(v=win.10)) et [Interopérabilité de DirectX et XAML](https://docs.microsoft.com/previous-versions/windows/apps/hh825871(v=win.10)). |
 | Classe **Microsoft.Xna.Framework.Audio.Microphone** | [**MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture) , classe |
 | Classe **Microsoft.Xna.Framework.Audio.SoundEffect** | [**MediaElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement) (classe) |
 | Espace de noms **Microsoft.Xna.Framework.GamerServices** | (WPS = **Windows.Phone.System**) <br/> [**WPS. Espace de noms UserProfile. GameServices. Core**](https://docs.microsoft.com/uwp/api/Windows.Phone.System.UserProfile.GameServices.Core) |
@@ -154,7 +154,7 @@ En outre, dans une application Windows 10, vous tirerez parti de .NET Native, qu
 | Classes **Microsoft.Phone.Tasks.SaveContactTask**, **SaveEmailAddressTask** et **SavePhoneNumberTask** | Classe [**StoredContact**](https://docs.microsoft.com/uwp/api/Windows.Phone.PersonalInformation.StoredContact) (Windows Phone uniquement) | 
 | Classe **Microsoft.Phone.Tasks.SaveRingtoneTask** | Aucun équivalent direct |
 | Classes **Microsoft.Phone.Tasks.ShareLinkTask**, **ShareMediaTask** et **ShareStatusTask** | [**DataPackage**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackage) , classe |
-| Location | |
+| Emplacement | |
 | Espace de noms **System.Device.Location** | Espace de noms [**Windows. Devices. géolocalisation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation) |
 | Classe **System.Device.GeoCoordinateWatcher** | Classe de [**géolocalisation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator) |
 | Cartes | |
@@ -242,7 +242,7 @@ En outre, dans une application Windows 10, vous tirerez parti de .NET Native, qu
 | Classe **System.IO.Stream** | Toujours pris en charge, mais utilisez ReadAsync() et WriteAsync() au lieu de BeginRead()/EndRead() et BeginWrite()/EndWrite(). |
 | Portefeuille | |
 | Espace de noms **Microsoft.Phone.Wallet** | Espace de noms [**Windows. ApplicationModel. Wallet**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Wallet) |
-| xml | |
+| Xml | |
 | (SX = **System.Xml**) | Méthode **SX.XmlConvert.ToDateTime** |
 | (SX = **System.Xml**) | Méthode **SX.XmlConvert.ToDateTimeOffset** |
 

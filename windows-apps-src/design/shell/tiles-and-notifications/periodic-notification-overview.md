@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 14f5fa06cfa0a6a7e393f3e2d513af0898d1f822
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 617b5d013c8452733fae2a1fa7c16180d37fbe57
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360940"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259719"
 ---
 # <a name="periodic-notification-overview"></a>Vue d’ensemble des notifications périodiques
  
@@ -25,7 +25,7 @@ Les notifications périodiques, également appelées notifications interrogées,
 
 Les notifications périodiques permettent à votre application d’obtenir des mises à jour de vignettes dynamiques avec un minimum d’intervention du service cloud et d’investissement client. Les notifications périodiques sont une bonne méthode de distribution du même contenu à un large public.
 
-**Remarque**    plus d’informations en téléchargeant le [Push et exemple de notifications périodiques](https://go.microsoft.com/fwlink/p/?linkid=231476) pour Windows 8.1 et de nouveau à l’aide de son code source dans votre application Windows 10.
+**Notez**   vous pouvez en savoir plus en téléchargeant l' [exemple de notifications push et périodiques](https://code.msdn.microsoft.com/windowsapps/push-and-periodic-de225603) pour Windows 8.1 et en réutilisant son code source dans votre application Windows 10.
 
  
 
@@ -48,9 +48,9 @@ La réponse du serveur cloud comprend le contenu téléchargé. Le contenu renvo
 
 Appelez l’une de ces méthodes pour lancer l’interrogation :
 
--   [**StartPeriodicUpdate**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_) (Tile)
--   [**StartPeriodicUpdate**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.BadgeUpdater#Windows_UI_Notifications_BadgeUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_) (Badge)
--   [**StartPeriodicUpdateBatch**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdateBatch_Windows_Foundation_Collections_IIterable_1_Windows_UI_Notifications_PeriodicUpdateRecurrence_) (Tile)
+-   [**StartPeriodicUpdate**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_) (vignette)
+-   [**StartPeriodicUpdate**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.BadgeUpdater#Windows_UI_Notifications_BadgeUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_) (badge)
+-   [**StartPeriodicUpdateBatch**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdateBatch_Windows_Foundation_Collections_IIterable_1_Windows_UI_Notifications_PeriodicUpdateRecurrence_) (vignette)
 
 Quand vous appelez l’une de ces méthodes, l’URI est immédiatement interrogé et la vignette ou le badge est mis à jour à l’aide du contenu reçu. Après cette interrogation initiale, Windows continue de fournir des mises à jour en fonction de l’intervalle demandé. L’interrogation se poursuit jusqu’à ce que vous l’arrêtiez explicitement (avec [**TileUpdater.StopPeriodicUpdate**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater.StopPeriodicUpdate)), jusqu’à ce que votre application soit désinstallée, ou, dans le cas d’une vignette secondaire, jusqu’à ce que la vignette soit supprimée. Dans le cas contraire, Windows continue à rechercher des mises à jour pour votre vignette ou votre badge, même si votre application n’est jamais relancée.
 
@@ -77,7 +77,7 @@ Si vous publiez une mise à jour d’application qui modifie votre URI d’inter
 
 Par défaut, les notifications périodiques par vignette et par badge expirent trois jours après avoir été téléchargées. Quand une notification expire, le contenu est supprimé du badge, de la vignette ou de la file d’attente, et n’est plus présenté à l’utilisateur. Il est conseillé de définir un délai d’expiration explicite pour toutes les notifications périodiques par vignette et par badge en utilisant un délai approprié pour votre application ou notification, afin de vous assurer que le contenu ne persiste pas plus longtemps que nécessaire. Un délai d’expiration explicite est essentiel pour les contenus dont la durée de vie est limitée. Cette approche assure également la suppression du contenu périmé si votre service cloud n’est plus accessible, ou que l’utilisateur se déconnecte du réseau pour une période prolongée.
 
-Votre service cloud définit une date et une heure d’expiration pour une notification en incluant l’en-tête HTTP X-WNS-Expires dans la charge utile de réponse. L’en-tête HTTP X-WNS-Expires est conforme au [format HTTP-date](https://go.microsoft.com/fwlink/p/?linkid=253706). Pour plus d’informations, voir [**StartPeriodicUpdate**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_) ou [**StartPeriodicUpdateBatch**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdateBatch_Windows_Foundation_Collections_IIterable_1_Windows_UI_Notifications_PeriodicUpdateRecurrence_).
+Votre service cloud définit une date et une heure d’expiration pour une notification en incluant l’en-tête HTTP X-WNS-Expires dans la charge utile de réponse. L’en-tête HTTP X-WNS-Expires est conforme au [format HTTP-date](https://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.3.1). Pour plus d’informations, voir [**StartPeriodicUpdate**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_) ou [**StartPeriodicUpdateBatch**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdateBatch_Windows_Foundation_Collections_IIterable_1_Windows_UI_Notifications_PeriodicUpdateRecurrence_).
 
 Par exemple, au cours d’une journée active d’échanges sur le marché boursier, vous pouvez doubler le délai d’expiration de la mise à jour du cours d’une action par rapport à l’intervalle d’interrogation (par exemple, une heure après la réception du contenu, si vous effectuez l’interrogation chaque demi-heure). Autre exemple, dans une application d’infos, le délai d’expiration approprié pour la mise à jour quotidienne des vignettes d’infos est d’une journée.
 
@@ -104,6 +104,6 @@ Vous devez fournir un URI unique pour chaque notification que Windows doit tél�
 
 
 * [Instructions pour les notifications périodiques](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-periodic-notification-overview)
-* [Comment configurer des notifications périodiques pour badges](https://docs.microsoft.com/previous-versions/windows/apps/hh761476(v=win.10))
+* [Comment configurer des notifications périodiques pour les badges](https://docs.microsoft.com/previous-versions/windows/apps/hh761476(v=win.10))
 * [Comment configurer des notifications périodiques pour les vignettes](https://docs.microsoft.com/previous-versions/windows/apps/hh761476(v=win.10))
  

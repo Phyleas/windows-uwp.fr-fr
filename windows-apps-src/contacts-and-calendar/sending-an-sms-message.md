@@ -6,18 +6,18 @@ keywords: contacts, SMS, envoi
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 01f6bd595de369afae8ac091a70c857bbd198519
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: ea262e026f31e1d690673f9b1d88e882d88ee4aa
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360337"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74255007"
 ---
 # <a name="send-an-sms-message"></a>Envoyer un message SMS
 
 Cette rubrique vous montre comment lancer la boîte de dialogue de rédaction d’un message SMS pour permettre à l’utilisateur d’envoyer un message SMS. Vous pouvez préremplir les champs du message SMS avec des données avant d’afficher la boîte de dialogue. Le message ne sera pas envoyé tant que l’utilisateur n’aura pas appuyé sur le bouton d’envoi.
 
-Pour appeler ce code, déclarez le **chat**, **smsSend**, et **chatSystem** fonctionnalités dans votre manifeste du package. Il s’agit de [des capacités restreintes](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations#special-and-restricted-capabilities) mais vous pouvez les utiliser dans votre application. Vous avez besoin d’approbation uniquement si vous avez l’intention de publier votre application sur le Store. Consultez [types de compte, emplacements et frais](https://docs.microsoft.com/windows/uwp/publish/account-types-locations-and-fees).
+Pour appeler ce code, déclarez les fonctionnalités **chat**, **smsSend**et **chatSystem** dans votre manifeste de package. Il s’agit de [fonctionnalités restreintes](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations#special-and-restricted-capabilities) , mais vous pouvez les utiliser dans votre application. Vous avez besoin d’une approbation uniquement si vous envisagez de publier votre application dans le Windows Store. Consultez [types de comptes, emplacements et frais](https://docs.microsoft.com/windows/uwp/publish/account-types-locations-and-fees).
 
 ## <a name="launch-the-compose-sms-dialog"></a>Lancer la boîte de dialogue de rédaction d’un message SMS
 
@@ -52,7 +52,7 @@ private async void ComposeSms(Windows.ApplicationModel.Contacts.Contact recipien
 }
 ```
 
-Vous pouvez utiliser le code suivant pour déterminer si l’appareil qui exécute votre application est en mesure d’envoyer des messages SMS.
+Vous pouvez utiliser le code suivant pour déterminer si l’appareil qui exécute votre application peut envoyer des messages SMS.
 
 ```csharp
 if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.ApplicationModel.Chat"))
@@ -63,7 +63,7 @@ if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Applicatio
 
 ## <a name="summary-and-next-steps"></a>Récapitulatif et étapes suivantes
 
-Cette rubrique vous a montré comment lancer la boîte de dialogue de rédaction d’un message SMS. Pour plus d’informations sur la sélection de contacts en tant que destinataires d’un message SMS, voir la section [Sélectionner des contacts](selecting-contacts.md). Téléchargez les [Exemples d’applications Windows universelles](https://go.microsoft.com/fwlink/p/?linkid=619979) dans GitHub pour voir d’autres exemples illustrant comment envoyer et recevoir des messages SMS à l’aide d’une tâche en arrière-plan.
+Cette rubrique vous a montré comment lancer la boîte de dialogue de rédaction d’un message SMS. Pour plus d’informations sur la sélection de contacts en tant que destinataires d’un message SMS, voir la section [Sélectionner des contacts](selecting-contacts.md). Téléchargez les [Exemples d’applications Windows universelles](https://github.com/Microsoft/Windows-universal-samples) dans GitHub pour voir d’autres exemples illustrant comment envoyer et recevoir des messages SMS à l’aide d’une tâche en arrière-plan.
 
 ## <a name="related-topics"></a>Rubriques connexes
 

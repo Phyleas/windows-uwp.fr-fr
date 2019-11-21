@@ -8,41 +8,41 @@ ms.date: 03/18/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 34f8d15b971cc9ed286471010a21d1b44b84af13
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 9b1cac04405f18aaf3c8f39f9bfce2b965577807
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66363469"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257939"
 ---
-# <a name="guidelines-for-touch-targets"></a>Instructions pour les cibles de tactile
+# <a name="guidelines-for-touch-targets"></a>Instructions pour les cibles tactiles
 
-Tous les éléments d’interface utilisateur interactives dans votre application de plateforme universelle Windows (UWP) doivent être suffisamment grands pour les utilisateurs à accéder et l’utiliser, quel que soit le périphérique type ou méthode d’entrée avec précision.
+Tous les éléments d’interface utilisateur interactifs dans votre application de plateforme Windows universelle (UWP) doivent être suffisamment volumineux pour permettre aux utilisateurs d’accéder et d’utiliser avec précision, quel que soit le type d’appareil ou la méthode d’entrée.
 
-Prise en charge d’entrée tactile (ainsi que la nature relativement imprécise de la zone de contact tactile) nécessite une optimisation supplémentaire par rapport à la disposition de taille et le contrôle cible comme le jeu plus vastes et plus complexe de données d’entrée signalés par le digitaliseur tactile est utilisé pour déterminer le cible prévue (ou le plus probable) de l’utilisateur.
+La prise en charge des entrées tactiles (et la nature relativement imprécise de la zone de contact tactile) requiert une optimisation supplémentaire en ce qui concerne la taille cible et la disposition des contrôles, car le plus grand ensemble plus complexe de données d’entrée signalé par le digitaliseur tactile est utilisé pour déterminer cible prévue de l’utilisateur (ou la plus probable).
 
-Tous les contrôles UWP ont été conçus avec des tailles de cible par défaut tactiles et les dispositions qui vous permettent de créer des applications visuellement à charge équilibrée et attrayantes qui sont à l’aise, facile à utiliser et inspirent confiance.
+Tous les contrôles UWP ont été conçus avec des formats et des mises en page tactiles cibles par défaut qui vous permettent de créer des applications équilibrées et attrayantes qui sont confortables, faciles à utiliser et d’inspirer la confiance.
 
-Dans cette rubrique, nous décrivons ces comportements par défaut afin de vous pouvez concevoir votre application de facilité d’utilisation maximale à l’aide de contrôles de la plateforme et des contrôles personnalisés (doit votre application ont besoin).
+Dans cette rubrique, nous décrivons ces comportements par défaut afin que vous puissiez concevoir votre application pour une utilisation maximale à l’aide de contrôles de plateforme et de contrôles personnalisés (si votre application en a besoin).
 
 > **API importantes** : [**Windows.UI.Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Core), [**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input), [**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input)
 
-## <a name="fluent-standard-sizing"></a>Fluent dimensionnement Standard
+## <a name="fluent-standard-sizing"></a>Taille Fluent Standard
 
-*Dimensionnement Standard Fluent* a été créé pour fournir un équilibre entre le confort de densité et l’utilisateur des informations. En effet, tous les éléments sur l’écran alignent à une cible de pixels effective de 40 x 40 (epx), ce qui permet d’éléments d’interface utilisateur alignent sur une grille et l’échelle de manière appropriée en fonction de la mise à l’échelle au niveau du système.
+La *taille Fluent Standard* a été créée pour fournir un équilibre entre le confort de l’utilisateur et la densité des informations. Tous les éléments sur l’écran s’alignent sur une cible de pixels effectifs (epx) de 40x40, ce qui permet d’aligner les éléments de l’interface utilisateur sur une grille et de les mettre à l’échelle de manière appropriée en fonction de la mise à l’échelle au niveau du système.
 
 > [!NOTE]
->Pour plus d’informations sur les pixels efficaces et la mise à l’échelle, consultez [Introduction à la conception d’application UWP](../basics/design-and-ui-intro.md#effective-pixels-and-scaling)
+>Pour plus d’informations sur les pixels effectifs et la mise à l’échelle, consultez [Présentation de la conception des applications UWP](../basics/design-and-ui-intro.md#effective-pixels-and-scaling)
 >
-> Pour plus d’informations sur la mise à l’échelle au niveau du système, consultez [alignement, marge, remplissage](../layout/alignment-margin-padding.md).
+> Pour plus d’informations sur la mise à l’échelle au niveau du système, consultez [Alignement, marge, remplissage](../layout/alignment-margin-padding.md).
 
-## <a name="fluent-compact-sizing"></a>Dimensionnement Compact Fluent
+## <a name="fluent-compact-sizing"></a>Taille Fluent Compact
 
-Les applications peuvent afficher un haut niveau de densité d’informations avec *dimensionnement Fluent Compact*. Dimensionnement compact aligne les éléments d’interface utilisateur à une cible epx de 32 x 32, ce qui permet des éléments d’interface utilisateur pour l’aligner sur une grille plus étroite et d’une échelle de façon appropriée en fonction de la mise à l’échelle au niveau du système.
+Les applications peuvent afficher un plus haut niveau de densité des informations avec un *dimensionnement compact Fluent*. Le dimensionnement compact aligne les éléments d’interface utilisateur sur une cible 32 x 32 EPX, ce qui permet aux éléments d’interface utilisateur de s’aligner sur une grille plus étroite et de les mettre à l’échelle de manière appropriée en fonction de la mise à l’échelle du
 
 ### <a name="examples"></a>Exemples
 
-Dimensionnement Compact peut être appliqué au niveau de la page ou de la grille.
+Le dimensionnement compact peut être appliqué au niveau de la page ou de la grille.
 
 ### <a name="page-level"></a>Niveau page
 
@@ -52,7 +52,7 @@ Dimensionnement Compact peut être appliqué au niveau de la page ou de la grill
 </Page.Resources>
 ```
 
-### <a name="grid-level"></a>Niveau de la grille
+### <a name="grid-level"></a>Niveau grille
 
 ```xaml
 <Grid>
@@ -62,39 +62,39 @@ Dimensionnement Compact peut être appliqué au niveau de la page ou de la grill
 </Grid>
 ```
 
-## <a name="target-size"></a>Taille de la cible
+## <a name="target-size"></a>Taille cible
 
-En général, définissez votre taille de cible tactile à plage carré de 7,5 mm (40 x 40 pixels sur un écran de PPP 135 à un 1.0 x mise à l’échelle de plateau). En règle générale, les contrôles UWP alignent cible tactile à 7,5 mm (Cela peut varier en fonction du contrôle spécifique et les modes d’utilisation courants). Consultez [contrôler la taille et la densité](../style/spacing.md) pour plus de détails.
+En général, définissez la taille de la cible tactile sur 7,5 mm de la plage carrée (40 x 40 pixels sur un affichage de 135 PPP à un plateau de mise à l’échelle de 1,0 x). En règle générale, les contrôles UWP s’alignent sur la cible tactile 7,5 mm (cela peut varier en fonction du contrôle spécifique et de tous les modèles d’utilisation courants). Pour plus d’informations, consultez contrôle de la [taille et](../style/spacing.md) de la densité.
 
-Vous pouvez modifier ces recommandations en matière de tailles de cibles en fonction du scénario particulier de votre application. Voici quelques éléments à prendre en compte :
+Vous pouvez modifier ces recommandations en matière de tailles de cibles en fonction du scénario particulier de votre application. Voici quelques points à prendre en compte :
 
-- Fréquence de touche - effectuez également les cibles à plusieurs reprises ou fréquemment enfoncées supérieure à la taille minimale.
-- Conséquence de l’erreur - cibles qui ont des conséquences graves si couvertes dans l’erreur doit avoir une plus grande marge intérieure et être placée plus loin du bord de la zone de contenu. Ceci concerne tout particulièrement les cibles fréquemment utilisées.
+- Fréquence des touches : envisagez de faire en sorte que les cibles qui sont trop longues ou bien dépassent la taille minimale.
+- Conséquence de l’erreur : les cibles qui ont des conséquences graves si touchées en erreur doivent avoir une marge de remplissage supérieure et être placées plus loin à partir du bord de la zone de contenu. Ceci concerne tout particulièrement les cibles fréquemment utilisées.
 - Position dans la zone de contenu.
-- Taille de facteur et écran de formulaire.
+- Taille de l’écran et du facteur de forme.
 - Position du doigt.
-- Touch visualisations.
+- Visualisations tactiles.
 
 ## <a name="related-articles"></a>Articles connexes
 
 - [Présentation de la conception des applications UWP](../basics/design-and-ui-intro.md)
-- [Taille du contrôle et la densité](../style/spacing.md)
+- [Taille de contrôle et densité](../style/spacing.md)
 - [Alignement, marge, remplissage](../layout/alignment-margin-padding.md)
 
 ### <a name="samples"></a>Exemples
 
-- [Exemple d’entrée de base](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-- [Exemple d’entrée à faible latence](https://go.microsoft.com/fwlink/p/?LinkID=620304)
-- [Exemple de mode d’interaction utilisateur](https://go.microsoft.com/fwlink/p/?LinkID=619894)
-- [Exemple d’éléments visuels de focus](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+- [Exemple d’entrée de base](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+- [Exemple d’entrée à faible latence](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+- [Exemple de mode d’interaction utilisateur](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
+- [Exemples de visuels de focus](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
 
 ### <a name="archive-samples"></a>Exemples d’archive
 
-- [Entrée : Exemple d’événements d’entrée utilisateur XAML](https://go.microsoft.com/fwlink/p/?linkid=226855)
-- [Entrée : Exemples de fonctionnalités d’appareil](https://go.microsoft.com/fwlink/p/?linkid=231530)
-- [Entrée : Exemple de test d’atteinte tactile](https://go.microsoft.com/fwlink/p/?linkid=231590)
-- [XAML de défilement, panoramique et zoom d’exemple](https://go.microsoft.com/fwlink/p/?linkid=251717)
-- [Entrée : Exemple d’entrée manuscrite simplifiée](https://go.microsoft.com/fwlink/p/?linkid=246570)
-- [Entrée : Exemple de mouvements de Windows 8](https://go.microsoft.com/fwlink/p/?LinkId=264995)
-- [Entrée : Manipulations et exemple de mouvements (C++)](https://go.microsoft.com/fwlink/p/?linkid=231605)
-- [Exemple d’entrée tactile de DirectX](https://go.microsoft.com/fwlink/p/?LinkID=231627)
+- [Entrée : exemple d’événements d’entrée d’utilisateur XAML](https://code.msdn.microsoft.com/windowsapps/Input-3dff271b)
+- [Entrée : exemple de fonctionnalités de l’appareil](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
+- [Entrée : exemple de test de positionnement tactile](https://code.msdn.microsoft.com/windowsapps/Touch-Hit-Testing-sample-5e35c690)
+- [Exemple de défilement XAML, panoramique et zoom](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9)
+- [Entrée : exemple d’encre simplifiée](https://code.msdn.microsoft.com/windowsapps/Input-simplified-ink-sample-11614bbf)
+- [Entrée : exemple de gestes Windows 8](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
+- [Entrée : manipulations et mouvements (C++), exemple](https://code.msdn.microsoft.com/windowsapps/Manipulations-and-gestures-362b6b59)
+- [Exemple d’entrée tactile DirectX](https://code.msdn.microsoft.com/windowsapps/Simple-Direct3D-Touch-f98db97e)

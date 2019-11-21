@@ -1,21 +1,21 @@
 ---
-Description: Si votre application n’a pas les ressources qui correspondent aux paramètres particuliers d’un périphérique client, les ressources de l’application par défaut sont utilisées. Cette rubrique explique comment spécifier ce que sont ces ressources par défaut.
+Description: Si votre application n’a pas les ressources qui correspondent aux paramètres particuliers d’un appareil client, les ressources de l’application par défaut sont utilisées. Cette rubrique explique comment spécifier ce que sont ces ressources par défaut.
 title: Préciser les ressources par défaut que votre application utilise
 template: detail.hbs
 ms.date: 11/14/2017
 ms.topic: article
 keywords: windows 10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: b11f6dfec2941ae4eaa277f37de66965bd1ea4aa
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5dfd09f2a1a3ab326c09434ee2c613ae57214d59
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57593984"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74254647"
 ---
 # <a name="specify-the-default-resources-that-your-app-uses"></a>Préciser les ressources par défaut que votre application utilise
 
-Si votre application n’a pas les ressources qui correspondent aux paramètres particuliers d’un périphérique client, les ressources de l’application par défaut sont utilisées. Cette rubrique explique comment spécifier ce que sont ces ressources par défaut.
+Si votre application n’a pas les ressources qui correspondent aux paramètres particuliers d’un appareil client, les ressources de l’application par défaut sont utilisées. Cette rubrique explique comment spécifier ce que sont ces ressources par défaut.
 
 Lorsqu’un client installe votre application à partir de Microsoft Store, les paramètres sur l’appareil du client sont comparés aux ressources disponibles de l’application. Cette association est réalisée afin que seules les ressources appropriées soient téléchargées et installées pour cet utilisateur. Par exemple, les chaînes et les images les mieux adaptées pour les préférences linguistiques de l’utilisateur, ainsi que la résolution et les paramètres PPP du périphérique, sont utilisés. Par exemple, `200` est la valeur par défaut pour `scale`, mais vous pouvez remplacer cette valeur par défaut si vous le souhaitez.
 
@@ -44,7 +44,7 @@ Vous pouvez configurer ce que sont ces valeurs par défaut de deux manières. Vo
    </default>
    ```
    
-   **Remarque** la valeur `LANGUAGE-TAG(S)`doit être synchronisée avec la langue par défaut de votre application. S’il s’agit d’une [balise de langue BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302) unique, la langue par défaut de votre application doit être la même balise. Si c’est une liste séparée par des virgules de balises de langue, la langue par défaut de votre application doit être la première balise dans la liste. Vous définissez la langue par défaut dans le champ **Langue par défaut** dans l’onglet **Application** du fichier source du manifeste du package d’application (`Package.appxmanifest`).
+   **Remarque** la valeur `LANGUAGE-TAG(S)`doit être synchronisée avec la langue par défaut de votre application. S’il s’agit d’une [balise de langue BCP-47](https://tools.ietf.org/html/bcp47) unique, la langue par défaut de votre application doit être la même balise. Si c’est une liste séparée par des virgules de balises de langue, la langue par défaut de votre application doit être la première balise dans la liste. Vous définissez la langue par défaut dans le champ **Langue par défaut** dans l’onglet **Application** du fichier source du manifeste du package d’application (`Package.appxmanifest`).
 
 4. Chaque élément `<qualifier>`indique à Visual Studio quelle valeur utiliser comme valeur par défaut pour chaque nom de qualificateur. Avec le contenu du fichier que vous avez actuellement, vous n’avez pas véritablement modifié le comportement de Visual Studio. En d’autres termes, Visual Studio *se comportait déjà comme si* ce fichier était présent avec ce contenu, car c’est le comportement par défaut. Pour remplacer une valeur par défaut par votre propre valeur par défaut, vous devez donc modifier une valeur dans le fichier. Voici un exemple de l’aspect que peut avoir le fichier si vous avez modifié les trois premières valeurs.
    ```xml
@@ -64,7 +64,7 @@ Vous pouvez configurer ce que sont ces valeurs par défaut de deux manières. Vo
 
 Pour vérifier que vos valeurs par défaut de remplacement sont pris en compte, recherchez le fichier `<ProjectFolder>\obj\<ReleaseConfiguration folder>\priconfig.xml`et confirmez que son contenu correspond à vos choix. Si c’est le cas, vous avez correctement configuré les valeurs de qualificateur des ressources que votre application utilisera par défaut. Si aucune correspondance n’est trouvée pour les paramètres de l’utilisateur, les ressources dont le nom de fichier ou de dossier contient les valeurs de qualificateurs par défaut que vous avez définies ici seront utilisées.
 
-### <a name="how-does-this-work"></a>Comment cela fonctionne-t-il ?
+### <a name="how-does-this-work"></a>Comment cela fonctionne ?
 
 En coulisse, Visual Studio lance un outil nommé `MakePri.exe` pour générer un fichier appelé un index de ressource de package (IRP), qui décrit toutes les ressources de votre application et qui indique quelles sont les ressources par défaut. Pour plus d’informations sur cet outil, consultez [Compiler des ressources manuellement avec MakePri.exe ](compile-resources-manually-with-makepri.md). Visual Studio envoie un fichier de configuration à `MakePri.exe`. Le contenu de votre fichier `priconfig.default.xml` est utilisé en tant qu’élément `<default>` de ce fichier de configuration, qui est la partie qui spécifie l’ensemble des valeurs de qualificateur qui sont considérées comme des valeurs par défaut. Ainsi, si vous ajoutez et modifiez `priconfig.default.xml`, vous influencez en fin de compte le contenu du fichier d’index de ressource de package que Visual Studio génère pour votre application et l’ajoute à son package d’application.
 
@@ -103,5 +103,5 @@ Enregistrez et fermez-le, puis générez une nouvelle fois votre projet.
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Personnaliser vos ressources pour la langue, l’échelle, le contraste élevé et d’autres qualificateurs](tailor-resources-lang-scale-contrast.md)
-* [Balise de langue de BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
+* [Balise de langue BCP-47](https://tools.ietf.org/html/bcp47)
 * [Compiler des ressources manuellement avec MakePri.exe](compile-resources-manually-with-makepri.md)

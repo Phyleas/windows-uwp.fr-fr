@@ -6,16 +6,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, threads, pool de threads
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ff0eca18eeab72dbf0a2f9a539e452a5923392d
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: d3dcd162e0a139328ef5885ac26edec04a279134
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67322017"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259805"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>Envoyer un élément de travail au pool de threads
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour Windows 8.x articles, consultez le [archive](https://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ mis à jour pour les applications UWP sur Windows 10. Pour obtenir des articles sur Windows 8. x, consultez l' [archive](https://docs.microsoft.com/previous-versions/windows/apps/mt244353(v=win.10)?redirectedfrom=MSDN) \]
 
 <b>API importantes</b>
 
@@ -31,7 +31,7 @@ Créez un élément de travail en appelant [**RunAsync**](https://docs.microsoft
 Trois versions de [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync) sont disponibles pour que vous puissiez éventuellement spécifier la priorité de l’élément de travail et contrôler s’il est exécuté simultanément avec d’autres éléments de travail.
 
 >[!NOTE]
->Utilisez [ **CoreDispatcher.RunAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) pour accéder à la thread d’interface utilisateur et afficher la progression à partir de l’élément de travail.
+>Utilisez [**CoreDispatcher. RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) pour accéder au thread d’interface utilisateur et afficher la progression à partir de l’élément de travail.
 
 L’exemple suivant crée un élément de travail et fournit une expression lambda pour effectuer la tâche :
 
@@ -350,7 +350,7 @@ Notez que le gestionnaire d’achèvement vérifie si l’élément de travail a
 
 ## <a name="summary-and-next-steps"></a>Récapitulatif et étapes suivantes
 
-Vous trouverez plus en téléchargeant le code à partir de ce démarrage rapide dans le [création d’un pool de threads de travail élément exemple](https://go.microsoft.com/fwlink/p/?LinkID=328569) écrite pour Windows 8.1, ou en réutilisant le code source dans un fichier win\_unap Windows 10 application.
+Vous pouvez en savoir plus en téléchargeant le code de ce guide de démarrage rapide dans l' [exemple de création d’un élément de travail ThreadPool](https://code.msdn.microsoft.com/windowsapps/Creating-a-ThreadPool-work-9665cdff) écrit pour Windows 8.1 et en réutilisant le code source dans une application Windows 10 unap Win\_.
 
 ## <a name="related-topics"></a>Rubriques connexes
 

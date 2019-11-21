@@ -3,15 +3,15 @@ title: Créer et inscrire une tâche en arrière-plan in-process
 description: Créez et inscrivez une tâche in-process qui s’exécute dans le même processus que votre application au premier plan.
 ms.date: 11/03/2017
 ms.topic: article
-keywords: Windows 10, uwp, les tâches en arrière-plan
+keywords: Windows 10, UWP, tâche en arrière-plan
 ms.assetid: d99de93b-e33b-45a9-b19f-31417f1e9354
 ms.localizationpriority: medium
-ms.openlocfilehash: f37ffe21795fc68ff72b4e6f1de591c96d2f8b90
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 9ee8a0e6538abd879921dd9d1496d29a61054a02
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66366216"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260503"
 ---
 # <a name="create-and-register-an-in-process-background-task"></a>Créer et inscrire une tâche en arrière-plan in-process
 
@@ -29,7 +29,7 @@ N’oubliez pas que l’activité en arrière-plan peut être arrêtée, même e
 
 ## <a name="fundamentals"></a>Principes de base
 
-Le modèle in-process améliore le cycle de vie de l’application grâce à des notifications avancées qui vous indiquent quand votre application est au premier plan ou en arrière-plan. Deux nouveaux événements sont disponibles à partir de l’objet d’Application pour ces transitions : [**EnteredBackground** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.enteredbackground) et [ **LeavingBackground**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.leavingbackground). Ces événements s’intègrent au cycle de vie de l’application en fonction de l’état de visibilité de votre application. Pour en savoir plus sur ces événements et comment ils affectent le cycle de vie de l’application, consultez la rubrique [Cycle de vie de l’application](app-lifecycle.md).
+Le modèle in-process améliore le cycle de vie de l’application grâce à des notifications avancées qui vous indiquent quand votre application est au premier plan ou en arrière-plan. Deux nouveaux événements sont disponibles à partir de l’objet Application pour ces transitions : [**EnteredBackground**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.enteredbackground) et [**LeavingBackground**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.leavingbackground). Ces événements s’intègrent au cycle de vie de l’application en fonction de l’état de visibilité de votre application. Pour en savoir plus sur ces événements et comment ils affectent le cycle de vie de l’application, consultez la rubrique [Cycle de vie de l’application](app-lifecycle.md).
 
 En règle générale, vous gérerez l’événement **EnteredBackground** pour exécuter le code lorsque votre application s’exécute en arrière-plan, et l’événement **LeavingBackground** pour savoir quand votre application est passée au premier plan.
 
@@ -68,7 +68,7 @@ L’exemple de code suivant affecte une condition qui exige la présence de l’
 
 ## <a name="place-your-background-activity-code-in-onbackgroundactivated"></a>Placer votre code d’activité en arrière-plan dans OnBackgroundActivated()
 
-Placez votre code d’activité d’arrière-plan dans [OnBackgroundActivated](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onbackgroundactivated) pour répondre à votre déclencheur en arrière-plan lorsqu’elle se déclenche. **OnBackgroundActivated** peut être traité de la même manière que [IBackgroundTask.Run](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.run?f=255&MSPPError=-2147217396). La méthode a un [BackgroundActivatedEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.backgroundactivatedeventargs) paramètre, qui contient tous les éléments qui le **exécuter** offre de la méthode. Par exemple, dans App.xaml.cs :
+Placez votre code d’activité en arrière-plan dans [OnBackgroundActivated](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onbackgroundactivated) pour répondre à votre déclencheur d’arrière-plan lorsqu’il est déclenché. **OnBackgroundActivated** peut être traité de la même manière que [IBackgroundTask.Run](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.run?f=255&MSPPError=-2147217396). La méthode a un paramètre [BackgroundActivatedEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.backgroundactivatedeventargs) , qui contient toutes les caractéristiques de la méthode **Run** . Par exemple, dans App.xaml.cs :
 
 ``` cs
 using Windows.ApplicationModel.Background;
@@ -88,7 +88,7 @@ sealed partial class App : Application
 }
 ```
 
-Pour une plus riche **OnBackgroundActivated** exemple, consultez [convertir un service d’application à exécuter dans le même processus que son application hôte](convert-app-service-in-process.md).
+Pour obtenir un exemple **OnBackgroundActivated** plus riche, consultez [convertir un app service pour qu’il s’exécute dans le même processus que son application hôte](convert-app-service-in-process.md).
 
 ## <a name="handle-background-task-progress-and-completion"></a>Gérer la progression et l’achèvement des tâches en arrière-plan
 
@@ -110,11 +110,11 @@ Consultez les rubriques connexes suivantes pour obtenir des informations de réf
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-**Tâche en arrière-plan détaillées des rubriques d’instruction**
+**Rubriques d’instructions détaillées sur les tâches en arrière-plan**
 
-* [Convertir une tâche en arrière-plan out-of-process à une tâche en arrière-plan dans le processus](convert-out-of-process-background-task.md)
+* [Convertir une tâche en arrière-plan out-of-process en tâche d’arrière-plan in-process](convert-out-of-process-background-task.md)
 * [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-a-background-task.md)
-* [Lire des médias dans l’arrière-plan](https://docs.microsoft.com/windows/uwp/audio-video-camera/background-audio)
+* [Lire le média en arrière-plan](https://docs.microsoft.com/windows/uwp/audio-video-camera/background-audio)
 * [Répondre aux événements système avec des tâches en arrière-plan](respond-to-system-events-with-background-tasks.md)
 * [Inscrire une tâche en arrière-plan](register-a-background-task.md)
 * [Définir des conditions pour l’exécution d’une tâche en arrière-plan](set-conditions-for-running-a-background-task.md)
@@ -123,12 +123,12 @@ Consultez les rubriques connexes suivantes pour obtenir des informations de réf
 * [Superviser la progression et l’exécution des tâches en arrière-plan](monitor-background-task-progress-and-completion.md)
 * [Exécuter une tâche en arrière-plan en fonction d’un minuteur](run-a-background-task-on-a-timer-.md)
 
-**Conseils sur les tâches en arrière-plan**
+**Aide sur les tâches en arrière-plan**
 
 * [Recommandations relatives aux tâches en arrière-plan](guidelines-for-background-tasks.md)
 * [Déboguer une tâche en arrière-plan](debug-a-background-task.md)
-* [Comment déclencher suspendre, reprendre, événements et d’arrière-plan dans les applications UWP (lors du débogage)](https://go.microsoft.com/fwlink/p/?linkid=254345)
+* [Comment déclencher des événements de suspension, de reprise et d’arrière-plan dans des applications UWP (lors du débogage)](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.110).aspx)
 
-**Référence API des tâches en arrière-plan**
+**Informations de référence sur l’API tâche en arrière-plan**
 
-* [**Windows.ApplicationModel.Background**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
+* [**Windows. ApplicationModel. Background**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)

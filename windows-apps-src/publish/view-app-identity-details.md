@@ -6,12 +6,12 @@ ms.date: 10/02/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bd9f61aa32c7e4b78603af37947b39a44e705015
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: 07c2d3308d204d37e246a9a56c0a7203a1340dc0
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682641"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259890"
 ---
 # <a name="view-app-identity-details"></a>Affichage des détails d’identité de l’application
 
@@ -38,15 +38,15 @@ Utilisés conjointement, ces éléments déclarent l'identité de votre applicat
 
 Les valeurs supplémentaires ci-après font référence à la famille de packages de votre application, mais ne figurent pas dans votre manifeste.
 
--   **Nom de la famille de packages (PFN)** : Cette valeur est utilisée avec certaines API Windows.
--   **SID du package**: Vous aurez besoin de cette valeur pour envoyer des notifications WNS à votre application. Pour plus d'informations, voir l'article [Vue d'ensemble des services de notifications Push Windows (WNS)](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md).
+-   **Nom de la famille de packages (PFN)** : cette valeur est utilisée avec certaines API Windows.
+-   **SID du package** : vous aurez besoin de cette valeur pour envoyer des notifications WNS à votre application. Pour plus d'informations, voir l'article [Vue d'ensemble des services de notifications Push Windows (WNS)](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md).
 
 
 ## <a name="link-to-your-apps-listing"></a>Lien d’accès à la description de votre application
 
 Vous pouvez partager le lien d’accès direct à la page de votre application afin d’aider vos clients à trouver cette dernière dans le Windows Store. Ce lien est au format **`https://www.microsoft.com/store/apps/<your app's Store ID>`** . Lorsqu’un client clique sur ce lien, la page de description web de votre application s’affiche. Sur les appareils Windows, l’application du Windows Store lancera et affichera également la description de votre application.
 
-L’**ID Windows Store** de votre application figure également dans cette section. Cet ID Windows Store peut être utilisé pour [générer des badges Windows Store](https://go.microsoft.com/fwlink/p/?LinkId=534236) ou pour identifier votre application.
+L’**ID Windows Store** de votre application figure également dans cette section. Cet ID Windows Store peut être utilisé pour [générer des badges Windows Store](https://developer.microsoft.com/store/badges) ou pour identifier votre application.
 
 Le **lien du protocole Windows Store** vous permet de créer un lien d’accès direct à votre application dans le Windows Store sans ouvrir un navigateur, par exemple lorsque vous établissez ce lien à partir d’une application. Pour plus d’informations, consultez l’article [Créer un lien vers votre application](link-to-your-app.md).
 

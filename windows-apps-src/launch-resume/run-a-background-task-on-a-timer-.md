@@ -4,14 +4,14 @@ description: Découvrez comment planifier une tâche en arrière-plan unique ou 
 ms.assetid: 0B7F0BFF-535A-471E-AC87-783C740A61E9
 ms.date: 07/06/2018
 ms.topic: article
-keywords: Windows 10, uwp, les tâches en arrière-plan
+keywords: Windows 10, UWP, tâche en arrière-plan
 ms.localizationpriority: medium
-ms.openlocfilehash: 4eaff7142c3c14f04b780b93a7e98e1447f068d8
-ms.sourcegitcommit: 4ca51472d0474be96fa3184e311b729f58998234
+ms.openlocfilehash: b0d3c9401ff71475e379b2959a1f0cdc03fe8d8b
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67399610"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260435"
 ---
 # <a name="run-a-background-task-on-a-timer"></a>Exécuter une tâche en arrière-plan en fonction d’un minuteur
 
@@ -32,9 +32,9 @@ Le minuteur intégré pour les applications de plateforme Windows universelle (U
 - Si *FreshnessTime* indique une fréquence de 15 minutes et que *OneShot* est défini sur false, la tâche sera programmée pour être exécutée toutes les 15 minutes, 15 à 30 minutes après son inscription. Si FreshnessTime indique une fréquence de n minutes et que *OneShot* est défini sur false, la tâche sera programmée pour être exécutée toutes les n minutes, n à n+15 minutes après son inscription.
 
 > [!NOTE]
-> Si *FreshnessTime* a la valeur inférieure à 15 minutes, une exception est levée lorsque vous tentez d’enregistrer la tâche en arrière-plan.
+> Si *FreshnessTime* a une valeur inférieure à 15 minutes, une exception est levée lors de la tentative d’inscription de la tâche en arrière-plan.
 
-Par exemple, ce déclencheur entraînera une tâche en arrière-plan exécuter une fois par heure.
+Par exemple, ce déclencheur entraîne l’exécution d’une tâche en arrière-plan une fois par heure.
 
 ```cs
 TimeTrigger hourlyTrigger = new TimeTrigger(60, false);
@@ -87,7 +87,7 @@ if (requestStatus != BackgroundAccessStatus.AlwaysAllowed)
 Inscrivez la tâche en arrière-plan en appelant la fonction qui vous permet de le faire. Pour plus d’informations sur l’inscription des tâches en arrière-plan et pour voir la définition de la méthode **RegisterBackgroundTask()** utilisée dans l’exemple de code ci-dessous, consultez [Inscrire une tâche en arrière-plan](register-a-background-task.md).
 
 > [!IMPORTANT]
-> Des tâches en arrière-plan, qui s’exécutent dans le même processus que votre application, ne définissez pas `entryPoint`. Des tâches en arrière-plan, qui s’exécutent dans un processus séparé à partir de votre application, définissez `entryPoint` à l’espace de noms, «. » et le nom de la classe qui contient votre implémentation de la tâche en arrière-plan.
+> Pour les tâches en arrière-plan qui s’exécutent dans le même processus que votre application, ne définissez pas `entryPoint`. Pour les tâches en arrière-plan qui s’exécutent dans un processus séparé de votre application, définissez `entryPoint` comme étant l’espace de noms, '. 'et le nom de la classe qui contient votre implémentation de tâche en arrière-plan.
 
 ```cs
 string entryPoint = "Tasks.ExampleBackgroundTaskClass";
@@ -117,14 +117,14 @@ Les paramètres d’inscription de la tâche en arrière-plan sont validés au m
 
 Utilisez la méthode [BackgroundExecutionManager.RequestAccessAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager) pour déterminer si l’utilisateur a opté pour une activité limitée de votre application en arrière-plan. Tenez compte du taux d’utilisation de la batterie ; exécutez l’application en arrière-plan uniquement lorsqu’elle est nécessaire dans le cadre d’une action souhaitée par l’utilisateur. Consultez [Optimiser l’activité en arrière-plan](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity) pour plus d’informations sur les méthodes permettant aux utilisateurs de contrôler les paramètres de l’activité en arrière-plan.
 
-- Mémoire : Le réglage d’utilisation de mémoire et d’énergie de votre application est indispensable pour garantir que le système d’exploitation permettra l’exécution de votre tâche en arrière-plan. Utilisez les [API de gestion de la mémoire](https://docs.microsoft.com/uwp/api/windows.system.memorymanager) pour déterminer la quantité de mémoire utilisée par votre tâche en arrière-plan. Plus votre tâche en arrière-plan utilise de mémoire, plus le système d’exploitation a des difficultés à assurer son exécution lorsqu’une autre application se trouve au premier plan. L’utilisateur dispose d’un contrôle étroit sur l’ensemble des activités en arrière-plan que votre application peut exécuter, et bénéficie d’une visibilité étendue sur l’impact de cette dernière sur le taux d’utilisation de la batterie.  
-- Temps processeur : Tâches en arrière-plan sont limitées par la quantité de temps de l’utilisation d’horloge qu'elles obtient basées sur le type de déclencheur.
+- Mémoire : le réglage de l’utilisation de la mémoire et de l’énergie par votre application est essentiel pour garantir que le système d’exploitation autorisera l’exécution de votre tâche en arrière-plan. Utilisez les [API de gestion de la mémoire](https://docs.microsoft.com/uwp/api/windows.system.memorymanager) pour déterminer la quantité de mémoire utilisée par votre tâche en arrière-plan. Plus votre tâche en arrière-plan utilise de mémoire, plus le système d’exploitation a des difficultés à assurer son exécution lorsqu’une autre application se trouve au premier plan. L’utilisateur dispose d’un contrôle étroit sur l’ensemble des activités en arrière-plan que votre application peut exécuter, et bénéficie d’une visibilité étendue sur l’impact de cette dernière sur le taux d’utilisation de la batterie.  
+- Temps processeur : les tâches en arrière-plan sont limitées par la quantité de temps d’utilisation de l’horloge en fonction de leur type de déclencheur.
 
 Pour plus d’informations sur les contraintes de ressource appliquées aux tâches en arrière-plan, consultez [Prendre en charge votre application avec des tâches en arrière-plan](support-your-app-with-background-tasks.md).
 
 ## <a name="remarks"></a>Notes
 
-À compter de Windows 10, il n’est plus nécessaire pour l’utilisateur à ajouter votre application à l’écran de verrouillage pour pouvoir utiliser les tâches en arrière-plan.
+À compter de Windows 10, il n’est plus nécessaire pour l’utilisateur d’ajouter votre application à l’écran de verrouillage afin d’utiliser des tâches en arrière-plan.
 
 Une tâche en arrière-plan ne s’exécutera qu’à l’aide d’un **TimeTrigger** si vous avez d’abord appelé [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync).
 
@@ -138,7 +138,7 @@ Une tâche en arrière-plan ne s’exécutera qu’à l’aide d’un **TimeTrig
 * [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md)
 * [Libérer de la mémoire quand l’application passe en arrière-plan](reduce-memory-usage.md)
 * [Gérer une tâche en arrière-plan annulée](handle-a-cancelled-background-task.md)
-* [Comment déclencher suspendre, reprendre, événements et d’arrière-plan dans les applications UWP (lors du débogage)](https://go.microsoft.com/fwlink/p/?linkid=254345)
+* [Comment déclencher des événements de suspension, de reprise et d’arrière-plan dans des applications UWP (lors du débogage)](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.110).aspx)
 * [Superviser la progression et l’exécution des tâches en arrière-plan](monitor-background-task-progress-and-completion.md)
 * [Reporter la suspension d’une application avec l’exécution étendue](run-minimized-with-extended-execution.md)
 * [Inscrire une tâche en arrière-plan](register-a-background-task.md)

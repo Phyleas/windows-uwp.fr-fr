@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: windows 10, uwp, achats dans l'application, FAI, reçu, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cae88e57a61e6d4e982f1eac7e65582861ef5d2
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: a26d98de58c954f1bec588b335483de08404862b
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58335007"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259225"
 ---
 # <a name="use-receipts-to-verify-product-purchases"></a>Utiliser des reçus pour vérifier les achats de produits
 
@@ -108,7 +108,7 @@ L’élément racine de ce fichier est l’élément **Receipt**, qui contient d
 |-------------|------------|--------|--------|
 |  [AppReceipt](#appreceipt)  |    Non        |  0 ou 1  |  Contient des informations sur l’achat pour l’application actuelle.            |
 |  [ProductReceipt](#productreceipt)  |     Non       |  0 ou davantage    |   Contient des informations sur un achat in-app pour l’application actuelle.     |
-|  Signature  |      Oui      |  1   |   Cet élément est une construction [XML-DSIG](https://go.microsoft.com/fwlink/p/?linkid=251093) standard. Il contient un élément **SignatureValue** qui contient la signature que vous pouvez utiliser pour valider le reçu, un élément **SignedInfo**.      |
+|  Signature  |      Oui      |  1   |   Cet élément est une construction [XML-DSIG](https://www.w3.org/TR/xmldsig-core/) standard. Il contient un élément **SignatureValue** qui contient la signature que vous pouvez utiliser pour valider le reçu, un élément **SignedInfo**.      |
 
 L’élément **Receipt** a les attributs suivants :
 
@@ -146,7 +146,7 @@ L’élément **ProductReceipt** a les attributs suivants :
 |-------------|-------------------|
 |  **Id**  |    Identifie l’achat.           |
 |  **AppId**  |     Identifie l’application avec laquelle l’utilisateur a effectué l’achat.           |
-|  **ProductId**  |     Identifie le produit acheté.           |
+|  **Réf**  |     Identifie le produit acheté.           |
 |  **ProductType**  |    Détermine le type de produit. Actuellement, ne prend en charge que la valeur **Durable**.          |  
 |  **PurchaseDate**  |    Date à laquelle l’achat a eu lieu.          |  |
 

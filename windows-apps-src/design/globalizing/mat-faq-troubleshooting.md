@@ -6,12 +6,12 @@ ms.date: 11/13/2017
 ms.topic: article
 keywords: windows 10, uwp, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e27256fbf19ed31a7b087e94dea9e5514db516f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 07e087dbb0cb2fcbd4dd1d098f84c49543f3a885
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57648264"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258143"
 ---
 # <a name="multilingual-app-toolkit-40-faq--troubleshooting"></a>FAQ et résolution des problèmes du kit de ressources Multilingual App Toolkit 4.0
 
@@ -83,7 +83,7 @@ Pour pouvoir utiliser MAT efficacement, votre application doit être localisable
 
 ## <a name="what-is-microsoft-translator"></a>Qu’est-ce que Microsoft Translator ?
 
-Microsoft Translator est un service cloud qui fournit des traductions automatiques. La traduction automatique est une parfaite solution d'accès à la traduction lorsque la traduction humaine n'est pas envisageable. Pour en savoir plus, consultez la page [Microsoft Translator](https://go.microsoft.com/fwlink/p/?LinkId=258220).
+Microsoft Translator est un service cloud qui fournit des traductions automatiques. La traduction automatique est une parfaite solution d'accès à la traduction lorsque la traduction humaine n'est pas envisageable. Pour en savoir plus, consultez la page [Microsoft Translator](https://www.microsofttranslator.com/).
 
 Le kit de ressources utilise le service Microsoft Translator dans le but de vous fournir des suggestions de traduction. Vous pouvez découvrir les langues prises en charge par Microsoft Translator lorsque l'icône Microsoft Translator est affiché dans la boîte de dialogue Langues de traduction.
 
@@ -142,7 +142,7 @@ Le processus d'importation réalise une validation de base préalable à l'impor
 
 ## <a name="what-if-my-translator-doesnt-have-windows-10-andor-visual-studio-andor-the-multilingual-app-toolkit-installed"></a>Et si mon traducteur n'a pas installé Windows 10 et/ou Visual Studio et/ou le kit de ressources Multilingual App Toolkit ?
 
-Lorsque vous sélectionnez **sortie : Destinataire du message** dans la boîte de dialogue ressources de chaîne d’exportation, le courrier électronique inclut un lien pour télécharger et installer le Multilingual App Toolkit (MAT) 4.0. Votre traducteur est toujours en mesure d'installer l'outil MAT 4.0 autonome Multilingual Editor, même sans Windows 10 ou Visual Studio.
+Lorsque vous sélectionnez **Résultat : destinataire par e-mail** dans la boîte de dialogue Exporter la chaîne, l'e-mail comprend un lien de téléchargement et d'installation du kit de ressources Multilingual App Toolkit (MAT) 4.0. Votre traducteur est toujours en mesure d'installer l'outil MAT 4.0 autonome Multilingual Editor, même sans Windows 10 ou Visual Studio.
 
 Pour plus d'informations, consultez [Utiliser le kit de ressources Multilingual App Toolkit 4.0](use-mat.md).
 
@@ -177,6 +177,6 @@ Avant de commencer le processus de certification du Microsoft Store, vous devez
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Utilisez le Multilingual App Toolkit 4.0](use-mat.md)
-* [Microsoft Translator](https://go.microsoft.com/fwlink/p/?LinkId=258220)
-* [Options de ligne de commande MakePri.exe](../../app-resources/makepri-exe-command-options.md)
+* [Utiliser la boîte à outils de l’application multilingue 4,0](use-mat.md)
+* [Microsoft Translator](https://www.microsofttranslator.com/)
+* [Options de ligne de commande MakePri. exe](../../app-resources/makepri-exe-command-options.md)

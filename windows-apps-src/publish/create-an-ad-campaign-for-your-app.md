@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, Active Directory, de campagne, promouvoir
 ms.localizationpriority: medium
-ms.openlocfilehash: b2816f7bf23b57b7ff0878a4b4e561a3a70ad432
-ms.sourcegitcommit: eedbefe1841f42a83737f639ca2d70fb23670438
+ms.openlocfilehash: ec5d23a502c5517193956da6c57efe1eb668e0f0
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69871805"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260020"
 ---
 # <a name="create-an-ad-campaign-for-your-app"></a>Création d’une campagne de publicité pour votre application
 
@@ -35,9 +35,9 @@ Voici comment créer une campagne de publicité pour promouvoir une application�
 4.  Sélectionnez l’application que vous souhaitez promouvoir avec cette campagne. Notez que l’application doit être déjà disponible dans le Windows Store.
 5.  Dans le champ **Nom de la campagne**, examinez le nom fourni pour votre campagne et modifiez-le si vous le souhaitez.
 6.  Sous **Type de campagne**, choisissez l’une des options suivantes :
-    * **Publicité payante**: Ces publicités s’exécutent dans n’importe quelle application qui correspond à l’appareil et à la catégorie de votre application. Pour les nouvelles campagnes créées après le 9 janvier 2017, ces publicités apparaîtront également dans MSN.com, Outlook.com, Skype et les autres propriétés premium de Microsoft. Les campagnes de promotion d’applications qui ciblent les applications et les propriétés Premium de Microsoft sont appelés campagnes *universelles*.
-    * **Communauté ad (gratuit)** : Ces publicités s’exécutent dans les applications publiées par d’autres développeurs qui créent également des campagnes AD de la communauté. Avant de sélectionner cette option, vous devez avoir accepté l’affichage des publicités de la communauté dans la page **Monétiser** -> **Publicités dans l’application**. Pour en savoir plus, voir [À propos des annonces de la communauté](about-community-ads.md).
-    * **Publicité maison (gratuit)** : Ces publicités s’exécutent uniquement dans vos applications qui correspondent au type d’appareil de l’application publiée. Les publicités maison sont gratuites. Pour plus d’informations, consultez [À propos des publicités maison](about-house-ads.md).
+    * **Paid ad** : ces publicités s’exécutent dans n’importe quelle application correspondant à l’appareil et à la catégorie de votre application. Pour les nouvelles campagnes créées après le 9 janvier 2017, ces publicités apparaîtront également dans MSN.com, Outlook.com, Skype et les autres propriétés premium de Microsoft. Les campagnes de promotion d’applications qui ciblent les applications et les propriétés Premium de Microsoft sont appelés campagnes *universelles*.
+    * **Community ad (free)**  : ces publicités s’exécutent dans les applications publiées par d’autres développeurs, qui créent également des campagnes de publicité de la communauté. Avant de sélectionner cette option, vous devez avoir accepté l’affichage des publicités de la communauté dans la page **Monétiser** -> **Publicités dans l’application**. Pour en savoir plus, voir [À propos des annonces de la communauté](about-community-ads.md).
+    * **House ad (free)**  : ces publicités s’exécutent uniquement dans vos applications correspondant au type d’appareil de l’application publiée. Les publicités maison sont gratuites. Pour plus d’informations, consultez [À propos des publicités maison](about-house-ads.md).
 
 7.  Pour les campagnes de publicité payées, vérifiez l’option sélectionnée dans **Durée de la campagne** (période pendant laquelle le budget de votre campagne sera dépensé). L’option par défaut est **Mensuelle**, ce qui signifie que votre budget de campagne sera utilisé tous les mois de manière récurrente jusqu’à l’arrêt de la campagne. Si vous disposez d’un compte Premium, vous pouvez éventuellement choisir l’option **Personnalisée** pour spécifier une date personnalisée et un intervalle de temps pendant lequel votre budget de campagne sera dépensé. Pour plus d’informations sur les comptes premium, consultez [Questions courantes sur les campagnes de publicité](common-questions.md#how-can-i-increase-the-maximum-monthly-budget-amount-allowed-for-my-ad-campaign).
 
@@ -53,17 +53,17 @@ Voici comment créer une campagne de publicité pour promouvoir une application�
     Lorsque vous avez terminé, cliquez sur **Enregistrer et Suivant** afin de poursuivre à l’étape **Audience**. Cette étape n’est pas disponible pour les campagnes ad maison, car elles s’exécutent uniquement dans vos propres applications.
 
 9.  Dans la page **Audience**, nous affichons les paramètres d’audience que nous recommandons pour votre campagne. Si vous le souhaitez, vous pouvez ajuster ces informations :
-    * **Pays/régions**: Sélectionnez jusqu’à 5 pays ou régions dans lesquels vous souhaitez que votre publicité apparaisse. Pour obtenir la liste des régions ou pays pris en charge, consultez l’article [Questions courantes sur les campagnes de publicité](common-questions.md#where-will-my-ad-appear).
+    * **Pays/régions** : choisissez jusqu’à 5 pays ou régions dans lesquels vous souhaitez faire apparaître votre publicité. Pour obtenir la liste des régions ou pays pris en charge, consultez l’article [Questions courantes sur les campagnes de publicité](common-questions.md#where-will-my-ad-appear).
 
-    * **Appareils**: Choisissez les types d’appareil sur lesquels vous voulez que ces publicités apparaissent. Seuls les types d’appareils pris en charge par votre application sont affichés.
+    * **Appareils** : choisissez les types d’appareils sur lesquels vous voulez que ces publicités apparaissent. Seuls les types d’appareils pris en charge par votre application sont affichés.
 
-    * **Surface**: Choisissez **universel** pour autoriser votre publicité à apparaître dans les applications, ainsi que MSN.com, Outlook.com, Skype et d’autres propriétés Microsoft Premium. Si vous préférez que votre publicité apparaisse uniquement dans les applications, choisissez **Application**.
+    * **Surface** : choisissez **Universelle** si vous voulez que votre publicité s’affiche dans les applications, ainsi que dans MSN.com, Outlook.com, Skype et les autres propriétés Premium de Microsoft. Si vous préférez que votre publicité apparaisse uniquement dans les applications, choisissez **Application**.
 
-    * **Système d’exploitation** : Choisissez le ou les systèmes d’exploitation sur lesquels votre publicité doit s’afficher. Seuls les systèmes d’exploitation pris en charge par votre application sont affichés.
+    * **Système d’exploitation** : choisissez le ou les systèmes d’exploitation sur lesquels votre publicité doit apparaître. Seuls les systèmes d’exploitation pris en charge par votre application sont affichés.
 
-    * **Sexe**: Indiquez si vous souhaitez restreindre l’audience pour votre publicité par sexe.
+    * **Sexe** : déterminez si vous souhaitez restreindre l’audience de votre publicité à un sexe spécifique.
 
-    * **Plage d’âge**: Sélectionnez la ou les tranches d’âge pour le public souhaité.
+    * **Tranche d’âge** : sélectionnez la ou les tranches d’âge de l’audience ciblée.
 
     Cette section affiche également un graphique **Portée estimée**. Ce graphique présente l’audience que vous pouvez envisager d’atteindre avec les choix de ciblage en cours. Il s’agit d’un pourcentage de l’ensemble des utilisateurs d’applications Windows affichant des publicités sur les marchés sélectionnés.
 
@@ -74,7 +74,7 @@ Voici comment créer une campagne de publicité pour promouvoir une application�
         * Dans la liste déroulante **Langue**, sélectionnez la langue de votre publicité. Le texte du badge Microsoft Store s’affichera dans la langue que vous avez sélectionnée.
         * Pour ajouter une ligne de texte supplémentaire à votre publicité, entrez ce texte dans le champ **Slogan personnalisé**.
             > [!NOTE]
-            > Le texte que vous entrez ici doit être localisé dans la langue sélectionnée. Le slogan personnalisé sera rejeté si le texte n’est pas conforme aux [politiques Bing Ads](https://go.microsoft.com/fwlink/?LinkId=398341). Lisez cette page pour obtenir des conseils sur le style et les contenus non autorisés.
+            > Le texte que vous entrez ici doit être localisé dans la langue sélectionnée. Le slogan personnalisé sera rejeté si le texte n’est pas conforme aux [politiques Bing Ads](https://advertise.bingads.microsoft.com/bing-ads-policies). Lisez cette page pour obtenir des conseils sur le style et les contenus non autorisés.
         * Pour personnaliser l’annonce davantage, développez **Personnaliser la conception d’annonce/Voir toutes les tailles d’annonces** et choisissez l’une des options suivantes :
             * **Couleur d’arrière-plan**. Choisissez parmi les options disponibles.
             * **Images**. Choisissez l’une des images disponibles (issues de la description de votre application dans le Windows Store).
@@ -84,7 +84,7 @@ Voici comment créer une campagne de publicité pour promouvoir une application�
 
     * **Personnalisé**. Choisissez cette option pour utiliser vos propres conceptions d’annonces. Notez que si vous avez précédemment sélectionné un segment de client, vous devez utiliser des éléments créatifs personnalisés. Vous pouvez charger différents fichiers pour chacune des tailles d’annonce disponibles. Les fichiers doivent répondre aux exigences et directives suivantes :
         * Chaque fichier doit être un .png ou .jpg inférieur ou égal à 40 Ko.
-        * Vos conceptions d’annonces doivent respecter les critères spécifiés dans la [Microsoft Creative Acceptance Policy](https://go.microsoft.com/fwlink/?LinkId=532595).
+        * Vos conceptions d’annonces doivent respecter les critères spécifiés dans la [Microsoft Creative Acceptance Policy](https://about.ads.microsoft.com/solutions/ad-products/display-advertising/creative-acceptance-policies).
         * Le contenu de vos conceptions d’annonces doit être approprié à l’application dont vous faites la promotion. Les conceptions d’annonces qui ne sont pas liées à l’application ne seront pas distribuées aux publicités au sein des autres applications.
         * Tout le contenu de vos conceptions d’annonces doit être clairement lisible. Par exemple, le contenu ne doit pas être flou, pixelisé ou déformé.
 

@@ -4,18 +4,18 @@ description: Découvrez comment faire en sorte qu’une tâche en arrière-plan 
 ms.assetid: B7E23072-F7B0-4567-985B-737DD2A8728E
 ms.date: 07/05/2018
 ms.topic: article
-keywords: Windows 10, uwp, les tâches en arrière-plan
+keywords: Windows 10, UWP, tâche en arrière-plan
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 832a13f8b1f4a6e6e221b4fa0ce328b5edabac7d
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: c59982c174909a3fb8ab0b21d5dd792969cfeebc
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371672"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259472"
 ---
 # <a name="handle-a-cancelled-background-task"></a>Gérer une tâche en arrière-plan annulée
 
@@ -23,20 +23,20 @@ ms.locfileid: "66371672"
 
 -   [**BackgroundTaskCanceledEventHandler**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskcanceledeventhandler)
 -   [**IBackgroundTaskInstance**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance)
--   [**ApplicationData.Current**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.current)
+-   [**ApplicationData. Current**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.current)
 
 Découvrez comment créer une tâche en arrière-plan qui reconnaît une demande d’annulation, arrête le travail et signale l’annulation à l’application en utilisant le dispositif de stockage persistant.
 
-Cette rubrique suppose que vous avez déjà créé une classe de tâche en arrière-plan, y compris le **exécuter** méthode qui est utilisé comme point d’entrée de tâche en arrière-plan. Pour commencer rapidement à créer une tâche en arrière-plan, consultez [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-a-background-task.md) ou [Créer et inscrire une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md). Pour des informations plus détaillées sur les conditions et les déclencheurs, voir [Définition de tâches en arrière-plan pour les besoins de votre application](support-your-app-with-background-tasks.md).
+Cette rubrique suppose que vous avez déjà créé une classe de tâche en arrière-plan, y compris la méthode **Run** utilisée comme point d’entrée de tâche en arrière-plan. Pour commencer rapidement à créer une tâche en arrière-plan, consultez [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-a-background-task.md) ou [Créer et inscrire une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md). Pour des informations plus détaillées sur les conditions et les déclencheurs, voir [Définition de tâches en arrière-plan pour les besoins de votre application](support-your-app-with-background-tasks.md).
 
-Cette rubrique s’applique également aux tâches en arrière-plan in-process. Mais au lieu du **exécuter** (méthode), remplacez **OnBackgroundActivated**. Pour les tâches en arrière-plan in-process, il n’est pas nécessaire d’utiliser un dispositif de stockage persistant pour signaler l’annulation. En effet, vous pouvez signaler l’annulation via le paramètre d’état de l’application, car la tâche en arrière-plan s’exécute dans le même processus que votre application au premier plan.
+Cette rubrique s’applique également aux tâches en arrière-plan in-process. Mais au lieu de la méthode **Run** , remplacez **OnBackgroundActivated**. Pour les tâches en arrière-plan in-process, il n’est pas nécessaire d’utiliser un dispositif de stockage persistant pour signaler l’annulation. En effet, vous pouvez signaler l’annulation via le paramètre d’état de l’application, car la tâche en arrière-plan s’exécute dans le même processus que votre application au premier plan.
 
 ## <a name="use-the-oncanceled-method-to-recognize-cancellation-requests"></a>Utiliser la méthode OnCanceled pour reconnaître les demandes d’annulation
 
 Écrivez une méthode permettant de gérer l’événement d’annulation.
 
 > [!NOTE]
-> Pour toutes les familles d’appareils, à l’exception des ordinateurs de bureau, les tâches en arrière-plan peuvent être arrêtées en cas de mémoire insuffisante de l’appareil. Si une exception de mémoire à l’emploi n’est pas présenté, ou il ne gère pas l’application, la tâche en arrière-plan se terminer sans avertissement et sans déclencher l’événement OnCanceled. Cela permet de garantir l’expérience utilisateur de l’application au premier plan. Votre tâche en arrière-plan doit être conçue de manière à gérer ce scénario.
+> Pour toutes les familles d’appareils, à l’exception des ordinateurs de bureau, les tâches en arrière-plan peuvent être arrêtées en cas de mémoire insuffisante de l’appareil. Si une exception de mémoire insuffisante n’est pas exposée, ou si l’application ne la gère pas, la tâche en arrière-plan se termine sans avertissement et sans déclencher l’événement OnCanceled. Cela permet de garantir l’expérience utilisateur de l’application au premier plan. Votre tâche en arrière-plan doit être conçue de manière à gérer ce scénario.
 
 Créez une méthode nommée **OnCanceled** en procédant comme suit. Cette méthode constitue le point d’entrée appelé par Windows Runtime lorsqu’une demande d’annulation est formulée pour votre tâche en arrière-plan.
 
@@ -67,7 +67,7 @@ void ExampleBackgroundTask::OnCanceled(
 }
 ```
 
-Ajouter une variable indicateur appelée  **\_CancelRequested** à la classe de tâche en arrière-plan. Cette variable servira à indiquer qu’une demande d’annulation a été effectuée.
+Ajoutez une variable d’indicateur appelée **\_CancelRequested** à la classe de tâche d’arrière-plan. Cette variable servira à indiquer qu’une demande d’annulation a été effectuée.
 
 ```csharp
 volatile bool _CancelRequested = false;
@@ -83,9 +83,9 @@ private:
     volatile bool CancelRequested;
 ```
 
-Dans le **OnCanceled** méthode que vous avez créé à l’étape 1, définissez la variable d’indicateur  **\_CancelRequested** à **true**.
+Dans la méthode **OnCanceled** que vous avez créée à l’étape 1, définissez la variable d’indicateur **\_CancelRequested** sur **true**.
 
-La version complète [exemple de tâche en arrière-plan]( https://go.microsoft.com/fwlink/p/?linkid=227509) **OnCanceled** méthode jeux  **\_CancelRequested** à **true** et écrit sortie de débogage peuvent se révéler utiles.
+L' [exemple de tâche en arrière-plan]( https://go.microsoft.com/fwlink/p/?linkid=227509) complet **OnCanceled** méthode définit **\_CancelRequested** sur **true** et écrit une sortie de débogage potentiellement utile.
 
 ```csharp
 private void OnCanceled(IBackgroundTaskInstance sender, BackgroundTaskCancellationReason reason)
@@ -115,7 +115,7 @@ void ExampleBackgroundTask::OnCanceled(IBackgroundTaskInstance^ taskInstance, Ba
 }
 ```
 
-Dans la tâche en arrière-plan **exécuter** (méthode), inscrire le **OnCanceled** méthode de gestionnaire d’événements avant de commencer à travailler. Dans le cas d’une tâche en arrière-plan in-process, vous pouvez effectuer cette inscription dans le cadre de l’initialisation de votre application. Par exemple, utilisez la ligne de code suivante.
+Dans la méthode **Run** de la tâche en arrière-plan, inscrivez la méthode du gestionnaire d’événements **OnCanceled** avant de commencer le travail. Dans le cas d’une tâche en arrière-plan in-process, vous pouvez effectuer cette inscription dans le cadre de l’initialisation de votre application. Par exemple, utilisez la ligne de code suivante.
 
 ```csharp
 taskInstance.Canceled += new BackgroundTaskCanceledEventHandler(OnCanceled);
@@ -131,11 +131,11 @@ taskInstance->Canceled += ref new BackgroundTaskCanceledEventHandler(this, &Exam
 
 ## <a name="handle-cancellation-by-exiting-your-background-task"></a>Gérer une annulation en fermant votre tâche en arrière-plan
 
-Lorsqu’une demande d’annulation est reçue, votre méthode de travail en arrière-plan doit arrêter le travail et quittez en reconnaissant lorsque  **\_cancelRequested** a la valeur **true**. Pour les tâches en arrière-plan dans le processus, cela signifie que de retour à partir du **OnBackgroundActivated** (méthode). Pour les tâches en arrière-plan out-of-process, cela signifie que de retourner à partir du **exécuter** (méthode).
+Lors de la réception d’une demande d’annulation, votre méthode qui effectue le travail en arrière-plan doit arrêter le travail et quitter en reconnaissant quand **\_cancelRequested** a la valeur **true**. Pour les tâches en arrière-plan in-process, cela revient à partir de la méthode **OnBackgroundActivated** . Pour les tâches en arrière-plan out-of-process, cela revient à retourner à partir de la méthode **Run** .
 
-Modifiez le code de votre classe de tâche en arrière-plan pour vérifier la variable d’indicateur pendant qu’elle est utilisée. Si  **\_cancelRequested** devient la valeur est true, arrêtez de travail de se poursuivre.
+Modifiez le code de votre classe de tâche en arrière-plan pour vérifier la variable d’indicateur pendant qu’elle est utilisée. Si **\_cancelRequested** prend la valeur true, arrêtez le travail.
 
-Le [exemple de tâche en arrière-plan](https://go.microsoft.com/fwlink/p/?LinkId=618666) inclut une vérification qui arrête le rappel de minuterie périodique si la tâche en arrière-plan est annulée.
+L' [exemple de tâche en arrière-plan](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask) comprend une vérification qui arrête le rappel de minuteur périodique si la tâche en arrière-plan est annulée.
 
 ```csharp
 if ((_cancelRequested == false) && (_progress < 100))
@@ -177,11 +177,11 @@ else
 ```
 
 > [!NOTE]
-> L’exemple de code ci-dessus utilise la [ **IBackgroundTaskInstance**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance).[ **Progression** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.progress) propriété utilisée pour enregistrer la progression des tâches en arrière-plan. La progression est indiquée à l’application à l’aide de la classe [**BackgroundTaskProgressEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskProgressEventArgs).
+> L’exemple de code ci-dessus utilise [**IBackgroundTaskInstance**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance). Propriété [**Progress**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.progress) utilisée pour enregistrer la progression de la tâche en arrière-plan. La progression est indiquée à l’application à l’aide de la classe [**BackgroundTaskProgressEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskProgressEventArgs).
 
-Modifier le **exécuter** méthode afin que le travail une fois arrêté, il enregistre si la tâche terminée ou a été annulée. Cette étape s’applique aux tâches en arrière-plan hors processus, car vous avez besoin d’un moyen pour communiquer entre les processus lorsque la tâche en arrière-plan a été annulée. Pour les tâches en arrière-plan in-process, vous pouvez simplement partager l’état avec l’application pour indiquer que la tâche a été annulée.
+Modifiez la méthode **Run** afin qu’après l’arrêt du travail, enregistre si la tâche est terminée ou a été annulée. Cette étape s’applique aux tâches en arrière-plan hors processus, car vous avez besoin d’un moyen pour communiquer entre les processus lorsque la tâche en arrière-plan a été annulée. Pour les tâches en arrière-plan in-process, vous pouvez simplement partager l’état avec l’application pour indiquer que la tâche a été annulée.
 
-Le [exemple de tâche en arrière-plan](https://go.microsoft.com/fwlink/p/?LinkId=618666) enregistre l’état dans LocalSettings.
+L' [exemple de tâche en arrière-plan](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask) enregistre l’État dans LocalSettings.
 
 ```csharp
 if ((_cancelRequested == false) && (_progress < 100))
@@ -255,13 +255,13 @@ else
 
 ## <a name="remarks"></a>Notes
 
-Vous pouvez télécharger l’[exemple de tâche en arrière-plan](https://go.microsoft.com/fwlink/p/?LinkId=618666) pour voir ces exemples de code dans le contexte des méthodes.
+Vous pouvez télécharger l’[exemple de tâche en arrière-plan](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask) pour voir ces exemples de code dans le contexte des méthodes.
 
-À titre d’illustration, l’exemple de code montre uniquement les parties de la **exécuter** (méthode) (et minuterie de rappel) à partir de la [exemple de tâche en arrière-plan](https://go.microsoft.com/fwlink/p/?LinkId=618666).
+À des fins d’illustration, l’exemple de code affiche uniquement des parties de la méthode **Run** (et du minuteur de rappel) à partir de l' [exemple de tâche en arrière-plan](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask).
 
 ## <a name="run-method-example"></a>Exemple de méthode Run
 
-L’ensemble **exécuter** (méthode) et le code de rappel du minuteur, à partir de la [exemple de tâche en arrière-plan](https://go.microsoft.com/fwlink/p/?LinkId=618666) sont indiquées ci-dessous pour le contexte.
+La méthode **Run** complète et le code de rappel de l’horloge de l' [exemple de tâche en arrière-plan](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask) sont présentés ci-dessous pour le contexte.
 
 ```csharp
 // The Run method is the entry point of a background task.
@@ -414,4 +414,4 @@ void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
 - [Mettre à jour une vignette dynamique à partir d’une tâche en arrière-plan](update-a-live-tile-from-a-background-task.md)
 - [Utiliser un déclencheur de maintenance](use-a-maintenance-trigger.md)
 - [Déboguer une tâche en arrière-plan](debug-a-background-task.md)
-- [Comment déclencher suspendre, reprendre, événements et d’arrière-plan dans les applications UWP (lors du débogage)](https://go.microsoft.com/fwlink/p/?linkid=254345)
+- [Comment déclencher des événements de suspension, de reprise et d’arrière-plan dans des applications UWP (lors du débogage)](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.110).aspx)

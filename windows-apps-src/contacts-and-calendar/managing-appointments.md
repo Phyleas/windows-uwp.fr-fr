@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, rendez-vous, calendrier
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fd4fc62a393e6439458ddc38f37bbb0680fb9b1
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: 52200d7896c9edea727bf31c69c04c4c1bd02bb2
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282234"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74255492"
 ---
 # <a name="manage-appointments"></a>Gérer des rendez-vous
 
@@ -282,7 +282,7 @@ private async void Add-Click(object sender, RoutedEventArgs e)
 }
 ```
 
-**Notez**  pour les applications du windows Store Windows Phone, [**ShowAddAppointment**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) fonctionne comme [**ShowEditNewAppointment**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) en ce que la boîte de dialogue qui s’affiche pour ajouter le rendez-vous est modifiable.
+**Remarque**  pour Windows Phone les applications du Windows Store, [**ShowAddAppointment**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) fonctionne comme [**ShowEditNewAppointment**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) en ce que la boîte de dialogue qui s’affiche pour ajouter le rendez-vous est modifiable.
 
 ## <a name="replace-an-appointment-in-the-users-calendar"></a>Remplacer un rendez-vous dans le calendrier d’un utilisateur
 
@@ -565,11 +565,11 @@ private async void ShowAppointmentDetails-Click(object sender, RoutedEventArgs e
 
 ## <a name="summary-and-next-steps"></a>Récapitulatif et étapes suivantes
 
-Vous disposez désormais des notions de base pour gérer les rendez-vous. Téléchargez les [Exemples d’applications Windows universelles](https://go.microsoft.com/fwlink/p/?linkid=619979) dans GitHub pour voir d’autres exemples illustrant comment gérer des rendez-vous.
+Vous disposez désormais des notions de base pour gérer les rendez-vous. Téléchargez les [Exemples d’applications Windows universelles](https://github.com/Microsoft/Windows-universal-samples) dans GitHub pour voir d’autres exemples illustrant comment gérer des rendez-vous.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Exemple d’API de rendez-vous](https://go.microsoft.com/fwlink/p/?linkid=309836)
+* [Exemple d’API de rendez-vous](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Appointments)
  
 
  

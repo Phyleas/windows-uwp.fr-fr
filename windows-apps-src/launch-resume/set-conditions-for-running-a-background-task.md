@@ -4,18 +4,18 @@ description: Découvrez comment définir des conditions qui contrôlent le momen
 ms.assetid: 10ABAC9F-AA8C-41AC-A29D-871CD9AD9471
 ms.date: 07/06/2018
 ms.topic: article
-keywords: Windows 10, uwp, les tâches en arrière-plan
+keywords: Windows 10, UWP, tâche en arrière-plan
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 88836ac0363001e86c17486e1527b96a4eac0faa
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 618c8891551d851c27414968be76fb465eb89bf0
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371845"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260418"
 ---
 # <a name="set-conditions-for-running-a-background-task"></a>Définir des conditions pour exécuter une tâche en arrière-plan
 
@@ -105,9 +105,9 @@ Pour vous assurer que votre application Windows universelle continue de s’exé
 Pour ajouter plusieurs conditions, votre application effectue plusieurs appels à la méthode [**AddCondition**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.addcondition). Pour être effectifs, ces appels doivent intervenir avant l’inscription de la tâche.
 
 > [!NOTE]
-> Vous ne devez ne pas pour ajouter des conditions en conflit pour une tâche en arrière-plan.
+> Veillez à ne pas ajouter de conditions conflictuelles à une tâche en arrière-plan.
 
-L’extrait suivant montre plusieurs conditions dans le contexte de la création et enregistrement d’une tâche en arrière-plan.
+L’extrait de code suivant montre plusieurs conditions dans le contexte de la création et de l’inscription d’une tâche en arrière-plan.
 
 ```csharp
 // Set up the background task.
@@ -178,7 +178,7 @@ BackgroundTaskRegistration ^ task = recurringTaskBuilder->Register();
 ## <a name="remarks"></a>Notes
 
 > [!NOTE]
-> Choisissez les conditions pour votre tâche en arrière-plan afin qu’elle s’exécute uniquement lorsqu’il est nécessaire et ne s’exécute pas lorsqu’il ne devrait pas. Voir [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType) pour obtenir une description des différentes conditions de tâche en arrière-plan.
+> Choisissez des conditions pour votre tâche en arrière-plan afin qu’elle s’exécute uniquement lorsqu’elle est nécessaire, et ne s’exécute pas dans le cas contraire. Voir [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType) pour obtenir une description des différentes conditions de tâche en arrière-plan.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
@@ -194,4 +194,4 @@ BackgroundTaskRegistration ^ task = recurringTaskBuilder->Register();
 * [Exécuter une tâche en arrière-plan en fonction d’un minuteur](run-a-background-task-on-a-timer-.md)
 * [Recommandations relatives aux tâches en arrière-plan](guidelines-for-background-tasks.md)
 * [Déboguer une tâche en arrière-plan](debug-a-background-task.md)
-* [Comment déclencher suspendre, reprendre, événements et d’arrière-plan dans les applications UWP (lors du débogage)](https://go.microsoft.com/fwlink/p/?linkid=254345)
+* [Comment déclencher des événements de suspension, de reprise et d’arrière-plan dans des applications UWP (lors du débogage)](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.110).aspx)

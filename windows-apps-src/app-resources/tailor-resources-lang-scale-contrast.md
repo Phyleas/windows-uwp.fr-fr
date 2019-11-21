@@ -6,12 +6,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: db5ba7fb6e13d2a5aab4b74014458073aa88e7f4
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: 0d6af9d532ecabe517983e8b56cdf8e1b2a2d812
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820214"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74254524"
 ---
 # <a name="tailor-your-resources-for-language-scale-high-contrast-and-other-qualifiers"></a>Personnaliser vos ressources pour la langue, l’échelle, le contraste élevé et d’autres qualificateurs
 
@@ -19,7 +19,7 @@ Cette rubrique explique le concept général des qualificateurs de ressource, le
 
 Votre application peut charger des ressources et actifs adaptés à des contextes d’exécution tels que la langue d’affichage, le contraste élevé, le [facteur d’échelle de l'affichage](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor) et bien d’autres. La façon de procéder consiste à donner à vos dossiers ou fichiers de ressources un nom correspondant au nom et à la valeur de qualificateur correspondant à ces contextes. Par exemple, vous souhaitez peut-être que votre application charge un autre ensemble de ressources d’image en mode de contraste élevé.
 
-Pour plus d’informations sur la proposition de valeur de la localisation de votre application, voir [Internationalisation et localisation](../design/globalizing/globalizing-portal.md).
+Pour plus d’informations sur la proposition de valeur de la localisation de votre application, consultez [Internationalisation et localisation](../design/globalizing/globalizing-portal.md).
 
 ## <a name="qualifier-name-qualifier-value-and-qualifier"></a>Nom de qualificateur, valeur de qualificateur et qualificateur
 
@@ -29,7 +29,7 @@ Un nom de qualificateur est une clé qui correspond à un ensemble de valeurs de
 | :--------------- | :--------------- | :--------------- |
 | Paramètre de contraste élevé | contraste | standard, élevé, noir, blanc |
 
-Vous combinez un nom de qualificateur avec une valeur de qualificateur pour former un qualificateur. `<qualifier name>-<qualifier value>` est le format d’un qualificateur. `contrast-standard` est un exemple d’un qualificateur.
+Vous combinez un nom de qualificateur avec une valeur de qualificateur pour former un qualificateur. `<qualifier name>-<qualifier value>` est le format d’un qualificateur. `contrast-standard` est un exemple de qualificateur.
 
 Par conséquent, pour le contraste élevé, le jeu de qualificateurs est `contrast-standard`, `contrast-high`, `contrast-black` et `contrast-white`. Les noms de qualificateur et les valeurs de qualificateur ne tiennent pas compte de la casse. Par exemple, les qualificateurs `contrast-standard` et `Contrast-Standard` sont identiques.
 
@@ -128,7 +128,7 @@ Le qualificateur `configuration` permet de charger la ressource qui correspond l
 
 Le qualificateur `contrast` permet de fournir les ressources qui correspondent le mieux aux paramètres de contraste élevé.
 
-## <a name="custom"></a>Custom
+## <a name="custom"></a>Personnalisé
 
 Votre application peut définir une valeur pour le qualificateur `custom`. Les ressources qui correspondent le mieux à cette valeur sont alors chargées. Par exemple, vous pouvez souhaiter charger des ressources en fonction de la licence de votre application. Lorsque votre application se lance, elle vérifie sa licence et utilise celle-ci comme valeur du qualificateur `custom` en appelant [SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue), comme illustré dans l’exemple de code.
 
@@ -191,11 +191,11 @@ Il est peu probable que vous ayez besoin du nom de qualificateur `dxfeaturelevel
 
 ## <a name="homeregion"></a>HomeRegion
 
-Le qualificateur `homeregion` correspond au paramètre de pays ou de région de l’utilisateur. Il représente le lieu de résidence de l’utilisateur. Les valeurs incluent toute [balise de région BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302) valide. Autrement dit, tout code de région de deux lettres au format **ISO 3166-1 alpha-2**, ainsi que le jeu de codes géographiques de trois chiffres **ISO 3166-1 numériques** pour les régions composées (voir [Classification M49 des codes de région de la Division de statistique de l'ONU](https://go.microsoft.com/fwlink/p/?linkid=247929)). Les codes de « groupements sélectionnés économiques et autres » ne sont pas valides.
+Le qualificateur `homeregion` correspond au paramètre de pays ou de région de l’utilisateur. Il représente le lieu de résidence de l’utilisateur. Les valeurs incluent toute [balise de région BCP-47](https://tools.ietf.org/html/bcp47) valide. Autrement dit, tout code de région de deux lettres au format **ISO 3166-1 alpha-2**, ainsi que le jeu de codes géographiques de trois chiffres **ISO 3166-1 numériques** pour les régions composées (voir [Classification M49 des codes de région de la Division de statistique de l'ONU](https://unstats.un.org/unsd/methods/m49/m49regin.htm)). Les codes de « groupements sélectionnés économiques et autres » ne sont pas valides.
 
 ## <a name="language"></a>Langue
 
-Un qualificateur `language` correspond au paramètre de langue d’affichage. Les valeurs incluent toute [balise de langue BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302) valide. Pour une liste des langues, voir le [registre des sous-balises de langues IANA](https://go.microsoft.com/fwlink/p/?linkid=227303).
+Un qualificateur `language` correspond au paramètre de langue d’affichage. Les valeurs incluent toute [balise de langue BCP-47](https://tools.ietf.org/html/bcp47) valide. Pour une liste des langues, voir le [registre des sous-balises de langues IANA](https://www.iana.org/assignments/language-subtag-registry).
 
 Si vous souhaitez que votre application prenne en charge différentes langues d’affichage et si des opérateurs de chaîne figurent dans votre code ou dans votre balisage XAML, retirez ces chaînes du code/balisage et placez-les dans un Fichier de ressources (`.resw`). Vous pouvez ensuite effectuer une copie traduite de ce fichier de ressources pour chaque langue prise en charge par votre application.
 
@@ -261,34 +261,34 @@ Pour plus d’informations sur la qualification d’une ressource pour `scale` e
 Le qualificateur `theme` est utilisé pour fournir les ressources qui correspondent le mieux au paramètre de mode d’application par défaut, ou au remplacement de votre application à l’aide de [Application.RequestedTheme](/uwp/api/windows.ui.xaml.application.requestedtheme).
 
 
-## <a name="shell-light-theme-and-unplated-resources"></a>Le thème clair interpréteur de commandes et des ressources sans plaque
-Le *Windows 10 peut 2019 mettre à jour* introduit un nouveau thème « clair » pour l’interpréteur de commandes Windows. Par conséquent, certaines ressources de l’application qui ont été précédemment indiqués sur un arrière-plan foncé maintenant être apparaît sur un arrière-plan clair. Pour les applications que les applications qui fourni sans plaque d’altform actifs pour les barre des tâches et fenêtre les bascules (Alt + Tab, affichage des tâches, etc.), vous devez vérifier qu’ils ont contraste acceptable sur un arrière-plan clair.
+## <a name="shell-light-theme-and-unplated-resources"></a>Thème Light Shell et ressources implates
+La *mise à jour de Windows 10 mai 2019* a introduit un nouveau thème « Light » pour le shell Windows. Par conséquent, certaines ressources d’application précédemment affichées sur un arrière-plan sombre s’affichent sur un arrière-plan clair. Pour les applications auxquelles les applications qui ont fourni altform des ressources non plaquées pour la barre des tâches et les sélecteurs de fenêtres (Alt + Tab, vue des tâches, etc.), vous devez vérifier qu’ils ont un contraste acceptable sur un arrière-plan clair.
 
-### <a name="providing-light-theme-specific-assets"></a>En fournissant des ressources spécifiques de thème clair
-Les applications qui souhaitent fournir une ressource personnalisée pour le thème clair shell peut utiliser un nouveau qualificateur de ressource autre forme : `altform-lightunplated`. Ce qualificateur reflète le qualificateur sans plaque d’altform existant. 
+### <a name="providing-light-theme-specific-assets"></a>Fourniture de ressources spécifiques à un thème clair
+Les applications qui souhaitent fournir une ressource personnalisée pour le thème Light Shell peuvent utiliser un nouveau qualificateur de ressource de forme de substitution : `altform-lightunplated`. Ce qualificateur reflète le qualificateur altform-non-plaqué existant. 
 
 ### <a name="downlevel-considerations"></a>Considérations de niveau inférieur
-Applications ne doivent pas utiliser le `theme-light` qualificateur avec le `altform-unplated` qualificateur. Cela entraîne un comportement imprévisible sur RS5 et les versions antérieures de Windows en raison de ressources de la façon sont chargées pour la barre des tâches. Dans les versions antérieures de windows, la version de la lumière thème peut être utilisée incorrectement. Le `altform-lightunplated` qualificateur évite ce problème. 
+Les applications ne doivent pas utiliser le qualificateur `theme-light` avec le qualificateur `altform-unplated`. Cela entraîne un comportement imprévisible sur RS5 et les versions antérieures de Windows en raison de la façon dont les ressources sont chargées pour la barre des tâches. Dans les versions antérieures de Windows, la version de Theme-Light peut être utilisée de manière incorrecte. Le qualificateur `altform-lightunplated` évite ce problème. 
 
 ### <a name="compatibility-behavior"></a>Comportement de compatibilité
-Pour descendante compatibilité, Windows inclut une logique pour détecter les icônes de monochrome et vérifier si elle s’oppose à l’arrière-plan prévue. Si l’icône ne parvient pas à répondre aux exigences relatives au contraste, Windows recherchera une version de contraste blanc de la ressource. Si tel n’est pas disponible, Windows reviendra à l’aide de la plaque version de l’élément multimédia.
+À des fins de compatibilité descendante, Windows comprend une logique permettant de détecter une icône monochromatique et de vérifier si elle contraste avec l’arrière-plan prévu. Si l’icône ne répond pas aux exigences de contraste, Windows recherche une version blanche du contraste de la ressource. Si ce n’est pas possible, Windows revient à l’utilisation de la version plaquée de la ressource.
 
 
 
 ## <a name="important-apis"></a>API importantes
 
-* [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues)
+* [ResourceContext. QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues)
 * [SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue)
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Pixels efficaces et le facteur d’échelle](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)
+* [Pixels effectifs et facteur d’échelle](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)
 * [Système de gestion des ressources](resource-management-system.md)
-* [Comment préparer pour la localisation](https://docs.microsoft.com/previous-versions/windows/apps/hh967762(v=win.10))
-* [Détection de la plateforme de votre application est en cours d’exécution](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on)
-* [Vue d’ensemble des familles de périphériques](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)
-* [Localiser les chaînes de votre interface utilisateur](localize-strings-ui-manifest.md)
-* [BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
-* [Composition des Nations unies statistique Division M49 des codes de région](https://go.microsoft.com/fwlink/p/?linkid=247929)
-* [Registre de sous-balises de langage IANA](https://go.microsoft.com/fwlink/p/?linkid=227303)
+* [Comment préparer la localisation](https://docs.microsoft.com/previous-versions/windows/apps/hh967762(v=win.10))
+* [Détection de la plateforme sur laquelle votre application s’exécute](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on)
+* [Présentation des familles d’appareils](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)
+* [Localiser vos chaînes d’interface utilisateur](localize-strings-ui-manifest.md)
+* [BCP-47](https://tools.ietf.org/html/bcp47)
+* [Composition statistique des Nations Unies M49 composition des codes de région](https://unstats.un.org/unsd/methods/m49/m49regin.htm)
+* [Registre de sous-balise IANA Language](https://www.iana.org/assignments/language-subtag-registry)
 * [Ajuster la disposition et les polices, et prendre en charge le sens du flux DàG](../design/globalizing/adjust-layout-and-fonts--and-support-rtl.md)

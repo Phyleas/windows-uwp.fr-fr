@@ -4,14 +4,14 @@ title: Tester à l’aide de l’émulateur Microsoft pour Windows 10 Mobile
 description: Simulez une interaction réaliste avec un appareil et testez les fonctionnalités de votre application à l’aide des outils fournis avec l’émulateur Microsoft pour Windows 10 Mobile.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e87fba21f74140e14688194864ccdc416ea227d
-ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
+ms.openlocfilehash: 4f2cb92dca3da2d1f8e3eccfade6558f363c5b13
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73062309"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257865"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>Tester à l’aide de l’émulateur Microsoft pour Windows 10 Mobile
 
@@ -31,7 +31,7 @@ PROCESSEUR (ces paramètres, s’ils sont disponibles, peuvent être activés da
 -   Traduction d’adresse de second niveau (SLAT, Second Level Address Translation)
 -   Prévention de l’exécution des données au niveau matériel (DEP, Data Execution Prevention)
 
-Mémoire vive (RAM)
+RAM
 
 -   4 Go ou plus
 
@@ -41,18 +41,18 @@ Système d’exploitation
 -   64 bits
 -   Édition Professionnelle ou version supérieure
 
-Pour vérifier la configuration requise du BIOS, consultez [Activation d’Hyper-V pour l’émulateur pour Windows Phone 8](https://docs.microsoft.com/previous-versions/windows/apps/jj863509(v=vs.105)).
+Pour vérifier la configuration requise du BIOS, voir [Activation d’Hyper-V pour l’émulateur pour Windows Phone 8](https://docs.microsoft.com/previous-versions/windows/apps/jj863509(v=vs.105)).
 
 Pour vérifier la configuration requise en termes de RAM et de système d’exploitation, dans le Panneau de configuration, sélectionnez **Système et sécurité**, puis **Système**.
 
 L’émulateur Microsoft pour Windows 10 mobile nécessite Visual Studio 2015 ou une version ultérieure. elle n’offre pas de compatibilité descendante avec les versions antérieures de Visual Studio.
 
-L’émulateur Microsoft pour Windows 10 Mobile ne peut pas charger des applications destinées à des versions de Windows Phone OS antérieures à Windows Phone OS 7.1.
+L’émulateur Microsoft pour Windows 10 Mobile ne peut pas charger d’applications destinées à des versions antérieures à Windows Phone OS 7.1.
 
 ## <a name="installing-uninstalling-and-running-the-emulator"></a>Installation, désinstallation et exécution de l’émulateur
 
 ### <a name="installing"></a>En cours d'installation
-L’émulateur Microsoft pour Windows 10 Mobile est fourni avec le Kit de développement logiciel (SDK) Windows 10. Ils peuvent tous deux être installés avec Visual Studio. Consultez la [page de téléchargement de Visual Studio](https://go.microsoft.com/fwlink/p/?LinkId=534785).
+L’émulateur Microsoft pour Windows 10 Mobile est fourni avec le Kit de développement logiciel (SDK) Windows 10. Ils peuvent tous deux être installés avec Visual Studio. Consultez la [page de téléchargement de Visual Studio](https://developer.microsoft.com/windows/downloads).
 
 Vous pouvez également installer l’émulateur Microsoft pour Windows 10 Mobile à l’aide du [programme d’installation de l’émulateur Microsoft](https://go.microsoft.com/fwlink/p/?LinkID=615095).
 
@@ -144,7 +144,7 @@ Le tableau suivant répertorie les touches d’un clavier matériel que vous pou
 
 Notez que dans l’émulateur build 10.0.14332, le mappage de clés matérielles de l’ordinateur a été modifié. Les valeurs dans la deuxième colonne du tableau ci-dessous représentent ces nouvelles clés. 
 
-Clés matérielles de l’ordinateur (émulateur build 10.0.14295 et versions antérieures) | Clés matérielles de l’ordinateur (émulateur build 10.0.14332 et versions antérieures) | Bouton matériel de Windows Phone | Notes
+Clés matérielles de l’ordinateur (émulateur build 10.0.14295 et versions antérieures) | Clés matérielles de l’ordinateur (émulateur build 10.0.14332 et versions antérieures) | Bouton matériel de Windows Phone | Remarques
 --------------------- | ------------------------- | ----------------------------- | -----
 F1 | WIN + ÉCHAP | RETOUR | Les pressions longues fonctionnent comme prévu.
 F2 | WIN + F2 | ÉCRAN D’ACCUEIL | Les pressions longues fonctionnent comme prévu.
@@ -237,7 +237,7 @@ Vous pouvez également utiliser l’outil de simulation de terminal de MasterCar
 -   Activez la case à cocher de l’écouteur **Activer MasterCard** sous les fenêtres de l’éditeur de script et lancez le simulateur de MasterCard.
 -   Grâce à cet outil, vous pouvez générer des commandes qui sont transmises à votre application exécutée sur l’émulateur par le biais de l’outil NFC.
 
-Pour en savoir plus sur la prise en charge de l’émulation HCE et le développement d’applications HCE dans Windows 10 Mobile, consultez le [blog de l’équipe NFC de Microsoft](https://go.microsoft.com/fwlink/?LinkId=534749).
+Pour en savoir plus sur la prise en charge de l’émulation HCE et le développement d’applications HCE dans Windows 10 Mobile, consultez le [blog de l’équipe NFC de Microsoft](https://blogs.msdn.com/b/nfc/).
 
 ### <a name="how-to-create-scripts-for-hce-testing"></a>Création de scripts pour les tests HCE
 
@@ -289,7 +289,7 @@ La capture d’écran suivante illustre l’entrée tactile multipoint.
 
 ![Option d’entrée multipoint de la barre d’outils de l’émulateur](images/em-multipoint.png)
 
-## <a name="accelerometer"></a>Accelerometer
+## <a name="accelerometer"></a>Accéléromètre
 
 Testez les applications qui suivent le mouvement du téléphone à l’aide de l’onglet **Accéléromètre** des **Outils supplémentaires** de l’émulateur.
 
@@ -393,7 +393,7 @@ La capture d’écran suivante illustre le mode Itinéraire. La ligne orange ind
 
 -   Les seules propriétés de position simulées sont les suivantes : Latitude, Longitude, Accuracy et PositionSource. Le simulateur d’emplacement ne simule pas d’autres propriétés, comme Speed, Heading, etc.
 
-## <a name="network"></a>réseau
+## <a name="network"></a>Network (Réseau)
 
 Testez votre application avec différentes vitesses du réseau et forces du signal à l’aide de l’onglet **Réseau** des **Outils supplémentaires** de l’émulateur. Cette fonctionnalité est utile si votre application appelle les services web ou transfère les données.
 
@@ -565,7 +565,7 @@ Voici la liste des fonctionnalités d’appareil photo prise en charge par chacu
 |--------------------|--------------------------|---------------------------|
 | Résolution         | 640 x 480 (VGA)          | 640 x 480 (VGA) ou supérieure |
 | Autofocus          | Oui                      | Oui                       |
-| Flash              | non                       | Oui                       |
+| Flash              | Non                       | Oui                       |
 | Zoom               | 2x (numérique ou optique)  | 2x (numérique ou optique)   |
 | Résolution vidéo   | 640 x 480 (VGA)          | 640 x 480 (VGA) ou supérieure |
 | Résolution de l’aperçu | 640 x 480 (VGA)          | 640 x 480 (VGA)           |
@@ -645,7 +645,7 @@ Par défaut, l’émulateur Windows 10 Mobile utilise des graphiques à accél
 
 Pour désactiver l’accélération matérielle :
 
-1. Démarrez l’Éditeur du Registre.
+1. Démarrez l'Éditeur du Registre.
 2. Créez la sous-clé de Registre suivante si elle n’existe pas : HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Xde\10.0
 3. Cliquez avec le bouton droit de la souris sur le dossier 10.0, pointez sur **Nouveau**, puis cliquez sur **Valeur DWORD**.
 4. Tapez **DisableRemoteFx**, puis appuyez sur Entrer.
@@ -656,7 +656,7 @@ Pour désactiver l’accélération matérielle :
 
 ## <a name="support-resources"></a>Ressources de support
 
-Pour trouver des réponses à vos questions et résoudre vos problèmes lorsque vous commencez à travailler avec les outils Windows 10, consultez le [forum sur les outils Windows 10](https://go.microsoft.com/fwlink/?LinkId=534765). Pour voir tous les forums ayant trait au développement Windows 10, cliquez sur [ce lien](https://go.microsoft.com/fwlink/?LinkId=535000).
+Pour trouver des réponses à vos questions et résoudre vos problèmes lorsque vous commencez à travailler avec les outils Windows 10, consultez le [forum sur les outils Windows 10](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues). Pour voir tous les forums ayant trait au développement Windows 10, cliquez sur [ce lien](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop).
 
 ## <a name="related-topics"></a>Rubriques connexes
 

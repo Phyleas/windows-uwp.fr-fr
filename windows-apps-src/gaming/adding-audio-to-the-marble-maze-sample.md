@@ -6,12 +6,12 @@ ms.date: 10/18/2017
 ms.topic: article
 keywords: Windows 10, uwp, audio, jeux, exemple
 ms.localizationpriority: medium
-ms.openlocfilehash: ba0b4882803d9e6ddf059ae0f431c5bfba7eb227
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 4cf803b61a280ff3ed803dc7972d7f7eb6993a64
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66369154"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258560"
 ---
 # <a name="adding-audio-to-the-marble-maze-sample"></a>Ajout d’audio à l’exemple Marble Maze
 
@@ -20,7 +20,7 @@ Ce document décrit les pratiques clés à prendre en compte quand vous utilisez
 Marble Maze joue de la musique en arrière-plan et utilise également des sons dans le jeu pour indiquer des événements, par exemple quand la bille touche un mur. Dans son implémentation, Marble Maze utilise un effet de réverbération, ou écho, pour reproduire le son de la bille quand elle rebondit. L’implémentation de l’effet de réverbération permet à l’écho de s’entendre plus rapidement et plus fort dans des petites pièces et d’être plus sourd et de s’entendre moins fort dans des pièces de grandes dimensions.
 
 > [!NOTE]
-> L’exemple de code correspondant à ce document est disponible dans [l’exemple de jeu Marble Maze en DirectX](https://go.microsoft.com/fwlink/?LinkId=624011).
+> L’exemple de code correspondant à ce document est disponible dans [l’exemple de jeu Marble Maze en DirectX](https://github.com/microsoft/Windows-appsample-marble-maze).
 
 Voici quelques éléments clés présentés dans ce document que vous devez prendre en compte quand vous utilisez du son dans votre jeu :
 
@@ -32,7 +32,7 @@ Voici quelques éléments clés présentés dans ce document que vous devez pren
 
 - Vous pouvez également décider de suspendre l’audio quand l’application perd le focus, n’est plus visible ou est suspendue. Relancez l’audio quand l’application retrouve le focus, est de nouveau visible ou est relancée.
 
-- Définissez les catégories audio de sorte qu’elles reflètent le rôle de chaque son. Par exemple, vous utilisez généralement **AudioCategory\_GameMedia** pour l’audio d’arrière-plan de jeu et **AudioCategory\_GameEffects** pour les effets sonores.
+- Définissez les catégories audio de sorte qu’elles reflètent le rôle de chaque son. Par exemple, vous utilisez généralement **AudioCategory\_GameMedia** pour l’audio d’arrière-plan du jeu et **AudioCategory\_GameEffects** pour les effets sonores.
 
 - Gérez les changements de périphériques, notamment les casques, en libérant et en recréant toutes les ressources et interfaces audio.
 
@@ -106,11 +106,11 @@ L’utilisation de l’interface [IXAudio2](https://docs.microsoft.com/windows/d
 
 ### <a name="creating-the-mastering-voices"></a>Création des voix mastérisées
 
-L’exemple suivant montre comment la méthode **Audio::CreateResources** crée la voix mastérisée pour la musique de fond à l’aide de la méthode [IXAudio2::CreateMasteringVoice](https://docs.microsoft.com/windows/desktop/api/xaudio2/nf-xaudio2-ixaudio2-createmasteringvoice). Dans cet exemple, **m\_musicMasteringVoice** est un [IXAudio2MasteringVoice](https://docs.microsoft.com/windows/desktop/api/xaudio2/nn-xaudio2-ixaudio2masteringvoice) objet. Deux canaux d’entrée sont spécifiés pour simplifier la logique de l’effet de réverbération. 
+L’exemple suivant montre comment la méthode **Audio::CreateResources** crée la voix mastérisée pour la musique de fond à l’aide de la méthode [IXAudio2::CreateMasteringVoice](https://docs.microsoft.com/windows/desktop/api/xaudio2/nf-xaudio2-ixaudio2-createmasteringvoice). Dans cet exemple, **m\_musicMasteringVoice** est un objet [IXAudio2MasteringVoice](https://docs.microsoft.com/windows/desktop/api/xaudio2/nn-xaudio2-ixaudio2masteringvoice) . Deux canaux d’entrée sont spécifiés pour simplifier la logique de l’effet de réverbération. 
 
 Un taux d’échantillonnage d’entrée de 48000 est spécifié. Nous avons choisi ce taux d’échantillonnage car il représente un bon équilibre entre la qualité audio et la quantité de traitement d’UC nécessaire. Un taux d’échantillonnage supérieur aurait requis davantage de traitement de l’UC sans amélioration notable de la qualité. 
 
-Enfin, **AudioCategory_GameMedia** est spécifié comme musique de fond afin que les utilisateurs puissent écouter une musique d’une autre application pendant qu’ils jouent. Lors de la lecture d’une application de musique, Windows désactive le volume des voix est créés par le **AudioCategory\_GameMedia** option. L’utilisateur entend toujours le jeu paraît, car elles sont créées par le **AudioCategory\_GameEffects** option. Pour plus d’informations sur les catégories audio, consultez [AUDIO\_flux\_catégorie](https://docs.microsoft.com/windows/desktop/api/audiosessiontypes/ne-audiosessiontypes-_audio_stream_category).
+Enfin, **AudioCategory_GameMedia** est spécifié comme musique de fond afin que les utilisateurs puissent écouter une musique d’une autre application pendant qu’ils jouent. Quand une application musicale est lue, Windows désactive les voix créées par l’option **AudioCategory\_GameMedia** . L’utilisateur entend toujours entendre les sons de jeu, car ils sont créés par l’option **AudioCategory\_GameEffects** . Pour plus d’informations sur les catégories audio, consultez [audio\_flux\_catégorie](https://docs.microsoft.com/windows/desktop/api/audiosessiontypes/ne-audiosessiontypes-_audio_stream_category).
 
 ```cpp
 // This sample plays the equivalent of background music, which we tag on the  
@@ -134,7 +134,7 @@ DX::ThrowIfFailed(
 );
 ```
 
-Le **Audio::CreateResources** méthode effectue une étape similaire pour créer la maîtrise voix pour les sons de jeu, à ceci près qu’il spécifie **AudioCategory\_GameEffects** pour le  *StreamCategory* paramètre, qui est la valeur par défaut.
+La méthode **audio :: CreateResources** effectue une étape similaire pour créer la voix de mastérisation des sons de jeu, à la différence qu’elle spécifie **AudioCategory\_GameEffects** pour le paramètre *StreamCategory* , qui est la valeur par défaut.
 
 ### <a name="creating-the-reverb-effect"></a>Création de l’effet de réverbération
 
@@ -144,9 +144,9 @@ Pour créer une chaîne d’effets, procédez comme suit :
 
 1. Créez l’objet d’effet.
 
-2. Remplir un [XAUDIO2\_effet\_descripteur](https://docs.microsoft.com/windows/desktop/api/xaudio2/ns-xaudio2-xaudio2_effect_descriptor) structure avec des données de l’effet.
+2. Remplir un [effet de\_XAUDIO2\_structure du DEscripteur](https://docs.microsoft.com/windows/desktop/api/xaudio2/ns-xaudio2-xaudio2_effect_descriptor) avec les données d’effet.
 
-3. Remplir un [XAUDIO2\_effet\_chaîne](https://docs.microsoft.com/windows/desktop/api/xaudio2/ns-xaudio2-xaudio2_effect_chain) structure avec des données.
+3. Remplir un [XAUDIO2\_effet\_](https://docs.microsoft.com/windows/desktop/api/xaudio2/ns-xaudio2-xaudio2_effect_chain) structure de chaîne avec des données.
 
 4. Appliquez la chaîne d’effets à une voix.
 
@@ -164,7 +164,7 @@ DX::ThrowIfFailed(
     );
 ```
 
-Le [XAUDIO2\_effet\_descripteur](https://docs.microsoft.com/windows/desktop/api/xaudio2/ns-xaudio2-xaudio2_effect_descriptor) structure contient des informations sur un XAPO pour une utilisation dans une chaîne d’effet, par exemple, le nombre cible de canaux de sortie. Le **Audio::CreateReverb** méthode crée un **XAUDIO2\_effet\_descripteur** objet, **soundEffectdescriptor**, qui est défini sur le désactivé état, utilise deux canaux de sortie et des références **soundEffectXAPO** pour cet effet. L’objet **soundEffectdescriptor** démarre en mode désactivé, car le jeu doit définir des paramètres avant que l’effet commence à modifier les sons du jeu. Marble Maze utilise deux canaux de sortie pour simplifier la logique de l’effet de réverbération.
+L' [effet XAUDIO2\_structure du DEscripteur de\_](https://docs.microsoft.com/windows/desktop/api/xaudio2/ns-xaudio2-xaudio2_effect_descriptor) contient des informations sur un XAPO à utiliser dans une chaîne d’effet, par exemple, le nombre cible de canaux de sortie. La méthode **audio :: CreateReverb** crée un **XAUDIO2\_effet\_objet descripteur** , **soundEffectdescriptor**, qui est défini sur l’état désactivé, utilise deux canaux de sortie et référence **soundEffectXAPO** pour l’effet de réverbération. L’objet **soundEffectdescriptor** démarre en mode désactivé, car le jeu doit définir des paramètres avant que l’effet commence à modifier les sons du jeu. Marble Maze utilise deux canaux de sortie pour simplifier la logique de l’effet de réverbération.
 
 ```cpp
 soundEffectdescriptor.InitialState = false;
@@ -172,7 +172,7 @@ soundEffectdescriptor.OutputChannels = 2;
 soundEffectdescriptor.pEffect = soundEffectXAPO.Get();
 ```
 
-Si votre chaîne d’effets comporte plusieurs effets, chaque effet nécessite un objet. Le [XAUDIO2\_effet\_chaîne](https://docs.microsoft.com/windows/desktop/api/xaudio2/ns-xaudio2-xaudio2_effect_chain) structure conserve le tableau de [XAUDIO2\_effet\_descripteur](https://docs.microsoft.com/windows/desktop/api/xaudio2/ns-xaudio2-xaudio2_effect_descriptor) les objets qui participent à l’effet. L’exemple suivant montre comment la méthode **Audio::CreateReverb** spécifie l’effet permettant d’implémenter la réverbération.
+Si votre chaîne d’effets comporte plusieurs effets, chaque effet nécessite un objet. L' [effet XAUDIO2\_\_](https://docs.microsoft.com/windows/desktop/api/xaudio2/ns-xaudio2-xaudio2_effect_chain) structure de chaîne contient le tableau des objets de [descripteur de\_de\_Effects de XAUDIO2](https://docs.microsoft.com/windows/desktop/api/xaudio2/ns-xaudio2-xaudio2_effect_descriptor) qui participent à l’effet. L’exemple suivant montre comment la méthode **Audio::CreateReverb** spécifie l’effet permettant d’implémenter la réverbération.
 
 ```cpp
 XAUDIO2_EFFECT_CHAIN soundEffectChain;
@@ -183,7 +183,7 @@ soundEffectChain.EffectCount = 1;
 soundEffectChain.pEffectDescriptors = &soundEffectdescriptor;
 ```
 
-La méthode **Audio::CreateReverb** appelle la méthode [IXAudio2::CreateSubmixVoice](https://docs.microsoft.com/windows/desktop/api/xaudio2/nf-xaudio2-ixaudio2-createsubmixvoice) pour créer la voix prémixée pour l’effet. Il spécifie le [XAUDIO2\_effet\_chaîne](https://docs.microsoft.com/windows/desktop/api/xaudio2/ns-xaudio2-xaudio2_effect_chain) objet, **soundEffectChain**, pour le *pEffectChain* paramètre pour associer l’effet chaîne avec la voix. Marble Maze spécifie également deux canaux de sortie et un taux d’échantillonnage de 48 kilohertz.
+La méthode **Audio::CreateReverb** appelle la méthode [IXAudio2::CreateSubmixVoice](https://docs.microsoft.com/windows/desktop/api/xaudio2/nf-xaudio2-ixaudio2-createsubmixvoice) pour créer la voix prémixée pour l’effet. Elle spécifie le [XAUDIO2\_effet\_objet chaîne](https://docs.microsoft.com/windows/desktop/api/xaudio2/ns-xaudio2-xaudio2_effect_chain) , **soundEffectChain**, pour le paramètre *pEffectChain* afin d’associer la chaîne d’effet à la voix. Marble Maze spécifie également deux canaux de sortie et un taux d’échantillonnage de 48 kilohertz.
 
 ```cpp
 DX::ThrowIfFailed(
@@ -194,7 +194,7 @@ DX::ThrowIfFailed(
 > [!TIP]
 > Si vous voulez attacher une chaîne d’effets existante à une voix prémixée existante, ou remplacer la chaîne d’effets actuelle, utilisez la méthode [IXAudio2Voice::SetEffectChain](https://docs.microsoft.com/windows/desktop/api/xaudio2/nf-xaudio2-ixaudio2voice-seteffectchain).
 
-La méthode **Audio::CreateReverb** appelle [IXAudio2Voice::SetEffectParameters](https://docs.microsoft.com/windows/desktop/api/xaudio2/nf-xaudio2-ixaudio2voice-seteffectparameters) pour définir des paramètres supplémentaires associés à l’effet. Cette méthode utilise une structure de paramètre spécifique à l’effet. Un [XAUDIO2FX\_réverbération\_paramètres](https://docs.microsoft.com/windows/desktop/api/xaudio2fx/ns-xaudio2fx-xaudio2fx_reverb_parameters) objet, **m_reverbParametersSmall**, qui contient les paramètres de l’effet de réverbération, est initialisé dans le  **Audio::Initialize** (méthode), car chaque effet Réverbération partage les mêmes paramètres. L’exemple suivant montre comment la méthode **Audio::Initialize** initialise les paramètres de réverbération en champ proche.
+La méthode **Audio::CreateReverb** appelle [IXAudio2Voice::SetEffectParameters](https://docs.microsoft.com/windows/desktop/api/xaudio2/nf-xaudio2-ixaudio2voice-seteffectparameters) pour définir des paramètres supplémentaires associés à l’effet. Cette méthode utilise une structure de paramètre spécifique à l’effet. Un objet de [XAUDIO2FX\_reverbe\_de paramètres](https://docs.microsoft.com/windows/desktop/api/xaudio2fx/ns-xaudio2fx-xaudio2fx_reverb_parameters) , **m_reverbParametersSmall**, qui contient les paramètres d’effet pour le réverbe, est initialisé dans la méthode **audio :: Initialize** , car chaque effet de réverbération partage les mêmes paramètres. L’exemple suivant montre comment la méthode **Audio::Initialize** initialise les paramètres de réverbération en champ proche.
 
 ```cpp
 m_reverbParametersSmall.ReflectionsDelay = XAUDIO2FX_REVERB_DEFAULT_REFLECTIONS_DELAY;
@@ -224,7 +224,7 @@ m_reverbParametersSmall.DisableLateField = TRUE;
 
 Cet exemple utilise les valeurs par défaut pour la plupart des paramètres de réverbération, mais il affecte à **DisableLateField** la valeur TRUE pour spécifier la réverbération en champ proche, à **EarlyDiffusion** la valeur 4 pour simuler des surfaces proches planes et à **LateDiffusion** la valeur 15 pour simuler des surfaces éloignées très diffuses. Les surfaces proches planes permettent aux échos de vous atteindre plus rapidement et plus fort. Les surfaces éloignées diffuses permettent aux échos d’être plus silencieux et de vous atteindre plus lentement. Vous pouvez essayer différentes valeurs de réverbération pour obtenir l’effet souhaité dans votre jeu ou utiliser la méthode **ReverbConvertI3DL2ToNative** pour utiliser les paramètres I3DL2 (Interactive 3D Audio Rendering Guidelines Level 2.0) standard.
 
-L’exemple suivant montre comment **Audio::CreateReverb** définit les paramètres de réverbération. **newSubmix** est un objet [IXAudio2SubmixVoice](https://docs.microsoft.com/windows/desktop/api/xaudio2/nn-xaudio2-ixaudio2submixvoice)**. **paramètres** est un [XAUDIO2FX\_réverbération\_paramètres](https://docs.microsoft.com/windows/desktop/api/xaudio2fx/ns-xaudio2fx-xaudio2fx_reverb_parameters)* objet.
+L’exemple suivant montre comment **Audio::CreateReverb** définit les paramètres de réverbération. **newSubmix** est un objet [IXAudio2SubmixVoice](https://docs.microsoft.com/windows/desktop/api/xaudio2/nn-xaudio2-ixaudio2submixvoice)**. **Parameters** est un objet [XAUDIO2FX\_reverbe\_paramètres](https://docs.microsoft.com/windows/desktop/api/xaudio2fx/ns-xaudio2fx-xaudio2fx_reverb_parameters)*.
 
 ```cpp
 DX::ThrowIfFailed(
@@ -304,7 +304,7 @@ DX::ThrowIfFailed(
 
 La méthode **MediaStreamer::Initialize** crée ensuite un objet [IMFMediaType](https://docs.microsoft.com/windows/desktop/api/mfobjects/nn-mfobjects-imfmediatype) à l’aide de [MFCreateMediaType](https://docs.microsoft.com/windows/desktop/api/mfapi/nf-mfapi-mfcreatemediatype) pour décrire le format du flux audio. Un format audio a deux types : un type principal et un sous-type. Le type principal définit le format général des données multimédias, par exemple vidéo, audio, script, etc. Le sous-type définit le format, par exemple PCM, ADPCM ou WMA.
 
-Le **MediaStreamer::Initialize** méthode utilise le [IMFAttributes::SetGUID](https://docs.microsoft.com/windows/desktop/api/mfobjects/nf-mfobjects-imfattributes-setguid) méthode pour spécifier le type majeur ([MF_MT_MAJOR_TYPE](https://docs.microsoft.com/windows/desktop/medfound/mf-mt-major-type-attribute)) en tant qu’audio ( **MFMediaType\_Audio**) et le type secondaire ([MF_MT_SUBTYPE](https://docs.microsoft.com/windows/desktop/medfound/mf-mt-subtype-attribute)) en tant que données audio PCM (**MFAudioFormat\_PCM**). **MF_MT_MAJOR_TYPE** et **MF_MT_SUBTYPE** sont des [Media Foundation Attributes](https://docs.microsoft.com/windows/desktop/medfound/media-foundation-attributes). **MFMediaType_Audio** et **MFAudioFormat_PCM** sont un type et un sous-type de GUID. Reportez-vous à la rubrique [Types de médias audio](https://docs.microsoft.com/windows/desktop/medfound/audio-media-types) pour plus d’informations. La méthode [IMFSourceReader::SetCurrentMediaType](https://docs.microsoft.com/windows/desktop/api/mfreadwrite/nf-mfreadwrite-imfsourcereader-setcurrentmediatype) associe le type de média au lecteur de flux.
+La méthode **MediaStreamer :: Initialize** utilise la méthode [IMFAttributes :: SetGUID](https://docs.microsoft.com/windows/desktop/api/mfobjects/nf-mfobjects-imfattributes-setguid) pour spécifier le type principal ([MF_MT_MAJOR_TYPE](https://docs.microsoft.com/windows/desktop/medfound/mf-mt-major-type-attribute)) comme audio (**MFMediaType\_audio**) et le type secondaire ([MF_MT_SUBTYPE](https://docs.microsoft.com/windows/desktop/medfound/mf-mt-subtype-attribute)) en tant que fichier audio PCM non compressé (**MFAudioFormat\_PCM**). **MF_MT_MAJOR_TYPE** et **MF_MT_SUBTYPE** sont des [Media Foundation Attributes](https://docs.microsoft.com/windows/desktop/medfound/media-foundation-attributes). **MFMediaType_Audio** et **MFAudioFormat_PCM** sont un type et un sous-type de GUID. Reportez-vous à la rubrique [Types de médias audio](https://docs.microsoft.com/windows/desktop/medfound/audio-media-types) pour plus d’informations. La méthode [IMFSourceReader::SetCurrentMediaType](https://docs.microsoft.com/windows/desktop/api/mfreadwrite/nf-mfreadwrite-imfsourcereader-setcurrentmediatype) associe le type de média au lecteur de flux.
 
 ```cpp
 // Set the decoded output format as PCM. 
@@ -350,7 +350,7 @@ CoTaskMemFree(waveFormat);
 
  
 
-Le **MediaStreamer::Initialize** méthode se termine en calculant la longueur du flux, **m\_maxStreamLengthInBytes**, en octets. Pour ce faire, elle appelle la méthode [IMFSourceReader::GetPresentationAttribute](https://docs.microsoft.com/windows/desktop/api/mfreadwrite/nf-mfreadwrite-imfsourcereader-getpresentationattribute) pour obtenir la durée du flux audio en unités de 100 nanosecondes, convertit la durée en sections, puis multiplie par le taux de transfert de données moyen en octets par seconde. Marble Maze utilise ensuite cette valeur pour allouer la mémoire tampon qui contient chaque son du jeu.
+La méthode **MediaStreamer :: Initialize** termine le calcul de la longueur du flux, **m\_maxStreamLengthInBytes**, en octets. Pour ce faire, elle appelle la méthode [IMFSourceReader::GetPresentationAttribute](https://docs.microsoft.com/windows/desktop/api/mfreadwrite/nf-mfreadwrite-imfsourcereader-getpresentationattribute) pour obtenir la durée du flux audio en unités de 100 nanosecondes, convertit la durée en sections, puis multiplie par le taux de transfert de données moyen en octets par seconde. Marble Maze utilise ensuite cette valeur pour allouer la mémoire tampon qui contient chaque son du jeu.
 
 ```cpp
 // Get the total length of the stream, in bytes.
@@ -387,7 +387,7 @@ enum SoundEvent
 };
 ```
 
-Le tableau suivant montre la relation entre chacune de ces valeurs, le fichier qui contient les données de son associées et une courte description de ce que chaque son représente. Les fichiers audio sont situés dans le  **\\Media\\Audio** dossier.
+Le tableau suivant montre la relation entre chacune de ces valeurs, le fichier qui contient les données de son associées et une courte description de ce que chaque son représente. Les fichiers audio se trouvent dans le dossier **audio\\Media\\** .
 
 | Valeur SoundEvent  | Nom du fichier      | Description                                              |
 |-------------------|----------------|----------------------------------------------------------|
@@ -400,7 +400,7 @@ Le tableau suivant montre la relation entre chacune de ces valeurs, le fichier q
 
  
 
-L’exemple suivant montre comment la méthode **Audio::CreateResources** crée la voix source pour la musique de fond. Le [XAUDIO2\_envoyer\_descripteur](https://docs.microsoft.com/windows/desktop/api/xaudio2/ns-xaudio2-xaudio2_send_descriptor) structure définit la voix de destination cible à partir d’une autre voix et spécifie si un filtre doit être utilisé. Marble Maze appelle la méthode **Audio::SetSoundEffectFilter** pour utiliser les filtres afin de modifier le son de la bille quand elle roule. Le [XAUDIO2\_voix\_envoie](https://docs.microsoft.com/windows/desktop/api/xaudio2/ns-xaudio2-xaudio2_voice_sends) structure définit l’ensemble de voix pour recevoir des données à partir d’une voix de sortie unique. Marble Maze envoie les données de la voix source à la voix mastérisée (pour la partie inchangée d’un son en cours de lecture) et aux deux voix prémixées qui implémentent la partie réverbérante d’un son en cours de lecture.
+L’exemple suivant montre comment la méthode **Audio::CreateResources** crée la voix source pour la musique de fond. La structure [XAUDIO2\_SEND\_DEscripteur](https://docs.microsoft.com/windows/desktop/api/xaudio2/ns-xaudio2-xaudio2_send_descriptor) définit la voix de destination cible à partir d’une autre voix et spécifie si un filtre doit être utilisé. Marble Maze appelle la méthode **Audio::SetSoundEffectFilter** pour utiliser les filtres afin de modifier le son de la bille quand elle roule. La [XAUDIO2\_VOICE\_](https://docs.microsoft.com/windows/desktop/api/xaudio2/ns-xaudio2-xaudio2_voice_sends) Send définit le jeu de voix pour recevoir des données à partir d’une seule voix de sortie. Marble Maze envoie les données de la voix source à la voix mastérisée (pour la partie inchangée d’un son en cours de lecture) et aux deux voix prémixées qui implémentent la partie réverbérante d’un son en cours de lecture.
 
 La méthode [IXAudio2::CreateSourceVoice](https://docs.microsoft.com/windows/desktop/api/xaudio2/nf-xaudio2-ixaudio2-createsourcevoice) crée et configure une voix source. Elle prend une structure [WAVEFORMATEX](https://docs.microsoft.com/windows/desktop/api/mmreg/ns-mmreg-twaveformatex) qui définit le format des mémoires tampons audio envoyées à la voix. Comme indiqué précédemment, Marble Maze utilise le format PCM.
 
@@ -469,7 +469,7 @@ La quantité selon laquelle chaque voix prémixée contribue à la combinaison f
 
 La méthode **Audio::CreateResources** utilise Media Foundation pour charger la musique de fond. Cependant, à ce stade, la voix source ne dispose pas de données audio à utiliser. De plus, comme la musique de fond passe en boucle, la voix source doit être régulièrement mise à jour avec les données pour que la musique puisse continuer à être jouée.
 
-Pour que la voix source dispose de ces données, la boucle du jeu met à jour les mémoires tampons audio à chaque image. La méthode **MarbleMazeMain::Render** appelle **Audio::Render** pour traiter la mémoire tampon audio de la musique de fond. Le **Audio** classe définit un tableau de mémoires tampons audio trois, **m\_audioBuffers**. Chaque mémoire tampon contient 64 Ko (65 536 octets) de données. La boucle lit les données à partir de l’objet Media Foundation et écrit ces données dans la voix source jusqu’à ce que cette dernière ait trois mémoires tampons mises en file d’attente.
+Pour que la voix source dispose de ces données, la boucle du jeu met à jour les mémoires tampons audio à chaque image. La méthode **MarbleMazeMain::Render** appelle **Audio::Render** pour traiter la mémoire tampon audio de la musique de fond. La classe **audio** définit un tableau de trois mémoires tampons audio, **m\_audioBuffers**. Chaque mémoire tampon contient 64 Ko (65 536 octets) de données. La boucle lit les données à partir de l’objet Media Foundation et écrit ces données dans la voix source jusqu’à ce que cette dernière ait trois mémoires tampons mises en file d’attente.
 
 > [!CAUTION]
 > Bien que Marble Maze utilise une mémoire tampon de 64 Ko pour les données de musique, il est possible que vous ayez besoin d’une mémoire tampon plus petite ou plus grande. La taille dépend des exigences du jeu.
@@ -561,7 +561,7 @@ void MediaStreamer::Restart()
 }
 ```
 
-Pour implémenter la boucle audio pour une seule mémoire tampon (ou d’un son intégralité est entièrement chargé en mémoire), vous pouvez définir le [XAUDIO2_BUFFER](https://docs.microsoft.com/windows/desktop/api/xaudio2/ns-xaudio2-xaudio2_buffer):: champ LoopCount à **XAUDIO2\_boucle\_INFINITE** lors de l’initialisation du son. Marble Maze utilise cette technique pour lire le son de la bille qui roule.
+Pour implémenter la boucle audio pour une seule mémoire tampon (ou pour un son entier entièrement chargé en mémoire), vous pouvez définir le champ [XAUDIO2_BUFFER](https://docs.microsoft.com/windows/desktop/api/xaudio2/ns-xaudio2-xaudio2_buffer):: LoopCount sur **XAUDIO2\_boucle\_infinie** lorsque vous initialisez le son. Marble Maze utilise cette technique pour lire le son de la bille qui roule.
 
 ```cpp
 if (sound == RollingEvent)
@@ -650,7 +650,7 @@ void Audio::PlaySoundEffect(SoundEvent sound)
 
 Pour les sons autres que le roulement, la méthode **Audio::PlaySoundEffect** appelle [IXAudio2SourceVoice::GetState](https://docs.microsoft.com/windows/desktop/api/xaudio2/nf-xaudio2-ixaudio2sourcevoice-getstate) pour déterminer le nombre de mémoires tampons que la voix source lit. Elle appelle [IXAudio2SourceVoice::SubmitSourceBuffer](https://docs.microsoft.com/windows/desktop/api/xaudio2/nf-xaudio2-ixaudio2sourcevoice-submitsourcebuffer) pour ajouter les données audio du son à la file d’attente d’entrée de la voix si aucune mémoire tampon n’est active. La méthode **Audio::PlaySoundEffect** permet également au son de collision d’être lu deux fois successivement. Cela se produit, par exemple, quand la bille heurte un angle du labyrinthe.
 
-Comme décrit précédemment, la classe Audio utilise le **XAUDIO2\_boucle\_infinie** indicateur lorsqu’il initialise le son pour l’événement propagée. Le son démarre la lecture en boucle la première fois que la méthode **Audio::PlaySoundEffect** est appelée pour cet événement. Pour simplifier la logique de lecture pour le son de roulement, Marble Maze désactive le son au lieu de l’arrêter. Quand la vitesse de la bille change, Marble Maze modifie le pas et le volume du son pour lui donner un effet plus réaliste. Le code suivant montre comment la méthode **MarbleMazeMain::Update** met à jour la tonalité et le volume de la bille quand sa vitesse change et comment elle désactive le son en affectant la valeur zéro à son volume quand la bille s’arrête.
+Comme décrit précédemment, la classe audio utilise la **boucle XAUDIO2\_\_indicateur infini** lorsqu’elle Initialise le son pour l’événement de substitution. Le son démarre la lecture en boucle la première fois que la méthode **Audio::PlaySoundEffect** est appelée pour cet événement. Pour simplifier la logique de lecture pour le son de roulement, Marble Maze désactive le son au lieu de l’arrêter. Quand la vitesse de la bille change, Marble Maze modifie le pas et le volume du son pour lui donner un effet plus réaliste. Le code suivant montre comment la méthode **MarbleMazeMain::Update** met à jour la tonalité et le volume de la bille quand sa vitesse change et comment elle désactive le son en affectant la valeur zéro à son volume quand la bille s’arrête.
 
 ```cpp
 // Play the roll sound only if the marble is actually rolling.
@@ -771,7 +771,7 @@ m_musicEngineCallback.Initialize(this);
 m_musicEngine->RegisterForCallbacks(&m_musicEngineCallback);
 ```
 
-Marble Maze ne requiert pas de notification quand le traitement audio démarre ou se termine. Par conséquent, il implémente les méthodes [IXAudio2EngineCallback::OnProcessingPassStart](https://docs.microsoft.com/windows/desktop/api/xaudio2/nf-xaudio2-ixaudio2enginecallback-onprocessingpassstart) et [IXAudio2EngineCallback::OnProcessingPassEnd](https://docs.microsoft.com/windows/desktop/api/xaudio2/nf-xaudio2-ixaudio2enginecallback-onprocessingpassend) pour qu’elles ne fassent rien. Pour le [IXAudio2EngineCallback::OnCriticalError](https://docs.microsoft.com/windows/desktop/api/xaudio2/nf-xaudio2-ixaudio2enginecallback-oncriticalerror) (méthode), appels de labyrinthe de billes le **SetEngineExperiencedCriticalError** (méthode), qui définit le **m\_ engineExperiencedCriticalError** indicateur.
+Marble Maze ne requiert pas de notification quand le traitement audio démarre ou se termine. Par conséquent, il implémente les méthodes [IXAudio2EngineCallback::OnProcessingPassStart](https://docs.microsoft.com/windows/desktop/api/xaudio2/nf-xaudio2-ixaudio2enginecallback-onprocessingpassstart) et [IXAudio2EngineCallback::OnProcessingPassEnd](https://docs.microsoft.com/windows/desktop/api/xaudio2/nf-xaudio2-ixaudio2enginecallback-onprocessingpassend) pour qu’elles ne fassent rien. Pour la méthode [IXAudio2EngineCallback :: OnCriticalError](https://docs.microsoft.com/windows/desktop/api/xaudio2/nf-xaudio2-ixaudio2enginecallback-oncriticalerror) , le labyrinthe de marbre appelle la méthode **SetEngineExperiencedCriticalError** , qui définit l’indicateur **m\_engineExperiencedCriticalError** .
 
 ```cpp
 // Audio.cpp
@@ -797,7 +797,7 @@ void SetEngineExperiencedCriticalError()
 }
 ```
 
-Quand une erreur critique se produit, le traitement audio s’arrête et tous les appels suivants à XAudio2 échouent. Pour résoudre ce problème, vous devez libérer l’instance XAudio2 et en créer une nouvelle. Le **Audio::Render** (méthode), qui est appelé à partir de la boucle du jeu pour chaque trame, vérifie d’abord le **m\_engineExperiencedCriticalError** indicateur. Si cet indicateur est défini, elle l’efface, libère l’instance XAudio2 actuelle, initialise les ressources et démarre la musique de fond.
+Quand une erreur critique se produit, le traitement audio s’arrête et tous les appels suivants à XAudio2 échouent. Pour résoudre ce problème, vous devez libérer l’instance XAudio2 et en créer une nouvelle. La méthode **audio :: Render** , qui est appelée à partir de la boucle de jeu chaque frame, vérifie tout d’abord l’indicateur **m\_engineExperiencedCriticalError** . Si cet indicateur est défini, elle l’efface, libère l’instance XAudio2 actuelle, initialise les ressources et démarre la musique de fond.
 
 ```cpp
 if (m_engineExperiencedCriticalError)
@@ -814,7 +814,7 @@ if (m_engineExperiencedCriticalError)
 }
 ```
 
-Jeu Marble Maze utilise également le **m\_engineExperiencedCriticalError** indicateur pour vous prémunir contre un appel dans XAudio2 lorsque aucun périphérique audio est disponible. Par exemple, la méthode **MarbleMazeMain::Update** ne traite pas le son pour les événements de roulement ou de collision quand cet indicateur est défini. L’application tente de réparer le moteur audio chaque trame, si nécessaire ; Toutefois, le **m\_engineExperiencedCriticalError** indicateur peut toujours être défini si l’ordinateur ne dispose pas d’un périphérique audio ou le casque est débranché et il n’existe aucun autre périphérique audio disponible.
+Le labyrinthe de marbre utilise également l’indicateur **m\_engineExperiencedCriticalError** pour se protéger contre l’appel à XAudio2 quand aucun périphérique audio n’est disponible. Par exemple, la méthode **MarbleMazeMain::Update** ne traite pas le son pour les événements de roulement ou de collision quand cet indicateur est défini. L’application tente de réparer le moteur audio à chaque trame, si nécessaire. Toutefois, l’indicateur **m\_engineExperiencedCriticalError** peut toujours être défini si l’ordinateur n’a pas de périphérique audio ou si le casque est débranché et qu’il n’y a pas d’autre périphérique audio disponible.
 
 > [!CAUTION]
 > En règle générale, n’exécutez pas d’opérations bloquantes dans le corps d’un rappel de moteur. Cela peut entraîner des problèmes de performances. Marble Maze définit un indicateur dans le rappel **OnCriticalError** et gère l’erreur ultérieurement pendant la phase régulière de traitement du son. Pour plus d’informations sur les rappels XAudio2, voir [Rappels XAudio2](https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-callbacks).
@@ -831,5 +831,5 @@ Si vous êtes intéressé par le développement de jeux sur UWP, consultez la do
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Ajout d’entrée et d’interactivité à l’exemple de labyrinthe de billes](adding-input-and-interactivity-to-the-marble-maze-sample.md)
-* [Développement du labyrinthe de billes, un jeu UWP en C++ et DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+* [Ajout de l’entrée et de l’interactivité à l’exemple de labyrinthe de marbre](adding-input-and-interactivity-to-the-marble-maze-sample.md)
+* [Développement de labyrinthe, un jeu UWP dans C++ et DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)

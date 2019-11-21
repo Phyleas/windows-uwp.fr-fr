@@ -5,12 +5,12 @@ ms.date: 06/28/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f54cb261f6ef94545d656d5bd4f624622cc6dfff
-ms.sourcegitcommit: dafda665fd3d25136194e452e7500b5bab076638
+ms.openlocfilehash: 7ba05e958a8746874becd4cfa17ec0e8f255ff00
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71982229"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74255142"
 ---
 # <a name="adding-my-people-support-to-an-application"></a>Ajout de la prise en charge de Mes Contacts à une application
 
@@ -26,7 +26,7 @@ La fonctionnalité Mes contacts permet aux utilisateurs d’épingler les contac
 + Windows 10 et Microsoft Visual Studio 2019. Pour en savoir plus sur l’installation, voir [Prendre en main Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
 + Connaissances de base de C# ou d’un langage de programmation orienté objet similaire. Pour vous familiariser avec C#, voir [Créer une application « Hello, world »](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d’ensemble
 
 Il y a trois choses à faire pour activer votre application afin d’utiliser la fonctionnalité Mes contacts :
 
@@ -104,7 +104,7 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 }
 ```
 
-« appId » est le nom de la famille de packages, suivi de « ! » et l’ID de la classe activable. Pour rechercher le nom de la famille de packages, ouvrez **Package.appxmanifest** à l’aide de l’éditeur par défaut, puis regardez dans l’onglet « Création de packages ». Ici, « App » est la classe activable correspondant à la vue de démarrage de l’application.
+« appId » est le nom de la famille de packages, suivi de « ! » et l’ID de la classe activable. Pour rechercher votre Nom de la famille de packages, ouvrez **Package.appxmanifest** à l’aide de l’éditeur par défaut, puis regardez dans l’onglet « Packages ». Ici, « Application » est la classe activable correspondant à l’affichage de démarrage de l'application.
 
 ## <a name="allow-contacts-to-invite-new-potential-users"></a>Autoriser des contacts à inviter de nouveaux utilisateurs potentiels
 
@@ -188,7 +188,7 @@ Si vous souhaitez que les contacts épinglés à la barre des tâches reçoivent
 
 Pour qu'un badge soit appliqué à une contact, le nœud toast de niveau supérieur doit inclure le paramètre hint-people pour indiquer le contact expéditeur ou associé. Ce paramètre peut prendre l'une des valeurs suivantes :
 + **Adresse de messagerie** 
-    + Exemple [https://doi.org/10.13012/J8PN93H8](mailto:johndoe@mydomain.com)
+    + Exemple mailto:johndoe@mydomain.com
 + **Numéro de téléphone** 
     + Exemple tél : 888-888-8888
 + **ID distant** 
@@ -251,11 +251,11 @@ async Task PinMultipleContacts(Contact[] contacts)
 
 **Remarque :** 
 
-## <a name="see-also"></a>Voir aussi
+## <a name="see-also"></a>Voir également
 + [Partage de Mes Contacts](my-people-sharing.md)
 + [Mes contacts Notificatons](my-people-notifications.md)
 + [Vidéo Channel 9 sur l’ajout du support technique de mes personnes à une application](https://channel9.msdn.com/Events/Build/2017/P4056)
-+ [Exemple d’intégration de My People](https://aka.ms/mypeoplebuild2017)
++ [Exemple d’intégration de My People](https://github.com/tonyPendolino/MyPeopleBuild2017)
 + [Exemple de carte de visite](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
 + [Documentation de la classe PinnedContactManager](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager)
 + [Connecter votre application à des actions sur une carte de visite](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/integrating-with-contacts)

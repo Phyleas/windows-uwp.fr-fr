@@ -6,16 +6,16 @@ ms.date: 05/08/2018
 ms.topic: article
 keywords: windows 10, uwp, évaluation de l’âge, classification des jeux, iarc, évaluation, questionnaire, organisme de classification, contrôle d'accès au contenu
 ms.localizationpriority: medium
-ms.openlocfilehash: 55592f2d16807e2ad359a21977bd483db0b2e089
-ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
+ms.openlocfilehash: bab98b50b1d53451708b7631f74d15947c60d4c8
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66826175"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260044"
 ---
 # <a name="age-ratings"></a>Classification par âge
 
-La page **Classification par âge** du [processus de soumission d’application](app-submissions.md) vous permet de fournir des informations sur votre application, afin que cette dernière reçoive les classifications par âge et contenu administrées par le système d’évaluation de [l’International Age Ratings Coalition (IARC)](https://go.microsoft.com/fwlink/p/?LinkId=716854). Cette classification fait référence à l’adéquation du contenu de l’application, plutôt qu’à l’âge du public cible de votre application.
+La page **Classification par âge** du [processus de soumission d’application](app-submissions.md) vous permet de fournir des informations sur votre application, afin que cette dernière reçoive les classifications par âge et contenu administrées par le système d’évaluation de [l’International Age Ratings Coalition (IARC)](https://www.globalratings.com/). Cette classification fait référence à l’adéquation du contenu de l’application, plutôt qu’à l’âge du public cible de votre application.
 
 ## <a name="answering-the-age-ratings-questionnaire"></a>Répondre au questionnaire relatif à la classification par âge
 
@@ -26,7 +26,7 @@ La première fois que vous soumettez une application (ou la première fois que v
 
 Vous devez répondre aux questions avec exactitude. Pour plus d’informations sur toute question, cliquez sur l’icône d’informations qui s’affiche en regard de celle-ci. Dans le cadre de ce processus, nous communiquons votre nom complet d’éditeur et votre adresse de messagerie à l’IARC. Après avoir répondu au questionnaire, le système d’évaluation de l’IARC fournit les informations de classification par âge et contenu en fonction de vos réponses. Nous utilisons ces informations de classification lors de l’affichage de votre application aux clients des différents marchés. Vous recevez également un e-mail de l’IARC vous confirmant la classification de l’application une fois qu’elle a été publiée.
 
-La première question vous demande d’indiquer la catégorie qui décrit le mieux votre application (et ses métadonnées). Une fois que vous avez effectué une sélection, d'autres questions s'affichent. Les questions spécifiques affichées varient en fonction des réponses précédentes. Pour obtenir plus d’informations qui peuvent vous aider à comprendre comment répondre à toute question, cliquez sur l’icône d’informations en regard de cette question. Si vous commettez une erreur, vous pouvez revenir en arrière ou recommencer le questionnaire pour fournir les réponses appropriées.
+La première question vous demande d’indiquer la catégorie qui décrit le mieux votre application (et ses métadonnées). Une fois que vous avez effectué une sélection, d'autres questions s'affichent. Les questions spécifiques affichées varient en fonction des réponses précédentes. Pour obtenir plus de détails susceptibles de vous aider à comprendre comment répondre à une question, cliquez sur l’icône d’informations en regard de cette question. Si vous commettez une erreur, vous pouvez revenir en arrière ou recommencer le questionnaire pour fournir les réponses appropriées.
 
 Une fois que vous avez fini de répondre aux questions, cliquez sur **Enregistrer et générer**. Vous pouvez alors voir toutes les évaluations attribuées à l’application et poursuivre la soumission. Vous pouvez également cliquer sur **Modifier** pour corriger l’une de vos réponses au questionnaire.
 
@@ -35,10 +35,10 @@ La prochaine fois que vous mettrez à jour votre application, l’ensemble des c
 <span id="boards" />
 
 > [!NOTE]
-> La loi sud-coréenne exige que les jeux disponibles en Corée du Sud soient évalués par rapport au [GRB (Game Rating Board)](https://go.microsoft.com/fwlink/p/?LinkId=228256) de Corée du Sud. Si vous soumettez un jeu et que vous souhaitez le proposer en Corée du Sud, vous devez renseigner cette section supplémentaire et charger votre certificat d’évaluation. Notez que si votre application n'est pas un jeu ou que vous ne souhaitez pas la proposer en Corée du Sud, vous pouvez laisser cette section vide.
+> La loi sud-coréenne exige que les jeux disponibles en Corée du Sud soient évalués par rapport au [GRB (Game Rating Board)](https://www.grb.or.kr/Default.aspx) de Corée du Sud. Si vous soumettez un jeu et que vous souhaitez le proposer en Corée du Sud, vous devez renseigner cette section supplémentaire et charger votre certificat d’évaluation. Notez que si votre application n'est pas un jeu ou que vous ne souhaitez pas la proposer en Corée du Sud, vous pouvez laisser cette section vide.
 
 > [!NOTE]
-> Si vous soumettez un jeu qui sera disponible à Taïwan, vous êtes obligé par la loi d’enregistrer la notation CSRR fournie à l’aide de [ce formulaire](https://go.microsoft.com/fwlink/?linkid=867281). 
+> Si vous soumettez un jeu qui sera disponible à Taïwan, vous êtes obligé par la loi d’enregistrer la notation CSRR fournie à l’aide de [ce formulaire](https://www.gamerating.org.tw/company_login.php). 
 
 <span id="appeal" />
 

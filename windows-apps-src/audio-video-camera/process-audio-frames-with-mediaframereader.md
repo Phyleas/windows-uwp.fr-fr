@@ -6,12 +6,12 @@ ms.date: 04/18/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 60abc29ad4f9e16dc9d37e99f94c9f30039c0087
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: f8d357dfbceafb6cc366b2880956ab3db231047d
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360701"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74256661"
 ---
 # <a name="process-audio-frames-with-mediaframereader"></a>Traiter des trames audio avec MediaFrameReader
 
@@ -21,12 +21,12 @@ Cet article vous explique comment utiliser un objet [**MediaFrameReader**](https
 > Les fonctionnalités décrites dans cet article sont disponibles uniquement à partir de Windows 10, version 1803.
 
 > [!NOTE] 
-> Il existe un exemple d’application Windows universelle qui illustre l’utilisation de **MediaFrameReader** pour afficher des images de différentes sources, notamment d’appareils photos couleur, de profondeur et infrarouges. Pour plus d’informations voir [Profils d’appareil photo](https://go.microsoft.com/fwlink/?LinkId=823230).
+> Il existe un exemple d’application Windows universelle qui illustre l’utilisation de **MediaFrameReader** pour afficher des images de différentes sources, notamment d’appareils photos couleur, de profondeur et infrarouges. Pour plus d’informations voir [Profils d’appareil photo](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraFrames).
 
 ## <a name="setting-up-your-project"></a>Configuration de votre projet
 Le processus d’acquisition de trames audio est en grande partie identique à l’acquisition d’autres types d’images multimédias. Comme avec toute application utilisant **MediaCapture**, vous devez déclarer que votre application utilise la fonctionnalité *webcam* avant de tenter d’accéder à un appareil photo. Si votre application capture à partir d’un périphérique audio, vous devez également déclarer la fonctionnalité *microphone*. 
 
-**Ajouter des fonctionnalités pour le manifeste d’application**
+**Ajouter des fonctionnalités au manifeste d’application**
 
 1.  Dans Microsoft Visual Studio, dans l’**Explorateur de solutions**, ouvrez le concepteur pour le manifeste de l’application en double-cliquant sur l’élément **package.appxmanifest**.
 2.  Sélectionnez l’onglet **Fonctionnalités**.
@@ -76,10 +76,10 @@ Vous pouvez utiliser un objet [**AudioFrame**](https://docs.microsoft.com/uwp/ap
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Blocs de processus multimédias avec MediaFrameReader](process-media-frames-with-mediaframereader.md)
+* [Traiter des frames multimédias avec MediaFrameReader](process-media-frames-with-mediaframereader.md)
 * [Appareil photo](camera.md)
-* [Photo de base, vidéo, audio et de capture à MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [Exemple de trames de la caméra](https://go.microsoft.com/fwlink/?LinkId=823230)
+* [Capture de photos, vidéo et audio de base avec MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Exemple de trames d’appareil photo](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraFrames)
 * [Graphes audio](audio-graphs.md)
  
 

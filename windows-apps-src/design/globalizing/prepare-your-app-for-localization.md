@@ -7,12 +7,12 @@ ms.date: 11/07/2017
 ms.topic: article
 keywords: windows 10, uwp, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
-ms.openlocfilehash: e262a647e8c37d088c3a5b081076275a52cb8071
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 341d46879895da221e3a17ba88f28fd22e7c5e27
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66363737"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258099"
 ---
 # <a name="make-your-app-localizable"></a>Rendre votre application localisable
 
@@ -22,7 +22,7 @@ Nous vous recommandons également de vous familiariser avec les [directives en m
 
 ## <a name="put-your-strings-into-resources-files-resw"></a>Placer vos chaînes dans les fichiers Ressources (.resw)
 
-Ne pas les littéraux de chaîne de coder en dur dans votre code impératif, le balisage XAML, ni dans le manifeste de package de votre application. Il convient plutôt de placer vos chaînes dans des fichiers Ressources (.resw) afin de pouvoir les adapter aux différents marchés locaux, quels que soient les codes binaires de votre application. Pour plus de détails, consultez [Localiser les chaînes dans l’interface utilisateur et le manifeste du package d’application](../../app-resources/localize-strings-ui-manifest.md).
+Ne codez pas en dur les littéraux de chaîne dans votre code impératif, le balisage XAML ni dans votre manifeste de package d’application. Il convient plutôt de placer vos chaînes dans des fichiers Ressources (.resw) afin de pouvoir les adapter aux différents marchés locaux, quels que soient les codes binaires de votre application. Pour plus de détails, consultez [Localiser les chaînes dans l’interface utilisateur et le manifeste du package d’application](../../app-resources/localize-strings-ui-manifest.md).
 
 Cette rubrique vous présente également comment ajouter des commentaires à votre fichier Ressources (.resw) par défaut. Par exemple, si vous adoptez une voix ou un ton informel, veillez à le stipuler dans les commentaires. Afin de minimiser les dépenses, confirmez également que seules les chaînes devant être traduites sont fournies aux traducteurs.
 
@@ -50,9 +50,9 @@ De plus, une chaîne comme « text » ou « fax » peut être utilisée en t
 
 En bref, factorisez vos chaînes en morceaux fonctionnant dans tous les contextes. Dans certaines cas, une chaîne devra constituer une phrase entière.
 
-Considérez la chaîne suivante : « Le {0} pas pu être synchronisé. »
+Prenons la chaîne suivante : « le {0} n’a pas pu être synchronisé ».
 
-Une variété de mots pourrait remplacer {0}, comme « rendez-vous », « tâche » ou « document ». Si cet exemple ne pose aucun problème en anglais, il n’en va pas de même dans tous ces cas pour sa traduction en allemand, par exemple. Remarquez que dans les phrases allemandes suivantes, certains mots dans la chaîne de modèle (« Der », « Die », « Das ») doivent correspondre au mot paramétré :
+Plusieurs mots peuvent remplacer {0}, tels que « rendez-vous », « tâche » ou « document ». Si cet exemple ne pose aucun problème en anglais, il n’en va pas de même dans tous ces cas pour sa traduction en allemand, par exemple. Remarquez que dans les phrases allemandes suivantes, certains mots dans la chaîne de modèle (« Der », « Die », « Das ») doivent correspondre au mot paramétré :
 
 | Anglais                                    | Allemand                                           |
 |:------------------------------------------ |:------------------------------------------------ |
@@ -60,7 +60,7 @@ Une variété de mots pourrait remplacer {0}, comme « rendez-vous », « tâ
 | The task could not be synchronized.        | Die Aufgabe konnte nicht synchronisiert werden.  |
 | The document could not be synchronized.    | Das Dokument konnte nicht synchronisiert werden. |
 
-Autre exemple, considérez la phrase « me le rappeler dans {0} minute (s). » Si « minute(s) » fonctionne en français, cela n’est pas forcément le cas avec d’autres langues. Par exemple, le polonais utilise « minuta », « minuty » ou « minut » selon le contexte.
+En guise d’autre exemple, considérez la phrase « me le rappeler en {0} minute (s) ». Si « minute(s) » fonctionne en français, cela n’est pas forcément le cas avec d’autres langues. Par exemple, le polonais utilise « minuta », « minuty » ou « minut » selon le contexte.
 
 Pour résoudre ce problème, localisez la phrase entière, plutôt qu’un mot individuel. Cela peut paraître comme une charge de travail supplémentaire et une solution dépourvue d’élégance, mais il s’agit de la solution optimale pour les raisons suivantes :
 
@@ -82,22 +82,22 @@ Peuso-localisez votre application pour découvrir tout problème d'adaptabilité
 
 ## <a name="deployment-considerations"></a>Points à prendre en considération pour le déploiement
 
-Lorsque vous installez une application qui contient les données de la langue localisée, vous constaterez peut-être que seule la langue par défaut est disponible pour l’application même si vous avez inclus au départ les ressources pour plusieurs langues. Il s’agit, car le processus d’installation est optimisé pour installer uniquement les ressources de langue qui correspond à la langue actuelle et la culture de l’appareil. Par conséquent, si votre appareil est configuré pour en-US, uniquement les ressources de langue en-US sont installés avec votre application.
+Lorsque vous installez une application qui contient des données linguistiques localisées, vous pouvez constater que seule la langue par défaut est disponible pour l’application, même si vous avez initialement inclus des ressources pour plusieurs langues. Cela est dû au fait que le processus d’installation est optimisé pour installer uniquement les ressources de langue qui correspondent à la langue et à la culture actuelles de l’appareil. Par conséquent, si votre appareil est configuré pour en-US, seules les ressources de langue en-US sont installées avec votre application.
 
 > [!NOTE]
-> Il n’est pas possible d’installer la prise en charge de langues supplémentaires pour votre application après l’installation initiale. Si vous modifiez la langue par défaut après l’installation d’une application, l’application continue d’utiliser uniquement les ressources de langue d’origine.
+> Il n’est pas possible d’installer une prise en charge linguistique supplémentaire pour votre application après l’installation initiale. Si vous modifiez la langue par défaut après l’installation d’une application, l’application continue à utiliser uniquement les ressources de langue d’origine.
 
-Si vous souhaitez vérifier que toutes les ressources linguistiques sont disponibles après l’installation, créez un fichier de configuration du package d’application qui spécifie que certaines ressources sont nécessaires pendant l’installation (y compris les ressources de langue). Cette fonctionnalité d’installation optimisé est automatiquement activée lors .appxbundle de votre application est généré lors de l’empaquetage. Pour plus d’informations, consultez [vous assurer que les ressources sont installées sur un appareil requière ou si un appareil](https://docs.microsoft.com/en-us/previous-versions/dn482043(v=vs.140)).
+Si vous souhaitez vous assurer que toutes les ressources de langue sont disponibles après l’installation, créez un fichier de configuration pour le package d’application qui spécifie que certaines ressources sont requises lors de l’installation (y compris les ressources de langue). Cette fonctionnalité d’installation optimisée est automatiquement activée lorsque le. appxbundle de votre application est généré pendant l’empaquetage. Pour plus d’informations, consultez [vérifier que les ressources sont installées sur un appareil, qu’un appareil en ait besoin ou non](https://docs.microsoft.com/en-us/previous-versions/dn482043(v=vs.140)).
 
-Si vous le souhaitez, pour que toutes les ressources sont installés (et pas seulement un sous-ensemble), vous pouvez désactiver la génération de .appxbundle lorsque vous empaquetez votre application. Cela n’est toutefois recommandé car il peut augmenter l’heure d’installation de votre application.
+Si vous le souhaitez, pour vous assurer que toutes les ressources sont installées (pas seulement un sous-ensemble), vous pouvez désactiver la génération. appxbundle quand vous empaquetez votre application. Toutefois, cela n’est pas recommandé, car il peut augmenter le temps d’installation de votre application.
 
-Désactiver la génération automatique de la .appxbundle en définissant l’attribut « Générer un lot d’applications » à « jamais » :
+Désactivez la génération automatique du package. appxbundle en affectant à l’attribut « générer un bundle d’applications » la valeur « jamais » :
 
-1. Dans Visual Studio, cliquez sur le nom du projet
-2. Sélectionnez **Store** -> **créer des packages d’application...**
-3. Dans le **créer vos Packages** boîte de dialogue, sélectionnez **je souhaite créer des packages à télécharger dans le Microsoft Store à l’aide d’un nouveau nom d’application** puis cliquez sur **suivant**.
-4. Dans le **sélectionner un nom d’application** boîte de dialogue, sélectionnez/Créer une application de noms pour votre package.
-5. Dans le **sélectionner et configurer des Packages** boîte de dialogue, définissez **générer le lot d’application** à **jamais**.
+1. Dans Visual Studio, cliquez avec le bouton droit sur le nom du projet
+2. Sélectionnez **stocker** -> **créer des packages d’application...**
+3. Dans la boîte de dialogue **créer vos packages** , sélectionnez **je souhaite créer des packages à charger sur le Microsoft Store à l’aide d’un nouveau nom d’application** , puis cliquez sur **suivant**.
+4. Dans la boîte de dialogue **Sélectionner un nom d’application** , sélectionnez/Créez un nom d’application pour votre package.
+5. Dans la boîte de dialogue **Sélectionner et configurer des packages** , affectez à **générer un bundle d’applications** la valeur **jamais**.
 
 ## <a name="geopolitical-awareness"></a>Conscience géopolitique
 
@@ -115,7 +115,7 @@ Ne supposez pas que toutes les langues expriment les paramètres dans le même o
     string.Format("Every {0} {1}", monthName, dayNumber); // For example, "Every April 1".
 ```
 
-La chaîne de format de cet exemple fonctionne pour l'anglais (États-Unis). Mais elle n'est pas appropriée pour l'allemand (Allemagne) dans la mesure où le jour et le mois sont affichés dans l'ordre inverse. Vérifiez que le traducteur sait l’intention de chacun des paramètres afin qu’ils inverser l’ordre des éléments de format dans la chaîne de format (par exemple, «{1} {0}») en fonction de la langue cible.
+La chaîne de format de cet exemple fonctionne pour l'anglais (États-Unis). Mais elle n'est pas appropriée pour l'allemand (Allemagne) dans la mesure où le jour et le mois sont affichés dans l'ordre inverse. Assurez-vous que le traducteur connaît l’intention de chacun des paramètres afin qu’ils puissent inverser l’ordre des éléments de mise en forme dans la chaîne de format (par exemple, «{1} {0}») en fonction de la langue cible.
 
 ## <a name="dont-over-localize"></a>Ne sur-localisez pas.
 
@@ -134,20 +134,20 @@ Une fois que les chaînes ont été séparées en fichiers de ressources, elles 
 
 Envisagez ces options.
 
-- **Les fichiers de ressources peuvent être traduites en les ouvrant directement dans le projet.** Cette approche fonctionne bien pour un projet qui possède un volume réduit de chaînes devant être traduites en deux ou trois langues. Elle est adaptée pour un scénario dans lequel un développeur parlerait plusieurs langues et accepterait de traiter le processus de traduction. Cette approche a l’avantage d’être rapide, de ne requérir aucun outil et de minimiser les risques d’erreurs de traduction. Mais elle n’est pas évolutive. En particulier, les ressources dans les différentes langues peuvent aisément se désynchroniser, ce qui peut entraîner de mauvaises expériences utilisateur et des difficultés de maintenance.
-- **Les fichiers de ressources de chaîne sont au format texte XML ou ResJSON, donc pu être remis pour la traduction à l’aide de n’importe quel éditeur de texte. Les versions traduites des fichiers sont copiés puis réintégré dans le projet.** Cette approche présente un risque, car les traducteurs pourraient modifier accidentellement les balises XML. Cependant, elle permet le déroulement de la traduction en dehors du projet Microsoft Visual Studio. Cette approche pourrait bien fonctionner pour les projets devant être traduits vers un nombre réduit de langues. Le format XLIFF est un format XML spécifiquement conçu pour être utilisé en localisation et devrait être bien pris en charge par les prestataires de localisation et les outils de localisation. Vous pouvez utiliser le [Kit de ressources pour application multilingue](https://docs.microsoft.com/previous-versions/windows/apps/jj572370(v=win.10)) pour générer des fichiers XLIFF à partir d’autres fichiers de ressources, tels que les fichiers .resw ou .resjson.
+- **Les fichiers de ressources peuvent être traduits en les ouvrant directement dans le projet.** Cette approche fonctionne bien pour un projet qui possède un volume réduit de chaînes devant être traduites en deux ou trois langues. Elle est adaptée pour un scénario dans lequel un développeur parlerait plusieurs langues et accepterait de traiter le processus de traduction. Cette approche a l’avantage d’être rapide, de ne requérir aucun outil et de minimiser les risques d’erreurs de traduction. Mais elle n’est pas évolutive. En particulier, les ressources dans les différentes langues peuvent aisément se désynchroniser, ce qui peut entraîner de mauvaises expériences utilisateur et des difficultés de maintenance.
+- **Les fichiers de ressources de type chaîne sont au format de texte XML ou ResJSON. ils peuvent donc être rendus pour la traduction à l’aide de n’importe quel éditeur de texte. Les fichiers traduits sont ensuite recopiés dans le projet.** Cette approche présente un risque, car les traducteurs pourraient modifier accidentellement les balises XML. Cependant, elle permet le déroulement de la traduction en dehors du projet Microsoft Visual Studio. Cette approche pourrait bien fonctionner pour les projets devant être traduits vers un nombre réduit de langues. Le format XLIFF est un format XML spécifiquement conçu pour être utilisé en localisation et devrait être bien pris en charge par les prestataires de localisation et les outils de localisation. Vous pouvez utiliser le [Kit de ressources pour application multilingue](https://docs.microsoft.com/previous-versions/windows/apps/jj572370(v=win.10)) pour générer des fichiers XLIFF à partir d’autres fichiers de ressources, tels que les fichiers .resw ou .resjson.
 
 > [!NOTE]
-> Localisation peut également être nécessaire pour les autres ressources, y compris les images et les fichiers audio.
+> La localisation peut également être nécessaire pour d’autres ressources, y compris des images et des fichiers audio.
 
-Vous devez également envisager les éléments suivants :
+Vous devez également prendre en compte les éléments suivants :
 
-- **Outils de localisation** un certain nombre d’outils de localisation sont disponible pour l’analyse des fichiers de ressources et n’autorisant que les chaînes traduisibles à être modifié par des traducteurs. Cette approche réduit le risque qu’un traducteur modifie accidentellement les balises XML. Elle présente cependant l’inconvénient d’introduire un nouvel outil et un nouveau processus dans le processus de localisation. Un outil de localisation est approprié pour les projets avec un volume élevé de chaînes, mais un nombre réduit de langues. Pour en savoir plus, voir [Comment utiliser le Kit de ressources pour application multilingue](https://docs.microsoft.com/previous-versions/windows/apps/jj572370(v=win.10)).
-- **Les fournisseurs de localisation** envisagez d’utiliser un fournisseur de localisation si votre application contient des chaînes étendues qui doivent être traduites en un grand nombre de langues. Un prestataire de localisation peut conseiller des outils et des processus, ainsi que traduire vos fichiers de ressources. Il s’agit d’une solution idéale, mais c’est aussi l’option la plus coûteuse et elle peut augmenter le délai de traitement de votre contenu traduit.
+- **Outils de localisation** Un certain nombre d’outils de localisation sont disponibles pour analyser les fichiers de ressources et autoriser uniquement la modification des chaînes convertibles par les traducteurs. Cette approche réduit le risque qu’un traducteur modifie accidentellement les balises XML. Elle présente cependant l’inconvénient d’introduire un nouvel outil et un nouveau processus dans le processus de localisation. Un outil de localisation est approprié pour les projets avec un volume élevé de chaînes, mais un nombre réduit de langues. Pour en savoir plus, voir [Comment utiliser le Kit de ressources pour application multilingue](https://docs.microsoft.com/previous-versions/windows/apps/jj572370(v=win.10)).
+- **Fournisseurs de localisation** Envisagez d’utiliser un fournisseur de localisation si votre application contient des chaînes étendues qui doivent être traduites dans un grand nombre de langues. Un prestataire de localisation peut conseiller des outils et des processus, ainsi que traduire vos fichiers de ressources. Il s’agit d’une solution idéale, mais c’est aussi l’option la plus coûteuse et elle peut augmenter le délai de traitement de votre contenu traduit.
 
 ## <a name="keep-access-keys-and-labels-consistent"></a>Utiliser des touches d’accès rapide et des étiquettes cohérentes
 
-La « synchronisation » des touches d’accès rapide utilisées dans les options d’accessibilité avec l’affichage des touches d’accès rapide localisées relève du défi, car les deux ressources de type chaîne sont classées dans deux sections distinctes. Veillez à fournir des commentaires pour la chaîne d’étiquette tels que : `Make sure that the emphasized shortcut key  is synchronized with the access key.`
+La « synchronisation » des touches d’accès rapide utilisées dans les options d’accessibilité avec l’affichage des touches d’accès rapide localisées relève du défi, car les deux ressources de type chaîne sont classées dans deux sections distinctes. Veillez à fournir des commentaires pour la chaîne d’étiquette, par exemple : `Make sure that the emphasized shortcut key  is synchronized with the access key.`
 
 ## <a name="support-furigana-for-japanese-strings-that-can-be-sorted"></a>Prendre en charge les furigana pour les chaînes japonaises qui peuvent être triées
 
@@ -166,8 +166,8 @@ Les *furigana* contournent ce problème en permettant à l’utilisateur ou au c
             Resources.resw
     ```
 
-3. Dans Resources.resw pour ja-JP général : Ajouter une ressource de chaîne pour Appname « 希蒼 »
-4. Dans Resources.altform-msft-phonetic.resw pour les ressources de furigana japonais : Valoriser furigana pour AppName « のあ »
+3. Dans Resources.resw pour le dossier général ja-JP : ajoutez une ressource de type chaîne pour le nom d’application « 希蒼 ».
+4. Dans Resources.altform-msft-phonetic.resw pour les ressources japonaises avec furigana : ajoutez la valeur de furigana pour le nom d’application « のあ ».
 
 L’utilisateur peut rechercher le nom d’application « 希蒼 » en utilisant à la fois la valeur de furigana « のあ » (noa) et la valeur phonétique (en utilisant la fonction **GetPhonetic** à partir de l’éditeur de méthode d’entrée (IME)) « まれあお » (mare-ao).
 
@@ -186,8 +186,8 @@ Le classement suit le format de l’application **Région** du Panneau de config
 - [Localiser les chaînes dans l’interface utilisateur et le manifeste du package d’application](../../app-resources/localize-strings-ui-manifest.md)
 - [Personnaliser vos ressources pour la langue, l’échelle, le contraste élevé et d’autres qualificateurs](../../app-resources/tailor-resources-lang-scale-contrast.md)
 - [Ajuster la disposition et les polices, et prendre en charge le sens du flux DàG](adjust-layout-and-fonts--and-support-rtl.md)
-- [Événements de modification de la mise à jour des images en réponse à la valeur de qualificateur](../../app-resources/images-tailored-for-scale-theme-contrast.md#updating-images-in-response-to-qualifier-value-change-events)
+- [Mise à jour des images en réponse aux événements de modification de valeur de qualificateur](../../app-resources/images-tailored-for-scale-theme-contrast.md#updating-images-in-response-to-qualifier-value-change-events)
 
 ## <a name="samples"></a>Exemples
 
-- [Exemple de localisation et de ressources d’application](https://go.microsoft.com/fwlink/p/?linkid=254478)
+- [Exemple de ressources et de localisation d’application](https://code.msdn.microsoft.com/windowsapps/Application-resources-and-cd0c6eaa)
