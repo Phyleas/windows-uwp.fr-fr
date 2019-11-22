@@ -1,7 +1,7 @@
 - name: Créer des applications pour Windows
   items:
     - name: Vue d’ensemble
-      href: apps/index.md
+      href: apps/index.yml
     - name: Créer des applications de bureau
       items:
         - name: Vue d’ensemble
