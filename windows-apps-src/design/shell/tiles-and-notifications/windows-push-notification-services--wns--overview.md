@@ -1,11 +1,11 @@
 ---
-Description: Les services de notifications Push Windows (WNS) permettent aux développeurs tiers d’envoyer des mises à jour de toast, de vignette et de badge, ainsi que des mises à jour brutes à partir de leur propre service cloud. Il en résulte un mécanisme fiable et optimal de remise des nouvelles mises à jour aux utilisateurs.
+Description: Les services de notification Push Windows (WNS) permettent aux développeurs tiers d’envoyer des mises à jour de toast, de vignette et de badge, ainsi que des mises à jour brutes à partir de leur propre service cloud. Il en résulte un mécanisme fiable et optimal de remise des nouvelles mises à jour aux utilisateurs.
 title: Vue d’ensemble des services de notifications Push Windows (WNS)
 ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 965d823f48cacf4af4999e45ffd02f421c8927e7
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -17,7 +17,7 @@ ms.locfileid: "74259704"
 # <a name="windows-push-notification-services-wns-overview"></a>Vue d’ensemble des services de notifications Push Windows (WNS)
  
 
-Les services de notifications Push Windows (WNS) permettent aux développeurs tiers d’envoyer des mises à jour de toast, de vignette et de badge, ainsi que des mises à jour brutes à partir de leur propre service cloud. Il en résulte un mécanisme fiable et optimal de remise des nouvelles mises à jour aux utilisateurs.
+Les services de notification Push Windows (WNS) permettent aux développeurs tiers d’envoyer des mises à jour de toast, de vignette et de badge, ainsi que des mises à jour brutes à partir de leur propre service cloud. Il en résulte un mécanisme fiable et optimal de remise des nouvelles mises à jour aux utilisateurs.
 
 ## <a name="how-it-works"></a>Fonctionnement
 
@@ -36,7 +36,7 @@ Le diagramme ci-après présente l’intégralité du flux de données impliqué
 ## <a name="registering-your-app-and-receiving-the-credentials-for-your-cloud-service"></a>Inscription de votre application et réception des informations d’identification de votre service cloud
 
 
-Pour que vous puissiez envoyer des notifications à l’aide des services WNS, votre application doit au préalable être inscrite auprès du Tableau de bord du Store. Cela vous fournit les informations d’identification de votre application que votre service cloud utilisera lors de l’authentification à l’aide des services WNS. Ces informations d’identification se composent d’un identificateur de sécurité du package (SID) et d’une clé secrète. To perform this registration, sign in to [Partner Center](https://partner.microsoft.com/dashboard). Après avoir créé votre application, vous pouvez récupérer les informations d’identification en suivant les instructions disponibles sur la page **Gestion des applications - WNS/MPNS**. Si vous souhaitez utiliser la solution Services Live, suivez le lien **Site Services Live** sur cette page.
+Pour que vous puissiez envoyer des notifications à l’aide des services WNS, votre application doit au préalable être inscrite auprès du Tableau de bord du Store. Cela vous fournit les informations d’identification de votre application que votre service cloud utilisera lors de l’authentification à l’aide des services WNS. Ces informations d’identification se composent d’un identificateur de sécurité du package (SID) et d’une clé secrète. Pour effectuer cette inscription, connectez-vous à l' [espace partenaires](https://partner.microsoft.com/dashboard). Après avoir créé votre application, vous pouvez récupérer les informations d’identification en suivant les instructions disponibles sur la page **Gestion des applications - WNS/MPNS**. Si vous souhaitez utiliser la solution Services Live, suivez le lien **Site Services Live** sur cette page.
 
 Chaque application dispose de son propre ensemble d’informations d’identification pour son service cloud. Ces informations d’identification ne peuvent pas être utilisées pour envoyer des notifications à une autre application.
 
@@ -51,7 +51,7 @@ Une fois que l’application a créé un URI de canal, elle l’envoie à son se
 
 ### <a name="important-notes"></a>Remarques importantes
 
--   Nous ne garantissons pas que l’URI de canal de notification d’une application restera toujours le même. Nous vous conseillons de faire en sorte que l’application demande un nouveau canal chaque fois qu’elle s’exécute et qu’elle mette à jour son service lorsque l’URI change. Le développeur ne doit jamais modifier l’URI de canal et doit le considérer comme une chaîne de boîte noire. Actuellement, les URI de canal expirent au bout de 30 jours. If your Windows 10 app will periodically renew its channel in the background then you can download the [Push and periodic notifications sample](https://code.msdn.microsoft.com/windowsapps/push-and-periodic-de225603) for Windows 8.1 and re-use its source code and/or the pattern it demonstrates.
+-   Nous ne garantissons pas que l’URI de canal de notification d’une application restera toujours le même. Nous vous conseillons de faire en sorte que l’application demande un nouveau canal chaque fois qu’elle s’exécute et qu’elle mette à jour son service lorsque l’URI change. Le développeur ne doit jamais modifier l’URI de canal et doit le considérer comme une chaîne de boîte noire. Actuellement, les URI de canal expirent au bout de 30 jours. Si votre application Windows 10 renouvelle régulièrement son canal en arrière-plan, vous pouvez télécharger l' [exemple de notifications push et périodiques](https://code.msdn.microsoft.com/windowsapps/push-and-periodic-de225603) pour Windows 8.1 et réutiliser son code source et/ou le modèle qu’il illustre.
 -   C’est vous, le développeur, qui implémentez l’interface entre le service cloud et l’application cliente. Nous recommandons que l’application passe par un processus d’authentification auprès de son propre service et qu’elle transmette les données par le biais d’un protocole sécurisé tel que HTTPS.
 -   Il est important que le service cloud offre toujours la garantie que l’URI de canal utilise le domaine « notify.windows.com ». Le service ne doit jamais effectuer une transmission de type push de notifications vers un canal se trouvant sur un autre domaine. Si jamais le rappel pour votre application était compromis, une personne malveillante pourrait soumettre un URI de canal pour tromper WNS. Sans une inspection du domaine, votre service cloud pourrait divulguer des informations à cette personne malveillante sans le savoir.
 -   Si votre service cloud tente d'envoyer une notification à un canal ayant expiré, le service WNS renvoie le [code de réponse 410](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)). En réponse à ce code, votre service ne doit plus chercher à envoyer des notifications à cet URI.
@@ -70,9 +70,9 @@ Au niveau le plus élevé, la chaîne d’informations se présente comme suit :
 
 ![Diagramme WNS concernant l’authentification du service cloud](images/wns-diagram-02.png)
 
-Dans le cadre de l’authentification auprès de WNS, le service cloud soumet une requête HTTP sur SSL (Secure Sockets Layer). Les paramètres sont fournis au format « application/x-www-for-urlencoded ». Supply your Package SID in the "client\_id" field and your secret key in the "client\_secret" field. Pour obtenir des détails sur la syntaxe, voir la référence sur la [demande de jeton d’accès](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)).
+Dans le cadre de l’authentification auprès de WNS, le service cloud soumet une requête HTTP sur SSL (Secure Sockets Layer). Les paramètres sont fournis au format « application/x-www-for-urlencoded ». Indiquez le SID du package dans le champ « ID du client\_» et votre clé secrète dans le champ « client\_secret ». Pour obtenir des détails sur la syntaxe, voir la référence sur la [demande de jeton d’accès](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)).
 
-**Note**  This is just an example, not cut-and-paste code that you can successfully use in your own code.
+**Notez**  il s’agit simplement d’un exemple, pas de code de coupe-coller que vous pouvez utiliser avec succès dans votre propre code.
 
  
 
@@ -160,20 +160,20 @@ Par exemple, au cours d’une journée active d’échanges sur le marché bours
 ## <a name="push-notifications-and-battery-saver"></a>Notifications Push et économiseur de batterie
 
 
-L’économiseur de batterie prolonge l’autonomie en limitant l’activité en arrière-plan sur l’appareil. Windows 10 lets the user set battery saver to turn on automatically when the battery drops below a specified threshold. Lorsque l’économiseur de batterie est activé, la réception de notifications Push est désactivée afin de réduire la consommation d’énergie. Il y a toutefois quelques exceptions. The following Windows 10 battery saver settings (found in the **Settings** app) allow your app to receive push notifications even when battery saver is on.
+L’économiseur de batterie prolonge l’autonomie en limitant l’activité en arrière-plan sur l’appareil. Windows 10 permet à l’utilisateur de configurer l’économiseur de batterie pour qu’il s’active automatiquement lorsque la batterie passe sous un seuil spécifié. Lorsque l’économiseur de batterie est activé, la réception de notifications Push est désactivée afin de réduire la consommation d’énergie. Il y a toutefois quelques exceptions. Les paramètres de l’économiseur de batterie Windows 10 suivants (situés dans l’application **paramètres** ) permettent à votre application de recevoir des notifications push même lorsque l’économiseur de batterie est activé.
 
--   **Autoriser les notifications Push d’une application en cas d’utilisation d’un économiseur de batterie** : ce paramètre permet à toutes les applications de recevoir des notifications Push lorsque l’économiseur de batterie est activé. Note that this setting applies only to Windows 10 for desktop editions (Home, Pro, Enterprise, and Education).
+-   **Autoriser les notifications Push d’une application en cas d’utilisation d’un économiseur de batterie** : ce paramètre permet à toutes les applications de recevoir des notifications Push lorsque l’économiseur de batterie est activé. Notez que ce paramètre s’applique uniquement à Windows 10 pour les éditions Desktop (famille, professionnel, entreprise et éducation).
 -   **Toujours autoriser** : ce paramètre permet à des applications spécifiques de s’exécuter en arrière-plan lorsque l’économiseur de batterie est activé (réception de notifications Push comprise). Cette liste est mise à jour manuellement par l’utilisateur.
 
-Il n’existe aucun moyen de vérifier l’état de ces deux paramètres, mais vous pouvez vérifier l’état de l’économiseur de batterie. In Windows 10, use the [**EnergySaverStatus**](https://docs.microsoft.com/uwp/api/Windows.System.Power.PowerManager.EnergySaverStatus) property to check battery saver state. Votre application peut également utiliser l’événement [**EnergySaverStatusChanged**](https://docs.microsoft.com/uwp/api/Windows.System.Power.PowerManager.EnergySaverStatusChanged) pour détecter les changements d’état de l’économiseur de batterie.
+Il n’existe aucun moyen de vérifier l’état de ces deux paramètres, mais vous pouvez vérifier l’état de l’économiseur de batterie. Dans Windows 10, utilisez la propriété [**EnergySaverStatus**](https://docs.microsoft.com/uwp/api/Windows.System.Power.PowerManager.EnergySaverStatus) pour vérifier l’état de l’économiseur de batterie. Votre application peut également utiliser l’événement [**EnergySaverStatusChanged**](https://docs.microsoft.com/uwp/api/Windows.System.Power.PowerManager.EnergySaverStatusChanged) pour détecter les changements d’état de l’économiseur de batterie.
 
-Si votre application s’appuie en grande partie sur les notifications Push, nous vous recommandons d’avertir les utilisateurs qu’ils risquent de ne pas recevoir de notifications lorsque l’économiseur de batterie est activé, et de leur faciliter l’accès aux **paramètres de l’économiseur de batterie**. Using the battery saver settings URI scheme in Windows 10, `ms-settings:batterysaver-settings`, you can provide a convenient link to the Settings app.
+Si votre application s’appuie en grande partie sur les notifications Push, nous vous recommandons d’avertir les utilisateurs qu’ils risquent de ne pas recevoir de notifications lorsque l’économiseur de batterie est activé, et de leur faciliter l’accès aux **paramètres de l’économiseur de batterie**. À l’aide du schéma d’URI des paramètres de l’économiseur de batterie dans Windows 10, `ms-settings:batterysaver-settings`, vous pouvez fournir un lien pratique vers l’application paramètres.
 
-**Tip**   When notifying the user about battery saver settings, we recommend providing a way to suppress the message in the future. Par exemple, la case à cocher `dontAskMeAgainBox` dans l’exemple suivant conserve la préférence de l’utilisateur dans [**LocalSettings**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationData.LocalSettings).
+**Conseil**   lors de la notification de l’utilisateur sur les paramètres de l’économiseur de batterie, nous vous recommandons de fournir un moyen de supprimer le message à l’avenir. Par exemple, la case à cocher `dontAskMeAgainBox` dans l’exemple suivant conserve la préférence de l’utilisateur dans [**LocalSettings**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationData.LocalSettings).
 
  
 
-Here's an example of how to check if battery saver is turned on in Windows 10. Cet exemple avertit l’utilisateur et ouvre l’application Paramètres au niveau des **paramètres de l’économiseur de batterie**. L’élément `dontAskAgainSetting` permet à l’utilisateur de supprimer le message s’il ne souhaite plus être averti.
+Voici un exemple de vérification de l’activation de l’économiseur de batterie dans Windows 10. Cet exemple avertit l’utilisateur et ouvre l’application Paramètres au niveau des **paramètres de l’économiseur de batterie**. L’élément `dontAskAgainSetting` permet à l’utilisateur de supprimer le message s’il ne souhaite plus être averti.
 
 ```cs
 using System;
@@ -243,14 +243,14 @@ Voici le code XAML pour l’élément [**ContentDialog**](https://docs.microsoft
 ## <a name="related-topics"></a>Rubriques connexes
 
 
-* [Send a local tile notification](sending-a-local-tile-notification.md)
-* [Quickstart: Sending a push notification](https://docs.microsoft.com/previous-versions/windows/apps/hh868252(v=win.10))
-* [How to update a badge through push notifications](https://docs.microsoft.com/previous-versions/windows/apps/hh465450(v=win.10))
-* [How to request, create, and save a notification channel](https://docs.microsoft.com/previous-versions/windows/apps/hh465412(v=win.10))
-* [How to intercept notifications for running applications](https://docs.microsoft.com/previous-versions/windows/apps/jj709907(v=win.10))
-* [How to authenticate with the Windows Push Notification Service (WNS)](https://docs.microsoft.com/previous-versions/windows/apps/hh465407(v=win.10))
-* [Push notification service request and response headers](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))
-* [Guidelines and checklist for push notifications](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
+* [Envoyer une notification de vignette locale](sending-a-local-tile-notification.md)
+* [Démarrage rapide : envoi d’une notification push](https://docs.microsoft.com/previous-versions/windows/apps/hh868252(v=win.10))
+* [Comment mettre à jour un badge via des notifications push](https://docs.microsoft.com/previous-versions/windows/apps/hh465450(v=win.10))
+* [Comment demander, créer et enregistrer un canal de notification](https://docs.microsoft.com/previous-versions/windows/apps/hh465412(v=win.10))
+* [Comment intercepter des notifications pour les applications en cours d’exécution](https://docs.microsoft.com/previous-versions/windows/apps/jj709907(v=win.10))
+* [Comment s’authentifier avec le service de notifications push Windows (WNS)](https://docs.microsoft.com/previous-versions/windows/apps/hh465407(v=win.10))
+* [En-têtes de demande et de réponse du service de notification push](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))
+* [Instructions et liste de vérification pour les notifications push](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
 * [Notifications brutes](https://docs.microsoft.com/previous-versions/windows/apps/hh761488(v=win.10))
  
 

@@ -83,7 +83,7 @@ Le type de matériau par défaut est le type **Matériau de base**, qui comporte
 [!code-cs[BaseMaterialGroup](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetBaseMaterialGroup)]
 
 > [!NOTE]
->l’appareil de fabrication en 3D @no__t 0The détermine les éléments physiques disponibles mappés sur les éléments de matériel virtuel stockés dans le 3MF. Le mappage des matériaux n’est pas nécessairement de type 1:1. En effet, si une imprimante 3D n’utilise qu’un seul matériau, elle imprimera la totalité du modèle dans ce matériau, quels que soient les différents matériaux attribués à des objets ou faces spécifiques.
+> l’appareil de fabrication 3D détermine les éléments physiques disponibles mappés sur les éléments de matériel virtuel stockés dans le 3MF. Le mappage des matériaux n’est pas nécessairement de type 1:1. En effet, si une imprimante 3D n’utilise qu’un seul matériau, elle imprimera la totalité du modèle dans ce matériau, quels que soient les différents matériaux attribués à des objets ou faces spécifiques.
 
 ### <a name="color-materials"></a>Matériaux de couleur
 

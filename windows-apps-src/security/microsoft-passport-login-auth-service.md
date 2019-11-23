@@ -19,7 +19,7 @@ Voici la deuxième partie de la procédure complète sur l’utilisation de Wind
 
 Pour créer ce projet, il vous faut connaître C# et XAML. Vous devrez également utiliser Visual Studio 2015 (Community Edition ou version ultérieure) sur un ordinateur Windows 10.
 
-## <a name="exercise-1-server-side-logic"></a>Exercice 1 : Logique côté serveur
+## <a name="exercise-1-server-side-logic"></a>Exercice 1 : Logique côté serveur
 
 
 Dans cet exercice, vous commencerez par créer une base de données et un serveur locaux fictifs à l’aide de l’application Windows Hello conçue précédemment. Ces travaux pratiques sont conçus pour apprendre comment Windows Hello peut être intégré à un système existant. L’utilisation d’une base de données et d’un serveur fictifs permet de réduire le nombre d’étapes de configuration inutiles. Dans vos propres applications, vous devez remplacer les objets fictifs avec des bases de données et des services réels.
@@ -535,7 +535,7 @@ Dans cet exercice, vous commencerez par créer une base de données et un serveu
     }
     ```
 
-## <a name="exercise-2-client-side-logic"></a>Exercice 2 : Logique côté client
+## <a name="exercise-2-client-side-logic"></a>Exercice 2 : Logique côté client
 
 Dans cet exercice, vous allez modifier les vues et les classes d’assistance côté client pour utiliser la classe AuthService. Dans le monde réel, AuthService est le serveur d’authentification et vous devez utiliser l’API Web pour envoyer et recevoir des données à partir du serveur. Pour ces travaux pratiques et pour simplifier les choses, le client et le serveur sont locaux. L’objectif est d’apprendre à utiliser les API Windows Hello.
 
@@ -804,7 +804,7 @@ Dans cet exercice, vous allez modifier les vues et les classes d’assistance c�
     }
     ```
 
--   Comme vous allez utiliser le AuthService lors de la suppression d’un compte, la référence à AccountHelper dans la méthode Button @ no__t-0Forget @ no__t-1User @ no__t-2Click peut être supprimée. La méthode doit maintenant se présenter comme suit.
+-   Comme vous allez utiliser le AuthService lors de la suppression d’un compte, la référence au AccountHelper dans le bouton\_oublier\_utilisateur\_méthode peut être supprimée. La méthode doit maintenant se présenter comme suit.
 
     ```cs
     private void Button_Forget_User_Click(object sender, RoutedEventArgs e)
@@ -1060,7 +1060,7 @@ Dans cet exercice, vous allez modifier les vues et les classes d’assistance c�
     }
     ```
 
--   Dans la méthode GetKeyAttestationAsync que vous venez d’ajouter, vous avez peut-être remarqué que la dernière ligne a été commentée. Cette dernière ligne est la méthode que vous créerez pour envoyer toutes les informations Windows Hello à AuthService. Dans le monde réel, vous devez envoyer ces informations à un serveur réel avec une API Web.
+-   Dans la méthode GetKeyAttestationAsync que vous venez d’ajouter, vous avez peut-être remarqué que la dernière ligne a été commentée. Cette dernière ligne sera une nouvelle méthode que vous créerez et qui enverra toutes les informations Windows Hello à AuthService. Dans le monde réel, vous devez envoyer ces informations à un serveur réel avec une API Web.
 
     ```cs
     using System.Runtime.InteropServices.WindowsRuntime;

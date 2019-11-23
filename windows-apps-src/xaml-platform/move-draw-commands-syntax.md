@@ -22,7 +22,7 @@ Découvrez les commandes de déplacement et de dessin (ou « mini langage ») qu
 
 La syntaxe des commandes de déplacement et de dessin est prise en charge par un convertisseur de type interne pour XAML qui analyse les commandes et produit une représentation graphique au moment de l’exécution. Cette représentation consiste essentiellement en un ensemble fini de vecteurs prêts pour la présentation. Les vecteurs ne représentent pas en eux-mêmes la totalité des détails de la présentation, et vous devez définir d’autres valeurs sur les éléments. Pour un objet [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path), vous avez aussi besoin de valeurs pour [**Fill**](/uwp/api/Windows.UI.Xaml.Shapes.Shape.Fill), [**Stroke**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.shape.stroke) et d’autres propriétés. Ensuite, cet objet **Path** doit être connecté d’une façon ou d’une autre à l’arborescence visuelle. Pour un objet [**PathIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PathIcon), définissez la propriété [**Foreground**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.iconelement.foreground).
 
-Il existe deux propriétés dans le Windows Runtime qui peuvent utiliser une chaîne représentant les commandes de déplacement et de dessin : [**Path. Data**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.path.data) et [**PathIcon. Data**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pathicon.data). Si vous définissez l’une de ces propriétés en spécifiant des commandes de déplacement et de dessin, vous définissez généralement cette propriété comme une valeur d’attribut XAML avec d’autres attributs requis de cet élément. Sans entrer dans les détails, voici à quoi cela ressemble :
+Windows Runtime comprend deux propriétés qui peuvent utiliser une chaîne représentant des commandes de déplacement et de dessin : [**Path.Data**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.path.data) et [**PathIcon.Data**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pathicon.data). Si vous définissez l’une de ces propriétés en spécifiant des commandes de déplacement et de dessin, vous définissez généralement cette propriété comme une valeur d’attribut XAML avec d’autres attributs requis de cet élément. Sans entrer dans les détails, voici à quoi cela ressemble :
 
 ```xml
 <Path x:Name="Arrow" Fill="White" Height="11" Width="9.67"
@@ -33,7 +33,7 @@ Il existe deux propriétés dans le Windows Runtime qui peuvent utiliser une cha
 
 ## <a name="using-move-and-draw-commands-versus-using-a-pathgeometry"></a>Comparaison entre l’utilisation des commandes de déplacement et de dessin et l’utilisation de **PathGeometry**
 
-Pour le code XAML Windows Runtime, les commandes de déplacement et de dessin produisent un [**PathGeometry**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PathGeometry) avec un objet [**PathFigure**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PathFigure) unique avec une valeur de propriété [**Figures**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.pathgeometry.figures). Chaque commande de dessin produit une classe dérivée de [**PathSegment**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PathSegment) dans la collection [**Segments**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.pathfigure.segments) de ce **PathFigure** unique, la commande de déplacement modifie la propriété [**StartPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.pathfigure.startpoint) et l’existence d’une commande de fermeture affecte à [**IsClosed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.pathfigure.isclosed) la valeur **true**. Vous pouvez naviguer dans cette structure en tant que modèle d’objet si vous examinez les valeurs **Data** au moment de l’exécution.
+Pour le code XAML Windows Runtime, les commandes de déplacement et de dessin produisent un [**PathGeometry**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PathGeometry) avec un objet [**PathFigure**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PathFigure) unique avec une valeur de propriété [**Figures**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.pathgeometry.figures). Chaque commande de dessin produit une classe dérivée de [**PathSegment**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PathSegment) dans la collectionSegments[**de ce**PathFigure](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.pathfigure.segments) unique, la commande de déplacement modifie la propriété [**StartPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.pathfigure.startpoint) et l’existence d’une commande de fermeture affecte à [**IsClosed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.pathfigure.isclosed) la valeur **true**. Vous pouvez naviguer dans cette structure en tant que modèle d’objet si vous examinez les valeurs **Data** au moment de l’exécution.
 
 ## <a name="the-basic-syntax"></a>Syntaxe de base
 
@@ -51,9 +51,9 @@ Les règles générales de cette syntaxe sont les suivantes :
 -   Chaque commande, sauf la commande de fermeture, est généralement suivie d’un ou plusieurs nombres.
 -   Si vous avez plusieurs nombres par commande, séparez-les par une virgule ou un espace.
 
-**\[** _fillRule_ **\]** _moveCommand_ _drawCommand_ **\[** _drawCommand_**1 @ no__t-12** **4**_closeCommand_**7**
+**\[** _fillRule_ **\]** _moveCommand_ _drawCommand_ **\[** _drawCommand_ **\*\]** **\[** _closeCommand_ **\]**
 
-De nombreuses commandes de dessin utilisent des points qui nécessitent la définition d’une valeur _x,y_. Chaque fois que vous voyez un espace réservé_points_ \*, vous pouvez supposer que vous donnez deux valeurs décimales pour la valeur _x, y_ d’un point.
+De nombreuses commandes de dessin utilisent des points qui nécessitent la définition d’une valeur _x,y_. Chaque fois que vous voyez un espace réservé _points_ de \*, vous pouvez supposer que vous donnez deux valeurs décimales pour la valeur _x, y_ d’un point.
 
 L’espace blanc peut souvent être omis lorsque le résultat n’est pas ambigu. Vous pouvez en effet omettre les espaces blancs si vous utilisez des virgules comme séparateurs pour tous vos ensembles de nombres (points et taille). Par exemple, cette utilisation est légale :`F1M0,58L2,56L6,60L13,51L15,53L6,64z` Il est toutefois plus courant d’inclure un espace blanc entre les commandes pour plus de clarté.
 
@@ -63,7 +63,7 @@ N’utilisez pas la virgule comme séparateur décimal pour les nombres décimau
 
 **Règle de remplissage**
 
-Il existe deux valeurs possibles pour la règle de remplissage facultative : **F0** ou **F1**. (Le **F** est toujours en majuscules.) **F0** est la valeur par défaut ; il génère un comportement de remplissage **EvenOdd** , donc vous ne le spécifiez pas généralement. Utilisez **F1** pour obtenir le comportement de remplissage **Nonzero**. Ces valeurs de remplissage sont alignées avec les valeurs de l’énumération [**FillRule**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.FillRule).
+Il existe deux valeurs possibles pour la règle de remplissage facultative : **F0** ou **F1**. (**F** est toujours en majuscule.) **F0** est la valeur par défaut qui produit le comportement de remplissage **EvenOdd** (donc, vous ne la spécifiez généralement pas). Utilisez **F1** pour obtenir le comportement de remplissage **Nonzero**. Ces valeurs de remplissage sont alignées avec les valeurs de l’énumération [**FillRule**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.FillRule).
 
 **Commande Move**
 
@@ -79,7 +79,7 @@ Spécifie le point de départ d’une nouvelle figure.
 
 Un **M** majuscule indique que *startPoint* est une coordonnée absolue ; un **m** minuscule indique que *startPoint* est décalé par rapport au point précédent ou (0,0) s’il n’y avait pas de point précédent.
 
-**Notez**  It’s Legal pour spécifier plusieurs points après la commande Move. Une ligne est tracée jusqu’à ces points comme si vous aviez spécifié une commande de ligne. Toutefois, ce style n’est pas recommandé ; utilisez plutôt une commande de ligne dédiée.
+**Notez**  il est légal de spécifier plusieurs points après la commande Move. Une ligne est tracée jusqu’à ces points comme si vous aviez spécifié une commande de ligne. Toutefois, ce style n’est pas recommandé ; utilisez plutôt une commande de ligne dédiée.
 
 **Commandes de dessin**
 
@@ -131,7 +131,7 @@ Crée une courbe de Bézier cubique entre le point actuel et le point de termina
 
 | Syntaxe |
 |--------|
-| `C ` *point de terminaison* *ControlPoint1* *ControlPoint2* <br/> - ou - <br/> `c ` *point de terminaison* *ControlPoint1* *ControlPoint2* |
+| *point de terminaison* `C ` *ControlPoint1* *ControlPoint2* <br/> - ou - <br/> *point de terminaison* `c ` *ControlPoint1* *ControlPoint2* |
 
 | Terme | Description |
 |------|-------------|
@@ -219,9 +219,9 @@ Décrit la coordonnée x et la coordonnée y d’un point. Voir aussi [**Point**
 
 Au lieu d’une valeur numérique standard, vous pouvez également utiliser les valeurs spéciales suivantes. Ces valeurs respectent la casse.
 
--   **Infini**: Représente l' **infini**.
--   **@no__t 1Infinity**: Représente l' **NegativeInfinity**.
--   **Nan**: Représente une valeur **Nan**.
+-   **Infinity** : représente **PositiveInfinity**.
+-   **\-Infinity**: représente l' **NegativeInfinity**.
+-   **NaN** : représente **NaN**.
 
 Au lieu d’utiliser des nombres décimaux ou entiers, vous pouvez utiliser la notation scientifique. Par exemple, `+1.e17` est une valeur valide.
 

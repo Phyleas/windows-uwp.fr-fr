@@ -152,7 +152,7 @@ Pour configurer le manifeste du package, ouvrez-le et ajoutez une nouvelle décl
 6.  Cliquez ou appuyez sur l’onglet **Interface utilisateur de l’application**.
 7.  Affectez à **Notifications de verrouillage de l’écran** la valeur **Badge et texte de mosaïque**.
 8.  Définissez un chemin d’accès à une icône de 24x24 pixels dans le champ **Logo du badge**.
-    **Important cette icône**nedoitutiliserquedespixelsmonochromeettransparent  .
+    **Important**  cette icône ne doit utiliser que des pixels monochrome et transparent.
 9.  Dans le champ **Petit logo**, définissez un chemin d’accès à une icône de 30x30 pixels.
 10. Dans le champ **Logo large**, définissez un chemin d’accès vers une icône de 310x150 pixels.
 
@@ -161,7 +161,7 @@ Pour configurer le manifeste du package, ouvrez-le et ajoutez une nouvelle décl
 
 Créez un élément [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) pour inscrire votre tâche.
 
-> **Remarque à compter**de Windows 8.1, les paramètres d’inscription des tâches en arrière-plan sont validés au moment de l’inscription.   Si l’un des paramètres d’inscription n’est pas valide, une erreur est renvoyée. Votre application doit être en mesure de gérer les scénarios dans lesquels l’inscription de la tâche en arrière-plan échoue. Par exemple utilisez une instruction conditionnelle pour rechercher les erreurs d’inscription, puis retentez l’inscription qui a échoué avec d’autres valeurs de paramètre.
+> **Notez**  à partir de Windows 8.1, les paramètres d’inscription des tâches en arrière-plan sont validés au moment de l’inscription. Si l’un des paramètres d’inscription n’est pas valide, une erreur est renvoyée. Votre application doit être en mesure de gérer les scénarios dans lesquels l’inscription de la tâche en arrière-plan échoue. Par exemple utilisez une instruction conditionnelle pour rechercher les erreurs d’inscription, puis retentez l’inscription qui a échoué avec d’autres valeurs de paramètre.
  
 
 Dans la page principale de votre application, ajoutez la méthode **RegisterBackgroundTask** et appelez-la dans le gestionnaire d’événements **OnNavigatedTo**.

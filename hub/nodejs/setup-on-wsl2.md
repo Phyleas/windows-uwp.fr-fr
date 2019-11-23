@@ -90,14 +90,14 @@ Il existe plusieurs façons d’installer node. js. Nous vous recommandons d’u
 
     ![Liste NVM qui n’indique aucune version de nœud](../images/nvm-no-node.png)
 
-6. Installer la version actuelle de node. js (pour tester les améliorations apportées aux fonctionnalités les plus récentes, mais plus susceptible d’avoir des problèmes) : `nvm install node`
+6. Installer la version actuelle de node. js (pour tester les améliorations apportées aux fonctionnalités les plus récentes, mais plus susceptibles de rencontrer des problèmes) : `nvm install node`
 7. Installer la dernière version stable de LTS de node. js (recommandé) : `nvm install --lts`
 8. Répertorier les versions du nœud installées : `nvm ls`... vous devez maintenant voir les deux versions que vous venez d’installer.
 
     ![Liste NVM avec LTS et les versions de nœud actuelles](../images/nvm-node-installed.png)
 
-9. Vérifiez que node. js est installé et que la version actuellement par défaut est la suivante : `node --version`. Vérifiez ensuite que vous disposez également de NPM, avec : `npm --version` (vous pouvez également utiliser `which node` ou `which npm` pour voir le chemin d’accès utilisé pour les versions par défaut).
-10. Pour modifier la version de node. js que vous souhaitez utiliser pour un projet, créez un répertoire de projet `mkdir NodeTest`, puis entrez le répertoire `cd NodeTest`, puis entrez `nvm use node` pour basculer vers la version actuelle ou `nvm use --lts` pour basculer vers la version LTS. Vous pouvez également utiliser le numéro spécifique pour toutes les versions supplémentaires que vous avez installées, comme `nvm use v8.2.1`. (Pour répertorier toutes les versions de node. js disponibles, utilisez la commande : `nvm ls-remote`).
+9. Vérifiez que node. js est installé et que la version actuelle par défaut est la suivante : `node --version`. Vérifiez ensuite que vous disposez également de NPM, avec : `npm --version` (vous pouvez également utiliser `which node` ou `which npm` pour voir le chemin d’accès utilisé pour les versions par défaut).
+10. Pour modifier la version de node. js que vous souhaitez utiliser pour un projet, créez un répertoire de projet `mkdir NodeTest`et entrez le répertoire `cd NodeTest`, puis entrez `nvm use node` pour basculer vers la version actuelle ou `nvm use --lts` pour basculer vers la version LTS. Vous pouvez également utiliser le numéro spécifique pour toutes les versions supplémentaires que vous avez installées, comme `nvm use v8.2.1`. (Pour répertorier toutes les versions de node. js disponibles, utilisez la commande : `nvm ls-remote`).
 
 > [!TIP]
 > Si vous utilisez NVM pour installer node. js et NPM, vous n’avez pas besoin d’utiliser la commande SUDO pour installer de nouveaux packages.
@@ -110,11 +110,11 @@ L’installation de la version la plus récente d’NVM à l’aide de la boucle
 
 Si NVM est actuellement le gestionnaire de version le plus populaire pour node, il existe quelques alternatives à prendre en compte :
 
-- [n](https://www.npmjs.com/package/n#installation) est une alternative `nvm` longue qui remplit la même fonction avec des commandes légèrement différentes et est installée via `npm` plutôt que comme un script bash.
+- [n](https://www.npmjs.com/package/n#installation) est une alternative `nvm` longue qui remplit la même fonction avec des commandes légèrement différentes et est installée via `npm` plutôt qu’un script bash.
 - [FNM](https://github.com/Schniz/fnm#using-a-script) est un gestionnaire de version plus récent, qui prétend être beaucoup plus rapide que `nvm`. (Il utilise également [Azure pipelines](https://docs.microsoft.com/azure/devops/pipelines/get-started/what-is-azure-pipelines?view=azure-devops).)
 - [Volta](https://github.com/volta-cli/volta#installing-volta) est un nouveau gestionnaire de versions de l’équipe LinkedIn qui prétend améliorer la vitesse et la prise en charge multiplateforme.
 - [asdf-VM](https://asdf-vm.com/#/core-manage-asdf-vm) est une interface de commande unique pour plusieurs langues, telle que IKE GVM, NVM, rbenv & pyenv (et plus), le tout en une seule.
-- [NVS](https://github.com/jasongin/nvs) (node version changer) est une alternative multiplateforme `nvm` avec la possibilité d' [intégration à vs code](https://github.com/jasongin/nvs/blob/master/doc/VSCODE.md).
+- [NVS](https://github.com/jasongin/nvs) (node version changer) est une alternative `nvm` multiplateforme avec la possibilité de [s’intégrer avec vs code](https://github.com/jasongin/nvs/blob/master/doc/VSCODE.md).
 
 ## <a name="install-your-favorite-code-editor"></a>Installer votre éditeur de code favori
 
@@ -127,7 +127,7 @@ Nous vous recommandons d’utiliser **Visual Studio code** avec l' **extension R
 Les éditeurs de texte basés sur les terminaux (VIM, Emacs, nano) sont également utiles pour apporter des modifications rapides directement à partir de la console. ([Cet article](https://medium.com/linode-cube/emacs-nano-or-vim-choose-your-terminal-based-text-editor-wisely-8f3826c92a68) est un bon travail expliquant la différence et l’utilisation de chacune d’elles.)
 
 > [!NOTE]
-> Certains éditeurs d’interface utilisateur graphique (Atom, sublime Text, Eclipse) peuvent rencontrer des problèmes d’accès à l’emplacement réseau partagé WSL (\\wsl $ \Ubuntu\home @ no__t-1 et tentent de générer vos fichiers Linux à l’aide d’outils Windows, ce qui n’est peut-être pas ce que vous voulez. Dans VS Code, l’extension Remote-WSL gère cette compatibilité.
+> Certains éditeurs d’interface utilisateur graphique (Atom, sublime Text, Eclipse) peuvent rencontrer des problèmes d’accès à l’emplacement réseau partagé WSL (\\WSL $ \Ubuntu\home\) et tentent de générer vos fichiers Linux à l’aide d’outils Windows, ce qui peut ne pas être ce que vous souhaitez. Dans VS Code, l’extension Remote-WSL gère cette compatibilité.
 
 Pour installer VS Code et l’extension WSL distante :
 
@@ -165,7 +165,7 @@ Voici quelques-unes des extensions supplémentaires que vous pouvez envisager :
 
 ## <a name="install-windows-terminal-optional"></a>Installer Windows Terminal (facultatif)
 
-Le nouveau terminal Windows active plusieurs onglets (basculer rapidement entre l’invite de commandes, PowerShell ou plusieurs distributions Linux), les combinaisons de touches personnalisées (créez vos propres touches de raccourci pour ouvrir ou fermer les onglets, copier + coller, etc.), les Emoji ☺ et les thèmes personnalisés ( Jeux de couleurs, styles et tailles de police, image d’arrière-plan/flou/transparence). [En savoir plus](https://devblogs.microsoft.com/commandline/).
+Le nouveau terminal Windows active plusieurs onglets (basculer rapidement entre l’invite de commandes, PowerShell ou plusieurs distributions Linux), les combinaisons de touches personnalisées (créez vos propres touches de raccourci pour ouvrir ou fermer les onglets, copier + coller, etc.), les Emoji ☺ et les thèmes personnalisés (modèles de couleurs, styles et tailles de police, image d’arrière-plan/flou [En savoir plus](https://devblogs.microsoft.com/commandline/).
 
 1. Obtenir [Windows Terminal (version préliminaire) dans le Microsoft Store](https://www.microsoft.com/store/apps/9n0dx20hk701): en installant via le Store, les mises à jour sont gérées automatiquement.
 
@@ -177,7 +177,7 @@ Le nouveau terminal Windows active plusieurs onglets (basculer rapidement entre 
 
 Si vous envisagez de collaborer avec d’autres personnes ou d’héberger votre projet sur un site Open source (comme GitHub), VS Code prend en charge [le contrôle de version avec git](https://code.visualstudio.com/docs/editor/versioncontrol#_git-support). L’onglet contrôle de code source de VS Code effectue le suivi de toutes vos modifications et contient des commandes git communes (ajouter, valider, pousser, tirer) intégrées directement dans l’interface utilisateur.
 
-1. Git est installé avec le sous-système Windows pour Linux distributions. Toutefois, vous devrez configurer votre fichier de configuration git. Pour ce faire, dans votre terminal, entrez : `git config --global user.name "Your Name"`, puis `git config --global user.email "youremail@domain.com"`. Si vous n’avez pas encore de compte git, vous pouvez [en créer un sur GitHub](https://github.com/join). Si vous n’avez jamais travaillé avec git, les [guides GitHub](https://guides.github.com/) peuvent vous aider à commencer. Si vous avez besoin de modifier votre configuration git, vous pouvez le faire avec un éditeur de texte intégré comme nano : `nano ~/.gitconfig`.
+1. Git est installé avec le sous-système Windows pour Linux distributions. Toutefois, vous devrez configurer votre fichier de configuration git. Pour ce faire, dans votre terminal, entrez : `git config --global user.name "Your Name"` puis, `git config --global user.email "youremail@domain.com"`. Si vous n’avez pas encore de compte git, vous pouvez [en créer un sur GitHub](https://github.com/join). Si vous n’avez jamais travaillé avec git, les [guides GitHub](https://guides.github.com/) peuvent vous aider à commencer. Si vous avez besoin de modifier votre configuration git, vous pouvez le faire avec un éditeur de texte intégré tel que Nano : `nano ~/.gitconfig`.
 
 2. Nous vous recommandons d’ajouter un [fichier. gitignore](https://help.github.com/en/articles/ignoring-files) à vos projets de nœud. Voici le [modèle gitignore par défaut de GitHub pour node. js](https://github.com/github/gitignore/blob/master/Node.gitignore). Si vous choisissez de [créer un référentiel à l’aide du site Web GitHub](https://help.github.com/articles/create-a-repo), des cases à cocher sont disponibles pour initialiser votre référentiel avec un fichier Lisez-moi, un fichier. gitignore configuré pour les projets node. js et des options pour ajouter une licence si vous en avez besoin.
 

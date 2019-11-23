@@ -29,7 +29,7 @@ Consultez la rubrique [Touches de raccourci](keyboard-accelerators.md) pour plus
 
 La plateforme Windows universelle (UWP) fournit des supports intégrés à travers les commandes de plateforme, à la fois pour les touches d’accès rapide d’un clavier et pour les commentaires d’interface utilisateur associés, par le biais de signaux visuels que l’on appelle des touches d’accès.
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d’ensemble
 
 Une touche d’accès rapide est une combinaison de la touche Alt et d’une ou plusieurs touches alphanumériques, que l’on appelle parfois *mnémonique*. En général, on appuie successivement plutôt que simultanément sur ces touches.
 
@@ -72,9 +72,11 @@ Par exemple, Microsoft Word fournit deux étendues de clé d’accès : une po
 
 Les images suivantes présentent les deux étendues des touches d’accès rapide dans Word. Le premier exemple montre les touches d’accès rapide principales qui permettent à un utilisateur de sélectionner un onglet et d’autres commandes de niveau supérieur. Le second exemple présente les touches d’accès rapide secondaire pour l’onglet Accueil.
 
-clés d’accès ![Primary dans Microsoft Word @ no__t-1_clés d’accès principales dans Microsoft Word_
+![clés d’accès principales dans Microsoft Word](images/accesskeys/primary-access-keys-word.png)
+_clés d’accès principales dans Microsoft Word_
 
-clés d’accès ![Secondary dans Microsoft Word @ no__t-1_clés d’accès secondaires dans Microsoft Word_
+![les clés d’accès secondaires dans Microsoft Word](images/accesskeys/secondary-access-keys-word.png)
+_clés d’accès secondaires dans Microsoft Word_
 
 Les touches d’accès rapide peuvent être dupliquées pour les éléments dans des étendues différentes. Dans l’exemple précédent, « 2 » est la touche d’accès rapide pour l’option Annuler dans l’étendue principale et pour l’option « Italique » dans l’étendue secondaire.
 
@@ -253,17 +255,17 @@ _Exemple d’emplacement de l’info-bulle automatique_
 
 Nous vous recommandons toutefois les éléments suivants, au cas où vous auriez besoin de plus de contrôle sur le positionnement de la touche d’accès :
 
-1.  **Principe d’association évident**: L’utilisateur peut facilement associer le contrôle à l’info-bulle.
+1.  **Principe d’association évident** : l’utilisateur peut facilement associer la commande à la touche d’accès.
 
     a.  La touche d’accès doit être **proche** de l’élément qui possède la touche d’accès rapide (le propriétaire).  
     b.  La touche d’accès doit **éviter des éléments de couverture activés** qui ont des touches d’accès rapide.   
     c.  Si une touche d’accès ne peut pas être placée proche de son propriétaire, elle doit le chevaucher. 
 
-2.  **Découverte**: L’utilisateur peut découvrir rapidement le contrôle avec la touche accélératrice.
+2.  **Détectabilité** : l’utilisateur peut rapidement découvrir la commande à l’aide de la touche d’accès.
 
     a.  La touche d’accès ne **chevauche** jamais d’autres touches d’accès.  
 
-3.  **Analyse facile :** L’utilisateur peut facilement parcourir les conseils clés.
+3.  **Analyse simple :** l’utilisateur peut parcourir facilement les touches d’accès.
 
     a.  Les touches d’accès doivent être **alignées** entre elles et avec l’élément d’interface utilisateur.
     b.  Les touches d’accès doivent être **regroupées** autant que possible. 
@@ -272,7 +274,7 @@ Nous vous recommandons toutefois les éléments suivants, au cas où vous auriez
 
 Utilisez la propriété **KeyTipPlacementMode** afin de personnaliser le placement de la touche d’accès sur une base par élément ou par groupe.
 
-Les modes de placement sont les suivants : Haut, bas, droite, gauche, masqué, Centre et automatique.
+Les modes de placement sont : Haut, Bas, Droite, Gauche, Masqué, Centrer et Auto.
 
 ![Modes de placement d’une touche d’accès](images/accesskeys/keytip-postion-modes.png)
 

@@ -30,11 +30,11 @@ En XAML, un balisage spécifie une valeur **null** pour une propriété.
 
 La valeur par défaut initiale peut varier selon les propriétés de dépendance, et n’est pas nécessairement **null**. De plus, de nombreuses propriétés de dépendance n’acceptent pas **null** en tant que valeur (via le balisage ou le code), en raison de leur implémentation interne. Le cas échéant, la définition d’une valeur d’attribut XAML avec **{x:Null}** peut engendrer une exception d’analyse.
 
-Certains types Windows Runtime ont la valeur Nullable. Quand un type Nullable n’a pas déjà la valeur **null** comme valeur par défaut, vous pouvez utiliser **{x:Null}** pour définir la valeur **null** en XAML. Si vous utilisez C++ des extensions deC++composants visuels (/CX), les types Nullable sont représentés en tant que [Platform :: iBox @ no__t-4](https://docs.microsoft.com/cpp/cppcx/platform-ibox-interface). Si vous utilisez des langages Microsoft .NET, les types Nullable sont représentés par [**Nullable<T>** ](https://docs.microsoft.com/dotnet/api/system.nullable-1).
+Certains types Windows Runtime ont la valeur Nullable. Quand un type Nullable n’a pas déjà la valeur **null** comme valeur par défaut, vous pouvez utiliser **{x:Null}** pour définir la valeur **null** en XAML. Si vous utilisez C++ des extensions deC++composants visuels (/CX), les types Nullable sont représentés en tant que [**Platform :: iBox<T>** ](https://docs.microsoft.com/cpp/cppcx/platform-ibox-interface). Si vous utilisez des langages Microsoft .NET, les types Nullable sont représentés par [**Nullable<T>** ](https://docs.microsoft.com/dotnet/api/system.nullable-1).
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [**Nullable @ no__t-2**](https://docs.microsoft.com/dotnet/api/system.nullable-1)
-* [**IReference @ no__t-2**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IReference_T_)
+* [ **<T> Nullable**](https://docs.microsoft.com/dotnet/api/system.nullable-1)
+* [**IReference<T>** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.IReference_T_)
  
 

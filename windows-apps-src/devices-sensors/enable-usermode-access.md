@@ -26,7 +26,7 @@ L’accès en mode utilisateur aux bus de bas niveau sur Windows est ajouté via
 
 ## <a name="asl-by-example"></a>ASL par exemple
 
-Examinons la déclaration d’un nœud d’appareil rhproxy sur Raspberry Pi 2. Tout d’abord, créez la déclaration d’appareil ACPI dans l’étendue @no__t 1/-0 _SB.
+Examinons la déclaration d’un nœud d’appareil rhproxy sur Raspberry Pi 2. Tout d’abord, créez la déclaration d’appareil ACPI dans la portée de _SB \\.
 
 ```cpp
 Device(RHPX)
@@ -37,9 +37,9 @@ Device(RHPX)
 }
 ```
 
-* _HID : ID du matériel. Définissez ce paramètre sur un ID matériel spécifique au fournisseur.
-* _CID : ID compatible. Il doit s’agir de « MSFT8000 ».
-* _UID : ID unique. Définissez ce paramètre sur 1.
+* _HID – Hardware Id. Définissez ce paramètre sur un ID matériel spécifique au fournisseur.
+* _CID – Compatible Id. Il doit s’agir de « MSFT8000 ».
+* _UID – ID unique. Définissez ce paramètre sur 1.
 
 Nous allons ensuite déclarer chacune des ressources GPIO et SPB qui doivent être exposées au mode utilisateur. L’ordre dans lequel les ressources sont déclarées est important, car les index de ressource sont utilisés pour associer les propriétés avec des ressources. Si plusieurs bus I2C ou SPI sont exposés, le premier bus déclaré est considéré comme le bus « par défaut » pour ce type et sera l’instance renvoyée par les méthodes `GetDefaultAsync()` de [Windows.Devices.I2c.I2cController](https://docs.microsoft.com/uwp/api/windows.devices.i2c.i2ccontroller) et [Windows.Devices.Spi.SpiController](https://docs.microsoft.com/uwp/api/windows.devices.spi.spicontroller).
 
@@ -159,7 +159,7 @@ Cela crée un bus nommé « SPI1 » et l’associe à l’index de ressource 
 * Doit avoir réussi les [tests SPI dans MITT](https://docs.microsoft.com/windows-hardware/drivers/spb/spi-tests-in-mitt)
 * Doit prendre en charge une vitesse d’horloge de 4 MHz
 * Doit prendre en charge la longueur des données de 8 bits
-* Doit prendre en charge tous les modes SPI : 0, 1, 2, 3
+* Doit prendre en charge tous les Modes SPI : 0, 1, 2, 3
 
 ### <a name="i2c"></a>I2C
 
@@ -553,7 +553,7 @@ Quand un client n’a plus besoin d’une ressource de multiplexage, il ferme so
 
 ### <a name="authoring-guidelines-for-acpi-tables"></a>Création de recommandations pour les tables ACPI
 
-Cette section décrit comment fournir des ressources de multiplexage aux pilotes clients. Notez que vous aurez besoin du compilateur Microsoft ASL build 14327 ou version ultérieure pour compiler les tables contenant des ressources `MsftFunctionConfig()`. les ressources `MsftFunctionConfig()` sont fournies pour épingler les clients muxing en tant que ressources matérielles. les ressources `MsftFunctionConfig()` doivent être fournies aux pilotes qui requièrent des modifications de muxing pin, qui sont généralement des pilotes de contrôleur de domaine SPB et série, mais ne doivent pas être fournis aux pilotes de périphérique série et SPB, puisque le pilote de contrôleur gère la configuration de muxing.
+Cette section décrit comment fournir des ressources de multiplexage aux pilotes clients. Notez que vous aurez besoin du compilateur Microsoft ASL build 14327 ou version ultérieure pour compiler les tables contenant des ressources `MsftFunctionConfig()`. les ressources de `MsftFunctionConfig()` sont fournies pour épingler les clients muxing en tant que ressources matérielles. les ressources de `MsftFunctionConfig()` doivent être fournies aux pilotes qui requièrent des modifications de muxing pin, qui sont généralement des pilotes de contrôleur de domaine et SPB, mais qui ne doivent pas être fournis à SPB et aux pilotes de périphériques série, puisque le pilote de contrôleur gère la configuration de muxing.
 La macro ACPI `MsftFunctionConfig()` est définie comme suit :
 
 ```cpp
@@ -605,7 +605,7 @@ Device(I2C1)
 }
 ```
 
-En plus des ressources de mémoire et d’interruption généralement requises par un pilote de contrôleur, une ressource `MsftFunctionConfig()` est également spécifiée. Cette ressource permet au pilote de contrôleur I2C de placer les broches 2 et 3 gérées par le nœud de l’appareil sur @no__t 1/-0 _SB. GPIO0 : dans la fonction 4 avec résistance à l’extraction activée.
+En plus des ressources de mémoire et d’interruption généralement requises par un pilote de contrôleur, une ressource `MsftFunctionConfig()` est également spécifiée. Cette ressource permet au pilote de contrôleur I2C de placer les broches 2 et 3 gérées par le nœud de l’appareil sur \\_SB. GPIO0 : dans la fonction 4 avec résistance à l’extraction activée.
 
 ## <a name="supporting-muxing-support-in-gpioclx-client-drivers"></a>Prise en charge du multiplexage dans les pilotes clients GpioClx
 
@@ -633,11 +633,11 @@ Le diagramme suivant montre les dépendances entre chacun de ces composants. Com
 
 Au moment de l’initialisation de l’appareil, les infrastructures `SpbCx` et `SerCx` analysent toutes les ressources `MsftFunctionConfig()` fournies sous forme de ressources matérielles à l’appareil. SpbCx/SerCx obtiennent et libèrent ensuite à la demande les ressources de multiplexage de broche.
 
-`SpbCx` applique la configuration muxing pin dans son gestionnaire *IRP_MJ_CREATE* , juste avant d’appeler le rappel [EvtSpbTargetConnect ()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spbcx/nc-spbcx-evt_spb_target_connect) du pilote client. Si la configuration du multiplexage n’a pas pu être appliquée, le rappel `EvtSpbTargetConnect()` du pilote de contrôleur ne sera pas appelé. Par conséquent, un pilote de contrôleur SPB peut supposer que les broches sont multiplexées sur la fonction SPB avant que `EvtSpbTargetConnect()` soit appelée.
+`SpbCx` applique la configuration muxing pin dans son gestionnaire de *IRP_MJ_CREATE* , juste avant d’appeler le rappel [EvtSpbTargetConnect ()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spbcx/nc-spbcx-evt_spb_target_connect) du pilote client. Si la configuration du multiplexage n’a pas pu être appliquée, le rappel `EvtSpbTargetConnect()` du pilote de contrôleur ne sera pas appelé. Par conséquent, un pilote de contrôleur SPB peut supposer que les broches sont multiplexées sur la fonction SPB avant que `EvtSpbTargetConnect()` soit appelée.
 
-`SpbCx` annule la configuration muxing pin dans son gestionnaire *IRP_MJ_CLOSE* , juste après l’appel du rappel [EvtSpbTargetDisconnect ()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spbcx/nc-spbcx-evt_spb_target_disconnect) du pilote du contrôleur. Résultat : les broches sont multiplexées sur la fonction SPB chaque fois qu’un pilote de périphérique ouvre un handle sur le pilote de contrôleur SPB, et sont à nouveau multiplexées lorsque le pilote de périphérique ferme son handle.
+`SpbCx` rétablit la configuration muxing pin dans son gestionnaire de *IRP_MJ_CLOSE* , juste après avoir appelé le rappel [EvtSpbTargetDisconnect ()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spbcx/nc-spbcx-evt_spb_target_disconnect) du pilote de contrôleur. Résultat : les broches sont multiplexées sur la fonction SPB chaque fois qu’un pilote de périphérique ouvre un handle sur le pilote de contrôleur SPB, et sont à nouveau multiplexées lorsque le pilote de périphérique ferme son handle.
 
-`SerCx` se comporte de manière similaire. `SerCx` acquiert toutes les ressources `MsftFunctionConfig()` dans son gestionnaire *IRP_MJ_CREATE* juste avant d’appeler le rappel [EvtSerCx2FileOpen ()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_fileopen) du pilote de contrôleur, et libère toutes les ressources dans son gestionnaire IRP_MJ_CLOSE, juste après l’appel du contrôleur. rappel [EvtSerCx2FileClose](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_fileclose) du pilote.
+`SerCx` se comporte de la même façon. `SerCx` acquiert toutes les ressources `MsftFunctionConfig()` dans son gestionnaire de *IRP_MJ_CREATE* juste avant d’appeler le rappel [EvtSerCx2FileOpen ()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_fileopen) du pilote de contrôleur, et libère toutes les ressources dans son gestionnaire de IRP_MJ_CLOSE, juste après l’appel du rappel [EvtSerCx2FileClose](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_fileclose) du pilote du contrôleur.
 
 Avec le multiplexage de broche dynamique, les pilotes de contrôleur `SerCx` et `SpbCx` doivent pouvoir tolérer les broches multiplexées à partir de la fonction SPB/UART à certains moments. Les pilotes de contrôleur doivent supposer que les broches ne seront pas multiplexées jusqu’à ce que `EvtSpbTargetConnect()` ou `EvtSerCx2FileOpen()` soit appelée. Les broches ne sont pas nécessairement mixées sur la fonction SPB/UART pendant les rappels suivants. La liste suivante n’est pas complète, mais représente les routines PNP les plus courantes implémentées par les pilotes de contrôleur.
 
@@ -744,7 +744,7 @@ Si la sortie indique que rhproxy a démarré, c’est qu’il a été chargé et
 
 Maintenant que rhproxy est en cours d’exécution, des interfaces d’appareils sont normalement créées et sont accessibles en mode utilisateur. Nous allons utiliser plusieurs outils de ligne de commande pour énumérer les appareils et voir ceux qui sont présents.
 
-Clonez le référentiel [https://github.com/ms-iot/samples](https://github.com/ms-iot/samples) et générez les exemples `GpioTestTool`, `I2cTestTool`, `SpiTestTool` et `Mincomm`. Copiez les outils sur votre appareil en cours de test et utilisez les commandes suivantes pour énumérer les appareils.
+Clonez le référentiel [https://github.com/ms-iot/samples](https://github.com/ms-iot/samples) et générez les exemples `GpioTestTool`, `I2cTestTool`, `SpiTestTool`et `Mincomm`. Copiez les outils sur votre appareil en cours de test et utilisez les commandes suivantes pour énumérer les appareils.
 
 ```ps
 I2cTestTool.exe -list

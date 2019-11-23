@@ -71,7 +71,7 @@ Le portail d’appareil sur Windows Desktop propose les ensembles de pages stan
 - Fonctionnalités
 - Réalité mixte
 - Débogueur d’installation en continu
-- Location
+- Emplacement
 - Vide
 
 ## <a name="more-device-portal-options"></a>Autres options du portail d’appareil
@@ -81,12 +81,12 @@ Le portail d’appareil sur Windows Desktop propose les ensembles de pages stan
 Si vous souhaitez sélectionner des numéros de port pour Device Portal (par exemple, 80 et 443), vous pouvez définir les clés de Registre suivantes :
 
 - Sous `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WebManagement\Service`
-    - `UseDynamicPorts`: Valeur DWORD obligatoire. Définissez ce paramètre sur 0 pour conserver les numéros de port que vous avez choisis.
-    - `HttpPort`: Valeur DWORD obligatoire. Contient le numéro de port que Device Portal va écouter pour les connexions HTTP.    
-    - `HttpsPort`: Valeur DWORD obligatoire. Contient le numéro de port que Device Portal va écouter pour les connexions HTTPS.
+    - `UseDynamicPorts`: DWORD requis. Définissez ce paramètre sur 0 pour conserver les numéros de port que vous avez choisis.
+    - `HttpPort`: DWORD requis. Contient le numéro de port que le portail d’appareil va écouter pour les connexions HTTP.    
+    - `HttpsPort`: DWORD requis. Contient le numéro de port que Device Portal va écouter pour les connexions HTTPS.
     
 Dans le chemin d’accès de la même clé de Registre, vous pouvez également désactiver l’obligation d’authentification :
-- `UseDefaultAuthorizer` @ no__t-1 @ no__t-2 pour désactivé, `1` pour activé.  
+- `UseDefaultAuthorizer` - `0` pour désactivé, `1` pour activé.  
     - Ce paramètre contrôle les deux exigences d’authentification de base pour chaque connexion et le transfert de HTTP vers HTTPS.  
     
 ### <a name="command-line-options-for-device-portal"></a>Options de ligne de commande pour le portail d’appareil
@@ -113,7 +113,7 @@ Voici quelques-unes des erreurs courantes que vous pouvez rencontrer lors de la 
 
 Vous pouvez obtenir cette erreur lorsque vous tentez d’installer les packages de développement dans une version préliminaire de Windows 10. Ces packages de fonctionnalités à la demande (DOM) sont hébergés sur Windows Update et leur téléchargement sur des versions préliminaires requiert que vous vous abonniez à la fonctionnalité de vol. Si votre installation n’est pas en cours de vol pour la combinaison de construction et de sonnerie appropriée, la charge utile ne sera pas téléchargeable. Vérifiez les éléments suivants :
 
-1. Accédez à **paramètres > mettre à jour & Security > programme Windows Insider** et vérifiez que la section **compte Windows Insider** contient vos informations de compte correctes. Si vous ne voyez pas cette section, sélectionnez **lier un compte Windows Insider**, ajoutez votre compte de messagerie et confirmez qu’il s’affiche sous le titre **compte Windows Insider** (vous devrez peut-être sélectionner **lier un compte Windows Insider** une deuxième fois pour Liez en fait un compte récemment ajouté).
+1. Accédez à **paramètres > mettre à jour & Security > programme Windows Insider** et vérifiez que la section **compte Windows Insider** contient vos informations de compte correctes. Si vous ne voyez pas cette section, sélectionnez **lier un compte Windows Insider**, ajoutez votre compte de messagerie et confirmez qu’il s’affiche sous le titre du **compte Windows Insider** (vous devrez peut-être sélectionner **lier un compte Windows Insider** une deuxième fois pour lier un compte récemment ajouté).
  
 2. Sous **quel type de contenu souhaitez-vous recevoir ?** , assurez-vous que l’option **développement actif de Windows** est sélectionnée.
  
@@ -121,15 +121,15 @@ Vous pouvez obtenir cette erreur lorsque vous tentez d’installer les packages 
  
 4. Vous devez maintenant être en mesure d’installer FoDs. Si vous avez confirmé que vous êtes sur Windows Insider rapidement et que vous ne pouvez toujours pas installer le FoDs, fournissez des commentaires et joignez les fichiers journaux sous **C:\Windows\Logs\CBS**.
 
-### <a name="sc-startservice-openservice-failed-1060-the-specified-service-does-not-exist-as-an-installed-service"></a>SC StartService ÉCHEC de OpenService 1060 : Le service spécifié n’existe pas en tant que service installé
+### <a name="sc-startservice-openservice-failed-1060-the-specified-service-does-not-exist-as-an-installed-service"></a>SC StartService : échec de OpenService 1060 : le service spécifié n’existe pas en tant que service installé
 
 Vous pouvez recevoir cette erreur si les packages de développement ne sont pas installés. Sans les packages de développement, il n’existe aucun service de gestion Web. Essayez de réinstaller les packages de développement.
 
-### <a name="cbs-cannot-start-download-because-the-system-is-on-metered-network-cbs_e_metered_network"></a>CBS ne peut pas démarrer le téléchargement, car le système est sur un réseau contrôlé (CBS_E_METERED_NETWORK)
+### <a name="cbs-cannot-start-download-because-the-system-is-on-metered-network-cbs_e_metered_network"></a>CBS ne peut pas démarrer le téléchargement, car le système est sur un réseau limité (CBS_E_METERED_NETWORK)
 
 Vous pouvez obtenir cette erreur si vous utilisez une connexion Internet facturée à l’accès. Vous ne pourrez pas télécharger les packages de développement sur une connexion limitée.
 
-## <a name="see-also"></a>Voir aussi
+## <a name="see-also"></a>Voir également
 
 * [Vue d’ensemble du portail de périphériques Windows](device-portal.md)
 * [Informations de référence sur l’API principale du portail des appareils](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

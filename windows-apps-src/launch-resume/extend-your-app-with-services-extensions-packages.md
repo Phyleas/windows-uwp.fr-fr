@@ -98,7 +98,7 @@ Les services d’application sont des applications UWP qui fournissent des servi
 
 L’installation en continu est un moyen d’optimiser la manière dont votre application est fournie aux utilisateurs. Au lieu d’attendre le téléchargement complet de l’application pour pouvoir l’utiliser, les utilisateurs peuvent commencer à profiter de l’application dès qu’une partie requise a été téléchargée. C’est à vous, en tant que développeur, de segmenter votre application en une section requise pour son activation de base et son lancement, et en contenu supplémentaire pour le reste de l’application. Voir [Installation en continu d’une application UWP](/windows/msix/package/streaming-install) pour obtenir plus d’informations et des détails sur l’implémentation.
 
-## <a name="see-also"></a>Articles associés
+## <a name="see-also"></a>Voir aussi
 
 [Créer et consommer un service d’application](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)  
 [Présentation des packages d’actifs](/windows/msix/package/asset-packages)  

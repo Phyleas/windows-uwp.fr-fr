@@ -18,8 +18,8 @@ ms.locfileid: "74258926"
 
 <b>API importantes</b>
 
--   [**Windows.UI.Core namespace**](https://docs.microsoft.com/uwp/api/Windows.UI.Core)
--   [**Windows.System.Threading namespace**](https://docs.microsoft.com/uwp/api/Windows.System.Threading)
+-   [**Espace de noms Windows. UI. Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Core)
+-   [**Espace de noms Windows. System. Threading**](https://docs.microsoft.com/uwp/api/Windows.System.Threading)
 
 Découvrez comment créer un élément de travail qui s’exécute une fois le délai du minuteur écoulé.
 
@@ -27,7 +27,7 @@ Découvrez comment créer un élément de travail qui s’exécute une fois le d
 
 Utilisez la méthode [**CreateTimer**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createtimer) pour créer un minuteur pour l’élément de travail. Fournissez une expression lambda qui effectue la tâche, puis utilisez le paramètre *delay* pour spécifier la durée pendant laquelle le pool de threads attend avant de pouvoir attribuer l’élément de travail à un thread disponible. Le délai est spécifié à l’aide d’une structure [**TimeSpan**](https://docs.microsoft.com/uwp/api/Windows.Foundation.TimeSpan).
 
-> **Note**  You can use [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) to access the UI and show progress from the work item.
+> **Notez**  vous pouvez utiliser [**CoreDispatcher. RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) pour accéder à l’interface utilisateur et afficher la progression à partir de l’élément de travail.
 
 L’exemple suivant crée un élément de travail qui s’exécute dans trois minutes :
 
@@ -221,7 +221,7 @@ Si le compte à rebours du minuteur se poursuit alors que l’élément de trava
 
 Les applications de plateforme Windows universelle (UWP) ne peuvent pas utiliser **Thread.Sleep**, car cela peut bloquer le thread d’interface utilisateur. Vous pouvez utiliser un objet [**ThreadPoolTimer**](https://docs.microsoft.com/uwp/api/Windows.System.Threading.ThreadPoolTimer) pour créer un élément de travail à la place. Cela retarde la tâche accomplie par l’élément de travail sans bloquer le thread d’interface utilisateur.
 
-Pour obtenir un exemple de code complet illustrant les éléments de travail, les éléments de travail de minuteur et les éléments de travail périodiques, voir l’[exemple de pool de threads](https://code.msdn.microsoft.com/windowsapps/Pool-Sample-5aa60454). The code sample was originally written for Windows 8.1 but the code can be re-used in Windows 10.
+Pour obtenir un exemple de code complet illustrant les éléments de travail, les éléments de travail de minuteur et les éléments de travail périodiques, voir l’[exemple de pool de threads](https://code.msdn.microsoft.com/windowsapps/Pool-Sample-5aa60454). L’exemple de code a été écrit à l’origine pour Windows 8.1 mais le code peut être réutilisé dans Windows 10.
 
 Pour plus d’informations sur la répétition de minuteurs, voir [Créer un élément de travail périodique](create-a-periodic-work-item.md).
 

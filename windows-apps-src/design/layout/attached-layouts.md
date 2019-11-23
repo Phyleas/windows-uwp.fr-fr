@@ -60,7 +60,7 @@ Le [ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater) se 
 > [!NOTE]
 > Le [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel) est un conteneur, dérivé du panneau, qui délègue sa logique à l’objet de [disposition](/uwp/api/microsoft.ui.xaml.controls.layoutpanel.layout) attaché.  LayoutPanel est en version *préliminaire* et est actuellement disponible uniquement dans les *versions préliminaires* du package WinUI.
 
-#### <a name="containers"></a>Containers
+#### <a name="containers"></a>Conteneurs
 
 Conceptuellement, le [panneau](/uwp/api/windows.ui.xaml.controls.panel) est un conteneur d’éléments qui a également la possibilité de restituer des pixels pour un [arrière-plan](/uwp/api/windows.ui.xaml.controls.panel.background).  Les panneaux offrent un moyen d’encapsuler la logique de disposition commune dans un package facile à utiliser.
 
@@ -81,7 +81,7 @@ Pendant le processus de disposition, le conteneur s’appuie sur le *UniformGrid
 
 #### <a name="per-container-state"></a>État par conteneur
 
-Avec une disposition attachée, une seule instance de l’objet layout peut être associée à de *nombreux* conteneurs, comme dans l’extrait de code ci-dessous. par conséquent, il ne doit pas dépendre du conteneur hôte ou y être directement référencé.  Exemple :
+Avec une disposition attachée, une seule instance de l’objet layout peut être associée à de *nombreux* conteneurs, comme dans l’extrait de code ci-dessous. par conséquent, il ne doit pas dépendre du conteneur hôte ou y être directement référencé.  Par exemple :
 
 ```xaml
 <!-- ... --->
@@ -154,7 +154,7 @@ L’approche permettant de créer une disposition de non-virtualisation doit êt
 5. Remplacez [ArrangeOverride](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout.arrangeoverride) et appelez la méthode [arrange](/uwp/api/windows.ui.xaml.uielement.arrange) sur tous les enfants.
 6. *(**Nouveau**/facultatif)* Nettoyez tout état enregistré dans le cadre du [UninitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.uninitializeforcontextcore).
 
-### <a name="example-a-simple-stack-layout-varying-sized-items"></a>Exemple : Disposition de pile simple (éléments de taille variable)
+### <a name="example-a-simple-stack-layout-varying-sized-items"></a>Exemple : disposition de pile simple (éléments de taille variable)
 
 ![MyStackLayout](images/xaml-attached-layout-mystacklayout.png)
 
@@ -261,7 +261,7 @@ Le [VirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.virtualizingl
 
 La demande d’un élément pour un index donné entraînera le marquage de cet élément comme étant « en cours d’utilisation » pour cette passe de la disposition. Si l’élément n’existe pas encore, il sera réalisé et préparé automatiquement pour être utilisé (par exemple, en conflatant l’arborescence d’interface utilisateur définie dans un DataTemplate, en traitant toutes les liaisons de données, etc.).  Dans le cas contraire, il sera récupéré à partir d’un pool d’instances existantes.
 
-À la fin de chaque passe de mesure, tout élément existant qui n’était pas marqué « en cours d’utilisation » est automatiquement considéré comme étant disponible pour une réutilisation, sauf si l’option [SuppressAutoRecycle](/uwp/api/microsoft.ui.xaml.controls.elementrealizationoptions) a été utilisée lors de la récupération de l’élément via le [ Méthode GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat) . Le Framework le déplace automatiquement vers un pool de recyclage et le rend disponible. Il peut par la suite être extrait pour une utilisation par un autre conteneur. Le Framework tente d’éviter cela dans la mesure du possible, car il existe un coût associé au nouveau parent d’un élément.
+À la fin de chaque passe de mesure, tout élément existant réalisé qui n’était pas marqué « en cours d’utilisation » est automatiquement considéré comme étant disponible pour réutilisation, sauf si l’option [SuppressAutoRecycle](/uwp/api/microsoft.ui.xaml.controls.elementrealizationoptions) a été utilisée lors de la récupération de l’élément via la méthode [GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat) . Le Framework le déplace automatiquement vers un pool de recyclage et le rend disponible. Il peut par la suite être extrait pour une utilisation par un autre conteneur. Le Framework tente d’éviter cela dans la mesure du possible, car il existe un coût associé au nouveau parent d’un élément.
 
 Si une disposition de virtualisation sait au début de chaque mesure que les éléments ne se trouvent plus dans le rectangle de réalisation, elle peut optimiser sa réutilisation. Plutôt que de s’appuyer sur le comportement par défaut de l’infrastructure. La disposition permet de déplacer des éléments de manière préventive vers le pool de recyclage à l’aide de la méthode [RecycleElement](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.recycleelement) .  Si vous appelez cette méthode avant de demander de nouveaux éléments, ces éléments existants sont disponibles quand la disposition émet ultérieurement une requête [GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat) pour un index qui n’est pas déjà associé à un élément.
 
@@ -289,7 +289,7 @@ L’approche générale concerne la disposition suivante :
 > [!TIP]
 > Si vous créez un contrôle personnalisé pour une bibliothèque de contrôles qui sera utilisée par d’autres personnes dans une grande variété de situations, une disposition des données peut ne pas être une option pour vous.
 
-### <a name="example-xbox-activity-feed-layout"></a>Exemple : Disposition des flux d’activités Xbox
+### <a name="example-xbox-activity-feed-layout"></a>Exemple : mise en page de flux d’activités Xbox
 
 L’interface utilisateur pour le flux d’activités Xbox utilise un modèle répétitif dans lequel chaque ligne a une vignette large, suivie de deux vignettes étroites qui sont inversées sur la ligne suivante. Dans cette disposition, la taille de chaque élément est une fonction de la position de l’élément dans le jeu de données et de la taille connue des vignettes (large vs étroit).
 
@@ -586,7 +586,7 @@ internal class ActivityFeedLayoutState
 
 Par défaut, le [VirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext) gère un mappage entre les éléments réalisés et l’index dans la source de données qu’ils représentent.  Une disposition peut choisir de gérer ce mappage en demandant toujours l’option [SuppressAutoRecycle](/uwp/api/microsoft.ui.xaml.controls.elementrealizationoptions) lors de la récupération d’un élément via la méthode [GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat) , ce qui empêche le comportement de recyclage automatique par défaut.  Une disposition peut choisir de le faire, par exemple, si elle est utilisée uniquement lorsque le défilement est limité à une direction et que les éléments qu’elle considère sont toujours contigus (c’est-à-dire que la connaissance de l’index du premier et du dernier élément suffit pour connaître tous les éléments qui doivent être REA). lized).
 
-#### <a name="example-xbox-activity-feed-measure"></a>Exemple : Mesure du flux d’activités Xbox
+#### <a name="example-xbox-activity-feed-measure"></a>Exemple : mesure de flux d’activités Xbox
 
 L’extrait de code ci-dessous montre la logique supplémentaire qui peut être ajoutée au MeasureOverride dans l’exemple précédent pour gérer le mappage.
 
@@ -703,7 +703,7 @@ Si un utilisateur fait glisser le curseur très rapidement, il est possible que 
 Lorsque la mise en page découvre que l’estimation est incorrecte et/ou constate une déphasage de fenêtre d’affichage inattendue, elle doit réorienter sa position de départ.  Les dispositions de virtualisation fournies dans le cadre des contrôles XAML sont développées en tant que dispositions dépendantes du contenu, car elles placent moins de restrictions sur la nature du contenu qui s’affichera.
 
 
-### <a name="example-simple-virtualizing-stack-layout-for-variable-sized-items"></a>Exemple : Disposition simple de la pile de virtualisation pour les éléments de taille variable
+### <a name="example-simple-virtualizing-stack-layout-for-variable-sized-items"></a>Exemple : disposition de la pile de virtualisation simple pour les éléments de taille variable
 
 L’exemple ci-dessous montre une disposition de pile simple pour les éléments de taille variable qui :
 
@@ -712,7 +712,7 @@ L’exemple ci-dessous montre une disposition de pile simple pour les éléments
 * est conscient des décalages de fenêtre d’affichage discontinues potentiels, et
 * applique les corrections de disposition pour tenir compte de ces décalages.
 
-@no__t 0Usage : Balisage @ no__t-0
+**Utilisation : balisage**
 
 ```xaml
 <ScrollViewer>
@@ -741,7 +741,7 @@ L’exemple ci-dessous montre une disposition de pile simple pour les éléments
 </ScrollViewer>
 ```
 
-@no__t 0Codebehind : Main. cs @ no__t-0
+**Code-behind : Main.cs**
 
 ```csharp
 string _lorem = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam laoreet erat vel massa rutrum, eget mollis massa vulputate. Vivamus semper augue leo, eget faucibus nulla mattis nec. Donec scelerisque lacus at dui ultricies, eget auctor ipsum placerat. Integer aliquet libero sed nisi eleifend, nec rutrum arcu lacinia. Sed a sem et ante gravida congue sit amet ut augue. Donec quis pellentesque urna, non finibus metus. Proin sed ornare tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam laoreet erat vel massa rutrum, eget mollis massa vulputate. Vivamus semper augue leo, eget faucibus nulla mattis nec. Donec scelerisque lacus at dui ultricies, eget auctor ipsum placerat. Integer aliquet libero sed nisi eleifend, nec rutrum arcu lacinia. Sed a sem et ante gravida congue sit amet ut augue. Donec quis pellentesque urna, non finibus metus. Proin sed ornare tellus.";
@@ -757,7 +757,7 @@ var data = new ObservableCollection<Recipe>(Enumerable.Range(0, 300).Select(k =>
 repeater.ItemsSource = data;
 ```
 
-@no__t 0Code : VirtualizingStackLayout. cs @ no__t-0
+**Code : VirtualizingStackLayout.cs**
 
 ```csharp
 // This is a sample layout that stacks elements one after

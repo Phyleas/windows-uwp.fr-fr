@@ -4,7 +4,7 @@ ms.assetid: 3F7744E8-8A3C-4203-A1CE-B18584E89000
 description: Comment déclencher un événement de type délégué défini par l’utilisateur sur un thread d’arrière-plan de telle sorte que JavaScript puisse le recevoir.
 ms.date: 07/19/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 78bc43c26a73a6184e5788ad7d003813e567a8d0
 ms.sourcegitcommit: 5dfa98a80eee41d97880dba712673168070c4ec8
@@ -17,7 +17,7 @@ ms.locfileid: "73052020"
 > [!NOTE]
 > Pour savoir comment déclencher des événements dans un [ C++](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) composant de Windows Runtime/WinRT, consultez [créer des C++événements dans/WinRT](../cpp-and-winrt-apis/author-events.md).
 
-Si votre composant Windows Runtime déclenche un événement d’un type délégué défini par l’utilisateur sur un thread d’arrière-plan (thread de travail) et vous souhaitez que JavaScript puisse recevoir l’événement, vous pouvez l’implémenter ou le déclencher de plusieurs manières :
+Si votre composant Windows Runtime déclenche un événement d’un type délégué défini par l’utilisateur sur un thread d’arrière-plan (thread de travail) et que vous souhaitez que JavaScript puisse recevoir l’événement, vous pouvez l’implémenter ou le déclencher de plusieurs manières :
 
 -   (Option nº 1) Déclencher l’événement via [Windows.UI.Core.CoreDispatcher](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher) pour marshaler l’événement au contexte de thread JavaScript. Bien qu’il s’agisse en général de la meilleure option, elle peut dans certains cas ne pas fournir des performances optimales.
 -   (Option nº 2) Utiliser [Windows.Foundation.EventHandler](https://docs.microsoft.com/uwp/api/windows.foundation.eventhandler)&lt;Object&gt; mais perdre les informations sur le type d’événement. Si l’option nº 1 n’est pas réalisable ou que ses performances ne sont pas adéquates, cela constitue la deuxième meilleure option si la perte des informations sur le type d’événement est acceptable.

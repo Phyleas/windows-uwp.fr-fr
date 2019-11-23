@@ -113,7 +113,7 @@ Await window.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
 
 ## <a name="create-a-capture-frame-pool-and-capture-session"></a>Créer un pool d’images de capture et une session de capture
 
-À l’aide de **GraphicsCaptureItem**, vous allez créer un [Direct3D11CaptureFramePool](https://docs.microsoft.com/uwp/api/windows.graphics.capture.direct3d11captureframepool) avec votre appareil D3D, format de pixel pris en charge (**dxgi @ no__t-3FORMAT @ no__t-4B8G8R8A8 @ no__t-5UNORM**), le nombre de frames souhaité (qui peut être un entier ) et la taille de cadre. La propriété **ContentSize** de la classe **GraphicsCaptureItem** peut être utilisée comme taille de votre image :
+À l’aide de **GraphicsCaptureItem**, vous allez créer un [Direct3D11CaptureFramePool](https://docs.microsoft.com/uwp/api/windows.graphics.capture.direct3d11captureframepool) avec votre appareil D3D, le format de pixel pris en charge (**DXGI\_format\_B8G8R8A8\_UNORM**), le nombre de frames souhaités (qui peut être n’importe quel entier) et la taille du frame. La propriété **ContentSize** de la classe **GraphicsCaptureItem** peut être utilisée comme taille de votre image :
 
 ```cs
 private GraphicsCaptureItem _item;
@@ -259,7 +259,7 @@ Lorsque la méthode **Recreate** est appelée, toutes les images existantes sont
 
 ## <a name="putting-it-all-together"></a>Synthèse de tous les éléments
 
-L’extrait de code suivant est un exemple de bout en bout illustrant comment implémenter la capture d’écran dans une application UWP. Dans cet exemple, nous avons deux boutons dans le front-end : l’un appelle **Button_ClickAsync**et l’autre appelle **ScreenshotButton_ClickAsync**.
+L’extrait de code suivant est un exemple de bout en bout illustrant comment implémenter la capture d’écran dans une application UWP. Dans cet exemple, nous avons deux boutons dans le front-end : un appelle **Button_ClickAsync**, et les autres appels **ScreenshotButton_ClickAsync**.
 
 > [!NOTE]
 > Cet extrait de code utilise [Win2D](https://microsoft.github.io/Win2D/html/Introduction.htm), une bibliothèque pour le rendu graphique 2D. Pour plus d’informations sur la façon de le configurer pour votre projet, consultez leur documentation.
@@ -688,6 +688,6 @@ End Class
 
 Si vous souhaitez enregistrer une vidéo de votre application, vous pouvez le faire plus facilement avec l' [espace de noms Windows. Media. AppRecording](https://docs.microsoft.com/uwp/api/windows.media.apprecording). Cela fait partie du kit de développement logiciel (SDK) d’extension de bureau. il ne fonctionne donc que sur Desktop et requiert que vous y ajoutiez une référence à partir de votre projet. Pour plus d’informations, consultez [Présentation des familles d’appareils](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview) .
 
-## <a name="see-also"></a>Voir aussi
+## <a name="see-also"></a>Voir également
 
 * [Espace de noms Windows. Graphics. capture](https://docs.microsoft.com/uwp/api/windows.graphics.capture)

@@ -22,7 +22,7 @@ Créez des applications de plateforme Windows universelle (UWP) qui utilisent de
 
 Si vous n’y prêtez pas attention, l’utilisation de composants UWP peut avoir une incidence considérable sur les performances de votre application. Cette section explique comment obtenir des performances optimales quand votre application utilise des composants UWP.
 
-### <a name="introduction"></a>Présentation
+### <a name="introduction"></a>Introduction
 
 L’interopérabilité peut avoir un impact important sur les performances et il peut arriver que vous y ayez recours sans vous en apercevoir. L’UWP traite automatiquement une grande part de l’interopérabilité avec ses composants pour que vous soyez plus productif et réutilisiez tout code écrit dans un autre langage. Nous vous recommandons de tirer parti de ce que l’UWP fait à votre place, mais sachez que cela peut avoir un impact sur les performances. Cette section indique ce que vous pouvez faire pour atténuer l’impact de l’interopérabilité sur les performances de votre application.
 
@@ -30,7 +30,7 @@ l’UWP comporte une bibliothèque de types accessible à partir de tout langage
 
 Quand vous développez une application UWP en C# ou Visual Basic, les deux types d’API les plus courants que vous utilisez sont les API UWP et les API .NET pour les applications UWP. En règle générale, les types qui sont définis dans UWP se trouvent dans des espaces de noms commençant par « Windows. », alors que les espaces de noms des types .NET commencent par « System. ». Il existe cependant quelques exceptions à cette règle. Les types dans .NET pour les applications UWP ne nécessitent pas d’interopérabilité quand ils sont utilisés. Si vous constatez de mauvaises performances pour des actions qui utilisent UWP, vous pouvez peut-être utiliser .NET pour les applications UWP à la place afin d’obtenir de meilleures performances.
 
-**Remarque**   la plupart des composants UWP fournis avec Windows 10 sont mis en œuvre C++ dans, vous pouvez franchir les limites d’interopérabilité C# lorsque vous les utilisez à partir de ou Visual Basic. Comme toujours, observez le comportement de votre application pour déterminer si l’utilisation de composants UWP nuit à ses performances avant de modifier le code.
+**Notez**   la plupart des composants UWP fournis avec Windows 10 sont mis en œuvre C++ dans, vous pouvez franchir les limites d’interopérabilité C# lorsque vous les utilisez à partir de ou Visual Basic. Comme toujours, observez le comportement de votre application pour déterminer si l’utilisation de composants UWP nuit à ses performances avant de modifier le code.
 
 Dans cette rubrique, l’expression « composants UWP » désigne les composants écrits dans un langage autre que C# ou Visual Basic.
 

@@ -46,7 +46,7 @@ Par exemple, si l’adresse de votre site web est « msn.com », vous devez sa
 </Applications>
 ```
 
-La déclaration ci-dessus inscrit votre application afin qu’elle puisse gérer des liens à partir de l’hôte spécifié. Si votre site Web comporte plusieurs adresses (par exemple : m.example.com, www\.example.com et example.com), ajoutez une entrée `<uap3:Host Name=... />` distincte à l’intérieur du `<uap3:AppUriHandler>` pour chaque adresse.
+La déclaration ci-dessus inscrit votre application afin qu’elle puisse gérer des liens à partir de l’hôte spécifié. Si votre site Web comporte plusieurs adresses (par exemple : m.example.com, www\.example.com et example.com), ajoutez une entrée de `<uap3:Host Name=... />` distincte à l’intérieur du `<uap3:AppUriHandler>` pour chaque adresse.
 
 ## <a name="associate-your-app-and-website-with-a-json-file"></a>Associer votre application et votre site web à un fichier JSON
 
@@ -55,7 +55,7 @@ Pour faire en sorte que seule votre application puisse ouvrir du contenu sur vot
 >[!Important]
 > Le fichier JSON ne doit pas contenir le suffixe de fichier .json.
 
-Créez un fichier JSON (sans l’extension de fichier .json) nommé **windows-app-web-link** et indiquez le nom de la famille de packages de votre application. Exemple :
+Créez un fichier JSON (sans l’extension de fichier .json) nommé **windows-app-web-link** et indiquez le nom de la famille de packages de votre application. Par exemple :
 
 ``` JSON
 [{
@@ -96,7 +96,7 @@ Si vous avez deux applications que vous voulez lier à votre site web, répertor
 
 Pour offrir à vos utilisateurs la meilleure expérience possible, utilisez les chemins d’accès des exclusions pour vous assurer que le contenu uniquement en ligne est exclu des chemins d’accès pris en charge dans votre fichier JSON.
 
-Les chemins d’accès des exclusions sont vérifiés en premier lieu et, s’il existe une correspondance, la page correspondante s’ouvre avec le navigateur au lieu de l’application désignée. Dans l’exemple ci-dessus, « /News/\* » comprend toutes les pages sous ce chemin d’accès, tandis que « /News @ no__t-1 » (pas de « Actualités » de barres obliques inverses) comprend les chemins d’accès sous « News @ no__t-2 », tels que « newslocal/ », « NewsInternational/ », et ainsi de suite.
+Les chemins d’accès des exclusions sont vérifiés en premier lieu et, s’il existe une correspondance, la page correspondante s’ouvre avec le navigateur au lieu de l’application désignée. Dans l’exemple ci-dessus, « /News/\*» comprend toutes les pages situées sous ce chemin d’accès, tandis que « /News\*» (pas de « Actualités » des barres obliques inverses) comprend tous les chemins d’accès sous « News\*», tels que « newslocal/ », « NewsInternational/ », etc.
 
 ## <a name="handle-links-on-activation-to-link-to-content"></a>Gérer les liens à l’activation pour créer un lien vers le contenu
 
@@ -150,19 +150,19 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 **Important** Veillez à remplacer la dernière logique `if (rootFrame.Content == null)` par `rootFrame.Navigate(deepLinkPageType, e);`, comme indiqué dans l’exemple ci-dessus.
 
-## <a name="test-it-out-local-validation-tool"></a>Testez-le : Outil de validation locale
+## <a name="test-it-out-local-validation-tool"></a>Test : outil de validation locale
 
 Vous pouvez tester la configuration de votre application et de votre site web en exécutant l’outil de vérification de l’inscription de l’hôte de l’application disponible dans :
 
-% windir% \\system32 @ no__t-1**AppHostRegistrationVerifier. exe**
+% windir%\\system32\\**AppHostRegistrationVerifier. exe**
 
 Testez la configuration de votre application et de votre site web en exécutant cet outil avec les paramètres suivants :
 
 Nom d’hôte **AppHostRegistrationVerifier. exe** *packagefamilyname FilePath*
 
--   Nom d’hôte : Votre site Web (par exemple, microsoft.com)
--   Nom de la famille de packages (PFN) : PFN de votre application
--   Chemin du fichier : Fichier JSON pour la validation locale (par exemple, C : \\SomeFolder @ no__t-1Windows-App-Web-Link)
+-   Nom d’hôte : votre site Web (par exemple, microsoft.com)
+-   Package Family Name : le nom de la famille de packages (PFN) de votre application
+-   Chemin d’accès au fichier : fichier JSON pour la validation locale (par exemple, C :\\SomeFolder\\Windows-App-Web-Link)
 
 Si l’outil ne retourne rien, la validation fonctionnera sur ce fichier lors du téléchargement. S’il existe un code d’erreur, il ne fonctionnera pas.
 
@@ -171,9 +171,9 @@ Vous pouvez activer la clé de Registre suivante afin qu'elle force la correspon
 `HKCU\Software\Classes\LocalSettings\Software\Microsoft\Windows\CurrentVersion\
 AppModel\SystemAppData\YourApp\AppUriHandlers`
 
-KeyName Valeur `ForceValidation` : `1`
+KeyName : `ForceValidation` valeur : `1`
 
-## <a name="test-it-web-validation"></a>Testez-le : Validation Web
+## <a name="test-it-web-validation"></a>Test : validation sur le web
 
 Fermez votre application pour vérifier que l’application est activée lorsque vous cliquez sur un lien. Copiez ensuite l’adresse de l’un des chemins d’accès pris en charge dans votre site web. Par exemple, si l’adresse de votre site Web est « msn.com » et que l’un des chemins d’accès de support est « chemin1 », vous devez utiliser `http://msn.com/path1`
 
@@ -193,7 +193,7 @@ Si vous souhaitez suivre la logique d’activation du protocole, définissez un 
 - Toutes les applications chargées de manière indépendante avec AppUriHandlers auront des liens validés pour l’hôte au moment de l’installation. Il est inutile de charger un fichier JSON pour tester la fonctionnalité.
 - Cette fonctionnalité est toujours disponible si votre application est une application UWP lancée avec [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) ou une application de bureau Windows lancée avec [ShellExecuteEx](https://docs.microsoft.com/windows/desktop/api/shellapi/nf-shellapi-shellexecuteexa). Si l’URL correspond à un gestionnaire d’URI d’application enregistré, l’application sera lancée en lieu et place du navigateur.
 
-## <a name="see-also"></a>Voir aussi
+## <a name="see-also"></a>Voir également
 
 [Exemple de projet Application-site web](https://github.com/project-rome/AppUriHandlers/tree/master/NarwhalFacts)
 [Inscription de windows.protocol](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-protocol)

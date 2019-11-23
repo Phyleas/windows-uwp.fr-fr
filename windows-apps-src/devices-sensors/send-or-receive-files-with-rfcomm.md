@@ -26,7 +26,7 @@ ms.locfileid: "72281812"
 
 Cet article fournit une vue d’ensemble de RFCOMM Bluetooth dans les applications de plateforme Windows universelle (UWP), ainsi qu’un exemple de code illustrant la façon d’envoyer ou de recevoir un fichier.
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d’ensemble
 
 Les API de l’espace de noms [**Windows.Devices.Bluetooth.Rfcomm**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.Rfcomm) s’appuient sur des schémas existants pour Windows.Devices, notamment [**enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration) et [**instantiation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Portable.StorageDevice). La lecture et l’écriture de données tirent parti des [**schémas de flux de données établis**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.DataReader) et des objets dans [**Windows.Storage.Streams**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams). Les attributs de protocole SDP (Service Discovery Protocol) possèdent une valeur et un type attendu. Toutefois, pour certains appareils communs, les implémentations des attributs SDP sont défectueuses, car le type de la valeur ne correspond pas au type attendu. En outre, de nombreuses utilisations de RFCOMM ne nécessitent aucun attribut SDP supplémentaire. Cette API permet donc d’accéder aux données SDP non analysées, à partir desquelles les développeurs peuvent obtenir les informations dont ils ont besoin.
 
@@ -40,7 +40,7 @@ Pour un exemple de code complet détaillant l’opération RFCOMM, voir l’[**
 
 Lors de l’envoi d’un fichier, le scénario d’application de base consiste à se connecter à un périphérique couplé en fonction d’un service souhaité. Les étapes à accomplir sont les suivantes :
 
--   Utilisez les fonctions **RfcommDeviceService. GetDeviceSelector @ no__t-1** pour vous aider à générer une requête AQS qui peut être utilisée pour énumérer les instances d’appareil couplées du service souhaité.
+-   Utilisez les fonctions de **\*RfcommDeviceService. GetDeviceSelector** pour aider à générer une requête AQS qui peut être utilisée pour énumérer les instances d’appareil couplées du service souhaité.
 -   Sélectionnez un appareil énuméré, créez un [**RfcommDeviceService**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceService), puis lisez les attributs SDP selon les besoins (en utilisant [**established data helpers**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.DataReader) pour analyser les données de l’attribut).
 -   Créez un socket et utilisez les propriétés [**RfcommDeviceService.ConnectionHostName**](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionhostname) et [**RfcommDeviceService.ConnectionServiceName**](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionservicename) pour établir une connexion [**StreamSocket.ConnectAsync**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.connectasync) au service d’appareil distant avec les paramètres appropriés.
 -   Suivez les schémas de flux de données établis pour lire des blocs de données dans le fichier et les envoyer à l’appareil via le flux [**StreamSocket.OutputStream**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.outputstream) du socket.

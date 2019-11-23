@@ -21,7 +21,7 @@ ms.locfileid: "71340604"
 
 Une *propriété jointe* est un concept XAML. Les propriétés jointes permettent de définir des paires propriété/valeur supplémentaires sur un objet, mais les propriétés ne font pas partie de la définition d’objet d’origine. Les propriétés jointes sont généralement définies comme une forme spécialisée de propriété de dépendance dont le modèle objet du type du propriétaire ne comporte pas de wrapper de propriété conventionnel.
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Conditions préalables
 
 Nous supposons que vous connaissez les principes de base des propriétés de dépendance et que vous avez lu le document [Vue d’ensemble des propriétés de dépendance](dependency-properties-overview.md).
 
@@ -125,13 +125,13 @@ Le point figurant dans un nom de propriété jointe est un élément clé du mod
 > [!WARNING]
 > Une limitation existante de l’implémentation XAML Windows Runtime est que vous ne pouvez pas animer une propriété jointe personnalisée.
 
-- Pour spécifier une propriété jointe en tant que propriété cible d’une référence de ressource d’un fichier de ressources à **x :uid**, utilisez une syntaxe spéciale qui injecte une déclaration de style code, entièrement qualifié **à l’aide de :** dans les crochets (« \[ @ no__t-3 »), à Créez un arrêt délibéré de l’étendue. Par exemple, en supposant qu’il existe un élément `<TextBlock x:Uid="Title" />`, la clé de ressource dans le fichier de ressources qui cible la valeur **Canvas. Top** de cette instance est « Title. \[using : Windows.UI.Xaml.Controls\]Canvas.Top ». Pour plus d’informations sur les fichiers de ressources et XAML, consultez [Quickstart : Traduction des ressources de l’interface utilisateur @ no__t-0.
+- Pour spécifier une propriété jointe en tant que propriété cible d’une référence de ressource d’un fichier de ressources à **x :uid**, utilisez une syntaxe spéciale qui injecte une déclaration de code, entièrement qualifié **à l’aide de :** dans les crochets («\[\]»), afin de créer un saut de portée délibérée. Par exemple, en supposant qu’il existe un élément `<TextBlock x:Uid="Title" />`, la clé de ressource dans le fichier de ressources qui cible la valeur **Canvas. Top** de cette instance est « title ».\[à l’aide de : Windows. UI. Xaml. Controls\]Canvas. Top». Pour plus d’informations sur les fichiers de ressources et le code XAML, voir [Démarrage rapide : traduction des ressources d’interface utilisateur](https://docs.microsoft.com/previous-versions/windows/apps/hh965329(v=win.10)).
 
 ## <a name="related-topics"></a>Rubriques connexes
 
 - [Propriétés jointes personnalisées](custom-attached-properties.md)
 - [Vue d’ensemble des propriétés de dépendance](dependency-properties-overview.md)
 - [Définir des dispositions avec XAML](https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml)
-- [Démarrage rapide : Traduction des ressources de l’interface utilisateur @ no__t-0
+- [Démarrage rapide : traduction des ressources de l’interface utilisateur](https://docs.microsoft.com/previous-versions/windows/apps/hh943060(v=win.10))
 - [**SetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.setvalue)
 - [**GetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.getvalue)
