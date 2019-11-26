@@ -6,30 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, jeux, directx, lancement, reprise
 ms.localizationpriority: medium
-ms.openlocfilehash: ac2f7e70d813ea3314d897eedb5e245d781ce412
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f075b50c3f943ec016ebdb513367aff680897aa5
+ms.sourcegitcommit: c5dc47198f40339a047db72db9d5f2248583b948
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57662214"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74490625"
 ---
 # <a name="launching-and-resuming-apps-directx-and-c"></a>Lancement et reprise des applications (DirectX et C++)
 
-
-
 Découvrez comment lancer, suspendre et reprendre votre application DirectX de plateforme Windows universelle (UWP).
 
-| Rubrique | Description |
-|---------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
-| [Comment activer une application](how-to-activate-an-app-directx-and-cpp.md) | Cette rubrique explique comment définir l’expérience d’activation d’une application DirectX UWP. |
-| [Comment suspendre une application](how-to-suspend-an-app-directx-and-cpp.md) | Cette rubrique montre comment enregistrer des données importantes relatives à l’état du système et aux applications lorsque le système interrompt l’exécution de votre application DirectX UWP. |
-| [Comment reprendre une application](how-to-resume-an-app-directx-and-cpp.md) | Cette rubrique montre comment restaurer des données d’application importantes lorsque le système reprend l’exécution de votre application DirectX UWP. |
- 
-
- 
-
- 
-
-
-
-
+|Sujet|Description|
+|-|-|
+|[How to activate an app](how-to-activate-an-app-directx-and-cpp.md)|Cette rubrique explique comment définir l’expérience d’activation d’une application DirectX UWP.|
+|[How to suspend an app](how-to-suspend-an-app-directx-and-cpp.md)|Cette rubrique montre comment enregistrer des données importantes relatives à l’état du système et aux applications lorsque le système interrompt l’exécution de votre application DirectX UWP.|
+|[How to resume an app](how-to-resume-an-app-directx-and-cpp.md)|Cette rubrique montre comment restaurer des données d’application importantes lorsque le système reprend l’exécution de votre application DirectX UWP.|
