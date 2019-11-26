@@ -1,6 +1,6 @@
 ---
 description: Utilisez votre ordinateur Mac actuel pour développer des applications pour Windows.
-title: Configuration de votre Mac avec Windows 10
+title: Configuration de votre Mac avec Windows 10
 ms.assetid: 6D520610-5DE0-476E-A792-AA57E002D309
 ms.date: 02/08/2017
 ms.topic: article
@@ -13,7 +13,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74259116"
 ---
-# <a name="setting-up-your-mac-with-windows-10"></a>Configuration de votre Mac avec Windows 10
+# <a name="setting-up-your-mac-with-windows-10"></a>Configuration de votre Mac avec Windows 10
 
 
 Utilisez votre ordinateur Mac actuel pour développer des applications pour Windows.

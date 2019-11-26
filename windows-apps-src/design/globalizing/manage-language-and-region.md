@@ -70,7 +70,7 @@ La troisième liste d'intérêt de langue constitue l'intersection des deux list
 
 De manière plus spécifique, la liste de langues d'exécution d'application est constituée de ces éléments.
 
-1.  **(Facultatif) Remplacement de la langue principale**. Le paramètre [**PrimaryLanguageOverride**](/uwp/api/Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride) est un paramètre de substitution simple pour les applications qui donnent aux utilisateurs leur propre choix de langue indépendant ou les applications qui ont une bonne raison de remplacer les langues par défaut. Pour en savoir plus, voir [Exemple de ressources d’application et de localisation](https://code.msdn.microsoft.com/windowsapps/Application-resources-and-cd0c6eaa).
+1.  **(Facultatif) Remplacement de la langue principale**. Le paramètre [**PrimaryLanguageOverride**](/uwp/api/Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride) est un paramètre de substitution simple pour les applications qui donnent aux utilisateurs leur propre choix de langue indépendant ou les applications qui ont une bonne raison de remplacer les langues par défaut. Pour en savoir plus, consultez [Exemple de ressources d’application et de localisation](https://code.msdn.microsoft.com/windowsapps/Application-resources-and-cd0c6eaa).
 2.  **Les langues de l'utilisateur qui sont prises en charge par l'application**. Il s'agit de la liste de langues de profile utilisateur filtrée par la liste de langues du manifeste d'application. Le filtrage des langues de l’utilisateur par celles prises en charge par l’application préserve la cohérence entre les Kits de développement logiciel (SDK), les bibliothèques de classes, les packages d’infrastructure dépendants et l’application.
 3.  **Si 1 et 2 sont vides, la langue par défaut ou la première langue prise en charge par l’application.** . Si la liste de langues du profil utilisateur ne contient aucune des langues prises en charge par l’application, la langue d'exécution de l’application est la première langue prise en charge par l’application.
 
@@ -141,7 +141,7 @@ Le tableau ci-dessous contient des exemples de ce que l’utilisateur verrait da
 <tr class="header">
 <th align="left">Liste de langues de manifeste d’application</th>
 <th align="left">Liste de langues de profil utilisateur</th>
-<th align="left">Langue principale de substitution de l’application (en option)</th>
+<th align="left">Langue principale de substitution de l’application (facultative)</th>
 <th align="left">Liste de langues d'exécution d’application</th>
 <th align="left">Ce que l’utilisateur voit dans l’application</th>
 </tr>

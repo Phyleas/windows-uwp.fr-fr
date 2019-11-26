@@ -1,7 +1,7 @@
 ---
 ms.assetid: 3aeddb83-5314-447b-b294-9fc28273cd39
 description: Découvrez comment installer le kit SDK Microsoft Advertising.
-title: Installer le SDK Microsoft Advertising
+title: Installer le SDK Microsoft Advertising
 ms.date: 08/23/2017
 ms.topic: article
 keywords: windows 10, uwp, pub, publicités, installer, SDK, bibliothèque de publicités
@@ -13,7 +13,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74260267"
 ---
-# <a name="install-the-microsoft-advertising-sdk"></a>Installer le SDK Microsoft Advertising
+# <a name="install-the-microsoft-advertising-sdk"></a>Installer le SDK Microsoft Advertising
 
 Pour afficher des publicités dans vos applications UWP pour Windows 10, installez le [SDK Microsoft Advertising](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK). Ce kit de développement logiciel (SDK) est une extension de Visual Studio 2015 et des versions ultérieures.
 
@@ -82,7 +82,7 @@ Après avoir installé le SDK Microsoft Advertising, suivez ces instructions pou
 
 1. Ouvrez votre projet dans Visual Studio.
     > [!NOTE]
-    > Si votre projet cible **Toute UC**, mettez-le à jour pour utiliser une sortie de génération propre à l’architecture (par exemple, **x86**). Si votre projet cible **Toute UC**, vous ne pourrez pas ajouter une référence au SDK Microsoft Advertising dans les étapes suivantes. Pour plus d’informations, consultez [Erreurs de référence provoquées par le ciblage de Toute UC dans votre projet](known-issues-for-the-advertising-libraries.md#reference_errors).
+    > Si votre projet cible **Toute UC**, mettez-le à jour pour utiliser une sortie de génération propre à l’architecture (par exemple, **x86**). Si votre projet cible **Toute UC**, vous ne pourrez pas ajouter une référence au SDK Microsoft Advertising dans les étapes suivantes. Pour plus d’informations, voir [Erreurs de référence provoquées par le ciblage de Toute UC dans votre projet](known-issues-for-the-advertising-libraries.md#reference_errors).
 
 2. Dans **l’Explorateur de solutions**, cliquez avec le bouton droit sur **Références**, puis cliquez sur **Ajouter une référence**.
 

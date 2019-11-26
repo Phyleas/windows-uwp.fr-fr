@@ -27,7 +27,7 @@ Pour commencer, voir [Vue d’ensemble du Kit de compétences Cortana](https://d
 
 Pour savoir comment étendre Cortana avec les fonctionnalités d’une application UWP utilisant des commandes vocales, voir [Commandes vocales Cortana](https://docs.microsoft.com/cortana/voice-commands/vcd). 
 
-## <a name="related-articles"></a>Articles connexes
+## <a name="related-articles"></a>Articles associés
 
 * [**Éléments et attributs VCD v 1.2**](https://docs.microsoft.com/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2)
 

@@ -13,10 +13,10 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74260129"
 ---
-# <a name="windows-runtime-8x-to-uwp-case-study-bookstore1"></a>Étude de cas de portage d’application Windows Runtime 8.x vers UWP : Bookstore1
+# <a name="windows-runtime-8x-to-uwp-case-study-bookstore1"></a>Étude de cas de portage d’application Windows Runtime 8.x vers UWP : Bookstore1
 
 
-Cette rubrique présente une étude de cas concernant le portage d’une application 8,1 universelle très simple vers une application Windows 10 plateforme Windows universelle (UWP). Une application 8,1 universelle est une application qui génère un package d’application pour Windows 8.1 et un package d’application différent pour Windows Phone 8,1. Avec Windows 10, vous pouvez créer un package d’application unique que vos clients peuvent installer sur un large éventail d’appareils, et c’est ce que nous allons faire dans cette étude de cas. Voir le [Guide des applications UWP](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide).
+Cette rubrique présente une étude de cas concernant le portage d’une application 8,1 universelle très simple vers une application Windows 10 plateforme Windows universelle (UWP). Une application 8,1 universelle est une application qui génère un package d’application pour Windows 8.1 et un package d’application différent pour Windows Phone 8,1. Avec Windows 10, vous pouvez créer un package d’application unique que vos clients peuvent installer sur un large éventail d’appareils, et c’est ce que nous allons faire dans cette étude de cas. Voir [Guide des applications UWP](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide).
 
 L’application que nous porterons se compose d’une classe **ListBox** liée à un modèle d’affichage. Ce modèle comporte une liste de livres qui indique leur titre, leur auteur et leur couverture. Les images de couverture de livre possèdent l’attribut **Action de génération** défini sur **Contenu** et l’attribut **Copier dans le répertoire de sortie** défini sur **Ne pas copier**.
 
@@ -47,7 +47,7 @@ Bookstore1\_81 sur Windows Phone
 La solution Bookstore1\_81 est un projet d’application universelle 8,1 et contient ces projets.
 
 -   Bookstore1\_81. Windows. Il s’agit du projet qui génère le package d’application pour Windows 8.1.
--   Bookstore1\_81. WindowsPhone. Il s’agit du projet qui crée le package d’application pour Windows Phone 8.1.
+-   Bookstore1\_81. WindowsPhone. Il s’agit du projet qui crée le package d’application pour Windows Phone 8.1.
 -   Bookstore1\_81. Shared. Il s’agit du projet qui contient le code source, les fichiers de balisage et d’autres actifs et ressources qui sont utilisés par les deux autres projets.
 
 Pour cette étude de cas, nous disposons des options habituelles décrites dans la section [Si vous disposez d’une application 8.1 universelle](w8x-to-uwp-root.md), relative aux appareils à prendre en charge. La décision ici est un simple : cette application a les mêmes fonctionnalités, et pour l’essentiel avec le même code, à la fois dans ses Windows 8.1 et Windows Phone les formulaires 8,1. Par conséquent, nous allons déplacer le contenu du projet partagé (et tout ce dont nous avons besoin à partir des autres projets) vers un Windows 10 qui cible la famille d’appareils universels (l’un d’entre eux peut être installé sur la plus large gamme d’appareils).
@@ -101,7 +101,7 @@ L’application Windows 10 presque portée s’exécutant sur un appareil mobile
 
 ## <a name="an-optional-adjustment-to-the-list-box-for-mobile-devices"></a>Ajustement facultatif de la zone de liste pour les appareils mobiles
 
-Lorsque l’application s’exécute sur un périphérique mobile, l’arrière-plan d’une zone de liste est clair par défaut dans les deux thèmes. Vous préférerez peut-être ce style et, dans ce cas, vous n’avez plus rien à faire si ce n’est nettoyer : supprimez le fichier de dictionnaire de ressources BookstoreStyles.xaml de votre projet et supprimez le balisage qui le fusionne dans le fichier MainPage.xaml.
+Lorsque l’application s’exécute sur un appareil mobile, l’arrière-plan d’une zone de liste est clair par défaut dans les deux thèmes. Vous préférerez peut-être ce style et, dans ce cas, vous n’avez plus rien à faire si ce n’est nettoyer : supprimez le fichier de dictionnaire de ressources BookstoreStyles.xaml de votre projet et supprimez le balisage qui le fusionne dans le fichier MainPage.xaml.
 
 Toutefois, les contrôles sont conçus pour que vous puissiez personnaliser leur apparence tout en préservant leur comportement. Par conséquent, si vous souhaitez que la zone de liste soit sombre dans le thème à dominante foncée (l’apparence de l’application d’origine), cette section décrit la manière de procéder.
 
@@ -128,4 +128,4 @@ Cette étude de cas vous a décrit le processus de portage d’une application t
 
 Nous avons également pu constater que le processus de portage des modèles d’affichage était généralement fluide. Cependant, la prise en charge du facteur de forme et l’interface utilisateur risquent fort de nécessiter une certaine attention lors du portage.
 
-Dans l’étude de cas suivante, [Bookstore2](w8x-to-uwp-case-study-bookstore2.md), nous examinons l’accès aux données groupées et leur affichage.
+Dans l’étude de cas suivante, [Bookstore2](w8x-to-uwp-case-study-bookstore2.md), nous examinons l’accès aux données groupées et l’affichage de ces dernières.

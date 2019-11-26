@@ -466,7 +466,7 @@ XAML est un langage d’interface utilisateur déclaratif convivial doté de fon
 </table>
  
 
-#### <a name="html-5"></a>HTML 5
+#### <a name="html-5"></a>HTML 5
 
 Le langage HTML (HyperText Markup Language) est un langage de balisage d’interface utilisateur couramment utilisé pour les pages web, les applications et les clients enrichis. Les jeux Windows peuvent utiliser le langage HTML5 comme couche présentation complète avec les fonctionnalités habituelles du HTML, l’accès à la plateforme Universal Windows Platform (UWP) et la prise en charge de fonctionnalités web modernes comme AppCache, les traitements web, le canevas, le glisser-déplacer, la programmation asynchrone et le format SVG. En arrière-plan, le rendu HTML tire parti de la puissance de l’accélération matérielle de DirectX. Vous bénéficiez donc toujours de l’avantage des performances de DirectX sans écrire de code supplémentaire. HTML5 convient bien si vous maîtrisez le développement web, le portage d’un jeu web ou si vous souhaitez utiliser des couches de langage et de graphiques dont l’approche est plus simple que les autres choix. Le langage HTML5 est utilisé avec JavaScript, mais il peut être également appelé dans les composants créés en C# ou C++/CX.
 
@@ -520,7 +520,7 @@ C++/CX est un langage haute performance à faible traitement, qui fournit une pu
         <td><a href="https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx">Informations C++ de référence surC++le langage visuel (/CX)</a></td>
     </tr>
     <tr>
-        <td>Visual C++ : Guide de programmation et informations de référence</td>
+        <td>Visual C++ : Guide de programmation et informations de référence</td>
         <td><a href="https://docs.microsoft.com/cpp/visual-cpp-in-visual-studio">Visuel C++ dans visual studio 2019</a></td>
     </tr>
 </table>
@@ -528,7 +528,7 @@ C++/CX est un langage haute performance à faible traitement, qui fournit une pu
 
 #### <a name="c"></a>C#
 
-C# (prononcez « C sharp ») est un langage moderne et innovant, qui est simple, puissant, de type sécurisé et orienté objet. C# permet un développement rapide tout en conservant la familiarité et l’expressivité des langages du style C. Même s’il est facile à utiliser, C# possède de nombreuses fonctionnalités de langage avancées comme le polymorphisme, les délégués, les expressions lambda, les fermetures, la méthode Iterator, la covariance et les expressions LINQ (Language-Integrated Query). C# convient parfaitement si vous ciblez XAML, souhaitez commencer à développer rapidement votre jeu ou bénéficiez déjà d’une expérience en C#. C# est utilisé essentiellement avec XAML. Si vous voulez utiliser DirectX, choisissez plutôt C++ ou écrivez une partie de votre jeu en tant que composant C++ qui interagit avec DirectX. Pensez également à [Win2D](https://github.com/Microsoft/Win2D), une bibliothèque de graphismes Direct2D en mode immédiat pour C# et C++.
+C# (prononcez « C sharp ») est un langage moderne et innovant, qui est simple, puissant, de type sécurisé et orienté objet. C# permet un développement rapide tout en conservant la familiarité et l’expressivité des langages du style C. Même s’il est facile à utiliser, C# possède de nombreuses fonctionnalités de langage avancées comme le polymorphisme, les délégués, les expressions lambda, les fermetures, la méthode Iterator, la covariance et les expressions LINQ (Language-Integrated Query). C# convient parfaitement si vous ciblez XAML, souhaitez commencer à développer rapidement votre jeu ou bénéficiez déjà d’une expérience en C#. C# est utilisé essentiellement avec XAML. Si vous voulez utiliser DirectX, choisissez plutôt C++ ou écrivez une partie de votre jeu en tant que composant C++ qui interagit avec DirectX. Pensez également à [Win2D](https://github.com/Microsoft/Win2D), une bibliothèque de graphismes Direct2D en mode immédiat pour C# et C++.
 
 <table>
     <colgroup>
@@ -633,7 +633,7 @@ Les ponts de plateforme Windows universelle sont des technologies qui amènent v
 
 #### <a name="playfab"></a>PlayFab
 
-PlayFab, qui fait désormais partie de la famille Microsoft, est une plateforme principale complète pour les jeux en direct et offre aux studios indépendants un moyen puissant pour se lancer. Stimulez les revenus, l’engagement et la durée de rétention, tout en réduisant les coûts, grâce aux services de jeu, l'analyse en temps réel et LiveOps.
+PlayFab, qui fait désormais partie de la famille Microsoft, est une plateforme principale complète pour les jeux en direct et offre aux studios indépendants un moyen puissant pour se lancer. Stimulez les revenus, l’engagement et la durée de rétention, tout en réduisant les coûts, grâce aux services de jeu, l’analyse en temps réel et LiveOps.
 
 <table>
     <colgroup>
@@ -723,7 +723,7 @@ Unity prend en charge le développement de Direct3D 12 à partir d’Unity 5.4.
         <td><a href="https://docs.microsoft.com/windows/uwp/gaming/missing-dot-net-apis-in-unity-and-uwp">API .NET manquantes dans Unity et UWP</a></td>
     </tr>
     <tr>
-        <td>Publier votre jeu Unity en tant qu’application Windows universelle (vidéo)</td>
+        <td>Publier votre jeu Unity en tant qu’application de plateforme universelle Windows (vidéo)</td>
         <td><a href="https://channel9.msdn.com/Blogs/One-Dev-Minute/How-to-publish-your-Unity-game-as-a-UWP-app">Comment publier votre jeu Unity en tant qu’application UWP</a></td>
     </tr>
     <tr>
@@ -739,7 +739,7 @@ Unity prend en charge le développement de Direct3D 12 à partir d’Unity 5.4.
 
 #### <a name="havok"></a>Havok
 
-Avec la suite modulaire d’outils et de technologies de Havok, les créateurs de jeux peuvent atteindre de nouveaux niveaux d’interactivité et d’immersion. Havok permet de fournir des données physiques réalistes, et de réaliser des simulations interactives ainsi que des animations remarquables. La version 2015.1 et les versions ultérieures prennent officiellement en charge UWP dans Visual Studio 2015 sur x86, 64 bits et ARM.
+Avec la suite modulaire d’outils et de technologies de Havok, les créateurs de jeux peuvent atteindre de nouveaux niveaux d’interactivité et d’immersion. Havok permet de fournir des données physiques réalistes et d’effectuer des simulations interactives, ainsi que de remarquables animations. La version 2015.1 et les versions ultérieures prennent officiellement en charge UWP dans Visual Studio 2015 sur x86, 64 bits et ARM.
 
 <table>
     <colgroup>
@@ -819,7 +819,7 @@ Cocos2d-x est une suite d’outils et de moteurs de jeu open source multiplatefo
 
 #### <a name="unreal-engine"></a>Unreal Engine
 
-Unreal Engine 4 est une suite complète d’outils de développement de jeux destinée à tous les types de jeu et de développement. Destiné aux jeux pour consoles et PC très exigeants, Unreal Engine est utilisé par les développeurs de jeux du monde entier.
+Unreal Engine 4 est une suite complète d’outils de développement de jeux destinée à tous les types de jeu et de développement. Destiné aux jeux pour consoles et PC très exigeants, Unreal Engine est utilisé par les développeurs de jeux du monde entier.
 
 <table>
     <colgroup>
@@ -1496,7 +1496,7 @@ Générer le contenu du jeu qui utilise toutes les fonctionnalités de couleurs 
 </table>
 
 
-### <a name="globalization-and-localization"></a>Globalisation et localisation
+### <a name="globalization-and-localization"></a>Internationalisation et localisation
 
 Développez des jeux prêts à l’emploi pour la plateforme Windows et découvrez les fonctionnalités internationales intégrées aux meilleurs produits Microsoft.
 
@@ -1739,7 +1739,7 @@ Pour mettre à jour votre jeu publié, soumettez un nouveau package d’applicat
 
 ## <a name="adding-xbox-live-to-your-game"></a>Ajout de Xbox Live à votre jeu
 
-Xbox Live est un réseau de jeux Premier qui connecte des millions de joueurs dans le monde entier. Les développeurs peuvent accéder à des fonctionnalités Xbox Live capables d’augmenter le public de leur jeu de façon drastique. Il s’agit notamment de la présence Xbox Live, des classements, des sauvegardes dans le cloud, des hubs de jeux, des clubs, des tchats de groupe, des jeux DVR et plus encore.
+Xbox Live est le premier réseau de jeux qui connecte des millions de joueurs dans le monde entier. Les développeurs peuvent accéder à des fonctionnalités Xbox Live capables d’augmenter le public de leur jeu de façon drastique. Il s’agit notamment de la présence Xbox Live, des classements, des sauvegardes dans le cloud, des hubs de jeux, des clubs, des tchats de groupe, des jeux DVR et plus encore.
 
 > [!Note]
 > Si vous souhaitez développer des titres Xbox Live, plusieurs options s’offrent à vous. Pour en savoir plus sur les divers programmes, voir [vue d’ensemble du programme pour les développeurs](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview).
@@ -1776,7 +1776,7 @@ Xbox Live est un réseau de jeux Premier qui connecte des millions de joueurs da
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Vue d’ensemble</td>
+        <td>Présentation</td>
         <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md">Prise en main du programme de créateurs Xbox Live</a></td>
     </tr>
     <tr>
@@ -1813,7 +1813,7 @@ Xbox Live est un réseau de jeux Premier qui connecte des millions de joueurs da
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Vue d’ensemble</td>
+        <td>Présentation</td>
         <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-partner/get-started-with-xbox-live-partner.md">Prise en main de Xbox Live en tant que partenaire géré ou développeur d’ID</a></td>
     </tr>
     <tr>

@@ -1,7 +1,7 @@
 ---
 ms.assetid: E2B73380-D673-48C6-9026-96976D745017
 description: 'Prise en main : Contrôles courants'
-title: 'Prise en main : Contrôles courants'
+title: 'Prise en main : Contrôles courants'
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
@@ -13,7 +13,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74260142"
 ---
-# <a name="getting-started-common-controls"></a>Prise en main : Contrôles courants
+# <a name="getting-started-common-controls"></a>Prise en main : Contrôles courants
 
 
 ## <a name="common-controls-list"></a>Liste des contrôles courants
@@ -37,11 +37,11 @@ L’intelligence des contrôles UWP est qu’ils sont capables de détecter le t
 | Barre de progression (UIProgressView) | [ProgressBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar) <br/> Voir aussi [Démarrage rapide : ajout de contrôles de progression](https://docs.microsoft.com/previous-versions/windows/apps/hh780651(v=win.10)) |
 | Vue de défilement (UIScrollView) et vue déléguée de défilement (UIScrollViewDelegate) | [ScrollViewer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) <br/>  Voir aussi [Exemple de zoom, panoramique et défilement XAML (Extensible Application Markup Language)](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9) |
 | Barre de recherche (UISearchBar) et barre de recherche déléguée (UISearchBarDelegate) | Voir [Ajout d’une fonctionnalité de recherche à une application](https://docs.microsoft.com/previous-versions/windows/apps/jj130767(v=win.10)) <br/>  Voir aussi [Démarrage rapide : ajout d’une fonctionnalité de recherche à une application](https://docs.microsoft.com/previous-versions/windows/apps/hh868180(v=win.10)) |
-| Contrôle segmenté (UISegmentedControl) | Aucune |
+| Contrôle segmenté (UISegmentedControl) | Aucun |
 | Curseur (UISlider) | [Curseur](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider) <br/>  Voir aussi [Comment ajouter un curseur](https://docs.microsoft.com/previous-versions/windows/apps/hh868197(v=win.10)) |
-| Contrôleur de vue fractionnée (UISplitViewController) et contrôleur de vue fractionnée délégué (UISplitViewControllerDelegate) | Aucune |
+| Contrôleur de vue fractionnée (UISplitViewController) et contrôleur de vue fractionnée délégué (UISplitViewControllerDelegate) | Aucun |
 | Switch (UISwitch) | [ToggleSwitch](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ToggleSwitch) <br/>  Voir aussi [Comment ajouter un bouton bascule](https://docs.microsoft.com/previous-versions/windows/apps/hh868198(v=win.10)) |
-| Contrôleur de barre d’onglets (UITabBarController) et contrôleur de barre d’onglets délégué (UITabBarControllerDelegate) | Aucune |
+| Contrôleur de barre d’onglets (UITabBarController) et contrôleur de barre d’onglets délégué (UITabBarControllerDelegate) | Aucun |
 | Contrôleur de vue de table (UITableViewController), vue de table (UITableView), vue de table déléguée (UITableViewDelegate) et cellule de table (UITableViewCell) | [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) <br/>  Voir aussi [Démarrage rapide : ajout des contrôles ListView et GridView](https://docs.microsoft.com/previous-versions/windows/apps/hh780650(v=win.10)) |
 | Champ de texte (UITextField) et champ de texte délégué (UITextFieldDelegate) | [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) <br/>  Voir aussi [Afficher et modifier du texte](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/text-controls) |
 | Vue de texte (UITextView) et vue de texte déléguée (UITextViewDelegate) | [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) <br/>  Voir aussi [Démarrage rapide : affichage de texte](https://docs.microsoft.com/previous-versions/windows/apps/hh700392(v=win.10)) |

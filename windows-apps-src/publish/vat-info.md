@@ -164,7 +164,7 @@ Notez que Microsoft ne fournit pas de conseils fiscaux et que le tableau suivant
 <li>Exemple : 12345678</li>
 </ul>
 </td></tr>
-<tr><td data-th="Country/region">Malte</td><td data-th="VAT info">
+<tr><td data-th="Country/region">Malte (République de)</td><td data-th="VAT info">
 <ul>
 <li>Format du numéro de TVA : 2 lettres et 8 chiffres</li>
 <li>Code pays/région : MT</li>

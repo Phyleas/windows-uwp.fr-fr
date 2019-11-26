@@ -22,7 +22,7 @@ Les bannières publicitaires sont des publicités à affichage statique qui util
 
 ## <a name="in-this-section"></a>Dans cette section
 
-|  Rubrique    | Description |               
+|  Sujet    | Description |               
 |----------|-------|
 | [Classe AdControl en XAML et .NET](adcontrol-in-xaml-and--net.md)     | Ajoutez une bannière publicitaire dans votre application XAML/.NET.        |
 | [Classe AdControl en HTML 5 et JavaScript](adcontrol-in-html-5-and-javascript.md)     | Ajoutez une bannière publicitaire dans votre application HTML5/JavaScript.        |

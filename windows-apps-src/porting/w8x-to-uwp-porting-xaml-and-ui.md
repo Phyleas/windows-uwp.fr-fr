@@ -1,6 +1,6 @@
 ---
 description: La pratique de définition de l’interface utilisateur sous la forme de balisage XAML déclaratif convertit extrêmement bien des applications 8.1 universelles en applications UWP.
-title: Portage du balisage XAML et de la couche interface utilisateur de Windows Runtime 8.x vers UWP
+title: Portage du balisage XAML et de la couche interface utilisateur de Windows Runtime 8.x vers UWP
 ms.assetid: 78b86762-7359-474f-b1e3-c2d7cf9aa907
 ms.date: 02/08/2017
 ms.topic: article
@@ -128,9 +128,9 @@ Il existe quelques différences mineures, mais importantes, en matière de langa
 
 Auparavant, les pixels d’affichage permettaient d’extraire la taille et la disposition des éléments d’interface utilisateur de la taille physique et de la résolution réelles des appareils. Ces pixels ont évolué de manière à devenir des « pixels effectifs ». Voici ce que cette expression désigne, sa signification et la valeur ajoutée proposée.
 
-Le terme « résolution » fait référence à la mesure de la densité des pixels et non, comme on le pense souvent, au nombre de pixels. La « résolution effective » est la façon dont les pixels physiques qui composent une image ou un glyphe apparaissent à l’œil, étant donné les différences liées à la distance de visualisation et à la taille des pixels physiques sur l’appareil (la densité de pixels étant l’inverse de la taille des pixels physiques). La résolution effective est une bonne unité de mesure pour créer une expérience, car elle est centrée sur l’utilisateur. La compréhension de tous ces facteurs et le contrôle de la taille des éléments d’interface utilisateur vous permettent de tirer parti de l’expérience utilisateur.
+Le terme « résolution » fait référence à la mesure de la densité des pixels et non, comme on le pense souvent, au nombre de pixels. La « résolution effective » est la façon dont les pixels physiques qui composent une image ou un glyphe apparaissent à l’œil, étant donné les différences liées à la distance de visualisation et à la taille des pixels physiques sur l’appareil (la densité de pixels étant l’inverse de la taille des pixels physiques). La résolution effective est une bonne unité de mesure pour créer une expérience, car elle est centrée sur l’utilisateur. La compréhension de tous ces facteurs et le contrôle de la taille des éléments d’interface utilisateur vous permettent d’optimiser l’expérience utilisateur.
 
-Les différents appareils utilisés présentent une largeur variable (en pixels effectifs). Celle-ci est de 320 epx sur les plus petits d’entre eux, de 1 024 epx sur les écrans de taille modeste et nettement plus grande sur d’autres. Il vous suffit de continuer à utiliser les éléments à dimensionnement automatique et les panneaux à disposition dynamique que vous utilisez depuis toujours. Dans certains cas, il se peut que vous définissiez une taille fixe pour les propriétés de vos éléments d’interface utilisateur dans le balisage XAML. Un facteur d’échelle est automatiquement affecté à votre application, en fonction de l’appareil sur lequel elle s’exécute et des paramètres d’affichage définis par l’utilisateur. Ce facteur permet aux éléments à taille fixe de l’interface utilisateur de conserver la même taille (approximativement) sur les écrans de différentes tailles de l’utilisateur, pour les opérations tactiles ou pour la lecture. Et avec la disposition dynamique, votre interface utilisateur ne sera pas seulement mise à l’échelle sur différents appareils. Elle s’efforcera également d’adapter la quantité de contenu appropriée à l’espace disponible.
+Les différents appareils utilisés présentent une largeur variable (en pixels effectifs). Celle-ci est de 320 epx sur les plus petits d’entre eux, de 1 024 epx sur les écrans de taille modeste et nettement plus élevée sur d’autres. Il vous suffit de continuer à utiliser les éléments à dimensionnement automatique et les panneaux à disposition dynamique que vous utilisez depuis toujours. Dans certains cas, il se peut que vous définissiez une taille fixe pour les propriétés de vos éléments d’interface utilisateur dans le balisage XAML. Un facteur d’échelle est automatiquement affecté à votre application, en fonction de l’appareil sur lequel elle s’exécute et des paramètres d’affichage définis par l’utilisateur. Ce facteur permet aux éléments à taille fixe de l’interface utilisateur de conserver la même taille (approximativement) sur les écrans de différentes tailles de l’utilisateur, pour les opérations tactiles ou pour la lecture. Et avec la disposition dynamique, votre interface utilisateur ne sera pas seulement mise à l’échelle sur différents appareils. Elle s’efforcera également d’adapter la quantité de contenu appropriée à l’espace disponible.
 
 Pour que votre application offre une expérience optimale sur tous les écrans, nous vous recommandons de créer chaque ressource bitmap dans différentes tailles, chacune étant adaptée à un facteur d’échelle spécifique. Fournir des ressources aux échelles 100 %, 200 % et 400 % (dans cet ordre de priorité) produit d’excellents résultats dans la plupart des cas à tous les facteurs d’échelle intermédiaires.
 
@@ -190,16 +190,16 @@ Le tableau suivant décrit les modifications apportées aux états visuels et au
 | 8.1                 |                         | Windows 10        |                     |
 |---------------------|-------------------------|-------------------|---------------------|
 | CommonStates        |                         | CommonStates      |                     |
-|                     | Normal                  |                   | Normal              |
+|                     | Normale                  |                   | Normale              |
 |                     | PointerOver             |                   | PointerOver         |
 |                     | Pressed                 |                   | Pressed             |
 |                     | PointerOverPressed      |                   | [non disponible]       |
-|                     | Désactivée                |                   | [non disponible]       |
+|                     | Désactivé                |                   | [non disponible]       |
 |                     | [non disponible]           |                   | PointerOverSelected |
-|                     | [non disponible]           |                   | Selected            |
+|                     | [non disponible]           |                   | Sélectionné            |
 |                     | [non disponible]           |                   | PressedSelected     |
 | [non disponible]       |                         | DisabledStates    |                     |
-|                     | [non disponible]           |                   | Désactivée            |
+|                     | [non disponible]           |                   | Désactivé            |
 |                     | [non disponible]           |                   | Activé             |
 | SelectionHintStates |                         | [non disponible]     |                     |
 |                     | VerticalSelectionHint   |                   | [non disponible]       |
@@ -214,7 +214,7 @@ Le tableau suivant décrit les modifications apportées aux états visuels et au
 |                     | UnselectedPointerOver   |                   | [non disponible]       |
 |                     | UnselectedSwiping       |                   | [non disponible]       |
 |                     | Sélection               |                   | [non disponible]       |
-|                     | Selected                |                   | [non disponible]       |
+|                     | Sélectionné                |                   | [non disponible]       |
 |                     | SelectedSwiping         |                   | [non disponible]       |
 |                     | SelectedUnfocused       |                   | [non disponible]       |
 
@@ -245,7 +245,7 @@ Les API de l’espace de noms [**Windows. Media. point**](https://docs.microsoft
 
 Le langage de conception a évolué pour Windows 10 et, par conséquent, certains styles système ont changé. Dans certains cas, il vous sera utile de revoir les conceptions visuelles de vos affichages afin de les harmoniser avec les propriétés de style modifiées.
 
-Dans d’autres cas, les clés de ressources ne sont plus prises en charge. L’éditeur de balisage XAML dans Visual Studio met en surbrillance les références aux clés de ressources qui ne peuvent pas être résolues. Par exemple, il souligne une référence à la clé de style `ListViewItemTextBlockStyle` d’une ligne ondulée rouge. Si ce n’est pas corrigé, l’application s’arrête immédiatement lorsque vous essayez de la déployer vers l’émulateur ou l’appareil. Il est donc important de veiller à l’exactitude du balisage XAML. Et vous allez découvrir que Visual Studio est un formidable outil pour intercepter ces problèmes.
+Dans d’autres cas, les clés de ressources ne sont plus prises en charge. L’éditeur de balisage XAML de Visual Studio met en surbrillance les références aux clés de ressources qui ne peuvent pas être résolues. Par exemple, il souligne une référence à la clé de style `ListViewItemTextBlockStyle` d’une ligne ondulée rouge. Si ce n’est pas corrigé, l’application s’arrête immédiatement lorsque vous essayez de la déployer vers l’émulateur ou l’appareil. Il est donc important de veiller à l’exactitude du balisage XAML. Et vous allez découvrir que Visual Studio est un formidable outil pour intercepter ces problèmes.
 
 Pour les clés qui sont toujours prises en charge, les modifications apportées au langage de conception signifient que les propriétés définies par certains styles ont changé. Par exemple, `TitleTextBlockStyle` affecte à **FontSize** la valeur 14.667 PX dans une application Windows Runtime 8. x et 18.14 PX dans une application Windows Phone Store. Toutefois, le même style définit les **polices** sur un 24px de plus grande taille dans une application Windows 10. Passez en revue vos conceptions et dispositions et utilisez les styles appropriés aux endroits adéquats. Pour plus d’informations, voir [Recommandations en matière de polices](https://docs.microsoft.com/windows/uwp/controls-and-patterns/fonts) et [Concevoir des applications UWP](https://developer.microsoft.com/en-us/windows/apps/design).
 

@@ -28,13 +28,13 @@ Cet article explique comment s’inscrire à un compte de développeur Windows d
 1.  Accédez à la [page d’inscription](https://developer.microsoft.com/store/register) et sélectionnez s' **inscrire**.
 2.  Si vous n’êtes pas déjà connecté avec un compte Microsoft, connectez-vous maintenant ou créez un compte Microsoft. La compte Microsoft que vous utilisez ici est celle que vous allez utiliser pour vous connecter à votre compte de développeur.
 3.  Sélectionnez le [pays](account-types-locations-and-fees.md#developer-account-and-app-submission-markets) ou la région où vous vivez ou l’endroit où se trouve votre entreprise. Vous ne pourrez pas faire de changements par la suite.
-4.  Sélectionnez votre [type de compte de développeur](account-types-locations-and-fees.md) (individuel ou d’entreprise). Vous ne pourrez pas le changer par la suite. Soyez donc sûr de votre choix.
+4.  Sélectionnez votre [type de compte de développeur](account-types-locations-and-fees.md) (individuel ou d’entreprise). Choisissez bien le type de compte souhaité, car vous ne pourrez pas le modifier par la suite.
 5.  Entrez le **nom d’affichage** de l’éditeur que vous souhaitez utiliser (50 caractères au maximum). Choisissez-le soigneusement, car les clients pourront le voir quand ils navigueront et en viendront à connaître vos applications par ce nom. Pour les comptes d’entreprise, veillez à utiliser le nom d’entreprise enregistré ou l’appellation commerciale de votre organisation. Si vous entrez un nom que quelqu’un d’autre a déjà sélectionné, ou si quelqu’un d’autre a le droit d’utiliser ce nom, nous ne vous permettons pas de l’utiliser.
 
     > [!NOTE]
-    > Vérifiez que vous disposez des droits d’utilisation du nom entré ici. Si quelqu’un d’autre a déposé la marque ou protégé par copyright le nom que vous avez choisi, votre compte risque d’être fermé. Pour plus d’informations, consultez [contrat pour développeurs d’applications](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) . Si une autre personne utilise un nom d’éditeur pour lequel vous détenez un quelconque droit, [contactez Microsoft](https://www.microsoft.com/info/cpyrtInfrg.html).    
+    > Vérifiez que vous disposez des droits d’utilisation du nom entré ici. Si quelqu’un d’autre a déposé la marque ou protégé par copyright le nom que vous avez choisi, votre compte risque d’être fermé. Pour plus d’informations, consultez [contrat pour développeurs d’applications](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) . Si une autre personne utilise un nom d’éditeur sur lequel vous détenez un quelconque droit, [contactez Microsoft](https://www.microsoft.com/info/cpyrtInfrg.html).    
 
-6.  Entrez les coordonnées à utiliser pour votre compte de développeur.
+6.  Entrez les infos de contact à utiliser pour votre compte de développeur.
 
     > [!NOTE]
     > Nous n’utilisons ces informations que pour des questions concernant votre compte. Par exemple, vous recevrez une confirmation par courrier électronique une fois votre inscription terminée. Après cela, nous enverrons des messages quand nous vous payerons ou si vous devez résoudre un problème avec votre compte. Nous pouvons également envoyer des courriers électroniques d’information comme décrit précédemment, sauf si vous refusez de recevoir des e-mails non transactionnels.
@@ -55,7 +55,7 @@ Une fois inscrit, votre compte passe par la vérification. Pour les comptes indi
 ## <a name="additional-guidelines-for-company-accounts"></a>Recommandations supplémentaires pour les comptes d’entreprise
 
 > [!IMPORTANT]
-> Pour permettre à plusieurs utilisateurs d’accéder à votre compte de développeur, nous vous recommandons d’utiliser Azure Active Directory (Azure AD) pour attribuer des rôles à des utilisateurs individuels au lieu de partager l’accès à la compte Microsoft. Chaque utilisateur peut ensuite accéder au compte de développeur en se connectant à l’espace partenaires à l’aide de ses informations d’identification individuelles Azure AD. Pour plus d’informations, voir [Gérer les utilisateurs de compte](manage-account-users.md).
+> Pour permettre à plusieurs utilisateurs d’accéder à votre compte de développeur, nous vous recommandons d’utiliser Azure Active Directory (Azure AD) pour attribuer des rôles à des utilisateurs individuels au lieu de partager l’accès à la compte Microsoft. Chaque utilisateur peut ensuite accéder au compte de développeur en se connectant à l’espace partenaires à l’aide de ses informations d’identification individuelles Azure AD. Pour plus d’informations, voir [Gérer les utilisateurs du compte](manage-account-users.md).
 
 Si vous souhaitez permettre à plusieurs personnes d’accéder au compte d’entreprise en se connectant avec le compte Microsoft qui l’ouvrait (au lieu d’être des utilisateurs individuels ajoutés au compte), consultez les instructions suivantes :
 

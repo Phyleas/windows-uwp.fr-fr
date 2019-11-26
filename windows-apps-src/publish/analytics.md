@@ -25,7 +25,7 @@ Pour visualiser les principales analyses relatives à vos applications les plus 
 
 ## <a name="view-individual-reports-for-each-app"></a>Visualiser des rapports individuels pour chaque application
 
-Cette section détaille les informations présentées dans chacun des rapports suivants :
+Cette section détaille les informations présentées dans chacun des rapports suivants :
 
 -   [Rapport sur les acquisitions](acquisitions-report.md)
 -   [Rapport sur les acquisitions d’extensions](add-on-acquisitions-report.md)
@@ -64,4 +64,4 @@ Utilisez les ressources suivantes pour commencer à utiliser Power BI pour acc�
 * [Découvrez comment utiliser le Pack de contenu du centre de développement Windows pour Power BI pour vous connecter à vos données d’analyse](https://powerbi.microsoft.com/documentation/powerbi-content-pack-windows-dev-center/)
 
 > [!NOTE]
-> Pour vous connecter au Pack de contenu du centre de développement Windows pour Power BI, nous vous recommandons de spécifier les informations d’identification d’un répertoire Azure AD associé à votre compte espace partenaires. Si vous utilisez vos informations d’identification de compte Microsoft, vos données d’analyse dans Power BI ne sont pas actualisées automatiquement et vous devez vous connecter à Power BI pour actualiser vos données. Si votre organisation utilise déjà Office 365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’Azure AD. Sinon, vous pouvez l’[obtenir gratuitement](https://account.azure.com/organization). Pour plus d’informations sur la configuration de l’Association, consultez [associer des Azure Active Directory à votre compte espace partenaires](associate-azure-ad-with-dev-center.md).
+> Pour vous connecter au Pack de contenu du centre de développement Windows pour Power BI, nous vous recommandons de spécifier les informations d’identification d’un répertoire Azure AD associé à votre compte espace partenaires. Si vous utilisez vos informations d’identification de compte Microsoft, vos données d’analyse dans Power BI ne sont pas actualisées automatiquement et vous devez vous connecter à Power BI pour actualiser vos données. Si votre organisation utilise déjà Office 365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’Azure AD. Sinon, vous pouvez l’[obtenir gratuitement](https://account.azure.com/organization). Pour plus d’informations sur la configuration de l’Association, consultez [associer des Azure Active Directory à votre compte espace partenaires](associate-azure-ad-with-dev-center.md).

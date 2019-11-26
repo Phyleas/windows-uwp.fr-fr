@@ -29,7 +29,7 @@ Un effet audio personnalisé est défini dans une classe qui implémente l’int
 3.  Pour cet exemple, nommez le projet *AudioEffectComponent*. Ce nom sera référencé dans le code ultérieurement.
 4.  Cliquez sur **OK**.
 5.  Le modèle de projet crée une classe appelée Class1.cs. Dans **l’Explorateur de solutions**, cliquez avec le bouton droit sur l’icône de Class1.cs et sélectionnez **Renommer**.
-6.  Renommez le fichier *ExampleAudioEffect.cs*. Visual Studio affiche une invite vous demandant si vous voulez mettre à jour toutes les références sous le nouveau nom. cliquez sur **Oui**.
+6.  Renommez le fichier *ExampleAudioEffect.cs*. Visual Studio affiche une invite vous demandant si vous voulez mettre à jour toutes les références sous le nouveau nom. Cliquez sur **Oui**.
 7.  Ouvrez **ExampleAudioEffect.cs** et mettez à jour la définition de classe pour implémenter l’interface [**IBasicAudioEffect**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.IBasicAudioEffect).
 
 
@@ -123,7 +123,7 @@ Pour utiliser votre effet audio dans votre application, vous devez ajouter une r
 
 1.  Dans l’Explorateur de solutions, sous votre projet d’application, cliquez avec le bouton droit sur **Références**, puis sélectionnez **Ajouter une référence**.
 2.  Développez l’onglet **Projets**, sélectionnez **Solution**, puis cochez la case du nom de votre projet d’effet. Dans cet exemple, le nom est *AudioEffectComponent*.
-3.  Cliquez sur **OK**.
+3.  Cliquez sur **OK**
 
 Si votre classe d’effet audio est déclarée dans un autre espace de noms, veillez à inclure cet espace de noms dans votre fichier de code.
 

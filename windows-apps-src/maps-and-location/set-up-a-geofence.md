@@ -173,7 +173,7 @@ try {
 }
 ```
 
-### <a name="step-4-handle-changes-in-location-permissions"></a>Étape 4 : gérer les modifications apportées aux autorisations d’emplacement
+### <a name="step-4-handle-changes-in-location-permissions"></a>Étape 4 : gérer les modifications apportées aux autorisations d’emplacement
 
 L’objet [**GeofenceMonitor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geofencing.GeofenceMonitor) déclenche l’événement [**StatusChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geofencing.geofencemonitor.statuschanged) afin d’indiquer que les paramètres d’emplacement de l’utilisateur ont changé. Cet événement transmet l’état correspondant par le biais de la propriété **sender.Status** de l’argument (de type [**GeofenceMonitorStatus**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geofencing.GeofenceMonitorStatus)). Notez que cette méthode n’est pas appelée à partir du thread d’interface utilisateur et que l’objet [**Dispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher) invoque les modifications de l’interface utilisateur.
 
@@ -313,7 +313,7 @@ Pour écouter un événement de limite géographique en arrière-plan
 
 ### <a name="step-1-register-for-geofence-state-change-events"></a>Étape 1 : inscrire les événements de changement d’état de limite géographique
 
-Dans le manifeste de votre application, dans l’onglet **Déclarations**, ajoutez une déclaration pour une tâche en arrière-plan d’emplacement. Pour ce faire :
+Dans le manifeste de votre application, dans l’onglet **Déclarations**, ajoutez une déclaration pour une tâche en arrière-plan d’emplacement. Pour cela, procédez comme suit :
 
 -   Ajoutez une déclaration de type **Tâches en arrière-plan**.
 -   Définissez une tâche de propriété de type **Emplacement**.
@@ -321,7 +321,7 @@ Dans le manifeste de votre application, dans l’onglet **Déclarations**, ajout
 
 ### <a name="step-2-register-the-background-task"></a>Étape 2 : inscrire la tâche en arrière-plan
 
-Le code utilisé dans cette étape inscrit la tâche de limite géographique en arrière-plan. Rappelez-vous : au moment de créer la clôture virtuelle, nous avons vérifié les autorisations d’emplacement.
+Le code utilisé dans cette étape inscrit la tâche de clôture virtuelle en arrière-plan. Rappelez-vous : au moment de créer la clôture virtuelle, nous avons vérifié les autorisations d’emplacement.
 
 ```csharp
 async private void RegisterBackgroundTask(object sender, RoutedEventArgs e)
@@ -473,7 +473,7 @@ Il est parfois difficile de procéder au test et au débogage d’applications d
 ## <a name="troubleshoot-your-app"></a>Résoudre les problèmes de votre application
 
 
-Pour que votre application puisse accéder à l’emplacement, l’option **Localisation** doit être activée sur l’appareil. Dans l’application **Paramètres**, vérifiez que les **paramètres de confidentialité relatifs à la géolocalisation** suivants sont bien activés :
+Pour que votre application puisse accéder à l’emplacement, l’option **Localisation** doit être activée sur l’appareil. Dans l’application **Paramètres**, vérifiez que les **paramètres de confidentialité d’emplacement** suivants sont bien activés :
 
 -   **Emplacement de cet appareil...** est activé **(non** applicable dans Windows 10 mobile)
 -   Le paramètre des services de localisation **Emplacement** est **activé**.

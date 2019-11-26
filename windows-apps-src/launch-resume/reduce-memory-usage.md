@@ -13,7 +13,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74260461"
 ---
-# <a name="free-memory-when-your-app-moves-to-the-background"></a>Libérer de la mémoire quand l’application bascule en arrière-plan
+# <a name="free-memory-when-your-app-moves-to-the-background"></a>Libérer de la mémoire lorsque l’application bascule en arrière-plan
 
 Cet article vous explique comment réduire la quantité de mémoire utilisée par votre application lorsqu’elle bascule en arrière-plan, afin qu’elle ne soit pas suspendue, voire arrêtée.
 

@@ -83,7 +83,7 @@ XAML
   AutomationProperties.Name="An image of a customer using the product."/>
 ```
 
-En guise d’alternative, vous pouvez inclure une légende qui s’affiche dans l’interface utilisateur visible et qui sert également d’informations d’accessibilité associées à l’étiquette pour le contenu de l’image. Voici un exemple :
+En guise d’alternative, vous pouvez inclure une légende qui s’affiche dans l’interface utilisateur visible et qui sert également d’informations d’accessibilité associées à l’étiquette pour le contenu de l’image. Voici un exemple :
 
 XAML
 ```xml

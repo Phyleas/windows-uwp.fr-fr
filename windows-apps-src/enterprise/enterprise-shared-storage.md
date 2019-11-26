@@ -1,7 +1,7 @@
 ---
 ms.assetid: B48E21AB-0EA5-444B-8333-393DD8D1B76D
 title: Stockage partagé d’entreprise
-description: Le stockage d’entreprise partagé définit des emplacements de données locaux pour les applications métier afin de partager des données.
+description: Le stockage partagé d’entreprise définit des emplacements de données locaux pour les applications cœur de métier afin de partager des données.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp

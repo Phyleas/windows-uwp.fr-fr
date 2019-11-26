@@ -21,7 +21,7 @@ Cette rubrique explique comment ajouter du contenu multimédia PlayReady protég
 
 La gestion des droits numériques par PlayReady permet aux développeurs de créer des applications pour UWP capables de fournir du contenu PlayReady à l’utilisateur tout en appliquant les règles d’accès définies par le fournisseur de contenu. Cette section décrit les modifications apportées à Microsoft PlayReady DRM pour Windows 10 et explique comment modifier votre application PlayReady PlayReady pour prendre en charge les modifications apportées à la version précédente de Windows 8.1 à la version Windows 10.
  
-| Rubrique                                                                     | Description                                                                                                                                                                                                                                                                             |
+| Sujet                                                                     | Description                                                                                                                                                                                                                                                                             |
 |---------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [DRM matériel](hardware-drm.md)                                           | Cette rubrique explique comment ajouter la gestion des droits numériques en fonction du matériel par PlayReady à votre application UWP.                                                                                                                                                                 |
 | [Diffusion adaptative avec PlayReady](adaptive-streaming-with-playready.md) | Cet article décrit comment ajouter le streaming adaptatif de contenu multimédia avec la protection de contenu Microsoft PlayReady à une application UWP. Cette fonctionnalité prend actuellement en charge la lecture de contenu vidéo en streaming HTTP (HLS) et de contenu en streaming dynamique sur HTTP (DASH). |
@@ -57,7 +57,7 @@ La liste suivante décrit les nouvelles fonctionnalités et les modifications ap
 -   Miracast est désormais une sortie implicite.
 -   Ajout de l’arrêt sécurisé.
 
-    L’arrêt sécurisé permet à un périphérique PlayReady de confirmer de manière sûre à un service de diffusion multimédia que la lecture multimédia a été stoppée sur un contenu donné. Cette fonctionnalité permet à vos services de streaming multimédia de contrôler et de rapporter avec précision les limites d’utilisation sur différents appareils pour un compte donné.
+    L’arrêt sécurisé permet à un appareil PlayReady de confirmer de manière sûre à un service de diffusion multimédia que la lecture multimédia a été stoppée sur un contenu donné. Cette fonctionnalité permet à vos services de streaming multimédia de contrôler et de rapporter avec précision les limites d’utilisation sur différents appareils pour un compte donné.
 
 -   Ajout d’une séparation de licence audio et vidéo.
 
@@ -87,7 +87,7 @@ Un nouvel exemple a été créé pour montrer comment utiliser les nouvelles fon
 -   Pour tirer parti de certaines nouvelles fonctionnalités de PlayReady 3.0 (SL3000 pour les clients matériels, acquisition de plusieurs licences non persistantes en un message d’acquisition de licence, restrictions temporelles sur les licences non persistantes, etc.), le serveur PlayReady doit être la version commerciale du Kit de développement logiciel serveur Microsoft PlayReady v3.0.2769 ou version ultérieure.
 -   Selon la stratégie de protection de sortie spécifiée dans la licence de contenu, la lecture multimédia peut échouer pour les utilisateurs finaux si leur sortie connectée ne prend pas en charge ces exigences. Le tableau suivant répertorie l’ensemble des erreurs courantes qui se produisent en conséquence. Pour plus d’informations, voir les [Règles de conformité et de robustesse de PlayReady](https://www.microsoft.com/playready/licensing/compliance/).
 
-| Erreur                                                   | Valeur      | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| Error                                                   | Valeur      | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |---------------------------------------------------------|------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | ERREUR\_GRAPHICs\_\_de sortie\_OPM ne\_pas\_prise en charge\_HDCP  | 0xC0262513 | La stratégie de protection de contenu de la licence requiert que le moniteur enclenche la protection HDCP, mais celle-ci n’a pas pu être enclenchée.                                                                                                                                                                                                                                                                                                                                                                                              |
 | STRATÉGIE de\_de\_MF\_non prise en charge                              | 0xC00D7159 | La stratégie de protection de contenu de la licence requiert que le moniteur enclenche la protection HDCP de type 1, mais celle-ci n’a pas pu être enclenchée.                                                                                                                                                                                                                                                                                                                                                                                |
@@ -128,7 +128,7 @@ Le tableau suivant recense les mappages entre les différentes normes OPL dans 
         <th>TV analogique</th>
     </tr>
     <tr>
-        <th>Indéfini</th>
+        <th>Indifférent</th>
         <th colspan="2">HDMI, DVI, DisplayPort, MHL</th>
         <th>Composant, Composite</th>
     </tr>
@@ -188,12 +188,12 @@ Le tableau suivant recense les mappages entre les différentes normes OPL dans 
         <th rowspan="2">OPL</th>
         <th>Audio numérique compressé</th>
         <th>Audio numérique non compressé</th>
-        <th>Audio analogique ou USB</th>
+        <th>Audio analogique ou USB</th>
     </tr>
     <tr>
         <th>HDMI, DisplayPort, MHL</th>
         <th>HDMI, DisplayPort, MHL</th>
-        <th>Indéfini</th>
+        <th>Indifférent</th>
     </tr>
     <tr>
         <th>100</th>
@@ -210,18 +210,18 @@ Le tableau suivant recense les mappages entre les différentes normes OPL dans 
     </tr>
     <tr>
         <th>250</th>
-        <td>Transmet le contenu lorsque la protection HDCP est enclenchée sur HDMI, DisplayPort ou MHL, ou lorsque la protection SCMS est enclenchée et définie sur CopyNever</td>
+        <td>Transmet le contenu lorsque la protection HDCP est enclenchée sur HDMI, DisplayPort ou MHL, ou lorsque la protection SCMS est enclenchée et définie sur CopyNever</td>
     </tr>
     <tr>
         <th>300</th>
-        <td>Transmet le contenu lorsque la protection HDCP est enclenchée sur HDMI, DisplayPort ou MHL</td>
+        <td>Transmet le contenu lorsque la protection HDCP est enclenchée sur HDMI, DisplayPort ou MHL</td>
     </tr>
 </table>
 <br/>
 
 ### <a name="miracast"></a>Miracast
 
-La gestion des droits numériques par PlayReady vous permet de lire le contenu sur la sortie Miracast dès que la protection HDCP 2.0 ou ultérieure est enclenchée. Cependant, sous Windows 10, Miracast est considérée comme une sortie *numérique*. Pour plus d’informations sur les scénarios Miracast, reportez-vous aux [règles de conformité PlayReady](https://www.microsoft.com/playready/licensing/compliance/). Le tableau suivant recense les mappages entre les différentes normes OPL dans la licence PlayReady et indique comment la gestion des droits numériques par PlayReady les applique sur les sorties Miracast.
+La gestion des droits numériques par PlayReady vous permet de lire le contenu sur la sortie Miracast dès que la protection HDCP 2.0 ou plus est enclenchée. Cependant, sous Windows 10, Miracast est considérée comme une sortie *numérique*. Pour plus d’informations sur les scénarios Miracast, reportez-vous aux [règles de conformité PlayReady](https://www.microsoft.com/playready/licensing/compliance/). Le tableau suivant recense les mappages entre les différentes normes OPL dans la licence PlayReady et indique comment la gestion des droits numériques par PlayReady les applique sur les sorties Miracast.
 
 <table>
     <tr>
@@ -263,7 +263,7 @@ La gestion des droits numériques par PlayReady vous permet de lire le contenu s
                 **Lorsque la restriction de type de protection HDCP n’est PAS définie** : transmet le contenu lorsque la protection HDCP 2.0 ou plus est enclenchée. Si l’enclenchement échoue, le contenu N’EST PAS transmis.
             </p>
             <p>
-                **Lorsque la restriction de type de protection HDCP EST définie** : transmet le contenu avec protection HDCP 2.2, et type de flux de contenu défini sur 1. Si la protection HDCP n’est pas enclenchée ou si le type de flux de contenu ne peut pas être défini sur 1, le contenu N’EST PAS transmis
+                **Lorsque la restriction de type de protection HDCP EST définie** : transmet le contenu avec protection HDCP 2.2, et type de flux de contenu défini sur 1. Si la protection HDCP n’est pas enclenchée ou si le type de flux de contenu ne peut pas être défini sur 1, le contenu N’EST PAS transmis.
             </p>        
         </td>
     </tr>
@@ -393,7 +393,7 @@ Le tableau suivant décrit la gestion des droits numériques par PlayReady pour
 </table>
 <br/>
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Conditions préalables requises
 
 Avant de commencer la création de votre application pour UWP protégée par PlayReady, le logiciel suivant doit être installé sur votre système :
 
@@ -435,7 +435,7 @@ Cette section explique comment acquérir des licences non persistantes de maniè
 
 Dans les versions précédentes de la gestion des droits numériques par PlayReady, les licences non persistantes pouvaient uniquement être acquises de manière réactive, pendant la lecture. Dans cette version, vous pouvez acquérir des licences non persistantes de manière proactive avant le début de la lecture.
 
-1.  Créez une session de lecture de manière proactive afin de stocker la licence non persistante. Par exemple :
+1.  Créez une session de lecture de manière proactive afin de stocker la licence non persistante. Par exemple :
 
     ```cs
     var cpsystems = new Windows.Foundation.Collections.PropertySet();       
@@ -447,7 +447,7 @@ Dans les versions précédentes de la gestion des droits numériques par PlayRea
     var pmpServer = new Windows.Media.Protection.MediaProtectionPMPServer( pmpSystemInfo );
     ```
 
-2.  Liez cette session de lecture à la classe d’acquisition de licence. Par exemple :
+2.  Liez cette session de lecture à la classe d’acquisition de licence. Par exemple :
 
     ```cs
     var licenseSessionProperties = new Windows.Foundation.Collections.PropertySet();
@@ -455,14 +455,14 @@ Dans les versions précédentes de la gestion des droits numériques par PlayRea
     var licenseSession = new Windows.Media.Protection.PlayReady.PlayReadyLicenseSession( licenseSessionProperties );
     ```
 
-3.  Créez une demande de service de licence. Par exemple :
+3.  Créez une demande de service de licence. Par exemple :
 
     ```cs
     var laSR = licenseSession.CreateLAServiceRequest();
     ```
 
 4.  Procédez à l’acquisition de licence en utilisant la demande de service créée à l’étape 3. La licence sera stockée dans la session de lecture.
-5.  Liez la session de lecture à la source de média pour la lecture. Par exemple :
+5.  Liez la session de lecture à la source de média pour la lecture. Par exemple :
 
     ```cs
     licenseSession.configureMediaProtectionManager( mediaProtectionManager );
@@ -500,7 +500,7 @@ Dans les versions précédentes de la gestion des droits numériques par PlayRea
 
 Cette section explique comment ajouter un arrêt sécurisé à votre application pour UWP.
 
-L’arrêt sécurisé permet à un périphérique PlayReady de confirmer de manière sûre à un service de diffusion multimédia que la lecture multimédia a été stoppée sur un contenu donné. Cette fonctionnalité permet à vos services de streaming multimédia de contrôler et de rapporter avec précision les limites d’utilisation sur différents appareils pour un compte donné.
+L’arrêt sécurisé permet à un appareil PlayReady de confirmer de manière sûre à un service de diffusion multimédia que la lecture multimédia a été stoppée sur un contenu donné. Cette fonctionnalité permet à vos services de streaming multimédia de contrôler et de rapporter avec précision les limites d’utilisation sur différents appareils pour un compte donné.
 
 Il existe deux scénarios principaux pour l’envoi d’une demande d’arrêt sécurisé :
 
@@ -536,7 +536,7 @@ Vous devez tenir compte d’un dernier aspect lors de l’utilisation de PlayRea
 Utilisez l’approche qui convient pour votre produit et pour votre entreprise.
 
 
-## <a name="see-also"></a>Voir également
+## <a name="see-also"></a>Articles associés
 - [Lecture de contenu multimédia](media-playback.md)
 
 

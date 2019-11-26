@@ -34,7 +34,7 @@ Pour la **Mise à jour d'avril 2018 de Windows 10**, nous avons introduit la p
 
 ### <a name="device-support"></a>Prise en charge des appareils
 
-- Tablet
+- Tablette
 - PC et portables
 
 ### <a name="typical-usage"></a>Utilisation type
@@ -45,13 +45,13 @@ Effectuez le suivi du pointage du regard, de l'attention et de la présence de l
 
 [Interactions de regard et suivi oculaire](gaze-interactions.md)
 
-## <a name="surface-dial"></a>Surface Dial
+## <a name="surface-dial"></a>Surface Dial
 
 À l’occasion de la **Mise à jour anniversaire Windows 10**, nous avons introduit la catégorie de périphériques de saisie Windows Wheel. Surface Dial est le premier de cette classe de périphérique.
 
 ### <a name="device-support"></a>Prise en charge des appareils
 
-- Tablet
+- Tablette
 - PC et portables
 
 ### <a name="typical-usage"></a>Utilisation type
@@ -69,7 +69,7 @@ Dans Windows 10, l’extensibilité **Cortana** vous permet de gérer les comman
 ### <a name="device-support"></a>Prise en charge des appareils
 
 -   Téléphones et phablettes
--   Tablet
+-   Tablette
 -   PC et portables
 -   Surface Hub
 -   IoT
@@ -82,14 +82,14 @@ Dans Windows 10, l’extensibilité **Cortana** vous permet de gérer les comman
 
 Une commande vocale est un énoncé, défini dans un fichier VCD (Voice Command Definition), qui est dirigé vers une application installée via **Cortana**. L’application peut être lancée au premier plan ou en arrière-plan en fonction du niveau et de la complexité de l’interaction. Par exemple, les commandes vocales qui requièrent un contexte ou une entrée utilisateur supplémentaire sont mieux gérées au premier plan, tandis que les commandes de base peuvent être gérées en arrière-plan.
 
-L’intégration des fonctionnalités de base de votre application et la fourniture d’un point d’entrée central pour que l’utilisateur accomplisse la plupart des tâches sans ouvrir directement votre application, permettent à **Cortana** de devenir une liaison entre votre application et l’utilisateur. Dans de nombreux cas, cela permet à l’utilisateur de gagner beaucoup de temps et d’énergie. Pour plus d’informations, voir [Recommandations relatives à la conception de Cortana](https://docs.microsoft.com/cortana/skills/cortana-design-guidelines).
+L’intégration des fonctionnalités de base de votre application et la fourniture d’un point d’entrée central pour que l’utilisateur accomplisse la plupart des tâches sans ouvrir directement votre application, permettent à **Cortana** de devenir une liaison entre votre application et l’utilisateur. Dans de nombreux cas, cela permet à l’utilisateur de gagner un temps considérable. Pour plus d’informations, voir [Recommandations relatives à la conception de Cortana](https://docs.microsoft.com/cortana/skills/cortana-design-guidelines).
 
 ### <a name="more-info"></a>Informations supplémentaires
 
 [Recommandations relatives à la conception de Cortana](https://docs.microsoft.com/cortana/skills/cortana-design-guidelines)
  
 
-## <a name="speech"></a>Fonctions vocales
+## <a name="speech"></a>Voix
 
 Les fonctions vocales offrent un moyen efficace et naturel d’interagir avec les applications. Elles assurent une communication simple et précise avec les applications et permettent aux utilisateurs d’être productifs et de se tenir informés dans diverses situations.
 
@@ -100,7 +100,7 @@ La conversion de texte par synthèse vocale (ou TTS) est utilisée pour informer
 ### <a name="device-support"></a>Prise en charge des appareils
 
 -   Téléphones et phablettes
--   Tablet
+-   Tablette
 -   PC et portables
 -   Surface Hub
 -   IoT
@@ -151,7 +151,7 @@ Lorsque nous parlons de stylets, nous faisons référence à des stylets actifs 
 ### <a name="device-support"></a>Prise en charge des appareils
 
 -   Téléphones et phablettes
--   Tablet
+-   Tablette
 -   PC et portables
 -   Surface Hub
 -   IoT
@@ -171,14 +171,14 @@ Il est recommandé de fournir des commandes d’interface utilisateur spécifiqu
 [Recommandations en matière de conception pour le stylet](https://docs.microsoft.com/windows/uwp/input-and-devices/pen-and-stylus-interactions)
  
 
-## <a name="touch"></a>Touch
+## <a name="touch"></a>Commandes tactiles
 
 Avec une interface tactile, les mouvements physiques avec un ou plusieurs doigts peuvent servir à émuler la manipulation directe d’éléments d’interface utilisateur (par exemple, le mouvement panoramique, la rotation, le redimensionnement ou le déplacement), ou faire office de méthode d’entrée alternative (semblable à la souris ou au stylet) ou complémentaire (pour modifier l’aspect d’autres entrées, comme par exemple maculer un trait d’encre dessiné avec un stylet). Les expériences tactiles peuvent fournir des sensations plus naturelles et proches de celles du monde réel pour les utilisateurs lorsqu’ils interagissent avec des éléments sur un écran.
 
 ### <a name="device-support"></a>Prise en charge des appareils
 
 -   Téléphones et phablettes
--   Tablet
+-   Tablette
 -   PC et portables
 -   Surface Hub
 -   IoT
@@ -208,7 +208,7 @@ En règle générale, une interface tactile répond aux critères suivants :
 
 ## <a name="touchpad"></a>Pavé tactile
 
-Un pavé tactile combine l’entrée tactile multipoint indirecte et l’entrée de précision d’un dispositif de pointage comme la souris. Grâce à cette combinaison, le pavé tactile est adapté à l’interface utilisateur optimisée pour l’interaction tactile et aux cibles d’applications de productivité plus petites.
+Un pavé tactile combine l’entrée tactile multipoint indirecte et l’entrée de précision d’un dispositif de pointage comme la souris. Fort de cette combinaison, le pavé tactile est adapté à l’interface utilisateur optimisée pour l’interaction tactile et aux cibles d’applications de productivité plus petites.
 
 ### <a name="device-support"></a>Prise en charge des appareils
 
@@ -239,7 +239,7 @@ Avec [continuum pour téléphone](https://docs.microsoft.com/windows-hardware/de
 ### <a name="device-support"></a>Prise en charge des appareils
 
 -   Téléphones et phablettes
--   Tablet
+-   Tablette
 -   PC et portables
 -   Surface Hub
 -   IoT
@@ -277,12 +277,12 @@ La souris est particulièrement adaptée aux applications de productivité et in
 ### <a name="device-support"></a>Prise en charge des appareils
 
 -   Téléphones et phablettes
--   Tablet
+-   Tablette
 -   PC et portables
 -   Surface Hub
 -   IoT
 
-![souris](images/input-interactions/icons-mouse01.png)
+![Souris](images/input-interactions/icons-mouse01.png)
 
 ### <a name="typical-usage"></a>Utilisation type
 
@@ -318,7 +318,7 @@ Les événements d’action statique sont déclenchés une fois qu’une interac
 
 Les événements d’action de manipulation indiquent une interaction en cours. L’utilisateur les déclenche en touchant un élément. Ils se poursuivent jusqu’à ce que l’utilisateur mette fin au contact ou que la manipulation soit annulée.
 
-- Les événements de manipulation comprennent les interactions tactiles multipoint, telles que le zoom, le mouvement panoramique ou la rotation, et des interactions qui utilisent des données d’inertie et de vitesse, telles que le glissement. (Les informations fournies par les événements de manipulation ne reflètent pas l’interaction, mais communiquent des données telles que la position, le delta de translation et la vitesse.)
+- Les événements de manipulation comprennent les interactions tactiles multipoints, telles que le zoom, le mouvement panoramique ou la rotation, et les interactions qui utilisent des données d’inertie et de vitesse, telles que le glissement. (Les informations fournies par les événements de manipulation ne reflètent pas l’interaction, mais communiquent des données telles que la position, le delta de translation et la vitesse.)
 
 - Les événements de pointeur tels que PointerPressed et PointerMoved fournissent des détails de bas niveau pour chaque contact tactile, y compris le mouvement du pointeur et la capacité à distinguer les événements liés à l’appui ou au relâchement.
 
@@ -349,7 +349,7 @@ En vous adaptant au plus grand nombre d’utilisateurs et d’appareils et en co
 ### <a name="device-support"></a>Prise en charge des appareils
 
 -   Téléphones et phablettes
--   Tablet
+-   Tablette
 -   PC et portables
 -   Surface Hub
 -   IoT

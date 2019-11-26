@@ -18,7 +18,7 @@ ms.locfileid: "74259922"
 
 Vous pouvez répondre aux révisions de votre application pour permettre aux clients de savoir que vous écoutez leurs commentaires. Les réponses aux avis permettent d’indiquer aux clients les nouvelles fonctionnalités ou les bogues corrigés d’après leurs commentaires ou d’obtenir des commentaires plus précis sur les améliorations à apporter à votre application. Vos réponses seront affichées dans le Microsoft Store pour que tous les clients Windows 10 les voient. Vous pouvez également choisir d’envoyer votre réponse par courrier électronique au client (s’il n’a pas choisi d’utiliser un appareil exécutant Windows 10, version 1803 ou ultérieure).
 
-Pour afficher les critiques de votre application et fournir des réponses, recherchez l’application dans l' [espace partenaires](https://partner.microsoft.com/dashboard). Dans le menu de navigation de gauche, développez **Analyse**, puis cliquez sur **Avis** afin d'afficher le [Rapport sur les avis](reviews-report.md). Sélectionnez **répondre à la révision** pour fournir votre réponse.
+Pour afficher les critiques de votre application et fournir des réponses, recherchez l’application dans l' [espace partenaires](https://partner.microsoft.com/dashboard). Dans le menu de navigation de gauche, développez **Analyse**, puis cliquez sur **Avis** afin d’afficher le [Rapport sur les avis](reviews-report.md). Sélectionnez **répondre à la révision** pour fournir votre réponse.
 
 > [!TIP]
 > Outre l’utilisation de l’espace partenaires pour répondre aux révisions, vous pouvez répondre aux révisions [par programme](../monetize/submit-responses-to-app-reviews.md).
@@ -36,10 +36,10 @@ Lorsque vous répondez à l’avis d’un clients, respectez les consignes suiva
 
 -   Les réponses ne peuvent pas comporter plus de 1 000 caractères.
 -   Vous ne pouvez proposer aux utilisateurs aucun type de rémunération, y compris sous forme d'éléments d'application numériques, afin de les inciter à modifier leur évaluation de l'application. Nous vous rappelons que toute tentative de manipulation des évaluations est proscrite, conformément au [Contrat du développeur de l'application](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement).
--   N'incluez ni contenu marketing ni publicités dans votre réponse. N'oubliez pas que votre évaluateur est déjà votre client.
--   Ne faites pas la promotion d'autres applications ou services dans votre réponse.
+-   N’incluez ni contenu marketing ni publicités dans votre réponse. N'oubliez pas que votre évaluateur est déjà votre client.
+-   Ne faites pas la promotion d’autres applications ou services dans votre réponse.
 -   Votre réponse doit être directement liée à l'application et à l'avis concernés. L'envoi d'une même réponse à un grand nombre d'utilisateurs est interdit si la réponse générique utilisée ne répond pas à la même question.
--   N'incluez pas de commentaires profanes, agressifs, personnels ou malveillants dans votre réponse. Soyez toujours poli et gardez à l’esprit que les clients satisfaits seront probablement les plus grands promoteurs de votre application.
+-   N’incluez pas de commentaires profanes, agressifs, personnels ou malveillants dans votre réponse. Soyez toujours poli et gardez à l’esprit que les clients satisfaits seront probablement les plus grands promoteurs de votre application.
 
 > [!NOTE]
 > Les clients peuvent signaler à Microsoft toute réponse inappropriée d’un développeur à l’un de leurs avis. Ils peuvent également refuser de recevoir des réponses de révision par courrier électronique.
@@ -51,4 +51,4 @@ Votre relation avec vos clients est de votre responsabilité. Microsoft ne prend
 
 ## <a name="use-customer-reviews-to-improve-your-app"></a>Utiliser les avis des clients pour améliorer votre application
 
-Être à l'écoute de vos clients et leur fournir des réponses n'est qu'un début. Réagir à leurs commentaires est également un point essentiel. Si vous apportez des améliorations importantes, présentez-les dans le Windows Store en toute confiance en [créant une autre soumission](app-submissions.md) pour mettre à jour votre application.
+Être à l’écoute de vos clients et leur fournir des réponses n’est qu’un début. Réagir à leurs commentaires est également un point essentiel. Si vous apportez des améliorations importantes, présentez-les dans le Windows Store en toute confiance en [créant une autre soumission](app-submissions.md) pour mettre à jour votre application.

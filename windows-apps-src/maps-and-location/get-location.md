@@ -1,6 +1,6 @@
 ---
 title: Obtenir l’emplacement de l’utilisateur
-description: Déterminez l’emplacement de l’utilisateur et réagissez aux changements d’emplacement. L’accès à l’emplacement de l’utilisateur est géré par les paramètres de confidentialité définis dans l’application Paramètres. Cette rubrique montre également comment vérifier si votre application est autorisée à accéder à l’emplacement de l’utilisateur.
+description: Déterminez l’emplacement de l’utilisateur et réagissez aux changements d’emplacement. L’accès à l’emplacement de l’utilisateur est géré par les paramètres de confidentialité définis dans l’application Paramètres. Cet article indique également comment vérifier si votre application est autorisée à accéder à l’emplacement de l’utilisateur.
 ms.assetid: 24DC9A41-8CC1-48B0-BC6D-24BF571AFCC8
 ms.date: 11/28/2017
 ms.topic: article
@@ -18,7 +18,7 @@ ms.locfileid: "74260392"
 
 
 
-Déterminez l’emplacement de l’utilisateur et réagissez aux changements d’emplacement. L’accès à l’emplacement de l’utilisateur est géré par les paramètres de confidentialité définis dans l’application Paramètres. Cette rubrique montre également comment vérifier si votre application est autorisée à accéder à l’emplacement de l’utilisateur.
+Déterminez l’emplacement de l’utilisateur et réagissez aux changements d’emplacement. L’accès à l’emplacement de l’utilisateur est géré par les paramètres de confidentialité définis dans l’application Paramètres. Cet article indique également comment vérifier si votre application est autorisée à accéder à l’emplacement de l’utilisateur.
 
 **Conseil** Pour en savoir plus sur l’accès à l’emplacement de l’utilisateur dans votre application, téléchargez l’exemple suivant à partir du [référentiel Windows-universal-samples](https://github.com/Microsoft/Windows-universal-samples) sur GitHub.
 
@@ -259,7 +259,7 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 ## <a name="troubleshoot-your-app"></a>Résoudre les problèmes de votre application
 
 
-Pour que votre application puisse accéder à l’emplacement de l’utilisateur, l’option **Localisation** doit être activée sur l’appareil. Dans l’application **Paramètres**, vérifiez que les **paramètres de confidentialité relatifs à la géolocalisation** suivants sont bien activés :
+Pour que votre application puisse accéder à l’emplacement de l’utilisateur, l’option **Localisation** doit être activée sur l’appareil. Dans l’application **Paramètres**, vérifiez que les **paramètres de confidentialité d’emplacement** suivants sont bien activés :
 
 -   **Emplacement de cet appareil...** est activé **(non** applicable dans Windows 10 mobile)
 -   Le paramètre des services de localisation **Emplacement** est **activé**.

@@ -1,5 +1,5 @@
 ---
-title: Rapport de campagne de publicité
+title: Rapport de campagne publicitaire
 ms.assetid: 8C5907A6-8059-4CAF-951F-C97301A5EEDF
 description: Le rapport de la campagne Active Directory dans l’espace partenaires vous permet de voir comment les campagnes publicitaires de la promotion de votre application sont exécutées.
 ms.date: 10/31/2018
@@ -13,11 +13,11 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74260065"
 ---
-# <a name="ad-campaign-report"></a>Rapport de campagne de publicité
+# <a name="ad-campaign-report"></a>Rapport de campagne publicitaire
 
 Le rapport de la **campagne Active Directory** dans l' [espace partenaires](https://partner.microsoft.com/dashboard) vous permet de voir comment les [campagnes publicitaires](create-an-ad-campaign-for-your-app.md) de la promotion de votre application sont exécutées. Pour afficher le rapport, développez **attirer** dans le menu de navigation gauche et sélectionnez **campagnes Active Directory**.
 
-## <a name="definitions"></a>DÉFINITIONS
+## <a name="definitions"></a>Définitions
 
 Ce rapport affiche les données relatives aux éléments suivants :
 
@@ -61,7 +61,7 @@ Les campagnes de publicité offrent des expositions publicitaires au sein d’au
 
 Si un client reçoit la publicité et installe l’application dans les 24 heures, soit en cliquant sur la publicité, soit en accédant directement à la page de description de l’application dans le Windows Store, cette installation est attribuée à la campagne à l’origine de l’exposition.
 
-Le suivi de l’installation s’effectue dans le Windows Store sur un téléphone, une tablette, un PC et d’autres appareils Windows 10 en fonction du client qui a installé l’application. Le moteur de publicité effectue le suivi des clients qui affichent la publicité, et nous utilisons ces informations pour mettre en corrélation les clients qui ont consulté la publicité avec ceux qui ont installé l’application. Pour que l’installation de l’application soit comptabilisée, plusieurs critères doivent être remplis :
+Le suivi de l’installation s’effectue dans le Windows Store sur un téléphone, une tablette, un PC et d’autres appareils Windows 10 en fonction du client qui a installé l’application. Le moteur de publicité effectue le suivi des clients qui affichent la publicité, et nous utilisons ces informations pour mettre en corrélation les clients qui ont consulté la publicité avec ceux qui ont installé l’application. Pour que l’installation de l’application soit comptabilisée, plusieurs critères doivent être remplis :
 
 1.  Le client n’a pas désactivé le ciblage.
 2.  Le client est connecté à un compte Microsoft.

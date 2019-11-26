@@ -19,6 +19,6 @@ Découvrez comment lancer, suspendre et reprendre votre application DirectX de p
 
 |Sujet|Description|
 |-|-|
-|[How to activate an app](how-to-activate-an-app-directx-and-cpp.md)|Cette rubrique explique comment définir l’expérience d’activation d’une application DirectX UWP.|
-|[How to suspend an app](how-to-suspend-an-app-directx-and-cpp.md)|Cette rubrique montre comment enregistrer des données importantes relatives à l’état du système et aux applications lorsque le système interrompt l’exécution de votre application DirectX UWP.|
-|[How to resume an app](how-to-resume-an-app-directx-and-cpp.md)|Cette rubrique montre comment restaurer des données d’application importantes lorsque le système reprend l’exécution de votre application DirectX UWP.|
+|[Comment activer une application](how-to-activate-an-app-directx-and-cpp.md)|Cette rubrique explique comment définir l’expérience d’activation d’une application DirectX UWP.|
+|[Interruption d’une application](how-to-suspend-an-app-directx-and-cpp.md)|Cette rubrique montre comment enregistrer des données importantes relatives à l’état du système et aux applications lorsque le système interrompt l’exécution de votre application DirectX UWP.|
+|[Comment reprendre une application](how-to-resume-an-app-directx-and-cpp.md)|Cette rubrique montre comment restaurer des données d’application importantes lorsque le système reprend l’exécution de votre application DirectX UWP.|

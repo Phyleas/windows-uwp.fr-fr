@@ -1,5 +1,5 @@
 ---
-title: Activation du Mode développeur Xbox One
+title: Activation du mode Développeur Xbox One
 description: Procédure d’activation du mode développeur de façon à pouvoir basculer du mode commercial vers le mode développeur et inversement.
 ms.date: 02/08/2017
 ms.topic: article
@@ -13,14 +13,14 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74258724"
 ---
-# <a name="xbox-one-developer-mode-activation"></a>Activation du Mode développeur Xbox One
+# <a name="xbox-one-developer-mode-activation"></a>Activation du mode Développeur Xbox One
 
 ## <a name="how-developer-mode-works"></a>Fonctionnement du Mode développeur
 La console Xbox One possède deux modes : le mode *Commercial* (**1**) et le mode *Développeur* (**2**). En Mode commercial, la console permet à n’importe quel utilisateur de jouer et d’exécuter des applications en tant qu’utilisateur. Le Mode développeur, vous permet de développer des logiciels pour la console, mais pas de jouer à des jeux commerciaux ou d’exécuter des applications commerciales.
 
 Ce mode peut être activé sur n’importe quelle console Xbox One commerciale. Une fois le Mode développeur activé, vous pouvez basculer entre le mode commercial (**2a**) et le mode développeur (**2b**).
 
-![Modes Xbox One](images/dev-mode-flow.png)
+![Modes Xbox One](images/dev-mode-flow.png)
 
 ## <a name="activate-developer-mode-on-your-retail-xbox-one-console"></a>Activer le Mode développeur sur votre console Xbox One commerciale
 
@@ -59,7 +59,7 @@ Ce mode peut être activé sur n’importe quelle console Xbox One commerciale. 
 ## <a name="switch-between-retail-and-developer-mode"></a>Basculer entre le Mode commercial et développeur
 Une fois le Mode développeur activé sur votre console, utilisez **Dev Home** pour basculer entre le Mode commercial et développeur. Pour en savoir plus sur le démarrage et l’utilisation de Dev Home, consultez [Présentation des outils Xbox One](introduction-to-xbox-tools.md).
 
-* Pour basculer en Mode commercial, ouvrez **Accueil du développeur**. Sous **Actions rapides**, sélectionnez **Quitter le mode développeur**. Cette action a pour effet de redémarrer votre console en mode commercial.    
+* Pour basculer en Mode commercial, ouvrez **Accueil du développeur**. Sous **Actions rapides**, sélectionnez **Quitter le mode développeur**. Cette action a pour effet de redémarrer votre console en Mode commercial.    
 
   ![Activation - Étape 13](images/activation-step-13-rs4.png)  
   
@@ -67,6 +67,6 @@ Une fois le Mode développeur activé sur votre console, utilisez **Dev Home** p
 
   ![Activation - Étape 14](images/activation-step-12.png)  
 
-## <a name="see-also"></a>Voir également
+## <a name="see-also"></a>Articles associés
 - [Désactivation du mode développeur Xbox One](devkit-deactivation.md)
 - [UWP sur Xbox One](index.md)

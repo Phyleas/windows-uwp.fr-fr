@@ -18,9 +18,9 @@ ms.locfileid: "74258299"
 # <a name="pen-interactions-and-windows-ink-in-uwp-apps"></a>Interactions avec le stylet et Windows Ink dans les applications UWP
 
 ![le stylet de surface](images/ink/hero-small.png)  
-*Stylet Surface* (disponible à l’achat dans la [Boutique Microsoft](https://www.microsoft.com/p/surface-pen/8zl5c82qmg6b)).
+*Stylet Surface* (disponible à l’achat dans la [Microsoft Store](https://www.microsoft.com/p/surface-pen/8zl5c82qmg6b)).
 
-## <a name="overview"></a>Vue d’ensemble
+## <a name="overview"></a>Présentation
 
 Optimisez votre application de plateforme Windows universelle (UWP) pour la saisie au stylet, afin de fournir une fonctionnalité standard d’[**appareil de pointage**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.PointerDevice) et d’offrir une expérience Windows Ink optimale à vos utilisateurs.
 
@@ -454,21 +454,21 @@ En appelant [**ActivateCustomDrying**](https://docs.microsoft.com/uwp/api/window
 
 Vous pouvez également personnaliser l’encre sèche pour un [SwapChainPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.swapchainpanel), mais la synchronisation avec le thread d’interface utilisateur n’est pas garantie et il peut y avoir un délai entre le moment où l’encre est restituée dans votre SwapChainPanel et celui où l’entre est supprimée du InkCanvas.
 
-Pour obtenir un exemple complet de cette fonctionnalité, consultez [l’exemple d’entrée manuscrite complexe](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk).
+Pour obtenir un exemple complet de cette fonctionnalité, consultez l’[exemple d’entrée manuscrite complexe](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk).
 
 > [!NOTE]
-> Séchage personnalisé et élément [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar)  
+> Séchage personnalisé et [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar)  
 > Si votre application remplace le comportement par défaut du rendu d’entrée manuscrite de l’élément [**InkPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter) par une implémentation de séchage personnalisé, les traits d’encre restitués ne sont plus disponibles pour l’élément InkToolbar et les commandes d’effacement intégrées de l’élément InkToolbar ne fonctionneront pas comme prévu. Pour fournir des fonctionnalités d’effacement, vous devez gérer tous les événements de pointeur, effectuer le test de positionnement sur chaque trait et remplacer la commande intégrée « Effacer toutes les entrées manuscrites ».
 
 ## <a name="other-articles-in-this-section"></a>Autres articles de cette section
 
-| Rubrique | Description |
+| Sujet | Description |
 | --- | --- |
 | [Reconnaître les traits d’encre](convert-ink-to-text.md) | Convertissez des traits d’encre en texte à l’aide de la reconnaissance de l’écriture manuscrite ou en formes à l’aide de la reconnaissance personnalisée. |
 | [Stocker et récupérer des traits d’encre](save-and-load-ink.md) | Stockez des données de traits d’encre dans un fichier GIF (Graphics Interchange Format) à l’aide des métadonnées intégrées ISF (Ink Serialized Format). |
 | [Ajouter un InkToolbar à une application UWP](ink-toolbar.md) | Ajoutez un élément InkToolbar par défaut à une application d’entrée manuscrite de plateforme Windows universelle (UWP), ajoutez un bouton de stylet personnalisé à l’élément InkToolbar et liez le bouton de stylet personnalisé à une définition de stylet personnalisé. |
 
-## <a name="related-articles"></a>Articles connexes
+## <a name="related-articles"></a>Articles associés
 
 * [Prise en main : écriture manuscrite dans votre application UWP](../../get-started/ink-walkthrough.md)
 * [Gestion des entrées du pointeur](handle-pointer-input.md)

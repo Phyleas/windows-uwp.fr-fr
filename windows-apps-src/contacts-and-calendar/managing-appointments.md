@@ -17,7 +17,7 @@ ms.locfileid: "74255492"
 
 
 
-L’espace de noms [**Windows.ApplicationModel.Appointments**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Appointments) vous permet de créer et gérer des rendez-vous dans l’application Calendrier d’un utilisateur. Ici, nous allons vous montrer comment créer un rendez-vous, l’ajouter à l’application Calendrier, le remplacer dans l’application Calendrier et le supprimer de l’application Calendrier. Nous allons également expliquer comment afficher une période de temps pour une application Calendrier et créer un objet appointment-recurrence.
+L’espace de noms [**Windows.ApplicationModel.Appointments**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Appointments) vous permet de créer et gérer des rendez-vous dans l’application Calendrier d’un utilisateur. Ici, nous allons vous montrer comment créer un rendez-vous, l’ajouter à l’application Calendrier, le remplacer dans l’application Calendrier et le supprimer de l’application Calendrier. Nous allons également vous montrer comment afficher une période de temps pour une application Calendrier et créer un objet appointment-recurrence.
 
 ## <a name="create-an-appointment-and-apply-data-to-it"></a>Créer un rendez-vous et lui ajouter des données
 

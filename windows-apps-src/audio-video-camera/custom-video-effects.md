@@ -6,7 +6,7 @@ Search.Product: eADQiWindows 10XVcnh
 title: Effets vidéo personnalisés
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.assetid: 40a6bd32-a756-400f-ba34-2c5f507262c0
 ms.localizationpriority: medium
 ms.openlocfilehash: 1be4bf71d99bd6560ce4ed753b55dacdfcceb868
@@ -28,14 +28,14 @@ Cet article explique comment créer un composant Windows Runtime implémentant 
 
 Un effet vidéo personnalisé est défini dans une classe qui implémente l’interface [**IBasicVideoEffect**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.IBasicVideoEffect). Cette classe ne peut pas être incluse directement dans le projet de votre application. À la place, vous devez utiliser un composant Windows Runtime pour héberger votre classe d’effet vidéo.
 
-**Add a Windows Runtime component for your video effect**
+**Ajouter un composant Windows Runtime pour votre effet vidéo**
 
 1.  Dans Microsoft Visual Studio, quand votre solution est ouverte, accédez au menu **Fichier**, sélectionnez **Ajouter-&gt;Nouveau projet.**
 2.  Sélectionnez le type de projet **Composant Windows Runtime (Windows universel)** .
 3.  Pour cet exemple, nommez le projet *VideoEffectComponent*. Ce nom sera référencé dans le code ultérieurement.
 4.  Cliquez sur **OK**.
-5.  Le modèle de projet crée une classe appelée Class1.cs. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur l’icône de Class1.cs et sélectionnez **Renommer**.
-6.  Renommez le fichier *ExampleVideoEffect.cs*. Visual Studio affiche une invite vous demandant si vous voulez mettre à jour toutes les références sous le nouveau nom. cliquez sur **Oui**.
+5.  Le modèle de projet crée une classe appelée Class1.cs. Dans **l’Explorateur de solutions**, cliquez avec le bouton droit sur l’icône de Class1.cs et sélectionnez **Renommer**.
+6.  Renommez le fichier *ExampleVideoEffect.cs*. Visual Studio affiche une invite vous demandant si vous voulez mettre à jour toutes les références sous le nouveau nom. Cliquez sur **Oui**.
 7.  Ouvrez **ExampleVideoEffect.cs** et mettez à jour la définition de classe pour implémenter l’interface [**IBasicVideoEffect**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.IBasicVideoEffect).
 
 [!code-cs[ImplementIBasicVideoEffect](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetImplementIBasicVideoEffect)]
@@ -46,7 +46,7 @@ Vous devez inclure les espaces de noms suivants dans votre fichier de classe eff
 [!code-cs[EffectUsing](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetEffectUsing)]
 
 
-## <a name="implement-the-ibasicvideoeffect-interface-using-software-processing"></a>Implémenter l’interface IBasicVideoEffect à l’aide du traitement logiciel
+## <a name="implement-the-ibasicvideoeffect-interface-using-software-processing"></a>Implémentez l’interface IBasicVideoEffect à l’aide du traitement logiciel
 
 
 Votre effet vidéo doit implémenter toutes les méthodes et propriétés de l’interface [**IBasicVideoEffect**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.IBasicVideoEffect). Cette section vous explique la procédure d’implémentation simple de cette interface à l’aide d’un traitement logiciel.
@@ -166,7 +166,7 @@ La création d’un effet vidéo personnalisé à l’aide du traitement matéri
 
 Utilisez les étapes suivantes pour ajouter le package NuGet Win2D au projet que vous avez créé comme décrit dans la section **Ajouter un effet personnalisé à votre application** au début de cet article.
 
-**To add the Win2D NuGet package to your effect project**
+**Pour ajouter le package NuGet Win2D à votre projet Effect**
 
 1.  Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le projet **VideoEffectComponent** et sélectionnez **Gérer les packages NuGet**.
 2.  Dans la partie supérieure de la fenêtre, sélectionnez l’onglet **Parcourir**.
@@ -222,7 +222,7 @@ Pour utiliser votre effet vidéo dans votre application, vous devez ajouter une 
 
 Vous pouvez configurer un flux d’aperçu simple à partir de la caméra en suivant les étapes décrites dans l’article [Accès à l’aperçu simple de l’appareil photo](simple-camera-preview-access.md). En suivant ces étapes, vous obtiendrez un objet [**MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture) initialisé qui est utilisé pour accéder au flux vidéo de la caméra.
 
-Pour ajouter votre effet vidéo personnalisé à un flux de caméra, créez d’abord un objet [**VideoEffectDefinition**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.VideoEffectDefinition), en transmettant l’espace de noms et le nom de classe de votre effet. Appelez ensuite la méthode [**AddVideoEffect**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.addvideoeffectasync) de l’objet **MediaCapture** pour ajouter l’effet au flux spécifié. Cet exemple utilise la valeur [**MediaStreamType.VideoPreview**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaStreamType) pour indiquer que l’effet doit être ajouté au flux d’aperçu. Si votre application prend en charge la capture vidéo, vous pouvez également utiliser **MediaStreamType.VideoRecord** pour ajouter l’effet au flux de capture. **AddVideoEffect** renvoie un objet [**IMediaExtension**](https://docs.microsoft.com/uwp/api/Windows.Media.IMediaExtension) représentant votre effet personnalisé. Vous pouvez utiliser la méthode SetProperties pour définir la configuration de votre effet.
+Pour ajouter votre effet vidéo personnalisé à un flux de caméra, créez d’abord un objet [**VideoEffectDefinition**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.VideoEffectDefinition), en transmettant l’espace de noms et le nom de classe de votre effet. Appelez ensuite la méthodeAddVideoEffect[**de l’objet**MediaCapture](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.addvideoeffectasync) pour ajouter l’effet au flux spécifié. Cet exemple utilise la valeur [**MediaStreamType.VideoPreview**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaStreamType) pour indiquer que l’effet doit être ajouté au flux d’aperçu. Si votre application prend en charge la capture vidéo, vous pouvez également utiliser **MediaStreamType.VideoRecord** pour ajouter l’effet au flux de capture. **AddVideoEffect** renvoie un objet [**IMediaExtension**](https://docs.microsoft.com/uwp/api/Windows.Media.IMediaExtension) représentant votre effet personnalisé. Vous pouvez utiliser la méthode SetProperties pour définir la configuration de votre effet.
 
 Une fois l’effet ajouté, [**StartPreviewAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.startpreviewasync) est appelé pour démarrer le flux d’aperçu.
 
@@ -239,7 +239,7 @@ Pour obtenir des instructions générales sur la création des compositions mult
 
 
 ## <a name="related-topics"></a>Rubriques connexes
-* [Simple camera preview access](simple-camera-preview-access.md)
+* [Accès en préversion simple de l’appareil photo](simple-camera-preview-access.md)
 * [Compositions multimédias et modification](media-compositions-and-editing.md)
-* [Win2D documentation](https://microsoft.github.io/Win2D/html/Introduction.htm)
+* [Documentation Win2D](https://microsoft.github.io/Win2D/html/Introduction.htm)
 * [Lecture de contenu multimédia](media-playback.md)

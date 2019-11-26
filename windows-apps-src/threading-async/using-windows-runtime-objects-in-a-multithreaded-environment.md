@@ -13,7 +13,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74259801"
 ---
-# <a name="using-windows-runtime-objects-in-a-multithreaded-environment"></a>Utilisation des objets Windows Runtime dans un environnement multithread
+# <a name="using-windows-runtime-objects-in-a-multithreaded-environment"></a>Utilisation des objets Windows Runtime dans un environnement multi-thread
 Cet article décrit la façon dont le .NET Framework gère les appels C# de et Visual Basic le code aux objets fournis par le Windows Runtime ou par Windows Runtime composants.
 
 Dans le .NET Framework, vous pouvez accéder à n’importe quel objet à partir de plusieurs threads par défaut, sans un traitement particulier. Vous avez uniquement besoin d'une référence à l’objet. Dans l'environnement Windows Runtime, ces objets sont appelés *agiles*. La plupart des classes Windows Runtime sont agiles, mais certaines ne le sont pas, et même les classes agiles peuvent nécessiter un traitement particulier.
@@ -160,7 +160,7 @@ Par défaut, les classes dans le composant qui peut être activé sont agiles. T
 
 Concernant les objets qui s’exécutent sur l’interface utilisateur de thread et qui lèvent des exceptions lorsqu’ils sont appelés à partir d’un thread autre que le thread d’interface utilisateur, vous pouvez utiliser l'objet [CoreDispatcher](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coredispatcher.aspx) du thread d’interface utilisateur pour distribuer l’appel.
 
-## <a name="see-also"></a>Voir aussi
+## <a name="see-also"></a>Articles associés
 [Guide C#](/dotnet/csharp/)
 
 [Guide de Visual Basic](/dotnet/visual-basic/)

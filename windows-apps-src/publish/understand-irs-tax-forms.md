@@ -33,14 +33,14 @@ Les formulaires fiscaux vous seront envoyés à partir des adresses suivantes :
 
 **Citoyens américains :**
 <table>
-<tr><th>Groupe professionnel</th><th>Entité légale</th><th>Address</th></tr>
-<tr><td>Windows, Office, Azure</td><td>Microsoft Corporation</td><td>One Microsoft Way<br>Redmond WA 98052 États-Unis</td></tr>
+<tr><th>Groupe professionnel</th><th>Entité légale</th><th>Adresse</th></tr>
+<tr><td>Windows, Office, Azure</td><td>Microsoft Corporation</td><td>One Microsoft Way<br>Redmond WA 98052 États-Unis</td></tr>
 <tr><td>Publicité</td><td>Microsoft Online Inc.</td><td>6100 Neil Road<br>Reno, NV 89511 USA</td></tr>
 <table> 
 
 **Citoyens non américains :**
 <table>
-<tr><th>Groupe professionnel</th><th>Entité légale</th><th>Address</th></tr>
+<tr><th>Groupe professionnel</th><th>Entité légale</th><th>Adresse</th></tr>
 <tr><td>Windows, Office, Azure</td><td>Microsoft Ireland Operations Limited (le paiement est effectué par Microsoft Corporation via Microsoft Ireland, agissant comme intermédiaire qualifié pour Microsoft Corporation)</td><td>Un emplacement Microsoft<br>Comté Sud&nbsp;&nbsp;entreprise&nbsp;Park<br>Leopardstown, Dublin 18 Irlande</td></tr>
 <tr><td>Supports</td><td>Microsoft Ireland Operations Limited (le paiement est effectué par Microsoft Online Inc. par le biais de Microsoft Ireland comme agent de paiement pour Microsoft Online Inc.)</td><td>Un emplacement Microsoft<br>Comté Sud&nbsp;&nbsp;entreprise&nbsp;Park<br>Leopardstown, Dublin 18 Irlande</td></tr>
 <tr><td>Publicité</td><td>Microsoft Online Inc.</td><td>6100 Neil Road<br>Reno, NV 89511 USA</td></tr>
@@ -68,7 +68,7 @@ J’ai reçu au moins $600 paiements non liés aux ventes d’applications de Mi
   </tr>
   <tr>
     <td valign="top">Aucun des deux ne s’applique.</td>
-    <td valign="top">Aucune</td>
+    <td valign="top">Aucun</td>
   </tr>
   <tr>
     <td valign="top">&nbsp;</td>
@@ -84,7 +84,7 @@ J’ai reçu au moins $600 paiements non liés aux ventes d’applications de Mi
   </tr>
   <tr> 
      <td valign="top">J’ai reçu <b>moins de 600 dollars en paiement</b> de publicités dans des applications durant l’exercice fiscal applicable.</td>
-     <td valign="top">Aucune</td>
+     <td valign="top">Aucun</td>
   </tr>
 </table>
 

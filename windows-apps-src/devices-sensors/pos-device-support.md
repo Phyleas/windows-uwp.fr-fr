@@ -15,7 +15,7 @@ ms.locfileid: "74259654"
 # <a name="supported-point-of-service-peripherals"></a>Appareils de point de service pris en charge
 
 ## <a name="barcode-scanner"></a>Scanneur de codes-barres
-| Connectivité | Support |
+| Connectivité | Assistance |
 | -------------|-------------|
 | USB          | <p>Windows contient un pilote de classe prêt à l'emploi pour les scanneurs de codes-barres connectés par USB. Il repose sur la spécification du tableau d’utilisation des scanneurs pour point de service (POS) HID (8c) définie par [USB.org](https://www.usb.org/hid). Consultez le tableau ci-dessous pour obtenir la liste des appareils compatibles connus.  Consultez le manuel de votre scanneur de code-barres ou contactez le fabricant pour savoir comment configurer votre scanneur en mode **Scanneur USB.HID.POS**. </p><p>Windows prend également en charge l’implémentation des pilotes spécifiques du fournisseur pour gérer des scanneurs de code-barres supplémentaires qui ne reconnaissent pas la norme de scanneur USB.HID.POS. Pour connaître la disponibilité des pilotes spécifiques du fournisseur, contactez le fabricant de votre scanneur de code-barres.</p><p>Les fabricants de scanneur de code-barres peuvent consulter le [Guide de conception de pilote de scanneur de code-barres](https://docs.microsoft.com/windows-hardware/drivers/ddi/_pos/index) pour en savoir plus sur la création d’un pilote de scanneur de code-barres personnalisé</p> |
 | Bluetooth    | <p>Windows prend en charge les scanneurs de codes-barres Bluetooth basés sur le protocole et l'interface SPP-SSI (Serial Port Protocol - Simple Serial Interface). Pour connaître la liste des appareils compatibles connus, reportez-vous au tableau ci-après. Consultez le manuel de votre scanneur de code-barres ou contactez le fabricant pour savoir comment configurer votre scanneur en mode **SPP-SSI**.</p> |
@@ -98,7 +98,7 @@ ms.locfileid: "74259654"
 
 
 ## <a name="cash-drawer"></a>Caisse enregistreuse
-| Connectivité | Support |
+| Connectivité | Assistance |
 | -------------|-------------|
 | Réseau/Bluetooth | <p> La connexion directe à la caisse enregistreuse peut être établie via le réseau ou par le biais de Bluetooth, selon les fonctionnalités de la caisse enregistreuse. </p><p>Caisse enregistreuse APG : NetPRO, BluePRO</p> |
 | Port DK | <p> Les caisses enregistreuses qui sont dépourvues de fonctionnalités Bluetooth ou réseau peuvent être connectées par le biais du port DK sur une imprimante de reçus prise en charge, ou de l’accessoire DK-AirCash de Star Micronics. </p>
@@ -121,7 +121,7 @@ Windows fournit une prise en charge pour les lecteurs de bande magnétique ci-ap
  Windows supporte l’implémentation de pilotes supplémentaires spécifiques aux fournisseurs, pour la prise en charge d’autres lecteurs de bande magnétique. Vérifiez la disponibilité auprès de votre fabricant de lecteur de bande magnétique. Les fabricants de lecteur de bande magnétique peuvent consulter le [Guide de conception de pilote de lecteur de bande magnétique](https://docs.microsoft.com/windows-hardware/drivers/ddi/_pos/index) pour en savoir plus sur la création d’un pilote de lecteur de bande magnétique personnalisé.
 
 ## <a name="receipt-printer-posprinter"></a>Imprimante de reçus (POSPrinter)
-| Connectivité | Support |
+| Connectivité | Assistance |
 | -------------|-------------|
 | Réseau et Bluetooth | <p>Windows prend en charge les imprimantes de reçus connectées au réseau et Bluetooth à l’aide du langage de contrôle d’imprimante ESC/POS Epson.  Les imprimantes répertoriées ci-dessous sont détectées automatiquement à l’aide des API POSPrinter. D'autres imprimantes de reçus qui fournissent une émulation ESC/POS peuvent également fonctionner, mais doivent être associées à l’aide un processus de [couplage hors-bande](https://docs.microsoft.com/windows/uwp/devices-sensors/point-of-service#out-of-band-pairing).</p><p>Remarque : les stations de tickets et de feuilles ne sont pas prises en charge par le biais de cette méthode.</p> |
 | OPOS    | <p> Prend en charge toutes les imprimantes de reçus compatibles OPOS via des objets de service OPOS. Installez les pilotes OPOS conformément aux instructions d’installation des fabricants des appareils. </p> |

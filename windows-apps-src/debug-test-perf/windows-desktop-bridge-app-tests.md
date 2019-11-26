@@ -54,7 +54,7 @@ Testez l’application de manière à vérifier qu’il ne s’agit pas d’une 
 **Actions correctives**  
 * Générez l’application en tant que version Release avant de la soumettre au Microsoft Store.
 * Vérifiez que la version correcte du .NET Framework est installée.
-* Assurez-vous que l’application ne crée pas de liens vers des versions de débogage d’une infrastructure et qu’elle est créée avec une version commerciale. Si l’application contient des composants .NET, assurez-vous que vous avez installé la version correcte du .NET Framework.
+* Assurez-vous que l’application ne crée pas de liens vers des versions de débogage d’une infrastructure et qu’elle est créée avec une version commerciale. Si l’application contient des composants .NET, assurez-vous que vous avez installé la version correcte de .NET Framework.
 
 ### <a name="4-package-sanity-test"></a>4. Tests de validité des packages
 #### <a name="41-archive-files-usage"></a>4.1 Utilisation des fichiers archivés
@@ -95,17 +95,17 @@ Le test est validé si l’application déclare une ou plusieurs des fonctionnal
 * SharedUserCertificates
 * DocumentsLibrary
 
-Si au moins une de ces fonctionnalités est déclarée, le test affiche un message d’avertissement pour l’utilisateur. 
+Si l’une de ces fonctionnalités est déclarée, le test affiche un message d’avertissement pour l’utilisateur. 
 
 **Actions correctives**  
-Envisagez de supprimer la fonctionnalité à usage spécial si votre application n’en a pas besoin. Par ailleurs, l’utilisation de ces fonctionnalités est sujette à un examen supplémentaire de la stratégie d’intégration.
+Pensez à supprimer la fonctionnalité spéciale si votre application n’en a pas besoin. Par ailleurs, l’utilisation de ces fonctionnalités est sujette à un examen supplémentaire de la stratégie d’intégration.
 
 ### <a name="2-app-manifest-resources-tests"></a>2. Tests des ressources du manifeste d’application 
 #### <a name="21-app-resources-validation"></a>2.1 Validation des ressources d’application
 Votre application risque de ne pas s’installer correctement si les chaînes ou les images déclarées dans son manifeste sont incorrectes. Si l’application s’installe avec ces erreurs, son logo ou d’autres images associées risquent de ne pas s’afficher correctement.    
 
 **Détails du test**  
-Inspecte les ressources définies dans le manifeste de l’application afin de vérifier qu’elles sont présentes et valides.
+Le test inspecte les ressources définies dans le manifeste de l’application afin de vérifier qu’elles sont présentes et valides.
 
 **Action corrective**  
 Inspirez-vous du tableau suivant.
@@ -125,7 +125,7 @@ La fusion automatique ne doit pas être activée pour le fichier « resources.p
 La chaîne « {string} » ne respecte pas la limite maximale de {number} caractères.  | Consultez les [Exigences relatives aux packages d’applications](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements). Dans le message réel, {string} est remplacé par la chaîne affectée par l’erreur et {number} représente la longueur maximale. 
 La chaîne {string} ne doit pas comporter d’espace de début/fin.  | Le schéma des éléments du manifeste de l’application n’autorise pas les espaces de début ou de fin. Dans le message réel, {string} est remplacé par la chaîne affectée par l’erreur. Assurez-vous qu’aucune des valeurs localisées des champs du manifeste dans resources.pri ne possède d’espaces de début ou de fin. 
 La chaîne ne doit pas être vide (sa longueur doit être supérieure à zéro).  | Pour plus d’informations, voir [Exigences relatives aux packages d’applications](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements). 
-Il n’y a aucune ressource par défaut spécifiée dans le fichier « resources.pri ».  | Pour plus d’informations, voir le guide sur les [ressources d’application](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data). Dans la configuration de build par défaut, Visual Studio inclut uniquement les ressources d’image avec qualificateur « Scale-200 » dans le package d’application lors de la génération des offres groupées, et place les autres ressources dans le package de ressources. Prenez soin d’inclure les ressources d’image avec qualificateur « Scale-200 » ou de configurer votre projet pour qu’il intègre les ressources dont vous disposez. 
+Le fichier « resources.pri » ne contient aucune ressource par défaut.  | Pour plus d’informations, voir le guide sur les [ressources d’application](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data). Dans la configuration de build par défaut, Visual Studio inclut uniquement les ressources d’image avec qualificateur « Scale-200 » dans le package d’application lors de la génération des offres groupées, et place les autres ressources dans le package de ressources. Prenez soin d’inclure les ressources d’image avec qualificateur « Scale-200 » ou de configurer votre projet pour qu’il intègre les ressources dont vous disposez. 
 Aucune valeur de ressource n’est spécifiée dans le fichier « resources.pri ».  | Assurez-vous que des ressources valides sont définies dans resources.pri pour le manifeste de l’application. 
 La taille du fichier image {filename} doit être inférieure à 204 800 octets.  | Réduisez la taille des images indiquées. 
 Le fichier {filename} ne doit pas contenir de section de correspondance inverse.  | Bien que la correspondance inverse soit générée pendant un débogage F5 Visual Studio lors d’un appel de makepri.exe, elle peut être supprimée en exécutant makepri.exe sans le paramètre /m lors de la génération d’un fichier .pri. 
@@ -137,7 +137,7 @@ Le fichier {filename} ne doit pas contenir de section de correspondance inverse.
 Les applications Pont du bureau doivent être complètes et pleinement fonctionnelles. Les applications qui utilisent les images par défaut (provenant des exemples ou exemples SDK) offrent une expérience utilisateur médiocre et sont difficilement identifiables dans le catalogue du Windows Store.
 
 **Détails du test**  
-Le test réussit si les images utilisées par l’application ne sont pas des images par défaut provenant des exemples du Kit de développement logiciel (SDK) ou de Visual Studio. 
+Le test vérifie si les images utilisées par l’application ne sont pas des images par défaut provenant des exemples du Kit de développement logiciel (SDK) ou de Visual Studio. 
 
 **Actions correctives**  
 Remplacez les images par défaut par quelque chose de plus singulier et de plus représentatif de votre application.
@@ -156,10 +156,10 @@ Votre application peut déclarer les types de fichier auxquels elle peut être a
 * **Règle de dépendance du Framework**  
 Ce test applique la spécification selon laquelle les applications déclarent des dépendances appropriées sur la plateforme Windows universelle (UWP). En cas de dépendance inappropriée, ce test échoue. En cas d’incompatibilité entre la version du système d’exploitation ciblée par l’application et les dépendances d’infrastructure établies, le test échoue. Le test échoue également si l’application fait référence à des versions « d’évaluation » des DLL d’infrastructure.
 * **Vérification de la communication entre processus (IPC)**  
-Ce test applique la spécification selon laquelle les applications Pont du bureau ne communiquent pas en dehors du conteneur d’application avec des composants de bureau. La communication entre processus ne concerne que les applications chargées latéralement. Les applications qui spécifient l’attribut [**ActivatableClassAttribute**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-activatableclassattribute) avec `DesktopApplicationPath` comme nom échouent à ce test.  
+Ce test applique la spécification selon laquelle les applications Pont du bureau ne communiquent pas en dehors du conteneur d’application avec des composants de bureau. La communication entre processus ne concerne que les applications chargées indépendamment. Les applications qui spécifient l’attribut [**ActivatableClassAttribute**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-activatableclassattribute) avec `DesktopApplicationPath` comme nom échouent à ce test.  
 
 **Action corrective**  
-Confrontez le manifeste de l’application aux exigences décrites dans [Exigences relatives aux packages d’applications](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements).
+Confrontez le manifeste de l’application aux exigences décrites dans [Exigences relatives au package de l’application](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements).
 
 
 #### <a name="32-application-count"></a>3.2 Nombre d’applications
@@ -196,11 +196,11 @@ Ce test analyse les fichiers binaires stockés dans un package d’application p
 Le test vérifie que le nombre de bits figurant dans l’en-tête exécutable portable de chaque fichier est approprié en cas de référence croisée avec la déclaration de l’architecture de processeur du package d’application. 
 
 **Actions correctives**  
-Suivez les recommandations suivantes pour vous assurer que votre package d’application contient uniquement des fichiers pris en charge par l’architecture spécifiée dans le manifeste d’application : 
+Suivez les recommandations suivantes pour vous assurer que votre package d’application contient uniquement des fichiers pris en charge par l’architecture spécifiée dans le manifeste de l’application : 
 * Si l’architecture du processeur cible de votre application est de type Processeur neutre, le package d’application ne peut pas contenir des fichiers binaires x86, x64 ou ARM, ni de fichiers de type image.
 * Si l’architecture du processeur cible de votre application a un type de processeur x86, le package d’application doit uniquement contenir des fichiers binaires x86 ou des fichiers de types d’images. Si le package contient des fichiers binaires x64 ou ARM, ou des fichiers de types d’images, il échouera au test.
 * Si l’architecture du processeur cible de votre application a un type de processeur x64, le package d’application doit contenir des fichiers binaires x64 ou des fichiers de types d’images. Notez que, dans ce cas, le package peut également inclure des fichiers x86, mais l’expérience d’application principale doit utiliser le fichier binaire x64. Si le package contient des fichiers binaires ARM ou des fichiers de type image, ou s’il contient *uniquement* des fichiers binaires x86 ou des fichiers de type image, il échoue au test.
-* Si l’architecture du processeur cible de votre application a un type de processeur ARM, le package d’application doit uniquement contenir des fichiers binaires ARM ou des fichiers de types d’images. Si le package contient des fichiers binaires x64 ou x86, ou des fichiers de types d’images, il échouera au test. 
+* Si l’architecture du processeur cible de votre application a un type de processeur ARM, le package d’application doit uniquement contenir des fichiers binaires ARM ou des fichiers de types d’images. Si le package contient des fichiers binaires x64 ou x86, ou des fichiers de type image, il échoue au test. 
 
 ### <a name="5-supported-api-test"></a>5. Test des API prises en charge
 Ce test vérifie si l’application utilise des API non conformes. 
@@ -251,7 +251,7 @@ Assurez-vous que toutes les propriétés d’une classe UWP disposent d’une m�
 * **Emplacement du type**  
 Vérifiez que les métadonnées de tous les types UWP se trouvent dans le fichier .winmd dont le nom correspondant à l’espace de noms est le plus long du package d’application.
 * **Nom de type respect de la casse**  
-Vérifiez que tous les types UWP de votre package d’application ont un nom unique qui ne respecte pas la casse. S’assure également qu’aucun nom de type UWP n’est utilisé comme nom d’espace de noms dans votre package d’application.
+Vérifiez que tous les types UWP de votre package d’application ont un nom unique qui ne respecte pas la casse. Vérifiez également qu’aucun nom de type UWP n’est utilisé comme nom d’espace de noms dans votre package d’application.
 * **Exactitude du nom de type**  
 Vérifiez qu’aucun type UWP ne se trouve dans l’espace de noms global ni dans l’espace de noms Windows de niveau supérieur.
  

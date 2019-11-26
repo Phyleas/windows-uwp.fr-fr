@@ -24,7 +24,7 @@ Aujourd’hui, Windows est exécuté sur un nombre considérable d’appareils. 
 
 > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/How-to-Convert-your-iOS-app-to-Windows/player]
 
-| Rubrique | Description |
+| Sujet | Description |
 |-------|-------------|
 | [Sélection d’une approche pour le développement d’applications iOS et UWP](selecting-an-approach-to-ios-and-uwp-app-development.md) | Quels sont les choix possibles lors du développement d’applications multiplateformes ? |
 | [Prise en main de UWP pour les développeurs iOS](getting-started-with-uwp-for-ios-developers.md) | Si vous êtes un développeur iOS et envisagez de développer des applications pour Windows 10, ces documents constituent un bon point de départ. |

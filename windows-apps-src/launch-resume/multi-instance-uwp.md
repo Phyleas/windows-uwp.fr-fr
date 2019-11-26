@@ -16,7 +16,7 @@ ms.locfileid: "74259438"
 
 Cette rubrique décrit comment créer une application de plateforme Windows universelle (UWP) à instances multiples.
 
-À partir de Windows 10, version 1803 (10,0 ; Build 17134), votre application UWP peut s’abonner pour prendre en charge plusieurs instances. Si une instance d’une application UWP à instances multiples est en cours d’exécution et si une demande d’activation consécutive est reçue, la plateforme n’active pas l’instance existante. Au lieu de cela, elle crée une instance qui s’exécute dans un processus distinct.
+À partir de Windows 10, version 1803 (10,0 ; Build 17134), votre application UWP peut s’abonner pour prendre en charge plusieurs instances. Si une instance d’une application UWP à instances multiples est en cours d’exécution et qu’une demande d’activation consécutive est reçue, la plateforme n’activera pas l’instance existante. Au lieu de cela, elle créera une nouvelle instance qui s’exécutera dans un processus distinct.
 
 > [!IMPORTANT]
 > L’instanciation multiple est prise en charge pour les applications JavaScript, contrairement à la redirection d’instanciation multiple. Étant donné que la redirection d’instanciation multiple n’est pas prise en charge pour les applications JavaScript, la classe [**AppInstance**](/uwp/api/windows.applicationmodel.appinstance) n’est pas utile pour ces applications.
@@ -134,7 +134,7 @@ Si une instance enregistrée avec la clé est identifiée, cette instance est ac
 
 Consultez [exemple multi-instance](https://github.com/Microsoft/AppModelSamples/tree/master/Samples/BananaEdit) pour obtenir un exemple de redirection d’activation de plusieurs instances.
 
-## <a name="see-also"></a>Voir également
+## <a name="see-also"></a>Articles associés
 
 [AppInstance.FindOrRegisterInstanceForKey](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appinstance#Windows_ApplicationModel_AppInstance_FindOrRegisterInstanceForKey_System_String_)
 [AppInstance.GetActivatedEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appinstance#Windows_ApplicationModel_AppInstance_GetActivatedEventArgs)

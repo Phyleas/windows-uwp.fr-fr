@@ -17,7 +17,7 @@ ms.locfileid: "74259856"
 
 Cette rubrique décrit le système de propriétés de dépendance disponible quand vous écrivez une application Windows Runtime en C++, C# ou Visual Basic avec des définitions XAML pour l’interface utilisateur.
 
-## <a name="what-is-a-dependency-property"></a>Qu’est-ce qu’une propriété de dépendance ?
+## <a name="what-is-a-dependency-property"></a>Qu’est-ce qu’une propriété de dépendance ?
 
 Une propriété de dépendance est un type spécialisé de propriété Plus précisément, il s’agit d’une propriété dont la valeur est suivie et influencée par un système de propriétés dédié qui fait partie de Windows Runtime.
 
@@ -30,7 +30,7 @@ Le but des propriétés de dépendance est de fournir un moyen systémique pour 
 - modèles à utilisation multiples tels que ressources et styles ;
 - valeurs connues par le biais de relations parent-enfant avec d’autres éléments dans l’arborescence d’objets.
 
-Une propriété de dépendance représente ou prend en charge une fonctionnalité spécifique du modèle de programmation pour la définition d’une application Windows Runtime C#avec XAML pour l’interface C++ utilisateur et,C++Microsoft Visual Basic ou les extensions de composants visuels (/CX) pour le code. Ces fonctionnalités comprennent :
+Une propriété de dépendance représente ou prend en charge une fonctionnalité spécifique du modèle de programmation pour la définition d’une application Windows Runtime C#avec XAML pour l’interface C++ utilisateur et,C++Microsoft Visual Basic ou les extensions de composants visuels (/CX) pour le code. Ces fonctions incluent :
 
 - Liaison de données
 - Styles

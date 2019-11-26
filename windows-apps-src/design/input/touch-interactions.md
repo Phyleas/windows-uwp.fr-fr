@@ -20,7 +20,7 @@ ms.locfileid: "74258221"
 
 Concevez votre application en partant du principe que l’entrée tactile sera la principale méthode d’entrée de vos utilisateurs. Si vous utilisez des contrôles UWP, la prise en charge du pavé tactile, de la souris et du stylet ne nécessite pas de programmation supplémentaire, car les applications UWP proposent cette fonctionnalité gratuitement.
 
-Sachez cependant qu’une interface utilisateur optimisée pour les entrées tactiles ne se révèle pas toujours supérieure à une interface utilisateur classique. Les deux présentent des avantages et des inconvénients qui sont propres à une technologie et une application. Lorsque l’on cible une interface utilisateur principalement tactile, il est important de connaître les différences fondamentales qui existent entre les différentes entrées : tactile (y compris le pavé tactile), stylet, souris et clavier.
+Sachez toutefois qu’une interface utilisateur optimisée pour les entrées tactiles ne s’avère pas toujours supérieure à une interface utilisateur classique. Les deux présentent des avantages et des inconvénients qui sont propres à une technologie et une application. Lorsque l’on cible une interface utilisateur principalement tactile, il est important de connaître les différences fondamentales qui existent entre les différentes entrées : tactile (y compris le pavé tactile), stylet, souris et clavier.
 
 > **API importantes** : [**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input), [**Windows.UI.Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Core), [**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input)
 
@@ -82,7 +82,7 @@ Le tableau suivant présente certaines des différences qui existent entre les p
 
 Les commentaires visuels appropriés lors des interactions avec votre application aident les utilisateurs à reconnaître, apprendre et s’adapter à la façon dont leurs interactions sont interprétées par l’application et la plate-forme Windows. Le retour visuel peut indiquer les interactions réussies, transmettre l’état du système, améliorer le sentiment de contrôle, réduire les erreurs, aider les utilisateurs à comprendre le système et le périphérique d’entrée et encourager l’interaction.
 
-Le retour visuel est essentiel quand l’utilisateur doit réaliser, avec la fonction tactile, des activités qui demandent de l’exactitude et de la précision selon l’endroit concerné. Affichez le retour, quels que soient l’emplacement et le moment de la détection de l’entrée tactile, pour aider l’utilisateur à comprendre toutes les méthodes de ciblage personnalisé qui sont définies par votre application et ses contrôles.
+Le retour visuel est essentiel quand l’utilisateur doit réaliser, avec la fonction tactile, des activités qui demandent de l’exactitude et de la précision selon l’endroit concerné. Affichez le retour, peu importe où et quand l’entrée tactile est détectée, pour aider l’utilisateur à comprendre toutes les méthodes de ciblage personnalisé qui sont définies par votre application et ses contrôles.
 
 
 ## <a name="targeting"></a>Ciblage
@@ -97,7 +97,7 @@ Le ciblage est optimisé par les éléments suivants :
 
     La totalité de la zone de contact du doigt détermine l’objet cible le plus probable.
 
--   Frottement
+-   Nettoyage
 
     L’utilisateur peut facilement recibler les éléments au sein d’un groupe en glissant le doigt entre eux (par exemple, des cases d’option). L’élément actif est activé lorsque l’utilisateur relâche le doigt.
 
@@ -132,7 +132,7 @@ Pour éviter l’occlusion du doigt et de la main, respectez les recommandations
 
     Pour les actions de précision (par exemple, la sélection de texte), insérez des poignées de sélection décalées afin d’augmenter le degré d’exactitude. Pour plus d’informations, voir [Recommandations en matière de sélection de texte et d’images (applications Windows Runtime)](guidelines-for-textselection.md).
 
-## <a name="timing"></a>Synchronisation
+## <a name="timing"></a>Chronométrage
 
 Évitez les modifications en mode chronométré au profit de la manipulation directe. Celle-ci simule le maniement direct et en temps réel d’un objet. L’objet réagit directement au mouvement du doigt.
 
@@ -188,7 +188,7 @@ Pour assurer une prise en charge personnalisée des entrées tactiles, vous pouv
 
 -   Les événements d’action de manipulation, tels que [**ManipulationStarted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarted), indiquent une interaction en cours. L’utilisateur les déclenche en touchant un élément. Ils se poursuivent jusqu’à ce que l’utilisateur mette fin au contact ou que la manipulation soit annulée.
 
-    Les événements de manipulation comprennent les interactions tactiles multipoint, telles que le zoom, le mouvement panoramique ou la rotation, et des interactions qui utilisent des données d’inertie et de vitesse, telles que le glissement. Les informations fournies par les événements de manipulation ne reflètent pas l’interaction qui s’est produite, mais comprennent des données, telles que la position, le delta de translation et la vitesse. Vous pouvez utiliser ces données tactiles pour déterminer le type d’interaction qui doit être produit.
+    Les événements de manipulation comprennent les interactions tactiles multipoints, telles que le zoom, le mouvement panoramique ou la rotation, et les interactions qui utilisent des données d’inertie et de vitesse, telles que le glissement. Les informations fournies par les événements de manipulation ne reflètent pas l’interaction qui s’est produite, mais comprennent des données, telles que la position, le delta de translation et la vitesse. Vous pouvez utiliser ces données tactiles pour déterminer le type d’interaction qui doit être produit.
 
 Voici l’ensemble de mouvements tactiles de base pris en charge par la plateforme UWP.
 
@@ -197,10 +197,10 @@ Voici l’ensemble de mouvements tactiles de base pris en charge par la platefor
 | Appuyer            | Action statique       | Brève pression de l’écran avec un doigt.                                            |
 | Appuyer de manière prolongée | Action statique       | Pression prolongée de l’écran avec un doigt.                                      |
 | Faire glisser          | Action de manipulation | Pression de l’écran avec un ou plusieurs doigts et déplacement dans une même direction.                   |
-| Balayer          | Action de manipulation | Pression de l’écran avec un ou plusieurs doigts et déplacement sur une courte distance dans une même direction.  |
+| Balayage          | Action de manipulation | Pression de l’écran avec un ou plusieurs doigts et déplacement sur une courte distance dans une même direction.  |
 | Tourner           | Action de manipulation | Pression de l’écran avec deux doigts ou plus et mouvement en arc de cercle de haut en bas ou de bas en haut. |
 | Pincer          | Action de manipulation | Pression de l’écran avec deux doigts ou plus, puis rapprochement des doigts.                         |
-| Étirer        | Action de manipulation | Pression de l’écran avec deux doigts ou plus, puis étirement des doigts.                           |
+| Stretch        | Action de manipulation | Pression de l’écran avec deux doigts ou plus, puis étirement des doigts.                           |
 
  
 
@@ -584,7 +584,7 @@ Tous les événements de pointeur, événements de mouvement et événements de 
 -   Évitez d’utiliser le nombre de doigts servant à distinguer la manipulation.
 
 
-## <a name="related-articles"></a>Articles connexes
+## <a name="related-articles"></a>Articles associés
 
 * [Gestion des entrées du pointeur](handle-pointer-input.md)
 * [Identification des périphériques d’entrée](identify-input-devices.md)

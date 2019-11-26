@@ -116,7 +116,7 @@ Par exemple, pour mapper un préfixe « CUSTOM1 » qui vous permet de référe
 
 Les classes partielles de la même étendue de page n’ont pas besoin d’être mappées. Par exemple, aucun préfixe n’est nécessaire pour faire référence à un gestionnaire d’événements que vous avez défini pour la gestion des événements à partir de la définition d’interface utilisateur XAML de votre page. De plus, une grande partie des pages XAML de démarrage des projets générés par Visual Studio pour une application Windows Runtime en C++, C# ou Visual Basic mappent déjà un préfixe « local: », qui fait référence à l’espace de noms par défaut spécifié pour le projet et à l’espace de noms utilisé par les définitions de classes partielles.
 
-### <a name="clr-language-rules"></a>Règle du langage CLR
+### <a name="clr-language-rules"></a>Règles du langage CLR
 
 Si vous écrivez votre code de stockage dans un langage .NET (C# ou Microsoft Visual Basic), peut-être utilisez-vous des conventions qui incluent un point (« . ») dans les noms des espaces de noms afin de créer une hiérarchie conceptuelle d’espaces de noms de code. Si votre définition d’espace de noms contient un point, celui-ci doit faire partie de la valeur que vous spécifiez après le jeton « using: ».
 

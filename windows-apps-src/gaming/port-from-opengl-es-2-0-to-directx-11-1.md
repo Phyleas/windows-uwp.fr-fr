@@ -1,5 +1,5 @@
 ---
-title: Portage d’OpenGL ES 2.0 sur Direct3D 11
+title: Passer d’OpenGL ES 2.0 à Direct3D 11
 description: Cette section propose des articles, des vues d’ensemble et des procédures pas à pas concernant le portage d’un pipeline graphique d’OpenGL ES 2.0 sur Direct3D 11 et sur Windows Runtime.
 ms.assetid: 1e1cf668-a15f-0c7b-8daf-3260d27c6d9c
 ms.date: 02/08/2017
@@ -13,7 +13,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74258452"
 ---
-# <a name="port-from-opengl-es-20-to-direct3d-11"></a>Portage d’OpenGL ES 2.0 sur Direct3D 11
+# <a name="port-from-opengl-es-20-to-direct3d-11"></a>Passer d’OpenGL ES 2.0 à Direct3D 11
 
 
 
@@ -30,7 +30,7 @@ Cette section propose des articles, des vues d’ensemble et des procédures pas
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Rubrique</th>
+<th align="left">Sujet</th>
 <th align="left">Description</th>
 </tr>
 </thead>

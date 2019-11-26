@@ -18,7 +18,7 @@ ms.locfileid: "74259316"
 
 Utilisez l' *API Microsoft Store Analytics* pour récupérer par programme les données d’analyse pour les applications qui sont inscrites auprès du compte de l’espace partenaires Windows de votre organisation ou de votre organisation. Cette API permet de récupérer des données sur les acquisitions, les erreurs, les évaluations et les avis sur les applications et les extensions (également connues sous le nom PIA, produit in-app). Cette API utilise Azure Active Directory (Azure AD) pour authentifier les appels en provenance de votre application ou service.
 
-Les étapes suivantes décrivent le processus de bout en bout :
+Les étapes suivantes décrivent le processus de bout en bout :
 
 1.  Vérifiez que vous avez rempli toutes les [conditions préalables](#prerequisites).
 2.  Avant d’appeler une méthode dans l’API d’analyse du Microsoft Store, [procurez-vous un jeton d’accès Azure AD](#obtain-an-azure-ad-access-token). Une fois le jeton obtenu, vous avez 60 minutes pour l’utiliser dans les appels à l’API d’analyse du Microsoft Store avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en générer un nouveau.

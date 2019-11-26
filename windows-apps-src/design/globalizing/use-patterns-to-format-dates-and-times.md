@@ -71,7 +71,7 @@ De plus, un motif qui s'applique correctement aujourd'hui pourrait ne pas s'appl
 
 -   si vous n’êtes pas dépendant d’une sortie particulière pour un format ;
 -   si vous n’avez pas besoin que le format respecte une norme propre à une culture ;
--   si vous voulez précisément que le modèle soit invariable dans toutes les cultures ;
+-   Si vous voulez précisément que le modèle soit invariable dans toutes les cultures ;
 -   Vous avez l'intention de localiser la chaîne de motif de format actuelle.
 
 Voici un résumé de la distinction entre les modèles de format et les motifs de format.

@@ -22,7 +22,7 @@ ms.locfileid: "74259688"
 
 Cet article fournit une vue d’ensemble des balises d’annonce Bluetooth Low Energy (LE) pour les applications de plateforme Windows universelle (UWP).  
 
-## <a name="overview"></a>Vue d’ensemble
+## <a name="overview"></a>Présentation
 
 Un développeur peut exécuter deux fonctions principales à l’aide des API d’annonce Bluetooth LE :
 

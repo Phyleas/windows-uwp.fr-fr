@@ -18,12 +18,12 @@ ms.locfileid: "74259068"
 
 Cette rubrique fournit un mappage complet de Windows Phone API Silverlight à leurs équivalents de plateforme Windows universelle (UWP). Il ne s’agit généralement pas d’un mappage un-à-un des fonctionnalités : une plateforme peut comporter plus ou moins de fonctionnalités que l’autre dans un espace de noms ou dans une classe.
 
-La table de mappage vous aide quand vous travaillez dans un projet UWP et que vous réutilisez le code source à partir d’un projet Windows Phone Silverlight. Il existe des différences dans les noms des espaces de noms et des classes (y compris dans les contrôles d’interface utilisateur) entre les deux plateformes. Dans de nombreux cas, pour effectuer un mappage, il suffit de modifier un nom d’espace de noms. Votre code est ensuite compilé. Parfois, un nom de classe ou d’API a changé, ainsi que le nom de l’espace de noms. D’autres fois, le mappage demande un peu plus de travail, et dans de rares cas, il nécessite un changement d’approche.
+La table de mappage vous aide quand vous travaillez dans un projet UWP et que vous réutilisez le code source à partir d’un projet Windows Phone Silverlight. Il existe des différences dans les noms des espaces de noms et des classes (y compris dans les contrôles d’interface utilisateur) entre les deux plateformes. Dans de nombreux cas, pour effectuer un mappage, il suffit de modifier un nom d’espace de noms. Votre code est ensuite compilé. Parfois, un nom de classe ou d’API a changé, ainsi que le nom de l’espace de noms. D’autres fois, le mappage demande un peu plus de travail et, dans de rares cas, il nécessite un changement d’approche.
 
 **Comment utiliser la table :  ** Commencez par Rechercher le nom de la classe que vous utilisez. Les classes sont indiquées lorsque le mappage est plus complexe qu’un simple changement de nom de l’espace de noms. Si votre classe n’est pas répertoriée, le mappage correspond simplement à une modification de l’espace de noms. Recherchez le nom de l’espace de noms de votre classe pour trouver son équivalent UWP. Votre classe figurera dans cet espace de noms. Si votre espace de noms n’est pas indiqué, son nom n’a pas changé.
 
 **Notez**  Windows 10 prend en charge un plus grand nombre de .NET Framework qu’une application Windows Phone Store. Par exemple, Windows 10 possède plusieurs System. ServiceModel.\* les espaces de noms, ainsi que System.Net, System .net. NetworkInformation et System .net. Sockets.
-En outre, dans une application Windows 10, vous tirerez parti de .NET Native, qui est une technologie de compilation à l’avance qui convertit le langage MSIL en code machine exécutable en mode natif. Les applications .NET Native démarrent plus vite, utilisent moins de mémoire et consomment moins de batterie que leurs équivalents MSIL.
+En outre, dans une application Windows 10, vous tirerez parti de .NET Native, qui est une technologie de compilation à l’avance qui convertit le langage MSIL en code machine exécutable en mode natif. Les applications .NET natives démarrent plus vite, utilisent moins de mémoire et consomment moins de batterie que leurs équivalents MSIL.
 
 | Windows Phone Silverlight | Windows Runtime |
 | ------------------------- | --------------- |
@@ -104,7 +104,7 @@ En outre, dans une application Windows 10, vous tirerez parti de .NET Native, qu
 | Classe **System.Data.Linq.DataContext** | Aucun équivalent direct |
 | Classe **System.Data.Linq.Mapping.ColumnAttribute** | Aucun équivalent direct |
 | Classe **System.Data.Linq.SqlClient.SqlHelpers** | Aucun équivalent direct |
-| Appareils | |
+| Périphériques | |
 | Espaces de noms **Microsoft.Devices** et **Microsoft.Devices.Sensors** | Espaces de noms [**Windows. Devices. Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration), [**Windows. Devices. Enumeration. PNP**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.Pnp), [**Windows. appareils. Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input), [**Windows. Devices. Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors) |
 | Classes **Microsoft.Devices.Camera** et **Microsoft.Devices.PhotoCamera** | Classe [**MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture) . Également la classe [**CameraCaptureUI**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.CameraCaptureUI) (Windows uniquement). |
 | Classe **Microsoft.Devices.CameraButtons** | [**HardwareButtons**](https://docs.microsoft.com/uwp/api/Windows.Phone.UI.Input.HardwareButtons) , classe |
@@ -154,7 +154,7 @@ En outre, dans une application Windows 10, vous tirerez parti de .NET Native, qu
 | Classes **Microsoft.Phone.Tasks.SaveContactTask**, **SaveEmailAddressTask** et **SavePhoneNumberTask** | Classe [**StoredContact**](https://docs.microsoft.com/uwp/api/Windows.Phone.PersonalInformation.StoredContact) (Windows Phone uniquement) | 
 | Classe **Microsoft.Phone.Tasks.SaveRingtoneTask** | Aucun équivalent direct |
 | Classes **Microsoft.Phone.Tasks.ShareLinkTask**, **ShareMediaTask** et **ShareStatusTask** | [**DataPackage**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackage) , classe |
-| Emplacement | |
+| Location | |
 | Espace de noms **System.Device.Location** | Espace de noms [**Windows. Devices. géolocalisation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation) |
 | Classe **System.Device.GeoCoordinateWatcher** | Classe de [**géolocalisation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator) |
 | Cartes | |

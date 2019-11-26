@@ -14,7 +14,7 @@ ms.locfileid: "74254748"
 ---
 # <a name="use-the-windows-10-resource-management-system-in-a-legacy-app-or-game"></a>Utiliser le système de gestion des ressources Windows 10 dans une application ou un jeu hérité
 
-Les applications et les jeux .NET et Win32 sont souvent traduits dans différentes langues, agrandissant ainsi leur marché global. Pour plus d’informations sur la proposition de valeur de la localisation de votre application, consultez [Internationalisation et localisation](../design/globalizing/globalizing-portal.md). En empaquetant votre application ou votre jeu .NET ou Win32 en tant que package MSIX ou AppX, vous pouvez tirer parti du système de gestion des ressources pour charger les ressources d’application adaptées au contexte d’exécution. Cette rubrique détaillée décrit ces techniques.
+Les applications et les jeux .NET et Win32 sont souvent traduits dans différentes langues, agrandissant ainsi leur marché global. Pour plus d’informations sur la proposition de valeur de la localisation de votre application, voir [Internationalisation et localisation](../design/globalizing/globalizing-portal.md). En empaquetant votre application ou votre jeu .NET ou Win32 en tant que package MSIX ou AppX, vous pouvez tirer parti du système de gestion des ressources pour charger les ressources d’application adaptées au contexte d’exécution. Cette rubrique détaillée décrit ces techniques.
 
 Il existe plusieurs façons de localiser une application Win32 traditionnelle, mais Windows 8 a introduit un [nouveau système de gestion des ressources](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10)) qui fonctionne sur l’ensemble des langages de programmation et des types d’applications et fournit des fonctionnalités supplémentaires et allant au-delà de la simple localisation. Ce système est appelé « MRT » dans cette rubrique. Historiquement, cela signifiait « Modern Resource Technology », mais le terme « Modern » a été abandonné. Le gestionnaire de ressources peut également être appelé MRM (Gestionnaire de ressources modernes) ou PRI (Index de ressource de package).
 
@@ -33,17 +33,17 @@ Dans de nombreux cas, vous pouvez continuer d'utiliser vos formats de localisati
 <tr>
 <td>Localiser le manifeste du package</td>
 <td>Travail minimal requis pour que votre contenu localisé apparaisse dans l’interpréteur de commandes Windows et dans le Microsoft Store</td>
-<td>Petite</td>
+<td>Petit</td>
 </tr>
 <tr>
 <td>Utilisez MRT pour identifier et localiser les ressources</td>
 <td>Condition préalable pour minimiser les tailles de téléchargement et de l’installation ; secours automatique de la langue</td>
-<td>Moyen</td>
+<td>Moyenne</td>
 </tr>
 <tr>
 <td>Créer des packs de ressources</td>
 <td>Étape finale pour réduire les tailles de téléchargement et d'installation</td>
-<td>Petite</td>
+<td>Petit</td>
 </tr>
 <tr>
 <td>Migration vers les API et les formats de ressources MRT</td>

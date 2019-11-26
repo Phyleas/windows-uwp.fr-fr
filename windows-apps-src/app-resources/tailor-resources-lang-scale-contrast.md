@@ -19,7 +19,7 @@ Cette rubrique explique le concept général des qualificateurs de ressource, le
 
 Votre application peut charger des ressources et actifs adaptés à des contextes d’exécution tels que la langue d’affichage, le contraste élevé, le [facteur d’échelle de l'affichage](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor) et bien d’autres. La façon de procéder consiste à donner à vos dossiers ou fichiers de ressources un nom correspondant au nom et à la valeur de qualificateur correspondant à ces contextes. Par exemple, vous souhaitez peut-être que votre application charge un autre ensemble de ressources d’image en mode de contraste élevé.
 
-Pour plus d’informations sur la proposition de valeur de la localisation de votre application, consultez [Internationalisation et localisation](../design/globalizing/globalizing-portal.md).
+Pour plus d’informations sur la proposition de valeur de la localisation de votre application, voir [Internationalisation et localisation](../design/globalizing/globalizing-portal.md).
 
 ## <a name="qualifier-name-qualifier-value-and-qualifier"></a>Nom de qualificateur, valeur de qualificateur et qualificateur
 
@@ -124,11 +124,11 @@ Il est peu probable que vous ayez besoin du nom de qualificateur `configuration`
 
 Le qualificateur `configuration` permet de charger la ressource qui correspond le mieux à la valeur de la variable d’environnement `MS_CONFIGURATION_ATTRIBUTE_VALUE`. Vous pouvez donc définir la variable à la valeur de chaîne qui a été attribuée aux ressources pertinentes, par exemple `designer` ou `test`.
 
-## <a name="contrast"></a>Contraste :
+## <a name="contrast"></a>Contraste
 
 Le qualificateur `contrast` permet de fournir les ressources qui correspondent le mieux aux paramètres de contraste élevé.
 
-## <a name="custom"></a>Personnalisé
+## <a name="custom"></a>Personnalisée
 
 Votre application peut définir une valeur pour le qualificateur `custom`. Les ressources qui correspondent le mieux à cette valeur sont alors chargées. Par exemple, vous pouvez souhaiter charger des ressources en fonction de la licence de votre application. Lorsque votre application se lance, elle vérifie sa licence et utilise celle-ci comme valeur du qualificateur `custom` en appelant [SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue), comme illustré dans l’exemple de code.
 
@@ -226,7 +226,7 @@ Voir [Localiser vos chaînes d’interface utilisateur](localize-strings-ui-mani
 
 Un qualificateur `layoutdirection` correspond au paramètre de sens de la disposition de la langue d’affichage. Par exemple, une image a peut-être besoin d'être mise en miroir pour une langue qui s’écrit et se lit de droite à gauche, comme l’arabe ou l'hébreu. Les panneaux de disposition et les images de votre interface utilisateur répondront correctement au sens de la disposition si vous définissez leur propriété [FlowDirection](/uwp/api/Windows.UI.Xaml.FrameworkElement.FlowDirection) (voir [Ajuster la disposition et les polices, et prendre en charge le sens du flux DàG](../design/globalizing/adjust-layout-and-fonts--and-support-rtl.md)). Toutefois, le qualificateur `layoutdirection` est destiné aux cas où un simple retournement n’est pas suffisant. Il permet de répondre au sens d'un ordre de lecture et d'un alignement de texte spécifiques de manière plus générale.
 
-## <a name="scale"></a>Scale
+## <a name="scale"></a>Échelle
 
 Windows sélectionne automatiquement un facteur d’échelle pour chaque affichage en fonction de son nombre de PPP (points par pouce) et de la distance de visualisation de l’appareil. Voir [Pixels effectifs et facteur d’échelle](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor). Vous devez créer vos images selon plusieurs tailles recommandées (au moins 100, 200 et 400) afin que Windows puisse choisir la taille idéale ou utiliser la taille le plus proche et la mettre à l’échelle. Pour que Windows soit en mesure d’identifier le fichier physique contenant la taille d’image appropriée pour le facteur d’échelle de l’affichage, vous utilisez un qualificateur `scale`. L’échelle d’une ressource correspond à la valeur de [DisplayInformation.ResolutionScale](/uwp/api/windows.graphics.display.displayinformation.ResolutionScale), ou à la ressource avec la plus grande échelle suivante.
 

@@ -1,6 +1,6 @@
 ---
 Description: Affichez les détails relatifs à l’identité unique assignée à votre application par le Microsoft Store et recevez un lien vers la liste des boutiques de votre application.
-title: Affichage des détails d’identité de l’application
+title: Visualiser les informations d’identité des applications
 ms.assetid: 86F05A79-EFBC-4705-9A71-3A056323AC65
 ms.date: 10/02/2018
 ms.topic: article
@@ -13,7 +13,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74259890"
 ---
-# <a name="view-app-identity-details"></a>Affichage des détails d’identité de l’application
+# <a name="view-app-identity-details"></a>Visualiser les informations d’identité des applications
 
 
 Vous pouvez afficher les détails relatifs à l’identité unique assignée à votre application par le Microsoft Store sur ses pages d' **identité d’application** . Vous pouvez également obtenir un lien vers la liste des boutiques de votre application sur cette page.
@@ -29,7 +29,7 @@ Les valeurs suivantes doivent être incluses dans le manifeste de votre package.
 -   **Package/identité/serveur de publication**
 -   **Package/propriétés/PublisherDisplayName**
 
-Pour plus d'informations, voir [**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) dans la [référence du schéma de manifeste de package](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root).
+Pour plus d’informations, consultez l’article [**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) dans la [documentation de référence du schéma de manifeste du package](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root).
 
 Utilisés conjointement, ces éléments déclarent l'identité de votre application en établissant la « famille de packages » à laquelle appartiennent tous les packages de l'application. Les différents packages comporteront des détails supplémentaires, comme l'architecture et la version.
 
@@ -44,7 +44,7 @@ Les valeurs supplémentaires ci-après font référence à la famille de package
 
 ## <a name="link-to-your-apps-listing"></a>Lien d’accès à la description de votre application
 
-Vous pouvez partager le lien d’accès direct à la page de votre application afin d’aider vos clients à trouver cette dernière dans le Windows Store. Ce lien est au format **`https://www.microsoft.com/store/apps/<your app's Store ID>`** . Lorsqu’un client clique sur ce lien, la page de description web de votre application s’affiche. Sur les appareils Windows, l’application du Windows Store lancera et affichera également la description de votre application.
+Vous pouvez partager le lien d’accès direct à la page de votre application afin d’aider vos clients à trouver cette dernière dans le Windows Store. Ce lien présente le format **`https://www.microsoft.com/store/apps/<your app's Store ID>`** . Lorsqu’un client clique sur ce lien, la page de description web de votre application s’affiche. Sur les appareils Windows, l’application du Windows Store lancera et affichera également la description de votre application.
 
 L’**ID Windows Store** de votre application figure également dans cette section. Cet ID Windows Store peut être utilisé pour [générer des badges Windows Store](https://developer.microsoft.com/store/badges) ou pour identifier votre application.
 

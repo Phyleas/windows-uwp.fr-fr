@@ -61,7 +61,7 @@ Nous montrons ici comment enregistrer des traits d’encre dessinés sur un cont
     </Grid>
 ```
 
-2.  Nous définissons ensuite certains comportements d’entrée manuscrite de base.
+2.  Nous définissons ensuite certains comportements de base d’entrée manuscrite
 
     Le contrôle [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) est configuré pour interpréter les données d’entrée du stylet et de la souris sous forme de traits d’encre ([**InputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes)), et des écouteurs pour les événements Click sur les boutons sont déclarés.
 ```csharp
@@ -193,7 +193,7 @@ Ici, nous montrons comment charger des traits d’encre à partir d’un fichier
     </Grid>
 ```
 
-2.  Nous définissons ensuite certains comportements d’entrée manuscrite de base.
+2.  Nous définissons ensuite certains comportements de base d’entrée manuscrite
 
     Le contrôle [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) est configuré pour interpréter les données d’entrée du stylet et de la souris sous forme de traits d’encre ([**InputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes)), et des écouteurs pour les événements Click sur les boutons sont déclarés.
 ```csharp
@@ -275,7 +275,7 @@ Ici, nous montrons comment utiliser le Presse-papiers pour transférer des trait
 
 Pour la prise en charge des fonctionnalités du Presse-papiers, les commandes Couper-Coller intégrées à [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) requièrent la sélection d’un ou de plusieurs traits d’encre.
 
-Dans cet exemple, nous activons la sélection de traits lorsque l’entrée est modifiée avec un bouton de stylet (ou le bouton droit de la souris). Pour obtenir un exemple complet de sélection de traits d’encre, consultez Entrée directe pour traitement avancé dans [Interactions avec le stylo ou le stylet](pen-and-stylus-interactions.md).
+Dans cet exemple, nous activons la sélection de traits lorsque l’entrée est modifiée avec un bouton de stylet (ou le bouton droit de la souris). Pour obtenir un exemple complet de sélection de traits d’encre, consultez Entrée directe pour traitement avancé dans [Interactions avec le stylo et le stylet](pen-and-stylus-interactions.md).
 
 **Téléchargez cet exemple à partir du [presse-papiers pour enregistrer et charger des traits d’encre](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store-clipboard.zip)**
 
@@ -315,11 +315,11 @@ Dans cet exemple, nous activons la sélection de traits lorsque l’entrée est 
     </Grid>
 ```
 
-2.  Nous définissons ensuite certains comportements d’entrée manuscrite de base.
+2.  Nous définissons ensuite certains comportements de base d’entrée manuscrite
 
     L’élément [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) est configuré pour interpréter les données d’entrée de stylet et de souris sous forme de traits d’encre ([**InputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes)). Des écouteurs d’événements Click sur les boutons ainsi que des événements relatifs au pointeur et aux traits pour la fonctionnalité de sélection sont également déclarés ici.
 
-    Pour obtenir un exemple complet de sélection de traits d’encre, consultez Entrée directe pour traitement avancé dans [Interactions avec le stylo ou le stylet](pen-and-stylus-interactions.md).
+    Pour obtenir un exemple complet de sélection de traits d’encre, consultez Entrée directe pour traitement avancé dans [Interactions avec le stylo et le stylet](pen-and-stylus-interactions.md).
 ```csharp
 public MainPage()
     {
@@ -432,7 +432,7 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
     }
 ```
 
-## <a name="related-articles"></a>Articles connexes
+## <a name="related-articles"></a>Articles associés
 
 * [Interactions du stylet et du stylet](pen-and-stylus-interactions.md)
 

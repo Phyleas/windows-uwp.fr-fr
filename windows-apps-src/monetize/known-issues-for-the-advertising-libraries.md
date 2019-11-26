@@ -52,7 +52,7 @@ Vous pouvez également publier une question sur le [forum](https://go.microsoft.
 
 ## <a name="test-ads-are-showing-in-your-app-instead-of-live-ads"></a>Les publicités de test s’affichent dans votre application à la place des publicités dynamiques
 
-Les publicités de test peuvent s’afficher même lorsque vous attendez des publicités dynamiques. Cela peut se produire dans les scénarios suivants :
+Les publicités de test peuvent s’afficher même lorsque vous attendez des publicités dynamiques. Cela peut se produire dans les cas suivants :
 
 * Notre plateforme publicitaire ne peut pas vérifier ni trouver l’ID d’application dynamique utilisé dans la boutique. Dans ce cas, lorsqu’une unité publicitaire est créée par un utilisateur, son état peut démarrer à dynamique (non-test), mais passer à l’état de test dans les 6 heures qui suivent la première demande de publicité. Il revient à l’état dynamique en cas d’absence de demandes d’applications de test pendant 10 jours.
 

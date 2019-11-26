@@ -24,7 +24,7 @@ Le point de départ de ce didacticiel est une application à page unique avec un
 
 ![Page principale de l’application active](images/customer-database-tutorial/customer-list.png)
 
-### <a name="prerequisites"></a>Conditions préalables
+### <a name="prerequisites"></a>Conditions préalables requises
 
 * [Vérifiez que vous disposez de la dernière version de Visual Studio et du kit de développement logiciel (SDK) Windows 10](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * [Cloner ou télécharger l’exemple de didacticiel de base de données client](https://github.com/microsoft/windows-tutorials-customer-database)
@@ -38,7 +38,7 @@ Une fois que vous avez cloné/téléchargé le référentiel, vous pouvez modifi
 
 Si vous exécutez votre application immédiatement après l’avoir ouverte, vous verrez quelques boutons en haut d’un écran vide. Bien qu’il ne soit pas visible, l’application contient déjà une base de données SQLite locale approvisionnée avec quelques clients de test. À partir de là, vous allez commencer par implémenter un contrôle d’interface utilisateur pour afficher ces clients, puis passer à l’ajout d’opérations dans la base de données. Avant de commencer, c’est là que vous allez travailler.
 
-### <a name="views"></a>Vues
+### <a name="views"></a>Affichages
 
 **CustomerListPage. Xaml** est la vue de l’application, qui définit l’interface utilisateur de la page unique dans ce didacticiel. Chaque fois que vous devez ajouter ou modifier un élément visuel dans l’interface utilisateur, vous le ferez dans ce fichier. Ce didacticiel vous aidera à ajouter ces éléments :
 

@@ -108,7 +108,7 @@ Pour ce faire, dans Visual Studio, cliquez avec le bouton droit de la souris sur
 
 Dans le fichier ouvert, recherchez la balise \<OutputType\> et remplacez sa valeur par « winmdobj ».
 
-**Étape 3 :** créez une règle de génération qui crée un fichier de métadonnées Windows de « référence » (fichier .winmd), c'est-à-dire sans implémentation.
+**Étape 3 :** créez une règle de génération qui crée un fichier de métadonnées Windows de « référence » (fichier .winmd), c’est-à-dire sans implémentation.
 
 **Étape 4 :** créez une règle de génération qui crée un fichier de métadonnées Windows « d’implémentation » (contient les mêmes informations de métadonnées, mais comprend également l’implémentation).
 
@@ -164,7 +164,7 @@ Cette opération s’effectue via les scripts suivants. Ajoutez les scripts à l
 Une fois le fichier de référence **winmd** créé (dans le sous-dossier « reference » du dossier Target du projet), il est copié sur chaque projet d’application installée hors Windows Store qui le consomme et il est référencé. La section suivante décrira cette procédure. La structure du projet intégrée dans les règles de génération ci-dessus garantit que l’implémentation et la référence **winmd** se trouvent dans des répertoires séparés dans la hiérarchie de génération pour éviter toute confusion.
 
 ## <a name="side-loaded-applications-in-detail"></a>Détails sur les applications installées hors Windows Store
-Comme indiqué précédemment, l’application installée hors Windows Store est créée comme n’importe quelle application UWP, à un détail près : la déclaration de la disponibilité de la ou des classes Runtime dans le manifeste de l’application installée hors Windows Store. Cela permet à l’application d’écrire un nouvel accès à la fonctionnalité dans le composant de bureau. Une nouvelle entrée de manifeste dans la section <Extension> décrit la classe Runtime implémentée dans le composant de bureau et les informations sur son emplacement. Le contenu de cette déclaration dans le manifeste de l’application est le même pour les applications qui ciblent Windows 10. Par exemple :
+Comme indiqué précédemment, l’application installée hors Windows Store est créée comme n’importe quelle application UWP, à un détail près : la déclaration de la disponibilité de la ou des classes Runtime dans le manifeste de l’application installée hors Windows Store. Cela permet à l’application d’écrire un nouvel accès à la fonctionnalité dans le composant de bureau. Une nouvelle entrée de manifeste dans la section <Extension> décrit la classe Runtime implémentée dans le composant de bureau et les informations sur son emplacement. Le contenu de cette déclaration dans le manifeste de l’application est le même pour les applications qui ciblent Windows 10. Par exemple :
 
 ```XML
 <Extension Category="windows.activatableClass.inProcessServer">
@@ -553,7 +553,7 @@ Voici une liste d’éléments à prendre en compte :
 
 -   Le transfert en bloc des résultats limite le trafic interprocessus. La construction Windows Runtime Array est utilisée pour cela.
 
--   Si *List<T>* , où *T* est un objet, est retourné d’une opération async ou d’une extraction de propriété, de nombreux échanges interprocessus seront nécessaires. Par exemple, si vous retournez un objet *List&lt;People&gt;* . Chaque itération correspondra à un appel interprocessus. Chaque objet *People* retourné est représenté par un proxy et chaque appel à une méthode ou propriété sur cet objet individuel donnera lieu à un appel interprocessus. Un « simple » objet *List&lt;People&gt;* avec une valeur *Count* élevée produira un grand nombre d’appels lents. Le transfert en bloc de structures de contenu dans un tableau donne de meilleures performances. Par exemple :
+-   Si *List<T>* , où *T* est un objet, est retourné d’une opération async ou d’une extraction de propriété, de nombreux échanges interprocessus seront nécessaires. Par exemple, si vous retournez un objet *List&lt;People&gt;* . Chaque itération correspondra à un appel interprocessus. Chaque objet *People* retourné est représenté par un proxy et chaque appel à une méthode ou propriété sur cet objet individuel donnera lieu à un appel interprocessus. Un « simple » objet *List&lt;People&gt;* avec une valeur *Count* élevée produira un grand nombre d’appels lents. Le transfert en bloc de structures de contenu dans un tableau donne de meilleures performances. Par exemple :
 
 ```csharp
 struct PersonStruct

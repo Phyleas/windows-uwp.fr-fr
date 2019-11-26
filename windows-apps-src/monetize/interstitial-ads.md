@@ -1,7 +1,7 @@
 ---
 ms.assetid: 1f970d38-2338-470e-b5ba-811402752fc4
 description: Découvrez comment insérer des spots publicitaires dans une application UWP pour Windows 10 à l’aide du SDK Microsoft Advertising.
-title: Spots publicitaires
+title: Spots
 ms.date: 03/22/2018
 ms.topic: article
 keywords: Windows 10, uwp, pub, publicité, contrôle de publicités, spot
@@ -13,7 +13,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74259280"
 ---
-# <a name="interstitial-ads"></a>Spots publicitaires
+# <a name="interstitial-ads"></a>Spots
 
 Cette procédure pas à pas montre comment insérer des spots publicitaires dans les jeux et les applications de plateforme Windows universelle (UWP) pour Windows 10. Pour obtenir des exemples complets de projet qui montrent comment ajouter des spots publicitaires à des applications JavaScript/HTML et XAML en C# et C++, voir [Exemples de publicité sur GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising).
 
@@ -34,13 +34,13 @@ Nous proposons deux types de spots publicitaires à utiliser dans vos applicatio
 > [!NOTE]
 > L’API pour les spots ne gère pas d’interface utilisateur sauf au moment de la lecture vidéo. Reportez-vous aux [meilleures pratiques Spots](ui-and-user-experience-guidelines.md#interstitialbestpractices10) pour obtenir des recommandations sur les choses à faire et à ne pas faire, si vous envisagez d’intégrer des spots publicitaires dans votre application.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Conditions préalables requises
 
 * Installer le [SDK Microsoft Advertising](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) avec Visual Studio 2015 ou une version ultérieure de Visual Studio. Pour des instructions d’installation, voir [cet article](install-the-microsoft-advertising-libraries.md).
 
 ## <a name="integrate-an-interstitial-ad-into-your-app"></a>Intégrer un spot publicitaire dans votre application
 
-Pour afficher des spots publicitaires dans votre application, suivez les instructions correspondant au type de projet.
+Pour afficher des spots publicitaires dans votre application, suivez les instructions correspondant au type de projet :
 
 * [XAML/.NET](#interstitialadsxaml10)
 * [HTML/JavaScript](#interstitialadshtml10)
@@ -56,12 +56,12 @@ Cette section fournit des exemples en C#, mais Visual Basic et C++ sont égalem
     > [!NOTE]
     > Si vous utilisez un projet existant, ouvrez le fichier Package.appxmanifest dans votre projet et assurez-vous que la fonctionnalité **Internet (Client)** est sélectionnée. Votre application a besoin de cette fonctionnalité pour recevoir des publicités tests et des publicités dynamiques.
 
-2. Si votre projet cible **Toute UC**, mettez-le à jour pour utiliser une sortie de génération propre à l’architecture (par exemple, **x86**). Si votre projet cible **Toute UC**, vous ne pourrez pas ajouter une référence à la bibliothèque de publicités Microsoft dans les étapes suivantes. Pour plus d’informations, consultez [Erreurs de référence provoquées par le ciblage de Toute UC dans votre projet](known-issues-for-the-advertising-libraries.md#reference_errors).
+2. Si votre projet cible **Toute UC**, mettez-le à jour pour utiliser une sortie de génération propre à l’architecture (par exemple, **x86**). Si votre projet cible **Toute UC**, vous ne pourrez pas ajouter une référence à la bibliothèque de publicités Microsoft dans les étapes suivantes. Pour plus d’informations, voir [Erreurs de référence provoquées par le ciblage de Toute UC dans votre projet](known-issues-for-the-advertising-libraries.md#reference_errors).
 
 3. Ajoutez une référence au SDK Microsoft Advertising de votre projet :
 
     1. Dans la fenêtre **Explorateur de solutions**, cliquez avec le bouton droit sur **Références**, puis sélectionnez **Ajouter une référence.**
-    2.  Dans **Gestionnaire de références**, développez **Windows universel**, cliquez sur **Extensions**, puis cochez la case en regard de **Kit de développement logiciel (SDK) Microsoft Advertising pour XAML** (version 10.0).
+    2.  Dans **Gestionnaire de références**, développez **Windows universel**, cliquez sur **Extensions**, puis cochez la case en regard de **SDK Microsoft Advertising pour XAML** (version 10.0).
     3.  Dans **Gestionnaire de références**, cliquez sur OK.
 
 3.  Dans le fichier de code approprié de votre application (par exemple, dans MainPage.xaml.cs ou dans un fichier de code d’une autre page), ajoutez la référence d’espace de noms ci-dessous.
@@ -97,7 +97,7 @@ Cette section fournit des exemples en C#, mais Visual Basic et C++ sont égalem
 
     [!code-csharp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet6)]
 
-8.  Générez et testez votre application pour vérifier qu’elle affiche les publicités de test.
+8.  Générez et testez votre app pour vérifier qu’elle affiche les publicités de test.
 
 <span id="interstitialadshtml10"/>
 
@@ -107,7 +107,7 @@ Les instructions ci-dessous partent du principe que vous avez créé un projet W
 
 1. Ouvrez votre projet dans Visual Studio.
 
-2. Si votre projet cible **Toute UC**, mettez-le à jour pour utiliser une sortie de génération propre à l’architecture (par exemple, **x86**). Si votre projet cible **Toute UC**, vous ne pourrez pas ajouter une référence à la bibliothèque de publicités Microsoft dans les étapes suivantes. Pour plus d’informations, consultez [Erreurs de référence provoquées par le ciblage de Toute UC dans votre projet](known-issues-for-the-advertising-libraries.md#reference_errors).
+2. Si votre projet cible **Toute UC**, mettez-le à jour pour utiliser une sortie de génération propre à l’architecture (par exemple, **x86**). Si votre projet cible **Toute UC**, vous ne pourrez pas ajouter une référence à la bibliothèque de publicités Microsoft dans les étapes suivantes. Pour plus d’informations, voir [Erreurs de référence provoquées par le ciblage de Toute UC dans votre projet](known-issues-for-the-advertising-libraries.md#reference_errors).
 
 3. Ajoutez une référence au SDK Microsoft Advertising de votre projet :
 
@@ -152,7 +152,7 @@ Les instructions ci-dessous partent du principe que vous avez créé un projet W
 
     [!code-javascript[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/samples.js#Snippet5)]
 
-9.  Générez et testez votre application pour vérifier qu’elle affiche les publicités de test.
+9.  Générez et testez votre app pour vérifier qu’elle affiche les publicités de test.
 
 <span id="interstitialadsdirectx10"/>
 
@@ -165,10 +165,10 @@ Cet exemple part du principe que vous avez créé un projet C++ **application Di
 3. Ajoutez une référence au SDK Microsoft Advertising de votre projet :
 
     1. Dans la fenêtre **Explorateur de solutions**, cliquez avec le bouton droit sur **Références**, puis sélectionnez **Ajouter une référence.**
-    2.  Dans **Gestionnaire de références**, développez **Windows universel**, cliquez sur **Extensions**, puis cochez la case en regard de **Kit de développement logiciel (SDK) Microsoft Advertising pour XAML** (version 10.0).
+    2.  Dans **Gestionnaire de références**, développez **Windows universel**, cliquez sur **Extensions**, puis cochez la case en regard de **SDK Microsoft Advertising pour XAML** (version 10.0).
     3.  Dans **Gestionnaire de références**, cliquez sur OK.
 
-2.  Dans un fichier d’en-tête approprié de votre application (par exemple, DirectXPage.xaml.h), déclarez un objet [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) et les méthodes de gestionnaire d’événements associées.  
+2.  Dans un fichier d’en-tête approprié de votre app (par exemple, DirectXPage.xaml.h), déclarez un objet [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) et les méthodes de gestionnaire d’événements associées.  
 
     [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.h#Snippet1)]
 
@@ -179,7 +179,7 @@ Cet exemple part du principe que vous avez créé un projet C++ **application Di
 
     [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.h#Snippet2)]
 
-4.  Dans le fichier .cpp dans lequel vous voulez ajouter du code pour afficher un spot publicitaire, ajoutez la référence d’espace de noms ci-dessous. Les exemples suivants partent du principe que vous ajoutez le code dans le fichier DirectXPage.xaml.cpp de votre application.
+4.  Dans le fichier .cpp dans lequel vous voulez ajouter du code pour afficher un spot publicitaire, ajoutez la référence d’espace de noms ci-dessous. Les exemples suivants partent du principe que vous ajoutez le code dans le fichier DirectXPage.xaml.cpp de votre app.
 
     [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.cpp#Snippet3)]
 
@@ -205,7 +205,7 @@ Cet exemple part du principe que vous avez créé un projet C++ **application Di
 
     [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.cpp#Snippet7)]
 
-9. Générez et testez votre application pour vérifier qu’elle affiche les publicités de test.
+9. Générez et testez votre app pour vérifier qu’elle affiche les publicités de test.
 
 <span id="release" />
 
@@ -213,7 +213,7 @@ Cet exemple part du principe que vous avez créé un projet C++ **application Di
 
 1. Assurez-vous que votre utilisation des spots publicitaires dans votre app respecte nos [recommandations en matière de spots publicitaires](ui-and-user-experience-guidelines.md#interstitialbestpractices10).
 
-2.  Dans l’espace partenaires, accédez à la page [annonces dans l’application](../publish/in-app-ads.md) et [créez une unité ad](set-up-ad-units-in-your-app.md#live-ad-units). Pour le type d’unité publicitaire, choisissez **Spot vidéo** ou **Bannière**, en fonction du type de spot que vous diffusez. Prenez note de l’ID d’unité publicitaire et de l’ID de l’application.
+2.  Dans l’espace partenaires, accédez à la page [annonces dans l’application](../publish/in-app-ads.md) et [créez une unité ad](set-up-ad-units-in-your-app.md#live-ad-units). Pour le type d’unité publicitaire, choisissez **Spot vidéo** ou **Bannière**, en fonction du type de spot que vous diffusez. Prenez note de l’ID d’unité publicitaire et de l’ID d’application.
     > [!NOTE]
     > Les valeurs d'ID d’application pour les unités publicitaires de test et les unités publicitaires dynamiques UWP ont des formats différents. Les valeurs d’ID d'application tests sont des GUID. Lorsque vous créez une unité ad UWP en temps réel dans l’espace partenaires, la valeur de l’ID d’application pour l’unité ad correspond toujours à l’ID de magasin de votre application (un exemple de valeur d’ID de magasin ressemble à 9NBLGGH4R315).
 

@@ -1,5 +1,5 @@
 ---
-Description: Si votre application n’a pas les ressources qui correspondent aux paramètres particuliers d’un appareil client, les ressources de l’application par défaut sont utilisées. Cette rubrique explique comment spécifier ce que sont ces ressources par défaut.
+Description: Si votre application n’a pas les ressources qui correspondent aux paramètres particuliers d’un périphérique client, les ressources de l’application par défaut sont utilisées. Cette rubrique explique comment spécifier ce que sont ces ressources par défaut.
 title: Préciser les ressources par défaut que votre application utilise
 template: detail.hbs
 ms.date: 11/14/2017
@@ -15,7 +15,7 @@ ms.locfileid: "74254647"
 ---
 # <a name="specify-the-default-resources-that-your-app-uses"></a>Préciser les ressources par défaut que votre application utilise
 
-Si votre application n’a pas les ressources qui correspondent aux paramètres particuliers d’un appareil client, les ressources de l’application par défaut sont utilisées. Cette rubrique explique comment spécifier ce que sont ces ressources par défaut.
+Si votre application n’a pas les ressources qui correspondent aux paramètres particuliers d’un périphérique client, les ressources de l’application par défaut sont utilisées. Cette rubrique explique comment spécifier ce que sont ces ressources par défaut.
 
 Lorsqu’un client installe votre application à partir de Microsoft Store, les paramètres sur l’appareil du client sont comparés aux ressources disponibles de l’application. Cette association est réalisée afin que seules les ressources appropriées soient téléchargées et installées pour cet utilisateur. Par exemple, les chaînes et les images les mieux adaptées pour les préférences linguistiques de l’utilisateur, ainsi que la résolution et les paramètres PPP du périphérique, sont utilisés. Par exemple, `200` est la valeur par défaut pour `scale`, mais vous pouvez remplacer cette valeur par défaut si vous le souhaitez.
 

@@ -288,7 +288,7 @@ La méthode **DeviceResources::CreateWindowSizeDependentResources** initialise l
 
 Le labyrinthe de marbre utilise la classe **BasicLoader** , qui est déclarée dans **BasicLoader. h**, pour charger les textures et les nuanceurs. Le labyrinthe de marbre utilise la classe **SDKMesh** pour charger les maillages 3D du labyrinthe et du marbre.
 
-Pour garantir la réactivité de l’application, Marble Maze charge les ressources de scène de façon asynchrone, ou en arrière-plan. Quand les composants sont chargés en arrière-plan, votre jeu peut répondre aux événements fenêtre. Ce processus est décrit en détail dans [Chargement des composants du jeu en arrière-plan](marble-maze-application-structure.md#loading-game-assets-in-the-background) dans ce guide.
+Pour garantir la réactivité de l’application, Marble Maze charge les ressources de scène de façon asynchrone, ou en arrière-plan. Quand les composants sont chargés en arrière-plan, votre jeu peut répondre aux événements de fenêtrage. Ce processus est décrit en détail dans [Chargement des composants du jeu en arrière-plan](marble-maze-application-structure.md#loading-game-assets-in-the-background) dans ce guide.
 
 ###  <a name="loading-the-2d-overlay-and-user-interface"></a>Chargement de la superposition 2D et de l’interface utilisateur
 

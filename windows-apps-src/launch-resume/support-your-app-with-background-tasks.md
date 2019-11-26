@@ -1,5 +1,5 @@
 ---
-title: Prendre en charge votre application avec des tâches en arrière-plan
+title: Définir des tâches en arrière-plan pour les besoins de votre application
 description: Les rubriques de cette section expliquent comment exécuter du code léger en arrière-plan, en réponse à des déclencheurs.
 ms.assetid: EFF7CBFB-D309-4ACB-A2A5-28E19D447E32
 ms.date: 08/21/2017
@@ -13,7 +13,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74259417"
 ---
-# <a name="support-your-app-with-background-tasks"></a>Prendre en charge votre application avec des tâches en arrière-plan
+# <a name="support-your-app-with-background-tasks"></a>Définir des tâches en arrière-plan pour les besoins de votre application
 
 
 Les rubriques de cette section expliquent comment exécuter du code léger en arrière-plan, en réponse à des déclencheurs. Vous pouvez utiliser les tâches en arrière-plan pour fournir des fonctionnalités lorsque votre application est suspendue ou n’est pas en cours d’exécution. Les tâches en arrière-plan sont également utiles pour les applications de communication en temps réel (VoIP, messagerie électronique et messagerie instantanée, par exemple).
@@ -71,7 +71,7 @@ Vous pouvez contrôler à quel moment la tâche en arrière-plan est exécutée,
 | **UserNotPresent**       | L’utilisateur doit être absent.            |
 | **UserPresent**          | L’utilisateur doit être présent.         |
 
-Ajoutez la condition **InternetAvailable** à votre tâche en arrière-plan [BackgroundTaskBuilder.AddCondition](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) pour retarder le déclenchement de la tâche en arrière-plan jusqu’à ce que la pile réseau s’exécute. Cette condition économise l’énergie car la tâche en arrière-plan ne s’exécute pas avant que le réseau soit disponible. Cette condition ne fournit pas d’activation en temps réel.
+Ajoutez la condition **InternetAvailable** à votre tâche en arrière-plan [BackgroundTaskBuilder.AddCondition](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) pour retarder le déclenchement de la tâche en arrière-plan jusqu'à ce que la pile réseau s’exécute. Cette condition économise l’énergie car la tâche en arrière-plan ne s’exécute pas avant que le réseau soit disponible. Cette condition ne fournit pas d’activation en temps réel.
 
 Si votre tâche en arrière-plan nécessite une connectivité réseau, définissez [IsNetworkRequested](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) pour vous assurer que le réseau reste opérationnel pendant que cette tâche s’exécute. Cela indique à l’infrastructure de tâches en arrière-plan qu’elle doit maintenir le réseau actif pendant l’exécution de la tâche, même si le périphérique est passé en mode de veille connectée. Si votre tâche en arrière-plan ne définit pas **IsNetworkRequested**, votre tâche en arrière-plan ne sera pas en mesure d’accéder au réseau en mode veille connectée (par exemple, lorsque l’écran d’un téléphone est désactivé).  
 Pour plus d’informations sur les conditions des tâches en arrière-plan, voir [Définir des conditions pour exécuter une tâche en arrière-plan](set-conditions-for-running-a-background-task.md).
@@ -157,7 +157,7 @@ Votre application peut accéder à des capteurs et des périphériques à partir
 > [!IMPORTANT]
 > Les déclencheurs **DeviceUseTrigger** et **DeviceServicingTrigger** ne peuvent pas être utilisés avec des tâches en arrière-plan in-process.
 
-Certaines opérations d’appareil critiques, comme les longues mises à jour de microprogrammes, ne peuvent pas être exécutées avec le déclencheur [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger). De telles opérations ne peuvent être effectuées que sur le PC, et uniquement par une application privilégiée utilisant le [**DeviceServicingTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceServicingTrigger). Une *application privilégiée* est une application autorisée par le fabricant de l’appareil à effectuer ces opérations. Les métadonnées de périphérique permettent de spécifier l’application définie, le cas échéant, comme application privilégiée d’un appareil. Pour plus d’informations, consultez [synchronisation et mise à jour des appareils pour Microsoft Store applications pour appareils](https://msdn.microsoft.com/library/windows/hardware/dn265139(v=vs.85).aspx)
+Certaines opérations de périphériques critiques, comme les longues mises à jour de microprogrammes, ne peuvent pas être exécutées avec [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger). De telles opérations ne peuvent être effectuées que sur le PC, et uniquement par une application privilégiée utilisant le [**DeviceServicingTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceServicingTrigger). Une *application privilégiée* est une application autorisée par le fabricant de l’appareil à effectuer ces opérations. Les métadonnées de périphérique permettent de spécifier l’application définie, le cas échéant, comme application privilégiée d’un appareil. Pour plus d’informations, consultez [synchronisation et mise à jour des appareils pour Microsoft Store applications pour appareils](https://msdn.microsoft.com/library/windows/hardware/dn265139(v=vs.85).aspx)
 
 ## <a name="managing-background-tasks"></a>Gestion des tâches en arrière-plan
 

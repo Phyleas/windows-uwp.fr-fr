@@ -31,7 +31,7 @@ PROCESSEUR (ces paramètres, s’ils sont disponibles, peuvent être activés da
 -   Traduction d’adresse de second niveau (SLAT, Second Level Address Translation)
 -   Prévention de l’exécution des données au niveau matériel (DEP, Data Execution Prevention)
 
-RAM
+Mémoire vive (RAM)
 
 -   4 Go ou plus
 
@@ -41,13 +41,13 @@ Système d’exploitation
 -   64 bits
 -   Édition Professionnelle ou version supérieure
 
-Pour vérifier la configuration requise du BIOS, voir [Activation d’Hyper-V pour l’émulateur pour Windows Phone 8](https://docs.microsoft.com/previous-versions/windows/apps/jj863509(v=vs.105)).
+Pour vérifier la configuration requise du BIOS, consultez [Activation d’Hyper-V pour l’émulateur pour Windows Phone 8](https://docs.microsoft.com/previous-versions/windows/apps/jj863509(v=vs.105)).
 
 Pour vérifier la configuration requise en termes de RAM et de système d’exploitation, dans le Panneau de configuration, sélectionnez **Système et sécurité**, puis **Système**.
 
 L’émulateur Microsoft pour Windows 10 mobile nécessite Visual Studio 2015 ou une version ultérieure. elle n’offre pas de compatibilité descendante avec les versions antérieures de Visual Studio.
 
-L’émulateur Microsoft pour Windows 10 Mobile ne peut pas charger d’applications destinées à des versions antérieures à Windows Phone OS 7.1.
+L’émulateur Microsoft pour Windows 10 Mobile ne peut pas charger des applications destinées à des versions de Windows Phone OS antérieures à Windows Phone OS 7.1.
 
 ## <a name="installing-uninstalling-and-running-the-emulator"></a>Installation, désinstallation et exécution de l’émulateur
 
@@ -144,7 +144,7 @@ Le tableau suivant répertorie les touches d’un clavier matériel que vous pou
 
 Notez que dans l’émulateur build 10.0.14332, le mappage de clés matérielles de l’ordinateur a été modifié. Les valeurs dans la deuxième colonne du tableau ci-dessous représentent ces nouvelles clés. 
 
-Clés matérielles de l’ordinateur (émulateur build 10.0.14295 et versions antérieures) | Clés matérielles de l’ordinateur (émulateur build 10.0.14332 et versions antérieures) | Bouton matériel de Windows Phone | Remarques
+Clés matérielles de l’ordinateur (émulateur build 10.0.14295 et versions antérieures) | Clés matérielles de l’ordinateur (émulateur build 10.0.14332 et versions antérieures) | Bouton matériel de Windows Phone | Notes
 --------------------- | ------------------------- | ----------------------------- | -----
 F1 | WIN + ÉCHAP | RETOUR | Les pressions longues fonctionnent comme prévu.
 F2 | WIN + F2 | ÉCRAN D’ACCUEIL | Les pressions longues fonctionnent comme prévu.
@@ -289,7 +289,7 @@ La capture d’écran suivante illustre l’entrée tactile multipoint.
 
 ![Option d’entrée multipoint de la barre d’outils de l’émulateur](images/em-multipoint.png)
 
-## <a name="accelerometer"></a>Accéléromètre
+## <a name="accelerometer"></a>Accelerometer
 
 Testez les applications qui suivent le mouvement du téléphone à l’aide de l’onglet **Accéléromètre** des **Outils supplémentaires** de l’émulateur.
 
@@ -393,7 +393,7 @@ La capture d’écran suivante illustre le mode Itinéraire. La ligne orange ind
 
 -   Les seules propriétés de position simulées sont les suivantes : Latitude, Longitude, Accuracy et PositionSource. Le simulateur d’emplacement ne simule pas d’autres propriétés, comme Speed, Heading, etc.
 
-## <a name="network"></a>Network (Réseau)
+## <a name="network"></a>Réseau
 
 Testez votre application avec différentes vitesses du réseau et forces du signal à l’aide de l’onglet **Réseau** des **Outils supplémentaires** de l’émulateur. Cette fonctionnalité est utile si votre application appelle les services web ou transfère les données.
 
@@ -407,7 +407,7 @@ La simulation du réseau vous permet de vous assurer que votre application s’e
     -   4G
 
 3.  Dans la liste déroulante **Force du signal**, sélectionnez l’une des options suivantes :
-    -   Bon
+    -   Bonne
     -   Moyenne
     -   Médiocre
 
@@ -491,14 +491,14 @@ Vous pouvez facilement tester les notifications push sans créer le service clou
 
             Quand votre application utilise les notifications WNS et que vous sélectionnez le type de notification **Toast**, l’onglet Simulation affiche les champs **Mot clé** et **Groupe**. Vous pouvez sélectionner ces options et entrer les valeurs **Mot clé** et **Groupe** pour gérer les notifications toast du Centre de notifications.
 
-        -   Tile
+        -   Vignette
         -   Badge
 
     -   Les types de notification MPN suivants sont pris en charge.
 
         -   Brute
         -   Toast
-        -   Tile
+        -   Vignette
 
 5.  **Sélectionnez un modèle de notification.**
 
@@ -563,7 +563,7 @@ Voici la liste des fonctionnalités d’appareil photo prise en charge par chacu
 
 | Fonctionnalité            | Appareil photo Windows Phone 8.0 | Appareil photo Windows Phone 8.1  |
 |--------------------|--------------------------|---------------------------|
-| Résolution         | 640 x 480 (VGA)          | 640 x 480 (VGA) ou supérieure |
+| Résolution :         | 640 x 480 (VGA)          | 640 x 480 (VGA) ou supérieure |
 | Autofocus          | Oui                      | Oui                       |
 | Flash              | Non                       | Oui                       |
 | Zoom               | 2x (numérique ou optique)  | 2x (numérique ou optique)   |
@@ -645,7 +645,7 @@ Par défaut, l’émulateur Windows 10 Mobile utilise des graphiques à accél
 
 Pour désactiver l’accélération matérielle :
 
-1. Démarrez l'Éditeur du Registre.
+1. Démarrez l’Éditeur du Registre.
 2. Créez la sous-clé de Registre suivante si elle n’existe pas : HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Xde\10.0
 3. Cliquez avec le bouton droit de la souris sur le dossier 10.0, pointez sur **Nouveau**, puis cliquez sur **Valeur DWORD**.
 4. Tapez **DisableRemoteFx**, puis appuyez sur Entrer.

@@ -32,7 +32,7 @@ De même, l’infrastructure XAML enveloppe l’objet [**CoreWindow**](https://d
 
 Chaque disposition d'application est unique, mais nous vous recommandons d'inclure un bouton « nouvelle fenêtre » dans un emplacement prévisible, comme le coin supérieur droit du contenu, qui pourra être ouvert dans une nouvelle fenêtre. Envisagez également d’inclure une option de menu contextuel pour « Ouvrir dans une nouvelle fenêtre ».
 
-Examinons les étapes nécessaires pour créer une nouvelle vue. Ici, la nouvelle vue est lancée en réponse à un clic sur un bouton.
+Examinons les étapes nécessaires pour créer une nouvelle vue. Ici, la nouvelle vue est lancée suite à un clic sur un bouton.
 
 ```csharp
 private async void Button_Click(object sender, RoutedEventArgs e)
@@ -73,7 +73,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
     Vous devez utiliser la méthode [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) pour planifier le travail sur le thread d’interface utilisateur de la nouvelle vue. Vous utilisez une [expression lambda](https://msdn.microsoft.com/library/bb397687.aspx) pour transmettre une fonction en tant qu’argument à la méthode **RunAsync**. Le travail que vous effectuez dans la fonction lambda se répercute sur le thread de la nouvelle vue.
 
-    En XAML, vous ajoutez généralement [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) à la propriété [**Content**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window) de [**Window**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.content), puis parcourez **Frame** vers une [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) XAML où vous avez défini le contenu de votre application. Pour plus d’informations sur les frames et les pages, consultez [navigation d’égal à égal entre deux pages](../basics/navigate-between-two-pages.md).
+    En XAML, vous ajoutez généralement un élément [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) à la propriété [**Content**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window) de [**Window**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.content), puis parcourez **Frame** vers une [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) XAML dans laquelle vous avez défini le contenu de votre application. Pour plus d’informations sur les frames et les pages, consultez [navigation d’égal à égal entre deux pages](../basics/navigate-between-two-pages.md).
 
     Une fois le nouvel élément [**Window**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window) rempli, vous devez appeler la méthodeActivate[**de**Window](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.activate) pour afficher l’élément **Window** ultérieurement. Cela se produit sur le thread de la nouvelle vue ; ainsi la nouvelle **Window** est activée.
 

@@ -1,6 +1,6 @@
 ---
-title: Ajout d’audio à l’exemple Marble Maze
-description: Ce document décrit les pratiques clés à prendre en compte quand vous utilisez du son et comment appliquer ces pratiques à l’exemple Marble Maze.
+title: Ajout de son à l’exemple Marble Maze
+description: Ce document décrit les pratiques clés à prendre en compte quand vous utilisez du son et explique comment appliquer ces pratiques à l’exemple Marble Maze.
 ms.assetid: 77c23d0a-af6d-17b5-d69e-51d9885b0d44
 ms.date: 10/18/2017
 ms.topic: article
@@ -13,9 +13,9 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74258560"
 ---
-# <a name="adding-audio-to-the-marble-maze-sample"></a>Ajout d’audio à l’exemple Marble Maze
+# <a name="adding-audio-to-the-marble-maze-sample"></a>Ajout de son à l’exemple Marble Maze
 
-Ce document décrit les pratiques clés à prendre en compte quand vous utilisez du son et comment appliquer ces pratiques à l’exemple Marble Maze. Marble Maze utilise [Microsoft Media Foundation](https://docs.microsoft.com/windows/desktop/medfound/microsoft-media-foundation-sdk) pour charger des ressources audio à partir de fichiers et [XAudio2](https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-apis-portal) pour mixer et lire l’audio et pour appliquer des effets à l’audio.
+Ce document décrit les pratiques clés à prendre en compte quand vous utilisez du son et explique comment appliquer ces pratiques à l’exemple Marble Maze. Marble Maze utilise [Microsoft Media Foundation](https://docs.microsoft.com/windows/desktop/medfound/microsoft-media-foundation-sdk) pour charger des ressources audio à partir de fichiers et [XAudio2](https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-apis-portal) pour mixer et lire l’audio et pour appliquer des effets à l’audio.
 
 Marble Maze joue de la musique en arrière-plan et utilise également des sons dans le jeu pour indiquer des événements, par exemple quand la bille touche un mur. Dans son implémentation, Marble Maze utilise un effet de réverbération, ou écho, pour reproduire le son de la bille quand elle rebondit. L’implémentation de l’effet de réverbération permet à l’écho de s’entendre plus rapidement et plus fort dans des petites pièces et d’être plus sourd et de s’entendre moins fort dans des pièces de grandes dimensions.
 
@@ -389,7 +389,7 @@ enum SoundEvent
 
 Le tableau suivant montre la relation entre chacune de ces valeurs, le fichier qui contient les données de son associées et une courte description de ce que chaque son représente. Les fichiers audio se trouvent dans le dossier **audio\\Media\\** .
 
-| Valeur SoundEvent  | Nom du fichier      | Description                                              |
+| Valeur SoundEvent  | Nom de fichier      | Description                                              |
 |-------------------|----------------|----------------------------------------------------------|
 | RollingEvent      | MarbleRoll.wav | Lu quand la bille roule.                              |
 | FallingEvent      | MarbleFall.wav | Lu quand la bille sort (tombe) du labyrinthe.               |

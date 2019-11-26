@@ -18,7 +18,7 @@ ms.locfileid: "74258229"
 # <a name="touchpad-design-guidelines"></a>Recommandations en matière de conception pour le pavé tactile
 
 
-Concevez votre application afin que les utilisateurs puissent interagir avec elle par le biais d’un pavé tactile. Un pavé tactile combine l’entrée tactile multipoint indirecte et l’entrée de précision d’un dispositif de pointage comme la souris. Grâce à cette combinaison, le pavé tactile est adapté à l’interface utilisateur optimisée pour l’interaction tactile et aux cibles d’applications de productivité plus petites.
+Concevez votre application afin que les utilisateurs puissent interagir avec elle par le biais d’un pavé tactile. Un pavé tactile combine l’entrée tactile multipoint indirecte et l’entrée de précision d’un dispositif de pointage comme la souris. Fort de cette combinaison, le pavé tactile est adapté à l’interface utilisateur optimisée pour l’interaction tactile et aux cibles d’applications de productivité plus petites.
 
  
 
@@ -128,7 +128,7 @@ Pour plus d’informations concernant l’interrogation des fonctionnalités du 
 
 -   Quand des événements de déplacement ou de pointage permettent de détecter un curseur de pavé tactile, affichez une interface utilisateur spécifique à la souris pour indiquer la fonctionnalité exposée par l’élément. Si le curseur de pavé tactile ne bouge pas pendant un certain temps ou si l’utilisateur commence une interaction tactile, estompez progressivement l’interface utilisateur du pavé tactile. Cela maintient l’interface utilisateur propre et aérée.
 -   N’utilisez pas le curseur pour le retour de pointage, car le retour fourni par l’élément est suffisant (voir Curseurs, ci-dessous).
--   N’affichez pas de retour visuel si un élément ne prend pas en charge l’interaction (tel que le texte statique).
+-   N’affichez pas de retour visuel si un élément ne prend pas en charge l’interaction (par exemple, du texte statique).
 -   N’utilisez pas de rectangles de sélection avec les interactions de pavé tactile. Réservez ceux-ci aux interactions avec le clavier.
 -   Affichez un retour visuel simultanément pour tous les éléments qui représentent la même cible d’entrée.
 
@@ -149,7 +149,7 @@ Si vous avez besoin de personnaliser le curseur de la souris :
 -   Utilisez les curseurs de redimensionnement horizontal, vertical et diagonal (![Curseur de redimensionnement vertical](images/cursor-vertical.png), ![Curseur de redimensionnement horizontal](images/cursor-horizontal.png), ![Curseur de redimensionnement diagonal (du coin inférieur gauche au coin supérieur droit)](images/cursor-diagonal2.png), ![Curseur de redimensionnement diagonal (du coin supérieur gauche au coin inférieur droit)](images/cursor-diagonal1.png)) lorsqu’un objet est redimensionnable.
 -   Utilisez les curseurs en forme de main de saisie (![Curseur en forme de main de saisie (ouverte)](images/cursor-pan1.png), ![Curseur en forme de main de saisie (fermée)](images/cursor-pan2.png)) lors d’un mouvement panoramique de contenu au sein d’une zone de dessin fixe (telle qu’une carte).
 
-## <a name="related-articles"></a>Articles connexes
+## <a name="related-articles"></a>Articles associés
 
 
 * [Gestion des entrées du pointeur](handle-pointer-input.md)

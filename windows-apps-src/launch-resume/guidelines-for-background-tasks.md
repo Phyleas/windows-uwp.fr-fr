@@ -1,5 +1,5 @@
 ---
-title: Recommandations en matière de tâches en arrière-plan
+title: Recommandations pour les tâches en arrière-plan
 description: Assurez-vous que votre application répond aux exigences relatives à l’exécution de tâches en arrière-plan.
 ms.assetid: 18FF1104-1F73-47E1-9C7B-E2AA036C18ED
 ms.date: 02/08/2017
@@ -13,7 +13,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74260497"
 ---
-# <a name="guidelines-for-background-tasks"></a>Recommandations en matière de tâches en arrière-plan
+# <a name="guidelines-for-background-tasks"></a>Recommandations pour les tâches en arrière-plan
 
 
 Assurez-vous que votre application répond aux exigences relatives à l’exécution de tâches en arrière-plan.
@@ -35,7 +35,7 @@ Si vous utilisez une tâche en arrière-plan pour lire du contenu multimédia en
 
 **Limites du nombre d’instances de déclencheur :** des limites régissent le nombre d’instances de certains déclencheurs qu’une application peut inscrire. Une application peut inscrire [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger), [MediaProcessingTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger) et [DeviceUseTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.deviceusetrigger?f=255&MSPPError=-2147217396) une seule fois par instance de l’application. Si une application dépasse cette limite, l’inscription lève une exception.
 
-**Quotas de processeur :** les tâches en arrière-plan sont limitées par la quantité de temps d’utilisation de l’horloge en fonction de leur type de déclencheur. La plupart des déclencheurs sont limités à 30 secondes d’utilisation de l’horloge, mais certains ont une capacité d’exécution pouvant atteindre 10 minutes pour exécuter des tâches intensives. Les tâches en arrière-plan doivent être légères pour préserver l’autonomie de la batterie et assurer une meilleure expérience utilisateur pour les applications de premier plan. Pour plus d’informations sur les contraintes de ressource appliquées aux tâches en arrière-plan, consultez [Prendre en charge votre application avec des tâches en arrière-plan](support-your-app-with-background-tasks.md).
+**Quotas de processeur :** les tâches en arrière-plan sont limitées par la quantité de temps d’utilisation de l’horloge en fonction de leur type de déclencheur. La plupart des déclencheurs sont limités à 30 secondes d’utilisation de l’horloge, mais certains ont une capacité d’exécution pouvant atteindre 10 minutes pour exécuter des tâches intensives. Les tâches en arrière-plan doivent être légères pour préserver l’autonomie de la batterie et assurer une meilleure expérience utilisateur pour les applications de premier plan. Pour plus d’informations sur les contraintes de ressource appliquées aux tâches en arrière-plan, consultez [Ajouter des tâches en arrière-plan à votre application](support-your-app-with-background-tasks.md).
 
 **Gérer les tâches en arrière-plan :** votre application doit obtenir la liste des tâches en arrière-plan inscrites, s’inscrire aux gestionnaires de progression et d’achèvement et gérer ces événements de manière appropriée. Vos classes de tâches en arrière-plan doivent signaler la progression, l’annulation et l’achèvement des tâches. Pour plus d’informations, consultez [Gérer une tâche en arrière-plan annulée](handle-a-cancelled-background-task.md) et [Surveiller la progression et l’achèvement des tâches en arrière-plan](monitor-background-task-progress-and-completion.md).
 

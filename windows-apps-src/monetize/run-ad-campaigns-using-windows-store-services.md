@@ -17,7 +17,7 @@ ms.locfileid: "74260188"
 
 Utilisez l' *API Microsoft Store promotions* pour gérer par programme les campagnes publicitaires promotionnelles pour les applications qui sont inscrites auprès de votre compte espace partenaires de votre organisation ou de votre organisation. Cette API permet de créer, de mettre à jour et de surveiller vos campagnes et d'autres ressources connexes, telles que des options créatives et de ciblage. Cette API est particulièrement utile pour les développeurs qui créent de grands volumes de campagnes et qui souhaitent le faire sans l’aide de l’espace partenaires. Cette API utilise Azure Active Directory (Azure AD) pour authentifier les appels en provenance de votre application ou service.
 
-Les étapes suivantes décrivent le processus de bout en bout :
+Les étapes suivantes décrivent le processus de bout en bout :
 
 1.  Vérifiez que vous avez rempli toutes les [conditions préalables](#prerequisites).
 2.  Avant d’appeler une méthode dans l’API de promotions du Microsoft Store, [procurez-vous un jeton d’accès Azure AD](#obtain-an-azure-ad-access-token). Une fois le jeton obtenu, vous avez 60 minutes pour l’utiliser dans les appels à l’API des promotions du Microsoft Store. Passé ce délai, le jeton n’est plus valable. Une fois le jeton arrivé à expiration, vous pouvez en générer un nouveau.
@@ -86,7 +86,7 @@ Dans le contexte de l’API de promotions du Microsoft Store, une campagne publ
 Pour plus d’informations sur ces objets et leurs méthodes associées, voir le tableau suivant.
 
 
-| Objet       | Description   |
+| Object       | Description   |
 |---------------|-----------------|
 | Campagnes |  Cet objet représente la campagne publicitaire, et il se situe en haut de la hiérarchie du modèle objet pour les campagnes publicitaires. Cet objet identifie le type de campagne que vous diffusez (payante, maison ou annonce communautaire), l’objectif de campagne, les chaînes de distribution de la campagne et d’autres détails. Chaque campagne ne peut être associée qu’à une seule application.<br/><br/>Pour plus d’informations sur les méthodes associées à cet objet, voir [Gérer les campagnes publicitaires](manage-ad-campaigns.md).<br/><br/>**Remarque**&nbsp;&nbsp;Après avoir créé une campagne publicitaire, vous pouvez récupérer des données de performance de la campagne à l’aide de la méthode [Obtenir les données relatives aux performances de la campagne publicitaire](get-ad-campaign-performance-data.md) dans l'[l’API d’analyse du Microsoft Store](access-analytics-data-using-windows-store-services.md).  |
 | Chaînes de distribution | Chaque campagne comporte une ou plusieurs chaînes de distribution qui sont utilisées pour acquérir du stock et diffuser vos annonces. Pour chaque chaîne de distribution, vous pouvez définir le ciblage, définir votre prix de soumission et définir le montant que vous souhaitez dépenser en spécifiant le budget et en lui associant les contenus que vous souhaitez utiliser.<br/><br/>Pour plus d’informations sur les méthodes associées à cet objet, voir [Gérer les chaînes de distribution des campagnes publicitaires](manage-delivery-lines-for-ad-campaigns.md). |

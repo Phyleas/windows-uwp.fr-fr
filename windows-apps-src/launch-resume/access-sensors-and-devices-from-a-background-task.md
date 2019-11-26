@@ -1,5 +1,5 @@
 ---
-title: Accéder à des capteurs et des appareils à partir d’une tâche en arrière-plan
+title: Accéder à des capteurs et des appareils depuis une tâche en arrière-plan
 description: DeviceUseTrigger permet à votre application Windows universelle d’accéder aux capteurs et aux périphériques en arrière-plan, même si votre application au premier plan est suspendue.
 ms.assetid: B540200D-9FF2-49AF-A224-50877705156B
 ms.date: 02/08/2017
@@ -13,7 +13,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74259497"
 ---
-# <a name="access-sensors-and-devices-from-a-background-task"></a>Accéder à des capteurs et des appareils à partir d’une tâche en arrière-plan
+# <a name="access-sensors-and-devices-from-a-background-task"></a>Accéder à des capteurs et des appareils depuis une tâche en arrière-plan
 
 
 
@@ -33,7 +33,7 @@ Lorsque l’utilisateur ne voit plus votre application, Windows la suspend ou l�
 
 ### <a name="limitation-critical-device-operations"></a>Limitation : opérations de périphérique critiques
 
-Certaines opérations d’appareil critiques, comme les longues mises à jour de microprogrammes, ne peuvent pas être exécutées avec le déclencheur [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger). De telles opérations ne peuvent être effectuées que sur le PC, et uniquement par une application privilégiée utilisant le [**DeviceServicingTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceServicingTrigger). Une *application privilégiée* est une application autorisée par le fabricant de l’appareil à effectuer ces opérations. Les métadonnées de périphérique permettent de spécifier l’application définie, le cas échéant, comme application privilégiée d’un appareil. Pour en savoir plus, voir [Synchronisation et mise à jour des périphériques pour les applications de périphérique du Microsoft Store](https://msdn.microsoft.com/library/windows/hardware/dn265139(v=vs.85).aspx).
+Certaines opérations de périphériques critiques, comme les longues mises à jour de microprogrammes, ne peuvent pas être exécutées avec [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger). De telles opérations ne peuvent être effectuées que sur le PC, et uniquement par une application privilégiée utilisant le [**DeviceServicingTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceServicingTrigger). Une *application privilégiée* est une application autorisée par le fabricant de l’appareil à effectuer ces opérations. Les métadonnées de périphérique permettent de spécifier l’application définie, le cas échéant, comme application privilégiée d’un appareil. Pour en savoir plus, voir [Synchronisation et mise à jour des périphériques pour les applications de périphérique du Microsoft Store](https://msdn.microsoft.com/library/windows/hardware/dn265139(v=vs.85).aspx).
 
 ## <a name="protocolsapis-supported-in-a-deviceusetrigger-background-task"></a>Protocoles/API pris en charge dans une tâche en arrière-plan DeviceUseTrigger
 
@@ -119,7 +119,7 @@ Ce tableau indique les stratégies d’initiation de tâche applicables à une a
 | Le point d’entrée de la tâche en arrière-plan fourni par l’application est inscrit dans le manifeste du package d’application. | ![la stratégie s’applique](images/ap-tools.png) |
 | Une seule tâche en arrière-plan [DeviceUseTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) est exécutée par application. | ![la stratégie s’applique](images/ap-tools.png) |
 | Le nombre maximal de tâches en arrière-plan [DeviceUseTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) n’a pas encore été atteint sur le périphérique (sur lequel votre application s’exécute). | **Famille d’appareils de bureau** : un nombre illimité de tâches peut être inscrit et exécuté en parallèle. **Famille d’appareils mobiles** : 1 tâche sur un appareil de 512 Mo ; sinon, 2 tâches peuvent être inscrites et exécutées en parallèle. |
-| Nombre maximal de périphériques ou de capteurs auxquels votre application peut accéder à partir d’une seule et même tâche en arrière-plan [DeviceUseTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger), lors de l’utilisation des API/protocoles pris en charge. | illimité |
+| Nombre maximal de périphériques ou de capteurs auxquels votre application peut accéder à partir d’une seule et même tâche en arrière-plan [DeviceUseTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger), lors de l’utilisation des API/protocoles pris en charge. | Illimité |
 | Votre tâche en arrière-plan consomme 400 ms de temps processeur (dans l’hypothèse d’un processeur 1 GHz) toutes les minutes quand l’écran est verrouillé ou toutes les cinq minutes dans le cas contraire. L’impossibilité de satisfaire cette stratégie peut entraîner une annulation de votre tâche. | ![la stratégie s’applique](images/ap-tools.png) |
 
 ### <a name="runtime-policy-checks"></a>Contrôles de stratégie runtime
@@ -136,7 +136,7 @@ Ce tableau indique les stratégies runtime applicables à une application Window
 | Limite de temps horloge : durée totale pendant laquelle la tâche de votre application peut s’exécuter en arrière-plan. | **Famille d’appareils de bureau** : 10 minutes. **Famille d’appareils mobiles** : aucune limite de temps. Pour économiser les ressources, le nombre de tâches exécutées simultanément doit être limité à 1 ou 2. |
 | L’application ne s’est pas terminée. | ![le contrôle de stratégie s’applique](images/ap-tools.png) |
 
-## <a name="best-practices"></a>Meilleures pratiques
+## <a name="best-practices"></a>Bonnes pratiques
 
 Les pratiques suivantes sont recommandées pour les applications qui utilisent les tâches en arrière-plan [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger).
 

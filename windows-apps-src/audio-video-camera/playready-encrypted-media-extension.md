@@ -1,10 +1,10 @@
 ---
 ms.assetid: 79C284CA-C53A-4C24-807E-6D4CE1A29BFA
-description: This section describes how to modify your PlayReady web app to support the changes made from the previous Windows 8.1 version to the Windows 10 version.
+description: Cette section décrit comment modifier votre application Web PlayReady pour prendre en charge les modifications apportées à la version précédente de Windows 8.1 à la version Windows 10.
 title: Extension EME (Encrypted Media Extension) PlayReady
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b673122d707e152d24c49d3bacf71ed52cdb0ae5
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -17,15 +17,15 @@ ms.locfileid: "74256808"
 
 
 
-This section describes how to modify your PlayReady web app to support the changes made from the previous Windows 8.1 version to the Windows 10 version.
+Cette section décrit comment modifier votre application Web PlayReady pour prendre en charge les modifications apportées à la version précédente de Windows 8.1 à la version Windows 10.
 
 L’utilisation d’éléments multimédias PlayReady dans Internet Explorer permet aux développeurs de créer des applications web capables de fournir du contenu PlayReady à l’utilisateur tout en appliquant les règles d’accès définies par le fournisseur de contenu. Cette section explique comment ajouter des éléments multimédias PlayReady à vos applications web existantes en utilisant uniquement HTML5 et JavaScript.
 
 ## <a name="whats-new-in-playready-encrypted-media-extension"></a>Nouveautés de l’extension EME (Encrypted Media Extension) PlayReady
 
-This section provides a list of changes made to the PlayReady Encrypted Media Extension (EME) to enable PlayReady content protection on Windows 10.
+Cette section fournit la liste des modifications apportées à l’extension de média chiffré PlayReady (EME) pour activer la protection du contenu PlayReady sur Windows 10.
 
-The following list describes the new features and changes made to PlayReady Encrypted Media Extension for Windows 10:
+La liste suivante décrit les nouvelles fonctionnalités et les modifications apportées à l’extension de média chiffré PlayReady pour Windows 10 :
 
 -   Ajout de la gestion des droits numériques (DRM) en fonction du matériel.
 
@@ -34,10 +34,10 @@ The following list describes the new features and changes made to PlayReady Encr
 -   Acquisition proactive de licences non persistantes.
 -   Acquisition de plusieurs licences en un message.
 
-    You can either use a PlayReady object with multiple key identifiers (KeyIDs) as in Windows 8.1, or use [content decryption model data (CDMData)](https://docs.microsoft.com/previous-versions/windows/apps/dn457361(v=ieb.10)?redirectedfrom=MSDN) with multiple KeyIDs.
+    Vous pouvez utiliser un objet PlayReady avec plusieurs identificateurs de clé (KeyIDs) comme dans Windows 8.1, ou utiliser des [données de modèle de déchiffrement de contenu (CDMData)](https://docs.microsoft.com/previous-versions/windows/apps/dn457361(v=ieb.10)?redirectedfrom=MSDN) avec plusieurs KeyIDs.
 
     > [!NOTE]
-    > In Windows 10, multiple key identifiers are supported under &lt;KeyID&gt; in CDMData.
+    > Dans Windows 10, plusieurs identificateurs de clé sont pris en charge sous &lt;&gt; KeyID dans CDMData.
 
 -   Ajout de la prise en charge du délai d’expiration en temps réel ou licence à durée limitée (LDL).
 
@@ -262,13 +262,13 @@ function formatSecureStopCDMData(encodedSessionId, customData, encodedPublisherC
 ```
 
 > [!NOTE]
-> The secure stop data’s `<SessionID>B64 encoded session ID</SessionID>` in the sample above can be an asterisk (\*), which is a wild card for all the secure stop sessions recorded. That is, the **SessionID** tag can be a specific session, or a wild card (\*) to select all the secure stop sessions.
+> L' `<SessionID>B64 encoded session ID</SessionID>` de données d’arrêt sécurisé dans l’exemple ci-dessus peut être un astérisque (\*), qui est un caractère générique pour toutes les sessions d’arrêt sécurisées enregistrées. Autrement dit, la balise **SessionID** peut être une session spécifique, ou un caractère générique (\*) pour sélectionner toutes les sessions d’arrêt sécurisé.
 
 ## <a name="programming-considerations-for-encrypted-media-extension"></a>Considérations en matière de programmation de l’extension EME (Encrypted Media Extension)
 
-This section lists the programming considerations that you should take into account when creating your PlayReady-enabled web app for Windows 10.
+Cette section répertorie les considérations relatives à la programmation que vous devez prendre en compte lors de la création de votre application Web compatible PlayReady pour Windows 10.
 
-Les objets **MSMediaKeys** et **MSMediaKeySession** créés par votre application doivent être maintenus actifs jusqu’à la fermeture de votre application. Pour garantir que ces objets restent actifs, vous pouvez les affecter en tant que variables globales (les variables deviennent hors de portée et sont mises à la corbeille si elles sont déclarées comme variables locales à l’intérieur d’une fonction). For example, the following sample assigns the variables *g\_msMediaKeys* and *g\_mediaKeySession* as global variables, which are then assigned to the **MSMediaKeys** and **MSMediaKeySession** objects in the function.
+Les objets **MSMediaKeys** et **MSMediaKeySession** créés par votre application doivent être maintenus actifs jusqu’à la fermeture de votre application. Pour garantir que ces objets restent actifs, vous pouvez les affecter en tant que variables globales (les variables deviennent hors de portée et sont mises à la corbeille si elles sont déclarées comme variables locales à l’intérieur d’une fonction). Par exemple, l’exemple suivant affecte les variables *g\_msMediaKeys* et *g\_mediaKeySession* en tant que variables globales, qui sont ensuite affectées aux objets **msMediaKeys** et **MSMediaKeySession** dans la fonction.
 
 ``` syntax
 var g_msMediaKeys;
@@ -299,7 +299,7 @@ function foo() {
 Pour plus d’informations, voir les [exemples d’applications](https://code.msdn.microsoft.com/windowsapps/PlayReady-samples-for-124a3738).
 
 ## <a name="see-also"></a>Articles associés
-- [PlayReady DRM](playready-client-sdk.md)
+- [DRM PlayReady](playready-client-sdk.md)
 
 
 

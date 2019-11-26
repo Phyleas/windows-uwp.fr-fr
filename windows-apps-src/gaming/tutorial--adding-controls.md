@@ -28,18 +28,18 @@ Un jeu pour la plateforme Windows universelle (UWP) de qualité prend en charge 
 
 À ce stade, nous avons un jeu qui s’affiche, mais nous ne pouvons pas déplacer notre joueur ni tirer sur les cibles. Nous allons examiner comment implémenter les contrôles de déplacement/vue d'un jeu de tir en vue subjective pour les types d'entrée suivants de notre jeu UWP DirectX.
 - Souris et clavier
-- Touch
+- Commandes tactiles
 - Boîtier de commande
 
 >[!Note]
 >Si vous n’avez pas encore téléchargé le dernier code de jeu pour cet exemple, accédez à [Exemple de jeu Direct3D](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX). Cet exemple fait partie d’une vaste collection d’exemples de fonctionnalités UWP. Pour obtenir des instructions sur le téléchargement de l’exemple, consultez [Obtenir des exemples de la plateforme Windows universelle (UWP) à partir de GitHub](https://docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples).
 
-## <a name="common-control-behaviors"></a>Comportements de contrôles communs
+## <a name="common-control-behaviors"></a>Comportements des contrôles communs
 
 
 Les contrôles tactiles et les contrôles de souris/clavier ont une implémentation de base très semblable. Dans une application UWP, un pointeur est simplement un point sur l’écran. Vous pouvez le déplacer en faisant glisser la souris ou votre doigt sur l’écran tactile. Par conséquent, vous pouvez opter pour un seul ensemble d’événements sans vous demander si le joueur utilise une souris ou un écran tactile pour déplacer le pointeur et appuyer dessus.
 
-Lorsque la classe **MoveLookController** de l’exemple de jeu est initialisée, elle s’inscrit à quatre événements propres au pointeur et à un événement propre à la souris :
+Lorsque la classe **MoveLookController** de l’exemple de jeu est initialisée, elle s’inscrit à quatre événements propres au pointeur et à un événement propre à la souris :
 
 Événement | Description
 :------ | :-------
@@ -105,7 +105,7 @@ Dans l'état **Active**, l'instance **MoveLookController** traite les événemen
 
 
 Toutes les entrées du pointeur sont suivies dans l’état **Active**, avec différents ID de pointeur correspondant à diverses actions de pointeur.
-Lorsqu’un événement [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerpressed) est reçu, **MoveLookController** obtient la valeur d’ID de pointeur créée par la fenêtre. L’ID de pointeur représente un type spécifique d’entrée. Par exemple, sur un périphérique tactile multipoint, plusieurs entrées actives différentes peuvent exister en même temps. Les ID permettent d’assurer le suivi de l’entrée utilisée par le joueur. Si un événement se trouve dans le rectangle de déplacement de l’écran tactile, un ID de pointeur est affecté pour suivre tous les événements de pointeur dans le rectangle de déplacement. D’autres événements de pointeur dans le rectangle de tir sont suivis séparément, avec un ID de pointeur distinct.
+Lorsqu’un événement [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerpressed) est reçu, **MoveLookController** obtient la valeur d’ID de pointeur créée par la fenêtre. L’ID de pointeur représente un type spécifique d’entrée. Par exemple, sur un périphérique tactile multipoint, plusieurs entrées actives différentes peuvent exister en même temps. Les ID permettent d’assurer le suivi de l’entrée utilisée par le joueur. Si un événement se trouve dans le rectangle de déplacement de l’écran tactile, un ID de pointeur est affecté pour suivre tous les événements de pointeur dans le rectangle de déplacement. Les autres événements de pointeur dans le rectangle de tir sont suivis séparément, avec un ID de pointeur distinct.
 
 
 > [!NOTE]
@@ -153,7 +153,7 @@ bool MoveLookController::IsFiring()
 
 
 
-Examinons à présent l’implémentation de chacun des trois types de contrôles un peu plus en détail.
+Examinons à présent l’implémentation de chacun des trois types de contrôle un peu plus en détail.
 
 ## <a name="adding-relative-mouse-controls"></a>Ajout de contrôles de souris relatifs
 
@@ -218,7 +218,7 @@ Rectangle de déplacement | L’entrée tactile est convertie en joystick virtue
 Rectangle de tir | Tirer une sphère.
 Interaction tactile en dehors du rectangle de déplacement et de tir | Modifier la rotation (tangage et lacet) de la vue caméra.
 
-**MoveLookController** vérifie l’ID de pointeur pour déterminer où l’événement s’est produit, et entreprend l’une des actions suivantes :
+**MoveLookController** vérifie l’ID de pointeur pour déterminer où l’événement s’est produit, et entreprend l’une des actions suivantes :
 
 -   Si l’événement [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved) s’est produit dans le rectangle de déplacement ou de tir, la position du pointeur est mise à jour pour la manette.
 -   Si l’événement [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved) s’est produit ailleurs dans le reste de l’écran (défini comme les contrôles de vue), la modification des tangage et lacet du vecteur de direction de la vue est calculée.
@@ -557,7 +557,7 @@ Lorsque le joueur arrête d’appuyer sur un des boutons de la souris, l'événe
 
 Maintenant, examinons le dernier type de contrôle que nous allons prendre en charge : les boîtiers de commande. Les boîtiers de commande sont gérés séparément des contrôles tactiles et de souris, car ils n’utilisent pas l’objet pointeur. Pour cette raison, il convient d'ajouter quelques nouveaux gestionnaires d’événements et méthodes.
 
-## <a name="adding-gamepad-support"></a>Ajout de la prise en charge de la manette de jeu
+## <a name="adding-gamepad-support"></a>Ajout de la prise en charge du boîtier de commande
 
 
 Pour ce jeu, la prise en charge du boîtier de commande est ajouté par les appels aux API [Windows.Gaming.Input](https://docs.microsoft.com/uwp/api/windows.gaming.input). Cet ensemble d’API vous donne accès aux entrées du contrôleur de jeu telles que les volants de course et les manches à balai. 

@@ -104,7 +104,7 @@ Par exemple, il est possible également d’utiliser des barres de redimensionne
 
 *Éditeur d’images avec des pinceaux de rognage.*
 
-## <a name="related-articles"></a>Articles connexes
+## <a name="related-articles"></a>Articles associés
 
 
 

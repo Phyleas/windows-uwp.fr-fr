@@ -16,7 +16,7 @@ ms.locfileid: "74260095"
 # <a name="windowsphone-silverlight-to-uwp-case-study-bookstore1"></a>Windows Phone l’étude de cas Silverlight-UWP : Bookstore1
 
 
-Cette rubrique présente une étude de cas concernant le portage d’une application Silverlight très simple Windows Phone vers une application Windows 10 plateforme Windows universelle (UWP). Avec Windows 10, vous pouvez créer un package d’application unique que vos clients peuvent installer sur un large éventail d’appareils, et c’est ce que nous allons faire dans cette étude de cas. Voir le [Guide des applications UWP](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide).
+Cette rubrique présente une étude de cas concernant le portage d’une application Silverlight très simple Windows Phone vers une application Windows 10 plateforme Windows universelle (UWP). Avec Windows 10, vous pouvez créer un package d’application unique que vos clients peuvent installer sur un large éventail d’appareils, et c’est ce que nous allons faire dans cette étude de cas. Voir [Guide des applications UWP](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide).
 
 L’application que nous porterons se compose d’une classe **ListBox** liée à un modèle d’affichage. Ce modèle comporte une liste de livres qui indique leur titre, leur auteur et leur couverture. Les images de couverture de livre possèdent l’attribut **Action de génération** défini sur **Contenu** et l’attribut **Copier dans le répertoire de sortie** défini sur **Ne pas copier**.
 

@@ -1,7 +1,7 @@
 ---
 ms.assetid: 09BA9250-A476-4803-910E-52F0A51704B1
 description: Cet article vous montre comment utiliser l’interface IMediaEncodingProperties pour définir la résolution et la fréquence d’images du flux d’aperçu de l’appareil photo, et des photos et vidéos capturées.
-title: Définir le format, la résolution et la fréquence d’images pour MediaCapture
+title: Définir le format, la résolution et fréquence d’images pour MediaCapture
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
@@ -13,7 +13,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74256242"
 ---
-# <a name="set-format-resolution-and-frame-rate-for-mediacapture"></a>Définir le format, la résolution et la fréquence d’images pour MediaCapture
+# <a name="set-format-resolution-and-frame-rate-for-mediacapture"></a>Définir le format, la résolution et fréquence d’images pour MediaCapture
 
 
 
@@ -24,7 +24,7 @@ Les profils de caméra offrent un moyen plus avancé de détecter et de définir
 Le code figurant dans cet article a été adapté à partir de l’[exemple CameraResolution](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraResolution). Vous pouvez télécharger l’exemple pour voir le code utilisé en contexte ou pour vous en servir comme point de départ pour votre propre application.
 
 > [!NOTE] 
-> Cet article repose sur les concepts et le code décrits dans [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md), qui décrit comment implémenter la capture photo et vidéo de base. Nous vous recommandons de vous familiariser avec le modèle de capture multimédia de base dans cet article avant de passer à des scénarios de capture plus avancés. Le code de cet article part du principe que votre application possède déjà une instance de MediaCapture initialisée correctement.
+> Cet article repose sur les concepts et le code décrits dans [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md), qui décrit comment implémenter la capture photo et vidéo de base. Nous vous recommandons de vous familiariser avec le modèle de capture multimédia de base dans cet article avant de passer à des scénarios de capture plus avancés. Le code de cet article suppose que votre application possède déjà une instance de MediaCapture correctement lancée.
 
 ## <a name="a-media-encoding-properties-helper-class"></a>Classe d’assistance des propriétés d’encodage du média
 

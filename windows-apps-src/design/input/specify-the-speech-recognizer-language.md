@@ -31,10 +31,10 @@ Cette rubrique s’appuie sur l’article [Reconnaissance vocale](speech-recogni
 
 Vous devez posséder des connaissances de base sur la reconnaissance vocale et ses contraintes.
 
-Si vous débutez dans le développement d’applications de plateforme Windows universelle (UWP), consultez les rubriques ci-dessous pour vous familiariser avec les technologies décrites ici.
+Si vous débutez dans le développement d’applications pour plateforme Windows universelle (UWP), consultez les rubriques ci-dessous pour vous familiariser avec les technologies décrites ici.
 
 -   [Créer votre première application](https://docs.microsoft.com/windows/uwp/get-started/your-first-app)
--   Découvrir les événements avec [Vue d’ensemble des événements et des événements routés](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview).
+-   Découvrir les événements avec [Vue d’ensemble des événements et des événements routés](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview)
 
 **Instructions relatives à l’expérience utilisateur :**
 
@@ -88,7 +88,7 @@ Une contrainte de liste peut être configurée en ajoutant une [**SpeechRecognit
 
 Une grammaire SRGS est un format XML standard ouvert représenté par la classe [**SpeechRecognitionGrammarFileConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint). Contrairement aux listes personnalisées, vous pouvez spécifier la langue de la grammaire dans le balisage SRGS. [**CompileConstraintsAsync**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.compileconstraintsasync) échoue avec un [**SpeechRecognitionResultStatus**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResultStatus) de **TopicLanguageNotSupported** si le module de reconnaissance n’est pas initialisé dans la même langue que le balisage SRGS.
 
-## <a name="related-articles"></a>Articles connexes
+## <a name="related-articles"></a>Articles associés
 
 **Les développeurs**
 

@@ -1,6 +1,6 @@
 ---
 title: Afficher des itinéraires et indications sur une carte
-description: Demandez des itinéraires et indications, et affichez-les dans votre application.
+description: Demandez des itinéraires et indications, et affichez-les dans votre app.
 ms.assetid: BBB4C23A-8F10-41D1-81EA-271BE01AED81
 ms.date: 09/20/2017
 ms.topic: article
@@ -17,11 +17,11 @@ ms.locfileid: "74259339"
 
 
 
-Demandez des itinéraires et indications, et affichez-les dans votre application.
+Demandez des itinéraires et indications, et affichez-les dans votre app.
 
 >[!Note]
 >Pour plus d’informations sur l’utilisation de cartes dans votre app, téléchargez l’[exemple de carte pour plateforme Windows universelle (UWP)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl).
->Si la cartographie n’est pas une fonction essentielle de votre app, envisagez de lancer l’app Cartes Windows à la place. Vous pouvez utiliser les schémas d’URI `bingmaps:`, `ms-drive-to:` et `ms-walk-to:` afin de lancer l’application Cartes Windows en accédant à des cartes, itinéraires et indications étape par étape spécifiques. Pour plus d’informations, voir [Lancer l’application Cartes Windows](https://docs.microsoft.com/windows/uwp/launch-resume/launch-maps-app).
+>Si la cartographie n’est pas une fonction essentielle de votre app, envisagez de lancer l’app Cartes Windows à la place. Vous pouvez utiliser les schémas d’URI `bingmaps:`, `ms-drive-to:` et `ms-walk-to:` afin de lancer l’application Cartes Windows en accédant à des cartes, itinéraires et indications étape par étape spécifiques. Pour plus d’informations, voir [Lancer l’app Cartes Windows](https://docs.microsoft.com/windows/uwp/launch-resume/launch-maps-app).
 
  
 ## <a name="an-intro-to-maproutefinder-results"></a>Introduction aux résultats de MapRouteFinder

@@ -1,7 +1,7 @@
 ---
 ms.assetid: 08b4ae43-69e8-4424-b3c0-a07c93d275c3
 description: Découvrez comment intercepter les erreurs AdControl dans votre application.
-title: Gestion des erreurs dans la procédure pas à pas pour JavaScript
+title: Procédure détaillée de gestion des erreurs dans JavaScript
 ms.date: 05/11/2018
 ms.topic: article
 keywords: windows 10, uwp, annonces publicitaires, publicité, gestion des erreurs, javascript
@@ -13,7 +13,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74260300"
 ---
-# <a name="error-handling-in-javascript-walkthrough"></a>Gestion des erreurs dans la procédure pas à pas pour JavaScript
+# <a name="error-handling-in-javascript-walkthrough"></a>Procédure détaillée de gestion des erreurs dans JavaScript
 
 Cette procédure pas à pas montre comment intercepter les erreurs liées aux publicités dans votre application JavaScript. Cette procédure pas à pas utilise un [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) pour afficher une bannière, mais les concepts généraux s’appliquent également aux spots publicitaires et aux publicités natives.
 

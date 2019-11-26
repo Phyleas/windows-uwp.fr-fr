@@ -30,7 +30,7 @@ Nous présentons ici la manière d’utiliser le moteur d’analyse Windows Ink
 
 Dans cet exemple, l’utilisateur lance la reconnaissance en cliquant sur un bouton pour indiquer qu’il a terminé de dessiner.
 
-**Download this sample from [Ink analysis sample (basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-analysis-basic.zip)**
+**Télécharger cet exemple à partir de l' [exemple analyse de l’encre (Basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-analysis-basic.zip)**
 
 1. Tout d’abord, nous configurons l’interface utilisateur (MainPage.xaml). 
 
@@ -66,8 +66,8 @@ Dans cet exemple, l’utilisateur lance la reconnaissance en cliquant sur un bou
 
 2. Dans le fichier code-behind de l’interface utilisateur (MainPage.xaml.cs), nous ajoutons les références de type espace de noms requises pour notre entrée manuscrite et notre fonctionnalité d’analyse des entrées manuscrites :
     - [Windows.UI.Input.Inking](https://docs.microsoft.com/uwp/api/windows.ui.input.inking)
-    - [Windows.UI.Input.Inking.Analysis](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis)
-    - [Windows.UI.Xaml.Shapes](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes)
+    - [Windows. UI. Input. encrage. Analysis](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis)
+    - [Windows. UI. Xaml. Shapes](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes)
 
 3. Puis nous spécifions nos variables globales :
 
@@ -215,7 +215,7 @@ private async void RecognizeStrokes_Click(object sender, RoutedEventArgs e)
     }
 ```
 
-6. Voici la fonction pour tracer un TextBlock sur notre canevas de reconnaissance. We use the bounding rectangle of the associated ink stroke on the ink canvas to set the position and font size of the TextBlock.
+6. Voici la fonction pour tracer un TextBlock sur notre canevas de reconnaissance. Nous utilisons le rectangle englobant du trait d’encre associé sur le canevas d’encre pour définir la position et la taille de police du TextBlock.
 
 ```csharp
 /// <summary>
@@ -236,7 +236,7 @@ private void DrawText(string recognizedText, Rect boundingRect)
 }
 ```
 
-7. Voici les fonctions qui permettent de tracer des ellipses et des polygones sur notre canevas de reconnaissance. We use the bounding rectangle of the associated ink stroke on the ink canvas to set the position and font size of the shapes.
+7. Voici les fonctions qui permettent de tracer des ellipses et des polygones sur notre canevas de reconnaissance. Nous utilisons le rectangle englobant du trait d’encre associé sur le canevas d’encre pour définir la position et la taille de police des formes.
 
 ```csharp
     // Draw an ellipse on the recognitionCanvas.
@@ -292,7 +292,7 @@ Dans cette section nous présentons comment utiliser le moteur de reconnaissance
 
 Dans cet exemple, l’utilisateur lance la reconnaissance en cliquant sur un bouton pour indiquer qu’il a terminé d’écrire.
 
-**Download this sample from [Ink handwriting recognition sample](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-handwriting-reco.zip)**
+**Télécharger cet exemple à partir de l' [exemple de reconnaissance](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-handwriting-reco.zip) de l’écriture manuscrite**
 
 1. Tout d’abord, nous configurons l’interface utilisateur.
 
@@ -377,9 +377,9 @@ Dans cet exemple, l’utilisateur lance la reconnaissance en cliquant sur un bou
             new InkRecognizerContainer();
     ```
 
-[**RecognizeAsync**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkmanager.recognizeasync) is called to retrieve a set of [**InkRecognitionResult**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognitionResult) objects.
+[**RecognizeAsync**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkmanager.recognizeasync) est appelé pour récupérer un ensemble d’objets [**InkRecognitionResult**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognitionResult) .
 
-Recognition results are produced for each word that is detected by an [**InkRecognizer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognizer).
+Les résultats de la reconnaissance sont générés pour chaque mot détecté par un [**InkRecognizer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognizer).
 
     ```csharp
     // Recognize all ink strokes on the ink canvas.
@@ -389,9 +389,9 @@ Recognition results are produced for each word that is detected by an [**InkReco
                 InkRecognitionTarget.All);
     ```
 
-Each [**InkRecognitionResult**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognitionResult) object contains a set of text candidates. The topmost item in this list is considered by the recognition engine to be the best match, followed by the remaining candidates in order of decreasing confidence.
+Chaque objet [**InkRecognitionResult**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognitionResult) contient un ensemble de candidats de texte. L’élément le plus haut de cette liste est considéré par le moteur de reconnaissance comme étant la meilleure correspondance, suivi des candidats restants, afin de réduire la confiance.
 
-We iterate through each [**InkRecognitionResult**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognitionResult) and compile the list of candidates. The candidates are then displayed and the [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) is cleared (which also clears the [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)).
+Nous allons itérer au sein de chaque [**InkRecognitionResult**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognitionResult) et compiler la liste des candidats. Les candidats sont ensuite affichés et le [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) est effacé (ce qui efface également l' [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)).
 
     ```csharp
     string str = "Recognition result\n";
@@ -412,7 +412,7 @@ We iterate through each [**InkRecognitionResult**](https://docs.microsoft.com/uw
         inkCanvas.InkPresenter.StrokeContainer.Clear();
     ```
 
-Here's the click handler example, in full.
+Voici un exemple de gestionnaire de clics, complet.
 
     ```csharp
     // Handle button click to initiate recognition.
@@ -483,7 +483,7 @@ Consultez la rubrique portant sur la propriété [**InkRecognizer.Name**](https:
 
 Votre application peut interroger l’ensemble des moteurs de reconnaissance de l’écriture manuscrite installés et utiliser l’un d’entre eux ou laisser un utilisateur sélectionner sa langue par défaut.
 
-**Note**   Users can see a list of installed languages by going to **Settings -&gt; Time & Language**. Les langues installées figurent sous **Langues**.
+**Notez**   les utilisateurs peuvent consulter la liste des langues installées en accédant à **paramètres-&gt; heure & langue**. Les langues installées figurent sous **Langues**.
 
 Pour installer de nouveaux modules linguistiques et activer la reconnaissance de l’écriture manuscrite pour cette langue, procédez comme suit :
 
@@ -870,18 +870,18 @@ Pour cet exemple, nous allons utiliser les mêmes paramètres de trait et d’in
 
 ## <a name="related-articles"></a>Articles associés
 
-- [Pen and stylus interactions](pen-and-stylus-interactions.md)
+- [Interactions du stylet et du stylet](pen-and-stylus-interactions.md)
 
 ### <a name="topic-samples"></a>Exemples de la rubrique
 
-- [Ink analysis sample (basic) (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-analysis-basic.zip)
-- [Ink handwriting recognition sample (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-handwriting-reco.zip)
+- [Exemple d’analyse de l’encre (C#Basic) ()](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-analysis-basic.zip)
+- [Exemple de reconnaissance de l'C#écriture manuscrite ()](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-handwriting-reco.zip)
 
 ### <a name="other-samples"></a>Autres exemples
 
-- [Simple ink sample (C#/C++)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk)
-- [Complex ink sample (C++)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk)
-- [Ink sample (JavaScript)](https://go.microsoft.com/fwlink/p/?LinkID=620308)
-- [Get Started Tutorial: Support ink in your UWP app](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-Ink)
-- [Coloring book sample](https://github.com/Microsoft/Windows-appsample-coloringbook)
-- [Family notes sample](https://github.com/Microsoft/Windows-appsample-familynotes)
+- [Exemple d’encre simpleC#(C++/)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk)
+- [Exemple d’encre complexeC++()](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk)
+- [Ink, exemple (JavaScript)](https://go.microsoft.com/fwlink/p/?LinkID=620308)
+- [Didacticiel de prise en main : écriture manuscrite dans votre application UWP](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-Ink)
+- [Exemple de livre de coloration](https://github.com/Microsoft/Windows-appsample-coloringbook)
+- [Exemple de notes de famille](https://github.com/Microsoft/Windows-appsample-familynotes)

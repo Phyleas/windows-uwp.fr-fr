@@ -42,7 +42,7 @@ Chaque fois que Windows compare deux langues, cette opération est généralemen
 
 Lorsque deux balises de langue sont comparées, un score est attribué à la comparaison en fonction de la précision de la correspondance.
 
-| Faire correspondre | Score | Exemple |
+| Correspondance | Score | Exemple |
 | ----- | ----- | ------- |
 | Correspondance exacte | Le plus élevé | en-AU : en-AU |
 | Correspondance de variante (langue, script, région, variante) |  | en-AU-variante1 : en-AU-variante1-t-ja |
@@ -126,7 +126,7 @@ Lorsqu’une valeur de script de suppression est définie pour une sous-balise d
 
 Dans certains cas, la mise en correspondance est effectuée dans le cadre d’un processus plus large de mise en correspondance d’une langue et d’une liste de langues. Par exemple, il peut exister une correspondance entre une seule ressource de langue et la liste de langues d’une application. Le score de la correspondance est pondéré en fonction de la position de la première langue correspondante dans la liste. Plus la position de la langue est basse dans la liste, plus le score est faible.
 
-Lorsque la liste de langues contient deux ou plusieurs variantes régionales ayant les mêmes sous-balises de langue et de script, les comparaisons de la première balise de langue sont notées uniquement pour des correspondances exactes, de variante et de région. La notation des correspondances partielles est reportée à la dernière variante régionale. Cela permet aux utilisateurs de contrôler avec précision le comportement des correspondances pour leur liste de langues. Ce comportement peut autoriser la préférence d’une correspondance exacte pour un élément secondaire de la liste par rapport à une correspondance partielle pour le premier élément de la liste, s’il existe une troisième élément qui correspond à la langue et au script du premier. Voici un exemple :
+Lorsque la liste de langues contient deux ou plusieurs variantes régionales ayant les mêmes sous-balises de langue et de script, les comparaisons de la première balise de langue sont notées uniquement pour des correspondances exactes, de variante et de région. La notation des correspondances partielles est reportée à la dernière variante régionale. Cela permet aux utilisateurs de contrôler avec précision le comportement des correspondances pour leur liste de langues. Ce comportement peut autoriser la préférence d’une correspondance exacte pour un élément secondaire de la liste par rapport à une correspondance partielle pour le premier élément de la liste, s’il existe une troisième élément qui correspond à la langue et au script du premier. En voici un exemple.
 
 - Liste de langues (dans l’ordre) : « pt-PT » (Portugais (Portugal)), « en-US » (Anglais (États-Unis)), « pt-BR » (Portugais (Brésil)).
 - Ressources : « en-US », « pt-BR ».
@@ -141,7 +141,7 @@ OU
 
 ## <a name="undetermined-language-und"></a>Langue indéterminée (« und »)
 
-La balise de langue « und » peut être utilisée pour spécifier une ressource qui correspond à n’importe quelle langue en l’absence d’une meilleure correspondance. Elle peut être considérée comme similaire à la plage de langues BCP-47 «  *» ou «* -&lt;script&gt; ». Voici un exemple :
+La balise de langue « und » peut être utilisée pour spécifier une ressource qui correspond à n’importe quelle langue en l’absence d’une meilleure correspondance. Elle peut être considérée comme similaire à la plage de langues BCP-47 «  *» ou «* -&lt;script&gt; ». En voici un exemple.
 
 - Liste de langues : « en-US », « zh-Hans-CN ».
 - Ressources : « zh-Hans-CN », « und ».

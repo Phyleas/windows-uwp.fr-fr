@@ -58,10 +58,10 @@ L’option **Mettre à jour l’état** vous permet de changer d’état chaque 
 Quelle que soit la méthode utilisée pour répondre à des commentaires d’un client, vous devez suivre ces recommandations pour toutes vos réponses.
 - Les réponses ne doivent pas comporter plus de 1 000 caractères.
 - Vous ne pouvez proposer aux utilisateurs aucun type de rémunération, y compris sous forme d’éléments d’applications numériques, en contrepartie de leurs commentaires publics.
-- N'incluez ni contenu marketing ni publicités dans votre réponse. N’oubliez pas que la personne qui a déposé un commentaire est déjà votre client.
-- Ne faites pas la promotion d'autres applications ou services dans votre réponse.
+- N’incluez ni contenu marketing ni publicités dans votre réponse. N’oubliez pas que la personne qui a déposé un commentaire est déjà votre client.
+- Ne faites pas la promotion d’autres applications ou services dans votre réponse.
 - Votre réponse doit être directement liée à l’application et au commentaire concernés.
-- N'incluez pas de commentaires profanes, agressifs, personnels ou malveillants dans votre réponse. Soyez toujours poli et gardez à l’esprit que les clients satisfaits seront probablement les plus grands promoteurs de votre application.
+- N’incluez pas de commentaires profanes, agressifs, personnels ou malveillants dans votre réponse. Soyez toujours poli et gardez à l’esprit que les clients satisfaits seront probablement les plus grands promoteurs de votre application.
 
 > [!NOTE]
 > En cas de réponse inappropriée à un commentaire, les clients peuvent signaler un développeur à Microsoft. Ils peuvent également choisir de ne plus recevoir de réponses à leurs commentaires par e-mail.

@@ -34,20 +34,20 @@ Ce tableau décrit les différentes classes de taille et les points d’arrêt.
 <th align="left">Classe de taille</th>
 <th align="left">Points d’arrêt</th>
 <th align="left">Taille d’écran standard (diagonale)</th>
-<th align="left">Appareils</th>
+<th align="left">Périphériques</th>
 <th align="left">Tailles de fenêtre</th>
 </tr>
 </thead>
 <tbody>
 <tr class="even">
-<td style="vertical-align:top;">Petite</td>
+<td style="vertical-align:top;">Petit</td>
 <td style="vertical-align:top;">640 px maximum</td>
 <td style="vertical-align:top;">4&quot; à 6&quot; ; 20&quot; à 65&quot;</td>
 <td style="vertical-align:top;">Téléphones, téléviseurs</td>
 <td style="vertical-align:top;">320 x 569, 360 x 640, 480 x 854</td>
 </tr>
 <tr class="odd">
-<td style="vertical-align:top;">Moyen</td>
+<td style="vertical-align:top;">Moyenne</td>
 <td style="vertical-align:top;">641 px à 1 007 px</td>
 <td style="vertical-align:top;">7&quot; à 12&quot;</td>
 <td style="vertical-align:top;">Phablettes, tablettes</td>
@@ -55,7 +55,7 @@ Ce tableau décrit les différentes classes de taille et les points d’arrêt.
 </tr>
 <tr class="even">
 <td style="vertical-align:top;">Grande</td>
-<td style="vertical-align:top;">1 008 px ou plus</td>
+<td style="vertical-align:top;">1 008 px minimum</td>
 <td style="vertical-align:top;">13&quot; et supérieur</td>
 <td style="vertical-align:top;">PC, ordinateurs portables, Surface Hub</td>
 <td style="vertical-align:top;">1024 x 640, 1366 x 768, 1920 x 1080</td>
@@ -76,7 +76,7 @@ Les applications UWP mettent automatiquement à l’échelle votre interface uti
 
 ## <a name="general-recommendations"></a>Recommandations générales
 
-### <a name="small"></a>Petite
+### <a name="small"></a>Petit
 - Définissez une marge de 12 px de part et d’autre de la fenêtre afin de créer une séparation visuelle au niveau des bords gauche et droit de la fenêtre de l’application.
 - Ancrez les [barres de l’application](../controls-and-patterns/app-bars.md) en bas de la fenêtre pour faciliter l’accessibilité.
 - Utilisez une colonne/zone à la fois.
@@ -84,7 +84,7 @@ Les applications UWP mettent automatiquement à l’échelle votre interface uti
 - Placez le [volet de navigation](../controls-and-patterns/navigationview.md) en mode Superposition pour économiser l’espace à l’écran.
 - Si vous utilisez le [modèle Maître/Détails](../controls-and-patterns/master-details.md), utilisez le mode présentation empilée pour économiser l’espace d’écran.
 
-### <a name="medium"></a>Moyen
+### <a name="medium"></a>Moyenne
 - Définissez une marge de 24 px de part et d’autre de la fenêtre afin de créer une séparation visuelle au niveau des bords gauche et droit de la fenêtre de l’application.
 - Placez les éléments de commande comme les [barres de l’application](../controls-and-patterns/app-bars.md) en haut de la fenêtre de l’application.
 - Utilisez jusqu’à deux colonnes/zones.

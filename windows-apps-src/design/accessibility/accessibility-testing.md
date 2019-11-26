@@ -107,7 +107,7 @@ Utilisez le Narrateur pour tester l’expérience de lecture d’écran pour vot
 
 **Utilisez ces étapes pour tester votre application à l’aide du narrateur avec la souris et le clavier :**
 1.  Démarrez le Narrateur en appuyant sur la _touche de logo Windows + Ctrl + Entrée_. Dans les versions antérieures à Windows 10 version 1607, utilisez la _touche de logo Windows + Entrée_ pour démarrer le Narrateur.
-2.  Naviguez dans votre application à l’aide du clavier en utilisant la touche _Tab_, les touches de direction et la _touche Verr. maj + les touches de direction_.
+2.  Naviguez dans votre application à l’aide du clavier en utilisant la touche _Tab_, les touches de direction et la _touche Verr. maj + les touches de direction_.
 3.  À mesure que vous naviguez dans votre application, écoutez le Narrateur lire les éléments de votre interface utilisateur et vérifiez les points suivants :
     * Pour chaque contrôle, vérifiez que le Narrateur lit tout le contenu visible. Vérifiez également qu’il lit le nom de chaque contrôle, tout état applicable (coché, sélectionné, etc.) et le type du contrôle (bouton, case à cocher, élément de liste, etc.).
     * Si l’élément est interactif, vérifiez que vous pouvez utiliser le Narrateur pour appeler son action en appuyant sur _Verr. maj + Entrée_.

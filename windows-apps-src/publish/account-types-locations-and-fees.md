@@ -15,10 +15,10 @@ ms.locfileid: "74260054"
 ---
 # <a name="account-types-locations-and-fees"></a>Types de compte, emplacements et frais
 
-The Windows program in [Partner Center](https://partner.microsoft.com/dashboard) offers both individual and company accounts in many [countries and regions](#developer-account-and-app-submission-markets). Either type of account gives you access to publish apps to the Store and to participate in additional Microsoft programs.
+Le programme Windows de l' [espace partenaires](https://partner.microsoft.com/dashboard) offre à la fois des comptes individuels et des comptes d’entreprise dans de nombreux [pays et régions](#developer-account-and-app-submission-markets). Chaque type de compte vous donne accès à la publication d’applications dans le Windows Store et à la participation à d’autres programmes Microsoft.
 
 > [!NOTE]
-> When opening your developer account, make sure to sign in to [Partner Center](https://partner.microsoft.com/dashboard) with the Microsoft account that you want to use for your developer account. Vous pourrez [ajouter d’autres utilisateurs au compte](manage-account-users.md) ultérieurement.
+> Lorsque vous ouvrez votre compte de développeur, veillez à vous connecter à l' [espace partenaires](https://partner.microsoft.com/dashboard) à l’aide de la compte Microsoft que vous souhaitez utiliser pour votre compte de développeur. Vous pourrez [ajouter d’autres utilisateurs au compte](manage-account-users.md) ultérieurement.
 
 Au [début du processus d’inscription](https://developer.microsoft.com/store/register), vous devez déterminer si vous souhaitez créer un compte individuel ou un compte d’entreprise. Les deux types de comptes vous permettent de soumettre des applications, des jeux, des compléments et des services.
 
@@ -33,11 +33,11 @@ Voici les principales différences entre les deux types de compte.
 |--------------------|-----------------|
 | <ul><li>Coûte environ 19 USD (frais d’inscription ponctuels ; le montant exact varie en fonction de votre pays ou région)</li><li>Processus de vérification de compte plus court</li></ul> | <ul><li>Coûte environ 99 USD (frais d’inscription ponctuels ; le montant exact varie en fonction de votre pays ou région)</li><li>Nécessite une vérification renforcée du compte</li><li>Votre entreprise doit être reconnue en tant que telle dans le pays ou la région où elle est située</li><li>En mesure de soumettre des applications avec des fonctionnalités restreintes (comme décrit dans les [Stratégies du Microsoft Store](store-policies.md#1014-account-type))</li></ul> |
 
-Les comptes d’entreprise sont un peu plus onéreux, car des étapes supplémentaires sont nécessaires pour vérifier que vous êtes autorisé à configurer le compte au nom de votre entreprise. Per the [Store Policies](store-policies.md#1014-account-type), apps with certain functionality, such as those that access financial account information or that require authentication to access primary functionality (without using a secure dedicated third party authentication provider), can only be published by company accounts.
+Les comptes d’entreprise sont un peu plus onéreux, car des étapes supplémentaires sont nécessaires pour vérifier que vous êtes autorisé à configurer le compte au nom de votre entreprise. Selon les [stratégies](store-policies.md#1014-account-type)du Windows Store, les applications avec certaines fonctionnalités, telles que celles qui accèdent à des informations de compte financier ou qui nécessitent une authentification pour accéder aux fonctionnalités principales (sans utiliser un fournisseur d’authentification tiers dédié sécurisé), peuvent uniquement être publiées par les comptes d’entreprise.
 
 ## <a name="account-verification"></a>Vérification de compte
 
-Une fois le processus d’inscription terminé, votre compte est soumis au processus de vérification. Pour les comptes individuels, nous vérifions qu’aucune autre société n’utilise déjà votre nom d’éditeur complet. Pour les comptes d’entreprise, notre partenaire de vérification Dun & Bradstreet vérifiera que vous êtes autorisé à créer un compte pour l’entreprise que vous représentez. La durée de ce processus peut varier de quelques jours à quelques semaines. Il implique souvent un appel téléphonique à votre entreprise (vérifiez que toutes les coordonnées que vous avez fournies dans les formulaires d’inscription sont à jour). You can't submit apps from a company account until it's been verified, but while you're waiting, you can [reserve an app name](create-your-app-by-reserving-a-name.md) continue building and testing apps, and work on getting your submissions ready.
+Une fois le processus d’inscription terminé, votre compte est soumis au processus de vérification. Pour les comptes individuels, nous vérifions qu’aucune autre société n’utilise déjà votre nom d’éditeur complet. Pour les comptes d’entreprise, notre partenaire de vérification Dun & Bradstreet vérifiera que vous êtes autorisé à créer un compte pour l’entreprise que vous représentez. La durée de ce processus peut varier de quelques jours à quelques semaines. Il implique souvent un appel téléphonique à votre entreprise (vérifiez que toutes les coordonnées que vous avez fournies dans les formulaires d’inscription sont à jour). Vous ne pouvez pas envoyer d’applications à partir d’un compte d’entreprise tant qu’elle n’a pas été vérifiée, mais pendant que vous attendez, vous pouvez [réserver un nom d’application](create-your-app-by-reserving-a-name.md) continuer à générer et tester des applications et travailler sur la préparation de vos envois.
 
 Vous pouvez vérifier l’état de la vérification dans la page **Paramètres du compte**. 
 
@@ -77,7 +77,7 @@ Dans le tableau suivant, les **frais d’inscription** correspondent au coût ac
 | Bulgarie                          | 28 BGN              | 160 BGN          |  
 | Burkina-Faso                      | 19 USD              | 99 USD           |  
 | Burundi                           | 19 USD              | 99 USD           |  
-| Cap Vert                        | 19 USD              | 99 USD           |  
+| Cabo Verde                        | 19 USD              | 99 USD           |  
 | Cambodge                          | 19 USD              | 99 USD           |  
 | Cameroun                          | 19 USD              | 99 USD           |  
 | Canada                            | 20 CAD              | 99 CAD           |  
@@ -100,12 +100,12 @@ Dans le tableau suivant, les **frais d’inscription** correspondent au coût ac
 | République dominicaine                | 19 USD              | 99 USD           |  
 | Équateur (République de l’)                           | 19 USD              | 99 USD           |  
 | Égypte                             | 133 EGP             | 600 EGP          |  
-| Salvador                       | 19 USD              | 99 USD           |  
+| El Salvador                       | 19 USD              | 99 USD           |  
 | Guinée équatoriale                 | 19 USD              | 99 USD           |  
 | Érythrée                           | 19 USD              | 99 USD           |  
 | Estonie                           | 14 EUR              | 75 EUR           |  
 | Éthiopie                          | 19 USD              | 99 USD           |  
-| Îles Féroé                     | 19 USD              | 99 USD           |  
+| Féroé (îles)                     | 19 USD              | 99 USD           |  
 | Fidji                              | 19 USD              | 99 USD           |  
 | Finlande                           | 14 EUR              | 75 EUR           |  
 | France                            | 14 EUR              | 75 EUR           |  

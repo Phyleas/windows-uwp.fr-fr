@@ -13,7 +13,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74258143"
 ---
-# <a name="multilingual-app-toolkit-40-faq--troubleshooting"></a>FAQ et résolution des problèmes du kit de ressources Multilingual App Toolkit 4.0
+# <a name="multilingual-app-toolkit-40-faq--troubleshooting"></a>FAQ et résolution des problèmes liés au kit de ressources Multilingual App Toolkit 4.0
 
 Cette rubrique présente des réponses aux questions fréquentes et aux problèmes relatives au kit de ressources Multilingual App Toolkit 4.0.
 

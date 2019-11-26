@@ -43,7 +43,7 @@ Le processus de détermination du prix peut inclure vos [responsabilités fiscal
 ### <a name="sale-price"></a>Prix de vente
 
 Une façon de promouvoir votre jeu consiste à réduire son prix pendant une période limitée. Vous pouvez également définir le prix de vente comme étant __gratuit__ pour permettre le téléchargement de votre jeu sans paiement.
-Vous pouvez planifier des campagnes de vente à l’avance, en définissant à la fois la date de début et la date de fin de la vente. Pour plus d’informations, voir [Vendre des applications et des composants additionnels à prix réduit](https://docs.microsoft.com/windows/uwp/publish/put-apps-and-add-ons-on-sale).
+Vous pouvez planifier des campagnes de vente à l’avance, en définissant à la fois la date de début et la date de fin de la vente. Pour plus d’informations, consultez l’article [Commercialiser des applications et composants additionnels](https://docs.microsoft.com/windows/uwp/publish/put-apps-and-add-ons-on-sale).
 
 ## <a name="in-game-purchases"></a>Achats dans le jeu
 
@@ -183,7 +183,7 @@ Voici quelques meilleures pratiques pour vous aider dans le processus de concept
 * [Meilleures pratiques pour les bannières publicitaires](https://docs.microsoft.com/windows/uwp/monetize/ui-and-user-experience-guidelines)
 * [Meilleures pratiques pour les spots vidéo publicitaires](https://docs.microsoft.com/windows/uwp/monetize/ui-and-user-experience-guidelines)
 
-Pour des solutions aux problèmes de développement courants, tels que le non-affichage des publicités, le clignotement et la disparition de la boîte noire ou la non-actualisation des publicités, voir [Guides de dépannage](https://docs.microsoft.com/windows/uwp/monetize/troubleshooting-guides).
+Pour des solutions aux problèmes de développement courants, tels que le non-affichage des publicités, le clignotement et la disparition de la boîte noire ou la non-actualisation des publicités, voir [Guides de résolution des problèmes](https://docs.microsoft.com/windows/uwp/monetize/troubleshooting-guides).
 
 ### <a name="prepare-for-release-by-replacing-ad-unit-test-values"></a>Se préparer au lancement en remplaçant les valeurs de test de l’unité publicitaire
 

@@ -1,6 +1,6 @@
 ---
 Description: Cette rubrique décrit les recommandations en matière de performance des applications qui nécessitent de géolocaliser un utilisateur.
-title: Recommandations pour les applications avec la géolocalisation
+title: Recommandations pour les applications prenant en charge l’emplacement
 ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
 ms.date: 02/08/2017
 ms.topic: article
@@ -13,7 +13,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74259356"
 ---
-# <a name="guidelines-for-location-aware-apps"></a>Recommandations pour les applications avec la géolocalisation
+# <a name="guidelines-for-location-aware-apps"></a>Recommandations pour les applications prenant en charge l’emplacement
 
 
 
@@ -84,7 +84,7 @@ Cette rubrique décrit les recommandations en matière de performance des applic
 
         Si votre application a des besoins spécifiques en matière de précision, vous pouvez utiliser la propriété [**DesiredAccuracyInMeters**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.desiredaccuracyinmeters) au lieu de [**DesiredAccuracy**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.desiredaccuracy). Ceci est particulièrement utile sur Windows Phone, où la position peut généralement être obtenue grâce aux satellites ou aux points d’accès cellulaires ou Wi-Fi. La sélection d’une valeur de précision plus spécifique aide le système à identifier les technologies adéquates à utiliser avec le moindre coût énergétique lors de la fourniture de la position.
 
-        Par exemple :
+        Par exemple :
 
         -   Si votre application obtient l’emplacement pour l’optimisation publicitaire, la météo, les actualités, et ainsi de suite, une précision de 5000 mètres suffit généralement.
         -   Si votre application affiche des transactions à proximité dans le voisinage, une précision de 300 mètres est généralement correcte pour fournir des résultats.

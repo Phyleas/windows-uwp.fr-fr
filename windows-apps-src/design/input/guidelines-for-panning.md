@@ -168,7 +168,7 @@ Si la surface est insuffisante, comme dans le schéma suivant, la région de mou
 
 Ces recommandations s’avèrent utiles pour des applications telles que les albums photo ou les applications de mappage qui prennent en charge en même temps le mouvement panoramique libre dans chaque image et le mouvement panoramique sur un seul axe dans l’album (vers les images précédentes ou suivantes) ou la zone de détails. Dans les applications qui fournissent une zone de détails ou d’options correspondant à une image de défilement libre ou carte, nous recommandons que la disposition de la page commence avec la même zone de détails et d’options. En effet, la zone de défilement libre de l’image ou carte peut interférer avec le mouvement panoramique vers la zone de détails.
 
-## <a name="related-articles"></a>Articles connexes
+## <a name="related-articles"></a>Articles associés
 
 
 * [Interactions utilisateur personnalisées](https://docs.microsoft.com/windows/uwp/design/layout/index)

@@ -102,7 +102,7 @@ private async void speechRecognizer_RecognitionQualityDegrading(
 }
 ```
 
-## <a name="related-articles"></a>Articles connexes
+## <a name="related-articles"></a>Articles associés
 
 
 * [Interactions vocales](speech-interactions.md)

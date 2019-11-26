@@ -44,17 +44,17 @@ Dans le tableau suivant, la colonne « Balise de langue » répertorie la [bal
 | Tchèque | cs-CZ | Segoe UI |
 | Danois | da-DK | Segoe UI |
 | Dari | prs-AF | Segoe UI |
-| Hollandais | nl-NL | Segoe UI |
+| Néerlandais | nl-NL | Segoe UI |
 | Anglais (Royaume-Uni) | en-GB | Segoe UI |
 | Estonien | et-EE | Segoe UI |
-| Philippin | fil-PH | Segoe UI |
-| Finlandais | fi-FI | Segoe UI |
+| Filipino | fil-PH | Segoe UI |
+| Finnois | fi-FI | Segoe UI |
 | Français | fr-FR | Segoe UI |
 | Galicien | gl-ES | Segoe UI |
 | Géorgien | ka-GE | Segoe UI |
 | Allemand | de-DE | Segoe UI |
 | Grec | el-GR | Segoe UI |
-| Goudjarati | gu-IN | Nirmala UI |
+| Goudjrati | gu-IN | Nirmala UI |
 | Haoussa (latin) | ha-Latn-NG | Segoe UI |
 | Hébreu | he-IL | Segoe UI |
 | Hindi | hi-IN | Nirmala UI |
@@ -70,11 +70,11 @@ Dans le tableau suivant, la colonne « Balise de langue » répertorie la [bal
 | Kannada | kn-IN | Nirmala UI |
 | Kazakh | kk-KZ | Segoe UI |
 | Khmer | km-KH | Leelawadee UI |
-| Quiché | qut-GT | Segoe UI |
+| K’iche’ | qut-GT | Segoe UI |
 | Kinyarwanda | rw-RW | Segoe UI |
 | Kiswahili | sw-KE | Segoe UI |
 | Konkani | kok-IN | Nirmala UI |
-| Korean | ko-KR | Malgun Gothic |
+| Coréen | ko-KR | Malgun Gothic |
 | Kirghiz | ky-KG | Segoe UI |
 | Letton | lv-LV | Segoe UI |
 | Lituanien | lt-LT | Segoe UI |
@@ -84,11 +84,11 @@ Dans le tableau suivant, la colonne « Balise de langue » répertorie la [bal
 | Malayalam | ml-IN | Nirmala UI |
 | Maltais | mt-MT | Segoe UI |
 | Maori | mi-NZ | Segoe UI |
-| Marathi | mr-IN | Nirmala UI |
+| Marathe | mr-IN | Nirmala UI |
 | Mongole (cyrillique) | mn-MN | Segoe UI |
 | Népalais | ne-NP | Nirmala UI |
-| Norvégien (Bokmal) | Nb-NO | Segoe UI |
-| Norwegian (Nynorsk) | nn-NO | Segoe UI |
+| Norvégien (Bokmal) | nb-NO | Segoe UI |
+| Norvégien (Nynorsk) | nn-NO | Segoe UI |
 | Odia | or-IN | Nirmala UI |
 | Persan | fa-IR | Segoe UI |
 | Polonais | pl-PL | Segoe UI |
@@ -106,7 +106,7 @@ Dans le tableau suivant, la colonne « Balise de langue » répertorie la [bal
 | Sotho du Nord | nso-ZA | Segoe UI |
 | Setswana | tn-ZA | Segoe UI |
 | Sindhi (arabe) | sd-Arab-PK | Segoe UI |
-| Cingalais | si-LK | Nirmala UI |
+| Sinhala | si-LK | Nirmala UI |
 | Slovaque | sk-SK | Segoe UI |
 | Slovène | sl-SI | Segoe UI |
 | Espagnol | es-ES | Segoe UI |
@@ -114,14 +114,14 @@ Dans le tableau suivant, la colonne « Balise de langue » répertorie la [bal
 | Tadjik (cyrillique) | tg-Cyrl-TJ | Segoe UI |
 | Tamoul | ta-IN | Nirmala UI |
 | Tatar | tt-RU | Segoe UI |
-| Telugu | te-IN | Nirmala UI |
+| Télougou | te-IN | Nirmala UI |
 | Thaï | th-TH | Leelawadee UI |
 | Tigrinya | ti-ET | Ebrima |
 | Turc | tr-TR | Segoe UI |
 | Turkmène | tk-TM | Segoe UI |
 | Ukrainien | uk-UA | Segoe UI |
 | Ourdou | ur-PK | Segoe UI |
-| Ouïghour | ug-CN | Segoe UI |
+| Ouïgour | ug-CN | Segoe UI |
 | Ouzbek (latin) | uz-Latn-UZ | Segoe UI |
 | Valencien | ca-ES-valencia | Segoe UI |
 | Vietnamien | vi-VN | Segoe UI |

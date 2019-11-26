@@ -1,6 +1,6 @@
 ---
 title: Ressources de programmation de jeux
-description: Pour plus d’informations sur la programmation des jeux sur Windows, consultez les ressources suivantes.
+description: Pour plus d’informations sur la programmation de jeux sur Windows, consultez les ressources suivantes.
 ms.assetid: b84dd17a-756b-2369-8fee-f1ec7d865239
 ms.date: 02/08/2017
 ms.topic: article
@@ -18,7 +18,7 @@ ms.locfileid: "74258537"
 
 
 
-Pour plus d’informations sur la programmation des jeux sur Windows, consultez les ressources suivantes.
+Pour plus d’informations sur la programmation de jeux sur Windows, consultez les ressources suivantes.
 
 ## <a name="game-programming-reference"></a>Informations de référence sur la programmation de jeux
 
@@ -47,10 +47,10 @@ Pour plus d’informations sur la programmation des jeux sur Windows, consultez 
 -   [Win2D](https://github.com/Microsoft/Win2D) : API Windows Runtime facile à utiliser pour le rendu d’éléments graphiques 2D en mode immédiat avec accélération GPU.
 -   [Angle pour Microsoft Store](https://github.com/microsoft/angle/wiki) : exécute le contenu OpenGL es sur Windows en traduisant les appels d’API OpenGL es en appels d’API DirectX 11.
 
-## <a name="gdc-2015-game-dev-session-videos"></a>Vidéos des sessions consacrées au développement de jeux lors du GDC 2015
+## <a name="gdc-2015-game-dev-session-videos"></a>Vidéos des sessions consacrées au développement de jeux lors du GDC 2015
 
 
--   [The Future of Gaming Across the Microsoft Ecosystem](https://channel9.msdn.com/Events/GDC/GDC-2015/The-Future-of-Gaming-Across-the-Microsoft-Ecosystem), par Phil Spencer (en anglais)
+-   [The Future of Gaming Across the Microsoft Ecosystem](https://channel9.msdn.com/Events/GDC/GDC-2015/The-Future-of-Gaming-Across-the-Microsoft-Ecosystem), par Phil Spencer (en anglais)
 -   [Developing Games for Windows 10](https://channel9.msdn.com/Events/GDC/GDC-2015/Developing-Games-for-Windows-10), par Chris Tector, Monsieur Xbox (en anglais)
 -   [Advanced DirectX 12 Graphics and Performance](https://channel9.msdn.com/Events/GDC/GDC-2015/Advanced-DirectX12-Graphics-and-Performance), par Max McMullen (en anglais)
 -   [Gaming Consumer Experience on Windows 10](https://channel9.msdn.com/Events/GDC/GDC-2015/Gaming-Consumer-Experience-on-Windows-10), par Bill Schiefelbein (en anglais)

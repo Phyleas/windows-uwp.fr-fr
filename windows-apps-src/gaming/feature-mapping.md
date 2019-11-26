@@ -1,6 +1,6 @@
 ---
-title: Mapper les fonctionnalités DirectX 9 aux API DirectX 11
-description: Découvrez comment les fonctionnalités utilisées par votre jeu Direct3D 9 sont traduites dans Direct3D 11 et la plateforme Windows universelle (UWP).
+title: Mapper les fonctionnalités DirectX 9 sur les API DirectX 11
+description: Découvrez la façon dont les fonctionnalités utilisées par votre jeu Direct3D 9 sont traduites dans Direct3D 11 et la plateforme Windows universelle (UWP).
 ms.assetid: 3aa8a114-4e47-ae0a-9447-88ba324377b8
 ms.date: 02/08/2017
 ms.topic: article
@@ -13,7 +13,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74259525"
 ---
-# <a name="map-directx-9-features-to-directx-11-apis"></a>Mapper les fonctionnalités DirectX 9 aux API DirectX 11
+# <a name="map-directx-9-features-to-directx-11-apis"></a>Mapper les fonctionnalités DirectX 9 sur les API DirectX 11
 
 
 
@@ -24,7 +24,7 @@ ms.locfileid: "74259525"
 -   Mappage des fonctionnalités
 
 
-Découvrez comment les fonctionnalités utilisées par votre jeu Direct3D 9 sont traduites dans Direct3D 11 et la plateforme Windows universelle (UWP).
+Découvrez la façon dont les fonctionnalités utilisées par votre jeu Direct3D 9 sont traduites dans Direct3D 11 et la plateforme Windows universelle (UWP).
 
 ## <a name="mapping-direct3d-9-to-directx-11-apis"></a>Mappage des API Direct3D 9 aux API DirectX 11
 
@@ -99,7 +99,7 @@ DirectShow ne fait plus partie de l’API DirectX (ou de l’API Windows). [Micr
 ## <a name="replace-directplay-with-networking-code"></a>Remplacer DirectPlay par du code réseau
 
 
-Microsoft DirectPlay est déconseillé. Si votre jeu utilise des services réseau, vous devez fournir du code réseau conforme aux exigences UWP. Utilisez les API suivantes :
+Microsoft DirectPlay est déconseillé. Si votre jeu utilise des services réseau, vous devez fournir du code réseau conforme aux exigences UWP. Utilisez les API suivantes :
 
 -   [Win32 et COM pour les applications UWP (mise en réseau) (Windows)](https://docs.microsoft.com/uwp/win32-and-com/win32-and-com-for-uwp-apps)
 -   [**Espace de noms Windows. Networking (Windows)** ](https://docs.microsoft.com/uwp/api/Windows.Networking)

@@ -19,7 +19,7 @@ ms.locfileid: "74257835"
 
 Pour que votre application soit [certifiée par Windows](https://msdn.microsoft.com/windows/desktop/jj134964.aspx) ou pour [la préparer à la publication sur le Microsoft Store](https://docs.microsoft.com/windows/uwp/publish/app-submissions), vous devez d’abord la valider et la tester localement. Cette rubrique vous montre comment installer et exécuter le [Kit de certification des applications Windows](https://msdn.microsoft.com/en-US/windows/apps/bg127575) pour garantir la sécurité et l’efficacité de votre application.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Conditions préalables requises
 
 Conditions préalables pour tester une application Windows universelle :
 

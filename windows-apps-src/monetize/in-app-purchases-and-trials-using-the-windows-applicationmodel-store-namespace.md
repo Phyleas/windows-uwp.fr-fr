@@ -17,26 +17,26 @@ ms.locfileid: "74260286"
 
 Vous pouvez utiliser les membres de l’espace de noms [Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store) pour ajouter des achats in-app, et la fonctionnalité d’évaluation dans votre application de plateforme Windows universelle (UWP) pour monétiser votre application. Ces API offrent également l’accès aux informations de licence de votre application.
 
-Les articles de cette section fournissent des instructions détaillées et des exemples de code pour utiliser les membres de l’espace de noms **Windows.ApplicationModel.Store** dans plusieurs scénarios courants. Pour une vue d’ensemble des concepts liés aux achats in-app dans les applications UWP, consultez [Achats in-app et versions d’évaluation](in-app-purchases-and-trials.md). Pour obtenir un exemple complet montrant comment implémenter des versions d’évaluation et des achats in-app à l’aide de l’espace de noms **Windows.ApplicationModel.Store**, consultez l’[Exemple Windows Store](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store).
+Les articles de cette section fournissent des instructions détaillées et des exemples de code pour utiliser les membres de l’espace de noms **Windows.ApplicationModel.Store** dans plusieurs scénarios courants. Pour une vue d’ensemble des concepts liés aux achats in-app dans les applications UWP, consultez [Achats in-app et versions d’évaluation](in-app-purchases-and-trials.md). Pour obtenir un exemple complet montrant comment implémenter des versions d’évaluation et des achats dans l'application à l’aide de l’espace de noms **Windows.ApplicationModel.Store**, consultez l’[Exemple Windows Store](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store).
 
 > [!IMPORTANT]
-> L'espace de noms **Windows.ApplicationModel.Store** n'est plus mis à jour avec de nouvelles fonctionnalités. Si votre projet d’app cible **Windows 10 Anniversary Edition (version 10.0 ; Build 14393)** ou une version ultérieure dans Visual Studio (ce qui correspond à Windows 10, version 1607 ou versions ultérieures), nous vous recommandons d’utiliser l'espace de noms [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) à la place. Pour plus d’informations, consultez [Versions d’évaluation et achats in-app](https://docs.microsoft.com/windows/uwp/monetize/in-app-purchases-and-trials). L’espace de noms **Windows. ApplicationModel. Store** n’est pas pris en charge dans les applications de bureau Windows qui utilisent le [pont de bureau](https://developer.microsoft.com/windows/bridges/desktop) ou dans des applications ou des jeux qui utilisent un bac à sable (sandbox) de développement dans l’espace partenaires (par exemple, c’est le cas pour tout jeu qui s’intègre à Xbox Live). Ces produits doivent utiliser l’espace de noms **Windows.Services.Store** pour implémenter les achats in-app et les versions d’évaluation.
+> L'espace de noms **Windows.ApplicationModel.Store** n'est plus mis à jour avec de nouvelles fonctionnalités. Si votre projet d’app cible **Windows 10 Anniversary Edition (version 10.0 ; Build 14393)** ou une version ultérieure dans Visual Studio (ce qui correspond à Windows 10, version 1607 ou versions ultérieures), nous vous recommandons d’utiliser l'espace de noms [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) à la place. Pour plus d’informations, consultez [Versions d’évaluation et achats dans l'application](https://docs.microsoft.com/windows/uwp/monetize/in-app-purchases-and-trials). L’espace de noms **Windows. ApplicationModel. Store** n’est pas pris en charge dans les applications de bureau Windows qui utilisent le [pont de bureau](https://developer.microsoft.com/windows/bridges/desktop) ou dans des applications ou des jeux qui utilisent un bac à sable (sandbox) de développement dans l’espace partenaires (par exemple, c’est le cas pour tout jeu qui s’intègre à Xbox Live). Ces produits doivent utiliser l’espace de noms **Windows.Services.Store** pour implémenter les achats in-app et les versions d’évaluation.
 
 ## <a name="get-started-with-the-currentapp-and-currentappsimulator-classes"></a>Prise en main des classes CurrentApp et CurrentAppSimulator
 
 Le point d’entrée principal de l’espace de noms **Windows.ApplicationModel.Store** est la classe [CurrentApp](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp). Cette classe fournit des propriétés et des méthodes statiques que vous pouvez utiliser, entre autres, pour obtenir des informations sur l’application active et ses extensions disponibles, acheter une application ou une extension pour l’utilisateur actuel, et obtenir des informations sur la licence de l’application en cours ou de ses extensions.
 
-La classe [CurrentApp](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp) obtient ses données à partir du Microsoft Store. Vous devez donc disposer d’un compte de développeur et l’app doit être publiée dans le Store pour que vous puissiez utiliser cette classe dans votre app. Avant de soumettre votre application au Windows Store, vous pouvez tester votre code avec une version de cette classe appelée [CurrentAppSimulator](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentappsimulator). Après avoir testé votre app et avant de la soumettre au Microsoft Store, vous devez remplacer les instances de **CurrentAppSimulator** par **CurrentApp**. Votre application ne sera pas certifiée si elle utilise **CurrentAppSimulator**.
+La classe [CurrentApp](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp) obtient ses données à partir du Microsoft Store. Vous devez donc disposer d’un compte de développeur et l’app doit être publiée dans le Store pour que vous puissiez utiliser cette classe dans votre app. Avant de soumettre votre app au Store, vous pouvez tester votre code avec une version de cette classe appelée [CurrentAppSimulator](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentappsimulator). Après avoir testé votre app et avant de la soumettre au Microsoft Store, vous devez remplacer les instances de **CurrentAppSimulator** par **CurrentApp**. Votre application ne sera pas certifiée si elle utilise **CurrentAppSimulator**.
 
 Lorsque **CurrentAppSimulator** est utilisé, l’état initial des produits in-app et de licence de votre application est décrit dans un fichier local nommé WindowsStoreProxy.xml, situé sur votre ordinateur de développement. Pour plus d’informations sur ce fichier, consultez [Utilisation du fichier WindowsStoreProxy.xml avec CurrentAppSimulator](#proxy).
 
 Pour plus d’informations sur les tâches courantes exécutables avec **CurrentApp** et **CurrentAppSimulator**, consultez les articles suivants.
 
-| Rubrique       | Description                 |
+| Sujet       | Description                 |
 |----------------------------|-----------------------------|
 | [Exclure ou limiter les fonctionnalités dans une version d’évaluation](exclude-or-limit-features-in-a-trial-version-of-your-app.md) | Si vous donnez aux clients la possibilité d’utiliser votre application gratuitement pendant une période d’évaluation, vous pouvez leur donner envie de mettre à niveau vers la version complète de votre application en excluant ou en limitant certaines fonctionnalités pendant la période d’évaluation. |
 | [Activer les achats de produits in-app](enable-in-app-product-purchases.md)      |  Que votre application soit gratuite ou non, vous pouvez vendre du contenu, d’autres applications ou de nouvelles fonctionnalités applicatives (par exemple le déverrouillage d’un nouveau niveau de jeu) directement dans l’application. Nous allons vous montrer comment activer ces produits dans votre application.  |
-| [Activer l’achat de produits consommables in-app](enable-consumable-in-app-product-purchases.md)      | Proposez des produits consommables dans l’application qui peuvent être achetés, utilisés et rachetés via la plateforme commerciale du Windows Store, afin d’offrir à vos clients une expérience d’achat à la fois solide et fiable au sein de l’application. Cette fonction est particulièrement utile pour différents aspects du jeu, comme les devises (or, pièces, etc.) susceptibles d’être achetées, puis utilisées pour acheter certaines améliorations. |
+| [Activer l’achat de produits consommables in-app](enable-consumable-in-app-product-purchases.md)      | Proposez des produits consommables dans l’application qui peuvent être achetés, utilisés et rachetés via la plateforme commerciale du Windows Store, afin d’offrir à vos clients une expérience d’achat à la fois solide et fiable au sein de l’application. Cette fonction est particulièrement utile pour différents aspects du jeu, comme les devises (or, pièces, etc.) susceptibles d’être achetées, puis utilisées pour acheter des améliorations spécifiques. |
 | [Gérer un grand catalogue de produits dans l’application](manage-a-large-catalog-of-in-app-products.md)      |   Si votre application propose un vaste catalogue de produits in-app, vous pouvez éventuellement suivre la procédure décrite dans cette rubrique pour faciliter la gestion de votre catalogue.    |
 | [Utiliser des accusés de réception pour vérifier les achats de produits](use-receipts-to-verify-product-purchases.md)      |   Chaque transaction du Microsoft Store qui entraîne un achat de produit peut éventuellement retourner un reçu de transaction qui fournit des informations sur le produit répertorié et le coût monétaire pour le client. L’accès à ces informations autorise les scénarios dans lesquels votre app doit vérifier qu’un utilisateur a acheté votre app ou qu’il a effectué des achats in-app de produits dans le Microsoft Store. |
 
@@ -355,7 +355,7 @@ Cette section décrit les éléments et attributs dans le fichier WindowsStorePr
 
 L’élément racine de ce fichier est l’élément **CurrentApp** qui représente l’application active. Cet élément contient les éléments enfants suivants :
 
-|  Élément  |  Obligatoire  |  Quantité  |  Description   |
+|  Élément  |  Requis  |  Quantité  |  Description   |
 |-------------|------------|--------|--------|
 |  [ListingInformation](#listinginformation)  |    Oui        |  1  |  Contient les données de la liste de l’application.            |
 |  [LicenseInformation](#licenseinformation)  |     Oui       |   1    |   Décrit les licences disponibles pour cette application et ses modules complémentaires durables.     |
@@ -370,7 +370,7 @@ Cet élément contient les données de la liste de l’application. **ListingInf
 
 **ListingInformation** contient les éléments enfants suivants.
 
-|  Élément  |  Obligatoire  |  Quantité  |  Description   |
+|  Élément  |  Requis  |  Quantité  |  Description   |
 |-------------|------------|--------|--------|
 |  [Lancement](#app-child-of-listinginformation)  |    Oui   |  1   |    Fournit des données sur l’application.         |
 |  [Produit](#product-child-of-listinginformation)  |    Non  |  0 ou davantage   |      Décrit un module complémentaire de l’application.     |     |
@@ -383,7 +383,7 @@ Cet élément décrit la licence de l’application. **App** est un enfant requi
 
 **App** contient les éléments enfants suivants.
 
-|  Élément  |  Obligatoire  |  Quantité  | Description   |
+|  Élément  |  Requis  |  Quantité  | Description   |
 |-------------|------------|--------|--------|
 |  **AppId**  |    Oui   |  1   |   GUID identifiant l’application dans le Windows Store. Cela peut être le GUID utilisé pour le test.        |
 |  **LinkUri**  |    Oui  |  1   |    URI de la page de liste dans le Windows store. Cela peut être n’importe quel URL valide pour le test.         |
@@ -399,7 +399,7 @@ Cet élément fournit des informations sur l’application pour un pays/une rég
 
 **MarketData** contient les éléments enfants suivants.
 
-|  Élément  |  Obligatoire  |  Quantité  | Description   |
+|  Élément  |  Requis  |  Quantité  | Description   |
 |-------------|------------|--------|--------|
 |  **Nom**  |    Oui   |  1   |   Nom de l’application dans ce pays/cette région.        |
 |  **Description**  |    Oui  |  1   |      Description de l’application dans ce pays/cette région.       |
@@ -409,7 +409,7 @@ Cet élément fournit des informations sur l’application pour un pays/une rég
 
 **MarketData** a les attributs suivants.
 
-|  Attribut  |  Obligatoire  |  Description   |
+|  Attribut  |  Requis  |  Description   |
 |-------------|------------|----------------|
 |  **XML : lang**  |    Oui        |     Spécifie le pays/la région où les données de marché s’appliquent.          |  |
 
@@ -421,7 +421,7 @@ Cet élément décrit un module complémentaire de l’application. **Product** 
 
 **Product** a les attributs suivants.
 
-|  Attribut  |  Obligatoire  |  Description   |
+|  Attribut  |  Requis  |  Description   |
 |-------------|------------|----------------|
 |  **Réf**  |    Oui        |    Contient la chaîne utilisée par l’application pour identifier le module complémentaire.           |
 |  **LicenseDuration**  |    Non        |    Indique le nombre de jours pendant lesquels la licence reste valide, une fois l’élément acheté. La date d’expiration de la nouvelle licence créée par un achat de produit correspond à la date d’achat avec la durée de la licence. Cet attribut n’est utilisé que si l’attribut **ProductType** a pour valeur **Durable**. Il est ignoré pour les modules complémentaires consommables.           |
@@ -435,7 +435,7 @@ Cet élément fournit des informations sur le module complémentaire pour un pay
 
 **MarketData** contient les éléments enfants suivants.
 
-|  Élément  |  Obligatoire  |  Quantité  | Description   |
+|  Élément  |  Requis  |  Quantité  | Description   |
 |-------------|------------|--------|--------|
 |  **Nom**  |    Oui   |  1   |   Nom du module complémentaire dans ce pays/cette région.        |
 |  **Compétitif**  |    Oui  |  1   |     Prix du module complémentaire dans ce pays/cette région.        |
@@ -448,7 +448,7 @@ Cet élément fournit des informations sur le module complémentaire pour un pay
 
 **MarketData** a les attributs suivants.
 
-|  Attribut  |  Obligatoire  |  Description   |
+|  Attribut  |  Requis  |  Description   |
 |-------------|------------|----------------|
 |  **XML : lang**  |    Oui        |     Spécifie le pays/la région où les données de marché s’appliquent.          |  |
 
@@ -460,7 +460,7 @@ Cet élément décrit les licences disponibles pour cette application et ses pro
 
 **LicenseInformation** contient les éléments enfants suivants.
 
-|  Élément  |  Obligatoire  |  Quantité  | Description   |
+|  Élément  |  Requis  |  Quantité  | Description   |
 |-------------|------------|--------|--------|
 |  [Lancement](#app-child-of-licenseinformation)  |    Oui   |  1   |    Décrit la licence de l’application.         |
 |  [Produit](#product-child-of-licenseinformation)  |    Non  |  0 ou davantage   |      Décrit l’état de la licence d’un module complémentaire durable dans l’application.         |   |
@@ -482,7 +482,7 @@ Cet élément décrit la licence de l’application. **App** est un enfant requi
 
 **App** contient les éléments enfants suivants.
 
-|  Élément  |  Obligatoire  |  Quantité  | Description   |
+|  Élément  |  Requis  |  Quantité  | Description   |
 |-------------|------------|--------|--------|
 |  **IsActive**  |    Oui   |  1   |    Décrit l’état actuel de la licence de cette application. La valeur **true** indique que la licence est valide. La valeur **false** indique une licence non valide. Normalement, cette valeur est **true**, que l’application ait un mode d’évaluation ou non.  Réglez cette valeur sur **false** pour tester le comportement de votre application quand sa licence n’est pas valide.           |
 |  **IsTrial**  |    Oui  |  1   |      Décrit l’état actuel d’évaluation de cette application. La valeur **true** indique que l’application est utilisée pendant la période d’évaluation. La valeur **false** indique que l’application n’est pas en période d’évaluation, soit parce qu’elle a été achetée, soit parce que la période d’évaluation est échue.         |
@@ -496,14 +496,14 @@ Cet élément décrit l’état de la licence d’un module complémentaire dura
 
 **Product** contient les éléments enfants suivants.
 
-|  Élément  |  Obligatoire  |  Quantité  | Description   |
+|  Élément  |  Requis  |  Quantité  | Description   |
 |-------------|------------|--------|--------|
 |  **IsActive**  |    Oui   |  1     |    Décrit l’état actuel de la licence de ce module complémentaire. La valeur **true** indique que le module complémentaire est utilisable. La valeur **false** indique que le module complémentaire n’est pas utilisable ou n’a pas été acheté.           |
 |  **ExpirationDate**  |    Non   |  0 ou 1     |     Date d’expiration du module complémentaire, en temps universel coordonné (UTC). La date doit se présenter comme suit : aaaa-mm-jjThh:mm:ss.ssZ. Par exemple, le 19 janvier 2015 à 05:00 correspond à 2015-01-19T05:00:00.00Z. Si cet élément est présent, le module complémentaire a une date d’expiration. S’il n’est pas présent, le module complémentaire n’expire pas.  |  
 
 **Product** a les attributs suivants.
 
-|  Attribut  |  Obligatoire  |  Description   |
+|  Attribut  |  Requis  |  Description   |
 |-------------|------------|----------------|
 |  **Réf**  |    Oui        |   Contient la chaîne utilisée par l’application pour identifier le module complémentaire.            |
 |  **OfferId**  |     Non       |   Contient la chaîne utilisée par l’application pour identifier la catégorie à laquelle appartient le module complémentaire. Il permet de prendre en charge des catalogues volumineux, comme indiqué dans [Gérer un vaste catalogue de produits intégrés à l'application](manage-a-large-catalog-of-in-app-products.md).           |
@@ -516,7 +516,7 @@ Cet élément décrit le fonctionnement des appels à plusieurs méthodes [Curre
 
 **Simulation** a les attributs suivants.
 
-|  Attribut  |  Obligatoire  |  Description   |
+|  Attribut  |  Requis  |  Description   |
 |-------------|------------|----------------|
 |  **SimulationMode**  |    Non        |      La valeur peut être **Interactive** ou **Automatic**. Lorsque cet attribut a pour valeur **Automatic**, les méthodes renvoient automatiquement les codes d’erreur HRESULT spécifiés. Il peut s’utiliser lors de l’exécution de scénarios de test automatisés.       |
 
@@ -528,7 +528,7 @@ Cet élément décrit le code d’erreur par défaut renvoyé par une méthode *
 
 **DefaultResponse** a les attributs suivants.
 
-|  Attribut  |  Obligatoire  |  Description   |
+|  Attribut  |  Requis  |  Description   |
 |-------------|------------|----------------|
 |  **MethodName**  |    Oui        |   Affectez à cet attribut l’une des valeurs d’énumération affichées pour le type **StoreMethodName** dans le [schéma](#schema). Chacune de ces valeurs d’énumération représente une méthode **CurrentAppSimulator** pour laquelle vous voulez simuler la valeur de retour du code d’erreur dans votre application au cours du test. Par exemple, la valeur **RequestAppPurchaseAsync_GetResult** indique que vous voulez simuler la valeur de retour du code d’erreur de la méthode [RequestAppPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentappsimulator.requestapppurchaseasync).            |
 |  **Signé**  |     Oui       |   Affectez à cet attribut l’une des valeurs d’énumération affichées pour le type **ResponseCodes** dans le [schéma](#schema). Chacune de ces valeurs d’énumération représente le code d’erreur que vous voulez renvoyer pour la méthode affectée à l’attribut **MethodName** de cet élément **DefaultResponse**.           |
@@ -547,7 +547,7 @@ Cet élément décrit un module complémentaire consommable. **Product** est un 
 
 **Product** a les attributs suivants.
 
-|  Attribut  |  Obligatoire  |  Description   |
+|  Attribut  |  Requis  |  Description   |
 |-------------|------------|----------------|
 |  **Réf**  |    Oui        |   Contient la chaîne utilisée par l’application pour identifier le module complémentaire consommable.            |
 |  **TransactionId**  |     Oui       |   Contient un GUID (sous forme de chaîne) utilisé pour suivre la transaction d’achat d’un consommable via le processus d’acquisition. Consultez [Activer l’achat de produits in-app consommables](enable-consumable-in-app-product-purchases.md).            |

@@ -19,7 +19,7 @@ ms.locfileid: "74258343"
 
 Optimisez la conception de votre application de plateforme Windows universelle (UWP) pour l’entrée tactile, et définissez la prise en charge de la souris de base par défaut. 
 
-![souris](images/input-patterns/input-mouse.jpg)
+![Souris](images/input-patterns/input-mouse.jpg)
 
 Les entrées de souris conviennent mieux aux interactions utilisateur qui demandent de la précision comme le pointage et le clic. Cette précision inhérente est naturellement prise en charge par l’interface utilisateur de Windows qui permet de gérer la nature imprécise de l’entrée tactile.
 
@@ -86,7 +86,7 @@ Un ensemble concis d’interactions avec la souris est utilisé de façon unifor
 
 ## <a name="mouse-input-events"></a>Événements d’entrée de la souris
 
-La plupart des entrées de la souris peuvent être gérées par le biais des événements d’entrée routés communs pris en charge par tous les objets [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) . Par exemple :
+La plupart des entrées de la souris peuvent être gérées par le biais des événements d’entrée routés communs pris en charge par tous les objets [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) . Il s’agit des éléments suivants :
 
 - [**BringIntoViewRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)
 - [**CharacterReceived**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.characterreceived)
@@ -133,7 +133,7 @@ Toutefois, vous pouvez tirer parti des fonctionnalités spécifiques de chaque a
 
 - Quand des événements de déplacement ou de pointage permettent de détecter une souris, affichez une interface utilisateur propre à la souris pour indiquer les fonctionnalités exposées par l’élément. Si la souris ne bouge pas pendant un certain temps ou si l’utilisateur commence une interaction tactile, estompez progressivement l’interface utilisateur de la souris. Cela maintient l’interface utilisateur propre et aérée.
 - N’utilisez pas le curseur pour le retour de pointage, car le retour fourni par l’élément est suffisant (voir la section Curseurs, ci-dessous).
-- N’affichez pas de retour visuel si un élément ne prend pas en charge l’interaction (tel que le texte statique).
+- N’affichez pas de retour visuel si un élément ne prend pas en charge l’interaction (par exemple, du texte statique).
 - N’utilisez pas de rectangles de sélection avec les interactions avec la souris. Réservez ceux-ci aux interactions avec le clavier.
 - Affichez un retour visuel simultanément pour tous les éléments qui représentent la même cible d’entrée.
 - Fournissez des boutons (tels que + et -) pour émuler des manipulations tactiles, telles que le mouvement panoramique, la rotation, le zoom, etc.
@@ -154,7 +154,7 @@ Si vous avez besoin de personnaliser le curseur de la souris :
 - Utilisez les curseurs de redimensionnement horizontal, vertical et diagonal (![Curseur de redimensionnement vertical](images/cursor-vertical.png), ![Curseur de redimensionnement horizontal](images/cursor-horizontal.png), ![Curseur de redimensionnement diagonal (du coin inférieur gauche au coin supérieur droit)](images/cursor-diagonal2.png), ![Curseur de redimensionnement diagonal (du coin supérieur gauche au coin inférieur droit)](images/cursor-diagonal1.png)) lorsqu’un objet est redimensionnable.
 - Utilisez les curseurs en forme de main de saisie (![Curseur en forme de main de saisie (ouverte)](images/cursor-pan1.png), ![Curseur en forme de main de saisie (fermée)](images/cursor-pan2.png)) lors d’un mouvement panoramique de contenu au sein d’une zone de dessin fixe (telle qu’une carte).
 
-## <a name="related-articles"></a>Articles connexes
+## <a name="related-articles"></a>Articles associés
 
 - [Gestion des entrées du pointeur](handle-pointer-input.md)
 - [Identification des périphériques d’entrée](identify-input-devices.md)

@@ -133,7 +133,7 @@ Les nouvelles propriétés sont notamment :
 - Chemin d’inscription du package
 - Conserver tous les fichiers sur l’appareil, même ceux qui ne font plus partie de votre disposition
 
-### <a name="requirements"></a>Configuration requise
+### <a name="requirements"></a>Conditions préalables
 
 Pour utiliser les options avancées de déploiement distant, vous devez avoir la configuration requise suivante :
 
@@ -211,7 +211,7 @@ Vous pouvez définir les options de déploiement suivantes dans la page de propr
   - Dans la C# page de propriétés de **débogage** et Visual Basic, activez la case à cocher **ne pas lancer, mais déboguer mon code au démarrage** .
   - Dans la page de propriétés de **débogage** en JavaScript et C++, définissez la valeur **Lancer l’application** sur **Oui**.
 
-## <a name="symbols"></a>Symboles
+## <a name="symbols"></a>Symbols
 
 Les fichiers de symboles contiennent une variété de données très utiles lors du débogage du code, notamment des variables, des noms de fonctions et des adresses de points d’entrée, ce qui vous permet de mieux comprendre les exceptions et l’ordre d’exécution de la pile des appels. Les symboles sont disponibles par le biais du [serveur de symboles Microsoft](https://msdl.microsoft.com/download/symbols) pour la plupart des variantes de Windows. Pour des recherches hors connexion plus rapides, vous pouvez également les télécharger à partir de la page [Télécharger des packages de symboles Windows](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-download-symbols).
 

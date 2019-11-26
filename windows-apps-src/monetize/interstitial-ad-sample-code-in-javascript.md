@@ -23,7 +23,7 @@ Cette section affiche le contenu des fichiers HTML et JavaScript d’une applica
 
 Cet exemple d’application utilise deux boutons pour demander, puis lancer un spot publicitaire. Les fichiers main.js et index.html générés par Visual Studio ont été modifiés et sont présentés ci-dessous. Le fichier script.js affiché ci-dessous contient la plupart du code contenu dans l’exemple, et vous devez ajouter ce fichier dans le dossier **js** de votre projet.
 
-Remplacez les valeurs des variables ```applicationId``` et ```adUnitId``` par des valeurs dynamiques de l’espace partenaires avant de soumettre votre application au Windows Store. Pour plus d’informations, voir [Configurer des unités publicitaires dans votre application](set-up-ad-units-in-your-app.md#live-ad-units).
+Remplacez les valeurs des variables ```applicationId``` et ```adUnitId``` par des valeurs dynamiques de l’espace partenaires avant de soumettre votre application au Windows Store. Pour plus d’informations, voir [Configurer des unités publicitaires dans votre app](set-up-ad-units-in-your-app.md#live-ad-units).
 
 > [!NOTE]
 > Pour modifier cet exemple de sorte à afficher une bannière au lieu d’un spot vidéo, transmettez la valeur  **InterstitialAdType.display** au premier paramètre de la méthode [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) au lieu de **InterstitialAdType.video**. Pour plus d’informations, voir [Spots](interstitial-ads.md).

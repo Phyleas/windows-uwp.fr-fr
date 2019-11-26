@@ -17,7 +17,7 @@ ms.locfileid: "74260195"
 
 Utilisez l'*API d'avis du Microsoft Store* pour répondre par programmation aux avis sur votre app dans le Microsoft Store. Cette API est particulièrement utile pour les développeurs qui souhaitent répondre en bloc à de nombreuses révisions sans utiliser l’espace partenaires. Cette API utilise Azure Active Directory (Azure AD) pour authentifier les appels en provenance de votre application ou service.
 
-Les étapes suivantes décrivent le processus de bout en bout :
+Les étapes suivantes décrivent le processus de bout en bout :
 
 1.  Vérifiez que vous avez rempli toutes les [conditions préalables](#prerequisites).
 2.  Avant d’appeler une méthode dans l’API d’avis du Microsoft Store, [procurez-vous un jeton d’accès Azure AD](#obtain-an-azure-ad-access-token). Une fois le jeton obtenu, vous avez 60 minutes pour l’utiliser dans les appels à l’API d’avis du Microsoft Store avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en générer un nouveau.

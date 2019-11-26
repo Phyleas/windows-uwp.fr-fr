@@ -1,10 +1,10 @@
 ---
-title: Lancer l’application Cartes Windows
+title: Lancer l’application Cartes Windows
 description: Découvrez comment lancer l’application Cartes Windows à partir de votre application.
 ms.assetid: E363490A-C886-4D92-9A64-52E3C24F1D98
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 4f91ee2ff498ae9c28a0513e1029669fe5e6991e
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -13,7 +13,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74259449"
 ---
-# <a name="launch-the-windows-maps-app"></a>Lancer l’application Cartes Windows
+# <a name="launch-the-windows-maps-app"></a>Lancer l’application Cartes Windows
 
 
 
@@ -40,11 +40,11 @@ Par exemple, l’URI suivant ouvre l’application Cartes Windows et affiche une
 
 Voici une description du schéma d’URI :
 
-**bingmaps:?query**
+**BingMaps :? Query**
 
 Dans ce schéma d’URI, l’élément *query* est une série de paires nom/valeur de paramètre :
 
-**&param1=value1&param2=value2 …**
+**& param1 = value1 & param2 = value2...**
 
 Pour obtenir la liste complète des paramètres disponibles, voir les références des paramètres [bingmaps:](#bingmaps-param-reference), [ms-drive-to:](#ms-drive-to-param-reference) et [ms-walk-to:](#ms-walk-to-param-reference). Des exemples sont également fournis plus loin dans cette rubrique.
 
@@ -77,14 +77,14 @@ Pour contrôler le type d’affichage, utilisez les paramètres *sty* (style) et
 | bingmaps:?                                                                 | Ouvre l’application Cartes.                                                                                                                                                                            |
 | bingmaps:?cp=40.726966~-74.006076                                          | Affiche une carte centrée sur la ville de New York.                                                                                                                                                    |
 | bingmaps:?cp=40.726966~-74.006076&amp;lvl=10                                   | Affiche une carte centrée sur la ville de New York avec le niveau de zoom 10.                                                                                                                            |
-| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5                                   | Affiche une carte de la ville de New York, qui est la zone spécifiée dans l’argument **bb**.                                                                                                           |
-| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5&cp=47~-122                        | Affiche une carte de la ville de New York, qui est la zone spécifiée dans l’argument du cadre englobant. Le point central pour Seattle spécifié dans l’argument **cp** est ignoré parce que *bb* est spécifié. |
-| bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace&lvl=16 | Affiche une carte avec un point nommé Caesars Palace (à Las Vegas) et affecte la valeur 16 au niveau de zoom.                                                                                                 |
-| bingmaps:?collection=point.40.726966\_-74.006076\_Some%255FBusiness        | Displays a map with a point named Some\_Business (in Las Vegas).                                                                                                                               |
+| BingMaps :? BB = 39.719\_-74.52 ~ 41.71\_-73,5                                   | Affiche une carte de la ville de New York, qui est la zone spécifiée dans l’argument **bb**.                                                                                                           |
+| BingMaps :? BB = 39.719\_-74.52 ~ 41.71\_-73.5 & CP = 47 ~-122                        | Affiche une carte de la ville de New York, qui est la zone spécifiée dans l’argument du cadre englobant. Le point central pour Seattle spécifié dans l’argument **cp** est ignoré parce que *bb* est spécifié. |
+| BingMaps :? collection = point. 36.116584\_-115,176753\_Caesars% 20Palace & NIV = 16 | Affiche une carte avec un point nommé Caesars Palace (à Las Vegas) et affecte la valeur 16 au niveau de zoom.                                                                                                 |
+| BingMaps :? collection = point. 40.726966\_-74,006076\_% 255FBusiness        | Affiche une carte avec un point nommé some\_Business (à Las Vegas).                                                                                                                               |
 | bingmaps:?cp=40.726966~-74.006076&trfc=1&sty=a                             | Affiche une carte de la ville de New York avec le trafic sur une vue de carte aérienne.                                                                                                                          |
 | bingmaps:?cp=47.6204~-122.3491&sty=3d                                      | Affiche une vue 3D de la Space Needle.                                                                                                                                                        |
 | bingmaps:?cp=47.6204~-122.3491&sty=3d&rad=200&pit=75&amp;amp;hdg=165               | Affiche une vue 3D de la Space Needle avec un rayon de 200 m, une inclinaison de 75 degrés et une orientation de 165 degrés.                                                                             |
-| bingmaps:?cp=47.6204~-122.3491&ss=1                                        | Affiche une vue Streetside de la Space Needle.                                                                                                                                                |
+| bingmaps:?cp=47.6204~-122.3491&amp;ss=1                                        | Affiche une vue Streetside de la Space Needle.                                                                                                                                                |
 
 
 ## <a name="display-search-results"></a>Afficher les résultats de la recherche
@@ -97,7 +97,7 @@ Lorsque vous recherchez des lieux à l’aide du paramètre *q*, nous recommando
 | bingmaps:?q=1600%20Pennsylvania%20Ave,%20Washington,%20DC     | Affiche une carte et recherche l’adresse de la Maison Blanche à Washington. |
 | bingmaps:?q=coffee&where=Seattle                              | Recherche un café à Seattle.                                                    |
 | bingmaps:?cp=40.726966~-74.006076&where=New%20York            | Recherche New York près du point central indiqué.                             |
-| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5&q=pizza              | Recherche une pizzeria dans la zone de délimitation (autrement dit, à New York).      |
+| BingMaps :? BB = 39.719\_-74.52 ~ 41.71\_-73.5 & q = pizza              | Recherche une pizzeria dans la zone de délimitation (autrement dit, à New York).      |
 
  
 ## <a name="display-multiple-points"></a>Afficher plusieurs points
@@ -107,11 +107,11 @@ Utilisez le paramètre *collection* pour afficher un ensemble personnalisé de p
 
 | Exemple d’URI | Résultats                                                                                                                   |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|
-| bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace                                                                                                | Recherche Caesars Palace à Las Vegas et affiche les résultats sur une carte dans la meilleure vue de carte.                         |
-| bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace&lvl=16                                                                                         | Affiche une punaise nommée « Caesars Palace à Las Vegas », avec un niveau de zoom de 16.                                               |
-| bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace~point.36.113126\_-115.175188\_The%20Bellagio&lvl=16&cp=36.114902~-115.176669                   | Affiche une punaise nommée « Caesars Palace à Las Vegas » et une autre appelée « Hôtel Bellagio à Las Vegas », avec un niveau de zoom de 16.              |
-| bingmaps:?collection=point.40.726966\_-74.006076\_Fake%255FBusiness%255Fwith%255FUnderscore                                                                        | Displays New York with a pushpin named Fake\_Business\_with\_Underscore.                                                  |
-| bingmaps:?collection=name.Hotel%20List~point.36.116584\_-115.176753\_Caesars%20Palace~point.36.113126\_-115.175188\_The%20Bellagio&lvl=16&cp=36.114902~-115.176669 | Affiche une liste nommée « Liste d’hôtels » et deux punaises correspondant aux hôtels Caesars Palace et Bellagio à Las Vegas, avec un niveau de zoom de 16. |
+| BingMaps :? collection = point. 36.116584\_-115,176753\_Caesars% 20Palace                                                                                                | Recherche Caesars Palace à Las Vegas et affiche les résultats sur une carte dans la meilleure vue de carte.                         |
+| BingMaps :? collection = point. 36.116584\_-115,176753\_Caesars% 20Palace & NIV = 16                                                                                         | Affiche une punaise nommée « Caesars Palace à Las Vegas », avec un niveau de zoom de 16.                                               |
+| BingMaps :? collection = point. 36.116584\_-115,176753\_Caesars% 20Palace ~ point. 36.113126\_-115,175188\_% 20Bellagio & NIV = 16 & CP = 36.114902 ~-115,176669                   | Affiche une punaise nommée « Caesars Palace à Las Vegas » et une autre appelée « Hôtel Bellagio à Las Vegas », avec un niveau de zoom de 16.              |
+| BingMaps :? collection = point. 40.726966\_-74,006076\_factice% 255FBusiness% 255Fwith% 255FUnderscore                                                                        | Affiche New York avec un clic-infos nommé factice\_\_d’entreprise avec un trait de soulignement\_.                                                  |
+| BingMaps :? collection = nom. Hôtel% 20List ~ point. 36.116584\_-115,176753\_Caesars% 20Palace ~ point. 36.113126\_-115,175188\_% 20Bellagio & NIV = 16 & CP = 36.114902 ~-115,176669 | Affiche une liste nommée « Liste d’hôtels » et deux punaises correspondant aux hôtels Caesars Palace et Bellagio à Las Vegas, avec un niveau de zoom de 16. |
 
  
 
@@ -124,10 +124,10 @@ Vous pouvez afficher un itinéraire entre deux points à l’aide du paramètre
 
 | Exemple d’URI                                                                                                              | Résultats                                                                                                                                                         |
 |-------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| bingmaps:?rtp=pos.44.9160\_-110.4158~pos.45.0475\_-109.4187                                                             | Affiche une carte avec un itinéraire de point à point. Le paramètre *mode* n’étant pas spécifié, un itinéraire est fourni sur la base du mode de transport préféré de l’utilisateur. |
+| BingMaps :? RTP = pos. 44.9160\_-110.4158 ~ pos. 45.0475\_-109,4187                                                             | Affiche une carte avec un itinéraire de point à point. Le paramètre *mode* n’étant pas spécifié, un itinéraire est fourni sur la base du mode de transport préféré de l’utilisateur. |
 | bingmaps:?cp=43.0332~-87.9167&amp;trfc=1                                                                                    | Affiche une carte centrée sur Milwaukee, Wisconsin, avec le trafic.                                                                                                        |
-| bingmaps:?rtp=adr.One Microsoft Way, Redmond, WA 98052~pos.39.0731\_-108.7238                                           | Affiche une carte avec un itinéraire de l’adresse spécifiée à l’emplacement indiqué.                                                                            |
-| bingmaps:?rtp=adr.1%20Microsoft%20Way,%20Redmond,%20WA,%2098052~pos.36.1223\_-111.9495\_Grand%20Canyon%20northern%20rim | Affiche un itinéraire de 1 Microsoft Way, Redmond, WA, 98052, au rebord nord du Grand Canyon.                                                                |
+| BingMaps :? RTP = ADR. One Microsoft Way, Redmond, WA 98052 ~ pos. 39.0731\_-108,7238                                           | Affiche une carte avec un itinéraire de l’adresse spécifiée à l’emplacement indiqué.                                                                            |
+| BingMaps :? RTP = ADR. 1% 20Microsoft% 20Way,% 20Redmond,% 20WA, %2098052 ~ pos. 36.1223\_-111,9495\_grand% 20Canyon% 20northern% 20rim | Affiche un itinéraire de 1 Microsoft Way, Redmond, WA, 98052, au rebord nord du Grand Canyon.                                                                |
 | bingmaps:?rtp=adr.Davenport, CA~adr.Yosemite Village                                                                    | Affiche une carte avec un itinéraire en voiture de l’emplacement indiqué au point de repère spécifié.                                                                   |
 | bingmaps:?rtp=adr.Mountain%20View,%20CA~adr.San%20Francisco%20International%20Airport,%20CA&amp;mode=d                      | Affiche un itinéraire en voiture de Mountain View à l’aéroport international de San Francisco en Californie.                                                                  |
 | bingmaps:?rtp=adr.Mountain%20View,%20CA~adr.San%20Francisco%20International%20Airport,%20CA&amp;mode=w                      | Affiche un itinéraire à pied de Mountain View à l’aéroport international de San Francisco en Californie.                                                                  |
@@ -179,7 +179,7 @@ Vous pouvez afficher la syntaxe de chaque paramètre de ce tableau à l’aide d
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><b>cp</b></p></td>
+<td align="left"><p><b>CP</b></p></td>
 <td align="left"><p>Point central</p></td>
 <td align="left"><p>cp = "cp=" cpval</p>
 <p>cpval = degreeslat "~" degreeslon</p>
@@ -192,7 +192,7 @@ Vous pouvez afficher la syntaxe de chaque paramètre de ce tableau à l’aide d
 <p>Les valeurs de latitude valables sont comprises entre -90 et +90 (ces deux valeurs étant incluses).</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><b>bb</b></p></td>
+<td align="left"><p><b>BB</b></p></td>
 <td align="left"><p>Cadre englobant</p></td>
 <td align="left"><p>bb = "bb=" southlatitude " _" westlongitude "~" northlatitude "_ " eastlongitude</p>
 <p>southlatitude = degreeslat</p>
@@ -209,7 +209,7 @@ Vous pouvez afficher la syntaxe de chaque paramètre de ce tableau à l’aide d
 </tr>
 <tr class="odd">
 <td align="left"><p><b>where</b></p></td>
-<td align="left"><p>Services de localisation</p></td>
+<td align="left"><p>Location</p></td>
 <td align="left"><p>where = "where=" whereval</p>
 <p>whereval = 1 *( ALPHA / DIGIT / "-" / "." / "_" / pct-encoded / "!" / "$" / "'" / "(" / ")" / "* " / "+" / "," / ";" / ":" / "@" / "/" / "?")</p>
 <p>Exemple :</p>
@@ -217,7 +217,7 @@ Vous pouvez afficher la syntaxe de chaque paramètre de ce tableau à l’aide d
 <td align="left"><p>Terme de recherche correspondant à un emplacement, un élément géographique ou un lieu spécifiques.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><b>q</b></p></td>
+<td align="left"><p><b>question</b></p></td>
 <td align="left"><p>Terme de requête</p></td>
 <td align="left"><p>q = "q="</p>
 <p>whereval</p>
@@ -226,7 +226,7 @@ Vous pouvez afficher la syntaxe de chaque paramètre de ce tableau à l’aide d
 <td align="left"><p>Terme de recherche pour les entreprises locales ou la catégorie des entreprises.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><b>lvl</b></p></td>
+<td align="left"><p><b>mono</b></p></td>
 <td align="left"><p>Niveau de zoom</p></td>
 <td align="left"><p>lvl = "lvl=" 1<i>2DIGIT ["." 1</i>2DIGIT]</p>
 <p>Exemple :</p>
@@ -247,7 +247,7 @@ Vous pouvez afficher la syntaxe de chaque paramètre de ce tableau à l’aide d
 </ul>
 <p>Dans Windows 10, les styles vue aérienne et affichage 3D sont identiques.</p>
 <div class="alert">
-<b>Note</b>  Omitting the <b>sty</b> parameter produces the same results as sty=r.
+<b>Notez</b>  l’omission du paramètre <b>sty</b> produit les mêmes résultats que sty = r.
 </div>
 <div>
  
@@ -262,7 +262,7 @@ Vous pouvez afficher la syntaxe de chaque paramètre de ce tableau à l’aide d
 <td align="left"><p>Zone circulaire qui spécifie la vue de carte souhaitée. La valeur du rayon se mesure en mètres.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><b>pit</b></p></td>
+<td align="left"><p><b>compose</b></p></td>
 <td align="left"><p>Inclinaison</p></td>
 <td align="left"><p>pit = "pit=" pitch (inclinaison)</p>
 <p>Exemple :</p>
@@ -278,14 +278,14 @@ Vous pouvez afficher la syntaxe de chaque paramètre de ce tableau à l’aide d
 <td align="left"><p>Indique l’orientation (ou cap) de la carte exprimée en degrés, où 0 ou 360 = Nord, 90 = Est, 180 = Sud et 270 = Ouest.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><b>ss</b></p></td>
+<td align="left"><p><b>sécurité</b></p></td>
 <td align="left"><p>Streetside</p></td>
 <td align="left"><p>ss = "ss=" BIT</p>
 <p>Exemple :</p>
 <p>ss=1</p></td>
 <td align="left"><p>Spécifie l’affichage des images au niveau de la rue quand <code>ss=1</code>. Si vous omettez le paramètre <b>ss</b>, vous obtenez le même résultat qu’avec la commande <code>ss=0</code>. Utilisez ce paramètre conjointement avec le paramètre <b>cp</b> pour spécifier l’emplacement de la vue au niveau de la rue.</p>
 <div class="alert">
-<b>Note</b>  Street-level imagery is not available in all regions.
+<b>Remarque</b>  image de niveau rue n’est pas disponible dans toutes les régions.
 </div>
 <div>
  
@@ -299,14 +299,14 @@ Vous pouvez afficher la syntaxe de chaque paramètre de ce tableau à l’aide d
 <p>trfc=1</p></td>
 <td align="left"><p>Spécifie si les informations sur le trafic sont incluses sur la carte. Si vous omettez le paramètre trfc, vous obtenez le même résultat qu’avec la commande <code>trfc=0</code>.</p>
 <div class="alert">
-<b>Note</b>  Traffic data is not available in all regions.
+<b>Notez</b>  les données de trafic ne sont pas disponibles dans toutes les régions.
 </div>
 <div>
  
 </div></td>
 </tr>
 <tr class="even">
-<td align="left"><p><b>rtp</b></p></td>
+<td align="left"><p><b>RTP</b></p></td>
 <td align="left"><p>Itinéraire</p></td>
 <td align="left"><p>rtp = "rtp=" (waypoint "~" [waypoint]) / ("~" waypoint)</p>
 <p>waypoint = ("pos." point ) / ("adr." whereval)</p>
@@ -328,7 +328,7 @@ Vous pouvez afficher la syntaxe de chaque paramètre de ce tableau à l’aide d
 <p>Aucune ligne d’itinéraire n’est dessinée lorsque l’itinéraire fourni est incomplet.</p>
 <p>Utilisez ces paramètres conjointement avec le paramètre <b>mode</b> servant à spécifier le mode de transport (en voiture, en transport public ou à pied). Si le paramètre <b>mode</b> n’est pas spécifié, un itinéraire est fourni sur la base du mode de transport préféré de l’utilisateur.</p>
 <div class="alert">
-<b>Note</b>  A title can be used for a location if the location is specified by the <b>pos</b> parameter value. Le titre s’affichera à la place de la latitude et de la longitude.
+<b>Notez</b>  un titre peut être utilisé pour un emplacement si l’emplacement est spécifié par la valeur du paramètre <b>pos</b> . Le titre s’affichera à la place de la latitude et de la longitude.
 </div>
 <div>
  
@@ -350,7 +350,7 @@ Vous pouvez afficher la syntaxe de chaque paramètre de ce tableau à l’aide d
 </tr>
 
 <tr class="even">
-<td align="left"><p><b>collection</b></p></td>
+<td align="left"><p><b>collecte</b></p></td>
 <td align="left"><p>Collection</p></td>
 <td align="left"><p>collection = "collection="(name"~"/)point["~"point]</p>
 <p>name = "name." whereval </p>
@@ -387,8 +387,8 @@ L’URI permettant de lancer une demande d’itinéraire détaillé en voiture n
 
 | Paramètre | Définition | Exemple | Détails |
 |------------|-----------|---------|---------|
-| **destination.latitude** | Latitude de destination | Exemple : destination.latitude=47.6451413797194 | Latitude de la destination. Les valeurs de latitude valables sont comprises entre -90 et +90 (ces deux valeurs étant incluses). |
-| **destination.longitude** | Longitude de destination | Exemple : destination.longitude=-122.141964733601 | Longitude de la destination. Les valeurs de longitude valides sont comprises entre -180 et +180 (ces deux valeurs étant incluses). |
+| **destination. Latitude** | Latitude de destination | Exemple : destination.latitude=47.6451413797194 | Latitude de la destination. Les valeurs de latitude valables sont comprises entre -90 et +90 (ces deux valeurs étant incluses). |
+| **destination. Longitude** | Longitude de destination | Exemple : destination.longitude=-122.141964733601 | Longitude de la destination. Les valeurs de longitude valides sont comprises entre -180 et +180 (ces deux valeurs étant incluses). |
 | **destination.name** | Nom de la destination | Exemple : destination.name=Redmond, WA | Nom de la destination. Vous n’avez pas besoin d’encoder la valeur **destination.name**. |
 
  
@@ -404,8 +404,8 @@ L’URI permettant de lancer une demande d’itinéraire détaillé à pied n’
 
 | Paramètre | Définition | Exemple | Détails |
 |-----------|------------|---------|----------|
-| **destination.latitude** | Latitude de destination | Exemple : destination.latitude=47.6451413797194 | Latitude de la destination. Les valeurs de latitude valables sont comprises entre -90 et +90 (ces deux valeurs étant incluses). |
-| **destination.longitude** | Longitude de destination | Exemple : destination.longitude=-122.141964733601 | Longitude de la destination. Les valeurs de longitude valides sont comprises entre -180 et +180 (ces deux valeurs étant incluses). |
+| **destination. Latitude** | Latitude de destination | Exemple : destination.latitude=47.6451413797194 | Latitude de la destination. Les valeurs de latitude valables sont comprises entre -90 et +90 (ces deux valeurs étant incluses). |
+| **destination. Longitude** | Longitude de destination | Exemple : destination.longitude=-122.141964733601 | Longitude de la destination. Les valeurs de longitude valides sont comprises entre -180 et +180 (ces deux valeurs étant incluses). |
 | **destination.name** | Nom de la destination | Exemple : destination.name=Redmond, WA | Nom de la destination. Vous n’avez pas besoin d’encoder la valeur **destination.name**. |
 
 ## <a name="ms-settings-parameter-reference"></a>Référence de paramètre ms-settings:
@@ -414,4 +414,4 @@ La syntaxe des paramètres propres à l’application Cartes pour le schéma d�
 
 | Paramètre | Définition | Exemple | Détails |
 |-----------|------------|---------|----------|
-| **latlong** | Point définissant une région de carte hors connexion. | Exemple : latlong=47.6,-122.3 | Le point géographique est spécifié par une latitude et une longitude séparées par une virgule. Les valeurs de latitude valables sont comprises entre -90 et +90 (ces deux valeurs étant incluses). Les valeurs de longitude valides sont comprises entre -180 et +180 (ces deux valeurs étant incluses). |
+| **LatLong** | Point définissant une région de carte hors connexion. | Exemple : latlong=47.6,-122.3 | Le point géographique est spécifié par une latitude et une longitude séparées par une virgule. Les valeurs de latitude valables sont comprises entre -90 et +90 (ces deux valeurs étant incluses). Les valeurs de longitude valides sont comprises entre -180 et +180 (ces deux valeurs étant incluses). |

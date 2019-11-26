@@ -1,5 +1,5 @@
 ---
-Description: Cette rubrique décrit les meilleures pratiques relatives à l’accessibilité du texte dans une application, en garantissant que les couleurs et de l’arrière-plan respectent le coefficient de contraste nécessaire.
+Description: Ici sont décrites les meilleures pratiques d’accessibilité du texte, en s’assurant que les couleurs et les arrière-plans respectent le coefficient de contraste.
 ms.assetid: BA689C76-FE68-4B5B-9E8D-1E7697F737E6
 title: Exigences de texte accessible
 label: Accessible text requirements
@@ -20,7 +20,7 @@ ms.locfileid: "74257790"
 
 
 
-Cette rubrique décrit les meilleures pratiques relatives à l’accessibilité du texte dans une application, en garantissant que les couleurs et de l’arrière-plan respectent le coefficient de contraste nécessaire. Elle traite également des rôles Microsoft UI Automation que peuvent avoir les éléments de texte dans une application UWP et des meilleures pratiques relatives au texte des graphiques.
+Ici sont décrites les meilleures pratiques d’accessibilité du texte, en s’assurant que les couleurs et les arrière-plans respectent le coefficient de contraste. Elle traite également des rôles Microsoft UI Automation que peuvent avoir les éléments de texte dans une application UWP et des meilleures pratiques relatives au texte des graphiques.
 
 <span id="contrast_rations"/>
 <span id="CONTRAST_RATIONS"/>
@@ -126,7 +126,7 @@ Dans la mesure du possible, évitez d’inclure du texte dans un graphique. Par 
 
 Les utilisateurs peuvent avoir des difficultés à lire du texte dans une application lorsque les polices utilisées sont simplement trop petites. par conséquent, assurez-vous que le texte de votre application est de taille raisonnable.
 
-Une fois que vous avez terminé, Windows comprend différents outils et paramètres d’accessibilité dont les utilisateurs peuvent tirer parti et s’adapter à leurs propres besoins et préférences pour lire du texte. Par exemple :
+Une fois que vous avez terminé, Windows comprend différents outils et paramètres d’accessibilité dont les utilisateurs peuvent tirer parti et s’adapter à leurs propres besoins et préférences pour lire du texte. Il s’agit des éléments suivants :
 
 * L’outil loupe, qui agrandit la zone sélectionnée de l’interface utilisateur. Vous devez vous assurer que la disposition du texte dans votre application ne complique pas l’utilisation de la loupe pour la lecture.
 * Les paramètres de mise à l’échelle et de résolution globaux dans **Paramètres-> > système d’affichage-> de l’échelle et de la disposition**. Les options de dimensionnement disponibles peuvent varier en fonction des capacités du périphérique d’affichage.

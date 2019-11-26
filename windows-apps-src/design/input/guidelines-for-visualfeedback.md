@@ -106,7 +106,7 @@ Pour modifier les couleurs pour chaque contrôle, modifiez simplement les propri
 <Slider Width="200" FocusVisualPrimaryBrush="DarkRed" FocusVisualSecondaryBrush="Pink"/>
 ```
 
-## <a name="related-articles"></a>Articles connexes
+## <a name="related-articles"></a>Articles associés
 
 **Pour les concepteurs**
 * [Instructions pour le panorama](guidelines-for-panning.md)

@@ -16,7 +16,7 @@ ms.locfileid: "74258401"
 # <a name="tutorial-support-ink-in-your-uwp-app"></a>Didacticiel : prendre en charge l’entrée manuscrite dans votre application UWP
 
 ![le stylet de surface](images/ink/ink-hero-small.png)  
-*Stylet Surface* (disponible à l’achat dans la [Boutique Microsoft](https://www.microsoft.com/p/surface-pen/8zl5c82qmg6b)).
+*Stylet Surface* (disponible à l’achat dans la [Microsoft Store](https://www.microsoft.com/p/surface-pen/8zl5c82qmg6b)).
 
 Ce didacticiel explique comment créer une application de plateforme Windows universelle (UWP) basique, qui prend en charge l'écriture et le dessin avec Windows Ink. Nous utilisons des extraits de code à partir d’un exemple d’application, que vous pouvez télécharger à partir de GitHub (voir [Exemple de code](#sample-code)), pour illustrer les diverses fonctionnalités et les API Windows Ink associées (voir [Composants de la plateforme Windows Ink](#components-of-the-windows-ink-platform)) décrites dans chaque étape.
 
@@ -33,7 +33,7 @@ Pour plus d’informations sur l’implémentation de ces fonctionnalités, voir
 
 Avec Windows Ink, vous pouvez fournir à vos clients l’équivalent numérique de quasiment n’importe quelle expérience manuscrite imaginable, depuis des notes manuscrites rapides et des annotations dans des démonstrations sur tableau blanc, en passant par des croquis techniques et architecturaux ou encore pour vos travaux personnels.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Conditions préalables requises
 
 * Un ordinateur (ou un appareil virtuel) exécutant la version actuelle de Windows 10
 * [Visual Studio 2019 et le kit de développement logiciel (SDK) RS2](https://developer.microsoft.com/windows/downloads)
@@ -119,7 +119,7 @@ Pour ajouter des fonctionnalités d’écriture manuscrite de base, il suffit de
     <InkCanvas x:Name="inkCanvas" />
 ```
 
-C’est tout ! 
+Et voilà ! 
 
 Exécutez de nouveau l’application. Lancez-vous et dessinez, écrivez votre nom, ou (si vous êtes face à un miroir ou si vous avez une très bonne mémoire) esquissez votre auto-portrait.
 
@@ -462,7 +462,7 @@ Pour plus d’informations sur l’utilisation du Presse-papiers avec l'entrée 
 
 Félicitations, vous venez de terminer le didacticiel **Entrée : Prise en charge des entrées manuscrites dans votre application UWP** ! Nous vous avons indiqué le code de base requis pour prendre en charge les entrées manuscrites dans vos applications UWP, et comment fournir certaines expériences utilisateur enrichies, prises en charge par la plateforme Windows Ink.
 
-## <a name="related-articles"></a>Articles connexes
+## <a name="related-articles"></a>Articles associés
 
 * [Interactions avec le stylet et Windows Ink dans les applications UWP](pen-and-stylus-interactions.md)
 

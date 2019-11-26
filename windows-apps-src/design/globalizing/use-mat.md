@@ -43,7 +43,7 @@ Le kit de ressources Multilingual App Toolkit 4.0 (MAT 4.0) est divisé en d
 
 Si vous utilisez Visual Studio 2017 ou Visual Studio 2019, téléchargez et exécutez les deux programmes d’installation, l’un après l’autre. Si vous utilisez Visual Studio 2015 ou Visual Studio 2013, téléchargez et exécutez l'installateur .msi.
 
-### <a name="step-3-enable-the-multilingual-app-toolkit-for-your-project"></a>Étape 3. Activer le kit de ressources Multilingual App Toolkit pour votre projet
+### <a name="step-3-enable-the-multilingual-app-toolkit-for-your-project"></a>Étape 3. Activer le kit de ressources Multilingual App Toolkit pour votre projet
 
 Avant que vous ne puissiez commencer à localiser l'application, le MAT doit être activé pour votre projet. Voici comment activer le kit de ressources.
 
@@ -53,7 +53,7 @@ Avant que vous ne puissiez commencer à localiser l'application, le MAT doit êt
 
 Dans la fenêtre Sortie (affichant la sortie du kit de ressources Multilingual App Toolkit), recherchez le message `Project '<project-name>' was enabled. The project's source culture is '<language-tag>' <language-name>`. Si ce message apparaît, le MAT est prêt à être utilisé.
 
-### <a name="step-4-add-languages-to-your-project"></a>Étape 4. Ajouter des langues à votre projet
+### <a name="step-4-add-languages-to-your-project"></a>Étape 4. Ajouter des langues à votre projet
 
 Suivez ces étapes pour ajouter des langues à votre projet.
 
@@ -75,7 +75,7 @@ Dans la boîte de dialogue Langues de traduction, les cases de toutes les langue
 
 Une fois la langue ajoutée au projet, elle ne peut pas être supprimée en cochant la case dans la boîte de dialogue Langues de traduction. Pour supprimer une langue, cliquez avec le bouton droit sur le fichier .xlf spécifique à la langue et sélectionnez **Supprimer**. La confirmation a également pour effet de supprimer les fichiers Ressources (.resw) correspondants.
 
-### <a name="step-5-test-your-app-using-pseudo-language"></a>Étape 5. Tester votre application à l’aide d'une pseudo-langue
+### <a name="step-5-test-your-app-using-pseudo-language"></a>Étape 5. Tester votre application à l’aide d'une pseudo-langue
 
 La pseudo-langue est une modification artificielle du produit de logiciel. Elle vise à simuler une véritable localisation de langue, mais elle reste lisible pour les locuteurs natifs. La pseudo-traduction remplace les caractères et rallonge la chaîne de ressource pour détecter tout problème ou bogue d'adaptabilité potentiel aux prémices du cycle du projet et avant le démarrage de la mise à l'épreuve de la localisation.
 

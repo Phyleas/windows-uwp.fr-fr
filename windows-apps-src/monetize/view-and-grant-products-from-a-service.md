@@ -25,7 +25,7 @@ Ces API sont constituées des méthodes REST, qui sont conçues pour être utili
 > [!NOTE]
 > L’API de collection et l’API d’achat du Microsoft Store utilisent l’authentification Azure Active Directory (Azure AD) pour accéder aux informations de propriété client. Pour utiliser ces API, vous (ou votre organisation) devez disposer d’un annuaire Azure AD et d’une autorisation [Administrateur global](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) pour l’annuaire. Si vous utilisez déjà Office 365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’un annuaire Azure AD.
 
-## <a name="overview"></a>Vue d’ensemble
+## <a name="overview"></a>Présentation
 
 Les étapes suivantes décrivent le processus de bout en bout pour l’utilisation de l’API de collection et de l'API d’achat du Microsoft Store :
 
@@ -84,7 +84,7 @@ Avant de pouvoir utiliser l’API de collection Microsoft Store ou l’API achat
 
 ## <a name="step-3-create-azure-ad-access-tokens"></a>Étape 3 : créer des jetons d’accès Azure AD
 
-Pour pouvoir récupérer une clé d’ID du Microsoft Store ou appeler l’API de collection ou d’achat du Microsoft Store, votre service doit créer plusieurs jetons d’accès Azure AD différents qui représentent votre identité d’éditeur. Chaque jeton est utilisé avec une autre API. La durée de vie de chacun des jetons est de 60 minutes, et vous pouvez les actualiser une fois qu’ils sont arrivés à expiration.
+Pour pouvoir récupérer une clé d’ID du Microsoft Store ou appeler l’API de collection ou d’achat du Microsoft Store, votre service doit créer plusieurs jetons d’accès Azure AD différents qui représentent votre identité d’éditeur. Chaque jeton est utilisé avec une autre API. La durée de vie de chacun des jetons est de 60 minutes, et vous pouvez les actualiser une fois qu’ils sont arrivés à expiration.
 
 > [!IMPORTANT]
 > Créez des jetons d’accès Azure AD uniquement dans le contexte de votre service, et non dans votre application. Votre clé secrète client risque d’être compromise si elle est envoyée à votre application.

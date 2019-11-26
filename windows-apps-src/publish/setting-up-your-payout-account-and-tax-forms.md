@@ -145,7 +145,7 @@ Vous pouvez modifier les profils de paiement existants si vous devez apporter de
 
 ### <a name="paypal-info"></a>Informations PayPal
 
-Selon votre pays ou votre région, vous avez la possibilité de créer un compte de paiement en saisissant vos informations PayPal. Avant de choisir PayPal comme option de compte de paiement, vérifiez les points suivants :
+Selon votre pays ou votre région, vous avez la possibilité de créer un compte de paiement en saisissant vos informations PayPal. Toutefois, avant de choisir PayPal comme option de compte de paiement, vérifiez les points suivants :
 
 - Vérifiez les [seuils de paiement, les méthodes et les délais](payment-thresholds-methods-and-timeframes.md) pour confirmer si PayPal est un mode de paiement pris en charge dans votre pays ou région.
 - Consultez les FAQ ci-après. En fonction de votre situation, il se peut que PayPal ne soit pas l'option idéale pour votre compte de paiement et qu'un compte bancaire soit mieux adapté.

@@ -204,7 +204,7 @@ Les deux problèmes peuvent être résolus en utilisant SSML au lieu de texte br
 
 ## <a name="other-articles-in-this-section"></a>Autres articles de cette section 
 
-| Rubrique | Description |
+| Sujet | Description |
 | --- | --- |
 | [Reconnaissance vocale](speech-recognition.md) | La reconnaissance vocale permet de fournir une saisie vocale, de spécifier une action ou une commande et d’accomplir différentes tâches. |
 | [Spécifier la langue du module de reconnaissance vocale](specify-the-speech-recognizer-language.md) | Découvrez comment sélectionner une langue installée à utiliser pour la reconnaissance vocale. |
@@ -213,7 +213,7 @@ Les deux problèmes peuvent être résolus en utilisant SSML au lieu de texte br
 | [Gérer les problèmes d’entrée audio](manage-issues-with-audio-input.md) | Découvrez comment gérer les problèmes liés à la précision de la reconnaissance vocale qu’entraîne une baisse de qualité des entrées audio. |
 | [Définir des délais d’expiration de reconnaissance vocale](set-speech-recognition-timeouts.md) | Définissez la durée pendant laquelle un moteur de reconnaissance vocale ignore les silences ou les sons incompréhensibles (brouhaha) et continue à écouter la saisie vocale. |
 
-## <a name="related-articles"></a>Articles connexes
+## <a name="related-articles"></a>Articles associés
 
 * [Interactions vocales](https://docs.microsoft.com/windows/uwp/input-and-devices/speech-interactions)
 * [Interactions avec Cortana](https://docs.microsoft.com/windows/uwp/input-and-devices/cortana-interactions)

@@ -1,6 +1,6 @@
 ---
 ms.assetid: 00ECF6C7-0970-4D5F-8055-47EA49F92C12
-title: Meilleures pratiques en matière de performances lors du démarrage de votre application
+title: Meilleures pratiques en matière de performances de démarrage de votre application
 description: Créez des applications de plateforme Windows universelle (UWP) dont le temps de démarrage est optimal en améliorant la gestion du lancement et de l’activation.
 ms.date: 02/08/2017
 ms.topic: article
@@ -13,12 +13,12 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74254683"
 ---
-# <a name="best-practices-for-your-apps-startup-performance"></a>Meilleures pratiques en matière de performances lors du démarrage de votre application
+# <a name="best-practices-for-your-apps-startup-performance"></a>Meilleures pratiques en matière de performances de démarrage de votre application
 
 
 Créez des applications de plateforme Windows universelle (UWP) dont le temps de démarrage est optimal en améliorant la gestion du lancement et de l’activation.
 
-## <a name="best-practices-for-your-apps-startup-performance"></a>Meilleures pratiques en matière de performances lors du démarrage de votre application
+## <a name="best-practices-for-your-apps-startup-performance"></a>Meilleures pratiques en matière de performances de démarrage de votre application
 
 Les utilisateurs jugent les performances d’une application en partie sur le temps nécessaire à son démarrage. Pour les besoins de cette rubrique, le démarrage d’une application commence lorsque l’utilisateur démarre l’application et il se termine lorsque l’utilisateur peut commencer à interagir véritablement avec l’application. Cette section fournit des suggestions pour améliorer les performances de votre application au démarrage.
 
@@ -26,7 +26,7 @@ Les utilisateurs jugent les performances d’une application en partie sur le te
 
 Démarrez l’application plusieurs fois avant de pouvoir évaluer son temps de démarrage. Cela vous servira de référence afin d’estimer un temps de démarrage aussi court que possible, tout en restant dans la mesure du raisonnable.
 
-Au moment où votre application UWP arrive sur les ordinateurs de vos clients, votre application a été compilée à l’aide de la chaîne d’outils .NET Native. .NET Native est une technologie de compilation d’avant-garde qui convertit le MSIL en code machine exécutable en mode natif. Les applications .NET Native démarrent plus vite, utilisent moins de mémoire et consomment moins de batterie que leurs équivalents MSIL. Les applications générées avec .NET Native se lient de manière statistique dans le cadre d’une exécution personnalisée et dans le nouveau .NET Core convergé pouvant s’exécuter sur tous les appareils, afin qu’elles ne dépendent pas de l’implémentation de .NET fournie. Sur l’ordinateur de développement, votre application utilise .NET Native par défaut si vous la créez en mode « Publication », et CoreCLR si vous la créez en mode « Débogage ». Vous pouvez configurer cette option dans Visual Studio à partir de la page de génération dans « Propriétés » (C#) ou Compiler -&gt; Avancé dans « Mon projet » (VB). Recherchez une case à cocher indiquant « Compiler avec la chaîne d’outils .NET Native ».
+Au moment où votre application UWP arrive sur les ordinateurs de vos clients, votre application a été compilée à l’aide de la chaîne d’outils .NET Native. .NET Native est une technologie de compilation d’avant-garde qui convertit le MSIL en code machine exécutable en mode natif. Les applications .NET natives démarrent plus vite, utilisent moins de mémoire et consomment moins de batterie que leurs équivalents MSIL. Les applications générées avec .NET Native se lient de manière statistique dans le cadre d’une exécution personnalisée et dans le nouveau .NET Core convergé pouvant s’exécuter sur tous les appareils, afin qu’elles ne dépendent pas de l’implémentation de .NET fournie. Sur l’ordinateur de développement, votre application utilise .NET Native par défaut si vous la créez en mode « Publication », et CoreCLR si vous la créez en mode « Débogage ». Vous pouvez configurer cette option dans Visual Studio à partir de la page de génération dans « Propriétés » (C#) ou Compiler -&gt; Avancé dans « Mon projet » (VB). Recherchez une case à cocher indiquant « Compiler avec la chaîne d’outils .NET Native ».
 
 Bien entendu, vous devez obtenir des évaluations représentatives de ce que l’utilisateur final constatera. Par conséquent, si vous n’êtes pas certain de compiler votre application en code natif sur l’ordinateur de développement, vous pouvez exécuter l’outil Native Image Generator (Ngen.exe) pour précompiler votre application avant d’évaluer son temps de démarrage.
 

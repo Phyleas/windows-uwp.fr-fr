@@ -1,6 +1,6 @@
 ---
-Description: Identifiez les périphériques de saisie connectés à un appareil de plateforme Windows universelle (UWP), ainsi que leurs fonctionnalités et attributs.
-title: Identifier des appareils d’entrée
+Description: Identifiez les périphériques d’entrée connectés à un appareil de plateforme Windows universelle (UWP), ainsi que leurs fonctionnalités et attributs.
+title: Identifier les périphériques d’entrée
 ms.assetid: B2E93FBF-C508-44D9-BA46-ECFDAA8746F4
 label: Identify input devices
 template: detail.hbs
@@ -15,10 +15,10 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74257892"
 ---
-# <a name="identify-input-devices"></a>Identifier des appareils d’entrée
+# <a name="identify-input-devices"></a>Identifier les périphériques d’entrée
 
 
-Identifiez les périphériques de saisie connectés à un appareil de plateforme Windows universelle (UWP), ainsi que leurs fonctionnalités et attributs.
+Identifiez les périphériques d’entrée connectés à un appareil de plateforme Windows universelle (UWP), ainsi que leurs fonctionnalités et attributs.
 
 > **API importants** : [**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input), [**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Core), [**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
 
@@ -174,7 +174,7 @@ private void GetPointerDevices()
     }
 ```
 
-## <a name="related-articles"></a>Articles connexes
+## <a name="related-articles"></a>Articles associés
 
 
 **Exemples**

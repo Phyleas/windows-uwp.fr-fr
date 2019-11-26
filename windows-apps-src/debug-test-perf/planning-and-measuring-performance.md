@@ -27,18 +27,18 @@ D’autres facteurs, tels que la mémoire, ont moins d’impact sur l’expérie
 
 Il est préférable de définir un objectif initial et de le modifier ultérieurement, plutôt que de ne pas avoir d’objectif du tout. Les objectifs de performances de votre application doivent être précis et mesurables, et respecter trois grands critères : le temps nécessaire aux utilisateurs, ou à l’application, pour effectuer les tâches (temps) ; la vitesse et la facilité avec lesquelles elle se redessine en réponse à l’interaction utilisateur (fluidité) ; et la conservation des ressources système, y compris la batterie (efficacité).
 
-## <a name="time"></a>Temps
+## <a name="time"></a>Durée
 
 Pensez à la durée acceptable (*classes d’interaction*) nécessaire pour que les utilisateurs effectuent leurs tâches dans votre application. Pour chaque classe d’interaction, attribuez une étiquette et définissez la perception de l’utilisateur ainsi que les durées idéales et maximum. Voici quelques suggestions.
 
-| Étiquette de classe d’interaction | Perception de l’utilisateur                 | Durée idéale            | Durée maximum          | Exemples                                                                     |
+| Étiquette de classe d’interaction | Perception de l’utilisateur                 | Durée idéale            | Maximale          | Exemples                                                                     |
 |-------------------------|---------------------------------|------------------|------------------|------------------------------------------------------------------------------|
 | Rapide                    | Délai presque imperceptible      | 100 millisecondes | 200 millisecondes | Afficher la barre de l’application ; appuyer sur un bouton (première réponse)                        |
 | Typique                 | Rapide, mais pas très rapide             | 300 millisecondes | 500 millisecondes | Redimensionner ; zoom sémantique                                                        |
 | Réactivité              | Pas rapide, mais semble réactive | 500 millisecondes | 1 seconde         | Accéder à une autre page ; relancer l’application à partir d’un état interrompu          |
-| Lancement                  | Expérience compétitive          | 1 seconde         | 3 secondes        | Lancer l’application pour la première fois ou après un arrêt |
+| Launch                  | Expérience compétitive          | 1 seconde         | 3 secondes        | Lancer l’application pour la première fois ou après un arrêt |
 | Continu              | Ne semble plus répondre      | 500 millisecondes | 5 secondes        | Télécharger un fichier d’Internet                                            |
-| Captif                 | Long ; l’utilisateur peut décider de quitter    | 500 millisecondes | 10 secondes       | Installer plusieurs applications à partir du Store                                         |
+| Captif                 | Long ; l’utilisateur peut décider de quitter    | 500 millisecondes | 10 secondes       | Installer plusieurs applications à partir du Store                                         |
 
  
 

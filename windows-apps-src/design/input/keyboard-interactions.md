@@ -20,7 +20,7 @@ ms.locfileid: "74258360"
 ---
 # <a name="keyboard-interactions"></a>Interactions avec le clavier
 
-![image Hero du clavier](images/keyboard/keyboard-hero.jpg)
+![image héros du clavier](images/keyboard/keyboard-hero.jpg)
 
 Apprenez à concevoir et optimiser vos applications UWP afin qu’elles offrent la meilleure expérience possible pour les experts en utilisation du clavier comme pour les utilisateurs atteints de handicaps ou présentant d’autres exigences d’accessibilité.
 
@@ -123,7 +123,7 @@ Pour les applications UWP, le focus initial est défini sur l’élément avec l
 
 #### <a name="set-initial-focus-on-the-most-logical-element"></a>Définissez le focus initial sur l’élément le plus logique
 
-Définissez le focus initial sur l’élément d’interface utilisateur correspondant à la première action, ou à l’action principale, que les utilisateurs sont susceptibles d’entreprendre lors du lancement de votre application ou pour accéder à une page. Certains exemples comprennent notamment :
+Définissez le focus initial sur l’élément d’interface utilisateur correspondant à la première action, ou à l’action principale, que les utilisateurs sont susceptibles d’entreprendre lors du lancement de votre application ou pour accéder à une page. Voici quelques exemples :
 -   Une application photographique dans laquelle le focus est défini sur le premier élément d’une galerie
 -   Une application de musique dans laquelle le focus est défini sur le bouton lecture
 
@@ -142,7 +142,7 @@ La navigation au clavier est généralement prise en charge via les touches de t
 Par défaut, les contrôles UWP suivent ces comportements de base du clavier :
 -   **Les touches de tabulation** donnent accès aux contrôles exploitables/actifs dans l’ordre de tabulation.
 -   **Maj + Tab** permet d’accéder aux contrôles dans l’ordre inverse de la tabulation. Si l’utilisateur accède au contrôle à l’aide d’une touche de direction, le focus est défini sur la dernière valeur connue à l’intérieur du contrôle.
--   **Les touches de direction** exploitent la « navigation interne » spécifique au contrôle lorsque l’utilisateur accède à ce mode, les touches de direction ne permettent pas d’accéder à l’extérieur d’un contrôle. Certains exemples comprennent notamment :
+-   **Les touches de direction** exploitent la « navigation interne » spécifique au contrôle lorsque l’utilisateur accède à ce mode, les touches de direction ne permettent pas d’accéder à l’extérieur d’un contrôle. Voici quelques exemples :
     -   Touche flèche haut/bas déplace le focus dans `ListView` et `MenuFlyout`
     -   Modifiez les valeurs actuellement sélectionnées pour `Slider` et `RatingsControl`
     -   Déplacer le signe insertion à l’intérieur d' `TextBox`
@@ -239,7 +239,7 @@ Les raccourcis clavier peuvent faciliter l’utilisation de votre application en
 
 Outre la prise en charge de la navigation et de l’activation du clavier dans votre application, il est également conseillé de fournir des raccourcis pour les fonctionnalités de votre application. La navigation par onglets constitue un bon niveau de prise en charge du clavier, mais avec une interface utilisateur plus complexe, vous souhaiterez peut-être également ajouter la prise en charge des touches de raccourci. 
 
-Un raccourci est une combinaison de touches qui améliore la productivité en fournissant à l’utilisateur un moyen efficace d’accéder aux fonctionnalités de l’application. Il existe deux types de raccourcis :
+Un raccourci est une combinaison de touches qui améliore la productivité en fournissant à l’utilisateur un moyen efficace d’accéder aux fonctionnalités de l’application. Il existe deux types de raccourcis :
 -   Les [accélérateurs](#accelerators) sont des raccourcis qui appellent une commande d’application. Votre application peut ou non fournir une interface utilisateur spécifique qui correspond à la commande. Les accélérateurs se composent généralement de la touche Ctrl plus une touche lettre.
 -   Les [clés d’accès](#access-keys) sont des raccourcis qui définissent le focus sur une interface utilisateur spécifique dans votre application. Les clés d’accès habituelles se composent de la touche Alt et d’une touche lettre.
 
@@ -282,13 +282,13 @@ Le tableau suivant est un petit exemple de raccourcis clavier fréquemment utili
 |--------------------------------------|--------------------------------------------------|
 | Tout sélectionner                           | Ctrl+A                                           |
 | Sélection continue                  | Maj+touche de direction                                  |
-| Enregistrer                                 | Ctrl+S                                           |
+| Save                                 | Ctrl+S                                           |
 | Rechercher                                 | Ctrl+F                                           |
-| Print                                | Ctrl+P                                           |
+| Imprimer                                | Ctrl+P                                           |
 | Copier                                 | Ctrl+C                                           |
-| Cut                                  | Ctrl+X                                           |
+| Couper                                  | Ctrl+X                                           |
 | Coller                                | Ctrl+V                                           |
-| Undo                                 | Ctrl+Z                                           |
+| Annuler                                 | Ctrl+Z                                           |
 | Onglet suivant                             | Ctrl+Tab                                         |
 | Fermer l’onglet                            | Ctrl+F4 ou Ctrl+W                                |
 | Zoom sémantique                        | Ctrl++ ou Ctrl+-                                 |
@@ -345,7 +345,7 @@ Un exemple de comportement par défaut d’UWP dans ce cas est le `ContentDialog
 
 Dans les cas où votre agencement suit un modèle bien connu d’interface utilisateur pour les groupes de contrôle, l’affectation au groupe d’un taquet de tabulation unique peut améliorer l’efficacité de la navigation pour les utilisateurs.
 
-Par exemple :
+Par exemple :
 -   `RadioButtons`
 -   Plusieurs `ListViews` ressemblant à et se comportent comme un seul `ListView`
 -   Toute interface utilisateur conçue pour ressembler et se comporter comme une grille de vignettes (par exemple, les vignettes du menu Démarrer)
@@ -505,7 +505,7 @@ Nous vous recommandons d’émuler ces mêmes comportements dans vos contrôles 
 
 Testez votre application avec tous les périphériques d’entrée pris en charge pour garantir l’utilisation cohérente et intuitive des éléments d’interface utilisateur et vous assurer qu’aucun élément inattendu n’interfère avec l’ordre de tabulation souhaité.
 
-## <a name="related-articles"></a>Articles connexes
+## <a name="related-articles"></a>Articles associés
 * [Événements de clavier](keyboard-events.md)
 * [Identification des périphériques d’entrée](identify-input-devices.md)
 * [Répondre à la présence du clavier tactile](respond-to-the-presence-of-the-touch-keyboard.md)
@@ -527,7 +527,7 @@ Le clavier logiciel est un clavier qui s’affiche sur l’écran et que l’uti
 
 Selon l’appareil, le clavier logiciel s’affiche quand un champ de texte ou un autre contrôle de texte modifiable reçoit le focus, ou lorsque l’utilisateur l’active manuellement via le **Centre de notifications** :
 
-![icône du clavier tactile dans le Centre de notification](images/keyboard/touch-keyboard-notificationcenter.png)
+![icône du clavier tactile dans le Centre de notifications](images/keyboard/touch-keyboard-notificationcenter.png)
 
 Si votre application définit le focus par programme sur un contrôle d’entrée de texte, le clavier tactile n’est pas appelé. Cela permet d’éliminer les comportements inattendus non provoqués directement par l’utilisateur. Toutefois, le clavier est automatiquement masqué lorsque le focus est déplacé par programme vers un contrôle autre que d’entrée de texte.
 
@@ -535,26 +535,26 @@ En général, le clavier tactile ne disparaît pas automatiquement tant que l’
 
 Voici la liste des contrôles autres que d’édition qui peuvent recevoir le focus pendant une session d’entrée de texte à l’aide du clavier tactile sans que cela ait pour effet de masquer celui-ci. Au lieu de perturber inutilement l’interface utilisateur au risque de désorienter l’utilisateur, le clavier tactile reste bien en vue, car l’utilisateur va vraisemblablement passer des contrôles à l’entrée de texte à l’aide du clavier tactile.
 
--   Check box
--   Combo box
+-   Case à cocher
+-   Zone de liste modifiable
 -   Radio button
--   Scroll bar
--   Arborescence
+-   Barre de défilement
+-   Tree
 -   Tree item
 -   Menu
 -   Menu bar
 -   Menu item
--   Barre d’outils
+-   ToolBar
 -   List
 -   List item
 
 Voici quelques exemples des différents modes disponibles pour le clavier tactile. La première image représente la disposition classique, la seconde représente la disposition ergonomique (qui n’est pas forcément disponible dans toutes les langues).
 
-![clavier tactile en mode de disposition classique](images/keyboard/default.png)
+![clavier tactile en mode disposition classique](images/keyboard/default.png)
 
 ***Clavier tactile en mode de disposition par défaut***
 
-![clavier tactile en mode de disposition étendue](images/keyboard/extendedview.png)
+![clavier tactile en mode disposition étendue](images/keyboard/extendedview.png)
 
 ***Clavier tactile en mode de disposition développé***
 
@@ -575,6 +575,6 @@ Il peut être activé depuis la page Clavier dans Paramètres &gt; Options d’e
 
 Consultez la [page du clavier visuel](https://support.microsoft.com/help/10762/windows-use-on-screen-keyboard) pour plus d’informations sur le clavier visuel.
 
-## <a name="related-articles"></a>Articles connexes
+## <a name="related-articles"></a>Articles associés
 
 - [Accessibilité du clavier](../accessibility/keyboard-accessibility.md)

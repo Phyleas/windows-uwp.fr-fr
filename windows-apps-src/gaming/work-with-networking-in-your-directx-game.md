@@ -38,7 +38,7 @@ Dans le cas des appareils mobiles, il est important de surveiller les ressources
 
 L’isolement réseau fait partie du modèle de sécurité des applications utilisé par Windows. Windows détecte activement les limites du réseau et applique les restrictions d’accès pour l’isolement réseau. Les applications doivent déclarer les fonctionnalités d’isolement réseau afin de définir l’étendue de l’accès au réseau. Sans déclarer ces fonctionnalités, votre application ne peut pas avoir accès aux ressources réseau. Pour plus d’informations sur la façon dont Windows applique l’isolement réseau pour les applications, voir [Comment configurer les fonctionnalités d’isolement réseau](https://docs.microsoft.com/previous-versions/windows/apps/hh770532(v=win.10)).
 
-## <a name="design-considerations"></a>Considérations relatives à la conception
+## <a name="design-considerations"></a>Remarques relatives à la conception
 
 
 Vous pouvez utiliser un éventail d’API de réseau dans les jeux DirectX. Il est donc important de choisir la bonne API. Windows prend en charge une grande variété d’API de réseau que votre application peut utiliser pour communiquer avec d’autres ordinateurs et appareils sur Internet ou sur des réseaux privés. Vous devez donc commencer par déterminer les fonctionnalités réseau dont votre application a besoin.

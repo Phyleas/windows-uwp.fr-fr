@@ -132,7 +132,7 @@ Si vous utilisez un fichier d’exemple de données JSON au lieu d’un fichier 
     d:Source="{d:DesignData /SampleData/RecordingsSampleData.json, Type=local:Recordings}"
 ```
 
-Jusqu’ici, nous avons utilisé **d:DesignData** pour charger les exemples de données au moment de la conception à partir d’un fichier XAML ou JSON. Vous pouvez également utiliser l’extension de balisage **d:DesignInstance**, qui indique que la source au moment de la conception repose sur la classe définie par la propriété **Type**. Voici un exemple :
+Jusqu’ici, nous avons utilisé **d:DesignData** pour charger les exemples de données au moment de la conception à partir d’un fichier XAML ou JSON. Vous pouvez également utiliser l’extension de balisage **d:DesignInstance**, qui indique que la source au moment de la conception repose sur la classe définie par la propriété **Type**. En voici un exemple.
 
 ``` xaml
     <CollectionViewSource x:Name="RecordingsCollection" Source="{Binding Recordings}"

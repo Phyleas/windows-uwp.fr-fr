@@ -151,7 +151,7 @@ Les services de texte doivent disposer du texte approprié pour proposer des fon
 
 Il peut arriver que le champ [**Range**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexttextrequest.range) dans [**CoreTextTextRequest**](https://docs.microsoft.com/uwp/api/Windows.UI.Text.Core.CoreTextTextRequest) indique une plage que votre système de contrôle d’édition ne peut pas prendre en charge telle quelle. C’est par exemple le cas si le **Range** est supérieur à la taille du contrôle d’édition au moment de l’événement [**TextRequested**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexteditcontext.textrequested) ou si la fin du **Range** est hors limites. Dans ces cas, vous devez indiquer la plage adéquate, qui correspond généralement à un sous-ensemble de la plage requise.
 
-## <a name="related-articles"></a>Articles connexes
+## <a name="related-articles"></a>Articles associés
 
 **Exemples**
 * **Exemples d’archives** du [contrôle d’édition personnalisé](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomEditControl)  

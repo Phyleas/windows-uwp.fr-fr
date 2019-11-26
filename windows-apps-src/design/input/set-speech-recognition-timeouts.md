@@ -42,7 +42,7 @@ recognizer.Timeouts.BabbleTimeout = TimeSpan.FromSeconds(4.0);
 recognizer.Timeouts.EndSilenceTimeout = TimeSpan.FromSeconds(1.2);
 ```
 
-## <a name="related-articles"></a>Articles connexes
+## <a name="related-articles"></a>Articles associés
 
 
 * [Interactions vocales](speech-interactions.md)

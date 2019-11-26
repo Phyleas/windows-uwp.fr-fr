@@ -82,7 +82,7 @@ La dernière étape, décrite dans la section suivante, consiste à identifier l
 
 ## <a name="high-contrast-colors"></a>Couleurs à contraste élevé
 
-La page *Paramètres &gt; Options d’ergonomie &gt; Contraste élevé* comporte 4 thèmes à contraste élevé par défaut. 
+La page *Paramètres > Options d’ergonomie > Contraste élevé* comporte 4 thèmes à contraste élevé par défaut. 
 
 
 ![Paramètres de contraste élevé](images/high-contrast-settings.png)  
@@ -95,7 +95,7 @@ La page *Paramètres &gt; Options d’ergonomie &gt; Contraste élevé* comporte
 
 Chaque ressource **SystemColor*Color** est une variable qui met automatiquement à jour la couleur lorsque l’utilisateur bascule entre les thèmes à contraste élevé. Vous trouverez ci-après des recommandations vous indiquant quand et où utiliser chaque ressource.
 
-Resource | Utilisation |
+Ressource | Utilisation |
 |--------|-------|
 **SystemColorWindowTextColor** | Copie de texte de corps, titres, listes ; tout texte ne pouvant faire l’objet d’aucune interaction |
 | **SystemColorHotlightColor** | Liens hypertexte |

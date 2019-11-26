@@ -20,7 +20,7 @@ ms.locfileid: "74258310"
 Image ![de la surface d’exposition avec surface Studio](images/windows-wheel/dial-pen-studio-600px.png)  
 *Surface Dial avec Surface Studio et stylet* (disponible à l’achat auprès de la [Boutique Microsoft](https://www.microsoft.com/store/d/Surface-Dial/925R551SKTGN?icid=Surface_Accessories_ModB_Surface_Dial_103116)).
 
-## <a name="overview"></a>Vue d’ensemble
+## <a name="overview"></a>Présentation
 
 Les appareils Windows wheel, tels que Surface Dial, sont une nouvelle catégorie d’appareils d’entrée permettant un éventail d’expériences d’interaction uniques et attrayantes pour Windows et les applications Windows. 
 
@@ -318,14 +318,14 @@ Les outils et commandes intégrés au menu Surface Dial suivent ces recommandati
 
 |   |   |   |
 | --- | --- | --- |
-| Left (Gauche)<br/>Up (Haut)<br/>Vers l’extérieur | ![Image de Surface Dial](images/windows-wheel/surface-dial-rotate.png) | Droit<br/>Vers le bas<br/>Vers l’intérieur |
+| Left<br/>Up (Haut)<br/>Sortie | ![Image de Surface Dial](images/windows-wheel/surface-dial-rotate.png) | Right<br/>Down<br/>Entrée |
 |   |   |   |
 
 | Direction conceptuelle | Mappage sur Surface Dial | Rotation dans le sens des aiguilles d’une montre | Rotation dans le sens inverse des aiguilles d’une montre |
 | --- | --- | --- | --- |
-| Horizontale | Mappage gauche et droit basé sur le haut de Surface Dial | Droit | Left (Gauche) |
-| Verticale | Mappage supérieur et inférieur basé sur le côté gauche de Surface Dial | Vers le bas | Up (Haut) |
-| Axe Z | Vers l’intérieur (plus près), mappage sur le haut/la droite<br/>Vers l’extérieur (plus loin), mappage sur le bas/la gauche | Vers l’intérieur | Vers l’extérieur |
+| Horizontale | Mappage gauche et droit basé sur le haut de Surface Dial | Right | Left |
+| Verticale | Mappage supérieur et inférieur basé sur le côté gauche de Surface Dial | Down | Up (Haut) |
+| Axe Z | Vers l’intérieur (plus près), mappage sur le haut/la droite<br/>Vers l’extérieur (plus loin), mappage sur le bas/la gauche | Entrée | Sortie |
 
 #### <a name="developer-guidance"></a>Conseils aux développeurs
 
@@ -366,7 +366,7 @@ private void MyController_ButtonClicked(RadialController sender,
 }
 ```
 
-### <a name="click"></a>Cliquer
+### <a name="click"></a>Click
 
 Cliquer sur Surface Dial équivaut à cliquer sur le bouton gauche de la souris (l’état de rotation de l’appareil ne produit aucun effet sur cette action).
 
@@ -642,15 +642,15 @@ Lorsque nous exécutons l’application, nous utilisons Surface Dial pour intera
 
 Cette rubrique fournit une vue d’ensemble de l’appareil d’entrée Surface Dial, assortie de recommandations en matière d’expérience utilisateur et de conseils aux développeurs sur la manière de personnaliser l’expérience utilisateur pour des scénarios hors écran et sur l’écran, lors de l’utilisation avec Surface Studio.
 
-## <a name="feedback"></a>Commentaires
+## <a name="feedback"></a>Retour d’expérience
 
 Veuillez envoyer vos questions, suggestions et commentaires à l'adresse [radialcontroller@microsoft.com](mailto:radialcontroller@microsoft.com).
 
-## <a name="related-articles"></a>Articles connexes
+## <a name="related-articles"></a>Articles associés
 
 [Didacticiel : prendre en charge la numérotation en surface (et les autres appareils volants) dans votre application UWP](radialcontroller-walkthrough.md)
 
-### <a name="api-reference"></a>Informations de référence sur les API
+### <a name="api-reference"></a>Référence API
 
 - [**RadialController** , classe](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialController)
 - [**RadialControllerButtonClickedEventArgs** , classe](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerButtonClickedEventArgs)

@@ -1,6 +1,6 @@
 ---
 Description: Découvrez comment envoyer des notifications de l’espace partenaires à votre application pour inciter des groupes de clients à prendre une mesure, comme évaluer une application ou acheter un module complémentaire.
-title: Envoyer des notifications push ciblées aux clients de votre application
+title: Envoyer des notifications Push ciblées aux clients de votre application
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, notifications ciblées, notifications push, toast, vignette
@@ -70,7 +70,7 @@ Suivez ces étapes pour créer une notification dans l’espace partenaires et l
     * **Ajouter une demande d’image** (notification de type toast interactif). Pour plus d’informations, voir [addImageQuery](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual#attributes-and-elements).
     * **Éléments visuels**. Une image, une vidéo ou un son. Pour plus d’informations, voir [visual](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual).
     * **Entrée**/**Action**/**Sélection** (notification de type toast interactif). Vous permet de laisser les utilisateurs interagir avec la notification. Pour plus d’informations, voir [Notifications toast adaptatives et interactives](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md).
-    * **Liaison** (notification de type vignette interactive). Le modèle de toast. Pour plus d’informations, voir [binding](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-binding).
+    * **Liaison** (notification de type vignette interactive). Le modèle de toast. Pour plus d’informations, voir [liaison](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-binding).
 
     > [!TIP]
     > Essayez d’utiliser l’application [Notifications Visualizer](https://www.microsoft.com/store/apps/9nblggh5xsl1) pour concevoir et tester vos notifications de type vignettes adaptatives et toasts interactifs.
@@ -91,7 +91,7 @@ Vous pouvez choisir parmi différents modèles de notification.
 
     ![Zone de lancement de la notification toast de commentaire](images/push-notifications-feedback-toast-launch-box.png)
 
--   **Promouvoir croisée (Toast).** Une notification toast visant à promouvoir une autre application de votre choix. Lorsque le client sélectionne la notification, la description de l’application dans la boutique s’affiche.
+-   **Promouvoir croisée (Toast).** Une notification toast visant à promouvoir une autre application de votre choix. Lorsque le client sélectionne la notification, la description de l’application dans le Store s’affiche.
     > [!NOTE]
     > Si vous choisissez ce type de modèle, dans la zone **Lancer**, n’oubliez pas de remplacer l’espace réservé **{ID du produit à promouvoir ici}** par l’ID Store réel de l’élément que vous voulez promouvoir. Vous trouverez l’ID sur la page [Identité des applications](view-app-identity-details.md) (**Gestion des applications** > **Identité des applications**).
 

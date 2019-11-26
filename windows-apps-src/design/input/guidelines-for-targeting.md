@@ -75,7 +75,7 @@ Vous pouvez modifier ces recommandations en matière de tailles de cibles en fon
 - Position du doigt.
 - Visualisations tactiles.
 
-## <a name="related-articles"></a>Articles connexes
+## <a name="related-articles"></a>Articles associés
 
 - [Présentation de la conception des applications UWP](../basics/design-and-ui-intro.md)
 - [Taille de contrôle et densité](../style/spacing.md)

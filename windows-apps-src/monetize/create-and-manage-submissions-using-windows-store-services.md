@@ -15,7 +15,7 @@ ms.locfileid: "74260314"
 ---
 # <a name="create-and-manage-submissions"></a>Créer et gérer des soumissions
 
-Utilisez l' *API de soumission Microsoft Store* pour interroger par programme et créer des soumissions pour les applications, les modules complémentaires et les vols de packages pour le compte de l’espace partenaires de votre organisation ou de votre organisation. Cette API est utile si votre compte gère beaucoup d’applications ou d’extensions et que vous voulez automatiser et optimiser le processus de soumission de ces ressources. Cette API utilise Azure Active Directory (Azure AD) pour authentifier les appels en provenance de votre application ou service.
+Utilisez l' *API de soumission Microsoft Store* pour interroger par programme et créer des soumissions pour les applications, les modules complémentaires et les vols de packages pour le compte de l’espace partenaires de votre organisation ou de votre organisation. Cette API est utile si votre compte gère beaucoup d’applications ou d’extensions, et que vous voulez automatiser et optimiser le processus de soumission de ces ressources. Cette API utilise Azure Active Directory (Azure AD) pour authentifier les appels en provenance de votre application ou service.
 
 Les étapes suivantes décrivent le processus complet d’utilisation de l’API de soumission au Microsoft Store :
 
@@ -102,7 +102,7 @@ Pour voir des exemples d’utilisation de code C#, Java ou Python pour obtenir u
 
 ## <a name="step-3-use-the-microsoft-store-submission-api"></a>Étape 3 : Utiliser l’API de soumission au Microsoft Store
 
-À partir du moment où vous disposez d’un jeton d’accès Azure AD, vous pouvez appeler des méthodes dans l’API de soumission au Microsoft Store. L’API propose diverses méthodes qui sont regroupées dans des scénarios pour applications, extensions et versions d’essai de package. Pour créer ou mettre à jour des soumissions, il convient généralement d’appeler plusieurs méthodes de l’API de soumission au Microsoft Store dans un ordre spécifique. Pour plus d’informations sur chaque scénario et sur la syntaxe de chacune de ces méthodes, voir les articles indiqués dans le tableau suivant.
+À partir du moment où vous disposez d’un jeton d’accès Azure AD, vous pouvez appeler des méthodes dans l’API de soumission au Microsoft Store. L’API propose diverses méthodes qui sont regroupées dans des scénarios pour apps, extensions et versions d’essai de package. Pour créer ou mettre à jour des soumissions, il convient généralement d’appeler plusieurs méthodes de l’API de soumission au Microsoft Store dans un ordre spécifique. Pour plus d’informations sur chaque scénario et sur la syntaxe de chacune de ces méthodes, voir les articles indiqués dans le tableau suivant.
 
 > [!NOTE]
 > Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour appeler des méthodes dans l’API de soumission au Microsoft Store. Passé ce délai, il expire.
@@ -111,7 +111,7 @@ Pour voir des exemples d’utilisation de code C#, Java ou Python pour obtenir u
 |---------------|----------------------------------------------------------------------|
 | Applications |  Récupérez les données de toutes les applications qui sont inscrites auprès de votre compte espace partenaires et créez des soumissions pour les applications. Pour plus d’informations sur ces méthodes, voir les articles suivants : <ul><li>[Récupérer les données d’application](get-app-data.md)</li><li>[Gérer les envois d’application](manage-app-submissions.md)</li></ul> |
 | Extensions | Obtient, crée ou supprime des extensions pour vos applications, puis obtient, crée ou supprime des soumissions pour les extensions. Pour plus d’informations sur ces méthodes, voir les articles suivants : <ul><li>[Gérer les modules complémentaires](manage-add-ons.md)</li><li>[Gérer les soumissions du module complémentaire](manage-add-on-submissions.md)</li></ul> |
-| Versions d’évaluation de package | Obtient, crée ou supprime des versions d’évaluation de package pour vos applications, puis obtient, crée ou supprime des soumissions pour les versions d’évaluation de package. Pour plus d’informations sur ces méthodes, voir les articles suivants : <ul><li>[Gérer les vols de packages](manage-flights.md)</li><li>[Gérer les envois de vols de packages](manage-flight-submissions.md)</li></ul> |
+| Versions d’évaluation des packages | Obtient, crée ou supprime des versions d’évaluation de package pour vos applications, puis obtient, crée ou supprime des soumissions pour les versions d’évaluation de package. Pour plus d’informations sur ces méthodes, voir les articles suivants : <ul><li>[Gérer les vols de packages](manage-flights.md)</li><li>[Gérer les envois de vols de packages](manage-flight-submissions.md)</li></ul> |
 
 <span id="code-samples"/>
 
@@ -134,9 +134,9 @@ Pour plus d’informations, consultez notre [page StoreBroker sur GitHub](https:
 
 ## <a name="troubleshooting"></a>Résolution des problèmes
 
-| Problème      | Résolution                                          |
+| Problème      | Résolution :                                          |
 |---------------|---------------------------------------------|
-| Après avoir appelé l’API de soumission au Microsoft Store à partir de PowerShell, les données de réponse destinées à l’API sont altérées si vous les convertissez du format JSON en objet PowerShell à l’aide de l’applet de commande [ConvertFrom Json](https://docs.microsoft.com/powershell/module/5.1/microsoft.powershell.utility/ConvertFrom-Json) et les rétablissez ensuite au format JSON à l’aide de l’applet de commande [ConvertTo Json](https://docs.microsoft.com/powershell/module/5.1/microsoft.powershell.utility/ConvertTo-Json). |  Par défaut, le paramètre *-Depth* de l’applet de commande [ConvertTo Json](https://docs.microsoft.com/powershell/module/5.1/microsoft.powershell.utility/ConvertTo-Json) est défini à 2 niveaux d’objets, ce qui est trop superficiel pour la plupart des objets JSON retournées par l’API de soumission au Microsoft Store. Quand vous appelez l’applet de commande [ConvertTo Json](https://docs.microsoft.com/powershell/module/5.1/microsoft.powershell.utility/ConvertTo-Json), attribuez au paramètre *-Depth* une valeur supérieure, par exemple 20. |
+| Après avoir appelé l’API de soumission au Microsoft Store à partir de PowerShell, les données de réponse destinées à l’API sont altérées si vous les convertissez du format JSON en objet PowerShell à l’aide de l’applet de commande [ConvertFrom Json](https://docs.microsoft.com/powershell/module/5.1/microsoft.powershell.utility/ConvertFrom-Json) et les rétablissez ensuite au format JSON à l’aide de l’applet de commande [ConvertTo Json](https://docs.microsoft.com/powershell/module/5.1/microsoft.powershell.utility/ConvertTo-Json). |  Par défaut, le paramètre *-Depth* de l’applet de commande [ConvertTo Json](https://docs.microsoft.com/powershell/module/5.1/microsoft.powershell.utility/ConvertTo-Json) est défini à 2 niveaux d’objets, ce qui est trop superficiel pour la plupart des objets JSON retournées par l’API de soumission au Microsoft Store. Quand vous appelez l’applet de commande [ConvertTo-Json](https://docs.microsoft.com/powershell/module/5.1/microsoft.powershell.utility/ConvertTo-Json), attribuez au paramètre *-Depth* une valeur plus importante, par exemple 20. |
 
 ## <a name="additional-help"></a>Aide supplémentaire
 

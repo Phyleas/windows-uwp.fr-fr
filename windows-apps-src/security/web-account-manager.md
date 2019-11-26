@@ -398,7 +398,7 @@ Ne développez pas trop le texte de l’en-tête ; il doit rester bref et conci
 
 Vous pouvez ajouter des commandes personnalisées à la classe AccountsSettingsPane. Elles apparaissent sous forme de liens sous vos WebAccountProviders pris en charge. Les commandes personnalisées sont parfaites pour les tâches simples sur les comptes d’utilisateurs, telles que l’affichage d’une politique de confidentialité ou l’ouverture d’une page de support pour les utilisateurs rencontrant des difficultés. 
 
-Voici un exemple : 
+Voici un exemple : 
 
 ```csharp
 private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCommandsRequestedEventArgs e)
@@ -420,7 +420,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 
 En théorie, vous pouvez utiliser les commandes de paramètres pour tout. Toutefois, nous vous recommandons d’en limiter l’utilisation aux scénarios intuitifs liés aux comptes, tels que ceux décrits ci-dessus. 
 
-## <a name="see-also"></a>Voir également
+## <a name="see-also"></a>Articles associés
 
 [Espace de noms Windows. Security. Authentication. Web. Core](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core)
 

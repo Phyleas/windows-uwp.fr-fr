@@ -1,6 +1,6 @@
 ---
 ms.assetid: 60fc48dd-91a9-4dd6-a116-9292a7c1f3be
-title: Vue d’ensemble de Windows Device Portal
+title: Vue d’ensemble du portail d’appareil Windows
 description: Découvrez comment Windows Device Portal vous permet de configurer et de gérer à distance votre appareil par le biais d’une connexion réseau ou USB.
 ms.date: 04/09/2019
 ms.topic: article
@@ -13,7 +13,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74254760"
 ---
-# <a name="windows-device-portal-overview"></a>Vue d’ensemble de Windows Device Portal
+# <a name="windows-device-portal-overview"></a>Vue d’ensemble du portail d’appareil Windows
 
 Windows Device Portal vous permet de configurer et de gérer à distance votre appareil par le biais d’une connexion réseau ou USB. Il fournit également des outils de diagnostic avancés pour vous aider à dépanner et à afficher les performances en temps réel de votre appareil Windows.
 
@@ -23,7 +23,7 @@ Le portail de périphériques Windows est disponible sur chaque famille d’appa
 
 La fonctionnalité du portail de périphériques Windows est implémentée avec les [API REST](device-portal-api-core.md) que vous pouvez utiliser directement pour accéder aux données et contrôler votre appareil par programme.
 
-## <a name="setup"></a>Configurer
+## <a name="setup"></a>Installation
 
 Chaque appareil possède des instructions spécifiques concernant la connexion à Device Portal. Toutefois, chacun nécessite d’effectuer les étapes générales suivantes.
 
@@ -37,9 +37,9 @@ Famille d’appareils | Activé par défaut ? | HTTP | HTTPS | USB
 --------------|----------------|------|-------|----
 HoloLens | Oui, en mode de développement | 80 (par défaut) | 443 (par défaut) | http://127.0.0.1:10080
 IoT | Oui, en mode de développement | 8080 | Activer via la clé de registre | N/A
-Xbox | Activer dans le mode de développement | Désactivée | 11443 | N/A
+Xbox | Activer dans le mode de développement | Désactivé | 11443 | N/A
 Bureau| Activer dans le mode de développement | 50080\* | 50043\* | N/A
-Téléphone | Activer dans le mode de développement | 80| 443 | http://127.0.0.1:10080
+Phone | Activer dans le mode de développement | 80| 443 | http://127.0.0.1:10080
 
 \* ce n’est pas toujours le cas, en tant que portail des appareils sur les ports de revendications de bureau dans la plage éphémère (> 50000), afin d’éviter les collisions avec les revendications de port existantes sur l’appareil. Pour plus d’informations, consultez la section [Paramètres de port](device-portal-desktop.md#registry-based-configuration-for-device-portal) pour le bureau.  
 
@@ -201,7 +201,7 @@ La page mise en réseau gère les connexions réseau sur l’appareil. À moins 
 
 Device Portal signale sa présence sur le réseau local à l’aide de DNS-SD. Toutes les instances Device Portal, quel que soit le type d’appareil, sont signalées sous « WDP._wdp._tcp.local ». Les enregistrements TXT relatifs à l’instance de service fournissent les éléments suivants :
 
-Touche | Type | Description
+Clé | Type | Description
 ----|------|-------------
 S | entier | Port sécurisé pour Device Portal. Si la valeur est égale à 0 (zéro), Device Portal ne détecte pas les connexions HTTPS.
 D | chaîne | Type d’appareil. Le format est « Windows. * », par exemple, Windows. Xbox ou Windows. Desktop

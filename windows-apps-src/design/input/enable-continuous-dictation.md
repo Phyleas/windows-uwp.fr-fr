@@ -263,7 +263,7 @@ if (speechRecognizer.State != SpeechRecognizerState.Idle)
 
  
 
-## <a name="related-articles"></a>Articles connexes
+## <a name="related-articles"></a>Articles associés
 
 
 * [Interactions vocales](speech-interactions.md)

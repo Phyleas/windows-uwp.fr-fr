@@ -131,7 +131,7 @@ Certains protocoles sans fil se comportent différemment selon qu’ils analysen
 
 | Comportement                                  | Impact                                                                                                                                  |
 |-------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
-| Même comportement en arrière-plan               | Aucune                                                                                                                                    |
+| Même comportement en arrière-plan               | Aucun                                                                                                                                    |
 | Seules les analyses passives sont possibles en arrière-plan | La détection d’appareils peut être plus longue pendant l’attente d’une analyse passive.                                                           |
 | Les analyses en arrière-plan ne sont pas prises en charge.            | Aucun appareil ne sera détecté par le [**DeviceWatcherTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceWatcherTrigger), et aucune mise à jour ne sera signalée. |
 

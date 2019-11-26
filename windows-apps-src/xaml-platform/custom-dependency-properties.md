@@ -22,11 +22,11 @@ ms.locfileid: "74259866"
 
 Nous expliquons ici comment définir et implémenter vos propres propriétés de dépendance pour une application Windows Runtime en C++, C# ou Visual Basic. Nous listons ici les raisons pour lesquelles les développeurs et les auteurs de composants peuvent souhaiter créer des propriétés de dépendance personnalisées. Nous décrivons les étapes d’implémentation de propriété de dépendance personnalisée et certaines meilleures pratiques susceptibles d’améliorer les performances, la simplicité d’utilisation ou la polyvalence de la propriété de dépendance.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Conditions préalables requises
 
 Nous supposons que vous avez lu la [vue d’ensemble des propriétés de dépendance](dependency-properties-overview.md) et que vous comprenez ce que sont les propriétés de dépendance du point de vue d’un consommateur de propriétés de dépendance existantes. Pour suivre les exemples de cette rubrique, vous devez également comprendre le langage XAML et savoir comment écrire une application Windows Runtime de base en C++, C# ou Visual Basic.
 
-## <a name="what-is-a-dependency-property"></a>Qu’est-ce qu’une propriété de dépendance ?
+## <a name="what-is-a-dependency-property"></a>Qu’est-ce qu’une propriété de dépendance ?
 
 Pour prendre en charge des styles, des liaison de données, des animations et des valeurs de propriété par défaut, vous devez mettre en œuvre une propriété de dépendance. Les valeurs de propriété de dépendance ne sont pas conservées en tant que champs sur la classe, mais sont stockées par l’infrastructure xaml. Elles sont référencées à l’aide d’une clé extraite lors de l’inscription de la propriété auprès du système de propriétés Windows Runtime en appelant la méthode [**DependencyProperty.Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register).   Les propriétés de dépendance peuvent être utilisées uniquement par les types dérivés de [**DependencyObject**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject). Toutefois, **DependencyObject** étant relativement haut dans la hiérarchie de classes, la plupart des classes destinées à la prise en charge de l’interface utilisateur et de la présentation peuvent prendre en charge des propriétés de dépendance. Pour plus d’informations sur les propriétés de dépendance et certains termes et conventions utilisés pour les décrire dans cette documentation, voir [Vue d’ensemble des propriétés de dépendance](dependency-properties-overview.md).
 
@@ -421,7 +421,7 @@ static void OnVisibilityValueChanged(DependencyObject^ d, DependencyPropertyChan
 }
 ```
 
-## <a name="best-practices"></a>Meilleures pratiques
+## <a name="best-practices"></a>Bonnes pratiques
 
 Lors de la définition de votre propriété de dépendance, veillez à respecter les recommandations suivantes.
 
@@ -441,7 +441,7 @@ Vous pouvez utiliser des constructeurs de classe pour définir des valeurs initi
 
 Avec les propriétés de dépendance de type collection, certains aspects supplémentaires liés à l’implémentation doivent être pris en compte.
 
-Les propriétés de dépendance de type collection sont relativement rares dans l’API Windows Runtime. Dans la plupart des cas, vous pouvez utiliser des collections dans lesquelles les éléments sont une sous-classe [**DependencyObject**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject), mais où la propriété de collection proprement dite est implémentée sous forme de propriété CLR ou C++ conventionnelle. Cela est dû au fait que les collections ne conviennent pas nécessairement à certains scénarios classiques où des propriétés de dépendance entrent en jeu. Par exemple :
+Les propriétés de dépendance de type collection sont relativement rares dans l’API Windows Runtime. Dans la plupart des cas, vous pouvez utiliser des collections dans lesquelles les éléments sont une sous-classe [**DependencyObject**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject), mais où la propriété de collection proprement dite est implémentée sous forme de propriété CLR ou C++ conventionnelle. Cela est dû au fait que les collections ne conviennent pas nécessairement à certains scénarios classiques où des propriétés de dépendance entrent en jeu. Par exemple :
 
 - Vous n’animez généralement pas une collection.
 - Vous ne préremplissez généralement pas les éléments d’une collection avec des styles ou un modèle.

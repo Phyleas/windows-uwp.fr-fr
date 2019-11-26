@@ -1,7 +1,7 @@
 ---
 Description: Décrit le concept des homologues pour UI Automation, et la manière dont vous pouvez fournir l’automatisation pour votre classe d’interface utilisateur.
 ms.assetid: AA8DA53B-FE6E-40AC-9F0A-CB09637C87B4
-title: Homologues d’automation personnalisés
+title: Homologues d’automatisation personnalisés
 label: Custom automation peers
 template: detail.hbs
 ms.date: 07/13/2018
@@ -15,7 +15,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74257764"
 ---
-# <a name="custom-automation-peers"></a>Homologues d’automation personnalisés  
+# <a name="custom-automation-peers"></a>Homologues d’automatisation personnalisés  
 
 Décrit le concept des homologues pour UI Automation, et la manière dont vous pouvez fournir l’automatisation pour votre classe d’interface utilisateur.
 
@@ -25,7 +25,7 @@ UI Automation permet de bénéficier non seulement d’applications d’accessib
 
 Il existe deux publics distincts d’utilisateurs de l’infrastructure UI Automation.
 
-* Les ***clients* UI Automation** appellent les API UI Automation pour se familiariser avec l’ensemble de l’interface utilisateur actuellement présentée à l’utilisateur. Par exemple, une technologie d’assistance telle qu’un lecteur d’écran fait office de client UI Automation. L’interface utilisateur se présente sous la forme d’une arborescence d’éléments d’automation liés les uns aux autres. Le client UI Automation peut s’intéresser à une seule application à la fois ou à l’arborescence tout entière. Le client UI Automation peut se servir des API UI Automation pour parcourir l’arborescence ou bien consulter ou modifier des informations dans les éléments d’automation.
+* Les ***clients* UI Automation** appellent les API UI Automation pour se familiariser avec l’ensemble de l’interface utilisateur actuellement présentée à l’utilisateur. Par exemple, une technologie d’assistance telle qu’un lecteur d’écran fait office de client UI Automation. L’interface utilisateur se présente sous la forme d’une arborescence d’éléments d’automation liés les uns aux autres. Le client UI Automation peut s’intéresser à une seule application à la fois ou à l’arborescence tout entière. Le client UI Automation peut se servir des API UI Automation pour parcourir l’arborescence et pour consulter ou modifier des informations dans les éléments Automation.
 * Les ***fournisseurs* UI Automation** apportent des informations à l’arborescence UI Automation en implémentant les API chargées d’exposer les éléments dans l’interface utilisateur qu’ils ont introduites dans le cadre de leur application. Lorsque vous créez un contrôle, vous devez à présent agir en tant que participant au scénario du fournisseur UI Automation. En tant que fournisseur, vous devez vous assurer que tous les clients UI Automation peuvent utiliser l’infrastructure UI Automation pour interagir avec votre contrôle à des fins à la fois d’accessibilité et de test.
 
 En règle générale, l’infrastructure UI Automation est dotée d’API parallèles : une API pour les clients UI Automation et une autre du même nom pour les fournisseurs UI Automation. Cette rubrique décrit, en grande partie, les API dédiées au fournisseur UI Automation, tout particulièrement les classes et interfaces qui permettent l’extensibilité du fournisseur dans cette infrastructure de l’interface utilisateur. Occasionnellement, nous citons les API UI Automation utilisées par les clients UI Automation pour offrir autre un point de vue, ou bien nous proposons une table de recherche qui met en corrélation les API des clients avec celles des fournisseurs. Pour en savoir plus sur le point de vue client, consultez le [Guide de programmeur du client UI Automation](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-clientportal).
@@ -116,7 +116,7 @@ Toutes les classes qui dérivent de [**UIElement**](https://docs.microsoft.com/u
 
 Si vous écrivez une classe de contrôle personnalisé et envisagez de fournir également un nouvel homologue d’automatisation, vous devez remplacer la méthode [**OnCreateAutomationPeer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.oncreateautomationpeer) de votre contrôle personnalisé de sorte qu’il retourne une nouvelle instance de votre homologue. Votre classe homologue doit directement ou indirectement dériver de [**AutomationPeer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer).
 
-Par exemple, le code qui suit déclare que le contrôle personnalisé `NumericUpDown` doit utiliser l’homologue `NumericUpDownPeer` pour les besoins de UI Automation.
+Par exemple, le code qui suit déclare que le contrôle personnalisé `NumericUpDown` doit utiliser l’homologue `NumericUpDownPeer` pour les besoins de UI Automation.
 
 ```csharp
 using Windows.UI.Xaml.Automation.Peers;
@@ -275,7 +275,7 @@ protected override string GetClassNameCore()
 
 Certaines technologies d’assistance utilisent la valeur [**GetAutomationControlType**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationpeer.getautomationcontroltype) directement lors du signalement des caractéristiques des éléments dans une arborescence UI Automation, comme des informations supplémentaires au-delà de **Name** UI Automation. Si votre contrôle est très différent du contrôle duquel vous dérivez et que vous voulez signaler un type de contrôle différent de celui indiqué par la classe homologue de base utilisée par le contrôle, vous devez implémenter un homologue et remplacer [**GetAutomationControlTypeCore**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationpeer.getautomationcontroltypecore) dans votre implémentation d’homologue. Ceci est primordial surtout si vous dérivez d’une classe de base généralisée, telle que [**ItemsControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsControl) ou [**ContentControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentControl), dans laquelle l’homologue de base n’apporte aucune information précise sur le type de contrôle.
 
-Votre implémentation de [**GetAutomationControlTypeCore**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationpeer.getautomationcontroltypecore) décrit votre contrôle en renvoyant une valeur [**AutomationControlType**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType). Bien qu’il soit possible de renvoyer **AutomationControlType.Custom**, vous devez renvoyer l’un des types de contrôles plus spécifiques s’il décrit de manière précise les principaux scénarios de votre contrôle. Voici un exemple :
+Votre implémentation de [**GetAutomationControlTypeCore**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationpeer.getautomationcontroltypecore) décrit votre contrôle en renvoyant une valeur [**AutomationControlType**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType). Bien qu’il soit possible de renvoyer **AutomationControlType.Custom**, vous devez renvoyer l’un des types de contrôles plus spécifiques s’il décrit de manière précise les principaux scénarios de votre contrôle. En voici un exemple.
 
 ```csharp
 protected override AutomationControlType GetAutomationControlTypeCore()
@@ -318,7 +318,7 @@ Pour obtenir une liste des modèles de fournisseurs disponibles dans l’implém
 
 Un homologue peut signaler qu’il prend en charge plusieurs modèles. Dans ce cas, la substitution doit inclure la logique de chemin d’accès de retour pour chaque valeur [**PatternInterface**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.PatternInterface) prise en charge et renvoyer l’homologue dans chaque cas correspondant. L’appelant doit généralement ne demander qu’une seule interface à la fois et il lui incombe d’effectuer un cast vers l’interface attendue.
 
-Voici un exemple de substitution de [**GetPatternCore**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationpeer.getpatterncore) pour un homologue personnalisé. Il indique la prise en charge de deux modèles, [**IRangeValueProvider**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Provider.IRangeValueProvider) et [**IToggleProvider**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Provider.IToggleProvider). Il s’agit ici d’un contrôle d’affichage multimédia qui peut s’afficher en plein écran (mode bascule) et qui possède une barre de progression dans laquelle les utilisateurs peuvent sélectionner une position (contrôle de plage). Ce code provient de l’[exemple d’accessibilité XAML](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d).
+Voici un exemple de substitution de [**GetPatternCore**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationpeer.getpatterncore) pour un homologue personnalisé. Il indique la prise en charge de deux modèles, [**IRangeValueProvider**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Provider.IRangeValueProvider) et [**IToggleProvider**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Provider.IToggleProvider). Il s’agit ici d’un contrôle d’affichage multimédia qui peut s’afficher en plein écran (mode bascule) et qui possède une barre de progression dans laquelle les utilisateurs peuvent sélectionner une position (contrôle de plage). Ce code provient de l’[exemple d’accessibilité XAML](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d).
 
 
 ```csharp

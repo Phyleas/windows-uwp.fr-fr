@@ -36,7 +36,7 @@ Principales fonctions de la couche visuelle :
 1. **Effets** : système d’effets d’interface utilisateur en temps réel dont les effets peuvent être animés, chaînés et personnalisés
 1. **Animations** : animations expressives, indépendantes de l’infrastructure en cours d’exécution, indépendamment du thread d’interface utilisateur
 
-### <a name="content"></a>Contenu
+### <a name="content"></a>Content
 
 Le contenu est hébergé, transformé et peut être utilisé par le système d’effets et d’animations à l’aide d’éléments visuels. La classe [**Visual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Visual) figure à la base de la hiérarchie de classes. Il s’agit d’un proxy léger, agile de thread dans le processus d’application pour l’état visuel du compositeur. Les sous-classes de Visual incluent  [**ContainerVisual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.ContainerVisual) pour permettre aux enfants de créer des arborescences d’éléments visuels et [**SpriteVisual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.SpriteVisual) qui contiennent du contenu et qui peuvent être peints avec des couleurs unies, du contenu dessiné personnalisé ou des effets visuels. Ensemble, ces types Visual constituent la structure de l’arborescence des éléments visuels de l’interface utilisateur 2D et soutiennent les éléments FrameworkElements XAML les plus visibles.
 

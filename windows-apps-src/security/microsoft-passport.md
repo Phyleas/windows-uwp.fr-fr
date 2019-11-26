@@ -1,5 +1,5 @@
 ---
-title: Windows Hello
+title: Windows Hello
 description: Cet article décrit la nouvelle technologie Windows Hello intégrée au système d’exploitation Windows 10 et explique comment les développeurs peuvent implémenter cette technologie pour protéger leurs applications UWP et services principaux. Il présente des fonctionnalités spécifiques de ces technologies qui contribuent à atténuer les menaces découlant de l’utilisation des informations d’identification classiques et fournit des recommandations sur la conception et le déploiement de ces technologies dans le cadre de votre lancement de Windows 10.
 ms.assetid: 0B907160-B344-4237-AF82-F9D47BCEE646
 ms.date: 02/08/2017
@@ -13,7 +13,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74259834"
 ---
-# <a name="windows-hello"></a>Windows Hello
+# <a name="windows-hello"></a>Windows Hello
 
 Cet article décrit la nouvelle technologie Windows Hello fournie dans le cadre du système d’exploitation Windows 10 et explique comment les développeurs peuvent implémenter cette technologie pour protéger leurs applications de plateforme Windows universelle (UWP) et leurs services principaux. Il présente des fonctionnalités spécifiques de ces technologies qui contribuent à atténuer les menaces découlant de l’utilisation des informations d’identification classiques et fournit des recommandations sur la conception et le déploiement de ces technologies dans le cadre de votre lancement de Windows 10.
 
@@ -50,7 +50,7 @@ Windows Hello remplace les mots de passe par la méthode d’authentification à
 
 ## <a name="2-what-is-windows-hello"></a>2 Qu’est-ce que Windows Hello ?
 
-Windows Hello est le nom que Microsoft a donné au nouveau système de connexion biométrique inclus dans Windows 10. Étant donné qu’il est directement intégré au système d’exploitation, Windows Hello peut identifier le visage ou les empreintes digitales pour déverrouiller les appareils des utilisateurs. L’authentification se produit lorsque l’utilisateur fournit son identificateur biométrique unique pour accéder aux informations d’identification spécifiques à l’appareil. Une personne malveillante qui vole l’appareil ne peut donc s’y connecter que si elle dispose du code PIN. Le magasin d’informations d’identification sécurisées Windows protège les données biométriques figurant sur l’appareil. En utilisant Windows Hello pour déverrouiller un appareil, l’utilisateur autorisé accède à l’ensemble de son utilisation Windows, applications, données, sites Web et services.
+Windows Hello est le nom que Microsoft a donné au nouveau système de connexion biométrique inclus dans Windows 10. Étant donné qu’il est directement intégré au système d’exploitation, Windows Hello peut identifier le visage ou les empreintes digitales pour déverrouiller les appareils des utilisateurs. L’authentification se produit lorsque l’utilisateur fournit son identificateur biométrique unique pour accéder aux informations d’identification spécifiques à l’appareil. Une personne malveillante qui vole l’appareil ne peut donc s’y connecter que si elle dispose du code PIN. Le magasin d’informations d’identification sécurisées Windows protège les données biométriques sur l’appareil. En utilisant Windows Hello pour déverrouiller un appareil, l’utilisateur autorisé accède à l’ensemble de son utilisation Windows, applications, données, sites Web et services.
 
 L’authentificateur Windows Hello est appelé un Hello. Un Hello est propre à la combinaison d’un appareil et d’un utilisateur spécifiques. Il n’est pas transmis entre plusieurs appareils, il n’est pas partagé avec un serveur ou une application appelante et ne peut pas être extrait facilement d’un appareil. Si plusieurs utilisateurs partagent un appareil, chaque utilisateur doit configurer son propre compte. Chaque compte dispose d’un Hello unique pour cet appareil. Imaginez un Hello comme un jeton que vous pouvez utiliser pour déverrouiller (ou libérer) une information d’identification stockée. Le Hello proprement dit ne vous authentifie pas auprès d’une application ou d’un service, mais libère les informations d’identification qui le peuvent. En d’autres termes, un Hello est une méthode d’authentification par second facteur, et non par informations d’identification de l’utilisateur.
 
@@ -70,7 +70,7 @@ Pour activer Windows Hello sur un appareil, l’utilisateur doit disposer d’un
 
 Chaque fois qu’un document de clé est généré, il doit être protégé contre les attaques. La meilleure façon de procéder consiste à utiliser un matériel dédié. Depuis longtemps, les modules de sécurité matériels (HSM) sont utilisés pour générer, stocker et traiter les clés des applications de sécurité critiques. Les cartes à puce constituent un type spécial de HSM, comme les appareils compatibles avec la norme TPM de Trusted Computing Group. Dans la mesure du possible, la mise en œuvre de Windows Hello tire profit du module de plateforme sécurisée (TPM) matériel intégré pour générer, stocker et traiter les clés. Toutefois, Windows Hello et Windows Hello pour le travail ne nécessitent aucun module de plateforme sécurisée intégré.
 
-Dans la mesure du possible, Microsoft vous recommande d’utiliser un TPM matériel. Le module de plateforme sécurisée (TPM) protège contre diverses attaques connues et potentielles, notamment les attaques de force brute du code PIN. Le TPM offre également une couche de protection supplémentaire après le verrouillage du compte. Une fois que le TPM a verrouillé le matériel de clé, l’utilisateur doit réinitialiser le code confidentiel. La réinitialisation du code PIN suppose que toutes les clés et tous les certificats chiffrés avec l’ancien document de clé seront supprimés.
+Dans la mesure du possible, Microsoft vous recommande d’utiliser un TPM matériel. Le module de plateforme sécurisée (TPM) protège contre diverses attaques connues et potentielles, notamment les attaques de force brute du code confidentiel. Le TPM offre également une couche de protection supplémentaire après le verrouillage du compte. Une fois que le TPM a verrouillé le matériel de clé, l’utilisateur doit réinitialiser le code confidentiel. La réinitialisation du code PIN suppose que toutes les clés et tous les certificats chiffrés avec l’ancien document de clé seront supprimés.
 
 #### <a name="222-authentication"></a>2.2.2 Authentification
 
@@ -419,7 +419,7 @@ Mission accomplie ! Vous venez de contribuer à rendre Internet plus sûr !
 | Certificat AIK | Un certificat AIK permet d’attester de la présence d’un AIK au sein d’un module de plateforme sécurisée (TPM). Il permet également d’attester que les autres clés certifiées par la clé d’identité d’attestation provenaient de ce TPM spécifique. |
 | IdP | Un IDP est un fournisseur d’identité. Il peut par exemple s’agir de l’IdP généré par Microsoft pour les comptes Microsoft. Chaque fois qu’une application doit s’authentifier auprès d’un compte Microsoft (MSA), elle peut appeler l’IdP MSA. |
 | PKI | L’infrastructure à clé publique est couramment utilisée pour pointer vers un environnement hébergé par une organisation proprement dite et responsable de la création de clés, de la révocation de clés, etc. |
-| TPM | Le module de plateforme sécurisée peut être utilisé pour créer des paires de clés de chiffrement publiques/privées de façon à ce que la clé privée ne puisse jamais être révélée ni utilisée en dehors du TPM (autrement dit, la clé ne peut pas faire l’objet d’une migration). |
+| Module de plateforme sécurisée | Le module de plateforme sécurisée peut être utilisé pour créer des paires de clés de chiffrement publiques/privées de façon à ce que la clé privée ne puisse jamais être révélée ni utilisée en dehors du TPM (autrement dit, la clé ne peut pas faire l’objet d’une migration). |
 | Attestation de clé TPM | Protocole qui prouve par le biais du chiffrement qu’une clé est liée au TPM. Vous pouvez utiliser ce type d’attestation pour vérifier si une certaine opération de chiffrement s’est produite dans le TPM d’un ordinateur donné. |
 
 ## <a name="related-topics"></a>Rubriques connexes

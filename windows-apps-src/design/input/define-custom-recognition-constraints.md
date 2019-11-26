@@ -222,7 +222,7 @@ Déterminez les contraintes à activer en fonction des expressions susceptibles 
 
 Pour informer l’utilisateur des expressions qu’il peut énoncer, utilisez les propriétés [**SpeechRecognizerUIOptions.AudiblePrompt**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizeruioptions.audibleprompt) et [**SpeechRecognizerUIOptions.ExampleText**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizeruioptions.exampletext), que vous définissez à l’aide de la propriété [**SpeechRecognizer.UIOptions**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.uioptions). En informant les utilisateurs de ce qu’ils peuvent dire pendant l’opération de reconnaissance vocale, ils seront plus à même de prononcer une expression qui pourra être associée à une contrainte active.
 
-## <a name="related-articles"></a>Articles connexes
+## <a name="related-articles"></a>Articles associés
 
 - [Interactions vocales](speech-interactions.md)
 

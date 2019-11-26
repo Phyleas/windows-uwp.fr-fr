@@ -1,5 +1,5 @@
 ---
-title: Développement de Marble Maze, jeu pour UW en C++ et DirectX
+title: Développement de Marble Maze, jeu pour UWP en C++ et DirectX
 description: Cette section de la documentation décrit comment utiliser DirectX et Visual C++ afin de créer un jeu pour la plateforme Windows universelle (UWP) en 3D.
 ms.assetid: 43f1977a-7e1d-614c-696e-7669dd8a9cc7
 ms.date: 08/10/2017
@@ -13,7 +13,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74259557"
 ---
-# <a name="developing-marble-maze-a-uwp-game-in-c-and-directx"></a>Développement de Marble Maze, jeu pour UW en C++ et DirectX
+# <a name="developing-marble-maze-a-uwp-game-in-c-and-directx"></a>Développement de Marble Maze, jeu pour UWP en C++ et DirectX
 
 
 
@@ -39,7 +39,7 @@ Marble Maze offre à l’utilisateur plusieurs moyens d’interagir avec le tabl
 
 ![capture d’écran du jeu Marble Maze.](images/marblemaze-2.png)
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Conditions préalables requises
 
 
 -   Windows 10 Creators Update
@@ -89,7 +89,7 @@ Nous vous recommandons de commencer par les [Notions de base de l’exemple Marb
 ## <a name="in-this-section"></a>Dans cette section
 
 
-| Titre                                                                                                                    | Description                                                                                                                                                                                                                                        |
+| Title                                                                                                                    | Description                                                                                                                                                                                                                                        |
 |--------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [Exemples de notions de base du labyrinthe](marble-maze-sample-fundamentals.md)                                                   | Présente la structure de jeu et les instructions de codage et de style que le code source applique.                                                                                                                                 |
 | [Structure d’application labyrinthe de marbre](marble-maze-application-structure.md)                                               | Décrit la structure du code de l’application Marble Maze, ainsi que les différences entre la structure d’une application pour UWP en DirectX et celle d’une application de bureau classique.                                                                                    |

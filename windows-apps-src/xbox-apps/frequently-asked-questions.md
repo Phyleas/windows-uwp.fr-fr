@@ -23,7 +23,7 @@ Si vos jeux et vos applications ne fonctionnent pas, ou si vous ne pouvez pas ac
 
 ### <a name="why-cant-i-connect-to-my-xbox-one-using-visual-studio"></a>Pourquoi ne puis-je pas me connecter à ma console Xbox One à l’aide de Visual Studio ?
 
-Commencez par vérifier que vous travaillez en mode développeur, et non en mode commercial. Vous ne pouvez pas vous connecter à la console Xbox One en mode commercial. Pour déterminer le mode sous lequel vous travaillez, appuyez sur la touche **Accueil** de votre manette. Si vous voyez le contenu Gold/Live à la place de l’outil Accueil du développeur, cela signifie que vous vous trouvez en Mode commercial. Vous devez exécuter l’application Dev Mode Activation pour passer en Mode développeur.
+Commencez par vérifier que vous travaillez en Mode développeur, et non en Mode commercial. Vous ne pouvez pas vous connecter à la console Xbox One en Mode commercial. Pour déterminer le mode sous lequel vous travaillez, appuyez sur la touche **Accueil** de votre manette. Si vous voyez le contenu Gold/Live à la place de l’outil Accueil du développeur, cela signifie que vous vous trouvez en Mode commercial. Vous devez exécuter l’application Dev Mode Activation pour passer en Mode développeur.
 
 > [!NOTE]
 > Un utilisateur doit être connecté afin de pouvoir déployer une application.
@@ -44,7 +44,7 @@ Pour déterminer le mode sous lequel vous travaillez, appuyez sur la touche **Ac
 
 ### <a name="will-my-games-and-apps-still-work-if-i-activate-developer-mode"></a>Mes jeux et applications continueront-ils de fonctionner si j’active le mode développeur ?
 
-Oui. Lorsque vous vous trouvez en mode développeur, vous pouvez basculer vers le mode commercial qui vous permet de jouer à vos jeux. Pour plus d’informations, voir la page [Activation du Mode développeur Xbox One](devkit-activation.md). 
+Oui. Lorsque vous vous trouvez en mode développeur, vous pouvez basculer vers le mode commercial qui vous permet de jouer à vos jeux. Pour plus d’informations, consultez la page [Activation du mode développeur Xbox One](devkit-activation.md). 
 
 ### <a name="can-i-develop-and-publish-x86-apps-for-xbox"></a>Puis-je développer et publier des applications x86 pour Xbox ?
 Xbox ne prend plus en charge le développement d’applications x86 ni les soumissions d’applications x86 dans le Store. 
@@ -63,7 +63,7 @@ Si vous n’avez plus accès à votre Xbox, vous pouvez le désactiver dans l’
 
 ### <a name="i-left-the-developer-program-using-partner-center-but-im-in-still-developer-mode-what-do-i-do"></a>J’ai laissé le programme pour développeurs à l’aide de l’espace partenaires, mais je suis en mode développeur. Que dois-je faire ?
 
-Démarrez l’outil Accueil du développeur et sélectionnez le bouton **Quitter le mode développeur**. Cette action a pour effet de redémarrer votre console en mode commercial. 
+Démarrez l’outil Accueil du développeur et sélectionnez le bouton **Quitter le mode développeur**. Cette action a pour effet de redémarrer votre console en Mode commercial. 
 
 ### <a name="can-i-publish-my-app"></a>Puis-je publier mon application ?
 
@@ -116,7 +116,7 @@ TVHelpers est un ensemble d’exemples et de bibliothèques JavaScript et XAML/C
 
 Pour plus d’informations, voir le projet [TVHelpers](https://github.com/Microsoft/TVHelpers) et le projet [wiki](https://github.com/Microsoft/TVHelpers/wiki).
 
-## <a name="see-also"></a>Voir également
+## <a name="see-also"></a>Articles associés
 - [Problèmes connus avec UWP sur Xbox One](known-issues.md)
 - [UWP sur Xbox One](index.md)
 - [UWP sur Xbox One](index.md)

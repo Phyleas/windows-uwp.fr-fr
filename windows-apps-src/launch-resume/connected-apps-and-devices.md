@@ -1,5 +1,5 @@
 ---
-title: Applications et appareils connectés (projet Rome)
+title: Applications et appareils connectés (projet « Rome »)
 description: Cette section explique comment utiliser la plateforme Systèmes distants pour identifier les appareils distants, lancer une application sur un appareil distant et communiquer avec un service d’application sur un appareil distant.
 ms.date: 06/08/2018
 ms.topic: article
@@ -13,7 +13,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74260519"
 ---
-# <a name="connected-apps-and-devices-project-rome"></a>Applications et appareils connectés (projet Rome)
+# <a name="connected-apps-and-devices-project-rome"></a>Applications et appareils connectés (projet « Rome »)
 
 Cette section explique comment connecter des applications sur des appareils et des plateformes à l’aide du [projet Rome](https://developer.microsoft.com/en-us/windows/project-rome). Pour savoir comment implémenter le projet Rome dans un scénario multiplateforme, visitez la [page principale docs pour le projet Rome](https://docs.microsoft.com/en-us/windows/project-rome/).
 
@@ -29,7 +29,7 @@ Pour des exemples illustrant comment détecter le système distant, lancer une a
 
 Pour plus d’informations sur le projet Rome en général, y compris les ressources pour l’intégration inter-plateforme, accédez à [aka.ms/project-rome](https://developer.microsoft.com/windows/project-rome).
 
-| Rubrique | Description |
+| Sujet | Description |
 |-------|-------------|
 | [Lancer une application sur un appareil distant](launch-a-remote-app.md) | Découvrez comment lancer une application sur un appareil distant. Cette rubrique décrit le cas d'utilisation le plus simple et la configuration préliminaire.  |
 | [Découvrir des appareils distants](discover-remote-devices.md)  | Découvrez comment détecter les appareils auxquels vous pouvez vous connecter. |

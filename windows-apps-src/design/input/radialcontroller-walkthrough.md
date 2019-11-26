@@ -38,7 +38,7 @@ Surface Dial prend en charge trois mouvements de base :
 - Faire pivoter pour mettre en surbrillance un élément de menu (si le menu est actif) ou pour modifier l’action en cours dans l’application (si le menu n’est pas actif).
 - Cliquez pour sélectionner l’élément de menu en surbrillance (si le menu est actif) ou pour invoquer une commande dans l’application (si le menu n’est pas actif).
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Conditions préalables requises
 
 * Un ordinateur (ou une machine virtuelle) exécutant Windows 10 Creators Update ou une version ultérieure
 * [Visual Studio 2019](https://developer.microsoft.com/windows/downloads)
@@ -613,11 +613,11 @@ Pour voir cela en action (vous aurez besoin d’un Surface Studio), procédez co
 
 Félicitations, vous avez terminé le *Didacticiel de prise en main : Prise en charge de Surface Dial (et autres périphériques à molette) dans votre application UWP* ! Nous vous avons présenté le code de base requis pour prendre en charge un appareil à molette dans vos applications UWP et comment fournir une expérience utilisateur enrichie prise en charge par les API **RadialController**.
 
-## <a name="related-articles"></a>Articles connexes
+## <a name="related-articles"></a>Articles associés
 
 [Interactions de l’accès en surface](windows-wheel-interactions.md)
 
-### <a name="api-reference"></a>Informations de référence sur les API
+### <a name="api-reference"></a>Référence API
 
 - [**RadialController** , classe](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialController)
 - [**RadialControllerButtonClickedEventArgs** , classe](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerButtonClickedEventArgs)

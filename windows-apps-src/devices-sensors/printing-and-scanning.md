@@ -18,7 +18,7 @@ ms.locfileid: "74258630"
 
 Cette section décrit comment imprimer et numériser à partir de votre application Windows universelle.
 
-| Rubrique | Description | 
+| Sujet | Description | 
 |-------|-------------|
 | [Imprimer à partir de votre application](print-from-your-app.md) | Découvrez comment imprimer des documents à partir d’une application Windows universelle. Cette rubrique montre également comment imprimer des pages spécifiques. |
 | [Personnaliser l’interface utilisateur de l’aperçu avant impression](customize-the-print-preview-ui.md) | Cette section décrit comment personnaliser les options d’impression et les paramètres dans l’interface utilisateur d’aperçu avant impression. |

@@ -1,6 +1,6 @@
 ---
 Description: Le Microsoft Store Services SDK contient des bibliothèques et des outils qui vous permettent de doter vos applications de fonctionnalités conçues pour vous aider à générer plus de revenus et conquérir des clients.
-title: Impliquer les clients avec Microsoft Store Services SDK
+title: Impliquer les clients avec le Microsoft Store Services SDK
 ms.assetid: 518516DB-70A7-49C4-B3B6-CD8A98320B9C
 ms.date: 08/21/2017
 ms.topic: article
@@ -13,7 +13,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74259271"
 ---
-# <a name="engage-customers-with-the-microsoft-store-services-sdk"></a>Impliquer les clients avec Microsoft Store Services SDK
+# <a name="engage-customers-with-the-microsoft-store-services-sdk"></a>Impliquer les clients avec le Microsoft Store Services SDK
 
 Le kit de développement logiciel (SDK) Microsoft Store Services fournit des fonctionnalités qui vous aident à prendre en main des clients dans vos applications de plateforme Windows universelle (UWP), telles que l’envoi de notifications ciblées à vos applications et l’exécution d’expériences/B dans vos applications. Ce kit de développement logiciel (SDK) est une extension pour Visual Studio 2015 et d’autres versions de Visual Studio.
 
@@ -35,12 +35,12 @@ Le Microsoft Store Services SDK prend en charge les scénarios suivants pour le
 
 <span id="prerequisites" />
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Conditions préalables requises
 
 Le Microsoft Store Services SDK nécessite les éléments suivants :
 
 * Visual Studio 2015 ou une version ultérieure.
-* Visual Studio Tools pour applications Windows universelles installé avec votre version de Visual Studio.
+* Visual Studio Tools pour applications Windows universelles, installé avec votre version de Visual Studio.
 
 <span id="install" />
 

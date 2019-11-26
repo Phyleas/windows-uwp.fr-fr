@@ -35,13 +35,13 @@ Afin que votre application puisse accéder à l’appareil photo d’un appareil
 
 
 ## <a name="initialize-the-mediacapture-object"></a>Initialiser l’objet MediaCapture
-Toutes les méthodes de capture décrites dans cet article nécessitent la première étape d’initialisation de l’objet [**MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture), exécutée via l’appel du constructeur, puis de [**InitializeAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.initializeasync). Dans la mesure où l’objet **MediaCapture** est accessible depuis plusieurs emplacements de votre application, déclarez une variable de classe pour stocker l’objet.  Implémentez un gestionnaire pour l’objetFailed[**de la classe**MediaCapture](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.failed) afin d’être informé d’un éventuel échec de l’opération de capture.
+Toutes les méthodes de capture décrites dans cet article nécessitent la première étape d’initialisation de l’objet [**MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture), exécutée via l’appel du constructeur, puis de [**InitializeAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.initializeasync). Dans la mesure où l’objet **MediaCapture** est accessible depuis plusieurs emplacements de votre application, déclarez une variable de classe pour stocker l’objet.  Implémentez un gestionnaire pour l’événementFailed[**de l’objet**MediaCapture](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.failed) afin d’être informé d’un éventuel échec de l’opération de capture.
 
 [!code-cs[DeclareMediaCapture](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetDeclareMediaCapture)]
 
 [!code-cs[InitMediaCapture](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetInitMediaCapture)]
 
-## <a name="set-up-the-camera-preview"></a>Définissez l’aperçu de l’appareil photo
+## <a name="set-up-the-camera-preview"></a>Définir l’aperçu de l’appareil photo
 Il est possible de capturer des photos, vidéos et audio à l’aide de **MediaCapture** sans afficher l’aperçu de l’appareil photo, mais en règle générale, vous souhaitez afficher le flux d’aperçu de manière à ce que l’utilisateur n’ait aucune visibilité sur le contenu capturé. Par ailleurs, quelques fonctions **MediaCapture** nécessitent l’exécution du flux d’aperçu pour être activées. Il s’agit notamment la mise au point, l’exposition et la balance des blancs automatiques. Pour savoir comment configurer l’aperçu de l’appareil photo, consultez la page [**Afficher l’aperçu de l’appareil photo**](simple-camera-preview-access.md).
 
 ## <a name="capture-a-photo-to-a-softwarebitmap"></a>Capturer une photo sur une classe SoftwareBitmap

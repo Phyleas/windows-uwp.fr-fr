@@ -1,5 +1,5 @@
 ---
-Description: Si vous souhaitez que votre application prenne en charge différentes langues d’affichage et si des opérateurs de chaîne figurent dans votre code, votre balisage XAML ou le manifeste du package d’application, déplacez ces chaînes dans un fichier de ressources (.resw). Vous pouvez ensuite effectuer une copie traduite de ce fichier de ressources pour chaque langue prise en charge par votre application.
+Description: Si vous souhaitez que votre application prenne en charge différentes langues d’affichage et si des opérateurs de chaîne figurent dans votre code, votre balisage XAML ou dans le manifeste du package d’application, déplacez ces chaînes dans un fichier de ressources (.resw). Vous pouvez ensuite effectuer une copie traduite de ce fichier de ressources pour chaque langue prise en charge par votre application.
 title: Localiser les chaînes dans l’interface utilisateur et le manifeste du package d’application
 ms.assetid: E420B9BB-C0F6-4EC0-BA3A-BA2875B69722
 label: Localize strings in your UI and app package manifest
@@ -17,9 +17,9 @@ ms.locfileid: "74254704"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>Localiser les chaînes dans l’interface utilisateur et le manifeste du package d’application
 
-Pour plus d’informations sur la proposition de valeur de la localisation de votre application, consultez [Internationalisation et localisation](../design/globalizing/globalizing-portal.md).
+Pour plus d’informations sur la proposition de valeur de la localisation de votre application, voir [Internationalisation et localisation](../design/globalizing/globalizing-portal.md).
 
-Si vous souhaitez que votre application prenne en charge différentes langues d’affichage et si des opérateurs de chaîne figurent dans votre code, votre balisage XAML ou le manifeste du package d’application, déplacez ces chaînes dans un fichier de ressources (.resw). Vous pouvez ensuite effectuer une copie traduite de ce fichier de ressources pour chaque langue prise en charge par votre application.
+Si vous souhaitez que votre application prenne en charge différentes langues d’affichage et si des opérateurs de chaîne figurent dans votre code, votre balisage XAML ou dans le manifeste du package d’application, déplacez ces chaînes dans un fichier de ressources (.resw). Vous pouvez ensuite effectuer une copie traduite de ce fichier de ressources pour chaque langue prise en charge par votre application.
 
 Des opérateurs de chaîne codés en dur peuvent apparaître dans le code impératif ou dans le balisage XAML, par exemple en tant que propriété **Text** d’un **TextBlock**. Ils peuvent également apparaître dans le fichier source du manifeste de votre package d’application (fichier `Package.appxmanifest`), par exemple, en tant que valeur de nom d’affichage sur l’onglet Application du Concepteur de manifeste de Visual Studio. Déplacez ces chaînes dans un fichier de ressources (.resw) et remplacez les opérateurs de chaîne codés en dur dans votre application et dans votre manifeste par des références à des identificateurs de ressources.
 
@@ -129,7 +129,7 @@ En cas de doute, vous pouvez utiliser [MakePri. exe](makepri-exe-command-options
 
     `Strings/de-DE/Resources.resw`
 
-    ![Ajouter une ressource (pour l’allemand)](images/addresource-de-de.png)
+    ![ajouter une ressource, allemand](images/addresource-de-de.png)
 
 Si vous le souhaitez, vous pouvez répéter les étapes 1 et 2 pour une autre langue.
 

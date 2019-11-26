@@ -1,6 +1,6 @@
 ---
 title: Gérer la suspension d’une application
-description: Apprenez à enregistrer d’importantes données d’application lorsque le système suspend votre application.
+description: Découvrez comment enregistrer d’importantes données d’application lorsque le système suspend l’exécution de votre application.
 ms.assetid: F84F1512-24B9-45EC-BF23-A09E0AC985B0
 ms.date: 07/06/2018
 ms.topic: article
@@ -24,7 +24,7 @@ ms.locfileid: "74260408"
 
 - [**Suspension**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.suspending)
 
-Apprenez à enregistrer d’importantes données d’application lorsque le système suspend votre application. L’exemple inscrit un gestionnaire pour l’événement [**Suspending**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.suspending) et enregistre une chaîne dans un fichier.
+Découvrez comment enregistrer d’importantes données d’application lorsque le système suspend l’exécution de votre application. L’exemple inscrit un gestionnaire pour l’événement [**Suspending**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.suspending) et enregistre une chaîne dans un fichier.
 
 ## <a name="register-the-suspending-event-handler"></a>Enregistrer le gestionnaire d’événements de suspension
 
@@ -137,9 +137,9 @@ Le système tente de conserver votre application et ses données en mémoire pen
 
 Le système ne vous notifie pas de l’arrêt d’une application. Celle-ci doit donc enregistrer ses données d’application et libérer les ressources exclusives et descripteurs de fichiers au moment où elle est mise en suspens pour ensuite les restaurer lorsque l’application est activée après avoir été arrêtée.
 
-Si vous effectuez un appel asynchrone depuis votre gestionnaire, le contrôle renvoie immédiatement un retour de cet appel. Cela signifie que l’exécution peut ensuite revenir de votre gestionnaire d’événements et votre application prend l’état suivant, même si l’appel asynchrone n’est pas encore terminé. Utilisez la méthode [**GetDeferral**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel?redirectedfrom=MSDN) sur l’objet [**EnteredBackgroundEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel?redirectedfrom=MSDN) qui est transmis à votre gestionnaire d’événements pour retarder la suspension jusqu'à ce que vous appeliez la méthode [**Complete**](https://docs.microsoft.com/uwp/api/windows.foundation.deferral.complete) sur l’objet [**Windows.Foundation.Deferral**](https://docs.microsoft.com/uwp/api/windows.foundation.deferral) renvoyé.
+Si vous effectuez un appel asynchrone dans votre gestionnaire, le contrôle revient immédiatement de cet appel. Cela signifie que l’exécution peut ensuite revenir de votre gestionnaire d’événements et votre application prend l’état suivant, même si l’appel asynchrone n’est pas encore terminé. Utilisez la méthode [**GetDeferral**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel?redirectedfrom=MSDN) sur l’objet [**EnteredBackgroundEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel?redirectedfrom=MSDN) qui est transmis à votre gestionnaire d’événements pour retarder la suspension jusqu'à ce que vous appeliez la méthode [**Complete**](https://docs.microsoft.com/uwp/api/windows.foundation.deferral.complete) sur l’objet [**Windows.Foundation.Deferral**](https://docs.microsoft.com/uwp/api/windows.foundation.deferral) renvoyé.
 
-Un report n’augmente pas le temps d’exécution nécessaire de votre code avant l’arrêt de votre application. Cela ne retarde que l’arrêt jusqu'à ce que la méthode *Complete* soit appelée ou que la date d’échéance ne soit passée, *la première de ces deux éventualités prévalant*. Pour étendre la durée de l’état Interruption en cours, utilisez [**ExtendedExecutionSession**](run-minimized-with-extended-execution.md).
+Un report n’augmente pas le temps d’exécution nécessaire de votre code avant l’arrêt de votre application. Cela ne retarde l’arrêt que jusqu’à ce que la méthode *Complete* soit appelée ou que la date d’échéance ne soit passée, *la première de ces deux éventualités prévalant*. Pour étendre la durée de l’état Interruption en cours, utilisez [**ExtendedExecutionSession**](run-minimized-with-extended-execution.md).
 
 > [!NOTE]
 > Pour améliorer la réactivité du système dans Windows 8.1, les applications reçoivent un accès de faible priorité aux ressources une fois qu’elles ont été interrompues. Pour prendre en charge cette nouvelle priorité, le délai de l’opération de suspension est prolongé afin que l’application dispose d’un délai de 5 secondes en priorité normale sur Windows ou de 1 à 10 secondes sur Windows Phone. Vous ne pouvez pas étendre ni modifier ce délai.

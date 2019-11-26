@@ -1,6 +1,6 @@
 ---
 Description: Suivez ces meilleures pratiques pour définir la clôture virtuelle dans votre application.
-title: Recommandations concernant la clôture virtuelle des applications
+title: Recommandations concernant la clôture virtuelle des apps
 ms.assetid: F817FA55-325F-4302-81BE-37E6C7ADC281
 ms.date: 02/08/2017
 ms.topic: article
@@ -13,7 +13,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74260391"
 ---
-# <a name="guidelines-for-geofencing-apps"></a>Recommandations concernant la clôture virtuelle des applications
+# <a name="guidelines-for-geofencing-apps"></a>Recommandations concernant la clôture virtuelle des apps
 
 
 
@@ -31,9 +31,9 @@ Suivez ces meilleures pratiques pour définir la [**clôture virtuelle**](https:
 -   Si votre application nécessite un accès à Internet lorsqu’un événement [**Geofence**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geofencing.Geofence) se produit, vérifiez l’accès à Internet avant de créer la clôture virtuelle.
     -   Si l’application ne dispose pas d’un accès à Internet, vous pouvez inviter l’utilisateur à se connecter à Internet avant de configurer la clôture virtuelle.
     -   Si aucun accès à Internet n’est possible, économisez l’énergie nécessaire à la recherche d’emplacements par clôture virtuelle.
--   Assurez-vous que les notifications de clôture virtuelle sont appropriées en vérifiant l’horodatage et l’emplacement actuel lorsqu’un événement de géorepérage indique un changement apporté à un état [**Entered**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geofencing.GeofenceState) ou **Exited**. Pour plus d’informations, voir la section ci-dessous **Vérification de l’horodatage et de l’emplacement actuel**.
+-   Assurez-vous que les notifications de clôture virtuelle sont appropriées en vérifiant l’horodatage et l’emplacement actuel lorsqu’un événement de géorepérage indique un changement apporté à un état [**Entered**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geofencing.GeofenceState) ou **Exited**. Pour plus d’informations, consultez la section **Vérification de l’horodatage et de l’emplacement actuel** ci-après.
 Pour plus d’informations, voir (#timestamp) ci-dessous.
--   Créez des exceptions qui permettent de gérer les cas où un périphérique n’a pas accès aux informations sur l’emplacement et d’en notifier l’utilisateur si nécessaire. La non-disponibilité des informations sur l’emplacement peut avoir différentes causes : les autorisations sont désactivées, le périphérique n’est pas pourvu d’une radio GPS, le signal GPS est bloqué ou le signal Wi-Fi n’est pas assez fort.
+-   Créez des exceptions qui permettent de gérer les cas où un périphérique n’a pas accès aux informations sur l’emplacement et d’en avertir l’utilisateur si nécessaire. La non-disponibilité des informations sur l’emplacement peut avoir différentes causes : les autorisations sont désactivées, le périphérique n’est pas pourvu d’une radio GPS, le signal GPS est bloqué ou le signal Wi-Fi n’est pas assez fort.
 -   En règle générale, votre application n’a pas besoin de détecter les événements de clôture virtuelle au premier plan et en arrière-plan simultanément. Dans le cas contraire, suivez les recommandations ci-après :
 
     -   Appelez la méthode [**ReadReports**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geofencing.geofencemonitor.readreports) pour savoir si un événement s’est produit.

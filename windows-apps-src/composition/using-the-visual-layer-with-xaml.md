@@ -16,7 +16,7 @@ ms.locfileid: "74255659"
 # <a name="using-the-visual-layer-with-xaml"></a>Utilisation de la couche visuelle avec le contenu XAML
 
 La plupart des applications qui utilisent des fonctionnalités de couche visuelle font appel à l’infrastructure XAML pour définir le contenu d’interface utilisateur principal. Dans la mise à jour anniversaire Windows 10, il existe de nouvelles fonctionnalités dans l’infrastructure XAML et la couche visuelle qui facilitent la combinaison de ces deux technologies pour créer des expériences utilisateur incroyables.
-La fonctionnalité d’interopérabilité entre l’infrastructure XAML et la couche visuelle permet de créer des effets et des animations avancés qui ne sont pas disponibles à l’aide des API XAML seules. Cela comprend les éléments suivants :
+La fonctionnalité d’interopérabilité entre l’infrastructure XAML et la couche visuelle permet de créer des effets et des animations avancés qui ne sont pas disponibles à l’aide des API XAML seules. notamment :
 
 - Effets de pinceau comme le flou et le verre givré
 - Effets d’éclairage dynamique
@@ -151,7 +151,7 @@ Appliquez une ombre portée au pixel près à un élément **UIElement**, par ex
 3. Configurer l’élément **DropShadow** pour obtenir sa forme à partir de l’élément cible via un masque
     - L’élément **DropShadow** est rectangulaire par défaut, cette étape n’est donc pas nécessaire si la cible est rectangulaire
 4. Attacher l’ombre à un nouvel élément **SpriteVisual** et définir l’élément **SpriteVisual** comme l’enfant de l’élément hôte
-5. Lier la taille de l’élément **SpriteVisual** à la taille de l’hôte en utilisant une **ExpressionAnimation**
+5. Lier la taille de l’élément **SpriteVisual** à la taille de l’hôte en utilisant une **ExpressionAnimation**.
 
 ```xaml
 <Grid Width="200" Height="200">
@@ -292,7 +292,7 @@ Créez un effet qui estompe et teint le contenu en arrière-plan. Notez que les 
 3.  Créer un élément **CompositionEffectBrush** en fonction de l’arborescence d’effet
 4.  Définir l’entrée de l’élément **CompositionEffectBrush** sur **CompositionBackdropBrush**, ce qui permet d’appliquer un effet au contenu se trouvant derrière un élément **SpriteVisual**
 5.  Définir l’élément **CompositionEffectBrush** comme le contenu d’un nouvel élément **SpriteVisual** et définir l’élément **SpriteVisual** comme l’enfant de l’élément hôte. Vous pouvez également utiliser une classe XamlCompositionBrushBase.
-6.  Lier la taille de l’élément **SpriteVisual** à la taille de l’hôte en utilisant une **ExpressionAnimation**
+6.  Lier la taille de l’élément **SpriteVisual** à la taille de l’hôte en utilisant une **ExpressionAnimation**.
 
 ```xaml
 <Grid Width="300" Height="300" Grid.Column="1">

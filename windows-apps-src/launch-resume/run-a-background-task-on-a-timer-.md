@@ -120,7 +120,7 @@ Utilisez la méthode [BackgroundExecutionManager.RequestAccessAsync](https://doc
 - Mémoire : le réglage de l’utilisation de la mémoire et de l’énergie par votre application est essentiel pour garantir que le système d’exploitation autorisera l’exécution de votre tâche en arrière-plan. Utilisez les [API de gestion de la mémoire](https://docs.microsoft.com/uwp/api/windows.system.memorymanager) pour déterminer la quantité de mémoire utilisée par votre tâche en arrière-plan. Plus votre tâche en arrière-plan utilise de mémoire, plus le système d’exploitation a des difficultés à assurer son exécution lorsqu’une autre application se trouve au premier plan. L’utilisateur dispose d’un contrôle étroit sur l’ensemble des activités en arrière-plan que votre application peut exécuter, et bénéficie d’une visibilité étendue sur l’impact de cette dernière sur le taux d’utilisation de la batterie.  
 - Temps processeur : les tâches en arrière-plan sont limitées par la quantité de temps d’utilisation de l’horloge en fonction de leur type de déclencheur.
 
-Pour plus d’informations sur les contraintes de ressource appliquées aux tâches en arrière-plan, consultez [Prendre en charge votre application avec des tâches en arrière-plan](support-your-app-with-background-tasks.md).
+Pour plus d’informations sur les contraintes de ressource appliquées aux tâches en arrière-plan, consultez [Ajouter des tâches en arrière-plan à votre application](support-your-app-with-background-tasks.md).
 
 ## <a name="remarks"></a>Notes
 

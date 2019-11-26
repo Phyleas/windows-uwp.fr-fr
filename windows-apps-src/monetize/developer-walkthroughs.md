@@ -19,7 +19,7 @@ Les articles de cette section vous montrent comment ajouter des bannières publi
 
 ## <a name="in-this-section"></a>Dans cette section
 
-|  Rubrique    | Description |               
+|  Sujet    | Description |               
 |----------|-------|
 | [Bannières publicitaires](banner-ads.md)     | Fournit des instructions pour l’ajout d’une bannière publicitaire à votre application UWP à l’aide de la classe [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) dans le Kit de développement Microsoft Advertising.        |
 | [Publicités interstitielles](interstitial-ads.md)    | Fournit des instructions pour l’ajout d’un spot publicitaire à votre application UWP à l’aide de la classe [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) dans le Kit de développement Microsoft Advertising.       |

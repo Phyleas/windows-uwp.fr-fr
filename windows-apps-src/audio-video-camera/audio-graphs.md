@@ -17,7 +17,7 @@ ms.locfileid: "74254340"
 
 
 
-Cet article montre comment utiliser les API dans l’espace de noms [**Windows.Media.Audio**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio) pour créer des graphiques pour le routage audio, le mixage et les scénarios de traitement audio.
+Ici est décrite l’utilisation des API dans l’espace [**Windows.Media.Audio**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio) pour créer des graphiques pour le routage audio, le mixage et le traitement audio.
 
 Un *graphique audio* est un ensemble de nœuds audio interconnectés par lequel passe le flux des données audio. 
 
@@ -48,7 +48,7 @@ Les API de graphique audio Windows Runtime :
 
 ## <a name="audiograph-class"></a>Classe AudioGraph
 
-La classe [**AudioGraph**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioGraph) est le parent de tous les nœuds qui composent le graphique. Utilisez cet objet pour créer des instances de tous les types de nœud audio. Créez une instance de la classe **AudioGraph** en initialisant un objet [**AudioGraphSettings**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioGraphSettings) contenant des paramètres de configuration pour le graphique, puis en appelant [**AudioGraph.CreateAsync**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.createasync). Le [**CreateAudioGraphResult**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.CreateAudioGraphResult) renvoyé donne accès au graphique audio créé ou fournit une valeur d’erreur en cas d’échec de création du graphique audio.
+La classe [**AudioGraph**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioGraph) est le parent de tous les nœuds qui composent le graphique. Utilisez cet objet pour créer des instances de tous les types de nœud audio. Créez une instance de la classe **AudioGraph** en initialisant un objet [**AudioGraphSettings**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioGraphSettings) contenant des paramètres de configuration pour le graphique, puis en appelant [**AudioGraph.CreateAsync**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.createasync). L’objet [**CreateAudioGraphResult**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.CreateAudioGraphResult) renvoyé donne accès au graphique audio créé ou fournit une valeur d’erreur en cas d’échec de création du graphique audio.
 
 [!code-cs[DeclareAudioGraph](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareAudioGraph)]
 
@@ -62,7 +62,7 @@ La classe [**AudioGraph**](https://docs.microsoft.com/uwp/api/Windows.Media.Audi
 -   La taille du quantum du graphique audio détermine le nombre d’échantillons traités en une seule fois. Par défaut, la taille du quantum est de 10 ms, basée sur le taux d’échantillonnage par défaut. Si vous spécifiez une taille de quantum personnalisée en définissant la propriété [**DesiredSamplesPerQuantum**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.desiredsamplesperquantum), vous devez également définir la propriété [**QuantumSizeSelectionMode**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.quantumsizeselectionmode) sur **ClosestToDesired**, ou la valeur indiquée sera ignorée. Si cette valeur est utilisée, le système choisit une taille de quantum aussi proche que possible de celle que vous avez spécifiée. Pour déterminer la taille réelle du quantum, vérifiez la propriété [**SamplesPerQuantum**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.samplesperquantum) du **AudioGraph** après sa création.
 -   Si vous prévoyez seulement d’utiliser le graphique audio avec des fichiers et que vous n’envisagez pas de sortie vers un appareil audio, il est recommandé d’utiliser la taille de quantum par défaut en ne définissant pas la propriété [**DesiredSamplesPerQuantum**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.desiredsamplesperquantum).
 -   La propriété [**DesiredRenderDeviceAudioProcessing**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.desiredrenderdeviceaudioprocessing) détermine la quantité de traitement que l’appareil de rendu principal effectue sur la sortie du graphique audio. Le paramètre **Default** permet au système d’utiliser le traitement audio par défaut pour la catégorie de rendu audio spécifiée. Ce traitement peut considérablement améliorer le son sur certains appareils, en particulier les appareils mobiles équipés de petits haut-parleurs. Le paramètre **Raw** peut améliorer les performances en réduisant la quantité de traitement du signal, mais peut entraîner une qualité audio médiocre sur certains appareils.
--   Si la [**QuantumSizeSelectionMode**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.quantumsizeselectionmode) est définie sur **LowestLatency**, le graphique audio utilise automatiquement **Raw** pour [**DesiredRenderDeviceAudioProcessing**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.desiredrenderdeviceaudioprocessing).
+-   Si [**QuantumSizeSelectionMode**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.quantumsizeselectionmode) est défini sur **LowestLatency**, le graphique audio utilise automatiquement **Raw** pour [**DesiredRenderDeviceAudioProcessing**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.desiredrenderdeviceaudioprocessing).
 - À partir de Windows 10, version 1803, vous pouvez utiliser la propriété [**AudioGraphSettings.MaxPlaybackSpeedFactor**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.maxplaybackspeedfactor) pour définir une valeur maximale utilisée pour les propriétés [**AudioFileInputNode.PlaybackSpeedFactor**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiofileinputnode.playbackspeedfactor), [**AudioFrameInputNode.PlaybackSpeedFactor**](https://docs.microsoft.com/uwp/api/windows.media.audio.audioframeinputnode.playbackspeedfactor) et [**MediaSourceInputNode.PlaybackSpeedFactor**](https://docs.microsoft.com/uwp/api/windows.media.audio.mediasourceinputnode.playbackspeedfactor). Lorsqu’un graphique audio prend en charge un facteur de vitesse de lecture supérieur à 1, le système doit allouer plus de mémoire afin de maintenir une mémoire tampon suffisante de données audio. Pour cette raison, la définition de **MaxPlaybackSpeedFactor** sur la valeur la plus basse requise par votre application permet de réduire la consommation de mémoire de votre application. Si votre application lit uniquement le contenu à la vitesse normale, il est recommandé de définir MaxPlaybackSpeedFactor sur 1.
 -   La [**EncodingProperties**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.encodingproperties) détermine le format audio utilisé par le graphique. Seuls les formats flottants 32 bits sont pris en charge.
 -   La [**PrimaryRenderDevice**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.primaryrenderdevice) configure l’appareil de rendu principal pour le graphique audio. Si vous ne définissez pas cette propriété, l’appareil système par défaut est utilisé. L’appareil de rendu principal est utilisé pour calculer les tailles de quantum pour les autres nœuds du graphique. S’il n’existe aucun appareil de rendu audio sur le système, la création de graphique audio échouera.
@@ -73,7 +73,7 @@ Vous pouvez laisser le graphique audio utiliser l’appareil de rendu audio par 
 
 ##  <a name="device-input-node"></a>Nœud d’entrée d’appareil
 
-Un nœud d’entrée d’appareil transmet l’audio au graphique à partir d’un appareil de capture audio connecté au système, par exemple un microphone. Créez un objet [**DeviceInputNode**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioDeviceInputNode) qui utilise l’appareil de capture audio par défaut du système en appelant [**CreateDeviceInputNodeAsync**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.createdeviceinputnodeasync). Indiquez une [**AudioRenderCategory**](https://docs.microsoft.com/uwp/api/Windows.Media.Render.AudioRenderCategory) pour permettre au système d’optimiser le pipeline audio pour la catégorie spécifiée.
+Un nœud d’entrée d’appareil transmet l’audio au graphique à partir d’un appareil de capture audio connecté au système, par exemple un microphone. Créez un objet [**DeviceInputNode**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioDeviceInputNode) qui utilise l’appareil de capture audio par défaut du système en appelant [**CreateDeviceInputNodeAsync**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.createdeviceinputnodeasync). Indiquez un objet [**AudioRenderCategory**](https://docs.microsoft.com/uwp/api/Windows.Media.Render.AudioRenderCategory) pour permettre au système d’optimiser le pipeline audio pour la catégorie spécifiée.
 
 [!code-cs[DeclareDeviceInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareDeviceInputNode)]
 
@@ -94,7 +94,7 @@ Un nœud de sortie d’appareil transmet l’audio du graphique vers l’apparei
 
 ##  <a name="file-input-node"></a>Nœud d’entrée de fichier
 
-Un nœud d’entrée de fichier permet de transmettre les données d’un fichier audio au graphique. Créez un [**AudioFileInputNode**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioFileInputNode) en appelant [**CreateFileInputNodeAsync**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.createfileinputnodeasync).
+Un nœud d’entrée de fichier permet de transmettre les données d’un fichier audio au graphique. Créez un objet [**AudioFileInputNode**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioFileInputNode) en appelant [**CreateFileInputNodeAsync**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.createfileinputnodeasync).
 
 [!code-cs[DeclareFileInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareFileInputNode)]
 
@@ -129,7 +129,7 @@ La lecture d’un fichier à partir d’un disque est toujours susceptible de se
 
 ##  <a name="file-output-node"></a>Nœud de sortie de fichier
 
-Un nœud de sortie de fichier vous permet de diriger les données audio du graphique vers un fichier audio. Créez un [**AudioFileOutputNode**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioFileOutputNode) en appelant [**CreateFileOutputNodeAsync**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.createfileoutputnodeasync).
+Un nœud de sortie de fichier vous permet de diriger les données audio du graphique vers un fichier audio. Créez un objet [**AudioFileOutputNode**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioFileOutputNode) en appelant [**CreateFileOutputNodeAsync**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.createfileoutputnodeasync).
 
 [!code-cs[DeclareFileOutputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareFileOutputNode)]
 
@@ -161,11 +161,11 @@ Pour remplir un [**AudioFrame**](https://docs.microsoft.com/uwp/api/Windows.Medi
 
 [!code-cs[ComImportIMemoryBufferByteAccess](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetComImportIMemoryBufferByteAccess)]
 
-Le code suivant montre un exemple d’implémentation de méthode d’assistance **GenerateAudioData** qui crée une [**AudioFrame**](https://docs.microsoft.com/uwp/api/Windows.Media.AudioFrame) et la remplit avec des données audio.
+Le code suivant montre un exemple d’implémentation d’une méthode d’assistance **GenerateAudioData** qui crée un objet [**AudioFrame**](https://docs.microsoft.com/uwp/api/Windows.Media.AudioFrame) et le remplit avec des données audio.
 
 [!code-cs[GenerateAudioData](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetGenerateAudioData)]
 
--   Étant donné que cette méthode accède à la mémoire tampon brute sous-jacente des types Windows Runtime, elle doit être déclarée à l’aide du mot clé **unsafe**. Vous devez également configurer votre projet dans Microsoft Visual Studio pour permettre la compilation du code non sécurisé en ouvrant la page **Propriétés** du projet, en cliquant sur la page de propriétés **Générer**, puis en sélectionnant la case à cocher **Autoriser les blocs de code unsafe**.
+-   Étant donné que cette méthode accède à la mémoire tampon brute sous-jacente des types Windows Runtime, elle doit être déclarée à l’aide du mot clé **unsafe**. Vous devez également configurer votre projet dans Microsoft Visual Studio pour permettre la compilation du code non sécurisé en ouvrant la page **Propriétés** du projet, en cliquant sur la page de propriétés **Créer**, puis en sélectionnant la case à cocher **Autoriser du code unsafe**.
 -   Initialisez une nouvelle instance de [**AudioFrame**](https://docs.microsoft.com/uwp/api/Windows.Media.AudioFrame), dans l’espace de noms **Windows.Media**, en passant la taille de mémoire tampon souhaitée au constructeur. La taille de mémoire tampon est le nombre d’échantillons multiplié par la taille de chaque échantillon.
 -   Obtenez la [**AudioBuffer**](https://docs.microsoft.com/uwp/api/Windows.Media.AudioBuffer)de la trame audio en appelant [**LockBuffer**](https://docs.microsoft.com/uwp/api/windows.media.audioframe.lockbuffer).
 -   Obtenez une instance de l’interface COM [**IMemoryBufferByteAccess**](https://docs.microsoft.com/previous-versions/mt297505(v=vs.85)) à partir de la mémoire tampon audio en appelant [**CreateReference**](https://docs.microsoft.com/uwp/api/windows.media.audiobuffer.createreference).
@@ -174,7 +174,7 @@ Le code suivant montre un exemple d’implémentation de méthode d’assistance
 
 ##  <a name="audio-frame-output-node"></a>Nœud de sortie de trame audio
 
-Un nœud de sortie de trame audio vous permet de recevoir et de traiter la sortie de données audio à partir du graphique audio à l’aide du code personnalisé que vous créez. Cela permet d’effectuer par exemple une analyse de signal sur la sortie audio. Créez un [**AudioFrameOutputNode**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioFrameOutputNode) en appelant [**CreateFrameOutputNode**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.createframeoutputnode).
+Un nœud de sortie de trame audio vous permet de recevoir et de traiter la sortie de données audio à partir du graphique audio à l’aide du code personnalisé que vous créez. Cela permet d’effectuer par exemple une analyse de signal sur la sortie audio. Créez un objet [**AudioFrameOutputNode**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioFrameOutputNode) en appelant [**CreateFrameOutputNode**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.createframeoutputnode).
 
 [!code-cs[DeclareFrameOutputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareFrameOutputNode)]
 
@@ -187,7 +187,7 @@ L’événement [**AudioGraph.QuantumStarted**](https://docs.microsoft.com/uwp/a
 
 [!code-cs[SnippetQuantumStartedFrameOutput](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetQuantumStartedFrameOutput)]
 
--   Appelez [**GetFrame**](https://docs.microsoft.com/uwp/api/windows.media.audio.audioframeoutputnode.getframe) pour obtenir du graphique un objet [**AudioFrame**](https://docs.microsoft.com/uwp/api/Windows.Media.AudioFrame) contenant les données audio.
+-   Appelez [**GetFrame**](https://docs.microsoft.com/uwp/api/windows.media.audio.audioframeoutputnode.getframe) pour obtenir un objet [**AudioFrame**](https://docs.microsoft.com/uwp/api/Windows.Media.AudioFrame) contenant les données audio du graphique.
 -   Un exemple d’implémentation de la méthode d’assistance **ProcessFrameOutput** est indiqué ci-dessous.
 
 [!code-cs[ProcessFrameOutput](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetProcessFrameOutput)]
@@ -199,7 +199,7 @@ L’événement [**AudioGraph.QuantumStarted**](https://docs.microsoft.com/uwp/a
 
 ## <a name="node-connections-and-submix-nodes"></a>Connexions de nœud et nœuds prémixés
 
-Tous les types de nœud d’entrée exposent la méthode **AddOutgoingConnection** qui achemine les données audio produites par le nœud vers le nœud transmis dans la méthode. L’exemple suivant connecte un [**AudioFileInputNode**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioFileInputNode) à un [**AudioDeviceOutputNode**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioDeviceOutputNode) qui est un programme d’installation simple pour la lecture d’un fichier audio sur les haut-parleurs de l’appareil.
+Tous les types de nœud d’entrée exposent la méthode **AddOutgoingConnection** qui achemine les données audio produites par le nœud vers le nœud transmis dans la méthode. L’exemple suivant connecte un objet [**AudioFileInputNode**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioFileInputNode) à un objet [**AudioDeviceOutputNode**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioDeviceOutputNode) qui est un programme d’installation simple pour la lecture d’un fichier audio sur les haut-parleurs de l’appareil.
 
 [!code-cs[AddOutgoingConnection1](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetAddOutgoingConnection1)]
 
@@ -230,7 +230,7 @@ L’API de graphique audio vous permet d’ajouter des effets audio pour chaque 
 [!code-cs[AddEffect](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetAddEffect)]
 
 -   Tous les effets audio implémentent [**IAudioEffectDefinition**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.IAudioEffectDefinition). Chaque nœud expose une propriété **EffectDefinitions** représentant la liste des effets appliqués à ce nœud. Ajoutez un effet en ajoutant son objet de définition à la liste.
--   Il existe plusieurs classes de définition d’effet fournies dans l’espace de noms **Windows.Media.Audio**. Par exemple :
+-   Il existe plusieurs classes de définition d’effet fournies dans l’espace de noms **Windows.Media.Audio**. Il s’agit des éléments suivants :
     -   [**EchoEffectDefinition**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.EchoEffectDefinition)
     -   [**EqualizerEffectDefinition**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.EqualizerEffectDefinition)
     -   [**LimiterEffectDefinition**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.LimiterEffectDefinition)
@@ -264,7 +264,7 @@ Vous pouvez également mettre à jour l’emplacement, la vitesse et la directio
 
 Par défaut, l’audio spatial est calculé à l’aide de l’algorithme HRTF (Head-Relative Transfer Function) afin d’atténuer l’audio en fonction de sa forme, de sa vitesse et de sa position par rapport à l’écouteur. Vous pouvez définir la propriété [**SpatialAudioModel**](https://docs.microsoft.com/uwp/api/windows.media.audio.audionodeemitter.spatialaudiomodel) sur **FoldDown** afin d’utiliser une méthode simple de mélange stéréo de simulation de l’audio spatial moins précise, mais également moins exigeante pour le processeur et les ressources mémoire.
 
-## <a name="see-also"></a>Voir également
+## <a name="see-also"></a>Articles associés
 - [Lecture de contenu multimédia](media-playback.md)
  
 

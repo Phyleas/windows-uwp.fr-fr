@@ -20,7 +20,7 @@ Le système de disposition XAML fournit le dimensionnement automatique, des pann
 
 Une disposition dynamique repose principalement sur l’utilisation appropriée de propriétés XAML et de panneaux de disposition pour repositionner, redimensionner et ajuster dynamiquement le contenu d’une manière fluide. 
 
-Le système de disposition XAML prend en charge à la fois les dispositions statique et fluide. Dans une disposition statique, vous affectez aux contrôles des positions et des tailles de pixels explicites. Lorsque l’utilisateur change la résolution ou l’orientation de son appareil, l’interface utilisateur n’est pas modifiée. Les dispositions statiques peuvent être tronquées selon les facteurs de formes et tailles d’écran. D’un autre côté, les dispositions fluides rétrécissent, s’agrandissent et s’ajustent dynamiquement à l’espace visuel disponible sur un appareil. 
+Le système de disposition XAML prend en charge à la fois les dispositions statiques et fluides. Dans une disposition statique, vous affectez aux contrôles des positions et des tailles de pixels explicites. Lorsque l’utilisateur change la résolution ou l’orientation de son appareil, l’interface utilisateur n’est pas modifiée. Les dispositions statiques peuvent être tronquées selon les facteurs de formes et tailles d’écran. D’un autre côté, les dispositions fluides rétrécissent, s’agrandissent et s’ajustent dynamiquement à l’espace visuel disponible sur un appareil. 
 
 Dans la pratique, vous utilisez une combinaison d’éléments statiques et fluides pour créer votre interface utilisateur. Vous utilisez toujours des éléments et des valeurs statiques à certains endroits, mais assurez-vous que l’interface utilisateur globale répond à différentes résolutions, tailles d’écran et vues.
 
@@ -81,7 +81,7 @@ Dans un élément Grid, vous pouvez utiliser MinWidth/MaxWidth avec des définit
 
 Utilisez les propriétés [**HorizontalAlignment**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.horizontalalignment) et [**VerticalAlignment**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.verticalalignment) pour spécifier la manière dont un élément doit être positionné dans son conteneur parent.
 - Les valeurs de **HorizontalAlignment** sont **Left**, **Center**, **Right** et **Stretch**.
-- Les valeurs de **VerticalAlignment** sont **Top**, **Center**, **Bottom**, et **Stretch**
+- Les valeurs de **VerticalAlignment** sont **Top**, **Center**, **Bottom** et **Stretch**
 
 Avec l’alignement **Stretch**, les éléments remplissent tout l’espace qui leur est alloué dans le conteneur parent. La valeur par défaut des deux propriétés d’alignement est Stretch. Toutefois, certains contrôles, tels que [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button), remplacent cette valeur dans leur style par défaut.
 Tout élément qui peut avoir des éléments enfants peut traiter la valeur Stretch pour les propriétés HorizontalAlignment et VerticalAlignment de manière unique. Par exemple, un élément utilisant les valeurs par défaut Stretch placées dans un élément Grid s’étire pour remplir la cellule qui le contient. Le même élément placé dans un élément Canvas adapte sa taille à son contenu. Pour plus d’informations sur la façon dont chaque panneau gère la valeur Stretch, voir l’article [Panneaux de disposition](layout-panels.md).
@@ -99,7 +99,7 @@ Vous pouvez modifier la propriété Visibility d’un élément dans le code ou 
 
 ### <a name="style-resources"></a>Ressources de style
 
-Vous n’êtes pas obligé de définir chaque valeur de propriété individuellement sur un contrôle. Il est généralement plus efficace de regrouper les valeurs de propriété au sein d’une ressource [**Style**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) et d’appliquer le Style à un contrôle. Cela est particulièrement vrai lorsque vous devez appliquer les mêmes valeurs de propriété à plusieurs contrôles. Pour plus d’informations sur les styles, voir [Application de styles aux contrôles](../controls-and-patterns/xaml-styles.md).
+Vous n’êtes pas obligé de définir chaque valeur de propriété individuellement sur un contrôle. Il est généralement plus efficace de regrouper les valeurs de propriété au sein d’une ressource [**Style**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) et d’appliquer le Style à un contrôle. Cela est particulièrement vrai lorsque vous devez appliquer les mêmes valeurs de propriétés à plusieurs contrôles. Pour plus d’informations sur les styles, voir [Application de styles aux contrôles](../controls-and-patterns/xaml-styles.md).
 
 ### <a name="layout-panels"></a>Panneaux de disposition
 
@@ -350,7 +350,7 @@ Vous pouvez ajouter le qualificateur au nom de fichier, ou ajouter le fichier à
 
 Pour utiliser le nom du qualificateur avec le fichier, utilisez ce format : *[pageName]* .DeviceFamily- *[qualifierString]* .xaml.
 
-Examinons un exemple de fichier nommé MainPage.xaml. Pour créer une vue pour les tablettes, nommez la vue XAML MainPage.DeviceFamily-Tablet.xaml. Pour créer une vue pour les appareils PC, nommez la vue MainPage.DeviceFamily-Desktop.xaml. Voici à quoi ressemble la solution dans Microsoft Visual Studio.
+Examinons un exemple de fichier nommé MainPage.xaml. Pour créer une vue pour les tablettes, nommez la vue XAML MainPage.DeviceFamily-Tablet.xaml. Pour créer une vue pour les PC, nommez la vue MainPage.DeviceFamily-Desktop.xaml. Voici à quoi ressemble la solution dans Microsoft Visual Studio.
 
 ![Vues XAML avec des noms de fichier qualifiés](images/xaml-layout-view-ex-1.png)
 
@@ -358,7 +358,7 @@ Examinons un exemple de fichier nommé MainPage.xaml. Pour créer une vue pour l
 
 Pour organiser les vues dans votre projet Visual Studio à l’aide de dossiers, vous pouvez utiliser le nom de qualificateur avec le dossier. Pour ce faire, nommez votre dossier comme suit : DeviceFamily- *[qualifierString]* . Dans ce cas, chaque fichier de la vue XAML a le même nom. N’incluez pas le qualificateur dans le nom de fichier.
 
-Voici un exemple, pour un fichier nommé MainPage.xaml. Pour créer une vue pour les tablettes, créez un dossier nommé DeviceFamily-Tablet et placez dedans une vue XAML nommée MainPage.xaml. Pour créer une vue pour les PC, créez un dossier nommé DeviceFamily-Desktop, et placez dedans une autre vue XAML nommée MainPage.xaml. Voici à quoi ressemble la solution dans Visual Studio.
+Voici un exemple, pour un fichier nommé là encore MainPage.xaml. Pour créer une vue pour les tablettes, créez un dossier nommé DeviceFamily-Tablet et placez dedans une vue XAML nommée MainPage.xaml. Pour créer une vue pour les PC, créez un dossier nommé DeviceFamily-Desktop, et placez dedans une autre vue XAML nommée MainPage.xaml. Voici à quoi ressemble la solution dans Visual Studio.
 
 ![Vues XAML dans des dossiers](images/xaml-layout-view-ex-2.png)
 

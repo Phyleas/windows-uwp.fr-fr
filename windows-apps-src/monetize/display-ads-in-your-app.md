@@ -90,7 +90,7 @@ Pour obtenir des instructions et des exemples de code, voir [cet article](native
 
 ## <a name="step-3-create-an-ad-unit-and-configure-mediation"></a>Étape 3 : Créer une unité publicitaire et configurer une médiation
 
-Une fois que vous avez terminé le test de votre application et que vous êtes prêt à la soumettre au Store, créez une unité publicitaire sur la page [ADS dans l’application](../publish/in-app-ads.md) dans l’espace partenaires. Ensuite, mettez à jour le code de votre application pour utiliser cette unité publicitaire afin que votre application reçoit des publicités dynamiques. Pour plus d’informations, voir [Configurer des unités publicitaires dans votre application](set-up-ad-units-in-your-app.md#live-ad-units).
+Une fois que vous avez terminé le test de votre application et que vous êtes prêt à la soumettre au Store, créez une unité publicitaire sur la page [ADS dans l’application](../publish/in-app-ads.md) dans l’espace partenaires. Ensuite, mettez à jour le code de votre application pour utiliser cette unité publicitaire afin que votre application reçoit des publicités dynamiques. Pour plus d’informations, voir [Configurer des unités publicitaires dans votre app](set-up-ad-units-in-your-app.md#live-ad-units).
 
 Par défaut, votre application affiche des publicités issues du réseau Microsoft pour les publicités payées. Pour optimiser vos revenus publicitaires, vous pouvez activer la [médiation publicitaire](ad-mediation-service.md) pour votre unité publicitaire afin d'afficher des publicités à partir de réseaux de publicités payées supplémentaires, tels que Taboola et Smaato. Vous pouvez également augmenter vos capacités de promotion d'application en affichant des publicités provenant des campagnes de promotion d'applications Microsoft.
 
@@ -108,12 +108,12 @@ Une fois votre application publiée et disponible dans le Windows Store, vous po
 
 Pour obtenir une aide supplémentaire sur l'utilisation du SDK Microsoft Advertising, utilisez les ressources suivantes.
 
-|  Tâche    | Resource |               
+|  Tâche    | Ressource |               
 |----------|-------|
 | Signaler un bogue ou obtenir un support assisté en matière de publicité     | Visitez la [page de support](https://developer.microsoft.com/en-us/windows/support) et choisissez **Publicités dans l’app**.        |
 | Bénéficier du support de la communauté     | Consultez le [forum](https://go.microsoft.com/fwlink/?LinkID=401264).       |
 | Télécharger des exemples de projet qui montrent comment ajouter des bannières et des spots publicitaires aux applications.     | Voir [Exemples de publicité sur GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising).       |
-| Découvrir les dernières opportunités de monétisation pour les applications Windows     | Visitez [Monétiser vos applications](https://developer.microsoft.com/store/monetize).        |
+| Découvrir les dernières opportunités de monétisation pour les applications Windows     | Consultez [Monétiser vos applications](https://developer.microsoft.com/store/monetize).        |
 
 ## <a name="windows-81-and-windows-phone-8x-apps"></a>Applications Windows 8.1 et Windows Phone 8.x
 

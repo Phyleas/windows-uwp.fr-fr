@@ -55,7 +55,7 @@ Pour les applications prenant en charge le redimensionnement ou le zoom optique,
 
     -   De proximité : lorsque l’utilisateur met fin au contact, un point d’ancrage est sélectionné si l’inertie s’arrête au sein du seuil de distance du point d’ancrage. Les points d’ancrage de proximité permettent à un zoom ou à un redimensionnement de se terminer entre des points d’ancrage.
     -   Obligatoire : le point d’ancrage sélectionné est celui qui précède ou qui suit immédiatement le dernier point d’ancrage rencontré avant que l’utilisateur ait mis fin au contact (en fonction de la direction et de la vitesse du mouvement). Une manipulation doit prendre fin sur un point d’ancrage obligatoire.
--   Utilisez les principes d’inertie, notamment :
+-   Utilisez les principes d’inertie, notamment :
     -   Décélération : se produit dès que l’utilisateur arrête le pincement ou l’étirement. Cette action s’apparente à glisser sur une surface glissante jusqu’à l’arrêt.
     -   Rebond : un léger effet de rebond se produit lorsqu’une limite ou une contrainte de taille est dépassée.
 -   Espacez les contrôles conformément aux [Recommandations en matière de ciblage](guidelines-for-targeting.md).
@@ -69,7 +69,7 @@ Pour les applications prenant en charge le redimensionnement ou le zoom optique,
 
      
 
-## <a name="related-articles"></a>Articles connexes
+## <a name="related-articles"></a>Articles associés
 
 
 **Exemples**

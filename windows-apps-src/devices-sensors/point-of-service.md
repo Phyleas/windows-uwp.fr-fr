@@ -1,6 +1,6 @@
 ---
 title: Point de service
-description: Cette section contient des articles sur l’utilisation de diverses fonctionnalités de l’espace de noms Point de Service.
+description: Cette section contient des articles sur l’utilisation de diverses fonctionnalités de l’espace de noms de point de vente.
 ms.date: 10/04/2018
 ms.topic: article
 keywords: windows 10, uwp
@@ -15,7 +15,7 @@ ms.locfileid: "74259671"
 # <a name="point-of-service"></a>Point de service
 Cette section contient des articles sur l’utilisation de [Windows.Devices.PointOfService](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice) pour interagir avec les périphériques courants dans les environnements de vente au détail et hôteliers, à partir d’applications Windows universelles.
 
-| Rubrique | Description |
+| Sujet | Description |
 |------|------------|
 | [Notions de base](pos-basics.md) | Cet article vous aidera à prendre en main les API UWP de point de service. |
 | [Support matériel](pos-device-support.md) | Liste des appareils connus compatibles avec les API UWP [Windows. Devices. PointOfService](https://docs.microsoft.com/uwp/api/Windows.Devices.PointOfService) . |

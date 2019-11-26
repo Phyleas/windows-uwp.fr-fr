@@ -105,7 +105,7 @@ En outre, la classe **App** définit les gestionnaires d’événements pour les
 ## <a name="loading-game-assets-in-the-background"></a>Chargement des composants du jeu en arrière-plan
 
 
-Pour être sûr que votre jeu réponde aux événements fenêtre en moins de 5 secondes après son lancement, nous vous recommandons de charger les composants du jeu de façon asynchrone ou en arrière-plan. Quand les composants sont chargés en arrière-plan, votre jeu peut répondre aux événements fenêtre.
+Pour être sûr que votre jeu réponde aux événements fenêtre en moins de 5 secondes après son lancement, nous vous recommandons de charger les composants du jeu de façon asynchrone ou en arrière-plan. Quand les composants sont chargés en arrière-plan, votre jeu peut répondre aux événements de fenêtrage.
 
 > [!NOTE]
 > Vous pouvez également afficher le menu principal quand il est prêt et permettre aux autres composants de poursuivre leur chargement en arrière-plan. Si l’utilisateur sélectionne une option de menu avant que toutes les ressources soient chargées, vous pouvez indiquer le chargement en cours des ressources de scène en affichant, par exemple, une barre de progression.

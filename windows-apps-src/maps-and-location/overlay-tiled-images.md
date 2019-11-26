@@ -1,6 +1,6 @@
 ---
 title: Superposer des images sous forme de vignettes sur une carte
-description: Superposez des images sous forme de vignettes tierces ou personnalisées sur une carte à l’aide de sources de vignettes. Utilisez des sources de vignette pour superposer des informations spécifiques (informations météorologiques, démographiques, sismiques...) ou pour remplacer entièrement la carte par défaut.
+description: Superposez des images sous forme de vignettes tierces ou personnalisées sur une carte à l’aide de sources de vignettes. Utilisez des sources de vignette pour superposer des informations spécifiques (informations météorologiques, démographiques, sismiques...), ou pour remplacer entièrement la carte par défaut.
 ms.assetid: 066BD6E2-C22B-4F5B-AA94-5D6C86A09BDF
 ms.date: 07/19/2018
 ms.topic: article
@@ -15,7 +15,7 @@ ms.locfileid: "74260372"
 ---
 # <a name="overlay-tiled-images-on-a-map"></a>Superposer des images sous forme de vignettes sur une carte
 
-Superposez des images sous forme de vignettes tierces ou personnalisées sur une carte à l’aide de sources de vignettes. Utilisez des sources de vignette pour superposer des informations spécifiques (informations météorologiques, démographiques, sismiques...) ou pour remplacer entièrement la carte par défaut.
+Superposez des images sous forme de vignettes tierces ou personnalisées sur une carte à l’aide de sources de vignettes. Utilisez des sources de vignette pour superposer des informations spécifiques (informations météorologiques, démographiques, sismiques...), ou pour remplacer entièrement la carte par défaut.
 
 **Astuce** Pour plus d’informations sur l’utilisation de cartes dans votre app, téléchargez l’exemple de carte pour [plateforme Windows universelle (UWP) ](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl) sur Github.
 

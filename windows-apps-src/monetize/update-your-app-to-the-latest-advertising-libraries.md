@@ -17,7 +17,7 @@ ms.locfileid: "74259241"
 
 Depuis le 1er avril 2017, nous ne servons plus de bannières publicitaires aux applications qui utilisent une version non prise en charge du SDK publicitaire. Si vous utilisez **AdControl** pour afficher des bannières publicitaires dans votre application de plateforme Windows universelle (UWP), utilisez les informations de cet article pour déterminer si vous utilisez un SDK Microsoft Advertising non pris en charge et faites migrer votre application vers un SDK pris en charge.
 
-## <a name="overview"></a>Vue d’ensemble
+## <a name="overview"></a>Présentation
 
 Les applications UWP qui affichent des bannières publicitaires doivent utiliser le contrôle **AdControl** provenant des bibliothèques de publicités distribuées dans le [SDK Microsoft Advertising](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK). Ce SDK prend en charge un ensemble minimal de fonctionnalités, notamment la possibilité de servir des médias enrichis HTML5 via les [spécifications MRAID (définitions de l’interface publicitaire Rich-Media mobile) 1.0](https://www.iab.com/wp-content/uploads/2015/08/IAB_MRAID_VersionOne.pdf) définies par l’Interactive Advertising Bureau (IAB). La plupart de nos annonceurs veulent profiter de ces fonctionnalités. C’est pourquoi nous demandons aux développeurs d’utiliser une de ces versions de SDK pour rendre notre écosystème d’applications plus attrayant pour eux, ce qui par ailleurs augmentera vos revenus.
 
@@ -36,7 +36,7 @@ Si vous disposez d’une application existante (qui se trouve déjà dans le Sto
 > [!NOTE]
 > Si votre application utilise déjà le [SDK Microsoft Advertising](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) (pour les applications UWP), vous n’avez pas besoin de lui apporter des modifications supplémentaires.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Conditions préalables requises
 
 * Le code source complet et les fichiers de projet Visual Studio de votre application qui utilise **AdControl**.
 * Le package .appx de votre application.
@@ -48,7 +48,7 @@ Si vous disposez d’une application existante (qui se trouve déjà dans le Sto
 
 ## <a name="part-1-determine-whether-you-need-to-update-your-uwp-app"></a>Partie 1 : Déterminez si vous avez besoin de mettre à jour votre application UWP
 
-Suivez les instructions dans les sections suivantes pour déterminer si vous devez mettre à jour de votre application.
+Suivez les instructions dans les sections suivantes pour déterminer si vous devez mettre à jour votre application.
 
 1. Créez une copie du package .appx pour votre application afin de ne pas modifier l’original, renommez la copie pour qu’elle ait une extension .zip et extrayez le contenu du fichier.
 

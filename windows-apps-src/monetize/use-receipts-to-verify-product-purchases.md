@@ -104,7 +104,7 @@ Cette section décrit les éléments et attributs d’un reçu.
 
 L’élément racine de ce fichier est l’élément **Receipt**, qui contient des informations sur l’application et les achats in-app. Cet élément contient les éléments enfants suivants :
 
-|  Élément  |  Obligatoire  |  Quantité  |  Description   |
+|  Élément  |  Requis  |  Quantité  |  Description   |
 |-------------|------------|--------|--------|
 |  [AppReceipt](#appreceipt)  |    Non        |  0 ou 1  |  Contient des informations sur l’achat pour l’application actuelle.            |
 |  [ProductReceipt](#productreceipt)  |     Non       |  0 ou davantage    |   Contient des informations sur un achat in-app pour l’application actuelle.     |
@@ -129,7 +129,7 @@ L’élément **AppReceipt** a les attributs suivants :
 
 |  Attribut  |  Description   |
 |-------------|-------------------|
-|  **Id**  |    Identifie l’achat.           |
+|  **Identifi**  |    Identifie l’achat.           |
 |  **AppId**  |     Nom de la famille de packages, utilisé par le système d’exploitation pour l’application.           |
 |  **LicenseType**  |    **Full**, si l’utilisateur a acheté la version complète de l’application. **Trial**, si l’utilisateur a téléchargé une version d’évaluation de l’application.           |  
 |  **PurchaseDate**  |    Date d’acquisition de l’application.          |  |
@@ -144,7 +144,7 @@ L’élément **ProductReceipt** a les attributs suivants :
 
 |  Attribut  |  Description   |
 |-------------|-------------------|
-|  **Id**  |    Identifie l’achat.           |
+|  **Identifi**  |    Identifie l’achat.           |
 |  **AppId**  |     Identifie l’application avec laquelle l’utilisateur a effectué l’achat.           |
 |  **Réf**  |     Identifie le produit acheté.           |
 |  **ProductType**  |    Détermine le type de produit. Actuellement, ne prend en charge que la valeur **Durable**.          |  

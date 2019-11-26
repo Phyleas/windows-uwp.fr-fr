@@ -29,7 +29,7 @@ Découvrez comment utiliser le gyromètre pour détecter les changements de mouv
 
 Les gyromètres viennent compléter les accéléromètres en tant que contrôleurs de jeu. Tandis que l’accéléromètre peut mesurer le déplacement linéaire, le gyromètre mesure la vitesse angulaire ou déplacement rotatoire.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Conditions préalables requises
 
 Vous devez être familiarisé avec Extensible Application Markup Language (XAML), Microsoft Visual C#et les événements.
 

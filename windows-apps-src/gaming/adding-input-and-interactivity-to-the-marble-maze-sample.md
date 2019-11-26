@@ -32,7 +32,7 @@ Voici quelques éléments clés présentés dans ce document que vous devez pren
 
 -   Pour des jeux à un seul joueur, pensez à combiner les entrées de toutes les manettes Xbox possibles. De cette façon, vous n’avez pas besoin d’effectuer un suivi pour savoir de quel contrôleur provient l’entrée. Il vous suffit de suivre l’entrée provenant du contrôleur ajouté en dernier, comme nous le faisons dans cet exemple.
 
--   Traitez les événements de fenêtre avant de traiter les périphériques d’entrée.
+-   Traitez les événements Windows avant de traiter les périphériques d’entrée.
 
 -   La manette Xbox et l’accéléromètre prennent en charge l’interrogation (polling). C’est-à-dire que vous pouvez demander les données dont vous avez besoin. Pour les entrées tactiles, enregistrez les événements tactiles dans des structures de données disponibles à votre code de traitement des entrées.
 
@@ -44,7 +44,7 @@ Voici quelques éléments clés présentés dans ce document que vous devez pren
 Marble Maze prend en charge les périphériques de manette Xbox standard, la souris et les entrées tactiles pour sélectionner des éléments de menu, et la manette Xbox, la souris et les entrées tactiles et l’accéléromètre pour le contrôle du jeu. Marble Maze utilise les API [Windows::Gaming::Input](https://docs.microsoft.com/uwp/api/windows.gaming.input) pour interroger la manette sur les entrées. Les fonctions tactiles permettent aux applications de suivre et de répondre aux entrées tactiles. Un accéléromètre est un capteur qui mesure la force appliquée le long des axes x, y et z. En utilisant Windows Runtime, vous pouvez interroger l’état actuel de l’accéléromètre, et recevoir des événements tactiles via le mécanisme de gestion des événements du Windows Runtime.
 
 > [!NOTE]
-> Ce document utilise l’interaction tactile pour faire référence à la fois aux entrées tactiles et aux entrées de la souris, et le pointeur pour faire référence à tous les appareils qui utilisent des événements de pointeur. Dans la mesure où l’interaction tactile et la souris utilisent des événements de pointeur standards, vous pouvez utiliser l’un ou l’autre périphérique pour sélectionner les éléments de menu et contrôler le jeu.
+> Ce document utilise l’interaction tactile pour faire référence à la fois aux entrées tactiles et aux entrées de la souris, et le pointeur pour faire référence à tous les appareils qui utilisent des événements de pointeur. Dans la mesure où l’interaction tactile et la souris utilisent des événements de pointeur standards, vous pouvez utiliser l’un ou l’autre appareil pour sélectionner les éléments de menu et contrôler le jeu.
 
  
 
@@ -60,7 +60,7 @@ La manette Xbox ne nécessite pas cette initialisation. Pour initialiser l’int
 
 L’exemple suivant montre la manière dont la méthode **App::SetWindow** permet d’inscrire le [Windows::UI::Core::CoreWindow::PointerPressed](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.PointerPressed), [Windows::UI::Core::CoreWindow::PointerReleased](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.PointerReleased) et les événements de pointeur [Windows::UI::Core::CoreWindow::PointerMoved](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.PointerMoved). Ces événements sont inscrits lors de l’initialisation de l’application et avant la boucle de jeu.
 
-Ils sont gérés dans un thread distinct chargé d’appeler les gestionnaires d’événements.
+Ils sont gérés dans un thread distinct, chargé d’appeler les gestionnaires d’événements.
 
 Pour plus d’informations sur l’initialisation de l’application, voir [Structure de l’application Marble Maze](marble-maze-application-structure.md).
 
@@ -384,7 +384,7 @@ float combinedTiltX = 0.0f;
 float combinedTiltY = 0.0f;
 ```
 
-Le mécanisme d’entrée n’est pas toujours le même d’un périphérique à l’autre. Par exemple, l’entrée de pointeur est gérée en utilisant le modèle de gestion des événements du Windows Runtime. Inversement, vous interrogez les données d’entrée à partir de la manette Xbox quand vous en avez besoin. Nous recommandons de toujours suivre le mécanisme d’entrée conseillé pour un périphérique donné. Cette section décrit comment Marble Maze lit les entrées de chaque périphérique, comment il met à jour les valeurs d’entrée combinées et comment il utilise ces valeurs pour mettre à jour l’état du jeu.
+Le mécanisme d’entrée n’est pas toujours le même d’un périphérique à l’autre. Par exemple, l’entrée du pointeur est gérée en utilisant le modèle de gestion des événements du Windows Runtime. Inversement, vous interrogez les données d’entrée à partir de la manette Xbox quand vous en avez besoin. Nous recommandons de toujours suivre le mécanisme d’entrée conseillé pour un périphérique donné. Cette section décrit comment Marble Maze lit les entrées de chaque périphérique, comment il met à jour les valeurs d’entrée combinées et comment il utilise ces valeurs pour mettre à jour l’état du jeu.
 
 ###  <a name="processing-pointer-input"></a>Traitement des entrées de pointeur
 

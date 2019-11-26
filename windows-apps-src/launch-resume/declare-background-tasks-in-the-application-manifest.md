@@ -175,7 +175,7 @@ Lorsque vous spécifiez le paramètre **EntryPoint**, votre application reçoit 
 
 ### <a name="specify-where-your-background-task-runs-with-the-resourcegroup-attribute"></a>Utilisez l’attribut ResourceGroup pour spécifier l’emplacement où votre tâche en arrière-plan s’exécutera.
 
-Voici un exemple de code XML déclarant une tâche en arrière-plan qui s’exécute dans un processus BackgroundTaskHost.exe distinct des autres instances de tâches en arrière-plan de la même application. Notez l’attribut `ResourceGroup`, qui définit quelles tâches en arrière-plan vont s’exécuter en même temps.
+Voici un exemple de code XML déclarant une tâche en arrière-plan qui s’exécute dans un processus BackgroundTaskHost.exe distinct des autres instances de tâches en arrière-plan de la même application. Notez l’attribut `ResourceGroup`, qui identifie quelles tâches en arrière-plan s’exécuteront simultanément.
 
 ```xml
 <Extensions>

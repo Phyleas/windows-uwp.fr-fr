@@ -1,6 +1,6 @@
 ---
 title: Configurer votre plateforme UWP sur l’environnement de développement Xbox
-description: Étapes relatives à la configuration et au test de votre plateforme Windows universelle sur l’environnement de développement Xbox.
+description: Procédure de configuration et de test de votre plateforme Windows universelle sur l’environnement de développement Xbox.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
@@ -45,7 +45,7 @@ Avant de pouvoir développer les applications à partir de votre PC de développ
 
 ## <a name="setting-up-your-xbox-one"></a>Configuration de votre Xbox One
 
-Avant de pouvoir déployer une application sur votre Xbox One, un utilisateur doit être connecté à la console. Vous pouvez utiliser votre compte Xbox Live existant ou créer un compte pour votre console en mode développeur. 
+Avant de pouvoir déployer une application sur votre Xbox One, un utilisateur doit être connecté à la console. Vous pouvez utiliser votre compte Xbox Live existant ou créer un compte pour votre console en mode Développeur. 
 
 ## <a name="create-your-first-app"></a>Créer votre première application
 
@@ -63,7 +63,7 @@ Avant de pouvoir déployer une application sur votre Xbox One, un utilisateur d
 
   ![Boîte de dialogue Nouveau projet](images/development-environment-setup-2.png)
 
-1. Dans la boîte de dialogue **Nouveau projet Windows universel**, sélectionnez la build 14393 ou ultérieure dans la liste déroulante **Version minimum**. Dans la liste déroulante **Version cible**, sélectionnez le dernier kit SDK. Si la boîte de dialogue **Mode développeur** s’affiche, cliquez sur **OK**. Une nouvelle application vide est créée.
+1. Dans la boîte de dialogue **Nouveau projet Windows universel**, sélectionnez la build 14393 ou ultérieure dans la liste déroulante **Version minimum**. Dans la liste déroulante **Version cible**, sélectionnez le dernier kit SDK. Si la boîte de dialogue **Mode Développeur** s’affiche, cliquez sur **OK**. Une nouvelle application vide est créée.
 
 2. Configurez votre environnement de développement pour le débogage à distance :
 
@@ -73,7 +73,7 @@ Avant de pouvoir déployer une application sur votre Xbox One, un utilisateur d
 
     c. Sous **Options de démarrage**, définissez **Périphérique cible** sur **Ordinateur distant**.
 
-    d. Dans **Ordinateur distant**, entrez l’adresse IP du système ou le nom d’hôte de la console Xbox One. Pour plus d’informations sur l’obtention de l’adresse IP ou du nom d’hôte, consultez [Présentation des outils Xbox One](introduction-to-xbox-tools.md).
+    d. Dans **Ordinateur distant**, entrez l’adresse IP du système ou le nom d’hôte de la console Xbox One. Pour plus d’informations sur l’obtention de l’adresse IP ou du nom d’hôte, consultez [Présentation des outils Xbox One](introduction-to-xbox-tools.md).
 
     e. Dans la liste déroulante **Mode d’authentification**, sélectionnez **Universel (protocole non chiffré)** .
 
@@ -83,13 +83,13 @@ Avant de pouvoir déployer une application sur votre Xbox One, un utilisateur d
 
   ![Projet C++](images/development-environment-setup-3.png)
 
-1. Dans la boîte de dialogue **Nouveau projet Windows universel**, sélectionnez la build 14393 ou ultérieure dans la liste déroulante **Version minimum**. Dans la liste déroulante **Version cible**, sélectionnez le dernier kit SDK. Si la boîte de dialogue **Mode développeur** s’affiche, cliquez sur **OK**. Une nouvelle application vide est créée.
+1. Dans la boîte de dialogue **Nouveau projet Windows universel**, sélectionnez la build 14393 ou ultérieure dans la liste déroulante **Version minimum**. Dans la liste déroulante **Version cible**, sélectionnez le dernier kit SDK. Si la boîte de dialogue **Mode Développeur** s’affiche, cliquez sur **OK**. Une nouvelle application vide est créée.
 
 2. Configurez votre environnement de développement pour le débogage à distance :
 
    a. Cliquez avec le bouton droit sur le projet dans **Explorateur de solutions**, puis sélectionnez **Propriétés**.
 
-   b. Sur l’onglet **Débogage** et définissez **Débogueur à lancer** sur **Ordinateur distant**.
+   b. Dans l’onglet **Débogage**, définissez **Débogueur au lancement** sur **Ordinateur distant**.
 
    c. Dans **Nom de l’ordinateur**, entrez l’adresse IP du système ou le nom d’hôte de la console Xbox One. Pour plus d’informations sur l’obtention de l’adresse IP ou du nom d’hôte, consultez [Présentation des outils Xbox One](introduction-to-xbox-tools.md).
 
@@ -107,7 +107,7 @@ Avant de pouvoir déployer une application sur votre Xbox One, un utilisateur d
 
 3. S’il s’agit de votre premier déploiement, vous obtiendrez une boîte de dialogue issue de Visual Studio vous demandant d’épingler par paire votre appareil.
 
-    a. Pour obtenir un code confidentiel, ouvrez **Dev Home** à partir de l’écran d’accueil sur votre console Xbox One.
+    a. Pour obtenir un code confidentiel, ouvrez **Accueil Dev** à partir de l’écran d’accueil de votre console Xbox One.
 
     b. Dans l'onglet **Accueil**, sous **Actions rapides**, sélectionnez **Afficher le code confidentiel Visual Studio**.
   
@@ -121,7 +121,7 @@ Avant de pouvoir déployer une application sur votre Xbox One, un utilisateur d
 
 Félicitations, vous avez correctement créé et déployé votre première application UWP sur Xbox !
 
-## <a name="see-also"></a>Voir également
+## <a name="see-also"></a>Articles associés
 - [Activation du mode développeur Xbox One](devkit-activation.md)  
 - [Téléchargements et outils pour Windows 10](https://developer.microsoft.com/windows/downloads)  
 - [Programme Windows Insider](https://insider.windows.com/)  

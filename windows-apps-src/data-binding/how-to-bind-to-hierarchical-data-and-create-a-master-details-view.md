@@ -27,7 +27,7 @@ Nous allons créer un affichage d’une hiérarchie d’équipes sportives organ
 
 ![Affichage maître/détails d’une hiérarchie sportive](images/xaml-masterdetails.png)
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Conditions préalables requises
 
 Dans cette rubrique, nous partons du principe que vous savez créer une application UWP de base. Pour obtenir des instructions pour la création de votre première application UWP, consultez [Créer votre première application UWP en C# ou Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/hh974581(v=win.10)).
 

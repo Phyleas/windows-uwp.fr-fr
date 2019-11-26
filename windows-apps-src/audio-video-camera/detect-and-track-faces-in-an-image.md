@@ -4,7 +4,7 @@ description: Cette rubrique montre comment utiliser FaceDetector pour détecter 
 title: Détecter les visages dans des images ou des vidéos
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d23d33eb98f5ed01cf48eebd63a46aba2f923c65
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -17,7 +17,7 @@ ms.locfileid: "74257115"
 
 
 
-\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
+\[certaines informations se rattachent à un produit en version préliminaire qui peut être considérablement modifié avant sa publication commerciale. Microsoft exclut toute garantie, expresse ou implicite, en ce qui concerne les informations fournies ici.\]
 
 Cette rubrique montre comment utiliser [**FaceDetector**](https://docs.microsoft.com/uwp/api/Windows.Media.FaceAnalysis.FaceDetector) pour détecter des visages dans une image. [  **FaceTracker**](https://docs.microsoft.com/uwp/api/Windows.Media.FaceAnalysis.FaceTracker) est optimisé pour suivre les visages au fil du temps dans une séquence d’images vidéo.
 
@@ -91,15 +91,15 @@ La classe [**FaceTracker**](https://docs.microsoft.com/uwp/api/Windows.Media.Fac
 
 Comme avec **FaceDetector**, **FaceTracker** prend en charge un ensemble limité de formats de pixels. Cet exemple abandonne la détection des visages si l’image fournie n’est pas au format Nv12.
 
-Appelez [**ProcessNextFrameAsync**](https://docs.microsoft.com/uwp/api/windows.media.faceanalysis.facetracker.processnextframeasync) pour récupérer une liste d’objets [**DetectedFace**](https://docs.microsoft.com/uwp/api/Windows.Media.FaceAnalysis.DetectedFace) représentant les visages dans l’image. Une fois que vous disposez de la liste des visages, vous pouvez les afficher de la même manière que celle décrite ci-dessus pour la détection des visages. Note that, because the face tracking helper method is not called on the UI thread, you must make any UI updates in within a call [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync).
+Appelez [**ProcessNextFrameAsync**](https://docs.microsoft.com/uwp/api/windows.media.faceanalysis.facetracker.processnextframeasync) pour récupérer une liste d’objets [**DetectedFace**](https://docs.microsoft.com/uwp/api/Windows.Media.FaceAnalysis.DetectedFace) représentant les visages dans l’image. Une fois que vous disposez de la liste des visages, vous pouvez les afficher de la même manière que celle décrite ci-dessus pour la détection des visages. Notez que, étant donné que la méthode d’assistance de suivi des visages n’est pas appelée sur le thread d’interface utilisateur, vous devez effectuer toutes les mises à jour de l’interface utilisateur dans un appel de [**CoreDispatcher. RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync).
 
 [!code-cs[ProcessCurrentVideoFrame](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetProcessCurrentVideoFrame)]
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Scene analysis for media capture](scene-analysis-for-media-capture.md)
-* [Basic Face Detection sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicFaceDetection)
-* [Basic Face Tracking sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicFaceTracking)
+* [Analyse des scènes pour la capture multimédia](scene-analysis-for-media-capture.md)
+* [Exemple de Détection de visage de base](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicFaceDetection)
+* [Exemple de suivi de visage de base](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicFaceTracking)
 * [Appareil photo](camera.md)
-* [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Capture de photos, vidéo et audio de base avec MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [Lecture de contenu multimédia](media-playback.md)

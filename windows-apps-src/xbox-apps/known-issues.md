@@ -28,7 +28,7 @@ Si vous êtes bloqué, lisez les informations présentées dans cette rubrique, 
  
 ## <a name="deploying-from-vs-fails-with-parental-controls-turned-on"></a>Le déploiement à partir de Visual Studio échoue lorsque les paramètres de contrôle parental sont activés
 
-Le lancement de votre application à partir de Visual Studio n’aboutit pas si le contrôle parental est activé dans les paramètres.
+Le lancement de votre application à partir de Visual Studio n’aboutit pas si le contrôle parental est activé dans les paramètres.
 
 Pour contourner ce problème, désactivez ces paramètres temporairement ou procédez comme suit :
 1. Déployez votre application sur la console en désactivant les paramètres de contrôle parental.
@@ -115,6 +115,6 @@ namespace TestDNLA {
 }
 ```
 
-## <a name="see-also"></a>Voir également
+## <a name="see-also"></a>Articles associés
 - [Forum Aux Questions](frequently-asked-questions.md)
 - [UWP sur Xbox One](index.md)

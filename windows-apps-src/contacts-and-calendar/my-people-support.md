@@ -21,12 +21,12 @@ La fonctionnalité Mes contacts permet aux utilisateurs d’épingler les contac
 
 ![Conversation instantanée de mes contacts](images/my-people-chat.png)
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Conditions préalables
 
 + Windows 10 et Microsoft Visual Studio 2019. Pour en savoir plus sur l’installation, voir [Prendre en main Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
 + Connaissances de base de C# ou d’un langage de programmation orienté objet similaire. Pour vous familiariser avec C#, voir [Créer une application « Hello, world »](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
 
-## <a name="overview"></a>Vue d’ensemble
+## <a name="overview"></a>Présentation
 
 Il y a trois choses à faire pour activer votre application afin d’utiliser la fonctionnalité Mes contacts :
 
@@ -251,7 +251,7 @@ async Task PinMultipleContacts(Contact[] contacts)
 
 **Remarque :** 
 
-## <a name="see-also"></a>Voir également
+## <a name="see-also"></a>Articles associés
 + [Partage de Mes Contacts](my-people-sharing.md)
 + [Mes contacts Notificatons](my-people-notifications.md)
 + [Vidéo Channel 9 sur l’ajout du support technique de mes personnes à une application](https://channel9.msdn.com/Events/Build/2017/P4056)
