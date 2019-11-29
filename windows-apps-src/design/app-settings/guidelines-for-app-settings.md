@@ -1,6 +1,6 @@
 ---
 Description: Cet article décrit les meilleures pratiques pour créer et afficher des paramètres d’application.
-title: Recommandations en matière de paramètres d’application
+title: Recommandations en matière de paramètres de l’application
 ms.assetid: 2D765E90-3FA0-42F5-A5CB-BEDC14C3F60A
 label: Guidelines
 template: detail.hbs
@@ -10,16 +10,16 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c08dad36929c7889f1896404df862230040e3499
 ms.sourcegitcommit: 9625f8fb86ff6473ac2851e600bc02e996993660
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/09/2019
 ms.locfileid: "72163703"
 ---
-# <a name="guidelines-for-app-settings"></a>Recommandations en matière de paramètres d’application
+# <a name="guidelines-for-app-settings"></a>Recommandations en matière de paramètres de l’application
 
-Les paramètres d’application sont les parties personnalisables de votre application plateforme Windows universelle (UWP) accessibles par l’utilisateur via une page de paramètres d’application. Par exemple, une application de lecteur d’actualités peut permettre à l’utilisateur de spécifier les sources d’actualités à afficher ou le nombre de colonnes à afficher à l’écran, tandis qu’une application météorologique peut permettre à l’utilisateur de choisir entre Celsius et Fahrenheit. Cet article fournit des recommandations et les meilleures pratiques pour la création et l’affichage des paramètres d’application.
+Les paramètres de l’application sont les parties de votre application de plateforme Windows universelle (UWP) que l’utilisateur peut personnaliser, accessible via une page de paramètres d’application. Par exemple, une application de lecteur de flux d’actualités peut permettre à l’utilisateur de spécifier les sources d’informations à afficher ou le nombre de colonnes à présenter à l’écran, tandis qu’une application météo peut offrir à l’utilisateur la possibilité de choisir entre les unités de mesure Celsius et Fahrenheit par défaut. Cet article décrit les meilleures pratiques et propose des recommandations pour créer et afficher des paramètres d’application.
 
-## <a name="when-to-provide-a-settings-page"></a>Quand fournir une page de paramètres
+## <a name="when-to-provide-a-settings-page"></a>À quel moment proposer une page de paramètres ?
 
 Voici des exemples d’options d’application qui figurent dans une page de paramètres d’application :
 
@@ -50,23 +50,23 @@ Pour une disposition de volet de navigation, les paramètres d’application doi
 
 **Barre de l’application**
 
-Si vous utilisez une [barre de l’application](../controls-and-patterns/app-bars.md) ou une barre d’outils, placez le point d’entrée des paramètres en tant que dernier élément du sous-menu « Plus ». Si vous avez besoin d’améliorer la détectabilité du point d’entrée des paramètres pour votre application, placez le point d’entrée directement dans la barre de l’application plutôt que dans le sous-menu.
+Si vous utilisez une [barre de l’application](../controls-and-patterns/app-bars.md) ou une barre d’outils, placez le point d’entrée des paramètres en tant que dernier élément du sous-menu « Plus ». Si vous avez besoin d’améliorer la détectabilité du point d’entrée des paramètres pour votre application, placez le point d’entrée directement dans la barre de l’application plutôt que dans le sous-menu.
 
 ![point d’entrée des paramètres d’application pour une barre d’application](images/appsettings-entrypoint-tabs.png)
 
 **Hub**
 
-Si vous utilisez une disposition de type concentrateur, le point d’entrée des paramètres d’application doit être placé dans le sous-menu « Plus » d’une barre d’application.
+Si vous utilisez une disposition de type concentrateur, le point d’entrée des paramètres d’application doit être placé dans le sous-menu « Plus » d’une barre d’application.
 
-**Onglets/tableaux croisés dynamiques**
+**Onglets/sélecteurs de vue**
 
-Dans le cas d’une disposition d’onglets ou de sélecteurs de vue, nous vous déconseillons de placer le point d’entrée des paramètres d’application parmi l’un des premiers éléments de la navigation. Insérez plutôt le point d’entrée des paramètres d’application dans le sous-menu « Plus » d’une barre d’application.
+Dans le cas d’une disposition d’onglets ou de sélecteurs de vue, nous vous déconseillons de placer le point d’entrée des paramètres d’application parmi l’un des premiers éléments de la navigation. Placez plutôt le point d’entrée des paramètres d’application dans le sous-menu « Plus » d’une barre d’application.
 
-**Maître-détails**
+**Maître/détails**
 
 Plutôt que d’enfouir profondément le point d’entrée des paramètres d’application dans un volet maître/détails, faites-en le dernier élément épinglé du niveau supérieur du volet maître.
 
-## <a name="layout"></a>Mise en page
+## <a name="layout"></a>Disposition
 
 
 Sur les appareils de bureau et les appareils mobiles, la fenêtre des paramètres d’application doit s’ouvrir en mode plein écran et remplir toute la fenêtre. Si votre menu de paramètres d’application ne comporte pas plus de quatre groupes de niveau supérieur, ces groupes doivent s’afficher en cascade en descendant d’une colonne.
@@ -79,17 +79,17 @@ Mobile :
 
 ![disposition d’une page de paramètres d’application sur un téléphone](images/appsettings-layout-navpane-mobile.png)
 
-## <a name="color-mode-settings"></a>Paramètres du « Mode couleur »
+## <a name="color-mode-settings"></a>Paramètres du « Mode couleur »
 
 
-Si votre application permet aux utilisateurs de choisir le mode couleur de l’application, présentez ces options à l’aide de [cases d’option](../controls-and-patterns/radio-button.md) ou d’une [zone de liste modifiable](../controls-and-patterns/combo-box.md) avec l’en-tête « Choisir un mode d’application ». Les options doivent être les suivantes :
-- Light
+Si votre application permet aux utilisateurs de choisir le mode couleur de l’application, présentez ces options à l’aide de [cases d’option](../controls-and-patterns/radio-button.md) ou d’une [zone de liste modifiable](../controls-and-patterns/combo-box.md) avec l’en-tête « Choisir un mode d’application ». Les options doivent être les suivantes :
+- Maigre
 - Sombre
-- Windows par défaut
+- Windows default
 
-Nous vous recommandons également d’ajouter un lien hypertexte à la page Couleurs de l’application Paramètres Windows permettant aux utilisateurs d’accéder au mode d’application par défaut actif et de le modifier. Utilisez la chaîne « Paramètres couleur Windows » pour le texte du lien hypertexte.
+Nous vous recommandons également d’ajouter un lien hypertexte à la page Couleurs de l’application Paramètres Windows, qui permet aux utilisateurs d’accéder au mode d’application par défaut actif et de le modifier. Utilisez la chaîne « Paramètres couleur Windows » pour le texte du lien hypertexte.
 
-![Section « Choisir un mode »](images/appsettings_mode.png)
+![Section « Choisir un mode »](images/appsettings_mode.png)
 
 <!--
 <div class="microsoft-internal-note">
@@ -97,12 +97,12 @@ Detailed redlines showing preferred text strings for the "Choose a mode" section
 </div>
 -->
 
-## <a name="about-section-and-feedback-button"></a>Section « À propos de » et bouton de commentaires
+## <a name="about-section-and-feedback-button"></a>Section « À propos de » et bouton de retour d’expérience
 
 
-Nous vous recommandons de placer la section « À propos de » dans votre application sous forme de page dédiée ou dans sa propre section. Si vous voulez inclure un bouton Envoyer des commentaires, placez-le vers le bas de la page « À propos de cette application ».
+Nous vous recommandons de placer la section « À propos de » dans votre application sous forme de page dédiée ou dans sa propre section. Si vous voulez inclure un bouton « Envoyer un retour d’expérience », placez-le au bas de la page « À propos de cette application ».
 
-Sous un sous-titre « Informations légales », placez les « Conditions d’utilisation » et la « Déclaration de confidentialité » (sous forme de [boutons de lien hypertexte](../controls-and-patterns/hyperlinks.md) avec habillage de texte), ainsi que des informations légales supplémentaires, comme les droits d’auteur.
+Sous un sous-titre « Informations légales », placez les « Conditions d’utilisation » et la « Déclaration de confidentialité » (sous forme de [boutons de lien hypertexte](../controls-and-patterns/hyperlinks.md) avec habillage de texte), ainsi que des informations légales supplémentaires, comme les droits d’auteur.
 
 ![section « à propos de cette application » avec bouton « envoyer des commentaires »](images/appsettings-about.png)
 
@@ -124,11 +124,11 @@ Une fois que vous avez répertorié les éléments à inclure dans votre page de
 - Présentez le contenu de haut en bas dans une seule colonne que l’utilisateur pourra faire défiler, si nécessaire. Limitez le défilement à un maximum de deux fois la hauteur de l’écran.
 - Utilisez les contrôles suivants pour les paramètres d’application :
 
-    - [Basculer les commutateurs](../controls-and-patterns/toggles.md): Pour permettre aux utilisateurs de définir des valeurs activées ou désactivées.
-    - [Cases d’option](../controls-and-patterns/radio-button.md): Pour permettre aux utilisateurs de choisir un élément parmi un ensemble allant jusqu’à 5 options associées mutuellement exclusives.
-    - [Zone d’entrée de texte](../controls-and-patterns/text-block.md): Pour permettre aux utilisateurs d’entrer du texte. Utilisez le type de zone de texte qui correspond au type de texte que vous obtenez de l’utilisateur, tel qu’un message électronique ou un mot de passe.
-    - [Liens hypertexte](../controls-and-patterns/hyperlinks.md): Pour faire passer l’utilisateur à une autre page de l’application ou à un site Web externe. Quand un utilisateur clique sur un lien hypertexte, le menu volant des paramètres se ferme.
-    - [Boutons](../controls-and-patterns/buttons.md): Pour permettre aux utilisateurs de lancer une action immédiate sans fermer le menu volant paramètres actuels.
+    - [Boutons bascule](../controls-and-patterns/toggles.md) : permettent aux utilisateurs de définir des valeurs Activé ou Désactivé.
+    - [Cases d’option](../controls-and-patterns/radio-button.md) : permettent à l’utilisateur de choisir un élément dans un ensemble maximal de 5 options ayant un lien entre elles, mais mutuellement exclusives.
+    - [Zone de texte](../controls-and-patterns/text-block.md) : permet aux utilisateurs d’entrer du texte. Utilisez le type de zone de texte qui correspond au type de texte que vous obtenez de l’utilisateur, tel qu’un message électronique ou un mot de passe.
+    - [Liens hypertexte](../controls-and-patterns/hyperlinks.md) : dirigent l’utilisateur vers une autre page de l’application ou vers un site web externe. Quand un utilisateur clique sur un lien hypertexte, le menu volant des paramètres se ferme.
+    - [Boutons](../controls-and-patterns/buttons.md) : permettent aux utilisateurs de lancer une action immédiate sans quitter l’actuel menu volant des paramètres.
 - Ajoutez un message descriptif si l’un des contrôles est désactivé. Placez ce message au-dessus du contrôle désactivé.
 - Une fois l’animation du menu volant Paramètres et de l’en-tête terminée, animez le contenu et les contrôles dans un bloc unique. Animez le contenu à l’aide des animations [**enterPage**](https://docs.microsoft.com/previous-versions/windows/apps/br212672(v=win.10)) ou [**EntranceThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) avec un décalage gauche de 100 px.
 - Utilisez des en-têtes de section, des paragraphes et des étiquettes pour vous aider à organiser et clarifier le contenu, si nécessaire.
@@ -140,7 +140,7 @@ Une fois que vous avez répertorié les éléments à inclure dans votre page de
 
 ## <a name="related-articles"></a>Articles connexes
 
-* [Concepts de base de la conception des commandes](https://docs.microsoft.com/windows/uwp/layout/commanding-basics)
-* [Instructions pour les contrôles Progress](https://docs.microsoft.com/windows/uwp/controls-and-patterns/progress-controls)
+* [Informations de base sur la conception des commandes](https://docs.microsoft.com/windows/uwp/layout/commanding-basics)
+* [Recommandations en matière de contrôles de progression](https://docs.microsoft.com/windows/uwp/controls-and-patterns/progress-controls)
 * [Stocker et récupérer des données d’application](https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)
 * [**EntranceThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition)

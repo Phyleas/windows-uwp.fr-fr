@@ -7,12 +7,12 @@ keywords: windows 10, uwp
 design-contact: karenmui
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 5f040060b1c3931e9ef1634fddd65febb1be7dbc
-ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
+ms.openlocfilehash: efe67707edc5f556301ded466f3f2919ec04873e
+ms.sourcegitcommit: 49a34e957433966ac8d4822b5822f21087aa61c3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68867725"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74153724"
 ---
 # <a name="color"></a>Color
 
@@ -58,7 +58,7 @@ Les applications UWP peuvent utiliser un thème d’application clair ou foncé.
 
 ![thème foncé](images/color/dark-theme.svg)
 
-Par défaut, le thème de votre application UWP est la préférence de thème de l’utilisateur définie dans les paramètres Windows, ou le thème par défaut de l’appareil (c’est-à-dire foncé sur XBox). Vous pouvez cependant définir le thème de votre application UWP.
+Par défaut, le thème de votre application UWP est la préférence de thème de l’utilisateur définie dans les paramètres Windows, ou le thème par défaut de l’appareil (c’est-à-dire foncé sur Xbox). Vous pouvez cependant définir le thème de votre application UWP.
 
 ### <a name="changing-the-theme"></a>Modification du thème
 

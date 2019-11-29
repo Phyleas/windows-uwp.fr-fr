@@ -12,16 +12,20 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d309ce7e18a8dc62a24bc0e7f51f0015042a5f84
-ms.sourcegitcommit: 3bb982f35c057e30c742ab9f1eea119bae627a5f
+ms.openlocfilehash: 4605f759c554c12368325a7c1e42143319eddede
+ms.sourcegitcommit: 503fa613c65236660350794b4f066eccebe9ac8e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74086862"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74162346"
 ---
 # <a name="collections-and-lists"></a>Collections et listes
 
-Les collections et les listes font référence à la représentation de plusieurs éléments de données associés qui apparaissent ensemble. Les collections peuvent être représentées de plusieurs façons, par différents contrôles de collection (également appelés affichages Collection). Les contrôles de collection affichent et permettent des interactions avec le contenu basé sur des collections (liste de contacts, liste de dates, collection d’images, etc.).  Les contrôles traités dans cet article sont les suivants :
+Les collections et les listes font référence à la représentation de plusieurs éléments de données associés qui apparaissent ensemble. Les collections peuvent être représentées de plusieurs façons, par différents contrôles de collection (également appelés affichages Collection). Les contrôles de collection affichent et permettent des interactions avec le contenu basé sur des collections (liste de contacts, liste de dates, collection d’images, etc.).
+
+> **API importantes** : [Classe ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), [classe GridView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView), [classe FlipView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flipview), [classe TreeView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview), [classe ItemsRepeater](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2)
+
+Les contrôles traités dans cet article sont les suivants :
 
 - Affichages Liste, principalement utilisés pour afficher des collections de contenus riches en texte
 - Affichages Grille, principalement utilisés pour afficher des collections de contenus riches en images
@@ -29,20 +33,14 @@ Les collections et les listes font référence à la représentation de plusieur
 - Arborescences, principalement utilisées pour afficher des collections de contenus riches en texte dans une hiérarchie spécifique
 - ItemsRepeater, composant personnalisable permettant de créer des contrôles de collection personnalisés
 
-
 Des recommandations en matière de conception, des fonctionnalités et des exemples sont fournis ci-dessous pour chaque contrôle.
 
 Chacun de ces contrôles (à l’exception d’ItemsRepeater) intègre des fonctionnalités de style et d’interaction. Toutefois, pour personnaliser davantage l’apparence visuelle de votre affichage de collection et des éléments qu’il contient, un [DataTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate) est utilisé. Vous trouverez des informations détaillées sur les modèles de données et sur la personnalisation de l’apparence d’un affichage de collection dans la page [Modèles et conteneurs d’éléments](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/item-containers-templates).
 
 Chacun de ces contrôles (à l’exception d’ItemsRepeater) a également un comportement intégré permettant la sélection d’un ou de plusieurs éléments. Pour en savoir plus, consultez [Vue d’ensemble des modes de sélection](selection-modes.md).
 
-> **API importantes** : [Classe ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), [classe GridView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView), [classe FlipView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flipview), [classe TreeView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview), [classe ItemsRepeater](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2)
-
-> <div id="main">  
-> <strong>Windows 10 Fall Creators Update - Changement de comportement</strong>  
-> </div>  
-> Par défaut, au lieu d’effectuer la sélection, un stylet actif fait défiler ou parcourt une liste dans les applications UWP (comme l’interaction tactile, le pavé tactile et le stylet passif).  
-> Si votre application repose sur le comportement précédent, vous pouvez remplacer le défilement du stylet et rétablir le comportement précédent. Pour plus d’informations, consultez la rubrique d’informations de référence sur les API pour la <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer">classe Scroll Viewer</a>.  
+> **Windows 10 Fall Creators Update - Modification de comportement** Par défaut, au lieu d’effectuer la sélection, un stylet actif fait défiler ou parcourt une liste dans les applications UWP (comme l’interaction tactile, le pavé tactile et le stylet passif).
+> Si votre application repose sur le comportement précédent, vous pouvez remplacer le défilement du stylet et rétablir le comportement précédent. Pour plus d’informations, consultez la rubrique d’informations de référence sur les API pour la [classe Scroll Viewer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer).
 
 ## <a name="examples"></a>Exemples
 

@@ -409,7 +409,7 @@ var pikePlaceIcon = new MapIcon
 myMap.MapElements.Add(pikePlaceIcon);
 ```
 
-Vous pouvez continuer d'utiliser cette approche, mais vous ne profiterez pas des avantage du nouveau modèle de couche de carte. En regroupant vos éléments en couches, vous pouvez manipuler chaque couche indépendamment l'une de l'autre. Par exemple, chaque couche possède son propre ensemble d’événements, de sorte que vous pouvez répondre à un événement sur une couche particulière et effectuer une action spécifique de cet événement.
+Vous pouvez continuer d'utiliser cette approche, mais vous ne profiterez pas des avantage du nouveau modèle de couche de carte. En regroupant vos éléments en couches, vous pouvez manipuler chaque couche indépendamment l'une de l'autre. Par exemple, chaque couche possède son propre ensemble d’événements, de sorte que vous pouvez répondre à un événement sur une couche particulière et effectuer une action spécifique à cet événement.
 
 En outre, vous pouvez lier XAML directement à un élément [MapLayer ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maplayer). Vous ne pouvez pas effectuer une telle opération en utilisant la collection [MapElements](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.MapElements).
 
@@ -478,6 +478,6 @@ Dans votre page XAML, associez la propriété dans votre classe de modèle d’a
 * [Recommandations de conception pour les cartes](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
 * [Build 2015 Video : utilisation des cartes et de l’emplacement sur les téléphones, les tablettes et les PC dans vos applications Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [Exemple d’application de trafic UWP](https://github.com/Microsoft/Windows-appsample-trafficapp)
-* [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon)
+* [](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon)
 * [**MapPolygon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolygon)
 * [**Polyligne**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolyline)
