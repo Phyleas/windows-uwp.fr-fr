@@ -3,15 +3,15 @@ title: Composants de Windows Runtime réparties pour une application UWP chargé
 description: Ce document traite d’une fonctionnalité ciblée par l’entreprise, prise en charge par Windows 10, qui permet aux applications .NET tactiles d’utiliser le code existant responsable des opérations clés critiques pour l’entreprise.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.assetid: 81b3930c-6af9-406d-9d1e-8ee6a13ec38a
 ms.localizationpriority: medium
-ms.openlocfilehash: 77993256752f081c5abc4f56164d0846c2b61060
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 4d35945c803df2c4f84c5085de0a27a5d6731545
+ms.sourcegitcommit: c8634b15b10bd196e7e2f876ae26e1205e160c91
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258768"
+ms.lasthandoff: 11/29/2019
+ms.locfileid: "74663546"
 ---
 # <a name="brokered-windows-runtime-components-for-a-side-loaded-uwp-app"></a>Composants de Windows Runtime réparties pour une application UWP chargée
 
@@ -164,7 +164,7 @@ Cette opération s’effectue via les scripts suivants. Ajoutez les scripts à l
 Une fois le fichier de référence **winmd** créé (dans le sous-dossier « reference » du dossier Target du projet), il est copié sur chaque projet d’application installée hors Windows Store qui le consomme et il est référencé. La section suivante décrira cette procédure. La structure du projet intégrée dans les règles de génération ci-dessus garantit que l’implémentation et la référence **winmd** se trouvent dans des répertoires séparés dans la hiérarchie de génération pour éviter toute confusion.
 
 ## <a name="side-loaded-applications-in-detail"></a>Détails sur les applications installées hors Windows Store
-Comme indiqué précédemment, l’application installée hors Windows Store est créée comme n’importe quelle application UWP, à un détail près : la déclaration de la disponibilité de la ou des classes Runtime dans le manifeste de l’application installée hors Windows Store. Cela permet à l’application d’écrire un nouvel accès à la fonctionnalité dans le composant de bureau. Une nouvelle entrée de manifeste dans la section <Extension> décrit la classe Runtime implémentée dans le composant de bureau et les informations sur son emplacement. Le contenu de cette déclaration dans le manifeste de l’application est le même pour les applications qui ciblent Windows 10. Par exemple :
+Comme indiqué précédemment, l’application installée hors Windows Store est créée comme n’importe quelle application UWP, à un détail près : la déclaration de la disponibilité de la ou des classes Runtime dans le manifeste de l’application installée hors Windows Store. Cela permet à l’application d’écrire un nouvel accès à la fonctionnalité dans le composant de bureau. Une nouvelle entrée de manifeste dans la section <Extension> décrit la classe Runtime implémentée dans le composant de bureau et les informations sur son emplacement. Le contenu de cette déclaration dans le manifeste de l’application est le même pour les applications qui ciblent Windows 10. Exemple :
 
 ```XML
 <Extension Category="windows.activatableClass.inProcessServer">
@@ -476,12 +476,12 @@ Dans la mesure où l’approche IPC comprend le marshaling des interfaces Window
 
 **Création du proxy dans Visual Studio**
 
-Le processus de création et d’inscription de proxies et de stubs à utiliser dans un package d’application UWP standard est décrit dans la rubrique [déclenchement d’événements dans des composants de Windows Runtime](https://docs.microsoft.com/previous-versions/windows/apps/dn169426(v=vs.140)).
+The process for creating and registering proxies and stubs for use inside a regular UWP app package are described in the topic [Raising Events in Windows Runtime Components](https://docs.microsoft.com/previous-versions/windows/apps/dn169426(v=vs.140)).
 Les étapes décrites dans cet article sont plus compliquées que la procédure décrite ci-dessous, car elles décrivent l’inscription du proxy/stub dans le package de l’application (plutôt qu’une inscription globale).
 
 **Étape 1 :** en utilisant la solution du projet de composant de bureau, créez un projet Proxy/Stub dans Visual Studio :
 
-**Solution > Ajouter > projet C++ > > l’option Sélectionner une dll de la console Win32.**
+**Solution > Add > Project > Visual C++ > Win32 Console Select DLL option.**
 
 Suivez les étapes ci-dessous, le composant serveur s’appelle **MyWinRTComponent**.
 
@@ -491,11 +491,11 @@ Suivez les étapes ci-dessous, le composant serveur s’appelle **MyWinRTCompone
 
 a) Dlldata.c
 
-b) un fichier d’en-tête (par exemple, MyWinRTComponent. h)
+b) A header file (for example, MyWinRTComponent.h)
 
-c) un fichier \*\_i. c (par exemple, MyWinRTComponent\_i. c)
+c) A \*\_i.c file (for example, MyWinRTComponent\_i.c)
 
-d) un \*\_fichier p. c (par exemple, MyWinRTComponent\_p. c)
+d) A \*\_p.c file (for example, MyWinRTComponent\_p.c)
 
 **Étape 5 :** ajoutez ces quatre fichiers générés au projet « MyWinRTProxy ».
 
@@ -515,31 +515,31 @@ DllUnregisterServer PRIVATE
 
 **Étape 7 :** ouvrez les propriétés pour le projet « MyWinRTProxy » :
 
-**Propriétés Comfiguration > général > nom cible :**
+**Comfiguration Properties > General > Target Name :**
 
 MyWinRTComponent.Proxies
 
-**Définitions deC++ préprocesseur C/> > Ajouter**
+**C/C++ > Preprocessor Definitions > Add**
 
-32\_WINDOWS ; INSCRIRE\_PROXY\_DLL»
+"WIN32;\_WINDOWS;REGISTER\_PROXY\_DLL"
 
-**En-C++ tête C/> précompilé : sélectionnez « pas d’utilisation de l’en-tête précompilé »**
+**C/C++ > Precompiled Header : Select "Not Using Precompiled Header"**
 
-**Éditeur de liens > général > ignorer la bibliothèque d’importation : sélectionnez « Oui »**
+**Linker > General > Ignore Import Library : Select "Yes"**
 
-**> D’entrée de l’éditeur de liens > des dépendances supplémentaires : Ajouter rpcrt4. lib ; runtimeobject. lib**
+**Linker > Input > Additional Dependencies : Add rpcrt4.lib;runtimeobject.lib**
 
-**Éditeur de liens > les métadonnées Windows > générer les métadonnées Windows : sélectionnez « non »**
+**Linker > Windows Metadata > Generate Windows Metadata : Select "No"**
 
 **Étape 8 :** générez le projet « MyWinRTProxy ».
 
-**Déploiement du proxy**
+**Deploying the proxy**
 
 Le proxy doit être inscrit globalement. Pour ce faire, le processus d’installation doit appeler DllRegisterServer dans la DLL proxy. Dans la mesure où la fonctionnalité ne prend en charge que des serveurs x86 (pas de prise en charge 64 bits), la configuration la plus simple utilise un serveur 32 bits, un proxy 32 bits et une application installée hors Windows Store 32 bits. Le proxy se trouve généralement avec l’implémentation **winmd** pour le composant de bureau.
 
 Une étape de configuration supplémentaire est nécessaire. Pour que le processus d’installation hors Windows Store charge et exécute le proxy, le répertoire doit être marqué « lecture / exécution » pour ALL_APPLICATION_PACKAGES. Utilisez pour cela l’outil en ligne de commande **icacls.exe**. Cette commande doit être exécutée sur le répertoire dans lequel se trouve l’implémentation **winmd** et les DLL proxy/stub :
 
-*icacls. /T/Grant \*S-1-15-2-1 : RX*
+*icacls . /T /grant \*S-1-15-2-1:RX*
 
 ## <a name="patterns-and-performance"></a>Modèles et performances
 
@@ -553,7 +553,7 @@ Voici une liste d’éléments à prendre en compte :
 
 -   Le transfert en bloc des résultats limite le trafic interprocessus. La construction Windows Runtime Array est utilisée pour cela.
 
--   Si *List<T>* , où *T* est un objet, est retourné d’une opération async ou d’une extraction de propriété, de nombreux échanges interprocessus seront nécessaires. Par exemple, si vous retournez un objet *List&lt;People&gt;* . Chaque itération correspondra à un appel interprocessus. Chaque objet *People* retourné est représenté par un proxy et chaque appel à une méthode ou propriété sur cet objet individuel donnera lieu à un appel interprocessus. Un « simple » objet *List&lt;People&gt;* avec une valeur *Count* élevée produira un grand nombre d’appels lents. Le transfert en bloc de structures de contenu dans un tableau donne de meilleures performances. Par exemple :
+-   Si *List<T>* , où *T* est un objet, est retourné d’une opération async ou d’une extraction de propriété, de nombreux échanges interprocessus seront nécessaires. Par exemple, si vous retournez un objet *List&gt;People&lt;* . Chaque itération correspondra à un appel interprocessus. Chaque objet *People* retourné est représenté par un proxy et chaque appel à une méthode ou propriété sur cet objet individuel donnera lieu à un appel interprocessus. Un « simple » objet *List&lt;People&gt;* avec une valeur *Count* élevée produira un grand nombre d’appels lents. Le transfert en bloc de structures de contenu dans un tableau donne de meilleures performances. Exemple :
 
 ```csharp
 struct PersonStruct
@@ -565,7 +565,7 @@ struct PersonStruct
 }
 ```
 
-Renvoyez ensuite * PersonStruct\[\]* au lieu de *List&lt;PersonObject&gt;* .
+Then return *PersonStruct\[\]* instead of *List&lt;PersonObject&gt;* .
 Toutes les données sont transmises en un saut (hop) interprocessus
 
 Comme pour tous les éléments à prendre en compte pour les performances, les mesures et le test sont critiques. La télémétrie doit être utilisée dans différentes opérations pour connaître la durée de chacune d’elles. Il est important de réaliser ces mesures sur une plage : par exemple, quel est le temps nécessaire pour consommer tous les objets *People* pour une requête spécifique dans l’application installée hors Windows Store ?
@@ -577,10 +577,10 @@ L’exemple montre comment introduire des délais dans le code en utilisant des 
 
 Lorsque vous souhaitez apporter des modifications au serveur, assurez-vous au préalable qu’aucune instance démarrée précédemment n’est encore en cours d’exécution. Même si le code COM nettoie le processus, le minuteur d’arrêt prend plus de temps et nuit à l’efficacité du développement itératif. La suppression d’instances précédentes en cours d’exécution est donc une étape normale du développement. Cela nécessite que le développeur sache quelle instance dllhost héberge le serveur.
 
-Il est possible de trouver et d’arrêter le processus serveur via le Gestionnaire des tâches ou d’une autre application tierce. L’outil de ligne de commande **TaskList.exe** intégré peut également être utilisé. La syntaxe de ses commandes est simple :
+Il est possible de trouver et d’arrêter le processus serveur via le Gestionnaire des tâches ou d’une autre application tierce. The command line tool **TaskList.exe** is also included and has flexible syntax, for example:
 
   
- | **Commande** | **Action** |
+ | **Command** | **Action** |
  | ------------| ---------- |
  | tasklist | Affiche une liste de tous les processus en cours d’exécution dans l’ordre approximatif de leur date de création. Les derniers processus créés sont affichés vers le bas de la liste. |
  | tasklist /FI "IMAGENAME eq dllhost.exe" /M | Affiche des informations sur toutes les instances dllhost.exe. Le commutateur /M répertorie les modules ayant été chargés. |
@@ -590,15 +590,15 @@ Pour un serveur du service Broker, *clrhost.dll* doit figurer dans la liste des 
 
 ## <a name="resources"></a>Ressources
 
--   [Modèles de projet de composant WinRT réparties pour Windows 10 et VS 2015](https://marketplace.visualstudio.com/items?itemName=vs-publisher-713547.VS2015TemplateBrokeredComponents)
+-   [Brokered WinRT Component Project Templates for Windows 10 and VS 2015](https://marketplace.visualstudio.com/items?itemName=vs-publisher-713547.VS2015TemplateBrokeredComponents)
 
--   [Exemple de composant WinRT répartie NorthwindRT](https://code.msdn.microsoft.com/Northwind-Brokered-WinRTC-5143a67c)
+-   [NorthwindRT Brokered WinRT Component Sample](https://code.msdn.microsoft.com/Northwind-Brokered-WinRTC-5143a67c)
 
--   [Diffusion d’applications de Microsoft Store fiables et fiables](https://blogs.msdn.com/b/b8/archive/2012/05/17/delivering-reliable-and-trustworthy-metro-style-apps.aspx)
+-   [Delivering reliable and trustworthy Microsoft Store apps](https://blogs.msdn.com/b/b8/archive/2012/05/17/delivering-reliable-and-trustworthy-metro-style-apps.aspx)
 
--   [Contrats et extensions des applications (applications du Windows Store)](https://docs.microsoft.com/previous-versions/windows/apps/hh464906(v=win.10))
+-   [App contracts and extensions (Windows Store apps)](https://docs.microsoft.com/previous-versions/windows/apps/hh464906(v=win.10))
 
--   [Comment chargement des applications sur Windows 10](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)
+-   [How to sideload apps on Windows 10](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)
 
--   [Déploiement d’applications UWP dans des entreprises](https://blogs.msdn.com/b/windowsstore/archive/2012/04/25/deploying-metro-style-apps-to-businesses.aspx)
+-   [Deploying UWP apps to businesses](https://blogs.msdn.com/b/windowsstore/archive/2012/04/25/deploying-metro-style-apps-to-businesses.aspx)
 
