@@ -6,12 +6,12 @@ ms.date: 09/12/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f4ab5b177539bc286ce24d480cd949d43a51e17
-ms.sourcegitcommit: bd41fb6f59dfbd7021b14ff749b8b0f83f883c0f
+ms.openlocfilehash: a161a5e26bd647a37b06a270ef6714d54bc16d80
+ms.sourcegitcommit: ac9fb37fe58cc728df2fa0495e36ee4d7b811a23
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70963621"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74467412"
 ---
 # <a name="create-a-hello-world-app-js"></a>Créer une application « Hello World » (JS)
 
@@ -23,13 +23,13 @@ Ce didacticiel vous explique comment utiliser JavaScript et HTML pour créer une
 > [!WARNING]
 > Le développement d’applications UWP JavaScript n’est pas pris en charge dans Visual Studio 2019. Vous devez utiliser Visual Studio 2017 pour développer une application UWP JavaScript.
 
-Vous allez apprendre à effectuer les opérations suivantes :
+Dans cet article, vous allez apprendre à :
 
 -   Créer un projet **Visual Studio 2017** qui cible **Windows 10** et **UWP**.
--   ajouter du contenu HTML et JavaScript ;
+-   Ajouter du contenu HTML et JavaScript.
 -   exécuter le projet sur l’ordinateur local dans Visual Studio.
 
-## <a name="before-you-start"></a>Avant de commencer...
+## <a name="before-you-start"></a>Avant de commencer
 
 -   [Qu’est-ce qu’une application UWP ?](universal-application-platform-guide.md)
 -   Pour suivre ce didacticiel, vous avez besoin de Windows 10 et de Visual Studio. [Se préparer](get-set-up.md).
@@ -39,16 +39,16 @@ Vous allez apprendre à effectuer les opérations suivantes :
 
 1.  Lancez Visual Studio 2017.
 
-2.  Dans le menu **Fichier**, sélectionnez **Nouveau > Projet...** pour ouvrir la boîte de dialogue *Créer un projet*.
+2.  Dans le menu **Fichier**, sélectionnez **Nouveau > Projet** pour ouvrir la boîte de dialogue **Créer un projet**.
 
 3.  Choisissez **Application vide (Windows universel) JavaScript**, puis sélectionnez **Suivant**.
 
-    (Si aucun modèle universel n’apparaît, c’est qu’il vous manque les composants permettant de créer des applications UWP. Vous pouvez répéter la procédure d’installation et ajouter la prise en charge UWP en cliquant sur **Ouvrir le programme d’installation de Visual Studio** dans la boîte de dialogue *Créer un projet*. Voir [Préparation](get-set-up.md)
+    (Si aucun modèle universel n’apparaît, c’est qu’il vous manque les composants permettant de créer des applications UWP. Vous pouvez répéter la procédure d’installation et ajouter la prise en charge UWP en sélectionnant **Ouvrir le programme d’installation de Visual Studio** dans la boîte de dialogue **Créer un projet**. Consultez [Préparation](get-set-up.md).
 
-4.  Dans la boîte de dialogue *Configurer votre nouveau projet*, entrez « HelloWorld » comme **Nom de projet**, puis sélectionnez **Créer**.
+4.  Dans la boîte de dialogue **Configurer votre nouveau projet**, entrez **HelloWorld** comme **Nom de projet**, puis sélectionnez **Créer**.
 
 > [!NOTE]
-> Si vous utilisez Visual Studio pour la première fois, il est possible que la boîte de dialogue Paramètres s'affiche et vous demande d'activer le **Mode développeur**. Le mode développeur est un paramètre qui permet d’accéder à certaines fonctionnalités, telles que l’autorisation d’exécuter des applications directement plutôt qu’uniquement à partir du Store. Pour plus d’informations, consultez [Activer votre appareil pour le développement](enable-your-device-for-development.md). Pour continuer avec ce guide, sélectionnez le **Mode développeur**, cliquez sur **Oui** et fermez la boîte de dialogue.
+> Si vous utilisez Visual Studio pour la première fois, il est possible que la boîte de dialogue Paramètres s'affiche et vous demande d'activer le **Mode développeur**. Le mode développeur est un paramètre qui permet d’accéder à certaines fonctionnalités, telles que l’autorisation d’exécuter des applications directement plutôt qu’uniquement à partir du Store. Pour plus d’informations, consultez [Activer votre appareil pour le développement](enable-your-device-for-development.md). Pour continuer avec ce guide, sélectionnez le **Mode développeur**, sélectionnez **Oui**, puis fermez la boîte de dialogue.
 
  ![Boîte de dialogue d’activation du mode développeur](images/win10-cs-00.png)
 
@@ -80,13 +80,13 @@ Pour afficher et modifier un fichier de votre projet, double-cliquez dessus dans
 - Page de l’application web qui se charge et s’affiche lors du lancement de l’application.
 
 *Ensemble d’images de logo*
--   Assets/Square150x150Logo.scale-200.png représente votre application dans le menu Démarrer.
+-   Assets/Square150x150Logo.scale-200.png représente votre application dans le menu **Démarrer**.
 -   Assets/StoreLogo.png représente votre application dans le Microsoft Store.
 -   Assets/SplashScreen.scale-200.png est l’écran de démarrage qui s’affiche quand votre application démarre.
 
 ## <a name="step-2-adding-a-button"></a>Étape 2 : Ajouter un bouton
 
-Cliquez sur *index.html* pour le sélectionner dans l’éditeur et remplacez le code HTML qu’il contient par :
+Sélectionnez **index.html** pour le sélectionner dans l’éditeur et remplacez le code HTML qu’il contient par ce qui suit.
 
 ```html
 <!DOCTYPE html>
@@ -107,7 +107,7 @@ Cliquez sur *index.html* pour le sélectionner dans l’éditeur et remplacez le
 </html>
 ```
 
-Il doit se présenter comme suit :
+Il doit se présenter ainsi.
 
  ![Code HTML du projet](images/win10-js-03.png)
 
@@ -116,7 +116,7 @@ Ce code HTML fait référence au fichier *main.js* qui contiendra notre code Jav
 
 ## <a name="step-3-adding-some-javascript"></a>Étape 3 : Ajout de code JavaScript
 
-Nous allons maintenant ajouter le code JavaScript. Cliquez sur *main.js* pour le sélectionner, et ajoutez les éléments suivants :
+Nous allons maintenant ajouter le code JavaScript. Sélectionnez **main.js** pour le sélectionner, puis ajoutez ce qui suit.
 
 ```javascript
 // Your code here!
@@ -135,7 +135,7 @@ function sayHello() {
 
 ```
 
-Il doit se présenter comme suit :
+Il doit se présenter ainsi.
 
  ![Code JavaScript du projet](images/win10-js-04.png)
 
@@ -146,7 +146,7 @@ La deuxième fonction, *sayHello()* , crée et affiche une boîte de dialogue. E
 
 ## <a name="step-4-run-the-app"></a>Étape 4 : Exécuter l’application.
 
-Vous pouvez maintenant exécuter l’application en appuyant sur F5. L’application se charge, la page web s’affiche. Cliquez sur le bouton : la boîte de dialogue s’ouvre.
+Vous pouvez maintenant exécuter l’application en appuyant sur F5. L’application se charge, la page web s’affiche. Sélectionnez le bouton pour que la boîte de dialogue apparaisse.
 
  ![Exécution du projet](images/win10-js-05.png)
 

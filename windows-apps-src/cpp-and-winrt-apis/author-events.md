@@ -5,16 +5,16 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, créer, événement
 ms.localizationpriority: medium
-ms.openlocfilehash: e8bb86bd8d52ff96f010bf41758f1e4602330d52
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: 55d512faccfa318156fb0dc28d3f804b53f0fe3d
+ms.sourcegitcommit: 102fdfdf32ba12a8911018d234d71d67ebef61ce
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393480"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74551662"
 ---
 # <a name="author-events-in-cwinrt"></a>Créer des événements en C++/WinRT
 
-Cette rubrique montre comment créer un composant Windows Runtime qui contient une classe runtime représentant un compte bancaire, qui déclenche un événement lorsque son solde devient débiteur. Elle montre également une application de base qui utilise la classe runtime de compte bancaire, appelle une fonction pour ajuster le solde et gère tous les événements résultants.
+Cette rubrique montre comment créer un composant Windows Runtime qui contient une classe runtime représentant un compte bancaire&mdash;un compte bancaire qui déclenche un événement lorsque son solde devient débiteur. Cette rubrique montre également une application de base qui utilise la classe runtime de compte bancaire, appelle une fonction pour ajuster le solde et gère tous les événements résultants.
 
 > [!NOTE]
 > Pour plus d’informations sur l’installation et l’utilisation de l’extension VSIX (Visual Studio Extension) [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) et du package NuGet (qui fournissent ensemble la prise en charge des modèles et des builds de projet), consultez [Prise en charge de Visual Studio pour C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
@@ -24,7 +24,7 @@ Cette rubrique montre comment créer un composant Windows Runtime qui contient u
 
 ## <a name="create-a-windows-runtime-component-bankaccountwrc"></a>Créer un composant Windows Runtime (BankAccountWRC)
 
-Commencez par créer un nouveau projet dans Microsoft Visual Studio. Créez un projet **Composant Windows Runtime (C++/WinRT)** et nommez-le *BankAccountWRC* (pour « composant Windows Runtime de compte bancaire »). Ne générez pas encore le projet.
+Commencez par créer un nouveau projet dans Microsoft Visual Studio. Créez un projet **Composant Windows Runtime (C++/WinRT)** et nommez-le *BankAccountWRC* (pour « composant Windows Runtime de compte bancaire »). Si vous nommez le projet *BankAccountWRC*, vous suivrez le reste des étapes de cette rubrique le plus facilement possible. Ne générez pas encore le projet.
 
 Le projet nouvellement créé contient un fichier nommé `Class.idl`. Renommez ce fichier `BankAccount.idl` (la modification du nom du fichier `.idl` renomme également automatiquement les fichiers `.h` et `.cpp` associés). Remplacez le contenu de l’élément `BankAccount.idl` par le listing ci-dessous.
 
@@ -45,7 +45,7 @@ Enregistrez le fichier. Le projet ne sera pas généré complètement pour le mo
 
 Pendant le processus de génération, l’outil `midl.exe` est exécuté pour créer le fichier de métadonnées Windows Runtime de votre composant (à savoir `\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd`). Puis, l’outil `cppwinrt.exe` est exécuté (avec l’option `-component`) pour générer les fichiers de code source vous aidant à créer votre composant. Ces fichiers incluent des stubs pour vous aider à implémenter la classe runtime **BankAccount** que vous avez déclarée dans votre fichier IDL. Ces stubs sont `\BankAccountWRC\BankAccountWRC\Generated Files\sources\BankAccount.h` et `BankAccount.cpp`.
 
-Cliquez avec le bouton droit de la souris sur le nœud du projet, puis cliquez sur **Ouvrir le dossier dans l'Explorateur de fichiers**. Le dossier du projet s’ouvre dans l'Explorateur de fichiers. De là, copiez les fichiers stub `BankAccount.h` et `BankAccount.cpp` du dossier `\BankAccountWRC\BankAccountWRC\Generated Files\sources\` vers le dossier contenant vos fichiers projet, c’est-à-dire `\BankAccountWRC\BankAccountWRC\`, puis remplacez les fichiers dans la destination. Maintenant, nous allons ouvrir `BankAccount.h` et `BankAccount.cpp`, et implémenter notre classe runtime. Dans `BankAccount.h`, ajoutez deux membres privés à l’implémentation (*pas* à l’implémentation d’usine) de BankAccount.
+Cliquez avec le bouton droit de la souris sur le nœud du projet, puis cliquez sur **Ouvrir le dossier dans l'Explorateur de fichiers**. Le dossier du projet s’ouvre dans l'Explorateur de fichiers. De là, copiez les fichiers stub `BankAccount.h` et `BankAccount.cpp` du dossier `\BankAccountWRC\BankAccountWRC\Generated Files\sources\` vers le dossier contenant vos fichiers projet, c’est-à-dire `\BankAccountWRC\BankAccountWRC\`, puis remplacez les fichiers dans la destination. Maintenant, nous allons ouvrir `BankAccount.h` et `BankAccount.cpp`, et implémenter notre classe runtime. Dans `BankAccount.h`, ajoutez deux membres privés à l’implémentation (*pas* à l’implémentation d’usine) de **BankAccount**.
 
 ```cppwinrt
 // BankAccount.h
@@ -102,9 +102,12 @@ Si un avertissement vous empêche de procéder à la génération, corrigez les 
 
 ## <a name="create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component"></a>Créer une application de base (BankAccountCoreApp) pour tester le composant Windows Runtime
 
-Créez à présent un nouveau projet (dans votre solution `BankAccountWRC` ou dans une nouvelle solution). Créez un projet **Application de base (C++/WinRT)** et nommez-le *BankAccountCoreApp*.
+Créez à présent un nouveau projet (dans votre solution *BankAccountWRC* ou dans une nouvelle solution). Créez un projet **Application de base (C++/WinRT)** et nommez-le *BankAccountCoreApp*.
 
-Ajoutez une référence, puis accédez à `\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd` (ou ajoutez une référence de projet à projet, si les deux projets se trouvent dans la même solution). Cliquez sur **Ajouter**, puis sur **OK**. À présent, générez BankAccountCoreApp. Dans le cas improbable où vous voyez une erreur indiquant que le fichier de charge utile `readme.txt` n’existe pas, excluez ce fichier du projet Composant Windows Runtime, régénérez-le, puis regénérez BankAccountCoreApp.
+> [!NOTE]
+> Comme mentionné précédemment, le fichier de métadonnées Windows Runtime de votre composant Windows Runtime (dont vous avez nommé le projet *BankAccountWRC*) est créé dans le dossier `\BankAccountWRC\Debug\BankAccountWRC\`. Le premier segment de ce chemin correspond au nom du dossier qui contient votre fichier de solution, le segment suivant est le sous-répertoire du projet nommé `Debug` et le dernier segment est le sous-répertoire du projet nommé de votre composant Windows Runtime. Si vous n’avez pas nommé votre projet *BankAccountWRC*, votre fichier de métadonnées se trouve dans le dossier `\<YourProjectName>\Debug\<YourProjectName>\`.
+
+Maintenant, dans votre projet Core App (*BankAccountCoreApp*), ajoutez une référence, puis accédez à `\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd` (ou ajoutez une référence de projet à projet, si les deux projets se trouvent dans la même solution). Cliquez sur **Ajouter**, puis sur **OK**. À présent, générez *BankAccountCoreApp*. Dans le cas improbable où vous voyez une erreur indiquant que le fichier de charge utile `readme.txt` n’existe pas, excluez ce fichier du projet Composant Windows Runtime, régénérez-le, puis regénérez *BankAccountCoreApp*.
 
 Pendant le processus de génération, l’outil `cppwinrt.exe` est exécuté pour traiter le fichier `.winmd` référencé dans les fichiers de code source contenant les types projetés afin de vous aider à utiliser votre composant. L’en-tête pour les types projetés des classes runtime de votre composant &mdash; nommé `BankAccountWRC.h` &mdash; est généré dans le dossier `\BankAccountCoreApp\BankAccountCoreApp\Generated Files\winrt\`.
 
@@ -114,9 +117,9 @@ Incluez cet en-tête dans `App.cpp`.
 #include <winrt/BankAccountWRC.h>
 ```
 
-Également dans `App.cpp`, ajoutez le code suivant pour instancier un BankAccount (à l’aide du constructeur par défaut du type projeté), enregistrez un gestionnaire d’événements et faites en sorte que le compte devienne débiteur.
+Également dans `App.cpp`, ajoutez le code suivant pour instancier un **BankAccount** (à l’aide du constructeur par défaut du type projeté), enregistrez un gestionnaire d’événements et faites en sorte que le compte devienne débiteur.
 
-`WINRT_ASSERT` est une définition de macro qui s’étend à [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros).
+`WINRT_ASSERT` est une définition de macro, qui se développe en [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros).
 
 ```cppwinrt
 struct App : implements<App, IFrameworkViewSource, IFrameworkView>

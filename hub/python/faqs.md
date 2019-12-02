@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, windows 10, microsoft, pip, py.exe, chemins d’accès aux fichiers, PYTHONPATH, déploiement python, création de package python
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 4132ef0089ee707367666b4d6340333e538b1130
-ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
+ms.openlocfilehash: 6dbf86e0f9435e44140159ebb2bcbc3d67928999
+ms.sourcegitcommit: c8634b15b10bd196e7e2f876ae26e1205e160c91
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72313375"
+ms.lasthandoff: 11/29/2019
+ms.locfileid: "74663556"
 ---
 # <a name="frequently-asked-questions-about-using-python-on-windows"></a>Questions fréquemment posées sur l’utilisation de Python sur Windows
 
@@ -47,7 +47,7 @@ Pour désactiver les raccourcis sans installer Python, ouvrez « Gérer les alia
 
 Les chaînes python utilisent des « échappements » pour les caractères spéciaux. Par exemple, pour insérer un caractère de nouvelle ligne dans une chaîne, vous devez taper `\n`. Comme les chemins d’accès aux fichiers sur Windows utilisent des barres obliques inverses, certains éléments peuvent être convertis en caractères spéciaux.
 
-Pour coller un chemin d’accès en tant que chaîne dans Python, ajoutez le préfixe `r`. Cela indique qu’il s’agit d’une chaîne `raw`. Ainsi, aucun caractère d’échappement n’est utilisé à l’exception de \” (vous devrez peut-être supprimer la dernière barre oblique inverse de votre chemin d’accès). Votre chemin peut donc ressembler à ceci : « C:\Users\MyName\Documents\Document.txt »
+Pour coller un chemin d’accès en tant que chaîne dans Python, ajoutez le préfixe `r`. Cela indique qu’il s’agit d’une chaîne `raw`. Ainsi, aucun caractère d’échappement n’est utilisé à l’exception de \” (vous devrez peut-être supprimer la dernière barre oblique inverse de votre chemin d’accès). Votre chemin peut donc ressembler à ceci : `r"C:\Users\MyName\Documents\Document.txt"`
 
 Lorsque vous utilisez des chemins d’accès dans Python, nous vous recommandons d’utiliser le module pathlib standard. Celui-ci permet de convertir la chaîne en un objet de chemin d’accès enrichi pouvant effectuer les manipulations de chemin d’accès de manière cohérente, qu’il utilise des barres obliques ou des barres obliques inverses, afin que votre code fonctionne mieux sur différents systèmes d’exploitation.
 
