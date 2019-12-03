@@ -6,12 +6,12 @@ ms.date: 05/08/2018
 ms.topic: article
 keywords: windows 10, uwp, évaluation de l’âge, classification des jeux, iarc, évaluation, questionnaire, organisme de classification, contrôle d'accès au contenu
 ms.localizationpriority: medium
-ms.openlocfilehash: bab98b50b1d53451708b7631f74d15947c60d4c8
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 2e8ffdcf1daf9198ded9658c471e765acf5ab8f3
+ms.sourcegitcommit: 7754c1cb1a348f3311417ea7df3e9d168fe39517
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260044"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74694775"
 ---
 # <a name="age-ratings"></a>Classification par âge
 
@@ -33,9 +33,6 @@ Une fois que vous avez fini de répondre aux questions, cliquez sur **Enregistre
 La prochaine fois que vous mettrez à jour votre application, l’ensemble des classifications attribuées à l’application s’affichera sur cette page. Vous pouvez également cliquer sur **Modifier** pour répondre de nouveau au questionnaire si le contenu de votre application a été modifié de telle sorte que vous deviez modifier une ou plusieurs réponses. Il arrive également de temps en temps que l’IARC mette à jour les questions. Le cas échéant, vous pouvez être invité à répondre à nouveau au questionnaire lorsque vous soumettez une mise à jour.
 
 <span id="boards" />
-
-> [!NOTE]
-> La loi sud-coréenne exige que les jeux disponibles en Corée du Sud soient évalués par rapport au [GRB (Game Rating Board)](https://www.grb.or.kr/Default.aspx) de Corée du Sud. Si vous soumettez un jeu et que vous souhaitez le proposer en Corée du Sud, vous devez renseigner cette section supplémentaire et charger votre certificat d’évaluation. Notez que si votre application n'est pas un jeu ou que vous ne souhaitez pas la proposer en Corée du Sud, vous pouvez laisser cette section vide.
 
 > [!NOTE]
 > Si vous soumettez un jeu qui sera disponible à Taïwan, vous êtes obligé par la loi d’enregistrer la notation CSRR fournie à l’aide de [ce formulaire](https://www.gamerating.org.tw/company_login.php). 
