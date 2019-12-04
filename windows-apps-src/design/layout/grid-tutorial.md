@@ -1,27 +1,27 @@
 ---
-Description: Ce didacticiel décrit comment créer une interface utilisateur de base d’application. Il explique et montre comment utiliser Grid et StackPanel, deux des éléments XAML les plus courants.
-title: Utilisez Grid et StackPanel pour créer une application météo simple.
+Description: Ce didacticiel explique comment créer une interface utilisateur de base de l’application. Il explique et montre comment utiliser Grid et StackPanel, deux des éléments XAML les plus courants.
+title: Utilisez Grid et StackPanel pour créer une application simple.
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.assetid: 9794a04d-e67f-472c-8ba8-8ebe442f6ef2
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ad32f67dc8cfaf90b96523429bb0ac4b6722abb
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: f7c5eb595f3347eb4670e4f7c0a50aa930341d3e
+ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365074"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74735034"
 ---
-# <a name="tutorial-use-grid-and-stackpanel-to-create-a-simple-weather-app"></a>Tutoriel : Permet de créer une application simple météo Grid et StackPanel
+# <a name="tutorial-use-grid-and-stackpanel-to-create-a-simple-weather-app"></a>Didacticiel : Utilisez Grid et StackPanel pour créer une application météo simple
 
-Utilisez XAML pour créer la disposition d’une application Météo simple à l’aide des éléments **Grid** et **StackPanel**. Ces outils vous permettent de créer des applications esthétiques qui fonctionnent sur tous les appareils exécutant Windows 10. Ce didacticiel dure 10 à 20 minutes.
+Utilisez XAML pour créer la disposition d’une application météo simple à l’aide des éléments **Grid** et **StackPanel**. Ces outils vous permettent de créer des applications esthétiques qui fonctionnent sur tous les appareils exécutant Windows 10. Ce didacticiel dure 10 à 20 minutes.
 
-> **API importantes** : [Classe de grille](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.grid), [StackPanel classe](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.stackpanel)
+> **API importantes** : [catégorie de grille](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid), [catégorie StackPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.stackpanel)
 
-## <a name="prerequisites"></a>Prérequis
-- Windows 10 et Microsoft Visual Studio 2015 ou version ultérieure. (Plus récente de Visual Studio pour le développement en cours et de sécurité mises à jour recommandées) [Cliquez ici pour savoir comment configurer Visual Studio](../../get-started/get-set-up.md).
+## <a name="prerequisites"></a>Conditions préalables
+- Windows 10 et Microsoft Visual Studio 2015 ou version ultérieure. (Le plus récent de Visual Studio est recommandé pour les mises à jour de sécurité et de développement actuelles) [Cliquez ici pour découvrir comment configurer Visual Studio](../../get-started/get-set-up.md).
 - Savoir créer une application « Hello World » de base à l’aide de XAML et de C#. Le cas échéant, [cliquez ici pour apprendre à créer une application « Hello World »](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
 
 ## <a name="step-1-create-a-blank-app"></a>Étape 1 : Créer une application vide
@@ -31,7 +31,7 @@ Utilisez XAML pour créer la disposition d’une application Météo simple à l
 4. Dans la zone **Nom** entrez **WeatherPanel**, puis sélectionnez **OK**.
 5. Pour exécuter le programme, choisissez **Déboguer** > **Démarrer le débogage** dans le menu, ou appuyez sur F5.
 
-## <a name="step-2-define-a-grid"></a>Étape 2 : Définir une grille
+## <a name="step-2-define-a-grid"></a>Étape 2 : Définir une grille
 Dans le code XAML, une **grille** comprend une série de lignes et de colonnes. En spécifiant la ligne et la colonne d’un élément dans une **grille**, vous pouvez placer et espacer d’autres éléments dans une interface utilisateur. Les lignes et colonnes sont définies avec les éléments **RowDefinition** et **ColumnDefinition**.
 
 Pour commencer à créer une disposition, ouvrez **MainPage.xaml** à l’aide de l’**Explorateur de solutions** et remplacez l’élément **Grid** généré automatiquement par ce code.
@@ -49,13 +49,13 @@ Pour commencer à créer une disposition, ouvrez **MainPage.xaml** à l’aide d
 </Grid>
 ```
 
-Le nouvel élément **Grid** crée un ensemble de deux lignes et colonnes, qui définit la disposition de l’interface de l’application. La première colonne a un **largeur** de « 3\*», tandis que le deuxième « 5\*», division de l’espace horizontal entre les deux colonnes à un taux de 3 à 5. De la même façon, les deux lignes ont une **hauteur** de « 2\*« et »\*» respectivement, afin que la **grille** alloue deux fois plus d’espace pour la première ligne comme pour le second («\*» est identique à « 1\*»). Ces rapports sont conservés même si la fenêtre est redimensionnée ou si l’appareil est modifié.
+Le nouvel élément **Grid** crée un ensemble de deux lignes et colonnes, qui définit la disposition de l’interface de l’application. La première colonne a une **largeur** de « 3\*», tandis que la seconde a « 5\*», divisant l’espace horizontal entre les deux colonnes à un ratio de 3:5. De la même façon, les deux lignes ont respectivement une **hauteur** de « 2\*» et de «\*», donc la **grille** alloue deux fois plus d’espace pour la première ligne que pour la seconde («\*» est identique à « 1\*»). Ces rapports sont conservés même si la fenêtre est redimensionnée ou si l’appareil est modifié.
 
 Pour en savoir plus sur les autres méthodes de dimensionnement des lignes et des colonnes, consultez [Définir des dispositions avec XAML](https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml).
 
 Si vous exécutez l’application maintenant, vous ne verrez rien d’autre qu’une page vide, car aucune des zones de la **grille** ne contient d’informations. Pour afficher la **grille**, donnons-lui de la couleur.
 
-## <a name="step-3-color-the-grid"></a>Étape 3 : Couleur de la grille
+## <a name="step-3-color-the-grid"></a>Étape 3 : Colorier la grille
 Pour colorier la **grille**, nous ajoutons trois éléments **Border**, chacun avec une couleur d’arrière-plan différente. Chacun est également attribué à une ligne et une colonne dans la **grille** parente, à l’aide des attributs **Grid.Row** et **Grid.Column**. Comme ces attributs ont la valeur 0 par défaut, vous n’avez pas besoin de les affecter au premier élément **Border**. Ajoutez le code suivant à l’élément **Grid** après les définitions de lignes et de colonnes.
 
 ```xml
@@ -70,7 +70,7 @@ Si vous exécutez l’application, elle se présente comme suit.
 
 ![Coloration de la grille](images/grid-weather-1.png)
 
-## <a name="step-4-organize-content-by-using-stackpanel-elements"></a>Étape 4 : Organiser le contenu à l’aide des éléments de StackPanel
+## <a name="step-4-organize-content-by-using-stackpanel-elements"></a>Étape 4 : Organiser le contenu à l’aide d’éléments StackPanel
 **StackPanel** est le deuxième élément d’interface utilisateur que nous allons utiliser pour créer notre application Météo. L’élément **StackPanel** est une partie essentielle de nombreuses dispositions d’application de base, car il vous permet d’empiler des éléments verticalement ou horizontalement.
 
 Dans le code suivant, nous allons créer deux éléments **StackPanel** et les remplir avec trois éléments **TextBlock**. Ajoutez ces éléments **StackPanel** à la **grille** sous les éléments **Border** de l’étape 3. Le rendu des éléments **TextBlock** apparaît au-dessus de la **grille** de couleur que nous avons créée auparavant.
@@ -103,7 +103,7 @@ Téléchargez l’image ci-dessous et enregistrez-la comme une image PNG nommé
 
 ![Partiellement nuageux](images/partially-cloudy.PNG)
 
-Dans le **l’Explorateur de solutions**, avec le bouton droit cliquez sur le **actifs** dossier, puis sélectionnez **ajouter** -> **élément existant...** Trouver partiellement cloudy.png dans le navigateur qui s’affiche, sélectionnez-le, puis cliquez sur **ajouter**.
+Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le dossier **Assets** et sélectionnez **Ajouter** -> **Élément existant...** Recherchez le fichier partiellement-nuageux.png dans le navigateur qui s’affiche, sélectionnez-le, puis cliquez sur **Ajouter**.
 
 Ensuite, dans **MainPage.xaml**, ajoutez l’élément **Image** suivant sous les éléments StackPanel de l’étape 4.
 
@@ -119,7 +119,7 @@ C’est tout ! Vous venez de créer la disposition d’une application Météo 
 
 Si vous le souhaitez, testez la disposition ci-dessus et explorez les différentes façons de représenter des données météorologiques.
 
-## <a name="related-articles"></a>Articles connexes
+## <a name="related-articles"></a>Articles associés
 Pour une introduction à la conception de dispositions d’application UWP, consultez [Introduction à la conception d’une application UWP](https://docs.microsoft.com/windows/uwp/layout/design-and-ui-intro).
 
 Pour apprendre à créer des dispositions réactives adaptables à différentes tailles d’écran, consultez [Définir des dispositions de pages avec XAML](https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml).

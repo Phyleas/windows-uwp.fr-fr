@@ -1,17 +1,17 @@
 ---
 description: Cette rubrique fournit un mappage complet de Windows Phone API Silverlight à leurs équivalents de plateforme Windows universelle (UWP).
-title: Windows Phone des mappages de classe et d’espace de noms Silverlight vers UWP
+title: WPSL à l’espace de noms UWP et aux mappages de classe
 ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1af36b43e02c9ee08373098f57ba29c10badb6c8
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: fdb1dc8ad4b4e61e1ffec294cfbf17e8abcc8586
+ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259068"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74735054"
 ---
 # <a name="windowsphone-silverlight-to-uwp-api-mappings"></a>Windows Phone des mappages d’API Silverlight vers UWP
 
@@ -104,7 +104,7 @@ En outre, dans une application Windows 10, vous tirerez parti de .NET Native, qu
 | Classe **System.Data.Linq.DataContext** | Aucun équivalent direct |
 | Classe **System.Data.Linq.Mapping.ColumnAttribute** | Aucun équivalent direct |
 | Classe **System.Data.Linq.SqlClient.SqlHelpers** | Aucun équivalent direct |
-| Périphériques | |
+| Appareils | |
 | Espaces de noms **Microsoft.Devices** et **Microsoft.Devices.Sensors** | Espaces de noms [**Windows. Devices. Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration), [**Windows. Devices. Enumeration. PNP**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.Pnp), [**Windows. appareils. Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input), [**Windows. Devices. Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors) |
 | Classes **Microsoft.Devices.Camera** et **Microsoft.Devices.PhotoCamera** | Classe [**MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture) . Également la classe [**CameraCaptureUI**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.CameraCaptureUI) (Windows uniquement). |
 | Classe **Microsoft.Devices.CameraButtons** | [**HardwareButtons**](https://docs.microsoft.com/uwp/api/Windows.Phone.UI.Input.HardwareButtons) , classe |
@@ -154,7 +154,7 @@ En outre, dans une application Windows 10, vous tirerez parti de .NET Native, qu
 | Classes **Microsoft.Phone.Tasks.SaveContactTask**, **SaveEmailAddressTask** et **SavePhoneNumberTask** | Classe [**StoredContact**](https://docs.microsoft.com/uwp/api/Windows.Phone.PersonalInformation.StoredContact) (Windows Phone uniquement) | 
 | Classe **Microsoft.Phone.Tasks.SaveRingtoneTask** | Aucun équivalent direct |
 | Classes **Microsoft.Phone.Tasks.ShareLinkTask**, **ShareMediaTask** et **ShareStatusTask** | [**DataPackage**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackage) , classe |
-| Location | |
+| Services de localisation | |
 | Espace de noms **System.Device.Location** | Espace de noms [**Windows. Devices. géolocalisation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation) |
 | Classe **System.Device.GeoCoordinateWatcher** | Classe de [**géolocalisation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator) |
 | Cartes | |
@@ -168,7 +168,7 @@ En outre, dans une application Windows 10, vous tirerez parti de .NET Native, qu
 | Classe **Microsoft.Phone.Maps.Services.RouteQuery** | [**MapRouteFinder**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteFinder) , classe |
 | Monétisation | |
 | Espace de noms **Microsoft.Phone.Marketplace** | Espace de noms [**Windows. ApplicationModel. Store**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store) |
-| Support | |
+| Multimédia | |
 | Espace de noms **Microsoft.Phone.Media** | [**MediaElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement) (classe) |
 | Mise en réseau | |
 | (MPNN = **Microsoft.Phone.Net.NetworkInformation**) <br/> Classe **MPNN.DeviceNetworkInformation** | [**Hostname**](https://docs.microsoft.com/uwp/api/Windows.Networking.HostName), classes [**NetworkInformation**](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.NetworkInformation) |

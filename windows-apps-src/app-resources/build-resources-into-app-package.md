@@ -1,17 +1,17 @@
 ---
 Description: Certains types d’applications (dictionnaires multilingues, outils de traduction, etc.) doivent remplacer le comportement par défaut d’un ensemble d’applications et créer des ressources dans le package d’application plutôt que dans des packages de ressources distincts. Cette rubrique explique la procédure à suivre.
-title: Générer des ressources dans votre package d’application, plutôt que dans un pack de ressources
+title: Créer des ressources dans votre package d’application
 template: detail.hbs
 ms.date: 11/14/2017
 ms.topic: article
 keywords: windows 10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: f7acabc9858f5a2fa0b6b76d752d2a342959f41f
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: d7a63c44ac8cb6f6b17951cf6515fad33fb83ee9
+ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682509"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74734944"
 ---
 # <a name="build-resources-into-your-app-package-instead-of-into-a-resource-pack"></a>Générer des ressources dans votre package d’application, plutôt que dans un pack de ressources
 
@@ -57,7 +57,7 @@ Vous devez effectuer une étape finale. **Ceci est valable uniquement si vous av
    </default>
 ```
 
-### <a name="how-does-this-work"></a>Comment cela fonctionne-t-il ?
+### <a name="how-does-this-work"></a>Comment cela fonctionne ?
 
 En coulisse, Visual Studio lance un outil nommé `MakePri.exe` pour générer un fichier appelé un index de ressource de package, qui décrit toutes les ressources de votre application et qui indique notamment sur quels noms de qualificateurs de ressources effectuer le fractionnement automatique. Pour plus d’informations sur cet outil, consultez [Compiler des ressources manuellement avec MakePri.exe ](compile-resources-manually-with-makepri.md). Visual Studio envoie un fichier de configuration à `MakePri.exe`. Le contenu de votre fichier `priconfig.packaging.xml` est utilisé en tant qu’élément `<packaging>` de ce fichier de configuration, qui correspond à la partie qui détermine le fractionnement automatique. Ainsi, si vous ajoutez et modifiez `priconfig.packaging.xml`, vous influencez en fin de compte le contenu du fichier d’index de ressource de package que Visual Studio génère pour votre application, ainsi que le contenu des packages dans votre ensemble d’application.
 

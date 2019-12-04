@@ -1,18 +1,18 @@
 ---
 Description: Découvrez quand et où vous devez utiliser les vignettes secondaires dans votre application UWP.
-title: Vignettes secondaires
+title: Conseils de conception des vignettes secondaires
 label: Secondary tiles
 template: detail.hbs
 ms.date: 05/25/2017
 ms.topic: article
 keywords: Windows 10, uwp, vignettes secondaires, instructions, recommandations, meilleures pratiques
 ms.localizationpriority: medium
-ms.openlocfilehash: de3bfa94de1152b3945d42169143a5ae36328c75
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 875513840d8dc752fe336241fa54710aebad6103
+ms.sourcegitcommit: 2d709ddcc31f52d2a4ace1134aea45057d99a615
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57625344"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74782599"
 ---
 # <a name="secondary-tile-guidance"></a>Instructions relatives aux vignettes secondaires
 
@@ -32,7 +32,7 @@ Tenez compte des recommandations suivantes lors de l’activation des vignettes 
 * Si le contenu en question est déjà épinglé, remplacez le bouton « Épingler au menu Démarrer » de la barre de l’application par un bouton « Détacher du menu Démarrer ». Ce bouton doit supprimer la vignette secondaire existante.
 * Lorsque le contenu en question ne peut pas être épinglé, n’affichez pas de bouton « Épingler au menu Démarrer » (ou affichez un bouton « Épingler au menu Démarrer » désactivé).
 * Utilisez les glyphes fournis par le système pour les boutons « Épingler au menu Démarrer » et « Détacher du menu Démarrer » (voir les membres d’épingler ou de désépingler dans Windows.UI.Xaml.Controls.Symbol ou WinJS.UI.AppBarIcon).
-* Utilisez le texte de bouton standard : « Épingler au menu Démarrer » et « Détacher du menu Démarrer ». Vous devrez remplacer le texte par défaut lorsque vous utilisez les glyphes d’épinglage et de désépinglage fournis par le système.
+* Utilisez le texte du bouton standard : « Épingler au menu Démarrer » et « Détacher du menu Démarrer ». Vous devrez remplacer le texte par défaut lorsque vous utilisez les glyphes d’épinglage et de désépinglage fournis par le système.
 * N’utilisez pas une vignette secondaire comme un bouton de commande virtuel pour interagir avec l’application parente, comme une vignette permettant de passer à la piste suivante.
 
 
@@ -48,7 +48,7 @@ Tenez compte des recommandations suivantes lors de l’activation des vignettes 
 ## <a name="related"></a>Liens apparentés
 
 * [Vue d’ensemble des vignettes secondaires](secondary-tiles.md)
-* [Épingler des vignettes secondaires](secondary-tiles-pinning.md)
-* [Ressources de la vignette](app-assets.md)
-* [Documentation de contenu de vignette](create-adaptive-tiles.md)
-* [Envoyer une notification de vignette local](sending-a-local-tile-notification.md)
+* [Épingler les vignettes secondaires](secondary-tiles-pinning.md)
+* [Ressources en mosaïque](app-assets.md)
+* [Documentation sur le contenu de la vignette](create-adaptive-tiles.md)
+* [Envoyer une notification de vignette locale](sending-a-local-tile-notification.md)

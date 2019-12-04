@@ -1,26 +1,26 @@
 ---
-Description: Distribuer une application de bureau empaquetée (pont de bureau)
+Description: Distribuer une application empaquetée avec Desktop Bridge
 title: Publiez votre application de bureau packagée sur le Microsoft Store ou chargement sur un ou plusieurs appareils.
 ms.date: 05/18/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 597a283fd28b571ed968255312059c7049f3f700
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: 15970afbeb5d9dee1c2079cd5933b1250ecb2f09
+ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682563"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74734775"
 ---
 # <a name="distribute-your-packaged-desktop-app"></a>Distribuer votre application de bureau empaquetée
 
 Si vous décidez d' [empaqueter votre application de bureau dans un package MSIX](/windows/msix/desktop/desktop-to-uwp-root), vous pouvez publier votre application empaquetée sur le Microsoft Store ou la chargement sur un ou plusieurs appareils.
 
 > [!NOTE]
-> Avez-vous un plan de migration des utilisateurs vers votre application empaquetée? Avant de distribuer votre application, consultez la section [Migration des utilisateurs vers votre application empaquetée](#transition-users) de ce guide où vous trouverez quelques idées.
+> Avez-vous un plan de migration des utilisateurs vers votre application empaquetée ? Avant de distribuer votre application, consultez la section [Migration des utilisateurs vers votre application empaquetée](#transition-users) de ce guide où vous trouverez quelques idées.
 
 ## <a name="distribute-your-application-by-publishing-it-to-the-microsoft-store"></a>Distribuez votre application en la publiant sur le Microsoft Store
 
@@ -28,7 +28,7 @@ Le [Microsoft Store](https://www.microsoft.com/store/apps) est une méthode pra
 
 Publiez votre application sur le Microsoft Store pour atteindre le plus grand nombre d’audiences. En outre, les clients de l’organisation peuvent acquérir votre application en vue d’une distribution en interne à leur organisation par le biais du [Microsoft Store pour les entreprises](https://businessstore.microsoft.com/store).
 
-Si vous envisagez de publier dans le Microsoft Store, vous êtes invité à répondre à quelques questions supplémentaires dans le cadre du processus de soumission. Ce, parce que votre manifeste du package déclare une fonctionnalité restreinte nommée **runFullTrust** et que nous avons besoin d'approuver l’utilisation de cette fonctionnalité par votre application. Pour plus d’informations sur cette exigence, consultez: [Fonctionnalités restreintes](/windows/uwp/packaging/app-capability-declarations#restricted-capabilities).
+Si vous envisagez de publier dans le Microsoft Store, vous êtes invité à répondre à quelques questions supplémentaires dans le cadre du processus de soumission. Ce, parce que votre manifeste du package déclare une fonctionnalité restreinte nommée **runFullTrust** et que nous avons besoin d'approuver l’utilisation de cette fonctionnalité par votre application. Vous trouverez davantage de détails sur ces exigences ici : [Fonctionnalités restreintes](/windows/uwp/packaging/app-capability-declarations#restricted-capabilities).
 
 Vous n’êtes pas obligé de signer votre application avant de la soumettre au Windows Store.
 
@@ -70,7 +70,7 @@ Avant de distribuer votre application, envisagez d’ajouter quelques extensions
 
 Pour obtenir la liste complète des extensions et des conseils pour leur utilisation, voir [Migration des utilisateurs vers votre application](desktop-to-uwp-extensions.md#transition-users-to-your-app).
 
-Envisagez également d’ajouter du code à votre application empaquetée qui effectue les tâches suivantes:
+Envisagez également d’ajouter du code à votre application empaquetée qui effectue les tâches suivantes :
 
 * Migre les données utilisateur associées à votre application de bureau vers les emplacements de dossier appropriés de votre application empaquetée.
 * permettre aux utilisateurs de désinstaller la version de bureau de votre application.

@@ -1,17 +1,17 @@
 ---
-title: Déverrouillage Windows avec les appareils (IoT) complémentaires
+title: Windows Hello et déverrouillage avec des appareils compagnons
 description: Un appareil complémentaire Windows Hello est un appareil pouvant agir en conjonction avec votre ordinateur de bureau Windows 10 pour améliorer l’expérience d’authentification utilisateur. À l’aide de l’infrastructure d’appareil Windows Hello Companion, un appareil auxiliaire peut fournir une expérience enrichie pour Windows Hello même lorsque la biométrie n’est pas disponible (par exemple, si le bureau Windows 10 ne dispose pas d’un appareil photo pour l’authentification face ou le périphérique lecteur d’empreinte digitale , par exemple).
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, sécurité
 ms.assetid: 89f3d331-20cd-457b-83e8-1a22aaab2658
 ms.localizationpriority: medium
-ms.openlocfilehash: 416077d2f2e7fe5f98f2586eb7273602b8075982
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: 9b04ca1b841f72284ccab9df6c0ab1be8adab5c5
+ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72281847"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74735124"
 ---
 # <a name="windows-unlock-with-windows-hello-companion-iot-devices"></a>Déverrouillage Windows avec les appareils (IoT) complémentaires
 
@@ -21,13 +21,13 @@ Un appareil complémentaire Windows Hello est un appareil pouvant agir en conjon
 
 > **Remarque** L’infrastructure du dispositif complémentaire Windows Hello est une fonctionnalité spécialisée qui n’est pas disponible pour tous les développeurs d’applications. Pour utiliser cette infrastructure, votre application doit être spécialement approvisionnée par Microsoft et répertorier la fonctionnalité *secondaryAuthenticationFactor* dans son manifeste. Pour obtenir l’approbation, contactez [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com).
 
-## <a name="introduction"></a>Présentation
+## <a name="introduction"></a>Introduction
 
 > Pour obtenir un aperçu vidéo, voir la session [Déverrouillage Windows avec appareils IoT](https://channel9.msdn.com/Events/Build/2016/P491) à partir de la Build 2016 sur Channel 9.
 
 > Pour obtenir des exemples de code, voir le [référentiel Github de l’infrastructure du dispositif complémentaire Windows Hello](https://github.com/Microsoft/companion-device-framework).
 
-### <a name="use-cases"></a>Cas d’usage
+### <a name="use-cases"></a>Cas d’utilisation
 
 Il existe de nombreuses façons de créer une excellente expérience de déverrouillage Windows avec un dispositif complémentaire à l’aide de l’infrastructure du dispositif complémentaire Windows Hello. Les utilisateurs peuvent, par exemple :
 
@@ -66,9 +66,9 @@ Les dispositifs complémentaires sont généralement fournis avec une applicatio
 
 Chaque dispositif complémentaire Windows Hello doit être associé à une application qui prend en charge trois signaux utilisateur. Ces signaux peuvent être exprimés sous forme d’une action ou d’un geste.
 
-- **Signal d’intention**: Permet à l’utilisateur d’afficher son intention de déverrouiller, par exemple, en appuyant sur un bouton sur le périphérique compagnon Windows Hello. Le signal d’intention doit être capturé du côté du **dispositif complémentaire Windows Hello**.
-- **Signal de présence**de l’utilisateur : Prouve la présence de l’utilisateur. Le dispositif complémentaire Windows Hello peut, par exemple, nécessiter d’être activé par PIN ou un bouton avant de pouvoir être utilisé pour déverrouiller le PC (à ne pas confondre avec le PIN du PC).
-- **Signal de désambiguïsation**: Ambiguïté le bureau Windows 10 que l’utilisateur souhaite déverrouiller lorsque plusieurs options sont disponibles pour l’appareil compagnon Windows Hello.
+- **Signal d’intention** : permet à l’utilisateur d’indiquer sa volonté de déverrouiller l’appareil, par exemple en appuyant sur un bouton du dispositif complémentaire Windows Hello. Le signal d’intention doit être capturé du côté du **dispositif complémentaire Windows Hello**.
+- **Signal de présence de l’utilisateur** : apporte la preuve de la présence de l’utilisateur. Le dispositif complémentaire Windows Hello peut, par exemple, nécessiter d’être activé par PIN ou un bouton avant de pouvoir être utilisé pour déverrouiller le PC (à ne pas confondre avec le PIN du PC).
+- **Signal de levée d’ambiguïté** : lève l’ambiguïté le Bureau Windows 10 que l’utilisateur souhaite déverrouiller lorsque plusieurs options se présentent au dispositif complémentaire Windows Hello.
 
 Un nombre quelconque de ces signaux utilisateur peut être combiné en un seul signal. La présence de l’utilisateur et les signaux d’intention doivent être obligatoires à chaque utilisation.
 
@@ -90,7 +90,7 @@ Un flux de travail classique se présente de la manière suivante :
 - L’utilisateur configure le PIN sur chacun des appareils de bureau Windows 10 cibles qu’elle souhaite déverrouiller avec ce dispositif complémentaire Windows Hello.
 - L’utilisateur exécute l’application du dispositif complémentaire Windows Hello sur son appareil de bureau Windows 10 pour l’inscrire auprès de Windows 10 Desktop.
 
-Remarques :
+Remarques :
 
 - Nous vous recommandons d’utiliser la découverte, le téléchargement et le lancement de l’application de l’appareil compagnon Windows Hello, et ce, si possible, automatisé (par exemple, l’application peut être téléchargée en appuyant sur l’appareil Windows Hello Companion sur un lecteur NFC sur un appareil Windows 10 Desktop). côté). Le dispositif complémentaire Windows Hello et son application doivent cependant les appliquer automatiquement.
 - Dans un environnement d’entreprise, l’application de dispositif complémentaire Windows Hello peut être déployée à l’aide de la GPM.
@@ -164,7 +164,7 @@ Les utilisateurs peuvent supprimer un dispositif complémentaire Windows Hello d
 Les entreprises disposent de deux options pour contrôler l’infrastructure du dispositif complémentaire Windows Hello :
 
 - L’activation/désactivation de la fonctionnalité
-- L’établissement d’une liste blanche de dispositifs complémentaires Windows Hello autorisés à l’aide de Windows AppLocker
+- L’établissement d’une liste approuvée de dispositifs complémentaires Windows Hello autorisés à l’aide de Windows AppLocker
 
 L’infrastructure du dispositif complémentaire Windows Hello ne tient pas d’inventaire centralisé des dispositifs complémentaires disponibles, et ne prend en charge aucune méthode pour définir quelles instances d’un type de dispositif complémentaire Windows Hello sont autorisées (par exemple, seul un dispositif complémentaire dont le numéro de série est compris entre X et Y est autorisé). Les développeurs d’applications peuvent, cependant, créer un service pour fournir cette fonctionnalité. Pour en savoir plus, voir la section Itinérance, révocation et service de filtre.
 
@@ -178,10 +178,10 @@ Les fournisseurs de dispositifs complémentaires peuvent toutefois créer un ser
 
 Les fournisseurs de dispositifs complémentaires peuvent implémenter un service web pouvant être utilisé dans les scénarios suivants :
 
-- Un service de filtre pour l’entreprise : Une entreprise peut limiter l’ensemble des appareils Windows Hello Companion qui peuvent fonctionner dans leur environnement à une sélection parmi un fournisseur spécifique. Par exemple, la société Contoso pourrait commander 10 000 modèles Y de dispositifs complémentaires provenant d’un fournisseur X et faire en sorte que seuls ces dispositifs fonctionnent dans le domaine de Contoso (et aucun autre modèle du fournisseur X).
-- Stock  Une entreprise peut déterminer la liste des appareils compagnons existants utilisés dans un environnement d’entreprise.
-- Révocation en temps réel : Si un employé signale que son appareil est perdu ou volé, le service Web peut être utilisé pour révoquer cet appareil.
-- Itinérance Un utilisateur doit uniquement inscrire son appareil compagnon une seule fois et il fonctionne sur tous ses ordinateurs de bureau Windows 10 et mobile.
+- Un service de filtre pour les entreprises : une entreprise peut limiter le nombre de dispositifs complémentaires Windows Hello s’exécutant dans son environnement à quelques dispositifs issus d’un fournisseur spécifique. Par exemple, la société Contoso pourrait commander 10 000 modèles Y de dispositifs complémentaires provenant d’un fournisseur X et faire en sorte que seuls ces dispositifs fonctionnent dans le domaine de Contoso (et aucun autre modèle du fournisseur X).
+- Inventaire : une entreprise peut déterminer la liste des dispositifs complémentaires existants utilisés dans un environnement d’entreprise.
+- Révocation en temps réel : si un employé signale la perte ou le vol de son dispositif complémentaire, le service web peut servir à révoquer le dispositif en question.
+- Itinérance : un utilisateur ne doit inscrire son dispositif complémentaire qu’une seule fois ; ce dernier fonctionne alors sur tous ses bureaux Windows 10 et appareils mobile.
 
 L’implémentation de ces fonctionnalités nécessite que l’application du dispositif complémentaire Windows Hello consulte le service web au moment de l’inscription et de l’utilisation. L’application du dispositif complémentaire Windows Hello permet d’optimiser les scénarios d’ouverture de session mise en cache, comme la consultation du service web une seule fois par jour (au prix d’un rallongement du temps de révocation jusqu’à un jour).  
 
@@ -201,9 +201,9 @@ Le processus global de l’API se déroule comme suit :
     * S’assurer que l’application du dispositif complémentaire Windows Hello stocke des clés HMAC (si elles sont prises en charge) et qu’elle en supprime les copies
 2. Inscrire votre tâche en arrière-plan
 3. Attendre l’événement approprié dans la tâche en arrière-plan
-    * WaitingForUserConfirmation: Attendre cet événement si l’action/le mouvement de l’utilisateur sur le côté de l’appareil Windows Hello Companion est requis pour démarrer le workflow d’authentification
-    * CollectingCredential: Attendre cet événement si l’appareil compagnon Windows Hello s’appuie sur l’action/le mouvement de l’utilisateur côté PC pour démarrer le workflow d’authentification (par exemple, en appuyant sur la barre d’espace)
-    * Autre déclencheur, comme une carte à puce : Veillez à interroger l’état actuel de l’authentification pour appeler les API appropriées.
+    * WaitingForUserConfirmation : attendre cet événement si l’action/le geste de l’utilisateur est nécessaire au lancement du flux d’authentification du côté du dispositif complémentaire Windows Hello
+    * CollectingCredential : attendre cet événement si l’appareil compagnon Windows Hello s’appuie sur l’action/le mouvement de l’utilisateur côté PC pour démarrer le workflow d’authentification (par exemple, en appuyant sur la barre d’espace)
+    * Autres déclencheurs, tels qu’une carte à puce : envoyer une requête à l’état d’authentification actuel pour qu’il appelle les API appropriées.
 4. Tenir l’utilisateur informé des messages d’erreur ou des étapes suivantes nécessaires en appelant la méthode ShowNotificationMessageAsync. Appeler uniquement cette API une fois qu’un signal d’intention est capturé.
 5. Unlock
     * S’assurer que les signaux d’intention et de présence de l’utilisateur ont été capturés
@@ -216,7 +216,7 @@ Le processus global de l’API se déroule comme suit :
 
 ### <a name="registration-and-de-registration"></a>Inscription et désinscription
 
-L’inscription requiert deux appels d’API au service d’authentification auxiliaire : RequestStartRegisteringDeviceAsync et FinishRegisteringDeviceAsync.
+L’inscription exige deux appels d’API au service d’authentification par dispositif complémentaire : RequestStartRegisteringDeviceAsync et FinishRegisteringDeviceAsync.
 
 Avant d’effectuer ces appels, l’application du dispositif complémentaire Windows Hello doit s’assurer que le dispositif complémentaire Windows Hello est disponible. Si le dispositif complémentaire Windows Hello est responsable de la génération des clés HMAC (clés d’authentification et clés d’appareil), l’application du dispositif complémentaire Windows Hello doit demander à ce dernier de les générer avant d’effectuer les deux appels cités plus haut. Si l’application du dispositif complémentaire Windows Hello est responsable de la génération des clés HMAC, elle doit les générer avant d’effectuer les deux appels cités plus haut.
 
@@ -346,9 +346,9 @@ namespace SecondaryAuthFactorSample
 }
 ```
 
-### <a name="authentication"></a>Authentication
+### <a name="authentication"></a>Authentification
 
-L’authentification requiert deux appels d’API au service d’authentification auxiliaire : StartAuthenticationAsync et FinishAuthencationAsync.
+L’authentification nécessite deux appels d’API vers le service d’authentification par dispositif complémentaire : StartAuthenticationAsync et FinishAuthencationAsync.
 
 La première API d’initiation retourne un handle utilisé par la deuxième API.  Le premier appel retourne, entre autres, un nonce qui, une fois concaténé avec d’autres éléments, doit faire l’objet d’un HMAC avec la clé de dispositif stockée sur le dispositif complémentaire Windows Hello. Le deuxième appel retourne les résultats HMAC avec une clé de dispositif et peut potentiellement réussir l’authentification (c’est-à-dire que l’utilisateur voit son bureau).
 
@@ -383,7 +383,7 @@ L’infrastructure du dispositif complémentaire Windows Hello aide l’applicat
 
 Voici les détails de chacun de ces états :
 
-| État                         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| Région                         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 |----------------------------   |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------    |
 | WaitingForUserConfirmation    | Cet événement de notification de changement d’État est déclenché lorsque l’écran de verrouillage s’affiche (par exemple, l’utilisateur a appuyé sur Windows + L). Nous recommandons de ne pas demander des messages d’erreur concernant des difficultés pour trouver un appareil dans cet état. En règle générale, nous recommandons d’afficher des messages seulement en présence d’un signal d’intention. L’application de l’appareil compagnon Windows Hello doit effectuer le premier appel d’API pour l’authentification dans cet État si l’appareil auxiliaire collecte le signal intentionnel (par exemple, en appuyant sur un lecteur NFC, en appuyant sur un bouton de l’appareil compagnon ou sur un geste spécifique, comme applaudissements ), et la tâche d’arrière-plan de l’application d’appareil Windows Hello Companion reçoit une indication de la part de l’appareil pour lequel le signal d’intention a été détecté. Dans le cas contraire, si l’application du dispositif complémentaire Windows Hello dépend du PC pour lancer le flux d’authentification (l’utilisateur devant effectuer un balayage vers le haut sur l’écran de verrouillage ou appuyer sur la barre d’espace), elle doit attendre l’état suivant (CollectingCredential).   |
 | CollectingCredential          | Cet événement de notification de changement d’état est déclenché lorsque l’utilisateur ouvre son portable, appuie sur une touche quelconque du clavier ou effectue un balayage vers le haut sur l’écran de verrouillage. Si le périphérique compagnon Windows Hello s’appuie sur les actions ci-dessus pour commencer à collecter le signal intentionnel, alors l’application de l’appareil compagnon Windows Hello doit commencer à la collecter (par exemple, via une fenêtre contextuelle sur l’appareil compagnon qui demande si l’utilisateur souhaite déverrouiller le PC) . C’est le moment approprié de fournir des cas d’erreur si l’application du dispositif complémentaire Windows Hello nécessite que l’utilisateur fournisse un signal de présence sur le dispositif complémentaire (tel que la saisie d’un PIN sur le dispositif complémentaire Windows Hello).                                                                                                                                                                                                                                                                                                                                             |
@@ -638,7 +638,7 @@ Les messages d’erreur et d’aide sont les suivants. Le nom du dispositif est 
 
 - « Effectuez un balayage vers le haut ou appuyez sur la barre d’espace pour vous connecter avec *nom de l’appareil*. »
 - « Configuration de votre appareil compagnon. Veuillez patienter ou utilisez une autre option de connexion. »
-- « Posez *nom de l’appareil* sur le lecteur NFC pour vous connecter. »
+- « Appuyez sur *nom de l’appareil* sur le lecteur NFC pour vous connecter. »
 - « Recherche en cours de *nom de l’appareil*... »
 - « Branchez *nom de l’appareil* sur un port USB pour vous connecter. »
 

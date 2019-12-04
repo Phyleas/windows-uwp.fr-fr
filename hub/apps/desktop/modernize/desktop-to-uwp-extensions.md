@@ -1,6 +1,6 @@
 ---
 Description: Vous pouvez utiliser des extensions pour intégrer votre application de bureau empaquetée avec Windows 10 de manière prédéfinie.
-title: Intégrer votre application de bureau packagée à Windows 10 et UWP (Desktop Bridge)
+title: Moderniser les applications de bureau existantes à l’aide d’un pont de bureau
 ms.date: 04/18/2018
 ms.topic: article
 keywords: windows 10, uwp
@@ -8,12 +8,12 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 65724a7524f68535f4ac917c5527ae8de8f2c6fb
-ms.sourcegitcommit: 545d5d864d89650a00a496ac4e52def9a13b14cd
+ms.openlocfilehash: 16afad7724afeea50d379692f0755593e43709bb
+ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73560678"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74734824"
 ---
 # <a name="integrate-your-desktop-app-with-windows-10-and-uwp"></a>Intégrer votre application de bureau avec Windows 10 et UWP
 
@@ -1198,12 +1198,12 @@ Si votre application est ouverte lorsque les utilisateurs installent une mise à
 
 Si vous souhaitez que l’application redémarre à la fin de la mise à jour, appelez la fonction [RegisterApplicationRestart](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-registerapplicationrestart) dans chaque processus que vous souhaitez redémarrer.
 
-Chaque fenêtre active de votre application reçoit un message [WM_QUERYENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-queryendsession) . À ce stade, votre application peut appeler à nouveau la fonction [RegisterApplicationRestart](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-registerapplicationrestart) pour mettre à jour la ligne de commande, si nécessaire.
+Chaque fenêtre active de votre application reçoit un message de [WM_QUERYENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-queryendsession) . À ce stade, votre application peut appeler à nouveau la fonction [RegisterApplicationRestart](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-registerapplicationrestart) pour mettre à jour la ligne de commande, si nécessaire.
 
-Quand chaque fenêtre active de votre application reçoit le message [WM_ENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-endsession) , votre application doit enregistrer les données et les arrêter.
+Lorsque chaque fenêtre active de votre application reçoit le message [WM_ENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-endsession) , votre application doit enregistrer les données et les arrêter.
 
 >[!NOTE]
-Votre Windows active reçoit également le message [WM_CLOSE](https://docs.microsoft.com/windows/desktop/winmsg/wm-close) au cas où l’application ne gère pas le message [WM_ENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-endsession) .
+Votre Windows active reçoit également le message de [WM_CLOSE](https://docs.microsoft.com/windows/desktop/winmsg/wm-close) si l’application ne gère pas le message [WM_ENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-endsession) .
 
 À ce stade, votre application dispose de 30 secondes pour fermer ses propres processus ou la plateforme les met à niveau de force.
 
