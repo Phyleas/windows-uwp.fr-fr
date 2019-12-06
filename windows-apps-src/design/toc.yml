@@ -260,6 +260,8 @@
       href: style/reveal.md
     - name: Effet Révéler focus
       href: style/reveal-focus.md
+    - name: Rayon d’angle
+      href: style/rounded-corner.md
     - name: Son
       href: style/sound.md
     - name: Espacement

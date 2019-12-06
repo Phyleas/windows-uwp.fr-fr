@@ -9,12 +9,12 @@ ms.technology: windows-nodejs
 keywords: Mac vers Windows, mappage des touches de raccourci, passage d’UNIX vers Windows, transition de Mac vers Windows, aide à passer de MacBook à la surface, utilisation de Windows pour un utilisateur Macintosh, passage de Macintosh à Windows, aide à la modification des environnements de développement, Mac OS X à Windows, aide passage de Mac à PC
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: 563a8ad659cfff1396049aae78342642d1db3e72
-ms.sourcegitcommit: 4cb3ee28baa8020ec925b0bdd896ab197a1ddadb
+ms.openlocfilehash: a4e71143730184db094df2a7e8f1416cbaf244c4
+ms.sourcegitcommit: f5bb4e35d1373b982259e61547b3b1765da0e78c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74309161"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74881269"
 ---
 # <a name="guide-for-changing-your-dev-environment-from-mac-to-windows"></a>Guide pour la modification de votre environnement de développement de Mac à Windows
 
@@ -26,20 +26,20 @@ Pour le développement d’applications, l’équivalent le plus proche de Xcode
 
 | **Opération** | **Mac** | **Windows** |
 |---------------|--------------------|---------------------|
-| Copier | Commande + C | CTR + C |
-| Couper | Commande + X | CH + X |
-| Coller | Commande + V | Ch + V |
-| Annuler | Commande + Z | Ctrl+Z |
-| Save | Commande + S | Ctrl+S |
-| Open | Commande + O | Ctrl+O |
-| Verrouiller l’ordinateur | Commande + CTRL + Q | WindowKey + L |
-| Afficher le Bureau | Commande + F3 | WindowKey + D |
-| Réduire les fenêtres | COMMANDE + M | Touche Windows + M |
-| Recherche | Commande + espace | touche Windows |
+| Copier | Commande + C | Ctrl+C |
+| Cut | Commande + X | Ctrl+X |
+| Coller | Commande + V | Ctrl+V |
+| Undo | Commande + Z | Ctrl+Z |
+| Enregistrer | Commande + S | Ctrl+S |
+| Ouvrez | Commande + O | Ctrl+O |
+| Verrouiller l’ordinateur | Commande + CTRL + Q | WindowsKey + L |
+| Afficher le Bureau | Commande + F3 | WindowsKey + D |
+| Réduire les fenêtres | Commande + M | WindowsKey + M |
+| Rechercher | Commande + espace | WindowsKey |
 | Fermer la fenêtre active | Commande + W | CTRL + W |
 | Basculer la tâche active | Commande + Tab | Alt+Tabulation |
-| Écran d’enregistrement (capture d’écran) | Commande + Maj + 3 | Windows + Maj + S |
-| Enregistrer la fenêtre | Commande + Maj + 4 | Windows + Maj + S |
+| Écran d’enregistrement (capture d’écran) | Commande + Maj + 3 | WindowsKey + Maj + S |
+| Enregistrer la fenêtre | Commande + Maj + 4 | WindowsKey + Maj + S |
 | Afficher les informations ou les propriétés d’un élément | Commande + I | Alt+Entrée |
  | Sélectionner tous les éléments | Commande + A | Ctrl+A |
 | Sélectionner plusieurs éléments dans une liste (non contigus) | , Puis cliquez sur chaque élément. | , Puis cliquez sur chaque élément |
@@ -70,7 +70,7 @@ Windows fournit plusieurs alternatives à l’émulateur de terminal de Mac.
 
 1. La ligne de commande Windows
 
-La ligne de commande Windows accepte les commandes DOS et est l’outil de ligne de commande le plus couramment utilisé sur Windows. Pour l’ouvrir : Appuyez sur **Windows + R** pour ouvrir la zone **exécuter** , tapez **cmd** , puis cliquez sur **OK**. Pour ouvrir une ligne de commande d’administrateur, tapez **cmd** , puis appuyez sur **Ctrl + Maj + Entrée**. 
+La ligne de commande Windows accepte les commandes DOS et est l’outil de ligne de commande le plus couramment utilisé sur Windows. Pour l’ouvrir : Appuyez sur **WindowsKey + R** pour ouvrir la zone **exécuter** , tapez **cmd** , puis cliquez sur **OK**. Pour ouvrir une ligne de commande d’administrateur, tapez **cmd** , puis appuyez sur **Ctrl + Maj + Entrée**.
 
 2. PowerShell
 
@@ -78,16 +78,16 @@ La ligne de commande Windows accepte les commandes DOS et est l’outil de ligne
 
 Par ailleurs, PowerShell est [également disponible pour Mac](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-6).
 
-3. Sous-système Windows pour Linux (WSL)
+3. Sous-système de Windows pour Linux (WSL)
 
-WSL vous permet d’exécuter un interpréteur de commandes Linux dans Windows. Cela signifie que vous pouvez exécuter *bash** ou un autre shell, en fonction de votre choix et de la distribution Linux spécifique installée. L’utilisation de WSL fournira le type d’environnement le plus familier aux utilisateurs Mac. Par exemple, vous pouvez **créer une liste de fichiers** dans un répertoire actif, et **non pas** sur la ligne de commande Windows. Pour en savoir plus sur l’installation et l’utilisation de WSL, consultez le [Guide d’installation du sous-système Windows pour Linux pour Windows 10](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
+WSL vous permet d’exécuter un interpréteur de commandes Linux dans Windows. Cela signifie que vous pouvez exécuter *bash** ou un autre shell, en fonction de votre choix et de la distribution Linux spécifique installée. L’utilisation de WSL fournira le type d’environnement le plus familier aux utilisateurs Mac. Par exemple, vous pouvez **créer une liste de fichiers** dans un répertoire actif, et **non pas** sur la ligne de commande Windows. Pour en savoir plus sur l’installation et l’utilisation de WSL, consultez le [Guide d’installation du sous-système Windows pour Linux pour Windows 10](https://docs.microsoft.com/windows/wsl/install-win10).
 
 ## <a name="apps-and-utilities"></a>Applications et utilitaires
 
- **Lancement** | **Mac** | **Windows** |
+ **Application** | **Mac** | **Windows** |
 |---------------|--------------------|---------------------|
 | Paramètres et préférences | Préférences système | Paramètres |
-| Gestionnaire des tâches | Moniteur d’activité | Gestionnaire des tâches |
+| Gestionnaire des tâches | Moniteur d'activité | Gestionnaire des tâches |
 | Mise en forme du disque | Utilitaire de disque | Gestion des disques |
 | Modification de texte | TextEdit | Bloc-notes |
 | Affichage des événements | Console | Observateur d’événements |
