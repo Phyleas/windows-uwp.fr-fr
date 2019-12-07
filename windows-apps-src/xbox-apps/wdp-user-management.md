@@ -3,18 +3,18 @@ title: Informations de référence sur les API de gestion des utilisateurs test 
 description: Découvrez comment accéder par programme aux API de gestion des utilisateurs.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.assetid: 70876ab6-8222-4940-b4fb-65b581a77d6a
-ms.openlocfilehash: 71c47767cf026b962f682fb30ca93758dbd5e227
-ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.openlocfilehash: 52f333af73084ed14982b9d09b6770c8294980f7
+ms.sourcegitcommit: 6169660ea437915265165c4631d9702587e4793d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59244075"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74902525"
 ---
-#<a name="xbox-live-user-management"></a>Gestion de Xbox Live utilisateur #
+# <a name="xbox-live-user-management"></a>Gestion des utilisateurs Xbox Live
 
-## <a name="request"></a>Demande
+## <a name="request"></a>Requête
 
 Vous pouvez obtenir la liste des utilisateurs sur la console, ou mettre à jour la liste en ajoutant des utilisateurs ou en supprimant, connectant, déconnectant ou modifiant des utilisateurs existants.
 
@@ -24,26 +24,26 @@ Vous pouvez obtenir la liste des utilisateurs sur la console, ou mettre à jour 
 | PUT           | /ext/user |
 
 
-**Paramètres d’URI**
+**Paramètres URI**
 
-* Aucune
+* Aucun(e)
 
 **En-têtes de requête**
 
-* Aucune
+* Aucun(e)
 
-**Corps de la requête**
+**Corps de la demande**
 
 Les appels à PUT doivent inclure un tableau JSON ayant la structure suivante :
 
 * Utilisateurs
   * AutoSignIn (facultatif) : valeur booléenne permettant la désactivation ou l’activation de l’ouverture automatique de session pour le compte spécifié dans EmailAddress ou UserId.
-  * EmailAddress (facultatif : doit être fourni si le nom d’utilisateur n’est pas fourni, sauf si la connexion utilisateur sponsorisé) : Adresse de messagerie en spécifiant l’utilisateur à modifier/ajouter/supprimer.
-  * Mot de passe (facultatif : doit être fournie si l’utilisateur n’est pas actuellement sur la console) : Mot de passe utilisé pour ajouter un nouvel utilisateur à la console.
+  * EmailAddress (facultatif, doit être fourni si UserId n’est pas fourni, sauf si vous connectez un utilisateur sponsorisé) : adresse de messagerie indiquant l’utilisateur à modifier/ajouter/supprimer.
+  * Password (facultatif, doit être fourni si l’utilisateur n’est pas actuellement sur la console) : mot de passe utilisé pour ajouter un nouvel utilisateur à la console.
   * SignedIn (facultatif) : valeur booléenne indiquant si le compte fourni doit être connecté ou déconnecté.
-  * ID d’utilisateur (facultatif : doit être fourni si EmailAddress n’est pas fourni, sauf si la connexion utilisateur sponsorisé) : ID d’utilisateur en spécifiant l’utilisateur à modifier/ajouter/supprimer.
+  * UserId (facultatif, doit être fourni si EmailAddress n’est pas fourni, sauf si vous connectez un utilisateur sponsorisé) : ID utilisateur indiquant l’utilisateur à modifier/ajouter/supprimer.
   * SponsoredUser (facultatif) : valeur booléenne indiquant s’il convient d’ajouter un utilisateur sponsorisé.
-  * Delete (facultatif) : valeur booléenne qui spécifie pour supprimer cet utilisateur à partir de la console
+  * Delete (facultatif) : bool en spécifiant pour supprimer cet utilisateur de la console
 
 ## <a name="response"></a>Réponse
 
@@ -60,7 +60,7 @@ Les appels à GET renvoient un tableau JSON ayant les propriétés suivantes :
   * XboxUserId
   * SponsoredUser (facultatif)
   
-**Code d’état**
+**Code d’État**
 
 Cette API comporte les codes d’état attendus suivants.
 
