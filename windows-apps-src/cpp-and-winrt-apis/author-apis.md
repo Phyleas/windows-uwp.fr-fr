@@ -5,12 +5,12 @@ ms.date: 07/08/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projeté, projection, implémentation, implémenter, classe runtime, activation
 ms.localizationpriority: medium
-ms.openlocfilehash: eba0e6312bc22153d8cb62eb97d32635184f0fdc
-ms.sourcegitcommit: f34deba1d4460d85ed08fe9648999fe03ff6a3dd
+ms.openlocfilehash: 84c0e9315950541e51bf49f5c0eec370f3188c4d
+ms.sourcegitcommit: 58f6643510a27d6b9cd673da850c191ee23b813e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71317112"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74701489"
 ---
 # <a name="author-apis-with-cwinrt"></a>Créer des API avec C++/WinRT
 
@@ -239,7 +239,7 @@ Nous avons vu que le workflow consiste à utiliser le fichier IDL pour déclarer
 Voici quelques exemples.
 
 - Vous pouvez assouplir les contraintes sur les types des paramètres. Par exemple, si dans le fichier IDL votre méthode prend une **SomeClass**, vous pouvez choisir de changer cela en **IInspectable** dans votre implémentation. Ceci fonctionne, car une **SomeClass** peut être transférée à **IInspectable** (bien sûr, l’inverse ne fonctionnerait pas).
-- Vous pouvez accepter un paramètre copiable par valeur, à la place d’un paramètre copiable par référence. Par exemple, changez `SomeClass const&` en `SomeClass const&`. Ceci est nécessaire quand vous devez éviter de capturer une référence dans une coroutine (consultez [Passage de paramètres](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing)).
+- Vous pouvez accepter un paramètre copiable par valeur, à la place d’un paramètre copiable par référence. Par exemple, changez `SomeClass` en `SomeClass const&`. Ceci est nécessaire quand vous devez éviter de capturer une référence dans une coroutine (consultez [Passage de paramètres](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing)).
 - Vous pouvez assouplir les contraintes sur la valeur de retour. Par exemple, vous pouvez changer **void** en [**winrt::fire_and_forget**](/uwp/cpp-ref-for-winrt/fire-and-forget).
 
 Les deux derniers sont très pratiques quand vous écrivez un gestionnaire d’événements asynchrones.
@@ -276,7 +276,13 @@ namespace MyProject
 }
 ```
 
-Pour passer de **MyType** à un objet **IStringable** ou **IClosable** que vous pouvez utiliser ou retourner dans le cadre de votre projection, vous devez appeler le modèle de fonction [**winrt::make**](/uwp/cpp-ref-for-winrt/make). **make** renvoie l’interface par défaut du type d’implémentation.
+Vous ne pouvez pas allouer directement votre type d’implémentation.
+
+```cppwinrt
+MyType myimpl; // error C2259: 'MyType': cannot instantiate abstract class
+```
+
+Mais vous pouvez passer de **MyType** à un objet **IStringable** ou **IClosable** que vous pouvez utiliser ou retourner dans le cadre de votre projection en appelant le modèle de fonction [**winrt::make**](/uwp/cpp-ref-for-winrt/make). **make** renvoie l’interface par défaut du type d’implémentation.
 
 ```cppwinrt
 IStringable istringable = winrt::make<MyType>();
@@ -329,36 +335,73 @@ impl.copy_from(winrt::get_self<MyType>(from));
 // com_ptr::copy_from ensures that AddRef is called.
 ```
 
-Le type d’implémentation lui-même ne dérivant pas de **winrt::Windows::Foundation::IUnknown**, il n’a pas de fonction **as**. Vous pouvez quand même en instancier une et accéder aux membres de toutes ses interfaces. Mais, si vous procédez de la sorte, ne retournez pas l’instance du type d’implémentation brute à l’appelant. Au lieu de cela, utilisez une des techniques présentées ci-dessus et retournez une interface projetée ou un **com_ptr**.
+Le type d’implémentation lui-même ne dérivant pas de **winrt::Windows::Foundation::IUnknown**, il n’a pas de fonction **as**. Même dans ce cas, comme vous pouvez le voir dans la fonction **ImplFromIClosable** ci-dessus, vous pouvez accéder aux membres de toutes ses interfaces. Mais si vous procédez de la sorte, ne retournez pas l’instance du type d’implémentation brute à l’appelant. Au lieu de cela, utilisez l’une des techniques déjà présentées et retournez une interface projetée ou un **com_ptr**.
+
+Si vous disposez d’une instance de votre type d’implémentation et que vous devez la transmettre à une fonction qui attend le type projeté correspondant, vous pouvez procéder ainsi, comme indiqué dans l’exemple de code ci-dessous. Un opérateur de conversion existant sur votre type d’implémentation (à condition que le type d’implémentation ait été généré par l’outil `cppwinrt.exe`) rend cela possible. Vous pouvez passer une valeur de type d’implémentation directement à une méthode qui attend une valeur du type projeté correspondant. À partir d’une fonction de membre de type d’implémentation, vous pouvez transmettre `*this` à une méthode qui attend une valeur du type projeté correspondant.
 
 ```cppwinrt
-MyType myimpl;
-myimpl.ToString();
-myimpl.Close();
-IClosable ic1 = myimpl.as<IClosable>(); // error
-```
-
-Si vous disposez d’une instance de votre type d’implémentation et que vous devez la transmettre à une fonction qui attend le type projeté correspondant, vous pouvez procéder ainsi. Un opérateur de conversion existant sur votre type d’implémentation (à condition que le type d’implémentation ait été généré par l’outil `cppwinrt.exe`) rend cela possible. Vous pouvez passer une valeur de type d’implémentation directement à une méthode qui attend une valeur du type projeté correspondant. À partir d’une fonction de membre de type d’implémentation, vous pouvez transmettre `*this` à une méthode qui attend une valeur du type projeté correspondant.
-
-```cppwinrt
-// MyProject::MyType is the projected type; the implementation type would be MyProject::implementation::MyType.
-
-void MyOtherType::DoWork(MyProject::MyType const&){ ... }
-
-...
-
-void FreeFunction(MyProject::MyOtherType const& ot)
+// MyClass.idl
+import "MyOtherClass.idl";
+namespace MyProject
 {
-    MyType myimpl;
-    ot.DoWork(myimpl);
+    runtimeclass MyClass
+    {
+        MyClass();
+        void MemberFunction(MyOtherClass oc);
+    }
 }
 
+// MyClass.h
+...
+namespace winrt::MyProject::implementation
+{
+    struct MyClass : MyClassT<MyClass>
+    {
+        MyClass() = default;
+        void MemberFunction(MyProject::MyOtherClass const& oc) { oc.DoWork(*this); }
+    };
+}
 ...
 
-void MyType::MemberFunction(MyProject::MyOtherType const& ot)
+// MyOtherClass.idl
+import "MyClass.idl";
+namespace MyProject
 {
-    ot.DoWork(*this);
+    runtimeclass MyOtherClass
+    {
+        MyOtherClass();
+        void DoWork(MyClass c);
+    }
 }
+
+// MyOtherClass.h
+...
+namespace winrt::MyProject::implementation
+{
+    struct MyOtherClass : MyOtherClassT<MyOtherClass>
+    {
+        MyOtherClass() = default;
+        void DoWork(MyProject::MyClass const& c){ /* ... */ }
+    };
+}
+...
+
+//main.cpp
+#include "pch.h"
+#include <winrt/base.h>
+#include "MyClass.h"
+#include "MyOtherClass.h"
+using namespace winrt;
+
+// MyProject::MyClass is the projected type; the implementation type would be MyProject::implementation::MyClass.
+
+void FreeFunction(MyProject::MyOtherClass const& oc)
+{
+    auto defaultInterface = winrt::make<MyProject::implementation::MyClass>();
+    MyProject::implementation::MyClass* myimpl = winrt::get_self<MyProject::implementation::MyClass>(defaultInterface);
+    oc.DoWork(*myimpl);
+}
+...
 ```
 
 ## <a name="deriving-from-a-type-that-has-a-non-default-constructor"></a>Dérivation à partir d’un type qui possède un constructeur autre que par défaut

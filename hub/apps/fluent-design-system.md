@@ -8,12 +8,12 @@ ms.localizationpriority: medium
 ms.custom: RS5
 ms.author: mcleans
 author: mcleanbyron
-ms.openlocfilehash: f3a2575b17cc4228d7c4db273845478aecf65f29
-ms.sourcegitcommit: f0936ce8e88d78b1af99998794a8765094f6a487
+ms.openlocfilehash: f46d6ba99d4342e1e4fe7a9926082a5981fd690a
+ms.sourcegitcommit: 11c5cb559c949b6fe645499c2265434885882d8e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72915105"
+ms.lasthandoff: 12/01/2019
+ms.locfileid: "74666908"
 ---
 # <a name="the-fluent-design-system-for-windows-app-creators"></a>Système Fluent Design pour créateurs d’applications Windows
 
@@ -112,7 +112,7 @@ Les applications UWP peuvent s’exécuter sur un large éventail d’appareils 
     :::column span="2":::
 **Optimisez pour l’entrée appropriée**
 
-Les applications UWP prennent automatiquement en charge les interactions souris, clavier, stylet et tactile courantes&mdash;vous n’avez rien de spécial à faire. Toutefois, vous pouvez améliorer votre application avec une prise en charge optimisée pour des entrées spécifiques, comme le stylet et Surface Dial.
+Les applications UWP prennent automatiquement en charge les interactions souris, clavier, stylet et tactile courantes. Vous n’avez rien de spécial à faire. Toutefois, si vous le souhaitez, vous pouvez améliorer votre application avec une prise en charge optimisée pour des entrées spécifiques, comme le stylet et Surface Dial.
 
 [En savoir plus sur les entrées et les interactions](/windows/uwp/design/input/input-primer)
 :::row-end:::

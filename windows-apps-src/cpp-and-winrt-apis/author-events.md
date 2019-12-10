@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, créer, événement
 ms.localizationpriority: medium
-ms.openlocfilehash: 55d512faccfa318156fb0dc28d3f804b53f0fe3d
-ms.sourcegitcommit: 102fdfdf32ba12a8911018d234d71d67ebef61ce
+ms.openlocfilehash: 6fb9b98ec362b59ad2593bbce24654f1dcfc7638
+ms.sourcegitcommit: 27cb7c4539bb6417d32883824ccea160bb948c15
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74551662"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74830784"
 ---
 # <a name="author-events-in-cwinrt"></a>Créer des événements en C++/WinRT
 
@@ -253,8 +253,7 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 ```
 
 ## <a name="parameterized-delegates-simple-signals-and-callbacks-within-a-project"></a>Délégués paramétrés, signaux simples et rappels au sein d'un projet
-
-Si votre événement n'est utilisé qu'en interne dans votre projet C++/WinRT (et non dans des binaires), vous utilisez toujours le modèle de structure [**winrt::event**](/uwp/cpp-ref-for-winrt/event), mais vous le paramétrez avec le modèle [**winrt::delegate&lt; C++/WinRT non Windows Runtime... Le modèle de structure T&gt;** ](/uwp/cpp-ref-for-winrt/delegate) est un délégué efficace, avec décompte des références. Il prend en charge un certain nombre de paramètres et ne se limite pas aux types Windows Runtime.
+Si vous avez besoin d’événements internes à votre projet Visual Studio (pas entre binaires), où ces événements ne sont pas limités aux types Windows Runtime, vous pouvez toujours utiliser le modèle de classe [**winrt::event**](/uwp/cpp-ref-for-winrt/event)\<Delegate\>. Utilisez simplement [**winrt::delegate**](/uwp/cpp-ref-for-winrt/delegate) au lieu d’un type délégué Windows Runtime réel, car **winrt::delegate** prend également en charge les paramètres non-Windows Runtime.
 
 L'exemple ci-dessous montre d'abord une signature de délégué qui ne prend aucun paramètre (essentiellement un simple signal), puis une signature qui prend une chaîne.
 
