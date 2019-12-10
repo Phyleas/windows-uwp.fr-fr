@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp, services du Microsoft Store, API d'analyse du Microsoft Store
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 71c59049b76219d6f9360748e9ca11ea84542e47
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 3b732da8f92c258647f905e6939dc3cb1b9c9f87
+ms.sourcegitcommit: 3e47987fb4f86a6349ffe8262675f50971c77472
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259316"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74954063"
 ---
 # <a name="access-analytics-data-using-store-services"></a>Accéder aux données d’analyse à l’aide des services du Windows Store
 
@@ -100,7 +100,7 @@ Les méthodes d'analyse suivantes peuvent être utilisées par des comptes de d�
 | Scénario       | Méthodes      |
 |---------------|--------------------|
 | Installations |  <ul><li>[Accéder aux installations d’applications de bureau](get-desktop-app-installs.md)</li></ul> |
-| Blocs |  <ul><li>[Obtenir des blocs de mise à niveau pour votre application de bureau](get-desktop-block-data.md)</li><li>[Obtenir les détails du bloc de mise à niveau pour votre application de bureau](get-desktop-block-data-details.md)</li></ul> |
+| Blocks |  <ul><li>[Obtenir des blocs de mise à niveau pour votre application de bureau](get-desktop-block-data.md)</li><li>[Obtenir les détails du bloc de mise à niveau pour votre application de bureau](get-desktop-block-data-details.md)</li></ul> |
 | Erreurs des applications |  <ul><li>[Obtenir des données de rapports d’erreurs pour votre application de bureau](get-desktop-application-error-reporting-data.md)</li><li>[Obtenir les détails d’une erreur dans votre application de bureau](get-details-for-an-error-in-your-desktop-application.md)</li><li>[Obtenir la trace de la pile pour une erreur dans votre application de bureau](get-the-stack-trace-for-an-error-in-your-desktop-application.md)</li><li>[Télécharger le fichier CAB pour une erreur dans votre application de bureau](download-the-cab-file-for-an-error-in-your-desktop-application.md)</li></ul> |
 | Insights | <ul><li>[Obtenir des données Insights pour votre application de bureau](get-insights-data-for-your-desktop-app.md)</li></ul>  |
 
@@ -113,15 +113,6 @@ Les méthodes supplémentaires suivantes sont disponibles pour les comptes de d�
 | Analyse générale |  <ul><li>[Recevoir des données Xbox Live Analytics](get-xbox-live-analytics.md)</li><li>[Recevoir des données de résultats Xbox Live](get-xbox-live-achievements-data.md)</li><li>[Recevoir des données sur l’utilisation simultanée de Xbox Live](get-xbox-live-concurrent-usage-data.md)</li></ul> |
 | Analyse de l’intégrité |  <ul><li>[Recevoir des données d’intégrité Xbox Live](get-xbox-live-health-data.md)</li></ul> |
 | Analyses de la communauté |  <ul><li>[Recevoir des données du Hub de jeu Xbox Live](get-xbox-live-game-hub-data.md)</li><li>[Recevoir des données de Club Xbox Live](get-xbox-live-club-data.md)</li><li>[Recevoir des données multijoueurs Xbox Live](get-xbox-live-multiplayer-data.md)</li></ul>  |
-
-### <a name="methods-for-xbox-one-games"></a>Méthodes pour les jeux pour Xbox One
-
-Les autres méthodes suivantes peuvent être utilisées par les comptes de développeurs avec Xbox One jeux qui ont été reçus via le portail des développeurs Xbox (XDP) et disponibles dans le tableau de bord XDP Analytics.
-
-| Scénario       | Méthodes      |
-|---------------|--------------------|
-| Acquisitions |  <ul><li>[Procurez-vous des acquisitions de jeux Xbox One](get-xbox-one-game-acquisitions.md)</li><li>[Procurez-vous des acquisitions d’un module complémentaire sur Xbox](get-xbox-one-add-on-acquisitions.md)</li></ul> |
-| Erreurs |  <ul><li>[Obtenir des données de rapport d’erreurs pour votre Xbox un jeu](get-error-reporting-data-for-your-xbox-one-game.md)</li><li>[Obtenir les détails d’une erreur dans votre Xbox un jeu](get-details-for-an-error-in-your-xbox-one-game.md)</li><li>[Obtenir la trace de la pile pour une erreur dans votre Xbox un jeu](get-the-stack-trace-for-an-error-in-your-xbox-one-game.md)</li><li>[Télécharger le fichier CAB pour une erreur dans votre Xbox un jeu](download-the-cab-file-for-an-error-in-your-xbox-one-game.md)</li></ul> |
 
 ### <a name="methods-for-hardware-and-drivers"></a>Méthodes pour le matériel et les pilotes
 
