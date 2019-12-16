@@ -5,12 +5,12 @@ ms.date: 01/17/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, porter, migrer, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 92088906078a3a705e5fae052a50fc914561c77c
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: d540474140e4734320b06d852933b30fa20b61be
+ms.sourcegitcommit: 2c6aac8a0cc02580df0987f0b7dba5924e3472d6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393458"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74958969"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>Passer de C++/CX à C++/WinRT
 
@@ -468,24 +468,23 @@ C++/CX représente une chaîne Windows Runtime sous la forme d’un type de réf
 
 En outre, C++/CX vous permet de déréférencer une chaîne null **String^** . Auquel cas, elle se comporte comme la chaîne `""`.
 
-| Opération | C++/CX | C++/WinRT|
+| Comportement | C++/CX | C++/WinRT|
 |-|-|-|
+| Déclarations | `Object^ o;`<br>`String^ s;` | `IInspectable o;`<br>`hstring s;` |
 | Catégorie de type de chaîne | Type de référence | Type de valeur |
 | **HSTRING** null projette sous la forme | `(String^)nullptr` | `hstring{}` |
 | Est-ce que null et `""` sont identiques ? | Oui | Oui |
-| Validité de la valeur null | `s = nullptr;`<br>`s->Length == 0` (valide) | `s = nullptr;`<br>`s.size() == 0` (valide) |
-| Conversion boxing d’une chaîne | `o = s;` | `o = box_value(s);` |
-| Si `s` est `null` | `o = (String^)nullptr;`<br>`o == nullptr` | `o = box_value(hstring{});`<br>`o != nullptr` |
-| Si `s` est `""` | `o = "";`<br>`o == nullptr` | `o = box_value(hstring{L""});`<br>`o != nullptr;` |
-| Conversion boxing d’une chaîne en conservant null | `o = s;` | `o = s.empty() ? nullptr : box_value(s);` |
-| Conversion boxing forcée d’une chaîne | `o = PropertyValue::CreateString(s);` | `o = box_value(s);` |
-| Conversion unboxing d’une chaîne connue | `s = (String^)o;` | `s = unbox_value<hstring>(o);` |
-| Si `o` est null | `s == nullptr; // equivalent to ""` | Se bloquer |
-| Si `o` n’est pas une chaîne convertie par boxing | `Platform::InvalidCastException` | Se bloquer |
-| Conversion unboxing d’une chaîne, utiliser la valeur de secours si la valeur est null ; se bloquer si autre chose | `s = o ? (String^)o : fallback;` | `s = o ? unbox_value<hstring>(o) : fallback;` |
-| Conversion unboxing d’une chaîne si possible ; utiliser la valeur de secours pour toute autre chose | `auto box = dynamic_cast<IBox<String^>^>(o);`<br>`s = box ? box->Value : fallback;` | `s = unbox_value_or<hstring>(o, fallback);` |
+| Validité de la valeur null | `s = nullptr;`<br>`s->Length == 0` (valide) | `s = hstring{};`<br>`s.size() == 0` (valide) |
+| Si vous affectez une chaîne null à l’objet | `o = (String^)nullptr;`<br>`o == nullptr` | `o = box_value(hstring{});`<br>`o != nullptr` |
+| Si vous affectez `""` à l’objet | `o = "";`<br>`o == nullptr` | `o = box_value(hstring{L""});`<br>`o != nullptr` |
 
-Dans les deux scénarios de *conversion unboxing avec valeur de secours* ci-dessus, il est possible qu’une chaîne null ait été convertie à l’aide d’une conversion boxing forcée. Auquel cas, la valeur de secours ne sera pas utilisée. La valeur de sortie sera une chaîne vide, car il s’agit de ce qu’il y avait à l’intérieur.
+Boxing et unboxing de base.
+
+| Opération | C++/CX | C++/WinRT|
+|-|-|-|
+| Conversion boxing d’une chaîne | `o = s;`<br>La chaîne vide devient nullptr. | `o = box_value(s);`<br>La chaîne vide devient un objet non null. |
+| Conversion unboxing d’une chaîne connue | `s = (String^)o;`<br>L’objet null devient une chaîne vide.<br>InvalidCastException si ce n’est pas une chaîne. | `s = unbox_value<hstring>(o);`<br>L’objet null plante.<br>Plantage si ce n’est pas une chaîne. |
+| Unboxing d’une chaîne possible | `s = dynamic_cast<String^>(o);`<br>L’objet null ou la non-chaîne devient une chaîne vide. | `s = unbox_value_or<hstring>(o, fallback);`<br>Null ou non-chaîne devient la valeur de secours.<br>Chaîne vide conservée. |
 
 ## <a name="concurrency-and-asynchronous-operations"></a>Concurrence et opérations asynchrones
 

@@ -5,12 +5,12 @@ ms.date: 07/15/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, porter, migrer, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: a63d38db613ebe6425a05ed20563405242ffd441
-ms.sourcegitcommit: ba4a046793be85fe9b80901c9ce30df30fc541f9
+ms.openlocfilehash: 17900829388bfe0b3cc325e27d0807b139ccaa27
+ms.sourcegitcommit: 2c6aac8a0cc02580df0987f0b7dba5924e3472d6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68328861"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74958959"
 ---
 # <a name="move-to-cwinrt-from-c"></a>Passer de C# à C++/WinRT
 
@@ -264,7 +264,7 @@ C++/CX et C# génèrent des exceptions si vous essayez d’effectuer une convers
 | Si o est null | `System.NullReferenceException` | Se bloquer |
 | Si o n’est pas un entier converti par boxing | `System.InvalidCastException` | Se bloquer |
 | Conversion unboxing d’un entier, utiliser la valeur de secours si la valeur est null ; se bloquer si autre chose | `i = o != null ? (int)o : fallback;` | `i = o ? unbox_value<int>(o) : fallback;` |
-| Conversion unboxing d’un entier si possible ; utiliser la valeur de secours pour toute autre chose | `var box = o as int?;`<br>`i = box != null ? box.Value : fallback;` | `i = unbox_value_or<int>(o, fallback);` |
+| Conversion unboxing d’un entier si possible ; utiliser la valeur de secours pour toute autre chose | `i = as int? ?? fallback;` | `i = unbox_value_or<int>(o, fallback);` |
 
 ### <a name="boxing-and-unboxing-a-string"></a>Conversions boxing et unboxing d’une chaîne
 
@@ -274,24 +274,23 @@ Le type ABI [**HSTRING**](/windows/win32/winrt/hstring) est un pointeur vers une
 
 C# représente une chaîne Windows Runtime sous la forme d’un type de référence, tandis que C++/WinRT projette une chaîne sous la forme d’un type de valeur. Cela signifie qu’une chaîne null convertie par boxing peut avoir des représentations différentes selon la façon dont vous l’avez obtenue.
 
+| Comportement | C# | C++/WinRT|
+|-|-|-|
+| Déclarations | `object o;`<br>`string s;` | `IInspectable o;`<br>`hstring s;` |
+| Catégorie de type de chaîne | Type de référence | Type de valeur |
+| **HSTRING** null projette sous la forme | `""` | `hstring{}` |
+| Est-ce que null et `""` sont identiques ? | Non | Oui |
+| Validité de la valeur null | `s = null;`<br>`s.Length` génère NullReferenceException | `s = hstring{};`<br>`s.size() == 0` (valide) |
+| Si vous affectez une chaîne null à l’objet | `o = (string)null;`<br>`o == null` | `o = box_value(hstring{});`<br>`o != nullptr` |
+| Si vous affectez `""` à l’objet | `o = "";`<br>`o != null` | `o = box_value(hstring{L""});`<br>`o != nullptr` |
+
+Boxing et unboxing de base.
+
 | Opération | C# | C++/WinRT|
 |-|-|-|
-| Catégorie de type de chaîne | Type de référence | Type de valeur |
-| **HSTRING** null projette sous la forme | `""` | `hstring{ nullptr }` |
-| Est-ce que null et `""` sont identiques ? | Non | Oui |
-| Validité de la valeur null | `s = null;`<br>`s.Length` génère l’exception **NullReferenceException** | `s = nullptr;`<br>`s.size() == 0` (valide) |
-| Conversion boxing d’une chaîne | `o = s;` | `o = box_value(s);` |
-| Si `s` est `null` | `o = (string)null;`<br>`o == null` | `o = box_value(hstring{nullptr});`<br>`o != nullptr` |
-| Si `s` est `""` | `o = "";`<br>`o != null;` | `o = box_value(hstring{L""});`<br>`o != nullptr;` |
-| Conversion boxing d’une chaîne en conservant null | `o = s;` | `o = s.empty() ? nullptr : box_value(s);` |
-| Conversion boxing forcée d’une chaîne | `o = PropertyValue.CreateString(s);` | `o = box_value(s);` |
-| Conversion unboxing d’une chaîne connue | `s = (string)o;` | `s = unbox_value<hstring>(o);` |
-| Si `o` est null | `s == null; // not equivalent to ""` | Se bloquer |
-| Si `o` n’est pas une chaîne convertie par boxing | `System.InvalidCastException` | Se bloquer |
-| Conversion unboxing d’une chaîne, utiliser la valeur de secours si la valeur est null ; se bloquer si autre chose | `s = o != null ? (string)o : fallback;` | `s = o ? unbox_value<hstring>(o) : fallback;` |
-| Conversion unboxing d’une chaîne si possible ; utiliser la valeur de secours pour toute autre chose | `var s = o as string ?? fallback;` | `s = unbox_value_or<hstring>(o, fallback);` |
-
-Dans les deux scénarios de *conversion unboxing avec valeur de secours* ci-dessus, il est possible qu’une chaîne null ait été convertie à l’aide d’une conversion boxing forcée. Auquel cas, la valeur de secours ne sera pas utilisée. La valeur de sortie sera une chaîne vide, car il s’agit de ce qu’il y avait à l’intérieur.
+| Conversion boxing d’une chaîne | `o = s;`<br>La chaîne vide devient un objet non null. | `o = box_value(s);`<br>La chaîne vide devient un objet non null. |
+| Conversion unboxing d’une chaîne connue | `s = (string)o;`<br>L’objet null devient une chaîne null.<br>InvalidCastException si ce n’est pas une chaîne. | `s = unbox_value<hstring>(o);`<br>L’objet null plante.<br>Plantage si ce n’est pas une chaîne. |
+| Unboxing d’une chaîne possible | `s = o as string;`<br>L’objet null ou la non-chaîne devient une chaîne null.<br><br>OU<br><br>`s = o as string ?? fallback;`<br>Null ou non-chaîne devient la valeur de secours.<br>Chaîne vide conservée. | `s = unbox_value_or<hstring>(o, fallback);`<br>Null ou non-chaîne devient la valeur de secours.<br>Chaîne vide conservée. |
 
 ## <a name="derived-classes"></a>Classes dérivées
 
