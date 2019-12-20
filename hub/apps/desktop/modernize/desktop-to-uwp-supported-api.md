@@ -9,12 +9,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 481b326c3f4b3608d0d3f5f7a8cec943f1d6c437
-ms.sourcegitcommit: d7eccdb27c22bccac65bd014e62b6572a6b44602
+ms.openlocfilehash: 60a735af077d2121868e2613cb0f33e194e4330c
+ms.sourcegitcommit: cc108c791842789464c38a10e5d596c9bd878871
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73142524"
+ms.lasthandoff: 12/20/2019
+ms.locfileid: "75302533"
 ---
 # <a name="uwp-apis-available-to-desktop-apps"></a>API UWP disponibles pour les applications de bureau
 
@@ -383,10 +383,4 @@ Les API qui ont les [DualApiPartition](https://docs.microsoft.com/uwp/api/Window
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-**Trouvez les réponses à vos questions**
-
 Des questions ? Contactez-nous sur Stack Overflow. Notre équipe contrôle ces [balises](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Vous pouvez également nous poser vos questions [ici](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
-
-**Envoyer des commentaires ou apporter des suggestions de fonctionnalités**
-
-Consultez [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial).

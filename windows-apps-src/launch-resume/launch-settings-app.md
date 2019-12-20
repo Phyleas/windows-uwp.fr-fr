@@ -4,15 +4,15 @@ description: Découvrez comment lancer l’application Paramètres Windows à pa
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
 ms.date: 04/19/2019
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 7dd8604d9c9f32c374161ec1478221ebee6972c6
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: 6387cc75047371666ac55b9fb70ae73d3e4c4d64
+ms.sourcegitcommit: cc108c791842789464c38a10e5d596c9bd878871
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282505"
+ms.lasthandoff: 12/20/2019
+ms.locfileid: "75302663"
 ---
 # <a name="launch-the-windows-settings-app"></a>Lancer l’application Paramètres Windows
 
@@ -22,7 +22,7 @@ ms.locfileid: "72282505"
 -   [**PreferredApplicationPackageFamilyName**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.preferredapplicationpackagefamilyname)
 -   [**DesiredRemainingView**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview)
 
-Découvrez comment lancer l’application Paramètres Windows. Cette rubrique décrit les **paramètres ms :** Schéma d’URI. Utilisez ce schéma d’URI pour lancer l’application Paramètres Windows en ouvrant des pages de paramètres spécifiques.
+Découvrez comment lancer l’application Paramètres Windows. Cette rubrique décrit le schéma d’URI **ms-settings:** . Utilisez ce schéma d’URI pour lancer l’application Paramètres Windows en ouvrant des pages de paramètres spécifiques.
 
 Le lancement de l’application Paramètres est une partie importante de l’écriture d’une application prenant en charge la confidentialité. Si votre application ne peut pas accéder à une ressource sensible, nous vous recommandons de fournir à l’utilisateur un lien pratique lui permettant d’accéder aux paramètres de confidentialité relatifs à cette ressource. Pour plus d’informations, voir [Recommandations en matière d’applications prenant en charge la confidentialité](https://docs.microsoft.com/windows/uwp/security/index).
 
@@ -56,7 +56,7 @@ Le code ci-dessus ouvre la page des paramètres de confidentialité relatifs à 
 
 Pour plus d’informations sur les URI de lancement, voir [Lancer l’application par défaut pour un URI](launch-default-app.md).
 
-## <a name="ms-settings-uri-scheme-reference"></a>ms-settings: Référence du schéma d’URI
+## <a name="ms-settings-uri-scheme-reference"></a>Référence de schéma d’URI ms-settings:
 
 Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramètres.
 
@@ -77,7 +77,7 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 |Page de paramètres| URI |
 |-------------|-----|
 | Accéder à un compte professionnel ou scolaire | ms-settings:workplace |
-| Adresse de messagerie et comptes  | ms-settings:emailandaccounts |
+| Comptes de messagerie et d’application  | ms-settings:emailandaccounts |
 | Famille et autres personnes | ms-settings:otherusers |
 | Configurer une borne | MS-paramètres : assignedaccess |
 | Options de connexion | ms-settings:signinoptions<br>ms-settings:signinoptions-dynamiclock |
@@ -125,7 +125,7 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 | Pavé tactile | ms-settings:devices-touchpad (nécessite du matériel de pavé tactile) |
 | Saisie | ms-settings:typing |
 | USB | ms-settings:usb |
-| Roulette | ms-settings:wheel (disponible uniquement si Dial est jumelé) |
+| Wheel | ms-settings:wheel (disponible uniquement si Dial est jumelé) |
 | Votre téléphone | ms-settings:mobile-devices  |
 
 ## <a name="ease-of-access"></a>Options d’ergonomie
@@ -133,10 +133,10 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 |Page de paramètres| URI |
 |-------------|-----|
 | Audio | ms-settings:easeofaccess-audio |
-| Sous-titres | ms-settings:easeofaccess-closedcaptioning |
+| Sous-titres codés | ms-settings:easeofaccess-closedcaptioning |
 | Filtres de couleur | MS-Settings : easeofaccess-colorfilter |
 | Taille du pointeur & curseur | MS-Settings : easeofaccess-cursorandpointersize |
-| Écran | ms-settings:easeofaccess-display |
+| Affichage | ms-settings:easeofaccess-display |
 | Contrôle visuel | ms-settings:easeofaccess-eyecontrol |
 | Polices | ms-settings:fonts |
 | Contraste élevé | ms-settings:easeofaccess-highcontrast |
@@ -145,7 +145,7 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 | Souris | ms-settings:easeofaccess-mouse |
 | Narrator | ms-settings:easeofaccess-narrator |
 | Autres options | MS-Settings : easeofaccess-otheroptions (**déconseillé dans Windows 10, version 1809 et versions ultérieures**) |
-| Fonctions vocales | ms-settings:easeofaccess-speechrecognition |
+| Voix | ms-settings:easeofaccess-speechrecognition |
 
 ## <a name="extras"></a>Bonus
 
@@ -181,13 +181,13 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 | Fonctions audio et vocales | ms-settings:holographic-audio |
 | Environment | MS-Settings : confidentialité-holographique-environnement |
 | Affichage du casque | MS-Settings : holographique-casque |
-| Désinstaller l’interface | MS-Settings : holographique-Management |
+| Désinstaller | MS-Settings : holographique-Management |
 
 ## <a name="network--internet"></a>Réseau et Internet
 
 |Page de paramètres| URI |
 |-------------|-----|
-| Mode avion | ms-settings:network-airplanemode<br/>ms-settings:proximity |
+| Mode Avion | ms-settings:network-airplanemode<br/>ms-settings:proximity |
 | Réseau cellulaire et SIM | ms-settings:network-cellular |
 | Consommation des données | ms-settings:datausage |
 | Dial-up | ms-settings:network-dialup |
@@ -197,7 +197,7 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 | Point d’accès sans fil mobile | ms-settings:network-mobilehotspot |
 | NFC | ms-settings:nfctransactions |
 | Proxy | ms-settings:network-proxy |
-| Statut | ms-settings:network-status<br/>MS-Settings : réseau |
+| le statut | ms-settings:network-status<br/>MS-Settings : réseau |
 | VPN | ms-settings:network-vpn |
 | Wi-Fi | ms-settings:network-wifi (disponible uniquement si l’appareil dispose d’une carte Wi-Fi) |
 | Appels Wi-Fi | ms-settings:network-wificalling (disponible uniquement si les appels Wi-Fi sont activés) |
@@ -206,14 +206,14 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 
 |Page de paramètres| URI |
 |-------------|-----|
-| Présentation | ms-settings:personalization-background |
+| Arrière-plan | ms-settings:personalization-background |
 | Choisir les dossiers qui s’affichent dans le menu Démarrer | ms-settings:personalization-start-places |
 | Couleurs | ms-settings:personalization-colors<br/>MS-paramètres : couleurs |
 | Coup d’œil | MS-Settings : personnalisation-aperçu (**déconseillé dans Windows 10, version 1809 et versions ultérieures**) |
 | Écran de verrouillage | ms-settings:lockscreen |
 | Barre de navigation | MS-Settings : personnalisation-barre**de navigation (déconseillée dans Windows 10, version 1809 et versions ultérieures**) |
 | Personnalisation (catégorie) | ms-settings:personalization |
-| Start | ms-settings:personalization-start |
+| Démarrer | ms-settings:personalization-start |
 | Barre des tâches | ms-settings:taskbar |
 | Thèmes | ms-settings:themes |
 
@@ -234,7 +234,7 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 | Diagnostics d'application | ms-settings:privacy-appdiagnostics |
 | Téléchargements de fichiers automatiques | ms-settings:privacy-automaticfiledownloads |
 | Applications en arrière-plan | ms-settings:privacy-backgroundapps |
-| Calendrier | ms-settings:privacy-calendar |
+| Calendar | ms-settings:privacy-calendar |
 | Historique des appels | ms-settings:privacy-callhistory |
 | Appareil photo | ms-settings:privacy-webcam |
 | Contacts | ms-settings:privacy-contacts |
@@ -244,7 +244,7 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 | Commentaires et diagnostics | ms-settings:privacy-feedback |
 | Système de fichiers | ms-settings:privacy-broadfilesystemaccess |
 | Général | ms-settings:privacy-general |
-| Location | ms-settings:privacy-location |
+| Services de localisation | ms-settings:privacy-location |
 | Messagerie | ms-settings:privacy-messaging |
 | Microphone | ms-settings:privacy-microphone |
 | Mouvement | ms-settings:privacy-motion |
@@ -258,7 +258,7 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 | Vidéos | ms-settings:privacy-videos |
 | Activation vocale | MS-Settings : confidentialité-voiceactivation |
 
-## <a name="surface-hub"></a>Surface Hub
+## <a name="surface-hub"></a>Surface Hub
 
 |Page de paramètres| URI |
 |-------------|-----|
@@ -268,7 +268,7 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 | Gestion des appareils de l’équipe | ms-settings:surfacehub-devicemanagenent |
 | Écran de démarrage | ms-settings:surfacehub-welcome |
 
-## <a name="system"></a>System
+## <a name="system"></a>Système
 
 |Page de paramètres| URI |
 |-------------|-----|
@@ -279,9 +279,9 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 | Paramètres d'économiseur de batterie | ms-settings:batterysaver-settings (disponible uniquement sur les appareils dotés d’une batterie, tels qu’une tablette) |
 | Utilisation de la batterie | ms-settings:batterysaver-usagedetails (disponible uniquement sur les appareils dotés d’une batterie, tels qu’une tablette) |
 | Presse-papiers | MS-Settings : presse-papiers |
-| Écran | ms-settings:display |
+| Affichage | ms-settings:display |
 | Localisations de sauvegarde par défaut | ms-settings:savelocations |
-| Écran | ms-settings:screenrotation |
+| Affichage | ms-settings:screenrotation |
 | Duplication de mon écran | ms-settings:quietmomentspresentation |
 | Pendant ces heures | ms-settings:quietmomentsscheduled |
 | Chiffrement | ms-settings:deviceencryption |
@@ -291,9 +291,9 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 | Multitâches | ms-settings:multitasking |
 | Paramètres d'éclairage nocturne | ms-settings:nightlight |
 | Phone | ms-settings:phone-defaultapps |
-| Projection vers ce PC | ms-settings:project |
+| Projection sur ce PC | ms-settings:project |
 | Expériences partagées | ms-settings:crossdevice |
-| Mode tablette | ms-settings:tabletmode |
+| Mode Tablette | ms-settings:tabletmode |
 | Barre des tâches | ms-settings:taskbar |
 | Notifications et actions | ms-settings:notifications |
 | Bureau à distance | ms-settings:remotedesktop |
@@ -309,9 +309,10 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 |-------------|-----|
 | Date et heure | ms-settings:dateandtime |
 | Paramètres IME Japon | ms-settings:regionlanguage-jpnime (disponible si l’éditeur de méthode de saisie Microsoft Japon est installé) |
+| Région | MS-paramètres : regionformatting |
 | Langue | MS-Settings : clavier<br/>ms-settings:regionlanguage<br/>MS-Settings : regionlanguage-bpmfime<br/>MS-Settings : regionlanguage-cangjieime<br/>MS-Settings : regionlanguage-chsime-pinyin-domainlexicon<br/>MS-Settings : regionlanguage-chsime-pinyin-keyconfig<br/>MS-Settings : regionlanguage-chsime-pinyin-UDP<br/>MS-Settings : regionlanguage-chsime-Wubi-UDP<br/>MS-Settings : regionlanguage-quickime |
 | Paramètres IME Pinyin | ms-settings:regionlanguage-chsime-pinyin (disponible si l’éditeur de méthode de saisie Microsoft Pinyin est installé) |
-| Fonctions vocales | ms-settings:speech |
+| Voix | ms-settings:speech |
 | Paramètres IME Wubi  | ms-settings:regionlanguage-chsime-wubi (disponible si l’éditeur de méthode de saisie Microsoft Wubi est installé) |
 
 ## <a name="update--security"></a>Mise à jour et sécurité
@@ -324,10 +325,10 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 | Localiser mon appareil | ms-settings:findmydevice |
 | Pour les développeurs | ms-settings:developers |
 | Récupération | ms-settings:recovery |
-| Résolution des problèmes | ms-settings:troubleshoot |
+| Dépanner | ms-settings:troubleshoot |
 | Sécurité Windows | ms-settings:windowsdefender |
 | Programme Windows Insider | ms-settings:windowsinsider (présent uniquement si l’utilisateur est inscrit dans TEC)<br/>MS-paramètres : windowsinsider-optin |
-| Windows Update | ms-settings:windowsupdate<br>ms-settings:windowsupdate-action |
+| Windows Update | ms-settings:windowsupdate<br>ms-settings:windowsupdate-action |
 | Windows Update - Options avancées | ms-settings:windowsupdate-options |
 | Windows Update - Options de redémarrage | ms-settings:windowsupdate-restartoptions |
 | Windows Update - Afficher l'historique des mises à jour | ms-settings:windowsupdate-history |
