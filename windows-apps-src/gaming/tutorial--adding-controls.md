@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: windows 10, uwp, jeux, contrôles, entrée
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c2b7031bf8afb047fcfc869e23ee1c398218af8
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: edc790ba949010fb1975317c5113ca02744889a0
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258427"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684560"
 ---
 # <a name="add-controls"></a>Ajouter des contrôles
 
@@ -82,11 +82,11 @@ Le code complet pour [**InitWindow**](https://github.com/Microsoft/Windows-unive
 
 Pour déterminer à quel moment le jeu doit écouter une entrée donnée, la classe **MoveLookController** présente trois états propres au contrôleur, quel que soit le type de celui-ci :
 
-État | Description
+Région | Description
 :----- | :-------
-**Aucune** | Il s’agit de l’état initialisé pour la manette. Toute entrée est ignorée puisque le jeu n’anticipe aucune entrée de contrôleur.
+**Aucune** | Il s’agit de l’état initialisé pour le contrôleur. Toute entrée est ignorée puisque le jeu n’anticipe aucune entrée de contrôleur.
 **WaitForInput** | Le contrôleur attend que le joueur accuse réception d'un message provenant du jeu, soit à l’aide du bouton gauche de la souris, d'un événement tactile ou du bouton Menu d'un boîtier de commande.
-**Proactive** | Le contrôleur est en mode de jeu actif.
+**Active** | Le contrôleur est en mode de jeu actif.
 
 
 
@@ -459,7 +459,7 @@ La disposition des contrôles de ce jeu pour le clavier et la souris est la suiv
 Entrée de l’utilisateur | Action
 :------- | :--------
 W | Déplacer le joueur vers l’avant
-A | Déplacer le joueur vers la gauche
+Un bouton | Déplacer le joueur vers la gauche
 S | Déplacer le joueur vers l’arrière
 D | Déplacer le joueur vers la droite
 X | Déplacer la vue vers le haut
@@ -484,7 +484,7 @@ La souris est traitée un peu différemment des contrôles tactiles, même si el
 
 Ceci est traité dans la méthode [**OnPointerPressed**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L179-L313) de **MoveLookController**.
 
-Dans cette méthode, nous cherchons à savoir quel type de périphérique de pointage est utilisé avec l'énumération [`Windows::Devices::Input::PointerDeviceType`](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Input.PointerDeviceType). Si le jeu est dans l'état **Active** et que **PointerDeviceType** n’est pas **Touch**, nous supposons qu'il s'agit d'une entrée de souris.
+Dans cette méthode, nous cherchons à savoir quel type de périphérique de pointage est utilisé avec l'énumération [`Windows::Devices::Input::PointerDeviceType`](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.PointerDeviceType). Si le jeu est dans l'état **Active** et que **PointerDeviceType** n’est pas **Touch**, nous supposons qu'il s'agit d'une entrée de souris.
 
 ```cpp
     case MoveLookControllerState::Active:
@@ -557,7 +557,7 @@ Lorsque le joueur arrête d’appuyer sur un des boutons de la souris, l'événe
 
 Maintenant, examinons le dernier type de contrôle que nous allons prendre en charge : les boîtiers de commande. Les boîtiers de commande sont gérés séparément des contrôles tactiles et de souris, car ils n’utilisent pas l’objet pointeur. Pour cette raison, il convient d'ajouter quelques nouveaux gestionnaires d’événements et méthodes.
 
-## <a name="adding-gamepad-support"></a>Ajout de la prise en charge du boîtier de commande
+## <a name="adding-gamepad-support"></a>Ajout de la prise en charge de la manette de jeu
 
 
 Pour ce jeu, la prise en charge du boîtier de commande est ajouté par les appels aux API [Windows.Gaming.Input](https://docs.microsoft.com/uwp/api/windows.gaming.input). Cet ensemble d’API vous donne accès aux entrées du contrôleur de jeu telles que les volants de course et les manches à balai. 
@@ -727,7 +727,7 @@ La méthode **Update** commence par appeler [**UpdatePollingDevices**](#the-upda
 
 Dans notre méthode **Update**, nous procédons aux vérifications d'entrée suivantes.
 - Si le joueur utilise le rectangle du contrôleur de déplacement, nous déterminons la modification de la position du pointeur et l'utilisons pour calculer si l’utilisateur a déplacé le pointeur hors de la zone morte du contrôleur. S'il est en dehors de la zone morte, la propriété du vecteur **m_moveCommand** est mise à jour avec la valeur du joystick virtuel.
-- Si l’une des entrées de clavier de déplacement est enfoncée, la valeur `1.0f` ou `-1.0f` sont ajoutées dans le composant correspondant de l' &mdash; de m_moveCommand de vecteur pour l’avant et `1.0f` pour l’arrière.`-1.0f`
+- Si l’une des entrées de clavier de déplacement est enfoncée, la valeur `1.0f` ou `-1.0f` sont ajoutées dans le composant correspondant de l' &mdash; de m_moveCommand de vecteur pour l’avant et `1.0f` pour l’arrière.
 
 
 Une fois que toutes les entrées de mouvement ont été prises en compte, nous appliquons quelques calculs au vecteur **m_moveCommand** pour générer un nouveau vecteur qui représente la direction du joueur dans l'univers du jeu.

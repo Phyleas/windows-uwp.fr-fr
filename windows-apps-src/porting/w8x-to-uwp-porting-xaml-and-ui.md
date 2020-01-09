@@ -4,16 +4,16 @@ title: Portage du balisage XAML et de la couche interface utilisateur de Windows
 ms.assetid: 78b86762-7359-474f-b1e3-c2d7cf9aa907
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 19e754fd6a52880c7bc636818acaeda815f9da16
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 879dee0c8c4c3ad9004c11fa488d32eae8936510
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259105"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684653"
 ---
-# <a name="porting-windows-runtime-8x-xaml-and-ui-to-uwp"></a>Portage du balisage XAML et de la couche interface utilisateur de Windows Runtime 8.x vers UWP
+# <a name="porting-windows-runtime-8x-xaml-and-ui-to-uwp"></a>Portage du balisage XAML et de la couche interface utilisateur de Windows Runtime 8.x vers UWP
 
 
 Rubrique précédente : [Résolution des problèmes](w8x-to-uwp-troubleshooting.md).
@@ -116,13 +116,13 @@ Voici quelques exemples plus spécifiques de modifications apportées aux contr�
 | [**Entr**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) | Dans une application Windows Runtime 8. x, la vérification orthographique est désactivée par défaut pour une [**zone de texte**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox). Dans une application Windows Phone Store et dans une application Windows 10, elle est activée par défaut. |
 | [**Entr**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) | La taille de police par défaut d’un élément [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) est passée de 11 à 15. |
 | [**Entr**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) | La valeur par défaut de [**TextBox.TextReadingOrder**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.textreadingorder) est passée de **Default** à **DetectFromContent**. Si cette valeur ne convient pas, utilisez **UseFlowDirection**. La valeur **Default** est déconseillée. |
-| Divers | La couleur d’accentuation s’applique aux applications du Windows Phone Store et aux applications Windows 10, mais pas aux applications Windows Runtime 8. x.  |
+| divers. | La couleur d’accentuation s’applique aux applications du Windows Phone Store et aux applications Windows 10, mais pas aux applications Windows Runtime 8. x.  |
 
 Pour plus d’informations sur les contrôles des applications UWP, voir [Contrôles par fonction](https://docs.microsoft.com/windows/uwp/controls-and-patterns/controls-by-function), [Liste des contrôles](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/) et [Recommandations relatives aux contrôles](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/index).
 
 ##  <a name="design-language-in-windows10"></a>Langue de conception dans Windows 10
 
-Il existe quelques différences mineures, mais importantes, en matière de langage de conception entre les applications Universal 8,1 et Windows 10. Pour plus de détails, voir [Conception](https://developer.microsoft.com/en-us/windows/apps/design). Malgré les changements en matière de langage, nos principes de conception restent cohérents : être attentif aux détails, mais toujours viser la simplicité en se concentrant sur le contenu sans superflu, en réduisant à tout prix les éléments visuels et en restant authentique en matière de domaine numérique ; utiliser la hiérarchie visuelle, en particulier avec la typographie ; concevoir à l’aide d’une grille et donner vie à vos expériences grâce à des animations fluides.
+Il existe quelques différences mineures, mais importantes, en matière de langage de conception entre les applications Universal 8,1 et Windows 10. Pour plus de détails, voir [Conception](https://developer.microsoft.com/windows/apps/design). Malgré les changements en matière de langage, nos principes de conception restent cohérents : être attentif aux détails, mais toujours viser la simplicité en se concentrant sur le contenu sans superflu, en réduisant à tout prix les éléments visuels et en restant authentique en matière de domaine numérique ; utiliser la hiérarchie visuelle, en particulier avec la typographie ; concevoir à l’aide d’une grille et donner vie à vos expériences grâce à des animations fluides.
 
 ## <a name="effective-pixels-viewing-distance-and-scale-factors"></a>Pixels effectifs, distance d’affichage et facteurs d’échelle
 
@@ -190,17 +190,17 @@ Le tableau suivant décrit les modifications apportées aux états visuels et au
 | 8.1                 |                         | Windows 10        |                     |
 |---------------------|-------------------------|-------------------|---------------------|
 | CommonStates        |                         | CommonStates      |                     |
-|                     | Normale                  |                   | Normale              |
+|                     | Normal                  |                   | Normal              |
 |                     | PointerOver             |                   | PointerOver         |
 |                     | Pressed                 |                   | Pressed             |
 |                     | PointerOverPressed      |                   | [non disponible]       |
-|                     | Désactivé                |                   | [non disponible]       |
+|                     | Désactivée                |                   | [non disponible]       |
 |                     | [non disponible]           |                   | PointerOverSelected |
-|                     | [non disponible]           |                   | Sélectionné            |
+|                     | [non disponible]           |                   | Selected            |
 |                     | [non disponible]           |                   | PressedSelected     |
 | [non disponible]       |                         | DisabledStates    |                     |
-|                     | [non disponible]           |                   | Désactivé            |
-|                     | [non disponible]           |                   | Activé             |
+|                     | [non disponible]           |                   | Désactivée            |
+|                     | [non disponible]           |                   | Enabled             |
 | SelectionHintStates |                         | [non disponible]     |                     |
 |                     | VerticalSelectionHint   |                   | [non disponible]       |
 |                     | HorizontalSelectionHint |                   | [non disponible]       |
@@ -214,7 +214,7 @@ Le tableau suivant décrit les modifications apportées aux états visuels et au
 |                     | UnselectedPointerOver   |                   | [non disponible]       |
 |                     | UnselectedSwiping       |                   | [non disponible]       |
 |                     | Sélection               |                   | [non disponible]       |
-|                     | Sélectionné                |                   | [non disponible]       |
+|                     | Selected                |                   | [non disponible]       |
 |                     | SelectedSwiping         |                   | [non disponible]       |
 |                     | SelectedUnfocused       |                   | [non disponible]       |
 
@@ -247,7 +247,7 @@ Le langage de conception a évolué pour Windows 10 et, par conséquent, certain
 
 Dans d’autres cas, les clés de ressources ne sont plus prises en charge. L’éditeur de balisage XAML de Visual Studio met en surbrillance les références aux clés de ressources qui ne peuvent pas être résolues. Par exemple, il souligne une référence à la clé de style `ListViewItemTextBlockStyle` d’une ligne ondulée rouge. Si ce n’est pas corrigé, l’application s’arrête immédiatement lorsque vous essayez de la déployer vers l’émulateur ou l’appareil. Il est donc important de veiller à l’exactitude du balisage XAML. Et vous allez découvrir que Visual Studio est un formidable outil pour intercepter ces problèmes.
 
-Pour les clés qui sont toujours prises en charge, les modifications apportées au langage de conception signifient que les propriétés définies par certains styles ont changé. Par exemple, `TitleTextBlockStyle` affecte à **FontSize** la valeur 14.667 PX dans une application Windows Runtime 8. x et 18.14 PX dans une application Windows Phone Store. Toutefois, le même style définit les **polices** sur un 24px de plus grande taille dans une application Windows 10. Passez en revue vos conceptions et dispositions et utilisez les styles appropriés aux endroits adéquats. Pour plus d’informations, voir [Recommandations en matière de polices](https://docs.microsoft.com/windows/uwp/controls-and-patterns/fonts) et [Concevoir des applications UWP](https://developer.microsoft.com/en-us/windows/apps/design).
+Pour les clés qui sont toujours prises en charge, les modifications apportées au langage de conception signifient que les propriétés définies par certains styles ont changé. Par exemple, `TitleTextBlockStyle` affecte à **FontSize** la valeur 14.667 PX dans une application Windows Runtime 8. x et 18.14 PX dans une application Windows Phone Store. Toutefois, le même style définit les **polices** sur un 24px de plus grande taille dans une application Windows 10. Passez en revue vos conceptions et dispositions et utilisez les styles appropriés aux endroits adéquats. Pour plus d’informations, voir [Recommandations en matière de polices](https://docs.microsoft.com/windows/uwp/controls-and-patterns/fonts) et [Concevoir des applications UWP](https://developer.microsoft.com/windows/apps/design).
 
 Voici la liste complète des clés qui ne sont plus prises en charge.
 

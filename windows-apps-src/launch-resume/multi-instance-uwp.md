@@ -5,18 +5,18 @@ keywords: applications UWP à instances multiples
 ms.date: 09/21/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9be9b5eec70bc98bc2c44beaf1dcfbba00876f20
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: cdb8d87a63eba14ecb2dc25e3cb5451dce6cae60
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259438"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684646"
 ---
 # <a name="create-a-multi-instance-universal-windows-app"></a>Créer une application Windows universelle à instances multiples
 
 Cette rubrique décrit comment créer une application de plateforme Windows universelle (UWP) à instances multiples.
 
-À partir de Windows 10, version 1803 (10,0 ; Build 17134), votre application UWP peut s’abonner pour prendre en charge plusieurs instances. Si une instance d’une application UWP à instances multiples est en cours d’exécution et qu’une demande d’activation consécutive est reçue, la plateforme n’activera pas l’instance existante. Au lieu de cela, elle créera une nouvelle instance qui s’exécutera dans un processus distinct.
+À partir de Windows 10, version 1803 (10,0 ; Build 17134), votre application UWP peut s’abonner pour prendre en charge plusieurs instances. Si une instance d’une application UWP à instances multiples est en cours d’exécution et si une demande d’activation consécutive est reçue, la plateforme n’active pas l’instance existante. Au lieu de cela, elle crée une instance qui s’exécute dans un processus distinct.
 
 > [!IMPORTANT]
 > L’instanciation multiple est prise en charge pour les applications JavaScript, contrairement à la redirection d’instanciation multiple. Étant donné que la redirection d’instanciation multiple n’est pas prise en charge pour les applications JavaScript, la classe [**AppInstance**](/uwp/api/windows.applicationmodel.appinstance) n’est pas utile pour ces applications.
@@ -110,7 +110,7 @@ public static class Program
 
 `Main()` est la première chose qui s’exécute. Il s’exécute avant [**OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) et [**OnActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnActivated_Windows_ApplicationModel_Activation_IActivatedEventArgs_). Cela vous permet de décider d'activer ou non cette instance ou une autre avant l'exécution de tout autre code d’initialisation dans votre application.
 
-Le code ci-dessus détermine si une instance existante ou nouvelle de votre application est activée. Une clé est utilisée pour déterminer s’il existe une instance existante que vous souhaitez activer. Par exemple, si votre application peut être lancée pour [gérer l’activation des fichiers](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/handle-file-activation), vous pouvez utiliser le nom de fichier en tant que clé. Ensuite, vous pouvez vérifier si une instance de votre application est déjà enregistrée avec cette clé et l’activer au lieu d’ouvrir une nouvelle instance. Voici l’idée derrière le code : `var instance = AppInstance.FindOrRegisterInstanceForKey(key);`
+Le code ci-dessus détermine si une instance existante ou nouvelle de votre application est activée. Une clé est utilisée pour déterminer s’il existe une instance existante que vous souhaitez activer. Par exemple, si votre application peut être lancée pour [gérer l’activation des fichiers](https://docs.microsoft.com/windows/uwp/launch-resume/handle-file-activation), vous pouvez utiliser le nom de fichier en tant que clé. Ensuite, vous pouvez vérifier si une instance de votre application est déjà enregistrée avec cette clé et l’activer au lieu d’ouvrir une nouvelle instance. Voici l’idée derrière le code : `var instance = AppInstance.FindOrRegisterInstanceForKey(key);`
 
 Si une instance enregistrée avec la clé est identifiée, cette instance est activée. Si la clé est introuvable, l’instance actuelle (l’instance qui s'exécute actuellement `Main`) crée son objet d'application et commence à s’exécuter.
 
@@ -122,7 +122,7 @@ Si une instance enregistrée avec la clé est identifiée, cette instance est ac
 - Lorsqu’une application enregistre une tâche en arrière-plan, elle commence généralement par vérifier si cette tâche est déjà enregistrée avant soit de la supprimer ou de la réenregistrer, soit de ne rien faire afin de conserver l’enregistrement existant. Il s’agit également du comportement par défaut avec les applications à instances multiples. Cependant, une application à instances multiples peut choisir d’enregistrer un nom de tâche en arrière-plan différent en fonction de l'instance concernée. Cela entraîne plusieurs enregistrements pour le même déclencheur, et l'activation de plusieurs instances de tâche en arrière-plan lorsque le déclencheur se déclenche.
 - Les services d’application lancent une nouvelle instance de la tâche en arrière-plan du service d’application pour chaque connexion. Cela reste inchangé pour les applications à instances multiples, à savoir que chaque instance d’une application à instances multiples est associée à sa propre instance de la tâche en arrière-plan du service d’application. 
 
-## <a name="additional-considerations"></a>Considérations supplémentaires
+## <a name="additional-considerations"></a>Autres éléments à prendre en considération
 
 - L'instanciation multiple est prise en charge par les applications UWP qui ciblent le bureau et les projets IoT.
 - Pour éviter des conditions de concurrence et des problèmes de contention, les applications à instances multiples doivent prendre des mesures pour partitionner/synchroniser l’accès aux paramètres, au stockage local des applications et à toute autre ressource (par exemple, des fichiers utilisateur ou un magasin de données) qui peut être partagée entre plusieurs instances. Les mécanismes de synchronisation standard, tels que les mutex, les sémaphores, les événements, etc., sont disponibles.

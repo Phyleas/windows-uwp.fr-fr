@@ -6,12 +6,12 @@ ms.date: 03/07/2019
 ms.topic: article
 keywords: windows 10, uwp, bande-annonce, vidéo, capture d’écran, image, icône, description dans le Store, images de description dans le Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 25dd6ffe698ae8141a02381d5ca45df31377599b
-ms.sourcegitcommit: a4a595c485a1e4549b02b0e20ca9f56b093c5814
+ms.openlocfilehash: 48a8566c80516588939dc0ef071c3da4b9232d64
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74125240"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684613"
 ---
 # <a name="app-screenshots-images-and-trailers"></a>Captures d’écran, images et bandes-annonces de l’application
 
@@ -170,7 +170,7 @@ Il existe des exigences supplémentaires en fonction du type de fichier.
 
 | Video | Audio |
 | --- | --- |
-| <ul><li>Codec : [H. 264](https://docs.microsoft.com/en-us/windows/desktop/DirectShow/h-264-video-types) (AVC1)  </li><li>Balayage progressif (pas d'entrelacement)</li><li>High Profile</li><li>2 images B consécutives</li><li>GOP fermé. GOP de la moitié de la fréquence d’images</li><li>CABAC</li><li>50 Mo/s </li><li>Espace de couleurs : 4.2.0</li></ul> | <ul><li>Codec : AAC-DS</li><li>Canaux : stéréo ou son surround</li><li>Taux d’échantillonnage : 48 KHz</li><li>Vitesse de transmission audio : 384 Ko/s pour stéréo, 512 Ko/s pour son surround</li></ul> |
+| <ul><li>Codec : [H. 264](https://docs.microsoft.com/windows/desktop/DirectShow/h-264-video-types) (AVC1)  </li><li>Balayage progressif (pas d'entrelacement)</li><li>High Profile</li><li>2 images B consécutives</li><li>GOP fermé. GOP de la moitié de la fréquence d’images</li><li>CABAC</li><li>50 Mo/s </li><li>Espace de couleurs : 4.2.0</li></ul> | <ul><li>Codec : AAC-DS</li><li>Canaux : stéréo ou son surround</li><li>Taux d’échantillonnage : 48 KHz</li><li>Vitesse de transmission audio : 384 Ko/s pour stéréo, 512 Ko/s pour son surround</li></ul> |
 
 > [!WARNING]
 > Les clients ne peuvent pas entendre l’audio pour les fichiers MP4 encodés avec des codecs autres que AVC1.

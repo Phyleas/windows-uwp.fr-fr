@@ -4,14 +4,14 @@ title: Portage Windows Phone XAML et l’interface utilisateur Silverlight vers 
 ms.assetid: 49aade74-5dc6-46a5-89ef-316dbeabbebe
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: eeb8cb8a8b71123c3a5a94eea316621e5f93fe8e
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 29357746b6fca2c6aae52e9516a5b7dc2fca8ef2
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259076"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684619"
 ---
 #  <a name="porting-windowsphone-silverlight-xaml-and-ui-to-uwp"></a>Portage Windows Phone XAML et l’interface utilisateur Silverlight vers UWP
 
@@ -205,7 +205,7 @@ Pour plus d’informations sur les contrôles UWP, voir [Contrôles par fonction
 
 ##  <a name="design-language-in-windows10"></a>Langue de conception dans Windows 10
 
-Il existe quelques différences en langage de conception entre les applications Windows Phone Silverlight et les applications Windows 10. Pour plus de détails, voir [Conception](https://developer.microsoft.com/en-us/windows/apps/design). Malgré les changements en matière de langage, nos principes de conception restent cohérents : être attentif aux détails, mais toujours viser la simplicité en se concentrant sur le contenu sans superflu, en réduisant à tout prix les éléments visuels et en restant authentique en matière de domaine numérique ; utiliser la hiérarchie visuelle, en particulier avec la typographie ; concevoir à l’aide d’une grille et donner vie à vos expériences grâce à des animations fluides.
+Il existe quelques différences en langage de conception entre les applications Windows Phone Silverlight et les applications Windows 10. Pour plus de détails, voir [Conception](https://developer.microsoft.com/windows/apps/design). Malgré les changements en matière de langage, nos principes de conception restent cohérents : être attentif aux détails, mais toujours viser la simplicité en se concentrant sur le contenu sans superflu, en réduisant à tout prix les éléments visuels et en restant authentique en matière de domaine numérique ; utiliser la hiérarchie visuelle, en particulier avec la typographie ; concevoir à l’aide d’une grille et donner vie à vos expériences grâce à des animations fluides.
 
 ## <a name="localization-and-globalization"></a>Localisation et globalisation
 
@@ -313,7 +313,7 @@ Le texte (ou la typographie) constitue un aspect important d’une application U
 
 Styles TextBlock système pour les applications Windows 10
 
-Dans une application Windows Phone Silverlight, la famille de polices par défaut est Segoe WP. Dans une application Windows 10, la famille de polices par défaut est Segoe UI. Par conséquent, les métriques de police dans votre application peuvent être différentes. Si vous souhaitez reproduire l’apparence de votre texte Windows Phone Silverlight, vous pouvez définir vos propres mesures à l’aide de propriétés telles que [**LineHeight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.lineheight) et [**LineStackingStrategy**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.linestackingstrategy). Pour plus d’informations, voir [Recommandations en matière de polices](https://docs.microsoft.com/windows/uwp/controls-and-patterns/fonts) et [Concevoir des applications UWP](https://developer.microsoft.com/en-us/windows/apps/design).
+Dans une application Windows Phone Silverlight, la famille de polices par défaut est Segoe WP. Dans une application Windows 10, la famille de polices par défaut est Segoe UI. Par conséquent, les métriques de police dans votre application peuvent être différentes. Si vous souhaitez reproduire l’apparence de votre texte Windows Phone Silverlight, vous pouvez définir vos propres mesures à l’aide de propriétés telles que [**LineHeight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.lineheight) et [**LineStackingStrategy**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.linestackingstrategy). Pour plus d’informations, voir [Recommandations en matière de polices](https://docs.microsoft.com/windows/uwp/controls-and-patterns/fonts) et [Concevoir des applications UWP](https://developer.microsoft.com/windows/apps/design).
 
 ## <a name="theme-changes"></a>Modifications de thème
 

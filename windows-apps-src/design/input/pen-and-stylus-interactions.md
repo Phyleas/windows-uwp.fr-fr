@@ -8,19 +8,19 @@ keywords: Windows Ink, entrée manuscrite Windows, DirectInk, InkPresenter, InkC
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 031ac1ebc8d164c99240969ce77813f36a311858
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: a8d4299eb361fb804419af687bdcaa25ffa54bb8
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258299"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684468"
 ---
 # <a name="pen-interactions-and-windows-ink-in-uwp-apps"></a>Interactions avec le stylet et Windows Ink dans les applications UWP
 
 ![le stylet de surface](images/ink/hero-small.png)  
 *Stylet Surface* (disponible à l’achat dans la [Microsoft Store](https://www.microsoft.com/p/surface-pen/8zl5c82qmg6b)).
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d'ensemble
 
 Optimisez votre application de plateforme Windows universelle (UWP) pour la saisie au stylet, afin de fournir une fonctionnalité standard d’[**appareil de pointage**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.PointerDevice) et d’offrir une expérience Windows Ink optimale à vos utilisateurs.
 
@@ -109,7 +109,7 @@ En plus de fournir tous les comportements d’entrée manuscrite par défaut de 
 
 Par défaut, l’entrée manuscrite est prise en charge uniquement pour la saisie effectuée à l’aide du stylet. Ici, l’élément [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) est configuré pour interpréter les données d’entrée de stylet et de souris sous forme de traits d’encre. Nous définissons également des attributs de trait d’encre initiaux utilisés pour restituer les traits dans l’élément [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas).
 
-Pour activer la souris et l'entrée manuscrite tactile, définissez la propriété [**InputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.InputDeviceTypes) de [**InkPresenter**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.inkpresenter) sur la combinaison de valeurs [**CoreInputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.core.coreinputdevicetypes) de votre choix.
+Pour activer la souris et l'entrée manuscrite tactile, définissez la propriété [**InputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.InputDeviceTypes) de [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter) sur la combinaison de valeurs [**CoreInputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.core.coreinputdevicetypes) de votre choix.
 
 ```csharp
 public MainPage()
@@ -474,7 +474,7 @@ Pour obtenir un exemple complet de cette fonctionnalité, consultez l’[exemple
 * [Gestion des entrées du pointeur](handle-pointer-input.md)
 * [Identification des périphériques d’entrée](identify-input-devices.md)
 
-**Interfaces**
+**API**
 
 * [**Windows. Devices. Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input)
 * [**Windows. UI. Input. encrage**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking)
