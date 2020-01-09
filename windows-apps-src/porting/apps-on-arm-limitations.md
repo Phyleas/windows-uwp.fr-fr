@@ -5,18 +5,18 @@ ms.date: 02/15/2018
 ms.topic: article
 keywords: Windows 10 s, toujours connecté, restrictions, windows 10 sur ARM
 ms.localizationpriority: medium
-redirect_url: https://docs.microsoft.com/en-us/windows/uwp/porting/apps-on-arm-troubleshooting-x86
-ms.openlocfilehash: a0765f8b7b250949146c4ed6f374bb5b6f7ae8bb
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+redirect_url: https://docs.microsoft.com/windows/uwp/porting/apps-on-arm-troubleshooting-x86
+ms.openlocfilehash: e9bbef6f9b714b99148cf4ac082f98b4422f23b2
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682754"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683962"
 ---
 # <a name="limitations-of-apps-and-experiences-on-arm"></a>Restrictions des applications et expériences sur ARM
 Windows 10 sur ARM présente les restrictions nécessaires suivantes :
 
-- **Seuls les pilotes ARM64 sont pris en charge**. Comme dans toutes les architectures, les pilotes en mode noyau, les pilotes [Infrastructure de pilote en mode utilisateur (UMDF)](https://docs.microsoft.com/en-us/windows-hardware/drivers/wdf/overview-of-the-umdf) et les pilotes d'impression doivent être compilés pour correspondre à l'architecture du système d'exploitation. Tandis que les systèmes d'exploitation ARM présentent des fonctionnalités permettant d'émuler les applications x86 en mode utilisateur, les pilotes implémentés pour les autres architectures (notamment x64 et x86) ne sont actuellement pas émulées et, par conséquent, elle ne sont pas prises en charge sur cette plateforme. Toute application fonctionnant avec son propre pilote personnalisé devra être transférée vers ARM64. Dans les scénarios limités, l'application peut s'exécuter en tant qu'application x86 sous émulation, mais la partie pilote de l'application doit être transférée sur ARM64. Pour plus d’informations sur la compilation de votre pilote pour ARM64, consultez [Génération de pilotes ARM64 avec le kit WDK](/windows-hardware/drivers/develop/building-arm64-drivers).
+- **Seuls les pilotes ARM64 sont pris en charge**. Comme dans toutes les architectures, les pilotes en mode noyau, les pilotes [Infrastructure de pilote en mode utilisateur (UMDF)](https://docs.microsoft.com/windows-hardware/drivers/wdf/overview-of-the-umdf) et les pilotes d'impression doivent être compilés pour correspondre à l'architecture du système d'exploitation. Tandis que les systèmes d'exploitation ARM présentent des fonctionnalités permettant d'émuler les applications x86 en mode utilisateur, les pilotes implémentés pour les autres architectures (notamment x64 et x86) ne sont actuellement pas émulées et, par conséquent, elle ne sont pas prises en charge sur cette plateforme. Toute application fonctionnant avec son propre pilote personnalisé devra être transférée vers ARM64. Dans les scénarios limités, l'application peut s'exécuter en tant qu'application x86 sous émulation, mais la partie pilote de l'application doit être transférée sur ARM64. Pour plus d’informations sur la compilation de votre pilote pour ARM64, consultez [Génération de pilotes ARM64 avec le kit WDK](/windows-hardware/drivers/develop/building-arm64-drivers).
 
 - **Les applications x64 ne sont pas prises en charge**. Windows 10 sur ARM ne prend pas en charge l'émulation des applications x64.
 
@@ -32,7 +32,7 @@ Le tableau suivant répertorie la liste des problèmes communs et propose des su
 
 |Problème|Solution|
 |-----|--------|
-| Votre application repose sur un pilote qui n'a pas été désigné pour un ARM. | Recompilez votre pilote x86 pour l'ARM64. Consultez [Génération de pilotes ARM64 avec le kit WDK](https://docs.microsoft.com/en-us/windows-hardware/drivers/develop/building-arm64-drivers). |
+| Votre application repose sur un pilote qui n'a pas été désigné pour un ARM. | Recompilez votre pilote x86 pour l'ARM64. Consultez [Génération de pilotes ARM64 avec le kit WDK](https://docs.microsoft.com/windows-hardware/drivers/develop/building-arm64-drivers). |
 | Votre application est uniquement disponible pour un système x64. | Si vous développez pour le Microsoft Store, soumettez une version ARM de votre application. Pour plus d’informations, consultez [Architectures des packages d’applications](/windows/msix/package/device-architecture). Si vous êtes un développeur Win32, distribuez une version x86 de votre application. |
 | Votre application utilise une version d'OpenGL ultérieure à la version 1.1 ou nécessite une version d'OpenGL à accélération matérielle. | Les applications x86 utilisant DirectX 9, DirectX 10, DirectX 11 et DirectX 12 fonctionneront sur ARM. Pour plus d’informations, consultez [Jeux et graphismes DirectX](https://docs.microsoft.com/windows/desktop/directx). |
 | Votre application x86 ne fonctionne pas comme prévu. | Essayez d'utiliser l'utilitaire de résolution des problèmes de compatibilité en suivant les recommandations de l'[Utilitaire de résolution des problèmes de compatibilité sur ARM](apps-on-arm-program-compat-troubleshooter.md). Pour certaines étapes de résolution d'autres problèmes, consultez l'article [Résolution des problèmes des applications x86 sur ARM](apps-on-arm-troubleshooting-x86.md). |

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, jeux, monétisation
 ms.localizationpriority: medium
-ms.openlocfilehash: 132f8c1d0ff314b794cc8464ec69cdf84f6a5f3b
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: baef3750b8dc076fd78c239cfc61662256e57c14
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258478"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685253"
 ---
 #  <a name="monetization-for-games"></a>Monétisation pour les jeux
 
@@ -206,10 +206,10 @@ Smaato permet aux bannières publicitaires d’être incorporées aux jeux et au
 Vous pouvez utiliser AdDuplex pour mettre en œuvre les bannières ou spots publicitaires dans votre jeu.
 
 Pour en savoir plus sur l’intégration de AdDuplex directement dans un projet XAML Windows 10, accédez au site web AdDuplex :
-* Bannières publicitaires : [Kit de développement logiciel Windows 10 pour XAML](https://adduplex.zendesk.com/hc/en-us/articles/204849031-Windows-10-SDK-for-XAML-apps-installation-and-usage)
-* Spots publicitaires : [Installation et utilisation des spots publicitaires AdDuplex XAML Windows 10](https://adduplex.zendesk.com/hc/en-us/articles/204849091-Windows-10-XAML-AdDuplex-Interstitial-Ad-Installation-and-Usage)
+* Bannières publicitaires : [Kit de développement logiciel Windows 10 pour XAML](https://adduplex.zendesk.com/hc/articles/204849031-Windows-10-SDK-for-XAML-apps-installation-and-usage)
+* Spots publicitaires : [Installation et utilisation des spots publicitaires AdDuplex XAML Windows 10](https://adduplex.zendesk.com/hc/articles/204849091-Windows-10-XAML-AdDuplex-Interstitial-Ad-Installation-and-Usage)
 
-Pour plus d’informations sur l’intégration du Kit de développement logiciel AdDuplex dans les jeux UWP Windows 10 créés à l’aide de Unity, voir [Installation et utilisation du Kit de développement logiciel (SDK) Windows 10 pour les applications Unity](https://adduplex.zendesk.com/hc/en-us/articles/207279435-Windows-10-SDK-for-Unity-apps-installation-and-usage).
+Pour plus d’informations sur l’intégration du Kit de développement logiciel AdDuplex dans les jeux UWP Windows 10 créés à l’aide de Unity, voir [Installation et utilisation du Kit de développement logiciel (SDK) Windows 10 pour les applications Unity](https://adduplex.zendesk.com/hc/articles/207279435-Windows-10-SDK-for-Unity-apps-installation-and-usage).
 
 ## <a name="maximize-your-games-potential-through-ad-campaigns"></a>Optimiser le potentiel de votre jeu par le biais de campagnes de publicité
 

@@ -6,12 +6,12 @@ ms.date: 01/23/2018
 ms.topic: article
 keywords: windows 10, uwp, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
-ms.openlocfilehash: 802a7a925a08dde94ab59d79e01df94fbbcf495d
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 34bc609d06705f1dfa6a5c7370ce6022ae9c3ff8
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258036"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684247"
 ---
 # <a name="use-the-multilingual-app-toolkit-40"></a>Utiliser le Kit de ressources Multilingual App Toolkit 4.0
 
@@ -39,11 +39,11 @@ Consultez également [Directives en matière de globalisation](guidelines-and-ch
 Le kit de ressources Multilingual App Toolkit 4.0 (MAT 4.0) est divisé en deux parties, chacune équipée de son propre installateur.
 
 - [Extension multilingue d’application Toolkit 4,0 pour Visual Studio 2017 et versions ultérieures](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308). Contient l’extension MAT 4,0 pour Visual Studio 2019, sous la forme d’un programme d’installation. vsix.
-- [Éditeur Multilingual App Toolkit 4.0](https://developer.microsoft.com/en-us/windows/develop/multilingual-app-toolkit). Cette partie contient l'outil Multilingual Editor autonome pour MAT 4.0 sous la forme d'un installateur .msi. Il comprend également l'extension MAT 4.0 pour Visual Studio 2015 et pour Visual Studio 2013.
+- [Éditeur Multilingual App Toolkit 4.0](https://developer.microsoft.com/windows/develop/multilingual-app-toolkit). Cette partie contient l'outil Multilingual Editor autonome pour MAT 4.0 sous la forme d'un installateur .msi. Il comprend également l'extension MAT 4.0 pour Visual Studio 2015 et pour Visual Studio 2013.
 
 Si vous utilisez Visual Studio 2017 ou Visual Studio 2019, téléchargez et exécutez les deux programmes d’installation, l’un après l’autre. Si vous utilisez Visual Studio 2015 ou Visual Studio 2013, téléchargez et exécutez l'installateur .msi.
 
-### <a name="step-3-enable-the-multilingual-app-toolkit-for-your-project"></a>Étape 3. Activer le kit de ressources Multilingual App Toolkit pour votre projet
+### <a name="step-3-enable-the-multilingual-app-toolkit-for-your-project"></a>Étape 3. Activer le kit de ressources Multilingual App Toolkit pour votre projet
 
 Avant que vous ne puissiez commencer à localiser l'application, le MAT doit être activé pour votre projet. Voici comment activer le kit de ressources.
 
@@ -102,7 +102,7 @@ Une fois votre application testée à l'aide de la pseudo-langue, trois options
 
 #### <a name="option-1-translate-the-strings-yourself"></a>Option 1. Traduire les chaînes vous-même
 
-Vous pouvez utiliser Multilingual Editor pour traduire chaque chaîne individuellement. Comme indiqué précédemment, il est inclus dans [Le programme d’installation .msi](https://developer.microsoft.com/en-us/windows/develop/multilingual-app-toolkit).
+Vous pouvez utiliser Multilingual Editor pour traduire chaque chaîne individuellement. Comme indiqué précédemment, il est inclus dans [Le programme d’installation .msi](https://developer.microsoft.com/windows/develop/multilingual-app-toolkit).
 
 - Cliquez avec le bouton droit sur le fichier .xlf que vous souhaitez traduire.
 - Cliquez sur **Ouvrir avec...** et sélectionnez Multilingual Editor. Vous pouvez éventuellement cliquer sur **Définir par défaut**.
@@ -169,7 +169,7 @@ Avant de commencer le processus de certification du Microsoft Store, vous devez
 ## <a name="downloads"></a>Téléchargements
 
 * [Programme d’installation de l’application multilingue 4,0. vsix](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308)
-* [Programme d’installation du kit d’outils d’application multilingue 4,0. msi](https://developer.microsoft.com/en-us/windows/develop/multilingual-app-toolkit)
+* [Programme d’installation du kit d’outils d’application multilingue 4,0. msi](https://developer.microsoft.com/windows/develop/multilingual-app-toolkit)
 
 ## <a name="translation-services"></a>Services de traduction
 

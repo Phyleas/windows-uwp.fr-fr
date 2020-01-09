@@ -8,12 +8,12 @@ keywords: voix, vocal, reconnaissance vocale, langage naturel, dictée, saisie, 
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d36368fab267370e2301e52731d99bc7b146fbd
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: fd33720255a04ffd8669673f027973afb4369086
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258246"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684211"
 ---
 # <a name="speech-interactions"></a>Interactions vocales
 
@@ -24,7 +24,7 @@ Intégrez la reconnaissance vocale et la conversion de texte par synthèse vocal
 **Conversion de texte par synthèse vocale (TTS)** La conversion de texte par synthèse vocale (TTS) utilise un moteur de synthèse vocale (voix) pour convertir une chaîne de texte en parole. La chaîne d’entrée peut être du texte basique sans fioriture ou un texte SSML (Speech Synthesis Markup Language) plus complexe. Le langage SSML fournit un moyen standard de contrôler les caractéristiques de la restitution vocale telles que la prononciation, le volume, la tonalité, le débit ou la vitesse et l’accentuation.
 
 **Autres composants de reconnaissance vocale :** 
-**Cortana** dans les applications Windows utilise des commandes vocales personnalisées (parlées ou écrites) pour lancer votre application au premier plan (l’application prend le focus, comme si elle avait été lancée à partir du menu Démarrer) ou l’activer en tant que service d’arrière-plan (**Cortana** conserve le focus, mais fournit les résultats de l’application). Consultez les [Recommandations en matière de commandes vocales Cortana (VCD)](https://docs.microsoft.com/en-us/cortana/voice-commands/vcd) si vous proposez des fonctionnalités d’application dans l’interface utilisateur **Cortana**.
+**Cortana** dans les applications Windows utilise des commandes vocales personnalisées (parlées ou écrites) pour lancer votre application au premier plan (l’application prend le focus, comme si elle avait été lancée à partir du menu Démarrer) ou l’activer en tant que service d’arrière-plan (**Cortana** conserve le focus, mais fournit les résultats de l’application). Consultez les [Recommandations en matière de commandes vocales Cortana (VCD)](https://docs.microsoft.com/cortana/voice-commands/vcd) si vous proposez des fonctionnalités d’application dans l’interface utilisateur **Cortana**.
 
 ## <a name="speech-interaction-design"></a>Conception de l’interaction vocale
 

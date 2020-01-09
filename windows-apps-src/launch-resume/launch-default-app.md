@@ -4,14 +4,14 @@ description: Découvrez comment lancer l’application par défaut d’un URI (U
 ms.assetid: 7B0D0AF5-D89E-4DB0-9B79-90201D79974F
 ms.date: 06/26/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 48b4df662b990f64adcbfe2e7e03dc5303b2962e
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 0d636b5689d604c0eaa3b66763709251a2445deb
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340427"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685215"
 ---
 # <a name="launch-the-default-app-for-a-uri"></a>Lancer l’application par défaut pour un URI
 
@@ -54,7 +54,7 @@ En général, votre application ne peut pas sélectionner l’application à lan
 
 ### <a name="call-launchuriasync-to-launch-a-uri"></a>Appeler LaunchUriAsync pour lancer un URI
 
-Utilisez la méthode [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) pour lancer un URI. Lors de l’appel de cette méthode, votre application doit être au premier plan, c’est-à-dire qu’elle doit être visible pour l’utilisateur. Cette conditions contribue à garantir que l’utilisateur conserve le contrôle. Pour pouvoir la respecter, assurez-vous que vous avez relié directement tous les lancements d’URI à l’interface utilisateur de votre application. L’utilisateur doit toujours exercer une action pour initier un lancement d’URI. Si vous tentez de lancer un URI alors que votre application n’est pas au premier plan, le lancement échoue et votre rappel d’erreur est appelé.
+Utilisez la méthode [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) pour lancer un URI. Lors de l’appel de cette méthode, votre application doit être au premier plan, c’est-à-dire qu’elle doit être visible pour l’utilisateur. Cette condition permet de garantir que l’utilisateur conserve le contrôle. Pour pouvoir la respecter, assurez-vous que vous avez relié directement tous les lancements d’URI à l’interface utilisateur de votre application. L’utilisateur doit toujours exercer une action pour initier un lancement d’URI. Si vous tentez de lancer un URI alors que votre application n’est pas au premier plan, le lancement échoue et votre rappel d’erreur est appelé.
 
 Commencez par créer un objet [**System.Uri**](https://docs.microsoft.com/dotnet/api/system.uri) pour représenter l’URI, puis passez-le à la méthode [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync). Utilisez le résultat renvoyé pour voir si l’appel a réussi, comme illustré dans l’exemple suivant.
 
@@ -102,7 +102,7 @@ L’utilisateur ne dispose pas toujours d’une application capable de gérer l�
 
 Les recommandations sont également utiles quand plusieurs applications sont inscrites pour gérer un schéma d’URI. Si vous recommandez une application spécifique, Windows ouvre celle-ci si elle est installée.
 
-Pour faire une recommandation, appelez la méthode [**Windows.System.Launcher.LaunchUriAsync(Uri, LauncherOptions)** ](https://docs.microsoft.com/en-us/uwp/api/windows.system.launcher.launchuriasync#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_Windows_System_LauncherOptions_) avec [**LauncherOptions.preferredApplicationPackageFamilyName**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.preferredapplicationpackagefamilyname) ayant pour valeur le nom de la famille de packages de l’application du Store que vous voulez recommander. Le système d’exploitation utilise cette information pour remplacer l’option générale permettant de rechercher une application dans le Windows Store par une option spécifique permettant d’acquérir l’application recommandée dans le Windows Store.
+Pour faire une recommandation, appelez la méthode [**Windows.System.Launcher.LaunchUriAsync(Uri, LauncherOptions)** ](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_Windows_System_LauncherOptions_) avec [**LauncherOptions.preferredApplicationPackageFamilyName**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.preferredapplicationpackagefamilyname) ayant pour valeur le nom de la famille de packages de l’application du Store que vous voulez recommander. Le système d’exploitation utilise cette information pour remplacer l’option générale permettant de rechercher une application dans le Windows Store par une option spécifique permettant d’acquérir l’application recommandée dans le Windows Store.
 
 ```cs
 // Set the recommended app
@@ -202,11 +202,11 @@ Utilisez le schéma d’URI **ms-yellowpage:** pour lancer l’application de re
 ### <a name="people-app-uri-scheme"></a>Schéma d’URI pour l’application Contacts
 
 Utilisez le schéma d’URI **ms-people:** pour lancer l’application Contacts.
-Pour plus d’informations, voir [Lancer l’application Contacts](launch-people-apps.md).
+Pour en savoir plus, voir [Lancer l’application Contacts](launch-people-apps.md).
 
 ### <a name="photos-app-uri-scheme"></a>Schéma d’URI pour l’application Photos
 
-Utilisez le schéma d’URI **ms-photos:** pour lancer l’application Photos afin d'afficher une image ou de modifier une vidéo. Par exemple :  
+Utilisez le schéma d’URI **ms-photos:** pour lancer l’application Photos afin d'afficher une image ou de modifier une vidéo. Par exemple :  
 Pour afficher une image : `ms-photos:viewer?fileName=c:\users\userName\Pictures\image.jpg`  
 Ou pour modifier une vidéo : `ms-photos:videoedit?InputToken=123abc&Action=Trim&StartTime=01:02:03`  
 

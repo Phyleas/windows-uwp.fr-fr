@@ -4,14 +4,14 @@ title: Questions courantes sur les campagnes de publicité
 ms.assetid: EAF7CC74-7DE4-4D11-B9A6-29C6EA6E734B
 ms.date: 10/31/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6875f5b06bbd253b7fe80fbc53936fe0dcf1a6b9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c44f93676fd0324ef82ad7b33832bb6653409cda
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57597064"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685163"
 ---
 # <a name="common-questions-about-ad-campaigns"></a>Questions courantes sur les campagnes de publicité
 
@@ -21,7 +21,7 @@ Cela dépend de vous, mais n’oubliez pas : plus vous dépensez, plus le nombre
 
 ### <a name="how-can-i-increase-the-maximum-monthly-budget-amount-allowed-for-my-ad-campaign"></a>Comment puis-je augmenter le budget mensuel maximum autorisé pour ma campagne de publicité ?
 
-Si vous prévoyez de consacrer plus de 10 000 $ par mois à vos campagnes de publicité, contactez [aiacare@microsoft.com](mailto:aiacare@microsoft.com). Nous vous attribuerons un compte premium, qui permet de dépenser jusqu’à 50 000 $ par campagne. Un compte premium offre également des fonctionnalités supplémentaires, comme la définition des dates de début et de fin de la campagne et l’URL cible de votre campagne.
+Si vous prévoyez de consacrer plus de 10 000 $ par mois à vos campagnes de publicité, contactez [aiacare@microsoft.com](mailto:aiacare@microsoft.com). Nous vous attribuerons un compte Premium, qui permet de dépenser jusqu’à 50 000 $ par campagne. Un compte premium offre également des fonctionnalités supplémentaires, comme la définition des dates de début et de fin de la campagne et l’URL cible de votre campagne.
 
 ### <a name="can-i-run-ads-for-one-of-my-apps-in-my-other-apps"></a>Puis-je exécuter des publicités pour l’une de mes applications dans mes autres applications ?
 
@@ -37,9 +37,9 @@ Si vous utilisez un des modèles de publicité par défaut, vous pouvez choisir 
 
 ### <a name="where-will-my-ad-appear"></a>Où apparaît ma publicité ?
 
-Votre publicité apparaît dans les applications qui utilisent la même évaluation de l'âge et la même version de système d'exploitation que votre application. Vous définissez ces propriétés lorsque vous publiez votre application dans le Microsoft Store. Pour les campagnes « universelles », vos annonces apparaîtront également dans MSN.com, Outlook.com, Skype et d'autres propriétés premium de Microsoft.
+Votre publicité apparaît dans les applications qui utilisent la même évaluation de l'âge et la même version de système d'exploitation que votre application. Vous définissez ces propriétés lorsque vous publiez votre application dans la Microsoft Store. Pour les campagnes « universelles », vos annonces apparaîtront également dans MSN.com, Outlook.com, Skype et d'autres propriétés premium de Microsoft.
 
-Les campagnes de publicité sont actuellement prises en charge dans les pays et régions suivants :
+Les campagnes de publicité sont actuellement prises en charge dans les pays et régions suivants :
 
 Afrique du Sud, Algérie, Allemagne, Arabie saoudite, Argentine, Australie, Autriche, Bahamas, Bahreïn, Barbade, Belgique, Belize, Bolivie, Brésil, Canada, Chili, Chine, Colombie, Danemark, Égypte, El Salvador, Émirats arabes unis, Équateur, Espagne, États-Unis, Finlande, France, Guatemala, Haïti, Honduras, Hong Kong (R.A.S.), Inde, Indonésie, Irak, Irlande, Italie, Jamaïque, Jordanie, Koweït, Liban, Malaisie, Maroc, Mexique, Nicaragua, Norvège, Nouvelle-Zélande, Oman, Panama, Paraguay, Pays-Bas, Pérou, Philippines, Porto Rico, Qatar, République dominicaine, Royaume-Uni, Singapour, Suède, Suisse, Taïwan, Thaïlande, Trinité-et-Tobago, Tunisie, Uruguay, Venezuela, Vietnam.
 
@@ -59,5 +59,5 @@ Si vous ne voulez pas attendre d’être facturé, payez votre facture immédiat
 
 ### <a name="how-do-i-delete-a-credit-card-or-edit-the-details-of-a-credit-card"></a>Comment supprimer une carte de crédit ou modifier les détails d’une carte de crédit ?
 
-Accédez à <http://commerce.microsoft.com>, connectez-vous avec vos informations d’identification de compte Microsoft et apportez les modifications nécessaires.
+Accédez à [https://commerce.microsoft.com](https://commerce.microsoft.com), connectez-vous avec vos informations d’identification de compte Microsoft et apportez les modifications nécessaires.
 

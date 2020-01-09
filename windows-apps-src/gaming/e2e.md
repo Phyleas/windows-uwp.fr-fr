@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: windows 10, uwp, jeux, développement de jeux
 ms.localizationpriority: medium
-ms.openlocfilehash: c05a973dc9a954569531be6e0fea212135532b84
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: a348393a02bab946a128babefc07dc48faea6cd1
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258506"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685076"
 ---
 # <a name="windows-10-game-development-guide"></a>Guide de développement de jeux Windows 10
 
@@ -246,15 +246,15 @@ Les forums de développement sont un lieu d’échange intéressant pour poser d
     </colgroup>
     <tr>
         <td>Publication d’applications et de jeux forums pour développeurs</td>
-        <td><a href="https://social.msdn.microsoft.com/Forums/en-us/home?category=windowsapps">Publication et ADS dans les applications</a></td>
+        <td><a href="https://social.msdn.microsoft.com/Forums/home?category=windowsapps">Publication et ADS dans les applications</a></td>
     </tr>
     <tr>
         <td>Forum des développeurs d’applications UWP</td>
-        <td><a href="https://social.msdn.microsoft.com/Forums/en-us/home?forum=wpdevelop">Développement d’applications plateforme Windows universelle</a></td>
+        <td><a href="https://social.msdn.microsoft.com/Forums/home?forum=wpdevelop">Développement d’applications plateforme Windows universelle</a></td>
     </tr>
     <tr>
         <td>Forums de développeurs d’applications de bureau</td>
-        <td><a href="https://social.msdn.microsoft.com/Forums/en-us/home?category=windowsdesktopdev">Forums sur les applications de bureau Windows</a></td>
+        <td><a href="https://social.msdn.microsoft.com/Forums/home?category=windowsdesktopdev">Forums sur les applications de bureau Windows</a></td>
     </tr>
     <tr>
         <td>Jeux du Microsoft Store DirectX (billets archivés)</td>
@@ -270,7 +270,7 @@ Les forums de développement sont un lieu d’échange intéressant pour poser d
     </tr>
     <tr>
         <td>Forums plateforme Azure</td>
-        <td><a href="https://social.msdn.microsoft.com/Forums/en-us/home?category=windowsazureplatform">Forum Azure</a></td>
+        <td><a href="https://social.msdn.microsoft.com/Forums/home?category=windowsazureplatform">Forum Azure</a></td>
     </tr>
     <tr>
         <td>Forum Xbox Live</td>
@@ -322,7 +322,7 @@ Les blogs de développement sont également une excellente ressource pour obteni
     </tr>
     <tr>
         <td>Blog de l’équipe Visual C++</td>
-        <td><a href="https://devblogs.microsoft.com/cppblog/">Blog C++ de l’équipe Visual</a></td>
+        <td><a href="https://devblogs.microsoft.com/cppblog/">Blog de l’équipe Visual C++</a></td>
     </tr>
     <tr>
         <td>Blog de l’équipe PIX</td>
@@ -406,7 +406,7 @@ Voici quelques concepts et questions d’ordre général à prendre en compte lo
 
 ### <a name="choosing-your-graphics-technology-and-programming-language"></a>Choix de la technologie graphique et du langage de programmation
 
-Plusieurs langages de programmation et technologies graphiques peuvent être utilisés dans les jeux Windows 10. Votre choix dépend du type de jeu développé, de l’expérience et des préférences de votre studio de développement, et des conditions requises spécifiques pour les fonctionnalités de votre jeu. Allez-vous utiliser C#, C++ ou JavaScript ? DirectX, XAML ou HTML5 ?
+Plusieurs langages de programmation et technologies graphiques peuvent être utilisés dans les jeux Windows 10. Votre choix dépend du type de jeu développé, de l’expérience et des préférences de votre studio de développement, et des conditions requises spécifiques pour les fonctionnalités de votre jeu. Allez-vous utiliser C#, C++ ou JavaScript ? DirectX, XAML ou HTML5 ?
 
 #### <a name="directx"></a>DirectX
 
@@ -437,7 +437,7 @@ Les fonctionnalités complètes et la solide intégration à la plateforme de Di
     </tr>
     <tr>
         <td>Direct3D 12 : Guide de programmation et informations de référence</td>
-        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/direct3d-12-graphics">Graphiques Direct3D 12</a></td>
+        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/direct3d-12-graphics">Graphiques Direct3D 12</a></td>
     </tr>
     <tr>
         <td>Vidéos de développement Graphics et DirectX 12 (YouTube)</td>
@@ -488,7 +488,7 @@ Le langage HTML (HyperText Markup Language) est un langage de balisage d’inte
 
 #### <a name="combining-presentation-technologies"></a>Combinaison des technologies de présentation
 
-L’infrastructure DXGI (DirectX Graphics Infrastructure) de Microsoft fournit interopérabilité et compatibilité entre plusieurs technologies graphiques. Pour des graphismes haute performance, vous pouvez allier XAML et DirectX, en utilisant XAML pour les menus et les autres éléments simples de l’interface utilisateur, et DirectX pour le rendu des scènes 2D et 3D complexes DXGI assure également la compatibilité entre Direct2D, Direct3D, DirectWrite, DirectCompute et Microsoft Media Foundation.
+L’infrastructure DXGI (DirectX Graphics Infrastructure) de Microsoft fournit interopérabilité et compatibilité entre plusieurs technologies graphiques. Pour des graphismes haute performance, vous pouvez allier XAML et DirectX, en utilisant XAML pour les menus et les autres éléments simples de l’interface utilisateur, et DirectX pour le rendu des scènes 2D et 3D complexes DXGI assure également la compatibilité entre Direct2D, Direct3D, DirectWrite, DirectCompute et Microsoft Media Foundation.
 
 <table>
     <colgroup>
@@ -508,7 +508,7 @@ L’infrastructure DXGI (DirectX Graphics Infrastructure) de Microsoft fournit 
 
 #### <a name="c"></a>C++
 
-C++/CX est un langage haute performance à faible traitement, qui fournit une puissante combinaison de vitesse, compatibilité et accès aux plateformes. C++/CX facilite l’utilisation de l’ensemble des fonctionnalités de jeux remarquables de Windows 10, notamment DirectX et Xbox Live. Vous pouvez également réutiliser le code et les bibliothèques C++ existants. C++/CX crée un code rapide et natif qui n’implique pas la surcharge de nettoyage de la mémoire. Votre jeu peut donc bénéficier de performances exceptionnelles et d’une faible consommation d’énergie, ce qui conduit à une autonomie de la batterie plus longue. Utilisez C++/CX avec DirectX ou XAML, ou bien créez un jeu utilisant une combinaison des deux.
+C++/CX est un langage haute performance à faible traitement, qui fournit une puissante combinaison de vitesse, compatibilité et accès aux plateformes. C++/CX facilite l’utilisation de l’ensemble des fonctionnalités de jeux remarquables de Windows 10, notamment DirectX et Xbox Live. Vous pouvez également réutiliser le code et les bibliothèques C++ existants. C++/CX crée un code rapide et natif qui n’implique pas la surcharge de nettoyage de la mémoire. Votre jeu peut donc bénéficier de performances exceptionnelles et d’une faible consommation d’énergie, ce qui conduit à une autonomie de la batterie plus longue. Utilisez C++/CX avec DirectX ou XAML, ou bien créez un jeu utilisant une combinaison des deux.
 
 <table>
     <colgroup>
@@ -517,7 +517,7 @@ C++/CX est un langage haute performance à faible traitement, qui fournit une pu
     </colgroup>
     <tr>
         <td>Présentations et informations de référence sur C++/CX</td>
-        <td><a href="https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx">Informations C++ de référence surC++le langage visuel (/CX)</a></td>
+        <td><a href="https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx">Informations de référence sur le langage Visual C++ (C++/CX)</a></td>
     </tr>
     <tr>
         <td>Visual C++ : Guide de programmation et informations de référence</td>
@@ -645,7 +645,7 @@ PlayFab, qui fait désormais partie de la famille Microsoft, est une plateforme 
         <td><a href="https://playfab.com/">Vue d’ensemble des outils et des services</a></td>
     </tr>
     <tr>
-        <td>Prise en main</td>
+        <td>Mise en route</td>
         <td><a href="https://api.playfab.com/docs/general-getting-started">Guide de mise en route général</a></td>
     </tr>
     <tr>
@@ -894,7 +894,7 @@ Si vous disposez d’un jeu, nombre de ressources et de guides disponibles vous 
     </tr>
     <tr>
         <td>Portage d’une application Xbox vers une application de plateforme Windows universelle</td>
-        <td><a href="https://developer.xboxlive.com/en-us/platform/development/education/Documents/Porting%20from%20Xbox%20One%20to%20Windows%2010.aspx">Portage de Xbox 1 vers Windows 10 UWP</a></td>
+        <td><a href="https://developer.xboxlive.com/platform/development/education/Documents/Porting%20from%20Xbox%20One%20to%20Windows%2010.aspx">Portage de Xbox 1 vers Windows 10 UWP</a></td>
     </tr>
     <tr>
         <td>Portage de DirectX 9 vers DirectX 11</td>
@@ -1026,7 +1026,7 @@ Voici quelques liens pour vous aider à faire migrer votre jeu de bureau Windows
     </tr>
     <tr>
         <td>Fonctions CRT non prises en charge dans UWP</td>
-        <td><a href="https://docs.microsoft.com/cpp/cppcx/crt-functions-not-supported-in-universal-windows-platform-apps">Fonctions CRT non prises en charge dans les applications plateforme Windows universelle</a></td>
+        <td><a href="https://docs.microsoft.com/cpp/cppcx/crt-functions-not-supported-in-universal-windows-platform-apps">Fonctions CRT non prises en charge dans les applications de la plateforme Windows universelle</a></td>
     </tr>
     <tr>
         <td>Alternatives aux API Windows</td>
@@ -1070,7 +1070,7 @@ Distincte de la conception de l’expérience utilisateur, la conception d’un 
     </colgroup>
     <tr>
         <td>Informations de base et recommandations sur la conception UWP</td>
-        <td><a href="https://developer.microsoft.com/en-us/windows/apps/design">Conception d’applications UWP</a></td>
+        <td><a href="https://developer.microsoft.com/windows/apps/design">Conception d’applications UWP</a></td>
     </tr>
     <tr>
         <td>Conception des états de cycle de vie d’application</td>
@@ -1200,7 +1200,7 @@ Guides et références pour le développement de jeux DirectX.
     </tr>
     <tr>
         <td>Direct3D 12 : Guide de programmation et informations de référence</td>
-        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/direct3d-12-graphics">Graphiques Direct3D 12</a></td>
+        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/direct3d-12-graphics">Graphiques Direct3D 12</a></td>
     </tr>
     <tr>
         <td>Notions fondamentales sur DirectX 12 (vidéo)</td>
@@ -1397,7 +1397,7 @@ Le Kit Windows Performance Toolkit est composé d’outils d’analyse des pe
     </colgroup>
     <tr>
         <td>Test de performances de votre code.</td>
-        <td><a href="https://azure.microsoft.com/services/devops/test-plans/">Test de charge basé sur le Cloud</a></td>
+        <td><a href="https://azure.microsoft.com/services/devops/test-plans/">Tests de charge basés sur le cloud</a></td>
     </tr>
     <tr>
         <td>Obtenir le type de console Xbox à l’aide des informations sur l’appareil de jeu</td>
@@ -1534,7 +1534,7 @@ Vous allez utiliser l' [espace partenaires](https://partner.microsoft.com/dashbo
     </tr>
     <tr>
         <td>Publication avancée de l’espace partenaires (GDN)</td>
-        <td><a href="https://developer.xboxlive.com/en-us/windows/documentation/Pages/home.aspx">Guide de publication avancé de l’espace partenaires</a></td>
+        <td><a href="https://developer.xboxlive.com/windows/documentation/Pages/home.aspx">Guide de publication avancé de l’espace partenaires</a></td>
     </tr>
     <tr>
         <td>Utiliser Azure Active Directory (AAD) pour ajouter des utilisateurs à votre compte espace partenaires</td>
@@ -1646,7 +1646,7 @@ Vous n’avez pas terminé une fois que vous avez développé et fourni votre je
     </colgroup>
     <tr>
         <td>Analyse de l’espace partenaires</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/publish/analytics">Analyser les performances de l’application</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/publish/analytics">Analyser les performances des applications</a></td>
     </tr>
     <tr>
         <td>Découvrez comment vos clients interagissent avec les fonctionnalités Xbox dans votre jeu.</td>
@@ -1739,7 +1739,7 @@ Pour mettre à jour votre jeu publié, soumettez un nouveau package d’applicat
 
 ## <a name="adding-xbox-live-to-your-game"></a>Ajout de Xbox Live à votre jeu
 
-Xbox Live est le premier réseau de jeux qui connecte des millions de joueurs dans le monde entier. Les développeurs peuvent accéder à des fonctionnalités Xbox Live capables d’augmenter le public de leur jeu de façon drastique. Il s’agit notamment de la présence Xbox Live, des classements, des sauvegardes dans le cloud, des hubs de jeux, des clubs, des tchats de groupe, des jeux DVR et plus encore.
+Xbox Live est un réseau de jeux Premier qui connecte des millions de joueurs dans le monde entier. Les développeurs peuvent accéder à des fonctionnalités Xbox Live capables d’augmenter le public de leur jeu de façon drastique. Il s’agit notamment de la présence Xbox Live, des classements, des sauvegardes dans le cloud, des hubs de jeux, des clubs, des tchats de groupe, des jeux DVR et plus encore.
 
 > [!Note]
 > Si vous souhaitez développer des titres Xbox Live, plusieurs options s’offrent à vous. Pour en savoir plus sur les divers programmes, voir [vue d’ensemble du programme pour les développeurs](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview).
@@ -1776,7 +1776,7 @@ Xbox Live est le premier réseau de jeux qui connecte des millions de joueurs da
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Présentation</td>
+        <td>Vue d'ensemble</td>
         <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md">Prise en main du programme de créateurs Xbox Live</a></td>
     </tr>
     <tr>
@@ -1813,7 +1813,7 @@ Xbox Live est le premier réseau de jeux qui connecte des millions de joueurs da
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Présentation</td>
+        <td>Vue d'ensemble</td>
         <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-partner/get-started-with-xbox-live-partner.md">Prise en main de Xbox Live en tant que partenaire géré ou développeur d’ID</a></td>
     </tr>
     <tr>
@@ -1833,7 +1833,7 @@ Xbox Live est le premier réseau de jeux qui connecte des millions de joueurs da
         <td><a href="https://edadfs.partners.extranet.microsoft.com/adfs/ls/?wa=wsignin1.0&wtrealm=https%3a%2f%2fdeveloper.xboxlive.com&wctx=rm%3d0%26id%3dpassive%26ru%3d%252fen-us%252flive%252fcertification%252frequirements%252fPages%252fTCR.aspx&wct=2019-11-20T19%3a55%3a26Z">Configuration Xbox requise pour Xbox Live sur Windows 10</a></td>
     </tr>
     <tr>
-        <td>Exemples</td>
+        <td>exemples</td>
         <td><a href="https://github.com/Microsoft/xbox-live-samples/tree/master/Samples/ID%40XboxSDK">Exemples de code pour les développeurs ID@Xbox</a></td>
     </tr>  
     <tr>

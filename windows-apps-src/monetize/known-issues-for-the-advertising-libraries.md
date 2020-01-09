@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: windows 10, uwp, annonces, publicité, problèmes connus, résolution des problèmes
 ms.localizationpriority: medium
-ms.openlocfilehash: 51192e13c63bf3141989cfbf5d9ebd7fbaf13641
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 6701ff346f41352a108922f82da82fbf52fd7402
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260242"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685088"
 ---
 # <a name="known-issues-and-troubleshooting-for-ads-in-apps"></a>Problèmes connus et résolution des problèmes des publicités dans les applications
 
@@ -46,7 +46,7 @@ Plusieurs raisons peuvent provoquer le non-affichage des publicités, notamment 
 
 * Si vous avez créé un ID d’unité publicitaire dans la dernière demi-heure, la publicité risque de ne pas s’afficher tant que les serveurs n’ont pas propagé les nouvelles données dans le système. Les ID existants qui affichaient des publicités précédemment doivent en afficher immédiatement.
 
-Si vous pouvez voir des publicités de test dans l’application, c’est que votre code fonctionne et qu’il peut afficher des publicités. Si vous rencontrez des problèmes, contactez le [support produit](https://developer.microsoft.com/en-us/windows/support). Sur cette page, choisissez **nous contacter**.
+Si vous pouvez voir des publicités de test dans l’application, c’est que votre code fonctionne et qu’il peut afficher des publicités. Si vous rencontrez des problèmes, contactez le [support produit](https://developer.microsoft.com/windows/support). Sur cette page, choisissez **nous contacter**.
 
 Vous pouvez également publier une question sur le [forum](https://go.microsoft.com/fwlink/?LinkID=401264).
 

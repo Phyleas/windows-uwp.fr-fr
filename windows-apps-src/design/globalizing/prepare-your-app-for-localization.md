@@ -7,12 +7,12 @@ ms.date: 11/07/2017
 ms.topic: article
 keywords: windows 10, uwp, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
-ms.openlocfilehash: 341d46879895da221e3a17ba88f28fd22e7c5e27
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 9e0991a8a06054b6136dfc1fd65c15dbeb66e6fd
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258099"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684258"
 ---
 # <a name="make-your-app-localizable"></a>Rendre votre application localisable
 
@@ -87,7 +87,7 @@ Lorsque vous installez une application qui contient des données linguistiques l
 > [!NOTE]
 > Il n’est pas possible d’installer une prise en charge linguistique supplémentaire pour votre application après l’installation initiale. Si vous modifiez la langue par défaut après l’installation d’une application, l’application continue à utiliser uniquement les ressources de langue d’origine.
 
-Si vous souhaitez vous assurer que toutes les ressources de langue sont disponibles après l’installation, créez un fichier de configuration pour le package d’application qui spécifie que certaines ressources sont requises lors de l’installation (y compris les ressources de langue). Cette fonctionnalité d’installation optimisée est automatiquement activée lorsque le. appxbundle de votre application est généré pendant l’empaquetage. Pour plus d’informations, consultez [vérifier que les ressources sont installées sur un appareil, qu’un appareil en ait besoin ou non](https://docs.microsoft.com/en-us/previous-versions/dn482043(v=vs.140)).
+Si vous souhaitez vous assurer que toutes les ressources de langue sont disponibles après l’installation, créez un fichier de configuration pour le package d’application qui spécifie que certaines ressources sont requises lors de l’installation (y compris les ressources de langue). Cette fonctionnalité d’installation optimisée est automatiquement activée lorsque le. appxbundle de votre application est généré pendant l’empaquetage. Pour plus d’informations, consultez [vérifier que les ressources sont installées sur un appareil, qu’un appareil en ait besoin ou non](https://docs.microsoft.com/previous-versions/dn482043(v=vs.140)).
 
 Si vous le souhaitez, pour vous assurer que toutes les ressources sont installées (pas seulement un sous-ensemble), vous pouvez désactiver la génération. appxbundle quand vous empaquetez votre application. Toutefois, cela n’est pas recommandé, car il peut augmenter le temps d’installation de votre application.
 
@@ -188,6 +188,6 @@ Le classement suit le format de l’application **Région** du Panneau de config
 - [Ajuster la disposition et les polices, et prendre en charge le sens du flux DàG](adjust-layout-and-fonts--and-support-rtl.md)
 - [Mise à jour des images en réponse aux événements de modification de valeur de qualificateur](../../app-resources/images-tailored-for-scale-theme-contrast.md#updating-images-in-response-to-qualifier-value-change-events)
 
-## <a name="samples"></a>Exemples
+## <a name="samples"></a>exemples
 
 - [Exemple de ressources et de localisation d’application](https://code.msdn.microsoft.com/windowsapps/Application-resources-and-cd0c6eaa)

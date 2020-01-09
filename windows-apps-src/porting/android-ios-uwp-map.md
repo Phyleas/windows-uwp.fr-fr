@@ -1,17 +1,17 @@
 ---
-Description: Comparez les fonctionnalités de la plateforme sous iOS, Android et Windows 10.
+Description: Comparez les fonctionnalités de la plateforme sur iOS, Android et Windows 10.
 title: Mappage de concepts d’applications Windows pour développeurs iOS et Android
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.assetid: 082736c8-2ac3-41b3-b246-e705edc23f34
 ms.localizationpriority: medium
-ms.openlocfilehash: f8ace0d56e6e647ed5f977cbe6860d8f91bb2b5f
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: 23d090422c7c5aabb146d9cd1ff40cc64a485bdb
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282360"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683972"
 ---
 # <a name="windows-apps-concept-mapping-for-android-and-ios-developers"></a>Mappage de concepts d’applications Windows pour développeurs iOS et Android
 
@@ -42,7 +42,7 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 <td align="left"><strong>Langage de conception.</strong><br><br>Ensemble de conventions qui prévoient la manière dont les applications sur la plateforme doivent se présenter et se comporter.</td>
 <td align="left">Les <strong>recommandations en matière de conception d’applications Android</strong> fournissent un langage visuel à suivre par les concepteurs et développeurs Android.</td>
 <td align="left">Les <strong>recommandations en matière d’interface utilisateur</strong> fournissent des conseils aux concepteurs et développeurs iOS.</td>
-<td align="left">La <a href="https://developer.microsoft.com/en-us/windows/apps/design"><strong>conception d’applications Windows UWP</strong></a> vous montre comment créer une application qui semble fantastique sur tous les appareils Windows 10. Vous y trouverez des notions de base en matière de conception d’interface utilisateur (UI), des techniques de conception réactives et une liste complète de recommandations détaillées.<br/></td>
+<td align="left">La <a href="https://developer.microsoft.com/windows/apps/design"><strong>conception d’applications Windows UWP</strong></a> vous montre comment créer une application qui semble fantastique sur tous les appareils Windows 10. Vous y trouverez des notions de base en matière de conception d’interface utilisateur (UI), des techniques de conception réactives et une liste complète de recommandations détaillées.<br/></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>Langage de balisage de l’interface utilisateur.</strong> <br><br>Langage de balisage effectuant le rendu et décrivant une interface utilisateur et ses composants. Chaque plateforme fournit un éditeur à des fins de modification visuelle et du balisage.<br/></td>
@@ -127,13 +127,13 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 <td align="left"><strong>Navigation homologue.</strong> <br><br>Présentation à l’utilisateur de méthodes de navigation entre les pages d’importance hiérarchique équivalente.</td>
 <td align="left">Les <strong>onglets</strong>, <strong>vues à balayage</strong> et <strong>panneaux de navigation</strong> permettent une <strong>navigation latérale</strong>.</td>
 <td align="left">Les <strong>contrôleurs de la barre d’onglets</strong>, <strong>les contrôleurs du mode fractionné</strong> et les <strong>contrôleurs d’affichage de page</strong> permettent de naviguer entre les vues de hiérarchie équivalente.</td>
-<td align="left">Vous pouvez afficher une liste permanente de liens/onglets au-dessus du contenu à l’aide d’<strong><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/tabs-pivot">onglets/de pivots</a></strong>. Le <strong><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/split-view">mode fractionné/volet de navigation</a></strong> vous permet d’afficher une liste de liens avec le contenu.<br/><br/><a href="https://docs.microsoft.com/windows/uwp/layout/navigation-basics">Déplacement</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/layout/navigate-between-two-pages">Naviguer entre deux pages</a></td>
+<td align="left">Vous pouvez afficher une liste permanente de liens/onglets au-dessus du contenu à l’aide d’<strong><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/tabs-pivot">onglets/de pivots</a></strong>. Le <strong><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/split-view">mode fractionné/volet de navigation</a></strong> vous permet d’afficher une liste de liens avec le contenu.<br/><br/><a href="https://docs.microsoft.com/windows/uwp/layout/navigation-basics">Navigation</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/layout/navigate-between-two-pages">Naviguer entre deux pages</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>Navigation hiérarchique.</strong> <br><br>Navigation entre les pages parent et enfant d’une hiérarchie.</td>
 <td align="left">Les <strong>listes</strong>, <strong>listes de quadrillage</strong>, <strong>boutons</strong> et autres contrôles permettent une <strong>navigation par descendants</strong> lorsqu’ils sont utilisés dans l’<strong>intention</strong> de charger d’autres <strong>activités</strong>.</td>
 <td align="left">Les <strong>contrôleurs de navigation</strong> permettent aux utilisateurs de naviguer entre les niveaux d’une hiérarchie.</td>
-<td align="left">Les <strong><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/hub">concentrateurs</a></strong> vous permettent de montrer à l’utilisateur un aperçu du contenu qui peut être sélectionné pour accéder aux pages enfants. <strong><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/master-details">Maître/détails</a></strong> permet aux utilisateurs de choisir parmi une liste de résumés d’éléments qui s’affichent en regard de la section détail correspondante.<br/><br/><a href="https://docs.microsoft.com/windows/uwp/layout/navigation-basics">Déplacement</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/layout/navigate-between-two-pages">Naviguer entre deux pages</a></td>
+<td align="left">Les <strong><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/hub">concentrateurs</a></strong> vous permettent de montrer à l’utilisateur un aperçu du contenu qui peut être sélectionné pour accéder aux pages enfants. <strong><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/master-details">Maître/détails</a></strong> permet aux utilisateurs de choisir parmi une liste de résumés d’éléments qui s’affichent en regard de la section détail correspondante.<br/><br/><a href="https://docs.microsoft.com/windows/uwp/layout/navigation-basics">Navigation</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/layout/navigate-between-two-pages">Naviguer entre deux pages</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>Navigation dans le bouton précédent.</strong> <br><br>Retour à une application.</td>
@@ -388,7 +388,7 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 <td align="left">Vous pouvez prendre en charge des consommables en <a href="https://docs.microsoft.com/windows/uwp/publish/enter-iap-properties">définissant leur type de produit sur Consommable lorsque vous les envoyez au</a> Windows Store. Vous devez ensuite appeler <strong><a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.reportconsumablefulfillmentasync">CurrentApp.ReportConsumableFulfillmentAsync</a></strong> après l’achat d’un produit pour permettre au client d’y accéder.<br/><br/><a href="https://docs.microsoft.com/windows/uwp/monetize/enable-consumable-in-app-product-purchases">Activer les achats dans l’application consommables</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Test des achats dans l’application.</strong> <br><br>Permet de tester le code d’achat dans l’application sans placer votre application dans le Windows Store.</td>
+<td align="left"><strong>Test des achats dans l’application.</strong> <br><br>Permet de tester le code d’achat dans l’application sans placer votre application dans le Store.</td>
 <td align="left">Le <strong>bac à sable de facturation dans l’application</strong> est utilisé pour le test.</td>
 <td align="left">Les <strong>comptes de testeur de bac à sable (sandbox)</strong> sont utilisés pour le test.</td>
 <td align="left">Vous pouvez tester des achats dans l’application en utilisant simplement la classe <strong><a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentappsimulator">CurrentAppSimulator</a></strong> au lieu de CurrentApp.<br/><br/></td>
