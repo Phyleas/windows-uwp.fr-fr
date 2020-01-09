@@ -4,14 +4,14 @@ description: Cet article vous explique comment utiliser un objet MediaFrameReade
 title: Traiter des trames audio avec MediaFrameReader
 ms.date: 04/18/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f8d357dfbceafb6cc366b2880956ab3db231047d
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 170452443588399e0257bb49f3c63604bc0a7830
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74256661"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683882"
 ---
 # <a name="process-audio-frames-with-mediaframereader"></a>Traiter des trames audio avec MediaFrameReader
 
@@ -35,7 +35,7 @@ Le processus d’acquisition de trames audio est en grande partie identique à l
 
 
 
-## <a name="select-frame-sources-and-frame-source-groups"></a>Sélectionnez des sources d’images et des groupes de sources d’images
+## <a name="select-frame-sources-and-frame-source-groups"></a>Sélectionner des sources d’images et des groupes de sources d’images
 
 La première étape de la capture de trames audio consiste à initialiser un objet [**MediaFrameSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameSource) représentant la source des données audio, par exemple un microphone ou tout autre appareil de capture audio. Pour ce faire, vous devez créer une instance de l’objet [**MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture). Pour cet exemple, le seul paramètre d’initialisation pour l’objet **MediaCapture** est de définir l’objet [**StreamingCaptureMode**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.streamingcapturemode) pour indiquer que la diffusion audio doit être effectuée à partir de l’appareil de capture. 
 
@@ -72,7 +72,7 @@ Vous pouvez récupérer l’objet [**AudioDeviceController**](https://docs.micro
 
 [!code-cs[AudioDeviceControllerMute](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetAudioDeviceControllerMute)]
 
-Vous pouvez utiliser un objet [**AudioFrame**](https://docs.microsoft.com/uwp/api/windows.media.audioframe) pour transmettre les données audio capturées par une source d’images multimédias dans un objet [**AudioGraph**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph). Transmettez la trame dans la méthode [**AddFrame**](https://docs.microsoft.com/uwp/api/windows.media.audio.audioframeinputnode.addframe) d’un objet [**AudioFrameInputNode**](https://docs.microsoft.com/en-us/uwp/api/windows.media.audio.audioframeinputnode). Pour plus d’informations sur l’utilisation de graphiques audio pour capturer, traiter et combiner des signaux audio, voir [Graphiques audio](audio-graphs.md).
+Vous pouvez utiliser un objet [**AudioFrame**](https://docs.microsoft.com/uwp/api/windows.media.audioframe) pour transmettre les données audio capturées par une source d’images multimédias dans un objet [**AudioGraph**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph). Transmettez la trame dans la méthode [**AddFrame**](https://docs.microsoft.com/uwp/api/windows.media.audio.audioframeinputnode.addframe) d’un objet [**AudioFrameInputNode**](https://docs.microsoft.com/uwp/api/windows.media.audio.audioframeinputnode). Pour plus d’informations sur l’utilisation de graphiques audio pour capturer, traiter et combiner des signaux audio, voir [Graphiques audio](audio-graphs.md).
 
 ## <a name="related-topics"></a>Rubriques connexes
 

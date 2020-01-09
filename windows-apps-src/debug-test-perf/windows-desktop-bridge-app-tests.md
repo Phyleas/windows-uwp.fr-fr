@@ -6,16 +6,16 @@ ms.date: 12/18/2017
 ms.topic: article
 keywords: Windows 10, UWP, certification d’application
 ms.localizationpriority: medium
-ms.openlocfilehash: dcdac5130af673d1b0d1ab1a9713902e9ab22830
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: ec780253deb170c5dde1828add366907c403f100
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257819"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75681900"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Tests d’application Pont du bureau Windows
 
-Les applications [Desktop Bridge](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root) sont des applications de bureau Windows converties en applications plateforme Windows universelle (UWP) à l’aide du [pont Desktop](https://developer.microsoft.com/en-us/windows/bridges/desktop). Après la conversion, les applications de bureau Windows sont empaquetées, soumises à maintenance et déployées sous la forme d’un package d’application UWP (fichier .appx ou .appxbundle) ciblant Windows 10 Desktop.
+Les applications [Desktop Bridge](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root) sont des applications de bureau Windows converties en applications plateforme Windows universelle (UWP) à l’aide du [pont Desktop](https://developer.microsoft.com/windows/bridges/desktop). Après la conversion, les applications de bureau Windows sont empaquetées, soumises à maintenance et déployées sous la forme d’un package d’application UWP (fichier .appx ou .appxbundle) ciblant Windows 10 Desktop.
 
 ## <a name="required-versus-optional-tests"></a>Tests obligatoires et tests facultatifs
 Les tests facultatifs pour les applications Windows Desktop Bridge sont à titre d’information uniquement et ne sont pas utilisés pour évaluer votre application pendant l’intégration de Microsoft Store. Nous vous recommandons d’examiner ces résultats de tests pour produire de meilleures applications de qualité. Les critères généraux de réussite/échec d’intégration au Windows Store sont déterminés par les tests obligatoires et non par ces tests facultatifs.
@@ -90,7 +90,7 @@ Ce test vérifie si l’application tente de lancer des fichiers exécutables, c
 Les fonctionnalités à usage spécial sont destinées à des scénarios très spécifiques. Seuls les comptes d’entreprise sont autorisés à utiliser ces fonctionnalités. 
 
 **Détails du test**  
-Le test est validé si l’application déclare une ou plusieurs des fonctionnalités suivantes : 
+Le test vérifie si l’application déclare une ou plusieurs des fonctionnalités suivantes : 
 * EnterpriseAuthentication
 * SharedUserCertificates
 * DocumentsLibrary
@@ -107,7 +107,7 @@ Votre application risque de ne pas s’installer correctement si les chaînes ou
 **Détails du test**  
 Le test inspecte les ressources définies dans le manifeste de l’application afin de vérifier qu’elles sont présentes et valides.
 
-**Action corrective**  
+**Action corrective** :  
 Inspirez-vous du tableau suivant.
 
 Message d’erreur | Commentaires
@@ -122,9 +122,9 @@ L’image doit définir au moins un type Variant sans qualificateur TargetSize. 
 Un fichier « resources.pri » manque dans le package.  | Si le manifeste de votre application comporte du contenu localisable, veillez à ce que le package de votre application contienne un fichier resources.pri valide. 
 Le fichier « resources.pri » doit contenir un mappage des ressources avec un nom qui correspond au nom du package « {package full name} ».  | Vous pouvez obtenir cette erreur si le manifeste a changé et que le nom du mappage de ressources dans resources.pri ne correspond plus au nom du package dans le manifeste. Dans le message réel, {package full name} représente le nom du package que resources.pri doit contenir. Pour résoudre ce problème, vous devez régénérer resources.pri ; la façon la plus facile de le faire consiste à régénérer le package de l’application. 
 La fusion automatique ne doit pas être activée pour le fichier « resources.pri ».  | MakePRI.exe prend en charge une option appelée AutoMerge. La valeur par défaut de AutoMerge est off. Lorsque l’option AutoMerge est activée, elle fusionne les ressources du module linguistique d’une application en un fichier resources.pri unique au moment de l’exécution. Ce n’est pas recommandé pour les applications que vous envisagez de distribuer via le Microsoft Store. Le fichier Resources. pri d’une application distribuée par le biais du Microsoft Store doit se trouver à la racine du package de l’application et contenir toutes les références de langage prises en charge par l’application. 
-La chaîne « {string} » ne respecte pas la limite maximale de {number} caractères.  | Consultez les [Exigences relatives aux packages d’applications](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements). Dans le message réel, {string} est remplacé par la chaîne affectée par l’erreur et {number} représente la longueur maximale. 
+La chaîne « {string} » ne respecte pas la limite maximale de {number} caractères.  | Consultez les [Exigences relatives aux packages d’applications](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements). Dans le message réel, {string} est remplacé par la chaîne affectée par l’erreur et {number} représente la longueur maximale. 
 La chaîne {string} ne doit pas comporter d’espace de début/fin.  | Le schéma des éléments du manifeste de l’application n’autorise pas les espaces de début ou de fin. Dans le message réel, {string} est remplacé par la chaîne affectée par l’erreur. Assurez-vous qu’aucune des valeurs localisées des champs du manifeste dans resources.pri ne possède d’espaces de début ou de fin. 
-La chaîne ne doit pas être vide (sa longueur doit être supérieure à zéro).  | Pour plus d’informations, voir [Exigences relatives aux packages d’applications](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements). 
+La chaîne ne doit pas être vide (sa longueur doit être supérieure à zéro).  | Pour plus d’informations, voir [Exigences relatives aux packages d’applications](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements). 
 Le fichier « resources.pri » ne contient aucune ressource par défaut.  | Pour plus d’informations, voir le guide sur les [ressources d’application](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data). Dans la configuration de build par défaut, Visual Studio inclut uniquement les ressources d’image avec qualificateur « Scale-200 » dans le package d’application lors de la génération des offres groupées, et place les autres ressources dans le package de ressources. Prenez soin d’inclure les ressources d’image avec qualificateur « Scale-200 » ou de configurer votre projet pour qu’il intègre les ressources dont vous disposez. 
 Aucune valeur de ressource n’est spécifiée dans le fichier « resources.pri ».  | Assurez-vous que des ressources valides sont définies dans resources.pri pour le manifeste de l’application. 
 La taille du fichier image {filename} doit être inférieure à 204 800 octets.  | Réduisez la taille des images indiquées. 
@@ -150,7 +150,7 @@ Teste le contenu du manifeste de l’application pour vérifier qu’il est corr
 Les applications doivent avoir un manifeste d’application correctement mis en forme.
 
 **Détails du test**  
-Examine le manifeste de l’application afin de vérifier que son contenu est correct, comme décrit dans [Exigences relatives aux packages d’applications](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements). Les vérifications suivantes sont effectuées au cours de ce test :
+Examine le manifeste de l’application pour vérifier que son contenu est correct, comme décrit dans [Exigences relatives au package de l’application](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements). Les vérifications suivantes sont effectuées au cours de ce test :
 * **Extensions de fichier et protocoles**  
 Votre application peut déclarer les types de fichier auxquels elle peut être associée. L’expérience utilisateur est plus médiocre si une déclaration contient un grand nombre de types de fichier inhabituels. Ce test limite le nombre d’extensions de fichier auxquelles une application peut être associée.
 * **Règle de dépendance du Framework**  
@@ -158,8 +158,8 @@ Ce test applique la spécification selon laquelle les applications déclarent de
 * **Vérification de la communication entre processus (IPC)**  
 Ce test applique la spécification selon laquelle les applications Pont du bureau ne communiquent pas en dehors du conteneur d’application avec des composants de bureau. La communication entre processus ne concerne que les applications chargées indépendamment. Les applications qui spécifient l’attribut [**ActivatableClassAttribute**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-activatableclassattribute) avec `DesktopApplicationPath` comme nom échouent à ce test.  
 
-**Action corrective**  
-Confrontez le manifeste de l’application aux exigences décrites dans [Exigences relatives au package de l’application](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements).
+**Action corrective** :  
+Confrontez le manifeste de l’application aux exigences décrites dans [Exigences relatives au package de l’application](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements).
 
 
 #### <a name="32-application-count"></a>3.2 Nombre d’applications
@@ -211,7 +211,7 @@ Les applications Pont du bureau peuvent tirer parti de certaines API Win32 hér
 **Détails du test**  
 Ce test vérifie tous les composants UWP de l’application :
 * Vérifie que chaque binaire managé dans le package d’application n’a pas de dépendance sur une API Win32 qui n’est pas prise en charge pour le développement d’applications UWP en vérifiant la table d’adresses d’importation du fichier binaire.
-* Vérifie que chaque fichier binaire managé dans le package d’application n’est pas dépendant d’une fonction en dehors du profil approuvé. 
+* Il vérifie que chaque fichier binaire managé du package d’application n’est pas dépendant d’une fonction en dehors du profil approuvé. 
 
 **Actions correctives**  
 Ce peut être corrigé en vous assurant que l’application a été compilée comme une version commerciale et non comme une version de débogage. 

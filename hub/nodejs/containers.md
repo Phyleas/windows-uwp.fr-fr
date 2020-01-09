@@ -8,12 +8,12 @@ ms.topic: article
 keywords: ''
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: 16b1421606d3c8271141256b80ae2600ec9ca49d
-ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
+ms.openlocfilehash: 9467224814b1e26f18031662f5e8d994a8fae1ac
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72315123"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683672"
 ---
 # <a name="get-started-using-docker-containers-with-nodejs"></a>Prise en main des conteneurs de l’arrimeur avec node. js
 
@@ -26,7 +26,7 @@ Ce guide part du principe que vous avez déjà effectué les étapes pour [confi
 - Installez Windows 10 Insider preview version 18932 ou ultérieure.
 - Activez la fonctionnalité WSL 2 sur Windows.
 - Installez une distribution Linux (Ubuntu 18,04 pour nos exemples). Vous pouvez le vérifier avec : `wsl lsb_release -a`.
-- Assurez-vous que votre distribution Ubuntu 18,04 s’exécute en mode WSL 2. (WSL peut exécuter des distributions en mode v1 ou v2.) Vous pouvez vérifier cela en ouvrant PowerShell et en entrant : `wsl -l -v`.
+- Assurez-vous que votre distribution Ubuntu 18,04 s’exécute en mode WSL 2. (WSL peut exécuter des distributions en mode v1 ou v2.) Vous pouvez le vérifier en ouvrant PowerShell et en entrant : `wsl -l -v`.
 - À l’aide de PowerShell, définissez Ubuntu 18,04 comme distribution par défaut, avec : `wsl -s ubuntu 18.04`.
 
 ## <a name="overview-of-docker-containers"></a>Vue d’ensemble des conteneurs d’ancrage
@@ -66,11 +66,11 @@ Voici quelques-unes des commandes de l’ancrage que vous devez connaître :
 - Répertoriez les commandes disponibles dans l’interface CLI de l’Ancreur en entrant : `docker`
 - Répertorie des informations pour une commande spécifique avec : `docker <COMMAND> --help`
 - Répertorier les images de l’arrimeur sur votre ordinateur (qui est simplement l’image Hello-World à ce stade), avec : `docker image ls --all`
-- Répertorier les conteneurs sur votre ordinateur, avec : `docker container ls --all`
-- Répertoriez les statistiques système et les ressources du système d’ancrage (UC & mémoire) à votre disposition dans le contexte WSL 2, avec : `docker info`
-- Affichage où l’ancrageur est en cours d’exécution, avec : `docker context ls`
+- Répertoriez les conteneurs sur votre ordinateur, avec : `docker container ls --all`
+- Répertoriez les statistiques système et les ressources du système d’amarrage (UC & mémoire) à votre disposition dans le contexte WSL 2, avec : `docker info`
+- Affichage où l’ordinateur de l’ancrage est en cours d’exécution, avec : `docker context ls`
 
-Vous pouvez voir qu’il y a deux contextes que l’ancrer s’exécute dans--`default` (le démon d’ancrage classique) et `wsl` (notre recommandation à l’aide de la version d’évaluation technique). (En outre, la commande `ls` est short pour `list` et peut être utilisée de façon interchangeable).
+Vous pouvez voir que deux contextes sont en cours d’exécution dans le `default` (le démon d’ancrage classique) et `wsl` (notre recommandation à l’aide de la version d’évaluation technique). (En outre, la commande `ls` est limitée à `list` et peut être utilisée de façon interchangeable).
 
 ![Contexte d’affichage de l’ancreur dans PowerShell](../images/docker-context.png)
 
@@ -87,11 +87,11 @@ L’extension d’ancrage facilite la création, la gestion et le déploiement d
 
     ![Extension d’ancrage sur VS Code dans WSL à distance](../images/docker-vscode-extension.png)
 
-En installant l’extension Dockr sur VS Code, vous pouvez désormais afficher une liste de commandes `Dockerfile` utilisées dans la section suivante avec le raccourci : `Ctrl+Space`
+En installant l’extension de Dockr sur VS Code, vous pouvez désormais afficher une liste de commandes de `Dockerfile` utilisées dans la section suivante avec le raccourci : `Ctrl+Space`
 
 En savoir plus sur [l’utilisation de l’amarrage dans vs code](https://code.visualstudio.com/docs/azure/docker).
 
-## <a name="create-a-container-image-with-dockerfile"></a>Créer une image de conteneur avec fichier dockerfile
+## <a name="create-a-container-image-with-dockerfile"></a>Créer une image conteneur avec DockerFile
 
 Une **image de conteneur** stocke le code, les bibliothèques, les fichiers de configuration, les variables d’environnement et le runtime de votre application. L’utilisation d’une image permet de s’assurer que l’environnement de votre conteneur est standardisé et contient uniquement ce qui est nécessaire pour générer et exécuter votre application.
 
@@ -101,7 +101,7 @@ Nous allons créer une image de conteneur à l’aide de l’application. js sui
 
 1. Ouvrez votre application. js suivante dans VS Code (en veillant à ce que l’extension WSL distante s’exécute comme indiqué dans l’onglet vert en bas à gauche). Ouvrez le terminal WSL intégré dans VS Code (**afficher > terminal**) et assurez-vous que le chemin d’accès du terminal est pointé vers le répertoire du projet. js suivant (par ex. `~/NextProjects/my-next-app$`).
 
-2. Créez un fichier appelé `Dockerfile` à la racine de votre prochain projet. js et ajoutez ce qui suit :
+2. Créez un nouveau fichier appelé `Dockerfile` à la racine de votre prochain projet. js et ajoutez ce qui suit :
 
     ```docker
     # Specifies where to get the base image (Node v12 in our case) and creates a new container for it
@@ -134,10 +134,10 @@ Nous allons créer une image de conteneur à l’aide de l’application. js sui
 
 4. Pour exécuter cette nouvelle image de l’ancrer de votre application Next. js dans un conteneur, entrez la commande : `docker run -d -p 3333:3000 <your_docker_username>/my-nextjs-app:v1`
 
-5. L’indicateur `-p` lie le port « 3000 » (le port sur lequel l’application s’exécute à l’intérieur du conteneur) au port local « 3333 » sur votre ordinateur, ce qui vous permet désormais de faire pointer votre navigateur Web sur [http://localhost:3333](http://localhost:3333) et de voir votre application. js. js côté serveur qui s’exécute en tant qu’ancreur image de conteneur.
+5. L’indicateur `-p` lie le port « 3000 » (le port sur lequel l’application s’exécute à l’intérieur du conteneur) au port local « 3333 » sur votre ordinateur. vous pouvez donc maintenant pointer votre navigateur Web pour [http://localhost:3333](http://localhost:3333) et voir votre application. js affichée côté serveur qui s’exécute en tant qu’image de conteneur de l’ancrage.
 
 > [!TIP]
-> Nous avons créé notre image conteneur à l’aide de `FROM node:12`, qui fait référence à l’image par défaut node. js version 12 stockée sur le concentrateur de l’amarrage. Cette image node. js par défaut est basée sur un système Debian/Ubuntu Linux. Toutefois, il existe de nombreuses images node. js différentes à choisir, et vous pouvez envisager d’utiliser un élément plus léger ou adapté à vos besoins. Pour en savoir plus, consultez le [Registre d’images node. js sur le hub d’ancrage](https://hub.docker.com/_/node/).
+> Nous avons créé notre image de conteneur à l’aide de `FROM node:12` qui fait référence à l’image par défaut node. js version 12 stockée sur le hub d’ancrage. Cette image node. js par défaut est basée sur un système Debian/Ubuntu Linux. Toutefois, il existe de nombreuses images node. js différentes à choisir, et vous pouvez envisager d’utiliser un élément plus léger ou adapté à vos besoins. Pour en savoir plus, consultez le [Registre d’images node. js sur le hub d’ancrage](https://hub.docker.com/_/node/).
 
 ## <a name="upload-your-container-image-to-a-repository"></a>Charger votre image conteneur dans un référentiel
 
@@ -151,7 +151,7 @@ Pour charger votre nouvelle image de conteneur sur un référentiel hébergé su
 
 2. Pour obtenir une liste des images de conteneur d’ancrage que vous avez créées sur votre ordinateur, entrez : `docker image ls --all`
 
-3. Poussez votre image de conteneur vers le hub d’ancrage, en créant un nouveau référentiel à cet emplacement à l’aide de la commande suivante : `docker push <your_docker_username>/my-nextjs-app:v1`
+3. Poussez votre image de conteneur vers le hub de l’ancrer, en créant un nouveau référentiel à cet emplacement à l’aide de cette commande : `docker push <your_docker_username>/my-nextjs-app:v1`
 
 4. Vous pouvez maintenant afficher votre dépôt sur le hub d’ancrage, entrer une description et lier votre compte GitHub (si vous le souhaitez), en visitant : https://cloud.docker.com/repository/list
 
@@ -159,23 +159,23 @@ Pour charger votre nouvelle image de conteneur sur un référentiel hébergé su
 
 6. Vous devez voir que votre conteneur « My-nextjs-App : v1 » est actif sur le port 3333-> 3000/TCP. Vous pouvez également voir votre « ID de conteneur » répertorié ici. Pour arrêter l’exécution de votre conteneur, entrez la commande : `docker stop <container ID>`
 
-7. En règle générale, une fois qu’un conteneur est arrêté, il doit également être supprimé. La suppression d’un conteneur nettoie toutes les ressources qu’il laisse. Une fois que vous avez supprimé un conteneur, toutes les modifications que vous avez apportées dans son système de fichiers image sont définitivement perdues. Vous devrez créer une nouvelle image pour représenter les modifications. POUR supprimer votre conteneur, utilisez la commande : `docker rm <container ID>`
+7. En règle générale, une fois qu’un conteneur est arrêté, il doit également être supprimé. La suppression d’un conteneur nettoie toutes les ressources qu’il a laissées. Une fois que vous avez supprimé un conteneur, toutes les modifications que vous avez apportées dans son système de fichiers image sont définitivement perdues. Vous devrez créer une nouvelle image pour représenter les modifications. POUR supprimer votre conteneur, utilisez la commande : `docker rm <container ID>`
 
 En savoir plus sur [la création d’une application Web en conteneur avec l’arrimeur](https://docs.microsoft.com/learn/modules/intro-to-containers/).
 
 ## <a name="deploy-to-azure-container-registry"></a>Déployer sur Azure Container Registry
 
-[**Azure Container Registry**](https://azure.microsoft.com/services/container-registry/) (ACR) vous permet de stocker, de gérer et de sécuriser vos images de conteneur dans des référentiels privés et authentifiés. Compatible avec les commandes standard de l’arrimeur, ACR peut gérer des tâches critiques pour vous, comme la maintenance et la surveillance de l’intégrité des conteneurs, le couplage avec [Kubernetes](https://docs.microsoft.com/azure/aks/intro-kubernetes) pour créer des systèmes d’orchestration évolutifs. Générez à la demande ou automatisez entièrement les builds avec des déclencheurs tels que les validations du code source et les mises à jour de l’image de base. ACR tire également parti de l’énorme réseau Cloud Azure pour gérer la latence du réseau, les déploiements globaux et créer une expérience Native transparente pour toute personne utilisant [Azure App service](https://docs.microsoft.com/azure/app-service/) (pour l’hébergement Web, les back-ends mobiles, les API REST) ou d' [autres services Cloud Azure ](https://azure.microsoft.com/product-categories/containers/).
+[**Azure Container Registry**](https://azure.microsoft.com/services/container-registry/) (ACR) vous permet de stocker, de gérer et de sécuriser vos images de conteneur dans des référentiels privés et authentifiés. Compatible avec les commandes standard de l’arrimeur, ACR peut gérer des tâches critiques pour vous, comme la maintenance et la surveillance de l’intégrité des conteneurs, le couplage avec [Kubernetes](https://docs.microsoft.com/azure/aks/intro-kubernetes) pour créer des systèmes d’orchestration évolutifs. Créez des builds à la demande ou des builds entièrement automatisées avec des déclencheurs tels que des validations du code source ou des mises à jour d’images de base. ACR tire également parti de l’énorme réseau Cloud Azure pour gérer la latence du réseau, les déploiements globaux et créer une expérience Native transparente pour toute personne utilisant [Azure App service](https://docs.microsoft.com/azure/app-service/) (pour l’hébergement Web, les back-ends mobiles, les API REST) ou d' [autres services Cloud Azure](https://azure.microsoft.com/product-categories/containers/).
 
 > [!IMPORTANT]
-> Vous avez besoin de votre propre abonnement Azure pour déployer un conteneur sur Azure et vous pouvez recevoir des frais. Si vous n’avez pas encore d’abonnement Azure, [créez un compte gratuit](https://azure.microsoft.com/free/) avant de commencer.
+> Vous avez besoin de votre propre abonnement Azure pour déployer un conteneur sur Azure et vous pouvez recevoir des frais. Si vous n’avez pas d’abonnement Azure, [créez un compte gratuit](https://azure.microsoft.com/free/) avant de commencer.
 
-Pour obtenir de l’aide sur la création d’une Azure Container Registry et le déploiement de votre image de conteneur d’application, consultez l’exercice : [Déployez une image de l’amarrage sur une instance de conteneur Azure](https://docs.microsoft.com/learn/modules/intro-to-containers/7-exercise-deploy-docker-image-to-container-instance).
+Pour obtenir de l’aide sur la création d’une Azure Container Registry et le déploiement de votre image de conteneur d’application, consultez l’exercice : [déployer une image de l’arrimeur sur une instance de conteneur Azure](https://docs.microsoft.com/learn/modules/intro-to-containers/7-exercise-deploy-docker-image-to-container-instance).
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- [Node. js sur Azure](https://azure.microsoft.com/en-us/develop/nodejs/)
-- Démarrage rapide : [Créer une application Web node. js dans Azure](https://docs.microsoft.com/azure/app-service/app-service-web-get-started-nodejs)
-- Cours en ligne : [Administrer des conteneurs dans Azure](https://docs.microsoft.com/learn/paths/administer-containers-in-azure/)
-- Utilisation de VS Code : [Utilisation de l’arrimeur](https://code.visualstudio.com/docs/azure/docker)
-- Documentation de l’arrimeur : [Station d’accueil Desktop WSL 2, version d’évaluation](https://docs.docker.com/docker-for-windows/wsl-tech-preview/)
+- [Node.js sur Azure](https://azure.microsoft.com/develop/nodejs/)
+- Démarrage rapide : [créer une application Web node. js dans Azure](https://docs.microsoft.com/azure/app-service/app-service-web-get-started-nodejs)
+- Cours en ligne : [gérer les conteneurs dans Azure](https://docs.microsoft.com/learn/paths/administer-containers-in-azure/)
+- Utilisation de VS Code : [utilisation de l’arrimeur](https://code.visualstudio.com/docs/azure/docker)
+- Dockers documentation : [docker Desktop WSL 2 Technical Preview](https://docs.docker.com/docker-for-windows/wsl-tech-preview/)

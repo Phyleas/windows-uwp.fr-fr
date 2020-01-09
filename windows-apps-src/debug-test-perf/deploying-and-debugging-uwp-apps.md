@@ -6,12 +6,12 @@ ms.date: 04/08/2019
 ms.topic: article
 keywords: windows 10, uwp, déboguer, test, performances
 ms.localizationpriority: medium
-ms.openlocfilehash: cdfcdfddb2b595a589c70d1facc24559c63b98da
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: d948af1ce10b3752ba9f20454d8dea72916de692
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74254794"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683852"
 ---
 # <a name="deploying-and-debugging-uwp-apps"></a>Déploiement et débogage des applications UWP
 
@@ -98,7 +98,7 @@ Pour plus d’informations, voir la page [Centre de téléchargement Visual Stu
 
 ## <a name="passing-command-line-debug-arguments"></a>Transmission d’arguments de ligne de commande pour le débogage
 
-Dans Visual Studio 2019, vous pouvez passer des arguments de débogage de ligne de commande lorsque vous commencez à déboguer des applications UWP. Vous pouvez accéder aux arguments de ligne de commande relatifs au débogage à partir du paramètre *args* de la méthode **OnLaunched** de la classe [**Application**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.application). Pour spécifier des arguments de ligne de commande pour le débogage, ouvrez les propriétés du projet et accédez à l’onglet **Déboguer**.
+Dans Visual Studio 2019, vous pouvez passer des arguments de débogage de ligne de commande lorsque vous commencez à déboguer des applications UWP. Vous pouvez accéder aux arguments de ligne de commande relatifs au débogage à partir du paramètre *args* de la méthode **OnLaunched** de la classe [**Application**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application). Pour spécifier des arguments de ligne de commande pour le débogage, ouvrez les propriétés du projet et accédez à l’onglet **Déboguer**.
 
 > [!NOTE]
 > Cette fonctionnalité est disponible dans Visual Studio 2017 (version 15.1) pour C#, VB et C++. JavaScript est disponible dans les versions ultérieures. Les arguments de ligne de commande relatifs au débogage sont disponibles pour tous les types de déploiements, à l’exception du Simulateur.
@@ -111,7 +111,7 @@ Dans le cas des projets UWP C++ et JS, le champ **Arguments de la ligne de comma
 
 ![Arguments de ligne de commande C++ et JS](images/command-line-arguments-cpp.png)
 
-Une fois que vous avez spécifié les arguments de ligne de commande, vous pouvez accéder à la valeur de l’argument dans la méthode **OnLaunched** de l’application. L’objet [args**de la classe**](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs)LaunchActivatedEventArgs présente une propriété **Arguments** dont la valeur est définie sur le texte figurant dans le champ **Arguments de la ligne de commande**.
+Une fois que vous avez spécifié les arguments de ligne de commande, vous pouvez accéder à la valeur de l’argument dans la méthode **OnLaunched** de l’application. L’objet *args* de la classe [**LaunchActivatedEventArgs**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs) présente une propriété **Arguments** dont la valeur est définie sur le texte figurant dans le champ **Arguments de la ligne de commande**.
 
 ![Arguments de ligne de commande C++ et JS](images/command-line-arguments-debugging.png)
 
@@ -139,7 +139,7 @@ Pour utiliser les options avancées de déploiement distant, vous devez avoir la
 
 - Disposer de Visual Studio 2015 Update 3 ou d’une version ultérieure de Visual Studio installée avec les outils Windows 10 1.4.1 ou version ultérieure (qui comprend le kit de développement logiciel (SDK) de mise à jour anniversaire de Windows 10) nous vous recommandons d’utiliser la dernière version de Visual Studio avec les mises à jour pour vous assurer d’obtenir tout le fonctionnalités de développement et de sécurité les plus récentes.
 - Ciblez un appareil distant Xbox avec la Mise à jour anniversaire Windows 10 ou un PC avec Windows 10 Creators Update
-- Utiliser le mode d’authentification Universel
+- Utilisez le mode d’authentification Universel
 
 ### <a name="properties-pages"></a>Pages de propriétés
 
@@ -211,13 +211,13 @@ Vous pouvez définir les options de déploiement suivantes dans la page de propr
   - Dans la C# page de propriétés de **débogage** et Visual Basic, activez la case à cocher **ne pas lancer, mais déboguer mon code au démarrage** .
   - Dans la page de propriétés de **débogage** en JavaScript et C++, définissez la valeur **Lancer l’application** sur **Oui**.
 
-## <a name="symbols"></a>Symbols
+## <a name="symbols"></a>symboles
 
 Les fichiers de symboles contiennent une variété de données très utiles lors du débogage du code, notamment des variables, des noms de fonctions et des adresses de points d’entrée, ce qui vous permet de mieux comprendre les exceptions et l’ordre d’exécution de la pile des appels. Les symboles sont disponibles par le biais du [serveur de symboles Microsoft](https://msdl.microsoft.com/download/symbols) pour la plupart des variantes de Windows. Pour des recherches hors connexion plus rapides, vous pouvez également les télécharger à partir de la page [Télécharger des packages de symboles Windows](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-download-symbols).
 
 Pour définir les options de symbole de Visual Studio, sélectionnez **Outils &gt; Options**, puis accédez à **Débogage &gt; Symboles** dans la boîte de dialogue.
 
-![Boîte de dialogue Options](images/gs-debug-uwp-apps-004.png)
+![boîte de dialogue Options](images/gs-debug-uwp-apps-004.png)
 
 Pour charger les symboles dans une session de débogage avec [WinDbg](#windbg), définissez la variable **sympath** sur l’emplacement du package de symboles. Par exemple, l’exécution de la commande suivante permet de charger des symboles à partir du serveur de symboles Microsoft et de les mettre en cache dans le répertoire C:\Symbols :
 

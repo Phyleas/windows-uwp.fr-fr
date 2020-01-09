@@ -5,18 +5,18 @@ ms.date: 02/15/2018
 ms.topic: article
 keywords: windows 10 s, toujours connecté, résolution des problèmes de compatibilité, windows sur ARM
 ms.localizationpriority: medium
-ms.openlocfilehash: 763b00a5790274d81b6daa2838ef926936e458db
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 6573bedb97a7081681e5ecc600bb473f6d0b83bf
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57647614"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683952"
 ---
 # <a name="program-compatibility-troubleshooter-on-arm"></a>Utilitaire de résolution de problèmes de compatibilité des programmes sur ARM
 L'émulation visant à la prises en charge des applications x86 constitue la nouvelle fonctionnalité, créée pour Windows 10 sur ARM64. Il arrive que l'émulation réalise des tâches d'optimisation qui ne parviennent pas à rendre la meilleure expérience. Vous pouvez utiliser l'utilitaire de résolution des problèmes de compatibilité des programmes pour permuter les paramètres d'émulation de votre application x86 et ainsi réduire les optimisations par défaut et potentiellement augmenter la compatibilité.
 
 ## <a name="start-the-program-compatibility-troubleshooter"></a>Démarrer l’utilitaire Résolution de problèmes de compatibilité des programmes
-Vous démarrez manuellement l'[utilitaire de résolution des problèmes de compatibilité des programmes](https://support.microsoft.com/en-us/help/15078/windows-make-older-programs-compatible) de la même manière que sur tout PC Windows 10 : cliquez avec le bouton droit sur le fichier d'exécution (.exe) et sélectionnez **Résoudre les problèmes de compatibilité**. Cet écran s’affiche.
+Vous démarrez manuellement l'[utilitaire de résolution des problèmes de compatibilité des programmes](https://support.microsoft.com/help/15078/windows-make-older-programs-compatible) de la même manière que sur tout PC Windows 10 : cliquez avec le bouton droit sur le fichier d'exécution (.exe) et sélectionnez **Résoudre les problèmes de compatibilité**. Cet écran s’affiche.
 
 ![Capture d'écran de l'option Résoudre les problèmes de compatibilité](images/arm/Capture4.png)
 
@@ -32,7 +32,7 @@ Toutes les options activent les paramètres qui sont applicables et appliquées 
 
 Vous pouvez basculer les paramètres d’émulation de cliquant avec le bouton droit sur le fichier d'exécution et en sélectionnant **Propriétés**.
 
-Sur ARM, une section intitulée **Windows 10 sur ARM** sera disponible dans le **compatibilité** onglet. Cliquez sur **modifier les paramètres d’émulation** pour lancer une deuxième fenêtre comme ici.
+Sur l'ARM, une section intitulée **Windows 10 sur ARM** sera disponible dans l'onglet **Compatibilité**. Cliquez sur **Modifier les paramètres d'émulation** pour lancer une deuxième fenêtre, comme ci-après.
 
 ![Modifier les paramètres d'émulation, Capture d'écran](images/arm/Capture.png)
 

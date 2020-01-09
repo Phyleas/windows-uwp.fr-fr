@@ -5,24 +5,24 @@ description: Un pinceau peint la zone d’un Visual avec sa sortie. Des pinceaux
 ms.date: 04/19/2019
 ms.topic: article
 ms.custom: 19H1
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 41d3a84de1aa9e7440d5396775bd66d9c9e09d41
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 0f7bcb745245c896d1fc72c2e324af341b2e5aac
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361521"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683862"
 ---
 # <a name="composition-brushes"></a>Pinceaux de composition
 Tous les éléments visibles sur votre écran à partir d’une application UWP sont visibles parce qu'ils ont été peints par un pinceau. Les pinceaux vous permettent de peindre les objets de l’interface utilisateur avec du contenu allant de couleurs simples et unies pour les images ou les dessins jusqu'à des chaînes d’effets complexes. Cette rubrique présente les concepts de peinture avec CompositionBrush.
 
-Remarquez que lorsque vous travaillez avec une application XAML UWP, vous pouvez choisir de peindre un élément UIElement avec un [pinceau XAML](/windows/uwp/design/style/brushes) ou un [CompositionBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBrush). En règle générale, il est plus facile et recommandé de choisir un pinceau XAML si votre scénario est pris en charge par ce type de pinceau. Par exemple, animez la couleur d’un bouton, modifiez le remplissage d’un texte ou d'une forme avec une image. En revanche, si vous essayez de faire quelque chose qui n’est pas pris en charge par un pinceau XAML de peinture avec un masque animé ou un étirement de neuf grilles animé ou une chaîne d’effet, vous pouvez utiliser un CompositionBrush pour peindre un UIElement à l’aide de [ XamlCompositionBrushBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase).
+Remarquez que lorsque vous travaillez avec une application XAML UWP, vous pouvez choisir de peindre un élément UIElement avec un [pinceau XAML](/windows/uwp/design/style/brushes) ou un [CompositionBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBrush). En règle générale, il est plus facile et recommandé de choisir un pinceau XAML si votre scénario est pris en charge par ce type de pinceau. Par exemple, animez la couleur d’un bouton, modifiez le remplissage d’un texte ou d'une forme avec une image. En revanche, si vous tentez d’effectuer une opération qui n’est pas prise en charge par un pinceau XAML comme la peinture avec un masque animé ou une extension à neuf grille animée ou une chaîne d’effets, vous pouvez utiliser un CompositionBrush pour peindre un UIElement à l’aide de [XamlCompositionBrushBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase).
 
 Lorsque vous travaillez avec la couche visuelle, un CompositionBrush doit être utilisé pour peindre la zone d’un [SpriteVisual](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.SpriteVisual).
 
 -   [Conditions préalables](./composition-brushes.md#prerequisites)
--   [Peinture avec CompositionBrush](./composition-brushes.md#paint-with-a-compositionbrush)
+-   [Peindre avec CompositionBrush](./composition-brushes.md#paint-with-a-compositionbrush)
     -   [Peindre avec une couleur unie](./composition-brushes.md#paint-with-a-solid-color)
     -   [Peindre avec un dégradé linéaire](./composition-brushes.md#paint-with-a-linear-gradient) 
     -   [Peindre avec un dégradé radial](./composition-brushes.md#paint-with-a-radial-gradient)
@@ -31,10 +31,10 @@ Lorsque vous travaillez avec la couche visuelle, un CompositionBrush doit être 
     -   [Peindre avec une vidéo](./composition-brushes.md#paint-with-a-video)
     -   [Peindre avec un effet de filtre](./composition-brushes.md#paint-with-a-filter-effect)
     -   [Peindre avec un CompositionBrush avec un masque d’opacité](./composition-brushes.md#paint-with-a-compositionbrush-with-opacity-mask-applied)
-    -   [Peindre avec un CompositionBrush à l’aide de NineGrid stretch](./composition-brushes.md#paint-with-a-compositionbrush-using-ninegrid-stretch)
-    -   [Peindre à l’aide de Pixels de l’arrière-plan](./composition-brushes.md#paint-using-background-pixels)
+    -   [Peindre avec un CompositionBrush à l’aide de NineGrid Stretch](./composition-brushes.md#paint-with-a-compositionbrush-using-ninegrid-stretch)
+    -   [Peindre à l’aide de pixels d’arrière-plan](./composition-brushes.md#paint-using-background-pixels)
 -   [Combinaison de CompositionBrushes](./composition-brushes.md#combining-compositionbrushes)
--   [À l’aide d’un vs pinceau de XAML. CompositionBrush](./composition-brushes.md#using-a-xaml-brush-vs-compositionbrush)
+-   [Utilisation d’un pinceau XAML et de CompositionBrush](./composition-brushes.md#using-a-xaml-brush-vs-compositionbrush)
 -   [Rubriques connexes](./composition-brushes.md#related-topics)
 
 ## <a name="prerequisites"></a>Prérequis
@@ -46,14 +46,14 @@ Un [CompositionBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.
 
 |Classe                                   |Détails                                         |Introduit dans|
 |-------------------------------------|---------------------------------------------------------|--------------------------------------|
-|[CompositionColorBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionColorBrush)         |Peint une zone d'une couleur unie                        |Windows 10 version 1511 (Kit de développement logiciel 10586)|
-|[CompositionSurfaceBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush)       |Peint une zone avec le contenu d’un [ICompositionSurface](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Composition.ICompositionSurface)|Windows 10 version 1511 (Kit de développement logiciel 10586)|
-|[CompositionEffectBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionEffectBrush)        |Peint une zone avec le contenu d’un effet de composition |Windows 10 version 1511 (Kit de développement logiciel 10586)|
-|[CompositionMaskBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionMaskBrush)          |Peint un visuel avec un CompositionBrush et un masque d’opacité |Windows 10, version 1607 (Kit de développement logiciel 14393)
-|[CompositionNineGridBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionNineGridBrush)      |Peint une zone avec un CompositionBrush utilisant un étirement NineGrid |Windows 10, version 1607 (Kit de développement logiciel 14393)
-|[CompositionLinearGradientBrush](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionlineargradientbrush)|Peint une zone avec un dégradé linéaire                    |Windows 10, version 1709 (Kit de développement logiciel 16299)
-|[CompositionRadialGradientBrush](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionradialgradientbrush)|Peint une zone avec un dégradé radial                    |Windows 10, version 1903 (SDK Insider Preview)
-|[CompositionBackdropBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBackdropBrush)     |Peint une zone en échantillonnant les pixels en arrière-plan provenant de l’application ou les pixels situés directement derrière la fenêtre de l’application sur le bureau. Utilisé comme entrée d'un autre CompositionBrush, comme un CompositionEffectBrush | Windows 10, version 1607 (Kit de développement logiciel 14393)
+|[CompositionColorBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionColorBrush)         |Peint une zone d'une couleur unie                        |Windows 10, version 1511 (SDK 10586)|
+|[CompositionSurfaceBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush)       |Peint une zone avec le contenu d’un [ICompositionSurface](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.ICompositionSurface)|Windows 10, version 1511 (SDK 10586)|
+|[CompositionEffectBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionEffectBrush)        |Peint une zone avec le contenu d’un effet de composition |Windows 10, version 1511 (SDK 10586)|
+|[CompositionMaskBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionMaskBrush)          |Peint un visuel avec un CompositionBrush et un masque d’opacité |Windows 10, version 1607 (SDK 14393)
+|[CompositionNineGridBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionNineGridBrush)      |Peint une zone avec un CompositionBrush utilisant un étirement NineGrid |Windows 10, version 1607 (SDK 14393)
+|[CompositionLinearGradientBrush](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionlineargradientbrush)|Peint une zone avec un dégradé linéaire                    |Windows 10, version 1709 (SDK 16299)
+|[CompositionRadialGradientBrush](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionradialgradientbrush)|Peint une zone avec un dégradé radial                    |Windows 10, version 1903 (kit de développement logiciel d’Insider Preview)
+|[CompositionBackdropBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBackdropBrush)     |Peint une zone en échantillonnant les pixels en arrière-plan provenant de l’application ou les pixels situés directement derrière la fenêtre de l’application sur le bureau. Utilisé comme entrée d'un autre CompositionBrush, comme un CompositionEffectBrush | Windows 10, version 1607 (SDK 14393)
 
 ### <a name="paint-with-a-solid-color"></a>Peindre avec une couleur unie
 
@@ -112,9 +112,9 @@ _gradientVisual.Size = new Vector2(156, 156);
 
 ### <a name="paint-with-a-radial-gradient"></a>Peindre avec un dégradé radial
 
-Un [CompositionRadialGradientBrush](/uwp/api/windows.ui.composition.compositionradialgradientbrush) peint une zone avec un dégradé radial. Un dégradé radial fusionne deux ou plusieurs couleurs avec le dégradé du centre de l’ellipse et se terminant le rayon de l’ellipse. Objets GradientStop permettent de définir les couleurs et leur emplacement dans le dégradé.
+Un [CompositionRadialGradientBrush](/uwp/api/windows.ui.composition.compositionradialgradientbrush) peint une zone avec un dégradé radial. Un dégradé radial fusionne deux couleurs ou plus avec le dégradé à partir du centre de l’ellipse et en se terminant au rayon de l’ellipse. Les objets GradientStop sont utilisés pour définir les couleurs et leur emplacement dans le dégradé.
 
-L’illustration et le code suivant montre un SpriteVisual peint avec un RadialGradientBrush avec 2 GradientStops.
+L’illustration et le code suivants montrent un SpriteVisual peint avec un RadialGradientBrush avec 2 GradientStops.
 
 ![CompositionRadialGradientBrush](images/radial-gradient-brush.png)
 
@@ -203,7 +203,7 @@ _drawingVisual.Size = new Vector2(156, 156);
 De même, le CompositionSurfaceBrush peut également servir à peindre un SpriteVisual avec une SwapChain à l’aide de l’interopérabilité Win2D. [Cet exemple](https://github.com/Microsoft/Win2D-Samples/tree/master/CompositionExample) fournit un exemple d’utilisation de Win2D pour peindre un SpriteVisual avec un SwapChain.
 
 ### <a name="paint-with-a-video"></a>Peindre avec une vidéo
-Un [CompositionSurfaceBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) peut également servir à peindre une zone avec des pixels issus d’un ICompositionSurface rendu à l’aide d'une vidéo chargée via la classe [MediaPlayer](https://docs.microsoft.com/en-us/uwp/api/Windows.Media.Playback.MediaPlayer).
+Un [CompositionSurfaceBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) peut également servir à peindre une zone avec des pixels issus d’un ICompositionSurface rendu à l’aide d'une vidéo chargée via la classe [MediaPlayer](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer).
 
 Le code suivant montre un SpriteVisual peint avec une vidéo chargée sur un ICompositionSurface.
 
@@ -265,7 +265,7 @@ _effectVisual.Brush = _effectBrush;
 _effectVisual.Size = new Vector2(156, 156);
 ```
 
-Pour plus d’informations sur la création d’un effet à l’aide de CompositionBrushes, voir [effets dans la couche visuelle](https://docs.microsoft.com/en-us/windows/uwp/composition/composition-effects)
+Pour plus d’informations sur la création d’un effet à l’aide de CompositionBrushes, voir [effets dans la couche visuelle](https://docs.microsoft.com/windows/uwp/composition/composition-effects)
 
 ### <a name="paint-with-a-compositionbrush-with-opacity-mask-applied"></a>Peindre avec un CompositionBrush et un masque d’opacité appliqué
 
@@ -392,7 +392,7 @@ Un certain nombre de CompositionBrushes utilisent d'autres CompositionBrushes co
 <table>
 <tbody>
 <tr>
-<th>Brush</th>
+<th>Pinceau</th>
 <th>EffectBrush.SetSourceParameter()</th>
 <th>MaskBrush.Mask</th>
 <th>MaskBrush.Source</th>
@@ -451,7 +451,7 @@ Un certain nombre de CompositionBrushes utilisent d'autres CompositionBrushes co
 </table>
 
 
-## <a name="using-a-xaml-brush-vs-compositionbrush"></a>À l’aide d’un vs pinceau de XAML. CompositionBrush
+## <a name="using-a-xaml-brush-vs-compositionbrush"></a>Comparaison des pinceaux XAML et CompositionBrush
 
 Le tableau suivant fournit une liste des scénarios et indique si l'utilisation d'un pinceau XAML ou Composition est prescrite pour peindre un élément UIElement ou un SpriteVisual dans votre application. 
 
@@ -465,8 +465,8 @@ Le tableau suivant fournit une liste des scénarios et indique si l'utilisation 
 |Peindre une zone avec un dégradé statique                                       |[LinearGradientBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.LinearGradientBrush)                            |[CompositionLinearGradientBrush](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionlineargradientbrush)
 |Peindre une zone avec des points de dégradé animés                                 |[CompositionLinearGradientBrush](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionlineargradientbrush)                                                                                 |[CompositionLinearGradientBrush](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionlineargradientbrush)
 |Peindre une zone avec une image                                                |[ImageBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.ImageBrush)                                     |[CompositionSurfaceBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush)
-|Peindre une zone avec une page Web                                               |[WebViewBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebViewBrush)                                   |N/A
-|Peindre une zone avec une image à l'aide d'un étirement NineGrid                         |[Contrôle d’image](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image)                   |[CompositionNineGridBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionNineGridBrush)
+|Peindre une zone avec une page Web                                               |[WebViewBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebViewBrush)                                   |NON APPLICABLE
+|Peindre une zone avec une image à l'aide d'un étirement NineGrid                         |[Contrôle image](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image)                   |[CompositionNineGridBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionNineGridBrush)
 |Peindre une zone à l'aide d'un étirement NineGrid animé                               |[CompositionNineGridBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionNineGridBrush)                                                                                       |[CompositionNineGridBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionNineGridBrush)
 |Peindre une zone avec une chaîne d’échange                                             |[SwapChainPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel)                                                                                                 |[CompositionSurfaceBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) avec interopérabilité de chaîne d’échange
 |Peindre une zone avec une vidéo                                                 |[MediaElement](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/media-playback)                                                                                                  |[CompositionSurfaceBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) avec interopérabilité média
@@ -476,8 +476,8 @@ Le tableau suivant fournit une liste des scénarios et indique si l'utilisation 
 |Peindre une zone avec un effet de filtre animé                               |[CompositionEffectBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionEffectBrush)                                                                                         |[CompositionEffectBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionEffectBrush)
 |Peindre une zone avec un effet appliqué aux pixels en arrière-plan        |[CompositionBackdropBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBackdropBrush)                                                                                        |[CompositionBackdropBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBackdropBrush)
 
-## <a name="related-topics"></a>Rubriques connexes
+## <a name="related-topics"></a>Rubriques associées
 
-[COMPOSITION DirectX et Direct2D une interopérabilité native avec BeginDraw et EndDraw](composition-native-interop.md)
+[Composition DirectX native et interopérabilité Direct2D avec BeginDraw et EndDraw](composition-native-interop.md)
 
-[Interopérabilité de pinceau XAML avec XamlCompositionBrushBase](/windows/uwp/design/style/brushes#xamlcompositionbrushbase)
+[Interopérabilité du pinceau XAML avec XamlCompositionBrushBase](/windows/uwp/design/style/brushes#xamlcompositionbrushbase)

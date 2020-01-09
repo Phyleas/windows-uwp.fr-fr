@@ -1,25 +1,25 @@
 ---
 ms.assetid: 78D833B9-E528-4BCA-9C48-A757F17E6C22
 title: Kit de certification des applications Windows
-description: Pour maximiser les chances de publication sur le Microsoft Store ou de certification Windows de votre application, validez-la et testez-la sur votre ordinateur avant de l’envoyer pour certification. Cette rubrique explique comment installer et exécuter le Kit de certification des applications Windows.
+description: Pour maximiser les chances de publication sur le Microsoft Store ou de certification Windows de votre application, validez-la et testez-la sur votre ordinateur avant de l’envoyer pour certification. Cet article vous explique comment installer et exécuter le Kit de certification des applications Windows.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, certification d’application
 ms.localizationpriority: medium
-ms.openlocfilehash: 4772edb9c99426396b7fa3a8734e2f45391c3a0f
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 346639a222228ce74d68735d2223815585d1ca08
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257835"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75681910"
 ---
 # <a name="windows-app-certification-kit"></a>Kit de certification des applications Windows
 
 
 
-Pour que votre application soit [certifiée par Windows](https://msdn.microsoft.com/windows/desktop/jj134964.aspx) ou pour [la préparer à la publication sur le Microsoft Store](https://docs.microsoft.com/windows/uwp/publish/app-submissions), vous devez d’abord la valider et la tester localement. Cette rubrique vous montre comment installer et exécuter le [Kit de certification des applications Windows](https://msdn.microsoft.com/en-US/windows/apps/bg127575) pour garantir la sécurité et l’efficacité de votre application.
+Pour que votre application soit [certifiée par Windows](https://docs.microsoft.com/windows/win32/win_cert/windows-certification-portal) ou pour [la préparer à la publication sur le Microsoft Store](https://docs.microsoft.com/windows/uwp/publish/app-submissions), vous devez d’abord la valider et la tester localement. Cette rubrique vous montre comment installer et exécuter le [Kit de certification des applications Windows](https://developer.microsoft.com/windows/develop/app-certification-kit) pour garantir la sécurité et l’efficacité de votre application.
 
-## <a name="prerequisites"></a>Conditions préalables requises
+## <a name="prerequisites"></a>Prérequis
 
 Conditions préalables pour tester une application Windows universelle :
 

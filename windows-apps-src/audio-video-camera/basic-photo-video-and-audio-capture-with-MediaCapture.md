@@ -4,14 +4,14 @@ description: Cet article vous présente le moyen le plus simple de capturer des 
 title: Capture photo, vidéo et audio de base à l’aide de MediaCapture
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 28974fea7861022c383efa5bf61565c4f18b5f8d
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: d758a19800f52284011b3260f83826f7cde300f3
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74254335"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683902"
 ---
 # <a name="basic-photo-video-and-audio-capture-with-mediacapture"></a>Capture photo, vidéo et audio de base à l’aide de MediaCapture
 
@@ -35,7 +35,7 @@ Afin que votre application puisse accéder à l’appareil photo d’un appareil
 
 
 ## <a name="initialize-the-mediacapture-object"></a>Initialiser l’objet MediaCapture
-Toutes les méthodes de capture décrites dans cet article nécessitent la première étape d’initialisation de l’objet [**MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture), exécutée via l’appel du constructeur, puis de [**InitializeAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.initializeasync). Dans la mesure où l’objet **MediaCapture** est accessible depuis plusieurs emplacements de votre application, déclarez une variable de classe pour stocker l’objet.  Implémentez un gestionnaire pour l’événementFailed[**de l’objet**MediaCapture](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.failed) afin d’être informé d’un éventuel échec de l’opération de capture.
+Toutes les méthodes de capture décrites dans cet article nécessitent la première étape d’initialisation de l’objet [**MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture), exécutée via l’appel du constructeur, puis de [**InitializeAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.initializeasync). Dans la mesure où l’objet **MediaCapture** est accessible depuis plusieurs emplacements de votre application, déclarez une variable de classe pour stocker l’objet.  Implémentez un gestionnaire pour l’événement [**Failed**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.failed) de l’objet **MediaCapture** afin d’être informé d’un éventuel échec de l’opération de capture.
 
 [!code-cs[DeclareMediaCapture](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetDeclareMediaCapture)]
 
@@ -59,7 +59,7 @@ Pour plus d’informations sur l’utilisation de **BitmapEncoder** et de l'obje
 
 Pour plus d’informations sur la définition des valeurs de contrôle de l’appareil de capture, voir [Contrôles de l’appareil de capture pour la photo et la vidéo](capture-device-controls-for-photo-and-video-capture.md).
 
-À partir de Windows 10, version 1803, vous pouvez obtenir les métadonnées, telles que les informations EXIF, pour les photos capturées dans un format non compressé en accédant à la propriété [**BitmapProperties**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedframe.bitmapproperties) de la classe **CapturedFrame** retournée par **MediaCapture**. Dans les versions précédentes, ces données étaient uniquement accessibles dans l’en-tête des photos capturées dans un format de fichier compressé. Vous pouvez transmettre ces données à un objet [**BitmapEncoder**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapencoder) lors de l’écriture manuelle d’un fichier image. Pour plus d’informations sur l’encodage des bitmaps, voir [Créer, modifier et enregistrer des images bitmap](imaging.md).  Vous pouvez également accéder aux valeurs de contrôle de trame, comme les paramètres d’exposition et de flash utilisés lors de la capture de l’image en accédant à la propriété [**ControlValues**](https://docs.microsoft.com/en-us/uwp/api/windows.media.capture.capturedframe.controlvalues). Pour plus d’informations, voir [Contrôles de l’appareil de capture pour la capture photo et vidéo](capture-device-controls-for-photo-and-video-capture.md).
+À partir de Windows 10, version 1803, vous pouvez obtenir les métadonnées, telles que les informations EXIF, pour les photos capturées dans un format non compressé en accédant à la propriété [**BitmapProperties**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedframe.bitmapproperties) de la classe **CapturedFrame** retournée par **MediaCapture**. Dans les versions précédentes, ces données étaient uniquement accessibles dans l’en-tête des photos capturées dans un format de fichier compressé. Vous pouvez transmettre ces données à un objet [**BitmapEncoder**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapencoder) lors de l’écriture manuelle d’un fichier image. Pour plus d’informations sur l’encodage des bitmaps, voir [Créer, modifier et enregistrer des images bitmap](imaging.md).  Vous pouvez également accéder aux valeurs de contrôle de trame, comme les paramètres d’exposition et de flash utilisés lors de la capture de l’image en accédant à la propriété [**ControlValues**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedframe.controlvalues). Pour plus d’informations, voir [Contrôles de l’appareil de capture pour la capture photo et vidéo](capture-device-controls-for-photo-and-video-capture.md).
 
 ## <a name="capture-a-photo-to-a-file"></a>Capturer une photo dans un fichier
 Une application de photographie classique enregistre une photo capturée sur un disque ou sur un stockage cloud et doit ajouter des métadonnées, comme l’orientation de la photo, au fichier. L’exemple suivant vous explique comment capturer une photo dans un fichier. Vous avez toujours la possibilité de créer ultérieurement une méthode **SoftwareBitmap** à partir du fichier image. 
@@ -83,7 +83,7 @@ Ajoutez rapidement une capture vidéo à votre application à l’aide de la cla
 
 Ensuite, créez un objet **StorageFile** sur lequel enregistrer la vidéo. Notez que pour procéder à un enregistrement sur la vidéothèque de l’utilisateur, vous devez ajouter la fonctionnalité **Vidéothèque** à votre manifeste d’application. Appelez [**PrepareLowLagRecordToStorageFileAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.preparelowlagrecordtostoragefileasync) afin d’initialiser l’enregistrement du contenu multimédia, en passant un fichier de stockage et un objet [**MediaEncodingProfile**](https://docs.microsoft.com/uwp/api/Windows.Media.MediaProperties.MediaEncodingProfile) spécifiant l’encodage pour la vidéo. La classe fournit des méthodes statiques, comme [**CreateMp4**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createmp4), permettant de créer des profils d’encodage vidéo courants.
 
-Enfin, appelez [**StartAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagmediarecording.startasync) afin de commencer à capturer la vidéo.
+Enfin, appelez [**StartAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagmediarecording.startasync) afin de commencer la capture vidéo.
 
 [!code-cs[StartVideoCapture](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStartVideoCapture)]
 

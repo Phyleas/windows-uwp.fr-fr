@@ -6,14 +6,14 @@ label: Custom automation peers
 template: detail.hbs
 ms.date: 07/13/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f3f409116cc904d9cef5bc3960b90225ed3b5721
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: e82a48b774913279ada67adc7e2ce1c5c75d0b31
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257764"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683822"
 ---
 # <a name="custom-automation-peers"></a>Homologues d’automatisation personnalisés  
 
@@ -112,7 +112,7 @@ En règle générale, le code client UI Automation qui accède à une applicati
 <span id="ONCREATEAUTOMATIONPEER"/>
 
 ## <a name="oncreateautomationpeer"></a>OnCreateAutomationPeer  
-Toutes les classes qui dérivent de [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) contiennent la méthode virtuelle protégée [**OnCreateAutomationPeer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.oncreateautomationpeer). La séquence d’initialisation d’objet pour les homologues d’automatisation appelle **OnCreateAutomationPeer** pour se procurer l’objet homologue d’automatisation de chaque contrôle et créer ainsi une arborescence UI Automation à utiliser au moment de l’exécution. Le code UI Automation peut utiliser l’homologue pour obtenir des informations sur les caractéristiques et fonctionnalités d’un contrôle et pour simuler l’utilisation interactive au moyen de ses modèles de contrôle. Un contrôle personnalisé qui prend en charge l’automatisation doit substituer **OnCreateAutomationPeer** et renvoyer une instance d’une classe qui dérive de [**AutomationPeer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer). Par exemple, si un contrôle personnalisé est dérivé de la classe [**ButtonBase**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ButtonBase), l’objet renvoyé par **OnCreateAutomationPeer** doit dériver de [**ButtonBaseAutomationPeer**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.automation.peers.buttonbaseautomationpeer).
+Toutes les classes qui dérivent de [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) contiennent la méthode virtuelle protégée [**OnCreateAutomationPeer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.oncreateautomationpeer). La séquence d’initialisation d’objet pour les homologues d’automatisation appelle **OnCreateAutomationPeer** pour se procurer l’objet homologue d’automatisation de chaque contrôle et créer ainsi une arborescence UI Automation à utiliser au moment de l’exécution. Le code UI Automation peut utiliser l’homologue pour obtenir des informations sur les caractéristiques et fonctionnalités d’un contrôle et pour simuler l’utilisation interactive au moyen de ses modèles de contrôle. Un contrôle personnalisé qui prend en charge l’automatisation doit substituer **OnCreateAutomationPeer** et renvoyer une instance d’une classe qui dérive de [**AutomationPeer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer). Par exemple, si un contrôle personnalisé est dérivé de la classe [**ButtonBase**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ButtonBase), l’objet renvoyé par **OnCreateAutomationPeer** doit dériver de [**ButtonBaseAutomationPeer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.buttonbaseautomationpeer).
 
 Si vous écrivez une classe de contrôle personnalisé et envisagez de fournir également un nouvel homologue d’automatisation, vous devez remplacer la méthode [**OnCreateAutomationPeer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.oncreateautomationpeer) de votre contrôle personnalisé de sorte qu’il retourne une nouvelle instance de votre homologue. Votre classe homologue doit directement ou indirectement dériver de [**AutomationPeer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer).
 

@@ -1,17 +1,17 @@
 ---
-Description: Votre application peut charger des fichiers de ressources d’image contenant des images adaptées pour le facteur d’échelle de l’affichage, le thème, contraste élevé et d’autres contextes d’exécution.
+Description: Votre application peut charger des fichiers de ressources d’image contenant des images adaptées pour le facteur d’échelle de l’affichage, le thème, le contraste élevé et d’autres contextes d’exécution.
 title: Charger des images et des ressources adaptées pour la mise à l’échelle, le thème, le contraste élevé et autres
 template: detail.hbs
 ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: 236365bc729bb6b9a2615720c4b69aea21296e5f
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 2aadcb8dc3d414db7951dc571855e01bddb03a99
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339467"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683642"
 ---
 # <a name="load-images-and-assets-tailored-for-scale-theme-high-contrast-and-others"></a>Charger des images et des ressources adaptées pour la mise à l’échelle, le thème, le contraste élevé et autres
 Votre application peut charger des fichiers de ressources d’image (ou d’autres fichiers de ressources) adaptés pour le [facteur d’échelle de l’affichage](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md), le thème, le contraste élevé et d’autres contextes d’exécution. Ces images peuvent être référencées à partir du code impératif ou à partir du balisage XAML, par exemple en tant que propriété **Source** d’une **Image**. Elles peuvent également apparaître dans le fichier source de votre manifeste de votre package d’application (fichier `Package.appxmanifest`) &mdash; par exemple, en tant que la valeur de l’icône Application sur l’onglet Actifs visuels du Concepteur de manifeste de Visual Studio &mdash; ou sur vos vignettes et toasts. En utilisant des qualificateurs pour les noms de fichiers de vos images et, si nécessaire, en les chargeant de manière dynamique à l’aide d’un [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live), il est possible de charger le fichier image le plus approprié, correspondant le mieux aux paramètres d’exécution de l’utilisateur pour l’échelle de l’affichage, le thème, le contraste élevé, la langue et d’autres contextes.
@@ -86,12 +86,12 @@ Le schéma `ms-appx-web` accède aux mêmes fichiers que `ms-appx`, mais dans le
 this.myXAMLWebViewElement.Source = new Uri("ms-appx-web:///Pages/default.html");
 ```
 
-Pour tous les scénarios illustrés dans ces exemples, utilisez la surcharge de [constructeur Uri](https://docs.microsoft.com/en-us/dotnet/api/system.uri.-ctor?view=netcore-2.0#System_Uri__ctor_System_String_) qui déduit le [UriKind](https://docs.microsoft.com/dotnet/api/system.urikind). Spécifiez un URI absolu valide, y compris le schéma et l’autorité, ou laissez l’autorité accéder par défaut au package de l’application comme dans l’exemple ci-dessus.
+Pour tous les scénarios illustrés dans ces exemples, utilisez la surcharge de [constructeur Uri](https://docs.microsoft.com/dotnet/api/system.uri.-ctor?view=netcore-2.0#System_Uri__ctor_System_String_) qui déduit le [UriKind](https://docs.microsoft.com/dotnet/api/system.urikind). Spécifiez un URI absolu valide, y compris le schéma et l’autorité, ou laissez l’autorité accéder par défaut au package de l’application comme dans l’exemple ci-dessus.
 
 Notez comment dans ces exemples d’URI, le schéma (« `ms-appx` » ou « `ms-appx-web` ») est suivi de « `://` », lui-même suivi d’un chemin d’accès absolu. Dans un chemin d’accès absolu, le caractère « `/` » de début indique que le chemin d’accès doit être interprété à partir de la racine du package.
 
 > [!NOTE]
-> Les modèles d’URI `ms-resource` (pour les [ressources de type chaîne](localize-strings-ui-manifest.md)) et `ms-appx(-web)` (pour les images et autres éléments multimédias) effectuent une correspondance de qualificateur automatique pour rechercher la ressource la plus appropriée pour le contexte actuel. Le schéma d’URI `ms-appdata` (qui est utilisé pour charger les données de l’application) n’effectue pas cette mise en correspondance automatique, mais vous pouvez répondre au contenu de [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues) et charger explicitement les ressources appropriées à partir des données de l’application à l’aide de leur nom de fichier physique complet dans l’URI. Pour plus d’informations sur les données d’application, voir [Stocker et récupérer des paramètres et autres données d’application](../design/app-settings/store-and-retrieve-app-data.md). Les schémas d’URI web (par exemple, `http`, `https` et `ftp`) n’effectuent pas de mise en correspondance automatique non plus. Pour savoir comment procéder dans ce cas, voir [Hébergement et chargement d’images dans le cloud](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md#hosting-and-loading-images-in-the-cloud).
+> Les schémas d’URI `ms-resource` (pour les [ressources de type chaîne](localize-strings-ui-manifest.md)) et `ms-appx(-web)` (pour les images et autres éléments multimédias) effectuent une correspondance de qualificateur automatique pour trouver la ressource la plus appropriée pour le contexte actuel. Le schéma d’URI `ms-appdata` (qui est utilisé pour charger les données de l’application) n’effectue pas cette mise en correspondance automatique, mais vous pouvez répondre au contenu de [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues) et charger explicitement les ressources appropriées à partir des données de l’application à l’aide de leur nom de fichier physique complet dans l’URI. Pour plus d’informations sur les données d’application, voir [Stocker et récupérer des paramètres et autres données d’application](../design/app-settings/store-and-retrieve-app-data.md). Les schémas d’URI web (par exemple, `http`, `https` et `ftp`) n’effectuent pas de mise en correspondance automatique non plus. Pour savoir comment procéder dans ce cas, voir [Hébergement et chargement d’images dans le cloud](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md#hosting-and-loading-images-in-the-cloud).
 
 Les chemins d’accès absolus constituent un bon choix si vos fichiers d’image restent où ils se trouvent dans la structure du projet. Si vous voulez être en mesure de déplacer un fichier image, mais souhaitez qu’il reste dans le même emplacement par rapport à son fichier de balisage XAML de référence, alors au lieu d’utiliser un chemin d’accès absolu, vous pouvez envisager d’utiliser un chemin d’accès relatif au fichier de balisage le contenant. Si vous procédez ainsi, il n’est pas nécessaire d’utiliser un schéma d’URI. Vous pourrez toujours bénéficier de la mise en correspondance automatique des qualificateurs dans ce cas, mais uniquement parce que vous utilisez le chemin d’accès relatif dans le balisage XAML.
 
@@ -139,7 +139,7 @@ C’est tout ce que vous avez à faire et le système d’exploitation effectue 
 Voir [Mise en miroir des images](../design/globalizing/adjust-layout-and-fonts--and-support-rtl.md#mirroring-images).
 
 ## <a name="load-an-image-for-a-specific-language-or-other-context"></a>Charger une image pour une langue spécifique ou un autre contexte
-Pour plus d’informations sur la proposition de valeur de la localisation de votre application, voir [Internationalisation et localisation](../design/globalizing/globalizing-portal.md).
+Pour plus d’informations sur la proposition de valeur de la localisation de votre application, consultez [Internationalisation et localisation](../design/globalizing/globalizing-portal.md).
 
 Le [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live) par défaut (obtenu à partir de [**ResourceContext.GetForCurrentView**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.GetForCurrentView)) contient une valeur de qualificateur pour chaque nom de qualificateur, représentant le contexte d’exécution par défaut (en d’autres termes, les paramètres de l’utilisateur et de l’ordinateur actuels). Les fichiers image sont mis en correspondance &mdash; en fonction des qualificateurs figurant dans leurs noms &mdash; avec les valeurs de qualificateur dans ce contexte d’exécution.
 
