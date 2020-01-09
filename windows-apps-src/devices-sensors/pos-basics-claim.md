@@ -5,12 +5,12 @@ ms.date: 06/19/2018
 ms.topic: article
 keywords: windows 10, uwp, point de vente, pdv
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f3fc2b2aa10fedf143c55158e521b2c1cd5b75d
-ms.sourcegitcommit: 6fbf645466278c1f014c71f476408fd26c620e01
+ms.openlocfilehash: bc3a8afbc0d3ca4655e0b1745090db633bcd92b7
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72816693"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684674"
 ---
 # <a name="point-of-service-device-claim-and-enable-model"></a>Revendication d’appareil de point de service et activer le modèle
 
@@ -23,7 +23,7 @@ Une fois que vous avez créé un objet d’appareil PointOfService, vous devez l
 
 ### <a name="apis-used-to-claim--release"></a>API utilisées pour revendiquer/libérer
 
-|Appareil|Revendication | Publier | 
+|Périphérique|Revendication | Release | 
 |-|:-|:-|
 |BarcodeScanner | [BarcodeScanner.ClaimScannerAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.claimscannerasync) | [ClaimedBarcodeScanner. Close](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.close) |
 |CashDrawer | [CashDrawer.ClaimDrawerAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.cashdrawer.claimdrawerasync) | [ClaimedCashDrawer. Close](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedcashdrawer.close) | 
@@ -38,7 +38,7 @@ L’action de revendication établit simplement des droits exclusifs sur l’app
 
 ### <a name="apis-used-enable--disable"></a>API utilisées-activer/désactiver
 
-| Appareil | Enable | Désactivez | IsEnabled? |
+| Périphérique | Enable | Désactivez | IsEnabled? |
 |-|:-|:-|:-|
 |ClaimedBarcodeScanner | [EnableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.enableasync) | [DisableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.disableasync) | [IsEnabled](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.isenabled) | 
 |ClaimedCashDrawer | [EnableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedcashdrawer.enableasync) | [DisableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedcashdrawer.disableasync) | [IsEnabled](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedcashdrawer.isenabled) |
@@ -81,7 +81,7 @@ Cet exemple montre comment revendiquer un scanneur de code-barres après avoir c
 
 > [!Warning]
 > Une revendication peut se perdre dans les circonstances suivantes :
-> 1. Une autre application a demandé une revendication du même périphérique et votre application n’a pas émis de **RetainDevice** en réponse à l'événement **ReleaseDeviceRequested**.  (Voir [Négociation de revendication](#Claim-negotiation) ci-dessous pour plus d’informations.)
+> 1. Une autre application a demandé une revendication du même périphérique et votre application n’a pas émis de **RetainDevice** en réponse à l'événement **ReleaseDeviceRequested**.  (Voir [Négociation de revendication](#claim-negotiation) ci-dessous pour plus d’informations.)
 > 2. Votre application a été suspendue, ce qui a entraîné la fermeture de l'objet de périphérique et par conséquent la revendication n’est plus valide. (Voir [Cycle de vie de l'objet appareil](pos-basics-deviceobject.md#device-object-lifecycle) pour plus d’informations.)
 
 

@@ -4,14 +4,14 @@ title: ID de classe de service AEP
 description: Les services de point de terminaison d’association (AEP) offrent un contrat de programmation pour les services qu’un appareil prend en charge sur un protocole donné. Plusieurs de ces services ont des identificateurs établis qui doivent être utilisés lors de leur référencement.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e4b4c89fff2854c36bd76cc680197fad1aa8dff
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: bc8fecd7a5a1596d074c170d7a7211126e88b8ae
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370402"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684861"
 ---
 # <a name="aep-service-class-ids"></a>ID de classe de service AEP
 
@@ -19,7 +19,7 @@ ms.locfileid: "66370402"
 
 **API importantes**
 
-- [**Windows.Devices.Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
+- [**Windows. Devices. Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration)
 
 Les services de point de terminaison d’association (AEP) offrent un contrat de programmation pour les services qu’un appareil prend en charge sur un protocole donné. Plusieurs de ces services ont des identificateurs établis qui doivent être utilisés lors de leur référencement. Ces contrats sont identifiés à l’aide de la propriété **System.Devices.AepService.ServiceClassId**. Cette rubrique répertorie plusieurs ID de classe de service AEP bien connus. L’ID de classe de service AEP est également applicable aux protocoles dont l’ID de classe est personnalisé.
 
@@ -27,7 +27,7 @@ Un développeur d’application doit utiliser des filtres de syntaxe de recherch
 
 ## <a name="bluetooth-and-bluetooth-le-services"></a>Services Bluetooth et Bluetooth LE
 
-Les services Bluetooth utilisent le protocole Bluetooth ou le protocole Bluetooth LE. Les identificateurs de ces protocoles sont les suivants :
+Les services Bluetooth utilisent le protocole Bluetooth ou le protocole Bluetooth LE. Les identificateurs de ces protocoles sont les suivants :
 
 -   ID de protocole Bluetooth : {e0cbf06c-cd8b-4647-bb8a-263b43f0f974}
 -   ID de protocole Bluetooth LE : {bb7bb05e-5972-42b5-94fc-76eaa7084d49}
@@ -88,7 +88,7 @@ En règle générale, tous les services UPnP ont leur nom haché dans un GUID à
 
 | Nom du service                       | GUID                                      |
 |------------------------------------|-------------------------------------------|
-| Gestionnaire de connexions                 | **ba36014c-b51f-51cc-bf71-1ad779ced3c6**  |
+| Gestionnaire des connexions                 | **ba36014c-b51f-51cc-bf71-1ad779ced3c6**  |
 | Transport AV                       | **deeacb78-707a-52df-b1c6-6f945e7e25bf**  |
 | Contrôle de rendu                  | **cc7fe721-a3c7-5a14-8c49-4419dc895513**  |
 | Transfert de couche 3                 | **97d477fa-f403-577b-a714-b29a9007797f**  |
@@ -98,7 +98,7 @@ En règle générale, tous les services UPnP ont leur nom haché dans un GUID à
 | Imprimante améliorée                   | **fb9074da-3d9f-5384-922e-9978ae51ef0c**  |
 | Imprimante de base                      | **5d2a7252-d45c-5158-87a4-05212da327e1**  |
 | Registre du récepteur multimédia           | **0b4a2add-d725-5198-b2ba-852b8bf8d183**  |
-| Répertoire de contenu                  | **89e701dd-0597-5279-a31c-235991d0db1c**  |
+| Répertoire de contenu                  | **89e701dd-0597-5279-A31C-235991d0db1c**  |
 | NUMÉROTER                               | **085dfa4a-3948-53c7-a0d7-16d8ec26b29b**  |
 
  

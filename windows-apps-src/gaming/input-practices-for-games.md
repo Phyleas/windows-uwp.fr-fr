@@ -1,23 +1,23 @@
 ---
-title: Pratiques d’entrée pour les jeux
+title: Pratiques de saisie pour les jeux
 description: Découvrez les modèles et techniques pour utiliser efficacement les périphériques d’entrée.
 ms.assetid: CBAD3345-3333-4924-B6D8-705279F52676
 ms.date: 11/20/2017
 ms.topic: article
 keywords: windows 10, uwp, jeux, entrée
 ms.localizationpriority: medium
-ms.openlocfilehash: 73e0ba3e563b57c2e392809097567b7e6739c90d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8235b2c2029b2bb3b9351263a3c908879b4beba9
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57634944"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684978"
 ---
-# <a name="input-practices-for-games"></a>Pratiques d’entrée pour les jeux
+# <a name="input-practices-for-games"></a>Pratiques de saisie pour les jeux
 
 Cette page décrit les modèles et techniques pour utiliser efficacement les périphériques d’entrée dans les jeux de plateforme Windows universelle (UWP).
 
-Voici ce que vous allez apprendre à la lecture de cet article :
+À la lecture de cet article, vous allez découvrir comment :
 
 * Comment suivre les joueurs et les périphériques d’entrée et de navigation qu’ils utilisent
 * Comment détecter les transitions de bouton (appuyé à relâché, relâché à appuyé)
@@ -41,7 +41,7 @@ Même si chaque type de contrôleur comprend une liste des contrôleurs connect�
 
 Toutefois, que se passe-t-il lorsque le joueur débranche son contrôleur ou en branche un autre ? Vous devez gérer ces événements et mettre à jour votre liste en conséquence. Voir [Ajout et suppression de boîtiers de commande](gamepad-and-vibration.md#adding-and-removing-gamepads) pour plus d’informations (de même, chaque type de contrôleur comporte une section portant le même nom dans sa propre rubrique).
 
-Étant donné que les événements ajoutés et supprimés sont déclenchés de façon asynchrone, vous pouvez obtenir des résultats incorrects lors du traitement de votre liste des contrôleurs. Par conséquent, chaque fois que vous accédez à votre liste de contrôleurs, vous devez la verrouiller afin qu’un seul thread puisse y accéder à la fois. Cette opération peut être effectuée avec le [Runtime d’accès concurrentiel](https://docs.microsoft.com/cpp/parallel/concrt/concurrency-runtime), en particulier la [classe critical_section](https://docs.microsoft.com/cpp/parallel/concrt/reference/critical-section-class), dans **&lt;ppl.h&gt;**.
+Étant donné que les événements ajoutés et supprimés sont déclenchés de façon asynchrone, vous pouvez obtenir des résultats incorrects lors du traitement de votre liste des contrôleurs. Par conséquent, chaque fois que vous accédez à votre liste de contrôleurs, vous devez la verrouiller afin qu’un seul thread puisse y accéder à la fois. Cette opération peut être effectuée avec le [Runtime d’accès concurrentiel](https://docs.microsoft.com/cpp/parallel/concrt/concurrency-runtime), en particulier la [classe critical_section](https://docs.microsoft.com/cpp/parallel/concrt/reference/critical-section-class), dans **&lt;ppl.h&gt;** .
 
 Une autre chose à se rappeler est que la liste des contrôleurs connectés sera initialement vide. Elle prendra une ou deux secondes pour se remplir. Donc, si vous affectez uniquement le boîtier de commande en cours dans la méthode start, elle sera **null**  !
 
@@ -166,7 +166,7 @@ void OnGamepadRemoved(Platform::Object^ sender, Gamepad^ args)
 
 ## <a name="tracking-users-and-their-devices"></a>Suivi des utilisateurs et de leurs périphériques
 
-Tous les périphériques d’entrée sont associés à un [utilisateur](https://docs.microsoft.com/uwp/api/windows.system.user) afin que son identité puisse être liée à sa séquence de jeu, ses succès, ses modifications de paramètres et ses autres activités. Les utilisateurs peuvent se connecter ou se déconnecter à volonté, et il est courant qu’un utilisateur différent se connecte à un périphérique d’entrée qui reste connecté au système après la déconnexion de l’utilisateur précédent. À la connexion ou déconnexion d’un utilisateur, l’événement [IGameController.UserChanged](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller.UserChanged) se déclenche. Vous pouvez inscrire un gestionnaire d’événements pour cet événement afin d’effectuer le suivi des joueurs et des périphériques qu’ils utilisent.
+Tous les périphériques d’entrée sont associés à un [utilisateur](https://docs.microsoft.com/uwp/api/windows.system.user) afin que son identité puisse être liée à sa séquence de jeu, ses succès, ses modifications de paramètres et ses autres activités. Les utilisateurs peuvent se connecter ou se déconnecter à volonté, et il est courant qu’un utilisateur différent se connecte à un périphérique d’entrée qui reste connecté au système après la déconnexion de l’utilisateur précédent. À la connexion ou déconnexion d’un utilisateur, l’événement [IGameController.UserChanged](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller.UserChanged) est déclenché. Vous pouvez inscrire un gestionnaire d’événements pour cet événement afin d’effectuer le suivi des joueurs et des périphériques qu’ils utilisent.
 
 Une identité d’utilisateur est également le moyen par lequel un périphérique d’entrée est associé au [contrôleur de navigation d’interface utilisateur](ui-navigation-controller.md) qui lui correspond.
 
@@ -298,13 +298,13 @@ Cette formule peut être appliquée pour tester n’importe quel nombre de bouto
 
 ## <a name="get-the-state-of-the-battery"></a>Obtenir l’état de la batterie
 
-Pour n’importe quel contrôleur de jeu qui implémente l'interface [IGameControllerBatteryInfo](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontrollerbatteryinfo), vous pouvez appeler [TryGetBatteryReport](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontrollerbatteryinfo.TryGetBatteryReport) sur l’instance de contrôleur pour obtenir un objet [BatteryReport](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport) qui fournit des informations sur la batterie dans le contrôleur. Vous pouvez obtenir des propriétés telles que la vitesse de charge de la batterie ([ChargeRateInMilliwatts](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport.ChargeRateInMilliwatts)), la capacité énergétique estimée d'une batterie neuve ([DesignCapacityInMilliwattHours](https://docs.microsoft.com/en-us/uwp/api/windows.devices.power.batteryreport.DesignCapacityInMilliwattHours)) et la capacité énergétique de la batterie actuelle complètement chargée ([FullChargeCapacityInMilliwattHours](https://docs.microsoft.com/en-us/uwp/api/windows.devices.power.batteryreport.FullChargeCapacityInMilliwattHours)).
+Pour n’importe quel contrôleur de jeu qui implémente l'interface [IGameControllerBatteryInfo](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontrollerbatteryinfo), vous pouvez appeler [TryGetBatteryReport](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontrollerbatteryinfo.TryGetBatteryReport) sur l’instance de contrôleur pour obtenir un objet [BatteryReport](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport) qui fournit des informations sur la batterie dans le contrôleur. Vous pouvez obtenir des propriétés telles que la vitesse de charge de la batterie ([ChargeRateInMilliwatts](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport.ChargeRateInMilliwatts)), la capacité énergétique estimée d'une batterie neuve ([DesignCapacityInMilliwattHours](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport.DesignCapacityInMilliwattHours)) et la capacité énergétique de la batterie actuelle complètement chargée ([FullChargeCapacityInMilliwattHours](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport.FullChargeCapacityInMilliwattHours)).
 
 Pour les contrôleurs de jeu qui prennent en charge la création de rapports détaillés sur la batterie, vous pouvez obtenir ces informations et d'autres sur la batterie, comme expliqué dans la section [Obtenir des informations sur la batterie](../devices-sensors/get-battery-info.md). Toutefois, la plupart des contrôleurs de jeu ne prennent pas en charge ce niveau de rapport sur la batterie et utilisent plutôt un matériel moins coûteux. Pour ces contrôleurs, vous devez garder à l'esprit les considérations suivantes :
 
 * **ChargeRateInMilliwatts** et **DesignCapacityInMilliwattHours** seront toujours **NULL**.
 
-* Vous pouvez obtenir le pourcentage de batterie en calculant [RemainingCapacityInMilliwattHours](https://docs.microsoft.com/en-us/uwp/api/windows.devices.power.batteryreport.RemainingCapacityInMilliwattHours) / **FullChargeCapacityInMilliwattHours**. Vous devez ignorer les valeurs de ces propriétés et ne traiter que le pourcentage calculé.
+* Vous pouvez obtenir le pourcentage de batterie en calculant [RemainingCapacityInMilliwattHours](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport.RemainingCapacityInMilliwattHours) / **FullChargeCapacityInMilliwattHours**. Vous devez ignorer les valeurs de ces propriétés et ne traiter que le pourcentage calculé.
 
 * Le pourcentage évoqué au paragraphe précédent sera toujours l'un des suivants :
 
@@ -315,8 +315,8 @@ Pour les contrôleurs de jeu qui prennent en charge la création de rapports dé
 
 Si votre code exécute une action (comme étendre une IU) en fonction du pourcentage restant d'autonomie de la batterie, assurez-vous qu’il se conforme aux valeurs ci-dessus. Par exemple, si vous souhaitez avertir le joueur lorsque la batterie du contrôleur est faible, faites-le lorsque son niveau atteint 10 %.
 
-## <a name="see-also"></a>Voir également
+## <a name="see-also"></a>Articles associés
 
-* [Classe de Windows.System.User](https://docs.microsoft.com/uwp/api/windows.system.user)
-* [Interface de Windows.Gaming.Input.IGameController](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller)
-* [Windows.Gaming.Input.GamepadButtons enum](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepadbuttons)
+* [Classe Windows. System. User](https://docs.microsoft.com/uwp/api/windows.system.user)
+* [Interface Windows. Gaming. Input. IGameController](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller)
+* [Enum Windows. Gaming. Input. GamepadButtons](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepadbuttons)

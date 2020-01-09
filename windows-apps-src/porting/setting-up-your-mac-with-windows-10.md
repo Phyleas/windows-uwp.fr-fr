@@ -4,14 +4,14 @@ title: Configuration de votre Mac avec Windows 10
 ms.assetid: 6D520610-5DE0-476E-A792-AA57E002D309
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 55165e0369c6bda64c19dc384c5c2addf224b8ba
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: b8ff6d6b3b15992f0598bfb371e6bfb1023d6dc1
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259116"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685003"
 ---
 # <a name="setting-up-your-mac-with-windows-10"></a>Configuration de votre Mac avec Windows 10
 
@@ -24,7 +24,7 @@ Vous êtes prêt à développer des applications Windows universelles, mais vous
 
 **Notez**  vous aurez besoin d’une image de démarrage Windows 10 sur disque ou un lecteur flash USB. Si vous êtes un abonné MSDN, vous pouvez télécharger l’image d’installation à partir du centre Téléchargements des abonnés MSDN. Si vous n’êtes pas abonné, le programme d’installation peut être acheté à partir de la [Microsoft Store](https://www.microsoft.com/store/apps). Vous pouvez également le télécharger à partir de [cet emplacement](https://www.microsoft.com/software-download/windows10) ; très utile si vous exécutez déjà Windows et que vous souhaitez effectuer une mise à jour.
 
-Une fois que Windows est en cours d’exécution, vous pouvez installer la dernière version de Visual Studio à partir des [téléchargements pour Windows 10](https://developer.microsoft.com/en-us/windows/downloads) et commencer à écrire des applications.
+Une fois que Windows est en cours d’exécution, vous pouvez installer la dernière version de Visual Studio à partir des [téléchargements pour Windows 10](https://developer.microsoft.com/windows/downloads) et commencer à écrire des applications.
 
 **Remarque**  si vous envisagez d’utiliser les émulateurs de périphérique Visual Studio, vous **devez** installer une version 64 bits (x64) de Windows 10 professionnel ou une version ultérieure. Malheureusement, certains anciens modèles de Mac ne peuvent pas exécuter Windows en version 64 bits. Vérifiez auprès d’Apple si votre matériel est compatible sur cette[page de support Apple](https://support.apple.com/kb/HT5634).
 

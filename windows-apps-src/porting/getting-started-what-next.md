@@ -1,24 +1,24 @@
 ---
 title: 'Prise en main : Et ensuite ?'
 ms.assetid: 903046E7-581F-4845-AB80-1A57C42B1B02
-description: Avec ces informations de base, vous pouvez commencer à écrire des applications de plateforme Windows universelle (UWP, Universal Windows Platform) plus intéressantes.
+description: En disposant de ces informations de base, vous pouvez commencer à écrire des applications de plateforme Windows universelle (UWP) plus intéressantes.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 76be28f48be4297d1e81e5a7ab7c07ee55212102
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: ca6bba9fcf00d103507a1c24ebde11a7f0a7c588
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259141"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684689"
 ---
 # <a name="getting-started-what-next"></a>Prise en main : Et ensuite ?
 
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Avec ces informations de base, vous pouvez commencer à écrire des applications de plateforme Windows universelle (UWP, Universal Windows Platform) plus intéressantes. Pour les étapes suivantes, lisez les rubriques qui suivent, démarrez Microsoft Visual Studio, puis commencez à écrire du code.
+En disposant de ces informations de base, vous pouvez commencer à écrire des applications de plateforme Windows universelle (UWP) plus intéressantes. Pour les étapes suivantes, lisez les rubriques qui suivent, démarrez Microsoft Visual Studio, puis commencez à écrire du code.
 
 -   [Contrats et extensions d’application](https://docs.microsoft.com/previous-versions/windows/apps/hh464906(v=win.10)) : comment déclarer des contrats entre vos applications et Windows (par exemple, le contrat « Lire sur » et l’extension Explorateur de jeux).
 -   [Utilisation de vignettes, de badges et de notifications toast](https://docs.microsoft.com/previous-versions/windows/apps/hh868259(v=win.10)) : comment créer des vignettes, mettre à jour les vignettes et leurs badges, envoyer des notifications toast, afficher des mises à jour de vignettes et de badges et mettre ces derniers à jours dans l’écran de verrouillage.
@@ -27,7 +27,7 @@ Avec ces informations de base, vous pouvez commencer à écrire des applications
 -   [Créer votre première application Windows Runtime en C# ou Visual Basic](https://msdn.microsoft.com/library/windows/apps/hh974581.aspx) : rubrique traitant du développement Windows Phone.
 -   [Vidéos pour développeurs iOS et Android](https://docs.microsoft.com/previous-versions/windows/apps/dn393982(v=win.10)) : aide supplémentaire, cette fois dans un format visuel.
 
-Pensez aussi surtout à consulter nos [ressources de communauté](https://developer.microsoft.com/en-us/windows/support) pour savoir comment obtenir de l’aide et accéder des forums des développeurs, des blogs, des séminaires (Devcamps) et des ateliers pour développeurs, et des événements et contacts Microsoft locaux.
+Pensez aussi surtout à consulter nos [ressources de communauté](https://developer.microsoft.com/windows/support) pour savoir comment obtenir de l’aide et accéder des forums des développeurs, des blogs, des séminaires (Devcamps) et des ateliers pour développeurs, et des événements et contacts Microsoft locaux.
 
 Nous pensons que Windows 10 va ouvrir de nouvelles opportunités de création d’applications pour vous. Et nous attendons avec impatience de découvrir toutes les applications que vous créerez !
 

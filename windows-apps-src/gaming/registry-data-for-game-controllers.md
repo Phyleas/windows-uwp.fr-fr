@@ -6,19 +6,19 @@ ms.date: 04/08/2019
 ms.topic: article
 keywords: Windows 10, uwp, jeux, entrée, registre, personnalisé
 ms.localizationpriority: medium
-ms.openlocfilehash: 30c1f0d8c9fac09d071d158563c964c6a598e073
-ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
+ms.openlocfilehash: bfce7503efd88a7a05a0471667953e287262bc35
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67714061"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684920"
 ---
 # <a name="registry-data-for-game-controllers"></a>Données de Registre pour les contrôleurs de jeu
 
 > [!NOTE]
 > Cette rubrique est destinée aux fabricants de contrôleurs de jeu Windows 10 compatibles et ne s’applique pas à la majorité des développeurs.
 
-L’[espace de noms Windows.Gaming.Input](https://docs.microsoft.com/uwp/api/windows.gaming.input) permet aux fabricants de matériel d’ajouter des données dans le Registre de l’ordinateur pour que leurs appareils s’affichent en tant que [boîtiers de commande](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepad), [RacingWheels](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheel), [ArcadeSticks](https://docs.microsoft.com/uwp/api/windows.gaming.input.arcadestick), [FlightSticks](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.flightstick), et [UINavigationControllers](https://docs.microsoft.com/uwp/api/windows.gaming.input.uinavigationcontroller) selon les besoins. Tous les fabricants de matériel doivent ajouter ces données pour leurs contrôleurs compatibles. Ce faisant, tous les jeux UWP (et les jeux de bureau utilisant l’API WinRT) seront en mesure de prendre en charge votre manette de jeu.
+L’[espace de noms Windows.Gaming.Input](https://docs.microsoft.com/uwp/api/windows.gaming.input) permet aux fabricants de matériel d’ajouter des données dans le Registre de l’ordinateur pour que leurs appareils s’affichent en tant que [boîtiers de commande](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepad), [RacingWheels](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheel), [ArcadeSticks](https://docs.microsoft.com/uwp/api/windows.gaming.input.arcadestick), [FlightSticks](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstick), et [UINavigationControllers](https://docs.microsoft.com/uwp/api/windows.gaming.input.uinavigationcontroller) selon les besoins. Tous les fabricants de matériel doivent ajouter ces données pour leurs contrôleurs compatibles. Ce faisant, tous les jeux UWP (et les jeux de bureau utilisant l’API WinRT) seront en mesure de prendre en charge votre manette de jeu.
 
 ## <a name="mapping-scheme"></a>Schéma de mappage
 
@@ -31,25 +31,25 @@ Le tableau ci-dessous décrit les valeurs attendues sous l’emplacement racine 
 <table>
     <tr>
         <th>Nom</th>
-        <th>type</th>
+        <th>Tapez</th>
         <th>Obligatoire ?</th>
-        <th>Info</th>
+        <th>Informations</th>
     </tr>
     <tr>
         <td>Désactivée</td>
         <td>DWORD</td>
-        <td>Non</td>
+        <td>non</td>
         <td>
-            <p>Indique que ce périphérique doit être désactivé.</p>
+            <p>Indique que cet appareil particulier doit être désactivé.</p>
             <ul>
-                <li><b>0</b>: Appareil n’est pas désactivé.</li>
-                <li><b>1</b>: Appareil est désactivé.</li>
+                <li><b>0</b> : l’appareil n’est pas désactivé.</li>
+                <li><b>1</b> : l’appareil est désactivé.</li>
             </ul>
         </td>
     </tr>
     <tr>
         <td>Description</td>
-        <td>REG_SZ <td>Non</td>
+        <td>REG_SZ <td>non</td>
         <td>Brève description de l’appareil.</td>
     </tr>
 </table>
@@ -66,7 +66,7 @@ Le tableau ci-dessous répertorie les sous-clés obligatoires et facultatives so
     <tr>
         <th>Sous-clé</th>
         <th>Obligatoire ?</th>
-        <th>Info</th>
+        <th>Informations</th>
     </tr>
     <tr>
         <td>Menu</td>
@@ -78,7 +78,7 @@ Le tableau ci-dessous répertorie les sous-clés obligatoires et facultatives so
         <td>Oui</td>
     </tr>
     <tr>
-        <td>A</td>
+        <td>Un bouton</td>
         <td>Oui</td>
     </tr>
     <tr>
@@ -127,19 +127,19 @@ Le tableau ci-dessous répertorie les sous-clés obligatoires et facultatives so
     </tr>
     <tr>
         <td>Paddle1</td>
-        <td>Non</td>
+        <td>non</td>
     </tr>
     <tr>
         <td>Paddle2</td>
-        <td>Non</td>
+        <td>non</td>
     </tr>
     <tr>
         <td>Paddle3</td>
-        <td>Non</td>
+        <td>non</td>
     </tr>
     <tr>
         <td>Paddle4</td>
-        <td>Non</td>
+        <td>non</td>
     </tr>
     <tr>
         <td>LeftTrigger</td>
@@ -179,7 +179,7 @@ Le tableau ci-dessous répertorie les sous-clés obligatoires et facultatives so
     <tr>
         <th>Sous-clé</th>
         <th>Obligatoire ?</th>
-        <th>Info</th>
+        <th>Informations</th>
     </tr>
     <tr>
         <td>PreviousGear</td>
@@ -192,118 +192,118 @@ Le tableau ci-dessous répertorie les sous-clés obligatoires et facultatives so
     </tr>
     <tr>
         <td>DPadUp</td>
-        <td>Non</td>
+        <td>non</td>
     </tr>
     <tr>
         <td>DPadDown</td>
-        <td>Non</td>
+        <td>non</td>
     </tr>
     <tr>
         <td>DPadLeft</td>
-        <td>Non</td>
+        <td>non</td>
     </tr>
     <tr>
         <td>DPadRight</td>
-        <td>Non</td>
+        <td>non</td>
     </tr>
     <tr>
         <td>Button1</td>
-        <td>Non</td>
+        <td>non</td>
     </tr>
     <tr>
         <td>Button2</td>
-        <td>Non</td>
+        <td>non</td>
     </tr>
     <tr>
         <td>Button3</td>
-        <td>Non</td>
+        <td>non</td>
     </tr>
     <tr>
         <td>Button4</td>
-        <td>Non</td>
+        <td>non</td>
     </tr>
     <tr>
         <td>Button5</td>
-        <td>Non</td>
+        <td>non</td>
     </tr>
     <tr>
         <td>Button6</td>
-        <td>Non</td>
+        <td>non</td>
     </tr>
     <tr>
         <td>Button7</td>
-        <td>Non</td>
+        <td>non</td>
     </tr>
     <tr>
         <td>Button8</td>
-        <td>Non</td>
+        <td>non</td>
     </tr>
     <tr>
         <td>Button9</td>
-        <td>Non</td>
+        <td>non</td>
     </tr>
     <tr>
         <td>Button10</td>
-        <td>Non</td>
+        <td>non</td>
     </tr>
     <tr>
         <td>Button11</td>
-        <td>Non</td>
+        <td>non</td>
     </tr>
     <tr>
         <td>Button12</td>
-        <td>Non</td>
+        <td>non</td>
     </tr>
     <tr>
         <td>Button13</td>
-        <td>Non</td>
+        <td>non</td>
     </tr>
     <tr>
         <td>Button14</td>
-        <td>Non</td>
+        <td>non</td>
     </tr>
     <tr>
         <td>Button15</td>
-        <td>Non</td>
+        <td>non</td>
     </tr>
     <tr>
         <td>Button16</td>
-        <td>Non</td>
+        <td>non</td>
     </tr>
     <tr>
         <td>FirstGear</td>
-        <td>Non</td>
+        <td>non</td>
     </tr>
     <tr>
         <td>SecondGear</td>
-        <td>Non</td>
+        <td>non</td>
     </tr>
     <tr>
         <td>ThirdGear</td>
-        <td>Non</td>
+        <td>non</td>
     </tr>
     <tr>
         <td>FourthGear</td>
-        <td>Non</td>
+        <td>non</td>
     </tr>
     <tr>
         <td>FifthGear</td>
-        <td>Non</td>
+        <td>non</td>
     </tr>
     <tr>
         <td>SixthGear</td>
-        <td>Non</td>
+        <td>non</td>
     </tr>
     <tr>
         <td>SeventhGear</td>
-        <td>Non</td>
+        <td>non</td>
     </tr>
     <tr>
         <td>ReverseGear</td>
-        <td>Non</td>
+        <td>non</td>
     </tr>
     <tr>
-        <td>Roulette</td>
+        <td>Wheel</td>
         <td>Oui</td>
         <td rowspan="5" style="vertical-align: middle;">Voir <a href="#axis-mapping">Mappage des axes</a></td>
     </tr>
@@ -317,11 +317,11 @@ Le tableau ci-dessous répertorie les sous-clés obligatoires et facultatives so
     </tr>
     <tr>
         <td>Embrayage</td>
-        <td>Non</td>
+        <td>non</td>
     </tr>
     <tr>
         <td>Handbrake</td>
-        <td>Non</td>
+        <td>non</td>
     </tr>
     <tr>
         <td>MaxWheelAngle</td>
@@ -338,7 +338,7 @@ Le tableau ci-dessous répertorie les sous-clés obligatoires et facultatives so
     <tr>
         <th>Sous-clé</th>
         <th>Obligatoire ?</th>
-        <th>Info</th>
+        <th>Informations</th>
     </tr>
     <tr>
         <td>Action 1</td>
@@ -399,7 +399,7 @@ Le tableau ci-dessous répertorie les sous-clés obligatoires et facultatives so
     <tr>
         <th>Sous-clé</th>
         <th>Obligatoire ?</th>
-        <th>Info</th>
+        <th>Informations</th>
     </tr>
     <tr>
         <td>FirePrimary</td>
@@ -442,7 +442,7 @@ Le tableau ci-dessous répertorie les sous-clés obligatoires et facultatives so
     <tr>
         <th>Sous-clé</th>
         <th>Obligatoire ?</th>
-        <th>Info</th>
+        <th>Informations</th>
     </tr>
     <tr>
         <td>Menu</td>
@@ -458,7 +458,7 @@ Le tableau ci-dessous répertorie les sous-clés obligatoires et facultatives so
         <td>Oui</td>
     </tr>
     <tr>
-        <td>Cancel</td>
+        <td>Annuler</td>
         <td>Oui</td>
     </tr>
     <tr>
@@ -478,74 +478,74 @@ Le tableau ci-dessous répertorie les sous-clés obligatoires et facultatives so
         <td>Oui</td>
     </tr>
     <tr>
-        <td>Context1 (Contexte 1)</td>
-        <td>Non</td>
+        <td>Context1</td>
+        <td>non</td>
     </tr>
     <tr>
-        <td>Context2 (Contexte 2)</td>
-        <td>Non</td>
+        <td>Context2</td>
+        <td>non</td>
     </tr>
     <tr>
-        <td>Context3 (Contexte 3)</td>
-        <td>Non</td>
+        <td>Context3</td>
+        <td>non</td>
     </tr>
     <tr>
-        <td>Context4 (Contexte 4)</td>
-        <td>Non</td>
+        <td>Context4</td>
+        <td>non</td>
     </tr>
     <tr>
-        <td>PageUp (Pg. préc)</td>
-        <td>Non</td>
+        <td>PageUp</td>
+        <td>non</td>
     </tr>
     <tr>
-        <td>PageDown (Pg. suiv)</td>
-        <td>Non</td>
+        <td>PageDown</td>
+        <td>non</td>
     </tr>
     <tr>
-        <td>PageLeft (Page gauche)</td>
-        <td>Non</td>
+        <td>PageLeft</td>
+        <td>non</td>
     </tr>
     <tr>
-        <td>PageRight (Page droite)</td>
-        <td>Non</td>
+        <td>PageRight</td>
+        <td>non</td>
     </tr>
     <tr>
-        <td>ScrollUp (Faire défiler vers le haut)</td>
-        <td>Non</td>
+        <td>ScrollUp</td>
+        <td>non</td>
     </tr>
     <tr>
-        <td>ScrollDown (Faire défiler vers le bas)</td>
-        <td>Non</td>
+        <td>ScrollDown</td>
+        <td>non</td>
     </tr>
     <tr>
-        <td>ScrollLeft (Faire défiler vers la gauche)</td>
-        <td>Non</td>
+        <td>ScrollLeft</td>
+        <td>non</td>
     </tr>
     <tr>
-        <td>ScrollRight (Faire défiler vers la droite)</td>
-        <td>Non</td>
+        <td>ScrollRight</td>
+        <td>non</td>
     </tr>
     <tr>
         <td>SecondaryUp</td>
-        <td>Non</td>
+        <td>non</td>
     </tr>
     <tr>
         <td>SecondaryDown</td>
-        <td>Non</td>
+        <td>non</td>
     </tr>
     <tr>
         <td>SecondaryLeft</td>
-        <td>Non</td>
+        <td>non</td>
     </tr>
     <tr>
         <td>SecondaryRight</td>
-        <td>Non</td>
+        <td>non</td>
     </tr>
 </table>
 
 Pour plus d’informations sur les contrôleurs de navigation de l’interface utilisateur et les commandes ci-dessus, voir [contrôleur de navigation de l’interface utilisateur](https://docs.microsoft.com/windows/uwp/gaming/ui-navigation-controller).
 
-## <a name="keys"></a>Keys
+## <a name="keys"></a>Clés
 
 Les sections suivantes expliquent le contenu de chaque sous-clé figurant sous les clés **Gamepad**, **RacingWheel**, **ArcadeStick**, **FlightStick**, et **UINavigation**.
 
@@ -555,14 +555,14 @@ Le tableau ci-dessous répertorie les valeurs qui sont nécessaires au mappage d
 
 <table>
     <tr>
-        <th>`Source`</th>
+        <th>Source</th>
         <th>Nom de valeur</th>
         <th>Type de valeur</th>
         <th>Obligatoire ?</th>
         <th>Informations sur la valeur</th>
     </tr>
     <tr>
-        <td>Bouton</td>
+        <td>Button</td>
         <td>ButtonIndex</td>
         <td>DWORD</td>
         <td>Oui</td>
@@ -578,7 +578,7 @@ Le tableau ci-dessous répertorie les valeurs qui sont nécessaires au mappage d
     <tr>
         <td>Inverser :</td>
         <td>DWORD</td>
-        <td>Non</td>
+        <td>non</td>
         <td>Indique que la valeur de l’axe doit être inversée avant l’application des facteurs <b>ThresholdPercent</b> et <b>DebouncePercent</b>.</td>
     </tr>
     <tr>
@@ -597,7 +597,7 @@ Le tableau ci-dessous répertorie les valeurs qui sont nécessaires au mappage d
         </td>
     </tr>
     <tr>
-        <td rowspan="3" style="vertical-align: middle;">Basculer</td>
+        <td rowspan="3" style="vertical-align: middle;">Basculez</td>
         <td>SwitchIndex</td>
         <td>DWORD</td>
         <td>Oui</td>
@@ -610,11 +610,11 @@ Le tableau ci-dessous répertorie les valeurs qui sont nécessaires au mappage d
         <td>
             <p>Indique la position de commutateur qui entraîne le signalement par le bouton mappé de son état « enfoncé ». Les valeurs de position peuvent être une des chaînes suivantes :</p>
             <ul>
-                <li>Up (Haut)</li>
+                <li>Up</li>
                 <li>UpRight</li>
                 <li>Droit</li>
                 <li>DownRight</li>
-                <li>Vers le bas</li>
+                <li>Down</li>
                 <li>DownLeft</li>
                 <li>Left (Gauche)</li>
                 <li>UpLeft</li>
@@ -624,7 +624,7 @@ Le tableau ci-dessous répertorie les valeurs qui sont nécessaires au mappage d
     <tr>
         <td>IncludeAdjacent</td>
         <td>DWORD</td>
-        <td>Non</td>
+        <td>non</td>
         <td>Indique que les positions de commutateur adjacentes entraînent également le signalement par le bouton mappé de son état « enfoncé ».</td>
     </tr>
 </table>
@@ -635,14 +635,14 @@ Le tableau ci-dessous répertorie les valeurs nécessaires au mappage d’un axe
 
 <table>
     <tr>
-        <th>`Source`</th>
+        <th>Source</th>
         <th>Nom de valeur</th>
         <th>Type de valeur</th>
         <th>Obligatoire ?</th>
         <th>Informations sur la valeur</th>
     </tr>
     <tr>
-        <td rowspan="2" style="vertical-align: middle;">Bouton</td>
+        <td rowspan="2" style="vertical-align: middle;">Button</td>
         <td>MaxValueButtonIndex</td>
         <td>DWORD</td>
         <td>Oui</td>
@@ -667,7 +667,7 @@ Le tableau ci-dessous répertorie les valeurs nécessaires au mappage d’un axe
     <tr>
         <td>MinValueButtonIndex</td>
         <td>DWORD</td>
-        <td>Non</td>
+        <td>non</td>
         <td>
             <p>Indique que l’axe mappé est bidirectionnel. Les valeurs de <b>MaxButton</b> et <b>MinButton</b> sont combinées en un axe bidirectionnel unique, comme illustré ci-dessous.</p>
             <table>
@@ -709,11 +709,11 @@ Le tableau ci-dessous répertorie les valeurs nécessaires au mappage d’un axe
     <tr>
         <td>Inverser :</td>
         <td>DWORD</td>
-        <td>Non</td>
+        <td>non</td>
         <td>Indique que la valeur de l’axe mappé doit être inversée avant d’être renvoyée.</td>
     </tr>
     <tr>
-        <td rowspan="3" style="vertical-align: middle;">Basculer</td>
+        <td rowspan="3" style="vertical-align: middle;">Basculez</td>
         <td>SwitchIndex</td>
         <td>DWORD</td>
         <td>Oui</td>
@@ -726,11 +726,11 @@ Le tableau ci-dessous répertorie les valeurs nécessaires au mappage d’un axe
         <td>
             <p>Une des chaînes suivantes :</p>
             <ul>
-                <li>Up (Haut)</li>
+                <li>Up</li>
                 <li>UpRight</li>
                 <li>Droit</li>
                 <li>DownRight</li>
-                <li>Vers le bas</li>
+                <li>Down</li>
                 <li>DownLeft</li>
                 <li>Left (Gauche)</li>
                 <li>UpLeft</li>
@@ -742,7 +742,7 @@ Le tableau ci-dessous répertorie les valeurs nécessaires au mappage d’un axe
                     <th>AxisValue</th>
                 </tr>
                 <tr>
-                    <td>Up (Haut)</td>
+                    <td>Up</td>
                     <td>1.0</td>
                 </tr>
                 <tr>
@@ -750,7 +750,7 @@ Le tableau ci-dessous répertorie les valeurs nécessaires au mappage d’un axe
                     <td>0,5</td>
                 </tr>
                 <tr>
-                    <td>Vers le bas</td>
+                    <td>Down</td>
                     <td>0,0</td>
                 </tr>
             </table>
@@ -759,7 +759,7 @@ Le tableau ci-dessous répertorie les valeurs nécessaires au mappage d’un axe
     <tr>
         <td>IncludeAdjacent</td>
         <td>DWORD</td>
-        <td>Non</td>
+        <td>non</td>
         <td>
             <p>Indique que les positions de commutateur adjacentes entraînent également le signalement de 1,0 par l’axe mappé. Dans l’exemple ci-dessus, si <b>IncludeAdjacent</b> est définie, la conversion de l’axe s’effectue comme suit :</p>
             <table>
@@ -768,7 +768,7 @@ Le tableau ci-dessous répertorie les valeurs nécessaires au mappage d’un axe
                     <th>AxisValue</th>
                 </tr>
                 <tr>
-                    <td>Up (Haut)</td>
+                    <td>Up</td>
                     <td>1.0</td>
                 </tr>
                 <tr>
@@ -784,7 +784,7 @@ Le tableau ci-dessous répertorie les valeurs nécessaires au mappage d’un axe
                     <td>0,5</td>
                 </tr>
                 <tr>
-                    <td>Vers le bas</td>
+                    <td>Down</td>
                     <td>0,0</td>
                 </tr>
                 <tr>
@@ -806,13 +806,13 @@ Les positions de commutateur peuvent être mappées à partir d’un ensemble de
 
 <table>
     <tr>
-        <th>`Source`</th>
+        <th>Source</th>
         <th>Nom de valeur</th>
         <th>Type de valeur</th>
         <th>Informations sur la valeur</th>
     </tr>
     <tr>
-        <td rowspan="10" style="vertical-align: middle;">Bouton</td>
+        <td rowspan="10" style="vertical-align: middle;">Button</td>
         <td>ButtonCount</td>
         <td>DWORD</td>
         <td>2, 4 ou 8</td>
@@ -820,7 +820,7 @@ Les positions de commutateur peuvent être mappées à partir d’un ensemble de
     <tr>
         <td>SwitchKind</td>
         <td>REG_SZ</td>
-        <td><b>TwoWay</b>, <b>FourWay</b>, ou <b>EightWay</b>
+        <td><b>TwoWay</b>, <b>FourWay</b>ou <b>EightWay</b>
     </tr>
     <tr>
         <td>UpButtonIndex</td>
@@ -898,7 +898,7 @@ Les positions de commutateur peuvent être mappées à partir d’un ensemble de
         <td>DWORD</td>
     </tr>
     <tr>
-        <td rowspan="3" style="vertical-align: middle;">Basculer</td>
+        <td rowspan="3" style="vertical-align: middle;">Basculez</td>
         <td>SwitchIndex</td>
         <td>DWORD</td>
         <td>Index du tableau des commutateurs du <b>RawGameController</b>.
@@ -936,7 +936,7 @@ Les positions de commutateur peuvent être mappées à partir d’un ensemble de
                     <td>1</td>
                 </tr>
                 <tr>
-                    <td>Up (Haut)</td>
+                    <td>Up</td>
                     <td>3</td>
                     <td>0</td>
                 </tr>
@@ -956,7 +956,7 @@ Les positions de commutateur peuvent être mappées à partir d’un ensemble de
                     <td>5</td>
                 </tr>
                 <tr>
-                    <td>Vers le bas</td>
+                    <td>Down</td>
                     <td>7</td>
                     <td>4</td>
                 </tr>
@@ -966,7 +966,7 @@ Les positions de commutateur peuvent être mappées à partir d’un ensemble de
 
 #### <a name="buttonindex-values"></a>\* Valeurs de ButtonIndex
 
-\*Index des valeurs de ButtonIndex dans le **RawGameController**du tableau de bouton :
+\*index des valeurs ButtonIndex dans le tableau de boutons du **RawGameController**:
 
 <table>
     <tr>
@@ -1047,7 +1047,7 @@ Il s’agit de valeurs de mappages statiques pour différents types de mappages.
 
 ## <a name="labels"></a>Étiquettes
 
-Les libellés doivent être présents sous la clé **Labels** située sous la racine de l’appareil. **Étiquettes** peut avoir des 3 sous-clés : **Boutons**, **Axes**, et **commutateurs**.
+Les libellés doivent être présents sous la clé **Labels** située sous la racine de l’appareil. **Libellés** peut avoir 3 sous-clés : **Buttons**, **Axes**, et **Switches**.
 
 ### <a name="button-labels"></a>Libellé des boutons
 
@@ -1117,7 +1117,7 @@ Les libellés doivent apparaître dans cet ordre sous la clé **Buttons** :
 
 ### <a name="axis-labels"></a>Libellés d’axes
 
-La clé **Axes** mappe chacune des positions de l’axe du tableau des axes de **RawGameController**avec un des libellés figurant dans [Énumération GameControllerButtonLabel](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel) conformément aux libellés des boutons. Reportez-vous à l’exemple figurant dans [Libellés de boutons](#button-labels).
+La clé **Axes** mappe chacune des positions de l’axe du tableau des axes de **RawGameController**avec un des libellés figurant dans [Énumération GameControllerButtonLabel](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel) conformément aux libellés des boutons. Reportez-vous à l’exemple figurant dans [Libellés de boutons](#button-labels).
 
 ### <a name="switch-labels"></a>Libellés de commutateurs
 
@@ -1345,8 +1345,8 @@ Windows Registry Editor Version 5.00
 "Invert" = dword:00000000
 ```
 
-## <a name="see-also"></a>Voir aussi
+## <a name="see-also"></a>Articles associés
 
-* [Windows.Gaming.Input Namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input)
-* [Windows.Gaming.Input.Custom Namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom)
+* [Espace de noms Windows. Gaming. Input](https://docs.microsoft.com/uwp/api/windows.gaming.input)
+* [Espace de noms Windows. Gaming. Input. Custom](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom)
 * [Fichiers INF](https://docs.microsoft.com/windows-hardware/drivers/install/inf-files)
