@@ -4,14 +4,14 @@ description: Cet article vous explique comment lire du contenu multimédia dans 
 title: Lire du contenu audio et vidéo avec MediaPlayer
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d2d95711196a9bf2ab113527e5fc8f44459dc3d
-ms.sourcegitcommit: d8ce1a25ac0373acafb394837eb5c0737f6efec8
+ms.openlocfilehash: a53c03c10089856cfd738a5c071c37502a34e9a5
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67486431"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683622"
 ---
 # <a name="play-audio-and-video-with-mediaplayer"></a>Lire du contenu audio et vidéo avec MediaPlayer
 
@@ -20,7 +20,7 @@ Cet article vous explique comment lire du contenu multimédia dans votre applica
 Cet article vous présente les fonctions **MediaPlayer** qu’une application standard de lecture de contenu multimédia utilise. Notez que **MediaPlayer** utilise la classe [**MediaSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaSource) en tant que conteneur pour l’ensemble des éléments multimédias. Cette classe vous permet de charger et de lire le contenu multimédia à partir de multiples sources différentes utilisant une interface unique, notamment les fichiers locaux, les flux de mémoire et les sources réseau. Il existe également des classes de niveau supérieur compatibles avec **MediaSource**, comme [**MediaPlaybackItem**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackItem) et [**MediaPlaybackList**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackList), qui fournissent des fonctions plus avancées comme des playlists et la capacité de gestion de sources multimédias avec plusieurs pistes audio, vidéo et de métadonnées. Pour plus d’informations sur **MediaSource** et les API associées, consultez la page [Éléments, playlists et pistes multimédias](media-playback-with-mediasource.md).
 
 > [!NOTE] 
-> Les éditions Windows 10 N et Windows 10 KN n’incluent pas les fonctionnalités multimédias nécessaires pour utiliser **MediaPlayer** pour la lecture. Ces fonctionnalités peuvent être installées manuellement. Pour plus d’informations, voir [Media Feature Pack pour les éditions Windows 10 N et Windows 10 KN](https://support.microsoft.com/en-us/help/3010081/media-feature-pack-for-windows-10-n-and-windows-10-kn-editions).
+> Les éditions Windows 10 N et Windows 10 KN n’incluent pas les fonctionnalités multimédias nécessaires pour utiliser **MediaPlayer** pour la lecture. Ces fonctionnalités peuvent être installées manuellement. Pour plus d’informations, voir [Media Feature Pack pour les éditions Windows 10 N et Windows 10 KN](https://support.microsoft.com/help/3010081/media-feature-pack-for-windows-10-n-and-windows-10-kn-editions).
 
 ## <a name="play-a-media-file-with-mediaplayer"></a>Lire un fichier multimédia avec MediaPlayer  
 La lecture de contenu multimédia de base avec **MediaPlayer** est très simple à implémenter. Tout d’abord, créez une nouvelle instance de la classe **MediaPlayer**. Votre application peut présenter plusieurs instances **MediaPlayer** actives simultanément. Ensuite, définissez la propriété [**Source**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.source) du lecteur sur un objet qui implémente l’interface [**IMediaPlaybackSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.IMediaPlaybackSource), comme un objet [**MediaSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaSource), un objet [**MediaPlaybackItem**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackItem) ou un objet [**MediaPlaybackList**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackList). Dans cet exemple, un objet **MediaSource** est créé à partir d’un fichier dans le stockage local de l’application, puis un objet **MediaPlaybackItem** est créé à partir de la source, puis affecté à la propriété **Source** du lecteur.
@@ -33,8 +33,8 @@ Lorsque vous avez terminé d’utiliser une instance **MediaPlayer** sur l’app
 
 [!code-cs[CloseMediaPlayer](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetCloseMediaPlayer)]
 
-## <a name="use-mediaplayerelement-to-render-video-in-xaml"></a>Utiliser MediaPlayerElement afin d’afficher du contenu vidéo dans XAML
-Vous pouvez lire du contenu multimédia dans une instance **MediaPlayer** sans l’afficher au format XAML, mais de nombreuses applications de lecture de contenus multimédias sont définies pour ce type d’affichage. Pour ce faire, utilisez le contrôle léger [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement). Tout comme **MediaElement**, **MediaPlayerElement** vous permet de spécifier si les contrôles intégrés de transport doivent être affichés.
+## <a name="use-mediaplayerelement-to-render-video-in-xaml"></a>Utiliser MediaPlayerElement afin d’afficher du contenu vidéo en XAML
+Vous pouvez lire du contenu multimédia dans une instance **MediaPlayer** sans l’afficher au format XAML, mais de nombreuses applications de lecture de contenus multimédias sont définies pour ce type d’affichage. Pour ce faire, utilisez le contrôle léger [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement). Tout comme **MediaElement**, **MediaPlayerElement** vous permet de spécifier si les contrôles de transport intégrés doivent être affichés.
 
 [!code-xml[MediaPlayerElementXAML](./code/MediaPlayer_RS1/cs/MainPage.xaml#SnippetMediaPlayerElementXAML)]
 
@@ -104,7 +104,7 @@ Ensuite, déclarez un objet **Rect** qui stockera le rectangle source actuel de 
 
 [!code-cs[DeclareSourceRect](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetDeclareSourceRect)]
 
-Le gestionnaire **ManipulationDelta** ajuste la mise à l’échelle ou la translation du rectangle de zoom. Si la valeur delta de mise à l’échelle est différente de 1, cela signifie que l’utilisateur à effectuer un pincement. Si la valeur est supérieure à 1, le rectangle source doit être réduit pour la prise en charge du zoom dans le contenu. Si la valeur est inférieure à 1, le rectangle source doit être agrandi pour la prise en charge du zoom arrière dans le contenu. Avant la définition des nouvelles valeurs de mise à l’échelle, le rectangle obtenu est examiné afin de garantir qu’il s’intègre parfaitement dans les limites (0,0,1,1).
+Le gestionnaire **ManipulationDelta** ajuste la mise à l’échelle ou la translation du rectangle de zoom. Si la valeur delta de mise à l’échelle est différente de 1, cela signifie que l’utilisateur à effectuer un pincement. Si la valeur est supérieure à 1, le rectangle source doit être réduit pour la prise en charge du zoom dans le contenu. Si la valeur est inférieure à 1, le rectangle source doit être agrandi pour la prise en charge du zoom arrière dans le contenu. Avant de définir les nouvelles valeurs de mise à l’échelle, le rectangle obtenu est examiné afin de garantir qu’il s’intègre parfaitement dans les limites (0,0,1,1).
 
 Si la valeur de mise à l’échelle est 1, l’entrée de translation est traitée. Le rectangle est simplement translaté selon la division du nombre de pixels de l’entrée par la valeur de largeur et de hauteur du contrôle. Là encore, le rectangle obtenu est examiné afin de garantir qu’il s’intègre parfaitement dans les limites (0,0,1,1).
 
@@ -112,7 +112,7 @@ Enfin, l’élément [**NormalizedSourceRect**](https://docs.microsoft.com/uwp/a
 
 [!code-cs[ManipulationDelta](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetManipulationDelta)]
 
-Dans le gestionnaire d’événement [**DoubleTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.doubletapped), le rectangle source est redéfini sur (0,0,1,1) pour rétablir l’affichage de l’intégralité de la vidéo.
+Dans le gestionnaire d’événements [**DoubleTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.doubletapped), le rectangle source est redéfini sur (0,0,1,1) pour rétablir l’affichage de l’intégralité de la vidéo.
 
 [!code-cs[DoubleTapped](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetDoubleTapped)]
 
@@ -143,7 +143,7 @@ L’exemple suivant vous explique l’utilisation d’une classe **MediaTimeline
 
 [!code-cs[SetTimelineController](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSetTimelineController)]
 
-**Attention** La classe [**MediaPlaybackCommandManager**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackCommandManager) procure une intégration automatique entre **MediaPlayer** et les contrôles de transport de média système, mais cette intégration automatique ne peut pas être utilisée avec des lecteurs multimédias contrôlés avec une classe **MediaTimelineController**. Par conséquent, vous devez désactiver le gestionnaire de commande du lecteur multimédia avant de définir son contrôleur de chronologie. Cela entraîne une exception est levée avec le message suivant : « Attachement Media chronologie contrôleur est bloqué en raison de l’état actuel de l’objet. » Pour plus d’informations sur l’intégration des lecteurs multimédias avec les contrôles de transport de média système, consultez la page [Intégrer avec les contrôles de transport de média système](integrate-with-systemmediatransportcontrols.md). Si vous utilisez une classe **MediaTimelineController**, vous pouvez toujours contrôler manuellement les contrôles de transport de média système. Pour plus d’informations, consultez la page [Contrôles de transport de média système](system-media-transport-controls.md).
+**Attention** La classe [**MediaPlaybackCommandManager**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackCommandManager) procure une intégration automatique entre **MediaPlayer** et les contrôles de transport de média système, mais cette intégration automatique ne peut pas être utilisée avec des lecteurs multimédias contrôlés avec une classe **MediaTimelineController**. Par conséquent, vous devez désactiver le gestionnaire de commande du lecteur multimédia avant de définir son contrôleur de chronologie. À défaut, une exception sera transmise avec un message vous informant du blocage de l’association du contrôleur de chronologie de médias en raison de l’état actuel de l’objet. Pour plus d’informations sur l’intégration des lecteurs multimédias avec les contrôles de transport de média système, consultez la page [Intégrer avec les contrôles de transport de média système](integrate-with-systemmediatransportcontrols.md). Si vous utilisez une classe **MediaTimelineController**, vous pouvez toujours contrôler manuellement les contrôles de transport de média système. Pour plus d’informations, consultez la page [Contrôles de transport de média système](system-media-transport-controls.md).
 
 Une fois que vous avez associé une classe **MediaTimelineController** à un ou plusieurs lecteurs multimédias, vous pouvez contrôler l’état de lecture à l’aide des méthodes exposées par le contrôleur. L’exemple suivant appelle [**Start**](https://docs.microsoft.com/uwp/api/windows.media.mediatimelinecontroller.start) pour démarrer la lecture de l’ensemble des lecteurs multimédias associés au début du contenu multimédia.
 
@@ -189,7 +189,7 @@ Notez que si la valeur de décalage d’un lecteur correspond à une position de
 ## <a name="play-spherical-video-with-mediaplayer"></a>Lire du contenu vidéo sphérique avec MediaPlayer
 À partir de Windows 10, version 1703, **MediaPlayer** prend en charge la projection équirectangulaire pour la lecture de contenu vidéo sphérique. Un contenu vidéo sphérique ne diffère pas d’un contenu vidéo 2D standard, étant donné que **MediaPlayer** restitue cette vidéo aussi longtemps que l’encodage vidéo est pris en charge. Dans le cas d’une vidéo sphérique contenant une balise de métadonnées qui indique que la vidéo utilise une projection équirectangulaire, **MediaPlayer** peut restituer la vidéo en utilisant un champ de vision et une orientation de vue spécifiés. Cette approche autorise les scénarios tels que la lecture d’une vidéo de réalité virtuelle avec un casque ou des lunettes d’affichage ou le simple défilement d’un contenu vidéo sphérique à l’aide d’une entrée à la souris ou au clavier.
 
-Pour lire un contenu vidéo sphérique, suivez la procédure de lecture d’un contenu vidéo précédemment décrite dans cet article. L’une étape supplémentaire consiste à inscrire un gestionnaire pour le [ **MediaPlayer.MediaOpened** ](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer#Windows_Media_Playback_MediaPlayer_MediaOpened) événement. Cet événement vous permet d’activer et de contrôler les paramètres de lecture de contenu vidéo sphérique.
+Pour lire un contenu vidéo sphérique, suivez la procédure de lecture d’un contenu vidéo précédemment décrite dans cet article. La première étape consiste à inscrire un gestionnaire pour l’événement [**MediaPlayer. MediaOpened**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer#Windows_Media_Playback_MediaPlayer_MediaOpened) . Cet événement vous permet d’activer et de contrôler les paramètres de lecture de contenu vidéo sphérique.
 
 [!code-cs[OpenSphericalVideo](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetOpenSphericalVideo)]
 
@@ -228,14 +228,14 @@ Une fois que tous les objets nécessaires ont été instanciés, la méthode **C
 
 Pour plus d’informations sur Win2D, consultez le [référentiel GitHub Win2D](https://github.com/Microsoft/Win2D). Pour tester l’exemple de code ci-dessus, vous devrez ajouter le package NuGet Win2D à votre projet en suivant les instructions ci-après.
 
-**Pour ajouter le package NuGet de Win2D à votre projet d’effet**
+**Pour ajouter le package NuGet Win2D à votre projet Effect**
 
 1.  Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur votre projet, puis sélectionnez **Gérer les packages NuGet**.
-2.  En haut de la fenêtre, sélectionnez l’onglet **Explorer**.
+2.  Dans la partie supérieure de la fenêtre, sélectionnez l’onglet **Parcourir**.
 3.  Dans la zone de recherche, entrez **Win2D**.
 4.  Sélectionnez **Win2D.uwp**, puis **Installer** dans le volet droit.
-5.  La boîte de dialogue **Examiner les modifications** vous indique le package à installer. Cliquez sur **OK**.
-6.  Acceptez la licence de package.
+5.  La boîte de dialogue **Examiner les modifications** vous indique le package à installer. Cliquez sur **OK**.
+6.  Acceptez la licence du package.
 
 ## <a name="detect-and-respond-to-audio-level-changes-by-the-system"></a>Détecter les changements de niveau audio initiés par le système et y répondre
 À partir de Windows 10, version 1803, votre application peut détecter quand le système baisse ou désactive le niveau audio d’un objet **MediaPlayer** en cours de lecture. Par exemple, le système peut baisser, ou « atténuer », le niveau de lecture audio lorsqu’une alarme sonne. Le système désactive votre application lorsqu’elle passe à l’arrière-plan si la fonctionnalité *backgroundMediaPlayback* n’a pas été déclarée dans le manifeste de l’application. La classe [**AudioStateMonitor**](https://docs.microsoft.comuwp/api/windows.media.audio.audiostatemonitor) vous permet de vous inscrire pour recevoir un événement lorsque le système modifie le volume d’un flux audio. Accédez à la propriété **AudioStateMonitor** d’un objet **MediaPlayer** et enregistrez un gestionnaire pour l’événement [**SoundLevelChanged**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor.soundlevelchanged) afin d’être averti lorsque le niveau audio de cet objet **MediaPlayer** est modifié par le système.
@@ -258,10 +258,10 @@ L’utilisateur peut décider de suspendre ou de continuer la lecture, même si 
 
 ## <a name="related-topics"></a>Rubriques connexes
 * [Lecture de contenu multimédia](media-playback.md)
-* [Assure le suivi, les sélections et les éléments multimédias](media-playback-with-mediasource.md)
-* [Intégrer avec les contrôles de Transport de supports de système](integrate-with-systemmediatransportcontrols.md)
-* [Créer, planifier et gérer les sauts de média](create-schedule-and-manage-media-breaks.md)
-* [Lire des médias dans l’arrière-plan](background-audio.md)
+* [Éléments multimédias, playlists et pistes](media-playback-with-mediasource.md)
+* [Intégration aux contrôles de transport des médias système](integrate-with-systemmediatransportcontrols.md)
+* [Créer, planifier et gérer des interruptions de média](create-schedule-and-manage-media-breaks.md)
+* [Lire le média en arrière-plan](background-audio.md)
 
 
 

@@ -3,14 +3,14 @@ title: Ajout de la prise en charge de Mes Contacts à une application
 description: Explique comment ajouter la prise en charge de mes contacts à une application et comment épingler et désépingler des contacts
 ms.date: 06/28/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ba05e958a8746874becd4cfa17ec0e8f255ff00
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 9e58334dafa35004080b7ed109fa90e253399040
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74255142"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683477"
 ---
 # <a name="adding-my-people-support-to-an-application"></a>Ajout de la prise en charge de Mes Contacts à une application
 
@@ -23,15 +23,15 @@ La fonctionnalité Mes contacts permet aux utilisateurs d’épingler les contac
 
 ## <a name="requirements"></a>Conditions préalables
 
-+ Windows 10 et Microsoft Visual Studio 2019. Pour en savoir plus sur l’installation, voir [Prendre en main Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
-+ Connaissances de base de C# ou d’un langage de programmation orienté objet similaire. Pour vous familiariser avec C#, voir [Créer une application « Hello, world »](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
++ Windows 10 et Microsoft Visual Studio 2019. Pour en savoir plus sur l’installation, voir [Prendre en main Visual Studio](https://docs.microsoft.com/windows/uwp/get-started/get-set-up).
++ Connaissances de base de C# ou d’un langage de programmation orienté objet similaire. Pour vous familiariser avec C#, voir [Créer une application « Hello, world »](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d'ensemble
 
 Il y a trois choses à faire pour activer votre application afin d’utiliser la fonctionnalité Mes contacts :
 
-1. [Déclarez la prise en charge du contrat d’activation shareTarget dans le manifeste de votre application.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
-2. [Annotez les contacts que les utilisateurs peuvent partager avec votre application.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
+1. [Déclarez la prise en charge du contrat d’activation shareTarget dans le manifeste de votre application.](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
+2. [Annotez les contacts que les utilisateurs peuvent partager avec votre application.](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
 3.  Prendre en charge plusieurs instances de votre application en cours d’exécution en même temps. Les utilisateurs doivent pouvoir interagir avec une version complète de votre application lors de son utilisation dans un volet de contact.  Ils peuvent même l’utiliser dans plusieurs volets de contact à la fois.  Pour ce faire, votre application doit être en mesure d’exécuter plusieurs vues simultanément. Pour savoir comment procéder, consultez l’article [« afficher plusieurs vues d’une application »](https://docs.microsoft.com/windows/uwp/design/layout/show-multiple-views).
 
 Lorsque vous avez terminé, votre application s’affiche dans le volet de contact pour les contacts annotés.
@@ -172,7 +172,7 @@ override protected void OnActivated(IActivatedEventArgs e)
 }
 ```
 
-Une fois votre application activée avec ce contrat, elle reçoit un [objet ContactPanelActivatedEventArgs](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.activation.contactpanelactivatedeventargs).  Celui-ci contient l’ID du contact avec lequel votre application tente d’interagir lors du lancement, et un objet [ContactPanel](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.contactpanel). Vous devez conserver une référence à cet objet ContactPanel, ce qui vous permettra d’interagir avec le volet.
+Une fois votre application activée avec ce contrat, elle reçoit un [objet ContactPanelActivatedEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.contactpanelactivatedeventargs).  Celui-ci contient l’ID du contact avec lequel votre application tente d’interagir lors du lancement, et un objet [ContactPanel](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactpanel). Vous devez conserver une référence à cet objet ContactPanel, ce qui vous permettra d’interagir avec le volet.
 
 L’objet ContactPanel comporte deux événements que votre application doit écouter :
 + L’événement **LaunchFullAppRequested** est envoyé dès que l’utilisateur appelle l’élément d’interface utilisateur qui demande que votre application complète soit lancée dans sa propre fenêtre.  Votre application est chargée de se lancer elle-même, en transmettant tout le contexte nécessaire.  Vous êtes libre de le faire comme bon vous semble (par exemple, via le lancement du protocole).
@@ -182,13 +182,13 @@ L’objet ContactPanel vous permet également de définir la couleur d’arrièr
 
 ## <a name="supporting-notification-badging"></a>Prise en charge des badges de notification
 
-Si vous souhaitez que les contacts épinglés à la barre des tâches reçoivent un badge lors de l’arrivée de nouvelles notifications liées à cette personne depuis votre application, vous devez inclure le paramètre **hint-personnes** dans vos [notifications toast](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts) et vos [Notifications de mes contacts](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-notifications) expressives.
+Si vous souhaitez que les contacts épinglés à la barre des tâches reçoivent un badge lors de l’arrivée de nouvelles notifications liées à cette personne depuis votre application, vous devez inclure le paramètre **hint-personnes** dans vos [notifications toast](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts) et vos [Notifications de mes contacts](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/my-people-notifications) expressives.
 
 ![Badge de notification de contacts](images/my-people-badging.png)
 
 Pour qu'un badge soit appliqué à une contact, le nœud toast de niveau supérieur doit inclure le paramètre hint-people pour indiquer le contact expéditeur ou associé. Ce paramètre peut prendre l'une des valeurs suivantes :
-+ **Adresse de messagerie** 
-    + Exemple mailto:johndoe@mydomain.com
++ **Adresse e-mail** 
+    + Exemple [https://blogs.technet.microsoft.com/askperf/2008/11/18/disabling-unnecessary-services-a-word-to-the-wise/](mailto:johndoe@mydomain.com)
 + **Numéro de téléphone** 
     + Exemple tél : 888-888-8888
 + **ID distant** 
@@ -206,12 +206,12 @@ Voici un exemple de procédure pour voir si une notification toast est liée à 
 ```
 
 > [!NOTE]
-> Si votre application utilise les [API ContactStore](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.contactstore) et la propriété [StoredContact.RemoteId](https://docs.microsoft.com/en-us/uwp/api/Windows.Phone.PersonalInformation.StoredContact.RemoteId) pour lier des contacts stockés sur le PC avec des contacts stockés à distance, il est essentiel que la valeur de la propriété RemoteID soit stable et unique. Cela signifie que l’ID distant doit identifier de manière cohérente un compte d’utilisateur unique et doit contenir une balise unique afin de garantir qu’il n’est pas en conflit avec les ID distants des autres contacts sur le PC, y compris les contacts qui appartiennent à d’autres applications.
+> Si votre application utilise les [API ContactStore](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactstore) et la propriété [StoredContact.RemoteId](https://docs.microsoft.com/uwp/api/Windows.Phone.PersonalInformation.StoredContact.RemoteId) pour lier des contacts stockés sur le PC avec des contacts stockés à distance, il est essentiel que la valeur de la propriété RemoteID soit stable et unique. Cela signifie que l’ID distant doit identifier de manière cohérente un compte d’utilisateur unique et doit contenir une balise unique afin de garantir qu’il n’est pas en conflit avec les ID distants des autres contacts sur le PC, y compris les contacts qui appartiennent à d’autres applications.
 > S’il n’est pas garanti que les ID à distance utilisés par votre application soient stables et uniques, vous pouvez utiliser la classe RemoteIdHelper indiquée plus loin dans cette rubrique afin d’ajouter une balise unique à l’ensemble de vos ID distants avant de les ajouter au système. Vous pouvez également choisir de ne pas utiliser la propriété RemoteID et de créer à la place une propriété personnalisée étendue dans laquelle stocker les ID distants de vos contacts.
 
 ## <a name="the-pinnedcontactmanager-class"></a>Classe PinnedContactManager
 
-[PinnedContactManager](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager) est utilisée pour gérer les contacts épinglés à la barre des tâches. Cette classe vous permet d’épingler et de désépingler des contacts, de déterminer si un contact est épinglé et si l’épinglage sur une surface spécifique est pris en charge par le système sur lequel votre application s’exécute.
+[PinnedContactManager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager) est utilisée pour gérer les contacts épinglés à la barre des tâches. Cette classe vous permet d’épingler et de désépingler des contacts, de déterminer si un contact est épinglé et si l’épinglage sur une surface spécifique est pris en charge par le système sur lequel votre application s’exécute.
 
 Vous pouvez récupérer l’objet PinnedContactManager à l’aide de la méthode **GetDefault** :
 
@@ -249,7 +249,7 @@ async Task PinMultipleContacts(Contact[] contacts)
 > [!Note]
 > Il n’existe actuellement aucune opération permettant de désépingler des contacts.
 
-**Remarque :** 
+**Remarque :** 
 
 ## <a name="see-also"></a>Articles associés
 + [Partage de Mes Contacts](my-people-sharing.md)
@@ -257,5 +257,5 @@ async Task PinMultipleContacts(Contact[] contacts)
 + [Vidéo Channel 9 sur l’ajout du support technique de mes personnes à une application](https://channel9.msdn.com/Events/Build/2017/P4056)
 + [Exemple d’intégration de My People](https://github.com/tonyPendolino/MyPeopleBuild2017)
 + [Exemple de carte de visite](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
-+ [Documentation de la classe PinnedContactManager](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager)
-+ [Connecter votre application à des actions sur une carte de visite](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/integrating-with-contacts)
++ [Documentation de la classe PinnedContactManager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager)
++ [Connecter votre application à des actions sur une carte de visite](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/integrating-with-contacts)

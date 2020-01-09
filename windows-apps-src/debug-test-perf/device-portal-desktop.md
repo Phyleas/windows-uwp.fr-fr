@@ -6,23 +6,23 @@ ms.date: 02/06/2019
 ms.topic: article
 keywords: Windows 10, UWP, portail des appareils
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f25e882f53bb4f673aa5003495f37d553208721
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: 73f7e827c0ec8ca289d3523da06601de978a91d2
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282006"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75681970"
 ---
 # <a name="device-portal-for-windows-desktop"></a>Portail d’appareil pour Windows Desktop
 
-Le portail d’appareil Windows vous permet d’afficher les informations de diagnostic et d’interagir avec votre ordinateur de bureau via une connexion HTTP, dans une fenêtre de votre navigateur. Vous pouvez utiliser Device Portal pour :
+Le portail d’appareil Windows vous permet d’afficher les informations de diagnostic et d’interagir avec votre ordinateur de bureau via une connexion HTTP, dans une fenêtre de votre navigateur. Vous pouvez utiliser le portail d’appareil pour :
 - voir et manipuler une liste de processus en cours d’exécution ;
 - installer, supprimer, démarrer et arrêter des applications ;
 - modifier les profils de connexion Wi-Fi, afficher la force du signal et voir ipconfig ;
 - afficher les graphiques d’utilisation du processeur, de la mémoire, des E/S, du réseau et du GPU en temps réel ;
 - collecter les vidages de processus ;
 - collecter les traces ETW ; 
-- manipuler le stockage isolé des applications de version test chargée.
+- Manipuler le stockage isolé des applications de version test chargée
 
 ## <a name="set-up-device-portal-on-windows-desktop"></a>Configurer le portail d’appareil sous Windows Desktop
 
@@ -62,7 +62,7 @@ Le portail d’appareil sur Windows Desktop propose les ensembles de pages stan
 - Explorateur de fichiers
 - Processus en cours d’exécution
 - Performances
-- Déboguer
+- Journal de débogage
 - Suivi d’événements pour Windows (ETW)
 - Suivi des performances
 - Gestionnaire de périphériques
@@ -71,19 +71,19 @@ Le portail d’appareil sur Windows Desktop propose les ensembles de pages stan
 - Fonctionnalités
 - Réalité mixte
 - Débogueur d’installation en continu
-- Emplacement
+- Services de localisation
 - Vide
 
 ## <a name="more-device-portal-options"></a>Autres options du portail d’appareil
 
 ### <a name="registry-based-configuration-for-device-portal"></a>Configuration basée sur le registre pour le portail d’appareil
 
-Si vous souhaitez sélectionner des numéros de port pour Device Portal (par exemple, 80 et 443), vous pouvez définir les clés de Registre suivantes :
+Si vous souhaitez sélectionner des numéros de port pour le portail d’appareil (par exemple, 80 et 443), vous pouvez définir les clés de Registre suivantes :
 
 - Sous `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WebManagement\Service`
     - `UseDynamicPorts`: DWORD requis. Définissez ce paramètre sur 0 pour conserver les numéros de port que vous avez choisis.
     - `HttpPort`: DWORD requis. Contient le numéro de port que le portail d’appareil va écouter pour les connexions HTTP.    
-    - `HttpsPort`: DWORD requis. Contient le numéro de port que Device Portal va écouter pour les connexions HTTPS.
+    - `HttpsPort`: DWORD requis. Contient le numéro de port que le portail d’appareil va écouter pour les connexions HTTPS.
     
 Dans le chemin d’accès de la même clé de Registre, vous pouvez également désactiver l’obligation d’authentification :
 - `UseDefaultAuthorizer` - `0` pour désactivé, `1` pour activé.  
@@ -103,7 +103,7 @@ Dans le chemin d’accès de la même clé de Registre, vous pouvez également d
     - Vous pouvez ainsi installer votre propre certificat SSL pour corriger la page d’avertissement SSL qui s’affiche généralement dans le portail d’appareil. 
 - `-Debug <various options for authentication, port selection, and tracing level>`
     - Exécutez une version autonome du portail d’appareil avec une configuration spécifique et des messages de débogage visibles. Cela est particulièrement utile pour la création d’un [plug-in empaqueté](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-plugin). 
-    - Pour plus d’informations sur cette exécution en tant que système pour tester complètement votre plug-in empaqueté, voir [l’article du MSDN Magazine](https://msdn.microsoft.com/en-us/magazine/mt826332.aspx).
+    - Pour plus d’informations sur cette exécution en tant que système pour tester complètement votre plug-in empaqueté, voir [l’article du MSDN Magazine](https://msdn.microsoft.com/magazine/mt826332.aspx).
 
 ## <a name="common-errors-and-issues"></a>Erreurs et problèmes courants
 
@@ -129,7 +129,7 @@ Vous pouvez recevoir cette erreur si les packages de développement ne sont pas 
 
 Vous pouvez obtenir cette erreur si vous utilisez une connexion Internet facturée à l’accès. Vous ne pourrez pas télécharger les packages de développement sur une connexion limitée.
 
-## <a name="see-also"></a>Voir également
+## <a name="see-also"></a>Articles associés
 
 * [Vue d’ensemble du portail de périphériques Windows](device-portal.md)
 * [Informations de référence sur l’API principale du portail des appareils](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

@@ -5,12 +5,12 @@ ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 41f1c19f62482dc28bc067adb2e60b2c6fafa509
-ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
+ms.openlocfilehash: 1c106df0efc7952895f882ec5c05cc1af52bcfac
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73061892"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683497"
 ---
 # <a name="my-people-notifications"></a>Notifications de Mes Contacts
 
@@ -20,8 +20,8 @@ Les notifications de mes contacts offrent une nouvelle façon pour les utilisate
 
 ## <a name="requirements"></a>Conditions préalables
 
-+ Windows 10 et Microsoft Visual Studio 2019. Pour en savoir plus sur l’installation, voir [Prendre en main Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
-+ Connaissances de base de C# ou d’un langage de programmation orienté objet similaire. Pour vous familiariser avec C#, voir [Créer une application « Hello, world »](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
++ Windows 10 et Microsoft Visual Studio 2019. Pour en savoir plus sur l’installation, voir [Prendre en main Visual Studio](https://docs.microsoft.com/windows/uwp/get-started/get-set-up).
++ Connaissances de base de C# ou d’un langage de programmation orienté objet similaire. Pour vous familiariser avec C#, voir [Créer une application « Hello, world »](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
 
 ## <a name="how-it-works"></a>Fonctionnement
 
@@ -49,7 +49,7 @@ Cela indique que la notification toast doit être traitée comme une notificatio
 
 Le nœud de l’image à l’intérieur de la liaison doit inclure les paramètres suivants :
 
-+ **sources**
++ **src**
     + L’URI de la ressource. Il peut s’agir d’un URI web HTTP/HTTPS, d’un URI msappx ou d’un chemin d’accès à un fichier local.
 + **SpriteSheet-SRC**
     + L’URI de la ressource. Il peut s’agir d’un URI web HTTP/HTTPS, d’un URI msappx ou d’un chemin d’accès à un fichier local. Requis uniquement pour les animations Spritesheet.
@@ -59,7 +59,7 @@ Le nœud de l’image à l’intérieur de la liaison doit inclure les paramètr
     + Images par seconde (FPS). Requis uniquement pour les animations Spritesheet. Seules les valeurs de 1 à 120 sont prises en charge.
 + **spritesheet-startingFrame**
     + Numéro de l’image pour commencer l’animation. Uniquement utilisé pour les animations Spritesheet et a pour valeur par défaut 0 si le numéro n’est pas indiqué.
-+ **Appuyez**
++ **alt**
     + Chaîne de texte utilisée pour la narration du lecteur d’écran.
 
 > [!NOTE]
@@ -67,7 +67,7 @@ Le nœud de l’image à l’intérieur de la liaison doit inclure les paramètr
 
 En outre, le nœud toast de niveau supérieur doit inclure le paramètre **hint-people** pour spécifier le contact d’envoi. Ce paramètre peut prendre les valeurs suivantes :
 
-+ **Adresse de messagerie** 
++ **Adresse e-mail** 
     + Exemple ` mailto:johndoe@mydomain.com `
 + **Numéro de téléphone** 
     + Exemple tél : 888-888-8888
@@ -75,7 +75,7 @@ En outre, le nœud toast de niveau supérieur doit inclure le paramètre **hint-
     + Exemple remoteid:1234
 
 > [!NOTE]
-> Si votre application utilise les [API ContactStore](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.contactstore) et la propriété [StoredContact.RemoteId](https://docs.microsoft.com/en-us/uwp/api/Windows.Phone.PersonalInformation.StoredContact.RemoteId) pour lier des contacts stockés sur le PC avec des contacts stockés à distance, il est essentiel que la valeur de la propriété RemoteID soit stable et unique. Cela signifie que l’ID distant doit identifier de manière cohérente un compte d’utilisateur unique et doit contenir une balise unique afin de garantir qu’il n’est pas en conflit avec les ID distants des autres contacts sur le PC, y compris les contacts qui appartiennent à d’autres applications.
+> Si votre application utilise les [API ContactStore](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactstore) et la propriété [StoredContact.RemoteId](https://docs.microsoft.com/uwp/api/Windows.Phone.PersonalInformation.StoredContact.RemoteId) pour lier des contacts stockés sur le PC avec des contacts stockés à distance, il est essentiel que la valeur de la propriété RemoteID soit stable et unique. Cela signifie que l’ID distant doit identifier de manière cohérente un compte d’utilisateur unique et doit contenir une balise unique afin de garantir qu’il n’est pas en conflit avec les ID distants des autres contacts sur le PC, y compris les contacts qui appartiennent à d’autres applications.
 > S’il n’est pas garanti que les ID distants utilisés par votre application soient stables et uniques, vous pouvez utiliser la [classe RemoteIdHelper](https://docs.microsoft.com/previous-versions/windows/apps/jj207024(v=vs.105)#BKMK_UsingtheRemoteIdHelperclass) afin d’ajouter une balise unique à l’ensemble de vos ID distants avant de les ajouter au système. Vous pouvez également choisir de ne pas utiliser du tout la propriété RemoteID et de créer à la place une propriété personnalisée étendue dans laquelle stocker les ID distants de vos contacts.
 
 Outre la deuxième liaison et sa charge utile, vous devez inclure une autre charge utile dans la première liaison pour la notification toast de secours. La notification utilisera celle-ci si elle est forcée de revenir à un toast régulier (expliqué plus en détail à la [fin de cet article](/windows/uwp/contacts-and-calendar/my-people-notifications#falling-back-to-toast)).
@@ -93,7 +93,7 @@ Voici un exemple montrant comment créer une notification de mes contacts avec u
             <text>Add your fallback toast content here</text>
         </binding>
         <binding template="ToastGeneric" experienceType="shoulderTap">
-            <image src="https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/images/shoulder-tap-static-payload.png"/>
+            <image src="https://docs.microsoft.com/windows/uwp/contacts-and-calendar/images/shoulder-tap-static-payload.png"/>
         </binding>
     </visual>
 </toast>
@@ -113,8 +113,8 @@ Voici un exemple montrant comment créer une notification avec une charge utile 
             <text>Add your fallback toast content here</text>
         </binding>
         <binding template="ToastGeneric" experienceType="shoulderTap">
-            <image src="https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/images/shoulder-tap-pizza-static.png"
-                spritesheet-src="https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/images/shoulder-tap-pizza-spritesheet.png"
+            <image src="https://docs.microsoft.com/windows/uwp/contacts-and-calendar/images/shoulder-tap-pizza-static.png"
+                spritesheet-src="https://docs.microsoft.com/windows/uwp/contacts-and-calendar/images/shoulder-tap-pizza-spritesheet.png"
                 spritesheet-height='80' spritesheet-fps='25' spritesheet-startingFrame='15'/>
         </binding>
     </visual>
@@ -154,4 +154,4 @@ Si une notification de mes contacts remplace une notification toast, la deuxièm
 + [Exemple de notifications My People](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/MyPeopleNotifications)
 + [Ajout de la prise en charge de mes contacts](my-people-support.md)
 + [Notifications de Toast adaptatif](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)
-+ [ToastNotification, classe](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastnotification)
++ [ToastNotification, classe](https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastnotification)

@@ -1,22 +1,22 @@
 ---
 ms.assetid: 40122343-1FE3-4160-BABE-6A2DD9AF1E8E
 title: Optimiser l’accès aux fichiers
-description: Créez des applications UWP qui accèdent au système de fichiers efficacement, en évitant les problèmes de performances dus à la latence de disque et aux cycles de la mémoire et du processeur.
+description: Créez des applications de plateforme Windows universelle (UWP) qui accèdent au système de fichiers efficacement, en évitant les problèmes de performances dus à la latence de disque et aux cycles de la mémoire et du processeur.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 176791388bc0d0a5ac33659f6744852a2c857187
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 3114bc7a86f7f7f4d22c69c814735c146352efbd
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339595"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75681950"
 ---
 # <a name="optimize-file-access"></a>Optimiser l’accès aux fichiers
 
 
-Créez des applications UWP qui accèdent au système de fichiers efficacement, en évitant les problèmes de performances dus à la latence de disque et aux cycles de la mémoire et du processeur.
+Créez des applications de plateforme Windows universelle (UWP) qui accèdent au système de fichiers efficacement, en évitant les problèmes de performances dus à la latence de disque et aux cycles de la mémoire et du processeur.
 
 Lorsque vous souhaitez accéder à une grande collection de fichiers et aux valeurs de propriétés autres que les propriétés courantes Name, FileType et Path, vous pouvez y accéder en créant [**QueryOptions**](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.QueryOptions) et en appelant [**SetPropertyPrefetch**](https://docs.microsoft.com/uwp/api/windows.storage.search.queryoptions.setpropertyprefetch). La méthode **SetPropertyPrefetch** peut considérablement améliorer les performances des applications qui affichent une collection d’éléments obtenus à partir du système de fichiers, comme une collection d’images. Les exemples qui suivent montrent différentes manières d’accéder à des fichiers multiples.
 
@@ -236,6 +236,6 @@ Lorsque vous travaillez avec un grand nombre de flux simultanément, vous souhai
 
 Vous souhaiterez peut-être aussi éviter la mise en mémoire tampon si vous voulez bénéficier de lectures et d’écriture à faible latence sans avoir à lire de gros blocs du flux UWP sous-jacent. Par exemple, des lectures et écritures à faible latence peuvent être souhaitables si vous utilisez le flux pour des communications réseau.
 
-Dans une application de conversation, vous pourriez utiliser un flux sur une interface réseau pour envoyer et recevoir des messages. Dans ce cas, vous souhaiterez envoyer les messages dès qu’ils sont prêts, sans attendre que la mémoire tampon soit pleine. Si vous affectez la valeur 0 à la taille de mémoire tampon lors de l’appel des méthodes d’extension [**AsStreamForRead**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions.asstreamforread?view=dotnet-uwp-10.0), [**AsStreamForWrite**](https://docs.microsoft.com/en-us/dotnet/api/system.io.windowsruntimestreamextensions.asstreamforwrite?view=dotnet-uwp-10.0) et [**AsStream**](https://docs.microsoft.com/en-us/dotnet/api/system.io.windowsruntimestreamextensions.asstream?view=dotnet-uwp-10.0), l’adaptateur résultant n’allouera pas de mémoire tampon, et tous les appels manipuleront directement le flux UWP sous-jacent.
+Dans une application de conversation, vous pourriez utiliser un flux sur une interface réseau pour envoyer et recevoir des messages. Dans ce cas, vous souhaiterez envoyer les messages dès qu’ils sont prêts, sans attendre que la mémoire tampon soit pleine. Si vous affectez la valeur 0 à la taille de mémoire tampon lors de l’appel des méthodes d’extension [**AsStreamForRead**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions.asstreamforread?view=dotnet-uwp-10.0), [**AsStreamForWrite**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions.asstreamforwrite?view=dotnet-uwp-10.0) et [**AsStream**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions.asstream?view=dotnet-uwp-10.0), l’adaptateur résultant n’allouera pas de mémoire tampon, et tous les appels manipuleront directement le flux UWP sous-jacent.
 
 
