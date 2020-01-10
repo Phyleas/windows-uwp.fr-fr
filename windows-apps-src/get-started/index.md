@@ -6,12 +6,12 @@ ms.date: 03/23/2018
 ms.topic: article
 keywords: bien démarrer, windows 10, uwp, xaml, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: 7439d437dda69bf235bd8681751617b2982be394
-ms.sourcegitcommit: 2d3a7d18edf2715987b26d1b5341ec88eefc99ec
+ms.openlocfilehash: 4f78bdfec6c6e06ffc542bc7741b875e952bc169
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74898522"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684888"
 ---
 # <a name="get-started-with-windows-10-apps"></a>Bien démarrer avec les applications Windows 10
 
@@ -47,7 +47,7 @@ ms.locfileid: "74898522"
                         </div>
                     </div>
                     <div class="cardText">
-                    <h3>Préparation</h3>
+                    <h3>Se préparer</h3>
                     <p>Visual Studio Community et le kit SDK Windows 10 vous fournissent tout ce dont vous avez besoin pour générer des applications remarquables, gratuitement !</p>
                     <ul>
                         <li><a href="//docs.microsoft.com/windows/uwp/get-started/get-set-up">Télécharger les outils et le kit SDK</a></li>
@@ -67,7 +67,7 @@ ms.locfileid: "74898522"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Commencer le codage</h3>
+                        <h3>Commencer à développer</h3>
                         <p>Que vous soyez un développeur expérimenté ou qu’il s’agisse de votre première génération d’application, bénéficiez d’une expérience pratique avec la plateforme et la documentation Windows 10.</p>
                         <ul>
                             <li><a href="//docs.microsoft.com/windows/uwp/get-started/create-uwp-apps">Commencer le codage</a></li>
@@ -110,7 +110,7 @@ ms.locfileid: "74898522"
                     </div>
                 </div>
                 <div class="cardText">
-                    <h3>Exemples</h3>
+                    <h3>exemples</h3>
                     <p>Bénéficiez d’une expérience directe avec la plateforme Windows 10 et découvrez les API en action.</p>
                     <br>
                     <p><a href="//docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples">Utilisation d’exemples d’applications UWP</a></p>
@@ -207,7 +207,7 @@ ms.locfileid: "74898522"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-                        <h3>Outils pour développeur</h3>
+                        <h3>Outils de développement</h3>
                         <p><a href="https://github.com/Microsoft/WindowsTemplateStudio/">Windows Template Studio</a></p>
                         <p><a href="//docs.microsoft.com/windows/uwpcommunitytoolkit/">Kit de ressources Communauté Windows</a></p>
                         <p><a href="//developer.microsoft.com/windows/downloads/virtual-machines">Machines virtuelles</a></p>
@@ -223,7 +223,7 @@ ms.locfileid: "74898522"
                 <div class="card">
                     <div class="cardText">
                         <h3>Vous débutez dans le développement ?</h3>
-                        <p><a href="//docs.microsoft.com/en-us/learn/browse/?products=windows&resource_type=module">Windows sur Microsoft Learn</a></p>
+                        <p><a href="//docs.microsoft.com/learn/browse/?products=windows&resource_type=module">Windows sur Microsoft Learn</a></p>
                         </div>
                     </div>
                 </div>

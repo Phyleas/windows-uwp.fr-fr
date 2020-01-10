@@ -34,7 +34,7 @@
               href: apps/desktop/modernize/visual-layer-in-desktop-apps.md
             - name: WPF
               href: apps/desktop/modernize/using-the-visual-layer-with-wpf.md
-            - name: "Windows\_Forms"
+            - name: Windows Forms
               href: apps/desktop/modernize/using-the-visual-layer-with-windows-forms.md
             - name: Win32
               href: apps/desktop/modernize/using-the-visual-layer-with-win32.md
@@ -64,7 +64,7 @@
               href: apps/desktop/modernize/modernize-wpf-tutorial-4.md
             - name: Créer un package et déployer avec MSIX
               href: apps/desktop/modernize/modernize-wpf-tutorial-5.md
-    - name: Système de conception Fluent
+    - name: Système Fluent Design
       href: apps/fluent-design-system.md
     - name: Accessibilité
       href: apps/accessibility.md
@@ -88,7 +88,7 @@
           href: python/scripting.md
         - name: Bien démarrer avec les bases de données
           href: python/databases.md
-        - name: FAQ
+        - name: Foire aux questions
           href: python/faqs.md
         - name: Ressources
           href: python/resources.md
@@ -96,8 +96,10 @@
       items:
         - name: Vue d’ensemble
           href: nodejs/index.yml
-        - name: Configurer votre environnement de développement
+        - name: Configuration avec WSL2 (Linux)
           href: nodejs/setup-on-wsl2.md
+        - name: Configuration avec Windows (débutants)
+          href: nodejs/setup-on-windows.md
         - name: Bien démarrer pour les débutants
           href: nodejs/beginners.md
         - name: Bien démarrer avec les frameworks web
