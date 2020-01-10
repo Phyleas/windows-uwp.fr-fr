@@ -3,15 +3,15 @@ title: Code adaptatif de version
 description: Utilisez la classe ApiInformation pour tirer parti des nouvelles API tout en conservant la compatibilité avec les versions précédentes
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.assetid: 3293e91e-6888-4cc3-bad3-61e5a7a7ab4e
 ms.localizationpriority: medium
-ms.openlocfilehash: f542c76d879881af296351ce51a803aa9986ecbb
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 2c03475c0c4007508a18c17645dbe99eeb7d6cb0
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359710"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75681980"
 ---
 # <a name="version-adaptive-code"></a>Code adaptatif de version
 
@@ -23,7 +23,7 @@ Pour obtenir des informations générales importantes sur ApiInformation, les co
 
 Vous utilisez la classe [Windows.Foundation.Metadata.ApiInformation](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation) dans une condition à l’intérieur de votre code pour tester la présence de l’API que vous voulez appeler. Cette condition est évaluée à chaque exécution de votre application, mais sa valeur est **true** uniquement sur les appareils sur lesquels l’API est présente et donc disponible pour un appel. Cela vous permet d’écrire du code adaptatif de version afin de créer des applications utilisant des API disponibles uniquement sur certaines versions de système d’exploitation.
 
-Nous allons examiner des exemples spécifiques de ciblage des nouvelles fonctionnalités dans Windows Insider Preview. Pour obtenir une vue d’ensemble de l’utilisation d’**ApiInformation**, voir [Vue d’ensemble des familles d’appareils](https://docs.microsoft.com/en-us/uwp/extension-sdks/device-families-overview#writing-code) et le billet de blog [Détection dynamique des fonctionnalités avec les contrats API](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/).
+Nous allons examiner des exemples spécifiques de ciblage des nouvelles fonctionnalités dans Windows Insider Preview. Pour obtenir une vue d’ensemble de l’utilisation d’**ApiInformation**, voir [Vue d’ensemble des familles d’appareils](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview#writing-code) et le billet de blog [Détection dynamique des fonctionnalités avec les contrats API](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/).
 
 > [!TIP]
 > De nombreuses vérifications des API à l’exécution peuvent affecter les performances de votre application. Les vérifications sont incluses dans ces exemples. Dans le code de production, vous devez effectuer la vérification une seule fois et mettre en cache les résultats, puis utiliser le résultat mis en cache dans toute votre application. 
@@ -42,7 +42,7 @@ Il existe deux méthodes pour créer du code adaptatif. Dans la plupart des cas,
 
 Nous allons comparer les différentes options.
 
-**Code d’application**
+**Code de l’application**
 
 Quand l’utiliser :
 - Recommandé pour tous les scénarios de code adaptatif à l’exception des cas spécifiques définis ci-dessous pour les déclencheurs extensibles.
@@ -53,7 +53,7 @@ Avantages :
 Inconvénients :
 - Aucune prise en charge du concepteur.
 
-**Déclencheurs d’état**
+**Déclencheurs d’État**
 
 Quand l’utiliser :
 - Quand il n’y a qu’une modification de propriété ou de valeur d’énumération entre les versions de système d’exploitation, qui ne nécessite pas de modification logique et qui est associée à un état visuel.
@@ -71,9 +71,9 @@ Inconvénients :
 
 Cette section présente plusieurs exemples de code adaptatif qui utilisent des API nouvelles dans Windows 10, version 1607 (Windows Insider Preview).
 
-### <a name="example-1-new-enum-value"></a>Exemple 1 : Nouvelle valeur enum
+### <a name="example-1-new-enum-value"></a>Exemple 1 : Nouvelle valeur d’énumération
 
-Windows 10, version 1607 ajoute une nouvelle valeur à la [InputScopeNameValue](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.inputscopenamevalue) énumération : **ChatWithoutEmoji**. Cette nouvelle étendue des entrées affiche le même comportement d’entrée que l’étendue des entrées **Chat** (vérification de l’orthographe, saisie semi-automatique, mise en majuscules automatique), mais elle est mappée à un clavier tactile sans bouton emoji. Elle est utile si vous créez votre propre sélecteur d’emoji et souhaitez désactiver le bouton emoji du clavier tactile. 
+Windows 10, version 1607 ajoute une nouvelle valeur à l’énumération [InputScopeNameValue](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.inputscopenamevalue) : **ChatWithoutEmoji**. Cette nouvelle étendue des entrées affiche le même comportement d’entrée que l’étendue des entrées **Chat** (vérification de l’orthographe, saisie semi-automatique, mise en majuscules automatique), mais elle est mappée à un clavier tactile sans bouton emoji. Elle est utile si vous créez votre propre sélecteur d’emoji et souhaitez désactiver le bouton emoji du clavier tactile. 
 
 Cet exemple explique comment vérifier la présence de la valeur d’énumération **ChatWithoutEmoji** et définit la propriété [InputScope](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.inputscope) d’une classe **TextBox** le cas échéant. En cas d’absence sur le système sur lequel l’application est exécutée, **InputScope** prend alors la valeur **Chat**. Le code présenté peut être placé dans un constructeur de page ou un gestionnaire d’événements Page.Loaded.
 
@@ -371,7 +371,7 @@ Dans cet exemple, le déclencheur vérifie si la propriété est présente. Si l
 </Grid>
 ```
 
-### <a name="example-2-new-enum-value"></a>Exemple 2 : Nouvelle valeur enum
+### <a name="example-2-new-enum-value"></a>Exemple 2 : Nouvelle valeur d’énumération
 
 Cet exemple explique comment définir des valeurs d’énumération différentes en fonction de la présence d’une valeur. Il utilise un déclencheur d’état personnalisé pour obtenir le même résultat que l’exemple précédent de Chat. Dans cet exemple, vous utilisez la nouvelle étendue des entrées ChatWithoutEmoji si l’appareil exécute Windows 10, version 1607. Sinon, c’est l’étendue des entrées **Chat** qui est utilisée. Les états visuels qui utilisent ce déclencheur sont configurés dans un style *if-else*, où l’étendue des entrées est choisie en fonction de la présence de la nouvelle valeur d’énumération.
 
@@ -443,7 +443,7 @@ class IsEnumPresentTrigger : StateTriggerBase
 </Grid>
 ```
 
-## <a name="related-articles"></a>Articles connexes
+## <a name="related-articles"></a>Articles associés
 
-- [Vue d’ensemble des familles de périphériques](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)
-- [Détection dynamique des fonctionnalités avec les contrats d’API](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)
+- [Présentation des familles d’appareils](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)
+- [Détection dynamique des fonctionnalités avec des contrats d’API](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)

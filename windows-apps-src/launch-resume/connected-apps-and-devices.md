@@ -1,21 +1,21 @@
 ---
-title: Applications et appareils connectés (projet « Rome »)
+title: Applications et appareils connectés (projet Rome)
 description: Cette section explique comment utiliser la plateforme Systèmes distants pour identifier les appareils distants, lancer une application sur un appareil distant et communiquer avec un service d’application sur un appareil distant.
 ms.date: 06/08/2018
 ms.topic: article
 keywords: Windows 10, UWP, appareils connectés, systèmes distants, Rome, projet Rome
 ms.assetid: 7f39d080-1fff-478c-8c51-526472c1326a
 ms.localizationpriority: medium
-ms.openlocfilehash: b989f5c115ef5c8555f8cb48ac43f2d50a9d830c
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 742ef56165ea26df3a03d54e99a17d2a00908cb6
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260519"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684455"
 ---
-# <a name="connected-apps-and-devices-project-rome"></a>Applications et appareils connectés (projet « Rome »)
+# <a name="connected-apps-and-devices-project-rome"></a>Applications et appareils connectés (projet Rome)
 
-Cette section explique comment connecter des applications sur des appareils et des plateformes à l’aide du [projet Rome](https://developer.microsoft.com/en-us/windows/project-rome). Pour savoir comment implémenter le projet Rome dans un scénario multiplateforme, visitez la [page principale docs pour le projet Rome](https://docs.microsoft.com/en-us/windows/project-rome/).
+Cette section explique comment connecter des applications sur des appareils et des plateformes à l’aide du [projet Rome](https://developer.microsoft.com/windows/project-rome). Pour savoir comment implémenter le projet Rome dans un scénario multiplateforme, visitez la [page principale docs pour le projet Rome](https://docs.microsoft.com/windows/project-rome/).
 
 La plupart des utilisateurs ont plusieurs appareils et commencent souvent une activité sur un pour la terminer sur un autre. Pour répondre à cette situation, les applications doivent être accessibles sur plusieurs appareils et plateformes. Le projet Rome vous permet de découvrir des appareils distants, de lancer une application sur un appareil distant et de communiquer avec un service d’application sur un appareil distant.
 

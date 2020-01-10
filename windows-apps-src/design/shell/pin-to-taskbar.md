@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, la barre des tâches, gestionnaire de la barre des tâches, épingler à la barre des tâches, vignette principale
 ms.localizationpriority: medium
-ms.openlocfilehash: 640dc637a1c50718210d87af87cb8b8e706a5ab7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3aa259cd8c5c45ea99d83eaecb8e30fb0438aa8f
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57604094"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684537"
 ---
 # <a name="pin-your-app-to-the-taskbar"></a>Épingler votre application à la barre des tâches
 
@@ -20,9 +20,9 @@ Vous pouvez épingler par programme votre propre application à la barre des tâ
 ![Barre des tâches](images/taskbar/taskbar.png)
 
 > [!IMPORTANT]
-> **Nécessite Fall Creators Update**: Vous devez cibler le Kit de développement logiciel 16299 et être en cours d’exécution build 16299 ou ultérieure pour utiliser l’API de la barre des tâches.
+> **Nécessite Fall Creators Update** : vous devez cibler le Kit de développement logiciel (SDK) 16299 et exécuter la Build 16299 ou une version plus récente pour utiliser les API de la barre des tâches.
 
-> **API importantes** : [Classe de TaskbarManager](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager) 
+> **API importantes** : [classe TaskbarManager](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager) 
 
 
 ## <a name="when-should-you-ask-the-user-to-pin-your-app-to-the-taskbar"></a>Quand demander à l’utilisateur d’épingler votre application à la barre des tâches ? 
@@ -38,7 +38,7 @@ La [classe TaskbarManager](https://docs.microsoft.com/uwp/api/windows.ui.shell.t
 
 ## <a name="1-check-whether-the-required-apis-exist"></a>1. Vérifiez si les API nécessaires existent
 
-Si votre application prend en charge des versions antérieures de Windows 10, vous devez vérifier si la classe TaskbarManager est disponible. Vous pouvez utiliser la [méthode ApiInformation.IsTypePresent](https://docs.microsoft.com/en-us/uwp/api/windows.foundation.metadata.apiinformation#Windows_Foundation_Metadata_ApiInformation_IsTypePresent_System_String_) pour effectuer cette vérification. Si la classe TaskbarManager n’est pas disponible, évitez d’exécuter des appels vers les API.
+Si votre application prend en charge des versions antérieures de Windows 10, vous devez vérifier si la classe TaskbarManager est disponible. Vous pouvez utiliser la [méthode ApiInformation.IsTypePresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation#Windows_Foundation_Metadata_ApiInformation_IsTypePresent_System_String_) pour effectuer cette vérification. Si la classe TaskbarManager n’est pas disponible, évitez d’exécuter des appels vers les API.
 
 ```csharp
 if (ApiInformation.IsTypePresent("Windows.UI.Shell.TaskbarManager"))
@@ -53,7 +53,7 @@ else
 ```
 
 
-## <a name="2-check-whether-taskbar-is-present-and-allows-pinning"></a>2. Vérifiez si la barre des tâches est présent et permet l’épinglage
+## <a name="2-check-whether-taskbar-is-present-and-allows-pinning"></a>2. Vérifiez si la barre des tâches est présente et permet l’épinglage
 
 Les applications UWP peuvent s’exécuter sur un large éventail d’appareils, qui ne prennent pas tous en charge la barre des tâches. Actuellement, seuls les appareils de bureau prennent en charge la barre des tâches. 
 
@@ -87,7 +87,7 @@ else
 ```
 
 
-##  <a name="4-pin-your-app"></a>4. Épingler votre application
+##  <a name="4-pin-your-app"></a>4. Épinglez votre application
 
 Si la barre des tâches est présente, l’épinglage autorisé et si votre application n’est pas actuellement épinglée, vous souhaiterez peut-être afficher une info-bulle pour informer les utilisateurs qu’ils peuvent épingler votre application. Par exemple, vous pouvez afficher une icône représentant une épingle dans votre interface utilisateur sur laquelle l’utilisateur peut cliquer. 
 
@@ -109,5 +109,5 @@ Cette méthode renvoie une valeur booléenne qui indique si votre application es
 ## <a name="resources"></a>Ressources
 
 * [Exemple de code complet sur GitHub](https://github.com/WindowsNotifications/quickstart-pin-to-taskbar)
-* [Classe de TaskbarManager](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager)
-* [Épingler une application dans le menu Démarrer](tiles-and-notifications/primary-tile-apis.md)
+* [TaskbarManager, classe](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager)
+* [Épingler une application au menu Démarrer](tiles-and-notifications/primary-tile-apis.md)

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, exécution étendue, mode réduit, ExtendedExecutionSession, tâche en arrière-plan, cycle de vie de l’application, écran de verrouillage
 ms.assetid: e6a6a433-5550-4a19-83be-bbc6168fe03a
 ms.localizationpriority: medium
-ms.openlocfilehash: 68d2c9937b02d60bb8509aedaf6277512a4e0c4a
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: fdb47a7c57ff8ef719b819253ab768c0d836be14
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371426"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684556"
 ---
 # <a name="postpone-app-suspension-with-extended-execution"></a>Reporter la suspension d’une application avec l’exécution étendue
 
@@ -23,9 +23,9 @@ Il peut arriver que l’application doive continuer de s’exécuter lorsque l�
 
 Si tel est le cas, le système d’exploitation peut s’assurer lui-même que l’application continue de s’exécuter, ou peut lui demander de continuer à s’exécuter. Ainsi, lorsqu’un morceau s’exécute en arrière-plan, le système d’exploitation peut assurer l’exécution de l’application pendant une plus longue période si vous suivez la procédure de la section [Lecture multimédia en arrière-plan](../audio-video-camera/background-audio.md). Dans le cas contraire, vous devez demander manuellement l’allongement de cette période. La durée d’une exécution en arrière-plan peut être de plusieurs minutes, mais vous devez être prêt à gérer la session en cours de révocation à tout moment. Ces contraintes de temps de cycle de vie des applications sont désactivées pendant que l’application s’exécute sous un débogueur. Pour cette raison, il est important de tester l’Exécution étendue et d’autres outils pour reporter la suspension de l'application lorsque celle-ci ne s’exécute pas sous un débogueur ou en utilisant les événements de cycle de vie disponibles dans Visual Studio. 
  
-Créez une session [ExtendedExecutionSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionsession) afin de demander davantage de temps pour exécuter une opération en arrière-plan. Le type de session **ExtendedExecutionSession** que vous créez est déterminé par la valeur [ExtendedExecutionReason](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionreason) que vous indiquez lorsque vous la générez. Il existe trois **ExtendedExecutionReason** valeurs enum : **N’est pas spécifié, LocationTracking** et **SavingData**. Une seule **ExtendedExecutionSession** peut être demandée à tout moment. Si vous tentez de créer une autre session alors qu’une autre est actuellement active, le constructeur **ExtendedExecutionSession** lève une exception 0x8007139F indiquant que le groupe ou la ressource n’est pas dans l'état correct pour effectuer l'opération demandée. N’utilisez pas les valeurs [ExtendedExecutionForegroundSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession) ni [ExtendedExecutionForegroundReason](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundreason), car elles nécessitent des fonctionnalités restreintes et ne peuvent pas être utilisées dans les applications du Store.
+Créez une session [ExtendedExecutionSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionsession) afin de demander davantage de temps pour exécuter une opération en arrière-plan. Le type de session **ExtendedExecutionSession** que vous créez est déterminé par la valeur [ExtendedExecutionReason](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionreason) que vous indiquez lorsque vous la générez. Il existe trois valeurs d’énumération **ExtendedExecutionReason** : **Unspecified, LocationTracking** et **SavingData**. Une seule **ExtendedExecutionSession** peut être demandée à tout moment. Si vous tentez de créer une autre session alors qu’une autre est actuellement active, le constructeur **ExtendedExecutionSession** lève une exception 0x8007139F indiquant que le groupe ou la ressource n’est pas dans l'état correct pour effectuer l'opération demandée. N’utilisez pas les valeurs [ExtendedExecutionForegroundSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession) ni [ExtendedExecutionForegroundReason](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundreason), car elles nécessitent des fonctionnalités restreintes et ne peuvent pas être utilisées dans les applications du Store.
 
-## <a name="run-while-minimized"></a>Exécution en mode réduit
+## <a name="run-while-minimized"></a>Exécuter en mode réduit
 
 Il existe deux cas où l’exécution étendue peut être utilisée :
 - À tout moment pendant l’exécution régulière de premier plan, tandis que l’application est en cours d’exécution.
@@ -81,7 +81,7 @@ switch (result)
         break;
 }
 ```
-[Consultez l’exemple de code](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario1_UnspecifiedReason.xaml.cs#L81-L110)  
+[Voir l’exemple de code](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario1_UnspecifiedReason.xaml.cs#L81-L110)  
 
 L’appel de l’élément **RequestExtensionAsync** permet de vérifier auprès du système d’exploitation si l’utilisateur est associé à une activité en arrière-plan approuvée pour l’application, et si le système inclut des ressources disponibles pour permettre l’exécution en arrière-plan. Une seule session est approuvée pour une application à tout moment, par conséquent, tout appel supplémentaire à **RequestExtensionAsync** entraîne le refus de la session.
 
@@ -119,7 +119,7 @@ private async void SessionRevoked(object sender, ExtendedExecutionRevokedEventAr
     });
 }
 ```
-[Consultez l’exemple de code](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario1_UnspecifiedReason.xaml.cs#L124-L141)
+[Voir l’exemple de code](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario1_UnspecifiedReason.xaml.cs#L124-L141)
 
 ### <a name="dispose"></a>Supprimer
 
@@ -140,7 +140,7 @@ void ClearExtendedExecution(ExtendedExecutionSession session)
     }
 }
 ```
-[Consultez l’exemple de code](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario1_UnspecifiedReason.xaml.cs#L49-L63)
+[Voir l’exemple de code](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario1_UnspecifiedReason.xaml.cs#L49-L63)
 
 Une application ne peut avoir qu’une seule session **ExtendedExecutionSession** active à la fois. De nombreuses applications utilisent des tâches asynchrones pour effectuer des opérations complexes, qui nécessitent un accès aux ressources de type stockage, réseau ou services réseau. Si l’exécution d’une opération nécessite plusieurs tâches asynchrones, l’état de chaque de ces tâches doit être pris en compte avant la suppression de la session **ExtendedExecutionSession** et l’interruption de l’application. Cela nécessite un décompte de références concernant le nombre de tâches encore en cours ; la session ne peut être supprimée que lorsque cette valeur atteint zéro.
 
@@ -247,7 +247,7 @@ static class ExtendedExecutionHelper
     }
 }
 ```
-[Consultez l’exemple de code](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario4_MultipleTasks.xaml.cs)
+[Voir l’exemple de code](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario4_MultipleTasks.xaml.cs)
 
 ## <a name="ensure-that-your-app-uses-resources-well"></a>Vérifier l’utilisation adéquate des ressources par l’application
 
@@ -255,13 +255,13 @@ Il est crucial d’ajuster le taux d’utilisation de l’énergie et de la mém
 
 Utilisez la méthode [BackgroundExecutionManager.RequestAccessAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager) pour déterminer si l’utilisateur a opté pour une activité limitée de votre application en arrière-plan. Tenez compte du taux d’utilisation de la batterie ; exécutez l’application en arrière-plan uniquement lorsqu’elle est nécessaire dans le cadre d’une action souhaitée par l’utilisateur.
 
-## <a name="see-also"></a>Voir aussi
+## <a name="see-also"></a>Articles associés
 
-[Exemple de l’exécution étendue](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ExtendedExecution)  
+[Exemple d’exécution étendue](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ExtendedExecution)  
 [Cycle de vie des applications](https://docs.microsoft.com/windows/uwp/launch-resume/app-lifecycle)  
-[Cycle de vie de l’application - Conserver les applications actives avec des tâches en arrière-plan et l'Exécution étendue](https://msdn.microsoft.com/en-us/magazine/mt590969.aspx)
+[Cycle de vie de l’application - Conserver les applications actives avec des tâches en arrière-plan et l'Exécution étendue](https://msdn.microsoft.com/magazine/mt590969.aspx)
 [Gestion de la mémoire en arrière-plan](https://docs.microsoft.com/windows/uwp/launch-resume/reduce-memory-usage)  
 [Transferts en arrière-plan](https://docs.microsoft.com/windows/uwp/networking/background-transfers)  
-[Activité en arrière-plan et sensibilisation à la batterie](https://blogs.windows.com/buildingapps/2016/08/01/battery-awareness-and-background-activity/#I2bkQ6861TRpbRjr.97)  
-[Classe de MemoryManager](https://docs.microsoft.com/uwp/api/windows.system.memorymanager)  
-[Lire des médias dans l’arrière-plan](https://docs.microsoft.com/windows/uwp/audio-video-camera/background-audio)  
+[Détection de la batterie et activité en arrière-plan](https://blogs.windows.com/buildingapps/2016/08/01/battery-awareness-and-background-activity/#I2bkQ6861TRpbRjr.97)  
+[MemoryManager, classe](https://docs.microsoft.com/uwp/api/windows.system.memorymanager)  
+[Lire le média en arrière-plan](https://docs.microsoft.com/windows/uwp/audio-video-camera/background-audio)  

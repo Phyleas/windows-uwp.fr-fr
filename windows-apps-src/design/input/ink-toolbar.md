@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.assetid: d888f75f-c2a0-4134-81db-907b5e24fcc5
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ae67e5d4d6da3cc9716c5f0efd276023bae9af0
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 48fea83560655b02909b302225f44fa3e9713f00
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258381"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684493"
 ---
 # <a name="add-an-inktoolbar-to-a-universal-windows-platform-uwp-app"></a>Ajouter un élément InkToolbar à une application de plateforme Windows universelle (UWP)
 
@@ -87,7 +87,7 @@ Lorsque vous ajoutez une barre d’outils d'entrée manuscrite à votre applicat
 
 Spécifiez explicitement l’emplacement et l’orientation de la barre d’outils via ses propriétés [VerticalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.VerticalAlignment), [HorizontalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.HorizontalAlignment) et [Orientation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar?branch=rs3.Orientation).
 
-| Default | Explicite |
+| Par défaut | Explicite |
 | --- | --- |
 | ![Orientation et emplacement de la barre d’outils d’entrée manuscrite par défaut](./images/ink/location-default-small.png) | ![Orientation et emplacement de la barre d’outils d’entrée manuscrite explicite](./images/ink/location-explicit-small.png) |
 | *Emplacement et orientation par défaut de la barre d’outils Windows Ink* | *Emplacement et orientation explicites de la barre d’outils Windows Ink* |
@@ -172,7 +172,7 @@ Vous pouvez également utiliser une liaison pour rechercher les mises à jour de
 
     1. Ajoutez deux propriétés booléennes à la classe InkToolbarSnippetHostViewModel : **LeftHandedLayout** (même fonctionnalité que l’exemple XAML précédent) et **PortraitLayout** (orientation de l’appareil).
         >[!NOTE] 
-        > La propriété PortraitLayout est définissable et inclut la définition pour l’événement [PropertyChanged](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged).
+        > La propriété PortraitLayout est définissable et inclut la définition pour l’événement [PropertyChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged).
 
         ```csharp
         public bool LeftHandedLayout
@@ -214,7 +214,7 @@ Vous pouvez également utiliser une liaison pour rechercher les mises à jour de
     1. Ajoutez deux nouvelles classes au dossier Converters (dans cet exemple, nous les appelons **HorizontalAlignmentFromHandednessConverter.cs** et **VerticalAlignmentFromAppViewConverter.cs**).
     1. Ajoutez les espaces de noms `using Windows.UI.Xaml` et `using Windows.UI.Xaml.Data` à chaque fichier.
     1. Modifiez chaque classe sur `public` et spécifiez qu’elle implémente l’interface [IValueConverter](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.ivalueconverter).
-    1. Ajoutez les méthodes [Convert](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.data.ivalueconverter.convert) et [ConvertBack](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.data.ivalueconverter.convertback) à chaque fichier, comme illustré ici (nous laissons la méthode ConvertBack non implémentée).
+    1. Ajoutez les méthodes [Convert](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.ivalueconverter.convert) et [ConvertBack](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.ivalueconverter.convertback) à chaque fichier, comme illustré ici (nous laissons la méthode ConvertBack non implémentée).
         - HorizontalAlignmentFromHandednessConverter positionne la barre d’outils d’entrée manuscrite sur le côté droit de l’application pour les utilisateurs droitiers et sur le côté gauche de l’application pour les utilisateurs gauchers.
         ```csharp
         using System;

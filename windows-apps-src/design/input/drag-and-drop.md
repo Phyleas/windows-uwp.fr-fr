@@ -4,20 +4,20 @@ title: Glisser-déplacer
 ms.assetid: A15ED2F5-1649-4601-A761-0F6C707A8B7E
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 60d713efd9deeffa0856a5d1dbc92688c229288e
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: fec8ef45cff07d7a092fd46bd2d960bfcaf0c50a
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66363580"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684508"
 ---
 # <a name="drag-and-drop"></a>Glisser-déplacer
 
 L’opération glisser-déplacer constitue un moyen intuitif pour transférer des données dans une application ou entre des applications sur le bureau Windows. Glisser-déplacer permet à l’utilisateur de transférer des données entre des applications ou au sein d’une application à l’aide d’un mouvement standard (appui prolongé et mouvement panoramique avec le doigt ou appui et mouvement panoramique avec une souris ou un stylet).
 
-> **API importantes** : [Propriété de CanDrag](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.candrag), [propriété AllowDrop](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.allowdrop) 
+> **API importantes** : [propriété CanDrag](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.candrag), [propriété AllowDrop](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.allowdrop) 
 
 La source de l’opération glisser, qui est l’application ou la zone où le mouvement de glissement est déclenché, fournit les données qui doivent être transférées en remplissant un objet package de données pouvant contenir des formats de données standard, y compris les formats texte, RTF, HTML, bitmaps, éléments de stockage ou données personnalisées. La source indique également le type d’opérations pris en charge : copier, déplacer ou lier. Lorsque le pointeur est relâché, l’élément est déposé. La cible du dépôt, qui est l’application ou la zone située sous le pointeur, traite le package de données et retourne le type d’opération effectué.
 
@@ -50,14 +50,14 @@ Vous n’avez besoin d’effectuer aucune autre action pour autoriser le glissem
 ## <a name="construct-a-data-package"></a>Créer un package de données 
 
 Dans la plupart des cas, le système va créer un package de données pour vous. Le système gère automatiquement :
-* Images
+* les images,
 * Text 
 
 Pour tout autre contenu, vous devrez gérer les événements **DragStarted** et **DragCompleted**, et les utiliser pour créer votre propre [DataPackage](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datapackage).
 
 ## <a name="enable-dropping"></a>Activer l’opération Déplacer
 
-Le balisage suivant montre comment définir une zone spécifique de l’application valide pour l’opération Déplacer à l’aide de l’élément [**AllowDrop**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.allowdrop) en XAML. Si un utilisateur tente d’effectuer le déplacement vers un autre emplacement, le système l’en empêche. Si vous souhaitez que les utilisateurs puissent déplacer des éléments n’importe où dans votre application, définissez l’ensemble de l’arrière-plan en tant que cible de l’opération Déplacer.
+Le balisage suivant montre comment définir une zone spécifique de l’application comme valide pour l’opération Déplacer à l’aide de l’élément [**AllowDrop**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.allowdrop) en XAML. Si un utilisateur tente d’effectuer le déplacement vers un autre emplacement, le système l’en empêche. Si vous souhaitez que les utilisateurs puissent déplacer des éléments n’importe où dans votre application, définissez l’ensemble de l’arrière-plan en tant que cible de l’opération Déplacer.
 
 [!code-xml[Main](./code/drag_drop/cs/MainPage.xaml#SnippetDropArea)]
 
@@ -98,9 +98,9 @@ Le système montre automatiquement les animations appropriées pour le déplacem
 
 ## <a name="implementing-custom-drag-and-drop"></a>Implémentation d'’une opération glisser-déplacer personnalisée
 
-La classe [UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) effectue la plus grande partie de l’implémentation de l’opération glisser-déplacer pour vous. Mais si vous le souhaitez, vous pouvez implémenter votre propre version en utilisant les API dans le [espace de noms Windows.ApplicationModel.DataTransfer.DragDrop.Core](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core).
+La classe [UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) effectue la plus grande partie de l’implémentation de l’opération glisser-déplacer pour vous. Toutefois, si vous le souhaitez, vous pouvez implémenter votre propre version à l’aide des API de l' [espace de noms Windows. ApplicationModel. datatransfer. DragDrop. Core](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core).
 
-| Fonctionnalité | API WinRT |
+| Fonctionnalités | API WinRT |
 | --- | --- |
 |  Activer l’opération Glisser | [CoreDragOperation](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragoperation)  |
 |  Créer un package de données | [DataPackage](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datapackage)  |
@@ -109,7 +109,7 @@ La classe [UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uieleme
 
 
 
-## <a name="see-also"></a>Voir aussi
+## <a name="see-also"></a>Articles associés
 
 * [Communication entre les applications](index.md)
 * [AllowDrop](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.allowdrop)

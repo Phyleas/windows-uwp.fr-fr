@@ -10,12 +10,12 @@ pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 8bbff4553dc4ad540f0d9afa2507ad763fa96744
-ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
+ms.openlocfilehash: 568707cb70fb38c0eddfd37abe1117e016e62103
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68867605"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684481"
 ---
 # <a name="keyboard-accelerators"></a>Raccourcis clavier
 
@@ -35,9 +35,9 @@ Les raccourcis incluent généralement les touches de fonction F1 à F12 ou une 
 > [!NOTE]
 > Les contrôles de plateforme UWP intègrent des raccourcis clavier. Par exemple, ListView prend en charge Ctrl + A pour sélectionner tous les éléments d’une liste et RichEditBox prend en charge Ctrl + Tab pour insérer une tabulation dans la zone de texte. Ces raccourcis clavier intégrés sont appelés **raccourcis de contrôle** et sont exécutés uniquement si le focus est positionné sur l’élément ou l’un de ses enfants. Les raccourcis que vous définissez à l’aide des API de raccourcis clavier présentées ici sont appelés **raccourcis d’application**.
 
-Les raccourcis clavier ne sont pas disponibles pour chaque action, mais sont souvent associés aux commandes affichées dans les menus (et doivent être spécifiés avec le contenu de l’élément de menu). Les raccourcis peuvent également être associés à des actions qui n’ont pas d’éléments de menu équivalents. Toutefois, étant donné que les utilisateurs utilisent les menus d’une application pour découvrir et connaître le jeu de commandes disponibles, vous devez essayer de faciliter la découverte des raccourcis (l’utilisation d’intitulés ou de modèles établis peut s’avérer utile).
+Les raccourcis clavier ne sont pas disponibles pour chaque action, mais sont souvent associés aux commandes affichées dans les menus (et doivent être spécifiés avec le contenu de l’élément de menu). Les accélérateurs peuvent également être associés à des actions qui n’ont pas d’éléments de menu équivalents. Toutefois, étant donné que les utilisateurs utilisent les menus d’une application pour découvrir et connaître le jeu de commandes disponibles, vous devez essayer de faciliter la découverte des raccourcis (l’utilisation d’intitulés ou de modèles établis peut s’avérer utile).
 
-![Raccourcis clavier décrits dans une étiquette d’élément de menu](images/accelerators/accelerators_menuitemlabel.png)  
+![les accélérateurs clavier décrits dans une étiquette d’élément de menu](images/accelerators/accelerators_menuitemlabel.png)  
 *Raccourcis clavier décrits dans une étiquette d’élément de menu*
 
 ## <a name="when-to-use-keyboard-accelerators"></a>Quand utiliser les raccourcis clavier
@@ -54,7 +54,7 @@ Nous vous recommandons de spécifier les raccourcis clavier chaque fois que cela
 
 ## <a name="specify-a-keyboard-accelerator"></a>Spécifier un raccourci clavier
 
-Utilisez les API [KeyboardAccelerator](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.input.keyboardaccelerator.-ctor) pour créer des raccourcis clavier dans les applications UWP. Avec ces API, vous n’êtes pas obligé de gérer plusieurs événements KeyDown pour détecter la combinaison de touches enfoncées et vous pouvez localiser les raccourcis dans les ressources d’application.
+Utilisez les API [KeyboardAccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator.-ctor) pour créer des raccourcis clavier dans les applications UWP. Avec ces API, vous n’êtes pas obligé de gérer plusieurs événements KeyDown pour détecter la combinaison de touches enfoncées et vous pouvez localiser les raccourcis dans les ressources d’application.
 
 Nous vous recommandons de définir les raccourcis clavier pour les actions les plus courantes dans votre application, et de les documenter à l’aide de l’intitulé ou de l’info-bulle de l’élément de menu. Dans cet exemple, nous déclarons les raccourcis clavier uniquement pour les commandes Renommer et Copier.
 
@@ -126,7 +126,7 @@ Nous vous recommandons de définir les raccourcis clavier pour les actions les p
 </CommandBar>
 ```
 
-![Accélérateur clavier décrit dans une info-bulle](images/accelerators/accelerators_tooltip.png)  
+![l’accélérateur clavier décrit dans une info-bulle](images/accelerators/accelerators_tooltip.png)  
 ***Accélérateur clavier décrit dans une info-bulle***
 
 L’objet [UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) possède une collection [KeyboardAccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator), [KeyboardAccelerators](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.KeyboardAccelerators), dans laquelle vous spécifiez vos objets KeyboardAccelerator personnalisés et définissez les combinaisons de touches pour le raccourci clavier :
@@ -146,7 +146,7 @@ Par exemple, Microsoft Outlook inclut les raccourcis suivants :
 -   Ctrl + B, Ctrl + I et Échap fonctionnent uniquement sur l’étendue relative à l’envoi d’un formulaire de courrier électronique
 -   Ctrl + 1 et Ctrl + 2 fonctionnent dans toute l’application
 
-### <a name="context-menus"></a>Menus contextuels
+### <a name="context-menus"></a>Les menus contextuels :
 
 Les actions des menus contextuels affectent uniquement des zones ou des éléments spécifiques, comme les caractères sélectionnés dans un éditeur de texte ou un morceau de musique dans une playlist. Pour cette raison, nous vous recommandons de définir l’étendue des raccourcis clavier pour les éléments de menu contextuel sur le parent du menu contextuel.
 
@@ -219,9 +219,9 @@ Si aucune correspondance n’est identifiée, le raccourci n’est pas valide et
 
 L’événement Invoked de l’objet [KeyboardAccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator) est déclenché lorsque le raccourci est exécuté. L’objet d’événement [KeyboardAcceleratorInvokedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs) inclut les propriétés suivantes :
 
-- [**Géré**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.handled) (Booléen): L’affectation de la valeur true empêche l’événement qui déclenche le modèle de contrôle et arrête la propagation des événements d’accélérateur. La valeur par défaut est false.
-- [**Élément**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.element) (DependencyObject): Objet associé à l’accélérateur.
-- [**KeyboardAccelerator**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.keyboardaccelerator): Raccourci clavier utilisé pour déclencher l’événement appelé.
+- [**Géré**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.handled) (booléen) : l’affectation de la valeur true empêche l’événement qui déclenche le modèle de contrôle et arrête la propagation des événements d’accélérateur. La valeur par défaut est false.
+- [**Element**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.element) (DependencyObject) : objet associé à l’accélérateur.
+- [**KeyboardAccelerator**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.keyboardaccelerator): raccourci clavier utilisé pour déclencher l’événement appelé.
 
 Ici, nous montrons comment définir une collection d’accélérateurs de clavier pour les éléments d’un ListView et comment gérer l’événement appelé pour chaque accélérateur.
 
@@ -331,13 +331,13 @@ Nous vous conseillons de créer des raccourcis clavier cohérents entre les appl
 
 Cela n’est pas toujours possible en raison des différences de fonctionnalités entre les applications.
 
-| **Montage** | **Accélérateur clavier courant** |
+| **Modification** | **Accélérateur clavier courant** |
 | ------------- | ----------------------------------- |
 | Commencer le mode édition | Ctrl + E |
 | Sélectionner tous les éléments dans un contrôle ou une fenêtre sur lequel ou laquelle se trouve le focus | Ctrl + A |
 | Rechercher et remplacer | Ctrl + H |
-| Annuler | Ctrl + Z |
-| Redo | Ctrl + Y |
+| Undo | Ctrl + Z |
+| Redo | Ctrl + Y |
 | Supprimer la sélection et la copier dans le Presse-papiers | Ctrl + X |
 | Copier la sélection dans le Presse-papiers | Ctrl + C, Ctrl + Insertion |
 | Coller le contenu du Presse-papiers | Ctrl + V, Maj + Insertion |
@@ -347,24 +347,24 @@ Cela n’est pas toujours possible en raison des différences de fonctionnalité
 | Ajouter un nouvel élément secondaire | Ctrl + Maj + N |
 | Supprimer l’élément sélectionné (avec annulation) | Suppr, Ctrl + D |
 | Supprimer l’élément sélectionné (sans annulation) | Maj + Suppr |
-| Gras | Ctrl + B |
+| Bold | Ctrl + B |
 | Underline | Ctrl + U |
-| Italique | Ctrl + I |
+| Italic | Ctrl + I |
 
-| **Déplacement** | |
+| **Navigation** | |
 | ------------- | ----------------------------------- |
 | Rechercher du contenu dans un contrôle ou une fenêtre sur lequel ou laquelle se trouve le focus | Ctrl + F |
 | Atteindre le résultat suivant de la recherche | F3 |
 
 | **Autres actions** | |
 | ------------- | ----------------------------------- |
-| Ajouter aux Favoris | Ctrl + D | 
-| Actualiser | F5 ou Ctrl + R | 
+| Ajouter aux Favoris | Ctrl + D | 
+| Refresh | F5 ou Ctrl + R | 
 | Zoom avant | Ctrl + + | 
 | Zoom arrière | Ctrl + - | 
 | Zoom vers l’affichage par défaut | Ctrl + 0 | 
 | Enregistrer | Ctrl + S | 
-| Fermer | Ctrl + W | 
+| Close | Ctrl + W | 
 | Imprimer | Ctrl + P | 
 
 Notez que certaines des combinaisons ne sont pas valides pour les versions localisées de Windows. Par exemple, dans la version espagnole de Windows, Ctrl + N est utilisé pour la mise en gras au lieu de Ctrl + B. Nous vous recommandons de fournir des raccourcis clavier localisés si l’application est localisée.
@@ -460,7 +460,7 @@ Pour les objets [Button](https://docs.microsoft.com/uwp/api/windows.ui.xaml.cont
 
 *Combinaison de touches d’accès rapide ajoutée au texte de MenuFlyoutItem*
 
-Contrôlez le comportement de présentation à l’aide de la propriété [KeyboardAcceleratorPlacementMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.KeyboardAcceleratorPlacementMode) , qui accepte deux valeurs: [Automatique](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorplacementmode) ou [masqué](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorplacementmode).    
+Contrôlez le comportement de présentation à l’aide de la propriété [KeyboardAcceleratorPlacementMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.KeyboardAcceleratorPlacementMode), qui accepte deux valeurs : [Auto](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorplacementmode) ou [Hidden](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorplacementmode).    
 
 ```xaml
 <Button Content="Save" Click="OnSave" KeyboardAcceleratorPlacementMode="Auto">
@@ -493,7 +493,7 @@ Dans certains cas, nous recommandons d’utiliser l’intitulé d'un contrôle p
 
 Certains contrôles de plateforme le font par défaut, en particulier les objets [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem) et [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem), tandis que [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton) et [AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton) le font lorsqu’ils apparaissent dans le menu de dépassement de la [CommandBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar).
 
-![Raccourcis clavier décrits dans une étiquette d’élément de menu](images/accelerators/accelerators_menuitemlabel.png)  
+![les accélérateurs clavier décrits dans une étiquette d’élément de menu](images/accelerators/accelerators_menuitemlabel.png)  
 *Raccourcis clavier décrits dans une étiquette d’élément de menu*
 
 Vous pouvez remplacer le texte de l’intitulé par défaut d’un raccourci par le biais de la propriété [KeyboardAcceleratorTextOverride](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton.KeyboardAcceleratorTextOverride) des contrôles [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem), [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem), [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton) et [AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton) (utilisez un seul espace pour aucun texte). 
@@ -530,8 +530,8 @@ Comme l’événement [CharacterReceived](https://docs.microsoft.com/uwp/api/win
 Les événements d’entrée d'aperçu sont déclenchés avant tout autre événement. Si vous ne gérez pas ces événements, le raccourci pour l’élément sur lequel est positionné le focus est déclenché, suivi de l’événement KeyDown. Les deux événements se propagent jusqu'à ce qu’ils soient gérés.
 
 
-![](images/accelerators/accelerators_keyevents.png)
-Séquence d'***événements*** clés de séquence d’événements clés
+séquence d’événements de clé de ***![](images/accelerators/accelerators_keyevents.png)
+séquence*** d’événements
 
 Ordre des événements :
 
@@ -551,9 +551,9 @@ Les raccourcis clavier dans une étendue sont appelés uniquement quand le focus
 
 ### <a name="scoping-accelerators-programmatically"></a>Contrôle de l’étendue des raccourcis par programmation
 
-La méthode [UIElement.TryInvokeKeyboardAccelerator](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.uielement.tryinvokekeyboardaccelerator) appelle tous les raccourcis correspondants dans la sous-arborescence de l’élément.
+La méthode [UIElement.TryInvokeKeyboardAccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.tryinvokekeyboardaccelerator) appelle tous les raccourcis correspondants dans la sous-arborescence de l’élément.
 
-La méthode [UIElement.OnProcessKeyboardAccelerators](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.uielement.onprocesskeyboardaccelerators) est exécutée avant le raccourci clavier. Cette méthode transmet un objet [ProcessKeyboardAcceleratorArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.processkeyboardacceleratoreventargs) qui contient la touche, la touche de modification et une valeur booléenne indiquant si le raccourci clavier est géré. S’il est marqué comme géré, le raccourci clavier se propage (de sorte que le raccourci clavier extérieur n’est jamais appelé).
+La méthode [UIElement.OnProcessKeyboardAccelerators](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.onprocesskeyboardaccelerators) est exécutée avant le raccourci clavier. Cette méthode transmet un objet [ProcessKeyboardAcceleratorArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.processkeyboardacceleratoreventargs) qui contient la touche, la touche de modification et une valeur booléenne indiquant si le raccourci clavier est géré. S’il est marqué comme géré, le raccourci clavier se propage (de sorte que le raccourci clavier extérieur n’est jamais appelé).
 
 > [!NOTE]
 > OnProcessKeyboardAccelerators se déclenche toujours, qu’il soit géré ou non (similaire à l’événement OnKeyDown). Vous devez vérifier si l’événement a été marqué comme géré.
@@ -576,8 +576,8 @@ protected override void OnProcessKeyboardAccelerators(
 
 Nous vous recommandons de localiser tous les raccourcis clavier. Vous pouvez effectuer cette opération avec le fichier de ressources UWP standard (.resw) et l’attribut x:Uid dans vos déclarations XAML. Dans cet exemple, Windows Runtime charge automatiquement les ressources.
 
-![Localisation de l’accélérateur clavier avec les](images/accelerators/accelerators_localization.png)
-ressources UWP fichier de***localisation avec les ressources UWP***
+![la localisation de l’accélérateur clavier avec les ressources UWP fichier](images/accelerators/accelerators_localization.png)
+***localisation de l’accélérateur clavier avec le fichier de ressources UWP***
 
 ``` xaml
 <Button x:Uid="myButton" Click="OnSave">
@@ -633,11 +633,11 @@ public class MyListView : ListView
 }
 ```
 
-## <a name="related-articles"></a>Articles connexes
+## <a name="related-articles"></a>Articles associés
 
 - [Interactions du clavier](keyboard-interactions.md)
 - [Clés d’accès](access-keys.md)
 
-### <a name="samples"></a>Exemples
+### <a name="samples"></a>exemples
 
 - [Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery)
