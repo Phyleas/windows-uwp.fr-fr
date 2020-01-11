@@ -5,12 +5,12 @@ ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b0ec7762fd64f0f0b8de65faa1aaf079bdaba3a3
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 1cef2fb660681d3e382eb8ca7dcb92456756f627
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63807033"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685232"
 ---
 # <a name="track-file-system-changes-in-the-background"></a>Suivre les modifications du système de fichiers en arrière-plan
 
@@ -56,7 +56,7 @@ videoTracker.Enable();
 
 Remarques importantes :
 
-- Assurez-vous que votre application dispose de l'autorisation d'accès à la bibliothèque appropriée dans le manifeste avant de créer l'objet [**StorageLibrary**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary). Pour plus d'informations, consultez [Autorisations d'accès aux fichiers](https://docs.microsoft.com/en-us/windows/uwp/files/file-access-permissions).
+- Assurez-vous que votre application dispose de l'autorisation d'accès à la bibliothèque appropriée dans le manifeste avant de créer l'objet [**StorageLibrary**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary). Pour plus d'informations, consultez [Autorisations d'accès aux fichiers](https://docs.microsoft.com/windows/uwp/files/file-access-permissions).
 - La méthode [**Enable**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangetracker.enable) est thread-safe, elle ne réinitialise pas votre pointeur et elle peut être appelée autant de fois que vous le souhaitez (nous y reviendrons ultérieurement).
 
 ![Activation d'un traceur de modifications vide](images/changetracker-enable.png)
