@@ -7,12 +7,12 @@ ms.date: 04/19/2019
 ms.topic: article
 keywords: Windows 10, UWP, portail des appareils
 ms.localizationpriority: medium
-ms.openlocfilehash: 86724b084edb9350adfd2ed2623623d255302b70
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 9e091cc7ad62f69b9e76541101555493609b8a06
+ms.sourcegitcommit: 8d945e0406818e614eacdc962493e570cc7615ed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75683457"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75955312"
 ---
 # <a name="device-portal-core-api-reference"></a>Informations de référence sur les API principales du portail d’appareil Windows
 
@@ -2003,7 +2003,7 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 | Paramètre d’URI | Description |
 | :------          | :------ |
-| name | (**requis**) Nouveau nom de l’ordinateur. |
+| name | (**requis**) Nouveau nom de l’ordinateur. Doit être codé en base64. |
 
 **En-têtes de requête**
 
