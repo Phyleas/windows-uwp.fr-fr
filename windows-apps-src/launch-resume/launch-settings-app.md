@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 6387cc75047371666ac55b9fb70ae73d3e4c4d64
-ms.sourcegitcommit: cc108c791842789464c38a10e5d596c9bd878871
+ms.openlocfilehash: c67d359120b738458d7397c9558f19b4794888f6
+ms.sourcegitcommit: 87c20c6a40ed54e086adbe80caa509d851f54f57
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75302663"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76123841"
 ---
 # <a name="launch-the-windows-settings-app"></a>Lancer l’application Paramètres Windows
 
@@ -135,10 +135,10 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 | Audio | ms-settings:easeofaccess-audio |
 | Sous-titres codés | ms-settings:easeofaccess-closedcaptioning |
 | Filtres de couleur | MS-Settings : easeofaccess-colorfilter |
-| Taille du pointeur & curseur | MS-Settings : easeofaccess-cursorandpointersize |
+| Taille du curseur et du pointeur | MS-Settings : easeofaccess-cursorandpointersize |
 | Affichage | ms-settings:easeofaccess-display |
 | Contrôle visuel | ms-settings:easeofaccess-eyecontrol |
-| Polices | ms-settings:fonts |
+| Fonts | ms-settings:fonts |
 | Contraste élevé | ms-settings:easeofaccess-highcontrast |
 | Clavier | ms-settings:easeofaccess-keyboard |
 | Loupe | ms-settings:easeofaccess-magnifier |
@@ -206,7 +206,7 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 
 |Page de paramètres| URI |
 |-------------|-----|
-| Arrière-plan | ms-settings:personalization-background |
+| Contexte | ms-settings:personalization-background |
 | Choisir les dossiers qui s’affichent dans le menu Démarrer | ms-settings:personalization-start-places |
 | Couleurs | ms-settings:personalization-colors<br/>MS-paramètres : couleurs |
 | Coup d’œil | MS-Settings : personnalisation-aperçu (**déconseillé dans Windows 10, version 1809 et versions ultérieures**) |
@@ -243,17 +243,18 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 | Dispositif de suivi oculaire | ms-settings:privacy-eyetracker (nécessite du matériel de suivi oculaire) |
 | Commentaires et diagnostics | ms-settings:privacy-feedback |
 | Système de fichiers | ms-settings:privacy-broadfilesystemaccess |
-| Général | ms-settings:privacy-general |
+| Général | MS-Settings : confidentialité ou MS-Settings : confidentialité-général |
+| Saisie de & manuscrite |ms-settings:privacy-speechtyping |
 | Services de localisation | ms-settings:privacy-location |
 | Messagerie | ms-settings:privacy-messaging |
 | Microphone | ms-settings:privacy-microphone |
 | Mouvement | ms-settings:privacy-motion |
 | Notifications | ms-settings:privacy-notifications |
 | Autres appareils | ms-settings:privacy-customdevices |
-| Images | ms-settings:privacy-pictures |
 | Appels téléphoniques | MS-Settings : confidentialité-phonecalls |
+| Images | ms-settings:privacy-pictures |
 | Radios | ms-settings:privacy-radios |
-| Voix, entrée manuscrite et saisie |ms-settings:privacy-speechtyping |
+| Voix | MS-Settings : confidentialité-reconnaissance vocale |
 | Tâches | ms-settings:privacy-tasks |
 | Vidéos | ms-settings:privacy-videos |
 | Activation vocale | MS-Settings : confidentialité-voiceactivation |
@@ -333,7 +334,7 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 | Windows Update - Options de redémarrage | ms-settings:windowsupdate-restartoptions |
 | Windows Update - Afficher l'historique des mises à jour | ms-settings:windowsupdate-history |
 
-## <a name="user--accounts"></a>Comptes d’utilisateurs
+## <a name="user-accounts"></a>Comptes d'utilisateurs
 
 |Page de paramètres| URI |
 |-------------|-----|
