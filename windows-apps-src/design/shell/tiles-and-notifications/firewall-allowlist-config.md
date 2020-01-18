@@ -9,24 +9,24 @@ ms.date: 05/20/2019
 ms.topic: article
 keywords: Windows 10, UWP, WNS, service de notification Windows, notification, Windows, pare-feu, dépannage, IP, trafic, entreprise, réseau, IPv4, VIP, nom de domaine complet, adresse IP publique
 ms.localizationpriority: medium
-ms.openlocfilehash: c3774164d16e86a88f45eb50030beec099629d6f
-ms.sourcegitcommit: 738bab9a088a244a7a212dcac6fb3560c547b8d5
+ms.openlocfilehash: fa0153a395144382aee3f764f0f7d9316afa9c5e
+ms.sourcegitcommit: ff086bae50e61a351b8c53867ed6579e43d8cf1f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72695769"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76265020"
 ---
 # <a name="enterprise-firewall-and-proxy-configurations-to-support-wns-traffic"></a>Pare-feu d’entreprise et configurations de proxy pour prendre en charge le trafic WNS
 
 ## <a name="background"></a>Contexte
-De nombreuses entreprises utilisent des pare-feu pour bloquer le trafic réseau indésirable. Malheureusement, cela peut également bloquer des éléments importants tels que les communications du service de notification Windows. Cela signifie que toutes les notifications envoyées via WNS seront supprimées dans certaines configurations réseau. Pour éviter ce risque, les administrateurs réseau peuvent ajouter la liste des noms de domaine complets WNS approuvés ou des adresses IP virtuelles à leur liste d’exemptions pour permettre au trafic WNS de traverser le pare-feu. Vous trouverez ci-dessous des informations supplémentaires sur la façon dont et les éléments à ajouter, ainsi que la prise en charge de différents types de proxy.
+De nombreuses entreprises utilisent des pare-feu pour bloquer le trafic réseau et les ports indésirables. Malheureusement, cela peut également bloquer des éléments importants tels que les communications du service de notification Windows. Cela signifie que toutes les notifications envoyées via WNS seront supprimées dans certaines configurations réseau. Pour éviter ce risque, les administrateurs réseau peuvent ajouter la liste des noms de domaine complets WNS approuvés ou des adresses IP virtuelles à leur liste d’exemptions pour permettre au trafic WNS de traverser le pare-feu. Vous trouverez ci-dessous des informations supplémentaires sur la façon dont et les éléments à ajouter, ainsi que la prise en charge de différents types de proxy.
 
 ## <a name="proxy-support"></a>Prise en charge de proxy
 
 > [!Note]
 > Les clients Windows **ne prennent pas** en charge tous les proxies, la connexion à WNS doit être une connexion directe.
 
-**À venir!** Nous étudions activement différentes configurations réseau, proxies et pare-feu. Nous mettrons à jour cette page avec plus de détails sur les scénarios d’entreprise courants et la prise en charge de WNS rapidement.
+**Bientôt disponible !** Nous étudions activement différentes configurations réseau, proxies et pare-feu. Nous mettrons à jour cette page avec plus de détails sur les scénarios d’entreprise courants et la prise en charge de WNS rapidement.
 
 
 ## <a name="what-information-should-be-added-to-the-allowlist"></a>Les informations qui doivent être ajoutées à allowlist
@@ -39,8 +39,8 @@ Vous trouverez ci-dessous une liste contenant les noms de domaine complets, les 
 > Les plages d’adresses IP seront modifiées périodiquement. pour cette raison, elles ne sont pas incluses dans cette page. Si vous souhaitez afficher la liste des plages d’adresses IP, vous pouvez télécharger le fichier à partir du centre de téléchargement : [VIP et plages d’adresses IP du service de notification Windows (WNS)](https://www.microsoft.com/download/details.aspx?id=44238). Vérifiez régulièrement pour vous assurer que vous disposez des informations les plus récentes. 
 
 
-### <a name="fqdns-vips-and-ips"></a>Noms de domaine complets, adresses IP virtuelles et adresses IP
-Chacun des éléments du document XML suivant est expliqué dans le tableau qui le suit (en [termes et notations](#terms-and-notations)). Les plages d’adresses IP ont été intentionnellement omises dans ce document pour vous inciter à utiliser uniquement les noms de domaine complets, car les noms de domaine complets restent constants. Toutefois, vous pouvez télécharger le fichier XML contenant la liste complète à partir du centre de téléchargement : [VIP et plages d’adresses IP du service de notification Windows (WNS)](https://www.microsoft.com/download/details.aspx?id=44238). Les nouvelles adresses IP virtuelles ou les plages d’adresses IP seront **effectives une semaine après leur téléchargement**.
+### <a name="fqdns-vips-ips-and-ports"></a>FQDN, VIP, adresses IP et ports
+Quelle que soit la méthode choisie ci-dessous, vous devez autoriser le trafic réseau vers les destinations listées via le **port 443**. Chacun des éléments du document XML suivant est expliqué dans le tableau qui le suit (en [termes et notations](#terms-and-notations)). Les plages d’adresses IP ont été intentionnellement omises dans ce document pour vous inciter à utiliser uniquement les noms de domaine complets, car les noms de domaine complets restent constants. Toutefois, vous pouvez télécharger le fichier XML contenant la liste complète à partir du centre de téléchargement : [VIP et plages d’adresses IP du service de notification Windows (WNS)](https://www.microsoft.com/download/details.aspx?id=44238). Les nouvelles adresses IP virtuelles ou les plages d’adresses IP seront **effectives une semaine après leur téléchargement**.
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>

@@ -6,12 +6,12 @@ ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, uwp, opérateurs mobiles, facturation mobile, facturation de l’opérateur mobile
 ms.localizationpriority: medium
-ms.openlocfilehash: 606267080ced6ea8dd41f8f05ddcdee4d33b00f2
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: af682d2a17e10bf1c3b3cdcb3485315a6972eb9f
+ms.sourcegitcommit: e38946d8228293fca7d6c2b4d66e8e8f0d349e92
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259969"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76258356"
 ---
 # <a name="mobile-operator-billing"></a>Facturation de l’opérateur mobile
 
@@ -44,6 +44,7 @@ La facturation de l'opérateur mobile est actuellement prise en charge par les o
 | Pologne               | Orange, lecture                                            |
 | Singapour            | M1 limitée, StarHub                                     |
 | Slovaquie             | Slovak Telekom                                          |
+| Afrique du Sud         | Vodacom                                                 |
 | Espagne                | Orange                                                  |
 | Suède               | Telenor, 3                                              |
 | Suisse          | Swisscom, Sunrise                                       |

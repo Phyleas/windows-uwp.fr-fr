@@ -1,19 +1,19 @@
 ---
-Description: La page Résumé du paiement affiche le détail des sommes rapportées par vos applications et modules complémentaires. Elle vous permet également de connaître les délais et les montants de vos paiements.
-title: Résumé du paiement
+Description: Les rapports de paiement affichent des informations sur l’argent que vous avez obtenu avec vos applications et modules complémentaires. Elle vous permet également de connaître les délais et les montants de vos paiements.
+title: Rapports de paiement
 ms.assetid: F0D070BE-8267-4CC9-B0D2-085EBA74AC98
 ms.date: 08/02/2019
 ms.topic: article
 keywords: windows 10, uwp, résumé du paiement, instruction, paiements, bénéfices, revenus, paiement
 ms.localizationpriority: medium
-ms.openlocfilehash: aff36ace40317ff0b2ff54a8ca75381fe2c24a4e
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: f4d8727a48cd68b304d515fe34082b4c4f632b4b
+ms.sourcegitcommit: ff086bae50e61a351b8c53867ed6579e43d8cf1f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684990"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76265049"
 ---
-# <a name="payout-summary"></a>Résumé du paiement
+# <a name="payout-reports"></a>Rapports de paiement
 
 La page **Récapitulatif des paiements** montre les détails de l’argent que vous avez gagné avec Microsoft. Elle vous permet également de connaître les délais et les montants de vos paiements.
 
@@ -22,12 +22,23 @@ Si vous vendez des produits dans Place de marché Microsoft Azure, la page **R�
 > [!NOTE]
 > Pour être éligible au paiement, votre produit doit atteindre le [seuil de paiement](payment-thresholds-methods-and-timeframes.md) de 50 $. Pour plus d’informations sur le seuil de paiement, consultez cette page et passez en revue le contrat de développeur d’applications.
 
+> [!NOTE]
+> Si vous recherchez de l’aide sur les versements, notamment la configuration des comptes de paiement, les versements manquants, l’ajout de paiements en attente ou tout autre point, contactez le support [ici](https://developer.microsoft.com/windows/support).
+
 ## <a name="access-the-payout-summary-pages"></a>Accéder aux pages de résumé de paiement
 
 Pour ouvrir l’une des pages de résumé de paiement :
 
-1. Sélectionnez l’icône Money dans le coin supérieur droit.
-2. Sélectionnez paiements, historique des transactions ou exporter des données.
+1. Sélectionnez l’icône paiement dans le coin supérieur droit.
+2. Sélectionnez historique des transactions, paiements ou exporter des données.
+
+## <a name="transaction-history-page"></a>Page historique des transactions
+
+Cette page affiche tous vos revenus individuels, y compris la date, le type et le résultat pour chacun d’entre eux. Vous pouvez sélectionner une période à afficher, et vous pouvez également filtrer par ID d’inscription, programme, ID de paiement, type en cours d’exécution, levier et état. Les données sont disponibles pour l’exercice fiscal actuel (du 1er juillet au 30 juin) et dans les deux années fiscales précédentes.
+
+Pour obtenir plus de détails sur un gain, sélectionnez la flèche vers le bas à droite de la page. Le levier, le chiffre d’affaires et le produit s’affichent. Si, pour une raison quelconque, ces données ne sont pas disponibles, mais que vous avez besoin d’y accéder, contactez le [support technique](https://developer.microsoft.com/windows/support). Si le résultat est le résultat d’un ajustement et non d’une transaction, les champs de produit ne sont pas affichés.
+
+Pour exporter les données de transaction sur cette page, utilisez la page **exporter des données** .
 
 ## <a name="payments-page"></a>Page paiements
 
@@ -78,7 +89,9 @@ Remarques :
 - La page exporter des données n’est pas actualisée automatiquement. Vous devrez peut-être actualiser la page manuellement pour afficher les données les plus récentes.
 - Votre filtre peut entraîner une erreur aucune donnée n’est disponible. Cela signifie probablement que vous avez laissé la période de temps par défaut sélectionnée à trois mois, puis que vous avez sélectionné un ID de paiement d’un gain en dehors de cette période. Développez votre période, puis réessayez.
 
-## <a name="payment-download-export"></a>Exportation du téléchargement de paiement
+## <a name="payments"></a>Paiements
+
+![Exporter les paiements](images/pc-export-payments.png)
 
 Cette option permet de télécharger les paiements que vous avez reçus dans votre banque pour un programme donné, la taxe associée et le montant agrégé. Ce rapport est utilisé pour de nombreux programmes de l’espace partenaires. par conséquent, certaines colonnes peuvent être inapplicables à votre rapport. Ces colonnes sont indiquées ci-dessous.
 
@@ -95,13 +108,15 @@ Cette option permet de télécharger les paiements que vous avez reçus dans vot
 | serviceFeeTax            | Montant total de serviceFeeTax dans payer à la devise pour le programme/participantID (applicable aux programmes de stockage et à la place de marché Azure uniquement) |
 | totalPayment             | Paiement total en devise locale, à l’exclusion de la taxe à retenir et des taxes de vente (le cas échéant) pour le programme/participantID   |
 | currencyCode             | Paiement à code devise                                                                                                                      |
-| paymentMethod            | Méthode utilisée pour payer le partenaire, par exemple, transfert bancaire électronique, note de crédit                                                             |
+| paymentMethod            | Méthode utilisée pour payer le partenaire, par exemple, transfert bancaire électronique, note de crédit                                                     |
 | paymentID                | Identificateur unique du paiement. Ce nombre est généralement visible dans votre relevé bancaire. (applicable uniquement aux paiements SAP)              |
 | paymentStatus            | Statut du paiement                                                                                                                            |
 | paymentStatusDescription | Description conviviale de l’état du paiement                                                                                                    |
 | paymentDate              | Date à laquelle le paiement a été envoyé par Microsoft                                                                                                      |
 
-## <a name="transaction-history-download-export"></a>Exportation du téléchargement de l’historique des transactions
+## <a name="transaction-history"></a>Historique des transactions
+
+![Exporter l’historique des transactions](images/pc-export-transaction.png)
 
 Cette option fournit un téléchargement de chaque élément de ligne en cours d’obtention que vous voyez dans la page historique des transactions, le type en cours, la date, le montant de la transaction associée, le client, le produit et d’autres détails transactionnels applicables à vos programmes.
 
@@ -122,7 +137,7 @@ Cette option fournit un téléchargement de chaque élément de ligne en cours d
 | lever                          | Indique une règle métier pour le revenu                                                                                                  | Toutes                                                            |
 | earningRate                    | Taux d’incentives appliqué au montant de la transaction pour générer un revenu                                                                      | Toutes                                                            |
 | quantity                       | Varie selon le programme. Indique la quantité facturée pour les programmes transactionnels                                                            | Toutes                                                            |
-| quantityType                   | Indique le type de quantité par exemple, quantité facturée, MAU                                                                                     | Toutes                                                            |
+| quantityType                   | Indique le type de quantité par exemple, quantité facturée, MAU                                                                             | Toutes                                                            |
 | earningType                    | Indique s’il s’agit de frais, de remise, de coop, de vente, etc.                                                                                          | Toutes                                                            |
 | earningAmount                  | Montant du revenu dans la devise de la transaction d’origine                                                                                      | Toutes                                                            |
 | earningAmountUSD               | Montant du revenu en USD                                                                                                                    | Toutes                                                            |
@@ -177,3 +192,46 @@ Cette option fournit un téléchargement de chaque élément de ligne en cours d
 | ID de locataire                       |                                                                                                                                          | Programmes d’incentives                                             |
 | externalReferenceId            | Identificateur unique du programme                                                                                                        | Programmes de paiement direct (incentive et boutique)                      |
 | externalReferenceIdLabel       | Étiquette de l’identificateur unique                                                                                                                  | Programmes de paiement direct (incentive et boutique)                      |
+
+## <a name="historical-statements"></a>Instructions historiques
+
+![Exporter les instructions historiques](images/pc-export-statements.png)
+
+L’historique des transactions avant le 1 2019 du 1er juillet est géré séparément. Les instructions utilisent les champs suivants à la place de ceux qui sont actuels.
+
+> [!NOTE]
+> L’historique des transactions héritées comporte une colonne appelée « réservé » qui correspond à la colonne « bénéfices » dans l’historique moderne, sauf qu’elle exclut tous les bénéfices avec l’État « paiement envoyé ».
+
+> [!NOTE]
+> Les filtres (3M, 6 M, 12M, etc.) ne s’appliquent pas à la section des **instructions historiques** .
+
+| Nom du champ              | Description                                                                                                                                                             |
+|-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Source de revenu          | Votre source de revenu, en fonction de la transaction (par exemple, Microsoft Store, Windows Phone Store, Windows Store 8, publicités, etc.)                  |
+| ID de commande                | Identificateur de commande unique. Cet ID permet d’identifier les transactions d’achat ainsi que les opérations sans achat (par exemple : remboursements, rétrofacturations, etc.). Les deux auront le même ID de commande. En outre, en cas de paiement fractionné, où plusieurs modes de paiement sont utilisés pour un achat unique, l’ID de commande vous permettra de lier les transactions d’achat. |
+| ID de la transaction          | Identifiant unique de la transaction.                                                                                                                                          |
+| Date et heure de la transaction   | Date et heure d’exécution de la transaction (UTC).                                                                                                                       |
+| ID de produit parent       | Identificateur unique du produit parent. Notez également que si la transaction ne présente aucun produit parent, l'ID du produit parent est l'ID du produit.                                |
+| ID de produit              | Identifiant unique du produit.                                                                                                                                              |
+| Nom du produit parent     | Nom du produit parent. Notez également que si la transaction ne présente aucun produit parent, le nom du produit parent est identique au nom du produit.                                  |
+| Nom du produit            | Désignation du produit.                                                                                                                                                    |
+| Type de produit            | Type du produit (par exemple, Application, Module complémentaire, Jeu, etc.)                                                                                                                       |
+| Quantité                | Lorsque la Source de revenu est Microsoft Store pour Entreprises, la Quantité correspond au nombre de licences achetées. Pour toutes les autres Sources de revenu, la Quantité sera toujours 1. Remarque : même si une transaction unique est scindée en deux articles en raison du recours à deux méthodes de paiement différentes, chaque article affiche une Quantité égale à 1. |
+| Type de transaction        | Type de la transaction (par exemple, achat, remboursement, contrepassation, rétrofacturation, etc.)                                                                                              |
+| Moyen de paiement          | Instrument de paiement client utilisé pour la transaction (par exemple, carte, facturation de l’opérateur mobile, PayPal, etc.)                                                               |
+| Pays / région        | Pays/région d’exécution de la transaction.                                                                                                                          |
+| Fournisseur / vendeur local | Fournisseur/vendeur local de l’enregistrement.                                                                                                                                        |
+| Devise de la transaction    | Devise utilisée pour la transaction.                                                                                                                                            |
+| Montant de la transaction      | Montant de la transaction.                                                                                                                                              |
+| Taxes versées            | Montant des taxes versées (taxe de vente, taxe d’utilisation ou TVA/taxe sur les biens et services).                                                                                                                  |
+| Profits nets            | Montant de la transaction moins les taxes versées.                                                                                                                                   |
+| Frais du Windows Store               | Pourcentage des recettes nettes retenues par Microsoft à titre de frais de mise à disposition de l’application ou du module complémentaire dans le Windows Store.                                                      |
+| Revenu de l’application            | Recettes nettes moins les frais du Windows Store.                                                                                                                                       |
+| Impôts retenus          | Montant de l’impôt sur le revenu retenu. (Non inclus dans le fichier .csv **Réservé**)                                                                                                |
+| Paiement                 | Revenu de l’application moins toute retenue d’impôt sur le revenu applicable (montant indiqué dans le champ « Devise de la transaction »). (Non inclus dans le fichier .csv **Réservé**)                               |
+| Taux de change                 | Taux de change utilisé pour convertir la devise de la transaction en devise du paiement.                                                                                         |
+| Devise de paiement        | Devise dans laquelle votre paiement a été effectué.                                                                                                                                       |
+| Paiement converti       | Montant du paiement converti en devise du paiement à l’aide du taux de change.                                                                                                         |
+| Modèle de remise des taxes         | Tiers responsable du versement des taxes (taxe de vente, taxe d’utilisation ou TVA/taxe sur les biens et services).                                                                                                   |
+| Date et heure d’admissibilité   | Date et heure auxquelles vos revenus de transaction peuvent vous être versés (UTC). Lorsqu’un paiement est créé, il inclut les revenus de transactions dont la date et l’heure d’admissibilité sont antérieures à la date de création du paiement. (Inclus uniquement dans le fichier .csv **Réservé**) |
+| Frais                 | Ventilation détaillée de tous les frais agrégés dans la colonne Montant de transaction. (Uniquement pour Microsoft Azure Marketplace ; non inclus dans le fichier .csv **Réservé**) |
