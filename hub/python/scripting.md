@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, windows 10, microsoft, administration de système python, automatisation de fichier python, scripts python sur windows, configurer python sur windows, environnement de développement python sur windows, environnement de développement python sur windows, python avec powershell, scripts python pour tâches du système de fichiers
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 3f8a17de8121fed27e69442d5560f702a04c8e42
-ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
+ms.openlocfilehash: d465d46a0524345a45dff9b1cc7c425e4cb468a4
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72314863"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683652"
 ---
 # <a name="get-started-using-python-on-windows-for-scripting-and-automation"></a>Bien démarrer avec Python pour l’écriture de scripts et l’automatisation sur Windows
 
@@ -24,7 +24,7 @@ Voici un guide pas à pas pour la configuration de votre environnement de dével
 
 ## <a name="set-up-your-development-environment"></a>Configurer votre environnement de développement
 
-Lorsque vous utilisez Python pour écrire des scripts qui effectuent des opérations sur le système de fichiers, nous vous recommandons d’[installer Python à partir du Microsoft Store](https://www.microsoft.com/en-us/p/python-37/9nj46sx7x90p?activetab=pivot:overviewtab). L’installation via le Microsoft Store utilise l’interpréteur de base Python3, mais gère la configuration de vos paramètres PATH pour l’utilisateur actuel (évitant ainsi le recours à un accès administrateur), en plus de fournir des mises à jour automatiques.
+Lorsque vous utilisez Python pour écrire des scripts qui effectuent des opérations sur le système de fichiers, nous vous recommandons d’[installer Python à partir du Microsoft Store](https://www.microsoft.com/p/python-37/9nj46sx7x90p?activetab=pivot:overviewtab). L’installation via le Microsoft Store utilise l’interpréteur de base Python3, mais gère la configuration de vos paramètres PATH pour l’utilisateur actuel (évitant ainsi le recours à un accès administrateur), en plus de fournir des mises à jour automatiques.
 
 Si vous utilisez Python pour **le développement web** sous Windows, nous vous recommandons une configuration différente à l’aide du sous-système Windows pour Linux. Vous trouverez une procédure pas à pas dans notre guide : [Bien démarrer avec Python pour le développement web sur Windows](./web-frameworks.md). Si vous êtes novice en Python, essayez notre guide : [Prise en main de Python sur Windows pour les débutants](./beginners.md). Pour certains scénarios avancés (nécessité d’accéder aux fichiers installés de Python ou de les modifier, de créer des copies de fichiers binaires ou d’utiliser directement des DLL Python), vous pouvez télécharger une version de Python spécifique directement depuis [python.org](https://www.python.org/downloads/) ou installer une [autre solution](https://www.python.org/download/alternatives), telle que Anaconda, Jython, PyPy, WinPython, IronPython, etc. Nous vous recommandons de le faire uniquement si vous êtes un programmeur Python plus avancé possédant une raison spécifique de choisir un autre type d’implémentation.
 
@@ -48,11 +48,11 @@ Téléchargez VS Code pour Windows et suivez les instructions d’installation :
 
 ## <a name="install-the-microsoft-python-extension"></a>Installer l’extension Python Microsoft
 
-Vous devez installer l’extension Python Microsoft afin de tirer parti des fonctionnalités de prise en charge de VS Code. [En savoir plus](https://code.visualstudio.com/docs/languages/python).
+Vous devez installer l’extension Python Microsoft afin de tirer parti des fonctionnalités de prise en charge de VS Code. [En savoir plus](https://code.visualstudio.com/docs/languages/python)
 
-1. Ouvrez la fenêtre Extensions de VS Code en saisissant **Ctrl + Maj + X** (ou utilisez le menu pour accéder à **Afficher** > **Extensions**).
+1. Ouvrez la fenêtre Extensions de VS Code en entrant **Ctrl + Maj + X** (ou utilisez le menu pour accéder à **Afficher** > **Extensions**).
 
-2. Dans la zone **Rechercher des extensions dans Marketplace**, saisissez :  **Python**.
+2. Dans la zone **Rechercher des extensions dans Marketplace**, entrez :  **Python**.
 
 3. Recherchez l’extension **Python (ms-python.python) par Microsoft** et sélectionnez le bouton vert **Installer**.
 

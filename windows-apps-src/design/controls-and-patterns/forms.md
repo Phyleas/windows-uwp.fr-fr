@@ -5,12 +5,12 @@ template: detail.hbs
 ms.date: 11/07/2017
 ms.topic: article
 keywords: windows 10, uwp, fluent
-ms.openlocfilehash: ff071a2a98c533ad7c089b28165f026de00ba68f
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: e1a5b192ed57d3962b6ba4cbef69e3663bc1e2ec
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319093"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683992"
 ---
 # <a name="forms"></a>Formulaires
 Un formulaire est un groupe de contrôles qui collectent des données auprès de l’utilisateur et les envoient. Les formulaires sont généralement utilisés pour les pages de paramètres, les enquêtes, la création de comptes et bien plus encore. 
@@ -26,7 +26,7 @@ Un formulaire est une page dédiée à la collecte d’entrées de données qui 
 - Changer les paramètres de l’application, tels que les options de confidentialité ou d’affichage
 - Répondre à un questionnaire
 - Acheter un article
-- Envoyer vos commentaires
+- Envoyer des commentaires
 
 ## <a name="types-of-forms"></a>Types de formulaires
 
@@ -58,7 +58,7 @@ Ce type de formulaire permet à l’utilisateur de répondre avec une certaine s
 Pour faciliter l’expérience utilisateur et vous assurer que les utilisateurs peuvent fournir l’entrée correcte, tenez compte des recommandations suivantes sur la conception des dispositions des formulaires. 
 
 ### <a name="labels"></a>Étiquettes
-Les [étiquettes](labels.md) doivent être alignées à gauche et placées au-dessus du contrôle d’entrée. De nombreux contrôles disposent d’une propriété Header intégrée pour afficher l’étiquette. Pour les contrôles dépourvus de propriété Header, ou pour étiqueter des groupes de contrôles, vous pouvez utiliser un élément [TextBlock](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.TextBlock).
+Les [étiquettes](labels.md) doivent être alignées à gauche et placées au-dessus du contrôle d’entrée. De nombreux contrôles disposent d’une propriété Header intégrée pour afficher l’étiquette. Pour les contrôles qui n’ont pas de propriété Header, ou pour étiqueter des groupes de contrôles, vous pouvez utiliser un élément [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock).
 
 Pour [faciliter l’accessibilité](../accessibility/accessibility.md), étiquetez chaque contrôle et groupe de contrôles afin qu’il soit clairement identifiable par les lecteurs humains et les lecteurs d’écran. 
 
@@ -108,7 +108,7 @@ Les utilisateurs peuvent utiliser le clavier pour parcourir les contrôles avec 
 Les contrôles d’entrée sont les éléments d’interface utilisateur qui permettent aux utilisateurs d’entrer des informations dans les formulaires. Certains contrôles courants qui peuvent être ajoutés aux formulaires sont listés ci-dessous ainsi que les situations dans lesquelles les utiliser.
 
 ### <a name="text-input"></a>Saisie de texte
-Commande | Utilisez | Exemple
+Contrôler | Utiliser | Exemple
  - | - | -
 [TextBox](text-box.md) | Capturer une ou plusieurs lignes de texte | Noms, réponses libres ou commentaires
 [PasswordBox](password-box.md) | Collecter des données privées en masquant les caractères | Mots de passe, numéros de sécurité sociale (SSN), codes PIN, informations de carte de crédit 
@@ -116,7 +116,7 @@ Commande | Utilisez | Exemple
 [RichEditBox](rich-edit-box.md) | Modifier des fichiers texte contenant du texte mis en forme, des liens hypertexte et des images | Chargement d’un fichier, aperçu et modification dans l’application
 
 ### <a name="selection"></a>d’un certificat SSTP
-Commande | Utilisez | Exemple
+Contrôler | Utiliser | Exemple
 - | - | - 
 | [CheckBox](checkbox.md) | Sélectionner ou désélectionner un ou plusieurs éléments d’action | Accepter les conditions, ajouter des éléments facultatifs, sélectionner toutes les réponses applicables
 [RadioButton](radio-button.md) | Sélectionner une option parmi deux ou plusieurs choix | Choisir un type, un mode de livraison, etc.
@@ -125,21 +125,21 @@ Commande | Utilisez | Exemple
 > **Remarque** : S’il existe cinq éléments de sélection ou plus, utilisez un contrôle de liste.
 
 ### <a name="lists"></a>Listes
-Commande | Utilisez | Exemple
+Contrôler | Utiliser | Exemple
 - | - | -
 [ComboBox](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists.md#drop-down-lists) | Démarrer dans un état compact et développer pour afficher la liste des éléments sélectionnables | Sélectionner dans une longue liste d’éléments, tels que des États ou des pays
 [ListView](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists#list-views) | Catégoriser des éléments et affecter des en-têtes de groupe, glisser-déplacer des éléments, traiter du contenu et réorganiser des éléments | Options de classement
 [GridView](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists#grid-views) | Organiser et parcourir des collections basées sur des images | Choisir une photo, une couleur, un thème d’affichage
 
 ### <a name="numeric-input"></a>Entrée numérique
-Commande | Utilisez | Exemple
+Contrôler | Utiliser | Exemple
 - | - | -
 [Curseur](slider.md) | Sélectionner un nombre dans une plage de valeurs numériques contiguës | Pourcentages, volume, vitesse de lecture
-[Évaluation](rating.md) | Évaluation avec étoiles | Retour d'expérience du client
+[Évaluation](rating.md) | Évaluation avec étoiles | Feedback des clients
 
 ### <a name="date-and-time"></a>Date et heure
 
-Commande | Utilisez 
+Contrôler | Utiliser 
 - | - 
 [CalendarView](calendar-view.md) | Sélectionner une date unique ou une plage de dates à partir d’un calendrier toujours visible 
 [CalendarDatePicker](calendar-date-picker.md) | Sélectionner une date unique à partir d’un calendrier contextuel 
@@ -152,7 +152,7 @@ Pour obtenir la liste complète des contrôles UWP, consultez [Index des contrô
 Pour les contrôles d’interface utilisateur personnalisés et plus complexes, consultez les ressources UWP disponibles auprès de sociétés comme [Telerik](https://www.telerik.com/), [SyncFusion](https://www.syncfusion.com/uwp-ui-controls), [DevExpress](https://www.devexpress.com/Products/NET/Controls/Win10Apps/), [Infragistics](https://www.infragistics.com/products/universal-windows-platform), [ComponentOne](https://www.componentone.com/Studio/Platform/UWP) et [ActiPro](https://www.actiprosoftware.com/products/controls/universal).
 
 ## <a name="one-column-form-example"></a>Exemple de formulaire monocolonne
-Cet exemple utilise un [mode liste](lists.md) [maître/détail](master-details.md) acrylique et un contrôle [NavigationView](navigationview.md).
+Cet exemple utilise un [affichage de liste](lists.md)[maître/détail](master-details.md) Acrylic et un contrôle [NavigationView](navigationview.md).
 ![Capture d’écran d’un autre exemple de formulaire](images/FormExample2.png)
 ```xaml
 <StackPanel>

@@ -5,18 +5,18 @@ keywords: nouveautés, mise à jour, fonctionnalités, conseils aux développeur
 ms.date: 08/03/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b4cc5f10ba23c942851f34ef64afd887d265dba1
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 824cdb74a809ae3f9ae2ed202a9889535021f711
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259777"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684723"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2017"></a>Nouveautés apportées dans la documentation du développeur Windows en août 2017
 
 La documentation du développeur Windows est constamment mise à jour avec des informations sur les nouvelles fonctionnalités mises à la disposition des développeurs sur la plateforme Windows. Les présentations de fonctionnalités, les conseils aux développeurs et les vidéos qui suivent ont été récemment mis à disposition. Ils contiennent des informations nouvelles et mises à jour destinées aux développeurs Windows.
 
-[Installez les outils et le kit de développement logiciel (SDK)](https://developer.microsoft.com/windows/downloads#_blank) sur Windows 10 et vous pourrez ainsi [créer une application universelle Windows](../get-started/your-first-app.md) ou explorer la procédure permettant d’utiliser votre [code d’application existant sur Windows](../porting/index.md).
+[Installez les outils et le SDK](https://developer.microsoft.com/windows/downloads#_blank) sur Windows 10, et vous pourrez ainsi [créer une application Windows universelle](../get-started/your-first-app.md) ou découvrir comment vous pouvez utiliser votre [code d’application existant sur Windows](../porting/index.md).
 
 ## <a name="features"></a>Fonctionnalités
 
@@ -57,9 +57,9 @@ Voir [Étendre votre application de bureau avec des composants UWP modernes](htt
 
 ### <a name="getting-started-with-point-of-service"></a>Prise en main de la technologie de point de vente
 
-Nous avons ajouté un guide pour vous aider avec la [prise en main des appareils de point de vente](https://docs.microsoft.com/en-us/windows/uwp/devices-sensors/pos-get-started). Il aborde des sujets comme l’énumération des appareils, la vérification des fonctionnalités des appareils, la revendication d’appareils et le partage d’appareils. 
+Nous avons ajouté un guide pour vous aider avec la [prise en main des appareils de point de vente](https://docs.microsoft.com/windows/uwp/devices-sensors/pos-get-started). Il aborde des sujets comme l’énumération des appareils, la vérification des fonctionnalités des appareils, la revendication d’appareils et le partage d’appareils. 
 
-### <a name="xbox-live"></a>Xbox Live
+### <a name="xbox-live"></a>Xbox Live
 
 Nous avons ajouté de la documentation pour les développeurs Xbox Live, à la fois pour les jeux du Kit de développement Xbox (XDK) et de la plateforme Windows universelle (UWP).
 
@@ -71,9 +71,9 @@ Consultez la [Vue d’ensemble du programme pour les développeurs Xbox Live](ht
 
 ## <a name="videos"></a>Vidéos
 
-### <a name="mixed-reality"></a>Réalité mixte
+### <a name="mixed-reality"></a>Mixed Reality
 
-Une série de didacticiels sous forme vidéo a été publiée pour [Microsoft HoloLens cours 250](https://developer.microsoft.com/en-us/windows/mixed-reality/mixed_reality_250). Si vous avez déjà installé les outils et que vous êtes déjà familiarisé avec les principes de développement de base pour la réalité mixte, consultez ces formations vidéo pour plus d’informations sur la création d’expériences partagées sur des appareils de réalité mixte.
+Une série de didacticiels sous forme vidéo a été publiée pour [Microsoft HoloLens cours 250](https://developer.microsoft.com/windows/mixed-reality/mixed_reality_250). Si vous avez déjà installé les outils et que vous êtes déjà familiarisé avec les principes de développement de base pour la réalité mixte, consultez ces formations vidéo pour plus d’informations sur la création d’expériences partagées sur des appareils de réalité mixte.
 
 ### <a name="narrator-and-dev-mode"></a>Narrateur et mode développeur
 

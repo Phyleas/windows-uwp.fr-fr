@@ -5,18 +5,18 @@ keywords: XAML, UWP, Bien démarrer
 ms.date: 08/31/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f2c63c90170a633ae718db618c502efa41fb3f7d
-ms.sourcegitcommit: 807dadf5eceb576aba3ad898a6e9bf12129e94a4
+ms.openlocfilehash: 0e9e0a426d51fddaf4ff509438176e9db7a3e474
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72680764"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684124"
 ---
 # <a name="tutorial-create-custom-styles"></a>Tutoriel : Créer des styles personnalisés
 
 Ce tutoriel vous montre comment personnaliser l’interface utilisateur de notre application XAML. Avertissement : ce tutoriel peut impliquer ou non une licorne. (Ce n'est pas une blague !)  
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 * [Visual Studio 2019 et SDK Windows 10 (10.0.15063.468 ou ultérieur)](https://developer.microsoft.com/windows/downloads)
 
 ## <a name="part-0-get-the-code"></a>Partie 0 : Obtenir le code
@@ -55,7 +55,7 @@ Le curseur d’exposition ajuste l’exposition de l’image : faites-le glisse
 
 3. Utilisez un élément Polygon pour créer une forme d’arrière-plan pour le curseur d'exposition.
 
-    [L’espace de noms Windows.XAML.Ui.Shapes](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Shapes) fournit sept formes au choix. Vous pouvez choisir une ellipse, un rectangle, et un objet appelé Path, qui permet de réaliser toutes sortes de formes, et oui, même une licorne ! 
+    [L’espace de noms Windows.XAML.Ui.Shapes](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Shapes) fournit sept formes au choix. Vous pouvez choisir une ellipse, un rectangle, et un objet appelé Path, qui permet de réaliser toutes sortes de formes, et oui, même une licorne ! 
     
     <!-- TODO reduce size -->
     ![Une licorne](../basics/images/xaml-basics/unicorn.png)
@@ -177,7 +177,7 @@ Félicitations, vous avez terminé la partie 1 ! Si vous êtes bloqué ou que 
 
 Un des avantages des styles XAML est qu’ils permettent de réduire considérablement la quantité de code que vous devez écrire et d'actualiser beaucoup plus facilement l’apparence de votre application.
 
-Pour définir un style, vous ajoutez un élément [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) à la propriété [Ressources](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.Resources) d’un élément qui contient le contrôle que vous souhaitez pour le style.  Si vous ajoutez votre style à la propriété **Page.Resources**, vos styles seront accessibles à la page entière. Si vous ajoutez votre style à la propriété **Application.Resources** dans votre fichier App.xaml, le style sera accessible à l’ensemble de l’application.
+Pour définir un style, vous ajoutez un élément [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) à la propriété [Ressources](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Resources) d’un élément qui contient le contrôle que vous souhaitez pour le style.  Si vous ajoutez votre style à la propriété **Page.Resources**, vos styles seront accessibles à la page entière. Si vous ajoutez votre style à la propriété **Application.Resources** dans votre fichier App.xaml, le style sera accessible à l’ensemble de l’application.
 
 Vous pouvez créer des styles nommés et des styles généraux. Un style nommé doit être explicitement appliqué à des contrôles spécifiques ; un style général est appliqué à tout contrôle qui correspond au **TargetType** spécifié. 
 

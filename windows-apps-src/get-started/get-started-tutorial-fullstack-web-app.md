@@ -5,12 +5,12 @@ keywords: application web hébergée, HWA, API REST, application avec page uniqu
 ms.date: 05/10/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f5195cc3ed84116797c0b424a637c255b082386
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: b9a6b80034dc8272226c9563960079434dff8e41
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72281865"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684781"
 ---
 # <a name="create-a-single-page-web-app-with-rest-api-backend"></a>Créer une application web avec page unique avec une API REST principale
 
@@ -22,7 +22,7 @@ Ce didacticiel en deux parties offre une présentation rapide des technologies d
 
 Nous allons utiliser certaines des technologies web les plus populaires, y compris l’exécution [Node.js](https://nodejs.org/en/) et [Express](https://expressjs.com/) pour le développement côté serveur, l’infrastructure d’interface utilisateur [Bootstrap](https://getbootstrap.com/), le modèle de moteur [Pug](https://www.npmjs.com/package/pug) et [Swagger](https://swagger.io/tools/) pour la création des API RESTful. Vous gagnerez également en expérience au niveau du [portail Azure](https://ms.portal.azure.com/) pour l’hébergement dans le cloud et l’utilisation de l’éditeur [Visual Studio Code](https://code.visualstudio.com/).
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Si vous ne disposez pas encore de ces ressources sur votre ordinateur, suivez ces liens de téléchargement :
 
@@ -32,7 +32,7 @@ Si vous ne disposez pas encore de ces ressources sur votre ordinateur, suivez ce
 
  - [Visual Studio Code](https://code.visualstudio.com/)
 
-Si vous souhaitez terminer les dernières étapes de l’hébergement de votre service de l’API et de l’application de la mémoire de jeu sur Microsoft Azure, vous devez [créer un compte Azure gratuit](https://azure.microsoft.com/en-us/free/) si vous ne l’avez pas déjà fait.
+Si vous souhaitez terminer les dernières étapes de l’hébergement de votre service de l’API et de l’application de la mémoire de jeu sur Microsoft Azure, vous devez [créer un compte Azure gratuit](https://azure.microsoft.com/free/) si vous ne l’avez pas déjà fait.
 
 Si vous décidez de quitter (ou de reporter) la partie relative à Azure, ignorez simplement les sections finales des parties I et II, qui portent sur l’hébergement Azure et l’emballage de votre application du Microsoft Store. Le service de l’API et l’application web que vous générez seront toujours exécutés localement (à partir de `http://localhost:8000`et de `http://localhost:3000`, respectivement) sur votre ordinateur.
 
@@ -290,7 +290,7 @@ Voici quelques ressources utiles pour aller plus loin :
 
  - [Débogage Node.js avancé avec Visual Studio Code](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)
 
- - [Documentation Azure Web + Mobile](https://docs.microsoft.com/en-us/azure/#pivot=services&panel=web)
+ - [Documentation Azure Web + Mobile](https://docs.microsoft.com/azure/#pivot=services&panel=web)
 
  - [Documentation Azure DocumentDB](https://azure.microsoft.com/blog/dear-documentdb-customers-welcome-to-azure-cosmos-db/)
 
@@ -464,7 +464,7 @@ Vous pouvez trouver les fichiers dont vous avez besoin pour cette partie du dida
 > [!TIP] 
 > Si vous utilisez Visual Studio Code, sélectionnez toutes les lignes de code pour lesquelles vous souhaitez supprimer les commentaires, et appuyez sur Ctrl+K, U
 
-Nous utiliserons ici [`jQuery.ajax()`](https://api.jquery.com/jQuery.ajax/) et la méthode **PLACER**[`/guess`](#part-i-build-a-rest-api-backend) créée dans la Partie I. 
+Nous utilisons ici [`jQuery.ajax()`](https://api.jquery.com/jQuery.ajax/) et la méthode **PUT**[`/guess`](#part-i-build-a-rest-api-backend) créée dans la Partie I. 
 
 Ce code s’exécute dans l’ordre suivant.
 
@@ -490,7 +490,7 @@ if (cardsFlipped == gameBoardSize) {
 Si le nombre de cartes retournées correspond à la taille du tableau de jeu (par exemple, `cardsFlipped == gameBoardSize`), il n’y a plus aucune carte à retourner et l’utilisateur a gagné. Nous allons ajouter du code HTML simple à `div` avec `id="game-board"` pour informer l’utilisateur qu’il a gagné et qu’il peut jouer à nouveau.  
 
 ### <a name="3-create-the-user-interface"></a>3. Créer l’interface utilisateur 
-Nous allons désormais observer ce code en action en créant l’interface utilisateur. Dans ce didacticiel, nous utilisons le moteur de création de modèles [Pug](https://pugjs.org/) (officiellement Jade).  *Pug* est la syntaxe propre et sensible aux espaces blancs pour l’écriture de code HTML. Voici un exemple : 
+Nous allons désormais observer ce code en action en créant l’interface utilisateur. Dans ce didacticiel, nous utilisons le moteur de création de modèles [Pug](https://pugjs.org/) (officiellement Jade).  *Pug* est la syntaxe propre et sensible aux espaces blancs pour l’écriture de code HTML. Voici un exemple. 
 
 ```
 body
@@ -592,7 +592,7 @@ L’ajout d’un mouvement de retournement à l’aide de la [transformation CSS
     perspective: 1000px; 
     ```
 
-2. Maintenant, ajoutons les propriétés suivantes à la classe `.cards` dans style.css. Le `.cards``div`est l’élément qui effectue l’animation de retournement, en montrant l’avant ou l’arrière de la carte. 
+2. Maintenant, ajoutons les propriétés suivantes à la classe `.cards` dans style.css. `.cards` `div` est l’élément qui effectue l’animation de retournement, en montrant l’avant ou l’arrière de la carte. 
 
     ``` css
     transform-style: preserve-3d;
@@ -634,8 +634,8 @@ Vous pouvez désormais déployer votre application Azure (ou tout autre service 
 
 La procédure de base pour la publication dans le Microsoft Store est la suivante :
 
- 1. Créer un compte [Développeur Windows](https://developer.microsoft.com/en-us/store/register)
- 2. Utiliser la [liste de vérification](https://docs.microsoft.com/en-us/windows/uwp/publish/app-submissions) de soumission d’applications
+ 1. Créer un compte [Développeur Windows](https://developer.microsoft.com/store/register)
+ 2. Utiliser la [liste de vérification](https://docs.microsoft.com/windows/uwp/publish/app-submissions) de soumission d’applications
  3. Soumettre votre application en vue d’une [certification](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process)
 
 Voici quelques ressources utiles pour aller plus loin :

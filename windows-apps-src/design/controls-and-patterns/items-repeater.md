@@ -7,12 +7,12 @@ ms.date: 02/01/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 93a81501b524826484111419899675fbb99b86fa
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 38f289b21980e2a77fd8669c39750e9b989aa742
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66364758"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684394"
 ---
 # <a name="itemsrepeater"></a>ItemsRepeater
 
@@ -64,7 +64,7 @@ ItemsRepeater ne propose pas de collection d’éléments intégrée. Si vous av
 Quand vous utilisez un **ItemsRepeater**, vous devez fournir la fonctionnalité de défilement en l’encapsulant dans un contrôle [**ScrollViewer**](/uwp/api/windows.ui.xaml.controls.scrollviewer).
 
 > [!NOTE]
-> Si votre application doit s’exécuter sur des versions antérieures de Windows (celles sorties *avant* Windows 10 version 1809), vous devez aussi héberger le **ScrollViewer** dans le [  **ItemsRepeaterScrollHost**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeaterscrollhost). 
+> Si votre application doit s’exécuter sur des versions antérieures de Windows (celles sorties *avant* Windows 10 version 1809), vous devez aussi héberger le **ScrollViewer** dans le [ **ItemsRepeaterScrollHost**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeaterscrollhost). 
 > ```xaml
 > <muxc:ItemsRepeaterScrollHost>
 >     <ScrollViewer>
@@ -91,7 +91,7 @@ ItemsRepeater itemsRepeater1 = new ItemsRepeater();
 itemsRepeater1.ItemsSource = Items;
 ```
 
-Vous pouvez aussi lier la propriété **ItemsSource** à une collection en XAML. Pour plus d’informations sur la liaison de données, voir [Vue d’ensemble de la liaison de données](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-quickstart).
+Vous pouvez aussi lier la propriété **ItemsSource** à une collection en XAML. Pour plus d’informations sur la liaison de données, consultez [Vue d’ensemble de la liaison de données](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-quickstart).
 
 
 ```xaml
@@ -264,7 +264,7 @@ Les éléments affichés par le contrôle [ItemsRepeater](/uwp/api/microsoft.ui.
 
 [StackLayout](/uwp/api/microsoft.ui.xaml.controls.stacklayout) réorganise les éléments en une seule ligne que vous pouvez orienter horizontalement ou verticalement.
 
-Vous pouvez définir la propriété [Spacing](/en-us/uwp/api/microsoft.ui.xaml.controls.stacklayout.spacing) pour ajuster l’espace entre les éléments. L’espacement est appliqué selon l’[Orientation](/uwp/api/microsoft.ui.xaml.controls.stacklayout.orientation) de la disposition.
+Vous pouvez définir la propriété [Spacing](/uwp/api/microsoft.ui.xaml.controls.stacklayout.spacing) pour ajuster l’espace entre les éléments. L’espacement est appliqué selon l’[Orientation](/uwp/api/microsoft.ui.xaml.controls.stacklayout.orientation) de la disposition.
 
 ![Espacement d’une disposition de pile](images/stack-layout.png)
 
@@ -300,7 +300,7 @@ Vous pouvez définir la propriété [ItemsStretch](/uwp/api/microsoft.ui.xaml.co
 
 Cette liste affiche les valeurs disponibles. Par défaut, l’**Orientation** est de type **Horizontal**.
 
-- **Aucun** : l’espace restant n’est pas utilisé à la fin de la ligne. Il s’agit de l’option par défaut.
+- **Aucune** : l’espace restant n’est pas utilisé à la fin de la ligne. Il s'agit de la valeur par défaut.
 - **Fill** : les éléments sont élargis pour occuper l’espace disponible (et agrandis dans le cas d’une orientation verticale).
 - **Uniform** : les éléments sont élargis pour occuper l’espace disponible mais aussi agrandis pour préserver les proportions (hauteur et largeur sont inversées dans le sens vertical).
 
@@ -312,7 +312,7 @@ Quand **ItemsStretch** a la valeur **Aucun**, vous pouvez définir la propriét�
 
 Cette liste affiche les valeurs disponibles. Par défaut, l’**Orientation** est de type **Horizontal**.
 
-- **Début** : les éléments sont alignés par rapport au début de la ligne. L’espace restant n’est pas utilisé à la fin de la ligne. Il s’agit de l’option par défaut.
+- **Début** : les éléments sont alignés par rapport au début de la ligne. L’espace restant n’est pas utilisé à la fin de la ligne. Il s'agit de la valeur par défaut.
 - **Center** : les éléments sont alignés au centre de la ligne. L’espace restant est réparti uniformément au début et à la fin de la ligne.
 - **End** : les éléments sont alignés par rapport à la fin de la ligne. L’espace restant n’est pas utilisé au début de la ligne.
 - **SpaceAround** : les éléments sont répartis uniformément. L’espace avant et après chaque élément est identique.
@@ -642,6 +642,12 @@ Cet exemple montre comment afficher une liste d’éléments groupés dans une p
 
 ```xaml
 <!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
+
+<Page.Resources>
+    <muxc:StackLayout x:Key="MyGroupLayout"/>
+    <muxc:StackLayout x:Key="MyItemLayout" Orientation="Horizontal"/>
+</Page.Resources>
+
 <ScrollViewer>
   <muxc:ItemsRepeater ItemsSource="{x:Bind AppNotifications}"
                       Layout="{StaticResource MyGroupLayout}">
@@ -650,7 +656,7 @@ Cet exemple montre comment afficher une liste d’éléments groupés dans une p
         <!-- Group -->
         <StackPanel>
           <!-- Header -->
-          TextBlock Text="{x:Bind AppTitle}"/>
+          <TextBlock Text="{x:Bind AppTitle}"/>
           <!-- Items -->
           <muxc:ItemsRepeater ItemsSource="{x:Bind Notifications}"
                               Layout="{StaticResource MyItemLayout}"
@@ -663,10 +669,11 @@ Cet exemple montre comment afficher une liste d’éléments groupés dans une p
   </muxc:ItemsRepeater>
 </ScrollViewer>
 ```
-
-Cet exemple illustre une disposition d’application constituée de diverses catégories qui peuvent changer en fonction des préférences de l’utilisateur et qui sont présentées sous forme de listes à défilement horizontal.
+L’image ci-dessous montre la mise en page de base créée en utilisant l’exemple ci-dessus comme guide.
 
 ![Disposition imbriquée avec un ItemsRepeater](images/items-repeater-nested-layout.png)
+
+Cet exemple montre une disposition d’application constituée de différentes catégories qui peuvent changer en fonction des préférences de l’utilisateur et qui sont présentées sous forme de listes à défilement horizontal. La disposition de cet exemple est également représentée par l’image ci-dessus.
 
 ```xaml
 <!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
@@ -777,7 +784,7 @@ ItemsRepeater ne vérifie pas automatiquement que l’ordre de tabulation par d�
 > [!NOTE]
 > Le contrôle ItemsRepeater ne garde pas automatiquement en mémoire le dernier élément qui a obtenu le focus.  Cela signifie que lorsqu’un utilisateur utilise Maj+Tab, il peut être dirigé vers le dernier élément réalisé.
 
-### <a name="announcing-item-x-of-y-in-screen-readers"></a>Annonce « Élément _X_ sur _Y_ » dans les lecteurs d’écran
+### <a name="announcing-item-_x_-of-_y_-in-screen-readers"></a>Annonce « Élément _X_ sur _Y_ » dans les lecteurs d’écran
 
 Vous devez réussir à définir les propriétés d’automatisation appropriées, comme les valeurs de **PositionInSet** et **SizeOfSet**, et veiller à ce qu’elles restent à jour quand des éléments sont ajoutés, déplacés, supprimées, etc.
 

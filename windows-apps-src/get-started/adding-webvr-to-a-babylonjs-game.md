@@ -5,39 +5,32 @@ ms.date: 11/29/2017
 ms.topic: article
 keywords: webvr, edge, développement web, babylon, babylonjs, babylon.js, javascript
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f212e4e06035134b0ac5b5ea69381ed0d985783
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: ff350f8ce08f566b8c95c3c46faad330923e4b2e
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321163"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685204"
 ---
 # <a name="adding-webvr-support-to-a-3d-babylonjs-game"></a>Ajout de la prise en charge de WebVR à un jeu 3D Babylon.js
 
 Si vous avez créé un jeu en 3D avec Babylon.js et que vous pensez qu’il rendrait très bien en réalité virtuelle, suivez les étapes simples de ce didacticiel pour ce faire.
 
-Nous allons ajouter la prise en charge de WebVR au jeu illustré ici. Lancez-vous et branchez une manette Xbox pour l’essayer !
-
-
-<iframe height='300' scrolling='no' title='Jeu de dinosaures Babylon.js utilisant Babylon.GUI' src='//codepen.io/MicrosoftEdgeDocumentation/embed/preview/wrOvoj/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Voir le Pen <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/wrOvoj/'>Jeu de dinosaures Babylon.js utilisant Babylon.GUI</a> by Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) sur <a href='https://codepen.io'>CodePen</a>.
-</iframe>
-
-Il s’agit d’un jeu 3D qui fonctionne bien sur un écran plat, mais qu’en est-il de la réalité virtuelle ?
-Dans ce didacticiel, nous allons vous guider à travers les étapes nécessaires pour rendre ce jeu opérationnel avec WebVR. Nous allons utiliser un casque [Windows Mixed Reality](https://developer.microsoft.com/mixed-reality) capable d’utiliser la prise en charge supplémentaire pour WebVR dans Microsoft Edge. Une fois que nous aurons appliqué ces modifications au jeu,ce dernier fonctionnera avec d’autres combinaisons navigateur/casque prenant en charge WebVR.
+Dans ce tutoriel, nous allons vous guider à travers les étapes nécessaires pour rendre un jeu 3D opérationnel avec WebVR. Nous allons utiliser un casque [Windows Mixed Reality](https://developer.microsoft.com/mixed-reality) capable d’utiliser la prise en charge supplémentaire pour WebVR dans Microsoft Edge. Une fois que nous aurons appliqué ces modifications au jeu,ce dernier fonctionnera avec d’autres combinaisons navigateur/casque prenant en charge WebVR.
 
 
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 - Un éditeur de texte (comme [Visual Studio Code](https://code.visualstudio.com/download))
 - Une manette Xbox branchée à votre ordinateur
 - Windows 10 Creators Update
-- Un ordinateur doté [de la configuration minimale requise pour exécuter Windows Mixed Reality](https://developer.microsoft.com/en-us/windows/mixed-reality/immersive_headset_setup)
+- Un ordinateur doté [de la configuration minimale requise pour exécuter Windows Mixed Reality](https://developer.microsoft.com/windows/mixed-reality/immersive_headset_setup)
 - Un appareil Windows Mixed Reality (facultatif) 
 
 
 
-## <a name="getting-started"></a>Prise en main
+## <a name="getting-started"></a>Mise en route
 
 Le moyen le plus simple pour commencer est d’accéder à [Windows-tutorials-web GitHub repo](https://github.com/Microsoft/Windows-tutorials-web), d’appuyer sur le bouton vert **Cloner ou télécharger** et de sélectionner **Ouvrir dans Visual Studio**.
 
@@ -135,7 +128,7 @@ Grâce aux informations stockées dans la variable `headset`, nous allons à pr�
 Avec Babylon.js, WebVR peut être ajouté rapidement à l’aide de [`WebVRFreeCamera`](https://doc.babylonjs.com/api/classes/babylon.webvrfreecamera). Cette caméra peut capturer la saisie sur un clavier et vous permet d’utiliser un casque VR pour contrôler la rotation de votre « tête ».
 
 
-### <a name="step-1-checking-for-headsets"></a>Étape 1 : Vérification des casques
+### <a name="step-1-checking-for-headsets"></a>Étape 1 : Vérification des casques
 
 Nous allons utiliser la [`UniversalCamera`](https://doc.babylonjs.com/api/classes/babylon.universalcamera) comme caméra de secours, laquelle est actuellement utilisée dans le jeu d’origine.
 
@@ -204,9 +197,6 @@ Ajoutez ce code sous l’appel `scene.onPointerDown = function() {...}`.
 
 Si nous ouvrons **index.html** alors que notre casque et le contrôleur de jeu sont branchés, un clic gauche sur la fenêtre de jeu bleue fait basculer notre jeu en mode Réalité virtuelle. Lancez-vous et mettez votre casque pour vérifier les résultats. 
 
-
-<iframe height='300' scrolling='no' title='Jeu de dinosaures Babylon.js utilisant Babylon.GUI – WebVR' src='//codepen.io/MicrosoftEdgeDocumentation/embed/preview/RjgpJd/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Voir le Pen <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/RjgpJd/'>Jeu de dinosaures Babylon.js utilisant Babylon.GUI – WebVR</a> by Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) sur <a href='https://codepen.io'>CodePen</a>.
-</iframe>
 
 
 ## <a name="conclusion"></a>Conclusion

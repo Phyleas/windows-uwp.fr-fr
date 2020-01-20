@@ -1,19 +1,19 @@
 ---
-title: Qu’est-ce qu’une application de plateforme Windows universelle (UWP) ?
+title: Qu’est-ce qu’une application de plateforme Windows universelle (UWP) ?
 description: Découvrez les applications de plateforme Windows universelle (UWP) qui peuvent s’exécuter sur un large éventail d’appareils exécutant Windows 10.
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
 ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10, uwp, universelle
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b0d226a9492a2218edf20e68b8216ea513ca12a
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: fdb06581639391c09c445c8497f67af28a8405df
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260536"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685012"
 ---
-# <a name="whats-a-universal-windows-platform-uwp-app"></a>Qu’est-ce qu’une application de plateforme Windows universelle (UWP) ?
+# <a name="whats-a-universal-windows-platform-uwp-app"></a>Qu’est-ce qu’une application de plateforme Windows universelle (UWP) ?
 
 ![Les applications de la plateforme Windows universelle s’exécutent sur divers appareils et prennent en charge l’interface utilisateur adaptative, l’entrée utilisateur naturelle, un Store, un Espace partenaires et des services cloud](images/universalapps-overview.png)
 
@@ -56,17 +56,17 @@ Les éléments d’interface utilisateur s’adaptent à la taille et à la rés
 
 ![Appareils avec Windows](images/1894834-hig-device-primer-01-500.png)
 
-Windows vous aide à cibler votre interface utilisateur sur plusieurs appareils avec les fonctionnalités suivantes :
+Windows vous aide à cibler votre interface utilisateur sur plusieurs appareils avec les fonctionnalités suivantes :
 
 - Les contrôles universels et les panneaux de disposition vous aident à optimiser votre interface utilisateur pour la résolution d’écran de l’appareil. Par exemple, des contrôles tels que des boutons et des curseurs s’adaptent automatiquement à la taille d’écran de l’appareil et à la densité PPP. Les panneaux de disposition aident à ajuster la disposition du contenu en fonction de la taille de l’écran. La mise à l’échelle adaptative s’ajuste en fonction des différentes résolutions des appareils.
 - La gestion commune des entrées vous permet de recevoir des entrées par le biais d’impulsions tactiles, d’un stylet, d’une souris, d’un clavier ou d’un contrôleur tel qu’une manette Microsoft Xbox.
 - Les outils qui vous permettent de concevoir une interface utilisateur peuvent s’adapter à différentes résolutions d’écran.
 
-Certains aspects de l’interface utilisateur de votre application s’adaptent automatiquement aux divers appareils. La conception de l’expérience utilisateur de votre application peut cependant nécessiter une adaptation en fonction de l’appareil sur lequel l’application s’exécute. Par exemple, une application de photos doit adapter son interface utilisateur quand elle s’exécute sur un appareil portatif de petite taille, afin d’être utilisable d’une seule main. Quand une application de photographie s’exécute sur un ordinateur de bureau, l’interface utilisateur doit s’adapter pour tirer parti de l’espace d’écran supplémentaire.
+Certains aspects de l’interface utilisateur de votre application s’adaptent automatiquement aux différents appareils. La conception de l’expérience utilisateur de votre application peut cependant nécessiter une adaptation en fonction de l’appareil sur lequel l’application s’exécute. Par exemple, une application de photos doit adapter son interface utilisateur quand elle s’exécute sur un appareil portatif de petite taille, afin d’être utilisable d’une seule main. Quand une application de photographie s’exécute sur un ordinateur de bureau, l’interface utilisateur doit s’adapter pour tirer parti de l’espace d’écran supplémentaire.
 
 ## <a name="theres-one-store-for-all-devices"></a>Il existe un seul magasin pour tous les appareils
 
-Un magasin d’applications unifié rend votre application disponible sur les appareils Windows 10 tels que PC, tablette, Xbox, HoloLens, Surface Hub, et Internet des objets (IoT). Vous pouvez soumettre votre application au Store et la rendre disponible sur tous les types d’appareils ou uniquement sur ceux que vous choisissez. Vous soumettez et gérez toutes vos applications pour appareils Windows au même endroit. Vous avez une application de bureau C++ que vous souhaitez moderniser grâce aux fonctionnalités UWP et commercialiser dans le Microsoft Store ? Cela ne pose aucun problème.
+Un magasin d’applications unifié rend votre application disponible sur les appareils Windows 10 tels que PC, tablette, Xbox, HoloLens, Surface Hub, et Internet des objets (IoT). Vous pouvez soumettre votre application au Store et la rendre disponible sur tous les types d’appareils ou uniquement sur ceux que vous choisissez. Vous soumettez et vous gérez toutes vos applications pour appareils Windows au même endroit. Vous avez une application de bureau C++ que vous souhaitez moderniser grâce aux fonctionnalités UWP et commercialiser dans le Microsoft Store ? Cela ne pose aucun problème.
 
 À des fins de télémétrie et d’analyse détaillées, les applications UWP s’intègrent avec [Application Insights](https://azure.microsoft.com/services/application-insights/) : un outil crucial pour comprendre vos utilisateurs et améliorer vos applications.
 
@@ -107,7 +107,7 @@ Les applications UWP peuvent utiliser Windows Runtime, l’API native fournie pa
 
 ## <a name="links-to-help-you-get-going"></a>Liens pour vous aider à commencer
 
-### <a name="get-set-up"></a>Préparation
+### <a name="get-set-up"></a>Se préparer
 
 Consultez [Se préparer](get-set-up.md) pour télécharger les outils dont vous avez besoin afin de commencer à créer des applications, puis à [écrire votre première application](your-first-app.md).
 
@@ -115,21 +115,21 @@ Consultez [Se préparer](get-set-up.md) pour télécharger les outils dont vous 
 
 Le nom du système de conception Microsoft est Fluent. Le système Fluent Design est un ensemble de fonctionnalités UWP combinées avec les meilleures pratiques pour créer des applications qui s’exécutent parfaitement sur tous les types d’appareils fonctionnant sous Windows. Les expériences Fluent s’adaptent parfaitement aux différents appareils (tablettes ou ordinateurs portables, PC ou téléviseurs, ainsi que sur des appareils de réalité virtuelle). Consultez la section [Système Fluent Design pour les applications UWP](https://docs.microsoft.com/windows/uwp/design/fluent-design-system) pour obtenir une présentation du système Fluent Design.
 
-Une bonne [conception](http://design.windows.com/) est le processus consistant à décider comment les utilisateurs doivent interagir avec votre application, ainsi que la manière dont cette dernière se présentera et fonctionnera. L’expérience utilisateur jouant un rôle considérable dans la satisfaction que procurera votre application, ne lésinez pas sur cette étape. La rubrique [Notions de base de la conception](https://developer.microsoft.com/en-us/windows/apps/design) présente la conception d’une application Windows universelle. Pour plus d’informations sur la conception d’applications UWP susceptibles d’enchanter les utilisateurs, voir [Présentation des applications de la plateforme Windows universelle (UWP) pour les concepteurs](https://docs.microsoft.com/windows/uwp/layout/design-and-ui-intro). Avant de commencer à coder, voir [Notions fondamentales sur les appareils](../design/devices/index.md) pour réfléchir à l’expérience d’interaction de l’utilisation de votre application sur les différents facteurs de forme que vous voulez cibler.
+Une bonne [conception](http://design.windows.com/) est le processus consistant à décider comment les utilisateurs doivent interagir avec votre application, ainsi que la manière dont cette dernière se présentera et fonctionnera. L’expérience utilisateur jouant un rôle considérable dans la satisfaction que procurera votre application, ne négligez pas cette étape. La rubrique [Notions de base de la conception](https://developer.microsoft.com/windows/apps/design) présente la conception d’une application Windows universelle. Pour plus d’informations sur la conception d’applications UWP susceptibles de plaire aux utilisateurs, consultez [Présentation des applications de la plateforme Windows universelle (UWP) pour les concepteurs](https://docs.microsoft.com/windows/uwp/layout/design-and-ui-intro). Avant de commencer à coder, consultez [Notions fondamentales sur les appareils](../design/devices/index.md) pour réfléchir à l’expérience d’interaction de l’utilisation de votre application sur les différents facteurs de forme que vous voulez cibler.
 
 En plus de l’interaction sur différents appareils, [planifiez votre application](https://docs.microsoft.com/windows/uwp/get-started/plan-your-app) pour bénéficier des avantages liés à l’utilisation de plusieurs appareils. Par exemple :
 
-- Concevez votre flux de travail en vous basant sur les [Informations de base relatives à la conception de la navigation pour les applications UWP](https://docs.microsoft.com/windows/uwp/layout/navigation-basics) afin d’adapter votre application aux appareils mobiles, petit et grand écran. [Disposez votre interface utilisateur](https://docs.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design) pour l’adapter à différentes tailles et résolutions d’écran.
+- Concevez votre workflow d’après les [Informations de base relatives à la conception de la navigation pour les applications UWP](https://docs.microsoft.com/windows/uwp/layout/navigation-basics) afin d’adapter votre application aux appareils mobiles, petit et grand écran. [Concevez votre interface utilisateur](https://docs.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design) pour l’adapter à différentes tailles et résolutions d’écran.
 
 - Songez à la manière de prendre en charge plusieurs types d’entrées. Pour savoir comment les utilisateurs peuvent interagir avec votre application via [Cortana](https://docs.microsoft.com/windows/uwp/input-and-devices/cortana-design-guidelines), la fonction [Voix](https://docs.microsoft.com/windows/uwp/input-and-devices/speech-interactions), des [interactions tactiles](https://docs.microsoft.com/windows/uwp/input-and-devices/guidelines-for-user-interaction), du [clavier tactile](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions) et bien plus encore, voir les [Recommandations en matière d’interactions](https://docs.microsoft.com/windows/uwp/design/layout/index).  Pour des expériences d’interaction plus classiques, voir les [Recommandations en matière de texte et de saisie de texte](https://docs.microsoft.com/windows/uwp/controls-and-patterns/text-controls).
 
 ### <a name="add-services"></a>Ajouter des services
 
-- Utilisez les [services cloud](https://azure.microsoft.com/documentation/services/cloud-services) pour synchroniser les données sur tous les appareils.
+- Utilisez les [services cloud](https://azure.microsoft.com/documentation/services/cloud-services) pour synchroniser les données entre les appareils.
 - Découvrez comment vous [connecter aux services web](https://docs.microsoft.com/previous-versions/windows/apps/hh761504(v=win.10)) pour renforcer l’expérience de votre application.
 - Incluez des [notifications Push](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview) et des [achats dans l’application](https://docs.microsoft.com/windows/uwp/monetize/enable-in-app-product-purchases) dans votre planification. Ces fonctionnalités doivent opérer sur tous les appareils.
 
-### <a name="submit-your-app-to-the-store"></a>Soumettre votre application sur le Windows Store
+### <a name="submit-your-app-to-the-store"></a>Soumettre votre application au Store
 
 L’[Espace partenaires](https://partner.microsoft.com/dashboard) vous permet de gérer et de soumettre toutes vos applications pour les appareils Windows à partir d’un seul et même emplacement. Consultez [Publier des applications et jeux Windows](../publish/index.md) afin de savoir comment soumettre vos applications pour la publication dans le Microsoft Store.
 
@@ -141,7 +141,7 @@ Pour obtenir une introduction plus générale, voir [Introduction au développem
 
 - Découvrez comment utiliser les [activités de l’utilisateur](https://blogs.windows.com/buildingapps/2017/12/19/application-engagement-windows-timeline-user-activities/#tHuZ6tLPtCXqYKvw.97) afin que l’activité utilisateur dans votre application apparaisse dans la Chronologie de Windows et dans la fonctionnalité Pick Up Where I Left Off de Cortana.
 - Découvrez comment utiliser les [vignettes, badges et notifications pour les applications UWP](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/).
-- Pour obtenir la liste complète des API Win32 disponibles pour les applications UWP, voir [Ensembles d’API pour les applications UWP](https://docs.microsoft.com/previous-versions/mt186421(v=vs.85)) et [DLL pour les applications UWP](https://docs.microsoft.com/previous-versions/mt186422(v=vs.85)).
+- Pour obtenir la liste complète des API Win32 disponibles pour les applications UWP, consultez [Ensembles d’API pour les applications UWP](https://docs.microsoft.com/previous-versions/mt186421(v=vs.85)) et [DLL pour les applications UWP](https://docs.microsoft.com/previous-versions/mt186422(v=vs.85)).
 - Voir [Universal Windows apps in .NET (Applications Windows universelles dans .NET)](https://devblogs.microsoft.com/dotnet/universal-windows-apps-in-net/) pour obtenir une vue d’ensemble de l’écriture des applications UWP .NET.
 - Pour obtenir la liste des types .NET que vous pouvez utiliser dans une application UWP, voir [.NET pour les applications UWP](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0)
 - [Compilation d’applications avec .NET Native](https://docs.microsoft.com/dotnet/framework/net-native/)

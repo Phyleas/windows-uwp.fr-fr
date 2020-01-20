@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: acad94c0697f930235af809cc3e2826e4c5befde
-ms.sourcegitcommit: f0588a086cf2499968bf03b10c6bce5f518e90cb
+ms.openlocfilehash: 141a24ca1f828f98231ec35471f7b43229df57e6
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71144959"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684300"
 ---
 # <a name="tabview"></a>TabView
 
@@ -31,7 +31,7 @@ TabView propose des onglets de document pour les applications UWP. Utilisez un T
 - Les utilisateurs pourront ouvrir des documents ou des pages web directement dans des onglets.
 - Les utilisateurs pourront glisser-déplacer des onglets entre les fenêtres.
 
-Si un TabView n’est pas approprié pour votre application, utilisez des contrôles tels que [Pivot](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/pivot) ou [NavigationView](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/navigationview).
+Si un TabView n’est pas approprié pour votre application, utilisez des contrôles tels que [Pivot](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/pivot) ou [NavigationView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview).
 
 ## <a name="anatomy"></a>Anatomie
 
@@ -91,7 +91,7 @@ Au lieu de faire en sorte que les onglets occupent leur propre ligne sous la bar
 
 Étant donné qu’un utilisateur peut faire glisser une fenêtre par sa barre de titre pour la repositionner, il est important que la barre de titre ne soit pas complètement remplie avec des onglets. Ainsi, lors de l’affichage d’onglets dans une barre de titre, vous devez spécifier une partie de la barre de titre à réserver comme zone qui peut être glissée. Si vous ne spécifiez pas de zone pouvant être glissée, l’intégralité de la barre de titre pourra être glissée, ce qui empêchera vos onglets de recevoir des événements d’entrée. Si votre TabView sera affiché dans la barre de titre d’une fenêtre, vous devez toujours inclure un TabStripFooter dans votre TabView et le marquer en tant que zone  pouvant être glissée.
 
-Pour plus d’informations, consultez [Personnalisation de la barre de titre](https://docs.microsoft.com/en-us/windows/uwp/design/shell/title-bar).
+Pour plus d’informations, consultez [Personnalisation de la barre de titre](https://docs.microsoft.com/windows/uwp/design/shell/title-bar).
 
 ![Onglets dans la barre de titre](images/tabview/tab-extend-to-title.png)
 
@@ -151,7 +151,7 @@ Quand la barre d’onglets contient de nombreux onglets, vous pouvez contrôler 
 
 | Valeur TabWidthMode | Comportement                                                                                                                                                    |
 |--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Equal              | À mesure que de nouveaux onglets sont ajoutés, tous les onglets sont réduits horizontalement jusqu’à ce qu’ils atteignent une très petite largeur minimale.                                                       |
+| Égal              | À mesure que de nouveaux onglets sont ajoutés, tous les onglets sont réduits horizontalement jusqu’à ce qu’ils atteignent une très petite largeur minimale.                                                       |
 | SizeToContent      | Les onglets ont toujours leur « taille naturelle », la taille minimale nécessaire pour afficher leur icône et leur en-tête. Ils ne sont pas développés ou réduits à mesure que des onglets sont ajoutés ou fermés. |
 
 Quelle que soit la valeur que vous choisissez, il se peut qu’il y ait trop d’onglets à afficher dans votre bande d’onglets. Dans ce cas, des gâchettes de défilement sont affichées. Elles permettent à l’utilisateur de faire défiler le TabStrip vers la gauche et vers la droite.
@@ -293,6 +293,6 @@ private void NavigateToNumberedTabKeyboardAccelerator_Invoked(KeyboardAccelerato
 
 ## <a name="related-articles"></a>Articles connexes
 
-- [MasterDetails](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/master-details)
-- [NavigationView](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/navigationview)
-- [Pivot](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/pivot)
+- [MasterDetails](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/master-details)
+- [NavigationView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview)
+- [Pivot](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/pivot)

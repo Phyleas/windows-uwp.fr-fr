@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Python, Microsoft, Windows 10, didacticiels, cours en ligne, blogs, événements
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 8870c1e269eb2c5f049c5431d6360e8c11570c0b
-ms.sourcegitcommit: 4cb3ee28baa8020ec925b0bdd896ab197a1ddadb
+ms.openlocfilehash: 24bda3a9eb76dac2e584540161e551ce6bb7ff4e
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74309169"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683662"
 ---
 # <a name="resources-for-developing-with-python-on-windows"></a>Ressources relatives au développement via Python sur Windows
 
@@ -41,13 +41,13 @@ Liste de liens que nous recommandons pour les développeurs Python travaillant s
 
 - [Navigateur d’API Python](https://docs.microsoft.com/python/api/?view=azure-python) : magasin incontournable, qui regroupe toutes les API basées sur Python de Microsoft.
 
-- [Exemples de code Azure relatifs à l’utilisation de Python](https://azure.microsoft.com/en-us/resources/samples/?platform=python&sort=0) : apprenez à interagir avec les services Azure à l’aide du code Python.
+- [Exemples de code Azure relatifs à l’utilisation de Python](https://azure.microsoft.com/resources/samples/?platform=python&sort=0) : apprenez à interagir avec les services Azure à l’aide du code Python.
 
 - [Python et Visual Studio Code](https://code.visualstudio.com/docs/languages/python) : vue d’ensemble de l’utilisation de Python avec VS Code.
 
 ## <a name="online-courses"></a>Cours en ligne
 
-- [Présentation de Python sur Microsoft Learn](https://docs.microsoft.com/en-us/learn/modules/intro-to-python/) : essayez la plateforme interactive Microsoft Learn et gagnez des points d’expérience en complétant ce module, qui couvre les notions de base concernant l’écriture de code Python de base, la déclaration de variables et l’utilisation des entrées et sorties de la console. L’environnement de bac à sable interactif permet aux personnes dont l’environnement de développement Python n’est pas encore installé de démarrer facilement.
+- [Présentation de Python sur Microsoft Learn](https://docs.microsoft.com/learn/modules/intro-to-python/) : essayez la plateforme interactive Microsoft Learn et gagnez des points d’expérience en complétant ce module, qui couvre les notions de base concernant l’écriture de code Python de base, la déclaration de variables et l’utilisation des entrées et sorties de la console. L’environnement de bac à sable interactif permet aux personnes dont l’environnement de développement Python n’est pas encore installé de démarrer facilement.
 
 - [Python sur Pluralsight : 8 cours, 29 heures](https://app.pluralsight.com/paths/skills/python) : le parcours d’apprentissage Python sur Pluralsight offre des cours en ligne couvrant une variété de sujets liés à Python, notamment un outil permettant de mesurer vos compétences et de trouver vos lacunes.
 
@@ -77,4 +77,4 @@ Liste de liens que nous recommandons pour les développeurs Python travaillant s
 
 - [Générez des applications Django Python avec Microsoft Graph](https://docs.microsoft.com/graph/tutorials/python) : générez une application web python Django qui utilise l’API Microsoft Graph pour récupérer des informations de calendrier pour un utilisateur.
 
-- [Démonstration : Application d’API web Bing Ads dans Python](https://docs.microsoft.com/advertising/guides/walkthrough-web-application-python?view=bingads-13) : commencez à exécuter une application Web Microsoft Advertising à l’aide du Kit de développement logiciel (SDK) Python de Bing Ads, de l’IDE Visual Studio Code et de l’infrastructure web Django.
+- [Procédure pas à pas : Application d’API web Bing Ads dans Python](https://docs.microsoft.com/advertising/guides/walkthrough-web-application-python?view=bingads-13) : commencez à exécuter une application Web Microsoft Advertising à l’aide du Kit de développement logiciel (SDK) Python de Bing Ads, de l’IDE Visual Studio Code et de l’infrastructure web Django.

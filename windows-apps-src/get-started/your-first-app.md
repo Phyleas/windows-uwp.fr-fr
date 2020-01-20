@@ -6,12 +6,12 @@ ms.date: 01/25/2017
 ms.topic: article
 keywords: windows 10, uwp, première application, c#, c++, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: f386de7ebf9aae2f49a2709d8c1c8ce2595cbf1d
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: d0870212df4deb7f12f790107ec988fac3eb69ab
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260528"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685148"
 ---
 # <a name="create-your-first-app"></a>Créer votre première application
 
@@ -29,7 +29,7 @@ Si vous souhaitez découvrir les notions de base ou simplement vous rafraîchir 
 
 * [Principes de base de C# pour les néophytes](https://channel9.msdn.com/Series/CSharp-Fundamentals-for-Absolute-Beginners?l=Lvld4EQIC_2706218949)
 * [Principes de base de VB pour les néophytes](https://docs.microsoft.com/learn/?l=jqMOvLKbC_9206218965)
-* [Guide pour le développeur vers Windows 10](https://docs.microsoft.com/learn/)
+* [Guide du développeur pour Windows 10](https://docs.microsoft.com/learn/)
 
 Si vous souhaitez consulter des ressources un peu plus amusantes que « Hello, World! », essayez ces didacticiels :
 
@@ -61,7 +61,7 @@ Valorisez vos compétences web afin de développer des applications à l’aide 
 Étendez vos compétences en JavaScript et HTML au-delà d’UWP pour créer des applications web, ou explorez la réalité virtuelle sur le web avec WebVR
 
 * [Documentation pour développeurs Microsoft Edge](https://docs.microsoft.com/microsoft-edge/)
-* [Utiliser WebVR avec Microsoft Edge](https://docs.microsoft.com/en-us/microsoft-edge/webvr/)
+* [Utiliser WebVR avec Microsoft Edge](https://docs.microsoft.com/microsoft-edge/webvr/)
 
 Les applications web peuvent être facilement empaquetées dans l’infrastructure UWP en tant qu’applications web hébergées et promues sur le Microsoft Store.
 

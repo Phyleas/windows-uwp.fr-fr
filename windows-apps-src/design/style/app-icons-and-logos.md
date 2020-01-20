@@ -9,12 +9,12 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0801ba9036f69aef340881b9c92807e80af6b09f
-ms.sourcegitcommit: e43bc20c2f6e9375f61931c2fce95f06fd1f31df
+ms.openlocfilehash: 25d9df392d6ed2725b171fe6513334a39458410b
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/02/2019
-ms.locfileid: "70212069"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684597"
 ---
 # <a name="app-icons-and-logos"></a>Icônes et logos d’application 
 
@@ -29,7 +29,7 @@ Chaque application dispose d’une icône ou d’un logo associés qui la repré
         * Microsoft Store
     :::column-end:::
     :::column:::
-        ![windows 10 start and tiles](images/assetguidance01.jpg)
+        ![Écran d’accueil et vignettes de Windows 10](images/assetguidance01.jpg)
     :::column-end:::
 :::row-end:::
 
@@ -75,7 +75,7 @@ Le facteur d’échelle détermine la taille d’éléments d’interface, tels 
 
 « Comment spécifier des images pour mes applications dans la Description dans le Store ? »
 
-Par défaut, nous utilisons certaines images de vos packages dans le Store, comme décrit dans le tableau en haut de cette page (ainsi que d’autres [images que vous fournissez pendant le processus de soumission](https://docs.microsoft.com/en-us/windows/uwp/publish/app-screenshots-and-images)). Cependant, lorsque vous présentez votre description aux clients sur Windows 10 (y compris Xbox), vous avez également la possibilité d’empêcher le Store d’utiliser les images de logo disponibles dans les packages de votre application et de faire en sorte qu’il utilise uniquement les images que vous chargez. Cela vous permet de mieux contrôler l’apparence des différents affichages de votre application au sein du Store (notez que, si votre produit prend en charge des versions antérieures du système d’exploitation, certains clients pourraient continuer à voir les images extraites de vos packages, même si vous utilisez cette option). Vous pouvez faire cela dans la section **Logos du Store** de l’étape **Description dans le Store** du processus de soumission.
+Par défaut, nous utilisons certaines images de vos packages dans le Store, comme décrit dans le tableau en haut de cette page (ainsi que d’autres [images que vous fournissez pendant le processus de soumission](https://docs.microsoft.com/windows/uwp/publish/app-screenshots-and-images)). Cependant, lorsque vous présentez votre description aux clients sur Windows 10 (y compris Xbox), vous avez également la possibilité d’empêcher le Store d’utiliser les images de logo disponibles dans les packages de votre application et de faire en sorte qu’il utilise uniquement les images que vous chargez. Cela vous permet de mieux contrôler l’apparence des différents affichages de votre application au sein du Store (notez que, si votre produit prend en charge des versions antérieures du système d’exploitation, certains clients pourraient continuer à voir les images extraites de vos packages, même si vous utilisez cette option). Vous pouvez faire cela dans la section **Logos du Store** de l’étape **Description dans le Store** du processus de soumission.
 
 ![Spécification des Logos du Store pendant le processus de soumission d’application](images/app-icons/storelogodisplay.png)
 
@@ -133,15 +133,15 @@ Pour lancer le Concepteur de manifeste :
         2. Dans l’**Explorateur de solutions**, double-cliquez sur le fichier Package.appmxanifest.
     :::column-end:::
     :::column:::
-        ![The Visual Studio 2019 Manifest Designer](images/icons/vs-solution-explorer.png)
+        ![Concepteur de manifeste Visual Studio 2019](images/icons/vs-solution-explorer.png)
     :::column-end:::
 :::row-end:::
 :::row:::
     :::column:::
-            Visual Studio displays the Manifest Designer.
+            Visual Studio affiche le concepteur de manifeste.
     :::column-end:::
     :::column:::
-            ![The Visual Assets tab](images/icons/vs-manfiest-designer.png)
+            ![Onglet Ressources visuelles](images/icons/vs-manfiest-designer.png)
     :::column-end:::
 :::row-end:::    
 :::row:::
@@ -149,7 +149,7 @@ Pour lancer le Concepteur de manifeste :
         3. Cliquez sur l’onglet **Ressources visuelles**.
     :::column-end:::
     :::column:::
-        ![The Visual Assets tab](images/icons/vs-manfiest-designer-visual-assets.png)
+        ![Onglet Ressources visuelles](images/icons/vs-manfiest-designer-visual-assets.png)
     :::column-end:::
 :::row-end:::        
 
@@ -169,7 +169,7 @@ Pour générer toutes les ressources à la fois :
 
     b.  **Afficher le nom** : indiquez si vous souhaitez afficher le nom court sur les vignettes de petite taille, de taille et moyenne ou de grande taille. 
 
-    c. **Arrière-plan de la vignette** : spécifiez la valeur hexadécimale ou le nom de la couleur d’arrière-plan de la vignette. Exemple : `#464646`. La valeur par défaut est `transparent`.
+    c. **Arrière-plan de la vignette** : spécifiez la valeur hexadécimale ou le nom de la couleur d’arrière-plan de la vignette. Par exemple, `#464646`. La valeur par défaut est `transparent`.
 
     d. **Arrière-plan de l’écran de démarrage** : spécifiez la valeur hexadécimale ou le nom de la couleur d’arrière-plan de l’écran d’accueil. 
 
@@ -212,18 +212,18 @@ Voici la liste des ressources de taille cible :
 | 48 x 48\*    | Square44x44Logo.targetsize-48.png  |
 | 256 x 256\*  | Square44x44Logo.targetsize-256.png |
 | 20 x 20      | Square44x44Logo.targetsize-20.png  |
-| 30 x 30      | Square44x44Logo.targetsize-30.png  |
-| 36 x 36      | Square44x44Logo.targetsize-36.png  |
-| 40 x 40      | Square44x44Logo.targetsize-40.png  |
-| 60 x 60      | Square44x44Logo.targetsize-60.png  |
-| 64 x 64      | Square44x44Logo.targetsize-64.png  |
-| 72 x 72      | Square44x44Logo.targetsize-72.png  |
-| 80 x 80      | Square44x44Logo.targetsize-80.png  |
-| 96 x 96      | Square44x44Logo.targetsize-96.png  |
+| 30 x 30      | Square44x44Logo.targetsize-30.png  |
+| 36 x 36      | Square44x44Logo.targetsize-36.png  |
+| 40 x 40      | Square44x44Logo.targetsize-40.png  |
+| 60 x 60      | Square44x44Logo.targetsize-60.png  |
+| 64 x 64      | Square44x44Logo.targetsize-64.png  |
+| 72 x 72      | Square44x44Logo.targetsize-72.png  |
+| 80 x 80      | Square44x44Logo.targetsize-80.png  |
+| 96 x 96      | Square44x44Logo.targetsize-96.png  |
 
 \* Nous vous conseillons de fournir au minimum ces tailles. 
 
-Vous n’avez pas besoin d’ajouter du remplissage à ces ressources ; Windows s’en charge le cas échéant. Ces ressources doivent présenter un encombrement minimal de 16 pixels. 
+Vous n’avez pas besoin d’ajouter du remplissage à ces ressources ; Windows s’en charge si nécessaire. Ces ressources doivent avoir une empreinte minimale de 16 pixels. 
 
 Voici un exemple de ces ressources telles qu’elles apparaissent dans les icônes de la barre des tâches Windows :
 
@@ -232,12 +232,12 @@ Voici un exemple de ces ressources telles qu’elles apparaissent dans les icôn
 ### <a name="unplated-assets"></a>Ressources sans plaque
 Par défaut, Windows utilise une ressource basée sur une cible superposée à une plaque de couleur. Si vous le souhaitez, vous pouvez fournir une ressource sans plaque basée sur une cible. « Sans plaque » signifie que la ressource s’affiche sur un arrière-plan transparent. N’oubliez pas que ces ressources apparaîtront sur une diverses couleurs d’arrière-plan. 
 
-![Ressources avec et sans plaque](images/assetguidance22.png)
+![Ressources non plaquées et plaquées](images/assetguidance22.png)
 
 Voici les surfaces qui utilisent des ressources d’icône d’application sans plaque :
 * Barre des tâches et miniature de la barre des tâches (bureau)
 * Liste des raccourcis de la barre des tâches
-* Applications actives
+* Vue des tâches
 * ALT+TAB
 
 ### <a name="unplated-assets-and-themes"></a>Ressources et thèmes sans plaque
@@ -249,7 +249,7 @@ Le thème sélectionné de l’utilisateur détermine la couleur de la barre des
 
 Voici des recommandations de taille pour les ressources basées sur une cible, à l’échelle de 100 % :
 
-![Dimensionnement des ressources basées sur la cible à l’échelle 100 %](images/assetguidance23.png)
+![Dimensionnement des ressources basé sur la cible à l’échelle 100 %](images/assetguidance23.png)
 
 
 ## <a name="more-about-splash-screen-assets"></a>Informations supplémentaires sur les ressources d’écran de démarrage
@@ -283,11 +283,11 @@ Pour les petites vignettes, limitez la largeur et la hauteur de l’icône à 66
 
 ![Ratios de dimensionnement d’une petite vignette](images/assetguidance09.png)
 
-Pour les vignettes moyennes, limitez la largeur de l’icône à 66 % et la hauteur de l’icône à 50 % de la taille de la vignette. Cela empêche le chevauchement des éléments dans la barre de marque :
+Pour les vignettes moyennes, limitez la largeur de l’icône à 66 % et la hauteur de l’icône à 50 % de la taille de la vignette. Ceci empêche le chevauchement des éléments dans la barre de marque :
 
 ![Ratios de dimensionnement d’une vignette moyenne](images/assetguidance10.png)
 
-Pour les vignettes larges, limitez la largeur de l’icône à 66 % et la hauteur de l’icône à 50 % de la taille de la vignette. Cela empêche le chevauchement des éléments dans la barre de marque :
+Pour les vignettes larges, limitez la largeur de l’icône à 66 % et la hauteur de l’icône à 50 % de la taille de la vignette. Ceci empêche le chevauchement des éléments dans la barre de marque :
 
 ![Ratios de dimensionnement d’une vignette large](images/assetguidance11.png)
 
@@ -295,11 +295,11 @@ Pour les grandes vignettes, limitez la largeur de l’icône à 66 % et la haut
 
 ![Ratios de dimensionnement d’une grande vignette](images/assetguidance12.png)
 
-Certaines icônes sont conçues pour être positionnées à l’horizontale ou à la verticale, tandis que certaines ont des formes plus complexes qui les empêchent de respecter les dimensions cibles. Les icônes qui semblent centrées peuvent déborder d’un côté. Dans ce cas, certaines parties de l’icône peuvent se retrouver hors de l’emplacement recommandé, à condition que l’icône offre le même attrait visuel qu’une icône aux bonnes dimensions :
+Certaines icônes sont conçues pour être positionnées à l’horizontale ou à la verticale, alors que d’autres ont des formes plus complexes qui les empêchent de respecter les dimensions cibles. Les icônes qui apparaissent centrées peuvent déborder d’un côté. Dans ce cas, certaines parties de l’icône peuvent se retrouver en dehors de l’emplacement recommandé, à condition que l’icône offre le même attrait visuel qu’une icône aux bonnes dimensions :
 
 ![Trois icônes centrées](images/assetguidance13.png)
 
-Pour les ressources pleine page, prenez en compte les éléments qui interagissent avec les marges et les bords des vignettes. Conservez des marges équivalentes à au moins 16 % de la hauteur ou de la largeur de la vignette. Ce pourcentage représente le double de la largeur des marges pour la plus petite taille de vignette :
+Pour les ressources pleine page, prenez en compte les éléments qui interagissent avec les marges et les bords des vignettes. Conservez des marges équivalentes à au moins 16 % de la hauteur ou de la largeur de la vignette. Ce pourcentage représente le double de la largeur des marges pour la plus petite taille de vignette :
 
 ![Vignette pleine page avec marges](images/assetguidance14.png)
 

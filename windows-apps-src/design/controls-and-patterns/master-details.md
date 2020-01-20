@@ -1,5 +1,5 @@
 ---
-Description: Le modèle Maître/Détails affiche une liste principale et les détails de l’élément actuellement sélectionné. Ce modèle est souvent utilisé pour les listes de messages électroniques et de contacts ou les carnets d’adresses.
+Description: Le modèle Maître/Détails affiche une liste principale et les détails de l’élément actuellement sélectionné. Ce modèle est souvent utilisé pour les listes/carnets d’adresse de messagerie et de contacts.
 title: Maître/détails
 ms.assetid: 45C9FE8B-ECA6-44BF-8DDE-7D12ED34A7F7
 label: Master/details
@@ -8,54 +8,54 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b9d8d8a381c0fce186b39853f57d35c1dce4b8f8
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 0b7c21e5e6305c7b2941b46db562c93da0fdfe39
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63773370"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684384"
 ---
-# <a name="masterdetails-pattern"></a>Modèle Maître/Détails
+# <a name="masterdetails-pattern"></a>Modèle Maître/détails
 
  
 
-Le modèle Maître/Détails possède un volet principal (généralement avec un [affichage Liste](lists.md)) et un volet d’informations correspondant au contenu. Lorsqu’un élément de la liste principale est sélectionné, le volet d’informations est mis à jour. Ce modèle est souvent utilisé pour le courrier électronique et les carnets d’adresses.
+Le modèle Maître/détails a un volet principal (généralement avec un [affichage de liste](lists.md)) et un volet des détails pour le contenu. Quand un élément de la liste principale est sélectionné, le volet des détails est mis à jour. Ce modèle est souvent utilisé pour la messagerie et les carnets d’adresses.
 
-> **API importantes** : [classe ListView](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView), [classe SplitView](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)
+> **API importantes** : [classe ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), [classe SplitView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.splitview)
 
-![Exemple de modèle Maître/Détails](images/HIGSecOne_MasterDetail.png)
+![Exemple de modèle Maître/détails](images/HIGSecOne_MasterDetail.png)
 
-## <a name="is-this-the-right-pattern"></a>Est-ce le modèle approprié ?
+## <a name="is-this-the-right-pattern"></a>Est-ce le modèle approprié ?
 
-Le modèle Maître/Détails fonctionne bien si vous souhaitez :
+Le modèle Maître/détails fonctionne bien si vous voulez :
 
--   créer une application de messagerie, un carnet d’adresses ou une application basés sur une disposition liste/détails ;
--   rechercher et hiérarchiser une grande collection de contenu ;
--   permettre d’ajouter et de supprimer rapidement des éléments dans une liste tout en basculant entre les contextes.
+-   Créer une application de messagerie, un carnet d’adresses ou une application basée sur une disposition liste/détails.
+-   Rechercher et hiérarchiser une grande collection de contenu.
+-   Permettre d’ajouter et de supprimer rapidement des éléments dans une liste tout en basculant entre les contextes.
 
 ## <a name="choose-the-right-style"></a>Choisir le style approprié
 
-Lorsque vous implémentez le modèle Maître/Détails, nous vous recommandons d’utiliser le style empilé ou le style côte à côte, en fonction de l’espace d’écran disponible.
+Quand vous implémentez le modèle Maître/détails, nous vous recommandons d’utiliser le style empilé ou le style côte à côte, en fonction de l’espace disponible sur l’écran.
 
 | Largeur de fenêtre disponible | Style recommandé |
 |------------------------|-------------------|
-| 320 epx-640 epx        | Mode Empilé           |
-| 641 epx ou plus large       | Côte à côte      |
+| 320 epx-640 epx        | Empilé           |
+| 641 epx ou plus large       | Côte-à-côte      |
 
  
 ## <a name="stacked-style"></a>Style empilé
 
-Le style empilé ne permet de visualiser qu’un seul volet à la fois : le volet principal ou le volet d’informations.
+Le style empilé ne permet de visualiser qu’un seul volet à la fois : le volet principal ou le volet des détails.
 
 ![Détail du volet principal en mode Empilé](images/patterns-md-stacked.png)
 
-L’utilisateur commence au niveau du volet principal et descend dans le volet d’informations en sélectionnant un élément dans la liste principale. Pour l’utilisateur, les affichages Maître et Détails apparaissent dans deux pages distinctes.
+L’utilisateur commence au niveau du volet principal et descend dans le volet des détails en sélectionnant un élément dans la liste principale. Pour l’utilisateur, les vues Maître et Détails apparaissent dans deux pages distinctes.
 
-### <a name="create-a-stacked-masterdetails-pattern"></a>Créer un modèle Maître/Détails empilé
+### <a name="create-a-stacked-masterdetails-pattern"></a>Créer un modèle Maître/détails empilé
 
-L’une des façons de créer le modèle Maître/Détails empilé consiste à utiliser des pages distinctes pour le volet principal et pour le volet d’informations. Placez l'affichage Maître sur une page et le volet Détails dans une autre page.
+Une des façons de créer le modèle Maître/détails empilé est d’utiliser des pages distinctes pour le volet principal et pour le volet des détails. Placez l'affichage Maître sur une page et le volet Détails dans une autre page.
 
-![Parties du modèle Maître/Détails de style empilé](images/patterns-md-stacked-parts.png)
+![Parties du modèle Maître/détails de style empilé](images/patterns-md-stacked-parts.png)
 
 Pour la page d'affichage Maître, un contrôle d’[affichage Liste](lists.md) fonctionne bien pour présenter des listes pouvant contenir des images et du texte. 
 
@@ -65,19 +65,19 @@ Pour la navigation entre les pages, voir [historique de navigation et navigation
 
 ## <a name="side-by-side-style"></a>Style côte à côte
 
-Dans le style côte à côte, le volet principal et le volet d’informations sont visibles en même temps.
+Dans le style côte à côte, le volet principal et le volet des détails sont visibles en même temps.
 
-![Modèle Maître/Détail](images/patterns-masterdetail-400x227.png)
+![Modèle Maître/détails](images/patterns-masterdetail-400x227.png)
 
-La liste du volet principal possède un objet visuel de sélection pour indiquer l’élément sélectionné. La sélection d’un nouvel élément dans la liste principale entraîne la mise à jour du volet d’informations.
+La liste du volet principal a un visuel de sélection pour indiquer l’élément sélectionné. La sélection d’un nouvel élément dans la liste principale entraîne la mise à jour du volet des détails.
 
-### <a name="create-a-side-by-side-masterdetails-pattern"></a>Créer un modèle Maître/Détails côte à côte
+### <a name="create-a-side-by-side-masterdetails-pattern"></a>Créer un modèle Maître/détails côte à côte
 
 L’une des façons de créer un modèle Maître/Détails côte à côte consiste à utiliser le contrôle [mode Fractionné](split-view.md). Placez l'affichage Maître dans le volet du mode Fractionné et l’affichage Détails dans le contenu du mode Fractionné.
 
 ![parties du mode Fractionné Maître/Détail](images/patterns_md_splitview_parts.png)
 
-Pour le volet principal, un contrôle d’[affichage Liste](lists.md) fonctionne bien pour présenter des listes pouvant contenir des images et du texte.
+Pour le volet principal, un contrôle d’[affichage de liste](lists.md) fonctionne bien pour présenter des listes pouvant contenir des images et du texte.
 
 Pour le contenu des détails, utilisez l’[élément de contenu](../layout/layout-panels.md) le plus logique. Si vous disposez d’un grand nombre de champs distincts, pensez à utiliser une disposition **en grille** pour organiser les éléments dans un formulaire.
 
@@ -88,7 +88,7 @@ Pour implémenter un modèle Maître/Détails pour n’importe quelle taille d�
 ![disposition adaptative Maître/Détails](images/patterns_masterdetail.png)
 
 ### <a name="create-an-adaptive-masterdetails-pattern"></a>Créer un modèle Maître/Détails adaptatif
-Pour créer une disposition adaptative, définissez différents [**VisualStates**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.visualstate) pour votre interface utilisateur et déclarez des points d’arrêt pour les différents états avec des [**AdaptiveTriggers**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.AdaptiveTrigger).
+Pour créer une disposition adaptative, définissez différents [**VisualStates**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.visualstate) pour votre interface utilisateur et déclarez des points d’arrêt pour les différents états avec des [**AdaptiveTriggers**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.AdaptiveTrigger).
 
 ## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
 
@@ -104,5 +104,5 @@ Les exemples suivants implémentent le modèle Maître/Détails avec des disposi
 - [Listes](lists.md)
 - [Recherche](search.md)
 - [Barre de l’application et barre de commandes](app-bars.md)
-- [Classe ListView](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView)
-- [Classe SplitView](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)
+- [Classe ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)
+- [Classe SplitView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.splitview)

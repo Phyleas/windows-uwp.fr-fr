@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 ms.localizationpriority: medium
-ms.openlocfilehash: 343fa50dbe9a0574914dc96b9fac450475a69b0a
-ms.sourcegitcommit: 87ddc67d31668a6351206bda3546ffbabb7b4551
+ms.openlocfilehash: b2b60354acb2c3d97ced3dce0b3fb7f6d97ac35d
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68807847"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684772"
 ---
 # <a name="create-a-uwp-game-in-javascript"></a>Créer un jeu UWP en JavaScript
 
@@ -30,10 +30,10 @@ Pour publier votre application sur le Microsoft Store, celle-ci doit être écri
 
 Ce projet est généré avec JavaScript à l'aide de Visual Studio. Avec quelques modifications mineures, il peut également être hébergé sur un site web ou adapté à d'autres plateformes. 
 
-**Remarque :** il ne s'agit pas d'un jeu complet (ou intéressant). Il a juste été conçu pour illustrer l'utilisation de JavaScript et d'une bibliothèque tierce afin de préparer la publication d'une application sur le Microsoft Store.
+**Remarque :** il ne s'agit pas d'un jeu complet (ou intéressant). Il a juste été conçu pour illustrer l'utilisation de JavaScript et d'une bibliothèque tierce afin de préparer la publication d'une application sur le Microsoft Store.
 
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Conditions requises
 
 Pour jouer avec ce projet, vous aurez besoin des éléments suivants :
 
@@ -43,7 +43,7 @@ Pour jouer avec ce projet, vous aurez besoin des éléments suivants :
 Ce projet utilise l'infrastructure JavaScript CreateJS. CreateJS est un ensemble d'outils gratuit, publié sous licence MIT et conçu pour faciliter la création de jeux basés sur des sprites. Les bibliothèques CreateJS sont déjà présentes dans le projet (recherchez *js/easeljs-0.8.2.min.js* et *js/preloadjs-0.6.2.min.js* dans la vue Explorateur de solutions). Pour plus d'informations sur CreateJS, consultez la [page d'accueil de CreateJS](https://www.createjs.com).
 
 
-## <a name="getting-started"></a>Prise en main
+## <a name="getting-started"></a>Mise en route
 
 Le code source complet de l'application se trouve sur [GitHub](https://github.com/Microsoft/Windows-appsample-get-started-js2d).
 
@@ -65,7 +65,7 @@ Appuyez sur **F5** pour démarrer l'application. Vous devez voir apparaître une
 
 ![Ce n'est qu'un banal dinosaure avec un chat ninja sur le dos](images/JS2D_3.png)
 
-**Remarque :** un problème ? Vérifiez que vous avez installé Visual Studio avec prise en charge web. Vous pouvez le vérifier en créant un nouveau projet : si JavaScript n'est pas pris en charge, vous devrez réinstaller Visual Studio et cocher la case *Microsoft Web Developer Tools*.
+**Remarque :** un problème ? Vérifiez que vous avez installé Visual Studio avec prise en charge web. Vous pouvez le vérifier en créant un nouveau projet : si JavaScript n'est pas pris en charge, vous devrez réinstaller Visual Studio et cocher la case *Microsoft Web Developer Tools*.
 
 ## <a name="walkthough"></a>Procédure pas à pas
 
@@ -166,7 +166,7 @@ Nous allons maintenant faire en sorte que les nuages se déplacent. Le secret po
 
 <p data-height="500" data-theme-id="23761" data-slug-hash="vxZVRK" data-default-tab="result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="CreateJS - Animating clouds" data-preview="true" data-editable="true" class="codepen">Consultez le stylet <a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/vxZVRK/">CreateJS - Animating clouds (CreateJS - Animation de nuages)</a> de Microsoft Edge Docs (<a href="https://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>) sur <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
-  Le code nécessaire est se trouve déjà dans le fichier **main.js**, fourni par la bibliothèque CreateJS, EaselJS. Elle se présente comme suit :
+  Le code nécessaire est se trouve déjà dans le fichier **main.js**, fourni par la bibliothèque CreateJS, EaselJS. Il se présente comme suit :
 
 ```
     // Set up the game loop and keyboard handler.
@@ -260,7 +260,7 @@ Maintenant que vous disposez d'une application UWP, vous pouvez la publier dans 
 
 La procédure se décompose en plusieurs étapes.
 
-1. Vous devez être [enregistré](https://developer.microsoft.com/en-us/store/register) en tant que développeur Windows.
+1. Vous devez être [enregistré](https://developer.microsoft.com/store/register) en tant que développeur Windows.
 2. Vous devez utiliser la [liste de vérification](https://docs.microsoft.com/windows/uwp/publish/app-submissions) de soumission d'applications.
 3. L'application doit être soumise pour [certification](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process).
 

@@ -13,12 +13,12 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: e454bed6dc1a9429fe313e305dc9ba818d86e765
-ms.sourcegitcommit: 802699ce8d21e7fa4639f0b19b1c5b6c46c2c727
+ms.openlocfilehash: a3cd8a0c988df08047b10911a4d4f55e3ba1cb6e
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68835642"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684105"
 ---
 # <a name="buttons"></a>Boutons
 
@@ -28,7 +28,7 @@ Un bouton permet à l’utilisateur de déclencher une action immédiate. Certai
 
 Le framework [XAML (Extensible Application Markup Language)](../../xaml-platform/xaml-overview.md) fournit un contrôle de bouton standard, ainsi que plusieurs contrôles de boutons spécialisés.
 
-Commande | Description
+Contrôler | Description
 ------- | -----------
 [Button](/uwp/api/windows.ui.xaml.controls.button) | Bouton qui lance une action immédiate. Peut être utilisé avec un événement [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) ou une liaison de [commande](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command).
 [RepeatButton](/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) | Bouton qui déclenche un événement [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) en continu quand l’utilisateur appuie dessus.
@@ -85,15 +85,15 @@ Cet exemple utilise deux boutons, **Autoriser** et **Bloquer**, dans une boîte 
 
 ## <a name="create-a-button"></a>Créer un bouton
 
-Cet exemple illustre un bouton qui répond à un clic.
+Cet exemple montre un bouton qui répond à un clic.
 
-Créez le bouton en XAML.
+Créez le bouton en XAML,
 
 ```xaml
 <Button Content="Subscribe" Click="SubscribeButton_Click"/>
 ```
 
-Ou créez le bouton dans le code.
+ou créez le bouton dans le code.
 
 ```csharp
 Button subscribeButton = new Button();
@@ -123,22 +123,22 @@ private async void SubscribeButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-### <a name="button-interaction"></a>Interaction de bouton
+### <a name="button-interaction"></a>Interaction du bouton
 
 Quand vous appuyez sur un contrôle **Button** avec un doigt ou un stylet, ou quand vous cliquez dessus avec le bouton gauche de la souris, le bouton déclenche l’événement [Click](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click). Si un bouton est sélectionné au clavier, une pression sur la touche Entrée ou sur la barre d’espace déclenche également l’événement **Click**.
 
-Généralement, vous ne pouvez pas gérer les événements [PointerPressed](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) de bas niveau sur un objet **Button**, car un comportement **Click** lui est affecté à la place. Pour plus d’informations, voir [Vue d’ensemble des événements et des événements routés](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview).
+Généralement, vous ne pouvez pas gérer les événements [PointerPressed](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) de bas niveau sur un objet **Button**, car un comportement **Click** lui est affecté à la place. Pour plus d’informations, consultez [Vue d’ensemble des événements et des événements routés](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview).
 
-Vous pouvez modifier la façon dont un bouton déclenche l’événement **Click** en modifiant la propriété [ClickMode](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.clickmode). La valeur par défaut de **ClickMode** est **Release**, mais vous pouvez également affecter **Hover** ou **Press** à la valeur **ClickMode** d’un bouton. Si **ClickMode** a la valeur **Hover**, l’événement **Click** ne peut pas être déclenché à l’aide du clavier ou du mode tactile.
+Vous pouvez modifier la façon dont un bouton déclenche l’événement **Click** en modifiant la propriété [ClickMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.clickmode). La valeur par défaut de **ClickMode** est **Release**, mais vous pouvez également affecter **Hover** ou **Press** à la valeur **ClickMode** d’un bouton. Si **ClickMode** a la valeur **Hover**, l’événement **Click** ne peut pas être déclenché à l’aide du clavier ou du mode tactile.
 
 
 ### <a name="button-content"></a>Contenu du bouton
 
-**Button** est un contrôle de contenu de la classe [ContentControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentControl). Sa propriété de contenu XAML est [Content](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.content), ce qui permet une syntaxe comme celle-ci pour XAML : `<Button>A button's content</Button>`. Vous pouvez définir n’importe quel objet comme contenu du bouton. Si le contenu est un objet [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement), il est affiché dans le bouton. Si le contenu est un autre type d’objet, sa représentation sous forme de chaîne est affichée dans le bouton.
+**Button** est un contrôle de contenu de la classe [ContentControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentControl). Sa propriété de contenu XAML est [Content](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.content), ce qui permet une syntaxe comme celle-ci pour XAML : `<Button>A button's content</Button>`. Vous pouvez définir n’importe quel objet comme contenu du bouton. Si le contenu est un objet [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement), il est affiché dans le bouton. Si le contenu est un autre type d’objet, sa représentation chaîne est affichée dans le bouton.
 
 Un bouton contient généralement du texte. Quand vous concevez ce texte, utilisez les recommandations suivantes :
 
--  Utilisez un texte concis, précis et suffisamment explicite qui décrit clairement l’action effectuée par le bouton. Le texte d’un bouton est généralement représenté par un seul mot, un verbe.
+-  Utilisez un texte concis, spécifique et suffisamment explicite qui décrit clairement l’action effectuée par le bouton. Le texte d’un bouton est généralement représenté par un seul mot, un verbe.
 
 -  Utilisez la police par défaut à moins que vos instructions de personnalisation imposent d’en utiliser une autre.
 
@@ -181,7 +181,7 @@ Ici, un objet **StackPanel** qui contient une image et du texte est défini comm
 
 Le bouton ressemble à ceci.
 
-![Bouton avec contenu d’image et de texte](images/button-orange.png)
+![Un bouton avec du contenu image et texte](images/button-orange.png)
 
 ## <a name="create-a-repeat-button"></a>Créer un bouton de répétition
 
@@ -217,7 +217,7 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 
 ## <a name="create-a-drop-down-button"></a>Créer un bouton déroulant
 
-> L’utilisation de **DropDownButton** nécessite la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/) ou Windows 10 version 1809 (SDK 17763) ou ultérieure. Pour télécharger la dernière version du SDK, consultez [SDK Windows 10](https://developer.microsoft.com/windows/downloads/windows-10-sdk) ; pour télécharger un SDK antérieur, consultez [Archive du SDK Windows et de l’émulateur](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive).
+> L’utilisation de **DropDownButton** nécessite la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/) ou Windows 10 version 1809 (SDK 17763) ou ultérieure. Pour télécharger la dernière version du SDK, consultez [SDK Windows 10](https://developer.microsoft.com/windows/downloads/windows-10-sdk) ; pour télécharger un SDK antérieur, consultez [Archive du SDK Windows et de l’émulateur](https://developer.microsoft.com/windows/downloads/sdk-archive).
 
 Un bouton déroulant ([DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton)) est un bouton qui comprend un chevron, ce qui indique qu’il contient un menu volant attaché comprenant des options supplémentaires. Son comportement est le même que celui d’un contrôle **Button** standard avec un menu volant. Seule l’apparence est différente.
 
@@ -278,7 +278,7 @@ private void AlignmentMenuFlyoutItem_Click(object sender, RoutedEventArgs e)
 ## <a name="create-a-split-button"></a>Créer un bouton partagé
 
  > [!IMPORTANT]
- > L’utilisation de **SplitButton** nécessite la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/) ou Windows 10 version 1809 (SDK 17763) ou ultérieure. Pour télécharger la dernière version du SDK, consultez [SDK Windows 10](https://developer.microsoft.com/windows/downloads/windows-10-sdk) ; pour télécharger un SDK antérieur, consultez [Archive du SDK Windows et de l’émulateur](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive).
+ > L’utilisation de **SplitButton** nécessite la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/) ou Windows 10 version 1809 (SDK 17763) ou ultérieure. Pour télécharger la dernière version du SDK, consultez [SDK Windows 10](https://developer.microsoft.com/windows/downloads/windows-10-sdk) ; pour télécharger un SDK antérieur, consultez [Archive du SDK Windows et de l’émulateur](https://developer.microsoft.com/windows/downloads/sdk-archive).
 
 Un contrôle [SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) se compose de deux parties qui peuvent être appelées séparément. Un composant se comporte comme un bouton standard et appelle une action immédiate. L’autre composant appelle un menu volant qui propose des options supplémentaires à l’utilisateur.
 
@@ -388,7 +388,7 @@ public sealed partial class MainPage : Page
 ## <a name="create-a-toggle-split-button"></a>Créer un bouton partagé de basculement
 
 > [!NOTE]
-> L’utilisation de **ToggleSplitButton** nécessite la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/) ou Windows 10 version 1809 (SDK 17763) ou ultérieure. Pour télécharger la dernière version du SDK, consultez [SDK Windows 10](https://developer.microsoft.com/windows/downloads/windows-10-sdk) ; pour télécharger un SDK antérieur, consultez [Archive du SDK Windows et de l’émulateur](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive).
+> L’utilisation de **ToggleSplitButton** nécessite la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/) ou Windows 10 version 1809 (SDK 17763) ou ultérieure. Pour télécharger la dernière version du SDK, consultez [SDK Windows 10](https://developer.microsoft.com/windows/downloads/windows-10-sdk) ; pour télécharger un SDK antérieur, consultez [Archive du SDK Windows et de l’émulateur](https://developer.microsoft.com/windows/downloads/sdk-archive).
 
 Un contrôle [ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) se compose de deux parties qui peuvent être appelées séparément. Un composant se comporte comme un bouton bascule qui peut être activé ou désactivé. L’autre composant appelle un menu volant qui propose des options supplémentaires à l’utilisateur.
 
@@ -517,16 +517,16 @@ private void ApplyListStyle(string listStyle)
 
 ## <a name="recommendations"></a>Recommandations
 
-- Assurez-vous que le but et l’état actuel d’un bouton sont clairs pour l’utilisateur.
+- Veillez à ce que la fonction et l’état d’un bouton soient clairs pour l’utilisateur.
 
 - Quand plusieurs boutons permettent de faire le même choix (comme dans une boîte de dialogue de confirmation), présentez les boutons de validation dans cet ordre, où [Faire l’action] et [Ne pas faire l’action] sont des réponses spécifiques à l’instruction principale :
   - OK/[Faire l’action]/Oui
     - [Ne pas faire l’action]/Non
-    - Cancel
+    - Annuler
 
-- Exposez seulement un ou deux boutons à la fois pour l’utilisateur, par exemple **Accepter** et **Annuler**. Si vous devez inviter l’utilisateur à effectuer plusieurs actions, pensez à utiliser des [cases à cocher](checkbox.md) ou des [cases d’option](radio-button.md) à partir desquelles l’utilisateur peut sélectionner des actions, avec un seul bouton de commande pour les déclencher.
+- Exposez seulement un ou deux boutons à la fois pour l’utilisateur, par exemple **Accepter** et **Annuler**. Si vous devez proposer plusieurs actions à l’utilisateur, pensez à utiliser des [cases à cocher](checkbox.md) ou des [cases d’option](radio-button.md) à partir desquelles l’utilisateur peut sélectionner des actions, avec un seul bouton de commande pour les déclencher.
 
-- Pour une action qui doit être disponible sur plusieurs pages dans votre application, pensez à utiliser une [barre d’application inférieure](app-bars.md), au lieu de dupliquer un bouton sur plusieurs pages.
+- Pour une action qui doit être disponible sur plusieurs pages dans votre application, pensez à utiliser une [barre d’application dans le bas](app-bars.md), au lieu de dupliquer un bouton sur plusieurs pages.
 
 
 ### <a name="recommended-single-button-layout"></a>Disposition recommandée pour un bouton seul
@@ -548,7 +548,7 @@ Si votre disposition ne nécessite qu’un seul bouton, celui-ci doit être alig
 
 ## <a name="back-buttons"></a>Boutons Précédent
 
-Le bouton Précédent est un élément de l’interface utilisateur fournie par le système qui permet de revenir en arrière dans la pile Back ou dans l’historique de navigation de l’utilisateur. Vous n’avez pas besoin de créer votre propre bouton précédent, mais vous devez peut-être effectuer certaines opérations pour obtenir une bonne expérience de navigation vers l’arrière. Pour plus d’informations, consultez [Historique de navigation et navigation vers l’arrière pour les applications UWP](../basics/navigation-history-and-backwards-navigation.md).
+Le bouton Précédent est un élément de l’interface utilisateur fournie par le système qui permet de revenir en arrière dans la pile Back ou dans l’historique de navigation de l’utilisateur. Vous n’avez pas besoin de créer votre propre bouton Précédent, mais un peu de travail sera peut-être nécessaire pour permettre une bonne expérience de navigation vers l’arrière. Pour plus d’informations, consultez [Historique de navigation et navigation vers l’arrière pour les applications UWP](../basics/navigation-history-and-backwards-navigation.md).
 
 
 ## <a name="get-the-sample-code"></a>Obtenir l’exemple de code

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 5d5f7af2-41a9-4749-ad16-4503c64bb80c
 ms.localizationpriority: medium
-ms.openlocfilehash: 01ddc46c80c0ed9a9999ec7c8e67ab9034803a3d
-ms.sourcegitcommit: deb1cdecf34feaa92b0342adc61a5d08f3f10687
+ms.openlocfilehash: 4300bdc0224a18874a7ff9153195f81f8bb8d101
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68332825"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685052"
 ---
 # <a name="create-a-uwp-game-in-monogame-2d"></a>Créer un jeu UWP dans MonoGame 2D
 
@@ -24,10 +24,10 @@ ms.locfileid: "68332825"
 
 MonoGame est une infrastructure légère de développement de jeux. Ce didacticiel vous explique les notions de base du développement de jeux dans MonoGame, notamment comment charger du contenu, dessiner des sprites, les animer et gérer les entrées utilisateur. Vous trouverez également des concepts plus avancés, tels que la détection des collisions et la prise en charge des écrans haute résolution. Ce didacticiel dure 30 à 60 minutes.
 
-## <a name="prerequisites"></a>Conditions préalables
-+   Windows 10 et Microsoft Visual Studio 2019.  [Cliquez ici pour savoir comment prendre en main Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
+## <a name="prerequisites"></a>Prérequis
++   Windows 10 et Microsoft Visual Studio 2019.  [Cliquez ici pour découvrir comment prendre en main Visual Studio](https://docs.microsoft.com/windows/uwp/get-started/get-set-up).
 + L’infrastructure de développement de bureau .NET. Si vous ne l’avez pas encore installée, vous pouvez l’obtenir en réexécutant le programme d’installation de Visual Studio et en modifiant votre installation de Visual Studio 2019.
-+   Connaissances de base de C# ou d’un langage de programmation orienté objet similaire. [Cliquez ici pour savoir comment commencer en C#](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
++   Connaissances de base de C# ou d’un langage de programmation orienté objet similaire. [Cliquez ici pour savoir comment commencer en C#](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
 +   La connaissance de concepts informatiques élémentaires tels que les classes, les méthodes ou les variables sera un plus.
 
 ## <a name="why-monogame"></a>Pourquoi MonoGame ?
@@ -40,7 +40,7 @@ Ouvrez le projet dans Visual Studio 2019, puis appuyez sur **F5** pour exécuter
 
 Si cela est déjà fait, ignorez la section suivante sur la configuration de MonoGame pour passer directement à une explication pas à pas du code.
 
-**Remarque :** Le jeu créé dans cet exemple ne vise pas à être complet (ni même amusant). Son seul objet est d’illustrer l’ensemble des concepts principaux du développement 2D dans MonoGame. N’hésitez pas à utiliser ce code pour créer quelque chose de plus intéressant ou même repartir de zéro lorsque vous maîtriserez les concepts de base !
+**Remarque :** Le jeu créé dans cet exemple ne vise pas à être complet (ni même amusant). Son seul objet est d’illustrer l’ensemble des concepts principaux du développement 2D dans MonoGame. N’hésitez pas à utiliser ce code pour créer quelque chose de plus intéressant ou même repartir de zéro lorsque vous maîtriserez les concepts de base !
 
 ## <a name="set-up-monogame-project"></a>Configuration du projet MonoGame
 1. Installer **MonoGame 3.6** pour Visual Studio à partir de [MonoGame.net](https://www.monogame.net/)
@@ -692,10 +692,10 @@ Et c’est fini ! Essayez de réexécuter le jeu. Si vous avez suivi les étapes
 ## <a name="publish-to-the-microsoft-store"></a>Publier sur le Microsoft Store
 Puisque nous avons créé ce jeu sous forme d’application UWP, nous pouvons publier le projet dans le Microsoft Store. La procédure comprend quelques étapes.
 
-Vous devez être [enregistré](https://developer.microsoft.com/en-us/store/register) en tant que développeur Windows.
+Vous devez être [enregistré](https://developer.microsoft.com/store/register) en tant que développeur Windows.
 
-Vous devez utiliser la [liste de vérification de soumission d’applications](https://docs.microsoft.com/en-us/windows/uwp/publish/app-submissions).
+Vous devez utiliser la [liste de vérification de soumission d’applications](https://docs.microsoft.com/windows/uwp/publish/app-submissions).
 
-L’application doit être soumise pour [certification](https://docs.microsoft.com/en-us/windows/uwp/publish/the-app-certification-process).
+L’application doit être soumise pour [certification](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process).
 
 Pour plus d’informations, voir [Publication de votre application UWP](https://docs.microsoft.com/windows/uwp/publish/).

@@ -6,12 +6,12 @@ ms.date: 09/12/2019
 keywords: Accessibilité dans Windows 10, Accessibilité, conception d’applications win32 accessibles, conception d’applications UWP accessibles, conception d’applications WPF accessibles, conception d’applications WinForms accessibles
 ms.author: kbridge
 author: Karl-Bridge-Microsoft
-ms.openlocfilehash: 76bbd3f0e04bbb2f729ad0950bae190b2fffb6ac
-ms.sourcegitcommit: 6e7665b457ec4585db19b70acfa2554791ad6e10
+ms.openlocfilehash: fdb1092139602edd00086e17ff4dc7a27cf361dd
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70987197"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75681890"
 ---
 # <a name="accessibility-in-windows-10"></a>Accessibilité dans Windows 10
 
@@ -43,7 +43,7 @@ Cette page fournit des informations sur la façon dont les différentes infrastr
 
       [Test de l’accessibilité](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-testing)
 
-      [Accessibilité dans le Windows Store](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-in-the-store)
+      [Accessibilité dans le Store](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-in-the-store)
    :::column-end:::
    :::column:::
       ![Applications de plateforme Win32](images/platform-win32.png)
@@ -129,13 +129,13 @@ Cette page fournit des informations sur la façon dont les différentes infrastr
    :::column-end:::
 :::row-end:::
 
-## <a name="samples"></a>Exemples
+## <a name="samples"></a>exemples
 
 Téléchargez et exécutez des exemples Windows complets qui illustrent diverses fonctionnalités d’accessibilité.
 
 :::row:::
    :::column:::
-      [Navigateur d’exemples de code](https://docs.microsoft.com/en-us/samples/browse/)
+      [Navigateur d’exemples de code](https://docs.microsoft.com/samples/browse/)
 
       Le nouveau navigateur d’exemples qui remplace MSDN Code Gallery.
    :::column-end:::

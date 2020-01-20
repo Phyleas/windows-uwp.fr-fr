@@ -5,12 +5,12 @@ ms.date: 02/06/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a6a1d93b1deaad084ff25db946199b678b35703c
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: dcbeffc7e3db8f3df9c197e8c388f30faf7ad03d
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66369512"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685240"
 ---
 # <a name="best-practices-for-writing-to-files"></a>Bonnes pratiques concernant l’écriture de données dans des fichiers
 
@@ -44,7 +44,7 @@ Un objet [**StorageFile**](https://docs.microsoft.com/uwp/api/windows.storage.st
 Il est utile de comprendre ce concept lors de l’exécution d’E/S avec un objet **StorageFile**. Par exemple, la section [Écriture dans un fichier](quickstart-reading-and-writing-files.md#writing-to-a-file) présente trois façons d’écrire dans un fichier :
 
 * À l’aide de la méthode [**FileIO.WriteTextAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileio.writetextasync).
-* En créant une mémoire tampon, puis en appelant la méthode [**FileIO.WriteBufferAsync**](https://docs.microsoft.com/en-us/uwp/api/windows.storage.fileio.writebufferasync).
+* En créant une mémoire tampon, puis en appelant la méthode [**FileIO.WriteBufferAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileio.writebufferasync).
 * À l’aide du modèle en quatre étapes qui utilise un flux de données :
   1. [Ouvrez](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.openasync) le fichier pour obtenir un flux de données.
   2. [Obtenez](https://docs.microsoft.com/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat) un flux de sortie.
@@ -82,7 +82,7 @@ Ce tableau présente les codes d’erreur courants que les développeurs d’app
 |  ERROR_UNABLE_TO_REMOVE_REPLACED (0x80070497)  |  19-20  |  Le fichier d’origine (file.txt) n’a pas pu être remplacé, car il est en cours d’utilisation. Un autre processus ou une autre opération a obtenu un accès au fichier avant qu’il ne puisse être remplacé.  |  Recommencez l'opération.</br>Vérifiez que l’accès au fichier est synchronisé.  |
 |  ERROR_DISK_FULL (0x80070070)  |  7, 14, 16, 20  |  Le modèle transactionnel crée un fichier supplémentaire, ce qui utilise un espace de stockage supplémentaire.  |    |
 |  ERROR_OUTOFMEMORY (0x8007000E)  |  14, 16  |  Cela peut se produire en raison de plusieurs opérations d’E/S en attente ou de fichiers volumineux.  |  Une approche plus granulaire avec un contrôle du flux peut résoudre l’erreur.  |
-|  E_FAIL (0x80004005) |  Indéfini  |  Divers  |  Recommencez l'opération. En cas de nouvel échec, il peut s’agir d’une erreur de la plateforme. L’application doit alors fermer, car elle se trouve dans un état incohérent. |
+|  E_FAIL (0x80004005) |  Indifférent  |  Divers  |  Recommencez l'opération. En cas de nouvel échec, il peut s’agir d’une erreur de la plateforme. L’application doit alors fermer, car elle se trouve dans un état incohérent. |
 
 ## <a name="other-considerations-for-file-states-that-might-lead-to-errors"></a>Autres considérations relatives aux états de fichier, susceptibles d’entraîner des erreurs
 
@@ -194,6 +194,6 @@ else
 
 Le [blog .Parallel Programming with .NET](https://devblogs.microsoft.com/pfxteam/) est une ressource précieuse pour obtenir des conseils sur la programmation parallèle. Le [billet concernant AsyncReaderWriterLock](https://devblogs.microsoft.com/pfxteam/building-async-coordination-primitives-part-7-asyncreaderwriterlock/) explique notamment comment conserver un accès exclusif à un fichier pour les écritures tout en autorisant un accès en lecture simultané. N’oubliez pas que la sérialisation des E/S a un impact sur les performances.
 
-## <a name="see-also"></a>Voir également
+## <a name="see-also"></a>Voir aussi
 
 * [Créer, écrire et lire un fichier](quickstart-reading-and-writing-files.md)

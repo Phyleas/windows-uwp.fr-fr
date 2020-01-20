@@ -5,24 +5,24 @@ keywords: nouveautés, mise à jour, fonctionnalités, conseils aux développeur
 ms.date: 12/14/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 17238dd886b76e16b0fe63151a73d4a3a5c23704
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: f785ad5d7898f838435e0a05cf8dea5c778e70f3
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259760"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684750"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-december-2017"></a>Nouveautés apportées dans la documentation du développeur Windows en décembre 2017
 
 La documentation du développeur Windows est constamment mise à jour avec des informations sur les nouvelles fonctionnalités mises à la disposition des développeurs sur la plateforme Windows. Les présentations de fonctionnalités, les conseils aux développeurs et les exemples qui suivent ont été récemment mis à disposition, après la parution de la mise à jour Fall Creators Update. Ils contiennent des informations nouvelles et mises à jour destinées aux développeurs Windows.
 
-[Installez les outils et le kit de développement logiciel (SDK)](https://developer.microsoft.com/windows/downloads#_blank) sur Windows 10 et vous pourrez ainsi [créer une application universelle Windows](../get-started/create-uwp-apps.md) ou explorer la procédure permettant d’utiliser votre [code d’application existant sur Windows](../porting/index.md).
+[Installez les outils et le SDK](https://developer.microsoft.com/windows/downloads#_blank) sur Windows 10, et vous pourrez ainsi [créer une application Windows universelle](../get-started/create-uwp-apps.md) ou découvrir comment vous pouvez utiliser votre [code d’application existant sur Windows](../porting/index.md).
 
 ## <a name="features"></a>Fonctionnalités
 
 ### <a name="windows-mixed-reality-enthusiasts-guide"></a>Windows Mixed Reality : Guide pour les fans
 
-Particulièrement destiné aux passionnés de technologie immergés dans l'univers de la réalité mixte, le [Guide des fans](https://docs.microsoft.com/en-us/windows/mixed-reality/enthusiast-guide/) répond aux principales questions posées sur Windows Mixed Reality. 
+Particulièrement destiné aux passionnés de technologie immergés dans l'univers de la réalité mixte, le [Guide des fans](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/) répond aux principales questions posées sur Windows Mixed Reality. 
 
 Vous trouverez dans ce guide : 
 - un forum aux questions préalable à l'achat ; 
@@ -44,7 +44,7 @@ Sur les appareils qui prennent en charge les interactions tactiles, ajoutez des 
 
 ### <a name="microsoft-collaborate"></a>Microsoft Collaborate
 
-Le portail Microsoft Collaborate fournit des outils et des services qui permettent de simplifier la collaboration en ingénierie au sein de l'écosystème Microsoft. Il permet de partager des éléments de travail (bogues, demandes de fonctionnalités, etc.) et de diffuser du contenu (builds, documents, spécifications). [En savoir plus](https://docs.microsoft.com/collaborate/).
+Le portail Microsoft Collaborate fournit des outils et des services qui permettent de simplifier la collaboration en ingénierie au sein de l'écosystème Microsoft. Il permet de partager des éléments de travail (bogues, demandes de fonctionnalités, etc.) et de diffuser du contenu (builds, documents, spécifications). [En savoir plus](https://docs.microsoft.com/collaborate/)
 
 ![Microsoft Collaborate dans l'Espace partenaires](images/microsoft_collaborate_screenshot.PNG)
 
@@ -62,7 +62,7 @@ Tous les développeurs qui ont rejoint le programme Insider du Centre de dévelo
 
 ## <a name="developer-guidance"></a>Conseils aux développeurs
 
-### <a name="color"></a>Color
+### <a name="color"></a>Couleur
 
 Pour une expérience utilisateur optimale, nous avons ajouté de nouvelles recommandations sur l'utilisation des couleurs dans vos applications. Celles-ci comprennent des scénarios d'utilisation d'API ainsi que des instructions générales sur la conception d'une interface utilisateur et son accessibilité. Nous avons également mis à jour la liste des couleurs d'accentuation disponibles sur Xbox. [Consultez ici la mise à jour de l'article consacré aux couleurs.](../design/style/color.md)
 
@@ -87,7 +87,7 @@ Le guide de conception pour la plateforme Windows universelle (UWP) est une ress
 
 Nous avons ajouté un article qui explique comment [demander des évaluations et des avis pour votre application](../monetize/request-ratings-and-reviews.md). Vous pouvez afficher une boîte de dialogue d'évaluation et d'avis dans le contexte de votre application, ou vous pouvez ouvrir la page d'évaluation et d'avis de votre application dans le Store.
 
-## <a name="samples"></a>Exemples
+## <a name="samples"></a>exemples
 
 ### <a name="customer-orders"></a>Commandes client
 
@@ -97,4 +97,4 @@ L'exemple de [base de données de commandes client](https://github.com/Microsoft
 
 ### <a name="package-a-net-app-in-visual-studio"></a>Créer un package d'application .NET dans Visual Studio
 
-Porter votre application de bureau vers la plateforme Windows universelle (UWP) est plus simple que jamais. [Regardez la vidéo](https://www.youtube.com/watch?v=fJkbYPyd08w) pour savoir comment empaqueter votre application .NET pour la distribution, puis [consultez cette page](../porting/desktop-to-uwp-packaging-dot-net.md) pour plus d'informations.
+Porter votre application pour poste de travail vers la plateforme Windows universelle (UWP) est plus simple que jamais. [Regardez la vidéo](https://www.youtube.com/watch?v=fJkbYPyd08w) pour savoir comment empaqueter votre application .NET pour la distribution, puis [consultez cette page](../porting/desktop-to-uwp-packaging-dot-net.md) pour plus d'informations.

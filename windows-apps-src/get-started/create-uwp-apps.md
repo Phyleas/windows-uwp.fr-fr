@@ -5,14 +5,14 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10, uwp, prise en main
 ms.localizationpriority: medium
-ms.openlocfilehash: d3d52429d4d91aa646f19aad5444f895f71504de
-ms.sourcegitcommit: 7791596c25baf9d222729e057ecdf81b45a59f0c
+ms.openlocfilehash: 85795ceccdde1ab49c0b6af65bf0299514879e6c
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71205924"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685222"
 ---
-# <a name="start-coding"></a>Commencer le codage
+# <a name="start-coding"></a>Commencer à développer
 
 ![Créer votre application](images/build-your-app.png)
 
@@ -55,11 +55,11 @@ Pour une présentation plus détaillée des bases du codage, du langage C#, de V
 
 Si vous avez déjà exploré nos pistes d'apprentissage, ou si vous vous intéressez à un sujet qu'elles ne couvrent pas, vous pouvez consulter notre documentation. Voici un aperçu rapide de ce qui vous attend dans chaque section :
 
-| Zone | Description |
+| Domaine | Description |
 | --- | --- |
 | **Nouveautés** | Chaque mise à jour majeure de Windows 10 enrichit notre documentation avec de nouveaux conseils. Cette documentation contient des informations sur la fonctionnalité, les conseils de développement qui accompagnent chaque version, ainsi que des listes de nouvelles API : </br>   [Nouveautés de la dernière version de Windows 10 pour les développeurs](../whats-new/windows-10-version-latest.md) </br> Cependant, les versions majeures ne représentent pas les seules occasions où nous mettons à jour notre documentation. Nous ajoutons en permanence de nouvelles informations à découvrir et vous tenons toujours au courant des dernières nouveautés : </br>   [Nouveautés de la documentation](../whats-new/windows-docs-latest.md) |
-| **Conception et IU** | Toutes les informations associées à la présentation visuelle et à l'interface utilisateur de votre application sont contenues dans cette section de la documentation. Si vous vous intéressez aux spécificités du langage de balisage XAML ou si vous souhaitez simplement créer un style unique pour vos documents, commencez ici : </br>   [Notions de base sur la conception d'applications UWP](../design/basics/index.md) |
-| **Développer des applications** | Pour obtenir des informations détaillées sur une fonctionnalité spécifique de Windows 10, ou pour savoir ce que vous pouvez faire avec le développement UWP, consultez cette section de notre documentation : </br>   [Fonctionnalités des applications UWP](../develop/index.md). </br> La référence API des applications Windows 10 est hébergée dans un ensemble de documents connexes, que vous trouverez ici : </br>   [Espaces de noms Windows UWP](https://docs.microsoft.com/en-us/uwp/api/) </br>   [Fichier et schémas XML](https://docs.microsoft.com/uwp/schemas/) |
+| **Conception et interface utilisateur** | Toutes les informations associées à la présentation visuelle et à l'interface utilisateur de votre application sont contenues dans cette section de la documentation. Si vous vous intéressez aux spécificités du langage de balisage XAML ou si vous souhaitez simplement créer un style unique pour vos documents, commencez ici : </br>   [Notions de base sur la conception d'applications UWP](../design/basics/index.md) |
+| **Développer des applications** | Pour obtenir des informations détaillées sur une fonctionnalité spécifique de Windows 10, ou pour savoir ce que vous pouvez faire avec le développement UWP, consultez cette section de notre documentation : </br>   [Fonctionnalités des applications UWP](../develop/index.md). </br> La référence API des applications Windows 10 est hébergée dans un ensemble de documents connexes, que vous trouverez ici : </br>   [Espaces de noms Windows UWP](https://docs.microsoft.com/uwp/api/) </br>   [Fichier et schémas XML](https://docs.microsoft.com/uwp/schemas/) |
 | **Développer des jeux** | Ces documents contiennent des informations sur le développement de jeux sur Windows ou Xbox. Cela comprend des instructions de configuration, des programmes pour développeurs et des instructions de programmation avec des fonctionnalités DirectX ou Xbox. </br>   [Prise en main du développement de jeux](../gaming/getting-started.md) |
 | **Publier** | Ces documents contiennent des informations sur la publication de votre application dans le Microsoft Store, de la soumission de l'application à la tarification, en passant par la promotion et l'engagement client : </br>   [Publier votre application sur le Microsoft Store](../publish/index.md) |
 
@@ -67,8 +67,8 @@ Si vous avez déjà exploré nos pistes d'apprentissage, ou si vous vous intére
 
 Certaines plateformes Windows 10 spécialisées, notamment dans le domaine du développement web ou de la réalité mixte, disposent de leur propre documentation. Si vous souhaitez développer une application à l'aide de ces fonctionnalités, consultez leur documentation :
 
-| Documentation | Description |
+| Docs | Description |
 | --- | --- |
 | **Microsoft Azure** | Vous trouverez des informations sur le développement cloud et Microsoft Azure dans la [documentation pour développeurs Microsoft Azure.](https://docs.microsoft.com/azure/) |
 | **Développement web** | Vous trouverez des informations sur Microsoft Edge, WebVR et d'autres fonctionnalités de développement web Windows dans la [documentation pour développeurs Microsoft Edge.](https://docs.microsoft.com/microsoft-edge/) |
-| **Windows Mixed Reality** | La réalité mixte associe des contenus réels et virtuels à des expériences où coexistent des objets physiques et numériques. Vous trouverez des informations sur la création d'applications pour les casques Microsoft HoloLens et d'autres casques immersifs dans la [documentation Windows Mixed Reality.](https://docs.microsoft.com/en-us/windows/mixed-reality/)|
+| **Windows Mixed Reality** | La réalité mixte associe des contenus réels et virtuels à des expériences où coexistent des objets physiques et numériques. Vous trouverez des informations sur la création d'applications pour les casques Microsoft HoloLens et d'autres casques immersifs dans la [documentation Windows Mixed Reality.](https://docs.microsoft.com/windows/mixed-reality/)|
