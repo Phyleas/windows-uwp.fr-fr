@@ -7,12 +7,12 @@ ms.date: 10/18/2019
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: anawish
-ms.openlocfilehash: 956ac13dcdc1a2e6367e590bb8885c8722f41e2c
-ms.sourcegitcommit: cb7f80100c99d4b6466a819bea191006ec3d616c
+ms.openlocfilehash: d388e1f4b3f1b1be4e265185934a02b6ccd20064
+ms.sourcegitcommit: 87c20c6a40ed54e086adbe80caa509d851f54f57
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73640876"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76123851"
 ---
 # <a name="data-template-selection-styling-items-based-on-their-properties"></a>Sélection du modèle de données : Stylisation d’éléments en fonction de leurs propriétés
 
@@ -22,7 +22,7 @@ La conception personnalisée des contrôles de collections est gérée par un [D
 
 [DataTemplateSelector](/uwp/api/windows.ui.xaml.controls.datatemplateselector) est une classe qui active une logique personnalisée de sélection de modèle. Elle vous permet de définir des règles qui spécifient le modèle de données à utiliser pour certains éléments d’une collection. Pour implémenter cette logique, vous créez une sous-classe de DataTemplateSelector dans votre code-behind et définissez la logique qui détermine quel modèle de données à utiliser pour quelle catégorie d’éléments (par exemple, les éléments d’un certain type, les éléments ayant une certaine valeur de propriété, etc.). Vous déclarez une instance de cette classe dans la section Resources de votre fichier XAML, ainsi que les définitions des modèles de données que vous allez utiliser. Vous identifiez ces ressources avec une valeur `x:Key`, ce qui vous permet de les référencer dans votre code XAML.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 - Comment [utiliser et créer un contrôle de collection, comme ListView ou GridView](listview-and-gridview.md)
 - Comment [personnaliser l’apparence de vos éléments à l’aide d’un DataTemplate](item-containers-templates.md#data-template)
@@ -31,7 +31,7 @@ La conception personnalisée des contrôles de collections est gérée par un [D
 
 En règle générale, vous ne devez pas donner à chaque élément d’un ListView ou GridView une disposition/un style complètement différent. Il s’agit là d’une mauvaise utilisation d’un DataTemplateSelector qui peut avoir un impact négatif sur les performances.
 
-Vous pouvez contrôler certains éléments du visuel d’un élément de liste à l’aide d’un seul modèle de données en liant certaines propriétés. Par exemple, pour que des éléments aient des icônes différentes, créez une liaison avec une propriété de source d’icône dans le modèle de données et attribuez à chaque élément une valeur différente pour cette propriété de source d’icône. Vous obtiendriez de meilleures performances qu’avec un DataTemplateSelector.
+Vous pouvez contrôler certains éléments du visuel d’un élément de liste à l’aide d’un seul modèle de données en liant certaines propriétés. Par exemple, pour que des éléments aient une icône différente, créez une liaison avec une propriété de source d’icône dans le modèle de données et attribuez à chaque élément une valeur différente pour cette propriété de source d’icône. Vous obtiendriez de meilleures performances qu’avec un DataTemplateSelector.
 
 ## <a name="when-to-use-a-datatemplateselector"></a>Quand utiliser un DataTemplateSelector
 

@@ -5,12 +5,12 @@ ms.date: 04/24/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, norme, c++, cpp, winrt, COM, composant, classe, interface
 ms.localizationpriority: medium
-ms.openlocfilehash: bb28ec7afa22f81033bfce2aff530119e53a4b91
-ms.sourcegitcommit: 7585bf66405b307d7ed7788d49003dc4ddba65e6
+ms.openlocfilehash: 88012d96b7c769094cb80d0f34b77060291a3eef
+ms.sourcegitcommit: 80ea5e05f8c15700f6c6fa3d1ed37e479568762b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67660158"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75928818"
 ---
 # <a name="consume-com-components-with-cwinrt"></a>Consommer des composants COM avec C++/WinRT
 
@@ -18,7 +18,7 @@ Vous pouvez utiliser les fonctionnalités de la bibliothèque [C++/WinRT](/windo
 
 À la fin de cette rubrique, vous trouverez le code source complet d’une application Direct2D minimale. Nous allons utiliser des extraits de ce code pour illustrer la consommation des composants COM avec C++/WinRT et diverses fonctionnalités de la bibliothèque C++/WinRT.
 
-## <a name="com-smart-pointers-winrtcomptruwpcpp-ref-for-winrtcom-ptr"></a>Pointeurs intelligents COM ([**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr))
+## <a name="com-smart-pointers-winrtcom_ptruwpcpp-ref-for-winrtcom-ptr"></a>Pointeurs intelligents COM ([**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr))
 
 Quand vous programmez avec COM, vous utilisez directement des interfaces et non des objets (cela est également vrai pour les API Windows Runtime, qui sont une évolution de COM). Pour appeler une fonction sur une classe COM, par exemple, vous l’activez, vous récupérez une interface, puis vous appelez des fonctions sur cette interface. Pour accéder à l’état d’un objet, vous n’accédez pas directement à ses membres de données. Vous appelez en fait des fonctions d’accesseur et de mutateur sur une interface.
 
@@ -81,7 +81,7 @@ DWriteCreateFactory(
     reinterpret_cast<IUnknown**>(dwriteFactory2.put()));
 ```
 
-## <a name="re-seat-a-winrtcomptr"></a>Repositionner un **winrt::com_ptr**
+## <a name="re-seat-a-winrtcom_ptr"></a>Repositionner un **winrt::com_ptr**
 
 > [!IMPORTANT]
 > Si vous avez un [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) déjà positionné (son pointeur brut interne a déjà une cible) et si vous souhaitez le repositionner pour qu’il pointe vers un autre objet, vous devez d’abord lui affecter `nullptr`, comme indiqué dans l’exemple de code ci-dessous. Sinon, un **com_ptr** déjà positionné va vous signaler le problème (quand vous appellerez [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptr_put-function) ou [**com_ptr::put_void**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrput_void-function)) en indiquant que son pointeur interne n’a pas une valeur null.
@@ -169,7 +169,11 @@ Vous pouvez également utiliser [**com_ptr::try_as**](/uwp/cpp-ref-for-winrt/com
 
 ## <a name="full-source-code-listing-of-a-minimal-direct2d-application"></a>Code source complet d’une application Direct2D minimale
 
-Si vous souhaitez générer et exécuter cet exemple de code source, commencez par créer dans Visual Studio une **application Core (C++/WinRT)** . `Direct2D` est un nom approprié pour le projet, mais vous pouvez le changer comme bon vous semble. Ouvrez `App.cpp`, supprimez tout son contenu, puis collez les lignes de code ci-dessous.
+Si vous souhaitez générer et exécuter cet exemple de code source, commencez par créer dans Visual Studio une **application Core (C++/WinRT)** . `Direct2D` est un nom approprié pour le projet, mais vous pouvez le changer comme bon vous semble.
+
+Ouvrez `pch.h` et ajoutez `#include <unknwn.h>` immédiatement après avoir inclus `windows.h`.
+
+Ouvrez `App.cpp`, supprimez tout son contenu, puis collez les lignes de code ci-dessous.
 
 Le code ci-dessous utilise la [fonction winrt::com_ptr::capture](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrcapture-function) dans la mesure du possible. `WINRT_ASSERT` est une définition de macro, qui se développe en [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros).
 
@@ -491,7 +495,7 @@ Comme vous pouvez le voir, C++/WinRT prend en charge l’implémentation et l’
 
 ## <a name="avoiding-namespace-collisions"></a>Évitement des collisions d’espaces de noms
 
-Il est courant en C++/WinRT, comme le montre le listing de code de cette rubrique, d’utiliser librement les directives using. Dans certains cas, toutefois, cela peut poser un problème : l’importation de noms en conflit dans l’espace de noms global. Voici un exemple :
+Il est courant en C++/WinRT, comme le montre le listing de code de cette rubrique, d’utiliser librement les directives using. Dans certains cas, toutefois, cela peut poser un problème : l’importation de noms en conflit dans l’espace de noms global. Voici un exemple.
 
 C++/WinRT contient un type nommé[**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown) alors que COM définit un type nommé [ **::IUnknown**](/windows/desktop/api/unknwn/nn-unknwn-iunknown). Prenons l’exemple de code suivant dans un projet C++/WinRT qui consomme des en-têtes COM.
 
@@ -541,4 +545,4 @@ Vous pouvez ensuite faire référence à **winrt::Windows::Storage::StorageFile*
 ## <a name="important-apis"></a>API importantes
 * [fonction winrt::check_hresult](/uwp/cpp-ref-for-winrt/error-handling/check-hresult)
 * [modèle de struct winrt::com_ptr](/uwp/cpp-ref-for-winrt/com-ptr)
-* [struct winrt::Windows::Foundation::IUnknown](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
+* [Struct winrt::Windows::Foundation::IUnknown](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
