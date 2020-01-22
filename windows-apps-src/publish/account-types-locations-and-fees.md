@@ -151,7 +151,7 @@ Dans le tableau suivant, les **frais d’inscription** correspondent au coût ac
 | Lituanie                         | 14 EUR              | 75 EUR           |  
 | Luxembourg                        | 14 EUR              | 75 EUR           |  
 | Macao R.A.S.                         | 19 USD              | 99 USD           |  
-| Macédoine (Ex-République yougoslave de Macédoine)                 | 19 USD              | 99 USD           |  
+| Macédoine du Nord                 | 19 USD              | 99 USD           |  
 | Madagascar                        | 19 USD              | 99 USD           |  
 | Malawi                            | 19 USD              | 99 USD           |  
 | Malaisie                          | 62 MYR              | 300 MYR          |  

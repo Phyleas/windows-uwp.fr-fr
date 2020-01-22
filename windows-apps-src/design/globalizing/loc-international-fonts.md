@@ -38,7 +38,7 @@ Dans le tableau suivant, la colonne « Balise de langue » répertorie la [bal
 | Kurde central (arabe) | ku-ARAB-IQ | Segoe UI |
 | Cherokee (Cherokee) | chr-CHER-US | Gadugi |
 | Chinois simplifié | zh-CN | Microsoft YaHei UI |
-| Chinois traditionnel (Hong Kong) | zh-HK | Microsoft JhengHei UI |
+| Chinois traditionnel (Hong Kong (R.A.S.)) | zh-HK | Microsoft JhengHei UI |
 | Chinois traditionnel (Taïwan) | zh-TW | Microsoft JhengHei UI |
 | Croate | hr-HR | Segoe UI |
 | Tchèque | cs-CZ | Segoe UI |
