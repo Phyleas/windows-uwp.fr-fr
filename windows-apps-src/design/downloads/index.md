@@ -7,19 +7,18 @@ ms.topic: article
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: f33e2f10686edf149feb11e317a10e535685ef19
-ms.sourcegitcommit: 6169660ea437915265165c4631d9702587e4793d
+ms.openlocfilehash: 4678565547616c0cee4a7961cb4a0c95fc03241b
+ms.sourcegitcommit: 85fd390b1e602707bd9342cb4b84b97ae0d8b831
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74902541"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76520454"
 ---
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>Kits de ressources et exemples de conception pour les applications UWP
 
 ![Notions de base de la conception](../images/downloads-2x.png)
 
-Téléchargements relatifs à la conception et à l’interface utilisateur des applications Fluent Design/UWP. Pour obtenir des outils supplémentaires, tels que Visual Studio, consultez <a href="https://developer.microsoft.com/windows/downloads">la page principale des téléchargements</a>. 
-
+Téléchargements relatifs à la conception et à l’interface utilisateur des applications Fluent Design/UWP. Pour obtenir des outils supplémentaires, tels que Visual Studio, consultez <a href="https://developer.microsoft.com/windows/downloads">la page principale des téléchargements</a>.
 
 ## <a name="design-toolkits"></a>Outils de conception
 
@@ -60,11 +59,6 @@ v1705, mai 2017<br>
 <a href="https://aka.ms/adobephotoshoptoolkit">Télécharger</a>
     :::column-end:::
     :::column:::
-![image Hero](images/framer.png)
-<b>Kit de ressources Framer</b><br>
-(Ce kit de ressources n’est plus pris en charge.)<br/>
-v1806, juin 2018<br>
-<a href="https://github.com/Microsoft/windows-framer-toolkit">Télécharger</a>
     :::column-end:::
 :::row-end:::
 
@@ -87,7 +81,7 @@ Fonctions d’assistance, contrôles personnalisés et services d’application.
     :::column-end:::
 :::row-end:::
 
-## <a name="fonts"></a>Polices
+## <a name="fonts"></a>Fonts
 
 * <a href="https://aka.ms/SegoeFonts">Polices d’icônes Segoe UI et MDL2 (Mac uniquement)</a>
 * <a href="https://aka.ms/hololensiconfont">Police d’icône Hololens (Windows uniquement)</a>
@@ -104,7 +98,7 @@ Fonctions d’assistance, contrôles personnalisés et services d’application.
 :::row-end:::
 
     
-## <a name="samples"></a>Exemples
+## <a name="samples"></a>exemples
 
 ![Image de Fluent XAML Theme Editor](images/XamlThemeEditor_screenshot.png)
 **Fluent XAML Theme Editor**<br>
@@ -127,7 +121,7 @@ Exemple d’application UWP qui programme des déjeuners avec vos amis et vos c
 
 ![Galerie de contrôles XAML](images/xaml-controls-gallery.png)
 **Galerie de contrôles XAML**<br>
-Cet exemple offre une démonstration interactive de tous les contrôles XAML. Il présente une variété de dispositions, de la plus basique à la plus évolutive, et fait apparaître le balisage que vous pouvez copier dans votre projet. Remarque: Dans le fichier de téléchargement et le dépôt GitHub, cet exemple d’application est désigné sous le nom de « UI Basics (XAML) ». <br/><a href="https://github.com/Microsoft/Windows-universal-samples/archive/master.zip">Télécharger l’exemple Galerie de contrôles XAML</a><br/><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Découvrir l’exemple Galerie de contrôles XAML sur GitHub</a> <br/><a href="https://www.microsoft.com/store/apps/9msvh128x2zt">Télécharger l’application Galerie de contrôles XAML à partir du Store</a></p>
+Cet exemple offre une démonstration interactive de tous les contrôles XAML. Il présente une variété de dispositions, de la plus basique à la plus évolutive, et fait apparaître le balisage que vous pouvez copier dans votre projet. Remarque : Dans le fichier de téléchargement et le dépôt GitHub, cet exemple d’application est désigné sous le nom de « UI Basics (XAML) ». <br/><a href="https://github.com/Microsoft/Windows-universal-samples/archive/master.zip">Télécharger l’exemple Galerie de contrôles XAML</a><br/><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Découvrir l’exemple Galerie de contrôles XAML sur GitHub</a> <br/><a href="https://www.microsoft.com/store/apps/9msvh128x2zt">Télécharger l’application Galerie de contrôles XAML à partir du Store</a></p>
 
 ## <a name="want-more-code"></a>Vous voulez plus de code ?
 
