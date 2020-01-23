@@ -1,19 +1,19 @@
 ---
 description: Cet article explique comment héberger un contrôle UWP standard dans une application WPF à l’aide des îlots XAML.
 title: Héberger un contrôle UWP standard dans une application WPF à l’aide des îlots XAML
-ms.date: 08/20/2019
+ms.date: 01/10/2010
 ms.topic: article
 keywords: Windows 10, UWP, Windows Forms, WPF, îlots XAML, contrôles encapsulés, contrôles standard, InkCanvas, InkToolbar
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: cdaaa20b28a7f181467f6047bc93350ec40b366a
-ms.sourcegitcommit: f34deba1d4460d85ed08fe9648999fe03ff6a3dd
+ms.openlocfilehash: 47998d9c79dbbb41060b4fbd52fe3ee805aecc52
+ms.sourcegitcommit: 85fd390b1e602707bd9342cb4b84b97ae0d8b831
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71317071"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76520384"
 ---
 # <a name="host-a-standard-uwp-control-in-a-wpf-app-using-xaml-islands"></a>Héberger un contrôle UWP standard dans une application WPF à l’aide des îlots XAML
 
@@ -26,11 +26,11 @@ Cet article illustre deux façons d’héberger un contrôle UWP standard (autre
 Pour héberger un contrôle UWP dans une application WPF, vous avez besoin des composants suivants. Cet article fournit des instructions sur la création de chacun de ces composants.
 
 * Le projet et le code source pour votre application WPF.
-* Projet d’application UWP qui définit une instance de la `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication` classe à partir de la boîte à outils de la communauté Windows.
+* Projet d’application UWP qui définit une instance de la classe `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication` à partir de la boîte à outils de la communauté Windows.
   > [!NOTE]
-  > Pour garantir le bon fonctionnement de votre application dans tous les scénarios d’îlot XAML, votre projet WPF (ou Windows Forms) doit avoir `XamlApplication` accès à un objet. Cet objet joue le rôle de fournisseur de métadonnées racine pour le chargement des métadonnées des types XAML UWP dans les assemblys du répertoire actif de votre application. La méthode recommandée consiste à ajouter un projet **application vide (Windows universel)** à la même solution que votre projet WPF (ou Windows Forms) et à modifier la classe par défaut `App` de ce projet pour dériver de. `XamlApplication`
+  > Pour garantir le bon fonctionnement de votre application dans tous les scénarios d’îlots XAML, votre projet WPF (ou Windows Forms) doit avoir accès à un objet `XamlApplication`. Cet objet joue le rôle de fournisseur de métadonnées racine pour le chargement des métadonnées des types XAML UWP dans les assemblys du répertoire actif de votre application. Pour ce faire, la méthode recommandée consiste à ajouter un projet d' **application vide (Windows universel)** à la même solution que votre projet WPF (ou Windows Forms) et à réviser la classe de `App` par défaut de ce projet à dériver de `XamlApplication`.
   >
-  > Bien que cette étape ne soit pas requise pour les scénarios d’îlot XAML trivial tels que l’hébergement d’un contrôle UWP de premier `XamlApplication` tiers, votre application WPF a besoin de cet objet pour prendre en charge l’ensemble des scénarios d’îlot XAML, y compris l’hébergement de contrôles UWP personnalisés. Nous vous recommandons de toujours ajouter un projet UWP et de définir `XamlApplication` un objet dans toute solution dans laquelle vous utilisez des îlots XAML. Votre solution ne peut contenir qu’un seul projet qui `XamlApplication` définit un objet. Tous les contrôles UWP personnalisés de votre application partagent le `XamlApplication` même objet.
+  > Bien que cette étape ne soit pas requise pour les scénarios d’îlot XAML trivial tels que l’hébergement d’un contrôle UWP de premier tiers, votre application WPF a besoin de cet objet `XamlApplication` pour prendre en charge la gamme complète de scénarios d’îlots XAML, y compris l’hébergement de contrôles UWP personnalisés. Nous vous recommandons de toujours ajouter un projet UWP et de définir un objet `XamlApplication` dans toute solution dans laquelle vous utilisez des îlots XAML. Votre solution ne peut contenir qu’un seul projet qui définit un objet `XamlApplication`. Tous les contrôles UWP personnalisés de votre application partagent le même `XamlApplication` objet.
 
 Bien que cet article montre comment héberger des contrôles UWP dans une application WPF, le processus est similaire pour une application Windows Forms.
 
@@ -49,24 +49,24 @@ Avant de commencer, suivez ces instructions pour créer un projet WPF et le conf
 
 4. Dans la fenêtre **Gestionnaire de package NuGet** , assurez-vous que l’option **inclure la version préliminaire** est sélectionnée.
 
-5. Sélectionnez l’onglet **Parcourir** , recherchez le package [Microsoft. Toolkit. WPF. UI. Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls) (version v 6.0.0-preview7 ou version ultérieure) et installez le package. Ce package fournit tout ce dont vous avez besoin pour utiliser les contrôles UWP encapsulés pour WPF (y compris [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) et [InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) , ainsi que le contrôle [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) .
+5. Sélectionnez l’onglet **Parcourir** , recherchez le package [Microsoft. Toolkit. WPF. UI. Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls) (version v 6.0.0 ou ultérieure), puis installez le package. Ce package fournit tout ce dont vous avez besoin pour utiliser les contrôles UWP encapsulés pour WPF (y compris [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) et [InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) , ainsi que le contrôle [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) .
     > [!NOTE]
-    > Windows Forms applications doivent utiliser le package [Microsoft. Toolkit. Forms. UI. Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls) (version v 6.0.0-preview7 ou version ultérieure).
+    > Windows Forms applications doivent utiliser le package [Microsoft. Toolkit. Forms. UI. Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls) (version v 6.0.0 ou ultérieure).
 
 6. Configurez votre solution pour cibler une plateforme spécifique, telle que x86 ou x64. La plupart des scénarios des îlots XAML ne sont pas pris en charge dans les projets qui ciblent **Any CPU**.
 
-    1. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le nœud de la solution, puis sélectionnez **Propriétés** -> propriétés de**configuration** -> **Configuration Manager**. 
+    1. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le nœud de la solution, puis sélectionnez **Propriétés** -> **Propriétés de configuration** -> **Configuration Manager**. 
     2. Sous **plateforme de la solution active**, sélectionnez **nouveau**. 
     3. Dans la boîte de dialogue **nouvelle plateforme de solution** , sélectionnez **x64** ou **x86** , puis cliquez sur **OK**. 
     4. Fermez les boîtes de dialogue ouvertes.
 
 ## <a name="create-a-xamlapplication-object-in-a-uwp-app-project"></a>Créer un objet XamlApplication dans un projet d’application UWP
 
-Ensuite, ajoutez un projet d’application UWP à la même solution que votre projet WPF. Vous allez modifier la classe par `App` défaut de ce projet pour qu’elle dérive de la `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication` classe fournie par le kit de pratiques de la communauté Windows. Même si cette étape n’est pas requise pour les scénarios d’îlot XAML trivial tels que l’hébergement d’un seul contrôle UWP d’un `XamlApplication` seul tiers, votre application WPF a besoin de cet objet pour prendre en charge l’ensemble des scénarios d’îlot XAML. Nous vous recommandons de toujours ajouter ce projet à toute solution dans laquelle vous utilisez des îlots XAML.
+Ensuite, ajoutez un projet d’application UWP à la même solution que votre projet WPF. Vous allez modifier la classe de `App` par défaut de ce projet afin de la dériver de la classe `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication` fournie par la communauté Windows Toolkit. Même si cette étape n’est pas requise pour les scénarios d’îlot XAML trivial tels que l’hébergement d’un seul contrôle UWP d’un seul tiers, votre application WPF a besoin de cet objet `XamlApplication` pour prendre en charge l’ensemble des scénarios d’îlot XAML. Nous vous recommandons de toujours ajouter ce projet à toute solution dans laquelle vous utilisez des îlots XAML.
 
 1. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le nœud de la solution et sélectionnez **Ajouter** -> **nouveau projet**.
 2. Ajoutez un projet **Application vide (Windows universelle)** à votre solution. Assurez-vous que la version cible et la version minimale sont toutes deux définies sur **Windows 10, version 1903** ou ultérieure.
-3. Dans le projet d’application UWP, installez le package NuGet [Microsoft. Toolkit. Win32. UI. XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) (version v 6.0.0-preview7 ou version ultérieure).
+3. Dans le projet d’application UWP, installez le package NuGet [Microsoft. Toolkit. Win32. UI. XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) (version v 6.0.0 ou ultérieure).
 4. Ouvrez le fichier **app. Xaml** et remplacez le contenu de ce fichier par le code XAML suivant. Remplacez `MyUWPApp` par l’espace de noms de votre projet d’application UWP.
 
     ```xml
@@ -102,7 +102,7 @@ Ensuite, ajoutez un projet d’application UWP à la même solution que votre pr
 
 Maintenant que vous avez configuré votre projet pour qu’il utilise des îlots XAML UWP, vous êtes maintenant prêt à ajouter les contrôles [UWP et](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) [InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) encapsulés dans l’application.
 
-1. Dans **Explorateur de solutions**, ouvrez le fichier **MainWindow. Xaml** .
+1. Dans l’ **Explorateur de solutions**, ouvrez le fichier **MainWindow.xaml** .
 
 2. Dans l’élément de **fenêtre** près du haut du fichier XAML, ajoutez l’attribut suivant. Cela fait référence à l’espace de noms XAML pour le contrôle UWP inclus dans [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) et [InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) .
 
@@ -124,7 +124,7 @@ Maintenant que vous avez configuré votre projet pour qu’il utilise des îlots
             Title="MainWindow" Height="800" Width="800">
     ```
 
-3. Dans le fichier **MainWindow. Xaml** , remplacez l’élément `<Grid>` existant par le code XAML suivant. Ce code XAML ajoute un contrôle [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) et [InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) (préfixé par le mot clé **Controls** que vous avez défini précédemment en tant `<Grid>`qu’espace de noms) au.
+3. Dans le fichier **MainWindow. Xaml** , remplacez l’élément `<Grid>` existant par le code XAML suivant. Ce code XAML ajoute un contrôle [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) et [InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) (préfixé par le mot clé **Controls** que vous avez défini précédemment en tant qu’espace de noms) au `<Grid>`.
 
     ```xml
     <Grid Margin="10,50,10,10">
@@ -144,7 +144,7 @@ Maintenant que vous avez configuré votre projet pour qu’il utilise des îlots
 
 4. Enregistrez le fichier **MainWindow. Xaml** .
 
-    Si vous avez un appareil qui prend en charge un stylet numérique, comme une surface, et que vous exécutez ce laboratoire sur un ordinateur physique, vous pouvez maintenant générer et exécuter l’application et dessiner de l’encre numérique sur l’écran avec le stylet. Toutefois, si vous n’avez pas de périphérique avec stylet et que vous essayez de vous connecter avec la souris, rien ne se produit. Cela est dû au fait que le contrôle **InkCanvas** est activé uniquement pour les stylets numériques par défaut. Toutefois, vous pouvez modifier ce comportement.
+    Si vous avez un appareil qui prend en charge un stylet numérique, comme une surface, et que vous exécutez ce laboratoire sur un ordinateur physique, vous pouvez maintenant générer et exécuter l’application et dessiner de l’encre numérique sur l’écran avec le stylet. Toutefois, si vous n’avez pas de périphérique avec stylet et que vous essayez de vous connecter avec la souris, rien ne se produit. Cela est dû au fait que le contrôle **InkCanvas** est activé uniquement pour les stylets numériques par défaut. Vous pouvez toutefois modifier ce comportement.
 
 5. Ouvrez le fichier **MainWindow.Xaml.cs** .
 
@@ -154,7 +154,7 @@ Maintenant que vous avez configuré votre projet pour qu’il utilise des îlots
     using Microsoft.Toolkit.Win32.UI.Controls.Interop.WinRT;
     ```
 
-7. Recherchez le `MainWindow()` constructeur. Ajoutez la ligne de code suivante après la `InitializeComponent()` méthode et enregistrez le fichier de code.
+7. Recherchez le constructeur `MainWindow()`. Ajoutez la ligne de code suivante après la méthode `InitializeComponent()` et enregistrez le fichier de code.
 
     ```csharp
     this.myInkCanvas.InkPresenter.InputDeviceTypes = CoreInputDeviceTypes.Mouse | CoreInputDeviceTypes.Pen;
@@ -171,7 +171,7 @@ Maintenant que vous avez ajouté les contrôles [UWP et](https://docs.microsoft.
 > [!NOTE]
 > Le contrôle [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) est fourni par le package [Microsoft. Toolkit. WPF. UI. XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.XamlHost) . Ce package est inclus dans le package [Microsoft. Toolkit. WPF. UI. Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls) que vous avez installé précédemment.
 
-1. Dans **Explorateur de solutions**, ouvrez le fichier **MainWindow. Xaml** .
+1. Dans l’ **Explorateur de solutions**, ouvrez le fichier **MainWindow.xaml** .
 
 2. Dans l’élément de **fenêtre** près du haut du fichier XAML, ajoutez l’attribut suivant. Cela fait référence à l’espace de noms XAML pour le contrôle [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) .
 
@@ -194,7 +194,7 @@ Maintenant que vous avez ajouté les contrôles [UWP et](https://docs.microsoft.
             Title="MainWindow" Height="800" Width="800">
     ```
 
-4. Dans le fichier **MainWindow. Xaml** , remplacez l’élément `<Grid>` existant par le code XAML suivant. Ce code XAML ajoute une ligne à la grille et ajoute un objet [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) à la dernière ligne. Pour héberger un contrôle de panneau de configuration UWP, `InitialTypeName` ce code XAML définit la propriété sur le nom qualifié complet [du contrôle.](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarView) Ce code XAML définit également un gestionnaire d’événements `ChildChanged` pour l’événement, qui est déclenché lorsque le contrôle hébergé a été rendu.
+4. Dans le fichier **MainWindow. Xaml** , remplacez l’élément `<Grid>` existant par le code XAML suivant. Ce code XAML ajoute une ligne à la grille et ajoute un objet [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) à la dernière ligne. Pour héberger un contrôle de panneau de [configuration UWP,](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarView) ce code XAML définit la propriété `InitialTypeName` sur le nom qualifié complet du contrôle. Ce code XAML définit également un gestionnaire d’événements pour l’événement `ChildChanged`, qui est déclenché lorsque le contrôle hébergé a été rendu.
 
     ```xml
     <Grid Margin="10,50,10,10">
@@ -220,7 +220,7 @@ Maintenant que vous avez ajouté les contrôles [UWP et](https://docs.microsoft.
     using Microsoft.Toolkit.Wpf.UI.XamlHost;
     ```
 
-10. Ajoutez la méthode `ChildChanged` de gestionnaire d’événements suivante `MainWindow` à la classe et enregistrez le fichier de code. Lorsque le contrôle hôte a été rendu, ce gestionnaire d’événements s’exécute et crée un gestionnaire d’événements `SelectedDatesChanged` simple pour l’événement du contrôle calendrier.
+10. Ajoutez la méthode de gestionnaire d’événements `ChildChanged` suivante à la classe `MainWindow` et enregistrez le fichier de code. Lorsque le contrôle hôte a été rendu, ce gestionnaire d’événements s’exécute et crée un gestionnaire d’événements simple pour l’événement `SelectedDatesChanged` du contrôle calendrier.
 
     ```csharp
     private void MyCalendar_ChildChanged(object sender, EventArgs e)
@@ -283,11 +283,11 @@ Les instructions suivantes vous montrent comment empaqueter tous les composants 
         </Target>
         ```
 
-    3. Enregistrez le fichier projet et fermez-le.
+    3. Enregistrez, puis fermez le fichier projet.
 
 4. Configurez votre solution pour cibler une plateforme spécifique, telle que x86 ou x64. Cela est requis pour générer l’application WPF dans un package MSIX à l’aide du projet de création de packages d’applications Windows.
 
-    1. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le nœud de la solution, puis sélectionnez **Propriétés** -> propriétés de**configuration** -> **Configuration Manager**.
+    1. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le nœud de la solution, puis sélectionnez **Propriétés** -> **Propriétés de configuration** -> **Configuration Manager**.
     2. Sous **plateforme de la solution active**, sélectionnez **x64** ou **x86**.
     3. Dans la ligne de votre projet WPF, dans la colonne **plateforme** , sélectionnez **nouveau**.
     4. Dans la boîte de dialogue **nouvelle plateforme de solution** , sélectionnez **x64** ou **x86** (la même plateforme que celle que vous avez sélectionnée pour **plateforme de solution active**), puis cliquez sur **OK**.

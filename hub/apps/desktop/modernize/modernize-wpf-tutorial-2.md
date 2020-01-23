@@ -2,27 +2,27 @@
 description: Ce didacticiel montre comment ajouter des interfaces utilisateur en XAML UWP, créer des packages MSIX et intégrer d’autres composants modernes à votre application WPF.
 title: Ajouter un contrôle InkCanvas UWP à l’aide d'îles XAML
 ms.topic: article
-ms.date: 08/15/2019
+ms.date: 01/10/2010
 ms.author: mcleans
 author: mcleanbyron
 keywords: Windows 10, UWP, Windows Forms, WPF, îlots XAML
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 943b2d90564dc059ed487c1f7fb7b89e689681bb
-ms.sourcegitcommit: 8cbc9ec62a318294d5acfea3dab24e5258e28c52
+ms.openlocfilehash: 1ed4fa54b9987ef0ab5f3dd89aa9d11a00ae695c
+ms.sourcegitcommit: 85fd390b1e602707bd9342cb4b84b97ae0d8b831
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70911582"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76520434"
 ---
-# <a name="part-2-add-a-uwp-inkcanvas-control-using-xaml-islands"></a>Partie 2 : Ajouter un contrôle InkCanvas UWP à l’aide d'îles XAML
+# <a name="part-2-add-a-uwp-inkcanvas-control-using-xaml-islands"></a>Partie 2 : ajouter un contrôle de l’InkCanvas UWP à l’aide des îlots XAML
 
-Il s’agit de la deuxième partie d’un didacticiel qui montre comment moderniser un exemple d’application de bureau WPF nommée Contoso depenses. Pour obtenir une vue d’ensemble du didacticiel, des conditions préalables et des instructions pour télécharger l’exemple [d’application, consultez le didacticiel: Moderniser une application](modernize-wpf-tutorial.md)WPF. Cet article suppose que vous avez déjà effectué la [partie 1](modernize-wpf-tutorial-1.md).
+Il s’agit de la deuxième partie d’un didacticiel qui montre comment moderniser un exemple d’application de bureau WPF nommée Contoso depenses. Pour obtenir une vue d’ensemble du didacticiel, des conditions préalables et des instructions pour le téléchargement de l’exemple d’application, consultez [Didacticiel : moderniser une application WPF](modernize-wpf-tutorial.md). Cet article suppose que vous avez déjà effectué la [partie 1](modernize-wpf-tutorial-1.md).
 
-Dans le scénario fictif de ce didacticiel, l’équipe de développement de contoso souhaite ajouter la prise en charge des signatures numériques à l’application Contoso depenses. Le contrôle de l' **INKCANVAS** UWP est une option intéressante pour ce scénario, car il prend en charge les fonctionnalités de l’encre numérique et de l’intelligence artificielle, telles que la possibilité de reconnaître du texte et des formes. Pour ce faire, vous allez utiliser le contrôle [UWP encapsulé qui](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) est disponible dans le kit de tâches de la communauté Windows. Ce contrôle encapsule l’interface et les fonctionnalités du contrôle de l' **INKCANVAS** UWP pour une utilisation dans une application WPF. Pour plus d’informations sur les contrôles UWP encapsulés, consultez héberger des [contrôles XAML UWP dans les applications de bureau (îlots XAML)](xaml-islands.md).
+Dans le scénario fictif de ce didacticiel, l’équipe de développement de contoso souhaite ajouter la prise en charge des signatures numériques à l’application Contoso depenses. Le contrôle de l' **INKCANVAS** UWP est une option intéressante pour ce scénario, car il prend en charge les fonctionnalités de l’encre numérique et de l’intelligence artificielle, telles que la possibilité de reconnaître du texte et des formes. Pour ce faire, vous allez utiliser le contrôle [UWP encapsulé qui](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) est disponible dans le kit de tâches de la communauté Windows. Ce contrôle encapsule l’interface et les fonctionnalités du contrôle de l' **INKCANVAS** UWP pour une utilisation dans une application WPF. Pour plus d’informations sur les contrôles UWP encapsulés, consultez [héberger des contrôles XAML UWP dans les applications de bureau (îlots XAML)](xaml-islands.md).
 
 > [!NOTE]
-> Dans ce didacticiel, l’application WPF héberge uniquement les contrôles UWP internes du SDK Windows. Pour prendre en charge d’autres scénarios d’îlot XAML, y compris les contrôles UWP personnalisés, le projet d’application `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication` doit avoir accès à une instance de la classe fournie par le kit de commandes de la communauté Windows. La méthode recommandée consiste à ajouter un projet **application vide (Windows universel)** à la même solution que votre projet WPF (ou Windows Forms) et à modifier la classe par défaut `App` de ce projet. Étant donné que cette étape n’est pas requise pour le scénario de base de l’hébergement de contrôles UWP de premier tiers à partir de la SDK Windows, ce didacticiel omet cette étape. Pour plus d’informations, consultez [cet article](host-standard-control-with-xaml-islands.md).
+> Dans ce didacticiel, l’application WPF héberge uniquement les contrôles UWP internes du SDK Windows. Pour prendre en charge d’autres scénarios d’îlot XAML, y compris les contrôles UWP personnalisés, le projet d’application doit avoir accès à une instance de la classe `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication` fournie par le kit de commandes de la communauté Windows. La méthode recommandée consiste à ajouter un projet d' **application vide (Windows universel)** à la même solution que votre projet WPF (ou Windows Forms) et à modifier la classe de `App` par défaut dans ce projet. Étant donné que cette étape n’est pas requise pour le scénario de base de l’hébergement de contrôles UWP de premier tiers à partir de la SDK Windows, ce didacticiel omet cette étape. Pour plus d’informations, consultez [cet article](host-standard-control-with-xaml-islands.md).
 
 ## <a name="configure-the-project-to-use-xaml-islands"></a>Configurer le projet pour utiliser des îlots XAML
 
@@ -32,7 +32,7 @@ Avant de pouvoir ajouter un contrôle **InkCanvas** à l’application Contoso d
 
     ![Menu gérer les packages NuGet dans Visual Studio](images/wpf-modernize-tutorial//ManageNuGetPackages.png)
 
-2. Dans la fenêtre **Gestionnaire de package NuGet** , cliquez sur **Parcourir**. Sélectionnez l’option **inclure la version préliminaire** , recherchez le `Microsoft.Toolkit.Wpf.UI.Controls` package et installez la dernière version préliminaire du package affichée dans les résultats. Veillez à installer la version 6.0.0-preview7 ou une version ultérieure.
+2. Dans la fenêtre **Gestionnaire de package NuGet** , cliquez sur **Parcourir**. Recherchez le package `Microsoft.Toolkit.Wpf.UI.Controls` et installez la version 6.0.0 ou une version ultérieure.
 
     > [!NOTE]
     > Ce package contient toute l’infrastructure nécessaire pour l’hébergement des îlots XAML UWP dans une application WPF, y compris le contrôle UWP encapsulé dans **InkCanvas** . Un package similaire nommé `Microsoft.Toolkit.Forms.UI.Controls` est disponible pour les applications Windows Forms.
@@ -41,7 +41,7 @@ Avant de pouvoir ajouter un contrôle **InkCanvas** à l’application Contoso d
 
 4. Sélectionnez **fichier manifeste**de l’application, nommez-le **app. manifest**, puis cliquez sur **Ajouter**. Pour plus d’informations sur les manifestes d’application, consultez [cet article](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests).
 
-5. Dans le fichier manifeste, supprimez les marques `<supportedOS>` de commentaire de l’élément suivant pour Windows 10.
+5. Dans le fichier manifeste, supprimez les marques de commentaire de l’élément de `<supportedOS>` suivant pour Windows 10.
 
     ```xml
     <!-- Windows 10 -->
@@ -71,7 +71,7 @@ Avant de pouvoir ajouter un contrôle **InkCanvas** à l’application Contoso d
     </application>
     ```
 
-8. Enregistrez et fermez le `app.manifest` fichier.
+8. Enregistrez et fermez le fichier `app.manifest`.
 
 9. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le projet **ContosoExpenses. Core** , puis choisissez **Propriétés**.
 
@@ -110,7 +110,7 @@ Maintenant que vous avez configuré votre projet pour qu’il utilise des îlots
             Background="{StaticResource HorizontalBackground}">
     ```
 
-4. Dans le fichier **ExpenseDetail. Xaml** , recherchez la balise de fermeture `</Grid>` qui précède immédiatement le `<!-- Chart -->` commentaire. Ajoutez le code XAML suivant juste avant la `</Grid>` balise de fermeture. Ce code XAML ajoute un contrôle **InkCanvas** (préfixé par le mot clé **Toolkit** que vous avez défini précédemment en tant qu’espace de noms) et un **TextBlock** simple qui agit comme un en-tête pour le contrôle.
+4. Dans le fichier **ExpenseDetail. Xaml** , recherchez la balise `</Grid>` fermante qui précède immédiatement le `<!-- Chart -->` commentaire. Ajoutez le code XAML suivant juste avant la balise de fermeture `</Grid>`. Ce code XAML ajoute un contrôle **InkCanvas** (préfixé par le mot clé **Toolkit** que vous avez défini précédemment en tant qu’espace de noms) et un **TextBlock** simple qui agit comme un en-tête pour le contrôle.
 
     ```xml
     <TextBlock Text="Signature:" FontSize="16" FontWeight="Bold" Grid.Row="5" />
@@ -130,15 +130,15 @@ Maintenant que vous avez configuré votre projet pour qu’il utilise des îlots
 
 8. Fermez l’application et double-cliquez sur le fichier **ExpenseDetail.Xaml.cs** dans le dossier **views** du projet **ContosoExpenses. Core** .
 
-9. Ajoutez la déclaration d’espace de noms suivante en haut de la classe:
+9. Ajoutez la déclaration d’espace de noms suivante en haut de la classe :
 
     ```csharp
     using Microsoft.Toolkit.Win32.UI.Controls.Interop.WinRT;
     ```
 
-10. Recherchez le `ExpenseDetail()` constructeur.
+10. Recherchez le constructeur `ExpenseDetail()`.
 
-11. Ajoutez la ligne de code suivante après la `InitializeComponent()` méthode et enregistrez le fichier de code.
+11. Ajoutez la ligne de code suivante après la méthode `InitializeComponent()` et enregistrez le fichier de code.
 
     ```csharp
     Signature.InkPresenter.InputDeviceTypes = CoreInputDeviceTypes.Mouse | CoreInputDeviceTypes.Pen;
@@ -154,4 +154,4 @@ Maintenant que vous avez configuré votre projet pour qu’il utilise des îlots
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-À ce stade du didacticiel, vous avez ajouté avec succès un contrôle de l' **INKCANVAS** UWP à l’application Contoso depenses. Vous êtes maintenant prêt pour [la partie 3: Ajoutez un contrôle UWP CalendarView à l’aide](modernize-wpf-tutorial-3.md)des îlots XAML.
+À ce stade du didacticiel, vous avez ajouté avec succès un contrôle de l' **INKCANVAS** UWP à l’application Contoso depenses. Vous êtes maintenant prêt pour [la partie 3 : ajouter un contrôle UWP CalendarView à l’aide des îlots XAML](modernize-wpf-tutorial-3.md).

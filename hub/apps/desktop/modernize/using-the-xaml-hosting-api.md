@@ -1,19 +1,19 @@
 ---
 description: Cet article explique comment héberger une interface utilisateur XAML UWP dans C++ votre application Desktop Win32.
 title: Utilisation de l’API d’hébergement XAML UWP dans une application Win32 C++
-ms.date: 08/20/2019
+ms.date: 01/10/2010
 ms.topic: article
 keywords: Windows 10, UWP, Windows Forms, WPF, Win32, îlots XAML
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 9e4fdc8366e26bcd7e106bf070cb42ed2cd1a49f
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 5a0973bcce4de4fac8f923a303b0c3216600fb97
+ms.sourcegitcommit: 85fd390b1e602707bd9342cb4b84b97ae0d8b831
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75683682"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76520424"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-c-win32-app"></a>Utilisation de l’API d’hébergement XAML UWP dans une application Win32 C++
 
@@ -55,7 +55,7 @@ Choisissez l’une des options suivantes pour préparer votre projet au déploie
     1. Installez le kit de développement logiciel (SDK) Windows 10, version 1903 (version 10.0.18362) ou une version ultérieure.
     2. Empaquetez votre application dans un package MSIX en ajoutant un [projet de packaging des applications Windows](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) à votre solution et en C++ajoutant une référence à votre projet/Win32.
 
-* **Installez le package Microsoft. Toolkit. Win32. UI. SDK**. Si vous ne souhaitez pas empaqueter votre application dans un package MSIX, vous pouvez installer [Microsoft. Toolkit. Win32. UI. SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) (version v 6.0.0-preview7 ou version ultérieure). Ce package fournit plusieurs ressources de génération et d’exécution qui permettent aux îlots XAML de fonctionner dans votre application. Assurez-vous que l’option **inclure la version préliminaire** est sélectionnée afin que vous puissiez voir les dernières versions préliminaires de ce package.
+* **Installez le package Microsoft. Toolkit. Win32. UI. SDK**. Si vous ne souhaitez pas empaqueter votre application dans un package MSIX, vous pouvez installer [Microsoft. Toolkit. Win32. UI. SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) (version v 6.0.0 ou ultérieure). Ce package fournit plusieurs ressources de génération et d’exécution qui permettent aux îlots XAML de fonctionner dans votre application.
 
 > [!NOTE]
 > Dans les versions antérieures de ces instructions, vous deviez ajouter l’élément `maxversiontested` à un manifeste d’application de votre projet. Tant que vous utilisez l’une des options mentionnées ci-dessus, vous n’avez plus besoin d’ajouter cet élément à votre manifeste.
@@ -125,7 +125,7 @@ Cette section vous guide tout au long du processus d’utilisation de l’API d�
 4. Installez le package NuGet [Microsoft. Toolkit. Win32. UI. SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) :
 
     1. Dans la fenêtre **Gestionnaire de package NuGet** , assurez-vous que l’option **inclure la version préliminaire** est sélectionnée.
-    2. Sélectionnez l’onglet **Parcourir** , recherchez le package [Microsoft. Toolkit. Win32. UI. SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) et installez la version v 6.0.0-preview7 (ou ultérieure) de ce package.
+    2. Sélectionnez l’onglet **Parcourir** , recherchez le package [Microsoft. Toolkit. Win32. UI. SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) et installez la version v 6.0.0 (ou ultérieure) de ce package.
 
 ### <a name="use-the-xaml-hosting-api-to-host-a-uwp-control"></a>Utiliser l’API d’hébergement XAML pour héberger un contrôle UWP
 
@@ -423,13 +423,13 @@ Lorsque l’utilisateur modifie la taille de l’élément d’interface utilisa
 
 * Dans une C++ application Win32, lorsque votre application gère le WM_SIZE message, elle peut repositionner l’îlot XAML hébergé à l’aide de la fonction [SetWindowPos](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setwindowpos) . Pour obtenir un exemple, consultez le fichier de code [SampleApp. cpp](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island/SampleCppApp/SampleApp.cpp#L191) dans l' [ C++ exemple Win32](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island).
 
-* Lorsque l’élément d’interface utilisateur parent doit connaître la taille de la zone rectangulaire nécessaire pour ajuster le **Windows. UI. Xaml. UIElement** que vous hébergez sur le **DesktopWindowXamlSource**, appelez la méthode [measure](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure) de **Windows. UI. Xaml. UIElement**. Par exemple :
+* Lorsque l’élément d’interface utilisateur parent doit connaître la taille de la zone rectangulaire nécessaire pour ajuster le **Windows. UI. Xaml. UIElement** que vous hébergez sur le **DesktopWindowXamlSource**, appelez la méthode [measure](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure) de **Windows. UI. Xaml. UIElement**. Exemple :
 
     * Dans une application WPF, vous pouvez effectuer cette opération à partir de la méthode [MeasureOverride](https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement.measureoverride) de la [HwndHost](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost) qui héberge **DesktopWindowXamlSource**. Pour obtenir un exemple, consultez le fichier [WindowsXamlHostBase.Layout.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Layout.cs) dans le kit de pratiques de la communauté Windows.
 
     * Dans une application Windows Forms, vous pouvez effectuer cette opération à partir de la méthode [GetPreferredSize](https://docs.microsoft.com/dotnet/api/system.windows.forms.control.getpreferredsize) du [contrôle](https://docs.microsoft.com/dotnet/api/system.windows.forms.control) qui héberge **DesktopWindowXamlSource**. Pour obtenir un exemple, consultez le fichier [WindowsXamlHostBase.Layout.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.Layout.cs) dans le kit de pratiques de la communauté Windows.
 
-* Lorsque la taille de l’élément d’interface utilisateur parent change, appelez la méthode [arrange](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange) de la racine **Windows. UI. Xaml. UIElement** que vous hébergez sur le **DesktopWindowXamlSource**. Par exemple :
+* Lorsque la taille de l’élément d’interface utilisateur parent change, appelez la méthode [arrange](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange) de la racine **Windows. UI. Xaml. UIElement** que vous hébergez sur le **DesktopWindowXamlSource**. Exemple :
 
     * Dans une application WPF, vous pouvez effectuer cette opération à partir de la méthode [ArrangeOverride](https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement.arrangeoverride) de l’objet [HwndHost](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost) qui héberge **DesktopWindowXamlSource**. Pour obtenir un exemple, consultez le fichier [WindowsXamlHost.Layout.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Layout.cs) dans le kit de pratiques de la communauté Windows.
 

@@ -7,12 +7,12 @@ ms.date: 11/08/2017
 ms.topic: article
 keywords: windows 10, uwp, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
-ms.openlocfilehash: 79edf30733f7bca443c5fd12103fbd5d93909732
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 1642f8ccc989ce224ff0b3250fa1b79c954167b1
+ms.sourcegitcommit: 85fd390b1e602707bd9342cb4b84b97ae0d8b831
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258067"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76520414"
 ---
 # <a name="understand-user-profile-languages-and-app-manifest-languages"></a>Comprendre les langues de profil utilisateur et les langues du manifeste de l’application
 Pour configurer une liste ordonnée de langues d'affichage ou simplement une seule langue d'affichage favorites, les utilisateurs Windows peuvent accéder à **Paramètres** > **Heure et langue** > **Région et langue**. Les langues peuvent comporter des variantes régionales. Par exemple, vous pouvez sélectionner l'espagnol d'Espagne, l'espagnol du Mexique, l'espagnol des États-Unis, etc.
@@ -193,7 +193,7 @@ Le tableau ci-dessous contient des exemples de ce que l’utilisateur verrait da
 </table>
 
 >[!NOTE]
-> Pour obtenir la liste des codes pays/région standard utilisés par Microsoft, consultez la [liste pays/région officiels](https://globalready.azurewebsites.net/marketreadiness/OfficialCountryregion).
+> Pour obtenir la liste des codes pays/région standard utilisés par Microsoft, consultez la [liste pays/région officiels](/windows/uwp/publish/supported-languages).
 
 ## <a name="important-apis"></a>API importantes
 * [GlobalizationPreferences. langues](/uwp/api/windows.system.userprofile.globalizationpreferences.Languages)
@@ -211,9 +211,9 @@ Le tableau ci-dessous contient des exemples de ce que l’utilisateur verrait da
 * [Balise de langue BCP-47](https://tools.ietf.org/html/bcp47)
 * [Registre de sous-balise IANA Language](https://www.iana.org/assignments/language-subtag-registry)
 * [Personnaliser vos ressources pour la langue, l’échelle, le contraste élevé et d’autres qualificateurs](../../app-resources/tailor-resources-lang-scale-contrast.md)
-* [Langues prises en charge](../../publish/supported-languages.md)
+* [Langages pris en charge](../../publish/supported-languages.md)
 * [Globaliser vos formats date/heure/nombre](use-global-ready-formats.md)
 * [Comment le système de gestion des ressources met en correspondance les balises de langue](../../app-resources/how-rms-matches-lang-tags.md)
 
-## <a name="samples"></a>Exemples
+## <a name="samples"></a>exemples
 * [Exemple de ressources et de localisation d’application](https://code.msdn.microsoft.com/windowsapps/Application-resources-and-cd0c6eaa)
