@@ -84,7 +84,7 @@
       items:
         - name: Boutons
           href: controls-and-patterns/buttons.md
-        - name: Check box
+        - name: Case à cocher
           href: controls-and-patterns/checkbox.md
         - name: Zones de liste modifiables et zones de liste
           href: controls-and-patterns/combo-box.md
@@ -98,7 +98,7 @@
           href: controls-and-patterns/slider.md
         - name: Bascule
           href: controls-and-patterns/toggles.md
-    - name: Collections
+    - name: Regroupements
       items:
         - name: Vue d’ensemble
           href: controls-and-patterns/lists.md
@@ -110,9 +110,9 @@
           href: controls-and-patterns/tree-view.md
         - name: ItemsRepeater
           href: controls-and-patterns/items-repeater.md
-        - name: Modèles et des conteneurs d’éléments
+        - name: Modèles et conteneurs d’éléments
           items:
-            - name: Modèles et des conteneurs d’éléments
+            - name: Modèles et conteneurs d’éléments
               href: controls-and-patterns/item-containers-templates.md
             - name: Sélection du modèle de données
               href: controls-and-patterns/data-template-selector.md
@@ -208,15 +208,15 @@
           href: controls-and-patterns/scroll-controls.md
         - name: Zoom sémantique
           href: controls-and-patterns/semantic-zoom.md
-    - name: Recherche
+    - name: Rechercher
       href: controls-and-patterns/search.md
     - name: Statut et informations
       items:
-        - name: Progress
+        - name: Progression
           href: controls-and-patterns/progress-controls.md
         - name: Info-bulle
           href: controls-and-patterns/tooltips.md
-    - name: Text
+    - name: Texte
       items:
         - name: Vue d’ensemble
           href: controls-and-patterns/text-controls.md
@@ -240,11 +240,13 @@
           href: controls-and-patterns/content-links.md
         - name: Affichage de l’écriture manuscrite
           href: controls-and-patterns/text-handwriting-view.md
+    - name: Vue à deux volets
+      href: controls-and-patterns/two-pane-view.md
 - name: Style
   items:
     - name: Vue d’ensemble
       href: style/index.md
-    - name: Color
+    - name: Couleur
       href: style/color.md
     - name: Typographie
       href: style/typography.md
@@ -368,7 +370,7 @@
               href: shell/tiles-and-notifications/toast-pending-update.md
             - name: Horodatages personnalisés
               href: shell/tiles-and-notifications/custom-timestamps-on-toasts.md
-            - name: Collections
+            - name: Regroupements
               href: shell/tiles-and-notifications/toast-collections.md
             - name: En-têtes
               href: shell/tiles-and-notifications/toast-headers.md
@@ -423,14 +425,14 @@
           href: input/save-and-load-ink.md
         - name: Ajouter un contrôle InkToolbar
           href: input/ink-toolbar.md
-    - name: Touch
+    - name: Toucher
       href: input/touch-interactions.md
     - name: Souris
       href: input/mouse-interactions.md
     - name: Clavier
       href: input/keyboard-interactions.md
       items:
-        - name: Touches d’accès rapide
+        - name: Clés d'accès
           href: input/access-keys.md
         - name: Raccourcis clavier
           href: input/keyboard-accelerators.md
@@ -509,13 +511,13 @@
       href: input/guidelines-for-targeting.md
     - name: Retour visuel
       href: input/guidelines-for-visualfeedback.md
-- name: Appareils
+- name: Périphériques
   items:
     - name: Vue d’ensemble
       href: devices/index.md
     - name: Conception pour Xbox et télévision
       href: devices/designing-for-tv.md
-    - name: Réalité mixte
+    - name: Mixed Reality
       href: devices/designing-for-MR.md
 - name: Facilité d'utilisation
   items:
