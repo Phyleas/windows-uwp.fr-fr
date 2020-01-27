@@ -8,12 +8,12 @@ keywords: stylet, souris, pavé tactile, entrées tactiles, pointeur, entrées, 
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f3d5480c0fa12366afe02cc31cdb994fdd4a842
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 97c4941a6ec694b3bb23864ede3119d6f76113d2
+ms.sourcegitcommit: 8a88a05ad89aa180d41a93152632413694f14ef8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257903"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725992"
 ---
 # <a name="handle-pointer-input"></a>Gérer les entrées du pointeur
 
@@ -33,12 +33,10 @@ La plupart des expériences d’interaction impliquent généralement que l’ut
 
 > [!NOTE]
 > Les informations propres au périphérique sont également promues à partir des données brutes HID si votre application l’exige.
- 
 
 Chaque point (ou contact) d’entrée sur la pile d’entrée est représenté par un objet [**Pointer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.Pointer) exposé via le paramètre [**PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) dans les différents gestionnaires d’événements de pointeur. En cas d’entrées multistylets ou tactiles multipoints, chaque contact est considéré comme un pointeur d’entrée unique.
 
 ## <a name="pointer-events"></a>Événements de pointeur
-
 
 Les événements de pointeur exposent des informations de base, telles que le type de périphérique d’entrée et l’état de détection (dans la plage ou en contact), ainsi que les informations détaillées telles que l’emplacement, la pression et la géométrie du contact. D’autres propriétés de périphérique spécifiques sont également disponibles. Elles indiquent sur quel bouton de souris l’utilisateur a appuyé ou si la gomme du stylet a été utilisée. Si une différenciation entre les périphériques d’entrée et leurs fonctionnalités est nécessaire dans le cadre de votre application, voir [Identifier des périphériques d’entrée](identify-input-devices.md).
 
@@ -46,7 +44,6 @@ Les applications UWP peuvent écouter les événements de pointeur suivants :
 
 > [!NOTE]
 > Limitez les entrées du pointeur à un élément d’interface utilisateur spécifique en appelant [**CapturePointer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.capturepointer) sur cet élément dans un gestionnaire d’événements de pointeur. Lorsqu’un pointeur est capturé par un élément, seul cet objet reçoit des événements d’entrée de pointeur, même lorsque le pointeur se déplace à l’extérieur de la zone de délimitation de l’objet. [  **IsInContact**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointer.isincontact) (bouton de souris enfoncé, interaction tactile ou stylet en contact) doit être défini sur true pour que **CapturePointer** réussisse.
- 
 
 <table>
 <colgroup>

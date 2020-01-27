@@ -1,19 +1,22 @@
 ---
 Description: Pour recevoir de l’argent des ventes de l’application dans le Microsoft Store, vous devez configurer votre compte de paiement et remplir les formulaires fiscaux nécessaires.
-title: Configuration de votre compte de revenu et déclarations fiscales.
+title: Configurer votre compte de revenu et vos déclarations fiscales
 ms.assetid: 690A2EBC-11B1-4547-B422-54F15A6C26A7
-ms.date: 12/14/2017
+ms.date: 1/17/2020
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a56630a0a2f0acdc71241ac0234cad463e45ace
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: ac23c926e0d7b517fe18321980fc322d7be5b064
+ms.sourcegitcommit: ff086bae50e61a351b8c53867ed6579e43d8cf1f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259909"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76294828"
 ---
-# <a name="set-up-your-payout-account-and-tax-forms"></a>Configuration de votre compte de revenu et déclarations fiscales.
+# <a name="set-up-your-payout-account-and-tax-forms"></a>Configurer votre compte de revenu et vos déclarations fiscales
+
+> [!NOTE]
+> Si vous recherchez de l’aide sur les versements, notamment la configuration des comptes de paiement, les versements manquants, l’ajout de paiements en attente ou tout autre point, contactez le support [ici](https://partner.microsoft.com/support).
 
 Pour recevoir de l’argent des ventes de l’application dans le Microsoft Store, vous devez configurer votre compte de paiement et remplir les formulaires fiscaux nécessaires dans l' [espace partenaires](https://partner.microsoft.com/dashboard).
 

@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 4fb6e2d4fc13d90ec69f962e69b1ee8cb5c1361c
-ms.sourcegitcommit: 85fd390b1e602707bd9342cb4b84b97ae0d8b831
+ms.openlocfilehash: 70ba858daa09f4412a771441e76f5c00dd8c6c32
+ms.sourcegitcommit: 8a88a05ad89aa180d41a93152632413694f14ef8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76520394"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725982"
 ---
 # <a name="host-a-custom-uwp-control-in-a-wpf-app-using-xaml-islands"></a>Héberger un contrôle UWP personnalisé dans une application WPF à l’aide des îlots XAML
 
@@ -258,36 +258,7 @@ Les instructions suivantes vous montrent comment empaqueter tous les composants 
 
 2. Dans le projet d’empaquetage, cliquez avec le bouton droit sur le nœud **applications** et choisissez **Ajouter une référence**. Dans la liste des projets, sélectionnez le projet WPF dans votre solution, puis cliquez sur **OK**.
 
-3. Modifiez le fichier de projet d’empaquetage. Ces modifications sont actuellement requises pour l’empaquetage d’applications WPF qui ciblent .NET Core 3 et qui hébergent des îlots XAML.
-
-    1. Dans Explorateur de solutions, cliquez avec le bouton droit sur le nœud du projet Packaging et sélectionnez **modifier le fichier projet**.
-    2. Recherchez l’élément `<Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />` dans le fichier. Remplacez cet élément par le code XML suivant. Ces modifications sont actuellement requises pour l’empaquetage d’applications WPF qui ciblent .NET Core 3 et qui hébergent des contrôles UWP.
-
-        ``` xml
-        <ItemGroup>
-            <SDKReference Include="Microsoft.VCLibs,Version=14.0">
-            <TargetedSDKConfiguration Condition="'$(Configuration)'!='Debug'">Retail</TargetedSDKConfiguration>
-            <TargetedSDKConfiguration Condition="'$(Configuration)'=='Debug'">Debug</TargetedSDKConfiguration>
-            <TargetedSDKArchitecture>$(PlatformShortName)</TargetedSDKArchitecture>
-            <Implicit>true</Implicit>
-            </SDKReference>
-        </ItemGroup>
-        <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />
-        <Target Name="_StompSourceProjectForWapProject" BeforeTargets="_ConvertItems">
-            <ItemGroup>
-            <_TemporaryFilteredWapProjOutput Include="@(_FilteredNonWapProjProjectOutput)" />
-            <_FilteredNonWapProjProjectOutput Remove="@(_TemporaryFilteredWapProjOutput)" />
-            <_FilteredNonWapProjProjectOutput Include="@(_TemporaryFilteredWapProjOutput)">
-                <SourceProject></SourceProject>
-                <TargetPath Condition="'%(FileName)%(Extension)'=='resources.pri'">app_resources.pri</TargetPath>
-            </_FilteredNonWapProjProjectOutput>
-            </ItemGroup>
-        </Target>
-        ```
-
-    3. Enregistrez, puis fermez le fichier projet.
-
-4. Modifiez le fichier projet WPF. Ces modifications sont actuellement requises pour l’empaquetage d’applications WPF qui hébergent des contrôles UWP personnalisés.
+3. Modifiez le fichier projet WPF. Ces modifications sont actuellement requises pour l’empaquetage d’applications WPF qui hébergent des contrôles UWP personnalisés.
 
     1. Dans Explorateur de solutions, cliquez avec le bouton droit sur le nœud de projet WPF et sélectionnez **décharger le projet**.
     2. Cliquez avec le bouton droit sur le nœud de projet WPF et sélectionnez **modifier**.
@@ -299,10 +270,10 @@ Les instructions suivantes vous montrent comment empaqueter tous les composants 
         </PropertyGroup>
         ```
 
-    4. Enregistrez, puis fermez le fichier projet.
+    4. Enregistrez le fichier projet et fermez-le.
     5. Cliquez avec le bouton droit sur le nœud de projet WPF et choisissez **recharger le projet**.
 
-5. Générez et exécutez le projet de Packaging. Vérifiez que WPF s’exécute et que le contrôle personnalisé UWP s’affiche comme prévu.
+4. Générez et exécutez le projet de Packaging. Vérifiez que WPF s’exécute et que le contrôle personnalisé UWP s’affiche comme prévu.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
