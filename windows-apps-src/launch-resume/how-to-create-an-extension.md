@@ -1,37 +1,36 @@
 ---
 title: Créer et héberger une extension d’application
-description: Écrivez et hébergez des extensions d’applications de plateforme Windows universelle (UWP) qui vous permettent d’étendre votre application via des packages que les utilisateurs peuvent installer à partir du Microsoft Store.
+description: Écrire et héberger des extensions d’application qui vous permettent d’étendre votre application via des packages que les utilisateurs peuvent installer à partir de la Microsoft Store.
 keywords: extension d’application, service d’application, arrière-plan
-ms.date: 10/05/2017
+ms.date: 01/28/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1cb5395238ad6813556b7ae254ca4a86bc8f5b28
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: d315fb89f38e517e61194adf5b75a28b4675de9c
+ms.sourcegitcommit: 09571e1c6a01fabed773330aa7ead459a47d94f7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282396"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76929282"
 ---
 # <a name="create-and-host-an-app-extension"></a>Créer et héberger une extension d’application
 
-Cet article vous montre comment créer une extension d’application UWP et l’héberger dans une application UWP.
+Cet article explique comment créer une extension d’application Windows 10 et l’héberger dans une application. Les extensions d’application sont prises en charge dans les applications UWP et les [applications de bureau packagées](/windows/apps/desktop/modernize/#msix-packages).
 
-Cet article est accompagné d’un exemple de code :
-- Téléchargez et décompressez [Exemple de code Math Extension](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/MathExtensionSample.zip).
+Pour illustrer la création d’une extension d’application, cet article utilise le XML du manifeste du package et les extraits de code de l' [exemple de code d’extension mathématique](https://github.com/MicrosoftDocs/windows-topic-specific-samples/tree/MathExtensionSample). Cet exemple est une application UWP, mais les fonctionnalités illustrées dans l’exemple s’appliquent également aux applications de bureau empaquetées. Suivez ces instructions pour commencer à utiliser l’exemple :
+
+- Téléchargez et décompressez l' [exemple de code Math extension](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/MathExtensionSample.zip).
 - Dans Visual Studio 2019, ouvrez MathExtensionSample. sln. Définissez le type de build sur x86 (**Générer** > **Gestionnaire de configurations**, puis modifiez la **Plateforme** sur **x86** pour les deux projets).
-- Déployer la solution : **Build** > **solution de déploiement**.
+- Déployez la solution : **Générer** > **Déployer la Solution**.
 
 ## <a name="introduction-to-app-extensions"></a>Présentation des extensions d’applications
 
-Dans la plateforme Windows universelle (UWP), les extensions d’application fournissent des fonctionnalités similaires à celles des plug-ins, des macros complémentaires et des extensions sur d'autres plateformes. Les extensions Microsoft Edge sont des extensions d’application UWP, par exemple. Les extensions d’application UWP ont été introduites dans Windows 10 Édition anniversaire (version 1607, build 10.0.14393).
+Dans Windows 10, les extensions d’application offrent des fonctionnalités similaires à celles des plug-ins, des compléments et des modules complémentaires sur d’autres plateformes. Les extensions d’application ont été introduites dans l’édition anniversaire Windows 10 (version 1607, Build 10.0.14393).
 
-Les extensions d’application UWP sont des applications UWP qui possède une déclaration d’extension leur permettant de partager des événements de contenu et de déploiement avec une application hôte. Une application d’extension peut fournir plusieurs extensions.
+Les extensions d’application sont des applications UWP ou des applications de bureau empaquetées qui ont une déclaration d’extension qui leur permet de partager du contenu et des événements de déploiement avec une application hôte. Une application d’extension peut fournir plusieurs extensions.
 
-Étant donné que les extensions d’application sont simplement des applications UWP, elles peuvent également être des applications entièrement fonctionnelles, des extensions d’hôte, et fournir des extensions à d’autres applications (sans qu'il soit nécessaire de créer des packages d’application distincts).
+Étant donné que les extensions d’application sont uniquement des applications UWP ou des applications de bureau packagées, elles peuvent également être des applications entièrement fonctionnelles, des extensions d’hôte et fournir des extensions à d’autres applications, tout cela sans créer des packages d’application distincts.
 
-Lorsque vous créez un hôte d’extension d’application, vous créez une opportunité de développer un écosystème autour de votre application, dans lequel d’autres développeurs peuvent améliorer votre application d’une manière inattendue ou pour laquelle vous n'aviez pas les ressources. Envisagez Microsoft Office extensions, les extensions Visual Studio, les extensions de navigateur, etc. Ils créent des expériences plus riches pour les applications qui dépassent les fonctionnalités qu’elles ont fournies avec. Les extensions peuvent ajouter de la valeur et de la longévité à votre application.
-
-**Vue d’ensemble**
+Lorsque vous créez un hôte d’extension d’application, vous créez une opportunité de développer un écosystème autour de votre application, dans lequel d’autres développeurs peuvent améliorer votre application d’une manière inattendue ou pour laquelle vous n'aviez pas les ressources. Prenez les extensions Microsoft Office, les extensions Visual Studio, les extensions de navigateur, etc. Celles-ci créent des expériences plus riches pour les applications qui vont au-delà des fonctionnalités fournies. Les extensions peuvent ajouter de la valeur et de la longévité à votre application.
 
 De manière générale, pour configurer une relation d’extension d’application, nous devons :
 
@@ -120,7 +119,7 @@ De nouveau, notez la ligne `xmlns:uap3="http://..."` et la présence de `uap3` d
 
 La signification des attributs `<uap3:AppExtension>` est la suivante :
 
-|Attribut|Description|Obligatoire|
+|Attribut|Description|Requis|
 |---------|-----------|:------:|
 |**Nom**|C’est le nom du contrat d’extension. Lorsqu’il correspond au nom **Name** déclaré dans un hôte, l’hôte sera en mesure de trouver cette extension.| :heavy_check_mark: |
 |**IDENTIFI**| Identifie de façon unique cette extension. Dans la mesure où il peut y avoir plusieurs extensions qui utilisent le même nom de contrat d’extension (imaginez une application de peinture qui prend en charge plusieurs extensions), vous pouvez utiliser l’ID pour les distinguer. Les hôtes d’extension d’application peuvent utiliser l’ID afin de déduire des informations à propos du type d’extension. Par exemple, vous pouvez avoir une extension conçue pour une application de bureau et une autre pour un appareil mobile, avec l’ID comme facteur de différenciation. Vous pouvez également utiliser l'élément **Properties**, décrit ci-dessous, à cette fin.| :heavy_check_mark: |
@@ -395,7 +394,7 @@ Lorsque vous créez un hôte d’extension et que vous êtes prêt à tester la 
 - Exécutez l’hôte, puis déployez une application d’extension qui possède un contenu ou des propriétés non valides.
     - L’hôte détecte-t-il le contenu non valide et le gère-t-il correctement ?
 
-## <a name="design-considerations"></a>Remarques relatives à la conception
+## <a name="design-considerations"></a>Considérations de conception
 
 - Fournissez une interface utilisateur qui indique à l’utilisateur les extensions disponibles et lui permet de les activer/désactiver. Vous pouvez également envisager d'ajouter des glyphes pour les extensions, qui deviennent indisponibles lorsqu'un package passe hors ligne, etc.
 - Dirigez l’utilisateur vers l’endroit où il peut obtenir des extensions. Votre page d’extension peut peut-être fournir une requête de recherche Microsoft Store qui affiche la liste des extensions qui peuvent être utilisées avec votre application.
@@ -407,13 +406,13 @@ Les principales différences entre les [packages facultatifs](/windows/msix/pack
 
 Les extensions d’application font partie d’un écosystème ouvert. Si votre application peut héberger des extensions d’application, n'importe qui peut écrire une extension pour votre hôte dans la mesure où elle se conforme à votre méthode de transmission/réception des informations à partir de l’extension. Cela diffère des packages facultatifs qui font partie d’un écosystème fermé où l’éditeur décide qui est autorisé à créer un package facultatif qui peut être utilisé avec l’application.
 
-Les extensions d’application sont des packages indépendants et peuvent être des applications autonomes. Elles ne peuvent pas avoir une dépendance de déploiement sur une autre application. Les packages facultatifs requièrent le package principal et ne peuvent pas s’exécuter sans ce dernier.
+Les extensions d’application sont des packages indépendants et peuvent être des applications autonomes. Elles ne peuvent pas avoir une dépendance de déploiement sur une autre application. Les packages facultatifs nécessitent le package principal et ne peuvent pas s’exécuter sans celui-ci.
 
 Un pack d’extension pour un jeu serait parfaitement adapté pour un package facultatif, car il est étroitement lié au jeu, il ne peut pas s’exécuter indépendamment du jeu et vous pouvez ne pas vouloir que les kits d’extension soit créés par n’importe quel développeur de l’écosystème.
 
 Si ce même jeu avait des extensions ou des thèmes d’interface utilisateur personnalisables, alors une extension d’application pourrait être un bon choix, car l’application fournissant l’extension pourrait s’exécuter seule et n'importe quel tiers pourrait en créer.
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarks
 
 Cette rubrique présente les extensions d’application. Les principaux points à prendre en compte sont la création de l’hôte et son marquage en tant que tel dans son fichier Package.appxmanifest, la création de l'extension et son marquage en tant que telle dans son fichier Package.appxmanifest, la détermination du mode d’implémentation de l’extension (comme un service d’application, une tâche en arrière-plan ou toute autre façon), la définition du mode de communication de l’hôte avec les extensions et l’utilisation de l’[API AppExtensions](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appextensions) pour accéder et gérer les extensions.
 
