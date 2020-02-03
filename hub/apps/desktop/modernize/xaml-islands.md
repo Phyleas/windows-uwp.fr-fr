@@ -1,19 +1,19 @@
 ---
 description: Ce guide vous aide à créer des interfaces utilisateur UWP Fluent directement dans vos applications WPF et Windows Forms
 title: Contrôles UWP dans les applications de bureau
-ms.date: 01/10/2010
+ms.date: 01/24/2020
 ms.topic: article
 keywords: windows 10, uwp, windows forms, wpf, xaml islands, îles xaml
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 95fbfc9aa988330fb21713651687690fa769b99f
-ms.sourcegitcommit: 85fd390b1e602707bd9342cb4b84b97ae0d8b831
+ms.openlocfilehash: 96705faff278c4cab31e0ab271bc31d08261401b
+ms.sourcegitcommit: 1455e12a50f98823bfa3730c1d90337b1983b711
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76520404"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76814009"
 ---
 # <a name="host-uwp-xaml-controls-in-desktop-apps-xaml-islands"></a>Héberger des contrôles XAML UWP dans des applications de bureau (XAML Islands)
 
@@ -127,4 +127,5 @@ Voici l’état actuel des fonctionnalités liées à XAML Islands à compter de
 Pour obtenir plus d’informations générales et des tutoriels sur l’utilisation de XAML Islands, consultez les articles et ressources suivants :
 
 * [Moderniser une application WPF](modernize-wpf-tutorial.md) : ce tutoriel fournit des instructions pas à pas pour utiliser des contrôles wrappés et hôtes dans le Windows Community Toolkit afin d’ajouter des contrôles UWP à une application métier WPF existante. Ce tutoriel comprend le code complet de l’application WPF ainsi que des instructions détaillées pour chaque étape du processus.
+* [Exemples de code XAML Islands](https://github.com/microsoft/Xaml-Islands-Samples) : Ce dépôt contient des exemples Windows Forms, WPF et C++/Win32 qui montrent comment utiliser XAML Islands.
 * [XAML Islands v1 - Updates and Roadmap](https://blogs.windows.com/windowsdeveloper/2019/06/13/xaml-islands-v1-updates-and-roadmap) : ce billet de blog répond à de nombreuses questions courantes sur XAML Islands et propose une feuille de route détaillée pour le développement.

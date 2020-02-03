@@ -7,16 +7,18 @@ ms.topic: article
 keywords: windows 10, uwp
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 141a24ca1f828f98231ec35471f7b43229df57e6
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 24c7bd8828ec036135233f569ee7add5d39ffb32
+ms.sourcegitcommit: 136416e8e2eb0565bb6eb99e42482c1723ccb8c7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684300"
+ms.lasthandoff: 01/30/2020
+ms.locfileid: "76890424"
 ---
 # <a name="tabview"></a>TabView
 
 Le contrôle TabView permet d’afficher un ensemble d’onglets et leur contenu respectif. Les TabViews sont utiles pour afficher plusieurs pages (ou documents) de contenu tout en donnant à un utilisateur la possibilité de réorganiser, d’ouvrir ou de fermer de nouveaux onglets.
+
+> **API importantes** : [Classe TabView](/uwp/api/microsoft.ui.xaml.controls.tabview), [Classe TabViewItem](/uwp/api/microsoft.ui.xaml.controls.tabviewitem)
 
 ![Exemple de TabView](images/tabview/tab-introduction.png)
 
@@ -25,7 +27,7 @@ Le contrôle TabView permet d’afficher un ensemble d’onglets et leur contenu
 En général, les interfaces utilisateur avec onglets existent dans deux styles distincts qui diffèrent en termes de fonction et d’apparence : Les **onglets statiques** sont le genre d’onglets souvent présents dans les fenêtres de paramètres. Ils contiennent un nombre défini de pages dans un ordre fixe, qui contiennent généralement du contenu prédéfini.
 Les **onglets de document** sont le type d’onglets présents dans un navigateur, par exemple Microsoft Edge. Les utilisateurs peuvent créer, supprimer et réorganiser les onglets, déplacer les onglets entre les fenêtres et modifier le contenu des onglets.
 
-TabView propose des onglets de document pour les applications UWP. Utilisez un TabView quand :
+[TabView](/uwp/api/microsoft.ui.xaml.controls.tabview) propose des onglets de document pour les applications UWP. Utilisez un TabView quand :
 
 - Les utilisateurs pourront ouvrir, fermer ou réorganiser dynamiquement les onglets.
 - Les utilisateurs pourront ouvrir des documents ou des pages web directement dans des onglets.
@@ -35,21 +37,21 @@ Si un TabView n’est pas approprié pour votre application, utilisez des contr�
 
 ## <a name="anatomy"></a>Anatomie
 
-L’image ci-dessous montre les parties du contrôle TabView. Le TabStrip a un en-tête et un pied de page, mais contrairement à un document, l’en-tête et le pied de page de TabStrip sont situés respectivement à l’extrême gauche et à l’extrême droite de la bande.
+L’image ci-dessous montre les parties du contrôle [TabView](/uwp/api/microsoft.ui.xaml.controls.tabview). Le TabStrip a un en-tête et un pied de page, mais contrairement à un document, l’en-tête et le pied de page de TabStrip sont situés respectivement à l’extrême gauche et à l’extrême droite de la bande.
 
 ![Anatomie du contrôle TabView](images/tabview/tab-view-anatomy.png)
 
-L’image suivante montre les parties du contrôle TabViewItem. Notez que bien que le contenu soit affiché dans le contrôle TabView, en réalité il fait partie du TabViewItem.
+L’image suivante montre les parties du contrôle [TabViewItem](/uwp/api/microsoft.ui.xaml.controls.tabviewitem). Notez que bien que le contenu soit affiché dans le contrôle TabView, en réalité il fait partie du TabViewItem.
 
 ![Anatomie du contrôle TabViewItem](images/tabview/tab-control-anatomy.png)
 
 ### <a name="create-a-tab-view"></a>Créer une vue d’onglets
 
-Cet exemple crée un TabView simple avec des gestionnaires d’événements pour prendre en charge l’ouverture et la fermeture des onglets.
+Cet exemple crée un [TabView](/uwp/api/microsoft.ui.xaml.controls.tabview) simple avec des gestionnaires d’événements pour prendre en charge l’ouverture et la fermeture des onglets.
 
 ```xaml
 <TabView AddTabButtonClick="Tabs_AddTabButtonClick"
-            TabCloseRequested="Tabs_TabCloseRequested" />
+         TabCloseRequested="Tabs_TabCloseRequested" />
 ```
 
 ```csharp
@@ -77,7 +79,7 @@ private void Tabs_TabCloseRequested(TabView sender, TabViewTabCloseRequestedEven
 
 ## <a name="behavior"></a>Comportement
 
-Il existe plusieurs façons de tirer parti ou d’étendre la fonctionnalité d’un TabView.
+Il existe plusieurs façons de tirer parti ou d’étendre la fonctionnalité d’un [TabView](/uwp/api/microsoft.ui.xaml.controls.tabview).
 
 ### <a name="bind-tabitemssource-to-a-tabviewitemcollection"></a>Lier TabItemsSource à un TabViewItemCollection
 
@@ -89,7 +91,7 @@ Il existe plusieurs façons de tirer parti ou d’étendre la fonctionnalité d�
 
 Au lieu de faire en sorte que les onglets occupent leur propre ligne sous la barre de titre d’une fenêtre, vous pouvez fusionner ces deux éléments dans la même zone. Cela permet d’économiser de l’espace vertical pour votre contenu, et donne à votre application un aspect moderne.
 
-Étant donné qu’un utilisateur peut faire glisser une fenêtre par sa barre de titre pour la repositionner, il est important que la barre de titre ne soit pas complètement remplie avec des onglets. Ainsi, lors de l’affichage d’onglets dans une barre de titre, vous devez spécifier une partie de la barre de titre à réserver comme zone qui peut être glissée. Si vous ne spécifiez pas de zone pouvant être glissée, l’intégralité de la barre de titre pourra être glissée, ce qui empêchera vos onglets de recevoir des événements d’entrée. Si votre TabView sera affiché dans la barre de titre d’une fenêtre, vous devez toujours inclure un TabStripFooter dans votre TabView et le marquer en tant que zone  pouvant être glissée.
+Étant donné qu’un utilisateur peut faire glisser une fenêtre par sa barre de titre pour la repositionner, il est important que la barre de titre ne soit pas complètement remplie avec des onglets. Ainsi, lors de l’affichage d’onglets dans une barre de titre, vous devez spécifier une partie de la barre de titre à réserver comme zone qui peut être glissée. Si vous ne spécifiez pas de zone pouvant être glissée, l’intégralité de la barre de titre pourra être glissée, ce qui empêchera vos onglets de recevoir des événements d’entrée. Si votre TabView s’affiche dans la barre de titre d’une fenêtre, vous devez toujours inclure un [TabStripFooter](/uwp/api/microsoft.ui.xaml.controls.tabview.tabstripfooter) dans votre [TabView](/uwp/api/microsoft.ui.xaml.controls.tabview) et le marquer en tant que zone pouvant être glissée.
 
 Pour plus d’informations, consultez [Personnalisation de la barre de titre](https://docs.microsoft.com/windows/uwp/design/shell/title-bar).
 
@@ -98,7 +100,7 @@ Pour plus d’informations, consultez [Personnalisation de la barre de titre](ht
 ```xaml
 <Page>
     <TabView HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-        <TabViewItem Icon="Home" Header="Home" IsCloseable="False" />
+        <TabViewItem Icon="Home" Header="Home" IsClosable="False" />
         <TabViewItem Icon="Document" Header="Document 1" />
         <TabViewItem Icon="Document" Header="Document 2" />
         <TabViewItem Icon="Document" Header="Document 3" />
@@ -147,7 +149,7 @@ private void CoreTitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sende
 
 ### <a name="control-overflow-behavior"></a>Comportement de dépassement de capacité de contrôle
 
-Quand la barre d’onglets contient de nombreux onglets, vous pouvez contrôler leur affichage en définissant TabView.TabWidthMode.
+Quand la barre d’onglets contient de nombreux onglets, vous pouvez contrôler leur affichage en définissant [TabView.TabWidthMode](/uwp/api/microsoft.ui.xaml.controls.tabview.tabwidthmode).
 
 | Valeur TabWidthMode | Comportement                                                                                                                                                    |
 |--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -160,15 +162,15 @@ Quelle que soit la valeur que vous choisissez, il se peut qu’il y ait trop d�
 
 La plupart des utilisateurs sont habitués à utiliser des onglets de document, ne serait-ce que dans les navigateurs web. Quand ils utilisent des onglets de document dans votre application, leur expérience détermine leurs attentes quant à la manière dont vos onglets doivent se comporter.
 
-Quelle que soit la façon dont l’utilisateur interagit avec un ensemble d’onglets de document, il doit toujours y avoir un onglet actif. Si l’utilisateur ferme l’onglet sélectionné ou le fait basculer dans une autre fenêtre, un autre onglet doit devenir l’onglet actif. TabView tente de le faire automatiquement en sélectionnant l’onglet suivant. Si vous avez une bonne raison pour que votre application autorise un TabView avec un onglet non sélectionné, la zone de contenu du TabView sera simplement vide.
+Quelle que soit la façon dont l’utilisateur interagit avec un ensemble d’onglets de document, il doit toujours y avoir un onglet actif. Si l’utilisateur ferme l’onglet sélectionné ou le fait basculer dans une autre fenêtre, un autre onglet doit devenir l’onglet actif. [TabView](/uwp/api/microsoft.ui.xaml.controls.tabview) tente de le faire automatiquement en sélectionnant l’onglet suivant. Si vous avez une bonne raison pour que votre application autorise un TabView avec un onglet non sélectionné, la zone de contenu du TabView sera simplement vide.
 
 ## <a name="keyboard-navigation"></a>Navigation au clavier
 
-Par défaut, TabView prend en charge de nombreux scénarios courants de navigation au clavier. Cette section décrit les fonctionnalités intégrées et fournit des recommandations sur les fonctionnalités supplémentaires qui peuvent être utiles pour certaines applications.
+Par défaut, [TabView](/uwp/api/microsoft.ui.xaml.controls.tabview) prend en charge de nombreux scénarios courants de navigation au clavier. Cette section décrit les fonctionnalités intégrées et fournit des recommandations sur les fonctionnalités supplémentaires qui peuvent être utiles pour certaines applications.
 
 ### <a name="tab-and-cursor-key-behavior"></a>Comportement des touches de tabulation et de curseur
 
-Quand le focus se déplace dans la zone de TabStrip, le TabViewItem sélectionné obtient le focus. L’utilisateur peut ensuite utiliser les flèches gauche et droite pour déplacer le focus (et non la sélection) vers d’autres onglets dans le TabStrip. Le focus de la flèche est bloqué à l’intérieur de la bande d’onglet et du bouton d’ajout d’onglet (+), s’il est présent. Pour déplacer le focus hors de la zone de TabStrip, l’utilisateur peut appuyer sur la touche Tab afin de déplacer le focus sur l’élément pouvant être actif suivant.
+Quand le focus se déplace dans la zone de _TabStrip_, le [TabViewItem](/uwp/api/microsoft.ui.xaml.controls.tabviewitem) sélectionné obtient le focus. L’utilisateur peut ensuite utiliser les flèches gauche et droite pour déplacer le focus (et non la sélection) vers d’autres onglets dans le TabStrip. Le focus de la flèche est bloqué à l’intérieur de la bande d’onglet et du bouton d’ajout d’onglet (+), s’il est présent. Pour déplacer le focus hors de la zone de TabStrip, l’utilisateur peut appuyer sur la touche Tab afin de déplacer le focus sur l’élément pouvant être actif suivant.
 
 Déplacer le focus à l’aide de la touche Tab
 
@@ -188,18 +190,18 @@ Utilisez les touches de direction pour déplacer le focus, puis appuyez sur Espa
 
 ### <a name="shortcuts-for-selecting-adjacent-tabs"></a>Raccourcis pour la sélection d’onglets adjacents
 
-Ctrl+Tab sélectionne le TabViewItem suivant. Ctrl+Maj+Tab sélectionne le TabViewItem précédent. Dans ce cas, la liste d’onglets est « en boucle ». Autrement dit, si vous sélectionnez l’onglet suivant alors que le dernier onglet est sélectionné, le premier onglet devient alors sélectionné.
+Ctrl+Tab sélectionne le [TabViewItem](/uwp/api/microsoft.ui.xaml.controls.tabviewitem) suivant. Ctrl+Maj+Tab sélectionne le TabViewItem précédent. Dans ce cas, la liste d’onglets est « en boucle ». Autrement dit, si vous sélectionnez l’onglet suivant alors que le dernier onglet est sélectionné, le premier onglet devient alors sélectionné.
 
 ### <a name="closing-a-tab"></a>Fermeture d’un onglet
 
-Un appui sur Ctrl+F4 déclenche l’événement TabCloseRequested. Gérez l’événement et fermez l’onglet, le cas échéant.
+Un appui sur Ctrl+F4 déclenche l’événement [TabCloseRequested](/uwp/api/microsoft.ui.xaml.controls.tabview.tabcloserequested). Gérez l’événement et fermez l’onglet, le cas échéant.
 
 ### <a name="keyboard-guidance-for-app-developers"></a>Aide relative au clavier pour les développeurs d’applications
 
 Certaines applications peuvent nécessiter un contrôle de clavier plus avancé. Implémentez les raccourcis suivants s’ils sont appropriés pour votre application.
 
 > [!WARNING]
-> Si vous ajoutez un TabView à une application existante, il est possible que vous ayez déjà créé des raccourcis clavier qui correspondent aux combinaisons de touches des raccourcis clavier TabView recommandés. Dans ce cas, vous devrez décider si vous souhaitez conserver vos raccourcis existants ou offrir une expérience de navigation d’onglets intuitive à l’utilisateur.
+> Si vous ajoutez un [TabView](/uwp/api/microsoft.ui.xaml.controls.tabview) à une application existante, vous avez peut-être déjà créé des raccourcis clavier qui correspondent aux combinaisons de touches des raccourcis clavier TabView recommandés. Dans ce cas, vous devrez décider si vous souhaitez conserver vos raccourcis existants ou offrir une expérience de navigation d’onglets intuitive à l’utilisateur.
 
 - Ctrl+T doit ouvrir un nouvel onglet. En général, cet onglet contient un document prédéfini ou est créé vide avec un moyen simple de choisir son contenu. Si l’utilisateur doit choisir du contenu pour un nouvel onglet, donnez le focus d’entrée au contrôle de sélection du contenu.
 - Ctrl+W doit fermer l’onglet sélectionné. Rappelez-vous que TabView sélectionne automatiquement l’onglet suivant.
@@ -210,7 +212,7 @@ Certaines applications peuvent nécessiter un contrôle de clavier plus avancé.
 
 ### <a name="implement-browser-style-keyboarding-behavior"></a>Implémenter le comportement du clavier de style navigateur
 
-Cet exemple implémente une partie des recommandations ci-dessus sur un TabView. Plus précisément, il implémente Ctrl+T, Ctrl+W, Ctrl+1-8 et Ctrl+9.
+Cet exemple implémente une partie des recommandations ci-dessus sur un [TabView](/uwp/api/microsoft.ui.xaml.controls.tabview). Plus précisément, il implémente Ctrl+T, Ctrl+W, Ctrl+1-8 et Ctrl+9.
 
 ```xaml
 <controls:TabView x:Name="TabRoot">

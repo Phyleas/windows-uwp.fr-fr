@@ -6,12 +6,12 @@ ms.date: 04/17/2019
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 7403c0a3fd9f822ee24411aa88d8fd91994748dd
-ms.sourcegitcommit: d7eccdb27c22bccac65bd014e62b6572a6b44602
+ms.openlocfilehash: fb6d2bebda31ed768309b23d18b3b47e4487b058
+ms.sourcegitcommit: 09571e1c6a01fabed773330aa7ead459a47d94f7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73142517"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76929245"
 ---
 # <a name="modernize-your-desktop-apps"></a>Moderniser vos applications de bureau
 
@@ -24,7 +24,7 @@ Cet article décrit les fonctionnalités Windows 10 et UWP que vous pouvez util
 
 ## <a name="msix-packages"></a>Packages MSIX
 
-MSIX est un format de package d’application Windows moderne qui permet de créer des packages universels pour toutes les applications Windows, notamment les applications UWP, WPF, Windows Forms et Win32. MSIX réunit les meilleurs aspects des technologies d’installation MSI, .appx, App-V et ClickOnce, et a été conçu pour être sûr, sécurisé et fiable.
+MSIX est un format de package d’application Windows moderne qui permet de créer des packages universels pour toutes les applications Windows, notamment les applications UWP, WPF, Windows Forms et Win32. MSIX réunit les meilleurs aspects des technologies d’installation MSI, AppX, App-V et ClickOnce pour offrir une expérience d’empaquetage moderne et fiable.
 
 En empaquetant vos applications de bureau Windows dans des packages MSIX, vous avez accès à une expérience d’installation et de mise à jour fiable, à un modèle de sécurité managé avec un système de capacité flexible, à un support pour le Microsoft Store, à la gestion d’entreprise et à de nombreux modèles de distribution personnalisés.
 
@@ -69,7 +69,7 @@ Il existe plusieurs façons d’accorder une identité à une application de bur
 
 Que vous développiez une application UWP ciblant exclusivement la famille d’appareils de bureau ou que vous souhaitiez utiliser des contrôles UWP dans vos applications de bureau WPF, Windows Forms ou Win32 C++, les contrôles UWP nouveaux et mis à jour suivants sont conçus pour offrir des expériences de bureau optimisées avec le système [Fluent Design](/windows/uwp/design/fluent-design-system/index). Ces contrôles ont été introduits dans Windows 10, version 1809 (mise à jour d’octobre 2018 ou version 10.0.17763).
 
-| Commande |  Description |
+| Contrôler |  Description |
 |------ |--------------|
 | [MenuBar](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus#create-a-menu-bar) | Fournit un moyen rapide et simple d’exposer un ensemble de commandes dans les applications nécessitant un niveau d’organisation et de regroupement plus avancé que celui fourni par **CommandBar**. |
 | [DropDownButton](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/buttons#create-a-drop-down-button) | Affiche une flèche permettant de développer un menu volant attaché qui contient des options supplémentaires.  |
