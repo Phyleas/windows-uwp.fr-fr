@@ -944,7 +944,7 @@ Voici le MainPage.xaml :
 
 Pour finir, nous définissons nos gestionnaires d’événements de pointeur de base dans le code-behind MainPage.xaml.cs. Nous ne reproduisons pas le code ici, comme les notions de base ont été traitées dans l’exemple précédent, mais vous pouvez télécharger l’exemple de travail à partir de [Exemple d’entrée de pointeur (UserControl avec animation)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers-animation.zip).
 
-## <a name="related-articles"></a>Articles associés
+## <a name="related-articles"></a>Articles connexes
 
 **Exemples de rubriques**
 * [Exemple d’entrée de pointeur (Basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers.zip)

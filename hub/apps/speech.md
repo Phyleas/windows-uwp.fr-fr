@@ -52,9 +52,9 @@ Cette page fournit des informations sur la façon dont les différentes infrastr
 
       Développez des applications vocales pour Windows Desktop et Windows Server à l’aide des outils, des informations et des exemples de moteurs et d’applications fournis ici.
 
-      [Plateforme Microsoft Speech-Kit de développement logiciel (SDK) (version 11)](https://www.microsoft.com/download/details.aspx?id=27226)
+      [Microsoft Speech Platform - SDK (version 11)](https://www.microsoft.com/download/details.aspx?id=27226)
       
-      [Microsoft Speech SDK, version 5,1](https://www.microsoft.com/download/details.aspx?id=10121)
+      [SDK Microsoft Speech version 5.1](https://www.microsoft.com/download/details.aspx?id=10121)
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -65,7 +65,7 @@ Cette page fournit des informations sur la façon dont les différentes infrastr
 
       Développez des applications et des outils accessibles sur la plateforme établie pour les applications Windows gérées avec un modèle d’interface utilisateur XAML et le .NET Framework.
 
-      [Guide de programmation System. Speech pour .NET Framework](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh361625(v=office.14))
+      [Guide de programmation System.Speech pour le .NET Framework](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh361625(v=office.14))
    :::column-end:::
    :::column:::
       ![Services de reconnaissance vocale Azure](images/platform-azure-speech.png)
@@ -105,7 +105,7 @@ Cette page fournit des informations sur la façon dont les différentes infrastr
    :::column-end:::
 :::row-end:::
 
-## <a name="samples"></a>exemples
+## <a name="samples"></a>Exemples
 
 Téléchargez et exécutez des exemples Windows complets qui illustrent diverses fonctionnalités d’accessibilité.
 

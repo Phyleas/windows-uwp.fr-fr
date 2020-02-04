@@ -36,7 +36,7 @@ Windows 10 sur ARM exécute toutes les [applications UWP](../get-started/univers
 En plus des applications UWP, Windows 10 sur ARM peut également exécuter vos applications Win32 Win32 sans modification, avec de bonnes performances et une expérience utilisateur transparente, tout comme n’importe quel PC. Ces applications Win32 x86 n’ont pas besoin d’être recompilées pour ARM et ne se rendent même pas compte qu’elles s’exécutent sur un processeur ARM. Notez que les applications Win32 x64 64 bits ne sont pas prises en charge, mais la plupart des applications ont des versions x86 disponibles.  Quand vous avez le choix de l’architecture d’application, choisissez simplement la version 32 bits x86 pour exécuter l’application sur un PC Windows 10 sur ARM.
 
 ## <a name="in-this-section"></a>Dans cette section
-|Sujet | Description |
+|Rubrique | Description |
 |-----|-----|
 |[Fonctionnement de l’émulation x86 sur ARM](apps-on-arm-x86-emulation.md)|Une présentation détaillée du mode d'émulation es applications x86 sur ARM.|
 |[Résolution des problèmes relatifs aux applications x86 sur ARM](apps-on-arm-troubleshooting-x86.md)|Problèmes courants avec les applications x86 lors de l'exécution sur ARM, et comment les résoudre. |
@@ -44,7 +44,7 @@ En plus des applications UWP, Windows 10 sur ARM peut également exécuter vos a
 |[Utilitaire de résolution de problèmes de compatibilité des programmes sur ARM](apps-on-arm-program-compat-troubleshooter.md)|Conseils de réglage des paramètres de compatibilité si votre application ne fonctionne pas correctement sur ARM. |
 
 ## <a name="related-topics"></a>Rubriques connexes
-|Sujet | Description |
+|Rubrique | Description |
 |-----|-----|
 |[Génération de pilotes ARM64 avec le kit WDK](https://docs.microsoft.com/windows-hardware/drivers/develop/building-arm64-drivers)|Instructions pour la création d’un pilote ARM64. |
 | [Débogage des applications x86 sur ARM](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugging-arm64) | Conseils pour le débogage des applications x86 sur ARM. |
