@@ -4,14 +4,14 @@ title: Extension de balisage xBind
 ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 10f601b29ff441fe8cec9261d7751ba525c7f52b
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 8008c652dea89b42185c9fb1d9ac42e96f16a117
+ms.sourcegitcommit: 5af282fb230765a7225e138d99e9cb1b60bf7238
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258749"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77012047"
 ---
 # <a name="xbind-markup-extension"></a>Extension de balisage {x:Bind}
 
@@ -88,13 +88,13 @@ Pour C++ / CX, **{x:Bind}** ne peut pas effectuer de liaison à des champs et pr
 Avec **x:Bind**, vous n’avez pas besoin d’utiliser **ElementName=xxx** dans l’expression de liaison. Au lieu de cela, vous pouvez utiliser le nom de l’élément comme première partie du chemin d’accès pour la liaison, car les éléments nommés deviennent des champs dans la page ou le contrôle utilisateur qui représente la source de liaison racine. 
 
 
-### <a name="collections"></a>Collections
+### <a name="collections"></a>Regroupements
 
 Si la source de données est une collection, un chemin de propriété peut spécifier les éléments de la collection selon leur position ou index. Par exemple, «teams\[0\]. Players», où le littéral «\[\]» encadre le « 0 » qui demande le premier élément d’une collection indexée à zéro.
 
 Pour utiliser un indexeur, le modèle doit implémenter **IList&lt;T&gt;** or **IVector&lt;T&gt;** sur le type de la propriété à indexer. (Notez que IReadOnlyList&lt;T&gt; et IVectorView&lt;T&gt; ne prennent pas en charge la syntaxe de l’indexeur.) Si le type de la propriété indexée prend en charge **INotifyCollectionChanged** ou **IObservableVector** et que la liaison est unidirectionnelle ou TwoWay, elle s’inscrit et écoute les notifications de modification sur ces interfaces. La logique de détection des modifications met à jour en fonction de tous les changements de collection, même si cela n’affecte pas la valeur indexée spécifique. En effet, la logique d’écoute est commune dans toutes les instances de la collection.
 
-Si la source de données est un dictionnaire ou une carte, un chemin de propriété peut spécifier les éléments de la collection par leur nom de chaîne. Par exemple **&lt;TextBlock Text = "{X :bind player\['John Smith'\]"/&gt;** recherche un élément dans le dictionnaire nommé « John Smith ». Le nom doit être entouré de guillemets simples ou doubles. Utilisez l’accent circonflexe (^) comme caractère d’échappement des guillemets dans les chaînes. Il est généralement plus simple d’utiliser d’autres guillemets que ceux utilisés dans l’attribut XAML. (Notez que IReadOnlyDictionary&lt;T&gt; et IMapView&lt;T&gt; ne prennent pas en charge la syntaxe de l’indexeur.)
+Si la source de données est un dictionnaire ou une carte, un chemin de propriété peut spécifier les éléments de la collection par leur nom de chaîne. Par exemple **&lt;TextBlock Text = "{X :bind player\['John Smith'\]}"/&gt;** recherche un élément dans le dictionnaire nommé « John Smith ». Le nom doit être entouré de guillemets simples ou doubles. Utilisez l’accent circonflexe (^) comme caractère d’échappement des guillemets dans les chaînes. Il est généralement plus simple d’utiliser d’autres guillemets que ceux utilisés dans l’attribut XAML. (Notez que IReadOnlyDictionary&lt;T&gt; et IMapView&lt;T&gt; ne prennent pas en charge la syntaxe de l’indexeur.)
 
 Pour utiliser un indexeur de chaîne, le modèle doit implémenter **IDictionary&lt;string, T&gt;** ou **IMap&lt;string, T&gt;** sur le type de la propriété à indexer. Si le type de la propriété indexée prend en charge **IObservableMap** et que la liaison est OneWay ou TwoWay, il s’inscrit pour écouter les notifications de modification sur ces interfaces. La logique de détection des modifications met à jour en fonction de tous les changements de collection, même si cela n’affecte pas la valeur indexée spécifique. En effet, la logique d’écoute est commune dans toutes les instances de la collection.
 
@@ -135,8 +135,8 @@ Ces propriétés fonctionnent essentiellement de la même manière que les propr
 
 | Propriété | Description |
 |----------|-------------|
-| **D** | Voir la section [Chemin de propriété](#property-path) ci-dessus. |
-| **Onduleur** | Spécifie l’objet convertisseur appelé par le moteur de liaison. Le convertisseur peut être défini en XAML, mais uniquement si vous faites référence à une instance d’objet que vous avez assignée dans une référence d’[extension de balisage {StaticResource}](staticresource-markup-extension.md) à cet objet dans le dictionnaire de ressources. |
+| **Chemin d’accès** | Voir la section [Chemin de propriété](#property-path) ci-dessus. |
+| **Converter** | Spécifie l’objet convertisseur appelé par le moteur de liaison. Le convertisseur peut être défini en XAML, mais uniquement si vous faites référence à une instance d’objet que vous avez assignée dans une référence d’[extension de balisage {StaticResource}](staticresource-markup-extension.md) à cet objet dans le dictionnaire de ressources. |
 | **ConverterLanguage** | Spécifie la culture que doit utiliser le convertisseur. (Si vous définissez **ConverterLanguage**, vous devez également définir **Converter**.) La culture est définie comme un identificateur basé sur des normes. Pour plus d’informations, voir [**ConverterLanguage**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.converterlanguage). |
 | **ConverterParameter** | Spécifie le paramètre de convertisseur qui peut être utilisé dans la logique du convertisseur. (Si vous définissez **ConverterParameter**, vous devez également définir **Converter**.) La plupart des convertisseurs utilisent une logique simple qui obtient toutes les informations de la valeur transmise à convertir et ne nécessitent pas de valeur **ConverterParameter**. Le paramètre **ConverterParameter** est destiné aux implémentations de convertisseur moyennement avancées qui comprennent plusieurs logiques basées sur ce qui est transmis dans **ConverterParameter**. Vous pouvez écrire un convertisseur qui utilise des valeurs qui ne sont pas des chaînes, mais il s’agit d’un scénario peu courant. Pour plus d’informations, voir la section Remarques dans [**ConverterParameter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.converterparameter). |
 | **FallbackValue** | Spécifie une valeur à afficher quand la source ou le chemin ne peuvent pas être résolus. |
@@ -149,7 +149,7 @@ Ces propriétés fonctionnent essentiellement de la même manière que les propr
 > Si vous convertissez un balisage de **{Binding}** en **{x:Bind}** , soyez attentif aux différences de valeurs par défaut de la propriété **Mode**.
 > [**x :DefaultBindMode**](https://docs.microsoft.com/windows/uwp/xaml-platform/x-defaultbindmode-attribute) peut être utilisé pour modifier le mode par défaut de x :bind pour un segment spécifique de l’arborescence de balises. Le mode sélectionné appliquera sur cet élément et ses enfants toute expression x:Bind qui ne spécifie pas explicitement un mode dans le cadre de la liaison. OneTime est plus performante que OneWay. En effet, l'utilisation de OneWay provoque plus de code à générer pour le raccordement et la gestion de la détection des modifications.
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarks
 
 Dans la mesure où l’extension de balisage **{x:Bind}** utilise un code généré pour obtenir ses avantages, elle nécessite des informations de type au moment de la compilation. Cela signifie que vous ne pouvez pas effectuer de liaison à des propriétés quand vous ne connaissez pas le type à l’avance. Pour cette raison, vous ne pouvez pas utiliser **{x:Bind}** avec la propriété **DataContext**, qui est du type **Object**, et est également sujette à modification au moment de l’exécution.
 
