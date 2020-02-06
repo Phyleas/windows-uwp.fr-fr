@@ -1,28 +1,28 @@
 ---
 title: Activer l’accès en mode utilisateur à GPIO, I2C et SPI
-description: Ce didacticiel explique comment activer l’accès en mode utilisateur à GPIO, I2C, SPI et UART sur Windows 10.
+description: Ce didacticiel explique comment activer l’accès en mode utilisateur à GPIO, I2C, SPI et UART sur Windows 10.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, acpi, gpio, i2c, spi, uefi
 ms.assetid: 2fbdfc78-3a43-4828-ae55-fd3789da7b34
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a1356003c86040cfa51872b802ba070a685789b
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: 08c802154180f5577c43a3ad5f349f53e3d9b5d3
+ms.sourcegitcommit: 20ee991a1cf87ef03c158cd3f38030c7d0e483fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72281840"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77037899"
 ---
-# <a name="enable-usermode-access-to-gpio-i2c-and-spi"></a>Activer l’accès en mode utilisateur à GPIO, I2C et SPI
+# <a name="enable-user-mode-access-to-gpio-i2c-and-spi"></a>Activer l’accès en mode utilisateur à GPIO, I2C et SPI
 
-Windows 10 contient de nouvelles API d’accès à GPIO, I2C, SPI et UART directement à partir du mode utilisateur. Les cartes de développement comme Raspberry Pi 2 exposent un sous-ensemble de ces connexions, qui permettent aux utilisateurs d’étendre un module de calcul de base avec des circuits personnalisés pour l’adressage d’une application donnée. Ces bus de bas niveau sont généralement partagés avec d’autres fonctions critiques intégrées, et seul un sous-ensemble des broches et des bus GPIO sont exposés sur les en-têtes. Pour préserver la stabilité du système, il est nécessaire de spécifier les broches et les bus qui peuvent être modifiés en toute sécurité par les applications en mode utilisateur.
+Windows 10 contient de nouvelles API pour l’accès direct à partir du mode utilisateur de l’entrée/sortie à usage général (GPIO), du circuit intégré (I2C), de l’interface de périphérique série (SPI) et de l’émetteur-récepteur asynchrone universel (UART). Les tableaux de développement tels que Raspberry pi 2 exposent un sous-ensemble de ces connexions, ce qui vous permet d’étendre un module de calcul de base avec des circuits personnalisés pour traiter une application particulière. Ces bus de bas niveau sont généralement partagés avec d’autres fonctions critiques intégrées, et seul un sous-ensemble des broches et des bus GPIO sont exposés sur les en-têtes. Pour préserver la stabilité du système, il est nécessaire de spécifier les broches et les bus qui peuvent être modifiés par les applications en mode utilisateur.
 
-Ce document explique comment spécifier cette configuration dans l’interface ACPI et fournit des outils pour confirmer que la configuration a été correctement spécifiée.
+Ce document explique comment spécifier cette configuration dans ACPI (Advanced Configuration and Power Interface) et fournit des outils pour valider que la configuration a été correctement spécifiée.
 
 > [!IMPORTANT]
-> Ce document est destiné aux développeurs UEFI et ACPI. Il suppose que vous êtes déjà familiarisé avec l’interface ACPI, la création d’ASL et les extensions SpbCx/GpioClx.
+> Le public concerné par ce document est Unified Extensible Firmware Interface (UEFI) et les développeurs ACPI. Il est supposé que vous êtes familiarisé avec la création d’ACPI, le langage de source ACPI (ASL) et SpbCx/GpioClx.
 
-L’accès en mode utilisateur aux bus de bas niveau sur Windows est ajouté via les infrastructures `GpioClx` et `SpbCx` existantes. Un nouveau pilote appelé *RhProxy*, uniquement disponible sur Windows IoT Core et Windows Enterprise, expose les ressources `GpioClx` et `SpbCx` au mode utilisateur. Pour activer les API, vous devez avoir déclaré un nœud d’appareil pour rhproxy dans vos tables ACPI avec chacune des ressources GPIO et SPB qui doivent être exposées au mode utilisateur. Ce document présente la procédure de création et de vérification de l’ASL.
+L’accès en mode utilisateur aux bus de bas niveau sur Windows est raccordé aux frameworks `GpioClx` et `SpbCx` existants. Un nouveau pilote appelé *RhProxy*, disponible sur Windows IOT Core et Windows Enterprise, expose les ressources `GpioClx` et `SpbCx` en mode utilisateur. Pour activer les API, un nœud de périphérique pour rhproxy doit être déclaré dans vos tables ACPI avec chaque ressource GPIO et SPB qui doit être exposée au mode utilisateur. Ce document présente la procédure de création et de vérification de l’ASL.
 
 ## <a name="asl-by-example"></a>ASL par exemple
 
@@ -41,7 +41,7 @@ Device(RHPX)
 * _CID – Compatible Id. Il doit s’agir de « MSFT8000 ».
 * _UID – ID unique. Définissez ce paramètre sur 1.
 
-Nous allons ensuite déclarer chacune des ressources GPIO et SPB qui doivent être exposées au mode utilisateur. L’ordre dans lequel les ressources sont déclarées est important, car les index de ressource sont utilisés pour associer les propriétés avec des ressources. Si plusieurs bus I2C ou SPI sont exposés, le premier bus déclaré est considéré comme le bus « par défaut » pour ce type et sera l’instance renvoyée par les méthodes `GetDefaultAsync()` de [Windows.Devices.I2c.I2cController](https://docs.microsoft.com/uwp/api/windows.devices.i2c.i2ccontroller) et [Windows.Devices.Spi.SpiController](https://docs.microsoft.com/uwp/api/windows.devices.spi.spicontroller).
+Ensuite, nous déclarons chacune des ressources GPIO et SPB qui doivent être exposées au mode utilisateur. L’ordre dans lequel les ressources sont déclarées est important, car les index de ressource sont utilisés pour associer les propriétés avec des ressources. Si plusieurs bus I2C ou SPI sont exposés, le premier bus déclaré est considéré comme le bus « par défaut » pour ce type et sera l’instance renvoyée par les méthodes `GetDefaultAsync()` de [Windows.Devices.I2c.I2cController](https://docs.microsoft.com/uwp/api/windows.devices.i2c.i2ccontroller) et [Windows.Devices.Spi.SpiController](https://docs.microsoft.com/uwp/api/windows.devices.spi.spicontroller).
 
 ### <a name="spi"></a>SPI
 
@@ -208,7 +208,7 @@ Les champs suivants sont des espaces réservés pour les valeurs spécifiées pa
 
 ### <a name="gpio"></a>GPIO
 
-Ensuite, nous déclarons tous les broches GPIO qui sont exposées au mode utilisateur. Nous vous recommandons de procéder comme suit pour décider quelles broches exposer :
+Ensuite, nous déclarons toutes les broches GPIO qui sont exposées au mode utilisateur. Nous vous recommandons de procéder comme suit pour décider quelles broches exposer :
 
 * Déclarez toutes les broches sur les en-têtes exposées.
 * Déclarez les broches connectées à des fonctions intégrées utiles comme les boutons et les voyants.
@@ -294,9 +294,9 @@ Choisissez le modèle de numérotation le plus compatible avec la documentation 
 
 ### <a name="uart"></a>UART
 
-Si votre pilote UART utilise `SerCx` ou `SerCx2`, vous pouvez utiliser rhproxy pour exposer le pilote en mode utilisateur. Les pilotes UART qui créent une interface de périphérique de type `GUID_DEVINTERFACE_COMPORT` n’ont pas besoin d’utiliser rhproxy. Le pilote de boîte de réception `Serial.sys` est dans l’un de ces cas.
+Si votre pilote UART utilise `SerCx` ou `SerCx2`, vous pouvez utiliser rhproxy pour exposer le pilote au mode utilisateur. Les pilotes UART qui créent une interface de périphérique de type `GUID_DEVINTERFACE_COMPORT` n’ont pas besoin d’utiliser rhproxy. Le pilote de boîte de réception `Serial.sys` est dans l’un de ces cas.
 
-Pour exposer un UART de style `SerCx` au mode utilisateur, déclarez une ressource `UARTSerialBus` en procédant comme suit.
+Pour exposer un UART de type `SerCx`au mode utilisateur, déclarez une ressource `UARTSerialBus` comme suit.
 
 ```cpp
 // Index 2
@@ -325,7 +325,7 @@ La déclaration de nom convivial associée est la suivante :
 Package(2) { "bus-UART-UART2", Package() { 2 }},
 ```
 
-Ce code affecte le nom convivial « UART2 » au contrôleur, qui est l’identificateur dont les utilisateurs se serviront pour accéder au bus à partir du mode utilisateur.
+Cela affecte le nom convivial « UART2 » au contrôleur, qui est l’identificateur que les utilisateurs utiliseront pour accéder au bus à partir du mode utilisateur.
 
 ## <a name="runtime-pin-muxing"></a>Multiplexage de broche au moment de l’exécution
 
@@ -655,14 +655,14 @@ Lorsque vous êtes prêt à tester rhproxy, il est utile de suivre la procédure
 1. Compilez et chargez votre nœud rhproxy à l’aide de `ACPITABL.dat`
 1. Vérifiez que le nœud d’appareil `rhproxy` existe
 1. Vérifiez que `rhproxy` se charge bien et démarre
-1. Vérifiez que les appareils attendus sont exposés au mode utilisateur
+1. Vérifier que les appareils attendus sont exposés au mode utilisateur
 1. Vérifiez que vous pouvez interagir avec chaque appareil à partir de la ligne de commande
 1. Vérifiez que vous pouvez interagir avec chaque appareil à partir d’une application UWP
 1. Exécutez les tests HLK
 
 ### <a name="verify-controller-drivers"></a>Vérifiez les pilotes de contrôleur
 
-Comme rhproxy expose d’autres appareils du système au mode utilisateur, il ne fonctionne que si ces appareils fonctionnent déjà. La première étape consiste à vérifier que ces appareils (les contrôleurs I2C, SPI et GPIO que vous souhaitez exposer) fonctionnent déjà.
+Étant donné que rhproxy expose d’autres appareils sur le système en mode utilisateur, il ne fonctionne que si ces appareils fonctionnent déjà. La première étape consiste à vérifier que ces appareils (les contrôleurs I2C, SPI et GPIO que vous souhaitez exposer) fonctionnent déjà.
 
 À l’invite de commandes, lancez l’exécution.
 
@@ -740,9 +740,9 @@ Si la sortie indique que rhproxy a démarré, c’est qu’il a été chargé et
 * Problème 51 - `CM_PROB_WAITING_ON_DEPENDENCY` -le système ne démarre pas rhproxy, car l’une de ses dépendances n’a pas pu se charger. Cela signifie que les ressources transmises au point rhproxy pour les nœuds ACPI ne sont pas valides ou que les appareils cibles ne démarrent pas. Commencez par vérifier que tous les appareils s’exécutent correctement (voir « Vérifier les pilotes de contrôleur » ci-dessus). Ensuite, vérifiez votre ASL et assurez-vous que tous vos chemins d’accès aux ressources (par exemple, `\_SB.I2C1`) sont corrects et pointent vers des nœuds valides dans votre DSDT.
 * Problème 10 - `CM_PROB_FAILED_START` -Rhproxy n’a pas pu démarrer, probablement en raison d’un problème d’analyse de ressource. Passez en revue votre ASL et vérifiez l’index de ressource dans le DSD, puis vérifiez que les ressources GPIO sont spécifiées dans l’ordre de broche croissant.
 
-### <a name="verify-that-the-expected-devices-are-exposed-to-usermode"></a>Vérifiez que les appareils attendus sont exposés au mode utilisateur
+### <a name="verify-that-the-expected-devices-are-exposed-to-user-mode"></a>Vérifier que les appareils attendus sont exposés au mode utilisateur
 
-Maintenant que rhproxy est en cours d’exécution, des interfaces d’appareils sont normalement créées et sont accessibles en mode utilisateur. Nous allons utiliser plusieurs outils de ligne de commande pour énumérer les appareils et voir ceux qui sont présents.
+Maintenant que rhproxy est en cours d’exécution, il doit avoir créé des interfaces d’appareils accessibles par le biais du mode utilisateur. Nous allons utiliser plusieurs outils de ligne de commande pour énumérer les appareils et voir ceux qui sont présents.
 
 Clonez le référentiel [https://github.com/ms-iot/samples](https://github.com/ms-iot/samples) et générez les exemples `GpioTestTool`, `I2cTestTool`, `SpiTestTool`et `Mincomm`. Copiez les outils sur votre appareil en cours de test et utilisez les commandes suivantes pour énumérer les appareils.
 
@@ -854,7 +854,7 @@ Cliquez sur Exécuter la sélection. Vous pouvez accéder à une documentation s
 | MinComm (Série) | https://github.com/ms-iot/samples/tree/develop/MinComm |
 | Windows Hardware Lab Kit (HLK) | https://msdn.microsoft.com/library/windows/hardware/dn930814.aspx |
 
-## <a name="apendix"></a>Annexe
+## <a name="appendix"></a>Annexe
 
 ### <a name="appendix-a---raspberry-pi-asl-listing"></a>Annexe A - Liste d’ASL Raspberry Pi
 
