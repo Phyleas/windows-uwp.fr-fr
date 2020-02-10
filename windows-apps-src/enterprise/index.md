@@ -6,12 +6,12 @@ ms.date: 01/16/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a95529f40ef5bb1cbf112c91c385e6621620a01
-ms.sourcegitcommit: 7a8aea567b26283c71420e0d305d78f675e1fba7
+ms.openlocfilehash: 7e17b155966c609537c40050edc4c11ee6935b0d
+ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76125685"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77089465"
 ---
 # <a name="enterprise"></a>Enterprise
 
@@ -88,7 +88,7 @@ Consultez [Utiliser une base de données SQL Server dans une application UWP](ht
 
 ### <a name="msix-deployment"></a>Déploiement de MSIX
 
-MSIX est un format de package d’application Windows qui regroupe les meilleures fonctionnalités de MSI, AppX, App-V et ClickOnce pour proposer une expérience d’empaquetage moderne et fiable dans toutes les applications Windows. Le format de package MSIX conserve les packages d’applications et les fichiers d’installation existants tout en proposant des fonctionnalités d’empaquetage et de déploiement modernes pour les applications Win32, WPF et Windows Forms. 
+MSIX est un format de package d’application Windows qui regroupe les meilleures fonctionnalités de MSI, .appx, App-V et ClickOnce pour proposer une expérience d’empaquetage moderne et fiable dans toutes les applications Windows. Le format de package MSIX conserve les packages d’applications et les fichiers d’installation existants tout en proposant des fonctionnalités d’empaquetage et de déploiement modernes pour les applications Win32, WPF et Windows Forms. 
 
 ![Icône MSIX](images/MSIX-App-Package.ico)
 
@@ -155,7 +155,7 @@ Vous disposez d’options pour distribuer les applications aux utilisateurs de v
 
 | Rubrique | Description |
 |-------|-------------|
-| [Documentation MSIX](https://docs.microsoft.com/windows/msix/) | MSIX est un format de package d’application Windows qui regroupe les meilleures fonctionnalités de MSI, AppX, App-V et ClickOnce pour proposer une expérience d’empaquetage moderne et fiable. |
+| [Documentation MSIX](https://docs.microsoft.com/windows/msix/) | MSIX est un format de package d’application Windows qui regroupe les meilleures fonctionnalités de MSI, .appx, App-V et ClickOnce pour proposer une expérience d’empaquetage moderne et fiable. |
 | [Distribuer des applications métier aux entreprises](https://docs.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises) | Découvrez les options pour distribuer des applications métier sans mettre les applications à la disposition du public, notamment le déploiement basé sur le Programme d’installation d’application, Microsoft Endpoint Configuration Manager et Microsoft Intune, et la publication sur le Microsoft Store pour Entreprises. |
 | [Charger des applications de façon indépendante](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10) | Quand vous chargez une application de façon indépendante (sideloading), vous déployez un package d’application signé sur un appareil. Vous conservez la signature, l’hébergement et le déploiement de ces applications. Le processus de sideloading d’applications est simplifié pour Windows 10.             |
 | [Publier des applications sur le Microsoft Store](https://developer.microsoft.com/store/publish-apps) | Le Microsoft Store unifié vous permet de publier et de gérer toutes vos applications pour l’ensemble des appareils Windows. Personnalisez la disponibilité de votre application avec un tarif par marché, des contrôles de distribution et de visibilité et d’autres options. |

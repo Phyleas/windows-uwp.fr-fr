@@ -4,20 +4,20 @@ description: Version de votre projet UWP Unity
 ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
-ms.openlocfilehash: 064eaf42fe7d664be273cd7e2222fa5d90be1a11
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b98fba394fb326d60451f07938504e99a92d764d
+ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608864"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77089485"
 ---
-# <a name="unity-version-control-your-uwp-project"></a>Unity : Votre projet UWP de contrôle de version
+# <a name="unity-version-control-your-uwp-project"></a>Unity : Gestion de version de votre projet UWP
 
 Vous n’avez pas encore créé votre jeu Unity pour Xbox à l’aide de la plateforme Windows universelle (UWP) ?  Commencez par lire [Intégration de jeux Unity dans UWP sur Xbox](development-lanes-unity.md).
 
 Plusieurs raisons peuvent motiver votre volonté d’ajouter des parties de votre répertoire UWP généré à la gestion de version, notamment l’ajout de dépendances (par exemple, le Kit SDK Xbox Live).  Nous allons utiliser ce scénario comme exemple dans le cadre de ce didacticiel, et nous espérons qu’il vous sera utile pour répondre aux besoins spécifiques de votre projet.
 
-***Dédit de responsabilité : Nous allons utiliser Git en tant que notre solution de contrôle de version.  Si le vôtre est différent, les concepts doivent toujours traduire.***
+***Exclusion de responsabilité : nous allons utiliser Git comme solution de contrôle de version.  Si les vôtres diffèrent, les concepts doivent tout de même être traduits.***
 
 Pour vous rafraîchir la mémoire, voici comment se présente actuellement le répertoire de notre jeu, ***ScrapyardPhoenix*** :
 
@@ -29,7 +29,7 @@ Et voici à quoi ressemble notre répertoire UWP :
 
 Dans ce répertoire, un seul dossier nous intéresse : le dossier ***ScrapyardPhoenix*** (insérez le nom de votre jeu ici).  Tous les autres éléments peuvent être ignorés dans notre gestion de version.
 
-***Connaissez pas exactement quel un fichier .gitignore est ?  Consultez [gitignore](https://git-scm.com/docs/gitignore).***
+***Vous ne connaissez pas ce qu’est un fichier. gitignore ?  Consultez [gitignore](https://git-scm.com/docs/gitignore).***
 
     ##################################################################
     # The original .gitignore file can be found at
@@ -51,19 +51,19 @@ Nous allons sélectionner quelques fichiers et dossiers différents dans le doss
 
 ## <a name="folders"></a>Dossiers  
 
-`Assets` | ***Inclure*** | Contient des images de Microsoft Store  
-`Data`   | ***Ignorer*** | Où Unity compile votre projet (scènes, nuanceurs, Scripts, Prefabs, etc.).  
-`Dependencies` | ***Inclure*** | Ce dossier est un que j’ai créé pour conserver toutes les dépendances UWP dans (par exemple, XboxLiveSDK.dll)  
-`Properties` | ***Inclure*** | Contient des paramètres plus avancés qui peuvent être modifiés par le développeur  
-`Unprocessed` | ***Ignorer*** | Contient Unity `.dll` et `.pdb` fichiers  
+`Assets` | ***inclure*** | Contient des images Microsoft Store  
+`Data`   | ***Ignorer*** | Où Unity compile votre projet en (scènes, nuanceurs, scripts, Prefabs, etc.)  
+`Dependencies` | ***inclure*** | Il s’agit d’un dossier que j’ai créé pour conserver toutes les dépendances UWP dans (par exemple, XboxLiveSDK. dll)  
+`Properties` | ***inclure*** | Contient des paramètres plus avancés qui peuvent être modifiés par le développeur  
+`Unprocessed` | ***Ignorer*** | Contient les fichiers Unity `.dll` et `.pdb`  
 
-## <a name="files"></a>Fichiers  
+## <a name="files"></a>Files  
 
-`App.cs` | ***Inclure*** | Point d’entrée pour votre application UWP. Cela peut être modifié et étendu avec d’autres fichiers sources  
-`Package.appxmanifest` | ***Inclure*** | Fichier manifeste source package d’application pour votre AppX  
-`project.json` | ***Inclure*** | Décrit les packages NuGet votre `*.csproj` dépend  
-`ScrapyardPhoenix.csproj` | ***Inclure*** | Décrit votre cible de build UWP ; Si vous ajoutez des dépendances supplémentaires à votre UWP du projet, cela `*.csproj` fichier contiendra ces informations  
-`ScrapyardPhoenix.csproj.user` | ***Ignorer*** | Ce fichier contient des informations de l’utilisateur local
+`App.cs` | ***inclure*** | Point d’entrée pour votre application UWP ; Cela peut être modifié et étendu avec d’autres fichiers sources.  
+`Package.appxmanifest` | ***inclure*** | Fichier source du manifeste du package d’application pour votre package. msix ou. AppX  
+`project.json` | ***inclure*** | Décrit les packages NuGet dont dépend votre `*.csproj`  
+`ScrapyardPhoenix.csproj` | ***inclure*** | Décrit votre cible de génération UWP ; Si vous ajoutez des dépendances supplémentaires à votre projet UWP, ce `*.csproj` fichier contient ces informations.  
+`ScrapyardPhoenix.csproj.user` | ***Ignorer*** | Ce fichier contient des informations sur l’utilisateur local
 
 ## <a name="resulting-gitignore"></a>Fichier .gitignore obtenu
 
@@ -99,6 +99,6 @@ Ajoutez des dépendances à des DLL et des WINMD en les plaçant dans votre doss
 
 ***ScrapyardPhoenix (Windows universel)*** est le projet auquel vous ajoutez une référence, par exemple, le Kit SDK Xbox Live.
 
-## <a name="see-also"></a>Voir également
+## <a name="see-also"></a>Voir aussi
 - [Intégration de jeux existants dans Xbox](development-lanes-landing.md)
 - [UWP sur Xbox One](index.md)

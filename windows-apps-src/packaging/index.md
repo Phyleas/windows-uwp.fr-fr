@@ -6,19 +6,19 @@ ms.date: 07/22/2019
 ms.topic: article
 keywords: windows 10, uwp, création de package
 ms.localizationpriority: medium
-ms.openlocfilehash: d067511e4ceb5aaf072aabf8f74ccf186a7787dc
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: bb772007cd5c4391634f9df6ba0b6d2037a7b5de
+ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682674"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77089475"
 ---
 # <a name="packaging-apps"></a>Empaquetage d’applications
 
-Cette section contient des liens vers des articles sur l’empaquetage d’applications de plateforme Windows universelle (UWP) dans des packages d’applications MSIX et AppX en vue de les déployer et les installer. Certains de ces liens redirigent vers les articles appropriés de la [documentation MSIX](https://docs.microsoft.com/windows/msix/).
+Cette section contient des liens vers des articles sur l’empaquetage d’applications de plateforme Windows universelle (UWP) dans des packages d’applications MSIX et .appx en vue de les déployer et les installer. Certains de ces liens redirigent vers les articles appropriés de la [documentation MSIX](https://docs.microsoft.com/windows/msix/).
 
 > [!NOTE]
-> Le format d’empaquetage d’application d’origine pour les applications UWP dans Windows 10 s’appelait AppX. À partir de Windows 10, version 1809, ce format d’empaquetage a été renommé MSIX et a été étendu pour prendre en charge tous les types d’applications Windows, notamment les applications de bureau .NET et C++/Win32. La prise en charge de MSIX est aussi étendue aux versions antérieures de Windows. Pour plus d’informations, consultez la [documentation MSIX](https://docs.microsoft.com/windows/msix/).
+> Le format d’empaquetage d’application d’origine pour les applications UWP dans Windows 10 était .appx. À partir de Windows 10, version 1809, ce format d’empaquetage a été renommé .msix et a été étendu pour prendre en charge tous les types d’applications Windows, notamment les applications de bureau .NET et C++/Win32. La prise en charge de MSIX est aussi étendue aux versions antérieures de Windows. Pour plus d’informations, consultez la [documentation MSIX](https://docs.microsoft.com/windows/msix/).
 
 | Rubrique | Description |
 |-------|-------------|

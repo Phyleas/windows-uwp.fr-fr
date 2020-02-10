@@ -1,24 +1,24 @@
 ---
 title: Utilisation de MRT pour les jeux et applications de bureau converties
-description: En incluant votre application ou jeu .NET ou Win32 dans un package AppX, vous pouvez exploiter le système de gestion des ressources pour charger des ressources d’application adaptées au contexte d’exécution. Cette rubrique détaillée décrit ces techniques.
+description: En empaquetant votre application ou votre jeu .NET ou Win32 sous la forme d’un package. msix ou. AppX, vous pouvez tirer parti du système de gestion des ressources pour charger les ressources d’application adaptées au contexte d’exécution. Cette rubrique détaillée décrit ces techniques.
 ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, uwp, mrt, pri. ressources, jeux, centennial, desktop app converter, interface utilisateur multilingue, assembly satellite
 ms.localizationpriority: medium
-ms.openlocfilehash: 0425e7bb00e4a5be848443aa278ebaad1706cb30
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: c753e9437c76c89ac6af8cedcb1f954d1ce56fe3
+ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75683912"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77089446"
 ---
 # <a name="use-the-windows-10-resource-management-system-in-a-legacy-app-or-game"></a>Utiliser le système de gestion des ressources Windows 10 dans une application ou un jeu hérité
 
-Les applications et les jeux .NET et Win32 sont souvent traduits dans différentes langues, agrandissant ainsi leur marché global. Pour plus d’informations sur la proposition de valeur de la localisation de votre application, consultez [Internationalisation et localisation](../design/globalizing/globalizing-portal.md). En empaquetant votre application ou votre jeu .NET ou Win32 en tant que package MSIX ou AppX, vous pouvez tirer parti du système de gestion des ressources pour charger les ressources d’application adaptées au contexte d’exécution. Cette rubrique détaillée décrit ces techniques.
+Les applications et les jeux .NET et Win32 sont souvent traduits dans différentes langues, agrandissant ainsi leur marché global. Pour plus d’informations sur la proposition de valeur de la localisation de votre application, consultez [Internationalisation et localisation](../design/globalizing/globalizing-portal.md). En empaquetant votre application ou votre jeu .NET ou Win32 sous la forme d’un package. msix ou. AppX, vous pouvez tirer parti du système de gestion des ressources pour charger les ressources d’application adaptées au contexte d’exécution. Cette rubrique détaillée décrit ces techniques.
 
 Il existe plusieurs façons de localiser une application Win32 traditionnelle, mais Windows 8 a introduit un [nouveau système de gestion des ressources](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10)) qui fonctionne sur l’ensemble des langages de programmation et des types d’applications et fournit des fonctionnalités supplémentaires et allant au-delà de la simple localisation. Ce système est appelé « MRT » dans cette rubrique. Historiquement, cela signifiait « Modern Resource Technology », mais le terme « Modern » a été abandonné. Le gestionnaire de ressources peut également être appelé MRM (Gestionnaire de ressources modernes) ou PRI (Index de ressource de package).
 
-Combiné au déploiement basé sur MSIX ou AppX (par exemple, à partir de l’Microsoft Store), MRT peut fournir automatiquement les ressources les plus pertinentes pour un utilisateur/appareil donné, ce qui réduit le téléchargement et l’installation de la taille de votre application. Cette réduction de la taille peut être significative pour les applications contenant une grande quantité de contenu localisé, et peut relever de l'ordre de plusieurs *gigaoctets* pour les jeux AAA. MRT confère des avantages supplémentaires, comme des listes localisées dans l’interpréteur de commandes Windows et le Microsoft Store, la logique de secours automatique lorsque la langue par défaut d’un utilisateur ne correspond pas à vos ressources disponibles.
+Combiné au déploiement basé sur MSIX ou. AppX (par exemple, à partir de l’Microsoft Store), MRT peut automatiquement fournir les ressources les plus applicables pour un utilisateur/appareil donné, ce qui réduit le téléchargement et l’installation de la taille de votre application. Cette réduction de la taille peut être significative pour les applications contenant une grande quantité de contenu localisé, et peut relever de l'ordre de plusieurs *gigaoctets* pour les jeux AAA. MRT confère des avantages supplémentaires, comme des listes localisées dans l’interpréteur de commandes Windows et le Microsoft Store, la logique de secours automatique lorsque la langue par défaut d’un utilisateur ne correspond pas à vos ressources disponibles.
 
 Ce document décrit l’architecture haut niveau de MRT et fournit un guide de portage pour vous aider à migrer des applications héritées Win32 vers MRT avec des modifications de code minimales. Une fois la migration vers MRT effectuée, les avantages supplémentaires (par exemple, la possibilité de segmenter les ressources par facteur de montée ou par thème de système) seront disponibles aux développeurs. Veuillez noter que la localisation basée sur MRT fonctionne à la fois pour les applications UWP et les applications Win32 traitées par le pont de bureau (également appelée « Centennial »).
 
@@ -26,29 +26,29 @@ Dans de nombreux cas, vous pouvez continuer d'utiliser vos formats de localisati
 
 <table>
 <tr>
-<th>Professionnelle</th>
+<th>Travail</th>
 <th>Avantage</th>
 <th>Coût estimé</th>
 </tr>
 <tr>
 <td>Localiser le manifeste du package</td>
 <td>Travail minimal requis pour que votre contenu localisé apparaisse dans l’interpréteur de commandes Windows et dans le Microsoft Store</td>
-<td>Petit</td>
+<td>Petite</td>
 </tr>
 <tr>
 <td>Utilisez MRT pour identifier et localiser les ressources</td>
 <td>Condition préalable pour minimiser les tailles de téléchargement et de l’installation ; secours automatique de la langue</td>
-<td>Moyen</td>
+<td>Moyenne</td>
 </tr>
 <tr>
 <td>Créer des packs de ressources</td>
 <td>Étape finale pour réduire les tailles de téléchargement et d'installation</td>
-<td>Petit</td>
+<td>Petite</td>
 </tr>
 <tr>
 <td>Migration vers les API et les formats de ressources MRT</td>
 <td>Tailles de fichiers beaucoup plus petites (selon la technologie de ressource existante)</td>
-<td>Grand</td>
+<td>Grande</td>
 </tr>
 </table>
 
@@ -207,7 +207,7 @@ Si vous souhaitez utiliser le concepteur dans Visual Studio :
 
 Une fois que les valeurs sont définies dans le fichier `.resw`, l’étape suivante consiste à mettre à jour le manifeste pour référencer les chaînes de ressources. Là encore, vous pouvez modifier directement un fichier XML, ou utiliser le Concepteur de manifeste de Visual Studio.
 
-Si vous modifiez directement le fichier XML, ouvrez le fichier `AppxManifest.xml` et apportez les modifications suivantes aux <span style="background-color: lightgreen">valeurs mises en surbrillance</span> ; utilisez *exactement* ce texte, et non pas un texte spécifique à votre application. Il n’est pas obligatoire d’utiliser ces noms de ressource exacts, vous pouvez choisir le vôtre, mais tout ce que vous choisissez doit correspondre exactement à l’ensemble du contenu du fichier `.resw`. Ces noms doivent correspondre aux `Names` que vous avez créés dans le fichier `.resw`, avec le préfixe `ms-resource:` et l’espace de noms `Resources/`. 
+Si vous modifiez directement le fichier XML, ouvrez le fichier `AppxManifest.xml` et apportez les modifications suivantes aux <span style="background-color: lightgreen">valeurs mises en surbrillance</span> ; utilisez *exactement* ce texte, et non pas un texte spécifique à votre application. Il n’est pas obligatoire d’utiliser ces noms de ressource exacts, vous pouvez choisir le vôtre, mais tout ce que vous choisissez doit correspondre exactement à l’ensemble du contenu du fichier &mdash;. Ces noms doivent correspondre aux `Names` que vous avez créés dans le fichier `.resw`, avec le préfixe `ms-resource:` et l’espace de noms `Resources/`. 
 
 > [!NOTE]
 > De nombreux éléments du manifeste ont été omis de cet extrait de code. ne supprimez rien.
@@ -293,7 +293,7 @@ Vous pouvez ouvrir le fichier de mappage `..\resources.map.txt` pour vérifier q
 
 Maintenant que le fichier PRI est généré, vous pouvez créer et signer le package :
 
-1. Pour créer le package d’application, exécutez la commande suivante en remplaçant `contoso_demo.appx` par le nom du fichier MSIX/AppX que vous souhaitez créer et en veillant à choisir un autre répertoire pour le fichier (cet exemple utilise le répertoire parent ; il peut se trouver n’importe où, mais **ne doit pas** être le répertoire du projet).
+1. Pour créer le package d’application, exécutez la commande suivante en remplaçant `contoso_demo.appx` par le nom du fichier. msix/. AppX que vous souhaitez créer et en veillant à choisir un autre répertoire pour le fichier (cet exemple utilise le répertoire parent ; il peut se trouver n’importe où, mais **ne doit pas** être le répertoire du projet).
 
     ```CMD
     makeappx pack /m AppXManifest.xml /f ..\resources.map.txt /p ..\contoso_demo.appx /o
@@ -317,7 +317,7 @@ Maintenant que le fichier PRI est généré, vous pouvez créer et signer le pac
     ```
 
     Vous pouvez saisir `signtool sign /?` pour voir ce que fait chaque paramètre, mais pour résumer :
-      * `/fd` définit l’algorithme de synthèse de fichiers (SHA256 est la valeur par défaut pour AppX)
+      * `/fd` définit l’algorithme de synthèse de fichiers (SHA256 est la valeur par défaut pour. AppX)
       * `/a` sélectionne automatiquement le meilleur certificat
       * `/f` spécifie le fichier d’entrée qui contient le certificat de signature
 
@@ -349,7 +349,7 @@ Pour utiliser Windows Explorer :
 3. Choisissez `Local Machine`, puis cliquez sur `Next`
 4. Acceptez l’invite d’élévation de l’administrateur du contrôle de compte d’utilisateur, si elle apparaît, puis cliquez sur `Next`
 5. Entrez le mot de passe de la clé privée, le cas échéant, puis cliquez sur `Next`
-6. Sélectionnez `Place all certificates in the following store`.
+6. Sélectionnez `Place all certificates in the following store`
 7. Cliquez sur `Browse`, choisissez le dossier `Trusted People` (et **non pas** « Éditeurs approuvés »)
 8. Cliquez sur `Next`, puis `Finish`
 
@@ -433,11 +433,11 @@ Pour tester les nouvelles modifications localisées, ajoutez simplement une nouv
 1. Exécutez l'application `Settings` (`Windows + I`)
 2. Accédez à `Time & language`
 3. Accédez à `Region & language`
-4. Cliquez sur `Add a language`.
+4. Cliquez sur `Add a language`
 5. Saisissez (ou sélectionnez) la langue souhaitée (par ex. `Deutsch` ou `German`)
  * S’il existe des sous-langues, choisissez celle que vous souhaitez (par ex., `Deutsch / Deutschland`)
 6. Sélectionnez la langue dans la liste des langues
-7. Cliquez sur `Set as default`.
+7. Cliquez sur `Set as default`
 
 Maintenant, ouvrez le menu Démarrer et recherchez votre application : vous verrez des valeurs localisées pour la langue sélectionnée (les autres applications peuvent également apparaître localisées). Si vous ne voyez pas le nom localisé immédiatement, patientez quelques minutes jusqu'à ce que le cache du menu Démarrer soit réactualisé. Pour revenir à votre langue maternelle, définissez-la en tant que langue par défaut dans la liste des langues. 
 
@@ -578,7 +578,7 @@ Veuillez noter que le code ne demande **pas** un dossier de langue spécifique -
 
 #### <a name="loading-net-resources"></a>Chargement des ressources .NET
 
-Étant donné que .NET dispose d’un mécanisme intégré pour rechercher et charger des ressources (appelées « Assemblys satellites »), aucun code explicite n'est à remplacer comme dans l’exemple synthétique ci-dessus : dans .NET, vous devez simplement placer vos DLL de ressource dans les répertoires appropriés et ils seront automatiquement recherchés. Quand une application est empaquetée en tant que MSIX ou AppX à l’aide de packs de ressources, la structure de répertoires est quelque peu différente, plutôt que de faire en sorte que les répertoires de ressources soient des sous-répertoires du répertoire principal de l’application, mais qu’ils ne soient pas du tout présents si l’utilisateur n’a pas la langue indiquée dans ses préférences). 
+Étant donné que .NET dispose d’un mécanisme intégré pour rechercher et charger des ressources (appelées « Assemblys satellites »), aucun code explicite n'est à remplacer comme dans l’exemple synthétique ci-dessus : dans .NET, vous devez simplement placer vos DLL de ressource dans les répertoires appropriés et ils seront automatiquement recherchés. Quand une application est empaquetée en tant que MSIX ou. AppX à l’aide de packs de ressources, la structure de répertoires est quelque peu différente, plutôt que de faire en sorte que les répertoires de ressources soient des sous-répertoires du répertoire principal de l’application, mais qu’ils ne soient pas du tout présents si l’utilisateur n’a pas la langue indiquée dans ses préférences). 
 
 Par exemple, imaginons une application .NET avec la disposition suivante, où tous les fichiers existent sous le dossier `MainApp` :
 
@@ -595,7 +595,7 @@ Par exemple, imaginons une application .NET avec la disposition suivante, où to
 </pre>
 </blockquote>
 
-Après la conversion vers AppX, la disposition ressemblera à ceci, en supposant que `en-US` est la langue par défaut et que l’utilisateur a répertorié l’allemand et le français dans sa liste de langues :
+Après la conversion en. AppX, la disposition ressemblera à ce qui suit, en supposant `en-US` était la langue par défaut et que l’utilisateur a à la fois l’allemand et le français répertoriés dans leur liste de langues :
 
 <blockquote>
 <pre>
@@ -630,7 +630,7 @@ static class PriResourceResolver
 
     var resource = ResourceManager.Current.MainResourceMap.GetSubtree("Files")[fileName];
 
-    // Note use of 'UnsafeLoadFrom' - this is required for apps installed with AppX, but
+    // Note use of 'UnsafeLoadFrom' - this is required for apps installed with .appx, but
     // in general is discouraged. The full sample provides a safer wrapper of this method
     return Assembly.UnsafeLoadFrom(resource.Resolve(resourceContext).ValueAsString);
   }

@@ -5,15 +5,15 @@ ms.topic: article
 ms.date: 06/27/2019
 ms.author: mcleans
 author: mcleanbyron
-keywords: Windows 10, UWP, Windows Forms, WPF, îlots XAML
+keywords: windows 10, uwp, windows forms, wpf, xaml islands, îles xaml
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: de84cbb2e1927d9426eefaaf7b0d70d604427da1
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 397c301564c0d4799c6b41db209da9659725103d
+ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75683812"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77089305"
 ---
 # <a name="tutorial-modernize-a-wpf-app"></a>Didacticiel : moderniser une application WPF 
 
@@ -30,7 +30,7 @@ Ce didacticiel nécessite les compétences de développement suivantes :
 * Connaissance de base C# de et XAML.
 * Connaissances de base de UWP.
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Overview
 
 Ce didacticiel fournit le code pour une application métier WPF simple nommée dépenses contoso. Dans le scénario fictif du didacticiel, contoso dépenses est une application interne utilisée par les responsables de Contoso Corporation pour suivre les dépenses soumises par leurs rapports. Les responsables sont désormais équipés d’appareils tactiles et ils souhaitent utiliser l’application Contoso depenses sans clavier ni souris. Malheureusement, la version actuelle de l’application n’est pas conviviale.
 
@@ -51,12 +51,12 @@ Dans ce didacticiel, vous allez améliorer les dépenses de contoso avec les nou
 * Intégrer des cartes adaptatives et des notifications Windows 10 dans l’application.
 * Empaquetez l’application avec MSIX et configurez un pipeline CI/CD sur Azure DevOps afin de pouvoir distribuer automatiquement de nouvelles versions de l’application aux testeurs et aux utilisateurs dès qu’elle est disponible.
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Composants requis
 
 Pour effectuer ce didacticiel, vous devez installer les composants requis suivants sur votre ordinateur de développement :
 
 * Windows 10, version 1903 (Build 18362) ou version ultérieure.
-* [Visual Studio 2019](https://www.visualstudio.com).
+* [Visual Studio 2019](https://www.visualstudio.com).
 * [Kit de développement logiciel (SDK) .net Core 3](https://dotnet.microsoft.com/download/dotnet-core/3.0) (installez la dernière version).
 
 Veillez à installer les charges de travail suivantes et les fonctionnalités facultatives avec Visual Studio 2019 :
@@ -98,9 +98,9 @@ Dans Windows 10, Microsoft a introduit le [plateforme Windows universelle (UWP)]
 
 ### <a name="msix-packaging"></a>Empaquetage MSIX
 
-[MSIX](/windows/msix/) (autrefois appelé AppX) est le modèle de Packaging moderne pour les applications Windows. MSIX prend en charge les applications UWP ainsi que les applications de bureau qui utilisent des technologies telles que Win32, WPF, Windows Forms, Java, Electron et bien plus encore. Quand vous empaquetez une application de bureau dans un package MSIX, vous pouvez publier votre application sur le Microsoft Store. Votre application de bureau obtient également l’identité du package lors de son installation, ce qui permet à votre application de bureau d’utiliser un ensemble plus large d’API WinRT.
+[MSIX](/windows/msix/) est le modèle d’empaquetage moderne pour les applications Windows. MSIX prend en charge les applications UWP ainsi que les applications de bureau qui utilisent des technologies telles que Win32, WPF, Windows Forms, Java, Electron et bien plus encore. Quand vous empaquetez une application de bureau dans un package MSIX, vous pouvez publier votre application sur le Microsoft Store. Votre application de bureau obtient également l’identité du package lors de son installation, ce qui permet à votre application de bureau d’utiliser un ensemble plus large d’API WinRT.
 
-Pour plus d’informations, voir ces articles :
+Pour plus d’informations, consultez les articles suivants :
 
 * [Applications de bureau de package](/windows/uwp/porting/desktop-to-uwp-root)
 * [En coulisses de votre application de bureau empaquetée](/windows/uwp/porting/desktop-to-uwp-behind-the-scenes)

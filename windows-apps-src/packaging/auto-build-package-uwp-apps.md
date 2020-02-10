@@ -3,15 +3,15 @@ title: Configuration de builds automatisées pour votre application UWP
 description: Configuration de builds automatisées pour produire des packages de chargement indépendant et/ou pour le Store.
 ms.date: 07/17/2019
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
-ms.openlocfilehash: b7d38464a26af0df03c1aa381b16fbddf1de55cc
-ms.sourcegitcommit: e0644abf76a2535ea24758d1904ff00dfcd86a51
+ms.openlocfilehash: 70415c9f3d58625cfdc651ec67c8a9f37c23cffa
+ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72008041"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77089495"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>Configuration de builds automatisées pour votre application UWP
 
@@ -93,14 +93,14 @@ Cette tâche compile toutes les solutions qui se trouvent dans le dossier de tra
 |--------------------|---------|---------------|
 | AppxPackageDir | $(Build.ArtifactStagingDirectory)\AppxPackages | Définit le dossier de stockage des artefacts générés. |
 | AppxBundlePlatforms | $(Build.BuildPlatform) | Vous permet de définir les plateformes à inclure dans le bundle. |
-| AppxBundle | Always | Crée un fichier. msixbundle/. appxbundle avec les fichiers. msix/. AppX pour la plateforme spécifiée. |
+| AppxBundle | Toujours | Crée un fichier. msixbundle/. appxbundle avec les fichiers. msix/. AppX pour la plateforme spécifiée. |
 | UapAppxPackageBuildMode | StoreUpload | Génère le fichier. msixupload/. appxupload et le dossier **_Test** pour chargement. |
-| UapAppxPackageBuildMode | CI | Génère uniquement le fichier. msixupload/. appxupload. |
+| UapAppxPackageBuildMode | Élément de configuration | Génère uniquement le fichier. msixupload/. appxupload. |
 | UapAppxPackageBuildMode | SideloadOnly | Génère le dossier **_Test** pour chargement uniquement. |
 | AppxPackageSigningEnabled | true | Active la signature de package. |
 | PackageCertificateThumbprint | Empreinte de certificat | Cette valeur **doit** correspondre à l’empreinte numérique du certificat de signature ou être une chaîne vide. |
-| PackageCertificateKeyFile | Path | Chemin d’accès du certificat à utiliser. Elle est extraite des métadonnées de fichier sécurisé. |
-| PackageCertificatePassword | Mot de passe | Mot de passe de la clé privée dans le certificat. Nous vous recommandons de stocker votre mot de passe dans [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) et de lier le mot de passe au [groupe de variables](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups). Vous pouvez passer la variable à cet argument. |
+| PackageCertificateKeyFile | Chemin d'accès | Chemin d’accès du certificat à utiliser. Elle est extraite des métadonnées de fichier sécurisé. |
+| PackageCertificatePassword | Password | Mot de passe de la clé privée dans le certificat. Nous vous recommandons de stocker votre mot de passe dans [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) et de lier le mot de passe au [groupe de variables](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups). Vous pouvez passer la variable à cet argument. |
 
 ### <a name="configure-the-build"></a>Configurer la Build
 
@@ -115,7 +115,7 @@ Si vous souhaitez générer votre solution à l’aide de la ligne de commande, 
 
 ### <a name="configure-package-signing"></a>Configurer la signature du package
 
-Pour signer le package MSIX (ou APPX), le pipeline doit récupérer le certificat de signature. Pour ce faire, ajoutez une tâche DownloadSecureFile avant la tâche VSBuild.
+Pour signer le package MSIX (ou. AppX), le pipeline doit récupérer le certificat de signature. Pour ce faire, ajoutez une tâche DownloadSecureFile avant la tâche VSBuild.
 Vous obtiendrez ainsi l’accès au certificat de signature via ```signingCert```.
 
 ```yml
@@ -148,7 +148,7 @@ Ensuite, mettez à jour la tâche VSBuild pour référencer le certificat de sig
 
 ### <a name="review-parameters"></a>Passer en revue les paramètres
 
-Les paramètres définis avec la syntaxe `$()` sont des variables définies dans la définition de build et changent dans d’autres systèmes de génération.
+Les paramètres définis avec la syntaxe `$()` sont des variables définies dans la définition de build et sont modifiés dans d’autres systèmes de génération.
 
 ![variables par défaut](images/building-screen5.png)
 
@@ -188,10 +188,10 @@ Cette erreur s’affiche car l’application qui doit apparaître dans l’offre
 
 |**Projection**|**Propriétés**|
 |-------|----------|
-|App|`<AppxBundle>Always</AppxBundle>`|
+|Application|`<AppxBundle>Always</AppxBundle>`|
 |UnitTests|`<AppxBundle>Never</AppxBundle>`|
 
-Ensuite, supprimez l’argument MSBuild `AppxBundle` de l’étape de génération.
+Ensuite, supprimez l’argument `AppxBundle` MSBuild de l’étape de génération.
 
 ## <a name="related-topics"></a>Rubriques connexes
 

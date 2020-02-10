@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 67ba9f5c9bc4a5e723eb2696d88804df5300eda0
-ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
+ms.openlocfilehash: d5014532be613e8284a1e2d6496f71b9f2b8e892
+ms.sourcegitcommit: 5002836b3c8d3e0f2970da1333ec8f42da861ae3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67468984"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77071251"
 ---
 # <a name="dialog-controls"></a>Contrôles de boîte de dialogue
 
@@ -65,7 +65,7 @@ Pour savoir quand utiliser une boîte de dialogue ou un menu volant (contrôle s
     -   Utilisez des réponses spécifiques du contenu ou de l’instruction principale, sous forme de texte de bouton. Par exemple, utilisez la question « Autorisez-vous NomApplication à accéder à votre emplacement ? », suivie des boutons Autoriser et Bloquer. Les réponses spécifiques peuvent être comprises plus rapidement, ce qui favorise une prise de décision efficace.
     - Veillez à ce que le texte des boutons d’action soit concis. Les chaînes courtes permettent à l’utilisateur de choisir de manière sûre et rapide.
     - En plus de l’action sans échec et non destructrice, vous pouvez éventuellement présenter à l’utilisateur un ou deux boutons d’action liés à l’instruction principale. Ces boutons d’action « faire » confirment le message principal de la boîte de dialogue. Utilisez les API PrimaryButton et SecondaryButton pour ajouter ces actions « faire ».
-    - Les boutons d’action « faire » doivent s’afficher à l’extrême gauche. L’action sans échec et non destructrice doit s’afficher à l’extrême droite.
+    - Les boutons d’action « faire » doivent s’afficher à l’extrême gauche. L’action sans échec et non destructrice doit s’afficher à l’extrême droite.
     - Vous pouvez éventuellement choisir de différencier l’un des trois boutons comme bouton par défaut de la boîte de dialogue. Utilisez l’API DefaultButton pour différencier l’un des boutons.  
 -   N’utilisez pas de boîtes de dialogue pour les erreurs qui sont liées à un emplacement spécifique de la page, telles que les erreurs de validation (dans les champs de mot de passe, par exemple). Utilisez plutôt le canevas de l’application afin d’afficher les erreurs insérées.
 - Utilisez la [classe ContentDialog](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog) pour créer votre expérience de boîte de dialogue. N’utilisez pas l’API MessageDialog déconseillée.
