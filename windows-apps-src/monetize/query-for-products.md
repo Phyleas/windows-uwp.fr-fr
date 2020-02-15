@@ -6,12 +6,12 @@ ms.date: 03/19/2018
 ms.topic: article
 keywords: windows 10, uwp, API de collection du Microsoft Store, afficher produits
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f6976f8161089be1f907d85e7373fc0f3474c62
-ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
+ms.openlocfilehash: a5a986896ca3b2585590e11d17219106a9043204
+ms.sourcegitcommit: 2747d9266e1678fca96d3822ce47499ca91a2c70
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/10/2020
-ms.locfileid: "77112239"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77252283"
 ---
 # <a name="query-for-products"></a>Demander des produits
 
@@ -59,7 +59,7 @@ Pour plus d’informations, consultez [Gérer les droits sur les produits à par
 | modifiedAfter     | datetime     | Si ce paramètre est spécifié, le service retourne uniquement les produits qui ont été modifiés après cette date.        | Non       |
 | parentProductId   | chaîne       | Si ce paramètre est spécifié, le service retourne uniquement les extensions correspondant à l’application spécifiée.      | Non       |
 | productSkuIds     | list&lt;ProductSkuId&gt; | Si ce paramètre est spécifié, le service retourne uniquement les produits applicables aux paires produit/référence fournies. Pour plus d’informations, voir le tableau ci-dessous.      | Non       |
-| productTypes      | liste&lt;chaîne&gt;       | Spécifie les types de produits à retourner dans les résultats de la requête. Types de produit pris en charge : **Application**, **Durable** et **UnmanagedConsumable**.     | Oui       |
+| productTypes      | liste&lt;chaîne&gt;       | Spécifie les types de produits à retourner dans les résultats de la requête. Les types de produits pris en charge sont **application**, **durable**, **Game**et **UnmanagedConsumable**.     | Oui       |
 | validityType      | chaîne       | Si ce paramètre est défini sur **All**, tous les produits d’un utilisateur sont retournés, y compris les articles arrivés à expiration. S’il est défini sur **Valid**, seuls les produits qui sont valides à ce stade sont retournés (autrement dit, ils ont un état actif, une date de début &lt; maintenant et une date de fin &gt; maintenant). | Non       |
 
 
