@@ -223,7 +223,7 @@ Vous trouverez ci-dessous un tableau qui indique les fuseaux horaires spécifiqu
 | Mayotte  |  (UTC+03:00) Nairobi |
 | Mexique  |  (UTC-06:00) Guadalajara, Mexico City, Monterrey |
 | Micronésie  |  (UTC+10:00) Guam, Port Moresby |
-| République de Moldavie  |  (UTC+02:00) Chisinau |
+| Moldova  |  (UTC+02:00) Chisinau |
 | Monaco  |  (UTC+01:00) Sarajevo, Skopje, Varsovie, Zagreb |
 | Mongolie  |  (UTC+07:00) Krasnoïarsk |
 | Monténégro  |  (UTC+01:00) Sarajevo, Skopje, Varsovie, Zagreb |
