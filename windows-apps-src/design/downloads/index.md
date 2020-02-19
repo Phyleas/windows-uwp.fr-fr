@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 4678565547616c0cee4a7961cb4a0c95fc03241b
-ms.sourcegitcommit: 85fd390b1e602707bd9342cb4b84b97ae0d8b831
+ms.openlocfilehash: 44e6f65b38faa7bd80c277d999f4e18b398bd11b
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76520454"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463871"
 ---
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>Kits de ressources et exemples de conception pour les applications UWP
 
@@ -28,7 +28,7 @@ Ces kits de ressources fournissent des contrôles et des modèles de disposition
     :::column:::
 ![image Hero](images/figma.png)
 <b>Kit de ressources Figma</b><br>
-v1905, mai 2019<br>
+WinUI 2.3, février 2020<br>
 <a href="https://aka.ms/figmatoolkit">Télécharger</a>
     :::column-end:::
     :::column:::
