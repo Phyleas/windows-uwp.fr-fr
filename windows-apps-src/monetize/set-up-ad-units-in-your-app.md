@@ -1,29 +1,32 @@
 ---
 ms.assetid: bb105fbe-bbbd-4d78-899b-345af2757720
-description: Découvrez comment ajouter application ad unité ID valeurs d’ID et de partenaires à votre application avant de soumettre votre application vers le Store.
+description: Découvrez comment ajouter l’ID d’application et les valeurs d’ID d’unité ad de l’espace partenaires à votre application avant de soumettre votre application au Windows Store.
 title: Configurer des unités publicitaires dans votre application
-ms.date: 05/11/2018
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, publicités, publicité, unités publicitaires, tests
 ms.localizationpriority: medium
-ms.openlocfilehash: b2d01434e508d4a5067ffd66bdf86b3083b43016
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 37f04e8b112df23457c46e4f535309f2fe5dd847
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57651574"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463901"
 ---
 # <a name="set-up-ad-units-in-your-app"></a>Configurer des unités publicitaires dans votre application
+
+>[!WARNING]
+> Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://aka.ms/ad-monetization-shutdown)
 
 Chaque contrôle de publicité dans votre application de plateforme Windows universelle (UWP) possède une *unité publicitaire* correspondante utilisée par nos services pour servir des publicités au contrôle. Chaque unité publicitaire se compose d’une *ID d’unité publicitaire* et d'une *ID d’application* que vous devez affecter au code dans votre application.
 
 Nous fournissons des [valeurs de test d’unité publicitaire](#test-ad-units) que vous pouvez utiliser lors des tests pour vérifier que votre application affiche les tests de publicités. Ces valeurs de test ne peuvent être utilisées que dans une version de test de votre application. Si vous essayez d’utiliser des valeurs de test dans votre application après l’avoir publiée, votre application dynamique ne recevra pas de publicités.
 
-Après avoir testé votre application UWP et que vous êtes prêt à soumettre au Partner Center, vous devez [créer une unité d’annonce en ligne](#live-ad-units) à partir de la [les publicités dans l’application](../publish/in-app-ads.md) page partenaires et de mettre à jour le code de votre application pour utiliser l’application Valeurs d’ID unité ID et ad de cette unité d’ad.
+Une fois que vous avez terminé de tester votre application UWP et que vous êtes prêt à la soumettre à l’espace partenaires, vous devez [créer une unité ad active](#live-ad-units) à partir de la page [ADS dans l’application](../publish/in-app-ads.md) dans l’espace partenaires, puis mettre à jour votre code d’application pour utiliser les valeurs ID d’application et ID d’unité Active Directory pour cette unité Active Directory.
 
 Pour plus d’informations sur l’attribution des valeurs d'ID d'application et d'ID d'unité publicitaire dans le code de votre application, consultez les articles suivants :
-* [Classe AdControl dans XAML et .NET](adcontrol-in-xaml-and--net.md)
-* [Classe AdControl au format HTML 5 et Javascript](adcontrol-in-html-5-and-javascript.md)
+* [Classe AdControl en XAML et .NET](adcontrol-in-xaml-and--net.md)
+* [Classe AdControl en HTML 5 et JavaScript](adcontrol-in-html-5-and-javascript.md)
 * [Spots](../monetize/interstitial-ads.md)
 * [Publicités natives](../monetize/native-ads.md)
 
@@ -35,34 +38,34 @@ Lors du développement de votre application, utilisez les valeurs de test d’ID
 
 ### <a name="banner-ads-using-the-adcontrol-class"></a>Bannières publicitaires (à l’aide de la classe AdControl)
 
-* ID d’unité AD : ```test```
-* ID d’application :  ```3f83fe91-d6be-434d-a0ae-7351c5a997f1```
+* ID d’unité Active Directory : ```test```
+* ID de l’application : ```3f83fe91-d6be-434d-a0ae-7351c5a997f1```
 
     > [!IMPORTANT]
     > Pour un **AdControl**, la taille d’une publicité dynamique est définie par les propriétés **Width** (largeur) et **Height** (hauteur). Pour obtenir de meilleurs résultats, vérifiez que les propriétés **Width** et **Height** de votre code font partie des [tailles de bannières publicitaires prises en charge](supported-ad-sizes-for-banner-ads.md). Les propriétés **Width** et **Height** ne changent pas en fonction de la taille d’une publicité dynamique.
 
 ### <a name="interstitial-ads-and-native-ads"></a>Spots publicitaires et publicités natives
 
-* ID d’unité AD : ```test```
-* ID d’application :  ```d25517cb-12d4-4699-8bdc-52040c712cab```
+* ID d’unité Active Directory : ```test```
+* ID de l’application : ```d25517cb-12d4-4699-8bdc-52040c712cab```
 
 <span id="live-ad-units" />
 
 ## <a name="live-ad-units"></a>Unités publicitaires dynamiques
 
-Pour obtenir une unité d’annonce en ligne à partir du centre de partenaires et l’utiliser dans votre application :
+Pour obtenir une unité ad active de l’espace partenaires et l’utiliser dans votre application :
 
-1.  [Créer une unité ad](../publish/in-app-ads.md#create-ad-unit) sur le **les publicités dans l’application** page dans l’espace partenaires. Veillez à spécifier le type d’unité publicitaire approprié au contrôle de publicité que vous utilisez dans votre app.
+1.  [Créez une unité ad](../publish/in-app-ads.md#create-ad-unit) sur la page **ADS dans l’application** dans l’espace partenaires. Veillez à spécifier le type d’unité publicitaire approprié au contrôle de publicité que vous utilisez dans votre app.
     > [!NOTE]
     > Vous pouvez, si vous le souhaitez, activer la médiation publicitaire pour votre unité publicitaire en configurant ces paramètres dans la section [Paramètres de médiation](../publish/in-app-ads.md#mediation). La médiation publicitaire vous permet d’optimiser vos revenus publicitaires et vos capacités de promotion d’application en affichant des publicités issues de plusieurs réseaux publicitaires, y compris les publicités d’autres réseaux publicitaires payés et les publicités des campagnes de promotion d’applications Microsoft. Par défaut, nous choisissons automatiquement les paramètres de médiation de publicité de votre application à l’aide d’algorithmes d’apprentissage machine afin de vous aider à optimiser vos revenus publicitaires sur les marchés pris en charge par votre application, mais vous pouvez éventuellement configurer manuellement vos paramètres de médiation.
 
-2.  Une fois que vous créez la nouvelle unité d’Active Directory, récupérer le **ID d’Application** et **ID d’unité Ad** pour l’unité d’ad dans la table d’unités disponibles ad dans le **Monetize** &gt;  **Dans l’application publicités** page.
+2.  Une fois que vous avez créé la nouvelle unité ad, récupérez l’ID de l' **application** et l' **ID** de l’unité ad pour l’unité ad dans la table des unités ad disponibles dans la page des **publicités de** **monétis** &gt; dans l’application.
     > [!NOTE]
-    > Les valeurs d'ID d’application pour les unités publicitaires de test et les unités publicitaires dynamiques UWP ont des formats différents. Les valeurs d’ID d'application tests sont des GUID. Lorsque vous créez une unité d’ad UWP en direct dans l’espace partenaires, la valeur d’ID application pour l’unité ad correspond toujours à l’ID de Store pour votre application (un exemple de valeur d’ID de Store ressemble à 9NBLGGH4R315).
+    > Les valeurs d'ID d’application pour les unités publicitaires de test et les unités publicitaires dynamiques UWP ont des formats différents. Les valeurs d’ID d'application tests sont des GUID. Lorsque vous créez une unité ad UWP en temps réel dans l’espace partenaires, la valeur de l’ID d’application pour l’unité ad correspond toujours à l’ID de magasin de votre application (un exemple de valeur d’ID de magasin ressemble à 9NBLGGH4R315).
 
 3.  Affectez les valeurs ID d’application et ID d’unité publicitaire au code de votre application. Pour plus d’informations, consultez les articles suivants :
-    * [Classe AdControl dans XAML et .NET](adcontrol-in-xaml-and--net.md)
-    * [Classe AdControl au format HTML 5 et Javascript](adcontrol-in-html-5-and-javascript.md)
+    * [Classe AdControl en XAML et .NET](adcontrol-in-xaml-and--net.md)
+    * [Classe AdControl en HTML 5 et JavaScript](adcontrol-in-html-5-and-javascript.md)
     * [Spots](../monetize/interstitial-ads.md)
     * [Publicités natives](../monetize/native-ads.md)
 
@@ -77,8 +80,8 @@ Vous pouvez utiliser plusieurs contrôles de bannière, spot et publicité nativ
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Classe AdControl dans XAML et .NET](adcontrol-in-xaml-and--net.md)
-* [Classe AdControl au format HTML 5 et Javascript](adcontrol-in-html-5-and-javascript.md)
+* [Classe AdControl en XAML et .NET](adcontrol-in-xaml-and--net.md)
+* [Classe AdControl en HTML 5 et JavaScript](adcontrol-in-html-5-and-javascript.md)
 * [Spots](interstitial-ads.md)
 * [Publicités natives](native-ads.md)
 

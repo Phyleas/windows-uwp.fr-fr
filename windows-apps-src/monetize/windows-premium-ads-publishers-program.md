@@ -1,22 +1,25 @@
 ---
 description: Le Programme Éditeurs de publicités Premium Windows consiste en une collection organisée d'applications compatibles avec la publicité. Il s'associe à des réseaux publicitaires pouvant cibler des publicités de haute qualité et à haut rendement. Les applications de ce programme sont les meilleures de leur catégorie en termes d’utilisation, d’engagement et d’expérience.
-title: Programme Éditeurs de publicités Premium Windows
-ms.date: 09/08/2017
+title: Programme Windows Premium pour les éditeurs de publicité
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, annonces, publicités
 ms.localizationpriority: medium
-ms.openlocfilehash: 4db99097516fcead384af6fc9e4c588707b96d41
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: ba5708b953efff3b4a7c52286ae1a74c43d3d211
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684440"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463751"
 ---
-# <a name="windows-premium-ads-publishers-program"></a>Programme Éditeurs de publicités Premium Windows
+# <a name="windows-premium-ads-publishers-program"></a>Programme Windows Premium pour les éditeurs de publicité
 
-Dans le cadre de nos efforts permanents pour aider les développeurs Windows à monétiser leurs applications grâce à la publicité, nous vous proposons le [Programme Éditeurs de publicités Premium Windows](https://www.windowspremiumapps.com). Il s’agit d’une collection organisée d’applications et de jeux parmi les meilleurs de leur catégorie en termes d’utilisation, d’engagement et d’expérience. Ces applications et ces jeux sont certifiés visibles et ont un public d’utilisateurs identifiables extrêmement engagés répartis dans le monde entier.
+>[!WARNING]
+> Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://aka.ms/ad-monetization-shutdown)
 
-Les annonceurs de nos réseaux de partenaires publicitaires peuvent identifier ces applications séparément et servir des annonces de haute qualité et à haut rendement exclusivement pour elles afin de bénéficier d'une rentabilité très élevée de leurs campagnes de publicité. Pour les développeurs, cela signifie que les applications qui font partie de ce programme peuvent dégager davantage de revenus publicitaires.
+Dans le cadre de nos efforts continus pour aider les développeurs Windows à monétiser leurs applications grâce à la publicité, nous vous proposons le [Programme Windows Premium pour les éditeurs de publicité](https://www.windowspremiumapps.com). Il s’agit d’une collection sélective d’applications et de jeux prenant en charge la publicité, tous excellents en termes d’expérience, d’engagement et d’utilisation. Ces applications et ces jeux sont certifiés visibles et ont un public d’utilisateurs identifiables extrêmement engagés répartis dans le monde entier.
+
+Les annonceurs de nos réseaux de partenaires publicitaires peuvent distinguer ces applications et leur servir en exclusivité des annonces de première qualité, à haute rentabilité, en vue d'obtenir le meilleur retour sur investissement de leurs campagnes. Pour les développeurs, cela signifie que les applications qui font partie de ce programme peuvent dégager davantage de revenus publicitaires.
 
 ## <a name="how-does-microsoft-add-apps-to-this-program"></a>Comment ajoutons-nous des applications à ce programme chez Microsoft ? 
 

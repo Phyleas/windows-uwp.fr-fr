@@ -2,30 +2,33 @@
 ms.assetid: 7a61c328-77be-4614-b117-a32a592c9efe
 description: Découvrez les solutions aux problèmes de développement courants liés aux bibliothèques de publicités Microsoft dans les applications JavaScript/HTML.
 title: Guide de résolution des problèmes pour HTML et JavaScript
-ms.date: 08/23/2017
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, annonces publicitaires, publicité, AdControl, résolution des problèmes, HTML, javascript
 ms.localizationpriority: medium
-ms.openlocfilehash: 01e2781b64629e24cba9b4ac02629a79ee4d998b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: fb804c312962fc349607b9d55176bfd7279cf8e9
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57633234"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463791"
 ---
 # <a name="html-and-javascript-troubleshooting-guide"></a>Guide de résolution des problèmes pour HTML et JavaScript
 
+>[!WARNING]
+> Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://aka.ms/ad-monetization-shutdown)
+
 Cette rubrique contient des solutions aux problèmes de développement courants liés aux bibliothèques de publicités Microsoft dans les applications JavaScript/HTML.
 
-* [HTML](#html)
-  * [Classe AdControl n’apparaissent ne pas](#html-notappearing)
-  * [Fait clignoter et disparaît de la boîte noire](#html-blackboxblinksdisappears)
-  * [Annonces pas l’actualisation](#html-adsnotrefreshing)
+* [PAGE](#html)
+  * [Classe AdControl ne s’affiche pas](#html-notappearing)
+  * [La boîte noire clignote et disparaît](#html-blackboxblinksdisappears)
+  * [Annonces non actualisées](#html-adsnotrefreshing)
 
 * [JavaScript](#js)
-  * [Classe AdControl n’apparaissent ne pas](#js-adcontrolnotappearing)
-  * [Fait clignoter et disparaît de la boîte noire](#js-blackboxblinksdisappears)
-  * [Annonces pas l’actualisation](#js-adsnotrefreshing)
+  * [Classe AdControl ne s’affiche pas](#js-adcontrolnotappearing)
+  * [La boîte noire clignote et disparaît](#js-blackboxblinksdisappears)
+  * [Annonces non actualisées](#js-adsnotrefreshing)
 
 ## <a name="html"></a>HTML
 
@@ -46,7 +49,7 @@ Cette rubrique contient des solutions aux problèmes de développement courants 
     </head>
     ```
 
-3.  Vérifiez l’ID de l’application et l’ID d’unité publicitaire. Ces ID doit correspondre à l’ID d’application et l’ID d’unité ad que vous avez obtenue dans l’espace partenaires. Pour plus d’informations, voir [Configurer des unités publicitaires dans votre application](set-up-ad-units-in-your-app.md#live-ad-units).
+3.  Vérifiez l’ID de l’application et l’ID d’unité publicitaire. Ces ID doivent correspondre à l’ID d’application et à l’ID d’unité Active Directory que vous avez obtenus dans l’espace partenaires. Pour plus d’informations, voir [Configurer des unités publicitaires dans votre application](set-up-ad-units-in-your-app.md#live-ad-units).
 
     > [!div class="tabbedCodeSnippets"]
     ``` html
@@ -271,7 +274,7 @@ Cette rubrique contient des solutions aux problèmes de développement courants 
     });  
     ```
 
-4.  Vérifiez l’ID de l’application et l’ID d’unité publicitaire. Ces ID doit correspondre à l’ID d’application et l’ID d’unité ad que vous avez obtenue dans l’espace partenaires. Pour plus d’informations, voir [Configurer des unités publicitaires dans votre application](set-up-ad-units-in-your-app.md#live-ad-units).
+4.  Vérifiez l’ID de l’application et l’ID d’unité publicitaire. Ces ID doivent correspondre à l’ID d’application et à l’ID d’unité Active Directory que vous avez obtenus dans l’espace partenaires. Pour plus d’informations, voir [Configurer des unités publicitaires dans votre application](set-up-ad-units-in-your-app.md#live-ad-units).
 
     > [!div class="tabbedCodeSnippets"]
     ``` javascript

@@ -2,18 +2,21 @@
 Description: Questions courantes sur les campagnes de publicité
 title: Questions courantes sur les campagnes de publicité
 ms.assetid: EAF7CC74-7DE4-4D11-B9A6-29C6EA6E734B
-ms.date: 10/31/2018
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c44f93676fd0324ef82ad7b33832bb6653409cda
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: be6759ea808e230d3cf504caf03763123babd870
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75685163"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463731"
 ---
 # <a name="common-questions-about-ad-campaigns"></a>Questions courantes sur les campagnes de publicité
+
+>[!WARNING]
+> Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://aka.ms/ad-monetization-shutdown)
 
 ### <a name="how-much-does-it-cost-to-run-an-ad-for-my-app"></a>Combien coûte l’exécution d’une publicité pour mon application ?
 
@@ -21,7 +24,7 @@ Cela dépend de vous, mais n’oubliez pas : plus vous dépensez, plus le nombre
 
 ### <a name="how-can-i-increase-the-maximum-monthly-budget-amount-allowed-for-my-ad-campaign"></a>Comment puis-je augmenter le budget mensuel maximum autorisé pour ma campagne de publicité ?
 
-Si vous prévoyez de consacrer plus de 10 000 $ par mois à vos campagnes de publicité, contactez [aiacare@microsoft.com](mailto:aiacare@microsoft.com). Nous vous attribuerons un compte Premium, qui permet de dépenser jusqu’à 50 000 $ par campagne. Un compte premium offre également des fonctionnalités supplémentaires, comme la définition des dates de début et de fin de la campagne et l’URL cible de votre campagne.
+Si vous prévoyez de consacrer plus de 10 000 $ par mois à vos campagnes de publicité, contactez [aiacare@microsoft.com](mailto:aiacare@microsoft.com). Nous vous attribuerons un compte premium, qui permet de dépenser jusqu’à 50 000 $ par campagne. Un compte premium offre également des fonctionnalités supplémentaires, comme la définition des dates de début et de fin de la campagne et l’URL cible de votre campagne.
 
 ### <a name="can-i-run-ads-for-one-of-my-apps-in-my-other-apps"></a>Puis-je exécuter des publicités pour l’une de mes applications dans mes autres applications ?
 
@@ -39,7 +42,7 @@ Si vous utilisez un des modèles de publicité par défaut, vous pouvez choisir 
 
 Votre publicité apparaît dans les applications qui utilisent la même évaluation de l'âge et la même version de système d'exploitation que votre application. Vous définissez ces propriétés lorsque vous publiez votre application dans la Microsoft Store. Pour les campagnes « universelles », vos annonces apparaîtront également dans MSN.com, Outlook.com, Skype et d'autres propriétés premium de Microsoft.
 
-Les campagnes de publicité sont actuellement prises en charge dans les pays et régions suivants :
+Les campagnes de publicité sont actuellement prises en charge dans les pays et régions suivants :
 
 Afrique du Sud, Algérie, Allemagne, Arabie saoudite, Argentine, Australie, Autriche, Bahamas, Bahreïn, Barbade, Belgique, Belize, Bolivie, Brésil, Canada, Chili, Chine, Colombie, Danemark, Égypte, El Salvador, Émirats arabes unis, Équateur, Espagne, États-Unis, Finlande, France, Guatemala, Haïti, Honduras, Hong Kong (R.A.S.), Inde, Indonésie, Irak, Irlande, Italie, Jamaïque, Jordanie, Koweït, Liban, Malaisie, Maroc, Mexique, Nicaragua, Norvège, Nouvelle-Zélande, Oman, Panama, Paraguay, Pays-Bas, Pérou, Philippines, Porto Rico, Qatar, République dominicaine, Royaume-Uni, Singapour, Suède, Suisse, Taïwan, Thaïlande, Trinité-et-Tobago, Tunisie, Uruguay, Venezuela, Vietnam.
 

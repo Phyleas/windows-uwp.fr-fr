@@ -1,18 +1,21 @@
 ---
 description: Découvrez comment utiliser les bannières publicitaires dans votre application UWP.
 title: Bannières publicitaires
-ms.date: 08/23/2017
+ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, uwp, publicités, publicité, AdControl, bannières publicitaires
 ms.localizationpriority: medium
-ms.openlocfilehash: cd3e57ebf5a7f7770adf2a8defcd92e66ad1e3a0
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: d3e4715dee6c1e182ed195288cba7b96612b743b
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260336"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463521"
 ---
 # <a name="banner-ads"></a>Bannières publicitaires
+
+>[!WARNING]
+> Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://aka.ms/ad-monetization-shutdown)
 
 Les articles de cette section montrent comment utiliser la classe [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) dans le SDK Microsoft Advertising pour ajouter des bannières publicitaires à votre application UWP.
 
@@ -22,7 +25,7 @@ Les bannières publicitaires sont des publicités à affichage statique qui util
 
 ## <a name="in-this-section"></a>Dans cette section
 
-|  Sujet    | Description |               
+|  Rubrique    | Description |               
 |----------|-------|
 | [Classe AdControl en XAML et .NET](adcontrol-in-xaml-and--net.md)     | Ajoutez une bannière publicitaire dans votre application XAML/.NET.        |
 | [Classe AdControl en HTML 5 et JavaScript](adcontrol-in-html-5-and-javascript.md)     | Ajoutez une bannière publicitaire dans votre application HTML5/JavaScript.        |

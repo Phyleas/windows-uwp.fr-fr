@@ -2,24 +2,27 @@
 ms.assetid: 527660fb-8e32-41b4-89cb-d422ed48c69b
 description: Utilisez les procédures pas à pas de cette section pour découvrir comment ajouter des bannières publicitaires, des spots et des publicités natives aux applications à l’aide du SDK Microsoft Advertising.
 title: Intégrer des publicités dans votre application
-ms.date: 05/11/2018
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, annonces, publicités, procédures pas à pas
 ms.localizationpriority: medium
-ms.openlocfilehash: 63fec919f089dcf90b251334740c7a965bb36b78
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 83ba6729230b77dc4a3ae97abffe24a3623c4c3d
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260311"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463771"
 ---
 # <a name="implement-ads-in-your-app"></a>Intégrer des publicités dans votre application
+
+>[!WARNING]
+> Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://aka.ms/ad-monetization-shutdown)
 
 Les articles de cette section vous montrent comment ajouter des bannières publicitaires, des spots et des publicités natives aux applications à l’aide du SDK Microsoft Advertising. Pour obtenir des exemples de projet complets, consultez les [exemples de publicité sur GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising).
 
 ## <a name="in-this-section"></a>Dans cette section
 
-|  Sujet    | Description |               
+|  Rubrique    | Description |               
 |----------|-------|
 | [Bannières publicitaires](banner-ads.md)     | Fournit des instructions pour l’ajout d’une bannière publicitaire à votre application UWP à l’aide de la classe [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) dans le Kit de développement Microsoft Advertising.        |
 | [Publicités interstitielles](interstitial-ads.md)    | Fournit des instructions pour l’ajout d’un spot publicitaire à votre application UWP à l’aide de la classe [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) dans le Kit de développement Microsoft Advertising.       |

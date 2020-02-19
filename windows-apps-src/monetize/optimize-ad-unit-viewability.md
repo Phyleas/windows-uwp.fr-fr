@@ -1,34 +1,37 @@
 ---
 description: Découvrez comment améliorer la visibilité de vos unités publicitaires.
 title: Optimiser la visibilité de vos unités publicitaires
-ms.date: 05/07/2018
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, annonce, publicité, directives, visibilité
 ms.localizationpriority: medium
-ms.openlocfilehash: 87e21f4e98c58f79f397c369891212eccb196c18
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 6996b656c9bf161538e286dc4c2d63c1d2840bc8
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57662264"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463941"
 ---
 # <a name="optimize-the-viewability-of-your-ad-units"></a>Optimiser la visibilité de vos unités publicitaires
+
+>[!WARNING]
+> Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://aka.ms/ad-monetization-shutdown)
 
 Le [Rapport sur les performances publicitaires](../publish/advertising-performance-report.md) inclut des mesures de visibilité de vos unités publicitaires. La visibilité est un critère important, car le secteur de la publicité tend de plus en plus à privilégier les expositions visibles plutôt que simplement servies. Les annonceurs ont tendance à soumissionner pour des expositions visibles, car ils ont plus de chances que leurs publicités soient vues par les utilisateurs.  
 
 Conformément aux directives de l’Interactive Advertising Bureau (IAB) en matière de visibilité, l'exposition d'une bannière publicitaire est considérée comme visible si elle répond aux critères suivants :
 
-* Exigence de pixel : Supérieur ou égal à 50 % des pixels dans la publication ont été sur l’espace visible de l’application.
-* Exigences de temps : Le temps que la condition de pixel est remplie a été supérieure ou égale à une seconde continue, ad post-rendu.
+* Exigence de pixels : un pourcentage supérieur ou égal à 50 % des pixels de la publicité se trouve sur l’espace visible de l’application.
+* Exigence de durée : la durée pendant laquelle l'exigence de pixels est remplie doit être supérieure ou égale à une seconde en continu, à partir du rendu de l'annonce.
 
 Une exposition publicitaire vidéo est considérée comme visible si elle répond aux critères suivants :
 
-* Exigence de pixel : Supérieur ou égal à 50 % des pixels dans la publication ont été sur la partie visible de l’application.
-* Exigences de temps : La vidéo répondait à la nécessité de pixel et lu pendant deux secondes continues post ad restituer.
+* Exigence de pixels : un pourcentage supérieur ou égal à 50 % des pixels de la publicité se trouve sur la partie visible de l’application.
+* Exigence de durée : la vidéo a répondu à l'exigence de pixels et a été lue pendant deux secondes en continu, à partir du rendu de l'annonce.
 
 La visibilité est calculée à l’aide de la formule suivante :
 
-**La plupart des ordinateurs = [expositions à l’affichage] * 100 / [Total des expositions publicitaires]**
+**Affichage = [impressions affichées] * 100/[nombre total d’impressions AD]**
 
 ## <a name="guidelines-to-improve-ad-unit-viewability"></a>Recommandations pour améliorer la visibilité d'une unité publicitaire
 

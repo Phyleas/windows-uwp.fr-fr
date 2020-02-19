@@ -2,18 +2,21 @@
 ms.assetid: 7a38a352-6e54-4949-87b1-992395a959fd
 description: En savoir plus sur les recommandations en matière d’expérience utilisateur et d’interface utilisateur pour les publicités dans les applications.
 title: Recommandations pour l'expérience et l'interface utilisateur pour les annonces
-ms.date: 05/11/2018
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, annonce, publicité, directives, meilleures pratiques
 ms.localizationpriority: medium
-ms.openlocfilehash: cf7f61f427ef0b1a0ff5b6f3b66d02d13d02e4ab
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 2ce51f1ec99b080de6483b1d703492050c7a434c
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320682"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463921"
 ---
 # <a name="ui-and-user-experience-guidelines-for-ads"></a>Recommandations pour l'expérience et l'interface utilisateur pour les annonces
+
+>[!WARNING]
+> Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://aka.ms/ad-monetization-shutdown)
 
 Cet article fournit des recommandations pour concevoir des expériences exceptionnelles avec des bannières publicitaires, des spots et des publicités natives dans vos applications. Pour obtenir des conseils généraux sur la conception de l’apparence et du style des applications, consultez [Conception et interface utilisateur](https://developer.microsoft.com/windows/apps/design).
 
@@ -71,13 +74,13 @@ Cette section donne des exemples d’implémentation de bannières publicitaires
 
 * Contourner le minuteur d’actualisation intégré minimum pour les bannières publicitaires par quelque moyen que ce soit, y compris, mais sans s’y limiter, en remplaçant des objets [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) ou en actualisant automatiquement une page sans aucune interaction utilisateur.
 
-* À l’aide d’annonce en ligne unités (autrement dit, ad que vous obtenez auprès des partenaires) pendant le développement et de test, ou dans un émulateur.
+* À l’aide d’unités ad actives (c’est-à-dire les unités ad que vous obtenez à partir de l’espace partenaires) pendant le développement et le test, ou dans un émulateur.
 
 * Écrire ou distribuer du code qui appelle des services publicitaires par d’autres moyens que les bibliothèques de publicités Microsoft exécutées dans le contexte de votre application.
 
 * Interagir avec des interfaces non documentées ou des objets enfants créés par les bibliothèques de publicités Microsoft, comme **WebView** ou **MediaElement**.
 
-* Placer des annonces publicitaires dans un viewbox pour réduire la taille des annonces pour permettre des annonces sur une page à la normale.
+* Placer des publicités dans un Viewbox pour réduire la taille des publicités afin d’autoriser plus de publicités sur une page que la normale.
 
 <span id="interstitialbestpractices10" />
 
@@ -135,7 +138,7 @@ Nous vous recommandons d’éviter ces pratiques quand vous implémentez des spo
 
 * Ne récupérez pas un spot vidéo plus de 5 minutes avant d’appeler [InterstitialAd.Show](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show). Un bon inventaire va optimiser la conversion de publicités récupérées en impressions facturables.
 
-* Ne pénalisez pas un utilisateur pour les défaillances d’affichage de publicités, par exemple quand aucune publicité n’est disponible. Par exemple, si vous affichez une option d’interface utilisateur de type « Regarder une publicité pour obtenir *xxx* », vous devez fournir *xxx* si l’utilisateur a rempli sa part du contrat. Deux options sont à envisager :
+* Ne pénalisez pas un utilisateur pour les défaillances d’affichage de publicités, par exemple quand aucune publicité n’est disponible. Par exemple, si vous affichez une option d’interface utilisateur de type « Regarder une publicité pour obtenir *xxx* », vous devez fournir *xxx* si l’utilisateur a rempli sa part du contrat. Deux options à envisager :
 
     * N’incluez pas l’option, sauf si l’événement [InterstitialAd.AdReady](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.adready) a été déclenché.
 
@@ -157,7 +160,7 @@ Cette section donne des exemples d’implémentations de spots publicitaires qui
 
 * Demander un spot publicitaire simplement pour avoir une publicité de secours à une cascade de publicités. Si vous demandez un spot publicitaire et que vous recevez l’événement [InterstitialAd.AdReady](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.adready), le spot publicitaire suivant affiché dans votre application doit être celui qui est prêt à être affiché par la méthode [InterstitialAd.Show](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show).
 
-* À l’aide d’annonce en ligne unités (autrement dit, ad que vous obtenez auprès des partenaires) pendant le développement et de test, ou dans un émulateur.
+* À l’aide d’unités ad actives (c’est-à-dire les unités ad que vous obtenez à partir de l’espace partenaires) pendant le développement et le test, ou dans un émulateur.
 
 * Écrire ou distribuer du code qui appelle des services publicitaires par d’autres moyens que les bibliothèques de publicités Microsoft exécutées dans le contexte de votre application.
 
@@ -187,7 +190,7 @@ Au minimum, vous devez toujours montrer à l’utilisateur les éléments de pub
     * Le texte *parrainé par* (disponible dans la propriété **SponsoredBy**). Ce texte est fourni par l'annonceur.
     * À la place du texte *parrainé par*, vous pouvez choisir d’afficher un autre texte qui permet de différencier la publicité native du reste de votre application, par exemple « Contenu sponsorisé », « Contenu promotionnel », « Contenu recommandé », etc.
 
-### <a name="user-experience"></a>Expérience utilisateur
+### <a name="user-experience"></a>Expérience de l'utilisateur
 
 Votre publicité native doit être délimitée clairement du reste de votre application et être entourée d’espace pour éviter les clics accidentels. Utilisez des bordures, des arrière-plans différents ou une autre interface utilisateur pour séparer le contenu de la publicité du reste de votre application. N’oubliez pas que les clics accidentels ne sont pas utiles pour votre chiffre d’affaires publicitaire ni pour l'expérience de votre utilisateur final à long terme.
 

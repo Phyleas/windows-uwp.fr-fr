@@ -1,19 +1,22 @@
 ---
 ms.assetid: 3aeddb83-5314-447b-b294-9fc28273cd39
 description: Découvrez comment installer le kit SDK Microsoft Advertising.
-title: Installer le SDK Microsoft Advertising
-ms.date: 08/23/2017
+title: Installer le SDK Microsoft Advertising
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, pub, publicités, installer, SDK, bibliothèque de publicités
 ms.localizationpriority: medium
-ms.openlocfilehash: 37e57d49ba40814891154aef2ec0de6b3b7e560c
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: f3b63ac40041b93372544d586d3feb23940fccc5
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260267"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463385"
 ---
-# <a name="install-the-microsoft-advertising-sdk"></a>Installer le SDK Microsoft Advertising
+# <a name="install-the-microsoft-advertising-sdk"></a>Installer le SDK Microsoft Advertising
+
+>[!WARNING]
+> Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://aka.ms/ad-monetization-shutdown)
 
 Pour afficher des publicités dans vos applications UWP pour Windows 10, installez le [SDK Microsoft Advertising](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK). Ce kit de développement logiciel (SDK) est une extension de Visual Studio 2015 et des versions ultérieures.
 
@@ -26,7 +29,7 @@ Pour afficher des publicités dans vos applications UWP pour Windows 10, instal
 
 Pour installer le SDK Microsoft Advertising via le programme d’installation MSI :
 
-1.  Fermez toutes les instances de Visual Studio.
+1.  Fermez toutes les instances de Visual Studio.
 
 2. Si vous aviez précédemment installé une version antérieure du Kit de développement Microsoft Advertising, du kit Microsoft Universal Ad Client, de l’extension Ad Mediator ou du SDK d’engagement et de monétisation de la Boutique Microsoft, désinstallez ces versions maintenant. Si vous le souhaitez, ouvrez une fenêtre **Invite de commandes** et exécutez ces commandes pour nettoyer les anciennes versions de SDK Microsoft Advertising qui peuvent avoir été installées avec Visual Studio, mais qui n’apparaissent peut-être pas dans la liste des programmes installés sur votre ordinateur :
     ```console
@@ -49,7 +52,7 @@ Pour installer le SDK Microsoft Advertising via le programme d’installation M
 
 Pour installer le SDK Microsoft Advertising dans un projet UWP spécifique via NuGet :
 
-1.  Fermez toutes les instances de Visual Studio.
+1.  Fermez toutes les instances de Visual Studio.
 
 2.  Si vous aviez précédemment installé une version antérieure du Kit de développement Microsoft Advertising, du kit Microsoft Universal Ad Client, de l’extension Ad Mediator ou du SDK d’engagement et de monétisation de la Boutique Microsoft, désinstallez ces versions maintenant. Si vous le souhaitez, ouvrez une fenêtre **Invite de commandes** et exécutez ces commandes pour nettoyer les anciennes versions de SDK Microsoft Advertising qui peuvent avoir été installées avec Visual Studio, mais qui n’apparaissent peut-être pas dans la liste des programmes installés sur votre ordinateur :
     ```console
@@ -80,9 +83,9 @@ Pour installer le SDK Microsoft Advertising dans un projet UWP spécifique via 
 
 Après avoir installé le SDK Microsoft Advertising, suivez ces instructions pour référencer le SDK dans votre projet afin de pouvoir utiliser les API publicitaires.
 
-1. Ouvrez votre projet dans Visual Studio.
+1. Ouvrez votre projet dans Visual Studio.
     > [!NOTE]
-    > Si votre projet cible **Toute UC**, mettez-le à jour pour utiliser une sortie de génération propre à l’architecture (par exemple, **x86**). Si votre projet cible **Toute UC**, vous ne pourrez pas ajouter une référence au SDK Microsoft Advertising dans les étapes suivantes. Pour plus d’informations, voir [Erreurs de référence provoquées par le ciblage de Toute UC dans votre projet](known-issues-for-the-advertising-libraries.md#reference_errors).
+    > Si votre projet cible **Toute UC**, mettez-le à jour pour utiliser une sortie de génération propre à l’architecture (par exemple, **x86**). Si votre projet cible **Toute UC**, vous ne pourrez pas ajouter une référence au SDK Microsoft Advertising dans les étapes suivantes. Pour plus d’informations, consultez [Erreurs de référence provoquées par le ciblage de Toute UC dans votre projet](known-issues-for-the-advertising-libraries.md#reference_errors).
 
 2. Dans **l’Explorateur de solutions**, cliquez avec le bouton droit sur **Références**, puis cliquez sur **Ajouter une référence**.
 

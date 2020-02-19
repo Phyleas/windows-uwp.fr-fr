@@ -2,20 +2,23 @@
 ms.assetid: 63A9EDCF-A418-476C-8677-D8770B45D1D7
 description: Le SDK Microsoft Advertising vous offre plusieurs moyens de monétiser votre application grâce aux publicités.
 title: Afficher des publicités dans votre application avec le SDK Microsoft Advertising
-ms.date: 06/20/2018
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, publicités, publicité, bannière, contrôle de publicité, spot
 ms.localizationpriority: medium
-ms.openlocfilehash: 48aacf03d6e424b7b53052e2c292d4a8589a8d9f
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 5f318a68a97e98d3da24da16778988ee40c4e1dd
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684574"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463781"
 ---
 # <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>Afficher des publicités dans votre application avec le SDK Microsoft Advertising
 
-Augmentez vos opportunités de revenus en plaçant des publicités dans votre application pour plateforme Windows universelle (UWP) sous Windows 10 à l’aide du SDK Microsoft Advertising. Notre plateforme de monétisation ad offre un large éventail de formats ad qui peuvent être intégrés en toute transparence à vos applications et qui prend en charge la médiation avec de nombreux réseaux Active Directory populaires. Notre plateforme est conforme aux normes OpenRTB, VAST 2.x, MRAID 2 et VPAID 3, et compatible avec MOAT et IAS. 
+>[!WARNING]
+> Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://aka.ms/ad-monetization-shutdown)
+
+Augmentez vos opportunités de revenus en plaçant des publicités dans votre application pour plateforme Windows universelle (UWP) sous Windows 10 à l’aide du SDK Microsoft Advertising. Notre plateforme de monétisation ad offre un large éventail de formats ad qui peuvent être intégrés en toute transparence à vos applications et qui prend en charge la médiation avec de nombreux réseaux Active Directory populaires. Notre plateforme est conforme aux normes OpenRTB, VAST 2.x, MRAID 2, et VPAID 3 et est compatible avec MOAT et IAS. 
 
 <br/>
 
@@ -47,8 +50,8 @@ Augmentez vos opportunités de revenus en plaçant des publicités dans votre ap
     <a href="set-up-ad-units-in-your-app.md">Configurer des unités Active Directory dans votre application</a>
     <br/>
     <a href="best-practices-for-ads-in-apps.md">Meilleures pratiques</a>
-    <br/>
-    <a href="https://docs.microsoft.com/uwp/api/overview/advertising">Référence API</a>
+    <br/>Informations de référence sur l' 
+    <a href="https://docs.microsoft.com/uwp/api/overview/advertising">API</a>
     </td>
 </tr>
 </tbody>
@@ -90,7 +93,7 @@ Pour obtenir des instructions et des exemples de code, voir [cet article](native
 
 ## <a name="step-3-create-an-ad-unit-and-configure-mediation"></a>Étape 3 : Créer une unité publicitaire et configurer une médiation
 
-Une fois que vous avez terminé le test de votre application et que vous êtes prêt à la soumettre au Store, créez une unité publicitaire sur la page [ADS dans l’application](../publish/in-app-ads.md) dans l’espace partenaires. Ensuite, mettez à jour le code de votre application pour utiliser cette unité publicitaire afin que votre application reçoit des publicités dynamiques. Pour plus d’informations, voir [Configurer des unités publicitaires dans votre app](set-up-ad-units-in-your-app.md#live-ad-units).
+Une fois que vous avez terminé le test de votre application et que vous êtes prêt à la soumettre au Store, créez une unité publicitaire sur la page [ADS dans l’application](../publish/in-app-ads.md) dans l’espace partenaires. Ensuite, mettez à jour le code de votre application pour utiliser cette unité publicitaire afin que votre application reçoit des publicités dynamiques. Pour plus d’informations, voir [Configurer des unités publicitaires dans votre application](set-up-ad-units-in-your-app.md#live-ad-units).
 
 Par défaut, votre application affiche des publicités issues du réseau Microsoft pour les publicités payées. Pour optimiser vos revenus publicitaires, vous pouvez activer la [médiation publicitaire](ad-mediation-service.md) pour votre unité publicitaire afin d'afficher des publicités à partir de réseaux de publicités payées supplémentaires, tels que Taboola et Smaato. Vous pouvez également augmenter vos capacités de promotion d'application en affichant des publicités provenant des campagnes de promotion d'applications Microsoft.
 
@@ -108,12 +111,12 @@ Une fois votre application publiée et disponible dans le Windows Store, vous po
 
 Pour obtenir une aide supplémentaire sur l'utilisation du SDK Microsoft Advertising, utilisez les ressources suivantes.
 
-|  Tâche    | Resource |               
+|  Tâche    | Ressource |               
 |----------|-------|
 | Signaler un bogue ou obtenir un support assisté en matière de publicité     | Visitez la [page de support](https://developer.microsoft.com/windows/support) et choisissez **Publicités dans l’app**.        |
 | Bénéficier du support de la communauté     | Consultez le [forum](https://go.microsoft.com/fwlink/?LinkID=401264).       |
 | Télécharger des exemples de projet qui montrent comment ajouter des bannières et des spots publicitaires aux applications.     | Voir [Exemples de publicité sur GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising).       |
-| Découvrir les dernières opportunités de monétisation pour les applications Windows     | Consultez [Monétiser vos applications](https://developer.microsoft.com/store/monetize).        |
+| Découvrir les dernières opportunités de monétisation pour les applications Windows     | Visitez [Monétiser vos applications](https://developer.microsoft.com/store/monetize).        |
 
 ## <a name="windows-81-and-windows-phone-8x-apps"></a>Applications Windows 8.1 et Windows Phone 8.x
 

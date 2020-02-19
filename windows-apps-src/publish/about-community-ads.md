@@ -2,24 +2,27 @@
 Description: Vous pouvez faire la promotion croisée de votre application avec des applications publiées par d’autres développeurs. Nous appelons cette fonctionnalité « annonces de la communauté ».
 title: À propos des annonces de la communauté
 ms.assetid: F55CE478-99AF-4B70-90D1-D16419562136
-ms.date: 10/31/2018
+ms.date: 02/18/2020
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f8acf83e2b39ece5fcd46c3d89d921e4f3013b67
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8da380cb49d584e56f584f3ad321d601d211faf0
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57635784"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463441"
 ---
 # <a name="about-community-ads"></a>À propos des annonces de la communauté
 
-Si votre application [affiche une bannière ou les publicités INTERSTITIELLES bannière](../monetize/display-ads-in-your-app.md), vous pouvez promouvoir votre application avec d’autres développeurs avec les applications dans le Microsoft Store gratuitement. Nous appelons cette fonctionnalité *annonces de la communauté*.  
+>[!WARNING]
+> Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://aka.ms/ad-monetization-shutdown)
+
+Si votre application [affiche des bannières bannières ou bannières](../monetize/display-ads-in-your-app.md), vous pouvez promouvoir votre application avec d’autres développeurs disposant d’applications dans le Microsoft Store gratuitement. Nous appelons cette fonctionnalité *annonces de la communauté*.  
 
 Voici comment fonctionne ce programme :
 
-* Une fois que vous choisissez de participer à des annonces de Communauté comme décrit ci-dessous, vous pouvez [créer une campagne de publicité gratuit de la Communauté](create-an-ad-campaign-for-your-app.md). Votre application partagera puis espace promotionnelle ad avec d’autres développeurs également accepter les annonces de la Communauté. Votre application affichera des publicités pour les applications publiées par d’autres développeurs participant aux annonces de la communauté et vice-versa.
+* Une fois que vous avez choisi les publicités de la communauté comme décrit ci-dessous, vous pouvez [créer une campagne publicitaire communautaire gratuite](create-an-ad-campaign-for-your-app.md). Votre application partagera ensuite l’espace publicitaire promotionnel avec d’autres développeurs qui s’abonnent également aux publicités de la communauté. Votre application affichera des publicités pour les applications publiées par d’autres développeurs participant aux annonces de la communauté et vice-versa.
 * Vous gagnez des crédits pour l’espace publicitaire promotionnel dans d’autres applications en affichant des annonces de la communauté dans votre application. Les crédits sont calculés selon le processus suivant :
   * Pour chaque pays ou région où une application affichant des annonces de la communauté est disponible, la valeur du coût par impression électronique (eCPM) du marché concerné est multipliée par le nombre de demandes d’annonces de la communauté faites par votre application dans ce pays ou cette région. Cette valeur représente les crédits que vous avez gagnés pour votre application dans ce pays ou cette région.
   * Le total de vos crédits gagnés pour une période donnée est égal à la somme de tous les crédits obtenus dans chaque pays ou région pour chacune de vos applications affichant des annonces de la communauté.
@@ -28,19 +31,19 @@ Voici comment fonctionne ce programme :
 
 ### <a name="opt-in-to-community-ads"></a>Accepter les publicités de la communauté
 
-Avant de pouvoir créer une campagne de publicité de communauté pour l’une de vos applications, vous devez choisir de sur le **Monetize** &gt; **les publicités dans l’application** page [partenaires](https://partner.microsoft.com/dashboard).
+Avant de pouvoir créer une campagne de publicité communautaire pour l’une de vos applications, vous devez vous inscrire à la page **monétiser** les **annonces dans l’application** &gt; dans l' [espace partenaires](https://partner.microsoft.com/dashboard).
 
-Pour participer à des annonces de communauté pour une application UWP :
+Pour vous abonner aux publicités de la communauté pour une application UWP :
 
-1. Sélectionner une unité d’ad que vous utilisez dans l’application et que vous faites défiler jusqu'à **les paramètres de médiation**.
-2. Si **Microsoft permettent d’optimiser mes paramètres** est sélectionnée, les annonces de Communauté sont activées pour votre unité ad automatiquement. Sinon, sélectionnez la configuration de base ou une configuration spécifique au marché dans le **cible** liste déroulante, puis vérifiez le **ads de Microsoft Community** zone le **autres réseaux publicitaires** liste.
+1. Sélectionnez une unité ad que vous utilisez dans l’application et faites défiler jusqu’à **paramètres de médiation**.
+2. Si **laisser Microsoft optimiser mes paramètres** est sélectionné, les annonces de la Communauté sont automatiquement activées pour votre unité ad. Dans le cas contraire, sélectionnez la configuration de ligne de base ou une configuration spécifique au marché dans la liste déroulante **cible** , puis cochez la case annonces de la **communauté Microsoft** dans la liste **autres réseaux Active Directory** .
 
     > [!NOTE]
-    > Vous pouvez utiliser la **poids** champs pour spécifier le taux de publicités que vous souhaitez afficher à partir de réseaux payants et d’autres réseaux d’ad, y compris des annonces de la Communauté.
+    > Vous pouvez utiliser les champs de **pondération** pour spécifier le taux de publicités que vous souhaitez afficher à partir de réseaux payants et d’autres réseaux Active Directory, y compris les publicités de la communauté.
 
 Vous n’avez pas besoin de republier votre application après avoir effectué vos sélections. Une fois que vous avez accepté cette fonctionnalité, vous êtes en mesure de sélectionner **Community ad (free)** comme type de campagne lorsque vous [créez une campagne de publicité](create-an-ad-campaign-for-your-app.md).
 
 ### <a name="related-topics"></a>Rubriques connexes
 
 * [Publicités dans l’application](in-app-ads.md)
-* [Créer une campagne de publicité pour votre application](create-an-ad-campaign-for-your-app.md)
+* [Créer une campagne publicitaire pour votre application](create-an-ad-campaign-for-your-app.md)

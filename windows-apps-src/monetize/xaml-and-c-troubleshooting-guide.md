@@ -2,30 +2,33 @@
 ms.assetid: 141900dd-f1d3-4432-ac8b-b98eaa0b0da2
 description: Découvrez les solutions aux problèmes de développement courants liés aux bibliothèques de publicités Microsoft dans les applications XAML.
 title: Guide de résolution des problèmes pour XAML et C#
-ms.date: 08/23/2017
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, publicités, publicité, AdControl, résolution des problèmes, XAML, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: 94af97e1e678c6ee92aaa731057c5f67185e25c5
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 9783036d00fc56b904e6d362f55ddaaf8375a872
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334657"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463741"
 ---
 # <a name="xaml-and-c-troubleshooting-guide"></a>Guide de résolution des problèmes pour XAML et C#
+
+>[!WARNING]
+> Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://aka.ms/ad-monetization-shutdown)
 
 Cette rubrique contient les solutions aux problèmes de développement courants liés aux bibliothèques de publicités Microsoft dans les applications XAML.
 
 * [XAML](#xaml)
-  * [Classe AdControl n’apparaissent ne pas](#xaml-notappearing)
-  * [Fait clignoter et disparaît de la boîte noire](#xaml-blackboxblinksdisappears)
-  * [Annonces pas l’actualisation](#xaml-adsnotrefreshing)
+  * [Classe AdControl ne s’affiche pas](#xaml-notappearing)
+  * [La boîte noire clignote et disparaît](#xaml-blackboxblinksdisappears)
+  * [Annonces non actualisées](#xaml-adsnotrefreshing)
 
 * [C#](#csharp)
-  * [Classe AdControl n’apparaissent ne pas](#csharp-adcontrolnotappearing)
-  * [Fait clignoter et disparaît de la boîte noire](#csharp-blackboxblinksdisappears)
-  * [Annonces pas l’actualisation](#csharp-adsnotrefreshing)
+  * [Classe AdControl ne s’affiche pas](#csharp-adcontrolnotappearing)
+  * [La boîte noire clignote et disparaît](#csharp-blackboxblinksdisappears)
+  * [Annonces non actualisées](#csharp-adsnotrefreshing)
 
 <span id="xaml"/>
 
@@ -37,7 +40,7 @@ Cette rubrique contient les solutions aux problèmes de développement courants 
 
 1.  Assurez-vous que la fonctionnalité **Internet (client)** est sélectionnée dans le fichier Package.appxmanifest.
 
-2.  Vérifiez l’ID de l’application et l’ID d’unité publicitaire. Ces ID doit correspondre à l’ID d’application et l’ID d’unité ad que vous avez obtenue dans l’espace partenaires. Pour plus d’informations, voir [Configurer des unités publicitaires dans votre application](set-up-ad-units-in-your-app.md#live-ad-units).
+2.  Vérifiez l’ID de l’application et l’ID d’unité publicitaire. Ces ID doivent correspondre à l’ID d’application et à l’ID d’unité Active Directory que vous avez obtenus dans l’espace partenaires. Pour plus d’informations, voir [Configurer des unités publicitaires dans votre application](set-up-ad-units-in-your-app.md#live-ad-units).
 
     > [!div class="tabbedCodeSnippets"]
     ``` xml
@@ -160,7 +163,7 @@ Cette rubrique contient les solutions aux problèmes de développement courants 
 
 <span id="csharp"/>
 
-## <a name="c"></a>C\# #
+## <a name="c"></a>\# C #
 
 <span id="csharp-adcontrolnotappearing"/>
 
@@ -173,7 +176,7 @@ Cette rubrique contient les solutions aux problèmes de développement courants 
     > [!div class="tabbedCodeSnippets"]
     [!code-csharp[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet1)]
 
-3.  Vérifiez l’ID de l’application et l’ID d’unité publicitaire. Ces ID doit correspondre à l’ID d’application et l’ID d’unité ad que vous avez obtenue dans l’espace partenaires. Pour plus d’informations, voir [Configurer des unités publicitaires dans votre application](set-up-ad-units-in-your-app.md#live-ad-units).
+3.  Vérifiez l’ID de l’application et l’ID d’unité publicitaire. Ces ID doivent correspondre à l’ID d’application et à l’ID d’unité Active Directory que vous avez obtenus dans l’espace partenaires. Pour plus d’informations, voir [Configurer des unités publicitaires dans votre application](set-up-ad-units-in-your-app.md#live-ad-units).
 
     > [!div class="tabbedCodeSnippets"]
     ``` cs

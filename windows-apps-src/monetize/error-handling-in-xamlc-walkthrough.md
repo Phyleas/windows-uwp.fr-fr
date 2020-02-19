@@ -1,19 +1,22 @@
 ---
 ms.assetid: cf0d2709-21a1-4d56-9341-d4897e405f5d
 description: Découvrez comment intercepter les erreurs AdControl dans votre application.
-title: Gestion des erreurs dans la procédure pas à pas pour XAML/C#
-ms.date: 05/11/2018
+title: Procédure pas à pas pour gérer les erreurs dans XAML/C#
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, annonces publicitaires, publicité, gestion des erreurs, XAML, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c9f29cacd740392e3cfd4b5b4b63d1f7ce9c5cd
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: ab8b34820a81334dbe6ba0e52989d86d7414c67e
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260276"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463861"
 ---
-# <a name="error-handling-in-xamlc-walkthrough"></a>Gestion des erreurs dans la procédure pas à pas pour XAML/C#
+# <a name="error-handling-in-xamlc-walkthrough"></a>Procédure pas à pas pour gérer les erreurs dans XAML/C#
+
+>[!WARNING]
+> Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://aka.ms/ad-monetization-shutdown)
 
 Cette procédure pas à pas montre comment intercepter les erreurs liées à aux publicités dans votre application. Cette procédure pas à pas utilise un [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) pour afficher une bannière, mais les concepts généraux s’appliquent également aux spots publicitaires et aux publicités natives.
 

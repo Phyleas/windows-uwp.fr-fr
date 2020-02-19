@@ -1,23 +1,26 @@
 ---
 description: Découvrez comment mettre à jour votre application afin d’utiliser les bibliothèques de publicités Microsoft les plus récentes prises en charge et assurez-vous que votre application continue à recevoir des bannières publicitaires.
 title: Utiliser les bibliothèques de publicités les plus récentes pour les bannières publicitaires
-ms.date: 08/23/2017
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, annonces, publicité, AdMediatorControl, AdControl, migrer
 ms.assetid: f8d5b2ad-fcdb-4891-bd68-39eeabdf799c
 ms.localizationpriority: medium
-ms.openlocfilehash: 74ac8499e673cacad897455c7065dd3386103406
-ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
+ms.openlocfilehash: a8ccc8e9c76fc0f16bcdfc619d8048307fdfbc57
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74735044"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463881"
 ---
 # <a name="update-your-app-to-the-latest-advertising-libraries-for-banner-ads"></a>Mettre à jour votre application avec les bibliothèques de publicités les plus récentes
 
+>[!WARNING]
+> Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://aka.ms/ad-monetization-shutdown)
+
 Depuis le 1er avril 2017, nous ne servons plus de bannières publicitaires aux applications qui utilisent une version non prise en charge du SDK publicitaire. Si vous utilisez **AdControl** pour afficher des bannières publicitaires dans votre application de plateforme Windows universelle (UWP), utilisez les informations de cet article pour déterminer si vous utilisez un SDK Microsoft Advertising non pris en charge et faites migrer votre application vers un SDK pris en charge.
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Overview
 
 Les applications UWP qui affichent des bannières publicitaires doivent utiliser le contrôle **AdControl** provenant des bibliothèques de publicités distribuées dans le [SDK Microsoft Advertising](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK). Ce SDK prend en charge un ensemble minimal de fonctionnalités, notamment la possibilité de servir des médias enrichis HTML5 via les [spécifications MRAID (définitions de l’interface publicitaire Rich-Media mobile) 1.0](https://www.iab.com/wp-content/uploads/2015/08/IAB_MRAID_VersionOne.pdf) définies par l’Interactive Advertising Bureau (IAB). La plupart de nos annonceurs veulent profiter de ces fonctionnalités. C’est pourquoi nous demandons aux développeurs d’utiliser une de ces versions de SDK pour rendre notre écosystème d’applications plus attrayant pour eux, ce qui par ailleurs augmentera vos revenus.
 
@@ -36,7 +39,7 @@ Si vous disposez d’une application existante (qui se trouve déjà dans le Sto
 > [!NOTE]
 > Si votre application utilise déjà le [SDK Microsoft Advertising](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) (pour les applications UWP), vous n’avez pas besoin de lui apporter des modifications supplémentaires.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Composants requis
 
 * Le code source complet et les fichiers de projet Visual Studio de votre application qui utilise **AdControl**.
 * Le package .appx de votre application.
@@ -48,7 +51,7 @@ Si vous disposez d’une application existante (qui se trouve déjà dans le Sto
 
 ## <a name="part-1-determine-whether-you-need-to-update-your-uwp-app"></a>Partie 1 : Déterminez si vous avez besoin de mettre à jour votre application UWP
 
-Suivez les instructions dans les sections suivantes pour déterminer si vous devez mettre à jour votre application.
+Suivez les instructions dans les sections suivantes pour déterminer si vous devez mettre à jour de votre application.
 
 1. Créez une copie du package .appx pour votre application afin de ne pas modifier l’original, renommez la copie pour qu’elle ait une extension .zip et extrayez le contenu du fichier.
 

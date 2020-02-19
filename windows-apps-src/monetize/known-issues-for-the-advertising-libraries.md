@@ -2,18 +2,21 @@
 ms.assetid: 9ca1f880-2ced-46b4-8ea7-aba43d2ff863
 description: Découvrez les problèmes connus de la version actuelle du SDK Microsoft Advertising.
 title: Problèmes connus et résolution des problèmes des publicités dans les applications
-ms.date: 04/16/2018
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, annonces, publicité, problèmes connus, résolution des problèmes
 ms.localizationpriority: medium
-ms.openlocfilehash: 6701ff346f41352a108922f82da82fbf52fd7402
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 34c07a46d31ddf6c8f5b56ffd19059b4d225a72c
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75685088"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463961"
 ---
 # <a name="known-issues-and-troubleshooting-for-ads-in-apps"></a>Problèmes connus et résolution des problèmes des publicités dans les applications
+
+>[!WARNING]
+> Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://aka.ms/ad-monetization-shutdown)
 
 Cette rubrique répertorie les problèmes connus de la version actuelle du SDK Microsoft Advertising. Pour plus d'aide à la résolution des problèmes, consultez les rubriques suivantes.
 
@@ -52,7 +55,7 @@ Vous pouvez également publier une question sur le [forum](https://go.microsoft.
 
 ## <a name="test-ads-are-showing-in-your-app-instead-of-live-ads"></a>Les publicités de test s’affichent dans votre application à la place des publicités dynamiques
 
-Les publicités de test peuvent s’afficher même lorsque vous attendez des publicités dynamiques. Cela peut se produire dans les cas suivants :
+Les publicités de test peuvent s’afficher même lorsque vous attendez des publicités dynamiques. Cela peut se produire dans les scénarios suivants :
 
 * Notre plateforme publicitaire ne peut pas vérifier ni trouver l’ID d’application dynamique utilisé dans la boutique. Dans ce cas, lorsqu’une unité publicitaire est créée par un utilisateur, son état peut démarrer à dynamique (non-test), mais passer à l’état de test dans les 6 heures qui suivent la première demande de publicité. Il revient à l’état dynamique en cas d’absence de demandes d’applications de test pendant 10 jours.
 
@@ -89,7 +92,7 @@ Les applications HTML/JavaScript ne doivent pas placer d’éléments dans la pl
 
 La définition des propriétés associées aux bordures, héritées par la classe **AdControl** de sa classe parente entraîne le placement erroné de la publicité.
 
-## <a name="more-information"></a>Plus d’informations
+## <a name="more-information"></a>Informations supplémentaires
 
 Pour plus d’informations sur les derniers problèmes connus et pour publier des questions liées au SDK Microsoft Advertising, visitez le [forum](https://go.microsoft.com/fwlink/?LinkID=401264).
 

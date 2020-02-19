@@ -1,37 +1,37 @@
 ---
-Description: Les services de notifications Push Windows (WNS) permettent aux développeurs tiers d’envoyer des mises à jour de toast, de vignette et de badge, ainsi que des mises à jour brutes à partir de leur propre service cloud. Il en résulte un mécanisme fiable et optimal de remise des nouvelles mises à jour aux utilisateurs.
+Description: Les services de notification Push Windows (WNS) permettent aux développeurs tiers d’envoyer des mises à jour de toast, de vignette et de badge, ainsi que des mises à jour brutes à partir de leur propre service cloud. Il en résulte un mécanisme fiable et optimal de remise des nouvelles mises à jour aux utilisateurs.
 title: Vue d’ensemble des services de notifications Push Windows (WNS)
 ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 965d823f48cacf4af4999e45ffd02f421c8927e7
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 1f53dd0538e4564c50fb5cbcb6986f5cf9661cae
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259704"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463810"
 ---
 # <a name="windows-push-notification-services-wns-overview"></a>Vue d’ensemble des services de notifications Push Windows (WNS)
  
 
-Les services de notifications Push Windows (WNS) permettent aux développeurs tiers d’envoyer des mises à jour de toast, de vignette et de badge, ainsi que des mises à jour brutes à partir de leur propre service cloud. Il en résulte un mécanisme fiable et optimal de remise des nouvelles mises à jour aux utilisateurs.
+Le Notification Services de transmission Windows (WNS) permet aux développeurs tiers d’envoyer des toasts, des vignettes, des badges et des mises à jour brutes à partir de leur propre service Cloud. Il en résulte un mécanisme fiable et optimal de remise des nouvelles mises à jour aux utilisateurs.
 
 ## <a name="how-it-works"></a>Fonctionnement
 
 
 Le diagramme ci-après présente l’intégralité du flux de données impliqué dans l’envoi d’une notification Push. Les étapes nécessaires sont les suivantes :
 
-1.  Votre application demande un canal de notification Push auprès de la plateforme Windows universelle.
+1.  Votre application demande un canal de notification push de WNS.
 2.  Windows demande aux services WNS de créer un canal de notification. Ce canal est retourné à l’appareil appelant sous la forme d’un URI (Uniform Resource Identifier).
-3.  L’URI du canal de notification est retourné par Windows à votre application.
+3.  L’URI de canal de notification est retourné par WNS à votre application.
 4.  Votre application envoie l’URI à votre service cloud. Vous stockez ensuite l’URI sur votre service cloud afin de pouvoir accéder à l’URI lors de l’envoi de notifications. L’URI est une interface entre votre application et votre service ; c’est à vous qu’il incombe d’implémenter cette interface avec des normes Web sécurisées.
 5.  Quand votre service cloud a une mise à jour à envoyer, il notifie les services WNS par le biais de l’URI de canal. Pour cela, une requête HTTP POST, incluant la charge utile de notification, est émise via SSL (Secure Sockets Layer). Cette étape nécessite une authentification.
 6.  Les services WNS reçoivent la requête et acheminent la notification vers l’appareil approprié.
 
-![Diagramme du flux de données WNS relatif aux notifications Push](images/wns-diagram-01.png)
+![Diagramme du flux de données WNS relatif aux notifications Push](images/wns-diagram-01.jpg)
 
 ## <a name="registering-your-app-and-receiving-the-credentials-for-your-cloud-service"></a>Inscription de votre application et réception des informations d’identification de votre service cloud
 
@@ -68,7 +68,7 @@ Au niveau le plus élevé, la chaîne d’informations se présente comme suit :
 1.  Le service cloud envoie ses informations d’identification à WNS via HTTPS en suivant le protocole OAuth 2.0. Cette opération authentifie le service auprès de WNS.
 2.  WNS retourne un jeton d’accès si l’authentification a réussi. Ce jeton d’accès est utilisé dans toutes les demandes de notification ultérieures jusqu’à son arrivée à expiration.
 
-![Diagramme WNS concernant l’authentification du service cloud](images/wns-diagram-02.png)
+![Diagramme WNS concernant l’authentification du service cloud](images/wns-diagram-02.jpg)
 
 Dans le cadre de l’authentification auprès de WNS, le service cloud soumet une requête HTTP sur SSL (Secure Sockets Layer). Les paramètres sont fournis au format « application/x-www-for-urlencoded ». Indiquez le SID du package dans le champ « ID du client\_» et votre clé secrète dans le champ « client\_secret ». Pour obtenir des détails sur la syntaxe, voir la référence sur la [demande de jeton d’accès](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)).
 
@@ -137,7 +137,7 @@ Le jeton d’accès décrit ci-dessus peut être réutilisé pour plusieurs dema
 
 Le diagramme ci-après illustre le flux de données :
 
-![Diagramme WNS concernant l’envoi d’une notification](images/wns-diagram-03.png)
+![Diagramme WNS concernant l’envoi d’une notification](images/wns-diagram-03.jpg)
 
 ### <a name="important-notes"></a>Remarques importantes
 
