@@ -6,12 +6,12 @@ ms.date: 04/17/2019
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: c2e7524605847009dae415d93794658dd08a79a3
-ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
+ms.openlocfilehash: 0c86290c9765eba5186e777f8de7b3b86967be9e
+ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77089395"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77521340"
 ---
 # <a name="modernize-your-desktop-apps"></a>Moderniser vos applications de bureau
 
@@ -20,7 +20,7 @@ Windows 10 et la plateforme universelle Windows (UWP) comportent de nombreuses 
 Cet article décrit les fonctionnalités Windows 10 et UWP que vous pouvez utiliser dans vos applications de bureau dès aujourd’hui. Pour un didacticiel qui montre comment moderniser une application existante pour utiliser un grand nombre des fonctionnalités de cet article, consultez le didacticiel [Moderniser une application WPF](modernize-wpf-tutorial.md).
 
 > [!NOTE]
-> Avez-vous besoin d’aide pour migrer vos applications de bureau vers Windows 10 ? Le service [Soutien aux applications du bureau](https://docs.microsoft.com/FastTrack/win-10-desktop-app-assure) fournit gratuitement un support direct aux développeurs souhaitant migrer leurs applications vers Windows 10. Ce programme est mis à la disposition de tous les ISV et toutes les entreprises éligibles. Pour plus d’informations sur les critères d’éligibilité et sur le programme lui-même, consultez [https://aka.ms/DesktopAppAssure](https://aka.ms/DesktopAppAssure). Pour démarrer maintenant, [envoyez votre demande](https://aka.ms/DesktopAppAssureRequest).
+> Avez-vous besoin d’aide pour migrer vos applications de bureau vers Windows 10 ? Le service [Soutien aux applications du bureau](https://docs.microsoft.com/FastTrack/win-10-desktop-app-assure) fournit gratuitement un support direct aux développeurs souhaitant migrer leurs applications vers Windows 10. Ce programme est mis à la disposition de tous les ISV et toutes les entreprises éligibles. Pour plus d’informations sur les critères d’éligibilité et sur le programme lui-même, consultez [https://docs.microsoft.com/fasttrack/win-10-app-assure-assistance-offered](https://docs.microsoft.com/fasttrack/win-10-app-assure-assistance-offered). Pour démarrer maintenant, [envoyez votre demande](https://fasttrack.microsoft.com/dl/daa).
 
 ## <a name="msix-packages"></a>Packages MSIX
 
