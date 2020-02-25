@@ -6,17 +6,17 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, annonce, publicité, directives, meilleures pratiques
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ce51f1ec99b080de6483b1d703492050c7a434c
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: d64d5c544f6ec9e1356cc024e634286336dc9f91
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463921"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77506793"
 ---
 # <a name="ui-and-user-experience-guidelines-for-ads"></a>Recommandations pour l'expérience et l'interface utilisateur pour les annonces
 
 >[!WARNING]
-> Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://aka.ms/ad-monetization-shutdown)
+> Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 Cet article fournit des recommandations pour concevoir des expériences exceptionnelles avec des bannières publicitaires, des spots et des publicités natives dans vos applications. Pour obtenir des conseils généraux sur la conception de l’apparence et du style des applications, consultez [Conception et interface utilisateur](https://developer.microsoft.com/windows/apps/design).
 
@@ -38,7 +38,7 @@ Avant d’examiner nos recommandations s'agissant des différents types de publi
 
 Les sections suivantes fournissent des recommandations sur la façon d’implémenter des [bannières publicitaires](banner-ads.md) dans votre app à l’aide d’objets [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol). Elles donnent également des exemples d’implémentation qui ne respectent pas les règles stipulées dans la [politique 10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) des Politiques du Microsoft Store.
 
-### <a name="best-practices"></a>Bonnes pratiques
+### <a name="best-practices"></a>Meilleures pratiques
 
 Nous vous recommandons de suivre ces bonnes pratiques quand vous implémentez des bannières publicitaires dans votre application :
 
@@ -90,7 +90,7 @@ Quand ils sont utilisés de façon élégante, les [spots publicitaires](interst
 
 Les sections suivantes fournissent des recommandations sur la façon d’implémenter des annonces vidéo et des bannières spots publicitaires dans votre app à l’aide d’objets [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad). Elles donnent également des exemples d’implémentation qui ne respectent pas les règles stipulées dans la [politique 10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) des Politiques du Microsoft Store. Étant donné que vous connaissez votre application mieux que quiconque, sauf en matière de stratégie, nous vous laissons prendre la meilleure décision finale. Ce qu’il faut absolument retenir c’est que les évaluations de vos applications et le montant de vos recettes sont étroitement liés.
 
-### <a name="best-practices"></a>Bonnes pratiques
+### <a name="best-practices"></a>Meilleures pratiques
 
 Nous vous recommandons de suivre ces bonnes pratiques quand vous implémentez des spots publicitaires dans votre application :
 

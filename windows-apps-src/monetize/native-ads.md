@@ -5,17 +5,17 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, uwp, pub, publicité, contrôle de publicités, publicité native
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a2022db39c27453dd3c1e9e1eb63914b25a637b
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: 692a532320203fb5348db7c3dd008ddfb6c3b887
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463931"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77506833"
 ---
 # <a name="native-ads"></a>Publicités natives
 
 >[!WARNING]
-> Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://aka.ms/ad-monetization-shutdown)
+> Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 Une publicité native est un format de publicité basée sur un composant où chaque élément de l’annonce publicitaire (par exemple, titre, image, description et texte de l’appel à l’action) est fourni à votre application sous forme d’élément individuel. Vous pouvez intégrer ces éléments dans votre application en utilisant vos propres polices, couleurs, animations et autres composants d’interface utilisateur pour composer une expérience utilisateur discrète qui correspond à l’apparence de votre application, tout en profitant des revenus élevés générés par les publicités.
 

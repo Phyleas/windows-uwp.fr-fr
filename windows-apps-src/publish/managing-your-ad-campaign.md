@@ -4,19 +4,19 @@ title: Gérer votre campagne de publicité
 ms.assetid: 42A9457E-15BD-4A61-B828-1C51D0FC9DA0
 ms.date: 02/18/2020
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d79e65b2937e7ec6db57e00b31b44b1796203a50
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: 7f7ee8f95ad1471c73d5ac9e7bb08796dadd6411
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463971"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77507023"
 ---
 # <a name="manage-your-ad-campaign"></a>Gérer votre campagne de publicité
 
 >[!WARNING]
-> Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://aka.ms/ad-monetization-shutdown)
+> Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 Pour gérer les campagnes de publicité pour votre application dans l' [espace partenaires](https://partner.microsoft.com/dashboard), développez **attirer** dans le menu de navigation de gauche, puis sélectionnez **campagnes Active Directory**. Vous voyez apparaître l’ensemble des campagnes de publicité associées à vos applications, ainsi que les expositions, les clics et les installations relatifs à chacune de ces campagnes. Pour plus d’informations sur les expositions, les clics et les installations, consultez les définitions de ces termes dans l’article [Rapport de campagne de publicité](promote-your-app-report.md).
 

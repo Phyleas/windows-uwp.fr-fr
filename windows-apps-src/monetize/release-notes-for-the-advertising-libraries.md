@@ -6,17 +6,17 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, annonces, publicité, notes de publication
 ms.localizationpriority: medium
-ms.openlocfilehash: 50eea90dcf8ed59f420953eec5da5b7a0fe6b4b2
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: 377069522c6b31a55028bf35bf9c71ac50c90608
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463911"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77506843"
 ---
 # <a name="release-notes-for-the-advertising-libraries"></a>Notes de publication des bibliothèques de publicités
 
 >[!WARNING]
-> Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://aka.ms/ad-monetization-shutdown)
+> Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 Cette section propose des notes de publication relatives à la version actuelle des bibliothèques Microsoft Advertising. Ces bibliothèques prennent en charge les applications XAML et JavaScript/HTML pour Windows 10, Windows 8.1, Windows Phone 8,1 et Windows Phone 8.
 

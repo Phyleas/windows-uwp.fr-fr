@@ -5,17 +5,17 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, annonce, publicité, directives, visibilité
 ms.localizationpriority: medium
-ms.openlocfilehash: 6996b656c9bf161538e286dc4c2d63c1d2840bc8
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: 06d870fbc631611bcfc453698cd9aa4fc844da5d
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463941"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77506804"
 ---
 # <a name="optimize-the-viewability-of-your-ad-units"></a>Optimiser la visibilité de vos unités publicitaires
 
 >[!WARNING]
-> Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://aka.ms/ad-monetization-shutdown)
+> Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 Le [Rapport sur les performances publicitaires](../publish/advertising-performance-report.md) inclut des mesures de visibilité de vos unités publicitaires. La visibilité est un critère important, car le secteur de la publicité tend de plus en plus à privilégier les expositions visibles plutôt que simplement servies. Les annonceurs ont tendance à soumissionner pour des expositions visibles, car ils ont plus de chances que leurs publicités soient vues par les utilisateurs.  
 

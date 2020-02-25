@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1fd0f00d74d62816ff347265936f6b066a0316b0
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 50b9f2a30f529e78773bc40671c9541ff2687b64
+ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257754"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77521230"
 ---
 # <a name="keyboard-accessibility"></a>Accessibilité du clavier  
 
@@ -93,13 +93,13 @@ XAML
 <span id="keyboard_shortcuts"/>
 <span id="KEYBOARD_SHORTCUTS"/>
 
-## <a name="keyboard-shortcuts"></a>Raccourcis clavier  
+## <a name="keyboard-shortcuts"></a>raccourcis clavier  
 Outre l’implémentation de la navigation au clavier et l’activation du clavier pour votre application, il est recommandé de mettre en œuvre des raccourcis pour les fonctionnalités de votre application. La navigation par tabulation fournit un bon niveau de prise en charge de base du clavier, mais avec des formulaires complexes vous souhaiterez peut-être ajouter une prise en charge de raccourcis clavier. Cela peut rendre l’utilisation de votre application plus efficace, même pour les personnes qui utilisent à la fois un clavier et des appareils de pointage.
 
-Un *raccourci* est une combinaison de touches qui améliore la productivité en fournissant à l’utilisateur un moyen efficace d’accéder aux fonctionnalités de l’application. Il existe deux types de raccourcis :
+Un *raccourci* est une combinaison de touches qui améliore la productivité en fournissant à l’utilisateur un moyen efficace d’accéder aux fonctionnalités de l’application. Il existe deux types de raccourcis :
 
-* Une *touche d’accès rapide* est un raccourci vers un élément de l’interface utilisateur de votre application. Les touches d’accès rapide associent la touche Alt et une lettre.
-* Une *touche de raccourci* est un raccourci vers une commande d’application. Votre application peut avoir ou non une interface utilisateur qui correspond exactement à la commande. Les touches de raccourci associent la touche Ctrl et une lettre.
+* Une *touche d’accès rapide* est un raccourci vers un élément de l’interface utilisateur de votre application. Les touches d’accès rapide sont formées à partir de la touche Alt et d’une lettre.
+* Une *touche accélérateur* est un raccourci vers une commande d’application. Votre application peut avoir ou non une interface utilisateur qui correspond exactement à la commande. Les touches accélérateur sont formées avec la touche Ctrl et une lettre.
 
 Il est impératif de permettre aux utilisateurs qui se font aider de lecteurs d’écran et d’autres technologies d’assistance de découvrir facilement les touches de raccourci de votre application. Communiquez les touches de raccourci à l’aide d’info-bulles, de noms accessibles, de descriptions accessibles ou d’autres formes de communication à l’écran. Les touches de raccourci doivent au minimum être bien documentées dans le contenu d’aide de votre application.
 
@@ -250,4 +250,4 @@ En règle générale, les raccourcis clavier ne concernent pas les applications 
 * [Accessibilité](accessibility.md)
 * [Interactions du clavier](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)
 * [Exemple de clavier tactile](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
-* [Exemple d’accessibilité XAML](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d)
+* [Exemple d’accessibilité XAML](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample)

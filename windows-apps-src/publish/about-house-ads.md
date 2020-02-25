@@ -4,19 +4,19 @@ title: À propos des publicités maison
 ms.assetid: C6507C8B-351B-49E7-A194-35AB05BC3358
 ms.date: 02/18/2020
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b93682b6d1d154a393a0f0af1e09708ad08a05b9
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: 809adf6fbee5db8cca89ebe870ffcb3696d7cb85
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463421"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77507103"
 ---
 # <a name="about-house-ads"></a>À propos des publicités maison
 
 >[!WARNING]
-> Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://aka.ms/ad-monetization-shutdown)
+> Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 Vous pouvez créer une publicité pour promouvoir gratuitement l’une de vos applications dans vos autres applications. C’est ce que nous appelons les « *publicités maison* ».
 

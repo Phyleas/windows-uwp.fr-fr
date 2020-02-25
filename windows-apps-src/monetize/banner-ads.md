@@ -5,17 +5,17 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, uwp, publicités, publicité, AdControl, bannières publicitaires
 ms.localizationpriority: medium
-ms.openlocfilehash: d3e4715dee6c1e182ed195288cba7b96612b743b
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: 4ea552b063d3cc8104614915ff338472422c840b
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463521"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77507163"
 ---
 # <a name="banner-ads"></a>Bannières publicitaires
 
 >[!WARNING]
-> Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://aka.ms/ad-monetization-shutdown)
+> Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 Les articles de cette section montrent comment utiliser la classe [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) dans le SDK Microsoft Advertising pour ajouter des bannières publicitaires à votre application UWP.
 

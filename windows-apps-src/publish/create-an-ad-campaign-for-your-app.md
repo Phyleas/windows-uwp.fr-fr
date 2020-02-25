@@ -6,17 +6,17 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, uwp, Active Directory, de campagne, promouvoir
 ms.localizationpriority: medium
-ms.openlocfilehash: e804260a312c963c380f4d09b00cc276b385c2ff
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: aa5c3c160d3bb69a2ba478606a3c3e04e935088d
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463721"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77507063"
 ---
 # <a name="create-an-ad-campaign-for-your-app"></a>Création d’une campagne de publicité pour votre application
 
 >[!WARNING]
-> Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://aka.ms/ad-monetization-shutdown)
+> Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 Vous pouvez créer des campagnes ad dans l' [espace partenaires](https://partner.microsoft.com/dashboard) pour améliorer la promotion de votre application et augmenter sa base d’utilisateurs. Par défaut, nous choisissons le public ciblé pour vos annonces en fonction des paramètres de votre application dans l’espace partenaires, mais vous pouvez éventuellement définir votre propre audience. Vous pouvez également utiliser un ensemble de modèles de publicité par défaut ou charger vers le serveur vos propres conceptions d’annonces. Pour plus d’informations sur les campagnes de publicité, voir [Questions courantes sur les campagnes de publicité](common-questions.md).
 

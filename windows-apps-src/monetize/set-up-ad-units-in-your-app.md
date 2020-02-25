@@ -6,17 +6,17 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, publicités, publicité, unités publicitaires, tests
 ms.localizationpriority: medium
-ms.openlocfilehash: 37f04e8b112df23457c46e4f535309f2fe5dd847
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: c7bafdc7d21814a03d6f7da7132d8017d7f238e5
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463901"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77506725"
 ---
 # <a name="set-up-ad-units-in-your-app"></a>Configurer des unités publicitaires dans votre application
 
 >[!WARNING]
-> Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://aka.ms/ad-monetization-shutdown)
+> Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 Chaque contrôle de publicité dans votre application de plateforme Windows universelle (UWP) possède une *unité publicitaire* correspondante utilisée par nos services pour servir des publicités au contrôle. Chaque unité publicitaire se compose d’une *ID d’unité publicitaire* et d'une *ID d’application* que vous devez affecter au code dans votre application.
 

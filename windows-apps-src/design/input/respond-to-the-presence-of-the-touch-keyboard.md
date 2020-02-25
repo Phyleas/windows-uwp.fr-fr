@@ -7,12 +7,12 @@ template: detail.hbs
 keywords: clavier, accessibilité, navigation, focus, texte, saisie, interactions utilisateur
 ms.date: 07/13/2018
 ms.topic: article
-ms.openlocfilehash: c752a5df96c22b945865c0c3a465f22391aa54bc
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: e26bbe00bba8b3d91d7ee842cb4d9c984a941f2b
+ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258279"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77521360"
 ---
 # <a name="respond-to-the-presence-of-the-touch-keyboard"></a>Répondre à la présence du clavier tactile
 
@@ -23,7 +23,7 @@ Découvrez comment personnaliser l’interface utilisateur de votre application 
 - [AutomationPeer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer)
 - [InputPane](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.InputPane)
 
-![clavier tactile en mode disposition classique](images/keyboard/default.png)
+![clavier tactile en mode de disposition classique](images/keyboard/default.png)
 
 <sup>Clavier tactile en mode de disposition par défaut</sup>
 
@@ -31,7 +31,7 @@ Le clavier tactile permet l’entrée de texte pour les appareils qui prennent e
 
 Pour prendre en charge le comportement de clavier tactile correspondant dans un contrôle de saisie de texte personnalisé qui ne dérive pas d’un contrôle de saisie de texte standard, vous devez utiliser la classe <a href="https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer">AutomationPeer</a> pour exposer vos contrôles à Microsoft UI Automation et mettre en œuvre les modèles de contrôles UI Automation appropriés. Voir [Accessibilité du clavier](https://docs.microsoft.com/windows/uwp/design/accessibility/keyboard-accessibility) et [Homologues d’automation personnalisés](https://docs.microsoft.com/windows/uwp/design/accessibility/custom-automation-peers).
 
-Après avoir ajouté cette prise en charge à votre contrôle personnalisé, vous pouvez répondre de manière appropriée à la présence du clavier tactile.
+Une fois cette prise en charge ajoutée à votre contrôle personnalisé, vous pouvez répondre de manière appropriée à la présence du clavier tactile.
 
 **Conditions préalables**
 
@@ -39,10 +39,10 @@ Cette rubrique s’appuie sur l’article [Interactions avec le clavier](keyboar
 
 Vous devez posséder des connaissances de base sur les interactions avec le clavier standard, sur la gestion de la saisie au clavier et des événements de clavier et sur UI Automation.
 
-Si vous débutez dans le développement d’applications pour plateforme Windows universelle (UWP), consultez les rubriques ci-dessous pour vous familiariser avec les technologies décrites ici.
+Si vous débutez dans le développement d’applications de plateforme Windows universelle (UWP), consultez les rubriques ci-dessous pour vous familiariser avec les technologies décrites ici.
 
 - [Créer votre première application](https://docs.microsoft.com/windows/uwp/get-started/your-first-app)
-- Découvrir les événements avec [Vue d’ensemble des événements et des événements routés](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview)
+- Découvrir les événements avec [Vue d’ensemble des événements et des événements routés](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview).
 
 **Instructions relatives à l’expérience utilisateur :**
 
@@ -66,7 +66,7 @@ Voici quelques recommandations de base concernant les contrôles de saisie de te
 
     ![formulaire avec et sans clavier tactile apparent](images/touch-keyboard-pan1.png)
 
-    Dans certains cas, il existe des éléments d’interface utilisateur qui doivent rester tout le temps à l’écran. Concevez l’interface utilisateur de sorte que les contrôles de formulaire se trouvent dans une région panoramique et que les éléments d’interface utilisateur importants soient statiques. Par exemple :
+    Dans certains cas, il existe des éléments d’interface utilisateur qui doivent rester tout le temps à l’écran. Concevez l’interface utilisateur de sorte que les contrôles de formulaire se trouvent dans une région panoramique et que les éléments d’interface utilisateur importants soient statiques. Par exemple :
 
     ![formulaire contenant des zones devant toujours rester affichées](images/touch-keyboard-pan2.png)
 
@@ -208,7 +208,7 @@ void Scenario2_ShowHideEvents::OnHiding(InputPane^ /*sender*/, InputPaneVisibili
 }
 ```
 
-## <a name="related-articles"></a>Articles associés
+## <a name="related-articles"></a>Articles connexes
 
 - [Interactions du clavier](keyboard-interactions.md)
 - [Accessibilité du clavier](https://docs.microsoft.com/windows/uwp/accessibility/keyboard-accessibility)
@@ -220,7 +220,7 @@ void Scenario2_ShowHideEvents::OnHiding(InputPane^ /*sender*/, InputPaneVisibili
 
 **Exemples d’archives**
 
-- [Entrée : exemple de clavier tactile](https://code.msdn.microsoft.com/windowsapps/Touch-keyboard-sample-43532fda)
+- [Entrée : exemple de clavier tactile](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
 - [Réponse à l’apparence de l’exemple de clavier visuel](https://code.msdn.microsoft.com/windowsapps/keyboard-events-sample-866ba41c)
 - [Exemple d’édition de texte XAML](https://code.msdn.microsoft.com/windowsapps/XAML-text-editing-sample-fb0493ad)
-- [Exemple d’accessibilité XAML](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d)
+- [Exemple d’accessibilité XAML](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample)

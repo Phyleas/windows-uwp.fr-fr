@@ -8,12 +8,12 @@ author: mcleanbyron
 keywords: windows 10, uwp, windows forms, wpf, xaml islands, îles xaml
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 397c301564c0d4799c6b41db209da9659725103d
-ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
+ms.openlocfilehash: 21049c995d467209b22fe8ea5c40d303911f2c2c
+ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77089305"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77521281"
 ---
 # <a name="tutorial-modernize-a-wpf-app"></a>Didacticiel : moderniser une application WPF 
 
@@ -69,7 +69,7 @@ Veillez à installer les charges de travail suivantes et les fonctionnalités fa
 
 Avant de commencer le didacticiel, téléchargez le code source de l’application Contoso depenses et assurez-vous que vous pouvez générer le code dans Visual Studio.
 
-1. Téléchargez le code source de l’application à partir de l’onglet **releases** du [référentiel AppConsult WinAppsModernization Workshop](https://github.com/Microsoft/AppConsult-WinAppsModernizationWorkshop). Le lien direct est [https://aka.ms/wamwc](https://aka.ms/wamwc).
+1. Téléchargez le code source de l’application à partir de l’onglet **releases** du [référentiel AppConsult WinAppsModernization Workshop](https://github.com/Microsoft/AppConsult-WinAppsModernizationWorkshop). Le lien direct est [https://github.com/microsoft/AppConsult-WinAppsModernizationWorkshop/releases](https://github.com/microsoft/AppConsult-WinAppsModernizationWorkshop/releases).
 2. Ouvrez le fichier zip et extrayez tout le contenu à la racine de votre lecteur **C :\\** . Il crée un dossier nommé **C:\WinAppsModernizationWorkshop**.
 3. Ouvrez Visual Studio 2019 et double-cliquez sur le fichier **C:\WinAppsModernizationWorkshop\Lab\Exercise1\01-Start\ContosoExpenses\ContosoExpenses.sln** pour ouvrir la solution.
 4. Vérifiez que vous pouvez générer, exécuter et déboguer le projet WPF dépenses contoso en appuyant sur le bouton **Démarrer** ou en appuyant sur CTRL + F5.

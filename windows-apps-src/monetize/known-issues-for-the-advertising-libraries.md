@@ -6,17 +6,17 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, annonces, publicité, problèmes connus, résolution des problèmes
 ms.localizationpriority: medium
-ms.openlocfilehash: 34c07a46d31ddf6c8f5b56ffd19059b4d225a72c
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: f39d8512398c43ea65037de82434e3740bac7ff2
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463961"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77506732"
 ---
 # <a name="known-issues-and-troubleshooting-for-ads-in-apps"></a>Problèmes connus et résolution des problèmes des publicités dans les applications
 
 >[!WARNING]
-> Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://aka.ms/ad-monetization-shutdown)
+> Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 Cette rubrique répertorie les problèmes connus de la version actuelle du SDK Microsoft Advertising. Pour plus d'aide à la résolution des problèmes, consultez les rubriques suivantes.
 
@@ -51,7 +51,7 @@ Plusieurs raisons peuvent provoquer le non-affichage des publicités, notamment 
 
 Si vous pouvez voir des publicités de test dans l’application, c’est que votre code fonctionne et qu’il peut afficher des publicités. Si vous rencontrez des problèmes, contactez le [support produit](https://developer.microsoft.com/windows/support). Sur cette page, choisissez **nous contacter**.
 
-Vous pouvez également publier une question sur le [forum](https://go.microsoft.com/fwlink/?LinkID=401264).
+Vous pouvez également publier une question sur le [forum](https://social.msdn.microsoft.com/forums/windowsapps/en-US/home?category=windowsapps).
 
 ## <a name="test-ads-are-showing-in-your-app-instead-of-live-ads"></a>Les publicités de test s’affichent dans votre application à la place des publicités dynamiques
 
@@ -94,7 +94,7 @@ La définition des propriétés associées aux bordures, héritées par la class
 
 ## <a name="more-information"></a>Informations supplémentaires
 
-Pour plus d’informations sur les derniers problèmes connus et pour publier des questions liées au SDK Microsoft Advertising, visitez le [forum](https://go.microsoft.com/fwlink/?LinkID=401264).
+Pour plus d’informations sur les derniers problèmes connus et pour publier des questions liées au SDK Microsoft Advertising, visitez le [forum](https://social.msdn.microsoft.com/forums/windowsapps/en-US/home?category=windowsapps).
 
  
 

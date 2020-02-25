@@ -6,17 +6,17 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, annonces, publicités, procédures pas à pas
 ms.localizationpriority: medium
-ms.openlocfilehash: 57ea70e25b81c44107a9a8dbc6a11e1215b94f17
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: 30fc18be85c13838c380bd607544f6c4327ca2d4
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463411"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77507153"
 ---
 # <a name="best-practices-for-ads-in-apps"></a>Meilleures pratiques pour les publicités dans les applications
 
 >[!WARNING]
-> Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://aka.ms/ad-monetization-shutdown)
+> Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 Les articles de cette section fournissent des recommandations d’expérience utilisateur et des conseils de gestion des erreurs pour les bannières publicitaires, les spots et les annonces en natif dans vos applications UWP.
 

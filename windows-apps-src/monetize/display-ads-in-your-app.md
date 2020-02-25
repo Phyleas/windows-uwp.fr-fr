@@ -6,17 +6,17 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, publicités, publicité, bannière, contrôle de publicité, spot
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f318a68a97e98d3da24da16778988ee40c4e1dd
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: d693b8a4e07e66eded7d1580291c552e7ab9ca64
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463781"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77507223"
 ---
 # <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>Afficher des publicités dans votre application avec le SDK Microsoft Advertising
 
 >[!WARNING]
-> Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://aka.ms/ad-monetization-shutdown)
+> Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 Augmentez vos opportunités de revenus en plaçant des publicités dans votre application pour plateforme Windows universelle (UWP) sous Windows 10 à l’aide du SDK Microsoft Advertising. Notre plateforme de monétisation ad offre un large éventail de formats ad qui peuvent être intégrés en toute transparence à vos applications et qui prend en charge la médiation avec de nombreux réseaux Active Directory populaires. Notre plateforme est conforme aux normes OpenRTB, VAST 2.x, MRAID 2, et VPAID 3 et est compatible avec MOAT et IAS. 
 
@@ -34,7 +34,7 @@ Augmentez vos opportunités de revenus en plaçant des publicités dans votre ap
 <tbody>
 <tr>
 <td align="left"><img src="images/install-sdk.png" alt="Install SDK icon" /></td>
-<td align="left"><b>Bien démarrer</b><br/><br/>
+<td align="left"><b>Prise en main</b><br/><br/>
     <a href="https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK">Installez le kit de développement logiciel (SDK) Microsoft Advertising</a>
 </td>
 <td align="left"><img src="images/write-code.png" alt="Develop icon" /></td>
@@ -111,10 +111,10 @@ Une fois votre application publiée et disponible dans le Windows Store, vous po
 
 Pour obtenir une aide supplémentaire sur l'utilisation du SDK Microsoft Advertising, utilisez les ressources suivantes.
 
-|  Tâche    | Ressource |               
+|  Tâche    | Resource |               
 |----------|-------|
 | Signaler un bogue ou obtenir un support assisté en matière de publicité     | Visitez la [page de support](https://developer.microsoft.com/windows/support) et choisissez **Publicités dans l’app**.        |
-| Bénéficier du support de la communauté     | Consultez le [forum](https://go.microsoft.com/fwlink/?LinkID=401264).       |
+| Bénéficier du support de la communauté     | Consultez le [forum](https://social.msdn.microsoft.com/forums/windowsapps/en-US/home?category=windowsapps).       |
 | Télécharger des exemples de projet qui montrent comment ajouter des bannières et des spots publicitaires aux applications.     | Voir [Exemples de publicité sur GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising).       |
 | Découvrir les dernières opportunités de monétisation pour les applications Windows     | Visitez [Monétiser vos applications](https://developer.microsoft.com/store/monetize).        |
 

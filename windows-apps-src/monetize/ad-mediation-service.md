@@ -5,17 +5,17 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, pub, publicité, médiation publicitaire
 ms.localizationpriority: medium
-ms.openlocfilehash: ad2f60b6b87f81df44bc2f875a722a9e36fdd170
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: 13cdba15e73028e0bf0560dc373e6f06bd0e86d5
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463981"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77507193"
 ---
 # <a name="microsoft-ad-mediation-service"></a>Service de médiation publicitaire de Microsoft
 
 >[!WARNING]
-> Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://aka.ms/ad-monetization-shutdown)
+> Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 Lorsque vous utilisez le [SDK Microsoft Advertising](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) pour [afficher des publicités dans vos applications](display-ads-in-your-app.md), vous pouvez éventuellement utiliser le service de médiation publicitaire de Microsoft pour optimiser vos revenus publicitaires. Cet article présente une vue d'ensemble du service de médiation publicitaire et de ses objectifs.
 

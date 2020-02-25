@@ -1,5 +1,5 @@
 ---
-Description: Ici sont décrites les meilleures pratiques d’accessibilité du texte, en s’assurant que les couleurs et les arrière-plans respectent le coefficient de contraste.
+Description: Cette rubrique décrit les meilleures pratiques relatives à l’accessibilité du texte dans une application, en garantissant que les couleurs et de l’arrière-plan respectent le coefficient de contraste nécessaire.
 ms.assetid: BA689C76-FE68-4B5B-9E8D-1E7697F737E6
 title: Exigences de texte accessible
 label: Accessible text requirements
@@ -8,19 +8,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b566b1960435a856b82a7be605ef5e1f7ba86e2
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 7f794cc6f23cf3f4beaf5bc3c9558ceaf2ccc8a6
+ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257790"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77521311"
 ---
 # <a name="accessible-text-requirements"></a>Exigences de texte accessible  
 
 
 
 
-Ici sont décrites les meilleures pratiques d’accessibilité du texte, en s’assurant que les couleurs et les arrière-plans respectent le coefficient de contraste. Elle traite également des rôles Microsoft UI Automation que peuvent avoir les éléments de texte dans une application UWP et des meilleures pratiques relatives au texte des graphiques.
+Cette rubrique décrit les meilleures pratiques relatives à l’accessibilité du texte dans une application, en garantissant que les couleurs et de l’arrière-plan respectent le coefficient de contraste nécessaire. Elle traite également des rôles Microsoft UI Automation que peuvent avoir les éléments de texte dans une application UWP et des meilleures pratiques relatives au texte des graphiques.
 
 <span id="contrast_rations"/>
 <span id="CONTRAST_RATIONS"/>
@@ -126,7 +126,7 @@ Dans la mesure du possible, évitez d’inclure du texte dans un graphique. Par 
 
 Les utilisateurs peuvent avoir des difficultés à lire du texte dans une application lorsque les polices utilisées sont simplement trop petites. par conséquent, assurez-vous que le texte de votre application est de taille raisonnable.
 
-Une fois que vous avez terminé, Windows comprend différents outils et paramètres d’accessibilité dont les utilisateurs peuvent tirer parti et s’adapter à leurs propres besoins et préférences pour lire du texte. Il s’agit des éléments suivants :
+Une fois que vous avez terminé, Windows comprend différents outils et paramètres d’accessibilité dont les utilisateurs peuvent tirer parti et s’adapter à leurs propres besoins et préférences pour lire du texte. Par exemple :
 
 * L’outil loupe, qui agrandit la zone sélectionnée de l’interface utilisateur. Vous devez vous assurer que la disposition du texte dans votre application ne complique pas l’utilisation de la loupe pour la lecture.
 * Les paramètres de mise à l’échelle et de résolution globaux dans **Paramètres-> > système d’affichage-> de l’échelle et de la disposition**. Les options de dimensionnement disponibles peuvent varier en fonction des capacités du périphérique d’affichage.
@@ -186,6 +186,6 @@ Les types suivants possèdent une propriété **IsTextScaleFactorEnabled** :
 * [Mise à l’échelle du texte](https://docs.microsoft.com/windows/uwp/design/input/text-scaling)
 * [Accessibilité](accessibility.md)
 * [Informations de base sur l’accessibilité](basic-accessibility-information.md)
-* [Exemple d’affichage de texte XAML](https://code.msdn.microsoft.com/windowsapps/XAML-text-display-sample-2593ba0a)
-* [Exemple d’édition de texte XAML](https://code.msdn.microsoft.com/windowsapps/XAML-text-editing-sample-fb0493ad)
-* [Exemple d’accessibilité XAML](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d) 
+* [Exemple d’affichage de texte XAML](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20text%20display%20sample%20(Windows%208))
+* [Exemple d’édition de texte XAML](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20text%20editing%20sample%20(Windows%208))
+* [Exemple d’accessibilité XAML](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample) 

@@ -7,12 +7,12 @@ ms.date: 09/28/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 617511d23bcabe342abe7477f617d81cd01182e6
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 634f85ec64597f14210cf83fd67189f2f54bad4d
+ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257783"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77521250"
 ---
 # <a name="high-contrast-themes"></a>Thèmes à contraste élevé  
 
@@ -82,7 +82,7 @@ La dernière étape, décrite dans la section suivante, consiste à identifier l
 
 ## <a name="high-contrast-colors"></a>Couleurs à contraste élevé
 
-La page *Paramètres > Options d’ergonomie > Contraste élevé* comporte 4 thèmes à contraste élevé par défaut. 
+La page *Paramètres &gt; Options d’ergonomie &gt; Contraste élevé* comporte 4 thèmes à contraste élevé par défaut. 
 
 
 ![Paramètres de contraste élevé](images/high-contrast-settings.png)  
@@ -95,7 +95,7 @@ La page *Paramètres > Options d’ergonomie > Contraste élevé* comporte 4 th
 
 Chaque ressource **SystemColor*Color** est une variable qui met automatiquement à jour la couleur lorsque l’utilisateur bascule entre les thèmes à contraste élevé. Vous trouverez ci-après des recommandations vous indiquant quand et où utiliser chaque ressource.
 
-Ressource | Utilisation |
+Resource | Utilisation |
 |--------|-------|
 **SystemColorWindowTextColor** | Copie de texte de corps, titres, listes ; tout texte ne pouvant faire l’objet d’aucune interaction |
 | **SystemColorHotlightColor** | Liens hypertexte |
@@ -235,7 +235,7 @@ Vous pouvez vérifier par programme si le thème actuel est un thème à contras
 
 ## <a name="related-topics"></a>Rubriques connexes  
 * [Accessibilité](accessibility.md)
-* [Exemple de contraste et de paramètres d’interface utilisateur](https://code.msdn.microsoft.com/windowsapps/High-Contrast-UI-Settings-9a310961)
-* [Exemple d’accessibilité XAML](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d)
-* [Exemple de contraste élevé XAML](https://code.msdn.microsoft.com/windowsapps/XAML-high-contrast-style-c0ce936f)
+* [Exemple de contraste et de paramètres d’interface utilisateur](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20high%20contrast%20style%20sample%20(Windows%208))
+* [Exemple d’accessibilité XAML](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample)
+* [Exemple de contraste élevé XAML](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20high%20contrast%20style%20sample%20(Windows%208))
 * [**AccessibilitySettings**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.AccessibilitySettings)

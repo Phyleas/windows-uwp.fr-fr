@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d39d2f094dd85c29b51a19e1affcf0d292183ede
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: fa9ba2b8c9b327a51218dfc5f100c147f2d566e8
+ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257773"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77521260"
 ---
 # <a name="expose-basic-accessibility-information"></a>Présenter des informations d’accessibilité élémentaires  
 
@@ -33,7 +33,7 @@ Le tableau suivant décrit comment définir ou obtenir un nom accessible pour di
 |--------------|-------------|
 | Texte statique | Pour les éléments [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) et [**RichTextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock), un nom accessible est déterminé automatiquement à partir du texte visible (interne). Tout le texte dans cet élément est utilisé comme nom. Voir [Nom du texte interne](#name_from_inner_text). |
 | Images | L’élément [**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) XAML n’a pas d’analogue direct pour l’attribut HTML **alt** de type **img** et éléments similaires. Vous devez utiliser [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name) pour fournir un nom ou utiliser la technique de légendage. Voir [Noms accessibles pour les images](#images). |
-| Éléments de formulaire | Le nom accessible pour un élément de formulaire doit être identique à l’étiquette affichée pour cet élément. Voir [Étiquettes et LabeledBy](#labels). |
+| Éléments Form | Le nom accessible pour un élément de formulaire doit être identique à l’étiquette affichée pour cet élément. Voir [Étiquettes et LabeledBy](#labels). |
 | Boutons et liens | Par défaut, le nom accessible d’un bouton ou d’un lien est basé sur le texte visible, les mêmes règles que celles décrites dans [Nom du texte interne](#name_from_inner_text) étant appliquées. Dans les cas où un bouton contient uniquement une image, utilisez [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name) pour fournir un équivalent texte-uniquement de l’action prévue du bouton. |
 
 La plupart des éléments de conteneur tels que les panneaux n’effectuent pas la promotion de leur contenu comme nom accessible, car c’est le contenu de l’élément qui doit indiquer un nom et un rôle correspondant, et non son conteneur. L’élément conteneur peut indiquer qu’il s’agit d’un élément ayant des enfants dans une représentation Microsoft UI Automation, de telle sorte que la logique de technologie d’assistance puisse le traverser. Toutefois, les informations sur les conteneurs ne sont généralement pas utiles aux utilisateurs de technologies d’assistance et la plupart des conteneurs ne sont pas nommés.
@@ -83,7 +83,7 @@ XAML
   AutomationProperties.Name="An image of a customer using the product."/>
 ```
 
-En guise d’alternative, vous pouvez inclure une légende qui s’affiche dans l’interface utilisateur visible et qui sert également d’informations d’accessibilité associées à l’étiquette pour le contenu de l’image. Voici un exemple :
+En guise d’alternative, vous pouvez inclure une légende qui s’affiche dans l’interface utilisateur visible et qui sert également d’informations d’accessibilité associées à l’étiquette pour le contenu de l’image. Voici un exemple :
 
 XAML
 ```xml
@@ -141,7 +141,7 @@ L’un des outils que vous pouvez utiliser pour tester l’accessibilité s’ap
 <span id="ACCESSIBLE_NAMES_FROM_DYNAMIC_DATA"/>
 
 ## <a name="accessible-names-from-dynamic-data"></a>Noms accessibles tirés de données dynamiques  
-Windows prend en charge de nombreux contrôles qui peuvent servir à afficher des valeurs provenant d’une source de données associée, grâce à une fonctionnalité appelée *liaison de données*. Lors du remplissage de listes avec des éléments de données, vous devrez peut-être appliquer une technique qui définit les noms accessibles des éléments de listes liés aux données une fois la liste initiale remplie. Pour plus d’informations, voir « Scénario 4 » dans l’[Exemple d’accessibilité XAML](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d).
+Windows prend en charge de nombreux contrôles qui peuvent servir à afficher des valeurs provenant d’une source de données associée, grâce à une fonctionnalité appelée *liaison de données*. Lors du remplissage de listes avec des éléments de données, vous devrez peut-être appliquer une technique qui définit les noms accessibles des éléments de listes liés aux données une fois la liste initiale remplie. Pour plus d’informations, voir « Scénario 4 » dans l’[Exemple d’accessibilité XAML](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample).
 
 <span id="Accessible_names_and_localization"/>
 <span id="accessible_names_and_localization"/>
@@ -157,5 +157,5 @@ Notez que les propriétés jointes telles les propriétés [**AutomationProperti
 ## <a name="related-topics"></a>Rubriques connexes  
 * [Accessibilité](accessibility.md)
 * [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name)
-* [Exemple d’accessibilité XAML](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d)
+* [Exemple d’accessibilité XAML](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample)
 * [Test de l’accessibilité](accessibility-testing.md)

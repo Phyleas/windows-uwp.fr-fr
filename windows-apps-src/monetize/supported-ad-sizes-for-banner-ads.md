@@ -6,17 +6,17 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, annonces, publicités, tailles, bannière
 ms.localizationpriority: medium
-ms.openlocfilehash: c3836c2d4b0c7f522db936906e2eae3ed2862b68
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: ec96d744f7a9d2e91b27feae1fe5f3b0c322a450
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463891"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77506853"
 ---
 # <a name="supported-banner-ad-sizes"></a>Tailles des bannières prises en charge
 
 >[!WARNING]
-> Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://aka.ms/ad-monetization-shutdown)
+> Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 Les tailles des bannières publicitaires suivantes sont prises en charge pour les applications de plateforme Windows universelle (UWP). Lorsque vous instanciez votre objet **classe AdControl** dans votre application, veillez à définir les propriétés Width et Height pour qu’elles correspondent à l’une de ces tailles prises en charge.
 

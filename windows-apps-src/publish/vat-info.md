@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0be47e5edeee0d00843d06297857f39977e085f4
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: d6b90b000564c1c6929154c3ac3b79c129e3fff6
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258955"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77507143"
 ---
 # <a name="vat-info"></a>Informations sur la TVA
 
@@ -21,7 +21,7 @@ Si vous devez fournir un numéro d’identification de TVA pendant le processus 
 ## <a name="understanding-vat-numbers"></a>Description des numéros de TVA
 
 
-Un numéro de TVA (taxe sur la valeur ajoutée) est un identificateur utilisé pour des pays ou des régions dans l’Union européenne. Pour plus d’informations, accédez au site officiel de l’Union européenne [VIES](https://go.microsoft.com/fwlink/p/?LinkId=181246).
+Un numéro de TVA (taxe sur la valeur ajoutée) est un identificateur utilisé pour des pays ou des régions dans l’Union européenne. Pour plus d’informations, accédez au site officiel de l’Union européenne [VIES](http://ec.europa.eu/taxation_customs/vies/vieshome.do).
 
 ## <a name="accepted-formats-for-vat-numbers"></a>Formats acceptés pour les numéros de TVA
 
@@ -29,7 +29,7 @@ Un numéro de TVA (taxe sur la valeur ajoutée) est un identificateur utilisé p
 Notez que Microsoft ne fournit pas de conseils fiscaux et que le tableau suivant est fourni uniquement à titre indicatif. Si ces conseils ne vous suffisent pas pour indiquer un numéro de TVA à Microsoft, consultez votre administration fiscale locale pour savoir si des changements récents ont été opérés.
 
 <table Responsive="true">
-<tr><th>Pays/région</th><th>Informations sur la TVA</th></tr>
+<tr><th>Pays/Région</th><th>Informations sur la TVA</th></tr>
 <tr><td data-th="Country/region">Autriche
 </td><td data-th="VAT info">
 <ul>
@@ -106,7 +106,7 @@ Notez que Microsoft ne fournit pas de conseils fiscaux et que le tableau suivant
 <li>Remarques : peut inclure tout caractère alphabétique à l'exception de I ou Q comme premier ou deuxième caractère, ou comme premier et deuxième caractère, suivi de 9 chiffres.</li>
 </ul>
 </td></tr>
-<tr><td data-th="Country/region">Allemagne</td><td data-th="VAT info">
+<tr><td data-th="Country/region">Germany</td><td data-th="VAT info">
 <ul>
 <li>Format du numéro de TVA : 9 chiffres</li>
 <li>Code pays/région : DE</li>
@@ -164,7 +164,7 @@ Notez que Microsoft ne fournit pas de conseils fiscaux et que le tableau suivant
 <li>Exemple : 12345678</li>
 </ul>
 </td></tr>
-<tr><td data-th="Country/region">Malte (République de)</td><td data-th="VAT info">
+<tr><td data-th="Country/region">Malte</td><td data-th="VAT info">
 <ul>
 <li>Format du numéro de TVA : 2 lettres et 8 chiffres</li>
 <li>Code pays/région : MT</li>

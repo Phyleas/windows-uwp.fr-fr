@@ -1,6 +1,6 @@
 ---
 Description: Découvrez comment accorder une identité à des applications de bureau non packagées pour pouvoir utiliser les fonctionnalités Windows 10 modernes dans ces applications.
-title: Accorder l’identité à des applications de bureau non packagées
+title: Accorder une identité à des applications de bureau non empaquetées
 ms.date: 10/25/2019
 ms.topic: article
 keywords: Windows 10, Desktop, package, Identity, MSIX, Win32
@@ -8,14 +8,14 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: f355bba3087f58ed20800052371804048bc0006c
-ms.sourcegitcommit: d7eccdb27c22bccac65bd014e62b6572a6b44602
+ms.openlocfilehash: 10ed6b8e1bd5efce4c9d4429d91849b1333505b6
+ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73145614"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77521350"
 ---
-# <a name="grant-identity-to-non-packaged-desktop-apps"></a>Accorder l’identité à des applications de bureau non packagées
+# <a name="grant-identity-to-non-packaged-desktop-apps"></a>Accorder une identité à des applications de bureau non empaquetées
 
 <!--
 > [!NOTE]
@@ -50,7 +50,7 @@ Un *package fragmenté* contient un manifeste de package, mais aucun autre fichi
 
 Pour prendre en charge les packages épars, le schéma de manifeste du package prend désormais en charge un élément facultatif **\<AllowExternalContent\>** sous le [ **\<propriétés\>** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-properties) élément. Cela permet à votre manifeste de package de faire référence à du contenu en dehors du package, à un emplacement spécifique sur le disque.
 
-Par exemple, si vous disposez d’une application de bureau non packagée existante qui installe le fichier exécutable de l’application et un autre contenu dans C:\Program Files\MyDesktopApp\, vous pouvez créer un package épars qui comprend le **\<AllowExternalContent\>** élément dans le manifeste. Pendant le processus d’installation de votre application ou la première fois que vos applications sont installées, vous pouvez installer le package Sparse et déclarer C:\Program Files\MyDesktopApp\ comme emplacement externe utilisé par votre application.
+Par exemple, si vous avez votre application de bureau non packagée existante qui installe le fichier exécutable de l’application et d’autres contenus dans C:\Program Files\MyDesktopApp\, vous pouvez créer un package épars qui comprend l’élément **\<AllowExternalContent\>** dans le manifeste. Pendant le processus d’installation de votre application ou la première fois que vos applications sont installées, vous pouvez installer le package Sparse et déclarer C:\Program Files\MyDesktopApp\ comme emplacement externe utilisé par votre application.
 
 ## <a name="create-a-package-manifest-for-the-sparse-package"></a>Créer un manifeste de package pour le package épars
 
@@ -61,7 +61,7 @@ Assurez-vous que le manifeste du package comprend les éléments suivants :
 * [ **\<d’identité\>** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) élément qui décrit les attributs d’identité pour votre application de bureau.
 * **\<élément AllowExternalContent\>** sous l’élément [ **\<propriétés\>** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-properties) . Cet élément doit être affecté à la valeur `true`, ce qui permet à votre manifeste de package de référencer du contenu en dehors du package, à un emplacement spécifique sur le disque. Dans une étape ultérieure, vous devez spécifier le chemin d’accès de l’emplacement externe lorsque vous inscrivez votre package fragmenté à partir du code qui s’exécute dans votre programme d’installation ou votre application. Tout contenu que vous référencez dans le manifeste qui ne se trouve pas dans le package lui-même doit être installé à l’emplacement externe.
 * L’attribut **MinVersion** de l’élément [ **\<TargetDeviceFamily\>** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) doit avoir la valeur `10.0.19000.0` ou une version ultérieure.
-* Les attributs **trustLevel = mediumIL** et **RuntimeBehavior = Win32App** de l’élément\>de l' [**application\<** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-application) déclarent que l’application de bureau associée au package Sparse s’exécutera de la même façon qu’un bureau non emballé standard. application, sans la virtualisation du Registre et du système de fichiers, ainsi que d’autres modifications au moment de l’exécution.
+* Les attributs **trustLevel = mediumIL** et **RuntimeBehavior = Win32App** de l’élément\>de l' [**application\<** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-application) déclarent que l’application de bureau associée au package Sparse s’exécutera de la même façon qu’une application de bureau non empaquetée standard, sans la virtualisation du Registre et du système de fichiers et d’autres modifications de l’exécution.
 
 L’exemple suivant montre le contenu complet d’un manifeste de package fragmenté (AppxManifest. Xml). Ce manifeste comprend une extension de `windows.sharetarget`, qui requiert l’identité du package.
 
@@ -196,7 +196,7 @@ private static bool registerSparsePackage(string externalLocation, string sparse
 
 ## <a name="sample"></a>Exemple
 
-Pour obtenir un exemple d’application entièrement fonctionnel qui montre comment accorder l’identité d’un package à une application de bureau à l’aide d’un package fragmenté, consultez [https://aka.ms/sparsepkgsample](https://aka.ms/sparsepkgsample). Vous trouverez plus d’informations sur la création et l’exécution de l’exemple dans ce billet de [blog](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/#HBMFEM843XORqOWx.97).
+Pour obtenir un exemple d’application entièrement fonctionnel qui montre comment accorder l’identité d’un package à une application de bureau à l’aide d’un package fragmenté, consultez [https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages](https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages). Vous trouverez plus d’informations sur la création et l’exécution de l’exemple dans ce billet de [blog](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/#HBMFEM843XORqOWx.97).
 
 Cet exemple comprend les éléments suivants :
 

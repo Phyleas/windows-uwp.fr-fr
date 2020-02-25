@@ -6,17 +6,17 @@ ms.topic: article
 keywords: windows 10, uwp, annonces, publicité, AdMediatorControl, AdControl, migrer
 ms.assetid: f8d5b2ad-fcdb-4891-bd68-39eeabdf799c
 ms.localizationpriority: medium
-ms.openlocfilehash: a8ccc8e9c76fc0f16bcdfc619d8048307fdfbc57
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: 2fa57e02574850704b6c43853980dde32c388557
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463881"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77507083"
 ---
 # <a name="update-your-app-to-the-latest-advertising-libraries-for-banner-ads"></a>Mettre à jour votre application avec les bibliothèques de publicités les plus récentes
 
 >[!WARNING]
-> Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://aka.ms/ad-monetization-shutdown)
+> Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 Depuis le 1er avril 2017, nous ne servons plus de bannières publicitaires aux applications qui utilisent une version non prise en charge du SDK publicitaire. Si vous utilisez **AdControl** pour afficher des bannières publicitaires dans votre application de plateforme Windows universelle (UWP), utilisez les informations de cet article pour déterminer si vous utilisez un SDK Microsoft Advertising non pris en charge et faites migrer votre application vers un SDK pris en charge.
 
