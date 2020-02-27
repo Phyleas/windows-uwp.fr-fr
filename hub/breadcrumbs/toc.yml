@@ -16,6 +16,9 @@
             - name: Moderniser les applications de bureau
               tocHref: /windows/apps/desktop/modernize/
               topicHref: /windows/apps/desktop/modernize/
+            - name: Traiter les traces ETW dans .NET
+              tocHref: /windows/apps/trace-processing/
+              topicHref: /windows/apps/trace-processing/overview
         - name: Environnement de développement
           tocHref: /windows/dev-environment/
           topicHref: /windows/dev-environment/
