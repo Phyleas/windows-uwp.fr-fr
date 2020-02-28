@@ -5,18 +5,21 @@ author: maiak
 ms.author: maiak
 ms.date: 02/23/2020
 ms.topic: overview
-ms.openlocfilehash: bf5f7a7c1bb007b7f1a19508fa0ee7bbaf298654
-ms.sourcegitcommit: 4fdab7be28aca18cb3879fc205eb49edc4f9a96b
+ms.openlocfilehash: 59722f1f31364c464a8a763d28f3d15ef13609a8
+ms.sourcegitcommit: cfba95a96202c4250de845115d1b99361412a779
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77629140"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77903286"
 ---
 # <a name="extend-traceprocessor"></a>Étendre TraceProcessor
 
 De nombreux types de données de trace ont une prise en charge intégrée dans [TraceProcessor](https://docs.microsoft.com/dotnet/api/microsoft.windows.eventtracing.traceprocessor), mais si vous avez vos autres fournisseurs que vous souhaitez analyser (y compris vos propres fournisseurs personnalisés), ces données sont également disponibles à partir de la trace en direct pendant le traitement.
 
-Par exemple, voici un moyen simple d’obtenir la liste des ID des fournisseurs dans une trace :
+> [!NOTE]
+> Cette partie de l’API est en version préliminaire et en développement actif. Cela peut changer dans les versions ultérieures.
+
+Par exemple, voici un moyen simple d’obtenir la liste des ID des fournisseurs dans une trace.
 
 ```csharp
 // Open a trace with TraceProcessor.Create() and call Run...
@@ -34,7 +37,7 @@ static void Run(ITraceProcessor trace)
 }
 ```
 
-L’exemple suivant montre une source de données personnalisée simplifiée :
+L’exemple suivant montre une source de données personnalisée simplifiée.
 
 ```csharp
 // Open a trace with TraceProcessor.Create() and call Run...
