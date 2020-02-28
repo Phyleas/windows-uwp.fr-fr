@@ -1,6 +1,6 @@
 ### YamlMime:Hub
-title: Documentation Windows
-summary: Informations pour les développeurs de logiciels, les ingénieurs matériels et les professionnels de l’informatique.
+title: Documentation technique Windows
+summary: Informations pour les développeurs d’applications, les développeurs de matériel et les professionnels de l’informatique.
 brand: windows
 metadata:
   title: Documentation Windows | Microsoft Docs
@@ -9,61 +9,27 @@ metadata:
   ms.author: tedhudek
   ms.topic: hub-page
   uhfHeaderId: MSDocsHeader-DocsL1
-  ms.openlocfilehash: 50a82a07d74e44746858e0800e2ff2007b5385e8
-  ms.sourcegitcommit: 860e8303da3e36624f603ce3273d68911c696e5d
+  ms.openlocfilehash: 588fb1ddf7581867d705d531c3459a6962f07d56
+  ms.sourcegitcommit: cfba95a96202c4250de845115d1b99361412a779
   ms.translationtype: HT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 10/22/2019
-  ms.locfileid: "72777255"
-highlightedContent:
+  ms.lasthandoff: 02/28/2020
+  ms.locfileid: "77903316"
+productDirectory:
   items:
-  - title: Obtenir Visual Studio et le kit SDK Windows
-    itemType: download
-    url: https://developer.microsoft.com/windows/downloads
-  - title: Télécharger le kit WDK
-    itemType: download
-    url: https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk
-  - title: Adhérer au programme Insider
-    itemType: overview
-    url: https://docs.microsoft.com/windows-insider
-  - title: Améliorer vos compétences
-    itemType: learn
-    url: https://docs.microsoft.com/learn/browse/?products=m365%2Cwindows
-additionalContent:
-  sections:
-  - items:
-    - title: Développement d’applications
-      links:
-      - text: Commencer à écrire des applications Windows 10
-        url: https://docs.microsoft.com/windows/apps
-      - text: Ajouter des fonctionnalités Windows 10 à vos applications
-        url: https://docs.microsoft.com/windows/apps/desktop/modernize/
-      - text: Créer des applications de bureau
-        url: https://docs.microsoft.com/windows/apps/desktop/
-      - text: Développer avec Python, Node. js et le sous-système Windows pour Linux
-        url: https://docs.microsoft.com/windows/dev-environment/
-      - text: Rechercher des exemples de code
-        url: https://developer.microsoft.com/windows/samples
-    - title: Développement de matériel
-      links:
-      - text: Découvrir comment créer des appareils
-        url: https://docs.microsoft.com/windows-hardware/get-started/index
-      - text: Développer des pilotes d’appareil
-        url: https://docs.microsoft.com/windows-hardware/drivers
-      - text: Créer des images Windows
-        url: https://docs.microsoft.com/windows-hardware/manufacture/
-      - text: Tester les performances et la compatibilité
-        url: https://docs.microsoft.com/windows-hardware/test
-      - text: Rechercher des exemples de pilote
-        url: https://docs.microsoft.com/samples/browse/?products=windows-wdk
-    - title: Administration informatique
-      links:
-      - text: Configurer et déployer Windows 10
-        url: https://docs.microsoft.com/windows/windows-10/
-      - text: Rechercher des informations sur les versions Windows 10
-        url: https://docs.microsoft.com/windows/release-information/
-      - text: Gérer Windows Server
-        url: https://docs.microsoft.com/windows-server/
-      - text: Bien démarrer avec Microsoft Store pour Entreprises
-        url: https://docs.microsoft.com/microsoft-store/
-  footer: '[Blogs](https://blogs.windows.com/) - [Twitter](https://twitter.com/windowsdocs) - [Stack Overflow](https://stackoverflow.com/questions/tagged/windows) - [Communauté des développeurs](https://social.msdn.microsoft.com/Forums/windowsdesktop)'
+  - title: Développeurs d’applications
+    imageSrc: https://docs.microsoft.com/media/logos/logo_Windows.svg
+    summary: Concevez, développez et déployez des applications et autres solutions pour les PC Windows et autres appareils.
+    url: /windows/apps/
+  - title: Développeurs de matériel
+    imageSrc: https://docs.microsoft.com/media/logos/logo_Windows.svg
+    summary: Concevez, développez et déployez des pilotes de périphériques et matériels pour les PC Windows et autres appareils.
+    url: https://docs.microsoft.com/windows-hardware/drivers/
+  - title: Windows 10 pour les professionnels de l’informatique
+    imageSrc: https://docs.microsoft.com/media/logos/logo_Windows.svg
+    summary: Évaluez, planifiez, déployez, sécurisez et gérez des appareils exécutant Windows 10.
+    url: https://docs.microsoft.com/windows/windows-10/
+  - title: Windows Server pour les professionnels de l’informatique
+    imageSrc: https://docs.microsoft.com/media/logos/logo_Windows.svg
+    summary: Créez et déployez des applications connectées, des réseaux et des services web sur Windows Server.
+    url: https://docs.microsoft.com/windows-server/
