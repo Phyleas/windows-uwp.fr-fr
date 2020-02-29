@@ -1,18 +1,17 @@
 ---
 title: Qualité des applications
 description: Pour les clients comme pour les développeurs, il est essentiel de pouvoir trouver les applications appropriées dans le Windows Store de façon simple, agréable et divertissante. Pour aider les développeurs à atteindre leurs objectifs, nous proposons une présentation de certains des aspects clés déterminant la qualité des applications.
-layout: LandingPage
-ms.date: 10/26/2017
+ms.date: 07/25/2017
 ms.topic: article
 keywords: contrat définissant les politiques du microsoft store
 ms.localizationpriority: high
 ms.assetid: B15D4F19-4E6A-4C27-AD64-F03014D11BA9
-ms.openlocfilehash: 550ffeac8912769fc7e319d819f4de67f6d36cf1
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: d093a7b49a8c5ac00ca927614365d1b548e2f63a
+ms.sourcegitcommit: 5309019fa2a7c02e4e3f0c4076b75fc63546b6f0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66826416"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77607256"
 ---
 # <a name="app-quality"></a>Qualité des applications
 
@@ -86,7 +85,7 @@ Les clients apprécient l'attention apportée à leurs commentaires comme à leu
 - Pour plus d’informations, consultez [Impliquer vos clients](https://developer.microsoft.com/store/engage).
 
 
-### <a name="see-also"></a>Voir également
+### <a name="see-also"></a>Voir aussi
 
 - [Politiques et code de conduite du Microsoft Store](store-policies-and-code-of-conduct.md)
 - [Contrat du développeur d’application](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: a91c080805bca5d536aad3755ca7edf052d1fe0e
-ms.sourcegitcommit: b8087f8b6cf8367f8adb7d6db4581d9aa47b4861
+ms.openlocfilehash: ffd5481fec0ebf6db24d9af95b8a11d05a043170
+ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67414059"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77521220"
 ---
 # <a name="contributing-to-uwp-conceptual-documentation"></a>Contribution à la documentation conceptuelle UWP
 
@@ -56,4 +56,4 @@ Les réviseurs assignés peuvent approuver ou rejeter la requête de tirage ou c
 
 Si vous souhaitez fournir des commentaires sur la documentation au lieu d’apporter vous-même des modifications, vous pouvez [créer un problème dans le référentiel public](https://github.com/MicrosoftDocs/windows-uwp/issues). Cliquez sur l’onglet **Issues** (Problèmes), puis sur le bouton **New issue** (Nouveau problème). Veillez à inclure le titre de la rubrique et l’URL de la page. Votre problème est assigné aux membres de l’équipe de documentation UWP, qui l’examineront.
 
-* Dans le cas des problèmes internes, utilisez l’[outil de demande de contenu WDG](https://aka.ms/pubrequest).
+* Dans le cas des problèmes internes, utilisez l’[outil de demande de contenu WDG](http://sesuw2-iis02a/WSCPubRequest/WindowsContentRequestTool.aspx).

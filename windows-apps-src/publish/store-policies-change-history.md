@@ -1,18 +1,17 @@
 ---
 title: Historique des modifications des politiques du Microsoft Store
 description: Historique des modifications des politiques du Microsoft Store
-layout: LandingPage
-ms.date: 03/05/2019
+ms.date: 10/01/2019
 ms.topic: article
 keywords: contrat définissant les politiques du microsoft store
 ms.localizationpriority: high
 ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
-ms.openlocfilehash: 879a400d22b3032bb4ee3f3f378a85f04ad73355
-ms.sourcegitcommit: 98343e851f25a11ae02fc739477f5316fe8fcb95
+ms.openlocfilehash: 3fbdc8e4831a39386396dc2c1dad25581f12fbf9
+ms.sourcegitcommit: 5309019fa2a7c02e4e3f0c4076b75fc63546b6f0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71705568"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77607282"
 ---
 # <a name="change-history-for-microsoft-store-policies"></a>Historique des modifications des politiques du Microsoft Store
 
@@ -189,14 +188,14 @@ ms.locfileid: "71705568"
 </tr>
 <tr class="odd">
 <td>23 octobre 2014</td>
-<td>6,2</td>
+<td>6.2</td>
 <td><p>Regroupement des politiques du Windows Store et du Windows Phone Store.</p></td>
 </tr>
 </tbody>
 </table>
 
 
-### <a name="see-also"></a>Voir également
+### <a name="see-also"></a>Voir aussi
 
 - [Politiques et code de conduite du Microsoft Store](store-policies-and-code-of-conduct.md)
 - [Contrat du développeur d’application](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)

@@ -1,18 +1,17 @@
 ---
 title: Politiques du Microsoft Store
 description: Les produits du Store doivent respecter nos normes en matière de certification, offrir aux clients une expérience riche et attrayante et être adaptés au Store.
-layout: LandingPage
-ms.date: 03/05/2019
+ms.date: 10/01/2019
 ms.topic: article
 keywords: contrat définissant les politiques du microsoft store
 ms.localizationpriority: high
 ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
-ms.openlocfilehash: 5086353adbc07e265f02e12f998ae655cd512d48
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: a68247637395c3f68bf1140479bc94cb8e0fcc33
+ms.sourcegitcommit: 5309019fa2a7c02e4e3f0c4076b75fc63546b6f0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258981"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77607249"
 ---
 # <a name="microsoft-store-policies"></a>Politiques du Microsoft Store
 
@@ -474,7 +473,7 @@ Le contenu généré par l’utilisateur est du contenu que les utilisateurs ajo
 ---
 <sup>1</sup>Le terme « Store » ou « Microsoft Store » désigne une plateforme détenue ou opérée par Microsoft, quel que soit son libellé, via laquelle les Applications sont proposées aux Clients en vue d’une acquisition. Sauf indication contraire, le Store inclut le Microsoft Store, le Windows Store, le Marché Xbox, le Microsoft Store pour Entreprises et Microsoft Store pour Éducation.
 
-### <a name="see-also"></a>Voir également
+### <a name="see-also"></a>Voir aussi
 
 - [Historique des modifications des politiques du Microsoft Store](store-policies-change-history.md)
 - [Politiques et code de conduite du Microsoft Store](store-policies-and-code-of-conduct.md)
