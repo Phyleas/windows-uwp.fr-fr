@@ -1,19 +1,19 @@
 ---
 Description: Découvrez comment accorder une identité à des applications de bureau non packagées pour pouvoir utiliser les fonctionnalités Windows 10 modernes dans ces applications.
 title: Accorder une identité à des applications de bureau non empaquetées
-ms.date: 10/25/2019
+ms.date: 02/28/2020
 ms.topic: article
 keywords: Windows 10, Desktop, package, Identity, MSIX, Win32
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 10ed6b8e1bd5efce4c9d4429d91849b1333505b6
-ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
+ms.openlocfilehash: ae05a00cac19fdd349aa48160b88cde6b84e26b0
+ms.sourcegitcommit: 620e4a51e2486ec2cb7190176b3d9bf3d7b5b6af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77521350"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78222025"
 ---
 # <a name="grant-identity-to-non-packaged-desktop-apps"></a>Accorder une identité à des applications de bureau non empaquetées
 
@@ -137,7 +137,7 @@ SignTool.exe sign /fd SHA256 /a /f <path to certificate>\MyCertificate.pfx  /p <
 
 ### <a name="add-the-package-identity-metadata-to-your-desktop-application-manifest"></a>Ajouter les métadonnées d’identité du package à votre manifeste d’application de bureau
 
-Vous devez également inclure un [manifeste d’application côte à côte](https://docs.microsoft.com/windows/win32/sbscs/application-manifests) avec votre application de bureau et inclure un élément **\<msix\>** avec des attributs qui déclarent les attributs d’identité de votre application. Les valeurs de ces attributs sont utilisées par le système d’exploitation pour déterminer l’identité de votre application lors du lancement de l’exécutable.
+Vous devez également inclure un [manifeste d’application côte à côte](https://docs.microsoft.com/windows/win32/sbscs/application-manifests) avec votre application de bureau et inclure un élément [&lt;msix&gt;](https://docs.microsoft.com/windows/win32/sbscs/application-manifests#msix) avec des attributs qui déclarent les attributs d’identité de votre application. Les valeurs de ces attributs sont utilisées par le système d’exploitation pour déterminer l’identité de votre application lors du lancement de l’exécutable.
 
 L’exemple suivant montre un manifeste d’application côte à côte avec un élément **\<msix\>** .
 
