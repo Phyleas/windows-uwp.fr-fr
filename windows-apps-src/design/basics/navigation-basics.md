@@ -10,12 +10,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 6290b142eee4aff7287b9542b645df89164d173b
-ms.sourcegitcommit: 34671182c26f5d0825c216a6cededc02b0059a9e
+ms.openlocfilehash: 137dbfe6471ee4d42e2a34e24512bdb658e985d0
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67286943"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463761"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>Informations de base relatives à la conception de la navigation pour les applications UWP
 
@@ -27,17 +27,17 @@ Nous avons un nombre considérable de choix à faire pour la navigation. Par exe
 
 :::row:::
     :::column:::
-        ![navigation example 1](images/nav/nav-1.svg)
+        ![exemple de navigation 1](images/nav/nav-1.svg)
 
 Nous pouvons obliger l’utilisateur à accéder à toutes les pages, dans l’ordre.
     :::column-end:::
     :::column:::
-        ![navigation example 2](images/nav/nav-2.svg)
+        ![exemple de navigation 2](images/nav/nav-2.svg)
 
 Nous pouvons également fournir un menu qui permet aux utilisateurs d’accéder directement à n’importe quelle page.
     :::column-end:::
     :::column:::
-        ![navigation example 3](images/nav/nav-3.svg)
+        ![exemple de navigation 3](images/nav/nav-3.svg)
 
 Nous pouvons aussi tout placer sur une seule page et fournir des mécanismes de filtrage pour afficher le contenu.
     :::column-end:::
@@ -67,16 +67,16 @@ Un recours moins large aux éléments de navigation simplifie la prise de décis
 
 :::row:::
     :::column:::
-        ![do example](images/nav/do.svg)
+        ![exemple faire](images/nav/do.svg)
 
-        ![navview good](images/nav/navview-good.svg)
+        ![bonne vue de navigation](images/nav/navview-good.svg)
 
 Présentez les éléments de navigation dans un menu de navigation familier.
     :::column-end:::
     :::column:::
-        ![don't example](images/nav/dont.svg)
+        ![Exemple de ce qu’il ne faut pas faire](images/nav/dont.svg)
 
-        ![navview bad](images/nav/navview-bad.svg)
+        ![mauvaise vue de navigation](images/nav/navview-bad.svg)
 
 Noyez les utilisateurs dans de nombreuses options de navigation.
     :::column-end:::
@@ -106,10 +106,10 @@ Maintenant que vous êtes familiarisé avec les principes de navigation généra
 
 :::row:::
     :::column:::
-        ![Pages arranged in a flat structure](images/nav/flat-lateral-structure.svg)
+        ![Pages organisées dans une structure plate](images/nav/flat-lateral-structure.svg)
     :::column-end:::
     :::column span="2":::
-        ### Flat/lateral
+        ### <a name="flatlateral"></a>Plate/latérale
 
 Dans une structure plate/latérale, les pages se trouvent côte-à-côte. Vous pouvez aller d’une page à une autre dans n’importe quel ordre.
 
@@ -125,10 +125,10 @@ Nous vous recommandons d’utiliser une structure plate dans les cas suivants :
 
 :::row:::
     :::column:::
-        ![Pages arranged in a hierarchy](images/nav/hierarchical-structure.svg)
+        ![Pages organisées dans une hiérarchie](images/nav/hierarchical-structure.svg)
     :::column-end:::
     :::column span="2":::
-        ### Hierarchical
+        ### <a name="hierarchical"></a>Hiérarchique
 
 Dans une structure hiérarchique, les pages sont organisées dans une structure arborescente. Chaque page enfant n’a qu’un parent, mais un parent peut avoir une ou plusieurs pages enfants. Pour atteindre une page enfant, vous naviguez via le parent.
 
@@ -145,10 +145,10 @@ Nous recommandons une structure hiérarchique dans les cas suivants :
 
 :::row:::
     :::column:::
-        ![an app with a hybrid structure](images/nav/combining-structures.svg)
+        ![Application à structure hybride](images/nav/combining-structures.svg)
     :::column-end:::
     :::column span="2":::
-        ### Combining structures
+        ### <a name="combining-structures"></a>Combinaison de structures
 
 Vous n’avez pas besoin de choisir entre une structure ou une autre ; de nombreuses applications très bien conçues utilisent à la fois les structures plates et hiérarchiques. Une application utilise des structures plates pour les pages de niveau supérieur qui peuvent être affichées dans n’importe quel ordre, et des structures hiérarchiques pour les pages qui ont des relations plus complexes.
 
@@ -165,39 +165,51 @@ Une fois que vous avez choisi votre structure de page, vous devez déterminer co
 
 :::row:::
     :::column:::
-        ![Frame image](images/nav/thumbnail-frame.svg)
+        ![Image de trame](images/nav/thumbnail-frame.svg)
     :::column-end:::
     :::column span="2":::
-        [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)
+        [**Trame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)
 
 À quelques exceptions près, toutes les applications dotées de plusieurs pages utilisent une trame. Généralement, l’application est dotée d’une page principale qui contient la trame et un élément de navigation principal, comme un contrôle d’affichage de la navigation. Lorsque l’utilisateur sélectionne une page, la trame se charge et l’affiche.
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![tabs and pivot image](images/nav/thumbnail-tabs-pivot.svg)
+        ![image d’onglets et de pivot](images/nav/thumbnail-tabs-pivot.svg)
     :::column-end:::
     :::column span="2":::
-        [**Top navigation and tabs**](../controls-and-patterns/navigationview.md)
+        [**Navigation supérieure**](../controls-and-patterns/navigationview.md)
 
-Affiche une liste horizontale de liens vers les pages de même niveau. Le contrôle [NavigationView](../controls-and-patterns/navigationview.md) implémente la navigation supérieure et les modèles d’onglets.
+Affiche une liste horizontale de liens vers les pages de même niveau. Le contrôle [NavigationView](../controls-and-patterns/navigationview.md) implémente le modèle de navigation supérieure.
         
 Utilisez la navigation supérieure lorsque :
 
 - Vous souhaitez afficher toutes les options de navigation à l’écran.
 - Vous souhaitez davantage d’espace pour le contenu de votre application.
 - Les icônes ne peuvent pas décrire clairement vos catégories de navigation.
-        
-Utilisez les onglets lorsque :
-
-- Vous souhaitez conserver l’état de page et l’historique de navigation.
-- Vous pensez que les utilisateurs passeront fréquemment d’un onglet à l’autre.
 
 :::row-end:::
 
 :::row:::
     :::column:::
-         ![tabs and pivot image](images/nav/thumbnail-tabs-pivot.svg)
+        ![image d’onglets et de pivot](images/nav/thumbnail-tabs-pivot.svg)
+    :::column-end:::
+    :::column span="2":::
+        [**Onglets**](../controls-and-patterns/tab-view.md)
+
+Affiche un ensemble horizontal d’onglets et leur contenu respectif. Le contrôle [TabView](../controls-and-patterns/tab-view.md) est utile pour afficher plusieurs pages (ou documents) tout en donnant à l’utilisateur la possibilité de réorganiser, d’ouvrir ou de fermer des onglets.
+    
+Utilisez les onglets lorsque :
+
+- Vous voulez que les utilisateurs puissent ouvrir, fermer ou réorganiser dynamiquement les onglets.
+- Vous voulez qu’un grand nombre d’onglets puissent s’ouvrir en même temps.
+- Vous voulez que les utilisateurs puissent déplacer facilement des onglets entre les fenêtres de votre application qui utilisent des onglets, comme les navigateurs web tels que Microsoft Edge.
+
+:::row-end:::
+
+:::row:::
+    :::column:::
+         ![image d’onglets et de pivot](images/nav/thumbnail-tabs-pivot.svg)
     :::column-end:::
         :::column span="2":::
     [**Pivot**](../controls-and-patterns/pivot.md)
@@ -213,10 +225,10 @@ Utilisez un tableau croisé dynamique lorsque :
 
 :::row:::
     :::column:::
-        ![navview image](images/nav/thumbnail-navview.svg)
+        ![Image de vue de navigation](images/nav/thumbnail-navview.svg)
     :::column-end:::
     :::column span="2":::
-        [**Left navigation**](../controls-and-patterns/navigationview.md)
+        [**Navigation de gauche**](../controls-and-patterns/navigationview.md)
 
 Affiche une liste vertical de liens vers les pages de niveau supérieur. Contexte d'utilisation :
         
@@ -228,10 +240,10 @@ Affiche une liste vertical de liens vers les pages de niveau supérieur. Context
         
 :::row:::
     :::column:::
-        ![Master details image](images/nav/thumbnail-master-detail.svg)
+        ![Image de maître/détails](images/nav/thumbnail-master-detail.svg)
     :::column-end:::
     :::column span="2":::
-        [**Master/details**](../controls-and-patterns/master-details.md)
+        [**Maître/détails**](../controls-and-patterns/master-details.md)
 
 Affiche la liste (affichage Maître) des éléments. La sélection d’un élément affiche sa page dans la section Détails. Contexte d'utilisation :
         
@@ -243,10 +255,10 @@ Les éléments maîtres/détails sont particulièrement bien adaptés aux boîte
 
 :::row:::
     :::column:::
-        ![Hyperlinks and buttons image](images/nav/thumbnail-hyperlinks-buttons.svg)
+        ![Image de liens hypertexte et de boutons](images/nav/thumbnail-hyperlinks-buttons.svg)
     :::column-end:::
     :::column span="2":::
-        [**Hyperlinks**](../controls-and-patterns/hyperlinks.md)
+        [**Liens hypertexte**](../controls-and-patterns/hyperlinks.md)
 
 Les éléments de navigation incorporés apparaissent dans le contenu d’une page. Contrairement aux autres éléments de navigation, qui doivent être cohérents dans toutes les pages, les éléments de navigation incorporés au contenu sont uniques d’une page à l’autre.
 :::row-end:::
