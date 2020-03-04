@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a53c03c10089856cfd738a5c071c37502a34e9a5
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 4ae87600c49b61e5ee426e8dd7ab33b3d3cf7ea3
+ms.sourcegitcommit: c9bab19599c0eb2906725fd86d0696468bb919fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75683622"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78256152"
 ---
 # <a name="play-audio-and-video-with-mediaplayer"></a>Lire du contenu audio et vidéo avec MediaPlayer
 
@@ -33,8 +33,8 @@ Lorsque vous avez terminé d’utiliser une instance **MediaPlayer** sur l’app
 
 [!code-cs[CloseMediaPlayer](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetCloseMediaPlayer)]
 
-## <a name="use-mediaplayerelement-to-render-video-in-xaml"></a>Utiliser MediaPlayerElement afin d’afficher du contenu vidéo en XAML
-Vous pouvez lire du contenu multimédia dans une instance **MediaPlayer** sans l’afficher au format XAML, mais de nombreuses applications de lecture de contenus multimédias sont définies pour ce type d’affichage. Pour ce faire, utilisez le contrôle léger [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement). Tout comme **MediaElement**, **MediaPlayerElement** vous permet de spécifier si les contrôles de transport intégrés doivent être affichés.
+## <a name="use-mediaplayerelement-to-render-video-in-xaml"></a>Utiliser MediaPlayerElement afin d’afficher du contenu vidéo dans XAML
+Vous pouvez lire du contenu multimédia dans une instance **MediaPlayer** sans l’afficher au format XAML, mais de nombreuses applications de lecture de contenus multimédias sont définies pour ce type d’affichage. Pour ce faire, utilisez le contrôle léger [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement). Tout comme **MediaElement**, **MediaPlayerElement** vous permet de spécifier si les contrôles intégrés de transport doivent être affichés.
 
 [!code-xml[MediaPlayerElementXAML](./code/MediaPlayer_RS1/cs/MainPage.xaml#SnippetMediaPlayerElementXAML)]
 
@@ -58,7 +58,7 @@ Définissez la propriété [**AudioCategory**](https://docs.microsoft.com/uwp/ap
 [!code-cs[SetAudioCategory](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSetAudioCategory)]
 
 ### <a name="output-to-a-specific-audio-endpoint"></a>Sortie vers un point de terminaison audio spécifique
-Par défaut, la sortie audio d’une instance **MediaPlayer** est acheminée vers le point de terminaison audio par défaut du système, mais vous pouvez définir un point de terminaison audio spécifique que l’instance **MediaPlayer** doit utiliser pour la sortie. Dans l’exemple ci-dessous, [**MediaDevice.GetAudioRenderSelector**](https://docs.microsoft.com/uwp/api/windows.media.devices.mediadevice.getaudiorenderselector) renvoie une chaîne qui identifie spécifiquement la catégorie de rendu audio des appareils. Ensuite, l’élément [**FindAllAsync**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.findallasync) de la méthode [**DeviceInformation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation) est appelé afin de récupérer une liste de l’ensemble des appareils disponibles du type sélectionné. Vous pouvez déterminer par programme l’appareil à utiliser ou ajouter les appareils renvoyés sur une instance [**ComboBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox), afin de laisser à l’utilisateur le choix de l’appareil.
+Par défaut, la sortie audio d’une instance **MediaPlayer** est acheminée vers le point de terminaison audio par défaut du système, mais vous pouvez définir un point de terminaison audio spécifique que l’instance **MediaPlayer** doit utiliser pour la sortie. Dans l’exemple ci-dessous, [**MediaDevice.GetAudioRenderSelector**](https://docs.microsoft.com/uwp/api/windows.media.devices.mediadevice.getaudiorenderselector) renvoie une chaîne qui identifie spécifiquement la catégorie de rendu audio des appareils. Ensuite, l’élément [**FindAllAsync**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation) de la méthode [**DeviceInformation**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.findallasync) est appelé afin de récupérer une liste de l’ensemble des appareils disponibles du type sélectionné. Vous pouvez déterminer par programme l’appareil à utiliser ou ajouter les appareils renvoyés sur une instance [**ComboBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox), afin de laisser à l’utilisateur le choix de l’appareil.
 
 [!code-cs[SetAudioEndpointEnumerate](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSetAudioEndpointEnumerate)]
 
@@ -112,9 +112,11 @@ Enfin, l’élément [**NormalizedSourceRect**](https://docs.microsoft.com/uwp/a
 
 [!code-cs[ManipulationDelta](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetManipulationDelta)]
 
-Dans le gestionnaire d’événements [**DoubleTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.doubletapped), le rectangle source est redéfini sur (0,0,1,1) pour rétablir l’affichage de l’intégralité de la vidéo.
+Dans le gestionnaire d’événement [**DoubleTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.doubletapped), le rectangle source est redéfini sur (0,0,1,1) pour rétablir l’affichage de l’intégralité de la vidéo.
 
 [!code-cs[DoubleTapped](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetDoubleTapped)]
+
+**Remarque** Cette section décrit les entrées tactiles. Le pavé tactile envoie des événements de pointeur et n’envoie pas d’événements de manipulation.
 
 ### <a name="handling-policy-based-playback-degradation"></a>Gestion de la dégradation de la lecture basée sur une stratégie
 
@@ -214,7 +216,7 @@ Dans le gestionnaire d’événements **VideoTracksChanged**, récupérez les pr
 ## <a name="use-mediaplayer-in-frame-server-mode"></a>Utiliser MediaPlayer en mode serveur d’images
 À partir de Windows 10, version 1703, vous pouvez utiliser **MediaPlayer** en mode serveur d’images. Dans ce mode, **MediaPlayer** ne restitue pas automatiquement les images dans un objet **MediaPlayerElement** associé. À la place, votre application copie l’image actuelle de **MediaPlayer** dans un objet qui implémente [**IDirect3DSurface**](https://docs.microsoft.com/uwp/api/windows.graphics.directx.direct3d11.idirect3dsurface). Le scénario principal autorisé par cette fonctionnalité consiste à utiliser des nuanceurs de pixels pour traiter les trames vidéo fournies par **MediaPlayer**. Votre application assure l’affichage de chaque image après le traitement, par exemple en affichant l’image dans un contrôle [**Image**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image) XAML.
 
-Dans l’exemple ci-après, un nouveau **MediaPlayer** est initialisé, et le contenu vidéo est chargé. Ensuite, un gestionnaire pour [**VideoFrameAvailable**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.VideoFrameAvailable) est inscrit. Le mode serveur d’images est activé par la définition de la propriété [**IsVideoFrameServerEnabled**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.IsVideoFrameServerEnabled) de l’objet **MediaPlayer** sur la valeur **true**. Enfin, la lecture multimédia est démarrée par l’appel de la méthode [**Play**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.Play).
+Dans l’exemple ci-après, un nouveau **MediaPlayer** est initialisé, et le contenu vidéo est chargé. Ensuite, un gestionnaire pour [**VideoFrameAvailable**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.VideoFrameAvailable) est inscrit. Le mode serveur d’images est activé par la définition de la propriétéIsVideoFrameServerEnabled[**de l’objet**MediaPlayer](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.IsVideoFrameServerEnabled) sur la valeur **true**. Enfin, la lecture multimédia est démarrée par l’appel de la méthode [**Play**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.Play).
 
 [!code-cs[FrameServerInit](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetFrameServerInit)]
 
@@ -231,11 +233,11 @@ Pour plus d’informations sur Win2D, consultez le [référentiel GitHub Win2D](
 **Pour ajouter le package NuGet Win2D à votre projet Effect**
 
 1.  Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur votre projet, puis sélectionnez **Gérer les packages NuGet**.
-2.  Dans la partie supérieure de la fenêtre, sélectionnez l’onglet **Parcourir**.
+2.  En haut de la fenêtre, sélectionnez l’onglet **Explorer**.
 3.  Dans la zone de recherche, entrez **Win2D**.
 4.  Sélectionnez **Win2D.uwp**, puis **Installer** dans le volet droit.
-5.  La boîte de dialogue **Examiner les modifications** vous indique le package à installer. Cliquez sur **OK**.
-6.  Acceptez la licence du package.
+5.  La boîte de dialogue **Examiner les modifications** vous indique le package à installer. Cliquez sur **OK**.
+6.  Acceptez la licence de package.
 
 ## <a name="detect-and-respond-to-audio-level-changes-by-the-system"></a>Détecter les changements de niveau audio initiés par le système et y répondre
 À partir de Windows 10, version 1803, votre application peut détecter quand le système baisse ou désactive le niveau audio d’un objet **MediaPlayer** en cours de lecture. Par exemple, le système peut baisser, ou « atténuer », le niveau de lecture audio lorsqu’une alarme sonne. Le système désactive votre application lorsqu’elle passe à l’arrière-plan si la fonctionnalité *backgroundMediaPlayback* n’a pas été déclarée dans le manifeste de l’application. La classe [**AudioStateMonitor**](https://docs.microsoft.comuwp/api/windows.media.audio.audiostatemonitor) vous permet de vous inscrire pour recevoir un événement lorsque le système modifie le volume d’un flux audio. Accédez à la propriété **AudioStateMonitor** d’un objet **MediaPlayer** et enregistrez un gestionnaire pour l’événement [**SoundLevelChanged**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor.soundlevelchanged) afin d’être averti lorsque le niveau audio de cet objet **MediaPlayer** est modifié par le système.
