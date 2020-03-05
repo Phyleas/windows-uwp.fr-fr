@@ -2,25 +2,25 @@
 description: Entrées et propriétés d’une feuille de style de carte
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: Référence de feuille de style de carte
+title: Référence sur les feuilles de style de carte
 ms.date: 03/19/2017
 ms.topic: article
 keywords: windows 10, uwp, cartes, feuille de style de carte
 ms.localizationpriority: medium
-ms.openlocfilehash: 723426b4affec4251f26485ac7ecc1fca307c102
-ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
+ms.openlocfilehash: b59e8c3c6d9c4c299e441964be1afb4e02051e23
+ms.sourcegitcommit: 5264d7499ddbe21199a63d74a294206069f90f8b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68867701"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78287444"
 ---
-# <a name="map-style-sheet-reference"></a>Référence de feuille de style de carte
+# <a name="map-style-sheet-reference"></a>Référence sur les feuilles de style de carte
 
 Les technologies de mappage Microsoft utilisent des _feuilles de style de carte_ pour définir l’apparence des cartes.  Une feuille de style cartographique est définie à l’aide de JavaScript Object Notation (JSON) et peut être utilisée de différentes façons, notamment dans les [collection MapControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol) d’une application Windows Store via la méthode [MapStyleSheet. ParseFromJson](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapstylesheet.parsefromjson#Windows_UI_Xaml_Controls_Maps_MapStyleSheet_ParseFromJson_System_String_) .
 
 Les feuilles de style peuvent être créées de manière interactive à l’aide de l’application [éditeur de feuille de style de carte](https://www.microsoft.com/p/map-style-sheet-editor/9nbhtcjt72ft) .
 
-Le code JSON suivant peut être utilisé pour faire apparaître les zones d’eau en rouge, les étiquettes d’eau s’affichent en vert et les zones terrestres en bleu:
+Le code JSON suivant peut être utilisé pour faire apparaître les zones d’eau en rouge, les étiquettes d’eau s’affichent en vert et les zones terrestres en bleu :
 
 ```json
     {"version":"1.*",
@@ -52,18 +52,18 @@ Cet article indique les entrées et [propriétés](#properties) JSON que vous po
 ## <a name="entries"></a>Entrées
 Ce tableau utilise des caractères « > » pour représenter les différents niveaux de la hiérarchie des entrées.  Il montre également quelles versions de Windows prennent en charge chaque entrée et qui l’ignore.
 
-| Version | Nom de la version Windows |
+| cible | Nom de la version Windows |
 |---------|----------------------|
 |  1703   | Creators Update      |
 |  1709   | Fall Creators Update |
-|  1803   | Mise à jour d’avril 2018    |
+|  1803   | Mise à jour d’avril 2018    |
 |  1809   | Mise à jour d’octobre 2018  |
 |  1903   | Mise à jour 2019 mai      |
 
 | Nom                               | Groupe de propriétés            | 1703 | 1709 | 1803 | 1809 | 1903 | Description    |
 |------------------------------------|---------------------------|------|------|------|------|------|----------------|
 | version                            | [Version](#version)       |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Version de feuille de style que vous souhaitez utiliser. |
-| paramètres                           | [Réglages](#settings)     |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Paramètres qui s’appliquent à la totalité de la feuille de style. |
+| paramètres                           | [Paramètres](#settings)     |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Paramètres qui s’appliquent à la totalité de la feuille de style. |
 | mapElement                         | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Entrée parente de toutes les entrées de la carte. |
 | > baseMapElement                   | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Entrée parente de toutes les entrées non utilisateur. |
 | >> area                            | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Zones décrivant l’utilisation des terrains.  Celles-ci ne doivent pas être confondues avec les bâtiments physiques qui se trouvent sous l’entrée de structure. |
@@ -191,7 +191,7 @@ Ce tableau utilise des caractères « > » pour représenter les différents n
 | >>>>> countryRegionCapital         | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Icônes représentant la capitale d’un pays ou d’une région. |
 | > > > > majorPopulatedPlace           | [PointStyle](#pointstyle) |      |      |      |      |  ✔   | Les icônes qui représentent la taille de l’emplacement rempli par l’essentiel. |
 | > > > > minorPopulatedPlace           | [PointStyle](#pointstyle) |      |      |      |      |  ✔   | Les icônes qui représentent la taille de l’emplacement de remplissage mineur. |
-| >>> roadShield                     | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Caractères représentant le nom abrégé d’une route. (Par exemple: I-5). Si vous définissez la propriété **ImageFamily** de l’entrée de paramètres sur la valeur *Palette*, utilisez uniquement des valeurs de palette. |
+| >>> roadShield                     | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Caractères représentant le nom abrégé d’une route. (Par exemple : A6). Si vous définissez la propriété **ImageFamily** de l’entrée de paramètres sur la valeur *Palette*, utilisez uniquement des valeurs de palette. |
 | >>> roadExit                       | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Icônes représentant des sorties, appartenant généralement à un réseau autoroutier. |
 | >>> transit                        | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Icônes représentant des arrêts d’autobus, des gares, des aéroports, etc. |
 | >> political                       | [BorderedMapElement](#borderedmapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Zones administratives telles que les pays, les régions et les départements. |
@@ -233,7 +233,7 @@ Ce tableau utilise des caractères « > » pour représenter les différents n
 
 <a id="properties" />
 
-## <a name="properties"></a>Properties
+## <a name="properties"></a>Propriétés
 
 Cette section décrit les propriétés que vous pouvez utiliser pour chaque entrée.
 
@@ -249,45 +249,43 @@ Cette section décrit les propriétés que vous pouvez utiliser pour chaque entr
 
 ### <a name="settings-properties"></a>Propriétés de paramètres
 
-| Propriété                     | type    | 1703 | 1709 | 1803 | 1809 | 1903 | Description |
+| Propriété                     | Type    | 1703 | 1709 | 1803 | 1809 | 1903 | Description |
 |------------------------------|---------|------|------|------|------|------|-------------|
-| atmosphereVisible            | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Indicateur précisant si l’atmosphère apparaît dans le contrôle 3D. |
-| buildingTexturesVisible      | Bool    |      |      |  ✔   |  ✔   |  ✔   | Indicateur indiquant s’il faut ou non afficher des textures sur des bâtiments symboliques en 3D qui ont des textures. |
-| fogColor                     | Color   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Valeur de couleur ARVB du brouillard de distance qui apparaît dans le contrôle 3D. |
-| glowColor                    | Color   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Valeur de couleur ARVB pouvant être appliquée à l’éclat des légendes et des icônes. |
+| atmosphereVisible            | Booléen    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Indicateur précisant si l’atmosphère apparaît dans le contrôle 3D. |
+| buildingTexturesVisible      | Booléen    |      |      |  ✔   |  ✔   |  ✔   | Indicateur indiquant s’il faut ou non afficher des textures sur des bâtiments symboliques en 3D qui ont des textures. |
+| fogColor                     | Couleur   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Valeur de couleur ARVB du brouillard de distance qui apparaît dans le contrôle 3D. |
+| glowColor                    | Couleur   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Valeur de couleur ARVB pouvant être appliquée à l’éclat des légendes et des icônes. |
 | imageFamily                  | String  |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Nom de l’ensemble d’images à utiliser pour ce style. Définissez cette propriété sur la valeur *Default* pour les signes qui utilisent des couleurs fixes basées sur le signe réel. Définissez cette propriété sur la valeur *Palette* pour les signes qui utilisent des couleurs de palette configurables. |
-| landColor                    | Color   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Valeur de couleur ARVB d’une zone continentale avant qu’un élément quelconque soit dessiné sur cette dernière. |
-| logosVisible                 | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Indicateur précisant si les éléments dotés d’une propriété **Organization** doivent dessiner les logos appropriés ou utiliser une icône générique. |
-| officialColorVisible         | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Indicateur précisant si les éléments dotés d’une propriété de couleur officielle (telle que celle des lignes de transport en commun en Chine) doivent dessiner cette couleur. Par exemple, désactivez cette valeur dans le cas d’une carte en noir et blanc. |
-| rasterRegionsVisible         | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Indicateur qui spécifie s’il faut ou non dessiner des régions raster dans lesquelles elles ont une meilleure représentation que les vecteurs (Japon et Corée). |
-| shadedReliefVisible          | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Indicateur précisant s’il convient ou non de dessiner l’ombrage des hauteurs sur la carte. |
-| shadedReliefDarkColor        | Color   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Couleur du côté foncé d’un relief par ombres portées.  Le canal alpha représente la valeur alpha maximale. |
-| shadedReliefLightColor       | Color   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Couleur du côté clair d’un relief par ombres portées.  Le canal alpha représente la valeur alpha maximale. |
-| shadowColor                  | Color   |      |      |      |  ✔   |  ✔   | Couleur de l’ombre derrière les icônes qui utilisent des ombres. |
-| spaceColor                   | Color   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Valeur de couleur ARVB de la zone entourant la carte. |
-| useDefaultImageColors        | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Indicateur qui signale si les couleurs d’origine dans le SVG doivent être utilisées au lieu de rechercher dans l’entrée de la palette les couleurs d’une image. |
+| landColor                    | Couleur   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Valeur de couleur ARVB d’une zone continentale avant qu’un élément quelconque soit dessiné sur cette dernière. |
+| logosVisible                 | Booléen    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Indicateur précisant si les éléments dotés d’une propriété **Organization** doivent dessiner les logos appropriés ou utiliser une icône générique. |
+| officialColorVisible         | Booléen    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Indicateur précisant si les éléments dotés d’une propriété de couleur officielle (telle que celle des lignes de transport en commun en Chine) doivent dessiner cette couleur. Par exemple, désactivez cette valeur dans le cas d’une carte en noir et blanc. |
+| rasterRegionsVisible         | Booléen    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Indicateur qui spécifie s’il faut ou non dessiner des régions raster dans lesquelles elles ont une meilleure représentation que les vecteurs (Japon et Corée). |
+| shadedReliefVisible          | Booléen    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Indicateur précisant s’il convient ou non de dessiner l’ombrage des hauteurs sur la carte. |
+| shadowColor                  | Couleur   |      |      |      |  ✔   |  ✔   | Couleur de l’ombre derrière les icônes qui utilisent des ombres. |
+| spaceColor                   | Couleur   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Valeur de couleur ARVB de la zone entourant la carte. |
+| useDefaultImageColors        | Booléen    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Indicateur qui signale si les couleurs d’origine dans le SVG doivent être utilisées au lieu de rechercher dans l’entrée de la palette les couleurs d’une image. |
 
 <a id="mapelement" />
 
 ### <a name="mapelement-properties"></a>Propriétés MapElement
 
-| Propriété                     | type    | 1703 | 1709 | 1803 | 1809 | 1903 | Description |
+| Propriété                     | Type    | 1703 | 1709 | 1803 | 1809 | 1903 | Description |
 |------------------------------|---------|------|------|------|------|------|-------------|
-| backgroundScale              | Float   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Valeur de mise à l’échelle de l’élément en arrière-plan d’une icône.  Par exemple, utilisez la valeur *1* pour obtenir la taille par défaut et la valeur *2* pour obtenir une taille deux fois plus grande. |
-| fillColor                    | Color   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Couleur utilisée pour le remplissage des polygones, pour l’arrière-plan des icônes d’objet ponctuel et pour le centre des lignes si elles sont fractionnées. |
+| backgroundScale              | Flottante   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Valeur de mise à l’échelle de l’élément en arrière-plan d’une icône.  Par exemple, utilisez la valeur *1* pour obtenir la taille par défaut et la valeur *2* pour obtenir une taille deux fois plus grande. |
+| fillColor                    | Couleur   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Couleur utilisée pour le remplissage des polygones, pour l’arrière-plan des icônes d’objet ponctuel et pour le centre des lignes si elles sont fractionnées. |
 | fontFamily                   | String  |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   |  |
 | fontWeight                   | String  |      |      |      |      |  ✔   | Densité d’un caractère, en termes de clarté ou d’épaisseur des traits. Les attributs «**Light**», «**normal**», «**SemiBold**» et «**Bold**» peuvent être définis |
-| iconColor                    | Color   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Couleur du glyphe affiché au milieu d’une icône d’objet ponctuel. |
-| iconScale                    | Float   |      |  ✔   |  ✔   |  ✔   |  ✔   | Valeur de mise à l’échelle du glyphe d’une icône.  Par exemple, utilisez la valeur *1* pour obtenir la taille par défaut et la valeur *2* pour obtenir une taille deux fois plus grande. |
-| labelColor                   | Color   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   |  |
-| labelOutlineColor            | Color   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   |  |
-| labelScale                   | Float   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Valeur de mise à l’échelle des tailles de légende par défaut. Par exemple, utilisez la valeur *1* pour obtenir la taille par défaut et la valeur *2* pour obtenir une taille deux fois plus grande. |
-| labelVisible                 | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   |  |
-| overwriteColor               | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Fait en sorte que la valeur alpha de l’élément **FillColor** remplace l’élément **StrokeColor** au lieu de fusionner avec ce dernier. |
-| scale                        | Float   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Valeur de mise à l’échelle de la taille de l’objet ponctuel entier. Par exemple, utilisez la valeur *1* pour obtenir la taille par défaut et la valeur *2* pour obtenir une taille deux fois plus grande. |
-| strokeColor                  | Color   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Couleur à utiliser pour le contour des polygones, pour le contour des icônes d’objet ponctuel et pour la couleur des lignes. |
-| strokeWidthScale             | Float   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Valeur de mise à l’échelle du trait des lignes. Par exemple, utilisez la valeur *1* pour obtenir la taille par défaut et la valeur *2* pour obtenir une taille deux fois plus grande. |
-| visible                      | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   |  |
+| iconColor                    | Couleur   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Couleur du glyphe affiché au milieu d’une icône d’objet ponctuel. |
+| iconScale                    | Flottante   |      |  ✔   |  ✔   |  ✔   |  ✔   | Valeur de mise à l’échelle du glyphe d’une icône.  Par exemple, utilisez la valeur *1* pour obtenir la taille par défaut et la valeur *2* pour obtenir une taille deux fois plus grande. |
+| labelColor                   | Couleur   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   |  |
+| labelOutlineColor            | Couleur   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   |  |
+| labelScale                   | Flottante   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Valeur de mise à l’échelle des tailles de légende par défaut. Par exemple, utilisez la valeur *1* pour obtenir la taille par défaut et la valeur *2* pour obtenir une taille deux fois plus grande. |
+| labelVisible                 | Booléen    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   |  |
+| overwriteColor               | Booléen    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Fait en sorte que la valeur alpha de l’élément **FillColor** remplace l’élément **StrokeColor** au lieu de fusionner avec ce dernier. |
+| mise à l'échelle                        | Flottante   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Valeur de mise à l’échelle de la taille de l’objet ponctuel entier. Par exemple, utilisez la valeur *1* pour obtenir la taille par défaut et la valeur *2* pour obtenir une taille deux fois plus grande. |
+| strokeColor                  | Couleur   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Couleur à utiliser pour le contour des polygones, pour le contour des icônes d’objet ponctuel et pour la couleur des lignes. |
+| strokeWidthScale             | Flottante   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Valeur de mise à l’échelle du trait des lignes. Par exemple, utilisez la valeur *1* pour obtenir la taille par défaut et la valeur *2* pour obtenir une taille deux fois plus grande. |
+| visible                      | Booléen    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   |  |
 
 <a id="borderedmap" />
 
@@ -295,12 +293,12 @@ Cette section décrit les propriétés que vous pouvez utiliser pour chaque entr
 
 Ce groupe de propriétés hérite du groupe de propriétés [MapElement](#mapelement).
 
-| Propriété                     | type    | 1703 | 1709 | 1803 | 1809 | 1903 | Description |
+| Propriété                     | Type    | 1703 | 1709 | 1803 | 1809 | 1903 | Description |
 |------------------------------|---------|------|------|------|------|------|-------------|
-| borderOutlineColor           | Color   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Couleur de ligne secondaire ou de contour de la bordure d’un polygone rempli. |
-| borderStrokeColor            | Color   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Couleur de ligne principale de la bordure d’un polygone rempli. |
-| borderVisible                | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   |  |
-| borderWidthScale             | Float   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Valeur de mise à l’échelle du trait des bordures. Par exemple, utilisez la valeur *1* pour obtenir la taille par défaut et la valeur *2* pour obtenir une taille deux fois plus grande. |
+| borderOutlineColor           | Couleur   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Couleur de ligne secondaire ou de contour de la bordure d’un polygone rempli. |
+| borderStrokeColor            | Couleur   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Couleur de ligne principale de la bordure d’un polygone rempli. |
+| borderVisible                | Booléen    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   |  |
+| borderWidthScale             | Flottante   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Valeur de mise à l’échelle du trait des bordures. Par exemple, utilisez la valeur *1* pour obtenir la taille par défaut et la valeur *2* pour obtenir une taille deux fois plus grande. |
 
 <a id="pointstyle" />
 
@@ -308,16 +306,16 @@ Ce groupe de propriétés hérite du groupe de propriétés [MapElement](#mapele
 
 Ce groupe de propriétés hérite du groupe de propriétés [MapElement](#mapelement).
 
-| Propriété                     | type    | 1703 | 1709 | 1803 | 1809 | 1903 | Description |
+| Propriété                     | Type    | 1703 | 1709 | 1803 | 1809 | 1903 | Description |
 |------------------------------|---------|------|------|------|------|------|-------------|
-| shadowVisible                | Bool    |      |      |      |      |  ✔   | Indicateur qui spécifie si l’ombre de l’icône doit être visible ou non |
+| shadowVisible                | Booléen    |      |      |      |      |  ✔   | Indicateur qui spécifie si l’ombre de l’icône doit être visible ou non |
 | forme-arrière-plan             | String  |      |      |      |      |  ✔   | Forme à utiliser comme arrière-plan de l’icône, en remplaçant toute forme qui existe. |
 | forme-icône                   | String  |      |      |      |      |  ✔   | Forme à utiliser comme glyphe de premier plan de l’icône, en remplaçant toute forme qui existe. |
-| stemAnchorRadiusScale        | Float   |      |      |  ✔   |  ✔   |  ✔   | Valeur de mise à l’échelle du point d'ancrage du pied d'une icône.  Par exemple, utilisez la valeur *1* pour obtenir la taille par défaut et la valeur *2* pour obtenir une taille deux fois plus grande. |
-| stemColor                    | Color   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Couleur de la ligne verticale sortant du bas de l’icône en mode 3D. |
-| stemHeightScale              | Float   |      |      |  ✔   |  ✔   |  ✔   | Valeur de mise à l’échelle de la longueur du pied d'une icône.  Par exemple, utilisez la valeur *1* pour obtenir la longueur par défaut et la valeur *2* pour obtenir une longueur deux fois plus grande. |
-| stemOutlineColor             | Color   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Couleur du contour de la ligne verticale sortant du bas de l’icône en mode 3D. |
-| stemWidthScale               | Float   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Valeur de mise à l’échelle de la largeur du pied d'une icône.  Par exemple, utilisez la valeur *1* pour obtenir la longueur par défaut et la valeur *2* pour obtenir une longueur deux fois plus grande. |
+| stemAnchorRadiusScale        | Flottante   |      |      |  ✔   |  ✔   |  ✔   | Valeur de mise à l’échelle du point d'ancrage du pied d'une icône.  Par exemple, utilisez la valeur *1* pour obtenir la taille par défaut et la valeur *2* pour obtenir une taille deux fois plus grande. |
+| stemColor                    | Couleur   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Couleur de la ligne verticale sortant du bas de l’icône en mode 3D. |
+| stemHeightScale              | Flottante   |      |      |  ✔   |  ✔   |  ✔   | Valeur de mise à l’échelle de la longueur du pied d'une icône.  Par exemple, utilisez la valeur *1* pour obtenir la longueur par défaut et la valeur *2* pour obtenir une longueur deux fois plus grande. |
+| stemOutlineColor             | Couleur   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Couleur du contour de la ligne verticale sortant du bas de l’icône en mode 3D. |
+| stemWidthScale               | Flottante   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Valeur de mise à l’échelle de la largeur du pied d'une icône.  Par exemple, utilisez la valeur *1* pour obtenir la longueur par défaut et la valeur *2* pour obtenir une longueur deux fois plus grande. |
 
 <a id="mapelement3d" />
 
@@ -325,6 +323,6 @@ Ce groupe de propriétés hérite du groupe de propriétés [MapElement](#mapele
 
 Ce groupe de propriétés hérite du groupe de propriétés [MapElement](#mapelement).
 
-| Propriété                     | type    | 1703 | 1709 | 1803 | 1809 | 1903 | Description |
+| Propriété                     | Type    | 1703 | 1709 | 1803 | 1809 | 1903 | Description |
 |------------------------------|---------|------|------|------|------|------|------------|
-| renderAsSurface              | Bool    |      |      |  ✔   |  ✔   |  ✔   | Indicateur indiquant qu’un modèle 3D doit être affiché comme un bâtiment, sans atténuation de profondeur par rapport au sol. |
+| renderAsSurface              | Booléen    |      |      |  ✔   |  ✔   |  ✔   | Indicateur indiquant qu’un modèle 3D doit être affiché comme un bâtiment, sans atténuation de profondeur par rapport au sol. |
