@@ -8,17 +8,17 @@ keywords: windows 10, uwp, services du Microsoft Store, API d'analyse du Micros
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 3b732da8f92c258647f905e6939dc3cb1b9c9f87
-ms.sourcegitcommit: 3e47987fb4f86a6349ffe8262675f50971c77472
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74954063"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853356"
 ---
 # <a name="access-analytics-data-using-store-services"></a>Accéder aux données d’analyse à l’aide des services du Windows Store
 
 Utilisez l' *API Microsoft Store Analytics* pour récupérer par programme les données d’analyse pour les applications qui sont inscrites auprès du compte de l’espace partenaires Windows de votre organisation ou de votre organisation. Cette API permet de récupérer des données sur les acquisitions, les erreurs, les évaluations et les avis sur les applications et les extensions (également connues sous le nom PIA, produit in-app). Cette API utilise Azure Active Directory (Azure AD) pour authentifier les appels en provenance de votre application ou service.
 
-Les étapes suivantes décrivent le processus de bout en bout :
+Les étapes suivantes décrivent le processus de bout en bout :
 
 1.  Vérifiez que vous avez rempli toutes les [conditions préalables](#prerequisites).
 2.  Avant d’appeler une méthode dans l’API d’analyse du Microsoft Store, [procurez-vous un jeton d’accès Azure AD](#obtain-an-azure-ad-access-token). Une fois le jeton obtenu, vous avez 60 minutes pour l’utiliser dans les appels à l’API d’analyse du Microsoft Store avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en générer un nouveau.

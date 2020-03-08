@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 29357746b6fca2c6aae52e9516a5b7dc2fca8ef2
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684619"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853156"
 ---
 #  <a name="porting-windowsphone-silverlight-xaml-and-ui-to-uwp"></a>Portage Windows Phone XAML et l’interface utilisateur Silverlight vers UWP
 
@@ -30,7 +30,7 @@ Pour une approche plus générale de la recherche du type UWP qui correspond à 
 ## <a name="xaml-namespace-prefix-declarations"></a>Déclarations de préfixe d’espace de noms XAML
 
 
-Si vous utilisez des instances de types personnalisés dans vos affichages (par exemple, une instance de modèle d’affichage ou un convertisseur de valeurs), vous aurez des déclarations de préfixe d’espace de noms XAML dans votre balisage XAML. La syntaxe de ces différences entre Windows Phone Silverlight et UWP. En voici quelques exemples :
+Si vous utilisez des instances de types personnalisés dans vos affichages (par exemple, une instance de modèle d’affichage ou un convertisseur de valeurs), vous aurez des déclarations de préfixe d’espace de noms XAML dans votre balisage XAML. La syntaxe de ces différences entre Windows Phone Silverlight et UWP. Voici quelques exemples :
 
 ```xml
     xmlns:ContosoTradingCore="clr-namespace:ContosoTradingCore;assembly=ContosoTradingCore"
@@ -187,7 +187,7 @@ De cette façon, le reste du modèle d’affichage, les valeurs de chemin d’ac
 
 Windows Phone les applications Silverlight utilisent les contrôles définis dans l’espace de noms **Microsoft. Phone. Controls** et l’espace de noms **System. Windows. Controls** . Les applications UWP XAML utilisent les contrôles définis dans l’espace de noms [**Windows.UI.Xaml.Controls**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls). L’architecture et la conception des contrôles XAML dans la plateforme UWP est quasiment identique à celle des contrôles Windows Phone Silverlight. Toutefois, certaines modifications ont été apportées pour améliorer l’ensemble des contrôles disponibles et les unifier avec les applications Windows. En voici des exemples spécifiques.
 
-| Nom du contrôle | Changement |
+| Nom du contrôle | Modifier |
 |--------------|--------|
 | ApplicationBar | Propriété [Page.TopAppBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.topappbar). |
 | ApplicationBarIconButton | L’équivalent UWP est la propriété [Glyph](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon.glyph). PrimaryCommands est la propriété de contenu du contrôle CommandBar. L’analyseur XAML interprète le code xml interne d’un élément comme la valeur de sa propriété de contenu. |
@@ -297,7 +297,7 @@ Pour plus d’informations, voir [Navigation](https://docs.microsoft.com/windows
 
 ## <a name="resource-key-reference"></a>Référence aux clés de ressources
 
-Le langage de conception a évolué pour Windows 10 et, par conséquent, certains styles système ont changé et de nombreuses clés de ressources système ont été supprimées ou renommées. L’éditeur de balisage XAML de Visual Studio met en surbrillance les références aux clés de ressources qui ne peuvent pas être résolues. Par exemple, il souligne une référence à la clé de style `PhoneTextNormalStyle` d’une ligne ondulée rouge. Si ce n’est pas corrigé, l’application s’arrête immédiatement lorsque vous essayez de la déployer vers l’émulateur ou l’appareil. Il est donc important de veiller à l’exactitude du balisage XAML. Et vous allez découvrir que Visual Studio est un formidable outil pour intercepter ces problèmes.
+Le langage de conception a évolué pour Windows 10 et, par conséquent, certains styles système ont changé et de nombreuses clés de ressources système ont été supprimées ou renommées. L’éditeur de balisage XAML dans Visual Studio met en surbrillance les références aux clés de ressources qui ne peuvent pas être résolues. Par exemple, il souligne une référence à la clé de style `PhoneTextNormalStyle` d’une ligne ondulée rouge. Si ce n’est pas corrigé, l’application s’arrête immédiatement lorsque vous essayez de la déployer vers l’émulateur ou l’appareil. Il est donc important de veiller à l’exactitude du balisage XAML. Et vous allez découvrir que Visual Studio est un formidable outil pour intercepter ces problèmes.
 
 Voir également la section [Texte](#text) ci-dessous.
 
@@ -305,7 +305,7 @@ Voir également la section [Texte](#text) ci-dessous.
 
 La barre d’état système (définie dans le balisage XAML avec `shell:SystemTray.IsVisible`) est désormais appelée barre d’état. Elle s’affiche par défaut. Vous pouvez contrôler sa visibilité dans le code impératif en appelant les méthodes [**Windows.UI.ViewManagement.StatusBar.ShowAsync**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.statusbar.showasync) et [**HideAsync**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.statusbar.hideasync).
 
-## <a name="text"></a>Text
+## <a name="text"></a>Texte
 
 Le texte (ou la typographie) constitue un aspect important d’une application UWP et, pendant le portage, il vous sera peut-être utile de revoir les conceptions visuelles de vos vues afin de les harmoniser avec le nouveau langage de conception. Utilisez ces illustrations pour identifier les styles  **TextBlock** système d’UWP disponibles. Recherchez ceux qui correspondent aux styles Silverlight Windows Phone que vous avez utilisés. Vous pouvez également créer vos propres styles universels et copier les propriétés du Windows Phone styles de système Silverlight dans ceux-ci.
 
@@ -364,11 +364,11 @@ Voir [Utilisation de vignettes, de badges et de notifications toast](https://doc
 
 Windows Phone applications Silverlight et les applications Windows 10 diffèrent dans la façon dont elles extraient la taille et la disposition des éléments d’interface utilisateur de la taille physique et de la résolution réelles des appareils. Une application Windows Phone Silverlight utilise la vue pixels pour effectuer cette opération. Avec Windows 10, le concept de pixels d’affichage a été affiné dans celui des pixels effectifs. Voici une explication de ce terme, sa signification et la valeur supplémentaire qu’il offre.
 
-Le terme « résolution » fait référence à la mesure de la densité des pixels et non, comme on le pense souvent, au nombre de pixels. La « résolution effective » est la façon dont les pixels physiques qui composent une image ou un glyphe apparaissent à l’œil, étant donné les différences liées à la distance de visualisation et à la taille des pixels physiques sur l’appareil (la densité de pixels étant l’inverse de la taille des pixels physiques). La résolution effective est une bonne unité de mesure pour créer une expérience, car elle est centrée sur l’utilisateur. La compréhension de tous ces facteurs et le contrôle de la taille des éléments d’interface utilisateur vous permettent d’optimiser l’expérience utilisateur.
+Le terme « résolution » fait référence à la mesure de la densité des pixels et non, comme on le pense souvent, au nombre de pixels. La « résolution effective » est la façon dont les pixels physiques qui composent une image ou un glyphe apparaissent à l’œil, étant donné les différences liées à la distance de visualisation et à la taille des pixels physiques sur l’appareil (la densité de pixels étant l’inverse de la taille des pixels physiques). La résolution effective est une bonne unité de mesure pour créer une expérience, car elle est centrée sur l’utilisateur. La compréhension de tous ces facteurs et le contrôle de la taille des éléments d’interface utilisateur vous permettent de tirer parti de l’expérience utilisateur.
 
 Pour une application Windows Phone Silverlight, tous les écrans de téléphone sont exactement 480 afficher les pixels en largeur, sans exception, quel que soit le nombre de pixels physiques de l’écran, ou sa densité de pixels ou sa taille physique. Cela signifie qu’un élément **image** avec `Width="48"` sera exactement un dixième de la largeur de l’écran de n’importe quel téléphone qui peut exécuter l’application Windows Phone Silverlight.
 
-Dans une application Windows 10, ce n’est *pas* le cas si tous les appareils ont un nombre fixe de pixels effectifs. Ceci est probablement évident, étant donné le large éventail d’appareils sur lesquels une application UWP peut s’exécuter. Les différents appareils utilisés présentent une largeur variable (en pixels effectifs). Celle-ci est de 320 epx sur les plus petits d’entre eux, de 1 024 epx sur les écrans de taille modeste et nettement plus élevée sur d’autres. Il vous suffit de continuer à utiliser les éléments à dimensionnement automatique et les panneaux à disposition dynamique que vous utilisez depuis toujours. Dans certains cas, il se peut que vous définissiez une taille fixe pour les propriétés de vos éléments d’interface utilisateur dans le balisage XAML. Un facteur d’échelle est automatiquement affecté à votre application, en fonction de l’appareil sur lequel elle s’exécute et des paramètres d’affichage définis par l’utilisateur. Ce facteur permet aux éléments à taille fixe de l’interface utilisateur de conserver la même taille (approximativement) sur les écrans de différentes tailles de l’utilisateur, pour les opérations tactiles ou pour la lecture. Et avec la disposition dynamique, votre interface utilisateur ne sera pas seulement mise à l’échelle sur différents appareils : elle s’efforcera d’adapter la quantité de contenu appropriée à l’espace disponible.
+Dans une application Windows 10, ce n’est *pas* le cas si tous les appareils ont un nombre fixe de pixels effectifs. Ceci est probablement évident, étant donné le large éventail d’appareils sur lesquels une application UWP peut s’exécuter. Les différents appareils utilisés présentent une largeur variable (en pixels effectifs). Celle-ci est de 320 epx sur les plus petits d’entre eux, de 1 024 epx sur les écrans de taille modeste et nettement plus grande sur d’autres. Il vous suffit de continuer à utiliser les éléments à dimensionnement automatique et les panneaux à disposition dynamique que vous utilisez depuis toujours. Dans certains cas, il se peut que vous définissiez une taille fixe pour les propriétés de vos éléments d’interface utilisateur dans le balisage XAML. Un facteur d’échelle est automatiquement affecté à votre application, en fonction de l’appareil sur lequel elle s’exécute et des paramètres d’affichage définis par l’utilisateur. Ce facteur permet aux éléments à taille fixe de l’interface utilisateur de conserver la même taille (approximativement) sur les écrans de différentes tailles de l’utilisateur, pour les opérations tactiles ou pour la lecture. Et avec la disposition dynamique, votre interface utilisateur ne sera pas seulement mise à l’échelle sur différents appareils : elle s’efforcera d’adapter la quantité de contenu appropriée à l’espace disponible.
 
 Comme 480 était auparavant la largeur fixe dans afficher les pixels d’un écran de taille de téléphone, et que cette valeur est maintenant généralement plus petite en pixels effectifs, une règle empirique consiste à multiplier toute dimension dans votre balisage d’application Windows Phone Silverlight par un facteur de 0,8.
 

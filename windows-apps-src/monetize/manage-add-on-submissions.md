@@ -1,19 +1,19 @@
 ---
 ms.assetid: 66400066-24BF-4AF2-B52A-577F5C3CA474
 description: Utilisez ces méthodes dans l’API de soumission Microsoft Store pour gérer les envois de compléments pour les applications qui sont inscrites auprès de votre compte espace partenaires.
-title: Gérer les soumissions de modules complémentaires
+title: Gérer les soumissions d’extensions
 ms.date: 04/17/2018
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au Microsoft Store, soumissions d'extension, produit dans l'app, FAI
 ms.localizationpriority: medium
 ms.openlocfilehash: c8204382a4e341083ce825a9424181cdd75771e1
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260238"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78852512"
 ---
-# <a name="manage-add-on-submissions"></a>Gérer les soumissions de modules complémentaires
+# <a name="manage-add-on-submissions"></a>Gérer les soumissions d’extensions
 
 L’API de soumission au Microsoft Store fournit des méthodes qui permettent de gérer les soumissions d’extensions (également connues sous le nom PIA ou produits in-app) pour vos apps. Pour obtenir une présentation de l’API de soumission au Microsoft Store, notamment les conditions préalables à l’utilisation de l’API, voir [Créer et gérer des soumissions à l’aide des services au Microsoft Store](create-and-manage-submissions-using-windows-store-services.md).
 
@@ -66,7 +66,7 @@ Pour obtenir, créer, mettre à jour, valider ou supprimer une soumission d’ex
 <td align="left"><a href="commit-an-add-on-submission.md">Valider une soumission de complément nouvelle ou mise à jour</a></td>
 </tr>
 <tr>
-<td align="left">Suppression</td>
+<td align="left">DELETE</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}</td>
 <td align="left"><a href="delete-an-add-on-submission.md">Supprimer une soumission de module complémentaire</a></td>
 </tr>
@@ -232,15 +232,15 @@ Cette ressource a les valeurs suivantes.
 |------------|--------|----------------------|
 | id            | chaîne  | ID de la soumission. Cet ID est disponible dans les données de réponse des requêtes pour [créer une soumission d’extension](create-an-add-on-submission.md), [obtenir toutes les extensions](get-all-add-ons.md) et [obtenir une extension](get-an-add-on.md). Pour une soumission qui a été créée dans l’espace partenaires, cet ID est également disponible dans l’URL de la page de soumission dans l’espace partenaires.  |
 | contentType           | chaîne  |  [Type de contenu](../publish/enter-add-on-properties.md#content-type) qui est fourni dans l’extension. Les valeurs possibles sont les suivantes : <ul><li>NotSet</li><li>BookDownload</li><li>EMagazine</li><li>ENewspaper</li><li>MusicDownload</li><li>MusicStream</li><li>OnlineDataStorage</li><li>VideoDownload</li><li>VideoStream</li><li>Asp</li><li>OnlineDownload</li></ul> |  
-| keywords           | array  | Tableau de chaînes qui contiennent jusqu’à 10 [mots clés](../publish/enter-add-on-properties.md#keywords) pour l’extension. Votre application peut rechercher des extensions à l’aide de ces mots clés.   |
+| mots clés           | array  | Tableau de chaînes qui contiennent jusqu’à 10 [mots clés](../publish/enter-add-on-properties.md#keywords) pour l’extension. Votre application peut rechercher des extensions à l’aide de ces mots clés.   |
 | lifetime           | chaîne  |  Durée de vie de l’extension. Les valeurs possibles sont les suivantes : <ul><li>Forever</li><li>OneDay</li><li>ThreeDays</li><li>FiveDays</li><li>OneWeek</li><li>TwoWeeks</li><li>OneMonth</li><li>TwoMonths</li><li>ThreeMonths</li><li>SixMonths</li><li>OneYear</li></ul> |
-| listings           | objet  |  Dictionnaire de paires clé/valeur, où chaque clé est un code de pays à deux lettres ISO 3166-1 alpha-2, et chaque valeur est un objet de [ressource de référencement](#listing-object) qui contient les informations de référencement de l’extension.  |
+| listes           | objet  |  Dictionnaire de paires clé/valeur, où chaque clé est un code de pays à deux lettres ISO 3166-1 alpha-2, et chaque valeur est un objet de [ressource de référencement](#listing-object) qui contient les informations de référencement de l’extension.  |
 | pricing           | objet  | [Ressource de tarification](#pricing-object) qui contient les informations de tarification de l’extension.   |
-| targetPublishMode           | chaîne  | Mode de publication pour la soumission. Les valeurs possibles sont les suivantes : <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
+| targetPublishMode           | chaîne  | Mode de publication pour la soumission. Les valeurs possibles sont les suivantes : <ul><li>Immédiate</li><li>Manuel</li><li>SpecificDate</li></ul> |
 | targetPublishDate           | chaîne  | Date de publication de la soumission au format ISO 8601, si le paramètre *targetPublishMode* a la valeur SpecificDate.  |
 | tag           | chaîne  |  [Données développeur personnalisées](../publish/enter-add-on-properties.md#custom-developer-data) de l’extension (ces informations étaient précédemment appelées *tag*).   |
-| visibility  | chaîne  |  Visibilité de l’extension. Les valeurs possibles sont les suivantes : <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>  |
-| status  | chaîne  |  État de la soumission. Les valeurs possibles sont les suivantes : <ul><li>Aucun</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publication</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Libérer</li><li>ReleaseFailed</li></ul>   |
+| visibilité  | chaîne  |  Visibilité de l’extension. Les valeurs possibles sont les suivantes : <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>  |
+| statut  | chaîne  |  État de la soumission. Les valeurs possibles sont les suivantes : <ul><li>Aucune</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publication</li><li>Publié</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Version finale</li><li>ReleaseFailed</li></ul>   |
 | statusDetails           | objet  |  [Ressource des détails d’état](#status-details-object) qui contient des détails supplémentaires sur l’état de la soumission, notamment des informations sur les éventuelles erreurs. |
 | fileUploadUrl           | chaîne  | URI de la signature d’accès partagé (SAS) pour le chargement des packages de la soumission. Si vous ajoutez de nouveaux packages à la soumission, chargez l’archive ZIP contenant les packages vers cet URI. Pour plus d’informations, voir [Créer une soumission d’extension](#create-an-add-on-submission).  |
 | friendlyName  | chaîne  |  Nom convivial de la soumission, comme indiqué dans l’espace partenaires. La valeur est générée pour vous lorsque vous créez la soumission.  |
@@ -254,7 +254,7 @@ Cette ressource contient des  [informations de référencement pour une extensio
 | Valeur           | Type    | Description       |
 |-----------------|---------|------|
 |  description               |    chaîne     |   Description du listing d’extensions.   |     
-|  icon               |   objet      |[Ressource d’icône](#icon-object) qui contient les données de l’icône du listing d’extensions.    |
+|  icône               |   objet      |[Ressource d’icône](#icon-object) qui contient les données de l’icône du listing d’extensions.    |
 |  title               |     chaîne    |   Titre du listing d’extensions.   |  
 
 <span id="icon-object" />
@@ -266,7 +266,7 @@ Cette ressource contient les données d’icône du listing d’extensions. Cett
 | Valeur           | Type    | Description     |
 |-----------------|---------|------|
 |  fileName               |    chaîne     |   Nom du fichier d’icône dans l’archive ZIP que vous avez chargé pour la soumission. L'icône doit prendre la forme d’un fichier PNG de 300 x 300 pixels exactement.   |     
-|  fileStatus               |   chaîne      |  État du fichier d’icône. Les valeurs possibles sont les suivantes : <ul><li>Aucun</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>   |
+|  fileStatus               |   chaîne      |  État du fichier d’icône. Les valeurs possibles sont les suivantes : <ul><li>Aucune</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>   |
 
 <span id="pricing-object" />
 
@@ -278,8 +278,8 @@ Cette ressource contient des informations de tarification pour l’extension. Ce
 |-----------------|---------|------|
 |  marketSpecificPricings               |    objet     |  Dictionnaire de paires clé/valeur, où chaque clé est un code de pays à deux lettres ISO 3166-1 alpha-2 et chaque valeur est un [niveau de prix](#price-tiers). Ces éléments représentent les [prix personnalisés de votre extension sur des marchés spécifiques](https://docs.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability). Tous les éléments de ce dictionnaire remplacent le prix de base spécifié par la valeur *priceId* du marché spécifié.     |     
 |  sales               |   array      |  **Deprecated**. Tableau des [ressources de ventes](#sale-object) qui contiennent des informations commerciales pour l’extension.     |     
-|  priceId               |   chaîne      |  [Niveau de prix](#price-tiers) spécifiant le [prix de base](https://docs.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability) de l’extension.    |    
-|  isAdvancedPricingModel               |   booléen      |  Si la valeur **true** est définie, votre compte de développeur dispose d’un accès à la plage étendue de tarification, de 0,99 à 1999,99 dollars. Si la valeur **false** est définie, votre compte de développeur dispose d’un accès à la plage initiale de tarification, de 0,99 à 999,99 dollars. Pour plus d’informations sur les différents niveaux, voir [Niveaux de prix](#price-tiers).<br/><br/>**Remarque**&nbsp;&nbsp;Ce champ est en lecture seule.   |
+|  priceId               |   chaîne      |  [Niveau de prix](#price-tiers) qui spécifie le [prix de base](https://docs.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability) de l’extension.    |    
+|  isAdvancedPricingModel               |   booléenne      |  Si la valeur **true** est définie, votre compte de développeur dispose d’un accès à la plage étendue de tarification, de 0,99 à 1999,99 dollars. Si la valeur **false** est définie, votre compte de développeur dispose d’un accès à la plage initiale de tarification, de 0,99 à 999,99 dollars. Pour plus d’informations sur les différents niveaux, voir [Niveaux de prix](#price-tiers).<br/><br/>**Remarque**&nbsp;&nbsp;Ce champ est en lecture seule.   |
 
 
 <span id="sale-object" />
@@ -290,14 +290,14 @@ Cette ressource contient des informations commerciales sur une extension.
 
 > [!IMPORTANT]
 > La ressource **Sale** n’est plus prise en charge, et vous ne pouvez ni obtenir ni modifier les données commerciales concernant la soumission d’une extension à l’aide de l’API de soumission au Microsoft Store. À l’avenir, nous allons mettre à jour l’API de soumission au Microsoft Store pour proposer une nouvelle façon d’accéder par programmation aux informations commerciales concernant la soumission de modules complémentaires.
->    * Après l’appel de la [méthode GET pour soumettre un module complémentaire](get-an-add-on-submission.md), la ressource *Sales* est vide. Vous pouvez continuer à utiliser l’espace partenaires pour obtenir les données de vente pour votre envoi de module complémentaire.
+>    * Après avoir appelé la [méthode GET pour soumettre un module complémentaire](get-an-add-on-submission.md), la ressource *Sales* est vide. Vous pouvez continuer à utiliser l’espace partenaires pour obtenir les données de vente pour votre envoi de module complémentaire.
 >    * Lors de l’appel de la [méthode PUT pour mettre à jour la soumission d’un module complémentaire](update-an-add-on-submission.md), les informations de la valeur *Sales* sont ignorées. Vous pouvez continuer à utiliser l’espace partenaires pour modifier les données de vente de votre soumission de module complémentaire.
 
 Cette ressource a les valeurs suivantes.
 
 | Valeur           | Type    | Description           |
 |-----------------|---------|------|
-|  name               |    chaîne     |   Nom de la vente.    |     
+|  nom               |    chaîne     |   Nom de la vente.    |     
 |  basePriceId               |   chaîne      |  [Niveau de prix](#price-tiers) à utiliser pour le prix de base de la vente.    |     
 |  startDate               |   chaîne      |   Date de début de la vente au format ISO 8601.  |     
 |  endDate               |   chaîne      |  Date de fin de la vente au format ISO 8601.      |     
@@ -311,8 +311,8 @@ Cette ressource contient des détails supplémentaires sur l’état d’une sou
 
 | Valeur           | Type    | Description       |
 |-----------------|---------|------|
-|  errors               |    objet     |   Tableau des [ressources des détails d’état](#status-detail-object) qui contiennent les détails d’erreur de la soumission.   |     
-|  warnings               |   objet      | Tableau des [ressources des détails d’état](#status-detail-object) qui contiennent les détails d’avertissement de la soumission.     |
+|  erreurs               |    objet     |   Tableau des [ressources des détails d’état](#status-detail-object) qui contiennent les détails d’erreur de la soumission.   |     
+|  avertissements               |   objet      | Tableau des [ressources des détails d’état](#status-detail-object) qui contiennent les détails d’avertissement de la soumission.     |
 |  certificationReports               |     objet    |   Tableau des [ressources de rapport de certification](#certification-report-object) qui donnent accès aux données du rapport de certification de la soumission. Vous pouvez examiner ces rapports pour obtenir plus d’informations en cas d’échec de la certification.    |  
 
 <span id="status-detail-object" />
@@ -351,18 +351,18 @@ Les valeurs suivantes représentent les niveaux de prix disponibles dans la [res
 |-----------------|------|
 |  Base               |   Le niveau de prix n’est pas défini ; utilisez le prix de base de l’extension.      |     
 |  NotAvailable              |   L’extension n’est pas disponible dans la région spécifiée.    |     
-|  Free              |   L’extension est gratuite.    |    
+|  Libre              |   L’extension est gratuite.    |    
 |  Tier*xxxx*               |   Une chaîne spécifiant le niveau de prix d’une extension, au format **Tier<em>xxxx</em>** . Actuellement, les plages suivantes de tarification sont prises en charge :<br/><br/><ul><li>Si la valeur *isAdvancedPricingModel* de la [ressource de tarification](#pricing-object) est **true**, les valeurs de tarification disponibles pour votre compte sont **Tier1012** - **Tier1424**.</li><li>Si la valeur *isAdvancedPricingModel* de la [ressource de tarification](#pricing-object) est **false**, les valeurs de tarification disponibles pour votre compte sont **Tier2** - **Tier96**.</li></ul>Pour afficher le tableau complet des niveaux de prix disponibles pour votre compte de développeur, y compris les prix spécifiques au marché qui sont associés à chaque niveau, accédez à la page **tarification et disponibilité** pour l’une de vos soumissions d’application dans l’espace partenaires, puis cliquez sur le lien afficher **la** **table** dans la section **marchés et prix personnalisés** .     |
 
 <span id="submission-status-code" />
 
-### <a name="submission-status-code"></a>Code d’état de la soumission
+### <a name="submission-status-code"></a>Code d’état de soumission
 
 Les valeurs suivantes représentent le code d’état d’une soumission.
 
 | Valeur           |  Description      |
 |-----------------|---------------|
-|  Aucun            |     Aucun code n’a été spécifié.         |     
+|  Aucune            |     Aucun code n’a été spécifié.         |     
 |      InvalidArchive        |     L’archive ZIP contenant le package n’est pas valide ou a un format d’archive non reconnu.  |
 | MissingFiles | L’archive ZIP ne dispose pas de tous les fichiers qui ont été répertoriés dans les données de votre soumission, ou ils se trouvent dans un emplacement incorrect dans l’archive. |
 | PackageValidationFailed | La validation d’un ou de plusieurs packages de votre soumission a échoué. |

@@ -7,18 +7,18 @@ keywords: contrat définissant les politiques du microsoft store
 ms.localizationpriority: high
 ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
 ms.openlocfilehash: a68247637395c3f68bf1140479bc94cb8e0fcc33
-ms.sourcegitcommit: 5309019fa2a7c02e4e3f0c4076b75fc63546b6f0
-ms.translationtype: HT
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77607249"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853440"
 ---
 # <a name="microsoft-store-policies"></a>Politiques du Microsoft Store
 
 
-**Version du document : 7.12**
+**Version du document : 7,12**
 
-**Date du document : 1er octobre 2019**
+**Date du document : 1er octobre 2019**
 
 > [!NOTE]
 > Pour obtenir un résumé des modifications récentes apportées à ce contrat, consultez [Historique des modifications](store-policies-change-history.md).
