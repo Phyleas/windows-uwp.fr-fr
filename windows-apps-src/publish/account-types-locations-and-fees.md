@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, compte de développeur, individuel, société, entreprise
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ac6c3e7c89c091d1080364b8fbbb35d484aee49
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260054"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853488"
 ---
 # <a name="account-types-locations-and-fees"></a>Types de compte, emplacements et frais
 
@@ -29,7 +29,7 @@ Les comptes d’entreprise s’adressent quant à eux aux organismes et aux entr
 
 Voici les principales différences entre les deux types de compte.
 
-| Compte individuel | Compte d’entreprise |
+| Compte individuel | Compte d'entreprise |
 |--------------------|-----------------|
 | <ul><li>Coûte environ 19 USD (frais d’inscription ponctuels ; le montant exact varie en fonction de votre pays ou région)</li><li>Processus de vérification de compte plus court</li></ul> | <ul><li>Coûte environ 99 USD (frais d’inscription ponctuels ; le montant exact varie en fonction de votre pays ou région)</li><li>Nécessite une vérification renforcée du compte</li><li>Votre entreprise doit être reconnue en tant que telle dans le pays ou la région où elle est située</li><li>En mesure de soumettre des applications avec des fonctionnalités restreintes (comme décrit dans les [Stratégies du Microsoft Store](store-policies.md#1014-account-type))</li></ul> |
 
@@ -47,7 +47,7 @@ Vous pouvez obtenir un compte de développeur et soumettre des applications si v
 
 Dans le tableau suivant, les **frais d’inscription** correspondent au coût actuel d’un compte de développeur. Ces frais ne sont à régler qu’une seule fois, et il n’existe aucun frais de renouvellement. Notez que les prix ci-dessous sont sujets à modification.
 
-| Pays/région                    | Frais de l'inscription individuelle | Frais de l'inscription d’entreprise |
+| Pays/Région                    | Frais de l'inscription individuelle | Frais de l'inscription d’entreprise |
 |-----------------------------------|---------------------|------------------|
 | Afghanistan                       | 19 USD              | 99 USD           |
 | Albanie                           | 19 USD              | 99 USD           |
@@ -60,11 +60,11 @@ Dans le tableau suivant, les **frais d’inscription** correspondent au coût ac
 | Australie                         | 21 AUD              | 110 AUD          |  
 | Autriche                           | 14 EUR              | 75 EUR           |  
 | Azerbaïdjan                        | 19 USD              | 99 USD           |  
-| Les Bahamas                       | 19 USD              | 99 USD           |  
+| Bahamas                       | 19 USD              | 99 USD           |  
 | Bahreïn                           | 7 BHD               | 38 BHD           |  
 | Bangladesh                        | 1468 BDT            | 7600 BDT         |  
 | Barbade (La)                          | 19 USD              | 99 USD           |  
-| Bélarus                           | 19 USD              | 99 USD           |  
+| Biélorussie                           | 19 USD              | 99 USD           |  
 | Belgique                           | 14 EUR              | 75 EUR           |  
 | Belize                            | 19 USD              | 99 USD           |  
 | Bénin                             | 19 USD              | 99 USD           |  
@@ -73,11 +73,11 @@ Dans le tableau suivant, les **frais d’inscription** correspondent au coût ac
 | Bosnie-Herzégovine            | 19 USD              | 99 USD           |  
 | Botswana                          | 19 USD              | 99 USD           |  
 | Brésil                            | 46 BRL              | 160 BRL          |  
-| Brunei                            | 19 USD              | 99 USD           |  
+| Brunéi Darussalam                            | 19 USD              | 99 USD           |  
 | Bulgarie                          | 28 BGN              | 160 BGN          |  
 | Burkina-Faso                      | 19 USD              | 99 USD           |  
 | Burundi                           | 19 USD              | 99 USD           |  
-| Cabo Verde                        | 19 USD              | 99 USD           |  
+| Cap Vert                        | 19 USD              | 99 USD           |  
 | Cambodge                          | 19 USD              | 99 USD           |  
 | Cameroun                          | 19 USD              | 99 USD           |  
 | Canada                            | 20 CAD              | 99 CAD           |  
@@ -87,7 +87,7 @@ Dans le tableau suivant, les **frais d’inscription** correspondent au coût ac
 | Chine                             | 116 CNY             | 600 CNY          |  
 | Colombie                          | 36543 COP           | 180000 COP       |  
 | Comores (Les)                           | 19 USD              | 99 USD           |  
-| République démocratique du Congo                             | 19 USD              | 99 USD           |  
+| Congo                             | 19 USD              | 99 USD           |  
 | Congo (RDC)                       | 19 USD              | 99 USD           |  
 | Costa Rica                        | 9578 CRC            | 49725 CRC        |  
 | Côte d’Ivoire                     | 19 USD              | 99 USD           |  
@@ -98,7 +98,7 @@ Dans le tableau suivant, les **frais d’inscription** correspondent au coût ac
 | Djibouti                          | 19 USD              | 99 USD           | 
 | Dominique                          | 19 USD              | 99 USD           | 
 | République dominicaine                | 19 USD              | 99 USD           |  
-| Équateur (République de l’)                           | 19 USD              | 99 USD           |  
+| Équateur                           | 19 USD              | 99 USD           |  
 | Égypte                             | 133 EGP             | 600 EGP          |  
 | El Salvador                       | 19 USD              | 99 USD           |  
 | Guinée équatoriale                 | 19 USD              | 99 USD           |  
@@ -112,7 +112,7 @@ Dans le tableau suivant, les **frais d’inscription** correspondent au coût ac
 | Gabon                             | 19 USD              | 99 USD           |  
 | Gambie                        | 19 USD              | 99 USD           |  
 | Géorgie                           | 19 USD              | 99 USD           |  
-| Allemagne                           | 14 EUR              | 75 EUR           |  
+| Germany                           | 14 EUR              | 75 EUR           |  
 | Ghana                             | 19 USD              | 99 USD           |  
 | Grèce                            | 14 EUR              | 75 EUR           |  
 | Groenland                         | 19 USD              | 99 USD           |  
@@ -123,7 +123,7 @@ Dans le tableau suivant, les **frais d’inscription** correspondent au coût ac
 | Guyana                            | 19 USD              | 99 USD           |  
 | Haïti                             | 19 USD              | 99 USD           |  
 | Honduras                          | 19 USD              | 99 USD           |  
-| Hong Kong R.A.S.                     | 147 HKD             | 760 HKD          |  
+| Hong Kong (R.A.S.)                     | 147 HKD             | 760 HKD          |  
 | Hongrie                           | 4237 HUF            | 18800 HUF        |  
 | Islande                           | 2319 ISK            | 11929 ISK        |
 | Inde                             | 1201 INR            | 4500 INR         |  
@@ -133,7 +133,7 @@ Dans le tableau suivant, les **frais d’inscription** correspondent au coût ac
 | Israël                            | 67 ILS              | 350 ILS          |  
 | Italie                             | 14 EUR              | 75 EUR           |  
 | Jamaïque                           | 19 USD              | 99 USD           |  
-| Japon                             | 1847 JPY            | 9800 JPY         |  
+| Japan                             | 1847 JPY            | 9800 JPY         |  
 | Jordanie                            | 13 JOD              | 70 JOD           |  
 | Kazakhstan                        | 2897 KZT            | 15038 KZT        |  
 | Kenya                             | 1900 KES            | 9999 KES         |  
@@ -151,13 +151,13 @@ Dans le tableau suivant, les **frais d’inscription** correspondent au coût ac
 | Lituanie                         | 14 EUR              | 75 EUR           |  
 | Luxembourg                        | 14 EUR              | 75 EUR           |  
 | Macao R.A.S.                         | 19 USD              | 99 USD           |  
-| Macédoine du Nord                 | 19 USD              | 99 USD           |  
+| Macédoine (Ex-République yougoslave de)                 | 19 USD              | 99 USD           |  
 | Madagascar                        | 19 USD              | 99 USD           |  
 | Malawi                            | 19 USD              | 99 USD           |  
 | Malaisie                          | 62 MYR              | 300 MYR          |  
 | Maldives                          | 19 USD              | 99 USD           |  
 | Mali                              | 19 USD              | 99 USD           |  
-| Malte (République de)                             | 14 EUR              | 75 EUR           |  
+| Malte                             | 14 EUR              | 75 EUR           |  
 | Marshall (îles)                  | 19 USD              | 99 USD           |  
 | Mauritanie                        | 5681 MRO            | 30046 MRO        |  
 | Maurice                         | 19 USD              | 99 USD           |  
@@ -176,7 +176,7 @@ Dans le tableau suivant, les **frais d’inscription** correspondent au coût ac
 | Nouvelle-Zélande                       | 24 NZD              | 140 NZD          |  
 | Nicaragua                         | 19 USD              | 99 USD           |  
 | Niger                             | 19 USD              | 99 USD           |  
-| Nigéria                           | 3700 NGN            | 19500 NGN        |  
+| Nigeria                           | 3700 NGN            | 19500 NGN        |  
 | Norvège                            | 113 NOK             | 580 NOK          |  
 | Oman                              | 7 OMR               | 40 OMR           |  
 | Pakistan                          | 1959 PKR            | 9000 PKR         |  
@@ -198,7 +198,7 @@ Dans le tableau suivant, les **frais d’inscription** correspondent au coût ac
 | Samoa                             | 19 USD              | 99 USD           |  
 | Saint-Marin                        | 14 EUR              | 75 EUR           |  
 | São Tomé et Príncipe             | 19 USD              | 99 USD           |  
-| Arabie saoudite                      | 71 SAR              | 380 SAR          |  
+| Arabie Saoudite                      | 71 SAR              | 380 SAR          |  
 | Sénégal                           | 19 USD              | 99 USD           |  
 | Serbie                            | 1619 RSD            | 7000 RSD         |  
 | Seychelles                        | 19 USD              | 99 USD           |  

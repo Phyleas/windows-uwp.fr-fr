@@ -7,14 +7,14 @@ template: detail.hbs
 isNew: true
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 440f758e5db8bd77d3f26290eb59d7684e5f87a3
-ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68867653"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853054"
 ---
 # <a name="gamepad-and-remote-control-interactions"></a>Interactions entre le boîtier de commande et la télécommande
 
@@ -22,11 +22,11 @@ ms.locfileid: "68867653"
 
 ***De nombreuses expériences d’interaction sont partagées entre le boîtier, le contrôle à distance et le clavier.***
 
-Créez des expériences d’interaction dans vos applications de plateforme Windows universelle (UWP) qui garantissent que votre application est utilisable et accessible via les types d’entrée traditionnels des PC, ordinateurs portables et tablettes (souris, clavier, toucher, etc.), ainsi que les types d’entrée. type de l’expérience TV et Xbox *10-foot* , comme le boîtier de commande et le contrôle à distance.
+Créez des expériences d’interaction dans vos applications de plateforme Windows universelle (UWP) qui garantissent que votre application est utilisable et accessible via les types d’entrée traditionnels des PC, ordinateurs portables et tablettes (souris, clavier, toucher, etc.), ainsi que les types d’entrée typiques de l’expérience de la télévision et de la Xbox *10-foot* , comme le boîtier et le contrôle à distance.
 
 Consultez [conception pour la Xbox et la télévision](../devices/designing-for-tv.md) pour obtenir des conseils de conception générale sur les applications UWP dans une expérience de *10 mètres* .
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Overview
 
 Dans cette rubrique, nous expliquons ce que vous devez prendre en compte dans votre conception d’interaction (ou ce que vous ne faites pas, si la plateforme le regarde à votre place) et que vous fournissez des conseils, des recommandations et des suggestions pour créer des applications UWP qui sont agréables à utiliser, quelle que soit appareil, type d’entrée ou préférences et préférences de l’utilisateur.
 
@@ -45,7 +45,7 @@ Voici d’autres façons d’optimiser votre application pour une utilisation da
 > [!NOTE]
 > Étant donné que les boîtiers de commande Xbox et les contrôles à distance prennent en charge de nombreux comportements et expériences du clavier UWP, ces recommandations sont appropriées pour les deux types d’entrée. Pour plus d’informations sur le clavier, consultez [interactions du clavier](keyboard-interactions.md) .
 
-| Fonctionnalité        | Description           |
+| Composant        | Description           |
 | -------------------------------------------------------------- |--------------------------------|
 | [Navigation dans le focus XY et interaction](#xy-focus-navigation-and-interaction) | La **navigation de focus XY** permet à l’utilisateur de naviguer dans l’interface utilisateur de votre application. Toutefois, cela limite la navigation à quatre directions : haut, bas, gauche et droite. Cette section apporte des recommandations pour y remédier ainsi que d’autres considérations. |
 | [Mode de la souris](#mouse-mode)|La navigation au focus XY n’est pas pratique, voire possible, pour certains types d’applications, telles que les cartes ou le dessin et la peinture d’applications. Dans ce cas, le **mode souris** permet aux utilisateurs de naviguer librement avec un boîtier ou un contrôle à distance, tout comme une souris sur un PC.|
@@ -71,7 +71,7 @@ Comme vous pouvez le constater sur le schéma, certains des boutons pris en char
 
 Le tableau suivant répertorie tous les boutons matériels pris en charge par les applications UWP et les périphériques d’entrée qui les prennent en charge.
 
-| Bouton                    | Boîtier de commande   | Télécommande    |
+| Bouton                    | Boîtier de commande   | Contrôle à distance    |
 |---------------------------|-----------|-------------------|
 | Bouton A/Sélectionner           | Oui       | Oui               |
 | Bouton B/Précédent             | Oui       | Oui               |
@@ -96,11 +96,11 @@ La plateforme UWP mappe automatiquement le comportement d’entrée du clavier e
 | Clavier              | Boîtier de commande/Télécommande                        |
 |-----------------------|---------------------------------------|
 | Touches de direction            | Bouton multidirectionnel (également stick analogique gauche sur le boîtier de commande)    |
-| Barre d’espace              | Bouton A/Sélectionner                       |
-| Entrée                 | Bouton A/Sélectionner                       |
+| Barre d'espace              | Bouton A/Sélectionner                       |
+| Entrer                 | Bouton A/Sélectionner                       |
 | Échappement                | Bouton B/Précédent*                        |
 
-\*Lorsque les événements [KeyDown](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) et [KeyUp](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) pour le bouton B ne sont pas gérés par l’application, l’événement [SystemNavigationManager.BackRequested](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.backrequested) est déclenché, ce qui devrait entraîner la navigation vers l’arrière dans l’application. Cependant, vous devez implémenter cela vous-même, comme dans l’extrait de code suivant :
+\*lorsque les événements [Keyverse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) et [KeyUp](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) pour le bouton B ne sont pas gérés par l’application, l’événement [SystemNavigationManager. rerequested](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.backrequested) est déclenché, ce qui devrait entraîner la navigation vers l’arrière dans l’application. Cependant, vous devez implémenter cela vous-même, comme dans l’extrait de code suivant :
 
 ```csharp
 // This code goes in the MainPage class
@@ -155,14 +155,14 @@ Les boutons accélérateurs permettant d’accélérer la navigation dans une in
 
 Le tableau suivant répertorie la prise en charge intégrée des accélérateurs dans l’UWP, en plus de ce que vous pouvez implémenter vous-même. Intégrez ces comportements à votre interface utilisateur personnalisée afin de proposer une expérience utilisateur cohérente et conviviale.
 
-| Interaction   | Clavier/Souris   | Boîtier de commande      | Intégrée pour :  | Recommandée pour : |
+| interaction   | Clavier/Souris   | Boîtier de commande      | Intégrée pour :  | Recommandée pour : |
 |---------------|------------|--------------|----------------|------------------|
 | Page vers le haut/bas  | Page vers le haut/bas | Gâchette gauche/droite | [CalendarView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarView), [ListBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox), [ListViewBase](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListViewBase), [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), `ScrollViewer`, [Selector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector), [LoopingSelector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector), [ComboBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [FlipView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView) | Affichages qui prennent en charge le défilement vertical
-| Page vers la gauche/droite | Aucun | Gâchettes hautes gauche/droite | [Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot), [ListBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox), [ListViewBase](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListViewBase), [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), `ScrollViewer`, [Selector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector), [LoopingSelector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector), [FlipView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView) | Affichages qui prennent en charge le défilement horizontal
-| Zoom avant/arrière        | Ctrl +/- | Gâchette gauche/droite | Aucun | `ScrollViewer`, les vues qui prennent en charge le zoom avant et arrière |
-| Ouvrir/fermer le volet de navigation | Aucun | Vue | Aucun | Volets de navigation |
-| Rechercher | Aucun | Bouton Y | Aucun | Raccourci pour la fonction de recherche principale dans l’application |
-| [Ouvrir le menu contextuel](#commandbar-and-contextflyout) | Clic droit | Bouton Menu | [ContextFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout) | Menus contextuels |
+| Page vers la gauche/droite | Aucune | Gâchettes hautes gauche/droite | [Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot), [ListBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox), [ListViewBase](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListViewBase), [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), `ScrollViewer`, [Selector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector), [LoopingSelector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector), [FlipView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView) | Affichages qui prennent en charge le défilement horizontal
+| Zoom avant/arrière        | Ctrl +/- | Gâchette gauche/droite | Aucune | `ScrollViewer`, vues qui prennent en charge le zoom avant et arrière |
+| Ouvrir/fermer le volet de navigation | Aucune | Affichage | Aucune | Volets de navigation |
+| Rechercher | Aucune | Bouton Y | Aucune | Raccourci pour la fonction de recherche principale dans l’application |
+| [Ouvrir le menu contextuel](#commandbar-and-contextflyout) | Cliquez avec le bouton droit sur | Bouton Menu | [ContextFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout) | Menus contextuels |
 
 ## <a name="xy-focus-navigation-and-interaction"></a>Interaction et navigation en mode focus XY
 
@@ -284,15 +284,15 @@ Le simple fait de réorganiser l’interface utilisateur afin que les éléments
 
 ### <a name="commandbar-and-contextflyout"></a>CommandBar et ContextFlyout
 
-Lorsque vous utilisez un [CommandBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar), gardez à l’esprit le problème de défilement d’une liste comme indiqué [dans problème: Éléments d’interface utilisateur situés après une longue liste de](#problem-ui-elements-located-after-long-scrolling-list-grid)défilement/grille. L’image suivante illustre une disposition d’interface utilisateur avec la `CommandBar` en bas d’une liste/grille. L’utilisateur devrait faire défiler toute la liste/grille pour atteindre la `CommandBar`.
+Lorsque vous utilisez une [CommandBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar), n’oubliez pas le problème de défilement dans une liste, comme mentionné dans [Problème : Éléments d’interface utilisateur localisés suite à un long défilement dans une liste/grille](#problem-ui-elements-located-after-long-scrolling-list-grid). L’image suivante illustre une disposition d’interface utilisateur avec la `CommandBar` en bas d’une liste/grille. L’utilisateur devrait faire défiler toute la liste/grille pour atteindre la `CommandBar`.
 
 ![CommandBar en bas de la liste/grille](images/designing-for-tv/2d-navigation-best-practices-commandbar-and-contextflyout.png)
 
-Que se passe-t `CommandBar` -il si vous placez le au *-dessus* de la liste/grille? Bien qu’un utilisateur ayant effectué un défilement vers le bas de la liste/grille doive en refaire un vers le haut pour atteindre le contrôle `CommandBar`, cette navigation est un peu plus courte que la configuration précédente. On suppose ici que le focus initial de votre application est placé à côté ou au-dessus de la `CommandBar` ; cette approche ne fonctionne pas aussi bien si le focus initial se trouve sous la liste/grille. Si ces éléments `CommandBar` sont des éléments d’action globale auxquels l’utilisateur n’accède que rarement (tels qu’un bouton **Synchronisation**), le fait de les disposer au-dessus de la liste/grille reste acceptable.
+Que se passe-t-il si vous placez le `CommandBar` au *-dessus* de la liste/grille ? Bien qu’un utilisateur ayant effectué un défilement vers le bas de la liste/grille doive en refaire un vers le haut pour atteindre le contrôle `CommandBar`, cette navigation est un peu plus courte que la configuration précédente. On suppose ici que le focus initial de votre application est placé à côté ou au-dessus de la `CommandBar` ; cette approche ne fonctionne pas aussi bien si le focus initial se trouve sous la liste/grille. Si ces éléments `CommandBar` sont des éléments d’action globale auxquels l’utilisateur n’accède que rarement (tels qu’un bouton **Synchronisation**), le fait de les disposer au-dessus de la liste/grille reste acceptable.
 
 Bien qu’il soit impossible d’empiler les éléments d’une `CommandBar` verticalement, le fait de les placer en face du défilement (par exemple, à gauche ou à droite d’une liste avec défilement vertical, ou en haut ou en bas d’une liste avec défilement horizontal) constitue une autre option que vous devrez peut-être prendre en compte si elle fonctionne bien pour la disposition de votre interface utilisateur.
 
-Si votre application dispose d’une `CommandBar` dont les éléments doivent être facilement accessibles aux utilisateurs, vous devrez peut-être les placer à l’intérieur d’un [ContextFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout) et les supprimer de la `CommandBar`. `ContextFlyout`est une propriété d' [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) et est le [menu contextuel](../controls-and-patterns/dialogs-and-flyouts/index.md) associé à cet élément. Sur PC, lorsque cliquez à l’aide du bouton droit sur un élément avec un `ContextFlyout`, ce menu contextuel apparaît. Sur Xbox One, cela se produit lorsque vous appuyez sur le bouton **Menu** tandis que le focus se trouve sur un tel élément.
+Si votre application dispose d’une `CommandBar` dont les éléments doivent être facilement accessibles aux utilisateurs, vous devrez peut-être les placer à l’intérieur d’un [ContextFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout) et les supprimer de la `CommandBar`. `ContextFlyout` est une propriété d' [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) et est le [menu contextuel](../controls-and-patterns/dialogs-and-flyouts/index.md) associé à cet élément. Sur PC, lorsque cliquez à l’aide du bouton droit sur un élément avec un `ContextFlyout`, ce menu contextuel apparaît. Sur Xbox One, cela se produit lorsque vous appuyez sur le bouton **Menu** tandis que le focus se trouve sur un tel élément.
 
 ### <a name="ui-layout-challenges"></a>Défis en matière de disposition de l’interface utilisateur
 
@@ -311,7 +311,7 @@ Ce qui suit est un exemple d’application pour le secteur immobilier qui affich
 
 ![Exemple d’application pour le secteur immobilier](images/designing-for-tv/2d-focus-navigation-and-interaction-real-estate-app.png)
 
-#### Problème : Éléments d’interface utilisateur situés après une longue liste de défilement/grille<a name="problem-ui-elements-located-after-long-scrolling-list-grid"></a>
+#### Problème : Éléments d’interface utilisateur situés après une liste/grille à long défilement <a name="problem-ui-elements-located-after-long-scrolling-list-grid"></a>
 
 La [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) des propriétés visibles dans l’image suivante est une très longue liste à faire défiler. Si l’[activation](#focus-engagement) n’est *pas* requise pour la `ListView`, le focus se place sur le premier élément de la liste lorsque l’utilisateur navigue vers cette dernière. L’utilisateur doit parcourir tous les éléments de la liste pour atteindre le bouton **Précédent** ou **Suivant**. Dans ces cas peu pratiques où l’utilisateur doit parcourir toute la liste &mdash;c’est-à-dire, lorsque la liste est trop longue pour que cette expérience soit acceptable&mdash;, vous devez envisager d’autres options.
 
@@ -338,16 +338,16 @@ Lorsqu’une activation est *requise*, la totalité de la `ListView` devient une
 Étant donné que la navigation en mode focus XY dépend de la navigation vers un seul élément d’interface utilisateur pouvant être actif à la fois, un [ScrollViewer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) ne contenant aucun élément pouvant être actif (par exemple, contenant seulement du texte), peut provoquer un scénario dans lequel l’utilisateur n’est pas en mesure d’afficher l’ensemble du contenu dans le `ScrollViewer`.
 Pour connaître les solutions de ce scénario et des scénarios connexes, voir [Activation du focus](#focus-engagement).
 
-![Application immobilière: ScrollViewer avec texte uniquement](images/designing-for-tv/2d-focus-navigation-and-interaction-scrollviewer.png)
+![Application pour le secteur immobilier : ScrollViewer contenant uniquement du texte](images/designing-for-tv/2d-focus-navigation-and-interaction-scrollviewer.png)
 
-#### <a name="problem-free-scrolling-ui"></a>Problème : Interface utilisateur de défilement libre
+#### <a name="problem-free-scrolling-ui"></a>Problème : interface utilisateur à défilement libre
 
 Si votre application nécessite une interface utilisateur à défilement libre, telle qu’une surface de dessin ou, dans l’exemple présent, une carte, la navigation en mode focus XY ne fonctionne simplement pas.
 Dans ce cas, vous pouvez activer le [mode souris](#mouse-mode) pour permettre à l’utilisateur de naviguer librement à l’intérieur d’un élément d’interface utilisateur.
 
 ![Mapper un élément d’interface utilisateur à l’aide du mode souris](images/designing-for-tv/map-mouse-mode.png)
 
-## <a name="mouse-mode"></a>Mode souris
+## <a name="mouse-mode"></a>Mode de la souris
 
 Comme décrit dans [Interaction et navigation en mode focus XY](#xy-focus-navigation-and-interaction), le focus est déplacé à l’aide du système de navigation XY sur Xbox One, ce qui permet à l’utilisateur de déplacer le focus entre les contrôles en effectuant des déplacements vers le haut, le bas, la gauche et la droite.
 Toutefois, certains contrôles comme [WebView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView) et [MapControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) nécessitent une interaction semblable à celle faite avec la souris, avec laquelle les utilisateurs peuvent déplacer le pointeur librement à l’intérieur des limites du contrôle.
@@ -485,7 +485,7 @@ L’activation du focus est conçue pour faciliter l’utilisation d’une manet
 Lorsque la propriété `IsFocusEngagementEnabled` d’un objet [FrameworkElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) est définie sur `True`, elle signale le contrôle comme nécessitant l’activation du focus. Cela signifie que l’utilisateur doit appuyer sur le bouton **A/Sélectionner** pour activer le contrôle et interagir avec ce dernier. Lorsqu’il a terminé, l’utilisateur peut appuyer sur le bouton **B/Précédent** pour désactiver le contrôle et naviguer hors de ce dernier.
 
 > [!NOTE]
-> `IsFocusEngagementEnabled`est une nouvelle API qui n’est pas encore documentée.
+> `IsFocusEngagementEnabled` est une nouvelle API qui n’est pas encore documentée.
 
 ### <a name="focus-trapping"></a>Interruption du focus
 
@@ -540,7 +540,7 @@ Le contrôle [ScrollViewer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.C
 
 Si le contrôle `ScrollViewer` n’a *pas* de contenu pouvant être actif &mdash; par exemple, s’il contient uniquement du texte&mdash;, vous pouvez définir `IsFocusEngagementEnabled="True"` afin que l’utilisateur puisse activer `ScrollViewer` à l’aide du bouton **A/Sélectionner**. Une fois activé, l’utilisateur peut faire défiler le texte à l’aide du **bouton multidirectionnel/stick analogique gauche**, puis appuyer sur le bouton **B/Précédent** pour le désactiver.
 
-Une autre approche consiste à définir `IsTabStop="True"` sur le contrôle `ScrollViewer` afin que l’utilisateur n’ait pas à activer le contrôle. Il peut simplement y placer le focus, puis le faire défiler à l’aide du **bouton multidirectionnel/stick analogique gauche** lorsqu’il n’existe pas d’éléments pouvant être actifs au sein du contrôle `ScrollViewer`.&mdash;
+Une autre approche consiste à définir `IsTabStop="True"` sur le contrôle `ScrollViewer` afin que l’utilisateur n’ait pas à activer le contrôle. Il peut simplement y placer le focus, puis le faire défiler à l’aide du &mdash;bouton multidirectionnel/stick analogique gauche**lorsqu’il n’existe pas d’éléments pouvant être actifs au sein du contrôle**.`ScrollViewer`
 
 ### <a name="focus-engagement-defaults"></a>Paramètres par défaut de l’activation du focus
 
@@ -559,7 +559,7 @@ Certains contrôles provoquent une interruption du focus assez fréquente pour j
 
 Aucun autre contrôle UWP n’a de modification comportementale ou visuelle lorsque `IsFocusEngagementEnabled="True"`.
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Vous pouvez créer des applications UWP optimisées pour un appareil ou une expérience spécifique, mais le plateforme Windows universelle vous permet également de créer des applications qui peuvent être utilisées avec succès sur plusieurs appareils, à la fois dans des expériences en 2 et 10 pieds, et indépendamment des entrées capacité de l’appareil ou de l’utilisateur. À l’aide des recommandations de cet article, vous pouvez vous assurer que votre application est aussi efficace que possible à la fois sur la télévision et sur un PC.
 

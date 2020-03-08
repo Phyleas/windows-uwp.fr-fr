@@ -9,11 +9,11 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.openlocfilehash: d1f01774d5950dbb73cff2e5c38f16167b4b812b
-ms.sourcegitcommit: cc108c791842789464c38a10e5d596c9bd878871
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75302593"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78852446"
 ---
 # <a name="integrate-your-desktop-app-with-windows-10-and-uwp"></a>Intégrer votre application de bureau avec Windows 10 et UWP
 
@@ -101,7 +101,7 @@ Vous pouvez vous assurer que les utilisateurs ouvrent par défaut votre nouvelle
 
 Pour ce faire, vous devez spécifier l’[identificateur programmatique (ProgID)](https://docs.microsoft.com/windows/desktop/shell/fa-progids) de chaque application à partir de laquelle vous souhaitez hériter des associations de fichiers.
 
-#### <a name="xml-namespaces"></a>Espaces de noms XML
+#### <a name="xml-namespaces"></a>espaces de noms XML
 
 * `http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
 * `http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities/3`
@@ -160,7 +160,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 
 Vous pouvez associer votre application empaquetée à des extensions de type de fichier. Si un utilisateur clique avec le bouton droit sur un fichier, puis sélectionne l’option **Ouvrir avec** , votre application s’affiche dans la liste des suggestions.
 
-#### <a name="xml-namespaces"></a>Espaces de noms XML
+#### <a name="xml-namespaces"></a>espaces de noms XML
 
 * `http://schemas.microsoft.com/appx/manifest/uap/windows10`
 * `http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
@@ -220,7 +220,7 @@ Dans la plupart des cas, les utilisateurs double-cliquent sur les fichiers pour 
 
 Vous pouvez ajouter des options à ce menu. Ces options donnent aux utilisateurs d’autres moyens d’interagir avec votre fichier, par exemple l’impression, la modification ou l’aperçu du fichier.
 
-#### <a name="xml-namespaces"></a>Espaces de noms XML
+#### <a name="xml-namespaces"></a>espaces de noms XML
 
 * `http://schemas.microsoft.com/appx/manifest/uap/windows10`
 * `http://schemas.microsoft.com/appx/manifest/uap/windows10/2`
@@ -244,10 +244,10 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 |-------|-------------|
 |Catégorie | Toujours ``windows.fileTypeAssociation``.
 |Nom |Nom de l’Association de types de fichiers. Vous pouvez utiliser ce nom pour organiser et regrouper des types de fichiers. Le nom doit contenir tous les caractères minuscules, sans espace. |
-|Verb |Le nom qui apparaît dans le menu contextuel Explorateur de fichiers. Cette chaîne est localisable en utilisant ```ms-resource```.|
-|Id |L’ID unique du verbe. Si votre application est une application UWP, elle est transmise à votre application dans le cadre de ses arguments d’événement d’activation afin de pouvoir gérer la sélection de l’utilisateur de manière appropriée. Si votre application est une application empaquetée de confiance totale, elle reçoit des paramètres à la place (voir la puce suivante). |
+|Verbe |Le nom qui apparaît dans le menu contextuel Explorateur de fichiers. Cette chaîne est localisable en utilisant ```ms-resource```.|
+|ID |L’ID unique du verbe. Si votre application est une application UWP, elle est transmise à votre application dans le cadre de ses arguments d’événement d’activation afin de pouvoir gérer la sélection de l’utilisateur de manière appropriée. Si votre application est une application empaquetée de confiance totale, elle reçoit des paramètres à la place (voir la puce suivante). |
 |Paramètres |La liste des paramètres et des valeurs d’arguments associés au verbe. Si votre application est une application empaquetée avec un niveau de confiance totale, ces paramètres sont passés à l’application en tant qu’arguments d’événement lorsque l’application est activée. Vous pouvez personnaliser le comportement de votre application en fonction de différents verbes d’activation. Si une variable peut contenir un chemin d’accès de fichier, placez la valeur du paramètre entre guillemets. Vous éviterez les problèmes qui se produisent dans les cas où le chemin d’accès contient des espaces. Si votre application est une application UWP, vous ne pouvez pas passer de paramètres. L’application reçoit l’ID à la place (voir la puce précédente).|
-|Extended |Indique que le verbe doit seulement apparaître, si l’utilisateur maintient enfoncée la touche **Maj** avant de cliquer avec le bouton droit sur le fichier pour afficher le menu contextuel. Cet attribut est facultatif et sa valeur par défaut est **false** (par exemple, toujours afficher le verbe) s’il n’est pas listé. Vous devez spécifier ce comportement individuellement pour chaque verbe (à l’exception de « Ouvrir », qui est toujours défini sur **False**).|
+|Étendu |Indique que le verbe doit seulement apparaître, si l’utilisateur maintient enfoncée la touche **Maj** avant de cliquer avec le bouton droit sur le fichier pour afficher le menu contextuel. Cet attribut est facultatif et sa valeur par défaut est **false** (par exemple, toujours afficher le verbe) s’il n’est pas listé. Vous devez spécifier ce comportement individuellement pour chaque verbe (à l’exception de « Ouvrir », qui est toujours défini sur **False**).|
 
 #### <a name="example"></a>Exemple
 
@@ -285,7 +285,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 
 Vous pouvez vous assurer que les utilisateurs ouvrent par défaut votre nouvelle application empaquetée pour des types de fichiers spécifiques au lieu d’ouvrir la version de bureau de votre application.
 
-#### <a name="xml-namespaces"></a>Espaces de noms XML
+#### <a name="xml-namespaces"></a>espaces de noms XML
 
 * `http://schemas.microsoft.com/appx/manifest/uap/windows10`
 * `http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
@@ -473,7 +473,7 @@ Aidez les utilisateurs à organiser vos fichiers et à interagir avec eux nature
 
 Spécifiez le comportement de votre application lorsqu’un utilisateur ouvre plusieurs fichiers simultanément.
 
-#### <a name="xml-namespaces"></a>Espaces de noms XML
+#### <a name="xml-namespaces"></a>espaces de noms XML
 
 * `http://schemas.microsoft.com/appx/manifest/uap/windows10`
 * `http://schemas.microsoft.com/appx/manifest/uap/windows10/2`
@@ -675,7 +675,7 @@ Dans l’Explorateur de fichiers, les utilisateurs peuvent regrouper ces fichier
 
 Pour plus d’informations sur le champ **Type** et les valeurs que vous pouvez utiliser pour ce champ, consultez [Utilisation des noms de type](https://docs.microsoft.com/windows/desktop/properties/building-property-handlers-user-friendly-kind-names).
 
-#### <a name="xml-namespaces"></a>Espaces de noms XML
+#### <a name="xml-namespaces"></a>espaces de noms XML
 
 * `http://schemas.microsoft.com/appx/manifest/uap/windows10`
 * `http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities/3`
@@ -702,7 +702,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 |Catégorie |Toujours ``windows.fileTypeAssociation``.
 |Nom |Nom de l’Association de types de fichiers. Vous pouvez utiliser ce nom pour organiser et regrouper des types de fichiers. Le nom doit contenir tous les caractères minuscules, sans espace. |
 |FileType |Les extensions de fichier appropriées. |
-|value |Une [Valeur de type](https://docs.microsoft.com/windows/desktop/properties/building-property-handlers-user-friendly-kind-names) valide. |
+|valeur |Une [Valeur de type](https://docs.microsoft.com/windows/desktop/properties/building-property-handlers-user-friendly-kind-names) valide. |
 
 #### <a name="example"></a>Exemple
 
@@ -796,7 +796,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 
 Si votre application de bureau définit un [Gestionnaire de menu contextuel](https://docs.microsoft.com/windows/desktop/shell/context-menu-handlers), utilisez cette extension pour inscrire le gestionnaire de menu.
 
-#### <a name="xml-namespaces"></a>Espaces de noms XML
+#### <a name="xml-namespaces"></a>espaces de noms XML
 
 * `http://schemas.microsoft.com/appx/manifest/foundation/windows10`
 * `http://schemas.microsoft.com/appx/manifest/desktop/windows10/4`
@@ -921,8 +921,8 @@ Inscrivez les gestionnaires que vous souhaitez implémenter dans votre applicati
 |CustomStateHandler Clsid |ID de classe de l’application qui implémente CustomStateHandler. Le système utilise cet ID de classe pour demander les états et colonnes personnalisés des fichiers cloud. |
 |ThumbnailProviderHandler Clsid |ID de classe de l’application qui implémente ThumbnailProviderHandler. Le système utilise cet ID de classe pour demander les images miniatures des fichiers cloud. |
 |ExtendedPropertyHandler Clsid |ID de classe de l’application qui implémente ExtendedPropertyHandler.  Le système utilise cet ID de classe pour demander les propriétés étendues d'un fichier cloud. |
-|Verb |Le nom qui apparaît dans le menu local de l'explorateur de fichier pour les fichiers fournis par votre service cloud. |
-|Id |L’ID unique du verbe. |
+|Verbe |Le nom qui apparaît dans le menu local de l'explorateur de fichier pour les fichiers fournis par votre service cloud. |
+|ID |L’ID unique du verbe. |
 
 #### <a name="example"></a>Exemple
 
@@ -987,7 +987,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 |Nom |Description |
 |-------|-------------|
 |Catégorie |Toujours ``windows.protocol``.
-|Nom |Le nom du protocole. |
+|Nom |Nom du protocole. |
 |Paramètres |Liste de paramètres et de valeurs à passer à votre application en tant qu’arguments d’événement lorsque l’application est activée. Si une variable peut contenir un chemin d’accès de fichier, placez la valeur du paramètre entre guillemets. Vous éviterez les problèmes qui se produisent dans les cas où le chemin d’accès contient des espaces. |
 
 ### <a name="example"></a>Exemple
@@ -1018,7 +1018,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 
 Les utilisateurs et autres processus peuvent utiliser un alias pour démarrer votre application sans avoir à spécifier le chemin d’accès complet à votre application. Vous pouvez spécifier ce nom d’alias.
 
-#### <a name="xml-namespaces"></a>Espaces de noms XML
+#### <a name="xml-namespaces"></a>espaces de noms XML
 
 * `http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
 * `http://schemas.microsoft.com/appx/manifest/desktop/windows10`
@@ -1160,7 +1160,7 @@ La lecture automatique peut présenter votre application en tant qu’option lor
 |ActionDisplayName |Une chaîne représentant l'action que les utilisateurs peuvent choisir avec un appareil qu'ils connectent à un PC (par exemple : « Importer les fichiers » ou « Lire la vidéo »). |
 |ProviderDisplayName | Chaîne qui représente votre application ou service (par exemple : « lecteur vidéo contoso »). |
 |ContentEvent |Le nom d’un événement de contenu qui envoie une invite aux utilisateurs avec vos éléments ``ActionDisplayName`` et ``ProviderDisplayName``. Les événements de contenu se déclenchent lorsqu’un périphérique de volume, tel que la carte mémoire d’un appareil photo, une clé USB ou un DVD, est inséré dans le PC. Vous trouverez la liste complète de ces événements [ici](https://docs.microsoft.com/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference).  |
-|Verb |Le paramètre Verb identifie une valeur qui est transmise à votre application pour l’option sélectionnée. Vous pouvez spécifier plusieurs options de lancement pour un événement de lecture automatique et utiliser le paramètre Verbe pour déterminer l’option sélectionnée par l’utilisateur pour votre application. Vous pouvez vérifier quelle option a été sélectionnée par l’utilisateur par le biais de la propriété verb des arguments d’événement de démarrage transmis à votre application. Vous pouvez attribuer n’importe quelle valeur au paramètre Verbe, sauf la valeur Open qui est réservée. |
+|Verbe |Le paramètre Verb identifie une valeur qui est transmise à votre application pour l’option sélectionnée. Vous pouvez spécifier plusieurs options de lancement pour un événement de lecture automatique et utiliser le paramètre Verbe pour déterminer l’option sélectionnée par l’utilisateur pour votre application. Vous pouvez vérifier quelle option a été sélectionnée par l’utilisateur par le biais de la propriété verb des arguments d’événement de démarrage transmis à votre application. Vous pouvez attribuer n’importe quelle valeur au paramètre Verbe, sauf la valeur Open qui est réservée. |
 |DropTargetHandler |ID de classe de l’application qui implémente l’interface [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) . Les fichiers du média amovibles sont transmis à la méthode [Drop](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget.drop?view=visualstudiosdk-2017#Microsoft_VisualStudio_OLE_Interop_IDropTarget_Drop_Microsoft_VisualStudio_OLE_Interop_IDataObject_System_UInt32_Microsoft_VisualStudio_OLE_Interop_POINTL_System_UInt32__) de votre implémentation [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017).  |
 |Paramètres |Vous n'êtes pas obligé d'implémenter l'interface [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) pour tous les événements de contenu. Pour tous les événements de contenu, vous avez la possibilité de fournir des paramètres de ligne de commande au lieu d'implémenter l'interface [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017). Pour ces événements, l’exécution automatique démarre votre application à l’aide de ces paramètres de ligne de commande. Vous pouvez analyser ces paramètres dans le code d'initialisation de votre application afin de déterminer s'il a été démarré par la lecture automatique, puis fournir votre implémentation par défaut. |
 |DeviceEvent |Le nom d’un événement d'appareil qui envoie une invite aux utilisateurs avec vos éléments ``ActionDisplayName`` et ``ProviderDisplayName``. Un événement d'appareil est déclenché lorsqu’un appareil est connecté au PC. Les événements d'appareil commencent par la chaîne ``WPD``. Ils sont répertoriés [ici](https://docs.microsoft.com/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference). |
@@ -1225,7 +1225,7 @@ Quand les utilisateurs souhaitent imprimer des données à partir d’une autre 
 
 Vous devrez modifier votre application pour qu’elle reçoive des données d’impression au format XPS (XML Paper Specification).
 
-#### <a name="xml-namespaces"></a>Espaces de noms XML
+#### <a name="xml-namespaces"></a>espaces de noms XML
 
 `http://schemas.microsoft.com/appx/manifest/desktop/windows10/2`
 
@@ -1275,7 +1275,7 @@ Trouver un exemple qui utilise cette extension [ici](https://github.com/Microsof
 
 Partagez vos polices personnalisées avec d’autres applications Windows.
 
-#### <a name="xml-namespaces"></a>Espaces de noms XML
+#### <a name="xml-namespaces"></a>espaces de noms XML
 
 `http://schemas.microsoft.com/appx/manifest/desktop/windows10/2`
 
@@ -1323,7 +1323,7 @@ Vous trouverez la référence de schéma complète [ici](/uwp/schemas/appxpackag
 
 Démarrer un processus Win32 qui s’exécute en mode de confiance totale.
 
-#### <a name="xml-namespaces"></a>Espaces de noms XML
+#### <a name="xml-namespaces"></a>espaces de noms XML
 
 `http://schemas.microsoft.com/appx/manifest/desktop/windows10`
 
@@ -1374,6 +1374,6 @@ Cette extension peut être utile si vous souhaitez créer une interface utilisat
 
 Il vous suffit de créer un package d’application Windows pour votre application Win32. Ensuite, ajoutez cette extension au fichier de package de votre application UWP. Cette extension indique que vous souhaitez démarrer un fichier exécutable dans le package d’application Windows.  Si vous souhaitez communiquer entre votre application UWP et votre application Win32, vous pouvez configurer un ou plusieurs [services d’application](/windows/uwp/launch-resume/app-services.md) pour ce faire. Pour en savoir plus sur ce scénario, reportez-vous [ici](https://blogs.msdn.microsoft.com/appconsult/2016/12/19/desktop-bridge-the-migrate-phase-invoking-a-win32-process-from-a-uwp-app/).
 
-## <a name="next-steps"></a>Étapes suivantes
+## <a name="next-steps"></a>Étapes suivantes :
 
-Des questions ? Contactez-nous sur Stack Overflow. Notre équipe contrôle ces [balises](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Vous pouvez également nous poser vos questions [ici](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
+Des questions ? Contactez-nous sur Stack Overflow. Notre équipe supervise ces [étiquettes](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Vous pouvez également nous poser vos questions [ici](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).

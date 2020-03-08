@@ -1,7 +1,7 @@
 ---
 ms.assetid: 41E1B4F1-6CAF-4128-A61A-4E400B149011
 title: Présentation détaillée de la liaison de données
-description: La liaison de données est un moyen dont dispose l’interface utilisateur de votre application pour afficher des données et éventuellement rester synchronisée avec ces données.
+description: La liaison est un moyen dont dispose l’interface de votre application pour afficher des données et éventuellement rester synchronisée avec ces données.
 ms.date: 10/05/2018
 ms.topic: article
 keywords: windows 10, uwp
@@ -10,11 +10,11 @@ dev_langs:
 - csharp
 - cppwinrt
 ms.openlocfilehash: 0b54b04f2f36c2661de8baf58d0da1aec75ae590
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75683467"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853226"
 ---
 # <a name="data-binding-in-depth"></a>Présentation détaillée de la liaison de données
 
@@ -30,7 +30,7 @@ ms.locfileid: "75683467"
 
 Cette rubrique concerne la liaison de données dans les applications de plateforme Windows universelle (UWP). Les API présentées ici résident dans l' [espace de noms **Windows. UI. Xaml. Data** ](/uwp/api/windows.ui.xaml.data).
 
-La liaison de données est un moyen dont dispose l’interface utilisateur de votre application pour afficher des données et éventuellement rester synchronisée avec ces données. La liaison de données vous permet de séparer les problématiques liées aux données de celles liées à l’interface utilisateur, ce qui se traduit par un modèle conceptuel plus simple et l’amélioration de la lisibilité, de la testabilité et de la gestion de la maintenance de votre application.
+La liaison est un moyen dont dispose l’interface de votre application pour afficher des données et éventuellement rester synchronisée avec ces données. La liaison de données vous permet de séparer les problématiques liées aux données de celles liées à l’interface utilisateur, ce qui se traduit par un modèle conceptuel plus simple et l’amélioration de la lisibilité, de la testabilité et de la gestion de la maintenance de votre application.
 
 Vous pouvez utiliser la liaison de données pour simplement afficher des valeurs à partir d’une source de données lorsque l’interface utilisateur est affichée pour la première fois, et non pas pour répondre aux modifications apportées à ces valeurs. Il s’agit d’un mode de liaison appelé *une seule fois*, et il fonctionne bien pour une valeur qui ne change pas pendant l’exécution. Vous pouvez également choisir d’observer les valeurs et de mettre à jour l’interface utilisateur quand elles changent. Ce mode est appelé *unidirectionnel*et fonctionne bien pour les données en lecture seule. Enfin, vous pouvez choisir d’observer les valeurs et de mettre à jour l’interface utilisateur de telle sorte que les modifications apportées par l’utilisateur aux valeurs de l’interface utilisateur soient transmises automatiquement à la source de données. Ce mode est appelé *bidirectionnel*et fonctionne bien pour les données en lecture-écriture. Voici quelques exemples.
 
@@ -519,7 +519,7 @@ Pour afficher une valeur par défaut à utiliser chaque fois que la source de li
 Si vous liez un contrôle de texte à une valeur autre qu’une chaîne, le moteur de liaison de données convertit la valeur en chaîne. Si la valeur est un type de référence, le moteur de liaison de données récupère la valeur de chaîne en appelant [**ICustomPropertyProvider.GetStringRepresentation**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.icustompropertyprovider.getstringrepresentation) ou [**IStringable.ToString**](https://docs.microsoft.com/windows/desktop/api/windows.foundation/nf-windows-foundation-istringable-tostring) s’ils sont disponibles, et sinon appelle [**Object.ToString**](https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString). Notez, toutefois, que le moteur de liaison ignore toute implémentation de **ToString** qui masque l’implémentation de la classe de base. Les implémentations de sous-classe doivent plutôt remplacer la méthode **ToString** de la classe de base. De même, dans les langages natifs, tous les objets managés semblent implémenter [**ICustomPropertyProvider**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.ICustomPropertyProvider) et [**IStringable**](https://docs.microsoft.com/windows/desktop/api/windows.foundation/nn-windows-foundation-istringable). Toutefois, tous les appels à **GetStringRepresentation** et **IStringable.ToString** sont routés vers **Object.ToString** ou une substitution de cette méthode, et jamais vers une nouvelle implémentation de **ToString** qui masque l’implémentation de la classe de base.
 
 > [!NOTE]
-> Depuis Windows 10, version 1607, l’infrastructure XAML fournit un convertisseur intégré permettant de convertir une valeur booléenne en valeur Visibility. Le convertisseur mappe **true** à la valeur d’énumération **Visible**et **false** à la valeur d’énumération **Collapsed**. Vous pouvez ainsi lier une propriété Visibility à une valeur booléenne sans avoir à créer de convertisseur. Pour utiliser le convertisseur intégré, la version du SDK cible de votre application doit être 14393 ou une version ultérieure. Vous ne pouvez pas l’utiliser si votre application cible des versions antérieures de Windows 10. Pour plus d’informations sur les versions cibles, voir [Code adaptatif de version](https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
+> Depuis Windows 10, version 1607, l’infrastructure XAML fournit un convertisseur intégré permettant de convertir une valeur booléenne en valeur Visibility. Le convertisseur mappe **true** à la valeur d’énumération **Visible**et **false** à la valeur d’énumération **Collapsed**. Vous pouvez ainsi lier une propriété Visibility à une valeur booléenne sans avoir à créer de convertisseur. Pour utiliser le convertisseur intégré, la version du SDK cible de votre application doit être 14393 ou une version ultérieure. Vous ne pouvez pas l’utiliser si votre application cible des versions antérieures de Windows 10. Pour plus d’informations sur les versions cibles, voir [Code adaptatif de version](https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
 
 ## <a name="function-binding-in-xbind"></a>Liaison de fonction dans {x:Bind}
 
@@ -687,7 +687,7 @@ ItemsSource="{x:Bind AuthorHasACollectionOfBookSku}" ...>
 </GridView>
 ```
 
-Vous pouvez implémenter le modèle « is-a-group » de deux manières. La première consiste à créer votre propre classe de groupe. Dérivez la classe de **List&lt;T&gt;** (où *T* est le type des éléments). Exemple : `public class Author : List<BookSku>`. La deuxième consiste à utiliser une expression [LINQ](https://docs.microsoft.com/previous-versions/bb397926(v=vs.140)) afin de créer dynamiquement des objets de groupe (et une classe de groupe) à partir des valeurs de propriétés similaires des éléments **BookSku**. Cette approche, consistant à conserver simplement une liste plate d’éléments et à les regrouper à la volée, est courante pour les applications qui accèdent aux données à partir d’un service cloud. Elle vous offre la possibilité de regrouper les ouvrages par auteur et par genre (par exemple) sans avoir à recourir à des classes de groupes spécifiques, comme **Author** et **Genre**.
+Vous pouvez implémenter le modèle « is-a-group » de deux manières. La première consiste à créer votre propre classe de groupe. Dérivez la classe de **List&lt;T&gt;** (où *T* est le type des éléments). Par exemple, `public class Author : List<BookSku>`. La deuxième consiste à utiliser une expression [LINQ](https://docs.microsoft.com/previous-versions/bb397926(v=vs.140)) afin de créer dynamiquement des objets de groupe (et une classe de groupe) à partir des valeurs de propriétés similaires des éléments **BookSku**. Cette approche, consistant à conserver simplement une liste plate d’éléments et à les regrouper à la volée, est courante pour les applications qui accèdent aux données à partir d’un service cloud. Elle vous offre la possibilité de regrouper les ouvrages par auteur et par genre (par exemple) sans avoir à recourir à des classes de groupes spécifiques, comme **Author** et **Genre**.
 
 L’exemple suivant illustre le modèle « is-a-group » avec [LINQ](https://docs.microsoft.com/previous-versions/bb397926(v=vs.140)). Cette fois-ci, nous regroupons les ouvrages par genre, avec le nom du genre affiché dans les en-têtes des groupes. Cela est indiqué par le chemin de la propriété « Key » en référence à la valeur du groupe [**Key**](https://docs.microsoft.com/dotnet/api/system.linq.igrouping-2.key#System_Linq_IGrouping_2_Key).
 
@@ -800,13 +800,13 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 
 ## <a name="xbind-and-binding-feature-comparison"></a>Comparaison des fonctionnalités de {x:Bind} et {Binding}
 
-| Fonctionnalité | {x:Bind} | {Binding} | Remarques |
+| Composant | {x:Bind} | {Binding} | Remarques |
 |---------|----------|-----------|-------|
 | Path est la propriété par défaut. | `{x:Bind a.b.c}` | `{Binding a.b.c}` | | 
 | Propriété Path | `{x:Bind Path=a.b.c}` | `{Binding Path=a.b.c}` | Dans x:Bind, Path a pour racine Page par défaut et non DataContext. | 
 | Indexation | `{x:Bind Groups[2].Title}` | `{Binding Groups[2].Title}` | Se lie à l’élément spécifié dans la collection. Seuls les index basés sur des entiers sont pris en charge. | 
 | Propriétés jointes | `{x:Bind Button22.(Grid.Row)}` | `{Binding Button22.(Grid.Row)}` | Les propriétés jointes sont spécifiées à l’aide de parenthèses. Si la propriété n’est pas déclarée dans un espace de noms XAML, vous devez la faire précéder d’un espace de noms xml mappé sur un espace de noms de code au début du document. | 
-| Transtypage | `{x:Bind groups[0].(data:SampleDataGroup.Title)}` | Inutile. | Les conversions de type (transtypage) sont spécifiées à l’aide de parenthèses. Si la propriété n’est pas déclarée dans un espace de noms XAML, vous devez la faire précéder d’un espace de noms xml mappé sur un espace de noms de code au début du document. | 
+| Cast | `{x:Bind groups[0].(data:SampleDataGroup.Title)}` | Inutile. | Les conversions de type (transtypage) sont spécifiées à l’aide de parenthèses. Si la propriété n’est pas déclarée dans un espace de noms XAML, vous devez la faire précéder d’un espace de noms xml mappé sur un espace de noms de code au début du document. | 
 | Converter | `{x:Bind IsShown, Converter={StaticResource BoolToVisibility}}` | `{Binding IsShown, Converter={StaticResource BoolToVisibility}}` | Les convertisseurs doivent être déclarés à la racine de Page/ResourceDictionary ou dans le fichier App.xaml. | 
 | ConverterParameter, ConverterLanguage | `{x:Bind IsShown, Converter={StaticResource BoolToVisibility}, ConverterParameter=One, ConverterLanguage=fr-fr}` | `{Binding IsShown, Converter={StaticResource BoolToVisibility}, ConverterParameter=One, ConverterLanguage=fr-fr}` | Les convertisseurs doivent être déclarés à la racine de Page/ResourceDictionary ou dans le fichier App.xaml. | 
 | TargetNullValue | `{x:Bind Name, TargetNullValue=0}` | `{Binding Name, TargetNullValue=0}` | Utilisée lorsque le nœud terminal de l’expression de liaison présente la valeur null. Utilisez des guillemets simples pour une valeur de chaîne. | 
