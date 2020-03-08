@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, XAML, contrôle, liaison, propriété
 ms.localizationpriority: medium
 ms.openlocfilehash: 06934c1c3b23c244fb32ffa957cffb926ffd1bb0
-ms.sourcegitcommit: eb683734801c1de5977db70e626609cf7e5b7654
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70304519"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853279"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrt-property"></a>Contrôles XAML ; liaison à une propriété C++/WinRT
 Une propriété qui peut être efficacement liée à un contrôle XAML est appelée propriété *observable*. Ce concept est basé sur le modèle de conception logicielle appelé *modèle observateur*. Cette rubrique montre comment implémenter des propriétés observables en [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) et y lier des contrôles XAML (pour des informations de référence, consultez [Liaison de données](/windows/uwp/data-binding).

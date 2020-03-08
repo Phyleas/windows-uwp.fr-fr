@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, concurrence, asynchrone, async
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a671a319be49e07d3a8fcdacb569c4ae76e299b
-ms.sourcegitcommit: 6fbf645466278c1f014c71f476408fd26c620e01
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72816671"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853381"
 ---
 # <a name="more-advanced-concurrency-and-asynchrony-with-cwinrt"></a>Concurrence et opérations asynchrones plus avancées avec C++/WinRT
 
