@@ -12,11 +12,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9544988837d44f42d963b268a2ce3d37cce83952
-ms.sourcegitcommit: a28a32fff9d15ecf4a9d172cd0a04f4d993f9d76
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "66364109"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853515"
 ---
 # <a name="xaml-theme-resources"></a>Ressources de thème XAML
 
@@ -65,7 +65,7 @@ L’infrastructure XAML fournit un ensemble de ressources [Color](/uwp/api/Windo
 
 Le tableau ci-dessous liste la clé, le nom simple et la représentation sous forme de chaîne de la couleur (au format \#aarrggbb) pour les ressources « Light » et « Dark » fournies par l’infrastructure XAML. La clé sert à référencer la ressource dans une application. Le « nom simple Light/Dark » est utilisé dans le cadre de la convention d’affectation de noms aux pinceaux, que nous expliquons plus tard.
 
-| Clé                             | Nom Simple light/dark | Maigre      | Sombre       |
+| Clé                             | Nom Simple light/dark | Léger      | Foncé       |
 |---------------------------------|------------------------|------------|------------|
 | SystemAltHighColor              | AltHigh                | \#FFFFFFFF | \#FF000000 |
 | SystemAltLowColor               | AltLow                 | \#33FFFFFF | \#33000000 |
@@ -94,10 +94,10 @@ Le tableau ci-dessous liste la clé, le nom simple et la représentation sous fo
 
 :::row:::
     :::column:::
-        #### Light theme
+        #### <a name="light-theme"></a>Thème clair
     :::column-end:::
     :::column:::
-        #### Dark theme
+        #### <a name="dark-theme"></a>Thème foncé
     :::column-end:::
 :::row-end:::
 
@@ -105,10 +105,10 @@ Le tableau ci-dessous liste la clé, le nom simple et la représentation sous fo
 
 :::row:::
     :::column:::
-        ![The base light theme](images/themes/light-base.png)
+        ![Thème clair Base](images/themes/light-base.png)
     :::column-end:::
     :::column:::
-        ![The base dark theme](images/themes/dark-base.png)
+        ![Thème foncé Base](images/themes/dark-base.png)
     :::column-end:::
 :::row-end:::
 
@@ -116,21 +116,21 @@ Le tableau ci-dessous liste la clé, le nom simple et la représentation sous fo
 
 :::row:::
     :::column:::
-        ![The alt light theme](images/themes/light-alt.png)
+        ![Thème clair Alt](images/themes/light-alt.png)
     :::column-end:::
     :::column:::
-        ![The alt dark theme](images/themes/dark-alt.png)
+        ![Thème foncé Alt](images/themes/dark-alt.png)
     :::column-end:::
 :::row-end:::
 
-#### <a name="list"></a>List
+#### <a name="list"></a>Liste
 
 :::row:::
     :::column:::
-        ![The list light theme](images/themes/light-list.png)
+        ![Thème clair List](images/themes/light-list.png)
     :::column-end:::
     :::column:::
-        ![The list dark theme](images/themes/dark-list.png)
+        ![Thème foncé List](images/themes/dark-list.png)
     :::column-end:::
 :::row-end:::
 
@@ -138,10 +138,10 @@ Le tableau ci-dessous liste la clé, le nom simple et la représentation sous fo
 
 :::row:::
     :::column:::
-        ![The chrome light theme](images/themes/light-chrome.png)
+        ![Thème clair Chrome](images/themes/light-chrome.png)
     :::column-end:::
     :::column:::
-        ![The chrome dark theme](images/themes/dark-chrome.png)
+        ![Thème foncé Chrome](images/themes/dark-chrome.png)
     :::column-end:::
 :::row-end:::
 
@@ -153,9 +153,9 @@ Le tableau suivant répertorie les couleurs système fournies par l’infrastruc
 
 | Clé                           | Nom d’options d’ergonomie            | Nom simple ContrasteÉlevé | Valeur initiale par défaut |
 |-------------------------------|--------------------------------|--------------------------|-----------------|
-| SystemColorButtonFaceColor    | **Texte du bouton** (arrière-plan)   | Arrière-plan               | \#FFF0F0F0      |
+| SystemColorButtonFaceColor    | **Texte du bouton** (arrière-plan)   | Contexte               | \#FFF0F0F0      |
 | SystemColorButtonTextColor    | **Texte du bouton** (premier plan)   | Premier plan               | \#FF000000      |
-| SystemColorGrayTextColor      | **Texte désactivé**              | Désactivée                 | \#FF6D6D6D      |
+| SystemColorGrayTextColor      | **Texte désactivé**              | Désactivé                 | \#FF6D6D6D      |
 | SystemColorHighlightColor     | **Texte sélectionné** (arrière-plan) | Surlignage                | \#FF3399FF      |
 | SystemColorHighlightTextColor | **Texte sélectionné** (premier plan) | HighlightAlt             | \#FFFFFFFF      |
 | SystemColorHotlightColor      | **Liens hypertexte**                 | Hyperlink                | \#FF0066CC      |
@@ -177,7 +177,7 @@ En plus des couleurs de thème à contraste élevé du système, la couleur d’
 
 ### <a name="theme-dependent-brushes"></a>Pinceaux dépendants du thème
 
-Les ressources de couleur indiquées dans les sections précédentes sont utilisées pour définir la propriété [Color](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) des ressources [SolidColorBrush](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) dans les dictionnaires de ressources de thème du système. Les ressources de pinceau permettent d’appliquer la couleur à des éléments XAML. Les clés pour les ressources de pinceau respectent le format d’attribution de noms : `SystemControl[Simple HighContrast name][Simple light/dark name]Brush`. Exemple : `SystemControlBackroundAltHighBrush`.
+Les ressources de couleur indiquées dans les sections précédentes sont utilisées pour définir la propriété [Color](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) des ressources [SolidColorBrush](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) dans les dictionnaires de ressources de thème du système. Les ressources de pinceau permettent d’appliquer la couleur à des éléments XAML. Les clés pour les ressources de pinceau respectent le format d’attribution de noms : `SystemControl[Simple HighContrast name][Simple light/dark name]Brush`. Par exemple, `SystemControlBackroundAltHighBrush`.
 
 Examinons à présent comment la valeur de couleur de ce pinceau est déterminée au moment de l’exécution. Dans les dictionnaires de ressources « Light » et « Dark », ce pinceau est défini comme ceci :
 
@@ -191,9 +191,9 @@ Lorsque ce pinceau est appliqué à un élément XAML, sa couleur est détermin�
 
 | Thème        | Nom simple de couleur | Ressource de couleur             | Valeur d’exécution                                              |
 |--------------|-------------------|----------------------------|------------------------------------------------------------|
-| Maigre        | AltHigh           | SystemAltHighColor         | \#FFFFFFFF                                                 |
-| Sombre         | AltHigh           | SystemAltHighColor         | \#FF000000                                                 |
-| HighContrast | Arrière-plan        | SystemColorButtonFaceColor | La couleur spécifiée dans les paramètres pour l’arrière-plan du bouton. |
+| Léger        | AltHigh           | SystemAltHighColor         | \#FFFFFFFF                                                 |
+| Foncé         | AltHigh           | SystemAltHighColor         | \#FF000000                                                 |
+| HighContrast | Contexte        | SystemColorButtonFaceColor | La couleur spécifiée dans les paramètres pour l’arrière-plan du bouton. |
 
 Vous pouvez utiliser le schéma de nommage `SystemControl[Simple HighContrast name][Simple light/dark name]Brush` pour déterminer le pinceau à appliquer à vos propres éléments XAML.
 
@@ -396,7 +396,7 @@ Voici un [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Bu
         Click="Button_Click"/>
 ```
 
-Elle se présente comme suit :
+Il se présente comme suit :
 
 ![Bouton stylisé pour ressembler à du texte](images/styles-textblock-button-style.png)
 
@@ -412,7 +412,7 @@ Voici un [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Bu
 <Button Style="{StaticResource NavigationBackButtonNormalStyle}" />
 ```
 
-Elle se présente comme suit :
+Il se présente comme suit :
 
 ![Bouton stylisé comme bouton Précédent](images/styles-back-button-normal.png)
 
