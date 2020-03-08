@@ -8,11 +8,11 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 8568a4613b5bb62b98edc7edd302a42153e5e33b
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72281794"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853204"
 ---
 # <a name="introduction-to-uwp-app-design"></a>Présentation de la conception des applications UWP
 
@@ -138,9 +138,9 @@ Les applications UWP s’appuient sur des interactions intelligentes. Vous pouv
     :::column-end:::
 :::row-end:::
 
-## <a name="devices"></a>Appareils
+## <a name="devices"></a>Périphériques
 
-![appareils](../layout/images/size-classes.svg)
+![périphériques](../layout/images/size-classes.svg)
 
 De même, bien qu'UWP adapte automatiquement votre application à différents appareils, vous pouvez également [optimiser votre application UWP pour des appareils spécifiques](../devices/index.md).
 
@@ -170,7 +170,7 @@ Nous proposons divers outils pour vous aider à réaliser votre conception :
 
 > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Designing-Universal-Windows-Platform-apps/player]
 
-## <a name="next-fluent-design-system"></a>Suivant : Système de conception Fluent
+## <a name="next-fluent-design-system"></a>Suivant : Système Fluent Design
 
 Si vous souhaitez en savoir plus sur les principes sous-jacents de Fluent Design (système de conception de Microsoft) et voir plus de fonctionnalités pouvant être incorporées dans votre application UWP, accédez à [Système Fluent Design](/windows/apps/fluent-design-system).
 
