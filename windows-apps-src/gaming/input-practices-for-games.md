@@ -1,5 +1,5 @@
 ---
-title: Pratiques de saisie pour les jeux
+title: Pratiques d’entrée pour les jeux
 description: Découvrez les modèles et techniques pour utiliser efficacement les périphériques d’entrée.
 ms.assetid: CBAD3345-3333-4924-B6D8-705279F52676
 ms.date: 11/20/2017
@@ -7,17 +7,17 @@ ms.topic: article
 keywords: windows 10, uwp, jeux, entrée
 ms.localizationpriority: medium
 ms.openlocfilehash: 8235b2c2029b2bb3b9351263a3c908879b4beba9
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684978"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853052"
 ---
-# <a name="input-practices-for-games"></a>Pratiques de saisie pour les jeux
+# <a name="input-practices-for-games"></a>Pratiques d’entrée pour les jeux
 
 Cette page décrit les modèles et techniques pour utiliser efficacement les périphériques d’entrée dans les jeux de plateforme Windows universelle (UWP).
 
-À la lecture de cet article, vous allez découvrir comment :
+Voici ce que vous allez apprendre à la lecture de cet article :
 
 * Comment suivre les joueurs et les périphériques d’entrée et de navigation qu’ils utilisent
 * Comment détecter les transitions de bouton (appuyé à relâché, relâché à appuyé)
@@ -315,7 +315,7 @@ Pour les contrôleurs de jeu qui prennent en charge la création de rapports dé
 
 Si votre code exécute une action (comme étendre une IU) en fonction du pourcentage restant d'autonomie de la batterie, assurez-vous qu’il se conforme aux valeurs ci-dessus. Par exemple, si vous souhaitez avertir le joueur lorsque la batterie du contrôleur est faible, faites-le lorsque son niveau atteint 10 %.
 
-## <a name="see-also"></a>Articles associés
+## <a name="see-also"></a>Voir aussi
 
 * [Classe Windows. System. User](https://docs.microsoft.com/uwp/api/windows.system.user)
 * [Interface Windows. Gaming. Input. IGameController](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller)
