@@ -1,23 +1,23 @@
 ---
 Description: Sélectionnez le prix de base pour une application et planifiez les modifications du prix. Vous pouvez également personnaliser ces options pour des marchés spécifiques.
-title: Définir et planifier la tarification d’une application
+title: Définir et planifier les prix d’une application
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, tarification, prix de l’application, vente d’applications, modification de prix, prix personnalisé, prix, tarif, coût, remplacer le prix de base, prix au format libre, format libre
 ms.localizationpriority: medium
 ms.openlocfilehash: 451a22ffef2d8062de7bf7d29d921db7197987b5
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63788262"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78852831"
 ---
-# <a name="set-and-schedule-app-pricing"></a>Définir et planifier la tarification d’une application
+# <a name="set-and-schedule-app-pricing"></a>Définir et planifier les prix d’une application
 
 La section **Tarification** de la page [Tarification et disponibilité](set-app-pricing-and-availability.md) vous permet de sélectionner le prix de base d’une application. Vous pouvez également [planifier des changements de prix](#schedule-price-changes) pour indiquer la date et l’heure auxquelles le prix de votre application doit changer. En outre, vous avez la possibilité de [remplacer le prix de base pour des marchés spécifiques](#override-base-price-for-specific-markets), en sélectionnant un nouveau niveau de prix ou en saisissant un prix au format libre dans la devise locale du marché.
 
 > [!NOTE]
-> Bien que cet article fasse référence aux applications, la sélection du prix des soumissions d’extensions applique le même processus. Notez que pour [modules complémentaires d’abonnement](../monetize/enable-subscription-add-ons-for-your-app.md), le prix de base que vous sélectionnez ne peut jamais être augmenté (que ce soit par la modification du prix de base ou en planifiant un changement de prix), bien qu’il peut être diminué.
+> Bien que cet article fasse référence aux applications, la sélection du prix des soumissions d’extensions applique le même processus. Notez que pour les [modules complémentaires d’abonnement](../monetize/enable-subscription-add-ons-for-your-app.md), le prix de base que vous sélectionnez ne peut jamais être augmenté (que ce soit en modifiant le prix de base ou en planifiant un changement de prix), bien qu’il puisse être réduit.
 
 ## <a name="base-price"></a>Prix de base
 
@@ -35,18 +35,18 @@ Dans la section **Tarification**, cliquez sur **Afficher la table de conversion*
 N'oubliez pas que le niveau de prix que vous sélectionnez peut inclure la taxe de vente ou la taxe sur la valeur ajoutée que vos clients doivent payer. Pour plus d’informations sur les implications fiscales de votre application dans les marchés sélectionnés, voir l’article [Informations fiscales pour les applications payantes](tax-details-for-paid-apps.md). Nous vous conseillons également de consulter les [considérations de prix pour des marchés spécifiques](define-market-selection.md#price-considerations-for-specific-markets).
 
 > [!NOTE]
-> Si vous choisissez la **arrêter acquisition** sous **rendent ce produit disponibles mais ne sont pas détectables dans le Store** dans le [visibilité](choose-visibility-options.md#discoverability) section), vous ne pourrez pas définir tarification pour votre envoi (dans la mesure où aucune autre sera en mesure d’acquérir l’application que s’ils utilisent un code promotionnel pour obtenir gratuitement de l’application).
+> Si vous choisissez l’option **arrêter l’acquisition** sous **rendre ce produit disponible mais non détectable dans le Store** dans la section [visibilité](choose-visibility-options.md#discoverability) ), vous ne pourrez pas définir la tarification de votre soumission (puisque personne ne pourra acquérir l’application, sauf si elle utilise un code promotionnel pour obtenir gratuitement l’application).
 
 ## <a name="schedule-price-changes"></a>Planifier des changements de prix
 
 Vous pouvez également planifier un ou plusieurs changements de prix si vous souhaitez que le prix de base de votre application change à une date et à une heure spécifiques. 
 
 > [!IMPORTANT]
-> Les modifications de prix s'affichent uniquement pour les clients utilisant des appareils Windows 10 (y compris Xbox). Si votre application publiée précédemment prend en charge les versions antérieures du système d’exploitation, les modifications de prix ne s’appliquera pas aux clients. Pour les clients sur Windows 8, l’application sera toujours proposée à son **Prix de Base** (et non à un prix spécifique au marché), même si vous planifiez des changements de prix supplémentaires. Pour les clients sur Windows 8.1 et sur Windows Phone 8.1 et versions antérieures, l’application sera toujours offert au premier niveau de prix pour la mise sur le marché du client.
+> Les modifications de prix s'affichent uniquement pour les clients utilisant des appareils Windows 10 (y compris Xbox). Si votre application précédemment publiée prend en charge des versions de système d’exploitation antérieures, les changements de prix ne s’appliquent pas à ces clients. Pour les clients sur Windows 8, l’application sera toujours proposée à son **Prix de Base** (et non à un prix spécifique au marché), même si vous planifiez des changements de prix supplémentaires. Pour les clients sur Windows 8.1, et sur Windows Phone 8,1 et versions antérieures, l’application sera toujours proposée au premier niveau de prix pour le marché du client.
 
 Cliquez sur **Planifier un changement de prix** pour afficher les options de changement de prix. Choisissez le niveau de prix que vous souhaitez utiliser (ou entrez un prix au format libre pour les remplacements du prix de base pour un marché unique), puis sélectionnez la date, l’heure et le fuseau horaire.
 
-Vous pouvez cliquer sur **planifier un changement de prix** à nouveau pour planifier les modifications ultérieures autant que vous le souhaitez.
+Vous pouvez cliquer à nouveau sur **planifier une modification de prix** pour planifier autant de modifications ultérieures que vous le souhaitez.
 
 > [!NOTE]
 > Les changements de prix planifiés fonctionnent différemment du [Prix de vente](put-apps-and-add-ons-on-sale.md). Lorsque vous mettez une application en vente, le prix barré s’affiche dans le Store et les clients peuvent acheter l’application au prix de vente pendant la période que vous avez sélectionnée. Une fois la période de vente terminée, le prix de vente ne s’applique plus et l’application devient disponible à son prix de base (ou à un autre prix que vous avez spécifié pour ce marché, le cas échéant).
@@ -59,7 +59,7 @@ Vous pouvez cliquer sur **planifier un changement de prix** à nouveau pour plan
 Par défaut, les options que vous sélectionnez ci-dessus s'appliquent à tous les marchés dans lesquels votre application est proposée. Vous pouvez éventuellement modifier le prix pour un ou plusieurs marchés, en choisissant un autre niveau de prix ou en saisissant un prix au format libre dans la devise locale du marché.
 
 > [!IMPORTANT]
-> Si votre application publiée précédemment prend en charge Windows 8, les clients verront toujours l’application à son **prix de Base**, même si vous sélectionnez un prix différent pour leur mise sur le marché.
+> Si votre application précédemment publiée prend en charge Windows 8, ces clients verront toujours l’application à son **prix de base**, même si vous sélectionnez un prix différent pour leur marché.
 
 Pour modifier le prix pour des marchés spécifiques, cliquez sur **Select markets for base price override**. La fenêtre contextuelle **Sélection du marché** s’affiche, répertoriant tous les marchés dans lesquels vous avez choisi de rendre votre application disponible. (Si vous avez exclu des marchés dans la section **Marchés**, ces marchés ne seront pas disponibles). 
 
@@ -77,7 +77,7 @@ Remplacer le prix de base pour un marché unique vous permet également d’entr
 
 ### <a name="override-the-base-price-for-a-market-group"></a>Remplacer le prix de base pour un groupe de marchés
 
-Pour remplacer le prix de base pour plusieurs marchés, vous allez créer un *Groupe de marchés*. Pour ce faire, sélectionnez les marchés que vous souhaitez inclure, puis entrez éventuellement un nom pour le groupe. (Ce nom pour votre référence uniquement et n’est pas visible aux clients.) Lorsque vous avez terminé, cliquez sur **créer**. Vous verrez les mêmes options **Prix de Base** et **Planifier un changement de prix** que décrit ci-dessus, mais les sélections que vous effectuez seront propres à ce groupe de marchés. Notez que les prix au format libre ne peuvent pas être utilisés avec les groupes de marchés. Vous devrez sélectionner un niveau de prix disponible.
+Pour remplacer le prix de base pour plusieurs marchés, vous allez créer un *Groupe de marchés*. Pour ce faire, sélectionnez les marchés que vous souhaitez inclure, puis entrez éventuellement un nom pour le groupe. (Ce nom sert uniquement de référence et est invisible pour les clients). Lorsque vous avez terminé, cliquez sur **Créer**. Vous verrez les mêmes options **Prix de Base** et **Planifier un changement de prix** que décrit ci-dessus, mais les sélections que vous effectuez seront propres à ce groupe de marchés. Notez que les prix au format libre ne peuvent pas être utilisés avec les groupes de marchés. Vous devrez sélectionner un niveau de prix disponible.
 
 Pour modifier les marchés inclus dans un groupe de marchés, cliquez sur le nom du groupe de marchés, ajoutez ou supprimez les marchés que vous souhaitez, puis cliquez sur **OK** pour enregistrer vos modifications. 
 
