@@ -7,23 +7,23 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 43782a1a5d26ba84fe53f6c164a944fa357edfb1
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63787022"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78852777"
 ---
 # <a name="create-add-on-store-listings"></a>Créer des descriptions de module complémentaire dans le Windows Store
 
-Lors de l’envoi d’un module complémentaire dans [partenaires](https://partner.microsoft.com/dashboard), les informations que vous fournissez dans le **Store annonces** étape s’affichera à vos clients lorsqu’ils voient l’option pour acquérir votre module complémentaire. Formulez avec soin les informations de la description dans le Windows Store pour qu’elle donne du module complémentaire une image à la fois fidèle et attrayante aux yeux des clients. Vous pouvez fournir des descriptions personnalisées dans le Windows Store pour chaque langue.
+Lors de l’envoi d’un module complémentaire dans l' [espace partenaires](https://partner.microsoft.com/dashboard), les informations que vous fournissez dans l’étape de **liste des boutiques** s’affichent à vos clients lorsqu’ils voient l’option permettant d’acquérir votre module complémentaire. Formulez avec soin les informations de la description dans le Windows Store pour qu’elle donne du module complémentaire une image à la fois fidèle et attrayante aux yeux des clients. Vous pouvez fournir des descriptions personnalisées dans le Windows Store pour chaque langue.
 
 > [!TIP]
-> Vous pouvez également [importer et exporter des listes de Store](import-and-export-store-listings.md) pour votre module complémentaire si vous souhaitez entrer vos informations d’annonce hors connexion dans un fichier .csv, plutôt que de fournir ces informations directement dans l’espace partenaires. Cette opération peut se révéler particulièrement adaptée lorsque vous créez des descriptions en différentes langues. Toutefois, vous pouvez toujours entrer vos informations directement dans [partenaires](https://partner.microsoft.com/dashboard) au lieu d’utiliser la fonctionnalité d’importation/exportation.
+> Vous pouvez également [Importer et exporter des listes de magasins](import-and-export-store-listings.md) pour votre module complémentaire si vous souhaitez entrer vos informations de référencement en mode hors connexion dans un fichier. csv, plutôt que de fournir ces informations directement dans l’espace partenaires. Cette opération peut se révéler particulièrement adaptée lorsque vous créez des descriptions en différentes langues. Toutefois, vous pouvez toujours entrer vos informations directement dans l' [espace partenaires](https://partner.microsoft.com/dashboard) plutôt que d’utiliser la fonctionnalité d’importation/exportation.
 
 
 ## <a name="store-listing-languages"></a>Langues des descriptions dans le Windows Store
 
-Avant d’entrer les informations de la description dans le Windows Store, vous devez spécifier une ou plusieurs [langues](supported-languages.md). Vous devez remplir la page **Description dans le Windows Store** dans une langue au minimum. Nous vous recommandons de créer des listes de Store pour chaque langue à votre application prend en charge.
+Avant d’entrer les informations de la description dans le Windows Store, vous devez spécifier une ou plusieurs [langues](supported-languages.md). Vous devez remplir la page **Description dans le Windows Store** dans une langue au minimum. Nous vous recommandons de créer des listes de magasins pour chaque langue prise en charge par votre application.
 
 Sous la section **Description dans le Windows Store** de la soumission de votre extension, cliquez sur **Ajouter/Supprimer des langues**, puis cliquez sur **Préférences linguistiques** sur la page suivante. Cochez les cases pour les langues que vous souhaitez ajouter, puis cliquez sur **Mettre à jour**. Les langues que vous avez sélectionnées s’afficheront dans la section **Langues de la description dans le Windows Store** de la page.
 

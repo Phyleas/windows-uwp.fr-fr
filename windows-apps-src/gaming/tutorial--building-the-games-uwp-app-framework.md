@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, jeux, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: af5d73e0a786e33aff6274cd63ee5ae6ac77c133
-ms.sourcegitcommit: 49a34e957433966ac8d4822b5822f21087aa61c3
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74153696"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853000"
 ---
 #  <a name="define-the-uwp-app-framework"></a>Définir l’infrastructure d’application UWP
 
@@ -73,7 +73,7 @@ IFrameworkView^ DirectXApplicationSource::CreateView()
 
 Une fois l’objet fournisseur d’affichage créé, le singleton de l’application appelle la méthode [**Initialize**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.initialize) lors du lancement de l’application. Par conséquent, cette méthode doit gérer les comportements les plus fondamentaux d’un jeu UWP, comme la gestion de l’activation de la fenêtre principale et l’assurance que ce jeu peut gérer un événement de pause subite (et une possible reprise par la suite).
 
-À ce stade, l’application de jeu peut gérer un message de pause (ou de reprise). Cependant, il n’existe toujours pas de fenêtre à utiliser et le jeu n’est pas initialisé. Quelques éléments supplémentaires sont nécessaires !
+À ce stade, l’application de jeu peut gérer un message de pause (ou de reprise). Cependant, il n’existe toujours pas de fenêtre à utiliser et le jeu n’est pas initialisé. Quelques éléments supplémentaires sont nécessaires !
 
 ### <a name="appinitialize-method"></a>Méthode App::Initialize
 
@@ -304,7 +304,7 @@ Les trois méthodes antérieures, __Initialize__, __SetWindow__ et __Load__ ont 
 
 Démarrez une boucle __while__ qui se termine lorsque le joueur ferme la fenêtre du jeu.
 
-L’exemple de code passe dans l’un des deux états de la machine à états du moteur de jeu :
+L’exemple de code passe dans l’un des deux états de la machine à états du moteur de jeu :
     * __Deactivated__ : La fenêtre de jeu est désactivée (perd le focus) ou ancrée. Lorsque cette situation se produit, le jeu interrompt le traitement des événements et attend que la fenêtre ait de nouveau le focus ou ne soit plus ancrée.
     * __TooSmall__ : Le jeu met à jour son propre état et restitue le graphique pour affichage.
 
@@ -382,7 +382,7 @@ void GameMain::Run()
 
 ## <a name="uninitialize-method-of-the-view-provider"></a>Méthode Uninitialize du fournisseur d’affichage
 
-Quand l’utilisateur met finalement fin à la session de jeu, nous devons nettoyer. C’est ici que la méthode **Uninitialize** intervient.
+Quand l’utilisateur met finalement fin à la session de jeu, nous devons nettoyer. C’est là où **Uninitialize** intervient.
 
 Dans Windows 10, la fermeture de la fenêtre de l’application n’entraîne pas l’arrêt du processus de l’application, mais elle écrit l’état du singleton de l’application dans la mémoire. Si quelque chose de spécial doit se produire lorsque le système doit récupérer cette mémoire, notamment un nettoyage spécifique des ressources, placez le code de ce nettoyage dans cette méthode.
 

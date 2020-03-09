@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, application Azure ad, AAD, utilisateur, groupe, utilisateurs multiples, multi-utilisateur
 ms.localizationpriority: medium
 ms.openlocfilehash: 41467f51e02f3cc700e3759f33d6fd6eea3ac7a6
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260080"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78852554"
 ---
 # <a name="add-users-groups-and-azure-ad-applications-to-your-partner-center-account"></a>Ajouter des utilisateurs, des groupes et des applications de Azure AD à votre compte espace partenaires
 
@@ -67,7 +67,7 @@ Si vous êtes connecté avec un compte de responsable qui a également des autor
 
 1.  Dans la page **utilisateurs** (sous **paramètres du compte**), sélectionnez Ajouter des **utilisateurs**, puis choisissez **créer des utilisateurs**.
 2.  Entrez le prénom, le nom et le nom d’utilisateur du nouvel utilisateur.
-3.  Pour que le nouvel utilisateur dispose d’un [compte d’administrateur général](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) dans l’annuaire de votre organisation, cochez la case **Faire de cet utilisateur un administrateur global dans Azure AD, avec contrôle complet de toutes les ressources de l’annuaire**. Ainsi, l’utilisateur a un accès complet à toutes les fonctionnalités administratives de votre annuaire Azure AD. Ils peuvent ajouter et gérer des utilisateurs dans l’annuaire de votre organisation (mais pas dans l’espace partenaires, sauf si vous accordez au compte le [rôle ou les autorisations](set-custom-permissions-for-account-users.md)appropriés). Si vous cochez cette case, vous devrez fournir un **e-mail de récupération de mot de passe** pour l’utilisateur.
+3.  Pour que le nouvel utilisateur dispose d’un [compte d’administrateur général](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) dans l’annuaire de votre organisation, cochez la case **Faire de cet utilisateur un administrateur global dans Azure AD, avec contrôle complet de toutes les ressources de l’annuaire**. Ainsi, l’utilisateur a un accès complet à toutes les fonctionnalités administratives de votre annuaire Azure AD. Ils peuvent ajouter et gérer des utilisateurs dans l’annuaire de votre organisation (mais pas dans l’espace partenaires, sauf si vous accordez au compte le [rôle ou les autorisations](set-custom-permissions-for-account-users.md)appropriés). Si vous activez cette case à cocher, vous devez fournir un **e-mail de récupération de mot de passe** pour l’utilisateur.
 4.  Si vous avez coché la case pour **Faire de cet utilisateur un administrateur global dans Azure AD**, entrez une adresse e-mail que l’utilisateur peut utiliser s’ils souhaitent récupérer son mot de passe.
 5.  Dans la section **Appartenance au groupe**, sélectionnez les groupes auxquels doit appartenir le nouvel utilisateur.
 6.  Dans la section **Rôles**, spécifiez le ou les [rôles ou autorisations personnalisées](set-custom-permissions-for-account-users.md) attribués à l’utilisateur.
@@ -83,13 +83,13 @@ Si vous êtes connecté avec un compte de responsable qui a également des autor
 > Pour être en mesure d’inviter des utilisateurs extérieurs, vous devez être connecté avec un compte administrateur général dans votre client Azure AD.
 
 1.  Dans la page **utilisateurs** (sous **paramètres du compte**), sélectionnez Ajouter des **utilisateurs**, puis choisissez **inviter des utilisateurs par courrier électronique**.
-1.  Entrez une ou plusieurs adresses e-mail (jusqu’à dix), séparées par des virgules ou des points-virgules.
+1.  Entrez une ou plusieurs adresses e-mail (jusqu'à dix), séparées par des virgules ou des points-virgules.
 2.  Dans la section **Rôles**, spécifiez le ou les [rôles ou autorisations personnalisées](set-custom-permissions-for-account-users.md) attribués à l’utilisateur.
 3.  Cliquez sur **Enregistrer**.
 
 Les utilisateurs que vous avez invités recevront une invitation par e-mail à rejoindre votre compte, et un nouveau compte [d’utilisateur invité](https://docs.microsoft.com/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b) sera créé pour eux dans votre client Azure AD. Chaque utilisateur doit accepter son invitation avant de pouvoir accéder à votre compte.
 
-Si vous devez renvoyer une invitation, recherchez l’utilisateur sur votre page **Utilisateurs** et sélectionnez son adresse e-mail (ou le texte indiquant **Invitation en attente**). Puis, au bas de la page, cliquez sur **Renvoyer l’invitation**.
+Si vous devez renvoyer une invitation, recherchez l’utilisateur sur votre page **Utilisateurs** et sélectionnez son adresse e-mail (ou le texte indiquant **Invitation en attente**). Puis, en bas de la page, cliquez sur **Renvoyer invitation**.
 
 > [!IMPORTANT]
 > Les utilisateurs externes que vous invitez à joindre à votre compte espace partenaires peuvent se voir attribuer les mêmes rôles et autorisations que les autres utilisateurs. Toutefois, les utilisateurs extérieurs ne pourront pas effectuer certaines tâches dans Visual Studio, telles que l’association d’une application avec le Store ou la création de packages à charger dans le Store. Si un utilisateur a besoin d’effectuer ces tâches, choisissez **Créer de nouveaux utilisateurs** au lieu de **Inviter des utilisateurs extérieurs**. (Si vous ne souhaitez pas ajouter ces utilisateurs à votre client Azure AD existant, vous pouvez [créer un nouveau client](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account), puis créer de nouveaux comptes d’utilisateur eux dans ce client.) 
@@ -145,11 +145,11 @@ Si vous souhaitez accorder l’accès de l’espace partenaires à un nouveau gr
 Vous pouvez autoriser les applications ou les services qui font partie de l’Azure AD de votre organisation à accéder à votre compte espace partenaires. Ces comptes d’utilisateur d’applications Azure AD peuvent être utilisés pour appeler les API REST fournies par les [services Microsoft Store](../monetize/using-windows-store-services.md).
 
 
-### <a name="add-azure-ad-applications-from-your-organizations-directory"></a>Ajouter des applications Azure AD à partir de l’annuaire de votre organisation
+### <a name="add-azure-ad-applications-from-your-organizations-directory"></a>Ajouter des applications Azure AD à partir de l’annuaire de votre organisation
 
 1.  1.  Sélectionnez l’icône d’engrenage (près de l’angle supérieur droit de l’espace partenaires), puis sélectionnez **paramètres du développeur**. Dans le menu **paramètres** , sélectionnez **utilisateurs**.
 2. Sur la page **Utilisateurs**, sélectionnez **Ajouter des applications Azure AD**.
-3.  Sélectionnez une ou plusieurs applications Azure AD dans la liste qui s’affiche. Vous pouvez utiliser la zone de recherche pour rechercher des applications Azure AD spécifiques.
+3.  Sélectionnez une ou plusieurs applications Azure AD dans la liste qui s’affiche. Vous pouvez utiliser la zone de recherche pour rechercher des applications Azure AD spécifiques.
     > [!TIP]
     > Si vous sélectionnez plusieurs applications Azure AD à ajouter à votre compte espace partenaires, vous devez leur attribuer le même rôle ou ensemble d’autorisations personnalisées. Si vous souhaitez ajouter plusieurs applications Azure AD dotées de rôles ou d’autorisations distincts, répétez les étapes ci-après pour chaque rôle ou ensemble d’autorisations personnalisées.
 
@@ -168,7 +168,7 @@ Si vous souhaitez accorder à l’espace partenaires un accès à un tout nouvea
 1.  Dans la page **utilisateurs** (sous **paramètres du compte**), sélectionnez ajouter des **applications de Azure ad**.
 2.  Sur la page suivante, sélectionnez **nouvelle Azure ad application**.
 3.  Renseignez le champ **URL de réponse** pour la nouvelle application Azure AD. Il s’agit de l’URL qui permet aux utilisateurs de se connecter et d’utiliser votre application Azure AD (parfois également désignée sous le terme d’URL de l’application ou d’URL de connexion). L’**URL de réponse** ne peut pas comporter plus de 256 caractères et doit être unique dans votre annuaire.
-4.  Renseignez le champ **URI ID d’application** pour la nouvelle application Azure AD. Il s’agit d’un identificateur logique pour l’application Azure AD qui est présenté lors de l’envoi d’une demande d’authentification unique à Azure AD. Notez que l’**URI ID d’application** doit être unique pour chaque application Azure AD de votre annuaire et ne doit pas comporter plus de 256 caractères. Pour plus d’informations sur l’**URI ID d’application**, voir [Intégration d’applications à Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications#changing-the-application-registration-to-support-multi-tenant).
+4.  Renseignez le champ **URI ID d’application** pour la nouvelle application Azure AD. Il s’agit d’un identificateur logique pour l’application Azure AD qui est présenté lors de l’envoi d’une demande d’authentification unique à Azure AD. Notez que l’**URI ID d’application** doit être unique pour chaque application Azure AD de votre annuaire et ne doit pas comporter plus de 256 caractères. Pour plus d’informations sur l’**URI ID d’application**, voir [Intégration d’applications à Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications#changing-the-application-registration-to-support-multi-tenant).
 5.  Dans la section **Rôles**, spécifiez le ou les [rôles ou autorisations personnalisées](set-custom-permissions-for-account-users.md) attribués à l’application Azure AD.
 6.  Cliquez sur **Enregistrer**.
 
@@ -179,9 +179,9 @@ Après avoir ajouté ou créé une application Azure AD, revenez à la section *
 
 <span id="manage-keys" />
 
-### <a name="manage-keys-for-an-azure-ad-application"></a>Gérer les clés pour une application Azure AD
+### <a name="manage-keys-for-an-azure-ad-application"></a>Gérer les clés pour une application Azure AD
 
-Si votre application Azure AD lit et écrit des données dans Microsoft Azure AD, elle doit disposer d’une clé. Vous pouvez créer des clés pour une application Azure AD en modifiant ses informations dans l’espace partenaires. Vous pouvez également supprimer les clés qui ne sont plus nécessaires.
+Si votre application Azure AD lit et écrit des données dans Microsoft Azure AD, elle doit disposer d’une clé. Vous pouvez créer des clés pour une application Azure AD en modifiant ses informations dans l’espace partenaires. Vous pouvez également supprimer les clés qui ne sont plus nécessaires.
 
 1.  Dans la page **utilisateurs** (sous **paramètres du compte**), sélectionnez le nom de l’application Azure ad.
     > [!TIP]
