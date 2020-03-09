@@ -3,18 +3,18 @@ Description: Les applications de bureau empaquetées peuvent utiliser un large �
 title: API UWP disponibles pour une application de bureau empaquetée (Pont du bureau)
 ms.date: 04/19/2019
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 60a735af077d2121868e2613cb0f33e194e4330c
-ms.sourcegitcommit: cc108c791842789464c38a10e5d596c9bd878871
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75302533"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78852976"
 ---
 # <a name="uwp-apis-available-to-desktop-apps"></a>API UWP disponibles pour les applications de bureau
 
@@ -26,14 +26,14 @@ De nombreuses API UWP requièrent l’utilisation d’une [identité de package]
 |--------------|---------|
 | Rendez-vous, contacts et messages électroniques | Toutes les API ne sont pas prises en charge actuellement. |
 | Authentification et identité des utilisateurs | Toutes les API ne sont pas prises en charge actuellement. |
-| Tâches en arrière-plan | Alors que les applications de bureau peuvent enregistrer des tâches en arrière-plan, seules les applications UWP complètes peuvent s’exécuter <i>en tant que tâche en</i> arrière-plan. Pour plus d’informations, voir [Exemple de tâche en arrière-plan sur GitHub](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTasksSample). |
+| Tâches en arrière-plan | Alors que les applications de bureau peuvent enregistrer des tâches en arrière-plan, seules les applications UWP complètes peuvent s’exécuter <i>en tant que tâche en</i> arrière-plan. Pour plus d’informations, voir [l’exemple de tâche en arrière-plan sur GitHub](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTasksSample). |
 | Bluetooth | Toutes les API ne sont pas prises en charge actuellement. |
 | Chat et appels téléphoniques | Les applications de bureau ne peuvent pas s’exécuter sur mobile tant qu’elles ne sont pas entièrement portées sur UWP. |
 | Activation des contrats | Seules les applications UWP complètes peuvent être activées par un contrat. |
 | Chiffrement | Toutes les API ne sont pas prises en charge actuellement. |
 | Géolocalisation | Toutes les API ne sont pas prises en charge actuellement. |
 | Sélecteurs de fichiers et de dossiers | Les applications avec une identité ont un accès complet au système de fichiers et n’ont pas besoin de sélecteurs UWP. |
-| Multimédia | Toutes les API ne sont pas prises en charge actuellement. |
+| Support | Toutes les API ne sont pas prises en charge actuellement. |
 | Point de service | Toutes les API ne sont pas prises en charge actuellement. |
 | Cartes à puce | Toutes les API ne sont pas prises en charge actuellement. |
 | PlayReady | Toutes les API ne sont pas prises en charge actuellement. |
@@ -381,6 +381,6 @@ Pour obtenir des exemples d’utilisation des API UWP, consultez les exemples d�
 
 Les API qui ont les [DualApiPartition](https://docs.microsoft.com/uwp/api/Windows.Foundation.Metadata.DualApiPartitionAttribute) sont prises en charge dans toutes les applications de bureau, y compris celles avec l’identité de package et celles sans identité de package. Pour déterminer si une API que vous souhaitez appeler à partir de votre application de bureau est prise en charge, recherchez l’article de référence pour la classe ou le membre qui vous intéresse dans la [documentation de référence pour les espaces de noms WinRT](https://docs.microsoft.com/uwp/api/). Vérifiez ensuite si la section **attributs** de l’article de référence comprend l’attribut [DualApiPartition](https://docs.microsoft.com/uwp/api/Windows.Foundation.Metadata.DualApiPartitionAttribute) .
 
-## <a name="next-steps"></a>Étapes suivantes
+## <a name="next-steps"></a>Étapes suivantes :
 
-Des questions ? Contactez-nous sur Stack Overflow. Notre équipe contrôle ces [balises](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Vous pouvez également nous poser vos questions [ici](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
+Des questions ? Contactez-nous sur Stack Overflow. Notre équipe supervise ces [étiquettes](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Vous pouvez également nous poser vos questions [ici](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
