@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 9712b4498b03460568d20d4c8e27172ad5c14360
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362206"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78852999"
 ---
 # <a name="resource-types"></a>Types de ressource
 
@@ -34,7 +34,7 @@ Il existe deux façons de spécifier intégralement la disposition (ou l’encom
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><span id="Typed"></span><span id="typed"></span><span id="TYPED"></span>Typed</p></td>
+<td align="left"><p><span id="Typed"></span><span id="typed"></span><span id="TYPED"></span>Tapé</p></td>
 <td align="left"><p>Spécifiez intégralement le type lors de la création de la ressource.</p></td>
 </tr>
 <tr class="even">
@@ -46,20 +46,20 @@ Il existe deux façons de spécifier intégralement la disposition (ou l’encom
 
  
 
-## <a name="span-idbufferresourcesspanspan-idbufferresourcesspanspan-idbufferresourcesspanspan-idbuffer-resourcesspanbuffer-resources"></a><span id="Buffer_Resources"></span><span id="buffer_resources"></span><span id="BUFFER_RESOURCES"></span><span id="buffer-resources"></span>Ressources de la mémoire tampon
+## <a name="span-idbuffer_resourcesspanspan-idbuffer_resourcesspanspan-idbuffer_resourcesspanspan-idbuffer-resourcesspanbuffer-resources"></a><span id="Buffer_Resources"></span><span id="buffer_resources"></span><span id="BUFFER_RESOURCES"></span><span id="buffer-resources"></span>Ressources de mémoire tampon
 
 
 Une ressource tampon est un ensemble de données dont le type a été intégralement spécifié ; en interne, un tampon contient des éléments. Un élément est constitué de 1 à 4 composants. Exemples de types de données d’élément : une valeur de données compressée (par exemple R8G8B8A8), un nombre entier unique de 8 bits, quatre valeurs flottantes de 32 bits. Ces types de données sont utilisés pour stocker des données, par exemple un vecteur de position, un vecteur normal, une coordonnée de texture dans un tampon de sommet, un index dans un tampon d’index ou un état d’appareil.
 
 Un tampon est créé en tant que ressource non structurée. Dans la mesure où il n’est pas structuré, un tampon ne peut pas contenir de niveaux de mipmap, n’est pas filtré lors de la lecture et ne peut pas être échantillonné plusieurs fois.
 
-### <a name="span-idbuffertypesspanspan-idbuffertypesspanspan-idbuffertypesspanbuffer-types"></a><span id="Buffer_Types"></span><span id="buffer_types"></span><span id="BUFFER_TYPES"></span>Types de mémoires tampons
+### <a name="span-idbuffer_typesspanspan-idbuffer_typesspanspan-idbuffer_typesspanbuffer-types"></a><span id="Buffer_Types"></span><span id="buffer_types"></span><span id="BUFFER_TYPES"></span>Types de mémoires tampons
 
 -   [Mémoire tampon de vertex](#vertex-buffer)
 -   [Mémoire tampon d’index](#index-buffer)
 -   [Mémoire tampon constante](#shader-constant-buffer)
 
-### <a name="span-idvertexbufferspanspan-idvertexbufferspanspan-idvertexbufferspanspan-idvertex-bufferspanvertex-buffer"></a><span id="Vertex_Buffer"></span><span id="vertex_buffer"></span><span id="VERTEX_BUFFER"></span><span id="vertex-buffer"></span>Mémoire tampon de vertex
+### <a name="span-idvertex_bufferspanspan-idvertex_bufferspanspan-idvertex_bufferspanspan-idvertex-bufferspanvertex-buffer"></a><span id="Vertex_Buffer"></span><span id="vertex_buffer"></span><span id="VERTEX_BUFFER"></span><span id="vertex-buffer"></span>Mémoire tampon de vertex
 
 Un tampon est un ensemble d’éléments ; un tampon de sommet contient les données par sommet. L’exemple le plus simple est un tampon de sommet qui contient un type de données, par exemple des données de position. Ce type de tampon peut être illustré comme suit.
 
@@ -78,7 +78,7 @@ Pour accéder aux données à partir d’un tampon de sommet, vous devez savoir 
 
 Avant de créer un tampon de sommet, vous devez définir sa disposition en créant un objet de disposition d’entrée. Une fois que l’objet de disposition d’entrée est créé, liez-le à l’étape de l’assembleur d’entrée (IA).
 
-### <a name="span-idindexbufferspanspan-idindexbufferspanspan-idindexbufferspanspan-idindex-bufferspanindex-buffer"></a><span id="Index_Buffer"></span><span id="index_buffer"></span><span id="INDEX_BUFFER"></span><span id="index-buffer"></span>Mémoire tampon d’index
+### <a name="span-idindex_bufferspanspan-idindex_bufferspanspan-idindex_bufferspanspan-idindex-bufferspanindex-buffer"></a><span id="Index_Buffer"></span><span id="index_buffer"></span><span id="INDEX_BUFFER"></span><span id="index-buffer"></span>Mémoire tampon d’index
 
 Un tampon d’index contient un ensemble séquentiel d’index de 16 ou 32 bits ; chaque index est utilisé pour identifier un sommet dans un tampon de sommet. Le fait d’utiliser un tampon d’index avec un ou plusieurs tampons de sommet pour fournir des données à l’étape de l’assembleur d’entrée (IA) est appelé « indexation ». Un tampon d’index peut être illustré comme suit.
 
@@ -94,7 +94,7 @@ Un tampon d’index peut combiner plusieurs bandes de triangles ou de lignes ([t
 
 ![illustration d’un index de découpe de bandes](images/d3d10-ia-strips-cut-value.png)
 
-### <a name="span-idshaderconstantbufferspanspan-idshaderconstantbufferspanspan-idshaderconstantbufferspanspan-idshader-constant-bufferspanconstant-buffer"></a><span id="Shader_Constant_Buffer"></span><span id="shader_constant_buffer"></span><span id="SHADER_CONSTANT_BUFFER"></span><span id="shader-constant-buffer"></span>Mémoire tampon constante
+### <a name="span-idshader_constant_bufferspanspan-idshader_constant_bufferspanspan-idshader_constant_bufferspanspan-idshader-constant-bufferspanconstant-buffer"></a><span id="Shader_Constant_Buffer"></span><span id="shader_constant_buffer"></span><span id="SHADER_CONSTANT_BUFFER"></span><span id="shader-constant-buffer"></span>Mémoire tampon constante
 
 Le logiciel Direct3D est doté d’un tampon permettant de fournir des constantes de nuanceur, ou tampon constant. D’un point de vue conceptuel, ce tampon ressemble à un tampon de sommet à un seul élément, comme illustré ci-dessous.
 
@@ -112,27 +112,27 @@ Utilisez un tampon constant pour stocker les résultats de l’étape de sortie 
 
 Consultez l’article [Constantes de nuanceur (DirectX HLSL)](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-constants) pour obtenir un exemple de déclaration de tampon constant dans un nuanceur.
 
-## <a name="span-idtextureresourcesspanspan-idtextureresourcesspanspan-idtextureresourcesspanspan-idtexture-resourcesspantexture-resources"></a><span id="Texture_Resources"></span><span id="texture_resources"></span><span id="TEXTURE_RESOURCES"></span><span id="texture-resources"></span>Ressources de texture
+## <a name="span-idtexture_resourcesspanspan-idtexture_resourcesspanspan-idtexture_resourcesspanspan-idtexture-resourcesspantexture-resources"></a><span id="Texture_Resources"></span><span id="texture_resources"></span><span id="TEXTURE_RESOURCES"></span><span id="texture-resources"></span>Ressources de texture
 
 
-Une ressource de texture est un ensemble de données structuré conçu pour stocker des texels. Contrairement aux tampons, les textures peuvent être filtrées par échantillons de textures, car elles sont lues par des unités de nuanceur. Le type de texture a une incidence sur la façon dont la texture est filtrée. Un texel représente la plus petite unité de texture pouvant être lue ou écrite par le pipeline. Chaque texel contient 1 à 4 composants, organisés dans un des formats DXGI (consultez [ **DXGI\_FORMAT**](https://docs.microsoft.com/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format)).
+Une ressource de texture est un ensemble de données structuré conçu pour stocker des texels. Contrairement aux tampons, les textures peuvent être filtrées par échantillons de textures, car elles sont lues par des unités de nuanceur. Le type de texture a une incidence sur la façon dont la texture est filtrée. Un texel représente la plus petite unité de texture pouvant être lue ou écrite par le pipeline. Chaque Texel contient 1 à 4 composants, organisés dans l’un des formats DXGI (voir [**DXGI\_format**](https://docs.microsoft.com/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format)).
 
 Les textures sont créés en tant que ressource structurée, ce qui permet de connaître leur taille. Chaque texture peut toutefois être typée ou non typée au moment de la création de la ressource, dès lors que le type est intégralement spécifié à l’aide d’une vue lorsque la texture est liée au pipeline.
 
 -   [Types de texture](#texture-types)
 -   [Sous-ressources](#subresources)
--   [Vs forts. Typage faible](#typed)
+-   [Typage fort et typage faible](#typed)
 
-### <a name="span-idtexturetypesspanspan-idtexturetypesspanspan-idtexturetypesspanspan-idtexture-typesspantexture-types"></a><span id="Texture_Types"></span><span id="texture_types"></span><span id="TEXTURE_TYPES"></span><span id="texture-types"></span>Types de texture
+### <a name="span-idtexture_typesspanspan-idtexture_typesspanspan-idtexture_typesspanspan-idtexture-typesspantexture-types"></a><span id="Texture_Types"></span><span id="texture_types"></span><span id="TEXTURE_TYPES"></span><span id="texture-types"></span>Types de texture
 
-Il existe plusieurs types de textures : 1D, 2D, 3D, chacun d'entre eux peut être créé avec ou sans les mipmaps. Direct3D prend également en charge les tableaux de textures et les textures échantillonnées plusieurs fois.
+Il existe plusieurs types de textures (1D, 2D et 3D), et chacune de ces textures peut être créée avec ou sans mipmaps. Direct3D prend également en charge les tableaux de textures et les textures échantillonnées plusieurs fois.
 
 -   [Texture 1D](#texture1d-resource)
 -   [Tableau de textures 1D](#texture1d-array-resource)
--   [Texture 2D et tableau de textures 2D](#texture2d-resource)
+-   [Texture 2D et tableau de texture 2D](#texture2d-resource)
 -   [Texture 3D](#texture3d-resource)
 
-### <a name="span-idtexture1dresourcespanspan-idtexture1dresourcespanspan-idtexture1dresourcespanspan-idtexture1d-resourcespan1d-texture"></a><span id="Texture1D_Resource"></span><span id="texture1d_resource"></span><span id="TEXTURE1D_RESOURCE"></span><span id="texture1d-resource"></span>Texture 1D
+### <a name="span-idtexture1d_resourcespanspan-idtexture1d_resourcespanspan-idtexture1d_resourcespanspan-idtexture1d-resourcespan1d-texture"></a><span id="Texture1D_Resource"></span><span id="texture1d_resource"></span><span id="TEXTURE1D_RESOURCE"></span><span id="texture1d-resource"></span>Texture 1D
 
 Dans sa forme la plus simple, une texture 1D contient des données de texture qui peuvent être traitées par une coordonnée de texture unique ; elle peut être affichée sous la forme d’un tableau de texels, comme illustré ci-dessous.
 
@@ -144,7 +144,7 @@ Chaque texel contient un certain nombre de composants colorimétriques, en fonct
 
 Un niveau de mipmap est une texture deux fois plus petite que le niveau immédiatement supérieur. Le niveau le plus élevé est celui qui contient plus d’informations, et chaque niveau suivant est plus petit ; pour un mipmap 1D, le plus petit niveau contient un texel. Les différents niveaux sont identifiés au moyen d’un index appelé niveau de détail (LOD, Level-of-Detail) ; vous pouvez utiliser l’index LOD pour accéder à une texture plus petite lors du processus de rendu d’une géométrie qui n’est pas très proche de la caméra.
 
-### <a name="span-idtexture1darrayresourcespanspan-idtexture1darrayresourcespanspan-idtexture1darrayresourcespanspan-idtexture1d-array-resourcespan1d-texture-array"></a><span id="Texture1D_Array_Resource"></span><span id="texture1d_array_resource"></span><span id="TEXTURE1D_ARRAY_RESOURCE"></span><span id="texture1d-array-resource"></span>Tableau de textures 1D
+### <a name="span-idtexture1d_array_resourcespanspan-idtexture1d_array_resourcespanspan-idtexture1d_array_resourcespanspan-idtexture1d-array-resourcespan1d-texture-array"></a><span id="Texture1D_Array_Resource"></span><span id="texture1d_array_resource"></span><span id="TEXTURE1D_ARRAY_RESOURCE"></span><span id="texture1d-array-resource"></span>Tableau de textures 1D
 
 Le logiciel Direct3D 10 offre également une nouvelle structure de données destinée aux tableaux de textures. D’un point de vue conceptuel, un tableau de textures 1D ressemble à l’illustration suivante.
 
@@ -154,7 +154,7 @@ Ce tableau de textures contient trois textures. Chacune des trois textures prés
 
 Dans Direct3D, tous les tableaux de textures sont homogènes ; cela signifie que chaque texture contenue dans un tableau de textures doit avoir le même format de données et la même taille (notamment au niveau de la largeur et du nombre de niveaux de mipmap). Vous pouvez créer des tableaux de textures de différentes tailles, dès lors que toutes les textures contenues dans chaque tableau sont de la même taille.
 
-### <a name="span-idtexture2dresourcespanspan-idtexture2dresourcespanspan-idtexture2dresourcespanspan-idtexture2d-resourcespan2d-texture-and-2d-texture-array"></a><span id="Texture2D_Resource"></span><span id="texture2d_resource"></span><span id="TEXTURE2D_RESOURCE"></span><span id="texture2d-resource"></span>Texture 2D et tableau de textures 2D
+### <a name="span-idtexture2d_resourcespanspan-idtexture2d_resourcespanspan-idtexture2d_resourcespanspan-idtexture2d-resourcespan2d-texture-and-2d-texture-array"></a><span id="Texture2D_Resource"></span><span id="texture2d_resource"></span><span id="TEXTURE2D_RESOURCE"></span><span id="texture2d-resource"></span>Texture 2D et tableau de texture 2D
 
 Une ressource Texture2D contient une grille 2D de texels. Chaque texel est adressable par vecteur u, v. Dans la mesure où il s’agit d’une ressource de texture, il peut contenir des niveaux de mipmap et des sous-ressources. Une ressource de texture 2D entièrement remplie ressemble à l’illustration suivante.
 
@@ -168,7 +168,7 @@ Un tableau de ressources Texture2DArray est un tableau de textures 2D homogène
 
 Ce tableau de textures contient trois textures ; chaque texture est de type 3x5 avec deux niveaux de mipmap.
 
-### <a name="span-idtexture2darrayresourceasatexturecubespanspan-idtexture2darrayresourceasatexturecubespanspan-idtexture2darrayresourceasatexturecubespanusing-a-texture2darray-as-a-texture-cube"></a><span id="Texture2DArray_Resource_as_a_Texture_Cube"></span><span id="texture2darray_resource_as_a_texture_cube"></span><span id="TEXTURE2DARRAY_RESOURCE_AS_A_TEXTURE_CUBE"></span>À l’aide d’un Texture2DArray comme un Cube de Texture
+### <a name="span-idtexture2darray_resource_as_a_texture_cubespanspan-idtexture2darray_resource_as_a_texture_cubespanspan-idtexture2darray_resource_as_a_texture_cubespanusing-a-texture2darray-as-a-texture-cube"></a><span id="Texture2DArray_Resource_as_a_Texture_Cube"></span><span id="texture2darray_resource_as_a_texture_cube"></span><span id="TEXTURE2DARRAY_RESOURCE_AS_A_TEXTURE_CUBE"></span>Utilisation d’un Texture2DArray en tant que cube de texture
 
 Un cube de texture est un tableau de textures 2D qui contient 6 textures, une pour chaque face du cube. Un cube de texture entièrement rempli ressemble à l’illustration suivante.
 
@@ -176,7 +176,7 @@ Un cube de texture est un tableau de textures 2D qui contient 6 textures, une 
 
 Un tableau de textures 2D qui contient 6 textures peut être lu à partir des nuanceurs à l’aide des fonctions intrinsèques de mappage de cube, une fois que ces nuanceurs sont liés au pipeline à l’aide d’une vue de texture de cube. Les cubes de texture sont adressés à partir du nuanceur à l’aide d’un vecteur 3D qui part du centre du cube de texture.
 
-### <a name="span-idtexture3dresourcespanspan-idtexture3dresourcespanspan-idtexture3dresourcespanspan-idtexture3d-resourcespan3d-texture"></a><span id="Texture3D_Resource"></span><span id="texture3d_resource"></span><span id="TEXTURE3D_RESOURCE"></span><span id="texture3d-resource"></span>Texture 3D
+### <a name="span-idtexture3d_resourcespanspan-idtexture3d_resourcespanspan-idtexture3d_resourcespanspan-idtexture3d-resourcespan3d-texture"></a><span id="Texture3D_Resource"></span><span id="texture3d_resource"></span><span id="TEXTURE3D_RESOURCE"></span><span id="texture3d-resource"></span>Texture 3D
 
 Une ressource Texture3D (également appelée texture volumique) contient un volume 3D de texels. Dans la mesure où il s’agit d’une ressource de texture, elle peut contenir des niveaux de mipmap. Une texture 3D entièrement remplie ressemble à l’illustration suivante.
 
@@ -204,31 +204,31 @@ Vous pouvez considérer qu’il s’agit d’une seule texture constituée de tr
 
 ![illustration d’un index de sous-ressource commençant par zéro](images/d3d10-resource-texture1darray-sub-indexing.png)
 
-### <a name="span-idselectingsubresourcesspanspan-idselectingsubresourcesspanspan-idselectingsubresourcesspanselecting-subresources"></a><span id="Selecting_Subresources"></span><span id="selecting_subresources"></span><span id="SELECTING_SUBRESOURCES"></span>En sélectionnant sous-ressources
+### <a name="span-idselecting_subresourcesspanspan-idselecting_subresourcesspanspan-idselecting_subresourcesspanselecting-subresources"></a><span id="Selecting_Subresources"></span><span id="selecting_subresources"></span><span id="SELECTING_SUBRESOURCES"></span>Sélection de sous-ressources
 
 Certaines API accèdent à une ressource entière, d’autres à une partie d’une ressource. Les API qui accèdent à une partie d’une ressource utilisent généralement une description de la vue pour spécifier les sous-ressources auxquelles accéder.
 
 Les figures suivantes illustrent les termes qui sont utilisés par une description de la vue lors de l’accès à un tableau de textures.
 
-### <a name="span-idarrayslicespanspan-idarrayslicespanspan-idarrayslicespanarray-slice"></a><span id="Array_Slice"></span><span id="array_slice"></span><span id="ARRAY_SLICE"></span>Section de tableau
+### <a name="span-idarray_slicespanspan-idarray_slicespanspan-idarray_slicespanarray-slice"></a><span id="Array_Slice"></span><span id="array_slice"></span><span id="ARRAY_SLICE"></span>Tranche de tableau
 
 Si l’on considère un tableau de textures, chaque texture comportant des mipmaps, une section de tableau (représentée par le rectangle blanc) inclut une texture et toutes ses sous-textures, comme illustré ci-dessous.
 
 ![illustration d’une section de tableau](images/d3d10-resource-array-slice.png)
 
-### <a name="span-idmipslicespanspan-idmipslicespanspan-idmipslicespanmip-slice"></a><span id="Mip_Slice"></span><span id="mip_slice"></span><span id="MIP_SLICE"></span>Section MIP
+### <a name="span-idmip_slicespanspan-idmip_slicespanspan-idmip_slicespanmip-slice"></a><span id="Mip_Slice"></span><span id="mip_slice"></span><span id="MIP_SLICE"></span>Tranche MIP
 
 Une section de mip (représentée par le rectangle blanc) inclut un niveau de mipmap pour chacune des textures contenues dans un tableau, comme illustré ci-dessous.
 
 ![illustration d’une section de mip](images/d3d10-resource-mip-slice.png)
 
-### <a name="span-idselectingasinglesubresourcespanspan-idselectingasinglesubresourcespanspan-idselectingasinglesubresourcespanselecting-a-single-subresource"></a><span id="Selecting_a_Single_Subresource"></span><span id="selecting_a_single_subresource"></span><span id="SELECTING_A_SINGLE_SUBRESOURCE"></span>En sélectionnant un Subresource unique
+### <a name="span-idselecting_a_single_subresourcespanspan-idselecting_a_single_subresourcespanspan-idselecting_a_single_subresourcespanselecting-a-single-subresource"></a><span id="Selecting_a_Single_Subresource"></span><span id="selecting_a_single_subresource"></span><span id="SELECTING_A_SINGLE_SUBRESOURCE"></span>Sélection d’une seule sous-ressource
 
 Vous pouvez utiliser ces deux types de sections pour sélectionner une seule sous-ressource, comme illustré ci-dessous.
 
 ![illustration de la sélection d’une ressource via une section de tableau et une section de mip](images/d3d10-resource-subresources-1.png)
 
-### <a name="span-idselectingmultiplesubresourcesspanspan-idselectingmultiplesubresourcesspanspan-idselectingmultiplesubresourcesspanselecting-multiple-subresources"></a><span id="Selecting_Multiple_Subresources"></span><span id="selecting_multiple_subresources"></span><span id="SELECTING_MULTIPLE_SUBRESOURCES"></span>En sélectionnant plusieurs sous-ressources
+### <a name="span-idselecting_multiple_subresourcesspanspan-idselecting_multiple_subresourcesspanspan-idselecting_multiple_subresourcesspanselecting-multiple-subresources"></a><span id="Selecting_Multiple_Subresources"></span><span id="selecting_multiple_subresources"></span><span id="SELECTING_MULTIPLE_SUBRESOURCES"></span>Sélection de plusieurs sous-ressources
 
 Vous pouvez également utiliser ces deux types de sections avec le nombre de niveaux de mipmap et/ou le nombre de textures pour sélectionner plusieurs sous-ressources.
 
@@ -236,7 +236,7 @@ Vous pouvez également utiliser ces deux types de sections avec le nombre de niv
 
 Quel que soit le type de texture que vous utilisez, avec ou sans mipmaps, avec ou sans tableau de textures, des fonctions d’assistance sont souvent fournies pour calculer l’index d’une sous-ressource spécifique.
 
-### <a name="span-idtypedspanspan-idtypedspanspan-idtypedspanstrong-vs-weak-typing"></a><span id="Typed"></span><span id="typed"></span><span id="TYPED"></span>Vs forts. Typage faible
+### <a name="span-idtypedspanspan-idtypedspanspan-idtypedspanstrong-vs-weak-typing"></a><span id="Typed"></span><span id="typed"></span><span id="TYPED"></span>Typage fort et typage faible
 
 La création d’une ressource entièrement typée restreint la ressource au format dans lequel elle a été créée. Cela permet à l’exécution d’optimiser l’accès, en particulier si la ressource est créée avec des indicateurs montrant qu’elle ne peut pas être mappée par l’application. Les ressources créées avec un type spécifique ne peuvent pas être réinterprétées à l’aide du mécanisme de vue.
 
