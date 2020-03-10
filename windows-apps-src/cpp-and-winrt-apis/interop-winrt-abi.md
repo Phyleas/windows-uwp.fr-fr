@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, port, migrer, interopérabilité, ABI
 ms.localizationpriority: medium
 ms.openlocfilehash: 91602c75cdaddc325407529ab4d231db46ecca39
-ms.sourcegitcommit: 412bf5bb90e1167d118699fbf71d0e6864ae79bd
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72586717"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853266"
 ---
 # <a name="interop-between-cwinrt-and-the-abi"></a>Interopérabilité entre C++/WinRT et ABI
 
@@ -306,9 +306,9 @@ static_assert(std::is_same_v<winrt::default_interface<winrt::Sample>, winrt::ISa
 
 | Opération | Comment procéder | Remarques |
 |-|-|-|
-| Extraire **ISample\***  de **winrt::Sample** | `p = reinterpret_cast<ISample*>(get_abi(s));` | *s* est toujours propriétaire de l’objet. |
-| Détacher **ISample\***  de **winrt::Sample** | `p = reinterpret_cast<ISample*>(detach_abi(s));` | *s* n’est plus propriétaire de l’objet. |
-| Transférer **ISample\***  vers un nouveau **winrt::Sample** | `winrt::Sample s{ p, winrt::take_ownership_from_abi };` | *s* prend la propriété de l’objet. |
+| Extraire **ISample\*** de **winrt::Sample** | `p = reinterpret_cast<ISample*>(get_abi(s));` | *s* est toujours propriétaire de l’objet. |
+| Détacher **ISample\*** de **winrt::Sample** | `p = reinterpret_cast<ISample*>(detach_abi(s));` | *s* n’est plus propriétaire de l’objet. |
+| Transférer **ISample\*** vers un nouveau **winrt::Sample** | `winrt::Sample s{ p, winrt::take_ownership_from_abi };` | *s* prend la propriété de l’objet. |
 | Définir **ISample\*** dans **winrt::Sample** | `*put_abi(s) = p;` | *s* prend la propriété de l’objet. Tout objet précédemment propriété de *s* subit une fuite (déclaration dans le débogage). |
 | Recevoir **ISample\*** dans **winrt::Sample** | `GetSample(reinterpret_cast<ISample**>(put_abi(s)));` | *s* prend la propriété de l’objet. Tout objet précédemment propriété de *s* subit une fuite (déclaration dans le débogage). |
 | Remplacer **ISample\*** dans **winrt::Sample** | `attach_abi(s, p);` | *s* prend la propriété de l’objet. L’objet précédemment propriété de *s* est libéré. |
