@@ -5,12 +5,12 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: Windows 10, uwp, étendre, agencer, service d’application, package, extension
 ms.localizationpriority: medium
-ms.openlocfilehash: d9a98ef8e0ec53668277face05d83c08f6421cb7
-ms.sourcegitcommit: c7e10793cbef55ace959ac8fc6ddd08e683602bd
+ms.openlocfilehash: a2d12fbf1c45c05c2e9917c77c0d15f15bccaf72
+ms.sourcegitcommit: 756217c559155e172087dee4d762d328c6529db6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73329508"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78935343"
 ---
 # <a name="extend-your-app-with-services-extensions-and-packages"></a>Étendre votre application avec des services, des extensions et des packages
 
@@ -78,7 +78,7 @@ Les packages de ressource sont des packages composés uniquement de ressources. 
 Les packages facultatifs sont utilisés pour compléter ou étendre la fonctionnalité initiale d’un package d’application. Il est possible de publier une application et de publier ultérieurement des packages facultatifs, ou de publier l’application et les packages facultatifs simultanément. En étendant votre application via un package facultatif, vous bénéficiez des avantages qu’offrent la distribution et la monétisation de contenu sous forme de package d’application distinct. Les packages facultatifs sont généralement destinés à être développés par le développeur d’origine de l’application, dans la mesure où ils s’exécutent avec l’identité de l’application principale (contrairement aux extensions d’application). En fonction de la façon dont vous définissez votre package facultatif, vous pouvez charger du code, des ressources ou du code et des ressources depuis votre package facultatif vers votre application principale. Si vous avez besoin d’améliorer votre application avec du contenu qui peut être monétisé, concédé sous licence et distribué séparément, les packages facultatifs peuvent être le bon choix pour vous. Pour en savoir plus sur l’implémentation, voir [Packages facultatifs et création d’ensembles connexes](/windows/msix/package/optional-packages).
 
 **Ensemble plat**
-Les [Packages d'application d'ensemble plat](/windows/msix/package/flat-bundles.md) ressemblent à des ensembles d’applications normaux, sauf qu’au lieu d’inclure tous les packages d’application dans le dossier, l'ensemble plat contient uniquement des *références* à ces packages d'application. Comme l'ensemble plat contient des références aux packages d’application au lieu des fichiers eux-mêmes, il permet de réduire le temps nécessaire pour créer un package d'application et télécharger celle-ci.
+Les [Packages d'application d'ensemble plat](/windows/msix/package/flat-bundles) ressemblent à des ensembles d’applications normaux, sauf qu’au lieu d’inclure tous les packages d’application dans le dossier, l'ensemble plat contient uniquement des *références* à ces packages d'application. Comme l'ensemble plat contient des références aux packages d’application au lieu des fichiers eux-mêmes, il permet de réduire le temps nécessaire pour créer un package d'application et télécharger celle-ci.
 
 **Extension d’application**
 
@@ -92,7 +92,7 @@ Les applications sont incapables de charger du code depuis les extensions. Si vo
 
 Les services d’application Windows activent la communication entre applications en permettant à votre application UWP de fournir des services à une autre application Windows universelle. Les services d’application vous permettent de créer des services sans interface utilisateur, que les applications peuvent appeler sur le même appareil et, à partir de Windows 10 version 1607, sur des appareils distants. Voir [Créer et utiliser un service d’application](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service) pour plus d’informations.
 
-Les services d’application sont des applications UWP qui fournissent des services à d’autres applications UWP. Ils sont analogues aux services Web sur un appareil. Un service d’application s’exécute sous forme de tâche en arrière-plan dans l’application hôte et peut fournir son service à d’autres applications. Un service d’application peut par exemple fournir un service de scanneur de code-barres que d’autres applications peuvent utiliser. Il peut également s’agir d’une suite d’applications d’entreprise partageant un service d’application de vérification orthographique, accessible aux autres applications de la suite.
+Les services d’application sont des applications UWP qui fournissent des services à d’autres applications UWP. Ils sont analogues aux services Web sur un appareil. Un service d’application s’exécute sous forme de tâche en arrière-plan dans l’application hôte et peut fournir son service à d’autres applications. Par exemple, un service d’application peut fournir un service de scanneur de code-barres que d’autres applications peuvent utiliser. Il peut également s’agir d’une suite d’applications d’entreprise partageant un service d’application de vérification orthographique, accessible aux autres applications de la suite.
 
 **Installation de la diffusion en continu d’applications UWP**
 
