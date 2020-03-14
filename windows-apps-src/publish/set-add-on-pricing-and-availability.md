@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, extensions, iap, prix
 ms.localizationpriority: medium
-ms.openlocfilehash: c6384b5890466ff13c72a1b90eb9b27194d51fff
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
-ms.translationtype: HT
+ms.openlocfilehash: 803164c395602313bcb84331e30376efd6832731
+ms.sourcegitcommit: 912146681b1befc43e6db6e06d1e3317e5987592
+ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/13/2020
-ms.locfileid: "79210995"
+ms.locfileid: "79295722"
 ---
 # <a name="set-add-on-pricing-and-availability"></a>Définir le prix et la disponibilité d’un module complémentaire
 
@@ -37,7 +37,7 @@ Pour les extensions que vous ne voulez pas mettre à la disposition générale, 
 -   **Empêcher l’acquisition : tout client disposant d’un lien direct peut voir la description du produit dans le Windows Store, mais ne peut le télécharger que s’il possède déjà le produit ou qu’il dispose d’un code promotionnel et utilise un appareil Windows 10. This add-on is not displayed in the parent product’s listing** : cette option signifie que l’extension ne s’affiche pas dans la description de votre application, et qu’aucun nouveau client ne peut acheter cette extension. Toutefois, **cette option n’est pas prise en charge pour les clients sur Windows 8.1 ou version antérieure**. Si votre application précédemment publiée est disponible sur Windows 8.1 ou une version antérieure, le module complémentaire sera toujours disponible pour achat à ces clients. Pour cesser d’offrir le module complémentaire aux clients sur Windows 8.1 ou version antérieure, vous devez mettre à jour votre application pour supprimer le code qui propose le module complémentaire, puis publier une nouvelle soumission pour l’application. Cela est recommandé même si votre application ne cible pas Windows 8.1 ou une version antérieure ; Il s’agit d’une meilleure expérience pour vos clients si vous ne leur offrez pas de module complémentaire que vous avez choisi de rendre indisponible.
     
  > [!NOTE] 
- > Le choix de l’option **Empêcher l’acquisition** et/ou la soumission d’une mise à jour d’application supprimant l’extension du code de votre application n’ont pas d’incidence sur les clients qui ont déjà acheté cette extension, quel que soit le système d’exploitation qu’ils utilisent.
+ > Le choix de l’option **arrêter l’acquisition** et/ou de l’envoi d’une mise à jour d’application qui supprime le module complémentaire de votre application n’empêchera pas les clients d’utiliser le module complémentaire s’ils l’ont déjà acheté. Les abonnements existants ne pourront pas être renouvelés et seront ensuite annulés après la fin du terme actuel.
 
 
 ## <a name="schedule"></a>Schedule
