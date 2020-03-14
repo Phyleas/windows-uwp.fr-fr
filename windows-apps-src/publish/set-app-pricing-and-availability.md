@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, prix, disponible, détectable, version d’évaluation gratuite, versions d’évaluation, applications, date de publication
 ms.localizationpriority: medium
 ms.openlocfilehash: 715e4c677b3b3e62b9ff515396d3582c3fd99184
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63788256"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210555"
 ---
 # <a name="set-app-pricing-and-availability"></a>Définir la tarification et la disponibilité d’une application
 
@@ -33,7 +33,7 @@ La section **Visibilité** vous permet de définir des restrictions relatives au
 Pour plus d’informations, voir [Choisir les options de visibilité](choose-visibility-options.md).
 
 
-## <a name="schedule"></a>Planification
+## <a name="schedule"></a>Schedule
 
 Par défaut (sauf si vous avez sélectionné l’une des options **Rendre votre application disponible mais non détectable dans le Store** dans la section [Visibilité](choose-visibility-options.md#discoverability)), votre application sera disponible pour les clients dès qu’elle aura obtenu la certification et terminé le processus de publication. Pour choisir d’autres dates, sélectionnez **Afficher les options** pour développer cette section. 
 
@@ -55,9 +55,9 @@ Vous pouvez choisir parmi deux types de version d’essai et vous avez la possib
 
 ### <a name="time-limited"></a>Durée limitée
 
-Choisissez **durée limitée** pour autoriser les clients de tester votre application gratuitement pendant un certain nombre de jours : **1 jour**, **7 jours**, **15 jours**, ou **30 jours**. Vous pouvez limiter les fonctionnalités en ajoutant du code pour [exclure ou limiter des fonctionnalités de la version d’essai](../monetize/in-app-purchases-and-trials.md)ou vous pouvez donner accès à toutes les fonctionnalités pendant cette durée. 
+Choisissez **Durée limitée** pour permettre aux clients d’essayer votre application gratuitement pendant un certain nombre de jours : **1 jour**, **7 jours**, **15 jours** ou **30 jours**. Vous pouvez limiter les fonctionnalités en ajoutant du code pour [exclure ou limiter des fonctionnalités de la version d’essai](../monetize/in-app-purchases-and-trials.md)ou vous pouvez donner accès à toutes les fonctionnalités pendant cette durée. 
 > [!NOTE]
-> Versions d’évaluation limitée dans le temps ne sont pas affichées pour les clients sur Windows 10 build 10.0.10586 ou antérieure, ou aux clients sur Windows Phone 8.1 et versions antérieures.
+> les essais limités dans le temps ne sont pas affichés aux clients sur Windows 10 Build 10.0.10586 ou version antérieure, ou à des clients sur Windows Phone 8,1 et versions antérieures.
 
 ### <a name="unlimited"></a>Illimité
 
@@ -70,7 +70,7 @@ Par défaut, votre version d’essai sera disponible dès que votre application 
 >[!NOTE]
 > Ces dates ne s’appliquent qu’aux clients sous Windows 10 (y compris Xbox). Si votre application est disponible pour les clients utilisant des versions antérieures du système d’exploitation, la version d'essai sera proposée à ces clients aussi longtemps que votre produit sera disponible. 
 
-Pour définir les dates auxquelles votre version d’essai doit être proposée aux clients sous Windows 10, changez les paramètres **Commence le** et/ou **Se termine le** sur la liste déroulante en **au**, puis choisissez la date et l’heure. Si vous procédez ainsi, vous pouvez choisir **UTC**, afin que l’heure que vous sélectionnez s'exprime en temps universel coordonné (UTC), ou **Local**, afin que ces dates soient utilisées dans chaque fuseau horaire associé à un marché. (Notez que pour les marchés qui incluent plusieurs fuseaux horaires, seul un fuseau horaire sur ce marché sera utilisé. Pour les États-Unis, le fuseau horaire utilisé est celui de l'Est.) Vous pouvez sélectionner **personnaliser pour des marchés spécifiques** si vous souhaitez définir des dates différentes pour n’importe quel en cause.
+Pour définir les dates auxquelles votre version d’essai doit être proposée aux clients sous Windows 10, changez les paramètres **Commence le** et/ou **Se termine le** sur la liste déroulante en **au**, puis choisissez la date et l’heure. Si vous procédez ainsi, vous pouvez choisir **UTC**, afin que l’heure que vous sélectionnez s'exprime en temps universel coordonné (UTC), ou **Local**, afin que ces dates soient utilisées dans chaque fuseau horaire associé à un marché. (Notez que pour les marchés qui incluent plusieurs fuseaux horaires, seul un fuseau horaire sur ce marché sera utilisé. Pour le États-Unis, le fuseau horaire est utilisé.) Vous pouvez sélectionner **Personnaliser pour des marchés spécifiques** si vous souhaitez définir des dates différentes pour un ou plusieurs marchés.
 
 
 ## <a name="sale-pricing"></a>Prix de vente

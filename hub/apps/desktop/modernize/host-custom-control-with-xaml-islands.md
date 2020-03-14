@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: b6bd46bcdec639cee2bc867c2c4e71cccbb13cfb
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.openlocfilehash: d881fc42e453e2ace0a44543c3e204aa154958b7
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78852986"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209795"
 ---
 # <a name="host-a-custom-uwp-control-in-a-wpf-app-using-xaml-islands"></a>Héberger un contrôle UWP personnalisé dans une application WPF à l’aide des îlots XAML
 
@@ -29,9 +29,7 @@ Pour héberger un contrôle UWP personnalisé dans une application WPF (ou Windo
 
 * **Contrôle UWP personnalisé**. Vous aurez besoin du code source du contrôle UWP personnalisé que vous souhaitez héberger pour pouvoir le compiler avec votre application. En règle générale, le contrôle personnalisé est défini dans un projet de bibliothèque de classes UWP que vous référencez dans la même solution que votre projet WPF ou Windows Forms.
 
-* **Projet d’application UWP qui définit une classe d’application racine qui dérive de XamlApplication**. Votre projet WPF ou Windows Forms doit avoir accès à une instance de la classe [Microsoft. Toolkit. Win32. UI. XamlHost. XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) fournie par le kit de connaissances de la communauté Windows. Cet objet joue le rôle de fournisseur de métadonnées racine pour le chargement des métadonnées des types XAML UWP personnalisés dans les assemblys du répertoire actif de votre application.
-
-    Pour ce faire, la méthode recommandée consiste à ajouter un projet d' **application vide (Windows universel)** à la même solution que votre projet WPF ou Windows Forms, à modifier la classe de `App` par défaut de ce projet pour dériver de `XamlApplication`, puis à créer une instance de cet objet dans le code de point d’entrée de votre application.
+* **Projet d’application UWP qui définit une classe d’application racine qui dérive de XamlApplication**. Votre projet WPF ou Windows Forms doit avoir accès à une instance de la classe [Microsoft. Toolkit. Win32. UI. XamlHost. XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) fournie par le kit de connaissances de la communauté Windows. Pour ce faire, la méthode recommandée consiste à définir cet objet dans un projet d’application UWP distinct qui fait partie de la solution pour votre application WPF ou Windows Forms. Cet objet joue le rôle de fournisseur de métadonnées racine pour le chargement des métadonnées des types XAML UWP personnalisés dans les assemblys du répertoire actif de votre application.
 
     > [!NOTE]
     > Votre solution ne peut contenir qu’un seul projet qui définit un objet `XamlApplication`. Tous les contrôles UWP personnalisés de votre application partagent le même `XamlApplication` objet. Le projet qui définit l’objet `XamlApplication` doit inclure des références à toutes les autres bibliothèques et projets UWP utilisés pour héberger des contrôles UWP sur l’îlot XAML.
@@ -69,7 +67,7 @@ Avant de commencer, suivez ces instructions pour créer un projet WPF et le conf
 
 ## <a name="define-a-xamlapplication-class-in-a-uwp-app-project"></a>Définir une classe XamlApplication dans un projet d’application UWP
 
-Ensuite, ajoutez un projet d’application UWP à la même solution que votre projet WPF. Vous allez modifier la classe de `App` par défaut de ce projet pour qu’elle dérive de la classe [Microsoft. Toolkit. Win32. UI. XamlHost. XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) fournie par le kit de connaissances de la communauté Windows. Pour plus d’informations sur l’objectif de cette classe, consultez [cette section](#required-components).
+Ensuite, ajoutez un projet d’application UWP à votre solution et révisez la classe de `App` par défaut de ce projet pour qu’elle dérive de la classe [Microsoft. Toolkit. Win32. UI. XamlHost. XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) fournie par la communauté Windows Toolkit. Votre application utilisera cette classe comme fournisseur de métadonnées racine pour charger les métadonnées des types XAML UWP personnalisés dans les assemblys du répertoire actif de votre application.
 
 1. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le nœud de la solution et sélectionnez **Ajouter** -> **nouveau projet**.
 2. Ajoutez un projet **Application vide (Windows universelle)** à votre solution. Assurez-vous que la version cible et la version minimale sont toutes deux définies sur **Windows 10, version 1903** ou ultérieure.
@@ -107,7 +105,7 @@ Ensuite, ajoutez un projet d’application UWP à la même solution que votre pr
 
 ## <a name="instantiate-the-xamlapplication-object-in-the-entry-point-of-your-wpf-app"></a>Instancier l’objet XamlApplication dans le point d’entrée de votre application WPF
 
-Ensuite, ajoutez du code au point d’entrée de votre application WPF pour créer une instance de la classe `App` que vous venez de définir dans le projet UWP (il s’agit de la classe qui dérive maintenant de `XamlApplication`). Pour plus d’informations sur l’objectif de cet objet, consultez [cette section](#required-components).
+Ensuite, ajoutez du code au point d’entrée de votre application WPF pour créer une instance de la classe `App` que vous venez de définir dans le projet UWP (il s’agit de la classe qui dérive maintenant de `XamlApplication`). Cet objet joue le rôle de fournisseur de métadonnées racine pour le chargement des métadonnées des types XAML UWP personnalisés dans les assemblys du répertoire actif de votre application.
 
 1. Dans votre projet WPF, cliquez avec le bouton droit sur le nœud du projet, sélectionnez **ajouter** -> **nouvel élément**, puis sélectionnez **classe**. Nommez le **programme** de classe, puis cliquez sur **Ajouter**.
 

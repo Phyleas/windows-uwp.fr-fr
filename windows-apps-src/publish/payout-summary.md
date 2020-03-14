@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, résumé du paiement, instruction, paiements, bénéfices, revenus, paiement
 ms.localizationpriority: medium
 ms.openlocfilehash: f4d8727a48cd68b304d515fe34082b4c4f632b4b
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78853456"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210525"
 ---
 # <a name="payout-reports"></a>Rapports de paiement
 
@@ -44,7 +44,7 @@ Pour exporter les données de transaction sur cette page, utilisez la page **exp
 
 Les totaux de cette page représentent tous les programmes auxquels vous participez. Vous pouvez filtrer par ID participant, programme, ID paiement et type acquis. Les montants sont indiqués en dollars américains. La valeur payante est également affichée dans payer à la devise.
 
-| Zone                   | Description                                                                                  |
+| Domaine                   | Description                                                                                  |
 |------------------------|----------------------------------------------------------------------------------------------|
 | Total payé cette année   | Le total cumulé payé pour vous cette année, en dollars américains, pour tous vos programmes.       |
 | Prochain paiement estimé | Seul le paiement suivant vous vient (même s’il y en a d’autres bientôt disponibles), en dollars américains. |

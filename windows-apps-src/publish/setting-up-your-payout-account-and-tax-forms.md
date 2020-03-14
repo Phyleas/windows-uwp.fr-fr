@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ac23c926e0d7b517fe18321980fc322d7be5b064
-ms.sourcegitcommit: ff086bae50e61a351b8c53867ed6579e43d8cf1f
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76294828"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210445"
 ---
 # <a name="set-up-your-payout-account-and-tax-forms"></a>Configurer votre compte de revenu et vos déclarations fiscales
 
@@ -148,7 +148,7 @@ Vous pouvez modifier les profils de paiement existants si vous devez apporter de
 
 ### <a name="paypal-info"></a>Informations PayPal
 
-Selon votre pays ou votre région, vous avez la possibilité de créer un compte de paiement en saisissant vos informations PayPal. Toutefois, avant de choisir PayPal comme option de compte de paiement, vérifiez les points suivants :
+Selon votre pays ou votre région, vous avez la possibilité de créer un compte de paiement en saisissant vos informations PayPal. Avant de choisir PayPal comme option de compte de paiement, vérifiez les points suivants :
 
 - Vérifiez les [seuils de paiement, les méthodes et les délais](payment-thresholds-methods-and-timeframes.md) pour confirmer si PayPal est un mode de paiement pris en charge dans votre pays ou région.
 - Consultez les FAQ ci-après. En fonction de votre situation, il se peut que PayPal ne soit pas l'option idéale pour votre compte de paiement et qu'un compte bancaire soit mieux adapté.

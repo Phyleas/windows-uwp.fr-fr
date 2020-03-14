@@ -3,14 +3,14 @@ Description: Utilisez les panneaux de disposition pour organiser et regrouper de
 title: Panneaux de disposition des applications de plateforme Windows universelle (UWP)
 ms.date: 04/02/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9322ba847aeb7eb64c2654e1105582478a0d3b47
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340124"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210205"
 ---
 # <a name="layout-panels"></a>Panneaux de disposition
 
@@ -182,7 +182,7 @@ Dans cet exemple, le dimensionnement fonctionne comme suit.
 
 Vous pouvez répartir l’espace au sein d’une colonne ou d’une ligne en utilisant le redimensionnement **Auto** ou proportionnel. Le dimensionnement automatique permet de redimensionner les éléments d’interface pour qu’ils s’adaptent à leur contenu ou à leur conteneur parent. Vous pouvez également utiliser le dimensionnement automatique avec les lignes et les colonnes d’une grille. Pour utiliser le dimensionnement automatique, définissez la propriété Height et/ou Width des éléments d’interface utilisateur sur **Auto**.
 
-Le *dimensionnement proportionnel* sert à répartir l’espace disponible entre les lignes et les colonnes d’une grille par proportions pondérées. En XAML, les valeurs en étoile sont \* exprimées sous la forme (ou *n* \* pour le dimensionnement en étoile pondérée). Par exemple, pour spécifier qu’une colonne est 5 fois plus large que la deuxième colonne dans une disposition à 2 colonnes, utilisez « 5\*» et «\*» pour les propriétés [**Width**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.columndefinition.width) dans les éléments [**ColumnDefinition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ColumnDefinition) .
+Le *dimensionnement proportionnel* sert à répartir l’espace disponible entre les lignes et les colonnes d’une grille par proportions pondérées. En XAML, les valeurs en étoile sont exprimées en tant que \* (ou *n*\* pour le dimensionnement en étoile pondérée). Par exemple, pour spécifier qu’une colonne est 5 fois plus large que la deuxième colonne dans une disposition à 2 colonnes, utilisez « 5\*» et «\*» pour les propriétés [**Width**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.columndefinition.width) dans les éléments [**ColumnDefinition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ColumnDefinition) .
 
 Cet exemple combine le dimensionnement fixe, automatique et proportionnel dans un élément [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) avec 4 colonnes.
 
@@ -243,7 +243,7 @@ Le résultat se présente ainsi :
 
 Dans cet exemple, le nombre maximal de lignes dans chaque colonne est 3. La première colonne contient seulement 2 éléments (les rectangles rouge et bleu), car le rectangle bleu s'étend sur 2 lignes. Le rectangle vert s’étend ensuite jusqu’en haut de la colonne suivante.
 
-## <a name="canvas"></a>Canevas
+## <a name="canvas"></a>Canvas
 
 Le panneau [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) positionne ses éléments enfants à l’aide de points de coordonnées fixes et ne prend pas en charge les dispositions fluides. Vous spécifiez les points des éléments enfants individuels en définissant les propriétés jointes [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left) et [**Canvas.Top**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.top) de chaque élément. L’élément Canvas parent lit les valeurs des propriétés jointes de ses enfants pendant la transmission de disposition [Arrange](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange).
 
@@ -264,7 +264,7 @@ Voici un exemple d’élément Canvas en XAML.
 
 Le résultat se présente ainsi :
 
-![Canevas](images/layout-panel-canvas.png)
+![Canvas](images/layout-panel-canvas.png)
 
 Utilisez le panneau Canvas en fonction de vos besoins. Bien qu’il soit pratique de pouvoir contrôler précisément les positions des éléments de l’interface utilisateur dans certains scénarios, un panneau de disposition positionné de manière fixe rend cette zone de l’interface utilisateur moins adaptable à l’ensemble des modifications de taille de fenêtre de l’application. Le redimensionnement des fenêtres d’application peut être dû au changement d’orientation de l’appareil, au fractionnement des fenêtres d’application, au changement de moniteur, ainsi qu’à plusieurs autres scénarios utilisateur.
 
@@ -274,4 +274,4 @@ Il existe plusieurs panneaux à usage spécifique qui peuvent être utilisés un
 
 ## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
 
-- [Exemple de Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) : tous les contrôles XAML dans un format interactif.
+- [Exemple de galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) : affichez tous les contrôles XAML dans un format interactif.

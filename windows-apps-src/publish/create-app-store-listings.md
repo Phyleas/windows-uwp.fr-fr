@@ -1,5 +1,5 @@
 ---
-Description: La section annonces Store le processus de soumission d’application est dans laquelle vous permet de fournir le texte et des images pour les clients qui seront affiche que lorsque vous affichez votre application de liste dans le Microsoft Store.
+Description: La section répertorier les listes du processus d’envoi de l’application vous permet de fournir le texte et les images que les clients verront lors de l’affichage de la liste de votre application dans la Microsoft Store.
 title: Créer des annonces d’application dans le Windows Store
 ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
 ms.date: 03/13/2019
@@ -7,22 +7,22 @@ ms.topic: article
 keywords: windows 10, uwp, description, page du store, notes de publication, titre
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e9c7f56dd799b568e12a887355ec19561f207ea
-ms.sourcegitcommit: 35a511c2b29ae3d5008612a5fc13d3eb6370d2d0
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67495726"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210375"
 ---
 # <a name="create-app-store-listings"></a>Créer des annonces d’application dans le Windows Store
 
 La section **Descriptions dans le Store** du [processus de soumission d’application](app-submissions.md) vous permet de définir le texte et les [images](app-screenshots-and-images.md) qui seront visibles par les clients dans la description de votre application dans le Microsoft Store.
 
-Bien que la plupart des champs d’une **Description dans le Windows Store** soient facultatifs, nous vous conseillons de fournir plusieurs images et autant d’informations que possible afin de mettre en valeur le contenu. Dans la page **Descriptions dans le Windows Store**, vous devez impérativement renseigner une description textuelle et au moins une [capture d’écran](app-screenshots-and-images.md#screenshots).
+Un grand nombre des champs d'une **Description dans le Store** sont facultatifs, mais nous vous conseillons de fournir plusieurs images et autant d’informations que possible afin que votre description soit attrayante. La condition minimale requise pour que l'étape **Description dans le Store** puisse être considérée comme terminée est une description textuelle et au moins une [capture d’écran](app-screenshots-and-images.md#screenshots).
 
 > [!TIP]
-> Vous pouvez éventuellement [importer et exporter des listes de Store](import-and-export-store-listings.md) si vous préférez à entrer vos informations d’annonce hors connexion dans un fichier .csv, plutôt que fournissant des informations et le téléchargement des fichiers directement dans l’espace partenaires. L’option d’importation et d’exportation peut être particulièrement pratique si vous avez des descriptions dans de nombreuses langues, dans la mesure où elle vous permet d’effectuer plusieurs mises à jour à la fois.
+> Vous pouvez éventuellement [Importer et exporter des listes de magasins](import-and-export-store-listings.md) si vous préférez saisir vos informations de référencement en mode hors connexion dans un fichier. csv, plutôt que de fournir des informations et de charger des fichiers directement dans l’espace partenaires. L’option d’importation et d’exportation peut être particulièrement pratique si vous avez des descriptions dans de nombreuses langues, dans la mesure où elle vous permet d’effectuer plusieurs mises à jour à la fois.
 
-Si votre application publiée précédemment prend en charge Windows 8.x et/ou Windows Phone 8.x ou version antérieure, vous pouvez [créer des listes de Store spécifique à la plateforme](create-platform-specific-store-listings.md) pour montrer aux clients.
+Si votre application précédemment publiée prend en charge Windows 8. x et/ou Windows Phone 8. x ou une version antérieure, vous pouvez [créer des listes de magasins spécifiques](create-platform-specific-store-listings.md) à la plateforme à afficher à ces clients.
 
 ## <a name="store-listing-languages"></a>Langues des descriptions dans le Windows Store
 
@@ -37,22 +37,22 @@ Dans la section **Langues supplémentaires de description dans le Windows Store*
 
 Lorsque vous avez terminé vos sélections, cliquez sur **Enregistrer** pour revenir à la page de présentation de la soumission.
 
-## <a name="add-and-edit-store-listing-info"></a>Ajouter et modifier le Store d’informations sur l’annonce
+## <a name="add-and-edit-store-listing-info"></a>Ajouter et modifier les informations de la liste des boutiques
 
-Pour modifier un Store listing, sélectionnez le nom de la langue à partir de la page Vue d’ensemble d’envoi. Vous devez modifier chaque langue séparément, sauf si vous choisissez d’exporter vos annonces Store et travailler hors connexion, puis importer toutes les données de liste à la fois. Pour plus d’informations sur son fonctionnement, consultez [importer et exporter des listes de Store](import-and-export-store-listings.md).
+Pour modifier un listing de la boutique, sélectionnez le nom de la langue dans la page vue d’ensemble de la soumission. Vous devez modifier chaque langue séparément, sauf si vous choisissez d’exporter les listes du Store et de travailler hors connexion, puis d’importer toutes les données de la liste en même temps. Pour plus d’informations sur la façon dont cela fonctionne, consultez [Importer et exporter des listes de magasins](import-and-export-store-listings.md).
 
-Les champs disponibles sont décrites ci-dessous.
+Les champs disponibles sont décrits ci-dessous.
 
 ## <a name="product-name"></a>Nom du produit
 
-Cette zone de liste déroulante vous permet de spécifier le nom doit être utilisé dans la liste de Store (si vous avez réservé plus d’un nom pour l’application).
+Cette zone de liste déroulante vous permet de spécifier le nom à utiliser dans la liste des magasins (si vous avez réservé plus d’un nom pour l’application).
 
-Si vous avez chargé des packages dans la même langue que le Store listing vous travaillez actuellement, le nom utilisé dans ces packages est sélectionné. Si vous avez besoin pour [renommer l’application](manage-app-names.md#rename-an-app-that-has-already-been-published) après elle est déjà publiée, vous pouvez sélectionner un autre nom réservé lorsque vous créez une nouvelle soumission, une fois que vous avez téléchargé les packages qui utilisent le nouveau nom.
+Si vous avez téléchargé des packages dans la même langue que la liste des boutiques sur laquelle vous travaillez, le nom utilisé dans ces packages est sélectionné. Si vous devez [Renommer l’application](manage-app-names.md#rename-an-app-that-has-already-been-published) une fois qu’elle a déjà été publiée, vous pouvez sélectionner un autre nom réservé ici lorsque vous créez une soumission, après avoir téléchargé des packages qui utilisent le nouveau nom.
 
-Si vous n’avez pas chargé des packages pour le langage en cours et vous avez réservés plusieurs noms, vous devez sélectionner l’un de vos noms d’applications réservés, dans la mesure où il n’est pas un package associé dans cette langue à partir duquel extraire le nom.
+Si vous n’avez pas téléchargé de packages pour la langue sur laquelle vous travaillez et que vous avez réservé plusieurs noms, vous devez sélectionner l’un de vos noms d’applications réservés, car il n’existe aucun package associé dans cette langue à partir duquel extraire le nom.
 
 > [!NOTE]
-> Le **Product name** vous sélectionnez s’applique uniquement à la liste de Store dans le langage dans lequel vous travaillez. Cela n’affecte pas le nom affiché quand un client installe l’application ; Ce nom est fourni à partir du manifeste du package qui est installé. Pour éviter toute confusion, nous recommandons que du chaque langue package (s) et la liste de Store utilisent le même nom.
+> Le **nom de produit** que vous sélectionnez s’applique uniquement à la liste des boutiques dans la langue dans laquelle vous travaillez. Elle n’a pas d’impact sur le nom affiché lorsqu’un client installe l’application ; ce nom provient du manifeste du package qui est installé. Pour éviter toute confusion, nous vous recommandons de faire en sorte que les packages et les listes des magasins de chaque langue utilisent le même nom.
 
 ## <a name="description"></a>Description
 
@@ -64,14 +64,14 @@ Pour obtenir des conseils sur la rédaction d’une description attrayante, cons
 
 ## <a name="whats-new-in-this-version"></a>Nouveautés de cette version
 
-Si vous soumettez votre application pour la première fois, laissez ce champ vide. Pour une mise à jour à une application existante, il s’agit dans lequel vous pouvez permettre aux clients savoir quelles sont les nouveautés dans la dernière version. Ce champ est limité à 1 500 caractères. (Ce champ s’appelait auparavant **Notes de publication**).
+Si vous soumettez votre application pour la première fois, laissez ce champ vide. Pour une mise à jour d’une application existante, c’est là que vous pouvez permettre aux clients de savoir ce qui a changé dans la dernière version. Ce champ est limité à 1 500 caractères. (Ce champ s’appelait auparavant **Notes de publication**).
 
 ## <a name="product-features"></a>Fonctionnalités du produit
 
 Il s’agit de courts résumés des principales fonctionnalités de votre application. Ces informations sont présentées au client sous la forme d’une liste à puce dans la section **Fonctionnalités** de la description de votre application dans le Store, en complément de la **Description**. Chacune de ces informations est limitée à 200 caractères. Vous pouvez spécifier jusqu’à 20 fonctionnalités.
 
 > [!NOTE]
-> Ces fonctionnalités apparaîtront à puces dans votre liste de Store, n’ajoutez pas votre propre puces.
+> Ces fonctionnalités apparaîtront à puces dans la liste de votre boutique. n’ajoutez donc pas vos propres puces.
 
 ## <a name="screenshots"></a>Les captures d'écran
 
@@ -88,11 +88,11 @@ Les logos Store sont des images facultatives que vous pouvez charger pour améli
 
 Pour plus d’informations, voir [Logos Store](app-screenshots-and-images.md#store-logos).
 
-## <a name="trailers-and-additional-assets"></a>Ressources supplémentaires et des codes de fin
+## <a name="trailers-and-additional-assets"></a>Remorques et ressources supplémentaires
 
-Vous pouvez envoyer des ressources supplémentaires pour votre produit, y compris les codes de fin vidéo et des images promotionnelles. Elles sont toutes facultatives, mais nous vous recommandons d'en charger autant que possible. Ces images permettent de donner aux clients une meilleure idée de votre produit et de rendre sa description plus attrayante.
+Vous pouvez envoyer des ressources supplémentaires pour votre produit, y compris des codes de fin vidéo et des images promotionnelles. Elles sont toutes facultatives, mais nous vous recommandons d'en charger autant que possible. Ces images permettent de donner aux clients une meilleure idée de votre produit et de rendre sa description plus attrayante.
 
-Pour plus d’informations, consultez [des ressources supplémentaires et des codes de fin](app-screenshots-and-images.md#trailers-and-additional-assets).
+Pour plus d’informations, consultez codes de fin [et ressources supplémentaires](app-screenshots-and-images.md#trailers-and-additional-assets).
 
 <a id="supplemental-information" />
 
@@ -124,7 +124,7 @@ Une description plus courte et plus accrocheuse peut être utilisé dans la part
 
 Concernant les jeux, la brève description peut également apparaître dans la section Informations du Hub de jeux sur Xbox One.
 
-Pour de meilleurs résultats, gardez la brève description sous 270 caractères. Le champ a une limite de 1000 caractères, mais dans certains affichages, seuls les 270 tout d’abord caractères seront affiche (avec un lien disponible pour afficher le reste de la description courte).
+Pour de meilleurs résultats, conservez votre brève description sous 270 caractères. Le champ a une limite de 1000 caractères, mais dans certains affichages, seuls les 270 premiers caractères seront affichés (avec un lien disponible pour afficher le reste de la brève description).
 
 ### <a name="additional-system-requirements"></a>Configuration système supplémentaire requise
 
@@ -137,7 +137,7 @@ Vous pouvez entrer jusqu’à 11 éléments pour les deux champs **Matériel mi
 
 <span id="shared-fields" />
 
-## <a name="additional-information"></a>Informations complémentaires
+## <a name="additional-information"></a>Informations supplémentaires
 
 Les éléments décrits ci-dessous aident les clients à découvrir et comprendre votre produit. (Cette section était précédemment appelée **Champs partagés**).
 

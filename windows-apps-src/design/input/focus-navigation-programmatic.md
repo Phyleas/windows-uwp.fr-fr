@@ -11,11 +11,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: d919a86a44110d5b3b444fdf47d41f31637ccb6b
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684502"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210005"
 ---
 # <a name="programmatic-focus-navigation"></a>Navigation en mode focus programmé
 
@@ -325,7 +325,7 @@ private void OnLosingFocus(UIElement sender, LosingFocusEventArgs args)
 }
 ```
 
-## <a name="related-articles"></a>Articles associés
+## <a name="related-articles"></a>Articles connexes
 
 - [Navigation centrée sur le clavier, le boîtier, le contrôle à distance et les outils d’accessibilité](focus-navigation.md)
 - [Interactions du clavier](keyboard-interactions.md)

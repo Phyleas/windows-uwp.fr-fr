@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, paramètres de jeu, mode d’affichage, configuration requise, configuration matérielle requise, matériel minimum, matériel recommandé, politique de confidentialité, coordonnées du support technique, site web de l’application, support
 ms.localizationpriority: medium
 ms.openlocfilehash: 5bc1283560334d2eac97fd358feabfca0f411014
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320042"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210755"
 ---
 # <a name="enter-app-properties"></a>Entrer les propriétés d’une application
 
@@ -46,7 +46,7 @@ Pour déterminer plus facilement si votre application requiert une politique de 
 
 ### <a name="website"></a>Site web
 
-Entrez l’URL de la page web de votre application. Cette URL doit pointer vers une page de votre propre site web, et non vers la description web de votre application dans le Store. Ce champ est facultatif, mais recommandé.
+Entrez l’URL de la page web de votre application. Cette URL doit pointer vers une page de votre propre site web, et non vers la description web de votre application dans le Windows Store. Ce champ est facultatif, mais recommandé.
 
 ### <a name="support-contact-info"></a>Coordonnées du support technique
 
@@ -58,7 +58,7 @@ Entrez l’URL de la page web où vos clients peuvent obtenir un support pour vo
 
 ## <a name="game-settings"></a>Paramètres de jeux
 
-Cette section s’affiche uniquement si vous avez sélectionné **Jeux** comme catégorie de votre produit. Ici, vous pouvez spécifier les fonctionnalités que votre jeu prend en charge. Les informations que vous fournissez dans cette section seront afficheront sur Store du produit listing.
+Cette section s’affiche uniquement si vous avez sélectionné **Jeux** comme catégorie de votre produit. Ici, vous pouvez spécifier les fonctionnalités que votre jeu prend en charge. Les informations que vous fournissez dans cette section s’affichent dans la liste des boutiques du produit.
 
 Si votre jeu prend en charge des options multijoueurs, veillez à indiquer le nombre minimum et maximum de joueurs pour une session. Vous ne pouvez pas entrer un nombre minimum ou maximum de joueurs supérieur à 1 000.
 
@@ -98,7 +98,7 @@ Le comportement des clients varie selon les configurations requises spécifiques
 - **Pour les clients sur des versions antérieures de Windows 10 :**
      - Pour la plupart des clients, la configuration matérielle minimale requise et recommandée s’affiche dans la description au sein du Windows Store (toutefois les clients utilisant une version antérieure du client Windows Store voient seulement la configuration matérielle minimale requise).
      - Le Windows Store tente de vérifier les composants que vous spécifiez dans **Matériel minimum**, à l’exception de **Mémoire**, **DirectX**, **Mémoire vidéo**, **Carte graphique** et **Processeur**. Aucun de ces composants n’est vérifié, et les clients ne voient aucun avertissement sur les appareils qui ne satisfont pas ces exigences. 
-- **Pour les clients sur Windows 8.x et les versions antérieures ou Windows Phone 8.x et versions antérieures :**
+- **Pour les clients sur Windows 8. x et versions antérieures ou Windows Phone 8. x et versions antérieures :**
      - Si vous activez la case à cocher **Matériel minimum** pour **Écran tactile**, cette configuration requise s’affiche dans la description de votre application sur le Windows Store, et les clients dont les appareils n’ont pas d’écran tactile voient un avertissement s’ils tentent de télécharger l’application. Aucune autre configuration requise n’est vérifiée ou affichée dans votre description au sein du Windows Store.
 
 Nous vous recommandons également d’ajouter des vérifications d’exécution pour le matériel spécifié dans votre application, car il peut arriver que le Windows Store ne puisse pas détecter que l’appareil d’un client ne dispose pas des fonctionnalités sélectionnées. Dans ce cas, le client peut toujours télécharger votre application, même si un avertissement s’affiche. Si vous souhaitez empêcher complètement le téléchargement de votre application UWP sur un appareil non conforme à la configuration minimale requise concernant la mémoire ou le niveau DirectX, vous pouvez indiquer cette configuration minimale requise dans un [fichier XML StoreManifest](https://docs.microsoft.com/uwp/schemas/storemanifest/storemanifestschema2015/schema-root).

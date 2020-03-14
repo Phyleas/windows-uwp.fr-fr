@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, jeux, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: af5d73e0a786e33aff6274cd63ee5ae6ac77c133
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78853000"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210865"
 ---
 #  <a name="define-the-uwp-app-framework"></a>Définir l’infrastructure d’application UWP
 
@@ -403,7 +403,7 @@ Lors du développement de votre propre jeu, concevez votre code de démarrage au
 -   Utilisez **Load** pour gérer tout le reste de l’installation, notamment pour commencer la création asynchrone d’objets et le chargement des ressources. Si vous devez créer des données ou fichiers temporaires, par exemple des composants générés par procédure, faites-le ici.
 
 
-## <a name="next-steps"></a>Étapes suivantes
+## <a name="next-steps"></a>Étapes suivantes :
 
 Nous avons couvert la structure de base d’un jeu UWP avec DirectX. Gardez ces cinq méthodes à l’esprit, car nous allons y faire référence dans d’autres parties de cette procédure pas à pas. Nous allons ensuite examiner de façon détaillée le mode de gestion des états de jeu et des événements pour poursuivre le jeu sous [Gestion du flux de jeu](tutorial-game-flow-management.md).
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, adaptabilité, localisation, DàG, GàD
 ms.localizationpriority: medium
 ms.openlocfilehash: e428dd068337ecd79992e8e27cd193bed112d9c2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645304"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209835"
 ---
 # <a name="adjust-layout-and-fonts-and-support-rtl"></a>Ajuster la disposition et les polices, et prendre en charge le sens du flux DàG
 Concevez votre application pour prendre en charge les dispositions et les polices de plusieurs langues, notamment le sens du flux DàG (de droite à gauche). Le sens du flux désigne le sens dans lequel le script est rédigé et affiché, et le sens dans lequel les éléments de l'interface utilisateur de la page sont numérisés par l'œil.
@@ -120,10 +120,10 @@ Tout d’abord, dans le fichier de ressources (.resw) de votre application, ajou
 Au lieu d’une seule ligne de code pour toutes les langues, le code dépend du traducteur qui « traduit » cette ressource de propriété en fonction de chaque langue de traduction. Par conséquent, n’oubliez pas que l'utilisation de cette technique est susceptible d'entraîner des erreurs humaines.
 
 ## <a name="important-apis"></a>API importantes
-* [FrameworkElement.FlowDirection](/uwp/api/Windows.UI.Xaml.FrameworkElement.FlowDirection)
+* [FrameworkElement. FlowDirection](/uwp/api/Windows.UI.Xaml.FrameworkElement.FlowDirection)
 * [LanguageFont](/uwp/api/Windows.Globalization.Fonts.LanguageFont?branch=live)
 
 ## <a name="related-topics"></a>Rubriques connexes
 * [Localiser les chaînes dans l’interface utilisateur et le manifeste du package d’application](../../app-resources/localize-strings-ui-manifest.md)
-* [Adapter vos ressources de langue, mise à l’échelle et autres qualificateurs](../../app-resources/tailor-resources-lang-scale-contrast.md)
-* [Comprendre les langues de profil utilisateur et les langues de manifeste d’application](manage-language-and-region.md)
+* [Adaptez vos ressources à la langue, à la mise à l’échelle et à d’autres qualificateurs](../../app-resources/tailor-resources-lang-scale-contrast.md)
+* [Comprendre les langages de profil utilisateur et les langages du manifeste d’application](manage-language-and-region.md)

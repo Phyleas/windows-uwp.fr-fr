@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, extension, propriétés, période d'abonnement, type de produit, durée de vie du produit, type de contenu, iap, achat in-app, produit in-app
 ms.localizationpriority: medium
 ms.openlocfilehash: 59c7e5b2c9ceea534f530bc6880b32a808c91e70
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63787037"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210395"
 ---
 # <a name="enter-add-on-properties"></a>Définir les propriétés d’un module complémentaire
 
@@ -29,7 +29,7 @@ Les champs visibles sur cette page varient selon le type de produit de votre ext
 
 ## <a name="product-lifetime"></a>Durée de vie du produit
 
-Si vous avez sélectionné un type de produit **Durable**, le champ **Durée de vie du produit** s’affiche ici. Par défaut, le champ **Durée de vie du produit** d’un module complémentaire durable affiche **Toujours**, ce qui signifie que ce module n’expire jamais. Si vous préférez, vous pouvez modifier le **durée de vie de produit** afin que le module complémentaire expire après une certaine durée (avec les options à partir de 1 à 365 jours).
+Si vous avez sélectionné un type de produit **Durable**, le champ **Durée de vie du produit** s’affiche ici. Par défaut, le champ **Durée de vie du produit** d’un module complémentaire durable affiche **Toujours**, ce qui signifie que ce module n’expire jamais. Si vous préférez, vous pouvez modifier la **durée de vie du produit** afin que le module complémentaire expire après une durée définie (avec des options de 1-365 jours).
 
 
 ## <a name="quantity"></a>Quantité
@@ -39,7 +39,7 @@ Si vous avez sélectionné **Consommable géré par le Windows Store** comme ty
 
 ## <a name="subscription-period"></a>Période d’envoi
 
-Si vous avez sélectionné **Abonnement** comme type de produit, le champ **Période d’envoi** s’affiche ici. Choisissez une option pour spécifier la fréquence à laquelle un client sera débité pour son abonnement. L’option par défaut est **mensuel**, mais vous pouvez également sélectionner **3 mois**, **6 mois**, **une fois par an**, ou **24 mois**.
+Si vous avez sélectionné **Abonnement** comme type de produit, le champ **Période d’envoi** s’affiche ici. Choisissez une option pour spécifier la fréquence à laquelle un client sera débité pour son abonnement. L’option par défaut est **mensuelle**, mais vous pouvez également **Sélectionner 3 mois**, **6 mois**, **annuellement**ou **24 mois**.
 
 > [!IMPORTANT]
 > Une fois votre extension publiée, vous ne pouvez plus modifier la valeur du champ **Période d’abonnement**.
@@ -84,7 +84,7 @@ Vous pouvez fournir jusqu’à dix mots clés d’un maximum de 30 caractères 
 Pour exécuter une requête sur ce champ, utilisez la propriété [StoreProduct.Keywords](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Keywords) de [l’espace de noms Windows.Services.Store](https://docs.microsoft.com/uwp/api/Windows.Services.Store). (Si vous utilisez [l’espace de noms Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store), utilisez plutôt la propriété [ProductListing.Keywords](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting.Keywords).)
 
 > [!NOTE]
-> Mots clés ne sont pas disponibles pour une utilisation dans les packages ciblant Windows 8 et Windows 8.1.
+> Les mots clés ne sont pas utilisables dans les packages ciblant Windows 8 et Windows 8.1.
 
 <span id="custom-developer-data" />
 
@@ -97,7 +97,7 @@ Par exemple, supposons que vous proposiez une application de jeu et que vous ven
 Pour exécuter une requête sur ce champ, utilisez la propriété [StoreSku.CustomDeveloperData](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.customdeveloperdata#Windows_Services_Store_StoreSku_CustomDeveloperData) de [l’espace de noms Windows.Services.Store](https://docs.microsoft.com/uwp/api/Windows.Services.Store). (Si vous utilisez [l’espace de noms Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store), utilisez plutôt la propriété [ProductListing.Tag](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting.tag#Windows_ApplicationModel_Store_ProductListing_Tag).)
 
 > [!NOTE]
-> Le **de données personnalisés développeur** champ n’est pas disponible pour une utilisation dans les packages ciblant Windows 8 et Windows 8.1.
+> Le champ de **données développeur personnalisé** n’est pas disponible pour une utilisation dans les packages ciblant Windows 8 et Windows 8.1.
 
  
 

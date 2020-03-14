@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, bande-annonce, vidéo, capture d’écran, image, icône, description dans le Store, images de description dans le Store
 ms.localizationpriority: medium
 ms.openlocfilehash: 48a8566c80516588939dc0ef071c3da4b9232d64
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684613"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210895"
 ---
 # <a name="app-screenshots-images-and-trailers"></a>Captures d’écran, images et bandes-annonces de l’application
 
@@ -23,9 +23,9 @@ Lors du [processus de soumission de l’application](app-submissions.md), vous f
 
 Le magasin peut également utiliser l’icône de votre application et d’autres images que vous incluez dans le package de votre application. Exécutez le [Kit de certification des applications Windows](../debug-test-perf/windows-app-certification-kit.md) pour déterminer si une image requise est manquante avant de soumettre votre application. Pour obtenir des conseils et des recommandations sur ces images, consultez [icônes et logos d’application](../design/style/app-icons-and-logos.md).
 
-## <a name="screenshots"></a>Captures d’écran
+## <a name="screenshots"></a>Les captures d'écran
 
-Les captures d’écran sont les images de votre application que voient vos clients dans la description du Store.
+Les captures d’écran sont les images de votre application que voient vos clients dans la description du Windows Store.
 
 Vous avez la possibilité de fournir des captures d’écran pour les différentes familles d’appareils prises en charge par votre application, afin que les captures appropriées apparaissent lorsqu’un client affiche la description de votre application dans le Store sur ce type d’appareil. 
 
@@ -161,14 +161,14 @@ Il existe des exigences supplémentaires en fonction du type de fichier.
 
 #### <a name="mov"></a>MOV
 
-| Video | Audio | 
+| Vidéo | Audio | 
 | --- | --- | 
 | <ul><li>ProRes 1080p (HQ le cas échéant)</li><li>Fréquence d’images native ; 29,97 ips de préférence</li></ul> | <ul><li>Stéréo obligatoire</li><li>Niveau Audio recommandé : -16 LKFS/LUFS</li></ul> |
 
 
 #### <a name="mp4"></a>MP4
 
-| Video | Audio |
+| Vidéo | Audio |
 | --- | --- |
 | <ul><li>Codec : [H. 264](https://docs.microsoft.com/windows/desktop/DirectShow/h-264-video-types) (AVC1)  </li><li>Balayage progressif (pas d'entrelacement)</li><li>High Profile</li><li>2 images B consécutives</li><li>GOP fermé. GOP de la moitié de la fréquence d’images</li><li>CABAC</li><li>50 Mo/s </li><li>Espace de couleurs : 4.2.0</li></ul> | <ul><li>Codec : AAC-DS</li><li>Canaux : stéréo ou son surround</li><li>Taux d’échantillonnage : 48 KHz</li><li>Vitesse de transmission audio : 384 Ko/s pour stéréo, 512 Ko/s pour son surround</li></ul> |
 
@@ -197,7 +197,7 @@ Voici quelques conseils à suivre lors de l’élaboration de cette image :
 - Éviter de montrer l’interface utilisateur de votre application et n’utilisez pas d’images spécifiques à des appareils.
 - Évitez les thèmes politiques et nationaux, les drapeaux ou les symboles religieux.
 - N’incluez pas d’images en rapport avec des gestes irrespectueux, la nudité, le jeu, l’argent, la drogue, le tabac ou l’alcool.
-- N’utilisez pas d’armes pointant vers l’utilisateur ni une violence excessive.
+- N’utilisez pas d’armes pointant vers l’utilisateur ou une violence excessive.
 
 Si la présence de cette image nous permet de prendre en compte votre application pour les offres promotionnelles que nous recommandons, elle ne garantit pas que votre application sera recommandée. Pour plus d’informations, consultez l’article [Faciliter la promotion de votre application](make-your-app-easier-to-promote.md).
 

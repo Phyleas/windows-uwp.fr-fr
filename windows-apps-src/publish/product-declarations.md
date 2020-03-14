@@ -4,14 +4,14 @@ title: Déclarations de produit
 ms.assetid: 3AF618F3-2B47-4A57-B7E8-1DF979D4A82C
 ms.date: 10/31/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 47011a22353f26361a392690d857bde1fc180c03
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78853439"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79211005"
 ---
 # <a name="product-declarations"></a>Déclarations de produit
 

@@ -9,11 +9,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: bba80403934987569c25b96eced9a610226431b5
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257910"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209975"
 ---
 # <a name="guidelines-for-visual-feedback"></a>Recommandations en matière de retour visuel
 
@@ -106,7 +106,7 @@ Pour modifier les couleurs pour chaque contrôle, modifiez simplement les propri
 <Slider Width="200" FocusVisualPrimaryBrush="DarkRed" FocusVisualSecondaryBrush="Pink"/>
 ```
 
-## <a name="related-articles"></a>Articles associés
+## <a name="related-articles"></a>Articles connexes
 
 **Pour les concepteurs**
 * [Instructions pour le panorama](guidelines-for-panning.md)

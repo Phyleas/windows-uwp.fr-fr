@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, notifications toast, toasts interactifs, toasts adaptatifs, contenu des toasts, charge utile des toasts
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b424da3b9413c7528cb6f6a6a888e9fe2cc7cb7
-ms.sourcegitcommit: a4a595c485a1e4549b02b0e20ca9f56b093c5814
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74125246"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209855"
 ---
 # <a name="toast-content"></a>Contenu des toasts
 
@@ -25,7 +25,7 @@ Les notifications toast adaptatives et interactives vous permettent de créer de
 > Pour afficher les modèles hérités de Windows 8.1 et Windows Phone 8,1, consultez le [catalogue de modèles Toast hérité](https://docs.microsoft.com/previous-versions/windows/apps/hh761494(v=win.10)).
 
 
-## <a name="getting-started"></a>Prise en main
+## <a name="getting-started"></a>Mise en route
 
 **Installer la bibliothèque de notifications.** Si vous préférez utiliser C# plutôt que XML pour générer les notifications, installez le package NuGet [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) (recherchez « notifications uwp ». Les exemples de code C# indiqués dans cet article utilisent la version 1.0.0 du package NuGet.
 
@@ -88,7 +88,7 @@ Voici une représentation visuelle du contenu du toast :
 ![structure de notification toast](images/adaptivetoasts-structure.jpg)
 
 
-## <a name="visual"></a>Éléments visuels
+## <a name="visual"></a>Visual
 
 Chaque toast doit spécifier un élément visuel, où vous devez fournir une liaison de toast générique, qui peut contenir du texte, des images, etc. Ces éléments sont rendus sur différents appareils Windows, notamment des ordinateurs, des téléphones, des tablettes et la Xbox.
 

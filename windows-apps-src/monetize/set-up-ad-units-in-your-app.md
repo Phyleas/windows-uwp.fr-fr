@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, publicités, publicité, unités publicitaires, tests
 ms.localizationpriority: medium
 ms.openlocfilehash: c7bafdc7d21814a03d6f7da7132d8017d7f238e5
-ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77506725"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210265"
 ---
 # <a name="set-up-ad-units-in-your-app"></a>Configurer des unités publicitaires dans votre application
 

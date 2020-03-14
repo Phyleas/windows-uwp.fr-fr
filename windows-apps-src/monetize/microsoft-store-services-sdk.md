@@ -1,19 +1,19 @@
 ---
 Description: Le Microsoft Store Services SDK contient des bibliothèques et des outils qui vous permettent de doter vos applications de fonctionnalités conçues pour vous aider à générer plus de revenus et conquérir des clients.
-title: Impliquer les clients avec le Microsoft Store Services SDK
+title: Impliquer les clients avec Microsoft Store Services SDK
 ms.assetid: 518516DB-70A7-49C4-B3B6-CD8A98320B9C
 ms.date: 08/21/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store Services SDK
 ms.localizationpriority: medium
 ms.openlocfilehash: 679dde6802a2c0d27444fbcda040f2ba19039457
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259271"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210745"
 ---
-# <a name="engage-customers-with-the-microsoft-store-services-sdk"></a>Impliquer les clients avec le Microsoft Store Services SDK
+# <a name="engage-customers-with-the-microsoft-store-services-sdk"></a>Impliquer les clients avec Microsoft Store Services SDK
 
 Le kit de développement logiciel (SDK) Microsoft Store Services fournit des fonctionnalités qui vous aident à prendre en main des clients dans vos applications de plateforme Windows universelle (UWP), telles que l’envoi de notifications ciblées à vos applications et l’exécution d’expériences/B dans vos applications. Ce kit de développement logiciel (SDK) est une extension pour Visual Studio 2015 et d’autres versions de Visual Studio.
 
@@ -35,16 +35,16 @@ Le Microsoft Store Services SDK prend en charge les scénarios suivants pour le
 
 <span id="prerequisites" />
 
-## <a name="prerequisites"></a>Conditions préalables requises
+## <a name="prerequisites"></a>Composants requis
 
 Le Microsoft Store Services SDK nécessite les éléments suivants :
 
 * Visual Studio 2015 ou une version ultérieure.
-* Visual Studio Tools pour applications Windows universelles, installé avec votre version de Visual Studio.
+* Visual Studio Tools pour applications Windows universelles installé avec votre version de Visual Studio.
 
 <span id="install" />
 
-## <a name="install-the-sdk"></a>Installer le SDK
+## <a name="install-the-sdk"></a>Installer le Kit de développement logiciel (SDK)
 
 Il existe deux options pour installer le Microsoft Store Services SDK sur votre ordinateur de développement :
 
@@ -59,7 +59,7 @@ Microsoft publie régulièrement de nouvelles versions du Microsoft Store Servic
 
 Pour installer le Microsoft Store Services SDK via le programme d’installation MSI :
 
-1.  Fermez toutes les instances de Visual Studio.
+1.  Fermez toutes les instances de Visual Studio.
 
 2. Si vous aviez précédemment installé le SDK Microsoft Store Engagement and Monetization, le SDK Universal Ad Client ou l’extension Ad Mediator, désinstallez ces SDK maintenant. Si vous le souhaitez, ouvrez une fenêtre **Invite de commandes** et exécutez ces commandes pour nettoyer les versions de SDK qui peuvent avoir été installées avec Visual Studio, mais qui n’apparaissent peut-être pas dans la liste des programmes installés sur votre ordinateur :
     ```console
@@ -82,7 +82,7 @@ Pour installer le Microsoft Store Services SDK via le programme d’installation
 
 Pour installer les bibliothèques du Microsoft Store Services SDK via NuGet :
 
-1.  Fermez toutes les instances de Visual Studio.
+1.  Fermez toutes les instances de Visual Studio.
 
 2. Si vous aviez précédemment installé le SDK Microsoft Store Engagement and Monetization, le SDK Universal Ad Client ou l’extension Ad Mediator, désinstallez ces SDK maintenant. Si vous le souhaitez, ouvrez une fenêtre **Invite de commandes** et exécutez ces commandes pour nettoyer les versions de SDK qui peuvent avoir été installées avec Visual Studio, mais qui n’apparaissent peut-être pas dans la liste des programmes installés sur votre ordinateur :
     ```console
@@ -113,7 +113,7 @@ Pour installer les bibliothèques du Microsoft Store Services SDK via NuGet :
 
 Une fois que vous avez installé le Microsoft Store Services SDK via le programme d’installation MSI ou NuGet, suivez ces instructions pour référencer le kit SDK assembly dans votre projet UWP.
 
-1. Ouvrez votre projet dans Visual Studio.
+1. Ouvrez votre projet dans Visual Studio.
     > [!NOTE]
     > Si votre projet est une application JavaScript qui cible **Toute CU**, mettez à jour votre projet pour utiliser une sortie de génération propre à l’architecture (par exemple,  **x86**).
 
@@ -121,7 +121,7 @@ Une fois que vous avez installé le Microsoft Store Services SDK via le programm
 
 3. Dans le **Gestionnaire de références**, développez **Windows universel**, cliquez sur **Extensions**, puis sélectionnez la case à cocher en regard de **Microsoft Engagement Framework**. Cela vous permet d'utiliser les API de l’espace de noms [Microsoft.Services.Store.Engagement](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement).
 
-3. Cliquez sur **OK**.
+3. Cliquez sur **OK**.
 
 > [!NOTE]
 > Si vous avez installé les bibliothèques SDK via NuGet, votre projet comportera une référence **Microsoft.Services.Store.Engagement**. La référence **Microsoft.Services.Store.Engagement** représente le package NuGet (non pas les bibliothèques qu’il contient) ; vous pouvez l’ignorer.

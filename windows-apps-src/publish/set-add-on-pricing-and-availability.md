@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, extensions, iap, prix
 ms.localizationpriority: medium
 ms.openlocfilehash: c6384b5890466ff13c72a1b90eb9b27194d51fff
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
-ms.translationtype: MT
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78853526"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210995"
 ---
 # <a name="set-add-on-pricing-and-availability"></a>Définir le prix et la disponibilité d’un module complémentaire
 

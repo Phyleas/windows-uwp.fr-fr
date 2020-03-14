@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
 ms.openlocfilehash: 2aadcb8dc3d414db7951dc571855e01bddb03a99
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78852538"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209875"
 ---
 # <a name="load-images-and-assets-tailored-for-scale-theme-high-contrast-and-others"></a>Charger des images et des ressources adaptées pour la mise à l’échelle, le thème, le contraste élevé et autres
 Votre application peut charger des fichiers de ressources d’image (ou d’autres fichiers de ressources) adaptés pour le [facteur d’échelle de l’affichage](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md), le thème, le contraste élevé et d’autres contextes d’exécution. Ces images peuvent être référencées à partir du code impératif ou à partir du balisage XAML, par exemple en tant que propriété **Source** d’une **Image**. Elles peuvent également apparaître dans le fichier source de votre manifeste de votre package d’application (fichier `Package.appxmanifest`) &mdash; par exemple, en tant que la valeur de l’icône Application sur l’onglet Actifs visuels du Concepteur de manifeste de Visual Studio &mdash; ou sur vos vignettes et toasts. En utilisant des qualificateurs pour les noms de fichiers de vos images et, si nécessaire, en les chargeant de manière dynamique à l’aide d’un [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live), il est possible de charger le fichier image le plus approprié, correspondant le mieux aux paramètres d’exécution de l’utilisateur pour l’échelle de l’affichage, le thème, le contraste élevé, la langue et d’autres contextes.

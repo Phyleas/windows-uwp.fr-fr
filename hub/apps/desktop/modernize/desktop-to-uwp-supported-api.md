@@ -3,18 +3,18 @@ Description: Les applications de bureau empaquetées peuvent utiliser un large �
 title: API UWP disponibles pour une application de bureau empaquetée (Pont du bureau)
 ms.date: 04/19/2019
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 60a735af077d2121868e2613cb0f33e194e4330c
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78852976"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209665"
 ---
 # <a name="uwp-apis-available-to-desktop-apps"></a>API UWP disponibles pour les applications de bureau
 

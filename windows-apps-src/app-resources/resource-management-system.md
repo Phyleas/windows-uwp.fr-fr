@@ -1,5 +1,5 @@
 ---
-Description: Lors de la génération, le système de gestion des ressources crée un index de toutes les variantes de ressources qui sont incluses dans le package avec votre application. Lors de l’exécution, le système détecte les paramètres en vigueur pour l’utilisateur et l’ordinateur et charge les ressources les plus appropriées pour ces paramètres.
+Description: Lors de la génération, le système de gestion des ressources crée un index de toutes les variantes de ressources qui sont incluses dans le package avec votre application. Lors de l’exécution, le système détecte les paramètres en vigueur pour l’utilisateur et l’ordinateur, et charge les ressources les plus appropriées pour ces paramètres.
 title: Système de gestion des ressources
 template: detail.hbs
 ms.date: 10/20/2017
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
 ms.openlocfilehash: bedbad9e4de22ee098863d013a1e4ad16d86543e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57598624"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209945"
 ---
 # <a name="resource-management-system"></a>Système de gestion des ressources
 Le système de gestion des ressources inclut des fonctionnalités pour la création et l’exécution. Lors de la génération, le système crée un index de toutes les variantes de ressources qui sont incluses dans le package avec votre application. Cet index est l’index de ressource de package, ou PRI (Package Resource Index) et il est également inclus dans le package de votre application. Lors de l’exécution, le système détecte les paramètres en vigueur pour l’utilisateur et l’ordinateur, consulte les informations dans le fichier PRI, puis charge automatiquement les ressources les plus appropriées pour ces paramètres.
@@ -24,7 +24,7 @@ Chaque package d’application doit contenir un index binaire des ressources de 
 - Le fichier resources.pri situé à la racine de chaque package est automatiquement chargé lorsque le [**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live) est instancié.
 - Les fichiers PRI peuvent être créés et vidés à l’aide de l’outil [MakePRI.exe](compile-resources-manually-with-makepri.md).
 - Dans le cadre du développement d’application standard, vous n’aurez pas besoin de MakePRI.exe, car il est déjà intégré dans le flux de compilation de Visual Studio. En outre, Visual Studio prend en charge la modification des fichiers PRI dans une interface utilisateur dédiée. Toutefois, vos traducteurs et les outils qu’ils utilisent peuvent avoir recours à MakePRI.exe.
-- Chaque fichier PRI contient une collection nommée de ressources, appelée un mappage de ressources. Lorsqu’un fichier PRI est chargé à partir d’un package, le nom du mappage de ressources est vérifié pour être sûr qu’il correspond au nom de l’identité du package.
+- Chaque fichier IRP contient une collection nommée de ressources, appelée mappage des ressources. Lorsqu’un fichier PRI est chargé à partir d’un package, le nom du mappage de ressources est vérifié pour être sûr qu’il correspond au nom de l’identité du package.
 - Les fichiers PRI contiennent uniquement des données et ils n’utilisent donc pas le format exécutable portable (PE). Ils sont spécifiquement conçus pour contenir uniquement des données, comme le format de ressources pour Windows. Ils remplacent les ressources contenues dans les DLL dans le modèle d’application Win32.
 - La limite de taille d’un fichier PRI est 64 kilo-octets.
 
@@ -42,7 +42,7 @@ Un objet [**ResourceCandidate**](/uwp/api/windows.applicationmodel.resources.cor
 
 Les ressources disponibles pour une application sont stockées dans des collections hiérarchiques auxquelles vous pouvez accéder à l’aide d’un objet [**ResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live). La classe **ResourceManager** permet d’accéder aux différentes instances de **ResourceMap** de niveau supérieur utilisées par l’application, correspondant aux différents packages pour l’application. La valeur [**MainResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager.MainResourceMap) correspond au mappage de ressources pour le package d’application en cours, et elle exclut tous les packages d’infrastructure référencés. Chaque objet **ResourceMap** est nommé pour le nom de package qui est spécifié dans le manifeste du package. Un **ResourceMap** comporte des sous-arborescences (voir [**ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live)) qui contiennent d’autres objets **NamedResource**. En général, les sous-arborescences correspondent aux fichiers de ressources qui contiennent la ressource. Pour plus d’informations, voir [Localiser les chaînes dans l’interface utilisateur et le manifeste du package d’application](localize-strings-ui-manifest.md) et [Charger des images et des ressources adaptées à l’échelle, au thème, au contraste élevé et à d’autres contextes](images-tailored-for-scale-theme-contrast.md).
 
-Voici un exemple :
+Voici un exemple.
 
 ```csharp
 // using Windows.ApplicationModel.Resources.Core;

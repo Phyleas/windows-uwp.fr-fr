@@ -1,25 +1,25 @@
 ---
 description: Découvrez comment utiliser l’espace de noms Windows.Services.Store pour implémenter des extensions d'abonnement.
-title: Activer les extensions d'abonnement de votre application
+title: Activer les extensions d’abonnement de votre application
 keywords: windows 10, uwp, abonnements, extensions, achats dans l’application, Windows.Services.Store
 ms.date: 12/06/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b937ca61110452e233061179c398cae0d047686e
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: ba436ab760f589debeaf6909acd64d61df89a43d
+ms.sourcegitcommit: 912146681b1befc43e6db6e06d1e3317e5987592
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58335057"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79295732"
 ---
-# <a name="enable-subscription-add-ons-for-your-app"></a>Activer les extensions d'abonnement de votre application
+# <a name="enable-subscription-add-ons-for-your-app"></a>Activer les extensions d’abonnement de votre application
 
 Votre app de plateforme Windows universelle (UWP) peut offrir des achats in-app d'extension d'*abonnement* à vos clients. Vous pouvez utiliser les abonnements pour vendre des produits numériques dans votre application (par exemple, des fonctionnalités de l’application ou du contenu numérique) avec des périodes de facturation périodiques automatisées.
 
 > [!NOTE]
 > Pour activer les achats d'extensions d’abonnement dans votre application, votre projet doit cibler **Windows 10 Anniversary Edition (version 10.0 ; build 14393)** ou une version ultérieure dans Visual Studio (ce qui correspond à Windows 10, version 1607). Il doit en outre utiliser les API dans l'espace de noms **Windows.Services.Store** à la place de l'espace de noms **Windows.ApplicationModel.Store** pour offrir une expérience d’achat dans l’application. Pour plus d’informations sur les différences entre ces espaces de noms, voir [Achats dans l’application et versions d’évaluation](in-app-purchases-and-trials.md).
 
-## <a name="feature-highlights"></a>Fonctionnalités essentielles
+## <a name="feature-highlights"></a>Principales fonctionnalités
 
 Les extensions d’abonnement des applications UWP prennent en charge les fonctionnalités suivantes :
 
@@ -33,24 +33,24 @@ Les extensions d’abonnement des applications UWP prennent en charge les foncti
 
 Pour activer les achats d'extensions d’abonnement dans votre application, procédez comme suit.
 
-1. [Créer une soumission de module complémentaire](../publish/add-on-submissions.md) pour votre abonnement dans le centre partenaires et publier la soumission. Lorsque vous suivez le processus de soumission d'extension, faites attention aux propriétés suivantes :
+1. [Créez une soumission de module complémentaire](../publish/add-on-submissions.md) pour votre abonnement dans l’espace partenaires et publiez l’envoi. Lorsque vous suivez le processus de soumission d'extension, faites attention aux propriétés suivantes :
 
-    * [Type de produit](../publish/set-your-add-on-product-id.md#product-type): Veillez à sélectionner **abonnement**.
+    * [Type de produit](../publish/set-your-add-on-product-id.md#product-type) : veillez à sélectionner **Abonnement**.
 
-    * [Période d’abonnement](../publish/enter-add-on-properties.md#subscription-period): Choisissez la période de facturation périodique pour votre abonnement. Vous ne pouvez pas modifier la période d’abonnement après la publication de votre extension.
+    * [Période d’abonnement](../publish/enter-add-on-properties.md#subscription-period) : choisissez la période de facturation périodique de votre abonnement. Vous ne pouvez pas modifier la période d’abonnement après la publication de votre extension.
 
         Chaque extension d'abonnement prend en charge une période d’abonnement et une période d’évaluation uniques. Vous devez créer une extension d'abonnement différente pour chaque type d’abonnement que vous souhaitez proposer dans votre application. Par exemple, si vous souhaitez proposer un abonnement mensuel sans essai, un abonnement mensuel avec un mois d'essai, un abonnement annuel sans essai et un abonnement annuel avec un mois d'essai, vous devrez créer quatre extensions d’abonnement.
 
-    * [Période d’essai](../publish/enter-add-on-properties.md#free-trial): Pensez à choisir une période d’essai 1 semaine ou 1 mois pour votre abonnement permet aux utilisateurs d’essayer votre contenu de l’abonnement avant d’acheter il. Vous ne pouvez pas modifier ou supprimer la période d’essai après la publication de votre extension d'abonnement.
+    * [Période d’essai](../publish/enter-add-on-properties.md#free-trial) : optez pour une période d’essai d'1 semaine ou d'1 mois pour votre abonnement pour que les utilisateurs puissent en essayer le contenu avant de l’acheter. Vous ne pouvez pas modifier ou supprimer la période d’essai après la publication de votre extension d'abonnement.
 
         Pour obtenir un essai gratuit de votre abonnement, l'utilisateur doit acheter votre abonnement via le processus d’achat dans l’application standard, y compris avec un moyen de paiement valide. Rien ne sera débité pendant la période d’essai. À la fin de la période d’essai, l’abonnement se convertit automatiquement en abonnement complet et le mode de paiement de l’utilisateur est débité pour la première période de l’abonnement payant. Si l’utilisateur choisit d’annuler son abonnement pendant la période d’essai, l’abonnement reste actif jusqu'à la fin de la période d’essai. Certaines périodes d’évaluation ne sont pas disponibles pour toutes les périodes d’abonnement.
 
         > [!NOTE]
         > Chaque client peut obtenir un essai gratuit d'extension d'abonnement une seule fois. Une fois que le client a obtenu un essai gratuit pour un abonnement, le Store empêchera ce client d'acquérir à nouveau le même essai gratuit d'abonnement.
 
-    * [Visibilité](../publish/set-add-on-pricing-and-availability.md#visibility): Si vous créez un module complémentaire de test que vous utiliserez uniquement pour tester l’expérience d’achat dans l’application pour votre abonnement, nous vous recommandons de sélectionner parmi les **masqué dans le Store** options. Sinon, vous pouvez sélectionner la meilleure option de visibilité pour votre scénario.
+    * [Visibilité](../publish/set-add-on-pricing-and-availability.md#visibility) : si vous créez une extension de test que vous n'utiliserez que pour tester l'expérience d'achats in-app de votre abonnement, nous vous recommandons de sélectionner l'une des options **Masqué dans le Store**. Sinon, vous pouvez sélectionner la meilleure option de visibilité pour votre scénario.
 
-    * [Tarification](../publish/set-add-on-pricing-and-availability.md?#pricing): Choisissez le prix de votre abonnement dans cette section. Vous ne pouvez pas augmenter le prix de l’abonnement après la publication de l'extension. Toutefois, vous pouvez réduire ce prix ultérieurement.
+    * [Prix](../publish/set-add-on-pricing-and-availability.md?#pricing) : choisissez le prix de votre abonnement dans cette section. Vous ne pouvez pas augmenter le prix de l’abonnement après la publication de l'extension. Toutefois, vous pouvez réduire ce prix ultérieurement.
         > [!IMPORTANT]
         > Par défaut, lorsque vous créez une extension, le prix a initialement la valeur **Gratuit**. Étant donné que vous ne pouvez pas augmenter le prix d’une extension d'abonnement une fois la soumission d’extension terminée, veillez à bien choisir le prix de votre abonnement ici.
 
@@ -68,8 +68,8 @@ Les exemples de code de cette section montrent comment utiliser les API de l'esp
 
 Les conditions préalables de ces exemples sont les suivantes :
 * Un projet Visual Studio pour une application de plateforme Windows universelle (UWP) qui cible **Windows 10 Anniversary Edition (version 10.0 ; build 14393)** ou une version ultérieure.
-* Vous avez [créé une soumission de l’application](https://docs.microsoft.com/windows/uwp/publish/app-submissions) dans Centre partenaires et de cette application est publiée dans le Store. Vous pouvez éventuellement configurer l’application pour qu'elle ne soit pas détectable dans le Store pendant que vous la testez. Pour plus d’informations, consultez les [conseils de test](in-app-purchases-and-trials.md#testing).
-* Vous avez [créé un module complémentaire d’abonnement pour l’application](../publish/add-on-submissions.md) dans Partner Center.
+* Vous avez [créé une soumission d’application](https://docs.microsoft.com/windows/uwp/publish/app-submissions) dans l’espace partenaires et cette application est publiée dans le Windows Store. Vous pouvez éventuellement configurer l’application pour qu'elle ne soit pas détectable dans le Store pendant que vous la testez. Pour plus d’informations, consultez les [conseils de test](in-app-purchases-and-trials.md#testing).
+* Vous avez [créé un module complémentaire d’abonnement pour l’application dans l'](../publish/add-on-submissions.md) espace partenaires.
 
 Le code de ces exemples respecte les présupposés suivants :
 * Le fichier de code contient des instructions **using** pour les espaces de noms **Windows.Services.Store** et **System.Threading.Tasks**.
@@ -124,12 +124,12 @@ Nous n’offrons pas de périodes de grâce pour la facturation de l’abonnemen
 Les scénarios suivants ne sont actuellement pas pris en charge pour les extensions d’abonnement.
 
 * La vente d'abonnements aux clients directement via le Windows Store n’est pas prise en charge pour l’instant. Les abonnements sont disponibles uniquement pour les achats dans l'application de produits numériques.
-* Les clients ne peuvent pas modifier les périodes d'abonnement via la page [https://account.microsoft.com/services](https://account.microsoft.com/services) de leur compte Microsoft. Pour basculer vers une période d’abonnement différents, les clients doivent annuler leur abonnement actuel et achetez un abonnement avec une période d’abonnement différent à partir de votre application.
+* Les clients ne peuvent pas modifier les périodes d'abonnement via la page [https://account.microsoft.com/services](https://account.microsoft.com/services) de leur compte Microsoft. Pour passer à une période d’abonnement différente, les clients doivent annuler leur abonnement actuel, puis acheter un abonnement avec une période d’abonnement différente de celle de votre application.
 * Le changement de niveau n’est actuellement pas pris en charge pour les extensions d’abonnement (par exemple, passer un client d'un abonnement de base à un abonnement premium avec plus de fonctionnalités).
 * Les codes de [vente](../publish/put-apps-and-add-ons-on-sale.md) et les [codes promotionnels](../publish/generate-promotional-codes.md) ne sont actuellement pas pris en charge pour les extensions d’abonnement.
-
+* Renouvellement des abonnements existants après avoir défini la visibilité de votre module complémentaire d’abonnement pour **arrêter l’acquisition**. Pour plus d’informations, consultez [définir la tarification et la disponibilité des modules complémentaires](../publish/set-add-on-pricing-and-availability.md) .
 
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Achats dans l’application et essais](in-app-purchases-and-trials.md)
-* [Obtenir des informations sur les produits pour les applications et modules complémentaires](get-product-info-for-apps-and-add-ons.md)
+* [Obtenir des informations sur le produit pour les applications et les modules complémentaires](get-product-info-for-apps-and-add-ons.md)

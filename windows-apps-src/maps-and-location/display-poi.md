@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, carte, emplacement, clics-infos
 ms.localizationpriority: medium
 ms.openlocfilehash: 6bf8009232dbe3afcab2af28b76785fb261200f7
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259374"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210295"
 ---
 # <a name="display-points-of-interest-on-a-map"></a>Afficher les points d’intérêt sur une carte
 
@@ -409,7 +409,7 @@ var pikePlaceIcon = new MapIcon
 myMap.MapElements.Add(pikePlaceIcon);
 ```
 
-Vous pouvez continuer d'utiliser cette approche, mais vous ne profiterez pas des avantage du nouveau modèle de couche de carte. En regroupant vos éléments en couches, vous pouvez manipuler chaque couche indépendamment l'une de l'autre. Par exemple, chaque couche possède son propre ensemble d’événements, de sorte que vous pouvez répondre à un événement sur une couche particulière et effectuer une action spécifique à cet événement.
+Vous pouvez continuer d'utiliser cette approche, mais vous ne profiterez pas des avantage du nouveau modèle de couche de carte. En regroupant vos éléments en couches, vous pouvez manipuler chaque couche indépendamment l'une de l'autre. Par exemple, chaque couche possède son propre ensemble d’événements, de sorte que vous pouvez répondre à un événement sur une couche particulière et effectuer une action spécifique de cet événement.
 
 En outre, vous pouvez lier XAML directement à un élément [MapLayer ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maplayer). Vous ne pouvez pas effectuer une telle opération en utilisant la collection [MapElements](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.MapElements).
 
@@ -478,6 +478,6 @@ Dans votre page XAML, associez la propriété dans votre classe de modèle d’a
 * [Recommandations de conception pour les cartes](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
 * [Build 2015 Video : utilisation des cartes et de l’emplacement sur les téléphones, les tablettes et les PC dans vos applications Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [Exemple d’application de trafic UWP](https://github.com/Microsoft/Windows-appsample-trafficapp)
-* [](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon)
+* [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon)
 * [**MapPolygon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolygon)
 * [**Polyligne**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolyline)

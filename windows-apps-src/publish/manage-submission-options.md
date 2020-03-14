@@ -1,16 +1,16 @@
 ---
-Description: Gérer les options d’envoi de telles que les options de blocage de publication, les notes relatives à la certification et bien plus encore.
+Description: Gérez les options d’envoi, telles que les options de conservation de la publication, les notes pour la certification, et bien plus encore.
 title: Gérer les options de soumission
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, mise en attente de publication, date de publication, envoi de la soumission à publier, approbation de fonctionnalité restreinte
 ms.localizationpriority: medium
 ms.openlocfilehash: c2548ddd35fc50f62727d986d2d934d2346eb7b5
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63827634"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210325"
 ---
 # <a name="manage-submission-options"></a>Gérer les options de soumission
 
@@ -24,21 +24,21 @@ Par défaut, nous publierons votre soumission dès qu’elle aura obtenu la cert
 
 ### <a name="publish-your-submission-as-soon-as-it-passes-certification-or-per-dates-you-specify"></a>Publier votre soumission dès qu’elle a obtenu la certification (ou selon les dates spécifiées)
 
-La sélection par défaut est **Publish this submission as soon as it passes certification (or per dates you selected in the Schedule section)**. Cela signifie que le processus de publication de votre soumission commencera dès qu’elle aura obtenu la certification, sauf si vous avez configuré des dates dans la section [Planification](configure-precise-release-scheduling.md) de la page **Tarification et disponibilité**.   
+La sélection par défaut est **Publish this submission as soon as it passes certification (or per dates you selected in the Schedule section)** . Cela signifie que le processus de publication de votre soumission commencera dès qu’elle aura obtenu la certification, sauf si vous avez configuré des dates dans la section [Planification](configure-precise-release-scheduling.md) de la page **Tarification et disponibilité**.   
 
-Pour la plupart des soumissions, nous recommandons de laisser la section **Options de mise en attente de publication** définie sur cette option. Si vous souhaitez spécifier les dates auxquelles votre soumission doit être publiée, utilisez l’option **Publish this submission as soon as it passes certification (or per dates you selected in the Schedule section)**. Le fait de laisser cette section définie sur l’option par défaut n’aura pas pour conséquence la publication de la soumission avant les dates que vous avez définies dans la section **Planification**. Les dates que vous avez sélectionné dans le **planification** section permet de déterminer quand votre produit devient disponible pour les clients dans le Store.
+Pour la plupart des soumissions, nous recommandons de laisser la section **Options de mise en attente de publication** définie sur cette option. Si vous souhaitez spécifier les dates auxquelles votre soumission doit être publiée, utilisez l’option **Publish this submission as soon as it passes certification (or per dates you selected in the Schedule section)** . Le fait de laisser cette section définie sur l’option par défaut n’aura pas pour conséquence la publication de la soumission avant les dates que vous avez définies dans la section **Planification**. Les dates que vous avez sélectionnées dans la section **planification** sont utilisées pour déterminer à quel moment votre produit devient disponible pour les clients du Store.
 
 
 ### <a name="publish-your-submission-manually"></a>Publier votre soumission manuellement
 
-Si vous ne voulez pas encore définir de date de publication et que vous préférez que votre soumission reste non publiée jusqu’à ce que vous décidiez de déclencher manuellement le processus de publication, vous pouvez choisir **Ne publiez pas cette soumission tant que je n'ai pas sélectionné Publier maintenant**. La sélection de cette option signifie que votre soumission ne sera pas publiée tant vous n’aurez pas indiqué qu’elle doit l’être. Une fois votre soumission Obtient la certification, vous pouvez le publier en sélectionnant **publier maintenant** sur la page d’état de certification, ou en sélectionnant une date spécifique de la même manière, comme décrit ci-dessous.
+Si vous ne voulez pas encore définir de date de publication et que vous préférez que votre soumission reste non publiée jusqu’à ce que vous décidiez de déclencher manuellement le processus de publication, vous pouvez choisir **Ne publiez pas cette soumission tant que je n'ai pas sélectionné Publier maintenant**. La sélection de cette option signifie que votre soumission ne sera pas publiée tant vous n’aurez pas indiqué qu’elle doit l’être. Une fois que votre envoi est certifié, vous pouvez le publier en sélectionnant **publier maintenant** dans la page État de la certification, ou en sélectionnant une date spécifique de la même manière que celle décrite ci-dessous.
 
 
 ### <a name="start-publishing-your-submission-on-a-certain-date"></a>Démarrer la publication de votre soumission à une date donnée
 
 Choisissez **Lancer la publication de cette soumission le** pour vous assurer que la soumission ne sera pas publiée avant une date donnée. Avec cette option, votre soumission sera publiée aussitôt que possible à la date spécifiée ou après. La date doit être postérieure de 24 heures au moins. En parallèle de la date, vous pouvez également définir l’heure à laquelle la publication de la soumission doit démarrer. 
 
-Vous pouvez modifier cette date de publication après avoir soumis votre produit, tant qu’il n’a pas encore entrée l’étape de publication. 
+Vous pouvez modifier cette date de publication après avoir envoyé votre produit, à condition qu’elle n’ait pas encore entré l’étape de publication. 
  
 Comme indiqué précédemment, si vous souhaitez spécifier certaines dates de publication pour votre soumission, utilisez l’option **Publish this submission as soon as it passes certification (or per dates you selected in the Schedule section)** et laissez l’option **Options de mise en attente de publication** définie sur la sélection par défaut. L’utilisation de l’option **Lancer la publication de cette soumission le** signifie que le processus de publication de votre soumission ne démarrera qu'à cette date. Toutefois, des retards lors de la certification ou de la publication peuvent différer la publication réelle par rapport à la date demandée. 
 

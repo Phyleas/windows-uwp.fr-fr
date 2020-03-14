@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f5caa2610e19234cfd83119d570f858c540b401
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75685133"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210195"
 ---
 # <a name="guidance-for-app-package-management"></a>Aide sur la gestion des packages d’application
 
@@ -23,7 +23,7 @@ Découvrez comment les packages de votre application sont mis à la disposition 
 -   [Suppression de packages pour une famille d’appareils précédemment prise en charge](#removing-packages-for-a-previously-supported-device-family)
 
 
-## <a name="os-versions-and-package-distribution"></a>Versions de système d'exploitation et distribution de package
+## <a name="os-versions-and-package-distribution"></a>Versions de système d’exploitation et distribution de package
 
 Les différents systèmes d’exploitation peuvent exécuter différents types de packages. Si plusieurs de vos packages peuvent s’exécuter sur l’appareil d’un client, le Microsoft Store fournit la meilleure correspondance disponible.
 
@@ -33,7 +33,7 @@ En règle générale, les systèmes d’exploitation plus récents peuvent exéc
 > Depuis le 31 octobre 2018, les nouveaux produits ne peuvent pas inclure des packages ciblant Windows 8. x/Windows Phone 8. x ou une version antérieure. Pour plus d’informations, consultez ce billet de [blog](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store).
 
 
-## <a name="removing-an-app-from-the-store"></a>Suppression d'une application du Store
+## <a name="removing-an-app-from-the-store"></a>Suppression d'une application du Windows Store
 
 Parfois, il est possible que vous souhaitiez arrêter de fournir une application à vos clients, « annuler » sa publication. Pour ce faire, cliquez sur **Rendre votre application indisponible** sur la page **Vue d’ensemble de l’application**. Quelques heures après que vous avez confirmé vouloir la rendre indisponible, votre application disparaît du Store. Dès lors, aucun nouveau client ne peut plus y accéder (sauf s'il possède un [code promotionnel](generate-promotional-codes.md) et utilise un appareil Windows 10).
 
