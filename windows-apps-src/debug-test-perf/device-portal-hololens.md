@@ -1,19 +1,19 @@
 ---
 ms.assetid: bf0a8b01-79f1-4944-9d78-9741e235dbe9
-title: Portail d’appareil pour HoloLens
+title: Device Portal pour HoloLens
 description: Découvrez comment Windows Device Portal pour HoloLens vous permet de configurer et de gérer à distance votre appareil HoloLens.
 ms.date: 01/03/2019
 ms.topic: article
 keywords: Windows 10, UWP, portail des appareils
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a9cdf03aa574ea0762d73514a209367f27822ba
-ms.sourcegitcommit: 33fcf67cf96ce8574df2e50cafc4ca7c18234c4b
+ms.openlocfilehash: 059ce14f85ebe7d955ba2da8897ab47109f74a72
+ms.sourcegitcommit: 1d6d05d28358e087d9ee8829d76c5fbbac0225cb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76530781"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79401968"
 ---
-# <a name="device-portal-for-hololens"></a>Portail d’appareil pour HoloLens
+# <a name="device-portal-for-hololens"></a>Device Portal pour HoloLens
 
 
 ## <a name="set-up-device-portal-on-hololens"></a>Configurer Device Portal sur HoloLens
@@ -22,7 +22,7 @@ ms.locfileid: "76530781"
 
 1. Mettez HoloLens sous tension et allumez l’appareil.
 2. Effectuez le [mouvement de début](https://docs.microsoft.com/hololens/hololens2-basic-usage#start-gesture) ou le mouvement de [floraison](https://developer.microsoft.com/mixed-reality#Bloom) pour HoloLens (1ère génération) pour lancer le menu principal.
-3. Pointez avec le regard de la vignette **paramètres** et effectuez le mouvement d’appui sur l' [air](https://developer.microsoft.com/mixed-reality#Press_and_release) sur hololens (1re génération) ou sélectionnez-le sur hololens 2 en le [touchant ou en utilisant un rayon de la main](https://docs.microsoft.com/hololens/hololens2-basic-usage). L’application paramètres est lancée une fois que vous l’avez sélectionnée.
+3. Pointez avec le regard de la vignette **paramètres** et effectuez le mouvement [Tap](https://developer.microsoft.com/mixed-reality#Press_and_release) sur hololens (1re génération) ou sélectionnez-le sur hololens 2 en le [touchant ou en utilisant un rayon de la main](https://docs.microsoft.com/hololens/hololens2-basic-usage). L’application paramètres est lancée une fois que vous l’avez sélectionnée.
 4. Sélectionnez l’élément de menu **Mettre à jour**.
 5. Sélectionnez l’élément de menu **Pour les développeurs**.
 6. Activez **Mode développeur**.
@@ -101,7 +101,7 @@ La page d’accueil affiche les informations suivantes :
 - État de l’**appareil** : surveille l’état de votre appareil et signale les erreurs critiques.
 - **Informations Windows** : affiche le nom du casque HoloLens et de la version de Windows installée actuellement.
 - La section **Préférences** comprend les paramètres suivants :
-    - **IPD** : définit l’écart pupillaire correspondant à la distance, exprimée en millimètres, séparant le centre des pupilles de l’utilisateur lorsqu’il regarde droit devant lui. Le paramètre prend immédiatement effet. La valeur par défaut a été calculée automatiquement lors de la configuration de votre appareil.
+    - **IPD** : définit l’écart pupillaire correspondant à la distance, exprimée en millimètres, séparant le centre des pupilles de l’utilisateur lorsqu’il regarde droit devant lui. Le paramètre prend immédiatement effet. La valeur par défaut a été calculée automatiquement lors de la configuration de votre appareil. **Valide pour HoloLens (1re génération) uniquement, Hololens 2 calcule la position des yeux.** 
     - **Nom de l’appareil** : attribuez un nom au casque HoloLens. Vous devez redémarrer l’appareil après avoir modifié cette valeur afin qu’elle soit prise en compte. Après avoir cliqué sur Enregistrer, une boîte de dialogue vous demande si vous voulez redémarrer l’appareil immédiatement ou ultérieurement.
     - **Paramètres de la veille** : définit le délai d’attente avant la mise en veille de l’appareil lorsque celui-ci est branché et sur batterie.
 
@@ -174,7 +174,7 @@ Envoie la saisie au clavier de l’ordinateur distant au casque HoloLens.
 
 Cliquez ou appuyez sur la zone située sous le clavier virtuel pour permettre l’envoi de séquences de touches au casque HoloLens. Saisissez du texte dans la zone de saisie de texte, puis cliquez ou appuyez sur Envoyer pour envoyer les séquences de touches à l’application active.
 
-## <a name="see-also"></a>Articles associés
+## <a name="see-also"></a>Voir aussi
 
 * [Vue d’ensemble du portail de périphériques Windows](device-portal.md)
 * [Référence sur les API principales du portail d’appareil](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core) (API communes à tous les appareils Windows 10)
