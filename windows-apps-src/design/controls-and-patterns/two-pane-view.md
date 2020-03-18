@@ -6,12 +6,12 @@ ms.date: 01/22/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 67b97aec970cc655700729743f10c63c666ab0a6
-ms.sourcegitcommit: 09571e1c6a01fabed773330aa7ead459a47d94f7
+ms.openlocfilehash: 7a070a72324408746f67b8814554160a76ee0ce4
+ms.sourcegitcommit: e4b48989c91cd77ba73c90d9eb9cd67b88d52f21
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76929259"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79191652"
 ---
 # <a name="two-pane-view"></a>Vue à deux volets
 
@@ -22,15 +22,14 @@ ms.locfileid: "76929259"
 
 Bien qu’il fonctionne sur tous les appareils Windows, le contrôle TwoPaneView est conçu pour vous aider à tirer pleinement parti des appareils double écran de manière automatique, sans aucune programmation spéciale. Sur un appareil double écran, la vue à deux volets garantit que l’interface utilisateur est correctement divisée pour prendre en charge l’espace entre les écrans et que le contenu est présenté de chaque côté de cet espace.
 
-> **REMARQUE :** Un _appareil double écran_ est un type spécial d’appareil qui présente des fonctionnalités uniques. Il ne s’agit pas d’un appareil de bureau équipé de plusieurs moniteurs. Pour plus d’informations, consultez cette [présentation des appareils double écran](/dual-screen/introduction).
->
->Dans cet article, nous utilisons les termes _appareil monoécran_ et _affichage monoécran_ pour désigner un appareil qui n’est pas un appareil double écran, qu’il s’agisse d’un simple moniteur ou d’un moniteur faisant partie d’une configuration à plusieurs écrans. Sur un appareil monoécran, le contrôle TwoPaneView se comporte de la même façon que les autres contrôles XAML. Pour plus d’informations sur les façons dont vous pouvez optimiser votre application pour plusieurs moniteurs, consultez [Afficher plusieurs vues](/windows/uwp/design/layout/show-multiple-views).
+> [!NOTE]
+> Un _appareil double écran_ est un type spécial d’appareil qui présente des fonctionnalités uniques. Il ne s’agit pas d’un appareil de bureau équipé de plusieurs moniteurs. Pour plus d’informations, consultez cette [présentation des appareils double écran](/dual-screen/introduction). (Pour plus d’informations sur les façons dont vous pouvez optimiser votre application pour plusieurs moniteurs, consultez [Afficher plusieurs vues](/windows/uwp/design/layout/show-multiple-views).)
 
-| **Obtenir la bibliothèque d’interface utilisateur Windows** |
+| Obtenir la bibliothèque d’interface utilisateur Windows |
 | - |
 | Ce contrôle est inclus dans la bibliothèque d’interface utilisateur Windows, package NuGet qui contient les nouveaux contrôles et fonctionnalités d’interface utilisateur pour les applications UWP. Pour plus d’informations, notamment des instructions d’installation, consultez [Vue d’ensemble de la bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/). |
 
-| **API de plateforme** | **API de la bibliothèque d’interface utilisateur Windows** |
+| API de plateforme | API de la bibliothèque d’interface utilisateur Windows |
 | - | - |
 | [TwoPaneView, classe](/uwp/api/windows.ui.xaml.controls.twopaneview) | [TwoPaneView, classe](/uwp/api/microsoft.ui.xaml.controls.twopaneview) |
 
@@ -56,113 +55,132 @@ Utilisez la vue à deux volets lorsque vous avez 2 zones de contenu distinctes 
 
 ## <a name="examples"></a>Exemples
 
-Ces images montrent une application en cours d’exécution sur un appareil monoécran et sur un appareil double écran. La vue à deux volets adapte l’interface utilisateur de l’application à différentes configurations de volet sur chaque appareil.
+Ces images montrent une application exécutée sur un seul écran et étendue sur deux écrans. La vue à deux volets adapte l’interface utilisateur de l’application aux différentes configurations d’écran.
 
-![tpv-single.png](images/two-pane-view/tpv-single.png)
+![Vue à deux volets d’une application sur un seul écran](images/two-pane-view/tpv-single.png)
 
-_Application sur un appareil monoécran._
+> _Application sur un seul écran._
 
-![tpv-dual-wide.png](images/two-pane-view/tpv-dual-wide.png)
+![Vue à deux volets d’une application sur deux écrans en mode horizontal](images/two-pane-view/tpv-dual-wide.png)
 
-_Application sur un appareil double écran en mode horizontal._
+> _Application sur un appareil double écran en mode horizontal._
 
-![tpv-dual-tall.png](images/two-pane-view/tpv-dual-tall.png)
+![Vue à deux volets d’une application sur deux écrans en mode vertical](images/two-pane-view/tpv-dual-tall.png)
 
-_Application sur un appareil double écran en mode vertical._
+> _Application sur un appareil double écran en mode vertical._
 
 ## <a name="how-it-works"></a>Fonctionnement
 
 La vue à deux volets se compose de deux volets où vous placez votre contenu. Elle ajuste la taille et la disposition des volets en fonction de l’espace dont bénéficie la fenêtre. Les dispositions de volet possibles sont définies par l’énumération [TwoPaneViewMode](/uwp/api/microsoft.ui.xaml.controls.twopaneviewmode) :
 
-- **SinglePane** : un seul volet est affiché, comme spécifié par la propriété [PanePriority](/uwp/api/microsoft.ui.xaml.controls.twopaneview.panepriority).
-- **Wide** : les volets sont affichés côte à côte ou un seul volet est affiché, comme spécifié par la propriété [WideModeConfiguration](/uwp/api/microsoft.ui.xaml.controls.twopaneview.widemodeconfiguration).
-- **Tall** : les volets sont affichés de haut en bas ou un seul volet est affiché, comme spécifié par la propriété [TallModeConfiguration](/uwp/api/microsoft.ui.xaml.controls.twopaneview.tallmodeconfiguration).
+| Enum&nbsp;value | Description |
+| - | - |
+| `SinglePane` | Un seul volet est affiché, comme spécifié par la propriété [PanePriority](/uwp/api/microsoft.ui.xaml.controls.twopaneview.panepriority). |
+| `Wide` | Les volets sont affichés côte à côte ou un seul volet est affiché, comme spécifié par la propriété [WideModeConfiguration](/uwp/api/microsoft.ui.xaml.controls.twopaneview.widemodeconfiguration). |
+| `Tall` | Les volets sont affichés de haut en bas ou un seul volet est affiché, comme spécifié par la propriété [TallModeConfiguration](/uwp/api/microsoft.ui.xaml.controls.twopaneview.tallmodeconfiguration). |
 
-Pour configurer la vue à deux volets, commencez par définir [PanePriority](/uwp/api/microsoft.ui.xaml.controls.twopaneview.panepriority) pour spécifier le volet à afficher s’il n’y a de la place que pour un seul volet. Indiquez ensuite si le premier volet (Pane1) apparaît en haut ou en bas pour les fenêtres en mode vertical, ou à gauche ou à droite pour les fenêtres en mode horizontal.
+Pour configurer la vue à deux volets, commencez par définir [PanePriority](/uwp/api/microsoft.ui.xaml.controls.twopaneview.panepriority) pour spécifier le volet à afficher s’il n’y a de la place que pour un seul volet. Indiquez ensuite si le volet `Pane1` apparaît en haut ou en bas dans les fenêtres en mode vertical, ou à gauche ou à droite dans les fenêtres en mode horizontal.
 
 La vue à deux volets gère la taille et la disposition des volets, mais vous devez toujours faire en sorte que le contenu à l’intérieur du volet s’adapte aux changements de taille et d’orientation. Pour plus d’informations sur la création d’une interface utilisateur adaptative, consultez [Dispositions dynamiques avec XAML](/windows/uwp/design/layout/layouts-with-xaml) et [Panneaux de disposition](/windows/uwp/design/layout/layout-panels).
 
-La vue à deux volets gère l’affichage des volets en fonction du type d’appareil sur lequel l’application s’exécute :
+[TwoPaneView](/uwp/api/microsoft.ui.xaml.controls.twopaneview) gère l’affichage des volets en fonction de l’état de répartition de l’application.
 
-- Sur un appareil double écran
+- Sur un seul écran
 
-    La vue à deux volets est conçue pour vous aider à optimiser votre interface utilisateur sur les appareils double écran. La fenêtre se redimensionne automatiquement afin d’utiliser tout l’espace disponible sur les écrans. Si votre application ne se trouve que sur l’un des écrans de l’appareil, un seul volet s’affiche, comme spécifié par la propriété [PanePriority](/uwp/api/microsoft.ui.xaml.controls.twopaneview.panepriority).
+    Si votre application s’affiche sur un seul écran, `TwoPaneView` adapte la taille et la position de ses volets d’après les paramètres des propriétés que vous spécifiez. Ces propriétés sont traitées plus en détail dans la section suivante. La seule différence entre les appareils tient au fait que certains appareils, comme les PC de bureau, autorisent les fenêtres redimensionnables alors que d’autres ne les autorisent pas.
 
-    Si votre application couvre les deux écrans d’un appareil double écran, chaque écran affiche le contenu de l’un des volets en tenant compte de l’espace entre les écrans. La vue à deux volets intègre la reconnaissance de l’étendue. Il vous suffit de définir la configuration verticale/horizontale pour spécifier quel volet s’affiche sur quel écran. La vue à deux volets se charge du reste.
+- Répartie sur deux écrans
 
-
-- Sur les appareils monoécrans
-
-    Quand vous utilisez un appareil monoécran comme un ordinateur portable ou un ordinateur de bureau, la vue à deux volets se comporte comme tout autre contrôle XAML. Si la fenêtre est redimensionnée, la vue à deux volets ajuste la taille et la position de ses volets en fonction de la taille de la fenêtre. Des propriétés supplémentaires vous permettent de définir le comportement du contrôle quand il est affiché sur un seul écran dans une fenêtre redimensionnable. Ces propriétés sont traitées plus en détail dans la section suivante.
+    `TwoPaneView` facilite l’optimisation de votre interface utilisateur en la répartissant sur les appareils double écran. La fenêtre se redimensionne automatiquement afin d’utiliser tout l’espace disponible sur les écrans. Si votre application couvre les deux écrans d’un appareil double écran, chaque écran affiche le contenu de l’un des volets en tenant compte de l’espace entre les écrans. La vue à deux volets intègre la reconnaissance de l’étendue. Il vous suffit de définir la configuration verticale/horizontale pour spécifier quel volet s’affiche sur quel écran. La vue à deux volets se charge du reste.
 
 ## <a name="how-to-use-the-two-pane-view-control"></a>Comment utiliser le contrôle de vue à deux volets
 
-[TwoPaneView](/uwp/api/microsoft.ui.xaml.controls.twopaneview) ne doit pas nécessairement être l’élément racine de votre mise en page. En fait, il est souvent placé à l’intérieur d’un contrôle [NavigationView](/uwp/api/microsoft.ui.xaml.controls.navigationview) qui fournit la navigation globale pour votre application. TwoPaneView adapte l’affichage en conséquence, quel que soit son emplacement dans l’arborescence XAML. Toutefois, nous vous déconseillons d’imbriquer un contrôle TwoPaneView dans un autre contrôle TwoPaneView.
+[TwoPaneView](/uwp/api/microsoft.ui.xaml.controls.twopaneview) ne doit pas nécessairement être l’élément racine de votre mise en page. En fait, il est souvent placé à l’intérieur d’un contrôle [NavigationView](/uwp/api/microsoft.ui.xaml.controls.navigationview) qui fournit la navigation globale pour votre application. Le contrôle `TwoPaneView` s’adapte en conséquence, quel que soit son emplacement dans l’arborescence XAML. Toutefois, nous vous déconseillons d’imbriquer un contrôle `TwoPaneView` dans un autre contrôle `TwoPaneView`. (Si vous le faites, seul le contrôle `TwoPaneView` externe prend en compte la répartition.)
 
 ### <a name="add-content-to-the-panes"></a>Ajouter du contenu aux volets
 
-Chaque volet d’une vue à deux volets peut contenir un seul UIElement XAML. Pour ajouter du contenu, vous placez généralement un panneau de disposition XAML dans chaque volet, puis vous ajoutez d’autres contrôles et du contenu au panneau. Les volets pouvant changer de taille et alterner entre mode horizontal et mode vertical, vous devez vérifier que le contenu de chaque volet peut s’adapter à ces changements. Pour plus d’informations sur la création d’une interface utilisateur adaptative, consultez [Dispositions dynamiques avec XAML](/windows/uwp/design/layout/layouts-with-xaml) et [Panneaux de disposition](/windows/uwp/design/layout/layout-panels).
+Chaque volet d’une vue à deux volets peut contenir un seul `UIElement` XAML. Pour ajouter du contenu, vous placez généralement un panneau de disposition XAML dans chaque volet, puis vous ajoutez d’autres contrôles et du contenu au panneau. Les volets pouvant changer de taille et alterner entre mode horizontal et mode vertical, vous devez vérifier que le contenu de chaque volet peut s’adapter à ces changements. Pour plus d’informations sur la création d’une interface utilisateur adaptative, consultez [Dispositions dynamiques avec XAML](/windows/uwp/design/layout/layouts-with-xaml) et [Panneaux de disposition](/windows/uwp/design/layout/layout-panels).
 
-L’exemple présenté ici crée l’interface utilisateur d’une application simple qui contient une image et des informations. S’il y a de la place pour deux volets, l’image et les informations sont affichées dans des volets distincts. (S’il n’y a de la place que pour un seul volet, le contenu de Pane2 est déplacé dans Pane1 et l’utilisateur doit faire défiler le volet pour voir le contenu masqué. Ce code est présenté plus loin dans la section _Répondre aux changements de mode_.)
+L’exemple présenté ici crée l’interface utilisateur d’une application simple avec une image et des informations (celle que vous avez vue précédemment dans la section _Exemples_). Quand l’application est répartie sur deux écrans, l’image et les informations sont affichées sur des écrans distincts. Sur un seul écran, le contenu peut être affiché dans deux volets ou combiné dans un volet unique en fonction de la place disponible. (S’il n’y a de la place que pour un seul volet, le contenu de Pane2 est déplacé dans Pane1 et l’utilisateur doit faire défiler le volet pour voir le contenu masqué. Ce code est présenté plus loin dans la section _Répondre aux changements de mode_.)
 
-![tpv-add-content.png](images/two-pane-view/tpv-add-content.png)
+![Petite image d’un exemple d’application répartie sur deux écrans](images/two-pane-view/tpv-left-right.png)
 
 ```xaml
-<muxc:TwoPaneView
-    Pane1Length="*"
-    ModeChanged="TwoPaneView_ModeChanged">
+<Grid>
+    <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" MinHeight="40"/>
+        <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
 
-    <muxc:TwoPaneView.Pane1>
-        <Grid x:Name="Pane1Root">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" MinHeight="40"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
+    <CommandBar DefaultLabelPosition="Right">
+        <AppBarButton x:Name="Share" Icon="Share" Label="Share" Click="Share_Click"/>
+        <AppBarButton x:Name="Print" Icon="Print" Label="Print" Click="Print_Click"/>
+    </CommandBar>
 
-            <CommandBar x:Name="MyCommandBar" DefaultLabelPosition="Right">
-                <AppBarButton x:Name="Share" Icon="Share" Label="Share"/>
-                <AppBarButton x:Name="Print" Icon="Print" Label="Print"/>
-            </CommandBar>
+    <muxc:TwoPaneView
+        x:Name="MyTwoPaneView"
+        Grid.Row="1"
+        MinWideModeWidth="959"
+        MinTallModeHeight="863"
+        ModeChanged="TwoPaneView_ModeChanged">
 
-            <ScrollViewer Grid.Row="1">
-                <StackPanel x:Name="Pane1StackPanel">
-                    <Image x:Name="TheImage" Source="Assets\LandscapeImage8.jpg"
-                           VerticalAlignment="Top" HorizontalAlignment="Center" 
-                           Margin="16,0"/>
-                </StackPanel>
-            </ScrollViewer>
+        <muxc:TwoPaneView.Pane1>
+            <Grid x:Name="Pane1Root">
+                <ScrollViewer>
+                    <StackPanel x:Name="Pane1StackPanel">
+                        <Image Source="Assets\LandscapeImage8.jpg"
+                               VerticalAlignment="Top" HorizontalAlignment="Center"
+                               Margin="16,0"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+        </muxc:TwoPaneView.Pane1>
 
-        </Grid>
-    </muxc:TwoPaneView.Pane1>
+        <muxc:TwoPaneView.Pane2>
+            <Grid x:Name="Pane2Root">
+                <ScrollViewer x:Name="DetailsContent">
+                    <StackPanel Padding="16">
+                        <TextBlock Text="Mountain.jpg" MaxLines="1"
+                                       Style="{ThemeResource HeaderTextBlockStyle}"/>
+                        <TextBlock Text="Date Taken:"
+                                       Style="{ThemeResource SubheaderTextBlockStyle}"
+                                       Margin="0,24,0,0"/>
+                        <TextBlock Text="8/29/2019 9:55am"
+                                       Style="{ThemeResource SubtitleTextBlockStyle}"/>
+                        <TextBlock Text="Dimensions:"
+                                       Style="{ThemeResource SubheaderTextBlockStyle}"
+                                       Margin="0,24,0,0"/>
+                        <TextBlock Text="800x536"
+                                       Style="{ThemeResource SubtitleTextBlockStyle}"/>
+                        <TextBlock Text="Resolution:"
+                                       Style="{ThemeResource SubheaderTextBlockStyle}"
+                                       Margin="0,24,0,0"/>
+                        <TextBlock Text="96 dpi"
+                                       Style="{ThemeResource SubtitleTextBlockStyle}"/>
+                        <TextBlock Text="Description:"
+                                       Style="{ThemeResource SubheaderTextBlockStyle}"
+                                       Margin="0,24,0,0"/>
+                        <TextBlock Text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna."
+                                       Style="{ThemeResource SubtitleTextBlockStyle}"
+                                       TextWrapping="Wrap"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+        </muxc:TwoPaneView.Pane2>
+    </muxc:TwoPaneView>
 
-    <muxc:TwoPaneView.Pane2>
-        <Grid x:Name="Pane2Root">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" MinHeight="40"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <StackPanel x:Name="DetailsContent" Grid.Row="1"
-                Orientation="Vertical" Padding="16">
-
-                <TextBlock Text="Mountain.jpg" Margin="0,0,0,12"
-                   FontWeight="SemiBold" FontSize="18"/>
-
-                <TextBlock Text="Date Taken:" FontWeight="SemiBold"/>
-                <TextBlock Text="8/29/2019 9:55am" Margin="0,0,0,12"/>
-
-                <TextBlock Text="Dimensions:" FontWeight="SemiBold"/>
-                <TextBlock Text="1000x750" Margin="0,0,0,12"/>
-
-                <TextBlock Text="Resolution:" FontWeight="SemiBold"/>
-                <TextBlock Text="96 dpi" Margin="0,0,0,12"/>
-
-                <TextBlock Text="Description:" FontWeight="SemiBold"/>
-                <TextBlock TextWrapping="Wrap" 
-                           Text="Lorem ipsum dolor sit amet."/>
-            </StackPanel>
-        </Grid>
-    </muxc:TwoPaneView.Pane2>
-</muxc:TwoPaneView>
+    <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup x:Name="TwoPaneViewStates">
+            <VisualState x:Name="Normal"/>
+            <VisualState x:Name="Wide">
+                <VisualState.Setters>
+                    <Setter Target="MyTwoPaneView.Pane1Length"
+                            Value="2*"/>
+                </VisualState.Setters>
+            </VisualState>
+        </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
+</Grid>
 ```
 
 ### <a name="specify-which-pane-to-display"></a>Spécifier le volet à afficher
@@ -179,136 +197,147 @@ MyTwoPaneView.PanePriority = Microsoft.UI.Xaml.Controls.TwoPaneViewPriority.Pane
 
 ### <a name="pane-sizing"></a>Dimensionnement des volets
 
-La taille des volets sur un appareil monoécran est déterminée par les propriétés [Pane1Length](/uwp/api/microsoft.ui.xaml.controls.twopaneview.pane1length) et [Pane2Length](/uwp/api/microsoft.ui.xaml.controls.twopaneview.pane2length). Celles-ci utilisent les valeurs de [GridLength](/uwp/api/windows.ui.xaml.gridlength) qui prennent en charge les redimensionnements _auto_ et \* (_étoile_ ou proportionnel). Pour obtenir une explication des redimensionnements auto et *, consultez la section _Propriétés de disposition_ de l’article [Dispositions dynamiques avec XAML](/windows/uwp/design/layout/layouts-with-xaml#layout-properties).
+Sur un seul écran, la taille des volets est déterminée par les propriétés [Pane1Length](/uwp/api/microsoft.ui.xaml.controls.twopaneview.pane1length) et [Pane2Length](/uwp/api/microsoft.ui.xaml.controls.twopaneview.pane2length). Celles-ci utilisent les valeurs de [GridLength](/uwp/api/windows.ui.xaml.gridlength) qui prennent en charge les redimensionnements _auto_ et \* (_étoile_ ou proportionnel). Pour obtenir une explication des redimensionnements auto et *, consultez la section _Propriétés de disposition_ de l’article [Dispositions dynamiques avec XAML](/windows/uwp/design/layout/layouts-with-xaml#layout-properties).
 
-Par défaut, Pane1Length a la valeur **Auto** et se redimensionne en fonction de son contenu. Pane2Length a la valeur * et utilise tout l’espace restant.
+Par défaut, `Pane1Length` est défini sur `Auto` et se redimensionne automatiquement en fonction de son contenu. `Pane2Length` est défini sur `*` et utilise tout l’espace restant.
 
-![tpv-size-default.png](images/two-pane-view/tpv-size-default.png)
+![Vue à deux volets définis à des tailles par défaut](images/two-pane-view/tpv-size-default.png)
 
-_Volets avec redimensionnement par défaut_
+> _Volets avec redimensionnement par défaut_
 
-Les valeurs par défaut sont utiles pour une disposition standard de type maître/détail, avec une liste d’éléments dans Pane1 et de nombreux détails dans Pane2. Toutefois, en fonction de votre contenu, vous préférerez peut-être diviser l’espace différemment. Ici, Pane1Length a la valeur 2* et a deux fois plus d’espace que Pane2.
+Les valeurs par défaut sont utiles pour une disposition standard de type maître/détail, avec une liste d’éléments dans `Pane1` et de nombreux détails dans `Pane2`. Toutefois, en fonction de votre contenu, vous préférerez peut-être diviser l’espace différemment. Dans ce cas, `Pane1Length` est défini sur `2*` pour avoir deux fois plus d’espace que `Pane2`.
 
 ```xaml
 <muxc:TwoPaneView x:Name="MyTwoPaneView" Pane1Length="2*">
 ```
 
-![tpv-size-2.png](images/two-pane-view/tpv-size-2.png)
+![Vue à deux volets avec le volet 1 sur les deux tiers de l’écran et le volet 2 sur le tiers restant](images/two-pane-view/tpv-size-2.png)
 
-_Volets dimensionnés avec 2* et *_
+> _Volets dimensionnés avec 2* et *_
 
-> **REMARQUE :** Comme mentionné précédemment, sur un appareil double écran, ces propriétés sont ignorées et les volets sont redimensionnés et disposés automatiquement en fonction de la _posture_ de l’appareil.
+> [!NOTE]
+> Comme mentionné précédemment, quand l’application est répartie sur deux écrans, ces propriétés sont ignorées et chaque volet remplit l’un des écrans.
 
 Si vous définissez un volet avec redimensionnement automatique, vous pouvez contrôler la taille en définissant la hauteur et la largeur du panneau où se trouve le contenu du volet. Dans ce cas, vous devrez peut-être gérer l’événement ModeChanged et définir les contraintes de hauteur et de largeur du contenu en fonction du mode actuel.
 
 ### <a name="display-in-wide-or-tall-mode"></a>Afficher en mode vertical ou horizontal
 
-Sur un ordinateur de bureau, le [mode](/uwp/api/microsoft.ui.xaml.controls.twopaneview.mode) d’affichage de la vue à deux volets est déterminé par les propriétés [MinWideModeWidth](/uwp/api/microsoft.ui.xaml.controls.twopaneview.minwidemodewidth) et [MinTallModeHeight](/uwp/api/microsoft.ui.xaml.controls.twopaneview.mintallmodeheight). Les deux propriétés ont une valeur par défaut de 641px, comme [NavigationView.CompactThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.compactmodethresholdwidth).
+Sur un seul écran, le [mode](/uwp/api/microsoft.ui.xaml.controls.twopaneview.mode) d’affichage de la vue à deux volets est déterminé par les propriétés [MinWideModeWidth](/uwp/api/microsoft.ui.xaml.controls.twopaneview.minwidemodewidth) et [MinTallModeHeight](/uwp/api/microsoft.ui.xaml.controls.twopaneview.mintallmodeheight). Les deux propriétés ont une valeur par défaut de 641px, comme [NavigationView.CompactThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.compactmodethresholdwidth).
 
-Si la fenêtre est :
+Ce tableau montre de quelle façon les propriétés Height et Width du TwoPaneView déterminent le mode d’affichage utilisé.
 
-- Plus large que MinWideModeWidth, le mode **Wide** (horizontal) est utilisé.
-- Plus étroite que MinWideModeWidth et plus haute que MinTallModeHeight, le mode **Tall** (vertical) est utilisé.
-- Plus étroite que MinWideModeWidth et plus petite que MinTallModeHeight, le mode **SinglePane** (un seul volet) est utilisé.
+| Condition TwoPaneView  | Mode |
+|---------|---------|
+| `Width` > `MinWideModeWidth` | Le mode `Wide` est utilisé |
+| `Width` <= `MinWideModeWidth`, et `Height` > `MinTallModeHeight` | Le mode `Tall` est utilisé |
+| `Width` <= `MinWideModeWidth`, et `Height` <= `MinTallModeHeight` | Le mode `SinglePane` est utilisé |
 
-> **REMARQUE :** Comme mentionné précédemment, sur un appareil double écran, ces propriétés sont ignorées et les volets sont redimensionnés et disposés automatiquement en fonction de la _posture_ de l’appareil.
+
+> [!NOTE]
+> Comme mentionné précédemment, quand l’application est répartie sur deux écrans, ces propriétés sont ignorées et le mode d’affichage est déterminé en fonction de la _posture_ de l’appareil.
 
 #### <a name="wide-configuration-options"></a>Options de configuration du mode horizontal
 
-La vue à deux volets passe en mode horizontal quand la largeur d’une fenêtre est supérieure à la propriété MinWideModeWidth. MinWideModeWidth contrôle à quel moment la vue à deux volets passe en mode horizontal. La valeur par défaut est 641px, mais vous pouvez la remplacer par la valeur de votre choix. En général, vous définissez cette propriété pour qu’elle soit égale à la largeur minimale souhaitée de votre volet.
+La vue à deux volets passe en mode `Wide` quand la largeur d’une fenêtre est supérieure à la valeur `MinWideModeWidth`. `MinWideModeWidth` contrôle à quel moment la vue à deux volets passe en mode horizontal. La valeur par défaut est 641px, mais vous pouvez la remplacer par la valeur de votre choix. En général, vous définissez cette propriété pour qu’elle soit égale à la largeur minimale souhaitée de votre volet.
 
-Quand la vue à deux volets est en mode horizontal, la propriété WideModeConfiguration détermine ce qu’il faut afficher :
+Quand la vue à deux volets est en mode horizontal, la propriété [WideModeConfiguration](/uwp/api/microsoft.ui.xaml.controls.twopaneview.widemodeconfiguration) détermine ce qu’il faut afficher :
 
-- **SinglePane** : un seul volet (tel que déterminé par PanePriority). Le volet occupe toute la taille de TwoPaneView (redimensionnement proportionnel dans les deux directions).
-- **LeftRight** : Pane1 à gauche et Pane2 à droite. Les deux volets sont redimensionnés verticalement de manière proportionnelle, la largeur de Pane1 est redimensionnée automatiquement et la largeur de Pane2 est redimensionnée de manière proportionnelle.
-- **RightLeft** : Pane1 à droite et Pane2 à gauche. Les deux volets sont redimensionnés verticalement de manière proportionnelle, la largeur de Pane2 est redimensionnée automatiquement et la largeur de Pane1 est redimensionnée de manière proportionnelle.
+| [Enum&nbsp;value](/uwp/api/microsoft.ui.xaml.controls.twopaneviewwidemodeconfiguration) | Description |
+|---------|---------|
+| `SinglePane` | Un seul volet (déterminé par `PanePriority`). Le volet occupe toute la taille du `TwoPaneView` (redimensionnement proportionnel dans les deux directions). |
+| `LeftRight` | `Pane1` à gauche et `Pane2` à droite. Les deux volets sont redimensionnés verticalement de manière proportionnelle ; la largeur de `Pane1` est redimensionnée automatiquement et la largeur de `Pane2` est redimensionnée de manière proportionnelle. |
+| `RightLeft` | `Pane1` à droite et `Pane2` à gauche. Les deux volets sont redimensionnés verticalement de manière proportionnelle ; la largeur de `Pane2` est redimensionnée automatiquement et la largeur de `Pane1` est redimensionnée de manière proportionnelle. |
 
-Le paramètre par défaut est **LeftRight**.
+La valeur par défaut est `LeftRight`.
 
 | LeftRight | RightLeft |
 | - | - |
-| ![tpv-left-right.png](images/two-pane-view/tpv-left-right.png)  | ![tpv-right-left.png](images/two-pane-view/tpv-right-left.png)  |
+| ![Vue à deux volets avec une configuration gauche-droite](images/two-pane-view/tpv-left-right.png)  | ![Vue à deux volets avec une configuration droite-gauche](images/two-pane-view/tpv-right-left.png)  |
 
-> **CONSEIL :** Quand l’appareil utilise une langue qui s’écrit de droite à gauche (DàG), la vue à deux volets change automatiquement l’ordre : RightLeft devient LeftRight, et LeftRight devient RightLeft.
+> **CONSEIL :** Quand l’appareil utilise une langue qui s’écrit de droite à gauche (DàG), la vue à deux volets change automatiquement l’ordre : `RightLeft` devient `LeftRight` et `LeftRight` devient `RightLeft`.
 
 #### <a name="tall-configuration-options"></a>Options de configuration du mode vertical
 
-La vue à deux volets passe en mode vertical quand une fenêtre est plus étroite que MinWideModeWidth et plus haute que MinTallModeHeight. La valeur par défaut est 641px, mais vous pouvez la remplacer par la valeur de votre choix. En général, vous définissez cette propriété pour qu’elle soit égale à la hauteur minimale souhaitée de votre volet.
+La vue à deux volets passe en mode `Tall` quand la largeur d’une fenêtre est inférieure à la valeur `MinWideModeWidth` et que sa hauteur dépasse la valeur `MinTallModeHeight`. La valeur par défaut est 641px, mais vous pouvez la remplacer par la valeur de votre choix. En général, vous définissez cette propriété pour qu’elle soit égale à la hauteur minimale souhaitée de votre volet.
 
-Quand la vue à deux volets est en mode vertical, la propriété TallLayout détermine ce qu’il faut afficher :
+Quand la vue à deux volets est en mode vertical, la propriété [TallModeConfiguration](/uwp/api/microsoft.ui.xaml.controls.twopaneview.tallmodeconfiguration) détermine ce qu’il faut afficher :
 
-- **SinglePane** : un seul volet (tel que déterminé par PanePriority). Le volet occupe toute la taille de TwoPaneView (redimensionnement proportionnel dans les deux directions).
-- **TopBottom** : Pane1 en haut et Pane2 en bas. Les deux volets sont redimensionnés horizontalement de manière proportionnelle, la hauteur de Pane1 est redimensionnée automatiquement et la hauteur de Pane2 est redimensionnée de manière proportionnelle.
-- **BottomTop** : Pane1 en bas et Pane2 en haut. Les deux volets sont redimensionnés horizontalement de manière proportionnelle, la hauteur de Pane2 est redimensionnée automatiquement et la hauteur de Pane1 est redimensionnée de manière proportionnelle.
+| [Enum&nbsp;value](/uwp/api/microsoft.ui.xaml.controls.twopaneviewtallmodeconfiguration) | Description |
+|---------|---------|
+| `SinglePane` | Un seul volet (déterminé par `PanePriority`). Le volet occupe toute la taille du `TwoPaneView` (redimensionnement proportionnel dans les deux directions). |
+| `TopBottom` | `Pane1` en haut et `Pane2` en bas. Les deux volets sont redimensionnés horizontalement de manière proportionnelle ; la hauteur de `Pane1` est redimensionnée automatiquement et la hauteur de `Pane2` est redimensionnée de manière proportionnelle. |
+| `BottomTop` | `Pane1` en bas et `Pane2` en haut. Les deux volets sont redimensionnés horizontalement de manière proportionnelle ; la hauteur de `Pane2` est redimensionnée automatiquement et la hauteur de `Pane1` est redimensionnée de manière proportionnelle. |
 
-Le paramètre par défaut est **TopBottom**.
+La valeur par défaut est `TopBottom`.
 
 | TopBottom | BottomTop |
 | - | - |
-| ![tpv-top-bottom.png](images/two-pane-view/tpv-top-bottom.png)  | ![tpv-bottom-top.png](images/two-pane-view/tpv-bottom-top.png)  |
+| ![Vue à deux volets avec une configuration haut-bas](images/two-pane-view/tpv-top-bottom.png)  | ![Vue à deux volets avec une configuration bas-haut](images/two-pane-view/tpv-bottom-top.png)  |
 
 #### <a name="special-values-for-minwidemodewidth-and-mintallmodeheight"></a>Valeurs spéciales pour MinWideModeWidth et MinTallModeHeight
 
-Vous pouvez utiliser la propriété MinWideModeWidth pour empêcher la vue à deux volets de passer en mode Wide (horizontal). Pour cela, affectez simplement [Double.PositiveInfinity](/dotnet/api/system.double.positiveinfinity?view=dotnet-uwp-10.0) à MinWideModeWidth.
+Vous pouvez utiliser la propriété `MinWideModeWidth` pour empêcher la vue à deux volets d’entrer en mode Wide (horizontal). Pour cela, définissez simplement `MinWideModeWidth` sur [Double.PositiveInfinity](/dotnet/api/system.double.positiveinfinity?view=dotnet-uwp-10.0).
 
-Si vous affectez [Double.PositiveInfinity](/dotnet/api/system.double.positiveinfinity?view=dotnet-uwp-10.0) à MinTallModeHeight, la vue à deux volets n’entre pas en mode Tall (vertical).
+Si vous définissez `MinTallModeHeight` sur [Double.PositiveInfinity](/dotnet/api/system.double.positiveinfinity?view=dotnet-uwp-10.0), la vue à deux volets n’entre pas en mode Tall (vertical).
 
-Si vous affectez 0 à MinTallModeHeight, la vue à deux volets n’entre pas en mode SinglePane.
+Si vous définissez `MinTallModeHeight` sur zéro (0), la vue à deux volets n’entre pas en mode `SinglePane`.
 
 #### <a name="responding-to-mode-changes"></a>Répondre aux changements de mode
 
 Vous pouvez utiliser la propriété en lecture seule [Mode](/uwp/api/microsoft.ui.xaml.controls.twopaneview.mode) pour obtenir le mode d’affichage actuel. Chaque fois que la vue à deux volets change le ou les volets affichés, l’événement [ModeChanged](/uwp/api/microsoft.ui.xaml.controls.twopaneview.modechanged) se produit avant l’affichage du contenu mis à jour. Vous pouvez gérer l’événement pour répondre aux changements du mode d’affichage.
 
-Vous pouvez notamment utiliser cet événement pour mettre à jour l’interface utilisateur de votre application afin que les utilisateurs puissent voir tout le contenu en mode SinglePane. Par exemple, l’exemple d’application a un volet principal (l’image) et un volet d’informations.
+> [!TIP]
+> L’événement `ModeChanged` ne se produit pas au moment du chargement initial de la page. Votre code XAML par défaut doit donc représenter l’interface utilisateur telle qu’elle est censée apparaître au premier chargement.
 
-![tpv-add-content.png](images/two-pane-view/tpv-add-content.png)
+Vous pouvez notamment utiliser cet événement pour mettre à jour l’interface utilisateur de votre application afin que les utilisateurs puissent voir tout le contenu en mode `SinglePane`. Par exemple, l’exemple d’application a un volet principal (l’image) et un volet d’informations.
 
-_Mode horizontal_
+![Petite image d’un exemple d’application répartie en mode Tall (vertical)](images/two-pane-view/tpv-top-bottom.png)
 
-S’il n’y a de la place que pour un seul volet, le contenu de Pane2 est déplacé dans Pane1 et l’utilisateur doit faire défiler le volet pour voir tout le contenu. Cette dernière se présente comme suit.
+> _Mode Tall_ (vertical)
 
-![tpv-mode-change.png](images/two-pane-view/tpv-mode-change.png)
+S’il n’y a de la place que pour un seul volet, vous pouvez déplacer le contenu de `Pane2` vers `Pane1` afin que l’utilisateur puisse faire défiler le volet pour voir tout le contenu. Cette dernière se présente comme suit.
 
-_Mode SinglePane_
+![Image d’un exemple d’application sur un écran avec tout le contenu défilant dans un seul volet](images/two-pane-view/tpv-single-pane.png)
+
+> _Mode SinglePane_
+
+N’oubliez pas que les propriétés `MinWideModeWidth` et `MinTallModeHeight` déterminent quand changer le mode d’affichage. Vous pouvez donc changer le moment où le contenu est déplacé entre les volets en ajustant les valeurs de ces propriétés.
+
+Voici le code du gestionnaire d’événements `ModeChanged` qui déplace le contenu de `Pane1` vers `Pane2`. Il définit également un [VisualState](/uwp/api/windows.ui.xaml.visualstate) qui force l’affichage de l’image en mode Wide (horizontal).
 
 ```csharp
- private void TwoPaneView_ModeChanged(Microsoft.UI.Xaml.Controls.TwoPaneView sender, object args)
- {
-     ((Panel)DetailsContent.Parent).Children.Remove(DetailsContent);
-     ((Panel)MyCommandBar.Parent).Children.Remove(MyCommandBar);
+private void TwoPaneView_ModeChanged(Microsoft.UI.Xaml.Controls.TwoPaneView sender, object args)
+{
+    // Remove details content from it's parent panel.
+    ((Panel)DetailsContent.Parent).Children.Remove(DetailsContent);
+    // Set Normal visual state.
+    Windows.UI.Xaml.VisualStateManager.GoToState(this, "Normal", true);
 
-     // Single pane
-     if (sender.Mode == Microsoft.UI.Xaml.Controls.TwoPaneViewMode.SinglePane)
-     {
-         // Add the command bar and details content to Pane1.
-         Pane1StackPanel.Children.Add(DetailsContent);
-         Pane1Root.Children.Add(MyCommandBar);
-     }
-     // Dual pane.
-     else
-     {
-         // Wide mode.
-         if (sender.Mode == Microsoft.UI.Xaml.Controls.TwoPaneViewMode.Wide)
-         {
-             // Put the command bar in Pane2.
-             Pane2Root.Children.Add(MyCommandBar);
-         }
-         // Tall mode.
-         else if (sender.Mode == Microsoft.UI.Xaml.Controls.TwoPaneViewMode.Tall)
-         {
-             // Put the command bar in Pane1
-             Pane1Root.Children.Add(MyCommandBar);
-         }
+    // Single pane
+    if (sender.Mode == Microsoft.UI.Xaml.Controls.TwoPaneViewMode.SinglePane)
+    {
+        // Add the details content to Pane1.
+        Pane1StackPanel.Children.Add(DetailsContent);
+    }
+    // Dual pane.
+    else
+    {
+        // Put details content in Pane2.
+        Pane2Root.Children.Add(DetailsContent);
 
-         // Put details content in Pane2.
-         Pane2Root.Children.Add(DetailsContent);
-     }
- }
+        // If also in Wide mode, set Wide visual state
+        // to constrain the width of the image to 2*.
+        if (sender.Mode == Microsoft.UI.Xaml.Controls.TwoPaneViewMode.Wide)
+        {
+            Windows.UI.Xaml.VisualStateManager.GoToState(this, "Wide", true);
+        }
+    }
+}
 ```
 
 ## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
 
-- Utilisez la vue à deux volets dans la mesure du possible pour que votre application puisse tirer parti des appareils double écran et des grands écrans.
+- Utilisez la vue à deux volets dans la mesure du possible pour que votre application s’affiche de manière optimale sur des appareils à double écran et à grand écran.
 - Ne placez pas une vue à deux volets à l’intérieur d’une autre vue à deux volets.
 
 ## <a name="related-articles"></a>Articles connexes

@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projeté, projection, implémentation, implémenter, classe runtime, activation
 ms.localizationpriority: medium
 ms.openlocfilehash: 84c0e9315950541e51bf49f5c0eec370f3188c4d
-ms.sourcegitcommit: 58f6643510a27d6b9cd673da850c191ee23b813e
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74701489"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209274"
 ---
 # <a name="author-apis-with-cwinrt"></a>Créer des API avec C++/WinRT
 
@@ -316,7 +316,7 @@ Dans le cas où vous disposez d’un objet d’interface et que vous savez qu’
 > [!NOTE]
 > Si vous n’avez pas installé le Kit de développement logiciel (SDK) Windows version 10.0.17763.0 (Windows 10, version 1809) ou version ultérieure, vous devez appeler [**winrt::from_abi**](/uwp/cpp-ref-for-winrt/from-abi) au lieu de [**winrt::get_ Self**](/uwp/cpp-ref-for-winrt/get-self).
 
-Voici un exemple : Il existe un autre exemple dans [Implémenter la classe de contrôle personnalisé **BgLabelControl**](xaml-cust-ctrl.md#implement-the-bglabelcontrol-custom-control-class).
+Voici un exemple. Il existe un autre exemple dans [Implémenter la classe de contrôle personnalisé **BgLabelControl**](xaml-cust-ctrl.md#implement-the-bglabelcontrol-custom-control-class).
 
 ```cppwinrt
 void ImplFromIClosable(IClosable const& from)
@@ -468,7 +468,7 @@ Tant que vous n’aurez pas apporté les modifications décrites ci-dessus (pour
 Comme vous l’avez vu précédemment dans cette rubrique, une classe runtime C++/WinRT existe sous la forme de plusieurs classes C++ dans plusieurs espaces de noms. Ainsi, le nom **MyRuntimeClass** a une signification dans l’espace de noms **winrt::MyProject** et une signification différente dans l’espace de noms **winrt::MyProject::implementation**. Notez bien quel espace de noms vous avez actuellement dans le contexte, puis utilisez des préfixes d’espace de noms si vous avez besoin d’un nom provenant d’un autre espace de noms. Examinons plus en détail les espaces de noms en question.
 
 - **winrt::MyProject**. Cet espace de noms contient des types projetés. Un objet d’un type projeté est un proxy ; il s’agit en fait d’un pointeur intelligent vers un objet de référence, où cet objet peut être implémenté ici dans votre projet ou dans une autre unité de compilation.
-- **winrt::MyProject::implementation**. Cet espace de noms contient des types d’implémentation. Un objet d’un type d’implémentation n’est pas un pointeur, c’est une valeur : un objet de la pile C++ complet. Ne construisez pas directement un type d’implémentation ; au lieu de cela, appelez [ **winrt::make**](/uwp/cpp-ref-for-winrt/make), en passant votre type d’implémentation comme paramètre de modèle. Nous avons montré des exemples de **winrt::make** en action précédemment dans cette rubrique, et il en existe un autre exemple dans [Contrôles XAML ; liaison à une propriété C++/WinRT](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage). Consultez également [Diagnostic des allocations directes](/windows/uwp/cpp-and-winrt-apis/diag-direct-alloc).
+- **winrt::MyProject::implementation**. Cet espace de noms contient des types d’implémentation. Un objet d’un type d’implémentation n’est pas un pointeur, c’est une valeur : un objet de la pile C++ complet. Ne construisez pas directement un type d’implémentation ; au lieu de cela, appelez [**winrt::make**](/uwp/cpp-ref-for-winrt/make), en passant votre type d’implémentation comme paramètre de modèle. Nous avons montré des exemples de **winrt::make** en action précédemment dans cette rubrique, et il en existe un autre exemple dans [Contrôles XAML ; liaison à une propriété C++/WinRT](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage). Consultez également [Diagnostic des allocations directes](/windows/uwp/cpp-and-winrt-apis/diag-direct-alloc).
 - **winrt::MyProject::factory_implementation**. Cet espace de noms contient des fabriques. Un objet de cet espace de noms prend en charge [**IActivationFactory**](/windows/win32/api/activation/nn-activation-iactivationfactory).
 
 Ce tableau montre la qualification d’espace de noms minimale à utiliser dans différents contextes.
@@ -567,7 +567,7 @@ c.Method();
 MyClass::StaticMethod();
 ```
 
-Sans `-opt[imize]`, les première et dernière instructions requièrent des appels via l’objet de fabrique. *Avec* `-opt[imize]`, aucune d'elles n'en a besoin. Et ces appels sont compilés directement par rapport à l’implémentation, et peuvent même être intégrés. Ce qui nous amène à aborder un autre terme souvent utilisé en matière de `-opt[imize]`, à savoir l'accès *direct à l'implémentation*.
+Sans `-opt[imize]`, les première et dernière instructions requièrent des appels via l’objet de fabrique. *Avec* `-opt[imize]`, aucune d’elles n’en a besoin. Et ces appels sont compilés directement par rapport à l’implémentation, et peuvent même être intégrés. Ce qui nous amène à aborder un autre terme souvent utilisé en matière de `-opt[imize]`, à savoir l'accès *direct à l'implémentation*.
 
 Les projections de langage sont pratiques, mais un accès direct à l'implémentation vous permet de produire le code le plus efficace possible. C++/WinRT peut le faire à votre place, sans vous forcer à vous départir de la sécurité et de la productivité de la projection.
 
@@ -589,7 +589,7 @@ namespace winrt::MyProject
 }
 ```
 
-Il n’est pas nécessaire de suivre tout ce qui est indiqué ci-dessus, l’objectif étant de montrer que les deux appels impliquent un appel à une fonction nommée **call_factory**. Cela vous indique que ces appels impliquent le cache de fabrique et qu’ils n’accèdent pas directement à l’implémentation. *Avec*`-opt[imize]`, ces mêmes fonctions ne sont pas définies. En fait, elles sont déclarées par la projection et leurs définitions reviennent au composant.
+Il n’est pas nécessaire de suivre tout ce qui est indiqué ci-dessus, l’objectif étant de montrer que les deux appels impliquent un appel à une fonction nommée **call_factory**. Cela vous indique que ces appels impliquent le cache de fabrique et qu’ils n’accèdent pas directement à l’implémentation. *Avec* `-opt[imize]`, ces mêmes fonctions ne sont pas définies. En fait, elles sont déclarées par la projection et leurs définitions reviennent au composant.
 
 Le composant peut ensuite fournir les définitions qui appellent directement dans l’implémentation. Il s'agit là d'un changement cassant. Ces définitions sont générées pour vous lorsque vous utilisez `-component` et `-opt[imize]`, et elles apparaissent dans un fichier nommé `Type.g.cpp`, où *Type* correspond au nom de la classe de runtime implémentée. C’est la raison pour laquelle vous pouvez rencontrer diverses erreurs d'éditeur la première fois que vous activez `-opt[imize]` dans un projet existant. Vous devez inclure ce fichier généré dans votre implémentation afin d'assembler les éléments.
 
@@ -716,7 +716,7 @@ namespace winrt::MyNamespace::implementation
 }
 ```
 
-La hiérarchie est la suivante : [**Windows::UI::Xaml::Controls::Page**](/uwp/api/windows.ui.xaml.controls.page) \<- **BasePage** \<- **DerivedPage**. La méthode **BasePage::OnNavigatedFrom** remplace [**Page::OnNavigatedFrom**](/uwp/api/windows.ui.xaml.controls.page.onnavigatedfrom) correctement, mais **DerivedPage::OnNavigatedFrom** ne remplace pas **BasePage::OnNavigatedFrom**.
+La hiérarchie est la suivante : [**Windows::UI::Xaml::Controls::Page**](/uwp/api/windows.ui.xaml.controls.page) \<- **BasePage** \<- **DerivedPage**. La méthode **BasePage::OnNavigatedFrom** remplace [**Page::OnNavigatedFrom**](/uwp/api/windows.ui.xaml.controls.page.onnavigatedfrom) correctement, mais **DerivedPage::OnNavigatedFrom** ne remplace pas **BasePage::OnNavigatedFrom**.
 
 Ici, **DerivedPage** réutilise la vtable **IPageOverrides** provenant de **BasePage**, ce qui signifie qu’elle ne parvient pas à remplacer la méthode **IPageOverrides::OnNavigatedFrom**. L’une des solutions possibles nécessite que **BasePage** soit une classe de modèle. De plus, l’intégralité de son implémentation doit avoir lieu dans un fichier d’en-tête, ce qui rend la procédure beaucoup trop compliquée.
 

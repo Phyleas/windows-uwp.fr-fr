@@ -5,12 +5,12 @@ ms.date: 07/12/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, Windows UI Library, WinUI
 ms.localizationpriority: medium
-ms.openlocfilehash: aadf177bc4a44f67550dba1f6f706525b8460857
-ms.sourcegitcommit: c9bab19599c0eb2906725fd86d0696468bb919fa
+ms.openlocfilehash: 0dce8e7ea08b18921f228b3da2e679a9edb02228
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78256172"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79200977"
 ---
 # <a name="a-simple-cwinrt-windows-ui-library-example"></a>Exemple de bibliothèque d’IU Windows C++/WinRT simple
 
@@ -53,7 +53,7 @@ Ensuite, ouvrez `MainPage.xaml`. Dans la balise **Page** d’ouverture existante
 
 Dans `MainPage.cpp`, supprimez le code à l’intérieur de votre implémentation de **MainPage::ClickHandler**, car le balisage XAML ne contient plus *myButton*.
 
-Dans `MainPage.h`, modifiez vos fichiers inclus afin qu’ils ressemblent à ceux de la liste ci-dessous. Si vous utilisez WinUI à partir de plusieurs pages XAML, vous pouvez accéder à votre fichier d’en-tête précompilé (en général `pch.h`) et les y inclure.
+Dans `MainPage.h`, modifiez vos fichiers inclus afin qu’ils ressemblent à ceux de la liste ci-dessous.
 
 ```cppwinrt
 #include "MainPage.g.h"
@@ -63,7 +63,10 @@ Dans `MainPage.h`, modifiez vos fichiers inclus afin qu’ils ressemblent à ceu
 
 Maintenant, créez le projet.
 
-Lorsque vous ajoutez un package NuGet à un projet C++/WinRT (tel que le package **Microsoft.UI.Xaml**, que vous avez précédemment ajouté) et créer le projet, les outils génèrent un ensemble de fichiers d’en-tête de projection dans le dossier `\Generated Files\winrt` de votre projet. Si vous avez suivi la procédure pas à pas, vous disposez maintenant d’un dossier `\HelloWinUICppWinRT\HelloWinUICppWinRT\Generated Files\winrt`. Le changement que vous avez apporté à `MainPage.h` ci-dessus permet d’inclure ces fichiers d’en-tête de projection dans votre projet. Et c’est nécessaire pour que les références aux types dans le package NuGet soient résolues.
+Lorsque vous ajoutez un package NuGet à un projet C++/WinRT (tel que le package **Microsoft.UI.Xaml**, que vous avez précédemment ajouté) et créer le projet, les outils génèrent un ensemble de fichiers d’en-tête de projection dans le dossier `\Generated Files\winrt` de votre projet. Si vous avez suivi la procédure pas à pas, vous disposez maintenant d’un dossier `\HelloWinUICppWinRT\HelloWinUICppWinRT\Generated Files\winrt`. La modification que vous avez apportée à `MainPage.h` ci-dessus rend ces fichiers d’en-tête de projection WinUI visibles pour **MainPage**. Cela est nécessaire pour résoudre la référence dans **MainPage** en type **Microsoft::UI::Xaml::Controls::NavigationView**.
+
+> [!IMPORTANT]
+> Dans une application réelle, les fichiers d’en-tête de projection WinUI doivent être visibles pour *toutes* les pages XAML de votre projet, pas seulement pour **MainPage**. Dans ce cas, vous devez déplacer les fichiers include des deux en-têtes de projection WinUI vers votre fichier d’en-tête précompilé (généralement `pch.h`). Après cela, toutes les références dans votre projet pourront être résolues en types disponibles dans le package NuGet. Pour une application monopage très simple, comme celle créée dans cette procédure pas à pas, il n’est pas nécessaire d’utiliser `pch.h` ; il suffit d’inclure les en-têtes dans `MainPage.h`.
 
 Vous pouvez à présent exécuter le projet.
 

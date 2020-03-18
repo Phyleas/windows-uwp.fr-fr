@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 96705faff278c4cab31e0ab271bc31d08261401b
-ms.sourcegitcommit: 1455e12a50f98823bfa3730c1d90337b1983b711
+ms.openlocfilehash: 061ad7a3f63fc92dd2f865f8870c7de5edf862af
+ms.sourcegitcommit: 756217c559155e172087dee4d762d328c6529db6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76814009"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78935357"
 ---
 # <a name="host-uwp-xaml-controls-in-desktop-apps-xaml-islands"></a>Héberger des contrôles XAML UWP dans des applications de bureau (XAML Islands)
 
@@ -53,7 +53,7 @@ Pour découvrir pas à pas comment utiliser les contrôles UWP wrappés, consult
 
 ### <a name="host-controls"></a>Contrôles hôtes
 
-Pour les scénarios autres que ceux couverts par les contrôles wrappés disponibles, les applications WPF et Windows Forms peuvent également utiliser le contrôle [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) proposé dans le Windows Community Toolkit.
+Pour les contrôles personnalisés et des scénarios autres que ceux couverts par les contrôles wrappés disponibles, les applications WPF et Windows Forms peuvent également utiliser le contrôle [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) proposé dans le Windows Community Toolkit.
 
 | Contrôler | Système d’exploitation minimal pris en charge | Description |
 |-----------------|-------------------------------|-------------|
@@ -81,16 +81,6 @@ Tenez compte des points suivants :
 
 * Si vous hébergez un contrôle UWP personnalisé, votre projet WPF ou Windows Forms doit cibler .NET Core 3. L’hébergement de contrôles UWP personnalisés n’est pas pris en charge dans les applications qui ciblent le .NET Framework. Vous devrez également effectuer quelques étapes supplémentaires pour référencer le contrôle personnalisé. Pour plus d’informations, consultez [Héberger un contrôle UWP personnalisé dans une application WPF avec XAML Islands](host-custom-control-with-xaml-islands.md).
 
-* Dans les versions antérieures de ces instructions, vous deviez ajouter l’élément `maxversiontested` à un manifeste d’application dans votre projet WPF ou Windows Forms. Désormais, tant que vous utilisez les dernières versions listées ci-dessus des packages NuGet, il est inutile d’ajouter cet élément à votre manifeste.
-
-### <a name="architecture-of-xaml-island-net-controls"></a>Architecture des contrôles .NET XAML Island
-
-Voici un bref aperçu de l’organisation architecturale des différents types de contrôles XAML Island au-dessus de l’API d’hébergement XAML UWP.
-
-![Architecture des contrôles hôtes](images/xaml-islands/host-controls.png)
-
-Les API présentes en bas de ce diagramme sont fournies avec le SDK Windows. Les contrôles wrappés et hôtes sont disponibles par le biais de packages NuGet dans le Windows Community Toolkit.
-
 ### <a name="web-view-controls"></a>Contrôles de vue web
 
 Le Windows Community Toolkit fournit également les contrôles .NET suivants pour héberger du contenu web dans les applications WPF et Windows Forms. Ces contrôles sont souvent utilisés dans des scénarios de modernisation d’applications de bureau similaires à ceux des contrôles XAML Island. Ils sont conservés dans le même dépôt [Microsoft.Toolkit.Win32](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32) que les contrôles XAML Island.
@@ -113,6 +103,33 @@ L’API d’hébergement XAML UWP se compose de plusieurs classes Windows Runtim
 
 > [!NOTE]
 > Les contrôles wrappés et hôtes dans le Windows Community Toolkit utilisent l’API d’hébergement XAML UWP en interne et implémentent tous les comportements que vous devriez gérer vous-même si vous utilisiez cette API directement, comme la navigation au clavier et les changements de disposition. Pour les applications WPF et Windows Forms, nous vous recommandons vivement d’utiliser ces contrôles au lieu de l’API d’hébergement XAML UWP directement, car ils éliminent un grand nombre des détails d’implémentation associés à l’utilisation de l’API.
+
+## <a name="architecture-of-xaml-islands"></a>Architecture des contrôles XAML Islands
+
+Voici un bref aperçu de l’organisation architecturale des différents types de contrôles XAML Island au-dessus de l’API d’hébergement XAML UWP.
+
+![Architecture des contrôles hôtes](images/xaml-islands/host-controls.png)
+
+Les API présentes en bas de ce diagramme sont fournies avec le SDK Windows. Les contrôles wrappés et hôtes sont disponibles par le biais de packages NuGet dans le Windows Community Toolkit.
+
+## <a name="window-host-context-for-xaml-islands"></a>Contexte de l’hôte de fenêtrage pour XAML Islands
+
+Quand vous hébergez XAML Islands dans une application de bureau, plusieurs arborescences de contenu XAML peuvent s’exécuter simultanément sur le même thread. Pour accéder à l’élément racine d’une arborescence de contenu XAML dans un XAML Islands et obtenir des informations connexes sur le contexte de son hébergement, utilisez la classe [XamlRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.xamlroot). Les classes [CoreWindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow), [ApplicationView](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview) et [Window](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window) ne fournissent pas les informations correctes pour XAML Islands. Les objets [CoreWindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow) et [Window](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window) existent sur le thread et sont accessibles à votre application, mais ils ne retournent pas de limites ou de visibilité significatives (ils restent toujours invisibles et ont une taille de 1x1). Pour plus d’informations, consultez [Hôtes de fenêtrage](/windows/uwp/design/layout/show-multiple-views#windowing-hosts).
+
+Par exemple, pour obtenir le rectangle englobant de la fenêtre qui contient un contrôle UWP hébergé dans un XAML Island, utilisez la propriété [XamlRoot.Size](https://docs.microsoft.com/uwp/api/windows.ui.xaml.xamlroot.size) du contrôle. Étant donné que chaque contrôle UWP qui peut être hébergé dans un XAML Island est dérivé de [Windows.UI.Xaml.UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement), vous pouvez utiliser la propriété [XamlRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.xamlroot) du contrôle pour accéder à l’objet **XamlRoot**.
+
+```csharp
+Size windowSize = myUWPControl.XamlRoot.Size;
+```
+
+N’utilisez pas la propriété [CoreWindows.Bounds](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.bounds) pour obtenir le rectangle englobant.
+
+```csharp
+// This will return incorrect information for a UWP control that is hosted in a XAML Island.
+Rect windowSize = CoreWindow.GetForCurrentThread().Bounds;
+```
+
+Pour avoir la liste des API de fenêtrage courantes à proscrire dans le contexte de XAML Islands et connaître le code de remplacement [XamlRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.xamlroot) recommandé, consultez le tableau dans [cette section](/windows/uwp/design/layout/show-multiple-views#make-code-portable-across-windowing-hosts).
 
 ## <a name="feature-roadmap"></a>Feuille de route des fonctionnalités
 

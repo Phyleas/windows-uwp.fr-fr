@@ -5,12 +5,12 @@ ms.date: 01/17/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, porter, migrer, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: d540474140e4734320b06d852933b30fa20b61be
-ms.sourcegitcommit: 2c6aac8a0cc02580df0987f0b7dba5924e3472d6
+ms.openlocfilehash: 6a0307833e996a5faba558631062c94efca3b75d
+ms.sourcegitcommit: 756217c559155e172087dee4d762d328c6529db6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74958969"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78935367"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>Passer de C++/CX à C++/WinRT
 
@@ -28,7 +28,7 @@ Si vous le souhaitez, vous pouvez porter progressivement votre code C++/CX vers 
 > [!NOTE]
 > [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) et le SDK Windows déclarent tous les deux les types dans l’espace de noms racine **Windows**. Un type Windows projeté en C++/WinRT a le même nom complet que le type Windows, mais il est placé dans l'espace de noms C++ **winrt**. Ces espaces de noms distincts vous permettent de porter le code C++/CX vers C++/WinRT à votre propre rythme.
 
-En tenant compte des exceptions mentionnées ci-dessus, la première étape du portage d’un projet C++/CX vers C++/WinRT consiste à ajouter manuellement la prise en charge C++/WinRT à ce projet (voir [Prise en charge de Visual Studio pour C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)). Pour cela, installez le [package NuGet Microsoft.Windows.CppWinRT](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) dans votre projet. Ouvrez le projet dans Visual Studio, cliquez sur **Projet** \> **Gérer les packages NuGet...** \> **Parcourir**, tapez ou collez **Microsoft.Windows.CppWinRT** dans la zone de recherche, sélectionnez l’élément dans les résultats de la recherche, puis cliquez sur **Installer** pour installer le package correspondant au projet. Un effet de cette modification est la désactivation de la prise en charge de C++/CX dans le projet. Il est conseillé de laisser la prise en charge désactivée pour permettre aux messages de génération de rechercher toutes vis dépendances et les porter sur C++/CX. Sinon, vous pouvez réactiver la prise en charge (dans les propriétés du projet, **C/C++** \>**général**\>**Consommer l'extension Windows Runtime**\>**Oui (/ZW)** ) et effectuer le portage progressivement.
+En tenant compte des exceptions mentionnées ci-dessus, la première étape du portage d’un projet C++/CX vers C++/WinRT consiste à ajouter manuellement la prise en charge C++/WinRT à ce projet (voir [Prise en charge de Visual Studio pour C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)). Pour cela, installez le [package NuGet Microsoft.Windows.CppWinRT](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) dans votre projet. Ouvrez le projet dans Visual Studio, cliquez sur **Projet** \> **Gérer les packages NuGet...** \> **Parcourir**, tapez ou collez **Microsoft.Windows.CppWinRT** dans la zone de recherche, sélectionnez l’élément dans les résultats de la recherche, puis cliquez sur **Installer** pour installer le package correspondant à ce projet. Un effet de cette modification est la désactivation de la prise en charge de C++/CX dans le projet. Il est conseillé de laisser la prise en charge désactivée pour permettre aux messages de génération de rechercher toutes vis dépendances et les porter sur C++/CX. Sinon, vous pouvez réactiver la prise en charge (dans les propriétés du projet, **C/C++** \> **général** \> **Consommer l'extension Windows Runtime** \> **Oui (/ZW)** ) et effectuer le portage progressivement.
 
 Vous pouvez également ajouter manuellement la propriété suivante à votre fichier `.vcxproj` à l’aide de la page de propriété du projet C++/WinRT dans Visual Studio. Pour obtenir la liste des options de personnalisation similaires (permettant d’ajuster le comportement de l’outil `cppwinrt.exe`), consultez le fichier [Lisez-moi](https://github.com/microsoft/xlang/tree/master/src/package/cppwinrt/nuget/readme.md#customizing) du package NuGet Microsoft.Windows.CppWinRT.
 
@@ -309,7 +309,18 @@ Les types de collections C++ utilisent le constructeur par défaut, ce qui peut 
 | Tableau de références vides | `TextBox^ boxes[2];` | `// Creates 2 TextBox objects!`<br/>`TextBox boxes[2];` | `TextBox boxes[2] = { nullptr, nullptr };` |
 | Coupler | `std::pair<TextBox^, String^> p;` | `// Creates a TextBox!`<br/>`std::pair<TextBox, String> p;` | `std::pair<TextBox, String> p{ nullptr, nullptr };` |
 
-Il n’existe aucun raccourci pour créer un tableau de références vides. Vous devez répéter `nullptr` pour chaque élément dans le tableau. Si vous n’en avez pas assez, les éléments supplémentaires sont construits par défaut.
+### <a name="more-about-collections-of-empty-references"></a>En savoir plus sur les collections de références vides
+
+Quand vous avez un **Platform::Array\^** (voir [Port **Platform::Array\^** ](#port-platformarray)) dans C++/CX, vous avez la possibilité de le porter vers un **std::vector** dans C++/WinRT (en fait, n’importe quel conteneur contigu) au lieu de le conserver comme tableau. Faire le choix d’utiliser **std::vector** présente des avantages.
+
+Par exemple, alors qu’il existe un raccourci pour créer un vecteur de taille fixe de références vides (voir le tableau ci-dessus), il n’en existe pas pour créer un *tableau* de références vides. Vous devez donc répéter `nullptr` pour chaque élément dans un tableau. Si vous n’en avez pas assez, les éléments supplémentaires sont construits par défaut.
+
+S’il s’agit d’un vecteur, vous pouvez le remplir avec des références vides soit au moment de l’initialisation (comme dans le tableau ci-dessus), soit après l’initialisation en utilisant un code comme celui-ci.
+
+```cppwinrt
+std::vector<TextBox> boxes(10); // 10 default-constructed TextBoxes.
+boxes.resize(10, nullptr); // 10 empty references.
+```
 
 ### <a name="more-about-the-stdmap-example"></a>En savoir plus sur l’exemple **std::map**
 
@@ -322,7 +333,7 @@ En d’autres termes, l’opérateur `[]` crée toujours une entrée dans le map
 
 ## <a name="converting-from-a-base-runtime-class-to-a-derived-one"></a>Conversion d’une classe runtime de base vers une classe dérivée
 
-Il est courant d’utiliser une référence à la base qui fait référence à un objet d’un type dérivé. Dans C++/CX, vous utilisez `dynamic_cast` pour *diffuser* la référence à la base dans une référence à un objet dérivé. Le `dynamic_cast` est simplement un appel masqué à [ **QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)). Voici un exemple typique&mdash;vous gérez un événement de modification d’une propriété de dépendance et souhaitez diffuser à partir de **DependencyObject** vers le type réel qui possède la propriété de dépendance.
+Il est courant d’utiliser une référence à la base qui fait référence à un objet d’un type dérivé. Dans C++/CX, vous utilisez `dynamic_cast` pour *diffuser* la référence à la base dans une référence à un objet dérivé. Le `dynamic_cast` est simplement un appel masqué à [**QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)). Voici un exemple typique&mdash;vous gérez un événement de modification d’une propriété de dépendance et souhaitez diffuser à partir de **DependencyObject** vers le type réel qui possède la propriété de dépendance.
 
 ```cppcx
 void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject^ d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs^ e)
@@ -531,7 +542,9 @@ winrt::agile_ref<Windows::UI::Core::CoreWindow> m_window;
 
 ### <a name="port-platformarray"></a>Port **Platform::Array\^**
 
-Vos options incluent l’utilisation d’une liste d’initialiseurs, un **std::array** ou un **std::vector**. Pour plus d’informations et des exemples de code, consultez [Listes d’initialiseurs standard](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-initializer-lists) et [Vecteurs et tableaux standard](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-arrays-and-vectors).
+Dans les cas où C++/CX exige l’utilisation d’un tableau, C++/WinRT vous permet d’utiliser n’importe quel conteneur contigu. Consultez [Comment le constructeur par défaut affecte-t-il les collections ?](#how-the-default-constructor-affects-collections) pour connaître les avantages d’utiliser un **std::vector**.
+
+Ainsi, quand vous avez un **Platform::Array\^** dans C++/CX, les options de portage disponibles incluent l’utilisation d’une liste d’initialiseurs, d’un **std::array** ou d’un **std::vector**. Pour plus d’informations et des exemples de code, consultez [Listes d’initialiseurs standard](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-initializer-lists) et [Vecteurs et tableaux standard](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-arrays-and-vectors).
 
 ### <a name="port-platformexception-to-winrthresult_error"></a>Porter **Platform::Exception\^** vers **winrt::hresult_error**
 
@@ -553,7 +566,7 @@ catch (winrt::hresult_error const& ex)
 
 C++/WinRT fournit ces classes d’exceptions.
 
-| Type d’exception | Classe de base | HRESULT |
+| Type d'exception | Classe de base | HRESULT |
 | ---- | ---- | ---- |
 | [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) | | call [**hresult_error::to_abi**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error#hresult_errorto_abi-function) |
 | [**winrt::hresult_access_denied**](/uwp/cpp-ref-for-winrt/error-handling/hresult-access-denied) | **winrt::hresult_error** | E_ACCESSDENIED |
@@ -646,7 +659,7 @@ auto s{ std::to_wstring(i) }; // s is a std::wstring with value L"2".
 
 C++/WinRT prend également en charge [**winrt::to_hstring**](/uwp/cpp-ref-for-winrt/to-hstring) pour certains types. Vous devez ajouter des surcharges pour tous les types supplémentaires que vous souhaitez convertir en chaîne.
 
-| Langue | Convertir un entier en chaîne | Convertir une valeur enum en chaîne |
+| Language | Convertir un entier en chaîne | Convertir une valeur enum en chaîne |
 | - | - | - |
 | C++/CX | `String^ result = "hello, " + intValue.ToString();` | `String^ result = "status: " + status.ToString();` |
 | C++/WinRT | `hstring result = L"hello, " + to_hstring(intValue);` | `// must define overload (see below)`<br>`hstring result = L"status: " + to_hstring(status);` |

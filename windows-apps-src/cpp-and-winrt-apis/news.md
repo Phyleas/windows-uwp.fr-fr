@@ -7,11 +7,11 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, actualités, 
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: d5a2c3d10f2cbfcc608d212a9465ca738e1ca15e
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74255045"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209104"
 ---
 # <a name="whats-new-in-cwinrt"></a>Nouveautés de C++/WinRT
 
@@ -158,7 +158,7 @@ Le fichier `module.g.cpp` contient à présent deux autres assistances composabl
 
 #### <a name="coroutine-support"></a>Prise en charge des coroutines
 
-La prise en charge des coroutines est automatiquement incluse. Auparavant, la prise en charge se trouvait à plusieurs endroits, ce qui était trop contraignant à notre avis. Puis, de façon temporaire pour v2.0, un fichier d’en-tête `winrt/coroutine.h` était nécessaire, mais il ne l’est plus. Étant donné que les interfaces asynchrones Windows Runtime sont maintenant générées, au lieu d’être manuscrites, elles se trouvent désormais dans `winrt/Windows.Foundation.h`. Outre une plus grande facilité de maintenance et de prise en charge, cela signifie que les assistances de coroutine comme [**resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground) n’ont plus besoin d’être ajoutées à la fin de l’en-tête d’un espace de noms spécifique. En effet, elles peuvent inclure plus naturellement leurs dépendances. Ainsi, **resume_foreground** peut prendre en charge non seulement la reprise sur un [**Windows::UI::Core::CoreDispatcher**](/uwp/api/windows.ui.core.coredispatcher) donné, mais également la reprise sur un [ **Windows::System::DispatcherQueue**](/uwp/api/windows.system.dispatcherqueue) donné. Auparavant, un seul pouvait être pris en charge, mais pas les deux, dans la mesure où la définition ne pouvait résider que dans un seul espace de noms.
+La prise en charge des coroutines est automatiquement incluse. Auparavant, la prise en charge se trouvait à plusieurs endroits, ce qui était trop contraignant à notre avis. Puis, de façon temporaire pour v2.0, un fichier d’en-tête `winrt/coroutine.h` était nécessaire, mais il ne l’est plus. Étant donné que les interfaces asynchrones Windows Runtime sont maintenant générées, au lieu d’être manuscrites, elles se trouvent désormais dans `winrt/Windows.Foundation.h`. Outre une plus grande facilité de maintenance et de prise en charge, cela signifie que les assistances de coroutine comme [**resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground) n’ont plus besoin d’être ajoutées à la fin de l’en-tête d’un espace de noms spécifique. En effet, elles peuvent inclure plus naturellement leurs dépendances. Ainsi, **resume_foreground** peut prendre en charge non seulement la reprise sur un [**Windows::UI::Core::CoreDispatcher**](/uwp/api/windows.ui.core.coredispatcher) donné, mais également la reprise sur un [**Windows::System::DispatcherQueue**](/uwp/api/windows.system.dispatcherqueue) donné. Auparavant, un seul pouvait être pris en charge, mais pas les deux, dans la mesure où la définition ne pouvait résider que dans un seul espace de noms.
 
 Voici un exemple de prise en charge de **DispatcherQueue**.
 
@@ -277,7 +277,7 @@ La façon traditionnelle d’implémenter un type de coroutine peut permettre à
 
 Le tableau ci-dessous contient les nouveautés et les modifications concernant C++/WinRT dans le SDK Windows version 10.0.17763.0 (Windows 10, version 1809).
 
-| Fonctionnalité nouvelle ou modifiée | Informations supplémentaires |
+| Fonctionnalité nouvelle ou modifiée | Plus d’infos |
 | - | - |
 | **Changement cassant**. Pour permettre sa compilation, C++/WinRT ne dépend pas des en-têtes du SDK Windows. | Consultez [Isolation des fichiers d’en-tête du SDK Windows](#isolation-from-windows-sdk-header-files), ci-dessous. |
 | Le format du système de projet Visual Studio a changé. | Consultez [Guide pratique pour recibler votre projet C++/WinRT vers une version ultérieure du SDK Windows](#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk), ci-dessous. |
