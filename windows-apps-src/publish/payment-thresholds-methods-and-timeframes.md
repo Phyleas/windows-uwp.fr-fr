@@ -1,21 +1,21 @@
 ---
 Description: Le temps estimé de transfert des paiements, les seuils de paiement applicables et les places de marché Microsoft permettant de recevoir des paiements peuvent varier en fonction de votre pays/région et de votre type de compte de paiement.
 title: Délais, méthodes et seuils de paiement
-ms.date: 10/18/2018
+ms.date: 03/16/2020
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.assetid: d82276d8-f094-4d60-90f6-f836ce90e823
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bcaedb87111d8d55a3d082adc8fdbd8a5096747
-ms.sourcegitcommit: 35a511c2b29ae3d5008612a5fc13d3eb6370d2d0
+ms.openlocfilehash: 45a491364a4b1f406169cba76b7e7ea1ded00886
+ms.sourcegitcommit: 1d6d05d28358e087d9ee8829d76c5fbbac0225cb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67495699"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79434216"
 ---
 # <a name="payment-thresholds-methods-and-timeframes"></a>Délais, méthodes et seuils de paiement
 
-La durée estimée pour les paiements de transfert et des places de marché Microsoft à partir de laquelle vous pouvez recevoir des paiements peut varier en fonction de votre pays/région et paiement le type de compte. Cette rubrique décrit les méthodes de paiement pris en charge dans chaque pays/région.
+Le délai estimé pour le transfert des paiements et les places de marché Microsoft à partir desquels vous pouvez recevoir des paiements peuvent varier en fonction de votre pays/région et du type de compte de paiement. Cette rubrique décrit les modes de paiement pris en charge dans chaque pays/région.
 
 Pour n’importe quel pays ou région, nous utiliserons soit un virement ACH/SEPA, soit un virement bancaire pour transmettre nos paiements. En outre, certains pays ou régions prennent en charge le mode de paiement PayPal.
 
@@ -26,7 +26,7 @@ Tout paiement dû au cours d’un mois donné sera généralement effectué le 1
 > [!NOTE]
 > Les jours indiqués ci-dessous sont indiqués à titre approximatif ; tout paiement donné peut impliquer un délai plus ou moins long.
 
-| Moyen de paiement     | Nombre de jours d’attente avant que le compte de revenu soit crédité     |
+| Mode de paiement     | Nombre de jours d’attente avant que le compte de revenu soit crédité     |
 |--------------------|--------------------------------------------|
 | PayPal             | 1 jour ouvrable                             |
 | ACH/SEPA           | 2 à 3 jours ouvrables                          |
@@ -37,9 +37,9 @@ Pour connaître les pays/régions dans lesquels ces modes de paiement sont utili
 ## <a name="payment-methods-in-countriesregions"></a>Modes de paiement dans les pays/régions
 
 > [!NOTE]
-> Seuils de paiement dans toutes les régions est de 50 USD.
+> Les seuils de paiement dans toutes les régions sont de $50 USD.
 
-| Country                          | Azure Marketplace | Store, de publicité, de Mixer et de Minecraft | Office | Paiements PayPal |
+| Country                          | Azure Marketplace | Stocker, publier, mixer et Minecraft | Office | Paiements PayPal |
 |----------------------------------|-------------------|------------------------------------------|--------|-----------------|
 | Afghanistan                      | Oui               | Oui                                      | Non     | Non              |
 | Albanie                          | Oui               | Oui                                      | Oui    | Oui             |
@@ -54,7 +54,7 @@ Pour connaître les pays/régions dans lesquels ces modes de paiement sont utili
 | Azerbaïdjan                       | Oui               | Oui                                      | Oui    | Non              |
 | Bahreïn                          | Oui               | Oui                                      | Oui    | Oui             |
 | Bangladesh                       | Oui               | Oui                                      | Oui    | Non              |
-| Bélarus                          | Oui               | Oui                                      | Oui    | Non              |
+| Biélorussie                          | Oui               | Oui                                      | Oui    | Non              |
 | Belgique                          | Oui               | Oui                                      | Oui    | Oui             |
 | Bénin                            | Oui               | Oui                                      | Oui    | Non              |
 | Bolivie                          | Oui               | Oui                                      | Oui    | Non              |
@@ -83,9 +83,9 @@ Pour connaître les pays/régions dans lesquels ces modes de paiement sont utili
 | Danemark                          | Oui               | Oui                                      | Oui    | Oui             |
 | Dominique                         | Oui               | Oui                                      | Non     | Oui             |
 | République dominicaine               | Oui               | Oui                                      | Oui    | Oui             |
-| Équateur (République de)                          | Oui               | Oui                                      | Oui    | Oui             |
+| Équateur                          | Oui               | Oui                                      | Oui    | Oui             |
 | Égypte                            | Oui               | Oui                                      | Oui    | Oui             |
-| Salvador                      | Oui               | Oui                                      | Oui    | Oui             |
+| El Salvador                      | Oui               | Oui                                      | Oui    | Oui             |
 | Érythrée                          | Oui               | Oui                                      | Oui    | Non              |
 | Estonie                          | Oui               | Oui                                      | Oui    | Oui             |
 | Éthiopie                         | Oui               | Oui                                      | Oui    | Non              |
@@ -93,14 +93,14 @@ Pour connaître les pays/régions dans lesquels ces modes de paiement sont utili
 | Finlande                          | Oui               | Oui                                      | Oui    | Oui             |
 | France                           | Oui               | Oui                                      | Oui    | Oui             |
 | Géorgie                          | Oui               | Oui                                      | Oui    | Oui             |
-| Allemagne                          | Oui               | Oui                                      | Oui    | Oui             |
+| Germany                          | Oui               | Oui                                      | Oui    | Oui             |
 | Ghana                            | Oui               | Oui                                      | Oui    | Non              |
 | Grèce                           | Oui               | Oui                                      | Oui    | Oui             |
 | Guatemala                        | Oui               | Oui                                      | Oui    | Oui             |
 | Guinée                           | Oui               | Oui                                      | Oui    | Non              |
 | Haïti                            | Oui               | Oui                                      | Oui    | Non              |
 | Honduras                         | Oui               | Oui                                      | Oui    | Oui             |
-| Hong-Kong (R.A.S.)                        | Oui               | Oui                                      | Oui    | Oui             |
+| Hong Kong (R.A.S.)                        | Oui               | Oui                                      | Oui    | Oui             |
 | Hongrie                          | Oui               | Oui                                      | Oui    | Oui             |
 | Islande                          | Oui               | Oui                                      | Oui    | Non              |
 | Inde                            | Oui               | Oui                                      | Oui    | Oui             |
@@ -110,11 +110,11 @@ Pour connaître les pays/régions dans lesquels ces modes de paiement sont utili
 | Israël                           | Oui               | Oui                                      | Oui    | Oui             |
 | Italie                            | Oui               | Oui                                      | Oui    | Oui             |
 | Jamaïque                          | Oui               | Oui                                      | Oui    | Oui             |
-| Japon                            | Oui               | Oui                                      | Oui    | Oui             |
+| Japan                            | Oui               | Oui                                      | Oui    | Oui             |
 | Jordanie                           | Oui               | Oui                                      | Oui    | Oui             |
 | Kazakhstan                       | Oui               | Oui                                      | Oui    | Oui             |
 | Kenya                            | Oui               | Oui                                      | Oui    | Oui             |
-| Corée (Sud)                    | Oui               | Oui                                      | Oui    | Non              |
+| Corée du Sud                    | Oui               | Oui                                      | Oui    | Non              |
 | Koweït                           | Oui               | Oui                                      | Oui    | Oui             |
 | Kirghizistan                       | Non                | Non                                       | Oui    | Non              |
 | Laos                             | Oui               | Oui                                      | Oui    | Non              |
@@ -138,7 +138,7 @@ Pour connaître les pays/régions dans lesquels ces modes de paiement sont utili
 | Maroc                          | Oui               | Oui                                      | Oui    | Non              |
 | Mozambique                       | Oui               | Oui                                      | Oui    | Oui             |
 | Népal                            | Oui               | Oui                                      | Oui    | Non              |
-| Pays-bas, le                 | Oui               | Oui                                      | Oui    | Oui             |
+| Pays-Bas, le                 | Oui               | Oui                                      | Oui    | Oui             |
 | Nouvelle-Zélande                      | Oui               | Oui                                      | Oui    | Oui             |
 | Nicaragua                        | Oui               | Oui                                      | Oui    | Oui             |
 | Niger                            | Oui               | Oui                                      | Oui    | Non              |
@@ -158,7 +158,7 @@ Pour connaître les pays/régions dans lesquels ces modes de paiement sont utili
 | Russie                           | Oui               | Oui                                      | Non     | Oui             |
 | Rwanda                           | Oui               | Oui                                      | Oui    | Non              |
 | Saint-Vincent-et-les-Grenadines | Non                | Oui                                      | Non     | Non              |
-| Arabie saoudite                     | Oui               | Oui                                      | Oui    | Oui             |
+| Arabie Saoudite                     | Oui               | Oui                                      | Oui    | Oui             |
 | Sénégal                          | Oui               | Oui                                      | Oui    | Non              |
 | Serbie                           | Oui               | Oui                                      | Oui    | Non              |
 | Sierra Leone                     | Oui               | Oui                                      | Oui    | Non              |

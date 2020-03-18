@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c8fda22a565972e4157777c1db537a8f8d9ba20
-ms.sourcegitcommit: 20af365ce85d3d7d3a8d07c4cba5d0f1fbafd85d
+ms.openlocfilehash: d148df8de9086aaaec004525c3ee4865e4320c4e
+ms.sourcegitcommit: eb24481869d19704dd7bcf34e5d9f6a9be912670
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77034000"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79453359"
 ---
 # <a name="xbind-markup-extension"></a>Extension de balisage {x:Bind}
 
@@ -30,7 +30,7 @@ Les objets de liaison créés par **{x:Bind}** et **{Binding}** sont en grande p
 
 -   [{x :Bind}, exemple](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlBind)
 -   [QuizGame](https://github.com/microsoft/Windows-appsample-networkhelper)
--   [Exemple de base de l’interface utilisateur XAML](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics)
+-   [Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery)
 
 ## <a name="xaml-attribute-usage"></a>Utilisation des attributs XAML
 
@@ -85,8 +85,7 @@ Par exemple : dans une page, **Text="{x:Bind Employee.FirstName}"** recherche un
 
 Pour C++ / CX, **{x:Bind}** ne peut pas effectuer de liaison à des champs et propriétés privés dans la page ou le modèle de données. Vous devez avoir une propriété publique pour que la liaison soit possible. La surface d’exposition pour la liaison doit être exposée en tant que classes/interfaces CX pour que nous puissions obtenir les métadonnées pertinentes. L’attribut **\]pouvant être lié\[** ne doit pas être nécessaire.
 
-Avec **x:Bind**, vous n’avez pas besoin d’utiliser **ElementName=xxx** dans l’expression de liaison. Au lieu de cela, vous pouvez utiliser le nom de l’élément comme première partie du chemin d’accès pour la liaison, car les éléments nommés deviennent des champs dans la page ou le contrôle utilisateur qui représente la source de liaison racine. 
-
+Avec **x:Bind**, vous n’avez pas besoin d’utiliser **ElementName=xxx** dans l’expression de liaison. Au lieu de cela, vous pouvez utiliser le nom de l’élément comme première partie du chemin d’accès pour la liaison, car les éléments nommés deviennent des champs dans la page ou le contrôle utilisateur qui représente la source de liaison racine.
 
 ### <a name="collections"></a>Collections
 
@@ -104,10 +103,80 @@ Pour effectuer une liaison aux [propriétés jointes](./attached-properties-over
 
 ### <a name="casting"></a>Cast
 
-Les liaisons compilées sont fortement typées et correspondent au type de chaque étape dans un chemin. Si le type retourné ne comprend pas le membre, il échoue lors de la compilation. Vous pouvez spécifier une conversion pour indiquer à la liaison le type réel de l’objet. Dans le cas suivant, **obj** est une propriété d’objet type, mais contient une zone de texte, de sorte que nous pouvons utiliser **Text="{x:Bind ((TextBox)obj).Text}"** ou **Text="{x:Bind obj.(TextBox.Text)}"** .
+Les liaisons compilées sont fortement typées et correspondent au type de chaque étape dans un chemin. Si le type retourné ne comprend pas le membre, il échoue lors de la compilation. Vous pouvez spécifier une conversion pour indiquer à la liaison le type réel de l’objet.
+
+Dans le cas suivant, **obj** est une propriété d’objet type, mais contient une zone de texte, de sorte que nous pouvons utiliser **Text="{x:Bind ((TextBox)obj).Text}"** ou **Text="{x:Bind obj.(TextBox.Text)}"** .
+
 Le champ **groups3** dans **Text = "{x :bind ((Data : SampleDataGroup) groups3\[0\]). Title} "** est un dictionnaire d’objets. vous devez donc effectuer un cast de celui-ci en **données : SampleDataGroup**. Notez l’utilisation du préfixe d’espace de noms xml **data:** pour mapper l’objet type à un espace de noms du code qui ne fait pas partie de l’espace de noms XAML par défaut.
 
 _Remarque : la C#syntaxe de cast de style est plus flexible que la syntaxe de propriété jointe, et est la syntaxe recommandée à l’avenir._
+
+#### <a name="pathless-casting"></a>Conversion avec chemin d’accès
+
+L’analyseur de liaison natif ne fournit pas de mot clé pour représenter `this` comme paramètre de fonction, mais il prend en charge la conversion sans chemin d’accès (par exemple, `{x:Bind (x:String)}`), qui peut être utilisé comme paramètre de fonction. Par conséquent, `{x:Bind MethodName((namespace:TypeOfThis))}` est un moyen valide d’effectuer ce qui est conceptuellement équivalent à `{x:Bind MethodName(this)}`.
+
+Exemple :
+
+`Text="{x:Bind local:MainPage.GenerateSongTitle((local:SongItem))}"`
+
+```xaml
+<Page
+    x:Class="AppSample.MainPage"
+    ...
+    xmlns:local="using:AppSample">
+
+    <Grid>
+        <ListView ItemsSource="{x:Bind Songs}">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="local:SongItem">
+                    <TextBlock
+                        Margin="12"
+                        FontSize="40"
+                        Text="{x:Bind local:MainPage.GenerateSongTitle((local:SongItem))}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>
+```
+
+```csharp
+namespace AppSample
+{
+    public class SongItem
+    {
+        public string TrackName { get; private set; }
+        public string ArtistName { get; private set; }
+
+        public SongItem(string trackName, string artistName)
+        {
+            ArtistName = artistName;
+            TrackName = trackName;
+        }
+    }
+
+    public sealed partial class MainPage : Page
+    {
+        public List<SongItem> Songs { get; }
+        public MainPage()
+        {
+            Songs = new List<SongItem>()
+            {
+                new SongItem("Track 1", "Artist 1"),
+                new SongItem("Track 2", "Artist 2"),
+                new SongItem("Track 3", "Artist 3")
+            };
+
+            this.InitializeComponent();
+        }
+
+        public static string GenerateSongTitle(SongItem song)
+        {
+            return $"{song.TrackName} - {song.ArtistName}";
+        }
+    }
+}
+```
 
 ## <a name="functions-in-binding-paths"></a>Fonctions dans les chemins de liaison
 

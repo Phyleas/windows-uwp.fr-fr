@@ -4,29 +4,29 @@ title: Propriétés de dépendance personnalisées
 ms.assetid: 5ADF7935-F2CF-4BB6-B1A5-F535C2ED8EF8
 ms.date: 07/12/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: 796ee7ed1454515817f5fc994ccb9242d2a2918c
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: eadb0d1547387789fc202b833294e761f2faf22c
+ms.sourcegitcommit: eb24481869d19704dd7bcf34e5d9f6a9be912670
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259866"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79448594"
 ---
 # <a name="custom-dependency-properties"></a>Propriétés de dépendance personnalisées
 
 Nous expliquons ici comment définir et implémenter vos propres propriétés de dépendance pour une application Windows Runtime en C++, C# ou Visual Basic. Nous listons ici les raisons pour lesquelles les développeurs et les auteurs de composants peuvent souhaiter créer des propriétés de dépendance personnalisées. Nous décrivons les étapes d’implémentation de propriété de dépendance personnalisée et certaines meilleures pratiques susceptibles d’améliorer les performances, la simplicité d’utilisation ou la polyvalence de la propriété de dépendance.
 
-## <a name="prerequisites"></a>Conditions préalables requises
+## <a name="prerequisites"></a>Composants requis
 
 Nous supposons que vous avez lu la [vue d’ensemble des propriétés de dépendance](dependency-properties-overview.md) et que vous comprenez ce que sont les propriétés de dépendance du point de vue d’un consommateur de propriétés de dépendance existantes. Pour suivre les exemples de cette rubrique, vous devez également comprendre le langage XAML et savoir comment écrire une application Windows Runtime de base en C++, C# ou Visual Basic.
 
-## <a name="what-is-a-dependency-property"></a>Qu’est-ce qu’une propriété de dépendance ?
+## <a name="what-is-a-dependency-property"></a>Qu’est-ce qu’une propriété de dépendance ?
 
 Pour prendre en charge des styles, des liaison de données, des animations et des valeurs de propriété par défaut, vous devez mettre en œuvre une propriété de dépendance. Les valeurs de propriété de dépendance ne sont pas conservées en tant que champs sur la classe, mais sont stockées par l’infrastructure xaml. Elles sont référencées à l’aide d’une clé extraite lors de l’inscription de la propriété auprès du système de propriétés Windows Runtime en appelant la méthode [**DependencyProperty.Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register).   Les propriétés de dépendance peuvent être utilisées uniquement par les types dérivés de [**DependencyObject**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject). Toutefois, **DependencyObject** étant relativement haut dans la hiérarchie de classes, la plupart des classes destinées à la prise en charge de l’interface utilisateur et de la présentation peuvent prendre en charge des propriétés de dépendance. Pour plus d’informations sur les propriétés de dépendance et certains termes et conventions utilisés pour les décrire dans cette documentation, voir [Vue d’ensemble des propriétés de dépendance](dependency-properties-overview.md).
 
@@ -51,7 +51,7 @@ Il peut être souhaitable d’implémenter une propriété comme propriété de 
 - prise en charge de valeurs animées par le biais d’un [**Storyboard**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard) ;
 - avertissement en cas de modification de la valeur de la propriété par :
   - des actions exécutées par le système de propriétés lui-même ;
-  - l’environnement ;
+  - Environnement
   - des actions de l’utilisateur ;
   - la lecture et l’écriture de styles.
 
@@ -441,7 +441,7 @@ Vous pouvez utiliser des constructeurs de classe pour définir des valeurs initi
 
 Avec les propriétés de dépendance de type collection, certains aspects supplémentaires liés à l’implémentation doivent être pris en compte.
 
-Les propriétés de dépendance de type collection sont relativement rares dans l’API Windows Runtime. Dans la plupart des cas, vous pouvez utiliser des collections dans lesquelles les éléments sont une sous-classe [**DependencyObject**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject), mais où la propriété de collection proprement dite est implémentée sous forme de propriété CLR ou C++ conventionnelle. Cela est dû au fait que les collections ne conviennent pas nécessairement à certains scénarios classiques où des propriétés de dépendance entrent en jeu. Par exemple :
+Les propriétés de dépendance de type collection sont relativement rares dans l’API Windows Runtime. Dans la plupart des cas, vous pouvez utiliser des collections dans lesquelles les éléments sont une sous-classe [**DependencyObject**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject), mais où la propriété de collection proprement dite est implémentée sous forme de propriété CLR ou C++ conventionnelle. Cela est dû au fait que les collections ne conviennent pas nécessairement à certains scénarios classiques où des propriétés de dépendance entrent en jeu. Par exemple :
 
 - Vous n’animez généralement pas une collection.
 - Vous ne préremplissez généralement pas les éléments d’une collection avec des styles ou un modèle.
@@ -472,12 +472,12 @@ Il existe un principe général qui veut que les constructeurs de classe ne doiv
 
 ### <a name="registering-the-dependency-properties-for-ccx-apps"></a>Inscription des propriétés de dépendance pour les applications C++/CX
 
-L’inscription d’une propriété en C++/CX est plus compliquée à implémenter qu’en C#, non seulement en raison de la séparation en-tête/fichier d’implémentation, mais aussi parce que l’initialisation au niveau de l’étendue racine du fichier d’implémentation est une pratique déconseillée. (Visual C++ Component extensions (C++/CX) place le code d’initialiseur statique de l’étendue racine directement dans **DllMain**, tandis que C# les compilateurs assignent les initialiseurs statiques aux classes et évitent ainsi les problèmes de verrouillage de chargement de **DllMain** .). Dans le cas présent, la meilleure pratique consiste à déclarer une fonction d’assistance qui se charge de toutes les inscriptions de vos propriétés de dépendance pour une classe, une fonction par classe. Ensuite, pour chaque classe personnalisée que votre application consomme, vous devez faire référence à la fonction d’inscription d’assistance qui est exposée par chaque classe personnalisée que vous souhaitez utiliser. Appelez chaque fonction d’inscription d’assistance dans le cadre de la méthode [**Application constructor**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.-ctor) (`App::App()`), avant `InitializeComponent`. Ce constructeur s’exécute uniquement lorsque l’application est vraiment référencée pour la première fois (ainsi, il ne s’exécute pas une nouvelle fois lors de la reprise d’une application suspendue par exemple). Par ailleurs, comme vous pouvez le voir dans l’exemple d’inscription précédent en C++, la vérification **nullptr** autour de chaque appel [**Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register) est importante, car elle garantit qu’un appelant de la fonction ne peut inscrire la propriété deux fois. Sans une telle vérification, un deuxième appel d’inscription entraînerait probablement le blocage de votre application en raison de la duplication du nom de la propriété. Ce modèle d’implémentation est présenté dans l’[Exemple de contrôles personnalisés et utilisateur XAML](https://code.msdn.microsoft.com/windowsapps/XAML-user-and-custom-a8a9505e) (examinez le code correspondant à la version C++/CX de l’exemple).
+L’inscription d’une propriété en C++/CX est plus compliquée à implémenter qu’en C#, non seulement en raison de la séparation en-tête/fichier d’implémentation, mais aussi parce que l’initialisation au niveau de l’étendue racine du fichier d’implémentation est une pratique déconseillée. (Visual C++ Component extensions (C++/CX) place le code d’initialiseur statique de l’étendue racine directement dans **DllMain**, tandis que C# les compilateurs assignent les initialiseurs statiques aux classes et évitent ainsi les problèmes de verrouillage de chargement de **DllMain** .). Dans le cas présent, la meilleure pratique consiste à déclarer une fonction d’assistance qui se charge de toutes les inscriptions de vos propriétés de dépendance pour une classe, une fonction par classe. Ensuite, pour chaque classe personnalisée que votre application consomme, vous devez faire référence à la fonction d’inscription d’assistance qui est exposée par chaque classe personnalisée que vous souhaitez utiliser. Appelez chaque fonction d’inscription d’assistance dans le cadre de la méthode [**Application constructor**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.-ctor) (`App::App()`), avant `InitializeComponent`. Ce constructeur s’exécute uniquement lorsque l’application est vraiment référencée pour la première fois (ainsi, il ne s’exécute pas une nouvelle fois lors de la reprise d’une application suspendue par exemple). Par ailleurs, comme vous pouvez le voir dans l’exemple d’inscription précédent en C++, la vérification **nullptr** autour de chaque appel [**Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register) est importante, car elle garantit qu’un appelant de la fonction ne peut inscrire la propriété deux fois. Sans une telle vérification, un deuxième appel d’inscription entraînerait probablement le blocage de votre application en raison de la duplication du nom de la propriété. Ce modèle d’implémentation est présenté dans l’[Exemple de contrôles personnalisés et utilisateur XAML](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample/XAML%20user%20and%20custom%20controls%20sample) (examinez le code correspondant à la version C++/CX de l’exemple).
 
 ## <a name="related-topics"></a>Rubriques connexes
 
 - [**DependencyObject**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject)
 - [**DependencyProperty. Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register)
 - [Vue d’ensemble des propriétés de dépendance](dependency-properties-overview.md)
-- [Exemple d’utilisateur et de contrôles personnalisés XAML](https://code.msdn.microsoft.com/windowsapps/XAML-user-and-custom-a8a9505e)
+- [Exemple d’utilisateur et de contrôles personnalisés XAML](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample/XAML%20user%20and%20custom%20controls%20sample)
  
