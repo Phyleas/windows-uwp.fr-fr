@@ -48,8 +48,6 @@
               href: apps/desktop/modernize/desktop-to-uwp-extend.md
             - name: Distribuer votre application empaquetée
               href: apps/desktop/modernize/desktop-to-uwp-distribute.md
-        - name: Accorder une identité à des applications de bureau non empaquetées
-          href: apps/desktop/modernize/grant-identity-to-nonpackaged-apps.md
         - name: "Tutoriel\_: Moderniser une application WPF"
           items:
             - name: Vue d’ensemble
@@ -64,6 +62,8 @@
               href: apps/desktop/modernize/modernize-wpf-tutorial-4.md
             - name: Créer un package et déployer avec MSIX
               href: apps/desktop/modernize/modernize-wpf-tutorial-5.md
+        - name: Accorder une identité à des applications de bureau non empaquetées
+          href: apps/desktop/modernize/grant-identity-to-nonpackaged-apps.md
     - name: Système Fluent Design
       href: apps/fluent-design-system.md
     - name: Accessibilité
@@ -71,27 +71,7 @@
     - name: Voix
       href: apps/speech.md
     - name: Fonctionnalités et technologies
-      items:
-        - name: Vue d’ensemble
-          href: apps/features-and-technologies.md
-        - name: Traiter les traces ETW dans .NET
-          items:
-            - name: Vue d’ensemble
-              href: apps/trace-processing/overview.md
-            - name: Traiter votre première trace
-              href: apps/trace-processing/quickstart.md
-            - name: Accéder aux données de trace
-              href: apps/trace-processing/tutorial.md
-            - name: Étendre TraceProcessor
-              href: apps/trace-processing/extensibility.md
-            - name: Charger les symboles
-              href: apps/trace-processing/symbols.md
-            - name: Utiliser le streaming
-              href: apps/trace-processing/streaming.md
-            - name: Exemples
-              href: 'https://github.com/microsoft/eventtracing-processing-samples'
-            - name: Référence
-              href: apps/trace-processing/reference.md
+      href: apps/features-and-technologies.md
     - name: Dernières mises à jour de la documentation
       href: apps/whats-new/latest-doc-updates.md
 - name: Créer avec Windows

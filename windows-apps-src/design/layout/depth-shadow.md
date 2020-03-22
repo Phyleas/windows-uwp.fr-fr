@@ -3,21 +3,20 @@ author: knicholasa
 description: La profondeur Z, ou la profondeur relative, et l’ombre sont deux manières d’incorporer la profondeur dans votre application pour aider les utilisateurs à se concentrer naturellement et efficacement.
 title: Profondeur Z et ombre pour les applications UWP
 template: detail.hbs
-ms.author: nichola
 ms.date: 04/19/2019
 ms.topic: article
 ms.custom: 19H1
 keywords: windows 10, uwp
 pm-contact: chigy
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e9197be38d1edfdad41a434132f318cdf3f45ea
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: 216974ba564a192f94473469f3a7a49191ef2192
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282414"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081388"
 ---
-# <a name="z-depth-and-shadow"></a>Profondeur de tampon et ombre
+# <a name="z-depth-and-shadow"></a>Profondeur Z et ombre
 
 ![Image gif montrant quatre rectangles gris empilés en diagonale, l’un au-dessus de l’autre. Le GIF est animé afin que les ombres apparaissent et disparaissent.](images/elevation-shadow/shadow.gif)
 
@@ -39,7 +38,7 @@ Si vous utilisez des contrôles standard, les ombres ThemeShadow seront incorpor
 
 ## <a name="themeshadow"></a>ThemeShadow
 
-Le type ThemeShadow peut être appliqué à n’importe quel élément XAML pour dessiner des Shadows de manière appropriée en fonction des coordonnées x, y, z. ThemeShadow s’ajuste également automatiquement pour d’autres spécifications environnementales :
+Le type [ThemeShadow](/uwp/api/windows.ui.xaml.media.themeshadow) peut être appliqué à n’importe quel élément XAML pour dessiner des Shadows de manière appropriée en fonction des coordonnées x, y, z. ThemeShadow s’ajuste également automatiquement pour d’autres spécifications environnementales :
 
 - S’adapte aux modifications de l’éclairage, du thème de l’utilisateur, de l’environnement de l’application et de l’interpréteur de commandes.
 - Applique automatiquement des ombres aux éléments en fonction de leur profondeur z. 
@@ -65,7 +64,7 @@ Les contrôles communs suivants utilisent automatiquement ThemeShadow pour effec
 - [Contrôle du transport multimédia](../controls-and-patterns/media-playback.md#media-transport-controls), [InkToolbar](../controls-and-patterns/inking-controls.md)
 - [Animation connectée](../motion/connected-animation.md)
 
-Remarque : Les lanceurs appliquent uniquement ThemeShadow lorsqu’ils sont compilés avec Windows 10 version 1903 ou un SDK plus récent.
+Remarque : les lanceurs appliquent uniquement ThemeShadow lorsqu’elles sont compilées par rapport à Windows 10 version 1903 ou à un SDK plus récent.
 
 ### <a name="themeshadow-in-popups"></a>ThemeShadow dans les fenêtres contextuelles
 
@@ -99,7 +98,7 @@ PopupRectangle.Translation += new Vector3(0, 0, 32);
 
 Les contrôles basés sur le [menu volant](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.flyout), [DatePickerFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.datepickerflyout), [MenuFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.menuflyout) ou [TimePickerFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.timepickerflyout) utilisent automatiquement ThemeShadow pour effectuer un cast d’une ombre.
 
-Si l’ombre par défaut ne semble pas correcte sur le contenu de votre contrôle, vous pouvez la désactiver en affectant à la propriété [IsDefaultShadowEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flyoutpresenter.isdefaultshadowenabled) la valeur `false` sur le FlyoutPresenter associé :
+Si l’ombre par défaut ne semble pas correcte sur le contenu de votre contrôle, vous pouvez la désactiver en définissant la propriété [IsDefaultShadowEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flyoutpresenter.isdefaultshadowenabled) sur `false` sur le FlyoutPresenter associé :
 
 ```xaml
 <Flyout>
@@ -160,7 +159,7 @@ DropShadow ne répond pas automatiquement à son environnement et n’utilise pa
 ## <a name="which-shadow-should-i-use"></a>Quelle ombre dois-je utiliser ?
 
 | Propriété | ThemeShadow | DropShadow |
-| - | - | - | - |
+| - | - | - |
 | **SDK min.** | Windows 10 version 1903 | 14393 |
 | **Adaptabilité** | Oui | Non |
 | **Personnalisation** | Non | Oui |

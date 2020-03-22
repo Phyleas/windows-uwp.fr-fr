@@ -4,29 +4,28 @@ Description: De nombreuses entreprises utilisent des pare-feu pour bloquer le tr
 title: Ajout du trafic WNS au pare-feu Allowlist
 ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/20/2019
 ms.topic: article
 keywords: Windows 10, UWP, WNS, service de notification Windows, notification, Windows, pare-feu, dépannage, IP, trafic, entreprise, réseau, IPv4, VIP, nom de domaine complet, adresse IP publique
 ms.localizationpriority: medium
-ms.openlocfilehash: fa0153a395144382aee3f764f0f7d9316afa9c5e
-ms.sourcegitcommit: ff086bae50e61a351b8c53867ed6579e43d8cf1f
+ms.openlocfilehash: 34e66249c5b44cbfecd81b9238eda2b1e5412b9a
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76265020"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80080662"
 ---
 # <a name="enterprise-firewall-and-proxy-configurations-to-support-wns-traffic"></a>Pare-feu d’entreprise et configurations de proxy pour prendre en charge le trafic WNS
 
-## <a name="background"></a>Contexte
+## <a name="background"></a>Arrière-plan
 De nombreuses entreprises utilisent des pare-feu pour bloquer le trafic réseau et les ports indésirables. Malheureusement, cela peut également bloquer des éléments importants tels que les communications du service de notification Windows. Cela signifie que toutes les notifications envoyées via WNS seront supprimées dans certaines configurations réseau. Pour éviter ce risque, les administrateurs réseau peuvent ajouter la liste des noms de domaine complets WNS approuvés ou des adresses IP virtuelles à leur liste d’exemptions pour permettre au trafic WNS de traverser le pare-feu. Vous trouverez ci-dessous des informations supplémentaires sur la façon dont et les éléments à ajouter, ainsi que la prise en charge de différents types de proxy.
 
-## <a name="proxy-support"></a>Prise en charge de proxy
+## <a name="proxy-support"></a>Prise en charge du proxy
 
 > [!Note]
 > Les clients Windows **ne prennent pas** en charge tous les proxies, la connexion à WNS doit être une connexion directe.
 
-**Bientôt disponible !** Nous étudions activement différentes configurations réseau, proxies et pare-feu. Nous mettrons à jour cette page avec plus de détails sur les scénarios d’entreprise courants et la prise en charge de WNS rapidement.
+**À venir!** Nous étudions activement différentes configurations réseau, proxies et pare-feu. Nous mettrons à jour cette page avec plus de détails sur les scénarios d’entreprise courants et la prise en charge de WNS rapidement.
 
 
 ## <a name="what-information-should-be-added-to-the-allowlist"></a>Les informations qui doivent être ajoutées à allowlist
