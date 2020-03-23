@@ -6,12 +6,12 @@ ms.topic: article
 keywords: prise en main, uwp, windows 10, piste d’apprentissage, disposition, formulaire
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 9542151a8104ade77d8311ed1f16eba2809ecf7a
-ms.sourcegitcommit: 9625f8fb86ff6473ac2851e600bc02e996993660
+ms.openlocfilehash: 02cb15d948bf35b1c449bb430c9c31dd33d9eec6
+ms.sourcegitcommit: ea058c804637319f18801447fd0f7e38ce17b801
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72163686"
+ms.lasthandoff: 03/19/2020
+ms.locfileid: "79543972"
 ---
 # <a name="create-and-customize-a-form"></a>Créer et personnaliser un formulaire
 
@@ -127,7 +127,7 @@ Les **états visuels** sont encore plus importants que les dispositions dynamiqu
 ```
 
 > [!IMPORTANT]
-> Lorsque vous utilisez des éléments StateTrigger, vérifiez toujours que VisualStateGroups est jointe au premier enfant de la racine pour que les déclencheurs prennent effet automatiquement. Ici, **Grid** est le premier enfant de l’élément racine **Page**.
+> Quand vous utilisez des éléments StateTrigger, vérifiez toujours que VisualStateGroups est attaché au premier enfant de la racine. Ici, **Grid** est le premier enfant de l’élément racine **Page**.
 
 Il n’est pas pratique de créer des états visuels pour un large éventail de tailles d’écran et, au-delà de deux, ils n’ont probablement pas d’impact significatif sur l’expérience utilisateur de votre application. Nous vous recommandons plutôt de concevoir une application pour plusieurs points d’arrêt principaux. Vous pouvez [en savoir plus ici](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md).
 

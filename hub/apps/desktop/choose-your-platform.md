@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 keywords: développement d’applications de bureau Win32 pour Windows
-ms.openlocfilehash: d0d87f8e4b6524471ff5e2ada9012a22641b06d7
-ms.sourcegitcommit: ddf0137929945eddf01041a81aa4d26038e70f46
+ms.openlocfilehash: bf8a5970d1999427023592f919ef0b92737fa934
+ms.sourcegitcommit: cab95379459ad378163aa4469c9dc6c509cc8c43
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74392090"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79510982"
 ---
 # <a name="choose-your-app-platform"></a>Choisir votre plateforme d’application
 
@@ -26,9 +26,13 @@ Quand vous souhaitez créer une application de bureau, la première chose à fai
 
 Toutes ces plateformes d’application vous permettent de créer des applications de bureau telles que Word, Excel et Photoshop qui s’exécutent sur le bureau Windows classique et qui tirent pleinement parti des fonctionnalités spécifiques de cet environnement. Toutefois, certaines plateformes présentent des caractéristiques communes et sont mieux adaptées à certains types d’applications :
 
-* **UWP, WPF et Windows Forms**. Ces plateformes fournissent aux environnements de runtime managés (Windows Runtime pour UWP et .NET pour Windows Forms et WPF) de nombreux avantages, en particulier dans les domaines de la productivité des développeurs, de l’interface utilisateur (sophistiquée et personnalisable) et de la sécurité des applications. Dans la mesure où ces frameworks permettent de créer rapidement une interface utilisateur, notamment en prenant en charge les concepteurs visuels et le balisage, ils sont particulièrement adaptés aux applications métier.
+* **UWP**. Cette plateforme fournit un système de type commun, des API et un modèle d’application pour tous les appareils qui exécutent Windows 10. Les applications UWP peuvent être natives ou managées. 
 
-* **API Win32**. L’API Win32 (également appelée API Windows) est la plateforme d’origine pour les applications Windows C/C++ natives qui nécessitent un accès direct à Windows et au matériel. Elle fournit une expérience de développement de premier ordre, et ce indépendamment d’un environnement de runtime managé tel que .NET ou WinRT. L’API Win32 est donc la plateforme de choix pour les applications qui ont besoin de performances au plus haut niveau et d’un accès direct au matériel système.
+* **WPF et Windows Forms**. Ces plateformes fournissent un système de type commun, des API et un modèle d’application pour les applications managées s’exécutant sur .NET.
+
+* **API Win32**. L’API Win32 (également appelée API Windows) est la plateforme d’origine pour les applications Windows C/C++ natives qui nécessitent un accès direct à Windows et au matériel. L’API Win32 est donc la plateforme de choix pour les applications qui ont besoin de performances au plus haut niveau et d’un accès direct au matériel système.
+
+Les plateformes UWP et .NET sont toutes deux profondément intégrées à Visual Studio. Cela offre de nombreux avantages, en particulier en ce qui concerne la productivité des développeurs, l’interface utilisateur sophistiquée et personnalisable, et la sécurité des applications. Dans la mesure où ces frameworks permettent de créer rapidement une interface utilisateur, notamment en prenant en charge les concepteurs visuels et le balisage, ils sont particulièrement adaptés aux applications métier.
 
 Cet article décrit plus en détail ces plateformes et vous aide à déterminer celle qui convient le mieux à votre application. 
 
@@ -43,8 +47,8 @@ Outre le fait que pouvez utiliser UWP afin de créer des applications de bureau 
 
 Pour plus d’informations sur UWP, consultez les articles suivants :
 
-* [Prise en main](/windows/uwp/get-started/)
-* [Conception et IU](/windows/uwp/design/)
+* [Bien démarrer](/windows/uwp/get-started/)
+* [Conception et interface utilisateur](/windows/uwp/design/)
 * [Fonctionnalités et technologies](/windows/uwp/develop/)
 * [Informations de référence sur les API](/uwp/)
 * [Exemples](https://github.com/Microsoft/Windows-universal-samples)
@@ -62,7 +66,7 @@ Pour plus d’informations sur WPF, consultez les articles suivants :
 * [Informations de référence sur les API (.NET)](https://docs.microsoft.com/dotnet/api/index)
 * [Exemples](https://github.com/Microsoft/WPF-Samples)
 
-## <a name="windows-forms"></a>Windows Forms
+## <a name="windows-forms"></a>Windows Forms
 
 Windows Forms est la plateforme d’origine pour les applications Windows managées. Elle offre un modèle léger d’interface utilisateur et un accès au .NET Framework complet. Son principal atout est de permettre aux développeurs, même à ceux qui débutent sur la plateforme, de créer rapidement des applications. Cette plateforme de développement d’applications rapide et basée sur des formulaires propose une vaste collection intégrée de contrôles visuels et non visuels accessibles par glisser-déposer. Windows Forms n’utilisant pas XAML, vous devrez réécrire la totalité de votre interface utilisateur si vous décidez par la suite d’étendre votre application à UWP.
 
@@ -88,7 +92,7 @@ Voici quelques-unes des principales fonctionnalités que vous offrent l’API Wi
 
 Pour plus d’informations, consultez les articles suivants :
 
-* [Prise en main](/windows/win32/desktop-programming/)
+* [Bien démarrer](/windows/win32/desktop-programming/)
 * [Créer votre première application Win32 et C++](/windows/win32/learnwin32/learn-to-program-for-windows/)
 * [Fonctionnalités et technologies](/windows/win32/desktop-app-technologies)
 * [Informations de référence sur les API](/windows/win32/apiindex/windows-api-list/)
@@ -98,7 +102,7 @@ Pour plus d’informations, consultez les articles suivants :
 
 Le tableau suivant compare en détail les caractéristiques de Windows Forms, de WPF et d’UWP.
 
-| Fonctionnalité ou scénario  |    UWP     |      WPF     |   Windows Forms  |
+| Fonctionnalité ou scénario  |    UWP     |      WPF     |   Windows Forms  |
 |--------|--------|--------|--------|
 | **Versions prises en charge**      |  Windows 10   |  Windows 7 et ultérieur |  Windows 7 et ultérieur  |
 | **Langages**      |   C\#, C++/WinRT, C++/CX, VB, JavaScript   |  C\#, C++/CLI (extensions managées pour C++), F\#, VB |  C\#, C++/CLI (extensions managées pour C++), F\#, VB   |
