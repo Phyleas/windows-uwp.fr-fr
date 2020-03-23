@@ -22,7 +22,7 @@
           items:
             - name: Structure des applications de base de données clientes
               href: ../enterprise/customer-database-app-structure.md
-    - name: Applications Web progressives
+    - name: Applications web progressives
       href: /microsoft-edge/progressive-web-apps
 - name: 'Audio, vidéo et appareil photo'
   href: ../audio-video-camera/index.md
@@ -299,7 +299,7 @@
           href: ../debug-test-perf/loose-file-registration.md
         - name: Bêta-test
           href: ../debug-test-perf/beta-testing.md
-        - name: "Windows\_Device\_Portal"
+        - name: Portail d’appareil Windows
           href: ../debug-test-perf/device-portal.md
           items:
             - name: Device Portal pour Bureau
@@ -432,7 +432,7 @@
               href: ../monetize/set-up-ad-units-in-your-app.md
             - name: Service de médiation publicitaire de Microsoft
               href: ../monetize/ad-mediation-service.md
-            - name: Meilleures pratiques
+            - name: Bonnes pratiques
               href: ../monetize/best-practices-for-ads-in-apps.md
               items:
                 - name: Recommandations en matière d’expérience utilisateur et d’interface utilisateur
@@ -736,14 +736,14 @@
           href: ../packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool.md
         - name: Télécharger et installer des mises à jour de package sur le Store
           href: ../packaging/self-install-package-updates.md
-- name: Plateforme
+- name: Plate-forme
   items:
     - name: C++/WinRT
       href: ../cpp-and-winrt-apis/index.md
       items:
         - name: Introduction
           href: ../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md
-        - name: Prise en main
+        - name: Prendre en main
           href: ../cpp-and-winrt-apis/get-started.md
         - name: Nouveautés
           href: ../cpp-and-winrt-apis/news.md
@@ -769,7 +769,7 @@
           href: ../cpp-and-winrt-apis/handle-events.md
         - name: Créer des événements
           href: ../cpp-and-winrt-apis/author-events.md
-        - name: Collections
+        - name: Regroupements
           href: ../cpp-and-winrt-apis/collections.md
         - name: Concurrence et opérations asynchrones
           href: ../cpp-and-winrt-apis/concurrency.md
@@ -1024,7 +1024,7 @@
               href: ../contacts-and-calendar/my-people-notifications.md
         - name: Sélectionner des contacts
           href: ../contacts-and-calendar/selecting-contacts.md
-        - name: Envoyer un courrier électronique
+        - name: Envoyer un e-mail
           href: ../contacts-and-calendar/sending-email.md
         - name: Envoyer un message SMS
           href: ../contacts-and-calendar/sending-an-sms-message.md
@@ -1095,11 +1095,11 @@
               href: ../devices-sensors/pos-basics-claim.md
             - name: Partage de périphériques avec d’autres personnes
               href: ../devices-sensors/pos-basics-sharing.md
-            - name: Prise en main
+            - name: Mise en route
               href: ../devices-sensors/pos-get-started.md
         - name: Support matériel
           href: ../devices-sensors/pos-device-support.md
-        - name: Scanneur de code-barres
+        - name: Scanneur de codes-barres
           href: ../devices-sensors/pos-barcodescanner.md
           items:
             - name: Configurer un scanneur de code-barres
@@ -1113,9 +1113,9 @@
             - name: Scanneur de code-barres à caméra
               href: ../devices-sensors/pos-camerabarcode.md
               items:
-                - name: Configuration requise
+                - name: Configuration système requise
                   href: ../devices-sensors/pos-camerabarcode-system-requirements.md
-                - name: Prise en main
+                - name: Mise en route
                   href: ../devices-sensors/pos-camerabarcode-get-started.md
                 - name: Hébergement d’un aperçu caméra
                   href: ../devices-sensors/pos-camerabarcode-hosting-preview.md
@@ -1354,6 +1354,8 @@
               href: ../launch-resume/extend-your-app-with-services-extensions-packages.md
             - name: Créer et héberger une extension d’application
               href: ../launch-resume/how-to-create-an-extension.md
+            - name: Créer des applications hébergées
+              href: ../launch-resume/hosted-apps.md
         - name: Prendre en charge votre application avec des tâches en arrière-plan
           href: ../launch-resume/support-your-app-with-background-tasks.md
           items:
