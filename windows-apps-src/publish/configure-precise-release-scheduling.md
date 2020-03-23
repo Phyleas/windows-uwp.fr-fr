@@ -127,7 +127,7 @@ Vous trouverez ci-dessous un tableau qui indique les fuseaux horaires spécifiqu
 | République centrafricaine  |  (UTC + 01:00) Afrique centrale de l’ouest |
 | Tchad  |  (UTC + 01:00) Afrique centrale de l’ouest |
 | Chili  |  (UTC-04:00) Horaire |
-| Chine  |  (UTC + 08:00) Pékin, Chongqing, Hong Kong, Urumqi |
+| Chine  |  (UTC + 08:00) Beijing, Chongqing, Hong Kong (R.A.S.), Urumqi |
 | Christmas (île)  |  (UTC + 07:00) Krasnoïarsk |
 | Cocos-Keeling (îles)  |  (UTC + 06:30) Rangoon (Rangoon) |
 | Colombie  |  (UTC-05:00) Bogota, Lima, Quito, Rio Branco |
@@ -179,7 +179,7 @@ Vous trouverez ci-dessous un tableau qui indique les fuseaux horaires spécifiqu
 | Heard et McDonald (Îles)  |  (UTC-05:00) Bogota, Lima, Quito, Rio Branco |
 | Saint-Siège (État de la Cité du Vatican)  |  (UTC + 01:00) Sarajevo, Skopje, Varsovie, Zagreb |
 | Honduras  |  (UTC-06:00) Heure centrale (États-Unis & Canada) |
-| Hong Kong (R.A.S.)  |  (UTC + 08:00) Pékin, Chongqing, Hong Kong, Urumqi |
+| Hong Kong (R.A.S.)  |  (UTC + 08:00) Beijing, Chongqing, Hong Kong (R.A.S.), Urumqi |
 | Hongrie  |  (UTC + 01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague |
 | Islande  |  (UTC + 00:00) Monrovia, Reykjavik |
 | Inde  |  (UTC + 05:30) Chennai, Kolkata, Mumbai, New Delhi |
@@ -207,8 +207,8 @@ Vous trouverez ci-dessous un tableau qui indique les fuseaux horaires spécifiqu
 | Liechtenstein  |  (UTC + 01:00) Sarajevo, Skopje, Varsovie, Zagreb |
 | Lituanie  |  (UTC + 02:00) Chisinau |
 | Luxembourg  |  (UTC + 01:00) Sarajevo, Skopje, Varsovie, Zagreb |
-| Macao R.A.S.  |  (UTC + 08:00) Pékin, Chongqing, Hong Kong, Urumqi |
-| Macédoine (ex-République yougoslave de Macédoine)  |  (UTC + 01:00) Sarajevo, Skopje, Varsovie, Zagreb |
+| Macao R.A.S.  |  (UTC + 08:00) Beijing, Chongqing, Hong Kong (R.A.S.), Urumqi |
+| Macédoine du Nord  |  (UTC + 01:00) Sarajevo, Skopje, Varsovie, Zagreb |
 | Madagascar  |  (UTC + 03:00) Nairobi |
 | Malawi  |  (UTC + 02:00) Harare, Pretoria |
 | Malaisie  |  (UTC + 08:00) Kuala Lumpur, Singapour |

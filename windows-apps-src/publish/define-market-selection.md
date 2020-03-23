@@ -244,7 +244,7 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
     <td>Macao R.A.S.</td>
   </tr>
   <tr>
-    <td>Macédoine, Ex.-Rép. yougoslave de</td>
+    <td>Macédoine du Nord</td>
     <td>Madagascar</td>
     <td>Malawi</td>
     <td>Malaisie</td>
@@ -613,7 +613,7 @@ Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants 
     <td>Liberia</td>
     <td>Liechtenstein</td>
     <td>Macao R.A.S.</td>
-    <td>Macédoine, Ex.-Rép. yougoslave de</td>
+    <td>Macédoine du Nord</td>
   </tr>
   <tr>
     <td>Madagascar</td>

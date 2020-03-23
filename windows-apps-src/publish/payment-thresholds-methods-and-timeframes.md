@@ -124,7 +124,7 @@ Pour connaître les pays/régions dans lesquels ces modes de paiement sont utili
 | Liechtenstein                    | Oui               | Oui                                      | Oui    | Oui             |
 | Lituanie                        | Oui               | Oui                                      | Oui    | Non              |
 | Luxembourg                       | Oui               | Oui                                      | Oui    | Oui             |
-| Macédoine                        | Non                | Oui                                      | Oui    | Non              |
+| Macédoine du Nord                        | Non                | Oui                                      | Oui    | Non              |
 | Madagascar                       | Oui               | Oui                                      | Oui    | Non              |
 | Malawi                           | Oui               | Oui                                      | Oui    | Oui             |
 | Malaisie                         | Oui               | Oui                                      | Oui    | Oui             |
