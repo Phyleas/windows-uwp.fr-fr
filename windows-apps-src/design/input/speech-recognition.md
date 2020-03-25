@@ -8,12 +8,12 @@ keywords: voix, vocal, reconnaissance vocale, langage naturel, dictée, saisie, 
 ms.date: 10/25/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1979e16853fc288b83f5e4216c970440300fc597
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 5192177edf284d1fe6e0c6eb06bf8713fbff8b4e
+ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258316"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80218379"
 ---
 # <a name="speech-recognition"></a>Reconnaissance vocale
 
@@ -208,7 +208,7 @@ var AudioCapturePermissions = WinJS.Class.define(
 
 ## <a name="recognize-speech-input"></a>Reconnaître la saisie vocale
 
-Une *contrainte* définit les mots et expressions (vocabulaire) qu’une application reconnaît dans la saisie vocale. Les contraintes sont au centre de la reconnaissance vocale. Elles permettent à votre application de contrôler sa précision.
+Une *contrainte* définit les mots et expressions (vocabulaire) qu’une application reconnaît dans la saisie vocale. Les contraintes sont au cœur de la reconnaissance vocale et offrent à votre application un meilleur contrôle de la précision de la reconnaissance vocale.
 
 Vous pouvez utiliser les types de contraintes suivants pour la reconnaissance de l’entrée vocale.
 
@@ -220,7 +220,8 @@ La grammaire de dictée de texte libre par défaut peut reconnaître la plupart 
 
 La grammaire de recherche web, comme une grammaire de dictée, contient un grand nombre de mots et expressions qu’un utilisateur peut dire. Toutefois, elle est optimisée pour reconnaître les termes que les personnes utilisent généralement lors des recherches sur le web.
 
-**Notez**  étant donné que les grammaires prédéfinies et les grammaires de recherche Web peuvent être volumineuses, et parce qu’elles sont en ligne (et non sur l’appareil), les performances peuvent ne pas être aussi rapides qu’avec une grammaire personnalisée installée sur l’appareil.     
+> [!NOTE]
+> étant donné que les grammaires prédéfinies et les grammaires de recherche Web peuvent être volumineuses, et parce qu’elles sont en ligne (et non sur l’appareil), les performances peuvent ne pas être aussi rapides qu’avec une grammaire personnalisée installée sur l’appareil.     
 
 Ces grammaires prédéfinies peuvent être utilisées pour reconnaître jusqu’à 10 secondes de saisie vocale et ne nécessitent aucun effort de création de votre part. Toutefois, elles requièrent une connexion à un réseau.
 
@@ -365,7 +366,7 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## <a name="related-articles"></a>Articles associés
+## <a name="related-articles"></a>Articles connexes
 
 
 **Les développeurs**

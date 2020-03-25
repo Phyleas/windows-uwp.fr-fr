@@ -6,17 +6,20 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 08dbe9ed7aaa732172d488712aa47d6d3631508a
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 2be088edd732a22acb11be5fc209ff25c84bae17
+ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317702"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80218349"
 ---
 # <a name="share-data"></a>Partager des données
 
 
 Cet article explique comment prendre en charge le contrat de partage dans une application de plateforme Windows universelle (UWP). Le contrat de partage constitue un moyen simple pour partager rapidement des données, telles que du texte, des liens, des photos et vidéos, entre les applications. Par exemple, un utilisateur peut partager une page web avec ses amis à l’aide d’une application de réseau social ou enregistrer un lien dans une application de prise de notes pour s’y référer plus tard.
+
+> [!NOTE]
+> Les exemples de code de cet article sont écrits pour les applications UWP. Les applications de bureau WPF C++, Windows Forms et/Win32 doivent utiliser l’interface [IDataTransferManagerInterop](https://docs.microsoft.com/windows/win32/api/shobjidl_core/nn-shobjidl_core-idatatransfermanagerinterop) pour obtenir l’objet [DataTransferManager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager) pour une fenêtre spécifique. Pour plus d’informations, consultez l’exemple [ShareSource](https://github.com/microsoft/Windows-classic-samples/tree/master/Samples/ShareSource) .
 
 ## <a name="set-up-an-event-handler"></a>Définir un gestionnaire d’événements
 
@@ -33,18 +36,18 @@ Lorsqu’un événement [**DataRequested**](https://docs.microsoft.com/uwp/api/w
 Vous pouvez partager différents types de données, notamment :
 
 -   Texte brut
--   URI (Uniform Resource Identifiers)
+-   Uniform Resource Identifiers (URI)
 -   HTML
 -   Texte mis en forme
 -   Bitmaps
--   Fichiers
+-   Files
 -   Données personnalisées définies par le développeur
 
 L’objet [**DataPackage**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackage) peut contenir un ou plusieurs de ces formats, dans n’importe quelle combinaison. L’exemple suivant illustre le partage de texte.
 
 [!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetSetContent)]
 
-## <a name="set-properties"></a>Définir des propriétés
+## <a name="set-properties"></a>Définir les propriétés
 
 Lorsque vous créez un package de données en vue de le partager, vous pouvez définir diverses propriétés qui fournissent des informations supplémentaires sur le contenu partagé. Ces propriétés aident les applications cibles à améliorer l’expérience utilisateur. Par exemple, une description se révèle utile lorsque l’utilisateur partage du contenu avec plusieurs applications. De même, un lien vers une page web ou une miniature ajoutée à une image partagée servent de référence visuelle à l’utilisateur. Pour plus d’informations, voir [**DataPackagePropertySet**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackagePropertySet).
 

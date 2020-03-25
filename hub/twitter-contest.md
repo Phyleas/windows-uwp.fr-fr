@@ -6,12 +6,12 @@ ms.author: mattwoj
 manager: jken
 ms.topic: article
 ms.date: 03/19/2020
-ms.openlocfilehash: ae86947b461e3fb748b67043827ffeebfc5cb0d2
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: 2a7a5983dcc7e330a30cf53b93c73f36f811d17d
+ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80108102"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80218469"
 ---
 # <a name="contribute-to-windows-docs-and-be-entered-to-win-some-swag"></a>Participez à des documents Windows et participez à des tirages
 
@@ -27,7 +27,7 @@ Voici ce que vous devez faire :
     - [Outils et pilotes](https://docs.microsoft.com/windows-hardware/drivers/) **Windows Hardware Developer** - 
 3. Apportez des corrections à une page docs en sélectionnant le bouton **modifier** en haut de la page. Cela vous permet d’atteindre le fichier source de la démarque dans GitHub.
 4. Une fois vos modifications terminées. Fichier votre demande de tirage (pull request).
-5. Visitez le [@WindowsDocs](https://twitter.com/WindowsDocs) compte Twitter et répondez à la publication du concours avec un lien vers votre demande de tirage.
+5. Répondez à la [publication du concours@WindowsDocs](https://twitter.com/WindowsDocs/status/1242088720209268736) avec un lien vers votre PR.
 
 Merci à notre communauté de contributeurs !
 

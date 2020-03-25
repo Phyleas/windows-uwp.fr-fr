@@ -7,12 +7,12 @@ ms.date: 03/19/2017
 ms.topic: article
 keywords: windows 10, uwp, cartes, feuille de style de carte
 ms.localizationpriority: medium
-ms.openlocfilehash: b59e8c3c6d9c4c299e441964be1afb4e02051e23
-ms.sourcegitcommit: 5264d7499ddbe21199a63d74a294206069f90f8b
+ms.openlocfilehash: b2e6e57721a5667a9ca38b21eee2a618353cd30b
+ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78287444"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80218559"
 ---
 # <a name="map-style-sheet-reference"></a>Référence sur les feuilles de style de carte
 
@@ -263,6 +263,7 @@ Cette section décrit les propriétés que vous pouvez utiliser pour chaque entr
 | shadedReliefVisible          | Booléen    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Indicateur précisant s’il convient ou non de dessiner l’ombrage des hauteurs sur la carte. |
 | shadowColor                  | Couleur   |      |      |      |  ✔   |  ✔   | Couleur de l’ombre derrière les icônes qui utilisent des ombres. |
 | spaceColor                   | Couleur   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Valeur de couleur ARVB de la zone entourant la carte. |
+| terrainFlat                  | Booléen    |      |      |      |      |      | Indicateur qui signale si le terrain doit être plat (désactivé) sur la carte. |
 | useDefaultImageColors        | Booléen    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Indicateur qui signale si les couleurs d’origine dans le SVG doivent être utilisées au lieu de rechercher dans l’entrée de la palette les couleurs d’une image. |
 
 <a id="mapelement" />

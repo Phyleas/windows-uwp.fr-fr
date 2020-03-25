@@ -9,12 +9,12 @@ ms.technology: windows-nodejs
 keywords: Mac vers Windows, mappage des touches de raccourci, passage d’UNIX vers Windows, transition de Mac vers Windows, aide à passer de MacBook à la surface, utilisation de Windows pour un utilisateur Macintosh, passage de Macintosh à Windows, aide à la modification des environnements de développement, Mac OS X à Windows, aide passage de Mac à PC
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: a4e71143730184db094df2a7e8f1416cbaf244c4
-ms.sourcegitcommit: f5bb4e35d1373b982259e61547b3b1765da0e78c
+ms.openlocfilehash: 8c23fa3e6791a3cd78d259b40e68606a30fd9395
+ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74881269"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80218439"
 ---
 # <a name="guide-for-changing-your-dev-environment-from-mac-to-windows"></a>Guide pour la modification de votre environnement de développement de Mac à Windows
 
@@ -22,22 +22,24 @@ Les conseils et les équivalents de contrôle suivants devraient vous aider dans
 
 Pour le développement d’applications, l’équivalent le plus proche de Xcode serait [Visual Studio](https://visualstudio.microsoft.com). Il existe également une version de [Visual Studio pour Mac](https://visualstudio.microsoft.com/vs/mac/), si vous avez toujours besoin de revenir en arrière. Pour la modification de code source multiplateforme (et un grand nombre de plug-ins) [Visual Studio code](https://code.visualstudio.com/?wt.mc_id=DX_841432) est le choix le plus populaire.
 
-## <a name="keyboard-shortcuts"></a>Raccourcis clavier
+## <a name="keyboard-shortcuts"></a>raccourcis clavier
 
 | **Opération** | **Mac** | **Windows** |
 |---------------|--------------------|---------------------|
 | Copier | Commande + C | Ctrl+C |
-| Cut | Commande + X | Ctrl+X |
+| Couper | Commande + X | Ctrl+X |
 | Coller | Commande + V | Ctrl+V |
-| Undo | Commande + Z | Ctrl+Z |
+| Annuler | Commande + Z | Ctrl+Z |
 | Enregistrer | Commande + S | Ctrl+S |
-| Ouvrez | Commande + O | Ctrl+O |
+| Ouvrir | Commande + O | Ctrl+O |
 | Verrouiller l’ordinateur | Commande + CTRL + Q | WindowsKey + L |
 | Afficher le Bureau | Commande + F3 | WindowsKey + D |
+| Ouvrir l’Explorateur de fichiers | Commande + N | WindowsKey + E |
 | Réduire les fenêtres | Commande + M | WindowsKey + M |
-| Rechercher | Commande + espace | WindowsKey |
+| Recherche | Commande + espace | WindowsKey |
 | Fermer la fenêtre active | Commande + W | CTRL + W |
 | Basculer la tâche active | Commande + Tab | Alt+Tabulation |
+| Agrandir une fenêtre en plein écran | Ctrl + Commande + F | WindowsKey + haut |
 | Écran d’enregistrement (capture d’écran) | Commande + Maj + 3 | WindowsKey + Maj + S |
 | Enregistrer la fenêtre | Commande + Maj + 4 | WindowsKey + Maj + S |
 | Afficher les informations ou les propriétés d’un élément | Commande + I | Alt+Entrée |
@@ -78,16 +80,20 @@ La ligne de commande Windows accepte les commandes DOS et est l’outil de ligne
 
 Par ailleurs, PowerShell est [également disponible pour Mac](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-6).
 
-3. Sous-système de Windows pour Linux (WSL)
+3. Sous-système Windows pour Linux (WSL)
 
 WSL vous permet d’exécuter un interpréteur de commandes Linux dans Windows. Cela signifie que vous pouvez exécuter *bash** ou un autre shell, en fonction de votre choix et de la distribution Linux spécifique installée. L’utilisation de WSL fournira le type d’environnement le plus familier aux utilisateurs Mac. Par exemple, vous pouvez **créer une liste de fichiers** dans un répertoire actif, et **non pas** sur la ligne de commande Windows. Pour en savoir plus sur l’installation et l’utilisation de WSL, consultez le [Guide d’installation du sous-système Windows pour Linux pour Windows 10](https://docs.microsoft.com/windows/wsl/install-win10).
 
+4. Terminal Windows (version préliminaire)
+
+Windows Terminal est une application qui combine des outils en ligne de commande et des shells provenant de plusieurs sources, notamment la ligne de commande Windows traditionnelle, PowerShell et le sous-système Windows pour Linux. Bien qu’il soit actuellement en préversion, il alreaedy contient plusieurs fonctionnalités utiles, telles que la prise en charge de plusieurs onglets, des volets fractionnés, des thèmes et des styles personnalisés et une prise en charge complète d’Unicode. Windows Terminal peut être installé à partir du [Microsoft Store sur Windows 10](https://www.microsoft.com/en-us/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab).
+
 ## <a name="apps-and-utilities"></a>Applications et utilitaires
 
- **Application** | **Mac** | **Windows** |
+ **Lancement** | **Mac** | **Windows** |
 |---------------|--------------------|---------------------|
 | Paramètres et préférences | Préférences système | Paramètres |
-| Gestionnaire des tâches | Moniteur d'activité | Gestionnaire des tâches |
+| Gestionnaire des tâches | Moniteur d'activité | Task Manager |
 | Mise en forme du disque | Utilitaire de disque | Gestion des disques |
 | Modification de texte | TextEdit | Bloc-notes |
 | Affichage des événements | Console | Observateur d’événements |
