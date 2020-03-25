@@ -6,12 +6,12 @@ ms.date: 03/23/2018
 ms.topic: article
 keywords: bien démarrer, windows 10, uwp, xaml, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f78bdfec6c6e06ffc542bc7741b875e952bc169
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 9183d9e2134d376400d2d6b85901477ff7b27413
+ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684888"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80218579"
 ---
 # <a name="get-started-with-windows-10-apps"></a>Bien démarrer avec les applications Windows 10
 
@@ -30,7 +30,7 @@ ms.locfileid: "75684888"
                         <h3>Découvrir les applications Windows 10</h3>
                         <p>Windows 10 et la plateforme Windows universelle vous permettent de générer des applications qui fonctionnent et s’affichent de manière optimale sur tous les types d’appareil Windows, ou de mettre à jour des applications existantes avec des fonctionnalités modernes.</p>
                         <ul>
-                          <li><a href="//docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide">Qu’est-ce qu’une application UWP ?</a></li>
+                          <li><a href="//docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide">Qu’est-ce qu’une application Windows ?</a></li>
                         </ul>
                     </div>
                 </div>
@@ -113,7 +113,7 @@ ms.locfileid: "75684888"
                     <h3>exemples</h3>
                     <p>Bénéficiez d’une expérience directe avec la plateforme Windows 10 et découvrez les API en action.</p>
                     <br>
-                    <p><a href="//docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples">Utilisation d’exemples d’applications UWP</a></p>
+                    <p><a href="//docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples">Utilisation d’exemples d’application Windows</a></p>
                     <p><a href="//github.com/Microsoft/Windows-appsample-customers-orders-database">Base de données de commandes de clients</a></p>
                     <p><a href="//github.com/Microsoft/Windows-appsample-remote-system-sessions">Jeu de quiz (projet Rome)</a></p>
                     <p><a href="//developer.microsoft.com/windows/samples">Portail d’exemples de code Windows</a></p>

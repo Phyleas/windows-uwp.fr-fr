@@ -1,42 +1,35 @@
-items:
 - name: Vue d’ensemble
   href: index.md
-- name: Qu’est-ce qu’une application UWP ?
+- name: "Qu’est-ce qu’une application Windows\_?"
   href: ../get-started/universal-application-platform-guide.md
-- name: Préparation
+- name: Se préparer
   href: ../get-started/get-set-up.md
   items:
-  - name: Activer votre appareil pour le développement
-    href: ../get-started/enable-your-device-for-development.md
-  - name: Créer un compte de développeur
-    href: ../get-started/sign-up.md
-- name: Commencer le codage
+    - name: Activer votre appareil pour le développement
+      href: ../get-started/enable-your-device-for-development.md
+    - name: Créer un compte de développeur
+      href: ../get-started/sign-up.md
+- name: Commencer à développer
   href: ../get-started/create-uwp-apps.md
   items:
-  - name: Construire un formulaire
-    href: construct-form-learning-track.md
-  - name: Afficher des clients dans une liste
-    href: display-customers-in-list-learning-track.md
-  - name: Enregistrer et charger des paramètres
-    href: settings-learning-track.md
-  - name: Utiliser des fichiers
-    href: fileio-learning-track.md
-  - name: Votre première application
-    href: ../get-started/your-first-app.md
-    items:
-    - name: Créer une application « Hello, world » (C#)
-      href: ../get-started/create-a-hello-world-app-xaml-universal.md
-    - name: Créer une application « Hello, world » (C++)
-      href: ../get-started/create-a-basic-windows-10-app-in-cpp.md
-    - name: Créer une application « Hello, world » (JS)
-      href: ../get-started/create-a-hello-world-app-js-uwp.md
-  - name: Génération d’une application complexe
-    href: ../get-started/plan-your-app.md
-- name: Obtenir des exemples d’applications UWP
+    - name: Construire un formulaire
+      href: construct-form-learning-track.md
+    - name: Afficher des clients dans une liste
+      href: display-customers-in-list-learning-track.md
+    - name: Enregistrer et charger des paramètres
+      href: settings-learning-track.md
+    - name: Utiliser des fichiers
+      href: fileio-learning-track.md
+    - name: Votre première application
+      href: ../get-started/your-first-app.md
+      items:
+        - name: "Créer une application «\_Hello, world\_» (C#)"
+          href: ../get-started/create-a-hello-world-app-xaml-universal.md
+        - name: "Créer une application «\_Hello, world\_» (C++)"
+          href: ../get-started/create-a-basic-windows-10-app-in-cpp.md
+        - name: "Créer une application «\_Hello, world\_» (JS)"
+          href: ../get-started/create-a-hello-world-app-js-uwp.md
+    - name: Génération d’une application complexe
+      href: ../get-started/plan-your-app.md
+- name: Obtenir des exemples d’application Windows
   href: ../get-started/get-uwp-app-samples.md
-ms.openlocfilehash: 6d2635bec653e5c9f409ff6a5249ee0215276225
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582817"

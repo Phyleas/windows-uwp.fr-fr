@@ -1,29 +1,29 @@
 ---
-description: Bénéficiez de conseils de conception et d’instructions de développement pour ajouter des contrôles et des modèles à votre application UWP. Vous trouverez plus de 45 contrôles puissants utilisables avec votre application.
-title: Contrôles et modèles UWP - Développement d’applications Windows
-keywords: contrôles uwp, interface utilisateur, contrôles d’application
+description: Bénéficiez de conseils de conception et d’instructions de développement pour ajouter des contrôles et des modèles à votre application Windows. Vous trouverez plus de 45 contrôles puissants utilisables avec votre application.
+title: Contrôles et modèles Windows - Développement d’applications Windows
+keywords: contrôles uwp, interface utilisateur, contrôles d’application, contrôles windows
 label: Controls & patterns
 template: detail.hbs
-ms.date: 11/16/2017
+ms.date: 03/23/2020
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
-ms.openlocfilehash: ea9f58c8f861be7774285c5611ad222d9587e2a1
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: 63907b3bfe3fc6dece900f1a7c09ac535e859471
+ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80081714"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80218449"
 ---
-# <a name="controls-for-uwp-apps"></a>Contrôles pour les applications UWP
+# <a name="controls-for-windows-apps"></a>Contrôles pour les applications Windows
 
 ![Contrôles](../images/controls-2x.png)
 
-Dans le développement d’applications UWP, un <i>contrôle</i> est un élément d’interface utilisateur qui affiche du contenu ou permet une interaction. Les contrôles constituent les blocs de construction de l’interface utilisateur. Un <i>modèle</i> est en quelque sorte une recette permettant d’associer plusieurs contrôles pour créer un élément nouveau.
+Dans le développement d’applications Windows, un <i>contrôle</i> est un élément d’interface utilisateur qui affiche du contenu ou permet une interaction. Les contrôles constituent les blocs de construction de l’interface utilisateur. Un <i>modèle</i> est en quelque sorte une recette permettant d’associer plusieurs contrôles pour créer un élément nouveau.
 
 Nous vous proposons plus de 45 contrôles, des simples boutons aux contrôles de données puissants, tels que l’affichage Grille.  Ces contrôles font partie du système Fluent Design et peuvent vous aider à créer une interface utilisateur scalable et audacieuse qui s’adapte à tous les appareils et toutes les tailles d’écran.
 
-Les articles de cette section donnent des recommandations en matière de conception et des instructions de codage pour l’ajout de contrôles et de modèles à votre application UWP.
+Les articles de cette section donnent des recommandations en matière de conception et des instructions de programmation pour l’ajout de contrôles et de modèles à votre application Windows.
 
 ## <a name="intro"></a>Introduction
 
@@ -140,4 +140,4 @@ Obtenez l’application _Galerie de contrôles XAML_ à partir du Microsoft Sto
 
 ## <a name="additional-controls"></a>Contrôles supplémentaires
 
-Les contrôles supplémentaires pour le développement UWP sont disponibles auprès de sociétés comme <a href="https://www.telerik.com/">Telerik</a>, <a href="https://www.syncfusion.com/uwp-ui-controls">SyncFusion</a>, <a href="https://www.devexpress.com/Products/NET/Controls/Win10Apps/">DevExpress</a>, <a href="https://www.infragistics.com/products/universal-windows-platform">Infragistics</a>, <a href="https://www.componentone.com/Studio/Platform/UWP">ComponentOne</a> et <a href="https://www.actiprosoftware.com/products/controls/universal">ActiPro</a>. Ces contrôles fournissent une prise en charge supplémentaire pour les développeurs de l’entreprise et .NET, en optimisant les commandes système standard à l’aide de contrôles et de services personnalisés.
+Les contrôles supplémentaires pour le développement Windows sont disponibles auprès de sociétés comme <a href="https://www.telerik.com/">Telerik</a>, <a href="https://www.syncfusion.com/uwp-ui-controls">SyncFusion</a>, <a href="https://www.devexpress.com/Products/NET/Controls/Win10Apps/">DevExpress</a>, <a href="https://www.infragistics.com/products/universal-windows-platform">Infragistics</a>, <a href="https://www.componentone.com/Studio/Platform/UWP">ComponentOne</a> et <a href="https://www.actiprosoftware.com/products/controls/universal">ActiPro</a>. Ces contrôles fournissent une prise en charge supplémentaire pour les développeurs de l’entreprise et .NET, en optimisant les commandes système standard à l’aide de contrôles et de services personnalisés.
