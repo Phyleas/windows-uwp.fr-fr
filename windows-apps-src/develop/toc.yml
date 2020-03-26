@@ -793,6 +793,8 @@
           href: ../cpp-and-winrt-apis/interop-winrt-cx.md
         - name: Passer de WRL à C++/WinRT
           href: ../cpp-and-winrt-apis/move-to-winrt-from-wrl.md
+        - name: 'Portage d’un exemple d’application à partir de C#'
+          href: ../cpp-and-winrt-apis/clipboard-to-winrt-from-csharp.md
         - name: 'Passer de C# à C++/WinRT'
           href: ../cpp-and-winrt-apis/move-to-winrt-from-csharp.md
         - name: Interopérabilité avec ABI
