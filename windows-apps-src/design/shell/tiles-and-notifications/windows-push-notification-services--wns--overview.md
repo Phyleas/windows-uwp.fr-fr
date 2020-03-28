@@ -7,12 +7,12 @@ ms.date: 03/06/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bd6c3ec487871d18a7142489802b801120f5e7ed
-ms.sourcegitcommit: 0142b5a47511afa76d74015e3fd8635b6042a542
+ms.openlocfilehash: e4a0a2d532341e76d6ff74dda9b6b6a8638c77fd
+ms.sourcegitcommit: b398966fc052b232e03f2e32512a48d3a4444b8c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79038132"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80367678"
 ---
 # <a name="windows-push-notification-services-wns-overview"></a>Vue d’ensemble des services de notifications Push Windows (WNS) 
 
@@ -42,13 +42,13 @@ Chaque application dispose de son propre ensemble d’informations d’identific
 Avant de pouvoir envoyer des notifications via WNS, votre application doit être inscrite auprès du tableau de bord de l’espace partenaires. Cela vous fournit les informations d’identification de votre application que votre service cloud utilisera lors de l’authentification à l’aide des services WNS. Ces informations d’identification se composent d’un identificateur de sécurité du package (SID) et d’une clé secrète. Pour effectuer cette inscription, connectez-vous à l' [espace partenaires](https://partner.microsoft.com/dashboard). Après avoir créé votre application, consultez [gestion de produit-WNS/MPNs](https://apps.dev.microsoft.com/) pour instrunctions sur la façon de récupérer les informations d’identification (si vous souhaitez utiliser la solution de services Live, suivez le lien vers le **site Live services** sur cette page).
 
 Pour vous inscrire :
-1.  Accédez à la page applications du Windows Store de l’espace partenaires et connectez-vous avec votre compte Microsoft personnelle (par exemple : johndoe@outlook.com, janedoe@xboxlive.com).
-2.  Une fois que vous êtes connecté, cliquez sur le lien tableau de bord.
-3.  Dans le tableau de bord, sélectionnez créer une application.
+1.    Accédez à la page applications du Windows Store de l’espace partenaires et connectez-vous avec votre compte Microsoft personnelle (par exemple : johndoe@outlook.com, janedoe@xboxlive.com).
+2.    Une fois que vous êtes connecté, cliquez sur le lien tableau de bord.
+3.    Dans le tableau de bord, sélectionnez créer une application.
 
 ![inscription de l’application WNS](../images/wns-create-new-app.png)
 
-4.  Créez votre application en réservant un nom d’application. Donnez un nom unique à votre application. Entrez le nom et cliquez sur le bouton réserver un nom de produit. Si le nom est disponible, il est réservé à votre application. Une fois que vous avez réservé un nom pour votre application, les autres détails peuvent être modifiés si vous le souhaitez pour l’instant.
+4.    Créez votre application en réservant un nom d’application. Donnez un nom unique à votre application. Entrez le nom et cliquez sur le bouton réserver un nom de produit. Si le nom est disponible, il est réservé à votre application. Une fois que vous avez réservé un nom pour votre application, les autres détails peuvent être modifiés si vous le souhaitez pour l’instant.
 
 ![nom du produit de réserve WNS](../images/wns-reserve-poduct-name.png)
  
@@ -56,24 +56,24 @@ Pour vous inscrire :
 
 Quand vous avez réservé un nom pour votre application, le Windows Store a créé les informations d’identification qui lui sont associées. Elle a également affecté des valeurs d’identité associées (nom et éditeur) qui doivent être présentes dans le fichier manifeste de votre application (package. appxmanifest). Si vous avez déjà téléchargé votre application dans le Windows Store, ces valeurs sont automatiquement ajoutées à votre manifeste. Si vous n’avez pas téléchargé votre application, vous devrez ajouter les valeurs d’identité à votre manifeste manuellement.
 
-1.  Sélectionner la flèche déroulante gestion du produit
+1.    Sélectionner la flèche déroulante gestion du produit
 
 ![gestion des produits WNS](../images/wns-product-management.png)
 
-2.  Dans la liste déroulante gestion du produit, sélectionnez le lien WNS/MPNS.
+2.    Dans la liste déroulante gestion du produit, sélectionnez le lien WNS/MPNS.
 
 ![continuted de gestion des produits WNS](../images/wns-product-management2.png)
  
-3.  Sur la page WNS/MPNS, cliquez sur le lien vers le site Live Services situé sous la section Windows Push Notification Services (WNS) et Microsoft Azure Mobile Services.
+3.    Sur la page WNS/MPNS, cliquez sur le lien vers le site Live Services situé sous la section Windows Push Notification Services (WNS) et Microsoft Azure Mobile Services.
 
 ![services WNS en direct](../images/wns-live-services-page.png)
  
-4.  Le portail d’inscription des applications (précédemment la page Live Services) vous fournit un élément d’identité à inclure dans le manifeste de votre application. Cela comprend le ou les secrets de l’application, l’identificateur de sécurité du package et l’identité de l’application. Ouvrez votre manifeste dans un éditeur de texte et ajoutez cet élément comme l’indique la page.   
+4.    Le portail d’inscription des applications (précédemment la page Live Services) vous fournit un élément d’identité à inclure dans le manifeste de votre application. Cela comprend le ou les secrets de l’application, l’identificateur de sécurité du package et l’identité de l’application. Ouvrez votre manifeste dans un éditeur de texte et ajoutez cet élément comme l’indique la page.    
 
 > [!NOTE]
 > Si vous êtes connecté avec un compte AAD, vous devez contacter le propriétaire de compte Microsoft qui a inscrit l’application pour obtenir les secrets d’application associés. Si vous avez besoin d’aide pour trouver ce contact, cliquez sur l’engrenage dans le coin supérieur droit de votre écran, puis cliquez sur paramètres de développeur et l’adresse de messagerie de l’utilisateur qui a créé l’application avec son compte Microsoft s’affichera ici.
  
-5.  Chargez le SID et la clé secrète client sur votre serveur Cloud.
+5.    Chargez le SID et la clé secrète client sur votre serveur Cloud.
 
 > [!Important]
 > Le SID et la clé secrète client doivent être stockés et consultés en toute sécurité par votre service Cloud. La divulgation ou le vol de ces informations pourraient permettre à une personne malveillante d’envoyer des notifications à vos utilisateurs sans autorisation ou connaissance.
@@ -180,6 +180,7 @@ Le diagramme ci-après illustre le flux de données :
 -   Un jeton d’accès permet uniquement à un service cloud d’envoyer des notifications à l’application pour laquelle le jeton a été créé. Un jeton d’accès ne peut pas être utilisé pour envoyer des notifications vers plusieurs applications. Par conséquent, si votre service cloud prend en charge plusieurs applications, il doit fournir le jeton d’accès approprié pour l’application lorsqu’il exécute un push de notification à chaque URI de canal.
 -   Lorsque le périphérique est hors connexion, les services WNS stockent par défaut jusqu’à cinq notifications par vignette (si la mise en file d’attente est activée ; sinon, une notification par vignette) et une notification de badge pour chaque URI de canal et pas de notification brute. Ce comportement de mise en cache par défaut peut être modifié par l'intermédiaire de l'[en-tête X-WNS-Cache-Policy](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)). Notez que les notifications toast ne sont jamais stockées lorsque l’appareil est hors connexion.
 -   Dans les scénarios où le contenu de notification est personnalisé pour l’utilisateur, les services WNS recommandent que le service cloud envoie immédiatement ces mises à jour lorsqu’elles sont reçues. C’est le cas, par exemple, des mises à jour de flux de médias sociaux, des invitations à des communications instantanées, des notifications de nouveau message ou des alertes. D’autres scénarios peuvent impliquer l’envoi fréquent d’une même mise à jour générique à un vaste sous-ensemble de vos utilisateurs ; par exemple, des mises à jour relatives à la météo, à la bourse et aux actualités. Selon les recommandations WNS, la fréquence de ces mises à jour doit être au maximum d’une fois toutes les 30 minutes. L’utilisateur final ou les services WNS peuvent déterminer comme abusives des mises à jour de routine plus fréquentes.
+-   La plateforme de notification Windows gère une connexion de données périodique avec WNS pour maintenir le socket actif et sain. Si aucune application ne demande ou n’utilise des canaux de notification, le socket ne sera pas créé.
 
 ## <a name="expiration-of-tile-and-badge-notifications"></a>Expiration des notifications par vignette et par badge
 
