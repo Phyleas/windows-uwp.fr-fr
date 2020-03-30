@@ -6,12 +6,12 @@ keywords: Commencer avec une licence de développeur Visual Studio, appareil ave
 ms.date: 04/09/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a2d1719379302dd8e996c37e05d7ddaf35a0cf18
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 4b360f75ccf08d9cc00eeba2948215b7240627a8
+ms.sourcegitcommit: 3c3730e968fba89b21459390735614cd4c9d9c67
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258419"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80320421"
 ---
 # <a name="enable-your-device-for-development"></a>Activer votre appareil pour le développement
 
@@ -193,7 +193,7 @@ Vous pouvez utiliser gpedit.msc pour définir les stratégies de groupe visant �
 
     -   **Autoriser l’installation des applications approuvées**
 
-    - \- ou -
+    OU
 
     Pour activer le mode développeur, modifiez les stratégies pour activer les deux options suivantes :
 
@@ -207,26 +207,30 @@ Vous pouvez utiliser gpedit.msc pour définir les stratégies de groupe visant �
 1.  Exécutez **regedit**.
 2.  Pour activer le chargement indépendant, définissez cette valeur DWORD sur 1 :
 
-    -   `HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowAllTrustedApps`
+    -   `HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock\AllowAllTrustedApps`
 
-    - \- ou -
+    OU
 
     Pour activer le mode développeur, définissez ces valeurs DWORD sur 1 :
 
-    -   `HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowDevelopmentWithoutDevLicense`
+    -   `HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock\AllowDevelopmentWithoutDevLicense`
 
 **Utiliser PowerShell pour activer votre appareil**
 
 1.  Exécutez PowerShell avec des privilèges administrateur.
 2.  Pour activer le chargement indépendant, exécutez cette commande :
 
-    -   `PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowAllTrustedApps" /d "1"`
+    ```powershell
+    PS C:\WINDOWS\system32> reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" /t REG_DWORD /f /v "AllowAllTrustedApps" /d "1"
+    ```
 
-    - \- ou -
+    OU
 
     Pour activer le mode développeur, exécutez cette commande :
 
-    -   `PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowDevelopmentWithoutDevLicense" /d "1"`
+    ```powershell
+    PS C:\WINDOWS\system32> reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" /t REG_DWORD /f /v "AllowDevelopmentWithoutDevLicense" /d "1"
+    ```
 
 ## <a name="upgrade-your-device-from-windows-81-to-windows-10"></a>Mettre à niveau votre appareil de Windows 8.1 vers Windows 10
 

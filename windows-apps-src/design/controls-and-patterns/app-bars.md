@@ -13,20 +13,20 @@ design-contact: ksulliv
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f5fd3408657047c3d1d102c65f6264954983134
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: c32b60b3d9e717a916b5424f3b8bd78102439f30
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257744"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081968"
 ---
 # <a name="command-bar"></a>Barre de commandes
 
 Les barres de commandes permettent aux utilisateurs d’accéder facilement aux tâches les plus courantes de votre application. Les barres de commandes peuvent donner accès à des commandes au niveau d’une application ou spécifiques d’une page, et peuvent être utilisées avec n’importe quel modèle de navigation.
 
-> **API importantes** : [classe CommandBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar), [classe AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton), [classe AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton), [classe AppBarSeparator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarseparator)
+> **API de plateforme :** [classe CommandBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar), [classe AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton), [classe AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton), [classe AppBarSeparator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarseparator)
 
-![Exemple d’une barre de commandes contenant des icônes](images/controls_appbar_icons.png)
+![Exemple d’une barre de commandes avec des icônes](images/controls_appbar_icons.png)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
@@ -40,7 +40,7 @@ Le contrôle CommandBar est un contrôle à usage général, flexible et léger 
 <table>
 <th align="left">Galerie de contrôles XAML<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/CommandBar">ouvrir l’application et voir le contrôle CommandBar en action</a>.</p>
     <ul>

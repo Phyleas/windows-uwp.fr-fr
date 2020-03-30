@@ -1,20 +1,20 @@
 ---
-description: Cette rubrique montre comment porter du code C# vers son équivalent en C++/WinRT.
+description: Cette rubrique décrit les détails techniques impliqués dans le portage du code source dans un projet [C#](/visualstudio/get-started/csharp) vers son équivalent dans [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
 title: Passer de C# à C++/WinRT
 ms.date: 07/15/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, porter, migrer, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: 17900829388bfe0b3cc325e27d0807b139ccaa27
-ms.sourcegitcommit: 2c6aac8a0cc02580df0987f0b7dba5924e3472d6
+ms.openlocfilehash: f7cd35dbf211b14dfb886fc9ba4305cd7ce56e5e
+ms.sourcegitcommit: f288bcc108f9850671662c7b76c55c8313e88b42
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74958959"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80290053"
 ---
 # <a name="move-to-cwinrt-from-c"></a>Passer de C# à C++/WinRT
 
-Cette rubrique montre comment porter le code d’un projet [C#](/visualstudio/get-started/csharp) vers son équivalent en [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
+Cette rubrique décrit les détails techniques impliqués dans le portage du code source dans un projet [C#](/visualstudio/get-started/csharp) vers son équivalent dans [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
 
 ## <a name="register-an-event-handler"></a>Inscrire un gestionnaire d’événements
 
@@ -193,7 +193,7 @@ auto s{ std::to_wstring(i) }; // s is a std::wstring with value L"2".
 
 C++/WinRT prend également en charge [**winrt::to_hstring**](/uwp/cpp-ref-for-winrt/to-hstring) pour certains types. Vous devez ajouter des surcharges pour tous les types supplémentaires que vous souhaitez convertir en chaîne.
 
-| Langue | Convertir un entier en chaîne | Convertir une valeur enum en chaîne |
+| Language | Convertir un entier en chaîne | Convertir une valeur enum en chaîne |
 | - | - | - |
 | C# | `string result = "hello, " + intValue.ToString();`<br>`string result = $"hello, {intValue}";` | `string result = "status: " + status.ToString();`<br>`string result = $"status: {status}";` |
 | C++/WinRT | `hstring result = L"hello, " + to_hstring(intValue);` | `// must define overload (see below)`<br>`hstring result = L"status: " + to_hstring(status);` |

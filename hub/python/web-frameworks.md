@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, windows 10, microsoft, python sur windows, application web python avec wsl, application web python avec un sous-système windows pour linux, développement web python sur windows, application flask sur windows, application django sur windows, application web python, développement web flask sur windows, développement web django sur windows, développement web windows avec python et développement web de code python, extension wsl-remote, ubuntu, wsl, venv, pip, extension python microsoft, exécuter python sur windows, utiliser python sur windows, création avec python sur windows
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: d883007168e0baf35f8a0ab0827505b683cfd291
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 8cbc8343764e4de57bd418ecdb36bd606b037c68
+ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79208974"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80218479"
 ---
 # <a name="get-started-using-python-for-web-development-on-windows"></a>Bien démarrer avec Python pour le développement web sur Windows
 
@@ -325,7 +325,7 @@ Félicitations, vous avez créé une application web Flask à l’aide de Visual
 
 16. Enregistrez tous les fichiers modifiés.
 
-17. Dans le terminal VS Code, exécutez le serveur de développement avec la commande `python manage.py runserver` et ouvrez un navigateur pour `http://127.0.0.1:8000/` afficher une page qui affiche « Hello, Django ».
+17. Dans le terminal VS Code, exécutez le serveur de développement avec la commande `python3 manage.py runserver` et ouvrez un navigateur pour `http://127.0.0.1:8000/` afficher une page qui affiche « Hello, Django ».
 
 Félicitations, vous avez créé une application web Django à l’aide de Visual Studio Code et du sous-système Windows pour Linux ! Pour obtenir un didacticiel plus détaillé sur l’utilisation de VS Code et de Django, consultez le [didacticiel Django dans Visual Studio Code](https://code.visualstudio.com/docs/python/tutorial-django).
 

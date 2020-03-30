@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a23a7a7da9605c0ffb5a537c75d63e3f06705881
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 8d9cb44c91bcd556a10059005a8f19a75f90d3d9
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63775171"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081471"
 ---
 # <a name="toggle-switches"></a>Boutons bascule
 
@@ -25,7 +25,7 @@ Le bouton bascule représente un commutateur physique qui permet à l’utilisat
 
 Pour créer un contrôle de bouton bascule, utilisez la [classe ToggleSwitch](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch).
 
-> **API importantes** : [classe ToggleSwitch](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch), [propriété IsOn](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.ison), [événement Toggled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.toggled)
+> **API de plateforme** : [classe ToggleSwitch](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch), [propriété IsOn](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.ison), [événement Toggled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.toggled)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
@@ -42,7 +42,7 @@ Pour rendre le bouton bascule facile à comprendre, utilisez des étiquettes con
 <table>
 <th align="left">Galerie de contrôles XAML<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Si vous disposez de l'application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour ouvrir l’application et voir l'objet <a href="xamlcontrolsgallery:/item/ToggleSwitch">ToggleSwitch</a> ou <a href="xamlcontrolsgallery:/item/ToggleButton">ToggleButton</a> en action.</p>
     <ul>
@@ -171,11 +171,11 @@ Vous pouvez également utiliser un contenu plus complexe en définissant les pro
 
 ## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
 
-- [Exemple de Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) : tous les contrôles XAML dans un format interactif.
+- [Exemple de Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) : tous les contrôles XAML dans un format interactif.
 
 ## <a name="related-articles"></a>Articles connexes
 
 - [Classe ToggleSwitch](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch)
-- [Boutons de radio](radio-button.md)
+- [Cases d’option](radio-button.md)
 - [Boutons bascule](toggles.md)
 - [Cases à cocher](checkbox.md)

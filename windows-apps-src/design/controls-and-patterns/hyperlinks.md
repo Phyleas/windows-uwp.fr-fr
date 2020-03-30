@@ -12,20 +12,18 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: b17220a039612e0b13cd9842800c37c39bf194dd
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: fa4ff0cbc2bd361b241f660f9c6b28f03bc7c24c
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66362760"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80080897"
 ---
 # <a name="hyperlinks"></a>Liens hypertexte
 
- 
-
 Les liens hypertexte redirigent l’utilisateur vers une autre partie de l’application ou une autre application, ou lancent un URI spécifique dans une application de navigateur distincte. Vous pouvez ajouter un lien hypertexte à une application XAML de deux façons : à l’aide d’un élément de texte **Hyperlink** ou d’un contrôle **HyperlinkButton**.
 
-> **API importantes** : [élément de texte Hyperlink](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Hyperlink), [contrôle HyperlinkButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton)
+> **API de plateforme** : [élément de texte Hyperlink](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Hyperlink), [contrôle HyperlinkButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton)
 
 ![Bouton Lien hypertexte](images/controls/hyperlink-button.png)
 
@@ -45,7 +43,7 @@ Choisissez le type de lien hypertexte approprié en fonction de vos besoins :
 <table>
 <th align="left">Galerie de contrôles XAML<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Si vous disposez de l'application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/HyperlinkButton">ouvrir l’application et voir l'objet HyperlinkButton en action</a>.</p>
     <ul>

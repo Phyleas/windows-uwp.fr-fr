@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: tpaine
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7381d8d99f47a69ba7398366762a7dbb4088e04a
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: e5df29f4ce91bd272fd921b23b5fc05b6655d4c0
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66364175"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081541"
 ---
 # <a name="split-view-control"></a>Contrôle de mode fractionné
 
@@ -59,7 +59,7 @@ Si vous voulez créer un menu de navigation avec un bouton développer/réduire 
 <table>
 <th align="left">Galerie de contrôles XAML<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/SplitView">ouvrir l’application et voir l’objet SplitView en action</a>.</p>
     <ul>

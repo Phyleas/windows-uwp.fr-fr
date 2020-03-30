@@ -11,12 +11,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9544988837d44f42d963b268a2ce3d37cce83952
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: f2097a35d87594251ed2c0a04be06ccdb705902f
+ms.sourcegitcommit: 378693fe9b655fe14814d683e8d8cb2dd1380fd7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209044"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80249853"
 ---
 # <a name="xaml-theme-resources"></a>Ressources de thème XAML
 
@@ -177,7 +177,7 @@ En plus des couleurs de thème à contraste élevé du système, la couleur d’
 
 ### <a name="theme-dependent-brushes"></a>Pinceaux dépendants du thème
 
-Les ressources de couleur indiquées dans les sections précédentes sont utilisées pour définir la propriété [Color](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) des ressources [SolidColorBrush](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) dans les dictionnaires de ressources de thème du système. Les ressources de pinceau permettent d’appliquer la couleur à des éléments XAML. Les clés pour les ressources de pinceau respectent le format d’attribution de noms : `SystemControl[Simple HighContrast name][Simple light/dark name]Brush`. Par exemple, `SystemControlBackroundAltHighBrush`.
+Les ressources de couleur indiquées dans les sections précédentes sont utilisées pour définir la propriété [Color](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) des ressources [SolidColorBrush](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) dans les dictionnaires de ressources de thème du système. Les ressources de pinceau permettent d’appliquer la couleur à des éléments XAML. Les clés pour les ressources de pinceau respectent le format d’attribution de noms : `SystemControl[Simple HighContrast name][Simple light/dark name]Brush`. Par exemple, `SystemControlBackgroundAltHighBrush`.
 
 Examinons à présent comment la valeur de couleur de ce pinceau est déterminée au moment de l’exécution. Dans les dictionnaires de ressources « Light » et « Dark », ce pinceau est défini comme ceci :
 

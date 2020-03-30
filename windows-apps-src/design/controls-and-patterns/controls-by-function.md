@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 57639fc370ed7e10a427af4808e2a8a6de91b554
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 8f1717a59399fb95f7b71a38ee8d2d46de4ca765
+ms.sourcegitcommit: e11e0f65930665579d1f296861234893e82bf8fb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257704"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80301384"
 ---
 # <a name="controls-by-function"></a>Contrôles par fonction
 
@@ -90,7 +90,7 @@ Exemple de code : [Exemple de commandes XAML](https://github.com/Microsoft/Wind
 
 ## <a name="buttons"></a>Boutons
 
-### <a name="button"></a>Button
+### <a name="button"></a>Bouton
 Contrôle qui répond à l’entrée utilisateur et déclenche un événement **Click**.
 
 ![Un bouton standard](images/controls/button.png)
@@ -313,7 +313,7 @@ Conception et procédure : Recommandations en matière d’info-bulles
 
 ## <a name="images"></a>Images
 
-### <a name="image"></a>Image
+### <a name="image"></a>SE conteneur
 Contrôle qui présente une image.
 
 ```xaml
@@ -544,7 +544,7 @@ Conception et procédure : [Guide de contrôle Élément multimédia](media-pla
 
 Exemple de code : [Exemple de contrôles de transport multimédias](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlCustomMediaTransportControls)
 
-### <a name="video"></a>Video
+### <a name="video"></a>Vidéo
 Voir Élément multimédia.
 
 ## <a name="navigation"></a>Navigation
@@ -724,10 +724,10 @@ Exemple de code : [Exemple de texte XAML](https://code.msdn.microsoft.com/windo
 ### <a name="text-box"></a>Zone de texte
 Champ de texte brut sur une ou plusieurs lignes.
 
-![Contrôle de zone de texte](images/controls/text-box.png) 
+![Contrôle de zone de texte](images/controls/text-box.png)
 
 ```xaml
-<TextBox x:Name="textBox1" Text="I am a TextBox" 
+<TextBox x:Name="textBox1" Text="I am a Text Box."
          TextChanged="TextBox_TextChanged"/>
 ```
 
@@ -739,7 +739,7 @@ Exemple de code : [Exemple de texte XAML](https://code.msdn.microsoft.com/windo
 
 ## <a name="selection-controls"></a>Contrôles de sélection
 
-### <a name="check-box"></a>Check box
+### <a name="check-box"></a>Case à cocher
 Contrôle pouvant être activé ou désactivé.
 
 ![Les 3 états d’une case à cocher](images/templates-checkbox-states-default.png)
@@ -779,9 +779,9 @@ Contrôle qui présente une liste inline dans laquelle un utilisateur peut séle
 ```xaml
 <ListBox x:Name="listBox1" Width="100"
          SelectionChanged="ListBox_SelectionChanged">
-    <x:String>Item 1</x:String>
-    <x:String>Item 2</x:String>
-    <x:String>Item 3</x:String>
+    <x:String>List item 1</x:String>
+    <x:String>List item 2</x:String>
+    <x:String>List item 3</x:String>
 </ListBox>
 ```
 
