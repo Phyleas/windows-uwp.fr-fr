@@ -6,14 +6,17 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 47eb494ac1b61caac0549f89254ae5d60a7ddf4c
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 50ffec5beafd88ddc852e4d9b2fb995fb12bd939
+ms.sourcegitcommit: 56d777134bc85f049e281e34660de612ac938a01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259016"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80417435"
 ---
 # <a name="feedback-report"></a>Rapport sur les commentaires
+
+> [!WARNING]
+> Désapprobation du rapport de commentaires le 15 avril 2020 ce rapport ne sera plus pris en charge après le 15 avril 2020. Les données de ce rapport ne seront pas actualisées après cette date et le rapport sera supprimé ultérieurement sans préavis. Vous pouvez continuer à afficher les commentaires reçus de vos clients directement dans le hub de commentaires.
 
 Le **rapport de commentaires** de l’espace partenaires vous permet de voir les problèmes, les suggestions et les votes que vos clients Windows 10 ont soumis via le hub de commentaires. Vous pouvez afficher ces données dans l’espace partenaires ou exporter les données pour les afficher hors connexion.
 
@@ -36,8 +39,8 @@ Dans la zone supérieure de la page, vous pouvez sélectionner la période sur l
 
 Vous pouvez également développer **Filtres** pour filtrer toutes les données de cette page en fonction des options suivantes.
 
-- **Type de commentaire** : le paramétrage par défaut est **Tous**. Vous pouvez sélectionner **Problème** ou **Suggestions** pour n’afficher que ce type de commentaire.
-- **Type d’appareil** : le paramétrage par défaut est **Tous les appareils**. Vous pouvez choisir un type d’appareil spécifique si vous souhaitez que cette page affiche uniquement les commentaires laissés par les clients qui utilisent ce type d’appareil.
+- **Type d’appareil** : le paramètre par défaut est **Tous**. Vous pouvez sélectionner **Problème** ou **Suggestions** pour n’afficher que ce type de commentaire.
+- **Type d'appareil** : le paramètre par défaut est **Tous les appareils**. Vous pouvez choisir un type d’appareil spécifique si vous souhaitez que cette page affiche uniquement les commentaires laissés par les clients qui utilisent ce type d’appareil.
 - **Version du package** : le paramètre par défaut est **Tous les packages**. Vous pouvez sélectionner l’un de vos packages pour afficher uniquement les commentaires laissés par les clients ayant utilisé ce package spécifique lorsqu’ils ont laissé leur commentaire.
 - **Marché** : la valeur par défaut de ce filtre est **Tous les marchés**. Vous pouvez choisir un marché spécifique pour n’afficher que les commentaires des clients de ce marché.
 - **Groupe** : le paramètre par défaut est **Tous**. Vous pouvez choisir d’afficher uniquement les commentaires soumis par les [Windows Insiders](https://insider.windows.com).
