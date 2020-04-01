@@ -6,12 +6,12 @@ ms.date: 10/04/2017
 ms.topic: article
 keywords: windows 10, uwp, tâche en arrière-plan, app service, appareils connectés, systèmes distants
 ms.localizationpriority: medium
-ms.openlocfilehash: 79f3f1d28294527d6987540a159baa31d663db4c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 9280a240f35c2fdf5290c94d837e2fafc008dbfd
+ms.sourcegitcommit: df0cd9c82d1c0c17ccde424e3c4a6ff680c31a35
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371724"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80483009"
 ---
 # <a name="launching-resuming-and-background-tasks"></a>Lancement, reprise et tâches en arrière-plan
 
@@ -98,6 +98,7 @@ La section [Tâches en arrière-plan](support-your-app-with-background-tasks.md)
 | [Accéder à des capteurs et des appareils à partir d’une tâche en arrière-plan](access-sensors-and-devices-from-a-background-task.md)   | [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) permet à votre application Windows universelle d’accéder aux capteurs et aux appareils en arrière-plan, même si votre application d’avant-plan est interrompue. |
 | [Créer et inscrire une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md)       | Créez et inscrivez une tâche en arrière-plan in-process qui s’exécute dans le même processus que votre application au premier plan. |
 | [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-a-background-task.md)           | Créez et inscrivez une tâche en arrière-plan qui s’exécute dans un processus distinct de votre application, et inscrivez-la pour qu’elle s’exécute lorsque votre application ne se trouve pas au premier plan. |
+| [Créer et inscrire une tâche COM en arrière-plan pour une application winmain](create-and-register-a-winmain-background-task.md) | Créez une tâche COM en arrière-plan qui peut s’exécuter dans votre processus principal ou hors processus lorsque votre application winmain empaquetée n’est peut-être pas en cours d’exécution. |
 | [Porter une tâche en arrière-plan hors processus vers une tâche en arrière-plan in-process](convert-out-of-process-background-task.md) | Découvrez comment porter une tâche en arrière-plan hors processus vers une tâche en arrière-plan in-process qui s’exécute dans le même processus que votre application d’avant-plan.|
 | [Déboguer une tâche en arrière-plan](debug-a-background-task.md)                                                       | Découvrez comment déboguer une tâche en arrière-plan, notamment dans le cadre de son activation et du suivi de débogage dans le journal des événements Windows. |
 | [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md) | Activez l’utilisation des tâches en arrière-plan en les déclarant comme extensions dans le manifeste de l’application. |
