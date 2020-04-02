@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 244124dd-d80a-4a72-91db-1c9c2fbc7c3c
 ms.localizationpriority: medium
-ms.openlocfilehash: 5606a8fa6db5b439aa71f5d72b34c0f519d7eea9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 6e7b96e3b8b0cd6f47fdd97008aa8d90dc032fc4
+ms.sourcegitcommit: bee98f7a468c97c707de76afc14e1707c25f74f4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57651774"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80531464"
 ---
 # <a name="xbox-one-developer-mode-deactivation"></a>Désactivation du Mode développeur Xbox One
 
@@ -70,11 +70,11 @@ Pour réinitialiser votre console procédez comme suit :
    
     ![Réinitialiser et supprimer tous les éléments](images/devkit-deactivation-4.png)
 
-## <a name="deactivate-your-console-using-partner-center"></a>Désactiver votre console à l’aide de partenaires
+## <a name="deactivate-your-console-using-partner-center"></a>Désactiver votre console à l’aide de l’espace partenaires
 
-Si vous ne parvenez pas à accéder à votre console pour une raison quelconque, vous pouvez également désactiver le Mode développeur sur votre console à l’aide de partenaires.
+Si vous ne parvenez pas à accéder à votre console pour une raison quelconque, vous pouvez également désactiver le mode développeur sur votre console à l’aide de l’espace partenaires.
 
-1. Accédez à la [consoles gérer Xbox One](https://partner.microsoft.com/xboxdevices) page dans l’espace partenaires. Vous pouvez être invité à vous connecter.
+1. Accédez à la page [gérer les consoles Xbox One](https://partner.microsoft.com/xboxconfig/devices) dans l’espace partenaires. Vous pouvez être invité à vous connecter.
 
 2. Recherchez la console que vous voulez désactiver dans la liste des consoles à l’aide du numéro de série ou de l’ID de la console ou de l’appareil.  
 
@@ -84,6 +84,6 @@ Si vous ne parvenez pas à accéder à votre console pour une raison quelconque,
 
 Si vous n’avez pas encore basculé votre console Xbox One en Mode commercial, faites-le maintenant tel que décrit dans [Basculer en mode commercial](#switch-to-retail-mode).
 
-## <a name="see-also"></a>Voir également
+## <a name="see-also"></a>Voir aussi
 - [Activation du mode développeur Xbox One](devkit-activation.md)
 - [UWP sur Xbox One](index.md)
