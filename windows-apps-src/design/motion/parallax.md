@@ -6,24 +6,26 @@ label: Parallax View
 template: detail.hbs
 ms.date: 08/09/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 pm-contact: abarlow
 design-contact: conrwi
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ab37c49115acbccaf81725b74def85891fd73219
-ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
+ms.openlocfilehash: ac195916e76ad7b3f03adc39a293422d0d58f7a4
+ms.sourcegitcommit: 8be8ed1ef4e496055193924cd8cea2038d2b1525
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74735064"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80614081"
 ---
 # <a name="parallax"></a>Parallaxe
 
 Le parallaxe est un effet visuel où les objets proches de l'observateur se déplacent plus rapidement que ceux situés en arrière-plan. Parallaxe crée une impression de profondeur, de perspective et de mouvement. Dans une application UWP, vous pouvez utiliser le contrôle ParallaxView pour créer un effet parallaxe.  
 
-> **API importantes** : [classe ParallaxView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview), [propriété VerticalShift](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.VerticalShift), [propriété HorizontalShift](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.HorizontalShift)
+> **API de la bibliothèque d’interface utilisateur Windows :** [classe ParallaxView](/uwp/api/Microsoft.UI.Xaml.Controls.Parallaxview), [propriété VerticalShift](/uwp/api/Microsoft.UI.Xaml.Controls.Parallaxview.VerticalShift), [propriété HorizontalShift](/uwp/api/Microsoft.UI.Xaml.Controls.Parallaxview.HorizontalShift)
+>
+> **API de plateforme**: [classe ParallaxView](/uwp/api/Windows.UI.Xaml.Controls.Parallaxview), [propriété VerticalShift](/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.VerticalShift), [propriété HorizontalShift](/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.HorizontalShift)
 
 ## <a name="examples"></a>Exemples
 
@@ -43,11 +45,11 @@ Le parallaxe est un effet visuel où les objets proches de l'observateur se dép
 
 ## <a name="parallax-and-the-fluent-design-system"></a>Le parallaxe et le système Fluent Design
 
- Le système Fluent Design vous aide à créer une interface utilisateur moderne et claire, qui incorpore de la lumière, de la profondeur, du mouvement, des matériaux et une mise à l’échelle. Le parallaxe est un composant du système Fluent Design qui ajoute du mouvement, de la profondeur et la notion d'échelle à votre application. Pour plus d’informations, consultez [Vue d’ensemble de Fluent Design pour UWP](/windows/apps/fluent-design-system).
+ Le système Fluent Design vous aide à créer une interface utilisateur moderne et claire qui incorpore de la lumière, de la profondeur, du mouvement, des matières et une mise à l’échelle. Le parallaxe est un composant du système Fluent Design qui ajoute du mouvement, de la profondeur et la notion d'échelle à votre application. Pour en savoir plus, voir [Présentation de Fluent Design pour UWP](/windows/apps/fluent-design-system).
 
 ## <a name="how-it-works-in-a-user-interface"></a>Fonctionnement dans une interface utilisateur
 
-Dans une interface utilisateur, vous pouvez créer un effet parallaxe en déplaçant les objets à différentes vitesses lorsque vous faites défiler ou que vous développez l'interface utilisateur. <!-- Parallax is an important tool in adding depth to applications along with other techniques like transition animations, perspective tilt, and layering. --> Pour illustrer cette idée, examinons deux couches de contenu, une liste et une image d’arrière-plan.  La liste est placée au-dessus de l’image d’arrière-plan, ce qui donne déjà l'impression que celle-ci est plus proche de l'utilisateur.  Maintenant, pour obtenir l’effet parallaxe, nous voulons que l’objet le plus proche de nous se déplace « plus rapidement » que l’objet plus éloigné.  Lorsque l’utilisateur fait défiler l’interface, la liste se déplace à un rythme plus rapide que l’image d’arrière-plan, ce qui crée l’illusion de profondeur.
+Dans une interface utilisateur, vous pouvez créer un effet parallaxe en déplaçant les objets à différentes vitesses lorsque vous faites défiler ou que vous développez l'interface utilisateur. <!-- Parallax is an important tool in adding depth to applications along with other techniques like transition animations, perspective tilt, and layering. --> Pour illustrer, observons deux couches de contenu, une liste et une image d’arrière-plan.  La liste est placée au-dessus de l’image d’arrière-plan, ce qui donne déjà l'impression que celle-ci est plus proche de l'utilisateur.  À présent, pour obtenir l’effet de parallaxe, nous souhaitons que l’objet se rapproche le plus de l’objet plus loin.  Lorsque l’utilisateur fait défiler l’interface, la liste se déplace à un rythme plus rapide que l’image d’arrière-plan, ce qui crée l’illusion de profondeur.
 
  ![Un exemple de parallaxe avec une liste et une image d’arrière-plan](images/_Parallax_v2.gif)
 
@@ -80,7 +82,7 @@ Cet exemple crée un effet parallaxe pour une liste :
        <x:String>Item 2</x:String> 
        <x:String>Item 3</x:String> 
        <x:String>Item 4</x:String> 
-       <x:String>Item 5</x:String>  
+       <x:String>Item 5</x:String>     
        <x:String>Item 6</x:String> 
        <x:String>Item 7</x:String> 
        <x:String>Item 8</x:String> 
@@ -98,9 +100,9 @@ Cet exemple crée un effet parallaxe pour une liste :
        <x:String>Item 21</x:String>        
     </ListView>
 </Grid>
-``` 
+```    
 
-ParallaxView ajuste automatiquement la taille de l’image pour qu’elle fonctionne avec l’opération de parallaxe, afin que vous n'ayez pas à vous soucier que l’image défile hors de la vue.
+Le ParallaxView ajuste automatiquement la taille de l’image pour qu’elle fonctionne pour l’opération de parallaxe. vous n’avez donc pas à vous soucier de la déconnexion de l’image.
 
 ## <a name="customizing-the-parallax-effect"></a>Personnalisation de l’effet parallaxe 
 
@@ -113,13 +115,13 @@ Les valeurs élevées créent un effet plus important.
 
 Pour obtenir la liste complète des méthodes de personnalisation de l'effet parallaxe, consultez la classe ParallaxView. 
 
-## <a name="dos-and-donts"></a>À faire et à ne pas faire
+## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
 
 - Utilisez l’effet parallaxe dans les listes dotées d'une image d’arrière-plan
 - Envisagez d’utiliser parallaxe dans ListViewItems lorsque ListViewItems contient une image
-- N’utilisez pas cet effet partout, car une utilisation excessive peut réduire son impact
+- Ne l’utilisez pas partout, une utilisation abusive peut réduire son impact
 
-## <a name="related-articles"></a>Articles associés
+## <a name="related-articles"></a>Articles connexes
 
 - [ParallaxView, classe](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview) 
 - [Fluent Design pour UWP](/windows/apps/fluent-design-system)
