@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, questions, fréquentes, FAQ, forum aux questions
 ms.localizationpriority: medium
-ms.openlocfilehash: 167286226adb6d26a6cdd4ee4a26bdcc58e4b5ed
-ms.sourcegitcommit: eb24481869d19704dd7bcf34e5d9f6a9be912670
+ms.openlocfilehash: 592458c6e6157e8cef0d1312ebf6e5c9f15b7919
+ms.sourcegitcommit: 7dcf74b11aa0cb2f3ff4ab10caf26ba769f96dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79448574"
+ms.lasthandoff: 04/04/2020
+ms.locfileid: "80662390"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>Forum aux questions sur C++/WinRT
 Réponses aux questions que vous êtes susceptibles de vous poser sur la création et l’utilisation d’API Windows Runtime avec [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
@@ -35,7 +35,7 @@ Installez le package NuGet **Microsoft.Windows.CppWinRT** dans votre projet. Pou
 
 ## <a name="how-do-i-customize-the-build-support-in-the-nuget-package"></a>Comment personnaliser la prise en charge des builds dans le package NuGet ?
 
-La prise en charge des builds C++/WinRT (propriétés/cibles) est documentée dans le fichier [Lisez-moi](https://github.com/microsoft/xlang/tree/master/src/package/cppwinrt/nuget/readme.md#customizing) du package NuGet Microsoft.Windows.CppWinRT.
+La prise en charge des builds C++/WinRT (propriétés/cibles) est documentée dans le fichier [Lisez-moi](https://github.com/microsoft/cppwinrt/blob/master/nuget/readme.md#customizing) du package NuGet Microsoft.Windows.CppWinRT.
 
 ## <a name="what-are-the-requirements-for-the-cwinrt-visual-studio-extension-vsix"></a>Quelles sont les exigences pour l’extension Visual Studio (VSIX) C++/WinRT ?
 Pour les versions 1.0.190128.4 et ultérieures de l’extension VSIX, consultez [Prise en charge de Visual Studio pour C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package). Pour les autres versions, consultez [Versions antérieures de l’extension VSIX](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension).
