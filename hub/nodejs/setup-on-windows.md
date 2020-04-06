@@ -1,89 +1,89 @@
 ---
-title: Configurer NodeJS sur des fenêtres natives
-description: Guide pour vous aider à configurer votre environnement de développement node. js directement sur Windows.
+title: Configurer NodeJS dans un environnement Windows natif
+description: Guide conçu pour vous aider à configurer votre environnement de développement Node.js directement sous Windows.
 author: mattwojo
 ms.author: mattwoj
 manager: jken
 ms.topic: article
-keywords: Node. js, Windows 10, Windows natif, directement sur Windows
+keywords: Node.js, windows 10, environnement windows natif, directement sous windows
 ms.localizationpriority: medium
 ms.date: 09/19/2019
 ms.openlocfilehash: 456aac17f61ab0add3d35a48c74e151fa15e9e83
 ms.sourcegitcommit: 8efeb6672f759b1ea7e3e9e2f90e764480791142
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 01/08/2020
 ms.locfileid: "75728470"
 ---
-# <a name="set-up-your-nodejs-development-environment-directly-on-windows"></a>Configurer votre environnement de développement node. js directement sur Windows
+# <a name="set-up-your-nodejs-development-environment-directly-on-windows"></a>Configurer votre environnement de développement Node.js directement sous Windows
 
-Vous trouverez ci-dessous un guide pas à pas pour vous familiariser avec node. js dans un environnement de développement Windows natif.
+Vous trouverez ci-dessous un guide pas à pas qui vous permettra de vous familiariser avec Node.js dans un environnement de développement Windows natif.
 
-## <a name="install-nvm-windows-nodejs-and-npm"></a>Installer NVM-Windows, node. js et NPM
+## <a name="install-nvm-windows-nodejs-and-npm"></a>Installer nvm-windows, node.js et npm
 
-Il existe plusieurs façons d’installer node. js. Nous vous recommandons d’utiliser un gestionnaire de version au fur et à mesure que les versions changent très rapidement. Vous devrez probablement basculer entre plusieurs versions en fonction des besoins des différents projets sur lesquels vous travaillez. Node version Manager, plus communément appelé NVM, est la façon la plus courante d’installer plusieurs versions de node. js, mais n’est disponible que pour Mac/Linux et n’est pas prise en charge sur Windows. Au lieu de cela, nous allons parcourir les étapes d’installation de NVM-Windows, puis l’utiliser pour installer node. js et node Package Manager (NPM). D' [autres gestionnaires de versions](#alternative-version-managers) sont également pris en compte dans la section suivante.
+Différentes méthodes sont disponibles pour installer Node.js. Nous vous recommandons d'utiliser un gestionnaire de versions car les versions changent très rapidement. Vous devrez probablement passer d'une version à une autre en fonction des besoins des différents projets sur lesquels vous travaillez. Node Version Manager, également appelé nvm, est la méthode la plus couramment utilisée pour installer plusieurs versions de Node.js, mais elle est uniquement disponible sous Mac/Linux ; elle n'est pas prise en charge par Windows. Nous allons donc suivre les étapes d'installation de l'outil nvm-windows, que nous utiliserons pour installer Node.js et Node Package Manager (npm). D'[autres gestionnaires de versions](#alternative-version-managers) sont également à prendre en compte. Ceux-ci sont couverts à la section suivante.
 
 > [!IMPORTANT]
-> Il est toujours recommandé de supprimer les installations existantes de node. js ou NPM de votre système d’exploitation avant d’installer un gestionnaire de version, car les différents types d’installation peuvent entraîner des conflits étranges et confus. Cela comprend la suppression des répertoires d’installation NodeJS existants (par exemple, « C:\Program Files\nodejs ») qui peuvent être conservés. Le lien symbolique généré par NVM ne remplacera pas un répertoire d’installation existant (même vide). Pour obtenir de l’aide sur la suppression des installations précédentes, consultez [Comment supprimer complètement node. js de Windows](https://stackoverflow.com/questions/20711240/how-to-completely-remove-node-js-from-windows).)
+> Veillez à supprimer toutes les installations existantes de Node.js ou de npm de votre système d'exploitation avant d'installer un gestionnaire de versions car les différents types d'installation peuvent entraîner des conflits. Cela inclut la suppression de tous les répertoires d'installation existants de nodejs (par exemple, « C:\Program Files\nodejs ») qui pourraient subsister. Le lien symbolique généré par NVM n'écrasera pas un répertoire d'installation existant (même vide). Pour obtenir de l'aide sur la suppression des installations précédentes, consultez [Supprimer complètement node.js de Windows](https://stackoverflow.com/questions/20711240/how-to-completely-remove-node-js-from-windows).
 
-1. Ouvrez le [référentiel Windows-NVM](https://github.com/coreybutler/nvm-windows#node-version-manager-nvm-for-windows) dans votre navigateur Internet, puis cliquez sur le lien **Télécharger maintenant** .
-2. Téléchargez le fichier **NVM-Setup. zip** pour la version la plus récente.
-3. Une fois téléchargé, ouvrez le fichier zip, puis ouvrez le fichier **NVM-Setup. exe** .
-4. L’Assistant Installation de configuration-NVM-pour-Windows vous guide tout au long des étapes de configuration, notamment le choix du répertoire dans lequel NVM-Windows et node. js seront installés.
+1. Ouvrez le [référentiel windows-nvm](https://github.com/coreybutler/nvm-windows#node-version-manager-nvm-for-windows) dans votre navigateur Internet et sélectionnez le lien **Télécharger maintenant**.
+2. Téléchargez le fichier **nvm-setup.zip** de la version la plus récente.
+3. Une fois le fichier zip téléchargé, ouvrez-le, puis ouvrez le fichier **nvm-setup.exe**.
+4. L'Assistant d'installation Setup-NVM-for-Windows vous guide tout au long du processus d'installation, y compris pour le choix du répertoire dans lequel nvm-windows et Node.js doivent être installés.
 
-    ![Assistant Installation de NVM for Windows](../images/install-nvm-for-windows-wizard.png)
+    ![Assistant d'installation de NVM pour Windows](../images/install-nvm-for-windows-wizard.png)
 
-5. Une fois l’installation terminée. Ouvrez PowerShell et essayez d’utiliser Windows-NVM pour répertorier les versions de nœud actuellement installées (ne doit pas être à ce stade) : `nvm ls`
+5. Au terme de l'installation, ouvrez PowerShell et essayez d'utiliser windows-nvm pour répertorier les versions de Node actuellement installées (il ne doit y en avoir aucune à ce stade) : `nvm ls`
 
-    ![Liste NVM qui n’indique aucune version de nœud](../images/windows-nvm-powershell-no-node.png)
+    ![Liste NVM ne montrant aucune version de Node](../images/windows-nvm-powershell-no-node.png)
 
-6. Installez la version actuelle de node. js (pour tester les dernières améliorations apportées aux fonctionnalités, mais plus susceptibles d’avoir des problèmes que la version LTS) : `nvm install latest`
-7. Installez la dernière version stable de LTS de node. js (recommandé) en examinant d’abord le numéro de version LTS actuel : `nvm list available`, puis en installant le numéro de version LTS avec : `nvm install <version>` (en remplaçant `<version>` par le nombre, IE : `nvm install 12.14.0`).
+6. Installez la version actuelle de Node.js (pour tester les dernières améliorations apportées aux fonctionnalités, par exemple) : `nvm install latest`
+7. Installez la dernière version LTS stable de Node.js (recommandé) en recherchant d'abord le numéro de la version LTS actuelle, `nvm list available`, puis en installant le numéro de la version LTS avec `nvm install <version>` (en remplaçant `<version>` par le numéro, à savoir : `nvm install 12.14.0`).
 
     ![Liste NVM des versions disponibles](../images/windows-nvm-list.png)
 
-8. Répertorier les versions du nœud installées : `nvm ls`... vous devez maintenant voir les deux versions que vous venez d’installer.
+8. Répertoriez les versions de Node installées : `nvm ls`... Les deux versions que vous venez d'installer doivent maintenant être répertoriées.
 
-    ![Liste NVM répertoriant les versions des nœuds installés](../images/windows-nvm-node-installs.png)
+    ![Liste NVM répertoriant les versions de Node installées](../images/windows-nvm-node-installs.png)
 
-9. Pour vérifier quelle version de node. js est actuellement la version par défaut, entrez : `node --version`
-10. Pour modifier la version de node. js que vous souhaitez utiliser pour un projet, créez un répertoire de projet `mkdir NodeTest`et entrez le répertoire `cd NodeTest`, puis entrez `nvm use <version>` remplaçant `<version>` par le numéro de version que vous souhaitez utiliser (IE v 10.16.3 ').
-11. Vérifiez quelle version de NPM est installée avec : `npm --version`, ce numéro de version est automatiquement modifié en fonction de la version de NPM associée à votre version actuelle de node. js.
+9. Pour savoir quelle version de Node.js est actuellement la version par défaut, entrez : `node --version`
+10. Pour changer la version de Node.js à utiliser pour un projet, créez un nouveau répertoire de projet, `mkdir NodeTest`, accédez au répertoire, `cd NodeTest`, puis entrez `nvm use <version>` en remplaçant `<version>` par le numéro de la version que vous souhaitez utiliser (à savoir v10.16.3`).
+11. Pour savoir quelle version de npm est installée, entrez : `npm --version`. Ce numéro de version sera automatiquement remplacé par la version de npm associée à votre version actuelle de Node.js.
 
-## <a name="alternative-version-managers"></a>Gestionnaires de versions alternatifs
+## <a name="alternative-version-managers"></a>Autres gestionnaires de versions
 
-Alors que Windows-NVM est actuellement le gestionnaire de version le plus populaire pour node, il existe des alternatives à prendre en compte :
+windows-nvm est actuellement le gestionnaire de versions le plus couramment utilisé pour Node, mais ce n'est pas le seul :
 
-- [NVS](https://github.com/jasongin/nvs) (node version changer) est une alternative `nvm` multiplateforme avec la possibilité de [s’intégrer avec vs code](https://github.com/jasongin/nvs/blob/master/doc/VSCODE.md).
+- [nvs](https://github.com/jasongin/nvs) (Node Version Switcher) est une alternative multiplateforme à `nvm`, avec possibilité d'[intégration à VS Code](https://github.com/jasongin/nvs/blob/master/doc/VSCODE.md).
 
-- [Volta](https://github.com/volta-cli/volta#installing-volta) est un nouveau gestionnaire de versions de l’équipe LinkedIn qui prétend améliorer la vitesse et la prise en charge multiplateforme.
+- [Volta](https://github.com/volta-cli/volta#installing-volta) est un nouveau gestionnaire de versions de l'équipe LinkedIn présenté comme plus rapide et offrant une prise en charge multiplateforme.
 
-Pour installer Volta comme gestionnaire de version (plutôt que Windows-NVM), accédez à la section **installation de Windows** de leur guide d' [prise en main](https://docs.volta.sh/guide/getting-started), puis téléchargez et exécutez le programme d’installation de Windows, en suivant les instructions d’installation.
+Pour installer Volta en tant que gestionnaire de versions (plutôt que windows-nvm), accédez à la section **Installation sous Windows** de son [Guide de démarrage](https://docs.volta.sh/guide/getting-started), puis téléchargez et exécutez le programme d'installation Windows, en suivant les instructions d'installation.
 
 > [!IMPORTANT]
-> Vous devez vous assurer que le [mode développeur](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#accessing-settings-for-developers) est activé sur votre ordinateur Windows avant d’installer Volta.
+> Avant d'installer Volta, vous devez vous assurer que le [Mode développeur](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#accessing-settings-for-developers) est activé sur votre ordinateur Windows.
 
-Pour en savoir plus sur l’utilisation de Volta pour installer plusieurs versions de node. js sur Windows, consultez la [documentation Volta](https://docs.volta.sh/guide/understanding#managing-your-toolchain).
+Pour en savoir plus sur l'utilisation de Volta pour installer plusieurs versions de Node.js sous Windows, consultez la [documentation Volta](https://docs.volta.sh/guide/understanding#managing-your-toolchain).
 
 ## <a name="install-your-favorite-code-editor"></a>Installer votre éditeur de code favori
 
-Nous vous recommandons d' [installer vs code](https://code.visualstudio.com), ainsi que le [Pack d’extension node. js](https://marketplace.visualstudio.com/items?itemName=waderyan.nodejs-extension-pack), pour le développement avec node. js sur Windows. Installez-les tous ou choisissez ce qui vous semble le plus utile.
+Nous vous recommandons d'[installer VS Code](https://code.visualstudio.com), ainsi que le [pack d'extension Node.js](https://marketplace.visualstudio.com/items?itemName=waderyan.nodejs-extension-pack), pour développer avec Node.js sous Windows. Installez tout ou choisissez ce qui vous semble le plus utile.
 
-Pour installer le pack d’extension node. js :
+Pour installer le pack d'extension Node.js :
 
-1. Ouvrez la fenêtre **Extensions** (Ctrl + Maj + X) dans vs code.
-2. Dans la zone de recherche en haut de la fenêtre extensions, entrez « node extension Pack » (ou le nom de l’extension que vous recherchez).
-3. Cliquez sur **Installer**. Une fois l’installation terminée, votre extension s’affiche dans le dossier « activé » de votre fenêtre **Extensions** . Vous pouvez désactiver, désinstaller ou configurer des paramètres en sélectionnant l’icône d’engrenage en regard de la description de votre nouvelle extension.
+1. Ouvrez la fenêtre **Extensions** (Ctrl + Maj + X) dans VS Code.
+2. Dans la zone de recherche du haut de la fenêtre Extensions, entrez : « Pack d'extension Node » (ou le nom de l'extension que vous recherchez).
+3. Sélectionnez **Installer**. Une fois installée, votre extension apparaîtra dans le dossier « Activé » de votre fenêtre **Extensions**. Vous pouvez désactiver, désinstaller ou configurer les paramètres en sélectionnant l'icône d'engrenage en regard de la description de votre nouvelle extension.
 
-Voici quelques-unes des extensions supplémentaires que vous pouvez envisager :
+D'autres extensions sont disponibles :
 
-- [Débogueur pour Chrome](https://code.visualstudio.com/blogs/2016/02/23/introducing-chrome-debugger-for-vs-code): une fois que vous avez terminé le développement côté serveur avec node. js, vous devez développer et tester le côté client. Cette extension intègre votre éditeur de VS Code avec votre service de débogage de navigateur Chrome, ce qui rend les choses un peu plus efficaces.
-- [Cartes à partir d’autres éditeurs](https://marketplace.visualstudio.com/search?target=VSCode&category=Keymaps&sortBy=Downloads): ces extensions peuvent vous aider dans votre environnement à la racine si vous effectuez une transition à partir d’un autre éditeur de texte (comme Atom, Subvert, vim, EMacs, Notepad + +, etc.).
-- [Synchronisation des paramètres](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync): vous permet de synchroniser vos paramètres de vs code sur différentes installations à l’aide de github. Si vous travaillez sur plusieurs ordinateurs, cela permet de garantir la cohérence de votre environnement.
+- [Debugger pour Chrome](https://code.visualstudio.com/blogs/2016/02/23/introducing-chrome-debugger-for-vs-code) : lorsque vous aurez terminé le développement côté serveur avec Node.js, vous devrez développer et tester le côté client. Cette extension intègre votre éditeur VS Code au service de débogage de votre navigateur Chrome, pour plus d'efficacité.
+- [Mappages de touches d'autres éditeurs](https://marketplace.visualstudio.com/search?target=VSCode&category=Keymaps&sortBy=Downloads) : ces extensions peuvent être utiles si vous utilisiez auparavant un autre éditeur de texte (comme Atom, Sublime, Vim, eMacs, Notepad++, etc.).
+- [Synchronisation des paramètres](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync) : vous permet de synchroniser vos paramètres VS Code entre différentes installations à l'aide de GitHub. Si vous travaillez sur plusieurs ordinateurs, cela permet de garantir la cohérence de votre environnement.
 
 ## <a name="install-git-optional"></a>Installer Git (facultatif)
 
-Si vous envisagez de collaborer avec d’autres personnes ou d’héberger votre projet sur un site Open source (comme GitHub), VS Code prend en charge [le contrôle de version avec git](https://code.visualstudio.com/docs/editor/versioncontrol#_git-support). L’onglet Contrôle de code source de VS Code assure le suivi de toutes vos modifications et contient des commandes Git courantes (ajouter, valider, pousser, extraire) intégrées directement dans l’interface utilisateur. Vous devez d’abord installer Git pour gérer le panneau Contrôle de code source.
+Si vous envisagez de collaborer avec d'autres personnes ou d'héberger votre projet sur un site open source (comme GitHub), VS Code prend en charge le [contrôle de version avec Git](https://code.visualstudio.com/docs/editor/versioncontrol#_git-support). L’onglet Contrôle de code source de VS Code assure le suivi de toutes vos modifications et contient des commandes Git courantes (ajouter, valider, pousser, extraire) intégrées directement dans l’interface utilisateur. Vous devez d’abord installer Git pour gérer le panneau Contrôle de code source.
 
 1. Téléchargez et installez Git pour Windows sur le [site web git-scm](https://git-scm.com/download/win).
 
@@ -91,11 +91,11 @@ Si vous envisagez de collaborer avec d’autres personnes ou d’héberger votre
 
 3. Si vous n’avez jamais travaillé avec Git, les [guides GitHub](https://guides.github.com/) peuvent vous aider à démarrer.
 
-4. Nous vous recommandons d’ajouter un [fichier. gitignore](https://help.github.com/en/articles/ignoring-files) à vos projets de nœud. Voici le [modèle gitignore par défaut de GitHub pour node. js](https://github.com/github/gitignore/blob/master/Node.gitignore).
+4. Nous vous recommandons d'ajouter un [fichier .gitignore](https://help.github.com/en/articles/ignoring-files) à vos projets Node. Voici le [modèle gitignore par défaut de GitHub pour Node.js](https://github.com/github/gitignore/blob/master/Node.gitignore).
 
-## <a name="use-windows-subsystem-for-linux-for-production"></a>Utiliser le sous-système Windows pour Linux pour la production
+## <a name="use-windows-subsystem-for-linux-for-production"></a>Utiliser le Sous-système Windows pour Linux à des fins de production
 
-L’utilisation de node. js directement sur Windows est idéale pour l’apprentissage et l’expérimentation de ce que vous pouvez faire. Une fois que vous êtes prêt à créer des applications Web prêtes pour la production, qui sont généralement déployées sur un serveur Linux, nous vous recommandons d’utiliser le sous-système Windows pour Linux version 2 (WSL 2) pour le développement d’applications Web node. js. De nombreux packages et infrastructures node. js sont créés avec un environnement * nix à l’esprit, et la plupart des applications node. js étant déployées sur Linux, le développement sur WSL garantit la cohérence entre vos environnements de développement et de production. Pour configurer un environnement de développement WSL, consultez [configurer votre environnement de développement node. js avec WSL 2](./setup-on-wsl2.md).
+L'utilisation directe de Node.js sous Windows est idéale pour l'apprentissage et l'expérimentation des possibilités qui s'offrent à vous. Si vous souhaitez créer des applications web prêtes pour la production, lesquelles sont généralement déployées sur un serveur Linux, nous vous recommandons d'utiliser le Sous-système Windows pour Linux version 2 (WSL 2) afin de développer des applications web Node.js. De nombreux packages et frameworks Node.js sont créés avec un environnement *nix à l'esprit, et la plupart des applications Node.js sont déployées sous Linux. Par conséquent, le développement sous WSL garantit la cohérence entre vos environnements de développement et de production. Pour configurer un environnement de développement WSL, consultez [Configurer votre environnement de développement Node.js avec WSL 2](./setup-on-wsl2.md).
 
 > [!NOTE]
-> Si vous êtes dans la situation (peu rare) de la nécessité d’héberger une application node. js sur un serveur Windows, le scénario le plus courant semble [utiliser un proxy inverse](https://medium.com/intrinsic/why-should-i-use-a-reverse-proxy-if-node-js-is-production-ready-5a079408b2ca). Il existe deux façons de procéder : 1) [à l’aide de iisnode](https://harveywilliams.net/blog/installing-iisnode) ou [directement](https://dev.to/petereysermans/hosting-a-node-js-application-on-windows-with-iis-as-reverse-proxy-397b). Nous ne maintenons pas ces ressources et nous vous recommandons [d’utiliser des serveurs Linux pour héberger vos applications node. js](https://docs.microsoft.com/azure/app-service/app-service-web-get-started-nodejs).
+> Si vous devez héberger une application Node.js sur un serveur Windows (ce qui est peu fréquent), le scénario le plus courant semble être l'[utilisation d'un proxy inverse](https://medium.com/intrinsic/why-should-i-use-a-reverse-proxy-if-node-js-is-production-ready-5a079408b2ca). Deux méthodes sont disponibles : 1) [utilisation d'iisnode](https://harveywilliams.net/blog/installing-iisnode) ou [méthode directe](https://dev.to/petereysermans/hosting-a-node-js-application-on-windows-with-iis-as-reverse-proxy-397b). Nous ne fournissons pas ces ressources et vous recommandons d'[utiliser des serveurs Linux pour héberger vos applications Node.js](https://docs.microsoft.com/azure/app-service/app-service-web-get-started-nodejs).

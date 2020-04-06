@@ -11,21 +11,28 @@ design-contact: ksulliv
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: b791768d4ccd78b46fef2d4e494ce06ef9f6ca6a
-ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
+ms.openlocfilehash: f287f738c39e21ea76ff2595cc34ac715a1b52ca
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73062215"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081190"
 ---
 # <a name="color-picker"></a>Sélecteur de couleurs
 
 Un sélecteur de couleur permet de parcourir et de sélectionner des couleurs. Par défaut, il permet à un utilisateur de parcourir les couleurs d’un spectre, ou de spécifier une couleur dans les zones de saisie RVB (Rouge, Vert, Bleu), HSV (Valeur de saturation de la teinte) ou Hexadécimal.
 
-> **API importantes** : [classe ColorPicker](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker), [propriété Color](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.Color), [événement ColorChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.ColorChanged)
-
 ![Un sélecteur de couleur par défaut](images/color-picker-default.png)
 
+**Obtenir la bibliothèque d’interface utilisateur Windows**
+
+|  |  |
+| - | - |
+| ![Logo WinUI](images/winui-logo-64x64.png) | Le contrôle **ColorPicker** est inclus dans la bibliothèque d'interface utilisateur Windows, package NuGet qui contient les nouveaux contrôles et fonctionnalités d'interface utilisateur destinés aux applications UWP. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **API de la bibliothèque d'interface utilisateur Windows :** [classe ColorPicker](/uwp/api/microsoft.ui.xaml.controls.colorpicker), [propriété Color](/uwp/api/microsoft.ui.xaml.controls.colorpicker.Color), [événement ColorChanged](/uwp/api/microsoft.ui.xaml.controls.colorpicker.ColorChanged)
+>
+> **API de plateforme :** [classe ColorPicker](/uwp/api/windows.ui.xaml.controls.colorpicker), [propriété Color](/uwp/api/windows.ui.xaml.controls.colorpicker.Color), [événement ColorChanged](/uwp/api/windows.ui.xaml.controls.colorpicker.ColorChanged)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
@@ -38,7 +45,7 @@ Si votre application est destinée au dessin ou à des tâches similaires à l�
 <table>
 <th align="left">Galerie de contrôles XAML<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/ColorPicker">ouvrir l’application et voir l’objet ColorPicker en contexte</a>.</p>
     <ul>
@@ -63,7 +70,7 @@ Par défaut, le sélecteur de couleurs affiche un aperçu de la couleur choisie 
 
 Lorsque la sélection de couleur doit prendre effet immédiatement, vous pouvez utiliser la liaison de données pour lier la propriété Color, ou gérer l’événement ColorChanged pour accéder à la couleur sélectionnée dans votre code.
 
-Dans cet exemple, vous liez la propriété Color de l’objet SolidColorBrush, utilisée comme propriété Fill d’objet Rectangle, directement à la couleur sélectionnée dans le sélecteur de couleurs. Toute modification apportée au sélecteur de couleurs entraîne un changement dynamique de la propriété liée.
+Dans cet exemple, vous liez la propriété Color de l'objet SolidColorBrush, utilisée comme propriété Fill d'objet Rectangle, directement à la couleur sélectionnée dans le sélecteur de couleurs. Toute modification apportée au sélecteur de couleurs entraîne un changement dynamique de la propriété liée.
 
 ```xaml
 <ColorPicker x:Name="myColorPicker"
@@ -204,7 +211,7 @@ Valeurs hexadécimales | IsHexInputVisible
 - Pensez au type d’expérience de sélection de couleur le mieux adapté à votre application. Certains scénarios peuvent ne pas nécessiter une sélection de couleur granulaire et bénéficieraient d’un sélecteur simplifié
 - Pour une sélection de couleurs très précise, utilisez le spectre de forme carrée. Vérifiez que sa taille est d’au moins 256 x 256 px ou intégrez des champs de saisie de texte pour permettre aux utilisateurs d’affiner la couleur sélectionnée.
 - Dans le cas d’un menu volant, le fait d’appuyer sur le spectre des couleurs ou d’ajuster le curseur ne suffit pas pour valider la sélection de couleur. Pour valider la sélection :
-  - Fournissez des boutons de validation et d’annulation pour appliquer ou annuler la sélection. Le fait d’appuyer sur le bouton Précédent ou d’appuyer en dehors du menu volant a pour effet de le fermer et de ne pas enregistrer la sélection de l’utilisateur.
+  - Fournissez des boutons de validation et d’annulation pour appliquer ou annuler la sélection. Le fait d'appuyer sur le bouton Précédent ou en dehors du menu volant a pour effet de le fermer sans enregistrer la sélection de l'utilisateur.
   - Sinon, validez la sélection lors de la fermeture du menu volant, en appuyant en dehors du menu volant ou en appuyant sur le bouton Précédent.
 
 ## <a name="get-the-sample-code"></a>Obtenir l’exemple de code

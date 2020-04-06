@@ -7,21 +7,28 @@ ms.topic: article
 keywords: windows 10, uwp
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: bcabe0867e21b20f97405d514b16bef2165821fb
-ms.sourcegitcommit: be25b7628b1ff22175a682e670539947db2fa85a
+ms.openlocfilehash: 5307448b6209228cd8c4550a739c6db15091ba54
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74852861"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081668"
 ---
 # <a name="number-box"></a>Zone de nombre
 
 Représente un contrôle qui permet d’afficher et de modifier des nombres. Il prend en charge la validation, la définition d’un intervalle d’incrémentation et le calcul en ligne d’équations de base (multiplication, division, addition, soustraction, etc.).
 
+![Exemple de menu contextuel standard](images/contextmenu_rs2_icons.png)
 
-**API importantes :** [NumberBox, classe](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.NumberBox)
+**Obtenir la bibliothèque d’interface utilisateur Windows**
 
-## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ? 
+|  |  |
+| - | - |
+| ![Logo WinUI](images/winui-logo-64x64.png) | Le contrôle **NumberBox** est inclus dans la bibliothèque d'interface utilisateur Windows, package NuGet qui contient les nouveaux contrôles et fonctionnalités d'interface utilisateur destinés aux applications UWP. Pour plus d’informations, notamment des instructions d’installation, consultez [Vue d’ensemble de la bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+**API de la bibliothèque d'interface utilisateur Windows :** [NumberBox, classe](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.NumberBox)
+
+## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
 Vous pouvez utiliser un contrôle NumberBox pour capturer et afficher des entrées mathématiques. Si vous avez besoin d’une zone de texte modifiable qui n’accepte pas que des nombres, utilisez le contrôle [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox). Si vous avez besoin d’une zone de texte modifiable qui accepte les mots de passe ou d’autres entrées sensibles, consultez [PasswordBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox). Si vous avez besoin d’une zone de texte pour entrer des termes de recherche, consultez [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox). Si vous avez besoin d’entrer ou de modifier du texte mis en forme, consultez [RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox).
 
@@ -30,7 +37,7 @@ Vous pouvez utiliser un contrôle NumberBox pour capturer et afficher des entré
 <table>
 <th align="left">Galerie de contrôles XAML<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Si vous avez installé l’application <strong style="font-weight: semi-bold">XAML Controls Gallery</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/TextBox">l’ouvrir et voir NumberBox en action</a>.</p>
     <ul>
@@ -166,7 +173,7 @@ private void SetNumberBoxNumberFormatter()
 
 En ce qui concerne les points décimaux et les virgules, la mise en forme utilisée par un utilisateur est remplacée par la celle configurée pour le NumberBox. Une erreur de validation de l’entrée n’est pas déclenchée. 
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarks
 
 ### <a name="input-scope"></a>Étendue d’entrée
 
