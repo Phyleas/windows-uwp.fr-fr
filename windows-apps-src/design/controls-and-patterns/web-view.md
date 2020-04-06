@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: de7a430248841722aedd960cd485ea24499fdd00
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 43d0471b6e7ebc36df4f80a1b214b0721ae25570
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684275"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081409"
 ---
 # <a name="web-view"></a>Affichage web
 
@@ -30,7 +30,7 @@ Utilisez un contrôle d’affichage web pour afficher du contenu HTML à mise en
 <table>
 <th align="left">Galerie de contrôles XAML<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/WebView">ouvrir l’application et voir l’objet WebView en action</a>.</p>
     <ul>

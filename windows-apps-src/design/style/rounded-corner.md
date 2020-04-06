@@ -4,12 +4,12 @@ description: Découvrez-en plus sur les principes des angles arrondis, les appro
 ms.date: 10/08/2019
 ms.topic: article
 keywords: windows 10, uwp, rayon d’angle, arrondi
-ms.openlocfilehash: 84cd27bf8c65ed65a6ee2b0f044e0ffb3ef86bf0
-ms.sourcegitcommit: 49af415e4eefea125c023b7071adaa5dc482e223
+ms.openlocfilehash: a83473b5ad836633bc195aa2b5afe87fa092e0ee
+ms.sourcegitcommit: 3c3730e968fba89b21459390735614cd4c9d9c67
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74799923"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80320423"
 ---
 # <a name="corner-radius"></a>Rayon d’angle
 
@@ -40,7 +40,7 @@ Le style constitué d’angles arrondis est appliqué aux trois endroits suivant
 **Contrôles**
 
 - AutoSuggestBox
-- Button
+- Bouton
   - ContentDialog, boutons
 - CalendarDatePicker
 - CheckBox
@@ -72,7 +72,7 @@ Le style constitué d’angles arrondis est appliqué aux trois endroits suivant
 - et MenuFlyout
 - TabView, onglets
 - TeachingTip
-- ToolTip
+- Info-bulle
 - Partie de menu volant (à l’ouverture)
   - AutoSuggestBox
   - CalendarDatePicker
@@ -180,9 +180,21 @@ Sinon, si vous souhaitez modifier l’arrondi de tous les contrôles dans une é
 
 Vous pouvez modifier la propriété [CornerRadius](/uwp/api/windows.ui.xaml.controls.control.cornerradius) directement sur les contrôles si vous souhaitez changer l’arrondi d’un nombre spécifique de contrôles.
 
-|Default | Propriété modifiée |
+|Par défaut | Propriété modifiée |
 |:-- |:-- |
 |![DefaultCheckBox](images/rounded-corner/default-checkbox.png)| ![CustomCheckBox](images/rounded-corner/custom-checkbox.png)|
 |`<CheckBox Content="Checkbox"/>` | `<CheckBox Content="Checkbox" CornerRadius="5"/> ` |
 
 Tous les angles des contrôles ne répondent pas à la modification de leur propriété `CornerRadius`. Pour faire en sorte que le contrôle dont vous souhaitez arrondir les angles répond comme prévu à la propriété `CornerRadius`, commencez par vérifier que les ressources globales `ControlCornerRadius` ou `OverlayCornerRadius` affectent le contrôle en question. Si ce n’est pas le cas, vérifiez que le contrôle que vous souhaitez arrondir a bien des angles. La plupart de nos contrôles n’affichent pas les bords réels et ne peuvent donc pas utiliser correctement la propriété `CornerRadius`.
+
+### <a name="basing-custom-styles-on-winui"></a>Baser des styles personnalisés sur WinUI
+
+Vous pouvez baser vos styles personnalisés sur les styles d’angles arrondis de WinUI en spécifiant l’attribut `BasedOn` approprié dans votre style. Par exemple, pour créer un style de bouton personnalisé basé sur le style de bouton WinUI, procédez comme suit :
+
+```xaml
+<Style x:Key="MyCustomButtonStyle" BasedOn="{StaticResource DefaultButtonStyle}">
+   ...
+</Style>
+```
+
+En général, les styles de contrôle WinUI suivent une convention d’affectation de noms cohérente : « DefaultXYZStyle », où « XYZ » est le nom du contrôle. Pour une référence complète, vous pouvez parcourir les fichiers XAML dans le référentiel WinUI.

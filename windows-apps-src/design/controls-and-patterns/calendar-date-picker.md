@@ -12,23 +12,27 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 4de2f1cefc47e8740bfebbe7853ae317d25ab9d0
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 28248b3df4a3444441c7a4a19f1a360150170b1c
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66363221"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081251"
 ---
 # <a name="calendar-date-picker"></a>Sélecteur de dates du calendrier
 
- 
-
 Le sélecteur de dates de calendrier est un contrôle déroulant optimisé pour la sélection d’une seule date dans un affichage calendrier, dans lequel les informations contextuelles comme le jour de la semaine ou l’exhaustivité du calendrier sont importantes. Vous pouvez modifier le calendrier pour fournir du contexte supplémentaire ou pour limiter les dates disponibles.
 
-> **API importantes** : [classe CalendarDatePicker](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarDatePicker), [propriété Date](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendardatepicker.date), [événement DateChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendardatepicker.datechanged)
+**Obtenir la bibliothèque d’interface utilisateur Windows**
 
+|  |  |
+| - | - |
+| ![Logo WinUI](images/winui-logo-64x64.png) | Windows UI Library 2.2 ou version ultérieure inclut pour ce contrôle un nouveau modèle qui utilise des angles arrondis. Pour plus d’informations, consultez [Rayons des angles](/windows/uwp/design/style/rounded-corner). WinUI est un package NuGet qui contient de nouveaux contrôles et fonctionnalités d'interface utilisateur pour les applications UWP. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **API de plateforme** : [classe CalendarDatePicker](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarDatePicker), [propriété Date](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendardatepicker.date), [événement DateChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendardatepicker.datechanged)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
+
 Utilisez un **sélecteur de dates du calendrier** pour permettre à un utilisateur de choisir une date unique à partir d’un affichage Calendrier contextuel. Utilisez-le pour des éléments tels que le choix d’une date de rendez-vous ou de départ.
 
 Pour permettre à un utilisateur de choisir une date connue, par exemple, une date de naissance, où le contexte du calendrier n’est pas important, pensez à utiliser un [sélecteur de dates](date-picker.md).
@@ -40,7 +44,7 @@ Pour plus d’informations sur le choix du contrôle approprié, voir l’articl
 <table>
 <th align="left">Galerie de contrôles XAML<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/CalendarDatePicker">ouvrir l’application et voir l’objet CalendarDatePicker en action</a>.</p>
     <ul>
@@ -95,7 +99,7 @@ Vous pouvez gérer l’événement [DateChanged](https://docs.microsoft.com/uwp/
 
 ### <a name="setting-a-header-and-placeholder-text"></a>Définition d’un texte d’en-tête et d’espace réservé
 
-Vous pouvez ajouter un contrôle [Header](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendardatepicker.header) (ou étiquette) et un contrôle [PlaceholderText](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendardatepicker.placeholdertext) (ou filigrane) au sélecteur de date de calendrier pour indiquer à l’utilisateur son rôle. Si vous souhaitez personnaliser l’aspect de l’en-tête, vous pouvez définir la propriété [HeaderTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendardatepicker.headertemplate) au lieu de la propriété Header.
+Vous pouvez ajouter un contrôle [Header](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendardatepicker.header) (ou étiquette) et un contrôle [PlaceholderText](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendardatepicker.placeholdertext) (ou filigrane) au sélecteur de date de calendrier pour indiquer à l’utilisateur son rôle. Si vous voulez personnaliser l’aspect de l’en-tête, vous pouvez définir la propriété [HeaderTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendardatepicker.headertemplate) au lieu de la propriété Header.
 
 Le texte d’espace réservé par défaut est « sélectionner une date ». Vous pouvez le supprimer en définissant la propriété PlaceholderText sur une chaîne vide, ou vous pouvez fournir un texte personnalisé comme illustré ici.
 

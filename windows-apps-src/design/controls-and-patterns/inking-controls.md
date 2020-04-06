@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
 ms.localizationpriority: medium
-ms.openlocfilehash: b665145eac8599bae69aaf4b1951d267bf79f7a7
-ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
+ms.openlocfilehash: 892e8e9bdeed562a83e566266a7391e9c24b2ad3
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73062098"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081728"
 ---
 # <a name="inking-controls"></a>Contrôles pour l’entrée manuscrite
 
@@ -54,7 +54,7 @@ Associez InkCanvas avec un élément InkToolbar pour fournir une interface utili
 <table>
 <th align="left">Galerie de contrôles XAML<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/InkCanvas">ouvrir l’application et voir l’objet InkCanvas en action</a>.</p>
     <ul>
@@ -157,8 +157,8 @@ La gomme dispose également d’un menu volant proposant la commande **Supprimer
 - InkCanvas et l’entrée manuscrite en règle générale sont conseillés avec un style actif. Toutefois, nous recommandons la prise en charge de l’entrée manuscrite avec une souris et la fonctionnalité tactile (y compris le stylet passif) si votre application l’impose.
 - Utilisez le contrôle InkToolbar avec l’élément InkCanvas pour fournir les paramètres et les fonctionnalités d’entrée manuscrite de base. InkCanvas et InkToolbar peuvent être personnalisés par programme.
 - InkToolbar et l’entrée manuscrite en règle générale sont conseillés avec un style actif. Toutefois, l’entrée manuscrite avec une souris et la fonctionnalité tactile peut être prise en charge si votre application l’impose.
-- En cas de prise en charge de l’entrée manuscrite avec la fonctionnalité tactile, nous recommandons d’utiliser l’icône ED5F de la police Segoe MLD2 Assets pour le bouton « bascule », avec une info-bulle « écriture tactile ».
-- Dans le cas d’une sélection du trait, nous recommandons d’utiliser l’icône EF20 de la police Segoe MLD2 Assets pour le bouton « outil », avec une info-bulle « outil de sélection ».
+- En cas de prise en charge de l’entrée manuscrite avec la fonctionnalité tactile, nous recommandons d’utiliser l’icône ED5F de la police Segoe MLD2 Assets pour le bouton bascule, avec une info-bulle « écriture tactile ».
+- Dans le cas d’une sélection du trait, nous recommandons d’utiliser l’icône EF20 de la police Segoe MLD2 Assets pour le bouton outil, avec une info-bulle « outil de sélection ».
 - Si vous utilisez plusieurs InkCanvas, nous recommandons l’utilisation d’un seul élément InkToolbar pour contrôler l’entrée manuscrite dans les zones de dessin.
 - Pour des performances optimales, nous vous recommandons de modifier le menu volant par défaut plutôt que d’en créer un personnalisé pour les outils personnalisés et par défaut.
 

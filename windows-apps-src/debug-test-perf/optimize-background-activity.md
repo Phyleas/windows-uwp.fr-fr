@@ -4,11 +4,11 @@ title: Optimiser l’activité en arrière-plan
 description: Créez des applications UWP qui fonctionnent avec le système pour utiliser des tâches en arrière-plan de manière économe en énergie.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: eb3ff12e4b616edd7b87cab7f13aa060f301fc52
 ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 01/06/2020
 ms.locfileid: "75683832"
@@ -21,9 +21,9 @@ Le comportement des tâches en arrière-plan joue sans doute le rôle le plus im
 
 ## <a name="background-activity-permissions"></a>Autorisations d’activité en arrière-plan
 
-Sur les appareils mobiles et de bureau exécutant Windows 10, version 1607 ou ultérieure, les utilisateurs peuvent visualiser leur valeur « Utilisation de la batterie par l’application » dans la section Batterie de l’application Paramètres. Cette section affiche une liste d’applications et le pourcentage d’autonomie de la batterie consommé par chaque application (par rapport au niveau d’autonomie depuis le dernier chargement). Les utilisateurs peuvent sélectionner l’une des applications UWP de cette liste pour ouvrir les contrôles liés à l’activité en arrière-plan.
+Sur les appareils mobiles et de bureau exécutant Windows 10, version 1607 ou ultérieure, les utilisateurs peuvent visualiser leur valeur « Utilisation de la batterie par l’application » dans la section Batterie de l’application Paramètres. Là s’affichent une liste d’applications et le pourcentage de charge (par rapport au niveau d’autonomie depuis le dernier chargement) que chaque application a consommée. Les utilisateurs peuvent sélectionner l’une des applications UWP de cette liste pour ouvrir les contrôles liés à l’activité en arrière-plan.
 
-![Utilisation de la batterie par l’application](images/battery-usage-by-app.png)
+![utilisation de la batterie par application](images/battery-usage-by-app.png)
 
 ### <a name="background-permissions-on-mobile"></a>Autorisations des tâches en arrière-plan sur les appareils mobiles
 
@@ -49,17 +49,17 @@ L’Économiseur de batterie est une fonctionnalité système que les utilisateu
 Vérifiez l’état du mode Économiseur de batterie dans votre application en référençant la propriété [**PowerManager.EnergySaverStatus**](https://docs.microsoft.com/uwp/api/windows.system.power.energysaverstatus). Il s’agit de l’une des valeurs d’énumération suivantes : **EnergySaverStatus.Disabled**, **EnergySaverStatus.Off** ou **EnergySaverStatus.On**. Si votre application nécessite une activité en arrière-plan et qu’elle n’est pas définie sur « Toujours autorisé », elle doit gérer la valeur **EnergySaverStatus.On** en informant l’utilisateur que les tâches en arrière-plan requises ne s’exécuteront pas tant que l’économiseur de batterie sera désactivé. Si la gestion de l’activité en arrière-plan est l’objectif principal de la fonctionnalité d’Économiseur de batterie, votre application peut effectuer des ajustements supplémentaires pour économiser davantage d’énergie lorsque l’Économiseur de batterie est activé.  Lorsque l’Économiseur de batterie est activé, votre application peut réduire son utilisation des animations, arrêter l’interrogation de localisation ou différer les synchronisations et les sauvegardes. 
 
 ## <a name="further-optimize-background-tasks"></a>Optimiser les tâches en arrière-plan
-Voici les étapes supplémentaires que vous pouvez effectuer lorsque vous inscrivez vos tâches en arrière-plan pour les rendre plus économes en énergie.
+Voici les étapes supplémentaires que vous pouvez effectuer lors de la déclaration de vos tâches en arrière-plan pour les rendre plus économes en énergie.
 
 ### <a name="use-a-maintenance-trigger"></a>Utiliser un déclencheur de maintenance 
-Un objet [**MaintenanceTrigger**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.maintenancetrigger) peut être utilisé à la place d’un objet [**SystemTrigger**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.systemtrigger) pour déterminer le moment du démarrage d’une tâche en arrière-plan. Les tâches qui utilisent des déclencheurs de maintenance ne s’exécutent que lorsque l’appareil est connecté à une prise de courant CA, et elles sont autorisées à s’exécuter plus longtemps. Pour obtenir des instructions, consultez [Utiliser un déclencheur de maintenance](https://docs.microsoft.com/windows/uwp/launch-resume/use-a-maintenance-trigger).
+Un objet [**MaintenanceTrigger**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.maintenancetrigger) peut s’utiliser à la place d’un objet [**SystemTrigger**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.systemtrigger) pour déterminer le moment de démarrage d’une tâche en arrière-plan. Les tâches qui utilisent des déclencheurs de maintenance ne s’exécutent que lorsque l’appareil est connecté à une prise de courant CA, et elles sont autorisées à s’exécuter plus longtemps. Pour obtenir des instructions, consultez [Utiliser un déclencheur de maintenance](https://docs.microsoft.com/windows/uwp/launch-resume/use-a-maintenance-trigger).
 
-### <a name="use-the-backgroundworkcostnothigh-system-condition-type"></a>Utiliser le type de condition système **BackgroundWorkCostNotHigh**
-Les conditions système doivent être remplies pour que les tâches en arrière-plan puissent s’exécuter. Pour plus d’informations, consultez [Définir des conditions pour exécuter une tâche en arrière-plan](https://docs.microsoft.com/windows/uwp/launch-resume/set-conditions-for-running-a-background-task). Le coût du travail en arrière-plan est une mesure qui évalue l’impact énergétique *relatif* de l’exécution de la tâche en arrière-plan. Une tâche en cours lorsque l’appareil est branché sur secteur est considérée comme **faible** (impact faible/nul sur la batterie). Une tâche en cours lorsque l’appareil est sur batterie avec l’écran éteint est considérée comme **haute**, car l’activité des programmes sur l’appareil est probablement faible sur l’appareil, de sorte que la tâche en arrière-plan a un coût relatif supérieur. Une tâche en cours lorsque l’appareil est sur batterie avec l’écran *allumé* est considérée comme **moyenne**, car certains programmes peuvent être en cours d’exécution et la tâche en arrière-plan a un coût énergétique un peu supérieur. La condition système **BackgroundWorkCostNotHigh** diffère simplement la capacité de votre tâche à s’exécuter lorsque l’écran est allumé ou que l’appareil est connecté à une prise de courant.
+### <a name="use-the-backgroundworkcostnothigh-system-condition-type"></a>Utilisez le type de condition système **BackgroundWorkCostNotHigh**
+Les conditions système doivent être réunies dans l’ordre pour que les tâches en arrière-plan puissent s’exécuter. Pour plus d’informations, consultez [Définir des conditions pour exécuter une tâche en arrière-plan](https://docs.microsoft.com/windows/uwp/launch-resume/set-conditions-for-running-a-background-task). Le coût du travail en arrière-plan est une mesure qui évalue l’impact énergétique *relatif* de l’exécution de la tâche en arrière-plan. Une tâche en cours lorsque l’appareil est branché sur secteur est considérée comme **faible** (impact faible/nul sur la batterie). Une tâche en cours lorsque l’appareil est sur batterie avec l’écran éteint est considérée comme **haute**, car l’activité des programmes sur l’appareil est probablement faible sur l’appareil, de sorte que la tâche en arrière-plan a un coût relatif supérieur. Une tâche en cours lorsque l’appareil est sur batterie avec l’écran *allumé* est considérée comme **moyenne**, car certains programmes peuvent être en cours d’exécution et la tâche en arrière-plan a un coût énergétique un peu supérieur. La condition système **BackgroundWorkCostNotHigh** diffère simplement la capacité de votre tâche à s’exécuter lorsque l’écran est allumé ou que l’appareil est connecté à une prise de courant.
 
 ## <a name="test-battery-efficiency"></a>Tester l’efficacité de la batterie
 
-Veillez à tester votre application sur des appareils réels pour tous les scénarios impliquant une forte consommation d’énergie. Il est recommandé de tester votre application sur différents appareils, avec l’économiseur de batterie activé et désactivé, dans des environnements à niveau de sécurité réseau variable.
+Veillez à tester votre application sur des appareils réels pour tous les scénarios requérant une forte consommation d’énergie. Il est recommandé de tester votre application sur différents appareils, avec l’économiseur de batterie activé et désactivé, dans des environnements à niveau de sécurité réseau variable.
 
 ## <a name="related-topics"></a>Rubriques connexes
 

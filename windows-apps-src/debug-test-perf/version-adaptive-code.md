@@ -3,12 +3,12 @@ title: Code adaptatif de version
 description: Utilisez la classe ApiInformation pour tirer parti des nouvelles API tout en conservant la compatibilité avec les versions précédentes
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.assetid: 3293e91e-6888-4cc3-bad3-61e5a7a7ab4e
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c03475c0c4007508a18c17645dbe99eeb7d6cb0
 ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 01/06/2020
 ms.locfileid: "75681980"
@@ -23,7 +23,7 @@ Pour obtenir des informations générales importantes sur ApiInformation, les co
 
 Vous utilisez la classe [Windows.Foundation.Metadata.ApiInformation](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation) dans une condition à l’intérieur de votre code pour tester la présence de l’API que vous voulez appeler. Cette condition est évaluée à chaque exécution de votre application, mais sa valeur est **true** uniquement sur les appareils sur lesquels l’API est présente et donc disponible pour un appel. Cela vous permet d’écrire du code adaptatif de version afin de créer des applications utilisant des API disponibles uniquement sur certaines versions de système d’exploitation.
 
-Nous allons examiner des exemples spécifiques de ciblage des nouvelles fonctionnalités dans Windows Insider Preview. Pour obtenir une vue d’ensemble de l’utilisation d’**ApiInformation**, voir [Vue d’ensemble des familles d’appareils](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview#writing-code) et le billet de blog [Détection dynamique des fonctionnalités avec les contrats API](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/).
+Nous allons examiner ici des exemples spécifiques de ciblage des nouvelles fonctionnalités dans Windows Insider Preview. Pour obtenir une vue d’ensemble de l’utilisation d’**ApiInformation**, voir [Vue d’ensemble des familles d’appareils](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview#writing-code) et le billet de blog [Détection dynamique des fonctionnalités avec les contrats API](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/).
 
 > [!TIP]
 > De nombreuses vérifications des API à l’exécution peuvent affecter les performances de votre application. Les vérifications sont incluses dans ces exemples. Dans le code de production, vous devez effectuer la vérification une seule fois et mettre en cache les résultats, puis utiliser le résultat mis en cache dans toute votre application. 
@@ -53,7 +53,7 @@ Avantages :
 Inconvénients :
 - Aucune prise en charge du concepteur.
 
-**Déclencheurs d’État**
+**Déclencheurs d’état**
 
 Quand l’utiliser :
 - Quand il n’y a qu’une modification de propriété ou de valeur d’énumération entre les versions de système d’exploitation, qui ne nécessite pas de modification logique et qui est associée à un état visuel.
@@ -339,7 +339,7 @@ class IsPropertyPresentTrigger : StateTriggerBase
 
 L’étape suivante consiste à configurer le déclencheur d’état visuel dans XAML pour obtenir deux états visuels différents en fonction de la présence de l’API. 
 
-Windows 10, version 1607 introduit une nouvelle propriété sur la classe [FrameworkElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement), appelée [AllowFocusOnInteraction](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.allowfocusoninteraction), qui détermine si un contrôle prend le focus lorsque l’utilisateur interagit. Cette fonction est utile si vous souhaitez conserver le focus sur une zone de texte pour l’entrée de données (et garder le clavier tactile visible) pendant que l’utilisateur clique sur un bouton.
+Windows 10, version 1607 introduit une nouvelle propriété sur la classe [FrameworkElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement), appelée [AllowFocusOnInteraction](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.allowfocusoninteraction), qui détermine si un contrôle prend le focus quand un utilisateur interagit avec lui. Cette fonction est utile si vous souhaitez conserver le focus sur une zone de texte pour l’entrée de données (et garder le clavier tactile visible) pendant que l’utilisateur clique sur un bouton.
 
 Dans cet exemple, le déclencheur vérifie si la propriété est présente. Si la propriété est présente, il définit la propriété **AllowFocusOnInteraction** d’un Bouton sur **false**. Mais si la propriété n’est pas présente, le bouton conserve son état d’origine. La zone de texte est incluse pour permettre de mieux visualiser les effets de cette propriété lorsque vous exécutez le code.
 
@@ -443,7 +443,7 @@ class IsEnumPresentTrigger : StateTriggerBase
 </Grid>
 ```
 
-## <a name="related-articles"></a>Articles associés
+## <a name="related-articles"></a>Articles connexes
 
 - [Présentation des familles d’appareils](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)
 - [Détection dynamique des fonctionnalités avec des contrats d’API](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)

@@ -11,21 +11,24 @@ pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ff6031878b9189ca3794e2a9c68c85b76e5d21a7
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: ef17fdc69f7a9f25831c5c17419768ff32874f80
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257443"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80080936"
 ---
 # <a name="flip-view"></a>Vue symétrique
 
- 
-
 La vue symétrique permet d’afficher les images ou d’autres éléments d’une collection, par exemple les photos d’un album ou les éléments d’une page de détails sur le produit, élément après élément. Pour les appareils tactiles, un mouvement de balayage sur un élément permet de parcourir la collection. Pour une souris, les boutons de navigation apparaissent au pointage de la souris. Pour un clavier, les touches de direction permettent de parcourir la collection.
 
-> **API importantes** : [classe FlipView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flipview), [propriété ItemsSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource), [propriété ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)
+**Obtenir la bibliothèque d’interface utilisateur Windows**
 
+|  |  |
+| - | - |
+| ![Logo WinUI](images/winui-logo-64x64.png) | Windows UI Library 2.2 ou version ultérieure inclut pour ce contrôle un nouveau modèle qui utilise des angles arrondis. Pour plus d’informations, consultez [Rayons des angles](/windows/uwp/design/style/rounded-corner). WinUI est un package NuGet qui contient de nouveaux contrôles et fonctionnalités d'interface utilisateur pour les applications UWP. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **API de plateforme :** [classe FlipView](/uwp/api/windows.ui.xaml.controls.flipview), [propriété ItemsSource](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource), [propriété ItemTemplate](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
@@ -36,7 +39,7 @@ La vue symétrique est appropriée pour l’examen des images des petites et moy
 <table>
 <th align="left">Galerie de contrôles XAML<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Si vous disposez de l'application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/FlipView">ouvrir l’application et voir l'objet FlipView en action</a>.</p>
     <ul>
@@ -130,7 +133,7 @@ Dans le cas présent, la propriété ItemsSource est liée à un objet [**Collec
 
 ### <a name="specify-the-look-of-the-items"></a>Spécifier l’accès des éléments
 
-Par défaut, un élément de données est affiché dans la vue symétrique en tant que représentation de chaîne de l’objet de données auquel il est lié. En général, on souhaite afficher une représentation enrichie des données. Pour définir précisément la façon dont les éléments sont affichés dans la vue symétrique, vous devez créer un objet [**DataTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate). Le code XAML dans l’objet DataTemplate définit la disposition et l’apparence des contrôles qui permettent d’afficher un élément spécifique. Les contrôles dans la disposition peuvent être liés aux propriétés d’un objet de données ou leur contenu peut être défini inline. L’objet DataTemplate est affecté à la propriété [**ItemTemplate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) du contrôle FlipView.
+Par défaut, un élément de données est affiché dans la vue symétrique en tant que représentation de chaîne de l’objet de données auquel il est lié. En général, vous voulez afficher une représentation plus riche des données. Pour définir précisément la façon dont les éléments sont affichés dans la vue symétrique, vous devez créer un objet [**DataTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate). Le code XAML dans l’objet DataTemplate définit la disposition et l’apparence des contrôles qui permettent d’afficher un élément individuel. Les contrôles dans la disposition peuvent être liés aux propriétés d’un objet de données ou leur contenu peut être défini inline. L’objet DataTemplate est affecté à la propriété [**ItemTemplate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) du contrôle FlipView.
 
 Dans cet exemple, la propriété ItemTemplate d’un objet FlipView est définie inline. Une superposition est ajoutée à l’image pour afficher le nom de l’image. 
 
