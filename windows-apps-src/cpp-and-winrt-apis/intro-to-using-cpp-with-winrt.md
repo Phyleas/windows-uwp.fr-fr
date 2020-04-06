@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, introduction
 ms.localizationpriority: medium
-ms.openlocfilehash: fd267f96ca6931252ab3130d363447ae79820108
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 250e3626c5abee43cf3b8ca3320c78ec4f8f9751
+ms.sourcegitcommit: 7dcf74b11aa0cb2f3ff4ab10caf26ba769f96dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209134"
+ms.lasthandoff: 04/04/2020
+ms.locfileid: "80662396"
 ---
 # <a name="introduction-to-cwinrt"></a>Introduction à C++/WinRT
 &nbsp;
@@ -62,7 +62,7 @@ Avec votre système défini comme décrit ci-dessus, vous pourrez créer et gén
 
 Avec C++/WinRT, vous pouvez également implémenter vos propres classes runtime en utilisant du code C++ standard, sans avoir recours à une programmation de style COM. Pour une classe runtime, vous décrivez seulement vos types dans un fichier IDL. `midl.exe` et `cppwinrt.exe` génèrent alors automatiquement vos fichiers de code source de modèle d’implémentation. Vous pouvez également implémenter simplement des interfaces en dérivant d’une classe de base C++/WinRT. Pour plus d’informations, consultez [Créer des API avec C++/WinRT](author-apis.md).
 
-Pour obtenir la liste des options de personnalisation pour l’outil `cppwinrt.exe` qui est défini via les propriétés de projet, consultez le fichier [Lisez-moi](https://github.com/microsoft/xlang/tree/master/src/package/cppwinrt/nuget/readme.md#customizing) du package NuGet Microsoft.Windows.CppWinRT.
+Pour obtenir la liste des options de personnalisation pour l’outil `cppwinrt.exe` qui est défini via les propriétés de projet, consultez le fichier [Lisez-moi](https://github.com/microsoft/cppwinrt/blob/master/nuget/readme.md#customizing) du package NuGet Microsoft.Windows.CppWinRT.
 
 Vous pouvez identifier un projet qui utilise la prise en charge MSBuild C++/WinRT par la présence du package NuGet **Microsoft.Windows.CppWinRT** installé dans le projet.
 
