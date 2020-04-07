@@ -1,85 +1,85 @@
 ---
-Description: Distribuer une application empaquetée avec Desktop Bridge
-title: Publiez votre application de bureau packagée sur le Microsoft Store ou chargement sur un ou plusieurs appareils.
+Description: Distribuer une application empaquetée avec Pont du bureau
+title: Publiez votre application de bureau empaquetée sur le Microsoft Store ou chargez sa version test sur un ou plusieurs appareils.
 ms.date: 05/18/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.openlocfilehash: 14ad6707b7203dddd9aa7be186e76da677bbd675
 ms.sourcegitcommit: cc108c791842789464c38a10e5d596c9bd878871
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 12/20/2019
 ms.locfileid: "75302703"
 ---
 # <a name="distribute-your-packaged-desktop-app"></a>Distribuer votre application de bureau empaquetée
 
-Si vous décidez d' [empaqueter votre application de bureau dans un package MSIX](/windows/msix/desktop/desktop-to-uwp-root), vous pouvez publier votre application empaquetée sur le Microsoft Store ou la chargement sur un ou plusieurs appareils.
+Si vous décidez d’[empaqueter votre application de bureau dans un package MSIX](/windows/msix/desktop/desktop-to-uwp-root), vous pouvez publier votre application empaquetée sur le Microsoft Store ou charger sa version de test sur un ou plusieurs appareils.
 
 > [!NOTE]
-> Avez-vous un plan de migration des utilisateurs vers votre application empaquetée ? Avant de distribuer votre application, consultez la section [Migration des utilisateurs vers votre application empaquetée](#transition-users) de ce guide où vous trouverez quelques idées.
+> Avez-vous un plan pour la transition des utilisateurs vers votre application empaquetée ? Avant de distribuer votre application, consultez la section [Transition des utilisateurs vers votre application empaquetée](#transition-users) de ce guide où vous trouverez quelques idées.
 
-## <a name="distribute-your-application-by-publishing-it-to-the-microsoft-store"></a>Distribuez votre application en la publiant sur le Microsoft Store
+## <a name="distribute-your-application-by-publishing-it-to-the-microsoft-store"></a>Distribuer votre application en la publiant sur le Microsoft Store
 
-Le [Microsoft Store](https://www.microsoft.com/store/apps) est une méthode pratique pour rendre votre application accessible aux clients.
+Le [Microsoft Store](https://www.microsoft.com/store/apps) est un moyen pratique de rendre votre application accessible aux clients.
 
-Publiez votre application sur le Microsoft Store pour atteindre le plus grand nombre d’audiences. En outre, les clients de l’organisation peuvent acquérir votre application en vue d’une distribution en interne à leur organisation par le biais du [Microsoft Store pour les entreprises](https://businessstore.microsoft.com/store).
+Publiez votre application sur le Microsoft Store pour atteindre l’audience la plus large. En outre, les organisations clientes peuvent acquérir votre application pour la distribuer en interne au sein de leur organisation par le biais du [Microsoft Store pour Entreprises](https://businessstore.microsoft.com/store).
 
-Si vous envisagez de publier dans le Microsoft Store, vous êtes invité à répondre à quelques questions supplémentaires dans le cadre du processus de soumission. Ce, parce que votre manifeste du package déclare une fonctionnalité restreinte nommée **runFullTrust** et que nous avons besoin d'approuver l’utilisation de cette fonctionnalité par votre application. Vous trouverez davantage de détails sur ces exigences ici : [Fonctionnalités restreintes](/windows/uwp/packaging/app-capability-declarations#restricted-capabilities).
+Si vous envisagez de publier sur le Microsoft Store, vous êtes invité à répondre à quelques questions supplémentaires dans le cadre du processus de soumission. En effet, le manifeste de votre package déclare une fonctionnalité restreinte nommée **runFullTrust**, et nous devons approuver l’utilisation de cette fonctionnalité par votre application. Pour en savoir plus sur cette exigence, voir ici : [Fonctionnalités restreintes](/windows/uwp/packaging/app-capability-declarations#restricted-capabilities).
 
-Vous n’êtes pas obligé de signer votre application avant de la soumettre au Windows Store.
+Vous n’êtes pas obligé de signer votre application avant de la soumettre au Store.
 
 >[!IMPORTANT]
-> Si vous envisagez de publier votre application sur le Microsoft Store, assurez-vous que votre application fonctionne correctement sur les appareils qui exécutent Windows 10 S. Il s’agit d’une exigence de magasin. Consultez [Tester votre application pour Windows 10 S](/windows/msix/desktop/desktop-to-uwp-test-windows-s).
+> Si vous prévoyez de publier votre application sur le Microsoft Store, assurez-vous qu’elle fonctionne correctement sur les appareils qui exécutent Windows 10 S. Il s’agit d’une exigence imposée par le Store. Consultez [Tester votre application Windows pour Windows 10 S](/windows/msix/desktop/desktop-to-uwp-test-windows-s).
 
 <a id="side-load" />
 
-## <a name="distribute-your-application-without-placing-it-onto-the-microsoft-store"></a>Distribuez votre application sans la placer sur le Microsoft Store
+## <a name="distribute-your-application-without-placing-it-onto-the-microsoft-store"></a>Distribuer votre application sans la mettre sur le Microsoft Store
 
-Si vous préférez distribuer votre application sans utiliser le Store, vous pouvez distribuer manuellement les applications sur un ou plusieurs appareils.
+Si vous préférez distribuer votre application sans passer par le Store, sachez qu’il est possible de distribuer manuellement des applications pour un ou plusieurs appareils.
 
-Ceci peut être utile si vous souhaitez contrôler davantage l’expérience de distribution ou si vous ne voulez pas vous impliquer dans le processus de certification du Microsoft Store.
+Cela peut être utile si vous souhaitez contrôler davantage l’expérience de distribution ou si vous ne voulez pas vous impliquer dans le processus de certification du Microsoft Store.
 
-Pour distribuer votre application sur d’autres appareils sans la placer dans le Windows Store, vous devez obtenir un certificat, signer votre application à l’aide de ce certificat, puis chargement votre application sur ces appareils.
+Pour distribuer votre application à d’autres appareils sans la placer sur le Store, vous devez obtenir un certificat, signer votre application à l’aide de celui-ci, puis charger votre application en version test sur ces appareils.
 
-Vous pouvez [créer un certificat](/windows/msix/package/create-certificate-package-signing) ou en obtenir un auprès d’un fournisseur populaire, tel que [Verisign](https://www.verisign.com/).
+Vous pouvez [créer un certificat](/windows/msix/package/create-certificate-package-signing) ou en obtenir un auprès d’un fournisseur réputé tel que [Verisign](https://www.verisign.com/).
 
-Si vous envisagez de distribuer votre application sur des appareils qui exécutent Windows 10 S, votre application doit être signée par le Microsoft Store pour que vous deviez passer par le processus de soumission du Store avant de pouvoir distribuer votre application sur ces appareils.
+Si vous envisagez de distribuer votre application sur des appareils exécutant Windows 10 S, votre application doit être signée par le Microsoft Store. Vous devez donc au préalable passer par le processus de soumission de ce dernier.
 
-Si vous créez un certificat, vous devez l’installer dans le magasin de certificats **Racine approuvée** ou **Personnes autorisées** de chaque appareil exécutant votre application. Si vous obtenez un certificat auprès d’un fournisseur populaire, vous n’aurez rien à installer sur les autres systèmes, hormis votre application.  
+Si vous créez un certificat, vous devez l’installer dans le magasin de certificats **Racine de confiance** ou **Personnes autorisées** sur chaque appareil exécutant votre application. Si vous obtenez un certificat auprès d’un fournisseur populaire, vous n’avez rien à installer sur des systèmes autres que votre application.  
 
 > [!IMPORTANT]
-> Assurez-vous que le nom de l’éditeur mentionné sur votre certificat correspond à celui de l’éditeur de votre application.
+> Vérifiez que le nom de l’éditeur mentionné sur votre certificat correspond à celui de l’éditeur de votre application.
 
-Pour signer votre application à l’aide d’un certificat, consultez [signer un package d’application à l’aide de SignTool](/windows/msix/package/sign-app-package-using-signtool).
+Pour signer votre application à l’aide d’un certificat, consultez [Signer un package d’application à l’aide de SignTool](/windows/msix/package/sign-app-package-using-signtool).
 
-Pour chargement votre application sur d’autres appareils, consultez [applications métier chargement dans Windows 10](/windows/application-management/sideload-apps-in-windows-10).
+Pour charger votre application sur d’autres appareils, consultez [Chargement de la version test d’applications métier dans Windows 10](/windows/application-management/sideload-apps-in-windows-10).
 
 <a id="transition-users" />
 
-## <a name="transition-users-to-your-packaged-app"></a>Migration des utilisateurs vers votre application empaquetée
+## <a name="transition-users-to-your-packaged-app"></a>Transition des utilisateurs vers votre application empaquetée
 
-Avant de distribuer votre application, envisagez d’ajouter quelques extensions à votre manifeste du package pour aider les utilisateurs à prendre l’habitude d’utiliser votre application empaquetée. Voici certaines choses que vous pouvez faire.
+Avant de distribuer votre application, envisagez d’ajouter quelques extensions au manifeste de votre package pour aider les utilisateurs à s’habituer à utiliser votre application empaquetée. Voici certaines choses que vous pouvez faire.
 
-* Pointez les vignettes existantes de l’écran de démarrage et les boutons de barre des tâches vers votre application empaquetée.
-* Associez votre application empaquetée à un ensemble de types de fichiers.
-* Rendre votre application empaquetée ouvrir certains types de fichiers par défaut.
+* Pointer les vignettes existantes de l’écran de démarrage et les boutons de barre des tâches vers votre application empaquetée.
+* Associer votre application empaquetée à un ensemble de types de fichiers.
+* Autoriser votre application empaquetée à ouvrir certains types de fichiers par défaut.
 
-Pour obtenir la liste complète des extensions et des conseils pour leur utilisation, voir [Migration des utilisateurs vers votre application](desktop-to-uwp-extensions.md#transition-users-to-your-app).
+Pour obtenir la liste complète des extensions et des conseils pour leur utilisation, consultez [Transition des utilisateurs vers votre application](desktop-to-uwp-extensions.md#transition-users-to-your-app).
 
-Envisagez également d’ajouter du code à votre application empaquetée qui effectue les tâches suivantes :
+Envisagez également d’ajouter du code à votre application empaquetée accomplissant les tâches suivantes :
 
-* Migre les données utilisateur associées à votre application de bureau vers les emplacements de dossier appropriés de votre application empaquetée.
+* migrer les données utilisateur associées à votre application de bureau vers les dossiers appropriés de votre application empaquetée ;
 * permettre aux utilisateurs de désinstaller la version de bureau de votre application.
 
 Examinons chacune de ces tâches. Nous allons commencer par la migration des données utilisateur.
 
 ### <a name="migrate-user-data"></a>Migrer les données utilisateur
 
-Si vous envisagez d’ajouter du code qui migre les données utilisateur, il est préférable d’exécuter ce code uniquement lorsque l’application est démarrée pour la première fois. Avant de migrer les données des utilisateurs, affichez une boîte de dialogue expliquant à l’utilisateur ce qui est en train de se produire, les raisons pour lesquelles cette action est recommandée, et ce qui va advenir des données existantes.
+Si vous comptez ajouter du code qui effectuera la migration des données utilisateur, il est préférable de n’exécuter ce code que lors du démarrage initial de l’application. Avant de migrer les données de l’utilisateur, affichez une boîte de dialogue lui expliquant ce qui est en train de se produire, les raisons pour lesquelles cette action est recommandée, et ce qui va advenir des données existantes.
 
 Voici un exemple montrant comment vous pourriez procéder dans une application empaquetée .NET.
 
@@ -116,13 +116,13 @@ private void MigrateUserData()
 }
 ```
 
-### <a name="uninstall-the-desktop-version-of-your-app"></a>Désinstallez la version bureau de votre application
+### <a name="uninstall-the-desktop-version-of-your-app"></a>Désinstaller la version bureau de votre application
 
-Il est préférable de ne pas désinstaller l’application de bureau des utilisateurs sans leur demander d’autorisation. Affichez une boîte de dialogue demandant l’autorisation de l’utilisateur. Les utilisateurs peuvent décider de conserver la version bureau de votre application. Si cela se produit, vous devez décider si vous souhaitez bloquer l’utilisation de l’application de bureau ou prendre en charge l’utilisation côte à côte des deux applications.
+Il est préférable de ne pas désinstaller l’application de bureau des utilisateurs sans leur autorisation. Affichez une boîte de dialogue leur demandant cette autorisation. Les utilisateurs peuvent décider de conserver la version bureau de votre application. Dans ce cas, vous devrez décider si vous souhaitez bloquer l’utilisation de l’application de bureau ou prendre en charge la cohabitation des deux applications.
 
-Voici un exemple montrant comment vous pourriez procéder dans une application empaquetée .NET.
+Voici un exemple montrant comment procéder dans une application empaquetée .NET.
 
-Pour voir le contexte complet de cet extrait de code, consultez le fichier **MainWindow.cs** de cet exemple [Visionneuse d’images WPF avec transition/migration/désinstallation](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DesktopAppTransition).
+Pour voir le contexte complet de cet extrait de code, examinez le fichier **MainWindow.cs** de l’exemple [Visionneuse d’images WPF avec transition/migration/désinstallation](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DesktopAppTransition).
 
 ```csharp
 private void RemoveDesktopApp()
@@ -164,6 +164,6 @@ private void RemoveDesktopApp()
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Des questions ? Contactez-nous sur Stack Overflow. Notre équipe contrôle ces [balises](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Vous pouvez également nous poser vos questions [ici](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
+Des questions ? Contactez-nous sur Stack Overflow. Notre équipe supervise ces [étiquettes](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Vous pouvez également nous poser vos questions [ici](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
 
-Si vous rencontrez des problèmes lors de la publication de votre application sur le Store, ce [billet de blog](https://blogs.msdn.microsoft.com/appconsult/2017/09/25/preparing-a-desktop-bridge-application-for-the-store-submission/) offre certaines astuces utiles.
+Si vous rencontrez des problèmes lors de la publication de votre application sur le Store, ce [billet de blog](https://blogs.msdn.microsoft.com/appconsult/2017/09/25/preparing-a-desktop-bridge-application-for-the-store-submission/) contient des conseils utiles.
