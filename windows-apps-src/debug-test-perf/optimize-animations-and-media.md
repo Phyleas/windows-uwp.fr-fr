@@ -8,7 +8,7 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 579772bba55c93de38c3c43538ad14253dbc2572
 ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71339898"
@@ -38,7 +38,7 @@ Tous les types d’animations suivants sont indépendants :
     -   [**RenderTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform)
     -   [**Transform3D**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.transform3d)
     -   [**Projection**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.projection)
-    -   [**Capture**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.clip)
+    -   [**Clip**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.clip)
 
 Les animations dépendantes ont un impact sur la disposition. Leur calcul nécessite des données supplémentaires du thread de l’interface utilisateur. Les animations dépendantes incluent les modifications apportées à des propriétés telles que [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) et [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height). Par défaut, les animations dépendantes ne sont pas exécutées et nécessitent d’être activées par le développeur de l’application. Lorsqu’elles sont activées, ces animations s’exécutent avec fluidité tant que le thread de l’interface utilisateur reste actif. En revanche, elles commencent à se cadencer si l’infrastructure ou l’application exécute en même temps beaucoup d’autres tâches sur le thread d’interface utilisateur.
 
@@ -54,7 +54,7 @@ Le contenu Web d’un contrôle [**WebView**](https://docs.microsoft.com/uwp/api
 
 L’animation d’un objet [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) est également une mauvaise idée. Au-delà de l’impact négatif sur les performances, elle peut provoquer des dégradations ou d’autres artefacts sur le contenu vidéo qui est lu.
 
-> **Notez**   les recommandations de cet article pour **MediaPlayerElement** s’appliquent également à [**MediaElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement). L’objet **MediaPlayerElement** étant uniquement disponible dans Windows 10, version 1607, si vous créez une application pour une version précédente de Windows, vous avez besoin d’utiliser l’objet **MediaElement**.
+> **Remarque**   Les recommandations de cet article concernant l’objet **MediaPlayerElement** s’appliquent également à l’objet [**MediaElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement). L’objet **MediaPlayerElement** étant uniquement disponible dans Windows 10, version 1607, si vous créez une application pour une version précédente de Windows, vous avez besoin d’utiliser l’objet **MediaElement**.
 
 ### <a name="use-infinite-animations-sparingly"></a>Utiliser avec parcimonie les animations infinies
 
@@ -66,7 +66,7 @@ L’ajout d’un gestionnaire pour l’événement [**CompositionTarget.Renderin
 
 L’espace de noms [**Windows.UI.Xaml.Media.Animation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation) comprend une bibliothèque d’animations fluides à hautes performances qui offrent une apparence cohérente avec les autres animations Windows. Les classes pertinentes ont un nom qui contient « Theme » et sont décrites dans [Vue d’ensemble des animations](https://docs.microsoft.com/windows/uwp/graphics/animations-overview). Cette bibliothèque prend en charge de nombreuses situations courantes d’animation, comme l’animation du premier affichage de l’application et la création de transitions d’état et de contenu. Nous vous recommandons d’utiliser cette bibliothèque d’animations le plus souvent possible pour améliorer les performances et garantir une cohérence maximale pour l’interface utilisateur UWP.
 
-> **Notez**   la bibliothèque d’animations ne peut pas animer toutes les propriétés possibles. Dans le cas de scénarios XAML dans lesquels la bibliothèque d’animations ne s’applique pas, voir [Animations dans une table de montage séquentiel](https://docs.microsoft.com/windows/uwp/graphics/storyboarded-animations).
+> **Remarque**   La bibliothèque d’animations n'est pas en mesure d'animer toutes les propriétés possibles. Dans le cas de scénarios XAML dans lesquels la bibliothèque d’animations ne s’applique pas, voir [Animations dans une table de montage séquentiel](https://docs.microsoft.com/windows/uwp/graphics/storyboarded-animations).
 
 
 ### <a name="animate-compositetransform3d-properties-independently"></a>Animer indépendamment les propriétés CompositeTransform3D
@@ -190,14 +190,14 @@ Dans le cas où vous ne définissez pas de taille de décodage explicite, XAML t
 -   L’image est masquée en définissant [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) sur 0 ou [**Visibility**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.visibility) sur **Collapsed** sur l’élément d’image hôte, le pinceau, ou tout autre élément parent.
 -   Le contrôle d’image ou le pinceau utilise un [**Stretch**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Stretch) de **None**.
 -   L’image est utilisée en tant que [**NineGrid**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.ninegrid).
--   `CacheMode="BitmapCache"` est défini sur l’élément image ou sur n’importe quel élément parent.
+-   `CacheMode="BitmapCache"` est défini sur l’élément image ou sur tout élément parent.
 -   Le pinceau image est non rectangulaire (comme lorsqu’il est appliqué à une forme ou à du texte).
 
 Dans les scénarios ci-dessus, la définition d’une taille de décodage explicite est la seule façon de réaliser des économies de mémoire.
 
 Vous devez toujours associer un [**BitmapImage**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage) à l’arborescence live avant de définir la source. Dès lors qu’un élément ou pinceau image est spécifié dans le balisage, ce sera automatiquement le cas. Des exemples sont fournis ci-dessous sous le titre « Exemples d’arborescences dynamiques ». Vous devez toujours éviter d’utiliser [**SetSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsource) et utiliser plutôt [**SetSourceAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync) lors de la définition d’une source de flux. Il est conseillé d’éviter de masquer du contenu image (soit avec zéro opacité ou avec une visibilité réduite) dans l’attente du déclenchement de l’événement [**ImageOpened**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.imageopened). L’exécution de cette opération est laissée à l’appréciation de chacun : vous ne pourrez pas profiter du décodage automatique à la bonne taille si vous l’exécutez. Si votre application doit masquer le contenu image initialement, alors elle doit également définir la taille de décodage explicitement si possible.
 
-**Exemples d’arborescences dynamiques**
+**Exemples d’arborescences live**
 
 Exemple 1 (correct) : Uniform Resource Identifier (URI) spécifié dans le balisage.
 
@@ -219,7 +219,7 @@ myImage.Source = bitmapImage;
 bitmapImage.UriSource = new URI("ms-appx:///Assets/cool-image.png", UriKind.RelativeOrAbsolute);
 ```
 
-Exemple 2 code-behind (Bad) : définition du UriSource de BitmapImage avant de le connecter à l’arborescence.
+Exemple 2 code-behind (incorrect) : définition de l’UriSouce de BitmapImage avant de l’associer à l’arborescence.
 
 ```csharp
 var bitmapImage = new BitmapImage();
@@ -250,7 +250,7 @@ Lorsqu’une image est utilisée pour un pinceau non rectangulaire ou pour une [
 XAML a une optimisation interne qui lui permet de décoder le contenu d’une image en mode asynchrone sur une surface dans la mémoire matérielle sans nécessiter de surface intermédiaire dans la mémoire logicielle. Cela réduit l’utilisation maximale de la mémoire et la latence de rendu. Cette fonctionnalité sera désactivée si l’une des conditions suivantes est remplie.
 
 -   L’image est utilisée en tant que [**NineGrid**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.ninegrid).
--   `CacheMode="BitmapCache"` est défini sur l’élément image ou sur n’importe quel élément parent.
+-   `CacheMode="BitmapCache"` est défini sur l’élément image ou sur tout élément parent.
 -   Le pinceau image est non rectangulaire (comme lorsqu’il est appliqué à une forme ou à du texte).
 
 ### <a name="softwarebitmapsource"></a>SoftwareBitmapSource

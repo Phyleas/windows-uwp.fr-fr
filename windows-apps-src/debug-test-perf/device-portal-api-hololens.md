@@ -4,14 +4,14 @@ title: Informations de référence sur les API Device Portal pour HoloLens
 description: Découvrez les API REST Windows Device Portal pour HoloLens que vous pouvez utiliser pour accéder aux données et contrôler votre appareil par programme.
 ms.date: 03/22/2018
 ms.topic: article
-keywords: Windows 10, uwp, le portail de l’appareil
+keywords: windows 10, uwp, portail d’appareil
 ms.localizationpriority: medium
 ms.openlocfilehash: 3aeb068908adf6d6c40a50cee3aececba1861ee8
-ms.sourcegitcommit: 81511fddf1393dffcfc069c769bb149da99529b1
-ms.translationtype: MT
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "59013336"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63801388"
 ---
 # <a name="device-portal-api-reference-for-hololens"></a>Informations de référence sur les API Device Portal pour HoloLens
 
@@ -21,7 +21,7 @@ Dans Windows Device Portal, tout repose sur les API REST que vous pouvez utilise
 
 ### <a name="get-https-requirements-for-the-device-portal"></a>Obtenir la spécification HTTPS pour Device Portal
 
-**Demande**
+**Requête**
 
 Vous pouvez obtenir la spécification HTTPS pour Device Portal en utilisant le format de requête suivant.
  
@@ -46,13 +46,13 @@ Vous pouvez obtenir la spécification HTTPS pour Device Portal en utilisant le f
 
 - Aucune
 
-**Code d’état**
+**Code d'état**
 
 - Codes d’état standard.
 
 ### <a name="get-the-stored-interpupillary-distance-ipd"></a>Obtenir l’écart pupillaire stocké (IPD)
 
-**Demande**
+**Requête**
 
 Vous pouvez obtenir la valeur de l’écart pupillaire stocké en utilisant le format de requête suivant. La valeur renvoyée est exprimée en millimètres.
  
@@ -77,13 +77,13 @@ Vous pouvez obtenir la valeur de l’écart pupillaire stocké en utilisant le f
 
 - Aucune
 
-**Code d’état**
+**Code d'état**
 
 - Codes d’état standard.
 
 ### <a name="get-a-list-of-hololens-specific-etw-providers"></a>Obtenir une liste des fournisseurs ETW spécifiques HoloLens
 
-**Demande**
+**Requête**
 
 Vous pouvez obtenir une liste des fournisseurs ETW spécifiques HoloLens qui ne sont pas enregistrés avec le système en utilisant le format de requête suivant.
  
@@ -108,14 +108,14 @@ Vous pouvez obtenir une liste des fournisseurs ETW spécifiques HoloLens qui ne 
 
 - Aucune
 
-**Code d’état**
+**Code d'état**
 
 - Codes d’état standard.
 
 
 ### <a name="return-the-state-for-all-active-services"></a>Renvoie l’état de tous les services actifs
 
-**Demande**
+**Requête**
 
 Vous pouvez obtenir l’état de tous les services en cours d’exécution en utilisant le format de requête suivant.
  
@@ -140,20 +140,20 @@ Vous pouvez obtenir l’état de tous les services en cours d’exécution en ut
 
 - Aucune
 
-**Code d’état**
+**Code d'état**
 
 - Codes d’état standard.
 
 
 ### <a name="set-the-https-requirement-for-the-device-portal"></a>Obtenir la spécification HTTPS pour Device Portal
 
-**Demande**
+**Requête**
 
 Vous pouvez obtenir la spécification HTTPS pour Device Portal en utilisant le format de requête suivant.
  
 | Méthode      | URI de requête |
 | :------     | :----- |
-| PUBLIER | /api/holographic/management/settings/https |
+| POST | /api/holographic/management/settings/https |
 
 
 **Paramètres d’URI**
@@ -176,20 +176,20 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Code d’état**
+**Code d'état**
 
 - Codes d’état standard.
 
 
 ### <a name="set-the-interpupillary-distance-ipd"></a>Définir l’écart pupillaire (IPD)
 
-**Demande**
+**Requête**
 
 Vous pouvez définir l’écart pupillaire stocké en utilisant le format de requête suivant.
  
 | Méthode      | URI de requête |
 | :------     | :----- |
-| PUBLIER | /api/holographic/os/settings/ipd |
+| POST | /api/holographic/os/settings/ipd |
 
 
 **Paramètres d’URI**
@@ -212,7 +212,7 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Code d’état**
+**Code d'état**
 
 - Codes d’état standard.
 
@@ -221,7 +221,7 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 ### <a name="accept-websocket-upgrades-and-run-a-mirage-client-that-sends-updates"></a>Accepter les mises à niveau websocket et exécuter un client mirage qui envoie des mises à jour
 
-**Demande**
+**Requête**
 
 Vous pouvez accepter les mises à niveau websocket et exécuter un client mirage qui envoie des mises à jour à 30 fps en utilisant le format de requête suivant.
  
@@ -250,7 +250,7 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Code d’état**
+**Code d'état**
 
 - Codes d’état standard.
 
@@ -259,7 +259,7 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 ### <a name="get-the-thermal-stage-of-the-device"></a>Obtenir la phase thermique de l’appareil
 
-**Demande**
+**Requête**
 
 Vous pouvez obtenir la phase thermique de l’appareil en utilisant le format de requête suivant.
  
@@ -289,20 +289,20 @@ Les valeurs possibles sont indiquées par le tableau suivant.
 | 2 | Chargé |
 | 3 | Critique |
 
-**Code d’état**
+**Code d'état**
 
 - Codes d’état standard.
 
 ## <a name="hsimulation-control"></a>Contrôle HSimulation
 ### <a name="create-a-control-stream-or-post-data-to-a-created-stream"></a>Créer un flux de contrôle ou publier des données dans un flux créé
 
-**Demande**
+**Requête**
 
 Vous pouvez créer un flux de contrôle ou publier des données dans un flux créé en utilisant le format de requête suivant. Les données publiées doivent être de type **application/octet-stream**.
  
 | Méthode      | URI de requête |
 | :------     | :----- |
-| PUBLIER | /api/holographic/simulation/control/stream |
+| POST | /api/holographic/simulation/control/stream |
 
 
 **Paramètres d’URI**
@@ -326,19 +326,19 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Code d’état**
+**Code d'état**
 
 - Codes d’état standard.
 
 ### <a name="delete-a-control-stream"></a>Supprimer un flux de contrôle
 
-**Demande**
+**Requête**
 
 Vous pouvez supprimer un flux de contrôle en utilisant le format de requête suivant.
  
 | Méthode      | URI de requête |
 | :------     | :----- |
-| Suppression | /api/holographic/simulation/control/stream |
+| DELETE | /api/holographic/simulation/control/stream |
 
 
 **Paramètres d’URI**
@@ -357,13 +357,13 @@ Vous pouvez supprimer un flux de contrôle en utilisant le format de requête su
 
 - Aucune
 
-**Code d’état**
+**Code d'état**
 
 - Codes d’état standard.
 
 ### <a name="get-a-control-stream"></a>Obtenir un flux de contrôle
 
-**Demande**
+**Requête**
 
 Vous pouvez ouvrir une connexion web socket pour un flux de contrôle en utilisant le format de requête suivant.
  
@@ -388,13 +388,13 @@ Vous pouvez ouvrir une connexion web socket pour un flux de contrôle en utilisa
 
 - Aucune
 
-**Code d’état**
+**Code d'état**
 
 - Codes d’état standard.
 
 ### <a name="get-the-simulation-mode"></a>Obtenir le mode de simulation
 
-**Demande**
+**Requête**
 
 Vous pouvez obtenir le mode de simulation en utilisant le format de requête suivant.
  
@@ -419,19 +419,19 @@ Vous pouvez obtenir le mode de simulation en utilisant le format de requête sui
 
 - Aucune
 
-**Code d’état**
+**Code d'état**
 
 - Codes d’état standard.
 
 ### <a name="set-the-simulation-mode"></a>Définir le mode de simulation
 
-**Demande**
+**Requête**
 
 Vous pouvez définir le mode de simulation en utilisant le format de requête suivant.
  
 | Méthode      | URI de requête |
 | :------     | :----- |
-| PUBLIER | /api/holographic/simluation/control/mode |
+| POST | /api/holographic/simluation/control/mode |
 
 
 **Paramètres d’URI**
@@ -454,7 +454,7 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Code d’état**
+**Code d'état**
 
 - Codes d’état standard.
 
@@ -462,13 +462,13 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 ### <a name="delete-a-recording"></a>Supprimer un enregistrement
 
-**Demande**
+**Requête**
 
 Vous pouvez supprimer un enregistrement en utilisant le format de requête suivant.
  
 | Méthode      | URI de requête |
 | :------     | :----- |
-| Suppression | /api/holographic/simulation/playback/file |
+| DELETE | /api/holographic/simulation/playback/file |
 
 
 **Paramètres d’URI**
@@ -477,7 +477,7 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 | Paramètre d’URI | Description |
 | :---          | :--- |
-| recording   | (**requis**) Nom de l’enregistrement à supprimer. |
+| enregistrement   | (**requis**) Nom de l’enregistrement à supprimer. |
 
 **En-têtes de requête**
 
@@ -491,13 +491,13 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Code d’état**
+**Code d'état**
 
 - Codes d’état standard.
 
 ### <a name="get-all-recordings"></a>Obtenir tous les enregistrements
 
-**Demande**
+**Requête**
 
 Vous pouvez obtenir tous les enregistrements disponibles en utilisant le format de requête suivant.
  
@@ -522,13 +522,13 @@ Vous pouvez obtenir tous les enregistrements disponibles en utilisant le format 
 
 - Aucune
 
-**Code d’état**
+**Code d'état**
 
 - Codes d’état standard.
 
 ### <a name="get-the-types-of-data-in-a-loaded-recording"></a>Obtenir les types de données dans un enregistrement chargé
 
-**Demande**
+**Requête**
 
 Vous pouvez obtenir les types de données dans un enregistrement chargé en utilisant le format suivant de la demande.
  
@@ -543,7 +543,7 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 | Paramètre d’URI | Description |
 | :---          | :--- |
-| recording   | (**requis**) Nom de l’enregistrement qui vous intéresse. |
+| enregistrement   | (**requis**) Nom de l’enregistrement qui vous intéresse. |
 
 **En-têtes de requête**
 
@@ -557,13 +557,13 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Code d’état**
+**Code d'état**
 
 - Codes d’état standard.
 
 ### <a name="get-all-the-loaded-recordings"></a>Obtenir tous les enregistrements chargés
 
-**Demande**
+**Requête**
 
 Vous pouvez obtenir tous les enregistrements chargés en utilisant le format de requête suivant.
  
@@ -588,13 +588,13 @@ Vous pouvez obtenir tous les enregistrements chargés en utilisant le format de 
 
 - Aucune
 
-**Code d’état**
+**Code d'état**
 
 - Codes d’état standard.
 
 ### <a name="get-the-current-playback-state-of-a-recording"></a>Obtenir l’état actuel de lecture d’un enregistrement 
 
-**Demande**
+**Requête**
 
 Vous pouvez obtenir l’état actuel de lecture d’un enregistrement en utilisant le format de requête suivant.
  
@@ -609,7 +609,7 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 | Paramètre d’URI | Description |
 | :---          | :--- |
-| recording   | (**requis**) Nom de l’enregistrement qui vous intéresse. |
+| enregistrement   | (**requis**) Nom de l’enregistrement qui vous intéresse. |
 
 **En-têtes de requête**
 
@@ -623,19 +623,19 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Code d’état**
+**Code d'état**
 
 - Codes d’état standard.
 
 ### <a name="load-a-recording"></a>Charger un enregistrement
 
-**Demande**
+**Requête**
 
 Vous pouvez charger un enregistrement en utilisant le format de requête suivant.
  
 | Méthode      | URI de requête |
 | :------     | :----- |
-| PUBLIER | /api/holographic/simulation/playback/session/file |
+| POST | /api/holographic/simulation/playback/session/file |
 
 
 **Paramètres d’URI**
@@ -644,7 +644,7 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 | Paramètre d’URI | Description |
 | :---          | :--- |
-| recording   | (**requis**) Nom de l’enregistrement à charger. |
+| enregistrement   | (**requis**) Nom de l’enregistrement à charger. |
 
 **En-têtes de requête**
 
@@ -658,19 +658,19 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Code d’état**
+**Code d'état**
 
 - Codes d’état standard.
 
 ### <a name="pause-a-recording"></a>Suspendre un enregistrement
 
-**Demande**
+**Requête**
 
 Vous pouvez suspendre un enregistrement en utilisant le format de requête suivant.
  
 | Méthode      | URI de requête |
 | :------     | :----- |
-| PUBLIER | /api/holographic/simulation/playback/session/pause |
+| POST | /api/holographic/simulation/playback/session/pause |
 
 
 **Paramètres d’URI**
@@ -679,7 +679,7 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 | Paramètre d’URI | Description |
 | :---          | :--- |
-| recording   | (**requis**) Nom de l’enregistrement à suspendre. |
+| enregistrement   | (**requis**) Nom de l’enregistrement à suspendre. |
 
 **En-têtes de requête**
 
@@ -693,19 +693,19 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Code d’état**
+**Code d'état**
 
 - Codes d’état standard.
 
 ### <a name="play-a-recording"></a>Lire un enregistrement
 
-**Demande**
+**Requête**
 
 Vous pouvez lire un enregistrement en utilisant le format de requête suivant.
  
 | Méthode      | URI de requête |
 | :------     | :----- |
-| PUBLIER | /api/holographic/simulation/playback/session/play |
+| POST | /api/holographic/simulation/playback/session/play |
 
 
 **Paramètres d’URI**
@@ -714,7 +714,7 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 | Paramètre d’URI | Description |
 | :---          | :--- |
-| recording   | (**requis**) Nom de l’enregistrement à lire. |
+| enregistrement   | (**requis**) Nom de l’enregistrement à lire. |
 
 **En-têtes de requête**
 
@@ -728,19 +728,19 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Code d’état**
+**Code d'état**
 
 - Codes d’état standard.
 
 ### <a name="stop-a-recording"></a>Arrêter un enregistrement
 
-**Demande**
+**Requête**
 
 Vous pouvez arrêter un enregistrement en utilisant le format de requête suivant.
  
 | Méthode      | URI de requête |
 | :------     | :----- |
-| PUBLIER | /api/holographic/simulation/playback/session/stop |
+| POST | /api/holographic/simulation/playback/session/stop |
 
 
 **Paramètres d’URI**
@@ -749,7 +749,7 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 | Paramètre d’URI | Description |
 | :---          | :--- |
-| recording   | (**requis**) Nom de l’enregistrement à arrêter. |
+| enregistrement   | (**requis**) Nom de l’enregistrement à arrêter. |
 
 **En-têtes de requête**
 
@@ -763,19 +763,19 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Code d’état**
+**Code d'état**
 
 - Codes d’état standard.
 
 ### <a name="unload-a-recording"></a>Décharger un enregistrement
 
-**Demande**
+**Requête**
 
 Vous pouvez décharger un enregistrement en utilisant le format de requête suivant.
  
 | Méthode      | URI de requête |
 | :------     | :----- |
-| Suppression | /api/holographic/simulation/playback/session/file |
+| DELETE | /api/holographic/simulation/playback/session/file |
 
 
 **Paramètres d’URI**
@@ -784,7 +784,7 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 | Paramètre d’URI | Description |
 | :---          | :--- |
-| recording   | (**requis**) Nom de l’enregistrement à décharger. |
+| enregistrement   | (**requis**) Nom de l’enregistrement à décharger. |
 
 **En-têtes de requête**
 
@@ -798,19 +798,19 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Code d’état**
+**Code d'état**
 
 - Codes d’état standard.
 
 ### <a name="upload-a-recording"></a>Charger un enregistrement
 
-**Demande**
+**Requête**
 
 Vous pouvez décharger un enregistrement en utilisant le format de requête suivant.
  
 | Méthode      | URI de requête |
 | :------     | :----- |
-| PUBLIER | /api/holographic/simulation/playback/file |
+| POST | /api/holographic/simulation/playback/file |
 
 
 **Paramètres d’URI**
@@ -829,7 +829,7 @@ Vous pouvez décharger un enregistrement en utilisant le format de requête suiv
 
 - Aucune
 
-**Code d’état**
+**Code d'état**
 
 - Codes d’état standard.
 
@@ -837,7 +837,7 @@ Vous pouvez décharger un enregistrement en utilisant le format de requête suiv
 
 ### <a name="get-the-recording-state"></a>Obtenir l’état de l’enregistrement
 
-**Demande**
+**Requête**
 
 Vous pouvez obtenir l’état d’enregistrement actuel en utilisant le format de requête suivant.
  
@@ -862,19 +862,19 @@ Vous pouvez obtenir l’état d’enregistrement actuel en utilisant le format d
 
 - Aucune
 
-**Code d’état**
+**Code d'état**
 
 - Codes d’état standard.
 
 ### <a name="start-a-recording"></a>Démarrer un enregistrement
 
-**Demande**
+**Requête**
 
 Vous pouvez démarrer un enregistrement en utilisant le format de requête suivant. Vous ne pouvez effectuer qu’un seul enregistrement actif à la fois. 
  
 | Méthode      | URI de requête |
 | :------     | :----- |
-| PUBLIER | /api/holographic/simulation/recording/start |
+| POST | /api/holographic/simulation/recording/start |
 
 
 **Paramètres d’URI**
@@ -904,19 +904,19 @@ Pour ces paramètres, un des paramètres suivants doit être défini sur 1 : *he
 
 - Aucune
 
-**Code d’état**
+**Code d'état**
 
 - Codes d’état standard.
 
 ### <a name="stop-the-current-recording"></a>Arrêter l’enregistrement en cours
 
-**Demande**
+**Requête**
 
 Vous pouvez arrêter l’enregistrement en cours en utilisant le format de requête suivant. L’enregistrement est renvoyé sous forme de fichier.
  
 | Méthode      | URI de requête |
 | :------     | :----- |
-| PUBLIER | /api/holographic/simulation/recording/stop |
+| POST | /api/holographic/simulation/recording/stop |
 
 
 **Paramètres d’URI**
@@ -935,7 +935,7 @@ Vous pouvez arrêter l’enregistrement en cours en utilisant le format de requ�
 
 - Aucune
 
-**Code d’état**
+**Code d'état**
 
 - Codes d’état standard.
 
@@ -943,13 +943,13 @@ Vous pouvez arrêter l’enregistrement en cours en utilisant le format de requ�
 
 ### <a name="delete-a-mixed-reality-capture-mrc-recording-from-the-device"></a>Supprimer un enregistrement MRC à partir de l’appareil
 
-**Demande**
+**Requête**
 
 Vous pouvez supprimer un enregistrement MRC en utilisant le format de requête suivant.
  
 | Méthode      | URI de requête |
 | :------     | :----- |
-Suppression | /api/holographic/mrc/file |
+DELETE | /api/holographic/mrc/file |
 
 
 **Paramètres d’URI**
@@ -958,7 +958,7 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 | Paramètre d’URI | Description |
 | :---          | :--- |
-| filename   | (**requis**) Nom du fichier vidéo à supprimer. Ce nom doit être codé en hex64. |
+| nom_fichier   | (**requis**) Nom du fichier vidéo à supprimer. Ce nom doit être codé en hex64. |
 
 **En-têtes de requête**
 
@@ -972,13 +972,13 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Code d’état**
+**Code d'état**
 
 - Codes d’état standard.
 
 ### <a name="download-a-mixed-reality-capture-mrc-file"></a>Télécharger un fichier MRC
 
-**Demande**
+**Requête**
 
 Vous pouvez télécharger un fichier MRC à partir de l’appareil en utilisant le format de requête suivant.
  
@@ -993,7 +993,7 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 | Paramètre d’URI | Description |
 | :---          | :--- |
-| filename   | (**requis**) Nom du fichier vidéo que vous souhaitez obtenir. Ce nom doit être codé en hex64. |
+| nom_fichier   | (**requis**) Nom du fichier vidéo que vous souhaitez obtenir. Ce nom doit être codé en hex64. |
 | op   | (**facultatif**) Définissez cette valeur sur **stream** si vous voulez télécharger un flux. |
 
 **En-têtes de requête**
@@ -1008,13 +1008,13 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Code d’état**
+**Code d'état**
 
 - Codes d’état standard.
 
 ### <a name="get-the-mixed-reality-capture-mrc-settings"></a>Obtenir les paramètres MRC
 
-**Demande**
+**Requête**
 
 Vous pouvez obtenir les paramètres MRC en utilisant le format de requête suivant.
  
@@ -1039,13 +1039,13 @@ Vous pouvez obtenir les paramètres MRC en utilisant le format de requête suiva
 
 - Aucune
 
-**Code d’état**
+**Code d'état**
 
 - Codes d’état standard.
 
 ### <a name="get-the-status-of-the-mixed-reality-capture-mrc-recording"></a>Obtenir l’état de l’enregistrement MRC
 
-**Demande**
+**Requête**
 
 Vous pouvez obtenir l’état de l’enregistrement MRC en utilisant le format de requête suivant. Les valeurs possibles sont **running** et **stopped**.
  
@@ -1070,13 +1070,13 @@ Vous pouvez obtenir l’état de l’enregistrement MRC en utilisant le format d
 
 - Aucune
 
-**Code d’état**
+**Code d'état**
 
 - Codes d’état standard.
 
 ### <a name="get-the-list-of-mixed-reality-capture-mrc-files"></a>Obtenir la liste des fichiers MRC
 
-**Demande**
+**Requête**
 
 Vous pouvez obtenir les fichiers MRC stockés sur l’appareil en utilisant le format de requête suivant.
  
@@ -1101,19 +1101,19 @@ Vous pouvez obtenir les fichiers MRC stockés sur l’appareil en utilisant le f
 
 - Aucune
 
-**Code d’état**
+**Code d'état**
 
 - Codes d’état standard.
 
 ### <a name="set-the-mixed-reality-capture-mrc-settings"></a>Définir les paramètres MRC
 
-**Demande**
+**Requête**
 
 Vous pouvez définir les paramètres MRC en utilisant le format de requête suivant.
  
 | Méthode      | URI de requête |
 | :------     | :----- |
-| PUBLIER | /api/holographic/mrc/settings |
+| POST | /api/holographic/mrc/settings |
 
 
 **Paramètres d’URI**
@@ -1132,19 +1132,19 @@ Vous pouvez définir les paramètres MRC en utilisant le format de requête suiv
 
 - Aucune
 
-**Code d’état**
+**Code d'état**
 
 - Codes d’état standard.
 
 ### <a name="starts-a-mixed-reality-capture-mrc-recording"></a>Démarre un enregistrement MRC
 
-**Demande**
+**Requête**
 
 Vous pouvez démarrer un enregistrement MRC en utilisant le format de requête suivant.
  
 | Méthode      | URI de requête |
 | :------     | :----- |
-| PUBLIER | /api/holographic/mrc/video/control/start |
+| POST | /api/holographic/mrc/video/control/start |
 
 
 **Paramètres d’URI**
@@ -1163,19 +1163,19 @@ Vous pouvez démarrer un enregistrement MRC en utilisant le format de requête s
 
 - Aucune
 
-**Code d’état**
+**Code d'état**
 
 - Codes d’état standard.
 
 ### <a name="stop-the-current-mixed-reality-capture-mrc-recording"></a>Arrêter l’enregistrement MRC actuel
 
-**Demande**
+**Requête**
 
 Vous pouvez arrêter l’enregistrement MRC actuel en utilisant le format de requête suivant.
  
 | Méthode      | URI de requête |
 | :------     | :----- |
-| PUBLIER | /api/holographic/mrc/video/control/stop |
+| POST | /api/holographic/mrc/video/control/stop |
 
 
 **Paramètres d’URI**
@@ -1194,13 +1194,13 @@ Vous pouvez arrêter l’enregistrement MRC actuel en utilisant le format de req
 
 - Aucune
 
-**Code d’état**
+**Code d'état**
 
 - Codes d’état standard.
 
 ### <a name="take-a-mixed-reality-capture-mrc-photo"></a>Prendre une photo MRC
 
-**Demande**
+**Requête**
 
 Vous pouvez prendre une photo MRC en utilisant le format de requête suivant. La photo est renvoyée au format JPEG.
  
@@ -1225,7 +1225,7 @@ Vous pouvez prendre une photo MRC en utilisant le format de requête suivant. La
 
 - Aucune
 
-**Code d’état**
+**Code d'état**
 
 - Codes d’état standard.
 
@@ -1233,7 +1233,7 @@ Vous pouvez prendre une photo MRC en utilisant le format de requête suivant. La
 
 ### <a name="initiates-a-chunked-download-of-a-fragmented-mp4"></a>Initie un téléchargement mémorisé en bloc d’un mp4 fragmenté
 
-**Demande**
+**Requête**
 
 Vous pouvez lancer un téléchargement mémorisé en bloc d’un mp4 fragmenté en utilisant le format de requête suivant. Cette API utilise la qualité par défaut.
  
@@ -1265,13 +1265,13 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Code d’état**
+**Code d'état**
 
 - Codes d’état standard.
 
 ### <a name="initiates-a-chunked-download-of-a-fragmented-mp4"></a>Initie un téléchargement mémorisé en bloc d’un mp4 fragmenté
 
-**Demande**
+**Requête**
 
 Vous pouvez lancer un téléchargement mémorisé en bloc d’un mp4 fragmenté en utilisant le format de requête suivant. Cette API utilise une qualité de niveau élevé.
  
@@ -1303,13 +1303,13 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Code d’état**
+**Code d'état**
 
 - Codes d’état standard.
 
 ### <a name="initiates-a-chunked-download-of-a-fragmented-mp4"></a>Initie un téléchargement mémorisé en bloc d’un mp4 fragmenté
 
-**Demande**
+**Requête**
 
 Vous pouvez lancer un téléchargement mémorisé en bloc d’un mp4 fragmenté en utilisant le format de requête suivant. Cette API utilise une qualité de niveau faible.
  
@@ -1341,13 +1341,13 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Code d’état**
+**Code d'état**
 
 - Codes d’état standard.
 
 ### <a name="initiates-a-chunked-download-of-a-fragmented-mp4"></a>Initie un téléchargement mémorisé en bloc d’un mp4 fragmenté
 
-**Demande**
+**Requête**
 
 Vous pouvez lancer un téléchargement mémorisé en bloc d’un mp4 fragmenté en utilisant le format de requête suivant. Cette API utilise une qualité de niveau moyenne.
  
@@ -1379,6 +1379,6 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Code d’état**
+**Code d'état**
 
 - Codes d’état standard.

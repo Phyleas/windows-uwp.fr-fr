@@ -6,12 +6,12 @@ ms.date: 06/11/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 13e6f4ac59a99463cd891e936f51449baf4ea7c2
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 4c388b9b81744c0d27d96c1f97b4e405af63eaef
+ms.sourcegitcommit: fc5db2e26db65be025e9f62044b4d29bb1744f8d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259536"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80524085"
 ---
 # <a name="create-a-hello-world-app-in-ccx"></a>Créer une application « Hello World » en C++/CX
 
@@ -45,7 +45,7 @@ Si vous avez déjà programmé des applications de bureau Windows en C++, vous c
 
 -   Vous créez toujours des applications qui sont compilées en code machine natif par le compilateur Visual C++. En C++/CX, les applications UWP ne s'exécutent pas dans un environnement d'exécution managé.
 
-### <a name="whats-new"></a>Quelles sont les nouveautés ?
+### <a name="whats-new"></a>Nouveautés
 
 -   Les principes de conception régissant les applications UWP et les applications Windows universelles sont très différents de ceux des applications de bureau. Les bordures des fenêtres, les étiquettes, les boîtes de dialogue, etc., sont reléguées au deuxième plan. C’est le contenu qui est mis en avant. Les applications Windows universelles réussies intègrent ces principes dès le début de la phase de planification.
 
@@ -202,7 +202,7 @@ MainPage::MainPage()
 
 Ajoutons du contenu à l’application.
 
-**Étape 1 : modifier votre page de démarrage**
+**Étape 1 : modifier votre page de démarrage**
 
 1.  Dans l’**Explorateur de solutions**, ouvrez MainPage.xaml.
 2.  Créez des contrôles pour l’interface utilisateur en ajoutant le code XAML suivant à la classe [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) racine, juste avant sa balise de fermeture. Il contient un [**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) comportant un [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) qui demande le nom de l’utilisateur, un élément [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) qui accepte le nom de l’utilisateur, un [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button), puis un autre élément **TextBlock**.
@@ -255,7 +255,7 @@ Dans l’application, vous pouvez taper dans le [**TextBox**](https://docs.micro
 
    Le concepteur ne se charge pas si une exception non gérée se produit pendant l’opération de rendu. L’opération de rendu dans le concepteur implique l’exécution d’une version de conception de la page. Il peut être utile de désactiver l’exécution du code utilisateur. Vous pouvez le faire en modifiant le paramètre dans la boîte de dialogue **Outils, Options**. Sous **Concepteur XAML**, désactivez l’option **Exécuter le code du projet dans le concepteur XAML (si pris en charge)** .
 
-5.  Dans MainPage.xaml.cpp, ajoutez le code suivant au gestionnaire d'événements **Button\_Click** que vous venez de créer. Ce code récupère le nom de l'utilisateur à partir du contrôle `nameInput` [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) et l'utilise pour créer des salutations. Le contrôle `greetingOutput` [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) affiche le résultat.
+5.  Dans MainPage.xaml.cpp, ajoutez le code suivant au gestionnaire d'événements **Button\_Click** que vous venez de créer. Ce code récupère le nom de l’utilisateur à partir du contrôle `nameInput` [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) et l’utilise pour créer des salutations. Le contrôle `greetingOutput` [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) affiche le résultat.
 
     ```cpp
     void HelloWorld::MainPage::Button_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
@@ -399,4 +399,4 @@ C’est ici que prend fin le premier didacticiel. Il vous a appris à ajouter du
 
 Si votre projet d'application universelle Windows cible Windows 8.1 et/ou Windows Phone 8.1, vous pouvez le porter vers Windows 10. Aucune procédure automatique n'existe pour ce faire, mais vous pouvez effectuer le portage manuellement. Commencez par un nouveau projet Windows universel pour obtenir la dernière structure du système de projet et les derniers fichiers manifeste, copiez vos fichiers de code dans la structure de répertoire du projet, ajoutez les éléments à votre projet, puis réécrivez votre code XAML à l’aide du [**VisualStateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateManager) en suivant les recommandations de cette rubrique. Pour plus d’informations, voir [Portage d’un projet Windows Runtime 8 vers un projet de plateforme Windows universelle (UWP)](https://docs.microsoft.com/windows/uwp/porting/w8x-to-uwp-porting-to-a-uwp-project) et [Portage vers la plateforme Windows universelle (C++)](https://msdn.microsoft.com/library/mt186164.aspx).
 
-Si vous souhaitez intégrer du code C++ existant à une application UWP, dans le but de créer une interface utilisateur UWP pour une application existante par exemple, consultez : Utilisation de code C++ existant dans un projet Windows universel](https://msdn.microsoft.com/library/mt186162.aspx).
+Si vous souhaitez intégrer du code C++ existant à une application UWP, dans le but de créer une interface utilisateur UWP pour une application existante par exemple, consultez : [Utilisation de code C++ existant dans un projet Windows universel](https://msdn.microsoft.com/library/mt186162.aspx).

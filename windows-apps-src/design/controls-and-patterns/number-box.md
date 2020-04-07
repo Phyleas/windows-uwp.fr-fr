@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 5307448b6209228cd8c4550a739c6db15091ba54
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: 0eada4c65933151eb6d40b7e3cfdbf31369d6d35
+ms.sourcegitcommit: 8be8ed1ef4e496055193924cd8cea2038d2b1525
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80081668"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80614119"
 ---
 # <a name="number-box"></a>Zone de nombre
 
@@ -24,9 +24,14 @@ Représente un contrôle qui permet d’afficher et de modifier des nombres. Il 
 
 |  |  |
 | - | - |
-| ![Logo WinUI](images/winui-logo-64x64.png) | Le contrôle **NumberBox** est inclus dans la bibliothèque d'interface utilisateur Windows, package NuGet qui contient les nouveaux contrôles et fonctionnalités d'interface utilisateur destinés aux applications UWP. Pour plus d’informations, notamment des instructions d’installation, consultez [Vue d’ensemble de la bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![Logo WinUI](images/winui-logo-64x64.png) | Le contrôle **NumberBox** nécessite la bibliothèque d’interface utilisateur Windows, package NuGet qui contient les nouveaux contrôles et fonctionnalités d’interface utilisateur destinés aux applications UWP. Pour plus d’informations, notamment des instructions d’installation, consultez [Vue d’ensemble de la bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
 **API de la bibliothèque d'interface utilisateur Windows :** [NumberBox, classe](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.NumberBox)
+
+> [!TIP]
+> Tout au long de ce document, nous utilisons l’alias **muxc** en XAML pour représenter les API de la bibliothèque d’interface utilisateur Windows que nous avons incluses dans notre projet. Nous l’avons ajouté à notre élément [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page) : `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
+>
+>Dans le code-behind, nous utilisons également l’alias **muxc** en C# pour représenter les API de la bibliothèque d’interface utilisateur Windows que nous avons incluses dans notre projet. Nous avons ajouté cette instruction **using** en haut du fichier : `using muxc = Microsoft.UI.Xaml.Controls;`
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
@@ -50,20 +55,20 @@ Vous pouvez utiliser un contrôle NumberBox pour capturer et afficher des entré
 
 ### <a name="create-a-simple-numberbox"></a>Créer un NumberBox simple
 
-Le code XAML ci-dessous montre l’apparence par défaut d’un NumberBox de base. Utilisez [x:Bind](/windows/uwp/xaml-platform/x-bind-markup-extension#property-path) pour vérifier que les données présentées à l’utilisateur sont synchronisées avec celles stockées dans votre application. 
-
+Le code XAML ci-dessous montre l’apparence par défaut d’un NumberBox de base. Utilisez [x:Bind](/windows/uwp/xaml-platform/x-bind-markup-extension#property-path) pour vérifier que les données présentées à l’utilisateur sont synchronisées avec celles stockées dans votre application.
 
 ```xaml
-<NumberBox Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}" />
+<muxc:NumberBox Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}" />
 ```
+
 ![Champ d’entrée avec le focus indiquant 0.](images/numberbox-basic.png)
 
 ### <a name="labeling-numberbox"></a>Étiquetage de NumberBox
 
-Utilisez `Header` ou `PlaceholderText` si l’intention du NumberBox n’est pas claire. `Header` est visible, qu’il y ait ou non une valeur dans le NumberBox. 
+Utilisez `Header` ou `PlaceholderText` si l’intention du NumberBox n’est pas claire. `Header` est visible, qu’il y ait ou non une valeur dans le NumberBox.
 
 ```xaml
-<NumberBox Header="Enter a number:"
+<muxc:NumberBox Header="Enter a number:"
     Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}" />
 ```
 
@@ -72,7 +77,7 @@ Utilisez `Header` ou `PlaceholderText` si l’intention du NumberBox n’est pas
 `PlaceholderText` s’affiche à l’intérieur du NumberBox uniquement quand `Value` est NaN ou quand l’entrée est effacée par l’utilisateur.
 
 ```xaml
-<NumberBox PlaceholderText="1+2^2"
+<muxc:NumberBox PlaceholderText="1+2^2"
     Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}" />
 ```
 
@@ -82,9 +87,8 @@ Utilisez `Header` ou `PlaceholderText` si l’intention du NumberBox n’est pas
 
 L’affectation de true à la propriété `AcceptsExpression` permet à NumberBox d’évaluer des expressions en ligne de base, notamment des multiplications, des divisions, des additions et des soustractions, selon l’ordre standard des opérations. L’évaluation est déclenchée en cas de perte du focus ou quand l’utilisateur appuie sur la touche Entrée. Une fois qu’une expression est évaluée, sa forme d’origine n’est pas conservée.
 
-XAML
 ```xaml
-<NumberBox Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}"
+<muxc:NumberBox Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}"
     AcceptsExpression="True" />
 ```
 
@@ -96,15 +100,14 @@ Utilisez la propriété `SmallChange` pour indiquer de combien la valeur dans un
 - appuie sur la flèche Haut
 - appuie sur la flèche Bas
 
-Utilisez la propriété `LargeChange` pour indiquer de combien la valeur dans un NumberBox doit changer quand le NumberBox a le focus et que l’utilisateur appuie sur la touche Pg. préc ou Pg. suiv. 
+Utilisez la propriété `LargeChange` pour indiquer de combien la valeur dans un NumberBox doit changer quand le NumberBox a le focus et que l’utilisateur appuie sur la touche Pg. préc ou Pg. suiv.
 
-Utilisez la propriété `SpinButtonPlacementMode` pour activer les boutons sur lesquels vous pouvez cliquer pour incrémenter ou décrémenter la valeur de NumberBox par la quantité spécifiée dans la propriété `SmallChange`. Ces boutons sont désactivés si une valeur Maximum ou Minimum est dépassée. 
+Utilisez la propriété `SpinButtonPlacementMode` pour activer les boutons sur lesquels vous pouvez cliquer pour incrémenter ou décrémenter la valeur de NumberBox par la quantité spécifiée dans la propriété `SmallChange`. Ces boutons sont désactivés si une valeur Maximum ou Minimum est dépassée.
 
-Définissez `SpinButtonPlacementMode` avec `Inline` pour faire apparaître les boutons à côté du contrôle. 
+Définissez `SpinButtonPlacementMode` avec `Inline` pour faire apparaître les boutons à côté du contrôle.
 
-XAML
-```XAML
-<NumberBox Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}"
+```xaml
+<muxc:NumberBox Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}"
     SmallChange="10"
     LargeChange="100"
     SpinButtonPlacementMode="Inline" />
@@ -112,11 +115,10 @@ XAML
 
 ![NumberBox avec, à côté, deux boutons : l’un contenant une flèche vers le bas et l’autre une flèche vers le haut.](images/numberbox-spinbutton-inline.png)
 
-Définissez `SpinButtonPlacementMode` avec `Compact` pour faire apparaître les boutons sous la forme d’un menu volant uniquement quand le NumberBox a le focus.  
+Définissez `SpinButtonPlacementMode` avec `Compact` pour faire apparaître les boutons sous la forme d’un menu volant uniquement quand le NumberBox a le focus.
 
-XAML
-```XAML
-<NumberBox Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}"
+```xaml
+<muxc:NumberBox Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}"
     SmallChange="10"
     LargeChange="100"
     SpinButtonPlacementMode="Compact" />
@@ -130,31 +132,28 @@ XAML
 
 Définissez `ValidationMode` avec `InvalidInputOverwritten` pour permettre à NumberBox de remplacer les entrées non valides, qui ne sont pas numériques ou qui ne sont pas basées sur des formules légales, par la dernière valeur valide quand une évaluation est déclenchée après perte du focus ou activation de la touche Entrée.
 
-XAML
-```XAML
-<NumberBox Header="Quantity"
+```xaml
+<muxc:NumberBox Header="Quantity"
     Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}"
     ValidationMode="InvalidInputOverwritten" />
 ```
 
-Définissez `ValidationMode` avec `Disabled` pour configurer une validation d’entrée personnalisée.  
+Définissez `ValidationMode` avec `Disabled` pour configurer une validation d’entrée personnalisée.
 
-En ce qui concerne les points décimaux et les virgules, la mise en forme utilisée par un utilisateur est remplacée par la celle configurée pour le NumberBox. Une erreur de validation de l’entrée n’est pas déclenchée. 
+En ce qui concerne les points décimaux et les virgules, la mise en forme utilisée par un utilisateur est remplacée par la celle configurée pour le NumberBox. Une erreur de validation de l’entrée n’est pas déclenchée.
 
-### <a name="formatting-input"></a>Mise en forme de l’entrée 
+### <a name="formatting-input"></a>Mise en forme de l’entrée
 
 Vous pouvez utiliser la [mise en forme des nombres](/uwp/api/windows.globalization.numberformatting) pour mettre en forme la valeur d’un NumberBox en configurant une instance d’une classe de mise en forme et en l’affectant à la propriété `NumberFormatter`. Les décimales, devises, pourcentages et chiffres significatifs comptent parmi les classes de mise en forme des nombres disponibles. Notez que l’arrondi est également défini par les propriétés de mise en forme des nombres.
 
-Voici un exemple d’utilisation de DecimalFormatter qui met en forme la valeur d’un NumberBox (un chiffre entier, deux chiffres de fraction et arrondi au 0,25 le plus proche) :  
+Voici un exemple d’utilisation de DecimalFormatter qui met en forme la valeur d’un NumberBox (un chiffre entier, deux chiffres de fraction et arrondi au 0,25 le plus proche) :
 
-XAML
-```XAML
-<NumberBox  x:Name="FormattedNumberBox"
+```xaml
+<muxc:NumberBox  x:Name="FormattedNumberBox"
     Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}" />
 ```
 
-C#
-```C#
+```csharp
 private void SetNumberBoxNumberFormatter()
 {
     IncrementNumberRounder rounder = new IncrementNumberRounder();
@@ -171,19 +170,19 @@ private void SetNumberBoxNumberFormatter()
 
 ![NumberBox indiquant une valeur de 0,00.](images/numberbox-formatted.png)
 
-En ce qui concerne les points décimaux et les virgules, la mise en forme utilisée par un utilisateur est remplacée par la celle configurée pour le NumberBox. Une erreur de validation de l’entrée n’est pas déclenchée. 
+En ce qui concerne les points décimaux et les virgules, la mise en forme utilisée par un utilisateur est remplacée par la celle configurée pour le NumberBox. Une erreur de validation de l’entrée n’est pas déclenchée.
 
 ## <a name="remarks"></a>Remarks
 
 ### <a name="input-scope"></a>Étendue d’entrée
 
-`Number` est utilisé pour l’[étendue d’entrée](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.InputScopeNameValue). Cette étendue d’entrée est conçue pour fonctionner avec des chiffres compris entre 0 et 9. Il est possible de la remplacer, mais les autres types InputScope ne sont pas explicitement pris en charge. 
+`Number` est utilisé pour l’[étendue d’entrée](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.InputScopeNameValue). Cette étendue d’entrée est conçue pour fonctionner avec des chiffres compris entre 0 et 9. Il est possible de la remplacer, mais les autres types InputScope ne sont pas explicitement pris en charge.
 
 ### <a name="not-a-number"></a>N’est pas un nombre
 
-Quand l’entrée est effacée d’un NumberBox, `Value` est défini avec `NaN` pour indiquer qu’aucune valeur numérique n’est présente. 
+Quand l’entrée est effacée d’un NumberBox, `Value` est défini avec `NaN` pour indiquer qu’aucune valeur numérique n’est présente.
 
-### <a name="expression-evaluation"></a>Évaluation d’expression 
+### <a name="expression-evaluation"></a>Évaluation d’expression
 
 NumberBox utilise la notation infixe pour évaluer les expressions. Les opérateurs autorisés sont les suivants (par ordre de précédence) :
 
@@ -191,9 +190,9 @@ NumberBox utilise la notation infixe pour évaluer les expressions. Les opérate
 * */
 * +-
 
-Notez qu’il est possible d’utiliser des parenthèses pour remplacer les règles de précédence. 
+Notez qu’il est possible d’utiliser des parenthèses pour remplacer les règles de précédence.
 
 ## <a name="recommendations"></a>Recommandations
 
-* `Text` et `Value` facilitent la capture de la valeur d’un NumberBox au format String ou Double sans qu’il soit nécessaire de convertir la valeur d’un type à un autre. Si vous souhaitez modifier programmatiquement la valeur d’un NumberBox, nous vous recommandons de le faire par le biais de la propriété `Value`. `Value` remplace `Text` dans la configuration initiale. Après la configuration initiale, les modifications apportées à l’un sont propagées à l’autre, mais le fait d’apporter constamment des modifications programmatiquement avec `Value` permet d’éviter tout malentendu conceptuel selon lequel NumberBox accepte des caractères non numériques par le biais de `Text`.  
-* Utilisez `Header` ou `PlaceholderText` pour informer les utilisateurs que NumberBox accepte uniquement des caractères numériques en entrée. La représentation orthographique des nombres, comme « un », n’est pas résolue en valeur acceptée. 
+* `Text` et `Value` facilitent la capture de la valeur d’un NumberBox au format String ou Double sans qu’il soit nécessaire de convertir la valeur d’un type à un autre. Si vous souhaitez modifier programmatiquement la valeur d’un NumberBox, nous vous recommandons de le faire par le biais de la propriété `Value`. `Value` remplace `Text` dans la configuration initiale. Après la configuration initiale, les modifications apportées à l’un sont propagées à l’autre, mais le fait d’apporter constamment des modifications programmatiquement avec `Value` permet d’éviter tout malentendu conceptuel selon lequel NumberBox accepte des caractères non numériques par le biais de `Text`.
+* Utilisez `Header` ou `PlaceholderText` pour informer les utilisateurs que NumberBox accepte uniquement des caractères numériques en entrée. La représentation orthographique des nombres, comme « un », n’est pas résolue en valeur acceptée.

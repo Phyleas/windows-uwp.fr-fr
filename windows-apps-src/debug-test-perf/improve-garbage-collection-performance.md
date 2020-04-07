@@ -8,7 +8,7 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f9e7cc16b65f4ee2727fae5a711da9372ee91c01
 ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/11/2019
 ms.locfileid: "72282191"
@@ -18,7 +18,7 @@ ms.locfileid: "72282191"
 
 Les applications de plateforme Windows universelle (UWP) écrites en C# et Visual Basic bénéficient de la gestion automatique de la mémoire du récupérateur de mémoire .NET. Cette section résume les meilleures pratiques en termes de comportement et de performance du récupérateur de mémoire .NET pour les applications UWP. Pour plus d’informations sur le fonctionnement du récupérateur de mémoire .NET et les outils en matière de débogage et d’analyse des performances du récupérateur de mémoire, voir [Nettoyage de la mémoire](https://docs.microsoft.com/dotnet/standard/garbage-collection/index).
 
-**Notez**  la nécessité d’intervenir dans le comportement par défaut du garbage collector est fortement indicative des problèmes de mémoire généraux avec votre application. Pour plus d’informations, voir [Utilisation de l’outil d’utilisation de la mémoire pendant le débogage dans Visual Studio 2015](https://devblogs.microsoft.com/devops/memory-usage-tool-while-debugging-in-visual-studio-2015/). Cette rubrique s’applique uniquement au code C# et Visual Basic.
+**Remarque**  Le fait de devoir intervenir dans le comportement par défaut du récupérateur de mémoire signifie que votre application rencontre des problèmes généraux de mémoire. Pour plus d’informations, voir [Utilisation de l’outil d’utilisation de la mémoire pendant le débogage dans Visual Studio 2015](https://devblogs.microsoft.com/devops/memory-usage-tool-while-debugging-in-visual-studio-2015/). Cette rubrique s’applique uniquement au code C# et Visual Basic.
 
  
 
@@ -42,7 +42,7 @@ Générez un nettoyage de la mémoire uniquement après avoir mesuré les perfor
 
 Vous pouvez générer un nettoyage de la mémoire d’une génération en appelant [**GC.Collect(n)** ](https://docs.microsoft.com/dotnet/api/system.gc.collect#System_GC_Collect_System_Int32_), où n représente la génération que vous voulez collecter (0, 1 ou 2).
 
-**Notez**  nous vous recommandons de ne pas forcer une garbage collection dans votre application, car le garbage collector utilise de nombreuses heuristiques pour déterminer le meilleur moment pour exécuter une collection et forcer une collection dans de nombreux cas une utilisation inutile de l’UC. Toutefois, si vous savez qu’un grand nombre d’objets de votre application ne sont plus utilisés et que vous voulez réattribuer cette mémoire au système, il peut s’avérer approprié de forcer un nettoyage de la mémoire. Par exemple, dans le cadre d’un jeu, vous pouvez effectuer un nettoyage à la fin d’une séquence de chargement pour libérer de la mémoire avant de commencer à jouer.
+**Remarque**  Nous vous recommandons de ne pas forcer un nettoyage de la mémoire dans votre application. En effet, le récupérateur de mémoire utilise de nombreuses méthodes pour déterminer le meilleur moment pour forcer un nettoyage, et cette opération entraîne dans bien des cas une utilisation inutile de l’unité centrale. Toutefois, si vous savez qu’un grand nombre d’objets de votre application ne sont plus utilisés et que vous voulez réattribuer cette mémoire au système, il peut s’avérer approprié de forcer un nettoyage de la mémoire. Par exemple, dans le cadre d’un jeu, vous pouvez effectuer un nettoyage à la fin d’une séquence de chargement pour libérer de la mémoire avant de commencer à jouer.
  
 Pour éviter le déclenchement accidentel d’un trop grand nombre de nettoyages de la mémoire, vous pouvez affecter à [**GCCollectionMode**](https://docs.microsoft.com/dotnet/api/system.gccollectionmode) la valeur **Optimized**. Cela indique au récupérateur de mémoire de lancer un nettoyage uniquement s’il considère qu’il est justifié.
 
@@ -74,7 +74,7 @@ Tout objet de 85 Ko ou plus est alloué au tas des objets volumineux (LOH, Large
 
 ### <a name="avoid-reference-rich-objects"></a>Éviter les objets riches en référence
 
-Le Garbage Collector détermine quels objets sont dynamiques en suivant les références entre les objets, en partant des racines de votre application. Pour plus d’informations, voir [Que se passe-t-il pendant un nettoyage de la mémoire ?](https://docs.microsoft.com/dotnet/standard/garbage-collection/fundamentals) Si un objet contient de nombreuses références, le Garbage Collector doit exécuter davantage de tâches. Une technique courante (surtout avec les objets volumineux) consiste à convertir des objets enrichis de référence en objets sans référence (par exemple, au lieu de stocker une référence, stocker un index). Il est clair que cette technique ne fonctionne que s’il est logiquement possible de la mettre en œuvre.
+Le Garbage Collector détermine quels objets sont dynamiques en suivant les références entre les objets, en partant des racines de votre application. Pour plus d’informations, voir [Que se passe-t-il pendant un nettoyage de la mémoire ?](https://docs.microsoft.com/dotnet/standard/garbage-collection/fundamentals) Si un objet contient de nombreuses références, le Garbage Collector doit exécuter davantage de tâches. Une technique courante (en particulier avec des objets volumineux) consiste à convertir des objets riches en référence en des objets sans aucune référence (par exemple, au lieu de stocker une référence, stocker un index). Il est clair que cette technique ne fonctionne que s’il est logiquement possible de la mettre en œuvre.
 
 Le remplacement des références d’objet par des index peut représenter un changement perturbant et compliqué pour votre application et s’avère plus efficace dans le cas d’objets volumineux avec un grand nombre de références. Ne procédez à ce changement que si vous identifiez des durées longues de nettoyages de la mémoire dans votre application liées aux objets riches en référence.
 

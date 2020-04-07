@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: ffd5481fec0ebf6db24d9af95b8a11d05a043170
-ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
+ms.openlocfilehash: 5340c8375be9cf33a8f56fdba7bd36e9743767ab
+ms.sourcegitcommit: df0cd9c82d1c0c17ccde424e3c4a6ff680c31a35
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77521220"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80482307"
 ---
 # <a name="contributing-to-uwp-conceptual-documentation"></a>Contribution à la documentation conceptuelle UWP
 
@@ -22,7 +22,7 @@ Si vous ne travaillez **pas** pour Microsoft, vous pouvez quand même apporter v
 
 Si vous êtes déjà dans le référentiel de contenu public, commencez par naviguer vers le fichier que vous souhaitez modifier. De là, sélectionnez l’icône de crayon au-dessus du contenu affiché pour commencer à modifier le fichier.
 
-Sinon, si vous êtes en train de consulter une page sur le site docs.microsoft.com dans votre navigateur, cliquez sur le bouton **Modifier** dans la partie supérieure de la page. Cette option vous redirige vers le fichier source associé dans le référentiel.
+Sinon, si vous consultez actuellement une page sur le site [docs.microsoft.com](https://docs.microsoft.com), vous pouvez sélectionner le bouton **Modifier** dans la partie supérieure de la page. Cette option vous redirige vers le fichier source associé dans le référentiel.
 
 Lorsque vous commencez à modifier un fichier, GitHub réplique automatiquement le référentiel officiel dans votre compte GitHub personnel, où vous pouvez effectuer vos modifications. Lorsque vous avez terminé, soumettez une requête de tirage à la branche **docs**.
 

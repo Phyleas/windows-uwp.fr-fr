@@ -6,17 +6,17 @@ ms.date: 06/01/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d6bafc9a21e3950974615078af24989aab7da9e
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 1cf9d4866ddb72da0a284bcdcff07e3420f2880e
+ms.sourcegitcommit: 4657ac3be576b1d6dcd938d73a2f6a7e060ab17b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259189"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80404915"
 ---
 # <a name="networking-basics"></a>Notions de base en matière de réseau
 Ce que vous devez faire pour toute application réseau.
 
-## <a name="capabilities"></a>Fonctionnalités
+## <a name="capabilities"></a>Fonctions
 Pour pouvoir utiliser le réseau, vous devez ajouter des éléments de fonctionnalité appropriés au manifeste de votre application. Si aucune fonctionnalité réseau n’est spécifiée dans le manifeste de votre application, celle-ci n’a aucune fonctionnalité réseau, et toute tentative de connexion au réseau échoue.
 
 Les fonctionnalités réseau les plus utilisées sont les suivantes.
@@ -464,7 +464,7 @@ Si la demande initiale du client ne contient pas cette valeur ou si elle fournit
 Comment fournir des informations d’authentification lors d’une connexion via le réseau.
 
 ### <a name="providing-a-client-certificate-with-the-streamsocket-class"></a>Fourniture d’un certificat client avec la classe StreamSocket
-La classe [**Windows.Networking.StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket) prend en charge l’utilisation des protocoles SSL/TLS pour authentifier le serveur avec lequel l’application communique. Dans certains cas, l’application doit également s’authentifier auprès du serveur à l’aide d’un certificat client TLS. Dans Windows 10, vous pouvez prévoir un certificat client sur l’objet [**StreamSocket.Control**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocketControl) (cela doit être défini avant le début de l’établissement de la liaison TLS). Si le serveur demande le certificat client, Windows répond avec le certificat fourni.
+La classe [**Windows.Networking.Sockets.StreamSocket**](/uwp/api/windows.networking.sockets.streamsocket) prend en charge l’utilisation des protocoles SSL/TLS pour authentifier le serveur avec lequel l’application communique. Dans certains cas, l’application doit également s’authentifier auprès du serveur à l’aide d’un certificat client TLS. Dans Windows 10, vous pouvez prévoir un certificat client sur l’objet [**StreamSocket.Control**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocketControl) (cela doit être défini avant le début de l’établissement de la liaison TLS). Si le serveur demande le certificat client, Windows répond avec le certificat fourni.
 
 Voici un extrait de code montrant comment implémenter cela :
 

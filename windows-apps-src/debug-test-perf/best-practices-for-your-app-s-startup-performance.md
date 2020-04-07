@@ -1,6 +1,6 @@
 ---
 ms.assetid: 00ECF6C7-0970-4D5F-8055-47EA49F92C12
-title: Meilleures pratiques en matière de performances de démarrage de votre application
+title: Meilleures pratiques en matière de performances lors du démarrage de votre application
 description: Créez des applications de plateforme Windows universelle (UWP) dont le temps de démarrage est optimal en améliorant la gestion du lancement et de l’activation.
 ms.date: 02/08/2017
 ms.topic: article
@@ -8,17 +8,17 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ae37ab763b6705fbb3f341569904972ebb181412
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74254683"
 ---
-# <a name="best-practices-for-your-apps-startup-performance"></a>Meilleures pratiques en matière de performances de démarrage de votre application
+# <a name="best-practices-for-your-apps-startup-performance"></a>Meilleures pratiques en matière de performances lors du démarrage de votre application
 
 
 Créez des applications de plateforme Windows universelle (UWP) dont le temps de démarrage est optimal en améliorant la gestion du lancement et de l’activation.
 
-## <a name="best-practices-for-your-apps-startup-performance"></a>Meilleures pratiques en matière de performances de démarrage de votre application
+## <a name="best-practices-for-your-apps-startup-performance"></a>Meilleures pratiques en matière de performances lors du démarrage de votre application
 
 Les utilisateurs jugent les performances d’une application en partie sur le temps nécessaire à son démarrage. Pour les besoins de cette rubrique, le démarrage d’une application commence lorsque l’utilisateur démarre l’application et il se termine lorsque l’utilisateur peut commencer à interagir véritablement avec l’application. Cette section fournit des suggestions pour améliorer les performances de votre application au démarrage.
 
@@ -26,13 +26,13 @@ Les utilisateurs jugent les performances d’une application en partie sur le te
 
 Démarrez l’application plusieurs fois avant de pouvoir évaluer son temps de démarrage. Cela vous servira de référence afin d’estimer un temps de démarrage aussi court que possible, tout en restant dans la mesure du raisonnable.
 
-Au moment où votre application UWP arrive sur les ordinateurs de vos clients, votre application a été compilée à l’aide de la chaîne d’outils .NET Native. .NET Native est une technologie de compilation d’avant-garde qui convertit le MSIL en code machine exécutable en mode natif. Les applications .NET natives démarrent plus vite, utilisent moins de mémoire et consomment moins de batterie que leurs équivalents MSIL. Les applications générées avec .NET Native se lient de manière statistique dans le cadre d’une exécution personnalisée et dans le nouveau .NET Core convergé pouvant s’exécuter sur tous les appareils, afin qu’elles ne dépendent pas de l’implémentation de .NET fournie. Sur l’ordinateur de développement, votre application utilise .NET Native par défaut si vous la créez en mode « Publication », et CoreCLR si vous la créez en mode « Débogage ». Vous pouvez configurer cette option dans Visual Studio à partir de la page de génération dans « Propriétés » (C#) ou Compiler -&gt; Avancé dans « Mon projet » (VB). Recherchez une case à cocher indiquant « Compiler avec la chaîne d’outils .NET Native ».
+Au moment où votre application UWP arrive sur les ordinateurs de vos clients, votre application a été compilée à l’aide de la chaîne d’outils .NET Native. .NET Native est une technologie de compilation d’avant-garde qui convertit le MSIL en code machine exécutable en mode natif. Les applications .NET Native démarrent plus vite, utilisent moins de mémoire et consomment moins de batterie que leurs équivalents MSIL. Les applications générées avec .NET Native se lient de manière statistique dans le cadre d’une exécution personnalisée et dans le nouveau .NET Core convergé pouvant s’exécuter sur tous les appareils, afin qu’elles ne dépendent pas de l’implémentation de .NET fournie. Sur l’ordinateur de développement, votre application utilise .NET Native par défaut si vous la créez en mode « Publication », et CoreCLR si vous la créez en mode « Débogage ». Vous pouvez configurer cette option dans Visual Studio à partir de la page de génération dans « Propriétés » (C#) ou Compiler -&gt; Avancé dans « Mon projet » (VB). Recherchez une case à cocher indiquant « Compiler avec la chaîne d’outils .NET Native ».
 
 Bien entendu, vous devez obtenir des évaluations représentatives de ce que l’utilisateur final constatera. Par conséquent, si vous n’êtes pas certain de compiler votre application en code natif sur l’ordinateur de développement, vous pouvez exécuter l’outil Native Image Generator (Ngen.exe) pour précompiler votre application avant d’évaluer son temps de démarrage.
 
 La procédure suivante décrit comment exécuter Ngen.exe pour précompiler votre application.
 
-**Pour exécuter Ngen. exe**
+**Pour exécuter Ngen.exe**
 
 1.  Exécutez votre application au moins une fois pour vérifier que Ngen.exe la détecte.
 2.  Ouvrez le **Planificateur de tâches** en effectuant l’une des opérations suivantes :
@@ -54,7 +54,7 @@ Lorsque vous recompilez votre application, l’image native n’est plus utilis�
 
 ### <a name="defer-work-as-long-as-possible"></a>Différer le travail aussi longtemps que possible
 
-Pour réduire le temps de démarrage de votre application, n’effectuez que le travail qui est absolument nécessaire pour permettre à l’utilisateur de commencer à interagir avec l’application. Cela peut être particulièrement utile si vous pouvez retarder le chargement d’assemblys supplémentaires. Le Common Language Runtime charge un assembly la première fois qu’il est utilisé. Si vous pouvez réduire le nombre d’assemblys qui sont chargés, vous pourrez sans doute améliorer le temps nécessaire au démarrage de votre application et sa consommation de mémoire.
+Pour réduire le temps de démarrage de votre application, n’effectuez que le travail indispensable pour permettre à l’utilisateur de commencer à interagir avec l’application. Cela peut être particulièrement utile si vous pouvez retarder le chargement d’assemblys supplémentaires. Le Common Language Runtime charge un assembly la première fois qu’il est utilisé. Si vous pouvez réduire le nombre d’assemblys qui sont chargés, vous pourrez sans doute améliorer le temps nécessaire au démarrage de votre application et sa consommation de mémoire.
 
 ### <a name="do-long-running-work-independently"></a>Effectuer le travail demandant du temps séparément
 
@@ -107,7 +107,7 @@ La fenêtre [Arborescence visuelle dynamique de Visual Studio](https://devblogs.
 
 ![Arborescence visuelle dynamique](images/live-visual-tree.png)
 
-**Différez le chargement**. Le fait de réduire un élément ou de définir son opacité sur 0 n’empêche pas la création de l’élément. L’utilisation de x:Load ou de x:DeferLoadStrategy vous permet de différer le chargement d’un élément d’interface utilisateur et de le charger quand c’est nécessaire. Cela est très pratique pour retarder le traitement de l’interface utilisateur qui n’est pas visible sur l’écran de démarrage, afin de pouvoir la charger en cas de besoin, ou dans le cadre d’une logique différée. Pour déclencher le chargement, il vous suffit d’appeler FindName pour l’élément. Pour plus d’informations et pour obtenir un exemple d’utilisation, consultez les articles [Attribut x:Load](../xaml-platform/x-load-attribute.md) et [Attribut x:DeferLoadStrategy](https://docs.microsoft.com/windows/uwp/xaml-platform/x-deferloadstrategy-attribute).
+**Différez le chargement**. Le fait de réduire un élément ou de définir son opacité sur 0 n’empêche pas la création de l’élément. L’utilisation de x:Load ou de x:DeferLoadStrategy vous permet de différer le chargement d’un élément d’interface utilisateur et de le charger si nécessaire. Cela est très pratique pour retarder le traitement de l’interface utilisateur qui n’est pas visible sur l’écran de démarrage, afin de pouvoir la charger en cas de besoin, ou dans le cadre d’une logique différée. Pour déclencher le chargement, il vous suffit d’appeler FindName pour l’élément. Pour plus d’informations et pour obtenir un exemple d’utilisation, consultez [Attribut x:Load](../xaml-platform/x-load-attribute.md) et [Attribut x:DeferLoadStrategy](https://docs.microsoft.com/windows/uwp/xaml-platform/x-deferloadstrategy-attribute).
 
 **Virtualisation** Si votre interface utilisateur comporte un contenu de liste ou Repeater, il est vivement recommandé d’utiliser la virtualisation de l’interface utilisateur. Si l’interface utilisateur de liste n’est pas virtualisée, vous devez créer sur le moment tous les éléments, ce qui peut ralentir le démarrage. Voir [Optimisation des options d’interface ListView et GridView](optimize-gridview-and-listview.md)
 

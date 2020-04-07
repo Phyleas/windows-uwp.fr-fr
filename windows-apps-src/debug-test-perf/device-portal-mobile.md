@@ -4,11 +4,11 @@ title: Device Portal pour appareils mobiles
 description: Découvrez comment Windows Device Portal vous permet de configurer et de gérer à distance votre appareil mobile.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP, portail des appareils
+keywords: windows 10, uwp, portail d’appareil
 ms.localizationpriority: medium
 ms.openlocfilehash: fb9cd2861fe826d9e8d112f2729d2922c68194ce
 ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/11/2019
 ms.locfileid: "72281893"
@@ -25,15 +25,15 @@ Pour en savoir plus sur la façon d’activer le mode développeur, consultez [A
 
 ### <a name="turn-on-device-discovery-and-pairing"></a>Activer la détection et le couplage d’appareils
 
-Pour vous connecter à Device Portal, vous devez activer la détection d’appareils et Device Portal dans les paramètres de votre téléphone. Cela vous permet de coupler votre téléphone à un PC ou à un autre appareil Windows 10. Les deux appareils doivent être connectés au même sous-réseau du réseau par une connexion filaire ou sans fil, ou ils doivent être connectés par USB.
+Pour vous connecter au Portail d'appareil, vous devez activer la détection d’appareils et Portail d'appareil dans les paramètres de votre téléphone. Cela vous permet de coupler votre téléphone à un PC ou à un autre appareil Windows 10. Les deux appareils doivent être connectés au même sous-réseau du réseau par une connexion filaire ou sans fil, ou ils doivent être connectés par USB.
 
 La première fois que vous vous connectez à Device Portal, vous êtes invité à entrer un code de sécurité à 6 caractères (avec respect de la casse). Cela garantit votre accès au téléphone et vous préserve des attaques. Appuyez sur le bouton Coupler de votre téléphone pour générer et afficher le code, puis entrez les 6 caractères dans la zone de texte du navigateur.
 
 ![Paramètres de détection d’appareils en mode développeur](images/device-portal/mob-dev-mode-pairing.png)
 
-Vous pouvez choisir entre trois méthodes pour vous connecter au portail de l’appareil : USB, hôte local et sur le réseau local (y compris VPN et connexion).
+Vous pouvez vous connecter au Portail d'appareil de trois façons : USB, hôte local et sur le réseau local (y compris avec VPN et fonction modem).
 
-**Pour vous connecter au portail de l’appareil**
+**Pour se connecter au Portail d'appareil**
 
 1. Dans votre navigateur, entrez l’adresse indiquée ici selon le type de connexion que vous utilisez.
 
@@ -41,7 +41,7 @@ Vous pouvez choisir entre trois méthodes pour vous connecter au portail de l’
 
     utilisez cette adresse lorsque le téléphone est connecté à un PC par le biais d’une connexion USB. Les deux appareils doivent disposer de Windows 10 version 1511 ou ultérieure.
     
-    - Localhost : `http://127.0.0.1`
+    - Hôte local : `http://127.0.0.1`
 
     utilisez cette adresse pour afficher Device Portal localement sur le téléphone dans Microsoft Edge pour Windows 10 Mobile.
     
@@ -49,7 +49,7 @@ Vous pouvez choisir entre trois méthodes pour vous connecter au portail de l’
 
     utilisez cette adresse pour établir la connexion par le biais d’un réseau local.
 
-    L’adresse IP du téléphone est affichée dans les paramètres Device Portal sur le téléphone. Une connexion HTTPS est requise pour l’authentification et la communication sécurisée. Le nom d’hôte (modifiable dans Paramètres > système > à propos de) peut également être utilisé pour accéder au portail des appareils sur le réseau local (par exemple, http://Phone360), ce qui est utile pour les appareils qui peuvent modifier fréquemment des réseaux ou des adresses IP, ou doivent être partagés. 
+    L’adresse IP du téléphone est affichée dans les paramètres Device Portal sur le téléphone. Une connexion HTTPS est requise pour l’authentification et la communication sécurisée. Le nom d’hôte (modifiable dans Paramètres &gt; Système &gt; À propos) peut également permettre d’accéder au Portail d'appareil sur le réseau local (par exemple, http://Phone360) ), ce qui est utile pour les appareils changeant fréquemment de réseaux ou d’adresses IP ou devant être partagés. 
 
 2. Appuyez sur le bouton Coupler de votre téléphone pour générer et afficher le code de sécurité requis.
 
@@ -78,10 +78,10 @@ Device Portal sur les appareils mobiles propose les pages standard. Pour obtenir
 - Graphiques de performances
 - Suivi d’événements pour Windows (ETW)
 - Suivi des performances (WPR) 
-- Appareils
+- Périphériques
 - Mise en réseau
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Vue d’ensemble du portail de périphériques Windows](device-portal.md)
-* [Informations de référence sur l’API principale du portail des appareils](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)
+* [Vue d’ensemble du Portail d'appareil Windows](device-portal.md)
+* [Informations de référence sur les API principales du Portail d'appareil](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

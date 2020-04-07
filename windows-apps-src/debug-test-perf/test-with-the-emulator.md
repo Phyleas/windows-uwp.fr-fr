@@ -8,7 +8,7 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 4f2cb92dca3da2d1f8e3eccfade6558f363c5b13
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74257865"
@@ -21,13 +21,13 @@ L’émulateur a pour but de fournir des performances comparables à un appareil
 
 Vous pouvez tester votre application universelle à l’aide d’une image de l’émulateur pour Windows 10 Mobile unique pour différentes configurations de résolution et de taille d’écran. Vous pouvez simuler une interaction réaliste avec un appareil et tester les différentes fonctionnalités de votre application à l’aide des outils fournis avec l’émulateur Microsoft.
 
-## <a name="system-requirements"></a>Configuration requise
+## <a name="system-requirements"></a>Configuration système requise
 
 Votre ordinateur doit présenter la configuration suivante :
 
-PROCESSEUR (ces paramètres, s’ils sont disponibles, peuvent être activés dans le BIOS)
+Processeur (ces paramètres, s'ils sont disponibles, peuvent être activés dans le BIOS)
 
--   La virtualisation d’assistance matérielle ([Vérifier la compatibilité](https://www.microsoft.com/download/details.aspx?id=592)).
+-   Assistance matérielle à la virtualisation ([compatibilité à vérifier](https://www.microsoft.com/download/details.aspx?id=592)).
 -   Traduction d’adresse de second niveau (SLAT, Second Level Address Translation)
 -   Prévention de l’exécution des données au niveau matériel (DEP, Data Execution Prevention)
 
@@ -41,20 +41,20 @@ Système d’exploitation
 -   64 bits
 -   Édition Professionnelle ou version supérieure
 
-Pour vérifier la configuration requise du BIOS, consultez [Activation d’Hyper-V pour l’émulateur pour Windows Phone 8](https://docs.microsoft.com/previous-versions/windows/apps/jj863509(v=vs.105)).
+Pour vérifier la configuration requise du BIOS, voir [Activation d’Hyper-V pour l’émulateur pour Windows Phone 8](https://docs.microsoft.com/previous-versions/windows/apps/jj863509(v=vs.105)).
 
 Pour vérifier la configuration requise en termes de RAM et de système d’exploitation, dans le Panneau de configuration, sélectionnez **Système et sécurité**, puis **Système**.
 
-L’émulateur Microsoft pour Windows 10 mobile nécessite Visual Studio 2015 ou une version ultérieure. elle n’offre pas de compatibilité descendante avec les versions antérieures de Visual Studio.
+L’émulateur Microsoft pour Windows 10 Mobile nécessite Visual Studio 2015 ou version ultérieure. Il n’est pas compatible avec les versions antérieures de Visual Studio.
 
-L’émulateur Microsoft pour Windows 10 Mobile ne peut pas charger des applications destinées à des versions de Windows Phone OS antérieures à Windows Phone OS 7.1.
+L’émulateur Microsoft pour Windows 10 Mobile ne peut pas charger d’applications destinées à des versions antérieures à Windows Phone OS 7.1.
 
 ## <a name="installing-uninstalling-and-running-the-emulator"></a>Installation, désinstallation et exécution de l’émulateur
 
-### <a name="installing"></a>En cours d'installation
+### <a name="installing"></a>Installation de
 L’émulateur Microsoft pour Windows 10 Mobile est fourni avec le Kit de développement logiciel (SDK) Windows 10. Ils peuvent tous deux être installés avec Visual Studio. Consultez la [page de téléchargement de Visual Studio](https://developer.microsoft.com/windows/downloads).
 
-Vous pouvez également installer l’émulateur Microsoft pour Windows 10 Mobile à l’aide du [programme d’installation de l’émulateur Microsoft](https://go.microsoft.com/fwlink/p/?LinkID=615095).
+Vous pouvez également installer l’émulateur Microsoft pour Windows 10 Mobile à l’aide du programme d’[installation de l’émulateur Microsoft](https://go.microsoft.com/fwlink/p/?LinkID=615095).
 
 ### <a name="uninstalling"></a>Désinstallation
 
@@ -62,9 +62,9 @@ Vous pouvez désinstaller l’émulateur Microsoft pour Windows 10 Mobile à l�
 
 Lorsque vous désinstallez l’émulateur Microsoft pour Windows 10 Mobile, la carte Ethernet virtuelle Hyper-V créée pour l’émulateur à utiliser n’est pas automatiquement supprimée. Vous pouvez la supprimer manuellement sous **Connexions réseau**, dans le **Panneau de configuration**.
 
-### <a name="running"></a>Running
+### <a name="running"></a>Exécution
 
-Pour exécuter une application dans l’émulateur, il vous suffit de sélectionner un appareil émulé dans le menu déroulant **exécuter** de Visual Studio.
+Pour exécuter une application dans l’émulateur, sélectionnez un appareil émulé dans le menu déroulant **Exécuter** de Visual Studio.
 
 ![Émulateurs disponibles avec la résolution, la taille et la mémoire](images/em-list.png)
 
@@ -144,7 +144,7 @@ Le tableau suivant répertorie les touches d’un clavier matériel que vous pou
 
 Notez que dans l’émulateur build 10.0.14332, le mappage de clés matérielles de l’ordinateur a été modifié. Les valeurs dans la deuxième colonne du tableau ci-dessous représentent ces nouvelles clés. 
 
-Clés matérielles de l’ordinateur (émulateur build 10.0.14295 et versions antérieures) | Clés matérielles de l’ordinateur (émulateur build 10.0.14332 et versions antérieures) | Bouton matériel de Windows Phone | Notes
+Clés matérielles de l’ordinateur (émulateur build 10.0.14295 et versions antérieures) | Clés matérielles de l’ordinateur (émulateur build 10.0.14332 et versions antérieures) | Bouton matériel de Windows Phone | Remarques
 --------------------- | ------------------------- | ----------------------------- | -----
 F1 | WIN + ÉCHAP | RETOUR | Les pressions longues fonctionnent comme prévu.
 F2 | WIN + F2 | ÉCRAN D’ACCUEIL | Les pressions longues fonctionnent comme prévu.
@@ -177,7 +177,7 @@ Dans tous les modes, la fenêtre de l’émulateur présente trois zones d’int
 -   La section supérieure droite répertorie les journaux. Lorsque vous rapprochez deux appareils (ou approchez votre appareil auprès du terminal de PDV) puis les éloignez, les événements correspondants sont enregistrés. Cette section enregistre également si votre application a répondu avant que la connexion ne soit interrompue et toute autre action effectuée via l’interface utilisateur de l’émulateur, avec horodatage. Les données des journaux sont conservées entre les changements de mode. Vous pouvez effacer les journaux à tout moment en appuyant sur le bouton **Effacer** situé au-dessus de l’écran **Journaux**.
 -   Dans la partie inférieure de l’écran figurent le journal des messages et la transcription de tous les messages envoyés ou reçus dans le cadre de la connexion sélectionnée, en fonction du mode sélectionné.
 
-> **Important**  lorsque vous lancez l’outil Tapper pour la première fois, vous recevrez une invite du pare-feu Windows. Vous devez activer les 3 cases à cocher et empêcher tout blocage de l’outil par le pare-feu. Sinon, l’outil échouera sans avertissement.
+> **Important**  Lors du premier lancement de l’outil d’approche, une invite relative au Pare-feu Windows s’affiche. Vous devez activer les 3 cases à cocher et empêcher tout blocage de l’outil par le pare-feu. Sinon, l’outil échouera sans avertissement.
 
 Après le lancement du programme d’installation rapide, suivez rigoureusement l’instruction ci-dessus : activez les 3 cases à cocher à l’invite du pare-feu. En outre, l’outil d’approche doit être installé et utilisé sur le même ordinateur hôte physique que l’émulateur Microsoft.
 
@@ -289,7 +289,7 @@ La capture d’écran suivante illustre l’entrée tactile multipoint.
 
 ![Option d’entrée multipoint de la barre d’outils de l’émulateur](images/em-multipoint.png)
 
-## <a name="accelerometer"></a>Accelerometer
+## <a name="accelerometer"></a>Accéléromètre
 
 Testez les applications qui suivent le mouvement du téléphone à l’aide de l’onglet **Accéléromètre** des **Outils supplémentaires** de l’émulateur.
 
@@ -299,7 +299,7 @@ Vous pouvez tester l’accéléromètre avec des données réelles ou des donné
 
 2.  -   Sélectionnez le type d’entrée.
 
-        **Pour exécuter la simulation avec une entrée dynamique**
+        **Pour exécuter la simulation à l’aide de données réelles**
 
         Au milieu du simulateur de l’accéléromètre, faites glisser le point de couleur pour simuler le mouvement de l’appareil dans un plan en 3D.
 
@@ -307,7 +307,7 @@ Vous pouvez tester l’accéléromètre avec des données réelles ou des donné
 
         Vous pouvez aussi cliquer sur le bouton **Réinitialiser** pour rétablir l’orientation de départ.
 
-    -   **Pour exécuter la simulation avec une entrée enregistrée**
+    -   **Pour exécuter la simulation à l’aide de données enregistrées**
 
         Dans la section **Données enregistrées**, cliquez sur le bouton **Lire** pour démarrer la lecture des données simulées. La seule option disponible de la liste **Données enregistrées** est la possibilité de secouer l’appareil. Le simulateur ne se déplace pas sur l’écran quand il lit les données.
 
@@ -367,7 +367,7 @@ En mode **Itinéraire**, vous pouvez sélectionner l’un des profils de vitesse
 | Vélo      | 25 km/h                  | 6,94 m           | Parcourez l’itinéraire à la vitesse de 25 km/h. |
 | Rapide        |                          |                  |Parcourez l’itinéraire en dépassant la limite de vitesse indiquée. | 
 
-**Mode de routage**
+**Mode Itinéraire**
 
 Le mode Itinéraire présente les caractéristiques et limitations suivantes.
 
@@ -393,7 +393,7 @@ La capture d’écran suivante illustre le mode Itinéraire. La ligne orange ind
 
 -   Les seules propriétés de position simulées sont les suivantes : Latitude, Longitude, Accuracy et PositionSource. Le simulateur d’emplacement ne simule pas d’autres propriétés, comme Speed, Heading, etc.
 
-## <a name="network"></a>Réseau
+## <a name="network"></a>Network (Réseau)
 
 Testez votre application avec différentes vitesses du réseau et forces du signal à l’aide de l’onglet **Réseau** des **Outils supplémentaires** de l’émulateur. Cette fonctionnalité est utile si votre application appelle les services web ou transfère les données.
 
@@ -407,7 +407,7 @@ La simulation du réseau vous permet de vous assurer que votre application s’e
     -   4G
 
 3.  Dans la liste déroulante **Force du signal**, sélectionnez l’une des options suivantes :
-    -   Bonne
+    -   Bon
     -   Moyenne
     -   Médiocre
 
@@ -452,7 +452,7 @@ L’onglet **Carte SD** utilise un dossier de l’ordinateur de développement p
         -   Si vous cliquez sur **Annuler la synchronisation** pendant que l’opération de synchronisation est en cours, la carte est éjectée et les résultats de l’opération de synchronisation sont incomplets.
     -   Le bouton **Éjecter la carte SD** se change à nouveau en **Insérer la carte SD**.
 
-> **Notez**  étant donné qu’une carte SD utilisée par le téléphone est formatée avec le système de fichiers FAT32, la taille maximale est de 32 Go.
+> **Remarque**  Comme les cartes SD utilisées par le téléphone sont formatées avec le système de fichiers FAT32, la taille maximale est de 32 Go.
 
 La vitesse de lecture et d’écriture de la carte SD simulée est limitée afin de reproduire les vitesses réelles. L’accès à une carte SD est plus lent que l’accès au disque dur de l’ordinateur.
 
@@ -466,7 +466,7 @@ Vous pouvez facilement tester les notifications push sans créer le service clou
 
     Après que vous avez sélectionné **Activé**, toutes les applications déployées sur l’émulateur utilisent le moteur de simulation au lieu du service WNS ou MPN jusqu’à ce que vous désactiviez la simulation.
 
-2.  **Sélectionnez une application pour recevoir des notifications.**
+2.  **Sélectionnez une application pour recevoir les notifications.**
 
     La liste **AppId** est automatiquement remplie avec toutes les applications déployées sur l’émulateur et activées pour les notifications push. Sélectionnez une application dans la liste déroulante.
 
@@ -491,14 +491,14 @@ Vous pouvez facilement tester les notifications push sans créer le service clou
 
             Quand votre application utilise les notifications WNS et que vous sélectionnez le type de notification **Toast**, l’onglet Simulation affiche les champs **Mot clé** et **Groupe**. Vous pouvez sélectionner ces options et entrer les valeurs **Mot clé** et **Groupe** pour gérer les notifications toast du Centre de notifications.
 
-        -   Vignette
+        -   Tile
         -   Badge
 
     -   Les types de notification MPN suivants sont pris en charge.
 
         -   Brute
         -   Toast
-        -   Vignette
+        -   Tile
 
 5.  **Sélectionnez un modèle de notification.**
 
@@ -506,7 +506,7 @@ Vous pouvez facilement tester les notifications push sans créer le service clou
 
     La simulation prend en charge tous les types de modèle.
 
-6.  **Si vous le souhaitez, modifiez la charge utile de notification.**
+6.  **Le cas échéant, modifiez la charge utile de notification.**
 
     Après que vous avez sélectionné un modèle dans la liste **Modèles**, la zone de texte **Charge utile de notification** est automatiquement remplie avec un exemple de charge utile pour le modèle. Vérifiez l’exemple de charge utile dans la zone de texte **Charge utile de notification**.
 
@@ -539,7 +539,7 @@ Testez comment votre application fonctionne sur les téléphones à bas prix qui
 
 ![Page Capteurs des Outils supplémentaires de l’émulateur](images/em-sensors.png)
 
-**Options de capteur**
+**Options des capteurs**
 
 Vous pouvez activer ou désactiver les capteurs matériels facultatifs suivants :
 
@@ -563,7 +563,7 @@ Voici la liste des fonctionnalités d’appareil photo prise en charge par chacu
 
 | Fonctionnalité            | Appareil photo Windows Phone 8.0 | Appareil photo Windows Phone 8.1  |
 |--------------------|--------------------------|---------------------------|
-| Résolution :         | 640 x 480 (VGA)          | 640 x 480 (VGA) ou supérieure |
+| Solution         | 640 x 480 (VGA)          | 640 x 480 (VGA) ou supérieure |
 | Autofocus          | Oui                      | Oui                       |
 | Flash              | Non                       | Oui                       |
 | Zoom               | 2x (numérique ou optique)  | 2x (numérique ou optique)   |
@@ -619,25 +619,25 @@ Vous pouvez activer ou désactiver l’affichage des compteurs de fréquence d�
 
 Vous trouverez ci-après des problèmes connus liés à l’émulateur, ainsi que des suggestions de solutions pour les contourner.
 
-### <a name="error-message-failed-while-removing-virtual-ethernet-switch"></a>Message d’erreur : « Échec lors de la suppression du commutateur Ethernet virtuel »
+### <a name="error-message-failed-while-removing-virtual-ethernet-switch"></a>Message d’erreur : « Échec lors de la suppression du commutateur Ethernet virtuel »
 
-Dans certaines situations, y compris après la mise à jour vers une nouvelle volée Windows 10, un commutateur de réseau virtuel associé à l’émulateur peut passer à l’État dans lequel il ne peut pas être supprimé par le biais de l’interface utilisateur.
+Dans certains cas, y compris lorsque vous avez procédé à une mise à jour vers une nouvelle version d’évaluation de Windows 10, un commutateur réseau virtuel associé à l’émulateur peut passer à un état dans lequel il ne peut pas être supprimé par le biais de l’interface utilisateur.
 
 Pour résoudre ce problème, exécutez « netcfg -d » à partir d’une invite de commandes administrateur : `C:\Program Files (x86)\Microsoft XDE\<version>\XdeCleanup.exe`. À l’issue de l’exécution de la commande, redémarrez votre ordinateur pour terminer le processus de récupération.
 
-**Notez**  cette commande va supprimer tous les périphériques réseau, pas seulement ceux associés à l’émulateur. Lorsque l’ordinateur redémarre, tous les périphériques réseau matériels sont découverts automatiquement.
+**Remarque**  Cette commande supprime tous les appareil réseau, pas seulement ceux qui sont associés à l’émulateur. Lorsque l’ordinateur redémarre, tous les périphériques réseau matériels sont découverts automatiquement.
  
 ### <a name="unable-to-launch-the-emulators"></a>Impossible de lancer les émulateurs
 
-L’émulateur Microsoft inclut XDECleanup.exe, un outil qui supprime tous les ordinateurs virtuels, les disques différentiels et les commutateurs réseau propres à l’émulateur ; il est déjà fourni avec les fichiers binaires de l’émulateur (XDE). Vous devez utiliser cet outil pour nettoyer les ordinateurs virtuels d’émulateur si leur état est incorrect. Exécutez l’outil à partir d’une invite de commandes d’administrateur :`C:\Program Files (x86)\Microsoft XDE\<version>\XdeCleanup.exe`
+L’émulateur Microsoft inclut XDECleanup.exe, un outil qui supprime tous les ordinateurs virtuels, les disques différentiels et les commutateurs réseau propres à l’émulateur ; il est déjà fourni avec les fichiers binaires de l’émulateur (XDE). Vous devez utiliser cet outil pour nettoyer les ordinateurs virtuels d’émulateur si leur état est incorrect. Exécutez l’outil à partir d’une invite de commandes administrateur :`C:\Program Files (x86)\Microsoft XDE\<version>\XdeCleanup.exe`
 
-> **Remarque**  XDECleanup. exe supprime toutes les machines virtuelles Hyper-V spécifiques à l’émulateur et supprime également tous les points de contrôle de machine virtuelle ou les États enregistrés.
+> **Remarque**  XDECleanup.exe supprime tous les ordinateurs virtuels Hyper-V propres à l’émulateur, ainsi que les points de contrôle des ordinateurs virtuels ou les états de mise en mémoire.
 
 ### <a name="uninstall-windows-10-for-mobile-image"></a>Désinstaller l’image système Windows 10 pour Mobile
 
-Lorsque vous installez l’émulateur, une image système Windows 10 pour Mobile de disque dur virtuel est installée. Elle possède sa propre entrée dans la liste **Programmes et fonctionnalités** du Panneau de configuration. Si vous souhaitez désinstaller l’image, recherchez **Windows 10 pour mobile image-\<version\>** dans la liste des programmes installés, cliquez dessus avec le bouton droit, puis choisissez **désinstaller**.
+Lorsque vous installez l’émulateur, une image système Windows 10 pour Mobile de disque dur virtuel est installée. Elle possède sa propre entrée dans la liste **Programmes et fonctionnalités** du Panneau de configuration. Pour désinstaller l’image, recherchez **Image système Windows 10 pour Mobile - \<version\>** dans la liste des programmes installés, cliquez dessus avec le bouton droit, puis choisissez **Désinstaller**.
 
-Dans la version actuelle, vous devez alors supprimer manuellement le fichier de disque dur virtuel correspondant à l’émulateur. Si vous avez installé l’émulateur dans le chemin d’accès par défaut, le fichier de disque dur virtuel se trouve à l’emplacement C :\\Program Files (x86)\\kits Windows\\l’émulation 10\\\\mobile\\\<version\>\\Flash. vhd.
+Dans la version actuelle, vous devez alors supprimer manuellement le fichier de disque dur virtuel correspondant à l’émulateur. Si vous avez choisi le chemin d’accès par défaut pour l’installation de l’émulateur, le fichier de disque dur virtuel est situé à l’emplacement suivant : \\Program Files (x86)\\Windows Kits\\10\\Emulation\\Mobile\\\<version\>\\flash.vhd.
 
 ### <a name="how-to-disable-hardware-accelerated-graphics"></a>Procédure de désactivation des graphiques à accélération matérielle
 
@@ -645,14 +645,14 @@ Par défaut, l’émulateur Windows 10 Mobile utilise des graphiques à accél
 
 Pour désactiver l’accélération matérielle :
 
-1. Démarrez l’Éditeur du Registre.
+1. Démarrez l'Éditeur du Registre.
 2. Créez la sous-clé de Registre suivante si elle n’existe pas : HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Xde\10.0
 3. Cliquez avec le bouton droit de la souris sur le dossier 10.0, pointez sur **Nouveau**, puis cliquez sur **Valeur DWORD**.
 4. Tapez **DisableRemoteFx**, puis appuyez sur Entrer.
 5. Double-cliquez sur **DisableRemoteFx**, entrez 1 dans la zone de données **Valeur**, sélectionnez l’option **Décimal**, puis cliquez sur **OK**.
 6. Fermez l’Éditeur du Registre.
 
-**Remarque :** Après avoir défini cette valeur de Registre, vous devez supprimer la machine virtuelle dans le Gestionnaire Hyper-V pour la configuration que vous avez lancée dans Visual Studio, puis relancez l’émulateur avec des graphiques rendus par logiciel.
+**Remarque :** Après avoir défini cette valeur de Registre, vous devez supprimer la machine virtuelle dans le Gestionnaire Hyper-V pour la configuration que vous avez lancée dans Visual Studio, puis relancez l’émulateur avec des graphiques rendus par logiciel.
 
 ## <a name="support-resources"></a>Ressources de support
 
@@ -660,7 +660,7 @@ Pour trouver des réponses à vos questions et résoudre vos problèmes lorsque 
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Exécuter des applications Windows Phone dans l’émulateur](https://docs.microsoft.com/visualstudio/debugger/run-windows-phone-apps-in-the-emulator?view=vs-2015)
+* [Exécuter les applications du Windows Phone dans l’émulateur](https://docs.microsoft.com/visualstudio/debugger/run-windows-phone-apps-in-the-emulator?view=vs-2015)
 * [Archive du Kit de développement logiciel (SDK) Windows et Windows Phone](https://developer.microsoft.com/windows/downloads/sdk-archive)
  
 

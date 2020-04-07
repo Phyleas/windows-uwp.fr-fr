@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d5014532be613e8284a1e2d6496f71b9f2b8e892
-ms.sourcegitcommit: 5002836b3c8d3e0f2970da1333ec8f42da861ae3
+ms.openlocfilehash: 00c51fed9f2d327afe6f493891b2744243501ea1
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77071251"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80080964"
 ---
 # <a name="dialog-controls"></a>Contrôles de boîte de dialogue
 
@@ -25,21 +25,26 @@ Les contrôles de boîtes de dialogue sont des superpositions d’interface util
 
 ![Exemple de boîte de dialogue](../images/dialogs/dialog_RS2_delete_file.png)
 
+**Obtenir la bibliothèque d’interface utilisateur Windows**
 
-> **API importantes** : [Classe ContentDialog](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)
+|  |  |
+| - | - |
+| ![Logo WinUI](../images/winui-logo-64x64.png) | Windows UI Library 2.2 ou version ultérieure inclut un nouveau modèle pour ce contrôle, qui utilise des angles arrondis. Pour plus d’informations, consultez [Rayons des angles](/windows/uwp/design/style/rounded-corner). WinUI est un package NuGet qui contient de nouveaux contrôles et fonctionnalités d’interface utilisateur pour les applications UWP. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **API de plateforme :** [Classe ContentDialog](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
 Utilisez les boîtes de dialogue pour notifier les utilisateurs d’informations importantes ou pour demander une confirmation ou des informations supplémentaires avant de pouvoir effectuer une action.
 
-Pour savoir quand utiliser une boîte de dialogue ou un menu volant (contrôle similaire), consultez [Boîtes de dialogue et menus volants](index.md). 
+Pour savoir quand utiliser une boîte de dialogue ou un menu volant (contrôle similaire), consultez [Boîtes de dialogue et menus volants](index.md).
 
 ## <a name="examples"></a>Exemples
 
 <table>
 <th align="left">Galerie de contrôles XAML<th>
 <tr>
-<td><img src="../images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="../images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour ouvrir l’application et voir l’objet <a href="xamlcontrolsgallery:/item/ContentDialog">ContentDialog</a> ou <a href="xamlcontrolsgallery:/item/Flyout">Flyout</a> en action.</p>
     <ul>
@@ -66,7 +71,7 @@ Pour savoir quand utiliser une boîte de dialogue ou un menu volant (contrôle s
     - Veillez à ce que le texte des boutons d’action soit concis. Les chaînes courtes permettent à l’utilisateur de choisir de manière sûre et rapide.
     - En plus de l’action sans échec et non destructrice, vous pouvez éventuellement présenter à l’utilisateur un ou deux boutons d’action liés à l’instruction principale. Ces boutons d’action « faire » confirment le message principal de la boîte de dialogue. Utilisez les API PrimaryButton et SecondaryButton pour ajouter ces actions « faire ».
     - Les boutons d’action « faire » doivent s’afficher à l’extrême gauche. L’action sans échec et non destructrice doit s’afficher à l’extrême droite.
-    - Vous pouvez éventuellement choisir de différencier l’un des trois boutons comme bouton par défaut de la boîte de dialogue. Utilisez l’API DefaultButton pour différencier l’un des boutons.  
+    - Vous pouvez éventuellement choisir de différencier l’un des trois boutons comme bouton par défaut de la boîte de dialogue. Utilisez l’API DefaultButton pour différencier l’un des boutons.
 -   N’utilisez pas de boîtes de dialogue pour les erreurs qui sont liées à un emplacement spécifique de la page, telles que les erreurs de validation (dans les champs de mot de passe, par exemple). Utilisez plutôt le canevas de l’application afin d’afficher les erreurs insérées.
 - Utilisez la [classe ContentDialog](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog) pour créer votre expérience de boîte de dialogue. N’utilisez pas l’API MessageDialog déconseillée.
 
@@ -135,7 +140,7 @@ private async void DisplayNoWifiDialog()
 }
 ```
 
-Lorsque les boîtes de dialogue sont utilisées pour afficher une question bloquante, votre boîte de dialogue doit proposer à l’utilisateur des boutons d’action liés à la question. Le bouton « sans échec » et non destructeur peut s’accompagner d’un ou deux boutons d’action « faire ». Lorsque vous proposez plusieurs options à l’utilisateur, assurez-vous que les boutons expliquent clairement les actions sans échec « faire » et « ne pas faire » liées à la question proposée.
+Lorsque les boîtes de dialogue sont utilisées pour afficher une question bloquante, votre boîte de dialogue doit proposer à l’utilisateur des boutons d’action liés à la question. Le bouton « sans échec » et non destructeur peut s’accompagner d’un ou deux boutons d’action « faire ». Lorsque vous proposez plusieurs options à l’utilisateur, assurez-vous que les boutons expliquent clairement les actions sans échec « faire » et « ne pas faire » liées à la question proposée.
 
 ![Une boîte de dialogue à deux boutons](../images/dialogs/dialog_RS2_two_button.png)
 
@@ -154,7 +159,7 @@ private async void DisplayLocationPromptDialog()
 }
 ```
 
-Les boîtes de dialogue à trois boutons sont utilisées lorsque vous proposez à l’utilisateur deux actions « faire » et une action « ne pas faire ». Les boîtes de dialogue à trois boutons doivent être utilisées avec parcimonie, en distinguant clairement l’action secondaire et l’action sans échec/fermer.
+Les boîtes de dialogue à trois boutons sont utilisées lorsque vous proposez à l’utilisateur deux actions « faire » et une action « ne pas faire ». Les boîtes de dialogue à trois boutons doivent être utilisées avec parcimonie, en distinguant clairement l’action secondaire et l’action sans échec/fermer.
 
 ![Une boîte de dialogue à trois boutons](../images/dialogs/dialog_RS2_three_button.png)
 
@@ -236,8 +241,8 @@ private async void DisplaySubscribeDialog()
 ```
 
 ## <a name="confirmation-dialogs-okcancel"></a>Boîtes de dialogue de confirmation (OK/Annuler)
-Une boîte de dialogue de confirmation permet aux utilisateurs de confirmer qu’ils souhaitent effectuer une action. Ils peuvent confirmer l’action ou l’annuler.  
-Une boîte de dialogue de confirmation classique comprend deux boutons : un bouton d’affirmation (« OK ») et un bouton d’annulation.  
+Une boîte de dialogue de confirmation permet aux utilisateurs de confirmer qu’ils souhaitent effectuer une action. Ils peuvent confirmer l’action ou l’annuler.
+Une boîte de dialogue de confirmation classique comprend deux boutons : un bouton d’affirmation (« OK ») et un bouton d’annulation.
 
 <ul>
     <li>

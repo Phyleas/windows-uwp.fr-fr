@@ -10,12 +10,12 @@ pm-contact: stmoy
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 351e234577b1a07b33bdcdbb92642c3697342503
-ms.sourcegitcommit: 9625f8fb86ff6473ac2851e600bc02e996993660
+ms.openlocfilehash: 31b3bcc2388a98941fc5e8aa44d18beee53de5c7
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72163699"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081095"
 ---
 # <a name="combo-box-and-list-box"></a>Zone de liste modifiable et zone de liste
 
@@ -23,11 +23,17 @@ Utilisez une liste déroulante pour présenter à l’utilisateur une liste d’
 
 Quand la liste déroulante est fermée, elle affiche la sélection actuelle ou elle est vide si aucun élément n’est sélectionné. Quand l’utilisateur développe la liste déroulante, elle affiche la liste des éléments sélectionnables.
 
-> **API importantes** : [classe ComboBox](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [propriété IsEditable](/uwp/api/windows.ui.xaml.controls.combobox.iseditable), [propriété Text](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [événement TextSubmitted](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
-
-Liste déroulante à l’état compact avec un en-tête
-
 ![Exemple de liste déroulante à l’état compact](images/combo_box_collapsed.png)
+
+> _Zone de liste modifiable à l’état compact avec un en-tête_
+
+**Obtenir la bibliothèque d’interface utilisateur Windows**
+
+|  |  |
+| - | - |
+| ![Logo WinUI](images/winui-logo-64x64.png) | Windows UI Library 2.2 ou version ultérieure inclut un nouveau modèle pour ce contrôle, qui utilise des angles arrondis. Pour plus d’informations, consultez [Rayons des angles](/windows/uwp/design/style/rounded-corner). WinUI est un package NuGet qui contient de nouveaux contrôles et fonctionnalités d’interface utilisateur pour les applications UWP. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **API de plateforme :** [classe ComboBox](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [propriété IsEditable](/uwp/api/windows.ui.xaml.controls.combobox.iseditable), [propriété Text](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [événement TextSubmitted](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
@@ -41,7 +47,7 @@ Liste déroulante à l’état compact avec un en-tête
 <table>
 <th align="left">Galerie de contrôles XAML<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/ComboBox">ouvrir l’application et voir le contrôle ComboBox en action</a>.</p>
     <ul>
@@ -100,7 +106,7 @@ public MainPage()
 
 ### <a name="item-selection"></a>Sélection d’élément
 
-Tout comme ListView et GridView, ComboBox est dérivé de [Selector](/uwp/api/windows.ui.xaml.controls.primitives.selector), de sorte que vous pouvez obtenir la sélection de l’utilisateur de la même façon standard.
+Tout comme ListView et GridView, ComboBox est dérivé de [Selector](/uwp/api/windows.ui.xaml.controls.primitives.selector) pour vous permettre d'obtenir la sélection de l’utilisateur de la même façon standard.
 
 Vous pouvez obtenir ou définir l’élément sélectionné de la liste déroulante à l’aide de la propriété [SelectedItem](/uwp/api/windows.ui.xaml.controls.primitives.selector.selecteditem) et obtenir ou définir l’index de l’élément sélectionné à l’aide de la propriété [SelectedIndex](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedindex).
 
@@ -210,7 +216,7 @@ Un sélecteur de noms utilisés récemment permet à l’utilisateur d’entrer 
 
 ### <a name="text-submitted"></a>Texte envoyé
 
-Vous pouvez gérer l’événement [TextSubmitted](/uwp/api/Windows.UI.Xaml.Controls.ComboBox) pour traiter la valeur entrée par l’utilisateur. Dans le gestionnaire d’événement, vous vérifiez généralement que la valeur entrée par l’utilisateur est valide, puis utilisez la valeur dans votre application. Selon la situation, vous pouvez également ajouter la valeur à la liste des options de la liste déroulante pour une utilisation ultérieure.
+Vous pouvez gérer l’événement [TextSubmitted](/uwp/api/Windows.UI.Xaml.Controls.ComboBox) pour traiter la valeur entrée par l’utilisateur. Dans le gestionnaire d’événement, vous vérifiez généralement que la valeur entrée par l’utilisateur est valide, puis utilisez la valeur dans votre application. Selon la situation, vous pouvez également ajouter la valeur à la liste des options de la zone de liste modifiable pour une utilisation ultérieure.
 
 L’événement TextSubmitted se produit quand les conditions ci-après sont remplies :
 
@@ -240,13 +246,13 @@ private void FontSizeComboBox_TextSubmitted(ComboBox sender, ComboBoxTextSubmitt
 {
     if (byte.TryParse(e.Text, out double newValue))
     {
-        // Update the app’s font size.
+        // Update the app's font size.
         _fontSize = newValue;
     }
     else
     {
         // If the item is invalid, reject it and revert the text.
-        // Mark the event as handled so the framework doesn’t update the selected item.
+        // Mark the event as handled so the framework doesn't update the selected item.
         sender.Text = sender.SelectedValue.ToString();
         e.Handled = true;
     }
@@ -279,7 +285,7 @@ private void FavoriteColorComboBox_TextSubmitted(ComboBox sender, ComboBoxTextSu
     else
     {
         // If the item is invalid, reject it but do not revert the text.
-        // Mark the event as handled so the framework doesn’t update the selected item.
+        // Mark the event as handled so the framework doesn't update the selected item.
         e.Handled = true;
     }
 }
