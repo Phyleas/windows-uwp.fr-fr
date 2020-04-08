@@ -4,18 +4,23 @@ description: Cet article vous explique comment interagir avec les contrôles de 
 title: Intégration avec les contrôles de transport de média système
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d2c8e05d2b01b110085ed82c19cecd251c9c6971
-ms.sourcegitcommit: c95915f8a13736705eab74951a12b2cf528ea612
+ms.openlocfilehash: bbcb53a6c88feb989b504f3b94b27d0e969cfdc1
+ms.sourcegitcommit: 26f3b5d24aa1834a527a15967d723a8749f32dc9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70876244"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80812764"
 ---
 # <a name="integrate-with-the-system-media-transport-controls"></a>Intégration avec les contrôles de transport de média système
 
 Cet article vous explique comment interagir avec les contrôles de transport de média système. Il s’agit d’un ensemble de contrôles communs à l’ensemble des appareils Windows 10 et qui octroient aux utilisateurs un moyen simple de contrôler la lecture des éléments multimédias pour les applications exécutées qui recourent à [**MediaPlayer**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer) pour la lecture.
+
+Les contrôles de transport des médias système permettent aux développeurs d’applications multimédias de s’intégrer à l’interface utilisateur du système intégrée pour afficher les métadonnées du média, telles que l’artiste, le titre de l’album ou le titre du chapitre. Le contrôle de transport du système permet également à un utilisateur de contrôler la lecture d’une application multimédia à l’aide de l’interface utilisateur système intégrée, telle que la suspension de la lecture et l’ignorance et l’arrière dans une sélection.
+
+<img alt="System Media Transtport Controls" src="images/smtc.png" />
+
 
 Pour obtenir un exemple complet illustrant l’intégration avec les contrôles de transport de média système, consultez l’[exemple de contrôle de transport de média système sur github](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls).
                     
@@ -74,7 +79,7 @@ Ensuite, la propriété [**Handled**](https://docs.microsoft.com/uwp/api/windows
 Enfin, la commande [**Complete**](https://docs.microsoft.com/uwp/api/windows.foundation.deferral.complete) est appelée sur l’objet de report, afin d’indiquer au système que le traitement de la commande est terminé.
 
 [!code-cs[PreviousReceived](./code/SMTC_RS1/cs/MainPage.xaml.cs#SnippetPreviousReceived)]
-                
+                 
 ## <a name="manual-control-of-the-smtc"></a>Contrôle manuel des contrôles de transport de média système
 Comme mentionné précédemment dans cet article, les contrôles de transport de média système détectent et affichent automatiquement les informations pour chaque instance de **MediaPlayer** créée par votre application. SI vous souhaitez utiliser plusieurs instances de **MediaPlayer** mais voulez que les contrôles de transport de média système fournissent une seule entrée pour votre application, vous devez définir manuellement le comportement des contrôles de transport de média système, au lieu de vous appuyer sur l’intégration automatique. Par ailleurs, si vous utilisez [**MediaTimelineController**](https://docs.microsoft.com/uwp/api/Windows.Media.MediaTimelineController) pour contrôler un ou plusieurs lecteurs multimédias, vous devez recourir à l’intégration manuelle des contrôles de transport de média système. En outre, si votre application utilise une API différente de **MediaPlayer**, comme la classe [**AudioGraph**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioGraph) pour lire du contenu multimédia, vous devez implémenter l’intégration manuelle des contrôles de transport de média système pour que l’utilisateur les utilise pour contrôler votre application. Pour plus d’informations sur le contrôle manuel des contrôles de transport de média système, consultez la section [Contrôle manuel des contrôles de transport de média système](system-media-transport-controls.md).
 
