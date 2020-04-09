@@ -1,24 +1,24 @@
 ---
 ms.assetid: 2f76c520-84a3-4066-8eb3-ecc0ecd198a7
 title: Tests d’application Pont du bureau Windows
-description: Utilisez les tests intégrés de Desktop Bridge pour vous assurer que votre application de bureau est optimisée pour sa conversion en application UWP.
+description: Utilisez les tests intégrés du Pont du bureau pour vous assurer que votre application de bureau est optimisée pour sa conversion en application UWP.
 ms.date: 12/18/2017
 ms.topic: article
-keywords: Windows 10, UWP, certification d’application
+keywords: windows 10, uwp, certification des applications
 ms.localizationpriority: medium
 ms.openlocfilehash: c7ffd500f3b616367ac26dffbbfc03d43b507dac
 ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 02/08/2020
 ms.locfileid: "77089405"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Tests d’application Pont du bureau Windows
 
-Les applications [Desktop Bridge](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root) sont des applications de bureau Windows converties en applications plateforme Windows universelle (UWP) à l’aide du [pont Desktop](https://developer.microsoft.com/windows/bridges/desktop). Après la conversion, les applications de bureau Windows sont empaquetées, soumises à maintenance et déployées sous la forme d’un package d’application UWP (fichier .appx ou .appxbundle) ciblant Windows 10 Desktop.
+Les [applications Pont du bureau](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root) sont des applications de bureau Windows converties en applications de plateforme Windows universelle (UWP) à l’aide du [Pont du bureau](https://developer.microsoft.com/windows/bridges/desktop). Après la conversion, les applications de bureau Windows sont empaquetées, soumises à maintenance et déployées sous la forme d’un package d’application UWP (fichier .appx ou .appxbundle) ciblant Windows 10 Desktop.
 
 ## <a name="required-versus-optional-tests"></a>Tests obligatoires et tests facultatifs
-Les tests facultatifs pour les applications Windows Desktop Bridge sont à titre d’information uniquement et ne sont pas utilisés pour évaluer votre application pendant l’intégration de Microsoft Store. Nous vous recommandons d’examiner ces résultats de tests pour produire de meilleures applications de qualité. Les critères généraux de réussite/échec d’intégration au Windows Store sont déterminés par les tests obligatoires et non par ces tests facultatifs.
+Les tests facultatifs des applications Pont du bureau Windows sont destinés uniquement à informer. Ils ne sont pas utilisés pour évaluer votre application lors de son intégration au Microsoft Store. Nous recommandons d’examiner les résultats de ces tests pour produire des applications de meilleure qualité. Les critères généraux de réussite/d’échec d’intégration au Windows Store sont déterminés par les tests obligatoires et non par ces tests facultatifs.
 
 ## <a name="current-optional-tests"></a>Tests facultatifs actuels
 
@@ -30,37 +30,37 @@ Ce test vérifie que tous les fichiers exécutables portables (PE) contiennent u
 Le test analyse tous les fichiers exécutables portables contenus dans le package et recherche une signature dans leur en-tête. Il est recommandé de signer numériquement tous les fichiers PE. Un avertissement est généré si l’un des fichiers PE n’est pas signé.
  
 **Actions correctives**  
-Il est toujours recommandé de signer numériquement les fichiers. Pour plus d’informations, voir [Introduction à la signature de code](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537361(v=vs.85)).
+Il est toujours recommandé de signer numériquement les fichiers. Pour plus d’informations, consultez [Introduction to Code Signing](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537361(v=vs.85)) (Présentation du code de signature).
 
 ### <a name="2-file-association-verbs"></a>2. Verbes d’association de fichiers 
 **Arrière-plan**  
 Ce test analyse le Registre de package pour vérifier si des verbes d’association de fichiers sont enregistrés. 
 
 **Détails du test**  
-Les applications de bureau converties peuvent être améliorées avec un large éventail d’API de la plateforme Windows universelle (UWP). Ce test vérifie que les fichiers binaires UWP de l’application n’appellent pas des API autres que UWP. L’indicateur **AppContainer** est défini pour les fichiers binaires UWP.
+Les applications de bureau converties peuvent être améliorées avec un large éventail d’API de la plateforme Windows universelle (UWP). Ce test vérifie que les fichiers binaires UWP de l’application n’appellent pas des API autres qu’UWP. L’indicateur **AppContainer** est défini pour les fichiers binaires UWP.
 
 **Actions correctives**  
-Voir [Pont du bureau vers UWP : extensions d’application](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-extensions) pour obtenir une explication de ces extensions et apprendre à les utiliser correctement. 
+Voir [Pont du bureau vers UWP : Extensions d’application](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-extensions) pour obtenir une explication de ces extensions et apprendre à les utiliser correctement. 
 
 ### <a name="3-debug-configuration-test"></a>3. Test de configuration du débogage
-Ce test vérifie que le. msix ou. AppX n’est pas une version Debug.
+Ce test vérifie que le package .msix ou .appx n’est pas une version de débogage.
  
 **Arrière-plan**  
-Pour être certifié pour le Microsoft Store, les applications ne doivent pas être compilées pour le débogage et ne doivent pas référencer les versions Debug d’un fichier exécutable. En outre, vous devez générer votre code de manière optimisée pour que votre application réussisse ce test.
+Pour pouvoir être certifiées pour le Microsoft Store, les applications ne doivent pas être compilées pour le débogage et ne doivent pas référencer les versions de débogage d’un fichier exécutable. En outre, vous devez générer votre code de manière optimisée pour que votre application réussisse ce test.
  
 **Détails du test**  
 Testez l’application de manière à vérifier qu’il ne s’agit pas d’une version de débogage et qu’elle n’est pas liée à des infrastructures de débogage.
  
 **Actions correctives**  
-* Générez l’application en tant que version Release avant de la soumettre au Microsoft Store.
+* Générez l’application en tant que version de débogage avant de la soumettre au Microsoft Store.
 * Vérifiez que la version correcte du .NET Framework est installée.
 * Assurez-vous que l’application ne crée pas de liens vers des versions de débogage d’une infrastructure et qu’elle est créée avec une version commerciale. Si l’application contient des composants .NET, assurez-vous que vous avez installé la version correcte du .NET Framework.
 
-### <a name="4-package-sanity-test"></a>4. Tests de validité des packages
+### <a name="4-package-sanity-test"></a>4. Tests d’intégrité des packages
 #### <a name="41-archive-files-usage"></a>4.1 Utilisation des fichiers archivés
 
 **Arrière-plan**  
-Ce test vous permet de créer des applications Pont de bureau plus performantes pour s’exécuter sur les machines [Windows 10 S](https://www.microsoft.com/windows/windows-10-s).
+Ce test vous permet de créer des applications Pont du bureau plus performantes à exécuter sur des ordinateurs [Windows 10 S](https://www.microsoft.com/windows/windows-10-s).
 
 **Détails du test**  
 Ce test vérifie tous les fichiers exécutables inclus dans des fichiers archivés ou du contenu à extraction automatique. Comme les fichiers exécutables inclus dans ce type de contenu ne sont pas signés lors de l’intégration au Windows Store, l’application risque de ne pas fonctionner comme prévu sur les systèmes Windows 10 S.
@@ -72,7 +72,7 @@ Ce test vérifie tous les fichiers exécutables inclus dans des fichiers archiv�
 #### <a name="42-blocked-executables"></a>4.2 Fichiers exécutables bloqués
 
 **Arrière-plan**  
-Ce test vous permet de créer des applications Pont de bureau plus performantes pour s’exécuter sur les machines [Windows 10 S](https://www.microsoft.com/windows/windows-10-s). 
+Ce test vous permet de créer des applications Pont du bureau plus performantes à exécuter sur des ordinateurs [Windows 10 S](https://www.microsoft.com/windows/windows-10-s). 
 
 **Détails du test**  
 Ce test vérifie si l’application tente de lancer des fichiers exécutables, ce qui est limité sur les systèmes Windows 10 S. Les applications qui reposent sur cette fonctionnalité risquent de ne pas fonctionner comme prévu sur les systèmes Windows 10 S. 
@@ -101,7 +101,7 @@ Si au moins une de ces fonctionnalités est déclarée, le test affiche un messa
 Envisagez de supprimer la fonctionnalité à usage spécial si votre application n’en a pas besoin. Par ailleurs, l’utilisation de ces fonctionnalités est sujette à un examen supplémentaire de la stratégie d’intégration.
 
 ### <a name="2-app-manifest-resources-tests"></a>2. Tests des ressources du manifeste d’application 
-#### <a name="21-app-resources-validation"></a>2.1 Validation des ressources d’application
+#### <a name="21-app-resources-validation"></a>2.1 Validation des ressources de l’application
 Votre application risque de ne pas s’installer correctement si les chaînes ou les images déclarées dans son manifeste sont incorrectes. Si l’application s’installe avec ces erreurs, son logo ou d’autres images associées risquent de ne pas s’afficher correctement.    
 
 **Détails du test**  
@@ -110,7 +110,7 @@ Inspecte les ressources définies dans le manifeste de l’application afin de v
 **Action corrective**  
 Inspirez-vous du tableau suivant.
 
-Message d'erreur | Commentaires
+Message d’erreur | Commentaires
 --------------|---------
 L’image {image name} définit à la fois les qualificateurs Scale et TargetSize ; vous ne pouvez définir qu’un seul qualificateur à la fois. | Vous pouvez personnaliser les images pour différentes résolutions. Dans le message réel, {image name} représente le nom de l’image affectée par l’erreur. Assurez-vous que chaque image définit Scale ou TargetSize comme qualificateur. 
 L’image {image name} ne respecte pas les restrictions imposées pour la taille.  | Assurez-vous que toutes les images de l’application adhèrent aux restrictions définissant la taille appropriée. Dans le message réel, {image name} représente le nom de l’image affectée par l’erreur. 
@@ -121,7 +121,7 @@ L’image « BadgeLogo » a une valeur ABGR « {value} » non valide pour un
 L’image doit définir au moins un type Variant sans qualificateur TargetSize. Elle doit définir un qualificateur Scale ou laisser Scale et TargetSize non spécifiés, ce qui donne la valeur par défaut Scale-100.  | Pour plus d’informations, consultez les guides sur la [conception réactive](https://docs.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design) et [les ressources d’application](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data). 
 Un fichier « resources.pri » manque dans le package.  | Si le manifeste de votre application comporte du contenu localisable, veillez à ce que le package de votre application contienne un fichier resources.pri valide. 
 Le fichier « resources.pri » doit contenir un mappage des ressources avec un nom qui correspond au nom du package « {package full name} ».  | Vous pouvez obtenir cette erreur si le manifeste a changé et que le nom du mappage de ressources dans resources.pri ne correspond plus au nom du package dans le manifeste. Dans le message réel, {package full name} représente le nom du package que resources.pri doit contenir. Pour résoudre ce problème, vous devez régénérer resources.pri ; la façon la plus facile de le faire consiste à régénérer le package de l’application. 
-La fusion automatique ne doit pas être activée pour le fichier « resources.pri ».  | MakePRI.exe prend en charge une option appelée AutoMerge. La valeur par défaut de AutoMerge est off. Lorsque l’option AutoMerge est activée, elle fusionne les ressources du module linguistique d’une application en un fichier resources.pri unique au moment de l’exécution. Ce n’est pas recommandé pour les applications que vous envisagez de distribuer via le Microsoft Store. Le fichier Resources. pri d’une application distribuée par le biais du Microsoft Store doit se trouver à la racine du package de l’application et contenir toutes les références de langage prises en charge par l’application. 
+La fusion automatique ne doit pas être activée pour le fichier « resources.pri ».  | MakePRI.exe prend en charge une option appelée AutoMerge. La valeur par défaut d’AutoMerge est Désactivée. Lorsque l’option AutoMerge est activée, elle fusionne les ressources du module linguistique d’une application en un fichier resources.pri unique au moment de l’exécution. Ce paramétrage est déconseillé pour les applications que vous envisagez de distribuer par le biais du Microsoft Store. Le fichier resources.pri d’une application distribuée par le biais du Microsoft Store doit se trouver à la racine du package de l’application et contenir toutes les références linguistiques prises en charge par l’application. 
 La chaîne « {string} » ne respecte pas la limite maximale de {number} caractères.  | Consultez les [Exigences relatives aux packages d’applications](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements). Dans le message réel, {string} est remplacé par la chaîne affectée par l’erreur et {number} représente la longueur maximale. 
 La chaîne {string} ne doit pas comporter d’espace de début/fin.  | Le schéma des éléments du manifeste de l’application n’autorise pas les espaces de début ou de fin. Dans le message réel, {string} est remplacé par la chaîne affectée par l’erreur. Assurez-vous qu’aucune des valeurs localisées des champs du manifeste dans resources.pri ne possède d’espaces de début ou de fin. 
 La chaîne ne doit pas être vide (sa longueur doit être supérieure à zéro).  | Pour plus d’informations, voir [Exigences relatives aux packages d’applications](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements). 
@@ -142,7 +142,7 @@ Le test réussit si les images utilisées par l’application ne sont pas des im
 **Actions correctives**  
 Remplacez les images par défaut par quelque chose de plus singulier et de plus représentatif de votre application.
 
-### <a name="3-package-compliance-tests"></a>3. Tests de conformité de package
+### <a name="3-package-compliance-tests"></a>3. Tests de conformité du package
 #### <a name="31-app-manifest"></a>3.1 Manifeste de l’application
 Teste le contenu du manifeste de l’application pour vérifier qu’il est correct.
 
@@ -151,10 +151,10 @@ Les applications doivent avoir un manifeste d’application correctement mis en 
 
 **Détails du test**  
 Examine le manifeste de l’application afin de vérifier que son contenu est correct, comme décrit dans [Exigences relatives aux packages d’applications](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements). Les vérifications suivantes sont effectuées au cours de ce test :
-* **Extensions de fichier et protocoles**  
+* **Extensions de fichiers et protocoles**  
 Votre application peut déclarer les types de fichier auxquels elle peut être associée. L’expérience utilisateur est plus médiocre si une déclaration contient un grand nombre de types de fichier inhabituels. Ce test limite le nombre d’extensions de fichier auxquelles une application peut être associée.
-* **Règle de dépendance du Framework**  
-Ce test applique la spécification selon laquelle les applications déclarent des dépendances appropriées sur la plateforme Windows universelle (UWP). En cas de dépendance inappropriée, ce test échoue. En cas d’incompatibilité entre la version du système d’exploitation ciblée par l’application et les dépendances d’infrastructure établies, le test échoue. Le test échoue également si l’application fait référence à des versions « d’évaluation » des DLL d’infrastructure.
+* **Règle de dépendance de framework**  
+Ce test applique la spécification selon laquelle les applications déclarent des dépendances appropriées sur la plateforme Windows universelle (UWP). En cas de dépendance inappropriée, ce test échoue. En cas d’incompatibilité entre la version du système d’exploitation ciblée par l’application et les dépendances de framework établies, le test échoue. Le test échoue également si l’application fait référence à des versions « d’évaluation » des DLL de framework.
 * **Vérification de la communication entre processus (IPC)**  
 Ce test applique la spécification selon laquelle les applications Pont du bureau ne communiquent pas en dehors du conteneur d’application avec des composants de bureau. La communication entre processus ne concerne que les applications chargées latéralement. Les applications qui spécifient l’attribut [**ActivatableClassAttribute**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-activatableclassattribute) avec `DesktopApplicationPath` comme nom échouent à ce test.  
 
@@ -162,11 +162,11 @@ Ce test applique la spécification selon laquelle les applications Pont du burea
 Confrontez le manifeste de l’application aux exigences décrites dans [Exigences relatives aux packages d’applications](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements).
 
 
-#### <a name="32-application-count"></a>3.2 Nombre d’applications
+#### <a name="32-application-count"></a>3.2 Nombre d'applications
 Ce test vérifie qu’un package d’application (.appx, ensemble d’applications) contient une application. 
 
 **Arrière-plan**  
-Ce test est implémenté conformément à la politique du Windows Store. 
+Ce test est implémenté conformément à la stratégie du Store. 
 
 **Détails du test**  
 Ce test vérifie que le nombre total de packages .appx contenus dans l’ensemble d’applications est inférieur à 512, et qu’il n’existe qu’un seul package « principal » dans cet ensemble d’applications. Il vérifie également que le numéro de révision de la version de l’ensemble d’applications est défini sur 0. 
@@ -183,10 +183,10 @@ Ce test vérifie si l’application installe ou met à jour de nouveaux pilotes 
 Le test recherche dans le fichier registry.dat des mises à jour pour des emplacements de Registre spécifiques qui indiquent un nouveau service ou un nouveau pilote enregistré. Si l’application tente d’installer un pilote ou un service, le test échoue.  
 
 **Actions correctives**  
-Passez en revue les échecs et supprimez les services ou pilotes en question s’ils sont inutiles. Si l’application dépend de ces derniers, vous devez la réviser si vous souhaitez l’intégrer au Windows Store.
+Passez en revue les échecs et supprimez les services ou pilotes en question s’ils sont inutiles. Si l’application dépend de ces derniers, vous devez la réviser si vous souhaitez l’intégrer au Store.
 
 
-### <a name="4-platform-appropriate-files-test"></a>4. Test des fichiers appropriés de la plateforme
+### <a name="4-platform-appropriate-files-test"></a>4. Test des fichiers appropriés à la plateforme
 Les applications qui installent des fichiers binaires mixtes peuvent se bloquer ou ne pas s’exécuter correctement sur l’architecture du processeur de l’utilisateur. 
 
 **Arrière-plan**  
@@ -197,7 +197,7 @@ Le test vérifie que le nombre de bits figurant dans l’en-tête exécutable po
 
 **Actions correctives**  
 Suivez les recommandations suivantes pour vous assurer que votre package d’application contient uniquement des fichiers pris en charge par l’architecture spécifiée dans le manifeste d’application : 
-* Si l’architecture du processeur cible de votre application est de type Processeur neutre, le package d’application ne peut pas contenir des fichiers binaires x86, x64 ou ARM, ni de fichiers de type image.
+* Si l’architecture du processeur cible de votre application a un type de processeur Neutre, le package d’application ne peut pas contenir des fichiers binaires x86, x64 ou ARM, ni de fichiers de types d’images.
 * Si l’architecture du processeur cible de votre application a un type de processeur x86, le package d’application doit uniquement contenir des fichiers binaires x86 ou des fichiers de types d’images. Si le package contient des fichiers binaires x64 ou ARM, ou des fichiers de types d’images, il échouera au test.
 * Si l’architecture du processeur cible de votre application a un type de processeur x64, le package d’application doit contenir des fichiers binaires x64 ou des fichiers de types d’images. Notez que, dans ce cas, le package peut également inclure des fichiers x86, mais l’expérience d’application principale doit utiliser le fichier binaire x64. Si le package contient des fichiers binaires ARM ou des fichiers de type image, ou s’il contient *uniquement* des fichiers binaires x86 ou des fichiers de type image, il échoue au test.
 * Si l’architecture du processeur cible de votre application a un type de processeur ARM, le package d’application doit uniquement contenir des fichiers binaires ARM ou des fichiers de types d’images. Si le package contient des fichiers binaires x64 ou x86, ou des fichiers de types d’images, il échouera au test. 
@@ -210,17 +210,17 @@ Les applications Pont du bureau peuvent tirer parti de certaines API Win32 hér
  
 **Détails du test**  
 Ce test vérifie tous les composants UWP de l’application :
-* Vérifie que chaque binaire managé dans le package d’application n’a pas de dépendance sur une API Win32 qui n’est pas prise en charge pour le développement d’applications UWP en vérifiant la table d’adresses d’importation du fichier binaire.
+* S’assure que chaque fichier binaire managé dans le package d’application n’est pas dépendant d’une API Win32 non prise en charge pour le développement d’applications UPW en vérifiant la table des adresses d’importation du fichier binaire.
 * Vérifie que chaque fichier binaire managé dans le package d’application n’est pas dépendant d’une fonction en dehors du profil approuvé. 
 
 **Actions correctives**  
 Ce peut être corrigé en vous assurant que l’application a été compilée comme une version commerciale et non comme une version de débogage. 
 
 > [!NOTE]
-> La version Debug d’une application échouera pour ce test même si l’application utilise uniquement [des API pour les applications UWP](https://docs.microsoft.com/uwp/). Examinez les messages d’erreur pour identifier l’API présente qui n’est pas une API autorisée pour les applications UWP. 
+> La version de débogage d’une application échoue à ce test même si l’application utilise uniquement des [API pour applications UPW](https://docs.microsoft.com/uwp/). Passez en revue les messages d’erreur pour identifier l’API présente qui n’est pas autorisée pour les applications UWP. 
 
 > [!NOTE]
-> C++les applications générées dans une configuration de débogage échouent dans ce test, même si la configuration utilise uniquement des API du SDK Windows pour les applications UWP. Pour plus d’informations, consultez [alternatives aux API Windows dans les applications UWP](https://docs.microsoft.com/uwp/win32-and-com/win32-and-com-for-uwp-apps) .
+> Les applications C++ générées dans une configuration de débogage échouent à ce test même si la configuration utilise uniquement des API du SDK Windows pour les applications UPW. Pour plus d’informations, consultez [Alternatives aux API Windows dans les applications UWP](https://docs.microsoft.com/uwp/win32-and-com/win32-and-com-for-uwp-apps).
 
 ### <a name="6-user-account-control-uac-test"></a>6. Test du contrôle de compte d’utilisateur (UAC)  
 
@@ -228,13 +228,13 @@ Ce peut être corrigé en vous assurant que l’application a été compilée co
 Le test s’assure que l’application ne demande pas de contrôle de compte d’utilisateur lors de l’exécution.
 
 **Détails du test**  
-Une application ne peut pas demander une élévation d’administrateur ou un UIAccess par Microsoft Store stratégie. Les autorisations de sécurité élevées ne sont pas prises en charge. 
+Une application ne peut pas demander une élévation des droits d’administrateur ni UIAccess conformément à la politique du Microsoft Store. Les autorisations de sécurité élevées ne sont pas prises en charge. 
 
 **Actions correctives**  
 Les applications doivent s’exécuter en tant qu’utilisateur interactif. Pour plus d’informations, voir [Vue d’ensemble de la sécurité UI Automation](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-security-overview?redirectedfrom=MSDN).
 
  
-### <a name="7-windows-runtime-metadata-validation"></a>7. Validation des métadonnées Windows Runtime
+### <a name="7-windows-runtime-metadata-validation"></a>7. Validation des métadonnées Windows Runtime
 **Arrière-plan**  
 S’assure que les composants fournis avec une application sont conformes au système de type UWP.
 
@@ -250,38 +250,38 @@ Vérifiez que le compilateur que vous utilisez pour générer vos types est conf
 Assurez-vous que toutes les propriétés d’une classe UWP disposent d’une méthode `get` (les méthodes `set` sont facultatives). Pour toutes les propriétés, vérifiez que le type retourné par la méthode `get` correspond au type du paramètre d’entrée de la méthode `set`.
 * **Emplacement du type**  
 Vérifiez que les métadonnées de tous les types UWP se trouvent dans le fichier .winmd dont le nom correspondant à l’espace de noms est le plus long du package d’application.
-* **Nom de type respect de la casse**  
+* **Respect de la casse du nom du type**  
 Vérifiez que tous les types UWP de votre package d’application ont un nom unique qui ne respecte pas la casse. S’assure également qu’aucun nom de type UWP n’est utilisé comme nom d’espace de noms dans votre package d’application.
-* **Exactitude du nom de type**  
+* **Exactitude du nom du type**  
 Vérifiez qu’aucun type UWP ne se trouve dans l’espace de noms global ni dans l’espace de noms Windows de niveau supérieur.
  
 
-### <a name="8-windows-security-features-tests"></a>8. Tests des fonctionnalités de sécurité Windows
+### <a name="8-windows-security-features-tests"></a>8. Test des fonctionnalités de sécurité Windows
 La modification des protections de sécurité Windows par défaut peut exposer les clients à des risques accrus. 
 
 #### <a name="81-banned-file-analyzer"></a>8.1 Analyseur de fichiers non autorisés
 **Arrière-plan**  
-Certains fichiers ont été mis à jour avec l’apport d’améliorations importantes en matière de sécurité et de fiabilité entre autres. Les applications Pont du bureau Windows doivent contenir les toutes dernières versions de ces fichiers, car les versions obsolètes présentent un risque. Le Kit de certification des applications Windows bloque ces fichiers afin de garantir que toutes les applications utilisent la version actuelle.
+Certains fichiers ont été mis à jour avec l’apport d’améliorations importantes en matière de sécurité et de fiabilité, entre autres. Les applications Pont du bureau Windows doivent contenir les toutes dernières versions de ces fichiers, car les versions obsolètes présentent un risque. Le Kit de certification des applications Windows bloque ces fichiers afin de garantir que toutes les applications utilisent la version actuelle.
 
 **Détails du test**  
 L’analyseur de fichiers non autorisés du Kit de certification des applications Windows vérifie actuellement les fichiers suivants :
-* *Bing. Maps. JavaScript\js\veapicore.js*  
+* *Bing.Maps.JavaScript\js\veapicore.js*  
 Cette vérification échoue généralement si une application utilise une version « Release Preview » du fichier et non la dernière version officielle. 
 
 **Actions correctives**  
-Pour corriger ce point, utilisez la version la plus récente du [Kit de développement logiciel (SDK) Bing Maps](https://www.bingmapsportal.com/) pour les applications UWP.
+Pour résoudre ce problème, utilisez la dernière version du [Kit de développement logiciel (SDK) Bing Maps](https://www.bingmapsportal.com/) pour les applications UWP.
 
-#### <a name="82-private-code-signing"></a>8.2 Signature de code privé
+#### <a name="82-private-code-signing"></a>8.2 Code de signature privé
 Teste l’existence de fichiers binaires de signature de code privé dans le package de l’application. 
 
 **Arrière-plan**  
 Les fichiers de signature de code privé doivent demeurer privés car ils peuvent être utilisés à des fins malveillantes s’ils sont compromis. 
 
 **Détails du test**  
-Recherche dans le package de l’application les fichiers portant l’extension .pfx ou .snk qui indique la présence de clés de signature privée. 
+Recherche dans le package de l’application les fichiers portant l’extension .pfx ou .snk qui indiquent la présence de clés de signature privées. 
 
 **Actions correctives**  
-Supprimez du package toute clé de signature de code privé (par exemple, les fichiers .pfx et .snk).
+Supprimez du package toute clé de code de signature privé (par exemple, les fichiers .pfx et .snk).
 
 
 ## <a name="related-topics"></a>Rubriques connexes
