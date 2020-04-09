@@ -6,20 +6,20 @@ ms.date: 02/21/2018
 ms.topic: article
 keywords: windows 10, uwp, jeux, .net, unity
 ms.localizationpriority: medium
-ms.openlocfilehash: 878a598c8a0b71e4ee394f7f98c215e5462b44e7
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: df93fbeb3a879a84873827a5ead926f96b02adcc
+ms.sourcegitcommit: 8ee0752099170aaf96c7cb105f7cc039b6e7ff06
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368431"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80968055"
 ---
 # <a name="missing-net-apis-in-unity-and-uwp"></a>API .NET manquantes dans Unity et UWP
 
 Lorsque vous créez un jeu UWP à l’aide de .NET, vous pouvez constater que certaines API susceptibles d’être utilisées dans l’éditeur Unity ou pour un jeu autonome pour PC ne sont pas disponibles pour UWP. Cela s’explique par le fait que .NET pour les applications UWP inclut un sous-ensemble des types fournis dans .NET Framework pour chaque espace de noms.
 
-En outre, certains moteurs de jeu utilisent d’autres versions de .NET qui ne sont pas entièrement compatibles avec .NET pour UWP, telles que Mono de Unity. Par conséquent, lorsque vous écrivez votre jeu, tout peut fonctionner correctement dans l’éditeur, mais lorsque vous accédez à générer pour UWP, vous pouvez obtenir ce type d’erreur : **Les type ou espace de noms 'formateurs' n’existent pas dans l’espace de noms « System.Runtime.Serialization » (vous manque-t-il une référence d’assembly ?)**
+En outre, certains moteurs de jeu utilisent d’autres versions de .NET qui ne sont pas entièrement compatibles avec .NET pour UWP, telles que Mono de Unity. Par conséquent, lorsque vous écrivez votre jeu, tout peut fonctionner correctement dans l’éditeur, mais lorsque vous créez le jeu pour UWP, vous pouvez obtenir des erreurs telles que : **Le type ou l’espace de noms « Formatters » n’existe pas dans l’espace de noms « System.Runtime.Serialization » (une référence d’assembly est-elle manquante ?)**
 
-Heureusement, Unity fournit certaines de ces API manquantes en tant que méthodes d’extension et les types de remplacement, qui sont décrites dans [plateforme Windows universelle : Types .NET sur la création de scripts serveur principal .NET manquants](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html). Toutefois, si la fonctionnalité dont vous avez besoin n’est pas disponible ici, la rubrique [Vue d’ensemble de .NET pour les applications Windows 8.x](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140)) explique comment vous pouvez convertir votre code pour utiliser WinRT ou .NET pour les API UWP. (Elle décrit Windows 8, mais s’applique également aux applications UWP Windows 10.)
+Heureusement, Unity fournit certaines des API manquantes en tant que méthodes d’extension et types de remplacement, comme décrit dans [Plateforme Windows universelle : types .NET manquants sur le serveur principal de script .NET](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html). Toutefois, si la fonctionnalité dont vous avez besoin n’est pas disponible ici, la rubrique [Vue d’ensemble de .NET pour les applications Windows 8.x](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140)) explique comment vous pouvez convertir votre code pour utiliser WinRT ou .NET pour les API UWP. (Elle décrit Windows 8, mais s’applique également aux applications UWP Windows 10.)
 
 ## <a name="net-standard"></a>.NET Standard
 
@@ -43,7 +43,7 @@ Enfin, vous devez définir la valeur de **Api Compatibility Level** sur la versi
 
 En règle générale, pour **Scripting Runtime Version** et **Api Compatibility Level**, vous devez sélectionner la dernière version disponible, pour obtenir une meilleure compatibilité avec .NET Framework et ainsi, pouvoir utiliser un plus grand nombre d’API .NET.
 
-![Configuration : Scripts de Version du Runtime ; Écriture de scripts serveur principal ; Niveau de compatibilité d’API](images/missing-dot-net-apis-in-unity-1.png)
+![Configuration : Scripting Runtime Version; Scripting Backend; Api Compatibility Level](images/missing-dot-net-apis-in-unity-1.png)
 
 ## <a name="platform-dependent-compilation"></a>Compilation dépendante de la plateforme
 
@@ -60,7 +60,7 @@ Utilisez les directives suivantes pour compiler le code uniquement lors de l’e
 ```
 
 > [!NOTE]
-> `NETFX_CORE` vise uniquement à vérifier si vous êtes compilation C# code par rapport au serveur de script .NET. Si vous utilisez un autre serveur principal de script tel que IL2CPP, utilisez `UNITY_WSA_10_0` à la place.
+> `NETFX_CORE` est destiné uniquement à vérifier si vous compilez C# le code par rapport au serveur principal de script .net. Si vous utilisez un autre serveur principal de script, tel que IL2CPP, utilisez [`ENABLE_WINMD_SUPPORT`](https://docs.unity3d.com/Manual/windowsstore-code-snippets.html) à la place.
 
 Pour obtenir la liste complète des directives de compilation dépendante de la plateforme, voir [Platform dependent compilation](https://docs.unity3d.com/Manual/PlatformDependentCompilation.html).
 
@@ -88,7 +88,7 @@ private void Save()
 }
 ```
 
-### <a name="io-operations"></a>Opérations d’E/S
+### <a name="io-operations"></a>opérations d'E/S
 
 Quelques types de l’espace de noms [System.IO](https://docs.microsoft.com/dotnet/api/system.io), par exemple [FileStream](https://docs.microsoft.com/dotnet/api/system.io.filestream), ne sont pas disponibles dans les versions précédentes de .NET Standard. Toutefois, Unity fournit les types [Directory](https://docs.microsoft.com/dotnet/api/system.io.directory), [File](https://docs.microsoft.com/dotnet/api/system.io.file) et **FileStream** afin que vous les utilisiez dans votre jeu.
 
@@ -96,7 +96,7 @@ Vous pouvez également utiliser les API [Windows.Storage](https://docs.microsoft
 
 Il est important de noter que la méthode [Close](https://docs.microsoft.com/dotnet/api/system.io.stream.close) est uniquement disponible dans .NET Standard 2.0 et versions ultérieures (même si Unity fournit une méthode d’extension). Utilisez [Dispose](https://docs.microsoft.com/dotnet/api/system.io.stream.dispose) à la place.
 
-### <a name="threading"></a>Thread
+### <a name="threading"></a>Threads
 
 Quelques types de l’espace de noms [System.Threading](https://docs.microsoft.com/dotnet/api/system.threading), par exemple [ThreadPool](https://docs.microsoft.com/dotnet/api/system.threading.threadpool), ne sont pas disponibles dans les versions précédentes de .NET Standard. Dans ces cas, vous pouvez utiliser l’espace de noms [Windows.System.Threading](https://docs.microsoft.com/uwp/api/windows.system.threading) à la place.
 
@@ -144,6 +144,6 @@ Dans le cas de **System.Net. Messagerie**, utilisez l'espace de noms [Windows.Ap
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Universal Windows Platform : Types .NET manquants sur la création de scripts serveur principal .NET](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html)
-* [.NET pour une vue d’ensemble des applications UWP](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140))
-* [Guides de portage Unity UWP](https://unity3d.com/partners/microsoft/porting-guides)
+* [Plateforme Windows universelle : types .NET absents sur le serveur principal de script .NET](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html)
+* [Vue d’ensemble de .NET pour les applications UWP](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140))
+* [Guides de Portage UWP Unity](https://unity3d.com/partners/microsoft/porting-guides)
