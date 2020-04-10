@@ -11,12 +11,12 @@ pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 0821ebaa300d6641cf4efe8f96f1ae8878877a88
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 35613366078531a9e342df0b4314d049fde844e9
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258133"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081574"
 ---
 # <a name="semantic-zoom"></a>Zoom sémantique
 
@@ -39,7 +39,7 @@ Par exemple, s’il consulte un carnet d’adresses, l’utilisateur peut effect
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
-Utilisez un contrôle **SemanticZoom** quand vous avez besoin d’afficher un jeu de données regroupées trop grand pour être affiché sur une ou deux pages.
+Utilisez un contrôle **SemanticZoom** quand vous avez besoin d’afficher un jeu de données groupées trop volumineux pour tenir sur une ou deux pages.
 
 Ne confondez pas le zoom sémantique avec le zoom optique. Ces deux types de zoom interagissent et se comportent fondamentalement de la même façon (en affichant des données plus ou moins détaillées selon le facteur de zoom choisi), mais le zoom optique sert à ajuster le grossissement d’une zone de contenu ou d’un objet, tel qu’une photographie. Pour plus d’informations sur le contrôle qui effectue un zoom optique, voir le contrôle [ScrollViewer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer).
 
@@ -48,7 +48,7 @@ Ne confondez pas le zoom sémantique avec le zoom optique. Ces deux types de zoo
 <table>
 <th align="left">Galerie de contrôles XAML<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/SemanticZoom">ouvrir l’application et voir l’objet SemanticZoom en action</a>.</p>
     <ul>
@@ -73,7 +73,7 @@ Un carnet d’adresses est un autre exemple de jeu de données dans lequel la na
 
 ## <a name="create-a-semantic-zoom"></a>Créer un zoom sémantique
 
-Le contrôle **SemanticZoom** n’a pas de représentation visuelle propre. Il s’agit d’un contrôle hôte qui gère la transition entre 2 autres contrôles qui fournissent les vues de votre contenu, généralement les contrôles **ListView** ou **GridView**.  Vous définissez les contrôles d’affichage sur les propriétés [ZoomedInView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.semanticzoom.zoomedinview) et [ZoomedOutView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.semanticzoom.zoomedoutview) de SemanticZoom.
+Le contrôle **SemanticZoom** n’a pas de représentation visuelle propre. Il s’agit d’un contrôle hôte qui gère la transition entre deux autres contrôles qui fournissent les vues de votre contenu, généralement les contrôles **ListView** ou **GridView**.  Vous définissez les contrôles d’affichage sur les propriétés [ZoomedInView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.semanticzoom.zoomedinview) et [ZoomedOutView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.semanticzoom.zoomedoutview) de SemanticZoom.
 
 Les 3 éléments dont vous avez besoin pour un zoom sémantique sont les suivants :
 - Une source de données regroupées. (Les groupes sont définis par la définition GroupStyle dans la vue avec zoom avant.)
@@ -201,7 +201,7 @@ private void SemanticZoom_ViewChangeStarted(object sender, SemanticZoomViewChang
 ## <a name="related-articles"></a>Articles connexes
 
 - [Notions de base de la conception de la navigation](../basics/navigation-basics.md)
-- [Vue Liste et vue Grille](listview-and-gridview.md)
+- [Mode Liste et affichage Grille](listview-and-gridview.md)
 - [Modèles et conteneurs d’éléments](item-containers-templates.md)
 
 

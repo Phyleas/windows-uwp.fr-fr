@@ -8,7 +8,7 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8db56882833b9d3bd8a6d2932d04e07a72b205e2
 ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 05/29/2019
 ms.locfileid: "66365249"
@@ -89,7 +89,7 @@ Les propriétés de rotation peuvent spécifier une valeur positive ou négative
 
 Vous pouvez déplacer le centre de rotation à l’aide des propriétés [**CenterOfRotationX**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.centerofrotationx), [**CenterOfRotationY**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.centerofrotationy) et [**CenterOfRotationZ**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.centerofrotationz). Par défaut, les axes de rotation passent directement par le centre de l’objet, obligeant celui-ci à pivoter autour de son centre. Toutefois, si vous déplacez le centre de rotation vers le bord externe de l’objet, celui-ci pivotera autour de ce bord. La valeur par défaut des propriétés**CenterOfRotationX** et **CenterOfRotationY** est 0,5, tandis que la valeur par défaut de la propriété **CenterOfRotationZ** est 0. Dans le cas des propriétés **CenterOfRotationX** et **CenterOfRotationY**, les valeurs comprises entre 0 et 1 définissent le point pivot à un emplacement dans l’objet. La valeur 0 désigne un bord de l’objet, tandis que la valeur 1 représente le bord opposé. Les valeurs en dehors de cette plage sont autorisées et entraînent le déplacement du centre de rotation. Étant donné que l’axe Z du centre de rotation passe par le plan de l’objet, vous pouvez déplacer le centre de rotation derrière l’objet, à l’aide d’un nombre négatif, et devant l’objet (vers vous), à l’aide d’un nombre positif.
 
-[**CenterOfRotationX** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.centerofrotationx) déplace le centre de rotation le long de parallèle à l’objet lors de l’axe des x [ **CenterOfRotationY** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.centerofrotationy) déplace le centre ou la rotation le long de l’axe des y l’objet. Les illustrations suivantes montrent l’utilisation de différentes valeurs pour la propriété **CenterOfRotationY**.
+La propriété [**CenterOfRotationX**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.centerofrotationx) déplace le centre de rotation le long de la parallèle de l’axe X de l’objet, tandis que la propriété [**CenterOfRotationY**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.centerofrotationy) déplace le centre de rotation le long de l’axe Y de l’objet. Les illustrations suivantes montrent l’utilisation de différentes valeurs pour la propriété **CenterOfRotationY**.
 
 ```xml
 <Image Source="kid.png">
@@ -99,7 +99,7 @@ Vous pouvez déplacer le centre de rotation à l’aide des propriétés [**Cent
 </Image>
 ```
 
-**CenterOfRotationY = "0.5" (default)**
+**CenterOfRotationY = "0.5" (par défaut)**
 
 ![CenterOfRotationY égal à 0.5](images/3drotatexminus35.png)
 ```xml
@@ -124,7 +124,7 @@ Comme vous pouvez le constater, l’image pivote autour du centre lorsque la pro
 </Image>
 ```
 
-**CenterOfRotationX = "0.5" (default)**
+**CenterOfRotationX = "0.5" (par défaut)**
 
 ![CenterOfRotationX égal 0.5](images/3drotateyminus35.png)
 ```xml
@@ -135,7 +135,7 @@ Comme vous pouvez le constater, l’image pivote autour du centre lorsque la pro
 </Image>
 ```
 
-**CenterOfRotationX = "0.9" (right-hand edge)**
+**CenterOfRotationX = "0.9" (bord droit)**
 
 ![CenterOfRotationX égal à 0.9](images/3dcenterofrotationx0point9.png)
 
@@ -145,12 +145,12 @@ Utilisez la propriété [**CenterOfRotationZ**](https://docs.microsoft.com/uwp/a
 
 À ce stade, vous avez appris comment faire pivoter un objet dans l’espace. Vous pouvez positionner ces objets pivotés dans l’espace les uns par rapport aux autres à l’aide des propriétés suivantes :
 
--   [**LocalOffsetX** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.localoffsetx) déplace un objet le long de l’axe des abscisses du plan d’un objet pivoté.
--   [**LocalOffsetY** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.localoffsety) déplace un objet le long de l’axe des ordonnées du plan d’un objet pivoté.
--   [**LocalOffsetZ** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.localoffsetz) déplace un objet le long de l’axe z du plan d’un objet pivoté.
--   [**GlobalOffsetX** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.globaloffsetx) déplace un objet le long de l’axe des abscisses aligné sur l’écran.
--   [**GlobalOffsetY** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.globaloffsety) déplace un objet le long de l’axe des ordonnées aligné sur l’écran.
--   [**GlobalOffsetZ** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.globaloffsetz) déplace un objet le long de l’axe des z aligné sur l’écran.
+-   La propriété [**LocalOffsetX**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.localoffsetx) déplace un objet le long de l’axe X du plan d’un objet pivoté.
+-   La propriété [**LocalOffsetY**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.localoffsety) déplace un objet le long de l’axe Y du plan d’un objet pivoté.
+-   La propriété [**LocalOffsetZ**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.localoffsetz) déplace un objet le long de l’axe Z du plan d’un objet pivoté.
+-   La propriété [**GlobalOffsetX**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.globaloffsetx) déplace un objet le long de l’axe X par rapport à l’écran.
+-   La propriété [**GlobalOffsetY**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.globaloffsety) déplace un objet le long de l’axe Y par rapport à l’écran.
+-   La propriété [**GlobalOffsetZ**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.globaloffsetz) déplace un objet le long de l’axe Z par rapport à l’écran.
 
 **Décalage local**
 
@@ -158,9 +158,9 @@ Les propriétés [**LocalOffsetX**](https://docs.microsoft.com/uwp/api/windows.u
 
 Dans l’exemple précédent, l’objet se déplace le long de son axe X. Au tout début de l’animation, lorsque la valeur de la propriété [**RotationY**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.rotationy) est proche de zéro (parallèle à l’écran), l’objet se déplace le long de l’écran dans le sens X, mais à mesure que l’objet pivote vers vous, il se déplace le long de l’axe X du plan de l’objet en votre direction. À l’opposé, si vous animez la propriété **RotationY** avec une ampleur de -65 degrés, l’objet dessine une courbe en s’éloignant de vous.
 
-[**LocalOffsetY** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.localoffsety) fonctionne de manière similaire à [ **LocalOffsetX**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.localoffsetx), sauf qu’elle se déplace le long de l’axe vertical, ainsi, la modification [ **RotationX** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.rotationx) affecte la direction **LocalOffsetY** déplace l’objet. Dans l’exemple suivant, la propriété **LocalOffsetY** est animée de 0 à 400 degrés, tandis que la propriété **RotationX** est animée de 0 à 65 degrés.
+La propriété [**LocalOffsetY**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.localoffsety) fonctionne de façon similaire à la propriété [**LocalOffsetX**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.localoffsetx), à la différence qu’elle opère un déplacement le long de l’axe vertical, si bien que la modification de la propriété [**RotationX**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.rotationx) a une incidence sur la direction dans laquelle la propriété **LocalOffsetY** déplace l’objet. Dans l’exemple suivant, la propriété **LocalOffsetY** est animée de 0 à 400 degrés, tandis que la propriété **RotationX** est animée de 0 à 65 degrés.
 
-[**LocalOffsetZ** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.localoffsetz) se traduit par l’objet perpendiculaire au plan de l’objet comme si un vecteur a été dessiné directement via le centre derrière l’objet out vers vous. Pour illustrer le fonctionnement de la propriété **LocalOffsetZ**, l’exemple suivant anime la propriété **LocalOffsetZ** entre 0 et 400 degrés et la propriété [**RotationX**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.rotationx) entre 0 et 65 degrés.
+La propriété [**LocalOffsetZ**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.localoffsetz) déplace l’objet perpendiculairement à son plan comme si un vecteur était dessiné directement au centre, de l’arrière de l’objet vers vous. Pour illustrer le fonctionnement de la propriété **LocalOffsetZ**, l’exemple suivant anime la propriété **LocalOffsetZ** entre 0 et 400 degrés et la propriété [**RotationX**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.rotationx) entre 0 et 65 degrés.
 
 Au début de l’animation, lorsque la valeur de la propriété [**RotationX**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.rotationx) est proche de zéro (parallèle à l’écran), l’objet se déplace directement vers vous, mais à mesure que la face de l’objet pivote vers le bas, celui-ci se déplace vers le bas.
 

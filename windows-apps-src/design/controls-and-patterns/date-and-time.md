@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 13901e044cbf6a14ac0ede6e9ed0f451859e49a1
-ms.sourcegitcommit: 4fdab7be28aca18cb3879fc205eb49edc4f9a96b
+ms.openlocfilehash: 202c1cb16e461d7cfbbe82cea999f1ed17523850
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77629150"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081062"
 ---
 # <a name="calendar-date-and-time-controls"></a>Contrôles de calendrier, de date et d’heure
 
@@ -30,7 +30,7 @@ Les contrôles de date et d’heure offrent aux utilisateurs des moyens standard
 <table>
 <th align="left">Galerie de contrôles XAML<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/category/DataInput">ouvrir l’application et voir ces contrôles en action</a>.</p>
     <ul>
@@ -67,7 +67,7 @@ L’affichage Calendrier se compose de 3 affichages distincts : l’affichage 
 
 ### <a name="calendar-date-picker"></a>Sélecteur de dates du calendrier
 
-Le sélecteur de dates de calendrier (**CalendarDatePicker**) est un contrôle déroulant optimisé pour la sélection d’une seule date dans un affichage calendrier, dans lequel les informations contextuelles comme le jour de la semaine ou l’exhaustivité du calendrier sont importantes. Vous pouvez modifier le calendrier pour fournir du contexte supplémentaire ou pour limiter les dates disponibles.
+Le sélecteur de dates de calendrier (**CalendarDatePicker**) est un contrôle déroulant optimisé pour la sélection d’une seule date dans un affichage calendrier, dans lequel les informations contextuelles comme le jour de la semaine ou l’intégralité du calendrier sont importantes. Vous pouvez modifier le calendrier pour fournir du contexte supplémentaire ou pour limiter les dates disponibles.
 
 Le point d’entrée affiche le texte de l’espace réservé si aucune date n’a été définie. Sinon, il affiche la date choisie. Lorsque l’utilisateur sélectionne le point d’entrée, un affichage de calendrier est développé pour que l’utilisateur sélectionne une date. Cet affichage de calendrier se superpose aux autres éléments de l’interface utilisateur ; il ne les ferme pas.
 

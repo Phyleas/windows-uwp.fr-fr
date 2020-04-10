@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 1dabfee25df08d933fc892c3ed6e46f3cc6f4513
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: e1e4874051554a8b725c7921a60a2c2429b18bc1
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66364031"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081457"
 ---
 # <a name="tooltips"></a>Info-bulles
 
@@ -25,7 +25,13 @@ Une info-bulle est une brève description qui est liée à un autre contrôle ou
 
 ![Info-bulle](images/controls/tool-tip.png)
 
-> **API importantes** : [classe ToolTip](/uwp/api/Windows.UI.Xaml.Controls.ToolTip), [classe ToolTipService](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.tooltipservice)
+**Obtenir la bibliothèque d’interface utilisateur Windows**
+
+|  |  |
+| - | - |
+| ![Logo WinUI](images/winui-logo-64x64.png) | La bibliothèque d’interface utilisateur Windows version 2.2 ou ultérieure inclut pour ce contrôle un nouveau modèle qui utilise des angles arrondis. Pour plus d’informations, consultez [Rayons des angles](/windows/uwp/design/style/rounded-corner). WinUI est un package NuGet qui contient de nouveaux contrôles et fonctionnalités d’interface utilisateur destinés aux applications UWP. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **API de plateforme** : [classe ToolTip](/uwp/api/Windows.UI.Xaml.Controls.ToolTip), [classe ToolTipService](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.tooltipservice)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
@@ -59,7 +65,7 @@ Quand utiliser une info-bulle Pour vous décider, posez-vous les questions suiva
 <table>
 <th align="left">Galerie de contrôles XAML<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/ToolTip">ouvrir l’application et voir le contrôle ToolTip en contexte</a>.</p>
     <ul>
@@ -96,7 +102,7 @@ toolTip.Content = "Click to submit";
 ToolTipService.SetToolTip(submitButton, toolTip);
 ```
 
-### <a name="content"></a>Contenu
+### <a name="content"></a>Content
 
 Vous pouvez utiliser n’importe quel objet comme [contenu](/uwp/api/windows.ui.xaml.controls.contentcontrol.content) d’une info-bulle. Voici un exemple d’utilisation d’une [image](/uwp/api/windows.ui.xaml.controls.image) dans une info-bulle.
 
@@ -125,7 +131,7 @@ Pour les ajustements larges, utilisez la propriété [Placement](/uwp/api/window
 </Image>
 ```
 
-Si une info-bulle masque le contenu auquel elle fait référence, vous pouvez ajuster son positionnement précisément à l’aide de la nouvelle propriété **PlacementRect**. PlacementRect ancre la position de l’info-bulle et agit comme une zone que l’info-bulle ne cachera pas, tant qu’il y a suffisamment d’espace à l’écran pour dessiner l’info-bulle en dehors de cette zone. Vous pouvez spécifier l’origine du rectangle par rapport au propriétaire de l’info-bulle, ainsi que la hauteur et la largeur de la zone d’exclusion. La propriété [Placement](/uwp/api/windows.ui.xaml.controls.tooltip.placement) permet de définir si l’info-bulle doit être dessinée au-dessus, en dessous, à gauche ou à droite de PlacementRect. 
+Si une info-bulle masque le contenu auquel elle fait référence, vous pouvez ajuster son positionnement précisément à l’aide de la nouvelle propriété **PlacementRect**. PlacementRect ancre la position de l’info-bulle et sert aussi de zone que l’info-bulle ne cache pas dans la mesure où il y a suffisamment d’espace à l’écran pour dessiner l’info-bulle en dehors de cette zone. Vous pouvez spécifier l’origine du rectangle par rapport au propriétaire de l’info-bulle ainsi que la hauteur et la largeur de la zone d’exclusion. La propriété [Placement](/uwp/api/windows.ui.xaml.controls.tooltip.placement) permet de définir si l’info-bulle doit être dessinée au-dessus, en dessous, à gauche ou à droite de PlacementRect. 
 
 ```xaml
 <!-- An Image with a non-occluding ToolTip. -->

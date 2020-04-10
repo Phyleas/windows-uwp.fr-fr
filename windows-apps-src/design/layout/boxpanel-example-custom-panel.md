@@ -14,7 +14,7 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 3fe1389e3c3db28f834217b4f163c48633c32d14
 ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71340167"
@@ -134,7 +134,7 @@ Que fait donc la passe de mesure ? Elle définit une valeur pour la propriété
 Ce panneau peut être utilisé quand le composant hauteur de *availableSize* est sans limite. Dans ce cas, le panneau n’a aucune hauteur connue à diviser. La logique de la passe de mesure signale alors à chaque enfant qu’il n’a pas encore de hauteur limitée. Pour cela, elle transmet un objet [**Size**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size) à l’appel de [**Measure**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure) pour les enfants pour lesquels la propriété [**Size.Height**](https://docs.microsoft.com/uwp/api/windows.foundation.size.height) est infinie. Cette opération est autorisée. Quand la méthode **Measure** est appelée, la logique veut que [**DesiredSize**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.desiredsize) prenne la plus petite de ces valeurs : la valeur transmise à **Measure** ou la taille naturelle de l’élément tirée de facteurs tels que les valeurs [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) et [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) définies de manière explicite.
 
 > [!NOTE]
-> La logique interne de [**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) présente également ce comportement : **StackPanel** passe une valeur de dimension infinie à [**mesurer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure) sur les enfants, ce qui indique qu’il n’y a aucune contrainte sur les enfants dans la dimension d’orientation. **StackPanel** se dimensionne en général de manière dynamique pour pouvoir accueillir tous les enfants d’une pile qui croît dans cette dimension.
+> La logique interne de [**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) présente aussi ce comportement : **StackPanel** passe une valeur de dimension infinie à [**Measure**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure) sur les enfants pour indiquer l’absence de contraintes sur les enfants de la dimension d’orientation. **StackPanel** se dimensionne en général de manière dynamique pour pouvoir accueillir tous les enfants d’une pile qui croît dans cette dimension.
 
 Toutefois, le panneau proprement dit ne peut pas retourner d’objet [**Size**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size) avec une valeur infinie à partir de [**MeasureOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.measureoverride) ; cela lève une exception durant la disposition. Une partie de la logique consiste donc à trouver la hauteur maximale demandée par chaque enfant et à utiliser cette hauteur comme hauteur de cellule dans le cas où elle ne provient pas déjà des propres contraintes de taille du panneau. Voici la fonction d’assistance `LimitUnboundedSize` référencée dans le code précédent, qui prend ensuite cette hauteur maximale de cellule et l’utilise pour donner au panneau une hauteur finie à retourner et garantit que `cellheight` est un nombre fini avant d’initier la passe d’organisation :
 
@@ -213,20 +213,20 @@ if (UseOppositeRCRatio) { aspectratio = 1 / aspectratio;}
 
 Et si le nombre d’enfants est dynamique ? C’est parfaitement possible ; votre code d’application peut ajouter des éléments aux collections en réponse à toute condition d’exécution dynamique que vous jugez assez importante pour devoir mettre à jour votre interface utilisateur. Si vous utilisez la liaison de données vers des collections ou des objets métier, l’obtention de ces mises à jour et la mise à jour de l’interface utilisateur sont gérées automatiquement. Il s’agit donc de la technique de prédilection (voir [Présentation détaillée de la liaison de données](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)).
 
-Mais les scénarios d’application ne se prêtent pas tous à la liaison de données. Parfois, vous devez créer de nouveaux éléments d’interface utilisateur au moment de l’exécution et les rendre visibles. `BoxPanel` est pour ce scénario. Une modification du nombre d’éléments enfants ne constitue pas un problème pour `BoxPanel`, car il utilise le nombre d’enfants dans les calculs et ajuste à la fois les éléments enfants nouveaux et existants pour qu’ils soient tous contenus dans la nouvelle disposition.
+Mais les scénarios d’application ne se prêtent pas tous à la liaison de données. Parfois, vous devez créer de nouveaux éléments d’interface utilisateur au moment de l’exécution et les rendre visibles. `BoxPanel` convient dans ce scénario. Une modification du nombre d’éléments enfants ne constitue pas un problème pour `BoxPanel`, car il utilise le nombre d’enfants dans les calculs et ajuste à la fois les éléments enfants nouveaux et existants pour qu’ils soient tous contenus dans la nouvelle disposition.
 
-Un scénario avancé pour étendre `BoxPanel` (non illustré ici) consisterait à la fois à gérer les enfants dynamiques et à utiliser la valeur [**DesiredSize**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.desiredsize) d’un enfant comme facteur prioritaire pour le dimensionnement des cellules individuelles. Ce scénario pourrait utiliser des tailles de lignes et de colonnes variables ou des formes autres que des grilles afin de réduire l’espace « perdu ». Cela requiert une stratégie afin de déterminer comment plusieurs rectangles de différentes tailles et proportions peuvent rentrer dans un rectangle contenant du point de vue esthétique et en cas de très petite taille. `BoxPanel` ne le fait pas ; elle utilise une technique plus simple pour diviser l’espace. la technique de `BoxPanel` consiste à déterminer le nombre le moins élevé qui est supérieur au nombre d’enfants. Par exemple, 9 éléments pourraient être contenus dans un carré de 3x3. 10 éléments nécessitent un carré de 4x4. Toutefois, vous pouvez souvent ajuster les éléments tout en supprimant une ligne ou une colonne dans le carré de départ, pour gagner de l’espace. Avec 10 éléments, par exemple, vous pourriez utiliser un rectangle de 4x3 ou de 3x4.
+Un scénario avancé pour étendre `BoxPanel` (non illustré ici) consisterait à la fois à gérer les enfants dynamiques et à utiliser la valeur [**DesiredSize**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.desiredsize) d’un enfant comme facteur prioritaire pour le dimensionnement des cellules individuelles. Ce scénario pourrait utiliser des tailles de lignes et de colonnes variables ou des formes autres que des grilles afin de réduire l’espace « perdu ». Cela requiert une stratégie afin de déterminer comment plusieurs rectangles de différentes tailles et proportions peuvent rentrer dans un rectangle contenant du point de vue esthétique et en cas de très petite taille. `BoxPanel` n’offre pas cette fonctionnalité. Il utilise une technique plus simple pour diviser l’espace. La technique employée par `BoxPanel` consiste à déterminer le plus petit nombre de carré supérieur au nombre d’enfants. Par exemple, 9 éléments pourraient être contenus dans un carré de 3x3. 10 éléments nécessitent un carré de 4x4. Toutefois, vous pouvez souvent ajuster les éléments tout en supprimant une ligne ou une colonne dans le carré de départ, pour gagner de l’espace. Avec 10 éléments, par exemple, vous pourriez utiliser un rectangle de 4x3 ou de 3x4.
 
 Vous vous demandez peut-être pourquoi le panneau ne choisirait pas plutôt un rectangle de 5x2 pour 10 éléments. En pratique, les panneaux sont dimensionnés sous la forme de rectangles qui ont rarement des proportions fortement orientées. La technique des moindres carrés permet à la logique de dimensionnement de bien fonctionner avec les formes de disposition classiques tout en évitant les dimensionnements où des proportions irrégulières sont appliquées aux cellules.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-**Faire**
+**Informations de référence**
 
-* [**FrameworkElement. ArrangeOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride)
-* [**FrameworkElement. MeasureOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.measureoverride)
-* [**Panneau**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel)
+* [**FrameworkElement.ArrangeOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride)
+* [**FrameworkElement.MeasureOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.measureoverride)
+* [**Panel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel)
 
 **Concepts**
 
-* [Alignement, marge et marge intérieure](alignment-margin-padding.md)
+* [Alignement, marge et espacement](alignment-margin-padding.md)

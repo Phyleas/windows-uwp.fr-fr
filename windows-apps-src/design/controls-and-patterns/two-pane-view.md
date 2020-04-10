@@ -6,12 +6,12 @@ ms.date: 01/22/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a070a72324408746f67b8814554160a76ee0ce4
-ms.sourcegitcommit: e4b48989c91cd77ba73c90d9eb9cd67b88d52f21
+ms.openlocfilehash: e151e06f0ebc838671aa1100d96e8e6f14de0739
+ms.sourcegitcommit: 8be8ed1ef4e496055193924cd8cea2038d2b1525
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79191652"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80614136"
 ---
 # <a name="two-pane-view"></a>Vue à deux volets
 
@@ -25,25 +25,18 @@ Bien qu’il fonctionne sur tous les appareils Windows, le contrôle TwoPaneView
 > [!NOTE]
 > Un _appareil double écran_ est un type spécial d’appareil qui présente des fonctionnalités uniques. Il ne s’agit pas d’un appareil de bureau équipé de plusieurs moniteurs. Pour plus d’informations, consultez cette [présentation des appareils double écran](/dual-screen/introduction). (Pour plus d’informations sur les façons dont vous pouvez optimiser votre application pour plusieurs moniteurs, consultez [Afficher plusieurs vues](/windows/uwp/design/layout/show-multiple-views).)
 
-| Obtenir la bibliothèque d’interface utilisateur Windows |
-| - |
-| Ce contrôle est inclus dans la bibliothèque d’interface utilisateur Windows, package NuGet qui contient les nouveaux contrôles et fonctionnalités d’interface utilisateur pour les applications UWP. Pour plus d’informations, notamment des instructions d’installation, consultez [Vue d’ensemble de la bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/). |
+**Obtenir la bibliothèque d’interface utilisateur Windows**
 
-| API de plateforme | API de la bibliothèque d’interface utilisateur Windows |
+|  |  |
 | - | - |
-| [TwoPaneView, classe](/uwp/api/windows.ui.xaml.controls.twopaneview) | [TwoPaneView, classe](/uwp/api/microsoft.ui.xaml.controls.twopaneview) |
+| ![Logo WinUI](images/winui-logo-64x64.png) | Le contrôle **TwoPaneView** est inclus dans la bibliothèque d’interface utilisateur Windows, package NuGet contenant de nouveaux contrôles et fonctionnalités d’interface utilisateur destinés aux applications UWP. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
-Tout au long de ce document, nous allons utiliser l’alias **muxc** en XAML pour représenter les API de la bibliothèque d’interface utilisateur Windows que nous avons incluses dans notre projet. Nous l’avons ajouté à notre élément [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page) :
+> **API de la bibliothèque d’interface utilisateur Windows :** [TwoPaneView, classe](/uwp/api/microsoft.ui.xaml.controls.twopaneview)
 
-```xaml
-xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-```
-
-Dans le code-behind, nous allons également utiliser l’alias **muxc** en C# pour représenter les API de la bibliothèque d’interface utilisateur Windows que nous avons incluses dans notre projet. Nous avons ajouté cette instruction **using** en haut du fichier :
-
-```csharp
-using muxc = Microsoft.UI.Xaml.Controls;
-```
+> [!TIP]
+> Tout au long de ce document, nous utilisons l’alias **muxc** en XAML pour représenter les API de la bibliothèque d’interface utilisateur Windows que nous avons incluses dans notre projet. Nous l’avons ajouté à notre élément [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page) : `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
+>
+>Dans le code-behind, nous utilisons également l’alias **muxc** en C# pour représenter les API de la bibliothèque d’interface utilisateur Windows que nous avons incluses dans notre projet. Nous avons ajouté cette instruction **using** en haut du fichier : `using muxc = Microsoft.UI.Xaml.Controls;`
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 

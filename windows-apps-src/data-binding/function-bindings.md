@@ -1,13 +1,13 @@
 ---
-description: L’extension de balisage xBind autorise les fonctions à utiliser dans le balisage.
+description: L’extension de balisage xBind permet d’utiliser des fonctions dans le balisage.
 title: Fonctions dans x:Bind
 ms.date: 02/06/2019
 ms.topic: article
-keywords: Windows 10, uwp, xBind
+keywords: windows 10, uwp, xBind
 ms.localizationpriority: medium
 ms.openlocfilehash: 879be9591bae36a1dbcd485387fbb4ac7f502fea
 ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 05/29/2019
 ms.locfileid: "66360082"
@@ -15,9 +15,9 @@ ms.locfileid: "66360082"
 # <a name="functions-in-xbind"></a>Fonctions dans x:Bind
 
 > [!NOTE]
-> Pour des informations générales sur l’utilisation de la liaison de données dans votre application avec **{x : Bind}** (et pour une comparaison global entre **{x : Bind}** et **{Binding}** ), consultez [données liaison en profondeur](data-binding-in-depth.md).
+> Pour obtenir des informations générales sur l’utilisation de la liaison de données dans votre application avec **{x:Bind}** (et pour une comparaison entre **{x:Bind}** et **{Binding}** ), consultez [Présentation détaillée de la liaison de données](data-binding-in-depth.md).
 
-À compter de Windows 10, version 1607, **{x : Bind}** prend en charge l’utilisation d’une fonction comme niveau feuille du chemin de liaison. Cela permet de :
+À compter de Windows 10, version 1607, **{x : Bind}** prend en charge l’utilisation d’une fonction comme niveau feuille du chemin de liaison. Cela présente les avantages suivants :
 
 - Facilite la conversion de valeur
 - Permet aux liaisons de dépendre de plus d’un paramètre
@@ -63,7 +63,7 @@ class ColorEntry
 
 Le chemin de la fonction est spécifié comme tout autre chemin de propriété et peut inclure des points (.), des indexeurs ou des casts pour localiser la fonction.
 
-Des fonctions statiques peuvent être spécifiées en utilisant la syntaxe XMLNamespace:ClassName.MethodName. Par exemple, utiliser le ci-dessous la syntaxe pour la liaison à des fonctions statiques dans le code-behind.
+Des fonctions statiques peuvent être spécifiées en utilisant la syntaxe XMLNamespace:ClassName.MethodName. Par exemple, utilisez la syntaxe ci-dessous pour la liaison à des fonctions statiques dans le code-behind.
 
 ```xaml
 <Page 
@@ -87,7 +87,7 @@ namespace MyNamespace
 }
 ```
 
-Vous pouvez également utiliser les fonctions système directement dans le balisage pour accomplir les scénarios simples comme la mise en forme de date, la mise en forme de texte, des concaténations de texte, etc., par exemple :
+Vous pouvez également utiliser des fonctions système directement dans le balisage pour accomplir des scénarios simples comme la mise en forme de la date, la mise en forme du texte, les concaténations de texte, etc. Par exemple :
 
 ```xaml
 <Page 
@@ -108,7 +108,7 @@ La fonction en cours de liaison doit :
 - Les types d’arguments doivent correspondre aux données transmises. Nous ne faisons pas de conversions restrictives.
 - Le type de retour de la fonction doit correspondre au type de la propriété qui utilise la liaison.
 
-Le moteur de liaison réagit à la modification de propriété notifications déclenchement par le nom de fonction et réévaluer les liaisons en fonction des besoins. Exemple :
+Le moteur de liaison réagit aux notifications de changements de propriétés déclenchées avec le nom de la fonction et réévalue les liaisons si nécessaire. Par exemple :
 
 ```xaml
 <DataTemplate x:DataType="local:Person">
@@ -164,7 +164,7 @@ public class Person:INotifyPropertyChanged
 ```
 
 > [!TIP]
-> Vous pouvez utiliser des fonctions dans x : Bind pour atteindre les mêmes scénarios que ce qui a été pris en charge par le biais des convertisseurs et MultiBinding dans WPF.
+> Vous pouvez utiliser des fonctions dans x :Bind pour obtenir les mêmes scénarios que ceux pris en charge par les éléments Converters et MultiBinding dans WPF.
 
 ## <a name="function-arguments"></a>Arguments de la fonction
 
@@ -178,7 +178,7 @@ Plusieurs arguments peuvent être spécifiés dans la fonction. Ils sont sépar�
 
 ### <a name="two-way-function-bindings"></a>Liaisons de fonctions bidirectionnelles
 
-Dans un scénario de liaison bidirectionnelle, une deuxième fonction doit être spécifiée pour la direction inverse de la liaison. Cette opération est effectuée à l’aide de la **liaison retour** liaison de propriété. Dans l’exemple ci-dessous, la fonction doit accepter un argument qui est la valeur devant être déplacées vers le modèle.
+Dans un scénario de liaison bidirectionnelle, une deuxième fonction doit être spécifiée pour la direction inverse de la liaison. Pour ce faire, utilisez la propriété de liaison **BindBack**. Dans l’exemple ci-dessous, la fonction doit prendre un seul argument, qui est la valeur qui doit être transmises en retour au modèle.
 
 ```xaml
 <TextBlock Text="{x:Bind a.MyFunc(b), BindBack=a.MyFunc2, Mode=TwoWay}" />

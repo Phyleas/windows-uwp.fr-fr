@@ -8,7 +8,7 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 14b6ab96ac5423d1811618c6a3c91ccf56645664
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74255127"
@@ -17,7 +17,7 @@ ms.locfileid: "74255127"
 
 
 
-> **Notez**  également voir l' [exemple maître/détail](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlMasterDetail).
+> **Remarque**  Consultez également l’[exemple Maître/Détails](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlMasterDetail).
 
 Vous pouvez effectuer un affichage maître/détails (également appelé affichage liste/détails) de données hiérarchiques sur plusieurs niveaux en liant les contrôles d’éléments aux instances [**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) qui sont liées dans une chaîne. Dans cette rubrique, nous utilisons l’[extension de balisage {x:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) lorsque cela est possible et l’[extension de balisage {Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension), plus souple (mais moins performante), si nécessaire.
 
@@ -27,7 +27,7 @@ Nous allons créer un affichage d’une hiérarchie d’équipes sportives organ
 
 ![Affichage maître/détails d’une hiérarchie sportive](images/xaml-masterdetails.png)
 
-## <a name="prerequisites"></a>Conditions préalables requises
+## <a name="prerequisites"></a>Prérequis
 
 Dans cette rubrique, nous partons du principe que vous savez créer une application UWP de base. Pour obtenir des instructions pour la création de votre première application UWP, consultez [Créer votre première application UWP en C# ou Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/hh974581(v=win.10)).
 

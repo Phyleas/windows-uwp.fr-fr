@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 07da54dddfffe082aa5633ac8eac3f342aaa6a5c
-ms.sourcegitcommit: cc108c791842789464c38a10e5d596c9bd878871
+ms.openlocfilehash: 0167d1f0ed69f8354fa6ee7cd77387aee9aee842
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75302713"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081510"
 ---
 # <a name="text-box"></a>Zone de texte
 
@@ -24,7 +24,13 @@ Le contrôle TextBox permet à un utilisateur de taper du texte dans une applica
 
 Le contrôle TextBox comporte différentes fonctionnalités destinées à simplifier la saisie de texte. Il intègre un menu contextuel familier prenant en charge la copie et le collage de texte. Le bouton Effacer tout permet à un utilisateur de supprimer rapidement tout le texte qui a été entré. Le contrôle intègre également des fonctionnalités de vérification de l’orthographe qui sont activées par défaut.
 
-> **API importantes** : [classe TextBox class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox), [propriété Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text)
+**Obtenir la bibliothèque d’interface utilisateur Windows**
+
+|  |  |
+| - | - |
+| ![Logo WinUI](images/winui-logo-64x64.png) | La bibliothèque d’interface utilisateur Windows version 2.2 ou ultérieure inclut pour ce contrôle un nouveau modèle qui utilise des angles arrondis. Pour plus d’informations, consultez [Rayons des angles](/windows/uwp/design/style/rounded-corner). WinUI est un package NuGet qui contient de nouveaux contrôles et fonctionnalités d’interface utilisateur destinés aux applications UWP. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **API de plateforme** : [classe TextBox class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox), [propriété Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
@@ -45,7 +51,7 @@ Pour plus d’informations sur le choix du contrôle de texte approprié, consul
 <table>
 <th align="left">Galerie de contrôles XAML<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/TextBox">ouvrir l’application et voir le contrôle TextBox en action</a>.</p>
     <ul>
@@ -81,7 +87,7 @@ Voici la zone de texte résultant de ce code XAML.
 
 ### <a name="use-a-text-box-for-data-input-in-a-form"></a>Utiliser une zone de texte pour l’entrée de données dans un formulaire
 
-Il est courant d’utiliser une zone de texte pour accepter l’entrée de données dans un formulaire, et d’utiliser la propriété [Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text) pour obtenir la chaîne de texte complète à partir de la zone de texte. Vous utilisez généralement un événement tel qu’un clic sur un bouton d’envoi pour accéder à la propriété Text, mais vous pouvez gérer l’événement [TextChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanged) ou [TextChanging](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanging) si vous avez besoin d’effectuer une opération spécifique quand le texte change.
+Il est courant d’utiliser une zone de texte pour accepter l’entrée de données dans un formulaire et d’utiliser la propriété [Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text) pour obtenir la chaîne de texte complète de la zone de texte. Vous utilisez généralement un événement tel qu’un clic sur un bouton d’envoi pour accéder à la propriété Text, mais vous pouvez gérer l’événement [TextChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanged) ou [TextChanging](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanging) si vous avez besoin d’effectuer une opération spécifique quand le texte change.
 
 Cet exemple montre comment obtenir et définir le contenu actuel d’une zone de texte.
 
@@ -143,7 +149,7 @@ Deux propriétés vous permettent d’indiquer si le contrôle de zone de texte 
 
 > **Remarque**&nbsp;&nbsp;Les contrôles TextBox et RichEditBox ne prennent pas en charge la valeur **WrapWholeWords** pour leur propriété TextWrapping. Si vous tentez d’utiliser WrapWholeWords comme valeur pour TextBox.TextWrapping ou pour RichEditBox.TextWrapping, une exception d’argument non valide est levée.
 
-Une zone de texte multiligne s’agrandit verticalement à mesure que l’utilisateur entre du texte, sauf si le contrôle est restreint par ses propriétés [Height](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.height) ou [MaxHeight](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.maxheight), ou par un conteneur parent. Vous devez vérifier qu’une zone de texte multiligne ne dépasse pas les limites de sa zone visible, et limiter son extension dans le cas contraire. Nous vous recommandons de configurer systématiquement une zone de texte multiligne sur une hauteur appropriée, et de ne pas autoriser l’augmentation progressive de cette hauteur à mesure que l’utilisateur tape du texte.
+Une zone de texte multiligne s’agrandit verticalement à mesure que l’utilisateur entre du texte, sauf si le contrôle est restreint par ses propriétés [Height](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.height) ou [MaxHeight](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.maxheight) ou par un conteneur parent. Vous devez vérifier qu’une zone de texte multiligne ne dépasse pas les limites de sa zone visible et limiter son extension dans le cas contraire. Nous vous recommandons de configurer systématiquement une zone de texte multiligne sur une hauteur appropriée, et de ne pas autoriser l’augmentation progressive de cette hauteur à mesure que l’utilisateur tape du texte.
 
 Le défilement à l’aide d’une roulette de défilement ou d’une interaction tactile est automatiquement activé s’il y a lieu. Les barres de défilement verticales ne sont cependant pas visibles par défaut. Vous pouvez afficher les barres de défilement verticales en définissant [ScrollViewer.VerticalScrollBarVisibility](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.verticalscrollbarvisibility) sur **Auto** sur le contrôle ScrollViewer incorporé, comme indiqué ci-après.
 

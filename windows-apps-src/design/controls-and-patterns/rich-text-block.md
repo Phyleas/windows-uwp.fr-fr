@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 71f8298456b3c297994d6aa11d815a6b46ba7ff4
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 9f90ce11c9a35200121722f3b0a0ac7d7047e819
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340363"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081556"
 ---
 # <a name="rich-text-block"></a>Bloc de texte enrichi
 
@@ -24,22 +24,22 @@ ms.locfileid: "71340363"
 
 Les blocs de texte enrichi fournissent plusieurs fonctionnalités de disposition de texte avancée, que vous pouvez utiliser lorsque vous devez prendre en charge des paragraphes, des éléments d’interface utilisateur inline ou des dispositions de texte complexes.
 
-> **API importantes** : [classe RichTextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock), [classe RichTextBlockOverflow](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlockOverflow), [classe Paragraph](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Paragraph), [classe Typography](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Typography)
+> **API de plateforme** : [classe RichTextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock), [classe RichTextBlockOverflow](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlockOverflow), [classe Paragraph](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Paragraph), [classe Typography](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Typography)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
 Utilisez un élément **RichTextBlock** si vous devez prendre en charge plusieurs paragraphes, du texte sur plusieurs colonnes, d’autres dispositions de texte complexes ou des éléments d’interface utilisateur inline, tels que des images.
 
-Pour afficher la majeure partie de votre texte en lecture seule dans votre application, utilisez un contrôle **TextBlock**. Ce contrôle vous permet d’afficher une ou plusieurs lignes de texte, des liens hypertexte inclus et du texte avec mise en forme de type gras, italique ou souligné. TextBlock fournit un modèle de contenu plus simple, donc généralement plus facile à utiliser, et peut offrir de meilleures performances de rendu de texte que RichTextBlock. Il est souvent privilégié pour le texte de l’interface utilisateur des applications. Même si vous pouvez insérer des sauts de ligne dans le texte, TextBlock est conçu pour n’afficher qu’un seul paragraphe et ne prend pas en charge le retrait du texte.
+Pour afficher la majeure partie de votre texte en lecture seule dans votre application, utilisez un contrôle **TextBlock**. Ce contrôle vous permet d’afficher une ou plusieurs lignes de texte, des liens hypertexte inclus et du texte avec mise en forme de type gras, italique ou souligné. TextBlock fournit un modèle de contenu plus simple, donc généralement plus facile à utiliser, et peut offrir de meilleures performances de rendu de texte que RichTextBlock. Il est souvent privilégié pour le texte de l’interface utilisateur des applications. Même si vous pouvez insérer des sauts de ligne dans le texte, TextBlock est conçu pour n’afficher qu’un seul paragraphe et ne prend pas en charge la mise en retrait du texte.
 
-Pour plus d’informations sur le choix du contrôle de texte approprié, voir l’article [Contrôles de texte](text-controls.md).
+Pour plus d’informations sur le choix du contrôle de texte approprié, consultez l’article [Contrôles de texte](text-controls.md).
 
 ## <a name="examples"></a>Exemples
 
 <table>
 <th align="left">Galerie de contrôles XAML<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/RichTextBlock">ouvrir l’application et voir l’objet RichTextBlock en action</a>.</p>
     <ul>
@@ -52,7 +52,7 @@ Pour plus d’informations sur le choix du contrôle de texte approprié, voir l
 
 ## <a name="create-a-rich-text-block"></a>Créer un bloc de texte enrichi
 
-La propriété de contenu de RichTextBlock est [Blocks](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richtextblock.blocks). Elle prend en charge le texte basé sur un paragraphe via l’élément [Paragraph](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Paragraph). Elle ne présente pas de propriété **Text** vous permettant d’accéder facilement au contenu de texte du contrôle dans votre application. Toutefois, RichTextBlock propose plusieurs fonctionnalités uniques que TextBlock ne fournit pas. 
+La propriété de contenu de RichTextBlock est [Blocks](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richtextblock.blocks). Elle prend en charge le texte basé sur un paragraphe via l’élément [Paragraph](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Paragraph). Elle ne présente pas de propriété **Text** vous permettant d’accéder facilement au contenu de texte du contrôle dans votre application. Cependant, RichTextBlock propose plusieurs fonctionnalités uniques que TextBlock ne fournit pas. 
 
 RichTextBlock prend en charge les éléments suivants :
 - Paragraphes multiples. Définissez le retrait de paragraphes en définissant la propriété [TextIndent](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richtextblock.textindent).

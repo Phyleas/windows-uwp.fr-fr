@@ -11,29 +11,36 @@ design-contact: kimsea
 dev-contact: kefodero
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a3bf48da5fdfff205b2013341aaf6869064ce341
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: c73414e897cde652d03c9ebb92528b4504241ba3
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684374"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081639"
 ---
 # <a name="person-picture-control"></a>Contrôle de la photo de la personne
 
-Le contrôle de photo de la personne affiche l’image d’avatar d’une personne, si celle-ci est disponible. Dans le cas contraire, il affiche les initiales de la personne ou un glyphe générique. Vous pouvez utiliser ce contrôle pour afficher un [objet Contact](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact), un objet qui gère les coordonnées d’une personne, ou vous pouvez fournir manuellement des coordonnées, par exemple un nom d’affichage et une photo de profil.  
+Le contrôle de photo de la personne affiche l’image d’avatar d’une personne, si celle-ci est disponible. Dans le cas contraire, il affiche les initiales de la personne ou un glyphe générique. Vous pouvez utiliser ce contrôle pour afficher un [objet Contact](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact), un objet qui gère les coordonnées d’une personne, ou vous pouvez fournir manuellement des coordonnées, par exemple un nom d’affichage et une photo de profil.
 
-> **API importantes** : [classe PersonPicture](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.personpicture), [classe Contact](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact), [classe ContactManager](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.ContactManager)
-
-Cette illustration montre deux contrôles d’image de personnes associées à deux éléments [bloc de texte](text-block.md) qui affichent les noms des utilisateurs. 
 ![Contrôle de la photo de la personne](images/person-picture/person-picture_hero.png)
 
+ > Deux contrôles d’image de personnes associés à deux éléments [bloc de texte](text-block.md) qui présentent les noms des utilisateurs.
+
+**Obtenir la bibliothèque d’interface utilisateur Windows**
+
+|  |  |
+| - | - |
+| ![Logo WinUI](images/winui-logo-64x64.png) | Le contrôle **PersonPicture** est inclus dans la bibliothèque d’interface utilisateur Windows, package NuGet contenant de nouveaux contrôles et fonctionnalités d’interface utilisateur destinés aux applications UWP. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **API de plateforme** : [classe PersonPicture](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.personpicture), [classe Contact](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact), [classe ContactManager](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.ContactManager)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
 Utiliser la photo de la personne quand vous souhaitez représenter une personne et ses coordonnées. Voici quelques exemples de cas dans lesquels vous pouvez utiliser ce contrôle :
+
 * Pour afficher l’utilisateur actuel
 * Pour afficher les contacts d’un carnet d’adresses
-* Pour afficher l’expéditeur d’un message 
+* Pour afficher l’expéditeur d’un message
 * Pour afficher un contact de média social
 
 L’illustration montre le contrôle de photo de la personne dans une liste de contacts : ![Contrôle de photo de la personne](images/person-picture/person-picture-control.png)
@@ -43,7 +50,7 @@ L’illustration montre le contrôle de photo de la personne dans une liste de c
 <table>
 <th align="left">Galerie de contrôles XAML<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/PersonPicture">ouvrir l’application et voir l’objet PersonPicture en action</a>.</p>
     <ul>
@@ -79,7 +86,7 @@ La classe PersonPicture vous permet de créer une photo de la personne. Cet exem
 
 ## <a name="using-the-person-picture-control-to-display-a-contact-object"></a>Utilisation du contrôle de photo de la personne pour afficher un objet Contact
 
-Vous pouvez utiliser le contrôle de sélecteur de personnes pour afficher un objet [Contact](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact) : 
+Vous pouvez utiliser le contrôle de sélecteur de personnes pour afficher un objet [Contact](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact) :
 
 ```xaml
 <Page
@@ -95,7 +102,7 @@ Vous pouvez utiliser le contrôle de sélecteur de personnes pour afficher un ob
 
         <PersonPicture
             Contact="{x:Bind CurrentContact, Mode=OneWay}" />
-            
+
         <Button Click="LoadContactButton_Click">Load contact</Button>
     </StackPanel>
 </Page>
@@ -127,7 +134,7 @@ namespace SampleApp
             this.InitializeComponent();
         }
 
-        private Windows.ApplicationModel.Contacts.Contact _currentContact; 
+        private Windows.ApplicationModel.Contacts.Contact _currentContact;
         public Windows.ApplicationModel.Contacts.Contact CurrentContact
         {
             get => _currentContact;
@@ -149,7 +156,7 @@ namespace SampleApp
             contact.LastName = "Sherman";
 
             // Get the app folder where the images are stored.
-            var appInstalledFolder = 
+            var appInstalledFolder =
                 Windows.ApplicationModel.Package.Current.InstalledLocation;
             var assets = await appInstalledFolder.GetFolderAsync("Assets");
             var imageFile = await assets.GetFileAsync("betsy.png");
@@ -167,11 +174,11 @@ namespace SampleApp
 ```
 
 > [!NOTE]
-> Pour conserver un code simple, cet exemple crée un objet Contact. Dans une application réelle, vous permettriez à l’utilisateur de sélectionner un contact ou vous utiliseriez un [ContactManager](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.ContactManager) pour une liste de contacts. Pour plus d’informations sur la récupération et la gestion des contacts, consultez les [articles Contacts et calendriers](../../contacts-and-calendar/index.md). 
+> Pour conserver un code simple, cet exemple crée un objet Contact. Dans une application réelle, vous permettriez à l’utilisateur de sélectionner un contact ou vous utiliseriez un [ContactManager](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.ContactManager) pour une liste de contacts. Pour plus d’informations sur la récupération et la gestion des contacts, consultez les [articles Contacts et calendriers](../../contacts-and-calendar/index.md).
 
 ## <a name="determining-which-info-to-display"></a>Détermination des informations à afficher
 
-Quand vous fournissez un objet [Contact](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact), le contrôle de photo de la personne l’évalue afin de déterminer les informations qu’il peut afficher. 
+Quand vous fournissez un objet [Contact](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact), le contrôle de photo de la personne l’évalue afin de déterminer les informations qu’il peut afficher.
 
 Si une photo est disponible, le contrôle affiche la première image qu’il trouve, dans cet ordre :
 
@@ -181,7 +188,7 @@ Si une photo est disponible, le contrôle affiche la première image qu’il tro
 
 Vous pouvez changer l’image choisie en définissant la propriété PreferSmallImage sur true. Cela offre à SmallDisplayPicture une priorité supérieure à celle de LargeDisplayPicture.
 
-En l’absence d’image, le contrôle affiche le nom du contact ou ses initiales. S’il n’existe aucune donnée de nom, le contrôle affiche les données du contact, telles que son adresse e-mail ou son numéro de téléphone. 
+En l’absence d’image, le contrôle affiche le nom du contact ou ses initiales. S’il n’existe aucune donnée de nom, le contrôle affiche les données du contact, telles que son adresse e-mail ou son numéro de téléphone.
 
 ## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
 

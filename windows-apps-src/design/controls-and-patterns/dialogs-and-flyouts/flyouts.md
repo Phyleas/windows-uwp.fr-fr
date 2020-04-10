@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 52de0933bf51adaae6b0923868e12eb92ced4a1a
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 320586fb8fe7f71eaea2d4b12c0dd731a1f721db
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63793792"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80080969"
 ---
 # <a name="flyouts"></a>Menus volants
 
@@ -24,20 +24,26 @@ Un menu volant est un conteneur d’abandon interactif capable d’afficher une 
 
 ![Menu contextuel imbriqué dans un menu volant](../images/flyout-nested.png)
 
-> **API importantes** : [Classe Flyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Flyout)
+**Obtenir la bibliothèque d’interface utilisateur Windows**
+
+|  |  |
+| - | - |
+| ![Logo WinUI](../images/winui-logo-64x64.png) | La bibliothèque d’interface utilisateur Windows version 2.2 ou ultérieure inclut pour ce contrôle un nouveau modèle qui utilise des angles arrondis. Pour plus d’informations, consultez [Rayons des angles](/windows/uwp/design/style/rounded-corner). WinUI est un package NuGet qui contient de nouveaux contrôles et fonctionnalités d’interface utilisateur destinés aux applications UWP. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **API de plateforme :** [Classe Flyout](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
 * N’utilisez pas de menu volant à la place d’une [info-bulle](../tooltips.md) ou d’un [menu contextuel](../menus.md). Utilisez une info-bulle pour afficher une brève description qui disparaît après une durée spécifiée. Utilisez un menu contextuel pour les actions contextuelles liées à un élément de l’interface utilisateur, comme copier et coller.
 
-Pour savoir quand utiliser une boîte de dialogue ou un menu volant (contrôle similaire), voir [Boîtes de dialogue et menus volants](index.md). 
+Pour savoir quand utiliser une boîte de dialogue ou un menu volant (contrôle similaire), voir [Boîtes de dialogue et menus volants](index.md).
 
 ## <a name="examples"></a>Exemples
 
 <table>
 <th align="left">Galerie de contrôles XAML<th>
 <tr>
-<td><img src="../images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="../images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour ouvrir l’application et voir l’objet <a href="xamlcontrolsgallery:/item/ContentDialog">ContentDialog</a> ou <a href="xamlcontrolsgallery:/item/Flyout">Flyout</a> en action.</p>
     <ul>
@@ -51,7 +57,7 @@ Pour savoir quand utiliser une boîte de dialogue ou un menu volant (contrôle s
 ##  <a name="how-to-create-a-flyout"></a>Procédure pour créer un menu volant
 
 
-Les menus volants sont attachés à des contrôles spécifiques. Vous pouvez utiliser la propriété [Placement](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase.Placement) pour spécifier l’emplacement où s’affiche le menu volant : Haut, Gauche, Bas, Droite ou Plein. Si vous sélectionnez le [mode de positionnement Plein](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode), l’application étire le menu volant et le centre dans la fenêtre d’application. Certains contrôles, tels que [Button](/uwp/api/Windows.UI.Xaml.Controls.Button), fournissent une propriété [Flyout](/uwp/api/Windows.UI.Xaml.Controls.Button.Flyout) que vous pouvez utiliser pour associer un menu volant ou un [menu contextuel](../menus.md).
+Les menus volants sont attachés à des contrôles spécifiques. Vous pouvez utiliser la propriété [Placement](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase.Placement) pour spécifier l’emplacement où s’affiche le menu volant : Haut, Gauche, Bas, Droite ou Plein. Si vous sélectionnez le [mode de placement Plein](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode), l’application étire le menu volant et le centre dans la fenêtre d’application. Certains contrôles, tels que [Button](/uwp/api/Windows.UI.Xaml.Controls.Button), fournissent une propriété [Flyout](/uwp/api/Windows.UI.Xaml.Controls.Button.Flyout) que vous pouvez utiliser pour associer un menu volant ou un [menu contextuel](../menus.md).
 
 Cet exemple crée un menu volant simple qui affiche du texte quand l’utilisateur appuie sur le bouton.
 ````xaml
@@ -74,7 +80,7 @@ Cet exemple ajoute un menu volant simple à une image. Quand l’utilisateur app
   <FlyoutBase.AttachedFlyout>
     <Flyout>
       <TextBlock Text="This is some text in a flyout."  />
-    </Flyout>        
+    </Flyout>
   </FlyoutBase.AttachedFlyout>
 </Image>
 ````
@@ -121,7 +127,7 @@ Les exemples précédents ont défini des menus volants insérés. Vous pouvez �
 ````csharp
 private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 {
-    FlyoutBase.ShowAttachedFlyout((FrameworkElement)sender);  
+    FlyoutBase.ShowAttachedFlyout((FrameworkElement)sender);
 }
 ````
 
@@ -157,10 +163,10 @@ Les contrôles d’abandon interactif comme les menus volants captent les élém
 
 ## <a name="light-dismiss-behavior"></a>Comportement d’abandon interactif
 Il est possible de fermer les menus volants à l’aide d’une action d’abandon interactif, notamment comme suit
--   Appui en dehors du menu volant
--   Appui sur la touche Échap du clavier
--   Appui sur le bouton Précédent du système matériel ou logiciel
--   Appui sur le bouton B de la manette de jeu
+-    Appui en dehors du menu volant
+-    Appui sur la touche Échap du clavier
+-    Appui sur le bouton Précédent du système matériel ou logiciel
+-    Appui sur le bouton B de la manette de jeu
 
 En cas d’abandon à l’aide d’un appui, ce mouvement est généralement absorbé et non transmis à l’interface utilisateur en dessous. Par exemple, si un bouton est visible derrière un menu volant ouvert, le premier appui de l’utilisateur ferme le menu volant mais n’active pas ce bouton. L’appui sur le bouton nécessite un second appui.
 
@@ -177,7 +183,7 @@ Dans l’exemple suivant, les trois boutons de la FavoritesBar sont activés par
                 OverlayInputPassThroughElement="{x:Bind FavoritesBar}">
             <StackPanel>
                 <HyperlinkButton Content="Washington Trails Association"/>
-                <HyperlinkButton Content="Washington Cascades - Go Northwest! A Travel Guide"/>  
+                <HyperlinkButton Content="Washington Cascades - Go Northwest! A Travel Guide"/>
             </StackPanel>
         </Flyout>
     </Page.Resources>
@@ -188,7 +194,7 @@ Dans l’exemple suivant, les trois boutons de la FavoritesBar sont activés par
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <StackPanel x:Name="FavoritesBar" Orientation="Horizontal">
-            <HyperlinkButton x:Name="PageLinkBtn">Bing</HyperlinkButton>  
+            <HyperlinkButton x:Name="PageLinkBtn">Bing</HyperlinkButton>
             <Button x:Name="Folder1" Content="Travel" Flyout="{StaticResource TravelFlyout}"/>
             <Button x:Name="Folder2" Content="Entertainment" Click="Folder2_Click"/>
         </StackPanel>

@@ -8,7 +8,7 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 610b6237071c9d7435ca167c1a89b4ef7c40b333
 ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71339574"
@@ -18,7 +18,7 @@ ms.locfileid: "71339574"
 
 Créez des applications UWP qui simplifient l’utilisation du système de gestion de la durée de vie des processus afin d’assurer une reprise efficace après une suspension ou un arrêt.
 
-## <a name="launch"></a>Lancement
+## <a name="launch"></a>Lancer
 
 Si vous réactivez une application après l’avoir suspendue/arrêtée, vérifiez si une longue durée s’est écoulée. Si tel est le cas, pensez à revenir dans la page de destination principale de l’application au lieu d’afficher les données utilisateur obsolètes. Cela entraînera également un démarrage plus rapide.
 
@@ -34,7 +34,7 @@ Toutefois, vous devez trouver un bon équilibre entre l’enregistrement incrém
 
 N’utilisez pas les événements Activated ou VisibilityChanged de la fenêtre pour choisir le moment auquel enregistrer l’état. Lorsque l’utilisateur quitte votre application, la fenêtre est désactivée, mais le système attend un court moment (environ 10 secondes) avant de suspendre l’application. Il s’agit de fournir une meilleure réactivité si jamais l’utilisateur rebascule rapidement vers votre application. Attendez l’événement de suspension avant d'exécuter la logique correspondante.
 
-## <a name="suspend"></a>Interrompre
+## <a name="suspend"></a>Suspendre
 
 Lors de la suspension, réduisez l’encombrement de votre application. Si votre application utilise moins de mémoire alors qu’elle est suspendue, l’ensemble du système sera plus réactif et un plus petit nombre d’applications suspendues (y compris les vôtres) seront arrêtées. Toutefois, équilibrez ce point avec la nécessité d’effectuer des reprises réactives : ne réduisez pas trop l’encombrement, car la reprise est considérablement ralentie lorsque votre application recharge de nombreuses données en mémoire.
 
@@ -64,7 +64,7 @@ Pour la sérialisation des applications .NET, vous avez le choix entre les class
 
 Pour obtenir des performances optimales, utilisez la classe [**XmlSerializer**](https://docs.microsoft.com/dotnet/api/system.xml.serialization.xmlserializer). Avec **XmlSerializer**, la sérialisation et la désérialisation sont rapides, et l’encombrement mémoire reste faible. La classe **XmlSerializer** est peu dépendante de .NET Framework. Par conséquent, contrairement aux autres méthodes de sérialisation, **XmlSerializer** peut être utilisée en chargeant un nombre réduit de modules.
 
-[**DataContractSerializer**](https://docs.microsoft.com/dotnet/api/system.runtime.serialization.datacontractserializer) facilite la sérialisation des classes personnalisées, bien qu’elle ait un impact plus important sur les performances que **XmlSerializer**. Si vous voulez obtenir de meilleures performances, il est préférable de changer. En général, il vaut mieux ne pas charger plus d’un sérialiseur et **XmlSerializer** est préférable, à moins que vous n’ayez besoin des fonctionnalités d’un autre sérialiseur.
+[**DataContractSerializer**](https://docs.microsoft.com/dotnet/api/system.runtime.serialization.datacontractserializer) simplifie la sérialisation des classes personnalisées, même si son impact sur les performances est supérieur à celui de **XmlSerializer**. Si vous voulez obtenir de meilleures performances, il est préférable de changer. En général, il vaut mieux ne pas charger plus d’un sérialiseur et **XmlSerializer** est préférable, à moins que vous n’ayez besoin des fonctionnalités d’un autre sérialiseur.
 
 ### <a name="reduce-memory-footprint"></a>Réduire l’encombrement mémoire
 
@@ -85,7 +85,7 @@ La plupart des applications n’ont pas besoin de gérer l’événement [**Resu
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Instructions relatives à l’interruption et à la reprise de l’application](https://docs.microsoft.com/windows/uwp/launch-resume/index)
+* [Recommandations pour la suspension et la reprise d’une application](https://docs.microsoft.com/windows/uwp/launch-resume/index)
  
 
  

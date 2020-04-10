@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 2eca388b37cc95803b7ecb94bc0b0b5b990f5de3
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57654104"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63798244"
 ---
 # <a name="beta-testing"></a>Bêta-test
 
@@ -32,7 +32,7 @@ Grâce au test bêta, vous pouvez effectuer les actions suivantes :
 -   tester votre application sur différents appareils ;
 -   identifier les problèmes de performances et d’autres bogues que vous n’auriez pas nécessairement détectés ;
 -   obtenir des informations sur l’utilisation réelle de votre application, qui peuvent vous aider à optimiser l’expérience utilisateur ;
--   Recevoir des commentaires sans affecter le contrôle d’accès public dans le Microsoft Store.
+-   recevoir des commentaires qui n’affecteront pas les évaluations publiques dans le Microsoft Store.
 
 ## <a name="when-to-beta-test"></a>Période d’exécution du test bêta
 
@@ -40,7 +40,7 @@ Il est préférable d’effectuer le test bêta lors de l’étape de test final
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Dans [partenaires](https://partner.microsoft.com/dashboard), vous pouvez limiter la distribution de vos applications à vos testeurs uniquement, quel que soit quels systèmes d’exploitation de votre application cible. Il est inutile de créer une version différente de votre application avec un nom et une identité de package distincts : vous pouvez effectuer vos tests, puis créer une autre soumission lorsque vous êtes prêt à rendre l’application publique. (Bien entendu, vous pouvez créer une application distincte réservée aux tests si vous le préférez. Le cas échéant, veillez à lui donner un nom différent du nom prévu pour l’application finale qui sera rendue publique.)
+Dans l’[Espace partenaires](https://partner.microsoft.com/dashboard), vous pouvez limiter la distribution de vos applications à vos testeurs, quels que soient les systèmes d’exploitation ciblés par votre application. Il est inutile de créer une version différente de votre application avec un nom et une identité de package distincts : vous pouvez effectuer vos tests, puis créer une autre soumission lorsque vous êtes prêt à rendre l’application publique. (Bien entendu, vous pouvez créer une application distincte réservée aux tests si vous le préférez. Le cas échéant, veillez à lui donner un nom différent du nom prévu pour l’application finale qui sera rendue publique.)
 
 Pour savoir comment soumettre votre application au Windows Store pour le bêta-test, voir [Tests bêta et distribution ciblée](../publish/beta-testing-and-targeted-distribution.md).
 

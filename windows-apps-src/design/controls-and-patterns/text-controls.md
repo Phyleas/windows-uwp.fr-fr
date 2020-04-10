@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c171a431180ee63956bae1c235224f64642601a
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 7f2421316be30d24ef44784974fc2c6c199a6570
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340225"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081487"
 ---
 # <a name="text-controls"></a>Contrôles de texte
 
@@ -37,7 +37,7 @@ Pour afficher la majeure partie de votre texte en lecture seule dans votre appli
 
 Le contrôle TextBlock est généralement plus facile à utiliser et offre de meilleures performances en termes de rendu de texte que le contrôle RichTextBlock. C’est la raison pour laquelle il est recommandé pour la plupart des textes d’interface utilisateur d’application. Vous pouvez facilement visualiser et utiliser le texte d’un contrôle TextBlock dans votre application en obtenant la valeur de la propriété [Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text).
 
-Il propose également de nombreuses options de mise en forme similaires pour personnaliser la manière dont votre texte est restitué. Même si vous pouvez insérer des sauts de ligne dans le texte, TextBlock est conçu pour n’afficher qu’un seul paragraphe et ne prend pas en charge le retrait du texte.
+Il propose également de nombreuses options de mise en forme similaires pour personnaliser la manière dont votre texte est restitué. Même si vous pouvez insérer des sauts de ligne dans le texte, TextBlock est conçu pour n’afficher qu’un seul paragraphe et ne prend pas en charge la mise en retrait du texte.
 
 Utilisez un contrôle **RichTextBlock** si vous devez prendre en charge plusieurs paragraphes, du texte sur plusieurs colonnes, d’autres dispositions de texte complexes ou des éléments d’interface utilisateur inclus, tels que des images. RichTextBlock propose plusieurs fonctionnalités avancées de disposition du texte.
 
@@ -45,11 +45,11 @@ La propriété de contenu de RichTextBlock est [Blocks](https://docs.microsoft.c
 
 ### <a name="text-input"></a>Saisie de texte
 
-Utilisez un contrôle **TextBox** si vous souhaitez permettre à un utilisateur de saisir et de modifier du texte sans mise en forme, dans un formulaire par exemple. Vous pouvez utiliser la propriété [Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text) pour obtenir et définir le texte d’un contrôle TextBox.
+Utilisez un contrôle **TextBox** si vous voulez permettre à un utilisateur de saisir et de modifier du texte sans mise en forme, par exemple dans un formulaire. Vous pouvez utiliser la propriété [Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text) pour obtenir et définir le texte d’un contrôle TextBox.
 
 Vous avez la possibilité de définir un contrôle TextBox en lecture seule, mais il doit s’agir d’un état conditionnel temporaire. Si le texte ne doit jamais être modifiable, envisagez plutôt d’utiliser un contrôle TextBlock.
 
-Si vous souhaitez recueillir un mot de passe ou d’autres données confidentielles, telles qu’un numéro de sécurité sociale, utilisez un contrôle **PasswordBox**. Une zone de mot de passe est une zone de saisie de texte qui masque les caractères entrés par souci de confidentialité. Une zone de mot de passe ressemble à une zone de saisie de texte, à la différence qu’elle affiche des puces à la place du texte entré. Le caractère puce est personnalisable.
+Si vous voulez recueillir un mot de passe ou d’autres données confidentielles, comme un numéro de sécurité sociale, utilisez un contrôle **PasswordBox**. Une zone de mot de passe est une zone de saisie de texte qui masque les caractères entrés par souci de confidentialité. Une zone de mot de passe ressemble à une zone de saisie de texte, à la différence qu’elle affiche des puces à la place du texte entré. Le caractère puce est personnalisable.
 
 Pour présenter à l’utilisateur une liste de suggestions dans laquelle il peut effectuer un choix pendant qu’il saisit du texte, utilisez un contrôle **AutoSuggestBox**. Une zone de suggestion automatique est une zone de texte qui déclenche une liste de suggestions de recherche de base. Les termes suggérés peuvent provenir d’une combinaison de termes de recherche courants et de termes entrés précédemment par l’utilisateur.
 
@@ -75,7 +75,7 @@ Vous disposez de nombreuses méthodes pour obtenir les entrées des utilisateurs
 <table>
 <th align="left">Galerie de contrôles XAML<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/category/Text">ouvrir l’application et voir les contrôles de texte en action</a>.</p>
     <ul>
@@ -88,7 +88,7 @@ Vous disposez de nombreuses méthodes pour obtenir les entrées des utilisateurs
 
 Zone de texte
 
-![Zone de texte](images/text-box.png)
+![Une zone de texte](images/text-box.png)
 
 Zone de suggestion automatique
 
@@ -133,9 +133,9 @@ Pour faciliter la saisie de données par les utilisateurs au moyen du clavier ta
 
 >Conseil Ces informations s’appliquent uniquement au clavier virtuel. Elles ne concernent pas les claviers matériels ou visuels figurant dans les Options d’ergonomie de Windows.
 
-Le clavier tactile permet d’entrer du texte lorsque l’application est exécutée sur un appareil disposant d’un écran tactile. Le clavier tactile est appelé lorsque l’utilisateur appuie sur un champ d’entrée modifiable, tel qu’un contrôle TextBox ou RichEditBox. Vous pouvez nettement faciliter et accélérer la saisie de données par les utilisateurs dans votre application, en définissant l’étendue des entrées du contrôle de texte afin qu’elle corresponde au type de données attendu de la part de l’utilisateur. L’étendue des entrées fournit au système une indication sur le type d’entrée de texte attendu par le contrôle, afin que le système puisse fournir une disposition de clavier tactile spécialisée pour le type d’entrée.
+Le clavier tactile permet d’entrer du texte quand l’application est exécutée sur un appareil disposant d’un écran tactile. Le clavier tactile est appelé quand l’utilisateur appuie sur un champ d’entrée modifiable, comme un contrôle TextBox ou RichEditBox. Vous pouvez grandement faciliter et accélérer la saisie de données par les utilisateurs dans votre application, en définissant l’étendue des entrées du contrôle de texte afin qu’elle corresponde au type de données attendu de la part de l’utilisateur. L’étendue des entrées fournit au système une indication sur le type d’entrée de texte attendu par le contrôle, afin que le système puisse fournir une disposition de clavier tactile spécialisée pour le type d’entrée.
 
-Par exemple, si une zone de texte est utilisée uniquement pour la saisie d’un code confidentiel à 4 chiffres, définissez la propriété [InputScope](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.inputscope) sur **Number**. Cela indique au système qu’il doit afficher la disposition du pavé numérique, ce qui permet à l’utilisateur d’entrer plus facilement le code confidentiel.
+Par exemple, si une zone de texte est utilisée uniquement pour la saisie d’un code PIN à 4 chiffres, définissez la propriété [InputScope](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.inputscope) sur **Number**. Ceci indique au système qu’il doit afficher la disposition du pavé numérique, ce qui permet à l’utilisateur d’entrer plus facilement le code PIN.
 
 >Important  
 >L’étendue des entrées n’entraîne l’exécution d’aucune validation des entrées et n’empêche pas l’utilisateur de saisir des données par le biais d’un clavier matériel ou d’un autre dispositif du même ordre. Vous restez responsable de la validation d’une entrée dans votre code, si nécessaire.

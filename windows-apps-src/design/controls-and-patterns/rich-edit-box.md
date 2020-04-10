@@ -11,20 +11,24 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 00a65324b799b0cf974271da23fdbcb36aa6c8e2
-ms.sourcegitcommit: 4ca51472d0474be96fa3184e311b729f58998234
+ms.openlocfilehash: d3acd69b2b0e3a1bd97b6aa917991d4b2c88d075
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67399612"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081588"
 ---
 # <a name="rich-edit-box"></a>Zone d’édition enrichie
 
- 
-
 Vous pouvez utiliser un contrôle RichEditBox pour entrer et modifier des documents au format RTF qui contiennent du texte mis en forme, des liens hypertexte et des images. Vous pouvez faire en sorte que RichEditBox soit en lecture seule en définissant sa propriété IsReadOnly sur **true**.
 
-> **API importantes** : [classe RichEditBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox), [propriété Document](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.document), [propriété IsReadOnly](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.isreadonly), [propriété IsSpellCheckEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.isspellcheckenabled)
+**Obtenir la bibliothèque d’interface utilisateur Windows**
+
+|  |  |
+| - | - |
+| ![Logo WinUI](images/winui-logo-64x64.png) | La bibliothèque d’interface utilisateur Windows version 2.2 ou ultérieure inclut pour ce contrôle un nouveau modèle qui utilise des angles arrondis. Pour plus d’informations, consultez [Rayons des angles](/windows/uwp/design/style/rounded-corner). WinUI est un package NuGet qui contient de nouveaux contrôles et fonctionnalités d’interface utilisateur destinés aux applications UWP. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **API de plateforme** : [classe RichEditBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox), [propriété Document](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.document), [propriété IsReadOnly](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.isreadonly), [propriété IsSpellCheckEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.isspellcheckenabled)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
@@ -33,14 +37,14 @@ Utilisez un contrôle **RichEditBox** pour afficher et modifier les fichiers de 
 -   Pour saisir du texte qui sera uniquement utilisé et non réaffiché aux utilisateurs, utilisez un contrôle de saisie de texte brut.
 -   Pour tous les autres cas de figure, utilisez un contrôle d’entrée de texte brut.
 
-Pour plus d’informations sur le choix du contrôle de texte approprié, voir l’article [Contrôles de texte](text-controls.md).
+Pour plus d’informations sur le choix du contrôle de texte approprié, consultez l’article [Contrôles de texte](text-controls.md).
 
 ## <a name="examples"></a>Exemples
 
 <table>
 <th align="left">Galerie de contrôles XAML<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/RichEditBox">ouvrir l’application et voir l’objet RichEditBox en action</a>.</p>
     <ul>
@@ -208,10 +212,10 @@ Pour en savoir plus sur l’utilisation des étendues des entrées, voir [Utilis
 
 ## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
 
-- Quand vous créez une zone de texte enrichi, proposez des boutons de style et implémentez leurs actions.
+- Quand vous créez une zone de texte enrichi, proposez des boutons d’application de style et implémentez leurs actions.
 - Utilisez une police cohérente avec le style de votre application.
 - Faites en sorte que la hauteur du contrôle de texte soit suffisante pour recevoir des entrées classiques.
-- Ne laissez pas les contrôles de saisie de texte s’allonger en hauteur lorsque les utilisateurs entrent le texte.
+- Ne laissez pas les contrôles de saisie de texte s’allonger en hauteur quand les utilisateurs entrent le texte.
 - N’utilisez pas de zone de texte de plusieurs lignes quand les utilisateurs n’ont besoin que d’une seule ligne.
 - N’utilisez pas de contrôle de texte enrichi si un contrôle de texte brut est approprié.
 

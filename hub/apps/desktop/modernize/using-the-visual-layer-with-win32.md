@@ -1,92 +1,92 @@
 ---
-title: À l’aide de la couche visuelle avec Win32
-description: Utiliser la couche visuelle pour améliorer l’interface utilisateur de votre application de bureau Win32.
+title: Utilisation de la couche visuelle avec Win32
+description: Utilisez la couche visuelle pour améliorer l’interface utilisateur de votre application de bureau Win32.
 template: detail.hbs
 ms.date: 03/18/2019
 ms.topic: article
-keywords: UWP, de rendu, composition, win32
+keywords: UWP, affichage, composition, Win32
 ms.author: jimwalk
 author: jwmsft
 ms.localizationpriority: medium
 ms.openlocfilehash: c9b4ec38b0dd1f6eca3f43cfded74c6292c08100
 ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 05/24/2019
 ms.locfileid: "66215188"
 ---
-# <a name="using-the-visual-layer-with-win32"></a>À l’aide de la couche visuelle avec Win32
+# <a name="using-the-visual-layer-with-win32"></a>Utilisation de la couche visuelle avec Win32
 
-Vous pouvez utiliser les API de Composition Windows Runtime (également appelé le [couche visuelle](/windows/uwp/composition/visual-layer)) dans vos applications Win32 pour créer des expériences modernes autrement clair pour les utilisateurs de Windows 10.
+Vous pouvez utiliser des API de composition Windows Runtime (également appelées [couche visuelle](/windows/uwp/composition/visual-layer)) dans vos applications Windows Win32 afin de créer des expériences modernes qui s’activent pour les utilisateurs de Windows 10.
 
-Le code complet pour ce didacticiel est disponible sur GitHub : [Exemple de Win32 HelloComposition](https://github.com/Microsoft/Windows.UI.Composition-Win32-Samples/tree/master/cpp/HelloComposition).
+Le code complet de ce tutoriel est disponible sur GitHub : [Exemple Win32 HelloComposition](https://github.com/Microsoft/Windows.UI.Composition-Win32-Samples/tree/master/cpp/HelloComposition).
 
-Les Applications Windows universelles nécessitant un contrôle précis sur leur composition de l’interface utilisateur ont accès à la [Windows.UI.Composition](/uwp/api/windows.ui.composition) exercer un contrôle précis comment leur interface utilisateur est composée et rendu de l’espace de noms. Cette API de composition n’est pas limitée aux applications UWP, toutefois. Les applications de bureau Win32 peuvent tirer parti des systèmes modernes de composition dans UWP et Windows 10.
+Les applications Windows universelles ont accès à l’espace de noms [Windows.UI.Composition](/uwp/api/windows.ui.composition), qui leur permet de contrôler avec précision la composition et l’affichage de leur interface utilisateur. Toutefois, cette API de composition n’est pas limitée aux applications UWP. Les applications de bureau Win32 peuvent tirer parti des systèmes de composition modernes dans UWP et Windows 10.
 
 ## <a name="prerequisites"></a>Prérequis
 
-La plateforme Windows universelle API d’hébergement a ces conditions préalables.
+L’API d’hébergement UWP est régie par les conditions préalables suivantes.
 
-- Nous partons du principe que vous disposez des connaissances sur le développement d’applications à l’aide de Win32 et UWP. Pour plus d’informations, voir :
-  - [Prise en main Win32 etC++](/windows/desktop/learnwin32/learn-to-program-for-windows)
-  - [Prise en main les applications Windows 10](/windows/uwp/get-started/)
-  - [Améliorer votre application de bureau pour Windows 10](/windows/uwp/porting/desktop-to-uwp-enhance)
-- Windows 10 version 1803 ou ultérieure
-- SDK Windows 10 17134 ou version ultérieure
+- Nous partons du principe que vous êtes familiarisé avec le développement d’applications à l’aide de Win32 et d’UWP. Pour plus d’informations, voir :
+  - [Bien démarrer avec Win32 et C++](/windows/desktop/learnwin32/learn-to-program-for-windows)
+  - [Bien démarrer avec les applications Windows 10](/windows/uwp/get-started/)
+  - [Améliorer votre application de bureau pour Windows 10](/windows/uwp/porting/desktop-to-uwp-enhance)
+- Windows 10, version 1803 ou ultérieure
+- SDK Windows 10 17134 ou version ultérieure
 
-## <a name="how-to-use-composition-apis-from-a-win32-desktop-application"></a>Comment utiliser les API de Composition à partir d’une application de bureau Win32
+## <a name="how-to-use-composition-apis-from-a-win32-desktop-application"></a>Guide pratique pour utiliser des API de composition à partir d’une application de bureau Win32
 
-Dans ce didacticiel, vous allez créer un simple Win32 C++ application et lui ajouter des éléments de Composition de UWP. Le focus est sur la configuration du projet, création du code interop et quelque chose de simple à l’aide des API de Composition Windows correctement. L’application terminée ressemble à ceci.
+Dans ce tutoriel, vous allez créer une application Win32 C++ et y ajouter des éléments de composition UWP. L’objectif est de configurer correctement le projet, de créer le code d’interopérabilité et de dessiner des éléments simples à l’aide des API de composition Windows. L’application terminée ressemble à ceci.
 
-![L’application en cours d’exécution de l’interface utilisateur](images/visual-layer-interop/win32-comp-interop-app-ui.png)
+![Interface utilisateur d’application en cours d’exécution](images/visual-layer-interop/win32-comp-interop-app-ui.png)
 
-## <a name="create-a-c-win32-project-in-visual-studio"></a>Créer un C++ projet Win32 dans Visual Studio
+## <a name="create-a-c-win32-project-in-visual-studio"></a>Créer un projet C++ Win32 dans Visual Studio
 
 La première étape consiste à créer le projet d’application Win32 dans Visual Studio.
 
-Pour créer un nouveau projet d’Application Win32 dans C++ nommé _HelloComposition_:
+Pour créer un projet d’application Win32 en C++ nommé _HelloComposition_ :
 
-1. Ouvrez Visual Studio et sélectionnez **fichier** > **New** > **projet**.
+1. Ouvrez Visual Studio, puis sélectionnez **Fichier** > **Nouveau** > **Projet**.
 
-    Le **nouveau projet** boîte de dialogue s’ouvre.
-1. Sous le **installé** catégorie, développez le **Visual C++**  nœud, puis sélectionnez **Windows Desktop**.
-1. Sélectionnez le **Application de bureau Windows** modèle.
+    La boîte de dialogue **Nouveau projet** s’affiche.
+1. Dans la catégorie **Installé**, développez le nœud **Visual C++** , puis sélectionnez **Bureau Windows**.
+1. Sélectionnez le modèle **Application de bureau Windows**.
 1. Entrez le nom _HelloComposition_, puis cliquez sur **OK**.
 
-    Visual Studio crée le projet et ouvre l’éditeur pour le fichier d’application principale.
+    Visual Studio crée le projet et ouvre l’éditeur du fichier d’application principal.
 
-## <a name="configure-the-project-to-use-windows-runtime-apis"></a>Configurer le projet pour utiliser Windows Runtime APIs
+## <a name="configure-the-project-to-use-windows-runtime-apis"></a>Configurer le projet pour qu’il utilise des API d’exécution Windows
 
-Pour utiliser Windows Runtime (WinRT) API dans votre application Win32, nous utilisons C++/WinRT. Vous devez configurer votre projet Visual Studio pour ajouter C++prise en charge /WinRT.
+Pour utiliser des API Windows Runtime (WinRT) dans votre application Win32, nous utilisons C++/WinRT. Vous devez configurer votre projet Visual Studio pour ajouter la prise en charge de C++/WinRT.
 
-(Pour plus d’informations, consultez [prise en main C++/WinRT - modifier un projet d’application de bureau de Windows pour ajouter C++prise en charge /WinRT](/windows/uwp/cpp-and-winrt-apis/get-started.md#modify-a-windows-desktop-application-project-to-add-cwinrt-support)).
+(Pour plus d’informations, consultez [Bien démarrer avec C++/WinRT - Modifier un projet d’application de bureau Windows pour ajouter la prise en charge de C++/WinRT](/windows/uwp/cpp-and-winrt-apis/get-started.md#modify-a-windows-desktop-application-project-to-add-cwinrt-support)).
 
-1. À partir de la **projet** menu, ouvrez les propriétés du projet (_HelloComposition propriétés_) et vérifiez les paramètres suivants sont définis sur les valeurs spécifiées :
+1. Dans le menu **Projet**, ouvrez les propriétés du projet (_Propriétés de HelloComposition_) et assurez-vous que les paramètres suivants sont définis sur les valeurs spécifiées :
 
-    - Pour **Configuration**, sélectionnez _toutes les Configurations_. Pour **plateforme**, sélectionnez _toutes les plateformes_.
-    - **Propriétés de configuration** > **général** > **Windows SDK Version** = _10.0.17763.0_ ou supérieur
+    - Pour **Configuration**, sélectionnez _Toutes les configurations_. Pour **Plateforme**, sélectionnez _Toutes les plateformes_.
+    - **Propriétés de la configuration** > **Général** > **Version du SDK Windows** = _10.0.17763.0_ ou supérieure
 
-    ![Définir la version SDK](images/visual-layer-interop/sdk-version.png)
+    ![Définir la version du SDK](images/visual-layer-interop/sdk-version.png)
 
-    - **C /C++** > **langage**  >   **C++ langage Standard** = _ISO C++ 17 Standard (/ stf:c ++ 17)_
+    - **C/C++**  > **Langage** > **Norme du langage C++**  = _ISO C++ 17 Standard (/stf:c++17)_
 
-    ![Norme du langage de jeu](images/visual-layer-interop/language-standard.png)
+    ![Définir la norme du langage](images/visual-layer-interop/language-standard.png)
 
-    - **L’éditeur de liens** > **entrée** > **dépendances supplémentaires** doit inclure «_windowsapp.lib_». S’il n’est pas inclus dans la liste, ajoutez-le.
+    - **Éditeur de liens** > **Entrée** > **Dépendances supplémentaires** doit inclure « _windowsapp.lib_ ». Si cet élément n’est pas inclus dans la liste, ajoutez-le.
 
-    ![Ajouter une dépendance de l’éditeur de liens](images/visual-layer-interop/linker-dependencies.png)
+    ![Ajouter une dépendance dans l’éditeur de liens](images/visual-layer-interop/linker-dependencies.png)
 
-1. Mettre à jour de l’en-tête précompilé
+1. Mettez à jour l’en-tête précompilé.
 
-    - Renommer `stdafx.h` et `stdafx.cpp` à `pch.h` et `pch.cpp`, respectivement.
-    - Définir la propriété de projet **C/C++** > **en-têtes précompilés** > **fichier d’en-tête précompilé** à *pch.h*.
-    - Rechercher et remplacer `#include "stdafx.h"` avec `#include "pch.h"` dans tous les fichiers.
+    - Renommez `stdafx.h` et `stdafx.cpp` en `pch.h` et `pch.cpp`, respectivement.
+    - Affectez à la propriété de projet **C/C++**  > **En-têtes précompilés** > **Fichier d’en-tête précompilé** la valeur *pch.h*.
+    - Recherchez `#include "stdafx.h"` et remplacez-le par `#include "pch.h"` dans tous les fichiers.
 
-        (**Modifier** > **rechercher et remplacer** > **rechercher dans les fichiers**)
+        (**Modifier** > **Rechercher et remplacer** > **Chercher dans les fichiers**)
 
         ![Rechercher et remplacer stdafx.h](images/visual-layer-interop/replace-stdafx.png)
 
-    - Dans `pch.h`, inclure `winrt/base.h` et `unknwn.h`.
+    - Dans `pch.h`, incluez `winrt/base.h` et `unknwn.h`.
 
         ```cppwinrt
         // reference additional headers your program requires here
@@ -94,28 +94,28 @@ Pour utiliser Windows Runtime (WinRT) API dans votre application Win32, nous uti
         #include <winrt/base.h>
         ```
 
-Il est judicieux de créer le projet à ce stade pour vérifier qu’il n’y pas d’erreurs avant de poursuivre.
+Il est judicieux de générer le projet à ce stade pour vérifier qu’il n’y a pas d’erreurs avant de poursuivre.
 
-## <a name="create-a-class-to-host-composition-elements"></a>Créer une classe pour les éléments de composition d’hôte
+## <a name="create-a-class-to-host-composition-elements"></a>Créer une classe pour héberger les éléments de la composition
 
-Pour héberger le contenu vous créer avec la couche visuelle, créer une classe (_CompositionHost_) pour gérer l’interopérabilité et de créer des éléments de composition. Il s’agit dans lequel vous effectuez la majeure partie de la configuration pour l’hébergement des API de Composition, y compris :
+Pour héberger le contenu que vous créez avec la couche visuelle, créez une classe (_CompositionHost_) afin de gérer l’interopérabilité et créer des éléments de composition. C’est là que vous effectuez la majeure partie de la configuration pour l’hébergement des API de composition, notamment :
 
-- obtenir un [compositeur](/uwp/api/windows.ui.composition.compositor), ce qui crée et gère les objets dans le [Windows.UI.Composition](/uwp/api/windows.ui.composition) espace de noms.
-- Création d’un [DispatcherQueueController](/uwp/api/windows.system.dispatcherqueuecontroller)/[DispatcherQueue](/uwp/api/windows.system.dispatcherqueue) pour gérer les tâches pour les APIs WinRT.
-- Création d’un [DesktopWindowTarget](/uwp/api/windows.ui.composition.desktop.desktopwindowtarget) et conteneur de Composition pour afficher les objets de la composition.
+- Obtention d’un [compositeur](/uwp/api/windows.ui.composition.compositor), qui crée et gère des objets dans l’espace de noms [Windows.UI.Composition](/uwp/api/windows.ui.composition)
+- Création d’un [DispatcherQueueController](/uwp/api/windows.system.dispatcherqueuecontroller)/[DispatcherQueue](/uwp/api/windows.system.dispatcherqueue) pour gérer les tâches des API WinRT
+- Création d’un [DesktopWindowTarget](/uwp/api/windows.ui.composition.desktop.desktopwindowtarget) et d’un conteneur de composition pour afficher les objets de composition
 
-Nous en faire un singleton pour éviter les problèmes liés aux threads de classe. Par exemple, vous pouvez uniquement créer une file d’attente du répartiteur par thread, de l’instanciation d’une deuxième instance de CompositionHost sur le même thread engendre une erreur.
+Nous convertissons cette classe en singleton afin d’éviter les problèmes de thread. Par exemple, vous ne pouvez créer qu’une seule file d’attente de répartiteur par thread. Ainsi, l’instanciation d’une seconde instance de CompositionHost sur le même thread entraînerait une erreur.
 
 > [!TIP]
-> Si vous le souhaitez, vérifiez le code complet à la fin du didacticiel pour vous assurer que tout le code est placées au bon endroit lorsque vous travaillez dans le didacticiel.
+> Si nécessaire, consultez le code complet à la fin du tutoriel pour vous assurer que tout le code se trouve à la bonne place à mesure que vous parcourez le tutoriel.
 
 1. Ajoutez un nouveau fichier de classe à votre projet.
-    - Dans **l’Explorateur de solutions**, avec le bouton droit cliquez sur le _HelloComposition_ projet.
-    - Dans le menu contextuel, sélectionnez **ajouter** > **classe...** .
-    - Dans le **ajouter une classe** boîte de dialogue, nommez la classe _CompositionHost.cs_, puis cliquez sur **ajouter**.
+    - Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le projet _HelloComposition_.
+    - Dans le menu contextuel, sélectionnez **Ajouter** > **Classe...** .
+    - Dans la boîte de dialogue **Ajouter une classe**, nommez la classe _CompositionHost.cs_, puis cliquez sur **Ajouter**.
 
-1. Inclure des en-têtes et _les instructions using_ requis pour l’interopérabilité de composition.
-    - Dans CompositionHost.h, ajoutez ces _inclut_ en haut du fichier.
+1. Incluez les en-têtes et les instructions _using_ nécessaires pour l’interopérabilité de la composition.
+    - Dans CompositionHost.h, ajoutez ces instructions _include_ au début du fichier.
 
     ```cppwinrt
     #pragma once
@@ -124,7 +124,7 @@ Nous en faire un singleton pour éviter les problèmes liés aux threads de clas
     #include <DispatcherQueue.h>
     ```
 
-    - Dans CompositionHost.cpp, ajoutez ces _les instructions using_ en haut du fichier, après n’importe quel _inclut_.
+    - Dans CompositionHost.cpp, ajoutez ces instructions _using_ au début du fichier, après toutes les instructions _include_ éventuelles.
 
     ```cppwinrt
     using namespace winrt;
@@ -135,9 +135,9 @@ Nous en faire un singleton pour éviter les problèmes liés aux threads de clas
     using namespace Windows::Foundation::Numerics;
     ```
 
-1. Modifier la classe pour utiliser le modèle de singleton.
+1. Modifiez la classe pour utiliser le modèle singleton.
     - Dans CompositionHost.h, rendez le constructeur privé.
-    - Déclarer statique publique _GetInstance_ (méthode).
+    - Déclarez une méthode _GetInstance_ statique publique.
 
     ```cppwinrt
     class CompositionHost
@@ -151,7 +151,7 @@ Nous en faire un singleton pour éviter les problèmes liés aux threads de clas
     };
     ```
 
-    - Dans CompositionHost.cpp, ajoutez la définition de la _GetInstance_ (méthode).
+    - Dans CompositionHost.cpp, ajoutez la définition de la méthode _GetInstance_.
 
     ```cppwinrt
     CompositionHost* CompositionHost::GetInstance()
@@ -161,7 +161,7 @@ Nous en faire un singleton pour éviter les problèmes liés aux threads de clas
     }
     ```
 
-1. Dans CompositionHost.h, déclarez membre privé variables pour le compositeur, DispatcherQueueController et DesktopWindowTarget.
+1. Dans CompositionHost.h, déclarez des variables de membre privé pour le compositeur, DispatcherQueueController et DesktopWindowTarget.
 
     ```cppwinrt
     winrt::Windows::UI::Composition::Compositor m_compositor{ nullptr };
@@ -171,15 +171,15 @@ Nous en faire un singleton pour éviter les problèmes liés aux threads de clas
 
 1. Ajoutez une méthode publique pour initialiser les objets d’interopérabilité de composition.
     > [!NOTE]
-    > Dans _initialiser_, vous appelez le _EnsureDispatcherQueue_, _CreateDesktopWindowTarget_, et _CreateCompositionRoot_ méthodes. Vous créez ces méthodes dans les étapes suivantes.
+    > Dans _Initialize_, vous appelez les méthodes _EnsureDispatcherQueue_, _CreateDesktopWindowTarget_ et _CreateCompositionRoot_. Vous allez créer ces méthodes aux étapes suivantes.
 
-    - Dans CompositionHost.h, déclarez une méthode publique nommée _initialiser_ qui accepte un HWND en tant qu’argument.
+    - Dans CompositionHost.h, déclarez une méthode publique nommée _Initialize_ qui prend un HWND comme argument.
 
     ```cppwinrt
     void Initialize(HWND hwnd);
     ```
 
-    - Dans CompositionHost.cpp, ajoutez la définition de la _initialiser_ (méthode).
+    - Dans CompositionHost.cpp, ajoutez la définition de la méthode _Initialize_.
 
     ```cppwinrt
     void CompositionHost::Initialize(HWND hwnd)
@@ -192,9 +192,9 @@ Nous en faire un singleton pour éviter les problèmes liés aux threads de clas
     }
     ```
 
-1. Créer une file d’attente du répartiteur sur le thread qui utiliseront la Composition de Windows.
+1. Créez une file d’attente de répartiteur sur le thread qui utilisera Windows Composition.
 
-    Un compositeur doit être créé sur un thread qui a une file d’attente du répartiteur, donc cette méthode est appelée en premier lors de l’initialisation.
+    Un compositeur doit être créé sur un thread qui a une file d’attente de répartiteur. Cette méthode est donc appelée en premier pendant l’initialisation.
 
     - Dans CompositionHost.h, déclarez une méthode privée nommée _EnsureDispatcherQueue_.
 
@@ -202,7 +202,7 @@ Nous en faire un singleton pour éviter les problèmes liés aux threads de clas
     void EnsureDispatcherQueue();
     ```
 
-    - Dans CompositionHost.cpp, ajoutez la définition de la _EnsureDispatcherQueue_ (méthode).
+    - Dans CompositionHost.cpp, ajoutez la définition de la méthode _EnsureDispatcherQueue_.
 
     ```cppwinrt
     void CompositionHost::EnsureDispatcherQueue()
@@ -225,14 +225,14 @@ Nous en faire un singleton pour éviter les problèmes liés aux threads de clas
     }
     ```
 
-1. Inscrivez votre fenêtre d’application comme une cible de composition.
-    - Dans CompositionHost.h, déclarez une méthode privée nommée _CreateDesktopWindowTarget_ qui accepte un HWND en tant qu’argument.
+1. Inscrivez la fenêtre de votre application en tant que cible de composition.
+    - Dans CompositionHost.h, déclarez une méthode privée nommée _CreateDesktopWindowTarget_ qui prend un HWND comme argument.
 
     ```cppwinrt
     void CreateDesktopWindowTarget(HWND window);
     ```
 
-    - Dans CompositionHost.cpp, ajoutez la définition de la _CreateDesktopWindowTarget_ (méthode).
+    - Dans CompositionHost.cpp, ajoutez la définition de la méthode _CreateDesktopWindowTarget_.
 
     ```cppwinrt
     void CompositionHost::CreateDesktopWindowTarget(HWND window)
@@ -246,14 +246,14 @@ Nous en faire un singleton pour éviter les problèmes liés aux threads de clas
     }
     ```
 
-1. Créer un conteneur visuel racine pour contenir les objets visuels.
+1. Créez un conteneur visuel racine destiné à contenir des objets visuels.
     - Dans CompositionHost.h, déclarez une méthode privée nommée _CreateCompositionRoot_.
 
     ```cppwinrt
     void CreateCompositionRoot();
     ```
 
-    - Dans CompositionHost.cpp, ajoutez la définition de la _CreateCompositionRoot_ (méthode).
+    - Dans CompositionHost.cpp, ajoutez la définition de la méthode _CreateCompositionRoot_.
 
     ```cppwinrt
     void CompositionHost::CreateCompositionRoot()
@@ -265,24 +265,24 @@ Nous en faire un singleton pour éviter les problèmes liés aux threads de clas
     }
     ```
 
-Générons maintenant le projet pour vérifier qu’aucune erreur.
+Générez le projet maintenant pour vous assurer qu’il n’y a pas d’erreur.
 
-Ces méthodes, configurer les composants nécessaires pour l’interopérabilité entre la couche visuelle UWP et des API Win32. Vous pouvez maintenant ajouter du contenu à votre application.
+Ces méthodes configurent les composants nécessaires à l’interopérabilité entre la couche visuelle UWP et les API Win32. Vous pouvez maintenant ajouter du contenu à votre application.
 
 ### <a name="add-composition-elements"></a>Ajouter des éléments de composition
 
-Avec l’infrastructure en place, vous pouvez maintenant générer le contenu de Composition que vous souhaitez afficher.
+Une fois l’infrastructure en place, vous pouvez générer le contenu de composition que vous souhaitez montrer.
 
-Pour cet exemple, vous ajoutez le code qui crée un carré de couleur au hasard [SpriteVisual](/uwp/api/windows.ui.composition.spritevisual) avec une animation qui oblige ce dernier à supprimer après un court délai.
+Pour cet exemple, vous ajoutez du code qui crée un [SpriteVisual](/uwp/api/windows.ui.composition.spritevisual) carré de couleur aléatoire avec une animation qui entraîne sa suppression après un bref délai.
 
-1. Ajouter un élément de composition.
-    - Dans CompositionHost.h, déclarez une méthode publique nommée _AddElement_ qui prend 3 **float** valeurs comme arguments.
+1. Ajoutez un élément de composition.
+    - Dans CompositionHost.h, déclarez une méthode publique nommée _AddElement_ qui prend 3 valeurs **float** comme arguments.
 
     ```cppwinrt
     void AddElement(float size, float x, float y);
     ```
 
-    - Dans CompositionHost.cpp, ajoutez la définition de la _AddElement_ (méthode).
+    - Dans CompositionHost.cpp, ajoutez la définition de la méthode _AddElement_.
 
     ```cppwinrt
     void CompositionHost::AddElement(float size, float x, float y)
@@ -322,9 +322,9 @@ Pour cet exemple, vous ajoutez le code qui crée un carré de couleur au hasard 
 
 ## <a name="create-and-show-the-window"></a>Créer et afficher la fenêtre
 
-Maintenant, vous pouvez ajouter un bouton et le contenu de la composition UWP à votre interface utilisateur Win32.
+À présent, vous pouvez ajouter un bouton et le contenu de composition UWP à votre interface utilisateur Win32.
 
-1. Dans HelloComposition.cpp, en haut du fichier, incluez _CompositionHost.h_BTN_ADD de définir et obtenir une instance de CompositionHost.
+1. Dans HelloComposition.cpp, au début du fichier, incluez _CompositionHost.h_, définissez BTN_ADD et récupérez une instance de CompositionHost.
 
     ```cppwinrt
     #include "CompositionHost.h"
@@ -335,14 +335,14 @@ Maintenant, vous pouvez ajouter un bouton et le contenu de la composition UWP à
     CompositionHost* compHost = CompositionHost::GetInstance();
     ```
 
-1. Dans le `InitInstance` (méthode), modifier la taille de la fenêtre qui est créée. (Dans cette ligne, remplacez `CW_USEDEFAULT, 0` à `900, 672`.)
+1. Dans la méthode `InitInstance`, changez la taille de la fenêtre créée. (Dans cette ligne, remplacez `CW_USEDEFAULT, 0` par `900, 672`.)
 
     ```cppwinrt
     HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
         CW_USEDEFAULT, 0, 900, 672, nullptr, nullptr, hInstance, nullptr);
     ```
 
-1. Dans la fonction WndProc, ajoutez `case WM_CREATE` à la _message_ bloc switch. Dans ce cas, vous initialisez le CompositionHost et créez le bouton.
+1. Dans la fonction WndProc, ajoutez `case WM_CREATE` au bloc switch _message_. Dans ce cas, vous initialisez le CompositionHost et créez le bouton.
 
     ```cppwinrt
     case WM_CREATE:
@@ -358,9 +358,9 @@ Maintenant, vous pouvez ajouter un bouton et le contenu de la composition UWP à
     break;
     ```
 
-1. Également dans la fonction WndProc, gère le clic de bouton pour ajouter un élément de composition à l’interface utilisateur. 
+1. De même, dans la fonction WndProc, gérez le clic sur le bouton pour ajouter un élément de composition à l’interface utilisateur. 
 
-    Ajouter `case BTN_ADD` à la _wmId_ bloc switch à l’intérieur du bloc WM_COMMAND.
+    Ajoutez `case BTN_ADD` au bloc switch _wmId_ à l’intérieur du bloc WM_COMMAND.
 
     ```cppwinrt
     case BTN_ADD: // addButton click
@@ -373,21 +373,21 @@ Maintenant, vous pouvez ajouter un bouton et le contenu de la composition UWP à
     }
     ```
 
-Vous pouvez maintenant générer et exécuter votre application. Si vous le souhaitez, vérifiez le code complet à la fin du didacticiel afin de vous assurer que tout le code est placées au bon endroit.
+À présent, vous pouvez générer et exécuter votre application. Si nécessaire, consultez le code complet à la fin du tutoriel pour vous assurer que tout le code se trouve à la bonne place.
 
-Lorsque vous exécutez l’application et cliquez sur le bouton, vous devez voir des carrés animés ajoutés à l’interface utilisateur.
+Quand vous exécutez l’application et cliquez sur le bouton, vous devez voir les carrés animés ajoutés à l’interface utilisateur.
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
 - [Exemple Win32 HelloComposition (GitHub)](https://github.com/Microsoft/Windows.UI.Composition-Win32-Samples/tree/master/cpp/HelloComposition)
-- [Prise en main Win32 etC++](/windows/desktop/learnwin32/learn-to-program-for-windows)
-- [Prise en main les applications Windows 10](/windows/uwp/get-started/) (UWP)
-- [Améliorer votre application de bureau pour Windows 10](/windows/uwp/porting/desktop-to-uwp-enhance) (UWP)
-- [Espace de noms Windows.UI.Composition](/uwp/api/windows.ui.composition) (UWP)
+- [Bien démarrer avec Win32 et C++](/windows/desktop/learnwin32/learn-to-program-for-windows)
+- [Bien démarrer avec les applications Windows 10](/windows/uwp/get-started/) (UWP)
+- [Améliorer votre application de bureau pour Windows 10](/windows/uwp/porting/desktop-to-uwp-enhance) (UWP)
+- [Windows.UI.Composition namespace](/uwp/api/windows.ui.composition) (UWP)
 
 ## <a name="complete-code"></a>Code complet
 
-Voici le code complet pour la classe CompositionHost et la méthode InitInstance.
+Voici le code complet de la classe CompositionHost et de la méthode InitInstance.
 
 ### <a name="compositionhosth"></a>CompositionHost.h
 
@@ -530,7 +530,7 @@ void CompositionHost::AddElement(float size, float x, float y)
 }
 ```
 
-### <a name="hellocompositioncpp-partial"></a>HelloComposition.cpp (partielle)
+### <a name="hellocompositioncpp-partial"></a>HelloComposition.cpp (partiel)
 
 ```cppwinrt
 #include "pch.h"

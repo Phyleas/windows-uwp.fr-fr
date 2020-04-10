@@ -8,7 +8,7 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f08c2cc39bb4cdf9a49351f70143a0f86df1fb7
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74254723"
@@ -18,11 +18,11 @@ ms.locfileid: "74254723"
 
 
 
-**Notez**  le degré auquel vous avez besoin d’exemples de données, et la quantité de données qui vous aideront, varie selon que vos liaisons utilisent l' [extension de balisage {Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension) ou l' [extension de balisage {x :bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension). Les techniques décrites dans cette rubrique sont basées sur l’utilisation d’une [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext), afin qu’elles soient appropriées uniquement pour **{Binding}** . Si vous utilisez **{x:Bind}** , vos liaisons affichent au moins les valeurs d’espace réservé sur la surface de conception (même pour les contrôles d’éléments), si bien que vous n’avez pas tout à fait le même besoin d’exemples de données.
+**Remarque**   Le fait que vos liaisons utilisent l’[extension de balisage {Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension) ou l’[extension de balisage {x:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) détermine dans quelle mesure vous avez besoin d’exemples de données et à quel point ils vous seront utiles. Les techniques décrites dans cette rubrique sont basées sur l’utilisation d’une [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext), afin qu’elles soient appropriées uniquement pour **{Binding}** . Si vous utilisez **{x:Bind}** , vos liaisons affichent au moins les valeurs d’espace réservé sur la surface de conception (même pour les contrôles d’éléments), si bien que vous n’avez pas tout à fait le même besoin d’exemples de données.
 
 Il peut être impossible ou non souhaitable (peut-être pour des raisons de confidentialité ou de performances) pour votre application d’afficher des données actives sur la surface de conception dans Microsoft Visual Studio ou Blend pour Visual Studio. Pour que vos contrôles soient remplis avec les données (de sorte que vous puissiez travailler sur la disposition de votre application, les modèles et les autres propriétés visuelles), vous pouvez utiliser vos exemples de données au moment de la conception de diverses manières. Les exemples de données peuvent également être vraiment utiles et permettre de gagner du temps si vous créez une application de croquis (ou de prototype). Vous pouvez utiliser des exemples de données dans votre croquis ou prototype au moment de l’exécution pour illustrer vos idées sans avoir à vous connecter aux données actives/réelles.
 
-**Exemples d’applications qui illustrent {Binding}**
+**Exemples d’applications illustrant {Binding}**
 
 -   Téléchargez l’application [Bookstore1](https://codeload.github.com/MicrosoftDocs/windows-topic-specific-samples/zip/Bookstore1Universal_10).
 -   Téléchargez l’application [Bookstore2](https://codeload.github.com/MicrosoftDocs/windows-topic-specific-samples/zip/Bookstore2Universal_10).
@@ -44,7 +44,7 @@ En procédant ainsi, votre page n’est plus aussi « configurable » qu’ell
 
 ![Interface utilisateur de conception partiellement allouée.](images/displaying-data-in-the-designer-01.png)
 
-La première solution à essayer consiste à commenter l’affectation de cette propriété **DataContext** et définir **DataContext** plutôt dans le balisage de la page. Ainsi, vos données actives s’affichent au moment de la conception et de l’exécution. Pour ce faire, ouvrez d’abord votre page XAML. Ensuite, dans la fenêtre **structure du document** , cliquez sur l’élément de conception racine (généralement avec l’étiquette **\[page\]** ) pour le sélectionner. Dans la fenêtre **Propriétés**, recherchez la propriété **DataContext** (à l’intérieur de la catégorie Common), puis cliquez sur **Nouveau**. Cliquez sur le type de modèle de vue à partir de la boîte de dialogue **Sélectionner un objet**, puis cliquez sur **OK**.
+La première solution à essayer consiste à commenter l’affectation de cette propriété **DataContext** et définir **DataContext** plutôt dans le balisage de la page. Ainsi, vos données actives s’affichent au moment de la conception et de l’exécution. Pour ce faire, ouvrez d’abord votre page XAML. Ensuite, dans la fenêtre **Structure du document**, cliquez sur l’élément configurable racine (généralement intitulé **\[Page\]** ) pour le sélectionner. Dans la fenêtre **Propriétés**, recherchez la propriété **DataContext** (à l’intérieur de la catégorie Common), puis cliquez sur **Nouveau**. Cliquez sur le type de modèle de vue à partir de la boîte de dialogue **Sélectionner un objet**, puis cliquez sur **OK**.
 
 ![Interface utilisateur pour la configuration de DataContext.](images/displaying-data-in-the-designer-02.png)
 
@@ -99,7 +99,7 @@ Les diverses déclarations xmlns signifient que les attributs portant le préfix
 
 L’attribut **d:DataContext** et tous les autres attributs au moment de la conception, sont traités dans la rubrique [Attributs au moment de la conception](https://msdn.microsoft.com/library/ff602277(v=VS.95).aspx), qui est toujours valide pour les applications de plateforme Windows universelle (UWP).
 
-[**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) ne possède pas de propriété **DataContext** , mais elle a une propriété **source** . Par conséquent, il existe une propriété **d:Source** que vous pouvez utiliser pour définir des exemples de données sur une classe **CollectionViewSource** uniquement au moment de la conception.
+[**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) ne dispose pas de propriété **DataContext**, mais d’une propriété **Source**. Par conséquent, il existe une propriété **d:Source** que vous pouvez utiliser pour définir des exemples de données sur une classe **CollectionViewSource** uniquement au moment de la conception.
 
 ``` xaml
     <Page.Resources>
@@ -132,14 +132,14 @@ Si vous utilisez un fichier d’exemple de données JSON au lieu d’un fichier 
     d:Source="{d:DesignData /SampleData/RecordingsSampleData.json, Type=local:Recordings}"
 ```
 
-Jusqu’ici, nous avons utilisé **d:DesignData** pour charger les exemples de données au moment de la conception à partir d’un fichier XAML ou JSON. Vous pouvez également utiliser l’extension de balisage **d:DesignInstance**, qui indique que la source au moment de la conception repose sur la classe définie par la propriété **Type**. En voici un exemple.
+Jusqu’ici, nous avons utilisé **d:DesignData** pour charger les exemples de données au moment de la conception à partir d’un fichier XAML ou JSON. Vous pouvez également utiliser l’extension de balisage **d:DesignInstance**, qui indique que la source au moment de la conception repose sur la classe définie par la propriété **Type**. Voici un exemple.
 
 ``` xaml
     <CollectionViewSource x:Name="RecordingsCollection" Source="{Binding Recordings}"
         d:Source="{d:DesignInstance Type=local:Recordings, IsDesignTimeCreatable=True}"/>
 ```
 
-La propriété **IsDesignTimeCreatable** indique que l’outil de conception doit réellement créer une instance de la classe, qui implique que la classe possède un constructeur public par défaut, et qu’il se remplit lui-même de données (données réelles ou exemple de données). Si vous ne définissez pas **IsDesignTimeCreatable** (ou si vous le définissez sur **False**), les exemples de données ne s’afficheront pas sur la surface de conception. Dans ce cas, l’ensemble de l’outil de conception consiste à analyser la classe pour ses propriétés pouvant être liées et à les afficher dans le volet de **données** et dans la boîte de dialogue **créer une liaison de données** .
+La propriété **IsDesignTimeCreatable** indique que l’outil de conception doit réellement créer une instance de la classe, qui implique que la classe possède un constructeur public par défaut, et qu’il se remplit lui-même de données (données réelles ou exemple de données). Si vous ne définissez pas **IsDesignTimeCreatable** (ou si vous le définissez sur **False**), les exemples de données ne s’afficheront pas sur la surface de conception. Dans ce cas, l’outil de conception se contente d’analyser les propriétés pouvant être liées de la classe et de les afficher dans le panneau **Données** et la boîte de dialogue **Créer une liaison de données**.
 
 <a name="sample-data-for-prototyping"></a>Exemple de données pour créer un prototype
 --------------------------------------------------------

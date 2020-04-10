@@ -10,25 +10,35 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: bb6cc29260f5891cda74879618b59bb3762b7f18
-ms.sourcegitcommit: f561efbda5c1d47b85601d91d70d86c5332bbf8c
+ms.openlocfilehash: edeebf177cf438931bb318ea19cd292a9c9b27c0
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72690420"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081604"
 ---
 # <a name="rating-control"></a>Contrôle d’évaluation
 
 Le contrôle d’évaluation permet aux utilisateurs de visualiser et de définir des évaluations qui reflètent le degré de satisfaction vis-à-vis du contenu et des services. Les utilisateurs peuvent interagir avec le contrôle d’évaluation avec des mouvements tactiles, un stylet, une souris, un boîtier de commande ou un clavier. Les instructions de suivi montre comment utiliser les fonctionnalités du contrôle de l’évaluation pour fournir la flexibilité et la personnalisation.
 
-> **API importantes** : [Classe RatingControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.ratingcontrol)
+![Exemple de contrôle d’évaluation](images/rating_rs2_doc_ratings_intro.png)
+
+**Obtenir la bibliothèque d’interface utilisateur Windows**
+
+|  |  |
+| - | - |
+| ![Logo WinUI](images/winui-logo-64x64.png) | Le contrôle **RatingControl** est inclus dans la bibliothèque d’interface utilisateur Windows, package NuGet contenant de nouveaux contrôles et fonctionnalités d’interface utilisateur destinés aux applications UWP. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **API de la bibliothèque d’interface utilisateur Windows :** [Classe RatingControl](/uwp/api/microsoft.ui.xaml.controls.ratingcontrol)
+>
+> **API de plateforme :** [Classe RatingControl](/uwp/api/windows.ui.xaml.controls.ratingcontrol)
 
 ## <a name="examples"></a>Exemples
 
 <table>
 <th align="left">Galerie de contrôles XAML<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/RatingControl">ouvrir l’application et voir l’objet RatingControl en action</a>.</p>
     <ul>
@@ -38,8 +48,6 @@ Le contrôle d’évaluation permet aux utilisateurs de visualiser et de défini
 </td>
 </tr>
 </table>
-
-![Exemple de contrôle d’évaluation](images/rating_rs2_doc_ratings_intro.png)
 
 ### <a name="editable-rating-with-placeholder-value"></a>Évaluation modifiable avec valeur d’espace réservé
 
@@ -73,7 +81,7 @@ private void RatingChanged(RatingControl sender, object args)
 
 ### <a name="read-only-rating-mode"></a>Mode d’évaluation en lecture seule
 
-Parfois, vous devez afficher les évaluations d’un contenu secondaire, par exemple celui qui s’affiche dans le contenu recommandé ou lors de l’affichage d’une liste de commentaires et de leurs évaluations correspondantes. Dans ce cas, l’utilisateur ne doit pas être en mesure de modifier l’évaluation, pour que vous puissiez attribuer le mode de lecture seule à ce contrôle.
+Parfois, vous devez afficher les évaluations d’un contenu secondaire, par exemple celui qui s’affiche dans le contenu recommandé ou lors de l’affichage d’une liste de commentaires et de leurs évaluations correspondantes. Dans ce cas, l’utilisateur n’est pas censé pouvoir modifier l’évaluation. Vous pouvez donc attribuer le mode de lecture seule à ce contrôle.
 Le mode de lecture seule est également le mode d’utilisation recommandé du contrôle d’évaluation, quand il est utilisé dans de très grandes listes virtualisées de contenu, aussi bien pour la conception de l’interface utilisateur que pour des raisons de performances.
 
 ![Liste longue en lecture seule](images/rating_rs2_doc_reviews.png)

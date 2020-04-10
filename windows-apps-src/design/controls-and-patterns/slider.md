@@ -12,23 +12,26 @@ design-contact: ksulliv
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 841903f9bc998af5ead2a3486c500487cb070855
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: cf4e9885fdb17780c176e2740101a0cd530328ec
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66364301"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081551"
 ---
 # <a name="sliders"></a>Curseurs
 
- 
-
 Un curseur est un contrôle qui permet à l’utilisateur d’effectuer une sélection parmi une plage de valeurs en déplaçant un contrôle curseur de position le long d’une ligne.
-
-> **API importantes** : [classe Slider](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.slider), [propriété Value](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.value), [événement ValueChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged)
 
 ![Contrôle de curseur](images/controls/slider.png)
 
+**Obtenir la bibliothèque d’interface utilisateur Windows**
+
+|  |  |
+| - | - |
+| ![Logo WinUI](images/winui-logo-64x64.png) | La bibliothèque d’interface utilisateur Windows version 2.2 ou ultérieure inclut pour ce contrôle un nouveau modèle qui utilise des angles arrondis. Pour plus d’informations, consultez [Rayons des angles](/windows/uwp/design/style/rounded-corner). WinUI est un package NuGet qui contient de nouveaux contrôles et fonctionnalités d’interface utilisateur destinés aux applications UWP. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **API de plateforme** : [classe Slider](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.slider), [propriété Value](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.value), [événement ValueChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
@@ -40,27 +43,27 @@ N’utilisez pas un curseur pour les paramètres binaires. Utilisez un [bouton b
 
 Voici les autres facteurs à prendre en compte lorsque vous hésitez à utiliser un curseur :
 
--   **Le paramètre s’apparente-t-il à une quantité relative ?** Si ce n’est pas le cas, utilisez des [cases d’option](radio-button.md) ou une [zone de liste](lists.md).
--   **Le paramètre est-il une valeur numérique exacte connue ?** Si tel est le cas, utilisez une [zone de texte](text-box.md) numérique.
--   **Un utilisateur va-t-il bénéficier d’un feedback instantané sur l’effet des modifications apportées aux paramètres ?** Si tel est le cas, utilisez un curseur. Par exemple, les utilisateurs choisissent plus facilement une couleur lorsqu’ils voient immédiatement le résultat des modifications qu’ils ont apportées aux valeurs de teinte, de saturation ou de luminosité.
--   **Le paramètre a-t-il une plage de quatre valeurs ou plus ?** Si ce n’est pas le cas, utilisez des [cases d’option](radio-button.md).
--   **L’utilisateur peut-il changer la valeur ?** Les curseurs sont pour l’interaction utilisateur. Pour les valeurs que l’utilisateur ne peut pas modifier, utilisez plutôt du texte en lecture seule.
+- **Le paramètre s’apparente-t-il à une quantité relative ?** Si ce n’est pas le cas, utilisez des [cases d’option](radio-button.md) ou une [zone de liste](lists.md).
+- **Le paramètre est-il une valeur numérique exacte connue ?** Si tel est le cas, utilisez une [zone de texte](text-box.md) numérique.
+- **Un utilisateur va-t-il bénéficier d’un feedback instantané sur l’effet des modifications apportées aux paramètres ?** Si tel est le cas, utilisez un curseur. Par exemple, les utilisateurs choisissent plus facilement une couleur lorsqu’ils voient immédiatement le résultat des modifications qu’ils ont apportées aux valeurs de teinte, de saturation ou de luminosité.
+- **Le paramètre a-t-il une plage de quatre valeurs ou plus ?** Si ce n’est pas le cas, utilisez des [cases d’option](radio-button.md).
+- **L’utilisateur peut-il changer la valeur ?** Les curseurs sont pour l’interaction utilisateur. Pour les valeurs que l’utilisateur ne peut pas modifier, utilisez plutôt du texte en lecture seule.
 
 Si vous devez choisir entre un curseur et une zone de texte numérique, utilisez plutôt une zone de texte numérique si :
 
--   l’espace de l’écran est réduit ;
--   l’utilisateur préfère probablement utiliser un clavier.
+- l’espace de l’écran est réduit ;
+- l’utilisateur préfère probablement utiliser un clavier.
 
 Utilisez un curseur si :
 
--   les utilisateurs bénéficieront d’un résultat instantané.
+- les utilisateurs bénéficieront d’un résultat instantané.
 
 ## <a name="examples"></a>Exemples
 
 <table>
 <th align="left">Galerie de contrôles XAML<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/Slider">ouvrir l’application et voir l’objet Slider en action</a>.</p>
     <ul>
@@ -169,7 +172,7 @@ La direction de la plage est le sens dans lequel vous déplacez le curseur lorsq
     -   Étiquetez les deux extrémités de la plage du curseur, à moins que cela ne soit pas nécessaire avec une orientation verticale.
     -   Utilisez un seul mot, si possible, pour chaque étiquette.
     -   N’utilisez pas de ponctuation finale.
-    -   Veillez à ce que ces étiquettes soient descriptives et balancées. Exemples : Maximum/Minimum, Plus/Moins, Bas/Haut, Faible/Fort.
+    -   Veillez à ce que ces étiquettes soient descriptives et balancées. Exemples : Maximum/Minimum, Plus/Moins, Bas/Haut, Faible/Fort.
 -   **Étiquettes de valeur**
 
     Une étiquette de valeur affiche la valeur actuelle du curseur.
@@ -184,7 +187,7 @@ Un curseur est constitué d’une piste et d’un contrôle de défilement. La p
 
 Un curseur offre une large cible tactile. Pour garantir une accessibilité en mode tactile, un curseur ne doit pas être placé trop près du bord de l’écran.
 
-Lors de la conception d’un curseur personnalisé, réfléchissez à la meilleure façon de présenter toutes les informations à l’utilisateur en encombrant le moins possible l’écran. Ajoutez une étiquette de valeur si vous souhaitez indiquer à l’utilisateur les unités utilisées pour l’aider à définir le paramètre. Trouvez une manière attrayante de représenter graphiquement ces valeurs. Prenons l’exemple d’un curseur contrôlant le volume. Ce curseur peut afficher une image de haut-parleur sans aucune onde sonore lorsque le volume est au plus bas et, à l’inverse, une image de haut-parleur avec des ondes sonores lorsque le volume est au plus haut.
+Au moment de concevoir un curseur personnalisé, réfléchissez à la meilleure façon de présenter toutes les informations à l’utilisateur en encombrant le moins possible l’écran. Ajoutez une étiquette de valeur si vous souhaitez indiquer à l’utilisateur les unités utilisées pour l’aider à définir le paramètre. Trouvez une manière attrayante de représenter graphiquement ces valeurs. Prenons l’exemple d’un curseur contrôlant le volume. Ce curseur peut afficher une image de haut-parleur sans aucune onde sonore lorsque le volume est au plus bas et, à l’inverse, une image de haut-parleur avec des ondes sonores lorsque le volume est au plus haut.
 
 ## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
 

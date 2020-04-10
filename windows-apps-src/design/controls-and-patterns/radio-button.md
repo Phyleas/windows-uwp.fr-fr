@@ -12,22 +12,22 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: f623c18db5af8e503965c0c4518e35e263791a51
-ms.sourcegitcommit: 61194375c0889b73ee2b978c444c4b90a576b3e4
+ms.openlocfilehash: ad18426a36503c9a540343565c20297502810b76
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71039157"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081645"
 ---
 # <a name="radio-buttons"></a>Cases d’option
-
-> **API importantes** : [classe RadioButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RadioButton), [événement Checked](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.Checked), [propriété IsChecked](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked)
 
 Les cases d’option permettent aux utilisateurs de sélectionner une option dans un ensemble. Chaque option est représentée par une seule case d’option et les utilisateurs peuvent activer une seule case d’option dans un groupe de cases d’option.
 
 (Si le nom vous intrigue, sachez que les cases d’option s’apparentent à des boutons de radio.)
 
 ![Cases d’option](images/controls/radio-button.png)
+
+> **API de plateforme** : [classe RadioButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RadioButton), [événement Checked](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.Checked), [propriété IsChecked](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
@@ -55,14 +55,14 @@ S’il existe plus de huit options, utilisez une [liste déroulante](lists.md) o
 
 ![combo box](images/combo_box_scroll.png)
 
-Si les options disponibles dépendent du contexte actuel de l’application, ou sont amenées à changer de manière dynamique, utilisez une [zone de liste](lists.md) à sélection unique.
+Si les options disponibles dépendent du contexte actuel de l’application ou si elles peuvent changer de façon dynamique, utilisez une [zone de liste](lists.md) à sélection unique.
 
 ## <a name="examples"></a>Exemples
 
 <table>
 <th align="left">Galerie de contrôles XAML<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Si vous disposez de l'application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/RadioButton">ouvrir l’application et voir l'objet RadioButton en action</a>.</p>
     <ul>

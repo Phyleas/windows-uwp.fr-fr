@@ -12,19 +12,27 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: e8be583778ccbf47c61466033c58c784c4df4395
-ms.sourcegitcommit: e0ae346eadda864dcad1453cd1644668549e66e1
+ms.openlocfilehash: 0f32a22534bd79576c3c052853ce80f25da1da26
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68603422"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081477"
 ---
 # <a name="time-picker"></a>Sélecteur d’heure
  
 
-Le sélecteur d’heure offre aux utilisateurs une méthode standard de sélection d’une heure à l’aide d’une entrée tactile, de la souris ou du clavier. 
+Le sélecteur d’heure offre aux utilisateurs une méthode standard de sélection d’une heure à l’aide d’une entrée tactile, de la souris ou du clavier.
 
-> **API importantes** : [classe TimePicker](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TimePicker), [propriété Time](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.timepicker.time)
+![Exemple de sélecteur d’heure](images/time-picker-closed.png)
+
+**Obtenir la bibliothèque d’interface utilisateur Windows**
+
+|  |  |
+| - | - |
+| ![Logo WinUI](images/winui-logo-64x64.png) | La bibliothèque d’interface utilisateur Windows version 2.2 ou ultérieure inclut pour ce contrôle un nouveau modèle qui utilise des angles arrondis. Pour plus d’informations, consultez [Rayons des angles](/windows/uwp/design/style/rounded-corner). WinUI est un package NuGet qui contient de nouveaux contrôles et fonctionnalités d’interface utilisateur destinés aux applications UWP. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **API de plateforme** : [classe TimePicker](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TimePicker), [propriété Time](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.timepicker.time)
 
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
@@ -37,7 +45,7 @@ Pour plus d’informations sur le choix du contrôle approprié, voir l’articl
 <table>
 <th align="left">Galerie de contrôles XAML<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/TimePicker">ouvrir l’application et voir le contrôle TimePicker en action</a>.</p>
     <ul>

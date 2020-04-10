@@ -12,22 +12,26 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: c69c5e64d75e03ce5bb2ef0d82c3b816fe78a770
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: b91ca2de98142bf267cc42b56fba14a49a87bb06
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339422"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081241"
 ---
 # <a name="check-boxes"></a>Cases à cocher
 
- 
-
 Une case à cocher permet de sélectionner ou de désélectionner des éléments d’action. Elle peut être utilisée pour un élément unique ou pour une liste de plusieurs éléments parmi lesquels l’utilisateur peut en choisir quelques-uns. Le contrôle possède trois états de sélection : l’état désélectionné, l’état sélectionné et l’état indéterminé. Sélectionnez l’état indéterminé lorsqu’une collection de sous-choix possède des états désélectionné et sélectionné.
 
-> **API importantes** : [classe CheckBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox), [événement Checked](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked), [propriété IsChecked](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked)
-
 ![Exemple d’états de case à cocher](images/templates-checkbox-states-default.png)
+
+**Obtenir la bibliothèque d’interface utilisateur Windows**
+
+|  |  |
+| - | - |
+| ![Logo WinUI](images/winui-logo-64x64.png) | La bibliothèque d’interface utilisateur Windows version 2.2 ou ultérieure inclut pour ce contrôle un nouveau modèle qui utilise des angles arrondis. Pour plus d’informations, consultez [Rayons des angles](/windows/uwp/design/style/rounded-corner). WinUI est un package NuGet qui contient de nouveaux contrôles et fonctionnalités d’interface utilisateur destinés aux applications UWP. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **API de plateforme :** [classe CheckBox](/uwp/api/Windows.UI.Xaml.Controls.CheckBox), [événement Checked](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked), [propriété IsChecked](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked)
 
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
@@ -54,7 +58,7 @@ Les deux contrôles **case à cocher** et **case d’option** permettent à l’
 
 <table>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/CheckBox">ouvrir l’application et voir l’objet CheckBox en action</a>.</p>
     <ul>
@@ -185,7 +189,7 @@ private void toppingsCheckbox_Click(object sender, RoutedEventArgs e)
 
 Le contrôle CheckBox hérite de [ToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton) et peut avoir trois états : 
 
-État | Propriété | Valeur
+État | Propriété | Value
 ------|----------|------
 checked | IsChecked | **true** 
 unchecked | IsChecked | **false** 

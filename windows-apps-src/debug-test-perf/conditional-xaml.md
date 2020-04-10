@@ -1,27 +1,27 @@
 ---
 title: XAML conditionnel
-description: Utiliser de nouvelles API dans le balisage XAML tout en conservant la compatibilité avec les versions précédentes
+description: Utiliser de nouvelles API dans le balisage XAML tout en préservant la compatibilité avec les versions précédentes
 ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5d02c75775dfd63281dbf46c7f9fc58f48ac1e20
 ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 05/29/2019
 ms.locfileid: "66359965"
 ---
 # <a name="conditional-xaml"></a>XAML conditionnel
 
-Le *XAML conditionnel* permet d'utiliser la méthode [ApiInformation.IsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent) dans le balisage XAML. Cela vous permet de définir des propriétés et d'instancier des objets dans le balisage en fonction de la présence d’une API, sans avoir à utiliser le code-behind. Il analyse de façon sélective les éléments ou attributs afin de déterminer s'ils seront disponibles au moment de l’exécution. Les instructions conditionnelles sont évaluées au moment de l’exécution, et les éléments qualifiés associés à une balise XAML conditionnelle sont analysés s’ils sont évalués comme **True** (vrais) ; sinon, ils sont ignorés.
+Le *XAML conditionnel* permet d'utiliser la méthode [ApiInformation.IsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent) dans le balisage XAML. Cela vous permet de définir des propriétés et d’instancier des objets sur la base de la présence d’une API sans avoir à utiliser le code-behind. Il analyse de façon sélective les éléments ou attributs pour déterminer s’ils seront disponibles au moment de l’exécution. Les instructions conditionnelles sont évaluées au moment de l’exécution, et les éléments qualifiés associés à une balise XAML conditionnelle sont analysés si leur valeur est évaluée à **true** (vrai) ; sinon, ils sont ignorés.
 
-Le XAML conditionnel est disponible à partir de Creators Update (version 1703, build 15063). Pour utiliser le XAML conditionnel, la version minimale de votre projet Visual Studio doit être définie sur la build 15063 (Creators Update) ou version ultérieure, et la version cible doit être définie sur une version ultérieure à la version minimale. Voir [Applications adaptatives de version](version-adaptive-apps.md) pour plus d’informations sur la configuration de votre projet Visual Studio.
+Le XAML conditionnel est disponible depuis Creators Update (version 1703, build 15063). Pour utiliser le XAML conditionnel, la version minimale de votre projet Visual Studio doit correspondre à la build 15063 (Creators Update) ou ultérieur, et la version cible doit correspondre à une version postérieure à la version minimale. Pour plus d’informations sur la configuration de votre projet Visual Studio, consultez [Applications adaptatives de version](version-adaptive-apps.md).
 
 > [!NOTE]
 > Pour créer une application adaptative de version avec une version minimale inférieure à la build 15063, vous devez utiliser le [code adaptatif de version](version-adaptive-code.md), et non le XAML.
 
-Pour obtenir des informations générales importantes sur ApiInformation et les contrats API, voir [Applications adaptatives de version](version-adaptive-apps.md).
+Pour obtenir des informations générales importantes sur ApiInformation et les contrats API, consultez [Applications adaptatives de version](version-adaptive-apps.md).
 
 ## <a name="conditional-namespaces"></a>Espaces de noms conditionnels
 
@@ -31,7 +31,7 @@ Pour utiliser une méthode conditionnelle en XAML, vous devez d’abord déclare
 xmlns:myNamespace="schema?conditionalMethod(parameter)"
 ```
 
-Un espace de noms conditionnel peut être divisé en deux parties séparées par le délimiteur « ? ». 
+Un espace de noms conditionnel peut être décomposé en deux parties séparées par le délimiteur « ? ». 
 
 - Le contenu qui précède le délimiteur indique l’espace de noms ou le schéma qui contient l’API référencée. 
 - Le contenu qui suit le délimiteur « ? » représente la méthode conditionnelle qui détermine si l’espace de noms conditionnel a la valeur **true** ou **false**.
@@ -53,21 +53,21 @@ IsPropertyPresent(ControlType, PropertyName) | IsPropertyNotPresent(ControlType,
 Nous discuterons de ces méthodes plus en détail dans les sections suivantes de cet article.
 
 > [!NOTE]
-> Nous vous recommandons d’utiliser IsApiContractPresent et IsApiContractNotPresent. Les autres instructions conditionnelles ne sont pas intégralement prises en charge dans l’expérience de conception Visual Studio.
+> Nous vous recommandons d’utiliser IsApiContractPresent et IsApiContractNotPresent. Les autres instructions conditionnelles ne sont pas intégralement prises en charge dans l’expérience de conception Visual Studio.
 
 ## <a name="create-a-namespace-and-set-a-property"></a>Créer un espace de noms et définir une propriété
 
-Dans cet exemple, vous allez afficher « Bonjour, XAML conditionnel » comme contenu d’un bloc de texte si l’application s’exécute sur Fall Creators Update ou version ultérieure. Par défaut, aucun contenu ne sera affiché si l’application s’exécute sur une version précédente.
+Dans cet exemple, vous allez afficher « Bonjour, XAML conditionnel » comme contenu d’un bloc de texte si l’application s’exécute sur Fall Creators Update ou version ultérieure. Par défaut, aucun contenu ne sera affiché si l’application s’exécute sur une version antérieure.
 
-Tout d’abord, définissez un espace de noms personnalisé avec le préfixe « contract5Present » et utilisez l’espace de noms XAML par défaut https://schemas.microsoft.com/winfx/2006/xaml/presentation)comme schéma contenant la propriété [TextBlock.Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.Text). Pour rendre cet espace de noms conditionnel, ajoutez le séparateur « ? ». après le schéma.
+Tout d’abord, définissez un espace de noms personnalisé avec le préfixe « contract5Present » et utilisez l’espace de noms XAML par défaut https://schemas.microsoft.com/winfx/2006/xaml/presentation) comme schéma contenant la propriété [TextBlock.Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.Text). Pour en faire un espace de noms conditionnel, ajoutez le séparateur « ? » après le schéma.
 
-Définissez ensuite une instruction conditionnelle qui renvoie **true** sur les appareils exécutant Fall Creators Update ou une version ultérieure Utilisez la méthode ApiInformation **IsApiContractPresent** pour vérifier la version 5 de UniversalApiContract. La version 5 de UniversalApiContract a été publiée avec Fall Creators Update (SDK 16299).
+Définissez ensuite une instruction conditionnelle qui retourne **true** sur les appareils exécutant Fall Creators Update ou une version ultérieure. Utilisez la méthode ApiInformation **IsApiContractPresent** pour rechercher la version 5 de UniversalApiContract. La version 5 de UniversalApiContract a été publiée avec Fall Creators Update (SDK 16299).
 
 ```xaml
 xmlns:contract5Present="http://schemas.microsoft.com/winfx/2006/xaml/presentation?IsApiContractPresent(Windows.Foundation.UniversalApiContract,5)"
 ```
 
-Une fois l’espace de noms défini, ajoutez le préfixe d’espace de noms à la propriété Text de votre contrôle TextBox afin de la qualifier en tant que propriété devant être définie de manière conditionnelle lors de l’exécution.
+Une fois l’espace de noms défini, ajoutez le préfixe d’espace de noms à la propriété Text de votre contrôle TextBox pour la qualifier de propriété à définir de manière conditionnelle au moment de l’exécution.
 
 ```xaml
 <TextBlock contract5Present:Text="Hello, Conditional XAML"/>
@@ -88,9 +88,9 @@ Voici le code XAML complet.
 </Page>
 ```
 
-Lorsque vous exécutez cet exemple sur Fall Creators Update, le texte « Bonjour, XAML conditionnel » s’affiche. Lorsque vous l’exécutez sur Creators Update, aucun texte n’apparaît.
+Quand vous exécutez cet exemple sur Fall Creators Update, le texte « Bonjour, XAML conditionnel » s’affiche. Quand vous l’exécutez sur Creators Update, aucun texte n’apparaît.
 
-Le XAML conditionnel vous permet d’effectuer les vérifications API que vous pouvez faire sinon en code dans votre balisage. Voici le code équivalent pour cette vérification.
+Le XAML conditionnel vous permet d’effectuer les vérifications d’API que vous pouvez faire sinon dans le code de votre balisage. Voici le code équivalent pour cette vérification.
 
 ```csharp
 if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract", 5))
@@ -99,24 +99,24 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 }
 ```
 
-Notez que même si la méthode IsApiContractPresent utilise une chaîne pour le paramètre *contractName*, vous n'utilisez pas de guillemets (« ») dans la déclaration d’espace de noms XAML.
+Notez que même si la méthode IsApiContractPresent utilise une chaîne pour le paramètre *contractName*, vous n’utilisez pas de guillemets (" ") dans la déclaration d’espace de noms XAML.
 
 ## <a name="use-ifelse-conditions"></a>Utiliser des conditions if/else
 
-Dans l’exemple précédent, la propriété Text est définie uniquement lorsque l’application s’exécute sur Fall Creators Update. Mais comment faire pour afficher du texte différent lorsqu’elle s’exécute sur Creators Update ? Vous pouvez essayer de définir la propriété Text sans qualificateur conditionnel, comme suit.
+Dans l’exemple précédent, la propriété Text est définie uniquement quand l’application s’exécute sur Fall Creators Update. Mais que faire pour afficher un texte différent quand elle s’exécute sur Creators Update ? Vous pouvez essayer de définir la propriété Text sans qualificateur conditionnel, comme suit.
 
 ```xaml
 <!-- DO NOT USE -->
 <TextBlock Text="Hello, World" contract5Present:Text="Hello, Conditional XAML"/>
 ```
 
-Cela fonctionnera lorsqu’elle sera exécutée sur Creators Update. En revanche, lors d’une exécution sur Fall Creators Update, vous recevrez un message d’erreur indiquant que la propriété Text est définie plusieurs fois.
+Cela fonctionnera quand elle sera exécutée sur Creators Update. En revanche, si vous l’exécutez sur Fall Creators Update, vous recevrez un message d’erreur indiquant que la propriété Text est définie plusieurs fois.
 
-Pour définir un texte différent lorsque l’application s’exécute sur différentes versions de Windows 10, vous avez besoin d’une autre condition. Le XAML conditionnel fournit l'inverse de chaque méthode ApiInformation prise en charge pour vous permettre de créer des scénarios conditionnels if/else comme suit.
+Pour définir un texte différent pour une exécution de l’application sur d’autres versions de Windows 10, vous avez besoin d’une autre condition. Le XAML conditionnel fournit l’inverse de chaque méthode ApiInformation prise en charge pour vous permettre de créer des scénarios conditionnels if/else comme suit.
 
-La méthode IsApiContractPresent renvoie **true** si l'appareil courant contient le contrat et le numéro de version spécifiés. Supposons, par exemple, que votre application est en cours d’exécution sur Creators Update, qui intègre la version 4 du contrat API universel.
+La méthode IsApiContractPresent retourne **true** si l’appareil actif contient le contrat et le numéro de version spécifiés. Supposons, par exemple, que votre application est en cours d’exécution sur Creators Update, qui intègre la version 4 du contrat API universel.
 
-Plusieurs appels à IsApiContractPresent renverraient ces résultats :
+Plusieurs appels à IsApiContractPresent retourneraient ces résultats :
 
 - IsApiContractPresent(Windows.Foundation.UniversalApiContract, 5) = **false**
 - IsApiContractPresent(Windows.Foundation.UniversalApiContract, 4) = true
@@ -124,7 +124,7 @@ Plusieurs appels à IsApiContractPresent renverraient ces résultats :
 - IsApiContractPresent(Windows.Foundation.UniversalApiContract, 2) = true
 - IsApiContractPresent(Windows.Foundation.UniversalApiContract, 1) = true.
 
-IsApiContractNotPresent renvoie le résultat inverse de IsApiContractPresent. Les appels à IsApiContractPresent renverraient ces résultats :
+IsApiContractNotPresent retourne le résultat inverse de IsApiContractPresent. Les appels à IsApiContractNotPresent retourneraient ces résultats :
 
 - IsApiContractNotPresent(Windows.Foundation.UniversalApiContract, 5) = **true**
 - IsApiContractNotPresent(Windows.Foundation.UniversalApiContract, 4) = false
@@ -132,7 +132,7 @@ IsApiContractNotPresent renvoie le résultat inverse de IsApiContractPresent. Le
 - IsApiContractNotPresent(Windows.Foundation.UniversalApiContract, 2) = false
 - IsApiContractNotPresent(Windows.Foundation.UniversalApiContract, 1) = false
 
-Pour utiliser la condition inverse, créez un deuxième espace de noms XAML conditionnel utilisant l’instruction conditionnelle **IsApiContractNotPresent**. Le préfixe « contract5NotPresent » est utilisé ici.
+Pour utiliser la condition inverse, créez un deuxième espace de noms XAML conditionnel qui utilise l’instruction conditionnelle **IsApiContractNotPresent**. Ici, il contient le préfixe « contract5NotPresent ».
 
 ```xaml
 xmlns:contract5NotPresent="http://schemas.microsoft.com/winfx/2006/xaml/presentation?IsApiContractNotPresent(Windows.Foundation.UniversalApiContract,5)"
@@ -140,7 +140,7 @@ xmlns:contract5NotPresent="http://schemas.microsoft.com/winfx/2006/xaml/presenta
 xmlns:contract5Present="http://schemas.microsoft.com/winfx/2006/xaml/presentation?IsApiContractPresent(Windows.Foundation.UniversalApiContract,5)"
 ```
 
-Une fois les deux espaces de noms définis, vous pouvez définir deux fois la propriété Text à condition toutefois de les faire précéder de qualificateurs qui garantiront qu’un seul paramètre de propriété sera utilisé lors de l’exécution, comme suit :
+Une fois les deux espaces de noms définis, vous pouvez définir deux fois la propriété Text à condition toutefois de les faire précéder de qualificateurs qui garantiront qu’un seul paramètre de propriété sera utilisé au moment de l’exécution, comme suit :
 
 ```xaml
 <TextBlock contract5NotPresent:Text="Hello, World"
@@ -157,9 +157,9 @@ Voici un autre exemple qui définit l’arrière-plan d’un bouton. La fonction
 
 ## <a name="create-controls-and-bind-properties"></a>Créer des contrôles et lier des propriétés
 
-Jusqu’ici, vous avez vu comment définir des propriétés à l’aide du XAML conditionnel, mais vous pouvez également instancier de manière conditionnelle des contrôles basés sur le contrat API disponible lors de l’exécution.
+Jusqu’ici, nous avons vu comment définir des propriétés à l’aide du XAML conditionnel, mais il est aussi possible d’instancier de manière conditionnelle des contrôles basés sur le contrat API disponible au moment de l’exécution.
 
-Ici, un contrôle [ColorPicker](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker) est instancié lorsque l’application s’exécute sur Fall Creators Update où le contrôle est disponible. ColorPicker n’étant pas disponible avant Fall Creators Update, utilisez une [zone de liste déroulante](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox) lorsque l’application s’exécute sur des versions antérieures, afin de proposer des choix de couleurs simplifiés à l’utilisateur.
+Ici, un contrôle [ColorPicker](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker) est instancié quand l’application s’exécute sur Fall Creators Update où le contrôle est disponible. ColorPicker n’étant pas disponible avant Fall Creators Update, utilisez une zone de liste déroulante ([ComboBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox)) quand l’application s’exécute sur des versions antérieures de façon à proposer des choix de couleurs simplifiés à l’utilisateur.
 
 ```xaml
 <contract5Present:ColorPicker x:Name="colorPicker"
@@ -183,7 +183,7 @@ Vous pouvez utiliser des qualificateurs conditionnels avec différentes formes d
 </Rectangle>
 ```
 
-Lorsque vous liez une propriété à une autre propriété qui dépend d’un espace de noms conditionnel, vous devez utiliser la même condition sur les deux propriétés. Ici, `colorPicker.Color` dépend de l’espace de noms conditionnel « contract5Present », vous devez donc également placer le préfixe « contract5Present » sur la propriété SolidColorBrush.Color. (Ou, vous pouvez placer le préfixe « contract5Present » sur le SolidColorBrush au lieu de la propriété couleur). Si vous ne le faites, vous obtiendrez une erreur de compilation.
+Quand vous liez une propriété à une autre propriété qui dépend d’un espace de noms conditionnel, vous devez utiliser la même condition dans les deux propriétés. Ici, sachant que `colorPicker.Color` dépend de l’espace de noms conditionnel « contract5Present », vous devez aussi placer le préfixe « contract5Present » dans la propriété SolidColorBrush.Color. (Vous pouvez aussi placer le préfixe « contract5Present » dans SolidColorBrush et non dans la propriété Color). À défaut, vous obtiendrez une erreur de compilation.
 
 ```xaml
 <SolidColorBrush contract5Present:Color="{x:Bind colorPicker.Color, Mode=OneWay}"/>
@@ -191,7 +191,7 @@ Lorsque vous liez une propriété à une autre propriété qui dépend d’un es
 
 Voici le code XAML complet qui illustre ces scénarios. Cet exemple contient un rectangle et une interface utilisateur qui vous permet de définir la couleur du rectangle.
 
-Lorsque l’application s’exécute sur Fall Creators Update, vous utilisez un contrôle ColorPicker pour permettre à l’utilisateur de définir la couleur. ColorPicker n’étant pas disponible avant Fall Creators Update, utilisez une zone de liste déroulante lorsque l’application s’exécute sur des versions antérieures, afin de proposer des choix de couleurs simplifiés à l’utilisateur.
+Quand l’application s’exécute sur Fall Creators Update, vous utilisez un contrôle ColorPicker pour permettre à l’utilisateur de définir la couleur. ColorPicker n’étant pas disponible avant Fall Creators Update, utilisez une zone de liste déroulante quand l’application s’exécute sur des versions antérieures de façon à proposer des choix de couleurs simplifiés à l’utilisateur.
 
 ```xaml
 <Page
@@ -245,5 +245,5 @@ Lorsque l’application s’exécute sur Fall Creators Update, vous utilisez u
 ## <a name="related-articles"></a>Articles connexes
 
 - [Guide des applications UWP](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
-- [Détection dynamique des fonctionnalités avec les contrats d’API](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)
-- [Contrats API](https://channel9.msdn.com/Events/Build/2015/3-733) (Build 2015 vidéo)
+- [Dynamically detecting features with API contracts](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)
+- [API Contracts](https://channel9.msdn.com/Events/Build/2015/3-733) (Vidéo Build 2015)
