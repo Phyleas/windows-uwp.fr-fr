@@ -1,12 +1,12 @@
 ---
 title: Exécution de l’optimisation guidée par profil (PGO) sur des applications de plateforme Windows universelle (UWP)
-description: Guide pas à pas pour l’application de l’optimisation guidée par profil (PGO) aux applications plateforme Windows universelle (UWP).
+description: Guide pas à pas pour appliquer l’Optimisation guidée par profil aux applications UWP (plateforme Windows universelle).
 ms.date: 02/08/2017
 ms.localizationpriority: medium
 ms.topic: article
 ms.openlocfilehash: c784812d2e070aba0857cb84e5729b1426717b8d
 ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/30/2019
 ms.locfileid: "73062368"
@@ -17,7 +17,7 @@ Cette rubrique vous guide pas à pas dans l’application de l’optimisation gu
 
 Voici une procédure pas à pas de base pour appliquer la PGO au modèle d’application (UWP) DirectX 11 par défaut à l’aide de Visual Studio 2015 Update 3.
  
-Les captures d’écran de ce guide sont basées sur le nouveau projet suivant : ![boîte de dialogue Nouveau projet](images/pgo-001.png)
+Les captures d’écran incluses dans ce guide s’appuient sur le nouveau projet suivant : ![Boîte de dialogue Nouveau projet](images/pgo-001.png)
 
 Pour appliquer la PGO au modèle d’application DirectX 11 :
 
@@ -67,9 +67,9 @@ Pour appliquer la PGO au modèle d’application DirectX 11 :
   pgosweep.exe App1.exe "C:\Users\<USER>\Documents\Visual Studio 2015\Projects\App1\Release\App1\App1!1.pgc"
   ```
  
-  Vous pouvez également collecter `App1!CoreScenario.pgc`, `App1!UseCase5.pgc`, etc. Si les fichiers .pgc sont nommés de cette façon et se trouvent dans l’emplacement de sortie de génération avec le fichier .pgd, ils sont automatiquement fusionnés durant la liaison à l’étape 9.
+  Le regroupement pourrait également être `App1!CoreScenario.pgc`, `App1!UseCase5.pgc`, etc. Si les fichiers .pgc sont nommés de cette façon et se trouvent dans l’emplacement de sortie de build avec le fichier .pgd, ils sont automatiquement fusionnés durant la liaison à l’étape 9.
  
-8. FACULTATIF : Par défaut, tous les fichiers .pgc nommés comme spécifié à l’étape 7 et placés à côté du fichier .pgd sont fusionnés durant la liaison et pondérés de manière égale, mais vous pouvez également mieux contrôler la façon dont certaines séries sont pondérées. Pour ce faire, vous utilisez l’outil **pgomgr.exe** qui se trouve également dans le premier dossier dans lequel vous avez trouvé la copie de `pgort140.dll`. Par exemple, pour fusionner la série `CoreScenario` avec une priorité 3 fois supérieure à celle des autres séries, je peux utiliser la commande suivante :
+8. FACULTATIF : Par défaut, tous les fichiers .pgc nommés comme indiqué à l’étape 7 et placés à côté du fichier .pgd sont fusionnés durant la liaison et pondérés uniformément. Cependant, vous pouvez également avoir un plus grand contrôle sur la pondération de certaines séries. Pour ce faire, vous utilisez l’outil **pgomgr.exe** qui se trouve également dans le premier dossier dans lequel vous avez trouvé la copie de `pgort140.dll`. Par exemple, pour fusionner la série `CoreScenario` avec une priorité 3 fois supérieure à celle des autres séries, je peux utiliser la commande suivante :
  
  ```
  pgomgr.exe -merge:3 "C:\Users\<USER>\Documents\Visual Studio 2015\Projects\App1\Release\App1\App1!CoreScenario.pgc" "C:\Users\<USER>\Documents\Visual Studio 2015\Projects\App1\Release\App1\App1.pgd"
@@ -81,7 +81,7 @@ Pour appliquer la PGO au modèle d’application DirectX 11 :
  
 10. À présent que le projet est généré, l’éditeur de liens appelle pgomgr.exe pour fusionner tous les fichiers `<PGDName>!*.pgc` du fichier .pgd avec une pondération de 1 par défaut, et l’application résultante est optimisée en fonction des données de profilage.
 
-## <a name="see-also"></a>Articles associés
+## <a name="see-also"></a>Voir aussi
 - [Performances](performance-and-xaml-ui.md)
 
  

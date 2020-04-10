@@ -1,6 +1,6 @@
 ---
-Description: Vous pouvez définir des dispositions associées pour une utilisation avec des conteneurs tels que le contrôle ItemsRepeater.
-title: AttachedLayout
+Description: Vous pouvez définir des dispositions attachées pour les utiliser avec des conteneurs comme le contrôle ItemsRepeater.
+title: Disposition attachée
 label: AttachedLayout
 template: detail.hbs
 ms.date: 03/13/2019
@@ -9,16 +9,16 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: dc23e86f85c5db3dd10c5cec152047be387d4513
 ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/11/2019
 ms.locfileid: "72282290"
 ---
-# <a name="attached-layouts"></a>Dispositions associées
+# <a name="attached-layouts"></a>Dispositions attachées
 
-Un conteneur (par exemple, Panel) qui délègue sa logique de disposition à un autre objet s’appuie sur l’objet de disposition attaché pour fournir le comportement de disposition pour ses éléments enfants.  Un modèle de disposition attaché offre à une application la possibilité de modifier la disposition des éléments au moment de l’exécution, ou de partager plus facilement des aspects de la disposition entre les différentes parties de l’interface utilisateur (par exemple, les éléments des lignes d’une table qui semblent être alignés dans une colonne).
+Un conteneur (par exemple, Panel) qui délègue sa logique de disposition à un autre objet s’appuie sur l’objet de disposition attachée pour fournir le comportement de disposition à ses éléments enfants.  Un modèle de disposition attachée offre à une application la possibilité de modifier la disposition des éléments à l’exécution, ou de partager plus facilement certains aspects de la disposition entre différentes parties de l’interface utilisateur (par exemple, les éléments des lignes d’une table qui apparaissent alignés dans une colonne).
 
-Dans cette rubrique, nous décrivons ce qui est impliqué dans la création d’une disposition attachée (virtualisation et non-virtualisation), les concepts et les classes que vous devez comprendre, et les compromis que vous devez prendre en compte lorsque vous décidez entre eux.
+Dans cette rubrique, nous aborderons ce qu’implique la création d’une disposition attachée (avec ou sans virtualisation), les concepts et les classes qu’il faut comprendre et les compromis à prendre en compte pour faire son choix.
 
 | **Obtenir la bibliothèque d’interface utilisateur Windows** |
 | - |
@@ -38,33 +38,33 @@ Dans cette rubrique, nous décrivons ce qui est impliqué dans la création d’
 
 ## <a name="key-concepts"></a>Concepts clés
 
-Pour effectuer une mise en page, vous devez répondre à deux questions pour chaque élément :
+Pour effectuer une disposition, il faut répondre à deux questions pour chaque élément :
 
-1. Quelle est la ***taille*** de cet élément ?
+1. Quelle sera la ***taille*** de cet élément ?
 
-2. Quelle est la ***position*** de cet élément ?
+2. Quelle sera la ***position*** de cet élément ?
 
-Le système de disposition XAML, qui répond à ces questions, est brièvement abordé dans le cadre de la présentation des [panneaux personnalisés](/windows/uwp/design/layout/custom-panels-overview).
+Le système de disposition XAML, qui répond à ces questions, est brièvement abordé dans le cadre de la discussion sur les [Panneaux personnalisés](/windows/uwp/design/layout/custom-panels-overview).
 
 ### <a name="containers-and-context"></a>Conteneurs et contexte
 
-D’un point de vue conceptuel, le [volet](/uwp/api/windows.ui.xaml.controls.panel) XAML remplit deux rôles importants dans le Framework :
+D’un point de vue conceptuel, le [Panel](/uwp/api/windows.ui.xaml.controls.panel) XAML remplit deux rôles importants dans le framework :
 
-1. Il peut contenir des éléments enfants et présente une branche dans l’arborescence d’éléments.
-2. Il applique une stratégie de présentation spécifique à ces enfants.
+1. Il peut contenir des éléments enfants et permet d’utiliser des branches dans l’arborescence d’éléments.
+2. Il applique une stratégie de disposition spécifique à ces enfants.
 
-Pour cette raison, un panneau en XAML a souvent été synonyme de disposition, mais techniquement parlant, fait plus que la mise en page.
+C’est pour cette raison que le Panel en XAML a souvent été synonyme de disposition, alors que, techniquement parlant, il va au-delà.
 
-Le [ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater) se comporte également comme Panel, mais contrairement à Panel, il n’expose pas de propriété Children qui permet d’ajouter ou de supprimer par programmation des enfants UIElement.  Au lieu de cela, la durée de vie de ses enfants est gérée automatiquement par l’infrastructure pour correspondre à une collection d’éléments de données.  Bien qu’il ne soit pas dérivé de panel, il se comporte et est traité par l’infrastructure comme un panneau.
+[ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater) se comporte également comme Panel, à la différence près qu’il n’expose pas de propriété Children permettant d’ajouter ou de supprimer programmatiquement des enfants UIElement.  La durée de vie de ses enfants est en effet gérée automatiquement par le framework pour correspondre à une collection d’éléments de données.  Bien qu’il ne soit pas dérivé de Panel, il se comporte et est traité par le framework comme un Panel.
 
 > [!NOTE]
-> Le [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel) est un conteneur, dérivé du panneau, qui délègue sa logique à l’objet de [disposition](/uwp/api/microsoft.ui.xaml.controls.layoutpanel.layout) attaché.  LayoutPanel est en version *préliminaire* et est actuellement disponible uniquement dans les *versions préliminaires* du package WinUI.
+> [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel) est un conteneur, dérivé de Panel, qui délègue sa logique à l’objet [Layout](/uwp/api/microsoft.ui.xaml.controls.layoutpanel.layout) attaché.  LayoutPanel, actuellement en *préversion*, n’est disponible que dans les *préversions* du package WinUI.
 
 #### <a name="containers"></a>Conteneurs
 
-Conceptuellement, le [panneau](/uwp/api/windows.ui.xaml.controls.panel) est un conteneur d’éléments qui a également la possibilité de restituer des pixels pour un [arrière-plan](/uwp/api/windows.ui.xaml.controls.panel.background).  Les panneaux offrent un moyen d’encapsuler la logique de disposition commune dans un package facile à utiliser.
+Conceptuellement, un [Panel](/uwp/api/windows.ui.xaml.controls.panel) est un conteneur d’éléments qui a également la capacité de restituer des pixels pour un [Background](/uwp/api/windows.ui.xaml.controls.panel.background).  Il offre un moyen d’encapsuler la logique de disposition courante dans un package facile à utiliser.
 
-Le concept de **disposition attachée** rend plus clair la distinction entre les deux rôles de conteneur et la disposition.  Si le conteneur délègue sa logique de disposition à un autre objet, nous appelons cet objet la disposition attachée telle qu’elle apparaît dans l’extrait de code ci-dessous. Les conteneurs qui héritent de [FrameworkElement](/uwp/api/windows.ui.xaml.frameworkelement), tels que LayoutPanel, exposent automatiquement les propriétés communes qui fournissent l’entrée au processus de disposition XAML (par exemple, la hauteur et la largeur).
+Le concept de **disposition attachée** permet de clarifier la distinction entre le rôle du conteneur et celui de la disposition.  Si le conteneur délègue sa logique de disposition à un autre objet, ce dernier est qualifié de disposition attachée, comme on le voit dans l’extrait de code ci-dessous. Les conteneurs qui héritent de [FrameworkElement](/uwp/api/windows.ui.xaml.frameworkelement), comme LayoutPanel, exposent automatiquement les propriétés communes qui fournissent une entrée au processus de disposition XAML (par exemple, Height et Width).
 
 ```xaml
 <LayoutPanel>
@@ -77,11 +77,11 @@ Le concept de **disposition attachée** rend plus clair la distinction entre les
 </LayoutPanel>
 ```
 
-Pendant le processus de disposition, le conteneur s’appuie sur le *UniformGridLayout* attaché pour mesurer et réorganiser ses enfants.
+Pendant le processus de disposition, le conteneur s’appuie sur le *UniformGridLayout* attaché pour mesurer et organiser ses enfants.
 
 #### <a name="per-container-state"></a>État par conteneur
 
-Avec une disposition attachée, une seule instance de l’objet layout peut être associée à de *nombreux* conteneurs, comme dans l’extrait de code ci-dessous. par conséquent, il ne doit pas dépendre du conteneur hôte ou y être directement référencé.  Par exemple :
+Avec une disposition attachée, une même instance de l’objet de disposition peut être associée à *plusieurs* conteneurs, comme dans l’extrait de code ci-dessous. Par conséquent, elle ne doit pas dépendre du conteneur hôte ou y faire directement référence.  Par exemple :
 
 ```xaml
 <!-- ... --->
@@ -94,74 +94,74 @@ Avec une disposition attachée, une seule instance de l’objet layout peut êtr
 <!-- ... --->
 ```
 
-Pour cette situation, *ExampleLayout* doit soigneusement prendre en compte l’État qu’il utilise dans son calcul de disposition et où cet État est stocké pour éviter d’avoir un impact sur la disposition des éléments d’un panneau avec l’autre.  Il serait analogue à un panneau personnalisé dont la logique MeasureOverride et ArrangeOverride dépend des valeurs de ses propriétés *statiques* .
+Dans ce cas, *ExampleLayout* doit soigneusement prendre en compte l’état qu’il utilise dans son calcul de disposition et l’endroit où cet état est stocké pour éviter d’affecter la disposition des éléments d’un panneau avec un autre.  Il serait analogue à un Panel personnalisé dont la logique MeasureOverride et ArrangeOverride dépend des valeurs de ses propriétés *statiques*.
 
 #### <a name="layoutcontext"></a>LayoutContext
 
-L’objectif de l' [LayoutContext](/uwp/api/microsoft.ui.xaml.controls.layoutcontext) est de traiter ces défis.  Il fournit à la disposition attachée la possibilité d’interagir avec le conteneur hôte, telles que la récupération d’éléments enfants, sans introduire une dépendance directe entre les deux. Le contexte permet également à la disposition de stocker tout État dont elle a besoin et qui peut être lié aux éléments enfants du conteneur.
+L’objectif de [LayoutContext](/uwp/api/microsoft.ui.xaml.controls.layoutcontext) est de résoudre ces problématiques.  Il offre à la disposition attachée la possibilité d’interagir avec le conteneur hôte, par exemple de récupérer les éléments enfants, sans introduire de dépendance directe entre les deux. Le contexte permet également à la disposition de stocker tous les états dont elle a besoin et qui peuvent être liés aux éléments enfants du conteneur.
 
-Les dispositions simples et non virtualisées n’ont souvent pas besoin de conserver un État, ce qui en fait un problème. Toutefois, une mise en page plus complexe, telle que la grille, peut choisir de conserver l’état entre la mesure et d’organiser l’appel pour éviter le recalcul d’une valeur.
+Les dispositions simples sans virtualisation n’ont généralement pas besoin de conserver d’états, ce qui en fait un faux problème. En revanche, une disposition plus complexe, comme un Grid, peut choisir de conserver l’état entre les appels Measure et Arrange pour éviter d’avoir à recalculer une valeur.
 
-La virtualisation des dispositions doit *souvent* conserver un certain état entre la mesure et l’organisation, ainsi qu’entre les passes de disposition itératives.
+Les dispositions avec virtualisation doivent *souvent* conserver un certain état entre Measure et Arrange, ainsi qu’entre les passes de disposition itératives.
 
-#### <a name="initializing-and-uninitializing-per-container-state"></a>Initialisation et désinitialisation de l’État par conteneur
+#### <a name="initializing-and-uninitializing-per-container-state"></a>Initialisation et désinitialisation de l’état par conteneur
 
-Quand une disposition est attachée à un conteneur, sa méthode [InitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.initializeforcontextcore) est appelée et donne la possibilité d’initialiser un objet pour stocker l’État.
+Quand une disposition est attachée à un conteneur, sa méthode [InitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.initializeforcontextcore) est appelée et offre la possibilité d’initialiser un objet permettant de stocker l’état.
 
-De même, lorsque la disposition est supprimée d’un conteneur, la méthode [UninitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.uninitializeforcontextcore) est appelée.  Cela donne à la disposition la possibilité de nettoyer tout état qu’elle avait associé à ce conteneur.
+De même, lors de la suppression de la disposition d’un conteneur, la méthode [UninitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.uninitializeforcontextcore) est appelée.  Cela donne à la disposition la possibilité de nettoyer tous les états qu’elle avait associés à ce conteneur.
 
-L’objet d’état de la disposition peut être stocké avec et récupéré à partir du conteneur avec la propriété [LayoutState](/uwp/api/microsoft.ui.xaml.controls.layoutcontext.layoutstate) sur le contexte.
+L’objet d’état de la disposition peut être stocké avec le conteneur et récupéré à partir du conteneur à l’aide de la propriété [LayoutState](/uwp/api/microsoft.ui.xaml.controls.layoutcontext.layoutstate) sur le contexte.
 
 ### <a name="ui-virtualization"></a>Virtualisation de l’interface utilisateur
 
-La virtualisation de l’interface utilisateur signifie retarder la création d’un objet d’interface utilisateur jusqu’à ce qu' _il soit nécessaire_.  Il s’agit d’une optimisation des performances.  Pour les scénarios qui ne font pas l’objet d’un défilement, déterminer quand cela est _nécessaire_ peut reposer sur un nombre quelconque d’éléments spécifiques à l’application.  Dans ce cas, les applications doivent envisager d’utiliser [x :Load](../../xaml-platform/x-load-attribute.md). Elle ne nécessite pas de traitement spécial dans votre disposition.
+La virtualisation de l’interface utilisateur consiste à retarder la création d’un objet d’interface utilisateur jusqu'au _moment opportun_.  Il s’agit d’une optimisation des performances.  Dans les scénarios sans défilement, la notion de _moment opportun_ peut dépendre de n’importe quels éléments propres à l’application.  Les applications doivent alors envisager d’utiliser [x:Load](../../xaml-platform/x-load-attribute.md). Cela n’implique aucun traitement spécial dans la disposition.
 
-Dans les scénarios basés sur le défilement comme une liste, déterminer _quand_ cela est nécessaire est souvent basé sur « sera-il visible pour un utilisateur », ce qui dépend fortement de l’emplacement où il a été placé pendant le processus de disposition et nécessite des considérations spéciales.  Ce scénario est axé sur ce document.
+Dans les scénarios avec défilement, par exemple une liste, le _moment opportun_ est souvent déterminé selon que l’élément sera ou non visible pour l’utilisateur, ce qui dépend fortement de son emplacement pendant le processus de disposition et implique des considérations spéciales.  Ce document se concentre sur ce scénario.
 
 > [!NOTE]
-> Bien que cela ne soit pas abordé dans ce document, les mêmes fonctionnalités qui activent la virtualisation de l’interface utilisateur dans les scénarios de défilement peuvent être appliquées dans les scénarios sans défilement.  Par exemple, un contrôle de barre d’outils piloté par les données qui gère la durée de vie des commandes qu’il présente et répond aux modifications de l’espace disponible en recyclant/déplaçant des éléments entre une zone visible et un menu de dépassement de capacité.
+> Bien que ce point ne soit pas abordé dans ce document, les fonctionnalités qui permettent la virtualisation de l’interface utilisateur dans les scénarios avec défilement peuvent être appliquées aux scénarios sans défilement.  Exemple : un contrôle ToolBar piloté par les données qui gère la durée de vie des commandes qu’il présente et répond aux modifications de l’espace disponible en recyclant/déplaçant des éléments entre une zone visible et un menu de débordement.
 
 ## <a name="getting-started"></a>Prise en main
 
-Tout d’abord, déterminez si la disposition que vous devez créer doit prendre en charge la virtualisation de l’interface utilisateur.
+Tout d’abord, déterminez si la disposition que vous allez créer doit prendre en charge la virtualisation de l’interface utilisateur.
 
-**Quelques points à garder à l’esprit...**
+**Quelques points à garder à l’esprit…**
 
-1. Les dispositions de non-virtualisation sont plus faciles à créer. Si le nombre d’éléments est toujours faible, il est recommandé de créer une disposition de non-virtualisation.
-2. La plateforme fournit un ensemble de dispositions associées qui fonctionnent avec [ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater#change-the-layout-of-items) et [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel) pour couvrir les besoins courants.  Familiarisez-vous avec ces derniers avant de décider de définir une disposition personnalisée.
-3. La virtualisation des dispositions présente toujours un coût, une complexité et une complexité de l’UC et de la mémoire supplémentaires par rapport à une disposition de non-virtualisation.  En règle générale, si les enfants dont la disposition doit être gérée sont susceptibles d’être contenus dans une zone qui correspond à 3 fois la taille de la fenêtre d’affichage, il se peut qu’il n’y ait pas grand gain d’une disposition de virtualisation. La taille de 3x est traitée plus en détail plus loin dans ce document, mais elle est due à la nature asynchrone du défilement sur Windows et de son impact sur la virtualisation.
+1. Les dispositions sans virtualisation sont plus faciles à créer. Si le nombre d’éléments doit rester toujours faible, il est recommandé de créer une disposition sans virtualisation.
+2. La plateforme fournit un jeu de dispositions attachées qui fonctionnent avec [ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater#change-the-layout-of-items) et [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel) pour couvrir les besoins courants.  Familiarisez-vous avec elles avant de décider de définir une disposition personnalisée.
+3. Les dispositions avec virtualisation présentent toujours un coût, une complexité et une charge supplémentaires en matière de processeur et de mémoire par rapport à une disposition sans virtualisation.  En règle générale, si les enfants que devra gérer la disposition ont de bonnes chances de tenir dans une zone faisant trois fois la taille de la fenêtre d’affichage, une disposition avec virtualisation n’apportera vraisemblablement pas grand-chose de plus. Cette taille trois fois supérieure, traitée en détail plus loin dans ce document, est due à la nature asynchrone du défilement sur Windows et à son impact sur la virtualisation.
 
 > [!TIP]
-> À titre de référence, les paramètres par défaut pour [ListView](/uwp/api/windows.ui.xaml.controls.listview) (et [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)) sont que le recyclage ne commence pas tant que le nombre d’éléments n’est pas suffisant pour remplir 3 fois la taille de la fenêtre d’affichage actuelle.
+> À titre de référence, les paramètres par défaut de [ListView](/uwp/api/windows.ui.xaml.controls.listview) (et de [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)) impliquent que le recyclage ne commence pas tant que le nombre d’éléments n’est pas suffisant pour remplir trois fois la taille de la fenêtre d’affichage actuelle.
 
-**Choisir votre type de base**
+**Choix du type de base**
 
-![hiérarchie de disposition attachée](images/xaml-attached-layout-hierarchy.png)
+![Hiérarchie de la disposition attachée](images/xaml-attached-layout-hierarchy.png)
 
-Le type de [disposition](/uwp/api/microsoft.ui.xaml.controls.layout) de base a deux types dérivés qui servent de point de départ pour la création d’une disposition jointe :
+Le type [Layout](/uwp/api/microsoft.ui.xaml.controls.layout) de base présente deux types dérivés servant de point de départ à la création d’une disposition attachée :
 
 1. [NonVirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout)
 2. [VirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout)
 
-## <a name="non-virtualizing-layout"></a>Disposition de non-virtualisation
+## <a name="non-virtualizing-layout"></a>Disposition sans virtualisation
 
-L’approche permettant de créer une disposition de non-virtualisation doit être familière à toute personne qui a créé un [panneau personnalisé](/windows/uwp/design/layout/custom-panels-overview).  Les mêmes concepts s’appliquent.  La principale différence réside dans le fait qu’un [NonVirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayoutcontext) est utilisé pour accéder à la collection [Children](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayoutcontext.children) et que la disposition peut choisir de stocker l’État.
+L’approche permettant de créer une disposition sans virtualisation devrait sembler familière à tous ceux qui ont créé un [Panel personnalisé](/windows/uwp/design/layout/custom-panels-overview).  Les mêmes concepts s’appliquent.  La principale différence réside dans le fait qu’un [NonVirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayoutcontext) est utilisé pour accéder à la collection [Children](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayoutcontext.children) et que la disposition peut choisir de stocker l’état.
 
-1. Dérivez du type de base [NonVirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout) (au lieu de panel).
-2. *(Facultatif)* Définissez les propriétés de dépendance qui, quand elles sont modifiées, invalident la disposition.
-3. _(**Nouveau**/facultatif)_ Initialise tout objet d’État requis par la disposition dans le cadre du [InitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.initializeforcontextcore). Dissimulez-le avec le conteneur hôte à l’aide de la [LayoutState](/uwp/api/microsoft.ui.xaml.controls.layoutcontext.layoutstate) fournie avec le contexte.
-4. Remplacez [MeasureOverride](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout.measureoverride) et appelez la méthode [measure](/uwp/api/windows.ui.xaml.uielement.measure) sur tous les enfants.
-5. Remplacez [ArrangeOverride](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout.arrangeoverride) et appelez la méthode [arrange](/uwp/api/windows.ui.xaml.uielement.arrange) sur tous les enfants.
-6. *(**Nouveau**/facultatif)* Nettoyez tout état enregistré dans le cadre du [UninitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.uninitializeforcontextcore).
+1. Dérivez du type de base [NonVirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout) (au lieu de Panel).
+2. *(Facultatif)* Définissez des propriétés de dépendance qui, en cas de modification, invalideront la disposition.
+3. _(**Nouveau**/Facultatif)_ Initialisez tous les objets d’état requis par la disposition dans le cadre de [InitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.initializeforcontextcore). Remisez-les (stash) avec le conteneur hôte à l’aide du [LayoutState](/uwp/api/microsoft.ui.xaml.controls.layoutcontext.layoutstate) fourni avec le contexte.
+4. Remplacez [MeasureOverride](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout.measureoverride) et appelez la méthode [Measure](/uwp/api/windows.ui.xaml.uielement.measure) sur tous les enfants.
+5. Remplacez [ArrangeOverride](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout.arrangeoverride) et appelez la méthode [Arrange](/uwp/api/windows.ui.xaml.uielement.arrange) sur tous les enfants.
+6. *(**Nouveau**/Facultatif)* Nettoyez tous les états enregistrés dans le cadre de [UninitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.uninitializeforcontextcore).
 
-### <a name="example-a-simple-stack-layout-varying-sized-items"></a>Exemple : disposition de pile simple (éléments de taille variable)
+### <a name="example-a-simple-stack-layout-varying-sized-items"></a>Exemple : Disposition de pile simple (éléments de taille variable)
 
 ![MyStackLayout](images/xaml-attached-layout-mystacklayout.png)
 
-Voici une mise en page de base de la pile de non-virtualisation des éléments de taille variable. Elle n’a pas de propriétés permettant d’ajuster le comportement de la disposition. L’implémentation ci-dessous montre comment la disposition s’appuie sur l’objet de contexte fourni par le conteneur pour :
+Voici une disposition de pile très simple, sans virtualisation, d’éléments de taille variable. Elle ne comprend pas de propriétés permettant d’ajuster son comportement. L’implémentation ci-dessous montre que la disposition s’appuie sur l’objet de contexte fourni par le conteneur pour :
 
-1. Obtient le nombre d’enfants, et
-2. Accédez à chaque élément enfant par index.
+1. Récupérer le nombre d’enfants.
+2. Accéder à chaque élément enfant par son index.
 
 ```csharp
 public class MyStackLayout : NonVirtualizingLayout
@@ -207,99 +207,99 @@ public class MyStackLayout : NonVirtualizingLayout
 </LayoutPanel>
 ```
 
-## <a name="virtualizing-layouts"></a>Virtualisation des dispositions
+## <a name="virtualizing-layouts"></a>Dispositions avec virtualisation
 
-À l’instar d’une disposition de non-virtualisation, les étapes de haut niveau pour une disposition de virtualisation sont les mêmes.  La complexité est principalement de déterminer les éléments qui se situeront dans la fenêtre d’affichage et doivent être réalisés.
+Les étapes de haut niveau d’une disposition de virtualisation sont les mêmes que pour une disposition sans virtualisation.  La complexité réside principalement dans l’identification des éléments qui se situeront dans la fenêtre d’affichage et devront être réalisés.
 
-1. Dérivation à partir du type de base [VirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout).
-2. Facultatif Définissez vos propriétés de dépendance qui, en cas de modification, invalideront la disposition.
-3. Initialise tout objet d’État qui sera requis par la disposition dans le cadre du [InitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.initializeforcontextcore). Dissimulez-le avec le conteneur hôte à l’aide de la [LayoutState](/uwp/api/microsoft.ui.xaml.controls.layoutcontext.layoutstate) fournie avec le contexte.
-4. Remplacez [MeasureOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.measureoverride) et appelez la méthode [measure](/uwp/api/windows.ui.xaml.uielement.measure) pour chaque enfant qui doit être réalisé.
-   1. La méthode [GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat) est utilisée pour récupérer un UIElement qui a été préparé par l’infrastructure (par exemple, les liaisons de données appliquées).
-5. Remplacez [ArrangeOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.arrangeoverride) et appelez la méthode [arrange](/uwp/api/windows.ui.xaml.uielement.arrange) pour chaque enfant réalisé.
-6. Facultatif Nettoyez tout état enregistré dans le cadre du [UninitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.uninitializeforcontextcore).
+1. Dérivez du type de base [VirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout).
+2. (Facultatif) Définissez des propriétés de dépendance qui, en cas de modification, invalideront la disposition.
+3. Initialisez tous les objets d’état requis par la disposition dans le cadre de [InitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.initializeforcontextcore). Remisez-les (stash) avec le conteneur hôte à l’aide du [LayoutState](/uwp/api/microsoft.ui.xaml.controls.layoutcontext.layoutstate) fourni avec le contexte.
+4. Remplacez [MeasureOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.measureoverride) et appelez la méthode [Measure](/uwp/api/windows.ui.xaml.uielement.measure) pour chacun des enfants qui devront être réalisés.
+   1. La méthode [GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat) est utilisée pour récupérer un UIElement préparé par le framework (par exemple, les liaisons de données appliquées).
+5. Remplacez [ArrangeOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.arrangeoverride) et appelez la méthode [Arrange](/uwp/api/windows.ui.xaml.uielement.arrange) pour chacun des enfants réalisés.
+6. (Facultatif) Nettoyez tous les états enregistrés dans le cadre de [UninitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.uninitializeforcontextcore).
 
 > [!TIP]
-> La valeur retournée par le [MeasureOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout) est utilisée comme taille du contenu virtualisé.
+> La valeur retournée par [MeasureOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout) est utilisée comme taille du contenu virtualisé.
 
-Il existe deux approches générales à prendre en compte lors de la création d’une disposition de virtualisation.  La possibilité de choisir l’une ou l’autre dépend en grande partie de la méthode de détermination de la taille d’un élément.  S’il suffit de connaître l’index d’un élément dans le jeu de données ou si les données lui-même déterminent sa taille éventuelle, nous envisageons qu’il **dépend des données**.  Ils sont plus faciles à créer.  Toutefois, si la seule façon de déterminer la taille d’un élément est de créer et de mesurer l’interface utilisateur, nous disons qu’il s’agit d’un **contenu dépendant du contenu**.  Celles-ci sont plus complexes.
+Il existe deux approches générales à prendre en compte pour créer une disposition avec virtualisation.  Le choix entre l’une et l’autre dépend en grande partie de la méthode de détermination de la taille d’un élément.  S’il suffit de connaître l’index d’un élément dans le jeu de données ou si les données elles-mêmes déterminent sa taille définitive, la disposition est considérée comme **dépendante des données**.  Il s’agit du type le plus facile à créer.  À l’inverse, si la seule façon de déterminer la taille d’un élément consiste à créer et à mesurer l’interface utilisateur, on dira qu’il s’agit d'une disposition **dépendante du contenu**.  Ce type est plus complexe.
 
 ### <a name="the-layout-process"></a>Processus de disposition
 
-Que vous soyez en train de créer une disposition dépendante des données ou du contenu, il est important de comprendre le processus de disposition et l’impact du défilement asynchrone Windows.
+Pour une disposition dépendante des données comme pour une disposition dépendante du contenu, il est important de comprendre le processus de disposition et l’impact du défilement asynchrone Windows.
 
-Une vue simplifiée des étapes effectuées par l’infrastructure à partir de l’écran de démarrage jusqu’à l’affichage de l’interface utilisateur est la suivante :
+Voici une présentation (ultra-)simplifiée des étapes suivies par le framework, du démarrage à l’affichage de l’interface utilisateur à l’écran :
 
 1. Il analyse le balisage.
 
-2. Génère une arborescence d’éléments.
+2. Il génère une arborescence d’éléments.
 
-3. Effectue une passe de disposition.
+3. Il effectue une passe de disposition.
 
-4. Effectue une passe de rendu.
+4. Il effectue une passe de rendu.
 
-Avec la virtualisation de l’interface utilisateur, la création des éléments normalement effectués à l’étape 2 est retardée ou terminée tôt une fois qu’il a été déterminé qu’un contenu suffisant a été créé pour remplir la fenêtre d’affichage. Un conteneur de virtualisation (par exemple, ItemsRepeater) diffère à sa disposition associée pour piloter ce processus. Il fournit la disposition attachée avec un [VirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext) qui couvre les informations supplémentaires dont une disposition de virtualisation a besoin.
+Avec la virtualisation de l’interface utilisateur, la création des éléments, normalement effectuée à l’étape 2, est retardée ou arrêtée tôt, dès qu’il a été déterminé que le contenu créé est suffisant pour remplir la fenêtre d’affichage. Un conteneur avec virtualisation (par exemple, ItemsRepeater) s’en remet à sa disposition attachée pour piloter ce processus. Il lui fournit un [VirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext) qui expose les informations supplémentaires requises par une disposition de virtualisation.
 
-**RealizationRect (par exemple, Viewport)**
+**RealizationRect (p. ex., Viewport)**
 
-Le défilement sur Windows se produit de façon asynchrone sur le thread d’interface utilisateur. Elle n’est pas contrôlée par la disposition du Framework.  Au lieu de cela, l’interaction et le déplacement se produisent dans le compositeur du système. L’avantage de cette approche est que le contenu panoramique peut toujours être effectué sur 60fps.  Le défi, toutefois, est que la « fenêtre d’affichage », telle qu’elle apparaît dans la disposition, peut être légèrement obsolète par rapport à ce qui est réellement visible à l’écran. Si un utilisateur fait défiler rapidement, il peut dépasser la vitesse du thread d’interface utilisateur pour générer un nouveau contenu et « panoramique vers le noir ». Pour cette raison, il est souvent nécessaire pour une disposition de virtualisation de générer une mémoire tampon supplémentaire d’éléments préparés suffisants pour remplir une zone plus grande que la fenêtre d’affichage. En cas de charge plus lourde pendant le défilement, le contenu de l’utilisateur est toujours affiché.
+Le défilement sur Windows se produit de façon asynchrone sur le thread d’interface utilisateur. Il n’est pas contrôlé par la disposition du framework.  L’interaction et le déplacement se produisent dans le compositeur du système. L’avantage de cette approche est que le défilement du contenu peut toujours être effectué sur 60 FPS.  La difficulté, toutefois, est que la « fenêtre d’affichage », telle qu’elle apparaît à la disposition, risque d’être légèrement obsolète par rapport à ce qui est réellement visible à l’écran. Un utilisateur qui ferait défiler le contenu rapidement pourrait dépasser la vitesse à laquelle le thread d’interface utilisateur génère le nouveau contenu et voir apparaître un écran noir. C’est pourquoi il est souvent nécessaire pour une disposition avec virtualisation de générer une mémoire tampon supplémentaire d’éléments préparés suffisants pour remplir une zone plus grande que la fenêtre d’affichage. Même en cas de charge plus lourde pendant le défilement, le contenu est présenté à l’utilisateur.
 
 ![Rectangle de réalisation](images/xaml-attached-layout-realizationrect.png)
 
-Étant donné que la création d’éléments est coûteuse, la virtualisation des conteneurs (par exemple, [ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater)) fournira initialement la disposition attachée avec un [RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect) qui correspond à la fenêtre d’affichage. En cas d’inactivité, le conteneur peut augmenter la mémoire tampon du contenu préparé en effectuant des appels répétés à la disposition à l’aide d’un rectangle de réalisation de plus grande taille. Ce comportement est une optimisation des performances qui tente de trouver un juste équilibre entre le temps de démarrage rapide et une bonne expérience de panoramisation. La taille maximale de la mémoire tampon générée par le ItemsRepeater est contrôlée par ses propriétés [VerticalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength) et [HorizontalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength) .
+La création d’éléments étant coûteuse, les conteneurs avec virtualisation (par exemple, [ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater)) fournissent initialement à la disposition attachée un [RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect) correspondant à la fenêtre d’affichage. Pendant la durée d’inactivité, le conteneur peut augmenter la mémoire tampon de contenu préparé en effectuant des appels répétés à la disposition à l’aide d’un rectangle de réalisation de plus en plus grand. Ce comportement représente une optimisation des performances dont l’objectif est de trouver un juste équilibre entre vitesse de démarrage et qualité de l’expérience de défilement. La taille maximale de la mémoire tampon générée par ItemsRepeater est contrôlée par ses propriétés [VerticalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength) et [HorizontalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength).
 
 **Réutilisation d’éléments (recyclage)**
 
-La disposition est censée dimensionner et positionner les éléments pour remplir le [RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect) chaque fois qu’elle est exécutée. Par défaut, le [VirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout) recycle tous les éléments inutilisés à la fin de chaque passe de disposition.
+La disposition est censée dimensionner et positionner les éléments de façon à remplir [RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect) chaque fois qu’elle est exécutée. Par défaut, [VirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout) recycle tous les éléments inutilisés à la fin de chaque passe de disposition.
 
-Le [VirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext) passé à la disposition dans le cadre de [MeasureOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.measureoverride) et [ArrangeOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.arrangeoverride) fournit les informations supplémentaires nécessaires à la mise en page de virtualisation. Voici quelques-uns des éléments les plus couramment utilisés :
+Le [VirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext) transmis à la disposition dans le cadre de [MeasureOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.measureoverride) et de [ArrangeOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.arrangeoverride) fournit les informations supplémentaires requises par une disposition avec virtualisation. Il offre notamment les possibilités suivantes :
 
-1. Interrogez le nombre d’éléments dans les données ([ItemCount](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.itemcount)).
-2. Récupérez un élément spécifique à l’aide de la méthode [GetItemAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getitemat) .
-3. Récupérez un [RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect) qui représente la fenêtre d’affichage et la mémoire tampon que la disposition doit remplir avec les éléments réalisés.
-4. Demandez l’UIElement pour un élément spécifique avec la méthode [GetOrCreateElement](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat) .
+1. Interroger le nombre d’éléments dans les données ([ItemCount](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.itemcount)).
+2. Récupérer un élément spécifique à l’aide de la méthode [GetItemAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getitemat).
+3. Récupérer un [RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect) représentant la fenêtre d’affichage et la mémoire tampon que la disposition doit remplir avec les éléments réalisés.
+4. Demander le UIElement d’un élément spécifique avec la méthode [GetOrCreateElement](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat).
 
-La demande d’un élément pour un index donné entraînera le marquage de cet élément comme étant « en cours d’utilisation » pour cette passe de la disposition. Si l’élément n’existe pas encore, il sera réalisé et préparé automatiquement pour être utilisé (par exemple, en conflatant l’arborescence d’interface utilisateur définie dans un DataTemplate, en traitant toutes les liaisons de données, etc.).  Dans le cas contraire, il sera récupéré à partir d’un pool d’instances existantes.
+Un élément demandé pour un index donné sera marqué comme étant « en cours d’utilisation » pour cette passe de la disposition. S’il n’existe pas encore, il sera réalisé et préparé automatiquement pour être utilisé (par exemple, en grossissant l’arborescence de l’interface utilisateur définie dans un DataTemplate, en traitant toutes les liaisons de données, etc.).  Dans le cas contraire, il sera récupéré à partir d’un pool d’instances existantes.
 
-À la fin de chaque passe de mesure, tout élément existant réalisé qui n’était pas marqué « en cours d’utilisation » est automatiquement considéré comme étant disponible pour réutilisation, sauf si l’option [SuppressAutoRecycle](/uwp/api/microsoft.ui.xaml.controls.elementrealizationoptions) a été utilisée lors de la récupération de l’élément via la méthode [GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat) . Le Framework le déplace automatiquement vers un pool de recyclage et le rend disponible. Il peut par la suite être extrait pour une utilisation par un autre conteneur. Le Framework tente d’éviter cela dans la mesure du possible, car il existe un coût associé au nouveau parent d’un élément.
+À la fin de chaque passe de mesure, tous les éléments existants non marqués de la mention « en cours d’utilisation » sont automatiquement considérés comme étant réutilisables, sauf si l’option [SuppressAutoRecycle](/uwp/api/microsoft.ui.xaml.controls.elementrealizationoptions) a été utilisée lors de leur récupération par la méthode [GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat). Le framework les déplace automatiquement vers un pool de recyclage et les rend disponibles. Ils peuvent par la suite être extraits pour être utilisés par un autre conteneur. Le framework tente d’éviter cette solution dans la mesure du possible, car le reparentage présente un coût.
 
-Si une disposition de virtualisation sait au début de chaque mesure que les éléments ne se trouvent plus dans le rectangle de réalisation, elle peut optimiser sa réutilisation. Plutôt que de s’appuyer sur le comportement par défaut de l’infrastructure. La disposition permet de déplacer des éléments de manière préventive vers le pool de recyclage à l’aide de la méthode [RecycleElement](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.recycleelement) .  Si vous appelez cette méthode avant de demander de nouveaux éléments, ces éléments existants sont disponibles quand la disposition émet ultérieurement une requête [GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat) pour un index qui n’est pas déjà associé à un élément.
+Si la disposition avec virtualisation sait au début de chaque mesure quels éléments ne vont plus se trouver dans le rectangle de réalisation, elle peut optimiser sa réutilisation, plutôt que de compter sur le comportement par défaut du framework. Elle peut déplacer des éléments de manière préemptive dans le pool de recyclage à l’aide de la méthode [RecycleElement](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.recycleelement).  Si cette méthode est appelée avant de demander de nouveaux éléments, ces éléments existants seront disponibles lorsque la disposition émettra par la suite une demande [GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat) sur un index non encore associé à un élément.
 
-Le VirtualizingLayoutContext fournit deux propriétés supplémentaires conçues pour les auteurs de disposition qui créent une disposition dépendante du contenu. Elles sont abordées plus en détail ultérieurement.
+VirtualizingLayoutContext fournit deux propriétés supplémentaires conçues pour les auteurs qui créent une disposition dépendante du contenu. Elles sont présentées en détail plus loin.
 
-1. [RecommendedAnchorIndex](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.recommendedanchorindex) qui fournit une _entrée_ facultative pour la disposition.
-2. [LayoutOrigin](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.layoutorigin) qui est une _sortie_ facultative de la disposition.
+1. [RecommendedAnchorIndex](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.recommendedanchorindex), qui fournit une _entrée_ facultative à la disposition.
+2. [LayoutOrigin](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.layoutorigin), une _sortie_ facultative de la disposition.
 
-## <a name="data-dependent-virtualizing-layouts"></a>Dispositions de virtualisation dépendantes des données
+## <a name="data-dependent-virtualizing-layouts"></a>Dispositions avec virtualisation dépendantes des données
 
-Une disposition de virtualisation est plus facile si vous connaissez la taille de chaque élément, sans avoir à mesurer le contenu à afficher.  Dans ce document, nous faisons simplement référence à cette catégorie de mises en page de virtualisation comme **dispositions de données** , car elles impliquent généralement l’inspection des données.  En fonction des données, une application peut choisir une représentation visuelle avec une taille connue, peut-être parce que sa partie des données ou a été déterminée précédemment par la conception.
+Les dispositions avec virtualisation sont plus faciles si l’on connaît la taille de chaque élément sans avoir à mesurer le contenu à afficher.  Dans ce document, nous ferons référence à cette catégorie de dispositions avec virtualisation sous le simple nom de **dispositions des données**, car elles impliquent généralement une inspection des données.  En fonction des données, une application peut choisir une représentation visuelle d’une taille connue, peut-être parce que sa partie des données a été déterminée précédemment par la conception.
 
-L’approche générale concerne la disposition suivante :
+L’approche générale consiste pour la disposition à :
 
-1. Calcule la taille et la position de chaque élément.
-2. Dans le cadre de [MeasureOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.measureoverride):
-   1. Utilisez [RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect) pour déterminer les éléments qui doivent apparaître dans la fenêtre d’affichage.
-   2. Récupérez l’UIElement qui doit représenter l’élément à l’aide de la méthode [GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat) .
-   3. [Mesurez](/uwp/api/windows.ui.xaml.uielement.measure) l’UIElement avec la taille précalculée.
-3. Dans le cadre de l’exemple [ArrangeOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.arrangeoverride), [réorganisez](/uwp/api/windows.ui.xaml.uielement.arrange) chaque UIElement réalisé avec la position précalculée.
+1. Calculer la taille et la position de chaque élément.
+2. Dans le cadre de [MeasureOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.measureoverride) :
+   1. Utiliser [RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect) pour déterminer quels éléments doivent apparaître dans la fenêtre d’affichage.
+   2. Récupérer le UIElement devant représenter l’élément avec la méthode [GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat).
+   3. [Mesurer](/uwp/api/windows.ui.xaml.uielement.measure) UIElement avec la taille précalculée.
+3. Dans le cadre de [ArrangeOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.arrangeoverride) : [organiser](/uwp/api/windows.ui.xaml.uielement.arrange) chaque UIElement réalisé avec la position précalculée.
 
 > [!NOTE]
-> Une approche de la disposition des données est souvent incompatible avec _la virtualisation des données_.  Plus précisément, lorsque les seules données chargées en mémoire sont les données requises pour remplir ce qui est visible par l’utilisateur.  La virtualisation des données ne fait pas référence au chargement paresseux ou incrémentiel des données lorsqu’un utilisateur fait défiler l’emplacement où ces données restent résidentes.  Au lieu de cela, il fait référence à quand des éléments sont libérés de la mémoire à mesure qu’ils défilent hors de l’affichage.  Le fait d’avoir une disposition des données qui inspecte chaque élément de données dans le cadre d’une mise en page des données empêche la virtualisation des données de fonctionner comme prévu.  Une exception est une disposition comme UniformGridLayout qui suppose que tout a la même taille.
+> L’approche de type disposition des données est souvent incompatible avec la _virtualisation des données_,  en particulier lorsque les seules données chargées en mémoire sont les données requises pour remplir la partie visible par l’utilisateur.  La virtualisation des données ne fait pas référence au chargement différé ou incrémentiel des données lorsqu’un utilisateur fait défiler l’endroit où elles restent résidentes,  mais au moment où les éléments sont libérés de la mémoire à mesure qu’ils défilent hors affichage.  Une disposition des données inspectant chacun de ses éléments de données empêcherait la virtualisation des données de fonctionner comme prévu.  Une disposition comme UniformGridLayout, qui suppose que tout a la même taille, fait exception.
 
 > [!TIP]
-> Si vous créez un contrôle personnalisé pour une bibliothèque de contrôles qui sera utilisée par d’autres personnes dans une grande variété de situations, une disposition des données peut ne pas être une option pour vous.
+> Si vous créez un contrôle personnalisé pour une bibliothèque de contrôles qui sera utilisée par d’autres personnes dans une grande variété de situations, la disposition des données n’est peut-être pas l’option à envisager.
 
-### <a name="example-xbox-activity-feed-layout"></a>Exemple : mise en page de flux d’activités Xbox
+### <a name="example-xbox-activity-feed-layout"></a>Exemple : Disposition du flux d’activités Xbox
 
-L’interface utilisateur pour le flux d’activités Xbox utilise un modèle répétitif dans lequel chaque ligne a une vignette large, suivie de deux vignettes étroites qui sont inversées sur la ligne suivante. Dans cette disposition, la taille de chaque élément est une fonction de la position de l’élément dans le jeu de données et de la taille connue des vignettes (large vs étroit).
+L’interface utilisateur du flux d’activités Xbox utilise un modèle répétitif dans lequel chaque ligne comporte une vignette large suivie de deux vignettes étroites, qui sont inversées sur la ligne suivante. Dans cette disposition, la taille de chaque élément est une fonction de la position de l’élément dans le jeu de données et de la taille connue des vignettes (large ou étroite).
 
-![Flux d’activités Xbox](images/xaml-attached-layout-activityfeedscreenshot.png)
+![Flux d'activités Xbox](images/xaml-attached-layout-activityfeedscreenshot.png)
 
-Le code ci-dessous explique en quoi consiste une interface utilisateur de virtualisation personnalisée pour le flux d’activité afin d’illustrer l’approche générale que vous pouvez prendre pour une **disposition des données**.
+Le code ci-dessous présente ce que pourrait être une interface utilisateur de virtualisation personnalisée pour le flux d’activité afin d’illustrer l’approche générale d’une **disposition des données**.
 
 <table>
 <td>
-    <p>Si l’application de la <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong> est installée, cliquez ici pour ouvrir l’application et voir le <a href="xamlcontrolsgallery:/item/ItemsRepeater">ItemsRepeater</a> en action avec cet exemple de disposition.</p>
+    <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour ouvrir l’application et voir <a href="xamlcontrolsgallery:/item/ItemsRepeater">ItemsRepeater</a> en action avec cet exemple de disposition.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Obtenir le code source (GitHub)</a></li>
@@ -582,13 +582,13 @@ internal class ActivityFeedLayoutState
 }
 ```
 
-### <a name="optional-managing-the-item-to-uielement-mapping"></a>Facultatif Gestion de l’élément dans le mappage d’UIElement
+### <a name="optional-managing-the-item-to-uielement-mapping"></a>(Facultatif) Gestion du mappage entre Item et UIElement
 
-Par défaut, le [VirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext) gère un mappage entre les éléments réalisés et l’index dans la source de données qu’ils représentent.  Une disposition peut choisir de gérer ce mappage en demandant toujours l’option [SuppressAutoRecycle](/uwp/api/microsoft.ui.xaml.controls.elementrealizationoptions) lors de la récupération d’un élément via la méthode [GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat) , ce qui empêche le comportement de recyclage automatique par défaut.  Une disposition peut choisir de le faire, par exemple, si elle est utilisée uniquement lorsque le défilement est limité à une direction et que les éléments qu’elle considère sont toujours contigus (c’est-à-dire que la connaissance de l’index du premier et du dernier élément suffit pour connaître tous les éléments qui doivent être REA). lized).
+Par défaut, [VirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext) conserve un mappage entre les éléments réalisés et l’index dans la source de données qu’ils représentent.  Une disposition peut choisir de gérer ce mappage elle-même en demandant toujours l’option [SuppressAutoRecycle](/uwp/api/microsoft.ui.xaml.controls.elementrealizationoptions) lorsqu’elle récupère un élément avec la méthode [GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat), ce qui empêche le comportement de recyclage automatique par défaut.  Elle peut par exemple appliquer cette solution si elle n’est utilisée que lorsque le défilement est limité à une direction et que les éléments qu’elle considère sont toujours contigus (c’est-à-dire qu’il suffit de connaître l’index du premier et du dernier élément pour connaître tous les éléments à réaliser).
 
-#### <a name="example-xbox-activity-feed-measure"></a>Exemple : mesure de flux d’activités Xbox
+#### <a name="example-xbox-activity-feed-measure"></a>Exemple : Mesure du flux d’activités Xbox
 
-L’extrait de code ci-dessous montre la logique supplémentaire qui peut être ajoutée au MeasureOverride dans l’exemple précédent pour gérer le mappage.
+L’extrait de code ci-dessous montre la logique supplémentaire qui peut être ajoutée à MeasureOverride dans l’exemple précédent pour gérer le mappage.
 
 ```csharp
     protected override Size MeasureOverride(VirtualizingLayoutContext context, Size availableSize)
@@ -660,59 +660,59 @@ internal class ActivityFeedLayoutState
 }
 ```
 
-## <a name="content-dependent-virtualizing-layouts"></a>Dispositions de virtualisation dépendantes du contenu
+## <a name="content-dependent-virtualizing-layouts"></a>Dispositions avec virtualisation dépendantes du contenu
 
-Si vous devez d’abord mesurer le contenu de l’interface utilisateur d’un élément afin de déterminer sa taille exacte, il s’agit d’une **disposition dépendante du contenu**.  Vous pouvez également considérer qu’il s’agit d’une disposition dans laquelle chaque élément doit se dimensionner lui-même plutôt que la disposition indiquant la taille de l’élément. La virtualisation des dispositions appartenant à cette catégorie est plus complexe.
+Si vous devez d’abord mesurer le contenu de l’interface utilisateur pour un élément afin de déterminer sa taille exacte, il s’agit d’une **disposition dépendante du contenu**.  Vous pouvez également la considérer comme une disposition dans laquelle chaque élément doit se dimensionner lui-même sans qu’elle lui indique sa taille. Les dispositions avec virtualisation appartenant à cette catégorie sont plus complexes.
 
 > [!NOTE]
-> Les dispositions dépendantes du contenu ne doivent pas (ne pas) rompre la virtualisation des données.
+> Les dispositions dépendantes du contenu ne doivent pas (de préférence) arrêter la virtualisation des données.
 
 ### <a name="estimations"></a>Estimations
 
-Les dispositions dépendantes du contenu s’appuient sur l’estimation pour deviner la taille du contenu non réalisé et la position du contenu réalisé. À mesure que ces estimations changent, le contenu réalisé se déplace régulièrement vers l’emplacement dans la zone à défilement. Cela peut entraîner une très frustrante et une expérience utilisateur transférerez si elle n’est pas atténuée. Les problèmes potentiels et les atténuations sont abordés ici.
+Les dispositions dépendantes du contenu s’appuient sur une estimation pour deviner la taille et la position du contenu réalisé. Chaque fois que ces estimations changent, le contenu réalisé se déplace dans la zone réorganisable, ce qui, sans atténuation, peut aboutir à une expérience utilisateur très contrariante et perturbante. Les problèmes potentiels et les atténuations sont abordés ici.
 
 > [!NOTE]
-> Les mises en page de données qui considèrent chaque élément et connaissent la taille exacte de tous les éléments, réalisées ou non, et leurs positions peuvent éviter ces problèmes entièrement.
+> Les dispositions des données qui considèrent chaque élément et connaissent la taille exacte de tous les éléments, réalisées ou non, ainsi que leur position peuvent éviter totalement ces problèmes.
 
-**Ancrage de défilement**
+**Ancrage du défilement**
 
-XAML fournit un mécanisme pour atténuer les décalages de fenêtre d’affichage soudains en faisant en sorte que les contrôles de défilement prennent en charge l' [ancrage de défilement](/uwp/api/windows.ui.xaml.controls.iscrollanchorprovider) en implémentant l’interface [IScrollAnchorPovider](/uwp/api/windows.ui.xaml.controls.iscrollanchorprovider) . À mesure que l’utilisateur manipule le contenu, le contrôle de défilement sélectionne continuellement un élément dans l’ensemble des candidats qui ont été activés pour être suivis. Si la position de l’élément d’ancrage se déplace pendant la disposition, le contrôle de défilement décale automatiquement sa fenêtre d’affichage pour maintenir la fenêtre d’affichage.
+XAML fournit un mécanisme permettant d’atténuer les décalages soudains de la fenêtre d’affichage en permettant la prise en charge de [l’ancrage du défilement](/uwp/api/windows.ui.xaml.controls.iscrollanchorprovider) par les contrôles de défilement, grâce à l’implémentation de l’interface [IScrollAnchorPovider](/uwp/api/windows.ui.xaml.controls.iscrollanchorprovider). Lorsque l’utilisateur manipule le contenu, le contrôle de défilement sélectionne continuellement un élément parmi l’ensemble des candidats pour lesquels le suivi a été accepté. Si la position de l’élément d’ancrage change pendant la disposition, le contrôle de défilement décale automatiquement sa fenêtre d’affichage de façon à la maintenir.
 
-La valeur du [RecommendedAnchorIndex](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.recommendedanchorindex) fourni à la disposition peut refléter l’élément d’ancrage actuellement sélectionné par le contrôle de défilement. Sinon, si un développeur demande explicitement qu’un élément soit réalisé pour un index avec la méthode [GetOrCreateElement](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.getorcreateelement) sur le [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater), cet index est donné comme [RecommendedAnchorIndex](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.recommendedanchorindex) sur la passe de disposition suivante. Cela permet à la disposition d’être préparée pour le scénario probable selon lequel un développeur réalise un élément et demande ensuite qu’il soit affiché à l’aide de la méthode [StartBringIntoView](/uwp/api/windows.ui.xaml.uielement.startbringintoview) .
+La valeur du [RecommendedAnchorIndex](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.recommendedanchorindex) fourni à la disposition peut refléter l’élément d’ancrage sélectionné choisi par le contrôle de défilement. Dans le cas contraire, si un développeur demande explicitement qu’un élément soit réalisé pour un index avec la méthode [GetOrCreateElement](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.getorcreateelement) sur [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater), cet index est donné en tant que [RecommendedAnchorIndex](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.recommendedanchorindex) sur la passe suivante de la disposition. Cela permet de préparer la disposition pour le scénario probable selon lequel le développeur réalise un élément et demande ensuite qu’il soit affiché par le biais de la méthode [StartBringIntoView](/uwp/api/windows.ui.xaml.uielement.startbringintoview).
 
-Le [RecommendedAnchorIndex](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.recommendedanchorindex) est l’index de l’élément dans la source de données qu’une disposition dépendante du contenu doit se positionner en premier lors de l’estimation de la position de ses éléments. Il doit servir de point de départ pour le positionnement d’autres éléments réalisés.
+[RecommendedAnchorIndex](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.recommendedanchorindex) est l’index de l’élément dans la source de données qu’une disposition dépendante du contenu doit positionner en premier lors de l’estimation de la position de ses éléments. Il doit servir de point de départ au positionnement d’autres éléments réalisés.
 
 **Impact sur les barres de défilement**
 
-Même avec l’ancrage de défilement, si les estimations de la disposition varient beaucoup, peut-être en raison de variations significatives de la taille du contenu, la position du curseur de défilement pour la barre de défilement peut sembler se dérouler.  Cela peut être transférerez pour un utilisateur si le curseur de la souris n’apparaît pas pour suivre la position du pointeur de la souris lorsqu’il le fait glisser.
+Même avec l’ancrage du défilement, si les estimations de la disposition varient beaucoup (peut-être en raison de fluctuations significatives de la taille du contenu), la position du curseur de la barre de défilement peut paraître sauter.  Cela peut être perturbant pour l’utilisateur si le curseur ne semble pas suivre la position du pointeur de la souris lorsqu’il le fait glisser.
 
-Plus la disposition peut être précise dans ses estimations, moins l’utilisateur verra probablement le saut de page de la barre de défilement.
+Plus la disposition est précise dans ses estimations, moins l’utilisateur risque de voir le curseur de la barre de défilement sauter.
 
-### <a name="layout-corrections"></a>Corrections de disposition
+### <a name="layout-corrections"></a>Corrections de la disposition
 
-Une disposition dépendante du contenu doit être préparée à rationaliser son estimation avec la réalité.  Par exemple, lorsque l’utilisateur fait défiler le contenu vers le haut et que la disposition réalise le tout premier élément, il peut trouver que la position prévue de l’élément par rapport à l’élément à partir duquel il a démarré se trouve à un emplacement autre que l’origine de (x :0 , y:0). Dans ce cas, la disposition peut utiliser la propriété [LayoutOrigin](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.layoutorigin) pour définir la position qu’elle a calculée comme nouvelle origine de la disposition.  Le résultat net est semblable à l’ancrage de défilement dans lequel la fenêtre d’affichage du contrôle de défilement est automatiquement ajustée pour tenir compte de la position du contenu comme indiqué par la disposition.
+Une disposition dépendante du contenu doit être préparée à rationaliser son estimation avec la réalité.  Par exemple, lorsque l’utilisateur fait défiler le contenu vers le haut et que la disposition réalise le tout premier élément, elle risque de constater que la position prévue de l’élément, par rapport à celui à partir duquel elle a commencé, se trouve à un emplacement autre que l’origine de (x:0, y:0). Dans ce cas, elle peut utiliser la propriété [LayoutOrigin](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.layoutorigin) pour définir la position qu’elle a calculée comme sa nouvelle origine.  Le résultat final est semblable à l’ancrage du défilement, dans lequel la fenêtre d’affichage du contrôle de défilement est automatiquement ajustée pour tenir compte de la position du contenu indiquée par la disposition.
 
-![Correction du LayoutOrigin](images/xaml-attached-layout-origincorrection.png)
+![Correction de LayoutOrigin](images/xaml-attached-layout-origincorrection.png)
 
 ### <a name="disconnected-viewports"></a>Fenêtres d’affichage déconnectées
 
-La taille retournée par la méthode [MeasureOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.measureoverride) de la disposition représente la meilleure estimation de la taille du contenu, qui peut changer avec chaque disposition successive.  Lorsqu’un utilisateur fait défiler la disposition, la mise en page est continuellement réévaluée avec un [RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect)mis à jour.
+La taille retournée par la méthode [MeasureOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.measureoverride) de la disposition représente la meilleure estimation de la taille du contenu, qui peut changer avec chaque disposition successive.  Lorsque l’utilisateur fait défiler le contenu, la disposition est continuellement réévaluée avec un [RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect) mis à jour.
 
-Si un utilisateur fait glisser le curseur très rapidement, il est possible que la fenêtre d’affichage, du point de vue de la disposition, s’affiche pour faire de grands sauts lorsque la position précédente ne chevauche pas la position actuelle.  Cela est dû à la nature asynchrone du défilement. Il est également possible pour une application qui utilise la disposition de demander qu’un élément soit affiché pour un élément qui n’est pas actuellement réalisé et qu’il soit estimé de placer à l’extérieur de la plage actuelle suivie par la disposition.
+Si l’utilisateur fait glisser le curseur très rapidement, il est possible que la fenêtre d’affichage, du point de vue de la disposition, semble faire de grands sauts lorsque la position précédente ne chevauche pas la nouvelle position actuelle.  Cette particularité est due à la nature asynchrone du défilement. Il est également possible pour une application qui utilise la disposition de demander qu’un composant soit affiché pour un élément non réalisé dont la position estimée se trouve en dehors de la plage actuelle suivie par la disposition.
 
-Lorsque la mise en page découvre que l’estimation est incorrecte et/ou constate une déphasage de fenêtre d’affichage inattendue, elle doit réorienter sa position de départ.  Les dispositions de virtualisation fournies dans le cadre des contrôles XAML sont développées en tant que dispositions dépendantes du contenu, car elles placent moins de restrictions sur la nature du contenu qui s’affichera.
+Lorsque la disposition découvre que son estimation est incorrecte ou constate un décalage inattendu de la fenêtre d’affichage, elle doit réorienter sa position de départ.  Les dispositions avec virtualisation fournies dans les contrôles XAML sont développées sous forme de dispositions dépendantes du contenu, car elles placent moins de restrictions sur la nature du contenu qui s’affichera.
 
 
-### <a name="example-simple-virtualizing-stack-layout-for-variable-sized-items"></a>Exemple : disposition de la pile de virtualisation simple pour les éléments de taille variable
+### <a name="example-simple-virtualizing-stack-layout-for-variable-sized-items"></a>Exemple : Disposition de pile simple avec virtualisation pour des éléments de taille variable
 
-L’exemple ci-dessous montre une disposition de pile simple pour les éléments de taille variable qui :
+L’exemple ci-dessous montre une disposition de pile simple pour des éléments de taille variable qui :
 
-* prend en charge la virtualisation de l’interface utilisateur.
-* utilise des estimations pour deviner la taille des éléments non réalisés,
-* est conscient des décalages de fenêtre d’affichage discontinues potentiels, et
-* applique les corrections de disposition pour tenir compte de ces décalages.
+* prend en charge la virtualisation de l’interface utilisateur ;
+* utilise des estimations pour deviner la taille des éléments non réalisés ;
+* est consciente des décalages discontinus potentiels de la fenêtre d’affichage ;
+* applique des corrections de la disposition pour tenir compte de ces décalages.
 
-**Utilisation : balisage**
+**Utilisation : Balisage**
 
 ```xaml
 <ScrollViewer>
@@ -741,7 +741,7 @@ L’exemple ci-dessous montre une disposition de pile simple pour les éléments
 </ScrollViewer>
 ```
 
-**Code-behind : Main.cs**
+**Code-behind : Main.cs**
 
 ```csharp
 string _lorem = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam laoreet erat vel massa rutrum, eget mollis massa vulputate. Vivamus semper augue leo, eget faucibus nulla mattis nec. Donec scelerisque lacus at dui ultricies, eget auctor ipsum placerat. Integer aliquet libero sed nisi eleifend, nec rutrum arcu lacinia. Sed a sem et ante gravida congue sit amet ut augue. Donec quis pellentesque urna, non finibus metus. Proin sed ornare tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam laoreet erat vel massa rutrum, eget mollis massa vulputate. Vivamus semper augue leo, eget faucibus nulla mattis nec. Donec scelerisque lacus at dui ultricies, eget auctor ipsum placerat. Integer aliquet libero sed nisi eleifend, nec rutrum arcu lacinia. Sed a sem et ante gravida congue sit amet ut augue. Donec quis pellentesque urna, non finibus metus. Proin sed ornare tellus.";
@@ -757,7 +757,7 @@ var data = new ObservableCollection<Recipe>(Enumerable.Range(0, 300).Select(k =>
 repeater.ItemsSource = data;
 ```
 
-**Code : VirtualizingStackLayout.cs**
+**Code : VirtualizingStackLayout.cs**
 
 ```csharp
 // This is a sample layout that stacks elements one after

@@ -11,12 +11,12 @@ dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: c0d12b3b043546cd908fb474fa8ca9656d8dc56e
-ms.sourcegitcommit: bac5574a1f47a5b38c984a5482272c9e49a9c91e
+ms.openlocfilehash: 17eb1a2f24e9fd893fee1a0aff349989577375c7
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71100851"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081702"
 ---
 # <a name="navigation-view"></a>Affichage de navigation
 
@@ -24,6 +24,12 @@ Le contrôle NavigationView garantit une navigation de niveau supérieur à votr
 
 ![navigation supérieure](images/nav-view-header.png)<br/>
 _Affichage de navigation prend en charge à la fois le panneau ou menu de navigation supérieure et gauche_
+
+**Obtenir la bibliothèque d’interface utilisateur Windows**
+
+|  |  |
+| - | - |
+| ![Logo WinUI](images/winui-logo-64x64.png) | Le contrôle **NavigationView** est inclus dans la bibliothèque d’interface utilisateur Windows, package NuGet qui contient les nouveaux contrôles et fonctionnalités d’interface utilisateur pour les applications UWP. Pour plus d’informations, notamment des instructions d’installation, consultez [Vue d’ensemble de la bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
 > **API de plateforme** : [Classe Windows.UI.Xaml.Controls.NavigationView](/uwp/api/windows.ui.xaml.controls.navigationview)
 >
@@ -46,7 +52,7 @@ Pour visualiser d’autres modèles de navigation, voir [Informations de base re
 <table>
 <th align="left">Galerie de contrôles XAML<th>
 <tr>
-<td><img src="images/XAML-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
+<td><img src="images/XAML-controls-gallery-app-icon-sm.png" alt="XAML controls gallery" width="168"></img></td>
 <td>
     <p>Si vous disposez de l'application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/NavigationView">ouvrir l’application et voir l'objet NavigationView en action</a>.</p>
     <ul>
@@ -83,7 +89,7 @@ Nous vous recommandons la navigation _supérieure_ dans les cas suivants :
 
 :::row:::
     :::column:::
-    ### <a name="left"></a>Left (Gauche)
+    ### <a name="left"></a>Gauche
     Le volet est développé et positionné à gauche du contenu.</br>
     `PaneDisplayMode="Left"`
     :::column-end:::
@@ -226,7 +232,7 @@ Vous pouvez placer un contenu de forme libre dans le volet en l’ajoutant à la
     :::column-end:::
 :::row-end:::
 
-### <a name="header"></a>En-tête
+### <a name="header"></a>Header
 
 Vous pouvez ajouter un titre de page en définissant la propriété [Header](/uwp/api/windows.ui.xaml.controls.navigationview.header).
 
@@ -237,7 +243,7 @@ La zone d'en-tête est alignée verticalement avec le bouton de navigation dans 
 
 L'en-tête est visible chaque fois que NavigationView est en mode minimal. Vous pouvez choisir de masquer l’en-tête dans les autres modes, utilisés pour des fenêtres de largeur supérieure. Pour masquer l’en-tête, définissez la propriété [AlwaysShowHeader](/uwp/api/windows.ui.xaml.controls.navigationview.AlwaysShowHeader) sur **false**.
 
-### <a name="content"></a>Contenu
+### <a name="content"></a>Content
 
 ![Exemple de zone de contenu de l’affichage de navigation](images/nav-content.png)<br/>
 _Contenu d’affichage de navigation_
@@ -250,7 +256,7 @@ Nous recommandons des marges de 12 px pour votre zone de contenu lorsque Naviga
 
 Par défaut, le mode d’affichage de navigation change automatiquement selon la quantité d’espace d’écran à sa disposition. Les propriétés [CompactModeThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.compactmodethresholdwidth) et [ExpandedModeThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.expandedmodethresholdwidth) indiquent les points d’arrêt où le mode d'affichage change. Vous pouvez modifier ces valeurs pour personnaliser le comportement du mode d’affichage adaptatif.
 
-### <a name="default"></a>Default
+### <a name="default"></a>Par défaut
 
 Lorsque la propriété PaneDisplayMode est définie sur sa valeur par défaut **Auto**, le comportement adaptatif consiste à afficher :
 
@@ -379,12 +385,12 @@ Vous pouvez masquer ou désactiver le bouton précédent en définissant ces pro
 
 :::row:::
     :::column:::
-        ![Navigation view back button in the left navigation pane](images/leftnav-back.png)<br/>
-        _The back button in the left navigation pane_
+        ![Bouton précédent en mode navigation dans le volet de navigation gauche](images/leftnav-back.png)<br/>
+        _Bouton précédent dans le volet de navigation gauche_
     :::column-end:::
     :::column:::
-        ![Navigation view back button in the top navigation pane](images/topnav-back.png)<br/>
-        _The back button in the top navigation pane_
+        ![Bouton précédent en mode navigation dans le volet de navigation supérieur](images/topnav-back.png)<br/>
+        _Bouton précédent dans le volet de navigation supérieur_
     :::column-end:::
 :::row-end:::
 
@@ -658,7 +664,7 @@ Ce tableau indique quelle ressource de thème est utilisée dans chaque mode d'a
 
 | Mode d’affichage | Ressource de thème |
 | ------------ | -------------- |
-| Left (Gauche) | NavigationViewExpandedPaneBackground |
+| Gauche | NavigationViewExpandedPaneBackground |
 | LeftCompact<br/>LeftMinimal | NavigationViewDefaultPaneBackground |
 | Haut | NavigationViewTopPaneBackground |
 
@@ -722,7 +728,7 @@ Si votre application spécifie la zone pouvant être glissée en appelant la mé
 <muxc:NavigationView x:Name="NavView" IsTitleBarAutoPaddingEnabled="False">
 ```
 
-#### <a name="remarks"></a>Notes
+#### <a name="remarks"></a>Remarks
 Pour ajuster davantage la position de la zone d’en-tête de NavigationView, remplacez la ressource de thème XAML *NavigationViewHeaderMargin*, par exemple dans vos ressources de page.
 
 ```Xaml

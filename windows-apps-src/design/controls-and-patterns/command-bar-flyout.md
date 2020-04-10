@@ -12,12 +12,12 @@ dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: f4d2443370d285322e94c4ca21e7d616f96794b7
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 6b85177e5d3d0f4a2a37010ba9122861216a4b6b
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257737"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081961"
 ---
 # <a name="command-bar-flyout"></a>Menu volant de barre de commandes
 
@@ -25,17 +25,24 @@ Le menu volant de barre de commandes vous permet de fournir aux utilisateurs un 
 
 ![Menu volant de barre de commandes de texte développé](images/command-bar-flyout-header.png)
 
-> CommandBarFlyout nécessite Windows 10 version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) ou ultérieure, ou la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
-
-> - **API de plateforme** : [classe CommandBarFlyout](/uwp/api/windows.ui.xaml.controls.commandbarflyout), [classe TextCommandBarFlyout ](/uwp/api/windows.ui.xaml.controls.textcommandbarflyout), [classe AppBarButton](/uwp/api/windows.ui.xaml.controls.appbarbutton), [classe AppBarToggleButton](/uwp/api/windows.ui.xaml.controls.appbartogglebutton), [classe AppBarSeparator](/uwp/api/windows.ui.xaml.controls.appbarseparator)
->- **API de la bibliothèque d’interface utilisateur Windows** : [classe CommandBarFlyout](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout), [classe TextCommandBarFlyout](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout)
-
 Comme [CommandBar](app-bars.md), CommandBarFlyout a des propriétés **PrimaryCommands** et **SecondaryCommands** que vous pouvez utiliser pour ajouter des commandes. Vous pouvez placer des commandes dans une des collections ou dans les deux. Le mode d’affichage détermine à quel moment et comment les commandes principales et secondaires sont affichées.
 
 Le menu volant de barre de commandes a deux modes d’affichage : *réduit* et *développé*.
 
-- En mode réduit, seules les commandes principales sont affichées. Si votre menu volant de barre de commandes a des commandes principales et secondaires, un bouton « Plus d’informations », représenté par des points de suspension \[•••\], s’affiche. Il permet à l’utilisateur d’accéder aux commandes secondaires en passant au mode développé.
+- En mode réduit, seules les commandes principales sont affichées. Si votre menu volant de barre de commandes a des commandes principales et secondaires, un bouton « Plus d’informations », représenté par des points de suspension \[***\], s’affiche. Il permet à l’utilisateur d’accéder aux commandes secondaires en passant au mode développé.
 - En mode développé, les commandes principales et secondaires sont affichées. (Si le contrôle a uniquement des éléments secondaires, ils sont affichés de manière similaire au contrôle MenuFlyout.)
+
+**Obtenir la bibliothèque d’interface utilisateur Windows**
+
+|  |  |
+| - | - |
+| ![Logo WinUI](images/winui-logo-64x64.png) | Le contrôle **CommandBarFlyout** est inclus dans la bibliothèque d’interface utilisateur Windows, package NuGet qui contient les nouveaux contrôles et fonctionnalités d’interface utilisateur pour les applications UWP. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+>**API de la bibliothèque d’interface utilisateur Windows** : [classe CommandBarFlyout](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout), [classe TextCommandBarFlyout](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout)
+>
+>**API de plateforme** : [classe CommandBarFlyout](/uwp/api/windows.ui.xaml.controls.commandbarflyout), [classe TextCommandBarFlyout ](/uwp/api/windows.ui.xaml.controls.textcommandbarflyout), [classe AppBarButton](/uwp/api/windows.ui.xaml.controls.appbarbutton), [classe AppBarToggleButton](/uwp/api/windows.ui.xaml.controls.appbartogglebutton), [classe AppBarSeparator](/uwp/api/windows.ui.xaml.controls.appbarseparator)
+>
+> CommandBarFlyout nécessite Windows 10 version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) ou ultérieure, ou la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
@@ -56,7 +63,7 @@ Pour afficher des commandes dans un menu contextuel, vous pouvez utiliser Comman
 <table>
 <th align="left">Galerie de contrôles XAML<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/CommandBarFlyout">ouvrir l’application et voir le contrôle CommandBarFlyout en action</a>.</p>
     <ul>
@@ -387,13 +394,13 @@ Le tableau ci-après montre les commandes qui sont incluses dans un TextCommandB
 | Commande | Affichée... |
 | ------- | -------- |
 | Gras | quand le contrôle de texte n’est pas en lecture seule (RichEditBox uniquement). |
-| Italic | quand le contrôle de texte n’est pas en lecture seule (RichEditBox uniquement). |
-| Underline | quand le contrôle de texte n’est pas en lecture seule (RichEditBox uniquement). |
+| Italique | quand le contrôle de texte n’est pas en lecture seule (RichEditBox uniquement). |
+| Souligner | quand le contrôle de texte n’est pas en lecture seule (RichEditBox uniquement). |
 | Vérification linguistique | quand IsSpellCheckEnabled est **true** et que du texte mal orthographié est sélectionné. |
-| Cut | quand le contrôle de texte n’est pas en lecture seule et que du texte est sélectionné. |
+| Couper | quand le contrôle de texte n’est pas en lecture seule et que du texte est sélectionné. |
 | Copier | quand du texte est sélectionné. |
 | Coller | quand le contrôle de texte n’est pas en lecture seule et que le Presse-papiers a du contenu. |
-| Undo | quand une action peut être annulée. |
+| Annuler | quand une action peut être annulée. |
 | Tout sélectionner | quand du texte peut être sélectionné. |
 
 ### <a name="custom-text-command-bar-flyouts"></a>Menus volants de barre de commandes de texte personnalisés

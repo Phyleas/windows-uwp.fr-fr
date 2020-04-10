@@ -1,33 +1,33 @@
 ---
-title: Prise en main de la connexion des applications node. js à une base de données
-description: Commencez à connecter des applications node. js à une base de données sur Windows.
+title: Bien démarrer avec la connexion des applications Node.js à une base de données
+description: Découvrez comment connecter des applications Node.js à une base de données sur Windows.
 author: mattwojo
 ms.author: mattwoj
 manager: jken
 ms.topic: article
-keywords: NodeJS, node. js, Windows 10, Microsoft, formation NodeJS, node sur Windows, node sur WSL, node sur Linux sur Windows, installer le nœud sur Windows, NodeJS avec vs code, développer avec un nœud sur Windows, développer avec NodeJS sur Windows, installer le nœud sur WSL, NodeJS sur Windows Sous-système pour Linux
+keywords: NodeJS, Node.js, Windows 10, Microsoft, découvrir NodeJS, Node sur Windows, Node sur WSL, Node sur Linux sur Windows, installer Node sur Windows, NodeJS avec VS Code, développer avec Node sur Windows, développer avec NodeJS sur Windows, installer Node sur WSL, NodeJS sur le Sous-système Windows pour Linux
 ms.localizationpriority: medium
 ms.date: 09/19/2019
 ms.openlocfilehash: 63c47107538d8744201f83ea1be24cfaf3193f4f
 ms.sourcegitcommit: 60d2d15dd0d365f82e4e90e4bc34b40cf5b4a247
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/17/2019
 ms.locfileid: "72517819"
 ---
-# <a name="get-started-using-mongodb-or-postgresql-with-nodejs-on-windows"></a>Prise en main de MongoDB ou PostgreSQL avec node. js sur Windows
+# <a name="get-started-using-mongodb-or-postgresql-with-nodejs-on-windows"></a>Bien démarrer avec MongoDB ou PostgreSQL à l’aide de Node.js sur Windows
 
-Les applications node. js doivent souvent conserver les données, ce qui peut se produire par le biais de fichiers, d’un stockage local, de services Cloud ou de bases de données. Ce guide pas à pas vous permet de commencer à connecter votre application node. js à une base de données. Nous avons choisi de nous concentrer sur deux options populaires : MongoDB et PostgreSQL.
+Les applications Node.js doivent souvent conserver des données, ce qui peut se produire par le biais de fichiers, d’un stockage local, de services cloud ou de bases de données. Ce guide pas à pas vous permet de bien démarrer pour connecter votre application Node.js à une base de données. Nous avons choisi de nous concentrer sur deux options populaires : MongoDB et PostgreSQL.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
-Ce guide part du principe que vous avez déjà effectué les étapes pour [configurer votre environnement de développement node. js avec WSL 2](./setup-on-wsl2.md), notamment :
+Ce guide part du principe que vous avez déjà suivi les étapes de [configuration de votre environnement de développement Node.js avec WSL 2](./setup-on-wsl2.md), en particulier les suivantes :
 
-- Installez Windows 10 Insider preview version 18932 ou ultérieure.
-- Activez la fonctionnalité WSL 2 sur Windows.
-- Installez une distribution Linux (Ubuntu 18,04 pour nos exemples). Vous pouvez le vérifier avec : `wsl lsb_release -a`
-- Assurez-vous que votre distribution Ubuntu 18,04 s’exécute en mode WSL 2. (WSL peut exécuter des distributions en mode v1 ou v2.) Vous pouvez le vérifier en ouvrant PowerShell et en entrant : `wsl -l -v`
-- À l’aide de PowerShell, définissez Ubuntu 18,04 comme distribution par défaut, avec : `wsl -s ubuntu 18.04`
+- Installer la build 18932 ou une build ultérieure de Windows 10 Insider Preview.
+- Activer la fonctionnalité WSL 2 sur Windows.
+- Installer une distribution Linux (Ubuntu 18.04 dans les exemples). Pour le vérifier, exécutez : `wsl lsb_release -a`.
+- Vérifier que votre distribution Ubuntu 18.04 s’exécute en mode WSL 2. (WSL peut exécuter les distributions en mode v1 ou v2.) Pour le vérifier, ouvrez PowerShell et entrez : `wsl -l -v`.
+- À l’aide de PowerShell, définissez Ubuntu 18.04 comme distribution par défaut, avec : `wsl -s ubuntu 18.04`.
 
 ## <a name="differences-between-mongodb-and-postgresql"></a>Différences entre MongoDB et PostgreSQL
 
@@ -39,17 +39,17 @@ Ce guide part du principe que vous avez déjà effectué les étapes pour [confi
 
 ### <a name="vs-code-support-for-mongodb"></a>Prise en charge de VS Code pour MongoDB
 
-VS Code prend en charge l’utilisation des bases de données MongoDB à l’aide de l' [extension Azure CosmosDB](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb), vous pouvez créer, gérer et interroger des bases de données MongoDB à partir d’vs code.
+VS Code prend en charge l’utilisation de bases de données MongoDB par le biais de [l’extension Azure Cosmos DB](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb). Il est ainsi possible de créer des bases de données MongoDB, de les gérer et de les interroger dans VS Code.
 
-Pour plus d’informations, consultez la VS Code documentation : [utilisation de MongoDB](https://code.visualstudio.com/docs/azure/mongodb).
+Pour en savoir plus, consultez le document VS Code suivant : [Utilisation de MongoDB](https://code.visualstudio.com/docs/azure/mongodb).
 
-Pour en savoir plus, consultez la documentation MongoDB :
+Pour plus d’informations, consultez la documentation de MongoDB :
 
 - [Présentation de l’utilisation de MongoDB](https://docs.mongodb.com/manual/introduction/)
-- [Créer des utilisateurs](https://docs.mongodb.com/manual/tutorial/create-users/)
-- [Se connecter à une instance MongoDB sur un hôte distant](https://docs.mongodb.com/manual/mongo/#mongodb-instance-on-a-remote-host)
-- [CRUD : créer, lire, mettre à jour, supprimer](https://docs.mongodb.com/manual/crud/)
-- [Documentation de référence](https://docs.mongodb.com/manual/reference/)
+- [Création d’utilisateurs](https://docs.mongodb.com/manual/tutorial/create-users/)
+- [Connexion à une instance MongoDB sur un hôte distant](https://docs.mongodb.com/manual/mongo/#mongodb-instance-on-a-remote-host)
+- [CRUD : créer, lire, mettre à jour, supprimer](https://docs.mongodb.com/manual/crud/)
+- [Documents de référence](https://docs.mongodb.com/manual/reference/)
 
 ## <a name="install-postgresql"></a>Installer PostgreSQL
 
@@ -57,7 +57,7 @@ Pour en savoir plus, consultez la documentation MongoDB :
 
 ### <a name="vs-code-support-for-postgresql"></a>Prise en charge de VS Code pour PostgreSQL
 
-VS Code prend en charge l’utilisation des bases de données PostgreSQL à l’aide de l' [extension PostgreSQL](https://marketplace.visualstudio.com/items?itemName=ms-ossdata.vscode-postgresql), vous pouvez créer, vous connecter à, gérer et interroger des bases de données PostgreSQL à partir de vs code.
+VS Code prend en charge l’utilisation de bases de données PostgreSQL par le biais de [l’extension PostgreSQL](https://marketplace.visualstudio.com/items?itemName=ms-ossdata.vscode-postgresql), vous pouvez créer et vous connecter aux bases de données PostgreSQL, mais aussi les gérer et les interroger à partir de VS Code.
 
 ## <a name="set-up-profile-aliases"></a>Configurer des alias de profil
 

@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 18c402b321c073b8b3450b14ca124e82b0fb9b1c
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 4f609f7ec989cf334d6b21a32ee8bde0e43203f0
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340210"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081498"
 ---
 # <a name="text-block"></a>Bloc de texte
 
@@ -24,7 +24,7 @@ ms.locfileid: "71340210"
 
  Le bloc de texte est le contrôle principalement utilisé pour afficher du texte en lecture seule dans les applications. Ce contrôle vous permet d’afficher une ou plusieurs lignes de texte, des liens hypertexte inclus et du texte avec mise en forme de type gras, italique ou souligné.
  
- > **API importantes** : [Classe TextBlock class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock), [propriété Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text), [propriété Inlines](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.inlines)
+ > **API de plateforme** : [Classe TextBlock class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock), [propriété Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text), [propriété Inlines](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.inlines)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
@@ -32,14 +32,14 @@ Un bloc de texte est généralement plus facile à utiliser et offre de meilleur
 
 Même si vous pouvez placer des sauts de ligne dans le texte, un bloc de texte est conçu pour afficher un seul paragraphe et ne prend pas en charge le retrait du texte. Utilisez un contrôle **RichTextBlock** si vous devez prendre en charge plusieurs paragraphes, du texte sur plusieurs colonnes, d’autres dispositions de texte complexes ou des éléments d’interface utilisateur inclus, tels que des images.
 
-Pour plus d’informations sur le choix du contrôle de texte approprié, voir l’article [Contrôles de texte](text-controls.md).
+Pour plus d’informations sur le choix du contrôle de texte approprié, consultez l’article [Contrôles de texte](text-controls.md).
 
 ## <a name="examples"></a>Exemples
 
 <table>
 <th align="left">Galerie de contrôles XAML<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/TextBlock">ouvrir l’application et voir le contrôle TextBlock en action</a>.</p>
     <ul>

@@ -13,23 +13,29 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e0a7d1732833f8e6fc750f8ee481fa3c1116b50
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 4f0215cd9d3f9a105b6a7ff0ec3f07ef50ff1e44
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66823593"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80080907"
 ---
 # <a name="date-picker"></a>Sélecteur de dates
 
- 
+Le sélecteur de dates offre aux utilisateurs une méthode standard de sélection des valeurs des dates localisées à l’aide d’une entrée tactile, de la souris ou du clavier.
 
-Le sélecteur de dates offre aux utilisateurs une méthode standard de sélection des valeurs des dates localisées à l’aide d’une entrée tactile, de la souris ou du clavier. 
+![Exemple de sélecteur de dates](images/date-picker-closed.png)
 
-> **API importantes** : [classe DatePicker](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.DatePicker), [propriété Date](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.datepicker.date)
+**Obtenir la bibliothèque d’interface utilisateur Windows**
 
+|  |  |
+| - | - |
+| ![Logo WinUI](images/winui-logo-64x64.png) | Windows UI Library 2.2 ou version ultérieure inclut un nouveau modèle pour ce contrôle, qui utilise des angles arrondis. Pour plus d’informations, consultez [Rayons des angles](/windows/uwp/design/style/rounded-corner). WinUI est un package NuGet qui contient de nouveaux contrôles et des fonctionnalités d’interface utilisateur pour les applications UWP. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **API de plateforme :** [classe DatePicker](/uwp/api/Windows.UI.Xaml.Controls.DatePicker), [propriété Date](/uwp/api/windows.ui.xaml.controls.datepicker.date)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
+
 Utilisez un sélecteur de dates pour permettre à un utilisateur de choisir une date connue, par exemple, une date de naissance, où le contexte du calendrier n’est pas important.
 
 Pour plus d’informations sur le choix du contrôle de date approprié, voir l’article [Contrôles de date et d’heure](date-and-time.md).
@@ -39,7 +45,7 @@ Pour plus d’informations sur le choix du contrôle de date approprié, voir l�
 <table>
 <th align="left">Galerie de contrôles XAML<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/DatePicker">ouvrir l’application et voir l’objet DatePicker en action</a>.</p>
     <ul>
