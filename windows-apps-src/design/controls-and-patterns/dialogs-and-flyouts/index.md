@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 37ab62a6e6c2e294e8d6b5222eab4a1a9ae25a2e
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: c61d1478c38df315a3fe3c20151de8c2bfbca4e2
+ms.sourcegitcommit: 23c5d8dfaeb6edbca780637ffd26fe892db27519
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80081006"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81123562"
 ---
 # <a name="dialogs-and-flyouts"></a>Boîtes de dialogue et menus volants
 
@@ -24,15 +24,12 @@ Les boîtes de dialogue et les menus volants sont des éléments temporaires d�
 
 > **API de plateforme :** [classe ContentDialog](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog), [classe Flyout](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
 
-:::row:::
-    :::column:::
 **Boîtes de dialogue**
 
 ![Exemple de boîte de dialogue](../images/dialogs/dialog_RS2_delete_file.png)
 
 Les boîtes de dialogue sont des superpositions d’interface utilisateur modales qui fournissent des informations contextuelles sur l’application. Les boîtes de dialogue bloquent les interactions avec la fenêtre de l’application jusqu’à ce qu’elles soient masquées explicitement. Elles exigent souvent une forme d’action de la part de l’utilisateur.
-    :::column-end:::
-    :::column::: 
+
 **Menus volants**
 
 ![Exemple de menu volant](../images/flyout-example2.png)
@@ -40,9 +37,6 @@ Les boîtes de dialogue sont des superpositions d’interface utilisateur modale
 Un menu volant est une fenêtre contextuelle légère qui affiche l’interface utilisateur liée aux opérations qu’effectue l’utilisateur. Il comprend une logique de placement et de dimensionnement, et peut être utilisé pour afficher un contrôle secondaire ou des détails supplémentaires sur un élément.
 
 Contrairement à une boîte de dialogue, un menu volant peut être fermé rapidement en appuyant ou en cliquant en dehors du menu volant, en appuyant sur la touche ÉCHAP ou le bouton Précédent, en redimensionnant la fenêtre d’application ou en modifiant l’orientation de l’appareil.
-    :::column-end:::
-:::row-end:::
-
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
@@ -52,8 +46,6 @@ Une fois que vous avez déterminé que vous voulez utiliser une boîte de dialog
 
 Étant donné que les boîtes de dialogue bloquent les interactions contrairement aux menus volants, elles doivent être réservées aux situations dans lesquelles vous voulez que l’utilisateur interrompe tout ce qu’il est en train de faire pour se concentrer sur une information particulière ou répondre à une question. Les menus volants, quant à eux, peuvent être utilisés quand vous voulez attirer l’attention de l’utilisateur sur quelque chose, mais qu’il a la possibilité de l’ignorer.
 
-:::row:::
-    :::column:::
    <p><b>Utilisez une boîte de dialogue pour...</b> <br/>
 <ul>
 <li>Afficher des informations importantes que l’utilisateur <b>doit</b> lire et accepter avant de poursuivre. Exemples :
@@ -69,17 +61,14 @@ Une fois que vous avez déterminé que vous voulez utiliser une boîte de dialog
 <li>Utilisez une boîte de dialogue à question pour indiquer que l’application doit poser à l’utilisateur une question bloquante, parce qu’elle ne peut pas choisir telle ou telle option à la place de l’utilisateur, par exemple. Une question bloquante ne peut pas être ignorée ni reportée, et doit offrir à l’utilisateur des options clairement définies.</li>
 </ul>
 </p>
-    :::column-end:::
-    :::column:::
+
+
    <p><b>Utilisez un menu volant pour...</b> <br/>
 <ul>
 <li>Collecter des informations supplémentaires nécessaires pour pouvoir effectuer une action.</li>
 <li>Afficher des informations qui ne sont pas pertinentes le reste du temps. Par exemple, dans une application de galerie de photos, quand l’utilisateur clique sur une vignette d’image, vous pouvez utiliser un menu volant pour afficher une version agrandie de l’image.</li>
 <li>Affichage d’informations supplémentaires, comme des détails ou des descriptions plus longues sur un élément de la page.</li>
 </ul></p>
-    :::column-end:::
-:::row-end:::
-
 
 ## <a name="ways-to-avoid-using-dialogs-and-flyouts"></a>Moyens d’éviter d’utiliser les boîtes de dialogue et menus volants
 
