@@ -10,12 +10,12 @@ design-contact: rybick
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: c6995ab6116d4e3bda8e21c397ab3b4985732763
-ms.sourcegitcommit: 4fdab7be28aca18cb3879fc205eb49edc4f9a96b
+ms.openlocfilehash: 9739933f9fd23c6f169c24c4f789e53ba894708d
+ms.sourcegitcommit: 252dbf4483d58dd7093a79726a29923109eebee5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77639766"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80696634"
 ---
 # <a name="acrylic-material"></a>Matière acrylique
 
@@ -76,15 +76,6 @@ La caractéristique la plus remarquable de l’acrylique est sa transparence. Il
 Si vous utilisez l’acrylique dans l’application sur des surfaces de navigation, envisagez d’étendre le contenu sous le volet acrylique pour améliorer le flux sur votre application. NavigationView fait cela pour vous automatiquement. Toutefois, pour éviter de créer un effet de rayures, évitez de placer plusieurs éléments en acrylique bord à bord. Cela peut créer une sorte de rayure indésirable à la jointure entre deux surfaces floues. L’acrylique vous permet d’harmoniser la présentation visuelle de vos conceptions mais, utilisée de manière incorrecte, il peut générer un bruit visuel.
 
 Pour déterminer la meilleure façon d’incorporer de l’acrylique dans votre application, envisagez les modèles d’utilisation suivants :
-
-### <a name="horizontal-navigation-or-commanding"></a>Navigation ou exécution de commandes horizontale
-
-Si votre application n’est pas en mesure d’utiliser NavigationView et que vous prévoyez d’ajouter de l’acrylique vous-même, nous vous recommandons d’utiliser une acrylique relativement translucide, d’une opacité de 60 %.
- - Lorsque le volet qui s’ouvre se superpose à un autre contenu d’application, il doit afficher [une acrylique dans l’application à 60 %](#acrylic-theme-resources)
-
-![Application Cartes utilisant des commandes horizontales dans l’application](images/Maps_In_App_Acrylic_1.png)
-
-En outre, le fait que votre contenu s’étende ou défile sous l’acrylique permet à votre application d’offrir une expérience plus immersive et transparente.
 
 ### <a name="vertical-panes"></a>Volets verticaux
 
@@ -202,7 +193,7 @@ Vous pouvez choisir d’ajouter une teinte à l’acrylique de votre application
 
 Pour ajouter un pinceau acrylique, définissez les trois ressources pour les thèmes à contraste élevé, clair et foncé. Notez qu’en contraste élevé, nous recommandons d’utiliser un SolidColorBrush avec la même x:Key que l’AcrylicBrush sombre/clair.
 
-> [!Note] 
+> [!Note]
 > Si vous ne spécifiez pas de valeur pour TintLuminosityOpacity, le système ajuste automatiquement sa valeur en fonction de vos valeurs TintColor et TintOpacity.
 
 ```xaml
