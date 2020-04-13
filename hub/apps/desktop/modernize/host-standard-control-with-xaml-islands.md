@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 3f2a0a6ee6b22fa7d08e7fc746c4ec2ad4ebffa7
-ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
+ms.openlocfilehash: ed6aa406cd1372819c25bd43b59cd416130b09e0
+ms.sourcegitcommit: df0cd9c82d1c0c17ccde424e3c4a6ff680c31a35
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80218589"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80482513"
 ---
 # <a name="host-a-standard-uwp-control-in-a-wpf-app-using-xaml-islands"></a>Héberger un contrôle UWP standard dans une application WPF à l’aide d’îlots XAML
 
@@ -31,7 +31,7 @@ Pour héberger un contrôle UWP dans une application WPF (ou Windows Forms), vou
 
 * **Le projet et le code source de votre application**. L’utilisation du contrôle [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) pour héberger des contrôles UWP internes standard est prise en charge dans les applications qui ciblent le .NET Framework ou .NET Core 3.
 
-* **Un projet d’application UWP qui définit une classe Application racine dérivant de XamlApplication**. Votre projet WPF ou Windows Forms doit avoir accès à une instance de la classe [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) fournie par le Windows Community Toolkit. À cette fin, la méthode recommandée consiste à définir cet objet dans un projet d’application UWP distinct qui fait partie de la solution pour votre application WPF ou Windows Forms. Cet objet joue le rôle de fournisseur de métadonnées racine pour le chargement des métadonnées des types XAML UWP personnalisés dans les assemblys du répertoire actif de votre application.
+* **Un projet d’application UWP qui définit une classe Application racine dérivant de XamlApplication**. Votre projet WPF ou Windows Forms doit avoir accès à une instance de la classe [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) fournie par le Windows Community Toolkit afin qu’il puisse découvrir et charger des contrôles XAML UWP personnalisés. À cette fin, la méthode recommandée consiste à définir cet objet dans un projet d’application UWP distinct qui fait partie de la solution pour votre application WPF ou Windows Forms. 
 
     > [!NOTE]
     > Bien que l’objet `XamlApplication` ne soit pas nécessaire pour héberger un contrôle UWP interne, votre application a besoin de cet objet pour prendre en charge l’ensemble des scénarios d’îlot XAML, y compris l’hébergement de contrôles UWP personnalisés. Ainsi, nous vous recommandons de toujours définir un objet `XamlApplication` dans une solution dans laquelle vous utilisez des îlots XAML.
@@ -67,7 +67,7 @@ Avant de commencer, suivez ces instructions pour créer un projet WPF et le conf
 
 ## <a name="define-a-xamlapplication-class-in-a-uwp-app-project"></a>Définir une classe XamlApplication dans un projet d’application UWP
 
-Ensuite, ajoutez un projet d’application UWP à votre solution et modifiez la classe `App` par défaut de ce projet afin de la dériver de la classe [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) fournie par le Windows Community Toolkit.
+Ensuite, ajoutez un projet d’application UWP à votre solution et modifiez la classe `App` par défaut de ce projet afin de la dériver de la classe [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) fournie par le Windows Community Toolkit. Cette classe prend en charge l’interface [IXamlMetadaraProvider](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Markup.IXamlMetadataProvider), qui permet à votre application de découvrir et de charger des métadonnées pour les contrôles XAML UWP personnalisés dans les assemblys du répertoire actif de votre application au moment de l’exécution. Cette classe initialise également le framework XAML UWP pour le thread actuel.
 
 > [!NOTE]
 > Bien que cette étape ne soit pas nécessaire pour héberger un contrôle UWP interne, votre application a besoin de l’objet `XamlApplication` pour prendre en charge l’ensemble des scénarios d’îlot XAML, y compris l’hébergement de contrôles UWP personnalisés. Ainsi, nous vous recommandons de toujours définir un objet `XamlApplication` dans une solution dans laquelle vous utilisez des îlots XAML.

@@ -2,7 +2,7 @@
 Description: Un conseil d’apprentissage est un menu volant semi-persistant riche en contenu qui fournit des informations contextuelles.
 title: Conseils d’apprentissage
 template: detail.hbs
-ms.date: 04/19/2019
+ms.date: 04/01/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: yulikl
@@ -10,12 +10,12 @@ design-contact: kimsea
 dev-contact: niallm
 ms.custom: 19H1
 ms.localizationpriority: medium
-ms.openlocfilehash: 6276ef9bcb6b01fd557057d3d36939350314015b
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: 06734c854f0097db5fa96e35d4123dde8bda8a95
+ms.sourcegitcommit: 8be8ed1ef4e496055193924cd8cea2038d2b1525
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80081054"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80614137"
 ---
 # <a name="teaching-tip"></a>Conseil éducatif
 
@@ -27,16 +27,20 @@ La fermeture d’un conseil d’apprentissage peut résulter d’un abandon inte
 
 |  |  |
 | - | - |
-| ![Logo WinUI](../images/winui-logo-64x64.png) | Le contrôle **TeachingTip** est inclus dans la bibliothèque d’interface utilisateur Windows, package NuGet qui contient de nouveaux contrôles et fonctionnalités d’interface utilisateur destinés aux applications UWP. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![Logo WinUI](../images/winui-logo-64x64.png) | Le contrôle **TeachingTip** nécessite la bibliothèque d’interface utilisateur Windows, package NuGet qui contient les nouveaux contrôles et fonctionnalités d’interface utilisateur destinés aux applications UWP. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
 > **API de la bibliothèque d’interface utilisateur Windows :** [Classe TeachingTip](/uwp/api/microsoft.ui.xaml.controls.teachingtip)
+
+> [!TIP]
+> Tout au long de ce document, nous utilisons l’alias **muxc** en XAML pour représenter les API de la bibliothèque d’interface utilisateur Windows que nous avons incluses dans notre projet. Nous l’avons ajouté à notre élément [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page) : `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
+>
+>Dans le code-behind, nous utilisons également l’alias **muxc** en C# pour représenter les API de la bibliothèque d’interface utilisateur Windows que nous avons incluses dans notre projet. Nous avons ajouté cette instruction **using** en haut du fichier : `using muxc = Microsoft.UI.Xaml.Controls;`
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
 Un contrôle **TeachingTip** permet d’attirer l’attention sur des mises à jour et fonctionnalités nouvelles ou importantes, de rappeler l’existence d’options non essentielles susceptibles d’améliorer l’expérience ou d’enseigner la manière d’accomplir une tâche.
 
 Le conseil d’apprentissage s’affichant de façon temporaire, son utilisation n’est pas recommandée pour informer l’utilisateur d’erreurs ou de changements d’état importants.
-
 
 ## <a name="examples"></a>Exemples
 
@@ -68,14 +72,12 @@ Un conseil d’apprentissage peut nécessiter que l’utilisateur le ferme à l�
 
 ![Exemple d’application comportant un conseil d’apprentissage avec abandon interactif dans l’angle inférieur droit. Le titre du conseil est « Enregistrement automatique », et le sous-titre explique : « Nous enregistrons vos modifications au fur et à mesure. Vous n’avez pas à le faire. »](../images/teaching-tip-light-dismiss.png)
 
-
 ### <a name="create-a-teaching-tip"></a>Créer un conseil d’apprentissage
 
 Voici le code XAML d’un conseil d’apprentissage ciblé qui montre l’apparence par défaut du conseil d’apprentissage avec un titre et un sous-titre.
 Notez que le conseil d’apprentissage peut apparaître n’importe où dans l’arborescence d’éléments ou le code-behind. Dans l’exemple ci-dessous, il se trouve dans un ResourceDictionary.
 
-XAML
-```XAML
+```xaml
 <Button x:Name="SaveButton" Content="Save">
     <Button.Resources>
         <muxc:TeachingTip x:Name="AutoSaveTip"
@@ -87,8 +89,7 @@ XAML
 </Button>
 ```
 
-C#
-```C#
+```csharp
 public MainPage()
 {
     this.InitializeComponent();
@@ -109,8 +110,7 @@ Voici le résultat lorsque la page contenant le bouton et le conseil d’apprent
 
 Certains conseils ne sont pas liés à un élément affiché à l’écran. Dans ce cas, ne définissez pas la propriété Target, de sorte que le conseil d’apprentissage apparaisse plutôt dans un positionnement relatif par rapport aux bords de la racine XAML. Il est également possible de supprimer l’extension d’un conseil d’apprentissage tout en conservant le positionnement par rapport à un élément d’interface utilisateur en définissant la propriété TailVisibility sur « Collapsed ». L’exemple suivant présente un conseil d’apprentissage non ciblé.
 
-XAML
-```XAML
+```xaml
 <Button x:Name="SaveButton" Content="Save" />
 
 <muxc:TeachingTip x:Name="AutoSaveTip"
@@ -131,8 +131,7 @@ Pour les applications qui prévoient l’utilisation d’une manette de jeu, voi
 
 Un conseil d’apprentissage ciblé avec le mode PreferredPlacement défini sur « BottomLeft » s’affiche avec l’extension centrée au bas de sa cible et le corps décalé vers la gauche.
 
-XAML
-```XAML
+```xaml
 <Button x:Name="SaveButton" Content="Save">
     <Button.Resources>
         <muxc:TeachingTip x:Name="AutoSaveTip"
@@ -147,11 +146,9 @@ XAML
 
 ![Exemple d’application avec un bouton « Enregistrer » ciblé par un conseil d’apprentissage positionné sous son angle gauche. Le titre du conseil est « Enregistrement automatique », et le sous-titre explique : « Nous enregistrons vos modifications au fur et à mesure. Vous n’avez pas à le faire. » Un bouton de fermeture figure dans l’angle supérieur droit du conseil d’apprentissage.](../images/teaching-tip-targeted-preferred-placement.png)
 
-
 Un conseil d’apprentissage non ciblé avec son mode PreferredPlacement défini sur « BottomLeft » s’affiche dans l’angle inférieur gauche de la racine XAML.
 
-XAML
-```XAML
+```xaml
 <Button x:Name="SaveButton" Content="Save" />
 
 <muxc:TeachingTip x:Name="AutoSaveTip"
@@ -175,8 +172,7 @@ Vous pouvez contrôler l’écart séparant un conseil d’apprentissage ciblé 
 
 L’exemple suivant présente un conseil non ciblé avec les valeurs Left/Top/Right/Bottom de la propriété PlacementMargin définies sur 80.
 
-XAML
-```XAML
+```xaml
 <Button x:Name="SaveButton" Content="Save" />
 
 <muxc:TeachingTip x:Name="AutoSaveTip"
@@ -194,8 +190,7 @@ XAML
 
 Vous pouvez ajouter du contenu à un conseil d’apprentissage à l’aide de la propriété Content. S’il y a plus de contenu à afficher que ce que la taille d’un conseil d’apprentissage permet, une barre de défilement est automatiquement activée pour permettre à un utilisateur de faire défiler la zone de contenu.
 
-XAML
-```XAML
+```xaml
 <Button x:Name="SaveButton" Content="Save">
     <Button.Resources>
         <muxc:TeachingTip x:Name="AutoSaveTip"
@@ -221,8 +216,7 @@ Par défaut, un bouton standard de fermeture « X » est affiché en regard du
 
 Vous pouvez ajouter une bouton d’action personnalisé en définissant la propriété ActionButtonContent (et éventuellement les propriétés ActionButtonCommand et ActionButtonCommandParameter).
 
-XAML
-```XAML
+```xaml
 <Button x:Name="SaveButton" Content="Save">
     <Button.Resources>
         <muxc:TeachingTip x:Name="AutoSaveTip"
@@ -230,7 +224,7 @@ XAML
             Title="Saving automatically"
             Subtitle="We save your changes as you go - so you never have to."
             ActionButtonContent="Disable"
-            ActionButtonCommand="DisableAutoSave"
+            ActionButtonCommand="{x:Bind DisableAutoSaveCommand}"
             CloseButtonContent="Got it!">
                 <StackPanel>
                     <CheckBox x:Name="HideTipsCheckBox" Content="Don't show tips at start up" IsChecked="{x:Bind HidingTips, Mode=TwoWay}" />
@@ -247,8 +241,7 @@ XAML
 
 Vous pouvez ajouter du contenu de bord à bord à un conseil d’apprentissage en définissant la propriété HeroContent. Vous pouvez définir l’emplacement du contenu de bannière en haut ou en bas d’un conseil d’apprentissage en définissant la propriété HeroContentPlacement.
 
-XAML
-```XAML
+```xaml
 <Button x:Name="SaveButton" Content="Save">
     <Button.Resources>
         <muxc:TeachingTip x:Name="AutoSaveTip"
@@ -269,8 +262,7 @@ XAML
 
 Vous pouvez ajouter une icône en regard du titre et du sous-titre à l’aide de la propriété IconSource. Les tailles d’icônes suggérées sont 16px, 24 px et 32 px.
 
-XAML
-```XAML
+```xaml
 <Button x:Name="SaveButton" Content="Save">
     <Button.Resources>
         <muxc:TeachingTip x:Name="AutoSaveTip"
@@ -293,8 +285,7 @@ La fonctionnalité d’abandon interactif est désactivée par défaut mais vous
 
 Le bouton de fermeture est automatiquement supprimé d’un conseil d’apprentissage pour lequel le mode d’abandon interactif est activé afin précisément d’indiquer aux utilisateurs que ce mode est activé.
 
-XAML
-```XAML
+```xaml
 <Button x:Name="SaveButton" Content="Save" />
 
 <muxc:TeachingTip x:Name="AutoSaveTip"
@@ -308,12 +299,11 @@ XAML
 
 ### <a name="escaping-the-xaml-root-bounds"></a>Échappement des limites de racine XAML
 
-Sous Windows 19H1 et versions ultérieures, un conseil d’apprentissage peut échapper les limites de la racine XAML et de l’écran en définissant la propriété ShouldConstrainToRootBounds. Lorsque cette propriété est activée, un conseil d’apprentissage ne tente pas de rester dans les limites de la racine XAML ou de l’écran, et est toujours positionné conformément au mode PreferredPlacement défini. Il est conseillé d’activer la propriété IsLightDismissEnabled et de définir le mode PreferredPlacement le plus proche du centre de la racine XAML afin de garantir une expérience optimale pour les utilisateurs.
+À compter de Windows 10, version 1903 (Build 18362), les conseils d’apprentissage peuvent sortir des limites de la racine XAML et de l’écran en définissant la propriété `ShouldConstrainToRootBounds`. Lorsque cette propriété est activée, le conseil d’apprentissage ne tente pas de rester dans les limites de la racine XAML ou de l’écran et reste positionné conformément au mode `PreferredPlacement` défini. Il est conseillé d’activer la propriété `IsLightDismissEnabled` et de définir le mode `PreferredPlacement` le plus proche du centre de la racine XAML afin de garantir une expérience optimale pour les utilisateurs.
 
 Dans les versions antérieures de Windows, cette propriété est ignorée et le conseil d’apprentissage reste toujours dans les limites de la racine XAML.
 
-XAML
-```XAML
+```xaml
 <Button x:Name="SaveButton" Content="Save" />
 
 <muxc:TeachingTip x:Name="AutoSaveTip"
@@ -331,10 +321,10 @@ XAML
 
 L’événement Closing permet d’annuler ou de retarder la fermeture d’un conseil d’apprentissage. Vous pouvez l’utiliser pour garder le conseil d’apprentissage ouvert ou laisser un peu de temps pour qu’une action ou une animation personnalisée se produise. En cas d’annulation de la fermeture d’un conseil d’apprentissage, la valeur de IsOpen redevient true, mais elle reste false en cas de retardement de l’annulation. Vous pouvez également annuler une fermeture par programmation.
 
-**Remarque : Si aucune option de positionnement ne permet d’afficher entièrement un conseil d’apprentissage, celui-ci effectue une itération dans son cycle de vie d’événement pour forcer une fermeture au lieu de s’afficher sans bouton de fermeture accessible. Si l’application annule l’événement Closing, il se peut que le conseil d’apprentissage reste ouvert sans bouton de fermeture accessible.**
+> [!NOTE]
+> Si aucune option de positionnement ne permet d’afficher entièrement un conseil d’apprentissage, celui-ci effectue une itération dans son cycle de vie d’événement pour forcer une fermeture au lieu de s’afficher sans bouton de fermeture accessible. Si l’application annule l’événement Closing, il se peut que le conseil d’apprentissage reste ouvert sans bouton de fermeture accessible.
 
-XAML
-```XAML
+```xaml
 <muxc:TeachingTip x:Name="EnableNewSettingsTip"
     Title="New ways to protect your privacy!"
     Subtitle="Please close this tip and review our updated privacy policy and privacy settings."
@@ -342,18 +332,18 @@ XAML
 </muxc:TeachingTip>
 ```
 
-C#
-```C#
-public void OnTipClosing(object sender, TeachingTipClosingEventArgs args)
+```csharp
+private void OnTipClosing(muxc.TeachingTip sender, muxc.TeachingTipClosingEventArgs args)
 {
-    if (args.Reason == TeachingTipCloseReason.CloseButton)
+    if (args.Reason == muxc.TeachingTipCloseReason.CloseButton)
     {
         using(args.GetDeferral())
         {
-            bool success = await UpdateUserSettings(User thisUsersID);
+            bool success = UpdateUserSettings(User thisUsersID);
             if(!success)
             {
-                //We were not able to update the settings! Don't close the tip and display the reason why.
+                // We were not able to update the settings!
+                // Don't close the tip and display the reason why.
                 args.Cancel = true;
                 ShowLastErrorMessage();
             }
@@ -362,19 +352,18 @@ public void OnTipClosing(object sender, TeachingTipClosingEventArgs args)
 }
 ```
 
-## <a name="remarks"></a>Remarks
+## <a name="recommendations"></a>Recommandations
 
-### <a name="related-articles"></a>Articles connexes
-
-* [Boîtes de dialogue et menus volants](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/dialogs-and-flyouts/index)
-
-### <a name="recommendations"></a>Recommandations
 * Les conseils sont impermanents et ne doivent pas contenir d’informations ou d’options critiques pour l’expérience d’une application.
 * Essayez d’éviter l’affichage trop fréquent de conseils d’apprentissage. Les conseils d’apprentissage ont plus de chance d’attirer l’attention quand ils sont espacés sur de longues sessions, voire sur plusieurs sessions.
 * Veillez à ce qu’ils restent concis et à ce que leur thème soit clairement identifiable. La recherche a montré que les utilisateurs ne lisent en moyenne que de 3 à 5 mots et n’en comprennent que 2 ou 3 avant de décider d’interagir avec un conseil.
 * L’accessibilité à la manette de jeu d’un conseil d’apprentissage n’est pas garantie. Pour les applications qui prévoient l’utilisation d’une manette de jeu, voir [Interactions avec manette de jeu et télécommande]( https://docs.microsoft.com/windows/uwp/design/input/gamepad-and-remote-interactions#xy-focus-navigation-and-interaction). Nous vous conseillons de tester l’accessibilité à la manette de jeu de chaque conseil d’apprentissage en utilisant toutes les configurations possibles de l’interface utilisateur d’une application.
 * Lorsque vous activez un conseil d’apprentissage pour échapper la racine XAML, il est conseillé d’activer la propriété IsLightDismissEnabled et de définir le mode PreferredPlacement le plus proche du centre de la racine XAML.
 
-### <a name="reconfiguring-an-open-teaching-tip"></a>Reconfiguration d’un conseil d’apprentissage ouvert
+## <a name="reconfiguring-an-open-teaching-tip"></a>Reconfiguration d’un conseil d’apprentissage ouvert
 
 Il est possible de reconfigurer certains contenus et propriétés lorsque le conseil d’apprentissage est ouvert, avec effet immédiat. D’autres contenus et propriétés, tels que la propriété icon, les boutons Action et Fermer, ainsi que la reconfiguration d’abandon interactif en abandon explicite, nécessitent que le conseil d’apprentissage soit fermé, puis rouvert pour que les modifications apportées prennent effet. Notez que la modification du comportement d’abandon manuel en abandon interactif quand un conseil d’apprentissage est ouvert a pour effet que le bouton de fermeture est supprimé avant que le mode d’abandon interactif soit activé, et que le conseil peut rester bloqué à l’écran.
+
+## <a name="related-articles"></a>Articles connexes
+
+* [Boîtes de dialogue et menus volants](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/dialogs-and-flyouts/index)
