@@ -14,12 +14,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 8e18455a39441d46e13e5a9a72291c9cd379c310
-ms.sourcegitcommit: 9effd88952bd26611f7b0a0e7baa68aba7d0ee8d
+ms.openlocfilehash: 9c451eba40b5c36843a32efbc80de40866f2f0dc
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68616528"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081448"
 ---
 # <a name="treeview"></a>TreeView
 
@@ -34,13 +34,15 @@ Les API **TreeView** prennent en charge les fonctionnalités suivantes :
 - Types arbitraires de contenu dans un **TreeViewItem**
 - Glisser-déplacer entre des arborescences
 
-| **Obtenir la bibliothèque d’interface utilisateur Windows** |
-| - |
-| Ce contrôle est inclus dans la bibliothèque d’interface utilisateur Windows, package NuGet qui contient les nouveaux contrôles et fonctionnalités d’interface utilisateur pour les applications UWP. Pour plus d’informations, notamment des instructions d’installation, consultez [Vue d’ensemble de la bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+**Obtenir la bibliothèque d’interface utilisateur Windows**
 
-| **API de plateforme** | **API de la bibliothèque d’interface utilisateur Windows** |
+|  |  |
 | - | - |
-| [Classe TreeView](/uwp/api/windows.ui.xaml.controls.treeview), [classe TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode), [propriété TreeView.ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource) | [Classe TreeView](/uwp/api/microsoft.ui.xaml.controls.treeview), [classe TreeViewNode](/uwp/api/microsoft.ui.xaml.controls.treeviewnode), [propriété TreeView.ItemsSource](/uwp/api/microsoft.ui.xaml.controls.treeview.itemssource) |
+| ![Logo WinUI](images/winui-logo-64x64.png) | Le contrôle **TreeView** est inclus dans la bibliothèque d’interface utilisateur Windows, package NuGet qui contient de nouveaux contrôles et fonctionnalités d’interface utilisateur destinés aux applications UWP. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **API de la bibliothèque d’interface utilisateur Windows :** [Classe TreeView](/uwp/api/microsoft.ui.xaml.controls.treeview), [classe TreeViewNode](/uwp/api/microsoft.ui.xaml.controls.treeviewnode), [propriété TreeView.ItemsSource](/uwp/api/microsoft.ui.xaml.controls.treeview.itemssource)
+>
+> **API de plateforme :** [Classe TreeView](/uwp/api/windows.ui.xaml.controls.treeview), [classe TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode), [propriété TreeView.ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource)
 
 Tout au long de ce document, nous allons utiliser l’alias **muxc** en XAML pour représenter les API de la bibliothèque d’interface utilisateur Windows que nous avons incluses dans notre projet. Nous l’avons ajouté à notre élément [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page) :
 
@@ -69,7 +71,7 @@ Imports muxc = Microsoft.UI.Xaml.Controls
 <table>
 <th align="left">Galerie de contrôles XAML<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/TreeView">ouvrir l’application et voir l’objet TreeView en action</a>.</p>
     <ul>
@@ -94,7 +96,7 @@ Vous pouvez inclure une icône dans le modèle de données d’élément de l’
 
 Vous pouvez créer une arborescence en liant l’[ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource) à une source de données hiérarchique, ou vous pouvez créer et gérer des objets **TreeViewNode** vous-même.
 
-Pour créer une arborescence, vous utilisez un contrôle [TreeView](/uwp/api/windows.ui.xaml.controls.treeview) et une hiérarchie d’objets [TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode). Vous créez la hiérarchie des nœuds en ajoutant un ou plusieurs nœuds racine à la collection de [RootNodes](/uwp/api/windows.ui.xaml.controls.treeview.rootnodes) du contrôle **TreeView**. D’autres nœuds peuvent ensuite être ajoutés à la collection [Children](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeviewnode.children) de chaque **TreeViewNode**. Vous pouvez imbriquer des nœuds de l’arborescence à la profondeur que vous souhaitez.
+Pour créer une arborescence, vous utilisez un contrôle [TreeView](/uwp/api/windows.ui.xaml.controls.treeview) et une hiérarchie d’objets [TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode). Vous créez la hiérarchie des nœuds en ajoutant un ou plusieurs nœuds racines à la collection [RootNodes](/uwp/api/windows.ui.xaml.controls.treeview.rootnodes) du contrôle **TreeView**. D’autres nœuds peuvent ensuite être ajoutés à la collection [Children](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeviewnode.children) de chaque **TreeViewNode**. Vous pouvez imbriquer des nœuds de l’arborescence à la profondeur que vous souhaitez.
 
 Vous pouvez lier une source de données hiérarchique à la propriété [ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource) pour fournir le contenu de l’arborescence, comme vous le feriez avec l’**ItemsSource** de [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview). De même, utilisez [ItemTemplate](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate) (et l’[ItemTemplateSelector](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate) facultatif) pour fournir un [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.datatemplate) qui affiche l’élément.
 

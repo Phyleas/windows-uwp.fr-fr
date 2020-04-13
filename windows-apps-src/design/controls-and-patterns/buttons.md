@@ -13,12 +13,12 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: a3cd8a0c988df08047b10911a4d4f55e3ba1cb6e
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: e098283bae6f58b927892c680a4981d83f9e31e8
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209304"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081368"
 ---
 # <a name="buttons"></a>Boutons
 
@@ -33,18 +33,20 @@ Contrôler | Description
 [Button](/uwp/api/windows.ui.xaml.controls.button) | Bouton qui lance une action immédiate. Peut être utilisé avec un événement [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) ou une liaison de [commande](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command).
 [RepeatButton](/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) | Bouton qui déclenche un événement [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) en continu quand l’utilisateur appuie dessus.
 [HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) | Bouton qui ressemble à un lien hypertexte et qui est utilisé pour la navigation. Pour plus d’informations sur les liens hypertexte, consultez [Liens hypertexte](hyperlinks.md).
-[DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | Bouton comprenant un chevron pour ouvrir un menu volant attaché.
-[SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) | Bouton à deux côtés. Un côté lance une action et l’autre ouvre un menu.
-[ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | Bouton bascule à deux côtés. Un côté active ou désactive, et l’autre ouvre un menu.
+[DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | ![Logo WinUI](images/winui-logo-16x16.png) Bouton comprenant un chevron pour ouvrir un menu volant attaché.
+[SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) | ![Logo WinUI](images/winui-logo-16x16.png) Bouton à deux côtés. Un côté lance une action et l’autre ouvre un menu.
+[ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | ![Logo WinUI](images/winui-logo-16x16.png) Bouton bascule à deux côtés. Un côté active ou désactive, et l’autre ouvre un menu.
 [ToggleButton](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton) | Un bouton que l’on peut activer ou désactiver.
 
-| **Obtenir la bibliothèque d’interface utilisateur Windows** |
-| - |
-| **DropDownButton**, **SplitButton** et **ToggleSplitButton** sont inclus dans la bibliothèque d’interface utilisateur Windows. Cette bibliothèque est un package NuGet qui contient les nouveaux contrôles et fonctionnalités d’interface utilisateur des applications UWP. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+**Obtenir la bibliothèque d’interface utilisateur Windows**
 
-| **API de plateforme** | **API de la bibliothèque d’interface utilisateur Windows** |
+|  |  |
 | - | - |
-| [Click, événement](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)<br/> [Command, propriété](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command) | [DropDownButton, classe](/uwp/api/microsoft.ui.xaml.controls.dropdownbutton)<br/> [SplitButton, classe](/uwp/api/microsoft.ui.xaml.controls.splitbutton)<br/> [ToggleSplitButton, classe](/uwp/api/microsoft.ui.xaml.controls.togglesplitbutton) |
+| ![Logo WinUI](images/winui-logo-64x64.png) | **DropDownButton**, **SplitButton** et **ToggleSplitButton** sont inclus dans la bibliothèque d’interface utilisateur Windows. Cette bibliothèque est un package NuGet qui contient les nouveaux contrôles et fonctionnalités d’interface utilisateur des applications UWP. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **API de la bibliothèque d’interface utilisateur Windows :** [Classe DropDownButton](/uwp/api/microsoft.ui.xaml.controls.dropdownbutton), [classe SplitButton](/uwp/api/microsoft.ui.xaml.controls.splitbutton), [classe ToggleSplitButton](/uwp/api/microsoft.ui.xaml.controls.togglesplitbutton)
+>
+> **API de plateforme :** [Événement Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click), [Propriété Command](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
@@ -68,7 +70,7 @@ Utilisez un contrôle **ToggleButton** lorsque vous souhaitez que l’utilisateu
 <table>
 <th align="left">Galerie de contrôles XAML<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Si vous avez installé <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/Button">ouvrir l’application et voir le bouton en contexte</a>.</p>
     <ul>

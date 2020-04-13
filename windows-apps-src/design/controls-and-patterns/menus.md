@@ -13,12 +13,12 @@ design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 31371c2b2a4826939de428fb6d7c082b78d05843
-ms.sourcegitcommit: 6951827b7d0948618e1fbb082c28794c7f23f83c
+ms.openlocfilehash: b008b12c5f92d56c127c5ec8026d305d3d57a869
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70923151"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081682"
 ---
 # <a name="menus-and-context-menus"></a>Menus et menus contextuels
 
@@ -26,13 +26,15 @@ Les menus et les menus contextuels affichent une liste de commandes ou d’optio
 
 ![Exemple de menu contextuel standard](images/contextmenu_rs2_icons.png)
 
-| **Obtenir la bibliothèque d’interface utilisateur Windows** |
-| - |
-| Ce contrôle est inclus dans la bibliothèque d’interface utilisateur Windows, package NuGet qui contient les nouveaux contrôles et fonctionnalités d’interface utilisateur pour les applications UWP. Pour plus d’informations, notamment des instructions d’installation, consultez [Vue d’ensemble de la bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+**Obtenir la bibliothèque d’interface utilisateur Windows**
 
-| **API de plateforme** | **API de la bibliothèque d’interface utilisateur Windows** |
+|  |  |
 | - | - |
-| [classe MenuFlyout](/uwp/api/windows.ui.xaml.controls.menuflyout), [classe MenuBar](/uwp/api/windows.ui.xaml.controls.menubar), [propriété ContextFlyout](/uwp/api/windows.ui.xaml.uielement.contextflyout), [propriété FlyoutBase.AttachedFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase#xaml-attached-properties) | [MenuBar, classe](/uwp/api/microsoft.ui.xaml.controls.menubar) |
+| ![Logo WinUI](images/winui-logo-64x64.png) | Le contrôle **MenuBar** est inclus dans la bibliothèque d’interface utilisateur Windows, package NuGet qui contient les nouveaux contrôles et fonctionnalités d’interface utilisateur pour les applications UWP. Pour plus d’informations, notamment des instructions d’installation, consultez [Vue d’ensemble de la bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **API de la bibliothèque d’interface utilisateur Windows** : [MenuBar, classe](/uwp/api/microsoft.ui.xaml.controls.menubar)
+>
+> **API de plateforme :** [classe MenuFlyout](/uwp/api/windows.ui.xaml.controls.menuflyout), [classe MenuBar](/uwp/api/windows.ui.xaml.controls.menubar), [propriété ContextFlyout](/uwp/api/windows.ui.xaml.uielement.contextflyout), [propriété FlyoutBase.AttachedFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase#xaml-attached-properties)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
@@ -57,7 +59,7 @@ Vous pouvez également utiliser un MenuBar conjointement à un CommandBar. Utili
 <table>
 <th align="left">Galerie de contrôles XAML<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/MenuFlyout">ouvrir l’application et voir l’objet MenuFlyout en contexte</a>.</p>
     <ul>
@@ -85,7 +87,7 @@ Si vous voulez ajouter des commandes (telles que couper, copier et coller) à un
 
 ![Exemple de menu contextuel dans la galerie de photos](images/ContextMenu_example.png)
 
-### <a name="menus"></a>Les menus :
+### <a name="menus"></a>Menus
 
 - Ont un point d’entrée unique (un menu Fichier en haut de l’écran, par exemple) qui est toujours affiché.
 - Sont généralement attachés à un bouton ou un élément de menu parent.
