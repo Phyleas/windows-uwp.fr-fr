@@ -14,12 +14,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 9c451eba40b5c36843a32efbc80de40866f2f0dc
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: ab5b509aa69dc54d18ef3643d7ccd46bc2984676
+ms.sourcegitcommit: 8be8ed1ef4e496055193924cd8cea2038d2b1525
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80081448"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80614099"
 ---
 # <a name="treeview"></a>TreeView
 
@@ -44,21 +44,10 @@ Les API **TreeView** prennent en charge les fonctionnalités suivantes :
 >
 > **API de plateforme :** [Classe TreeView](/uwp/api/windows.ui.xaml.controls.treeview), [classe TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode), [propriété TreeView.ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource)
 
-Tout au long de ce document, nous allons utiliser l’alias **muxc** en XAML pour représenter les API de la bibliothèque d’interface utilisateur Windows que nous avons incluses dans notre projet. Nous l’avons ajouté à notre élément [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page) :
-
-```xaml
-xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-```
-
-Dans le code-behind, nous allons également utiliser l’alias **muxc** en C# pour représenter les API de la bibliothèque d’interface utilisateur Windows que nous avons incluses dans notre projet. Nous avons ajouté cette instruction **using** en haut du fichier :
-
-```csharp
-using muxc = Microsoft.UI.Xaml.Controls;
-```
-
-```vb
-Imports muxc = Microsoft.UI.Xaml.Controls
-```
+> [!TIP]
+> Tout au long de ce document, nous utilisons l’alias **muxc** en XAML pour représenter les API de la bibliothèque d’interface utilisateur Windows que nous avons incluses dans notre projet. Nous l’avons ajouté à notre élément [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page) : `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
+>
+>Dans le code-behind, nous utilisons également l’alias **muxc** en C# pour représenter les API de la bibliothèque d’interface utilisateur Windows que nous avons incluses dans notre projet. Nous avons ajouté cette instruction **using** en haut du fichier : `using muxc = Microsoft.UI.Xaml.Controls;`
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
