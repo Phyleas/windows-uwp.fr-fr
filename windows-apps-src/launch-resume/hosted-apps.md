@@ -3,23 +3,23 @@ Description: Découvrez comment créer une application hébergée qui hérite de
 title: Créer des applications hébergées
 ms.date: 01/28/2020
 ms.topic: article
-keywords: Windows 10, Desktop, package, Identity, MSIX, Win32
+keywords: windows 10, bureau, package, identité, MSIX, Win32
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 870042f3a7737e5caf646d4d14ffd49af39a079f
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: a3017073b15ea18214e9c78263fb212bb192132b
+ms.sourcegitcommit: 8b7b677c7da24d4f39e14465beec9c4a3779927d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80108142"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81266927"
 ---
 # <a name="create-hosted-apps"></a>Créer des applications hébergées
 
 À compter de Windows 10, version 2004, vous pouvez créer des *applications hébergées*. Une application hébergée partage le même exécutable et la même définition qu’une application *hôte* parent, mais elle se présente comme une application distincte sur le système.
 
-Les applications hébergées sont utiles dans les scénarios où vous souhaitez qu’un composant (tel qu’un fichier exécutable ou un fichier de script) se comporte comme une application Windows 10, mais le composant requiert un processus hôte pour pouvoir s’exécuter. Par exemple, un script PowerShell ou python peut être fourni sous la forme d’une application hébergée nécessitant l’installation d’un hôte pour pouvoir s’exécuter. Une application hébergée peut avoir sa propre vignette de départ, son identité et son intégration profonde avec les fonctionnalités Windows 10, telles que les tâches en arrière-plan, les notifications, les vignettes et les cibles de partage.
+Les applications hébergées sont utiles dans les scénarios où vous souhaitez qu’un composant (tel qu’un fichier exécutable ou un fichier de script) se comporte comme une application Windows 10 autonome, mais le composant requiert un processus hôte pour pouvoir s’exécuter. Par exemple, un script PowerShell ou python peut être fourni sous la forme d’une application hébergée nécessitant l’installation d’un hôte pour pouvoir s’exécuter. Une application hébergée peut avoir sa propre vignette de départ, son identité et son intégration profonde avec les fonctionnalités Windows 10, telles que les tâches en arrière-plan, les notifications, les vignettes et les cibles de partage.
 
 La fonctionnalité applications hébergées est prise en charge par plusieurs éléments et attributs du manifeste de package qui permettent à une application hébergée d’utiliser un exécutable et une définition dans un package d’application hôte. Quand un utilisateur exécute l’application hébergée, le système d’exploitation lance automatiquement l’exécutable hôte sous l’identité de l’application hébergée. L’hôte peut ensuite charger les ressources visuelles, le contenu ou les API d’appel comme application hébergée. L’application hébergée obtient l’intersection des fonctionnalités déclarées entre l’hôte et l’application hébergée. Cela signifie qu’une application hébergée ne peut pas demander plus de fonctionnalités que celles fournies par l’hôte.
 
