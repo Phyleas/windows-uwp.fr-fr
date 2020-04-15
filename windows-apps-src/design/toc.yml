@@ -362,6 +362,8 @@
                       href: shell/tiles-and-notifications/send-local-toast-desktop.md
                     - name: Applications WRL en C++
                       href: shell/tiles-and-notifications/send-local-toast-desktop-cpp-wrl.md
+            - name: Planifier des toasts
+              href: shell/tiles-and-notifications/scheduled-toast.md
             - name: Contenu audio personnalisé
               href: shell/tiles-and-notifications/custom-audio-on-toasts.md
             - name: Barre de progression
