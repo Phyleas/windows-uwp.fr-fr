@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: e198e65052e9ef79ee38863260bce1c1f798ba38
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: 75bc81f4295fb76f5a7cc61b3cadd1496f57dc4c
+ms.sourcegitcommit: 1b06c27e7fa4726fd950cbeaf05206c0a070e3c7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80081739"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80893479"
 ---
 # <a name="collections-and-lists"></a>Collections et listes
 
@@ -38,6 +38,8 @@ Des recommandations en matière de conception, des fonctionnalités et des exemp
 Chacun de ces contrôles (à l’exception d’ItemsRepeater) intègre des fonctionnalités de style et d’interaction. Toutefois, pour personnaliser davantage l’apparence visuelle de votre affichage de collection et des éléments qu’il contient, un [DataTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate) est utilisé. Vous trouverez des informations détaillées sur les modèles de données et sur la personnalisation de l’apparence d’un affichage de collection dans la page [Modèles et conteneurs d’éléments](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/item-containers-templates).
 
 Chacun de ces contrôles (à l’exception d’ItemsRepeater) a également un comportement intégré permettant la sélection d’un ou de plusieurs éléments. Pour en savoir plus, consultez [Vue d’ensemble des modes de sélection](selection-modes.md).
+
+Un des scénarios non traités dans cet article est l’affichage des collections dans un tableau ou sur plusieurs colonnes. Si vous souhaitez afficher une collection dans ce format, envisagez d’utiliser le [contrôle DataGrid](https://docs.microsoft.com/windows/communitytoolkit/controls/datagrid) du [Kit de ressources Communauté Windows](https://docs.microsoft.com/windows/communitytoolkit/). 
 
 > **Windows 10 Fall Creators Update - Modification de comportement** Par défaut, au lieu d’effectuer la sélection, un stylet actif fait défiler ou parcourt une liste dans les applications UWP (comme l’interaction tactile, le pavé tactile et le stylet passif).
 > Si votre application repose sur le comportement précédent, vous pouvez remplacer le défilement du stylet et rétablir le comportement précédent. Pour plus d’informations, consultez la rubrique d’informations de référence sur les API pour la [classe Scroll Viewer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer).

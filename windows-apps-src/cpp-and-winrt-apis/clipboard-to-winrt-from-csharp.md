@@ -5,12 +5,12 @@ ms.date: 03/20/2020
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, porter, migrer, C#, exemple, presse-papiers, cas, étude
 ms.localizationpriority: medium
-ms.openlocfilehash: e770d92af4b0bece9e25bdc4d4dc3b26537524a9
-ms.sourcegitcommit: f288bcc108f9850671662c7b76c55c8313e88b42
+ms.openlocfilehash: 570f3538bf15616a45a17cdbce9a56066c8036bc
+ms.sourcegitcommit: 23c5d8dfaeb6edbca780637ffd26fe892db27519
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80290098"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81123647"
 ---
 # <a name="porting-the-clipboard-sample-tocwinrtfromcmdasha-case-study"></a>Portage de l’exemple Clipboard vers C++/WinRT depuis C#&mdash;une étude de cas
 
@@ -280,7 +280,7 @@ Voici le code concerné (du projet C#) que nous avons besoin de porter.
 ```
 
 ```csharp
-// MainPage.cs
+// MainPage.xaml.cs
 ...
 public sealed partial class MainPage : Page
 {
@@ -393,7 +393,7 @@ Notez que dans la mesure où les chaînes sont de type large (« wide ») dans
 Voici le code C# concerné que nous devons porter.
 
 ```csharp
-// MainPage.cs
+// MainPage.xaml.cs
 ...
 public sealed partial class MainPage : Page
 {
@@ -495,7 +495,7 @@ Dans le projet C#, vous trouverez l’implémentation de la méthode **MainPage.
 Voici le code C# concerné que nous devons porter.
 
 ```csharp
-// MainPage.cs
+// MainPage.xaml.cs
 ...
 public void NotifyUser(string strMessage, NotifyType type)
 if (Dispatcher.HasThreadAccess)
@@ -684,6 +684,8 @@ Pour porter l’utilisation du type C# **System.Text.StringBuilder**, nous allon
 
 Le code C# construit un**StringBuilder** avec le mot clé `new`. En C#, les objets sont des types référence par défaut, déclarés sur le tas avec `new`. Dans le standard C++moderne, les objets sont des types valeur par défaut, déclarés sur la pile (sans utiliser `new`). Nous portons donc `StringBuilder output = new StringBuilder();` en C++/WinRT aussi simplement que `std::wostringstream output;`.
 
+Le mot clé C# `var` demande au compilateur d’inférer un type. Vous portez `var` en `auto` dans C++/WinRT. Cependant, dans C++/WinRT, il existe des cas où (afin d’éviter les copies) vous voulez une *référence* à un type inféré (ou déduit), et vous exprimez cela avec `auto&`. Il existe également des cas où vous voulez un type spécial de référence qui se lie correctement, qu’il soit initialisé avec une *lvalue* ou avec une *rvalue*. Vous exprimez cela avec `auto&&`. Il s’agit de la forme que vous voyez utilisée dans la boucle `for` du code porté ci-dessous. Pour en savoir plus sur les valeurs *lvalue* et *rvalue*, consultez [Catégories de valeurs et références à celles-ci](/windows/uwp/cpp-and-winrt-apis/cpp-value-categories).
+
 Modifiez `pch.h`, `SampleConfiguration.h` et `SampleConfiguration.cpp` pour qu’ils correspondent à ce qui figure ci-dessous.
 
 ```cppwinrt
@@ -704,7 +706,7 @@ using namespace Windows::ApplicationModel::DataTransfer;
 ...
 hstring SampleState::BuildClipboardFormatsOutputString()
 {
-    DataPackageView clipboardContent = Clipboard::GetContent();
+    DataPackageView clipboardContent{ Clipboard::GetContent() };
     std::wostringstream output;
 
     if (clipboardContent && clipboardContent.AvailableFormats().Size() > 0)
@@ -723,6 +725,9 @@ hstring SampleState::BuildClipboardFormatsOutputString()
     return hstring{ output.str() };
 }
 ```
+
+> [!NOTE]
+> La syntaxe de la ligne de code `DataPackageView clipboardContent{ Clipboard::GetContent() };` utilise une fonctionnalité du standard C++ moderne appelée *initialisation uniforme*, avec son utilisation caractéristique des accolades au lieu d’un signe `=`. Cette syntaxe indique clairement qu’une initialisation prend place, et non pas une affectation. Si vous préférez la forme de la syntaxe qui *ressemble* à une affectation (mais qui n’en est pas une), vous pouvez remplacer la syntaxe ci-dessus par son équivalent `DataPackageView clipboardContent = Clipboard::GetContent();`. Il est cependant judicieux de bien maîtriser les deux façons d’exprimer l’initialisation, car il est probable que vous verrez les deux fréquemment utilisées dans le code que vous rencontrerez.
 
 #### <a name="displaytoast"></a>**DisplayToast**
 
@@ -784,7 +789,7 @@ private void OnWindowActivated(object sender, WindowActivatedEventArgs e) { ... 
 
 En C++/WinRT, nous allons en faire une méthode statique publique de **SampleState**.
 
-En C#, vous utilisez la syntaxe d’opérateur `+=` et `-=` pour inscrire et révoquer des délégués de gestion d’événements. En C++/WinRT, vous disposez de plusieurs options syntaxiques pour inscrire/révoquer un délégué, comme décrit dans [Gérer des événements en utilisant des délégués en C++/WinRT](/windows/uwp/cpp-and-winrt-apis/handle-events). La forme générale consiste cependant à inscrire et à révoquer avec un appel à une fonction nommée pour l’événement. Pour inscrire, vous passez votre délégué à cette fonction et vous récupérez en retour un jeton de révocation. Pour révoquer, vous passez le jeton à la fonction. Dans le cas présent, le gestionnaire est statique et (comme vous pouvez le voir dans le code suivant) la syntaxe de l’appel de la fonction est simple.
+En C#, vous utilisez la syntaxe d’opérateur `+=` et `-=` pour inscrire et révoquer des délégués de gestion d’événements. En C++/WinRT, vous disposez de plusieurs options syntaxiques pour inscrire/révoquer un délégué, comme décrit dans [Gérer des événements en utilisant des délégués en C++/WinRT](/windows/uwp/cpp-and-winrt-apis/handle-events). La forme générale consiste cependant à inscrire et à révoquer avec un appel à une paire de fonctions nommées pour l’événement. Pour inscrire, vous passez votre délégué à la fonction d’inscription et vous récupérez en retour un jeton de révocation ([**winrt::event_token**](/uwp/cpp-ref-for-winrt/event-token)). Pour révoquer, vous passez ce jeton à la fonction de révocation. Dans le cas présent, le gestionnaire est statique et (comme vous pouvez le voir dans le code suivant) la syntaxe de l’appel de la fonction est simple.
 
 Le type **object** apparaît dans les signatures du gestionnaire d’événements C#. Dans le langage C#, **object** est un [alias](/dotnet/csharp/language-reference/builtin-types/reference-types) pour le type [**System.Object**](/dotnet/api/system.object) de .NET. L’équivalent en C++/WinRT est [**winrt::Windows::Foundation::IInspectable**](/windows/win32/api/inspectable/nn-inspectable-iinspectable). Vous verrez donc **IInspectable** dans les gestionnaires d’événements C++/WinRT.
 
@@ -847,7 +852,7 @@ Laissez les délégués de gestion des événements eux-mêmes (**OnClipboardCha
 ```
 
 ```csharp
-// MainPage.cs
+// MainPage.xaml.cs
 protected override void OnNavigatedTo(NavigationEventArgs e)
 {
     // Populate the scenario list from the SampleConfiguration.cs file
@@ -920,7 +925,7 @@ void MainPage::OnNavigatedTo(NavigationEventArgs const& /* e */)
 
 Là encore, nous appelons la fonction [winrt::single_threaded_observable_vector](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector), mais cette fois-ci pour créer une collection de [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable). Ceci faisait partie de la décision que nous avons prise d’effectuer la conversion boxing de nos objets **Scenario** selon un mode juste-à-temps.
 
-À la place de l’interpolation de chaîne de C#, nous utilisons simplement l’[opérateur de concaténation](/uwp/cpp-ref-for-winrt/hstring#operator-concatenation-operator) de **winrt::hstring**.
+Et, à la place de l’utilisation ici en C# de l’[interpolation de chaîne](/dotnet/csharp/language-reference/tokens/interpolated), nous utilisons une combinaison de la fonction [**to_hstring**](/uwp/cpp-ref-for-winrt/to-hstring) et de l’[opérateur de concaténation ](/uwp/cpp-ref-for-winrt/hstring#operator-concatenation-operator) de **winrt::hstring**.
 
 #### <a name="isapplicationwindowactive"></a>**isApplicationWindowActive**
 
@@ -1108,11 +1113,242 @@ Ajoutez un nouveau dossier au projet C++/WinRT, immédiatement sous le nœud du 
 
 Nous avons maintenant terminé le portage **MainPage** et, si vous avez effectué les étapes, votre projet C++/WinRT peut maintenant être généré et exécuté.
 
-## <a name="the-remaining-xaml-pages"></a>Les pages XAML restantes
+## <a name="consolidate-your-idl-files"></a>Regrouper vos fichiers `.idl`
 
-Il reste à présent à porter les pages XAML restantes : `CopyFiles.xaml`, `CopyImage.xaml`, `CopyText.xaml`, `HistoryAndRoaming.xaml` et `OtherScenarios.xaml`.
+En plus du point de départ standard `MainPage.xaml` pour l’interface utilisateur, l’exemple Clipboard contient cinq autres pages XAML spécifiques au scénario, ainsi que leurs fichiers code-behind correspondants. Nous allons réutiliser le balisage XAML réel de toutes ces pages, sans modification, dans la version C++/WinRT du projet. Nous allons aussi voir comment porter le code-behind dans les sections majeures suivantes. Mais avant cela, parlons d’IDL.
 
-Cette rubrique vous présenté des informations et des techniques de portage suffisantes pour vous permettre si vous le souhaitez de continuer et de porter vous-même ces pages XAML restantes. Vous pouvez aussi simplement regarder le projet C++/WinRT dans le [code source](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/Clipboard/cppwinrt) de l’exemple Clipboard et le comparer à son équivalent C#.
+Il est avantageux de regrouper vos classes de runtime dans un seul fichier IDL (consultez [Factorisation des classes de runtime dans des fichiers Midl (.idl)](/windows/uwp/cpp-and-winrt-apis/author-apis#factoring-runtime-classes-into-midl-files-idl)). Nous allons donc regrouper le contenu de `CopyFiles.idl`, `CopyImage.idl`, `CopyText.idl`, `HistoryAndRoaming.idl` et `OtherScenarios.idl` en déplaçant cet IDL dans un même fichier nommé `Project.idl` (puis en supprimant les fichiers d’origine).
+
+Lors de cette opération, nous allons également supprimer la propriété factice générée automatiquement (`Int32 MyProperty;` et son implémentation) de chacun de ces cinq types de page XAML.
+
+Tout d’abord, ajoutez un nouvel élément **Fichier MIDL (.idl)** au projet C++/WinRT. Nommez-le `Project.idl`. Supprimez le contenu par défaut de `Project.idl` puis collez à sa place la liste ci-dessous.
+
+```idl
+// Project.idl
+namespace SDKTemplate
+{
+    [default_interface]
+    runtimeclass CopyFiles : Windows.UI.Xaml.Controls.Page
+    {
+        CopyFiles();
+    }
+
+    [default_interface]
+    runtimeclass CopyImage : Windows.UI.Xaml.Controls.Page
+    {
+        CopyImage();
+    }
+
+    [default_interface]
+    runtimeclass CopyText : Windows.UI.Xaml.Controls.Page
+    {
+        CopyText();
+    }
+
+    [default_interface]
+    runtimeclass HistoryAndRoaming : Windows.UI.Xaml.Controls.Page
+    {
+        HistoryAndRoaming();
+    }
+
+    [default_interface]
+    runtimeclass OtherScenarios : Windows.UI.Xaml.Controls.Page
+    {
+        OtherScenarios();
+    }
+}
+```
+
+Comme vous pouvez le voir, il s’agit simplement d’une copie du contenu des fichiers `.idl` individuels, tous dans un même espace de noms, `MyProperty` étant supprimée de chaque classe de runtime.
+
+Dans l’Explorateur de solutions de Visual Studio, sélectionnez en même temps tous les fichiers IDL d’origine (`CopyFiles.idl`, `CopyImage.idl`, `CopyText.idl`, `HistoryAndRoaming.idl` et `OtherScenarios.idl`) puis sélectionnez **Modifier** > **Supprimer** (choisissez **Supprimer** dans la boîte de dialogue).
+
+Enfin, et pour terminer la suppression de `MyProperty` dans les fichiers `.h` et `.cpp` pour chacun des cinq types de page XAML, supprimez les déclarations et les définitions des fonctions d’accesseur `int32_t MyProperty()` et de mutateur `void MyProperty(int32_t)`.
+
+## <a name="copyfiles"></a>**CopyFiles**
+
+Dans le projet C#, le type de page XAML **CopyFiles** est implémenté dans les fichiers de code source `CopyFiles.xaml` et `CopyFiles.xaml.cs`. Jetons un coup d’œil tour à tour à chacun des membres de **CopyFiles**.
+
+### <a name="rootpage"></a>**rootPage**
+
+Il s’agit d’un champ privé.
+
+```csharp
+// CopyFiles.xaml.cs
+...
+public sealed partial class CopyFiles : Page
+{
+    MainPage rootPage = MainPage.Current;
+    ...
+}
+...
+```
+
+En C++/WinRT, nous pouvons le définir et l’initialiser comme ceci.
+
+```cppwinrt
+// CopyFiles.h
+...
+struct CopyFiles : CopyFilesT<CopyFiles>
+{
+    ...
+private:
+    SDKTemplate::MainPage rootPage{ MainPage::Current() };
+};
+...
+```
+
+Là encore, (comme avec **MainPage::current**), **CopyFiles::rootPage** est déclaré comme étant de type **SDKTemplate::MainPage**, qui est le type projeté, et non pas le type d’implémentation.
+
+### <a name="copyfiles-the-constructor"></a>**CopyFiles** (le constructeur)
+
+Dans le projet C++/WinRT, le type **CopyFiles** a déjà un constructeur qui contient le code que nous voulons (il appelle simplement **InitializeComponent**).
+
+### <a name="copybutton_click"></a>**CopyButton_Click**
+
+La méthode C# **CopyButton_Click** est un gestionnaire d’événements et, en raison de la présence du mot clé `async` dans sa signature, nous pouvons déterminer que la méthode effectue un travail asynchrone. En C++/WinRT, nous implémentons une méthode asynchrone en tant que *coroutine*. Pour une présentation de la concurrence dans C++/WinRT ainsi qu’une description de ce qu’est une *coroutine*, consultez [Opérations concurrentes et asynchrones avec C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency).
+
+Il est courant de vouloir planifier du travail supplémentaire après la fin d’une coroutine : dans ce cas, la coroutine peut retourner un type d’objet asynchrone qui peut faire l’objet d’une attente et qui peut indiquer une progression. Cependant, ces considérations ne s’appliquent généralement pas à un gestionnaire d’événements. Ainsi, quand vous avez un gestionnaire d’événements qui effectue des opérations asynchrones, vous pouvez l’implémenter en tant que coroutine retournant **winrt::fire_and_forget**. Pour plus d’informations, consultez [Déclencher et oublier](/windows/uwp/cpp-and-winrt-apis/concurrency-2#fire-and-forget).
+
+Même si l’idée d’une coroutine de type « déclencher et oublier » est de ne pas vous soucier du moment où elle se termine, le travail continue néanmoins (ou est suspendu, en attendant la reprise) en arrière-plan. Vous pouvez voir de l’implémentation C# que **CopyButton_Click** dépend du pointeur `this` (il accède au membre de données d’instance `rootPage`). Nous devons donc être sûr que le pointeur `this` (un pointeur vers un objet **CopyFiles**) survit à la coroutine **CopyButton_Click**. Dans une situation comme celle de cet exemple d’application, où l’utilisateur navigue entre les pages de l’interface utilisateur, nous ne pouvons pas contrôler directement la durée de vie de ces pages. Si la page **CopyFiles** venait à être détruite (si l’utilisateur navigue en dehors de celle-ci) alors que **CopyButton_Click** est toujours actif sur un thread d’arrière-plan, il n’est pas prudent d’accéder à `rootPage`. Pour que la coroutine soit correcte, elle doit obtenir une référence forte au pointeur `this` et conserver cette référence pour la durée de la coroutine. Pour plus d’informations, consultez [Références fortes et faibles en C++/WinRT](/windows/uwp/cpp-and-winrt-apis/weak-references).
+
+Si vous regardez dans la version C++/WinRT de l’exemple, pour **CopyFiles::CopyButton_Click**, vous voyez qu’elle est effectuée avec une simple déclaration sur la pile.
+
+```cppwinrt
+fire_and_forget CopyFiles::CopyButton_Click(IInspectable const&, RoutedEventArgs const&)
+{
+    auto lifetime{ get_strong() };
+    ...
+}
+```
+
+Examinons les autres aspects intéressants du code porté.
+
+Dans le code, nous instancions un objet [**FileOpenPicker**](/uwp/api/windows.storage.pickers.fileopenpicker) et, deux lignes plus loin, nous accédons à la propriété [**FileTypeFilter**](/uwp/api/windows.storage.pickers.fileopenpicker.filetypefilter) de cet objet. Le type de retour de cette propriété implémente un **IVector** de chaînes. Et sur cet **IVector**, nous appelons la méthode [IVector<T>.ReplaceAll(T[])](/uwp/api/windows.foundation.collections.ivector-1.replaceall). L’aspect intéressant est la valeur que nous passons à cette méthode, où un tableau est attendu. Voici la ligne de code.
+
+```cppwinrt
+filePicker.FileTypeFilter().ReplaceAll({ L"*" });
+```
+
+La valeur que nous passons (`{ L"*" }`) est une *liste d’initialiseurs* C++ standard. Elle contient dans le cas présent un seul objet, mais une liste d’initialiseurs peut contenir un nombre quelconque d’objets séparés par des virgules. Les éléments de C++/WinRT qui vous permettent de passer une liste d’initialiseurs à une méthode telle que celle-ci sont expliqués dans [Listes d’initialiseurs standard](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-initializer-lists).
+
+Nous portons le mot clé C# `await` en `co_await` dans C++/WinRT. Voici l’exemple du code.
+
+```cppwinrt
+auto storageItems{ co_await filePicker.PickMultipleFilesAsync() };
+```
+
+Examinez ensuite cette ligne de code C#.
+
+```csharp
+dataPackage.SetStorageItems(storageItems);
+```
+
+C# peut convertir implicitement la **IReadOnlyList<StorageFile>** représentée par *storageItems* dans l’élément **IEnumerable<IStorageItem>** attendu par [**DataPackage.SetStorageItems**](/uwp/api/windows.applicationmodel.datatransfer.datapackage.setstorageitems). Cependant, en C++/WinRT, nous devons explicitement caster de **IVectorView<StorageFile>** en **IIterable<IStorageItem>** . Nous avons donc un autre exemple de la fonction [**as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) en action.
+
+```cppwinrt
+dataPackage.SetStorageItems(storageItems.as<IVectorView<IStorageItem>>());
+```
+
+Là où nous utilisons le mot clé `null` en C# (par exemple `Clipboard.SetContentWithOptions(dataPackage, null)`), nous utilisons `nullptr` en C++/WinRT (par exemple `Clipboard::SetContentWithOptions(dataPackage, nullptr)`).
+
+### <a name="pastebutton_click"></a>**PasteButton_Click**
+
+Il s’agit d’un autre gestionnaire d’événements sous la forme d’une coroutine « déclencher et oublier ». Examinons les aspects intéressants du code porté.
+
+Dans la version C# de l’exemple, nous interceptons les exceptions avec `catch (Exception ex)`. Dans le code C++/WinRT porté, vous verrez l’expression `catch (winrt::hresult_error const& ex)`. Pour plus d’informations sur [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) et sur la façon de l’utiliser, consultez [Gestion des erreurs avec C++/WinRT](/windows/uwp/cpp-and-winrt-apis/error-handling).
+
+Voici un exemple qui teste si un objet C# est `null` ou pas : `if (storageItems != null)`. En C++/WinRT, nous pouvons nous appuyer sur un opérateur de conversion en `bool`, qui effectue le test en interne sur `nullptr`.
+
+Voici une version un peu simplifiée d’un fragment de code provenant de la version C++/WinRT portée de l’exemple.
+
+```cppwinrt
+std::wostringstream output;
+output << std::wstring_view(ApplicationData::Current().LocalFolder().Path());
+```
+
+La construction d’une **std::wstring_view** à partir d’une **winrt::hstring** comme celle-ci montre une alternative à l’appel de la fonction [**hstring::c_str**](/uwp/cpp-ref-for-winrt/hstring#hstringc_str-function) (pour transformer la **winrt::hstring** en chaîne de style C). Cette alternative fonctionne grâce à l’[opérateur de conversion**de **hstring** pour**std::wstring_view](/uwp/cpp-ref-for-winrt/hstring#hstringoperator-stdwstring_view).
+
+Considérez ce fragment C#.
+
+```csharp
+var file = storageItem as StorageFile;
+if (file != null)
+...
+```
+
+Pour porter le mot clé C# `as` en C++/WinRT, nous avons vu jusqu’à présent la fonction [**as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) utilisée plusieurs fois. Cette fonction lève une exception si le cast échoue. Mais si nous voulons que le cast retourne `nullptr` s’il échoue (pour pouvoir gérer cette condition dans le code), nous devons à la place utiliser la fonction [**try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntry_as-function).
+
+```cppwinrt
+auto file{ storageItem.try_as<StorageFile>() };
+if (file)
+...
+```
+
+### <a name="copy-the-xaml-necessary-to-finish-up-porting-copyfiles"></a>Copier le XAML pour terminer le portage de **CopyFiles**
+
+Vous pouvez maintenant sélectionner tout le contenu du fichier `CopyFiles.xaml` dans le projet C#, puis le coller dans le fichier `CopyFiles.xaml` du projet C++/WinRT (en remplaçant le contenu existant de ce fichier dans le projet C++/WinRT).
+
+Enfin, éditez `CopyFiles.h` et `.cpp`, et supprimez la fonction **ClickHandler**, car nous avons simplement remplacé le balisage XAML correspondant.
+
+Nous avons maintenant terminé le portage de **CopyFiles** et, si vous avez effectué les différentes étapes, votre projet C++/WinRT peut maintenant être généré et exécuté, et le scénario **CopyFiles** sera fonctionnel.
+
+## <a name="copyimage"></a>**CopyImage**
+
+Pour porter le type de page XAML **CopyImage**, suivez le même processus que pour **CopyFiles**. Lors du portage de **CopyImage**, vous rencontrerez l’utilisation de l’[*instruction using*](/dotnet/csharp/language-reference/keywords/using-statement) de C#, qui garantit que les objets implémentant l’interface [**IDisposable**](/dotnet/api/system.idisposable) sont supprimés correctement.
+
+```csharp
+if (imageReceived != null)
+{
+    using (var imageStream = await imageReceived.OpenReadAsync())
+    {
+        ... // Pass imageStream to other APIs, and do other work.
+    }
+}
+```
+
+L’interface équivalente e, C++/WinRT est [**IClosable**](/uwp/api/windows.foundation.iclosable), avec sa seule méthode **Close**. Voici l’équivalent C++/WinRT du code C# ci-dessus.
+
+```cppwinrt
+if (imageReceived)
+{
+    auto imageStream{ co_await imageReceived.OpenReadAsync() };
+    ... // Pass imageStream to other APIs, and do other work.
+    imageStream.Close();
+}
+```
+
+Les objets C++/WinRT implémentent **IClosable** principalement au bénéfice des langages qui n’ont pas de finalisation déterministe. C++/WinRT a une finalisation déterministe : nous n’avons donc pas souvent besoin d’appeler **IClosable::Close** quand nous écrivons du code C++/WinRT. Il y a cependant des circonstances où c’est une bonne idée d’y faire appel, et celle-ci en fait partie. Ici, l’identificateur *imageStream* est un wrapper avec comptage des références autour d’un objet Windows Runtime sous-jacent (dans le cas présent, un objet qui implémente [**IRandomAccessStreamWithContentType**](/uwp/api/windows.storage.streams.irandomaccessstreamwithcontenttype)). Bien que nous puissions déterminer que le finaliseur de *imageStream* (son destructeur) va s’exécuter à la fin de l’étendue englobante (les accolades), nous ne pouvons pas être certains que le finaliseur va appeler **Close**. La raison en est que nous avons passé *imageStream* à d’autres API, et qu’elles peuvent encore contribuer au comptage des références de l’objet Windows Runtime sous-jacent. C’est pourquoi il est judicieux d’appeler **Close** explicitement. Pour plus d’informations, consultez [Dois-je appeler IClosable::Close sur les classes de runtime que je consomme ?](/windows/uwp/cpp-and-winrt-apis/faq#do-i-need-to-call-iclosableclose-on-runtime-classes-that-i-consume).
+
+Ensuite, examinez l’expression C# `(uint)(imageDecoder.OrientedPixelWidth * 0.5)`, que vous trouvez dans le gestionnaire d’événements **OnDeferredImageRequestedHandler**. Cette expression multiplie un `uint` par un `double`, ce qui produit un `double`. Il caste ensuite ce résultat en `uint`. En C++/WinRT, nous *pourrions* utiliser un cast de style C d’aspect similaire (`(uint32_t)(imageDecoder.OrientedPixelWidth() * 0.5)`), mais il est préférable de préciser exactement le type de cast que nous voulons, et dans le cas présent, nous allons le faire avec `static_cast<uint32_t>(imageDecoder.OrientedPixelWidth() * 0.5)`.
+
+La version C# de **CopyImage.OnDeferredImageRequestedHandler** a une clause `finally`, mais pas de clause `catch`. Nous sommes allés juste un peu plus loin dans la version C++/WinRT et nous avons implémenté une clause `catch` pour pouvoir indiquer si oui ou non le rendu retardé a réussi.
+
+Le portage du reste de cette page XAML ne nécessite pas d’autres explications. Tout comme avec **CopyFiles**, la dernière étape du portage consiste à sélectionner le contenu entier de `CopyImage.xaml` et à le coller dans le même fichier du projet C++/WinRT.
+
+## <a name="copytext"></a>**CopyText**
+
+Vous pouvez porter `CopyText.xaml` et `CopyText.xaml.cs` en utilisant les techniques que nous avons déjà exposées.
+
+## <a name="historyandroaming"></a>**HistoryAndRoaming**
+
+Certains points nous intéressent dans le portage du type de page XAML **HistoryAndRoaming**.
+
+Tout d’abord, examinez le code source C# et suivez le flux de contrôle de **OnNavigatedTo** à travers le gestionnaire d’événements **OnHistoryEnabledChanged**, et enfin jusqu’à la fonction asynchrone **CheckHistoryAndRoaming** (qui ne fait pas l’objet d’une attente : il s’agit donc essentiellement d’une coroutine « déclencher et oublier »). Comme **CheckHistoryAndRoaming** est asynchrone, nous devons faire attention dans C++/WinRT à la durée de vie du pointeur `this`. Vous pouvez voir le résultat si vous examinez l’implémentation dans le fichier de code source `HistoryAndRoaming.cpp`. Premièrement, quand nous attachons des délégués aux événements **Clipboard::HistoryEnabledChanged** et **Clipboard::RoamingEnabledChanged**, nous prenons seulement une référence faible à l’objet de page **HistoryAndRoaming**. Pour cela, nous créons le délégué avec une dépendance sur la valeur retournée depuis [**winrt::get_weak**](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function), au lieu d’une dépendance sur le pointeur `this`. Cela signifie que le délégué lui-même, qui finit par appeler dans le code asynchrone, ne conserve pas active la page **HistoryAndRoaming** dès lors que nous la quittons.
+
+Et deuxièmement, quand nous atteignons finalement notre coroutine **CheckHistoryAndRoaming** « déclencher et oublier », la première chose que nous faisons est de prendre une référence forte à `this` pour garantir que la page **HistoryAndRoaming** reste active au moins jusqu’à ce que la coroutine se termine. Pour plus d’informations sur les deux aspects qui viennent d’être décrits, consultez [Références fortes et faibles en C++/WinRT](/windows/uwp/cpp-and-winrt-apis/weak-references).
+
+Nous trouvons un autre point intéressant dans le portage de **CheckHistoryAndRoaming**. Il contient le code permettant de mettre à jour l’interface utilisateur : nous devons donc être sûr que nous faisons cela sur le thread d’interface utilisateur principal. En règle générale, une méthode asynchrone peut exécuter et/ou reprendre sur n’importe quel thread arbitraire. En C#, la solution consiste à appeler [**CoreDispatcher. RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync) et à mettre à jour l’interface utilisateur depuis la fonction lambda. En C++/WinRT, nous pouvons utiliser la fonction [**winrt::resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground) avec [**répartiteur**](/uwp/api/windows.ui.xaml.dependencyobject.dispatcher) du pointeur `this` pour mettre en suspens la coroutine et reprendre immédiatement sur le thread d’interface utilisateur principal.
+
+L’expression appropriée est `co_await winrt::resume_foreground(Dispatcher());`. Bien que ce soit moins clair, nous pouvons aussi exprimer cela simplement sous la forme `co_await Dispatcher();`. La version plus courte est obtenue grâce à un opérateur de conversion fourni par C++/WinRT.
+
+## <a name="otherscenarios"></a>**OtherScenarios**
+
+Vous pouvez porter `OtherScenarios.xaml` et `OtherScenarios.xaml.cs` en utilisant les techniques que nous avons déjà exposées.
+
+## <a name="conclusion"></a>Conclusion
+
+Nous espérons que cette procédure pas à pas vous a armé avec des informations et des techniques de portage suffisantes pour vous permettre maintenant d’aller de l’avant et de porter vos propres applications C# vers C++/WinRT. Via un actualisateur, vous pouvez continuer vous référer aux versions avant (C#) et après (C++/WinRT) du code source de l’exemple Clipboard, et les comparer côte à côte pour voir la correspondance.
 
 ## <a name="related-topics"></a>Rubriques connexes
 * [Passer de C# à C++/WinRT](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-csharp)

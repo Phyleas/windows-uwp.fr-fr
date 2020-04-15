@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ad18426a36503c9a540343565c20297502810b76
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: 1e7fb764f3d21c260080d8846df3c66c65dccdb5
+ms.sourcegitcommit: 23c5d8dfaeb6edbca780637ffd26fe892db27519
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80081645"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81123628"
 ---
 # <a name="radio-buttons"></a>Cases d’option
 
@@ -73,9 +73,9 @@ Si les options disponibles dépendent du contexte actuel de l’application ou s
 </tr>
 </table>
 
-Cases d’option dans les paramètres du navigateur Microsoft Edge.
+Cases d’option dans les paramètres du navigateur.
 
-![Cases d’option dans les paramètres du navigateur Microsoft Edge](images/control-examples/radio-buttons-edge.png)
+![Cases d’option dans les paramètres du navigateur](images/control-examples/radio-buttons-edge.png)
 
 ## <a name="create-a-radio-button"></a>Créer une case d’option
 

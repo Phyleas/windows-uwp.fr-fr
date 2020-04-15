@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: e95a9a1f6a0d34e377f48c5b19497eb638fb186e
-ms.sourcegitcommit: 27cb7c4539bb6417d32883824ccea160bb948c15
+ms.openlocfilehash: c130505ec79ca83698fd79df26464969afe79c36
+ms.sourcegitcommit: 1b06c27e7fa4726fd950cbeaf05206c0a070e3c7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74830829"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80893469"
 ---
 # <a name="list-view-and-grid-view"></a>Affichage Liste et affichage Grille
 
@@ -26,7 +26,7 @@ La plupart des applications manipulent et affichent des jeux de données, par ex
 > **API importantes** : [classe ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview), [classe GridView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview), [propriété ItemsSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource), [propriété Items](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.items)
 
 > [!NOTE]
-> Les contrôles ListView et GridView proviennent de la classe [ListViewBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase) ; ils possèdent donc les mêmes fonctionnalités mais affichent les données différemment. Dans cet article, lorsque nous parlons d’affichage de liste, sauf indication contraire, les informations s’appliquent aux contrôles ListView et GridView. Nous pouvons faire référence aux classes telles que ListView ou ListViewItem, mais le préfixe *List* peut être remplacé par *Grid* pour l’équivalent de grille correspondant (GridView ou GridViewItem). 
+> Les contrôles ListView et GridView dérivent de la classe [ListViewBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase) ; ils ont donc les mêmes fonctionnalités mais affichent les données différemment. Dans cet article, quand nous parlons d’affichage de liste, sauf indication contraire, les informations s’appliquent aux contrôles ListView et GridView. Nous pouvons référencer des classes comme ListView ou ListViewItem, mais le préfixe *List* peut être remplacé par *Grid* pour l’équivalent de grille correspondant (GridView ou GridViewItem). 
 
 ListView et GridView offrent de nombreux avantages en rapport avec l’utilisation de collections. Faciles à implémenter et à personnaliser, ils fournissent une interface utilisateur de base ainsi que des fonctionnalités d’interaction et de défilement. Vous pouvez lier ListView et GridView à des sources de données dynamiques existantes ou à des données codées en dur fournies dans le code XAML ou le code-behind. 
 
@@ -36,7 +36,7 @@ Bien que ces deux contrôles soient adaptés à de nombreux cas d’usage, ils c
 ## <a name="differences-between-listview-and-gridview"></a>Différences entre ListView et GridView
 
 ### <a name="listview"></a>ListView
-Le contrôle ListView affiche les données en les empilant dans une seule colonne. ListView fonctionne mieux avec les éléments qui ont du texte comme point focal et avec les collections censées être lues de haut en bas (classées par ordre alphabétique). ListView est souvent utilisé dans le cadre de listes de messages ou de résultats de recherche.
+Le contrôle ListView affiche les données en les empilant dans une seule colonne. ListView fonctionne mieux avec les éléments qui ont du texte comme point focal et avec les collections censées être lues de haut en bas (classées par ordre alphabétique). ListView est souvent utilisé dans le cadre de listes de messages ou de résultats de recherche. Les collections qui doivent être affichées dans plusieurs colonnes ou dans un format de type table ne doivent _pas_ utiliser ListView, mais un [DataGrid](https://docs.microsoft.com/windows/communitytoolkit/controls/datagrid) à la place.
 
 ![Un affichage Liste avec des données regroupées](images/listview-grouped-example-resized-final.png)
 
@@ -200,16 +200,16 @@ Les deux options ci-dessus génèrent le même ListView, comme indiqué ci-desso
 
  La section suivante décrit en détail comment représenter visuellement des éléments de classe simples et personnalisés dans un ListView ou GridView.
 
-Pour plus d’informations sur la liaison de données, voir [Vue d’ensemble de la liaison de données](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-quickstart).
+Pour plus d’informations sur la liaison de données, consultez [Vue d’ensemble de la liaison de données](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-quickstart).
 
 > [!NOTE]
 > Si vous avez besoin d’afficher des données groupées dans votre ListView, vous devez effectuer une liaison à un [CollectionViewSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource). CollectionViewSource agit en tant que proxy pour la classe de collection dans XAML et active la prise en charge du regroupement. Pour plus d’informations, consultez [CollectionViewSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource).
 
 ## <a name="customizing-the-look-of-items-with-a-datatemplate"></a>Personnalisation de l’apparence d’éléments avec un DataTemplate
 
-Un modèle de données dans un ListView ou GridView définit la manière dont les éléments/données sont visualisés. Par défaut, un élément de données est affiché dans le ListView en tant que représentation sous forme de chaîne de l’objet de données auquel il est lié. Vous pouvez afficher la représentation de chaîne d’une propriété spécifique de l’élément de données en définissant la propriété [DisplayMemberPath](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.displaymemberpath) sur cette propriété.
+Un modèle de données dans un ListView ou GridView définit la manière dont les éléments/données sont visualisés. Par défaut, un élément de données est affiché dans le ListView en tant que représentation sous forme de chaîne de l’objet de données auquel il est lié. Vous pouvez afficher la représentation chaîne d’une propriété spécifique de l’élément de données en définissant [DisplayMemberPath](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.displaymemberpath) sur cette propriété.
 
-Toutefois, en général, on souhaite afficher une représentation enrichie des données. Pour définir précisément la façon dont les éléments sont affichés dans le ListView/GridView, créez un [DataTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate). Le code XAML dans l’objet DataTemplate définit la disposition et l’apparence des contrôles qui permettent d’afficher un élément spécifique. Les contrôles dans la disposition peuvent être liés aux propriétés d’un objet de données ou leur contenu statique peut être défini inline. 
+Toutefois, en général, on souhaite afficher une représentation enrichie des données. Pour définir précisément la façon dont les éléments sont affichés dans le ListView/GridView, créez un [DataTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate). Le code XAML dans l’objet DataTemplate définit la disposition et l’apparence des contrôles qui permettent d’afficher un élément individuel. Les contrôles dans la disposition peuvent être liés aux propriétés d’un objet de données ou avoir du contenu statique défini inline. 
 
 > [!NOTE]
 > Si vous utilisez l’[extension de balisage x:Bind](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) dans un DataTemplate, vous devez spécifier le DataType (`x:DataType`) sur le DataTemplate.
@@ -378,11 +378,11 @@ Le tableau suivant montre les moyens dont un utilisateur dispose pour interagir 
 
 Pour activer cette interaction : | Utilisez ces paramètres : | Gérez cet événement : | Utilisez cette propriété pour obtenir l’élément sélectionné :
 ----------------------------|---------------------|--------------------|--------------------------------------------
-Aucune interaction | [SelectionMode ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selectionmode) = **Aucun**, [IsItemClickEnabledFalse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.isitemclickenabled) = **False** | N/A | N/A 
+Aucune interaction | [SelectionMode ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selectionmode) = **Aucun**, [IsItemClickEnabledFalse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.isitemclickenabled) = **False** | NON APPLICABLE | NON APPLICABLE 
 Sélection unique | SelectionMode = **Simple**, IsItemClickEnabled = **False** | [SelectionChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) | [SelectedItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selecteditem), [SelectedIndex](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedindex)  
 Sélection multiple | SelectionMode = **Multiple**, IsItemClickEnabled = **False** | [SelectionChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) | [SelectedItems](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selecteditems)  
 Sélection étendue | SelectionMode = **Étendu**, IsItemClickEnabled = **False** | [SelectionChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) | [SelectedItems](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selecteditems)  
-Cliquer | SelectionMode = **Aucun**, IsItemClickEnabled = **True** | [ItemClick](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.itemclick) | N/A 
+Cliquez sur | SelectionMode = **Aucun**, IsItemClickEnabled = **True** | [ItemClick](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.itemclick) | NON APPLICABLE 
 
 > **Remarque**&nbsp;&nbsp;À compter de Windows 10, vous pouvez activer IsItemClickEnabled pour déclencher un événement ItemClick pendant que SelectionMode est également défini sur Simple, Multiple ou Étendu. De cette façon, l’événement ItemClick est déclenché en premier suivi de l’événement SelectionChanged. Dans certains cas, par exemple, si vous accédez à une autre page dans le gestionnaire d’événements ItemClick, l’événement SelectionChanged n’est pas déclenché et l’élément n’est pas sélectionné.
 
@@ -403,7 +403,7 @@ myGridView.SelectionMode = ListViewSelectionMode.None;
 myGridView.IsItemClickEnabled = true;
 ```
 
-### <a name="read-only"></a>en lecture seule
+### <a name="read-only"></a>Lecture seule
 
 Vous pouvez définir la propriété SelectionMode sur **ListViewSelectionMode.None** pour désactiver la sélection d’éléments. Cela place le contrôle en mode lecture seule : vous pouvez l’utiliser pour afficher des données, mais pas pour interagir avec celles-ci. Le contrôle lui-même n’est pas désactivé, seule la sélection d’éléments est désactivée.
 
@@ -610,7 +610,7 @@ Les contrôles ListView et GridView prennent en charge le glisser-déplacer des 
 
 - [Exemple de ListView et GridView XAML](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView) - Illustre les contrôles ListView et GridView.
 - [Exemple de fonctionnalité glisser-déposer XAML](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlDragAndDrop) - Illustre la fonctionnalité glisser-déposer avec le contrôle ListView.
-- [Exemple de galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) : affichez tous les contrôles XAML dans un format interactif.
+- [Exemple de Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) : tous les contrôles XAML dans un format interactif.
 
 ## <a name="related-articles"></a>Articles connexes
 
