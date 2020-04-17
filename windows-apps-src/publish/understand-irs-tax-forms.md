@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, fiscalité, irs, services fiscaux américains, impôt, impôt sur le revenu, 1099
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
 ms.localizationpriority: medium
-ms.openlocfilehash: 55143f109398aae1988b7ac0d060cda138e7e48e
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: e01e1615cb05ab7b0f3d3fa12861e46b231642a8
+ms.sourcegitcommit: a7effa01ca1c810e792b60f89ba38ce3bf0b310e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258971"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81545069"
 ---
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>Présentation des déclarations fiscales de l’IRS envoyées par Microsoft
 
@@ -33,18 +33,18 @@ Les formulaires fiscaux vous seront envoyés à partir des adresses suivantes :
 
 **Citoyens américains :**
 <table>
-<tr><th>Groupe professionnel</th><th>Entité légale</th><th>Adresse</th></tr>
-<tr><td>Windows, Office, Azure</td><td>Microsoft Corporation</td><td>One Microsoft Way<br>Redmond WA 98052 États-Unis</td></tr>
+<tr><th>Groupe professionnel</th><th>Entité légale</th><th>Address</th></tr>
+<tr><td>Windows, Office, Azure</td><td>Microsoft Corporation</td><td>One Microsoft Way<br>Redmond WA 98052 États-Unis</td></tr>
 <tr><td>Publicité</td><td>Microsoft Online Inc.</td><td>6100 Neil Road<br>Reno, NV 89511 USA</td></tr>
 <table> 
 
 **Citoyens non américains :**
 <table>
-<tr><th>Groupe professionnel</th><th>Entité légale</th><th>Adresse</th></tr>
+<tr><th>Groupe professionnel</th><th>Entité légale</th><th>Address</th></tr>
 <tr><td>Windows, Office, Azure</td><td>Microsoft Ireland Operations Limited (le paiement est effectué par Microsoft Corporation via Microsoft Ireland, agissant comme intermédiaire qualifié pour Microsoft Corporation)</td><td>Un emplacement Microsoft<br>Comté Sud&nbsp;&nbsp;entreprise&nbsp;Park<br>Leopardstown, Dublin 18 Irlande</td></tr>
 <tr><td>Supports</td><td>Microsoft Ireland Operations Limited (le paiement est effectué par Microsoft Online Inc. par le biais de Microsoft Ireland comme agent de paiement pour Microsoft Online Inc.)</td><td>Un emplacement Microsoft<br>Comté Sud&nbsp;&nbsp;entreprise&nbsp;Park<br>Leopardstown, Dublin 18 Irlande</td></tr>
 <tr><td>Publicité</td><td>Microsoft Online Inc.</td><td>6100 Neil Road<br>Reno, NV 89511 USA</td></tr>
-<tr><td colspan="3">* Les citoyens des pays suivants qui des recettes publicitaires seront payés par Microsoft Ireland Operations Limited : Autriche, Belgique, Bulgarie, Croatie, Chypre, République tchèque, Danemark, Estonie, Finlande, France, Allemagne, Grèce, Hongrie, Irlande, Île de Man, Italie, Lettonie, Liechtenstein, Lituanie, Luxembourg, Malte, Monaco, Pays-Bas, Norvège, Pologne, Portugal, Roumanie, Slovaquie, Slovénie, Afrique du Sud, Espagne, Suède, Suisse, Royaume-Uni</td></tr>
+<tr><td colspan="3">* Les citoyens des pays suivants recevant des recettes publicitaires seront payés par le biais de Microsoft Ireland Operations Limited : Autriche, Belgique, Bulgarie, Croatie, Chypre, Czechia, Danemark, Estonie, Finlande, France, Allemagne, Grèce, Hongrie, Irlande, île de Man, Italie, Lettonie, Liechtenstein, Lituanie, Luxembourg, Malte, Monaco, Pays-Bas, Norvège, Pologne, Portugal, Roumanie, République slovaque, Roumanie, Slovaquie, Norvège, Royaume-Uni, Suède, Suisse</td></tr>
 </table>
 
 ## <a name="for-developers-located-in-the-united-states"></a>Pour les développeurs résidant aux États-Unis
@@ -68,7 +68,7 @@ J’ai reçu au moins $600 paiements non liés aux ventes d’applications de Mi
   </tr>
   <tr>
     <td valign="top">Aucun des deux ne s’applique.</td>
-    <td valign="top">Aucun</td>
+    <td valign="top">Aucune</td>
   </tr>
   <tr>
     <td valign="top">&nbsp;</td>
@@ -84,7 +84,7 @@ J’ai reçu au moins $600 paiements non liés aux ventes d’applications de Mi
   </tr>
   <tr> 
      <td valign="top">J’ai reçu <b>moins de 600 dollars en paiement</b> de publicités dans des applications durant l’exercice fiscal applicable.</td>
-     <td valign="top">Aucun</td>
+     <td valign="top">Aucune</td>
   </tr>
 </table>
 

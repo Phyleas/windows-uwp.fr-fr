@@ -5,12 +5,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, planification, date de publication, dates, lancement
 ms.localizationpriority: medium
-ms.openlocfilehash: eebd98d8e1ce39ef8d9876ab4749bcc76012f9fa
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 98f4ca9cb1b0b9bf2178fc0b80d0819e15448d24
+ms.sourcegitcommit: a7effa01ca1c810e792b60f89ba38ce3bf0b310e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79210385"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81545039"
 ---
 # <a name="configure-precise-release-scheduling"></a>Configurer une planification précise de la publication
 
@@ -76,7 +76,7 @@ Pour ajouter une planification personnalisée pour un marché ou un groupe de ma
 
 ## <a name="global-time-zones"></a>Fuseaux horaires globaux
 
-Vous trouverez ci-dessous un tableau qui indique les fuseaux horaires spécifiques utilisés sur chaque marché. par conséquent, lorsque votre envoi utilise l’heure locale (par exemple, une version à 9 heures locales), vous pouvez déterminer l’heure à laquelle il sera publié sur chaque marché, en particulier sur les marchés ayant plus d’une heure z un, comme le Canada.
+Vous trouverez ci-dessous un tableau qui indique les fuseaux horaires spécifiques utilisés sur chaque marché. par conséquent, lorsque votre envoi utilise l’heure locale (par exemple, une version à 9 heures locales), vous pouvez déterminer l’heure à laquelle il sera publié sur chaque marché, en particulier sur les marchés qui ont plusieurs fuseaux horaires, tels que le Canada.
 
 | Marché | Fuseau horaire |
 |--------|-----------|
@@ -127,7 +127,7 @@ Vous trouverez ci-dessous un tableau qui indique les fuseaux horaires spécifiqu
 | République centrafricaine  |  (UTC + 01:00) Afrique centrale de l’ouest |
 | Tchad  |  (UTC + 01:00) Afrique centrale de l’ouest |
 | Chili  |  (UTC-04:00) Horaire |
-| Chine  |  (UTC + 08:00) Beijing, Chongqing, Hong Kong (R.A.S.), Urumqi |
+| Chine  |  (UTC + 08:00) Pékin, Chongqing, Hong Kong, Urumqi |
 | Christmas (île)  |  (UTC + 07:00) Krasnoïarsk |
 | Cocos-Keeling (îles)  |  (UTC + 06:30) Rangoon (Rangoon) |
 | Colombie  |  (UTC-05:00) Bogota, Lima, Quito, Rio Branco |
@@ -139,7 +139,7 @@ Vous trouverez ci-dessous un tableau qui indique les fuseaux horaires spécifiqu
 | Croatie  |  (UTC + 01:00) Sarajevo, Skopje, Varsovie, Zagreb |
 | CuraÃ § AO  |  (UTC-04:00) Cuiabá |
 | Chypre  |  (UTC + 02:00) Chisinau |
-| République tchèque  |  (UTC + 01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague |
+| Czechia  |  (UTC + 01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague |
 | Danemark  |  (UTC + 01:00) Bruxelles, Copenhague, Madrid, Paris |
 | Djibouti  |  (UTC + 03:00) Nairobi |
 | Dominique  |  (UTC-04:00) Heure de l’Atlantique (Canada) |
@@ -179,7 +179,7 @@ Vous trouverez ci-dessous un tableau qui indique les fuseaux horaires spécifiqu
 | Heard et McDonald (Îles)  |  (UTC-05:00) Bogota, Lima, Quito, Rio Branco |
 | Saint-Siège (État de la Cité du Vatican)  |  (UTC + 01:00) Sarajevo, Skopje, Varsovie, Zagreb |
 | Honduras  |  (UTC-06:00) Heure centrale (États-Unis & Canada) |
-| Hong Kong (R.A.S.)  |  (UTC + 08:00) Beijing, Chongqing, Hong Kong (R.A.S.), Urumqi |
+| Hong Kong (R.A.S.)  |  (UTC + 08:00) Pékin, Chongqing, Hong Kong, Urumqi |
 | Hongrie  |  (UTC + 01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague |
 | Islande  |  (UTC + 00:00) Monrovia, Reykjavik |
 | Inde  |  (UTC + 05:30) Chennai, Kolkata, Mumbai, New Delhi |
@@ -207,8 +207,8 @@ Vous trouverez ci-dessous un tableau qui indique les fuseaux horaires spécifiqu
 | Liechtenstein  |  (UTC + 01:00) Sarajevo, Skopje, Varsovie, Zagreb |
 | Lituanie  |  (UTC + 02:00) Chisinau |
 | Luxembourg  |  (UTC + 01:00) Sarajevo, Skopje, Varsovie, Zagreb |
-| Macao R.A.S.  |  (UTC + 08:00) Beijing, Chongqing, Hong Kong (R.A.S.), Urumqi |
-| Macédoine du Nord  |  (UTC + 01:00) Sarajevo, Skopje, Varsovie, Zagreb |
+| Macao R.A.S.  |  (UTC + 08:00) Pékin, Chongqing, Hong Kong, Urumqi |
+| Macédoine (ex-République yougoslave de Macédoine)  |  (UTC + 01:00) Sarajevo, Skopje, Varsovie, Zagreb |
 | Madagascar  |  (UTC + 03:00) Nairobi |
 | Malawi  |  (UTC + 02:00) Harare, Pretoria |
 | Malaisie  |  (UTC + 08:00) Kuala Lumpur, Singapour |
@@ -223,7 +223,7 @@ Vous trouverez ci-dessous un tableau qui indique les fuseaux horaires spécifiqu
 | Mayotte  |  (UTC + 03:00) Nairobi |
 | Mexique  |  (UTC-06:00) Guadalajara, Mexico, Monterrey |
 | Micronésie  |  (UTC + 10:00) Guam, Port Moresby |
-| République de Moldova  |  (UTC + 02:00) Chisinau |
+| République de Moldavie  |  (UTC + 02:00) Chisinau |
 | Monaco  |  (UTC + 01:00) Sarajevo, Skopje, Varsovie, Zagreb |
 | Mongolie  |  (UTC + 07:00) Krasnoïarsk |
 | Monténégro  |  (UTC + 01:00) Sarajevo, Skopje, Varsovie, Zagreb |

@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, marchés, pays, régions
 ms.localizationpriority: medium
-ms.openlocfilehash: 3621e9c6af0daa84a9762989a14c79f35471b73c
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 0b1a51a98746594a8563de2f309bec9cb5dda0b3
+ms.sourcegitcommit: a7effa01ca1c810e792b60f89ba38ce3bf0b310e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79210965"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81545049"
 ---
 # <a name="define-market-selection"></a>Définir la sélection du marché
 
@@ -139,7 +139,7 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
     <td>Croatie</td>
     <td>Curaçao</td>
     <td>Chypre</td>
-    <td>République tchèque *</td>
+    <td>Czechia *</td>
   </tr>
   <tr>
     <td>Danemark *</td>
@@ -244,7 +244,7 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
     <td>Macao R.A.S.</td>
   </tr>
   <tr>
-    <td>Macédoine du Nord</td>
+    <td>Macédoine, Ex.-Rép. yougoslave de</td>
     <td>Madagascar</td>
     <td>Malawi</td>
     <td>Malaisie</td>
@@ -264,7 +264,7 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
   <tr>
     <td>Mexique *</td>
     <td>Micronésie</td>
-    <td>République de Moldova</td>
+    <td>République de Moldavie</td>
     <td>Monaco</td>
   </tr>
   <tr>
@@ -439,13 +439,13 @@ L’Ajustement du développement commercial sera appliqué à toutes les transac
 | Chili                | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Chine                | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Colombie             | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| République tchèque       | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Czechia              | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Danemark              | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Finlande              | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | France               | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Germany              | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Grèce               | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Hong Kong (R.A.S.)            | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Hong Kong            | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Hongrie              | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Inde                | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Irlande              | Carte cadeau       | 2,24 %                         | Mars 2016     |
@@ -476,7 +476,7 @@ L’Ajustement du développement commercial sera appliqué à toutes les transac
 
 ## <a name="rest-of-world-markets-for-windows-8x"></a>Marchés « Rest of World » pour Windows 8.x
 
-Si votre application précédemment publiée comprend des packages ciblant Windows 8. x, il est important de savoir qu’un certain nombre de marchés sont traités comme un marché unique « REST de World » pour les clients qui utilisent le Store sur Windows 8. x, même s’ils sont affichés en tant que marchés individuels. dans l’espace partenaires.
+Si votre application publiée précédemment contient des packages ciblant Windows 8. x, il est important de savoir qu’un certain nombre de marchés sont traités comme un marché unique « REST de World » pour les clients qui utilisent le magasin sur Windows 8. x, même s’ils sont affichés en tant que marchés individuels dans l’espace partenaires.
 
 Si vous laissez la sélection de marché par défaut lors de la soumission de votre application, vous n’avez pas à vous soucier de cela et votre application sera disponible pour tous les marchés possibles. Toutefois, si vous souhaitez exclure certains marchés, n’oubliez pas que l’exclusion d’un de ces marchés « Rest of World » signifie que votre application ne sera pas disponible dans l' *un* des marchés « Rest of World » pour les clients sur Windows 8 ou Windows 8.1.
 
@@ -613,7 +613,7 @@ Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants 
     <td>Liberia</td>
     <td>Liechtenstein</td>
     <td>Macao R.A.S.</td>
-    <td>Macédoine du Nord</td>
+    <td>Macédoine, Ex.-Rép. yougoslave de</td>
   </tr>
   <tr>
     <td>Madagascar</td>
@@ -630,7 +630,7 @@ Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants 
   <tr>
     <td>Mayotte</td>
     <td>Micronésie</td>
-    <td>République de Moldova</td>
+    <td>République de Moldavie</td>
     <td>Monaco</td>
   </tr>
   <tr>

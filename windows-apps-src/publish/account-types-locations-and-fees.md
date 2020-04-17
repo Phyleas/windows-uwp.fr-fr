@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, compte de développeur, individuel, société, entreprise
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ac6c3e7c89c091d1080364b8fbbb35d484aee49
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: a7ab3d40b48caecc82fafef4df964b7a1dbf8071
+ms.sourcegitcommit: a7effa01ca1c810e792b60f89ba38ce3bf0b310e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79210905"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81545089"
 ---
 # <a name="account-types-locations-and-fees"></a>Types de compte, emplacements et frais
 
@@ -93,7 +93,7 @@ Dans le tableau suivant, les **frais d’inscription** correspondent au coût ac
 | Côte d’Ivoire                     | 19 USD              | 99 USD           |  
 | Croatie                           | 107 HRK             | 500 HRK          |  
 | Chypre                            | 14 EUR              | 75 EUR           |  
-| République tchèque                    | 365 CZK             | 1720 CZK         |  
+| Czechia                           | 365 CZK             | 1720 CZK         |  
 | Danemark                           | 106 DKK             | 530 DKK          |  
 | Djibouti                          | 19 USD              | 99 USD           | 
 | Dominique                          | 19 USD              | 99 USD           | 
@@ -151,7 +151,7 @@ Dans le tableau suivant, les **frais d’inscription** correspondent au coût ac
 | Lituanie                         | 14 EUR              | 75 EUR           |  
 | Luxembourg                        | 14 EUR              | 75 EUR           |  
 | Macao R.A.S.                         | 19 USD              | 99 USD           |  
-| Macédoine du Nord                 | 19 USD              | 99 USD           |  
+| Macédoine (Ex-République yougoslave de)                 | 19 USD              | 99 USD           |  
 | Madagascar                        | 19 USD              | 99 USD           |  
 | Malawi                            | 19 USD              | 99 USD           |  
 | Malaisie                          | 62 MYR              | 300 MYR          |  

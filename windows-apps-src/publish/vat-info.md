@@ -4,14 +4,14 @@ title: Informations sur la TVA
 ms.assetid: 93834A6B-86D6-4647-AC01-CBCA3CB7A578
 ms.date: 10/31/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d6b90b000564c1c6929154c3ac3b79c129e3fff6
-ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
+ms.openlocfilehash: 1c8521ef2988e2108dbbd619812bfde26cecc81b
+ms.sourcegitcommit: a7effa01ca1c810e792b60f89ba38ce3bf0b310e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77507143"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81545079"
 ---
 # <a name="vat-info"></a>Informations sur la TVA
 
@@ -70,7 +70,7 @@ Notez que Microsoft ne fournit pas de conseils fiscaux et que le tableau suivant
 <li>Exemple : 12345678, 123456789 ou 0123456789</li>
 </ul>
 </td></tr>
-<tr><td data-th="Country/region">République tchèque</td><td data-th="VAT info">
+<tr><td data-th="Country/region">Czechia</td><td data-th="VAT info">
 <ul>
 <li>Format du numéro de TVA : 8, 9 ou 10 chiffres</li>
 <li>Code pays/région : CZ</li>

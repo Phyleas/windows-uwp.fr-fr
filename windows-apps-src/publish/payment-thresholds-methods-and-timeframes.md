@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: d82276d8-f094-4d60-90f6-f836ce90e823
 ms.localizationpriority: medium
-ms.openlocfilehash: 45a491364a4b1f406169cba76b7e7ea1ded00886
-ms.sourcegitcommit: 1d6d05d28358e087d9ee8829d76c5fbbac0225cb
+ms.openlocfilehash: e9a6ce5dac2e6a8480b3c6e95472b437ad6f947c
+ms.sourcegitcommit: a7effa01ca1c810e792b60f89ba38ce3bf0b310e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79434216"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81545009"
 ---
 # <a name="payment-thresholds-methods-and-timeframes"></a>Délais, méthodes et seuils de paiement
 
@@ -79,7 +79,7 @@ Pour connaître les pays/régions dans lesquels ces modes de paiement sont utili
 | Côte d’Ivoire                    | Oui               | Oui                                      | Oui    | Non              |
 | Croatie                          | Oui               | Oui                                      | Oui    | Non              |
 | Chypre                           | Oui               | Oui                                      | Oui    | Oui             |
-| République tchèque                   | Oui               | Oui                                      | Oui    | Oui             |
+| Czechia                          | Oui               | Oui                                      | Oui    | Oui             |
 | Danemark                          | Oui               | Oui                                      | Oui    | Oui             |
 | Dominique                         | Oui               | Oui                                      | Non     | Oui             |
 | République dominicaine               | Oui               | Oui                                      | Oui    | Oui             |
@@ -100,7 +100,7 @@ Pour connaître les pays/régions dans lesquels ces modes de paiement sont utili
 | Guinée                           | Oui               | Oui                                      | Oui    | Non              |
 | Haïti                            | Oui               | Oui                                      | Oui    | Non              |
 | Honduras                         | Oui               | Oui                                      | Oui    | Oui             |
-| Hong Kong (R.A.S.)                        | Oui               | Oui                                      | Oui    | Oui             |
+| Hong Kong                        | Oui               | Oui                                      | Oui    | Oui             |
 | Hongrie                          | Oui               | Oui                                      | Oui    | Oui             |
 | Islande                          | Oui               | Oui                                      | Oui    | Non              |
 | Inde                            | Oui               | Oui                                      | Oui    | Oui             |
@@ -124,7 +124,7 @@ Pour connaître les pays/régions dans lesquels ces modes de paiement sont utili
 | Liechtenstein                    | Oui               | Oui                                      | Oui    | Oui             |
 | Lituanie                        | Oui               | Oui                                      | Oui    | Non              |
 | Luxembourg                       | Oui               | Oui                                      | Oui    | Oui             |
-| Macédoine du Nord                        | Non                | Oui                                      | Oui    | Non              |
+| Macédoine                        | Non                | Oui                                      | Oui    | Non              |
 | Madagascar                       | Oui               | Oui                                      | Oui    | Non              |
 | Malawi                           | Oui               | Oui                                      | Oui    | Oui             |
 | Malaisie                         | Oui               | Oui                                      | Oui    | Oui             |
