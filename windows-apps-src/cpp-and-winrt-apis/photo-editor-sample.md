@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10, uwp, standard, c++, cpp, winrt, projection, exemple, application, photo, éditeur
 ms.localizationpriority: medium
-ms.openlocfilehash: 92aff51b6e5ba98d0f5fd157dd3a2dd57e861821
-ms.sourcegitcommit: f8c354def02d5c82d195e4f629e6470110268223
+ms.openlocfilehash: dcefe2ad8321ae85fcb814bbaead0bb0e5373300
+ms.sourcegitcommit: 8b7b677c7da24d4f39e14465beec9c4a3779927d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68623379"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81266907"
 ---
 # <a name="photo-editor-cwinrt-sample-application"></a>Exemple d’application C++/WinRT Photo Editor
 
@@ -22,7 +22,7 @@ Pour cloner ou télécharger l’exemple d’application, consultez [Photo Edito
 L'application Photo Editor est un exemple d’application de plateforme Windows universelle (UWP) qui illustre le développement à l'aide de la projection de langage [C++/WinRT](intro-to-using-cpp-with-winrt.md). L’exemple d’application vous permet de récupérer des photos à partir de la bibliothèque **Images**, puis de modifier l’image sélectionnée avec des effets de photo assortis. Dans le code source de l’exemple, vous verrez un certain nombre de pratiques courantes&mdash;comme la [liaison de données](binding-property.md) et les [actions et opérations asynchrones](concurrency.md)&mdash;effectuées à l’aide de la projection C++/WinRT. Voici quelques-unes des fonctionnalités spécifiques illustrées par l’exemple.
 
 - Utilisation de la syntaxe et des bibliothèques de la norme C++17 avec les API Windows Runtime (WinRT).
-- Utilisation des coroutines, notamment l’utilisation de co_await, co_return, [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction) et [**IAsyncOperation&lt;TResult&gt;** ](/uwp/api/windows.foundation.iasyncoperation_tresult_).
+- Utilisation des coroutines, notamment l’utilisation de co_await, co_return, [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction) et [**IAsyncOperation&lt;TResult&gt;** ](/uwp/api/windows.foundation.iasyncoperation-1).
 - Création et utilisation des types projetés et des types d’implémentation de la classe Windows Runtime personnalisée (classe runtime). Pour plus d’informations sur ces termes, consultez [Utiliser des API avec C++/WinRT](consume-apis.md) et [Créer des API avec C++/WinRT](author-apis.md).
 - [Gestion des événements](handle-events.md), notamment l’utilisation de jetons d’événements à révocation automatique.
 - Utilisation du package NuGet Win2D externe et de [Windows::UI::Composition](/uwp/api/windows.ui.composition), pour les effets d’image.
