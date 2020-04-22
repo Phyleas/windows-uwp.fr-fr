@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 0f596047cfdd01fcfca568ea1c63b1e2cc14c272
-ms.sourcegitcommit: 1670eec29b4360ec37cde2910b76078429273cb0
+ms.openlocfilehash: dbae7ada227b4f3019a2e17c91e6b06b7f2f276f
+ms.sourcegitcommit: 0acdafcf75fcd19e5c3181eb16defcfee3918cb2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80329510"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81441864"
 ---
 # <a name="host-uwp-xaml-controls-in-desktop-apps-xaml-islands"></a>Héberger des contrôles XAML UWP dans des applications de bureau (XAML Islands)
 
@@ -148,6 +148,8 @@ Les sections suivantes présentent les limitations et solutions de contournement
 :no_entry_sign : Entrée de texte avec la vue de l’écriture manuscrite. Pour en savoir plus sur cette fonctionnalité, consultez [cet article](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/text-handwriting-view).
 
 :no_entry_sign : Contrôles de texte qui utilisent des liens de contenu `@Places` et `@People`. Pour en savoir plus sur cette fonctionnalité, consultez [cet article](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/content-links).
+
+:no_entry_sign : Les îles XAML ne prennent pas en charge l’hébergement d’un [ContentDialog](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentDialog) contenant un contrôle qui accepte une entrée de texte, comme [TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox), [RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox) ou [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox). Si vous procédez ainsi, le contrôle d’entrée ne répond pas correctement aux pressions sur les touches. Pour obtenir des fonctionnalités similaires à l’aide d’une île XAML, nous vous recommandons d’héberger un [Popup](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Popup) contenant le contrôle d’entrée.
 
 ### <a name="window-host-context-for-xaml-islands"></a>Contexte de l’hôte de fenêtrage pour XAML Islands
 

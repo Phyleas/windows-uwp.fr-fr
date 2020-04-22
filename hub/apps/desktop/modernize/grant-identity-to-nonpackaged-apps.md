@@ -8,25 +8,20 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 6b77cc7b2f39a987df4c832f7a8daeb7e2722def
-ms.sourcegitcommit: f2f61a43f5bc24b829e8db679ffaca3e663c00e9
+ms.openlocfilehash: d997c6109256974f17bc0f86a518e34ef55960a7
+ms.sourcegitcommit: ecd7bce5bbe15e72588937991085dad6830cec71
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80588707"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81224272"
 ---
 # <a name="grant-identity-to-non-packaged-desktop-apps"></a>Accorder une identité à des applications de bureau non empaquetées
 
-<!--
-> [!NOTE]
-> The features described in this article require Windows 10 Insider Preview Build 10.0.19000.0 or a later release.
--->
-
 Les applications de bureau non-UWP doivent utiliser une [identité de package](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) pour accéder à bon nombre de fonctionnalités d'extensibilité Windows 10, notamment les tâches en arrière-plan, notifications, vignettes dynamiques et cibles de partage. Pour ces scénarios, le système d’exploitation requiert une identité afin d'identifier l’appelant de l’API correspondante.
 
-Dans les versions du système d’exploitation antérieures à Windows 10 Insider Preview Build 10.0.19000.0, la seule façon d’accorder une identité à une application de bureau consiste à [l'empaqueter dans un package MSIX signé](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root). Pour ces applications, l’identité est spécifiée dans le manifeste du package et l’inscription de l’identité est gérée par le pipeline de déploiement MSIX en fonction des informations contenues dans le manifeste. Tout le contenu référencé dans le manifeste du package est présent dans le package MSIX.
+Dans les versions du système d’exploitation antérieures à Windows 10 version 2004, la seule façon d’accorder une identité à une application de bureau consiste à l’[empaqueter dans un package MSIX signé](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root). Pour ces applications, l’identité est spécifiée dans le manifeste du package et l’inscription de l’identité est gérée par le pipeline de déploiement MSIX en fonction des informations contenues dans le manifeste. Tout le contenu référencé dans le manifeste du package est présent dans le package MSIX.
 
-À partir de Windows 10 Insider Preview Build 10.0.19000.0, vous pouvez accorder une identité de package aux applications de bureau non empaquetées dans un package MSIX en générant et en inscrivant un *package partiellement alloué* avec votre application. Cette prise en charge permet aux applications de bureau ne pouvant adopter l'empaquetage MSIX à des fins de déploiement d’utiliser les fonctionnalités d’extensibilité Windows 10 qui requièrent une identité de package. Pour plus d’informations, consultez [ce billet de blog](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/#HBMFEM843XORqOWx.97).
+À partir de Windows 10 version 2004, vous pouvez accorder une identité de package aux applications de bureau non empaquetées dans un package MSIX en générant et en inscrivant un *package partiellement alloué* avec votre application. Cette prise en charge permet aux applications de bureau ne pouvant adopter l'empaquetage MSIX à des fins de déploiement d’utiliser les fonctionnalités d’extensibilité Windows 10 qui requièrent une identité de package. Pour plus d’informations, consultez [ce billet de blog](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/#HBMFEM843XORqOWx.97).
 
 Pour générer et inscrire un package partiellement alloué accordant une identité de package à votre application de bureau, suivez les étapes ci-dessous.
 
@@ -162,9 +157,9 @@ Le manifeste d’application côte à côte doit se trouver dans le même réper
 
 ## <a name="register-your-sparse-package-at-run-time"></a>Inscrire le package partiellement alloué au moment de l’exécution
 
-Pour accorder une identité de package à votre application de bureau, cette dernière doit inscrire le package partiellement alloué à l’aide de la classe [PackageManager](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager). Vous pouvez ajouter du code à votre application pour inscrire le package partiellement alloué lors de la première exécution de votre application. Vous pouvez également exécuter du code afin d'inscrire le package lors de l’installation de votre application de bureau (par exemple, si vous utilisez MSI pour installer votre application de bureau, vous pouvez exécuter ce code à l'aide d'une action personnalisée).
+Pour accorder une identité de package à votre application de bureau, cette dernière doit inscrire le package partiellement alloué à l’aide de la méthode **AddPackageByUriAsync** de la classe [PackageManager](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager). Cette méthode est disponible à partir de Windows 10, version 2004. Vous pouvez ajouter du code à votre application pour inscrire le package partiellement alloué lors de la première exécution de votre application. Vous pouvez également exécuter du code afin d'inscrire le package lors de l’installation de votre application de bureau (par exemple, si vous utilisez MSI pour installer votre application de bureau, vous pouvez exécuter ce code à l'aide d'une action personnalisée).
 
-L'exemple suivant montre comment inscrire un package partiellement alloué. Ce code crée un objet **AddPackageOptions** contenant le chemin de l'emplacement externe où le manifeste de votre package peut référencer du contenu en dehors du package. Ensuite, le code transmet cet objet à la méthode **PackageManager.AddPackageByUriAsync** pour inscrire le package partiellement alloué. Cette méthode reçoit également l’emplacement de votre package partiellement alloué signé sous forme d'URI. Pour un exemple plus détaillé, consultez le fichier de code `StartUp.cs` de l'[exemple](#sample) correspondant.
+L'exemple suivant montre comment inscrire un package partiellement alloué. Ce code crée un objet **AddPackageOptions** contenant le chemin de l'emplacement externe où le manifeste de votre package peut référencer du contenu en dehors du package. Ensuite, le code transmet cet objet à la méthode **AddPackageByUriAsync** pour inscrire le package partiellement alloué. Cette méthode reçoit également l’emplacement de votre package partiellement alloué signé sous forme d'URI. Pour un exemple plus détaillé, consultez le fichier de code `StartUp.cs` de l'[exemple](#sample) correspondant.
 
 ```csharp
 private static bool registerSparsePackage(string externalLocation, string sparsePkgPath)
