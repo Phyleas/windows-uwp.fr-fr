@@ -7,13 +7,13 @@ template: detail.hbs
 op-migration-status: ready
 ms.date: 12/01/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e5b46223ea7dfa5e43b5a50a04a4c3f31307d49
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "63796328"
 ---
 # <a name="content-design-basics-for-uwp-apps"></a>Informations de base relatives à la conception de contenu pour les applications UWP
@@ -92,7 +92,7 @@ Pour créer ces modèles de page, vous devez utiliser une combinaison d’élém
 <tr class="odd">
 <td align="left">Collections <br/><br/>
     <img src="images/content-basics/listview.png" alt="list view" /></td>
-<td align="left"><a href="../controls-and-patterns/lists.md">Mode Liste et affichage Grille</a></td>
+<td align="left"><a href="../controls-and-patterns/lists.md">Mode Liste et mode Grille</a></td>
 <td align="left">Présente les éléments dans une liste interactive ou une grille. Utilisez ces éléments pour permettre aux utilisateurs de sélectionner un film parmi une liste de nouveautés ou de gérer un inventaire.</td>
 </tr>
 <tr class="even">

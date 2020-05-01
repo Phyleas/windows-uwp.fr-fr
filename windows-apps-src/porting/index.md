@@ -4,13 +4,13 @@ description: Cette section explique comment effectuer le portage de votre applic
 title: Portage d’applications sur Windows 10
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 937d165d9305a3f4909383e872f49fcf08a3115c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "66371588"
 ---
 # <a name="porting-apps-to-windows10"></a>Portage d’applications sur Windows 10

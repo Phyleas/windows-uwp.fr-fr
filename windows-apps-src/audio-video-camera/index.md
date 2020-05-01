@@ -4,13 +4,13 @@ description: Cette section fournit des informations sur la création d’une app
 title: Audio, vidéo et appareil photo
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e3e29dabf074eab59f6c788c139524f7dc2474df
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "67318318"
 ---
 # <a name="audio-video-and-camera"></a>Audio, vidéo et appareil photo
@@ -39,7 +39,7 @@ Cette section fournit des informations sur la création d’une application Wind
 | [Rechercher les codecs installés sur un appareil](codec-query.md) | Vous indique comment rechercher les encodeurs et décodeurs audio et vidéo qui sont installés sur un appareil. |
 | [Capture d’écran](screen-capture.md) | Décrit comment utiliser l’[espace de noms Windows.Graphics.Capture](https://docs.microsoft.com/uwp/api/windows.graphics.capture) pour l’acquisition d’images à partir d’une fenêtre d’affichage ou d’application, afin de créer des flux vidéo ou des captures instantanées pour créer des expériences collaboratives et interactives. |
 
-## <a name="see-also"></a>Voir également
+## <a name="see-also"></a>Voir aussi
 - [Développer des applications UWP](https://docs.microsoft.com/windows/uwp/develop/)
 
  

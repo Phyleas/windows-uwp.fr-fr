@@ -4,13 +4,13 @@ title: Liaison de données et MVVM
 description: La liaison de données est au cœur du modèle de conception architecturale de l’interface utilisateur MVVM (Model-View-ViewModel) et permet un couplage faible entre l’interface utilisateur et le code non associé à l’interface utilisateur.
 ms.date: 10/02/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 931f2fcbcdbf58b9dc2ca40403d7466b620a8991
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "63798104"
 ---
 # <a name="data-binding-and-mvvm"></a>Liaison de données et MVVM

@@ -6,10 +6,10 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, données, types
 ms.localizationpriority: medium
 ms.openlocfilehash: 8cb62f8386798fcb78a11be35ba951616c47039c
-ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/16/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "68270070"
 ---
 # <a name="standard-c-data-types-and-cwinrt"></a>Types de données C++ standard et C++/WinRT
@@ -125,7 +125,7 @@ array_view<byte const> fromRange{ theArray.data(), theArray.data() + 2 }; // jus
 dataWriter.WriteBytes(fromRange); // the winrt::array_view is passed to WriteBytes.
 ```
 
-## <a name="winrtarrayview-functions-and-operators"></a>Opérateurs et fonctions winrt::array_view
+## <a name="winrtarray_view-functions-and-operators"></a>Opérateurs et fonctions winrt::array_view
 Une série de constructeurs, d’opérateurs, de fonctions et d’itérateurs sont implémentés pour **winrt::array_view**. Un **winrt::array_view** étant une plage, vous pouvez l’utiliser avec `for` basé sur les plages ou avec **std::for_each**.
 
 Pour plus d’exemples et d’informations, consultez la rubrique sur les informations de référence sur les API [**winrt::array_view**](/uwp/cpp-ref-for-winrt/array-view).

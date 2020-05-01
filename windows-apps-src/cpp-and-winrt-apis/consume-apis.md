@@ -6,10 +6,10 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projeté, projection, implémentation, classe runtime, activation
 ms.localizationpriority: medium
 ms.openlocfilehash: 66c162b7ae9cd588bea1062ed8c953d94d1b691c
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "70393764"
 ---
 # <a name="consume-apis-with-cwinrt"></a>Utiliser des API avec C++/WinRT
@@ -79,7 +79,7 @@ En d’autres termes, certaines API sont déclarées en avance dans un en-tête 
 ## <a name="accessing-members-via-the-object-via-an-interface-or-via-the-abi"></a>Accès aux membres via l’objet, via une interface ou via l’ABI
 Avec la projection C++/WinRT, la représentation d’exécution d’une classe Windows Runtime se limite aux interfaces ABI sous-jacentes. Toutefois, pour votre commodité, vous pouvez coder en fonction des classes comme prévu par leur auteur. Par exemple, vous pouvez appeler la méthode **ToString** d’un [**Uri**](/uwp/api/windows.foundation.uri) comme s’il s’agissait d’une méthode de la classe (il s'agit en réalité d'une méthode sur l'interface **IStringable** séparée).
 
-`WINRT_ASSERT` est une définition de macro, qui se développe en [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros).
+`WINRT_ASSERT` est une définition de macro qui s’étend à [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros).
 
 ```cppwinrt
 Uri contosoUri{ L"http://www.contoso.com" };

@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp, portail d’appareil
 ms.localizationpriority: medium
 ms.openlocfilehash: 3aeb068908adf6d6c40a50cee3aececba1861ee8
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "63801388"
 ---
 # <a name="device-portal-api-reference-for-hololens"></a>Informations de référence sur les API Device Portal pour HoloLens
@@ -38,7 +38,7 @@ Vous pouvez obtenir la spécification HTTPS pour Device Portal en utilisant le f
 
 - Aucune
 
-**Corps de la requête**
+**Corps de demande**
 
 - Aucune
 
@@ -69,7 +69,7 @@ Vous pouvez obtenir la valeur de l’écart pupillaire stocké en utilisant le f
 
 - Aucune
 
-**Corps de la requête**
+**Corps de demande**
 
 - Aucune
 
@@ -100,7 +100,7 @@ Vous pouvez obtenir une liste des fournisseurs ETW spécifiques HoloLens qui ne 
 
 - Aucune
 
-**Corps de la requête**
+**Corps de demande**
 
 - Aucune
 
@@ -132,7 +132,7 @@ Vous pouvez obtenir l’état de tous les services en cours d’exécution en ut
 
 - Aucune
 
-**Corps de la requête**
+**Corps de demande**
 
 - Aucune
 
@@ -168,7 +168,7 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Corps de la requête**
+**Corps de demande**
 
 - Aucune
 
@@ -204,7 +204,7 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Corps de la requête**
+**Corps de demande**
 
 - Aucune
 
@@ -242,7 +242,7 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Corps de la requête**
+**Corps de demande**
 
 - Aucune
 
@@ -275,7 +275,7 @@ Vous pouvez obtenir la phase thermique de l’appareil en utilisant le format de
 
 - Aucune
 
-**Corps de la requête**
+**Corps de demande**
 
 - Aucune
 
@@ -283,7 +283,7 @@ Vous pouvez obtenir la phase thermique de l’appareil en utilisant le format de
 
 Les valeurs possibles sont indiquées par le tableau suivant.
 
-| Value | Description |
+| Valeur | Description |
 | --- | --- |
 | 1 | Normal |
 | 2 | Chargé |
@@ -318,7 +318,7 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Corps de la requête**
+**Corps de demande**
 
 - Aucune
 
@@ -349,7 +349,7 @@ Vous pouvez supprimer un flux de contrôle en utilisant le format de requête su
 
 - Aucune
 
-**Corps de la requête**
+**Corps de demande**
 
 - Aucune
 
@@ -380,7 +380,7 @@ Vous pouvez ouvrir une connexion web socket pour un flux de contrôle en utilisa
 
 - Aucune
 
-**Corps de la requête**
+**Corps de demande**
 
 - Aucune
 
@@ -411,7 +411,7 @@ Vous pouvez obtenir le mode de simulation en utilisant le format de requête sui
 
 - Aucune
 
-**Corps de la requête**
+**Corps de demande**
 
 - Aucune
 
@@ -446,7 +446,7 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Corps de la requête**
+**Corps de demande**
 
 - Aucune
 
@@ -477,13 +477,13 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 | Paramètre d’URI | Description |
 | :---          | :--- |
-| enregistrement   | (**requis**) Nom de l’enregistrement à supprimer. |
+| recording   | (**requis**) Nom de l’enregistrement à supprimer. |
 
 **En-têtes de requête**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de demande**
 
 - Aucune
 
@@ -514,7 +514,7 @@ Vous pouvez obtenir tous les enregistrements disponibles en utilisant le format 
 
 - Aucune
 
-**Corps de la requête**
+**Corps de demande**
 
 - Aucune
 
@@ -543,13 +543,13 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 | Paramètre d’URI | Description |
 | :---          | :--- |
-| enregistrement   | (**requis**) Nom de l’enregistrement qui vous intéresse. |
+| recording   | (**requis**) Nom de l’enregistrement qui vous intéresse. |
 
 **En-têtes de requête**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de demande**
 
 - Aucune
 
@@ -580,7 +580,7 @@ Vous pouvez obtenir tous les enregistrements chargés en utilisant le format de 
 
 - Aucune
 
-**Corps de la requête**
+**Corps de demande**
 
 - Aucune
 
@@ -609,13 +609,13 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 | Paramètre d’URI | Description |
 | :---          | :--- |
-| enregistrement   | (**requis**) Nom de l’enregistrement qui vous intéresse. |
+| recording   | (**requis**) Nom de l’enregistrement qui vous intéresse. |
 
 **En-têtes de requête**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de demande**
 
 - Aucune
 
@@ -644,13 +644,13 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 | Paramètre d’URI | Description |
 | :---          | :--- |
-| enregistrement   | (**requis**) Nom de l’enregistrement à charger. |
+| recording   | (**requis**) Nom de l’enregistrement à charger. |
 
 **En-têtes de requête**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de demande**
 
 - Aucune
 
@@ -679,13 +679,13 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 | Paramètre d’URI | Description |
 | :---          | :--- |
-| enregistrement   | (**requis**) Nom de l’enregistrement à suspendre. |
+| recording   | (**requis**) Nom de l’enregistrement à suspendre. |
 
 **En-têtes de requête**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de demande**
 
 - Aucune
 
@@ -714,13 +714,13 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 | Paramètre d’URI | Description |
 | :---          | :--- |
-| enregistrement   | (**requis**) Nom de l’enregistrement à lire. |
+| recording   | (**requis**) Nom de l’enregistrement à lire. |
 
 **En-têtes de requête**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de demande**
 
 - Aucune
 
@@ -749,13 +749,13 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 | Paramètre d’URI | Description |
 | :---          | :--- |
-| enregistrement   | (**requis**) Nom de l’enregistrement à arrêter. |
+| recording   | (**requis**) Nom de l’enregistrement à arrêter. |
 
 **En-têtes de requête**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de demande**
 
 - Aucune
 
@@ -784,13 +784,13 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 | Paramètre d’URI | Description |
 | :---          | :--- |
-| enregistrement   | (**requis**) Nom de l’enregistrement à décharger. |
+| recording   | (**requis**) Nom de l’enregistrement à décharger. |
 
 **En-têtes de requête**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de demande**
 
 - Aucune
 
@@ -821,7 +821,7 @@ Vous pouvez décharger un enregistrement en utilisant le format de requête suiv
 
 - Aucune
 
-**Corps de la requête**
+**Corps de demande**
 
 - Aucune
 
@@ -854,7 +854,7 @@ Vous pouvez obtenir l’état d’enregistrement actuel en utilisant le format d
 
 - Aucune
 
-**Corps de la requête**
+**Corps de demande**
 
 - Aucune
 
@@ -896,7 +896,7 @@ Pour ces paramètres, un des paramètres suivants doit être défini sur 1 : *he
 
 - Aucune
 
-**Corps de la requête**
+**Corps de demande**
 
 - Aucune
 
@@ -927,7 +927,7 @@ Vous pouvez arrêter l’enregistrement en cours en utilisant le format de requ�
 
 - Aucune
 
-**Corps de la requête**
+**Corps de demande**
 
 - Aucune
 
@@ -964,7 +964,7 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Corps de la requête**
+**Corps de demande**
 
 - Aucune
 
@@ -1000,7 +1000,7 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Corps de la requête**
+**Corps de demande**
 
 - Aucune
 
@@ -1031,7 +1031,7 @@ Vous pouvez obtenir les paramètres MRC en utilisant le format de requête suiva
 
 - Aucune
 
-**Corps de la requête**
+**Corps de demande**
 
 - Aucune
 
@@ -1062,7 +1062,7 @@ Vous pouvez obtenir l’état de l’enregistrement MRC en utilisant le format d
 
 - Aucune
 
-**Corps de la requête**
+**Corps de demande**
 
 - Aucune
 
@@ -1093,7 +1093,7 @@ Vous pouvez obtenir les fichiers MRC stockés sur l’appareil en utilisant le f
 
 - Aucune
 
-**Corps de la requête**
+**Corps de demande**
 
 - Aucune
 
@@ -1124,7 +1124,7 @@ Vous pouvez définir les paramètres MRC en utilisant le format de requête suiv
 
 - Aucune
 
-**Corps de la requête**
+**Corps de demande**
 
 - Aucune
 
@@ -1155,7 +1155,7 @@ Vous pouvez démarrer un enregistrement MRC en utilisant le format de requête s
 
 - Aucune
 
-**Corps de la requête**
+**Corps de demande**
 
 - Aucune
 
@@ -1186,7 +1186,7 @@ Vous pouvez arrêter l’enregistrement MRC actuel en utilisant le format de req
 
 - Aucune
 
-**Corps de la requête**
+**Corps de demande**
 
 - Aucune
 
@@ -1217,7 +1217,7 @@ Vous pouvez prendre une photo MRC en utilisant le format de requête suivant. La
 
 - Aucune
 
-**Corps de la requête**
+**Corps de demande**
 
 - Aucune
 
@@ -1257,7 +1257,7 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Corps de la requête**
+**Corps de demande**
 
 - Aucune
 
@@ -1295,7 +1295,7 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Corps de la requête**
+**Corps de demande**
 
 - Aucune
 
@@ -1333,7 +1333,7 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Corps de la requête**
+**Corps de demande**
 
 - Aucune
 
@@ -1371,7 +1371,7 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Corps de la requête**
+**Corps de demande**
 
 - Aucune
 

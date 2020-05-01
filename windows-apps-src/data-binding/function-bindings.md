@@ -6,10 +6,10 @@ ms.topic: article
 keywords: windows 10, uwp, xBind
 ms.localizationpriority: medium
 ms.openlocfilehash: 879be9591bae36a1dbcd485387fbb4ac7f502fea
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "66360082"
 ---
 # <a name="functions-in-xbind"></a>Fonctions dans x:Bind
@@ -108,7 +108,7 @@ La fonction en cours de liaison doit :
 - Les types d’arguments doivent correspondre aux données transmises. Nous ne faisons pas de conversions restrictives.
 - Le type de retour de la fonction doit correspondre au type de la propriété qui utilise la liaison.
 
-Le moteur de liaison réagit aux notifications de changements de propriétés déclenchées avec le nom de la fonction et réévalue les liaisons si nécessaire. Par exemple :
+Le moteur de liaison réagit aux notifications de changements de propriétés déclenchées avec le nom de la fonction et réévalue les liaisons si nécessaire. Par exemple :
 
 ```xaml
 <DataTemplate x:DataType="local:Person">

@@ -6,10 +6,10 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, direct, pile, allocations, projeté, implémentation
 ms.localizationpriority: medium
 ms.openlocfilehash: 7fe8ff6653b8655ee25cd9adc0c11acb22d42a11
-ms.sourcegitcommit: 4e74c920f1fef507c5cdf874975003702d37bcbb
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "68372790"
 ---
 # <a name="diagnosing-direct-allocations"></a>Diagnostic des allocations directes
@@ -38,7 +38,7 @@ void Print(IStringable const& stringable)
 }
 ```
 
-Mais notre type **MyStringable** n'est *pas* **IStringable**.
+Mais notre type **MyStringable** n'est *pas***IStringable**.
 
 - Notre type **MyStringable** est une implémentation de l'interface **IStringable**.
 - Le type **IStringable** est un type projeté.

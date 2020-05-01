@@ -7,10 +7,10 @@ keywords: windows 10, uwp, éducation
 ms.assetid: 2431f253-efe3-4895-b131-34653b61f13c
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d68fd78a7da3f1b98f61225f3aad8ca1590140e
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "67317608"
 ---
 # <a name="develop-universal-windows-apps-for-education"></a>Développement d’applications Universal Windows pour l’éducation
@@ -25,7 +25,7 @@ Les applications éducatives doivent être accessibles. Pour plus d’informatio
 ### <a name="secure-assessments"></a>Évaluations sécurisées
 Une évaluation ou un test d’application suppose généralement de créer un environnement *verrouillé* afin d’empêcher les étudiants d’utiliser d’autres ordinateurs ou ressources Internet au cours d’un test. Cette fonctionnalité est disponible via [l’API Examen](take-a-test-api.md). Pour obtenir un exemple d’environnement de test dans lequel l’accès en ligne est verrouillé pour les tests stratégiques, consultez l’application web [Examen](https://docs.microsoft.com/education/windows/take-tests-in-windows-10) dans le Centre informatique de Windows.
 
-### <a name="user-input"></a>Entrée de l’utilisateur
+### <a name="user-input"></a>Entrée utilisateur
 Les entrées de l’utilisateur constituent une partie essentielle des applications éducatives ; les commandes de l’interface utilisateur doivent être réactives et intuitives afin de ne pas distraire les utilisateurs. Pour obtenir une vue d’ensemble des options d’entrée disponibles dans une application Windows universelle, consultez la page [Notions fondamentales sur les interactions](https://docs.microsoft.com/windows/uwp/design/input/input-primer) ainsi que les rubriques de la section Conception et interface utilisateur. Les exemples d’application suivants présentent également les méthodes de gestion de base de l’interface utilisateur dans la plateforme Windows universelle.
 - [L’exemple d’entrée de base](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput) vous montre comment traiter les interactions dans les applications Windows universelles.
 - [L’exemple du mode d’interaction des utilisateurs](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode) vous montre comment détecter le mode d’interaction des utilisateurs, et comment y répondre.
@@ -37,7 +37,7 @@ La plateforme Windows Ink permet d’optimiser les applications éducatives en 
 - [L’exemple d’entrée manuscrite complexe](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk) démontre comment utiliser la fonctionnalité avancée InkPresenter afin d’entrelacer l’entrée manuscrite avec d’autres objets, sélectionner les traits d’encre, copier/coller et traiter les événements. Le système repose sur la plateforme Windows universelle dans C++ et peut s’exécuter sur les SKU des appareils mobiles et de bureau Windows 10.
 
 
-### <a name="microsoft-store"></a>Microsoft Store
+### <a name="microsoft-store"></a>Microsoft Store
 En règle générale, les applications éducatives sont distribuées à une organisation spécifique dans certaines circonstances. Pour plus d’informations, consultez la page [Distribuer des applications métier aux entreprises](https://docs.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises).
 
 ## <a name="related-topics"></a>Rubriques connexes

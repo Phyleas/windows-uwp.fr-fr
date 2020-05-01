@@ -4,13 +4,13 @@ title: Virtualisation des données ListView et GridView
 description: Améliorez les performances et le délai de démarrage des éléments ListView et GridView via la virtualisation des données.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d00a41c5a58935a4ecfe623c71a1264a2dc1132
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "71339610"
 ---
 # <a name="listview-and-gridview-data-virtualization"></a>Virtualisation des données ListView et GridView

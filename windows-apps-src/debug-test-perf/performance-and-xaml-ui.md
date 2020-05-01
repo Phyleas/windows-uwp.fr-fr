@@ -4,13 +4,13 @@ title: Performances
 description: Les utilisateurs attendent de leurs applications qu’elles soient réactives, conviviales et qu’elles ne déchargent pas la batterie.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c13fb0f1b3d982d372896547bf2e47d978532ea4
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "70393445"
 ---
 # <a name="performance"></a>Performances
@@ -31,7 +31,7 @@ Si vous ne l’avez pas encore fait, nous vous conseillons de porter votre appli
 | [Optimiser votre balisage XAML](optimize-xaml-loading.md) | L’analyse du balisage XAML pour la construction d’objets en mémoire est chronophage pour une interface utilisateur complexe. Voici quelques astuces pour améliorer l’analyse du balisage XAML ainsi que l’efficacité du temps de chargement et de la mémoire de votre application. | 
 | [Optimiser votre disposition XAML](optimize-your-xaml-layout.md) | La disposition peut s’avérer coûteuse pour une application XAML, tant au niveau de l’utilisation du processeur que de la surcharge de la mémoire. Voici quelques mesures simples que vous pouvez entreprendre pour améliorer les performances de la disposition de votre application XAML. | 
 | [Conseils relatifs aux performances du langage de programmation et du modèle MVVM](mvvm-performance-tips.md) | Cette rubrique décrit certaines considérations en matière de performances liées à vos choix de modèles de conception de logiciel et de langage de programmation. |
-| [Bonnes pratiques en matière de performances lors du démarrage de votre application](best-practices-for-your-app-s-startup-performance.md) | Créez des applications UWP dont le temps de démarrage est optimal en améliorant la gestion du lancement et de l’activation. |
+| [Meilleures pratiques en matière de performances lors du démarrage de votre application](best-practices-for-your-app-s-startup-performance.md) | Créez des applications UWP dont le temps de démarrage est optimal en améliorant la gestion du lancement et de l’activation. |
 | [Optimiser les animations, les éléments multimédia et les images](optimize-animations-and-media.md) | Créez des applications UWP avec des animations fluides, une fréquence d’images élevée et une capture/lecture multimédia hautement performante. |
 | [Optimiser l’interruption/la reprise](optimize-suspend-resume.md) | Créez des applications UWP qui simplifient l’utilisation du système de gestion de la durée de vie des processus afin d’assurer une reprise efficace après une suspension ou un arrêt. |
 | [Optimiser l’accès aux fichiers](optimize-file-access.md) | Créez des applications UWP qui accèdent au système de fichiers efficacement, en évitant les problèmes de performances dus à la latence de disque et aux cycles de la mémoire et du processeur. |

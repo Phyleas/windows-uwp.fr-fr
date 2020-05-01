@@ -7,10 +7,10 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: f5f38fdfb3ba9fd32a6e06ec19cdbfb6c3b09f24
-ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/09/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "68867684"
 ---
 # <a name="writing-style"></a>Style d’écriture
@@ -212,7 +212,7 @@ Lorsque vous écrivez le texte des boutons, gardez à l’esprit que chaque bout
     :::column:::
 ![Pratiques conseillées](images/do.svg)
 * Installer maintenant
-* Share
+* Partage
     :::column-end:::
 :::row-end:::
 

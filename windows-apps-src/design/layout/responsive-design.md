@@ -5,14 +5,14 @@ template: detail.hbs
 op-migration-status: ready
 ms.date: 10/10/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: f688522ec8970b1e3570610663f5a3e6cae65793
-ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/09/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "68867415"
 ---
 # <a name="responsive-design-techniques"></a>Techniques de conception réactive
