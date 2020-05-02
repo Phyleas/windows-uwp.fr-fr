@@ -9,10 +9,10 @@ author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 50ee005fc0de52a3e0217a71fb3d391445c486db
-ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/24/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "80226233"
 ---
 # <a name="advanced-scenarios-for-xaml-islands-in-c-win32-apps"></a>Scénarios avancés pour XAML Islands dans les applications Win32 C++
@@ -84,9 +84,9 @@ Pour configurer votre application afin de prendre charge la résolution par moni
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Héberger des contrôles XAML UWP dans des applications de bureau (XAML Islands)](xaml-islands.md)
+* [Héberger des contrôles XAML UWP dans des applications de bureau (îlots XAML)](xaml-islands.md)
 * [Utilisation de l’API d’hébergement XAML UWP dans une application Win32 C++](using-the-xaml-hosting-api.md)
 * [Héberger un contrôle UWP standard dans une application Win32 C++](host-standard-control-with-xaml-islands-cpp.md)
 * [Héberger un contrôle UWP personnalisé dans une application Win32 C++](host-custom-control-with-xaml-islands-cpp.md)
 * [Exemples de code XAML Islands](https://github.com/microsoft/Xaml-Islands-Samples)
-* [Exemple XAML Islands Win32 C++](https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Samples/Win32/SampleCppApp)
+* [Exemple d’îlots XAML Win32 C++](https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Samples/Win32/SampleCppApp)

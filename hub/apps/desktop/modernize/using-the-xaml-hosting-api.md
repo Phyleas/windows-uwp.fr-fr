@@ -9,10 +9,10 @@ author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 36c3aeb7a51c84e92c5bca461aee7efe50740237
-ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/24/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "80218459"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-c-win32-app"></a>Utilisation de l’API d’hébergement XAML UWP dans une application Win32 C++
@@ -89,7 +89,7 @@ Le diagramme suivant illustre la hiérarchie d’objets dans un îlot XAML hébe
 ![Architecture de DesktopWindowXamlSource](images/xaml-islands/xaml-hosting-api-rev2.png)
 
 > [!NOTE]
-> Lorsque vous hébergez des îlots XAML dans une application de bureau, plusieurs arborescences de contenu XAML peuvent s’exécuter simultanément sur le même thread. Pour accéder à l’élément racine d’une arborescence de contenu XAML dans un îlot XAML et obtenir des informations connexes sur le contexte de son hébergement, utilisez la classe [XamlRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.xamlroot). Les classes [CoreWindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow), [ApplicationView](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview) et [Window](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window) ne fournissent pas les informations correctes pour les îlots XAML. Pour plus d’informations, consultez [cette section](xaml-islands.md#window-host-context-for-xaml-islands).
+> Quand vous hébergez XAML Islands dans une application de bureau, plusieurs arborescences de contenu XAML peuvent s’exécuter simultanément sur le même thread. Pour accéder à l’élément racine d’une arborescence de contenu XAML dans un XAML Islands et obtenir des informations connexes sur le contexte de son hébergement, utilisez la classe [XamlRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.xamlroot). Les classes [CoreWindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow), [ApplicationView](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview) et [Window](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window) ne fournissent pas les informations correctes pour les îlots XAML. Pour plus d’informations, consultez [cette section](xaml-islands.md#window-host-context-for-xaml-islands).
 
 ## <a name="troubleshooting"></a>Résolution des problèmes
 

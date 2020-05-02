@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 0167d1f0ed69f8354fa6ee7cd77387aee9aee842
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: 26e64c286124537eeb20af6c46f16e83edc88414
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80081510"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81643730"
 ---
 # <a name="text-box"></a>Zone de texte
 
@@ -294,11 +294,11 @@ Pour plus d’informations et d’exemples, consultez [Utiliser l’étendue des
 
 - Utilisez un ensemble de contrôles de saisie de texte d’une ligne courts et de taille fixe pour entrer des données ayant un format spécifique.
 
-    ![Saisie de données mises en forme](images/textinput_example_productkey.png)
+    ![Saisie de données mises en forme](images/textinput-example-productkey.png)
 
 - Utilisez un contrôle de saisie de texte d’une ligne sans contraintes pour entrer ou modifier des chaînes, en association avec un bouton de commande qui permet aux utilisateurs de sélectionner des valeurs valides.
 
-    ![Saisie de données assistée](images/textinput_example_assisted.png)
+    ![Saisie de données assistée](images/textinput-example-assisted.png)
 
 ### <a name="multi-line-text-input-controls"></a>Zones de saisie de texte multiligne
 

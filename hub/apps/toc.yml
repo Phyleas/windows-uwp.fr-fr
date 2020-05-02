@@ -1,0 +1,89 @@
+- name: Créer des applications pour Windows
+  href: index.yml
+  items:
+    - name: Créer des applications de bureau
+      items:
+        - name: Vue d’ensemble
+          href: desktop/index.md
+        - name: Choisir votre plateforme d’application
+          href: desktop/choose-your-platform.md
+    - name: Moderniser vos applications de bureau
+      items:
+        - name: Vue d’ensemble
+          href: desktop/modernize/index.md
+        - name: Appeler des API UWP
+          items:
+            - name: Vue d’ensemble
+              href: desktop/modernize/desktop-to-uwp-enhance.md
+            - name: API UWP disponibles
+              href: desktop/modernize/desktop-to-uwp-supported-api.md
+        - name: Héberger des contrôles XAML UWP (XAML Islands)
+          items:
+            - name: Vue d’ensemble
+              href: desktop/modernize/xaml-islands.md
+            - name: XAML Islands dans les applications WPF et Windows Forms
+              items:
+                - name: Héberger un contrôle UWP standard
+                  href: desktop/modernize/host-standard-control-with-xaml-islands.md
+                - name: Héberger un contrôle UWP personnalisé
+                  href: desktop/modernize/host-custom-control-with-xaml-islands.md
+            - name: XAML Islands dans les applications Win32 C++
+              items:
+                - name: Utilisation de l’API d’hébergement XAML UWP
+                  href: desktop/modernize/using-the-xaml-hosting-api.md
+                - name: Héberger un contrôle UWP standard
+                  href: desktop/modernize/host-standard-control-with-xaml-islands-cpp.md
+                - name: Héberger un contrôle UWP personnalisé
+                  href: desktop/modernize/host-custom-control-with-xaml-islands-cpp.md
+                - name: Scénarios avancés
+                  href: desktop/modernize/advanced-scenarios-xaml-islands-cpp.md
+        - name: Utilisation de la couche Visuel (Windows.UI.Composition)
+          items:
+            - name: Vue d’ensemble
+              href: desktop/modernize/visual-layer-in-desktop-apps.md
+            - name: WPF
+              href: desktop/modernize/using-the-visual-layer-with-wpf.md
+            - name: Windows Forms
+              href: desktop/modernize/using-the-visual-layer-with-windows-forms.md
+            - name: Win32
+              href: desktop/modernize/using-the-visual-layer-with-win32.md
+        - name: Fonctionnalités nécessitant l’identité du package
+          items:
+            - name: Vue d’ensemble
+              href: desktop/modernize/modernize-packaged-apps.md
+            - name: Intégrer avec des extensions de package
+              href: desktop/modernize/desktop-to-uwp-extensions.md
+            - name: Étendre à l’aide de composants UWP
+              href: desktop/modernize/desktop-to-uwp-extend.md
+            - name: Distribuer votre application empaquetée
+              href: desktop/modernize/desktop-to-uwp-distribute.md
+        - name: "Tutoriel\_: Moderniser une application WPF"
+          items:
+            - name: Vue d’ensemble
+              href: desktop/modernize/modernize-wpf-tutorial.md
+            - name: "Effectuer une migration de l'application Contoso Expenses vers .NET Core\_3"
+              href: desktop/modernize/modernize-wpf-tutorial-1.md
+            - name: Ajouter un contrôle InkCanvas UWP à l’aide d'îles XAML
+              href: desktop/modernize/modernize-wpf-tutorial-2.md
+            - name: Ajouter un contrôle CalendarView UWP à l’aide d'îles XAML
+              href: desktop/modernize/modernize-wpf-tutorial-3.md
+            - name: "Ajouter des activités et des notifications utilisateur Windows\_10"
+              href: desktop/modernize/modernize-wpf-tutorial-4.md
+            - name: Créer un package et déployer avec MSIX
+              href: desktop/modernize/modernize-wpf-tutorial-5.md
+        - name: Accorder une identité à des applications de bureau non empaquetées
+          href: desktop/modernize/grant-identity-to-nonpackaged-apps.md
+    - name: "Développement pour Windows\_10X"
+      items:
+        - name: "Questions fréquentes (FAQ) sur le développement Windows\_10X"
+          href: 10x/faq.md
+    - name: Système Fluent Design
+      href: fluent-design-system.md
+    - name: Accessibilité
+      href: accessibility.md
+    - name: Voix
+      href: speech.md
+    - name: Fonctionnalités et technologies
+      href: features-and-technologies.md
+    - name: Dernières mises à jour de la documentation
+      href: whats-new/latest-doc-updates.md

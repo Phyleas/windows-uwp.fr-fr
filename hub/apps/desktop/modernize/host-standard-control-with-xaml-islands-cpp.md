@@ -9,10 +9,10 @@ author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 08308c7bca3cd7f39b08c836e43d791a3fda048f
-ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/24/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "80226273"
 ---
 # <a name="host-a-standard-uwp-control-in-a-c-win32-app"></a>Héberger un contrôle UWP standard dans une application Win32 C++
@@ -314,5 +314,5 @@ Pour plus d’informations sur la gestion de ces scénarios et des pointeurs ver
 * [Héberger des contrôles XAML UWP dans des applications de bureau (îlots XAML)](xaml-islands.md)
 * [Utilisation de l’API d’hébergement XAML UWP dans une application Win32 C++](using-the-xaml-hosting-api.md)
 * [Héberger un contrôle UWP personnalisé dans une application Win32 C++](host-custom-control-with-xaml-islands-cpp.md)
-* [Scénarios avancés pour les îlots XAML dans les applications Win32 C++](advanced-scenarios-xaml-islands-cpp.md)
+* [Scénarios avancés pour îlots XAML dans les applications Win32 C++](advanced-scenarios-xaml-islands-cpp.md)
 * [Exemples de code d’îlots XAML](https://github.com/microsoft/Xaml-Islands-Samples)

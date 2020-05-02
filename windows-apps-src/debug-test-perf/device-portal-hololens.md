@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp, portail d’appareil
 ms.localizationpriority: medium
 ms.openlocfilehash: 059ce14f85ebe7d955ba2da8897ab47109f74a72
-ms.sourcegitcommit: 1d6d05d28358e087d9ee8829d76c5fbbac0225cb
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "79401968"
 ---
 # <a name="device-portal-for-hololens"></a>Device Portal pour HoloLens

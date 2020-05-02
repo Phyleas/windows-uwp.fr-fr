@@ -7,10 +7,10 @@ keywords: contrat définissant les politiques du microsoft store
 ms.localizationpriority: high
 ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
 ms.openlocfilehash: a68247637395c3f68bf1140479bc94cb8e0fcc33
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "79209354"
 ---
 # <a name="microsoft-store-policies"></a>Politiques du Microsoft Store
@@ -379,7 +379,7 @@ Les produits qui émulent un système de jeu ne sont pas autorisés sur les fami
 
 **10.13.11**
 
-Les exigences de confidentialité suivantes s'appliquent aux données utilisateur Xbox Live :
+Les exigences de confidentialité suivantes s'appliquent aux données utilisateur Xbox Live : 
 - Les services et les données utilisateur sont uniquement destinés à votre utilisation dans votre jeu. Ne vendez pas, ne concédez pas sous licence et ne partagez pas de données obtenues auprès de nous ou de nos services. Si vous recevez des données personnelles des utilisateurs finaux via Xbox Live, vous contrôlez de manière indépendante ces données et vous devez disposer d’une déclaration (ou politique) de confidentialité en place auprès des utilisateurs finaux qui régisse l’utilisation des données personnelles, comme stipulé dans le Contrat du développeur de l’application. Nous vous recommandons d’inclure un lien vers votre déclaration de confidentialité sur votre site Web et sur les pages Microsoft Store pour vos jeux.
 - Les services et les données utilisateur doivent être utilisés de manière appropriée dans les jeux. Ces données incluent (sans limitation) les données d'utilisation, les identificateurs de compte et toutes autres données permettant de vous identifier personnellement, les statistiques, les scores, les évaluations, les classements, les connexions avec d'autres utilisateurs et toutes autres données relatives à l'activité sociale d'un utilisateur.
 - Ne stockez pas les données graphiques sociales Xbox Live (par exemple, des listes d’amis), à l’exception des identificateurs de compte pour les utilisateurs qui ont lié leur compte Xbox Live avec votre jeu.

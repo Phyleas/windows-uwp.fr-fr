@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp, certification des applications
 ms.localizationpriority: medium
 ms.openlocfilehash: 174ff4e588d75293ecb729312883f4792196c87a
-ms.sourcegitcommit: e978fadf1aaaa8d90501f67f50e5a61f60880d00
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/11/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "79110107"
 ---
 # <a name="windows-app-certification-kit"></a>Kit de certification des applications Windows

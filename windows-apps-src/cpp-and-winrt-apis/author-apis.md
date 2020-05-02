@@ -5,12 +5,12 @@ ms.date: 07/08/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projeté, projection, implémentation, implémenter, classe runtime, activation
 ms.localizationpriority: medium
-ms.openlocfilehash: 84c0e9315950541e51bf49f5c0eec370f3188c4d
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: fcdeaec3728306de420baa4a2aea06ef1952641e
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209274"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82255263"
 ---
 # <a name="author-apis-with-cwinrt"></a>Créer des API avec C++/WinRT
 
@@ -239,7 +239,7 @@ Nous avons vu que le workflow consiste à utiliser le fichier IDL pour déclarer
 Voici quelques exemples.
 
 - Vous pouvez assouplir les contraintes sur les types des paramètres. Par exemple, si dans le fichier IDL votre méthode prend une **SomeClass**, vous pouvez choisir de changer cela en **IInspectable** dans votre implémentation. Ceci fonctionne, car une **SomeClass** peut être transférée à **IInspectable** (bien sûr, l’inverse ne fonctionnerait pas).
-- Vous pouvez accepter un paramètre copiable par valeur, à la place d’un paramètre copiable par référence. Par exemple, changez `SomeClass` en `SomeClass const&`. Ceci est nécessaire quand vous devez éviter de capturer une référence dans une coroutine (consultez [Passage de paramètres](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing)).
+- Vous pouvez accepter un paramètre copiable par valeur, à la place d’un paramètre copiable par référence. Par exemple, changez `SomeClass const&` en `SomeClass`. Ceci est nécessaire quand vous devez éviter de capturer une référence dans une coroutine (consultez [Passage de paramètres](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing)).
 - Vous pouvez assouplir les contraintes sur la valeur de retour. Par exemple, vous pouvez changer **void** en [**winrt::fire_and_forget**](/uwp/cpp-ref-for-winrt/fire-and-forget).
 
 Les deux derniers sont très pratiques quand vous écrivez un gestionnaire d’événements asynchrones.

@@ -1,10 +1,10 @@
-- name: Docs
-  tocHref: /
-  topicHref: /
+- name: Windows
+  tocHref: /windows/
+  topicHref: /windows/
   items:
-    - name: Windows
-      tocHref: /windows/
-      topicHref: /windows/
+    - name: Applications
+      tocHref: /windows/apps/
+      topicHref: /windows/apps/
       items:
         - name: UWP
           tocHref: /windows/uwp/
@@ -13,7 +13,7 @@
             - name: Nouveautés
               tocHref: /windows/uwp/whats-new/
               topicHref: /windows/uwp/whats-new/windows-10-version-latest
-            - name: Prise en main
+            - name: Prendre en main
               tocHref: /windows/uwp/get-started/
               topicHref: /windows/uwp/get-started/
             - name: Conception et IU
@@ -41,7 +41,7 @@
                 - name: Entrée et interactions
                   tocHref: /windows/uwp/design/input/
                   topicHref: /windows/uwp/design/input/index
-                - name: Appareils
+                - name: Périphériques
                   tocHref: /windows/uwp/design/devices/
                   topicHref: /windows/uwp/design/devices/index
                 - name: Facilité d'utilisation
@@ -94,13 +94,13 @@
                 - name: 'Appareils, capteurs et alimentation'
                   tocHref: /windows/uwp/devices-sensors/
                   topicHref: /windows/uwp/devices-sensors/index
-                - name: Entreprise
+                - name: Enterprise
                   tocHref: /windows/uwp/enterprise/
                   topicHref: /windows/uwp/enterprise/index
                 - name: 'Fichiers, dossiers et bibliothèques'
                   tocHref: /windows/uwp/files/
                   topicHref: /windows/uwp/files/index
-                - name: Graphismes
+                - name: Graphiques
                   tocHref: /windows/uwp/graphics/
                   topicHref: /windows/uwp/graphics/index
                 - name: Applications web hébergées
@@ -158,7 +158,7 @@
               tocHref: /windows/uwp/gaming/
               topicHref: /windows/uwp/gaming/e2e
               items:
-                - name: "UWP sur Xbox\_One"
+                - name: UWP sur Xbox One
                   tocHref: /windows/uwp/xbox-apps/
                   topicHref: /windows/uwp/xbox-apps/index
                 - name: Programmation de jeux
@@ -170,7 +170,7 @@
                 - name: Guide d’apprentissage du graphisme Direct3D
                   tocHref: /windows/uwp/graphics-concepts/
                   topicHref: /windows/uwp/graphics-concepts/index
-                - name: "Xbox\_Live"
+                - name: Xbox Live
                   tocHref: /windows/uwp/xbox-live/
                   topicHref: /windows/uwp/xbox-live/index
             - name: Publier
