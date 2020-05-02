@@ -8,10 +8,10 @@ ms.author: jimwalk
 author: jwmsft
 ms.localizationpriority: medium
 ms.openlocfilehash: 9da9dee48beef6e3c1cd38ffbe9761ed89fd940d
-ms.sourcegitcommit: 93d0b2996b4742b33cd6d641e036f42672cf5238
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/23/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "69999641"
 ---
 # <a name="using-the-visual-layer-with-windows-forms"></a>Utilisation de la couche visuelle avec Windows Forms
@@ -20,7 +20,7 @@ Vous pouvez utiliser des API de composition Windows Runtime (également appelée
 
 Le code complet de ce tutoriel est disponible sur GitHub : [Exemple Windows Forms HelloComposition](https://github.com/Microsoft/Windows.UI.Composition-Win32-Samples/tree/master/dotnet/WinForms/HelloComposition).
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 L’API d’hébergement UWP est régie par les conditions préalables suivantes.
 
@@ -29,7 +29,7 @@ L’API d’hébergement UWP est régie par les conditions préalables suivantes
   - [Bien démarrer avec les applications Windows 10](/windows/uwp/get-started/)
   - [Améliorer votre application de bureau pour Windows 10](/windows/uwp/porting/desktop-to-uwp-enhance)
 - .NET Framework 4.7.2 ou version ultérieure
-- Windows 10, version 1803 ou ultérieure
+- Windows 10 version 1803 ou ultérieure
 - SDK Windows 10 17134 ou version ultérieure
 
 ## <a name="how-to-use-composition-apis-in-windows-forms"></a>Comment utiliser les API de composition dans Windows Forms
@@ -57,11 +57,11 @@ Pour utiliser des API d’exécution Windows (WinRT) dans votre application Wind
 
 Des packages NuGet sont disponibles pour répondre à ces deux besoins. Installez les dernières versions de ces packages pour ajouter les références nécessaires à votre projet.  
 
-- [Microsoft.Windows.SDK.Contracts](https://www.nuget.org/packages/Microsoft.Windows.SDK.Contracts) (nécessite le format de gestion de package par défaut défini sur PackageReference.)
+- [Microsoft.Windows.SDK.Contracts](https://www.nuget.org/packages/Microsoft.Windows.SDK.Contracts) (le format de gestion de package par défaut doit être défini sur PackageReference)
 - [System.Numerics.Vectors](https://www.nuget.org/packages/System.Numerics.Vectors/)
 
 > [!NOTE]
-> Bien que nous vous recommandions d’utiliser les packages NuGet pour configurer votre projet, vous pouvez ajouter les références requises manuellement. Pour plus d’informations, consultez [Améliorer votre application de bureau pour Windows 10](/windows/uwp/porting/desktop-to-uwp-enhance). Le tableau suivant répertorie les fichiers auxquels vous devez ajouter des références.
+> Nous vous recommandons d’utiliser les packages NuGet pour configurer votre projet, mais il est possible d’ajouter manuellement les références requises. Pour plus d’informations, consultez [Améliorer votre application de bureau pour Windows 10](/windows/uwp/porting/desktop-to-uwp-enhance). Le tableau ci-dessous liste les fichiers auxquels vous devez ajouter des références.
 
 |File|Emplacement|
 |--|--|
@@ -422,7 +422,7 @@ Pour un exemple plus complet qui s’appuie sur la même infrastructure, consult
 - [Interopération avec du code non managé](/dotnet/framework/interop/) (.NET)
 - [Bien démarrer avec les applications Windows 10](/windows/uwp/get-started/) (UWP)
 - [Améliorer votre application de bureau pour Windows 10](/windows/uwp/porting/desktop-to-uwp-enhance) (UWP)
-- [Windows.UI.Composition namespace](/uwp/api/windows.ui.composition) (UWP)
+- [Espace de noms Windows.UI.Composition](/uwp/api/windows.ui.composition) (UWP)
 
 ## <a name="complete-code"></a>Code complet
 

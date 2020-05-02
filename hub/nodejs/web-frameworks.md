@@ -9,10 +9,10 @@ keywords: NodeJS, Node.js, windows 10, microsoft, découvrir nodejs, node sur w
 ms.localizationpriority: medium
 ms.date: 09/19/2019
 ms.openlocfilehash: a8ce1d08136a74504e1b3bad26feadd61b72068f
-ms.sourcegitcommit: 60d2d15dd0d365f82e4e90e4bc34b40cf5b4a247
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "72517791"
 ---
 # <a name="get-started-with-nodejs-web-frameworks-on-windows"></a>Prise en main des infrastructures web Node.js sur Windows
@@ -25,8 +25,8 @@ Ce guide part du principe que vous avez déjà suivi les étapes de [configurati
 
 - Installer Windows 10 Insider Preview, build 18932 ou ultérieure.
 - Activez la fonctionnalité WSL 2 sur Windows.
-- Installez une distribution Linux (Ubuntu 18.04 dans les exemples). Pour le vérifier : `wsl lsb_release -a`
-- Assurez-vous que votre distribution Ubuntu 18.04 s’exécute en mode WSL 2. (WSL peut exécuter des distributions en mode v1 ou v2.) Pour le vérifier, ouvrez PowerShell et entrez : `wsl -l -v`
+- Installer une distribution Linux (Ubuntu 18.04 dans les exemples). Pour le vérifier, exécutez : `wsl lsb_release -a`.
+- Vérifier que votre distribution Ubuntu 18.04 s’exécute en mode WSL 2. (WSL peut exécuter les distributions en mode v1 ou v2.) Pour le vérifier, ouvrez PowerShell et entrez : `wsl -l -v`.
 - À l’aide de PowerShell, définissez Ubuntu 18.04 en tant que distribution par défaut, avec : `wsl -s ubuntu 18.04`
 
 ## <a name="get-started-with-nextjs"></a>Bien démarrer avec Next.js

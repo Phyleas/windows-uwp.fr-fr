@@ -9,10 +9,10 @@ ms.author: jimwalk
 author: jwmsft
 ms.localizationpriority: medium
 ms.openlocfilehash: c9b4ec38b0dd1f6eca3f43cfded74c6292c08100
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/24/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "66215188"
 ---
 # <a name="using-the-visual-layer-with-win32"></a>Utilisation de la couche visuelle avec Win32
@@ -383,7 +383,7 @@ Quand vous exécutez l’application et cliquez sur le bouton, vous devez voir l
 - [Bien démarrer avec Win32 et C++](/windows/desktop/learnwin32/learn-to-program-for-windows)
 - [Bien démarrer avec les applications Windows 10](/windows/uwp/get-started/) (UWP)
 - [Améliorer votre application de bureau pour Windows 10](/windows/uwp/porting/desktop-to-uwp-enhance) (UWP)
-- [Windows.UI.Composition namespace](/uwp/api/windows.ui.composition) (UWP)
+- [Espace de noms Windows.UI.Composition](/uwp/api/windows.ui.composition) (UWP)
 
 ## <a name="complete-code"></a>Code complet
 

@@ -9,10 +9,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a07fc5c669d3c9cd374a4a031fba2ee6ef6d5756
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74257286"
 ---
 # <a name="images-and-image-brushes"></a>Images et pinceaux image
@@ -44,7 +44,7 @@ Utilisez un élément **ImageBrush** pour appliquer une image à un autre objet.
 
 ## <a name="create-an-image"></a>Créer une image
 
-### <a name="image"></a>Image
+### <a name="image"></a>SE conteneur
 Cet exemple montre comment créer une image à l’aide de l’objet [Image](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image).
 
 
@@ -80,7 +80,7 @@ Voici l’objet Ellipse peint par l’objet ImageBrush.
 
 Si vous ne définissez pas les valeurs [Width](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.width) ou [Height](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.height) d’un objet **Image**, ce dernier est affiché avec les dimensions de l’image spécifiée par la propriété **Source**. Le fait de définir les valeurs **Width** et **Height** crée une zone rectangulaire dans laquelle l’image est affichée. Vous pouvez spécifier la façon dont l’image remplit cette zone à l’aide de la propriété [Stretch](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.stretch). La propriété Stretch accepte ces valeurs qui sont définies par l’énumération [Stretch](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Stretch) :
 
--   **Aucun** : L’image n’est pas étirée pour remplir les dimensions de sortie. Faites preuve de prudence avec le paramètre Stretch : si l’image source est plus grande que la zone qui doit la contenir, votre image sera découpée. Cela n’est pas généralement souhaitable car, contrairement à une propriété [Clip](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.clip) délibérée, vous n’avez aucun contrôle sur la fenêtre d’affichage.
+-   **Aucune** : L’image n’est pas étirée pour remplir les dimensions de sortie. Faites preuve de prudence avec le paramètre Stretch : si l’image source est plus grande que la zone qui doit la contenir, votre image sera découpée. Cela n’est pas généralement souhaitable car, contrairement à une propriété [Clip](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.clip) délibérée, vous n’avez aucun contrôle sur la fenêtre d’affichage.
 -   **Uniform** : L’image est mise à l’échelle afin de correspondre aux dimensions de sortie. Mais les proportions du contenu sont conservées. Il s'agit de la valeur par défaut.
 -   **UniformToFill** : L’image est mise à l’échelle de sorte qu’elle remplisse complètement la zone de sortie tout en conservant ses proportions d’origine.
 -   **Fill** : L’image est mise à l’échelle afin de correspondre aux dimensions de sortie. Étant donné que la hauteur et la largeur du contenu sont mises à l’échelle indépendamment, les dimensions d’origine de l’image risquent de ne pas être conservées. C’est-à-dire que l’image risque d’être déformée afin de remplir complètement la zone de sortie.

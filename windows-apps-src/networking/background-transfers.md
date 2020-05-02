@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d8a4c354eff34edb0c97e9d95828d4287f9c4b99
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/11/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "72282490"
 ---
 # <a name="background-transfers"></a>Transferts en arrière-plan
@@ -44,7 +44,7 @@ Bien que la fonctionnalité de transfert en arrière-plan possède ses propres m
 
 Le tableau suivant indique les moments où les transferts en arrière-plan sont autorisés sur le téléphone pour chaque valeur [**BackgroundTransferCostPolicy**](https://docs.microsoft.com/uwp/api/Windows.Networking.BackgroundTransfer.BackgroundTransferCostPolicy), en fonction de l’état actuel du téléphone. Vous pouvez utiliser la classe [**ConnectionCost**](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.ConnectionCost) pour déterminer l’état actuel du téléphone.
 
-| État de l’appareil                                                                                                                      | UnrestrictedOnly | Default | Always |
+| État de l’appareil                                                                                                                      | UnrestrictedOnly | Par défaut | Toujours |
 |-----------------------------------------------------------------------------------------------------------------------------------|------------------|---------|--------|
 | Connecté au Wi-Fi                                                                                                                 | Autoriser            | Autoriser   | Autoriser  |
 | Connexion limitée, pas d’itinérance, sous la limite de données, en bonne voie pour rester sous la limite                                                   | Refuser             | Autoriser   | Autoriser  |

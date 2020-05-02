@@ -9,10 +9,10 @@ keywords: NodeJS, Node.js, Windows 10, Microsoft, découvrir NodeJS, Node sur W
 ms.localizationpriority: medium
 ms.date: 09/19/2019
 ms.openlocfilehash: 63c47107538d8744201f83ea1be24cfaf3193f4f
-ms.sourcegitcommit: 60d2d15dd0d365f82e4e90e4bc34b40cf5b4a247
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "72517819"
 ---
 # <a name="get-started-using-mongodb-or-postgresql-with-nodejs-on-windows"></a>Bien démarrer avec MongoDB ou PostgreSQL à l’aide de Node.js sur Windows
@@ -21,10 +21,10 @@ Les applications Node.js doivent souvent conserver des données, ce qui peut se 
 
 ## <a name="prerequisites"></a>Prérequis
 
-Ce guide part du principe que vous avez déjà suivi les étapes de [configuration de votre environnement de développement Node.js avec WSL 2](./setup-on-wsl2.md), en particulier les suivantes :
+Ce guide part du principe que vous avez déjà suivi les étapes de [configuration de votre environnement de développement Node.js avec WSL 2](./setup-on-wsl2.md), y compris les étapes suivantes :
 
-- Installer la build 18932 ou une build ultérieure de Windows 10 Insider Preview.
-- Activer la fonctionnalité WSL 2 sur Windows.
+- Installer Windows 10 Insider Preview, build 18932 ou ultérieure.
+- Activez la fonctionnalité WSL 2 sur Windows.
 - Installer une distribution Linux (Ubuntu 18.04 dans les exemples). Pour le vérifier, exécutez : `wsl lsb_release -a`.
 - Vérifier que votre distribution Ubuntu 18.04 s’exécute en mode WSL 2. (WSL peut exécuter les distributions en mode v1 ou v2.) Pour le vérifier, ouvrez PowerShell et entrez : `wsl -l -v`.
 - À l’aide de PowerShell, définissez Ubuntu 18.04 comme distribution par défaut, avec : `wsl -s ubuntu 18.04`.

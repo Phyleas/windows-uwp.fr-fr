@@ -1,19 +1,19 @@
 ---
 ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
-title: Préparation
+title: Se préparer
 description: Se préparer est bien plus simple que vous l’imaginez. Suivez ces instructions et commencez à créer des applications de la plateforme Windows universelle (UWP) pour Windows 10.
 ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c95d915c8906e2052243fee509e260fc8864454
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74258370"
 ---
-# <a name="get-set-up"></a>Préparation
+# <a name="get-set-up"></a>Se préparer
 
 ![Préparez-vous à utiliser Visual Studio](images/VisualStudio2017Hero_ImageXL-LG.png)
 

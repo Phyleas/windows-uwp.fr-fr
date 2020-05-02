@@ -7,17 +7,17 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ecb511fad1aa4e1605d83090a5e4e8d98efff1be
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "63790653"
 ---
 # <a name="balancing-style-and-consistency"></a>Trouver un juste équilibre entre le style et la cohérence
 
  
 
-> Remarque: Cet article est une version préliminaire pour Windows 10 RS2. Les noms des fonctionnalités, la terminologie et les fonctionnalités sont sujets à des modifications.
+> Remarque : Cet article est une version préliminaire pour Windows 10 RS2. Les noms des fonctionnalités, la terminologie et les fonctionnalités sont sujets à des modifications.
 
 Quand vous concevez un produit, vous êtes le représentant du client. Nous souhaitons tous concevoir un modèle parfait, qui corresponde parfaitement à ce que nous avions imaginé. Cet article se penche sur l’équilibre entre les conventions suivantes, pour créer à la fois une expérience utilisateur cohérente et des fonctionnalités et expériences uniques, qui différencieront votre application. 
 

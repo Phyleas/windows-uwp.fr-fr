@@ -9,10 +9,10 @@ keywords: windows 10, uwp, windows forms, wpf, xaml islands, îles xaml
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
 ms.openlocfilehash: 830c1cdf2e24e716d51642bc65b5b6783d0d784a
-ms.sourcegitcommit: 6bb794c6e309ba543de6583d96627fbf1c177bef
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "69643372"
 ---
 # <a name="part-3-add-a-uwp-calendarview-control-using-xaml-islands"></a>Partie 3 : Ajouter un contrôle CalendarView UWP à l’aide d'îles XAML

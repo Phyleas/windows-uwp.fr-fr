@@ -13,10 +13,10 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d520f811c9929721bfcb9d1c83fbff6a4891091
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "63801114"
 ---
 # <a name="contextual-commanding-for-collections-and-lists"></a>Commandes contextuelles pour les collections et les listes
@@ -39,7 +39,7 @@ Ce tableau présente certaines commandes et certains modes de collection standar
 | ---------------- | -------------- | ----------------- | -------------------- | ----------------- |
 | Supprimer l’élément      | Menu contextuel   | Bouton sensitif      | Touche Suppr              | Balayer pour supprimer   |
 | Marquer l’élément        | Menu contextuel   | Bouton sensitif      | Ctrl + Maj + G         | Balayer pour marquer     |
-| Actualiser les données     | Menu contextuel   | N/A               | Touche F5               | Tirer pour actualiser   |
+| Actualiser les données     | Menu contextuel   | NON APPLICABLE               | Touche F5               | Tirer pour actualiser   |
 | Mettre un élément en favori | Menu contextuel   | Bouton sensitif      | F, Ctrl + S            | Balayer pour mettre en favori |
 
 
@@ -55,7 +55,7 @@ Ce tableau présente certaines commandes et certains modes de collection standar
 > [!NOTE]
 > Les utilisateurs doivent pouvoir accéder à toutes les commandes à partir de n’importe quel type d’appareil. Par exemple, si les commandes de votre application sont uniquement exposées via des accélérateurs de type pointeur (en pointant sur les boutons), les utilisateurs tactiles ne pourront pas y accéder. Utilisez au moins un menu contextuel pour donner accès à toutes les commandes.  
 
-## <a name="example-the-podcastobject-data-model"></a>Exemple : le modèle de données PodcastObject
+## <a name="example-the-podcastobject-data-model"></a>Exemple : le modèle de données PodcastObject
 
 Pour illustrer nos recommandations concernant les commandes, cet article crée une liste de podcasts pour une application de podcast. L’exemple de code montre comment permettre à l’utilisateur de « mettre en favori » un podcast dans une liste.
 
@@ -238,7 +238,7 @@ L’utilisateur peut appeler des menus contextuels à l’aide de ces « action
 | -------- | --------------------------------------- |
 | Souris    | Clic droit                             |
 | Clavier | Maj + F10, touche Menu                  |
-| Touch    | Appui long sur l’élément                      |
+| Toucher    | Appui long sur l’élément                      |
 | Stylet      | Appui sur le bouton du stylet, appui long sur l’élément |
 | Boîtier de commande  | Bouton Menu                             |
 

@@ -11,10 +11,10 @@ design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: b72d7fced63a4c3ef4b1b233afcbb9f9874d9a3f
-ms.sourcegitcommit: 81e29e66f0cb1e13c3daa3a239e4dcc4dd674a66
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "68796718"
 ---
 # <a name="content-links-in-text-controls"></a>Liens de contenu dans les contrôles de texte
@@ -48,7 +48,7 @@ Les différences d’utilisation, de rendu et de comportement sont traitées en 
 | --------- | ----------- | ---------- |
 | Utilisation | Instance ContentLinkInfo | Élément de texte ContentLink |
 | Curseur | Déterminé par type de lien de contenu, ne peut pas être modifié | Déterminé par la propriété Cursor, **null** par défaut |
-| ToolTip | Pas de rendu | Affiche un texte secondaire |
+| Info-bulle | Pas de rendu | Affiche un texte secondaire |
 
 ## <a name="enable-content-links-in-a-richeditbox"></a>Activer les liens de contenu dans un contrôle RichEditBox
 

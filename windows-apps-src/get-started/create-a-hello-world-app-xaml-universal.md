@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp, première application, hello world
 ms.localizationpriority: medium
 ms.openlocfilehash: 93c78845a218620a8a46fc4439733734099b9853
-ms.sourcegitcommit: 13ce25364201223e21e2e5e89f99bc7aa4d93f56
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "73847602"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>Créer une application « Hello World » (XAML)
@@ -38,7 +38,7 @@ Vous allez apprendre à effectuer les opérations suivantes :
 
 > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Writing-Your-First-Windows-10-App/player]
 
-## <a name="step-1-create-a-new-project-in-visual-studio"></a>Étape 1 : Créer un projet dans Visual Studio.
+## <a name="step-1-create-a-new-project-in-visual-studio"></a>Étape 1 : Créer un projet dans Visual Studio.
 
 1.  Ouvrez Visual Studio.
 

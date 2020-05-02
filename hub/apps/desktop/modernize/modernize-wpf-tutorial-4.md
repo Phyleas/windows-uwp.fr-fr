@@ -9,10 +9,10 @@ keywords: windows 10, uwp, windows forms, wpf, xaml islands, îles xaml
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
 ms.openlocfilehash: 8443ac25ba678986046b967a90a8899eaffb76aa
-ms.sourcegitcommit: 1eec0e4fd8a5ba82803fdce6e23fcd01b9488523
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/27/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "67420124"
 ---
 # <a name="part-4-add-windows-10-user-activities-and-notifications"></a>Partie 4 : Ajouter des activités et des notifications utilisateur Windows 10

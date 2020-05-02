@@ -8,10 +8,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 15984e00b036bf44d6e4a7f60cb6435ea1add291
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "63808715"
 ---
 # <a name="thumbnail-images"></a>Images miniatures
@@ -100,7 +100,7 @@ Voici quelques exemples illustrant comment des images miniatures récupérées d
 <th>En cas de récupération à l'aide de : <ul><li>SingleItem</ul></th>
 <tr>
 <tr>
-<td>Picture</td>
+<td>Image</td>
 <td>L'image miniature utilise les proportions d'origine du fichier. <br />
 <img src="images/thumbnail-pic-picvidmode.png" alt="Picture thumbnail in picture or video mode"/></td>
 <td>La miniature est rognée pour être dotée de proportions carrées. <br />
@@ -109,7 +109,7 @@ Voici quelques exemples illustrant comment des images miniatures récupérées d
 <img src="images/thumbnail-pic-single-mode.png" alt="Picture thumbnail in single mode"/> </td>
 </tr>
 <tr>
-<td>Video</td>
+<td>Vidéo</td>
 <td>La miniature est dotée d'une icône qui la différencie des images. <br />
 <img src="images/thumbnail-vid-picvid-modes.png" alt="Video thumbnail in picture or video mode"/></td>
 <td>La miniature est rognée pour être dotée de proportions carrées. <br />

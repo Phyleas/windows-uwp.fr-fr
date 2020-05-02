@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a161a5e26bd647a37b06a270ef6714d54bc16d80
-ms.sourcegitcommit: ac9fb37fe58cc728df2fa0495e36ee4d7b811a23
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/25/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74467412"
 ---
 # <a name="create-a-hello-world-app-js"></a>Créer une application « Hello World » (JS)
@@ -35,7 +35,7 @@ Dans cet article, vous allez apprendre à :
 -   Pour suivre ce didacticiel, vous avez besoin de Windows 10 et de Visual Studio. [Se préparer](get-set-up.md).
 -   Nous partons également du principe que vous utilisez la disposition de fenêtre par défaut de Visual Studio. Si vous modifiez la disposition par défaut, vous pouvez la réinitialiser dans le menu **Fenêtre** en choisissant la commande **Rétablir la disposition de fenêtre**.
 
-## <a name="step-1-create-a-new-project-in-visual-studio"></a>Étape 1 : Créer un projet dans Visual Studio.
+## <a name="step-1-create-a-new-project-in-visual-studio"></a>Étape 1 : Créer un projet dans Visual Studio.
 
 1.  Lancez Visual Studio 2017.
 

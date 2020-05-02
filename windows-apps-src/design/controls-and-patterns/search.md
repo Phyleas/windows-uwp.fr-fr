@@ -12,10 +12,10 @@ design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c6eb22fbe0488fa9a36160ce9e704d10727e4c9
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "66364480"
 ---
 # <a name="search-and-find-in-page"></a>Recherche et recherche dans la page
@@ -49,7 +49,7 @@ Vous pouvez faciliter l’accès aux fonctions de modification de la dernière r
 
 L’affichage du jeu de résultats peut prendre différentes formes en fonction du contenu. Le [mode Liste](lists.md) offre une grande flexibilité et convient parfaitement à la plupart des recherches. Le mode Grille fonctionne bien pour les images ou les autres contenus multimédias. Vous pouvez utiliser une carte pour indiquer la distribution spatiale.
 
-## <a name="search-scopes"></a>Zones de recherche
+## <a name="search-scopes"></a>l’étendue des recherches ;
 
 
 La fonction recherche est d’utilisation. Les interfaces utilisateur de recherche sont intégrées à l’interpréteur de commandes et à de nombreuses applications. Bien que les points d’entrée de recherche présentent généralement un aspect similaire, ils permettent d’obtenir des résultats aussi larges (recherche sur le web ou sur un périphérique) que précis (liste de contacts d’un utilisateur). Le point d’entrée de recherche doit être juxtaposé au contenu en cours de recherche.
@@ -62,7 +62,7 @@ Voici quelques exemples d’étendues de recherche courantes :
 
 **Mes sélections.**   Rechercher des informations sur plusieurs appareils, dans le cloud, dans des graphes sociaux et plus encore. Les résultats sont différents, mais sont limités par le lien aux comptes d’utilisateur.
 
-Utilisez un texte d’information afin d’indiquer l’étendue de la recherche. Par exemple :
+Utilisez un texte d’information afin d’indiquer l’étendue de la recherche. Exemples :
 
 « Rechercher sur Windows et sur le Web »
 

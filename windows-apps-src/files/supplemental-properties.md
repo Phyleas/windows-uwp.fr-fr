@@ -6,10 +6,10 @@ ms.topic: article
 keywords: windows 10, uwp, API WinRT, indexation, recherche, uwp
 localizationpriority: medium
 ms.openlocfilehash: 2a77bfc37d853efd28bde9bc3043d072888822f2
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "66369266"
 ---
 # <a name="using-supplemental-properties"></a>Utilisation des propriétés supplémentaires  
@@ -41,7 +41,7 @@ Les propriétés supplémentaires se comportent de la même manière que les pro
 
 Une fois écrite, la propriété peut être recherchée, filtrée, triée ou regroupée comme n’importe quelle autre propriété du système. Elle peut également être utilisée dans des requêtes combinées avec d’autres propriétés du système, qu’elles soient supplémentaires ou standards. Cela vous donne l’avantage de combiner aisément des propriétés supplémentaires avec le code de votre système de fichiers existant sans avoir à le réécrire.  
 
-### <a name="example-scenarios"></a>Exemples de scénario 
+### <a name="example-scenarios"></a>Exemples de scénarios 
 
 Il existe des milliers de propriétés différentes que vous pourriez écrire dans une propriété supplémentaire, mais, pour des raisons pratiques, ce didacticiel aborde les scénarios clés suivants :  
 

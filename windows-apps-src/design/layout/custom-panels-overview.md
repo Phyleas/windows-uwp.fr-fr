@@ -13,10 +13,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 74d6d357cfd632c4adc04aed15c9e37aca9eaedb
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "71340085"
 ---
 # <a name="xaml-custom-panels-overview"></a>Vue d’ensemble des panneaux personnalisés XAML
@@ -192,7 +192,7 @@ D’autres API font partie du système de disposition mais ne sont pas déclaré
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-**Référence**
+**Informations de référence**
 * [**FrameworkElement.ArrangeOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride)
 * [**FrameworkElement.MeasureOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.measureoverride)
 * [**Panel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel)

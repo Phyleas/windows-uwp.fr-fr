@@ -6,15 +6,15 @@ ms.date: 11/02/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: c54321d1d9db95a33d2de6363a79d93243c07d1f
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74258888"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-16299"></a>Nouveautés de Windows 10 pour les développeurs, build 16299
 
-Windows 10, build 16299 (également appelé Fall Creators Update ou version 1709), en combinaison avec Visual Studio 2019 et le SDK mis à jour, fournit des outils, des fonctionnalités et une expérience propres à produire des applications remarquables dédiées à la plateforme Windows universelle. [Installez les outils et le kit de développement logiciel (SDK)](https://developer.microsoft.com/windows/downloads#_blank) sur Windows 10 et vous pourrez ainsi [créer une application universelle Windows](../get-started/create-uwp-apps.md) ou explorer la procédure permettant d’utiliser votre [code d’application existant sur Windows](../porting/index.md).
+Windows 10, build 16299 (également appelé Fall Creators Update ou version 1709), en combinaison avec Visual Studio 2019 et le SDK mis à jour, fournit des outils, des fonctionnalités et une expérience propres à produire des applications remarquables dédiées à la plateforme Windows universelle. [Installez les outils et le SDK](https://developer.microsoft.com/windows/downloads#_blank) sur Windows 10, et vous pourrez ainsi [créer une application Windows universelle](../get-started/create-uwp-apps.md) ou découvrir comment vous pouvez utiliser votre [code d’application existant sur Windows](../porting/index.md).
 
 Voici une collection des fonctionnalités nouvelles et améliorées de cette version, accompagnée d’instructions, susceptibles d’intéresser les développeurs Windows. Pour obtenir une liste complète des nouveaux espaces de noms ajoutés au kit de développement logiciel (SDK) Windows, consultez [Modifications apportées aux API de Windows 10 build 16299](windows-10-build-16299-api-diff.md). Pour en savoir plus sur les fonctionnalités phares de Windows 10, consultez [Nouveautés intéressantes de Windows 10](https://developer.microsoft.com/windows/windows-10-for-developers). Consultez également [Fonctionnalités de la plateforme de développement Windows](https://developer.microsoft.com/windows/platform/features) pour bénéficier d’une vue d’ensemble des ajouts passés et futurs relatifs à la plateforme Windows.
 
@@ -43,9 +43,9 @@ Informations sur l’appareil de jeu | En raison des différentes fonctionnalit�
 Mode jeu | Les API [Mode Jeu](https://docs.microsoft.com/previous-versions/windows/desktop/gamemode/game-mode-portal) pour la plateforme Windows universelle (UWP) vous permettent de créer une expérience de jeu optimale, en tirant parti du mode jeu de Windows 10. Ces API sont situées dans l’en-tête **&lt;expandedresources.h&gt;** .
 Analyse du jeu | La [classe GameMonitor](https://docs.microsoft.com/uwp/api/windows.gaming.ui.gamemonitor) permet à une application d’obtenir l’état d’autorisation d’analyse du jeu de l’appareil et, potentiellement, invite l’utilisateur à activer l’analyse du jeu.
 TruePlay | [TruePlay](https://docs.microsoft.com/previous-versions//mt808781(v=vs.85)?redirectedfrom=MSDN) fournit aux développeurs un nouvel ensemble d’outils pour lutter contre la tricherie dans leurs jeux sur PC. Un jeu inscrit dans TruePlay s’exécute au sein d’un processus protégé, ce qui réduit la probabilité d’une classe d’attaques courantes. Les API TruePlay pour la plateforme Windows universelle (UWP) autorisent des interactions limitées entre les jeux et le système de surveillance de jeu sur les PC Windows 10. Ces API sont situées dans l’en-tête **&lt;gamemonitor.h&gt;** .
-Xbox Live | Nous avons ajouté de la documentation pour les développeurs Xbox Live, à la fois pour les jeux du Kit de développement Xbox (XDK) et de la plateforme Windows universelle (UWP). </br>* Consultez le [Guide du développeur Xbox Live](https://docs.microsoft.com/gaming/xbox-live/index.md) pour savoir comment utiliser les API Xbox Live afin de connecter votre jeu au réseau social de jeux Xbox Live. </br>Avec le [Programme Créateurs Xbox Live](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md), tout développeur de jeux UWP peut développer et publier un jeu Xbox Live à la fois sur PC et sur Xbox One. </br>Consultez la [Vue d’ensemble du programme pour les développeurs Xbox Live](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md) pour plus d’informations sur les programmes et les fonctionnalités disponibles pour les développeurs Xbox Live.
+Xbox Live | Nous avons ajouté de la documentation pour les développeurs Xbox Live, à la fois pour les jeux du Kit de développement Xbox (XDK) et de la plateforme Windows universelle (UWP). </br>* Consultez le [Guide du développeur Xbox Live](https://docs.microsoft.com/gaming/xbox-live/index.md) pour savoir comment utiliser les API Xbox Live afin de connecter votre jeu au réseau social de jeux Xbox Live. </br>Avec le [Programme Créateurs Xbox Live](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md), tout développeur de jeux UWP peut développer et publier un jeu Xbox Live à la fois sur PC et sur Xbox One. </br>Consultez la [Vue d’ensemble du programme pour les développeurs Xbox Live](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md) pour plus d’informations sur les programmes et les fonctionnalités disponibles pour les développeurs Xbox Live.
 
-## <a name="develop-windows-apps"></a>Développer des applications Windows
+## <a name="develop-windows-apps"></a>Développer des applications Windows
 
 Fonctionnalité | Description
  :------ | :------
@@ -86,7 +86,7 @@ Descriptions dans le Windows Store | Les descriptions dans le Store ont été am
 API de soumission | L’[API de soumission au Microsoft Store](../monetize/create-and-manage-submissions-using-windows-store-services.md) vous permet désormais d’inclure des [bandes-annonces vidéo](../monetize/manage-app-submissions.md#trailer-object) et des [options de jeu](../monetize/manage-app-submissions.md#gaming-options-object) avec vos soumissions d’applications.
 Offres ciblées | Les [offres ciblées](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md) vous permettent de cibler des segments de clients spécifiques avec un contenu attractif et personnalisé pour augmenter l’engagement, la rétention et la monétisation.
 
-## <a name="samples"></a>Exemples
+## <a name="samples"></a>exemples
 
 ### <a name="lunch-scheduler"></a>Planificateur de déjeuners
 

@@ -7,10 +7,10 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: cb2aef514c8787b5afe11ea5a2818012bfdf2f41
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/11/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "72282426"
 ---
 # <a name="typography"></a>Typographie
@@ -218,7 +218,7 @@ Utilisez les API de [mappage de police LanguageFont](https://docs.microsoft.com/
 </tbody>
 </table>
 
-## <a name="fonts"></a>Polices
+## <a name="fonts"></a>Fonts
 
 ### <a name="sans-serif-fonts"></a>Polices sans-serif
 
