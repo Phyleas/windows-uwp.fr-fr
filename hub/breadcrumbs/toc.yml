@@ -1,40 +1,58 @@
-- name: Docs
-  tocHref: /
-  topicHref: /
+- name: Windows
+  tocHref: /windows/
+  topicHref: /windows/
   items:
-    - name: Windows
-      tocHref: /windows/
-      topicHref: /windows/
+    - name: Applications
+      tocHref: /windows/apps/
+      topicHref: /windows/apps/
       items:
-        - name: Applications
-          tocHref: /windows/apps/
-          topicHref: /windows/apps/
+        - name: Créer des applications de bureau
+          tocHref: /windows/apps/desktop/
+          topicHref: /windows/apps/desktop/
+        - name: Moderniser les applications de bureau
+          tocHref: /windows/apps/desktop/modernize/
+          topicHref: /windows/apps/desktop/modernize/
           items:
-            - name: Créer des applications de bureau
-              tocHref: /windows/apps/desktop/
-              topicHref: /windows/apps/desktop/
-            - name: Moderniser les applications de bureau
-              tocHref: /windows/apps/desktop/modernize/
-              topicHref: /windows/apps/desktop/modernize/
-            - name: .NET TraceProcessing
-              tocHref: /windows/apps/trace-processing/
-              topicHref: /windows/apps/trace-processing/overview
-        - name: Environnement de développement
-          tocHref: /windows/dev-environment/
-          topicHref: /windows/dev-environment/
-          items:
-            - name: Python
-              tocHref: /windows/python/
-              topicHref: /windows/python/
-            - name: Node.js
-              tocHref: /windows/nodejs/
-              topicHref: /windows/nodejs/
-            - name: De Mac à Windows
-              tocHref: /windows/dev-environment/mac-to-windows/
-              topicHref: /windows/dev-environment/mac-to-windows/
-            - name: Environnement de développement
-              tocHref: /windows/dev-environment/wsl
-              topicHref: /windows/wsl/about
-            - name: Environnement de développement
-              tocHref: /windows/dev-environment/wsl
-              topicHref: /windows/wsl/wsl2-about
+            - name: Appeler des API Windows Runtime
+              topicHref: /windows/apps/desktop/modernize/desktop-to-uwp-enhance
+            - name: XAML Islands
+              topicHref: /windows/apps/desktop/modernize/xaml-islands
+            - name: Couche visuelle
+              topicHref: /windows/apps/desktop/modernize/visual-layer-in-desktop-apps
+            - name: Fonctionnalités nécessitant l’identité du package
+              topicHref: /windows/apps/desktop/modernize/modernize-packaged-apps
+            - name: "Tutoriel\_: Moderniser une application WPF"
+              topicHref: /windows/apps/desktop/modernize/modernize-wpf-tutorial
+        - name: .NET TraceProcessing
+          tocHref: /windows/apps/trace-processing/
+          topicHref: /windows/apps/trace-processing/overview
+        - name: "Développer pour Windows\_10X"
+          topicHref: /windows/apps/10x/faq
+        - name: Système Fluent Design
+          topicHref: /windows/apps/fluent-design-system
+        - name: Accessibilité
+          topicHref: /windows/apps/accessibility
+        - name: Voix
+          topicHref: /windows/apps/speech
+        - name: Fonctionnalités et technologies
+          topicHref: /windows/apps/features-and-technologies
+        - name: Dernières mises à jour de la documentation
+          topicHref: /windows/apps/whats-new/latest-doc-updates
+    - name: Environnement de développement
+      tocHref: /windows/dev-environment/
+      topicHref: /windows/dev-environment/
+      items:
+        - name: Python
+          tocHref: /windows/python/
+          topicHref: /windows/python
+        - name: Node.js
+          tocHref: /windows/nodejs/
+          topicHref: /windows/nodejs
+        - name: Android
+          tocHref: /windows/android/
+          topicHref: /windows/android/overview
+        - name: De Mac à Windows
+          topicHref: /windows/dev-environment/mac-to-windows
+        - name: Sous-système Windows pour Linux
+          tocHref: /windows/dev-environment/wsl
+          topicHref: /windows/wsl/about

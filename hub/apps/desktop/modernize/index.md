@@ -6,12 +6,12 @@ ms.date: 04/17/2019
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c86290c9765eba5186e777f8de7b3b86967be9e
-ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
+ms.openlocfilehash: b966d00455bce390457e148c60b57296375ac2fa
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77521340"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82730240"
 ---
 # <a name="modernize-your-desktop-apps"></a>Moderniser vos applications de bureau
 
@@ -36,11 +36,11 @@ Pour plus d’informations, consultez [Empaqueter des applications de bureau](/w
 
 Pour plus d’informations, consultez [Nouveautés de .NET Core 3.0](https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0).
 
-## <a name="uwp-apis"></a>API UWP
+## <a name="windows-runtime-apis"></a>API Windows Runtime
 
-Vous pouvez appeler de nombreuses API UWP directement dans votre application de bureau WPF, Windows Forms ou Win32 C++ afin d’apporter aux utilisateurs de Windows 10 des expériences modernes. Par exemple, vous pouvez appeler des API UWP pour ajouter des notifications toast à votre application de bureau.
+Vous pouvez appeler de nombreuses API Windows Runtime directement dans votre application de bureau WPF, Windows Forms ou Win32 C++ afin d’apporter aux utilisateurs de Windows 10 des expériences modernes. Par exemple, vous pouvez appeler des API Windows Runtime pour ajouter des notifications toast à votre application de bureau.
 
-Pour plus d’informations, consultez [Utiliser des API UWP dans les applications de bureau](desktop-to-uwp-enhance.md).
+Pour plus d’informations, consultez [Utiliser des API Windows Runtime dans les applications de bureau](desktop-to-uwp-enhance.md).
 
 ## <a name="host-uwp-controls-xaml-islands"></a>Héberger des contrôles UWP (XAML Islands)
 
@@ -50,18 +50,18 @@ Pour plus d’informations, consultez [Contrôles UWP dans les applications de b
 
 ## <a name="use-the-visual-layer-in-desktop-apps"></a>Utiliser la couche Visuel dans les applications de bureau
 
-Vous pouvez maintenant utiliser des API UWP dans des applications de bureau non conçues pour UWP. Ces API vous permettent d’améliorer l’apparence, le comportement et les fonctionnalités de vos applications WPF, Windows Forms et Win32 C++, mais aussi de bénéficier des toutes dernières fonctionnalités d’interface utilisateur de Windows 10 qui sont disponibles uniquement par le biais d’UWP. C’est utile pour créer des expériences utilisateur personnalisées plus avancées que les contrôles UWP intégrés que vous pouvez héberger en utilisant XAML Islands.
+Vous pouvez maintenant utiliser des API Windows Runtime dans des applications de bureau non conçues pour UWP. Ces API vous permettent d’améliorer l’apparence, le comportement et les fonctionnalités de vos applications WPF, Windows Forms et Win32 C++, mais aussi de bénéficier des toutes dernières fonctionnalités d’interface utilisateur de Windows 10 qui sont disponibles uniquement par le biais d’UWP. C’est utile pour créer des expériences utilisateur personnalisées plus avancées que les contrôles UWP intégrés que vous pouvez héberger en utilisant XAML Islands.
 
 Pour plus d’informations, consultez [Moderniser votre application de bureau à l’aide de la couche Visuel](visual-layer-in-desktop-apps.md).
 
 ## <a name="additional-features-available-to-apps-with-package-identity"></a>Fonctionnalités supplémentaires disponibles pour les applications avec une identité de package
 
-Certaines expériences Windows 10 modernes sont uniquement offertes dans les applications de bureau qui ont une [identité de package](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity). Ces fonctionnalités incluent certaines API UWP, extensions de package et composants UWP. Pour plus d’informations, consultez [Fonctionnalités nécessitant l’identité du package](modernize-packaged-apps.md).
+Certaines expériences Windows 10 modernes sont uniquement offertes dans les applications de bureau qui ont une [identité de package](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity). Ces fonctionnalités incluent certaines API Windows Runtime, extensions de package et composants UWP. Pour plus d’informations, consultez [Fonctionnalités nécessitant l’identité du package](modernize-packaged-apps.md).
 
 Il existe plusieurs façons d’accorder une identité à une application de bureau :
 
 * Empaquetez-la dans un package [MSIX](/windows/msix/desktop/desktop-to-uwp-root). MSIX est un format de package d’application moderne qui permet de créer des packages universels pour toutes les applications Windows, WPF, Windows Forms et Win32. Il offre une expérience d’installation et de mise à jour fiable, un modèle de sécurité managé avec un système de capacité flexible, une prise en charge du Microsoft Store, une gestion d’entreprise et de nombreux modèles de distribution personnalisés. Pour plus d’informations, consultez [Empaqueter des applications de bureau](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root) dans la documentation MSIX.
-* Si vous ne parvenez pas à adopter l’empaquetage MSIX pour le déploiement de votre application de bureau, à compter de Windows 10 Insider Preview Build 10.0.19000.0, vous pouvez accorder une identité de package en créant un *package MSIX partiel* contenant uniquement un manifeste de package. Pour plus d’informations, consultez [Accorder une identité à des applications de bureau non empaquetées](grant-identity-to-nonpackaged-apps.md).
+* Si vous ne parvenez pas à adopter l’empaquetage MSIX pour le déploiement de votre application de bureau, à compter de Windows 10 version 2004, vous pouvez accorder une identité de package en créant un *package MSIX partiel* contenant uniquement un manifeste de package. Pour plus d’informations, consultez [Accorder une identité à des applications de bureau non empaquetées](grant-identity-to-nonpackaged-apps.md).
 
 <a id="desktop-uwp-controls"/>
 

@@ -1,5 +1,5 @@
 ### YamlMime:Landing
-title: Créer avec Windows
+title: Environnement de développement Windows
 summary: Configurez votre environnement de développement pour que celui-ci fonctionne avec Python, Node.js, le sous-système Windows pour Linux, le Terminal Windows, Docker, MongoDB, PostgreSQL et plus encore.
 metadata:
   author: mattwojo
@@ -9,12 +9,12 @@ metadata:
   ms.date: 09/15/2019
   ms.prod: dev-environment
   ms.topic: landing-page
-  ms.openlocfilehash: aaeb8b3818baf9b02d767222c2144a9066079362
-  ms.sourcegitcommit: 860e8303da3e36624f603ce3273d68911c696e5d
+  ms.openlocfilehash: 62e4cc8c5788780988b79d079ff4a6834a525a51
+  ms.sourcegitcommit: 0808a2719c007b3d7f55714e197ad080a1631a57
   ms.translationtype: HT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 10/22/2019
-  ms.locfileid: "72777278"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82630636"
 landingContent:
 - title: Bien démarrer avec Python
   linkLists:
@@ -42,9 +42,9 @@ landingContent:
       url: ../python/web-frameworks.md#hello-world-tutorial-for-django
   - linkListType: reference
     links:
-    - text: FAQ
+    - text: Foire aux questions
       url: ../python/faqs.md
-    - text: Ressources complémentaires
+    - text: Ressources supplémentaires
       url: ../python/resources.md
 - title: Bien démarrer avec Node.js
   linkLists:
@@ -72,6 +72,34 @@ landingContent:
       url: ../nodejs/web-frameworks.md#get-started-with-nuxtjs
     - text: Configurer une application web avec Gatsby.js
       url: ../nodejs/web-frameworks.md#get-started-with-gatsbyjs
+- title: Bien démarrer avec Android
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Vue d’ensemble du développement Android sur Windows
+      url: ../android/overview.md
+    - text: Comparatif des frameworks multiplateformes pour Android
+      url: ../android/overview.md#cross-platform
+  - linkListType: get-started
+    links:
+    - text: Android natif
+      url: ../android/overview.md#native-android
+    - text: Xamarin.Android
+      url: ../android/xamarin-android.md
+    - text: Xamarin.Forms
+      url: ../android/xamarin-forms.md
+    - text: React Native
+      url: ../android/react-native.md
+    - text: PWA (Cordova, Ionic, PhoneGap)
+      url: ../android/pwa.md
+    - text: Développement de jeux
+      url: ../android/overview.md#game-development
+  - linkListType: concept
+    links:
+    - text: Test sur un appareil ou un émulateur Android
+      url: ../android/emulator.md
+    - text: Mettre à jour les paramètres Windows Defender pour améliorer les performances
+      url: ../android/defender-settings.md
 - title: Sous-système Windows pour Linux (WSL)
   linkLists:
   - linkListType: overview
