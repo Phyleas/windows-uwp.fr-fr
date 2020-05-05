@@ -9,15 +9,15 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 0808b5173f697fcca8d5e117f857d3861c327ae3
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74258121"
 ---
 #  <a name="ui-considerations-for-uwp-devices"></a>Considérations relatives à l’interface utilisateur des appareils UWP
 
-![Appareils](../images/devices-2x.png)
+![.](../images/devices-2x.png)
 
 Une bonne connaissance des appareils qui prennent en charge les applications UWP peut vous aider à offrir la meilleure expérience utilisateur pour chaque facteur de forme.
 
@@ -118,7 +118,7 @@ Considérations relatives à l’interface utilisateur
 
 Entrées
 - Boîtier de commande (tel qu’une manette Xbox)
-- Remote
+- À distance
 - Voix (parfois, si l’utilisateur a un Kinect ou un casque)
 
 Fonctionnalités de l’appareil type

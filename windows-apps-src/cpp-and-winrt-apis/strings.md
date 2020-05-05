@@ -6,10 +6,10 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, chaîne
 ms.localizationpriority: medium
 ms.openlocfilehash: 1771c3754e8e9580514f646ae8589b1982911fc7
-ms.sourcegitcommit: eb24481869d19704dd7bcf34e5d9f6a9be912670
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "79448565"
 ---
 # <a name="string-handling-in-cwinrt"></a>Gestion des chaînes en C++/WinRT
@@ -60,7 +60,7 @@ public:
     winrt::hstring Domain();
 ```
 
-Mais, là encore, vous devez prendre conscience que ce détail est optionnel grâce à l’[opérateur de conversion vers **std::wstring_view**](/uwp/cpp-ref-for-winrt/hstring#hstringoperator-stdwstring_view) de **hstring**.
+Mais, là encore, vous devez prendre conscience que ce détail est optionnel grâce à l’**opérateur de conversion vers** std::wstring_view[**de**hstring](/uwp/cpp-ref-for-winrt/hstring#hstringoperator-stdwstring_view).
 
 ```cppwinrt
 // Access a property of type hstring, via a conversion operator to a standard type.
@@ -137,7 +137,7 @@ Un **hstring** étant une plage, vous pouvez l’utiliser avec `for` basé sur l
 
 Nous reconnaissons que de nombreuses bibliothèques C++ utilisent **std::string** et fonctionnent exclusivement avec du texte UTF-8. Pour votre commodité, nous fournissons des programmes d’assistance, tels que [**winrt::to_string**](/uwp/cpp-ref-for-winrt/to-string) et [**winrt::to_hstring**](/uwp/cpp-ref-for-winrt/to-hstring), pour la conversion arrière et dans les deux sens.
 
-`WINRT_ASSERT` est une définition de macro, qui se développe en [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros).
+`WINRT_ASSERT` est une définition de macro qui s’étend à [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros).
 
 ```cppwinrt
 winrt::hstring w{ L"Hello, World!" };

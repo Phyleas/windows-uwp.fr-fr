@@ -3,13 +3,13 @@ title: Mise en page pour les applications UWP
 description: Lors de la conception de votre application, la première chose à prendre en compte est la structure de la disposition. Cet article présente la structure commune des mises en page de base, à savoir les éléments d’interface utilisateur dont vous aurez besoin et leur emplacement sur une page. Dans les applications UWP, chaque page comporte généralement des éléments de navigation, de commande et de contenu.
 ms.date: 03/19/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 localizationpriority: medium
 ms.openlocfilehash: 7333cebc945715412e3ff1140ca26e1ed5368704
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75684547"
 ---
 # <a name="page-layout"></a>Mise en page
@@ -73,7 +73,7 @@ Enfin, le contenu varie considérablement d’une application à l’autre, ce q
 
 Les pages d’accueil, également connues sous le nom d’écrans bannière, apparaissent souvent au niveau supérieur d’une expérience d’application. La grande surface sert à exposer les applications, et plus particulièrement à mettre en avant le contenu que les utilisateurs peuvent vouloir parcourir et utiliser.
 
-## <a name="collections"></a>Regroupements
+## <a name="collections"></a>Collections
 
 ![galerie](images/gridview.svg)
 

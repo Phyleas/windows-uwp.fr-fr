@@ -1,19 +1,19 @@
 ---
 ms.assetid: 4e8cc0c0-b14c-472c-9e1c-4601d10289d2
 description: Le kit SDK Windows, le kit SDK Microsoft Advertising, le kit Microsoft Store Services SDK et le Microsoft Store fournissent de nombreuses fonctionnalités qui vous permettent de générer davantage de revenus avec vos applications et de conquérir des clients en engageant les utilisateurs.
-title: Monétisation, engagement et services du Store
+title: Monétisation, implication et services du Store
 ms.date: 11/29/2017
 ms.topic: article
 keywords: windows 10, uwp, monétiser, engager, promouvoir, services du Store
 ms.localizationpriority: medium
 ms.openlocfilehash: 7beee974bceceab02984ae6499a9c5db0b0281b9
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74259299"
 ---
-# <a name="monetization-engagement-and-store-services"></a>Monétisation, engagement et services du Store
+# <a name="monetization-engagement-and-store-services"></a>Monétisation, implication et services du Store
 
 Le kit SDK Windows, le kit SDK Microsoft Advertising, le kit Microsoft Store Services SDK et le Microsoft Store fournissent des fonctionnalités qui vous permettent de générer davantage de revenus avec vos applications et de conquérir des clients en engageant les utilisateurs. Les rubriques de cette section indiquent comment générer ces fonctionnalités dans votre application.
 
@@ -94,7 +94,7 @@ Optimisez les revenus publicitaires dans vos applications grâce au service de m
         ![Analyses](images/monetize-analytics-pie-chart.png)
     :::column-end:::
     :::column span="2":::
-**Analyses**
+**Analytique**
 
 Les rapports d’analyse détaillés permettent de surveiller les performances de vos publicités dans les applications et vous fournissent les informations dont vous avez besoin pour optimiser vos revenus publicitaires. Nous proposons également une API RESTful utilisable pour obtenir ces données par programmation.
 

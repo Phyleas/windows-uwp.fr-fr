@@ -6,10 +6,10 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, XAML, contrôle, liaison, propriété
 ms.localizationpriority: medium
 ms.openlocfilehash: 06934c1c3b23c244fb32ffa957cffb926ffd1bb0
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "79209194"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrt-property"></a>Contrôles XAML ; liaison à une propriété C++/WinRT

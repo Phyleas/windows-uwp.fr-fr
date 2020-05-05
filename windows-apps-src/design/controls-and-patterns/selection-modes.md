@@ -5,17 +5,17 @@ label: Selection mode
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 pm-contact: anawish
 design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: d7b781e6074468fbe73446e4057e36ff31266d05
-ms.sourcegitcommit: 9625f8fb86ff6473ac2851e600bc02e996993660
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "72165096"
 ---
 # <a name="selection-mode-overview"></a>Vue d’ensemble du mode de sélection
@@ -25,9 +25,9 @@ Le mode de sélection permet aux utilisateurs de sélectionner et d’exécuter 
 ## <a name="different-selection-modes"></a>Différents modes de sélection
 Il existe trois modes de sélection :
 
-- Unique : l’utilisateur ne peut sélectionner qu’un seul élément à la fois.
-- Multiple : l’utilisateur peut sélectionner plusieurs éléments sans utiliser de modificateur.
-- Étendu : l’utilisateur peut sélectionner plusieurs éléments avec un modificateur, par exemple, en maintenant la touche MAJ enfoncée.
+- Unique : l’utilisateur ne peut sélectionner qu’un élément à la fois.
+- Multiple : l’utilisateur peut sélectionner plusieurs éléments sans utiliser de modificateur.
+- Étendu : l’utilisateur peut sélectionner plusieurs éléments avec un modificateur, par exemple, en maintenant la touche MAJ enfoncée.
 
 ## <a name="selection-mode-examples"></a>Exemples de mode de sélection
 ### <a name="here-is-a-listview-with-single-selection-mode-enabled"></a>Voici un ListView pour lequel le mode de sélection unique est activé.

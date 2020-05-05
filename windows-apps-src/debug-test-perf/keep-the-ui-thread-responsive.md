@@ -4,13 +4,13 @@ title: Assurer la réactivité du thread de l’interface utilisateur
 description: Les utilisateurs attendent de leurs applications qu’elles restent réactives pendant les opérations de calcul, et ce sur n’importe quel type d’ordinateur.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b9a129e8b780e85df2c38c50ab712641d3849a34
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "71339853"
 ---
 # <a name="keep-the-ui-thread-responsive"></a>Assurer la réactivité du thread de l’interface utilisateur

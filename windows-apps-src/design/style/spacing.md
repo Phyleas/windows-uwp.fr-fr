@@ -7,10 +7,10 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 08853a201eff063b49dcc69d5827c9b54e324b75
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75684868"
 ---
 # <a name="control-size-and-density"></a>Taille et densité du contrôle
@@ -96,7 +96,7 @@ Les exemples suivants montrent comment le style `Compact` peut être appliqué p
 
 ## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
 
-- [Exemple de Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) : tous les contrôles XAML dans un format interactif.
+- [Exemple de galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) : affichez tous les contrôles XAML dans un format interactif.
 
 ## <a name="related-articles"></a>Articles connexes
 

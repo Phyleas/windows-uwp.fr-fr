@@ -4,13 +4,13 @@ title: Sockets
 ms.assetid: 23B10A3C-E33F-4CD6-92CB-0FFB491472D6
 ms.date: 06/03/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 42913aae69e5d049530d649c031351f4f3ab9ace
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75684972"
 ---
 # <a name="sockets"></a>Sockets

@@ -3,14 +3,14 @@ title: Configuration de builds automatisées pour votre application UWP
 description: Configuration de builds automatisées pour produire des packages de chargement indépendant et/ou de stockage.
 ms.date: 07/17/2019
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
 ms.openlocfilehash: 70415c9f3d58625cfdc651ec67c8a9f37c23cffa
-ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/08/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "77089495"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>Configuration de builds automatisées pour votre application UWP
@@ -100,7 +100,7 @@ Cette tâche compile toutes les solutions se trouvant dans le dossier de travail
 | AppxPackageSigningEnabled | true | Active la signature du package. |
 | PackageCertificateThumbprint | Empreinte de certificat | Cette valeur **doit** correspondre à l’empreinte numérique du certificat de signature, ou être une chaîne vide. |
 | PackageCertificateKeyFile | Path | Chemin du certificat à utiliser. Il est extrait des métadonnées de fichier sécurisé. |
-| PackageCertificatePassword | Mot de passe | Mot de passe de la clé privée dans le certificat. Nous vous recommandons de stocker votre mot de passe dans [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) et de le lier à un [groupe de variables](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups). Vous pouvez passer la variable à cet argument. |
+| PackageCertificatePassword | Password | Mot de passe de la clé privée dans le certificat. Nous vous recommandons de stocker votre mot de passe dans [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) et de le lier à un [groupe de variables](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups). Vous pouvez passer la variable à cet argument. |
 
 ### <a name="configure-the-build"></a>Configurer la build
 

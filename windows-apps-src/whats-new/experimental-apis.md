@@ -6,10 +6,10 @@ ms.topic: article
 keywords: windows 10, uwp, expérimentales, api
 ms.localizationpriority: medium
 ms.openlocfilehash: 542e007d07d490c2f18077e646f7598bfd2587c3
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75684914"
 ---
 # <a name="experimental-apis"></a>API expérimentales
@@ -29,6 +29,6 @@ Afin d’activer ces API pour expérimentation, utilisez le module de fonctionna
 
 La documentation dédiée à une API expérimentale spécifique est à la discrétion de l’équipe qui en est propriétaire.
 
-## <a name="providing-feedback"></a>Envoi de commentaires
+## <a name="providing-feedback"></a>Formulation de commentaires
 
 Si vous avez essayé une API expérimentale et souhaitez formuler des commentaires, utilisez la catégorie **Plateforme des développeurs** dans le [Hub de commentaires Windows](https://support.microsoft.com/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub).

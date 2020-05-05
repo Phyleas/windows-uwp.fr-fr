@@ -4,16 +4,16 @@ title: Présentation détaillée de la liaison de données
 description: La liaison est un moyen dont dispose l’interface de votre application pour afficher des données et éventuellement rester synchronisée avec ces données.
 ms.date: 10/05/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
 ms.openlocfilehash: 0b54b04f2f36c2661de8baf58d0da1aec75ae590
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "79210145"
 ---
 # <a name="data-binding-in-depth"></a>Présentation détaillée de la liaison de données
@@ -63,7 +63,7 @@ Dans les sections suivantes, nous allons examiner de plus près la source de lia
 
 Voici une implémentation très rudimentaire d’une classe que nous pourrions utiliser comme source de liaison.
 
-Si vous utilisez [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), ajoutez de nouveaux éléments de **fichier Midl (.idl)** au projet, nommés comme indiqué dans la liste d’exemples de codeC++/WinRT ci-dessous. Remplacez le contenu de ces nouveaux fichiers par le code [MIDL 3.0](/uwp/midl-3/intro) mentionné dans la liste, créez le projet pour générer `HostViewModel.h` et `.cpp`, puis ajoutez le code aux fichiers générés pour qu’ils correspondent à la liste. Pour plus d’informations sur ces fichiers générés et sur la façon de les copier dans votre projet, consultez [Contrôles XAML , créer une liaison à une propriété C++/WinRT](/windows/uwp/cpp-and-winrt-apis/binding-property).
+Si vous utilisez [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), ajoutez de nouveaux éléments **Fichier Midl (.idl)** au projet, nommés comme indiqué dans la liste d’exemples de code C++/WinRT ci-dessous. Remplacez le contenu de ces nouveaux fichiers par le code [MIDL 3.0](/uwp/midl-3/intro) mentionné dans la liste, créez le projet pour générer `HostViewModel.h` et `.cpp`, puis ajoutez le code aux fichiers générés pour qu’ils correspondent à la liste. Pour plus d’informations sur ces fichiers générés et sur la façon de les copier dans votre projet, consultez [Contrôles XAML - Liaison à une propriété C++/WinRT](/windows/uwp/cpp-and-winrt-apis/binding-property).
 
 ```csharp
 public class HostViewModel
@@ -379,7 +379,7 @@ Le code pour prendre en charge **{x:Bind}** est généré au moment de la compil
 
 ### <a name="binding-object-declared-using-binding"></a>Objet de liaison déclaré à l’aide de {Binding}
 
-Si vous utilisez des extensions de composants C++/WinRT ou Visual C++ (C++/CX), pour utiliser l’extension de balisage [{Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension), vous devez ajouter l’attribut [**BindableAttribute**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.BindableAttribute) à toute classe d’exécution à laquelle vous souhaitez établir une liaison. Pour utiliser [{x :Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension), vous n’avez pas besoin de cet attribut.
+Si vous utilisez des extensions de composants C++/WinRT ou Visual C++ (C++/CX), pour utiliser l’extension de balisage [{Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension), vous devez ajouter l’attribut [**BindableAttribute**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.BindableAttribute) à toute classe runtime à laquelle vous souhaitez établir une liaison. Pour utiliser [{x :Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension), vous n’avez pas besoin de cet attribut.
 
 ```cppwinrt
 // HostViewModel.idl
@@ -509,7 +509,7 @@ Et voici comment ce convertisseur est utilisé dans votre balisage d’objet de 
 
 Le moteur de liaison appelle les méthodes [**Convert**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.ivalueconverter.convert) et [**ConvertBack**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.ivalueconverter.convertback) si le paramètre [**Converter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.converter) est défini pour la liaison. Lorsque les données sont transmises à partir de la source, le moteur de liaison appelle **Convert** et transmet à la cible les données renvoyées. Lorsque les données sont transmises à partir de la cible (pour une liaison bidirectionnelle), le moteur de liaison appelle **ConvertBack** et transmet à la source les données renvoyées.
 
-Le convertisseur a également des paramètres facultatifs : [**ConverterLanguage**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.converterlanguage), qui autorise la spécification du langage à utiliser dans la conversion, et [**ConverterParameter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.converterparameter), qui autorise la transmission d’un paramètre pour la logique de conversion. Pour obtenir un exemple qui utilise un paramètre de convertisseur, voir [**IValueConverter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.IValueConverter).
+Le convertisseur est également doté de paramètres optionnels : [**ConverterLanguage**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.converterlanguage), qui autorise la spécification du langage à utiliser dans la conversion, et [**ConverterParameter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.converterparameter), qui autorise la transmission d’un paramètre pour la logique de conversion. Pour obtenir un exemple qui utilise un paramètre de convertisseur, voir [**IValueConverter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.IValueConverter).
 
 > [!NOTE]
 > S’il existe une erreur dans la conversion, ne levez pas d’exception. Retournez plutôt [**DependencyProperty.UnsetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.unsetvalue), qui arrêtera le transfert de données.
@@ -812,8 +812,8 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 | TargetNullValue | `{x:Bind Name, TargetNullValue=0}` | `{Binding Name, TargetNullValue=0}` | Utilisée lorsque le nœud terminal de l’expression de liaison présente la valeur null. Utilisez des guillemets simples pour une valeur de chaîne. | 
 | FallbackValue | `{x:Bind Name, FallbackValue='empty'}` | `{Binding Name, FallbackValue='empty'}` | Utilisée lorsqu’une partie du chemin de la liaison (à l’exception du nœud terminal) présente la valeur null. | 
 | ElementName | `{x:Bind slider1.Value}` | `{Binding Value, ElementName=slider1}` | Avec {x:Bind}, vous créez une liaison à un champ ; Path a pour racine Page par défaut, de sorte que tout élément nommé est accessible via son champ. | 
-| RelativeSource : Self (Auto) | `<Rectangle x:Name="rect1" Width="200" Height="{x:Bind rect1.Width}" ... />` | `<Rectangle Width="200" Height="{Binding Width, RelativeSource={RelativeSource Self}}" ... />` | Avec {x:Bind}, nommez l’élément et utilisez son nom dans Path. | 
-| RelativeSource : TemplatedParent | Non nécessaire | `{Binding <path>, RelativeSource={RelativeSource TemplatedParent}}` | Avec TargetType {x:Bind} sur ControlTemplate indique la liaison au parent du modèle. La liaison de modèle standard pour {Binding} peut être utilisée dans les modèles de contrôle dans la plupart des cas. Toutefois, faites appel à TemplatedParent quand vous devez utiliser un convertisseur ou une liaison bidirectionnelle.&lt; | 
+| RelativeSource : Self | `<Rectangle x:Name="rect1" Width="200" Height="{x:Bind rect1.Width}" ... />` | `<Rectangle Width="200" Height="{Binding Width, RelativeSource={RelativeSource Self}}" ... />` | Avec {x:Bind}, nommez l’élément et utilisez son nom dans Path. | 
+| RelativeSource : TemplatedParent | Non nécessaire | `{Binding <path>, RelativeSource={RelativeSource TemplatedParent}}` | Avec TargetType {x:Bind} sur ControlTemplate indique la liaison au parent du modèle. La liaison de modèle standard pour {Binding} peut être utilisée dans les modèles de contrôle dans la plupart des cas. Toutefois, faites appel à TemplatedParent quand vous devez utiliser un convertisseur ou une liaison bidirectionnelle.&lt; | 
 | Source | Non nécessaire | `<ListView ItemsSource="{Binding Orders, Source={StaticResource MyData}}"/>` | Pour {x :Bind}, vous pouvez utiliser directement l’élément nommé, une propriété ou un chemin statique. | 
 | Mode | `{x:Bind Name, Mode=OneWay}` | `{Binding Name, Mode=TwoWay}` | Mode peut être défini sur OneTime (liaison ponctuelle), OneWay (liaison à sens unique) ou TwoWay (liaison bidirectionnelle). La valeur par défaut est OneTime pour {x:Bind} et OneWay pour {Binding}. | 
 | UpdateSourceTrigger | `{x:Bind Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}` | `{Binding UpdateSourceTrigger=PropertyChanged}` | UpdateSourceTrigger peut avoir la valeur Default, PropertyChanged ou LostFocus. {x:Bind} ne prend pas en charge UpdateSourceTrigger=Explicit. {x:Bind} utilise le comportement PropertyChanged dans tous les cas, sauf pour TextBox.Text, où il utilise le comportement LostFocus. | 

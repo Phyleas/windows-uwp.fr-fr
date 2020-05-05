@@ -4,14 +4,14 @@ title: Tester à l’aide de l’émulateur Microsoft pour Windows 10 Mobile
 description: Simulez une interaction réaliste avec un appareil et testez les fonctionnalités de votre application à l’aide des outils fournis avec l’émulateur Microsoft pour Windows 10 Mobile.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f2cb92dca3da2d1f8e3eccfade6558f363c5b13
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 0b38cf60f1f890649af33ad34f244bc348af2832
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257865"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82148690"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>Tester à l’aide de l’émulateur Microsoft pour Windows 10 Mobile
 
@@ -54,7 +54,7 @@ L’émulateur Microsoft pour Windows 10 Mobile ne peut pas charger d’applicat
 ### <a name="installing"></a>Installation de
 L’émulateur Microsoft pour Windows 10 Mobile est fourni avec le Kit de développement logiciel (SDK) Windows 10. Ils peuvent tous deux être installés avec Visual Studio. Consultez la [page de téléchargement de Visual Studio](https://developer.microsoft.com/windows/downloads).
 
-Vous pouvez également installer l’émulateur Microsoft pour Windows 10 Mobile à l’aide du programme d’[installation de l’émulateur Microsoft](https://go.microsoft.com/fwlink/p/?LinkID=615095).
+Vous pouvez également installer l’émulateur Microsoft pour Windows 10 Mobile à l’aide du programme d’[installation de l’émulateur Microsoft](https://download.microsoft.com/download/E/3/4/E347E8C5-BD79-49AF-941C-D08893A45268/emulator/EmulatorSetup.exe).
 
 ### <a name="uninstalling"></a>Désinstallation
 
@@ -62,7 +62,7 @@ Vous pouvez désinstaller l’émulateur Microsoft pour Windows 10 Mobile à l�
 
 Lorsque vous désinstallez l’émulateur Microsoft pour Windows 10 Mobile, la carte Ethernet virtuelle Hyper-V créée pour l’émulateur à utiliser n’est pas automatiquement supprimée. Vous pouvez la supprimer manuellement sous **Connexions réseau**, dans le **Panneau de configuration**.
 
-### <a name="running"></a>Exécution
+### <a name="running"></a>Running
 
 Pour exécuter une application dans l’émulateur, sélectionnez un appareil émulé dans le menu déroulant **Exécuter** de Visual Studio.
 
@@ -619,7 +619,7 @@ Vous pouvez activer ou désactiver l’affichage des compteurs de fréquence d�
 
 Vous trouverez ci-après des problèmes connus liés à l’émulateur, ainsi que des suggestions de solutions pour les contourner.
 
-### <a name="error-message-failed-while-removing-virtual-ethernet-switch"></a>Message d’erreur : « Échec lors de la suppression du commutateur Ethernet virtuel »
+### <a name="error-message-failed-while-removing-virtual-ethernet-switch"></a>Message d’erreur : « Échec lors de la suppression du commutateur Ethernet virtuel »
 
 Dans certains cas, y compris lorsque vous avez procédé à une mise à jour vers une nouvelle version d’évaluation de Windows 10, un commutateur réseau virtuel associé à l’émulateur peut passer à un état dans lequel il ne peut pas être supprimé par le biais de l’interface utilisateur.
 
@@ -652,7 +652,7 @@ Pour désactiver l’accélération matérielle :
 5. Double-cliquez sur **DisableRemoteFx**, entrez 1 dans la zone de données **Valeur**, sélectionnez l’option **Décimal**, puis cliquez sur **OK**.
 6. Fermez l’Éditeur du Registre.
 
-**Remarque :** Après avoir défini cette valeur de Registre, vous devez supprimer la machine virtuelle dans le Gestionnaire Hyper-V pour la configuration que vous avez lancée dans Visual Studio, puis relancez l’émulateur avec des graphiques rendus par logiciel.
+**Remarque :** Après avoir défini cette valeur de Registre, vous devez supprimer la machine virtuelle dans le Gestionnaire Hyper-V pour la configuration que vous avez lancée dans Visual Studio, puis relancez l’émulateur avec des graphiques rendus par logiciel.
 
 ## <a name="support-resources"></a>Ressources de support
 

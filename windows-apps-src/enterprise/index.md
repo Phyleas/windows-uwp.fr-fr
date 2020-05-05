@@ -4,13 +4,13 @@ description: Cette feuille de route propose une vue d’ensemble des principales
 title: Enterprise
 ms.date: 01/16/2020
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e17b155966c609537c40050edc4c11ee6935b0d
-ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/08/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "77089465"
 ---
 # <a name="enterprise"></a>Enterprise
@@ -104,8 +104,8 @@ Windows 10 fournit une suite de fonctionnalités de sécurité qui permet aux d
 |-------|-------------|
 | [Présentation du développement d’applications Windows sécurisées](https://docs.microsoft.com/windows/uwp/security/intro-to-secure-windows-app-development) | Cet article introductif décrit les différentes fonctionnalités de sécurité Windows lors des phases d’authentification, de données en transit et de données au repos. Il explique aussi comment intégrer ces phases dans vos applications. Il couvre une large gamme de rubriques et vise essentiellement à aider les architectes d’application à mieux comprendre les fonctionnalités Windows qui facilitent et accélèrent la création d’applications de plateforme Windows universelle. |
 | [Authentification et identité des utilisateurs](https://docs.microsoft.com/windows/uwp/security/authentication-and-user-identity) | Les applications UWP disposent de plusieurs options pour l’authentification des utilisateurs qui sont décrites dans cet article. Pour l’entreprise, l’utilisation de la nouvelle fonctionnalité Microsoft Passport est fortement recommandée. Microsoft Passport remplace les mots de passe par la méthode d’authentification à 2 facteurs (2FA) forte en vérifiant les informations d’identification existantes et en créant des informations d’identification spécifiques à l’appareil, protégées par un mouvement de l’utilisateur reposant sur l’entrée de son code PIN ou par la biométrie. |
-| [Chiffrement](https://docs.microsoft.com/windows/uwp/security/cryptography) | La section sur le chiffrement fournit une vue d’ensemble des fonctionnalités de chiffrement disponibles pour les applications UWP. Les articles comprennent des procédures pas à pas introductives pour chiffrer facilement les données professionnelles sensibles et couvrent également des sujets plus spécifiques comme la manipulation des clés de chiffrement et l’utilisation des codes d’authentification de message (MAC), codes de hachage et signatures. |
-| [Protection des informations Windows (WIP)](wip-hub.md) | Il s’agit d’une rubrique centrale destinée aux développeurs qui décrit de manière exhaustive la relation de la Protection des informations Windows avec les fichiers, les mémoires tampon, le Presse-papiers, les réseaux, les tâches en arrière-plan et la protection des données verrouillées. |
+| [Chiffrement](https://docs.microsoft.com/windows/uwp/security/cryptography) | La section sur le chiffrement fournit une vue d’ensemble des fonctionnalités de chiffrement disponibles pour les applications UWP. Les articles comprennent des procédures pas à pas introductives pour chiffrer facilement les données professionnelles sensibles et couvrent également des sujets avancés tels que la manipulation des clés de chiffrement et l’utilisation des codes d’authentification de message (MAC), codes de hachage et signatures. |
+| [Protection des informations Windows (WIP)](wip-hub.md) | Il s’agit d’une rubrique de hub destinée aux développeurs abordant de manière exhaustive la relation de la Protection des informations Windows avec les fichiers, les mémoires tampons, le Presse-papiers, la mise en réseau, les tâches en arrière-plan et la protection des données verrouillées. |
 
 ## <a name="data-binding-and-databases"></a>Liaison de données et bases de données
 
@@ -123,12 +123,12 @@ Les applications métier ont souvent besoin de communiquer avec des données ou 
 
 | Rubrique | Description |
 |-------|-------------|
-| [Notions de base relatives aux réseaux](https://docs.microsoft.com/windows/uwp/networking/networking-basics) | Cette procédure pas à pas explique les concepts réseau de base qui s’appliquent à toutes les applications UWP, quels que soient les protocoles de communication utilisés.  |
+| [Notions de base relatives aux réseaux](https://docs.microsoft.com/windows/uwp/networking/networking-basics) | Cette procédure pas à pas explique les concepts de mise en réseau de base pertinents pour toutes les applications UWP, quels que soient les protocoles de communication utilisés.  |
 | [Quelle technologie réseau ?](https://docs.microsoft.com/windows/uwp/networking/which-networking-technology) | Vue d’ensemble des technologies réseau disponibles pour les applications UWP, avec des conseils qui vous aideront à choisir les technologies appropriées pour votre application. |
 | [Sérialisation XML et SOAP](https://docs.microsoft.com/dotnet/framework/serialization/xml-and-soap-serialization) | La sérialisation XML convertit les objets en un flux XML conforme à un langage XSD (définition de schéma XML) spécifique. Pour effectuer une conversion entre XML et une classe fortement typée, vous pouvez utiliser la classe [XDocument](https://docs.microsoft.com/dotnet/api/system.xml.linq.xdocument) native ou une bibliothèque externe. |
 | [Sérialisation JSON](https://docs.microsoft.com/uwp/api/Windows.Data.Json) | La sérialisation JSON (JavaScript Object Notation) est un format populaire utilisé pour la communication avec les API REST. [Newtonsoft Json.NET](https://www.newtonsoft.com/json), qui est entièrement pris en charge pour les applications UWP. |
 
-## <a name="devices"></a>Périphériques
+## <a name="devices"></a>.
 
 Afin d’interagir avec des outils métier comme des imprimantes, des scanneurs de codes-barres ou des lecteurs de cartes à puce, vous jugerez peut-être nécessaire d’intégrer des appareils ou des capteurs externes à votre application. Voici quelques exemples des fonctionnalités que vous pouvez ajouter à votre application à l’aide de la technologie décrite dans cette section.
 
@@ -136,7 +136,7 @@ Afin d’interagir avec des outils métier comme des imprimantes, des scanneurs 
 |--------|-------------|
 | [Énumérer les appareils](https://docs.microsoft.com/windows/uwp/devices-sensors/enumerate-devices) | Cet article décrit comment utiliser l’espace de noms [Windows.Devices.Enumeration](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration) pour rechercher des appareils connectés au système, en interne, en externe ou détectables sur les protocoles sans fil ou réseau. Commencez ici si vous créez une application qui fonctionne avec des appareils. |
 | [Impression et numérisation](https://docs.microsoft.com/windows/uwp/devices-sensors/printing-and-scanning) | Explique comment imprimer et numériser à partir de votre application, et notamment comment se connecter aux appareils métier (par exemple, les systèmes de point de vente (PDV), les imprimantes de reçus ainsi que les scanneurs à chargeur à grande capacité) et comment les utiliser. |
-| [Bluetooth](https://docs.microsoft.com/windows/uwp/devices-sensors/bluetooth) | En plus de l’utilisation des connexions Bluetooth traditionnelles pour envoyer et recevoir des données ou contrôler les appareils, Windows 10 permet d’utiliser la technologie Bluetooth Low Energy (BTLE) pour envoyer ou recevoir des balises en arrière-plan. Utilisez-la pour afficher des notifications ou activer des fonctionnalités quand un utilisateur s’approche d’un endroit particulier ou le quitte. |
+| [Bluetooth](https://docs.microsoft.com/windows/uwp/devices-sensors/bluetooth) | En plus de l’utilisation des connexions Bluetooth traditionnelles pour envoyer et recevoir des données ou contrôler les appareils, Windows 10 permet d’utiliser la technologie Bluetooth Low Energy (BTLE) pour envoyer ou recevoir des balises en arrière-plan. Utilisez-la pour afficher des notifications ou activer des fonctionnalités quand un utilisateur s’approche d’un emplacement particulier ou le quitte. |
 | [Stockage partagé d’entreprise](enterprise-shared-storage.md) | Dans les scénarios où l’appareil est verrouillé, découvrez comment partager les données au sein de la même application, entre les instances d’une application ou entre les applications. |
 
 ## <a name="device-targeting"></a>Ciblage des appareils

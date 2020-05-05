@@ -6,17 +6,17 @@ ms.date: 09/10/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 85e41a26343c9e4c6eb239cbfdd74dc946d5b657
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74258803"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-september-2018"></a>Nouveautés apportées dans la documentation du développeur Windows en septembre 2018
 
-La documentation du développeur Windows est constamment mise à jour avec des informations sur les nouvelles fonctionnalités mises à la disposition des développeurs sur la plateforme Windows. Les présentations de fonctionnalités, conseils aux développeurs et vidéos ci-dessous ont été mis à disposition au mois de septembre.
+La documentation du développeur Windows est constamment mise à jour afin d’intégrer les informations sur les nouvelles fonctionnalités disponibles pour les développeurs sur la plateforme Windows. Les présentations de fonctionnalités, conseils aux développeurs et vidéos ci-dessous ont été mis à disposition au mois de septembre.
 
-[Installez les outils et le kit de développement logiciel (SDK)](https://developer.microsoft.com/windows/downloads#_blank) sur Windows 10 et vous pourrez ainsi [créer une application universelle Windows](../get-started/create-uwp-apps.md) ou explorer la procédure permettant d’utiliser votre [code d’application existant sur Windows](../porting/index.md).
+[Installez les outils et le SDK](https://developer.microsoft.com/windows/downloads#_blank) sur Windows 10, et vous pourrez ainsi [créer une application Windows universelle](../get-started/create-uwp-apps.md) ou découvrir comment vous pouvez utiliser votre [code d’application existant sur Windows](../porting/index.md).
 
 ## <a name="features"></a>Fonctionnalités
 
@@ -32,7 +32,7 @@ La documentation du développeur Windows est constamment mise à jour avec des i
 
 ### <a name="windows-ui-library"></a>Bibliothèque d’IU Windows
 
-La [bibliothèque d’IU Windows](https://docs.microsoft.com/uwp/toolkits/winui/) est un ensemble de packages NuGet qui fournissent des contrôles et autres éléments d’interface utilisateur pour les applications UWP. Ces packages sont également compatibles avec les versions antérieures de Windows 10, pour que votre application fonctionne même si vos utilisateurs ne disposent pas de la dernière version du système d’exploitation.
+La [bibliothèque d’IU Windows](https://docs.microsoft.com/uwp/toolkits/winui/) est un ensemble de packages NuGet qui fournissent des contrôles et autres éléments d’interface utilisateur pour les applications UWP. Ces packages sont également compatibles avec les versions antérieures de Windows 10, pour que votre application fonctionne même si vos utilisateurs ne disposent pas de la dernière version du système d'exploitation.
 
 Pour plus d’informations sur le contenu de la bibliothèque d’IU Windows, voir la [liste des espaces de noms d’API inclus dans le package NuGet.](https://docs.microsoft.com/uwp/api/overview/winui/)
 
@@ -52,7 +52,7 @@ Nous avons mis à jour le [guide relatif aux contributions](https://github.com/M
 
 ### <a name="one-dev-question"></a>One Dev Question
 
-Dans le cadre de la série de vidéos One Dev Question, des développeurs Microsoft expérimentés répondent à toutes sortes de questions sur le développement, la culture d’équipe et l’histoire de Windows. Voici les dernières questions auxquelles nous avons répondu !
+Dans le cadre de la série de vidéos One Dev Question, des développeurs Microsoft expérimentés répondent à des questions sur le développement, la culture d’équipe et l’histoire de Windows. Voici les dernières questions auxquelles nous avons répondu !
 
 Aaron Gustafson :
 

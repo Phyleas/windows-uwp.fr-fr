@@ -4,7 +4,7 @@ title: Créer, écrire et lire un fichier
 description: Lisez et écrivez un fichier à l’aide d’un objet StorageFile.
 ms.date: 12/19/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:
 - csharp
@@ -12,10 +12,10 @@ dev_langs:
 - cpp
 - vb
 ms.openlocfilehash: 0dbe5e2f1cc32a3d1b52572f71fba7547af99f17
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74258563"
 ---
 # <a name="create-write-and-read-a-file"></a>Créer, écrire et lire un fichier
@@ -31,7 +31,7 @@ Lisez et écrivez un fichier à l’aide d’un objet [**StorageFile**](/uwp/api
 > [!NOTE]
 > Pour un exemple complet, voir l’[Exemple d’accès aux fichiers](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess).
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 -   **Comprendre la programmation asynchrone pour les applications pour la plateforme Windows universelle (UWP)**
 
@@ -554,6 +554,6 @@ Dim text As String = Await Windows.Storage.FileIO.ReadTextAsync(sampleFile)
     Dim text As String = dataReader.ReadString(numBytesLoaded)
     ```
 
-## <a name="see-also"></a>Voir également
+## <a name="see-also"></a>Voir aussi
 
 - [Bonnes pratiques pour l’écriture dans les fichiers](best-practices-for-writing-to-files.md)

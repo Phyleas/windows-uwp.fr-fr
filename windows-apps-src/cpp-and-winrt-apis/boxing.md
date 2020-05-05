@@ -6,10 +6,10 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, XAML, contrôle, conversion boxing, scalaire, valeur
 ms.localizationpriority: medium
 ms.openlocfilehash: 29263260217de154f1a942d37d1e18fece15e3d0
-ms.sourcegitcommit: 0142b5a47511afa76d74015e3fd8635b6042a542
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "79038092"
 ---
 # <a name="boxing-and-unboxing-scalar-values-to-iinspectable-with-cwinrt"></a>Conversions boxing et unboxing de valeurs scalaires vers IInspectable avec C++/WinRT
@@ -56,9 +56,9 @@ void Unbox(winrt::Windows::Foundation::IInspectable const& object)
 ```
 
 ## <a name="determine-the-type-of-a-boxed-value"></a>Déterminer le type d’une valeur convertie
-Si vous recevez une valeur convertie et que vous n'êtes pas certain du type qu’elle contient (vous devez connaître son type pour lui appliquer une conversion unboxing), vous pouvez interroger la valeur convertie pour rechercher son interface [**IPropertyValue**](/uwp/api/windows.foundation.ipropertyvalue), puis appeler **Type** sur elle. Voici un exemple de code.
+Si vous recevez une valeur convertie et que vous n'êtes pas certain du type qu’elle contient (vous devez connaître son type pour lui appliquer une conversion unboxing), vous pouvez interroger la valeur convertie pour rechercher son interface [**IPropertyValue**](/uwp/api/windows.foundation.ipropertyvalue), puis appeler **Type** sur elle. Voici un exemple de code :
 
-`WINRT_ASSERT` est une définition de macro, qui se développe en [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros).
+`WINRT_ASSERT` est une définition de macro qui s’étend à [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros).
 
 ```cppwinrt
 float pi = 3.14f;

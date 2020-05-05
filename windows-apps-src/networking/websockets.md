@@ -7,16 +7,16 @@ ms.topic: article
 keywords: windows 10, uwp, mise en réseau, websocket, messagewebsocket et streamwebsocket
 ms.localizationpriority: medium
 ms.openlocfilehash: 221ab5e0647fe95e8d715fc320ba2b9c1bee2dfe
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75684960"
 ---
 # <a name="websockets"></a>WebSockets
 Les WebSockets fournissent un mécanisme de communication bidirectionnelle sécurisée et rapide entre un client et un serveur sur le web, à l’aide du protocole HTTP(S) et avec une prise en charge des messages UTF-8 et binaires.
 
-Avec le [protocole WebSocket](https://tools.ietf.org/html/rfc6455), les données sont transférées immédiatement via une connexion en duplex intégral à un seul socket, ce qui permet d’échanger des messages entre les deux points de terminaison en temps réel. Les WebSockets conviennent parfaitement pour les jeux multijoueurs (en temps réel et au tour par tour), les notifications instantanées de réseau social, les affichages actualisés d’informations boursières ou météo, ainsi que d’autres applications nécessitant un transfert sécurisé et rapide des données.
+Avec le [protocole WebSocket](https://tools.ietf.org/html/rfc6455), les données sont transférées immédiatement via une connexion duplex intégral à un seul socket, ce qui permet d’échanger des messages entre les deux points de terminaison en temps réel. Les WebSockets conviennent parfaitement pour les jeux multijoueurs (en temps réel et au tour par tour), les notifications instantanées de réseau social, les affichages actualisés d’informations boursières ou météo, ainsi que d’autres applications nécessitant un transfert sécurisé et rapide des données.
 
 Pour établir une connexion WebSocket, l’établissement d’une liaison HTTP spécifique est effectué entre le client et le serveur. En cas de succès, le protocole de la couche d’application est « mis à niveau » de HTTP vers WebSockets, à l’aide de la connexion TCP précédemment établie. Lorsque cela se produit, le protocole HTTP n’est plus concerné. Les données peuvent être envoyées et reçues à l’aide du protocole WebSocket par les deux points de terminaison, jusqu’à ce que la connexion WebSocket soit fermée.
 
@@ -621,7 +621,7 @@ La plupart des valeurs d’énumération **WebErrorStatus** correspondent à une
 
 Pour les erreurs de validation de paramètre, vous pouvez utiliser la valeur **HRESULT** de l’exception pour obtenir des informations plus détaillées sur l’erreur. Les valeurs **HRESULT** possibles sont répertoriées dans `Winerror.h`, disponible dans votre installation de kit SDK (par exemple, dans le dossier `C:\Program Files (x86)\Windows Kits\10\Include\<VERSION>\shared`). Pour la plupart des erreurs de validation de paramètre, la valeur **HRESULT** renvoyée est **E\_INVALIDARG**.
 
-## <a name="setting-timeouts-on-websocket-operations"></a>Définition de délais d’attente sur des opérations WebSocket
+## <a name="setting-timeouts-on-websocket-operations"></a>Définition de délais d’attente sur des opérations de WebSocket
 **MessageWebSocket** et **StreamWebSocket** utilisent un service du système interne pour envoyer des demandes de client WebSocket et recevoir des réponses d’un serveur. La valeur du délai d’expiration par défaut utilisée pour une opération de connexion de WebSocket est de 60 secondes. Si le serveur HTTP qui prend en charge les WebSockets ne répond pas ou ne peut pas répondre à la demande de connexion WebSocket (parce qu’il est momentanément arrêté ou bloqué par une panne réseau), le service du système interne patiente pendant les 60 secondes par défaut avant de retourner une erreur. Cette erreur lève une exception sur la méthode **ConnectAsync** du WebSocket. Pour les opérations d’envoi et de réception après l’établissement d’une connexion WebSocket, le délai d’expiration par défaut est de 30 secondes.
 
 Si la requête de nom pour un nom de serveur HTTP dans l’URI renvoie plusieurs adresses IP pour le nom, le service du système interne essaie jusqu’à 5 adresses IP pour le site (chacune avec un délai d’expiration par défaut de 60 secondes) avant d’échouer. Par conséquent, il se peut que votre application essaie pendant plusieurs minutes de se connecter à plusieurs adresses IP avant de traiter une exception. Ce comportement pourrait faire croire à l’utilisateur que l’application a cessé de fonctionner. 

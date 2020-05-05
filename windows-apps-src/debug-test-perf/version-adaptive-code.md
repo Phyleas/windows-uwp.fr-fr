@@ -3,14 +3,14 @@ title: Code adaptatif de version
 description: Utilisez la classe ApiInformation pour tirer parti des nouvelles API tout en conservant la compatibilité avec les versions précédentes
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.assetid: 3293e91e-6888-4cc3-bad3-61e5a7a7ab4e
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c03475c0c4007508a18c17645dbe99eeb7d6cb0
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75681980"
 ---
 # <a name="version-adaptive-code"></a>Code adaptatif de version
@@ -446,4 +446,4 @@ class IsEnumPresentTrigger : StateTriggerBase
 ## <a name="related-articles"></a>Articles connexes
 
 - [Présentation des familles d’appareils](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)
-- [Détection dynamique des fonctionnalités avec des contrats d’API](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)
+- [Dynamically detecting features with API contracts](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)

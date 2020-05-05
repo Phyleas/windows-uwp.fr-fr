@@ -7,10 +7,10 @@ ms.topic: article
 keywords: Windows 10, uwp, store pour entreprises, store pour éducation, organisation, licence en volume, entreprise, store éducation, store entreprises, achat en volume, en gros
 localizationpriority: high
 ms.openlocfilehash: 880e472b9a6ed19bae85c00b4014b431e3185f61
-ms.sourcegitcommit: a7effa01ca1c810e792b60f89ba38ce3bf0b310e
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/17/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "81545019"
 ---
 # <a name="organizational-licensing-options"></a>Options de gestion des licences organisationnelles

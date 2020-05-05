@@ -6,19 +6,19 @@ ms.date: 09/06/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: fb63a5f7cefbccbedc09b0c74d9daea9d26b63a8
-ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74734954"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-september-2017"></a>Nouveautés apportées dans la documentation du développeur Windows en septembre 2017
 
-La documentation du développeur Windows est constamment mise à jour avec des informations sur les nouvelles fonctionnalités mises à la disposition des développeurs sur la plateforme Windows. Les présentations de fonctionnalités, les conseils aux développeurs et les exemples qui suivent ont été récemment mis à disposition. Ils contiennent des informations nouvelles et des mises à jour destinées aux développeurs Windows.
+La documentation du développeur Windows est constamment mise à jour afin d’intégrer les informations sur les nouvelles fonctionnalités disponibles pour les développeurs sur la plateforme Windows. Les présentations de fonctionnalités, les conseils aux développeurs et les exemples qui suivent ont été récemment mis à disposition. Ils contiennent des informations nouvelles et des mises à jour destinées aux développeurs Windows.
 
 Bien entendu, la mise à jour Fall Creators Update est imminente. Par conséquent, restez à l’écoute car une nouvelle documentation volumineuse arrivera le mois prochain !
 
-[Installez les outils et le kit de développement logiciel (SDK)](https://developer.microsoft.com/windows/downloads#_blank) sur Windows 10 et vous pourrez ainsi [créer une application universelle Windows](../get-started/your-first-app.md) ou explorer la procédure permettant d’utiliser votre [code d’application existant sur Windows](../porting/index.md).
+[Installez les outils et le SDK](https://developer.microsoft.com/windows/downloads#_blank) sur Windows 10, et vous pourrez ainsi [créer une application Windows universelle](../get-started/your-first-app.md) ou découvrir comment vous pouvez utiliser votre [code d’application existant sur Windows](../porting/index.md).
 
 ## <a name="features"></a>Fonctionnalités
 
@@ -49,7 +49,7 @@ La section Prise en main de la documentation UWP a été mise à jour avec une [
 
 Nous avons ajouté des [instructions sur la voix et le ton dans les applications UWP](https://docs.microsoft.com/windows/uwp/in-app-help/voice-and-tone) afin de vous donner des conseils sur l’écriture du texte dans votre application. Quelle que soit l’application que vous créez, il est important que votre langage soit direct, informatif et convivial.
 
-## <a name="samples"></a>Exemples
+## <a name="samples"></a>exemples
 
 ### <a name="photolab-sample"></a>Exemple PhotoLab
 

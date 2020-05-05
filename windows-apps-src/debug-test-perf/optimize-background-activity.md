@@ -4,13 +4,13 @@ title: Optimiser l’activité en arrière-plan
 description: Créez des applications UWP qui fonctionnent avec le système pour utiliser des tâches en arrière-plan de manière économe en énergie.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: eb3ff12e4b616edd7b87cab7f13aa060f301fc52
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75683832"
 ---
 # <a name="optimize-background-activity"></a>Optimiser l’activité en arrière-plan

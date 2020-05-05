@@ -4,13 +4,13 @@ title: Enregistrer un fichier avec un sélecteur
 description: Utilisez FileSavePicker pour permettre aux utilisateurs de spécifier le nom et l’emplacement où ils souhaitent que votre application enregistre un fichier.
 ms.date: 12/19/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 2293907b3088890ac01d9037609054961aa95992
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74259576"
 ---
 # <a name="save-a-file-with-a-picker"></a>Enregistrer un fichier avec un sélecteur
@@ -27,7 +27,7 @@ Utilisez [**FileSavePicker**](https://docs.microsoft.com/uwp/api/Windows.Storage
 
  
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 
 -   **Comprendre la programmation asynchrone pour les applications pour la plateforme Windows universelle (UWP)**
@@ -54,7 +54,7 @@ Utilisez un [**FileSavePicker**](https://docs.microsoft.com/uwp/api/Windows.Stor
     savePicker.SuggestedFileName = "New Document";
     ```
 
-Définissez des propriétés sur l’objet sélecteur de fichiers qui sont pertinentes pour vos utilisateurs et votre application. Cet exemple définit trois propriétés : [**SuggestedStartLocation**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.filesavepicker.suggestedstartlocation), [**FileTypeChoices**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.filesavepicker.filetypechoices) et [**SuggestedFileName**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.filesavepicker.suggestedfilename).
+Définissez des propriétés sur l’objet sélecteur de fichiers qui sont pertinentes pour vos utilisateurs et votre application. Cet exemple définit trois propriétés : [**SuggestedStartLocation**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.filesavepicker.suggestedstartlocation), [**FileTypeChoices**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.filesavepicker.filetypechoices) et [**SuggestedFileName**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.filesavepicker.suggestedfilename).
      
 - Comme l’utilisateur enregistre un document ou un fichier texte, l’exemple définit [**SuggestedStartLocation**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.filesavepicker.suggestedstartlocation) sur le dossier local de l’application, avec la propriété [**LocalFolder**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localfolder). Définissez [**SuggestedStartLocation**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.suggestedstartlocation) sur un emplacement approprié pour le type de fichier enregistré, par exemple, Musique, Images, Vidéos ou Documents. À partir de l’emplacement de départ, l’utilisateur peut accéder à d’autres emplacements.
 

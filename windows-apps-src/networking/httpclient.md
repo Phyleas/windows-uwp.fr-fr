@@ -4,13 +4,13 @@ title: HttpClient
 ms.assetid: EC9820D3-3A46-474F-8A01-AE1C27442750
 ms.date: 06/05/2019
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 57927ff77f060a1ea1bd7720d8831f31c5355264
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74259207"
 ---
 # <a name="httpclient"></a>HttpClient

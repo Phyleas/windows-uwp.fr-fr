@@ -3,13 +3,13 @@ title: Analyse d’application
 description: Analysez votre application pour détecter les problèmes de performances.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e2977877b839f40e07b3eaa03b8349fb8439a401
-ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "73062754"
 ---
 # <a name="app-analysis-overview"></a>Vue d’ensemble de l’analyse d’application
@@ -60,7 +60,7 @@ myImage.Source = bitmapImage;
 bitmapImage.UriSource = new URI("ms-appx:///Assets/cool-image.png", UriKind.RelativeOrAbsolute);
 ```
 
-Exemple 2 code-behind (incorrect) : définition de l’UriSource de BitmapImage avant de l’associer à l’arborescence.
+Exemple 2 code-behind (incorrect) : définition de l’UriSouce de BitmapImage avant de l’associer à l’arborescence.
 
 ```vb
 var bitmapImage = new BitmapImage();
@@ -209,7 +209,7 @@ Utilisez x:Key à la place de x:Name quand vous ne référencez pas de ressource
 
 ## <a name="collections-control-is-using-a-non-virtualizing-panel"></a>Le contrôle Collections utilise un panneau de non-virtualisation
 
-Si vous fournissez un modèle de panneau d’éléments personnalisé (voir ItemsPanel), utilisez un panneau de virtualisation tel que ItemsWrapGrid ou ItemsStackPanel. Si vous utilisez VariableSizedWrapGrid, WrapGrid ou StackPanel, vous ne pouvez pas bénéficier de la virtualisation. Par ailleurs, les événements ListView suivants ne sont déclenchés que si un ItemsWrapGrid ou un ItemsStackPanel sont utilisés : ChoosingGroupHeaderContainer, ChoosingItemContainer et ContainerContentChanging.
+Si vous fournissez un modèle de panneau d’éléments personnalisé (voir ItemsPanel), utilisez un panneau de virtualisation tel que ItemsWrapGrid ou ItemsStackPanel. Si vous utilisez VariableSizedWrapGrid, WrapGrid ou StackPanel, vous ne pouvez pas bénéficier de la virtualisation. Par ailleurs, les événements ListView suivants sont déclenchés uniquement quand un ItemsWrapGrid ou un ItemsStackPanel sont utilisés : ChoosingGroupHeaderContainer, ChoosingItemContainer et ContainerContentChanging.
 
 La virtualisation de l’interface utilisateur est le point le plus important que vous pouvez améliorer pour augmenter les performances des collections. Elle implique la création à la demande des éléments d’interface utilisateur. Pour un contrôle d’éléments lié à une collection de 1 000 éléments, créer l’interface utilisateur simultanément pour tous les éléments constituerait un gaspillage de ressources, car il n’est pas possible d’afficher tous les éléments en même temps. Les contrôles ListView et GridView (et d’autres contrôles standard dérivés de ItemsControl) effectuent la virtualisation de l’interface utilisateur à votre place. Quand des éléments vont bientôt défiler dans l’affichage (quelques pages plus loin), l’infrastructure génère l’interface utilisateur pour ces éléments et les met en cache. Lorsqu’il est peu probable que les éléments soient de nouveau affichés, l’infrastructure récupère la mémoire qui leur était allouée.
 
@@ -227,7 +227,7 @@ Vous utilisez un panneau qui ne prend pas en charge la virtualisation.
 
 Utilisez un panneau de virtualisation tel que ItemsWrapGrid ou ItemsStackPanel.
 
-## <a name="accessibility-uia-elements-with-no-name"></a>Accessibilité : Éléments UIA sans nom
+## <a name="accessibility-uia-elements-with-no-name"></a>Accessibilité : Éléments UIA sans nom
 
 En XAML, vous pouvez indiquer un nom en définissant AutomationProperties.Name. De nombreux pairs Automation fournissent un nom par défaut à UIA si AutomationProperties.Name n’est pas défini. 
 
@@ -245,7 +245,7 @@ Définissez la propriété AutomationProperties.Name dans le code XAML du contr�
 
 Parfois, le correctif d’application approprié n’est pas de fournir un nom, mais de supprimer l’élément UIA de tous les emplacements à part l’arborescence brute. Vous pouvez le faire en XAML en définissant `AutomationProperties.AccessibilityView = "Raw"`.
 
-## <a name="accessibility-uia-elements-with-the-same-controltype-should-not-have-the-same-name"></a>Accessibilité : Les éléments UIA possédant le même Controltype ne doivent pas porter le même nom
+## <a name="accessibility-uia-elements-with-the-same-controltype-should-not-have-the-same-name"></a>Accessibilité : Les éléments UIA avec le même Controltype ne doivent pas avoir le même nom
 
 Deux éléments UIA avec le même parent UIA ne doivent pas avoir le même nom ni le même ControlType. Il est possible d’avoir deux contrôles du même nom s’ils ont des ControlTypes différents. 
 

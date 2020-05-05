@@ -6,23 +6,23 @@ ms.date: 05/07/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: cd84892f9d90a69379ac5a7f84dfa188adf1211e
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74258787"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-may-2018"></a>Nouveautés apportées dans la documentation du développeur Windows en mai 2018
 
 La documentation du développeur Windows est constamment mise à jour afin d’intégrer les informations sur les nouvelles fonctionnalités disponibles pour les développeurs sur la plateforme Windows. Les vues d’ensemble des fonctionnalités, les conseils aux développeurs, les vidéos et les exemples ci-après ont été mis à disposition au mois de mai pour coïncider avec la conférence [Microsoft Build 2018](https://www.microsoft.com/build/) destinée aux développeurs.
 
-[Installez les outils et le kit de développement logiciel (SDK)](https://developer.microsoft.com/windows/downloads#_blank) sur Windows 10 et vous pourrez ainsi [créer une application universelle Windows](../get-started/create-uwp-apps.md) ou explorer la procédure permettant d’utiliser votre [code d’application existant sur Windows](../porting/index.md).
+[Installez les outils et le SDK](https://developer.microsoft.com/windows/downloads#_blank) sur Windows 10, et vous pourrez ainsi [créer une application Windows universelle](../get-started/create-uwp-apps.md) ou découvrir comment vous pouvez utiliser votre [code d’application existant sur Windows](../porting/index.md).
 
 ## <a name="features"></a>Fonctionnalités
 
 ### <a name="motion-in-fluent-design"></a>Animations dans Fluent Design
 
-L’utilisation des animations dans le système Fluent Design évolue en fonction des principes fondamentaux de minutage, d’accélération, de direction et de gravité. La mise en application de ces principes fondamentaux guide l’utilisateur dans votre application et le connecte à son expérience numérique en reflétant le monde physique. En savoir plus dans ces articles :
+L’utilisation des animations dans le système Fluent Design évolue en fonction des principes fondamentaux de minutage, d’accélération, de direction et de gravité. La mise en application de ces principes de base guidera l'utilisateur dans votre application et le connectera à son expérience numérique en reflétant le monde physique. En savoir plus dans ces articles :
 
 * La [vue d’ensemble des animations](../design/motion/index.md) a été mise à jour pour refléter ces principes fondamentaux.
 * Les [animations en pratique](../design/motion/motion-in-practice.md) fournissent des exemples d’application de ces principes fondamentaux au sein de votre application.
@@ -33,7 +33,7 @@ L’utilisation des animations dans le système Fluent Design évolue en fonctio
 
 ### <a name="fluent-design-updates"></a>Mises à jour Fluent Design
 
-Des mises à jour visuelles et des modifications mineures ont été apportées pour les pages suivantes de Fluent Design :
+Des mises à jour visuelles et des modifications mineures ont été apportées aux pages suivantes de Fluent Design :
 
 * [Alignement, marge, remplissage](../design/layout/alignment-margin-padding.md)
 * [Couleur](../design/style/color.md)
@@ -87,7 +87,7 @@ Les packages facultatifs dans votre application peuvent maintenant contenir du c
 
 ### <a name="page-transitions"></a>Transitions de page
 
-Les [transitions de page](../design/motion/page-transitions.md) permettent aux utilisateurs de naviguer entre les pages d'une application. Elles permettent aux utilisateurs de mieux comprendre où ils se trouvent dans la hiérarchie de navigation et fournissent des informations sur les relations entre les pages.
+Les [transitions de page](../design/motion/page-transitions.md) permettent aux utilisateurs de naviguer entre les pages d'une application. Elles les aident à comprendre où ils se trouvent dans la hiérarchie de navigation et leur fournissent des informations sur les relations entre les pages.
 
 ### <a name="project-rome"></a>Projet Rome
 
@@ -103,8 +103,8 @@ La fonctionnalité Jeux est disponible dans les versions d’évaluation de Wind
 
 Nous avons redynamisé notre contenu de prise en main avec de nouvelles pistes d’apprentissage. Ces nouvelles rubriques visent à fournir aux nouveaux développeurs Windows 10 des informations sur certaines tâches courantes qu’ils souhaiteront peut-être effectuer. Ce ne sont pas des didacticiels et elles n’offrent pas de démonstration à portée de main. Elles indiquent où se trouve la documentation existante et expliquent comment l’utiliser. Découvrez la nouvelle version de la page [Commencer le codage](../get-started/create-uwp-apps.md) ou explorez chaque piste d’apprentissage individuelle :
 
-* [Créer un formulaire](../get-started/construct-form-learning-track.md)
-* [Afficher les clients dans une liste](../get-started/display-customers-in-list-learning-track.md)
+* [Construire un formulaire](../get-started/construct-form-learning-track.md)
+* [Afficher des clients dans une liste](../get-started/display-customers-in-list-learning-track.md)
 * [Enregistrer et charger des paramètres](../get-started/settings-learning-track.md)
 * [Utiliser des fichiers](../get-started/fileio-learning-track.md)
 
@@ -122,14 +122,14 @@ La page [Notifications](../publish/send-push-notifications-to-your-apps-customer
 
 ### <a name="cwinrt"></a>C++/WinRT
 
-C++/WinRT est le nouveau moyen de créer et d’utiliser les API Windows Runtime. Cette méthode est implémentée exclusivement dans les fichiers d’en-tête et fournit un accès de première classe aux fonctionnalités d’application modernes. [Regardez la vidéo](https://www.youtube.com/watch?v=TLSul1XxppA&feature=youtu.be) pour découvrir son fonctionnement, puis [lisez la documentation destinée aux développeurs](../cpp-and-winrt-apis/index.md) pour plus d’informations.
+C++/WinRT est la nouvelle méthode de création et d'utilisation des API d'exécution Windows. Cette méthode est implémentée exclusivement dans les fichiers d’en-tête et fournit un accès de première classe aux fonctionnalités d’application modernes. [Regardez la vidéo](https://www.youtube.com/watch?v=TLSul1XxppA&feature=youtu.be) pour en savoir plus sur son fonctionnement, puis [lisez la documentation destinée aux développeurs](../cpp-and-winrt-apis/index.md) pour plus d'informations.
 
 ### <a name="multi-instance-uwp-apps"></a>Applications UWP à instances multiples
 
-Windows vous permet désormais d’exécuter plusieurs instances de votre application UWP, chacune dans un processus distinct. [Regardez la vidéo](https://www.youtube.com/watch?v=clnnf4cigd0&feature=youtu.be) pour savoir comment créer une application compatible avec cette fonctionnalité, puis [lisez la documentation destinée aux développeurs](../launch-resume/multi-instance-uwp.md) pour obtenir des informations sur la procédure relative à cette fonctionnalité et son utilité.
+Windows vous permet désormais d’exécuter plusieurs instances de votre application UWP, chacune dans un processus distinct. [Regardez la vidéo](https://www.youtube.com/watch?v=clnnf4cigd0&feature=youtu.be) pour apprendre à créer une application qui prend en charge cette fonctionnalité, puis [lisez la documentation destinée aux développeurs](../launch-resume/multi-instance-uwp.md) pour obtenir des instructions sur la procédure et l'intérêt de cette fonctionnalité.
 
-## <a name="samples"></a>Exemples
+## <a name="samples"></a>exemples
 
-### <a name="customer-database-tutorial"></a>Didacticiel sur les bases de données de clients
+### <a name="customer-database-tutorial"></a>Didacticiel sur les bases de données clientes
 
-Ce didacticiel crée une application UWP de base pour la gestion d’une liste de clients et introduit des concepts et des pratiques utiles dans le développement de l’entreprise. Il présente l’implémentation des éléments d’interface utilisateur et l’ajout d’opérations sur une base de données SQLite locale. Il offre aussi des conseils généraux de connexion à une base de données REST distante si vous souhaitez aller plus loin. [Consultez le didacticiel ici](../enterprise/customer-database-tutorial.md)
+Ce didacticiel crée une application UWP de base pour la gestion d’une liste de clients et introduit des concepts et des pratiques utiles dans le développement de l’entreprise. Il présente l'implémentation des éléments de l'interface utilisateur et l'ajout d'opérations à une base de données SQLite locale. Il fournit également des indications générales sur la connexion à une base de données REST distante si vous souhaitez aller plus loin. [Consultez le didacticiel ici](../enterprise/customer-database-tutorial.md)

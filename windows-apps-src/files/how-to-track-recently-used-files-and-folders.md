@@ -4,13 +4,13 @@ title: Suivre les fichiers et dossiers récemment utilisés
 description: Effectuez le suivi des fichiers auxquels l’utilisateur accède fréquemment en les ajoutant à la liste Utilisés récemment de votre application.
 ms.date: 12/19/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 318c58b393a33916df7bab51a4ef2690494d14fb
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74259605"
 ---
 # <a name="track-recently-used-files-and-folders"></a>Suivre les fichiers et dossiers récemment utilisés
@@ -27,7 +27,7 @@ Les éléments récents de votre application sont représentés par la classe [*
 > [!NOTE]
 > Pour obtenir des exemples complets, reportez-vous à l’[exemple de sélecteur de fichiers](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FilePicker) et à l’[exemple d’accès aux fichiers](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess).
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 -   **Comprendre la programmation asynchrone pour les applications pour la plateforme Windows universelle (UWP)**
 

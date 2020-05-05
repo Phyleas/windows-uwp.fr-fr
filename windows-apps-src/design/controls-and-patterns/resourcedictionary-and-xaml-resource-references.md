@@ -9,13 +9,13 @@ label: ResourceDictionary and XAML resource references
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 31b4a02f3307909f325b71cdc0540d44054adf4c
-ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "73061972"
 ---
 # <a name="resourcedictionary-and-xaml-resource-references"></a>Références aux ressources ResourceDictionary et XAML

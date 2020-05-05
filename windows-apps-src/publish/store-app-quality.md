@@ -7,15 +7,15 @@ keywords: contrat définissant les politiques du microsoft store
 ms.localizationpriority: high
 ms.assetid: B15D4F19-4E6A-4C27-AD64-F03014D11BA9
 ms.openlocfilehash: d093a7b49a8c5ac00ca927614365d1b548e2f63a
-ms.sourcegitcommit: 5309019fa2a7c02e4e3f0c4076b75fc63546b6f0
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/25/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "77607256"
 ---
 # <a name="app-quality"></a>Qualité des applications
 
-Dernière mise à jour : 25 juillet 2017
+Dernière mise à jour : 25 juillet 2017
 
 Le Microsoft Store offre aux clients du monde entier un choix d’applications aussi vaste que varié. Pour les clients comme pour les développeurs, il est essentiel de pouvoir trouver les applications appropriées dans le Windows Store de façon simple, agréable et divertissante. Pour aider les développeurs à atteindre leurs objectifs, nous proposons une présentation de certains des aspects clés déterminant la qualité des applications.
 
@@ -65,7 +65,7 @@ Les **captures d’écran** et les **bandes-annonces** sont l’occasion de four
 
 Si vous voulez que le nombre de téléchargements ne cesse d'augmenter, proposez un contenu particulièrement étonnant, divertissant ou utile.
 
-- Offrez une valeur durable. Par exemple :
+- Offrez une valeur durable. Par exemple :
     - Votre application de cuisine inclut-elle suffisamment de recettes pour que le client veuille l'utiliser à maintes reprises ?
     - L'application de votre équipe sportive est-elle régulièrement actualisée et offre-t-elle des statistiques à jour, ou juste un ensemble figé de résultats sportifs ?
     - Votre jeu propose-t-il des modes de jeu intéressants et plusieurs fins de parties possibles ?

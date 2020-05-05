@@ -5,10 +5,10 @@ ms.service: ''
 ms.topic: overview
 ms.date: 09/13/2019
 ms.openlocfilehash: 2ad2a84a78006eafcdfa47d1faef533bea2224ff
-ms.sourcegitcommit: 23c5d8dfaeb6edbca780637ffd26fe892db27519
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/11/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "81123605"
 ---
 # <a name="commanding-in-universal-windows-platform-uwp-apps-using-standarduicommand-xamluicommand-and-icommand"></a>Utilisation des commandes dans les applications de plateforme Windows universelle (UWP) à l’aide de StandardUICommand, XamlUICommand et ICommand
@@ -62,7 +62,7 @@ Le tableau suivant présente certaines commandes et certains modes de collection
 | ---------------- | -------------- | ----------------- | -------------------- | ----------------- |
 | Supprimer l’élément      | Menu contextuel   | Bouton sensitif      | Touche Suppr              | Balayer pour supprimer   |
 | Marquer l’élément        | Menu contextuel   | Bouton sensitif      | Ctrl + Maj + G         | Balayer pour marquer     |
-| Actualiser les données     | Menu contextuel   | NON APPLICABLE               | Touche F5               | Tirer pour actualiser   |
+| Actualiser les données     | Menu contextuel   | N/A               | Touche F5               | Tirer pour actualiser   |
 | Mettre un élément en favori | Menu contextuel   | Bouton sensitif      | F, Ctrl + S            | Balayer pour mettre en favori |
 
 **Fournissez toujours un menu contextuel** Nous vous recommandons d’inclure toutes les commandes contextuelles pertinentes dans un menu contextuel traditionnel ou un CommandBarFlyout, les deux étant pris en charge pour tous les types d’entrée. Par exemple, si une commande est exposée uniquement pendant un événement de pointage, elle ne peut pas être utilisée sur un appareil uniquement tactile.
@@ -241,7 +241,7 @@ public class ListItemData
 }
 ```
 
-2. Dans la classe MainPage, nous définissons une collection d’objets `ListItemData` pour le [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.datatemplate) de l’[ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) du [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview). Ensuite, nous la remplissons avec une collection initiale de cinq éléments (avec du texte et la commande de suppression [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) associée).
+2. Dans la classe MainPage, nous définissons une collection d’objets `ListItemData` pour le [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.datatemplate) de l’[ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) du [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate). Ensuite, nous la remplissons avec une collection initiale de cinq éléments (avec du texte et la commande de suppression [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) associée).
 
 ```csharp
 /// <summary>
@@ -540,7 +540,7 @@ public class ListItemData
 }
 ```
 
-2. Dans la classe MainPage, nous définissons une collection d’objets `ListItemData` pour le [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.datatemplate) de l’[ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) du [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview). Ensuite, nous la remplissons avec une collection initiale de cinq éléments (avec du texte et la commande [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) associée).
+2. Dans la classe MainPage, nous définissons une collection d’objets `ListItemData` pour le [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.datatemplate) de l’[ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) du [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate). Ensuite, nous la remplissons avec une collection initiale de cinq éléments (avec du texte et la commande [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) associée).
 
 ```csharp
 ObservableCollection<ListItemData> collection = new ObservableCollection<ListItemData>();

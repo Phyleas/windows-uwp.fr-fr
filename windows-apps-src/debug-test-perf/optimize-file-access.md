@@ -4,13 +4,13 @@ title: Optimiser l’accès aux fichiers
 description: Créez des applications UWP qui accèdent au système de fichiers efficacement, en évitant les problèmes de performances dus à la latence de disque et aux cycles de la mémoire et du processeur.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 3114bc7a86f7f7f4d22c69c814735c146352efbd
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75681950"
 ---
 # <a name="optimize-file-access"></a>Optimiser l’accès aux fichiers

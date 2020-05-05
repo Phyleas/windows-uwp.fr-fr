@@ -4,13 +4,13 @@ title: Fichiers, dossiers et bibliothèques
 description: Découvrez la lecture et l’écriture de paramètres d’application, les sélecteurs de fichiers et de dossiers, et les emplacements de bac à sable « sandbox » tels que la bibliothèque de musique/vidéos.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 15e6ebd45d4f7069e09169a437476b0f785ea959
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74259600"
 ---
  # <a name="files-folders-and-libraries"></a>Fichiers, dossiers et bibliothèques

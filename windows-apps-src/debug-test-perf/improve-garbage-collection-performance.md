@@ -4,13 +4,13 @@ title: Améliorer les performances du nettoyage de la mémoire (garbage collecti
 description: Les applications de plateforme Windows universelle (UWP) écrites en C# et Visual Basic bénéficient de la gestion automatique de la mémoire du récupérateur de mémoire .NET. Cette section résume les meilleures pratiques en termes de comportement et de performance du récupérateur de mémoire .NET pour les applications UWP.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f9e7cc16b65f4ee2727fae5a711da9372ee91c01
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/11/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "72282191"
 ---
 # <a name="improve-garbage-collection-performance"></a>Améliorer les performances du nettoyage de la mémoire (garbage collection)

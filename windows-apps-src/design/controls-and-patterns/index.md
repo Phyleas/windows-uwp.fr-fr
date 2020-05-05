@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
 ms.openlocfilehash: 63907b3bfe3fc6dece900f1a7c09ac535e859471
-ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/24/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "80218449"
 ---
 # <a name="controls-for-windows-apps"></a>Contrôles pour les applications Windows

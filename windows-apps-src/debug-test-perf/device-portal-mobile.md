@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp, portail d’appareil
 ms.localizationpriority: medium
 ms.openlocfilehash: fb9cd2861fe826d9e8d112f2729d2922c68194ce
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/11/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "72281893"
 ---
 # <a name="device-portal-for-mobile"></a>Device Portal pour appareils mobiles
@@ -31,7 +31,7 @@ La première fois que vous vous connectez à Device Portal, vous êtes invité �
 
 ![Paramètres de détection d’appareils en mode développeur](images/device-portal/mob-dev-mode-pairing.png)
 
-Vous pouvez vous connecter au Portail d'appareil de trois façons : USB, hôte local et sur le réseau local (y compris avec VPN et fonction modem).
+Vous pouvez vous connecter à Device Portal de 3 façons : USB, hôte local et sur le réseau local (y compris avec VPN et fonction modem).
 
 **Pour se connecter au Portail d'appareil**
 
@@ -78,7 +78,7 @@ Device Portal sur les appareils mobiles propose les pages standard. Pour obtenir
 - Graphiques de performances
 - Suivi d’événements pour Windows (ETW)
 - Suivi des performances (WPR) 
-- Périphériques
+- .
 - Mise en réseau
 
 ## <a name="see-also"></a>Voir aussi

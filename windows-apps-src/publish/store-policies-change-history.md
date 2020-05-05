@@ -7,10 +7,10 @@ keywords: contrat définissant les politiques du microsoft store
 ms.localizationpriority: high
 ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
 ms.openlocfilehash: 3fbdc8e4831a39386396dc2c1dad25581f12fbf9
-ms.sourcegitcommit: 5309019fa2a7c02e4e3f0c4076b75fc63546b6f0
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/25/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "77607282"
 ---
 # <a name="change-history-for-microsoft-store-policies"></a>Historique des modifications des politiques du Microsoft Store

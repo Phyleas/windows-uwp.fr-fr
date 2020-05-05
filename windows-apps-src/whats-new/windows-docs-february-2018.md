@@ -6,17 +6,17 @@ ms.date: 02/05/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 4cac61f398fff17ecfb824f2d869364097f38d5d
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74258819"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-february-2018"></a>Nouveautés apportées dans la documentation du développeur Windows en février 2018
 
-La documentation du développeur Windows est constamment mise à jour avec des informations sur les nouvelles fonctionnalités mises à la disposition des développeurs sur la plateforme Windows. Les présentations de fonctionnalités, les conseils aux développeurs et les vidéos qui suivent ont été mis à disposition en janvier. Ils contiennent des informations nouvelles et mises à jour destinées aux développeurs Windows.
+La documentation du développeur Windows est constamment mise à jour afin d’intégrer les informations sur les nouvelles fonctionnalités disponibles pour les développeurs sur la plateforme Windows. Les présentations de fonctionnalités, les conseils aux développeurs et les vidéos qui suivent ont été mis à disposition en janvier. Ils contiennent des informations nouvelles et mises à jour destinées aux développeurs Windows.
 
-[Installez les outils et le kit de développement logiciel (SDK)](https://developer.microsoft.com/windows/downloads#_blank) sur Windows 10 et vous pourrez ainsi [créer une application universelle Windows](../get-started/create-uwp-apps.md) ou explorer la procédure permettant d’utiliser votre [code d’application existant sur Windows](../porting/index.md).
+[Installez les outils et le SDK](https://developer.microsoft.com/windows/downloads#_blank) sur Windows 10, et vous pourrez ainsi [créer une application Windows universelle](../get-started/create-uwp-apps.md) ou découvrir comment vous pouvez utiliser votre [code d’application existant sur Windows](../porting/index.md).
 
 
 ## <a name="features"></a>Fonctionnalités
@@ -41,7 +41,7 @@ Nous avons mis à jour notre documentation sur la [disposition de pages XAML](..
 
 ### <a name="subscription-add-ons-are-now-available-to-all-developers"></a>Les extensions d’abonnement sont désormais disponibles pour tous les développeurs
 
-Créez et publiez des extensions d’abonnement pour vendre des produits numériques dans vos applications et jeux (par exemple, des fonctionnalités de l’application ou du contenu numérique) avec des périodes de facturation périodiques automatisées. Pour plus d’informations, consultez [Activer des extensions d’abonnement pour votre application](../monetize/enable-subscription-add-ons-for-your-app.md).
+Créez et publiez des extensions d’abonnement pour vendre des produits numériques dans vos applications et jeux (par exemple, des fonctionnalités de l’application ou du contenu numérique) avec des périodes de facturation périodiques automatisées. Pour plus d'informations, consultez [Activer des extensions d'abonnement pour votre application](../monetize/enable-subscription-add-ons-for-your-app.md).
 
 ## <a name="developer-guidance"></a>Conseils aux développeurs
 

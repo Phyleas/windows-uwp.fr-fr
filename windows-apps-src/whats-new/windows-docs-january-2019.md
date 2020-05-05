@@ -6,17 +6,17 @@ ms.date: 01/17/2019
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 7947fb6e71a9f2ddbedcd8e3ee8bab7b720dc444
-ms.sourcegitcommit: 6169660ea437915265165c4631d9702587e4793d
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/06/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74902469"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-january-2019"></a>Nouveautés apportées dans la documentation du développeur Windows en janvier 2019
 
-La documentation du développeur Windows est constamment mise à jour avec des informations sur les nouvelles fonctionnalités mises à la disposition des développeurs sur la plateforme Windows. Les présentations de fonctionnalités, conseils aux développeurs et vidéos ci-dessous ont été mis à disposition au mois de janvier.
+La documentation du développeur Windows est constamment mise à jour afin d’intégrer les informations sur les nouvelles fonctionnalités disponibles pour les développeurs sur la plateforme Windows. Les présentations de fonctionnalités, conseils aux développeurs et vidéos ci-dessous ont été mis à disposition au mois de janvier.
 
-[Installez les outils et le kit de développement logiciel (SDK)](https://developer.microsoft.com/windows/downloads#_blank) sur Windows 10 et vous pourrez ainsi [créer une application universelle Windows](../get-started/create-uwp-apps.md) ou explorer la procédure permettant d’utiliser votre [code d’application existant sur Windows](../porting/index.md).
+[Installez les outils et le SDK](https://developer.microsoft.com/windows/downloads#_blank) sur Windows 10, et vous pourrez ainsi [créer une application Windows universelle](../get-started/create-uwp-apps.md) ou découvrir comment vous pouvez utiliser votre [code d’application existant sur Windows](../porting/index.md).
 
 ## <a name="features"></a>Fonctionnalités
 
@@ -68,7 +68,7 @@ La rubrique [Préparer votre application pour le changement d’ère du Japon](.
 
 ## <a name="videos"></a>Vidéos
 
-### <a name="progressive-web-apps"></a>Applications Web progressives
+### <a name="progressive-web-apps"></a>Applications web progressives
 
 Les Applications web progressives sont des sites web qui fonctionnent comme des applications natives dans différents navigateurs et sur un vaste éventail d’appareils Windows 10. [Regardez la vidéo](https://youtu.be/ugAewC3308Y) pour en savoir plus, puis [consultez les documents](https://developer.microsoft.com/windows/pwa) pour vous lancer.
 
@@ -78,7 +78,7 @@ Découvrez notre [nouvelle série de vidéos sur Visual Studio Code](https://www
 
 ### <a name="one-dev-question"></a>One Dev Question
 
-Dans le cadre de la série de vidéos One Dev Question, des développeurs Microsoft expérimentés répondent à toutes sortes de questions sur le développement, la culture d’équipe et l’histoire de Windows. Voici les dernières questions auxquelles nous avons répondu !
+Dans le cadre de la série de vidéos One Dev Question, des développeurs Microsoft expérimentés répondent à des questions sur le développement, la culture d’équipe et l’histoire de Windows. Voici les dernières questions auxquelles nous avons répondu !
 
 Raymond Chen :
 

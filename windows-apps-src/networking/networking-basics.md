@@ -4,19 +4,19 @@ title: Notions de base en matière de réseau
 ms.assetid: 1F47D33B-6F00-4F74-A52D-538851FD38BE
 ms.date: 06/01/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 1cf9d4866ddb72da0a284bcdcff07e3420f2880e
-ms.sourcegitcommit: 4657ac3be576b1d6dcd938d73a2f6a7e060ab17b
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/31/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "80404915"
 ---
 # <a name="networking-basics"></a>Notions de base en matière de réseau
 Ce que vous devez faire pour toute application réseau.
 
-## <a name="capabilities"></a>Fonctions
+## <a name="capabilities"></a>Fonctionnalités
 Pour pouvoir utiliser le réseau, vous devez ajouter des éléments de fonctionnalité appropriés au manifeste de votre application. Si aucune fonctionnalité réseau n’est spécifiée dans le manifeste de votre application, celle-ci n’a aucune fonctionnalité réseau, et toute tentative de connexion au réseau échoue.
 
 Les fonctionnalités réseau les plus utilisées sont les suivantes.
@@ -460,7 +460,7 @@ Outre le chiffrement TLS/SSL, un serveur peut avoir besoin d’une valeur d’en
 
 Si la demande initiale du client ne contient pas cette valeur ou si elle fournit une valeur qui ne correspond pas aux informations attendues par le serveur, la valeur attendue est envoyée du serveur au client lors de l’erreur d’établissement de liaison WebSocket.
 
-## <a name="authentication"></a>Authentification
+## <a name="authentication"></a>Authentication
 Comment fournir des informations d’authentification lors d’une connexion via le réseau.
 
 ### <a name="providing-a-client-certificate-with-the-streamsocket-class"></a>Fourniture d’un certificat client avec la classe StreamSocket

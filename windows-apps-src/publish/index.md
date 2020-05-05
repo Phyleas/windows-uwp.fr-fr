@@ -7,10 +7,10 @@ keywords: windows 10, uwp, publication, publier, vente, vendre, distribuer, dis
 ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d30eb37e9633496e510a2e05ec48cc819bd51c9
-ms.sourcegitcommit: 08cb5a4ca2e02179ad6b768c841fe3d5216bcae3
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/02/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "80614977"
 ---
 # <a name="publish-windows-apps-and-games"></a>Publier des applications et jeux Windows  

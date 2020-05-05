@@ -11,10 +11,10 @@ template: detail.hbs
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a2f73fe6280d3a86510ce48f47017dd4897139a
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "79208984"
 ---
 # <a name="xaml-styles"></a>Styles XAML
@@ -165,7 +165,7 @@ Le remplacement des pinceaux système est généralement effectué au niveau de 
 </Page.Resources>
 ```
 
-Pour les états du type PointerOver (souris déplacée sur le bouton), **PointerPressed** (activation du bouton), ou Disabled (impossible d’interagir avec le bouton). Ces terminaisons sont ajoutées aux noms de style léger d’origine : **ButtonBackgroundPointerOver**, **ButtonForegroundPointerPressed**, **ButtonBorderBrushDisabled**, etc. En modifiant ces pinceaux, vous avez la garantie que vos contrôles seront colorés de manière cohérente, suivant le thème de votre application.
+Pour les états du type PointerOver (souris déplacée sur le bouton), **PointerPressed** (activation du bouton), ou Disabled (impossible d’interagir avec le bouton). Ces terminaisons sont ajoutées sur les noms de style léger d’origine : **ButtonBackgroundPointerOver**, **ButtonForegroundPointerPressed**, **ButtonBorderBrushDisabled**, etc. En modifiant également ces pinceaux, vous aurez la garantie que vos contrôles utiliseront une couleur cohérente avec celle du thème de votre application.
 
 Le fait de placer ces remplacements de pinceau au niveau **App.Resources** a pour effet d’affecter tous les boutons de l’ensemble de votre application, et non une seule page.
 

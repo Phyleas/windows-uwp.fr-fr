@@ -6,10 +6,10 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, port, migrer, interopérabilité, ABI
 ms.localizationpriority: medium
 ms.openlocfilehash: 91602c75cdaddc325407529ab4d231db46ecca39
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "79209144"
 ---
 # <a name="interop-between-cwinrt-and-the-abi"></a>Interopérabilité entre C++/WinRT et ABI
@@ -143,7 +143,7 @@ Voici d’autres techniques de conversions de bas niveau similaires, mais cette 
 
 Pour les conversions des niveaux les plus bas, qui copient uniquement les adresses, vous pouvez utiliser les fonctions d’assistance [**winrt::get_abi**](/uwp/cpp-ref-for-winrt/get-abi), [**winrt::detach_abi**](/uwp/cpp-ref-for-winrt/detach-abi) et [**winrt::attach_abi**](/uwp/cpp-ref-for-winrt/attach-abi).
 
-`WINRT_ASSERT` est une définition de macro qui est développée en [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros).
+`WINRT_ASSERT` est une définition de macro qui s’étend à [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros).
 
 ```cppwinrt
     // The code in main() already shown above remains here.

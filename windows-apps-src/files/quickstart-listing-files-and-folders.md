@@ -4,7 +4,7 @@ title: Énumérer et interroger des fichiers et dossiers
 description: Accédez aux fichiers et dossiers dans un dossier, une bibliothèque, un appareil ou un emplacement réseau. Vous pouvez également interroger les fichiers et dossiers situés dans un emplacement en créant des requêtes de fichiers et de dossiers.
 ms.date: 12/19/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:
 - csharp
@@ -12,10 +12,10 @@ dev_langs:
 - cpp
 - vb
 ms.openlocfilehash: 33b03ae1538001a2a9e77d3d72afd7bb67e9f3dc
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74258580"
 ---
 # <a name="enumerate-and-query-files-and-folders"></a>Énumérer et interroger des fichiers et dossiers
@@ -27,11 +27,11 @@ Pour obtenir des conseils sur le stockage des données de votre application de p
 > [!NOTE]
 > Pour un exemple complet, consultez l'[Exemple d'énumération de dossier](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FolderEnumeration).
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 -   **Comprendre la programmation asynchrone pour les applications pour la plateforme Windows universelle (UWP)**
 
-    Pour apprendre à écrire des applications asynchrones en C# ou Visual Basic, voir [Appeler des API asynchrones en C# ou Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). Pour apprendre à écrire des applications asynchrones en C++/WinRT, voir [Opérations concurrentes et asynchrones avec C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency). Pour apprendre à écrire des applications asynchrones en C++/CX, consultez [Programmation asynchrone en C++/CX](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
+    Pour apprendre à écrire des applications asynchrones en C# ou Visual Basic, voir [Appeler des API asynchrones en C# ou Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). Pour apprendre à écrire des applications asynchrones en C++/WinRT, voir [Opérations concurrentes et asynchrones avec C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency). Pour apprendre à écrire des applications asynchrones en C++/CX, voir [Programmation asynchrone en C++/CX](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
 
 -   **Autorisations d'accès à l'emplacement**
 

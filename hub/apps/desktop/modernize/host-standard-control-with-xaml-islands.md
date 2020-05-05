@@ -9,10 +9,10 @@ author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: ed6aa406cd1372819c25bd43b59cd416130b09e0
-ms.sourcegitcommit: df0cd9c82d1c0c17ccde424e3c4a6ff680c31a35
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "80482513"
 ---
 # <a name="host-a-standard-uwp-control-in-a-wpf-app-using-xaml-islands"></a>Héberger un contrôle UWP standard dans une application WPF à l’aide d’îlots XAML
@@ -144,7 +144,7 @@ Votre projet étant configuré pour utiliser des îlots XAML UWP, vous pouvez aj
 
 1. Dans l’**Explorateur de solutions**, ouvrez le fichier **MainWindow.xaml**.
 
-2. Dans l’élément **Window** vers le début du fichier XAML, ajoutez l’attribut suivant. Ce dernier référence l’espace de noms XAML pour les contrôles UWP wrappés [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) et [InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar).
+2. Dans l’élément **Window** au début du fichier XAML, ajoutez l’attribut suivant. Ce dernier référence l’espace de noms XAML pour les contrôles UWP wrappés [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) et [InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar).
 
     ```xml
     xmlns:Controls="clr-namespace:Microsoft.Toolkit.Wpf.UI.Controls;assembly=Microsoft.Toolkit.Wpf.UI.Controls"
@@ -164,7 +164,7 @@ Votre projet étant configuré pour utiliser des îlots XAML UWP, vous pouvez aj
             Title="MainWindow" Height="800" Width="800">
     ```
 
-3. Dans le fichier **MainWindow.xaml**, remplacez l’élément `<Grid>` existant par le code XAML suivant. Ce code XAML ajoute à l’élément `<Grid>` un contrôle [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) et un contrôle [InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) (préfixés par le mot clé **Controls** que vous avez défini en tant qu’espace de noms).
+3. Dans le fichier **MainWindow.xaml**, remplacez l’élément `<Grid>` existant par le code XAML suivant. Ce code XAML ajoute à l’élément [ un contrôle ](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)InkCanvas[ et un contrôle ](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar)InkToolbar **(préfixés par le mot clé**Controls`<Grid>` que vous avez défini en tant qu’espace de noms).
 
     ```xml
     <Grid Margin="10,50,10,10">
@@ -184,7 +184,7 @@ Votre projet étant configuré pour utiliser des îlots XAML UWP, vous pouvez aj
 
 4. Enregistrez le fichier **MainWindow.xaml**.
 
-    Si vous avez un appareil qui prend en charge un stylet numérique, tel qu’une Surface, et que vous suivez ce labo sur un ordinateur physique, vous pouvez maintenant générer et exécuter l’application et dessiner avec de l’encre numérique sur l’écran au moyen du stylet. Toutefois, si vous n’avez pas d’appareil avec stylet et que vous essayez de signer avec la souris, rien ne se produit. En effet, le contrôle **InkCanvas** est activé uniquement pour les stylets numériques par défaut. Cependant, vous pouvez changer ce comportement.
+    Si vous avez un appareil qui prend en charge un stylet numérique, tel qu’une Surface, et que vous suivez ce labo sur un ordinateur physique, vous pouvez maintenant générer et exécuter l’application et dessiner avec de l’encre numérique sur l’écran au moyen du stylet. Toutefois, si vous n’avez pas d’appareil avec stylet et que vous essayez de signer avec la souris, rien ne se passe. En effet, le contrôle **InkCanvas** est activé uniquement pour les stylets numériques par défaut. Cependant, vous pouvez changer ce comportement.
 
 5. Ouvrez le fichier **MainWindow.xaml.cs**.
 
@@ -213,7 +213,7 @@ Les contrôles UWP wrappés [InkCanvas](https://docs.microsoft.com/windows/commu
 
 1. Dans l’**Explorateur de solutions**, ouvrez le fichier **MainWindow.xaml**.
 
-2. Dans l’élément **Window** vers le début du fichier XAML, ajoutez l’attribut suivant. Ce dernier référence l’espace de noms XAML pour le contrôle [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost).
+2. Dans l’élément **Window** au début du fichier XAML, ajoutez l’attribut suivant. Ce dernier référence l’espace de noms XAML pour le contrôle [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost).
 
     ```xml
     xmlns:xamlhost="clr-namespace:Microsoft.Toolkit.Wpf.UI.XamlHost;assembly=Microsoft.Toolkit.Wpf.UI.XamlHost"

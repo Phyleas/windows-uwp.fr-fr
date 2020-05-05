@@ -7,14 +7,14 @@ template: detail.hbs
 op-migration-status: ready
 ms.date: 11/01/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 6be51c274078d3b8db5ae50033bbf714ec4aa12a
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "80081401"
 ---
 # <a name="command-design-basics-for-uwp-apps"></a>Informations de base relatives à la conception des commandes pour les applications UWP

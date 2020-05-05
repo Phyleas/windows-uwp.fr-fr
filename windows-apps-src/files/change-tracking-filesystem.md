@@ -3,13 +3,13 @@ title: Suivre les modifications du système de fichiers en arrière-plan
 description: Explique comment suivre les modifications apportées aux fichiers et aux dossiers en arrière-plan au fur et à mesure que les utilisateurs les déplacent dans le système.
 ms.date: 12/19/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 1cef2fb660681d3e382eb8ca7dcb92456756f627
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75685232"
 ---
 # <a name="track-file-system-changes-in-the-background"></a>Suivre les modifications du système de fichiers en arrière-plan

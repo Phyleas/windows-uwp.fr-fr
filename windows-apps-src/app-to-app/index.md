@@ -4,13 +4,13 @@ description: Cette section explique comment partager des données entre des appl
 title: Communication entre les applications
 ms.date: 02/12/2020
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 2de9d5ae04c526c7c35fda4a7aef713814b4fbc2
-ms.sourcegitcommit: 366c96d16e9a330bd4fbd9e1e19983f890f72642
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "77258335"
 ---
 # <a name="app-to-app-communication"></a>Communication entre les applications
@@ -35,6 +35,6 @@ Les applications UWP peuvent également créer des [services d’application](..
 | [Glisser-déplacer](../design/input/drag-and-drop.md) | Cet article explique comment ajouter le glisser-déplacer dans votre application UWP. Glisser-déplacer est une méthode naturelle et classique d’interaction avec le contenu comme les images et les fichiers. Une fois implémenté, le glisser-déplacer fonctionne parfaitement dans toutes les directions, notamment d’application à application, d’application à bureau et de bureau à application. |
 | [Créer et consommer un service d’application](../launch-resume/how-to-create-and-consume-an-app-service.md) | Cet article explique comment créer un service d’application dans une application UWP qui fournit des services à d’autres applications UWP.  |
 
-## <a name="see-also"></a>Voir également
+## <a name="see-also"></a>Voir aussi
 
 - [Développer des applications UWP](https://docs.microsoft.com/windows/uwp/develop/)

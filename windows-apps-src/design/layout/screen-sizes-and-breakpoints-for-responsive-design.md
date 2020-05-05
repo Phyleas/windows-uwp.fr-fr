@@ -3,14 +3,14 @@ title: Tailles d’écran et points d’arrêt pour la conception réactive
 description: Plutôt que d'optimiser votre interface utilisateur pour les nombreux appareils de l’écosystème Windows 10, nous vous recommandons de concevoir une application pour plusieurs catégories de largeurs principales appelées « points d’arrêt ».
 ms.date: 08/30/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 37d0ca71adf43891628a02d60d6873e7934d749b
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "79210175"
 ---
 #  <a name="screen-sizes-and-breakpoints"></a>Tailles d’écran et points d’arrêt
@@ -34,7 +34,7 @@ Ce tableau décrit les différentes classes de taille et les points d’arrêt.
 <th align="left">Classe de taille</th>
 <th align="left">Points d’arrêt</th>
 <th align="left">Taille d’écran standard (diagonale)</th>
-<th align="left">Périphériques</th>
+<th align="left">.</th>
 <th align="left">Tailles de fenêtre</th>
 </tr>
 </thead>

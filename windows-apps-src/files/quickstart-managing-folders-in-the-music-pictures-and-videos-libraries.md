@@ -4,13 +4,13 @@ title: Gestion des bibliothèques de musique, d’images et de vidéos
 description: Ajoutez les dossiers existants de musique, images ou vidéos dans les bibliothèques correspondantes. Vous pouvez également supprimer des dossiers de bibliothèques, obtenir la liste des dossiers d’une bibliothèque et découvrir des photos, de la musique et des vidéos.
 ms.date: 06/18/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c75bd62fb5548cc03247772427fb5aabac4fb5a
-ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74735074"
 ---
 # <a name="files-and-folders-in-the-music-pictures-and-videos-libraries"></a>Fichiers et dossiers dans les bibliothèques de musique, d’images et de vidéos
@@ -19,14 +19,14 @@ Ajoutez les dossiers existants de musique, images ou vidéos dans les bibliothè
 
 Une bibliothèque est une collection virtuelle de dossiers, qui comprend un dossier connu par défaut, ainsi que d’autres dossiers que l’utilisateur a ajouté à la bibliothèque à l’aide de votre application ou d’une des applications intégrées. Par exemple, la bibliothèque d’images inclut le dossier connu d’images par défaut. L’utilisateur peut ajouter ou supprimer des dossiers dans la bibliothèque d’images à l’aide de votre application ou de l’application Photos intégrée.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 
 -   **Comprendre la programmation asynchrone pour les applications pour la plateforme Windows universelle (UWP)**
 
     Pour apprendre à écrire des applications asynchrones en C# ou Visual Basic, voir [Appeler des API asynchrones en C# ou Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). Pour apprendre à écrire des applications asynchrones en C++, voir [Programmation asynchrone en C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
 
--   **Autorisations d’accès à l’emplacement**
+-   **Autorisations d'accès à l'emplacement**
 
     Dans Visual Studio, ouvrez le fichier manifeste de l’application dans le concepteur du manifeste. Dans la page **Fonctionnalités**, sélectionnez les bibliothèques gérées par votre application.
 

@@ -6,10 +6,10 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, port, migrer, interopérabilité, C++/CX
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e54937391d3317f1b37415036aabc88a6cfaa41
-ms.sourcegitcommit: f288bcc108f9850671662c7b76c55c8313e88b42
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "80290021"
 ---
 # <a name="interop-between-cwinrt-and-ccx"></a>Interopérabilité entre C++/WinRT et C++/CX
@@ -55,7 +55,7 @@ Cet exemple de projet montre également comment vous pouvez utiliser des alias d
 - Dans les propriétés du projet, sélectionnez **C/C++** \> **Général** \> **Consommer l’extension Windows Runtime** \> **Oui (/ZW)** . Cette opération active la prise en charge du projet pour C++/CX.
 - Remplacez le contenu de `App.cpp` par le listing de code ci-dessous.
 
-`WINRT_ASSERT` est une définition de macro, qui se développe en [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros).
+`WINRT_ASSERT` est une définition de macro qui s’étend à [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros).
 
 ```cppwinrt
 // App.cpp
