@@ -9,12 +9,12 @@ ms.technology: windows-nodejs
 keywords: Mac vers Windows, mappage des touches de raccourci, transition d'Unix vers Windows, transition de Mac vers Windows, aide relative à la transition de MacBook vers Surface, utilisation de Windows pour un utilisateur Macintosh, transition de Macintosh vers Windows, aide relative au changement d'environnement de développement, Mac OS X vers Windows, aide relative à la transition de Mac vers PC
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: 8c23fa3e6791a3cd78d259b40e68606a30fd9395
-ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
+ms.openlocfilehash: 457abcec97247afcc0d63c983c8a6cda2de51c66
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80218439"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81643698"
 ---
 # <a name="guide-for-changing-your-dev-environment-from-mac-to-windows"></a>Guide relatif au changement d'environnement de développement de Mac vers Windows
 
@@ -82,11 +82,11 @@ De plus, PowerShell est [également disponible pour Mac](https://docs.microsoft.
 
 3. Sous-système Windows pour Linux (WSL)
 
-WSL vous permet d’exécuter un shell Linux dans Windows. Ainsi, vous pouvez exécuter *bash** ou un autre shell, selon vos besoin et la distribution Linux spécifique installée. WSL offre aux utilisateurs de Mac un type d'environnement qui leur est familier. À titre d'exemple, vous utiliserez **ls** pour répertorier les fichiers d'un répertoire actif, et non **dir** comme vous le feriez avec la ligne de commande Windows. Pour en savoir plus sur l’installation et l’utilisation de WSL, consultez le [Guide d’installation du sous-système Windows pour Linux pour Windows 10](https://docs.microsoft.com/windows/wsl/install-win10).
+WSL vous permet d’exécuter un shell Linux dans Windows. Ainsi, vous pouvez exécuter **bash** ou un autre shell, selon vos besoin et la distribution Linux spécifique installée. WSL offre aux utilisateurs de Mac un type d'environnement qui leur est familier. À titre d'exemple, vous utiliserez **ls** pour répertorier les fichiers d'un répertoire actif, et non **dir** comme vous le feriez avec la ligne de commande Windows. Pour en savoir plus sur l’installation et l’utilisation de WSL, consultez le [Guide d’installation du sous-système Windows pour Linux pour Windows 10](https://docs.microsoft.com/windows/wsl/install-win10).
 
 4. Terminal Windows (préversion)
 
-L'application Terminal Windows combine des outils en ligne de commande et des shells issus de différentes sources, notamment la ligne de commande Windows classique, PowerShell et le sous-système Windows pour Linux. Actuellement en préversion, elle propose néanmoins différentes fonctionnalités très utiles, telles qu'une prise en charge de plusieurs onglets, des volets de fractionnement, des thèmes et des styles personnalisés, ainsi qu'une prise en charge complète d’Unicode. L'application Terminal Windows peut être installée à partir du [Microsoft Store sur Windows 10](https://www.microsoft.com/en-us/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab).
+L'application Terminal Windows combine des outils en ligne de commande et des shells issus de différentes sources, notamment la ligne de commande Windows classique, PowerShell et le sous-système Windows pour Linux. Actuellement en préversion, elle propose néanmoins différentes fonctionnalités très utiles, telles qu’une prise en charge de plusieurs onglets, des volets de fractionnement, des thèmes et des styles personnalisés, ainsi qu’une prise en charge complète d’Unicode. L'application Terminal Windows peut être installée à partir du [Microsoft Store sur Windows 10](https://www.microsoft.com/en-us/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab).
 
 ## <a name="apps-and-utilities"></a>Applications et utilitaires
 

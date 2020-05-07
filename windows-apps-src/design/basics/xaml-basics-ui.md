@@ -6,10 +6,10 @@ ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: c23a9539d0fc3902f715917b380e8b6b3e132c15
-ms.sourcegitcommit: 1d868968297d0d6d02cc38fe84d0a3ab5bccfb60
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "68974460"
 ---
 # <a name="tutorial-create-a-user-interface"></a>Tutoriel : Créer une interface utilisateur
@@ -28,7 +28,7 @@ La *page de détails* affiche une seule photo une fois qu’elle a été sélect
 ![Page de détails](images/xaml-basics/detailpage.png)
 
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 * Visual Studio 2019 : [Télécharger Visual Studio 2019 Community (gratuit)](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15&campaign=WinDevCenter&ocid=wdgcx-windevcenter-community-download) 
 * SDK Windows 10 (10.0.15063.468 ou version ultérieure) :  [Télécharger le SDK Windows le plus récent (gratuit)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
@@ -383,7 +383,7 @@ Exécutez maintenant l’application pour voir le contrôle **GridView** avec le
 
 ## <a name="part-4-modify-the-item-container-style"></a>Partie 4 : Modifier le style du conteneur d’éléments
 
-Un modèle de contrôle d’un élément contient les visuels qui affichent l’état, tels que la sélection, le pointage et le focus. Ces visuels sont générés au-dessus ou en dessous du modèle de données. Ici, vous allez modifier les propriétés **Background** et **Margin** du modèle de contrôle afin de donner aux éléments de **GridView** un arrière-plan grisé.
+Un modèle de contrôle d’un élément contient les visuels qui affichent l’état, comme la sélection, le pointage et le focus. Ces visuels sont rendus au-dessus ou en dessous du modèle de données. Ici, vous allez modifier les propriétés **Background** et **Margin** du modèle de contrôle afin de donner aux éléments de **GridView** un arrière-plan grisé.
 
 Pour modifier le conteneur d’éléments
 

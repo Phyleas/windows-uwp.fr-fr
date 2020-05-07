@@ -1,19 +1,19 @@
 ---
 Description: Découvrez comment accorder une identité à des applications de bureau non empaquetées afin d'y utiliser les fonctionnalités Windows 10 modernes.
 title: Accorder une identité à des applications de bureau non empaquetées
-ms.date: 02/28/2020
+ms.date: 04/23/2020
 ms.topic: article
 keywords: windows 10, bureau, package, identité, MSIX, Win32
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: d997c6109256974f17bc0f86a518e34ef55960a7
-ms.sourcegitcommit: ecd7bce5bbe15e72588937991085dad6830cec71
+ms.openlocfilehash: d870c82a3e4a8bc6c2ce923026010eff953eead2
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81224272"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82107712"
 ---
 # <a name="grant-identity-to-non-packaged-desktop-apps"></a>Accorder une identité à des applications de bureau non empaquetées
 
@@ -43,9 +43,9 @@ Un *package partiellement alloué* contient un manifeste, mais aucun autre fichi
 
 ### <a name="package-external-location"></a>Emplacement externe du package
 
-Pour prendre en charge les packages partiellement alloués, le schéma du manifeste de package prend désormais en charge un élément **\<AllowExternalContent\>** facultatif sous l'élément [ **\<Propriétés\>** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-properties). Le manifeste de votre package peut ainsi référencer du contenu en dehors du package, à un emplacement spécifique sur le disque.
+Pour prendre en charge les packages partiellement alloués, le schéma du manifeste de package prend désormais en charge un élément [**uap10:AllowExternalContent**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap10-allowexternalcontent) facultatif sous l’élément [**Properties**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-properties). Le manifeste de votre package peut ainsi référencer du contenu en dehors du package, à un emplacement spécifique sur le disque.
 
-Par exemple, si votre application de bureau non empaquetée installe le fichier exécutable et d’autres contenus dans C:\Program Files\MyDesktopApp\,, vous pouvez créer un package partiellement alloué incluant l'élément **\<AllowExternalContent\>** dans le manifeste. Lors du processus d’installation de votre application, vous pouvez installer le package partiellement alloué et déclarer C:\Program Files\MyDesktopApp\ comme emplacement externe utilisé par votre application.
+Par exemple, si votre application de bureau non empaquetée installe le fichier exécutable et d’autres contenus dans C:\Program Files\MyDesktopApp\,, vous pouvez créer un package partiellement alloué incluant l’élément **uap10:AllowExternalContent** dans le manifeste. Lors du processus d’installation de votre application, vous pouvez installer le package partiellement alloué et déclarer C:\Program Files\MyDesktopApp\ comme emplacement externe utilisé par votre application.
 
 ## <a name="create-a-package-manifest-for-the-sparse-package"></a>Créer un manifeste de package pour le package partiellement alloué
 
@@ -53,10 +53,10 @@ Pour générer un package partiellement alloué, vous devez d’abord créer un 
 
 Le manifeste de package doit comprendre les éléments suivants :
 
-* Un élément [ **\<Identity\>** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) décrivant les attributs d’identité de votre application de bureau.
-* Un élément **\<AllowExternalContent\>** sous l'élément [ **\<Propriétés\>** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-properties). La valeur `true` doit être affectée à cet élément pour permettre au manifeste de votre package de référencer du contenu en dehors du package, à un emplacement spécifique sur le disque. Dans une étape ultérieure, vous spécifierez cet emplacement, et plus précisément lors de l'inscription de votre package partiellement alloué à partir du code exécuté dans votre programme d’installation ou votre application. Tout contenu référencé dans le manifeste et absent du package doit être installé à l’emplacement externe.
-* L’attribut **MinVersion** de l’élément [ **\<TargetDeviceFamily\>** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) doit être défini sur `10.0.19000.0` ou version ultérieure.
-* Les attributs **TrustLevel=mediumIL** et **RuntimeBehavior = Win32App** de l'élément [ **\<Application\>** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-application) déclarent que l’application de bureau associée au package partiellement alloué s’exécutera de la même façon qu’une application de bureau non empaquetée standard, sans virtualisation du registre et du système de fichiers, entre autres modifications d’exécution.
+* Un élément [**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) décrivant les attributs d’identité de votre application de bureau.
+* Un élément [**uap10:AllowExternalContent**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap10-allowexternalcontent) sous l’élément [**Properties**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-properties). La valeur `true` doit être affectée à cet élément pour permettre au manifeste de votre package de référencer du contenu en dehors du package, à un emplacement spécifique sur le disque. Dans une étape ultérieure, vous spécifierez cet emplacement, et plus précisément lors de l'inscription de votre package partiellement alloué à partir du code exécuté dans votre programme d’installation ou votre application. Tout contenu référencé dans le manifeste et absent du package doit être installé à l’emplacement externe.
+* L’attribut **MinVersion** de l’élément [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) doit être défini avec `10.0.19000.0` ou version ultérieure.
+* Les attributs **TrustLevel=mediumIL** et **RuntimeBehavior = Win32App** de l’élément [**Application**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-application) déclarent que l’application de bureau associée au package partiellement alloué s’exécutera de la même façon qu’une application de bureau non empaquetée standard, sans virtualisation du registre et du système de fichiers, entre autres modifications d’exécution.
 
 L’exemple suivant montre le contenu complet d’un manifeste de package partiellement alloué (AppxManifest.xml). Ce manifeste comprend une extension `windows.sharetarget`, nécessitant une identité de package.
 
@@ -132,9 +132,9 @@ SignTool.exe sign /fd SHA256 /a /f <path to certificate>\MyCertificate.pfx /p <c
 
 ### <a name="add-the-package-identity-metadata-to-your-desktop-application-manifest"></a>Ajouter les métadonnées d’identité du package au manifeste de votre application de bureau
 
-Vous devez également inclure un [manifeste d’application côte à côte](https://docs.microsoft.com/windows/win32/sbscs/application-manifests) avec votre application de bureau, de même qu'un élément [&lt;msix&gt;](https://docs.microsoft.com/windows/win32/sbscs/application-manifests#msix) avec des attributs qui déclarent les attributs d’identité de votre application. Les valeurs de ces attributs sont utilisées par le système d’exploitation pour déterminer l’identité de votre application lors du lancement du fichier exécutable.
+Vous devez également inclure un [manifeste d’application côte à côte](https://docs.microsoft.com/windows/win32/sbscs/application-manifests) avec votre application de bureau, de même qu'un élément [**msix**](https://docs.microsoft.com/windows/win32/sbscs/application-manifests#msix) avec des attributs qui déclarent les attributs d’identité de votre application. Les valeurs de ces attributs sont utilisées par le système d’exploitation pour déterminer l’identité de votre application lors du lancement du fichier exécutable.
 
-L’exemple suivant montre un manifeste d’application côte à côte avec un élément **\<msix\>** .
+L’exemple suivant montre un manifeste d’application côte à côte avec un élément **msix**.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -148,16 +148,16 @@ L’exemple suivant montre un manifeste d’application côte à côte avec un �
 </assembly>
 ```
 
-Les attributs de l'élément **\<msix\>** doivent correspondre à ces valeurs dans le manifeste du package de votre package partiellement alloué :
+Les attributs de l’élément **msix** doivent correspondre à ces valeurs dans le manifeste du package de votre package partiellement alloué :
 
-* Les attributs **packageName** et **publisher** doivent correspondre aux attributs **Name** et **Publisher** de l'élément [ **\<Identity\>** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) du manifeste de votre package.
-* L’attribut **applicationId** doit correspondre à l’attribut **Id** de l'élément [ **\<Application\>** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-application) du manifeste de votre application.
+* Les attributs **packageName** et **publisher** doivent correspondre aux attributs **Name** et **Publisher** de l’élément [**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) du manifeste de votre package.
+* L’attribut **applicationId** doit correspondre à l’attribut **Id** de l’élément [**Application**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-application) du manifeste de votre application.
 
 Le manifeste d’application côte à côte doit se trouver dans le même répertoire que le fichier exécutable de votre application de bureau et, par convention, porter le même nom que le fichier exécutable de votre application avec l’extension `.manifest`. Par exemple, si le nom du fichier exécutable de votre application est `ContosoPhotoStore`, le nom de fichier du manifeste de l’application doit être `ContosoPhotoStore.exe.manifest`.
 
 ## <a name="register-your-sparse-package-at-run-time"></a>Inscrire le package partiellement alloué au moment de l’exécution
 
-Pour accorder une identité de package à votre application de bureau, cette dernière doit inscrire le package partiellement alloué à l’aide de la méthode **AddPackageByUriAsync** de la classe [PackageManager](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager). Cette méthode est disponible à partir de Windows 10, version 2004. Vous pouvez ajouter du code à votre application pour inscrire le package partiellement alloué lors de la première exécution de votre application. Vous pouvez également exécuter du code afin d'inscrire le package lors de l’installation de votre application de bureau (par exemple, si vous utilisez MSI pour installer votre application de bureau, vous pouvez exécuter ce code à l'aide d'une action personnalisée).
+Pour accorder une identité de package à votre application de bureau, cette dernière doit inscrire le package partiellement alloué à l’aide de la méthode **AddPackageByUriAsync** de la classe [**PackageManager**](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager). Cette méthode est disponible à partir de Windows 10, version 2004. Vous pouvez ajouter du code à votre application pour inscrire le package partiellement alloué lors de la première exécution de votre application. Vous pouvez également exécuter du code afin d'inscrire le package lors de l’installation de votre application de bureau (par exemple, si vous utilisez MSI pour installer votre application de bureau, vous pouvez exécuter ce code à l'aide d'une action personnalisée).
 
 L'exemple suivant montre comment inscrire un package partiellement alloué. Ce code crée un objet **AddPackageOptions** contenant le chemin de l'emplacement externe où le manifeste de votre package peut référencer du contenu en dehors du package. Ensuite, le code transmet cet objet à la méthode **AddPackageByUriAsync** pour inscrire le package partiellement alloué. Cette méthode reçoit également l’emplacement de votre package partiellement alloué signé sous forme d'URI. Pour un exemple plus détaillé, consultez le fichier de code `StartUp.cs` de l'[exemple](#sample) correspondant.
 
@@ -191,7 +191,7 @@ private static bool registerSparsePackage(string externalLocation, string sparse
 
 ## <a name="sample"></a>Exemple
 
-Pour un exemple d’application pleinement fonctionnelle montrant comment accorder une identité de package à une application de bureau à l’aide d’un package partiellement alloué, consultez [https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages](https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages). Pour plus d’informations sur la création et l’exécution de l’exemple, consultez [ce billet de blog](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/#HBMFEM843XORqOWx.97).
+Pour obtenir un exemple d’application entièrement fonctionnel montrant comment accorder une identité de package à une application de bureau à l’aide d’un package partiellement alloué, consultez l’exemple [SparesePackages](https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages). Pour plus d’informations sur la création et l’exécution de l’exemple, consultez [ce billet de blog](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/#HBMFEM843XORqOWx.97).
 
 Cet exemple inclut ce qui suit :
 

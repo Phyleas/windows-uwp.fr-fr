@@ -14,12 +14,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: RS5, 19H1
-ms.openlocfilehash: ab5b509aa69dc54d18ef3643d7ccd46bc2984676
-ms.sourcegitcommit: 8be8ed1ef4e496055193924cd8cea2038d2b1525
+ms.openlocfilehash: 68682d7b47e42995060601f5ae1c9b8d891aa3ff
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80614099"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81643720"
 ---
 # <a name="treeview"></a>TreeView
 
@@ -472,7 +472,7 @@ Le contrôle **TreeView** prend en charge la sélection unique et la sélection 
 
 Quand la sélection multiple est activée, une case à cocher s’affiche en regard de chaque nœud d’arborescence, et les éléments sélectionnés sont mis en surbrillance. Un utilisateur peut sélectionner ou désélectionner un élément à l’aide de la case à cocher. Le fait de cliquer sur l’élément permet toujours de l’appeler.
 
-Le fait de sélectionner ou de désélectionner un nœud parent sélectionne ou désélectionne tous les enfants de ce nœud. Si seulement une partie des enfants sous un nœud parent est sélectionnée, la case à cocher du nœud parent est affichée comme étant indéterminée (elle comporte un carré noir).
+Le fait de sélectionner ou de désélectionner un nœud parent sélectionne ou désélectionne tous les enfants de ce nœud. Si seulement une partie des enfants sous un nœud parent est sélectionnée, la case à cocher du nœud parent est affichée dans un état indéterminé.
 
 ![Sélection multiple dans une arborescence](images/treeview-selection.png)
 

@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 834bea47a566789926648098086c05c0a47b6065
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74260555"
 ---
 #  <a name="building-a-complex-universal-windows-platform-uwp-app"></a>Création d’une application de plateforme Windows universelle (UWP) complexe
@@ -126,7 +126,7 @@ Techniques courantes :
 
 -   **Partage**  Permet aux utilisateurs de partager du contenu de votre application par le biais d’autres applications, mais également de recevoir du contenu pouvant être partagé par d’autres contacts et d’autres applications.
 -   **Lire sur**  Permet aux utilisateurs de lire du contenu audio et vidéo ou des images, diffusés en continu à partir de votre application sur d’autres appareils de leur réseau domestique.
--   **Sélecteur de fichiers et extensions du sélecteur de fichiers**  Permet aux utilisateurs de charger et d’enregistrer leurs fichiers à partir du système de fichiers local, leurs dispositifs de stockage connectés, leur groupe résidentiel et d’autres applications. Vous pouvez également fournir une extension du sélecteur de fichiers pour permettre à d’autres applications de charger le contenu de votre application.
+-   **Sélecteur de fichiers et extensions du sélecteur de fichiers**   Permet aux utilisateurs de charger et d’enregistrer leurs fichiers à partir du système de fichiers local, leurs dispositifs de stockage connectés, leur groupe résidentiel et d’autres applications. Vous pouvez également fournir une extension du sélecteur de fichiers pour permettre à d’autres applications de charger le contenu de votre application.
 
 Pour plus d’informations, voir [Contrats et extensions d’application](https://docs.microsoft.com/previous-versions/windows/apps/hh464906(v=win.10)).
 <!-- Win 8 page. Should have replacement. -->
@@ -155,7 +155,7 @@ Vous pouvez évidemment tirer parti d’un certain nombre d’interactions tacti
 
 -   **Mouvements de proximité**  Permettez aux utilisateurs de connecter leurs appareils avec ceux des autres utilisateurs à proximité en appuyant ces appareils l’un contre l’autre (jeux multijoueurs). En savoir plus sur [les mouvements de proximité et le contact](https://docs.microsoft.com/previous-versions/windows/apps/hh465229(v=win.10)).
 -   **Caméras et dispositifs de stockage externes**  Connectez vos utilisateurs grâce aux caméras intégrées ou reliées à leur ordinateur pour qu’ils puissent discuter, participer à des conférences, enregistrer des vidéoblogues, prendre des photos pour leur profil, parler du monde qui les entoure ou participer à toute autre activité entrant dans le domaine de l’application. Découvrez tout ce qu’il faut savoir sur l’[accès à du contenu de stockage amovible](https://docs.microsoft.com/previous-versions/windows/apps/hh465189(v=win.10)).
--   **Accéléromètres et autres capteurs**   De nos jours, les appareils intègrent un certain nombre de capteurs. Votre application peut assombrir ou éclaircir l’affichage en fonction de la lumière ambiante, réorganiser l’interface utilisateur si l’utilisateur fait pivoter l’affichage ou réagir à un mouvement. En savoir plus sur les [capteurs](../devices-sensors/sensors.md).
+-   **Accéléromètres et autres capteurs**     De nos jours, les appareils intègrent un certain nombre de capteurs. Votre application peut assombrir ou éclaircir l’affichage en fonction de la lumière ambiante, réorganiser l’interface utilisateur si l’utilisateur fait pivoter l’affichage ou réagir à un mouvement. En savoir plus sur les [capteurs](../devices-sensors/sensors.md).
 -   **Géolocalisation**  Utilisez les informations de géolocalisation des données du web ou des capteurs de géolocalisation standard pour aider les utilisateurs à circuler, à repérer leur emplacement sur une carte ou à recevoir des renseignements sur les personnes, les activités et les destinations à proximité. En savoir plus sur la [géolocalisation](https://docs.microsoft.com/previous-versions/windows/apps/hh465139(v=win.10)).
 
 Reprenons l’exemple de l’application de voyage. Pour réellement aider des amis à créer ensemble des itinéraires pour les voyages en groupe, vous pouvez utiliser quelques fonctionnalités, comme les suivantes pour n’en citer que certaines :
