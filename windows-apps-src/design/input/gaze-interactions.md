@@ -1,9 +1,9 @@
 ---
-title: Interactions avec le pointage du regard
-Description: Découvrez comment concevoir et optimiser vos applications UWP pour offrir la meilleure expérience possible aux utilisateurs qui reposent sur une entrée en regard de l’œil et des têtes de trace.
+title: Interactions de regard
+Description: Découvrez comment concevoir et optimiser vos applications Windows pour offrir la meilleure expérience possible aux utilisateurs qui reposent sur une entrée de regard de l’œil et des têtes de trace.
 label: Gaze interactions
 template: detail.hbs
-keywords: pointer du regard, suivi oculaire, suivi de la tête, endroit pointé par le regard, entrée, interaction utilisateur, accessibilité, facilité d’utilisation
+keywords: regard, suivi oculaire, suivi des têtes, point de regard, entrée, interaction utilisateur, accessibilité, convivialité
 ms.date: 05/01/2018
 ms.topic: article
 pm-contact: Jake Cohen
@@ -11,46 +11,46 @@ dev-contact: Austin Hodges
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 6176bdce1a725c1024af9f4ecf0c37cabb0f5376
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 4cfd84d54ecd1425b3b7e66c54c96fbd78c2dd46
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684237"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970124"
 ---
-# <a name="gaze-interactions-and-eye-tracking-in-uwp-apps"></a>Interactions avec le pointage du regard et le suivi oculaire dans les applications UWP
+# <a name="gaze-interactions-and-eye-tracking-in-windows-apps"></a>Interactions de regard et suivi oculaire dans les applications Windows
 
-![Suivi oculaire Hero](images/gaze/eyecontrolbanner1.png)
+![Héros du suivi oculaire](images/gaze/eyecontrolbanner1.png)
 
-Fournissez la prise en charge du suivi du pointage du regard, de l'attention et de la présence de l'utilisateur en fonction de l’emplacement et des mouvements de ses yeux.
-
-> [!NOTE]
-> Pour l’entrée par pointage du regard dans [Windows Mixed Reality](https://docs.microsoft.com/windows/mixed-reality/), voir [Pointer du regard](https://docs.microsoft.com/windows/mixed-reality/gaze).
-
-**API importantes** : [Windows.Devices.Input.Preview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview), [GazeDevicePreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicepreview), [GazePointPreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazepointpreview), [GazeInputSourcePreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeinputsourcepreview)
-
-## <a name="overview"></a>Vue d'ensemble
-
-Entrée avec le pointage du regard est un moyen puissant d'interagir et d'utiliser des applications UWP et Windows, particulièrement utile comme technologie d’assistance pour les utilisateurs souffrant de maladies neuro-musculaires (comme la SLA) ou d’autres handicaps impliquant des troubles des fonctions musculaires ou neurologiques.
-
-En outre, l'entrée par le pointage du regard offre également de remarquables opportunités pour les jeux (notamment pour l'acquisition de cible et le suivi), les applications de productivité traditionnelles, les bornes et autres scénarios interactifs dans lesquels les périphériques classiques (clavier, souris entrée tactile) ne sont pas disponibles ou il peut être utile de libérer des mains de l’utilisateur pour d’autres tâches (par exemple, pour tenir des sacs).
+Fournir un support pour le suivi du regard, de l’attention et de la présence d’un utilisateur en fonction de l’emplacement et du mouvement de leurs yeux.
 
 > [!NOTE]
-> La prise en charge du matériel de suivi oculaire a été introduite dans **Windows 10 Fall Creators Update** avec le [contrôle visuel](https://support.microsoft.com/help/4043921/windows-10-get-started-eye-control), une fonctionnalité intégrée qui vous permet d’utiliser vos yeux pour contrôler le pointeur à l'écran, taper avec le clavier visuel et communiquer avec des personnes à l’aide de la synthèse vocale. Un ensemble d’API UWP ([Windows. Devices. Input. Preview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview)) pour la création d’applications pouvant interagir avec le matériel de suivi visuel est disponible avec la **mise à jour 2018 de Windows 10 avril (version 1803, Build 17134)** et les versions ultérieures.
+> Pour les entrées de regard dans [Windows Mixed Reality](https://docs.microsoft.com/windows/mixed-reality/), consultez le point de [regard](https://docs.microsoft.com/windows/mixed-reality/gaze).
+
+**API importantes**: [Windows. Devices. Input. Preview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview), [GazeDevicePreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicepreview), [GazePointPreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazepointpreview), [GazeInputSourcePreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeinputsourcepreview)
+
+## <a name="overview"></a>Vue d’ensemble
+
+Le point d’entrée en regard est un moyen puissant d’interagir et d’utiliser des applications Windows, particulièrement utiles comme une technologie d’assistance pour les utilisateurs avec des maladies neuro-musculaires (telles que ALS) et d’autres handicaps impliquant des fonctions musculaires ou nerveuses altérées.
+
+En outre, le point d’entrée de regard offre des opportunités aussi attrayantes pour les jeux (y compris l’acquisition et le suivi cibles) et les applications de productivité traditionnelles, les bornes et d’autres scénarios interactifs dans lesquels les périphériques d’entrée traditionnels (clavier, souris, Touch) ne sont pas disponibles
+
+> [!NOTE]
+> La prise en charge du matériel de suivi oculaire a été introduite dans **Windows 10 automne Creators Update** avec le [contrôle oculaire](https://support.microsoft.com/help/4043921/windows-10-get-started-eye-control), une fonctionnalité intégrée qui vous permet d’utiliser vos yeux pour contrôler le pointeur sur l’écran, taper avec le clavier visuel et communiquer avec des personnes utilisant la conversion de texte par synthèse vocale. Un ensemble d’API Windows Runtime ([Windows. Devices. Input. Preview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview)) pour la création d’applications pouvant interagir avec le matériel de suivi visuel est disponible avec la **mise à jour 2018 de Windows 10 avril (version 1803, Build 17134)** et les versions ultérieures.
 
 ## <a name="privacy"></a>Confidentialité
 
-En raison des données personnelles potentiellement sensibles collectées par les périphériques de suivi oculaire, vous devez déclarer la fonctionnalité `gazeInput` dans le manifeste de votre application UWP (voir la section suivante **Configuration**). Lorsqu'elle est déclarée, Windows invite automatiquement les utilisateurs via une boîte de dialogue de consentement (lors de la première exécution de l’application), dans laquelle l’utilisateur doit donner à l’application l'autorisation de communiquer avec l’appareil de suivi oculaire et d'accéder à ces données.
+En raison des données personnelles potentiellement sensibles collectées par les appareils de suivi oculaire, vous devez déclarer `gazeInput` la fonctionnalité dans le manifeste de l’application de votre application (voir la section **d’installation** suivante). Quand elle est déclarée, Windows invite automatiquement les utilisateurs avec une boîte de dialogue de consentement (lorsque l’application est exécutée pour la première fois), où l’utilisateur doit accorder l’autorisation pour que l’application communique avec le périphérique de suivi oculaire et accède à ces données.
 
-En outre, si votre application collecte, stocke ou transfère des données de suivi oculaire, vous devez le décrire dans la déclaration de confidentialité de votre application et suivre toutes les autres conditions requises concernant les **informations personnelles** dans le [Contrat du développeur d'application](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) et les [Politiques du Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies).
+En outre, si votre application collecte, stocke ou transfère des données de suivi oculaire, vous devez la décrire dans la déclaration de confidentialité de votre application et respecter toutes les autres exigences relatives aux **informations personnelles** dans le [contrat de développement d’application](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) et les stratégies de [Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies).
 
-## <a name="setup"></a>Installation
+## <a name="setup"></a>Programme d’installation
 
-Pour utiliser les API d'entrée avec le pointage du regard dans votre application UWP, vous devez : 
+Pour utiliser les API de saisie en regard de votre application Windows, vous devez : 
 
-- Spécifiez les fonctionnalités `gazeInput` dans le manifeste de l’application.
+- Spécifiez `gazeInput` la fonctionnalité dans le manifeste de l’application.
 
-    Ouvrez le fichier **Package.appxmanifest** avec le concepteur de manifeste Visual Studio ou ajoutez la fonctionnalité manuellement en sélectionnant **Afficher le code** et en insérant les éléments suivants `DeviceCapability` dans le nœud `Capabilities` :
+    Ouvrez le **fichier Package. appxmanifest** avec le concepteur de manifeste Visual Studio, ou ajoutez la fonctionnalité manuellement en sélectionnant Afficher le code, puis `DeviceCapability` en insérant `Capabilities` le **code**suivant dans le nœud :
 
     ```xaml
     <Capabilities>
@@ -58,23 +58,23 @@ Pour utiliser les API d'entrée avec le pointage du regard dans votre applicatio
     </Capabilities>
     ```
 
-- Un appareil de suivi oculaire compatible avec Windows connecté à votre système (intégré ou périphérique) et activé.
+- Un appareil de suivi oculaire compatible Windows connecté à votre système (intégré ou périphérique) et sous tension.
 
-    Voir [Prise en main du contrôle visuel dans Windows 10](https://support.microsoft.com/help/4043921/windows-10-get-started-eye-control#supported-devices ) pour obtenir la liste des périphériques pris en charge de suivi oculaire.
+    Pour obtenir la liste des appareils de suivi oculaire pris en charge, consultez prise en [main du contrôle visuel dans Windows 10](https://support.microsoft.com/help/4043921/windows-10-get-started-eye-control#supported-devices ) .
 
-## <a name="basic-eye-tracking"></a>Suivi oculaire de base
+## <a name="basic-eye-tracking"></a>Suivi des yeux de base
 
-Dans cet exemple, nous montrons comment effectuer le suivi du regard de l’utilisateur au sein d’une application UWP et utiliser une fonction de minuteur avec un test de positionnement de base pour indiquer la manière dont il peut maintenir le focus du regard sur un élément spécifique.
+Dans cet exemple, nous montrons comment suivre le regard de l’utilisateur dans une application Windows et utiliser une fonction de minutage avec un test de positionnement de base pour indiquer la manière dont il peut maintenir son focus pointant sur un élément spécifique.
 
-Une petite ellipse est utilisée pour déterminer l'endroit où pointe le regard dans la fenêtre d’affichage de l’application, tandis qu’une [RadialProgressBar](https://docs.microsoft.com/windows/communitytoolkit/controls/radialprogressbar) du [Windows Community Toolkit](https://docs.microsoft.com/windows/communitytoolkit/) est placée sur le canevas de manière aléatoire. Lorsque le focus du regard est détecté sur la barre de progression, un minuteur se lance et la barre de progression est déplacée au hasard sur le canevas lorsque la barre de progression atteint 100 %.
+Une petite ellipse est utilisée pour indiquer où se trouve le point de regard dans la fenêtre d’affichage de l’application, tandis qu’un [RadialProgressBar](https://docs.microsoft.com/windows/communitytoolkit/controls/radialprogressbar) de la boîte à outils de la [communauté Windows](https://docs.microsoft.com/windows/communitytoolkit/) est placé de manière aléatoire sur le canevas. Quand le focus du regard est détecté sur la barre de progression, un minuteur est démarré et la barre de progression est déplacée de façon aléatoire sur le canevas lorsque la barre de progression atteint 100%.
 
-![Exemple de suivi du regard avec un minuteur](images/gaze/gaze-input-timed2.gif)
+![Suivi du regard avec l’exemple de minuterie](images/gaze/gaze-input-timed2.gif)
 
 *Suivi du regard avec l’exemple de minuterie*
 
 **Télécharger cet exemple à partir de l' [exemple de texte en regard (Basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-gazeinput-basic.zip)**
 
-1. Tout d’abord, nous configurons l’interface utilisateur (MainPage.xaml).
+1. Tout d’abord, nous allons configurer l’interface utilisateur (MainPage. Xaml).
 
     ```xaml
     <Page
@@ -152,9 +152,9 @@ Une petite ellipse est utilisée pour déterminer l'endroit où pointe le regard
     </Page>
     ```
 
-2. Ensuite, nous initialisons notre application.
+2. Nous allons ensuite initialiser notre application.
 
-    Dans cet extrait de code, nous déclarons nos objets globaux et remplaçons l'événement de page [OnNavigatedTo](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto) pour démarrer notre [Observateur d’appareils de pointage du regard](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview) et l'événement de page [OnNavigatedFrom](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedfrom) pour arrêter notre [Observateur d’appareils de pointage du regard](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview).
+    Dans cet extrait de code, nous déclarons nos objets globaux et remplaçons l’événement de la page [OnNavigatedTo](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto) pour démarrer notre [Observateur d’appareils de regard](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview) et l’événement de page [OnNavigatedFrom](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedfrom) pour arrêter notre Observateur de [périphériques en regard](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview).
 
     ```csharp
     using System;
@@ -231,17 +231,17 @@ Une petite ellipse est utilisée pour déterminer l'endroit où pointe le regard
     }
     ```
 
-3. Ensuite, nous ajoutons nos méthodes de l’observateur d’appareils de pointage du regard. 
+3. Ensuite, nous ajoutons les méthodes de l’observateur de l’appareil. 
     
-    Dans `StartGazeDeviceWatcher`, nous appelons [CreateWatcher](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeinputsourcepreview.createwatcher) et déclarons les écouteurs d’événements de l’appareil de suivi oculaire ([DeviceAdded](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview.added), [DeviceUpdated](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview.updated) et [DeviceRemoved](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview.removed)).
+    Dans `StartGazeDeviceWatcher`, nous appelons [CreateWatcher](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeinputsourcepreview.createwatcher) et déclarons les écouteurs d’événements d’appareil de suivi oculaire ([DeviceAdded](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview.added), [DeviceUpdated](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview.updated)et [DeviceRemoved](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview.removed)).
 
-    Dans `DeviceAdded`, nous vérifions l’état de l’appareil de suivi oculaire. Si l'appareil est fiable, nous incrémentons le compteur de notre appareil et activons le suivi du regard. Voir l’étape suivante pour plus d’informations.
+    Dans `DeviceAdded`, nous vérifions l’état de l’appareil de suivi oculaire. Si vous êtes un appareil viable, nous incrémentons notre nombre d’appareils et activons le suivi du regard. Pour plus d’informations, consultez l’étape suivante.
 
-    Dans `DeviceUpdated`, nous activons également le suivi du regard car cet événement est déclenché si un appareil est réétalonné.
+    Dans `DeviceUpdated`, nous activons également le suivi du regard, car cet événement est déclenché si un appareil est recalibré.
 
-    Dans `DeviceRemoved`, nous décrémentons le compteur de notre appareil et supprimons les gestionnaires d’événements du périphérique.
+    Dans `DeviceRemoved`, nous décrémentant notre compteur d’appareils et supprimons les gestionnaires d’événements de l’appareil.
 
-    Dans `StopGazeDeviceWatcher`, nous arrêtons l’observateur d’appareils de suivi du regard. 
+    Dans `StopGazeDeviceWatcher`, nous arrêtons l’observateur de l’appareil de regard. 
 
 ```csharp
     /// <summary>
@@ -328,12 +328,12 @@ Une petite ellipse est utilisée pour déterminer l'endroit où pointe le regard
     }
 ```
 
-4. Ici, nous vérifions si l’appareil est fiable dans `IsSupportedDevice` et, si tel est le cas, nous essayons d’activer le suivi du regard dans `TryEnableGazeTrackingAsync`.
+4. Ici, nous vérifions si l’appareil est viable `IsSupportedDevice` dans et, le cas échéant, vous tentez d' `TryEnableGazeTrackingAsync`activer le suivi du regard dans.
 
-    Dans `TryEnableGazeTrackingAsync`, nous déclarons le gestionnaires d’événements de pointage du regard et appelons [GazeInputSourcePreview.GetForCurrentView()](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeinputsourcepreview.getforcurrentview) pour obtenir une référence à la source d’entrée (celle-ci doit être appelée sur le thread de l'interface utilisateur, voir [Assurer la réactivité du thread de l’interface utilisateur](https://docs.microsoft.com/windows/uwp/debug-test-perf/keep-the-ui-thread-responsive)).
+    Dans `TryEnableGazeTrackingAsync`, nous déclarons les gestionnaires d’événements de pointage et nous appelons [GazeInputSourcePreview. GetForCurrentView ()](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeinputsourcepreview.getforcurrentview) pour obtenir une référence à la source d’entrée (ce qui doit être appelé sur le thread d’interface utilisateur, consultez [conserver le thread d’interface utilisateur réactif](https://docs.microsoft.com/windows/uwp/debug-test-perf/keep-the-ui-thread-responsive)).
 
     > [!NOTE]
-    > Vous devez appeler [GazeInputSourcePreview.GetForCurrentView()](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeinputsourcepreview.getforcurrentview) uniquement quand un appareil de suivi oculaire compatible est connecté et requis par votre application. Dans le cas contraire, la boîte de dialogue de consentement est inutile.
+    > Vous devez appeler [GazeInputSourcePreview. GetForCurrentView ()](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeinputsourcepreview.getforcurrentview) uniquement quand un appareil compatible de suivi oculaire est connecté et requis par votre application. Dans le cas contraire, la boîte de dialogue de consentement n’est pas nécessaire.
 
 ```csharp
     /// <summary>
@@ -401,11 +401,11 @@ Une petite ellipse est utilisée pour déterminer l'endroit où pointe le regard
     }
 ```
 
-5. Ensuite, nous définissons nos gestionnaires d’événements de pointage du regard.
+5. Nous allons ensuite configurer nos gestionnaires d’événements de point de regard.
 
-    Nous affichons et masquons l'ellipse de suivi du regard dans `GazeEntered` et `GazeExited`, respectivement.
+    Nous affichons et masquerons l’ellipse de `GazeEntered` suivi `GazeExited`du regard dans et, respectivement.
 
-    Dans `GazeMoved`, nous déplaçons notre ellipse de suivi du regard en fonction de la [EyeGazePosition](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazepointpreview.eyegazeposition) fournie par le [CurrentPoint](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs.currentpoint) de [GazeEnteredPreviewEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs). Nous gérons également le minuteur de focus du regard sur la [RadialProgressBar](https://docs.microsoft.com/windows/communitytoolkit/controls/radialprogressbar), ce qui déclenche le repositionnement de la barre de progression. Voir l’étape suivante pour plus d’informations.
+    Dans `GazeMoved`, nous allons déplacer notre ellipse de suivi du point d’interlettrage en fonction du [EyeGazePosition](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazepointpreview.eyegazeposition) fourni par le [CurrentPoint](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs.currentpoint) du [GazeEnteredPreviewEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs). Nous allons également gérer le minuteur de focus du point de regard sur le [RadialProgressBar](https://docs.microsoft.com/windows/communitytoolkit/controls/radialprogressbar), qui déclenche le repositionnement de la barre de progression. Pour plus d’informations, consultez l’étape suivante.
 
     ```csharp
     /// <summary>
@@ -497,11 +497,11 @@ Une petite ellipse est utilisée pour déterminer l'endroit où pointe le regard
         }
     }
     ```
-6. Enfin, voici les méthodes utilisées pour gérer le minuteur de focus du regard pour cette application.
+6. Enfin, Voici les méthodes utilisées pour gérer le temporisateur de focalisation pour cette application.
 
-    `DoesElementContainPoint` vérifie si le pointeur en forme de regard se trouve sur la barre de progression. Dans ce cas, il démarre le minuteur de pointage du regard et incrémente la barre de progression sur chaque cycle du minuteur de pointage du regard.
+    `DoesElementContainPoint`vérifie si le pointeur en forme de regard se trouve sur la barre de progression. Si c’est le cas, il démarre le minuteur de pointage et incrémente la barre de progression sur chaque graduation du minuteur de point de regard.
 
-    `SetGazeTargetLocation` définit l’emplacement initial de la barre de progression et, si la barre de progression se termine (selon le chronomètre de focus), déplace la barre de progression vers un emplacement aléatoire.
+    `SetGazeTargetLocation`définit l’emplacement initial de la barre de progression et, si la barre de progression se termine (selon le chronomètre de focus), déplace la barre de progression vers un emplacement aléatoire.
 
     ```csharp
     /// <summary>
@@ -596,7 +596,7 @@ Une petite ellipse est utilisée pour déterminer l'endroit où pointe le regard
     }
     ```
 
-## <a name="see-also"></a>Articles associés
+## <a name="see-also"></a>Voir aussi
 
 ### <a name="resources"></a>Ressources
 
@@ -604,4 +604,4 @@ Une petite ellipse est utilisée pour déterminer l'endroit où pointe le regard
 
 ### <a name="topic-samples"></a>Exemples de la rubrique
 
-- [Point de regard (Basic)C#()](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-gazeinput-basic.zip)
+- [Point de regard (Basic) (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-gazeinput-basic.zip)

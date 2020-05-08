@@ -1,30 +1,30 @@
 ---
 title: Ressources de programmation de jeux
-description: Pour plus d’informations sur la programmation de jeux sur Windows, consultez les ressources suivantes.
+description: Pour plus d’informations sur la programmation des jeux sur Windows, consultez les ressources suivantes.
 ms.assetid: b84dd17a-756b-2369-8fee-f1ec7d865239
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, jeux, programmation
+keywords: Windows 10, UWP, jeux, programmation
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ecf6e4c28695d789a133c96d6fa04ceb705ef3e
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: a87b979dc48f8977047599cac6a32ba0d901bd63
+ms.sourcegitcommit: 2571af6bf781a464a4beb5f1aca84ae7c850f8f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258537"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82606358"
 ---
 # <a name="game-programming-resources"></a>Ressources de programmation de jeux
 
 
 
 
-Pour plus d’informations sur la programmation de jeux sur Windows, consultez les ressources suivantes.
+Pour plus d’informations sur la programmation des jeux sur Windows, consultez les ressources suivantes.
 
 ## <a name="game-programming-reference"></a>Informations de référence sur la programmation de jeux
 
 
 -   [Graphiques et jeux](https://docs.microsoft.com/windows/desktop/graphics-and-multimedia)
--   [Référence OpenGL](https://www.opengl.org/sdk/docs/man4/)
+-   [Informations de référence sur OpenGL](https://www.opengl.org/sdk/docs/man4/)
 
 ## <a name="game-design-guidance"></a>Guide de conception de jeux
 
@@ -34,23 +34,23 @@ Pour plus d’informations sur la programmation de jeux sur Windows, consultez l
 ## <a name="blogs"></a>Blogs
 
 
--   [Jeux pour Windows et le kit de développement logiciel (SDK) DirectX]( https://go.microsoft.com/fwlink/p/?LinkID=288873)
--   [Blog du développeur DirectX]( https://go.microsoft.com/fwlink/p/?LinkID=288874)
--   [Blog de Shawn Hargreaves]( https://go.microsoft.com/fwlink/p/?LinkID=288872) (informations sur les jeux XNA).
+-   [Jeux pour Windows et kit de développement logiciel (SDK) DirectX]( https://blogs.msdn.com/b/chuckw/)
+-   [Blog DirectX pour les développeurs]( https://blogs.msdn.com/b/directx/)
+-   [Blog de Shawn Hargreaves]( https://blogs.msdn.com/b/shawnhar/) (informations sur les jeux XNA).
 
 ## <a name="toolkits"></a>Kits de ressources
 
 
--   [Kit d’outils DirectX](  https://go.microsoft.com/fwlink/p/?LinkID=248929)
--   [Bibliothèque de traitement de texture DirectXTex](  https://go.microsoft.com/fwlink/p/?LinkID=248926)
+-   [Kit de ressources DirectX](  https://github.com/Microsoft/DirectXTK)
+-   [Bibliothèque de traitement des textures DirectXTex](  https://github.com/Microsoft/DirectXTex)
 -   [Diagnostics des graphiques](https://docs.microsoft.com/visualstudio/debugger/overview-of-visual-studio-graphics-diagnostics?view=vs-2015) Microsoft Visual Studio
 -   [Win2D](https://github.com/Microsoft/Win2D) : API Windows Runtime facile à utiliser pour le rendu d’éléments graphiques 2D en mode immédiat avec accélération GPU.
 -   [Angle pour Microsoft Store](https://github.com/microsoft/angle/wiki) : exécute le contenu OpenGL es sur Windows en traduisant les appels d’API OpenGL es en appels d’API DirectX 11.
 
-## <a name="gdc-2015-game-dev-session-videos"></a>Vidéos des sessions consacrées au développement de jeux lors du GDC 2015
+## <a name="gdc-2015-game-dev-session-videos"></a>Vidéos des sessions consacrées au développement de jeux lors du GDC 2015
 
 
--   [The Future of Gaming Across the Microsoft Ecosystem](https://channel9.msdn.com/Events/GDC/GDC-2015/The-Future-of-Gaming-Across-the-Microsoft-Ecosystem), par Phil Spencer (en anglais)
+-   [The Future of Gaming Across the Microsoft Ecosystem](https://channel9.msdn.com/Events/GDC/GDC-2015/The-Future-of-Gaming-Across-the-Microsoft-Ecosystem), par Phil Spencer (en anglais)
 -   [Developing Games for Windows 10](https://channel9.msdn.com/Events/GDC/GDC-2015/Developing-Games-for-Windows-10), par Chris Tector, Monsieur Xbox (en anglais)
 -   [Advanced DirectX 12 Graphics and Performance](https://channel9.msdn.com/Events/GDC/GDC-2015/Advanced-DirectX12-Graphics-and-Performance), par Max McMullen (en anglais)
 -   [Gaming Consumer Experience on Windows 10](https://channel9.msdn.com/Events/GDC/GDC-2015/Gaming-Consumer-Experience-on-Windows-10), par Bill Schiefelbein (en anglais)

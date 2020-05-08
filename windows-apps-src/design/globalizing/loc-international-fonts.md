@@ -1,25 +1,25 @@
 ---
-Description: Cette rubrique répertorie les polices disponibles pour les applications UWP qui sont localisées dans des langues autres que l’anglais des États-Unis.
+Description: Cette rubrique répertorie les polices disponibles pour les applications Windows localisées dans des langues autres que l’anglais (États-Unis).
 title: Polices internationales
 template: detail.hbs
 ms.date: 11/02/2017
 ms.topic: article
-keywords: windows 10, uwp, globalisation, adaptabilité, localisation
+keywords: Windows 10, UWP, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
-ms.openlocfilehash: eb12ea0bb7966813413d29908c4974a7c4c97486
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: aa0b560ad684ba230e0a498b9069d24d510f49c0
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258076"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970904"
 ---
 # <a name="international-fonts"></a>Polices internationales
 
-Cette rubrique répertorie les polices disponibles pour les applications UWP qui sont localisées dans des langues autres que l’anglais des États-Unis.
+Cette rubrique répertorie les polices disponibles pour les applications Windows localisées dans des langues autres que l’anglais (États-Unis).
 
-Dans le tableau suivant, la colonne « Balise de langue » répertorie la [balise de langue BCP-47](https://tools.ietf.org/html/bcp47) de la langue. Pour obtenir la liste des balises de langue prises en charge par le Microsoft Store, voir [Langues prises en charge](../../publish/supported-languages.md).
+Dans le tableau suivant, la colonne « balise de langue » répertorie la [balise de langue BCP-47](https://tools.ietf.org/html/bcp47) du langage. Pour afficher la liste des balises de langue spécifiquement prises en charge par le Microsoft Store, consultez [langues prises en charge](../../publish/supported-languages.md).
 
-| Langue | Balise de langue | Police utilisé dans Windows |
+| Langage | Balise de langue | Police utilisée dans Windows |
 | --------- | ----------- | -------------------- |
 | Afrikaans | af-ZA | Segoe UI |
 | Albanais | sq-AL | Segoe UI |
@@ -27,18 +27,18 @@ Dans le tableau suivant, la colonne « Balise de langue » répertorie la [bal
 | Arabe | ar-SA | Segoe UI |
 | Arménien | hy-AM | Segoe UI |
 | Assamais | as-IN | Nirmala UI |
-| Azerbaïdjanais (latin) | az-Latn-AZ | Segoe UI |
+| Azéri (latin) | az-Latn-AZ | Segoe UI |
 | Bengali (Bangladesh) | bn-BD | Nirmala UI |
 | Bengali (Inde) | bn-IN | Nirmala UI |
 | Basque (Basque) | eu-ES | Segoe UI |
-| Bélarusse | be-BY | Segoe UI |
+| Biélorusse | be-BY | Segoe UI |
 | Bosniaque (latin) | bs-Latn-BA | Segoe UI |
 | Bulgare | bg-BG | Segoe UI |
 | Catalan | ca-ES | Segoe UI |
-| Kurde central (arabe) | ku-ARAB-IQ | Segoe UI |
-| Cherokee (Cherokee) | chr-CHER-US | Gadugi |
-| Chinois simplifié | zh-CN | Microsoft YaHei UI |
-| Chinois traditionnel (Hong Kong (R.A.S.)) | zh-HK | Microsoft JhengHei UI |
+| Kurde central (arabe) | Ku-arabe-IQ | Segoe UI |
+| Cherokee (Cherokee) | Chr-CHER-US | Gadugi |
+| Chinois (simplifié) | zh-CN | Microsoft YaHei UI |
+| Chinois traditionnel (Hong Kong) | zh-HK | Microsoft JhengHei UI |
 | Chinois traditionnel (Taïwan) | zh-TW | Microsoft JhengHei UI |
 | Croate | hr-HR | Segoe UI |
 | Tchèque | cs-CZ | Segoe UI |
@@ -46,7 +46,7 @@ Dans le tableau suivant, la colonne « Balise de langue » répertorie la [bal
 | Dari | prs-AF | Segoe UI |
 | Néerlandais | nl-NL | Segoe UI |
 | Anglais (Royaume-Uni) | en-GB | Segoe UI |
-| Estonien | et-EE | Segoe UI |
+| Estonien | Et-EE | Segoe UI |
 | Filipino | fil-PH | Segoe UI |
 | Finnois | fi-FI | Segoe UI |
 | Français | fr-FR | Segoe UI |
@@ -64,13 +64,13 @@ Dans le tableau suivant, la colonne « Balise de langue » répertorie la [bal
 | Indonésien | id-ID | Segoe UI |
 | Irlandais | ga-IE | Segoe UI |
 | isiXhosa | xh-ZA | Segoe UI |
-| isiZulu | zu-ZA | Segoe UI |
+| Zoulou | zu-ZA | Segoe UI |
 | Italien | it-IT | Segoe UI |
 | Japonais | ja-JP | Yu Gothic UI |
 | Kannada | kn-IN | Nirmala UI |
 | Kazakh | kk-KZ | Segoe UI |
 | Khmer | km-KH | Leelawadee UI |
-| K’iche’ | qut-GT | Segoe UI |
+| Quiché | QUT-GT | Segoe UI |
 | Kinyarwanda | rw-RW | Segoe UI |
 | Kiswahili | sw-KE | Segoe UI |
 | Konkani | kok-IN | Nirmala UI |
@@ -84,15 +84,15 @@ Dans le tableau suivant, la colonne « Balise de langue » répertorie la [bal
 | Malayalam | ml-IN | Nirmala UI |
 | Maltais | mt-MT | Segoe UI |
 | Maori | mi-NZ | Segoe UI |
-| Marathe | mr-IN | Nirmala UI |
+| Marathi | mr-IN | Nirmala UI |
 | Mongole (cyrillique) | mn-MN | Segoe UI |
 | Népalais | ne-NP | Nirmala UI |
-| Norvégien (Bokmal) | nb-NO | Segoe UI |
-| Norvégien (Nynorsk) | nn-NO | Segoe UI |
+| Norvégien (bokmål) | nb-NO | Segoe UI |
+| Norvégien (nynorsk) | nn-NO | Segoe UI |
 | Odia | or-IN | Nirmala UI |
-| Persan | fa-IR | Segoe UI |
+| Persan | FA-IR | Segoe UI |
 | Polonais | pl-PL | Segoe UI |
-| Portugais (Brésil) | pt-BR | Segoe UI |
+| Portugais (Brésil) | pt-br | Segoe UI |
 | Portugais (Portugal) | pt-PT | Segoe UI |
 | Pendjabi | pa-IN | Nirmala UI |
 | Pendjabi (arabe) | pa-Arab-PK | Segoe UI |
@@ -101,12 +101,12 @@ Dans le tableau suivant, la colonne « Balise de langue » répertorie la [bal
 | Russe | ru-RU | Segoe UI |
 | Gaélique écossais | gd-GB | Segoe UI |
 | Serbe (cyrillique, Bosnie-Herzégovine) | sr-Cyrl-BA | Segoe UI |
-| Serbe (cyrillique, Serbie) | sr-Cyrl-CS | Segoe UI |
-| Serbe (latin) | sr-Latn-CS | Segoe UI |
+| Serbe (cyrillique, Serbie) | SR-Cyrl-CS | Segoe UI |
+| Serbe (latin) | SR-LATN-CS | Segoe UI |
 | Sotho du Nord | nso-ZA | Segoe UI |
 | Setswana | tn-ZA | Segoe UI |
 | Sindhi (arabe) | sd-Arab-PK | Segoe UI |
-| Sinhala | si-LK | Nirmala UI |
+| Cingalais | si-LK | Nirmala UI |
 | Slovaque | sk-SK | Segoe UI |
 | Slovène | sl-SI | Segoe UI |
 | Espagnol | es-ES | Segoe UI |
@@ -116,7 +116,7 @@ Dans le tableau suivant, la colonne « Balise de langue » répertorie la [bal
 | Tatar | tt-RU | Segoe UI |
 | Télougou | te-IN | Nirmala UI |
 | Thaï | th-TH | Leelawadee UI |
-| Tigrinya | ti-ET | Ebrima |
+| Tigrigna | ti-ET | Ebrima |
 | Turc | tr-TR | Segoe UI |
 | Turkmène | tk-TM | Segoe UI |
 | Ukrainien | uk-UA | Segoe UI |
@@ -127,9 +127,9 @@ Dans le tableau suivant, la colonne « Balise de langue » répertorie la [bal
 | Vietnamien | vi-VN | Segoe UI |
 | Gallois | cy-GB | Segoe UI |
 | Wolof | wo-SN | Segoe UI |
-| Yorouba | yo-NG | Segoe UI |
+| Yoruba | yo-NG | Segoe UI |
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Balise de langue BCP-47](https://tools.ietf.org/html/bcp47)
+* [Balise de langue BCP-47](https://tools.ietf.org/html/bcp47)
 * [Langues prises en charge](../../publish/supported-languages.md)

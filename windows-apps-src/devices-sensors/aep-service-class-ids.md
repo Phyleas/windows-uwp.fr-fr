@@ -4,14 +4,14 @@ title: ID de classe de service AEP
 description: Les services de point de terminaison d’association (AEP) offrent un contrat de programmation pour les services qu’un appareil prend en charge sur un protocole donné. Plusieurs de ces services ont des identificateurs établis qui doivent être utilisés lors de leur référencement.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bc8fecd7a5a1596d074c170d7a7211126e88b8ae
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 67bba732efd199c5093bb75e9b0a2c41b67e568c
+ms.sourcegitcommit: 28bd367ab8acc64d4b6f3f73adca12100cbd359f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684861"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82148570"
 ---
 # <a name="aep-service-class-ids"></a>ID de classe de service AEP
 
@@ -27,7 +27,7 @@ Un développeur d’application doit utiliser des filtres de syntaxe de recherch
 
 ## <a name="bluetooth-and-bluetooth-le-services"></a>Services Bluetooth et Bluetooth LE
 
-Les services Bluetooth utilisent le protocole Bluetooth ou le protocole Bluetooth LE. Les identificateurs de ces protocoles sont les suivants :
+Les services Bluetooth utilisent le protocole Bluetooth ou le protocole Bluetooth LE. Les identificateurs de ces protocoles sont les suivants :
 
 -   ID de protocole Bluetooth : {e0cbf06c-cd8b-4647-bb8a-263b43f0f974}
 -   ID de protocole Bluetooth LE : {bb7bb05e-5972-42b5-94fc-76eaa7084d49}
@@ -72,7 +72,7 @@ Le protocole Bluetooth prend en charge plusieurs services présentant tous le m�
 
  
 
-Pour une liste plus complète des services Bluetooth disponibles, voir les pages relatives au protocole et au service Bluetooth [ici](https://go.microsoft.com/fwlink/p/?LinkID=619586) et [ici](https://go.microsoft.com/fwlink/p/?LinkID=619587). Vous pouvez également utiliser l’API [**GattServiceUuids**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceUuids) pour obtenir des services GATT communs.
+Pour une liste plus complète des services Bluetooth disponibles, voir les pages relatives au protocole et au service Bluetooth [ici](https://www.bluetooth.org/en-us/specification/assigned-numbers/service-discovery) et [ici](https://go.microsoft.com/fwlink/p/?LinkID=619587). Vous pouvez également utiliser l’API [**GattServiceUuids**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceUuids) pour accéder à des services GATT courants.
 
 ## <a name="custom-bluetooth-le-services"></a>Services Bluetooth LE personnalisés
 
@@ -88,7 +88,7 @@ En règle générale, tous les services UPnP ont leur nom haché dans un GUID à
 
 | Nom du service                       | GUID                                      |
 |------------------------------------|-------------------------------------------|
-| Gestionnaire des connexions                 | **ba36014c-b51f-51cc-bf71-1ad779ced3c6**  |
+| Gestionnaire de connexions                 | **ba36014c-b51f-51cc-bf71-1ad779ced3c6**  |
 | Transport AV                       | **deeacb78-707a-52df-b1c6-6f945e7e25bf**  |
 | Contrôle de rendu                  | **cc7fe721-a3c7-5a14-8c49-4419dc895513**  |
 | Transfert de couche 3                 | **97d477fa-f403-577b-a714-b29a9007797f**  |

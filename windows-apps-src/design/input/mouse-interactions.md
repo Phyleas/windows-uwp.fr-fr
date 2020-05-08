@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d54ab79926ef20bb54a83346c12df2ea383167d
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: e0591a62134f09c1b3a9d115d038020e95f0c139
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258343"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970714"
 ---
 # <a name="mouse-interactions"></a>Interactions avec la souris
 
-Optimisez la conception de votre application de plateforme Windows universelle (UWP) pour l’entrée tactile, et définissez la prise en charge de la souris de base par défaut. 
+Optimisez la conception de votre application d’application Windows pour l’entrée tactile et bénéficiez d’une prise en charge de la souris de base par défaut. 
 
-![Souris](images/input-patterns/input-mouse.jpg)
+![souris](images/input-patterns/input-mouse.jpg)
 
 Les entrées de souris conviennent mieux aux interactions utilisateur qui demandent de la précision comme le pointage et le clic. Cette précision inhérente est naturellement prise en charge par l’interface utilisateur de Windows qui permet de gérer la nature imprécise de l’entrée tactile.
 
@@ -59,7 +59,7 @@ Un ensemble concis d’interactions avec la souris est utilisé de façon unifor
 <td align="left"><p>Cliquer avec le bouton droit pour sélectionner une commande</p></td>
 <td align="left"><p>Cliquez avec le bouton droit sur la barre de navigation (si elle est disponible) et la barre de l’application avec des commandes globales. Cliquez avec le bouton droit sur un élément pour le sélectionner et afficher la barre de l’application contenant des commandes contextuelles pour l’élément sélectionné.</p>
 <div class="alert">
-<strong>Notez</strong>  cliquez avec le bouton droit pour afficher un menu contextuel si les commandes de sélection ou de barre d’application ne sont pas des comportements d’interface utilisateur appropriés. Toutefois, nous vous recommandons vivement d’utiliser la barre de l’application pour tous les comportements des commandes.
+<strong>Remarque</strong>  cliquez avec le bouton droit pour afficher un menu contextuel si les commandes de sélection ou de barre d’application ne sont pas des comportements d’interface utilisateur appropriés. Toutefois, nous vous recommandons vivement d’utiliser la barre de l’application pour tous les comportements des commandes.
 </div>
 <div>
  
@@ -86,7 +86,7 @@ Un ensemble concis d’interactions avec la souris est utilisé de façon unifor
 
 ## <a name="mouse-input-events"></a>Événements d’entrée de la souris
 
-La plupart des entrées de la souris peuvent être gérées par le biais des événements d’entrée routés communs pris en charge par tous les objets [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) . Il s’agit des éléments suivants :
+La plupart des entrées de la souris peuvent être gérées par le biais des événements d’entrée routés communs pris en charge par tous les objets [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) . notamment :
 
 - [**BringIntoViewRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)
 - [**CharacterReceived**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.characterreceived)
@@ -100,8 +100,8 @@ La plupart des entrées de la souris peuvent être gérées par le biais des év
 - [**Déplacez**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.drop)
 - [**DropCompleted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dropcompleted)
 - [**GettingFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gettingfocus)
-- [**Vient**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gotfocus)
-- [**Détenteur**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.holding)
+- [**GotFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gotfocus)
+- [**Holding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.holding)
 - [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown)
 - [**Événementiel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup)
 - [**LosingFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.losingfocus)
@@ -123,7 +123,7 @@ La plupart des entrées de la souris peuvent être gérées par le biais des év
 - [**PreviewKeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeydown)
 - [**PreviewKeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeyup)
 - [**RightTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.righttapped)
-- [**Drainées**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.tapped)
+- [**Tapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.tapped)
 
 Toutefois, vous pouvez tirer parti des fonctionnalités spécifiques de chaque appareil (telles que les événements de roulette de la souris) à l’aide des événements pointeur, geste et manipulation dans [Windows. UI. Input](https://docs.microsoft.com/uwp/api/windows.ui.input).
 
@@ -133,7 +133,7 @@ Toutefois, vous pouvez tirer parti des fonctionnalités spécifiques de chaque a
 
 - Quand des événements de déplacement ou de pointage permettent de détecter une souris, affichez une interface utilisateur propre à la souris pour indiquer les fonctionnalités exposées par l’élément. Si la souris ne bouge pas pendant un certain temps ou si l’utilisateur commence une interaction tactile, estompez progressivement l’interface utilisateur de la souris. Cela maintient l’interface utilisateur propre et aérée.
 - N’utilisez pas le curseur pour le retour de pointage, car le retour fourni par l’élément est suffisant (voir la section Curseurs, ci-dessous).
-- N’affichez pas de retour visuel si un élément ne prend pas en charge l’interaction (par exemple, du texte statique).
+- N’affichez pas de retour visuel si un élément ne prend pas en charge l’interaction (tel que le texte statique).
 - N’utilisez pas de rectangles de sélection avec les interactions avec la souris. Réservez ceux-ci aux interactions avec le clavier.
 - Affichez un retour visuel simultanément pour tous les éléments qui représentent la même cible d’entrée.
 - Fournissez des boutons (tels que + et -) pour émuler des manipulations tactiles, telles que le mouvement panoramique, la rotation, le zoom, etc.
@@ -144,7 +144,7 @@ Pour obtenir des recommandations plus générales sur le retour visuel, voir [Re
 
 Un ensemble de curseurs standard est disponible pour servir de pointeurs de souris. Ces derniers sont utilisés pour indiquer l’action principale d’un élément.
 
-Chaque curseur standard possède une image par défaut correspondante qui lui est associée. L’utilisateur ou une application peut remplacer à tout moment l’image par défaut associée à n’importe quel curseur standard. Spécifiez une image de curseur par le biais de la fonction [**PointerCursor**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointercursor).
+Chaque curseur standard possède une image par défaut correspondante qui lui est associée. L’utilisateur ou une application peut remplacer à tout moment l’image par défaut associée à n’importe quel curseur standard. Spécifiez une image de curseur à l’aide de la fonction [**PointerCursor**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointercursor) .
 
 Si vous avez besoin de personnaliser le curseur de la souris :
 
@@ -154,9 +154,9 @@ Si vous avez besoin de personnaliser le curseur de la souris :
 - Utilisez les curseurs de redimensionnement horizontal, vertical et diagonal (![Curseur de redimensionnement vertical](images/cursor-vertical.png), ![Curseur de redimensionnement horizontal](images/cursor-horizontal.png), ![Curseur de redimensionnement diagonal (du coin inférieur gauche au coin supérieur droit)](images/cursor-diagonal2.png), ![Curseur de redimensionnement diagonal (du coin supérieur gauche au coin inférieur droit)](images/cursor-diagonal1.png)) lorsqu’un objet est redimensionnable.
 - Utilisez les curseurs en forme de main de saisie (![Curseur en forme de main de saisie (ouverte)](images/cursor-pan1.png), ![Curseur en forme de main de saisie (fermée)](images/cursor-pan2.png)) lors d’un mouvement panoramique de contenu au sein d’une zone de dessin fixe (telle qu’une carte).
 
-## <a name="related-articles"></a>Articles associés
+## <a name="related-articles"></a>Articles connexes
 
-- [Gestion des entrées du pointeur](handle-pointer-input.md)
+- [Gérer les entrées du pointeur](handle-pointer-input.md)
 - [Identification des périphériques d’entrée](identify-input-devices.md)
 - [Vue d’ensemble des événements et des événements routés](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview)
 

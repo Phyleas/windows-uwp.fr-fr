@@ -1,5 +1,5 @@
 ---
-Description: Cet article est une vue d’ensemble des concepts et technologies associés aux scénarios d’accessibilité des applications de plateforme Windows universelle (UWP).
+Description: Cet article est une vue d’ensemble des concepts et technologies liés aux scénarios d’accessibilité des applications Windows.
 ms.assetid: AA053196-F331-4CBE-B032-4E9CBEAC699C
 title: Vue d’ensemble de l’accessibilité
 label: Accessibility overview
@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 22f614d65728c0f5121cadfdcbfb58a7b817a47d
-ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
+ms.openlocfilehash: 386ea9a5ea9b66b0756963da10f72c3dbed53ff9
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77521275"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969654"
 ---
 # <a name="accessibility-overview"></a>Vue d’ensemble de l’accessibilité
 
-Cet article est une vue d’ensemble des concepts et technologies associés aux scénarios d’accessibilité des applications de plateforme Windows universelle (UWP).
+Cet article est une vue d’ensemble des concepts et technologies liés aux scénarios d’accessibilité des applications Windows.
 
 > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Developing-Apps-for-Accessibility/player]
 
@@ -41,7 +41,7 @@ De plus, les fonctionnalités de liaison de données, de style et de modèle sim
 <span id="ui_automation"/>
 <span id="UI_AUTOMATION"/>
 
-## <a name="ui-automation"></a>Automatisation de l’interface utilisateur
+## <a name="ui-automation"></a>Automation de l'interface utilisateur
 
 La prise en charge de l’accessibilité provient principalement de la prise en charge intégrée de l’infrastructure Microsoft UI Automation. Cette prise en charge est fournie via des classes de base et le comportement intégré de l’implémentation de classe pour les types de contrôle, ainsi que via une représentation d’interface de l’API du fournisseur UI Automation. Chaque classe de contrôle utilise les concepts UI Automation des homologues d’automation et des modèles d’automation pour signaler le rôle et le contenu des contrôles aux clients UI Automation. L’application est traitée en tant que fenêtre de niveau supérieur par UI Automation. Via l’infrastructure UI Automation, tout le contenu relatif à l’accessibilité présent dans cette fenêtre d’application est disponible pour un client UI Automation. Pour plus d’informations sur UI Automation, voir [Vue d’ensemble d’UI Automation](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-uiautomationoverview).
 
@@ -85,7 +85,7 @@ Plusieurs autres propriétés d’automation sont disponibles (notamment les pro
 
 ## <a name="keyboard-support"></a>Prise en charge du clavier
 
-Pour fournir une bonne prise en charge du clavier, vous devez vous assurer que chaque partie de votre application peut être utilisée avec un clavier. Si votre application utilise principalement les contrôles standard et n’utilise aucun contrôle personnalisé, vous n’aurez pas beaucoup de tâches supplémentaires à effectuer. Le modèle de contrôle de base XAML fournit une prise en charge intégrée du clavier incluant la navigation par tabulation, la saisie de texte et la prise en charge spécifique aux contrôles. Les éléments qui servent de conteneurs de disposition (tels que les panneaux) utilisent l’ordre de disposition pour établir un ordre de tabulation par défaut. Cet ordre est souvent l’ordre de tabulation correct à utiliser pour une représentation accessible de l’interface utilisateur. Si vous utilisez les contrôles [**ListBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox) et [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView) pour afficher des données, ils fournissent une navigation avec les touches de direction intégrée. Si vous utilisez un contrôle [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button), il gère déjà les touches Espace ou Entrée pour l’activation du bouton.
+Pour fournir une bonne prise en charge du clavier, vous devez vous assurer que chaque partie de votre application peut être utilisée avec un clavier. Si votre application utilise principalement les contrôles standard et n’utilise aucun contrôle personnalisé, vous n’aurez pas beaucoup de tâches supplémentaires à effectuer. Le modèle de contrôle de base XAML fournit une prise en charge intégrée du clavier incluant la navigation par tabulation, la saisie de texte et la prise en charge spécifique aux contrôles. Les éléments qui servent de conteneurs de disposition (tels que les panneaux) utilisent l’ordre de disposition pour établir un ordre de tabulation par défaut. Cet ordre est souvent l’ordre de tabulation correct à utiliser pour une représentation accessible de l’interface utilisateur. Si vous utilisez les contrôles [**ListBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox) et [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView) pour afficher des données, ils fournissent une navigation avec les touches de direction intégrée. Ou, si vous utilisez un contrôle [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) , il gère déjà la barre d’espace ou les touches entrée pour l’activation du bouton.
 
 Pour plus d’informations sur tous les aspects de la prise en charge du clavier, y compris sur l’ordre de tabulation et la navigation ou l’activation basée sur les touches, voir [Accessibilité du clavier](keyboard-accessibility.md).
 
@@ -95,7 +95,7 @@ Pour plus d’informations sur tous les aspects de la prise en charge du clavier
 
 ## <a name="media-and-captioning"></a>Média et sous-titrage
 
-Vous affichez généralement le contenu multimédia audiovisuel par l’intermédiaire d’un objet [**MediaElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement). Vous pouvez utiliser les API **MediaElement** pour contrôler la lecture de média. À des fins d’accessibilité, fournissez des contrôles qui permettent aux utilisateurs de lire, de mettre en pause et d’arrêter le contenu multimédia selon leurs besoins. Parfois, le contenu multimédia inclut des composants supplémentaires destinés à l’accessibilité, tels que les sous-titres ou les pistes audio de substitution qui comportent des descriptions narratives.
+En général, vous affichez des médias audiovisuels via un objet [**MediaElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement) . Vous pouvez utiliser les API **MediaElement** pour contrôler la lecture de média. À des fins d’accessibilité, fournissez des contrôles qui permettent aux utilisateurs de lire, de mettre en pause et d’arrêter le contenu multimédia selon leurs besoins. Parfois, le contenu multimédia inclut des composants supplémentaires destinés à l’accessibilité, tels que les sous-titres ou les pistes audio de substitution qui comportent des descriptions narratives.
 
 <span id="Accessible_text"/>
 <span id="accessible_text"/>
@@ -127,7 +127,7 @@ Quand vous concevez vos applications, demandez-vous comment elles peuvent être 
 
 Dans de nombreux cas, plusieurs techniques permettent de transmettre les informations essentielles afin d’élargir votre audience. Par exemple, vous pouvez mettre en surbrillance des informations à l’aide d’informations sur les icônes et sur les couleurs pour aider les utilisateurs qui ne distinguent pas les couleurs, et vous pouvez afficher des alertes visuelles avec des effets sonores pour aider les utilisateurs qui sont malentendants.
 
-Si nécessaire, vous pouvez fournir d’autres éléments d’interface utilisateur accessibles qui suppriment totalement les éléments et les animations non essentiels, et fournir d’autres simplifications pour rationaliser l’expérience utilisateur. L’exemple de code suivant montre comment afficher une instance de l’élément [**UserControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.UserControl) à la place d’une autre en fonction d’un paramètre utilisateur.
+Si nécessaire, vous pouvez fournir d’autres éléments d’interface utilisateur accessibles qui suppriment totalement les éléments et les animations non essentiels, et fournir d’autres simplifications pour rationaliser l’expérience utilisateur. L’exemple de code suivant montre comment afficher une instance de [**UserControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.UserControl) à la place d’une autre en fonction d’un paramètre utilisateur.
 
 XAML
 
@@ -184,7 +184,7 @@ private void ShowAccessibleUICheckBox_Click(object sender, RoutedEventArgs e)
 Pour plus d’informations sur les déclarations d’accessibilité et la publication de votre application, consultez la rubrique [Accessibilité dans le Windows Store](accessibility-in-the-store.md).
 
 > [!NOTE]
-> Déclarer l’application comme accessible n’est pertinent que pour le Microsoft Store.
+> La déclaration de l’application comme accessible n’est pertinente que pour le Microsoft Store.
 
 <span id="Assistive_technology_support_in_custom_controls"/>
 <span id="assistive_technology_support_in_custom_controls"/>
@@ -192,7 +192,7 @@ Pour plus d’informations sur les déclarations d’accessibilité et la public
 
 ## <a name="assistive-technology-support-in-custom-controls"></a>Prise en charge de la technologie d’assistance dans des contrôles personnalisés
 
-Lorsque vous créez un contrôle personnalisé, nous vous recommandons de mettre en œuvre ou de développer également une ou plusieurs sous-classes [**AutomationPeer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer) pour fournir une prise en charge de l’accessibilité. Dans certains cas, tant que vous utilisez la même classe homologue que celle utilisée par la classe de contrôle de base, la prise en charge de l’automation pour votre classe dérivée est adéquate à un niveau de base. Cependant, nous vous conseillons de tester cette configuration. L’implémentation d’un homologue est toujours recommandée comme meilleure pratique, l’homologue pouvant correctement signaler le nom de la classe de votre nouveau contrôle. Plusieurs étapes sont nécessaires pour implémenter un homologue d’automatisation personnalisé. Pour plus d’informations, voir [Homologues d’automation personnalisés](custom-automation-peers.md).
+Lorsque vous créez un contrôle personnalisé, nous vous recommandons également d’implémenter ou d’étendre une ou plusieurs sous-classes [**AutomationPeer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer) pour assurer la prise en charge de l’accessibilité. Dans certains cas, tant que vous utilisez la même classe homologue que celle utilisée par la classe de contrôle de base, la prise en charge de l’automation pour votre classe dérivée est adéquate à un niveau de base. Cependant, nous vous conseillons de tester cette configuration. L’implémentation d’un homologue est toujours recommandée comme meilleure pratique, l’homologue pouvant correctement signaler le nom de la classe de votre nouveau contrôle. Plusieurs étapes sont nécessaires pour implémenter un homologue d’automatisation personnalisé. Pour plus d’informations, voir [Homologues d’automation personnalisés](custom-automation-peers.md).
 
 <span id="Assistive_technology_support_in_apps_that_support_XAML___Microsoft_DirectX_interop"/>
 <span id="assistive_technology_support_in_apps_that_support_xaml___microsoft_directx_interop"/>
@@ -205,7 +205,7 @@ Par défaut, le contenu Microsoft DirectX hébergé dans une interface utilisate
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [**Windows. UI. Xaml. Automation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation)
-* [Conception pour l’accessibilité](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-overview)
+* [Concevoir des applications pour l’accessibilité](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-overview)
 * [Exemple d’accessibilité XAML](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample)
 * [Accessibilité](accessibility.md)
 * [Prise en main du narrateur](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator)

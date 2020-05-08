@@ -1,31 +1,31 @@
 ---
 ms.assetid: 79C284CA-C53A-4C24-807E-6D4CE1A29BFA
-description: Cette section décrit comment modifier votre application Web PlayReady pour prendre en charge les modifications apportées à la version précédente de Windows 8.1 à la version Windows 10.
+description: Cette section explique comment modifier votre application web PlayReady pour prendre en charge les modifications apportées entre la version Windows 8.1 précédente et la version Windows 10.
 title: Extension EME (Encrypted Media Extension) PlayReady
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b673122d707e152d24c49d3bacf71ed52cdb0ae5
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 4145fbc67c6788a1d742fb0db616ecbc719e4b34
+ms.sourcegitcommit: 2dbf4a3f3473c1d3a0ad988bcbae6e75dfee3640
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74256808"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82619313"
 ---
 # <a name="playready-encrypted-media-extension"></a>Extension EME (Encrypted Media Extension) PlayReady
 
 
 
-Cette section décrit comment modifier votre application Web PlayReady pour prendre en charge les modifications apportées à la version précédente de Windows 8.1 à la version Windows 10.
+Cette section explique comment modifier votre application web PlayReady pour prendre en charge les modifications apportées entre la version Windows 8.1 précédente et la version Windows 10.
 
 L’utilisation d’éléments multimédias PlayReady dans Internet Explorer permet aux développeurs de créer des applications web capables de fournir du contenu PlayReady à l’utilisateur tout en appliquant les règles d’accès définies par le fournisseur de contenu. Cette section explique comment ajouter des éléments multimédias PlayReady à vos applications web existantes en utilisant uniquement HTML5 et JavaScript.
 
 ## <a name="whats-new-in-playready-encrypted-media-extension"></a>Nouveautés de l’extension EME (Encrypted Media Extension) PlayReady
 
-Cette section fournit la liste des modifications apportées à l’extension de média chiffré PlayReady (EME) pour activer la protection du contenu PlayReady sur Windows 10.
+Cette section fournit la liste des modifications apportées à l’extension EME (Encrypted Media Extension) PlayReady pour activer la protection de contenu PlayReady sur Windows 10.
 
-La liste suivante décrit les nouvelles fonctionnalités et les modifications apportées à l’extension de média chiffré PlayReady pour Windows 10 :
+La liste suivante décrit les nouvelles fonctionnalités et les modifications apportées à l’extension EME PlayReady pour Windows 10 :
 
 -   Ajout de la gestion des droits numériques (DRM) en fonction du matériel.
 
@@ -34,10 +34,10 @@ La liste suivante décrit les nouvelles fonctionnalités et les modifications ap
 -   Acquisition proactive de licences non persistantes.
 -   Acquisition de plusieurs licences en un message.
 
-    Vous pouvez utiliser un objet PlayReady avec plusieurs identificateurs de clé (KeyIDs) comme dans Windows 8.1, ou utiliser des [données de modèle de déchiffrement de contenu (CDMData)](https://docs.microsoft.com/previous-versions/windows/apps/dn457361(v=ieb.10)?redirectedfrom=MSDN) avec plusieurs KeyIDs.
+    Vous pouvez utiliser un objet PlayReady avec plusieurs identificateurs de clé (KeyID) comme dans Windows 8.1 ou utiliser des [données de modèle de déchiffrement de contenu (CDMData)](https://docs.microsoft.com/previous-versions/windows/apps/dn457361(v=ieb.10)?redirectedfrom=MSDN) avec plusieurs KeyID.
 
     > [!NOTE]
-    > Dans Windows 10, plusieurs identificateurs de clé sont pris en charge sous &lt;&gt; KeyID dans CDMData.
+    > Dans Windows 10, plusieurs identificateurs de clé sont pris en charge sous &lt;KeyID&gt; dans CDMData.
 
 -   Ajout de la prise en charge du délai d’expiration en temps réel ou licence à durée limitée (LDL).
 
@@ -47,7 +47,7 @@ La liste suivante décrit les nouvelles fonctionnalités et les modifications ap
 -   Miracast est désormais une sortie implicite.
 -   Ajout de l’arrêt sécurisé.
 
-    L’arrêt sécurisé permet à un appareil PlayReady de confirmer de manière sûre à un service de diffusion multimédia que la lecture multimédia a été stoppée sur un contenu donné.
+    L’arrêt sécurisé permet à un périphérique PlayReady de confirmer de manière sûre à un service de diffusion multimédia que la lecture multimédia a été stoppée sur un contenu donné.
 
 -   Ajout d’une séparation de licence audio et vidéo.
 
@@ -72,13 +72,13 @@ Pour utiliser la gestion des droits numériques en fonction du matériel par Pla
 Il arrive que certains contenus ne soient pas pris en charge par la gestion des droits numériques en fonction du matériel. Le contenu Cocktail n’est jamais pris en charge par la gestion des droits numériques en fonction du matériel. Si vous souhaitez lire du contenu Cocktail, vous devez désactiver la gestion des droits numériques en fonction du matériel. Certains types de gestion des droits numériques en fonction du matériel prennent en charge le contenu HEVC et d’autres non. Si vous voulez lire du contenu HEVC et que la gestion des droits numériques en fonction du matériel ne le prend pas en charge, vous pouvez la désactiver.
 
 > [!NOTE]
-> Pour déterminer si le contenu HEVC est pris en charge, après l’instanciation de `com.microsoft.playready`, utilisez la méthode [**PlayReadyStatics.CheckSupportedHardware**](https://docs.microsoft.com/uwp/api/windows.media.protection.playready.playreadystatics.checksupportedhardware).
+> Pour déterminer si le contenu HEVC est pris en charge `com.microsoft.playready`, après l’instanciation, utilisez la méthode [**PlayReadyStatics. CheckSupportedHardware**](https://docs.microsoft.com/uwp/api/windows.media.protection.playready.playreadystatics.checksupportedhardware) .
 
 ## <a name="add-secure-stop-to-your-web-app"></a>Ajouter un arrêt sécurisé à votre application web
 
 Cette section explique comment ajouter un arrêt sécurisé à votre application web.
 
-L’arrêt sécurisé permet à un appareil PlayReady de confirmer de manière sûre à un service de diffusion multimédia que la lecture multimédia a été stoppée sur un contenu donné. Cette fonctionnalité permet à vos services de streaming multimédia de contrôler et de rapporter avec précision les limites d’utilisation sur différents appareils pour un compte donné.
+L’arrêt sécurisé permet à un périphérique PlayReady de confirmer de manière sûre à un service de diffusion multimédia que la lecture multimédia a été stoppée sur un contenu donné. Cette fonctionnalité permet à vos services de streaming multimédia de contrôler et de rapporter avec précision les limites d’utilisation sur différents appareils pour un compte donné.
 
 Il existe deux scénarios principaux pour l’envoi d’une demande d’arrêt sécurisé :
 
@@ -262,11 +262,11 @@ function formatSecureStopCDMData(encodedSessionId, customData, encodedPublisherC
 ```
 
 > [!NOTE]
-> L' `<SessionID>B64 encoded session ID</SessionID>` de données d’arrêt sécurisé dans l’exemple ci-dessus peut être un astérisque (\*), qui est un caractère générique pour toutes les sessions d’arrêt sécurisées enregistrées. Autrement dit, la balise **SessionID** peut être une session spécifique, ou un caractère générique (\*) pour sélectionner toutes les sessions d’arrêt sécurisé.
+> Les données d' `<SessionID>B64 encoded session ID</SessionID>` arrêt sécurisées dans l’exemple ci-dessus peuvent être\*un astérisque (), qui est un caractère générique pour toutes les sessions d’arrêt sécurisées enregistrées. Autrement dit, la balise **SessionID** peut être une session spécifique, ou un caractère générique\*() pour sélectionner toutes les sessions d’arrêt sécurisé.
 
 ## <a name="programming-considerations-for-encrypted-media-extension"></a>Considérations en matière de programmation de l’extension EME (Encrypted Media Extension)
 
-Cette section répertorie les considérations relatives à la programmation que vous devez prendre en compte lors de la création de votre application Web compatible PlayReady pour Windows 10.
+Cette section répertorie les considérations en matière de programmation que vous devez prendre en compte lors de la création de votre application web compatible PlayReady pour Windows 10.
 
 Les objets **MSMediaKeys** et **MSMediaKeySession** créés par votre application doivent être maintenus actifs jusqu’à la fermeture de votre application. Pour garantir que ces objets restent actifs, vous pouvez les affecter en tant que variables globales (les variables deviennent hors de portée et sont mises à la corbeille si elles sont déclarées comme variables locales à l’intérieur d’une fonction). Par exemple, l’exemple suivant affecte les variables *g\_msMediaKeys* et *g\_mediaKeySession* en tant que variables globales, qui sont ensuite affectées aux objets **msMediaKeys** et **MSMediaKeySession** dans la fonction.
 
@@ -296,10 +296,10 @@ function foo() {
 }
 ```
 
-Pour plus d’informations, voir les [exemples d’applications](https://code.msdn.microsoft.com/windowsapps/PlayReady-samples-for-124a3738).
+Pour plus d’informations, voir les [exemples d’applications](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/PlayReady).
 
-## <a name="see-also"></a>Articles associés
-- [DRM PlayReady](playready-client-sdk.md)
+## <a name="see-also"></a>Voir aussi
+- [Gestion des droits numériques PlayReady](playready-client-sdk.md)
 
 
 

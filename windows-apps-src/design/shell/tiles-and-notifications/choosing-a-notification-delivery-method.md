@@ -1,19 +1,19 @@
 ---
-Description: Cet article aborde les quatre options de notification &\#8212 ; local, planifié, périodique et Push &\#8212 ; qui fournissent des mises à jour de vignettes et de badges et le contenu des notifications Toast.
+Description: Cet article aborde les quatre options de \#notification&8212, local, planifié, périodique et Push \#&8212 ; qui fournissent des mises à jour de vignettes et de badges et du contenu de notification Toast.
 title: Choisir une méthode de remise de notification
 ms.assetid: FDB43EDE-C5F2-493F-952C-55401EC5172B
 label: Choose a notification delivery method
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 80a06f5199c49f5fcd7a08dc9c9baef18ee19db9
-ms.sourcegitcommit: 017f2f1492f3220da0fae8b4c99de7206a185dff
+ms.openlocfilehash: f1df2048ea54b3ffc7c62270841b2be650bb90ea
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "81385853"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970824"
 ---
 # <a name="choose-a-notification-delivery-method"></a>Choisir une méthode de remise de notification
 
@@ -27,9 +27,9 @@ Ce article présente les quatre options de notification (locale, planifiée, pé
 
 Une application peut utiliser quatre méthodes pour remettre une notification :
 
--   **Localisé**
+-   **Local**
 -   **Planifiée**
--   **Amor**
+-   **Périodiques**
 -   **Push**
 
 Ce tableau récapitule les types de remise des notifications.
@@ -43,8 +43,8 @@ Ce tableau récapitule les types de remise des notifications.
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Mode de remise</th>
-<th align="left">À utiliser avec</th>
+<th align="left">Méthode de remise</th>
+<th align="left">Utiliser avec</th>
 <th align="left">Description</th>
 <th align="left">Exemples</th>
 </tr>
@@ -61,7 +61,7 @@ Ce tableau récapitule les types de remise des notifications.
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left">Planifiées</td>
+<td align="left">Planifiée</td>
 <td align="left">Vignette, Toast</td>
 <td align="left">Ensemble d’appels d’API qui planifient une notification à l’avance afin d’effectuer une mise à jour à l’heure que vous indiquez.</td>
 <td align="left"><ul>
@@ -79,7 +79,7 @@ Ce tableau récapitule les types de remise des notifications.
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left">Push</td>
+<td align="left">Envoi de données (push)</td>
 <td align="left">Vignette, badge, toast, brut</td>
 <td align="left">Notifications envoyées depuis un serveur cloud, même si votre application n’est pas en cours d’exécution.</td>
 <td align="left"><ul>
@@ -110,9 +110,9 @@ Par défaut, les notifications toast locales ont une durée de vie de trois jou
 
 Pour plus d’informations, consultez les rubriques suivantes :
 
--   [Envoyer une notification de vignette locale](sending-a-local-tile-notification.md)
+-   [Envoyer une notification par vignette locale](sending-a-local-tile-notification.md)
 -   [Envoyer une notification toast locale](send-local-toast.md)
--   [Exemples de code de notifications de plateforme Windows universelle (UWP)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+-   [Exemples de code pour les notifications d’applications Windows](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 ## <a name="scheduled-notifications"></a>Notifications planifiées
 
@@ -126,7 +126,7 @@ Par défaut, les notifications planifiées expirent trois jours après leur émi
 Pour plus d’informations, consultez les rubriques suivantes :
 
 -   [Planification d’une notification Toast](scheduled-toast.md)
--   [Exemples de code de notifications de plateforme Windows universelle (UWP)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+-   [Exemples de code pour les notifications d’applications Windows](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 ## <a name="periodic-notifications"></a>Notifications périodiques
 
@@ -140,9 +140,9 @@ Par défaut, les notifications périodiques expirent trois jours après l’inte
 Pour plus d’informations, consultez les rubriques suivantes :
 
 -   [Vue d’ensemble des notifications périodiques](periodic-notification-overview.md)
--   [Exemples de code de notifications de plateforme Windows universelle (UWP)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+-   [Exemples de code pour les notifications d’applications Windows](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
-## <a name="push-notifications"></a>Notifications Push
+## <a name="push-notifications"></a>Notifications push
 
 
 Les notifications Push sont idéales pour communiquer des données en temps réel ou des données personnalisées pour l’utilisateur. Les notifications Push servent au contenu généré à des moments imprévus, comme les actualités, les mises à jour de réseaux sociaux ou les messages instantanés. Les notifications Push s’avèrent également utiles dans les situations dans lesquelles les données sont ponctuelles d’une manière qui ne convient pas aux notifications périodiques, notamment comme l’évolution des scores pendant un événement sportif.
@@ -151,23 +151,23 @@ Les notifications Push requièrent un service cloud qui gère des canaux de noti
 
 Par défaut, les notifications Push expirent trois jours après leur réception par l’appareil. Si nécessaire, vous pouvez remplacer cette valeur par défaut par un délai d’expiration explicite (durée de vie maximale des notifications Toast : 3 jours).
 
-Pour plus d’informations, consultez :
+Pour plus d'informations, consultez les pages suivantes :
 
 -   [Vue d’ensemble des services de notifications Push Windows (WNS)](windows-push-notification-services--wns--overview.md)
--   [Instructions pour les notifications push](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
--   [Exemples de code de notifications de plateforme Windows universelle (UWP)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+-   [Recommandations en matière de notifications Push](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
+-   [Exemples de code pour les notifications d’applications Windows](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 
 ## <a name="related-topics"></a>Rubriques connexes
 
 
-* [Envoyer une notification de vignette locale](sending-a-local-tile-notification.md)
+* [Envoyer une notification par vignette locale](sending-a-local-tile-notification.md)
 * [Envoyer une notification toast locale](send-local-toast.md)
-* [Instructions pour les notifications push](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
-* [Instructions pour les notifications Toast](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-badges-notifications)
+* [Recommandations en matière de notifications Push](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
+* [Recommandations en matière de notifications toast](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-badges-notifications)
 * [Vue d’ensemble des notifications périodiques](periodic-notification-overview.md)
 * [Vue d’ensemble des services de notifications Push Windows (WNS)](windows-push-notification-services--wns--overview.md)
-* [Exemples de code de notifications de plateforme Windows universelle (UWP) sur GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+* [Exemples de code de notification d’application Windows sur GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
  
 
  

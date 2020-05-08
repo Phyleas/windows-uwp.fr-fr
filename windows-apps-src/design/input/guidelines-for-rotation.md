@@ -1,5 +1,5 @@
 ---
-Description: Cette rubrique décrit la nouvelle interface utilisateur Windows pour la rotation et fournit des instructions d’expérience utilisateur qui doivent être prises en compte lors de l’utilisation de ce nouveau mécanisme d’interaction dans votre application UWP.
+Description: Cette rubrique décrit la nouvelle interface utilisateur Windows pour la rotation et fournit des instructions d’expérience utilisateur qui doivent être prises en compte lors de l’utilisation de ce nouveau mécanisme d’interaction dans votre application Windows.
 title: Rotation
 ms.assetid: f098bc05-35b3-46b2-9e9b-9ff292d067ca
 label: Rotation
@@ -8,21 +8,21 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 71a09d304b0d68bf01012166173360ec6304fb2c
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 08d0eb18d59c9a5c19826eb7b6e8d4b65179b6fd
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257926"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970104"
 ---
 # <a name="rotation"></a>Rotation
 
 
-Cet article décrit la nouvelle interface utilisateur Windows pour la rotation et fournit des recommandations en matière d’expérience utilisateur à prendre en compte lors de l’utilisation de ce nouveau mécanisme d’interaction dans votre application UWP.
+Cet article décrit la nouvelle interface utilisateur Windows pour la rotation et fournit des instructions d’expérience utilisateur qui doivent être prises en compte lors de l’utilisation de ce nouveau mécanisme d’interaction dans votre application Windows.
 
-> **API importantes** : [**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input), [**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input)
+> **API importantes**: [**Windows. UI. Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input), [**Windows. UI. Xaml. Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input)
 
-## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
+## <a name="dos-and-donts"></a>Choses à faire et à ne pas faire
 
 -   Utilisez la rotation pour permettre aux utilisateurs de faire pivoter directement des éléments d’interface utilisateur.
 
@@ -31,7 +31,7 @@ Cet article décrit la nouvelle interface utilisateur Windows pour la rotation e
 
 **Vue d’ensemble de la rotation**
 
-La rotation est une technique optimisée pour l’interaction tactile utilisée par les applications UWP pour permettre aux utilisateurs de faire tourner un objet dans une direction circulaire (dans le sens des aiguilles d’une montre ou contraire).
+La rotation est la technique tactile utilisée par les applications Windows pour permettre aux utilisateurs de transformer un objet en sens circulaire (dans le sens horaire ou dans le sens inverse des aiguilles d’une montre).
 
 Selon le périphérique d’entrée utilisé, l’interaction de rotation s’effectue via :
 
@@ -44,17 +44,17 @@ Utilisez la rotation pour permettre aux utilisateurs de faire pivoter directemen
 
 ![schéma des différentes positions de doigts prises en charge par la rotation.](images/ux-rotate-positions.png)
 
-**Notez**   intuitivement, et dans la plupart des cas, le point de rotation est l’un des deux points tactiles, sauf si l’utilisateur peut spécifier un point de rotation non lié aux points de contact (par exemple, dans une application de dessin ou de disposition). Les images suivantes montrent comment l’expérience utilisateur peut être altérée si le point de rotation n’est pas contraint dans ce sens.
+**Notez**    intuitivement, et dans la plupart des cas, le point de rotation est l’un des deux points tactiles, sauf si l’utilisateur peut spécifier un point de rotation non lié aux points de contact (par exemple, dans une application de dessin ou de disposition). Les images suivantes montrent comment l’expérience utilisateur peut être altérée si le point de rotation n’est pas contraint dans ce sens.
 
 Cette première image montre le premier (le pouce) et le deuxième (l’index) points tactiles : l’index touche un arbre et le pouce touche un rondin de bois.
 
-image ![représentant les deux points tactiles initiaux pour le mouvement de rotation.](images/ux-rotate-points1.png)
+![image des deux premiers points tactiles du geste de rotation.](images/ux-rotate-points1.png)
 Dans ce deuxième dessin, la rotation s’effectue autour du premier point tactile (le pouce). Après la rotation, l’index touche encore le tronc de l’arbre et le pouce touche encore le rondin de bois (le point de rotation).
 
-![image présentant une image pivotée avec le point de rotation restreint à l’un des deux points tactiles initiaux.](images/ux-rotate-points2.png)
+![image du dessin pivoté avec le point de rotation contraint à l’un des deux premiers points tactiles.](images/ux-rotate-points2.png)
 Dans ce troisième dessin, le centre de la rotation a été défini par l’application (ou par l’utilisateur) comme devant être le point central du dessin. Après la rotation, étant donné que le dessin n’a pas pivoté autour de l’un des doigts, l’illusion de manipulation directe est rompue (à moins que cela ne soit la décision de l’utilisateur).
 
-![image présentant une image pivotée avec le point de rotation restreint au centre de l’image plutôt qu’à l’un des deux points tactiles initiaux.](images/ux-rotate-points3.png)
+![image du dessin pivoté avec le point de rotation contraint au centre du dessin et non à l’un des deux premiers points tactiles.](images/ux-rotate-points3.png)
 Dans ce dernier dessin, le centre de la rotation a été défini par l’application (ou par l’utilisateur) comme devant être un point situé au milieu du bord gauche du dessin. Là encore, à moins que cela ne soit la décision de l’utilisateur, l’illusion de manipulation directe a été rompue.
 
 ![image du dessin pivoté avec le point de rotation contraint au centre le plus à gauche du dessin et non à l’un des deux premiers points tactiles.](images/ux-rotate-points4.png)
@@ -77,7 +77,7 @@ Windows 10 prend en charge trois types de rotation : gratuit, restreint et comb
 <tbody>
 <tr class="odd">
 <td align="left">Rotation libre</td>
-<td align="left"><p>La rotation libre permet à l’utilisateur de faire pivoter librement du contenu n’importe où dans un arc de 360 degré. Lorsque l’utilisateur relâche l’objet, celui-ci reste dans la position choisie. La rotation libre est utile pour les applications de dessin et de mise en page telles que Microsoft PowerPoint, Word, Visio et Paint ; ainsi que Adobe Photoshop, Illustrator et Flash.</p></td>
+<td align="left"><p>La rotation libre permet à un utilisateur de faire pivoter le contenu librement n’importe où dans un arc de 360 degrés. Lorsque l’utilisateur relâche l’objet, l’objet reste à la position choisie. La rotation libre est utile pour les applications de dessin et de mise en page telles que Microsoft PowerPoint, Word, Visio et Paint ; ainsi que Adobe Photoshop, Illustrator et Flash.</p></td>
 </tr>
 <tr class="even">
 <td align="left">Rotation contrainte</td>
@@ -88,7 +88,7 @@ Windows 10 prend en charge trois types de rotation : gratuit, restreint et comb
 <td align="left">Rotation combinée</td>
 <td align="left"><p>La rotation combinée prend en charge la rotation libre avec des zones (semblables aux rails dans les <a href="guidelines-for-panning.md">Recommandations en matière de mouvement panoramique</a>) à chacun des points d’ancrage à 90 degrés appliqués par la rotation contrainte. Si l’utilisateur relâche l’objet en dehors de l’une des zones à 90 degrés, l’objet reste dans cette position ; sinon, il pivote automatiquement vers un point d’ancrage.</p>
 <div class="alert">
-<strong>Notez</strong>  un rail d’interface utilisateur est une fonctionnalité dans laquelle une zone autour d’une cible limite le mouvement vers une valeur ou un emplacement spécifique pour influencer sa sélection.
+<strong>Remarque</strong>  un rail d’interface utilisateur est une fonctionnalité dans laquelle une zone autour d’une cible limite le mouvement vers une valeur ou un emplacement spécifique pour influencer sa sélection.
 </div>
 <div>
  
@@ -97,30 +97,22 @@ Windows 10 prend en charge trois types de rotation : gratuit, restreint et comb
 </tbody>
 </table>
 
- 
-
 ## <a name="related-topics"></a>Rubriques connexes
 
+### <a name="samples"></a>Exemples
 
-**Exemples**
-* [Exemple d’entrée de base](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
-* [Exemple d’entrée à faible latence](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
-* [Exemple de mode d’interaction utilisateur](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
-* [Exemples de visuels de focus](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
+- [Exemple d’entrée de base](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+- [Exemple d’entrée à faible latence](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+- [Exemple de mode d’interaction utilisateur](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
+- [Exemples de visuels de focus](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
 
-**Exemples d’archives**
-* [Entrée : exemple d’événements d’entrée d’utilisateur XAML](https://code.msdn.microsoft.com/windowsapps/Input-3dff271b)
-* [Entrée : exemple de fonctionnalités de l’appareil](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
-* [Entrée : exemple de test de positionnement tactile](https://code.msdn.microsoft.com/windowsapps/Touch-Hit-Testing-sample-5e35c690)
-* [Exemple de défilement XAML, panoramique et zoom](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9)
-* [Entrée : exemple d’encre simplifiée](https://code.msdn.microsoft.com/windowsapps/Input-simplified-ink-sample-11614bbf)
-* [Entrée : mouvements et manipulations avec GestureRecognizer](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
-* [Entrée : manipulations et mouvements (C++), exemple](https://code.msdn.microsoft.com/windowsapps/Manipulations-and-gestures-362b6b59)
-* [Exemple d’entrée tactile DirectX](https://code.msdn.microsoft.com/windowsapps/Simple-Direct3D-Touch-f98db97e)
- 
+### <a name="archive-samples"></a>Exemples d’archive
 
- 
-
-
-
-
+- [Entrée : exemple d’événements d’entrée utilisateur XAML](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20XAML%20user%20input%20events%20sample)
+- [Entrée : exemple de fonctionnalités de périphériques](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Input%20Device%20capabilities%20sample%20(Windows%208))
+- [Entrée : exemple de test de positionnement tactile](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20desktop%20samples/%5BC%2B%2B%5D-Windows%208%20desktop%20samples/C%2B%2B/Windows%208%20desktop%20samples/Input%20Touch%20hit%20testing%20sample)
+- [Exemple de défilement XAML, panoramique et zoom](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample)
+- [Entrée : exemple d’entrée manuscrite simplifiée](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Simplified%20ink%20sample)
+- [Entrée : Mouvements et manipulations avec GestureRecognizer](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
+- [Entrée : manipulations et gestes, exemple](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer)
+- [Exemple d’entrée tactile DirectX](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%2B%2B%5D-Windows%208%20app%20samples/C%2B%2B/Windows%208%20app%20samples/DirectX%20touch%20input%20sample%20(Windows%208))

@@ -1,26 +1,26 @@
 ---
 ms.assetid: E322DFFE-8EEC-499D-87BC-EDA5CFC27551
-description: Chaque transaction du Microsoft Store qui se traduit par un achat de produit peut éventuellement renvoyer un reçu de transaction.
+description: Chaque transaction Microsoft Store qui produit un achat de produit réussi peut éventuellement retourner un accusé de réception de transaction.
 title: Utiliser des reçus pour vérifier les achats de produits
 ms.date: 04/16/2018
 ms.topic: article
-keywords: windows 10, uwp, achats dans l'application, FAI, reçu, Windows.ApplicationModel.Store
+keywords: Windows 10, UWP, achats dans l’application, IAPs, reçus, Windows. ApplicationModel. Store
 ms.localizationpriority: medium
-ms.openlocfilehash: a26d98de58c954f1bec588b335483de08404862b
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: ba87de0755469f373f9000f3d96d3021c9197985
+ms.sourcegitcommit: 28bd367ab8acc64d4b6f3f73adca12100cbd359f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259225"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82148885"
 ---
 # <a name="use-receipts-to-verify-product-purchases"></a>Utiliser des reçus pour vérifier les achats de produits
 
-Chaque transaction du Microsoft Store qui se traduit par un achat de produit peut éventuellement renvoyer un reçu de transaction. Ce reçu fournit des informations sur le produit et le coût monétaire pour le client.
+Chaque transaction Microsoft Store qui produit un achat de produit réussi peut éventuellement retourner un accusé de réception de transaction. Ce reçu fournit des informations sur le produit et le coût monétaire pour le client.
 
-L’accès à ces informations permet à votre app de vérifier qu’un utilisateur a acheté votre app ou des modules complémentaires (également appelés produits in-app ou PIA) dans le Microsoft Store. Par exemple, imaginez un jeu qui propose du contenu téléchargé. Si l’utilisateur qui a acheté le contenu du jeu veut jouer à ce jeu sur un autre appareil, vous devez vérifier qu’il a bien acheté le contenu. Voici comment procéder.
+Le fait d’avoir accès à ces informations prend en charge des scénarios dans lesquels votre application doit vérifier qu’un utilisateur a acheté votre application ou a effectué des achats (également appelés produits dans l’application ou IAP) à partir de la Microsoft Store. Par exemple, imaginez un jeu qui propose du contenu téléchargé. Si l’utilisateur qui a acheté le contenu du jeu veut jouer à ce jeu sur un autre appareil, vous devez vérifier qu’il a bien acheté le contenu. Voici comment faire.
 
 > [!IMPORTANT]
-> Cet article montre comment utiliser des membres de l’espace de noms [Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store) pour obtenir et valider un reçu pour un achat in-app. Si vous utilisez l'espace de noms [Windows.Services.Store](https://docs.microsoft.com/uwp/api/Windows.Services.Store) pour les achats in-app (introduits dans Windows 10, version 1607 et disponibles pour les projets ciblant **l’édition anniversaire Windows 10 (version 10.0 ; build 14393)** ou une version ultérieure dans Visual Studio), celui-ci ne fournit pas d’API permettant d'obtenir des reçus pour les achats in-app. Toutefois, vous pouvez utiliser une méthode REST dans l’API de collection du Microsoft Store pour obtenir les données d’une transaction d’achat. Pour plus d’informations, consultez [Reçus d’achats in-app](in-app-purchases-and-trials.md#receipts).
+> Cet article explique comment utiliser les membres de l’espace de noms [Windows. ApplicationModel. Store](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store) pour obtenir et valider un accusé de réception pour un achat dans une application. Si vous utilisez l’espace de noms [Windows. services. Store](https://docs.microsoft.com/uwp/api/Windows.Services.Store) pour les achats dans l’application (introduits dans Windows 10, version 1607 et disponibles pour les projets qui ciblent l' **édition anniversaire windows 10 (10,0 ; Build 14393)** ou une version ultérieure dans Visual Studio), cet espace de noms ne fournit pas d’API pour obtenir des reçus d’achat pour les achats dans l’application. Toutefois, vous pouvez utiliser une méthode REST dans l’API de collection Microsoft Store pour obtenir des données pour une transaction d’achat. Pour plus d’informations, consultez [Reçus d’achats in-app](in-app-purchases-and-trials.md#receipts).
 
 ## <a name="requesting-a-receipt"></a>Demande d’un reçu
 
@@ -33,7 +33,7 @@ L’espace de noms **Windows.ApplicationModel.Store** prend en charge plusieurs 
 Un reçu d’application ressemble à ceci.
 
 > [!NOTE]
-> Cet exemple est mis en forme afin de rendre le code XML lisible. Les reçus d'app réels n’incluent pas d’espace blanc entre les éléments.
+> Cet exemple est mis en forme pour faciliter la lecture du XML. Les véritables accusés de réception d’application n’incluent pas d’espace entre les éléments.
 
 > [!div class="tabbedCodeSnippets"]
 ```xml
@@ -60,7 +60,7 @@ Un reçu d’application ressemble à ceci.
 Un reçu de produit ressemble à ceci.
 
 > [!NOTE]
-> Cet exemple est mis en forme afin de rendre le code XML lisible. Les reçus de produit réels n’incluent pas d’espace blanc entre les éléments.
+> Cet exemple est mis en forme pour faciliter la lecture du XML. Les accusés de réception de produits réels n’incluent pas d’espace entre les éléments.
 
 > [!div class="tabbedCodeSnippets"]
 ```xml
@@ -87,7 +87,7 @@ Vous pouvez utiliser ces exemples de reçu pour tester votre code de validation.
 
 ## <a name="validating-a-receipt"></a>Validation d’un reçu
 
-Pour valider l’authenticité d’un reçu, vous avez besoin de votre système dorsal (service web ou autre) afin d’en vérifier la signature à l’aide du certificat public. Pour obtenir ce certificat, utilisez l’URL ```https://go.microsoft.com/fwlink/p/?linkid=246509&cid=CertificateId```, où ```CertificateId``` est la valeur **CertificateId** du reçu.
+Pour valider l’authenticité d’un reçu, vous avez besoin de votre système dorsal (service web ou autre) afin d’en vérifier la signature à l’aide du certificat public. Pour accéder à ce certificat, utilisez l' ```https://lic.apps.microsoft.com/licensing/certificateserver/?cid=CertificateId%60%60%60, where ```URL CertificateId «» est la valeur **CertificateId** dans la réception.
 
 Voici un exemple de ce processus de validation. Ce code s’exécute dans une application de console .NET Framework, qui inclut une référence à l’assemblage **System.Security**.
 
@@ -104,10 +104,10 @@ Cette section décrit les éléments et attributs d’un reçu.
 
 L’élément racine de ce fichier est l’élément **Receipt**, qui contient des informations sur l’application et les achats in-app. Cet élément contient les éléments enfants suivants :
 
-|  Élément  |  Requis  |  Quantité  |  Description   |
+|  Élément  |  Obligatoire  |  Quantité  |  Description   |
 |-------------|------------|--------|--------|
-|  [AppReceipt](#appreceipt)  |    Non        |  0 ou 1  |  Contient des informations sur l’achat pour l’application actuelle.            |
-|  [ProductReceipt](#productreceipt)  |     Non       |  0 ou davantage    |   Contient des informations sur un achat in-app pour l’application actuelle.     |
+|  [AppReceipt](#appreceipt)  |    Non         |  0 ou 1  |  Contient des informations sur l’achat pour l’application actuelle.            |
+|  [ProductReceipt](#productreceipt)  |     Non        |  0 ou plus    |   Contient des informations sur un achat in-app pour l’application actuelle.     |
 |  Signature  |      Oui      |  1   |   Cet élément est une construction [XML-DSIG](https://www.w3.org/TR/xmldsig-core/) standard. Il contient un élément **SignatureValue** qui contient la signature que vous pouvez utiliser pour valider le reçu, un élément **SignedInfo**.      |
 
 L’élément **Receipt** a les attributs suivants :
@@ -129,7 +129,7 @@ L’élément **AppReceipt** a les attributs suivants :
 
 |  Attribut  |  Description   |
 |-------------|-------------------|
-|  **Identifi**  |    Identifie l’achat.           |
+|  **Id**  |    Identifie l’achat.           |
 |  **AppId**  |     Nom de la famille de packages, utilisé par le système d’exploitation pour l’application.           |
 |  **LicenseType**  |    **Full**, si l’utilisateur a acheté la version complète de l’application. **Trial**, si l’utilisateur a téléchargé une version d’évaluation de l’application.           |  
 |  **PurchaseDate**  |    Date d’acquisition de l’application.          |  |
@@ -144,7 +144,7 @@ L’élément **ProductReceipt** a les attributs suivants :
 
 |  Attribut  |  Description   |
 |-------------|-------------------|
-|  **Identifi**  |    Identifie l’achat.           |
+|  **Id**  |    Identifie l’achat.           |
 |  **AppId**  |     Identifie l’application avec laquelle l’utilisateur a effectué l’achat.           |
 |  **Réf**  |     Identifie le produit acheté.           |
 |  **ProductType**  |    Détermine le type de produit. Actuellement, ne prend en charge que la valeur **Durable**.          |  

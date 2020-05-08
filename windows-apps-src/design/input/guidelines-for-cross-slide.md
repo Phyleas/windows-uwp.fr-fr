@@ -6,12 +6,12 @@ ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 833949effd311c707de8dd1823ec6eee06e91e87
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 685c71ca0e6ed0989932b7c9a0169088d5b83bd2
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257976"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82558841"
 ---
 # <a name="guidelines-for-cross-slide"></a>Recommandations en matière de glisser transversal
 
@@ -56,7 +56,7 @@ Voici quelques recommandations à prendre en compte quand vous ajoutez la foncti
 
 Utilisez le glisser transversal pour les listes ou les collections qui défilent dans une seule direction. Pour plus d’informations, voir [Ajout de contrôles ListView](https://docs.microsoft.com/previous-versions/windows/apps/hh465382(v=win.10)).
 
-**Notez**  dans les cas où la zone de contenu peut être panoramique dans deux directions, telles que des navigateurs Web ou des lecteurs e-Reader, l’interaction chronométrée de type « appuyer et maintenir » doit être utilisée pour appeler le menu contextuel pour des objets tels que des images et des liens hypertexte.
+**Notez**  que dans les cas où la zone de contenu peut être panoramique dans deux directions, telles que des navigateurs Web ou des lecteurs e-Reader, l’interaction chronométrée de type « appuyer et maintenir » doit être utilisée pour appeler le menu contextuel pour des objets tels que des images et des liens hypertexte.
 
  
 
@@ -69,7 +69,7 @@ Utilisez le glisser transversal pour les listes ou les collections qui défilent
 
 ### <span id="selection"></span><span id="SELECTION"></span>
 
-**Sélectionnés**
+**Sélectionnez**
 
 La sélection consiste à marquer un ou plusieurs objets sans les lancer ni les activer. Cette action est comparable à celle qui consiste à cliquer avec la souris ou à utiliser la touche Maj + un clic sur un ou plusieurs objets.
 
@@ -129,23 +129,25 @@ Utilisez l’action de glissement pour déplacer un ou plusieurs objets d’un e
 
 Si plusieurs objets doivent être déplacés, permettez aux utilisateurs de sélectionner plusieurs éléments, puis de les faire glisser en même temps.
 
-## <a name="span-idrelated_topicsspanrelated-articles"></a><span id="related_topics"></span>Articles connexes
+## <a name="related-articles"></a>Articles connexes
 
+### <a name="samples"></a>Exemples
 
-**Exemples**
-* [Exemple d’entrée de base](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
-* [Exemple d’entrée à faible latence](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
-* [Exemple de mode d’interaction utilisateur](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
-* [Exemple de visuels de focus](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
-**Exemples d’archive**
-* [Entrée : exemple d’événements d’entrée d’utilisateur XAML](https://code.msdn.microsoft.com/windowsapps/Input-3dff271b)
-* [Entrée : exemple de fonctionnalités de l’appareil](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
-* [Entrée : exemple de test de positionnement tactile](https://code.msdn.microsoft.com/windowsapps/Touch-Hit-Testing-sample-5e35c690)
-* [Exemple de défilement XAML, panoramique et zoom](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9)
-* [Entrée : exemple d’encre simplifiée](https://code.msdn.microsoft.com/windowsapps/Input-simplified-ink-sample-11614bbf)
-* [Entrée : exemple de gestes Windows 8](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
-* [Entrée : manipulations et mouvements (C++), exemple](https://code.msdn.microsoft.com/windowsapps/Manipulations-and-gestures-362b6b59)
-* [Exemple d’entrée tactile DirectX](https://code.msdn.microsoft.com/windowsapps/Simple-Direct3D-Touch-f98db97e)
+- [Exemple d’entrée de base](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+- [Exemple d’entrée à faible latence](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+- [Exemple de mode d’interaction utilisateur](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
+- [Exemples de visuels de focus](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
+
+### <a name="archive-samples"></a>Exemples d’archive
+
+- [Entrée : exemple d’événements d’entrée utilisateur XAML](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20XAML%20user%20input%20events%20sample)
+- [Entrée : exemple de fonctionnalités de périphériques](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Input%20Device%20capabilities%20sample%20(Windows%208))
+- [Entrée : exemple de test de positionnement tactile](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20desktop%20samples/%5BC%2B%2B%5D-Windows%208%20desktop%20samples/C%2B%2B/Windows%208%20desktop%20samples/Input%20Touch%20hit%20testing%20sample)
+- [Exemple de défilement XAML, panoramique et zoom](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample)
+- [Entrée : exemple d’entrée manuscrite simplifiée](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Simplified%20ink%20sample)
+- [Entrée : exemple de mouvements Windows 8](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
+- [Entrée : manipulations et gestes, exemple](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer)
+- [Exemple d’entrée tactile DirectX](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%2B%2B%5D-Windows%208%20app%20samples/C%2B%2B/Windows%208%20app%20samples/DirectX%20touch%20input%20sample%20(Windows%208))
  
 
  

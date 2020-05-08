@@ -4,30 +4,30 @@ description: Guide complet sur les ressources et les informations nécessaires a
 ms.assetid: 6061F498-96A8-44EF-9711-68AE5A1218C9
 ms.date: 04/16/2018
 ms.topic: article
-keywords: windows 10, uwp, jeux, développement de jeux
+keywords: Windows 10, UWP, jeux, développement de jeux
 ms.localizationpriority: medium
-ms.openlocfilehash: a348393a02bab946a128babefc07dc48faea6cd1
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: de18e77137941acfba6e9cb3fb6421de8fe156f0
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79210615"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82730249"
 ---
 # <a name="windows-10-game-development-guide"></a>Guide de développement de jeux Windows 10
 
 
 Bienvenue dans le guide de développement de jeux Windows 10 !
 
-Ce guide regroupe les ressources et les informations dont vous avez besoin pour développer un jeu UWP. Une version anglaise (États-Unis) de ce guide est disponible au format [PDF](https://download.microsoft.com/download/9/C/9/9C9D344F-611F-412E-BB01-259E5C76B17F/Windev_Game_Dev_Guide_Oct_2017.pdf).
+Ce guide regroupe les ressources et les informations dont vous avez besoin pour développer un jeu UWP. Une version anglaise (US) de ce guide est disponible au format [PDF](https://download.microsoft.com/download/9/C/9/9C9D344F-611F-412E-BB01-259E5C76B17F/Windev_Game_Dev_Guide_Oct_2017.pdf) .
 
 ## <a name="introduction-to-game-development-for-the-universal-windows-platform-uwp"></a>Présentation du développement de jeux pour la plateforme Windows universelle (UWP)
 
 
-Lorsque vous créez un jeu Windows 10, vous pouvez toucher des millions de joueurs dans le monde sur leur téléphone, leur PC et leur Xbox One. Avec Xbox sur Windows, Xbox Live, des jeux multijoueurs multiplateforme, une incroyable communauté de joueurs, ainsi que des nouvelles fonctionnalités puissantes comme les jeux de plateforme Windows universelle (UWP) et DirectX 12, les jeux Windows 10 enchantent les joueurs de tous les âges et de tous les genres. La nouvelle plateforme Windows universelle (UWP) garantit la compatibilité de votre jeu sur les appareils Windows 10 avec une API commune pour le téléphone, le PC et Xbox One, et équipés des outils et des options permettant d’adapter votre jeu à chaque performance de l’appareil.
+Lorsque vous créez un jeu Windows 10, vous avez la possibilité d’atteindre des millions de joueurs du monde entier sur téléphone, PC et Xbox One. Avec Xbox sur Windows, Xbox Live, le mode multijoueur multiappareil, une communauté de joueurs incroyable et de nouvelles fonctionnalités performantes comme la plateforme universelle Windows (UWP) et DirectX 12, les jeux Windows 10 vont ravir les joueurs de tous âges et de toutes sortes. La nouvelle plateforme Windows universelle (UWP) permet à votre jeu d’être compatible avec tous les appareils Windows 10 en offrant une API commune pour téléphone, PC et Xbox One, ainsi que des outils et des options pour adapter votre jeu à chaque appareil.
 
 Ce guide fournit une collection complète des informations et des ressources qui vous aideront lors du développement de votre jeu. Les sections sont organisées en fonction des étapes de développement du jeu. Vous savez donc où rechercher les informations lorsque vous en avez besoin.
 
-Si vous débutez dans le développement de jeux sur Windows ou Xbox, le guide de [Prise en main](getting-started.md) constitue un bon point de départ. La section [Ressources de développement de jeux](#game-development-resources) fournit également une vue d’ensemble de la documentation, des programmes et des autres ressources qui sont utiles lors de la création d’un jeu. Si vous souhaitez plutôt commencer par examiner du code UWP, consultez la rubrique [Exemples de jeu ](#game-samples).
+Si vous ne connaissez pas le développement de jeux sur Windows ou Xbox, le Guide de [prise en main](getting-started.md) peut être là où vous souhaitez commencer. La section des [ressources de développement de jeux](#game-development-resources) fournit également une enquête de haut niveau sur la documentation, les programmes et d’autres ressources qui sont utiles lors de la création d’un jeu. Si vous souhaitez commencer par examiner un code UWP à la place, consultez [exemples de jeux](#game-samples).
 
 Ce guide sera mis à jour lorsque des ressources et des documents relatifs au développement de jeux Windows 10 seront disponibles.
 
@@ -54,11 +54,11 @@ Tout au long de ce guide, vous trouverez des liens ciblés vers la documentation
     </tr>
     <tr>
         <td>Développement des applications Windows</td>
-        <td><a href="https://developer.microsoft.com/windows/apps/develop">Développer des applications Windows</a></td>
+        <td><a href="https://developer.microsoft.com/windows/apps/develop">Développer des applications Windows</a></td>
     </tr>
     <tr>
         <td>Développement d’une application de plateforme universelle Windows</td>
-        <td><a href="https://developer.microsoft.com/windows/apps">Guides de procédures pour les applications Windows 10</a></td>
+        <td><a href="https://developer.microsoft.com/windows/apps">Guides de procédure pour les applications Windows 10</a></td>
     </tr>
     <tr>
         <td>Guides de procédure pour les jeux UWP</td>
@@ -66,11 +66,11 @@ Tout au long de ce guide, vous trouverez des liens ciblés vers la documentation
     </tr>
     <tr>
         <td>Présentations et informations de référence sur DirectX</td>
-        <td><a href="https://docs.microsoft.com/windows/desktop/directx">Jeux et graphismes DirectX</a></td>
+        <td><a href="https://docs.microsoft.com/windows/desktop/directx">Graphiques et jeux DirectX</a></td>
     </tr>
     <tr>
         <td>Azure pour les jeux</td>
-        <td><a href="https://azure.microsoft.com/solutions/gaming/">Créez et mettez à l’échelle vos jeux à l’aide d’Azure</a></td>
+        <td><a href="https://azure.microsoft.com/solutions/gaming/">Utiliser Azure pour développer et faire évoluer vos jeux</a></td>
     </tr>
     <tr>
         <td>PlayFab</td>
@@ -78,7 +78,7 @@ Tout au long de ce guide, vous trouverez des liens ciblés vers la documentation
     </tr>
     <tr>
         <td>UWP sur Xbox One</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/xbox-apps/index">Création d’applications UWP sur Xbox One</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/xbox-apps/index">Création d’applications UWP sur Xbox One</a></td>
     </tr>
     <tr>
         <td>UWP sur HoloLens</td>
@@ -86,27 +86,27 @@ Tout au long de ce guide, vous trouverez des liens ciblés vers la documentation
     </tr>
     <tr>
         <td>Documentation Xbox Live</td>
-        <td><a href="https://docs.microsoft.com/gaming/xbox-live/">Guide du développeur Xbox Live</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/">Guide du développeur Xbox Live</a></td>
     </tr>
     <tr>
-        <td>Documentation de développement Xbox One (XGD)</td>
+        <td>Documentation sur le développement Xbox One (XGD)</td>
         <td><a href="https://developer.microsoft.com/games/xbox/partner/development-home">Développement Xbox One</a></td>
     </tr>
     <tr>
-        <td>Livres blancs de développement Xbox One (XGD)</td>
+        <td>Livres blancs sur le développement Xbox One (XGD)</td>
         <td><a href="https://developer.microsoft.com/games/xbox/partner/development-education-whitepapers">Livres blancs</a></td>
     </tr>
     <tr>
-        <td>Documentation Mixer Interactive</td>
+        <td>Documentation interactive de mixer</td>
         <td><a href="https://dev.mixer.com/reference/interactive/index.html">Ajouter de l’interactivité à votre jeu</a></td>
     </tr>        
 </table>
 
-### <a name="partner-center"></a>Centre pour partenaires
+### <a name="partner-center"></a>Espace partenaires
 
 L' [inscription d’un compte de développeur dans l’espace partenaires](https://developer.microsoft.com/store/register) est la première étape de la publication de votre jeu Windows. Un compte de développeur vous permet de réserver le nom de votre jeu et de soumettre des jeux gratuits ou payants au Microsoft Store pour tous les appareils Windows. Utilisez votre compte de développeur pour gérer votre jeu et les produits intégrés au jeu, obtenir des analyses détaillées et activer des services qui créent des expériences exceptionnelles pour vos joueurs dans le monde entier. 
 
-Microsoft propose également plusieurs programmes pour développeurs pour vous aider à développer et à publier des jeux Windows. Nous vous recommandons de vérifier si l’un de vos droits est correct avant de vous inscrire à un compte de l’espace partenaires. Pour plus d’informations, accédez à [Programmes pour développeurs](#developer-programs)
+Microsoft propose également plusieurs programmes de développement pour vous aider à développer et à publier des jeux Windows. Nous vous recommandons de vérifier si l’un de vos droits est correct avant de vous inscrire à un compte de l’espace partenaires. Pour plus d’informations, accédez à [programmes de développement](#developer-programs)
 
 
 ### <a name="developer-programs"></a>Programmes pour développeurs
@@ -115,11 +115,11 @@ Microsoft propose plusieurs programmes pour développeurs pour vous aider à dé
 
 #### <a name="xbox-live-creators-program"></a>Programme Créateurs Xbox Live
 
-Avec le programme Créateurs Xbox Live, tout le monde peut intégrer Xbox Live dans ses jeux et les publier sur Xbox One et Windows 10. Il existe un processus de certification simplifié où aucune approbation du concept n’est requise en dehors des [Politiques du Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies) standard.
+Le programme de créateurs de Xbox Live permet à toute personne d’intégrer Xbox Live dans son titre et de la publier sur Xbox One et Windows 10. Il existe un processus de certification simplifié et aucune approbation de concept n’est requise en dehors des [stratégies de Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies)standard.
 
-Vous pouvez déployer, concevoir et publier votre jeu dans le Programme Créateurs sans kit de développement dédié, à l’aide des supports de vente au détail uniquement. Pour commencer, téléchargez l’[application Dev Mode Activation](https://docs.microsoft.com/windows/uwp/xbox-apps/devkit-activation) sur votre console Xbox One.
+Vous pouvez déployer, concevoir et publier votre jeu dans le programme Creators sans kit de développement dédié, en utilisant uniquement du matériel de vente au détail. Pour commencer, téléchargez l' [application d’activation en mode dev](https://docs.microsoft.com/windows/uwp/xbox-apps/devkit-activation) sur votre Xbox.
 
-Si vous souhaitez accéder à d’autres fonctionnalités Xbox Live, bénéficier d’une aide en termes de marketing et de développement et avoir la chance de figurer dans le Windows Store Xbox One principal, soumettez une demande de participation au programme [ID@Xbox](https://www.xbox.com/Developers/id).
+Si vous souhaitez accéder à d’autres fonctionnalités Xbox Live, à une prise en charge du marketing et du développement dédié, et à la possibilité de figurer dans le magasin [ID@Xbox](https://www.xbox.com/Developers/id) Xbox principal, appliquez le programme.
 
 <table>
     <colgroup>
@@ -134,7 +134,7 @@ Si vous souhaitez accéder à d’autres fonctionnalités Xbox Live, bénéficie
 
 #### <a name="idxbox"></a>ID@Xbox
 
-Le programme ID@Xbox permet aux développeurs de jeux qualifiés de publier eux-mêmes sur Windows et Xbox One. Si vous voulez développer des jeux pour Xbox One ou ajouter des fonctionnalités Xbox Live telles que les scores des joueurs, les succès et les classements à votre jeu Windows 10, inscrivez-vous sur ID@Xbox. Devenez développeur ID@Xbox afin d’obtenir les outils et l’aide dont vous avez besoin pour laisser libre cours à votre créativité et optimiser vos chances de succès. Nous vous recommandons d’appliquer la ID@Xbox avant de vous inscrire à un compte de développeur dans l’espace partenaires.
+Le ID@Xbox programme aide les développeurs de jeux qualifiés à publier eux-mêmes sur Windows et Xbox One. Si vous souhaitez développer pour Xbox One, ou ajouter des fonctionnalités Xbox Live comme joueur, réalisations et leaderboards à votre jeu Windows 10, inscrivez-vous avec ID@Xbox. Devenez ID@Xbox développeur pour bénéficier des outils et du support dont vous avez besoin pour libérer votre créativité et maximiser votre réussite. Nous vous recommandons d' ID@Xbox appliquer avant d’inscrire un compte de développeur dans l’espace partenaires.
 
 <table>
     <colgroup>
@@ -142,11 +142,11 @@ Le programme ID@Xbox permet aux développeurs de jeux qualifiés de publier eux-
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Programme pour développeurs ID@Xbox</td>
+        <td>ID@Xboxprogramme de développement</td>
         <td><a href="https://www.xbox.com/Developers/id">Programme de développement indépendant pour Xbox One</a></td>
     </tr>
     <tr>
-        <td>Site grand public ID@Xbox</td>
+        <td>ID@Xboxsite grand public</td>
         <td><a href="https://www.idatxbox.com/">ID@Xbox</a></td>
     </tr>
 </table>
@@ -186,7 +186,7 @@ De nombreux exemples de jeu et d’application Windows 10 sont disponibles pour
     </tr>
     <tr>
         <td>Exemples de graphiques Direct3D 11</td>
-        <td><a href="https://github.com/walbourn/directx-sdk-samples">DirectX-SDK-Samples</a></td>
+        <td><a href="https://github.com/walbourn/directx-sdk-samples">directx-sdk-samples</a></td>
     </tr>
     <tr>
         <td>Exemple de jeu à la première personne Direct3D 11</td>
@@ -206,36 +206,36 @@ De nombreux exemples de jeu et d’application Windows 10 sont disponibles pour
     </tr>
     <tr>
         <td>Exemples publics Xbox Advanced Technology Group</td>
-        <td><a href="https://github.com/Microsoft/Xbox-ATG-Samples">Xbox-ATG-exemples</a></td>
+        <td><a href="https://github.com/Microsoft/Xbox-ATG-Samples">Xbox-ATG-Samples</a></td>
     </tr>
     <tr>
         <td>Exemples Xbox Live</td>
         <td><a href="https://github.com/Microsoft/xbox-live-samples">Xbox-Live-exemples</a></td>
     </tr>
     <tr>
-        <td>Exemples de jeu Xbox One (XGD)</td>
+        <td>Exemples de jeux Xbox One (XGD)</td>
         <td><a href="https://developer.microsoft.com/games/xbox/partner/development-education-samples">Exemples</a></td>
     </tr>
     <tr>
-        <td>Exemples de jeu Windows (MSDN Code Gallery)</td>
+        <td>Exemples de jeux Windows (Galerie de code MSDN)</td>
         <td><a href="https://code.msdn.microsoft.com/windowsapps/site/search?f%5B0%5D.Type=SearchText&f%5B0%5D.Value=game&f%5B1%5D.Type=Contributors&f%5B1%5D.Value=Microsoft&f%5B1%5D.Text=Microsoft">Exemples de jeux Microsoft Store</a></td>
     </tr>
     <tr>
-        <td>Exemple de jeu en JavaScript 2D</td>
-        <td><a href="../get-started/get-started-tutorial-game-js2d.md">Créer un jeu UWP dans JavaScript</a></td>
+        <td>Exemple de jeu JavaScript 2D</td>
+        <td><a href="../get-started/get-started-tutorial-game-js2d.md">Créer un jeu UWP en JavaScript</a></td>
     </tr>
     <tr>
-        <td>Exemple de jeu en JavaScript 3D</td>
-        <td><a href="../get-started/get-started-tutorial-game-js3d.md">Création d’un jeu JavaScript 3D à l’aide de trois. js</a></td>
+        <td>Exemple de jeu JavaScript 3D</td>
+        <td><a href="../get-started/get-started-tutorial-game-js3d.md">Création d’un jeu JavaScript 3D à l’aide de three.js</a></td>
     </tr>
     <tr>
-        <td>Exemple de jeu UWP dans MonoGame 2D</td>
-        <td><a href="../get-started/get-started-tutorial-game-mg2d.md">Créer un jeu UWP dans un polygame 2D</a></td>
+        <td>Exemple de jeu UWP multigame 2D</td>
+        <td><a href="../get-started/get-started-tutorial-game-mg2d.md">Créer un jeu UWP dans MonoGame 2D</a></td>
     </tr>      
 </table>
 
 
-### <a name="developer-forums"></a>Forums de développement
+### <a name="developer-forums"></a>Forums des développeurs
 
 Les forums de développement sont un lieu d’échange intéressant pour poser des questions sur le développement des jeux, y répondre et pour contacter la communauté des développeurs de jeux. Les forums peuvent également être des ressources fantastiques pour trouver des réponses à des problèmes difficiles que les développeurs ont rencontrés et résolus dans le passé.
 
@@ -250,26 +250,26 @@ Les forums de développement sont un lieu d’échange intéressant pour poser d
     </tr>
     <tr>
         <td>Forum des développeurs d’applications UWP</td>
-        <td><a href="https://social.msdn.microsoft.com/Forums/home?forum=wpdevelop">Développement d’applications plateforme Windows universelle</a></td>
+        <td><a href="https://social.msdn.microsoft.com/Forums/home?forum=wpdevelop">Développement d’applications de la plateforme Windows universelles</a></td>
     </tr>
     <tr>
         <td>Forums de développeurs d’applications de bureau</td>
-        <td><a href="https://social.msdn.microsoft.com/Forums/home?category=windowsdesktopdev">Forums sur les applications de bureau Windows</a></td>
+        <td><a href="https://social.msdn.microsoft.com/Forums/home?category=windowsdesktopdev">Forum dédié aux applications de bureau Windows</a></td>
     </tr>
     <tr>
-        <td>Jeux du Microsoft Store DirectX (billets archivés)</td>
+        <td>Jeux DirectX Microsoft Store (publications de Forum archivés)</td>
         <td><a href="https://social.msdn.microsoft.com/Forums/vstudio/home?forum=wingameswithdirectx">Création de jeux Microsoft Store avec DirectX (archivés)</a></td>
     </tr>
     <tr>
         <td>Forums de développeurs partenaires gérés Windows 10</td>
-        <td><a href="https://forums.xboxlive.com/users/login.html">Forums de développement XBOX : Windows 10</a></td>
+        <td><a href="https://forums.xboxlive.com/users/login.html">Forum des développeurs Xbox : Windows 10</a></td>
     </tr>
     <tr>
         <td>Forums DirectX</td>
-        <td><a href="https://forums.directxtech.com/index.php">Forum DirectX 12</a></td>
+        <td><a href="https://forums.directxtech.com/index.php">Forum de DirectX 12</a></td>
     </tr>
     <tr>
-        <td>Forums plateforme Azure</td>
+        <td>Forums de la plateforme Azure</td>
         <td><a href="https://social.msdn.microsoft.com/Forums/home?category=windowsazureplatform">Forum Azure</a></td>
     </tr>
     <tr>
@@ -294,11 +294,11 @@ Les blogs de développement sont également une excellente ressource pour obteni
     </colgroup>
     <tr>
         <td>Blog de création d’applications pour Windows</td>
-        <td><a href="https://blogs.windows.com/buildingapps/">Génération d’applications pour Windows</a></td>
+        <td><a href="https://blogs.windows.com/buildingapps/">Création d’applications pour Windows</a></td>
     </tr>
     <tr>
         <td>Windows 10 (billets de blog)</td>
-        <td><a href="https://blogs.windows.com/blog/tag/windows-10/">Publications dans Windows 10</a></td>
+        <td><a href="https://blogs.windows.com/blog/tag/windows-10/">Publications dans Windows 10</a></td>
     </tr>
     <tr>
         <td>Blog de l’équipe d’ingénierie de Visual Studio</td>
@@ -322,14 +322,14 @@ Les blogs de développement sont également une excellente ressource pour obteni
     </tr>
     <tr>
         <td>Blog de l’équipe Visual C++</td>
-        <td><a href="https://devblogs.microsoft.com/cppblog/">Blog C++ de l’équipe Visual</a></td>
+        <td><a href="https://devblogs.microsoft.com/cppblog/">Blog de l’équipe Visual C++</a></td>
     </tr>
     <tr>
         <td>Blog de l’équipe PIX</td>
         <td><a href="https://devblogs.microsoft.com/pix/">Réglage des performances et débogage pour les jeux DirectX 12 sur Windows et Xbox</a></td>
     </tr>
     <tr>
-        <td>Blog de l’équipe de déploiement des applications Windows universelles</td>
+        <td>Blog de l’équipe de déploiement d’applications Windows universelles</td>
         <td><a href="https://blogs.msdn.microsoft.com/appinstaller/">Créer et déployer un blog de l’équipe des applications UWP</a></td>
     </tr>
 </table>
@@ -353,7 +353,7 @@ Si vous avez déjà choisi toutes les technologies que vous utiliserez dans votr
     </colgroup>
     <tr>
         <td>Recensement des technologies de jeu UWP</td>
-        <td><a href="game-development-platform-guide.md">Technologies de jeu pour les applications UWP</a></td>
+        <td><a href="game-development-platform-guide.md">Technologies de jeu des applications UWP</a></td>
     </tr>
 </table>
  
@@ -367,7 +367,7 @@ Ces trois vidéos du GDC 2015 constituent une bonne vue d’ensemble du dévelop
     </colgroup>
     <tr>
         <td>Vue d’ensemble du développement de jeux Windows 10 (vidéo)</td>
-        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Developing-Games-for-Windows-10">Développement de jeux pour Windows 10</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Developing-Games-for-Windows-10">Développement de jeux pour Windows 10</a></td>
     </tr>
     <tr>
         <td>Expérience de jeu Windows 10 (vidéo)</td>
@@ -375,7 +375,7 @@ Ces trois vidéos du GDC 2015 constituent une bonne vue d’ensemble du dévelop
     </tr>
     <tr>
         <td>Les jeux à travers l’écosystème Microsoft (vidéo)</td>
-        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/The-Future-of-Gaming-Across-the-Microsoft-Ecosystem">Le futur des jeux sur l’écosystème Microsoft</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/The-Future-of-Gaming-Across-the-Microsoft-Ecosystem">L’avenir des jeux à travers l’écosystème Microsoft</a></td>
     </tr>
 </table>
 
@@ -390,14 +390,14 @@ Voici quelques concepts et questions d’ordre général à prendre en compte lo
     </colgroup>
     <tr>
         <td>Rendre votre jeu accessible</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/gaming/accessibility-for-games">Accessibilité pour les jeux</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/gaming/accessibility-for-games">Accessibilité des jeux</a></td>
     </tr>
     <tr>
-        <td>Générer des jeux à l’aide du cloud</td>
+        <td>Créer des jeux à l’aide de Cloud</td>
         <td><a href="https://docs.microsoft.com/windows/uwp/gaming/cloud-for-games">Cloud pour les jeux</a></td>
     </tr>
     <tr>
-        <td>Monétiser votre jeu</td>
+        <td>Monétisez votre jeu</td>
         <td><a href="https://docs.microsoft.com/windows/uwp/gaming/monetization-for-games">Monétisation pour les jeux</a></td>
     </tr>
 </table>
@@ -412,7 +412,7 @@ Plusieurs langages de programmation et technologies graphiques peuvent être uti
 
 Microsoft DirectX représente le choix à faire pour obtenir des graphismes et des éléments multimédias 2D et 3D haute performances.
 
-DirectX 12 est plus rapide et plus efficace que n’importe quelle version précédente. Direct3D 12 permet des scènes plus riches, un plus grand nombre d’objets et des effets plus complexes. Il tire également mieux parti du matériel graphique moderne sur PC Windows 10 et Xbox One.
+DirectX 12 est plus rapide et plus efficace que les versions précédentes. Direct3D 12 offre des scènes plus riches, des objets plus complexes, des effets plus complexes et une utilisation complète du matériel GPU moderne sur les PC Windows 10 et Xbox One.
 
 Si vous souhaitez utiliser le pipeline graphique familier de Direct3D 11, vous bénéficierez cependant des nouvelles fonctionnalités de rendu et d’optimisation ajoutées à Direct3D 11.3. Et si vous êtes un développeur éprouvé d’API de bureau pour Windows utilisant Win32, vous avez toujours cette option dans Windows 10.
 
@@ -424,24 +424,24 @@ Les fonctionnalités complètes et la solide intégration à la plateforme de Di
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Développement DirectX pour UWP</td>
+        <td>DirectX pour le développement UWP</td>
         <td><a href="directx-programming.md">Programmation DirectX</a></td>
     </tr>
     <tr>
-        <td>Didacticiel : comment créer un jeu UWP DirectX</td>
+        <td>Didacticiel : création d’un jeu DirectX UWP</td>
         <td><a href="tutorial--create-your-first-uwp-directx-game.md">Créez un jeu UWP simple avec DirectX</a></td>
     </tr>
     <tr>
         <td>Présentations et informations de référence sur DirectX</td>
-        <td><a href="https://docs.microsoft.com/windows/desktop/directx">Jeux et graphismes DirectX</a></td>
+        <td><a href="https://docs.microsoft.com/windows/desktop/directx">Graphiques et jeux DirectX</a></td>
     </tr>
     <tr>
         <td>Direct3D 12 : Guide de programmation et informations de référence</td>
-        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/direct3d-12-graphics">Graphiques Direct3D 12</a></td>
+        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/direct3d-12-graphics">Graphiques Direct3D 12</a></td>
     </tr>
     <tr>
         <td>Vidéos de développement Graphics et DirectX 12 (YouTube)</td>
-        <td><a href="https://www.youtube.com/channel/UCiaX2B8XiXR70jaN7NK-FpA">Microsoft DirectX 12 et Graphics Education</a></td>
+        <td><a href="https://www.youtube.com/channel/UCiaX2B8XiXR70jaN7NK-FpA">Microsoft DirectX 12 et Graphics Education</a></td>
     </tr>
 </table>
  
@@ -477,7 +477,7 @@ Le langage HTML (HyperText Markup Language) est un langage de balisage d’inte
     </colgroup>
     <tr>
         <td>Informations sur HTML5 et DOM</td>
-        <td><a href="https://developer.mozilla.org/en-US/docs/Web">Référence HTML et DOM</a></td>
+        <td><a href="https://developer.mozilla.org/en-US/docs/Web">Informations de référence HTML et DOM</a></td>
     </tr>
     <tr>
         <td>Recommandation du W3C sur HTML5</td>
@@ -517,11 +517,11 @@ C++/CX est un langage haute performance à faible traitement, qui fournit une pu
     </colgroup>
     <tr>
         <td>Présentations et informations de référence sur C++/CX</td>
-        <td><a href="https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx">Informations C++ de référence surC++le langage visuel (/CX)</a></td>
+        <td><a href="https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx">Informations de référence sur le langage Visual C++ (C++/CX)</a></td>
     </tr>
     <tr>
         <td>Visual C++ : Guide de programmation et informations de référence</td>
-        <td><a href="https://docs.microsoft.com/cpp/visual-cpp-in-visual-studio">Visuel C++ dans visual studio 2019</a></td>
+        <td><a href="https://docs.microsoft.com/cpp/visual-cpp-in-visual-studio">Visual C++ dans Visual Studio 2019</a></td>
     </tr>
 </table>
  
@@ -537,7 +537,7 @@ C# (prononcez « C sharp ») est un langage moderne et innovant, qui est simpl
     </colgroup>
     <tr>
         <td>C# : Guide de programmation et informations de référence</td>
-        <td><a href="https://docs.microsoft.com/dotnet/articles/csharp/csharp">Informations de référence sur le langage C#</a></td>
+        <td><a href="https://docs.microsoft.com/dotnet/articles/csharp/csharp">Référence du langage C#</a></td>
     </tr>
 </table>
  
@@ -562,7 +562,7 @@ Les applications Windows app en JavaScript peuvent accéder aux puissantes fonct
 
 #### <a name="use-windows-runtime-components-to-combine-languages"></a>Utiliser des composants de Windows Runtime pour combiner des langues
 
-Grâce à la plateforme UWP, vous combinez facilement des composants écrits dans différents langages. Créez Windows Runtime composants dans C++, C#ou Visual Basic, puis appelez-les à partir de JavaScript, C#, C++ou Visual Basic. C’est là une méthode remarquable pour programmer des parties de votre jeu dans le langage de votre choix. Les composants vous permettent également d’utiliser les bibliothèques externes qui ne sont disponibles que dans un langage particulier ainsi que le code hérité que vous avez déjà écrit.
+Grâce à la plateforme UWP, vous combinez facilement des composants écrits dans différents langages. Créez Windows Runtime composants en C++, C# ou Visual Basic, puis appelez-les à partir de JavaScript, C#, C++ ou Visual Basic. C’est là une méthode remarquable pour programmer des parties de votre jeu dans le langage de votre choix. Les composants vous permettent également d’utiliser les bibliothèques externes qui ne sont disponibles que dans un langage particulier ainsi que le code hérité que vous avez déjà écrit.
 
 <table>
     <colgroup>
@@ -578,9 +578,9 @@ Grâce à la plateforme UWP, vous combinez facilement des composants écrits dan
 
 ### <a name="which-version-of-directx-should-your-game-use"></a>Quelle version de DirectX utiliser dans votre jeu ?
 
-Si vous choisissez DirectX pour votre jeu, vous devez choisir la version à utiliser : Microsoft Direct3D 12 ou Microsoft Direct3D 11.
+Si vous choisissez DirectX pour votre jeu, vous devez déterminer la version à utiliser : Microsoft Direct3D 12 ou Microsoft Direct3D 11.
 
-DirectX 12 est plus rapide et plus efficace que n’importe quelle version précédente. Direct3D 12 permet des scènes plus riches, un plus grand nombre d’objets et des effets plus complexes. Il tire également mieux parti du matériel graphique moderne sur PC Windows 10 et Xbox One. Étant donné que Direct3D 12 fonctionne à un niveau très faible, il donne aux équipes de développement de graphiques expertes, ou aux équipes de développement de DirectX 11 expérimentées, les moyens de maximiser l’optimisation des graphiques.
+DirectX 12 est plus rapide et plus efficace que les versions précédentes. Direct3D 12 offre des scènes plus riches, des objets plus complexes, des effets plus complexes et une utilisation complète du matériel GPU moderne sur les PC Windows 10 et Xbox One. Étant donné que Direct3D 12 fonctionne à un niveau très faible, il donne aux équipes de développement de graphiques expertes, ou aux équipes de développement de DirectX 11 expérimentées, les moyens de maximiser l’optimisation des graphiques.
 
 Direct3D 11.3 est une API graphique de niveau faible, qui utilise le modèle de programmation Direct3D familier, et prend plus facilement en charge le processus complexe de rendu GPU. Elle est également prise en charge dans Windows 10 et Xbox One. Si vous disposez d’un moteur existant écrit en Direct3D 11 et que vous n’êtes pas encore prêt à effectuer la transition vers Direct3D 12, vous pouvez utiliser Direct3D 11 sur 12 pour obtenir certaines améliorations des performances. Les versions 11.3 et ultérieures contiennent également les nouvelles fonctionnalités de rendu et d’optimisation présentes dans Direct3D 12.
 
@@ -590,12 +590,12 @@ Direct3D 11.3 est une API graphique de niveau faible, qui utilise le modèle de
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Choix de Direct3D 12 ou Direct3D 11</td>
-        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/what-is-directx-12-">Qu’est-ce que Direct3D 12 ?</a></td>
+        <td>Choisir Direct3D 12 ou Direct3D 11</td>
+        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/what-is-directx-12-">Qu’est-ce que Direct3D 12?</a></td>
     </tr>
     <tr>
         <td>Vue d’ensemble de Direct3D 11</td>
-        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d11/atoc-dx-graphics-direct3d-11">Graphiques Direct3D 11</a></td>
+        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d11/atoc-dx-graphics-direct3d-11">Graphismes Direct3D 11</a></td>
     </tr>
     <tr>
         <td>Vue d’ensemble de Direct3D 11 sur 12</td>
@@ -606,7 +606,7 @@ Direct3D 11.3 est une API graphique de niveau faible, qui utilise le modèle de
 
 ### <a name="bridges-game-engines-and-middleware"></a>Ponts, moteurs de jeu et intergiciels
 
-En fonction des besoins de votre jeu, l’utilisation de ponts, de moteurs de jeu ou d’intergiciels peut économiser du temps et des ressources de développement et de test. Voici une vue d’ensemble et les ressources des ponts, moteurs de jeu et intergiciels.
+En fonction des besoins de votre jeu, l’utilisation de ponts, de moteurs de jeu ou d’intergiciels peut économiser du temps et des ressources de développement et de test. Voici une vue d’ensemble et des ressources pour les ponts, les moteurs de jeu et l’intergiciel (middleware).
 
 #### <a name="universal-windows-platform-bridges"></a>Ponts de plateforme Windows universelle
 
@@ -619,11 +619,11 @@ Les ponts de plateforme Windows universelle sont des technologies qui amènent v
     </colgroup>
     <tr>
         <td>Ponts UWP</td>
-        <td><a href="https://developer.microsoft.com/windows/bridges">Intégrer votre code à Windows</a></td>
+        <td><a href="https://developer.microsoft.com/windows/bridges">Importer votre code dans Windows</a></td>
     </tr>
     <tr>
         <td>Pont Windows pour iOS</td>
-        <td><a href="https://developer.microsoft.com/windows/bridges/ios">Intégrer vos applications iOS à Windows</a></td>
+        <td><a href="https://developer.microsoft.com/windows/bridges/ios">Porter vos applications iOS vers Windows</a></td>
     </tr>
     <tr>
         <td>Pont Windows pour les applications de bureau (.NET et Win32)</td>
@@ -645,7 +645,7 @@ PlayFab, qui fait désormais partie de la famille Microsoft, est une plateforme 
         <td><a href="https://playfab.com/">Vue d’ensemble des outils et des services</a></td>
     </tr>
     <tr>
-        <td>Mise en route</td>
+        <td>Prise en main</td>
         <td><a href="https://api.playfab.com/docs/general-getting-started">Guide de mise en route général</a></td>
     </tr>
     <tr>
@@ -665,7 +665,7 @@ PlayFab, qui fait désormais partie de la famille Microsoft, est une plateforme 
         <td><a href="https://github.com/PlayFab">Obtenir des scripts et des kits de développement logiciel (SDK) pour différentes plateformes, notamment Android, iOS, Windows, Unity et inreal.</a></td>
     </tr>
     <tr>
-        <td>Documentation API</td>
+        <td>Documentation de l’API</td>
         <td><a href="https://api.playfab.com/documentation/">Accéder au service PlayFab directement via des API Web REST</a></td>
     </tr>
     <tr>
@@ -677,9 +677,9 @@ PlayFab, qui fait désormais partie de la famille Microsoft, est une plateforme 
 
 #### <a name="unity"></a>Unity
 
-Unity offre une plateforme pour créer des jeux et des applications magnifiques, intuitives et conviviales en 2D, 3D et VR. Il vous permet d’exploiter au mieux votre créativité et fournit votre contenu sur pratiquement n’importe quel support ou appareil.
+Unity offre une plateforme permettant de créer des applications et des jeux 2D, 3D, VR et AR. Elle vous permet de réaliser rapidement votre vision créative et de fournir votre contenu à pratiquement n’importe quel support ou appareil.
 
-Unity prend en charge le développement de Direct3D 12 à partir d’Unity 5.4.
+À partir de Unity 5,4, Unity prend en charge le développement Direct3D 12.
 
 <table>
     <colgroup>
@@ -688,7 +688,7 @@ Unity prend en charge le développement de Direct3D 12 à partir d’Unity 5.4.
     </colgroup>
     <tr>
         <td>Moteur de jeu Unity</td>
-        <td><a href="https://unity.com/">Unity-moteur de jeu</a></td>
+        <td><a href="https://unity.com/">Unity : Moteur de jeu</a></td>
     </tr>
     <tr>
         <td>Obtenir Unity</td>
@@ -696,30 +696,30 @@ Unity prend en charge le développement de Direct3D 12 à partir d’Unity 5.4.
     </tr>
     <tr>
         <td>Documentation Unity pour Windows</td>
-        <td><a href="https://docs.unity3d.com/Manual/Windows.html">Manuel/Windows Unity</a></td>
+        <td><a href="https://docs.unity3d.com/Manual/Windows.html">Manuel Unity/Windows</a></td>
     </tr>
     <tr>
         <td>Ajouter LiveOps à l’aide de PlayFab</td>
         <td><a href="https://api.playfab.com/docs/getting-started/unity-getting-started">Prise en main : effectuez votre premier appel d’API PlayFab à partir de votre jeu Unity</a></td>
     </tr>
     <tr>
-        <td>Ajout d’interactivité à votre jeu à l’aide de Mixer Interactive</td>
-        <td><a href="https://github.com/mixer/interactive-unity-plugin/wiki/Getting-started">Guide de mise en route</a></td>
+        <td>Comment ajouter une interactivité à votre jeu à l’aide de la fenêtre interactive mixer</td>
+        <td><a href="https://github.com/mixer/interactive-unity-plugin/wiki/Getting-started">Guide de démarrage</a></td>
     </tr>
     <tr>
-        <td>SDK Mixer pour Unity</td>
+        <td>Kit de développement logiciel (SDK) mixer pour Unity</td>
         <td><a href="https://www.assetstore.unity3d.com/en/#!/content/88585">Plug-in Unity mixer</a></td>
     </tr>
     <tr>
-        <td>Documentation de référence du SDK Mixer pour Unity</td>
+        <td>Documentation de référence du kit de développement logiciel de mixage pour Unity</td>
         <td><a href="https://dev.mixer.com/reference/interactive/csharp/index.html">Informations de référence sur l’API pour le plug-in Unity mixer</a></td>
     </tr>
     <tr>
-        <td>Publier votre jeu Unity dans le Microsoft Store</td>
+        <td>Publiez votre jeu Unity sur Microsoft Store</td>
         <td><a href="https://unity3d.com/partners/microsoft/porting-guides">Guide de Portage</a></td>
     </tr>
     <tr>
-        <td>Dépannage : références d’assembly manquantes associées aux API .NET</td>
+        <td>Dépannage des références d’assembly manquantes relatives aux API .NET</td>
         <td><a href="https://docs.microsoft.com/windows/uwp/gaming/missing-dot-net-apis-in-unity-and-uwp">API .NET manquantes dans Unity et UWP</a></td>
     </tr>
     <tr>
@@ -728,7 +728,7 @@ Unity prend en charge le développement de Direct3D 12 à partir d’Unity 5.4.
     </tr>
     <tr>
         <td>Utiliser Unity pour créer des jeux et applications Windows (vidéo)</td>
-        <td><a href="https://channel9.msdn.com/Blogs/One-Dev-Minute/Making-games-and-apps-with-Unity">Création de jeux et d’applications Windows avec Unity</a></td>
+        <td><a href="https://channel9.msdn.com/Blogs/One-Dev-Minute/Making-games-and-apps-with-Unity">Création de jeux et applications Windows avec Unity</a></td>
     </tr>
     <tr>
         <td>Développement de jeux Unity à l’aide de Visual Studio (série de vidéos)</td>
@@ -739,7 +739,7 @@ Unity prend en charge le développement de Direct3D 12 à partir d’Unity 5.4.
 
 #### <a name="havok"></a>Havok
 
-Avec la suite modulaire d’outils et de technologies de Havok, les créateurs de jeux peuvent atteindre de nouveaux niveaux d’interactivité et d’immersion. Havok permet de fournir des données physiques réalistes, et de réaliser des simulations interactives ainsi que des animations remarquables. La version 2015.1 et les versions ultérieures prennent officiellement en charge UWP dans Visual Studio 2015 sur x86, 64 bits et ARM.
+Avec la suite modulaire d’outils et de technologies de Havok, les créateurs de jeux peuvent atteindre de nouveaux niveaux d’interactivité et d’immersion. Havok permet de fournir des données physiques réalistes, et de réaliser des simulations interactives ainsi que des animations remarquables. La version 2015,1 et les versions ultérieures prennent officiellement en charge UWP dans Visual Studio 2015 sur x86, 64 bits et ARM.
 
 <table>
     <colgroup>
@@ -752,7 +752,7 @@ Avec la suite modulaire d’outils et de technologies de Havok, les créateurs d
     </tr>
     <tr>
         <td>Suite d’outils Havok</td>
-        <td><a href="https://www.havok.com/products/">Vue d’ensemble du produit Havok</a></td>
+        <td><a href="https://www.havok.com/products/">Vue d’ensemble des produits Havok</a></td>
     </tr>
     <tr>
         <td>Forums de support Havok</td>
@@ -772,26 +772,26 @@ MonoGame est une infrastructure de développement open source inter-plateforme i
     </colgroup>
     <tr>
         <td>MonoGame</td>
-        <td><a href="https://www.monogame.net">Site Web monojeu</a></td>
+        <td><a href="https://www.monogame.net">Site web de MonoGame</a></td>
     </tr>
     <tr>
         <td>Documentation MonoGame</td>
-        <td><a href="https://www.monogame.net/documentation/">Documentation sur les jeux (dernière version)</a></td>
+        <td><a href="https://www.monogame.net/documentation/">Documentation MonoGame (version la plus récente)</a></td>
     </tr>
     <tr>
         <td>Téléchargements MonoGame</td>
         <td><a href="https://www.monogame.net/downloads/">Téléchargez des versions, des builds de développement et du code source</a> sur le site web de MonoGame, ou <a href="https://www.nuget.org/profiles/MonoGame">obtenez la version la plus récente via NuGet</a>.
     </tr>
     <tr>
-        <td>Exemple de jeu UWP dans MonoGame 2D</td>
-        <td><a href="../get-started/get-started-tutorial-game-mg2d.md">Créer un jeu UWP dans un polygame 2D</a></td>
+        <td>Exemple de jeu UWP multigame 2D</td>
+        <td><a href="../get-started/get-started-tutorial-game-mg2d.md">Créer un jeu UWP dans MonoGame 2D</a></td>
     </tr>    
 </table>
 
 
 #### <a name="cocos2d"></a>Cocos2d
 
-Cocos2d-x est une suite d’outils et de moteurs de jeu open source multiplateforme qui prend en charge la création de jeux UWP. Depuis la version 3, des fonctionnalités 3D sont également ajoutées.
+Cocos2d-x est un moteur et des outils de développement de jeux Open source multiplateforme qui prend en charge la création de jeux UWP. Depuis la version 3, des fonctionnalités 3D sont également ajoutées.
 
 <table>
     <colgroup>
@@ -808,7 +808,7 @@ Cocos2d-x est une suite d’outils et de moteurs de jeu open source multiplatefo
     </tr>
     <tr>
         <td>Cocos2d-x sur Windows 10 (billet de blog)</td>
-        <td><a href="https://blogs.windows.com/buildingapps/2015/06/15/running-cocos2d-x-on-windows-10/">Exécution de cocos2d-x sur Windows 10</a></td>
+        <td><a href="https://blogs.windows.com/buildingapps/2015/06/15/running-cocos2d-x-on-windows-10/">Exécution de Cocos2d-x sur Windows 10</a></td>
     </tr>
     <tr>
         <td>Ajouter LiveOps à l’aide de PlayFab</td>
@@ -831,18 +831,18 @@ Unreal Engine 4 est une suite complète d’outils de développement de jeux de
         <td><a href="https://www.unrealengine.com/what-is-unreal-engine-4">Unreal Engine 4</a></td>
     </tr>
     <tr>
-        <td>Ajouter LiveOps à l’aide de PlayFab - C++</td>
+        <td>Ajouter LiveOps à l’aide de PlayFab-C++</td>
         <td><a href="https://api.playfab.com/docs/getting-started/unreal-cpp-getting-started">Prise en main : effectuez votre premier appel d’API PlayFab à partir de votre jeu inréel</a></td>
     </tr>
     <tr>
-        <td>Ajouter LiveOps à l’aide de PlayFab - Plans</td>
+        <td>Ajouter LiveOps à l’aide de PlayFab-Blueprints</td>
         <td><a href="https://api.playfab.com/docs/getting-started/unreal-blueprints-getting-started">Prise en main : effectuez votre premier appel d’API PlayFab à partir de votre jeu inréel</a></td>
     </tr>
 </table>
 
 #### <a name="babylonjs"></a>BabylonJS
 
-BabylonJS est une infrastructure JavaScript complète destinée à créer des jeux en 3D avec HTML5, WebGL, WebVR et Web Audio.
+BabylonJS est une infrastructure JavaScript complète pour la création de jeux en 3D avec HTML5, WebGL, WebVR et l’audio Web.
 
 <table>
     <colgroup>
@@ -855,7 +855,7 @@ BabylonJS est une infrastructure JavaScript complète destinée à créer des je
     </tr>
     <tr>
         <td>WebGL 3D avec HTML5 et BabylonJS (série de vidéos)</td>
-        <td><a href="https://channel9.msdn.com/Series/Introduction-to-WebGL-3D-with-HTML5-and-Babylonjs/01">Learning WebGL 3D et BabylonJS</a></td>
+        <td><a href="https://channel9.msdn.com/Series/Introduction-to-WebGL-3D-with-HTML5-and-Babylonjs/01">Découverte de 3D WebGL et BabylonJS</a></td>
     </tr>
     <tr>
         <td>Création d’un jeu WebGL multiplateforme avec BabylonJS</td>
@@ -878,27 +878,27 @@ Si vous disposez d’un jeu, nombre de ressources et de guides disponibles vous 
     </tr>
     <tr>
         <td>Portage d’une application Windows 8 vers une application de plateforme Windows universelle (vidéo)</td>
-        <td><a href="https://channel9.msdn.com/Series/A-Developers-Guide-to-Windows-10/21">Portage d’applications 8,1 vers Windows 10</a></td>
+        <td><a href="https://channel9.msdn.com/Series/A-Developers-Guide-to-Windows-10/21">Portage d’applications Windows 8.1 vers Windows 10</a></td>
     </tr>
     <tr>
         <td>Portage d’une application iOS vers une application de plateforme Windows universelle (vidéo)</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/porting/ios-to-uwp-root">Passer d’iOS à UWP</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/porting/ios-to-uwp-root">Migrer d’iOS vers UWP</a></td>
     </tr>
     <tr>
         <td>Portage d’une application Silverlight vers une application de plateforme Windows universelle</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/porting/wpsl-to-uwp-root">Migrer de Silverlight pour Windows Phone vers UWP</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/porting/wpsl-to-uwp-root">Passer de Silverlight pour Windows Phone à UWP</a></td>
     </tr>
     <tr>
         <td>Portage d’une application Silverlight ou XAML vers une application de plateforme Windows universelle (vidéo)</td>
-        <td><a href="https://channel9.msdn.com/Events/Build/2015/3-741">Portage d’une application à partir de XAML ou Silverlight vers Windows 10</a></td>
+        <td><a href="https://channel9.msdn.com/Events/Build/2015/3-741">Portage d’une application XAML ou Silverlight vers Windows 10</a></td>
     </tr>
     <tr>
         <td>Portage d’une application Xbox vers une application de plateforme Windows universelle</td>
-        <td><a href="https://developer.xboxlive.com/platform/development/education/Documents/Porting%20from%20Xbox%20One%20to%20Windows%2010.aspx">Portage de Xbox 1 vers Windows 10 UWP</a></td>
+        <td><a href="https://developer.xboxlive.com/platform/development/education/Documents/Porting%20from%20Xbox%20One%20to%20Windows%2010.aspx">Portage de Xbox One vers Windows 10 UWP</a></td>
     </tr>
     <tr>
         <td>Portage de DirectX 9 vers DirectX 11</td>
-        <td><a href="porting-your-directx-9-game-to-windows-store.md">Port de DirectX 9 vers plateforme Windows universelle (UWP)</a></td>
+        <td><a href="porting-your-directx-9-game-to-windows-store.md">Porter de DirectX 9 vers la plateforme Windows universelle (UWP)</a></td>
     </tr>
     <tr>
         <td>Portage de Direct3D 11 vers Direct3D 12</td>
@@ -906,7 +906,7 @@ Si vous disposez d’un jeu, nombre de ressources et de guides disponibles vous 
     </tr>
     <tr>
         <td>Portage d’OpenGL ES vers Direct3D 11</td>
-        <td><a href="port-from-opengl-es-2-0-to-directx-11-1.md">Port de OpenGL ES 2,0 vers Direct3D 11</a></td>
+        <td><a href="port-from-opengl-es-2-0-to-directx-11-1.md">Portage d’OpenGL ES 2.0 sur Direct3D 11</a></td>
     </tr>
     <tr>
         <td>Passer d’OpenGL ES à Direct3D 11 en utilisant ANGLE</td>
@@ -926,7 +926,7 @@ Maintenant que vous avez choisi le type de jeu à créer et les outils et la tec
 
 ### <a name="introduction-to-the-universal-windows-platform-uwp"></a>Présentation de la plateforme Windows universelle (UWP)
 
-Windows 10 introduit la plateforme Windows universelle (UWP), qui fournit une plateforme des API courantes des appareils Windows 10. UWP évolue et développe le modèle Windows Runtime pour le perfectionner et le transformer en noyau cohérent et unifié. Les jeux qui ciblent la plateforme UWP peuvent appeler les API WinRT qui sont communes à tous les appareils. Comme la plateforme UWP fournit des couches API système garantie, vous pouvez choisir de créer un package d’application unique qui s’installera sur les appareils Windows 10. Et si vous le souhaitez, votre jeu peut toujours appeler les API (y compris des API Windows classiques de Win32 et .NET) propres aux appareils sur lesquels votre jeu s’exécute.
+Windows 10 introduit la plateforme Windows universelle (UWP), qui fournit une plateforme des API courantes des appareils Windows 10. UWP évolue et développe le modèle Windows Runtime pour le perfectionner et le transformer en noyau cohérent et unifié. Les jeux qui ciblent la plateforme UWP peuvent appeler les API WinRT qui sont communes à tous les appareils. Étant donné que la plateforme UWP fournit des couches d’API garanties, vous pouvez choisir de créer un package d’application unique qui sera installé sur les appareils Windows 10. Et si vous le souhaitez, votre jeu peut toujours appeler les API (y compris des API Windows classiques de Win32 et .NET) propres aux appareils sur lesquels votre jeu s’exécute.
 
 Les guides indiqués ci-dessous sont excellents. Ils décrivent en détail les applications de plateforme Windows universelle, et il est vivement recommandé de les lire pour mieux comprendre ce qu’est cette plateforme.
 
@@ -937,7 +937,7 @@ Les guides indiqués ci-dessous sont excellents. Ils décrivent en détail les a
     </colgroup>
     <tr>
         <td>Présentation des applications de plateforme Windows universelle</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/get-started/whats-a-uwp">Qu’est-ce qu’une application plateforme Windows universelle ?</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/get-started/whats-a-uwp">Qu’est-ce qu’une application de plateforme universelle Windows ?</a></td>
     </tr>
     <tr>
         <td>Vue d’ensemble de la plateforme UWP</td>
@@ -991,11 +991,11 @@ Si vous ne connaissez pas du tout la programmation UWP et que vous envisagez d�
     </colgroup>
     <tr>
         <td>Vue d’ensemble du développement d’une application de plateforme universelle Windows</td>
-        <td><a href="https://developer.microsoft.com/windows/apps/develop">Développer des applications Windows</a></td>
+        <td><a href="https://developer.microsoft.com/windows/apps/develop">Développer des applications Windows</a></td>
     </tr>
     <tr>
         <td>Vue d’ensemble de la programmation réseau dans UWP</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/networking/index">Mise en réseau et services web</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/networking/index">Réseau et services web</a></td>
     </tr>
     <tr>
         <td>Utilisation de Windows.Web.HTTP et Windows.Networking.Sockets dans les jeux</td>
@@ -1009,7 +1009,7 @@ Si vous ne connaissez pas du tout la programmation UWP et que vous envisagez d�
 
 ### <a name="windows-desktop-apisto-uwp"></a>API de bureau Windows pour UWP
 
-Voici quelques liens pour vous aider à faire migrer votre jeu de bureau Windows vers UWP.
+Voici quelques liens pour vous aider à migrer votre jeu de bureau Windows vers UWP.
 
 <table>
     <colgroup>
@@ -1017,19 +1017,19 @@ Voici quelques liens pour vous aider à faire migrer votre jeu de bureau Windows
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Utilisez le code C++ existant pour le développement de jeux UWP</td>
+        <td>Utiliser du code C++ existant pour le développement de jeux UWP</td>
         <td><a href="https://docs.microsoft.com/cpp/porting/how-to-use-existing-cpp-code-in-a-universal-windows-platform-app">Comment : utiliser le code C++ existant dans une application UWP</a></td>
     </tr>
     <tr>
-        <td>API UWP pour les API Win32 et COM</td>
+        <td>API Windows Runtime pour les API Win32 et COM</td>
         <td><a href="https://docs.microsoft.com/uwp/win32-and-com/win32-and-com-for-uwp-apps">API Win32 et COM pour les applications UWP</a></td>
     </tr>
     <tr>
         <td>Fonctions CRT non prises en charge dans UWP</td>
-        <td><a href="https://docs.microsoft.com/cpp/cppcx/crt-functions-not-supported-in-universal-windows-platform-apps">Fonctions CRT non prises en charge dans les applications plateforme Windows universelle</a></td>
+        <td><a href="https://docs.microsoft.com/cpp/cppcx/crt-functions-not-supported-in-universal-windows-platform-apps">Fonctions CRT non prises en charge dans les applications de la plateforme Windows universelle</a></td>
     </tr>
     <tr>
-        <td>Alternatives aux API Windows</td>
+        <td>Alternatives pour les API Windows</td>
         <td><a href="https://docs.microsoft.com/uwp/win32-and-com/alternatives-to-windows-apis-uwp">Alternatives aux API Windows dans les applications de plateforme Windows universelle (UWP)</a></td>
     </tr>
 </table>
@@ -1074,15 +1074,15 @@ Distincte de la conception de l’expérience utilisateur, la conception d’un 
     </tr>
     <tr>
         <td>Conception des états de cycle de vie d’application</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/launch-resume/index">Instructions d’expérience utilisateur pour le lancement, l’interruption et la reprise</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/launch-resume/index">Recommandations en matière d’expérience utilisateur pour le lancement, la suspension et la reprise</a></td>
     </tr>
     <tr>
-        <td>Concevez votre application UWP pour les écrans de télévision et la console Xbox One</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/design/devices/designing-for-tv">Conception pour Xbox et TV</a></td>
+        <td>Concevoir votre application UWP pour les écrans Xbox One et Television</td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/design/devices/designing-for-tv">Conception pour Xbox et télévision</a></td>
     </tr>
     <tr>
         <td>Ciblage de plusieurs facteurs de forme d’appareil (vidéo)</td>
-        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Designing-Games-for-a-Windows-Core-World">Conception de jeux pour un monde Windows Core</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Designing-Games-for-a-Windows-Core-World">Conception de jeux pour Windows Core</a></td>
     </tr>   
 </table>
  
@@ -1098,7 +1098,7 @@ Le respect de recommandations de couleur cohérentes dans votre jeu lui apporte 
     </colgroup>
     <tr>
         <td>Guide des couleurs</td>
-        <td><a href="https://assets.windowsphone.com/499cd2be-64ed-4b05-a4f5-cd0c9ad3f6a3/101_BestPractices_Color_InvariantCulture_Default.zip">Meilleures pratiques : couleur</a></td>
+        <td><a href="https://assets.windowsphone.com/499cd2be-64ed-4b05-a4f5-cd0c9ad3f6a3/101_BestPractices_Color_InvariantCulture_Default.zip">Meilleures pratiques : Couleur</a></td>
     </tr>
 </table>
  
@@ -1114,7 +1114,7 @@ L’utilisation appropriée de la typographie améliore de nombreux aspects de v
     </colgroup>
     <tr>
         <td>Guide de la typographie</td>
-        <td><a href="https://cmsresources.windowsphone.com/devcenter/common/resources/content/101_BestPractices_Typography.pdf">Meilleures pratiques : typographie</a></td>
+        <td><a href="https://cmsresources.windowsphone.com/devcenter/common/resources/content/101_BestPractices_Typography.pdf">Meilleures pratiques : Typographie</a></td>
     </tr>
 </table>
  
@@ -1130,13 +1130,13 @@ Une carte d’interface utilisateur est une disposition de la navigation et des 
     </colgroup>
     <tr>
         <td>Guide sur la carte d’interface utilisateur</td>
-        <td><a href="https://cmsresources.windowsphone.com/devcenter/common/resources/content/101_BestPractices_UI_Map.pdf">Meilleures pratiques : mappage d’IU</a></td>
+        <td><a href="https://cmsresources.windowsphone.com/devcenter/common/resources/content/101_BestPractices_UI_Map.pdf">Meilleures pratiques : Carte d’interface utilisateur</a></td>
     </tr>
 </table>
 
-### <a name="game-audio"></a>Son du jeu
+### <a name="game-audio"></a>Audio du jeu
 
-Guides et références pour l’implémentation de son dans les jeux à l’aide de XAudio2, XAPO et Windows Sonic. XAudio2 est une API audio de bas niveau qui fournit les bases en matière de traitement du signal et de mixage pour le développement de moteurs audio hautes performances. L’API XAPO permet la création d’objets de traitement audio multiplateforme (XAPO) pour une utilisation dans XAudio2 sur Windows et Xbox. La prise en charge audio Windows Sonic permet d’ajouter la prise en charge de Dolby Atmos for Home Theater, Dolby Atmos for Headphones, et de Windows HRTF à votre jeu ou application multimédia de diffusion en continu.
+Guides et références pour l’implémentation de l’audio dans les jeux à l’aide de XAudio2, XAPO et Windows Sonic. XAudio2 est une API audio de bas niveau qui fournit un traitement de signal et une base de mixage pour le développement de moteurs audio hautes performances. L’API XAPO permet la création d’objets de traitement audio multiplateforme (XAPO) pour une utilisation dans XAudio2 à la fois sur Windows et sur Xbox. La prise en charge audio Windows Sonic vous permet d’ajouter Dolby Atmos pour Home Theater, Dolby Atmos pour casque et la prise en charge de Windows HRTF à votre application de jeu ou de diffusion multimédia en continu.
 
 <table>
     <colgroup>
@@ -1160,11 +1160,11 @@ Guides et références pour l’implémentation de son dans les jeux à l’aide
         <td><a href="https://docs.microsoft.com/windows/desktop/CoreAudio/spatial-sound">Son spatial</a></td>
     </tr>
     <tr>
-        <td>Exemples de sons spatiaux Windows Sonic</td>
+        <td>Exemples de son spatial Windows Sonic</td>
         <td><a href="https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/UWPSamples/Audio">Exemples audio de groupe de technologies avancées Xbox</a></td>
     </tr>
     <tr>
-        <td>Découvrez comment intégrer Windows Sonic dans vos jeux (vidéo)</td>
+        <td>Découvrez comment intégrer Windows Sonic à vos jeux (vidéo)</td>
         <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-002">Présentation des fonctionnalités audio spatiales pour Xbox et Windows</a></td>
     </tr>
 </table>
@@ -1179,32 +1179,32 @@ Guides et références pour le développement de jeux DirectX.
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Développement DirectX pour UWP</td>
+        <td>DirectX pour le développement UWP</td>
         <td><a href="directx-programming.md">Programmation DirectX</a></td>
     </tr>
     <tr>
-        <td>Didacticiel : comment créer un jeu UWP DirectX</td>
+        <td>Didacticiel : création d’un jeu DirectX UWP</td>
         <td><a href="tutorial--create-your-first-uwp-directx-game.md">Créez un jeu UWP simple avec DirectX</a></td>
     </tr>
     <tr>
         <td>Interaction de DirectX avec le modèle d’application UWP</td>
-        <td><a href="about-the-uwp-user-interface-and-directx.md">Objet App et DirectX</a></td>
+        <td><a href="about-the-uwp-user-interface-and-directx.md">Objet application et DirectX</a></td>
     </tr>
     <tr>
         <td>Vidéos de développement Graphics et DirectX 12 (YouTube)</td>
-        <td><a href="https://www.youtube.com/channel/UCiaX2B8XiXR70jaN7NK-FpA">Microsoft DirectX 12 et Graphics Education</a></td>
+        <td><a href="https://www.youtube.com/channel/UCiaX2B8XiXR70jaN7NK-FpA">Microsoft DirectX 12 et Graphics Education</a></td>
     </tr>
     <tr>
         <td>Présentations et informations de référence sur DirectX</td>
-        <td><a href="https://docs.microsoft.com/windows/desktop/directx">Jeux et graphismes DirectX</a></td>
+        <td><a href="https://docs.microsoft.com/windows/desktop/directx">Graphiques et jeux DirectX</a></td>
     </tr>
     <tr>
         <td>Direct3D 12 : Guide de programmation et informations de référence</td>
-        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/direct3d-12-graphics">Graphiques Direct3D 12</a></td>
+        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/direct3d-12-graphics">Graphiques Direct3D 12</a></td>
     </tr>
     <tr>
         <td>Notions fondamentales sur DirectX 12 (vidéo)</td>
-        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Better-Power-Better-Performance-Your-Game-on-DirectX12">Meilleure puissance, meilleures performances : votre jeu sur DirectX 12</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Better-Power-Better-Performance-Your-Game-on-DirectX12">Une meilleure alimentation, de meilleures performances : Votre jeu sur DirectX 12</a></td>
     </tr>
 </table>
 
@@ -1219,15 +1219,15 @@ Découvrez ce qui a changé dans Direct3D 12 et comment commencer à programmer
     </colgroup>
     <tr>
         <td>Configurer l’environnement de programmation</td>
-        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/directx-12-programming-environment-set-up">Configuration de l’environnement de programmation Direct3D 12</a></td>
+        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/directx-12-programming-environment-set-up">Configuration de l’environnement de programmation Direct3D 12</a></td>
     </tr>
     <tr>
         <td>Comment créer un composant de base</td>
-        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/creating-a-basic-direct3d-12-component">Création d’un composant Direct3D 12 de base</a></td>
+        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/creating-a-basic-direct3d-12-component">Création d’un composant Direct3D 12 de base</a></td>
     </tr>
     <tr>
         <td>Modifications apportées dans Direct3D 12</td>
-        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/important-changes-from-directx-11-to-directx-12">Modifications importantes migration de Direct3D 11 vers Direct3D 12</a></td>
+        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/important-changes-from-directx-11-to-directx-12">Modifications importantes lors de la migration de Direct3D 11 à Direct3D 12</a></td>
     </tr>
     <tr>
         <td>Comment effectuer le portage de Direct3D 11 vers Direct3D 12</td>
@@ -1235,11 +1235,11 @@ Découvrez ce qui a changé dans Direct3D 12 et comment commencer à programmer
     </tr>
     <tr>
         <td>Concepts de liaison de ressource (descripteur de recouvrement, tableau de descripteur, tas de descripteur et signature racine) </td>
-        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/resource-binding">Liaison de ressource dans Direct3D 12</a></td>
+        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/resource-binding">Liaison de ressource dans Direct3D 12</a></td>
     </tr>
     <tr>
         <td>Gestion de la mémoire</td>
-        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/memory-management">Gestion de la mémoire dans Direct3D 12</a></td>
+        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/memory-management">Gestion de la mémoire dans Direct3D 12</a></td>
     </tr>
 </table>
  
@@ -1259,7 +1259,7 @@ Le kit de ressources DirectX, la bibliothèque de traitement des textures Direct
     </tr>
     <tr>
         <td>Obtenir le kit de ressources DirectX pour DirectX 12</td>
-        <td><a href="https://github.com/Microsoft/DirectXTK12">DirectXTK 12</a></td>
+        <td><a href="https://github.com/Microsoft/DirectXTK12">DirectXTK 12</a></td>
     </tr>
     <tr>
         <td>Obtenir la bibliothèque de traitement des textures DirectX</td>
@@ -1278,8 +1278,8 @@ Le kit de ressources DirectX, la bibliothèque de traitement des textures Direct
         <td><a href="https://github.com/Microsoft/DirectXMath">DirectXMath</a></td>
     </tr>
     <tr>
-        <td>Prise en charge Direct3D 12 dans DirectXTK (billet de blog)</td>
-        <td><a href="https://github.com/Microsoft/DirectXTK/issues/2">Prise en charge de DirectX 12</a></td>
+        <td>Prise en charge de Direct3D 12 dans DirectXTK (billet de blog)</td>
+        <td><a href="https://github.com/Microsoft/DirectXTK/issues/2">Prise en charge de DirectX 12</a></td>
     </tr>
 </table>
 
@@ -1294,19 +1294,19 @@ Voici des documentations supplémentaires sur DirectX, créées par des partenai
     </colgroup>
     <tr>
         <td>Nvidia: DX12 Do’s and Don’ts (billet de blog en anglais) </td>
-        <td><a href="https://developer.nvidia.com/dx12-dos-and-donts-updated">DirectX 12 sur les GPU NVIDIA</a></td>
+        <td><a href="https://developer.nvidia.com/dx12-dos-and-donts-updated">DirectX 12 sur des GPU Nvidia</a></td>
     </tr>
     <tr>
         <td>Intel: Efficient rendering with DirectX 12 (en anglais)</td>
-        <td><a href="https://software.intel.com/sites/default/files/managed/4a/38/Efficient-Rendering-with-DirectX-12-on-Intel-Graphics.pdf">Rendu DirectX 12 sur Intel Graphics</a></td>
+        <td><a href="https://software.intel.com/sites/default/files/managed/4a/38/Efficient-Rendering-with-DirectX-12-on-Intel-Graphics.pdf">Rendu de DirectX 12 sur graphiques Intel</a></td>
     </tr>
     <tr>
         <td>Intel: Multi adapter support in DirectX 12 (en anglais)</td>
-        <td><a href="https://software.intel.com/articles/multi-adapter-support-in-directx-12">Comment implémenter une application multi-adaptateur explicite à l’aide de DirectX 12</a></td>
+        <td><a href="https://software.intel.com/articles/multi-adapter-support-in-directx-12">Implémentation d’une application explicite comportant plusieurs adaptateurs à l’aide de DirectX 12</a></td>
     </tr>
     <tr>
         <td>Intel: DirectX 12 tutorial (en anglais)</td>
-        <td><a href="https://software.intel.com/articles/tutorial-migrating-your-apps-to-directx-12-part-1">Livre blanc sur la collaboration d’Intel, Suzhou escargot et Microsoft</a></td>
+        <td><a href="https://software.intel.com/articles/tutorial-migrating-your-apps-to-directx-12-part-1">Livre blanc collaboratif, élaboré par Intel, Suzhou Snail et Microsoft</a></td>
     </tr>
 </table>
 
@@ -1331,15 +1331,15 @@ Une vignette est la représentation de votre jeu dans le menu Démarrer. Les vig
     </tr>
     <tr>
         <td>Exemple illustrant les vignettes dynamiques et les notifications</td>
-        <td><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications">Notifications, exemple</a></td>
+        <td><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications">Exemples de notification</a></td>
     </tr>
     <tr>
         <td>Modèles de vignette adaptative (billet de blog)</td>
-        <td><a href="https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/06/30/adaptive-tile-templates-schema-and-documentation/">Modèles de mosaïque adaptative-schéma et documentation</a></td>
+        <td><a href="https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/06/30/adaptive-tile-templates-schema-and-documentation/">Modèles de vignette adaptative : Schéma et documentation</a></td>
     </tr>
     <tr>
         <td>Conception de vignettes et de badges</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-creating-tiles">Instructions pour les vignettes et les badges</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-creating-tiles">Recommandations en matière de vignettes et de badges</a></td>
     </tr>
     <tr>
         <td>Application Windows 10 pour le développement interactif des modèles de vignette dynamique</td>
@@ -1347,11 +1347,11 @@ Une vignette est la représentation de votre jeu dans le menu Démarrer. Les vig
     </tr>
     <tr>
         <td>Extension UWP Tile Generator pour Visual Studio</td>
-        <td><a href="https://marketplace.visualstudio.com/items?itemName=shenchauhan.UWPTileGenerator">Outil de création de toutes les vignettes requises à l’aide d’une image unique</a></td>
+        <td><a href="https://marketplace.visualstudio.com/items?itemName=shenchauhan.UWPTileGenerator">Outil permettant de créer toutes les vignettes requises à l’aide d’une image unique</a></td>
     </tr>
     <tr>
         <td>Extension UWP Tile Generator pour Visual Studio (billet de blog)</td>
-        <td><a href="https://blogs.windows.com/buildingapps/2016/02/15/uwp-tile-generator-extension-for-visual-studio/">Conseils sur l’utilisation de l’outil générateur de vignette UWP</a></td>
+        <td><a href="https://blogs.windows.com/buildingapps/2016/02/15/uwp-tile-generator-extension-for-visual-studio/">Conseils sur l’utilisation de l’outil UWP Tile Generator</a></td>
     </tr>
 </table>
  
@@ -1379,16 +1379,16 @@ Un module complémentaire (produit dans l’application) est un élément suppl�
     </tr>
     <tr>
         <td>Surveiller les ventes et les données démographiques du module complémentaire pour votre jeu</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/publish/iap-acquisitions-report">Rapport sur les acquisitions d’extensions</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/publish/iap-acquisitions-report">Rapport sur les acquisitions des extensions</a></td>
     </tr>
 </table>
  
 
-### <a name="debugging-performance-optimization-and-monitoring"></a>Débogage, optimisation et surveillance des performances
+### <a name="debugging-performance-optimization-and-monitoring"></a>Débogage, optimisation des performances et surveillance
 
-Pour optimiser les performances, tirez parti du mode jeu de Windows 10 pour proposer à vos joueurs la meilleure expérience de jeu possible en exploitant au mieux la capacité de leur matériel actuel.
+Pour optimiser les performances, tirez parti du mode jeu dans Windows 10 afin de fournir à vos joueurs la meilleure expérience de jeu possible en utilisant pleinement la capacité de leur matériel actuel.
 
-Le Kit Windows Performance Toolkit est composé d’outils d’analyse des performances qui génèrent des profils de performances détaillés des applications et des systèmes d’exploitation Windows. Il s’avère particulièrement précieux pour surveiller l’utilisation de la mémoire et améliorer les performances des jeux. Le Kit Windows Performance Toolkit est inclus dans le Kit de développement logiciel Windows 10 et dans Windows ADK. Ce kit d’outils comprend deux outils indépendants : l’enregistreur de performance Windows et Windows Performance Analyzer. ProcDump, qui fait partie de [Windows Sysinternals](https://technet.microsoft.com/sysinternals/default), est un utilitaire de ligne de commande qui surveille les pics d’utilisation d’UC et génère des fichiers de vidage lors des plantages de jeux. 
+Le Kit Windows Performance Toolkit est composé d’outils d’analyse des performances qui génèrent des profils de performances détaillés des applications et des systèmes d’exploitation Windows. Il s’avère particulièrement précieux pour surveiller l’utilisation de la mémoire et améliorer les performances des jeux. Le Kit Windows Performance Toolkit est inclus dans le Kit de développement logiciel Windows 10 et dans Windows ADK. Ce kit d’outils comprend deux outils indépendants : l’enregistreur de performance Windows et Windows Performance Analyzer. ProcDump, qui fait partie de [Windows Sysinternals](https://technet.microsoft.com/sysinternals/default), est un utilitaire de ligne de commande qui surveille les pics d’utilisation de l’UC et génère des fichiers de vidage pendant les pannes de jeu. 
 
 <table>
     <colgroup>
@@ -1396,20 +1396,20 @@ Le Kit Windows Performance Toolkit est composé d’outils d’analyse des pe
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Test de performances de votre code.</td>
+        <td>Test de performances de votre code</td>
         <td><a href="https://azure.microsoft.com/services/devops/test-plans/">Test de charge basé sur le Cloud</a></td>
     </tr>
     <tr>
-        <td>Obtenir le type de console Xbox à l’aide des informations sur l’appareil de jeu</td>
+        <td>Obtient le type de console Xbox à l’aide des informations de périphérique de jeu</td>
         <td><a href="https://docs.microsoft.com/previous-versions/windows/desktop/gamingdvcinfo/gaming-device-information-portal">Informations sur l’appareil de jeu</a></td>
     </tr>
     <tr>
-        <td>Améliorer les performances en bénéficiant d’un accès exclusif ou prioritaire aux ressources matérielles à l’aide des APi du mode jeu</td>
+        <td>Améliorez les performances en obtenant un accès exclusif ou prioritaire aux ressources matérielles à l’aide des API en mode jeu</td>
         <td><a href="https://docs.microsoft.com/previous-versions/windows/desktop/gamemode/game-mode-portal">Mode jeu</a></td>
     </tr>
     <tr>
         <td>Obtenir le Kit Windows Performance Toolkit à partir de Windows 10 SDK</td>
-        <td><a href="https://developer.microsoft.com/windows/downloads/windows-10-sdk">SDK Windows 10</a></td>
+        <td><a href="https://developer.microsoft.com/windows/downloads/windows-10-sdk">SDK Windows 10</a></td>
     </tr>
     <tr>
         <td>Obtenir le Kit Windows Performance Toolkit à partir de Windows ADK.</td>
@@ -1417,7 +1417,7 @@ Le Kit Windows Performance Toolkit est composé d’outils d’analyse des pe
     </tr>
     <tr>
         <td>Résoudre les problèmes de réactivité de l’interface utilisateur à l’aide de Windows Performance Analyzer (vidéo).</td>
-        <td><a href="https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-156-Critical-Path-Analysis-with-Windows-Performance-Analyzer">Analyse de chemin critique avec WPA</a></td>
+        <td><a href="https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-156-Critical-Path-Analysis-with-Windows-Performance-Analyzer">Analyse du chemin critique avec WPA</a></td>
     </tr>
     <tr>
         <td>Diagnostiquer l’utilisation et les fuites de mémoire à l’aide de Enregistreur de performance Windows (vidéo)</td>
@@ -1447,20 +1447,20 @@ Certaines parties du développement DirectX peuvent être complexes et nuancées
         <td><a href="https://devblogs.microsoft.com/pix/introducing-pix-on-windows-beta/">Outil de réglage et de débogage des performances pour DirectX 12 sur Windows</a></td>
     </tr>
     <tr>
-        <td>Outils de débogage et la validation pour le développement de D3D12 (vidéo)</td>
+        <td>Outils de débogage et de validation pour le développement D3D12 (vidéo)</td>
         <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-003">Réglage et débogage des performances D3D12 avec la validation PIX et GPU</a></td>
     </tr>
     <tr>
         <td>Optimisation des graphismes et des performances (vidéo)</td>
-        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Advanced-DirectX12-Graphics-and-Performance">Graphiques et performances DirectX 12 avancés</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Advanced-DirectX12-Graphics-and-Performance">Graphismes et performances améliorés avec DirectX 12</a></td>
     </tr>
     <tr>
         <td>Débogage graphique DirectX (vidéo)</td>
-        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Solve-the-Tough-Graphics-Problems-with-your-Game-Using-DirectX-Tools">Résolvez les problèmes graphiques difficiles avec votre jeu à l’aide des outils DirectX</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Solve-the-Tough-Graphics-Problems-with-your-Game-Using-DirectX-Tools">Résolution des problèmes graphiques épineux liés à votre jeu à l’aide des outils DirectX</a></td>
     </tr>
     <tr>
         <td>Outils Visual Studio 2015 pour le débogage de DirectX 12 (vidéo)</td>
-        <td><a href="https://channel9.msdn.com/Series/ConnectOn-Demand/212">DirectX Tools pour Windows 10 dans Visual Studio 2015</a></td>
+        <td><a href="https://channel9.msdn.com/Series/ConnectOn-Demand/212">Outils DirectX pour Windows 10 dans Visual Studio 2015</a></td>
     </tr>
     <tr>
         <td>Guide de programmation pour Direct3D 12</td>
@@ -1472,9 +1472,9 @@ Certaines parties du développement DirectX peuvent être complexes et nuancées
     </tr>
 </table>
 
-### <a name="high-dynamic-range-hdr-content-development"></a>Développement de contenu avec plage dynamique étendue (HDR)
+### <a name="high-dynamic-range-hdr-content-development"></a>Développement de contenu HDR (High dynamique Range)
 
-Générer le contenu du jeu qui utilise toutes les fonctionnalités de couleurs de HDR.
+Créez du contenu de jeu qui utilise les fonctionnalités de couleur complète d’HDR.
 
 <table>
     <colgroup>
@@ -1482,11 +1482,11 @@ Générer le contenu du jeu qui utilise toutes les fonctionnalités de couleurs 
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Présentation de HDR et des concepts de couleur (vidéo)</td>
+        <td>Présentation des concepts HDR et de couleur (vidéo)</td>
         <td><a href="https://channel9.msdn.com/Events/Build/2017/P4061">Éclairage en haut et couleur avancée dans DirectX</a></td>
     </tr>
     <tr>
-        <td>Découvrez comment rendre le contenu HDR et détecter si l’affichage actuel le prend en charge</td>
+        <td>Découvrez comment afficher le contenu HDR et détecter si l’affichage actuel le prend en charge</td>
         <td><a href="https://github.com/Microsoft/DirectX-Graphics-Samples/tree/master/Samples/UWP/D3D12HDR">Exemple HDR</a></td>
     </tr>
     <tr>
@@ -1507,11 +1507,11 @@ Développez des jeux prêts à l’emploi pour la plateforme Windows et découvr
     </colgroup>
     <tr>
         <td>Préparation de votre jeu pour le marché international</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/globalizing/globalizing-portal">Instructions lors du développement pour un public international</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/globalizing/globalizing-portal">Recommandations en matière de développement pour un public international</a></td>
     </tr>
     <tr>
         <td>Combler le fossé entre les langues, les cultures et la technologie</td>
-        <td><a href="https://www.microsoft.com/Language/Default.aspx">Ressources en ligne pour les conventions de langue et terminologie Microsoft standard</a></td>
+        <td><a href="https://www.microsoft.com/Language/Default.aspx">Ressources en ligne pour les conventions linguistiques et la terminologie Microsoft standard</a></td>
     </tr>
 </table>
 
@@ -1538,11 +1538,11 @@ Vous allez utiliser l' [espace partenaires](https://partner.microsoft.com/dashbo
     </tr>
     <tr>
         <td>Utiliser Azure Active Directory (AAD) pour ajouter des utilisateurs à votre compte espace partenaires</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/publish/manage-account-users">Gérer les utilisateurs de compte</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/publish/manage-account-users">Gérer des utilisateurs de compte</a></td>
     </tr>   
     <tr>
         <td>Évaluation de votre jeu (billet de blog)</td>
-        <td><a href="https://blogs.windows.com/buildingapps/2016/01/06/now-available-single-age-rating-system-to-simplify-app-submissions/">Flux de travail unique pour affecter des évaluations de l’âge à l’aide du système IARC</a></td>
+        <td><a href="https://blogs.windows.com/buildingapps/2016/01/06/now-available-single-age-rating-system-to-simplify-app-submissions/">Flux de travail unique pour affecter les évaluations de l’âge à l’aide du système IARC</a></td>
     </tr>
 </table>
 
@@ -1554,40 +1554,40 @@ Vous allez utiliser l' [espace partenaires](https://partner.microsoft.com/dashbo
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Apprenez à utiliser l’installation en continu et les packages facultatifs (vidéos)</td>
+        <td>Apprendre à utiliser l’installation en continu et les packages facultatifs (vidéo)</td>
         <td><a href="https://channel9.msdn.com/Events/Build/2017/B8093">Distribution d’applications UWP NextGen Firewall : création d’applications extensibles, en flux continu, basées sur des composants</a></td>
     </tr>
     <tr>
-        <td>Diviser et regrouper du contenu pour activer l’installation en continu</td>
+        <td>Diviser et regrouper le contenu pour activer l’installation en continu</td>
         <td><a href="https://docs.microsoft.com/windows/msix/package/streaming-install">Installation de la diffusion en continu d’applications UWP</a></td>
     </tr>
     <tr>
-        <td>Créer des packages facultatifs comme du contenu de jeu DLC</td>
+        <td>Créer des packages facultatifs tels que le contenu du jeu DLC</td>
         <td><a href="https://docs.microsoft.com/windows/msix/package/optional-packages">Création de packages facultatifs et d’ensembles associés</a></td>
     </tr>
     <tr>
-        <td>Créer un package de votre jeu UWP</td>
+        <td>Empaqueter votre jeu UWP</td>
         <td><a href="../packaging/index.md">Empaquetage d’applications</a></td>
     </tr>
     <tr>
-        <td>Créer un package pour votre jeu UWP DirectX</td>
+        <td>Empaqueter votre jeu DirectX UWP</td>
         <td><a href="package-your-windows-store-directx-game.md">Empaqueter votre jeu DirectX UWP</a></td>
     </tr>
     <tr>
         <td>Empaquetage de votre jeu en tant que développeur tiers (billet de blog)</td>
-        <td><a href="https://blogs.windows.com/buildingapps/2015/12/15/building-an-app-for-a-3rd-party-how-to-package-their-store-app/">Créer des packages téléchargeables sans accès au compte de stockage de l’éditeur</a></td>
+        <td><a href="https://blogs.windows.com/buildingapps/2015/12/15/building-an-app-for-a-3rd-party-how-to-package-their-store-app/">Créer des packages téléchargeables sans accès au compte Windows Store de l’éditeur</a></td>
     </tr>
     <tr>
         <td>Création de packages d’application et d’ensembles de packages d’application à l’aide de MakeAppx</td>
-        <td><a href="https://docs.microsoft.com/windows/msix/package/create-app-package-with-makeappx-tool">Créer des packages à l’aide de l’outil app Packager MakeAppx. exe</a></td>
+        <td><a href="https://docs.microsoft.com/windows/msix/package/create-app-package-with-makeappx-tool">Créer des packages à l’aide de l’outil de création de packages d’application MakeAppx.exe</a></td>
     </tr>
     <tr>
         <td>Signature numérique des fichiers à l’aide de SignTool</td>
-        <td><a href="https://docs.microsoft.com/windows/desktop/SecCrypto/signtool">Signer des fichiers et vérifier des signatures dans des fichiers à l’aide de SignTool</a></td>
+        <td><a href="https://docs.microsoft.com/windows/desktop/SecCrypto/signtool">Signer les fichiers et vérifier les signatures dans les fichiers à l’aide de SignTool</a></td>
     </tr>    
     <tr>
         <td>Chargement et contrôle de version de votre jeu</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/publish/upload-app-packages">Télécharger des packages d’application</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/publish/upload-app-packages">Chargement de packages d’applications</a></td>
     </tr>
 </table>
 
@@ -1602,8 +1602,8 @@ Ne laissez pas les problèmes de certification retarder la publication de votre 
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Contrat du développeur d’application du Microsoft Store</td>
-        <td><a href="https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement">Contrat du développeur d’application</a></td>
+        <td>Contrat du développeur de l’application Microsoft Store</td>
+        <td><a href="https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement">Contrat du développeur d'application</a></td>
     </tr>
     <tr>
         <td>Stratégies pour la publication d’applications dans le Microsoft Store</td>
@@ -1627,7 +1627,7 @@ Le manifeste de magasin (StoreManifest.xml) est un fichier de configuration facu
     </colgroup>
     <tr>
         <td>Schéma du manifeste de magasin</td>
-        <td><a href="https://docs.microsoft.com/uwp/schemas/storemanifest/storemanifestschema2015/schema-root">Schéma StoreManifest (Windows 10)</a></td>
+        <td><a href="https://docs.microsoft.com/uwp/schemas/storemanifest/storemanifestschema2015/schema-root">Schéma StoreManifest (Windows 10)</a></td>
     </tr>
 </table>
  
@@ -1646,11 +1646,11 @@ Vous n’avez pas terminé une fois que vous avez développé et fourni votre je
     </colgroup>
     <tr>
         <td>Analyse de l’espace partenaires</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/publish/analytics">Analyser les performances de l’application</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/publish/analytics">Analyser les performances des applications</a></td>
     </tr>
     <tr>
-        <td>Découvrez comment vos clients interagissent avec les fonctionnalités Xbox dans votre jeu.</td>
-        <td><a href="../publish/xbox-analytics-report.md">Rapport Xbox Analytics</a></td>
+        <td>Découvrez comment vos clients sont en contact avec les fonctionnalités Xbox de votre jeu</td>
+        <td><a href="../publish/xbox-analytics-report.md">Rapport d’analytique Xbox</a></td>
     </tr>
     <tr>
         <td>Réponse aux avis des clients</td>
@@ -1665,7 +1665,7 @@ Vous n’avez pas terminé une fois que vous avez développé et fourni votre je
 
 ### <a name="visual-studio-application-insights"></a>Visual Studio Application Insights
 
-Visual Studio Application Insights fournit des analyses de performance, de télémétrie et d’utilisation pour votre jeu publié. Application Insights vous permet de détecter et de résoudre les problèmes après publication de votre jeu, de surveiller et d’améliorer en continu son utilisation et de comprendre comment les joueurs ne cessent d’interagir avec votre jeu. Application Insights fonctionne si vous ajoutez un Kit de développement logiciel (SDK) dans votre application, qui envoie les données de télémétrie au [portail Azure](https://portal.azure.com/).
+Visual Studio Application Insights fournit des analyses de performance, de télémétrie et d’utilisation pour votre jeu publié. Application Insights vous permet de détecter et de résoudre les problèmes après publication de votre jeu, de surveiller et d’améliorer en continu son utilisation et de comprendre comment les joueurs ne cessent d’interagir avec votre jeu. Application Insights fonctionne par l’ajout d’un kit de développement logiciel (SDK) à votre application, qui envoie la télémétrie au [portail Azure](https://portal.azure.com/).
 
 <table>
     <colgroup>
@@ -1678,7 +1678,7 @@ Visual Studio Application Insights fournit des analyses de performance, de tél�
     </tr>
     <tr>
         <td>Activer Application Insights dans les applications Windows</td>
-        <td><a href="https://azure.microsoft.com/documentation/articles/app-insights-windows-get-started/">Application Insights pour les applications Windows Phone et Store</a></td>
+        <td><a href="https://azure.microsoft.com/documentation/articles/app-insights-windows-get-started/">Application Insights pour les applications Windows Phone et les applications du Windows Store</a></td>
     </tr>
 </table>
 
@@ -1691,27 +1691,27 @@ Visual Studio Application Insights fournit des analyses de performance, de tél�
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Comprendre le comportement du lecteur à l’aide de GameAnalytics</td>
+        <td>Comprendre le comportement des lecteurs à l’aide de GameAnalytics</td>
         <td><a href="https://gameanalytics.com/">GameAnalytics</a></td>
     </tr>
     <tr>
-        <td>Connecter votre jeu UWP à Google Analytics</td>
+        <td>Connectez votre jeu UWP à Google Analytics</td>
         <td><a href="https://github.com/dotnet/windows-sdk-for-google-analytics">Obtenir des SDK Windows pour Google Analytics</a></td>
     </tr>
     <tr>
-        <td>Découvrez comment utiliser le SDK Windows pour Google Analytics (vidéo)</td>
+        <td>En savoir plus sur l’utilisation de SDK Windows pour Google Analytics (vidéo)</td>
         <td><a href="https://channel9.msdn.com/Events/Windows/Windows-Developer-Day-Creators-Update/Getting-started-with-the-Windows-SDK-for-Google-Analytics">Prise en main de SDK Windows pour Google Analytics</a></td>
     </tr>    
     <tr>
-        <td>Utilisez les publicités sur l’installation d’applications Facebook pour promouvoir votre jeu auprès des utilisateurs de Facebook</td>
+        <td>Utiliser l’application Facebook installe des publicités pour promouvoir votre jeu pour les utilisateurs de Facebook</td>
         <td><a href="https://github.com/Microsoft/winsdkfb">Obtenir des SDK Windows pour Facebook</a></td>
     </tr>
     <tr>
-        <td>Découvrez comment utiliser les publicités sur l’installation d’applications Facebook (vidéo)</td>
+        <td>Découvrez comment utiliser l’application Facebook installe ADS (vidéo)</td>
         <td><a href="https://channel9.msdn.com/Events/Windows/Windows-Developer-Day-Creators-Update/Getting-started-with-Facebook-App-Install-Ads">Prise en main de SDK Windows pour Facebook</a></td>
     </tr>
     <tr>
-        <td>Utiliser Vungle pour ajouter des publicités vidéo dans vos jeux</td>
+        <td>Utilisez Vungle pour ajouter des publicités vidéo à vos jeux</td>
         <td><a href="https://publisher.vungle.com/sdk/">Obtenir SDK Windows pour Vungle</a></td>
     </tr>
 </table>
@@ -1728,21 +1728,21 @@ Pour mettre à jour votre jeu publié, soumettez un nouveau package d’applicat
     </colgroup>
     <tr>
         <td>Mise à jour et contrôle de version de votre jeu</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/publish/package-version-numbering">Numérotation des versions de package</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/publish/package-version-numbering">Numérotation des versions de packages</a></td>
     </tr>
     <tr>
         <td>Recommandations en matière de gestion des packages de jeu</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/publish/package-version-numbering">Aide pour la gestion des packages d’application</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/publish/package-version-numbering">Aide sur la gestion des packages d’application</a></td>
     </tr>
 </table>
 
 
 ## <a name="adding-xbox-live-to-your-game"></a>Ajout de Xbox Live à votre jeu
 
-Xbox Live est un réseau de jeux Premier qui connecte des millions de joueurs dans le monde entier. Les développeurs peuvent accéder à des fonctionnalités Xbox Live capables d’augmenter le public de leur jeu de façon drastique. Il s’agit notamment de la présence Xbox Live, des classements, des sauvegardes dans le cloud, des hubs de jeux, des clubs, des tchats de groupe, des jeux DVR et plus encore.
+Xbox Live est un réseau de jeux Premier qui connecte des millions de joueurs dans le monde entier. Les développeurs ont accès à des fonctionnalités Xbox Live qui peuvent augmenter de façon naturelle le public de leur jeu, y compris la présence Xbox Live, Leaderboards, les enregistrements Cloud, les concentrateurs de jeux, les clubs, les conversations des tiers, les jeux DVR et bien plus encore.
 
 > [!Note]
-> Si vous souhaitez développer des titres Xbox Live, plusieurs options s’offrent à vous. Pour en savoir plus sur les divers programmes, voir [vue d’ensemble du programme pour les développeurs](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview).
+> Si vous souhaitez développer des titres Xbox Live, vous disposez de plusieurs options. Pour plus d’informations sur les différents programmes, consultez [vue d’ensemble du programme de développement](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview).
 
 <table>
     <colgroup>
@@ -1750,25 +1750,25 @@ Xbox Live est un réseau de jeux Premier qui connecte des millions de joueurs da
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Vue d’ensemble de Xbox Live</td>
-        <td><a href="https://docs.microsoft.com/gaming/xbox-live/index.md">Guide du développeur Xbox Live</a></td>
+        <td>Présentation de Xbox Live</td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/index.md">Guide du développeur Xbox Live</a></td>
     </tr>
     <tr>
-        <td>Comprendre quelles fonctionnalités sont disponibles en fonction du programme</td>
+        <td>Comprendre les fonctionnalités disponibles en fonction du programme</td>
         <td><a href="https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#feature-table">Vue d’ensemble du programme de développement : tableau des fonctionnalités</a></td>
     </tr>
     <tr>
-        <td>Liens vers des ressources utiles pour développer des jeux Xbox Live</td>
+        <td>Liens vers des ressources utiles pour le développement de jeux Xbox Live</td>
         <td><a href="https://docs.microsoft.com/gaming/xbox-live/xbox-live-resources.md">Ressources Xbox Live</a></td>
     </tr>
     <tr>
-        <td>Découvrir comment obtenir des informations à partir des services Xbox Live</td>
+        <td>Découvrez comment obtenir des informations à partir des services Xbox Live</td>
         <td><a href="https://docs.microsoft.com/gaming/xbox-live/introduction-to-xbox-live-apis.md">Présentation des API Xbox Live</a></td>
     </tr>
 </table>
 
 
-### <a name="for-developers-in-the-xbox-live-creators-program"></a>Pour les développeurs du programme Créateurs Xbox Live
+### <a name="for-developers-in-the-xbox-live-creators-program"></a>Pour les développeurs dans le programme de créateurs Xbox Live
 
 <table>
     <colgroup>
@@ -1776,7 +1776,7 @@ Xbox Live est un réseau de jeux Premier qui connecte des millions de joueurs da
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Overview</td>
+        <td>Vue d’ensemble</td>
         <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md">Prise en main du programme de créateurs Xbox Live</a></td>
     </tr>
     <tr>
@@ -1788,7 +1788,7 @@ Xbox Live est un réseau de jeux Premier qui connecte des millions de joueurs da
         <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/develop-creators-title-with-unity.md">Prise en main du développement d’un programme Xbox Live Creators avec le moteur de jeu Unity</a></td>
     </tr>
     <tr>
-        <td>Configurer votre bac à sable de développement</td>
+        <td>Configurer votre bac à sable (sandbox) de développement</td>
         <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/xbox-live-sandboxes-creators.md">Présentation des bacs à sable Xbox Live</a></td>
     </tr>
     <tr>
@@ -1796,16 +1796,16 @@ Xbox Live est un réseau de jeux Premier qui connecte des millions de joueurs da
         <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/authorize-xbox-live-accounts.md">Autoriser des comptes Xbox Live dans votre environnement de test</a></td>
     </tr>
     <tr>
-        <td>Exemples pour le Programme Créateurs Xbox Live</td>
+        <td>Exemples pour le programme Xbox Live Creators</td>
         <td><a href="https://github.com/Microsoft/xbox-live-samples/tree/master/Samples/CreatorsSDK">Exemples de code pour les développeurs de programmes pour les créateurs</a></td>
     </tr>
     <tr>
-        <td>Découvrez comment intégrer des expériences Xbox Live multiplateforme dans les jeux UWP (vidéo)</td>
+        <td>Découvrez comment intégrer des expériences de Xbox Live sur plusieurs plateformes dans les jeux UWP (vidéo)</td>
         <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-005">Programme Créateurs Xbox Live</a></td>
     </tr>  
 </table>
 
-### <a name="for-managed-partners-and-developers-in-the-idxbox-program"></a>Pour les partenaires et les développeurs gérés dans le programme ID@Xbox
+### <a name="for-managed-partners-and-developers-in-the-idxbox-program"></a>Pour les partenaires et les développeurs gérés ID@Xbox dans le programme
 
 <table>
     <colgroup>
@@ -1813,7 +1813,7 @@ Xbox Live est un réseau de jeux Premier qui connecte des millions de joueurs da
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Overview</td>
+        <td>Vue d’ensemble</td>
         <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-partner/get-started-with-xbox-live-partner.md">Prise en main de Xbox Live en tant que partenaire géré ou développeur d’ID</a></td>
     </tr>
     <tr>
@@ -1825,32 +1825,32 @@ Xbox Live est un réseau de jeux Premier qui connecte des millions de joueurs da
         <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-partner/partner-unity-uwp-il2cpp.md">Ajout de la prise en charge de Xbox Live à Unity pour UWP avec un backend de script IL2CPP pour l’ID et les partenaires gérés</a></td>
     </tr>
     <tr>
-        <td>Configurer votre bac à sable de développement</td>
+        <td>Configurer votre bac à sable (sandbox) de développement</td>
         <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-partner/advanced-xbox-live-sandboxes.md">Bac à sables Xbox Live avancés</a></td>
     </tr>
     <tr>
-        <td>Configuration requise pour les jeux utilisant Xbox Live (GDN)</td>
-        <td><a href="https://edadfs.partners.extranet.microsoft.com/adfs/ls/?wa=wsignin1.0&wtrealm=https%3a%2f%2fdeveloper.xboxlive.com&wctx=rm%3d0%26id%3dpassive%26ru%3d%252fen-us%252flive%252fcertification%252frequirements%252fPages%252fTCR.aspx&wct=2019-11-20T19%3a55%3a26Z">Configuration Xbox requise pour Xbox Live sur Windows 10</a></td>
+        <td>Configuration requise pour les jeux qui utilisent Xbox Live (GDN)</td>
+        <td><a href="https://edadfs.partners.extranet.microsoft.com/adfs/ls/?wa=wsignin1.0&wtrealm=https%3a%2f%2fdeveloper.xboxlive.com&wctx=rm%3d0%26id%3dpassive%26ru%3d%252fen-us%252flive%252fcertification%252frequirements%252fPages%252fTCR.aspx&wct=2019-11-20T19%3a55%3a26Z">Configuration Xbox requise pour Xbox Live sur Windows 10</a></td>
     </tr>
     <tr>
         <td>Exemples</td>
-        <td><a href="https://github.com/Microsoft/xbox-live-samples/tree/master/Samples/ID%40XboxSDK">Exemples de code pour les développeurs ID@Xbox</a></td>
+        <td><a href="https://github.com/Microsoft/xbox-live-samples/tree/master/Samples/ID%40XboxSDK">Exemples de code ID@Xbox pour les développeurs</a></td>
     </tr>  
     <tr>
         <td>Vue d’ensemble du développement de jeux Xbox Live (vidéo)</td>
-        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Developing-with-Xbox-Live-for-Windows-10">Développement avec Xbox Live pour Windows 10</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Developing-with-Xbox-Live-for-Windows-10">Développement avec Xbox Live pour Windows 10</a></td>
     </tr>
     <tr>
         <td>Matchmaking multiplateforme (vidéo)</td>
-        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Xbox-Live-Multiplayer-Introducing-services-for-cross-platform-matchmaking-and-gameplay">Xbox Live multijoueur : présentation des services pour la mise en jeu et le jeu interplateformes</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Xbox-Live-Multiplayer-Introducing-services-for-cross-platform-matchmaking-and-gameplay">Xbox Live en multijoueur : Présentation des services de matchmaking et de jeu multiplateforme</a></td>
     </tr>
     <tr>
         <td>Jeu multiplateforme dans Fable Legends (vidéo)</td>
-        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Fable-Legends-Cross-device-Gameplay-with-Xbox-Live">Légendes Fable : jeu entre appareils avec Xbox Live</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Fable-Legends-Cross-device-Gameplay-with-Xbox-Live">Fable Legends : Jeu multiplateforme avec Xbox Live</a></td>
     </tr>
     <tr>
         <td>Xbox Live : Statistiques et succès (vidéo)</td>
-        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Best-Practices-for-Leveraging-Cloud-Based-User-Stats-and-Achievements-in-Xbox-Live">Meilleures pratiques pour tirer parti des statistiques et des réalisations des utilisateurs basés sur le Cloud dans Xbox Live</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Best-Practices-for-Leveraging-Cloud-Based-User-Stats-and-Achievements-in-Xbox-Live">Meilleures pratiques pour tirer parti des statistiques et des succès des utilisateurs basés sur le cloud dans Xbox Live</a></td>
     </tr>
 </table>
 
@@ -1868,15 +1868,15 @@ Xbox Live est un réseau de jeux Premier qui connecte des millions de joueurs da
     </tr>
     <tr>
         <td>Développement de jeux indépendants (vidéo)</td>
-        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/New-Opportunities-for-Independent-Developers">Nouvelles opportunités pour les développeurs indépendants</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/New-Opportunities-for-Independent-Developers">De nouvelles opportunités pour les développeurs indépendants</a></td>
     </tr>
     <tr>
         <td>Considérations pour les appareils mobiles multicœurs (vidéo)</td>
-        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Sustained-gaming-performance-in-multi-core-mobile-devices">Performances de jeu soutenues dans les appareils mobiles multicœurs</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Sustained-gaming-performance-in-multi-core-mobile-devices">Performances de jeu soutenues sur les appareils mobiles multicœurs</a></td>
     </tr>
     <tr>
         <td>Développement de jeux de bureau Windows 10 (vidéo)</td>
-        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/PC-Games-for-Windows-10">Jeux PC pour Windows 10</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/PC-Games-for-Windows-10">Jeux pour PC Windows 10</a></td>
     </tr>
 </table>
 

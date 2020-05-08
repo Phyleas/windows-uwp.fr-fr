@@ -1,71 +1,71 @@
 ---
-Description: Découvrez comment envoyer une notification toast locale et gérer l’utilisateur qui clique sur le toast.
+Description: Découvrez comment envoyer une notification Toast locale et gérer l’utilisateur en cliquant sur le Toast.
 title: Envoyer une notification toast locale
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
 label: Send a local toast notification
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp, envoyer des notifications toast, notifications, envoyer des notifications, notifications toast, procédure, démarrage rapide, prise en main, exemple de code, procédure pas à pas
+keywords: Windows 10, UWP, envoyer des notifications Toast, notifications, envoyer des notifications, Toast notifications, guide pratique, démarrage rapide, prise en main, exemple de code, procédure pas à pas
 ms.localizationpriority: medium
-ms.openlocfilehash: ddb00ebc029ccbb15640938f01d14382e8fa273a
-ms.sourcegitcommit: 6e7665b457ec4585db19b70acfa2554791ad6e10
+ms.openlocfilehash: 23a1739b8f5859d128c97ff28350a548b61286d2
+ms.sourcegitcommit: 63597f83f154ce41ebaf69c075093919c430297c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70987204"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82034183"
 ---
 # <a name="send-a-local-toast-notification"></a>Envoyer une notification toast locale
 
 
-Une notification toast est un message qu’une application peut créer et remettre à l’utilisateur alors que son application n’est pas active. Ce démarrage rapide vous guide dans les procédures de création, remise et affichage d’une notification toast Windows 10 avec les nouveaux modèles adaptatifs et actions interactives. Ces actions sont illustrées via une notification locale, qui est la notification la plus simple à implémenter.
+Une notification Toast est un message qu’une application peut construire et remettre à l’utilisateur alors qu’elle ne se trouve pas actuellement à l’intérieur de votre application. Ce guide de démarrage rapide vous guide tout au long des étapes de création, de distribution et d’affichage d’une notification Toast Windows 10 avec les nouveaux modèles adaptatifs et les actions interactives. Ces actions sont illustrées par une notification locale, qui est la notification la plus simple à implémenter.
 
 > [!IMPORTANT]
-> Les applications de bureau (Pont du bureau et Win32 classique) ont des étapes différentes pour l’envoi de notifications et la gestion de l’activation. Pour plus d'informations sur l'implémentation de toasts, consultez la documentation [Applications de bureau](toast-desktop-apps.md).
+> Les applications de bureau (y compris les applications [MSIX](https://docs.microsoft.com/windows/msix/desktop/source-code-overview) empaquetées, les applications qui utilisent des [packages éparss](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) pour obtenir l’identité des packages et les applications Win32 non empaquetées classiques) ont des étapes différentes pour envoyer des notifications et gérer l’activation. Pour savoir comment implémenter des toasts, consultez la documentation sur les [applications de bureau](toast-desktop-apps.md) .
 
-Nous allons examiner les étapes suivantes :
+Nous allons examiner les éléments suivants :
 
 ### <a name="sending-a-toast"></a>Envoi d’un toast
 
-* Construction de la partie visuelle (texte et image) de la notification
+* Construction du composant visuel (texte et image) de la notification
 * Ajout d’actions à la notification
-* Définition d’une date/heure d’expiration du toast
-* Définition d’une propriété Tag/Group afin de pouvoir remplacer/supprimer le toast ultérieurement
-* Envoi du toast à l’aide des API locales
+* Définition d’un délai d’expiration sur le Toast
+* Définir la balise/le groupe afin de pouvoir remplacer/supprimer le Toast ultérieurement
+* Envoi de votre toast à l’aide des API locales
 
 ### <a name="handling-activation"></a>Gestion de l’activation
 
-* Gestion de l’activation lorsque l’utilisateur clique sur le corps ou les boutons
+* Gestion de l’activation lorsque l’utilisateur clique sur le corps ou sur les boutons
 * Gestion de l’activation au premier plan
 * Gestion de l’activation en arrière-plan
 
-> **API importantes** : [Classe ToastNotification](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification), [classe ToastNotificationActivatedEventArgs](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)
+> **API importantes**: [classe ToastNotification](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification), [classe ToastNotificationActivatedEventArgs](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)
 
 
 ## <a name="prerequisites"></a>Prérequis
 
-Pour bien comprendre cette rubrique, il est utile de disposer de ce qui suit...
+Pour bien comprendre cette rubrique, les éléments suivants sont utiles...
 
-* Une connaissance pratique des concepts et des termes relatifs aux notifications toast. Pour plus d’informations, consultez [Toast and Action Center Overview](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/07/08/toast-notification-and-action-center-overview-for-windows-10/).
-* Une bonne connaissance du contenu d’une notification toast Windows 10. Pour plus d’informations, voir la [documentation sur le contenu des toasts](adaptive-interactive-toasts.md).
-* Un projet d’application UWP Windows 10
-
-> [!NOTE]
-> Contrairement à Windows 8/8.1, vous n’avez plus besoin de déclarer dans le manifeste de votre application que celle-ci peut afficher les notifications toast. Toutes les applications sont en mesure d’envoyer et d’afficher des notifications toast.
+* Une connaissance pratique des termes et des concepts de notification Toast. Pour plus d’informations, consultez [Toast and Action Center Overview](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/07/08/toast-notification-and-action-center-overview-for-windows-10/).
+* Une bonne connaissance du contenu de notification Windows 10 Toast. Pour plus d’informations, consultez [la documentation sur le contenu Toast](adaptive-interactive-toasts.md).
+* Un projet d’application UWP Windows 10
 
 > [!NOTE]
-> **Applications Windows 8/8.1**: Utilisez la [documentation archivée](https://docs.microsoft.com/previous-versions/windows/apps/hh868254(v=win.10)).
+> Contrairement à Windows 8/8.1, vous n’avez plus besoin de déclarer dans le manifeste de votre application que votre application est capable d’illustrer les notifications Toast. Toutes les applications sont en charge de l’envoi et de l’affichage des notifications Toast.
+
+> [!NOTE]
+> **Applications Windows 8/8.1**: utilisez la [documentation archivée](https://docs.microsoft.com/previous-versions/windows/apps/hh868254(v=win.10)).
 
 
-## <a name="install-nuget-packages"></a>Installer des packages NuGet
+## <a name="install-nuget-packages"></a>Installer les packages NuGet
 
-Nous vous recommandons d’installer les deux packages NuGet suivants à votre projet. Notre exemple de code les utilise. À la fin de l’article, nous vous fournissons des extraits de code standard qui n’utilisent pas de packages NuGet.
+Nous vous recommandons d’installer les deux packages NuGet suivants dans votre projet. Notre exemple de code utilisera ces packages. À la fin de l’article, nous fournirons les extraits de code « vanille » qui n’utilisent pas de packages NuGet.
 
-* [Microsoft. Toolkit. UWP. notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/): Générez des charges utiles Toast par le biais d’objets au lieu de données XML brutes.
-* [QueryString.net](https://www.nuget.org/packages/QueryString.NET/): Générer et analyser des chaînes de requête avecC#
+* [Microsoft. Toolkit. UWP. notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/): générer des charges utiles Toast par le biais d’objets au lieu de données XML brutes.
+* [QueryString.net](https://www.nuget.org/packages/QueryString.NET/): générer et analyser les chaînes de requête avec C #
 
 
-## <a name="add-namespace-declarations"></a>Ajouter des déclarations d’espace de noms
+## <a name="add-namespace-declarations"></a>Ajout de déclarations d'espaces de noms
 
 `Windows.UI.Notifications`comprend les API Toast.
 
@@ -78,16 +78,16 @@ using Microsoft.QueryStringDotNET; // QueryString.NET
 
 ## <a name="send-a-toast"></a>Envoyer un toast
 
-Dans Windows 10, le contenu de votre notification toast est décrit à l’aide d’un langage adaptatif qui permet une grande flexibilité en termes d’apparence de notification. Pour plus d’informations, voir la [documentation sur le contenu des toasts](adaptive-interactive-toasts.md).
+Dans Windows 10, le contenu de vos notifications Toast est décrit à l’aide d’un langage adaptable qui offre une grande flexibilité en ce qui concerne l’apparence de votre notification. Pour plus d’informations, consultez la documentation sur le [contenu Toast](adaptive-interactive-toasts.md) .
 
 ### <a name="constructing-the-visual-part-of-the-content"></a>Construction de la partie visuelle du contenu
 
-Commençons par construire la partie visuelle du contenu, qui inclut le texte et les images que vous souhaitez montrer à l’utilisateur.
+Commençons par construire la partie visuelle du contenu, qui comprend le texte et les images que l’utilisateur doit voir.
 
-Grâce à la bibliothèque de notifications, la génération du contenu XML est simple. Si vous n’installez pas la bibliothèque Notifications à partir de NuGet, vous devez construire le code XML manuellement, ce qui peut prêter aux erreurs.
+Grâce à la bibliothèque de notifications, la génération du contenu XML est simple. Si vous n’installez pas la bibliothèque de notifications à partir de NuGet, vous devez construire le XML manuellement, ce qui laisse de l’espace pour les erreurs.
 
 > [!NOTE]
-> Des images peuvent être utilisées à partir du package de l’application, du stockage local de l’application ou du web. À partir de Fall Creators Update, les images Web peuvent atteindre 3 Mo sur les connexions normales et 1 Mo sur les connexions limitées. Sur les appareils qui n’exécutent pas encore Fall Creators Update, les images web ne doivent pas dépasser 200 Ko.
+> Les images peuvent être utilisées à partir du package de l’application, du stockage local de l’application ou du Web. À compter de la mise à jour des créateurs de automne, les images Web peuvent atteindre jusqu’à 3 Mo sur des connexions normales et 1 Mo sur les connexions limitées. Sur les appareils qui n’exécutent pas encore la mise à jour des créateurs de automne, les images Web ne doivent pas dépasser 200 Ko.
 
 ```csharp
 // In a real app, these would be initialized with actual data
@@ -129,14 +129,14 @@ ToastVisual visual = new ToastVisual()
 ```
 
 
-### <a name="constructing-actions-part-of-the-content"></a>Construction de la partie du contenu relative aux actions
+### <a name="constructing-actions-part-of-the-content"></a>Construction d’actions dans le contenu
 
-À présent, ajoutons des actions au contenu.
+À présent, nous allons ajouter des actions au contenu.
 
-Dans l’exemple, ci-dessous, nous avons inclus un élément d’entrée qui permet à l’utilisateur de saisir du texte, qui est retourné à l’application lorsque l’utilisateur clique sur l’un des boutons ou sur le toast proprement dit.
+Dans l’exemple ci-dessous, nous avons inclus un élément input qui permet à l’utilisateur d’entrer du texte, qui est retourné à l’application lorsque l’utilisateur clique sur l’un des boutons ou sur le Toast lui-même.
 
-Nous avons ensuite ajouté deux boutons, chacun avec son propre type d’activation, son contenu et ses arguments.
-* **ActivationType** permet de spécifier le mode d’activation de votre application lorsque cette action est effectuée par l’utilisateur. Vous pouvez choisir de lancer votre application au premier plan, de lancer une tâche en arrière-plan ou de lancer une autre application par protocole. Que votre application choisisse le premier plan ou l’arrière-plan, vous recevrez toujours l’entrée utilisateur et les arguments que vous avez spécifiés, afin que votre application puisse effectuer l’action appropriée, comme l’envoi du message ou l’ouverture d’une conversation.
+Nous avons ensuite ajouté deux boutons, chacun avec son propre type d’activation, son propre contenu et ses arguments.
+* **ActivationType** est utilisé pour spécifier la façon dont votre application souhaite être activée lorsque cette action est effectuée par l’utilisateur. Vous pouvez choisir de lancer votre application au premier plan, de lancer une tâche en arrière-plan ou de lancer une autre application. Que votre application choisisse le premier plan ou l’arrière-plan, vous recevrez toujours l’entrée utilisateur et les arguments que vous avez spécifiés, afin que votre application puisse exécuter l’action correcte, par exemple l’envoi du message ou l’ouverture d’une conversation.
 
 ```csharp
 // In a real app, these would be initialized with actual data
@@ -191,13 +191,13 @@ ToastActionsCustom actions = new ToastActionsCustom()
 ```
 
 
-### <a name="combining-the-above-to-construct-the-full-content"></a>Combinaison des éléments ci-dessus pour construire l’intégralité du contenu
+### <a name="combining-the-above-to-construct-the-full-content"></a>Combinaison de la version ci-dessus pour construire le contenu complet
 
-La construction du contenu est désormais terminée, et nous pouvons l’utiliser pour instancier votre objet [**ToastNotification**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification).
+La construction du contenu est maintenant terminée et nous pouvons l’utiliser pour instancier votre objet [**ToastNotification**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification) .
 
-**Remarque** : vous pouvez également fournir un type d’activation dans l’élément racine pour spécifier le type d’activation qui doit se produire lorsque l’utilisateur appuie sur le corps de la notification toast. Normalement, appuyer sur le corps du toast doit lancer votre application au premier plan pour créer une expérience utilisateur cohérente, mais vous pouvez utiliser d’autres types d’activation pour concorder avec votre scénario spécifique si cela est plus judicieux pour l’utilisateur.
+**Remarque**: vous pouvez également fournir un type d’activation à l’intérieur de l’élément racine, pour spécifier le type d’activation qui doit se produire lorsque l’utilisateur appuie sur le corps de la notification Toast. Normalement, le fait de cliquer sur le corps du Toast doit lancer votre application au premier plan pour créer une expérience utilisateur cohérente, mais vous pouvez utiliser d’autres types d’activation pour s’adapter à votre scénario spécifique où il est plus logique pour l’utilisateur.
 
-Vous devez toujours définir la propriété **Launch** de manière à ce que lorsque l’utilisateur appuie sur le corps du toast et que votre application est lancée, cette dernière sait quel contenu elle doit afficher.
+Vous devez toujours définir la propriété **Launch** . par conséquent, quand l’utilisateur appuie sur le corps du Toast et que votre application est lancée, votre application connaît le contenu à afficher.
 
 ```csharp
 // Now we can construct the final toast content
@@ -220,14 +220,14 @@ var toast = new ToastNotification(toastContent.GetXml());
 ```
 
 
-## <a name="set-an-expiration-time"></a>Définir une date/heure d’expiration
+## <a name="set-an-expiration-time"></a>Définir un délai d’expiration
 
-Dans Windows 10, toutes les notifications sont enregistrées dans le centre de notifications après que l’utilisateur les a ignorées. Les utilisateurs peuvent donc consulter votre notification une fois que la fenêtre contextuelle a disparu.
+Dans Windows 10, toutes les notifications Toast sont placées dans le centre de maintenance après avoir été rejetées ou ignorées par l’utilisateur, afin que les utilisateurs puissent consulter votre notification une fois que la fenêtre contextuelle a disparu.
 
-Toutefois, si le message de votre notification est uniquement pertinent pour une période donnée, vous devez définir une date/heure d’expiration dans la notification toast pour que les utilisateurs ne voient pas d’informations obsolètes provenant de votre application. Par exemple, si une promotion n’est valide que pendant 12 heures, définissez le délai d’expiration sur 12 heures. Dans le code ci-dessous, nous avons défini la date d’expiration sur 2 jours.
+Toutefois, si le message de votre notification n’est pertinent que pendant une période donnée, vous devez définir un délai d’expiration sur la notification Toast afin que les utilisateurs ne voient pas les informations obsolètes de votre application. Par exemple, si une promotion est uniquement valide pendant 12 heures, définissez le délai d’expiration sur 12 heures. Dans le code ci-dessous, nous définissons l’heure d’expiration sur 2 jours.
 
 > [!NOTE]
-> La date/heure d’expiration par défaut et maximale pour les notifications toast locales est de 3 jours.
+> La valeur par défaut et le délai d’expiration maximal pour les notifications Toast locales sont de 3 jours.
 
 ```csharp
 toast.ExpirationTime = DateTime.Now.AddDays(2);
@@ -236,11 +236,11 @@ toast.ExpirationTime = DateTime.Now.AddDays(2);
 
 ## <a name="provide-a-primary-key-for-your-toast"></a>Fournir une clé primaire pour votre toast
 
-Si vous voulez supprimer ou remplacer la notification que vous envoyez par programme, vous devez utiliser la propriété Tag (et éventuellement la propriété Group) pour fournir une clé primaire pour votre notification. Vous pouvez alors utiliser cette clé primaire à l’avenir pour supprimer ou remplacer la notification.
+Si vous souhaitez supprimer ou remplacer par programmation la notification que vous envoyez, vous devez utiliser la propriété Tag (et éventuellement la propriété Group) pour fournir une clé primaire pour votre notification. Ensuite, vous pouvez utiliser cette clé primaire à l’avenir pour supprimer ou remplacer la notification.
 
-Pour plus d’informations sur le remplacement ou la suppression des notifications Toast déjà [fournies, consultez démarrage rapide : Gestion des notifications Toast dans le centre de](https://docs.microsoft.com/previous-versions/windows/apps/dn631260(v=win.10))maintenance (XAML).
+Pour plus d’informations sur le remplacement ou la suppression des notifications Toast déjà fournies, consultez [démarrage rapide : gestion des notifications Toast dans le centre de maintenance (XAML)](https://docs.microsoft.com/previous-versions/windows/apps/dn631260(v=win.10)).
 
-Les propriétés Tag et Group combinées font office de clé primaire composite. Group est l’identificateur plus générique, dans lequel vous pouvez assigner des groupes tels que « wallPosts », « messages », « friendRequests », etc. La balise doit ensuite identifier de manière unique la notification proprement dite à partir du groupe. En utilisant un groupe générique, vous pouvez ensuite supprimer toutes les notifications de ce groupe à l’aide de l’[API RemoveGroup](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_).
+Les balises et les groupes fonctionnent comme une clé primaire composite. Group est l’identificateur plus générique, dans lequel vous pouvez assigner des groupes tels que « wallPosts », « messages », « friendRequests », etc. La balise doit ensuite identifier de manière unique la notification proprement dite à partir du groupe. À l’aide d’un groupe générique, vous pouvez supprimer toutes les notifications de ce groupe à l’aide de l' [API RemoveGroup](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_).
 
 ```csharp
 toast.Tag = "18365";
@@ -250,7 +250,7 @@ toast.Group = "wallPosts";
 
 ## <a name="send-the-notification"></a>Envoyer la notification
 
-Une fois que vous avez initialisé votre toast, créez simplement un élément [ToastNotifier](https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastnotifier) et appelez Show(), en transmettant votre notification toast.
+Une fois que vous avez initialisé votre toast, créez simplement un [ToastNotifier](https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastnotifier) et appelez Show (), en transmettant votre notification Toast.
 
 ```csharp
 ToastNotificationManager.CreateToastNotifier().Show(toast);
@@ -259,39 +259,39 @@ ToastNotificationManager.CreateToastNotifier().Show(toast);
 
 ## <a name="clear-your-notifications"></a>Effacer vos notifications
 
-Les applications UWP sont chargées de la suppression et de l’effacement de leurs propres notifications. Lorsque votre application est lancée, nous n’effaçons PAS automatiquement vos notifications.
+Les applications UWP sont responsables de la suppression et de l’effacement de leurs propres notifications. Lorsque votre application est lancée, les notifications ne sont pas automatiquement effacées.
 
-Windows ne supprime automatiquement une notification que si l’utilisateur clique explicitement sur celle-ci.
+Windows supprimera automatiquement une notification uniquement si l’utilisateur clique explicitement sur la notification.
 
-Voici un exemple de ce que doit faire une application de messagerie…
+Voici un exemple de ce qu’une application de messagerie doit faire...
 
-1. L’utilisateur reçoit plusieurs toasts sur de nouveaux messages d’une conversation.
-2. L’utilisateur appuie sur l’un de ces toasts pour ouvrir la conversation.
-3. L’application ouvre la conversation, puis efface tous les toasts correspondant à cette conversation (à l’aide de [RemoveGroup](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_) dans le groupe fourni par l’application pour cette conversation).
-4. Le centre de notifications de l’utilisateur reflète à présent correctement l’état des notifications, puisqu’il ne reste pas de notifications obsolètes pour cette conversation dans le centre de notifications.
+1. L’utilisateur reçoit plusieurs toasts sur les nouveaux messages d’une conversation
+2. L’utilisateur appuie sur l’un de ces toasts pour ouvrir la conversation
+3. L’application ouvre la conversation, puis efface tous les toasts pour cette conversation (en utilisant [RemoveGroup](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_) sur le groupe d’applications pour cette conversation).
+4. Le centre de maintenance de l’utilisateur reflète désormais correctement l’état de notification, car aucune notification périmée pour cette conversation n’est laissée dans le centre de maintenance.
 
-Pour en savoir plus sur l’effacement de toutes les notifications ou la suppression de notifications spécifiques, consultez [démarrage rapide : Gestion des notifications Toast dans le centre de](https://docs.microsoft.com/previous-versions/windows/apps/dn631260(v=win.10))maintenance (XAML).
+Pour en savoir plus sur l’effacement de toutes les notifications ou la suppression de notifications spécifiques, consultez [démarrage rapide : gestion des notifications Toast dans le centre de maintenance (XAML)](https://docs.microsoft.com/previous-versions/windows/apps/dn631260(v=win.10)).
 
 
 ## <a name="activation-handling"></a>Gestion de l’activation
 
-Dans Windows 10, lorsque l’utilisateur clique sur votre toast, vous pouvez faire activer votre application de deux manières différentes...
+Dans Windows 10, lorsque l’utilisateur clique sur votre toast, vous pouvez faire en sorte que le Toast active votre application de deux manières différentes...
 
 * Activation au premier plan
 * Activation en arrière-plan
 
 > [!NOTE]
-> Si vous utilisez les modèles de toast hérités de Windows 8.1, c’est la méthode **OnLaunched** qui est appelée à la place de **OnActivated**. La documentation suivante s’applique uniquement aux notifications Windows 10 modernes utilisant la bibliothèque Notifications (ou le modèle ToastGeneric si vous utilisez le code XML brut).
+> Si vous utilisez les modèles Toast hérités de Windows 8.1, **OnLaunched** est appelé à la place de **OnActivated**. La documentation suivante s’applique uniquement aux notifications Windows 10 modernes qui utilisent la bibliothèque de notifications (ou le modèle ToastGeneric si vous utilisez du code XML brut).
 
 
 ### <a name="handling-foreground-activation"></a>Gestion de l’activation au premier plan
 
-Dans Windows 10, lorsqu’un utilisateur clique sur un toast moderne (ou un bouton du toast), la méthode **OnActivated** est appelée à la place de **OnLaunched**, avec un nouveau type d’activation : **ToastNotification**. Le développeur peut donc facilement distinguer une activation de toast et effectuer les tâches en conséquence.
+Dans Windows 10, lorsqu’un utilisateur clique sur un toast moderne (ou un bouton sur le Toast), **OnActivated** est appelé à la place de **OnLaunched**, avec un nouveau type d’activation – **ToastNotification**. Ainsi, le développeur est en mesure de distinguer facilement l’activation d’un toast et d’effectuer des tâches en conséquence.
 
-Dans l’exemple affiché ci-dessous, vous pouvez récupérer la chaîne d’arguments que vous avez initialement indiquée dans le contenu de toast. Vous pouvez également récupérer l’entrée de l’utilisateur dans vos zones de texte et zones de sélection.
+Dans l’exemple ci-dessous, vous pouvez récupérer la chaîne d’arguments que vous avez initialement fournie dans le contenu Toast. Vous pouvez également récupérer l’entrée fournie par l’utilisateur dans vos zones de texte et zones de sélection.
 
 > [!IMPORTANT]
-> Vous devez initialiser votre image et activer votre fenêtre tout comme votre code **OnLaunched**. **La méthode OnLaunched n’est PAS appelée si l’utilisateur clique sur votre toast**, même si votre application a été fermée et est démarrée pour la première fois. Nous recommandons souvent de combiner les méthodes **OnLaunched** et **OnActivated** en une méthode `OnLaunchedOrActivated` qui vous est propre, car une même initialisation doit se produire dans les deux.
+> Vous devez initialiser votre Frame et activer votre fenêtre comme votre code **OnLaunched** . **OnLaunched n’est pas appelé si l’utilisateur clique sur votre toast**, même si votre application a été fermée et est lancée pour la première fois. Nous vous recommandons souvent de combiner **OnLaunched** et **OnActivated** dans `OnLaunchedOrActivated` votre propre méthode, car la même initialisation doit se produire dans les deux.
 
 ```csharp
 protected override void OnActivated(IActivatedEventArgs e)
@@ -359,11 +359,11 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 ## <a name="handling-background-activation"></a>Gestion de l’activation en arrière-plan
 
-Si vous spécifiez l’activation en arrière-plan dans votre toast (ou sur un bouton du toast), votre tâche en arrière-plan sera exécutée à la place de l’activation de votre application au premier plan.
+Lorsque vous spécifiez l’activation en arrière-plan sur votre toast (ou sur un bouton à l’intérieur du Toast), votre tâche en arrière-plan est exécutée au lieu d’activer votre application de premier plan.
 
-Pour plus d’informations sur les tâches en arrière-plan, consultez [Prendre en charge votre application avec des tâches en arrière-plan](/windows/uwp/launch-resume/support-your-app-with-background-tasks).
+Pour plus d’informations sur les tâches en arrière-plan, consultez [prendre en charge votre application avec des tâches en arrière-plan](/windows/uwp/launch-resume/support-your-app-with-background-tasks).
 
-Si vous ciblez les builds 14393 ou supérieures, vous pouvez utiliser des tâches en arrière-plan in-process, ce qui simplifie considérablement les choses. Notez que l’exécution des tâches en arrière-plan in-process échoue sur les versions plus anciennes de Windows. Nous allons utiliser une tâche en arrière-plan in-process dans cet exemple de code.
+Si vous ciblez la version 14393 ou une version ultérieure, vous pouvez utiliser des tâches en arrière-plan in-process, ce qui simplifie beaucoup les choses. Notez que les tâches en arrière-plan in-process ne peuvent pas s’exécuter sur des versions antérieures de Windows. Nous allons utiliser une tâche en arrière-plan in-process dans cet exemple de code.
 
 ```csharp
 const string taskName = "ToastBackgroundTask";
@@ -389,7 +389,7 @@ BackgroundTaskRegistration registration = builder.Register();
 ```
 
 
-Dans votre fichier App.xaml.cs, remplacez la méthode OnBackgroundActivated pour pouvoir récupérer les arguments prédéfinis et les entrées utilisateur, à l’instar de l’activation au premier plan.
+Ensuite, dans votre App.xaml.cs, remplacez la méthode OnBackgroundActivated, vous pouvez récupérer les arguments prédéfinis et l’entrée utilisateur, de la même façon que l’activation de premier plan.
 
 ```csharp
 protected override async void OnBackgroundActivated(BackgroundActivatedEventArgs args)
@@ -416,9 +416,9 @@ protected override async void OnBackgroundActivated(BackgroundActivatedEventArgs
 
 
 
-## <a name="plain-vanilla-code-snippets"></a>Extraits de code standard
+## <a name="plain-vanilla-code-snippets"></a>Extraits de code « vanille » en clair
 
-Si vous n’utilisez pas la bibliothèque Notifications de NuGet, vous pouvez construire manuellement votre fichier XML, comme illustré ci-dessous pour créer un objet [ToastNotification](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification).
+Si vous n’utilisez pas la bibliothèque de notifications de NuGet, vous pouvez construire manuellement votre code XML comme indiqué ci-dessous pour créer un [ToastNotification](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification).
 
 ```csharp
 using Windows.UI.Notifications;

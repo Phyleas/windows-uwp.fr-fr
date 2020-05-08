@@ -13,20 +13,20 @@ design-contact: jeffarn
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 431b8912e43647bc2678aaab7efc9ec68b866d10
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 24cc85c255f26b61603690d6b39c3a6ffdcbb544
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209995"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970724"
 ---
 # <a name="designing-for-xbox-and-tv"></a>Conception pour Xbox et télévision
 
-Concevez votre application de plateforme Windows universelle (UWP) pour une esthétique et un fonctionnement optimaux sur les écrans de télévision et Xbox One.
+Concevez votre application d’application Windows pour qu’elle fonctionne correctement et fonctionne bien sur les écrans Xbox One et télévision.
 
 Consultez les [interactions du boîtier et du contrôle à distance](../input/gamepad-and-remote-interactions.md) pour obtenir des conseils sur les expériences d’interaction dans les applications UWP dans une expérience de *10 mètres* .
 
-## <a name="overview"></a>Overview
+## <a name="overview"></a>Vue d’ensemble
 
 La plateforme Windows universelle vous permet de créer des expériences agréables sur plusieurs types d’appareils Windows 10.
 La plupart des fonctionnalités fournies par l’infrastructure UWP permettent aux applications d’utiliser la même interface utilisateur sur ces appareils, sans travail supplémentaire.
@@ -66,23 +66,23 @@ Les expériences les plus immersives et cinématographiques se passent sur grand
 
 À présent que vous connaissez les principes d’une bonne conception d’application UWP pour une expérience « 10-foot », lisez les descriptions suivantes pour vous approprier les différentes façons d’optimiser votre application et créer une expérience utilisateur améliorée.
 
-| Composant        | Description           |
+| Fonctionnalité        | Description           |
 | -------------------------------------------------------------- |--------------------------------|
-| [Dimensionnement des éléments d’interface utilisateur](#ui-element-sizing)  | La plateforme Windows universelle utilise la [mise à l’échelle et les pixels effectifs](../basics/design-and-ui-intro.md#effective-pixels-and-scaling) pour mettre à l’échelle l’interface utilisateur en fonction de la distance d’affichage. Le fait de comprendre le redimensionnement et de l’appliquer à votre interface utilisateur vous aide à optimiser votre environnement de 3 mètres.  |
-|  [Zone TV sécurisée](#tv-safe-area) | La plateforme UWP évite automatiquement et par défaut l’affichage de contenu dans les zones non adaptées à l’écran de TV (près des bords de l’écran). Cela crée cependant un effet « d’encadré » ; l’interface utilisateur semble alors s’afficher dans un cadre. Pour que votre application soit véritablement immersive sur les écrans de télévision, vous devez la modifier afin qu’elle s’étende jusqu’aux bords des écrans compatibles. |
+| [Redimensionnement des éléments de l’interface utilisateur](#ui-element-sizing)  | La plateforme Windows universelle utilise la [mise à l’échelle et les pixels effectifs](../basics/design-and-ui-intro.md#effective-pixels-and-scaling) pour mettre à l’échelle l’interface utilisateur en fonction de la distance d’affichage. Le fait de comprendre le redimensionnement et de l’appliquer à votre interface utilisateur vous aide à optimiser votre environnement de 3 mètres.  |
+|  [Zones adaptées à l’écran de TV](#tv-safe-area) | La plateforme UWP évite automatiquement et par défaut l’affichage de contenu dans les zones non adaptées à l’écran de TV (près des bords de l’écran). Cela crée cependant un effet « d’encadré » ; l’interface utilisateur semble alors s’afficher dans un cadre. Pour que votre application soit véritablement immersive sur les écrans de télévision, vous devez la modifier afin qu’elle s’étende jusqu’aux bords des écrans compatibles. |
 | [Couleurs](#colors)  |  La plateforme UWP prend en charge les thèmes de couleur. Une application qui respecte le thème du système sera **foncée** par défaut sur Xbox One. Si votre application possède un thème de couleur spécifique, gardez à l’esprit que certaines couleurs ne fonctionnent pas correctement sur les écrans de télévision et doivent donc être évitées. |
 | [Son](../style/sound.md)    | Les sons jouent un rôle clé dans l’expérience « 10-foot », contribuant ainsi à l’envoi de commentaires à l’utilisateur. La plateforme UWP fournit des fonctionnalités qui activent automatiquement les sons des contrôles courants lorsque l’application s’exécute sur Xbox One. Découvrez la prise en charge des sons intégrée à la plateforme UWP et comment en tirer partie.    |
-| [Instructions pour les contrôles d’interface utilisateur](#guidelines-for-ui-controls)  |  Il existe plusieurs contrôles d’interface utilisateur qui fonctionnent correctement sur plusieurs appareils, mais pour lesquels certains éléments doivent être pris en compte s’ils sont utilisés sur un téléviseur. Découvrez certaines meilleures pratiques portant sur l’utilisation de ces contrôles lors de la conception pour l’expérience « 10-foot ». |
+| [Recommandations en matière de contrôles d’interface utilisateur](#guidelines-for-ui-controls)  |  Il existe plusieurs contrôles d’interface utilisateur qui fonctionnent correctement sur plusieurs appareils, mais pour lesquels certains éléments doivent être pris en compte s’ils sont utilisés sur un téléviseur. Découvrez certaines meilleures pratiques portant sur l’utilisation de ces contrôles lors de la conception pour l’expérience « 10-foot ». |
 | [Déclencheur d’état visuel personnalisé pour Xbox](#custom-visual-state-trigger-for-xbox) | Pour personnaliser votre application UWP pour l’expérience « 10-foot », nous vous recommandons d’utiliser un *déclencheur d’état visuel* personnalisé pour modifier la disposition lorsque l’application détecte son lancement sur une console Xbox. |
 
 Outre les considérations relatives à la conception et à la mise en page précédentes, vous devez prendre en compte un certain nombre d’optimisations d' [interaction de contrôle à distance](../input/gamepad-and-remote-interactions.md) pour créer votre application.
 
-| Composant        | Description           |
+| Fonctionnalité        | Description           |
 | -------------------------------------------------------------- |--------------------------------|
-| [Navigation dans le focus XY et interaction](../input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction) | La **navigation de focus XY** permet à l’utilisateur de naviguer dans l’interface utilisateur de votre application. Toutefois, cela limite la navigation à quatre directions : haut, bas, gauche et droite. Cette section apporte des recommandations pour y remédier ainsi que d’autres considérations. |
+| [Interaction et navigation en mode focus XY](../input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction) | La **navigation de focus XY** permet à l’utilisateur de naviguer dans l’interface utilisateur de votre application. Toutefois, cela limite la navigation à quatre directions : haut, bas, gauche et droite. Cette section apporte des recommandations pour y remédier ainsi que d’autres considérations. |
 | [Mode de la souris](../input/gamepad-and-remote-interactions.md#mouse-mode)|La navigation au focus XY n’est pas pratique, voire possible, pour certains types d’applications, telles que les cartes ou le dessin et la peinture d’applications. Dans ce cas, le **mode souris** permet aux utilisateurs de naviguer librement avec un boîtier ou un contrôle à distance, tout comme une souris sur un PC.|
-| [Focus visuel](../input/gamepad-and-remote-interactions.md#focus-visual)  | L’élément visuel de focus est une bordure qui met en surbrillance l’élément d’interface utilisateur actuellement actif. Cela permet à l’utilisateur d’identifier rapidement l’interface utilisateur avec laquelle il navigue ou d’interagir.  |
-| [Focalisation sur l’engagement](../input/gamepad-and-remote-interactions.md#focus-engagement) | L’engagement de focus oblige l’utilisateur à appuyer sur le bouton **a/SELECT** sur un boîtier de commande ou un contrôle à distance lorsqu’un élément d’interface utilisateur a le focus pour interagir avec lui. |
+| [Visuel du focus](../input/gamepad-and-remote-interactions.md#focus-visual)  | L’élément visuel de focus est une bordure qui met en surbrillance l’élément d’interface utilisateur actuellement actif. Cela permet à l’utilisateur d’identifier rapidement l’interface utilisateur avec laquelle il navigue ou d’interagir.  |
+| [Activation du focus](../input/gamepad-and-remote-interactions.md#focus-engagement) | L’engagement de focus oblige l’utilisateur à appuyer sur le bouton **a/SELECT** sur un boîtier de commande ou un contrôle à distance lorsqu’un élément d’interface utilisateur a le focus pour interagir avec lui. |
 | [Boutons matériels](../input/gamepad-and-remote-interactions.md#hardware-buttons) | Le boîtier de commande et le contrôle à distance fournissent des boutons et des configurations très différents. |
 
 > [!NOTE]
@@ -147,7 +147,7 @@ bool result =
     Windows.UI.ViewManagement.ApplicationViewScaling.TrySetDisableLayoutScaling(true);
 ```
 
-`result` vous indique si vous avez correctement choisi.
+`result`vous indiquera si vous avez correctement choisi.
 
 Pour plus d’informations et des exemples de code HTML/JavaScript, consultez [Comment désactiver la mise à l’échelle](../../xbox-apps/disable-scaling.md).
 
@@ -163,7 +163,7 @@ La zone inadaptée à l’écran de TV est représentée par la zone bleue dans 
 
 Vous pouvez définir l’arrière-plan sur une couleur statique ou une couleur de thème, voire sur une image, comme le démontrent les extraits de code suivants.
 
-### <a name="theme-color"></a>Couleur de thème
+### <a name="theme-color"></a>Couleur du thème
 
 ```xml
 <Page x:Class="Sample.MainPage"
@@ -280,7 +280,7 @@ Pendant qu’une liste ou une grille est étendue de la sorte, il est important 
 
 ![Le focus de la grille défilante doit être conservé à l’intérieur de la zone adaptée à l’écran de TV](images/designing-for-tv/scrolling-grid-focus.png)
 
-La plateforme UWP comporte des fonctionnalités qui permettent de conserver le visuel du focus à l’intérieur des [VisibleBounds](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.visiblebounds), mais vous devez ajouter du remplissage pour vous assurer que les éléments de liste/grille peuvent défiler à l’écran à l’intérieur de la zone adaptée à l’écran de TV. Plus précisément, vous ajoutez une marge positive à la classe [ItemsPresenter](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) des classes [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView) ou [GridView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsPresenter), comme l’illustre l’extrait de code suivant :
+La plateforme UWP comporte des fonctionnalités qui permettent de conserver le visuel du focus à l’intérieur des [VisibleBounds](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.visiblebounds), mais vous devez ajouter du remplissage pour vous assurer que les éléments de liste/grille peuvent défiler à l’écran à l’intérieur de la zone adaptée à l’écran de TV. Plus précisément, vous ajoutez une marge positive au [ItemsPresenter](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsPresenter)de [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) ou de [GridView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView), comme dans l’extrait de code suivant :
 
 ```xml
 <Style x:Key="TitleSafeListViewStyle"
@@ -333,7 +333,7 @@ Vous placez l’extrait de code précédent dans les ressources de la page ou de
 > [!NOTE]
 > Cet extrait de code est spécifiquement conçu pour les contrôles `ListView`. Pour un style `GridView`, définissez l’attribut [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype) des éléments [ControlTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) et [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) sur `GridView`.
 
-Pour un contrôle plus précis de la façon dont les éléments sont mis en vue, si votre application cible la version 1803 ou une version ultérieure, vous pouvez utiliser l' [événement UIElement. BringIntoViewRequested](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested). Vous pouvez le placer sur le [ItemsPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) pour que **ListView**/**GridView** pour l’intercepter avant le fonctionnement de **ScrollViewer** interne, comme dans les extraits de code suivants :
+Pour un contrôle plus précis de la façon dont les éléments sont mis en vue, si votre application cible la version 1803 ou une version ultérieure, vous pouvez utiliser l' [événement UIElement. BringIntoViewRequested](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested). Vous pouvez le placer sur le [ItemsPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) pour que le contrôle**GridView** **ListView**/puisse l’intercepter avant que le **ScrollViewer** interne ne fasse, comme dans les extraits de code suivants :
 
 ```xaml
 <GridView x:Name="gridView">
@@ -383,7 +383,7 @@ private void ItemsWrapGrid_BringIntoViewRequested(UIElement sender, BringIntoVie
 
 ## <a name="colors"></a>Couleurs
 
-Par défaut, la plateforme Windows universelle adapte les couleurs de votre application à la plage de couleurs adaptées aux écrans de TV (voir [Couleurs adaptées aux écrans de TV](#tv-safe-colors) pour plus d’informations) afin que votre application s’affiche correctement sur n’importe quel téléviseur. De plus, vous pouvez apporter des améliorations à la palette de couleurs de votre application pour optimiser l’expérience visuelle sur télévision.
+Par défaut, le plateforme Windows universelle met à l’échelle les couleurs de votre application vers la plage TV sécurisée (pour plus d’informations, consultez [couleurs sécurisées pour les téléviseurs](#tv-safe-colors) ), afin que votre application fonctionne correctement sur n’importe quelle TV. En outre, il existe des améliorations que vous pouvez apporter à l’ensemble de couleurs que votre application utilise pour améliorer l’expérience visuelle sur la télévision.
 
 ### <a name="application-theme"></a>Thème d’application
 
@@ -403,7 +403,7 @@ Dans la mesure où votre application appelle ces couleurs d’accentuation par l
 
 Notez également que l’ensemble des couleurs utilisateur sur Xbox One n’est pas le même que sur les PC, téléphones et autres appareils.
 
-Tant que votre application utilise une ressource de pinceau, telle que **SystemControlForegroundAccentBrush**, ou une ressource de couleur (**SystemAccentColor**), ou appelle les couleurs d’accentuation directement via l’API [UIColorType.Accent*](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.UIColorType), ces couleurs sont remplacées par des couleurs d’accentuation disponibles sur Xbox One. Les couleurs de pinceau à contraste élevé sont également extraites à partir du système de la même manière que sur un PC et un téléphone.
+Tant que votre application utilise une ressource pinceau telle que **SystemControlForegroundAccentBrush**ou une ressource de couleur (**SystemAccentColor**), ou qu’elle appelle à la place des couleurs d’accentuation directement via l’API [UIColorType. accent *](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.UIColorType) , ces couleurs sont remplacées par des couleurs d’accentuation disponibles sur Xbox One. Les couleurs du pinceau à contraste élevé sont également extraites du système de la même façon que sur un PC et un téléphone.
 
 Pour en savoir plus sur la couleur d’accentuation en général, voir [Couleur d’accentuation](../style/color.md#accent-color).
 
@@ -413,16 +413,16 @@ Lors de la conception d’applications pour la télévision, notez que les coule
 
 ### <a name="tv-safe-colors"></a>Couleurs adaptées aux écrans de TV
 
-Les valeurs RVB d’une couleur représentent l’intensité du rouge, du vert et du bleu. Les écrans de télévision ne gèrent pas très bien les intensités extrêmes &mdash; ces couleurs peuvent produire un effet de « bandes » ou apparaître délavées sur certains écrans de télévision. En outre, les couleurs à haute intensité peuvent provoquer un effet Bloom (les pixels avoisinants émettent les mêmes couleurs). Bien que les avis divergent sur quelles couleurs sont adaptées aux écrans de TV, les couleurs dont les valeurs RVB sont comprises entre 16 et 235 (ou 10-EB en notation hexadécimale) sont généralement adaptées aux écrans de TV.
+Les valeurs RVB d’une couleur représentent l’intensité du rouge, du vert et du bleu. Les téléviseurs ne traitent pas très&mdash;bien les intensités extrêmes. elles peuvent produire un effet à bande étrange ou sembler pâles sur certains téléviseurs. En outre, les couleurs à haute intensité peuvent provoquer un effet Bloom (les pixels avoisinants émettent les mêmes couleurs). Bien que les avis divergent sur quelles couleurs sont adaptées aux écrans de TV, les couleurs dont les valeurs RVB sont comprises entre 16 et 235 (ou 10-EB en notation hexadécimale) sont généralement adaptées aux écrans de TV.
 
 ![Plage de couleurs adaptées aux écrans de TV](images/designing-for-tv/tv-safe-colors-2.png)
 
-Historiquement, les applications sur Xbox devaient personnaliser leurs couleurs afin qu’elles soient comprises dans cette plage de couleurs « adaptées aux écrans de TV ». Toutefois, depuis Fall Creators Update, Xbox One adapte automatiquement le contenu de la plage complète à la plage adaptée aux écrans de TV. Cela signifie que la plupart des développeurs d’applications n’ont plus à se préoccuper des couleurs adaptées aux écrans de TV.
+Historiquement, les applications sur Xbox devaient adapter leurs couleurs pour qu’elles tombent dans cette plage de couleurs « sécurisée pour la télévision ». Toutefois, à partir de la mise à jour des créateurs de automne, Xbox One met automatiquement à l’échelle le contenu complet de la plage TV. Cela signifie que la plupart des développeurs d’applications n’ont plus à se soucier des couleurs TV-safe.
 
 > [!IMPORTANT]
-> Cet effet d’adaptation des couleurs n’est pas appliqué au contenu vidéo qui se trouve déjà dans la plage de couleurs adaptées aux écrans de télévision lors de la lecture à l’aide de [Media Foundation](https://docs.microsoft.com/windows/desktop/medfound/microsoft-media-foundation-sdk).
+> Le contenu vidéo qui est déjà dans la plage de couleurs sécurisée pour la télévision n’a pas cet effet de mise à l’échelle des couleurs appliqué en cas de lecture à l’aide de [Media Foundation](https://docs.microsoft.com/windows/desktop/medfound/microsoft-media-foundation-sdk).
 
-Si vous développez une application à l’aide de DirectX 11 ou DirectX 12, et créez votre propre chaîne d’échange pour effectuer le rendu de l’interface utilisateur ou de la vidéo, vous pouvez spécifier l’espace de couleur que vous utilisez en appelant [IDXGISwapChain3::SetColorSpace1](https://docs.microsoft.com/windows/desktop/api/dxgi1_4/nf-dxgi1_4-idxgiswapchain3-setcolorspace1), qui indiquera au système s’il a besoin d’adapter les couleurs ou non.
+Si vous développez une application à l’aide de DirectX 11 ou DirectX 12 et que vous créez votre propre chaîne de permutation pour afficher l’interface utilisateur ou la vidéo, vous pouvez spécifier l’espace de couleurs que vous utilisez en appelant [IDXGISwapChain3 :: SetColorSpace1](https://docs.microsoft.com/windows/desktop/api/dxgi1_4/nf-dxgi1_4-idxgiswapchain3-setcolorspace1), ce qui permet au système de savoir s’il doit mettre à l’échelle les couleurs.
 
 ## <a name="guidelines-for-ui-controls"></a>Recommandations en matière de contrôles d’interface utilisateur
 
@@ -436,11 +436,11 @@ Un contrôle [Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls
 
 Vous pouvez régler la propriété [Pivot.IsHeaderItemsCarouselEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.isheaderitemscarouselenabledproperty) sur `true` pour que les pivots gardent toujours la même position, et éviter que l’en-tête de pivot sélectionné se place toujours en première position. Cette expérience est plus intéressante pour les grands écrans tels que les écrans de télévision, car le renvoi à la ligne des en-têtes peut gêner les utilisateurs. Si tous les en-têtes de pivot ne sont pas visibles à l’écran en même temps, une barre de défilement permet aux clients d’afficher les autres en-têtes. Toutefois, vous devez vous assurer qu’ils tiennent tous à l’écran pour offrir la meilleure expérience possible. Pour en savoir plus, consultez [Onglets et pivots](/windows/uwp/design/controls-and-patterns/pivot).
 
-### <a name="navigation-pane-a-namenavigation-pane-"></a>Volet de navigation <a name="navigation-pane" />
+### <a name="navigation-pane"></a>Volet de navigation<a name="navigation-pane" />
 
 Un volet de navigation (également appelé *menu hamburger*) est un contrôle de navigation couramment utilisé dans les applications UWP. En règle générale, il s’agit d’un volet comportant plusieurs options dans un menu de style de liste qui dirigera l’utilisateur vers différentes pages. En général, ce volet démarre en mode réduit pour économiser l’espace ; l’utilisateur peut l’ouvrir en cliquant sur un bouton.
 
-Même si les volets de navigation sont très accessibles par souris et écran tactile, ce n’est pas le cas pour le boîtier de commande/la télécommande car l’utilisateur doit ouvrir le volet par le biais d’un bouton. Par conséquent, une bonne pratique consiste à rendre possible l’ouverture du panneau de navigation à l’aide de la touche **Affichage**, ainsi que son ouverture en naviguant tout à gauche de la page. Vous pouvez trouver un exemple de code montrant l’implémentation de ce modèle de conception dans le document [Navigation en mode focus programmé](../input/focus-navigation-programmatic.md#split-view-code-sample). L’accès aux contenus du volet est ainsi grandement facilité. Pour en savoir plus sur la façon dont les volets de navigation se comportent sur des écrans de tailles différentes et pour connaître les meilleures pratiques en matière de navigation pour le boîtier de commande/la télécommande, voir [Volets de navigation](../controls-and-patterns/navigationview.md).
+Même si les volets de navigation sont très accessibles par souris et écran tactile, ce n’est pas le cas pour le boîtier de commande/la télécommande car l’utilisateur doit ouvrir le volet par le biais d’un bouton. Par conséquent, une bonne pratique consiste à rendre possible l’ouverture du panneau de navigation à l’aide de la touche **Affichage**, ainsi que son ouverture en naviguant tout à gauche de la page. Vous trouverez un exemple de code sur la façon d’implémenter ce modèle de conception dans le document de [navigation de focus par programmation](../input/focus-navigation-programmatic.md#split-view-code-sample) . L’accès aux contenus du volet est ainsi grandement facilité. Pour en savoir plus sur la façon dont les volets de navigation se comportent sur des écrans de tailles différentes et pour connaître les meilleures pratiques en matière de navigation pour le boîtier de commande/la télécommande, voir [Volets de navigation](../controls-and-patterns/navigationview.md).
 
 ### <a name="commandbar-labels"></a>Libellés CommandBar
 
@@ -560,12 +560,12 @@ bool IsTenFoot = (Windows.System.Profile.AnalyticsInfo.VersionInfo.DeviceFamily 
 
 Après avoir effectué cette vérification, vous pouvez effectuer les réglages appropriés de votre interface utilisateur dans le bloc de code. 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 La conception pour l’expérience « 10-foot » implique de prendre en compte des points spéciaux qui la distinguent de la conception pour toute autre plateforme. Si vous pouvez certainement transférer directement votre application UWP vers Xbox One avec succès, cette application n’est pas nécessairement optimisée pour l’expérience « 10-foot », ce qui peut générer de la frustration chez l’utilisateur. Suivez les recommandations contenues dans cet article pour vous assurer que votre application fonctionne aussi bien que possible sur TV.
 
 ## <a name="related-articles"></a>Articles connexes
 
-- [Applications Device Primer for plateforme Windows universelle (UWP)](index.md)
+- [Initiation de l’appareil pour les applications d’application Windows](index.md)
 - [Interactions entre le boîtier de commande et la télécommande](../input/gamepad-and-remote-interactions.md)
 - [Son dans les applications UWP](../style/sound.md)

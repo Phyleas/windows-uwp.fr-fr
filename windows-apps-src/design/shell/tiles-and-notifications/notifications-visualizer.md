@@ -1,5 +1,5 @@
 ---
-Description: Notifications que visualiseur est une nouvelle application de plateforme universelle Windows (UWP) dans le Store qui permet aux développeurs de concevoir adaptative les vignettes dynamiques pour Windows 10.
+Description: Notifications Visualizer est une nouvelle application Windows du Store qui permet aux développeurs de concevoir des vignettes dynamiques adaptatives pour Windows 10.
 title: Notifications Visualizer
 ms.assetid: FCBB7BB1-2C79-484B-8FFC-26FE1934EC1C
 template: detail.hbs
@@ -7,24 +7,24 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e2bb5a450aebdf38f3d4f1a710f3537544dcddd6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c8d355570ef7002d1424457bf29f8161680f2c77
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57616674"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82971034"
 ---
 # <a name="notifications-visualizer"></a>Notifications Visualizer
 
  
 
 
-Visualiseur de notifications est une nouvelle application de plateforme universelle Windows (UWP) [dans le Store](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1) qui aide les développeurs à concevoir ADAPTATIF vignettes dynamiques et les notifications de toast interactive pour Windows 10.
+Le visualiseur de notifications est une nouvelle application d’application Windows [dans le Store](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1) qui aide les développeurs à concevoir des vignettes dynamiques et des notifications de Toast interactives pour Windows 10.
 
 
 ## <a name="overview"></a>Vue d’ensemble
 
-Notifications Visualizer fournit des aperçus visuels instantanés de votre vignette et notification toast lorsque vous modifiez la charge utile XML, comparables au mode Création/Éditeur XAML de Visual Studio. L’application contrôle également les erreurs, ce qui vous permet de créer une charge utile de vignette ou de notification toast valide.
+Le visualiseur de notifications fournit des aperçus visuels instantanés de vos notifications de vignettes et de toast à mesure que vous modifiez la charge utile XML, à l’instar de l’éditeur XAML ou de l’affichage de conception de Visual Studio. L’application recherche également des erreurs, ce qui vous permet de créer une charge utile ou une charge utile de notification Toast valide.
 
 Cette capture d’écran à partir de l’application montre la charge utile XML et la façon dont les tailles de vignette apparaissent sur un appareil sélectionné :
 
@@ -32,19 +32,19 @@ Cette capture d’écran à partir de l’application montre la charge utile XML
 
  
 
-Avec Notifications Visualizer, vous pouvez créer et tester des charges utiles de vignettes et de notifications toast adaptatives sans avoir à modifier et déployer votre propre application. Une fois que vous avez créé une charge utile avec des résultats visuels satisfaisants, vous pouvez l’intégrer dans votre application. Pour plus d’informations, voir [Envoyer une notification par vignette locale](sending-a-local-tile-notification.md) et [Envoyer un toast local](send-local-toast.md).
+Avec le visualiseur de notifications, vous pouvez créer et tester des charges utiles de vignette et de Toast adaptatives sans avoir à modifier et déployer votre propre application. Une fois que vous avez créé une charge utile avec des résultats visuels idéaux, vous pouvez l’intégrer à votre application. Consultez [Envoyer une notification de vignette locale](sending-a-local-tile-notification.md) et [Envoyer un toast local](send-local-toast.md) pour en savoir plus.
 
-**Remarque**    simulation du visualiseur de Notifications des notifications toast et de menu Démarrer de Windows n’est pas toujours totalement exacte, et il ne prend pas en charge certaines propriétés avancées de charge utile. Une fois la vignette ou le toast voulu obtenu, testez-le en épinglant la vignette ou en affichant le toast pour vérifier qu’il s’affiche comme vous le souhaitez.
+**Remarque :**    la simulation du visualiseur de notifications du menu Démarrer de Windows et les notifications Toast ne sont pas toujours complètement précises et ne prend pas en charge certaines propriétés de charge utile avancées. Lorsque vous avez la vignette ou le Toast souhaité, testez-le en épinglant la vignette ou en dépilant le toast pour vérifier qu’il s’affiche comme vous le souhaitez.
 
  
 
 ## <a name="features"></a>Fonctionnalités
 
-Notifications Visualizer est fourni avec quelques exemples de charges utiles pour montrer ce qu’il est possible de réaliser avec des vignettes dynamiques adaptatives et des notifications toast interactives et pour vous aider à démarrer. Vous pouvez tester les différentes options de texte, les gorupes/sous-groupes, les images d’arrière-plan, et vous pouvoir voir de quelle façon les vignettes s’adaptent aux différents écrans et appareils. Une fois les modifications effectuées, vous pouvez enregistrer votre charge utile mise à jour dans un fichier pour l’utiliser ultérieurement.
+Le visualiseur de notifications est fourni avec un certain nombre d’exemples de charge utile pour illustrer les possibilités offertes par les vignettes dynamiques adaptatives et les toasts interactifs pour vous aider à commencer. Vous pouvez tester les différentes options de texte, les gorupes/sous-groupes, les images d’arrière-plan, et vous pouvoir voir de quelle façon les vignettes s’adaptent aux différents écrans et appareils. Une fois les modifications effectuées, vous pouvez enregistrer votre charge utile mise à jour dans un fichier pour l’utiliser ultérieurement.
 
-L’éditeur fournit des avertissements et des erreurs en temps réel. Par exemple, si votre charge utile est supérieure à 5 Ko (limitation de la plateforme), Notifications Visualizer vous informe que votre charge utile dépasse cette limite. Vous êtes averti en cas de noms ou de valeurs d’attributs incorrects, ce qui vous permet de déboguer les problèmes visuels.
+L’éditeur fournit des avertissements et des erreurs en temps réel. Par exemple, si votre charge utile est supérieure à 5 Ko (limite de plateforme), le visualiseur de notifications vous avertit que la charge utile dépasse cette limite. Vous êtes averti en cas de noms ou de valeurs d’attributs incorrects, ce qui vous permet de déboguer les problèmes visuels.
 
-Vous pouvez contrôler les propriétés des vignettes comme le nom complet, la couleur, les logos, ShowName et la valeur de badge. Ces options vous aident à comprendre instantanément de quelle façon les propriétés des vignettes et les charges utiles de notification des vignettes interagissent, et quels sont les résultats produits.
+Vous pouvez contrôler les propriétés des vignettes, telles que le nom d’affichage, la couleur, les logos, ShowName et la valeur du badge. Ces options vous aident à comprendre instantanément de quelle façon les propriétés des vignettes et les charges utiles de notification des vignettes interagissent, et quels sont les résultats produits.
 
 Cette capture d’écran de l’application montre l’éditeur de vignettes :
 
@@ -54,6 +54,6 @@ Cette capture d’écran de l’application montre l’éditeur de vignettes :
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Obtenir des Notifications visualiseur dans le Store](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)
-* [Créer des vignettes ADAPTATIF](create-adaptive-tiles.md)
-* [Toasts interactives](adaptive-interactive-toasts.md)
+* [Obtenir Notifications Visualizer dans le Windows Store](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)
+* [Créer des vignettes adaptatives](create-adaptive-tiles.md)
+* [Toasts interactifs](adaptive-interactive-toasts.md)

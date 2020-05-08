@@ -1,5 +1,5 @@
 ---
-Description: Cette rubrique décrit la nouvelle interface utilisateur Windows permettant de sélectionner et de manipuler du texte, des images et des contrôles, et fournit des instructions d’expérience utilisateur qui doivent être prises en compte lors de l’utilisation de ces nouveaux mécanismes de sélection et de manipulation dans votre application UWP.
+Description: Cette rubrique décrit la nouvelle interface utilisateur Windows permettant de sélectionner et manipuler du texte, des images et des contrôles, et fournit des instructions d’expérience utilisateur qui doivent être prises en compte lors de l’utilisation de ces nouveaux mécanismes de sélection et de manipulation dans votre application Windows.
 title: Sélection de texte et d’images
 ms.assetid: d973ffd8-602e-47b5-ab0b-4b2a964ec53d
 label: Selecting text and images
@@ -8,23 +8,23 @@ keywords: clavier, texte, entrées, interactions avec l’utilisateur
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 56f09f2c903354159c63fa7226007cd65e57e69e
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: a118a7160842154a656e0f2d29783b1b2e676755
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257916"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970094"
 ---
 # <a name="selecting-text-and-images"></a>Sélection de texte et d’images
 
 
 Cet article décrit la sélection et la manipulation de texte, d’images et de contrôles, et fournit des recommandations en matière d’expérience utilisateur à prendre en compte lors de l’utilisation de ces mécanismes dans vos applications.
 
-> **API importantes** : [**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input), [**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
+> **API importantes**: [**Windows. UI. Xaml. Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input), [**Windows. UI. Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
  
 
 
-## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
+## <a name="dos-and-donts"></a>Choses à faire et à ne pas faire
 
 
 -   Utilisez des glyphes de police lors de l’implémentation de votre propre interface utilisateur de barre de redimensionnement. Le symbole de sélection est une combinaison de deux polices Segoe UI disponibles à l’échelle du système. L’utilisation de ressources de police simplifie les problèmes de rendu pour différentes valeurs de ppp et fonctionne bien avec les divers plateaux d’échelle d’interface utilisateur. Lorsque vous implémentez vos propres barres de redimensionnement, elles doivent partager les caractéristiques d’interface utilisateur suivantes :
@@ -45,22 +45,22 @@ Cet article décrit la sélection et la manipulation de texte, d’images et de 
 
 La sélection et la manipulation de texte représentent des difficultés particulières pour l’utilisateur en termes d’interactions tactiles. Les entrées effectuées par le biais de la souris, du stylo/stylet et du clavier sont des opérations extrêmement granulaires : un clic de souris ou un contact du stylo/stylet est généralement associé à un pixel unique, et une touche est appuyée ou non. Une entrée tactile n’est pas granulaire ; il est difficile d’associer la totalité de la surface de la pointe du doigt à un emplacement x-y spécifique sur l’écran pour placer avec précision un curseur de texte.
 
-**Considérations et recommandations**
+**Remarques et recommandations**
 
-Utilisez les contrôles intégrés exposés via les infrastructures de langage de Windows pour créer des applications qui fournissent l’expérience d’interaction utilisateur complète de la plateforme, y compris les comportements de sélection et de manipulation. La fonctionnalité d’interaction des contrôles intégrés se révèle suffisante pour la plupart des applications UWP.
+Utilisez les contrôles intégrés exposés par le biais des infrastructures de langage dans Windows pour générer des applications offrant une expérience d’interaction utilisateur de plateforme intégrale, y compris les comportements de sélection et de manipulation. Vous trouverez les fonctionnalités d’interaction des contrôles intégrés suffisantes pour la majorité des applications Windows.
 
-Lorsque vous utilisez des contrôles de texte UWP standard, vous ne pouvez pas personnaliser les comportements et les éléments visuels de sélection décrits dans cette rubrique.
+Lorsque vous utilisez des contrôles de texte Windows standard, les éléments visuels et les comportements de sélection décrits dans cette rubrique ne peuvent pas être personnalisés.
 
 **Sélection de texte**
 
-Si votre application nécessite une interface utilisateur personnalisée qui prend en charge la sélection de texte, nous vous recommandons de suivre les comportements de sélection de Windows décrits ici.
+Si votre application requiert une interface utilisateur personnalisée prenant en charge la sélection de texte, nous vous recommandons de suivre les comportements de sélection Windows décrits ici.
 
-**Contenu modifiable et non modifiable**
+**Contenu modifiable et contenu non modifiable**
 
 
-Avec l’entrée tactile, les interactions de sélection sont principalement effectuées par des gestes (par exemple, un appui pour placer un curseur d’insertion ou sélectionner un mot, et un glissement pour modifier une sélection). Comme pour les autres interactions tactiles Windows, les interactions chronométrées sont limitées au geste d’appui et de maintien pour afficher l’interface utilisateur d’informations. Pour plus d’informations, voir [Recommandations en matière de retour visuel](guidelines-for-visualfeedback.md).
+Avec l’entrée tactile, les interactions de sélection sont principalement effectuées par des gestes (par exemple, un appui pour placer un curseur d’insertion ou sélectionner un mot, et un glissement pour modifier une sélection). À l’instar des autres interactions tactiles de Windows, les interactions chronométrées sont limitées au geste d’appui prolongé pour afficher une interface utilisateur informative. Pour plus d’informations, voir [Recommandations en matière de retour visuel](guidelines-for-visualfeedback.md).
 
-Windows reconnaît deux États possibles pour les interactions de sélection, modifiables et non modifiables, et ajuste en conséquence l’interface utilisateur de sélection, les commentaires et les fonctionnalités.
+Windows reconnaît deux états possibles pour les interactions de sélection, modifiable et non modifiable, et ajuste l’interface utilisateur, le retour et la fonctionnalité de sélection de manière appropriée.
 
 **Contenu modifiable**
 
@@ -78,7 +78,7 @@ Les images suivantes montrent comment appeler le menu contextuel en appuyant dan
 
 ![Appuyez (ou effectuez un appui prolongé) dans la sélection ou sur un symbole de sélection/redimensionnement pour appeler le menu contextuel.](images/textselection-show-context.png)
 
-**Notez**  ces interactions varient quelque peu dans le cas d’un mot mal orthographié. L’appui sur un mot qui est marqué comme incorrectement orthographié entraîne la mise en surbrillance de la totalité du mot et l’appel du menu contextuel d’orthographe suggérée.
+**Notez**  que ces interactions varient quelque peu dans le cas d’un mot mal orthographié. L’appui sur un mot qui est marqué comme incorrectement orthographié entraîne la mise en surbrillance de la totalité du mot et l’appel du menu contextuel d’orthographe suggérée.
 
  
 
@@ -90,46 +90,40 @@ L’image suivante montre comment sélectionner un mot en appuyant au sein de ce
 
 Suivez les mêmes procédures que pour le texte modifiable pour ajuster la sélection et afficher le menu contextuel.
 
-**Manipulation d’objets**
+**Manipulation d’objet**
 
-Chaque fois que cela est possible, utilisez les mêmes ressources de symbole de redimensionnement (ou des ressources similaires) que la sélection de texte lors de l’implémentation d’une manipulation d’objet personnalisée dans une application UWP. Cela permet d’offrir une expérience d’interaction cohérente sur toute la plateforme.
+Dans la mesure du possible, utilisez les mêmes ressources de redimensionnement (ou similaire) que la sélection de texte lors de l’implémentation de la manipulation d’objets personnalisée dans une application Windows. Cela permet d’offrir une expérience d’interaction cohérente sur toute la plateforme.
 
 Par exemple, il est possible également d’utiliser des barres de redimensionnement dans des applications de traitement d’image prenant en charge le redimensionnement et le rognage ou dans des applications de lecteur multimédia fournissant des barres de progression réglables, comme illustré dans les images suivantes.
 
 ![lecteur multimédia avec barre de progression](images/gripper-mediaplayer.png)
 
-*Lecteur multimédia avec une barre de progression ajustable.*
+*Lecteur multimédia avec barre de progression réglable*
 
 ![image avec poignées de rognage](images/gripper-imagemanip.png)
 
-*Éditeur d’images avec des pinceaux de rognage.*
+*Éditeur d’images avec poignées de rognage*
 
-## <a name="related-articles"></a>Articles associés
+## <a name="related-articles"></a>Articles connexes
 
+### <a name="for-developers"></a>Pour les développeurs
 
+- [Interactions utilisateur personnalisées](https://docs.microsoft.com/windows/uwp/design/layout/index)
 
-**Pour les développeurs**
-* [Interactions utilisateur personnalisées](https://docs.microsoft.com/windows/uwp/design/layout/index)
+### <a name="samples"></a>Exemples
 
-**Exemples**
-* [Exemple d’entrée de base](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
-* [Exemple d’entrée à faible latence](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
-* [Exemple de mode d’interaction utilisateur](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
-* [Exemples de visuels de focus](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
+- [Exemple d’entrée de base](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+- [Exemple d’entrée à faible latence](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+- [Exemple de mode d’interaction utilisateur](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
+- [Exemples de visuels de focus](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
 
-**Exemples d’archives**
-* [Entrée : exemple d’événements d’entrée d’utilisateur XAML](https://code.msdn.microsoft.com/windowsapps/Input-3dff271b)
-* [Entrée : exemple de fonctionnalités de l’appareil](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
-* [Entrée : exemple de test de positionnement tactile](https://code.msdn.microsoft.com/windowsapps/Touch-Hit-Testing-sample-5e35c690)
-* [Exemple de défilement XAML, panoramique et zoom](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9)
-* [Entrée : exemple d’encre simplifiée](https://code.msdn.microsoft.com/windowsapps/Input-simplified-ink-sample-11614bbf)
-* [Entrée : exemple de gestes Windows 8](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
-* [Entrée : manipulations et mouvements (C++), exemple](https://code.msdn.microsoft.com/windowsapps/Manipulations-and-gestures-362b6b59)
-* [Exemple d’entrée tactile DirectX](https://code.msdn.microsoft.com/windowsapps/Simple-Direct3D-Touch-f98db97e)
- 
+### <a name="archive-samples"></a>Exemples d’archive
 
- 
-
-
-
-
+- [Entrée : exemple d’événements d’entrée utilisateur XAML](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20XAML%20user%20input%20events%20sample)
+- [Entrée : exemple de fonctionnalités de périphériques](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Input%20Device%20capabilities%20sample%20(Windows%208))
+- [Entrée : exemple de test de positionnement tactile](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20desktop%20samples/%5BC%2B%2B%5D-Windows%208%20desktop%20samples/C%2B%2B/Windows%208%20desktop%20samples/Input%20Touch%20hit%20testing%20sample)
+- [Exemple de défilement XAML, panoramique et zoom](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample)
+- [Entrée : exemple d’entrée manuscrite simplifiée](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Simplified%20ink%20sample)
+- [Entrée : exemple de mouvements Windows 8](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
+- [Entrée : manipulations et gestes, exemple](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer)
+- [Exemple d’entrée tactile DirectX](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%2B%2B%5D-Windows%208%20app%20samples/C%2B%2B/Windows%208%20app%20samples/DirectX%20touch%20input%20sample%20(Windows%208))

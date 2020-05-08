@@ -1,5 +1,5 @@
 ---
-Description: Fournit une liste de vérification pour vous aider à garantir que votre application UWP est accessible.
+Description: Fournit une liste de vérification pour vous aider à vous assurer que votre application Windows est accessible.
 ms.assetid: BB8399E2-7013-4F77-AF2C-C1A0E5412856
 title: Liste de vérification de l’accessibilité
 label: Accessibility checklist
@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b789102b90e63e5456c030f6eb90df372354d7a
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: c7775c2d6c9e579e14c9f607fa0a09b665dbb24b
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318998"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969760"
 ---
 # <a name="accessibility-checklist"></a>Liste de vérification de l’accessibilité
 
-Fournit une liste de vérification qui vous aide à vous assurer que votre application de plateforme Windows universelle (UWP) est accessible.
+Fournit une liste de vérification pour vous aider à vous assurer que votre application Windows est accessible.
 
 Nous fournissons ici une liste de vérification qui vous permet de vous assurer que votre application est accessible.
 
@@ -39,14 +39,14 @@ Nous fournissons ici une liste de vérification qui vous permet de vous assurer 
 
     Pour plus d’informations, voir [Interactions avec le clavier](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions).
 
-3. Vérifiez le texte est une taille accessible en lecture
+3. Vérifier que le texte est une taille lisible
 
-    * Windows inclut divers outils d’accessibilité et les paramètres que les utilisateurs peuvent tirer parti et ajuster à leurs propres besoins et les préférences pour la lecture de texte. Il s’agit des éléments suivants :
-        * L’outil Loupe, qui agrandit une zone sélectionnée de l’interface utilisateur. Vous devez vous assurer de que la disposition du texte dans votre application ne soit pas difficile à utiliser la loupe pour la lecture.
-        * Paramètres globaux de mise à l’échelle et la résolution dans **Paramètres -> système -> Affichage -> mise à l’échelle et la disposition**. Exactement quelles options de dimensionnement sont disponibles peuvent varier car cela dépend des capacités du périphérique d’affichage.
-        * Paramètres de taille de texte dans **Paramètres -> Options d’ergonomie -> affichage**. Ajuster la **agrandir le texte** paramètre pour spécifier uniquement la taille du texte dans la prise en charge des contrôles dans l’ensemble des applications et des écrans (tous les contrôles de texte UWP prend en charge le texte de l’expérience sans toute personnalisation ou la création de modèles de mise à l’échelle).
+    * Windows comprend différents outils et paramètres d’accessibilité dont les utilisateurs peuvent tirer parti et s’adapter à leurs propres besoins et préférences pour lire du texte. notamment :
+        * L’outil loupe, qui agrandit la zone sélectionnée de l’interface utilisateur. Vous devez vous assurer que la disposition du texte dans votre application ne complique pas l’utilisation de la loupe pour la lecture.
+        * Les paramètres de mise à l’échelle et de résolution globaux dans **paramètres->>système d’affichage->de l’échelle et de la disposition**. Les options de dimensionnement disponibles peuvent varier en fonction des capacités du périphérique d’affichage.
+        * Paramètres de taille du texte dans **paramètres->facilité d’accès->affichage**. Ajustez le paramètre **agrandir le texte** pour spécifier uniquement la taille du texte dans les contrôles de prise en charge pour l’ensemble des applications et écrans (tous les contrôles de texte UWP prennent en charge l’expérience de mise à l’échelle du texte sans personnalisation ni création de modèles).
         > [!NOTE]
-        > Le **vérifier tout plus volumineuses** paramètre permet à un utilisateur de spécifier leur taille par défaut pour le texte et les applications en général sur leur écran principal uniquement.
+        > Le paramètre **rendre tout** le plus grand permet à un utilisateur de spécifier la taille préférée du texte et des applications en général sur leur écran principal uniquement.
 
 4. Vérifiez visuellement votre interface utilisateur pour vous assurer que le contraste du texte est suffisant, que le rendu des éléments est correct dans les thèmes à contraste élevé et que les couleurs sont utilisées correctement.
 
@@ -64,9 +64,9 @@ Nous fournissons ici une liste de vérification qui vous permet de vous assurer 
 
 6. Assurez-vous que vos paramètres de manifeste d’application respectent les recommandations en matière d’accessibilité.
 
-7. Déclarez votre application comme accessible dans le Microsoft Store.
+7. Déclarez votre application comme accessible dans le Microsoft Store.
 
-    Si vous avez implémenté la prise en charge de l’accessibilité de base, le fait de marquer votre application comme accessible dans le Microsoft Store peut vous permettre d’atteindre davantage de clients et d’obtenir davantage de bonnes évaluations.
+    Si vous avez implémenté la prise en charge de l’accessibilité de base, la déclaration de votre application comme accessible dans le Microsoft Store peut aider à atteindre davantage de clients et à obtenir des évaluations supplémentaires.
 
     Pour plus d’informations, voir [Accessibilité dans le Windows Store](accessibility-in-the-store.md).
 
@@ -75,5 +75,5 @@ Nous fournissons ici une liste de vérification qui vous permet de vous assurer 
 * [Exigences de texte accessible](accessible-text-requirements.md)
 * [Mise à l’échelle du texte](../input/text-scaling.md)
 * [Accessibilité](accessibility.md)
-* [Conception pour l’accessibilité](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-overview)
+* [Concevoir des applications pour l’accessibilité](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-overview)
 * [Pratiques à éviter](practices-to-avoid.md)

@@ -1,5 +1,5 @@
 ---
-Description: Créez des applications de plateforme Windows universelle (UWP) offrant des expériences d’interaction utilisateur intuitives et distinctives qui sont optimisées pour le pavé tactile, mais sont cohérentes du point de vue du fonctionnement entre les périphériques d’entrée.
+Description: Créez des applications d’application Windows avec des expériences d’interaction utilisateur intuitives et distinctives qui sont optimisées pour le pavé tactile, mais qui fonctionnent de manière fonctionnelle sur les périphériques d’entrée.
 title: Interactions du pavé tactile
 ms.assetid: CEDEA30A-FE94-4553-A7FB-6C1FA44F06AB
 label: Touchpad interactions
@@ -8,17 +8,17 @@ keywords: pavé tactile, PTP, entrées tactiles, pointeur, entrées, interaction
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 991d85edd9c0a51412d33b48e364974d2095410e
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: afbdf5c672328acfc60a82f9f66c75dc52370c99
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258229"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970234"
 ---
 # <a name="touchpad-design-guidelines"></a>Recommandations en matière de conception pour le pavé tactile
 
 
-Concevez votre application afin que les utilisateurs puissent interagir avec elle par le biais d’un pavé tactile. Un pavé tactile combine l’entrée tactile multipoint indirecte et l’entrée de précision d’un dispositif de pointage comme la souris. Fort de cette combinaison, le pavé tactile est adapté à l’interface utilisateur optimisée pour l’interaction tactile et aux cibles d’applications de productivité plus petites.
+Concevez votre application afin que les utilisateurs puissent interagir avec elle par le biais d’un pavé tactile. Un pavé tactile combine l’entrée tactile multipoint indirecte et l’entrée de précision d’un dispositif de pointage comme la souris. Grâce à cette combinaison, le pavé tactile est adapté à l’interface utilisateur optimisée pour l’interaction tactile et aux cibles d’applications de productivité plus petites.
 
  
 
@@ -29,7 +29,7 @@ Les interactions de pavé tactile nécessitent trois éléments :
 
 -   Un pavé tactile standard ou un pavé tactile de précision Windows.
 
-    Les pavés tactiles de précision sont optimisés pour les périphériques de plateforme Windows universelle (UWP). Ils permettent au système de gérer certains aspects de l’expérience de pavé tactile en mode natif, comme le suivi du doigt et la détection de la paume, pour une expérience plus cohérente sur tous les périphériques.
+    Les pavés tactiles de précision sont optimisés pour les appareils d’applications Windows. Ils permettent au système de gérer certains aspects de l’expérience de pavé tactile en mode natif, comme le suivi du doigt et la détection de la paume, pour une expérience plus cohérente sur tous les périphériques.
 
 -   Le contact direct d’un ou plusieurs doigts sur le pavé tactile.
 -   Déplacement des contacts tactiles (ou absence de déplacement, basé sur un seuil de temps).
@@ -40,9 +40,9 @@ Les données d’entrée fournies par le capteur du pavé tactile peuvent :
 -   Faire office de méthode d’entrée alternative, à la manière d’une souris ou d’un stylet.
 -   Compléter ou modifier des aspects d’autres méthodes d’entrée, par exemple en maculant un trait d’encre dessiné avec un stylet.
 
-Un pavé tactile combine l’entrée tactile multipoint indirecte et l’entrée de précision d’un dispositif de pointage comme la souris. Fort de cette combinaison, le pavé tactile est adapté à l’interface utilisateur optimisée pour l’interaction tactile et aux cibles d’applications de productivité, généralement plus petites, et à l’environnement de bureau. Optimisez la conception de votre application UWP pour l’entrée tactile et tirez parti de la prise en charge par défaut du pavé tactile.
+Un pavé tactile combine l’entrée tactile multipoint indirecte et l’entrée de précision d’un dispositif de pointage comme la souris. Fort de cette combinaison, le pavé tactile est adapté à l’interface utilisateur optimisée pour l’interaction tactile et aux cibles d’applications de productivité, généralement plus petites, et à l’environnement de bureau. Optimisez votre conception d’application Windows pour les entrées tactiles et bénéficiez d’une prise en charge du pavé tactile par défaut.
 
-Outre la prise en charge intégrée de l’entrée tactile, nous vous recommandons d’utiliser l’événement [**PointerEntered**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered) pour fournir des commandes d’interface utilisateur accessibles par la souris grâce à la convergence des expériences d’interaction prises en charge par les pavés tactiles. Par exemple, utilisez les boutons Précédent et Suivant pour permettre aux utilisateurs de tourner les pages de contenu ou d’effectuer un mouvement panoramique de ce contenu.
+En raison de la convergence des expériences d’interaction prises en charge par les pavés tactiles, nous vous recommandons d’utiliser l’événement [**PointerEntered**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered) pour fournir des commandes d’interface utilisateur de type souris en plus de la prise en charge intégrée de l’entrée tactile. Par exemple, utilisez les boutons Précédent et Suivant pour permettre aux utilisateurs de tourner les pages de contenu ou d’effectuer un mouvement panoramique de ce contenu.
 
 Les mouvements et les instructions abordés ici permettent de vérifier que votre application prend en charge les entrées du pavé tactile de façon transparente, et avec un minimum de code.
 
@@ -55,11 +55,11 @@ Le pavé tactile de précision permet aux utilisateurs de définir bien plus de 
 
 ![paramètres du pavé tactile standard](images/mouse-touchpad-settings-standard.png)
 
-<sup>Paramètres de\\ du pavé tactile standard\\</sup>
+<sup>Paramètres\\ du\\ pavé tactile standard</sup>
 
 ![paramètres du pavé tactile de précision Windows](images/mouse-touchpad-settings-ptp.png)
 
-<sup>Paramètres du pavé tactile Windows\\ Precision\\\\</sup>
+<sup>Paramètres\\ du\\ pavé\\ tactile Windows Precision</sup>
 
 Voici quelques exemples de mouvements optimisés pour le pavé tactile qui permettent d’effectuer des tâches courantes.
 
@@ -127,8 +127,8 @@ Pour plus d’informations concernant l’interrogation des fonctionnalités du 
 
 
 -   Quand des événements de déplacement ou de pointage permettent de détecter un curseur de pavé tactile, affichez une interface utilisateur spécifique à la souris pour indiquer la fonctionnalité exposée par l’élément. Si le curseur de pavé tactile ne bouge pas pendant un certain temps ou si l’utilisateur commence une interaction tactile, estompez progressivement l’interface utilisateur du pavé tactile. Cela maintient l’interface utilisateur propre et aérée.
--   N’utilisez pas le curseur pour le retour de pointage, car le retour fourni par l’élément est suffisant (voir Curseurs, ci-dessous).
--   N’affichez pas de retour visuel si un élément ne prend pas en charge l’interaction (par exemple, du texte statique).
+-   N’utilisez pas le curseur pour les commentaires au survol, les commentaires fournis par l’élément sont suffisants (consultez la section curseurs ci-dessous).
+-   N’affichez pas de retour visuel si un élément ne prend pas en charge l’interaction (tel que le texte statique).
 -   N’utilisez pas de rectangles de sélection avec les interactions de pavé tactile. Réservez ceux-ci aux interactions avec le clavier.
 -   Affichez un retour visuel simultanément pour tous les éléments qui représentent la même cible d’entrée.
 
@@ -139,7 +139,7 @@ Pour obtenir des conseils plus généraux concernant le retour visuel, voir [Rec
 
 Un ensemble de curseurs standard est disponible pour servir de pointeurs de pavé tactile. Ces derniers sont utilisés pour indiquer l’action principale d’un élément.
 
-Chaque curseur standard possède une image par défaut correspondante qui lui est associée. L’utilisateur ou une application peut remplacer à tout moment l’image par défaut associée à n’importe quel curseur standard. Les applications UWP spécifient une image de curseur par le biais de la fonction [**PointerCursor**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointercursor).
+Chaque curseur standard possède une image par défaut correspondante qui lui est associée. L’utilisateur ou une application peut remplacer à tout moment l’image par défaut associée à n’importe quel curseur standard. Les applications UWP spécifient une image de curseur par le biais de la fonction [**PointerCursor**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointercursor) .
 
 Si vous avez besoin de personnaliser le curseur de la souris :
 
@@ -149,22 +149,21 @@ Si vous avez besoin de personnaliser le curseur de la souris :
 -   Utilisez les curseurs de redimensionnement horizontal, vertical et diagonal (![Curseur de redimensionnement vertical](images/cursor-vertical.png), ![Curseur de redimensionnement horizontal](images/cursor-horizontal.png), ![Curseur de redimensionnement diagonal (du coin inférieur gauche au coin supérieur droit)](images/cursor-diagonal2.png), ![Curseur de redimensionnement diagonal (du coin supérieur gauche au coin inférieur droit)](images/cursor-diagonal1.png)) lorsqu’un objet est redimensionnable.
 -   Utilisez les curseurs en forme de main de saisie (![Curseur en forme de main de saisie (ouverte)](images/cursor-pan1.png), ![Curseur en forme de main de saisie (fermée)](images/cursor-pan2.png)) lors d’un mouvement panoramique de contenu au sein d’une zone de dessin fixe (telle qu’une carte).
 
-## <a name="related-articles"></a>Articles associés
+## <a name="related-articles"></a>Articles connexes
 
+- [Gérer les entrées du pointeur](handle-pointer-input.md)
+- [Identification des périphériques d’entrée](identify-input-devices.md)
 
-* [Gestion des entrées du pointeur](handle-pointer-input.md)
-* [Identifier des périphériques d’entrée](identify-input-devices.md)
-**Exemples**
-* [Exemple d’entrée de base](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
-* [Exemple d’entrée à faible latence](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
-* [Exemple de mode d’interaction utilisateur](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
-* [Exemple de visuels de focus](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
-**Exemples d’archive**
-* [Entrée : exemple de fonctionnalités de l’appareil](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
-* [Entrée : exemple d’événements d’entrée d’utilisateur XAML](https://code.msdn.microsoft.com/windowsapps/Input-3dff271b)
-* [Exemple de défilement XAML, panoramique et zoom](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9)
-* [Entrée : mouvements et manipulations avec GestureRecognizer](https://code.msdn.microsoft.com/windowsapps/Manipulations-and-gestures-362b6b59)
- 
+### <a name="samples"></a>Exemples
 
+- [Exemple d’entrée de base](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+- [Exemple d’entrée à faible latence](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+- [Exemple de mode d’interaction utilisateur](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
+- [Exemples de visuels de focus](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
 
+### <a name="archive-samples"></a>Exemples d’archive
 
+- [Entrée : exemple de fonctionnalités de périphériques](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Input%20Device%20capabilities%20sample%20(Windows%208))
+- [Entrée : exemple d’événements d’entrée utilisateur XAML](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20XAML%20user%20input%20events%20sample)
+- [Exemple de défilement XAML, panoramique et zoom](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample)
+- [Entrée : Mouvements et manipulations avec GestureRecognizer](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer)

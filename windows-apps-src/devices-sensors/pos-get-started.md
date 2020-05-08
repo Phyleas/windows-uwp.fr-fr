@@ -1,34 +1,34 @@
 ---
-title: Prise en main de la technologie de point de service
-description: Cet article comporte des informations sur la prise en main des API UWP de point de vente.
+title: Prise en main du point de service
+description: Cet article contient des informations sur la prise en main du point de service Windows Runtime API.
 ms.date: 05/02/2018
 ms.topic: article
-keywords: windows 10, uwp, point de vente, pdv
+keywords: Windows 10, UWP, point de service, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: d059f0e33f7343fa0ac9919a243008ed486e31ff
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: f5f19d1337a7ae49f46ab65d8420fedb775eeb2f
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63772732"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82730384"
 ---
-# <a name="getting-started-with-point-of-service"></a>Prise en main de la technologie de point de service
+# <a name="getting-started-with-point-of-service"></a>Prise en main du point de service
 
-Les périphériques de point de vente (PDV), aussi appelés appareils de point de service (POS), sont des périphériques informatiques utilisés pour faciliter les transactions de vente au détail. Les périphériques de POS incluent notamment les caisses enregistreuses électroniques, les scanneurs de code-barres, les lecteurs de bandes magnétiques et les imprimantes de reçus.
+Le point de service, le point de vente ou le point de service sont des périphériques informatiques utilisés pour faciliter les transactions de vente au détail. Parmi les exemples de périphériques de point de service figurent les registres de trésorerie électronique, les scanneurs de codes-barres, les lecteurs de bandes magnétiques et les imprimantes de réception.
 
-Vous allez apprendre ici les principes fondamentaux d’interfaçage avec des appareils de point de service à l’aide des API PointOfService de la plateforme Windows universelle (UWP). Nous aborderons l’énumération d'appareils, la vérification des fonctionnalités des appareils, la revendication d'appareils et le partage d'appareils. Dans cet exemple, nous utilisons un scanneur de code-barres, mais presque tous les conseils fournis ici s’appliquent à l'ensemble des appareils de point de service compatibles UWP. (Pour obtenir la liste des périphériques pris en charge, voir [Prise en charge des périphériques de point de service](pos-device-support.md)).
+Vous découvrirez ici les principes fondamentaux de l’interfaçage avec les périphériques de point de service à l’aide des API de point de service Windows Runtime. Nous allons aborder l’énumération des appareils, la vérification des fonctionnalités des appareils, la revendication des appareils et le partage des appareils. Nous utilisons un périphérique de scanneur de codes-barres comme exemple, mais presque tous les conseils ici s’appliquent à tous les appareils de point de service compatibles UWP. (Pour obtenir la liste des appareils pris en charge, voir [prise en charge des appareils de point de service](pos-device-support.md)).
 
 ## <a name="finding-and-connecting-to-point-of-service-peripherals"></a>Recherche et connexion aux périphériques de point de service
 
-Avant qu'un périphérique de point de service puisse être utilisé par une application, il doit être couplé au PC sur lequel l’application s’exécute. Il existe plusieurs façons de se connecter aux périphériques de point de service, soit par programmation, soit par le biais de l’application Paramètres.
+Avant qu’un point de service puisse être utilisé par une application, il doit être associé au PC sur lequel l’application s’exécute. Il existe plusieurs façons de se connecter à des appareils de point de service, soit par programme, soit par le biais de l’application paramètres.
 
-### <a name="connecting-to-devices-by-using-the-settings-app"></a>Connexion aux appareils à l’aide de l’application Paramètres
-Lorsque vous connectez un périphérique de point de service comme un scanneur de code-barres à un PC, il apparaît comme n'importe quel autre appareil. Vous pouvez le trouver dans la section **Appareils > Bluetooth et autres paramètres d’appareils** de l’application Paramètres. Pour effectuer un couplage avec un périphérique de point de service, sélectionnez **Ajouter un appareil Bluetooth ou un autre appareil**.
+### <a name="connecting-to-devices-by-using-the-settings-app"></a>Connexion à des appareils à l’aide de l’application paramètres
+Lorsque vous connectez un appareil de point de service comme un scanneur de codes-barres à un PC, il s’affiche comme n’importe quel autre appareil. Vous pouvez le trouver dans la section **appareils > Bluetooth & autres appareils** de l’application paramètres. Vous pouvez associer un appareil de point de service en sélectionnant **Ajouter Bluetooth ou autre périphérique**.
 
-Certains périphériques de point de service peuvent ne pas apparaître dans l’application Paramètres tant qu'ils n'ont pas été énumérés par programmation à l’aide des API de point de service.
+Certains périphériques de point de service peuvent ne pas apparaître dans l’application paramètres jusqu’à ce qu’ils soient énumérés par programme à l’aide des API point of service.
 
-### <a name="getting-a-single-point-of-service-device-with-getdefaultasync"></a>Obtention d’un seul périphérique de point de service avec GetDefaultAsync
-Dans un cas d’utilisation simple, vous pouvez n'avoir qu'un seul périphérique de point de service connecté au PC sur lequel l’application s'exécute, et souhaiter configurer celui-ci aussi rapidement que possible. Pour ce faire, récupérez l’appareil « par défaut » avec la méthode **GetDefaultAsync**, comme illustré ici.
+### <a name="getting-a-single-point-of-service-device-with-getdefaultasync"></a>Obtention d’un point de service unique avec GetDefaultAsync
+Dans un cas d’utilisation simple, vous pouvez avoir un seul périphérique de point de service connecté au PC sur lequel l’application s’exécute et que vous souhaitez le configurer le plus rapidement possible. Pour ce faire, récupérez l’appareil « par défaut » avec la méthode **GetDefaultAsync** , comme illustré ici.
 
 ```Csharp
 using Windows.Devices.PointOfService;
@@ -36,14 +36,14 @@ using Windows.Devices.PointOfService;
 BarcodeScanner barcodeScanner = await BarcodeScanner.GetDefaultAsync();
 ```
 
-Si l’appareil par défaut est trouvé, l’objet appareil récupéré est prêt pour la revendication. La « revendication » d'un appareil fournit à une application un accès exclusif à celui-ci, ce qui empêche les conflits de commandes provenant de divers processus.
+Si le périphérique par défaut est trouvé, l’objet appareil récupéré est prêt à être réclamé. « Revendiquer » un appareil donne à une application un accès exclusif à celui-ci, ce qui empêche les commandes conflictuelles à partir de plusieurs processus.
 
 > [!NOTE] 
-> Si plusieurs périphériques de point de service sont connectés au PC, **GetDefaultAsync** renvoie le premier appareil détecté. Pour cette raison, utilisez **FindAllAsync**, sauf si êtes sûr qu’un seul périphérique de point de service est visible par l’application.
+> Si plusieurs appareils de point de service sont connectés au PC, **GetDefaultAsync** retourne le premier périphérique qu’il trouve. Pour cette raison, utilisez **FindAllAsync** , sauf si vous êtes certain qu’un seul appareil de point de service est visible pour l’application.
 
 ### <a name="enumerating-a-collection-of-devices-with-findallasync"></a>Énumération d’une collection d’appareils avec FindAllAsync
 
-Lorsque vous êtes connecté à plusieurs appareils, vous devez énumérer la collection des objets appareils **PointOfService** pour trouver celui que vous souhaitez revendiquer. Par exemple, le code suivant crée une collection de tous les scanneurs de code-barres actuellement connectés, puis recherche dans la collection un scanneur portant un nom spécifique.
+Quand vous êtes connecté à plusieurs appareils, vous devez énumérer la collection d’objets d’appareil **PointOfService** pour trouver celui que vous souhaitez revendiquer. Par exemple, le code suivant crée une collection de tous les scanneurs de codes-barres actuellement connectés, puis recherche un scanneur portant un nom spécifique dans la collection.
 
 ```Csharp
 using Windows.Devices.Enumeration;
@@ -62,17 +62,17 @@ foreach (DeviceInformation devInfo in deviceCollection)
 }
 ```
 
-### <a name="scoping-the-device-selection"></a>Étendue de la sélection d’appareils
-Lors de la connexion à un appareil, vous pouvez limiter votre recherche à un sous-ensemble de périphériques de point de service auxquels votre application a accès. La méthode **GetDeviceSelector** vous permet d'étendre la sélection afin de récupérer les appareils connectés uniquement par une méthode donnée (Bluetooth, USB, etc.). Vous pouvez créer un sélecteur qui recherche les appareils connectés via **Bluetooth**, **IP**, **Local**, ou **Tous les types de connexion**. Cela peut s'avérer utile, car la détection d’appareils sans fil prend beaucoup plus de temps que la détection locale (câblée). Vous pouvez garantir un temps d’attente déterministe pour la connexion d’appareils locale en limitant **FindAllAsync** aux types de connexion **Local**. Par exemple, ce code récupère tous les scanneurs de code-barres accessibles via une connexion locale. 
+### <a name="scoping-the-device-selection"></a>Définition de la portée de la sélection des appareils
+Quand vous vous connectez à un appareil, vous souhaiterez peut-être limiter votre recherche à un sous-ensemble de périphériques de point de service auxquels votre application a accès. À l’aide de la méthode **GetDeviceSelector** , vous pouvez étendre la sélection pour récupérer des appareils connectés uniquement par une certaine méthode (Bluetooth, USB, etc.). Vous pouvez créer un sélecteur qui recherche des appareils sur **les types de connexion** **Bluetooth**, **IP**, **local**ou All. Cela peut être utile, car la détection des périphériques sans fil prend beaucoup de temps par rapport à la découverte locale (filaire). Vous pouvez garantir un temps d’attente déterministe pour la connexion de l’appareil local en limitant **FindAllAsync** aux types de connexion **locaux** . Par exemple, ce code récupère tous les scanneurs de codes-barres accessibles via une connexion locale. 
 
 ```Csharp
 string selector = BarcodeScanner.GetDeviceSelector(PosConnectionTypes.Local);
 DeviceInformationCollection deviceCollection = await DeviceInformation.FindAllAsync(selector);
 ```
 
-### <a name="reacting-to-device-connection-changes-with-devicewatcher"></a>Réaction aux changements de connexion d'appareils avec DeviceWatcher
+### <a name="reacting-to-device-connection-changes-with-devicewatcher"></a>Réaction aux modifications des connexions des appareils avec DeviceWatcher
 
-Lors de l'exécution de votre application, des appareils seront parfois déconnectés ou mis à jour, ou de nouveaux appareils devront être ajoutés. Vous pouvez utiliser la classe **DeviceWatcher** pour accéder aux événements relatifs aux appareils, afin que votre application puisse y répondre en conséquence. Voici un exemple illustrant comment utiliser **DeviceWatcher** avec des stubs de méthode à appeler si un appareil est ajouté, supprimé ou mis à jour.
+Lorsque votre application s’exécute, les appareils sont parfois déconnectés ou mis à jour, ou de nouveaux appareils doivent être ajoutés. Vous pouvez utiliser la classe **DeviceWatcher** pour accéder aux événements liés à l’appareil, afin que votre application puisse répondre en conséquence. Voici un exemple d’utilisation de **DeviceWatcher**, avec des stubs de méthode à appeler si un appareil est ajouté, supprimé ou mis à jour.
 
 ```Csharp
 DeviceWatcher deviceWatcher = DeviceInformation.CreateWatcher(selector);
@@ -96,11 +96,11 @@ void DeviceWatcher_Updated(DeviceWatcher sender, DeviceInformationUpdate args)
 }
 ```
 
-## <a name="checking-the-capabilities-of-a-point-of-service-device"></a>Vérification des fonctionnalités d’un périphérique de point de service
-Même au sein d’une classe d’appareil, telle que des scanneurs de code-barres, les attributs de chaque appareil peuvent varier considérablement entre les modèles. Si votre application requiert un attribut d'appareil spécifique, vous devrez peut-être inspecter chaque objet appareil connecté afin de déterminer si l’attribut est pris en charge. Par exemple, votre entreprise a peut-être besoin de créer des étiquettes à l’aide d’un modèle d’impression de code-barres spécifique. Voici comment vous pouvez vérifier si un scanneur de code-barres connecté prend en charge une symbologie donnée. 
+## <a name="checking-the-capabilities-of-a-point-of-service-device"></a>Vérification des fonctionnalités d’un appareil de point de service
+Même dans une classe d’appareils, comme les scanneurs de codes-barres, les attributs de chaque périphérique peuvent varier considérablement d’un modèle à l’autre. Si votre application nécessite un attribut d’appareil spécifique, vous devrez peut-être inspecter chaque objet d’appareil connecté pour déterminer si l’attribut est pris en charge. Par exemple, votre entreprise a peut-être besoin de créer des étiquettes à l’aide d’un modèle d’impression de codes-barres spécifique. Voici comment vérifier si un scanneur de codes-barres connecté prend en charge un symbolisme. 
 
 > [!NOTE]
-> Un symbolisme est le mappage de langue utilisé par un code-barres pour encoder les messages.
+> Un symbolisme est le mappage de langage utilisé par un code-barres pour encoder les messages.
 
 ```Csharp
 try
@@ -117,8 +117,8 @@ catch (Exception ex)
 }
 ```
 
-### <a name="using-the-devicecapabilities-class"></a>Utilisation de la classe Device.Capabilities
-La classe **Device.Capabilities** est un attribut de toutes les classes de périphériques de point de service, qui peut être utilisé pour obtenir des informations générales sur chaque appareil. Ainsi, cet exemple détermine si un appareil prend en charge la création de rapports statistiques et, si tel est le cas, récupère des statistiques pour tous les types pris en charge.
+### <a name="using-the-devicecapabilities-class"></a>Utilisation de la classe Device. Capabilities
+La classe **Device. Capabilities** est un attribut de toutes les classes de périphérique de service et peut être utilisée pour obtenir des informations générales sur chaque appareil. Par exemple, cet exemple détermine si un appareil prend en charge les rapports de statistiques et, le cas échéant, récupère des statistiques pour tous les types pris en charge.
 
 ```Csharp
 try
@@ -137,8 +137,8 @@ catch (Exception ex)
 }
 ```
 
-## <a name="claiming-a-point-of-service-device"></a>Revendication d'un périphérique de point de service
-Avant de pouvoir utiliser un périphérique de point de service pour des entrées ou sorties actives, vous devez le revendiquer en accordant à l'application l’accès exclusif à la plupart de ses fonctions. Ce code indique comment revendiquer un scanneur de code-barres, une fois que vous avez trouvé l’appareil en utilisant l’une des méthodes décrites précédemment.
+## <a name="claiming-a-point-of-service-device"></a>Revendication d’un point de service
+Avant de pouvoir utiliser un appareil de point de service pour une entrée ou une sortie active, vous devez le réclamer, en accordant à l’application un accès exclusif à la plupart de ses fonctions. Ce code montre comment revendiquer un périphérique de scanneur de codes-barres, une fois que vous avez trouvé l’appareil à l’aide de l’une des méthodes décrites précédemment.
 
 ```Csharp
 try
@@ -152,7 +152,7 @@ catch (Exception ex)
 ```
 
 ### <a name="retaining-the-device"></a>Conservation de l’appareil
-Lorsque vous utilisez un périphérique de point de service via une connexion réseau ou Bluetooth, il se peut que vous soyez amené à partager l’appareil avec d’autres applications sur le réseau. (Pour plus d’informations à ce sujet, consultez [appareils partage](#sharing-a-device-between-apps).) Dans d’autres cas, vous souhaiterez conserver l’appareil pour un usage prolongé. Cet exemple montre comment conserver un scanneur de code-barres revendiqué après qu’une autre application a demandé la libération de l’appareil.
+Lorsque vous utilisez un appareil de point de service sur un réseau ou une connexion Bluetooth, vous souhaiterez peut-être partager l’appareil avec d’autres applications sur le réseau. (Pour plus d’informations à ce sujet, consultez [partage d’appareils](#sharing-a-device-between-apps).) Dans d’autres cas, vous pouvez souhaiter conserver l’appareil pour une utilisation prolongée. Cet exemple montre comment conserver un scanneur de codes-barres revendiqué après qu’une autre application a demandé que l’appareil soit libéré.
 
 ```Csharp
 claimedBarcodeScanner.ReleaseDeviceRequested += claimedBarcodeScanner_ReleaseDeviceRequested;
@@ -163,9 +163,9 @@ void claimedBarcodeScanner_ReleaseDeviceRequested(object sender, ClaimedBarcodeS
 }
 ```
 
-## <a name="input-and-output"></a>Entrées et sorties
+## <a name="input-and-output"></a>Entrée et sortie
 
-Une fois que vous avez revendiqué un appareil, vous êtes presque prêt à l’utiliser. Pour recevoir des entrées de l’appareil, vous devez configurer un délégué et l'activer pour recevoir des données. Dans l’exemple ci-dessous, nous allons revendiquer un scanneur de code-barres, définir sa propriété de décodage, puis appeler **EnableAsync** pour activer les entrées décodées depuis l’appareil. Ce processus varie selon les classes d'appareils, par conséquent, pour obtenir des instructions sur la façon de configurer un délégué pour les appareils ne prenant pas en charge les code-barres, reportez-vous à l'[exemple d’application UWP](https://github.com/Microsoft/Windows-universal-samples#devices-and-sensors) approprié.
+Une fois que vous avez demandé un appareil, vous êtes presque prêt à l’utiliser. Pour recevoir l’entrée de l’appareil, vous devez configurer et permettre à un délégué de recevoir des données. Dans l’exemple ci-dessous, nous revendiquons un périphérique de scanneur de codes-barres, nous définissons sa propriété Decode, puis nous appelons **EnableAsync** pour activer l’entrée décodée à partir de l’appareil. Ce processus varie selon les classes d’appareils. ainsi, pour obtenir des conseils sur la configuration d’un délégué pour les appareils non-code-barres, reportez-vous à l' [exemple d’application UWP](https://github.com/Microsoft/Windows-universal-samples#devices-and-sensors)appropriée.
 
 ```Csharp
 try
@@ -192,9 +192,9 @@ void claimedBarcodeScanner_DataReceived(ClaimedBarcodeScanner sender, BarcodeSca
 }
 ```
 
-## <a name="sharing-a-device-between-apps"></a>Partage d’un appareil entre des applications
+## <a name="sharing-a-device-between-apps"></a>Partage d’un appareil entre les applications
 
-Les périphériques de point de service sont souvent utilisés dans des cas où plusieurs applications doivent y accéder sur une courte période.  Un appareil peut être partagé lorsqu'il est connecté à plusieurs applications en local (USB ou autre connexion câblée), ou via un réseau IP ou Bluetooth. Selon les besoins de chaque application, un processus peut avoir besoin de supprimer sa revendication sur l’appareil. Ce code supprime notre scanneur de code-barres revendiqué, autorisant ainsi sa revendication et son utilisation par d’autres applications.
+Les appareils de point de service sont souvent utilisés dans les cas où plusieurs applications devront y accéder sur une courte période.  Un appareil peut être partagé lorsqu’il est connecté à plusieurs applications localement (USB ou autre connexion câblée), ou via un réseau Bluetooth ou IP. En fonction des besoins de chaque application, un processus peut avoir besoin de supprimer sa revendication sur l’appareil. Ce code supprime notre périphérique de scanneur de codes-barres demandé, ce qui permet à d’autres applications de les revendiquer et de les utiliser.
 
 ```Csharp
 if (claimedBarcodeScanner != null)
@@ -205,12 +205,12 @@ if (claimedBarcodeScanner != null)
 ```
 
 > [!NOTE]
-> Les classes de périphériques de point de service revendiquées et non revendiquées implémentent l'[interface IClosable](https://docs.microsoft.com/uwp/api/windows.foundation.iclosable). Si un périphérique est connecté à une application via le réseau ou Bluetooth, les objets revendiqués et non revendiqués doivent être supprimés avant qu'une autre application puisse s'y connecter.
+> Les classes d’appareils de point de service réclamées et non revendiquées implémentent l' [interface IClosable](https://docs.microsoft.com/uwp/api/windows.foundation.iclosable). Si un appareil est connecté à une application via réseau ou Bluetooth, les objets revendiqués et non revendiqués doivent être supprimés avant qu’une autre application puisse se connecter.
 
 ## <a name="see-also"></a>Voir aussi
 + [Exemple de scanneur de codes-barres](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)
-+ [Exemple de tiroir de trésorerie]( https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CashDrawer)
++ [Exemple de tiroir-caisse]( https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CashDrawer)
 + [Exemple d’affichage de ligne](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LineDisplay)
 + [Exemple de lecteur de bande magnétique](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MagneticStripeReader)
-+ [Exemple de POSPrinter](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/PosPrinter)
++ [Exemple POSPrinter](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/PosPrinter)
 

@@ -1,6 +1,6 @@
 ---
 Description: Découvrez comment utiliser les vignettes, badges, toasts et notifications pour fournir des points d’entrée dans votre application et maintenir les utilisateurs informés.
-title: Notifications de badge pour les applications UWP
+title: Notifications de badge pour les applications Windows
 ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
 label: Tiles, badges, and notifications
 template: detail.hbs
@@ -8,14 +8,14 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e0c3802f0b6163ad5f0e179d90148bae543aeab
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 1d3aa9658e8a57a7993eb79d164b1e17ac23b9ac
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320844"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970874"
 ---
-# <a name="badge-notifications-for-uwp-apps"></a>Notifications de badge pour les applications UWP
+# <a name="badge-notifications-for-windows-apps"></a>Notifications de badge pour les applications Windows
 
  
 
@@ -39,7 +39,7 @@ Les badges de notification apparaissent sur l’icône de la barre des tâches d
         <th>XML</th>
     </tr>
     <tr>
-        <td>Nombre compris entre 1 et 99 Une valeur de 0 est équivalente à la valeur de glyphe « aucune » et efface le badge.</td>
+        <td>Nombre compris entre 1 et 99 Une valeur de 0 est équivalente à la valeur de glyphe « aucuneˆ» et efface le badge.</td>
         <td><img src="images/badges/badge-numeric.png" alt="A numeric badge less than 100." /></td>
         <td>`<badge value="1"/>`</td>
     </tr>
@@ -55,17 +55,17 @@ Au lieu d’un nombre, un badge peut afficher l’un des ensembles de glyphes d�
 
 <table>
 <tr>
-    <th>le statut</th>
+    <th>Statut</th>
     <th>Glyphe</th>
     <th>XML</th>
 </tr>
 <tr>
-    <td>aucune</td>
+    <td>Aucun</td>
     <td>(Aucun badge affiché)</td>
     <td>`<badge value="none"/>`</td>
 </tr>
 <tr>
-    <td>activité</td>
+    <td>activity</td>
     <td><img src="images/badges/badge-activity.png" alt="Glyph" /></td>
     <td>`<badge value="activity"/>`</td>
 </tr>
@@ -194,12 +194,12 @@ private void clearBadge()
 }
 ````
 
-## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
+## <a name="get-the-sample-code"></a>Obtention de l'exemple de code
 
-* [Exemple de notifications](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)<br/> Montre comment créer des vignettes dynamiques, envoyer des mises à jour de badge et afficher des notifications toast. 
+* [Exemples de notification](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)<br/> Montre comment créer des vignettes dynamiques, envoyer des mises à jour de badge et afficher des notifications toast. 
 
-## <a name="related-articles"></a>Articles associés
+## <a name="related-articles"></a>Articles connexes
 
 * [Notifications toast adaptatives et interactives](adaptive-interactive-toasts.md)
 * [Créer des vignettes](creating-tiles.md)
-* [Créer des vignettes ADAPTATIF](create-adaptive-tiles.md)
+* [Créer des vignettes adaptatives](create-adaptive-tiles.md)
