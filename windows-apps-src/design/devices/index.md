@@ -1,6 +1,6 @@
 ---
-Description: Une bonne connaissance des appareils qui prennent en charge les applications UWP peut vous aider à offrir la meilleure expérience utilisateur pour chaque facteur de forme.
-title: Considérations relatives à l’interface utilisateur des appareils UWP
+Description: Une bonne connaissance des appareils qui prennent en charge les applications Windows peut vous aider à offrir la meilleure expérience utilisateur pour chaque facteur de forme.
+title: Considérations relatives à l’interface utilisateur des appareils Windows
 ms.assetid: 7665044E-F007-495D-8D56-CE7C2361CDC4
 label: Device primer
 template: detail.hbs
@@ -8,18 +8,18 @@ keywords: appareil, entrées, interactions
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0808b5173f697fcca8d5e117f857d3861c327ae3
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: 121025dc5e87e7e3953b9517144e36ab382795bb
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74258121"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968205"
 ---
-#  <a name="ui-considerations-for-uwp-devices"></a>Considérations relatives à l’interface utilisateur des appareils UWP
+#  <a name="ui-considerations-for-windows-devices"></a>Considérations relatives à l’interface utilisateur des appareils Windows
 
-![.](../images/devices-2x.png)
+![Périphériques](../images/devices-2x.png)
 
-Une bonne connaissance des appareils qui prennent en charge les applications UWP peut vous aider à offrir la meilleure expérience utilisateur pour chaque facteur de forme.
+Une bonne connaissance des appareils qui prennent en charge les applications Windows peut vous aider à offrir la meilleure expérience utilisateur pour chaque facteur de forme.
 
 ![appareils fonctionnant sous Windows](images/device-primer/device-primer-ramp.png)
 
@@ -77,7 +77,7 @@ Considérations relatives à l’interface utilisateur
 -   La fonction système de retour se trouve sur la barre de navigation.
 
 Entrées
--   Touch
+-   Toucher
 -   Stylet
 -   Clavier externe (parfois)
 -   Souris (parfois)
@@ -96,7 +96,7 @@ Fonctionnalités de l’appareil type
 
 L’expérience qui consiste à se trouver assis sur son fauteuil en face de la télévision et à interagir avec celle-ci à l’aide d’un boîtier de commande ou d’une télécommande est appelée le « **10-foot experience** » Ce nom vient du fait que l’utilisateur se trouve généralement à 3 mètres (10 pieds) de l’écran. Cela soulève des défis propres à cette expérience, qui ne sont pas présents dans l’expérience « *2-foot experience* » ou lors d’interactions avec un PC. Si vous développez une application pour Xbox One ou tout autre appareil connecté à un écran de télévision et susceptible d’utiliser une télécommande ou un boîtier de commande comme périphérique d’entrée, vous devez toujours garder ceci à l’esprit.
 
-Concevoir une application UWP pour l’expérience « 10-foot » est très différent de concevoir une application pour les autres catégories d’appareils décrites ici. Pour plus d’informations, consultez [Conception pour Xbox et télévision](designing-for-tv.md).
+Concevoir une application Windows pour l’expérience « 10-foot » est très différent de concevoir une application pour les autres catégories d’appareils décrites ici. Pour plus d’informations, consultez [Conception pour Xbox et télévision](designing-for-tv.md).
 
 Tailles d’écran
 - 24 pouces et plus
@@ -155,7 +155,7 @@ Considérations relatives à l’interface utilisateur
 -   Dans les deux orientations, assurez-vous que l’espace disponible à l’écran est suffisant pour la barre d’application lorsque le clavier visuel est affiché.
 
 Entrées
--   Touch
+-   Toucher
 -   Voix
 
 Fonctionnalités de l’appareil type
@@ -187,7 +187,7 @@ Considérations relatives à l’interface utilisateur
 -   L’arrière-plan système est facultatif. Lorsqu’un développeur d’application choisit de l’afficher, celui-ci apparaît dans la barre de titre de l’application.
 
 Entrées
--   Touch
+-   Toucher
 -   Stylet
 -   Voix
 -   Clavier (à l’écran/distant)

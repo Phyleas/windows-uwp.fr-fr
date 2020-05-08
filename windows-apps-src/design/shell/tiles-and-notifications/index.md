@@ -8,14 +8,14 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a87fe2bbff1768da43d6cb366b173077555270f
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: cc182d05b1cc02dd62f66506c12fcfcfc8a03952
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "63806965"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969774"
 ---
-# <a name="tiles-badges-and-notifications-for-uwp-apps"></a>Vignettes, badges et notifications pour les applications UWP
+# <a name="tiles-badges-and-notifications-for-windows-apps"></a>Vignettes, badges et notifications pour les applications Windows
  
 
 Découvrez comment utiliser les vignettes, badges, toasts et notifications pour fournir des points d’entrée dans votre application et maintenir les utilisateurs informés.
@@ -23,7 +23,7 @@ Découvrez comment utiliser les vignettes, badges, toasts et notifications pour 
 > **API importantes** : [Package NuGet UWP Community Toolkit Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
 <p><img style="float: left; margin: 0px 15px 15px 0px;" src="images/tile-and-live-tile.png" />
-Une vignette est la représentation d’une application dans le menu Démarrer. Chaque application UWP dispose d’une vignette. Vous pouvez activer différentes tailles de vignettes (petite, moyenne, large et grande).</p>
+Une vignette est la représentation d’une application dans le menu Démarrer. Chaque application Windows a une vignette. Vous pouvez activer différentes tailles de vignettes (petite, moyenne, large et grande).</p>
 
 <p>Vous pouvez utiliser une <em>notification par vignette</em> pour mettre à jour la vignette afin de communiquer de nouvelles informations à l’utilisateur, telles que des titres d’actualités ou l’objet du dernier message non lu.</p>
 
@@ -37,9 +37,9 @@ Une vignette est la représentation d’une application dans le menu Démarrer. 
 | Article | Description |
 | --- | --- |
 | [Créer des vignettes](creating-tiles.md) | Personnalisez la vignette par défaut de votre application et fournissez des ressources pour différentes tailles d’écran. |
-| [Ressources d’icônes de l’application](app-assets.md) | Les ressources d’icône d’application, qui s’affichent sous différentes formes dans le système d’exploitation Windows 10, sont les cartes de visite de votre application de plateforme Windows universelle (UWP). Ces recommandations précisent où apparaissent les ressources d’icône d’application dans le système et fournissent des conseils de conception détaillés pour vous aider à créer les plus belles icônes. |
+| [Ressources d’icônes de l’application](app-assets.md) | Les ressources d’icône d’application, qui s’affichent sous différentes formes dans le système d’exploitation Windows 10, sont les cartes de visite de votre application Windows. Ces recommandations précisent où apparaissent les ressources d’icône d’application dans le système et fournissent des conseils de conception détaillés pour vous aider à créer les plus belles icônes. |
 | [API de vignette principale](primary-tile-apis.md) | Demandez à épingler la vignette principale de votre application, puis vérifiez que la vignette principale est actuellement épinglée. |
-| [Contenu de vignette](create-adaptive-tiles.md) | Le contenu des notifications par vignette utilise les modèles de vignette adaptative, une nouvelle fonctionnalité de Windows 10 qui vous permet de concevoir votre propre contenu de notification par vignette à l’aide d’un langage de balisage simple et flexible adapté, à différentes densités d’écran. Cet article vous indique comment créer des vignettes dynamiques adaptatives pour votre application de plateforme Windows universelle (UWP). |
+| [Contenu de vignette](create-adaptive-tiles.md) | Le contenu des notifications par vignette utilise les modèles de vignette adaptative, une nouvelle fonctionnalité de Windows 10 qui vous permet de concevoir votre propre contenu de notification par vignette à l’aide d’un langage de balisage simple et flexible adapté, à différentes densités d’écran. Cet article vous indique comment créer des vignettes dynamiques adaptatives pour votre application Windows. |
 | [Schéma de contenu de vignette](../tiles-and-notifications/tile-schema.md) | Voici les éléments et attributs permettant de créer des vignettes adaptatives. |
 | [Modèles de vignette spéciaux](special-tile-templates-catalog.md) | Les modèles de vignette spéciaux sont des modèles uniques qui sont animés, ou qui vous permettent simplement d’effectuer des opérations qui ne sont pas possibles avec des vignettes adaptatives. |
 | [Envoyer une notification par vignette locale](sending-a-local-tile-notification.md) | Découvrez comment envoyer une notification par vignette locale, en ajoutant du contenu dynamique riche à votre vignette dynamique. |
@@ -51,7 +51,7 @@ Une vignette est la représentation d’une application dans le menu Démarrer. 
 | --- | --- |
 | [Notifications toast](adaptive-interactive-toasts.md) | Les notifications toast adaptatives et interactives contextuelles et flexibles (plus de contenu, des images incluses/une interaction utilisateur facultatives). |
 | [Envoyer une notification toast locale](send-local-toast.md) | Découvrez comment envoyer une notification toast interactive. |
-| [Notifications Visualizer](notifications-visualizer.md) | Notifications Visualizer est une nouvelle application de plateforme Windows universelle (UWP) du [Store](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1) qui permet aux développeurs de concevoir des vignettes dynamiques adaptatives pour Windows 10. |
+| [Notifications Visualizer](notifications-visualizer.md) | Notifications Visualizer est une nouvelle application Windows du [Store](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1) qui permet aux développeurs de concevoir des vignettes dynamiques adaptatives pour Windows 10. |
 | [Choisir une méthode de remise de notification](choosing-a-notification-delivery-method.md) | Ce article présente les quatre options de notification (locale, planifiée, périodique et Push) disponibles pour remettre des mises à jour de vignette et de badge, ainsi que du contenu de notification toast. |
 | [Vue d’ensemble des notifications périodiques](periodic-notification-overview.md) | Les notifications périodiques, également appelées notifications interrogées, mettent à jour les vignettes et les badges à intervalle fixe en téléchargeant du contenu à partir d’un service cloud. |
 | [Vue d’ensemble des services de notifications Push Windows (WNS)](windows-push-notification-services--wns--overview.md) | Les services de notification Push Windows (WNS) permettent aux développeurs tiers d’envoyer des mises à jour de toast, de vignette et de badge, ainsi que des mises à jour brutes à partir de leur propre service cloud. Il en résulte un mécanisme fiable et optimal de remise des nouvelles mises à jour aux utilisateurs. |

@@ -1,25 +1,25 @@
 ---
 Description: Avec des mouvements utiles et bien faits, vos applications prennent vie et donnent l’impression d’un travail soigné. Elles permettent aux utilisateurs de comprendre les changements de contexte et assure l’homogénéité des expériences par des transitions visuelles.
-title: Animations dans les applications UWP
+title: Mouvement pour les applications Windows
 ms.assetid: 21AA1335-765E-433A-85D8-560B340AE966
 label: Motion
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 pm-contact: stmoy
 design-contact: jeffarn
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 31cf2134fb8f77809b75a5abf3e6980443452059
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: 49fc31729bc8f195bacf1d743c570aa5293b33de
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "68867403"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970334"
 ---
-# <a name="motion-for-uwp-apps"></a>Animations pour les applications UWP
+# <a name="motion-for-windows-apps"></a>Mouvement pour les applications Windows
 
 ![Icône de mouvement](../images/motion-2x.png)
 
