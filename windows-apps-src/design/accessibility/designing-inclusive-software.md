@@ -1,5 +1,5 @@
 ---
-Description: En savoir plus sur l’évolution de la conception inclusive avec les applications de la plateforme Windows universelle (UWP) pour Windows 10.  Concevez et développez un logiciel inclusif en tenant compte de l’accessibilité.
+Description: En savoir plus sur l’évolution de la conception inclusive avec les applications d’application Windows pour Windows 10.  Concevez et développez un logiciel inclusif en tenant compte de l’accessibilité.
 ms.assetid: A6393A57-53F2-4F06-89AF-0D806FD76DB0
 title: Conception de logiciels inclusifs dans Windows 10
 label: Designing inclusive software
@@ -8,35 +8,35 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e9cc88792e6cfdc581a4c7dc27ecc060cc0000c3
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 0f048d9d3541b52994713c8040c451a421df3e0a
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317345"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969434"
 ---
 # <a name="designing-inclusive-software-for-windows-10"></a>Conception de logiciels inclusifs pour Windows 10  
 
-En savoir plus sur l’évolution de la conception inclusive avec les applications de la plateforme Windows universelle (UWP) pour Windows 10.  Concevez et développez un logiciel inclusif en tenant compte de l’accessibilité.
+En savoir plus sur l’évolution de la conception inclusive avec les applications d’application Windows pour Windows 10.  Concevez et développez un logiciel inclusif en tenant compte de l’accessibilité.
 
 Chez Microsoft, nous faisons évoluer nos principes et pratiques de conception. Ces derniers dictent l’aspect, la fonction et le comportement de nos expériences. Nous enrichissons notre perspective.
 
 Cette nouvelle philosophie de conception est appelée conception inclusive. L’idée consiste à concevoir un logiciel qui s’adresse à tous dès le départ. Cela diffère du processus qui consiste à intégrer l’élément d’accessibilité à la toute fin du processus de développement, ce qui convient uniquement à un groupe d’utilisateurs restreint.
 
-« Nous définissons le handicap/invalidité comme l’incompatibilité entre les besoins de l’individu et le service, le produit ou l’environnement proposés. Tout le monde peut rencontrer un handicap/invalidité. L’exclusion est très courante dans notre société humaine. »  \- à partir de la [inclusif](https://www.microsoft.com/design/inclusive/) vidéo  
+« Nous définissons le handicap/invalidité comme l’incompatibilité entre les besoins de l’individu et le service, le produit ou l’environnement proposés. Tout le monde peut rencontrer un handicap/invalidité. L’exclusion est très courante dans notre société humaine. »  \-à partir de la vidéo [inclusive](https://www.microsoft.com/design/inclusive/)  
 
 La conception inclusive crée de meilleurs produits pour tout le monde. Il s’agit de créations pouvant s’appliquer à l’ensemble de la diversité humaine. Prenons l’exemple des abaissements de trottoir présents sur la plupart des trottoirs. À l’origine, ils étaient destinés aux personnes en fauteuil roulant. Mais presque tout le monde s’en sert à présent, y compris les personnes avec des poussettes, les cyclistes et les utilisateurs de skate-board. Même les piétons profitent souvent de ces aménagements qui facilitent la vie. La télécommande d’une TV peut être considérée comme une technologie d’assistance pour une personne atteinte d’un handicap moteur. Et pourtant, presque chaque télévision est accompagnée d’une télécommande. Avant que les enfants n’apprennent à lacer leurs chaussures, ils peuvent porter des chaussures simples à enfiler ou à fermeture facile. Les chaussures simples à enfiler et à enlever sont souvent préférées dans les cultures où l’on se déchausse avant d’entrer dans une maison. Elles sont également mieux adaptées aux personnes ayant des problèmes de dextérité et souffrant par exemple d’arthrite ou d’une fracture du poignet.
 
 ## <a name="inclusive-design-principles"></a>Principes de conception inclusive.  
 Les 4 principes suivants guident la transition de Microsoft vers la conception inclusive :
 
-**Pensez universelle**: Nous nous concentrons sur ce qui unifie les personnes, des motivations humaines, les relations et les capacités. Cela nous oblige également de prendre en compte l’impact social élargi de notre travail. Le résultat obtenu constitue une expérience à laquelle tout le monde peut participer de manière différente.
+**Universalité** : nous mettons l’accent sur ce qui unifie les humains : leurs motivations, leurs relations et leurs capacités. Cela nous oblige également de prendre en compte l’impact social élargi de notre travail. Le résultat obtenu constitue une expérience à laquelle tout le monde peut participer de manière différente.
 
-**Vérifiez personnelle**: Ensuite, nous défis pour créer des connexions émotionnels. Les interactions humaines peuvent inspirer une meilleure interaction entre la technologie et les hommes. La situation unique d’une personne peut améliorer la conception pour tout le monde. Le résultat obtenu constitue une expérience donnant l’impression d’avoir été créée sur mesure pour tous.
+**Personnalisation** : ensuite, nous nous efforçons de créer des liens émotionnels. Les interactions humaines peuvent inspirer une meilleure interaction entre la technologie et les hommes. La situation unique d’une personne peut améliorer la conception pour tout le monde. Le résultat obtenu constitue une expérience donnant l’impression d’avoir été créée sur mesure pour tous.
 
-**Simplicité**: La simplicité constitue le fondement de notre stratégie. Avec un affichage plus clair, nos utilisateurs se sentent plus à l’aise. Les espaces épurés, clairs et ouverts renforcent leur confiance. Le résultat obtenu constitue une expérience authentique et intemporelle.
+**Simplicité** : pour nous, la simplicité est le principal fédérateur. Avec un affichage plus clair, nos utilisateurs se sentent plus à l’aise. Les espaces épurés, clairs et ouverts renforcent leur confiance. Nous offrons une expérience honnête, intemporelle.
 
-**Créer qui raviront**: Expériences plaisante évoquer étonnant et découverte. Parfois, cela relève de la magie. Parfois, il s’agit d’un détail parfait. Nous concevons ces moments pour proposer à nos utilisateurs un changement bienvenu. Le résultat obtenu constitue une expérience fluide et continue.
+**Ravir** : les expériences agréables favorisent un ressenti et une découverte réjouissants. Parfois, cela relève de la magie. Parfois, il s’agit d’un détail parfait. Nous concevons ces moments pour proposer à nos utilisateurs un changement bienvenu. Le résultat obtenu constitue une expérience fluide et continue.
 
 ## <a name="inclusive-design-users"></a>Utilisateurs de la conception inclusive  
 On distingue deux catégories d’utilisateurs de la technologie d’assistance :
@@ -46,7 +46,7 @@ On distingue deux catégories d’utilisateurs de la technologie d’assistance�
 
 La majorité (54 %) des utilisateurs d’ordinateur connaît une technologie d’assistance quelconque, et 44 % des utilisateurs en utilisent une, mais bon nombre d’entre eux n’utilisent pas une technologie d’assistance qui leur serait bénéfique (Forrester 2004).  
 
-Une étude commandée par Microsoft et menée entre 2003 et 2004 par l’institut Forrester Research a permis d’établir que plus de la moitié &mdash;57 %&mdash; des utilisateurs d’ordinateur aux États-Unis entre 18 et 64 ans pouvaient améliorer leur expérience à l’aide d’une technologie d’assistance. La plupart de ces utilisateurs ne s’identifient pas comme étant handicapés ou invalides, mais ils expriment certaines difficultés ou troubles quant à certaines tâches liées à l’utilisation d’un ordinateur. Forrester (2003) trouve également le nombre d’utilisateurs avec ces difficultés spécifiques suivant : Un dans quatre rencontre une difficulté visual. Un utilisateur sur quatre ressent une douleur au niveau des poignets ou des mains. Un utilisateur sur cinq souffre de troubles auditifs.  
+Une étude commandée par Microsoft et menée entre 2003 et 2004 par l’institut Forrester Research a permis d’établir que plus de la moitié &mdash;57 %&mdash; des utilisateurs d’ordinateur aux États-Unis entre 18 et 64 ans pouvaient améliorer leur expérience à l’aide d’une technologie d’assistance. La plupart de ces utilisateurs ne s’identifient pas comme étant handicapés ou invalides, mais ils expriment certaines difficultés ou troubles quant à certaines tâches liées à l’utilisation d’un ordinateur. Cette étude a également pu déterminer les chiffres suivants : un utilisateur sur quatre rencontre des troubles visuels. Un utilisateur sur quatre ressent une douleur au niveau des poignets ou des mains. Un utilisateur sur cinq souffre de troubles auditifs.  
 
 En plus des handicaps permanents, la gravité et les types de difficulté que rencontrent les individus peuvent varier tout au long de leur vie. L’« individu normal » n’existe pas. Nos capacités sont en constante évolution. Margaret Meade a déclaré : « Nous sommes tous uniques. En étant tous uniques, nous sommes tous pareils. »  
 
@@ -106,6 +106,6 @@ En résumé, suivez ces sept étapes pour vous assurer que votre logiciel est in
 ## <a name="related-topics"></a>Rubriques connexes  
 * [Conception inclusive](https://www.microsoft.com/design/inclusive/)
 * [Logiciel d’ingénierie pour l’accessibilité](https://www.microsoft.com/download/details.aspx?id=19262)
-* [Hub de développeur d’accessibilité de Microsoft](https://developer.microsoft.com/windows/accessible-apps)
+* [Hub Microsoft Accessibility Developer](https://developer.microsoft.com/windows/accessible-apps)
 * [Développement d’applications Windows inclusives](developing-inclusive-windows-apps.md) 
 * [Accessibilité](accessibility.md)

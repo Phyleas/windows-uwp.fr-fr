@@ -1,6 +1,6 @@
 ---
-Description: Une vignette est la représentation d’une application dans le menu Démarrer. Chaque application dispose d’une vignette. Lorsque vous créez un projet d’application de plateforme Windows universelle (UWP) dans Microsoft Visual Studio, il inclut une vignette par défaut qui affiche le nom et le logo de l’application.
-title: Vignettes
+Description: Une vignette est la représentation d’une application dans le menu Démarrer. Chaque application dispose d’une vignette. Quand vous créez un projet d’application Windows app dans Microsoft Visual Studio, il comprend une vignette par défaut qui affiche le nom et le logo de votre application.
+title: Vignettes pour les applications Windows
 ms.assetid: 09C7E1B1-F78D-4659-8086-2E428E797653
 label: Tiles
 template: detail.hbs
@@ -8,25 +8,25 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e46d73c91f54b1bb74a70990a238f13ccd47645d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0882ac67766bc2ce037133cf8a39b5393f616e13
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57634434"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970994"
 ---
-# <a name="tiles-for-uwp-apps"></a>Vignettes pour les applications UWP
+# <a name="tiles-for-windows-apps"></a>Vignettes pour les applications Windows
 
  
 
-Une *vignette* est la représentation d’une application dans le menu Démarrer. Chaque application dispose d’une vignette. Lorsque vous créez un projet d’application de plateforme Windows universelle (UWP) dans Microsoft Visual Studio, il inclut une vignette par défaut qui affiche le nom et le logo de l’application. Windows affiche cette vignette lors de la première installation de l’application. Une fois votre application installée, vous pouvez modifier le contenu de votre vignette via des notifications. Par exemple, vous pouvez modifier la vignette pour communiquer de nouvelles informations à l’utilisateur, telles que des titres d’actualités, ou l’objet du dernier message non lu.
+Une *vignette* est une représentation d’une application dans le menu Démarrer. Chaque application dispose d’une vignette. Quand vous créez un projet d’application Windows app dans Microsoft Visual Studio, il comprend une vignette par défaut qui affiche le nom et le logo de votre application.Windows affiche cette vignette lors de la première installation de l’application. Une fois votre application installée, vous pouvez modifier le contenu de votre vignette via des notifications. Par exemple, vous pouvez modifier la vignette pour communiquer de nouvelles informations à l’utilisateur, telles que des titres d’actualités, ou l’objet du dernier message non lu.
 
 ## <a name="configure-the-default-tile"></a>Configurer la vignette par défaut
 
 
 Lorsque vous créez un projet dans Visual Studio, cela a pour effet de créer une vignette par défaut simple qui affiche le nom et le logo de votre application.
 
-Pour modifier votre vignette, double-cliquez sur le fichier **Package.appxmanifest** dans votre projet UWP principal pour ouvrir le concepteur (ou cliquez avec le bouton droit sur le fichier et sélectionnez Afficher le Code).
+Pour modifier votre vignette, double-cliquez sur le fichier **Package. appxmanifest** dans votre projet UWP principal pour ouvrir le concepteur (ou cliquez avec le bouton droit sur le fichier et sélectionnez Afficher le code).
 
 ```XML
   <Applications>
@@ -47,19 +47,19 @@ Pour modifier votre vignette, double-cliquez sur le fichier **Package.appxmanife
 
 Vous devez mettre à jour quelques éléments :
 
--   DisplayName : Remplacez cette valeur par le nom que vous souhaitez afficher sur votre vignette.
--   Nom court : Étant donné qu’espace limité pour votre nom d’affichage tenir sur les vignettes, nous vous recommandons de que vous permettent de spécifier un nom court, pour vous assurer que le nom de votre application n’être tronqués.
+-   DisplayName : remplacez cette valeur par le nom à afficher sur votre vignette.
+-   ShortName : l’espace disponible pour le nom d’affichage sur les vignettes étant limité, nous vous recommandons de spécifier ce nom court pour éviter que le nom de votre application soit tronqué.
 -   Images de logo :
 
-    Vous devez remplacer ces images par vos propres images. Vous avez la possibilité de fournir des images pour différentes échelles visuelles, mais vous n’êtes pas obligé de le faire pour toutes. Pour vérifier que votre application s’affiche correctement sur divers appareils, nous vous recommandons de fournir des versions de chaque image aux échelles 100 %, 200 % et 400 %. Voir [Ressources de vignette et d’icône](app-assets.md) pour en savoir plus sur la génération de ces ressources.
+    Vous devez remplacer ces images par vos propres images. Vous avez la possibilité de fournir des images pour différentes échelles visuelles, mais vous n’êtes pas obligé de le faire pour toutes. Pour vérifier que votre application s’affiche correctement sur divers appareils, nous vous recommandons de fournir des versions de chaque image aux échelles 100 %, 200 % et 400 %. Pour en savoir plus sur la génération de ces ressources [, consultez icônes et logos d’application](/windows/uwp/design/style/app-icons-and-logos) .
 
-    Les images mises à l’échelle suivent cette convention de nommage :
+    Les images mises à l’échelle respectent la Convention d’affectation de noms suivante :
     
-    *&lt;nom de l’image&gt;*.scale -*&lt;facteur d’échelle&gt;*. *&lt;extension de fichier d’image&gt;* 
+    nom de l’image.*facteur&gt;d’échelle.&lt;* *&gt; &lt;* * &lt;extension&gt; de fichier image* 
 
-    Exemple : SplashScreen.scale-100.png
+    Par exemple : SplashScreen. Scale-100. png
 
-    Lorsque vous faites référence à l’image, vous spécifiez *&lt;nom de l’image&gt;*.*&lt;extension de fichier image&gt;* (« SplashScreen.png » dans cet exemple). Le système sélectionne automatiquement l’image à l’échelle appropriée pour l’appareil parmi les images que vous avez fournies.
+    Lorsque vous faites référence à l’image, vous y faites référence en tant que * &lt;nom&gt;d’image*. extension de fichier image (« splashscreen. png » dans cet exemple). * &lt;&gt; * Le système sélectionne automatiquement l’image à l’échelle appropriée pour l’appareil parmi les images que vous avez fournies.
 
 -   Nous vous conseillons vivement de fournir des logos pour les vignettes de grande taille afin que l’utilisateur puisse redimensionner la vignette de votre application si nécessaire. Pour fournir ces images supplémentaires, vous créez un élément **DefaultTile** et utilisez les attributs **Wide310x150Logo** et **Square310x310Logo** pour spécifier les images supplémentaires :
 ```    XML
@@ -86,6 +86,6 @@ Vous devez mettre à jour quelques éléments :
 ## <a name="use-notifications-to-customize-your-tile"></a>Utiliser les notifications pour personnaliser votre vignette
 
 
-Une fois votre application installée, vous pouvez utiliser les notifications pour personnaliser votre vignette. Vous pouvez le faire lors du premier lancement de l’application ou en réponse à un événement tel qu’une notification Push.
+Une fois votre application installée, vous pouvez utiliser les notifications pour personnaliser votre vignette. Vous pouvez effectuer cette opération la première fois que votre application est lancée ou en réponse à un événement, tel qu’une notification push.
 
-Pour savoir comment envoyer des notifications par vignette, consultez [Envoyer une notification par vignette locale](sending-a-local-tile-notification.md).
+Pour savoir comment envoyer des notifications par vignettes, consultez [Envoyer une notification de vignette locale](sending-a-local-tile-notification.md).

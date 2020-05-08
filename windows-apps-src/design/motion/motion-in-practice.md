@@ -1,6 +1,6 @@
 ---
-Description: Découvrez comment Fluent mouvement notions de base sont réunies dans votre application.
-title: Mouvement en pratique - Animation dans les applications UWP
+Description: Découvrez comment les notions de base du mouvement Fluent sont rassemblées dans votre application.
+title: Mouvement en pratique-animation dans les applications Windows
 label: Motion in practice
 template: detail.hbs
 ms.date: 10/02/2018
@@ -11,60 +11,60 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 8cf010533d2d62559bb8dc0d214e04ab917e62bd
-ms.sourcegitcommit: d534f81590d881a18d677a648c59913029837a84
+ms.openlocfilehash: 45ab6c593b9e20f778e4b352a8b284cefe57c9a8
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67535438"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970324"
 ---
-# <a name="bringing-it-together"></a>Synthèse
+# <a name="bringing-it-together"></a>Regroupement
 
-Le minutage, l'accélération, la direction et la gravité fonctionnent ensemble pour former la base du mouvement Fluent. Chacun doit être pris en compte par rapport aux autres et correctement appliqué dans le contexte de votre application.
+Le minutage, l’accélération, la direction et la gravité fonctionnent ensemble pour former la Fondation du mouvement Fluent. Chaque doit être pris en compte dans le contexte des autres et appliqué de manière appropriée dans le contexte de votre application.
 
-Voici 3 manières d’appliquer les principes de base du mouvement Fluent dans votre application.
+Voici trois façons d’appliquer les principes de base du mouvement Fluent dans votre application.
 
 :::row:::
     :::column:::
-**Animation implicite** interpolation automatique et minutage entre des valeurs d’une modification de paramètre pour obtenir le mouvement de Fluent très simple à l’aide des valeurs normalisées.
+**Animation implicite** L’interpolation et le minutage automatiques entre les valeurs d’un paramètre changent pour obtenir un mouvement Fluent très simple à l’aide des valeurs standardisées.
     :::column-end:::
     :::column:::
-**Animation intégrée** composants du système, tels que les contrôles communs et partagée motion, sont « Fluent par défaut ». Principes de base ont été appliqués de manière cohérente avec leur utilisation implicite.
+**Animation intégrée** Les composants système, tels que les contrôles communs et les mouvements partagés, sont « Fluent par défaut ». Les principes de base ont été appliqués de manière cohérente avec leur utilisation implicite.
     :::column-end:::
     :::column:::
-**Animation personnalisée que vous suiviez les recommandations des conseils** il peut arriver lorsque le système ne fournit pas encore une solution de mouvement exacte pour votre scénario. Dans ce cas, utilisez les recommandations fondamentales de base comme point de départ pour vos expériences.
+Personnaliser l' **animation en suivant les recommandations d’aide** Il peut arriver que le système ne fournisse pas encore une solution de mouvement exacte pour votre scénario. Dans ce cas, utilisez les recommandations fondamentales de base comme point de départ pour vos expériences.
     :::column-end:::
 :::row-end:::
 
 **Exemple de transition**
 
-![Animation fonctionnelle](images/pageRefresh.gif)
+![animation fonctionnelle](images/pageRefresh.gif)
 
 :::row:::
     :::column:::
-<b>Direction de sortie vers l’avant :</b><br>
-Fondu : 150m ; Accélération : Par défaut accélérer <b>Direction à suivre dans :</b><br>
-Faites glisser les 150 px : 300 millisecondes ; Accélération : Par défaut décélérer
+<b>Transférer le sens :</b><br>
+Disparition en fondu : 150 m ; Accélération : le <b>sens de l'</b> accélération par défaut est le suivant :<br>
+Glissez vers le haut 150 px : 300M ; Accélération : décélération par défaut
     :::column-end:::
     :::column:::
-<b>Direction descendante Out :</b><br>
-Faites glisser vers le bas 150 px : 150ms ; Accélération : Par défaut accélérer <b>Direction descendante dans :</b><br>
-Apparition en fondu : 300 millisecondes ; Accélération : Par défaut décélérer
+<b>Direction vers l’arrière :</b><br>
+Glissez vers le 150 px : 150 m ; Accélération : direction de l’accélération par défaut vers <b>l’arrière dans :</b><br>
+Fondu : 300 m ; Accélération : décélération par défaut
     :::column-end:::
 :::row-end:::
 
 **Exemple d’objet**
 
- ![Mouvement de 300 ms](images/control.gif)
+ ![mouvement de 300 m](images/control.gif)
 
 :::row:::
     :::column:::
-<b>Développez de direction :</b><br>
-La croissance : 300 millisecondes ; Accélération : Standard
+<b>Développer le sens :</b><br>
+Croissance : 300 m ; Accélération : standard
     :::column-end:::
     :::column:::
 <b>Contrat de direction :</b><br>
-La croissance : 150ms ; Accélération : Accélérer la valeur par défaut
+Croissance : 150 m ; Accélération : accélération par défaut
     :::column-end:::
 :::row-end:::
 
@@ -74,7 +74,7 @@ La croissance : 150ms ; Accélération : Accélérer la valeur par défaut
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
 <td>
-    <p>Si vous avez le <strong style="font-weight: semi-bold">galerie de contrôles XAML</strong> application installée, cliquez ici pour <a href="xamlcontrolsgallery:/item/ImplicitTransition">ouvrez l’application et voir les Transitions implicites en action</a>.</p>
+    <p>Si l’application de la <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong> est installée, cliquez ici pour <a href="xamlcontrolsgallery:/item/ImplicitTransition">ouvrir l’application et voir les transitions implicites en action</a>.</p>
     <ul>
     <li><a href="https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
@@ -85,34 +85,34 @@ La croissance : 150ms ; Accélération : Accélérer la valeur par défaut
 
 ## <a name="implicit-animations"></a>Animations implicites
 
-> Animations implicites requièrent Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) ou version ultérieure.
+> Les animations implicites nécessitent Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) ou version ultérieure.
 
-Animations implicites sont un moyen simple d’atteindre le mouvement Fluent par l’interpolation automatiquement entre les valeurs anciennes et nouvelles pendant un changement de paramètre.
+Les animations implicites sont un moyen simple d’obtenir un mouvement Fluent en interpolant automatiquement entre les anciennes et les nouvelles valeurs pendant la modification d’un paramètre.
 
-Vous pouvez animer implicitement les modifications apportées aux propriétés suivantes :
+Vous pouvez animer de manière implicite les modifications apportées aux propriétés suivantes :
 
 - [UIElement](/uwp/api/windows.ui.xaml.uielement)
   - **Opacity**
   - **Rotation**
-  - **Échelle**
-  - **Translation**
+  - **Mise à l’échelle**
+  - **Traduction**
 
-- [Bordure](/uwp/api/windows.ui.xaml.controls.border), [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter), ou [Panneau de configuration](/uwp/api/windows.ui.xaml.controls.panel)
-  - **Arrière-plan**
+- [Border](/uwp/api/windows.ui.xaml.controls.border), [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter)ou [Panel](/uwp/api/windows.ui.xaml.controls.panel)
+  - **Contexte**
 
-Chaque propriété qui peut avoir des modifications implicitement animées correspond un _transition_ propriété. Pour animer la propriété, vous affectez un type de transition correspondant _transition_ propriété. Le tableau suivant répertorie les _transition_ propriétés et le type de transition à utiliser pour chacun d'entre eux.
+Chaque propriété qui peut avoir des modifications qui peuvent être animées de manière implicite a une propriété de _transition_ correspondante. Pour animer la propriété, vous assignez un type de transition à la propriété de _transition_ correspondante. Ce tableau présente les propriétés de _transition_ et le type de transition à utiliser pour chacun d’eux.
 
-| Propriété animée | Propriété de transition | Type de transition implicite |
+| Propriété animée | Propriété transition | Type de transition implicite |
 | -- | -- | -- |
-| [UIElement.Opacity](/uwp/api/windows.ui.xaml.uielement.opacity) | [OpacityTransition](/uwp/api/windows.ui.xaml.uielement.opacitytransition) | [ScalarTransition](/uwp/api/windows.ui.xaml.scalartransition) |
+| [UIElement. Opacity](/uwp/api/windows.ui.xaml.uielement.opacity) | [OpacityTransition](/uwp/api/windows.ui.xaml.uielement.opacitytransition) | [ScalarTransition](/uwp/api/windows.ui.xaml.scalartransition) |
 | [UIElement.Rotation](/uwp/api/windows.ui.xaml.uielement.rotation) | [RotationTransition](/uwp/api/windows.ui.xaml.uielement.rotationtransition) | [ScalarTransition](/uwp/api/windows.ui.xaml.scalartransition) |
 | [UIElement.Scale](/uwp/api/windows.ui.xaml.uielement.scale) | [ScaleTransition](/uwp/api/windows.ui.xaml.uielement.scaletransition) | [Vector3Transition](/uwp/api/windows.ui.xaml.vector3transition) |
 | [UIElement.Translation](/uwp/api/windows.ui.xaml.uielement.translation) | [TranslationTransition](/uwp/api/windows.ui.xaml.uielement.translationtransition) | [Vector3Transition](/uwp/api/windows.ui.xaml.vector3transition) |
-| [Border.Background](/uwp/api/windows.ui.xaml.controls.border.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.border.backgroundtransition) | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
-| [ContentPresenter.Background](/uwp/api/windows.ui.xaml.controls.contentpresenter.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.contentpresenter.backgroundtransition) | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
-| [Panel.Background](/uwp/api/windows.ui.xaml.controls.panel.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.panel.backgroundtransition)  | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
+| [Border. Background](/uwp/api/windows.ui.xaml.controls.border.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.border.backgroundtransition) | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
+| [ContentPresenter. Background](/uwp/api/windows.ui.xaml.controls.contentpresenter.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.contentpresenter.backgroundtransition) | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
+| [Panel. Background](/uwp/api/windows.ui.xaml.controls.panel.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.panel.backgroundtransition)  | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
 
-Cet exemple montre comment utiliser la propriété d’opacité et de transition pour créer un bouton apparaître lorsque le contrôle est activé et disparaître en fondu lorsqu’il est désactivé.
+Cet exemple montre comment utiliser la propriété Opacity et la transition pour faire apparaître un bouton en fondu lorsque le contrôle est activé et disparaît lorsqu’il est désactivé.
 
 ```xaml
 <Button x:Name="SubmitButton"
@@ -133,6 +133,6 @@ public double OpaqueIfEnabled(bool IsEnabled)
 
 ## <a name="related-articles"></a>Articles connexes
 
-- [Présentation de Motion](index.md)
-- [Accélération et d’échéance](timing-and-easing.md)
-- [Une direction et la gravité](directionality-and-gravity.md)
+- [Vue d’ensemble du mouvement](index.md)
+- [Minutage et accélération](timing-and-easing.md)
+- [Direction et gravité](directionality-and-gravity.md)

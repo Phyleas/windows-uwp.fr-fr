@@ -1,8 +1,8 @@
 ---
-Description: Apprenez à améliorer l’utilisation et l’accessibilité de votre application UWP en introduisant une méthode intuitive qui permettra aux utilisateurs de naviguer et d’interagir rapidement avec l’interface utilisateur visible d’une application, par le biais du clavier plutôt qu’à l’aide d’un périphérique de pointage (comme un pointeur tactile ou une souris).
-title: Recommandations en matière de conception de touches d’accès rapide
+Description: Apprenez à améliorer à la fois la convivialité et l’accessibilité de votre application Windows en fournissant aux utilisateurs un moyen intuitif de naviguer et d’interagir rapidement avec l’interface utilisateur visible d’une application par le biais d’un clavier au lieu d’un pointeur (par exemple, une pression tactile ou une souris).
+title: Règles de conception des clés d’accès
 label: Access keys design guidelines
-keywords: clavier, touche d’accès rapide, touche d’accès, accessibilité, navigation, focus, texte, entrée, interaction utilisateur
+keywords: clavier, touche d’accès, KeyTip, touche accélératrice, accessibilité, navigation, Focus, texte, entrée, interaction utilisateur
 template: detail.hbs
 ms.date: 06/08/2018
 ms.topic: article
@@ -11,76 +11,76 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: f73bb15d2746dbac4403ca6daffb603588cf7a58
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: c0d5808c462beb72341fd83c6fc4c1cfc0178b2f
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340095"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970974"
 ---
-# <a name="access-keys"></a>Touches d’accès rapide
+# <a name="access-keys"></a>Clés d'accès
 
-Les touches d’accès rapide sont des raccourcis clavier qui améliorent à la fois l’utilisation et l’accessibilité de vos applications Windows en introduisant une méthode intuitive permettant aux utilisateurs de naviguer et d’interagir rapidement avec l’interface utilisateur visible d’une application, par le biais du clavier plutôt qu’à l’aide d’un périphérique de pointage (comme un pointeur tactile ou une souris).
+Les touches d’accès rapide sont des raccourcis clavier qui améliorent la convivialité et l’accessibilité de vos applications Windows en fournissant aux utilisateurs un moyen intuitif de naviguer et d’interagir rapidement avec l’interface utilisateur visible d’une application par le biais d’un clavier au lieu d’un pointeur (par exemple, une pression tactile ou une souris).
 
-Consultez la rubrique [Touches de raccourci](keyboard-accelerators.md) pour plus d’informations sur la façon d’appeler les actions courantes dans une application Windows à l’aide de raccourcis clavier. 
+Pour plus d’informations sur l’appel des actions courantes dans une application Windows à l’aide de raccourcis clavier, consultez la rubrique [touches accélérateur](keyboard-accelerators.md) . 
 
 > [!NOTE]
-> Un clavier est indispensable pour les utilisateurs qui souffrent d’un handicap (voir [Accessibilité du clavier](https://docs.microsoft.com/windows/uwp/accessibility/keyboard-accessibility)). C’est aussi un outil important pour les utilisateurs qui préfèrent se servir d’un clavier, voyant cet outil comme un moyen d’interaction avec une application efficace.
+> Un clavier est indispensable pour les utilisateurs présentant des handicaps (voir [accessibilité du clavier](https://docs.microsoft.com/windows/uwp/accessibility/keyboard-accessibility)). il est également un outil important pour les utilisateurs qui préfèrent le faire comme un moyen plus efficace d’interagir avec une application.
 
-La plateforme Windows universelle (UWP) fournit des supports intégrés à travers les commandes de plateforme, à la fois pour les touches d’accès rapide d’un clavier et pour les commentaires d’interface utilisateur associés, par le biais de signaux visuels que l’on appelle des touches d’accès.
+L’application Windows fournit une prise en charge intégrée des contrôles de plateforme pour les touches d’accès clavier et les commentaires d’interface utilisateur associés via des signaux visuels appelés touches accélératrices.
 
 ## <a name="overview"></a>Vue d’ensemble
 
-Une touche d’accès rapide est une combinaison de la touche Alt et d’une ou plusieurs touches alphanumériques, que l’on appelle parfois *mnémonique*. En général, on appuie successivement plutôt que simultanément sur ces touches.
+Une clé d’accès est une combinaison de la touche Alt et d’une ou plusieurs clés alphanumériques, parfois appelées « *mnémoniques*», généralement appuyées séquentiellement, plutôt que simultanément.
 
-Les touches d’accès sont des badges affichés en regard des commandes qui prennent en charge les touches d’accès rapide lorsque l’utilisateur appuie sur la touche Alt. Chaque touche d’accès contient les touches alphanumériques qui activent la commande associée.
+Les touches accélératrices sont des badges qui s’affichent en regard des contrôles qui prennent en charge les touches d’accès quand l’utilisateur appuie sur la touche Alt. Chaque Conseil clé contient les touches alphanumériques qui activent le contrôle associé.
 
 > [!NOTE]
-> Les raccourcis claviers sont automatiquement pris en charge pour les touches d’accès rapide avec un seul caractère alphanumérique. Par exemple, appuyer simultanément sur Alt+F dans Word ouvre le menu Fichier sans afficher les touches d’accès.
+> Les raccourcis clavier sont automatiquement pris en charge pour les touches d’accès en utilisant un seul caractère alphanumérique. Par exemple, en appuyant simultanément sur ALT + F dans Word, vous ouvrez le menu fichier sans afficher les touches accélératrices.
 
-Appuyer sur la touche Alt initialise la fonctionnalité de la touche d’accès rapide et affiche toutes les combinaisons actuellement disponibles dans les touches d’accès. Les frappes suivantes sont gérées par l’infrastructure de touche d’accès rapide, qui rejette les touches non valides jusqu’à ce que l’utilisateur appuie sur une touche d’accès rapide, sur Entrée, Échap, Tab, ou sur des touches de direction afin de désactiver les touches d’accès rapide et renvoyer la gestion de la touche vers l’application.
+Appuyez sur la touche Alt pour initialiser la fonctionnalité de clé d’accès et afficher toutes les combinaisons de touches actuellement disponibles dans les touches accélératrices. Les séquences de touches suivantes sont gérées par l’infrastructure de clé d’accès, qui rejette les clés non valides jusqu’à ce qu’une clé d’accès valide soit enfoncée, ou que les touches entrée, ÉCHAP, Tab ou flèche soient enfoncées pour désactiver les touches d’accès et retourner la gestion des séquences de touches à l’application.
 
-Les applications Microsoft Office offrent une prise en charge étendue des touches d’accès rapide. L’image suivante montre l’onglet Accueil de Word avec les touches d’accès rapide activées (notez la prise en charge pour les nombres et les frappes multiples).
+Les applications Microsoft Office fournissent une prise en charge étendue des clés d’accès. L’illustration suivante montre l’onglet de démarrage de Word avec les touches d’accès activées (Notez la prise en charge des nombres et des séquences de touches multiples).
 
-![Badges KeyTip pour les touches d’accès rapide dans Microsoft Word](images/accesskeys/keytip-badges-word.png)
+![Badges de touches accélératrices pour les touches d’accès dans Microsoft Word](images/accesskeys/keytip-badges-word.png)
 
 _Badges de KeyTip pour les touches d’accès dans Microsoft Word_
 
-Pour ajouter une touche d’accès rapide à une commande, utilisez la **propriété AccessKey**. La valeur de cette propriété spécifie la séquence de touches d’accès rapide, le raccourci (si un seul caractère alphanumérique) et la touche d’accès.
+Pour ajouter une clé d’accès à un contrôle, utilisez la **propriété AccessKey**. La valeur de cette propriété spécifie la séquence de touches d’accès rapide, le raccourci (s’il s’agit d’un caractère alphanumérique unique) et l’info-bulle.
 
 ``` xaml
 <Button Content="Accept" AccessKey="A" Click="AcceptButtonClick" />
 ```
 
-## <a name="when-to-use-access-keys"></a>Quand utiliser les touches d’accès rapide
+## <a name="when-to-use-access-keys"></a>Quand utiliser des clés d’accès
 
-Nous vous recommandons de spécifier les touches d’accès rapide dans votre interface utilisateur lorsque cela est approprié et de prendre en charge les touches d’accès rapide dans toutes les commandes personnalisées.
+Nous vous recommandons de spécifier des clés d’accès chaque fois que cela est approprié dans votre interface utilisateur, et de prendre en charge les clés d’accès dans tous les contrôles personnalisés.
 
-1.  **Les touches d’accès rapide rendent votre application plus accessible** aux utilisateurs souffrant de troubles psychomoteurs, y compris aux utilisateurs qui ne peuvent pas appuyer simultanément sur les touches, ou qui ont des difficultés à utiliser une souris.
+1.  Les **touches d’accès rendent votre application plus accessible** aux utilisateurs ayant un handicap moteur, y compris les utilisateurs qui ne peuvent appuyer que sur une seule touche à la fois ou qui ont des difficultés à utiliser une souris.
 
-    Une interface utilisateur de clavier bien conçue représente un aspect important de l’accessibilité logicielle. Elle permet aux utilisateurs malvoyants ou souffrant d’un handicap moteur de naviguer dans une application et d’interagir avec ses fonctionnalités. Les utilisateurs qui ne sont pas en mesure d’utiliser une souris peuvent avoir recours à diverses technologies d’assistance, telles que les outils de clavier amélioré, les claviers visuels, les écrans élargis, les lecteurs d’écran et les utilitaires d’entrée vocale. Pour ces utilisateurs, une couverture complète de la commande est essentielle.
+    Une interface utilisateur de clavier bien conçue représente un aspect important de l’accessibilité logicielle. Elle permet aux utilisateurs malvoyants ou souffrant d’un handicap moteur de naviguer dans une application et d’interagir avec ses fonctionnalités. Les utilisateurs qui ne sont pas en mesure d’utiliser une souris peuvent avoir recours à diverses technologies d’assistance, telles que les outils de clavier amélioré, les claviers visuels, les écrans élargis, les lecteurs d’écran et les utilitaires d’entrée vocale. Pour ces utilisateurs, une couverture complète des commandes est cruciale.
 
-2.  **Les touches d’accès rapide rendent votre application plus facile d’utilisation** pour les utilisateurs avancés qui préfèrent interagir par le biais d’un clavier.
+2.  Les **clés d’accès rendent votre application plus utilisable** pour les utilisateurs avec pouvoir qui préfèrent interagir via le clavier.
 
-    Les utilisateurs expérimentés ont souvent une préférence marquée pour l’utilisation du clavier, car les commandes clavier peuvent être entrées plus rapidement et ne nécessitent pas de retirer les mains du clavier. Pour ces utilisateurs, l’efficacité et la cohérence sont essentielles. L’exhaustivité n’est importante que pour les commandes les plus fréquemment utilisées.
+    Les utilisateurs expérimentés disposent souvent d’une préférence pour utiliser le clavier, car les commandes basées sur le clavier peuvent être entrées plus rapidement et ne nécessitent pas la suppression des mains du clavier. Pour ces utilisateurs, l’efficacité et la cohérence sont essentielles. L’exhaustivité n’est importante que pour les commandes les plus fréquemment utilisées.
 
-## <a name="set-access-key-scope"></a>Configurer l’étendue de la touche d’accès rapide
+## <a name="set-access-key-scope"></a>Définir l’étendue de la clé d’accès
 
-Lorsqu’il existe de nombreux éléments sur l’écran qui prennent en charge les touches d’accès rapide, nous vous recommandons d’étendre les touches d’accès rapide afin de réduire la **charge cognitive**. Cela permet de réduire le nombre de touches d’accès rapide à l’écran, ce qui les rend plus faciles à trouver et permet de gagner en efficacité et en productivité.
+Quand un grand nombre d’éléments à l’écran prennent en charge des clés d’accès, nous vous recommandons d’étendre les clés d’accès afin de réduire la **charge cognitive**. Cela réduit le nombre de touches d’accès rapide à l’écran, ce qui les rend plus faciles à localiser et améliore l’efficacité et la productivité.
 
-Par exemple, Microsoft Word fournit deux étendues de clé d’accès : une portée principale pour les onglets du ruban et une étendue secondaire pour les commandes de l’onglet sélectionné.
+Par exemple, Microsoft Word fournit deux étendues de clé d’accès : une étendue principale pour les onglets du ruban et une étendue secondaire pour les commandes de l’onglet sélectionné.
 
-Les images suivantes présentent les deux étendues des touches d’accès rapide dans Word. Le premier exemple montre les touches d’accès rapide principales qui permettent à un utilisateur de sélectionner un onglet et d’autres commandes de niveau supérieur. Le second exemple présente les touches d’accès rapide secondaire pour l’onglet Accueil.
+Les images suivantes illustrent les deux étendues de clé d’accès dans Word. Le premier affiche les clés d’accès principales qui permettent à un utilisateur de sélectionner un onglet et d’autres commandes de niveau supérieur, tandis que le deuxième affiche les clés d’accès secondaires pour l’onglet dossier de base.
 
-![clés d’accès principales dans Microsoft Word](images/accesskeys/primary-access-keys-word.png)
-_clés d’accès principales dans Microsoft Word_
+![Clés d’accès principales dans les](images/accesskeys/primary-access-keys-word.png)
+_clés d’accès principal Microsoft Word dans Microsoft Word_
 
-![les clés d’accès secondaires dans Microsoft Word](images/accesskeys/secondary-access-keys-word.png)
-_clés d’accès secondaires dans Microsoft Word_
+![Clés d’accès secondaires dans les](images/accesskeys/secondary-access-keys-word.png)
+_clés d’accès secondaires Microsoft Word dans Microsoft Word_
 
-Les touches d’accès rapide peuvent être dupliquées pour les éléments dans des étendues différentes. Dans l’exemple précédent, « 2 » est la touche d’accès rapide pour l’option Annuler dans l’étendue principale et pour l’option « Italique » dans l’étendue secondaire.
+Les clés d’accès peuvent être dupliquées pour des éléments dans différentes étendues. Dans l’exemple précédent, « 2 » est la clé d’accès pour l’annulation dans l’étendue principale et également « Italic » dans l’étendue secondaire.
 
-Nous montrons ici comment définir une étendue de touche d’accès.
+Ici, nous montrons comment définir une étendue de clé d’accès.
 
 ``` xaml
 <CommandBar x:Name="MainCommandBar" AccessKey="M" >
@@ -108,19 +108,19 @@ Nous montrons ici comment définir une étendue de touche d’accès.
 </CommandBar>
 ```
 
-![Touches d’accès rapide principales pour CommandBar](images/accesskeys/primary-access-keys-commandbar.png)
+![Clés d’accès principales pour CommandBar](images/accesskeys/primary-access-keys-commandbar.png)
 
 _Étendue principale CommandBar et clés d’accès prises en charge_
 
-![Touches d’accès rapide secondaires pour CommandBar](images/accesskeys/secondary-access-keys-commandbar.png)
+![Clés d’accès secondaires pour CommandBar](images/accesskeys/secondary-access-keys-commandbar.png)
 
 _Portée secondaire CommandBar et clés d’accès prises en charge_
 
-### <a name="windows-10-creators-update-and-older"></a>Windows 10 Creators Update et versions antérieures
+### <a name="windows-10-creators-update-and-older"></a>Windows 10 Creators Update et versions antérieures
 
-Avant Windows 10 Fall Creators Update, certaines commandes, telles que CommandBar, ne prenaient pas en charge les étendues intégrées de touches d’accès rapide.
+Avant la mise à jour des créateurs de Windows 10, certains contrôles, tels que CommandBar, ne prenaient pas en charge les étendues de clé d’accès intégrées.
 
-L’exemple suivant montre comment prendre en charge la propriété SecondaryCommands de la classe CommandBar grâce aux touches d’accès rapide qui sont disponibles une fois qu’une commande parent est appelée (comme le ruban dans Word).
+L’exemple suivant montre comment prendre en charge CommandBar SecondaryCommands avec des clés d’accès, qui sont disponibles une fois qu’une commande parente est appelée (semblable au ruban dans Word).
 
 ```xaml
 <local:CommandBarHack x:Name="MainCommandBar" AccessKey="M" >
@@ -196,93 +196,93 @@ public class CommandBarHack : CommandBar
 }
 ```
 
-## <a name="avoid-access-key-collisions"></a>Éviter les conflits de touches d’accès rapide
+## <a name="avoid-access-key-collisions"></a>Éviter les collisions de clés d’accès
 
-Des conflits de touches d’accès rapide se produisent lorsque deux ou plusieurs éléments dans la même étendue ont des touches d’accès rapide en double, ou démarrent avec les mêmes caractères alphanumériques.
+Les collisions de clés d’accès se produisent lorsque deux ou plusieurs éléments de la même étendue ont des clés d’accès en double ou commencent par les mêmes caractères alphanumériques.
 
-Le système résout le problème des touches d’accès rapide en double en traitant la touche d’accès rapide du premier élément ajouté à l’arborescence visuelle, en ignorant tous les autres.
+Le système résout les clés d’accès en double en traitant la clé d’accès du premier élément ajouté à l’arborescence d’éléments visuels, en ignorant tous les autres.
 
-Lorsque plusieurs touches d’accès rapide démarrent avec le même caractère (par exemple, « A », « A1 » et « AB »), le système traite la touche d’accès rapide à caractère unique et ignore tous les autres.
+Lorsque plusieurs clés d’accès commencent par le même caractère (par exemple, « A », « a1 » et « AB »), le système traite la clé d’accès à un seul caractère et ignore toutes les autres.
 
-Éviter les conflits à l’aide des touches d’accès unique ou en étendant les commandes.
+Évitez les collisions à l’aide de clés d’accès uniques ou de commandes d’étendue.
 
-## <a name="choose-access-keys"></a>Choisir des touches d’accès rapide
+## <a name="choose-access-keys"></a>Choisir les clés d’accès
 
-Considérez les éléments suivants lors du choix des touches d’accès rapide :
+Tenez compte des éléments suivants lorsque vous choisissez des clés d’accès :
 
--   Utiliser un caractère unique afin de minimiser les frappes et de prendre en charge des touches d’accès rapide par défaut (Alt+AccessKey)
+-   Utiliser un caractère unique pour réduire les frappes de touches et prendre en charge les touches accélérateur par défaut (Alt + AccessKey)
 -   Évitez d’utiliser plus de deux caractères
--   Évitez les conflits de touches d’accès rapide
--   Évitez les caractères qui sont difficiles à différencier d’autres caractères, par exemple la lettre « I » et le nombre « 1 », ou la lettre « O » et le nombre « 0 »
--   Utilisez des antécédents connus à partir d’autres applications populaires telles que Word (« F » pour « Fichier »), « H » pour « Accueil » [Home en anglais], etc.)
--   Utilisez le premier caractère du nom de commande, ou un caractère avec une association de fermeture à la commande pour faciliter la mémorisation
-    -   Si la première lettre est déjà affectée, utilisez une lettre qui est aussi proche que possible de la première lettre du nom de commande (« N » pour Insérer)
-    -   Utilisez une consonne distinctive à partir du nom de commande (« W » pour Afficher [View en anglais])
-    -   Utilisez une voyelle à partir du nom de commande.
+-   Éviter les collisions de clés d’accès
+-   Évitez les caractères difficiles à distinguer d’autres caractères, tels que la lettre « I » et le chiffre « 1 » ou la lettre « O » et le nombre « 0 »
+-   Utilisez des antécédents bien connus d’autres applications populaires telles que Word (« F » pour « fichier », « H » pour « démarrage », etc.)
+-   Utilisez le premier caractère du nom de la commande, ou un caractère avec une association étroite avec la commande qui vous aide à rappeler
+    -   Si la première lettre est déjà assignée, utilisez une lettre aussi proche que possible de la première lettre du nom de commande (« N » pour l’insertion)
+    -   Utiliser une consonne distinctive à partir du nom de commande (« W » pour la vue)
+    -   Utilisez une voyelle à partir du nom de la commande.
 
-## <a name="localize-access-keys"></a>Localiser des touches d’accès rapide
+## <a name="localize-access-keys"></a>Localiser les clés d’accès
 
-Si votre application doit être localisée dans plusieurs langues, vous devez également **envisager de localiser les touches d’accès rapide**. Par exemple, pour « H » pour « Home » en en-US et « I » pour « Incio » en es-ES.
+Si votre application va être localisée dans plusieurs langues, vous devez également envisager de **localiser les clés d’accès**. Par exemple, pour « H » pour « orig » dans en-US et « I » pour « Incio » dans es-ES.
 
-Utilisez l’extension x:Uid dans le balisage pour appliquer des ressources localisées, comme illustré ici :
+Utilisez l’extension x :Uid dans le balisage pour appliquer les ressources localisées comme indiqué ici :
 
 ``` xaml
 <Button Content="Home" AccessKey="H" x:Uid="HomeButton" />
 ```
-Des ressources pour chaque langue sont ajoutées à des dossiers de chaîne correspondants dans le projet :
+Les ressources pour chaque langue sont ajoutées aux dossiers de chaînes correspondants dans le projet :
 
-![Dossiers de chaîne de ressources en anglais et en espagnol](images/accesskeys/resource-string-folders.png)
+![Dossiers de chaînes de ressources en anglais et espagnol](images/accesskeys/resource-string-folders.png)
 
 _Dossiers de chaînes de ressources en anglais et espagnol_
 
-Les touches d’accès localisées sont spécifiées dans votre fichier de projets resources.resw :
+Les clés d’accès localisées sont spécifiées dans le fichier Resources. resw de vos projets :
 
-![Indiquez la propriété AccessKey spécifiée dans le fichier resources.resw](images/accesskeys/resource-resw-file.png)
+![Spécifiez la propriété AccessKey spécifiée dans le fichier Resources. resw](images/accesskeys/resource-resw-file.png)
 
 _Spécifiez la propriété AccessKey spécifiée dans le fichier Resources. resw_
 
-Pour plus d’informations, consultez [Traduire des ressources d’interface utilisateur ](https://docs.microsoft.com/previous-versions/windows/apps/hh965329(v=win.10))
+Pour plus d’informations, consultez [traduction des ressources de l’interface utilisateur](https://docs.microsoft.com/previous-versions/windows/apps/hh965329(v=win.10))
 
-## <a name="key-tip-positioning"></a>Positionnement des touches d’accès
+## <a name="key-tip-positioning"></a>Positionnement des touches accélératrices
 
-Les touches d’accès sont affichées en tant que badges flottants relatifs à l’élément d’interface utilisateur correspondant, en prenant en compte la présence d’autres éléments d’interface utilisateur, d’autres touches d’accès, ainsi que la présence du bord de l’écran.
+Les touches accélératrices sont affichées sous forme de badges flottants par rapport à leur élément d’interface utilisateur correspondant, en tenant compte de la présence d’autres éléments d’interface utilisateur, d’autres conseils clés et du bord de l’écran.
 
-En règle générale, l’emplacement par défaut de la touche d’accès est satisfaisant et fournit une prise en charge intégrée pour l’interface utilisateur adaptative.
+En règle générale, l’emplacement des pourboires par défaut est suffisant et fournit une prise en charge intégrée de l’interface utilisateur adaptative.
 
-![Exemple de placement automatique de la touche d’accès](images/accesskeys/auto-keytip-position.png)
+![Exemple d’emplacement de l’info-bulle automatique](images/accesskeys/auto-keytip-position.png)
 
 _Exemple d’emplacement de l’info-bulle automatique_
 
-Nous vous recommandons toutefois les éléments suivants, au cas où vous auriez besoin de plus de contrôle sur le positionnement de la touche d’accès :
+Toutefois, si vous avez besoin de davantage de contrôle sur le positionnement des touches accélératrices, nous vous recommandons ce qui suit :
 
-1.  **Principe d’association évident** : l’utilisateur peut facilement associer la commande à la touche d’accès.
+1.  **Principe d’association évident**: l’utilisateur peut facilement associer le contrôle à l’info-bulle.
 
-    a.  La touche d’accès doit être **proche** de l’élément qui possède la touche d’accès rapide (le propriétaire).  
-    b.  La touche d’accès doit **éviter des éléments de couverture activés** qui ont des touches d’accès rapide.   
-    c.  Si une touche d’accès ne peut pas être placée proche de son propriétaire, elle doit le chevaucher. 
+    a.  L’info-bulle doit être **proche** de l’élément qui a la clé d’accès (propriétaire).  
+    b.  Le Conseil clé doit **éviter de couvrir les éléments activés** qui ont des clés d’accès.   
+    c.  Si une info-bulle ne peut pas être placée à proximité de son propriétaire, elle doit chevaucher le propriétaire. 
 
-2.  **Détectabilité** : l’utilisateur peut rapidement découvrir la commande à l’aide de la touche d’accès.
+2.  **Détectabilité**: l’utilisateur peut découvrir rapidement le contrôle avec la touche accélératrice.
 
-    a.  La touche d’accès ne **chevauche** jamais d’autres touches d’accès.  
+    a.  L’astuce clé ne **chevauche** jamais d’autres touches accélératrices.  
 
-3.  **Analyse simple :** l’utilisateur peut parcourir facilement les touches d’accès.
+3.  **Analyse facile :** L’utilisateur peut facilement parcourir les conseils clés.
 
-    a.  Les touches d’accès doivent être **alignées** entre elles et avec l’élément d’interface utilisateur.
-    b.  Les touches d’accès doivent être **regroupées** autant que possible. 
+    a.  Les touches accélératrices doivent être **alignées** les unes avec les autres et avec l’élément d’interface utilisateur.
+    b.  Les conseils clés doivent être **regroupés** autant que possible. 
 
 ### <a name="relative-position"></a>Position relative
 
-Utilisez la propriété **KeyTipPlacementMode** afin de personnaliser le placement de la touche d’accès sur une base par élément ou par groupe.
+Utilisez la propriété **KeyTipPlacementMode** pour personnaliser le placement de l’info-bulle clé sur une base par élément ou par groupe.
 
-Les modes de placement sont : Haut, Bas, Droite, Gauche, Masqué, Centrer et Auto.
+Les modes de placement sont les suivants : haut, bas, droite, gauche, masqué, Centre et automatique.
 
-![Modes de placement d’une touche d’accès](images/accesskeys/keytip-postion-modes.png)
+![Modes de positionnement des touches accélératrices](images/accesskeys/keytip-postion-modes.png)
 
 _Modes de positionnement des touches accélératrices_
 
-La ligne centrale de la commande est utilisée pour calculer l’alignement vertical et horizontal de la touche d’accès.
+La ligne centrale du contrôle est utilisée pour calculer l’alignement vertical et horizontal de l’info-bulle.
 
-L’exemple suivant montre comment configurer le placement de la touche d’accès d’un groupe de commandes, en utilisant la propriété KeyTipPlacementMode d’un conteneur StackPanel.
+L’exemple suivant montre comment définir le placement de l’info-bulle clé d’un groupe de contrôles à l’aide de la propriété KeyTipPlacementMode d’un conteneur StackPanel.
 
 ``` xaml
 <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" KeyTipPlacementMode="Top">
@@ -294,14 +294,14 @@ L’exemple suivant montre comment configurer le placement de la touche d’acc�
 
 ### <a name="offsets"></a>Décalages
 
-Utilisez les propriétés KeyTipHorizontalOffset et KeyTipVerticalOffset d’un élément pour obtenir un contrôle plus précis de l’emplacement de la touche d’accès.
+Utilisez les propriétés KeyTipHorizontalOffset et KeyTipVerticalOffset d’un élément pour un contrôle encore plus granulaire de l’emplacement de l’info-bulle de clé.
 
 > [!NOTE]
-> Les décalages ne peuvent pas être configurés lorsque la propriété KeyTipPlacementMode est définie sur le mode Auto.
+> Les offsets ne peuvent pas être définis lorsque KeyTipPlacementMode a la valeur auto.
 
-La propriété KeyTipHorizontalOffset indique jusqu’à quel endroit, vers la gauche ou vers la droite, déplacer la touche d’accès. L’exemple montre comment configurer les décalages de la touche d’accès pour une touche.
+La propriété KeyTipHorizontalOffset indique jusqu’à quel point l’info-bulle doit être déplacée vers la gauche ou la droite. montre comment définir des décalages d’info-bulle pour un bouton.
 
-![Modes de placement d’une touche d’accès](images/accesskeys/keytip-offsets.png)
+![Modes de positionnement des touches accélératrices](images/accesskeys/keytip-offsets.png)
 
 _Définir des décalages verticaux et horizontaux pour une touche accélératrice_
 
@@ -314,25 +314,25 @@ _Définir des décalages verticaux et horizontaux pour une touche accélératric
   KeyTipVerticalOffset="-8" />
 ```
 
-### <a name="screen-edge-alignment-screen-edge-alignment-listparagraph"></a>Alignement avec le bord de l’écran {#screen-edge-alignement .ListParagraph}
+### <a name="screen-edge-alignment-screen-edge-alignment-listparagraph"></a>Alignement du bord de l’écran {#screen-Edge-Alignment. ListParagraph}
 
-L’emplacement d’une touche d’accès est automatiquement ajusté au bord de l’écran afin de garantir que la touche d’accès est bien visible. Lorsque cela se produit, la distance entre la commande et le point d’alignement de la touche d’accès peut être différente des valeurs spécifiées pour les décalages horizontaux et verticaux.
+L’emplacement d’une info-bulle est ajusté automatiquement en fonction du bord de l’écran pour vérifier que l’info-bulle est entièrement visible. Lorsque cela se produit, la distance entre le contrôle et le point d’alignement de l’extrémité de clé peut différer des valeurs spécifiées pour les décalages horizontal et vertical.
 
-![Modes de placement d’une touche d’accès](images/accesskeys/keytips-screen-edge.png)
+![Modes de positionnement des touches accélératrices](images/accesskeys/keytips-screen-edge.png)
 
 _Le bord de l’écran provoque le repositionnement automatique de l’info-bulle_
 
-## <a name="key-tip-style"></a>Style des touches d’accès
+## <a name="key-tip-style"></a>Style d’info-bulle
 
-Nous vous conseillons d’utiliser le support intégré de touche d’accès pour les thèmes de plateforme, y compris à contraste élevé.
+Nous vous recommandons d’utiliser la prise en charge intégrée des touches accélératrices pour les thèmes de plateforme, y compris le contraste élevé.
 
-Si vous avez besoin de spécifier vos propres styles de touche d’accès, utilisez des ressources d’application, telles que KeyTipFontSize (taille de police), KeyTipFontFamily (famille de police), KeyTipBackground (arrière-plan), KeyTipForeground (premier plan), KeyTipPadding (remplissage), KeyTipBorderBrush (couleur de bordure) et KeyTipBorderThemeThickness (épaisseur de bordure).
+Si vous devez spécifier vos propres styles d’info-bulle, utilisez des ressources d’application telles que KeyTipFontSize (taille de police), KeyTipFontFamily (famille de polices), KeyTipBackground (arrière-plan), KeyTipForeground (premier plan), KeyTipPadding (remplissage), KeyTipBorderBrush (couleur de bordure) et KeyTipBorderThemeThickness (épaisseur de bordure).
 
-![Modes de placement d’une touche d’accès](images/accesskeys/keytip-customization.png)
+![Modes de positionnement des touches accélératrices](images/accesskeys/keytip-customization.png)
 
 _Options de personnalisation des touches accélératrices_
 
-Cet exemple montre comment modifier ces ressources d’application :
+Cet exemple montre comment modifier les ressources de l’application :
 
  ```xaml  
 <Application.Resources>
@@ -351,9 +351,9 @@ Cet exemple montre comment modifier ces ressources d’application :
 
 ## <a name="access-keys-and-narrator"></a>Touches d’accès rapide et Narrateur
 
-L’infrastructure XAML expose les propriétés d’automatisation qui permettent aux clients UI Automation de découvrir des informations sur des éléments dans l’interface utilisateur.
+L’infrastructure XAML expose des propriétés Automation qui permettent aux clients UI Automation de découvrir des informations sur les éléments de l’interface utilisateur.
 
-Si vous spécifiez la propriété AccessKey sur une commande UIElement ou TextElement, vous pouvez utiliser la propriété [AutomationProperties.AccessKey](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.accesskey) afin d’obtenir cette valeur. Les clients d’accessibilité, tels que Narrateur, lisent la valeur de cette propriété à chaque fois qu’un élément obtient un focus.
+Si vous spécifiez la propriété AccessKey sur un contrôle UIElement ou TextElement, vous pouvez utiliser la propriété [AutomationProperties. AccessKey](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.accesskey) pour obtenir cette valeur. Les clients d’accessibilité, tels que le narrateur, lisent la valeur de cette propriété chaque fois qu’un élément obtient le focus.
 
 ## <a name="related-articles"></a>Articles connexes
 

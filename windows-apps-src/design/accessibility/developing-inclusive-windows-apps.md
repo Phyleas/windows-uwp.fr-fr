@@ -1,5 +1,5 @@
 ---
-Description: Apprenez à développer des applications UWP Windows 10 accessibles qui incluent la navigation au clavier, les paramètres de couleur et de contraste et la prise en charge des technologies d’assistance.
+Description: Apprenez à développer des applications Windows accessibles qui incluent la navigation au clavier, les paramètres de couleur et de contraste, ainsi que la prise en charge des technologies d’assistance.
 ms.assetid: 9311D23A-B340-42F0-BEFE-9261442AF108
 title: Développement d’applications Windows 10 inclusives
 label: Developing inclusive Windows 10 apps
@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 08f9d3f20974c1e1ce7ef62c01c26a44d3ff4889
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: f3d2866b3e04d2fa531e9bd538badd96205a8c65
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319227"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969424"
 ---
 # <a name="developing-inclusive-windows-apps"></a>Développement d’applications Windows inclusives  
 
-Cet article traite du développement d’applications de plateforme Windows universelle (UWP). Plus précisément, il part du principe que vous comprenez comment concevoir la hiérarchie logique de votre application. Apprenez à développer des applications UWP Windows 10 accessibles qui incluent la navigation au clavier, les paramètres de couleur et de contraste et la prise en charge des technologies d’assistance.
+Cet article explique comment développer des applications d’application Windows accessibles. Plus précisément, il part du principe que vous comprenez comment concevoir la hiérarchie logique de votre application. Apprenez à développer des applications Windows accessibles qui incluent la navigation au clavier, les paramètres de couleur et de contraste, ainsi que la prise en charge des technologies d’assistance.
 
 Si vous ne l’avez pas encore fait, commencez par lire [Conception de logiciels inclusifs](designing-inclusive-software.md).
 
@@ -76,7 +76,7 @@ Voici une version abrégée de la liste de vérification de l’accessibilité 
 3. Vérifiez visuellement votre interface utilisateur pour vous assurer que le contraste du texte est suffisant, que le rendu des éléments est correct dans les thèmes à contraste élevé et que les couleurs sont utilisées correctement.
 4. Exécutez les outils d’accessibilité, traitez les problèmes signalés et vérifiez l’expérience de lecture d’écran. (Voir la rubrique concernant le test de l’accessibilité)
 5. Assurez-vous que vos paramètres de manifeste d’application respectent les recommandations en matière d’accessibilité.
-6. Déclarez votre application comme accessible dans le Microsoft Store. (Voir la rubrique [Accessibilité dans le Store](accessibility-in-the-store.md).)
+6. Déclarez votre application comme accessible dans le Microsoft Store. (Voir la rubrique [Accessibilité dans le Windows Store](accessibility-in-the-store.md))
 
 Pour en savoir plus, consultez la rubrique [Liste de vérification de l’accessibilité](accessibility-checklist.md).
 
@@ -85,5 +85,5 @@ Pour en savoir plus, consultez la rubrique [Liste de vérification de l’access
 * [Conception inclusive](https://www.microsoft.com/design/inclusive/)
 * [Pratiques d’accessibilité à éviter](practices-to-avoid.md)
 * [Logiciel d’ingénierie pour l’accessibilité](https://www.microsoft.com/download/details.aspx?id=19262)
-* [Hub de développeur d’accessibilité de Microsoft](https://developer.microsoft.com/windows/accessible-apps)
+* [Hub Microsoft Accessibility Developer](https://developer.microsoft.com/windows/accessible-apps)
 * [Accessibilité](accessibility.md)

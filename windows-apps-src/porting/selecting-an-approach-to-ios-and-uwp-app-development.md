@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a76b451a3d268e418ae24998afdd29d32bb43ed6
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 538fbc33d161f5f91033427af76438f49d3d3b68
+ms.sourcegitcommit: 28bd367ab8acc64d4b6f3f73adca12100cbd359f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260136"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82148587"
 ---
 # <a name="selecting-an-approach-to-ios-and-uwp-app-development"></a>Sélection d’une approche d’iOS et développement d’applications pour UWP
 
@@ -54,7 +54,7 @@ Avec une application iOS existante, les options sont un peu plus limitées. Néa
 
     Si votre logique d'entreprise est écrite en C++, plutôt qu’en Objective-C ou Swift, vous pouvez souvent utiliser ce code avec des modifications mineures de votre projet. Vous pouvez ensuite utiliser XAML pour définir votre interface utilisateur, comme avec d'autres applications Windows, et appeler le code C++ lorsque cela est nécessaire.
 
--   [Utiliser l’ANGLE pour exécuter OpenGL ES sur Windows](https://github.com/microsoft/angle/wiki)
+-   [Utiliser ANGLE pour exécuter OpenGL ES sous Windows](https://github.com/microsoft/angle/wiki)
 
     Une étape intermédiaire pour le portage de votre projet OpenGL ES 2.0 consiste à utiliser ANGLE. ANGLE pour Windows Store vous permet d’exécuter le contenu OpenGL ES sous Windows en convertissant les appels d’API OpenGL ES en appels d’API DirectX 11.
 
@@ -64,11 +64,11 @@ Avec une application iOS existante, les options sont un peu plus limitées. Néa
 
     Environnement de création de jeux.
 
--   [Construction 2]( https://go.microsoft.com/fwlink/p/?LinkID=320481)
+-   [Construct 2]( https://www.scirra.com/)
 
     Environnement de création de jeux.
 
--   [Titan Studio](https://www.appcelerator.com/platform/titanium-studio/)
+-   [Titanium Studio](https://www.appcelerator.com/platform/titanium-studio/)
 
     Environnement de création multiplateforme.
 
@@ -76,11 +76,11 @@ Avec une application iOS existante, les options sont un peu plus limitées. Néa
 
     Bibliothèque de code interplateforme pour la gestion des sprites et la modélisation physique.
 
--   [Impact. js](https://impactjs.com/)
+-   [Impact.js](https://impactjs.com/)
 
     Bibliothèque de jeux HTML.
 
--   [Marmelade](http://madewithmarmalade.com/)
+-   [Marmalade](http://madewithmarmalade.com/)
 
     Kit de développement logiciel interplateforme.
 

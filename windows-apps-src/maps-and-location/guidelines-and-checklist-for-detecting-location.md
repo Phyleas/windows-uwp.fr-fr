@@ -1,19 +1,19 @@
 ---
 Description: Cette rubrique décrit les recommandations en matière de performance des applications qui nécessitent de géolocaliser un utilisateur.
-title: Recommandations pour les applications prenant en charge l’emplacement
+title: Recommandations pour les applications avec la géolocalisation
 ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp, emplacement, carte, géolocalisation
+keywords: Windows 10, UWP, emplacement, carte, géolocalisation
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ab8e91c773990bafd414af1ae3d071ac6142088
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 575974db003048c6a248feab32ddb6c2c8f4f7f7
+ms.sourcegitcommit: 2571af6bf781a464a4beb5f1aca84ae7c850f8f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259356"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82606318"
 ---
-# <a name="guidelines-for-location-aware-apps"></a>Recommandations pour les applications prenant en charge l’emplacement
+# <a name="guidelines-for-location-aware-apps"></a>Recommandations pour les applications avec la géolocalisation
 
 
 
@@ -21,7 +21,7 @@ ms.locfileid: "74259356"
 **API importantes**
 
 -   [**Géolocalisation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation)
--   [**Événement GeoLocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator)
+-   [**Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator)
 
 Cette rubrique décrit les recommandations en matière de performance des applications qui nécessitent de géolocaliser un utilisateur.
 
@@ -45,13 +45,13 @@ Cette rubrique décrit les recommandations en matière de performance des applic
 
 -   Supprimez les données de géolocalisation mises en cache et libérez l’objet [**Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator) lorsque l’utilisateur désactive l’accès aux informations de géolocalisation.
 
-    Libérez l’objet [**Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator) si l’utilisateur désactive l’accès aux informations de géolocalisation via les Paramètres. L’application reçoit alors l' **accès\_les résultats refusés** pour tous les appels d’API d’emplacement. Si votre application enregistre ou met en cache les données de géolocalisation, effacez toutes les données mises à en cache lorsque l’utilisateur révoque l’accès aux informations de géolocalisation. Proposez un autre moyen de saisir manuellement un emplacement lorsque les informations de géolocalisation ne sont pas disponibles via les services de localisation.
+    Libérez l’objet [**Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator) si l’utilisateur désactive l’accès aux informations de géolocalisation via les Paramètres. L’application reçoit alors les résultats de **refus d’accès\_** pour tous les appels d’API d’emplacement. Si votre application enregistre ou met en cache les données de géolocalisation, effacez toutes les données mises à en cache lorsque l’utilisateur révoque l’accès aux informations de géolocalisation. Proposez un autre moyen de saisir manuellement un emplacement lorsque les informations de géolocalisation ne sont pas disponibles via les services de localisation.
 
 -   Prévoyez une interface utilisateur permettant de réactiver les services de localisation. Par exemple, fournissez un bouton actualiser qui réinstancie l’objet [**géolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator) et tente à nouveau d’obtenir des informations d’emplacement.
 
     Votre application doit proposer une interface utilisateur pour la réactivation des services de géolocalisation.
 
-    -   Si l’utilisateur réactive l’accès à la géolocalisation après l’avoir désactivé, aucune notification n’est communiquée à l’application. La propriété [**status**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.statuschangedeventargs.status) ne change pas et aucun événement [**statusChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.statuschanged) ne se produit. Votre application doit créer un objet [**Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator) et appeler [**getGeopositionAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync) pour essayer d’obtenir des données de géolocalisation à jour, ou se réabonner aux événements [**positionChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.positionchanged). Si l’état indique ensuite que la géolocalisation a été réactivée, effacez tout élément d’interface utilisateur précédemment affiché par votre application pour avertir l’utilisateur que les services de localisation étaient désactivés et répondez de manière appropriée au nouvel état.
+    -   Si l’utilisateur réactive l’accès à la géolocalisation après l’avoir désactivé, aucune notification n’est communiquée à l’application. La propriété [**status**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.statuschangedeventargs.status) ne change pas et aucun événement [**statusChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.statuschanged) ne se produit. Votre application doit créer un objet [**géolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator) et appeler [**getGeopositionAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync) pour essayer d’obtenir des données d’emplacement mises à jour, ou s’abonner à nouveau aux événements [**positionChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.positionchanged) . Si l’état indique ensuite que la géolocalisation a été réactivée, effacez tout élément d’interface utilisateur précédemment affiché par votre application pour avertir l’utilisateur que les services de localisation étaient désactivés et répondez de manière appropriée au nouvel état.
     -   Votre application doit également tenter à nouveau de se procurer des données de géolocalisation au moment de l’activation, lorsque l’utilisateur tente explicitement d’utiliser la fonctionnalité qui fait appel à des informations de géolocalisation ou à tout autre moment adapté au scénario.
 
 **Performances**
@@ -62,37 +62,37 @@ Cette rubrique décrit les recommandations en matière de performance des applic
 
     -   Spécifiez la précision demandée par votre application en définissant la propriété [**DesiredAccuracy**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.desiredaccuracy) ou [**DesiredAccuracyInMeters**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.desiredaccuracyinmeters). Pour obtenir des recommandations concernant l’utilisation de ces paramètres, voir plus bas.
     -   Définissez le paramètre d’âge maximal de [**GetGeopositionAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync) pour spécifier depuis combien de temps un emplacement peut avoir été obtenu pour être utile à votre application. Si votre application peut utiliser une position qui a été obtenue quelques secondes ou minutes auparavant, elle peut recevoir une position presque immédiatement et contribuer à prolonger l’autonomie de l’appareil.
-    -   Définissez le paramètre de délai d’attente de [**GetGeopositionAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync). Il s’agit du délai pendant lequel votre application peut attendre la réception d’une position ou d’une erreur. Vous devez établir un bon compromis entre réactivité et précision, en fonction des besoins de votre application.
+    -   Définissez le paramètre timeout de [**GetGeopositionAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync). Il s’agit du délai pendant lequel votre application peut attendre la réception d’une position ou d’une erreur. Vous devez établir un bon compromis entre réactivité et précision, en fonction des besoins de votre application.
 -   Utilisez une session de géolocalisation continue quand des mises à jour fréquentes de la position sont nécessaires. Utilisez les événements [**positionChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.positionchanged) et [**statusChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.statuschanged) pour détecter un déplacement au-delà d’un seuil spécifique ou pour des mises à jour géographiques continues au fur et à mesure qu’elles se produisent.
 
-    Lors d’une demande de mise à jour de géolocalisation, vous pouvez spécifier la précision demandée par votre application en définissant la propriété [**DesiredAccuracy**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.desiredaccuracy) ou [**DesiredAccuracyInMeters**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.desiredaccuracyinmeters). Vous devez également définir la fréquence à laquelle les mises à jour géographiques sont nécessaires, à l’aide de la propriété [**MovementThreshold**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.movementthreshold) ou [**ReportInterval**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.reportinterval).
+    Lors d’une demande de mise à jour de géolocalisation, vous pouvez spécifier la précision demandée par votre application en définissant la propriété [**DesiredAccuracy**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.desiredaccuracy) ou [**DesiredAccuracyInMeters**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.desiredaccuracyinmeters). Vous devez également définir la fréquence à laquelle les mises à jour de l’emplacement sont nécessaires, à l’aide de [**MovementThreshold**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.movementthreshold) ou de [**ReportInterval**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.reportinterval).
 
     -   Spécifiez le seuil de déplacement. Certaines applications n’ont besoin de mises à jour géographiques que lorsque l’utilisateur effectue un long déplacement. Ainsi, une application qui fournit des actualités locales ou des mises à jour météorologiques peut ne pas avoir besoin de mises à jour géographiques, à moins que l’utilisateur ne change de lieu en se rendant dans une autre ville. Dans ce cas, vous réglez la distance minimale requise avant déclenchement d’un événement de mise à jour géographique en définissant la propriété [**MovementThreshold**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.movementthreshold). Cette propriété a pour effet de filtrer les événements [**PositionChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.positionchanged). Des événements de ce type ne se déclenchent que lorsque le changement de position dépasse le seuil de déplacement.
 
-    -   Utilisez une valeur [**reportInterval**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.reportinterval) qui est conforme à votre expérience de l’application et diminue le recours aux ressources système. Par exemple, une application météo peut nécessiter une mise à jour des données toutes les 15 minutes seulement. En dehors des applications de navigation en temps réel, la plupart des applications n’exigent pas un flux constant de mises à jour géographiques extrêmement précises. Si votre application n’a pas besoin d’un flux de données ultra précis ou si elle nécessite des mises à jour de temps à autre, définissez la propriété **ReportInterval** pour indiquer la fréquence minimale des mises à jour géographiques dont a besoin votre application. La source de localisation peut ensuite économiser de l’énergie en calculant l’emplacement seulement en cas de besoin.
+    -   Utilisez [**reportInterval**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.reportinterval) qui s’aligne sur l’expérience de votre application et qui réduit l’utilisation des ressources système. Par exemple, une application météo peut nécessiter une mise à jour des données toutes les 15 minutes seulement. En dehors des applications de navigation en temps réel, la plupart des applications n’exigent pas un flux constant de mises à jour géographiques extrêmement précises. Si votre application n’a pas besoin d’un flux de données ultra précis ou si elle nécessite des mises à jour de temps à autre, définissez la propriété **ReportInterval** pour indiquer la fréquence minimale des mises à jour géographiques dont a besoin votre application. La source de localisation peut ensuite économiser de l’énergie en calculant l’emplacement seulement en cas de besoin.
 
         S’agissant d’applications qui nécessitent des données en temps réel, il est nécessaire de définir la propriété [**ReportInterval**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.reportinterval) avec la valeur 0 pour indiquer qu’aucun intervalle minimal n’est spécifié. L’intervalle de rapport par défaut est le plus court entre 1 seconde ou la fréquence que le matériel permet.
 
         Les appareils qui fournissent des données de géolocalisation peuvent suivre l’intervalle de rapport demandé par différentes applications et fournir des rapports de données au plus petit intervalle demandé. L’application qui a le plus besoin de précision reçoit ainsi les données dont elle a besoin. Par conséquent, il est possible que le service de géolocalisation génère des mises à jour à une fréquence plus élevée que celle demandée par votre application, si une autre application a demandé des mises à jour plus fréquentes.
 
-        **Notez**  il n’est pas garanti que la source d’emplacement honorera la demande pour l’intervalle de rapport donné. Bien que certains services de géolocalisation ne tiennent pas compte de l’intervalle de rapport, vous avez quand même intérêt à le définir pour ceux qui le prennent en compte.
+        **Notez**  qu’il n’est pas garanti que la source d’emplacement honorera la demande pour l’intervalle de rapport donné. Bien que certains services de géolocalisation ne tiennent pas compte de l’intervalle de rapport, vous avez quand même intérêt à le définir pour ceux qui le prennent en compte.
 
-    -   Dans un souci d’économie d’énergie, définissez la propriété [**desiredAccuracy**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.desiredaccuracy) pour indiquer à la plateforme de géolocalisation si votre application a besoin ou non de données de grande précision. Si aucune application n’a besoin de données de grande précision, le système peut économiser de l’énergie en n’activant pas les services GPS.
+    -   Pour vous aider à économiser de l’énergie, définissez la propriété [**desiredAccuracy**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.desiredaccuracy) pour indiquer à la plateforme d’emplacement si votre application a besoin de données de haute précision. Si aucune application n’a besoin de données de grande précision, le système peut économiser de l’énergie en n’activant pas les services GPS.
 
         -   Définissez [**desiredAccuracy**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.desiredaccuracy) sur **HIGH** pour activer l’acquisition de données par GPS.
         -   Affectez à [**desiredAccuracy**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.desiredaccuracy) la valeur **Default** et utilisez uniquement un modèle d’appel à application unique pour réduire la consommation d’énergie si votre application utilise l’emplacement uniquement à des fins de ciblage publicitaire.
 
         Si votre application a des besoins spécifiques en matière de précision, vous pouvez utiliser la propriété [**DesiredAccuracyInMeters**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.desiredaccuracyinmeters) au lieu de [**DesiredAccuracy**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.desiredaccuracy). Ceci est particulièrement utile sur Windows Phone, où la position peut généralement être obtenue grâce aux satellites ou aux points d’accès cellulaires ou Wi-Fi. La sélection d’une valeur de précision plus spécifique aide le système à identifier les technologies adéquates à utiliser avec le moindre coût énergétique lors de la fourniture de la position.
 
-        Par exemple :
+        Par exemple :
 
         -   Si votre application obtient l’emplacement pour l’optimisation publicitaire, la météo, les actualités, et ainsi de suite, une précision de 5000 mètres suffit généralement.
         -   Si votre application affiche des transactions à proximité dans le voisinage, une précision de 300 mètres est généralement correcte pour fournir des résultats.
         -   Si l’utilisateur souhaite obtenir des recommandations pour choisir un restaurant dans les environs, une précision de 100 mètres suffit.
         -   Si l’utilisateur essaie de partager sa position, l’application doit demander une précision d’environ 10 mètres.
-    -   Utilisez la propriété [**Geocoordinate.accuracy**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geocoordinate.accuracy) si votre application a des exigences de précision spécifiques. Par exemple, les applications de navigation doivent utiliser la propriété **Geocoordinate.accuracy** pour déterminer si les données de géolocalisation disponibles répondent à leurs exigences.
+    -   Utilisez la propriété [**coordonnée. Accuracy**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geocoordinate.accuracy) si votre application a des exigences spécifiques en matière de précision. Par exemple, les applications de navigation doivent utiliser la propriété **Geocoordinate.accuracy** pour déterminer si les données de géolocalisation disponibles répondent à leurs exigences.
 
--   Prenez en compte le retard lié à la prise en main. Lorsqu’une application demande des données de géolocalisation pour la première fois, le service de localisation peut accuser un léger retard (une à deux secondes) au moment de sa prise en main. Vous devez en tenir compte dans la conception de l’interface utilisateur de votre application. Il est par exemple préférable d’éviter que d’autres tâches soient bloquées dans l’attente de l’exécution de l’appel à [**GetGeopositionAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync).
+-   Prenez en compte le retard lié à la prise en main. Lorsqu’une application demande des données de géolocalisation pour la première fois, le service de localisation peut accuser un léger retard (une à deux secondes) au moment de sa prise en main. Vous devez en tenir compte dans la conception de l’interface utilisateur de votre application. Par exemple, vous souhaiterez peut-être éviter de bloquer d’autres tâches en attente de la fin de l’appel à [**GetGeopositionAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync).
 
 -   Prenez en compte le comportement en arrière-plan. Si votre application n’a pas le focus, elle ne reçoit pas les événements de mise à jour de localisation tant qu’elle est interrompue en arrière-plan. Si votre application assure le suivi des mises à jour de localisation en les enregistrant dans un journal, tenez-en compte. Une fois que l’application récupère le focus, elle reçoit uniquement les nouveaux événements. Elle ne récupère aucune des mises à jour survenues pendant qu’elle était inactive.
 
@@ -101,10 +101,10 @@ Cette rubrique décrit les recommandations en matière de performance des applic
     -   Les capteurs bruts comprennent l’accéléromètre, le gyromètre et le magnétomètre.
     -   Les capteurs de fusion comprennent l’orientation, l’inclinomètre et la boussole. Les capteurs de fusion obtiennent les données d’un ensemble de capteurs bruts.
 
-    Les API Windows Runtime peuvent accéder à l’ensemble de ces capteurs, à l’exception de magnétomètre. Les capteurs de fusion sont plus précis et stables que les capteurs bruts, mais ils consomment plus. Utilisez le capteur adapté à vos besoins. Pour plus d’informations, voir [Capteurs](https://docs.microsoft.com/windows/uwp/devices-sensors/sensors).
+    Les API Windows Runtime peuvent accéder à tous ces capteurs à l’exception du magnétomètre. Les capteurs de fusion sont plus précis et stables que les capteurs bruts, mais ils consomment plus. Utilisez le capteur adapté à vos besoins. Pour plus d’informations, voir [Capteurs](https://docs.microsoft.com/windows/uwp/devices-sensors/sensors).
 
 **Veille connectée**
-- Quand le PC est à l’état de veille connectée, les objets [**Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator) peuvent toujours être instanciés. Cependant, l’objet **Geolocator** ne trouvera aucun capteur à agréger et, par conséquent, les appels à [**GetGeopositionAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync) expireront au bout de 7 secondes, les détecteurs d’événements [**PositionChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.positionchanged) ne seront jamais appelés et les détecteurs d’événements [**StatusChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.statuschanged) seront appelés une fois avec l’état **NoData**.
+- Lorsque l’ordinateur est en veille connectée, les objets [**géolocalisateurs**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator) peuvent toujours être instanciés. Cependant, l’objet **Geolocator** ne trouvera aucun capteur à agréger et, par conséquent, les appels à [**GetGeopositionAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync) expireront au bout de 7 secondes, les détecteurs d’événements [**PositionChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.positionchanged) ne seront jamais appelés et les détecteurs d’événements [**StatusChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.statuschanged) seront appelés une fois avec l’état **NoData**.
 
 ## <a name="additional-usage-guidance"></a>Indications d’utilisation supplémentaires
 
@@ -115,16 +115,16 @@ L’utilisateur peut désactiver la fonctionnalité de géolocalisation en défi
 
 -   Pour détecter à quel moment l’utilisateur désactive ou réactive les services de localisation :
     -   Gérez l’événement [**StatusChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.statuschanged). La propriété [**Status**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.statuschangedeventargs.status) de l’argument de l’événement **StatusChanged** a la valeur **Disabled** si l’utilisateur désactive les services de localisation.
-    -   Vérifiez les codes d’erreur retournés par [**GetGeopositionAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync). Si l’utilisateur a désactivé les services de localisation, les appels à **GetGeopositionAsync** échouent avec une erreur d' **accès\_refusé** et la propriété [**LocationStatus**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.locationstatus) a la valeur **désactivé**.
+    -   Vérifiez les codes d’erreur retournés par [**GetGeopositionAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync). Si l’utilisateur a désactivé les services de localisation, les appels à **GetGeopositionAsync** échouent avec une erreur d' **\_accès refusé** et la propriété [**LocationStatus**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.locationstatus) a la valeur **Disabled**.
 -   Si vous disposez d’une application pour laquelle des données de géolocalisation sont primordiales, par exemple une application de cartographie, veillez à effectuer les tâches suivantes :
     -   Gérez l’événement [**PositionChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.positionchanged) pour obtenir des mises à jour si l’emplacement de l’utilisateur change.
-    -   Gérez l’événement [**StatusChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.statuschanged) tel que décrit ci-avant afin de détecter les modifications apportées aux paramètres de géolocalisation.
+    -   Gérez l’événement [**StatusChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.statuschanged) comme décrit précédemment, pour détecter les modifications apportées aux paramètres d’emplacement.
 
 Notez que le service de localisation renvoie les données à mesure de leur disponibilité. Elle peut d’abord renvoyer une localisation avec un rayon d’erreur important, puis la mettre à jour à mesure que des informations plus précises se feront disponibles. Les applications qui affichent la localisation de l’utilisateur doivent normalement souhaiter la mettre à jour à mesure que des informations plus précises sont disponibles.
 
 ### <a name="graphical-representations-of-location"></a>Représentations graphiques de localisation
 
-Faites en sorte que votre application utilise [**Geocoordinate.accuracy**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geocoordinate.accuracy) pour indiquer précisément l’emplacement actuel de l’utilisateur sur la carte. Il existe trois principales bandes de précision : un rayon d’erreur d’environ 10 mètres, un rayon d’erreur d’environ 100 mètres et un rayon d’erreur de plus d’un kilomètre. En utilisant les informations de précision, vous pouvez vous assurer que votre application affiche l’emplacement de façon exacte dans le contexte des données disponibles. Pour plus d’informations générales sur l’utilisation du contrôle de carte, voir [Afficher des cartes avec des vues 2D, 3D et Streetside](https://docs.microsoft.com/windows/uwp/maps-and-location/display-maps).
+Faites en sorte que votre application utilise la [**géocoordination. précision**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geocoordinate.accuracy) pour indiquer clairement l’emplacement actuel de l’utilisateur sur la carte. Il existe trois principales bandes de précision : un rayon d’erreur d’environ 10 mètres, un rayon d’erreur d’environ 100 mètres et un rayon d’erreur de plus d’un kilomètre. En utilisant les informations de précision, vous pouvez vous assurer que votre application affiche l’emplacement de façon exacte dans le contexte des données disponibles. Pour plus d’informations générales sur l’utilisation du contrôle de carte, voir [Afficher des cartes avec des vues 2D, 3D et Streetside](https://docs.microsoft.com/windows/uwp/maps-and-location/display-maps).
 
 -   Pour une précision égale à peu près à 10 mètres (résolution GPS), l’emplacement peut être indiqué par un point ou une épingle sur la carte. Avec cette précision, les coordonnées de latitude et de longitude ainsi que l’adresse peuvent également être affichées.
 
@@ -151,21 +151,21 @@ Certains types d’applications, par exemple une application météo ou d’info
 -   Pour une précision égale à peu près à 100 mètres (résolution Wi-Fi), les données de géolocalisation reçues sont moyennement précises et nous vous conseillons donc d’afficher les informations jusqu’au nom de la ville. Évitez d’utiliser le nom du voisinage.
 -   Pour une précision supérieure à 1 kilomètre (résolution IP), affichez uniquement le département ou la province, ou le nom du pays/de la région.
 
-### <a name="privacy-considerations"></a>Considérations de confidentialité
+### <a name="privacy-considerations"></a>Considérations relatives à la confidentialité
 
 La géolocalisation d’un utilisateur correspond à des informations d’identification personnelle. Le site Web suivant fournit des recommandations concernant la protection de la vie privé des utilisateurs.
 
--   [Confidentialité Microsoft]( https://go.microsoft.com/fwlink/p/?LinkId=259692)
+-   [Confidentialité Microsoft]( https://www.microsoft.com/privacy/dpd/default.aspx)
 
 <!--For more info, see [Guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md).-->
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Configurer une limite géographique](https://docs.microsoft.com/windows/uwp/maps-and-location/set-up-a-geofence)
+* [Définir une limite géographique](https://docs.microsoft.com/windows/uwp/maps-and-location/set-up-a-geofence)
 * [Obtenir l’emplacement actuel](https://docs.microsoft.com/windows/uwp/maps-and-location/get-location)
 * [Afficher des cartes avec des vues 2D, 3D et Streetside](https://docs.microsoft.com/windows/uwp/maps-and-location/display-maps)
 <!--* [Design guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md)-->
-* [Exemple d’emplacement UWP (géolocalisation)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Geolocation)
+* [Exemple de géolocalisation UWP (géolocalisation)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Geolocation)
  
 
  

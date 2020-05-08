@@ -1,5 +1,5 @@
 ---
-Description: Procédures de test à appliquer pour vous assurer de l’accessibilité de votre application de plateforme Windows universelle (UWP).
+Description: Procédures de test à suivre pour vous assurer que votre application d’application Windows est accessible.
 ms.assetid: 272D9C9E-B179-4F5A-8493-926D007A0225
 title: Test de l’accessibilité
 label: Accessibility testing
@@ -8,22 +8,22 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fb9480740746b6e6ec792d4b88f4d84e4acb7c0e
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 8c5f3a01ae9231bd27208cacff0ee5209c3716b5
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257799"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969684"
 ---
 # <a name="accessibility-testing"></a>Test de l’accessibilité  
 
-Procédures de test à appliquer pour vous assurer de l’accessibilité de votre application de plateforme Windows universelle (UWP).
+Procédures de test à suivre pour vous assurer que votre application d’application Windows est accessible.
 
 <span id="run_accessibility_testing_tools"/>
 <span id="RUN_ACCESSIBILITY_TESTING_TOOLS"/>
 
 ## <a name="run-accessibility-testing-tools"></a>Exécuter les outils de test d’accessibilité  
-Le Kit de développement logiciel (SDK) Windows inclut plusieurs outils de test d’accessibilité, par exemple [**AccScope**](https://docs.microsoft.com/windows/desktop/WinAuto/accscope), [**Inspect**](https://docs.microsoft.com/windows/desktop/WinAuto/inspect-objects) et [**UI Accessibility Checker**](https://docs.microsoft.com/windows/desktop/WinAuto/ui-accessibility-checker). Ces outils peuvent vous aider à vérifier l’accessibilité de votre application. Veillez à vérifier l’ensemble des scénarios d’application et des éléments d’interface utilisateur.
+Le kit de développement logiciel (SDK) Windows comprend plusieurs outils de test d’accessibilité tels que [**AccScope**](https://docs.microsoft.com/windows/desktop/WinAuto/accscope), [**Inspect**](https://docs.microsoft.com/windows/desktop/WinAuto/inspect-objects) et [**l’outil de vérification de l’accessibilité de l’interface utilisateur**](https://docs.microsoft.com/windows/desktop/WinAuto/ui-accessibility-checker). Ces outils peuvent vous aider à vérifier l’accessibilité de votre application. Veillez à vérifier l’ensemble des scénarios d’application et des éléments d’interface utilisateur.
 
 Vous pouvez lancer les outils de test d’accessibilité à partir d’une invite de commandes Microsoft Visual Studio ou du dossier d’outils du Kit de développement logiciel (SDK) Windows (le sous-répertoire bin de l’emplacement où celui-ci est installé sur votre ordinateur de développement).
   
@@ -33,16 +33,16 @@ Vous pouvez lancer les outils de test d’accessibilité à partir d’une invit
 <span id="accscope"/>
 <span id="ACCSCOPE"/>
 
-### <a name="accscope"></a>**AccScope**  
+### <a name="accscope"></a>**Visionneuse de l’étendue de l’ergonomie (AccScope)**  
 
 L’outil [**AccScope**](https://docs.microsoft.com/windows/desktop/WinAuto/accscope) permet aux développeurs et testeurs d’évaluer l’accessibilité de leur application pendant sa conception et son développement, potentiellement dans les premières phases de prototype, plutôt que dans les dernières phases de test du cycle de développement de l’application. Il est en particulier destiné à tester les scénarios d’accessibilité du Narrateur avec votre application.
 
 <span id="inspect"/>
 <span id="INSPECT"/>
 
-### <a name="inspect"></a>**Inspect**  
+### <a name="inspect"></a>**Inspecter**  
 
-[**Inspect**](https://docs.microsoft.com/windows/desktop/WinAuto/inspect-objects) vous permet de sélectionner n’importe quel élément d’interface utilisateur et d’afficher ses données d’accessibilité. Vous pouvez afficher les propriétés et modèles de contrôles Microsoft UI Automation, et tester la structure de navigation des éléments d’automatisation dans l’arborescence UI Automation. Utilisez **Inspect** lors du développement de l’interface utilisateur pour vérifier comment les attributs d’accessibilité sont exposés dans UI Automation. Dans certains cas, les attributs proviennent de la prise en charge UI Automation déjà implémentée pour les contrôles XAML par défaut. Dans d’autres cas, ils proviennent de valeurs spécifiques que vous avez définies dans votre balisage XAML, en tant que propriétés jointes [**AutomationProperties**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties).
+[**Inspect**](https://docs.microsoft.com/windows/desktop/WinAuto/inspect-objects) vous permet de sélectionner n’importe quel élément d’interface utilisateur et d’afficher ses données d’accessibilité. Vous pouvez afficher les propriétés et modèles de contrôles Microsoft UI Automation, et tester la structure de navigation des éléments d’automatisation dans l’arborescence UI Automation. Utilisez **inspecter** au fur et à mesure que vous développez l’interface utilisateur pour vérifier la façon dont les attributs d’accessibilité sont exposés dans UI Automation. Dans certains cas, les attributs proviennent de la prise en charge UI Automation déjà implémentée pour les contrôles XAML par défaut. Dans d’autres cas, les attributs proviennent de valeurs spécifiques que vous avez définies dans votre balisage XAML, en tant que propriétés jointes [**AutomationProperties**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties) .
 
 L’image suivante illustre l’outil [**Inspect**](https://docs.microsoft.com/windows/desktop/WinAuto/inspect-objects) qui interroge les propriétés UI Automation de l’élément de menu **Modifier** dans le Bloc-notes.
 
@@ -64,7 +64,7 @@ L’image suivante illustre l’outil [**Inspect**](https://docs.microsoft.com/w
 <span id="ACCESSIBLE_EVENT_WATCHER"/>
 
 ### <a name="accessible-event-watcher"></a>**Accessible Event Watcher**  
-L' [**Observateur d’événements accessible (AccEvent)** ](https://docs.microsoft.com/windows/desktop/WinAuto/accessible-event-watcher) teste si les éléments d’interface utilisateur d’une application déclenchent des événements UI Automation et Microsoft Active Accessibility corrects lorsque des modifications de l’interface utilisateur se produisent. De telles modifications peuvent se produire quand le focus change ou quand un élément d’interface utilisateur est appelé, sélectionné ou subit une modification d’état ou de propriété.
+L' [**Observateur d’événements accessible (AccEvent)**](https://docs.microsoft.com/windows/desktop/WinAuto/accessible-event-watcher) teste si les éléments d’interface utilisateur d’une application déclenchent des événements UI Automation et Microsoft Active Accessibility corrects lorsque des modifications de l’interface utilisateur se produisent. De telles modifications peuvent se produire quand le focus change ou quand un élément d’interface utilisateur est appelé, sélectionné ou subit une modification d’état ou de propriété.
 
 > [!NOTE]
 > La plupart des outils de test d’accessibilité mentionnés dans la documentation s’exécutent sur un PC, et non sur un téléphone. Vous pouvez exécuter certains des outils tout en développant et en utilisant un émulateur, mais la plupart d’entre eux ne peuvent pas exposer l’arborescence UI Automation au sein de l’émulateur.
@@ -101,13 +101,13 @@ Utilisez les options d’affichage système qui ajustent la valeur en haute rés
 <span id="VERIFY_MAIN_APP_SCENARIOS_BY_USING_NARRATOR"/>
 
 ## <a name="verify-main-app-scenarios-by-using-narrator"></a>Vérifier les scénarios d’application principaux à l’aide du Narrateur  
-Utilisez le Narrateur pour tester l’expérience de lecture d’écran pour votre application.
+Utilisez le narrateur pour tester l’expérience de lecture d’écran pour votre application.
 
 > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Narrator-and-Dev-Mode/player]
 
-**Utilisez ces étapes pour tester votre application à l’aide du narrateur avec la souris et le clavier :**
-1.  Démarrez le Narrateur en appuyant sur la _touche de logo Windows + Ctrl + Entrée_. Dans les versions antérieures à Windows 10 version 1607, utilisez la _touche de logo Windows + Entrée_ pour démarrer le Narrateur.
-2.  Naviguez dans votre application à l’aide du clavier en utilisant la touche _Tab_, les touches de direction et la _touche Verr. maj + les touches de direction_.
+**Procédez comme suit pour tester votre application à l’aide du Narrateur avec une souris et le clavier :**
+1.  Démarrez le narrateur en appuyant sur la _touche Windows + Ctrl + Entrée_. Dans les versions antérieures à la version 1607 de Windows 10, utilisez la _touche Windows + entrée_ pour démarrer le narrateur.
+2.  Naviguez dans votre application à l’aide du clavier en utilisant la touche _Tab_, les touches de direction et la _touche Verr. maj + les touches de direction_.
 3.  À mesure que vous naviguez dans votre application, écoutez le Narrateur lire les éléments de votre interface utilisateur et vérifiez les points suivants :
     * Pour chaque contrôle, vérifiez que le Narrateur lit tout le contenu visible. Vérifiez également qu’il lit le nom de chaque contrôle, tout état applicable (coché, sélectionné, etc.) et le type du contrôle (bouton, case à cocher, élément de liste, etc.).
     * Si l’élément est interactif, vérifiez que vous pouvez utiliser le Narrateur pour appeler son action en appuyant sur _Verr. maj + Entrée_.
@@ -118,16 +118,16 @@ Utilisez le Narrateur pour tester l’expérience de lecture d’écran pour vot
 
 À compter de Windows 10 version 1607, nous avons introduit un nouveau mode développeur dans le Narrateur. Activez le mode développeur quand le Narrateur est déjà en cours d’exécution en appuyant sur _Verr. maj + Maj + F12_. Quand le mode développeur est activé, l’écran est masqué et met en évidence uniquement les objets accessibles et le texte associé exposé par programmation au Narrateur. Vous avez ainsi une bonne représentation visuelle des informations qui sont exposées au Narrateur.
 
-**Utilisez ces étapes pour tester votre application à l’aide du mode tactile du narrateur :**
+**Procédez comme suit pour tester votre application à l’aide du mode tactile du Narrateur :**
 
 > [!NOTE]
 > Le Narrateur passe automatiquement en mode tactile sur les appareils qui prennent en charge les contacts 4+. Le Narrateur ne prend pas en charge les scénarios à plusieurs moniteurs ou les numériseurs d’interaction tactile multipoint sur l’écran principal.
 
 1.  Familiarisez-vous avec l’interface utilisateur et explorez la disposition.
 
-    * **Parcourez l’interface utilisateur à l’aide des gestes de balayage à un seul doigt.** Effectuez des mouvements de balayage vers la gauche ou la droite pour naviguer entre les éléments et vers le haut ou le bas pour changer la catégorie des éléments parmi lesquels vous naviguez. Les catégories incluent tous les éléments, liens, tableaux, en-têtes, etc. La navigation par mouvements de balayage à l’aide d’un seul doigt est similaire à la navigation avec _Verr. maj + les touches de direction_.
-    * **Utilisez des mouvements de tabulation pour naviguer parmi les éléments pouvant être actifs.** Un balayage à trois doigts vers la droite ou la gauche est équivalent à l’utilisation de la touche _Tab_ et des touches _Maj + Tab_ sur un clavier.
-    * **Examinez l’interface utilisateur de façon spatiale avec un seul doigt.** Déplacez un seul doigt vers le haut et le bas, ou la gauche et la droite, pour que le Narrateur lise les éléments placés sous votre doigt. Vous pouvez utiliser la souris comme alternative, car elle utilise la même logique de test de positionnement avancé que le déplacement d’un seul doigt.
+    * **Naviguez dans l’interface utilisateur en effectuant des mouvements de balayage à l’aide d’un seul doigt.** Effectuez des mouvements de balayage vers la gauche ou la droite pour naviguer entre les éléments et vers le haut ou le bas pour changer la catégorie des éléments parmi lesquels vous naviguez. Les catégories incluent tous les éléments, liens, tableaux, en-têtes, etc. La navigation par mouvements de balayage à l’aide d’un seul doigt est similaire à la navigation avec _Verr. maj + les touches de direction_.
+    * **Utilisez les mouvements d’insertion d’une tabulation pour naviguer entre les éléments pouvant être actifs.** Un balayage à trois doigts vers la droite ou la gauche est équivalent à l’utilisation de la touche _Tab_ et des touches _Maj + Tab_ sur un clavier.
+    * **Explorez spatialement l’interface utilisateur à l’aide d’un seul doigt.** Déplacez un seul doigt vers le haut et le bas, ou la gauche et la droite, pour que le Narrateur lise les éléments placés sous votre doigt. Vous pouvez utiliser la souris comme alternative, car elle utilise la même logique de test de positionnement avancé que le déplacement d’un seul doigt.
     * **Lisez la fenêtre entière et tout son contenu en balayant l’écran vers le haut avec trois doigts**. Ceci est équivalent à l’utilisation de _Verr. maj + W_.
 
     Si des éléments d’interface utilisateur importants sont inaccessibles, il s’agit peut-être d’un problème d’accessibilité.
@@ -144,7 +144,7 @@ Utilisez le Narrateur pour tester l’expérience de lecture d’écran pour vot
 
     Si un contrôle réagit à la souris ou au clavier mais ne réagit pas à une interaction tactile principale ou secondaire, le contrôle doit peut-être implémenter des modèles de contrôles [UI Automation](https://docs.microsoft.com/windows/desktop/WinAuto/entry-uiauto-win32) supplémentaires.
 
-Vous devez également envisager d’utiliser l’outil [**AccScope**](https://docs.microsoft.com/windows/desktop/WinAuto/accscope) pour tester les scénarios d’accessibilité du Narrateur avec votre application. La [**rubrique relative à l’outil AccScope**](https://docs.microsoft.com/windows/desktop/WinAuto/accscope) décrit comment configurer **AccScope** pour tester les scénarios du Narrateur.
+Vous devez également envisager d’utiliser l’outil [**AccScope**](https://docs.microsoft.com/windows/desktop/WinAuto/accscope) pour tester les scénarios d’accessibilité du narrateur avec votre application. La [**rubrique relative à l’outil AccScope**](https://docs.microsoft.com/windows/desktop/WinAuto/accscope) décrit comment configurer **AccScope** pour tester les scénarios du Narrateur.
 
 <span id="Examine_the_UI_Automation_representation_for_your_app"/>
 <span id="examine_the_ui_automation_representation_for_your_app"/>
@@ -153,15 +153,15 @@ Vous devez également envisager d’utiliser l’outil [**AccScope**](https://do
 ## <a name="examine-the-ui-automation-representation-for-your-app"></a>Examiner la représentation UI Automation de votre application  
 Plusieurs des outils de test d’UI Automation mentionnés précédemment permettent d’afficher votre application d’une façon qui, délibérément, ne prend pas en compte son apparence, mais la représente sous la forme d’une structure d’éléments UI Automation. C’est ainsi que les clients UI Automation, principalement les technologies d’assistance, vont interagir avec votre application dans les scénarios d’accessibilité.
 
-L’outil [**AccScope**](https://docs.microsoft.com/windows/desktop/WinAuto/accscope) fournit une vue particulièrement intéressante de votre application, car vous pouvez voir les éléments UI Automation sous forme de représentation visuelle ou de liste. Si vous utilisez la visualisation, vous pouvez explorer les différents éléments d’une façon qui vous permettra de les mettre en corrélation avec l’apparence visuelle de l’interface utilisateur de votre application. Vous pouvez même tester l’accessibilité de vos premiers prototypes d’interface utilisateur avant d’avoir affecté toute la logique à l’interface utilisateur, ce qui garantit que l’interaction visuelle et la navigation dans les scénarios d’accessibilité dans votre application sont équilibrées.
+L’outil [**AccScope**](https://docs.microsoft.com/windows/desktop/WinAuto/accscope) fournit une vue particulièrement intéressante de votre application, car vous pouvez voir les éléments UI Automation en tant que représentation visuelle ou en tant que liste. Si vous utilisez la visualisation, vous pouvez explorer les différents éléments d’une façon qui vous permettra de les mettre en corrélation avec l’apparence visuelle de l’interface utilisateur de votre application. Vous pouvez même tester l’accessibilité de vos premiers prototypes d’interface utilisateur avant d’avoir affecté toute la logique à l’interface utilisateur, ce qui garantit que l’interaction visuelle et la navigation dans les scénarios d’accessibilité dans votre application sont équilibrées.
 
-La présence d’éléments apparaissant à tort dans l’affichage des éléments UI Automation est l’un des aspects que vous pouvez tester. Si vous trouvez des éléments que vous voulez supprimer de l’affichage, ou inversement, si des éléments sont manquants, vous pouvez utiliser la propriété jointe XAML [**AutomationProperties.AccessibilityView**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.accessibilityview) pour ajuster la façon dont les contrôles XAML apparaissent dans les affichages d’accessibilité. Après avoir examiné les affichages d’accessibilité de base, il est également conseillé de revérifier l’ordre de vos tabulations ou la navigation spatiale tel que le permettent les touches de direction. Vous vous assurez ainsi que les utilisateurs peuvent atteindre chacun des éléments interactifs qui sont exposés dans l’affichage de contrôle.
+La présence d’éléments apparaissant à tort dans l’affichage des éléments UI Automation est l’un des aspects que vous pouvez tester. Si vous trouvez des éléments que vous souhaitez omettre de la vue, ou inversement, si des éléments sont manquants, vous pouvez utiliser la propriété jointe XAML [**AutomationProperties. AccessibilityView**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.accessibilityview) pour ajuster le mode d’affichage des contrôles XAML dans les vues d’accessibilité. Après avoir examiné les affichages d’accessibilité de base, il est également conseillé de revérifier l’ordre de vos tabulations ou la navigation spatiale tel que le permettent les touches de direction. Vous vous assurez ainsi que les utilisateurs peuvent atteindre chacun des éléments interactifs qui sont exposés dans l’affichage de contrôle.
 
 <span id="related_topics"/>
 
 ## <a name="related-topics"></a>Rubriques connexes  
 * [Accessibilité](accessibility.md)
 * [Pratiques à éviter](practices-to-avoid.md)
-* [UI Automation](https://docs.microsoft.com/windows/desktop/WinAuto/entry-uiauto-win32)
+* [Automation de l'interface utilisateur](https://docs.microsoft.com/windows/desktop/WinAuto/entry-uiauto-win32)
 * [Accessibilité dans Windows](https://www.microsoft.com/accessibility/)
 * [Prise en main du narrateur](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator)
