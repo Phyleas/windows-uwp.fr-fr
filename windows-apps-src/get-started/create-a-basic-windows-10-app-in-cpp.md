@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c388b9b81744c0d27d96c1f97b4e405af63eaef
-ms.sourcegitcommit: fc5db2e26db65be025e9f62044b4d29bb1744f8d
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "80524085"
 ---
 # <a name="create-a-hello-world-app-in-ccx"></a>Créer une application « Hello World » en C++/CX
@@ -27,7 +27,7 @@ Avec Microsoft Visual Studio, vous pouvez utiliser C++/CX pour développer une 
 
 -   Pour suivre ce didacticiel, vous devez utiliser Visual Studio Community ou l'une des versions de Visual Studio autres que Community sur un ordinateur exécutant Windows 10. Pour télécharger les éléments nécessaires, voir [Obtenir les outils](https://visualstudio.microsoft.com/downloads/).
 -   Nous supposons que vous avez une connaissance de base du langage C++/CX standard, du code XAML et des concepts présentés dans [Vue d'ensemble du langage XAML](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-overview).
--   Nous partons du principe que vous utilisez la disposition de fenêtre par défaut dans Visual Studio. Pour rétablir la disposition par défaut, dans la barre de menus, choisissez **Fenêtre** > **Rétablir la disposition de la fenêtre**.
+-   Nous partons du principe que vous utilisez la disposition de fenêtre par défaut dans Visual Studio. Pour rétablir la disposition par défaut, dans la barre de menus, choisissez **Fenêtre**> **Rétablir la disposition de la fenêtre**.
 
 ## <a name="comparing-c-desktop-apps-to-windows-apps"></a>Comparatif entre les applications de bureau C++ et les applications Windows
 
@@ -73,7 +73,7 @@ Commençons par les bases :
 
 **Tout d'abord, créez une solution dans Visual Studio**
 
-1.  Dans Visual Studio, dans la barre de menus, choisissez **Fichier** > **Nouveau** > **Projet...** .
+1.  Dans Visual Studio, dans la barre de menus, choisissez **Fichier**> **Nouveau**> **Projet...** .
 
 2.  Dans la boîte de dialogue **Créer un projet**, sélectionnez **Application vide (Windows universelle - C++/CX)** .  Si vous ne voyez pas cette option, vérifiez que les outils de développement d’applications Windows universelles sont installés. Pour plus d’informations, consultez [Se préparer](get-set-up.md).
 
@@ -300,7 +300,7 @@ Il est très simple de personnaliser l’apparence d’une application. Par déf
 
 Quel thème utiliser ? Tout est question de goût personnel. Toutefois, nous recommandons le thème à dominante foncée pour les applications qui affichent essentiellement des images ou de la vidéo, et le thème à dominante claire pour les applications qui contiennent beaucoup de texte. Si vous recourez à un modèle de couleurs personnalisé, utilisez le thème qui s’accorde le mieux à l’apparence de votre application. Dans le reste de ce didacticiel, nous utilisons le thème à dominante claire dans les captures d’écran.
 
-**Remarque**  Le thème s'applique au démarrage de l'application et n'est pas modifiable pendant l'exécution de celle-ci.
+**Remarque**Le thème s'applique au démarrage de l'application et n'est pas modifiable pendant l'exécution de celle-ci.
 
 ### <a name="using-system-styles"></a>Utilisation de styles système
 
@@ -313,7 +313,7 @@ Pour l’heure, le texte de l’application Windows est de très petite taille e
 3.  Dans la fenêtre **Propriétés** (**F4**), choisissez le bouton Propriétés (![bouton Propriétés](images/propertiesbutton.png)) dans l’angle supérieur droit.
 4.  Développez le groupe **Texte** et affectez 18 pixels à la taille de police.
 5.  Développez le groupe **Divers** et recherchez la propriété **Style**.
-6.  Cliquez sur le marqueur de propriété (zone verte à droite de la propriété **Style**), puis, dans le menu, choisissez **Ressource système** > **BaseTextBlockStyle**.
+6.  Cliquez sur le marqueur de propriété (zone verte à droite de la propriété **Style**), puis, dans le menu, choisissez **Ressource système**> **BaseTextBlockStyle**.
 
      **BaseTextBlockStyle** est une ressource définie dans la classe [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) sous <root>\\Program Files\\Windows Kits\\10\\Include\\winrt\\xaml\\design\\generic.xaml.
 
@@ -327,7 +327,7 @@ Pour l’heure, le texte de l’application Windows est de très petite taille e
 
 7.  Répétez le processus pour définir la taille de la police et affectez **BaseTextBlockStyle** à l’élément `greetingOutput`[**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock).
 
-    **Conseil**  Bien que le [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) ne contienne pas de texte, lorsque vous placez le pointeur au-dessus de l'aire de conception XAML, un contour bleu indique son emplacement pour vous permettre de le sélectionner.  
+    **Conseil**Bien que le [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) ne contienne pas de texte, lorsque vous placez le pointeur au-dessus de l'aire de conception XAML, un contour bleu indique son emplacement pour vous permettre de le sélectionner.  
 
     Votre code XAML doit maintenant se présenter ainsi :
 
@@ -399,4 +399,4 @@ C’est ici que prend fin le premier didacticiel. Il vous a appris à ajouter du
 
 Si votre projet d'application universelle Windows cible Windows 8.1 et/ou Windows Phone 8.1, vous pouvez le porter vers Windows 10. Aucune procédure automatique n'existe pour ce faire, mais vous pouvez effectuer le portage manuellement. Commencez par un nouveau projet Windows universel pour obtenir la dernière structure du système de projet et les derniers fichiers manifeste, copiez vos fichiers de code dans la structure de répertoire du projet, ajoutez les éléments à votre projet, puis réécrivez votre code XAML à l’aide du [**VisualStateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateManager) en suivant les recommandations de cette rubrique. Pour plus d’informations, voir [Portage d’un projet Windows Runtime 8 vers un projet de plateforme Windows universelle (UWP)](https://docs.microsoft.com/windows/uwp/porting/w8x-to-uwp-porting-to-a-uwp-project) et [Portage vers la plateforme Windows universelle (C++)](https://msdn.microsoft.com/library/mt186164.aspx).
 
-Si vous souhaitez intégrer du code C++ existant à une application UWP, dans le but de créer une interface utilisateur UWP pour une application existante par exemple, consultez : [Utilisation de code C++ existant dans un projet Windows universel](https://msdn.microsoft.com/library/mt186162.aspx).
+Si vous souhaitez intégrer du code C++ existant à une application UWP, dans le but de créer une interface utilisateur UWP pour une application existante par exemple, consultez :[ Utilisation de code C++ existant dans un projet Windows universel](https://msdn.microsoft.com/library/mt186162.aspx).
