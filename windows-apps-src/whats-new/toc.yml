@@ -1,10 +1,15 @@
-- name: 'Nouveautés de Windows 10 pour les développeurs, build 18362'
-  href: ../whats-new/windows-10-build-18362.md
+- name: "Nouveautés de Windows\_10 pour les développeurs, build\_19041"
+  href: ../whats-new/windows-10-build-19041.md
   items:
-    - name: "Ajouts d’API dans Windows\_10, build\_18362"
-      href: ../whats-new/windows-10-build-18362-api-diff.md
+    - name: "Ajouts d’API dans Windows\_10, build\_19041"
+      href: ../whats-new/windows-10-build-19041-api-diff.md
 - name: "Versions antérieures de Windows\_10"
   items:
+    - name: 'Nouveautés de Windows 10 pour les développeurs, build 18362'
+      href: ../whats-new/windows-10-build-18362.md
+      items:
+        - name: "Ajouts d’API dans Windows\_10, build\_18362"
+          href: ../whats-new/windows-10-build-18362-api-diff.md
     - name: "Nouveautés de Windows\_10 pour les développeurs, build\_17763"
       href: ../whats-new/windows-10-build-17763.md
       items:

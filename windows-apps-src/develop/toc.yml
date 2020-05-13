@@ -99,6 +99,8 @@
               href: ../audio-video-camera/dash-profile-support.md
         - name: Diffusion multimédia
           href: ../audio-video-camera/media-casting.md
+        - name: Activer la lecture audio à partir d’appareils connectés en Bluetooth à distance
+          href: ../audio-video-camera/enable-remote-audio-playback.md
         - name: Gestion des droits numériques PlayReady
           href: ../audio-video-camera/playready-client-sdk.md
           items:

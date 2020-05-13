@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cc182d05b1cc02dd62f66506c12fcfcfc8a03952
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: bb65acf606ffa44f075016720ebcd055ba5febc8
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82969774"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234464"
 ---
 # <a name="tiles-badges-and-notifications-for-windows-apps"></a>Vignettes, badges et notifications pour les applications Windows
  
