@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d520f811c9929721bfcb9d1c83fbff6a4891091
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: b97041e305cfaac2a5fe202212741a282dccdb54
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "63801114"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968874"
 ---
 # <a name="contextual-commanding-for-collections-and-lists"></a>Commandes contextuelles pour les collections et les listes
 
@@ -31,7 +31,7 @@ De nombreuses applications contiennent des collections de contenu sous forme de 
 
 ## <a name="creating-commands-for-all-input-types"></a>Création de commandes pour tous les types d’entrée
 
-Étant donné que les utilisateurs peuvent interagir avec une application UWP via [un large choix d’appareils et d’entrées](../devices/index.md), votre application doit exposer des commandes via des menus contextuels indépendants de l’entrée et des accélérateurs propres à l’entrée. Le fait d’intégrer les deux permet à l’utilisateur d’appeler des commandes dans le contenu, quel que soit le type d’entrée ou d’appareil.
+Étant donné que les utilisateurs peuvent interagir avec une application Windows via [un large choix d’appareils et d’entrées](../devices/index.md), votre application doit exposer des commandes via des menus contextuels indépendants de l’entrée et des accélérateurs propres à l’entrée. Le fait d’intégrer les deux permet à l’utilisateur d’appeler des commandes dans le contenu, quel que soit le type d’entrée ou d’appareil.
 
 Ce tableau présente certaines commandes et certains modes de collection standard permettant d’exposer ces commandes. 
 
@@ -445,7 +445,7 @@ Afin d’optimiser votre application pour une entrée à l’aide d’un stylet,
 
 ## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
 
-* Vérifiez que les utilisateurs peuvent accéder à toutes les commandes à partir de n’importe quel type d’appareil UWP.
+* Vérifiez que les utilisateurs peuvent accéder à toutes les commandes à partir de n’importe quel type d’appareil Windows.
 * Intégrez un menu contextuel donnant accès à toutes les commandes disponibles pour un élément de collection. 
 * Fournissez des accélérateurs d’entrée pour les commandes fréquemment utilisées. 
 * Utilisez l’[interface ICommand](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand) pour implémenter des commandes. 

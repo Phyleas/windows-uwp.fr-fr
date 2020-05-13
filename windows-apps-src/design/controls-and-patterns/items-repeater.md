@@ -7,12 +7,12 @@ ms.date: 02/01/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5782c6e9ba42fed07c2b1382f2d17b1d311d0a13
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: c66fc2b07b5ee5ce87b6c1f37657b3eec49f3105
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80893459"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970404"
 ---
 # <a name="itemsrepeater"></a>ItemsRepeater
 
@@ -26,7 +26,7 @@ D’un point de vue conceptuel, vous pouvez voir [ItemsRepeater](/uwp/api/micros
 
 |  |  |
 | - | - |
-| ![Logo WinUI](images/winui-logo-64x64.png) | Le contrôle **ItemsRepeater** est inclus dans la bibliothèque d’interface utilisateur Windows, package NuGet contenant les nouveaux contrôles et fonctionnalités d’interface utilisateur destinés aux applications UWP. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![Logo WinUI](images/winui-logo-64x64.png) | Le contrôle **ItemsRepeater** est inclus dans la bibliothèque d’interface utilisateur Windows, package NuGet contenant les nouveaux contrôles et fonctionnalités d’interface utilisateur destinés aux applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
 > **API de la bibliothèque d’interface utilisateur Windows :** [Classe ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)
 >
@@ -774,7 +774,7 @@ public class MyPage : Page
 
 ## <a name="enable-accessibility"></a>Permettre l’accessibilité
 
-[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) n’offre pas d’expérience d’accessibilité par défaut. La documentation intitulée [Facilité d’utilisation des applications UWP](/windows/uwp/design/usability) est une mine d’informations grâce à laquelle vous pourrez vérifier que votre application offre une expérience utilisateur inclusive. Si vous utilisez ItemsRepeater pour créer un contrôle personnalisé, veillez à consulter la documentation relative aux [Homologues d’automatisation personnalisés](/windows/uwp/design/accessibility/custom-automation-peers).
+[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) n’offre pas d’expérience d’accessibilité par défaut. La documentation intitulée [Facilité d’utilisation des applications Windows](/windows/uwp/design/usability) est une mine d’informations grâce à laquelle vous pourrez vérifier que votre application offre une expérience utilisateur inclusive. Si vous utilisez ItemsRepeater pour créer un contrôle personnalisé, veillez à consulter la documentation relative aux [Homologues d’automatisation personnalisés](/windows/uwp/design/accessibility/custom-automation-peers).
 
 ### <a name="keyboarding"></a>Clavier
 La prise en charge minimale du clavier pour le déplacement du focus que propose ItemsRepeater s’appuie sur la [Navigation directionnelle 2D pour le clavier](/windows/uwp/design/input/focus-navigation#2d-directional-navigation-for-keyboard) de XAML.

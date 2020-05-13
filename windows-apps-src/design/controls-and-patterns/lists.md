@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 75bc81f4295fb76f5a7cc61b3cadd1496f57dc4c
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 9896003fb1d55a2dbb57468848edd66a3d8d8d88
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80893479"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970394"
 ---
 # <a name="collections-and-lists"></a>Collections et listes
 
@@ -41,7 +41,7 @@ Chacun de ces contrôles (à l’exception d’ItemsRepeater) a également un co
 
 Un des scénarios non traités dans cet article est l’affichage des collections dans un tableau ou sur plusieurs colonnes. Si vous souhaitez afficher une collection dans ce format, envisagez d’utiliser le [contrôle DataGrid](https://docs.microsoft.com/windows/communitytoolkit/controls/datagrid) du [Kit de ressources Communauté Windows](https://docs.microsoft.com/windows/communitytoolkit/). 
 
-> **Windows 10 Fall Creators Update - Modification de comportement** Par défaut, au lieu d’effectuer la sélection, un stylet actif fait défiler ou parcourt une liste dans les applications UWP (comme l’interaction tactile, le pavé tactile et le stylet passif).
+> **Windows 10 Fall Creators Update - Modification de comportement** Par défaut, au lieu d’effectuer la sélection, un stylet actif fait défiler ou parcourt une liste dans les applications Windows (comme l’interaction tactile, le pavé tactile et le stylet passif).
 > Si votre application repose sur le comportement précédent, vous pouvez remplacer le défilement du stylet et rétablir le comportement précédent. Pour plus d’informations, consultez la rubrique d’informations de référence sur les API pour la [classe Scroll Viewer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer).
 
 ## <a name="examples"></a>Exemples

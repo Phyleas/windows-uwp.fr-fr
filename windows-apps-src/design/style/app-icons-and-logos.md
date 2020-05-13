@@ -9,12 +9,12 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 25d9df392d6ed2725b171fe6513334a39458410b
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 0ad8b78538a2b047501361072a017658ba152e73
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684597"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82971004"
 ---
 # <a name="app-icons-and-logos"></a>Icônes et logos d’application 
 
@@ -185,7 +185,7 @@ Par exemple,
 
 Square150x150Logo-scale-100.png, Square150x150Logo-scale-200.png, Square150x150Logo-scale-400.png
 
-Notez que Visual Studio ne génère pas de logo du badge par défaut. C’est parce que votre logo du badge est unique et ne doit probablement pas correspondre à vos autres icônes d’application. Pour plus d’informations, voir l’article [Notifications de badge pour les applications UWP](/windows/uwp/design/shell/tiles-and-notifications/badges). 
+Notez que Visual Studio ne génère pas de logo du badge par défaut. C’est parce que votre logo du badge est unique et ne doit probablement pas correspondre à vos autres icônes d’application. Pour plus d’informations, voir l’article [Notifications de badge pour les applications Windows](/windows/uwp/design/shell/tiles-and-notifications/badges). 
 
 
 ## <a name="more-about-app-icon-assets"></a>Informations supplémentaires sur les ressources d’icônes d’application
@@ -253,13 +253,13 @@ Voici des recommandations de taille pour les ressources basées sur une cible, �
 
 
 ## <a name="more-about-splash-screen-assets"></a>Informations supplémentaires sur les ressources d’écran de démarrage
-Pour plus d’informations sur les écrans de démarrage, voir l’article [Écrans de démarrage UWP](/windows/uwp/launch-resume/splash-screens).
+Pour plus d’informations sur les écrans de démarrage, consultez [Écrans de démarrage des applications Windows](/windows/uwp/launch-resume/splash-screens).
 
 ## <a name="more-about-badge-logo-assets"></a>Informations supplémentaires sur les ressources de logo de badge
 
 Lorsque vous utilisez le Générateur de ressources pour générer toutes les ressources dont vous avez besoin, il ne génère pas les logos de badge par défaut  parce qu’ils sont très différents d’autres ressources d’application. Le logo de badge est une image d’état qui s’affiche dans les notifications et sur les vignettes de l’application. 
 
-Pour plus d’informations, voir l’article [Notifications de badge pour les applications UWP](/windows/uwp/design/shell/tiles-and-notifications/badges).
+Pour plus d’informations, consultez [Notifications de badge pour les applications Windows](/windows/uwp/design/shell/tiles-and-notifications/badges).
 
 
 ## <a name="customizing-asset-padding"></a>Personnalisation de la marge intérieure de ressource

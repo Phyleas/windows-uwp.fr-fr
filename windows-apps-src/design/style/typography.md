@@ -1,31 +1,31 @@
 ---
 description: Découvrez comment utiliser la typographie de votre application pour aider les utilisateurs à comprendre facilement le contenu.
-title: Typographie des applications UWP
+title: Typographie des applications Windows
 ms.date: 04/06/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: cb2aef514c8787b5afe11ea5a2818012bfdf2f41
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 3a5b6df7a5d8333e0f4834c256a38fc912f8f51e
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "72282426"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970624"
 ---
-# <a name="typography"></a>Typographie
+# <a name="typography-in-windows-apps"></a>Typographie des applications Windows
 
 ![Image Hero](images/header-typography.svg)
 
-En tant que représentation visuelle du langage, la typographie a pour mission principale de communiquer des informations. Son style doit toujours être aligné sur cet objectif. Dans cet article, nous décrirons comment appliquer un style à la typographie de votre application UWP pour aider les utilisateurs à comprendre facilement et efficacement le contenu.
+En tant que représentation visuelle du langage, la typographie a pour mission principale de communiquer des informations. Son style doit toujours être aligné sur cet objectif. Dans cet article, nous décrirons comment appliquer un style à la typographie de votre application Windows pour aider les utilisateurs à comprendre facilement et efficacement le contenu.
 
 ## <a name="font"></a>Police
 
-Vous devez utiliser une police dans toute l’interface utilisateur de votre application, et nous vous recommandons d’utiliser la police par défaut pour les applications UWP, **Segoe UI**. Elle est conçue pour conserver une lisibilité optimale, quelles que soient les tailles et les densités en pixels. Elle se caractérise par une esthétique nette, légère et aérée en parfaite harmonie avec le contenu du système.
+Vous devez utiliser une police dans toute l’interface utilisateur de votre application, et nous vous recommandons d’utiliser la police par défaut pour les applications Windows, **Segoe UI**. Elle est conçue pour conserver une lisibilité optimale, quelles que soient les tailles et les densités en pixels. Elle se caractérise par une esthétique nette, légère et aérée en parfaite harmonie avec le contenu du système.
 
 ![Exemple de texte dans la police Segoe UI](images/type/segoe-sample.svg)
 
-Pour afficher les langues autres que l’anglais ou pour sélectionner une autre police pour votre application, consultez [Langues](#languages) et [Polices](#fonts) pour connaître nos polices recommandées pour les applications UWP.
+Pour afficher les langues autres que l’anglais ou sélectionner une autre police pour votre application, consultez [Langues](#languages) et [Polices](#fonts) afin de connaître nos polices recommandées pour les applications Windows.
 
 :::row:::
     :::column:::
@@ -46,7 +46,7 @@ En raison du mode de fonctionnement du système de mise à l’échelle, la conc
 
 :::row:::
     :::column:::
-![à faire](images/do.svg) Suivre le redimensionnement UWP [gamme de caractères](#type-ramp).
+![à faire](images/do.svg) Suivre les tailles de la [gamme de caractères](#type-ramp) Windows.
     :::column-end:::
     :::column:::
 ![à ne pas faire](images/dont.svg) Utiliser une taille de police inférieure à12 px.
@@ -57,7 +57,7 @@ En raison du mode de fonctionnement du système de mise à l’échelle, la conc
 
 :::row:::
     :::column:::
-Les utilisateurs s’appuient sur la hiérarchie visuelle lors de l’analyse d’une page : les en-têtes résument le contenu et le texte du corps fournit d’autres informations. Pour créer une hiérarchie visuelle précise dans votre application, suivez la gamme de caractères UWP.
+Les utilisateurs s’appuient sur la hiérarchie visuelle lors de l’analyse d’une page : les en-têtes résument le contenu et le texte du corps fournit d’autres informations. Pour créer une hiérarchie visuelle précise dans votre application, suivez la gamme de caractères Windows.
     :::column-end:::
     :::column:::
 ![Styles de bloc de texte](images/type/type-hierarchy.svg)
@@ -66,7 +66,7 @@ Les utilisateurs s’appuient sur la hiérarchie visuelle lors de l’analyse d�
 
 ### <a name="type-ramp"></a>Gamme de caractères
 
-La gamme de caractères UWP établit des relations cruciales entre les styles de caractère sur une page, afin d’aider les utilisateurs à lire facilement le contenu. Toutes les tailles sont exprimées en pixels effectifs et sont optimisées pour les applications UWP s’exécutant sur tous les appareils.
+La gamme de caractères Windows établit des relations cruciales entre les styles de caractère sur une page, afin d’aider les utilisateurs à lire facilement le contenu. Toutes les tailles sont exprimées en pixels effectifs et sont optimisées pour les applications UWP s’exécutant sur tous les appareils.
 
 ![Gamme de caractères](images/type/type-ramp.png)
 

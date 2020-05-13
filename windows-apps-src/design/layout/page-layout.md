@@ -1,29 +1,29 @@
 ---
-title: Mise en page pour les applications UWP
-description: Lors de la conception de votre application, la première chose à prendre en compte est la structure de la disposition. Cet article présente la structure commune des mises en page de base, à savoir les éléments d’interface utilisateur dont vous aurez besoin et leur emplacement sur une page. Dans les applications UWP, chaque page comporte généralement des éléments de navigation, de commande et de contenu.
+title: Mise en page pour les applications Windows
+description: Lors de la conception de votre application, la première chose à prendre en compte est la structure de la disposition. Cet article présente la structure commune des mises en page de base, à savoir les éléments d’interface utilisateur dont vous aurez besoin et leur emplacement sur une page. Dans les applications Windows, chaque page comprend généralement des éléments de navigation, de commande et de contenu.
 ms.date: 03/19/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 localizationpriority: medium
-ms.openlocfilehash: 7333cebc945715412e3ff1140ca26e1ed5368704
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 3dbdf8d006472c288369fd528e89663aca5a9e10
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684547"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970884"
 ---
 # <a name="page-layout"></a>Mise en page
 
-Dans les applications UWP, chaque [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) comprend généralement des éléments de navigation, de commande et de contenu. 
+Dans les applications Windows, chaque [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) comprend généralement des éléments de navigation, de commande et de contenu. 
 
-Votre application peut compter plusieurs pages. Quand un utilisateur lance une application UWP, le code de l’application crée un [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) à placer dans la [**fenêtre**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window) de l’application. Le Frame peut ensuite [naviguer](../basics/navigate-between-two-pages.md) entre les instances [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) de l’application. 
+Votre application peut compter plusieurs pages. Quand un utilisateur lance une application Windows, le code de l’application crée un [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) à placer dans la [**fenêtre**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window) de l’application. Le Frame peut ensuite [naviguer](../basics/navigate-between-two-pages.md) entre les instances [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) de l’application. 
 
 La plupart des pages présentent une structure de disposition commune et cet article décrit les éléments d’interface utilisateur dont vous aurez besoin, ainsi que leur emplacement sur une page. 
 
 ![structure de la page](images/page-components.svg)
 
 ## <a name="navigation"></a>Navigation
-La disposition de votre application commence par le modèle de navigation que vous choisissez, qui définit la façon dont vos utilisateurs naviguent entre les pages de votre application. Pour cet article, nous allons aborder deux modèles de navigation courants : la navigation gauche et la navigation supérieure. Pour obtenir des conseils sur la sélection d’autres options de navigation, consultez [Informations de base relatives à la conception de la navigation pour les applications UWP](../basics/navigation-basics.md).
+La disposition de votre application commence par le modèle de navigation que vous choisissez, qui définit la façon dont vos utilisateurs naviguent entre les pages de votre application. Pour cet article, nous allons aborder deux modèles de navigation courants : la navigation gauche et la navigation supérieure. Pour obtenir des conseils sur la sélection d’autres options de navigation, consultez [Informations de base relatives à la conception de la navigation pour les applications Windows](../basics/navigation-basics.md).
 
 ![modèles de navigation gauche et supérieure](images/top-left-nav.svg)
 
@@ -73,7 +73,7 @@ Enfin, le contenu varie considérablement d’une application à l’autre, ce q
 
 Les pages d’accueil, également connues sous le nom d’écrans bannière, apparaissent souvent au niveau supérieur d’une expérience d’application. La grande surface sert à exposer les applications, et plus particulièrement à mettre en avant le contenu que les utilisateurs peuvent vouloir parcourir et utiliser.
 
-## <a name="collections"></a>Collections
+## <a name="collections"></a>Regroupements
 
 ![galerie](images/gridview.svg)
 
@@ -91,7 +91,7 @@ Le modèle [maître/détails](../controls-and-patterns/master-details.md) se com
 Un [formulaire](../controls-and-patterns/forms.md) est un groupe de contrôles qui collectent des données auprès de l’utilisateur et les envoient. La plupart des applications, voire toutes, utilisent un formulaire pour les pages de paramètres, les portails de connexion, les hubs de commentaires, la création de compte, etc. 
 
 ## <a name="sample-apps"></a>Exemples d’applications
-Pour voir comment ces modèles peuvent être implémentés, consultez nos [exemples d’applications UWP](https://developer.microsoft.com/windows/samples) :
+Pour voir comment ces modèles peuvent être implémentés, consultez nos [exemples d’applications Windows](https://developer.microsoft.com/windows/samples) :
 - [Lecteur vidéo BuildCast](https://github.com/Microsoft/BuildCast)
 - [Planificateur de déjeuners](https://github.com/Microsoft/Windows-appsample-lunch-scheduler)
 - [Livre de coloriage](https://github.com/Microsoft/Windows-appsample-coloringbook)

@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: b91ca2de98142bf267cc42b56fba14a49a87bb06
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: 3fca2695cbb57375964beff0f8a3fd9be603228c
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80081241"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968924"
 ---
 # <a name="check-boxes"></a>Cases à cocher
 
@@ -29,7 +29,7 @@ Une case à cocher permet de sélectionner ou de désélectionner des éléments
 
 |  |  |
 | - | - |
-| ![Logo WinUI](images/winui-logo-64x64.png) | La bibliothèque d’interface utilisateur Windows version 2.2 ou ultérieure inclut pour ce contrôle un nouveau modèle qui utilise des angles arrondis. Pour plus d’informations, consultez [Rayons des angles](/windows/uwp/design/style/rounded-corner). WinUI est un package NuGet qui contient de nouveaux contrôles et fonctionnalités d’interface utilisateur destinés aux applications UWP. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![Logo WinUI](images/winui-logo-64x64.png) | La bibliothèque d’interface utilisateur Windows version 2.2 ou ultérieure inclut pour ce contrôle un nouveau modèle qui utilise des angles arrondis. Pour plus d’informations, consultez [Rayons des angles](/windows/uwp/design/style/rounded-corner). WinUI est un package NuGet qui contient de nouveaux contrôles et des fonctionnalités d’interface utilisateur pour les applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
 > **API de plateforme :** [classe CheckBox](/uwp/api/Windows.UI.Xaml.Controls.CheckBox), [événement Checked](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked), [propriété IsChecked](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked)
 
@@ -89,11 +89,33 @@ checkBox1.Content = "I agree to the terms of service.";
 
 ### <a name="bind-to-ischecked"></a>Lier à IsChecked
 
-Utilisez la propriété [IsChecked](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked) pour déterminer si la case à cocher est activée ou désactivée. Vous pouvez lier la valeur de la propriété IsChecked à une autre valeur binaire. Toutefois, étant donné que IsChecked est une valeur booléenne [Nullable](https://docs.microsoft.com/dotnet/api/system.nullable-1), vous devez utiliser un convertisseur de valeur pour la lier à une valeur booléenne.
+Utilisez la propriété [IsChecked](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked) pour déterminer si la case à cocher est activée ou désactivée. Vous pouvez lier la valeur de la propriété IsChecked à une autre valeur binaire.
+Toutefois, IsChecked étant une valeur booléenne [Nullable](https://docs.microsoft.com/dotnet/api/system.nullable-1), vous devez utiliser un cast ou un convertisseur de valeur pour la lier à une propriété booléenne. Cela dépend du type de liaison réel que vous utilisez ; vous trouverez des exemples ci-dessous pour chaque type possible. 
 
 Dans cet exemple, la propriété **IsChecked** de la case à cocher pour accepter les conditions d’utilisation est liée à la propriété [IsEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.isenabled) du bouton Envoyer. Le bouton Envoyer est activé uniquement si l’utilisateur accepte les conditions d’utilisation.
 
-> Remarque&nbsp;&nbsp;Nous affichons ici uniquement le code approprié. Pour en savoir plus sur les convertisseurs de valeurs et la liaison de données, voir [Vue d’ensemble de la liaison de données](../../data-binding/data-binding-quickstart.md).
+#### <a name="using-xbind"></a>Utilisation de x:Bind
+
+> Remarque&nbsp;&nbsp;Nous affichons ici uniquement le code approprié. Pour plus d’informations sur la liaison de données, consultez [Vue d’ensemble de la liaison de données](../../data-binding/data-binding-quickstart.md). Les informations propres à {x:Bind} (telles que la réalisation d’un cas) sont détaillées [ici](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension).
+
+```xaml
+<StackPanel Grid.Column="2" Margin="40">
+    <CheckBox x:Name="termsOfServiceCheckBox" Content="I agree to the terms of service."/>
+    <Button Content="Submit" 
+            IsEnabled="{x:Bind (x:Boolean)termsOfServiceCheckBox.IsChecked, Mode=OneWay}"/>
+</StackPanel>
+```
+
+Si la case à cocher peut également être dans l’état **indéterminé**, nous utilisons la propriété [FallbackValue](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.fallbackvalue) de la liaison pour spécifier la valeur booléenne représentant cet état. Dans ce cas, nous ne souhaitons pas que le bouton Envoyer soit également activé :
+
+```xaml
+<Button Content="Submit" 
+        IsEnabled="{x:Bind (x:Boolean)termsOfServiceCheckBox.IsChecked, Mode=OneWay, FallbackValue=False}"/>
+```
+
+#### <a name="using-xbind-or-binding"></a>Utilisation de x:Bind ou Binding
+
+> Remarque&nbsp;&nbsp;Nous affichons ici uniquement le code approprié pour {x:Bind}. Dans l’exemple {Binding}, nous remplacerions {x:Bind} par {Binding}. Pour plus d’informations sur la liaison de données, les convertisseurs de valeurs et les différences entre les extensions de balisage {x:Bind} et {Binding}, consultez [Vue d’ensemble de la liaison de données](../../data-binding/data-binding-quickstart.md).
 
 ```xaml
 ...
@@ -110,6 +132,7 @@ Dans cet exemple, la propriété **IsChecked** de la case à cocher pour accepte
                         Converter={StaticResource NullableBooleanToBooleanConverter}, Mode=OneWay}"/>
 </StackPanel>
 ```
+
 
 ```csharp
 public class NullableBooleanToBooleanConverter : IValueConverter

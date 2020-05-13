@@ -9,16 +9,16 @@ design-contact: tbd
 dev-contact: tbd
 doc-status: not-published
 ms.localizationpriority: medium
-ms.openlocfilehash: 36c8c6248b356bbb17da72b53b0480a27999b875
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 274481b2a282b025a637f7f6cc54dc0161c3e61d
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74257693"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968754"
 ---
 # <a name="contact-card"></a>Carte de visite
 
-La carte de visite affiche des coordonnées, telles que le nom, le numéro de téléphone et l’adresse, pour un [Contact](/uwp/api/Windows.ApplicationModel.Contacts.Contact) (mécanisme utilisé par UWP pour représenter les personnes et les entreprises).  La carte de visite permet également à l’utilisateur de modifier des coordonnées. Vous pouvez choisir d’afficher une carte de visite compacte ou une carte de visite complète contenant des informations supplémentaires.
+La carte de visite affiche des coordonnées, telles que le nom, le numéro de téléphone et l’adresse, pour un [Contact](/uwp/api/Windows.ApplicationModel.Contacts.Contact) (mécanisme utilisé par Windows pour représenter les personnes et les entreprises).  La carte de visite permet également à l’utilisateur de modifier des coordonnées. Vous pouvez choisir d’afficher une carte de visite compacte ou une carte de visite complète contenant des informations supplémentaires.
 
 > **API importantes** : [méthode ShowContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard), [méthode ShowFullContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager.showfullcontactcard), [méthode IsShowContactCardSupported](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported), [classe Contact](/uwp/api/Windows.ApplicationModel.Contacts.Contact)  
 

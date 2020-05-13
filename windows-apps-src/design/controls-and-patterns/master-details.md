@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b7c21e5e6305c7b2941b46db562c93da0fdfe39
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 5ae8094ac3fbb1de8958b1cc138953d3e1b887cc
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684384"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970384"
 ---
 # <a name="masterdetails-pattern"></a>Modèle Maître/détails
 
@@ -24,6 +24,9 @@ Le modèle Maître/détails a un volet principal (généralement avec un [affich
 > **API importantes** : [classe ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), [classe SplitView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.splitview)
 
 ![Exemple de modèle Maître/détails](images/HIGSecOne_MasterDetail.png)
+
+> [!TIP]
+> Si vous souhaitez utiliser un contrôle XAML qui implémente ce modèle pour vous, nous vous recommandons d’utiliser le [contrôle XAML MasterDetailsView](/windows/communitytoolkit/controls/masterdetailsview) à partir du Kit de ressources Communauté Windows.
 
 ## <a name="is-this-the-right-pattern"></a>Est-ce le modèle approprié ?
 
@@ -61,7 +64,7 @@ Pour la page d'affichage Maître, un contrôle d’[affichage Liste](lists.md) f
 
 Pour la page d’affichage Détails, utilisez l’[élément de contenu](../layout/layout-panels.md) le plus logique. Si vous disposez d’un grand nombre de champs distincts, pensez à utiliser une disposition **en grille** pour organiser les éléments dans un formulaire.
 
-Pour la navigation entre les pages, voir [historique de navigation et navigation vers l’arrière pour les applications UWP](../basics/navigation-history-and-backwards-navigation.md).
+Pour plus d’informations sur la navigation entre les pages, consultez [Historique de navigation et navigation vers l’arrière pour les applications Windows](../basics/navigation-history-and-backwards-navigation.md).
 
 ## <a name="side-by-side-style"></a>Style côte à côte
 
@@ -98,6 +101,9 @@ Les exemples suivants implémentent le modèle Maître/Détails avec des disposi
 - [Exemple de Maître/Détails Windows Template Studio](https://github.com/Microsoft/WindowsTemplateStudio/tree/master/templates/Uwp/Pages/MasterDetail)
 - [Exemple de base de données de commandes de clients](https://github.com/Microsoft/Windows-appsample-customers-orders-database)
 - [Exemple de lecteur RSS](https://github.com/Microsoft/Windows-appsample-rssreader)
+
+> [!TIP]
+> Si vous souhaitez utiliser un contrôle XAML qui implémente ce modèle pour vous, nous vous recommandons d’utiliser le [contrôle XAML MasterDetailsView](/windows/communitytoolkit/controls/masterdetailsview) à partir du Kit de ressources Communauté Windows.
 
 ## <a name="related-articles"></a>Articles connexes
 

@@ -12,12 +12,12 @@ design-contact: jeffarn
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 66dc74e73207feb9b155adffc116f857dcb3027d
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 34eca0c822b0da96cae39463777c5c3e9888240c
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80081630"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970804"
 ---
 # <a name="progress-controls"></a>Contrôles de progression
 
@@ -27,14 +27,14 @@ Un contrôle de progression offre un retour à l’utilisateur lorsqu’une long
 
 |  |  |
 | - | - |
-| ![Logo WinUI](images/winui-logo-64x64.png) | Le contrôle **ProgressBar** est inclus dans la bibliothèque d’interface utilisateur Windows, package NuGet qui contient de nouveaux contrôles et fonctionnalités d’interface utilisateur destinés aux applications UWP. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![Logo WinUI](images/winui-logo-64x64.png) | Le contrôle **ProgressBar** est inclus dans la bibliothèque d’interface utilisateur Windows, package NuGet qui contient de nouveaux contrôles et fonctionnalités d’interface utilisateur destinés aux applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
-> **API de la bibliothèque d’interface utilisateur Windows :** [Classe ProgressBar](https://docs.microsoft.com/uwp/api/Microsoft.UI.Xaml.Controls.ProgressBar), [propriété IsIndeterminate](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.progressbar.isindeterminate)
+> **API de la bibliothèque d’interface utilisateur Windows :** [classe ProgressBar](https://docs.microsoft.com/uwp/api/Microsoft.UI.Xaml.Controls.ProgressBar), [propriété IsIndeterminate](https://docs.microsoft.com/uwp/api/Microsoft.ui.xaml.controls.progressbar.isindeterminate), [classe ProgressRing](https://docs.microsoft.com/uwp/api/Microsoft.UI.Xaml.Controls.ProgressRing), [propriété IsActive](https://docs.microsoft.com/uwp/api/Microsoft.ui.xaml.controls.progressring.isactive)
 >
 > **API de plateforme :** [classe ProgressBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar), [propriété IsIndeterminate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressbar.isindeterminate), [classe ProgressRing](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing), [propriété IsActive](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressring.isactive)
 
 > [!NOTE]
-> Il existe deux versions du contrôle ProgressBar : l’une dans la plateforme représentée par l’espace de noms Windows.UI.Xaml et l’autre dans la bibliothèque d’interface utilisateur Windows, l’espace de noms Microsoft.UI.Xaml. L’API pour ProgressBar est la même, mais l’apparence du contrôle diffère entre ces deux versions. Ce document montre des images de la version la plus récente de la bibliothèque d’interface utilisateur Windows.
+> Il existe deux versions des contrôles ProgressBar et ProgressRing : l’une dans la plateforme représentée par l’espace de noms Windows.UI.Xaml et l’autre dans la bibliothèque d’interface utilisateur Windows, l’espace de noms Microsoft.UI.Xaml. Bien que les API pour ProgressRing et ProgressBar soient identiques, les apparences du contrôle diffèrent entre les deux versions. Ce document montre des images de la version la plus récente de la bibliothèque d’interface utilisateur Windows.
 Tout au long de ce document, nous allons utiliser l’alias **muxc** en XAML pour représenter les API de la bibliothèque d’interface utilisateur Windows que nous avons incluses dans notre projet. Nous l’avons ajouté à notre élément [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page) :
 
 ```xaml
@@ -195,7 +195,7 @@ Par défaut, la couleur principale des contrôles de progression est définie su
 <muxc:ProgressBar Width="100" Foreground="Green"/>
 ```
 
-La modification de la couleur de premier plan du contrôle de progression a pour effet de modifier la couleur des points. La propriété de premier plan du contrôle ProgressBar change la couleur de remplissage de la barre. Pour modifier la partie vide de la barre, il suffit de remplacer la propriété d’arrière-plan.
+La modification de la couleur de premier plan du contrôle de progression a pour effet de changer la couleur de remplissage de l’anneau. La propriété de premier plan du contrôle ProgressBar change la couleur de remplissage de la barre. Pour modifier la partie vide de la barre, il suffit de remplacer la propriété d’arrière-plan.
 
 **Affichage d’un curseur d’attente**
 

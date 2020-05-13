@@ -5,12 +5,12 @@ keywords: XAML, UWP, Bien démarrer
 ms.date: 08/31/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e9e0a426d51fddaf4ff509438176e9db7a3e474
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 279a02962693d74c8c9ac037c0e3ee08f44a560b
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684124"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969095"
 ---
 # <a name="tutorial-create-custom-styles"></a>Tutoriel : Créer des styles personnalisés
 
@@ -32,7 +32,7 @@ L’application PhotoLab comporte deux pages principales :
 
 ## <a name="part-1-create-a-fancy-slider-control"></a>Partie 1 : Créer un contrôle de curseur fantaisie  
 
-La plateforme Windows universelle (UWP) fournit un certain nombre de méthodes pour personnaliser l’apparence de votre application. Des paramètres de polices et de typographie aux effets de flou, en passant par les couleurs et les dégradés, vous disposez d'un grand nombre d’options. 
+L’application Windows fournit un certain nombre de méthodes pour personnaliser l’apparence de votre application. Des paramètres de polices et de typographie aux effets de flou, en passant par les couleurs et les dégradés, vous disposez d'un grand nombre d’options. 
 
 Pour la première partie de ce tutoriel, nous allons égayer quelques uns de nos contrôles d’édition de photos. 
 

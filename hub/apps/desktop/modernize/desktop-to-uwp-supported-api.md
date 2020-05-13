@@ -1,6 +1,6 @@
 ---
-Description: Les applications de bureau empaquetées peuvent utiliser un large éventail d'API de la plateforme Windows universelle (UWP), même si elles n'ont pas été entièrement converties en applications UWP. Cet article répertorie les classes disponibles que votre application empaquetée peut utiliser.
-title: API UWP disponibles pour une application de bureau empaquetée (Pont du bureau)
+Description: Les applications de bureau empaquetées peuvent utiliser un large éventail d’API Windows Runtime, même si elles n’ont pas été entièrement converties en applications UWP. Cet article répertorie les classes disponibles que votre application empaquetée peut utiliser.
+title: API Windows Runtime disponibles pour une application de bureau empaquetée (Pont du bureau)
 ms.date: 04/19/2019
 ms.topic: article
 keywords: windows 10, uwp
@@ -9,18 +9,18 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 60a735af077d2121868e2613cb0f33e194e4330c
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 68c2427fe6b02385325f0f224cc837912621f6bb
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209665"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82729852"
 ---
-# <a name="uwp-apis-available-to-desktop-apps"></a>API UWP disponibles pour les applications de bureau
+# <a name="windows-runtime-apis-available-to-desktop-apps"></a>API Windows Runtime disponibles pour les applications de bureau
 
 Les applications de bureau peuvent utiliser un large éventail d'API de la plateforme Windows universelle (UWP), même si elles n'ont pas été entièrement converties en applications UWP. Cet article répertorie les classes disponibles que votre application de bureau peut utiliser.
 
-De nombreuses API UWP exigent que les applications de bureau utilisent l'[identité du package](modernize-packaged-apps.md). La plupart des API UWP fonctionnent bien avec les applications qui disposent de l'identité du package. Certains domaines de fonctionnalités n’ont cependant pas été totalement testés ou ne fonctionnent actuellement pas comme prévu.
+De nombreuses API Windows Runtime exigent que les applications de bureau utilisent l’[identité du package](modernize-packaged-apps.md). La plupart des API Windows Runtime fonctionnent bien avec les applications qui disposent de l’identité du package. Certains domaines de fonctionnalités n’ont cependant pas été totalement testés ou ne fonctionnent actuellement pas comme prévu.
 
 | Domaine de fonctionnalité | Détails |
 |--------------|---------|
@@ -45,9 +45,9 @@ Parfois, les API dans ces domaines peuvent sembler fonctionner correctement. Tou
 
 ## <a name="list-of-apis"></a>Liste des API
 
-Voici une liste complète des API UWP prises en charge dans les applications de bureau. Vous pouvez afficher les [API uniquement prises en charge dans les applications avec identité du package](#new) ou les [API prises en charge dans toutes les applications de bureau](#both).
+Voici une liste complète des API Windows Runtime prises en charge dans les applications de bureau. Vous pouvez afficher les [API uniquement prises en charge dans les applications avec identité du package](#new) ou les [API prises en charge dans toutes les applications de bureau](#both).
 
-Pour obtenir des exemples d'utilisation des API UWP, consultez [Exemples de Pont du bureau](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) et [Exemples d'applications de la plateforme Windows universelle (UWP)](https://github.com/Microsoft/Windows-universal-samples) sur GitHub. Vous pouvez également consulter le billet de blog consacré à la création d'applications pour Windows [Appel d'API Windows 10 à partir d'une application de bureau](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application/).
+Pour obtenir des exemples d’utilisation des API Windows Runtime, consultez [Exemples de Pont du bureau](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) et [Exemples d’applications de la plateforme Windows universelle (UWP)](https://github.com/Microsoft/Windows-universal-samples) sur GitHub. Vous pouvez également consulter le billet de blog consacré à la création d'applications pour Windows [Appel d'API Windows 10 à partir d'une application de bureau](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application/).
 
 <a id="new" />
 

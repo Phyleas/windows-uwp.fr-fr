@@ -11,12 +11,12 @@ pm-contact: chigy
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: aa672c99dc83e7955c4d4f91b5bc34620c48ed01
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: d2372044076e1885602dec806df95ad60e789cdd
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "66364548"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968084"
 ---
 # <a name="nested-ui-in-list-items"></a>Interface utilisateur imbriquée dans des éléments de liste
 
@@ -56,9 +56,9 @@ Les *actions secondaires* sont généralement des accélérateurs associés à d
 
 ## <a name="options-for-secondary-actions"></a>Options pour les actions secondaires
 
-Quand vous créez l’interface utilisateur de la liste, vous devez d’abord veiller à prendre en compte toutes les méthodes de saisie prises en charge par la plateforme Windows universelle. Pour plus d’informations sur les différents types d’entrée, voir [Notions fondamentales sur la saisie](../input/index.md).
+Quand vous créez l’interface utilisateur de la liste, vous devez d’abord veiller à prendre en compte toutes les méthodes de saisie prises en charge par Windows. Pour plus d’informations sur les différents types d’entrée, voir [Notions fondamentales sur la saisie](../input/index.md).
 
-Après s’être assuré que votre application gère toutes les saisies prises en charge par la plateforme UWP, vous devez déterminer si les actions secondaires de votre application sont suffisamment importantes pour figurer comme accélérateurs dans la liste principale. N’oubliez pas que plus le nombre d’actions exposées augmente, plus votre interface utilisateur devient compliquée. Avez-vous vraiment besoin de faire figurer les actions secondaires dans la liste principale de l’interface utilisateur ou pouvez-vous les placer ailleurs ?
+Après s’être assuré que votre application gère toutes les saisies prises en charge par Windows, vous devez déterminer si les actions secondaires de votre application sont suffisamment importantes pour figurer comme accélérateurs dans la liste principale. N’oubliez pas que plus le nombre d’actions exposées augmente, plus votre interface utilisateur devient compliquée. Avez-vous vraiment besoin de faire figurer les actions secondaires dans la liste principale de l’interface utilisateur ou pouvez-vous les placer ailleurs ?
 
 Vous pouvez envisager de faire figurer des actions supplémentaires dans l’interface utilisateur de la liste principale lorsque ces actions doivent être accessibles à toute saisie en permanence.
 
@@ -97,7 +97,7 @@ Dans ces exemples, il s’agit de l’interface utilisateur de liste dans laquel
 
 ## <a name="consider-all-inputs"></a>Prenez en considération toutes les saisies.
 
-Lorsque vous décidez d’utiliser l’interface utilisateur imbriquée, évaluez également l’expérience utilisateur avec tous les types de saisie. Comme mentionné précédemment, l’interface utilisateur imbriquée fonctionne bien pour certains types de saisie. Toutefois, elle ne fonctionne pas toujours parfaitement pour d’autres. Notamment, l’accès aux éléments de l’interface utilisateur imbriquée peut être difficile via une saisie au clavier, à distance ou par le biais d’une télécommande. Veillez à suivre les instructions ci-dessous pour vous assurer que votre plateforme Windows universelle fonctionne avec tous les types de saisie.
+Lorsque vous décidez d’utiliser l’interface utilisateur imbriquée, évaluez également l’expérience utilisateur avec tous les types de saisie. Comme mentionné précédemment, l’interface utilisateur imbriquée fonctionne bien pour certains types de saisie. Toutefois, elle ne fonctionne pas toujours parfaitement pour d’autres. Notamment, l’accès aux éléments de l’interface utilisateur imbriquée peut être difficile via une saisie au clavier, à distance ou par le biais d’une télécommande. Veillez à suivre les instructions ci-dessous pour vous assurer que votre application Windows fonctionne avec tous les types de saisie.
 
 ## <a name="nested-ui-handling"></a>Navigation dans l’interface utilisateur imbriquée
 

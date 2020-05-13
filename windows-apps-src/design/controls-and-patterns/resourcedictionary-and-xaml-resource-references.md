@@ -9,14 +9,14 @@ label: ResourceDictionary and XAML resource references
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 31b4a02f3307909f325b71cdc0540d44054adf4c
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 2be937646374db3586b1b3bca2df2b99888c831a
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "73061972"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968134"
 ---
 # <a name="resourcedictionary-and-xaml-resource-references"></a>Références aux ressources ResourceDictionary et XAML
 
@@ -401,7 +401,7 @@ Les modèles de contrôle ont un autre emplacement possible dans la recherche de
 
 Pour finir, il existe une recherche de ressource ayant pour objet des ressources de plateforme. Parmi les ressources de plateforme figurent les modèles de contrôles définis pour chacun des thèmes d’interface utilisateur du système et qui définissent l’apparence par défaut de tous les contrôles que vous utilisez pour l’interface utilisateur dans une application Windows Runtime. Les ressources de plateforme comprennent également un ensemble de ressources nommées liées à l’apparence et aux thèmes utilisés dans tout le système. Ces ressources constituent techniquement un élément [MergedDictionaries](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.mergeddictionaries) et sont donc disponibles pour la recherche à partir du XAML ou du code une fois l’application chargée. Par exemple, les ressources de thème système incluent une ressource nommée « SystemColorWindowTextColor » qui offre une définition [Color](https://docs.microsoft.com/uwp/api/Windows.UI.Color) pour faire correspondre la couleur du texte de l’application à la couleur du texte d’une fenêtre système provenant du système d’exploitation et des préférences utilisateur. D’autres styles XAML destinés à votre application peuvent faire référence à ce style, ou votre code peut se procurer une valeur de recherche de ressource (et la transtyper en valeur **Color** dans le cas de l’exemple).
 
-Pour obtenir plus d’informations et une liste des ressources système et spécifiques aux thèmes accessibles à une application UWP utilisant XAML, consultez [Ressources de thème XAML](xaml-theme-resources.md).
+Pour obtenir plus d’informations et une liste des ressources système et propres aux thèmes accessibles à une application Windows en XAML, consultez [Ressources de thème XAML](xaml-theme-resources.md).
 
 Si la clé demandée reste introuvable dans ces emplacements, une exception/erreur d’analyse XAML se produit. Dans certains cas, il peut s’agir d’une exception d’exécution non détectée par une action de compilation de balisage XAML, ni par un environnement de conception XAML.
 

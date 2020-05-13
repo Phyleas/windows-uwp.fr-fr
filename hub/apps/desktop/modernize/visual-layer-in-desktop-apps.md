@@ -7,16 +7,16 @@ keywords: windows 10, uwp
 ms.author: jimwalk
 author: jwmsft
 ms.localizationpriority: medium
-ms.openlocfilehash: 249291c59a31036fa967ac338209404557b57503
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 33a5f0bc31a8fe1421f7ab0de5f229d2feb77915
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "66215173"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82730136"
 ---
 # <a name="using-the-visual-layer-in-desktop-apps"></a>Utilisation de la couche visuelle dans les applications de bureau
 
-Vous pouvez maintenant utiliser des API UWP dans des applications de bureau non conçues pour UWP. Ces API vous permettent d’améliorer l’apparence, le comportement et les fonctionnalités de vos applications WPF, Windows Forms et Win32 C++, mais aussi de bénéficier des toutes dernières fonctionnalités d’interface utilisateur de Windows 10 qui sont disponibles uniquement par le biais d’UWP.
+Vous pouvez maintenant utiliser des API Windows Runtime dans des applications de bureau non conçues pour UWP. Ces API vous permettent d’améliorer l’apparence, le comportement et les fonctionnalités de vos applications WPF, Windows Forms et Win32 C++, mais aussi de bénéficier des toutes dernières fonctionnalités d’interface utilisateur de Windows 10 qui sont disponibles uniquement par le biais d’UWP.
 
 Dans beaucoup de scénarios, vous pouvez utiliser les [îlots XAML](xaml-islands.md) pour ajouter des contrôles XAML modernes à votre application. Toutefois, si vous devez créer des expériences utilisateur personnalisées plus avancées que les contrôles intégrés, vous pouvez faire appel aux API de la couche visuelle.
 

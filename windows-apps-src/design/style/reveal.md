@@ -10,12 +10,12 @@ design-contact: conrwi
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 63a7ee8550b72356199645f54b587480275c2bcd
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 26e756b52d4faf18eff2fc684c7db94bca058642
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75685081"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82971074"
 ---
 # <a name="reveal-highlight"></a>Effet Révéler
 
@@ -282,7 +282,7 @@ Quand vous activez Révéler sur un contrôle personnalisé, un contrôle remod�
 
 ## <a name="reveal-and-the-fluent-design-system"></a>Révéler et le système Fluent Design
 
- Le système Fluent Design vous aide à créer une interface utilisateur moderne et claire, qui incorpore de la lumière, de la profondeur, du mouvement, des matériaux et une mise à l’échelle. Révéler est un composant du système Fluent Design qui ajoute de la lumière à votre application. Pour plus d’informations, consultez [Vue d’ensemble de Fluent Design pour UWP](/windows/apps/fluent-design-system).
+ Le système Fluent Design vous aide à créer une interface utilisateur moderne et claire, qui incorpore de la lumière, de la profondeur, du mouvement, des matériaux et une mise à l’échelle. Révéler est un composant du système Fluent Design qui ajoute de la lumière à votre application. Pour plus d’informations, consultez [Vue d’ensemble de Fluent Design](/windows/apps/fluent-design-system).
 
 ## <a name="related-articles"></a>Articles connexes
 

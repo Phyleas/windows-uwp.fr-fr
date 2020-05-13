@@ -1,18 +1,18 @@
 ---
-description: Découvrez comment utiliser des couleurs d’accentuation et des thèmes dans vos applications UWP.
-title: Couleur dans les applications UWP
+description: Découvrez comment utiliser des couleurs d’accentuation et des thèmes dans vos applications Windows.
+title: Couleur dans les applications Windows
 ms.date: 04/07/2019
 ms.topic: article
 keywords: windows 10, uwp
 design-contact: karenmui
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 7ab504657ae5e3142eb7db1d9517a013e9aaf5f3
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: f5e103b7661c53fb70561dd1bd654188be2704ff
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684580"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970764"
 ---
 # <a name="color"></a>Couleur
 
@@ -20,7 +20,7 @@ ms.locfileid: "75684580"
 
 La couleur fournit un moyen intuitif de communiquer des informations aux utilisateurs de votre application : elle peut être utilisée pour indiquer une interactivité, donner un feedback aux actions de l’utilisateur et procurer à votre interface une certaine continuité visuelle.
 
-Dans les applications UWP, les couleurs sont principalement déterminées par la couleur d’accentuation et le thème. Dans cet article, nous expliquons comment utiliser la couleur dans votre application, et comment utiliser les ressources de couleur d’accentuation et de thème pour rendre votre application UWP utilisable dans n’importe quel contexte de thème.
+Dans les applications Windows, les couleurs sont principalement déterminées par la couleur d’accentuation et le thème. Dans cet article, nous expliquons comment utiliser la couleur dans votre application, et comment utiliser les ressources de couleur d’accentuation et de thème pour rendre votre application Windows utilisable dans n’importe quel contexte de thème.
 
 ## <a name="color-principles"></a>Principes des couleurs
 
@@ -48,7 +48,7 @@ Prenez en compte la façon dont les couleurs utilisées seront interprétées pa
 
 ## <a name="themes"></a>Thèmes
 
-Les applications UWP peuvent utiliser un thème d’application clair ou foncé. Le thème affecte les couleurs de l’arrière-plan, du texte, des icônes et des [contrôles courants](../controls-and-patterns/index.md) de l’application.
+Les applications Windows peuvent utiliser un thème d’application clair ou foncé. Le thème affecte les couleurs de l’arrière-plan, du texte, des icônes et des [contrôles courants](../controls-and-patterns/index.md) de l’application.
 
 ### <a name="light-theme"></a>Thème clair
 
@@ -58,7 +58,7 @@ Les applications UWP peuvent utiliser un thème d’application clair ou foncé.
 
 ![thème foncé](images/color/dark-theme.svg)
 
-Par défaut, le thème de votre application UWP est la préférence de thème de l’utilisateur définie dans les paramètres Windows, ou le thème par défaut de l’appareil (c’est-à-dire foncé sur Xbox). Vous pouvez cependant définir le thème de votre application UWP.
+Par défaut, le thème de votre application Windows est la préférence de thème de l’utilisateur définie dans les paramètres Windows, ou le thème par défaut de l’appareil (c’est-à-dire foncé sur Xbox). Vous pouvez cependant définir le thème de votre application Windows.
 
 ### <a name="changing-the-theme"></a>Changement du thème
 

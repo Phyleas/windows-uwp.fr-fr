@@ -1,16 +1,16 @@
 ---
-Description: Recommandations de disposition pour les formulaires dans les applications UWP
+Description: Recommandations de disposition pour les formulaires dans les applications Windows
 title: Formulaires
 template: detail.hbs
 ms.date: 11/07/2017
 ms.topic: article
 keywords: windows 10, uwp, fluent
-ms.openlocfilehash: b6533864748b4245b16ec7bcea9d2a831ff1c88a
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 69ffaf4ff67d4ee78e78c195d759ae242a069e8e
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "76520444"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968510"
 ---
 # <a name="forms"></a>Formulaires
 Un formulaire est un groupe de contrôles qui collectent des données auprès de l’utilisateur et les envoient. Les formulaires sont généralement utilisés pour les pages de paramètres, les enquêtes, la création de comptes et bien plus encore. 
@@ -62,7 +62,7 @@ Les [étiquettes](labels.md) doivent être alignées à gauche et placées au-de
 
 Pour [faciliter l’accessibilité](../accessibility/accessibility.md), étiquetez chaque contrôle et groupe de contrôles afin qu’il soit clairement identifiable par les lecteurs humains et les lecteurs d’écran. 
 
-Pour les styles de police, utilisez la [gamme de caractères UWP](../style/typography.md) par défaut. Utilisez `TitleTextBlockStyle` pour les titres de page, `SubtitleTextBlockStyle` pour les en-têtes de groupe et `BodyTextBlockStyle` pour les étiquettes de contrôle.
+Pour les styles de police, utilisez la [gamme de caractères Windows](../style/typography.md) par défaut. Utilisez `TitleTextBlockStyle` pour les titres de page, `SubtitleTextBlockStyle` pour les en-têtes de groupe et `BodyTextBlockStyle` pour les étiquettes de contrôle.
 
 <div class="mx-responsive-img">
 <table>
@@ -149,7 +149,7 @@ Contrôler | Utiliser
 ### <a name="additional-controls"></a>Contrôles supplémentaires 
 Pour obtenir la liste complète des contrôles UWP, consultez [Index des contrôles par fonction](controls-by-function.md).
 
-Pour les contrôles d’interface utilisateur personnalisés et plus complexes, consultez les ressources UWP disponibles auprès de sociétés comme [Telerik](https://www.telerik.com/), [SyncFusion](https://www.syncfusion.com/uwp-ui-controls), [DevExpress](https://www.devexpress.com/Products/NET/Controls/Win10Apps/), [Infragistics](https://www.infragistics.com/products/universal-windows-platform), [ComponentOne](https://www.componentone.com/Studio/Platform/UWP) et [ActiPro](https://www.actiprosoftware.com/products/controls/universal).
+Pour les contrôles d’interface utilisateur personnalisés et plus complexes, consultez les ressources disponibles auprès de sociétés comme [Telerik](https://www.telerik.com/), [SyncFusion](https://www.syncfusion.com/uwp-ui-controls), [DevExpress](https://www.devexpress.com/Products/NET/Controls/Win10Apps/), [Infragistics](https://www.infragistics.com/products/universal-windows-platform), [ComponentOne](https://www.componentone.com/Studio/Platform/UWP) et [ActiPro](https://www.actiprosoftware.com/products/controls/universal).
 
 ## <a name="one-column-form-example"></a>Exemple de formulaire monocolonne
 Cet exemple utilise un [affichage de liste](lists.md)[maître/détail](master-details.md) Acrylic et un contrôle [NavigationView](navigationview.md).

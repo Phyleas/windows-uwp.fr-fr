@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 93a4fd98ea1773a67cfe341e63f323c69d0bf79e
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: f5ec09f8fdfa0a8b4b8c7161cc6d91a3013230d7
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80614115"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970684"
 ---
 # <a name="tabview"></a>TabView
 
@@ -24,7 +24,7 @@ Le contrôle TabView permet d’afficher un ensemble d’onglets et leur contenu
 
 |  |  |
 | - | - |
-| ![Logo WinUI](images/winui-logo-64x64.png) | Le contrôle **TabView** nécessite la bibliothèque d’interface utilisateur Windows, package NuGet qui contient les nouveaux contrôles et fonctionnalités d’interface utilisateur destinés aux applications UWP. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![Logo WinUI](images/winui-logo-64x64.png) | Le contrôle **TabView** nécessite la bibliothèque d’interface utilisateur Windows, package NuGet qui contient les nouveaux contrôles et fonctionnalités d’interface utilisateur destinés aux applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
 > **API de la bibliothèque d’interface utilisateur Windows** : [Classe TabView](/uwp/api/microsoft.ui.xaml.controls.tabview), [Classe TabViewItem](/uwp/api/microsoft.ui.xaml.controls.tabviewitem)
 

@@ -5,12 +5,12 @@ ms.date: 04/24/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, norme, c++, cpp, winrt, COM, composant, classe, interface
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a286056fc0c44d01482e23e52df0fa80eca0515
-ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
+ms.openlocfilehash: 1b6ce3ce56b4afbf4c45b406c8af369bee4b55bb
+ms.sourcegitcommit: 2dbf4a3f3473c1d3a0ad988bcbae6e75dfee3640
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80218519"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82619323"
 ---
 # <a name="consume-com-components-with-cwinrt"></a>Consommer des composants COM avec C++/WinRT
 
@@ -127,7 +127,13 @@ Vous pouvez appeler la fonction [**com_ptr::get**](/uwp/cpp-ref-for-winrt/com-pt
 
 ## <a name="com-functions-that-take-an-iunknown-interface-pointer"></a>Fonctions COM qui acceptent un pointeur d’interface **IUnknown**
 
-Vous pouvez appeler la fonction libre [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/get-unknown) pour passer votre **com_ptr** à une fonction qui accepte un pointeur d’interface **IUnknown**. Consultez cette rubrique pour obtenir un exemple de code.
+Vous pouvez utiliser [**com_ptr::get**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrget-function) pour passer votre **com_ptr** à une fonction qui accepte un pointeur d’interface **IUnknown**.
+
+Vous pouvez utiliser la fonction libre [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/get-unknown) pour retourner l’adresse de (en d’autres termes, un pointeur vers) l’[interface IUnknown](/windows/win32/api/unknwn/nn-unknwn-iunknown) brute sous-jacente d’un objet d’un type projeté. Vous pouvez ensuite passer cette adresse à une fonction qui accepte un pointeur d’interface **IUnknown**.
+
+Pour plus d’informations sur les *types projetés*, consultez [Utiliser des API avec C++/WinRT](/windows/uwp/cpp-and-winrt-apis/consume-apis).
+
+Pour obtenir un exemple de code de **get_unknown**, consultez [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/get-unknown) ou la section [Code source complet d’une application Direct2D minimale](/windows/uwp/cpp-and-winrt-apis/consume-com#full-source-code-listing-of-a-minimal-direct2d-application) de cette rubrique.
 
 ## <a name="passing-and-returning-com-smart-pointers"></a>Passage et retour de pointeurs intelligents COM
 

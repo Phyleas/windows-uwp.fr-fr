@@ -1,7 +1,7 @@
 ---
 author: knicholasa
 description: La profondeur z, ou profondeur relative, et l’ombre sont deux façons d’incorporer la profondeur dans votre application pour aider les utilisateurs à se concentrer de manière naturelle et efficace.
-title: Profondeur z et ombre pour les applications UWP
+title: Profondeur z et ombre pour les applications Windows
 template: detail.hbs
 ms.date: 04/19/2019
 ms.topic: article
@@ -9,18 +9,18 @@ ms.custom: 19H1
 keywords: windows 10, uwp
 pm-contact: chigy
 ms.localizationpriority: medium
-ms.openlocfilehash: 216974ba564a192f94473469f3a7a49191ef2192
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 2655abd69f0f02efada9de5bab22e463c86b5d7e
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80081388"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970184"
 ---
 # <a name="z-depth-and-shadow"></a>Profondeur Z et ombre
 
 ![Image gif montrant quatre rectangles gris empilés les uns sur des autres en diagonale. L’image gif est animée pour faire apparaître et disparaître les ombres.](images/elevation-shadow/shadow.gif)
 
-la création d’une hiérarchie visuelle d’éléments dans votre interface utilisateur facilite l’analyse de celle-ci et comporte ce sur quoi il est important de se concentrer. L’élévation, qui consiste à mettre en avant des éléments spécifiques de votre interface utilisateur, est souvent utilisée pour obtenir une telle hiérarchie dans le logiciel. Cet article explique comment créer un effet d’élévation dans une application UWP à l’aide de la profondeur z et d’ombres.
+la création d’une hiérarchie visuelle d’éléments dans votre interface utilisateur facilite l’analyse de celle-ci et comporte ce sur quoi il est important de se concentrer. L’élévation, qui consiste à mettre en avant des éléments spécifiques de votre interface utilisateur, est souvent utilisée pour obtenir une telle hiérarchie dans le logiciel. Cet article explique comment créer un effet d’élévation dans une application Windows à l’aide de la profondeur z et d’ombres.
 
 La profondeur z est un terme utilisé par les créateurs d’applications 3D pour indiquer la distance entre deux surfaces le long de l’axe z. Elle illustre la proximité d’un objet avec le viewer. Le concept est similaire à celui des coordonnées x/y, mais dans la direction de l’axe z.
 
@@ -32,7 +32,7 @@ Dans le monde physique, nous avons tendance à nous concentrer sur les objets qu
 
 Une ombre est un moyen pour un utilisateur de percevoir l’élévation. La lumière au-dessus d’un objet élevé crée une ombre sur la surface en dessous de cet objet. Plus l’objet est haut, plus l’ombre est grande et douce. Vous n’êtes pas obligé d’ajouter des ombres à des objets élevés dans votre interface utilisateur, mais elles contribuent à créer une apparence d’élévation.
 
-Dans les applications UWP, les ombres doivent être utilisées à des fins utiles et non esthétiques. L’utilisation d’un trop grand nombre d’ombres diminue voire élimine leur capacité à attirer l’attention de l’utilisateur.
+Dans les applications Windows, les ombres doivent être utilisées à des fins utiles et non esthétiques. L’utilisation d’un trop grand nombre d’ombres diminue voire élimine leur capacité à attirer l’attention de l’utilisateur.
 
 Si vous utilisez des contrôles standard, les ombres ThemeShadow sont incorporées automatiquement à votre interface utilisateur. Toutefois, vous pouvez ajouter manuellement des ombres à votre interface utilisateur à l’aide des API ThemeShadow ou DropShadow. 
 

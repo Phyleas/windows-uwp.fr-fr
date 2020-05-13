@@ -11,12 +11,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f5d0c2f5c5aa6c5d5bfcaee8e9b0ec14bbcd4ff3
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 8ed4515a90df50a1ff8c0d6b82eb8cda5a4a78c9
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "71339372"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968744"
 ---
 # <a name="control-templates"></a>Modèles de contrôles
 
@@ -186,7 +186,7 @@ Pour appliquer rapidement des thèmes à vos contrôles, cliquez avec le bouton 
 
 ## <a name="controls-and-accessibility"></a>Contrôles et accessibilité
 
-Lorsque vous créez un modèle pour un contrôle, vous pouvez modifier non seulement le comportement et l’aspect visuel du contrôle, mais aussi la façon dont il se présente aux infrastructures d’accessibilité. La plateforme Windows universelle (UWP) prend en charge l’infrastructure Microsoft UI Automation pour l’accessibilité. Tous les contrôles par défaut et leurs modèles prennent en charge des types et modèles de contrôle UI Automation courants qui sont adaptés à l’objet et à la fonction du contrôle. Ces types et modèles de contrôle sont interprétés par les clients UI Automation, notamment les technologies d’assistance. Un contrôle peut ainsi être accessible au sein d’une interface utilisateur d’application accessible plus importante.
+Lorsque vous créez un modèle pour un contrôle, vous pouvez modifier non seulement le comportement et l’aspect visuel du contrôle, mais aussi la façon dont il se présente aux infrastructures d’accessibilité. L’application Windows prend en charge l’infrastructure Microsoft UI Automation pour l’accessibilité. Tous les contrôles par défaut et leurs modèles prennent en charge des types et modèles de contrôle UI Automation courants qui sont adaptés à l’objet et à la fonction du contrôle. Ces types et modèles de contrôle sont interprétés par les clients UI Automation, notamment les technologies d’assistance. Un contrôle peut ainsi être accessible au sein d’une interface utilisateur d’application accessible plus importante.
 
 Pour séparer la logique du contrôle de base et satisfaire à une partie des exigences architecturales d’UI Automation, la prise en charge de l’accessibilité des classes de contrôle se trouve dans une classe séparée, à savoir un homologue d’automation. Les homologues d’automation interagissent parfois avec les modèles de contrôle, et ce car les homologues s’attendent à ce que certaines parties nommées soient présentes dans les modèles. Il est donc possible d’implémenter des fonctionnalités telles que des technologies d’assistance pour appeler des actions de boutons.
 

@@ -1,17 +1,17 @@
 ---
 description: Conseils pour la création d’applications cohérentes et conviviales, qui dénotent également une certaine originalité et créativité.
-title: Trouver un juste équilibre entre le style et la cohérence (conception des applications UWP)
+title: Trouver un juste équilibre entre le style et la cohérence (conception des applications Windows)
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ecb511fad1aa4e1605d83090a5e4e8d98efff1be
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 0972fcdaba2ed8c1a9a7b3f297302b0b90184bc2
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "63790653"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970474"
 ---
 # <a name="balancing-style-and-consistency"></a>Trouver un juste équilibre entre le style et la cohérence
 

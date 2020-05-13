@@ -9,12 +9,12 @@ pm-contact: chphilip
 design-contact: ''
 dev-contact: stevenki
 ms.localizationpriority: medium
-ms.openlocfilehash: 824476cb098d0ff561fca67497a896586c70b8fb
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 098c46499e65c34e3699b09e137ea94c40590ef7
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75681960"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968005"
 ---
 # <a name="reveal-focus"></a>Révéler focus
 
@@ -168,7 +168,7 @@ Une autre façon de personnaliser Révéler focus consiste à choisir de ne pas 
 
 ## <a name="reveal-focus-and-the-fluent-design-system"></a>Révéler focus et le système Fluent Design
 
-Révéler focus est un composant du système Fluent Design qui ajoute des effets lumineux à votre application. Pour plus d’informations sur le système Fluent Design et ses autres composants, consultez [Présentation de Fluent Design pour UWP](/windows/apps/fluent-design-system).
+Révéler focus est un composant du système Fluent Design qui ajoute des effets lumineux à votre application. Pour plus d’informations sur le système Fluent Design et ses autres composants, consultez [Présentation de Fluent Design](/windows/apps/fluent-design-system).
 
 ## <a name="related-articles"></a>Articles connexes
 

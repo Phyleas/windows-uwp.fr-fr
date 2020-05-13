@@ -1,28 +1,28 @@
 ---
-Description: Personnalisez la vue de l’écriture manuscrite intégrée en entrée de texte qui est prise en charge par les contrôles de texte UWP comme TextBox, RichEditBox et les contrôles tels qu’AutoSuggestBox qui fournissent une expérience d’entrée de texte similaire.
+Description: Personnalisez la vue de l’écriture manuscrite intégrée en entrée de texte qui est prise en charge par les contrôles de texte Windows comme TextBox, RichEditBox et les contrôles tels qu’AutoSuggestBox qui fournissent une expérience d’entrée de texte similaire.
 title: Entrée de texte avec la vue de l’écriture manuscrite
 label: Text input with the handwriting view
 template: detail.hbs
 ms.date: 10/13/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 pm-contact: sewen
 design-contact: minah.kim
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 9b9d409718a157c55b28fdb3ccaa28caaa295adf
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: ccd21481a8488a101ee79ae0b0224651a94461a7
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684283"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82967964"
 ---
 # <a name="text-input-with-the-handwriting-view"></a>Entrée de texte avec la vue de l’écriture manuscrite
 
 ![La zone de texte s’agrandit quand l’utilisateur appuie dessus avec un stylet](images/handwritingview/handwritingview2.gif)
 
-Personnalisez la vue de l’écriture manuscrite intégrée en entrée de texte qui est prise en charge par les contrôles de texte UWP comme [TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox), [RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox) et les contrôles qui en dérivent tels qu’[AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox).
+Personnalisez la vue de l’écriture manuscrite intégrée en entrée de texte qui est prise en charge par les contrôles de texte Windows comme [TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox), [RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox) et les contrôles qui en dérivent tels qu’[AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox).
 
 ## <a name="overview"></a>Vue d’ensemble
 

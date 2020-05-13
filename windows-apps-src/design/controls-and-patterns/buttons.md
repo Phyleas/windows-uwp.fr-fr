@@ -13,12 +13,12 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: e098283bae6f58b927892c680a4981d83f9e31e8
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 4f0814621c67c01d5d1a73235faf02d3d753f2c2
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80081368"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970054"
 ---
 # <a name="buttons"></a>Boutons
 
@@ -42,7 +42,7 @@ Contrôler | Description
 
 |  |  |
 | - | - |
-| ![Logo WinUI](images/winui-logo-64x64.png) | **DropDownButton**, **SplitButton** et **ToggleSplitButton** sont inclus dans la bibliothèque d’interface utilisateur Windows. Cette bibliothèque est un package NuGet qui contient les nouveaux contrôles et fonctionnalités d’interface utilisateur des applications UWP. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![Logo WinUI](images/winui-logo-64x64.png) | **DropDownButton**, **SplitButton** et **ToggleSplitButton** sont inclus dans la bibliothèque d’interface utilisateur Windows. Cette bibliothèque est un package NuGet qui contient les nouveaux contrôles et fonctionnalités d’interface utilisateur des applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
 > **API de la bibliothèque d’interface utilisateur Windows :** [Classe DropDownButton](/uwp/api/microsoft.ui.xaml.controls.dropdownbutton), [classe SplitButton](/uwp/api/microsoft.ui.xaml.controls.splitbutton), [classe ToggleSplitButton](/uwp/api/microsoft.ui.xaml.controls.togglesplitbutton)
 >
@@ -550,7 +550,7 @@ Si votre disposition ne nécessite qu’un seul bouton, celui-ci doit être alig
 
 ## <a name="back-buttons"></a>Boutons Précédent
 
-Le bouton Précédent est un élément de l’interface utilisateur fournie par le système qui permet de revenir en arrière dans la pile Back ou dans l’historique de navigation de l’utilisateur. Vous n’avez pas besoin de créer votre propre bouton Précédent, mais un peu de travail sera peut-être nécessaire pour permettre une bonne expérience de navigation vers l’arrière. Pour plus d’informations, consultez [Historique de navigation et navigation vers l’arrière pour les applications UWP](../basics/navigation-history-and-backwards-navigation.md).
+Le bouton Précédent est un élément de l’interface utilisateur fournie par le système qui permet de revenir en arrière dans la pile Back ou dans l’historique de navigation de l’utilisateur. Vous n’avez pas besoin de créer votre propre bouton Précédent, mais un peu de travail sera peut-être nécessaire pour permettre une bonne expérience de navigation vers l’arrière. Pour plus d’informations, consultez [Historique de navigation et navigation vers l’arrière pour les applications Windows](../basics/navigation-history-and-backwards-navigation.md).
 
 
 ## <a name="get-the-sample-code"></a>Obtenir l’exemple de code

@@ -1,5 +1,5 @@
 ---
-Description: Découvrez comment implémenter la navigation vers l’arrière afin de parcourir l’historique de navigation de l’utilisateur dans une application UWP.
+Description: Découvrez comment implémenter la navigation vers l’arrière afin de parcourir l’historique de navigation de l’utilisateur dans une application Windows.
 title: Navigation dans l’historique et navigation vers l’arrière
 template: detail.hbs
 op-migration-status: ready
@@ -7,18 +7,18 @@ ms.date: 04/09/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 05b435eb6f070634507c143bd028d2cb051c97bc
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 0601aea88d0705377490fb4adf26ce3da9c4e573
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74735024"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969145"
 ---
-# <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>Historique de navigation et navigation vers l’arrière pour les applications UWP
+# <a name="navigation-history-and-backwards-navigation-for-windows-apps"></a>Historique de navigation et navigation vers l’arrière pour les applications Windows
 
 > **API importantes** : [événement BackRequested](https://docs.microsoft.com/uwp/api/Windows.UI.Core.SystemNavigationManager.BackRequested), [classe SystemNavigationManager](https://docs.microsoft.com/uwp/api/Windows.UI.Core.SystemNavigationManager), [OnNavigatedTo](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_)
 
-La plateforme Windows universelle (UWP) fournit un système de navigation vers l’arrière cohérent afin de parcourir l’historique de navigation de l’utilisateur dans une application et, en fonction de l’appareil, d’une application à l’autre.
+L’application Windows fournit un système de navigation vers l’arrière cohérent afin de parcourir l’historique de navigation de l’utilisateur dans une application et, en fonction de l’appareil, d’une application à l’autre.
 
 Pour implémenter la navigation vers l’arrière dans votre application, placez un [bouton Précédent](#back-button) dans l’angle supérieur gauche de l’interface utilisateur de votre application. Si votre application utilise le contrôle [NavigationView](../controls-and-patterns/navigationview.md), vous pouvez ensuite utiliser le [bouton Précédent intégré de NavigationView](../controls-and-patterns/navigationview.md#backwards-navigation).
 

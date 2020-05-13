@@ -6,12 +6,12 @@ ms.date: 05/07/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: f5f38fdfb3ba9fd32a6e06ec19cdbfb6c3b09f24
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 8d79d4f3394bcf8f7892f2c6dc3d4e0ca72972ab
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "68867684"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970604"
 ---
 # <a name="writing-style"></a>Style d’écriture
 
@@ -103,7 +103,7 @@ Parlez directement à l’utilisateur.
 
 :::row:::
     :::column:::
-![À faire](images/do.svg)Le guide de conception pour la plateforme Windows universelle (UWP) est une ressource destinée à vous aider à concevoir et à générer de belles applications abouties. Grâce aux fonctionnalités de conception incluses dans chaque application UWP, vous pouvez créer des interfaces utilisateur qui s’adaptent à toute une gamme d’appareils.
+![À faire](images/do.svg) Le guide de conception d’application Windows est une ressource destinée à vous aider à concevoir et créer de belles applications abouties. Grâce aux fonctionnalités de conception incluses dans chaque application Windows, vous pouvez créer des interfaces utilisateur qui s’adaptent à toute une gamme d’appareils.
     :::column-end:::
     :::column:::
     :::column-end:::
