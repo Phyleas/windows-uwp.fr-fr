@@ -7,16 +7,16 @@ ms.date: 03/07/2018
 ms.topic: article
 keywords: Windows 10, UWP, Win32, Desktop, notifications Toast, envoyer un toast, envoyer un toast local, Desktop Bridge, msix, package fragmenté, C++, CPP, Cplusplus, WRL
 ms.localizationpriority: medium
-ms.openlocfilehash: cc87f9281b9623c1f1b46def8f886cfebeb0438f
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 3e103c41de7bf169629085fd259e23e17804360d
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968294"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234668"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-wrl-apps"></a>Envoyer une notification Toast locale à partir d’applications Desktop C++ WRL
 
-Les applications de bureau (y compris les applications [MSIX](https://docs.microsoft.com/windows/msix/desktop/source-code-overview) empaquetées, les applications qui utilisent des [packages éparss](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) pour obtenir l’identité du package et les applications Win32 non empaquetées classiques) peuvent envoyer des notifications de Toast interactif comme les applications d’application Windows. Toutefois, il existe quelques étapes spéciales pour les applications de bureau en raison des différents schémas d’activation et de l’absence potentielle d’identité de package si vous n’utilisez pas MSIX ou un package fragmenté.
+Les applications de bureau (y compris les applications [MSIX](https://docs.microsoft.com/windows/msix/desktop/source-code-overview) empaquetées, les applications qui utilisent des [packages éparss](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) pour obtenir l’identité du package et les applications Win32 non empaquetées classiques) peuvent envoyer des notifications de Toast interactives comme des applications Windows. Toutefois, il existe quelques étapes spéciales pour les applications de bureau en raison des différents schémas d’activation et de l’absence potentielle d’identité de package si vous n’utilisez pas MSIX ou un package fragmenté.
 
 > [!IMPORTANT]
 > Si vous écrivez une application UWP, consultez la [documentation UWP](send-local-toast.md). Pour les autres langues du bureau, consultez [Desktop C#](send-local-toast-desktop.md).
@@ -33,7 +33,7 @@ Cliquez avec le bouton droit sur votre projet et sélectionnez **Propriétés**.
 
 Dans le menu de **configuration** supérieur, sélectionnez **toutes les configurations** afin que la modification suivante soit appliquée à la fois au débogage et à la mise en version.
 
-Sous **éditeur de liens-> entrée**, `runtimeobject.lib` Ajoutez aux **dépendances supplémentaires**.
+Sous **éditeur de liens-> entrée**, ajoutez `runtimeobject.lib` aux **dépendances supplémentaires**.
 
 Ensuite, sous **général**, assurez-vous que la **version de SDK Windows** est définie sur une valeur supérieure ou égale à 10,0 (non Windows 8.1).
 
@@ -145,7 +145,7 @@ Choisissez un identifiant AUMID unique qui identifie votre application Win32. Il
 
 #### <a name="step-51-wix-installer"></a>Étape 5,1 : programme d’installation de WiX
 
-Si vous utilisez WiX pour votre programme d’installation, modifiez le fichier **Product. wxs** pour ajouter les deux propriétés de raccourci au raccourci du menu Démarrer, comme indiqué ci-dessous. Assurez-vous que le GUID de l’étape #4 `{}` est inséré comme indiqué ci-dessous.
+Si vous utilisez WiX pour votre programme d’installation, modifiez le fichier **Product. wxs** pour ajouter les deux propriétés de raccourci au raccourci du menu Démarrer, comme indiqué ci-dessous. Assurez-vous que le GUID de l’étape #4 est inséré `{}` comme indiqué ci-dessous.
 
 **Product. wxs**
 
@@ -405,11 +405,11 @@ Si vos notifications s’affichent mais ne sont pas conservées dans le centre d
 
 Si vous avez installé à la fois votre package MSIX/Sparse et l’application Win32 classique, Notez que l’application de package MSIX/Sparse remplace l’application Win32 classique lors du traitement des activations Toast. Cela signifie que les toasts de l’application Win32 classique continueront de lancer l’application de package MSIX/Sparse quand vous cliquez dessus. La désinstallation de l’application de package MSIX/Sparse repasse l’activation à l’application Win32 classique.
 
-Si vous recevez `HRESULT 0x800401f0 CoInitialize has not been called.`, veillez à appeler `CoInitialize(nullptr)` dans votre application avant d’appeler les API.
+Si vous recevez `HRESULT 0x800401f0 CoInitialize has not been called.` , veillez à appeler `CoInitialize(nullptr)` dans votre application avant d’appeler les API.
 
 Si vous recevez `HRESULT 0x8000000e A method was called at an unexpected time.` lors de l’appel des API de compatibilité, cela signifie probablement que vous n’avez pas pu appeler les méthodes de Registre requises (ou si une application de package MSIX/Sparse, vous n’exécutez actuellement pas votre application dans le contexte MSIX/Sparse).
 
-Si vous recevez de `unresolved external symbol` nombreuses erreurs de compilation, vous avez probablement `runtimeobject.lib` oublié d’ajouter aux **dépendances supplémentaires** à l’étape #1 (ou vous l’avez ajoutée uniquement à la configuration Debug et non à la configuration Release).
+Si vous recevez de nombreuses `unresolved external symbol` Erreurs de compilation, vous avez probablement oublié d’ajouter `runtimeobject.lib` aux **dépendances supplémentaires** à l’étape #1 (ou vous l’avez ajoutée uniquement à la configuration Debug et non à la configuration Release).
 
 
 ## <a name="handling-older-versions-of-windows"></a>Gestion des versions antérieures de Windows

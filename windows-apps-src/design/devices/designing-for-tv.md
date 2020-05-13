@@ -13,16 +13,16 @@ design-contact: jeffarn
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 24cc85c255f26b61603690d6b39c3a6ffdcbb544
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 5025a63f5c96365ba1f14311b9c68ed41f4fc5aa
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970724"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234595"
 ---
 # <a name="designing-for-xbox-and-tv"></a>Conception pour Xbox et télévision
 
-Concevez votre application d’application Windows pour qu’elle fonctionne correctement et fonctionne bien sur les écrans Xbox One et télévision.
+Concevez votre application Windows pour qu’elle fonctionne correctement et fonctionne bien sur les écrans Xbox One et télévision.
 
 Consultez les [interactions du boîtier et du contrôle à distance](../input/gamepad-and-remote-interactions.md) pour obtenir des conseils sur les expériences d’interaction dans les applications UWP dans une expérience de *10 mètres* .
 
@@ -333,7 +333,7 @@ Vous placez l’extrait de code précédent dans les ressources de la page ou de
 > [!NOTE]
 > Cet extrait de code est spécifiquement conçu pour les contrôles `ListView`. Pour un style `GridView`, définissez l’attribut [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype) des éléments [ControlTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) et [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) sur `GridView`.
 
-Pour un contrôle plus précis de la façon dont les éléments sont mis en vue, si votre application cible la version 1803 ou une version ultérieure, vous pouvez utiliser l' [événement UIElement. BringIntoViewRequested](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested). Vous pouvez le placer sur le [ItemsPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) pour que le contrôle**GridView** **ListView**/puisse l’intercepter avant que le **ScrollViewer** interne ne fasse, comme dans les extraits de code suivants :
+Pour un contrôle plus précis de la façon dont les éléments sont mis en vue, si votre application cible la version 1803 ou une version ultérieure, vous pouvez utiliser l' [événement UIElement. BringIntoViewRequested](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested). Vous pouvez le placer sur le [ItemsPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) pour que **ListView**le contrôle / **GridView** ListView puisse l’intercepter avant que le **ScrollViewer** interne ne fasse, comme dans les extraits de code suivants :
 
 ```xaml
 <GridView x:Name="gridView">
@@ -413,7 +413,7 @@ Lors de la conception d’applications pour la télévision, notez que les coule
 
 ### <a name="tv-safe-colors"></a>Couleurs adaptées aux écrans de TV
 
-Les valeurs RVB d’une couleur représentent l’intensité du rouge, du vert et du bleu. Les téléviseurs ne traitent pas très&mdash;bien les intensités extrêmes. elles peuvent produire un effet à bande étrange ou sembler pâles sur certains téléviseurs. En outre, les couleurs à haute intensité peuvent provoquer un effet Bloom (les pixels avoisinants émettent les mêmes couleurs). Bien que les avis divergent sur quelles couleurs sont adaptées aux écrans de TV, les couleurs dont les valeurs RVB sont comprises entre 16 et 235 (ou 10-EB en notation hexadécimale) sont généralement adaptées aux écrans de TV.
+Les valeurs RVB d’une couleur représentent l’intensité du rouge, du vert et du bleu. Les téléviseurs ne traitent pas très bien les intensités extrêmes &mdash; . elles peuvent produire un effet à bande étrange ou sembler pâles sur certains téléviseurs. En outre, les couleurs à haute intensité peuvent provoquer un effet Bloom (les pixels avoisinants émettent les mêmes couleurs). Bien que les avis divergent sur quelles couleurs sont adaptées aux écrans de TV, les couleurs dont les valeurs RVB sont comprises entre 16 et 235 (ou 10-EB en notation hexadécimale) sont généralement adaptées aux écrans de TV.
 
 ![Plage de couleurs adaptées aux écrans de TV](images/designing-for-tv/tv-safe-colors-2.png)
 
@@ -462,7 +462,7 @@ Bien que les boutons UWP standard fonctionnent correctement sur les télévision
 
 L’interface utilisateur imbriquée expose les éléments actionnables imbriqués inclus dans un élément d’interface utilisateur conteneur où l’élément imbriqué et l’élément conteneur peuvent prendre le focus indépendamment l’un de l’autre.
 
-L’interface utilisateur imbriquée est parfaitement indiquée pour certains types d’entrée, mais pas toujours pour les manettes de jeu et les télécommandes, qui font appel à la navigation XY. Veillez à suivre les recommandations fournies dans cette rubrique pour vous assurer que votre interface utilisateur est optimisée pour l’environnement TV (visualisation à 3 mètres) et que l’utilisateur peut facilement accéder à tous les éléments interactifs. Une solution courante consiste à placer des éléments d’interface utilisateur imbriqués dans un `ContextFlyout`.
+L’interface utilisateur imbriquée est parfaitement indiquée pour certains types d’entrée, mais pas toujours pour les manettes de jeu et les télécommandes, qui font appel à la navigation XY. Veillez à suivre les recommandations fournies dans cette rubrique pour vous assurer que votre interface utilisateur est optimisée pour l’environnement TV (visualisation à 3 mètres) et que l’utilisateur peut facilement accéder à tous les éléments interactifs. Une solution courante consiste à placer des éléments d’interface utilisateur imbriqués dans un `ContextFlyout` .
 
 Pour plus d’informations sur l’interface utilisateur imbriquée, voir [Interface utilisateur imbriquée dans des éléments de liste](../controls-and-patterns/nested-ui.md).
 
@@ -560,12 +560,12 @@ bool IsTenFoot = (Windows.System.Profile.AnalyticsInfo.VersionInfo.DeviceFamily 
 
 Après avoir effectué cette vérification, vous pouvez effectuer les réglages appropriés de votre interface utilisateur dans le bloc de code. 
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 La conception pour l’expérience « 10-foot » implique de prendre en compte des points spéciaux qui la distinguent de la conception pour toute autre plateforme. Si vous pouvez certainement transférer directement votre application UWP vers Xbox One avec succès, cette application n’est pas nécessairement optimisée pour l’expérience « 10-foot », ce qui peut générer de la frustration chez l’utilisateur. Suivez les recommandations contenues dans cet article pour vous assurer que votre application fonctionne aussi bien que possible sur TV.
 
 ## <a name="related-articles"></a>Articles connexes
 
-- [Initiation de l’appareil pour les applications d’application Windows](index.md)
+- [Initiation de l’appareil pour les applications Windows](index.md)
 - [Interactions entre le boîtier de commande et la télécommande](../input/gamepad-and-remote-interactions.md)
 - [Son dans les applications UWP](../style/sound.md)

@@ -1,47 +1,47 @@
 ---
-Description: Le Microsoft Store touche des clients dans plus de 200 pays et régions dans le monde.
+Description: Le Microsoft Store atteint les clients dans plus de 200 pays et régions du monde entier.
 title: Définir la sélection du marché
 ms.assetid: FBE7507B-DBF3-4FCB-8377-DB01660E75F8
 ms.date: 10/31/2018
 ms.topic: article
-keywords: windows 10, uwp, marchés, pays, régions
+keywords: Windows 10, UWP, marchés, pays, régions
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b1a51a98746594a8563de2f309bec9cb5dda0b3
-ms.sourcegitcommit: a7effa01ca1c810e792b60f89ba38ce3bf0b310e
+ms.openlocfilehash: ed80d8ef727d3c9be276b295a504b8cc02b373aa
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81545049"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234653"
 ---
 # <a name="define-market-selection"></a>Définir la sélection du marché
 
 
-Le Microsoft Store touche des clients dans plus de 200 pays et régions dans le monde. Vous pouvez choisir les marchés dans lesquels vous souhaitez proposer votre application, avec la possibilité de personnaliser de nombreuses fonctionnalités de [Tarification et disponibilité](set-app-pricing-and-availability.md) par marché ou par groupe de marchés.
+Le Microsoft Store atteint les clients dans plus de 200 pays et régions du monde entier. Vous pouvez choisir les marchés dans lesquels vous souhaitez offrir votre application, avec la possibilité de personnaliser de nombreuses fonctionnalités de [tarification et de disponibilité](set-app-pricing-and-availability.md) par marché ou par groupe de marchés.
 
 Pour obtenir des informations qui vous aideront à rendre votre application adaptée aux clients dans le monde entier, consultez [les instructions de globalisation](../design/globalizing/guidelines-and-checklist-for-globalizing-your-app.md) et [rendre votre application localisable](../design/globalizing/prepare-your-app-for-localization.md).
 
 > [!NOTE]
-> Bien que cet article fasse référence aux applications, la sélection du marché des soumissions d’extensions applique le même processus.
+> Bien que cette rubrique fasse référence aux applications, la sélection du marché pour les envois de compléments utilise le même processus.
 
 ## <a name="markets"></a>Marchés
 
-Par défaut, nous proposerons votre application à son prix de base dans tous les marchés possibles, y compris dans les éventuels marchés que nous ajouterons par la suite.
+Par défaut, nous proposons votre application sur tous les marchés possibles, y compris les marchés futurs que nous pouvons ajouter ultérieurement, à son prix de base.
 
-Si vous préférez, vous pouvez définir des marchés spécifiques dans lesquels vous souhaitez proposer votre application. Pour ce faire, sélectionnez **Afficher les options** dans la section **Marchés** sur la page **Tarification et disponibilité**. Cela permet d’afficher la fenêtre contextuelle **Sélection du marché**, dans laquelle vous pouvez choisir les marchés dans lesquels vous voulez proposer votre application.
+Si vous préférez, vous pouvez définir les marchés spécifiques dans lesquels vous souhaitez proposer votre application. Pour ce faire, sélectionnez **afficher les options** dans la section **Markets** de la page **tarification et disponibilité** . La fenêtre contextuelle de **sélection du marché** s’affiche, dans laquelle vous pouvez choisir les marchés dans lesquels vous souhaitez proposer votre application.
 
-Par défaut, tous les marchés sont sélectionnés. Vous pouvez désélectionner des marchés spécifiques pour les exclure, ou cliquer sur **Désélectionner tout**, puis ajouter les marchés de votre choix. Vous pouvez rechercher un marché spécifique dans la barre de recherche, et pouvez également remplacer la liste déroulante **Tous les marchés** par **Marchés Xbox** si vous souhaitez afficher les marchés dans lesquels vous pouvez vendre des produits Xbox. Une fois que vous avez terminé, cliquez sur **OK** pour enregistrer vos choix.
+Par défaut, tous les objets sont sélectionnés. Vous pouvez désélectionner des marchés individuels pour les exclure, ou vous pouvez cliquer sur **Désélectionner tout** , puis ajouter des marchés individuels de votre choix. Vous pouvez rechercher un marché particulier dans la barre de recherche, et vous pouvez également modifier la liste déroulante sur **tous les marchés sur les** **marchés Xbox** si vous souhaitez uniquement afficher les marchés dans lesquels vous pouvez vendre des produits Xbox. Une fois que vous avez terminé, cliquez sur **OK** pour enregistrer vos sélections.
 
-Notez que vos sélections s’appliquent ici uniquement aux nouvelles acquisitions. Si une personne possède déjà votre application dans un certain marché et que vous supprimez ultérieurement ce marché, les personnes qui possèdent déjà l’application dans ce marché peuvent continuer à l'utiliser, mais n'obtiendront pas les mises à jour que vous soumettez, et aucun nouveau client sur ce marché ne peut obtenir votre application.
+Notez que vos sélections ici s’appliquent uniquement aux nouvelles acquisitions ; Si quelqu’un a déjà votre application sur un certain marché, et que vous supprimez par la suite ce marché, les personnes qui disposent déjà de l’application sur ce marché peuvent continuer à l’utiliser, mais elles ne recevront pas les mises à jour que vous soumettez, et aucun nouveau client sur ce marché ne pourra obtenir votre application.
 
 > [!IMPORTANT]
-> Il vous incombe de respecter les exigences légales locales, même si ces exigences ne sont pas répertoriées ici ou dans l’espace partenaires.
+> Il vous incombe de respecter les exigences légales locales, même si ces exigences ne sont pas répertoriées ici ou dans l’Espace partenaires.
 
 Tenez compte du fait que même si vous sélectionnez tous les marchés, la législation et les restrictions locales ou d’autres facteurs peuvent empêcher certaines applications d’être référencées dans des pays ou régions spécifiques. Par ailleurs, certains marchés peuvent avoir établi des conditions spécifiques relatives à la classification par âge. Si votre application ne satisfait pas ces conditions, nous ne pourrons pas proposer votre application dans ce marché. Pour plus d’informations, consultez la section [Classification par âge](age-ratings.md).
 
 > [!NOTE]
 > Pour les applications précédemment publiées qui incluent des packages ciblant Windows 8 ou Windows 8.1, certains marchés individuels sont traités comme un seul marché « Rest of World ». Pour plus d’informations, voir [Marchés « Rest of World » pour Windows 8.x](#rest-of-world-markets-for-windows-8x).
 
-Vous verrez également une case à cocher qui vous permet d’indiquer si vous souhaitez proposer votre application dans un marché que le Windows Store peut ajouter à l’avenir. Si vous laissez cette case à cocher activée, et que nous ajoutons ultérieurement de nouveaux marchés, le prix de base et la date de disponibilité générale de votre soumission seront utilisés pour votre application sur ces marchés. Si vous ne souhaitez pas cette option, vous pouvez désactiver cette case, auquel cas votre application ne sera pas répertoriée dans les éventuels futurs marchés (bien que vous puissiez toujours les ajouter ultérieurement).
+Vous verrez également une case à cocher qui vous permet d’indiquer s’il faut proposer votre application sur n’importe quel marché que le magasin peut ajouter à l’avenir. Si vous laissez cette case cochée et que nous ajoutons par la suite de nouveaux marchés, le prix de base et la date de disponibilité générale de votre envoi seront utilisés pour votre application sur ces marchés. Si vous ne souhaitez pas que cela se produise, vous pouvez décocher cette case. dans ce cas, nous ne listerons pas votre application sur tous les marchés futurs (même si vous pouvez toujours les ajouter ultérieurement).
  
 
 ## <a name="microsoft-store-consumer-markets"></a>Microsoft Store marchés des consommateurs
@@ -50,7 +50,7 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
 
 
 <table>
-  
+
   <tr>
     <td>Afghanistan</td>
     <td>Åland (îles d’)</td>
@@ -76,13 +76,13 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
     <td>Azerbaïdjan</td>
   </tr>
   <tr>
-    <td>Bahamas</td>
+    <td>Les Bahamas</td>
     <td>Bahreïn</td>
     <td>Bangladesh</td>
-    <td>Barbade (La)</td>
+    <td>Barbade</td>
   </tr>
   <tr>
-    <td>Biélorussie</td>
+    <td>Bélarus</td>
     <td>Belgique</td>
     <td>Belize</td>
     <td>Bénin</td>
@@ -96,7 +96,7 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
   <tr>
     <td>Bosnie-Herzégovine</td>
     <td>Botswana</td>
-    <td>Bouvet (Île)</td>
+    <td>Bouvet (île)</td>
     <td>Brésil</td>
   </tr>
   <tr>
@@ -106,9 +106,9 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
     <td>Bulgarie</td>
   </tr>
   <tr>
-    <td>Burkina-Faso</td>
+    <td>Burkina Faso</td>
     <td>Burundi</td>
-    <td>Cap Vert</td>
+    <td>Cabo Verde</td>
     <td>Cambodge</td>
   </tr>
   <tr>
@@ -124,9 +124,9 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
     <td>Christmas (île)</td>
   </tr>
   <tr>
-    <td>Cocos-Keeling (îles)</td>
-    <td>Colombie *</td>
-    <td>Comores (Les)</td>
+    <td>Îles Cocos (Keeling)</td>
+    <td>Colombie</td>
+    <td>Comores</td>
     <td>Congo</td>
   </tr>
   <tr>
@@ -142,7 +142,7 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
     <td>Czechia *</td>
   </tr>
   <tr>
-    <td>Danemark *</td>
+    <td>Danois</td>
     <td>Djibouti</td>
     <td>Dominique</td>
     <td>République dominicaine</td>
@@ -157,13 +157,13 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
     <td>Érythrée</td>
     <td>Estonie</td>
     <td>Éthiopie</td>
-    <td>Malouines (îles)</td>
+    <td>Îles Malouines</td>
   </tr>
   <tr>
     <td>Féroé (îles)</td>
     <td>Fidji</td>
-    <td>Finlande *</td>
-    <td>France *</td>
+    <td>Finland</td>
+    <td>Espagne</td>
   </tr>
   <tr>
     <td>Guyane française</td>
@@ -179,7 +179,7 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
   </tr>
   <tr>
     <td>Gibraltar</td>
-    <td>Grèce *</td>
+    <td>Grèce</td>
     <td>Groenland</td>
     <td>Grenade</td>
   </tr>
@@ -192,30 +192,30 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
   <tr>
     <td>Guinée</td>
     <td>Guinée-Bissau</td>
-    <td>Guyana</td>
+    <td>Guyane</td>
     <td>Haïti</td>
   </tr>
   <tr>
-    <td>Heard et McDonald (Îles)</td>
+    <td>Heard et McDonald (îles)</td>
     <td>Honduras</td>
-    <td>Hong Kong R.A.S. *</td>
-    <td>Hongrie *</td>
+    <td>Hong Kong (R.A.S.) *</td>
+    <td>Hongrois</td>
   </tr>
   <tr>
     <td>Islande</td>
-    <td>Inde *</td>
+    <td>Inde</td>
     <td>Indonésie</td>
     <td>Irak</td>
   </tr>
   <tr>
-    <td>Irlande *</td>
+    <td>Irlandais</td>
     <td>Île de Man</td>
-    <td>Israël *</td>
-    <td>Italie *</td>
+    <td>Israël</td>
+    <td>Italiens</td>
   </tr>
   <tr>
     <td>Jamaïque</td>
-    <td>Japon *</td>
+    <td>Japonais</td>
     <td>Jersey</td>
     <td>Jordanie</td>
   </tr>
@@ -223,7 +223,7 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
     <td>Kazakhstan</td>
     <td>Kenya</td>
     <td>Kiribati</td>
-    <td>Corée *</td>
+    <td>Korea</td>
   </tr>
   <tr>
     <td>Koweït</td>
@@ -244,7 +244,7 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
     <td>Macao R.A.S.</td>
   </tr>
   <tr>
-    <td>Macédoine, Ex.-Rép. yougoslave de</td>
+    <td>Macédoine du Nord</td>
     <td>Madagascar</td>
     <td>Malawi</td>
     <td>Malaisie</td>
@@ -258,13 +258,13 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
   <tr>
     <td>Martinique</td>
     <td>Mauritanie</td>
-    <td>Maurice</td>
+    <td>Maurice (île)</td>
     <td>Mayotte</td>
   </tr>
   <tr>
-    <td>Mexique *</td>
+    <td>Espagne</td>
     <td>Micronésie</td>
-    <td>République de Moldavie</td>
+    <td>Moldova</td>
     <td>Monaco</td>
   </tr>
   <tr>
@@ -281,7 +281,7 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
   </tr>
   <tr>
     <td>Népal</td>
-    <td>Pays-Bas *</td>
+    <td>Territoire</td>
     <td>Nouvelle-Calédonie</td>
     <td>Nouvelle-Zélande *</td>
   </tr>
@@ -293,8 +293,8 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
   </tr>
   <tr>
     <td>Norfolk (île)</td>
-    <td>Mariannes du Nord (îles)</td>
-    <td>Norvège *</td>
+    <td>Îles Marianne du Nord</td>
+    <td>Norvégien</td>
     <td>Oman</td>
   </tr>
   <tr>
@@ -304,27 +304,27 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
     <td>Panama</td>
   </tr>
   <tr>
-    <td>Papouasie-Nouvelle-Guinée</td>
+    <td>Papouasie Nouvelle Guinée</td>
     <td>Paraguay</td>
     <td>Pérou</td>
     <td>Philippines</td>
   </tr>
   <tr>
     <td>Pitcairn (îles)</td>
-    <td>Pologne *</td>
-    <td>Portugal *</td>
+    <td>Pologne</td>
+    <td>Ledit</td>
     <td>Qatar</td>
   </tr>
   <tr>
     <td>La Réunion</td>
     <td>Roumanie</td>
-    <td>Russie *</td>
+    <td>Nationale</td>
     <td>Rwanda</td>
   </tr>
   <tr>
     <td>Saint-Barthélemy</td>
     <td>Sainte-Hélène, Ascension et Tristan da Cunha</td>
-    <td>Saint Kitts et Nevis</td>
+    <td>Saint-Christophe-et-Niévès</td>
     <td>Sainte-Lucie</td>
   </tr>
   <tr>
@@ -343,19 +343,19 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
     <td>Serbie</td>
     <td>Seychelles</td>
     <td>Sierra Leone</td>
-    <td>Singapour *</td>
+    <td>Singapour</td>
   </tr>
   <tr>
     <td>Sint-Maarten (partie néerlandaise)</td>
-    <td>Slovaquie *</td>
+    <td>République</td>
     <td>Slovénie</td>
     <td>Salomon (îles)</td>
   </tr>
   <tr>
     <td>Somalie</td>
     <td>Afrique du Sud *</td>
-    <td>Géorgie du Sud-et-les îles Sandwich du Sud</td>
-    <td>Espagne *</td>
+    <td>Géorgie du Sud et îles Sandwich du Sud</td>
+    <td>Espagne</td>
   </tr>
   <tr>
     <td>Sri Lanka</td>
@@ -364,9 +364,9 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
     <td>Swaziland</td>
   </tr>
   <tr>
-    <td>Suède *</td>
-    <td>Suisse *</td>
-    <td>Taïwan *</td>
+    <td>Suédois</td>
+    <td>Mettra</td>
+    <td>Ai</td>
     <td>Tadjikistan</td>
   </tr>
   <tr>
@@ -382,19 +382,19 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
     <td>Tunisie</td>
   </tr>
   <tr>
-    <td>Turquie *</td>
+    <td>Faculté</td>
     <td>Turkménistan</td>
-    <td>Turks et Caïcos (îles)</td>
+    <td>Turques-et-Caïques (îles)</td>
     <td>Tuvalu</td>
   </tr>
   <tr>
-    <td>Îles mineures éloignées des États-Unis</td>
-    <td>Îles Vierges (É.-U.)</td>
+    <td>États-Unis Îles mineures éloignées des États-Unis</td>
+    <td>États-Unis Îles Vierges</td>
     <td>Ouganda</td>
     <td>Ukraine</td>
   </tr>
   <tr>
-    <td>Émirats arabes unis *</td>
+    <td>Émirats Arabes Unis *</td>
     <td>Royaume-Uni *</td>
     <td>États-Unis *</td>
     <td>Uruguay</td>
@@ -407,13 +407,13 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
   </tr>
   <tr>
     <td>Vietnam</td>
-    <td>Wallis-et-Futuna</td>
-    <td>Sahara occidentale (litige)</td>
+    <td>Wallis et Futuna</td>
     <td>Yémen</td>
+    <td>Zambie</td>
   </tr>
   <tr>
-    <td>Zambie</td>
     <td>Zimbabwe</td>
+    <td></td>
     <td></td>
     <td></td>
   </tr>
@@ -428,7 +428,7 @@ L’Ajustement du développement commercial sera appliqué à toutes les transac
 
 &nbsp;
 
-| Pays/Région       | Mode de paiement  | Ajustement du développement commercial | Date d’entrée en vigueur |
+| Pays/région       | Mode de paiement  | Ajustement du développement commercial | Date d’entrée en vigueur |
 |----------------------|-----------------|-------------------------------|----------------|
 | Argentine            | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Australie            | Carte cadeau       | 2,24 %                         | Mars 2016     |
@@ -439,19 +439,19 @@ L’Ajustement du développement commercial sera appliqué à toutes les transac
 | Chili                | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Chine                | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Colombie             | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Czechia              | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Tchéquie              | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Danemark              | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Finlande              | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | France               | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Germany              | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Allemagne              | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Grèce               | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Hong Kong            | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Hong Kong (R.A.S.)            | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Hongrie              | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Inde                | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Irlande              | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Israël               | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Italie                | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Japan                | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Japon                | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Mexique               | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Pays-Bas          | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Nouvelle-Zélande          | Carte cadeau       | 2,24 %                         | Mars 2016     |
@@ -468,7 +468,7 @@ L’Ajustement du développement commercial sera appliqué à toutes les transac
 | Suisse          | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Taïwan               | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Turquie               | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Émirats arabes unis | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Émirats Arabes Unis | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Royaume-Uni       | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | États-Unis        | Carte cadeau       | 2,24 %                         | Mars 2016     |
 
@@ -502,10 +502,10 @@ Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants 
     <td>Azerbaïdjan</td>
   </tr>
   <tr>
-    <td>Bahamas</td>
+    <td>Les Bahamas</td>
     <td>Bangladesh</td>
-    <td>Barbade (La)</td>
-    <td>Biélorussie</td>
+    <td>Barbade</td>
+    <td>Bélarus</td>
   </tr>
   <tr>
     <td>Belize</td>
@@ -520,15 +520,15 @@ Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants 
     <td>Botswana</td>
   </tr>
   <tr>
-    <td>Bouvet (Île)</td>
+    <td>Bouvet (île)</td>
     <td>Territoires britanniques de l’océan Indien</td>
     <td>Îles Vierges britanniques</td>
     <td>Brunéi Darussalam</td>
   </tr>
   <tr>
-    <td>Burkina-Faso</td>
+    <td>Burkina Faso</td>
     <td>Burundi</td>
-    <td>Cap Vert</td>
+    <td>Cabo Verde</td>
     <td>Cambodge</td>
   </tr>
   <tr>
@@ -539,8 +539,8 @@ Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants 
   </tr>
   <tr>
     <td>Christmas (île)</td>
-    <td>Cocos-Keeling (îles)</td>
-    <td>Comores (Les)</td>
+    <td>Îles Cocos (Keeling)</td>
+    <td>Comores</td>
     <td>Congo</td>
   </tr>
   <tr>
@@ -562,7 +562,7 @@ Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants 
     <td>Éthiopie</td>
   </tr>
   <tr>
-    <td>Malouines (îles)</td>
+    <td>Îles Malouines</td>
     <td>Féroé (îles)</td>
     <td>Fidji</td>
     <td>Guyane française</td>
@@ -589,11 +589,11 @@ Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants 
     <td>Guernesey</td>
     <td>Guinée</td>
     <td>Guinée-Bissau</td>
-    <td>Guyana</td>
+    <td>Guyane</td>
   </tr>
   <tr>
     <td>Haïti</td>
-    <td>Heard et McDonald (Îles)</td>
+    <td>Heard et McDonald (îles)</td>
     <td>Honduras</td>
     <td>Islande</td>
   </tr>
@@ -613,7 +613,7 @@ Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants 
     <td>Liberia</td>
     <td>Liechtenstein</td>
     <td>Macao R.A.S.</td>
-    <td>Macédoine, Ex.-Rép. yougoslave de</td>
+    <td>Macédoine du Nord</td>
   </tr>
   <tr>
     <td>Madagascar</td>
@@ -625,12 +625,12 @@ Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants 
     <td>Marshall (îles)</td>
     <td>Martinique</td>
     <td>Mauritanie</td>
-    <td>Maurice</td>
+    <td>Maurice (île)</td>
   </tr>
   <tr>
     <td>Mayotte</td>
     <td>Micronésie</td>
-    <td>République de Moldavie</td>
+    <td>Moldova</td>
     <td>Monaco</td>
   </tr>
   <tr>
@@ -655,13 +655,13 @@ Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants 
     <td>Nigeria</td>
     <td>Niue</td>
     <td>Norfolk (île)</td>
-    <td>Mariannes du Nord (îles)</td>
+    <td>Îles Marianne du Nord</td>
   </tr>
   <tr>
     <td>Palau</td>
     <td>Autorité palestinienne</td>
     <td>Panama</td>
-    <td>Papouasie-Nouvelle-Guinée</td>
+    <td>Papouasie Nouvelle Guinée</td>
   </tr>
   <tr>
     <td>Paraguay</td>
@@ -672,7 +672,7 @@ Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants 
   <tr>
     <td>Saint-Barthélemy</td>
     <td>Sainte-Hélène, Ascension et Tristan da Cunha</td>
-    <td>Saint Kitts et Nevis</td>
+    <td>Saint-Christophe-et-Niévès</td>
     <td>Sainte-Lucie</td>
   </tr>
   <tr>
@@ -694,7 +694,7 @@ Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants 
     <td>Somalie</td>
   </tr>
   <tr>
-    <td>Géorgie du Sud-et-les îles Sandwich du Sud</td>
+    <td>Géorgie du Sud et îles Sandwich du Sud</td>
     <td>Surinam</td>
     <td>Svalbard et Jan Mayen</td>
     <td>Swaziland</td>
@@ -709,13 +709,13 @@ Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants 
     <td>Tokelau</td>
     <td>Tonga</td>
     <td>Turkménistan</td>
-    <td>Turks et Caïcos (îles)</td>
+    <td>Turques-et-Caïques (îles)</td>
   </tr>
   <tr>
     <td>Tuvalu</td>
     <td>Ouganda</td>
-    <td>Îles mineures éloignées des États-Unis</td>
-    <td>Îles Vierges (É.-U.)</td>
+    <td>États-Unis Îles mineures éloignées des États-Unis</td>
+    <td>États-Unis Îles Vierges</td>
   </tr>
   <tr>
     <td>Ouzbékistan</td>
@@ -725,7 +725,7 @@ Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants 
   </tr>
   <tr>
     <td>Vanuatu</td>
-    <td>Wallis-et-Futuna</td>
+    <td>Wallis et Futuna</td>
     <td>Yémen</td>
     <td>Zambie</td>
   </tr>
@@ -738,4 +738,4 @@ Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants 
 </table>
 
 > [!NOTE]
-> pour obtenir la liste des pays et régions dans lesquels vous pouvez vous inscrire à un compte de développeur, consultez [types de comptes, emplacements et frais](account-types-locations-and-fees.md).
+> Pour obtenir la liste des pays et régions dans lesquels vous pouvez vous inscrire à un compte de développeur, consultez [types de comptes, emplacements et frais](account-types-locations-and-fees.md).

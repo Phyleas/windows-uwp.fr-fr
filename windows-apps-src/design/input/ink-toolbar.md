@@ -1,25 +1,25 @@
 ---
 Description: Ajoutez un InkToolbar par défaut à une application d’écriture manuscrite Windows, ajoutez un bouton stylet personnalisé au InkToolbar et liez le bouton stylet personnalisé à une définition de stylet personnalisée.
-title: Ajouter un InkToolbar à une application d’application Windows
-label: Add an InkToolbar to a Windows app app
+title: Ajouter un InkToolbar à une application Windows
+label: Add an InkToolbar to a Windows app
 template: detail.hbs
 keywords: Windows Ink, entrée manuscrite Windows Ink, DirectInk, InkPresenter, InkCanvas, InkToolbar, plateforme Windows universelle, UWP, interaction utilisateur, entrée
 ms.date: 02/08/2017
 ms.topic: article
 ms.assetid: d888f75f-c2a0-4134-81db-907b5e24fcc5
 ms.localizationpriority: medium
-ms.openlocfilehash: e8076c9a9022cedbd66991ddf5d5b6bab1d57cc7
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 4052ac6daddcfecabb839d16fd5f81c3d207d01b
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968095"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83233683"
 ---
-# <a name="add-an-inktoolbar-to-a-windows-app-app"></a>Ajouter un InkToolbar à une application d’application Windows
+# <a name="add-an-inktoolbar-to-a-windows-app"></a>Ajouter un InkToolbar à une application Windows
 
 
 
-Il existe deux contrôles différents qui facilitent l’écriture dans des applications d’application Windows : [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) et [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar).
+Il existe deux contrôles différents qui facilitent l’écriture dans des applications Windows : [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) et [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar).
 
 Le contrôle [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) fournit les fonctionnalités Windows Ink de base. Utilisez-le pour restituer une entrée de stylet sous la forme d’un trait d’encre (via les paramètres par défaut de couleur et d’épaisseur) ou d’un trait d’effacement.
 
@@ -87,7 +87,7 @@ Quand vous ajoutez une barre d’outils Ink à votre application, vous pouvez ac
 
 Spécifiez explicitement l’emplacement et l’orientation de la barre d’outils par le biais de ses propriétés [VerticalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.VerticalAlignment), [HorizontalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.HorizontalAlignment)et [orientation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar?branch=rs3.Orientation) .
 
-| Valeur par défaut | Explicite |
+| Default | Explicite |
 | --- | --- |
 | ![Emplacement et orientation de la barre d’outils d’encre par défaut](./images/ink/location-default-small.png) | ![Emplacement et orientation de la barre d’outils encre explicite](./images/ink/location-explicit-small.png) |
 | *Emplacement et orientation par défaut de la barre d’outils Windows Ink* | *Emplacement et orientation explicites de la barre d’outils Windows Ink* |
@@ -351,7 +351,7 @@ Vous pouvez également utiliser la liaison pour consulter les mises à jour de l
                     TargetInkCanvas="{x:Bind inkCanvas}" />
         ```
 
-1. Revenez au fichier InkToolbarSnippetHostViewModel.cs pour ajouter les `PortraitLayout` propriétés `LeftHandedLayout` et bool à la `InkToolbarSnippetHostViewModel` classe, ainsi que la prise en charge `PortraitLayout` de la reliaison lorsque cette valeur de propriété change. 
+1. Revenez au fichier InkToolbarSnippetHostViewModel.cs pour ajouter les `PortraitLayout` `LeftHandedLayout` Propriétés et bool à la `InkToolbarSnippetHostViewModel` classe, ainsi que la prise en charge de la reliaison `PortraitLayout` lorsque cette valeur de propriété change. 
     ```csharp
     public bool LeftHandedLayout
     {
@@ -593,10 +593,10 @@ Vous pouvez personnaliser et étendre la collection de boutons (et de fonctionna
 Le contrôle InkToolbar se compose de deux groupes de types de boutons :
 
 1. Un groupe de boutons « outil » comprenant les boutons intégrés de dessin, d’effacement et de surlignage. Les outils et stylets personnalisés sont ajoutés ici.
-> **Note**&nbsp;Remarque&nbsp;la sélection des fonctionnalités s’exclut mutuellement.
+> **Note** &nbsp; Remarque &nbsp; La sélection des fonctionnalités s’exclut mutuellement.
 
 2. Un groupe de boutons « bascules » contenant le bouton intégré de règle. Les boutons bascule personnalisés sont ajoutés ici.
-> **Note**&nbsp;Remarque&nbsp;les fonctionnalités ne sont pas mutuellement exclusives et peuvent être utilisées simultanément avec d’autres outils actifs.
+> **Note** &nbsp; Remarque &nbsp; Les fonctionnalités ne sont pas mutuellement exclusives et peuvent être utilisées simultanément avec d’autres outils actifs.
 
 En fonction de votre application et de la fonctionnalité d’entrée manuscrite requise, vous pouvez ajouter n’importe lequel des boutons suivants (liés à vos fonctionnalités d’entrée manuscrite personnalisées) au contrôle InkToolbar :
 
@@ -604,7 +604,7 @@ En fonction de votre application et de la fonctionnalité d’entrée manuscrite
 - Outil personnalisé : un outil autre qu’un stylet, défini par l’application hôte.
 - Bascule personnalisée : définit l’état d’une fonctionnalité définie par l’application sur activé ou désactivé. Lorsqu’elle est activée, la fonctionnalité fonctionne conjointement avec l’outil actif.
 
-> **Note**&nbsp;Remarque&nbsp;vous ne pouvez pas modifier l’ordre d’affichage des boutons intégrés. L’ordre d’affichage par défaut est le suivant : stylo à bille, crayon, surligneur, gomme et règle. Les stylets personnalisés sont ajoutés au dernier stylet par défaut, les boutons d’outil personnalisé sont ajoutés entre le dernier bouton de stylet et le bouton de gomme, et les boutons de bascule personnalisés sont ajoutés après le bouton de règle. (Les boutons personnalisés sont ajoutés dans l’ordre que vous avez spécifié.)
+> **Note** &nbsp; Remarque &nbsp; Vous ne pouvez pas modifier l’ordre d’affichage des boutons intégrés. L’ordre d’affichage par défaut est le suivant : stylo à bille, crayon, surligneur, gomme et règle. Les stylets personnalisés sont ajoutés au dernier stylet par défaut, les boutons d’outil personnalisé sont ajoutés entre le dernier bouton de stylet et le bouton de gomme, et les boutons de bascule personnalisés sont ajoutés après le bouton de règle. (Les boutons personnalisés sont ajoutés dans l’ordre que vous avez spécifié.)
 
 ### <a name="custom-pen"></a>Stylet personnalisé
 

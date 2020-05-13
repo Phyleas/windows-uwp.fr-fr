@@ -1,5 +1,5 @@
 ---
-Description: Procédures de test à suivre pour vous assurer que votre application d’application Windows est accessible.
+Description: Procédures de test à suivre pour vous assurer que votre application Windows est accessible.
 ms.assetid: 272D9C9E-B179-4F5A-8493-926D007A0225
 title: Test de l’accessibilité
 label: Accessibility testing
@@ -8,16 +8,16 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c5f3a01ae9231bd27208cacff0ee5209c3716b5
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 3fe3c67780fa60970325a776680af016e7a26432
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82969684"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234196"
 ---
 # <a name="accessibility-testing"></a>Test de l’accessibilité  
 
-Procédures de test à suivre pour vous assurer que votre application d’application Windows est accessible.
+Procédures de test à suivre pour vous assurer que votre application Windows est accessible.
 
 <span id="run_accessibility_testing_tools"/>
 <span id="RUN_ACCESSIBILITY_TESTING_TOOLS"/>

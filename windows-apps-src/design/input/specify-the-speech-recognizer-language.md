@@ -8,12 +8,12 @@ keywords: voix, vocal, reconnaissance vocale, langage naturel, dictée, saisie, 
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cd347b115a920c71ca1eb9b5f466adf05c69c64
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: a1db38120252febefd55933fa106f473b3f920d8
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968244"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234865"
 ---
 # <a name="specify-the-speech-recognizer-language"></a>Spécifier la langue de reconnaissance vocale
 
@@ -31,7 +31,7 @@ Cette rubrique s’appuie sur l’article [Reconnaissance vocale](speech-recogni
 
 Vous devez posséder des connaissances de base sur la reconnaissance vocale et ses contraintes.
 
-Si vous débutez dans le développement d’applications d’application Windows, consultez ces rubriques pour vous familiariser avec les technologies abordées ici.
+Si vous débutez dans le développement d’applications Windows, consultez ces rubriques pour vous familiariser avec les technologies abordées ici.
 
 -   [Créer votre première application](https://docs.microsoft.com/windows/uwp/get-started/your-first-app)
 -   Découvrir les événements avec [Vue d’ensemble des événements et des événements routés](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview).
@@ -56,7 +56,7 @@ var language = SpeechRecognizer.SystemSpeechLanguage;
 
 Les langues installées peuvent varier entre les appareils. Vérifiez l’existence d’une langue avant de vous en servir pour une contrainte particulière.
 
-**Remarque**  un redémarrage est nécessaire après l’installation d’un nouveau module linguistique. Une exception avec le code d'\_erreur\_SPERR introuvable (0x8004503a) est levée si la langue spécifiée n’est pas prise en charge ou n’a pas terminé l’installation de.
+**Remarque**    Un redémarrage est nécessaire après l’installation d’un nouveau module linguistique. Une exception avec le code d’erreur SPERR \_ \_ introuvable (0x8004503a) est levée si la langue spécifiée n’est pas prise en charge ou n’a pas terminé l’installation de.
 
  
 

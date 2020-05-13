@@ -6,19 +6,19 @@ keywords: encre, entrée manuscrite, tuorial
 ms.date: 01/25/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a1b4dc6fbec0e16428035348114b1b160d50cff0
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: d0df2b531510d86591c44bc69f6ed5c6ad9f200f
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968144"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234623"
 ---
 # <a name="tutorial-support-ink-in-your-windows-app"></a>Didacticiel : prendre en charge l’encre dans votre application Windows
 
 ![Stylet Surface](images/ink/ink-hero-small.png)  
 *Stylet Surface* (disponible à l’achat dans la [Boutique Microsoft](https://www.microsoft.com/p/surface-pen/8zl5c82qmg6b)).
 
-Ce didacticiel décrit comment créer une application d’application Windows de base qui prend en charge l’écriture et le dessin avec Windows Ink. Nous utilisons des extraits de code à partir d’un exemple d’application, que vous pouvez télécharger à partir de GitHub (Voir l' [exemple de code](#sample-code)), pour illustrer les différentes fonctionnalités et les API Windows Ink associées (voir [composants de la plateforme Windows Ink](#components-of-the-windows-ink-platform)) présentées dans chaque étape.
+Ce didacticiel décrit comment créer une application Windows de base qui prend en charge l’écriture et le dessin avec Windows Ink. Nous utilisons des extraits de code à partir d’un exemple d’application, que vous pouvez télécharger à partir de GitHub (Voir l' [exemple de code](#sample-code)), pour illustrer les différentes fonctionnalités et les API Windows Ink associées (voir [composants de la plateforme Windows Ink](#components-of-the-windows-ink-platform)) présentées dans chaque étape.
 
 Nous nous concentrons sur les éléments suivants :
 * Ajout de la prise en charge de base de l’encre
@@ -79,7 +79,7 @@ Après avoir téléchargé l’exemple d’application RadialController, vérifi
 3. Appuyez sur F5 pour compiler, déployer et exécuter.  
 
    > [!NOTE]
-   > Vous pouvez également sélectionner l’élément de menu **Déboguer** > **Démarrer le débogage** ou sélectionner le bouton d’exécution de l' **ordinateur local** indiqué ici.
+   > Vous pouvez également sélectionner l’élément de menu **Déboguer**  >  **Démarrer le débogage** ou sélectionner le bouton d’exécution de l' **ordinateur local** indiqué ici.
    > ![Bouton projet de génération Visual Studio](images/ink/ink-vsrun-small.png)
 
 La fenêtre d’application s’ouvre, et une fois que l’écran de démarrage s’affiche pendant quelques secondes, vous verrez cet écran initial.
@@ -112,7 +112,7 @@ Pour ajouter la fonctionnalité de base de l’encrage, placez simplement un con
 ```
 
 4. Ouvrez le fichier MainPage. Xaml.
-5. Recherchez le code marqué avec le titre de cette étape («\<!--étape 2 : entrée de base avec InkCanvas--> »).
+5. Recherchez le code marqué avec le titre de cette étape (« \< !--étape 2 : entrée de base avec InkCanvas--> »).
 6. Supprimez les marques de commentaire de la ligne suivante.  
 
 ``` xaml
@@ -165,7 +165,7 @@ Pour ajouter un [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.x
 
 ### <a name="in-the-sample"></a>Dans l’exemple
 1. Ouvrez le fichier MainPage. Xaml.
-2. Recherchez le code marqué avec le titre de cette étape («\<!--étape 4 : ajouter une barre d’outils d’encre--> »).
+2. Recherchez le code marqué avec le titre de cette étape (« \< !--étape 4 : ajouter une barre d’outils d’encre--> »).
 3. Supprimez les marques de commentaire des lignes suivantes.  
 
 ``` xaml
@@ -212,14 +212,14 @@ Dans cette étape, nous utilisons les fonctionnalités de reconnaissance de l’
 > [!NOTE]
 > La reconnaissance de l’écriture manuscrite peut être améliorée par le biais du **stylet & paramètres d’encre Windows** :
 > 1. Ouvrez le menu Démarrer et sélectionnez **paramètres**.
-> 2. Dans l’écran Paramètres, sélectionnez **appareils** > **stylet & Windows Ink**.
+> 2. Dans l’écran Paramètres, sélectionnez **appareils**  >  **stylet & Windows Ink**.
 > ![InkToolbar à partir de Sketchpad dans l’espace de travail Ink](images/ink/ink-settings-small.png)
 > 3. Sélectionnez **obtenir pour connaître mon écriture manuscrite** pour ouvrir la boîte de dialogue Personnalisation de l' **écriture manuscrite** .
 > ![InkToolbar à partir de Sketchpad dans l’espace de travail Ink](images/ink/ink-settings-handwritingpersonalization-small.png)
 
 ### <a name="in-the-sample"></a>Dans l'exemple :
 1. Ouvrez le fichier MainPage. Xaml.
-2. Recherchez le code marqué avec le titre de cette étape («\<!--étape 5 : prendre en charge la reconnaissance de l’écriture manuscrite--> »).
+2. Recherchez le code marqué avec le titre de cette étape (« \< !--étape 5 : prendre en charge la reconnaissance de l’écriture manuscrite--> »).
 3. Supprimez les marques de commentaire des lignes suivantes.  
 
 ``` xaml
@@ -347,7 +347,7 @@ Pour cet exemple, nous n’essayons pas de redessiner les traits d’encre (bien
 
 ### <a name="in-the-sample"></a>Dans l'exemple :
 1. Ouvrir le fichier MainPage. Xaml
-2. Recherchez le code marqué avec le titre de cette étape («\<!--étape 6 : reconnaître les formes--> »)
+2. Recherchez le code marqué avec le titre de cette étape (« \< !--étape 6 : reconnaître les formes--> »)
 3. Supprimez les marques de commentaire de cette ligne.  
 
 ``` xaml
@@ -402,7 +402,7 @@ Au cours de cette étape, nous allons raccorder les boutons **Save** et **Load**
 
 ### <a name="in-the-sample"></a>Dans l'exemple :
 1. Ouvrez le fichier MainPage. Xaml.
-2. Recherchez le code marqué avec le titre de cette étape («\<!--étape 7 : enregistrement et chargement de l’encre--> »).
+2. Recherchez le code marqué avec le titre de cette étape (« \< !--étape 7 : enregistrement et chargement de l’encre--> »).
 3. Supprimez les marques de commentaire des lignes suivantes. 
 
 ``` xaml
@@ -458,7 +458,7 @@ Pour plus d’informations sur l’utilisation du presse-papiers avec l’encre,
 </tr>
 </table>
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Félicitations, vous avez terminé le didacticiel **d’entrée : prise en charge manuscrite dans votre application Windows** ! Nous vous avons montré le code de base requis pour la prise en charge de l’encre dans vos applications Windows, et comment fournir certaines des expériences utilisateur plus riches prises en charge par la plateforme Windows Ink.
 

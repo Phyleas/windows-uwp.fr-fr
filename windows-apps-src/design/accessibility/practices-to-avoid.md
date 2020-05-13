@@ -1,5 +1,5 @@
 ---
-Description: Répertorie les pratiques à éviter si vous souhaitez créer une application d’application Windows accessible.
+Description: Répertorie les pratiques à éviter si vous souhaitez créer une application Windows accessible.
 ms.assetid: 024A9B70-9821-45BB-93F1-61C0B2ECF53E
 title: Pratiques d’accessibilité à éviter
 label: Accessibility practices to avoid
@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 95c23a00ebc9ee2563340fbd5594d53ac7edb066
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 75dad7eb676bd2d2a9d95fa57122085329e5e144
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970004"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83233939"
 ---
 # <a name="accessibility-practices-to-avoid"></a>Pratiques d’accessibilité à éviter
 
-Si vous souhaitez créer une application d’application Windows accessible, consultez cette liste de pratiques à éviter : 
+Si vous souhaitez créer une application Windows accessible, consultez cette liste de pratiques à éviter : 
 
 * **Évitez de créer des éléments d’interface utilisateur personnalisés si vous pouvez utiliser les contrôles Windows par défaut** ou des contrôles qui ont déjà implémenté la prise en charge de Microsoft UI Automation. Les contrôles Windows standard sont accessibles par défaut et ne nécessitent généralement que l’ajout de quelques attributs d’accessibilité propres à l’application. L’implémentation de la prise en charge de [**AutomationPeer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer) pour un vrai contrôle personnalisé nécessite quant à elle une charge de travail plus importante (voir [Pairs d’automatisation personnalisés](custom-automation-peers.md)).
 * **Ne placez pas de texte statique ou d’autres éléments non interactifs dans l’ordre de tabulation** (par exemple, en définissant la propriété [**TabIndex**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.tabindex) pour un élément non interactif). La présence d’éléments non interactifs dans l’ordre de tabulation est contraire aux consignes d’accessibilité du clavier, car elle diminue l’efficacité de la navigation au clavier pour les utilisateurs. De nombreuses technologies d’assistance utilisent l’ordre de tabulation et la possibilité de mettre le focus sur un élément dans le cadre de leur logique pour présenter l’interface d’une application à l’utilisateur de technologie d’assistance. Les éléments de texte uniquement dans l’ordre de tabulation peuvent dérouter les utilisateurs qui s’attendent à rencontrer seulement des éléments interactifs dans l’ordre de tabulation (boutons, cases à cocher, champs de saisie de texte, zones de liste déroulante, listes, etc.).

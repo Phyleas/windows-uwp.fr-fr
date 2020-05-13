@@ -1,5 +1,5 @@
 ---
-Description: Une vignette est la représentation d’une application dans le menu Démarrer. Chaque application dispose d’une vignette. Quand vous créez un projet d’application Windows app dans Microsoft Visual Studio, il comprend une vignette par défaut qui affiche le nom et le logo de votre application.
+Description: Une vignette est la représentation d’une application dans le menu Démarrer. Chaque application dispose d’une vignette. Lorsque vous créez un projet d’application Windows dans Microsoft Visual Studio, il comprend une vignette par défaut qui affiche le nom et le logo de votre application.
 title: Vignettes pour les applications Windows
 ms.assetid: 09C7E1B1-F78D-4659-8086-2E428E797653
 label: Tiles
@@ -8,18 +8,18 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0882ac67766bc2ce037133cf8a39b5393f616e13
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 8823116b8fed3503ccf0dadc488956c93ae6c32b
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970994"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234451"
 ---
 # <a name="tiles-for-windows-apps"></a>Vignettes pour les applications Windows
 
  
 
-Une *vignette* est une représentation d’une application dans le menu Démarrer. Chaque application dispose d’une vignette. Quand vous créez un projet d’application Windows app dans Microsoft Visual Studio, il comprend une vignette par défaut qui affiche le nom et le logo de votre application.Windows affiche cette vignette lors de la première installation de l’application. Une fois votre application installée, vous pouvez modifier le contenu de votre vignette via des notifications. Par exemple, vous pouvez modifier la vignette pour communiquer de nouvelles informations à l’utilisateur, telles que des titres d’actualités, ou l’objet du dernier message non lu.
+Une *vignette* est une représentation d’une application dans le menu Démarrer. Chaque application dispose d’une vignette. Lorsque vous créez un projet d’application Windows dans Microsoft Visual Studio, il comprend une vignette par défaut qui affiche le nom et le logo de votre application.Windows affiche cette vignette lors de la première installation de l’application. Une fois votre application installée, vous pouvez modifier le contenu de votre vignette via des notifications. Par exemple, vous pouvez modifier la vignette pour communiquer de nouvelles informations à l’utilisateur, telles que des titres d’actualités, ou l’objet du dernier message non lu.
 
 ## <a name="configure-the-default-tile"></a>Configurer la vignette par défaut
 
@@ -55,11 +55,11 @@ Vous devez mettre à jour quelques éléments :
 
     Les images mises à l’échelle respectent la Convention d’affectation de noms suivante :
     
-    nom de l’image.*facteur&gt;d’échelle.&lt;* *&gt; &lt;* * &lt;extension&gt; de fichier image* 
+    * &lt; nom &gt; *de l’image.* &lt; facteur &gt; d’échelle*.* &lt; &gt;extension de fichier image* 
 
     Par exemple : SplashScreen. Scale-100. png
 
-    Lorsque vous faites référence à l’image, vous y faites référence en tant que * &lt;nom&gt;d’image*. extension de fichier image (« splashscreen. png » dans cet exemple). * &lt;&gt; * Le système sélectionne automatiquement l’image à l’échelle appropriée pour l’appareil parmi les images que vous avez fournies.
+    Lorsque vous faites référence à l’image, vous y faites référence en tant que * &lt; nom &gt; d’image*.* &lt; &gt;extension de fichier image* (« splashscreen. png » dans cet exemple). Le système sélectionne automatiquement l’image à l’échelle appropriée pour l’appareil parmi les images que vous avez fournies.
 
 -   Nous vous conseillons vivement de fournir des logos pour les vignettes de grande taille afin que l’utilisateur puisse redimensionner la vignette de votre application si nécessaire. Pour fournir ces images supplémentaires, vous créez un élément **DefaultTile** et utilisez les attributs **Wide310x150Logo** et **Square310x310Logo** pour spécifier les images supplémentaires :
 ```    XML

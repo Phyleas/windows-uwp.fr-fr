@@ -7,16 +7,16 @@ ms.date: 05/01/2018
 ms.topic: article
 keywords: Windows 10, UWP, Win32, Desktop, notifications Toast, Desktop Bridge, msix, package Sparse, options pour envoyer des toasts, serveur com, activateur com, com, com factice, com, sans com, envoyer un toast
 ms.localizationpriority: medium
-ms.openlocfilehash: 020cdeb1aaddac7fe879e91d18e258aea1b387ea
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: b84120a592a1c2f5f18c6b6121568cbf126a582e
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970984"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234539"
 ---
 # <a name="toast-notifications-from-desktop-apps"></a>Notifications toast à partir d’applications de bureau
 
-Les applications de bureau (y compris les applications [MSIX](https://docs.microsoft.com/windows/msix/desktop/source-code-overview) empaquetées, les applications qui utilisent des [packages éparss](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) pour obtenir l’identité du package et les applications Win32 non empaquetées classiques) peuvent envoyer des notifications de Toast interactif comme les applications d’application Windows. Toutefois, il existe différentes options pour les applications de bureau en raison des différents schémas d’activation.
+Les applications de bureau (y compris les applications [MSIX](https://docs.microsoft.com/windows/msix/desktop/source-code-overview) empaquetées, les applications qui utilisent des [packages éparss](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) pour obtenir l’identité du package et les applications Win32 non empaquetées classiques) peuvent envoyer des notifications de Toast interactives comme des applications Windows. Toutefois, il existe différentes options pour les applications de bureau en raison des différents schémas d’activation.
 
 Dans cet article, nous répertorions les options dont vous disposez pour envoyer une notification Toast sur Windows 10. Toutes les options prennent entièrement en charge...
 

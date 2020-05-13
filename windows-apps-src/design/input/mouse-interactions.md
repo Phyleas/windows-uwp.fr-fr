@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e0591a62134f09c1b3a9d115d038020e95f0c139
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 2d6ddf03541e94f89d0950a4f4c03eebaa0e396e
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970714"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234478"
 ---
 # <a name="mouse-interactions"></a>Interactions avec la souris
 
-Optimisez la conception de votre application d’application Windows pour l’entrée tactile et bénéficiez d’une prise en charge de la souris de base par défaut. 
+Optimisez votre conception d’application Windows pour l’entrée tactile et bénéficiez d’une prise en charge de la souris de base par défaut. 
 
 ![souris](images/input-patterns/input-mouse.jpg)
 
@@ -59,7 +59,7 @@ Un ensemble concis d’interactions avec la souris est utilisé de façon unifor
 <td align="left"><p>Cliquer avec le bouton droit pour sélectionner une commande</p></td>
 <td align="left"><p>Cliquez avec le bouton droit sur la barre de navigation (si elle est disponible) et la barre de l’application avec des commandes globales. Cliquez avec le bouton droit sur un élément pour le sélectionner et afficher la barre de l’application contenant des commandes contextuelles pour l’élément sélectionné.</p>
 <div class="alert">
-<strong>Remarque</strong>  cliquez avec le bouton droit pour afficher un menu contextuel si les commandes de sélection ou de barre d’application ne sont pas des comportements d’interface utilisateur appropriés. Toutefois, nous vous recommandons vivement d’utiliser la barre de l’application pour tous les comportements des commandes.
+<strong>Remarque</strong>    Cliquez avec le bouton droit pour afficher un menu contextuel si les commandes de sélection ou de barre d’application ne sont pas des comportements d’interface utilisateur appropriés. Toutefois, nous vous recommandons vivement d’utiliser la barre de l’application pour tous les comportements des commandes.
 </div>
 <div>
  

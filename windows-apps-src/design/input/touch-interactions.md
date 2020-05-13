@@ -1,5 +1,5 @@
 ---
-Description: Créez des applications d’application Windows avec des expériences d’interaction utilisateur intuitives et distinctives, optimisées pour la fonctionnalité tactile, mais cohérentes de façon fonctionnelle sur les périphériques d’entrée.
+Description: Créez des applications Windows avec des expériences d’interaction utilisateur intuitives et distinctives, optimisées pour la fonctionnalité tactile, mais cohérentes de façon fonctionnelle sur les périphériques d’entrée.
 title: Interactions tactiles
 ms.assetid: DA6EBC88-EB18-4418-A98A-457EA1DEA88A
 label: Touch interactions
@@ -8,12 +8,12 @@ keywords: entrées tactiles, pointeur, entrées, interactions avec l’utilisate
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 99926de0ea26b0cef9184756add777a39330d934
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: e753b5c92dc22f967e2f518e8435d3a4fb41a529
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970254"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234845"
 ---
 # <a name="touch-interactions"></a>Interactions tactiles
 
@@ -446,7 +446,7 @@ Ensuite, un ou plusieurs événements [**ManipulationDelta**](https://docs.micro
 
 L’exemple suivant montre comment utiliser les événements [**ManipulationDelta**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta) pour gérer une interaction de diapositive sur un [**rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) et la déplacer sur l’écran.
 
-Tout d’abord [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) , un `touchRectangle` rectangle nommé est créé en XAML avec une [**hauteur**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) et une [**largeur**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) de 200.
+Tout d’abord, un [**rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) nommé `touchRectangle` est créé en XAML avec une [**hauteur**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) et une [**largeur**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) de 200.
 
 ```XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">

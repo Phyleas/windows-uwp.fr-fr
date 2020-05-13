@@ -1,5 +1,5 @@
 ---
-Description: Présente les concepts d’accessibilité liés aux applications d’application Windows.
+Description: Présente les concepts d’accessibilité liés aux applications Windows.
 ms.assetid: C89D79C2-B830-493D-B020-F3FF8EB5FFDD
 title: Accessibilité
 label: Accessibility
@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a632fb3cb6b7a3ad2cda85e0596904194f56b347
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 0e410094f738860e71dadb960fccbdbc59306050
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82969594"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234139"
 ---
 # <a name="accessibility"></a>Accessibilité  
 
-L’accessibilité concerne la création d’expériences qui rendent votre application d’application Windows utilisable par des personnes qui utilisent la technologie dans un large éventail d’environnements et qui approchent votre interface utilisateur avec un éventail de besoins et d’expériences. Pour certaines situations, les exigences en matière d’accessibilité sont imposées par la loi. Il est toutefois préférable de gérer les aspects liés à l’accessibilité quelles que soient les exigences juridiques, afin que votre application ait l’audience la plus étendue possible.
+L’accessibilité concerne la création d’expériences qui rendent votre application Windows utilisable par des personnes qui utilisent la technologie dans un large éventail d’environnements et qui approchent votre interface utilisateur avec un éventail de besoins et d’expériences. Pour certaines situations, les exigences en matière d’accessibilité sont imposées par la loi. Il est toutefois préférable de gérer les aspects liés à l’accessibilité quelles que soient les exigences juridiques, afin que votre application ait l’audience la plus étendue possible.
 
 > Il y a également une déclaration de Microsoft Store concernant l’accessibilité de votre application !
 
@@ -31,6 +31,7 @@ L’accessibilité concerne la création d’expériences qui rendent votre appl
 | [Liste de vérification de l’accessibilité](accessibility-checklist.md) | Fournit une liste de vérification pour vous aider à vous assurer que votre application Windows est accessible. |
 | [Présenter des informations d’accessibilité élémentaires](basic-accessibility-information.md) | Les informations d’accessibilité élémentaires sont souvent classées en trois catégories : nom, rôle et valeur. Cette rubrique décrit le code qui aide votre application à exposer les informations de base nécessaires aux technologies d’assistance. |
 | [Accessibilité du clavier](keyboard-accessibility.md) | Si votre application ne fournit pas un bon accès par le clavier, les non-voyants ou les utilisateurs ayant des problèmes de mobilité peuvent rencontrer des difficultés à utiliser votre application ou risquent de ne pas pouvoir l’utiliser du tout. |
+| [Lecteurs d’écran et boutons système matériel](system-button-narration.md) | Les lecteurs d’écran, tels que le [narrateur](https://support.microsoft.com/en-us/help/22798/windows-10-complete-guide-to-narrator), doivent être en mesure de reconnaître et de gérer les événements de bouton du système matériel et de communiquer leur État aux utilisateurs. Dans certains cas, le lecteur d’écran peut avoir besoin de gérer des événements de bouton en mode exclusif et de ne pas les laisser se propager à d’autres gestionnaires. |
 | [Repères et en-têtes](landmarks-and-headings.md) | Les repères et les en-têtes définissent les sections d’une interface utilisateur qui optimisent la navigation pour les utilisateurs de technologies d’assistance telles que les lecteurs d’écran. |
 | [Thèmes à contraste élevé](high-contrast-themes.md) | Décrit les étapes nécessaires pour garantir que votre application Windows est utilisable quand un thème à contraste élevé est actif. |
 | [Exigences de texte accessible](accessible-text-requirements.md) | Cette rubrique décrit les meilleures pratiques relatives à l’accessibilité du texte dans une application, en garantissant que les couleurs et de l’arrière-plan respectent le coefficient de contraste nécessaire. Cette rubrique présente également les rôles d’automatisation d’interface utilisateur de Microsoft que les éléments de texte d’une application Windows peuvent avoir, et les meilleures pratiques pour le texte dans les graphiques. |

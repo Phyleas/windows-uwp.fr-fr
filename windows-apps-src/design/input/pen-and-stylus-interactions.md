@@ -1,5 +1,5 @@
 ---
-Description: Créez des applications d’application Windows qui prennent en charge des interactions personnalisées à partir d’appareils Pen et Stylus, y compris l’encre numérique pour les expériences d’écriture et de dessin naturelles.
+Description: Créez des applications Windows qui prennent en charge des interactions personnalisées à partir d’appareils Pen et Stylus, y compris l’encre numérique pour les expériences d’écriture et de dessin naturelles.
 title: Interactions avec le stylet et Windows Ink dans les applications Windows
 ms.assetid: 3DA4F2D2-5405-42A1-9ED9-3A87BCD84C43
 label: Pen interactions and Windows Ink in Windows apps
@@ -8,12 +8,12 @@ keywords: Windows Ink, entrée manuscrite Windows, DirectInk, InkPresenter, InkC
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c2cda9b2775ac1e0dca2cd37d1082bc6d75b1bad
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 1c9986ee6d4dacc929a8c2d243becf7d5c9d973e
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968384"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234903"
 ---
 # <a name="pen-interactions-and-windows-ink-in-windows-apps"></a>Interactions avec le stylet et Windows Ink dans les applications Windows
 
@@ -22,7 +22,7 @@ ms.locfileid: "82968384"
 
 ## <a name="overview"></a>Vue d’ensemble
 
-Optimisez votre application d’application Windows pour l’entrée de stylet afin de fournir des fonctionnalités de [**périphérique à pointeur**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.PointerDevice) standard et la meilleure expérience d’entrée manuscrite Windows pour vos utilisateurs.
+Optimisez votre application Windows pour l’entrée de stylet afin de fournir des fonctionnalités de [**périphérique à pointeurs**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.PointerDevice) standard et la meilleure expérience Windows Ink pour vos utilisateurs.
 
 > [!NOTE]
 > Cette rubrique est dédiée à la plateforme Windows Ink. Pour en savoir plus sur la gestion des entrées au pointeur (similaires aux fonctionnalités tactiles, de la souris et du pavé tactile), consultez [Gérer les entrées du pointeur](handle-pointer-input.md).

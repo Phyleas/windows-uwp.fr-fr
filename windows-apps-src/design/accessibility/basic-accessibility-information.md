@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 39b019495235ca2ff4bec2f9e6bc1b9230a15599
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: ff19eea5a2fa57d4e5b2728ddbd87e5d99ff539a
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82969514"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234129"
 ---
 # <a name="expose-basic-accessibility-information"></a>Présenter des informations d’accessibilité élémentaires  
 
@@ -56,7 +56,7 @@ Les contrôles n’ont pas tous une valeur. Ceux qui en ont une signalent ces in
 ## <a name="influencing-the-ui-automation-tree-views"></a>Influence sur les vues de l’arborescence UI Automation  
 La conception de l’infrastructure UI Automation repose sur des arborescences, où les clients UI Automation peuvent récupérer les relations entre les éléments d’une interface utilisateur à l’aide de trois affichages possibles : brut, de contrôle et de contenu. L’affichage de contrôle est souvent utilisé par les clients UI Automation, car il fournit une bonne représentation et une organisation efficace des éléments interactifs d’une interface utilisateur. Les outils de test vous permettent généralement de choisir l’arborescence à utiliser quand l’outil présente l’organisation des éléments.
 
-Par défaut, toute classe dérivée de [**contrôle**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control) et quelques autres éléments s’affichent dans la vue de contrôle lorsque l’infrastructure UI Automation représente l’interface utilisateur pour une application d’application Windows. Cependant, il se peut que vous ne souhaitiez pas qu’un élément apparaisse dans l’affichage de contrôle en raison de la composition de l’interface utilisateur, où cet élément duplique des informations ou présente des informations qui ne sont pas importantes pour les scénarios d’accessibilité. Utilisez la propriété jointe [**AutomationProperties.AccessibilityView**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.accessibilityviewproperty) pour modifier la façon dont les éléments sont exposés dans les arborescences. Si vous placez un élément dans l’arborescence **Raw**, la plupart des technologies d’assistance n’indiquent pas cet élément dans le cadre de leurs affichages. Pour voir quelques exemples de ce fonctionnement dans des contrôles existants, ouvrez le fichier XAML de référence de la conception generic.xaml dans un éditeur de texte et recherchez **AutomationProperties.AccessibilityView** dans les modèles.
+Par défaut, toute classe dérivée de [**contrôle**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control) et quelques autres éléments s’affichent dans la vue de contrôle lorsque l’infrastructure UI Automation représente l’interface utilisateur d’une application Windows. Cependant, il se peut que vous ne souhaitiez pas qu’un élément apparaisse dans l’affichage de contrôle en raison de la composition de l’interface utilisateur, où cet élément duplique des informations ou présente des informations qui ne sont pas importantes pour les scénarios d’accessibilité. Utilisez la propriété jointe [**AutomationProperties.AccessibilityView**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.accessibilityviewproperty) pour modifier la façon dont les éléments sont exposés dans les arborescences. Si vous placez un élément dans l’arborescence **Raw**, la plupart des technologies d’assistance n’indiquent pas cet élément dans le cadre de leurs affichages. Pour voir quelques exemples de ce fonctionnement dans des contrôles existants, ouvrez le fichier XAML de référence de la conception generic.xaml dans un éditeur de texte et recherchez **AutomationProperties.AccessibilityView** dans les modèles.
 
 <span id="name_from_inner_text"/>
 <span id="NAME_FROM_INNER_TEXT"/>
@@ -150,7 +150,7 @@ Windows prend en charge de nombreux contrôles qui peuvent servir à afficher de
 ## <a name="accessible-names-and-localization"></a>Noms accessibles et localisation  
 Pour vous assurer que le nom accessible est également un élément localisé, vous devez appliquer des techniques correctes pour le stockage de chaînes localisables telles que les ressources, puis faire référence aux connexions de ressources avec des valeurs [directive x:Uid](https://docs.microsoft.com/windows/uwp/xaml-platform/x-uid-directive). Si le nom accessible provient d’une utilisation [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name) définie de manière explicite, assurez-vous que la chaîne est également localisable.
 
-Notez que les propriétés jointes telles que les propriétés [**AutomationProperties**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.AutomationProperties) utilisent une syntaxe de qualification spéciale pour le nom de la ressource, afin que la ressource fasse référence à la propriété jointe telle qu’elle est appliquée à un élément spécifique. Par exemple, le nom de ressource pour [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name) appliqué à un élément d’interface `MediumButton` utilisateur nommé `MediumButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name`est :.
+Notez que les propriétés jointes telles que les propriétés [**AutomationProperties**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.AutomationProperties) utilisent une syntaxe de qualification spéciale pour le nom de la ressource, afin que la ressource fasse référence à la propriété jointe telle qu’elle est appliquée à un élément spécifique. Par exemple, le nom de ressource pour [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name) appliqué à un élément d’interface utilisateur nommé `MediumButton` est : `MediumButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name` .
 
 <span id="related_topics"/>
 

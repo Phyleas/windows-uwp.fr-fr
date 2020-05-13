@@ -7,12 +7,12 @@ template: detail.hbs
 keywords: clavier, accessibilité, navigation, Focus, texte, entrée, interactions de l’utilisateur
 ms.date: 07/13/2018
 ms.topic: article
-ms.openlocfilehash: 76b468eedd136522a4af9fb5880049278548865d
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 969d0c24c86a47e72cbfec08d835c25b6e6779c4
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970264"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234884"
 ---
 # <a name="respond-to-the-presence-of-the-touch-keyboard"></a>Répondre à la présence du clavier tactile
 
@@ -39,7 +39,7 @@ Cette rubrique s’appuie sur l’article [Interactions avec le clavier](keyboar
 
 Vous devez posséder des connaissances de base sur les interactions avec le clavier standard, sur la gestion de la saisie au clavier et des événements de clavier et sur UI Automation.
 
-Si vous débutez dans le développement d’applications d’application Windows, consultez ces rubriques pour vous familiariser avec les technologies abordées ici.
+Si vous débutez dans le développement d’applications Windows, consultez ces rubriques pour vous familiariser avec les technologies abordées ici.
 
 - [Créer votre première application](https://docs.microsoft.com/windows/uwp/get-started/your-first-app)
 - Découvrir les événements avec [Vue d’ensemble des événements et des événements routés](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview).

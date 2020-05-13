@@ -1,5 +1,5 @@
 ---
-Description: Créez des applications d’application Windows avec des expériences d’interaction utilisateur intuitives et distinctives qui sont optimisées pour le pavé tactile, mais qui fonctionnent de manière fonctionnelle sur les périphériques d’entrée.
+Description: Créez des applications Windows avec des expériences d’interaction utilisateur intuitives et distinctives, optimisées pour le pavé tactile, mais fonctionnellement cohérentes sur les appareils d’entrée.
 title: Interactions du pavé tactile
 ms.assetid: CEDEA30A-FE94-4553-A7FB-6C1FA44F06AB
 label: Touchpad interactions
@@ -8,12 +8,12 @@ keywords: pavé tactile, PTP, entrées tactiles, pointeur, entrées, interaction
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: afbdf5c672328acfc60a82f9f66c75dc52370c99
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: ffc3ce96c7e8c2ad4a34aecd1ca85ff644bdef97
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970234"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234485"
 ---
 # <a name="touchpad-design-guidelines"></a>Recommandations en matière de conception pour le pavé tactile
 
@@ -55,11 +55,11 @@ Le pavé tactile de précision permet aux utilisateurs de définir bien plus de 
 
 ![paramètres du pavé tactile standard](images/mouse-touchpad-settings-standard.png)
 
-<sup>Paramètres\\ du\\ pavé tactile standard</sup>
+<sup>\\Paramètres du pavé tactile standard \\</sup>
 
 ![paramètres du pavé tactile de précision Windows](images/mouse-touchpad-settings-ptp.png)
 
-<sup>Paramètres\\ du\\ pavé\\ tactile Windows Precision</sup>
+<sup>\\Paramètres du \\ pavé tactile Windows Precision \\</sup>
 
 Voici quelques exemples de mouvements optimisés pour le pavé tactile qui permettent d’effectuer des tâches courantes.
 

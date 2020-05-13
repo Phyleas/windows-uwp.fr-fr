@@ -1,17 +1,17 @@
 ---
-description: Cet article explique comment ajouter une opération de glisser-déplacer dans votre application d’application Windows.
+description: Cet article explique comment ajouter une opération de glisser-déplacer dans votre application Windows.
 title: Glisser-déplacer
 ms.assetid: A15ED2F5-1649-4601-A761-0F6C707A8B7E
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e14ab0d7e6ef8b79ce29addf37ec1fc52b737923
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 52fb9c5d6b9c594be1ad4f1fa1a4421d99cae5fa
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970154"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234609"
 ---
 # <a name="drag-and-drop"></a>Glisser-déplacer
 

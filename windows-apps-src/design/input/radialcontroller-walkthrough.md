@@ -6,12 +6,12 @@ keywords: composer, radial, didacticiel
 ms.date: 03/11/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 74bb75fb6bced451daeb6f03fba78636d0998cec
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 3972e04c59748efabd51b423f6f24fc22291a6d1
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970274"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234893"
 ---
 # <a name="tutorial-support-the-surface-dial-and-other-wheel-devices-in-your-windows-app"></a>Didacticiel : prendre en charge la numérotation en surface (et les autres appareils volants) dans votre application Windows
 
@@ -51,19 +51,19 @@ La numérotation prend en charge trois gestes de base :
 ## <a name="set-up-your-devices"></a>Configurer vos appareils
 
 1. Vérifiez que votre appareil Windows est sous tension.
-2. Accédez à **Démarrer**, sélectionnez **paramètres** > **appareils** > **Bluetooth & autres appareils**, puis activez la fonction **Bluetooth** .
+2. Accédez à **Démarrer**, sélectionnez **paramètres**  >  **appareils**  >  **Bluetooth & autres appareils**, puis activez la fonction **Bluetooth** .
 3. Retirez le bas de la surface de cadran pour ouvrir le compartiment de la batterie, et assurez-vous qu’il y a deux piles AAA dans.
 4. Si l’onglet batterie est présent sur le dessous de la composition, retirez-le.
 5. Appuyez et maintenez enfoncé le petit bouton incrusté à côté des piles jusqu’à ce que la lumière Bluetooth clignote.
 6. Revenez à votre appareil Windows et sélectionnez **Ajouter Bluetooth ou autre périphérique**.
-7. Dans la boîte de dialogue **Ajouter un périphérique** , sélectionnez**connexion à la surface** **Bluetooth** > . Votre composition de surface doit maintenant se connecter et être ajoutée à la liste des appareils sous **souris, clavier, & stylet** dans la page paramètres **Bluetooth & autres appareils** .
+7. Dans la boîte de dialogue **Ajouter un périphérique** , sélectionnez **Bluetooth**  >  **connexion à la surface**Bluetooth. Votre composition de surface doit maintenant se connecter et être ajoutée à la liste des appareils sous **souris, clavier, & stylet** dans la page paramètres **Bluetooth & autres appareils** .
 8. Testez la numérotation en appuyant sur la touche et maintenez-la enfoncée pendant quelques secondes pour afficher le menu intégré.
 9. Si le menu n’est pas affiché sur votre écran (le cadran doit également vibrer), revenez aux paramètres Bluetooth, retirez l’appareil et réessayez de connecter l’appareil.
 
 > [!NOTE]
 > Les appareils roue peuvent être configurés à l’aide des paramètres de la **Roulette** :
 > 1. Dans le menu **Démarrer** , sélectionnez **paramètres**.
-> 2. Sélectionnez **Devices** > **volant**d’appareils.    
+> 2. Sélectionnez **Devices**  >  **volant**d’appareils.    
 > ![Écran Paramètres de la roue](images/radialcontroller/wheel-settings.png)
 
 Vous êtes maintenant prêt à commencer ce didacticiel. 
@@ -88,7 +88,7 @@ Ces objets fournissent la majeure partie de l’expérience de l’appareil roue
 | Composant | Description |
 | --- | --- |
 | [Classe **RadialController** ](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialController) et connexe | Représente un appareil d’entrée de roue ou un accessoire tel que le cadran de surface. |
-| [**IRadialControllerConfigurationInterop**](https://docs.microsoft.com/previous-versions/windows/desktop/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerconfigurationinterop) / [**IRadialControllerInterop**](https://docs.microsoft.com/previous-versions/windows/desktop/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerinterop)<br/>Nous ne couvrons pas cette fonctionnalité ici. pour plus d’informations, consultez l' [exemple de bureau classique Windows](https://github.com/Microsoft/Windows-classic-samples/tree/master/Samples/RadialController). | Permet l’interopérabilité avec une application Windows. |
+| [**IRadialControllerConfigurationInterop**](https://docs.microsoft.com/previous-versions/windows/desktop/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerconfigurationinterop)  /  [ **IRadialControllerInterop**](https://docs.microsoft.com/previous-versions/windows/desktop/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerinterop)<br/>Nous ne couvrons pas cette fonctionnalité ici. pour plus d’informations, consultez l' [exemple de bureau classique Windows](https://github.com/Microsoft/Windows-classic-samples/tree/master/Samples/RadialController). | Permet l’interopérabilité avec une application Windows. |
 
 ## <a name="step-1-run-the-sample"></a>Étape 1 : exécuter l’exemple
 
@@ -98,7 +98,7 @@ Après avoir téléchargé l’exemple d’application RadialController, vérifi
 3. Appuyez sur F5 pour compiler, déployer et exécuter. 
 
 > [!NOTE]
-> Vous pouvez également sélectionner l’élément de menu **Déboguer** > **Démarrer le débogage** , ou sélectionner le bouton d’exécution de l' ![ **ordinateur local** indiqué ici : bouton projet de génération Visual Studio](images/radialcontroller/wheel-vsrun.png)
+> Vous pouvez également sélectionner l’élément de menu **Déboguer**  >  **Démarrer le débogage** , ou sélectionner le bouton d’exécution de l' **ordinateur local** indiqué ici : ![ bouton projet de génération Visual Studio](images/radialcontroller/wheel-vsrun.png)
 
 La fenêtre d’application s’ouvre, et une fois que l’écran de démarrage s’affiche pendant quelques secondes, vous verrez cet écran initial.
 
@@ -125,7 +125,7 @@ Ces images affichent deux variantes du menu par défaut. (Il en existe beaucoup 
 Tout d’abord, nous allons ajouter l’interface utilisateur pour notre application :
 
 1. Ouvrez le fichier MainPage_Basic. Xaml.
-2. Recherchez le code marqué avec le titre de cette étape («\<!--étape 3 : ajouter des contrôles pour une entrée de roue--> »).
+2. Recherchez le code marqué avec le titre de cette étape (« \< !--étape 3 : ajouter des contrôles pour une entrée de roue--> »).
 3. Supprimez les marques de commentaire des lignes suivantes.
 
     ```xaml
@@ -346,7 +346,7 @@ La numérotation en surface et les autres appareils roue peuvent fournir aux uti
 Dans cette étape, nous montrons comment vous pouvez personnaliser les commentaires haptique en associant nos curseurs et les contrôles de basculement, et en les utilisant pour spécifier dynamiquement le comportement de commentaires haptique. Pour cet exemple, le commutateur Toggle doit avoir la valeur on pour que les commentaires soient activés alors que la valeur de Slider spécifie la fréquence à laquelle le feedback de clic est répété. 
 
 > [!NOTE]
-> Les commentaires haptique peuvent être désactivés par l’utilisateur dans la page **paramètres** >  **Devices** > **roulette** appareils.
+> Les commentaires haptique peuvent être désactivés par l’utilisateur dans la page **paramètres**  >   **Devices**  >  **roulette** appareils.
 
 1. Ouvrez le fichier App.xaml.cs.
 2. Recherchez le code marqué avec le titre de cette étape (« Step 6 : Customize the Device haptiques »).
@@ -358,7 +358,7 @@ Dans cette étape, nous montrons comment vous pouvez personnaliser les commentai
     rootFrame.Navigate(typeof(MainPage), e.Arguments);
     ```
 4. Ouvrez le fichier MainPage_Haptics. Xaml.
-5. Recherchez le code marqué avec le titre de cette étape («\<!--Step 6 : Customize the Device haptiques--> »).
+5. Recherchez le code marqué avec le titre de cette étape (« \< !--Step 6 : Customize the Device haptiques--> »).
 6. Supprimez les marques de commentaire des lignes suivantes. (Ce code d’interface utilisateur indique simplement les fonctionnalités haptique qui sont prises en charge par l’appareil actuel.)    
 
     ```xaml
@@ -609,7 +609,7 @@ Pour voir cela en action (vous aurez besoin d’une surface Studio) :
 
     <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Programming-the-Microsoft-Surface-Dial/player" width="600" height="400" allowFullScreen frameBorder="0"></iframe>  
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Félicitations, vous avez terminé le *didacticiel de prise en main : prendre en charge la numérotation en surface (et les autres appareils volants) dans votre application Windows*! Nous vous avons montré le code de base requis pour la prise en charge d’un appareil roue dans vos applications Windows, et comment fournir certaines des expériences utilisateur plus riches prises en charge par les API **RadialController** .
 
@@ -617,7 +617,7 @@ Félicitations, vous avez terminé le *didacticiel de prise en main : prendre e
 
 [Interactions avec Surface Dial](windows-wheel-interactions.md)
 
-### <a name="api-reference"></a>Informations de référence sur l'API
+### <a name="api-reference"></a>Informations de référence sur les API
 
 - [**RadialController** , classe](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialController)
 - [**RadialControllerButtonClickedEventArgs** , classe](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerButtonClickedEventArgs)

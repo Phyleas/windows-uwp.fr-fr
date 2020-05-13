@@ -11,12 +11,12 @@ pm-contact: chigy
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
-ms.openlocfilehash: 1d883243b60b2b2693fbf0f21315008e556b5743
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 44cb122f70825df3ceef043d84e57cd077780749
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970754"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234699"
 ---
 # <a name="keyboard-interactions"></a>Interactions avec le clavier
 
@@ -89,13 +89,13 @@ Un visuel de Focus :
 
 Pour utiliser un contrôle (y compris des éléments de navigation) avec le clavier, il faut que le focus de celui-ci soit positionné sur le contrôle. Pour qu’un contrôle puisse recevoir le focus clavier, vous pouvez le rendre accessible via la navigation par onglets en l’identifiant sous la forme d’un taquet de tabulation dans l’ordre de tabulation de votre application.
 
-Pour qu’un contrôle soit inclus dans l’ordre de tabulation, la propriété [IsEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_IsEnabled) doit avoir la valeur **true** et la propriété [IsTabStop](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop) doit avoir la valeur **true**.
+Pour qu’un contrôle soit inclus dans l’ordre de tabulation, la propriété [IsEnabled](/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_IsEnabled) doit avoir la valeur **true** et la propriété [IsTabStop](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop) doit avoir la valeur **true**.
 
-Pour exclure spécifiquement un contrôle de l’ordre de tabulation, affectez la valeur **false**à la propriété [IsTabStop](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop) .
+Pour exclure spécifiquement un contrôle de l’ordre de tabulation, affectez la valeur **false**à la propriété [IsTabStop](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop) .
 
-Par défaut, l’ordre de tabulation reflète l’ordre dans lequel les éléments d’interface utilisateur sont créés. Par exemple, si un `StackPanel` contient un `Button`, un `Checkbox`et un `TextBox`, l’ordre de tabulation `Button`est `Checkbox`, et `TextBox`.
+Par défaut, l’ordre de tabulation reflète l’ordre dans lequel les éléments d’interface utilisateur sont créés. Par exemple, si un `StackPanel` contient un `Button` , un `Checkbox` et un `TextBox` , l’ordre de tabulation est `Button` , `Checkbox` et `TextBox` .
 
-Vous pouvez remplacer l’ordre de tabulation par défaut en définissant la propriété [TabIndex](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex) .
+Vous pouvez remplacer l’ordre de tabulation par défaut en définissant la propriété [TabIndex](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex) .
 
 #### <a name="tab-order-should-be-logical-and-predictable"></a>L’ordre de tabulation doit être logique et prévisible
 
@@ -119,7 +119,7 @@ Essayez de classer et de présenter les commandes, les contrôles et le contenu 
 
 Focus initial spécifie l’élément d’interface utilisateur qui reçoit le focus lorsqu’une application ou une page est lancée ou activée pour la première fois. Lors de l’utilisation d’un clavier, il provient de cet élément qu’un utilisateur commence à interagir avec l’interface utilisateur de votre application.
 
-Pour les applications UWP, le focus initial est défini sur l’élément avec la valeur [TabIndex](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex) la plus élevée qui peut recevoir le focus. Les éléments enfants des contrôles conteneurs sont ignorés. En liaison, le premier élément de l’arborescence d’éléments visuels reçoit le focus.
+Pour les applications UWP, le focus initial est défini sur l’élément avec la valeur [TabIndex](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex) la plus élevée qui peut recevoir le focus. Les éléments enfants des contrôles conteneurs sont ignorés. En liaison, le premier élément de l’arborescence d’éléments visuels reçoit le focus.
 
 #### <a name="set-initial-focus-on-the-most-logical-element"></a>Définir le focus initial sur l’élément le plus logique
 
@@ -143,8 +143,8 @@ Par défaut, les contrôles UWP suivent les comportements de clavier de base sui
 -   Les **touches de tabulation** permettent de naviguer entre les contrôles actionnables/actifs dans l’ordre de tabulation.
 -   **MAJ + TAB** permet de parcourir les contrôles dans l’ordre inverse de tabulation. Si l’utilisateur a navigué à l’intérieur du contrôle à l’aide de la touche de direction, le focus est défini sur la dernière valeur connue à l’intérieur du contrôle.
 -   Les **touches de direction** exposent la « navigation interne » spécifique au contrôle quand l’utilisateur entre « navigation interne », les touches de direction ne quittent pas un contrôle. Voici quelques exemples :
-    -   Touche flèche haut/bas déplace le focus `ListView` à l’intérieur et`MenuFlyout`
-    -   Modifiez les valeurs actuellement sélectionnées `Slider` pour et.`RatingsControl`
+    -   Touche flèche haut/bas déplace le focus à l’intérieur `ListView` et`MenuFlyout`
+    -   Modifiez les valeurs actuellement sélectionnées pour `Slider` et.`RatingsControl`
     -   Déplacer le signe insertion à l’intérieur`TextBox`
     -   Développer/réduire des éléments à l’intérieur`TreeView`
 
@@ -166,7 +166,7 @@ Si les éléments sont affichés dans une seule colonne, la touche de direction 
 
 En définissant un seul taquet de tabulation pour une collection de contrôles associés ou complémentaires, vous pouvez réduire le nombre de taquets de tabulation globaux dans votre application.
 
-Par exemple, les images suivantes montrent deux `ListView` contrôles empilés. L’image de gauche montre la navigation par touche de direction utilisée avec un taquet de tabulation `ListView` pour naviguer entre les contrôles, tandis que l’image à droite montre comment la navigation entre les éléments enfants peut être facilitée et plus efficace en éliminant la nécessité de parcourir les contrôles parents avec une touche Tab.
+Par exemple, les images suivantes montrent deux contrôles empilés `ListView` . L’image de gauche montre la navigation par touche de direction utilisée avec un taquet de tabulation pour naviguer entre `ListView` les contrôles, tandis que l’image à droite montre comment la navigation entre les éléments enfants peut être facilitée et plus efficace en éliminant la nécessité de parcourir les contrôles parents avec une touche Tab.
 
 
 <table>
@@ -184,7 +184,7 @@ Une fois qu’un contrôle a le focus, un utilisateur peut interagir avec lui et
 
 #### <a name="text-entry"></a>Entrée de texte
 
-Pour les contrôles spécifiquement conçus pour l’entrée de texte `TextBox` , `RichEditBox`tels que et, toute entrée au clavier est utilisée pour l’entrée ou la navigation dans du texte, qui est prioritaire par rapport à d’autres commandes du clavier. Par exemple, le menu déroulant d’un `AutoSuggestBox` contrôle ne reconnaît pas la clé d' **espace** comme une commande de sélection.
+Pour les contrôles spécifiquement conçus pour l’entrée de texte, tels que `TextBox` et `RichEditBox` , toute entrée au clavier est utilisée pour l’entrée ou la navigation dans du texte, qui est prioritaire par rapport à d’autres commandes du clavier. Par exemple, le menu déroulant d’un `AutoSuggestBox` contrôle ne reconnaît pas la clé d' **espace** comme une commande de sélection.
 
 ![entrée de texte](images/keyboard/text-entry.png)
 
@@ -197,9 +197,9 @@ Lorsqu’il n’est pas en mode de saisie de texte, la touche **espace** appelle
 #### <a name="enter-key"></a>Entrée (touche)
 
 La touche **entrée** peut effectuer une série d’interactions utilisateur courantes, en fonction du contrôle ayant le focus :
--   Active des contrôles de `Button` commande tels que ou `Hyperlink`. Pour éviter toute confusion entre l’utilisateur final, la touche **entrée** active également les contrôles qui ressemblent `ToggleButton` à `AppBarToggleButton`des contrôles tels que ou.
--   Affiche l’interface utilisateur du sélecteur pour les `ComboBox` contrôles `DatePicker`tels que et. La touche **entrée** valide également et ferme l’interface utilisateur du sélecteur.
--   Active les contrôles de liste tels `ListView`que `GridView`, et `ComboBox`.
+-   Active des contrôles de commande tels que `Button` ou `Hyperlink` . Pour éviter toute confusion entre l’utilisateur final, la touche **entrée** active également les contrôles qui ressemblent à des contrôles tels que `ToggleButton` ou `AppBarToggleButton` .
+-   Affiche l’interface utilisateur du sélecteur pour les contrôles tels que `ComboBox` et `DatePicker` . La touche **entrée** valide également et ferme l’interface utilisateur du sélecteur.
+-   Active les contrôles de liste tels que `ListView` , `GridView` et `ComboBox` .
     -   La touche **entrée** effectue l’action de sélection en tant que clé d' **espace** pour les éléments de liste et de grille, sauf s’il existe une action supplémentaire associée à ces éléments (ouverture d’une nouvelle fenêtre).
     -   Si une action supplémentaire est associée au contrôle, la touche **entrée** effectue l’action supplémentaire et la touche **espace** effectue l’action de sélection.
 
@@ -210,8 +210,8 @@ La touche **entrée** peut effectuer une série d’interactions utilisateur cou
 La touche Échap permet à un utilisateur d’annuler l’interface utilisateur temporaire (ainsi que toutes les actions en cours dans cette interface).
 
 Voici quelques exemples de cette expérience :
--   L’utilisateur ouvre `ComboBox` une avec une valeur sélectionnée et utilise les touches de direction pour déplacer la sélection de focus vers une nouvelle valeur. Appuyer sur la touche Échap ferme `ComboBox` et rétablit la valeur sélectionnée à sa valeur d’origine.
--   L’utilisateur appelle une action de suppression permanente pour un e-mail et est invité `ContentDialog` à confirmer l’action. L’utilisateur décide qu’il ne s’agit pas de l’action prévue et appuie sur la touche **Échap** pour fermer la boîte de dialogue. Comme la touche **Échap** est associée au bouton **Annuler** , la boîte de dialogue est fermée et l’action est annulée. La touche **Échap** n’affecte que l’interface utilisateur temporaire, elle ne se ferme pas ou n’effectue pas de navigation dans l’interface utilisateur de l’application.
+-   L’utilisateur ouvre une `ComboBox` avec une valeur sélectionnée et utilise les touches de direction pour déplacer la sélection de focus vers une nouvelle valeur. Appuyer sur la touche Échap ferme `ComboBox` et rétablit la valeur sélectionnée à sa valeur d’origine.
+-   L’utilisateur appelle une action de suppression permanente pour un e-mail et est invité à `ContentDialog` confirmer l’action. L’utilisateur décide qu’il ne s’agit pas de l’action prévue et appuie sur la touche **Échap** pour fermer la boîte de dialogue. Comme la touche **Échap** est associée au bouton **Annuler** , la boîte de dialogue est fermée et l’action est annulée. La touche **Échap** n’affecte que l’interface utilisateur temporaire, elle ne se ferme pas ou n’effectue pas de navigation dans l’interface utilisateur de l’application.
 
 ![Touche Échap](images/keyboard/esc-key.png)
 
@@ -220,7 +220,7 @@ Voici quelques exemples de cette expérience :
 Les touches **origine** et **fin** permettent à un utilisateur de faire défiler le début ou la fin d’une région de l’interface utilisateur.
 
 Voici quelques exemples de cette expérience :
--   Pour `ListView` les `GridView` contrôles et, la touche **début** déplace le focus sur le premier élément et le fait défiler dans la vue, tandis que la touche **fin** déplace le focus sur le dernier élément et le fait défiler dans la vue.
+-   Pour `ListView` `GridView` les contrôles et, la touche **début** déplace le focus sur le premier élément et le fait défiler dans la vue, tandis que la touche **fin** déplace le focus sur le dernier élément et le fait défiler dans la vue.
 -   Pour un `ScrollView` contrôle, la touche **début** défile vers le haut de la région, tandis que la touche **fin** défile vers le bas de la région (le focus n’est pas modifié).
 
 ![clés de début et de fin](images/keyboard/home-and-end.png)
@@ -229,7 +229,7 @@ Voici quelques exemples de cette expérience :
 
 Les touches de **page** permettent à un utilisateur de faire défiler une zone d’interface utilisateur en incréments discrets.
 
-Par exemple, pour `ListView` les `GridView` contrôles et, la touche **PG. haut** fait défiler la région d’une « page » (généralement la hauteur de la fenêtre d’affichage) et déplace le focus vers le haut de la zone. Sinon, la touche **PG. suiv** fait défiler la zone vers le bas d’une page et déplace le focus vers le bas de la région.
+Par exemple, pour `ListView` `GridView` les contrôles et, la touche **PG. haut** fait défiler la région d’une « page » (généralement la hauteur de la fenêtre d’affichage) et déplace le focus vers le haut de la zone. Sinon, la touche **PG. suiv** fait défiler la zone vers le bas d’une page et déplace le focus vers le bas de la région.
 
 ![touche PG. suiv et PG. suiv.](images/keyboard/page-up-and-down.png)
 
@@ -307,10 +307,10 @@ Vous pouvez regrouper un ensemble de contrôles associés ou complémentaires da
 
 Les utilisateurs s’attendent à prendre en charge la navigation dans les touches de direction lorsqu’il existe un groupe de contrôles similaires, associés dans une région d’interface utilisateur :
 -   `AppBarButtons`dans un`CommandBar`
--   `ListItems`ou `GridItems` à `ListView` l’intérieur ou`GridView`
+-   `ListItems`ou `GridItems` à l’intérieur `ListView` ou`GridView`
 -   `Buttons`dans`ContentDialog`
 
-Les contrôles UWP prennent en charge la navigation par touche de direction par défaut. Pour les dispositions personnalisées et les groupes de `XYFocusKeyboardNavigation="Enabled"` contrôles, utilisez pour fournir un comportement similaire.
+Les contrôles UWP prennent en charge la navigation par touche de direction par défaut. Pour les dispositions personnalisées et les groupes de contrôles, utilisez `XYFocusKeyboardNavigation="Enabled"` pour fournir un comportement similaire.
 
 Envisagez d’ajouter la prise en charge de la navigation par touche de direction lorsque vous utilisez les contrôles suivants :
 
@@ -339,7 +339,7 @@ Selon les fonctionnalités et la disposition de votre application, la meilleure 
 
 Les utilisateurs d’accessibilité s’appuient sur des règles de navigation de clavier bien établies, qui n’utilisent généralement pas de touches de direction pour naviguer dans une collection de boutons. Toutefois, les utilisateurs dépourvus de troubles de la vision peuvent avoir le sentiment que le comportement est naturel.
 
-Voici un exemple de comportement UWP par défaut `ContentDialog`. Si vous pouvez utiliser les touches de direction pour naviguer entre les boutons, chaque bouton est également un taquet de tabulation.
+Voici un exemple de comportement UWP par défaut `ContentDialog` . Si vous pouvez utiliser les touches de direction pour naviguer entre les boutons, chaque bouton est également un taquet de tabulation.
 
 ##### <a name="assign-single-tab-stop-to-familiar-ui-patterns"></a>Affecter un taquet de tabulation unique à des modèles d’interface utilisateur familiers
 
@@ -373,7 +373,7 @@ Les différences entre les comportements du clavier UWP et celles prises en char
 
 #### <a name="case-study--autosuggestbox-control"></a>Étude de cas – contrôle AutoSuggestBox
 
-Le bouton de recherche pour `AutoSuggestBox` le n’est pas accessible à la navigation au clavier standard à l’aide des touches de tabulation et de direction, car l’utilisateur peut appuyer sur la touche **entrée** pour envoyer la requête de recherche. Toutefois, il est accessible par le narrateur quand l’utilisateur appuie sur Verr. Maj + une touche de direction.
+Le bouton de recherche pour le `AutoSuggestBox` n’est pas accessible à la navigation au clavier standard à l’aide des touches de tabulation et de direction, car l’utilisateur peut appuyer sur la touche **entrée** pour envoyer la requête de recherche. Toutefois, il est accessible par le narrateur quand l’utilisateur appuie sur Verr. Maj + une touche de direction.
 
 ![suggestion automatique du focus clavier](images/keyboard/auto-suggest-keyboard.png)
 
@@ -419,7 +419,7 @@ Voici quelques-unes des principales différences à prendre en compte lors de la
 
 #### <a name="directional-navigation"></a>Navigation directionnelle
 
-La navigation directionnelle est gérée par une classe d’assistance du [Gestionnaire de focus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.FocusManager) UWP, qui prend la touche directionnelle enfoncée (touche de direction, D-PAD) et tente de déplacer le focus dans la direction visuelle correspondante.
+La navigation directionnelle est gérée par une classe d’assistance du [Gestionnaire de focus](/uwp/api/Windows.UI.Xaml.Input.FocusManager) UWP, qui prend la touche directionnelle enfoncée (touche de direction, D-PAD) et tente de déplacer le focus dans la direction visuelle correspondante.
 
 Contrairement au clavier, quand une application opte pour le [mode souris](gamepad-and-remote-interactions.md#mouse-mode), la navigation directionnelle est appliquée à l’ensemble de l’application pour le boîtier et le contrôle à distance. Pour plus d’informations sur l’optimisation de la navigation directionnelle, consultez le [boîtier et les interactions de contrôle à distance](gamepad-and-remote-interactions.md) .
 
@@ -501,6 +501,7 @@ Si le dernier élément a le focus et que la touche de direction bas est enfonc�
 
 Nous vous recommandons d’émuler ces mêmes comportements dans vos contrôles personnalisés. Vous trouverez un exemple de code sur la façon d’implémenter ce comportement dans la documentation de la [navigation de focus par programmation](focus-navigation-programmatic.md#find-the-first-and-last-focusable-element) .
 
+
 ## <a name="test-your-app"></a>Test de l'application
 
 Testez votre application avec tous les périphériques d’entrée pris en charge pour vous assurer que les éléments d’interface utilisateur peuvent être parcourus de manière cohérente et intuitive et qu’aucun élément inattendu n’interfère avec l’ordre de tabulation souhaité.
@@ -510,6 +511,7 @@ Testez votre application avec tous les périphériques d’entrée pris en charg
 * [Identification des périphériques d’entrée](identify-input-devices.md)
 * [Répondre à la présence du clavier tactile](respond-to-the-presence-of-the-touch-keyboard.md)
 * [Exemples de visuels de focus](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
+* [Caractéristiques de la carte de contrôle NavigationView](/windows/uwp/design/controls-and-patterns/navigationview#hierarchical-navigation) 
 
 ## <a name="appendix"></a>Annexe
 
@@ -560,7 +562,7 @@ Voici quelques exemples des différents modes disponibles pour le clavier tactil
 
 Des interactions réussies avec le clavier permettent aux utilisateurs d’accomplir des scénarios d’application de base uniquement à l’aide du clavier. Autrement dit, les utilisateurs peuvent atteindre tous les éléments interactifs et activer leur fonctionnalité par défaut. Plusieurs facteurs peuvent affecter le degré de réussite, tels que la navigation à l’aide du clavier, les touches d’accès pour l’accessibilité et les touches d’accès rapide (ou de raccourci) pour les utilisateurs expérimentés.
 
-**Notez**  que le clavier tactile ne prend pas en charge le basculement et la plupart des commandes système.
+**Remarque**    Le clavier tactile ne prend pas en charge le basculement et la plupart des commandes système.
 
 #### <a name="on-screen-keyboard"></a>Clavier visuel
 À l’instar du clavier logiciel, le clavier visuel est un clavier visuel et logiciel que vous pouvez utiliser au lieu du clavier physique pour taper et entrer des données à l’aide de la fonction tactile, de la souris, du stylet/du stylet ou d’un autre dispositif de pointage (un écran tactile n’est pas nécessaire). Le Clavier visuel est fourni pour les systèmes qui ne possèdent pas de clavier physique ou pour les utilisateurs qui connaissent des problèmes de mobilité les empêchant d’utiliser les périphériques d’entrée physiques classiques. Le clavier visuel émule la plupart, sinon la totalité, des fonctionnalités d’un clavier matériel.

@@ -9,12 +9,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 207ad9cb3008f1a36402e413b7e246aa2135ae26
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 5fd39acbf6549cddc075f8b63779f06a802bfdbb
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970164"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234678"
 ---
 # <a name="gamepad-and-remote-control-interactions"></a>Interactions entre le boîtier de commande et la télécommande
 
@@ -22,7 +22,7 @@ ms.locfileid: "82970164"
 
 ***De nombreuses expériences d’interaction sont partagées entre le boîtier, le contrôle à distance et le clavier.***
 
-Créez des expériences d’interaction dans vos applications d’application Windows qui garantissent que votre application est utilisable et accessible via les types d’entrée traditionnels des PC, des ordinateurs portables et des tablettes (souris, clavier, toucher, etc.), ainsi que les types d’entrée typiques de l’expérience TV et Xbox *10-foot* , comme le boîtier de commande et le contrôle à distance.
+Créez des expériences d’interaction dans vos applications Windows qui garantissent que votre application est utilisable et accessible par le biais des types d’entrée traditionnels des PC, des ordinateurs portables et des tablettes (souris, clavier, toucher, etc.), ainsi que des types d’entrée typiques de l’expérience TV et Xbox *10-foot* , comme le boîtier de commande et le contrôle à distance.
 
 Consultez [conception pour la Xbox et la télévision](../devices/designing-for-tv.md) pour obtenir des conseils de conception générale sur les applications Windows dans l’expérience de *10 mètres* .
 
@@ -78,16 +78,16 @@ Le tableau suivant répertorie tous les boutons matériels pris en charge par le
 | Bouton multidirectionnel   | Oui       | Oui               |
 | Bouton Menu               | Oui       | Oui               |
 | Bouton Afficher               | Oui       | Oui               |
-| Boutons X et Y           | Oui       | Non                 |
-| Stick analogique gauche                | Oui       | Non                 |
-| Stick analogique droit               | Oui       | Non                 |
-| Gâchette gauche et droite   | Oui       | Non                 |
-| Gâchettes hautes gauche et droite    | Oui       | Non                 |
-| Bouton OneGuide           | Non         | Oui               |
-| Bouton de volume             | Non         | Oui               |
-| Bouton de changement de chaîne            | Non         | Oui               |
-| Boutons de contrôle multimédia     | Non         | Oui               |
-| Bouton Muet               | Non         | Oui               |
+| Boutons X et Y           | Oui       | Non                |
+| Stick analogique gauche                | Oui       | Non                |
+| Stick analogique droit               | Oui       | Non                |
+| Gâchette gauche et droite   | Oui       | Non                |
+| Gâchettes hautes gauche et droite    | Oui       | Non                |
+| Bouton OneGuide           | Non        | Oui               |
+| Bouton de volume             | Non        | Oui               |
+| Bouton de changement de chaîne            | Non        | Oui               |
+| Boutons de contrôle multimédia     | Non        | Oui               |
+| Bouton Muet               | Non        | Oui               |
 
 ### <a name="built-in-button-support"></a>Prise en charge des boutons intégrés
 
@@ -158,10 +158,10 @@ Le tableau suivant répertorie la prise en charge intégrée des accélérateurs
 | Interaction   | Clavier/souris   | Boîtier de commande      | Intégrée pour :  | Recommandée pour : |
 |---------------|------------|--------------|----------------|------------------|
 | Page vers le haut/bas  | Page vers le haut/bas | Gâchette gauche/droite | [CalendarView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarView), [ListBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox), [ListViewBase](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListViewBase), [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), `ScrollViewer`, [Selector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector), [LoopingSelector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector), [ComboBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [FlipView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView) | Affichages qui prennent en charge le défilement vertical
-| Page vers la gauche/droite | None | Gâchettes hautes gauche/droite | [Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot), [ListBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox), [ListViewBase](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListViewBase), [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), `ScrollViewer`, [Selector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector), [LoopingSelector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector), [FlipView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView) | Affichages qui prennent en charge le défilement horizontal
-| Zoom avant/arrière        | Ctrl +/- | Gâchette gauche/droite | None | `ScrollViewer`, les affichages qui prennent en charge le zoom avant et arrière |
-| Ouvrir/fermer le volet de navigation | None | Affichage | None | Volets de navigation |
-| Recherche | None | Bouton Y | None | Raccourci pour la fonction de recherche principale dans l’application |
+| Page vers la gauche/droite | Aucune | Gâchettes hautes gauche/droite | [Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot), [ListBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox), [ListViewBase](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListViewBase), [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), `ScrollViewer`, [Selector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector), [LoopingSelector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector), [FlipView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView) | Affichages qui prennent en charge le défilement horizontal
+| Zoom avant/arrière        | Ctrl +/- | Gâchette gauche/droite | Aucune | `ScrollViewer`, les affichages qui prennent en charge le zoom avant et arrière |
+| Ouvrir/fermer le volet de navigation | Aucune | Affichage | Aucune | Volets de navigation |
+| Recherche | Aucune | Bouton Y | Aucune | Raccourci pour la fonction de recherche principale dans l’application |
 | [Ouvrir le menu contextuel](#commandbar-and-contextflyout) | Cliquez avec le bouton droit sur | Bouton Menu | [ContextFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout) | Menu contextuels |
 
 ## <a name="xy-focus-navigation-and-interaction"></a>Interaction et navigation en mode focus XY
@@ -383,7 +383,7 @@ Le schéma suivant montre les mappages de bouton pour le boîtier de commande/la
 > [!NOTE]
 > Le mode souris est uniquement pris en charge sur Xbox One avec boîtier de commande/télécommande. Il est ignoré sans avertissement dans d’autres familles d’appareils et types d’entrée.
 
-Utilisez la propriété [RequiresPointer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.requirespointer) sur un contrôle ou une page pour activer le mode souris. Cette propriété a trois valeurs possibles : `Never` (valeur par défaut), `WhenEngaged`et `WhenFocused`.
+Utilisez la propriété [RequiresPointer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.requirespointer) sur un contrôle ou une page pour activer le mode souris. Cette propriété a trois valeurs possibles : `Never` (valeur par défaut), `WhenEngaged` et `WhenFocused` .
 
 ### <a name="activating-mouse-mode-on-a-control"></a>Activation du mode souris sur un contrôle
 
@@ -557,13 +557,13 @@ Certains contrôles provoquent une interruption du focus assez fréquente pour j
 | SemanticZoom          | Off                       |
 | Curseur                | Il en va                        |
 
-Tous les autres contrôles Windows entraînent l’absence de modifications visuelles ou `IsFocusEngagementEnabled="True"`de comportement.
+Tous les autres contrôles Windows entraînent l’absence de modifications visuelles ou de comportement `IsFocusEngagementEnabled="True"` .
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Vous pouvez créer des applications Windows optimisées pour un appareil ou une expérience spécifique, mais le plateforme Windows universelle vous permet également de créer des applications qui peuvent être utilisées avec succès sur plusieurs appareils, à la fois dans des expériences à 2 et 10 pieds, et indépendamment de l’appareil d’entrée ou de la capacité de l’utilisateur. À l’aide des recommandations de cet article, vous pouvez vous assurer que votre application est aussi efficace que possible à la fois sur la télévision et sur un PC.
 
 ## <a name="related-articles"></a>Articles connexes
 
 - [Conception pour Xbox et télévision](../devices/designing-for-tv.md)
-- [Initiation de l’appareil pour les applications d’application Windows](index.md)
+- [Initiation de l’appareil pour les applications Windows](index.md)

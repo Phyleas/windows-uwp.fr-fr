@@ -1,5 +1,5 @@
 ---
-description: Décrit les étapes nécessaires pour garantir que votre application d’application Windows est utilisable quand un thème à contraste élevé est actif.
+description: Décrit les étapes nécessaires pour garantir que votre application Windows est utilisable quand un thème à contraste élevé est actif.
 ms.assetid: FD7CA6F6-A8F1-47D8-AA6C-3F2EC3168C45
 title: Thèmes à contraste élevé
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 09/28/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 118f604b8c8c95a863773270825ff4db5c5a1b3a
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: ce3fe9ea96f4b4ce2f541fb5f7a9682a0dee5e0e
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82969454"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234036"
 ---
 # <a name="high-contrast-themes"></a>Thèmes à contraste élevé  
 
@@ -95,7 +95,7 @@ La page *Paramètres &gt; Options d’ergonomie &gt; Contraste élevé* comporte
 
 Chaque ressource de **couleur SystemColor *** est une variable qui met à jour automatiquement la couleur lorsque l’utilisateur bascule les thèmes à contraste élevé. Vous trouverez ci-après des recommandations vous indiquant quand et où utiliser chaque ressource.
 
-Ressource | Utilisation |
+Ressource | Usage |
 |--------|-------|
 **SystemColorWindowTextColor** | Copie de texte de corps, titres, listes ; tout texte ne pouvant faire l’objet d’aucune interaction |
 | **SystemColorHotlightColor** | Liens hypertexte |
@@ -154,7 +154,7 @@ Plus loin dans votre application,vous pouvez désormais définir l’arrière-pl
 <Grid Background="{ThemeResource BrandedPageBackgroundBrush}">
 ```
 
-Notez la manière dont ** \{\} ThemeResource** est utilisé deux fois, une fois pour référencer **SystemColorWindowColor** et à nouveau pour référencer **BrandedPageBackgroundBrush**. Les deux instances sont nécessaires pour la bonne définition du thème lors de l’exécution. Il s’agit d’un bon moment pour tester la fonctionnalité dans votre application. L’arrière-plan de la grille est automatiquement mis à jour lorsque vous définissez un thème à contraste élevé. Il est également mis à jour lorsque vous basculez entre deux thèmes à contraste élevé différents.
+Notez la manière dont ** \{ ThemeResource \} ** est utilisé deux fois, une fois pour référencer **SystemColorWindowColor** et à nouveau pour référencer **BrandedPageBackgroundBrush**. Les deux instances sont nécessaires pour la bonne définition du thème lors de l’exécution. Il s’agit d’un bon moment pour tester la fonctionnalité dans votre application. L’arrière-plan de la grille est automatiquement mis à jour lorsque vous définissez un thème à contraste élevé. Il est également mis à jour lorsque vous basculez entre deux thèmes à contraste élevé différents.
 
 ## <a name="when-to-use-borders"></a>Quand utiliser les bordures
 

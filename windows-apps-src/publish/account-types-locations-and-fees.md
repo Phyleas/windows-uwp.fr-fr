@@ -4,50 +4,50 @@ title: Types de compte, emplacements et frais
 description: Nous proposons des comptes de développeur individuels et d’entreprise dans un grand nombre de pays et de régions.
 ms.date: 10/31/2018
 ms.topic: article
-keywords: windows 10, uwp, compte de développeur, individuel, société, entreprise
+keywords: Windows 10, UWP, compte de développeur, individu, entreprise, entreprise
 ms.localizationpriority: medium
-ms.openlocfilehash: a7ab3d40b48caecc82fafef4df964b7a1dbf8071
-ms.sourcegitcommit: a7effa01ca1c810e792b60f89ba38ce3bf0b310e
+ms.openlocfilehash: 829bbc857f3856962dfbbbc4bb589fa677b8e264
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81545089"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234815"
 ---
 # <a name="account-types-locations-and-fees"></a>Types de compte, emplacements et frais
 
 Le programme Windows de l' [espace partenaires](https://partner.microsoft.com/dashboard) offre à la fois des comptes individuels et des comptes d’entreprise dans de nombreux [pays et régions](#developer-account-and-app-submission-markets). Chaque type de compte vous donne accès à la publication d’applications dans le Windows Store et à la participation à d’autres programmes Microsoft.
 
 > [!NOTE]
-> Lorsque vous ouvrez votre compte de développeur, veillez à vous connecter à l' [espace partenaires](https://partner.microsoft.com/dashboard) à l’aide de la compte Microsoft que vous souhaitez utiliser pour votre compte de développeur. Vous pourrez [ajouter d’autres utilisateurs au compte](manage-account-users.md) ultérieurement.
+> Lorsque vous ouvrez votre compte de développeur, veillez à vous connecter à l' [espace partenaires](https://partner.microsoft.com/dashboard) à l’aide de la compte Microsoft que vous souhaitez utiliser pour votre compte de développeur. Vous avez la possibilité d' [Ajouter des utilisateurs supplémentaires au compte](manage-account-users.md) ultérieurement.
 
-Au [début du processus d’inscription](https://developer.microsoft.com/store/register), vous devez déterminer si vous souhaitez créer un compte individuel ou un compte d’entreprise. Les deux types de comptes vous permettent de soumettre des applications, des jeux, des compléments et des services.
+Au [début du processus d’inscription](https://developer.microsoft.com/store/register), vous devez déterminer si vous souhaitez créer un compte individuel ou un compte d’entreprise. Les deux types de comptes vous permettent de soumettre des applications, des jeux, des compléments et des services.
 
-Les comptes d’entreprise s’adressent quant à eux aux organismes et aux entreprises. Pour les comptes d’entreprise, nous mettons en place une [vérification](#account-verification) renforcée afin de nous assurer que vous êtes bien habilité à créer un compte au nom de votre entreprise. Les comptes individuels sont généralement adaptés aux développeurs indépendants, même si vous avez la possibilité d’ajouter d’autres utilisateurs de compte aux deux types de comptes.
+Les comptes d’entreprise s’adressent quant à eux aux organismes et aux entreprises. Pour les comptes d’entreprise, nous avons besoin d’une [vérification](#account-verification) plus importante pour confirmer que vous êtes autorisé à configurer le compte de votre entreprise. Les comptes individuels sont généralement appropriés pour un seul développeur qui travaille seul, bien que vous ayez la possibilité d’ajouter des utilisateurs de comptes supplémentaires à l’un ou l’autre des deux types de compte.
 
 > [!IMPORTANT]
-> Choisissez bien le type de compte souhaité, car vous ne pourrez pas le modifier par la suite.
+> Vous ne pouvez pas modifier le type de compte une fois votre sélection effectuée, veillez à choisir le type approprié.
 
 Voici les principales différences entre les deux types de compte.
 
-| Compte individuel | Compte d'entreprise |
+| Compte individuel | Compte d’entreprise |
 |--------------------|-----------------|
-| <ul><li>Coûte environ 19 USD (frais d’inscription ponctuels ; le montant exact varie en fonction de votre pays ou région)</li><li>Processus de vérification de compte plus court</li></ul> | <ul><li>Coûte environ 99 USD (frais d’inscription ponctuels ; le montant exact varie en fonction de votre pays ou région)</li><li>Nécessite une vérification renforcée du compte</li><li>Votre entreprise doit être reconnue en tant que telle dans le pays ou la région où elle est située</li><li>En mesure de soumettre des applications avec des fonctionnalités restreintes (comme décrit dans les [Stratégies du Microsoft Store](store-policies.md#1014-account-type))</li></ul> |
+| <ul><li>Coûte environ 19 USD (frais d’inscription ponctuels ; le montant exact varie en fonction de votre pays ou région)</li><li>Processus de vérification de compte plus rapide</li></ul> | <ul><li>Coûte environ 99 USD (frais d’inscription ponctuels ; le montant exact varie en fonction de votre pays ou région)</li><li>Nécessite une plus grande vérification de compte</li><li>Votre entreprise doit être reconnue en tant que telle dans le pays ou la région où elle est située</li><li>Possibilité de soumettre des applications avec des fonctionnalités restreintes (comme décrit dans les [stratégies de Microsoft Store](store-policies.md#1014-account-type))</li></ul> |
 
 Les comptes d’entreprise sont un peu plus onéreux, car des étapes supplémentaires sont nécessaires pour vérifier que vous êtes autorisé à configurer le compte au nom de votre entreprise. Selon les [stratégies](store-policies.md#1014-account-type)du Windows Store, les applications avec certaines fonctionnalités, telles que celles qui accèdent à des informations de compte financier ou qui nécessitent une authentification pour accéder aux fonctionnalités principales (sans utiliser un fournisseur d’authentification tiers dédié sécurisé), peuvent uniquement être publiées par les comptes d’entreprise.
 
-## <a name="account-verification"></a>Vérification de compte
+## <a name="account-verification"></a>Vérification du compte
 
-Une fois le processus d’inscription terminé, votre compte est soumis au processus de vérification. Pour les comptes individuels, nous vérifions qu’aucune autre société n’utilise déjà votre nom d’éditeur complet. Pour les comptes d’entreprise, notre partenaire de vérification Dun & Bradstreet vérifiera que vous êtes autorisé à créer un compte pour l’entreprise que vous représentez. La durée de ce processus peut varier de quelques jours à quelques semaines. Il implique souvent un appel téléphonique à votre entreprise (vérifiez que toutes les coordonnées que vous avez fournies dans les formulaires d’inscription sont à jour). Vous ne pouvez pas envoyer d’applications à partir d’un compte d’entreprise tant qu’elle n’a pas été vérifiée, mais pendant que vous attendez, vous pouvez [réserver un nom d’application](create-your-app-by-reserving-a-name.md) continuer à générer et tester des applications et travailler sur la préparation de vos envois.
+Une fois le processus d’inscription terminé, votre compte est soumis au processus de vérification. Pour les comptes individuels, nous vérifions qu’aucune autre société n’utilise déjà votre nom d’éditeur complet. Pour les comptes d’entreprise, notre partenaire de vérification dun & Bradstreet confirme que vous êtes autorisé à créer un compte pour l’entreprise que vous êtes en train de représenter. Ce processus peut prendre de quelques jours à quelques semaines, et il comprend souvent un appel téléphonique à votre entreprise (Assurez-vous que toutes vos informations de contact sont à jour lorsque vous remplissez les formulaires d’inscription). Vous ne pouvez pas envoyer d’applications à partir d’un compte d’entreprise tant qu’elle n’a pas été vérifiée, mais pendant que vous attendez, vous pouvez [réserver un nom d’application](create-your-app-by-reserving-a-name.md) continuer à générer et tester des applications et travailler sur la préparation de vos envois.
 
-Vous pouvez vérifier l’état de la vérification dans la page **Paramètres du compte**. 
+Vous pouvez vérifier l’état de la vérification dans la page **Paramètres du compte**.
 
 ## <a name="developer-account-and-app-submission-markets"></a>Compte de développeur et marchés sur lesquels soumettre vos applications
 
 Vous pouvez obtenir un compte de développeur et soumettre des applications si vous résidez ou développez une activité commerciale dans un pays ou une région répertorié ci-dessous.
 
-Dans le tableau suivant, les **frais d’inscription** correspondent au coût actuel d’un compte de développeur. Ces frais ne sont à régler qu’une seule fois, et il n’existe aucun frais de renouvellement. Notez que les prix ci-dessous sont sujets à modification.
+Dans le tableau suivant, les **frais d’inscription** correspondent au coût actuel d’un compte de développeur. Il s’agit d’un tarif unique et il n’y a pas de frais de renouvellement. Notez que les prix ci-dessous sont susceptibles d’être modifiés.
 
-| Pays/Région                    | Frais de l'inscription individuelle | Frais de l'inscription d’entreprise |
+| Pays/région                    | Frais d’inscription individuels | Frais de l’entreprise |
 |-----------------------------------|---------------------|------------------|
 | Afghanistan                       | 19 USD              | 99 USD           |
 | Albanie                           | 19 USD              | 99 USD           |
@@ -63,8 +63,8 @@ Dans le tableau suivant, les **frais d’inscription** correspondent au coût ac
 | Bahamas                       | 19 USD              | 99 USD           |  
 | Bahreïn                           | 7 BHD               | 38 BHD           |  
 | Bangladesh                        | 1468 BDT            | 7600 BDT         |  
-| Barbade (La)                          | 19 USD              | 99 USD           |  
-| Biélorussie                           | 19 USD              | 99 USD           |  
+| Barbade                          | 19 USD              | 99 USD           |  
+| Bélarus                           | 19 USD              | 99 USD           |  
 | Belgique                           | 14 EUR              | 75 EUR           |  
 | Belize                            | 19 USD              | 99 USD           |  
 | Bénin                             | 19 USD              | 99 USD           |  
@@ -75,9 +75,9 @@ Dans le tableau suivant, les **frais d’inscription** correspondent au coût ac
 | Brésil                            | 46 BRL              | 160 BRL          |  
 | Brunéi Darussalam                            | 19 USD              | 99 USD           |  
 | Bulgarie                          | 28 BGN              | 160 BGN          |  
-| Burkina-Faso                      | 19 USD              | 99 USD           |  
+| Burkina Faso                      | 19 USD              | 99 USD           |  
 | Burundi                           | 19 USD              | 99 USD           |  
-| Cap Vert                        | 19 USD              | 99 USD           |  
+| Cabo Verde                        | 19 USD              | 99 USD           |  
 | Cambodge                          | 19 USD              | 99 USD           |  
 | Cameroun                          | 19 USD              | 99 USD           |  
 | Canada                            | 20 CAD              | 99 CAD           |  
@@ -86,17 +86,17 @@ Dans le tableau suivant, les **frais d’inscription** correspondent au coût ac
 | Chili                             | 9776 CLP            | 46000 CLP        |  
 | Chine                             | 116 CNY             | 600 CNY          |  
 | Colombie                          | 36543 COP           | 180000 COP       |  
-| Comores (Les)                           | 19 USD              | 99 USD           |  
+| Comores                           | 19 USD              | 99 USD           |  
 | Congo                             | 19 USD              | 99 USD           |  
 | Congo (RDC)                       | 19 USD              | 99 USD           |  
 | Costa Rica                        | 9578 CRC            | 49725 CRC        |  
 | Côte d’Ivoire                     | 19 USD              | 99 USD           |  
 | Croatie                           | 107 HRK             | 500 HRK          |  
 | Chypre                            | 14 EUR              | 75 EUR           |  
-| Czechia                           | 365 CZK             | 1720 CZK         |  
+| Tchéquie                           | 365 CZK             | 1720 CZK         |  
 | Danemark                           | 106 DKK             | 530 DKK          |  
-| Djibouti                          | 19 USD              | 99 USD           | 
-| Dominique                          | 19 USD              | 99 USD           | 
+| Djibouti                          | 19 USD              | 99 USD           |
+| Dominique                          | 19 USD              | 99 USD           |
 | République dominicaine                | 19 USD              | 99 USD           |  
 | Équateur                           | 19 USD              | 99 USD           |  
 | Égypte                             | 133 EGP             | 600 EGP          |  
@@ -112,7 +112,7 @@ Dans le tableau suivant, les **frais d’inscription** correspondent au coût ac
 | Gabon                             | 19 USD              | 99 USD           |  
 | Gambie                        | 19 USD              | 99 USD           |  
 | Géorgie                           | 19 USD              | 99 USD           |  
-| Germany                           | 14 EUR              | 75 EUR           |  
+| Allemagne                           | 14 EUR              | 75 EUR           |  
 | Ghana                             | 19 USD              | 99 USD           |  
 | Grèce                            | 14 EUR              | 75 EUR           |  
 | Groenland                         | 19 USD              | 99 USD           |  
@@ -120,7 +120,7 @@ Dans le tableau suivant, les **frais d’inscription** correspondent au coût ac
 | Guatemala                         | 145 GTQ             | 750 GTQ          |  
 | Guinée                            | 19 USD              | 99 USD           |  
 | Guinée-Bissau                     | 19 USD              | 99 USD           |  
-| Guyana                            | 19 USD              | 99 USD           |  
+| Guyane                            | 19 USD              | 99 USD           |  
 | Haïti                             | 19 USD              | 99 USD           |  
 | Honduras                          | 19 USD              | 99 USD           |  
 | Hong Kong (R.A.S.)                     | 147 HKD             | 760 HKD          |  
@@ -133,12 +133,12 @@ Dans le tableau suivant, les **frais d’inscription** correspondent au coût ac
 | Israël                            | 67 ILS              | 350 ILS          |  
 | Italie                             | 14 EUR              | 75 EUR           |  
 | Jamaïque                           | 19 USD              | 99 USD           |  
-| Japan                             | 1847 JPY            | 9800 JPY         |  
+| Japon                             | 1847 JPY            | 9800 JPY         |  
 | Jordanie                            | 13 JOD              | 70 JOD           |  
 | Kazakhstan                        | 2897 KZT            | 15038 KZT        |  
 | Kenya                             | 1900 KES            | 9999 KES         |  
 | Kiribati                          | 19 USD              | 99 USD           |  
-| Corée                             | 21216 KRW           | 108000 KRW       |  
+| Corée du Sud                             | 21216 KRW           | 108000 KRW       |  
 | Koweït                            | 5 KWD               | 28 KWD           |  
 | Kirghizistan                        | 19 USD              | 99 USD           |  
 | Laos                              | 19 USD              | 99 USD           |  
@@ -151,7 +151,6 @@ Dans le tableau suivant, les **frais d’inscription** correspondent au coût ac
 | Lituanie                         | 14 EUR              | 75 EUR           |  
 | Luxembourg                        | 14 EUR              | 75 EUR           |  
 | Macao R.A.S.                         | 19 USD              | 99 USD           |  
-| Macédoine (Ex-République yougoslave de)                 | 19 USD              | 99 USD           |  
 | Madagascar                        | 19 USD              | 99 USD           |  
 | Malawi                            | 19 USD              | 99 USD           |  
 | Malaisie                          | 62 MYR              | 300 MYR          |  
@@ -160,7 +159,7 @@ Dans le tableau suivant, les **frais d’inscription** correspondent au coût ac
 | Malte                             | 14 EUR              | 75 EUR           |  
 | Marshall (îles)                  | 19 USD              | 99 USD           |  
 | Mauritanie                        | 5681 MRO            | 30046 MRO        |  
-| Maurice                         | 19 USD              | 99 USD           |  
+| Maurice (île)                         | 19 USD              | 99 USD           |  
 | Mexique                            | 247 MXN             | 1140 MXN         |  
 | Micronésie                        | 19 USD              | 99 USD           |  
 | Monaco                            | 14 EUR              | 75 EUR           |  
@@ -176,13 +175,14 @@ Dans le tableau suivant, les **frais d’inscription** correspondent au coût ac
 | Nouvelle-Zélande                       | 24 NZD              | 140 NZD          |  
 | Nicaragua                         | 19 USD              | 99 USD           |  
 | Niger                             | 19 USD              | 99 USD           |  
-| Nigeria                           | 3700 NGN            | 19500 NGN        |  
+| Nigeria                           | 3700 NGN            | 19500 NGN        |
+| Macédoine du Nord                   | 19 USD              | 99 USD           |    
 | Norvège                            | 113 NOK             | 580 NOK          |  
 | Oman                              | 7 OMR               | 40 OMR           |  
 | Pakistan                          | 1959 PKR            | 9000 PKR         |  
 | Palau                             | 19 USD              | 99 USD           |  
 | Panama                            | 19 USD              | 99 USD           |  
-| Papouasie-Nouvelle-Guinée                  | 19 USD              | 99 USD           |  
+| Papouasie Nouvelle Guinée                  | 19 USD              | 99 USD           |  
 | Paraguay                          | 19 USD              | 99 USD           |  
 | Pérou                              | 54 PEN              | 280 PEN          |  
 | Philippines                       | 832 PHP             | 4400 PHP         |  
@@ -192,7 +192,7 @@ Dans le tableau suivant, les **frais d’inscription** correspondent au coût ac
 | Roumanie                           | 14 EUR              | 75 EUR           |  
 | Russie                            | 626 RUB             | 3000 RUB         |  
 | Rwanda                            | 19 USD              | 99 USD           |  
-| Saint Kitts et Nevis             | 19 USD              | 99 USD           |  
+| Saint-Christophe-et-Niévès             | 19 USD              | 99 USD           |  
 | Sainte-Lucie                       | 19 USD              | 99 USD           |  
 | Saint-Vincent-et-les-Grenadines  | 19 USD              | 99 USD           |  
 | Samoa                             | 19 USD              | 99 USD           |  
@@ -229,7 +229,7 @@ Dans le tableau suivant, les **frais d’inscription** correspondent au coût ac
 | Tuvalu                            | 19 USD              | 99 USD           |  
 | Ouganda                            | 19 USD              | 99 USD           |  
 | Ukraine                           | 156 UAH             | 800 UAH          |  
-| Émirats arabes unis              | 19 USD              | 99 USD           |  
+| Émirats Arabes Unis              | 19 USD              | 99 USD           |  
 | Royaume-Uni                    | 12 GBP              | 65 GBP           |  
 | États-Unis                     | 19 USD              | 99 USD           |  
 | Uruguay                           | 19 USD              | 99 USD           |  

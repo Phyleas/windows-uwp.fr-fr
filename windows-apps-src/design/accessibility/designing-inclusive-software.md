@@ -1,5 +1,5 @@
 ---
-Description: En savoir plus sur l’évolution de la conception inclusive avec les applications d’application Windows pour Windows 10.  Concevez et développez un logiciel inclusif en tenant compte de l’accessibilité.
+Description: En savoir plus sur l’évolution de la conception inclusive avec les applications Windows pour Windows 10.  Concevez et développez un logiciel inclusif en tenant compte de l’accessibilité.
 ms.assetid: A6393A57-53F2-4F06-89AF-0D806FD76DB0
 title: Conception de logiciels inclusifs dans Windows 10
 label: Designing inclusive software
@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f048d9d3541b52994713c8040c451a421df3e0a
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: f7286394f68d6cda82581a825117f12ce98493ba
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82969434"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234087"
 ---
 # <a name="designing-inclusive-software-for-windows-10"></a>Conception de logiciels inclusifs pour Windows 10  
 
-En savoir plus sur l’évolution de la conception inclusive avec les applications d’application Windows pour Windows 10.  Concevez et développez un logiciel inclusif en tenant compte de l’accessibilité.
+En savoir plus sur l’évolution de la conception inclusive avec les applications Windows pour Windows 10.  Concevez et développez un logiciel inclusif en tenant compte de l’accessibilité.
 
 Chez Microsoft, nous faisons évoluer nos principes et pratiques de conception. Ces derniers dictent l’aspect, la fonction et le comportement de nos expériences. Nous enrichissons notre perspective.
 

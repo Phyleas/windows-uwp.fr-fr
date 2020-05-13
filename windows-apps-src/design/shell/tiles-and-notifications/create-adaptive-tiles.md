@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b91b5d8ce39f34c6065f6dce61e90a752b36c8ef
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: bbc0f23ad712850e565814febe5b7e681e58a85d
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82971064"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234574"
 ---
 # <a name="create-adaptive-tiles"></a>Créer des vignettes adaptatives
 
@@ -208,7 +208,7 @@ TileContent content = new TileContent()
 
 Vous pouvez contrôler la personnalisation en bas d’une vignette dynamique (nom d’affichage et logo d’angle) à l’aide de l’attribut branding de la charge utile de notification. Vous pouvez choisir de ne rien afficher (valeur « none »), d’afficher uniquement le nom (valeur « name »), d’afficher uniquement le logo (valeur « logo ») ou d’afficher à la fois le nom et le logo (valeur « nameAndLogo »).
 
-**Remarque :**  Windows Mobile ne prend pas en charge le logo d’angle. par conséquent, « logo » et « nameAndLogo » ont par défaut la valeur « Name » sur mobile.
+**Remarque**    Windows Mobile ne prend pas en charge le logo d’angle. par conséquent, « logo » et « nameAndLogo » ont par défaut la valeur « Name » sur mobile.
 
  
 
@@ -280,7 +280,7 @@ TileContent content = new TileContent()
 
 Si vous ne spécifiez aucune personnalisation dans votre charge utile de notification, les propriétés de base de la vignette déterminent la personnalisation. Si la vignette de base indique le nom d’affichage, alors la personnalisation est définie par défaut sur « name ». Si le nom d’affichage n’est pas indiqué, la personnalisation est définie par défaut sur « none ».
 
-**Notez**    qu’il s’agit d’une modification par rapport à Windows 8. x, où la marque par défaut était « logo ».
+**Remarque**    Il s’agit d’une modification par rapport à Windows 8. x, où la personnalisation par défaut était « logo ».
 
  
 
@@ -406,7 +406,7 @@ new AdaptiveText()
 
 ![Styles de texte des vignettes adaptatives](images/adaptive-tiles-textstyles.png)
 
-**Notez**  que le style par défaut est Caption si le style hint n’est pas spécifié.
+**Remarque**    La valeur par défaut du style est Caption si le style hint n’est pas spécifié.
 
  
 
@@ -414,7 +414,7 @@ new AdaptiveText()
 
 |                                |                           |             |
 |--------------------------------|---------------------------|-------------|
-| &lt;indicateur de texte-style =\*""/&gt; | Hauteur de police               | Épaisseur de police |
+| &lt;indicateur de texte-style = " \* "/&gt; | Hauteur de police               | Épaisseur de police |
 | caption                        | 12 pixels effectifs (epx) | Normal     |
 | body                           | 15 epx                    | Normal     |
 | base                           | 15 epx                    | Demi-gras    |
@@ -485,7 +485,7 @@ Les groupes vous permettent de déclarer au niveau sémantique que le contenu d�
 
 Pour que l’expérience soit la meilleure possible sur les appareils et les écrans, indiquez plusieurs groupes. L’indication de plusieurs groupes permet à votre vignette de s’adapter aux écrans plus grands.
 
-**Notez**  que le seul enfant valide d’un groupe est un sous-groupe.
+**Remarque**    Le seul enfant valide d’un groupe est un sous-groupe.
 
  
 
@@ -679,7 +679,7 @@ Si vous souhaitez que les première et seconde colonnes occupent respectivement 
 
 ![Sous-groupes avec des pondérations totalisant 100](images/adaptive-tiles-subgroups03.png)
 
-**Remarque**  une marge de 8 pixels est automatiquement ajoutée entre les colonnes.
+**Remarque**    Une marge de 8 pixels est automatiquement ajoutée entre les colonnes.
 
  
 

@@ -1,5 +1,5 @@
 ---
-Description: Recevoir, traiter et gérer des données d’entrée à partir d’appareils de pointage tels que Touch, Mouse, Pen/Stylus et Touchpad, dans vos applications d’application Windows.
+Description: Recevoir, traiter et gérer des données d’entrée à partir d’appareils de pointage tels que Touch, Mouse, Pen/Stylus et Touchpad, dans vos applications Windows.
 title: Gérer les entrées du pointeur
 ms.assetid: BDBC9E33-4037-4671-9596-471DCF855C82
 label: Handle pointer input
@@ -8,16 +8,16 @@ keywords: stylet, souris, pavé tactile, entrées tactiles, pointeur, entrées, 
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: db3b87bd187c64b04615fb6722e4e1f2b666b7dc
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 609f6f1ad33c3736d9ac99ec40cbbfe7ade9500a
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970064"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234826"
 ---
 # <a name="handle-pointer-input"></a>Gérer les entrées du pointeur
 
-Recevoir, traiter et gérer des données d’entrée à partir d’appareils de pointage (tels que Touch, Mouse, Pen/Stylus et touchpad) dans vos applications d’application Windows.
+Recevoir, traiter et gérer des données d’entrée à partir d’appareils de pointage (tels que Touch, Mouse, Pen/Stylus et touchpad) dans vos applications Windows.
 
 > [!Important]
 > Créez des interactions personnalisées uniquement s’il existe une exigence claire et bien définie et que les interactions prises en charge par les contrôles de plateforme ne prennent pas en charge votre scénario.  
@@ -72,7 +72,7 @@ Les applications Windows peuvent écouter les événements de pointeur suivants�
 <td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost"><strong>PointerCaptureLost</strong></a></p></td>
 <td align="left"><p>Se produit lorsqu’un autre élément d’interface utilisateur capture le pointeur, lorsque le pointeur est libéré ou lorsqu’un autre pointeur est capturé par programme.</p>
 <div class="alert">
-<strong>Notez</strong>  qu’il n’y a pas d’événement de capture de pointeur correspondant.
+<strong>Remarque</strong>    Il n’y a pas d’événement de capture de pointeur correspondant.
 </div>
 <div>
  
@@ -132,7 +132,7 @@ Voici quelques extraits de code d’une application de suivi de pointeur de base
 
 ### <a name="create-the-ui"></a>Créer l’interface utilisateur
 
-Pour cet exemple, nous utilisons un [rectangle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.rectangle) (`Target`) comme entrée de pointeur consommant l’objet. La couleur de la cible change lorsque l’état du pointeur change.
+Pour cet exemple, nous utilisons un [rectangle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.rectangle) ( `Target` ) comme entrée de pointeur consommant l’objet. La couleur de la cible change lorsque l’état du pointeur change.
 
 Les détails de chaque pointeur sont affichés dans un [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) flottant qui suit le pointeur au fur et à mesure qu’il se déplace. Les événements de pointeur sont eux-mêmes signalés dans le [RichTextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) à droite du rectangle.
 

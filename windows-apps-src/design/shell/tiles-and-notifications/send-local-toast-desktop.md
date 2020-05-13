@@ -8,16 +8,16 @@ ms.date: 01/23/2018
 ms.topic: article
 keywords: Windows 10, UWP, Win32, Desktop, notifications Toast, envoyer un toast, envoyer un toast local, un pont de bureau, msix, packages éparss, C#, C Sharp, notification Toast, WPF
 ms.localizationpriority: medium
-ms.openlocfilehash: f177660ce6e367caf69de849839a94472f5343fb
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 679254aa35ea49e72f7feaae02ba0ccbddeafdad
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968284"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83233662"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>Envoyer une notification Toast locale à partir d’applications Desktop C#
 
-Les applications de bureau (y compris les applications [MSIX](https://docs.microsoft.com/windows/msix/desktop/source-code-overview) empaquetées, les applications qui utilisent des [packages éparss](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) pour obtenir l’identité du package et les applications Win32 non empaquetées classiques) peuvent envoyer des notifications de Toast interactif comme les applications d’application Windows. Toutefois, il existe quelques étapes spéciales pour les applications de bureau en raison des différents schémas d’activation et de l’absence potentielle d’identité de package si vous n’utilisez pas de packages MSIX ou épars.
+Les applications de bureau (y compris les applications [MSIX](https://docs.microsoft.com/windows/msix/desktop/source-code-overview) empaquetées, les applications qui utilisent des [packages éparss](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) pour obtenir l’identité du package et les applications Win32 non empaquetées classiques) peuvent envoyer des notifications de Toast interactives comme des applications Windows. Toutefois, il existe quelques étapes spéciales pour les applications de bureau en raison des différents schémas d’activation et de l’absence potentielle d’identité de package si vous n’utilisez pas de packages MSIX ou épars.
 
 > [!IMPORTANT]
 > Si vous écrivez une application UWP, consultez la [documentation UWP](send-local-toast.md). Pour les autres langages du bureau, consultez [Desktop C++ WRL](send-local-toast-desktop-cpp-wrl.md).
@@ -27,7 +27,7 @@ Les applications de bureau (y compris les applications [MSIX](https://docs.micro
 
 Si vous n’avez pas référencé les API Windows Runtime à partir de votre application Win32, vous devez d’abord le faire.
 
-Il vous suffit `Microsoft.Windows.SDK.Contracts` d’installer le [package NuGet](https://www.nuget.org/packages/Microsoft.Windows.SDK.Contracts) dans votre projet. En savoir plus sur [l’activation des api Windows Runtime ici](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-enhance).
+Il vous suffit d’installer le `Microsoft.Windows.SDK.Contracts` [package NuGet](https://www.nuget.org/packages/Microsoft.Windows.SDK.Contracts) dans votre projet. En savoir plus sur [l’activation des api Windows Runtime ici](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-enhance).
 
 
 ## <a name="step-2-copy-compat-library-code"></a>Étape 2 : copier le code de bibliothèque de compatibilité
@@ -117,7 +117,7 @@ Choisissez un identifiant AUMID unique qui identifie votre application Win32. Il
 
 #### <a name="step-41-wix-installer"></a>Étape 4,1 : programme d’installation de WiX
 
-Si vous utilisez WiX pour votre programme d’installation, modifiez le fichier **Product. wxs** pour ajouter les deux propriétés de raccourci au raccourci du menu Démarrer, comme indiqué ci-dessous. Assurez-vous que le GUID de l’étape #3 `{}` est inséré comme indiqué ci-dessous.
+Si vous utilisez WiX pour votre programme d’installation, modifiez le fichier **Product. wxs** pour ajouter les deux propriétés de raccourci au raccourci du menu Démarrer, comme indiqué ci-dessous. Assurez-vous que le GUID de l’étape #3 est inséré `{}` comme indiqué ci-dessous.
 
 **Product. wxs**
 
@@ -219,7 +219,7 @@ Quand l’utilisateur clique sur votre toast, la méthode **OnActivated** de vot
 À l’intérieur de la méthode OnActivated, vous pouvez analyser les arguments que vous avez spécifiés dans le Toast et obtenir l’entrée utilisateur tapée ou sélectionnée par l’utilisateur, puis activer votre application en conséquence.
 
 > [!NOTE]
-> La méthode **OnActivated** n’est pas appelée sur le thread d’interface utilisateur. Si vous souhaitez exécuter des opérations de thread d’interface utilisateur, vous `Application.Current.Dispatcher.Invoke(callback)`devez appeler.
+> La méthode **OnActivated** n’est pas appelée sur le thread d’interface utilisateur. Si vous souhaitez exécuter des opérations de thread d’interface utilisateur, vous devez appeler `Application.Current.Dispatcher.Invoke(callback)` .
 
 ```csharp
 // The GUID must be unique to your app. Create a new GUID if copying this code.
@@ -297,7 +297,7 @@ public class MyNotificationActivator : NotificationActivator
 }
 ```
 
-Pour une prise en charge correcte du lancement de votre application, dans `App.xaml.cs` votre fichier, vous souhaiterez peut-être substituer la méthode **OnStartup** (pour les applications WPF) pour déterminer si vous êtes lancé à partir d’un toast ou non. S’il est lancé à partir d’un toast, il y aura un ARG de lancement de « -ToastActivated ». Quand vous voyez cela, vous devez arrêter d’exécuter tout code d’activation de lancement normal et autoriser le lancement de votre handle de code **OnActivated** .
+Pour une prise en charge correcte du lancement de votre application, dans votre `App.xaml.cs` fichier, vous souhaiterez peut-être substituer la méthode **OnStartup** (pour les applications WPF) pour déterminer si vous êtes lancé à partir d’un toast ou non. S’il est lancé à partir d’un toast, il y aura un ARG de lancement de « -ToastActivated ». Quand vous voyez cela, vous devez arrêter d’exécuter tout code d’activation de lancement normal et autoriser le lancement de votre handle de code **OnActivated** .
 
 ```csharp
 protected override async void OnStartup(StartupEventArgs e)
