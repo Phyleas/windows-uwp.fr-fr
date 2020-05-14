@@ -5,12 +5,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ee49b5fe5b5956e9069ea196c4d2e029b3a15763
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: e7d6ea614a9d85eadfcb807c6e6100dbe15ed0c4
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "68729520"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970734"
 ---
 # <a name="show-multiple-views-for-an-app"></a>Afficher plusieurs vues d’une application
 
@@ -32,11 +32,11 @@ Il existe de nombreux scénarios qui peuvent bénéficier de plusieurs vues. Voi
 
 Chaque disposition d'application est unique, mais nous vous recommandons d'inclure un bouton « nouvelle fenêtre » dans un emplacement prévisible, comme le coin supérieur droit du contenu, qui pourra être ouvert dans une nouvelle fenêtre. Envisagez également d’inclure une option de [menu contextuel](../controls-and-patterns/menus.md) pour « Ouvrir dans une nouvelle fenêtre ».
 
-Pour créer des instances distinctes de votre application (plutôt que des fenêtres distinctes pour la même instance), consultez [Créer une application UWP multi-instance](../../launch-resume/multi-instance-uwp.md).
+Pour créer des instances distinctes de votre application (plutôt que des fenêtres distinctes pour la même instance), consultez [Créer une application Windows multi-instance](../../launch-resume/multi-instance-uwp.md).
 
 ## <a name="windowing-hosts"></a>Hôtes de fenêtrage
 
-Il existe plusieurs manières d’héberger du contenu UWP dans une application.
+Il existe plusieurs manières d’héberger du contenu Windows dans une application.
 
 - [CoreWindow](/uwp/api/windows.ui.core.corewindow)/[ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview)
 
@@ -47,7 +47,7 @@ Il existe plusieurs manières d’héberger du contenu UWP dans une application.
     Pour savoir comment utiliser ApplicationView afin d'afficher des fenêtres secondaires dans votre application, consultez [Utiliser ApplicationView](application-view.md).
 - [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow)
 
-    AppWindow facilite la création d’applications UWP à plusieurs fenêtres, car il fonctionne sur le même thread d’interface utilisateur que celui sur lequel il a été créé.
+    AppWindow facilite la création d’applications Windows à plusieurs fenêtres, car il fonctionne sur le même thread d’interface utilisateur que celui sur lequel il a été créé.
 
     La classe AppWindow et les autres API de l’espace de noms [WindowManagement](/uwp/api/windows.ui.windowmanagement) sont disponibles à partir de Windows 10, version 1903 (SDK 18362). Si votre application cible des versions antérieures de Windows 10, vous devez utiliser ApplicationView pour créer des fenêtres secondaires.
 
