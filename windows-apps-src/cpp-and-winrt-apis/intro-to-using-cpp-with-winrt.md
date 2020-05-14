@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, introduction
 ms.localizationpriority: medium
-ms.openlocfilehash: 250e3626c5abee43cf3b8ca3320c78ec4f8f9751
-ms.sourcegitcommit: 7dcf74b11aa0cb2f3ff4ab10caf26ba769f96dfb
+ms.openlocfilehash: ddf2cd876ac629f4cb3c49e349e43dee8fdb0c7a
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/04/2020
-ms.locfileid: "80662396"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82730303"
 ---
 # <a name="introduction-to-cwinrt"></a>Introduction à C++/WinRT
 &nbsp;
@@ -29,11 +29,11 @@ C++/WinRT constitue le remplacement recommandé par Microsoft pour la projection
 ## <a name="language-projections"></a>Projections de langage
 Windows Runtime est basé sur les API COM (Component Object Model) et est conçu pour être accessible par le biais de *projections de langage*. Une projection masque les détails COM et fournit une expérience de programmation plus naturelle pour un langage donné.
 
-### <a name="the-cwinrt-language-projection-in-the-windows-uwp-api-reference-content"></a>La projection de langage C++/WinRT dans le contenu de référence des API UWP Windows
-Quand vous naviguez dans des [API UWP Windows](https://docs.microsoft.com/uwp/api/), cliquez sur la zone de liste **Langage** en haut à droite, puis sélectionnez **C++/WinRT** pour afficher les blocs de syntaxe d’API tels qu’ils apparaissent dans la projection de langage C++/WinRT.
+### <a name="the-cwinrt-language-projection-in-the-windows-runtime-api-reference-content"></a>La projection de langage C++/WinRT dans le contenu de référence des API Windows Runtime Windows
+Quand vous naviguez dans des [API Windows Runtime](https://docs.microsoft.com/uwp/api/), cliquez sur la zone de liste **Langage** en haut à droite, puis sélectionnez **C++/WinRT** pour afficher les blocs de syntaxe d’API tels qu’ils apparaissent dans la projection de langage C++/WinRT.
 
 ## <a name="visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package"></a>Prise en charge Visual Studio pour C++/WinRT, XAML, l’extension VSIX et le package NuGet
-Pour la prise en charge Visual Studio, vous aurez besoin de Visual Studio 2019 ou de Visual Studio 2017 (au moins la version 15.6 ; nous recommandons au moins la version 15.7). À partir de Visual Studio Installer, installez la charge de travail **Développement pour la plateforme Windows universelle**. Dans **Détails de l’installation** > **Développement pour la plateforme Windows universelle**, cochez la ou les options des **Outils de plateforme Windows universelle C++ (v14x)** , si vous ne l’avez pas déjà fait. Et, dans **Paramètres Windows** > **Mise à jour et Sécurité** > **Pour les développeurs**, choisissez l’option **Mode développeur** plutôt que l’option **Charger la version des applications de façon indépendante**.
+Pour la prise en charge Visual Studio, vous aurez besoin de Visual Studio 2019 ou de Visual Studio 2017 (au moins la version 15.6 ; nous recommandons au moins la version 15.7). À partir de Visual Studio Installer, installez la charge de travail **Développement pour la plateforme Windows universelle**. Dans **Détails de l’installation** > **Développement pour la plateforme Windows universelle**, cochez la ou les options des **Outils de plateforme Windows universelle C++ (v14x)** , si vous ne l’avez pas déjà fait. Et, dans **Paramètres Windows** > **Mise à jour et \&Sécurité** > **Pour les développeurs**, choisissez l’option **Mode développeur** plutôt que l’option **Charger la version des applications de façon indépendante**.
 
 Nous vous recommandons de développer à l’aide des dernières versions de Visual Studio et du SDK Windows. Toutefois, si vous utilisez une version de C++/WinRT fournie avec le SDK Windows antérieure à 10.0.17763.0 (Windows 10, version 1809), pour utiliser les en-têtes d’espace de noms Windows mentionnés ci-dessus, vous aurez besoin de la version cible minimale 10.0.17134.0 du SDK Windows (Windows 10, version 1803) dans votre projet.
 
@@ -151,4 +151,4 @@ Dans votre programmation C++/WinRT, vous pouvez utiliser les fonctionnalités de
 * [Prise en main de C++/WinRT](get-started.md)
 * [Types de données C++ standard et C++/WinRT](std-cpp-data-types.md)
 * [Gestion des chaînes en C++/WinRT](strings.md)
-* [API UWP Windows](https://docs.microsoft.com/uwp/api/)
+* [API Windows Runtime](https://docs.microsoft.com/uwp/api/)
