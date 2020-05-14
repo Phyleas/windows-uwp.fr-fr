@@ -3,19 +3,19 @@ title: Tailles d’écran et points d’arrêt pour la conception réactive
 description: Plutôt que d'optimiser votre interface utilisateur pour les nombreux appareils de l’écosystème Windows 10, nous vous recommandons de concevoir une application pour plusieurs catégories de largeurs principales appelées « points d’arrêt ».
 ms.date: 08/30/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 37d0ca71adf43891628a02d60d6873e7934d749b
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: f79b7247a7e1a1889c530a16c280f490db51042e
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79210175"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970744"
 ---
 #  <a name="screen-sizes-and-breakpoints"></a>Tailles d’écran et points d’arrêt
 
-Les applications UWP peuvent s’exécuter sur n’importe quel appareil exécutant Windows 10, y compris les téléphones, tablettes, ordinateurs de bureau, téléviseurs, etc. Avec un nombre considérable d’appareils ciblés et de tailles d’écran dans l’écosystème Windows 10, plutôt que d’optimiser votre interface utilisateur pour chaque appareil, nous vous recommandons de concevoir une application pour plusieurs catégories de largeurs principales (également appelées « points d’arrêt ») : 
+Les applications Windows peuvent s’exécuter sur n’importe quel appareil exécutant Windows, y compris les téléphones, tablettes, ordinateurs de bureau, téléviseurs, etc. Avec un nombre considérable d’appareils ciblés et de tailles d’écran dans l’écosystème Windows 10, plutôt que d’optimiser votre interface utilisateur pour chaque appareil, nous vous recommandons de concevoir une application pour plusieurs catégories de largeurs principales (également appelées « points d’arrêt ») : 
 - Petite (inférieure à 640 pixels)
 - Moyenne (641 à 1 007 pixels)
 - Grande (supérieure ou égale à 1008 pixels)
@@ -34,7 +34,7 @@ Ce tableau décrit les différentes classes de taille et les points d’arrêt.
 <th align="left">Classe de taille</th>
 <th align="left">Points d’arrêt</th>
 <th align="left">Taille d’écran standard (diagonale)</th>
-<th align="left">.</th>
+<th align="left">Périphériques</th>
 <th align="left">Tailles de fenêtre</th>
 </tr>
 </thead>

@@ -10,12 +10,12 @@ design-contact: rybick
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 9739933f9fd23c6f169c24c4f789e53ba894708d
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 8d969c5282fa03fb11d108d2b2c8e0fe44dfde49
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80696634"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968454"
 ---
 # <a name="acrylic-material"></a>Matière acrylique
 
@@ -36,7 +36,7 @@ Acrylique dans un thème foncé ![Acrylique dans un thème foncé](images/Acryli
 
 ## <a name="acrylic-and-the-fluent-design-system"></a>Acrylique et le système Fluent Design
 
- Le système Fluent Design vous aide à créer une interface utilisateur moderne et claire qui incorpore de la lumière, de la profondeur, du mouvement, des matières et une mise à l’échelle. Acrylique est un composant du système Fluent Design qui permet d’ajouter des textures physiques (matières) et de la profondeur à votre application. Pour en savoir plus, voir [Présentation de Fluent Design pour UWP](/windows/apps/fluent-design-system).
+ Le système Fluent Design vous aide à créer une interface utilisateur moderne et claire qui incorpore de la lumière, de la profondeur, du mouvement, des matières et une mise à l’échelle. Acrylique est un composant du système Fluent Design qui permet d’ajouter des textures physiques (matières) et de la profondeur à votre application. Pour plus d’informations, consultez [Vue d’ensemble de Fluent Design](/windows/apps/fluent-design-system).
 
  ## <a name="video-summary"></a>Résumé de la vidéo
 
@@ -102,7 +102,7 @@ En mode Contraste élevé, les utilisateurs continuent de voir la couleur d’ar
 
 En outre, seule l’acrylique en arrière-plan remplace sa translucidité et sa texture par une couleur unie :
  - Quand une fenêtre d’application sur le bureau se désactive
- - Lorsque l’application UWP s’exécute sur un téléphone, une Xbox, HoloLens ou en mode tablette
+ - Quand l’application Windows s’exécute sur un téléphone, une Xbox, HoloLens ou en mode tablette
 
 ### <a name="legibility-considerations"></a>Considérations relatives à la lisibilité
 Il est important de s’assurer que tout le texte présenté aux utilisateurs dans votre application est conforme à des [taux de contraste](../accessibility/accessible-text-requirements.md). Nous avons optimisé la recette acrylique afin que le texte noir, blanc ou même gris moyen respecte les taux de contraste par-dessus l’acrylique. Les ressources de thème fournies par la plateforme sont définies par défaut sur un contraste de couleur d’une opacité de 80 %. Lorsque vous placez un corps de texte hautement coloré sur l’acrylique, vous pouvez réduire l’opacité tout en préservant la lisibilité. En mode sombre, l’opacité de la teinte peut être de 70 %, tandis qu’en mode clair, l’acrylique présente des taux de contraste d’une opacité de 50 %.

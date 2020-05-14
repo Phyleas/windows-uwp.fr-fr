@@ -6,12 +6,12 @@ ms.topic: article
 keywords: prise en main, uwp, windows 10, piste d’apprentissage, fichiers, e/s de fichier, lire un fichier, écrire un fichier, créer un fichier, écrire du texte, lire du texte
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 1270d49cc8746b2793b1414306f9ee842cb40f40
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: c36f4885dffa86452543f05f5b7a59a882d25710
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82166245"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82730058"
 ---
 # <a name="work-with-files"></a>Utiliser des fichiers
 
@@ -26,7 +26,7 @@ Nous allons étudier le code qui permet d’écrire et de lire du texte dans un 
 Voici les principaux types que vous devez connaître pour lire ou écrire du texte dans un fichier :
 
 - [Windows.Storage.StorageFile](https://docs.microsoft.com/uwp/api/windows.storage.storagefile) représente un fichier. Cette classe a des propriétés qui fournissent des informations sur le fichier et les méthodes de création, d’ouverture, de copie, de suppression et de modification du nom des fichiers.
-Vous pouvez être habitué à gérer des chemins d’accès en chaîne. Certaines API UWP utilisent un chemin d’accès en chaîne, mais le plus souvent, vous utiliserez un **StorageFile** pour représenter un fichier, car certains fichiers que vous utilisez dans UWP ne disposent pas d’un chemin d’accès ou ont un chemin d’accès parfois difficile à gérer. Utilisez [StorageFile.GetFileFromPathAsync()](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getfilefrompathasync) pour convertir un chemin d’accès en chaîne en **StorageFile**. 
+Vous pouvez être habitué à gérer des chemins d’accès en chaîne. Certaines API Windows Runtime utilisent un chemin en chaîne, mais le plus souvent, vous utiliserez un **StorageFile** pour représenter un fichier, car certains fichiers que vous utilisez dans UWP ne disposent pas d’un chemin ou ont un chemin parfois difficile à gérer. Utilisez [StorageFile.GetFileFromPathAsync()](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getfilefrompathasync) pour convertir un chemin d’accès en chaîne en **StorageFile**. 
 
 - La classe [FileIO](https://docs.microsoft.com/uwp/api/windows.storage.fileio) offre un moyen simple pour lire et écrire du texte. Cette classe peut également lire/écrire un tableau d’octets ou le contenu d’une mémoire tampon. Cette classe est très similaire à la classe [PathIO](https://docs.microsoft.com/uwp/api/windows.storage.pathio). La principale différence est qu’au lieu d’utiliser un chemin d’accès en chaîne, comme le fait **PathIO**, elle utilise un **StorageFile**.
 - [Windows.Storage.StorageFolder](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder) représente un dossier (répertoire). Cette classe dispose de méthodes pour la création de fichiers, l’interrogation du contenu d’un dossier, la création, la modification du nom et la suppression des dossiers, ainsi que de propriétés qui fournissent des informations sur un dossier. 

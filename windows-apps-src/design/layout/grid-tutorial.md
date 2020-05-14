@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 9794a04d-e67f-472c-8ba8-8ebe442f6ef2
 ms.localizationpriority: medium
-ms.openlocfilehash: f7c5eb595f3347eb4670e4f7c0a50aa930341d3e
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 9848fc9e330a725f52ce2a7fae8b13f300476cf7
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74735034"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970194"
 ---
 # <a name="tutorial-use-grid-and-stackpanel-to-create-a-simple-weather-app"></a>Tutoriel : Utiliser Grid et StackPanel pour créer une application météo simple
 
@@ -120,6 +120,6 @@ C’est tout ! Vous venez de créer la disposition d’une application Météo 
 Si vous le souhaitez, testez la disposition ci-dessus et explorez les différentes façons de représenter des données météorologiques.
 
 ## <a name="related-articles"></a>Articles connexes
-Pour une introduction à la conception de dispositions d’application UWP, consultez [Introduction à la conception d’une application UWP](https://docs.microsoft.com/windows/uwp/layout/design-and-ui-intro).
+Pour une introduction à la conception de dispositions d’application Windows, consultez [Introduction à la conception d’une application Windows](https://docs.microsoft.com/windows/uwp/layout/design-and-ui-intro).
 
 Pour apprendre à créer des dispositions réactives adaptables à différentes tailles d’écran, consultez [Définir des dispositions de pages avec XAML](https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml).
