@@ -12,12 +12,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fe1389e3c3db28f834217b4f163c48633c32d14
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 68ca40a48b8b8d04bcd8b01584856233e9a99e7c
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "71340167"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970204"
 ---
 # <a name="boxpanel-an-example-custom-panel"></a>BoxPanel, exemple de panneau personnalisé
 
@@ -47,7 +47,7 @@ L’exemple `BoxPanel` fourni ici concerne un scénario spécifique. Pour des ra
 
 Commencez par dériver une classe personnalisée à partir de [**Panel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel). Le moyen le plus simple consiste sans doute à définir un fichier de code distinct pour cette classe, à l’aide des options de menu contextuel **Ajouter** | **Nouvel élément** | **Classe** pour un projet dans l’**Explorateur de solutions** de Microsoft Visual Studio. Nommez la classe (et le fichier) `BoxPanel`.
 
-Le fichier de modèle d’une classe ne commence pas par beaucoup d’instructions **using**, car il n’est pas destiné spécifiquement aux applications de plateforme Windows universelle (UWP). Commencez par ajouter des instructions **using**. Le fichier de modèle débute également par quelques instructions **using** dont vous n’aurez probablement pas besoin et que vous pouvez donc supprimer. Voici une liste d’instructions **using** qui peuvent résoudre des types dont vous aurez besoin pour du code de panneau personnalisé classique :
+Le fichier de modèle d’une classe ne commence pas par beaucoup d’instructions **using**, car il n’est pas destiné spécifiquement aux applications Windows. Commencez par ajouter des instructions **using**. Le fichier de modèle débute également par quelques instructions **using** dont vous n’aurez probablement pas besoin et que vous pouvez donc supprimer. Voici une liste d’instructions **using** qui peuvent résoudre des types dont vous aurez besoin pour du code de panneau personnalisé classique :
 
 ```CSharp
 using System;

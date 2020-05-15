@@ -1,24 +1,24 @@
 ---
 Description: Les fonctionnalités de conception universelle incluses dans chaque application UWP vous aident à créer des applications qui s’adaptent parfaitement à toute une gamme d’appareils.
-title: $$$Présentation de la conception des applications Windows pour la plateforme Windows universelle (UWP)
+title: Introduction à la conception d’applications Windows
 ms.assetid: 50A5605E-3A91-41DB-800A-9180717C1E86
 ms.date: 05/05/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 8568a4613b5bb62b98edc7edd302a42153e5e33b
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: d0e7ad60e8c709cf4a7b075b1d7307bbd61ed79c
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79209314"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969354"
 ---
 # <a name="introduction-to-uwp-app-design"></a>Présentation de la conception des applications UWP
 
 ![exemple d’application d'éclairage](images/introUWP-header.jpg)
 
-Le guide de conception pour la plateforme Windows universelle (UWP) est une ressource destinée à vous aider à concevoir et générer de belles applications abouties.
+Le guide de conception d’application Windows est une ressource destinée à vous aider à concevoir et créer de belles applications abouties.
 
 Il ne s’agit pas d’une liste de règles normatives, mais plutôt d’un document dynamique, conçu pour s’adapter à l’évolution de notre [système Fluent Design](/windows/apps/fluent-design-system) ainsi qu’aux besoins de notre communauté de développement d’applications.
 

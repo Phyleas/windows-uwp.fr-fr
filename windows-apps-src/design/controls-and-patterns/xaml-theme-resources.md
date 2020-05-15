@@ -11,12 +11,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f2097a35d87594251ed2c0a04be06ccdb705902f
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: fc05ce50c19a04d5b90d225746c9af6569f49bd3
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80249853"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970434"
 ---
 # <a name="xaml-theme-resources"></a>Ressources de thème XAML
 
@@ -57,7 +57,7 @@ Respectez ces recommandations quand vous définissez et que vous consommez vos p
 
 L’ensemble des couleurs pour les thèmes « Light », « Dark » et « HighContrast » constitue la *gamme de couleurs Windows* du code XAML. Que vous souhaitiez modifier les thèmes système ou appliquer un thème système à vos propres éléments XAML, vous devez maîtriser la structure des ressources de couleur.
 
-Pour plus d’informations sur la façon d’appliquer la couleur dans votre application UWP, consultez [Couleur dans les applications UWP](../style/color.md).
+Pour plus d’informations sur la façon d’appliquer la couleur dans votre application Windows, consultez [Couleur dans les applications Windows](../style/color.md).
 
 ### <a name="light-and-dark-theme-colors"></a>Couleurs des thèmes Light et Dark
 
@@ -147,7 +147,7 @@ Le tableau ci-dessous liste la clé, le nom simple et la représentation sous fo
 
 ### <a name="windows-system-high-contrast-colors"></a>Couleurs à contraste élevé du système Windows
 
-Outre l’ensemble des ressources fournies par l’infrastructure XAML, il existe un ensemble de valeurs de couleur dérivé de la palette du système Windows. Ces couleurs ne sont pas spécifiques aux applications Windows Runtime ou aux applications de plateforme Windows universelle (UWP). Toutefois, la majeure partie des ressources [Brush](/uwp/api/Windows.UI.Xaml.Media.Brush) XAML utilisent ces couleurs lorsque le système fonctionne (et lorsque l’application est en cours d’exécution) avec le thème « HighContrast ». L’infrastructure XAML fournit ces couleurs système en tant que ressources à clé. Les clés respectent le format d’attribution de noms : `SystemColor[name]Color`.
+Outre l’ensemble des ressources fournies par l’infrastructure XAML, il existe un ensemble de valeurs de couleur dérivé de la palette du système Windows. Ces couleurs ne sont pas spécifiques aux applications Windows Runtime ou aux applications Windows. Toutefois, la majeure partie des ressources [Brush](/uwp/api/Windows.UI.Xaml.Media.Brush) XAML utilisent ces couleurs lorsque le système fonctionne (et lorsque l’application est en cours d’exécution) avec le thème « HighContrast ». L’infrastructure XAML fournit ces couleurs système en tant que ressources à clé. Les clés respectent le format d’attribution de noms : `SystemColor[name]Color`.
 
 Le tableau suivant répertorie les couleurs système fournies par l’infrastructure XAML en tant qu’objets de ressources dérivés de la palette du système Windows. La colonne « Nom d’options d’ergonomie » indique le nom porté par la couleur dans les paramètres Windows. La colonne « Nom simple HighContrast » fournit une description en un mot de la façon dont la couleur est appliquée dans les contrôles XAML courants. Ce nom est utilisé dans le cadre de la convention d’affectation de noms aux pinceaux, que nous expliquons plus tard. La colonne « Valeur initiale par défaut » indique les valeurs que vous obtenez si le système ne s’exécute pas du tout en mode de contraste élevé.
 
@@ -224,7 +224,7 @@ Les styles ressemblent à ceci quand ils sont appliqués à un élément [TextBl
 <TextBlock Text="Caption" Style="{StaticResource CaptionTextBlockStyle}"/>
 ```
 
-Pour de l’aide sur l’utilisation de la gamme de caractères UWP dans votre application, consultez [Typographie dans les applications UWP](../style/typography.md).
+Pour de l’aide sur l’utilisation de la gamme de caractères Windows dans votre application, consultez [Typographie dans les applications Windows](../style/typography.md).
 
 ### <a name="basetextblockstyle"></a>BaseTextBlockStyle
 

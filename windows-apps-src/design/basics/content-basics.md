@@ -1,22 +1,22 @@
 ---
-Description: Vue d’ensemble des éléments d’interface utilisateur et modèles de page courants pour afficher le contenu dans votre application UWP.
-title: Informations de base relatives à la conception de contenu pour les applications de plateforme Windows universelle (UWP)
+Description: Vue d’ensemble des éléments d’interface utilisateur et modèles de page courants pour afficher le contenu dans votre application Windows.
+title: Notions de base de la conception de contenu pour les applications Windows
 ms.assetid: 3102530A-E0D1-4C55-AEFF-99443D39D567
 label: Content design basics
 template: detail.hbs
 op-migration-status: ready
 ms.date: 12/01/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e5b46223ea7dfa5e43b5a50a04a4c3f31307d49
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: fdb4f21c2837fdc201d9e9847541cfd2bf728468
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "63796328"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969344"
 ---
-# <a name="content-design-basics-for-uwp-apps"></a>Informations de base relatives à la conception de contenu pour les applications UWP
+# <a name="content-design-basics-for-windows-apps"></a>Notions de base de la conception de contenu pour les applications Windows
 
 Une application a principalement pour objet d’offrir un accès à un contenu. Dans la mesure où les applications répondent à des buts différents, leur contenu se présente sous de nombreuses formes : dans une application de retouche photo, la photo est le contenu ; dans une application de voyage, les cartes et les informations sur les destinations sont le contenu, et ainsi de suite. 
 
@@ -32,7 +32,7 @@ De nombreuses applications utilisent l’ensemble ou une partie de ces modèles 
 
 Les pages d’accueil, également connues sous le nom d’écrans bannière, apparaissent souvent au niveau supérieur d’une expérience d’application. La grande surface sert à exposer les applications, et plus particulièrement à mettre en avant le contenu que les utilisateurs peuvent vouloir parcourir et utiliser.
 
-### <a name="collections"></a>Collections
+### <a name="collections"></a>Regroupements
 
 ![galerie](images/content-basics/gridview.png)
 
@@ -90,9 +90,9 @@ Pour créer ces modèles de page, vous devez utiliser une combinaison d’élém
 <td align="left">Affiche des images. La vue symétrique permet d’afficher les images d’une collection, par exemple les photos d’un album ou les éléments d’une page de détails sur le produit, image par image.</td>
 </tr>
 <tr class="odd">
-<td align="left">Collections <br/><br/>
+<td align="left">Regroupements <br/><br/>
     <img src="images/content-basics/listview.png" alt="list view" /></td>
-<td align="left"><a href="../controls-and-patterns/lists.md">Mode Liste et mode Grille</a></td>
+<td align="left"><a href="../controls-and-patterns/lists.md">Mode Liste et affichage Grille</a></td>
 <td align="left">Présente les éléments dans une liste interactive ou une grille. Utilisez ces éléments pour permettre aux utilisateurs de sélectionner un film parmi une liste de nouveautés ou de gérer un inventaire.</td>
 </tr>
 <tr class="even">

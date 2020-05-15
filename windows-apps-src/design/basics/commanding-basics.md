@@ -1,25 +1,25 @@
 ---
-Description: Dans une application de plateforme Windows universelle (UWP), les éléments de commande sont les éléments d’interface utilisateur interactifs qui permettent à l’utilisateur d’effectuer des actions telles que l’envoi d’un message électronique, la suppression d’un élément ou l’envoi d’un formulaire.
-title: Informations de base relatives à la conception des commandes pour les applications de plateforme Windows universelle (UWP)
+Description: Dans une application Windows, les éléments de commande sont les éléments d’interface utilisateur interactifs qui permettent à l’utilisateur d’effectuer des actions telles que l’envoi d’un e-mail, la suppression d’un élément ou l’envoi d’un formulaire.
+title: Notions de base de la conception des commandes pour les applications Windows
 ms.assetid: 1DB48285-07B7-4952-80EF-02B57D4469F2
 label: Command design basics
 template: detail.hbs
 op-migration-status: ready
 ms.date: 11/01/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 6be51c274078d3b8db5ae50033bbf714ec4aa12a
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 26d649e5a27ae7eef0131964f5c277f3539da73f
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80081401"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969374"
 ---
-# <a name="command-design-basics-for-uwp-apps"></a>Informations de base relatives à la conception des commandes pour les applications UWP
+# <a name="command-design-basics-for-windows-apps"></a>Notions de base de la conception des commandes pour les applications Windows
 
-Dans une application de plateforme Windows universelle (UWP), les *éléments de commande* sont les éléments d’interface utilisateur interactifs qui permettent aux utilisateurs d’effectuer des actions, telles que l’envoi d’un e-mail, la suppression d’un élément ou l’envoi d’un formulaire. Les *interfaces de commande* sont constituées d’éléments de commande courants, des surfaces de commande qui les hébergent, des interactions qu’elles prennent en charge et des expériences proposées.
+Dans une application Windows, les *éléments de commande* sont les éléments d’interface utilisateur interactifs qui permettent aux utilisateurs d’effectuer des actions, telles que l’envoi d’un e-mail, la suppression d’un élément ou l’envoi d’un formulaire. Les *interfaces de commande* sont constituées d’éléments de commande courants, des surfaces de commande qui les hébergent, des interactions qu’elles prennent en charge et des expériences proposées.
 
 ## <a name="provide-the-best-command-experience"></a>Proposer la meilleure expérience de commande
 
@@ -33,7 +33,7 @@ Voici quelques expériences de commande courantes :
 - Ouverture, enregistrement et suppression de fichiers
 - Modification ou création de contenu
 
-Soyez créatif avec la conception de vos expériences de commande. Choisissez les appareils d’entrée pris en charge par votre application et la façon dont votre application répond à chaque appareil. Par la prise en charge du plus large éventail de fonctionnalités et de préférences, vous rendez votre application aussi utilisable, portable et accessible que possible (consultez [Conception des commandes pour les applications de plateforme Windows universelle (UWP)](../controls-and-patterns/commanding.md) pour plus de détails).
+Soyez créatif avec la conception de vos expériences de commande. Choisissez les appareils d’entrée pris en charge par votre application et la façon dont votre application répond à chaque appareil. Par la prise en charge du plus large éventail de fonctionnalités et de préférences, vous rendez votre application aussi utilisable, portable et accessible que possible (consultez [Conception de commandes pour les applications Windows](../controls-and-patterns/commanding.md) pour plus de détails).
 
 
 
@@ -43,7 +43,7 @@ When designing a command interface, the most important decision is choosing what
 
 ## <a name="choose-the-right-command-elements"></a>Choisir les éléments de commande appropriés
 
-L’utilisation d’éléments adéquats dans une interface de commande peut faire toute la différence entre une application intuitive et facile à utiliser, et une application dont l’utilisation est complexe et déroutante. Un ensemble complet d’éléments de commande est disponible dans la plateforme Windows universelle (UWP). Voici une liste de quelques-uns des éléments de commande UWP les plus courants.
+L’utilisation d’éléments adéquats dans une interface de commande peut faire toute la différence entre une application intuitive et facile à utiliser, et une application dont l’utilisation est complexe et déroutante. Un ensemble complet d’éléments de commande est disponible dans l’application Windows. Voici une liste de quelques-uns des éléments de commande UWP les plus courants.
 
 :::row:::
     :::column:::

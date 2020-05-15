@@ -6,16 +6,16 @@ ms.date: 04/19/2019
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 08853a201eff063b49dcc69d5827c9b54e324b75
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 5bcc7d45646651cdb60228a3c08123378eedb960
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684868"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970614"
 ---
 # <a name="control-size-and-density"></a>Taille et densité du contrôle
 
-Utilisez une combinaison de taille et de densité du contrôle pour optimiser votre application Universal Windows Platform (UWP) et fournir une expérience utilisateur qui convient le mieux pour les exigences de fonctionnalités et d’interaction de votre application.
+Utilisez une combinaison de taille et de densité du contrôle pour optimiser votre application Windows et fournir une expérience utilisateur qui convient le mieux pour les exigences de fonctionnalités et d’interaction de votre application.
 
 Par défaut, les applications UWP sont rendues avec une mise en page à faible densité (ou `Standard`). Toutefois, depuis WinUI 2.1, une option de mise en page à haute densité (ou `Compact`), pour une interface utilisateur riche en informations et des scénarios similaires spécialisés, est également prise en charge. Il est possible de la spécifier via une ressource de style de base (voir les exemples ci-dessous).
 
@@ -44,7 +44,7 @@ La *taille Fluent Standard* a été créée pour fournir un équilibre entre le 
 **La taille Standard est conçue pour prendre en charge les entrées tactiles et du pointeur.**
 
 > [!NOTE]
->Pour plus d’informations sur les pixels effectifs et la mise à l’échelle, consultez [Présentation de la conception des applications UWP](../basics/design-and-ui-intro.md#effective-pixels-and-scaling)
+>Pour plus d’informations sur les pixels effectifs et la mise à l’échelle, consultez [Présentation de la conception des applications Windows](../basics/design-and-ui-intro.md#effective-pixels-and-scaling)
 >
 > Pour plus d’informations sur la mise à l’échelle au niveau du système, consultez [Alignement, marge, remplissage](../layout/alignment-margin-padding.md).
 
@@ -96,7 +96,7 @@ Les exemples suivants montrent comment le style `Compact` peut être appliqué p
 
 ## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
 
-- [Exemple de galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) : affichez tous les contrôles XAML dans un format interactif.
+- [Exemple de Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) : tous les contrôles XAML dans un format interactif.
 
 ## <a name="related-articles"></a>Articles connexes
 

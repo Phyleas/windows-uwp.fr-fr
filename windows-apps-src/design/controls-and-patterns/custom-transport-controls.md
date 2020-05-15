@@ -8,18 +8,18 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 74735b15ec53cf04e33dcb850c6cb174082ac438
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 6f60880d29cb4d8344c63bd6fb8e710be4796912
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74257260"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969974"
 ---
 # <a name="create-custom-transport-controls"></a>Créer des contrôles de transport personnalisés
 
 
 
-MediaPlayerElement dispose de contrôles de transport XAML personnalisables permettant de gérer du contenu audio et vidéo dans une application de plateforme Windows universelle (UWP). Ici, nous démontrons comment personnaliser le modèle MediaTransportControls. Nous allons expliquer comment utiliser le menu de dépassement, ajouter un bouton personnalisé et modifier le curseur.
+MediaPlayerElement dispose de contrôles de transport XAML personnalisables permettant de gérer du contenu audio et vidéo dans une application Windows. Ici, nous démontrons comment personnaliser le modèle MediaTransportControls. Nous allons expliquer comment utiliser le menu de dépassement, ajouter un bouton personnalisé et modifier le curseur.
 
 > **API importantes** : [MediaPlayerElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement), [MediaPlayerElement.AreTransportControlsEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.aretransportcontrolsenabled), [MediaTransportControls](https://docs.microsoft.com/uwp/api/Windows.Media.SystemMediaTransportControls)
 

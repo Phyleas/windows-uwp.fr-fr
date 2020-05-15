@@ -12,12 +12,12 @@ dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 6b85177e5d3d0f4a2a37010ba9122861216a4b6b
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 9388df4159d7e9acd68c75163465339183b41314
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80081961"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968794"
 ---
 # <a name="command-bar-flyout"></a>Menu volant de barre de commandes
 
@@ -36,7 +36,7 @@ Le menu volant de barre de commandes a deux modes d’affichage : *réduit* et 
 
 |  |  |
 | - | - |
-| ![Logo WinUI](images/winui-logo-64x64.png) | Le contrôle **CommandBarFlyout** est inclus dans la bibliothèque d’interface utilisateur Windows, package NuGet qui contient les nouveaux contrôles et fonctionnalités d’interface utilisateur pour les applications UWP. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![Logo WinUI](images/winui-logo-64x64.png) | Le contrôle **CommandBarFlyout** est inclus dans la bibliothèque d’interface utilisateur Windows, package NuGet qui contient les nouveaux contrôles et fonctionnalités d’interface utilisateur pour les applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
 >**API de la bibliothèque d’interface utilisateur Windows** : [classe CommandBarFlyout](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout), [classe TextCommandBarFlyout](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout)
 >
@@ -417,5 +417,5 @@ TextCommandBarFlyout ne peut pas être personnalisé et est géré automatiqueme
 
 ## <a name="related-articles"></a>Articles connexes
 
-- [Notions de base de la conception des commandes pour les applications UWP](../basics/commanding-basics.md)
+- [Notions de base de la conception des commandes pour les applications Windows](../basics/commanding-basics.md)
 - [Classe CommandBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar)

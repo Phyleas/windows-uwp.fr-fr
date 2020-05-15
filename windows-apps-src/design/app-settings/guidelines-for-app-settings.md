@@ -6,18 +6,18 @@ label: Guidelines
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c08dad36929c7889f1896404df862230040e3499
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 9c35bc6cfcf36543482bcb42d0ccda7fd3102ac9
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "72163703"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970034"
 ---
 # <a name="guidelines-for-app-settings"></a>Recommandations en matière de paramètres de l’application
 
-Les paramètres de l’application sont les parties de votre application de plateforme Windows universelle (UWP) que l’utilisateur peut personnaliser, accessible via une page de paramètres d’application. Par exemple, une application de lecteur de flux d’actualités peut permettre à l’utilisateur de spécifier les sources d’informations à afficher ou le nombre de colonnes à présenter à l’écran, tandis qu’une application météo peut offrir à l’utilisateur la possibilité de choisir entre les unités de mesure Celsius et Fahrenheit par défaut. Cet article décrit les meilleures pratiques et propose des recommandations pour créer et afficher des paramètres d’application.
+Les paramètres de l’application sont les parties de votre application Windows que l’utilisateur peut personnaliser, accessible via une page de paramètres d’application. Par exemple, une application de lecteur de flux d’actualités peut permettre à l’utilisateur de spécifier les sources d’informations à afficher ou le nombre de colonnes à présenter à l’écran, tandis qu’une application météo peut offrir à l’utilisateur la possibilité de choisir entre les unités de mesure Celsius et Fahrenheit par défaut. Cet article décrit les meilleures pratiques et propose des recommandations pour créer et afficher des paramètres d’application.
 
 ## <a name="when-to-provide-a-settings-page"></a>À quel moment proposer une page de paramètres ?
 
@@ -124,11 +124,11 @@ Une fois que vous avez répertorié les éléments à inclure dans votre page de
 - Présentez le contenu de haut en bas dans une seule colonne que l’utilisateur pourra faire défiler, si nécessaire. Limitez le défilement à un maximum de deux fois la hauteur de l’écran.
 - Utilisez les contrôles suivants pour les paramètres d’application :
 
-    - [Boutons bascule](../controls-and-patterns/toggles.md) : pour permettre aux utilisateurs de définir des valeurs Activé ou Désactivé.
-    - [Cases d’option](../controls-and-patterns/radio-button.md) : pour permettre à l’utilisateur de choisir un élément dans un ensemble de 5 options au maximum ayant un lien entre elles, mais mutuellement exclusives.
-    - [Zone de texte](../controls-and-patterns/text-block.md) : pour permettre aux utilisateurs d’entrer du texte. Utilisez le type de zone de texte qui correspond au type de texte que vous obtenez de l’utilisateur, tel qu’un message électronique ou un mot de passe.
-    - [Liens hypertexte](../controls-and-patterns/hyperlinks.md) : pour diriger l’utilisateur vers une autre page de l’application ou un site Web externe. Quand un utilisateur clique sur un lien hypertexte, le menu volant des paramètres se ferme.
-    - [Boutons](../controls-and-patterns/buttons.md) : pour permettre aux utilisateurs de lancer une action immédiate sans quitter le menu volant des paramètres actuel.
+    - [Boutons bascule](../controls-and-patterns/toggles.md) : permettent aux utilisateurs de définir des valeurs Activé ou Désactivé.
+    - [Cases d’option](../controls-and-patterns/radio-button.md) : permettent à l’utilisateur de choisir un élément dans un ensemble maximal de 5 options ayant un lien entre elles, mais mutuellement exclusives.
+    - [Zone de texte](../controls-and-patterns/text-block.md) : permet aux utilisateurs d’entrer du texte. Utilisez le type de zone de texte qui correspond au type de texte que vous obtenez de l’utilisateur, tel qu’un message électronique ou un mot de passe.
+    - [Liens hypertexte](../controls-and-patterns/hyperlinks.md) : dirigent l’utilisateur vers une autre page de l’application ou vers un site web externe. Quand un utilisateur clique sur un lien hypertexte, le menu volant des paramètres se ferme.
+    - [Boutons](../controls-and-patterns/buttons.md) : permettent aux utilisateurs de lancer une action immédiate sans quitter l’actuel menu volant des paramètres.
 - Ajoutez un message descriptif si l’un des contrôles est désactivé. Placez ce message au-dessus du contrôle désactivé.
 - Une fois l’animation du menu volant Paramètres et de l’en-tête terminée, animez le contenu et les contrôles dans un bloc unique. Animez le contenu à l’aide des animations [**enterPage**](https://docs.microsoft.com/previous-versions/windows/apps/br212672(v=win.10)) ou [**EntranceThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) avec un décalage gauche de 100 px.
 - Utilisez des en-têtes de section, des paragraphes et des étiquettes pour vous aider à organiser et clarifier le contenu, si nécessaire.

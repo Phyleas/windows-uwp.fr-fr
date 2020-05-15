@@ -1,19 +1,19 @@
 ---
-title: Utilisation des commandes dans les applications de plateforme Windows universelle (UWP)
+title: Conception de commandes dans les applications Windows
 description: Comment utiliser les classes XamlUICommand et StandardUICommand (ainsi que l’interface ICommand) pour partager et gérer les commandes entre les différents types de contrôles, quels que soient l’appareil et le type d’entrée utilisés.
 ms.service: ''
 ms.topic: overview
 ms.date: 09/13/2019
-ms.openlocfilehash: 2ad2a84a78006eafcdfa47d1faef533bea2224ff
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 24df2f6c67fe5a501461d5ce5e9c18a147c54672
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81123605"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968764"
 ---
-# <a name="commanding-in-universal-windows-platform-uwp-apps-using-standarduicommand-xamluicommand-and-icommand"></a>Utilisation des commandes dans les applications de plateforme Windows universelle (UWP) à l’aide de StandardUICommand, XamlUICommand et ICommand
+# <a name="commanding-in-windows-app-apps-using-standarduicommand-xamluicommand-and-icommand"></a>Conception de commandes dans les applications Windows à l’aide de StandardUICommand, XamlUICommand et ICommand
 
-Dans cette rubrique, nous décrivons l’utilisation des commandes dans les applications de plateforme Windows universelle (UWP). Nous expliquons particulièrement comment utiliser les classes [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) et [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) (ainsi que l’interface ICommand) pour partager et gérer les commandes entre les différents types de contrôles, quels que soient l’appareil et le type d’entrée utilisés.
+Dans cette rubrique, nous décrivons la conception de commandes dans les applications Windows. Nous expliquons particulièrement comment utiliser les classes [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) et [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) (ainsi que l’interface ICommand) pour partager et gérer les commandes entre les différents types de contrôles, quels que soient l’appareil et le type d’entrée utilisés.
 
 ![Diagramme illustrant l’utilisation courante d’une commande partagée : plusieurs surfaces d’interface utilisateur avec une commande « favori »](images/commanding/generic-commanding.png)
 
@@ -62,14 +62,14 @@ Le tableau suivant présente certaines commandes et certains modes de collection
 | ---------------- | -------------- | ----------------- | -------------------- | ----------------- |
 | Supprimer l’élément      | Menu contextuel   | Bouton sensitif      | Touche Suppr              | Balayer pour supprimer   |
 | Marquer l’élément        | Menu contextuel   | Bouton sensitif      | Ctrl + Maj + G         | Balayer pour marquer     |
-| Actualiser les données     | Menu contextuel   | N/A               | Touche F5               | Tirer pour actualiser   |
+| Actualiser les données     | Menu contextuel   | NON APPLICABLE               | Touche F5               | Tirer pour actualiser   |
 | Mettre un élément en favori | Menu contextuel   | Bouton sensitif      | F, Ctrl + S            | Balayer pour mettre en favori |
 
 **Fournissez toujours un menu contextuel** Nous vous recommandons d’inclure toutes les commandes contextuelles pertinentes dans un menu contextuel traditionnel ou un CommandBarFlyout, les deux étant pris en charge pour tous les types d’entrée. Par exemple, si une commande est exposée uniquement pendant un événement de pointage, elle ne peut pas être utilisée sur un appareil uniquement tactile.
 
-## <a name="commands-in-uwp-applications"></a>Commandes dans les applications UWP
+## <a name="commands-in-windows-applications"></a>Commandes dans les applications Windows
 
-Il existe plusieurs façons de partager et gérer des expériences d’utilisation de commandes dans une application UWP. Vous pouvez définir des gestionnaires d’événements pour les interactions standard, comme Click, dans le code-behind (cela peut être très inefficace, selon la complexité de votre interface utilisateur), vous pouvez lier le détecteur d’événements pour les interactions standard à un gestionnaire partagé ou vous pouvez lier la propriété Command du contrôle à une implémentation d’ICommand qui décrit la logique de la commande.
+Il existe plusieurs façons de partager et gérer des expériences d’utilisation de commandes dans une application Windows. Vous pouvez définir des gestionnaires d’événements pour les interactions standard, comme Click, dans le code-behind (cela peut être très inefficace, selon la complexité de votre interface utilisateur), vous pouvez lier le détecteur d’événements pour les interactions standard à un gestionnaire partagé ou vous pouvez lier la propriété Command du contrôle à une implémentation d’ICommand qui décrit la logique de la commande.
 
 Pour fournir des expériences utilisateur riches et complètes sur les surfaces de commande efficacement et avec une duplication de code minimale, utilisez de préférence les fonctionnalités de liaison de commande décrites dans cette rubrique (pour la gestion des événements standard, consultez la rubrique consacrée à l’événement concerné).
 
@@ -241,7 +241,7 @@ public class ListItemData
 }
 ```
 
-2. Dans la classe MainPage, nous définissons une collection d’objets `ListItemData` pour le [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.datatemplate) de l’[ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) du [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate). Ensuite, nous la remplissons avec une collection initiale de cinq éléments (avec du texte et la commande de suppression [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) associée).
+2. Dans la classe MainPage, nous définissons une collection d’objets `ListItemData` pour le [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.datatemplate) de l’[ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) du [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview). Ensuite, nous la remplissons avec une collection initiale de cinq éléments (avec du texte et la commande de suppression [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) associée).
 
 ```csharp
 /// <summary>
@@ -540,7 +540,7 @@ public class ListItemData
 }
 ```
 
-2. Dans la classe MainPage, nous définissons une collection d’objets `ListItemData` pour le [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.datatemplate) de l’[ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) du [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate). Ensuite, nous la remplissons avec une collection initiale de cinq éléments (avec du texte et la commande [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) associée).
+2. Dans la classe MainPage, nous définissons une collection d’objets `ListItemData` pour le [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.datatemplate) de l’[ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) du [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview). Ensuite, nous la remplissons avec une collection initiale de cinq éléments (avec du texte et la commande [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) associée).
 
 ```csharp
 ObservableCollection<ListItemData> collection = new ObservableCollection<ListItemData>();
@@ -614,7 +614,7 @@ private void ListViewSwipeContainer_PointerExited(object sender, PointerRoutedEv
 
 ## <a name="command-experiences-using-the-icommand-interface"></a>Expériences de commande à l’aide de l’interface ICommand
 
-Les contrôles UWP standard (bouton, liste, sélection, calendrier, texte prédictif) fournissent la base de nombreuses expériences de commande courantes. Pour obtenir la liste complète des types de contrôle, consultez [Contrôles et modèles pour applications UWP](index.md).
+Les contrôles UWP standard (bouton, liste, sélection, calendrier, texte prédictif) fournissent la base de nombreuses expériences de commande courantes. Pour obtenir la liste complète des types de contrôle, consultez [Contrôles et modèles pour applications Windows](index.md).
 
 La façon la plus simple de prendre en charge une expérience d’utilisation de commandes structurée consiste à définir une implémentation de l’interface ICommand ([Windows.UI.Xaml.Input.ICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand) pour C++ ou [System.Windows.Input.ICommand](https://docs.microsoft.com/dotnet/api/system.windows.input.icommand) pour C#).  Cette instance ICommand peut ensuite être liée à des contrôles tels que des boutons.
 
@@ -1087,7 +1087,7 @@ namespace UICommand1
 
 La plateforme Windows universelle fournit un système d’utilisation de commandes robuste et flexible avec lequel vous pouvez générer des applications qui partagent et gèrent des commandes entre des types de contrôle, des appareils et des types d’entrée.
 
-Utilisez les approches suivantes quand vous générez des commandes pour vos applications UWP :
+Utilisez les approches suivantes quand vous générez des commandes pour vos applications Windows :
 
 - Écouter et gérer les événements dans XAML/code-behind
 - Lier à une méthode de gestion d’événement comme Click
@@ -1101,7 +1101,7 @@ Pour obtenir une illustration complète d’une implémentation de [XamlUIComman
 
 ## <a name="see-also"></a>Voir aussi
 
-[Contrôles et modèles pour applications UWP](index.md)
+[Contrôles et modèles pour applications Windows](index.md)
 
 ### <a name="samples"></a>exemples
 
