@@ -12,18 +12,18 @@ dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 9388df4159d7e9acd68c75163465339183b41314
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: bdd18fea2fe563fcee835e6b61e24d6a9b03d029
+ms.sourcegitcommit: f945df77f8a19961ba053ee62e593ec8e015038f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968794"
+ms.locfileid: "82989819"
 ---
 # <a name="command-bar-flyout"></a>Menu volant de barre de commandes
 
 Le menu volant de barre de commandes vous permet de fournir aux utilisateurs un accès facile aux tâches courantes en affichant les commandes dans une barre d’outils flottante liée à un élément sur le canevas de l’interface utilisateur.
 
-![Menu volant de barre de commandes de texte développé](images/command-bar-flyout-header.png)
+![Menu volant de barre de commandes de texte développé](images/command-bar-flyout-text-full.png)
 
 Comme [CommandBar](app-bars.md), CommandBarFlyout a des propriétés **PrimaryCommands** et **SecondaryCommands** que vous pouvez utiliser pour ajouter des commandes. Vous pouvez placer des commandes dans une des collections ou dans les deux. Le mode d’affichage détermine à quel moment et comment les commandes principales et secondaires sont affichées.
 
