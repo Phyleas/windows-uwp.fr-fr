@@ -506,7 +506,7 @@ Voici les différents endroits où une fonctionnalité C++/WinRT attend un type 
 
 ## <a name="opt-in-to-uniform-construction-and-direct-implementation-access"></a>Accepter la construction uniforme et l'accès à l’implémentation direct
 
-Cette section décrit une fonctionnalité C++/WinRT 2.0 approuvée, bien qu’elle soit activée par défaut pour les nouveaux projets. Pour un projet existant, vous devez accepter en configurant l’outil `cppwinrt.exe`. Dans Visual Studio, définissez la propriété du projet **Propriétés communes** > **C++/WinRT** > **Optimisé** sur *Oui*. `<CppWinRTOptimized>true</CppWinRTOptimized>` est alors ajouté à votre fichier projet. Cela revient à ajouter le commutateur lors de l’appel de `cppwinrt.exe` à partir de la ligne de commande.
+Cette section décrit une fonctionnalité C++/WinRT 2.0 approuvée, bien qu’elle soit activée par défaut pour les nouveaux projets. Pour un projet existant, vous devez accepter en configurant l’outil `cppwinrt.exe`. Dans Visual Studio, affectez *Oui* à la propriété de projet **Propriétés communes** > **C++/WinRT** > **Optimisé**. `<CppWinRTOptimized>true</CppWinRTOptimized>` est alors ajouté à votre fichier projet. Cela revient à ajouter le commutateur lors de l’appel de `cppwinrt.exe` à partir de la ligne de commande.
 
 Le commutateur `-opt[imize]` active ce qu'on appelle souvent une *construction uniforme*. Une construction uniforme (ou *unifiée*) vous permet d'utiliser la projection du langage C++/WinRT pour créer et utiliser vos types d'implémentation (types implémentés par votre composant, à des fins de consommation par les applications) efficacement et sans difficultés de chargement.
 

@@ -164,7 +164,7 @@ Votre projet étant configuré pour utiliser des îlots XAML UWP, vous pouvez aj
             Title="MainWindow" Height="800" Width="800">
     ```
 
-3. Dans le fichier **MainWindow.xaml**, remplacez l’élément `<Grid>` existant par le code XAML suivant. Ce code XAML ajoute à l’élément [ un contrôle ](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)InkCanvas[ et un contrôle ](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar)InkToolbar **(préfixés par le mot clé**Controls`<Grid>` que vous avez défini en tant qu’espace de noms).
+3. Dans le fichier **MainWindow.xaml**, remplacez l’élément `<Grid>` existant par le code XAML suivant. Ce code XAML ajoute à l’élément `<Grid>` un contrôle [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) et un contrôle [InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) (préfixés par le mot clé **Controls** que vous avez défini en tant qu’espace de noms).
 
     ```xml
     <Grid Margin="10,50,10,10">
