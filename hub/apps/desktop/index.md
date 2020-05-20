@@ -7,12 +7,12 @@ keywords: développement d’applications de bureau Win32 pour Windows
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: c27826980127674b4a4356af8a3c36056e86bd83
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: 5a55a1578fba7052396ecec725db2678ea8bd6ff
+ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74056857"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83580016"
 ---
 # <a name="build-desktop-apps-for-windows-pcs"></a>Créer des applications de bureau pour les PC Windows
 
@@ -62,6 +62,9 @@ Le tableau suivant présente les plateformes. Pour une comparaison détaillée d
 </tr>
 </tbody>
 </table>
+
+> [!NOTE]
+> Toutes ces plateformes d’application fournissent un framework d’interface utilisateur et un ensemble de contrôles d’interface utilisateur complets qui vous permettent de créer des applications de bureau telles que Word, Excel et Photoshop qui s’exécutent sur le bureau Windows classique et tirent pleinement parti des fonctionnalités propres à cet environnement. Sur Windows 10, chacune de ces plateformes prend également en charge l’utilisation de la bibliothèque d’interface utilisateur Windows (WinUI) pour créer son interface utilisateur. Pour plus d’informations sur WinUI pour les applications de bureau, consultez [cette section](choose-your-platform.md#windows-ui-library).
 
 ## <a name="update-existing-desktop-apps-for-windows-10"></a>Mettre à jour les applications de bureau existantes pour Windows 10
 

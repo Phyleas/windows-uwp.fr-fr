@@ -7,72 +7,105 @@
           href: desktop/index.md
         - name: Choisir votre plateforme d’application
           href: desktop/choose-your-platform.md
-    - name: Moderniser vos applications de bureau
+        - name: Moderniser vos applications de bureau
+          items:
+            - name: Vue d’ensemble
+              href: desktop/modernize/index.md
+            - name: Appeler des API Windows Runtime
+              items:
+                - name: Vue d’ensemble
+                  href: desktop/modernize/desktop-to-uwp-enhance.md
+                - name: API Windows Runtime disponibles
+                  href: desktop/modernize/desktop-to-uwp-supported-api.md
+            - name: Héberger des contrôles XAML UWP (XAML Islands)
+              items:
+                - name: Vue d’ensemble
+                  href: desktop/modernize/xaml-islands.md
+                - name: XAML Islands dans les applications WPF et Windows Forms
+                  items:
+                    - name: Héberger un contrôle UWP standard
+                      href: desktop/modernize/host-standard-control-with-xaml-islands.md
+                    - name: Héberger un contrôle UWP personnalisé
+                      href: desktop/modernize/host-custom-control-with-xaml-islands.md
+                - name: XAML Islands dans les applications Win32 C++
+                  items:
+                    - name: Utilisation de l’API d’hébergement XAML UWP
+                      href: desktop/modernize/using-the-xaml-hosting-api.md
+                    - name: Héberger un contrôle UWP standard
+                      href: desktop/modernize/host-standard-control-with-xaml-islands-cpp.md
+                    - name: Héberger un contrôle UWP personnalisé
+                      href: desktop/modernize/host-custom-control-with-xaml-islands-cpp.md
+                    - name: Scénarios avancés
+                      href: desktop/modernize/advanced-scenarios-xaml-islands-cpp.md
+            - name: Utilisation de la couche Visuel (Windows.UI.Composition)
+              items:
+                - name: Vue d’ensemble
+                  href: desktop/modernize/visual-layer-in-desktop-apps.md
+                - name: WPF
+                  href: desktop/modernize/using-the-visual-layer-with-wpf.md
+                - name: Windows Forms
+                  href: desktop/modernize/using-the-visual-layer-with-windows-forms.md
+                - name: Win32
+                  href: desktop/modernize/using-the-visual-layer-with-win32.md
+            - name: Fonctionnalités nécessitant l’identité du package
+              items:
+                - name: Vue d’ensemble
+                  href: desktop/modernize/modernize-packaged-apps.md
+                - name: Intégrer avec des extensions de package
+                  href: desktop/modernize/desktop-to-uwp-extensions.md
+                - name: Étendre à l’aide de composants UWP
+                  href: desktop/modernize/desktop-to-uwp-extend.md
+                - name: Distribuer votre application empaquetée
+                  href: desktop/modernize/desktop-to-uwp-distribute.md
+            - name: "Tutoriel\_: Moderniser une application WPF"
+              items:
+                - name: Vue d’ensemble
+                  href: desktop/modernize/modernize-wpf-tutorial.md
+                - name: "Effectuer une migration de l'application Contoso Expenses vers .NET Core\_3"
+                  href: desktop/modernize/modernize-wpf-tutorial-1.md
+                - name: Ajouter un contrôle InkCanvas UWP à l’aide d'îles XAML
+                  href: desktop/modernize/modernize-wpf-tutorial-2.md
+                - name: Ajouter un contrôle CalendarView UWP à l’aide d'îles XAML
+                  href: desktop/modernize/modernize-wpf-tutorial-3.md
+                - name: "Ajouter des activités et des notifications utilisateur Windows\_10"
+                  href: desktop/modernize/modernize-wpf-tutorial-4.md
+                - name: Créer un package et déployer avec MSIX
+                  href: desktop/modernize/modernize-wpf-tutorial-5.md
+            - name: Accorder une identité à des applications de bureau non empaquetées
+              href: desktop/modernize/grant-identity-to-nonpackaged-apps.md
+    - name: Bibliothèque d’interface utilisateur Windows (WinUI)
       items:
         - name: Vue d’ensemble
-          href: desktop/modernize/index.md
-        - name: Appeler des API Windows Runtime
+          href: winui/index.md
+        - name: "Bibliothèque d’interface utilisateur Windows\_3.0 Preview\_1"
           items:
-            - name: Vue d’ensemble
-              href: desktop/modernize/desktop-to-uwp-enhance.md
-            - name: API Windows Runtime disponibles
-              href: desktop/modernize/desktop-to-uwp-supported-api.md
-        - name: Héberger des contrôles XAML UWP (XAML Islands)
+            - name: Téléchargement et notes de publication
+              href: winui/winui3/index.md
+            - name: "Bien démarrer avec WinUI\_3.0 pour les applications de bureau"
+              href: winui/winui3/get-started-winui3-for-desktop.md
+        - name: "Bibliothèque Windows UI\_2.x"
+          href: winui/winui2/index.md
           items:
-            - name: Vue d’ensemble
-              href: desktop/modernize/xaml-islands.md
-            - name: XAML Islands dans les applications WPF et Windows Forms
+            - name: Installation
               items:
-                - name: Héberger un contrôle UWP standard
-                  href: desktop/modernize/host-standard-control-with-xaml-islands.md
-                - name: Héberger un contrôle UWP personnalisé
-                  href: desktop/modernize/host-custom-control-with-xaml-islands.md
-            - name: XAML Islands dans les applications Win32 C++
+                - name: Prendre en main
+                  href: winui/winui2/getting-started.md
+                - name: Liste de packages NuGet
+                  href: winui/winui2/nuget-packages.md
+            - name: Notes de publication
               items:
-                - name: Utilisation de l’API d’hébergement XAML UWP
-                  href: desktop/modernize/using-the-xaml-hosting-api.md
-                - name: Héberger un contrôle UWP standard
-                  href: desktop/modernize/host-standard-control-with-xaml-islands-cpp.md
-                - name: Héberger un contrôle UWP personnalisé
-                  href: desktop/modernize/host-custom-control-with-xaml-islands-cpp.md
-                - name: Scénarios avancés
-                  href: desktop/modernize/advanced-scenarios-xaml-islands-cpp.md
-        - name: Utilisation de la couche Visuel (Windows.UI.Composition)
-          items:
-            - name: Vue d’ensemble
-              href: desktop/modernize/visual-layer-in-desktop-apps.md
-            - name: WPF
-              href: desktop/modernize/using-the-visual-layer-with-wpf.md
-            - name: Windows Forms
-              href: desktop/modernize/using-the-visual-layer-with-windows-forms.md
-            - name: Win32
-              href: desktop/modernize/using-the-visual-layer-with-win32.md
-        - name: Fonctionnalités nécessitant l’identité du package
-          items:
-            - name: Vue d’ensemble
-              href: desktop/modernize/modernize-packaged-apps.md
-            - name: Intégrer avec des extensions de package
-              href: desktop/modernize/desktop-to-uwp-extensions.md
-            - name: Étendre à l’aide de composants UWP
-              href: desktop/modernize/desktop-to-uwp-extend.md
-            - name: Distribuer votre application empaquetée
-              href: desktop/modernize/desktop-to-uwp-distribute.md
-        - name: "Tutoriel\_: Moderniser une application WPF"
-          items:
-            - name: Vue d’ensemble
-              href: desktop/modernize/modernize-wpf-tutorial.md
-            - name: "Effectuer une migration de l'application Contoso Expenses vers .NET Core\_3"
-              href: desktop/modernize/modernize-wpf-tutorial-1.md
-            - name: Ajouter un contrôle InkCanvas UWP à l’aide d'îles XAML
-              href: desktop/modernize/modernize-wpf-tutorial-2.md
-            - name: Ajouter un contrôle CalendarView UWP à l’aide d'îles XAML
-              href: desktop/modernize/modernize-wpf-tutorial-3.md
-            - name: "Ajouter des activités et des notifications utilisateur Windows\_10"
-              href: desktop/modernize/modernize-wpf-tutorial-4.md
-            - name: Créer un package et déployer avec MSIX
-              href: desktop/modernize/modernize-wpf-tutorial-5.md
-        - name: Accorder une identité à des applications de bureau non empaquetées
-          href: desktop/modernize/grant-identity-to-nonpackaged-apps.md
+                - name: Vue d’ensemble
+                  href: winui/winui2/release-notes/index.md
+                - name: "WinUI\_2.4"
+                  href: winui/winui2/release-notes/winui-2.4.md
+                - name: "WinUI\_2.3"
+                  href: winui/winui2/release-notes/winui-2.3.md
+                - name: "WinUI\_2.2"
+                  href: winui/winui2/release-notes/winui-2.2.md
+                - name: "WinUI\_2.1"
+                  href: winui/winui2/release-notes/winui-2.1.md
+                - name: "WinUI\_2.0"
+                  href: winui/winui2/release-notes/winui-2.0.md
     - name: "Développement pour Windows\_10X"
       items:
         - name: "Questions fréquentes (FAQ) sur le développement Windows\_10X"
@@ -87,3 +120,5 @@
       href: features-and-technologies.md
     - name: Dernières mises à jour de la documentation
       href: whats-new/latest-doc-updates.md
+    - name: "Documentation relative à Microsoft Build\_2020"
+      href: whats-new/build2020-docs.md

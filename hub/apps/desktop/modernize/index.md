@@ -6,12 +6,12 @@ ms.date: 04/17/2019
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: b966d00455bce390457e148c60b57296375ac2fa
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: 86586cfc0f054181f08cd3cd75731e6c53ea4b92
+ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82730240"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83579926"
 ---
 # <a name="modernize-your-desktop-apps"></a>Moderniser vos applications de bureau
 
@@ -21,6 +21,17 @@ Cet article décrit les fonctionnalités Windows 10 et UWP que vous pouvez util
 
 > [!NOTE]
 > Avez-vous besoin d’aide pour migrer vos applications de bureau vers Windows 10 ? Le service [Soutien aux applications du bureau](https://docs.microsoft.com/FastTrack/win-10-desktop-app-assure) fournit gratuitement un support direct aux développeurs souhaitant migrer leurs applications vers Windows 10. Ce programme est mis à la disposition de tous les ISV et toutes les entreprises éligibles. Pour plus d’informations sur les critères d’éligibilité et sur le programme lui-même, consultez [https://docs.microsoft.com/fasttrack/win-10-app-assure-assistance-offered](https://docs.microsoft.com/fasttrack/win-10-app-assure-assistance-offered). Pour démarrer maintenant, [envoyez votre demande](https://fasttrack.microsoft.com/dl/daa).
+
+## <a name="windows-ui-library"></a>Bibliothèque d’IU Windows
+
+La bibliothèque d’interface utilisateur Windows est un ensemble de packages NuGet qui fournissent des contrôles et autres éléments d’interface utilisateur pour les applications Windows 10. WinUI était initialement une boîte à outils qui offrait des versions nouvelles et mises à jour des contrôles UWP pour les applications UWP ciblant des versions de bas niveau de Windows 10. WinUI s’est depuis étendue et est devenue la plateforme d’interface utilisateur native moderne pour les applications Windows 10 sur UWP, .NET et Win32.
+
+Vous pouvez utiliser WinUI des manières suivantes dans les applications de bureau :
+
+* Vous pouvez mettre à jour des applications WPF, Windows Forms et C++/Win32 existantes pour utiliser [XAML Islands](xaml-islands.md) afin d’héberger des contrôles WinUI 2.x dans les applications.
+* À compter de [WinUi 3.0 Preview 1](../../winui/winui3/index.md), vous pouvez créer des [applications .NET et C++/Win32 qui utilisent une interface utilisateur entièrement basée sur WinUI](../../winui/winui3/get-started-winui3-for-desktop.md).
+
+Consultez [Bibliothèque d’interface utilisateur Windows (WinUI)](../../winui/index.md).
 
 ## <a name="msix-packages"></a>Packages MSIX
 
@@ -79,12 +90,6 @@ Que vous développiez une application UWP ciblant exclusivement la famille d’a
 | [ComboBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/combo-box#make-a-combo-box-editable) | Vous pouvez maintenant utiliser une zone de liste modifiable qui permet à l’utilisateur d’entrer d’autres valeurs que celles proposées dans le contrôle.  |
 | [TreeView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/tree-view) | Vous pouvez désormais configurer une arborescence pour activer la liaison de données, les modèles d’élément et la fonction glisser-déplacer.  |
 | [DataGridView](https://docs.microsoft.com/windows/communitytoolkit/controls/datagrid) |   Offre un moyen flexible d’afficher une collection de données en lignes et en colonnes. Ce contrôle est disponible dans le kit de ressources [Windows Community Toolkit](https://docs.microsoft.com/windows/uwpcommunitytoolkit/).  |
-
-## <a name="windows-ui-library"></a>Bibliothèque d’IU Windows
-
-La bibliothèque d’IU Windows est un ensemble de packages NuGet qui fournissent de nouveaux contrôles et autres éléments d’interface utilisateur pour les applications UWP. Les API de la bibliothèque d’IU Windows fonctionnent sur les versions antérieures de Windows 10. Les utilisateurs qui n’ont pas la dernière version de Windows 10 peuvent donc aussi utiliser votre application. Vous pouvez intégrer les nouveaux contrôles au fur et à mesure qu’ils sont mis à disposition dans la bibliothèque d’IU Windows, sans avoir à vous préoccuper des vérifications de version ou du XAML conditionnel.
-
-Consultez [Bibliothèque d’IU Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
 
 ## <a name="other-technologies-for-modern-desktop-apps"></a>Autres technologies pour les applications de bureau modernes
 

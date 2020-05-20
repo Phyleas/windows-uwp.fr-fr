@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: d050e2b4a7659f8910ce603ec7e90b703cc7722f
-ms.sourcegitcommit: 2571af6bf781a464a4beb5f1aca84ae7c850f8f9
+ms.openlocfilehash: 4175fdf2cbb10912c22e0b0058629819c87dbc63
+ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82606238"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83579916"
 ---
 # <a name="host-uwp-xaml-controls-in-desktop-apps-xaml-islands"></a>Héberger des contrôles XAML UWP dans des applications de bureau (XAML Islands)
 
@@ -129,7 +129,7 @@ Les sections suivantes présentent les limitations et solutions de contournement
 
 ### <a name="supported-only-with-workarounds"></a>Prise en charge uniquement avec des solutions de contournement
 
-:heavy_check_mark: L’hébergement des contrôles UWP de la [bibliothèque WinUI](https://docs.microsoft.com/uwp/toolkits/winui/) dans un îlot XAML est pris en charge de manière conditionnelle dans la version actuelle de XAML Islands. Si votre application de bureau utilise un [package MSIX](https://docs.microsoft.com/windows/msix) pour le déploiement, vous pouvez héberger les contrôles WinUI des versions prépubliées et publiées du package NugGet [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml). Si votre application de bureau n’est pas empaquetée avec MSIX, vous pouvez héberger les contrôles WinUI uniquement si vous installez une version prépubliée du package NuGet [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml).
+:heavy_check_mark: L’hébergement de contrôles de la [bibliothèque WinUI 2.x](../../winui/index.md) dans un îlot XAML est pris en charge de manière conditionnelle dans la version actuelle de XAML Islands. Si votre application de bureau utilise un [package MSIX](https://docs.microsoft.com/windows/msix) pour le déploiement, vous pouvez héberger les contrôles WinUI des versions prépubliées et publiées du package NugGet [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml). Si votre application de bureau n’est pas empaquetée avec MSIX, vous pouvez héberger les contrôles WinUI uniquement si vous installez une version prépubliée du package NuGet [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml). La prise en charge de l’hébergement des contrôles de la [bibliothèque WinUI 3.0](../../winui/winui3/index.md) sera disponible dans une version ultérieure.
 
 :heavy_check_mark: Pour accéder à l’élément racine d’une arborescence de contenu XAML dans un îlot XAML et obtenir des informations connexes sur le contexte de son hébergement, n’utilisez pas les classes [CoreWindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow), [ApplicationView](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview), et [Window](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window). Utilisez plutôt la classe [XamlRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.xamlroot). Pour plus d’informations, consultez [cette section](#window-host-context-for-xaml-islands).
 
