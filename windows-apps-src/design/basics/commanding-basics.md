@@ -10,12 +10,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 26d649e5a27ae7eef0131964f5c277f3539da73f
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 154f1969f18cffc485252971258ef801ca86a56e
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82969374"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234022"
 ---
 # <a name="command-design-basics-for-windows-apps"></a>Notions de base de la conception des commandes pour les applications Windows
 
@@ -33,7 +33,7 @@ Voici quelques expériences de commande courantes :
 - Ouverture, enregistrement et suppression de fichiers
 - Modification ou création de contenu
 
-Soyez créatif avec la conception de vos expériences de commande. Choisissez les appareils d’entrée pris en charge par votre application et la façon dont votre application répond à chaque appareil. Par la prise en charge du plus large éventail de fonctionnalités et de préférences, vous rendez votre application aussi utilisable, portable et accessible que possible (consultez [Conception de commandes pour les applications Windows](../controls-and-patterns/commanding.md) pour plus de détails).
+Soyez créatif avec la conception de vos expériences de commande. Choisissez les appareils d’entrée pris en charge par votre application et la façon dont votre application répond à chaque appareil. Par la prise en charge du plus large choix de fonctionnalités et de préférences, vous rendez votre application aussi utilisable, portable et accessible que possible (consultez [Conception de commandes pour les applications Windows](../controls-and-patterns/commanding.md) pour plus de détails).
 
 
 

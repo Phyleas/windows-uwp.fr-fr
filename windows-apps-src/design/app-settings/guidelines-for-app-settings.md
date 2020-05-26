@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c35bc6cfcf36543482bcb42d0ccda7fd3102ac9
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: a9b27094a5861151b907dc7787828068122e4a54
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970034"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83233985"
 ---
 # <a name="guidelines-for-app-settings"></a>Recommandations en matière de paramètres de l’application
 
-Les paramètres de l’application sont les parties de votre application Windows que l’utilisateur peut personnaliser, accessible via une page de paramètres d’application. Par exemple, une application de lecteur de flux d’actualités peut permettre à l’utilisateur de spécifier les sources d’informations à afficher ou le nombre de colonnes à présenter à l’écran, tandis qu’une application météo peut offrir à l’utilisateur la possibilité de choisir entre les unités de mesure Celsius et Fahrenheit par défaut. Cet article décrit les meilleures pratiques et propose des recommandations pour créer et afficher des paramètres d’application.
+Les paramètres de l’application sont les parties de votre application Windows que l’utilisateur peut personnaliser, via une page de paramètres d’application. Par exemple, une application de lecteur de flux d’actualités peut permettre à l’utilisateur de spécifier les sources d’informations à afficher ou le nombre de colonnes à présenter à l’écran, tandis qu’une application météo peut offrir à l’utilisateur la possibilité de choisir entre les unités de mesure Celsius et Fahrenheit par défaut. Cet article décrit les meilleures pratiques et propose des recommandations pour créer et afficher des paramètres d’application.
 
 ## <a name="when-to-provide-a-settings-page"></a>À quel moment proposer une page de paramètres ?
 

@@ -1,16 +1,16 @@
 ---
 title: Nouveautés de Windows 10, build 17134
 description: Windows 10, build 17134 et les nouveaux outils de développement offrent les outils, fonctionnalités et expériences optimisés par la plateforme Windows universelle.
-keywords: nouveautés, nouveauté, mise à jour, mises à jour, fonctionnalités, nouveau, Windows 10, plus récent, développeurs, 17134
+keywords: Windows 10, 17134, 1803
 ms.date: 04/10/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: cce2c6c36918a117ba6aee25987be9060b3ec148
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 12c788cae02cdc5a0cf8e26f02ea03264960ce49
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74258867"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234375"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17134"></a>Nouveautés de Windows 10 pour les développeurs, build 17134
 
@@ -78,7 +78,7 @@ Fonctionnalité | Description
 Télécharger et installer des mises à jour de package sur le Store | Nous avons mis à jour [Télécharger et installer des mises à jour de package sur le Store](../packaging/self-install-package-updates.md) avec de nouveaux conseils et exemples sur la façon de télécharger et d’installer des mises à jour de package sans afficher une interface utilisateur de notification sur l’écran de l’utilisateur, de désinstaller un package facultatif et d’obtenir des informations sur les packages se trouvant dans la file d’attente de téléchargement et d’installation de votre application.
 Entrez les prix au format libre dans la devise locale d’un marché spécifique | Lorsque vous remplacez le prix de base de votre application pour un marché spécifique, vous n’êtes plus limité à choisir l’un des niveaux de prix standard ; vous avez désormais la possibilité d’entrer un prix au format libre dans la devise locale du marché. Pour plus d’informations, voir [Définir et planifier le prix de l’application](../publish/set-and-schedule-app-pricing.md). **Cette fonctionnalité est disponible pour tous les développeurs Windows et ne nécessite pas le Kit de développement logiciel (SDK) mis à jour.**
 StoreContext | La classe [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) a été mise à jour avec une sélection de nouvelles méthodes. Ces méthodes gèrent le téléchargement et l’installation des mises à jour et des composants additionnels de packages d’une application.
-Les extensions d’abonnement sont désormais disponibles pour tous les développeurs | Créez et publiez des extensions d’abonnement pour vendre des produits numériques dans vos applications et jeux (par exemple, des fonctionnalités de l’application ou du contenu numérique) avec des périodes de facturation périodiques automatisées. Pour plus d'informations, consultez [Activer des extensions d'abonnement pour votre application](../monetize/enable-subscription-add-ons-for-your-app.md). **Cette fonctionnalité est disponible pour tous les développeurs Windows et ne nécessite pas le Kit de développement logiciel (SDK) mis à jour.**
+Les composants additionnels d’abonnement sont désormais disponibles pour tous les développeurs | Créez et publiez des extensions d’abonnement pour vendre des produits numériques dans vos applications et jeux (par exemple, des fonctionnalités de l’application ou du contenu numérique) avec des périodes de facturation périodiques automatisées. Pour plus d’informations, consultez [Activer des extensions d’abonnement pour votre application](../monetize/enable-subscription-add-ons-for-your-app.md). **Cette fonctionnalité est disponible pour tous les développeurs Windows et ne nécessite pas le Kit de développement logiciel (SDK) mis à jour.**
 
 ## <a name="videos"></a>Vidéos
 
@@ -104,7 +104,7 @@ Windows Machine Learning vous permet de développer des applications qui évalue
 
 Les contrôleurs de mouvement représentent les mains d’un utilisateur dans Windows Mixed Reality. [Regardez la vidéo](https://www.youtube.com/watch?v=rkDpRllbLII) pour savoir comment les contrôleurs de mouvement fonctionnent lorsqu’ils sont à la fois à l’intérieur et à l’extérieur du champ de vision du casque de réalité mixte et [apprenez-en davantage sur le suivi des contrôleurs ici.](https://docs.microsoft.com/windows/mixed-reality/motion-controllers#controller_tracking_state%E2%80%9D)
 
-### <a name="package-a-net-app-in-visual-studio"></a>Créer un package d'application .NET dans Visual Studio
+### <a name="package-a-net-app-in-visual-studio"></a>Créer un package d’application .NET dans Visual Studio
 
 Porter votre application pour poste de travail vers la plateforme Windows universelle (UWP) est plus simple que jamais. [Regardez la vidéo](https://www.youtube.com/watch?v=fJkbYPyd08w) pour savoir comment empaqueter votre application .NET pour la distribution, puis [consultez cette page](../porting/desktop-to-uwp-packaging-dot-net.md) pour plus d’informations.
 

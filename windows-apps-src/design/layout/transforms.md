@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: aa60db28003c4f231cf36b653c5e69b422978c1a
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 28dc4a62bf580da41d424c98c186413dc96a8aae
+ms.sourcegitcommit: 3a7f9f05f0127bc8e38139b219e30a8df584cad3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "71340069"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83775828"
 ---
 # <a name="transforms-overview"></a>Vue d’ensemble des transformations
 
@@ -37,6 +37,8 @@ Vous pouvez combiner les transformations. Cette opération est prise en charge p
 Dans une disposition XAML, les transformations sont appliquées après la passe de disposition. Ainsi, les calculs relatifs à l’espace disponible et les autres décisions relatives à la mise en page ont été effectués avant l’application des transformations. La disposition étant prioritaire, vous aurez parfois des résultats inattendus si vous transformez des éléments situés dans une cellule [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) ou tout conteneur de disposition similaire qui alloue de l’espace durant la disposition. L’élément transformé peut paraître tronqué ou masqué, car il essaie de figurer dans une zone où n’ont pas été calculées les dimensions postérieures à la transformation durant la répartition de l’espace dans son conteneur parent. Vous devrez peut-être tester les résultats des transformations et modifier certains paramètres. Par exemple, au lieu de vous fier à la disposition adaptative et au redimensionnement proportionnel, vous devrez peut-être modifier les propriétés **Center** ou déclarer des mesures de pixels fixes pour l’espace de disposition pour vous assurer que le parent alloue suffisamment d’espace.
 
 **Remarque concernant la migration :**  WPF (Windows Presentation Foundation) contenait une propriété **LayoutTransform** qui appliquait les transformations avant la passe de disposition. Toutefois, Windows Runtime XAML ne prend pas en charge la propriété **LayoutTransform**. (Microsoft Silverlight ne disposait pas non plus de cette propriété.)
+
+En guise d’alternative, le kit de ressources Communauté Windows fournit [LayoutTransformControl](/windows/communitytoolkit/controls/LayoutTransformControl), qui applique des transformations de matrice sur n’importe quel FrameworkElement de votre application.
 
 ## <a name="span-idapplying_a_transform_to_a_ui_elementspanspan-idapplying_a_transform_to_a_ui_elementspanspan-idapplying_a_transform_to_a_ui_elementspanapplying-a-transform-to-a-ui-element"></a><span id="Applying_a_transform_to_a_UI_element"></span><span id="applying_a_transform_to_a_ui_element"></span><span id="APPLYING_A_TRANSFORM_TO_A_UI_ELEMENT"></span>Application d’une transformation à un élément d’interface utilisateur
 

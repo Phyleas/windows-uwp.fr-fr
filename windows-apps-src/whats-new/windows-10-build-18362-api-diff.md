@@ -1,17 +1,17 @@
 ---
 title: Modifications des API Windows 10, build 18362
 description: Les développeurs peuvent utiliser la liste suivante pour identifier les espaces de noms nouveaux ou modifiés dans Windows 10, build 18362
-keywords: nouveautés, nouveauté, mises à jour, Windows 10, plus récent, api, 18362, mai
+keywords: Windows 10, api, 18362, 1903
 ms.date: 04/19/2019
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: e230ac2716fc79449197a2f777b9262b2c237fe3
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 5770ca513f6eb75c6a2c1e9e89aa0b3bc0ffc581
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "63780363"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83233802"
 ---
 # <a name="new-apis-in-windows-10-build-18362"></a>Nouvelles API de Windows 10, build 18362
 

@@ -11,12 +11,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fc05ce50c19a04d5b90d225746c9af6569f49bd3
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: b16ad72541f34e40d1b0cf534082eb68b0843141
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970434"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234720"
 ---
 # <a name="xaml-theme-resources"></a>Ressources de thème XAML
 
@@ -147,7 +147,7 @@ Le tableau ci-dessous liste la clé, le nom simple et la représentation sous fo
 
 ### <a name="windows-system-high-contrast-colors"></a>Couleurs à contraste élevé du système Windows
 
-Outre l’ensemble des ressources fournies par l’infrastructure XAML, il existe un ensemble de valeurs de couleur dérivé de la palette du système Windows. Ces couleurs ne sont pas spécifiques aux applications Windows Runtime ou aux applications Windows. Toutefois, la majeure partie des ressources [Brush](/uwp/api/Windows.UI.Xaml.Media.Brush) XAML utilisent ces couleurs lorsque le système fonctionne (et lorsque l’application est en cours d’exécution) avec le thème « HighContrast ». L’infrastructure XAML fournit ces couleurs système en tant que ressources à clé. Les clés respectent le format d’attribution de noms : `SystemColor[name]Color`.
+Outre l’ensemble des ressources fournies par l’infrastructure XAML, il existe un ensemble de valeurs de couleur dérivé de la palette du système Windows. Ces couleurs ne sont pas propres aux applications Windows Runtime ou aux applications Windows. Toutefois, la majeure partie des ressources [Brush](/uwp/api/Windows.UI.Xaml.Media.Brush) XAML utilisent ces couleurs lorsque le système fonctionne (et lorsque l’application est en cours d’exécution) avec le thème « HighContrast ». L’infrastructure XAML fournit ces couleurs système en tant que ressources à clé. Les clés respectent le format d’attribution de noms : `SystemColor[name]Color`.
 
 Le tableau suivant répertorie les couleurs système fournies par l’infrastructure XAML en tant qu’objets de ressources dérivés de la palette du système Windows. La colonne « Nom d’options d’ergonomie » indique le nom porté par la couleur dans les paramètres Windows. La colonne « Nom simple HighContrast » fournit une description en un mot de la façon dont la couleur est appliquée dans les contrôles XAML courants. Ce nom est utilisé dans le cadre de la convention d’affectation de noms aux pinceaux, que nous expliquons plus tard. La colonne « Valeur initiale par défaut » indique les valeurs que vous obtenez si le système ne s’exécute pas du tout en mode de contraste élevé.
 

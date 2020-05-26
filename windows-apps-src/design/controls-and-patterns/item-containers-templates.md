@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 2445f1b718532fd0862c276e8fadf12e88fe36ac
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: d0834a905c50b92003c3aa78ff8226d35c25e5dd
+ms.sourcegitcommit: ddc65c170834bcce524b5e1d36e6755eae1e3af2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79209074"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83729874"
 ---
 # <a name="item-containers-and-templates"></a>Modèles et conteneurs d’éléments
 
@@ -313,7 +313,7 @@ Un modèle de contrôle d’un élément contient les visuels qui affichent l’
 
 - Pointage : un rectangle gris clair dessiné sous le modèle de données.  
 - Sélection : un rectangle bleu clair dessiné sous le modèle de données. 
-- Focus clavier : une bordure en pointillés noir et blanc dessinée par dessus le modèle d’élément. 
+- Focus clavier : [visuel de focus de visibilité élevée](/windows/uwp/design/input/guidelines-for-visualfeedback#high-visibility-focus-visuals) qui s’affiche au-dessus du modèle d’élément.
 
 ![Visuels d’état de l’affichage de liste](images/listview-state-visuals.png)
 

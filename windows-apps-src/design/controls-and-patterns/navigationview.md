@@ -11,12 +11,12 @@ dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 85cd58233de0feeded449e55cb1175087a64e61d
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 7f05b58a74b6270f0893dd4be238eb766629fb77
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970364"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234014"
 ---
 # <a name="navigation-view"></a>Affichage de navigation
 
@@ -29,13 +29,13 @@ _Affichage de navigation prend en charge à la fois le panneau ou menu de naviga
 
 |  |  |
 | - | - |
-| ![Logo WinUI](images/winui-logo-64x64.png) | Le contrôle **NavigationView** est inclus dans la bibliothèque d’interface utilisateur Windows, package NuGet qui contient les nouveaux contrôles et fonctionnalités d’interface utilisateur pour les applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez [Vue d’ensemble de la bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![Logo WinUI](images/winui-logo-64x64.png) | Le contrôle **NavigationView** est inclus dans la bibliothèque d’interface utilisateur Windows, package NuGet qui contient les nouveaux contrôles et fonctionnalités d’interface utilisateur pour les applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez [Vue d’ensemble de la bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/). |
 
 > **API de plateforme** : [Classe Windows.UI.Xaml.Controls.NavigationView](/uwp/api/windows.ui.xaml.controls.navigationview)
 >
 > **API de la bibliothèque d’interface utilisateur Windows** : [Classe Microsoft.UI.Xaml.Controls.NavigationView](/uwp/api/microsoft.ui.xaml.controls.navigationview)
 >
-> Certaines fonctionnalités de NavigationView, par exemple la navigation _supérieure_ et _hiérarchique_, nécessitent Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) ou version ultérieure, ou la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
+> Certaines fonctionnalités de NavigationView, par exemple la navigation _supérieure_ et _hiérarchique_, nécessitent Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) ou version ultérieure, ou la [bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/).
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
@@ -65,7 +65,7 @@ Pour visualiser d’autres modèles de navigation, voir [Informations de base re
 
 ## <a name="display-modes"></a>Modes d’affichage
 
-> La propriété PaneDisplayMode nécessite Windows 10 version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) ou ultérieure, ou la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
+> La propriété PaneDisplayMode nécessite Windows 10 version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) ou ultérieure, ou la [bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/).
 
 Vous pouvez utiliser la propriété PaneDisplayMode pour configurer différents styles de navigation, ou modes d’affichage, pour NavigationView.
 
@@ -156,7 +156,7 @@ Le volet NavigationView peut contenir :
 
 Le volet gauche contient également les éléments suivants :
 
-- Un bouton de menu pour activer/désactiver le volet ouvert et fermé. Sur les grandes fenêtres d’application lorsque le volet est ouvert, vous pouvez choisir de masquer ce bouton à l’aide de la propriété [IsPaneToggleButtonVisible](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.IsPaneToggleButtonVisible).
+- Un bouton de menu pour activer/désactiver le volet ouvert et fermé. Sur les grandes fenêtres d’application lorsque le volet est ouvert, vous pouvez choisir de masquer ce bouton à l’aide de la propriété [IsPaneToggleButtonVisible](/uwp/api/windows.ui.xaml.controls.navigationview.IsPaneToggleButtonVisible).
 
 La vue de navigation affiche un bouton Précédent placé dans le coin supérieur gauche du volet. Mais elle ne gère pas automatiquement la navigation vers l’arrière et n'ajoute aucun contenu à la pile arrière. Pour activer la navigation vers l’arrière, consultez la section [Navigation vers l’arrière](#backwards-navigation).
 
@@ -185,7 +185,7 @@ Voici l’anatomie du volet détaillé pour les positions du volet de navigation
 
 #### <a name="pane-footer"></a>Pied de page du volet
 
-Vous pouvez placer un contenu de forme libre dans le pied de page du volet en l’ajoutant à la propriété [PaneFooter](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PaneFooter).
+Vous pouvez placer un contenu de forme libre dans le pied de page du volet en l’ajoutant à la propriété [PaneFooter](/uwp/api/windows.ui.xaml.controls.navigationview.PaneFooter).
 
 :::row:::
     :::column:::
@@ -200,9 +200,9 @@ Vous pouvez placer un contenu de forme libre dans le pied de page du volet en l�
 
 #### <a name="pane-title-and-header"></a>Titre et en-tête du volet
 
-Vous pouvez placer le contenu textuel dans la zone d'en-tête du volet en définissant la propriété [PaneTitle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PaneTitle). Cette propriété prend une chaîne et affiche le texte en regard du bouton de menu.
+Vous pouvez placer le contenu textuel dans la zone d'en-tête du volet en définissant la propriété [PaneTitle](/uwp/api/windows.ui.xaml.controls.navigationview.PaneTitle). Cette propriété prend une chaîne et affiche le texte en regard du bouton de menu.
 
-Pour ajouter du contenu non textuel, comme une image ou un logo, vous pouvez placer n'importe quel élément dans l'en-tête du volet en l'ajoutant à la propriété [PaneHeader](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PaneHeader).
+Pour ajouter du contenu non textuel, comme une image ou un logo, vous pouvez placer n'importe quel élément dans l'en-tête du volet en l'ajoutant à la propriété [PaneHeader](/uwp/api/windows.ui.xaml.controls.navigationview.PaneHeader).
 
 Si les propriétés PaneTitle et PaneHeader sont définies, le contenu est empilé horizontalement à côté du bouton de menu, la propriété PaneTitle étant la plus proche du bouton de menu.
 
@@ -219,7 +219,7 @@ Si les propriétés PaneTitle et PaneHeader sont définies, le contenu est empil
 
 #### <a name="pane-content"></a>Contenu du volet
 
-Vous pouvez placer un contenu de forme libre dans le volet en l’ajoutant à la propriété [PaneCustomContent](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PaneCustomContent).
+Vous pouvez placer un contenu de forme libre dans le volet en l’ajoutant à la propriété [PaneCustomContent](/uwp/api/windows.ui.xaml.controls.navigationview.PaneCustomContent).
 
 :::row:::
     :::column:::
@@ -403,10 +403,10 @@ L'exemple montre une façon recommandée de configurer des données de navigatio
 Ce code suppose que votre application contient des pages avec les noms suivants pour accéder à ces éléments : _HomePage_, _AppsPage_, _GamesPage_, _MusicPage_, _MyContentPage_ et _SettingsPage_. Le code de ces pages n’est pas affiché.
 
 > [!IMPORTANT]
-> Vous trouverez des informations sur les pages de l’application dans un [ValueTuple](https://docs.microsoft.com/dotnet/api/system.valuetuple). Cette structure nécessite une version minimale SDK 17763 ou supérieure pour votre projet d’application. Si vous utilisez la version WinUI de NavigationView pour cibler des versions antérieures de Windows 10, vous pouvez utiliser le [paquet NuGet System.ValueTuple](https://www.nuget.org/packages/System.ValueTuple/).
+> Vous trouverez des informations sur les pages de l’application dans un [ValueTuple](/dotnet/api/system.valuetuple). Cette structure nécessite une version minimale SDK 17763 ou supérieure pour votre projet d’application. Si vous utilisez la version WinUI de NavigationView pour cibler des versions antérieures de Windows 10, vous pouvez utiliser le [paquet NuGet System.ValueTuple](https://www.nuget.org/packages/System.ValueTuple/).
 
 > [!IMPORTANT]
-> Ce code montre comment utiliser la version [Bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/) de NavigationView. Si vous utilisez la version plateforme de NavigationView à la place, la version minimale pour votre projet d'application doit être SDK 17763 ou supérieure. Pour utiliser la version plateforme, supprimez toutes les références à `muxc:`.
+> Ce code montre comment utiliser la version [Bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/) de NavigationView. Si vous utilisez la version plateforme de NavigationView à la place, la version minimale pour votre projet d'application doit être SDK 17763 ou supérieure. Pour utiliser la version plateforme, supprimez toutes les références à `muxc:`.
 
 ```xaml
 <!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
@@ -467,7 +467,7 @@ Ce code suppose que votre application contient des pages avec les noms suivants 
 ```
 
 > [!IMPORTANT]
-> Ce code montre comment utiliser la version [Bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/) de NavigationView. Si vous utilisez la version plateforme de NavigationView à la place, la version minimale pour votre projet d'application doit être SDK 17763 ou supérieure. Pour utiliser la version plateforme, supprimez toutes les références à `muxc`.
+> Ce code montre comment utiliser la version [Bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/) de NavigationView. Si vous utilisez la version plateforme de NavigationView à la place, la version minimale pour votre projet d'application doit être SDK 17763 ou supérieure. Pour utiliser la version plateforme, supprimez toutes les références à `muxc`.
 
 ```csharp
 // Add "using" for WinUI controls.
@@ -651,7 +651,7 @@ void MainPage::NavView_ItemInvoked(Windows::Foundation::IInspectable const & /* 
 ## <a name="hierarchical-navigation"></a>Navigation hiérarchique
 Certaines applications peuvent avoir une structure hiérarchique plus complexe qui nécessite plus qu’une simple liste plate d’éléments de navigation. Vous souhaiterez peut-être utiliser des éléments de navigation de niveau supérieur pour afficher des catégories de pages, avec des éléments enfants affichant des pages spécifiques. Cette approche est également utile si vous avez des pages de style hub uniquement liées à d’autres pages. Dans ces types de cas, vous devez créer un NavigationView hiérarchique.
 
-Pour afficher une liste hiérarchique d’éléments de navigation imbriqués dans le volet, utilisez la propriété `MenuItems` ou la propriété `MenuItemsSource` de **NavigationViewItem**.
+Pour montrer une liste hiérarchique d’éléments de navigation imbriqués dans le volet, utilisez la propriété [MenuItems](/uwp/api/microsoft.ui.xaml.controls.navigationviewitem.menuitems?view=winui-2.4) ou la propriété [MenuItemsSource](/uwp/api/microsoft.ui.xaml.controls.navigationviewitem.menuitemssource?view=winui-2.4) de **NavigationViewItem**.
 Chaque NavigationViewItem peut contenir d’autres NavigationViewItems et éléments d’organisation tels que des séparateurs et des en-têtes d’élément. Pour afficher une liste hiérarchique quand vous utilisez `MenuItemsSource`, définissez `ItemTemplate` en tant que NavigationViewItem et liez sa propriété `MenuItemsSource` au niveau suivant de la hiérarchie.
 
 Bien que NavigationViewItem puisse contenir un nombre quelconque de niveaux imbriqués, nous vous recommandons de limiter la profondeur de la hiérarchie de navigation de votre application. Nous pensons que deux niveaux sont idéaux pour faciliter l’utilisation et la compréhension.
@@ -684,7 +684,7 @@ Ajoutez une hiérarchie d’éléments de menu à NavigationView en
 * liant la propriété MenuItemsSource aux données hiérarchiques ;
 * définissant le modèle d’élément en tant que NavigationViewMenuItem, avec son contenu (Content) défini sur l’étiquette de l’élément de menu et sa propriété MenuItemsSource liée au niveau suivant de la hiérarchie.
 
-Cet exemple montre également les événements de **développement** et de **réduction**. Ces événements sont déclenchés pour un élément de menu avec enfants.
+Cet exemple montre également les événements de développement ([Expanding](/uwp/api/microsoft.ui.xaml.controls.navigationview.expanding?view=winui-2.4)) et de réduction ([Collapsed](/uwp/api/microsoft.ui.xaml.controls.navigationview.collapsed?view=winui-2.4)). Ces événements sont déclenchés pour un élément de menu avec enfants.
 
 ```xaml
 <!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
@@ -796,7 +796,7 @@ Le NavigationView entier n’affiche pas plus d’un indicateur de sélection.
 
 Dans les deux modes Top et Left, un clic sur les flèches sur les NavigationViewItems permet de développer ou de réduire la sous-arborescence. En cliquant ou en appuyant _ailleurs_ sur le NavigationViewItem, vous déclenchez l’événement `ItemInvoked`, qui entraîne également la réduction ou le développement de la sous-arborescence.
 
-Pour empêcher un élément d’afficher l’indicateur de sélection quand il est appelé, affectez la valeur False à sa propriété [SelectsOnInvoked](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.navigationviewitem.selectsoninvoked?view=winui-2.3), comme indiqué ci-dessous :
+Pour empêcher un élément d’afficher l’indicateur de sélection quand il est appelé, affectez la valeur False à sa propriété [SelectsOnInvoked](/uwp/api/microsoft.ui.xaml.controls.navigationviewitem.selectsoninvoked?view=winui-2.3), comme indiqué ci-dessous :
 
 ```xaml
 <!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
@@ -870,7 +870,7 @@ public sealed partial class HierarchicalNavigationViewDataBinding : Page
 ```
 
 ### <a name="keyboarding-within-hierarchical-navigationview"></a>Utilisation du clavier avec un NavigationView hiérarchique
-Les utilisateurs peuvent déplacer le focus dans la vue de navigation à l’aide du [clavier](https://docs.microsoft.com/windows/uwp/design/input/keyboard-interactions). Les touches de direction exposent la « navigation interne » dans le volet et suivent les interactions fournies dans l’[arborescence](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/tree-view). Les actions des touches changent quand vous naviguez dans le NavigationView ou dans son menu volant, qui s’affiche dans les modes Top and LeftCompact de HierarchicalNavigationView. Voici les actions spécifiques que chaque touche peut effectuer dans un NavigationView hiérarchique :
+Les utilisateurs peuvent déplacer le focus dans la vue de navigation à l’aide du [clavier](/windows/uwp/design/input/keyboard-interactions). Les touches de direction exposent la « navigation interne » dans le volet et suivent les interactions fournies dans l’[arborescence](/windows/uwp/design/controls-and-patterns/tree-view). Les actions des touches changent quand vous naviguez dans le NavigationView ou dans son menu volant, qui s’affiche dans les modes Top and LeftCompact de HierarchicalNavigationView. Voici les actions spécifiques que chaque touche peut effectuer dans un NavigationView hiérarchique :
 
 | Clé      |      En mode Left      |  En mode Top | Dans le menu volant  |
 |----------|------------------------|--------------|------------|
@@ -907,7 +907,7 @@ Ce tableau indique quelle ressource de thème est utilisée dans chaque mode d'a
 Cet exemple montre comment remplacer les ressources de thème dans App.xaml. Lorsque vous remplacez des ressources de thème, vous devez toujours fournir au minimum les dictionnaires de ressources « Default » et « HighContrast» , et les dictionnaires pour les ressources « Light » ou « Dark » si nécessaire. Pour plus d’informations, consultez [ResourceDictionary.ThemeDictionaries](/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries).
 
 > [!IMPORTANT]
-> Ce code montre comment utiliser la version [Bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/) d’AcrylicBrush. Si vous utilisez la version plateforme d’AcrylicBrush à la place, la version minimale pour votre projet d'application doit être SDK 16299 ou supérieure. Pour utiliser la version plateforme, supprimez toutes les références à `muxm:`.
+> Ce code montre comment utiliser la version [Bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/) d’AcrylicBrush. Si vous utilisez la version plateforme d’AcrylicBrush à la place, la version minimale pour votre projet d'application doit être SDK 16299 ou supérieure. Pour utiliser la version plateforme, supprimez toutes les références à `muxm:`.
 
 ```xaml
 <Application
@@ -953,10 +953,10 @@ Cet exemple montre comment remplacer les ressources de thème dans App.xaml. Lor
 ```
 
 ### <a name="top-whitespace"></a>Espace supérieur
-Certaines applications choisissent de [personnaliser la barre de titre de leur fenêtre](https://docs.microsoft.com/windows/uwp/design/shell/title-bar), en étendant éventuellement leur contenu dans la zone de barre de titre. Quand NavigationView est l’élément racine dans les applications qui étendent dans la barre de titre  **en utilisant l’API [ExtendViewIntoTitleBar](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.extendviewintotitlebar)** ,le contrôle ajuste automatiquement la position de ses éléments interactifs pour éviter le chevauchement avec la [zone pouvant être glissée](https://docs.microsoft.com/windows/uwp/design/shell/title-bar#draggable-regions). 
+Certaines applications choisissent de [personnaliser la barre de titre de leur fenêtre](/windows/uwp/design/shell/title-bar), en étendant éventuellement leur contenu dans la zone de barre de titre. Quand NavigationView est l’élément racine dans les applications qui étendent dans la barre de titre  **en utilisant l’API [ExtendViewIntoTitleBar](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.extendviewintotitlebar)** ,le contrôle ajuste automatiquement la position de ses éléments interactifs pour éviter le chevauchement avec la [zone pouvant être glissée](/windows/uwp/design/shell/title-bar#draggable-regions). 
 ![Application étendant dans la barre de titre](images/navigation-view-with-titlebar-padding.png)
 
-Si votre application spécifie la zone pouvant être glissée en appelant la méthode [Window.SetTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.settitlebar) et que vous préférez que les boutons précédent et de menu soient plus près du haut de la fenêtre de votre application, définissez `IsTitleBarAutoPaddingEnabled` sur False.
+Si votre application spécifie la zone pouvant être glissée en appelant la méthode [Window.SetTitleBar](/uwp/api/windows.ui.xaml.window.settitlebar) et que vous préférez que les boutons précédent et de menu soient plus près du haut de la fenêtre de votre application, définissez `IsTitleBarAutoPaddingEnabled` sur False.
 
 ![Application qui s’étend dans la barre de titre sans remplissage supplémentaire](images/navigation-view-no-titlebar-padding.png)
 
@@ -973,11 +973,11 @@ Pour ajuster davantage la position de la zone d’en-tête de NavigationView, re
 </Page.Resources>
 ```
 
-Cette ressource de thème modifie la marge autour de [NavigationView.Header](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.header).
+Cette ressource de thème modifie la marge autour de [NavigationView.Header](/uwp/api/windows.ui.xaml.controls.navigationview.header).
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-- [Classe NavigationView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
+- [Classe NavigationView](/uwp/api/windows.ui.xaml.controls.navigationview)
 - [Maître/détails](master-details.md)
 - [Notions de base sur la navigation](../basics/navigation-basics.md)
 - [Vue d’ensemble de Fluent Design](/windows/apps/fluent-design-system)

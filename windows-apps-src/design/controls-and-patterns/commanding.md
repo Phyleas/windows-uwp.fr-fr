@@ -1,19 +1,19 @@
 ---
-title: Conception de commandes dans les applications Windows
+title: Utilisation des commandes dans les applications Windows
 description: Comment utiliser les classes XamlUICommand et StandardUICommand (ainsi que l’interface ICommand) pour partager et gérer les commandes entre les différents types de contrôles, quels que soient l’appareil et le type d’entrée utilisés.
 ms.service: ''
 ms.topic: overview
 ms.date: 09/13/2019
-ms.openlocfilehash: 24df2f6c67fe5a501461d5ce5e9c18a147c54672
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 5ab46a479e882b9975f24731dfcbb6e433126f80
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968764"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83233765"
 ---
-# <a name="commanding-in-windows-app-apps-using-standarduicommand-xamluicommand-and-icommand"></a>Conception de commandes dans les applications Windows à l’aide de StandardUICommand, XamlUICommand et ICommand
+# <a name="commanding-in-windows-apps-using-standarduicommand-xamluicommand-and-icommand"></a>Utilisation des commandes dans les applications Windows avec StandardUICommand, XamlUICommand et ICommand
 
-Dans cette rubrique, nous décrivons la conception de commandes dans les applications Windows. Nous expliquons particulièrement comment utiliser les classes [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) et [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) (ainsi que l’interface ICommand) pour partager et gérer les commandes entre les différents types de contrôles, quels que soient l’appareil et le type d’entrée utilisés.
+Dans cette rubrique, nous décrivons l’utilisation des commandes dans les applications Windows. Nous expliquons particulièrement comment utiliser les classes [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) et [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) (ainsi que l’interface ICommand) pour partager et gérer les commandes entre les différents types de contrôles, quels que soient l’appareil et le type d’entrée utilisés.
 
 ![Diagramme illustrant l’utilisation courante d’une commande partagée : plusieurs surfaces d’interface utilisateur avec une commande « favori »](images/commanding/generic-commanding.png)
 

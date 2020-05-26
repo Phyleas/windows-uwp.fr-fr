@@ -1,0 +1,104 @@
+---
+title: Nouveautés de Windows 10, build 19041
+description: Windows 10, build 18362 et les nouveaux outils de développement offrent les outils, fonctionnalités et expériences optimisés par la plateforme Windows 10.
+keywords: nouveautés, nouveauté, Windows, Windows 10, mise à jour, mises à jour, fonctionnalités, nouveau, plus récent, développeurs, 19041, mai
+ms.date: 05/12/2020
+ms.topic: article
+ms.localizationpriority: medium
+ms.openlocfilehash: bb7630afd6cc69497494a2e86e6c5e3544acefec
+ms.sourcegitcommit: f806d5f3b0c1e046c903d3388092c0e059d21858
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83790990"
+---
+# <a name="whats-new-for-developers-in-windows-10-build-19041"></a>Nouveautés pour les développeurs dans Windows 10 build 19041
+
+Windows 10 build 19041 (également appelé SDK version 2004), en combinaison avec Visual Studio 2019 et les outils et fonctionnalités associés, vous fournissent tout ce dont vous avez besoin pour créer des applications Windows remarquables. [Installez les outils et le SDK](https://developer.microsoft.com/windows/downloads#_blank) sur Windows 10, et vous pourrez ainsi [créer une application Windows universelle](../get-started/create-uwp-apps.md) ou découvrir comment vous pouvez utiliser votre [code d’application existant sur Windows](../porting/index.md).
+
+Voici une collection des fonctionnalités nouvelles et améliorées de cette version, accompagnée d’instructions, susceptibles d’intéresser les développeurs Windows. Pour obtenir une liste complète des nouveaux espaces de noms ajoutés au SDK Windows, consultez [Modifications apportées aux API de Windows 10 build 19041](windows-10-build-19041-api-diff.md). Pour en savoir plus sur les fonctionnalités phares de Windows 10, consultez [Nouveautés intéressantes de Windows 10](https://developer.microsoft.com/windows/windows-10-for-developers).
+
+## <a name="windows-10-apps"></a>Applications Windows 10
+
+Fonctionnalité | Description
+:------ | :------
+Lecture audio en Bluetooth | La rubrique [Activer la lecture audio à partir d’appareils connectés en Bluetooth à distance](../audio-video-camera/enable-remote-audio-playback.md) explique comment utiliser [AudioPlaybackConnection](/uwp/api/windows.media.audio.audioplaybackconnection) pour permettre aux appareils distants connectés en Bluetooth de lire des données audio sur l’ordinateur local. C’est utile, par exemple, si vous souhaitez qu’un PC se comporte comme un haut-parleur Bluetooth ou que les utilisateurs puissent écouter du contenu audio sur leur téléphone.
+Portage d’applications C# | Nous avons documenté le processus de portage d’une application C# sur C++/WinRT. [Portage de l’exemple Clipboard sur C++/WinRT depuis C#](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp) est une rubrique contextuelle, basée sur une étude de cas de portage réel. La rubrique complémentaire [Passer de C# à C++/WinRT](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-csharp) est plus théorique, et donne les détails techniques et les étapes du processus de portage. 
+C++/WinRT | Le [récapitulatif des améliorations/ajouts récents](/windows/uwp/cpp-and-winrt-apis/news#rollup-of-recent-improvementsadditions-as-of-march-2020) décrit comment les mises à jour apportées à C++/WinRT améliorent les performances de génération et d’exécution (grâce au travail réalisé conjointement avec l’équipe du compilateur Visual C++). </br> Pour C++/WinRT, nous avons complété les rubriques suivantes : [Portage de C++/CX](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx#boxing-and-unboxing), [Portage de C#](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-csharp#boxing-and-unboxing), [Exemple de bibliothèque d’IU Windows C++/WinRT simple](/windows/uwp/cpp-and-winrt-apis/simple-winui-example), [Opérations concurrentes](/windows/uwp/cpp-and-winrt-apis/concurrency), [get_unknown()](/uwp/cpp-ref-for-winrt/get-unknown) et [Contrôles XAML personnalisés (basés sur un modèle) avec C++/WinRT](/windows/uwp/cpp-and-winrt-apis/xaml-cust-ctrl).
+DirectX | Nous avons mis à jour plusieurs rubriques « Nouveautés » concernant DirectX pour plusieurs versions antérieures de Windows, de Creators Update à Windows 10 build 1903. [Nouveautés de DirectWrite](/windows/win32/directwrite/what-s-new-in-directwrite-for-windows-8-consumer-preview), [Améliorations de DXGI 1.6](/windows/win32/direct3ddxgi/dxgi-1-6-improvements) et [Nouveautés de Direct3D 12](/windows/win32/direct3d12/new-releases).
+DirectXMath | Nous avons publié 21 nouvelles rubriques sur DirectXMath, qui couvrent deux structures matricielles ainsi que leurs fonctions membres et fonctions libres. La rubrique [Structure XMFLOAT3X4](/windows/win32/api/directxmath/ns-directxmath-xmfloat3x4) présente un exemple.
+Direct3D | La rubrique [Utilisation de DirectX avec des affichages à plage dynamique étendue et des couleurs avancées](/windows/win32/direct3darticles/high-dynamic-range) liste les bonnes pratiques à suivre pour les applications Windows à plage dynamique étendue. </br> Grâce à une nouvelle interface [ID3D11On12Device2](/windows/win32/api/d3d11on12/nn-d3d11on12-id3d11on12device2) et aux méthodes associées, vous pouvez réutiliser dans Direct3D 12 des ressources qui avaient été créées à l’aide des API Direct3D 11.
+Direct3D 12 | Le [niveau de fonctionnalité Direct3D 12 Core 1.0](/windows/win32/direct3d12/core-feature-levels) a été ajouté ; il est utilisable par les appareils de *calcul uniquement*. </br> De nouvelles rubriques ont été ajoutées pour l’[interface ID3D12Debug3](/windows/win32/api/d3d12sdklayers/nn-d3d12sdklayers-id3d12debug3).
+Direct ML | 18 opérateurs ont été ajoutés à DirectML, l’API de bas niveau avec accélération matérielle sur laquelle repose WinML. La [structure DML_ACTIVATION_SHRINK_OPERATOR_DESC](/windows/win32/api/directml/ns-directml-dml_activation_shrink_operator_desc) en est un exemple.
+Rapport d’erreurs | La fonction RoFailFastWithErrorContextInternal2 a été ajoutée à Win32 ; elle lève une exception qui peut contenir un contexte d’erreur supplémentaire.
+Machine Learning | Windows Machine Learning [prend désormais en charge ONNX version 1.4 et opset 9](/windows/ai/windows-ml/release-notes). </br>  L’API [CloseModelOnSessionCreation](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.learningmodelsessionoptions.closemodelonsessioncreation?view=winrt-19041) vous permet d’économiser de la mémoire, en fermant automatiquement un modèle d’apprentissage qui n’est plus utilisé.
+Wi-Fi | Plusieurs nouvelles fonctions et structures WiFi natives ont été ajoutées, comme la fonction [WlanDeviceServiceCommand](/windows/win32/api/wlanapi/nf-wlanapi-wlandeviceservicecommand).
+Wi-Fi Hotspot 2 | [Provisionner un profil WiFi via un site web](/windows/win32/nativewifi/prov-wifi-profile-via-website) décrit les nouvelles fonctionnalités de Wi-Fi Hotspot 2.
+Interopérabilité de Windows Holographique | L’en-tête [`windows.graphics.holographic.interop.h`](/windows/win32/api/windows.graphics.holographic.interop) a été ajouté, avec 17 API Win32. Les API sont destinées à améliorer l’interopérabilité entre Win32 et Windows Runtime. Les API avaient déjà été introduites dans la build 18362 de Windows 10, mais l’en-tête est nouveau dans la build 19041.
+Windows Sockets | Des améliorations ont été apportées au contenu du SPI Windows Sockets 2. La rubrique [LPWSPEVENTSELECT](/windows/win32/api/ws2spi/nc-ws2spi-lpwspeventselect) est un exemple de l’une des nombreuses rubriques que nous avons améliorées et complétées.
+XAML Islands - Contrôles de base | Hébergez des contrôles XAML UWP dans vos applications de bureau Windows avec XAML Islands. Découvrez comment [héberger un contrôle UWP standard dans une application WPF](/windows/apps/desktop/modernize/host-standard-control-with-xaml-islands) et comment [héberger un contrôle UWP standard dans une application Win32 C++](/windows/apps/desktop/modernize/host-standard-control-with-xaml-islands-cpp).
+XAML Islands - Contrôles personnalisés | Les packages NuGet [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) et [Microsoft.Toolkit.Win32.UI.SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) facilitent l’hébergement de contrôles XAML UWP personnalisés dans des applications NET et Win32 C++. </br> Pour obtenir des procédures pas à pas, consultez [Héberger un contrôle UWP personnalisé dans une application WPF](/windows/apps/desktop/modernize/host-custom-control-with-xaml-islands) et [Héberger un contrôle UWP personnalisé dans une application Win32 C++](/windows/apps/desktop/modernize/host-custom-control-with-xaml-islands-cpp). </br> Enfin, pour obtenir des conseils à propos de scénarios Win32 C++ plus complexes, consultez [Scénarios avancés pour XAML Islands](/windows/apps/desktop/modernize/advanced-scenarios-xaml-islands-cpp).
+
+## <a name="build-with-windows"></a>Créer avec Windows
+
+Fonctionnalité | Description
+:------ | :------
+Environnement de développement Windows | La documentation [Environnement de développement Windows](/windows/dev-environment/) fournit des ressources sur l’utilisation de Windows pour développer sur diverses plateformes et atteindre tous vos objectifs de développement.
+Python sur Windows | La section [Python sur Windows](/windows/python/) fournit des informations destinées aux développeurs qui débutent avec le langage Python, mais aussi aux développeurs qui cherchent à optimiser leur développement Python avec d’autres outils disponibles sur Windows. Découvrez comment configurer votre environnement Python pour le [développement web](/windows/python/web-frameworks) et les [interactions avec les bases de données](/windows/python/databases).
+NodeJS sur Windows | La rubrique [Configurer votre environnement de développement Node.js avec WSL 2](/windows/nodejs/setup-on-wsl2) fournit des instructions détaillées pour les développeurs expérimentés qui effectuent des déploiements sur des serveurs Linux. Elle contient également des instructions de configuration pour les [frameworks web Node.js populaires](/windows/nodejs/web-frameworks), les [interactions avec les bases de données](/windows/nodejs/databases) et les [conteneurs Docker](/windows/nodejs/containers).
+De Mac à Windows | Notre [guide relatif au changement d’environnement de développement](/windows/dev-environment/mac-to-windows) est destiné aux utilisateurs qui passent d’une plateforme de développement Mac à Windows. Il indique les correspondances des raccourcis et des utilitaires de développement entre les deux plateformes.
+Terminal Windows | Il s’agit d’une [application de terminal moderne](https://www.microsoft.com/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab) conçue pour les utilisateurs d’outils en ligne de commande et d’interpréteurs de commandes tels que l’invite de commandes, PowerShell et le sous-système Windows pour Linux (WSL). Ses principales fonctionnalités incluent plusieurs onglets, des volets, une prise en charge des caractères Unicode et UTF-8, un moteur de rendu de texte accéléré par GPU, ainsi que la possibilité de créer vos propres thèmes et de personnaliser le texte, les couleurs, les arrière-plans et les combinaisons de touches de raccourci.
+WSL 2 | Une [nouvelle version du sous-système Windows pour Linux (WSL)](/windows/wsl/wsl2-about) est désormais disponible. WSL 2 présente une architecture entièrement repensée pour exécuter un véritable noyau Linux sur Windows, dans le but d’améliorer les performances du système de fichiers et de rendre les appels système entièrement compatibles. Cette nouvelle architecture change la façon dont les fichiers binaires Linux interagissent avec Windows et votre matériel informatique, mais elle offre toujours la même expérience utilisateur que dans la version précédente de WSL. Chaque distribution Linux peut individuellement s’exécuter en tant que distribution WSL 1 ou WSL 2, être exécutée côte à côte et être changée à tout moment. </br> [Installez WSL 2](https://docs.microsoft.com/windows/wsl/wsl2-install) pour commencer. </br> Examinez en détail les [différences dans l’expérience utilisateur entre WSL 1 et WSL 2](https://docs.microsoft.com/windows/wsl/wsl2-ux-changes). </br> Consultez le [FAQ WSL 2](https://docs.microsoft.com/windows/wsl/wsl2-faq).
+
+## <a name="msix-packaging-and-deployment"></a>MSIX, packages et déploiement
+
+Fonctionnalité | Description
+:------ | :------
+MSIX | Des mises à jour importantes du [format de package MSIX](/windows/msix/overview) ont été effectuées depuis la dernière version du SDK Windows 10. 
+Packages avec des services | MSIX et MSIX Packaging Tool [prennent désormais en charge les packages d’application qui contiennent des services](/windows/msix/packaging-tool/convert-an-installer-with-services).
+Scripts dans les packages MSIX | Vous pouvez [utiliser le framework de prise en charge de package (PSF) pour exécuter des scripts dans un package d’application MSIX](/windows/msix/psf/run-scripts-with-package-support-framework). Ces scripts permettent aux professionnels de l’informatique de personnaliser dynamiquement une application dans l’environnement de l’utilisateur une fois qu’elle a été ajoutée à un package MSIX.
+Application de l’intégrité de package | Vous pouvez maintenant appliquer l’intégrité de package sur le contenu de packages MSIX en ajoutant l’[élément uap10:PackageIntegrity](/uwp/schemas/appxpackage/uapmanifestschema/element-uap10-packageintegrity) dans votre manifeste de package. Vous pouvez aussi appliquer l’intégrité de package quand vous créez des packages MSIX à l’aide de MSIX Packaging Tool.
+Packages partiellement alloués | Vous pouvez [accorder une identité de package aux applications de bureau non incluses dans un package MSIX](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) en générant et en inscrivant un *package partiellement alloué* avec votre application. Cette fonctionnalité permet aux applications de bureau qui ne prennent pas encore en charge les packages MSIX pour le déploiement d’utiliser les fonctionnalités d’extensibilité de Windows 10 qui requièrent une identité de package.
+Applications hébergées | Vous pouvez maintenant [créer des applications hébergées](/windows/uwp/launch-resume/hosted-apps). Les applications hébergées partagent le même exécutable et la même définition qu’une application hôte parente, mais elles se présentent et se comportent sous forme d’une application distincte sur le système. Les applications hébergées sont utiles dans les scénarios où vous souhaitez qu’un composant (tel qu’un fichier exécutable ou un fichier de script) se comporte comme une application Windows 10 autonome, alors que ce composant nécessite un processus hôte pour pouvoir s’exécuter. Une application hébergée peut avoir une vignette de démarrage et une identité qui lui sont propres, tout en intégrant étroitement des fonctionnalités Windows 10, telles que les tâches en arrière-plan, les notifications, les vignettes et les cibles de partage.
+
+## <a name="windows-ui-library-winui"></a>Bibliothèque d’IU Windows (WinUI)
+
+Fonctionnalité | Description
+:------ | :------
+WinUI 2.4 | [WinUI 2.4](/uwp/toolkits/winui/release-notes/winui-2.4) est la dernière version publique de la bibliothèque d’IU Windows. Toutes les versions de WinUI fournissent une grande variété de contrôles d’interface utilisateur officiels pour vos applications Windows, et sont disponibles sous forme de package NuGet indépendant du SDK Windows pour pouvoir fonctionner sur les versions antérieures de Windows 10. [Suivez ces instructions](/uwp/toolkits/winui) pour installer WinUI.
+RadialGradientBrush | Nouveauté de WinUI 2.4, un [RadialGradientBrush](../design/style/brushes.md#radial-gradient-brushes) est dessiné dans une ellipse qui est définie par les propriétés Center, RadiusX et RadiusY. Les couleurs du début du dégradé se trouvent au centre de l’ellipse et se terminent au niveau du rayon.
+ProgressRing | Nouveauté de WinUI 2.4, le [contrôle ProgressRing](../design/controls-and-patterns/progress-controls.md) est utilisé pour les interactions modales, où l’utilisateur est bloqué jusqu’à la disparition de l’anneau de progression. Utilisez ce contrôle si une opération nécessite que la plupart des interactions avec l’application soit suspendue jusqu’à ce que l’opération soit terminée.
+TabView | Les mises à jour du [contrôle TabView](../design/controls-and-patterns/tab-view.md) vous permettent de contrôler davantage le rendu des onglets. Vous pouvez définir la largeur des onglets non sélectionnés et afficher seulement une icône pour gagner de l’espace à l’écran. Vous pouvez aussi masquer le bouton de fermeture dans les onglets non sélectionnés jusqu’à ce que l’utilisateur pointe sur l’onglet.
+Contrôles TextBox | Quand le thème foncé est activé, la couleur d’arrière-plan des contrôles de la famille TextBox reste désormais sombre par défaut lors de l’insertion de texte. Les contrôles concernés sont les suivants : [TextBox](/uwp/api/windows.ui.xaml.controls.textbox), [RichEditBox](/uwp/api/windows.ui.xaml.controls.richtextblock), [PasswordBox](/uwp/api/windows.ui.xaml.controls.passwordbox), [Editable ComboBox](/uwp/api/windows.ui.xaml.controls.combobox) et [AutoSuggestBox](/uwp/api/windows.ui.xaml.controls.autosuggestbox).
+NavigationView | Le contrôle [NavigationView](/uwp/api/microsoft.ui.xaml.controls.navigationview) prend maintenant en charge la navigation hiérarchique et comprend les modes d’affichage Left, Top et LeftCompact. Un NavigationView hiérarchique est utile pour afficher des catégories de pages, identifier des pages avec des pages enfants associées ou servir dans des applications qui ont des pages de style hub liées à de nombreuses autres pages.
+Galerie d’IU Windows | Des exemples de chaque fonctionnalité WinUI sont disponibles dans l’application XAML Controls Gallery. Vous pouvez télécharger l’application sur le [Microsoft Store](https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt)ou [afficher le code source sur GitHub](https://github.com/Microsoft/Xaml-Controls-Gallery).
+Versions précédentes | Depuis la version majeure précédente du SDK Windows 10, [WinUI 2.3](/uwp/toolkits/winui/release-notes/winui-2.3) et [WinUI 2.2](/uwp/toolkits/winui/release-notes/winui-2.2) ont également été publiés et fournissent de nouvelles fonctionnalités d’interface utilisateur conçues pour les développeurs Windows.
+
+## <a name="samples"></a>exemples
+
+Les exemples d’applications ci-dessous ont été mis à jour pour Windows 10 build 19041.
+
+* [Remote Sessions (jeu de quiz)](https://github.com/microsoft/Windows-appsample-remote-system-sessions)
+* [Base de données de commandes de clients](https://github.com/Microsoft/Windows-appsample-customers-orders-database)
+* [Lecteur RSS](https://github.com/Microsoft/Windows-appsample-rssreader)
+* [Marble Maze](https://github.com/Microsoft/Windows-appsample-marble-maze)
+* [Photo Editor](https://github.com/Microsoft/Windows-appsample-photo-editor)
+* [Planificateur de déjeuners](https://github.com/Microsoft/Windows-appsample-lunch-scheduler)
+* [Livre de coloriage](https://github.com/Microsoft/Windows-appsample-coloringbook)
+* [Hue Light Controller](https://github.com/Microsoft/Windows-appsample-huelightcontroller)
+* [Photo Lab](https://github.com/Microsoft/Windows-appsample-photo-lab)
+* [Family Notes](https://github.com/Microsoft/Windows-appsample-familynotes)
+
+## <a name="videos"></a>Vidéos
+
+### <a name="windows-terminal-the-secret-to-command-line-happiness"></a>Windows Terminal: the secret to command line happiness!
+
+Découvrez comment personnaliser le Terminal Windows en fonction de votre workflow et regardez des démonstrations de ses fonctionnalités en action. Pour plus d’informations, [regardez la vidéo](https://www.youtube.com/watch?v=2dsnwlnNBzs), puis [lisez la documentation](https://github.com/microsoft/terminal#terminal--console-overview).
+
+### <a name="wsl2-code-faster-on-the-windows-subsystem-for-linux"></a>WSL2: Code faster on the Windows Subsystem for Linux
+
+Découvrez WSL 2, la nouvelle version du sous-système Windows pour Linux, et les changements apportés pour améliorer les performances. Pour plus d’informations, [regardez la vidéo](https://www.youtube.com/watch?v=MrZolfGm8Zk), puis [lisez la documentation](/windows/wsl/wsl2-about).
+
+### <a name="msix-package-desktop-apps-for-windows-10-replace-outdated-installers"></a>MSIX: Package desktop apps for Windows 10. Replace outdated installers.
+
+Découvrez MSIX, le format de package pour l’installation d’applications Windows, y compris comment créer un package de votre code existant avec Visual Studio et comment déployer et distribuer votre application. Pour plus d’informations, [regardez la vidéo](https://www.youtube.com/watch?v=yhOnClQrvBk), puis [lisez la documentation](/windows/msix/).
