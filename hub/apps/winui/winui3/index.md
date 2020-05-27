@@ -3,12 +3,12 @@ title: WinUI 3.0 Preview 1 (Mai 2020)
 description: Vue d’ensemble de WinUI 3.0 Preview.
 ms.date: 05/14/2020
 ms.topic: article
-ms.openlocfilehash: 9141fe7ff215f28557020c7f76dd35c3560edfe5
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: 3aac14807f8455eb9a9294c40ddc76ddfa224659
+ms.sourcegitcommit: 7e8c7f89212c88dcc0274c69d2c3365194c0954a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83580136"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83688488"
 ---
 # <a name="windows-ui-library-30-preview-1-may-2020"></a>Bibliothèque d’interface utilisateur Windows 3.0 Preview 1 (Mai 2020)
 
@@ -64,12 +64,12 @@ Installez Visual Studio 2019, version 16.7 Preview 1. Vous pouvez le téléch
 
 Vous devez inclure les charges de travail suivantes lors de l’installation de Visual Studio Preview :
 
-- Développement Win32 .NET
+- Développement .NET Desktop
 - Développement pour la plateforme Windows universelle
 
 Pour créer des applications C++, vous devez également inclure les charges de travail suivantes :
 
-- Développement Win32 en C++
+- Développement Desktop en C++
 - Le composant facultatif *Outils de plateforme Windows universelle C++ (v142)* pour la charge de travail Plateforme Windows universelle
 
 ### <a name="visual-studio-project-templates"></a>Modèles de projet Visual Studio
@@ -133,24 +133,30 @@ WinUI 3.0 Preview 1 est compatible avec les PC qui exécutent la mise à jour 
 - MapControl
 - Navigation hiérarchique avec NavigationView
 - SwapChainPanel ne prend pas en charge la transparence
-- En C#, vous devez utiliser `WinRT.WeakReference<T>` plutôt que `System.WeakReference<T>`.
 - Global Reveal utilise le comportement de secours, un pinceau plein
 - XAML Islands n’est pas pris en charge dans cette version
 - Les bibliothèques d’écosystèmes tiers ne fonctionneront pas complètement
 - Les éditeurs IME ne fonctionnent pas
 - Les méthodes sur l’espace de noms Windows.UI.Text ne peuvent pas être appelées
-  
+
+### <a name="known-issues"></a>Problèmes connus
+
+- Dans les applications de bureau en C# :
+   - Vous devez utiliser `WinRT.WeakReference<T>` plutôt que `System.WeakReference<T>` pour les références faibles aux objets Windows (notamment les objets XAML).
+   - Les structs [Point](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point), [Rect](https://docs.microsoft.com/uwp/api/Windows.Foundation.Rect) et [Size](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size) ont des membres qui sont de type Float plutôt que de type Double.
+
+
 ## <a name="xaml-controls-gallery-winui-30-preview-1-branch"></a>Galerie de contrôles XAML (Branche WinUI 3.0 Preview 1)
 
-Consultez la [branche WinUI 3.0 Preview 1 de la galerie de contrôles XAML](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3preview1) pour obtenir un exemple d’application qui comprend tous les contrôles et fonctionnalités WinUI 3.0 Preview 1.
+Consultez la [branche WinUI 3.0 Preview 1 de la galerie de contrôles XAML](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3preview) pour obtenir un exemple d’application qui comprend tous les contrôles et fonctionnalités WinUI 3.0 Preview 1.
 
 ![Application XAML Controls Gallery WinUI 3.0 Preview 1](images/WinUI3XamlControlsGallery.png)<br/>
 *Exemple de l’application XAML Controls Gallery WinUI 3.0 Preview 1*
 
-Pour télécharger l’exemple, clonez la branche **winui3preview1** à l’aide de la commande suivante :
+Pour télécharger l’exemple, clonez la branche **winui3preview** à l’aide de la commande suivante :
 
-> `git clone --single-branch --branch winui3preview1 https://github.com/microsoft/Xaml-Controls-Gallery.git`
+> `git clone --single-branch --branch winui3preview https://github.com/microsoft/Xaml-Controls-Gallery.git`
 
-Après le clonage, veillez à basculer vers la branche **winui3preview1** dans votre environnement Git local :
+Après le clonage, veillez à basculer vers la branche **winui3preview** dans votre environnement Git local :
 
-> `git checkout winui3preview1`
+> `git checkout winui3preview`

@@ -11,20 +11,20 @@ metadata:
   ms.date: 11/08/2019
   ms.localizationpriority: medium
   uhfHeaderId: MSDocsHeader-WinDevCenter
-  ms.openlocfilehash: c97b18f07998faed28f4ecc83115bb0d5daaa313
-  ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+  ms.openlocfilehash: 1192e0d34ad0f754917bf156432646d0ace1458a
+  ms.sourcegitcommit: 10ec5a20dd1152a1037ebc4fba1a28cc96593586
   ms.translationtype: HT
   ms.contentlocale: fr-FR
   ms.lasthandoff: 05/19/2020
-  ms.locfileid: "83579990"
+  ms.locfileid: "83665872"
 highlightedContent:
   items:
   - title: Obtenir Visual Studio et le kit SDK Windows
     itemType: download
     url: https://developer.microsoft.com/windows/downloads
-  - title: Interface utilisateur et guide de conception
+  - title: Nouveautés de la dernière version pour les développeurs
     itemType: overview
-    url: /windows/apps/fluent-design-system
+    url: https://docs.microsoft.com/windows/uwp/whats-new/windows-10-build-19041
   - title: Adhérer au programme Insider
     itemType: overview
     url: https://docs.microsoft.com/windows-insider
@@ -44,7 +44,7 @@ productDirectory:
     links:
     - url: /windows/apps/winui/
       text: Prendre en main
-  - title: Sous-système Windows pour Linux, Python et autres outils
+  - title: Sous-système Windows pour Linux, Terminal Windows, Python et autres outils
     imageSrc: https://docs.microsoft.com/media/logos/logo_linux-color.svg
     links:
     - url: /windows/dev-environment/

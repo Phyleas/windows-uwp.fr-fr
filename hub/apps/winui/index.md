@@ -4,12 +4,12 @@ description: Bibliothèques WinUI pour le développement d’applications Window
 ms.topic: article
 ms.date: 05/11/2020
 keywords: windows 10, uwp, sdk kit de ressources, winui, bibliothèque d’interface utilisateur Windows
-ms.openlocfilehash: 2afa6b1eadc98300e3de76a1dfc6ede66a2a56e5
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: 01eed4a82bfe14b70c86ade1b82c487e33e6f6f6
+ms.sourcegitcommit: 3a7f9f05f0127bc8e38139b219e30a8df584cad3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83580176"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83775891"
 ---
 # <a name="windows-ui-library-winui"></a>Bibliothèque d’interface utilisateur Windows (WinUI)
 
@@ -38,7 +38,7 @@ Avec la compatibilité de bas niveau avec les versions antérieures de Windows 
 
 Pour obtenir des instructions d’installation, consultez [Bien démarrer avec la bibliothèque d’interface utilisateur Windows](winui2/getting-started.md).
 
-### <a name="related-links"></a>Liens connexes
+### <a name="related-links-for-winui-2x"></a>Liens associés pour WinUI 2.x
 
 - [Vue d’ensemble de la bibliothèque WinUI 2.x](winui2/index.md)
 - [Documentation sur les API](https://docs.microsoft.com/uwp/api/overview/winui/)
@@ -52,7 +52,7 @@ WinUI 3 est la prochaine version de WinUI, une plateforme d’interface utilisa
 En découplant entièrement le XAML, la composition et les API d’entrée du SDK UWP, la bibliothèque d’interface utilisateur Windows 3.0 peut étendre de façon considérable l’étendue de WinUI pour inclure la plateforme d’interface utilisateur native Windows 10 complète.
 
 WinUI est la plateforme d’avenir par excellence pour toutes les applications Windows ; vous pouvez l’utiliser comme couche d’interface utilisateur sur votre application UWP ou Win32 native, ou pour moderniser votre application de bureau composant par composant avec [Xaml Islands](https://docs.microsoft.com/windows/apps/desktop/modernize/xaml-islands).
- 
+
 > [!NOTE]
 > WinUI 3.0 Preview 1 est une build de préversion de WinUI 3.0. Nous serions heureux de recevoir vos commentaires dans le [dépôt GitHub WinUI](https://github.com/microsoft/microsoft-ui-xaml).
 
@@ -65,10 +65,10 @@ La plateforme Windows universelle contient davantage que le simple framework XAM
 > [!Important]
 > WinUI 3.0 Preview 1 est destiné à une évaluation anticipée et à la collecte de commentaires de la communauté des développeurs. Il ne doit **PAS** être utilisé pour les applications de production.
 
-### <a name="related-links"></a>Liens connexes
+### <a name="related-links-for-winui-30"></a>Liens associés pour WinUI 3.0
 
 - [WinUI 3.0 Preview 1 (Mai 2020)](winui3/index.md)
-- [Application XAML Controls Gallery (WinUI 3.0 Preview 1)](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3alpha)
+- [Application XAML Controls Gallery (WinUI 3.0 Preview 1)](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3preview)
 
 ## <a name="winui-resources"></a>Ressources WinUI
 

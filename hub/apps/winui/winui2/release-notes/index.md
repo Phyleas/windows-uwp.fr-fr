@@ -3,16 +3,16 @@ title: Notes de publication de WinUI
 description: Index des notes de publication de WinUI.
 ms.date: 05/08/2020
 ms.topic: reference
-ms.openlocfilehash: 93e98d771eace65f502d77ffe8e1891ab09ff40a
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: cf1cf75d7f92107c88f27008bff53c76d37715ec
+ms.sourcegitcommit: 3a7f9f05f0127bc8e38139b219e30a8df584cad3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83580226"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83775821"
 ---
 # <a name="windows-ui-library-2x-release-notes"></a>Notes de publication de la bibliothèque Windows UI 2.x
 
-La bibliothèque d’interface utilisateur Windows (WinUI) est un projet open source hébergé sur GitHub. Toutes les nouvelles versions sont générées à partir du [dépôt GitHub de la bibliothèque d’interface utilisateur Windows](https://aka.ms/winui). 
+La bibliothèque d’interface utilisateur Windows (WinUI) est un projet open source hébergé sur GitHub. Toutes les nouvelles versions sont générées à partir du [dépôt GitHub de la bibliothèque d’interface utilisateur Windows](https://aka.ms/winui).
 
 Vous pouvez également nous faire part de vos rapports de bogues, demandes de fonctionnalités et contributions de code de la Communauté dans le [dépôt de la bibliothèque d’interface utilisateur Windows](https://aka.ms/winui).
 
@@ -49,9 +49,9 @@ Historique des versions du [package NuGet Microsoft.UI.Xaml](https://www.nuget.o
 | [2.4](winui-2.4.md) | stable | Mai 2020 | [Notes de publication](winui-2.4.md) | [RadialGradientBrush](winui-2.4.md#radialgradientbrush), [ProgressRing](winui-2.4.md#progressring), [Mises à jour de TabView](winui-2.4.md#tabview-updates), [Mises à jour du thème sombre de la famille de contrôles TextBox](winui-2.4.md#dark-theme-updates-to-textbox-family-of-controls), [Navigation hiérarchique](winui-2.4.md#hierarchical-navigation),  |
 | [2.3](winui-2.3.md) | stable | Novembre 2019 | [Notes de publication](winui-2.3.md) | [Actualisation visuelle de la barre de progression](winui-2.3.md#progress-bar-visual-refresh), [NumberBox](winui-2.3.md#numberbox), [RadioButtons](winui-2.3.md#radiobuttons) |
 | [2.2](winui-2.2.md) | stable | Août 2019 | [Notes de publication](winui-2.2.md) | [TabView](winui-2.2.md#tabview), [Mises à jour de NavigationView](winui-2.2.md#navigationview-updates), [Mises à jour des styles visuels](winui-2.2.md#visual-style-updates)  |
-| [2.1](winui-2.1.md) | stable | Avril 2019 | [Notes de publication](winui-2.1.md) | Première version open source à partir de [GitHub](https://github.com/microsoft/microsoft-ui-xaml). <br />[ItemsRepeater](winui-2.1.md#itemsrepeater), [AnimatedVisualPlayer](winui-2.1.md#animatedvisualplayer), [TeachingTip](winui-2.1.md#teachingtip), [RadioMenuFlyoutItem](winui-2.1.md#radiomenuflyoutitem), [CompactDensity](winui-2.1.md#compactdensity), [Shadows](winui-2.1.md#shadows). |
-| [2.0](winui-2.0.md) | stable | Octobre 2018 | [Notes de publication](winui-2.0.md) | Version initiale.<br>Comprend des fonctionnalités et des contrôles Fluent natifs officiels pour les applications UWP Windows.  |
+| [2.1](winui-2.1.md) | stable | Avril 2019 | [Notes de publication](winui-2.1.md) | **Première publication open source** de [GitHub](https://github.com/microsoft/microsoft-ui-xaml). Comprend [ItemsRepeater](winui-2.1.md#itemsrepeater), [AnimatedVisualPlayer](winui-2.1.md#animatedvisualplayer), [TeachingTip](winui-2.1.md#teachingtip), [RadioMenuFlyoutItem](winui-2.1.md#radiomenuflyoutitem), [CompactDensity](winui-2.1.md#compactdensity), [Shadows](winui-2.1.md#shadows). |
+| [2.0](winui-2.0.md) | stable | Octobre 2018 | [Notes de publication](winui-2.0.md) | **Publication initiale**. Comprend des fonctionnalités et des contrôles Fluent natifs officiels pour les applications UWP Windows.  |
 
-### <a name="winui-3-alpha"></a>WinUI 3 Alpha
+### <a name="winui-3-preview-1"></a>WinUI 3 Preview 1
 
-Pour plus d’informations sur l’a façon d’essayer des préversions de WinUI 3, consultez [WinUI 3.0 (Alpha)](../../winui3/index.md).
+Pour savoir comment essayer des préversions anticipées de WinUI 3, consultez [WinUI 3.0 Preview 1](../../winui3/index.md).
