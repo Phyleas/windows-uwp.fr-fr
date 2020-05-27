@@ -4,21 +4,18 @@ description: Votre application Windows universelle doit être authentifiée pour
 ms.assetid: 13B400D7-E13F-4F07-ACC3-9C34087F0F73
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, clé d’authentification de cartes, contrôle de cartes
+keywords: Windows 10, UWP, clé d’authentification cartographique, contrôle de carte
 ms.localizationpriority: medium
-ms.openlocfilehash: c3bc74d83c3f713149e9001de4ec10fe0a4706de
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: ab0d1900398c313021600c18338ecc1201241410
+ms.sourcegitcommit: f806d5f3b0c1e046c903d3388092c0e059d21858
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259387"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83790994"
 ---
 # <a name="request-a-maps-authentication-key"></a>Demander une clé d’authentification de cartes
 
-
-
-
-Votre [application Windows universelle](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) doit être authentifiée pour pouvoir utiliser le [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) et les services cartographiques dans l’espace de noms [**Windows.Services.Maps**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps). Pour authentifier votre application, vous devez spécifier une clé d’authentification de cartes. Cette rubrique décrit comment demander une clé d’authentification de cartes au [Centre de développement Bing Cartes](https://www.bingmapsportal.com/) et comment l’ajouter à votre application.
+Votre [application Windows universelle](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) doit être authentifiée avant de pouvoir utiliser les services [**collection MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) et map dans l’espace de noms [**Windows. services. Maps**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps) . Pour authentifier votre application, vous devez spécifier une clé d’authentification de cartes. Cette rubrique décrit comment demander une clé d’authentification de cartes au [Centre de développement Bing Cartes](https://www.bingmapsportal.com/) et comment l’ajouter à votre application.
 
 **Conseil** Pour en savoir plus sur l’utilisation de cartes dans votre application, téléchargez l’exemple suivant à partir du [référentiel Windows-universal-samples](https://github.com/Microsoft/Windows-universal-samples) sur GitHub :
 
@@ -31,7 +28,7 @@ Le [Centre de développement Bing Cartes](https://www.bingmapsportal.com/) perme
 
 Pour créer une clé
 
-1.  Dans votre navigateur, accédez au centre de développement Bing Maps ([https://www.bingmapsportal.com](https://www.bingmapsportal.com/)).
+1.  Dans votre navigateur, accédez au centre de développement Bing Maps ( [https://www.bingmapsportal.com](https://www.bingmapsportal.com/) ).
 
 2.  Si vous êtes invité à vous connecter, entrez votre compte Microsoft, puis cliquez sur **Se connecter**.
 
@@ -39,9 +36,9 @@ Pour créer une clé
 
 4.  Si vous n’avez pas encore de compte Bing Cartes, créez-en un. Renseignez les champs suivants : **Nom du compte**, **Nom du contact**, **Nom de la société**, **Adresse e-mail** et **Numéro de téléphone**. Après avoir accepté les conditions d’utilisation, cliquez sur **Créer**.
 
-5.  Dans le menu **Mon compte**, cliquez sur **Mes clés**.
+5.  Dans le menu **mon compte** , cliquez sur **mes clés**.
 
-6.  Si vous avez précédemment créé une clé, cliquez sur le lien pour créer une autre clé. Sinon, passez au formulaire Créer une clé.
+6.  Si vous avez déjà créé une clé, cliquez sur le lien pour créer une nouvelle clé. Sinon, passez au formulaire créer une clé.
 
 7.  Complétez le formulaire **Créer une clé**, puis cliquez sur **Créer**.
 
@@ -59,11 +56,11 @@ Pour créer une clé
 ## <a name="add-the-key-to-your-app"></a>Ajouter la clé à votre application
 
 
-La clé d’authentification de carte est nécessaire pour utiliser le [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) et les services de carte ([**Windows.Services.Maps**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps)) dans votre application Windows universelle. Le cas échéant, ajoutez-la aux objets contrôle de carte et services de carte.
+La clé d’authentification de mappage est nécessaire pour utiliser les [**collection MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) et les services de mappage ([**Windows. services. Maps**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps)) dans votre application Windows universelle. Le cas échéant, ajoutez-la aux objets contrôle de carte et services de carte.
 
 ### <a name="to-add-the-key-to-a-map-control"></a>Pour ajouter la clé à un contrôle de carte
 
-Pour authentifier le [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl), définissez la propriété [**MapServiceToken**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken) sur la valeur de clé d’authentification. Vous pouvez définir cette propriété dans le code ou dans le balisage XAML, en fonction de vos préférences. Pour plus d’informations sur l’utilisation du **MapControl**, voir [Afficher des cartes avec des vues 2D, 3D et Streetside](display-maps.md).
+Pour authentifier le [**collection MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl), définissez la propriété [**MapServiceToken**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken) sur la valeur de la clé d’authentification. Vous pouvez définir cette propriété dans le code ou dans le balisage XAML, en fonction de vos préférences. Pour plus d’informations sur l’utilisation du **MapControl**, voir [Afficher des cartes avec des vues 2D, 3D et Streetside](display-maps.md).
 
 -   Cet exemple définit le **MapServiceToken** sur la valeur de la clé d’authentification dans le code.
 
@@ -92,5 +89,5 @@ Pour utiliser les services dans l’espace de noms [**Windows.Services.Maps**](h
 * [Espace partenaires Bing Cartes](https://www.bingmapsportal.com/)
 * [Exemple de carte UWP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
 * [Recommandations de conception pour les cartes](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
-* [Build 2015 Video : utilisation des cartes et de l’emplacement sur les téléphones, les tablettes et les PC dans vos applications Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [Vidéos de la build 2015 : utilisation de cartes et de localisation sur un téléphone, une tablette et un PC dans vos applications Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [Exemple d’application de trafic UWP](https://github.com/Microsoft/Windows-appsample-trafficapp)
