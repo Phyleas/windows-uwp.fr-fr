@@ -8,18 +8,18 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: ed4356513e406c7c787ec111d32560ac08d293f1
-ms.sourcegitcommit: f26d0b22a70b05679fc7089e11d639ba1a4a23af
+ms.openlocfilehash: 1847fb707d633cc7960b3b9767db974452414a25
+ms.sourcegitcommit: eae9859ee06c1e5e4afa08d8d3da072ad06d24a8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82107722"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84110390"
 ---
 # <a name="create-hosted-apps"></a>Créer des applications hébergées
 
 À compter de Windows 10, version 2004, vous pouvez créer des *applications hébergées*. Une application hébergée partage le même exécutable et la même définition qu’une application *hôte* parent, mais elle se présente comme une application distincte sur le système.
 
-Les applications hébergées sont utiles dans les scénarios où vous souhaitez qu’un composant (tel qu’un fichier exécutable ou un fichier de script) se comporte comme une application Windows 10 autonome, mais le composant requiert un processus hôte pour pouvoir s’exécuter. Par exemple, un script PowerShell ou python peut être fourni sous la forme d’une application hébergée nécessitant l’installation d’un hôte pour pouvoir s’exécuter. Une application hébergée peut avoir sa propre vignette de départ, son identité et son intégration profonde avec les fonctionnalités Windows 10, telles que les tâches en arrière-plan, les notifications, les vignettes et les cibles de partage.
+Les applications hébergées sont utiles dans les scénarios où vous souhaitez qu’un composant (tel qu’un fichier exécutable ou un fichier de script) se comporte comme une application Windows 10 autonome, alors que ce composant nécessite un processus hôte pour pouvoir s’exécuter. Par exemple, un script PowerShell ou python peut être fourni sous la forme d’une application hébergée nécessitant l’installation d’un hôte pour pouvoir s’exécuter. Une application hébergée peut avoir une vignette de démarrage et une identité qui lui sont propres, tout en intégrant étroitement des fonctionnalités Windows 10, telles que les tâches en arrière-plan, les notifications, les vignettes et les cibles de partage.
 
 La fonctionnalité applications hébergées est prise en charge par plusieurs éléments et attributs du manifeste de package qui permettent à une application hébergée d’utiliser un exécutable et une définition dans un package d’application hôte. Quand un utilisateur exécute l’application hébergée, le système d’exploitation lance automatiquement l’exécutable hôte sous l’identité de l’application hébergée. L’hôte peut ensuite charger les ressources visuelles, le contenu ou les API d’appel comme application hébergée. L’application hébergée obtient l’intersection des fonctionnalités déclarées entre l’hôte et l’application hébergée. Cela signifie qu’une application hébergée ne peut pas demander plus de fonctionnalités que celles fournies par l’hôte.
 
@@ -109,8 +109,8 @@ L’un des avantages de l’extension **uap10 : HostRuntime** est qu’elle per
 
 Utilisez les méthodes suivantes de la classe [**packagemanager**](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager) pour inscrire un package d’application hébergé non signé. Ces méthodes sont disponibles à partir de Windows 10, version 2004.
 
-* **AddPackageByUriAsync**: enregistre un package MSIX non signé à l’aide de la propriété **AllowUnsigned** du paramètre *options* .
-* **RegisterPackageByUriAsync**: effectue une inscription de fichier manifeste de package libre. Si le package est signé, le dossier contenant le manifeste doit inclure un [fichier. p7x](https://docs.microsoft.com/windows/msix/overview#inside-an-msix-package) et un catalogue. Si la valeur n’est pas signée, la propriété **AllowUnsigned** du paramètre *options* doit être définie.
+* [**AddPackageByUriAsync**](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager.addpackagebyuriasync): enregistre un package MSIX non signé à l’aide de la propriété **AllowUnsigned** du paramètre *options* .
+* [**RegisterPackageByUriAsync**](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager.registerpackagebyuriasync): effectue une inscription de fichier manifeste de package libre. Si le package est signé, le dossier contenant le manifeste doit inclure un [fichier. p7x](https://docs.microsoft.com/windows/msix/overview#inside-an-msix-package) et un catalogue. Si la valeur n’est pas signée, la propriété **AllowUnsigned** du paramètre *options* doit être définie.
 
 ### <a name="requirements-for-unsigned-hosted-apps"></a>Configuration requise pour les applications hébergées non signées
 
@@ -138,7 +138,7 @@ Pour obtenir un exemple d’application entièrement fonctionnel qui déclare lu
 
 ### <a name="the-host"></a>Hôte
 
-L’hôte est nommé **PyScriptEngine**. Il s’agit d’un wrapper écrit en C# qui exécute des scripts Python. Lorsqu’il est exécuté `-Register` avec le paramètre, le moteur de script installe une application hébergée contenant un script Python. Lorsqu’un utilisateur tente de lancer l’application hébergée récemment installée, l’ordinateur hôte est lancé et exécute le script Python **NumberGuesser** .
+L’hôte est nommé **PyScriptEngine**. Il s’agit d’un wrapper écrit en C# qui exécute des scripts Python. Lorsqu’il est exécuté avec le `-Register` paramètre, le moteur de script installe une application hébergée contenant un script Python. Lorsqu’un utilisateur tente de lancer l’application hébergée récemment installée, l’ordinateur hôte est lancé et exécute le script Python **NumberGuesser** .
 
 Le manifeste du package pour l’application hôte (le fichier Package. appxmanifest dans le dossier PyScriptEnginePackage) contient une extension **uap10 : HostRuntime** qui déclare l’application en tant qu’hôte avec l’ID **PythonHost** et l’exécutable **PyScriptEngine. exe**.  
 
