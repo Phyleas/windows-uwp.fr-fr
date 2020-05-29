@@ -6,14 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, clé d’authentification cartographique, contrôle de carte
 ms.localizationpriority: medium
-ms.openlocfilehash: ab0d1900398c313021600c18338ecc1201241410
-ms.sourcegitcommit: f806d5f3b0c1e046c903d3388092c0e059d21858
+ms.openlocfilehash: 2f4a76edfe5772665564cb8890ffcdf56205a2f7
+ms.sourcegitcommit: d1eba7cf79cd2885b5bf8f5501bc44a569ab9864
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83790994"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84172591"
 ---
 # <a name="request-a-maps-authentication-key"></a>Demander une clé d’authentification de cartes
+
+> [!WARNING]
+> Les services Online Maps ne sont peut-être pas disponibles dans les versions antérieures de Windows 10. Dans les versions suivantes, collection MapControl peut ne plus afficher les mappages et les API dans l’espace de noms Windows. services. Maps ne peuvent pas retourner de résultats :
+> - Windows 10, version 1607 et versions antérieures : les services cartographiques ne seront pas disponibles dans le monde entier à partir du 2020 octobre
+> - Windows 10, version 1703 et versions antérieures : les services cartographiques ne sont pas disponibles sur [certains appareils vendus en Chine](https://docs.microsoft.com/windows-hardware/customize/desktop/unattend/microsoft-windows-mapcontrol-desktop-chinavariantwin10)
 
 Votre [application Windows universelle](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) doit être authentifiée avant de pouvoir utiliser les services [**collection MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) et map dans l’espace de noms [**Windows. services. Maps**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps) . Pour authentifier votre application, vous devez spécifier une clé d’authentification de cartes. Cette rubrique décrit comment demander une clé d’authentification de cartes au [Centre de développement Bing Cartes](https://www.bingmapsportal.com/) et comment l’ajouter à votre application.
 
