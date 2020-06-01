@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 299a25bb92c5afdb86ebc1569a1f98916baa3d09
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: add292dd5b58c3e8da1a0ce2c2371bf211b2a617
+ms.sourcegitcommit: 7704c888a28edc7ab0515a75afac93d1dda4d693
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83233951"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84151948"
 ---
 # <a name="introduction-to-windows-app-design"></a>Introduction à la conception d’applications Windows
 
@@ -120,7 +120,7 @@ Votre application UWP interagira avec l’expérience Windows plus large des vig
 
 Les vignettes s'affichent dans le menu Démarrer et au lancement de votre application. Elles offrent un aperçu de ce qui se passe dans votre application. Elles s’appuient sur un solide contenu, et sur l’intelligence et le mode de conception qui sont à leur origine.
 
-Les applications UWP disposent de quatre tailles de vignettes (petite, moyenne, large et grande) qui peuvent être personnalisées avec l’icône et l’identité de l’application. Pour obtenir des conseils sur la conception de vignettes pour votre application UWP, consultez [Recommandations en matière de ressources de vignette et d’icône](../shell/tiles-and-notifications/app-assets.md).
+Les applications UWP disposent de quatre tailles de vignettes (petite, moyenne, large et grande) qui peuvent être personnalisées avec l’icône et l’identité de l’application. Pour obtenir des conseils sur la conception de vignettes pour votre application UWP, consultez [Recommandations en matière de ressources de vignette et d’icône](../style/app-icons-and-logos.md).
     :::column-end:::
     :::column:::
 ![vignettes du menu Démarrer](images/shell.svg)

@@ -7,12 +7,15 @@ keywords: windows 10, uwp
 design-contact: karenmui
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: f5e103b7661c53fb70561dd1bd654188be2704ff
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+dev_langs:
+- csharp
+- cppwinrt
+ms.openlocfilehash: c87dfbdc00df36c75a5b0b865376af352edcabbb
+ms.sourcegitcommit: 577a54d36145f91c8ade8e4509d4edddd8319137
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970764"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83867359"
 ---
 # <a name="color"></a>Couleur
 
@@ -235,6 +238,9 @@ Vous pouvez également créer la même couleur dans le code à l’aide de la m�
 
 ```csharp
 Color LightBlue = Color.FromArgb(255,54,192,255);
+```
+```cppwinrt
+Windows::UI::Color LightBlue = Windows::UI::ColorHelper::FromArgb(255,54,192,255);
 ```
 
 Les lettres « Arvb » signifient Alpha (opacité), Rouge, Vert et Bleu, qui sont les quatre composants d’une couleur. Chaque argument peut être compris entre 0 et 255. Vous pouvez choisir d’omettre la première valeur, ce qui vous donne une opacité par défaut de 255, c’est-à-dire 100 % opaque.
