@@ -6,16 +6,19 @@ ms.author: kevinla
 ms.date: 04/28/2020
 ms.topic: overview
 ms.localizationpriority: medium
-ms.openlocfilehash: b44f20021a0fa33da862e2361be60b730b041b49
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: cb897f25324ab8a516d18f5defe7cffa3e6a0109
+ms.sourcegitcommit: 5a145eda92b5915393e58006867cdd8b98e922f5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83824970"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84166246"
 ---
 # <a name="source-command-winget"></a>source, commande (winget)
 
 [!INCLUDE [preview-note](../../includes/package-manager-preview.md)]
+
+> [!NOTE]
+> La commande **source** est actuellement réservée à un usage interne. Aucune autre source n’est prise en charge pour l’instant.
 
 La commande **source** de l’outil [winget](index.md) gère les dépôts auxquels le Gestionnaire de package Windows accède. Avec la commande **source**, vous pouvez **ajouter**, **supprimer**, **lister** et **mettre à jour** les dépôts.
 
@@ -70,22 +73,24 @@ La sous-commande **add** prend également en charge le paramètre **type** facul
 
 | Type  | Description |
 |--------------|-------------|
-| **Microsoft.PreIndexed.Package** | Type de source \<default>. |
+| **Microsoft.PreIndexed.Package** | Type de la source \<default>. |
 
 ## <a name="list"></a>list
 
 La sous-commande **list** énumère les sources actuellement activées. Elle fournit également des détails sur une source spécifique.
 
-Utilisation : `winget list [-n, --name] \<name>`
+Utilisation : `winget source list [-n, --name] \<name>`
 
 ### <a name="list-all"></a>list all
 
 La sous-commande **list** utilisée seule affiche la liste complète des sources prises en charge. Par exemple :
 
 ```CMD
-> C:\winget list
-> Current sources:
->     Contoso ->  https://www.contoso.com/cache
+> C:\winget source list
+> Name   Arg
+> -----------------------------------------
+> winget https://winget.azureedge.net/cache
+
 ```
 
 ### <a name="list-source-details"></a>list source details
@@ -111,7 +116,7 @@ Pour obtenir des détails complets sur la source, passez le nom utilisé pour id
 
 La sous-commande **update** force la mise à jour d’une source individuelle ou de toutes les sources.
 
-Utilisation : `winget update [-n, --name] \<name>`
+Utilisation : `winget source update [-n, --name] \<name>`
 
 ### <a name="update-all"></a>update all
 
@@ -119,7 +124,7 @@ La sous-commande **update** utilisée seule demande les mises à jour et les app
 
 ### <a name="update-source"></a>source de mise à jour
 
-La sous-commande **update** associée à l’option **--name** peut cibler et mettre à jour une source individuelle. Par exemple : `C:\winget update --name contoso`
+La sous-commande **update** associée à l’option **--name** peut cibler et mettre à jour une source individuelle. Par exemple : `C:\winget source update --name contoso`
 
 ## <a name="remove"></a>suppression
 

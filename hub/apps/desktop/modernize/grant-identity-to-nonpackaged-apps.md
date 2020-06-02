@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: d870c82a3e4a8bc6c2ce923026010eff953eead2
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: c90400c577110f326c693a6c06d28582033a86f6
+ms.sourcegitcommit: eae9859ee06c1e5e4afa08d8d3da072ad06d24a8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82107712"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84110382"
 ---
 # <a name="grant-identity-to-non-packaged-desktop-apps"></a>Accorder une identité à des applications de bureau non empaquetées
 
@@ -157,9 +157,9 @@ Le manifeste d’application côte à côte doit se trouver dans le même réper
 
 ## <a name="register-your-sparse-package-at-run-time"></a>Inscrire le package partiellement alloué au moment de l’exécution
 
-Pour accorder une identité de package à votre application de bureau, cette dernière doit inscrire le package partiellement alloué à l’aide de la méthode **AddPackageByUriAsync** de la classe [**PackageManager**](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager). Cette méthode est disponible à partir de Windows 10, version 2004. Vous pouvez ajouter du code à votre application pour inscrire le package partiellement alloué lors de la première exécution de votre application. Vous pouvez également exécuter du code afin d'inscrire le package lors de l’installation de votre application de bureau (par exemple, si vous utilisez MSI pour installer votre application de bureau, vous pouvez exécuter ce code à l'aide d'une action personnalisée).
+Pour accorder une identité de package à votre application de bureau, cette dernière doit inscrire le package partiellement alloué à l’aide de la méthode [**AddPackageByUriAsync**](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager.addpackagebyuriasync) de la classe [**PackageManager**](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager). Cette méthode est disponible à partir de Windows 10, version 2004. Vous pouvez ajouter du code à votre application pour inscrire le package partiellement alloué lors de la première exécution de votre application. Vous pouvez également exécuter du code afin d'inscrire le package lors de l’installation de votre application de bureau (par exemple, si vous utilisez MSI pour installer votre application de bureau, vous pouvez exécuter ce code à l'aide d'une action personnalisée).
 
-L'exemple suivant montre comment inscrire un package partiellement alloué. Ce code crée un objet **AddPackageOptions** contenant le chemin de l'emplacement externe où le manifeste de votre package peut référencer du contenu en dehors du package. Ensuite, le code transmet cet objet à la méthode **AddPackageByUriAsync** pour inscrire le package partiellement alloué. Cette méthode reçoit également l’emplacement de votre package partiellement alloué signé sous forme d'URI. Pour un exemple plus détaillé, consultez le fichier de code `StartUp.cs` de l'[exemple](#sample) correspondant.
+L'exemple suivant montre comment inscrire un package partiellement alloué. Ce code crée un objet [**AddPackageOptions**](https://docs.microsoft.com/uwp/api/windows.management.deployment.addpackageoptions) contenant le chemin de l’emplacement externe où le manifeste de votre package peut référencer du contenu en dehors du package. Ensuite, le code transmet cet objet à la méthode **AddPackageByUriAsync** pour inscrire le package partiellement alloué. Cette méthode reçoit également l’emplacement de votre package partiellement alloué signé sous forme d'URI. Pour un exemple plus détaillé, consultez le fichier de code `StartUp.cs` de l'[exemple](#sample) correspondant.
 
 ```csharp
 private static bool registerSparsePackage(string externalLocation, string sparsePkgPath)

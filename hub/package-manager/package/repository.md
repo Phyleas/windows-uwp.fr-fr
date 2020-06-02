@@ -6,12 +6,12 @@ ms.author: denelon
 ms.date: 04/29/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c1a8ab3c6a2cc697729fb5551e686a465bf6a0c
-ms.sourcegitcommit: 3a7f9f05f0127bc8e38139b219e30a8df584cad3
+ms.openlocfilehash: c5ebcc564b4db16c1d16385cbeaf7fd6d82c8f18
+ms.sourcegitcommit: 8193aef04deb3514eb2d34bfe5cb9424ba12cd76
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83825120"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83865026"
 ---
 # <a name="submit-your-manifest-to-the-repository"></a>Envoyer votre manifeste au dépôt
 
@@ -91,9 +91,9 @@ Vous êtes maintenant prêt à envoyer votre nouveau manifeste vers le dépôt d
     git commit -m "Submitting  ContosoApp version 1.0.0.yaml"
     ```
 
-3. Utilisez la commande `push` pour effectuer l’envoi (push) des modifications vers le dépôt distant.
+3. Utilisez la commande `push` pour envoyer (push) les modifications au dépôt distant.
     ```CMD
-    `git push`
+    git push
     ```
 
 ### <a name="step-5-create-a-pull-request"></a>Étape 5 : Créer une demande de tirage

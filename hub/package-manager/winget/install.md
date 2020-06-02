@@ -6,12 +6,12 @@ ms.author: kevinla
 ms.date: 04/28/2020
 ms.topic: overview
 ms.localizationpriority: medium
-ms.openlocfilehash: c903c923a82edc03ffdce9c5790060cb65232cf8
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: 8c460ccd18bb1bb12e5322e0e08a17edbd9692f7
+ms.sourcegitcommit: 5a145eda92b5915393e58006867cdd8b98e922f5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83824990"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84166238"
 ---
 # <a name="install-command-winget"></a>install, commande (winget)
 
@@ -47,14 +47,33 @@ Les options vous permettent de personnaliser l’expérience d’installation en
 | **--name**   |  Limite la recherche au nom de l’application. |  
 | **--moniker**   | Limite la recherche au moniker listé pour l’application. |  
 | **-v, --version**  |  Vous permet de spécifier une version précise à installer. Si aucune version n’est spécifiée, la version la plus récente de l’application est installée. |  
-| **--tag**   |   Limite la recherche aux étiquettes listées pour l’application. |  
-| **-s, -source**   |  Limite la recherche au nom de source spécifié. Doit être suivi du nom de la source. |  
-| **-e, -exact**   |   Utilise la chaîne exacte dans la requête, y compris la vérification du respect de la casse. Elle n’utilise pas le comportement par défaut d’une sous-chaîne. |  
-| **-i, -interactive** |  Exécute le programme d’installation en mode interactif. L’expérience par défaut montre la progression du programme d’installation. |  
-| **-h, -silent** |  Exécute le programme d’installation en mode silencieux. Vous ne voyez aucune invite s’afficher. L’expérience par défaut montre la progression du programme d’installation. |  
+| **-s, --source**   |  Limite la recherche au nom de source spécifié. Doit être suivi du nom de la source. |  
+| **-e, --exact**   |   Utilise la chaîne exacte dans la requête, y compris la vérification du respect de la casse. Elle n’utilise pas le comportement par défaut d’une sous-chaîne. |  
+| **-i, --interactive** |  Exécute le programme d’installation en mode interactif. L’expérience par défaut montre la progression du programme d’installation. |  
+| **-h, --silent** |  Exécute le programme d’installation en mode silencieux. Vous ne voyez aucune invite s’afficher. L’expérience par défaut montre la progression du programme d’installation. |  
 | **-o, --log**  |  Dirige la journalisation vers un fichier journal spécifique. Vous devez fournir le chemin d’un fichier sur lequel vous disposez des droits d’écriture. |
-| **-override** | Chaîne qui sera passée directement au programme d’installation.    |
-| **-l,--location** |    Emplacement d’installation (si pris en charge). |
+| **--override** | Chaîne qui sera passée directement au programme d’installation.    |
+| **-l, --location** |    Emplacement d’installation (si pris en charge). |
+
+### <a name="example-queries"></a>Exemples de requêtes
+
+L’exemple suivant installe une version spécifique d’une application.
+
+```CMD
+winget install powertoys --version 0.15.2
+```
+
+L’exemple suivant installe une application à partir de son ID.
+
+```CMD
+winget install --id Microsoft.PowerToys
+```
+
+L’exemple suivant installe une application par version et ID.
+
+```CMD
+winget install --id Microsoft.PowerToys --version 0.15.2
+```
 
 ## <a name="multiple-selections"></a>Sélections multiples
 
@@ -68,11 +87,11 @@ Utilisation : `winget install --manifest \<file>`
 
 | Option  | Description |
 |-------------|-------------|  
-|  **-m,--manifest** | Chemin du manifeste de l’application à installer. |
+|  **-m, --manifest** | Chemin du manifeste de l’application à installer. |
 
 ### <a name="log-files"></a>Fichiers journaux
 
-Les fichiers journaux de winget, sauf s’ils ont été redirigés, se trouvent dans le dossier suivant : ** \%temp%\\AICLI\\ *.log**
+Les fichiers journaux de winget, sauf s’ils ont été redirigés, se trouvent dans le dossier suivant :  **\%temp%\\AICLI\\*.log**
 
 ## <a name="related-topics"></a>Rubriques connexes
 

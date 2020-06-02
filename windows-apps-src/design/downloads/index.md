@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: b2371d7a778f8abcfc7d3c57aba5ee85d516d859
-ms.sourcegitcommit: 124cea09be7f12444bfff541badb65d539d55c83
+ms.openlocfilehash: fae8031ec8255cbfef313a9b75f459750be0aee3
+ms.sourcegitcommit: 37e4af3ba203295c7e88448414cf7ea537ab5402
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84124131"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84257464"
 ---
 # <a name="design-toolkits-and-samples-for-windows-apps"></a>Kits de ressources et exemples de conception pour les applications Windows
 
@@ -78,6 +78,9 @@ Fonctions d’assistance, contrôles personnalisés et services d’application.
 <a href="/windows/uwpcommunitytoolkit/getting-started">Instructions d’installation</a>
     :::column-end:::
     :::column:::
+        ![Miniature Windows Template Studio](images/Windows-template-studio.png) <b>Windows Template Studio</b><br>
+        Générez automatiquement et rapidement des modèles d’application UWP en utilisant une interface utilisateur basée sur un Assistant.<br />
+        <a href="https://aka.ms/wtsinstall">Télécharger</a>
     :::column-end:::
 :::row-end:::
 

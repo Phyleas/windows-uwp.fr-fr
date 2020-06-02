@@ -3,15 +3,15 @@ ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD
 title: Activer votre appareil pour le développement
 description: Configurez votre appareil Windows 10 pour le développement et le débogage.
 keywords: Commencer avec une licence de développeur Visual Studio, appareil avec licence de développeur activée
-ms.date: 04/09/2019
+ms.date: 05/22/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b360f75ccf08d9cc00eeba2948215b7240627a8
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: f41c7b706f4c088142a77092cf176ed543e21567
+ms.sourcegitcommit: e51f9489d8c977c3498afb1a75c91f96ac3a642b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80320421"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83854775"
 ---
 # <a name="enable-your-device-for-development"></a>Activer votre appareil pour le développement
 
@@ -62,7 +62,7 @@ Par défaut, vous pouvez uniquement installer des applications de plateforme Win
 > [!NOTE]
 > Depuis l’arrivée de Windows Insider Build 18956, le chargement de version test est activé par défaut. Désormais, vous pouvez déployer un package MSIX signé sur un appareil sans configuration particulière.
 
-Le paramètre Charger la version test des applications est généralement utilisé par des sociétés ou des écoles qui ont besoin d’installer des applications personnalisées sur des appareils gérés, sans passer par le Microsoft Store, ou par toute personne devant exécuter des applications à partir de sources tierces. Dans ce cas, l’organisation applique généralement une stratégie visant à désactiver le paramètre *Applications UWP*, comme le montre l’image précédente de la page des paramètres. L’organisation fournit aussi le certificat nécessaire et l’emplacement d’installation pour le chargement indépendant des applications. Pour plus d’informations, voir les articles TechNet [Charger la version test des applications dans Windows 10](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10) et [Prendre en main le déploiement d’applications dans Microsoft Intune](https://docs.microsoft.com/intune/deploy-use/add-apps).
+Le paramètre Charger la version test des applications est généralement utilisé par des sociétés ou des écoles qui ont besoin d’installer des applications personnalisées sur des appareils gérés, sans passer par le Microsoft Store, ou par toute personne devant exécuter des applications à partir de sources tierces. Dans ce cas, l’organisation applique généralement une stratégie visant à désactiver le paramètre *Applications UWP*, comme le montre l’image précédente de la page des paramètres. L’organisation fournit aussi le certificat nécessaire et l’emplacement d’installation pour le chargement indépendant des applications. Pour plus d’informations, consultez les articles TechNet [Chargement indépendant d’applications dans Windows 10](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10) et [Notions de base de Microsoft Intune](https://docs.microsoft.com/mem/intune/fundamentals/).
 
 Informations spécifiques à la famille d’appareils
 

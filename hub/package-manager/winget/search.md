@@ -6,12 +6,12 @@ ms.author: kevinla
 ms.date: 04/28/2020
 ms.topic: overview
 ms.localizationpriority: medium
-ms.openlocfilehash: edbd11724ed523f7d6efc57af9a8ef3a7e06bf5a
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: 5a176c1138ebfe3f3a9eb2cbef02dad745cfe170
+ms.sourcegitcommit: 8193aef04deb3514eb2d34bfe5cb9424ba12cd76
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83824960"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83865016"
 ---
 # <a name="search-command-winget"></a>search, commande (winget)
 
@@ -49,7 +49,7 @@ Les chaînes de recherche peuvent être filtrées à l’aide des options suivan
 | **--id**        |   Limite la recherche à l’ID de l’application. L’ID comprend le nom de l’éditeur et le nom de l’application. |
 | **--name**      |  Limite la recherche au nom de l’application. |
 | **--moniker**  |    Limite la recherche au moniker spécifié. |
-|  **--tag**    |  Limite la recherche aux étiquettes listées pour l’application. |
+| **--tag**    |  Limite la recherche aux étiquettes listées pour l’application. |
 | **--command**   |   Limite la recherche au nom de l’application. |
 
 La chaîne sera traitée comme une sous-chaîne. La recherche par défaut n’est pas sensible à la casse. Par exemple, `winget search micro` peut retourner les résultats suivants :
@@ -64,7 +64,7 @@ La commande search prend en charge plusieurs options ou filtres qui permettent d
 
 | Option  | Description |
  --------------|-------------|
-| **e, --exact**  |     Utilise la chaîne exacte dans la requête, y compris la vérification du respect de la casse. Elle n’utilise pas le comportement par défaut d’une sous-chaîne.  |  
+| **-e, --exact**  |     Utilise la chaîne exacte dans la requête, y compris la vérification du respect de la casse. Elle n’utilise pas le comportement par défaut d’une sous-chaîne.  |  
 | **-n, --count**      |  Limite le nombre de résultats affichés au nombre spécifié. |
 | **-s, --source**     |  Limite la recherche au nom de [source](source.md) spécifié.  |
 

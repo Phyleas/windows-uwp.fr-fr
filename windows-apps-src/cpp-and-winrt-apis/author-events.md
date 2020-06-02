@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, créer, événement
 ms.localizationpriority: medium
-ms.openlocfilehash: 6fb9b98ec362b59ad2593bbce24654f1dcfc7638
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: fc12bf1abeabd1a1c3cfccfe3c6d3f12ebda65f3
+ms.sourcegitcommit: c4f912ba0313ae49632f81e38d7d2d983ac132ad
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79209204"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84200782"
 ---
 # <a name="author-events-in-cwinrt"></a>Créer des événements en C++/WinRT
 
@@ -71,6 +71,7 @@ Dans `BankAccount.cpp`, implémentez les fonctions, comme illustré dans l’exe
 ```cppwinrt
 // BankAccount.cpp
 ...
+#include "BankAccountWRC.g.cpp"
 namespace winrt::BankAccountWRC::implementation
 {
     winrt::event_token BankAccount::AccountIsInDebit(Windows::Foundation::EventHandler<float> const& handler)
