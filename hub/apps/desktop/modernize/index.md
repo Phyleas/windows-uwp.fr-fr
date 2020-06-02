@@ -6,12 +6,12 @@ ms.date: 04/17/2019
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 86586cfc0f054181f08cd3cd75731e6c53ea4b92
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: 31d7805e7ae936e5c7427b54f2eb9b0ad4b4c3e9
+ms.sourcegitcommit: 37e4af3ba203295c7e88448414cf7ea537ab5402
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83579926"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84257380"
 ---
 # <a name="modernize-your-desktop-apps"></a>Moderniser vos applications de bureau
 
@@ -74,7 +74,7 @@ Il existe plusieurs façons d’accorder une identité à une application de bur
 * Empaquetez-la dans un package [MSIX](/windows/msix/desktop/desktop-to-uwp-root). MSIX est un format de package d’application moderne qui permet de créer des packages universels pour toutes les applications Windows, WPF, Windows Forms et Win32. Il offre une expérience d’installation et de mise à jour fiable, un modèle de sécurité managé avec un système de capacité flexible, une prise en charge du Microsoft Store, une gestion d’entreprise et de nombreux modèles de distribution personnalisés. Pour plus d’informations, consultez [Empaqueter des applications de bureau](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root) dans la documentation MSIX.
 * Si vous ne parvenez pas à adopter l’empaquetage MSIX pour le déploiement de votre application de bureau, à compter de Windows 10 version 2004, vous pouvez accorder une identité de package en créant un *package MSIX partiel* contenant uniquement un manifeste de package. Pour plus d’informations, consultez [Accorder une identité à des applications de bureau non empaquetées](grant-identity-to-nonpackaged-apps.md).
 
-<a id="desktop-uwp-controls"/>
+<a id="desktop-uwp-controls"></a>
 
 ## <a name="uwp-controls-optimized-for-desktop-apps"></a>Contrôles UWP optimisés pour les applications de bureau
 

@@ -1,18 +1,18 @@
 ---
 description: Cet article explique comment utiliser AudioPlaybackConnection pour permettre aux appareils distants connectés à Bluetooth de lire des données audio sur l’ordinateur local.
-title: Activer la lecture audio à partir d’appareils connectés à distance Bluetooth
+title: Activer la lecture audio à partir d’appareils connectés en Bluetooth à distance
 ms.date: 05/03/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f03fc963e533ff29d49c326611c45437baa14f6c
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 3d4a4ab7664833308fe059e8bf07f68adea82b3e
+ms.sourcegitcommit: cc645386b996f6e59f1ee27583dcd4310f8fb2a6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234952"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84262750"
 ---
-# <a name="enable-audio-playback-from-remote-bluetooth-connected-devices"></a>Activer la lecture audio à partir d’appareils connectés à distance Bluetooth
+# <a name="enable-audio-playback-from-remote-bluetooth-connected-devices"></a>Activer la lecture audio à partir d’appareils connectés en Bluetooth à distance
 
 Cet article explique comment utiliser [AudioPlaybackConnection](/uwp/api/windows.media.audio.audioplaybackconnection) pour permettre aux appareils distants connectés à Bluetooth de lire des données audio sur l’ordinateur local.
 
@@ -24,7 +24,7 @@ La classe [AudioPlaybackConnection](/uwp/api/windows.media.audio.audioplaybackco
 
 Pour les exemples de cet article, nous allons utiliser l’interface utilisateur XAML simple suivante qui définit le contrôle **ListView** pour afficher les périphériques distants disponibles, un **TextBlock** pour afficher l’état de la connexion et trois boutons pour l’activation, la désactivation et l’ouverture des connexions.
 
-:::code language="xml" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioPlaybackConnectionExample/MainPage.xaml" id="snippet_AudioPlaybackConnectionXAML":::
+:::code language="xml" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioPlaybackConnectionExample/cs/MainPage.xaml" id="snippet_AudioPlaybackConnectionXAML":::
 
 ## <a name="use-devicewatcher-to-monitor-for-remote-devices"></a>Utiliser DeviceWatcher pour surveiller les appareils distants
 
@@ -34,15 +34,15 @@ L’événement [DeviceWatcher. Added](/uwp/api/windows.devices.enumeration.devi
 
 Appelez [DeviceWatcher. Start](/uwp/api/windows.devices.enumeration.devicewatcher.start) pour commencer à regarder les appareils connectés qui prennent en charge les connexions de lecture audio. Dans cet exemple, nous allons démarrer le gestionnaire de périphériques lorsque le contrôle de **grille** principal de l’interface utilisateur est chargé. Pour plus d’informations sur l’utilisation de **DeviceWatcher**, consultez [énumérer des appareils](/windows/uwp/devices-sensors/enumerate-devices).
 
-:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioPlaybackConnectionExample/MainPage.xaml.cs" id="snippet_MainGridLoaded":::
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioPlaybackConnectionExample/cs/MainPage.xaml.cs" id="snippet_MainGridLoaded":::
 
 
 Dans l’événement **ajouté** de l’observateur d’appareil, chaque appareil découvert est représenté par un objet [DeviceInformation](/uwp/api/Windows.Devices.Enumeration.DeviceInformation) . Ajoutez chaque appareil détecté à une collection observable liée au contrôle **ListView** dans l’interface utilisateur.
 
-:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioPlaybackConnectionExample/MainPage.xaml.cs" id="snippet_DeclareDevices":::
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioPlaybackConnectionExample/cs/MainPage.xaml.cs" id="snippet_DeclareDevices":::
 
 
-:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioPlaybackConnectionExample/MainPage.xaml.cs" id="snippet_DeviceWatcher_Added":::
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioPlaybackConnectionExample/cs/MainPage.xaml.cs" id="snippet_DeviceWatcher_Added":::
 
 
 ## <a name="enable-and-release-audio-playback-connections"></a>Activer et libérer des connexions de lecture audio
@@ -53,9 +53,9 @@ Dans le gestionnaire de clic du bouton **activer la connexion de lecture audio**
 
 Si la connexion est correctement créée, ajoutez le nouvel objet **AudioPlaybackConnection** au dictionnaire de l’application, enregistrez un gestionnaire pour l’événement [StateChanged](/uwp/api/windows.media.audio.audioplaybackconnection.statechanged) de l’objet, puis appelez[StartAsync](/uwp/api/windows.media.audio.audioplaybackconnection.startasync) pour informer le système que la nouvelle connexion est activée. 
 
-:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioPlaybackConnectionExample/MainPage.xaml.cs" id="snippet_DeclareConnections":::
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioPlaybackConnectionExample/cs/MainPage.xaml.cs" id="snippet_DeclareConnections":::
 
-:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioPlaybackConnectionExample/MainPage.xaml.cs" id="snippet_EnableAudioPlaybackConnection":::
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioPlaybackConnectionExample/cs/MainPage.xaml.cs" id="snippet_EnableAudioPlaybackConnection":::
 
 
 ## <a name="open-the-audio-playback-connection"></a>Ouvrir la connexion de lecture audio
@@ -63,23 +63,23 @@ Si la connexion est correctement créée, ajoutez le nouvel objet **AudioPlaybac
 À l’étape précédente, une connexion de lecture audio a été créée, mais le son ne commence pas tant que la connexion n’est pas ouverte en appelant [Open](/uwp/api/windows.media.audio.audioplaybackconnection.open) ou [OpenAsync](/uwp/api/windows.media.audio.audioplaybackconnection.openasync). Dans le bouton de clic de la **connexion de lecture audio ouverte** , récupérez l’appareil actuellement sélectionné et utilisez l’ID pour récupérer le **AudioPlaybackConnection** à partir du dictionnaire de connexions de l’application. Await un appel à **OpenAsync** et vérifiez la valeur d' **État** de l’objet [AudioPlaybackConnectionOpenResultStatus](/uwp/api/windows.media.audio.audioplaybackconnectionopenresult) retourné pour déterminer si la connexion a été ouverte avec succès et, le cas échéant, mettez à jour la zone de texte état de la connexion.
 
 
-:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioPlaybackConnectionExample/MainPage.xaml.cs" id="snippet_OpenAudioPlaybackConnectionButton":::
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioPlaybackConnectionExample/cs/MainPage.xaml.cs" id="snippet_OpenAudioPlaybackConnectionButton":::
 
 ## <a name="monitor-audio-playback-connection-state"></a>Surveiller l’état de la connexion de lecture audio
 
 L’événement [AudioPlaybackConnection. ConnectionStateChanged](/uwp/api/windows.media.audio.audioplaybackconnection.statechanged) est déclenché chaque fois que l’état de la connexion change. Dans cet exemple, le gestionnaire de cet événement met à jour la zone de texte d’État. N’oubliez pas de mettre à jour l’interface utilisateur à l’intérieur d’un appel à [Dispatcher. RunAsync](/uwp/api/windows.ui.core.coredispatcher.runasync) pour vous assurer que la mise à jour est effectuée sur le thread d’interface utilisateur.
 
-:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioPlaybackConnectionExample/MainPage.xaml.cs" id="snippet_ConnectionStateChanged":::
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioPlaybackConnectionExample/cs/MainPage.xaml.cs" id="snippet_ConnectionStateChanged":::
 
 ## <a name="release-connections-and-handle-removed-devices"></a>Libérer les connexions et gérer les appareils supprimés
 
 Cet exemple fournit un bouton de **connexion de lecture audio** pour permettre à l’utilisateur de libérer une connexion de lecture audio. Dans le gestionnaire de cet événement, nous obtenons l’appareil actuellement sélectionné et utilisons l’ID de l’appareil pour rechercher le **AudioPlaybackConnection** dans le dictionnaire. Appelez **dispose** pour libérer la référence et libérer les ressources associées et supprimer la connexion du dictionnaire.
 
-:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioPlaybackConnectionExample/MainPage.xaml.cs" id="snippet_ReleaseAudioPlaybackConnectionButton":::
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioPlaybackConnectionExample/cs/MainPage.xaml.cs" id="snippet_ReleaseAudioPlaybackConnectionButton":::
 
 Vous devez gérer le cas où un appareil est supprimé lors de l’activation ou de l’ouverture d’une connexion. Pour ce faire, implémentez un gestionnaire pour l’événement [DeviceWatcher. removed](/uwp/api/windows.devices.enumeration.devicewatcher.removed) de l’observateur de périphérique. Tout d’abord, l’ID de l’appareil supprimé est utilisé pour supprimer l’appareil de la collection observable liée au contrôle **ListView** de l’application. Ensuite, si une connexion associée à ce périphérique se trouve dans le dictionnaire de l’application, **dispose** est appelé pour libérer les ressources associées, puis la connexion est supprimée du dictionnaire. Tout cela est effectué dans un appel à **Dispatcher. RunAsync** pour s’assurer que les mises à jour de l’interface utilisateur sont effectuées sur le thread d’interface utilisateur.
 
-:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioPlaybackConnectionExample/MainPage.xaml.cs" id="snippet_DeviceWatcher_Removed":::
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioPlaybackConnectionExample/cs/MainPage.xaml.cs" id="snippet_DeviceWatcher_Removed":::
 
 ## <a name="related-topics"></a>Rubriques connexes
 
