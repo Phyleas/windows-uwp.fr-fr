@@ -5,12 +5,12 @@ ms.date: 07/15/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, porter, migrer, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: 804c22b782dada9c0bde3c379ebfe5a37f1dcff9
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 38ad2d4f2b0af65424e6d9fa50f2c21b626e1914
+ms.sourcegitcommit: 3125d5e2e32831481790266f44967851585888b3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81759935"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84172830"
 ---
 # <a name="move-to-cwinrt-from-c"></a>Passer de C# à C++/WinRT
 
@@ -24,10 +24,10 @@ L’étude de cas [Portage de l’exemple Clipboard vers C++/WinRT à partir de 
 
 Vous pouvez regrouper les changements de portage à prévoir en quatre catégories.
 
-- [**Porter la projection du langage**](#port-the-language-projection). Le Windows Runtime (WinRT) est *projeté* dans différents langages de programmation. Chacune de ces projections de langage est conçue pour être idiomatique dans le langage de programmation en question. Pour C#, certains types Windows Runtime sont projetés en tant que types .NET. Par exemple, [**System.Collections.Generic.IReadOnlyList\<T\>** ](/dotnet/api/system.collections.generic.ireadonlylist-1) sera traduit en [**Windows.Foundation.Collections.IVectorView\<T\>** ](/uwp/api/windows.foundation.collections.ivectorview-1). Par ailleurs, en C#, certaines opérations Windows Runtime sont projetées en tant que fonctionnalités du langage C# par souci pratique. Par exemple, en C#, vous utilisez la syntaxe d’opérateur `+=` pour inscrire un délégué de gestion d’événements. Vous allez donc traduire des fonctionnalités de langage comme celle-ci vers l’opération fondamentale effectuée (dans cet exemple, l’inscription d’événements).
+- [**Porter la projection du langage**](#port-the-language-projection). Le Windows Runtime (WinRT) est *projeté* dans différents langages de programmation. Chacune de ces projections de langage est conçue pour être idiomatique dans le langage de programmation en question. Pour C#, certains types Windows Runtime sont projetés en tant que types .NET. Par exemple, [**System.Collections.Generic.IReadOnlyList\<T\>** ](/dotnet/api/system.collections.generic.ireadonlylist-1) sera retraduit en [**Windows.Foundation.Collections.IVectorView\<T\>** ](/uwp/api/windows.foundation.collections.ivectorview-1). Par ailleurs, en C#, certaines opérations Windows Runtime sont projetées en tant que fonctionnalités du langage C# par souci pratique. Par exemple, en C#, vous utilisez la syntaxe d’opérateur `+=` pour inscrire un délégué de gestion d’événements. Vous allez donc traduire des fonctionnalités de langage comme celle-ci vers l’opération fondamentale effectuée (dans cet exemple, l’inscription d’événements).
 - [**Porter la syntaxe du langage**](#port-language-syntax). Bon nombre de ces changements sont de simples transformations mécaniques consistant à remplacer un symbole par un autre. Citons par exemple le remplacement d’un point (`.`) par deux signes deux-points (`::`).
 - [**Porter la procédure de langage**](#port-language-procedure). Certains de ces changements peuvent être simples et répétitifs (comme remplacer `myObject.MyProperty` par `myObject.MyProperty()`). D’autres peuvent être plus approfondis (comme porter une procédure impliquant l’utilisation de **System.Text.StringBuilder** vers une autre impliquant l’utilisation de **std::wostringstream**).
-- [**Portage de tâches spécifiques à C++/WinRT**](#porting-tasks-that-are-specific-to-cwinrt). Certains détails de Windows Runtime sont pris en charge implicitement par C# en arrière-plan. Ces détails sont définis explicitement en C++/WinRT. Par exemple, vous utilisez un fichier `.idl` pour définir vos classes runtime.
+- [**Tâches relatives au portage spécifiques à C++/WinRT**](#porting-related-tasks-that-are-specific-to-cwinrt). Certains détails de Windows Runtime sont pris en charge implicitement par C# en arrière-plan. Ces détails sont définis explicitement en C++/WinRT. Par exemple, vous utilisez un fichier `.idl` pour définir vos classes runtime.
 
 Le reste de cette rubrique est structuré selon cette taxonomie.
 
@@ -88,6 +88,21 @@ namespace winrt::MyProject::implementation
     }
 };
 ```
+
+Dernier scénario, le projet C# que vous portez *est lié* au gestionnaire d’événements à partir du balisage (pour plus de détails sur ce scénario, consultez [Fonctions dans x:Bind](/windows/uwp/data-binding/function-bindings)).
+
+```xaml
+<Button x:Name="OpenButton" Click="{x:Bind OpenButton_Click}" />
+```
+
+Vous pouvez juste remplacer ce balisage par le `Click="OpenButton_Click"` plus simple. Ou, si vous préférez, vous pouvez conserver ce balisage tel quel. Pour le prendre en charge, il vous suffit de déclarer le gestionnaire d’événements dans l’IDL.
+
+```idl
+void OpenButton_Click(Object sender, Windows.UI.Xaml.RoutedEventArgs e);
+```
+
+> [!NOTE]
+> Déclarez la fonction comme `void` même si vous l’*implémentez* comme [Déclencher et oublier](/windows/uwp/cpp-and-winrt-apis/concurrency-2#fire-and-forget).
 
 ## <a name="port-language-syntax"></a>Porter la syntaxe du langage
 
@@ -230,7 +245,7 @@ Pour la génération de chaînes, C# possède un type [**StringBuilder**](/dotne
 
 Consultez également [Portage de la méthode **BuildClipboardFormatsOutputString**](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#buildclipboardformatsoutputstring) et [Portage de la méthode **DisplayChangedFormats**](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#displaychangedformats).
 
-## <a name="porting-tasks-that-are-specific-to-cwinrt"></a>Portage de tâches spécifiques à C++/WinRT
+## <a name="porting-related-tasks-that-are-specific-to-cwinrt"></a>Tâches relatives au portage spécifiques à C++/WinRT
 
 ### <a name="define-your-runtime-classes-in-idl"></a>Définir vos classes runtime dans IDL
 
@@ -309,7 +324,7 @@ Pour obtenir plus d’informations et d’exemples de code, consultez [Utilisati
 
 ### <a name="making-a-data-source-available-to-xaml-markup"></a>Mise à disposition d’une source de données pour le balisage XAML
 
-Dans C++/WinRT 2.0.190530.8 et les versions ultérieures, [**winrt::single_threaded_observable_vector**](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector) crée un vecteur observable qui prend en charge **[IObservableVector](/uwp/api/windows.foundation.collections.iobservablevector_t_)\<T\>** et **IObservableVector\<IInspectable\>** . Pour obtenir un exemple, consultez [Portage de la propriété **Scenarios**](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#scenarios).
+Dans C++/WinRT 2.0.190530.8 et ultérieur, [**winrt::single_threaded_observable_vector**](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector) crée un vecteur observable qui prend en charge **[IObservableVector](/uwp/api/windows.foundation.collections.iobservablevector_t_)\<T\>** et **IObservableVector\<IInspectable\>** . Pour obtenir un exemple, consultez [Portage de la propriété **Scenarios**](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#scenarios).
 
 Vous pouvez créer votre **fichier Midl (.idl)** de cette façon (consultez [Factorisation des classes runtime dans des fichiers Midl (.idl)](/windows/uwp/cpp-and-winrt-apis/author-apis#factoring-runtime-classes-into-midl-files-idl)).
 
@@ -368,9 +383,9 @@ La liaison de données XAML exige qu’une source d’éléments implémente **[
 - **IVector\<IInspectable\>**
 - **IBindableIterable** (effectue une itération et enregistre les éléments dans une collection privée)
 
-Une interface générique comme **IVector\<T\>** ne peut pas être détectée au moment de l’exécution. Chaque **IVector\<T\>** possède une fonction **T** qui correspond à un identificateur d’interface (IID) différent. Les développeurs peuvent développer l’ensemble de fonctions **T** de manière arbitraire. Le code de liaison XAML ne peut donc jamais connaître l’ensemble complet à interroger. Cette restriction n’est pas un problème pour C#, car chaque objet CLR implémentant **IEnumerable\<T\>** implémente automatiquement **IEnumerable**. Au niveau de l’ABI, cela signifie que chaque objet implémentant **IObservableVector\<T\>** implémente automatiquement **IObservableVector\<IInspectable\>** .
+Une interface générique comme **IVector\<T\>** ne peut pas être détectée au moment de l’exécution. Chaque **IVector\<T\>** a une fonction **T** qui correspond à un identificateur d’interface (IID) différent. Les développeurs peuvent développer l’ensemble de fonctions **T** de manière arbitraire. Le code de liaison XAML ne peut donc jamais connaître l’ensemble complet à interroger. Cette restriction n’est pas un problème pour C#, car chaque objet CLR implémentant **IEnumerable\<T\>T** implémente automatiquement **IEnumerable**. Au niveau de l’ABI, cela signifie que chaque objet implémentant **IObservableVector\<T\>** implémente automatiquement **IObservableVector\<IInspectable\>** .
 
-C++/WinRT ne propose pas cette garantie. Si une classe runtime C++/WinRT implémente **IObservableVector\<T\>** , nous ne pouvons pas partir du principe qu’une implémentation **IObservableVector\<IInspectable\>** est également fournie.
+C++/WinRT ne propose pas cette garantie. Si une classe runtime C++/WinRT implémente **IObservableVector\<T\>** , nous ne pouvons pas partir du principe qu’une implémentation de **IObservableVector\<IInspectable\>** est également fournie.
 
 Par conséquent, voici à quoi doit ressembler l’exemple précédent.
 
