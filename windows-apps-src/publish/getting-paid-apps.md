@@ -1,69 +1,72 @@
 ---
 Description: En savoir plus sur la réception de paiements pour vos applications, les modules complémentaires (produits dans l’application) et les revenus de la publicité.
-title: Rémunération
+title: Processus de paiement
 ms.assetid: 37D1EF45-C4A8-4849-8819-3D4A4898215C
-ms.date: 03/05/2019
+ms.date: 05/29/2020
 ms.topic: article
-keywords: windows 10, uwp, paiements, ventes d’applications, revenu de l’application, revenu, frais d’utilisation du Store, mise en attente des paiements, pourcentage
+keywords: Windows 10, UWP, paiements, application Sales, application proceeds, paiement, frais de magasin, retenue de paiement, pourcentage
 ms.localizationpriority: medium
-ms.openlocfilehash: 853554a0a3a0507f1a8b9d8994618d16aa44bccc
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 5927e6636f1c5a60b4f3453e0493755176c649ad
+ms.sourcegitcommit: 8eae7aec4c4ffb8a0c30e9d03744942fb23958d9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259994"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84334224"
 ---
-# <a name="getting-paid"></a>Rémunération
+# <a name="getting-paid"></a>Processus de paiement
 Voici quelques informations importantes sur la réception des paiements pour vos applications, modules complémentaires et revenus publicitaires.
 
 > [!IMPORTANT]
 > Avant de pouvoir recevoir des sommes de l’application Sales dans le Microsoft Store, vous devez [configurer votre compte de paiement et remplir les formulaires fiscaux nécessaires](setting-up-your-payout-account-and-tax-forms.md).
 
-## <a name="store-fee"></a>Frais d’utilisation du Windows Store
+> [!NOTE]
+> Si vous recherchez de l’aide sur les versements, notamment la configuration des comptes de paiement, les versements manquants, l’ajout de paiements en attente ou tout autre point, contactez le support [ici](https://developer.microsoft.com/windows/support).
 
-Quand vous [créez un compte de développeur](https://developer.microsoft.com/store/register), vous acceptez le [Contrat développeur d’applications](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). Ce contrat détaille la relation qui vous unit à Microsoft en ce qui concerne la vente d'applications dans le Microsoft Store, notamment les frais facturés par Microsoft pour chaque vente réalisée par le biais du Store.
+## <a name="store-fee"></a>Frais de Store
 
-Ces frais sont officiellement définis dans le [Contrat développeur d’applications](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). Pour toute question, reportez-vous à ce document.
+Quand vous [créez un compte de développeur](https://developer.microsoft.com/store/register), vous acceptez le [Contrat développeur d’applications](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). Le présent contrat explique la relation entre vous et Microsoft en ce qui concerne la vente d’applications dans le Microsoft Store, y compris les frais de stockage facturés par Microsoft pour chaque vente.
 
-Les frais d’utilisation du Store s’appliquent à toutes les ventes d’application collectées par le Microsoft Store, y compris aux ventes d'extensions.
+Ces frais sont officiellement définis dans le [Contrat développeur d’applications](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). Consultez toujours ce document si vous avez des questions.
+
+Les frais de stockage sont appliqués à toutes les ventes d’applications collectées par le Microsoft Store, y compris les modules complémentaires.
 
 
 ## <a name="price-tiers"></a>Niveaux de prix
 
-Le ou les niveaux de prix que vous sélectionnez fixent le [prix de vente](set-and-schedule-app-pricing.md#base-price) dans tous les pays où vous souhaitez distribuer votre application. Vous pouvez également utiliser des fonctionnalités de tarification supplémentaires, telles que la [fixation de prix différents pour des marchés distincts](set-and-schedule-app-pricing.md#override-base-price-for-specific-markets) ou la [mise en vente de votre application](put-apps-and-add-ons-on-sale.md).
+Le ou les niveaux de prix que vous sélectionnez déterminent le [prix de vente](set-and-schedule-app-pricing.md#base-price) dans tous les pays où vous choisissez de distribuer votre application. Vous pouvez également utiliser des fonctionnalités de tarification supplémentaires telles que le [choix de différents prix pour différents marchés](set-and-schedule-app-pricing.md#override-base-price-for-specific-markets) ou [la promotion de votre application](put-apps-and-add-ons-on-sale.md).
 
-Vous pouvez proposer votre application gratuitement, ou vous pouvez choisir un prix que les clients devront verser pour l’acquérir. Les niveaux de prix commencent à 0,99 USD, avec des incréments supplémentaires (1,09 USD, 1,19 USD, etc.). Les incréments entre les niveaux de prix augmentent en même temps que le prix.
+Vous pouvez proposer votre application gratuitement, ou vous pouvez choisir un prix que les clients devront verser pour l’acquérir. Les niveaux de prix commencent à 0,99 USD, avec des incréments supplémentaires (1,09 USD, 1,19 USD, etc.). Les incréments entre les niveaux de prix augmentent à mesure que le prix est plus élevé.
 
 > [!NOTE] 
-> Ces niveaux de prix s’appliquent également à toutes les extensions que vous proposez dans votre application.
+> Ces niveaux tarifaires s’appliquent également aux modules complémentaires que vous offrez dans votre application.
 
-Chaque niveau de prix a une valeur correspondante dans chacune des devises du Windows Store. Ces valeurs vous aident à vendre vos applications à un prix comparable dans le monde entier. Cependant, en raison des fluctuations des taux de change, le montant exact des ventes peut varier légèrement d’une devise à l’autre.
+Chaque niveau de prix a une valeur correspondante dans chacune des devises proposées par le Store. Ces valeurs vous aident à vendre vos applications à un prix comparable dans le monde entier. Toutefois, en raison des variations des cours des monnaies étrangères, le montant exact des ventes peut varier légèrement d’une devise à une autre.
 
-Vous avez également la possibilité d’entrer le prix de format libre de votre choix, dans la devise locale d’un marché spécifique. Lorsque vous effectuez cette opération, le prix ne sera pas ajusté (même si le taux de conversion change), sauf si vous soumettez une mise à jour avec un nouveau prix. 
+Vous avez également la possibilité de saisir un prix libre de votre choix dans la devise locale d’un marché spécifique. Dans ce cas, le prix n’est pas ajusté (même si le taux de conversion change), sauf si vous soumettez une mise à jour avec un nouveau prix. 
 
-N'oubliez pas que le prix que vous sélectionnez peut inclure la taxe de vente ou la taxe sur la valeur ajoutée que vos clients doivent payer. Pour plus d'informations, consultez l'article [Informations fiscales pour les applications payantes](tax-details-for-paid-apps.md).
-
-
-## <a name="payout-reporting"></a>Rapports sur les paiements
-
-Vous pouvez accéder à des détails sur vos informations de paiement et télécharger des rapports dans le **Résumé** de paiement de l' [espace partenaires](https://partner.microsoft.com/dashboard). Pour plus d'informations sur les données figurant sur cette page et sur la façon dont nous classons vos revenus, consultez l'article [Synthèse des paiements](payout-summary.md).
+Gardez à l’esprit que le prix que vous sélectionnez peut inclure la taxe sur les ventes ou la valeur ajoutée que vos clients doivent payer. Pour plus d'informations, consultez l'article [Informations fiscales pour les applications payantes](tax-details-for-paid-apps.md).
 
 
-## <a name="payout-timeframe"></a>Période de paiement
+## <a name="payout-reporting"></a>Rapports de paiement
 
-Les paiements sont effectués sur une base mensuelle (à condition que le seuil de paiement applicable ait été atteint et que vous n’ayez pas mis le paiement en attente comme décrit ci-dessous). Généralement, nous transférons les paiements dus pour un mois donné vers le 15 de ce mois. Notez qu’un délai de 3 à 10 jours ouvrés supplémentaires est nécessaire pour l’enregistrement des montants sur votre compte de paiement. Pour plus d’informations, consultez la page [Seuils de paiement, méthodes et délais](payment-thresholds-methods-and-timeframes.md).
+Vous pouvez accéder aux détails de vos informations de paiement et télécharger des rapports dans la page **Récapitulatif des paiements** de l’[Espace partenaires](https://partner.microsoft.com/dashboard). Pour en savoir plus sur les informations présentées ici et sur la façon dont nous classons l’argent que vous gagnez, consultez [Récapitulatif des paiements](payout-summary.md).
 
 
-##  <a name="payout-hold-status"></a>État de mise en attente des paiements
+## <a name="payout-timeframe"></a>Délais de paiement
 
-Par défaut, nous envoyons les paiements sur une base mensuelle comme décrit ci-dessus. Toutefois, vous avez la possibilité de mettre vos paiements pour un programme en attente, ce qui nous empêchera d’envoyer des paiements à votre compte. Si vous choisissez de mettre vos paiements en attente, nous continuons à enregistrer les revenus que vous gagnez et à en fournir les détails dans votre **Résumé du paiement**. Toutefois, nous n’envoyons pas de paiement vers votre compte tant que vous n’avez pas annulé la mise en attente.
+Les paiements sont effectués chaque mois (à condition que le seuil de paiement applicable soit atteint et que vous n’ayez pas mis votre paiement en attente comme indiqué ci-dessous). En général, nous envoyons tout paiement dû le 15 du mois donné. Notez que les paiements prennent généralement entre 3 et 10 jours ouvrables supplémentaires pour parvenir à votre compte de paiement. Pour plus d’informations, consultez [Seuils, modes et délais de paiement](payment-thresholds-methods-and-timeframes.md).
 
-Pour mettre vos paiements en attente, accédez à **paramètres du développeur**. Sous **paiement et taxes**, dans la section **attribution de profil de paiement et de taxe** , localisez le programme pour lequel vous souhaitez payer vos paiements. Cochez la case **conserver mon paiement** pour conserver les paiements pour ce programme. Vous pouvez modifier l’état de mise en attente du paiement à tout moment, mais n’oubliez pas que votre décision a un impact sur le paiement mensuel suivant. Par exemple, si vous voulez mettre en attente le paiement du mois d’avril, configurez l’état de mise en attente des paiements sur **Activé** avant la fin du mois de mars.
 
-Une fois que vous avez défini votre état de blocage de paiement sur **activé**, tous les versements pour ce programme sont en attente jusqu’à ce que vous basculiez le curseur sur **désactivé**. Lorsque vous procédez ainsi, vous êtes inclus dans le cycle de paiement mensuel suivant (à condition que les seuils de paiement applicables aient été atteints). Par exemple, si vous avez mis vos paiements en attente, mais que vous souhaitez qu’un paiement soit généré en juin, vous devez configurer l’état de mise en attente des paiements sur **Désactivé** avant la fin du mois de mai.
+##  <a name="payout-hold-status"></a>État de paiement en attente
+
+Par défaut, nous envoyons les paiements une fois par mois, comme décrit ci-dessus. Toutefois, vous avez la possibilité de mettre les paiements d’un programme en attente, ce qui nous empêche de les envoyer à votre compte. Si vous choisissez de mettre vos paiements en attente, nous continuerons à enregistrer les revenus que vous gagnez et à fournir les détails dans votre **Résumé de paiement**. Toutefois, nous n’enverrons les paiements à votre compte que lorsque vous aurez retiré la mise en attente.
+
+Pour mettre vos paiements en attente, accédez à **Paramètres de développeur**. Sous **Paiement et taxe**, dans la section **Attribution de profil de paiement et de taxe**, recherchez le programme pour lequel vous souhaitez mettre les paiements en attente. Cochez la case **Conserver mon paiement** pour mettre les paiements de ce programme en attente. Vous pouvez modifier votre état de paiement en attente à tout moment, mais n’oubliez pas que votre décision aura un impact sur le paiement mensuel suivant. Par exemple, si vous souhaitez conserver le paiement d’avril, veillez à définir votre état d’attente de paiement **sur activé** avant la fin du mars.
+
+Une fois que vous avez défini votre état de paiement en attente sur **Activé**, tous les paiements de ce programme sont bloqués tant que vous n’avez pas remis le curseur sur **Désactivé**. En procédant ainsi, vous serez inclus dans le prochain cycle de paiement mensuel (à condition que les seuils de paiement applicables aient été atteints). Par exemple, si vous avez des paiements en attente, mais que vous souhaitez que le paiement ait été généré en juin, veillez à désactiver l’état de maintien du paiement à **off** avant la fin de l’opération.
 
 > [!NOTE]
-> L' **État d’attente de paiement** s’applique à chaque programme individuellement (Microsoft Store, publicité, place de marché Azure, etc.). Si vous souhaitez conserver les paiements sur tous vos programmes, vous devez conserver les paiements sur chaque programme individuellement.
+> L’**état de paiement en attente** s’applique à chaque programme individuellement (Microsoft Store, publicité, Place de marché Azure, etc.). Si vous souhaitez mettre les paiements en attente sur tous vos programmes, vous devez le faire sur chaque programme individuellement.
 
 
  
