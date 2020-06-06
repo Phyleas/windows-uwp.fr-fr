@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 32038d6e25ec450dae59d0c1d7e9c8703fdc8018
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: c593ea76535bec6a9d8ab41f0bcd4f2299162615
+ms.sourcegitcommit: db48036af630f33f0a2f7a908bfdfec945f3c241
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82148715"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84437201"
 ---
 # <a name="controls-by-function"></a>Contrôles par fonction
 
@@ -627,7 +627,7 @@ Barre de progression qui affiche une valeur spécifique.
 <ProgressBar x:Name="progressBar1" Value="50" Width="100"/>
 ```
 
-![Contrôle de barre de progression indéterminée](images/controls/progress-bar-indeterminate.png)
+![Contrôle de barre de progression indéterminée](images/controls/progress-bar-indeterminate.gif)
 
 Barre de progression qui affiche une progression indéterminée.
 
