@@ -10,12 +10,12 @@ pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e2509743bf9e847fb740816e3552f4172cf644c
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 694ab7a3897bdf13189d61ab70ed05b9169b834c
+ms.sourcegitcommit: 020d0ff0e5abf46b2ed660eac61251b32bf150bc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970704"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84716037"
 ---
 # <a name="keyboard-accelerators"></a>Raccourcis clavier
 
@@ -146,7 +146,7 @@ Par exemple, Microsoft Outlook comprend les accélérateurs suivants :
 -   CTRL + B, Ctrl + I et ESC ne fonctionnent que dans l’étendue du formulaire envoyer un e-mail
 -   CTRL + 1 et CTRL + 2 travail à l’ensemble de l’application
 
-### <a name="context-menus"></a>Menu contextuels
+### <a name="context-menus"></a>Les menus contextuels :
 
 Les actions du menu contextuel affectent uniquement des zones ou des éléments spécifiques, tels que les caractères sélectionnés dans un éditeur de texte ou une chanson dans une sélection. Pour cette raison, nous vous recommandons de définir l’étendue des accélérateurs clavier pour les éléments de menu contextuel sur le parent du menu contextuel.
 
@@ -358,13 +358,13 @@ Cela peut ne pas être toujours possible en raison de différences de fonctionna
 
 | **Autres actions** | |
 | ------------- | ----------------------------------- |
-| Ajouter des favoris | Ctrl+D | 
-| Actualisation | F5 ou Ctrl + R | 
+| Ajouter des favoris | Ctrl + D | 
+| Actualiser | F5 ou Ctrl + R | 
 | Zoom avant | Ctrl + + | 
 | Faire un zoom arrière | Ctrl +- | 
 | Zoomer sur la vue par défaut | Ctrl + 0 | 
 | Enregistrer | Ctrl+S | 
-| fermez | Ctrl+W | 
+| Fermer | Ctrl+W | 
 | Print | Ctrl+P | 
 
 Notez que certaines combinaisons ne sont pas valides pour les versions localisées de Windows. Par exemple, dans la version espagnole de Windows, CTRL + N est utilisé pour le gras au lieu de CTRL + B. Nous vous recommandons de fournir des accélérateurs de clavier localisés si l’application est localisée.
@@ -576,8 +576,8 @@ protected override void OnProcessKeyboardAccelerators(
 
 Nous vous recommandons de localiser tous les accélérateurs de clavier. Vous pouvez le faire avec le fichier de ressources UWP standard (. resw) et l’attribut x :Uid dans vos déclarations XAML. Dans cet exemple, le Windows Runtime charge automatiquement les ressources.
 
-![Localisation de l’accélérateur clavier avec les](images/accelerators/accelerators_localization.png)
-ressources UWP fichier de***localisation avec les ressources UWP***
+![Localisation de l’accélérateur clavier avec les ressources UWP fichier de ](images/accelerators/accelerators_localization.png)
+ ***localisation avec les ressources UWP***
 
 ``` xaml
 <Button x:Uid="myButton" Click="OnSave">
@@ -602,8 +602,8 @@ void AddAccelerator(
       { 
         Modifiers = keyModifiers, Key = key
       };
-    accelerator.Invoked = handler;
-    this.KeyAccelerators.Add(accelerator);
+    accelerator.Invoked += handler;
+    this.KeyboardAccelerators.Add(accelerator);
   }
 ```
 
