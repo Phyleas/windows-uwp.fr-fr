@@ -5,12 +5,12 @@ ms.date: 04/24/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, norme, c++, cpp, winrt, COM, composant, classe, interface
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b6ce3ce56b4afbf4c45b406c8af369bee4b55bb
-ms.sourcegitcommit: 2dbf4a3f3473c1d3a0ad988bcbae6e75dfee3640
+ms.openlocfilehash: d5fae09192262b63b11175bf08e7a2c522b31abd
+ms.sourcegitcommit: 82d441e3b9da920cf860fad6b59d6b848466c90f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82619323"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84271878"
 ---
 # <a name="consume-com-components-with-cwinrt"></a>Consommer des composants COM avec C++/WinRT
 
@@ -168,9 +168,19 @@ Vous pouvez également utiliser [**com_ptr::try_as**](/uwp/cpp-ref-for-winrt/com
 
 ## <a name="full-source-code-listing-of-a-minimal-direct2d-application"></a>Code source complet d’une application Direct2D minimale
 
-Si vous souhaitez générer et exécuter cet exemple de code source, commencez par créer dans Visual Studio une **application Core (C++/WinRT)** . `Direct2D` est un nom approprié pour le projet, mais vous pouvez le changer comme bon vous semble.
+> [!NOTE]
+> Pour plus d’informations sur la configuration du développement Visual Studio pour C++/WinRT&mdash;notamment l’installation et l’utilisation de l’extension VSIX (Visual Studio Extension) C++/WinRT et du package NuGet (qui fournissent ensemble la prise en charge des modèles et des builds de projet)&mdash;, consultez [Prise en charge de Visual Studio pour C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+
+Si vous souhaitez générer et exécuter cet exemple de code source, commencez par installer (ou mettre à jour) la dernière version de l’extension Visual Studio C++/WinRT (VSIX) ; voir la remarque ci-dessus. Ensuite, dans Visual Studio, créez une **application principale (C++/WinRT)** . `Direct2D` est un nom approprié pour le projet, mais vous pouvez le changer comme bon vous semble. Ciblez la dernière version en disponibilité générale (autrement dit, pas la préversion) du SDK Windows.
+
+### <a name="step-1-edit-pchh"></a>Étape 1. Modifiez `pch.h`.
 
 Ouvrez `pch.h` et ajoutez `#include <unknwn.h>` immédiatement après avoir inclus `windows.h`. Cela est dû au fait que nous utilisons [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/get-unknown). Il est judicieux d’inclure `#include <unknwn.h>` explicitement chaque fois que vous utilisez **winrt::get_unknown**, même si cet en-tête a été inclus par un autre en-tête.
+
+> [!NOTE]
+> Si vous omettez cette étape, vous verrez l’erreur de build   *: identificateur introuvable*.
+
+### <a name="step-2-edit-appcpp"></a>Étape 2. Modifiez `App.cpp`.
 
 Ouvrez `App.cpp`, supprimez tout son contenu, puis collez les lignes de code ci-dessous.
 

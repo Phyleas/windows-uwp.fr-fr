@@ -5,12 +5,12 @@ ms.date: 04/13/2020
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, porter, migrer, C#, exemple, presse-papiers, cas, étude
 ms.localizationpriority: medium
-ms.openlocfilehash: de19d4624cbcf6f102b2eb2067c9f0ff9c583f0b
-ms.sourcegitcommit: 29daa3959304d748e4dec4e6f8e774fade65aa8d
+ms.openlocfilehash: 660eac0cb2b0679815d628f60b77bc5ac01d042f
+ms.sourcegitcommit: 8eae7aec4c4ffb8a0c30e9d03744942fb23958d9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82851603"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84334234"
 ---
 # <a name="porting-the-clipboard-sample-tocwinrtfromcmdasha-case-study"></a>Portage de l’exemple Clipboard vers C++/WinRT depuis C#&mdash;une étude de cas
 
@@ -32,10 +32,11 @@ Il en va un peu différemment des types. Vous *définissez* un type en fournissa
 
 ## <a name="download-and-test-the-clipboard-sample"></a>Télécharger et tester l’exemple Presse-papiers
 
-Visitez la page web de l’[exemple Clipboard](https://docs.microsoft.com/samples/microsoft/windows-universal-samples/clipboard/), puis cliquez sur **Download ZIP** (Télécharger le ZIP). Décompressez le fichier téléchargé, puis examinez la structure des dossiers.
+Visitez la page web de l’[exemple Clipboard](/samples/microsoft/windows-universal-samples/clipboard/), puis cliquez sur **Download ZIP** (Télécharger le ZIP). Décompressez le fichier téléchargé, puis examinez la structure des dossiers.
 
-- La version C# de l’exemple de code source est contenue dans le dossier nommé `cs`. Les autres fichiers utilisés par la version C# se trouvent dans les dossiers `shared` et `SharedContent`.
-- Vous pouvez trouver la version C++/WinRT de l’exemple de code source dans le [dossier cppwinrt](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/Clipboard/cppwinrt), dans le [dépôt de l’exemple](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/Clipboard) sur GitHub.
+- La version C# de l’exemple de code source est contenue dans le dossier nommé `cs`.
+- La version C++/WinRT de l’exemple de code source est contenue dans le dossier nommé `cppwinrt`.
+- Les autres fichiers&mdash;utilisés à la fois par la version C# et la version C++/WinRT&mdash;se trouvent dans les dossiers `shared` et `SharedContent`.
 
 La procédure pas à pas de cette rubrique montre comment vous pouvez recréer la version C++/WinRT de l’exemple Clipboard en le portant à partir du code source C#. De cette façon, vous pouvez voir comment vous pouvez porter vos propres projets C# vers C++/WinRT.
 
@@ -779,7 +780,7 @@ Vous avez le même choix quand vous référencez le type [**XmlDocument**](/uwp/
 
 Une cause très courante d’erreurs du compilateur/éditeur de liens est d’avoir oublié d’inclure les fichiers d’en-tête de l’espace de noms Windows C++/WinRT dont vous avez besoin. Pour plus d’informations sur une erreur possible, consultez [Pourquoi l’éditeur de liens retourne-t-il une erreur « LNK2019 : symbole externe non résolu » ?](/windows/uwp/cpp-and-winrt-apis/faq#why-is-the-linker-giving-me-a-lnk2019-unresolved-external-symbol-error).
 
-Si vous voulez suivre la procédure pas à pas et porter **DisplayToast** vous-même, vous pouvez comparer vos résultats au code de la version C++/WinRT de l’exemple de code source Clipboard que vous avez téléchargé (il se trouve dans [`Windows-universal-samples/Samples/Clipboard/cppwinrt`](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/Clipboard/cppwinrt)`/Clipboard.sln`).
+Si vous voulez suivre la procédure pas à pas et porter **DisplayToast** vous-même, vous pouvez comparer vos résultats au code de la version C++/WinRT dans le ZIP de l’[exemple de code source Clipboard](/samples/microsoft/windows-universal-samples/clipboard/) que vous avez téléchargé.
 
 #### <a name="enableclipboardcontentchangednotifications"></a>**EnableClipboardContentChangedNotifications**
 
@@ -1048,7 +1049,7 @@ void SampleState::DisplayChangedFormats()
 
 Il y a une petite chose inefficace dans la conception de la version C++/WinRT ci-dessus. Nous créons d’abord un **std::wostringstream**. Mais nous appelons aussi la méthode **BuildClipboardFormatsOutputString** (que nous avons portée précédemment). Cette méthode crée son propre **std::wostringstream**. Il transforme alors son flux en une **winrt::hstring** et la retourne. Nous appelons la fonction [**hstring::c_str**](/uwp/cpp-ref-for-winrt/hstring#hstringc_str-function) pour reconvertir cette **hstring** retournée en une chaîne de style C, puis nous l’insérons dans notre flux. Il serait plus efficace de créer un seul **std::wostringstream** et de passer cela (par référence) pour que les méthodes puissent y insérer directement des chaînes.
 
-C’est ce que nous faisons dans la version C++/WinRT de l’exemple de [code source](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/Clipboard/cppwinrt) Clipboard. Dans ce code source, il y a une nouvelle méthode statique privée nommée **SampleState::AddClipboardFormatsOutputString**, qui prend et effectue ses opérations sur une référence à un flux de sortie. Ensuite, les méthodes **SampleState::DisplayChangedFormats** et **SampleState::BuildClipboardFormatsOutputString** sont refactorisées pour appeler cette nouvelle méthode. Elle est fonctionnellement équivalente au code de cette rubrique, mais elle est plus efficace.
+C’est ce que nous faisons dans la version C++/WinRT de l’[exemple de code source Clipboard](/samples/microsoft/windows-universal-samples/clipboard/) (dans le ZIP que vous avez téléchargé). Dans ce code source, il y a une nouvelle méthode statique privée nommée **SampleState::AddClipboardFormatsOutputString**, qui prend et effectue ses opérations sur une référence à un flux de sortie. Ensuite, les méthodes **SampleState::DisplayChangedFormats** et **SampleState::BuildClipboardFormatsOutputString** sont refactorisées pour appeler cette nouvelle méthode. Elle est fonctionnellement équivalente au code de cette rubrique, mais elle est plus efficace.
 
 #### <a name="footer_click"></a>**Footer_Click**
 
@@ -1104,7 +1105,7 @@ Les deux dernières lignes répètent les modèles de portage que nous avons vus
 
 #### <a name="handleclipboardchanged"></a>**HandleClipboardChanged**
 
-Rien de nouveau n’est impliqué dans le portage de cette méthode. Vous pouvez comparer les versions C# et C++/WinRT dans l’exemple de code source.
+Rien de nouveau n’est impliqué dans le portage de cette méthode. Vous pouvez comparer les versions C# et C++/WinRT dans le ZIP de l’[exemple de code source Clipboard](/samples/microsoft/windows-universal-samples/clipboard/) que vous avez téléchargé.
 
 #### <a name="onclipboardchanged-and-onwindowactivated"></a>**OnClipboardChanged** et **OnWindowActivated**
 
