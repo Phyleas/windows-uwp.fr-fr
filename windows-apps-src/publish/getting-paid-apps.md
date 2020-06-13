@@ -6,12 +6,12 @@ ms.date: 05/29/2020
 ms.topic: article
 keywords: Windows 10, UWP, paiements, application Sales, application proceeds, paiement, frais de magasin, retenue de paiement, pourcentage
 ms.localizationpriority: medium
-ms.openlocfilehash: 5927e6636f1c5a60b4f3453e0493755176c649ad
-ms.sourcegitcommit: 8eae7aec4c4ffb8a0c30e9d03744942fb23958d9
+ms.openlocfilehash: 0d42677aeda694e2fc8924cee1832b62d98b15e5
+ms.sourcegitcommit: a937963ce63a14c254420926661b9b68be28a8ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84334224"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84746769"
 ---
 # <a name="getting-paid"></a>Processus de paiement
 Voici quelques informations importantes sur la réception des paiements pour vos applications, modules complémentaires et revenus publicitaires.
@@ -20,7 +20,7 @@ Voici quelques informations importantes sur la réception des paiements pour vos
 > Avant de pouvoir recevoir des sommes de l’application Sales dans le Microsoft Store, vous devez [configurer votre compte de paiement et remplir les formulaires fiscaux nécessaires](setting-up-your-payout-account-and-tax-forms.md).
 
 > [!NOTE]
-> Si vous recherchez de l’aide sur les versements, notamment la configuration des comptes de paiement, les versements manquants, l’ajout de paiements en attente ou tout autre point, contactez le support [ici](https://developer.microsoft.com/windows/support).
+> Si vous avez besoin d’aide concernant les paiements, notamment sur la configuration des comptes de paiement, les paiements manquants, la mise en attente des paiements ou d’autres sujets, contactez le support [ici](https://developer.microsoft.com/windows/support).
 
 ## <a name="store-fee"></a>Frais de Store
 
@@ -40,7 +40,7 @@ Vous pouvez proposer votre application gratuitement, ou vous pouvez choisir un p
 > [!NOTE] 
 > Ces niveaux tarifaires s’appliquent également aux modules complémentaires que vous offrez dans votre application.
 
-Chaque niveau de prix a une valeur correspondante dans chacune des devises proposées par le Store. Ces valeurs vous aident à vendre vos applications à un prix comparable dans le monde entier. Toutefois, en raison des variations des cours des monnaies étrangères, le montant exact des ventes peut varier légèrement d’une devise à une autre.
+Chaque niveau de prix a une valeur correspondante dans chacune des devises proposées par le Store. Ces valeurs vous aident à vendre vos applications à un prix comparable dans le monde entier. Toutefois, en raison des variations des cours des monnaies étrangères, le montant exact des ventes peut varier légèrement d’une devise à une autre. Les taux de change sont calculés mensuellement. En fonction du moment où votre transaction a eu lieu, le taux de change approprié est appliqué. Le taux de change et la plage de dates pour lesquels il était en vigueur sont indiqués sur votre rapport de paiement dans les colonnes exchangeRate et exchangeRateDate, respectivement.
 
 Vous avez également la possibilité de saisir un prix libre de votre choix dans la devise locale d’un marché spécifique. Dans ce cas, le prix n’est pas ajusté (même si le taux de conversion change), sauf si vous soumettez une mise à jour avec un nouveau prix. 
 

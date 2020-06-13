@@ -11,19 +11,19 @@ dev_langs:
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: 079746d3c1619fe940ba243410f0247b7b850ed9
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 4377db57b3cd713bae8f9c80a0116d016722be19
+ms.sourcegitcommit: 90fe7a9a5bfa7299ad1b78bbef289850dfbf857d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259456"
+ms.lasthandoff: 06/13/2020
+ms.locfileid: "84756533"
 ---
 # <a name="handle-file-activation"></a>Gérer l’activation des fichiers
 
 **API importantes**
 
--   [**Windows. ApplicationModel. activation. FileActivatedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.FileActivatedEventArgs)
--   [**Windows. UI. Xaml. application. OnFileActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onfileactivated)
+-   [**Windows.ApplicationModel.Activation.FileActivatedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.FileActivatedEventArgs)
+-   [**Windows.UI.Xaml.Application.OnFileActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onfileactivated)
 
 Votre application peut s’inscrire pour devenir le gestionnaire par défaut d’un certain type de fichier. Tant les applications de plateforme Windows classique (CWP) que les applications de plateforme Windows universelle (UWP) peuvent s’inscrire pour devenir gestionnaire de fichiers par défaut. Si l’utilisateur choisit votre application en tant que gestionnaire par défaut pour un certain type de fichier, celle-ci sera activée lors du lancement de ce type de fichier.
 
@@ -31,7 +31,7 @@ Nous vous recommandons de vous inscrire uniquement pour un type de fichier si vo
 
 Ces étapes montrent comment s’inscrire pour un type de fichier personnalisé, alsdk, et comment activer votre application quand l’utilisateur lance un fichier alsdk.
 
-> **Notez**  dans les applications UWP, certains URI et extensions de fichier sont réservés à une utilisation par les applications intégrées et le système d’exploitation. Toute tentative d’inscription de votre application avec une extension de fichier ou un URI réservés sera ignorée. Pour plus d’informations, voir [Noms de schéma d’URI et de fichier réservé](reserved-uri-scheme-names.md).
+> **Remarque**    Dans les applications UWP, certains URI et extensions de fichier sont réservés à une utilisation par les applications intégrées et le système d’exploitation. Toute tentative d’inscription de votre application avec une extension de fichier ou un URI réservés sera ignorée. Pour plus d’informations, voir [Noms de schéma d’URI et de fichier réservé](reserved-uri-scheme-names.md).
 
 ## <a name="step-1-specify-the-extension-point-in-the-package-manifest"></a>Étape 1 : spécifier le point d’extension dans le manifeste du package
 
@@ -43,19 +43,19 @@ L’application reçoit des événements d’activation uniquement pour les exte
 
 | Champ | Description |
 |------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Nom complet** | Spécifiez le nom complet d’un groupe de types de fichiers. Le nom d’affichage sert à identifier le type de fichier dans l’option [Définir les programmes par défaut](https://docs.microsoft.com/windows/desktop/shell/default-programs) du **Panneau de configuration**. |
+| **Nom d’affichage** | Spécifiez le nom complet d’un groupe de types de fichiers. Le nom d’affichage sert à identifier le type de fichier dans l’option [Définir les programmes par défaut](https://docs.microsoft.com/windows/desktop/shell/default-programs) du **Panneau de configuration**. |
 | **Logo** | Spécifiez le logo utilisé pour identifier le type de fichier sur le Bureau et dans l’option [Définir les programmes par défaut](https://docs.microsoft.com/windows/desktop/shell/default-programs) du **Panneau de configuration**. Si aucun logo n’est spécifié, le petit logo de l’application est utilisé. |
 | **Info-bulle** | Spécifiez l’[info-bulle](https://docs.microsoft.com/windows/desktop/shell/fa-progids) d’un groupe de types de fichier. Cette info-bulle s’affiche quand l’utilisateur pointe sur l’icône d’un fichier de ce type avec la souris. |
-| **Nom** | Choisissez un nom pour un groupe de types de fichiers partageant les mêmes nom complet, logo, info-bulle et indicateurs de modification. Choisissez un nom de groupe pouvant rester le même sur toutes les applications à mettre à jour. **Remarque**  Le nom doit être indiqué entièrement en minuscules. |
+| **Nom** | Choisissez un nom pour un groupe de types de fichiers partageant les mêmes nom complet, logo, info-bulle et indicateurs de modification. Choisissez un nom de groupe pouvant rester le même sur toutes les applications à mettre à jour. **Remarque**  Le nom doit être en minuscules. |
 | **Type de contenu** | Spécifiez le type de contenu MIME, par exemple **image/jpeg**, pour un type de fichier particulier. **Remarque importante sur les types de contenu autorisés :** voici la liste alphabétique des types de contenu MIME que vous ne pouvez pas inclure dans le manifeste du package, car ils sont réservés ou interdits : **application/force-download**, **application/octet-stream**, **application/unknown**, **application/x-msdownload**. |
 | **Type de fichier** | Indiquez le type de fichier à inscrire, précédé d’un point (par exemple, « .jpeg »). **Types de fichier réservés et interdits :** pour obtenir la liste alphabétique des types de fichier des applications intégrées que vous ne pouvez pas inscrire dans vos applications UWP parce qu’ils sont réservés ou interdits, consultez [Noms de schéma d’URI et de fichier réservés](reserved-uri-scheme-names.md). |
 
-2.  Entrez `alsdk` dans **Nom**.
+2.  Entrez `alsdk` comme **nom**.
 3.  Entrez `.alsdk` comme **Type de fichier**.
-4.  Entrez « images\\Icon. png » comme logo.
+4.  Entrez « images \\Icon.png » comme logo.
 5.  Appuyez sur Ctrl+S pour enregistrer la modification dans package.appxmanifest.
 
-Les étapes ci-dessus ajoutent un élément [**Extension**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-1-extension) tel que celui-ci dans le manifeste du package. La catégorie **windows.fileTypeAssociation** indique que l’application gère les fichiers portant l’extension `.alsdk`.
+Les étapes ci-dessus ajoutent un élément d' [**extension**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-1-extension) comme celui-ci au manifeste du package. La catégorie **windows.fileTypeAssociation** indique que l’application gère les fichiers portant l’extension `.alsdk`.
 
 ```xml
       <Extensions>
@@ -72,14 +72,14 @@ Les étapes ci-dessus ajoutent un élément [**Extension**](https://docs.microso
 
 ## <a name="step-2-add-the-proper-icons"></a>Étape 2 : Ajouter les icônes appropriées
 
-Les applications qui deviennent la valeur par défaut d’un type de fichier ont leurs icônes affichées à différents emplacements dans l’ensemble du système. Par exemple, ces icônes s’affichent dans :
+Les applications qui deviennent la valeur par défaut d’un type de fichier ont leurs icônes affichées à différents emplacements dans l’ensemble du système. Par exemple, ces icônes sont affichées dans :
 
--   la vue d’éléments de l’Explorateur Windows, les menus contextuels et le Ruban ;
+-   Affichage des éléments de l’Explorateur Windows, menus contextuels et ruban
 -   l’applet Programmes par défaut du Panneau de configuration ;
 -   le sélecteur de fichiers ;
 -   les résultats de recherche sur l’écran d’accueil.
 
-Incluez une icône 44 x 44 de votre projet, afin que votre logo puisse apparaître dans ces emplacements. Reproduisez l’apparence du logo de la vignette de l’application et utilisez la couleur d’arrière-plan de celle-ci au lieu de rendre l’icône transparente. Faites en sorte que le logo s’étende jusqu’au bord sans remplissage. Testez vos icônes sur des arrière-plans blancs. Voir [Recommandations en matière de ressources de vignette et d’icône](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/app-assets) pour plus d’informations sur les icônes.
+Insérez une icône 44 x 44 avec votre projet afin que votre logo puisse apparaître à ces emplacements. Reproduisez l’apparence du logo de la vignette de l’application et utilisez la couleur d’arrière-plan de celle-ci au lieu de rendre l’icône transparente. Faites en sorte que le logo s’étende jusqu’au bord sans remplissage. Testez vos icônes sur des arrière-plans blancs. Pour plus d’informations sur les icônes [, consultez Instructions pour les ressources de mosaïque et d’icône](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/app-assets) .
 
 ## <a name="step-3-handle-the-activated-event"></a>Étape 3 : Gérer l’événement activé
 
@@ -135,22 +135,22 @@ Les fichiers que vous recevez peuvent provenir d’une source non approuvée. No
 
 ### <a name="complete-example"></a>Exemple complet
 
-* [Exemple de lancement d’association](https://code.msdn.microsoft.com/windowsapps/Association-Launching-535d2cec)
+* [Exemple de lancement d’association](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)
 
 ### <a name="concepts"></a>Concepts
 
 * [Programmes par défaut](https://docs.microsoft.com/windows/desktop/shell/default-programs)
-* [Type de fichier et modèle d’association de protocole](https://docs.microsoft.com/windows/desktop/w8cookbook/file-type-and-protocol-associations-model)
+* [Modèle d’associations de types de fichiers et de protocoles](https://docs.microsoft.com/windows/desktop/w8cookbook/file-type-and-protocol-associations-model)
 
 ### <a name="tasks"></a>Tâches
 
 * [Lancer l’application par défaut pour un fichier](launch-the-default-app-for-a-file.md)
-* [Gérer l’activation d’un URI](handle-uri-activation.md)
+* [Gérer l’activation des URI](handle-uri-activation.md)
 
 ### <a name="guidelines"></a>Recommandations
 
-* [Instructions pour les types de fichiers et les URI](https://docs.microsoft.com/windows/uwp/files/index)
+* [Recommandations en matière de types de fichiers et d’URI](https://docs.microsoft.com/windows/uwp/files/index)
 
 ### <a name="reference"></a>Référence
-* [Windows. ApplicationModel. activation. FileActivatedEventArgs](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.FileActivatedEventArgs)
-* [Windows. UI. Xaml. application. OnFileActivated](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onfileactivated)
+* [Windows.ApplicationModel.Activation.FileActivatedEventArgs](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.FileActivatedEventArgs)
+* [Windows.UI.Xaml.Application.OnFileActivated](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onfileactivated)

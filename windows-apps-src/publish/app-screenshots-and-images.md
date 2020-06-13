@@ -6,12 +6,12 @@ ms.date: 03/07/2019
 ms.topic: article
 keywords: Windows 10, UWP, code de fin, vidéo, capture d’écran, image, icône, liste des boutiques, images de la liste des boutiques
 ms.localizationpriority: medium
-ms.openlocfilehash: 7995f7d8539ee5835ee9ae079305731879decc95
-ms.sourcegitcommit: 24b19e7ee06e5bb11a0dae334806741212490ee9
+ms.openlocfilehash: 6a09395a57a83eaa57124173723b96a87d14b3b3
+ms.sourcegitcommit: a937963ce63a14c254420926661b9b68be28a8ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82255183"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84746749"
 ---
 # <a name="app-screenshots-images-and-trailers"></a>Captures d’écran, images et bandes-annonces de l’application
 
@@ -61,7 +61,7 @@ Vous pouvez télécharger des logos de magasin pour créer un affichage plus per
 
 Vous pouvez fournir ces images en tant que fichiers. png (pas plus de 50 Mo), chacun d’eux devant suivre les instructions ci-dessous.
 
-### <a name="916-poster-art-720-x-1080-or-1440-x-2160-pixels"></a>9:16 image de l’affiche (720 x 1080 ou 1440 x 2160 pixels)
+### <a name="23-poster-art-720-x-1080-or-1440-x-2160-pixels"></a>2:3 image de l’affiche (720 x 1080 ou 1440 x 2160 pixels)
 
 Utilisé comme image du logo principal pour les clients sur les appareils Windows 10 et Xbox, nous **vous recommandons vivement** de fournir cette image pour garantir un affichage correct. Votre annonce peut ne pas paraître correcte si vous ne l’incluez pas et ne sera pas cohérente avec les autres annonces que les clients voient lors de la navigation dans le Store. Cette image peut également être utilisée dans les résultats de la recherche ou dans des regroupements organisés de façon éditoriale.
 
@@ -72,7 +72,7 @@ Cette image doit inclure le nom de votre application, et tout texte sur l’imag
 
 ### <a name="11-box-art-1080-x-1080-or-2160-x-2160-pixels"></a>1:1 boîte (1080 x 1080 ou 2160 x 2160 pixels)
 
-Cette image peut apparaître dans différentes pages du magasin pour Windows 10 (y compris la Xbox) et si vous ne fournissez pas l’image de l' **affiche 9:16** , elle sera utilisée comme logo principal. Cette image doit également inclure le nom de votre application. Les superpositions de texte peuvent apparaître sur le trimestre inférieur de cette image, donc n’incluez pas de texte ou d’image clé ici. Veillez à inclure le nom de votre application dans cette image. 
+Cette image peut apparaître dans différentes pages du magasin pour Windows 10 (y compris la Xbox) et si vous ne fournissez pas l’image de l' **affiche 2:3** , elle sera utilisée comme logo principal. Cette image doit également inclure le nom de votre application. Les superpositions de texte peuvent apparaître sur le trimestre inférieur de cette image, donc n’incluez pas de texte ou d’image clé ici. Veillez à inclure le nom de votre application dans cette image. 
 
 > [!NOTE]
 > Si votre application est disponible pour les clients sur Xbox, cette image est **obligatoire** et doit inclure le titre du produit. Le titre doit apparaître dans les trois quarts supérieurs de l’image, car les superpositions de texte peuvent apparaître sur le trimestre inférieur de l’image.
@@ -147,7 +147,7 @@ Lorsque vous fournissez vos codes de fin, veillez à respecter les conditions su
 - Le format vidéo doit être MOV ou MP4.
 - La taille du fichier de la remorque ne doit pas dépasser 2 Go.
 - La résolution vidéo doit être de 1920 x 1080 pixels.
-- La miniature doit être un fichier PNG avec une résolution de 1920 x 1080 pixels ou 3840 x 2160 pixels.
+- La miniature doit être un fichier PNG avec une résolution de 1920 x 1080 pixels.
 - Le titre ne peut pas dépasser 255 caractères.
 - N’incluez pas de classements d’âge dans vos codes de fin.
 

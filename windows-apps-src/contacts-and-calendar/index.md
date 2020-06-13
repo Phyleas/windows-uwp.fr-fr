@@ -6,12 +6,12 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10, uwp, contacts, calendrier, rendez-vous, e-mails
 ms.localizationpriority: medium
-ms.openlocfilehash: 8abb3773b2fa18a25716baf641d04c7ad37a293c
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: b2e3f0b1d93d2b2c32e117f61fd7514077ca3923
+ms.sourcegitcommit: 90fe7a9a5bfa7299ad1b78bbef289850dfbf857d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74255440"
+ms.lasthandoff: 06/13/2020
+ms.locfileid: "84756545"
 ---
 # <a name="contacts-my-people-and-calendar"></a>Contacts, Mes Contacts et Calendrier
 
@@ -36,7 +36,7 @@ Pour en savoir plus sur les différentes façons d’accéder aux contacts et au
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Exemple d’API de rendez-vous](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Appointments)
-* [Exemple d’API du Gestionnaire de contacts](https://code.msdn.microsoft.com/windowsapps/Contact-manager-API-sample-319bdcef)
-* [Exemple d’application du sélecteur de contacts](https://code.msdn.microsoft.com/windowsapps/Contact-Picker-App-sample-fc6677a1)
-* [Exemple de gestion des actions de contact](https://code.msdn.microsoft.com/windowsapps/Handling-Contact-Actions-359380e2)
+* [Exemple d’API du Gestionnaire de contacts](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample/Contact%20manager%20API%20sample)
+* [Exemple d’application du sélecteur de contacts](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/ContactPicker)
+* [Exemple de gestion des actions de contact](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample/Windows%208.1%20Store%20app%20samples/99866-Windows%208.1%20Store%20app%20samples/Handling%20Contact%20Actions)
 * [Exemple d’intégration à une carte de visite](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration)

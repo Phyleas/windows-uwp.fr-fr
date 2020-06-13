@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: fae8031ec8255cbfef313a9b75f459750be0aee3
-ms.sourcegitcommit: 37e4af3ba203295c7e88448414cf7ea537ab5402
+ms.openlocfilehash: 2528ae4dabf072872ce765eb7bfd696c2b29d3f7
+ms.sourcegitcommit: a937963ce63a14c254420926661b9b68be28a8ee
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84257464"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84746779"
 ---
 # <a name="design-toolkits-and-samples-for-windows-apps"></a>Kits de ressources et exemples de conception pour les applications Windows
 
@@ -45,22 +45,6 @@ v1901, janvier 2019<br>
     :::column-end:::
 :::row-end:::
 
-:::row:::
-    :::column:::
-![image Hero](images/adobe-illustrator.png)
-<b>Kit de ressources Adobe Illustrator</b><br>
-v1806, juin 2018<br>
-<a href="https://aka.ms/adobeillustratortoolkit">Télécharger</a>
-    :::column-end:::
-    :::column:::
-![image Hero](images/adobe-photoshop.png)
-<b>Kit de ressources Adobe Photoshop</b><br>
-v1705, mai 2017<br>
-<a href="https://aka.ms/adobephotoshoptoolkit">Télécharger</a>
-    :::column-end:::
-    :::column:::
-    :::column-end:::
-:::row-end:::
 
 ## <a name="developer-toolkits-and-libraries"></a>Bibliothèques et kits de ressources de développement
 
