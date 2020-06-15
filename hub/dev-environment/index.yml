@@ -6,32 +6,16 @@ metadata:
   description: Configurez votre environnement de développement Windows en utilisant le sous-système pour Linux pour travailler avec Python, Node.js et plus encore.
   manager: jken
   ms.author: mattwoj
-  ms.date: 09/15/2019
+  ms.date: 06/12/2020
   ms.prod: dev-environment
   ms.topic: landing-page
-  ms.openlocfilehash: da9899c3851779853c1f99cb829c98d44f61586f
-  ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+  ms.openlocfilehash: 4d30b505c4ced08a906f443a65d0e7d0a34a5e01
+  ms.sourcegitcommit: a937963ce63a14c254420926661b9b68be28a8ee
   ms.translationtype: HT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 05/19/2020
-  ms.locfileid: "83579946"
+  ms.lasthandoff: 06/12/2020
+  ms.locfileid: "84746732"
 landingContent:
-- title: Gestionnaire de package Windows
-  linkLists:
-  - linkListType: overview
-    links:
-    - text: Vue d’ensemble
-      url: ../package-manager/index.md
-  - linkListType: get-started
-    links:
-    - text: Utiliser l’outil winget
-      url: ../package-manager/winget/index.md
-    - text: Envoyer des packages
-      url: ../package-manager/package/index.md
-  - linkListType: reference
-    links:
-    - text: Commandes winget
-      url: ../package-manager/winget/index.md#commands
 - title: Bien démarrer avec Python
   linkLists:
   - linkListType: get-started
@@ -116,6 +100,22 @@ landingContent:
       url: ../android/emulator.md
     - text: Mettre à jour les paramètres Windows Defender pour améliorer les performances
       url: ../android/defender-settings.md
+- title: Gestionnaire de package Windows
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Vue d’ensemble
+      url: ../package-manager/index.md
+  - linkListType: get-started
+    links:
+    - text: Utiliser l’outil winget
+      url: ../package-manager/winget/index.md
+    - text: Envoyer des packages
+      url: ../package-manager/package/index.md
+  - linkListType: reference
+    links:
+    - text: Commandes winget
+      url: ../package-manager/winget/index.md#commands
 - title: Sous-système Windows pour Linux (WSL)
   linkLists:
   - linkListType: overview
@@ -123,27 +123,85 @@ landingContent:
     - text: À propos de WSL
       url: https://docs.microsoft.com/windows/wsl/about
     - text: À propos de WSL 2
-      url: https://docs.microsoft.com/windows/wsl/wsl2-about
-    - text: Différences entre 1 et 2
-      url: https://docs.microsoft.com/windows/wsl/wsl2-ux-changes
+      url: https://docs.microsoft.com/windows/wsl/wsl2-index
+    - text: Comparaison entre WSL 1 et WSL 2
+      url: https://docs.microsoft.com/windows/wsl/wsl2-index
   - linkListType: get-started
     links:
-    - text: Installer WSL 2
+    - text: Installer WSL et le mettre à jour vers WSL 2
       url: https://docs.microsoft.com/windows/wsl/install-win10
-    - text: Installer WSL 2
-      url: https://docs.microsoft.com/windows/wsl/wsl2-install
-    - text: Comptes d’utilisateur et autorisations
+    - text: Installation sur Windows Server
+      url: https://docs.microsoft.com/windows/wsl/install-on-server
+    - text: Créer un compte d’utilisateur et un mot de passe
       url: https://docs.microsoft.com/windows/wsl/user-support
+  - linkListType: tutorial
+    links:
+    - text: Bien démarrer avec VS Code
+      url: https://docs.microsoft.com/windows/wsl/tutorials/wsl-vscode
+    - text: Bien démarrer avec Git
+      url: https://docs.microsoft.com/windows/wsl/tutorials/wsl-git
+  - linkListType: concept
+    links:
+    - text: Commandes d’interopérabilité
+      url: https://docs.microsoft.com/windows/wsl/interop
+    - text: Configuration et commandes de lancement
+      url: https://docs.microsoft.com/windows/wsl/wsl-config
+    - text: Autorisations de fichier
+      url: https://docs.microsoft.com/windows/wsl/file-permissions
+    - text: Configurer WSL pour les entreprises
+      url: https://docs.microsoft.com/windows/wsl/enterprise
+    - text: Créer une distribution personnalisée
+      url: https://docs.microsoft.com/windows/wsl/build-custom-distro
   - linkListType: reference
     links:
-    - text: Gérer plusieurs distributions
-      url: https://docs.microsoft.com/windows/wsl/wsl-config#managing-multiple-linux-distributions
-    - text: Questions fréquentes (FAQ) pour WSL 1
-      url: https://docs.microsoft.com/windows/wsl/faq
+    - text: Foire aux questions
+      url: https://docs.microsoft.com/windows/wsl/faqaq
     - text: Questions fréquentes (FAQ) pour WSL 2
       url: https://docs.microsoft.com/windows/wsl/wsl2-faq
     - text: Résolution des problèmes
       url: https://docs.microsoft.com/windows/wsl/troubleshooting
+    - text: Notes de publication
+      url: https://docs.microsoft.com/windows/wsl/release-notes
+- title: Terminal Windows
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Vue d’ensemble du Terminal Windows
+      url: https://docs.microsoft.com/windows/terminal/
+  - linkListType: get-started
+    links:
+    - text: Installer et configurer
+      url: https://docs.microsoft.com/windows/terminal/get-started
+    - text: Personnaliser votre terminal (paramètres globaux)
+      url: https://docs.microsoft.com/windows/terminal/customize-settings/global-settings
+    - text: Personnaliser votre terminal (paramètres de profil)
+      url: https://docs.microsoft.com/windows/terminal/customize-settings/profile-settings
+    - text: Personnaliser votre terminal (modèles de couleurs)
+      url: https://docs.microsoft.com/windows/terminal/customize-settings/color-schemes
+    - text: Personnaliser votre terminal (combinaisons de touches)
+      url: https://docs.microsoft.com/windows/terminal/customize-settings/key-bindings
+  - linkListType: tutorial
+    links:
+    - text: Utiliser des arguments de ligne de commande
+      url: https://docs.microsoft.com/windows/terminal/command-line-arguments?tabs=powershell
+    - text: Comment effectuer une recherche dans le terminal
+      url: https://docs.microsoft.com/windows/terminal/search
+    - text: Comment utiliser les volets dans le terminal
+      url: https://docs.microsoft.com/windows/terminal/panes
+    - text: Configurer Powerline
+      url: https://docs.microsoft.com/windows/terminal/tutorials/powerline-setup
+    - text: Configurer SSH
+      url: https://docs.microsoft.com/windows/terminal/tutorials/ssh
+    - text: Définir le titre des onglets
+      url: https://docs.microsoft.com/windows/terminal/tutorials/tab-title
+  - linkListType: reference
+    links:
+    - text: Résolution des problèmes
+      url: https://docs.microsoft.com/windows/terminal/troubleshooting
+    - text: En savoir plus sur la police Cascadia Code
+      url: https://docs.microsoft.com/windows/terminal/cascadia-code
+    - text: Galerie de terminaux personnalisés
+      url: https://docs.microsoft.com/windows/terminal/custom-terminal-gallery/retro-command-prompt
 - title: Guide De Mac à Windows
   linkLists:
   - linkListType: reference
@@ -158,19 +216,3 @@ landingContent:
       url: mac-to-windows.md#terminal-and-shell
     - text: Applications et utilitaires
       url: mac-to-windows.md#apps-and-utilities
-- title: Terminal Windows
-  linkLists:
-  - linkListType: overview
-    links:
-    - text: Vue d’ensemble de la console et du terminal
-      url: https://github.com/microsoft/terminal#terminal--console-overview
-  - linkListType: get-started
-    links:
-    - text: Installer le Terminal Windows
-      url: https://github.com/microsoft/terminal#installing--running-windows-terminal
-    - text: Utilisation du Terminal Windows
-      url: https://github.com/microsoft/terminal/blob/master/doc/user-docs/index.md#starting-windows-terminal
-  - linkListType: reference
-    links:
-    - text: Personnalisation du Terminal Windows
-      url: https://github.com/microsoft/terminal/blob/master/doc/user-docs/UsingJsonSettings.md
