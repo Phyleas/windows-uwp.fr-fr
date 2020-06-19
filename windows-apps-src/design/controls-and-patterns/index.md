@@ -8,12 +8,12 @@ ms.date: 03/23/2020
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
-ms.openlocfilehash: 63907b3bfe3fc6dece900f1a7c09ac535e859471
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: 82e6d91b5a4147237cd04b46dc5b69b8151fece9
+ms.sourcegitcommit: 6dd6d61c912daab2cc4defe5ba0cf717339f7765
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80218449"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84978381"
 ---
 # <a name="controls-for-windows-apps"></a>Contrôles pour les applications Windows
 
@@ -95,8 +95,8 @@ Informations détaillées en matière de contrôles et de modèles spécifiques.
 - [Photo de la personne](person-picture.md) ![Logo WinUI](images/winui-logo-16x16.png)
 - [Pivot](pivot.md)
 - [Barre de progression](progress-controls.md) ![Logo WinUI](images/winui-logo-16x16.png)
-- [Anneau de progression](progress-controls.md)
-- [Case d’option](radio-button.md)
+- [Anneau de progression](progress-controls.md) ![Logo WinUI](images/winui-logo-16x16.png)
+- [Case d’option](radio-button.md) ![Logo WinUI](images/winui-logo-16x16.png)
 - [Contrôle d’évaluation](rating.md) ![Logo WinUI](images/winui-logo-16x16.png)
 - [Bouton de répétition](buttons.md#create-a-repeat-button)
 - [Zone d’édition riche](rich-edit-box.md)
