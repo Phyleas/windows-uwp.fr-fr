@@ -6,19 +6,19 @@ ms.date: 10/02/2018
 ms.topic: article
 keywords: Windows 10, UWP, packages, téléchargement, téléchargement de packages
 ms.localizationpriority: medium
-ms.openlocfilehash: 570ccc1329fd1b2f768ca528b75fe22b982bdaf6
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: 5c3c55d351ebd3b956d57c6c7e623e88e7fa88c1
+ms.sourcegitcommit: 96b7be654a0922eeb421b5fa51ebfc586abe74fe
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682621"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84945937"
 ---
 # <a name="upload-app-packages"></a>Chargement des packages d’application
 
 La page **packages** vous permet de télécharger tous les fichiers de package (. msix,. msixupload,. msixbundle,. AppX,. appxupload et/ou. appxbundle) pour l’application que vous envoyez. Vous pouvez télécharger tous vos packages pour la même application sur cette page, et quand un client télécharge votre application, le magasin fournit automatiquement à chaque client le package qui convient le mieux à son appareil. Une fois vos packages chargés, vous verrez un tableau indiquant [les packages offerts aux familles d’appareils Windows 10 spécifiques](#device-family-availability) (et aux systèmes d’exploitation plus anciens, le cas échéant), classés par ordre.
 
 > [!IMPORTANT]
-> Depuis le 31 octobre 2018, les nouveaux produits ne peuvent pas inclure des packages ciblant Windows 8. x/Windows Phone 8. x ou une version antérieure. Pour plus d’informations, consultez ce billet de [blog](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store).
+> Vous ne pouvez plus charger de nouveaux packages XAP générés à l’aide du ou des kits de développement logiciel (SDK) Windows Phone 8. x. Les applications qui sont déjà dans Store avec des packages XAP continuent de fonctionner sur les appareils Windows 10 mobile. Pour plus d’informations, consultez ce billet de [blog](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store).
 
 Pour plus d’informations sur le contenu et sur la structure d’un package, voir [Exigences relatives au package de l’application](app-package-requirements.md). Vous allez également apprendre [Comment les numéros de version affectent les packages livrés à des clients spécifiques](package-version-numbering.md) et [Comment gérer les packages pour différents scénarios](guidance-for-app-package-management.md).
 
@@ -28,7 +28,7 @@ Pour plus d’informations sur le contenu et sur la structure d’un package, vo
 Pour charger des packages, faites-les glisser dans le champ de chargement, ou cliquez pour parcourir vos fichiers. La page **packages** vous permet de télécharger des fichiers. msix,. msixupload,. msixbundle,. AppX,. appxupload et/ou. appxbundle.
 
 > [!IMPORTANT]
-> Pour Windows 10, nous vous recommandons de télécharger le fichier. msixupload ou. appxupload ici plutôt que. msix,. AppX,. msixbundle ou. appxbundle.  Pour plus d’informations sur la création de packages d’applications UWP pour le Windows Store, consultez l’article [Créer un package d’application UWP avec Visual Studio](/windows/msix/package/packaging-uwp-apps).
+> Pour Windows 10, nous vous recommandons de télécharger le fichier. msixupload ou. appxupload ici plutôt que. msix,. AppX,. msixbundle ou. appxbundle.  Pour plus d’informations sur l’empaquetage d’applications UWP pour le Windows Store, consultez [empaquetage d’une application UWP avec Visual Studio](/windows/msix/package/packaging-uwp-apps).
 
 Si vous avez créé des [versions d’évaluation de package](package-flights.md) pour votre application, une liste déroulante apparaît avec l’option de copie des packages de l’une des versions d’évaluation de package. Sélectionnez la version d’évaluation de package comportant les packages que vous souhaitez intégrer. Vous pouvez transférer la totalité ou uniquement une partie des packages dans cette soumission.
 
@@ -37,7 +37,7 @@ Si nous détectons des erreurs avec un package lors de la validation, nous affic
 
 ## <a name="device-family-availability"></a>Disponibilité de la famille d’appareils
 
-Une fois vos packages correctement chargés, la section **Disponibilité de la famille d’appareils** affiche un tableau identifiant les packages offerts aux familles d’appareils Windows 10 spécifiques (et aux versions antérieures du système d’exploitation), classés par ordre. Dans cette section, vous déterminez également si vous souhaitez offrir ou non la soumission aux clients sur des familles d’appareils Windows 10 spécifiques.
+Une fois vos packages correctement chargés, la section **Disponibilité de la famille d’appareils** affiche un tableau identifiant les packages offerts aux familles d’appareils Windows 10 spécifiques (et aux versions antérieures du système d’exploitation), classés par ordre. Cette section vous permet également de choisir s’il faut ou non offrir la soumission aux clients sur des familles d’appareils Windows 10 spécifiques.
 
 Pour plus d’informations, consultez la section [Disponibilité de la famille d’appareils](device-family-availability.md).
 
@@ -58,7 +58,7 @@ Si nous détectons la présence de packages redondants, nous vous offrons la pos
 
 ## <a name="gradual-package-rollout"></a>Lancement de package progressif
 
-Si votre soumission est une mise à jour d’une application publiée précédemment, une case à cocher **Déployer progressivement la mise à jour après la publication de cette soumission (pour les clients Windows 10 uniquement)** s’affiche. Vous pouvez choisir un pourcentage de clients qui récupèrent les packages de la soumission, de manière à pouvoir surveiller les commentaires et les données d’analyse, et ainsi vérifier le contenu de la mise à jour avant de la déployer plus largement. Vous pouvez augmenter le pourcentage (ou arrêter la mise à jour) à tout moment sans avoir à créer une nouvelle soumission. 
+Si votre soumission est une mise à jour d’une application publiée précédemment, une case à cocher **Déployer progressivement la mise à jour après la publication de cette soumission (pour les clients Windows 10 uniquement)** s’affiche. Cela vous permet de choisir un pourcentage de clients qui recevront les packages de l’envoi afin que vous puissiez surveiller les commentaires et les données analytiques pour vous assurer que vous êtes certain de la mise à jour avant de les déployer plus largement. Vous pouvez augmenter le pourcentage (ou arrêter la mise à jour) à tout moment sans avoir à créer une nouvelle soumission. 
 
 Pour plus d’informations, voir [Lancement de package progressif](gradual-package-rollout.md).
 

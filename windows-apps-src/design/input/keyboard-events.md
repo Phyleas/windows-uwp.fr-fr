@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ce9d15139d45cce01feb979f18167abee89a1f28
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: 73b9ba40eb11d67e82ca3014c2758746d45df40f
+ms.sourcegitcommit: 6dd6d61c912daab2cc4defe5ba0cf717339f7765
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82558813"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84978391"
 ---
 # <a name="keyboard-events"></a>Événements de clavier
 
@@ -94,12 +94,12 @@ void MyProject::MainPage::Grid_KeyUp(
 
 Tous les événements de clavier utilisent [**KeyRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.KeyRoutedEventArgs) pour les données d’événements, et **KeyRoutedEventArgs** contient les propriétés suivantes :
 
--   [**Essentiel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.key)
+-   [**Clé :**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.key)
 -   [**KeyStatus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.keystatus)
--   [**Géré**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled)
+-   [**Gérée**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled)
 -   [**OriginalSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.routedeventargs.originalsource) (héritée de [**RoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.RoutedEventArgs))
 
-### <a name="key"></a>Clé
+### <a name="key"></a>Clé :
 
 L’événement [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) est déclenché si une touche est enfoncée. De même, [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) est déclenché si une touche est relâchée. Vous êtes généralement à l’écoute des événements en vue de traiter une valeur de touche spécifique. Afin de déterminer quelle touche est enfoncée ou relâchée, vérifiez la valeur [**Key**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.key) dans les données d’événements. **Key** renvoie une valeur [**VirtualKey**](https://docs.microsoft.com/uwp/api/Windows.System.VirtualKey). L’énumération **VirtualKey** inclut toutes les touches prises en charge.
 
@@ -319,7 +319,7 @@ Le rôle de la propriété [**Handled**](https://docs.microsoft.com/uwp/api/wind
 
 ### <a name="addhandler-and-already-handled-keyboard-events"></a>AddHandler et événements de clavier déjà gérés
 
-Vous pouvez utiliser une technique spéciale pour associer des gestionnaires pouvant agir sur des événements déjà marqués comme étant gérés. Cette technique utilise la méthode [**AddHandler**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler) pour inscrire un gestionnaire, au lieu d’utiliser des attributs XAML ou une syntaxe spécifique au langage pour ajouter des gestionnaires, tels que +\#= en C.
+Vous pouvez utiliser une technique spéciale pour associer des gestionnaires pouvant agir sur des événements déjà marqués comme étant gérés. Cette technique utilise la méthode [**AddHandler**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler) pour inscrire un gestionnaire, au lieu d’utiliser des attributs XAML ou une syntaxe spécifique au langage pour ajouter des gestionnaires, tels que + = en C \# .
 
 L’une des limitations générales de cette technique est le fait que l’API **AddHandler** utilise un paramètre de type [**RoutedEvent**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.RoutedEvent) qui identifie l’événement routé en question. Tous les événements routés ne fournissent pas un identificateur **RoutedEvent** et cette considération affecte par conséquent les événements routés qui peuvent encore être gérés dans le cas [**Handled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled). Les événements KEYpoint et [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) [**ont des**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) identificateurs d’événements routés ([**KeyDownEvent**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydownevent) et [**KeyUpEvent**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyupevent)) sur [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement). Toutefois, les autres événements tels que [**TextBox.TextChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanged) ne possèdent pas d’identificateurs d’événements routés. Par conséquent, ils ne peuvent pas être utilisés pour la technique **AddHandler**.
 
@@ -365,9 +365,9 @@ En règle générale, vous pouvez ajouter des gestionnaires pour [**KeyUp**](htt
 
 En guise d’exemple, [**ButtonBase**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ButtonBase) (la classe de base pour [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)) traite l’élément [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) de sorte qu’il puisse surveiller la barre d’espace ou la touche Entrée. **ButtonBase** considère que **KeyUp** équivaut à un clic de bouton gauche de souris pour les besoins du déclenchement d’événement [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click). Ce traitement de l’événement s’effectue lorsque **ButtonBase** remplace la méthode virtuelle [**OnKeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.onkeyup). Dans son implémentation, la valeur **true** est affectée à [**Handled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled). Le résultat est que tout parent d’un bouton à l’écoute d’un événement de touche, dans le cas de la barre d’espace, ne recevra pas l’événement déjà géré pour ses propres gestionnaires.
 
-Un autre exemple est [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox). Certaines touches, telles que les touches de direction, ne sont pas considérées comme étant du texte par **TextBox** mais sont au contraire considérées comme étant spécifiques au comportement d’interface utilisateur du contrôle. L’élément **TextBox** marque ces cas d’événements comme gérés.
+Un autre exemple est [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox). Certaines touches, telles que les touches de direction, ne sont pas considérées comme du texte par **zone** de texte et sont plutôt considérées comme spécifiques au comportement de l’interface utilisateur du contrôle. L’élément **TextBox** marque ces cas d’événements comme gérés.
 
-Les contrôles personnalisés peuvent implémenter leur propre comportement de substitution similaire pour les événements clés en remplaçant [**OnKeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.onkeydown) / [**onkeyup**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.onkeyup). Si votre contrôle personnalisé traite des touches accélérateur spécifiques ou présente un comportement de contrôle ou de focus qui est similaire au scénario décrit pour [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox), vous devez placer cette logique dans vos propres remplacements **OnKeyDown** / **OnKeyUp**.
+Les contrôles personnalisés peuvent implémenter leur propre comportement de substitution similaire pour les événements clés en remplaçant [**OnKeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.onkeydown)  /  [**onkeyup**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.onkeyup). Si votre contrôle personnalisé traite des touches accélérateur spécifiques ou présente un comportement de contrôle ou de focus qui est similaire au scénario décrit pour [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox), vous devez placer cette logique dans vos propres remplacements **OnKeyDown** / **OnKeyUp**.
 
 ## <a name="the-touch-keyboard"></a>Le clavier tactile
 
@@ -385,7 +385,7 @@ Vous pouvez grandement faciliter et accélérer la saisie de données par les ut
 
 ### <a name="developers"></a>Développeurs
 
-- [Interactions du clavier](keyboard-interactions.md)
+- [Interactions avec le clavier](keyboard-interactions.md)
 - [Identification des périphériques d’entrée](identify-input-devices.md)
 - [Répondre à la présence du clavier tactile](respond-to-the-presence-of-the-touch-keyboard.md)
 
