@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, jeux, DirectX, chargement des ressources
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a779e0d17cdc3f5a11dd720467e3a0572e3c124
-ms.sourcegitcommit: 2571af6bf781a464a4beb5f1aca84ae7c850f8f9
+ms.openlocfilehash: 56eaebfeb6d644c4c15f14f0613b1e3b1781f637
+ms.sourcegitcommit: 22ed0d4edad5e6bab352e641cf86cf455cf83825
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82606308"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85133992"
 ---
 # <a name="load-resources-in-your-directx-game"></a>Charger des ressources dans votre jeu DirectX
 
@@ -21,7 +21,7 @@ La plupart des jeux, à un moment donné, chargent des ressources et des éléme
 
 Par exemple, les maillages des objets polygonaux de votre jeu peuvent avoir été créés avec un autre outil et exportés vers un format spécifique. Il en va de même pour les textures et plus encore : alors que généralement la plupart des outils peuvent écrire une image bitmap plate, sans compression, qui est comprise par la plupart des API graphiques, utiliser dans votre jeu une telle image peut s’avérer extrêmement inefficace. Ici, nous vous guidons à travers les étapes de base du chargement de trois types de ressources graphiques pour une utilisation avec Direct3D : les maillages (modèles), les textures (bitmaps) et les objets nuanceurs compilés.
 
-## <a name="what-you-need-to-know"></a>Ce que vous devez savoir
+## <a name="what-you-need-to-know"></a>Bon à savoir
 
 
 ### <a name="technologies"></a>Technologies
@@ -130,7 +130,7 @@ Si votre jeu est assez simple, chargez vos ressources avec une méthode comme ce
 
 Toutefois, vous ne voulez pas démarrer le jeu à proprement parler tant que le chargement asynchrone n’est pas terminé ! Créez une méthode pour signaler que le chargement est terminé, tel qu’un champ spécifique, et utilisez les expressions lambda sur vos méthodes de chargement pour activer ce signal lorsque c’est terminé. Vérifiez la variable avant de démarrer tout composant qui utilise ces ressources chargées.
 
-Voici un exemple d’utilisation de méthodes asynchrones définies dans BasicLoader.cpppour charger des nuanceurs, un maillage et une texture quand le jeu démarre. Notez qu’il définit un champ spécifique sur l’objet de jeu **,\_m loadingComplete**, lorsque toutes les méthodes de chargement se terminent.
+Voici un exemple d’utilisation de méthodes asynchrones définies dans BasicLoader.cpppour charger des nuanceurs, un maillage et une texture quand le jeu démarre. Notez qu’il définit un champ spécifique sur l’objet de jeu, **m \_ loadingComplete**, lorsque toutes les méthodes de chargement se terminent.
 
 ```cpp
 void ResourceLoading::CreateDeviceResources()
@@ -239,7 +239,7 @@ task<void> BasicLoader::LoadMeshAsync(
 }
 ```
 
-**CreateMesh** interprète les données d’octets chargées à partir du fichier, crée une mémoire tampon de vertex et une mémoire tampon d’index pour le maillage en passant respectivement les listes de vertex et d’index à [**ID3D11Device :: CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer) et\_en spécifiant\_d3d11\_\_la\_mémoire tampon de vertex Bind\_ou la mémoire tampon d’index de liaison d3d11. Voici le code utilisé dans **BasicLoader** :
+**CreateMesh** interprète les données d’octets chargées à partir du fichier, crée une mémoire tampon de vertex et une mémoire tampon d’index pour le maillage en passant respectivement les listes de vertex et d’index à [**ID3D11Device :: CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer) et en spécifiant d3d11 la \_ \_ mémoire tampon de vertex Bind \_ ou la \_ mémoire tampon d’index de liaison d3d11 \_ \_ . Voici le code utilisé dans **BasicLoader** :
 
 ```cpp
 void BasicLoader::CreateMesh(
@@ -320,14 +320,14 @@ Un fichier DDS est un fichier binaire qui contient les informations suivantes :
 
 -   Une description des données du fichier.
 
-    Les données sont décrites avec une description d’en-tête à l’aide de l' [**en-tête DDS\_**](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-header). le format de pixel est défini à l’aide de [**DDS\_PIXELFORMAT**](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-pixelformat). Notez que l' **en\_-tête DDS** et les structures **\_DDS PIXELFORMAT** remplacent les structures DDSURFACEDESC2, DDSCAPS2 et DDPIXELFORMAT DirectDraw 7 déconseillées. **L'\_en-tête DDS** est l’équivalent binaire de DDSURFACEDESC2 et DDSCAPS2. L’équivalent de **DDS\_PIXELFORMAT** est l’équivalent binaire de DDPIXELFORMAT.
+    Les données sont décrites avec une description d’en-tête à l’aide de l' [** \_ en-tête DDS**](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-header); le format de pixel est défini à l’aide de [**DDS \_ PIXELFORMAT**](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-pixelformat). Notez que l' ** \_ en-tête DDS** et les structures **DDS \_ PIXELFORMAT** remplacent les structures DDSURFACEDESC2, DDSCAPS2 et DDPIXELFORMAT DirectDraw 7 déconseillées. **DDS \_ L’en-tête** est l’équivalent binaire de DDSURFACEDESC2 et DDSCAPS2. **DDS \_ PIXELFORMAT** est l’équivalent binaire de DDPIXELFORMAT.
 
     ```cpp
     DWORD               dwMagic;
     DDS_HEADER          header;
     ```
 
-    Si la valeur de **dwFlags** dans [**DDS\_PIXELFORMAT**](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-pixelformat) est définie sur DDPF\_FourCC et que **dwFourCC** est défini sur « facilement », une structure de [**DXT10 d’en-tête\_\_DDS**](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-header-dxt10) supplémentaire sera présente pour prendre en charge les tableaux de texture ou les formats de dxgi qui ne peuvent pas être exprimés sous la forme d’un format de pixel RVB comme les formats à virgule flottante, les formats sRVB, etc. Lorsque la **structure\_DXT10\_de l’en-tête DDS** est présente, la description de la totalité des données se présente comme suit.
+    Si la valeur de **dwFlags** dans [**DDS \_ PIXELFORMAT**](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-pixelformat) est définie sur DDPF \_ FourCC et que **dwFourCC** est défini sur « facilement », une structure de [** \_ \_ DXT10 d’en-tête DDS**](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-header-dxt10) supplémentaire sera présente pour prendre en charge les tableaux de texture ou les formats de dxgi qui ne peuvent pas être exprimés sous la forme d’un format de pixel RVB comme les formats à virgule flottante, les formats sRVB, etc. Lorsque la structure DXT10 de l' ** \_ en-tête \_ DDS** est présente, la description de la totalité des données se présente comme suit.
 
     ```cpp
     DWORD               dwMagic;
@@ -551,7 +551,7 @@ task<void> BasicLoader::LoadShaderAsync(
 
 ```
 
-Dans cet exemple, vous utilisez l’instance **BasicReaderWriter** (**m\_BasicReaderWriter**) pour lire le fichier d’objet de nuanceur compilé (. CSO) fourni en tant que flux d’octets. Une fois cette tâche terminée, la lambda appelle [**ID3D11Device::CreatePixelShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createpixelshader) avec les données d’octets chargées à partir du fichier. Votre rappel doit définir un indicateur signalant que le chargement a réussi, et votre code doit vérifier cet indicateur avant l’exécution du nuanceur.
+Dans cet exemple, vous utilisez l’instance **BasicReaderWriter** (**m \_ BasicReaderWriter**) pour lire le fichier d’objet de nuanceur compilé (. CSO) fourni en tant que flux d’octets. Une fois cette tâche terminée, la lambda appelle [**ID3D11Device::CreatePixelShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createpixelshader) avec les données d’octets chargées à partir du fichier. Votre rappel doit définir un indicateur signalant que le chargement a réussi, et votre code doit vérifier cet indicateur avant l’exécution du nuanceur.
 
 Les nuanceurs de vertex sont un peu plus complexes. Pour un nuanceur de vertex, vous chargez également un schéma d’entrée distinct qui définit les données de vertex. Le code suivant permet de charger de façon asynchrone un nuanceur de vertex, ainsi qu’un schéma d’entrée de vertex personnalisé. N’oubliez pas que les informations de vertex que vous chargez à partir de vos maillages peuvent être correctement représentées par ce schéma d’entrée !
 
@@ -685,20 +685,19 @@ task<void> BasicLoader::LoadShaderAsync(
         }
     });
 }
-
 ```
 
 Dans ce code, une fois que vous avez lu les données d’octet pour le fichier CSO du nuanceur vertex, vous créez le nuanceur vertex en appelant [**ID3D11Device :: CreateVertexShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createvertexshader). Après cela, vous créez votre schéma d’entrée pour le nuanceur dans la même lambda.
 
-D’autres types de nuanceurs, comme les nuanceurs de coque et de géométrie, peuvent également nécessiter une configuration spécifique. Le code complet d’une variété de méthodes de chargement de nuanceur est fourni dans [Code complet de BasicLoader](complete-code-for-basicloader.md) et dans l’[exemple de chargement de ressources Direct3D]( https://code.msdn.microsoft.com/windowsapps/Direct3D-Resource-Loading-25406148).
+D’autres types de nuanceurs, comme les nuanceurs de coque et de géométrie, peuvent également nécessiter une configuration spécifique. Le code complet d’une variété de méthodes de chargement de nuanceur est fourni dans [Code complet de BasicLoader](complete-code-for-basicloader.md) et dans l’[exemple de chargement de ressources Direct3D](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%2B%2B%5D-Windows%208%20app%20samples/C%2B%2B/Windows%208%20app%20samples/Direct3D%20resource%20loading%20sample%20(Windows%208)/C%2B%2B).
 
-## <a name="remarks"></a>Notes 
+## <a name="remarks"></a>Remarques
 
 À ce stade, vous devez savoir comment créer ou modifier les méthodes de chargement asynchrone des ressources et éléments multimédias de jeu communs, tels que les maillages, les textures et les nuanceurs compilés.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Exemple de chargement de ressources Direct3D]( https://code.msdn.microsoft.com/windowsapps/Direct3D-Resource-Loading-25406148)
+* [Exemple de chargement de ressources Direct3D](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%2B%2B%5D-Windows%208%20app%20samples/C%2B%2B/Windows%208%20app%20samples/Direct3D%20resource%20loading%20sample%20(Windows%208)/C%2B%2B)
 * [Code complet de BasicLoader](complete-code-for-basicloader.md)
 * [Code complet de BasicReaderWriter](complete-code-for-basicreaderwriter.md)
 * [Code complet de DDSTextureLoader](complete-code-for-ddstextureloader.md)
