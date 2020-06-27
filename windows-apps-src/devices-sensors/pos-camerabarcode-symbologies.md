@@ -1,61 +1,66 @@
 ---
-title: Symbologies des scanneurs de codes-barres à caméra
-description: Symbologies prises en charge par les scanneurs de codes-barres à caméra
+title: Scanneur de codes-barres de l’appareil symbologies
+description: Scanneur de codes-barres de l’appareil symbologies pris en charge
 ms.date: 05/02/2018
 ms.topic: article
-keywords: windows 10, uwp, point de vente, pdv
+keywords: Windows 10, UWP, point de service, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: cc2aaaf4e9779cb2be712119fb1dacdf946952c5
-ms.sourcegitcommit: 0dec04de501a3db6b22dfd4a320fc09b5c4a21b5
+ms.openlocfilehash: 481d10f2fea076f45124a3c75819dfe6494300bf
+ms.sourcegitcommit: 48e047a581fcfcc9a4084d65a78b89f2c01cf4f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70243328"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85448399"
 ---
 # <a name="symbologies"></a>Symbologies
-Cette rubrique fournit des exemples de codes-barres pour chacun des symbologies pris en charge par le décodeur de codes-barres logiciel fourni avec Windows 10, notamment : UPC/EAN, code 39, Code 128, entrelacé 2 sur 5, barre omnidirectionnel, barre empilé, code QR et GS1DWCode.
 
-## <a name="1d-symbologies"></a>Symbologies 1D
+Cette rubrique fournit des exemples de codes-barres pour chaque symbologies pris en charge par le décodeur de code-barres logiciel fourni avec Windows 10, notamment : UPC/EAN, code 39, Code 128, entrelacé 2 sur 5, barre omnidirectionnel, barre empilé, code QR et GS1DWCode.
+
+Windows 10 utilise une caméra d’objectif standard associée à un décodeur logiciel pour générer un scanneur de codes-barres. Cet article fait référence au symbologies pris en charge par le décodeur logiciel. Des symbologies supplémentaires peuvent être pris en charge par les périphériques de scanneur de codes-barres dédiés qui comportent des décodeurs matériels intégrés. pour plus d’informations, contactez le fabricant de votre scanneur de codes-barres. Les symbologies répertoriés sont pris en charge dans toutes les éditions de Windows 10 Build 17134 ou version ultérieure, sauf indication contraire.
+
+Utilisez [GetSupportedSymbologiesAsync](/uwp/api/windows.devices.pointofservice.barcodescanner.getsupportedsymbologiesasync) pour déterminer le symbologies spécifique pris en charge par un scanneur de codes-barres.
+
+> [!NOTE]
+> Le décodeur logiciel intégré à Windows 10 est fourni par la [*société Digimarc*](https://www.digimarc.com/).
+
+## <a name="1d-symbologies"></a>1J symbologies
 
 ### <a name="code-39"></a>Code 39
-![Exemple de code-barres - Code 39](images/pos/sample-barcode-code39.png)
+![Exemple de code-barres-Code 39](images/pos/sample-barcode-code39.png)
 
 ### <a name="code-128"></a>Code 128
-![Exemple de code-barres - Code 128](images/pos/sample-barcode-code128.png)
+![Exemple de code-barres-Code 128](images/pos/sample-barcode-code128.png)
 
-### <a name="databar-omnidirectional"></a>Databar Omnidirectional
-![Exemple de code barres - Databar Omnidirectional](images/pos/sample-barcode-databar-omnidirectional.png) 
-### <a name="databar-stacked"></a>Databar Stacked
-![Exemple de code barres - Databar Stacked](images/pos/sample-barcode-databar-stacked.png)
+### <a name="databar-omnidirectional"></a>Barre omnidirectionnel
+![Exemple de code-barres-barre omnidirectionnel](images/pos/sample-barcode-databar-omnidirectional.png) 
+### <a name="databar-stacked"></a>Barre empilé
+![Exemple de code-barres-barre empilé](images/pos/sample-barcode-databar-stacked.png)
 
 ### <a name="ean-8"></a>EAN-8
-![Exemple de code-barres - EAN 8](images/pos/sample-barcode-ean8.png)
+![Exemple de code-barres-EAN-8](images/pos/sample-barcode-ean8.png)
 
 ### <a name="ean-13"></a>EAN-13
-![Exemple de code-barres - EAN 13](images/pos/sample-barcode-ean13.png)
+![Exemple de code-barres-EAN-13](images/pos/sample-barcode-ean13.png)
 
-### <a name="interleaved-2-of-5"></a>Code 2 parmi 5 entrelacé
-![Exemple de code-barres - Code 2 parmi 5 entrelacé](images/pos/sample-barcode-interleaved-2-of-5.png)
+### <a name="interleaved-2-of-5"></a>Entrelacé 2/5
+![Exemple de code-barres-entrelacé 2 sur 5](images/pos/sample-barcode-interleaved-2-of-5.png)
 
 ### <a name="upc-a"></a>UPC-A
-![Exemple de code-barres - UPC A](images/pos/sample-barcode-upca.png)
+![Exemple de code-barres-UPC A](images/pos/sample-barcode-upca.png)
 
 ### <a name="upc-e"></a>UPC-E
-![Exemple de code-barres - UPC E](images/pos/sample-barcode-upce.png)
+![Exemple de code-barres-UPC E](images/pos/sample-barcode-upce.png)
 
 ## <a name="2d-symbologies"></a>Symbologies 2D
 ### <a name="qr-code"></a>Code QR
-![Exemple de code-barres - Code QR](images/pos/sample-barcode-qrcode.png)
+![Exemple de code-barres-code QR](images/pos/sample-barcode-qrcode.png)
 
 ## <a name="digital-watermark"></a>Filigrane numérique
 ### <a name="gs1-dwcode"></a>GS1-DWCode
 
-Scannez l’image d’un paquet ci-dessous avec votre application de scanneur de code-barres à caméra pour voir le code GS1DWCode en action.  Cette image est encodée avec UPCA 856107006854.  Rendez-vous sur http://www.digimarc.com pour plus d'informations sur les fonctionnalités du code GS1DWCode.
+Scanner l’image d’un package ci-dessous avec votre application de scanneur de codes-barres de l’appareil photo pour voir GS1DWCode en action.  L’image est encodée avec UPCA 856107006854.  http://www.digimarc.comPour plus d’informations sur les fonctionnalités de GS1DWCode, consultez.
 
-![Exemple de code-barres - GS1DWCode](images/pos/rice-box-v7.jpg)
-
-> [!NOTE]
-> Le décodeur logiciel intégré à Windows 10 est fourni avec l'autorisation de [*Digimarc Corporation*](https://www.digimarc.com/)
+![Exemple de code-barres-GS1DWCode](images/pos/Rice-Box-V7.jpg)
 
 ## <a name="see-also"></a>Voir aussi
 

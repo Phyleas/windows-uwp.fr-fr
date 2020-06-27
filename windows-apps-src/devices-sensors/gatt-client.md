@@ -1,18 +1,18 @@
 ---
-title: Client du GATT Bluetooth
+title: Client GATT Bluetooth
 description: Cet article fournit une vue d’ensemble du client du profil d’attribut générique Bluetooth pour les applications de plateforme Windows universelle (UWP), ainsi que des exemples de code pour les cas d’utilisation courants.
-ms.date: 02/08/2017
+ms.date: 06/26/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e894b750ba2119e2cca6f316f9671c51386d800c
-ms.sourcegitcommit: e51f9489d8c977c3498afb1a75c91f96ac3a642b
+ms.openlocfilehash: 5c17351cf964ffb05dc60dbaf5c6ced1db467f78
+ms.sourcegitcommit: 015291bdf2e7d67076c1c85fc025f49c840ba475
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83854675"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85469534"
 ---
-# <a name="bluetooth-gatt-client"></a>Client du GATT Bluetooth
+# <a name="bluetooth-gatt-client"></a>Client GATT Bluetooth
 
 Cet article illustre l’utilisation des API clientes de l’attribut générique Bluetooth (GATT) pour les applications de plateforme Windows universelle (UWP), ainsi que des exemples de code pour les tâches courantes du client GATT :
 
@@ -21,6 +21,11 @@ Cet article illustre l’utilisation des API clientes de l’attribut génériqu
 - Énumérer les services et caractéristiques pris en charge de l’appareil
 - Lire et écrire dans une caractéristique
 - S’abonner aux notifications lorsque la valeur caractéristique change
+
+> [!Important]
+> Vous devez déclarer la fonctionnalité « Bluetooth » dans *Package. appxmanifest*.
+>
+> `<Capabilities> <DeviceCapability Name="bluetooth" /> </Capabilities>`
 
 > **API importantes**
 >
