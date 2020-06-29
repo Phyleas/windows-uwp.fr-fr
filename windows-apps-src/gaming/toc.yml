@@ -62,7 +62,7 @@
 - name: Programmation DirectX
   href: ../gaming/directx-programming.md
   items:
-    - name: Prise en main
+    - name: Prendre en main
       href: ../gaming/directx-getting-started.md
       items:
         - name: Objet d’application
@@ -93,7 +93,7 @@
           items:
             - name: Configurer un projet
               href: ../gaming/tutorial--setting-up-the-games-infrastructure.md
-            - name: Framework UWP
+            - name: Framework d’application UWP
               href: ../gaming/tutorial--building-the-games-uwp-app-framework.md
             - name: Gestion de flux de jeu
               href: ../gaming/tutorial-game-flow-management.md
@@ -114,7 +114,7 @@
         - name: Marble Maze
           href: ../gaming/developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md
           items:
-            - name: Principes de base
+            - name: Fondamentaux
               href: ../gaming/marble-maze-sample-fundamentals.md
             - name: Structure d’application
               href: ../gaming/marble-maze-application-structure.md
@@ -173,7 +173,7 @@
               href: ../graphics-concepts/introduction-to-buffers.md
             - name: Mémoires tampons d’index
               href: ../graphics-concepts/index-buffers.md
-        - name: .
+        - name: Périphériques
           href: ../graphics-concepts/devices.md
           items:
             - name: Types d’appareil
@@ -422,7 +422,7 @@
                   href: ../graphics-concepts/bc6h-format.md
                 - name: Format BC7
                   href: ../graphics-concepts/bc7-format.md
-    - name: Principes de base
+    - name: Fondamentaux
       href: ../gaming/directx-fundamentals.md
       items:
         - name: "Graphisme\_2D"

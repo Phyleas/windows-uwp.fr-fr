@@ -3,12 +3,12 @@ title: WinUI 3.0 Preview 1 (Mai 2020)
 description: Vue d’ensemble de WinUI 3.0 Preview.
 ms.date: 05/14/2020
 ms.topic: article
-ms.openlocfilehash: 3aac14807f8455eb9a9294c40ddc76ddfa224659
-ms.sourcegitcommit: 7e8c7f89212c88dcc0274c69d2c3365194c0954a
+ms.openlocfilehash: cbf61c618685501957e7dec081ae132995f15df5
+ms.sourcegitcommit: 48e047a581fcfcc9a4084d65a78b89f2c01cf4f3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83688488"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85448379"
 ---
 # <a name="windows-ui-library-30-preview-1-may-2020"></a>Bibliothèque d’interface utilisateur Windows 3.0 Preview 1 (Mai 2020)
 
@@ -109,6 +109,7 @@ WinUI 3.0 Preview 1 est compatible avec les PC qui exécutent la mise à jour 
 
 ### <a name="developer-tools"></a>Outils de développement
 
+- Seules les applications C# et C++/WinRT sont prises en charge pour le moment
 - Les applications de bureau prennent en charge .NET 5 et C# 8, et doivent être empaquetées
 - Les applications UWP prennent en charge .NET Native et C# 7.3
 - IntelliSense est incomplet
