@@ -32,4 +32,4 @@
     - name: Génération d’une application complexe
       href: ../get-started/plan-your-app.md
 - name: Obtenir des exemples d’application Windows
-  href: ../get-started/get-uwp-app-samples.md
+  href: ../get-started/get-app-samples.md
