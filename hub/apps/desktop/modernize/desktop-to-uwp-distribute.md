@@ -8,12 +8,12 @@ ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 14ad6707b7203dddd9aa7be186e76da677bbd675
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 7eb57e8cea83a4d45087be4c4685ada8d108fa7a
+ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75302703"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85334498"
 ---
 # <a name="distribute-your-packaged-desktop-app"></a>Distribuer votre application de bureau empaquetée
 
@@ -35,7 +35,7 @@ Vous n’êtes pas obligé de signer votre application avant de la soumettre au 
 >[!IMPORTANT]
 > Si vous prévoyez de publier votre application sur le Microsoft Store, assurez-vous qu’elle fonctionne correctement sur les appareils qui exécutent Windows 10 S. Il s’agit d’une exigence imposée par le Store. Consultez [Tester votre application Windows pour Windows 10 S](/windows/msix/desktop/desktop-to-uwp-test-windows-s).
 
-<a id="side-load" />
+<a id="side-load"></a>
 
 ## <a name="distribute-your-application-without-placing-it-onto-the-microsoft-store"></a>Distribuer votre application sans la mettre sur le Microsoft Store
 
@@ -58,7 +58,7 @@ Pour signer votre application à l’aide d’un certificat, consultez [Signer u
 
 Pour charger votre application sur d’autres appareils, consultez [Chargement de la version test d’applications métier dans Windows 10](/windows/application-management/sideload-apps-in-windows-10).
 
-<a id="transition-users" />
+<a id="transition-users"></a>
 
 ## <a name="transition-users-to-your-packaged-app"></a>Transition des utilisateurs vers votre application empaquetée
 
@@ -126,7 +126,7 @@ Pour voir le contexte complet de cet extrait de code, examinez le fichier **Main
 
 ```csharp
 private void RemoveDesktopApp()
-{              
+{
     //Typically, you can find your uninstall string at this location.
     String uninstallString = (String)Microsoft.Win32.Registry.GetValue
         (@"HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion" +

@@ -7,12 +7,12 @@ keywords: windows 10, uwp
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: a38f5fa7f3ef99f5970ec5d476fb65761aa39db4
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 73e867071058dfde71979318d6d711d79460f30b
+ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75302583"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85334554"
 ---
 # <a name="extend-your-desktop-app-with-modern-uwp-components"></a>Étendre votre application de bureau avec des composants UWP modernes
 
@@ -25,7 +25,7 @@ Dans de nombreux cas, vous pouvez appeler des API d’exécution Windows directe
 
 Si vous êtes prêt, commençons.
 
-<a id="setup" />
+<a id="setup"></a>
 
 ## <a name="first-setup-your-solution"></a>Commencer par configurer la Solution
 
@@ -110,7 +110,7 @@ Pour afficher une interface utilisateur XAML, procédez comme suit :
 
 :five: [Dans le projet UWP, afficher la page souhaitée](#parse)
 
-<a id="solution-setup" />
+<a id="solution-setup"></a>
 
 ### <a name="setup-your-solution"></a>Configurer votre solution
 
@@ -122,7 +122,7 @@ Votre solution ressemblera à ceci :
 
 Dans cet exemple, le projet Windows Forms est nommé **Landmarks** et le projet UWP qui contient l’interface utilisateur XAML est nommé **MapUI**.
 
-<a id="xaml-UI" />
+<a id="xaml-UI"></a>
 
 ### <a name="create-a-xaml-ui"></a>Créer une interface utilisateur avec XAML
 
@@ -171,7 +171,7 @@ Vous pouvez également ouvrir le **package.appxmanifest** dans le concepteur, ch
 > [!NOTE]
 > Les contrôles de carte téléchargent des données à partir d’internet, donc, si vous en utilisez un, vous devez également ajouter la fonctionnalité « client internet » à votre manifeste.
 
-<a id="start" />
+<a id="start"></a>
 
 ### <a name="start-the-uwp-app"></a>Démarrer l’application UWP
 
@@ -196,7 +196,7 @@ private async void ShowMap(double lat, double lon)
 }
 ```
 
-<a id="parse" />
+<a id="parse"></a>
 
 ### <a name="parse-parameters-and-show-a-page"></a>Analyser les paramètres et afficher une page
 
@@ -271,7 +271,7 @@ Pour faire de votre application une cible de partage, procédez comme suit :
 
 :five: [Modifier l’application de bureau pour récupérer le fichier partagé](#modify-desktop)
 
-<a id="share-extension" />
+<a id="share-extension"></a>
 
 Les étapes suivantes  
 
@@ -299,7 +299,7 @@ Indiquez le nom de l’exécutable généré par le projet UWP et le nom de la c
 
 Vous devez également spécifier les types de fichiers qui peuvent être partagés avec votre application. Dans cet exemple, nous faisons de l’application de bureau [WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo) une cible de partage pour les images. Nous spécifions donc `Bitmap` comme type de fichier pris en charge.
 
-<a id="override" />
+<a id="override"></a>
 
 ### <a name="override-the-onsharetargetactivated-event-handler"></a>Remplacer le gestionnaire d’événements OnShareTargetActivated
 
@@ -332,7 +332,7 @@ private async void shareWithDesktopApplication(ShareOperation shareOperation)
 
 Dans ce code, nous enregistrons l’image partagée par l’utilisateur dans un dossier de stockage local d’applications. Plus tard, nous modifierons l’application de bureau pour extraire des images de ce même dossier. L’application de bureau faire cela parce qu’elle est incluse dans le même package que l’application UWP.
 
-<a id="desktop-extensions" />
+<a id="desktop-extensions"></a>
 
 ### <a name="add-desktop-extensions-to-the-uwp-project"></a>Ajouter des extensions de bureau au projet UWP
 
@@ -340,7 +340,7 @@ Ajoutez les **Extensions de bureau Windows pour UWP** au projet d’application 
 
 ![extension de bureau](images/desktop-to-uwp/desktop-extensions.png)
 
-<a id="full-trust" />
+<a id="full-trust"></a>
 
 ### <a name="add-the-full-trust-process-extension"></a>Ajouter l’extension de processus de confiance totale
 
@@ -356,7 +356,7 @@ Dans **Explorateur de solutions**, ouvrez le fichier **package.appxmanifest** du
 
 Cette extension permet à l’application UWP de démarrer l’application de bureau dans laquelle vous souhaitez partager un fichier. Dans l’exemple, nous faisons référence au fichier exécutable de l’application de bureau [WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo).
 
-<a id="modify-desktop" />
+<a id="modify-desktop"></a>
 
 ### <a name="modify-the-desktop-application-to-get-the-shared-file"></a>Modifier l’application de bureau pour récupérer le fichier partagé
 
@@ -414,7 +414,7 @@ Pour créer un service en arrière-plan, procédez comme suit :
 
 :three: [Inscrire la tâche en arrière-plan](#register-background-task)
 
-<a id="implement-task" />
+<a id="implement-task"></a>
 
 ### <a name="implement-the-background-task"></a>Implémenter la tâche en arrière-plan
 
@@ -455,7 +455,7 @@ public sealed class SiteVerifier : IBackgroundTask
     }
 ```
 
-<a id="configure-background-task" />
+<a id="configure-background-task"></a>
 
 ### <a name="configure-the-background-task"></a>Configurer la tâche en arrière-plan
 
@@ -473,7 +473,7 @@ Fournissez le nom complet de la classe dans votre composant Windows Runtime qui
 
 ![Propriété Minuteur](images/desktop-to-uwp/background-task-entry-point.png)
 
-<a id="register-background-task" />
+<a id="register-background-task"></a>
 
 ### <a name="register-the-background-task"></a>Inscrire la tâche en arrière-plan
 

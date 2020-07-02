@@ -9,12 +9,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 68c2427fe6b02385325f0f224cc837912621f6bb
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: 63648743536dae9f7655f82674ad04255a13f437
+ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82729852"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85334402"
 ---
 # <a name="windows-runtime-apis-available-to-desktop-apps"></a>API Windows Runtime disponibles pour les applications de bureau
 
@@ -49,7 +49,7 @@ Voici une liste complète des API Windows Runtime prises en charge dans les appl
 
 Pour obtenir des exemples d’utilisation des API Windows Runtime, consultez [Exemples de Pont du bureau](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) et [Exemples d’applications de la plateforme Windows universelle (UWP)](https://github.com/Microsoft/Windows-universal-samples) sur GitHub. Vous pouvez également consulter le billet de blog consacré à la création d'applications pour Windows [Appel d'API Windows 10 à partir d'une application de bureau](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application/).
 
-<a id="new" />
+<a id="new"></a>
 
 ### <a name="apis-supported-only-in-apps-with-package-identity"></a>API uniquement prises en charge dans les applications avec identité du package
 
@@ -375,7 +375,7 @@ Pour obtenir des exemples d’utilisation des API Windows Runtime, consultez [Ex
 * [Windows.UI.StartScreen.JumpList](https://docs.microsoft.com/uwp/api/Windows.UI.StartScreen.JumpList)
 * [Windows.UI.StartScreen.JumpListItem](https://docs.microsoft.com/uwp/api/Windows.UI.StartScreen.JumpListItem)
 
-<a id="both" />
+<a id="both"></a>
 
 ### <a name="apis-supported-in-all-desktop-applications"></a>API prises en charge dans toutes les applications de bureau
 

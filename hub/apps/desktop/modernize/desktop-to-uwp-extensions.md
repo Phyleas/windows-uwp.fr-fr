@@ -8,12 +8,12 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: b048de69a8a259509e5a5c54c5f1d61675a25a18
-ms.sourcegitcommit: e51f9489d8c977c3498afb1a75c91f96ac3a642b
+ms.openlocfilehash: d9f5ca95678a8b31ed53cfdf2c4e6433bca504c8
+ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83854719"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85334451"
 ---
 # <a name="integrate-your-desktop-app-with-windows-10-and-uwp"></a>Intégrer votre application de bureau à Windows 10 et UWP
 
@@ -36,7 +36,7 @@ Aidez les utilisateurs à migrer vers votre application empaquetée.
 * [Ajouter des options aux menus contextuels de fichiers d'un certain type](#add)
 * [Ouvrir certains types de fichiers directement à l’aide d’une URL](#open)
 
-<a id="point" />
+<a id="point"></a>
 
 ### <a name="point-existing-start-tiles-and-taskbar-buttons-to-your-packaged-app"></a>Pointer les vignettes existantes de l’écran de démarrage et les boutons de barre des tâches vers votre application empaquetée
 
@@ -55,7 +55,6 @@ Vos utilisateurs peuvent avoir épinglé votre application de bureau à la barre
         <DesktopApp ShortcutPath="[path]" />
     </DesktopAppMigration>
 </Extension>
-
 ```
 
 Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-rescap3-desktopappmigration).
@@ -93,7 +92,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 
 [Visionneuse d’images WPF avec transition/migration/désinstallation](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DesktopAppTransition)
 
-<a id="make" />
+<a id="make"></a>
 
 ### <a name="make-your-packaged-application-open-files-instead-of-your-desktop-app"></a>Ouvrir des fichiers à l’aide de votre application empaquetée au lieu de votre application de bureau
 
@@ -154,7 +153,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 
 [Visionneuse d’images WPF avec transition/migration/désinstallation](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DesktopAppTransition)
 
-<a id="associate" />
+<a id="associate"></a>
 
 ### <a name="associate-your-packaged-application-with-a-set-of-file-types"></a>Associer votre application empaquetée à un ensemble de types de fichiers
 
@@ -212,7 +211,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 
 [Visionneuse d’images WPF avec transition/migration/désinstallation](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DesktopAppTransition)
 
-<a id="add" />
+<a id="add"></a>
 
 ### <a name="add-options-to-the-context-menus-of-files-that-have-a-certain-file-type"></a>Ajouter des options aux menus contextuels de fichiers d'un certain type
 
@@ -279,7 +278,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 
 [Visionneuse d’images WPF avec transition/migration/désinstallation](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DesktopAppTransition)
 
-<a id="open" />
+<a id="open"></a>
 
 ### <a name="open-certain-types-of-files-directly-by-using-a-url"></a>Ouvrir certains types de fichiers directement à l’aide d’une URL
 
@@ -341,7 +340,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 * [Créer une exception de pare-feu pour votre application](#rules)
 * [Placer vos fichiers DLL dans n'importe quel dossier du package](#load-paths)
 
-<a id="rules" />
+<a id="rules"></a>
 
 ### <a name="create-firewall-exception-for-your-app"></a>Créer une exception de pare-feu pour votre application
 
@@ -403,7 +402,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 </Package>
 ```
 
-<a id="load-paths" />
+<a id="load-paths"></a>
 
 ### <a name="place-your-dll-files-into-any-folder-of-the-package"></a>Placer vos fichiers DLL dans n'importe quel dossier du package
 
@@ -467,7 +466,7 @@ Aidez les utilisateurs à organiser vos fichiers et à interagir avec eux nature
 * [Spécifier un gestionnaire de menu contextuel pour un type de fichier](#context-menu)
 * [Permettre l'affichage des fichiers de votre service cloud dans l'explorateur de fichiers](#cloud-files)
 
-<a id="define" />
+<a id="define"></a>
 
 ### <a name="define-how-your-application-behaves-when-users-select-and-open-multiple-files-at-the-same-time"></a>Définir le comportement de votre application lorsque les utilisateurs sélectionnent et ouvrent plusieurs fichiers en même temps
 
@@ -541,7 +540,7 @@ Les applications de bureau empaquetées présentent les trois mêmes options que
 
 Si l’utilisateur ouvre jusqu’à 15 fichiers, le choix par défaut pour l’attribut **MultiSelectModel** est *Player*. Autrement, la valeur par défaut est *Document*. Les applications UWP sont toujours démarrées en mode *Player*.
 
-<a id="show" />
+<a id="show"></a>
 
 ### <a name="show-file-contents-in-a-thumbnail-image-within-file-explorer"></a>Afficher le contenu du fichier dans une image miniature dans l’Explorateur de fichiers
 
@@ -604,7 +603,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 </Package>
 ```
 
-<a id="preview" />
+<a id="preview"></a>
 
 ### <a name="show-file-contents-in-the-preview-pane-of-file-explorer"></a>Afficher le contenu du fichier dans le volet de visualisation de l’Explorateur de fichiers
 
@@ -665,7 +664,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 </Package>
 ```
 
-<a id="enable" />
+<a id="enable"></a>
 
 ### <a name="enable-users-to-group-files-by-using-the-kind-column-in-file-explorer"></a>Permettre aux utilisateurs de grouper des fichiers à l’aide de la colonne Type dans l’Explorateur de fichiers
 
@@ -733,7 +732,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 </Package>
 ```
 
-<a id="make-file-properties" />
+<a id="make-file-properties"></a>
 
 ### <a name="make-file-properties-available-to-search-index-property-dialogs-and-the-details-pane"></a>Mettre à disposition les propriétés du fichier pour la recherche, les index, les boîtes de dialogue des propriétés et le volet d’informations
 
@@ -790,7 +789,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 </Package>
 ```
 
-<a id="context-menu" />
+<a id="context-menu"></a>
 
 ### <a name="specify-a-context-menu-handler-for-a-file-type"></a>Spécifier un gestionnaire de menu contextuel pour un type de fichier
 
@@ -888,7 +887,7 @@ Pour enregistrer votre gestionnaire de menu contextuel, suivez ces instructions.
 </Package>
 ```
 
-<a id="cloud-files" />
+<a id="cloud-files"></a>
 
 ### <a name="make-files-from-your-cloud-service-appear-in-file-explorer"></a>Permettre l'affichage des fichiers de votre service cloud dans l'explorateur de fichiers
 
@@ -951,7 +950,7 @@ Inscrivez les gestionnaires que vous souhaitez implémenter dans votre applicati
 </Package>
 ```
 
-<a id="start" />
+<a id="start"></a>
 
 ## <a name="start-your-application-in-different-ways"></a>Démarrer votre application de différentes manières
 
@@ -961,7 +960,7 @@ Inscrivez les gestionnaires que vous souhaitez implémenter dans votre applicati
 * [Permettre aux utilisateurs de démarrer votre application lorsqu'ils connectent à un appareil à leur PC](#autoplay)
 * [Redémarrer automatiquement après avoir reçu une mise à jour à partir du Microsoft Store](#updates)
 
-<a id="protocol" />
+<a id="protocol"></a>
 
 ### <a name="start-your-application-by-using-a-protocol"></a>Démarrer votre application à l’aide d’un protocole
 
@@ -1012,7 +1011,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 </Package>
 ```
 
-<a id="alias" />
+<a id="alias"></a>
 
 ### <a name="start-your-application-by-using-an-alias"></a>Démarrer votre application à l’aide d’un alias
 
@@ -1068,7 +1067,7 @@ Les utilisateurs et autres processus peuvent utiliser un alias pour démarrer vo
 
 Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
-<a id="executable" />
+<a id="executable"></a>
 
 ### <a name="start-an-executable-file-when-users-log-into-windows"></a>Démarrer un fichier exécutable lorsque les utilisateurs se connectent à Windows
 
@@ -1131,7 +1130,7 @@ Les utilisateurs peuvent désactiver manuellement la tâche de démarrage de vot
  </Package>
 ```
 
-<a id="autoplay" />
+<a id="autoplay"></a>
 
 ### <a name="enable-users-to-start-your-application-when-they-connect-a-device-to-their-pc"></a>Permettre aux utilisateurs de démarrer votre application lorsqu'ils connectent à un appareil à leur PC
 
@@ -1190,7 +1189,7 @@ La lecture automatique peut présenter votre application en tant qu’option lor
 </Package>
 ```
 
-<a id="updates" />
+<a id="updates"></a>
 
 ### <a name="restart-automatically-after-receiving-an-update-from-the-microsoft-store"></a>Redémarrer automatiquement après avoir reçu une mise à jour à partir du Microsoft Store
 
@@ -1203,7 +1202,7 @@ Chaque fenêtre active dans votre application reçoit un message [WM_QUERYENDSES
 Lorsque chaque fenêtre active dans votre application reçoit le message [WM_ENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-endsession), votre application doit enregistrer les données et s'arrêter.
 
 >[!NOTE]
-Votre fenêtre active reçoit également le message [WM_CLOSE](https://docs.microsoft.com/windows/desktop/winmsg/wm-close) au cas où l’application ne gère pas le message [WM_ENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-endsession).
+> Votre fenêtre active reçoit également le message [WM_CLOSE](https://docs.microsoft.com/windows/desktop/winmsg/wm-close) au cas où l’application ne gère pas le message [WM_ENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-endsession).
 
 À ce stade, votre application dispose de 30 secondes pour fermer ses propres processus, sinon la plateforme les arrête de manière forcée.
 
@@ -1217,7 +1216,7 @@ Intégration avec d’autres applications, démarrer d’autres processus ou par
 * [Partager des polices avec d’autres applications Windows](#fonts)
 * [Démarrer un processus Win32 à partir d’une application de plateforme Windows universelle (UWP)](#win32-process)
 
-<a id="printing" />
+<a id="printing"></a>
 
 ### <a name="make-your-application-appear-as-the-print-target-in-applications-that-support-printing"></a>Afficher votre application en tant que cible d’impression dans des applications qui prennent en charge l’impression
 
@@ -1269,7 +1268,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 
 Trouver un exemple qui utilise cette extension [ici](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/PrintToPDF)
 
-<a id="fonts" />
+<a id="fonts"></a>
 
 ### <a name="share-fonts-with-other-windows-applications"></a>Partager des polices avec d’autres applications Windows
 
@@ -1317,7 +1316,7 @@ Vous trouverez la référence de schéma complète [ici](/uwp/schemas/appxpackag
 </Package>
 ```
 
-<a id="win32-process" />
+<a id="win32-process"></a>
 
 ### <a name="start-a-win32-process-from-a-universal-windows-platform-uwp-app"></a>Démarrer un processus Win32 à partir d’une application de plateforme Windows universelle (UWP)
 

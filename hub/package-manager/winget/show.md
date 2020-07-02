@@ -1,17 +1,15 @@
 ---
 title: show, commande
 description: Affiche les détails de l’application spécifiée, y compris les détails sur la source de l’application ainsi que les métadonnées associées à l’application.
-author: KevinLaMS
-ms.author: kevinla
 ms.date: 04/28/2020
 ms.topic: overview
 ms.localizationpriority: medium
-ms.openlocfilehash: 1df5a5287b6c7a1321025182f7b3f24ed896e76d
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: 9443bb31133ee9643571a4861af7027272b35d94
+ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83824980"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85334501"
 ---
 # <a name="show-command-winget"></a>show, commande (winget)
 
