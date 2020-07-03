@@ -27,7 +27,7 @@ La bibliothèque d’interface utilisateur Windows (WinUI) 3.0 est une mise à 
 - Améliorations et mises à jour de [WebView2](https://docs.microsoft.com/microsoft-edge/hosting/webview2)
   - Prise en charge des résolutions élevées
   - Prise en charge du redimensionnement et du déplacement de fenêtre
-  - Mise à jour pour cibler une version plus récente d’Edge
+  - Mise à jour pour cibler une version plus récente de Microsoft Edge
   - Vous n’avez plus besoin de référencer un package NuGet propre à WebView2
 - SwapChainPanel
 - Améliorations requises pour la migration open source
