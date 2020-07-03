@@ -6,17 +6,17 @@ ms.date: 05/29/2020
 ms.topic: article
 keywords: Windows 10, UWP, opérateurs mobiles, facturation mobile, facturation opérateur mobile
 ms.localizationpriority: medium
-ms.openlocfilehash: 16783e71a170118f470a351a7f5dc4c2a178405e
-ms.sourcegitcommit: 8eae7aec4c4ffb8a0c30e9d03744942fb23958d9
+ms.openlocfilehash: 2be7938faddaf50c96005f32c77f523ebf4061e3
+ms.sourcegitcommit: ae195892efb9d3abd1190776617984d4219c6777
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84334214"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85913229"
 ---
 # <a name="mobile-operator-billing"></a>Facturation de l’opérateur mobile
 
 > [!NOTE]
-> Si vous recherchez de l’aide sur les versements, notamment la configuration des comptes de paiement, les versements manquants, l’ajout de paiements en attente ou tout autre point, contactez le support [ici](https://developer.microsoft.com/windows/support).
+> Si vous avez besoin d’aide concernant les paiements, notamment sur la configuration des comptes de paiement, les paiements manquants, la mise en attente des paiements ou d’autres sujets, contactez le support [ici](https://developer.microsoft.com/windows/support).
 
 Le Microsoft Store offre une facturation d’opérateur mobile comme mode de paiement pour les appareils exécutant Windows 10, les téléphones exécutant Windows 10 mobile et les consoles Xbox One. Si l’opérateur mobile d’un client prend en charge cette fonctionnalité, le client peut ajouter la facturation de l’opérateur mobile comme mode de paiement et l’utiliser pour effectuer des achats dans le magasin à l’aide de son compte mobile.
 
@@ -30,7 +30,7 @@ La facturation de l’opérateur mobile est actuellement prise en charge par ces
 | Pays/région       | Opérateurs mobiles                                        |
 |----------------------|---------------------------------------------------------|
 | Australie            | Optus                                                   |
-| Autriche              | Hutchison 3G Autriche, a1 Telekom, T-Mobile/Tele. Ring  |
+| Autriche              | A1 Telekom, Hutchison 3G Autriche, T-Mobile/Tele. Ring  |
 | Belgique              | Base, Proximus                                          |
 | Canada               | Telus                                                   |
 | Tchéquie              | T-Mobile                                                |
@@ -39,7 +39,7 @@ La facturation de l’opérateur mobile est actuellement prise en charge par ces
 | France               | Orange                                                  |
 | Allemagne              | O2, Telekom Deutschland, Vodafone                       |
 | Hongrie              | Telenor                                                 |
-| Italie                | Vent, tre                                               |
+| Italie                | Tre, vent                                               |
 | Malaisie             | Photo                                                    |
 | Pays-Bas          | KPN/Telfort                                           |
 | Norvège               | Telenor/Talkmore, Telia/OneCall                     |
@@ -48,10 +48,10 @@ La facturation de l’opérateur mobile est actuellement prise en charge par ces
 | Slovaquie             | Slovaque Telekom                                          |
 | Afrique du Sud         | Vodacom                                                 |
 | Espagne                | Orange                                                  |
-| Suède               | Telenor, 3                                              |
-| Suisse          | Swisscom, aube                                       |
+| Suède               | 3, Telenor                                              |
+| Suisse          | Aube, Swisscom                                       |
 | Taïwan               | FarEasTone                                              |
 | Turquie               | Turkcell                                                |
 | Émirats Arabes Unis | Etisalat                                                |
 | États-Unis        | Sprint, Verizon                                         |
-| Royaume-Uni       | O2, 3 RU, EE                                            |
+| Royaume-Uni       | 3 ru, EE, O2, Vodaphone                                 |

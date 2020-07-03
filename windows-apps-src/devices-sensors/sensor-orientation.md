@@ -6,20 +6,20 @@ ms.date: 05/24/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bfd84cd2f2255138b738ecb6dd7f6dab824d7ec4
-ms.sourcegitcommit: d1ef530ef4dfa34db7bc429ab5a0c19fc405885f
+ms.openlocfilehash: 4659aaba330d3b41451e91e450ff601e3fcf5407
+ms.sourcegitcommit: 42a2d9e47f682ba42d91fed587f4d5924bde9c9a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71247453"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85840763"
 ---
 # <a name="sensor-orientation"></a>Orientation de capteur
 
-Les données du capteur provenant des classes [**Accelerometer**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Accelerometer), [**Gyrometer**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Gyrometer), [**Compass**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Compass), [**Inclinometer**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Inclinometer) et [**OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor) sont définies par leurs axes de référence. Ces axes sont définis par l’image de référence de l’appareil, et pivotent avec celui-ci à mesure que l’utilisateur le fait tourner. Si votre application prend en charge la rotation automatique et se réoriente pour s’adapter à l’appareil à mesure que l’utilisateur le fait pivoter, vous devez ajuster vos données du capteur par rapport à la rotation avant de l’utiliser.
+Les données de capteur des classes [**accéléromètre**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Accelerometer), [**gyromètre**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Gyrometer), [**Compass**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Compass), [**Inclinometer**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Inclinometer)et [**OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor) sont définies par leurs axes de référence. Ces axes sont définis par le frame de référence de l’appareil et pivotent avec l’appareil lorsque l’utilisateur l’active. Si votre application prend en charge la rotation automatique et se réoriente pour s’adapter à l’appareil à mesure que l’utilisateur le fait pivoter, vous devez ajuster vos données du capteur par rapport à la rotation avant de l’utiliser.
 
 ### <a name="important-apis"></a>API importantes
 
-- [**Windows. Devices. Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
+- [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
 - [**Windows. Devices. Sensors. Custom**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Custom)
 
 ## <a name="display-orientation-vs-device-orientation"></a>Orientation de l’affichage et orientation de l’appareil
@@ -30,17 +30,17 @@ Dans les diagrammes suivants, l’orientation de l’appareil et de l’affichag
 
 Ce diagramme illustre l’affichage et l’orientation de l’appareil en [mode paysage](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations).
 
-![Orientation de l’affichage et de l’appareil en mode Landscape](images/sensor-orientation-a.PNG)
+:::image type="content" source="images/sensor-orientation-a-small.jpg" alt-text="Orientation de l’affichage et de l’appareil en mode Landscape":::
 
 Le diagramme suivant montre l’orientation de l’affichage et de l’appareil dans [LandscapeFlipped](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations).
 
-![Orientation de l’affichage et de l’appareil en mode LandscapeFlipped](images/sensor-orientation-b.PNG)
+![Orientation de l’affichage et de l’appareil en mode LandscapeFlipped](images/sensor-orientation-b-small.jpg)
 
 Ce diagramme final montre l’orientation d’affichage en paysage alors que l’orientation de l’appareil est [LandscapeFlipped](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations).
 
-![Orientation d’affichage en mode Landscape tandis que l’orientation de l’appareil est en mode LandscapeFlipped.](images/sensor-orientation-c.PNG)
+![Orientation d’affichage en mode Landscape tandis que l’orientation de l’appareil est en mode LandscapeFlipped.](images/sensor-orientation-c-small.jpg)
 
-Vous pouvez effectuer une requête sur les valeurs d’orientation dans la classe [**DisplayInformation**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayInformation) à l’aide de la méthode [**GetForCurrentView**](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.getforcurrentview) avec la propriété [**CurrentOrientation**](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.currentorientation). Vous pouvez ensuite créer une logique en comparant ces valeurs avec l’énumération [**DisplayOrientations**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations). Souvenez-vous que, pour chaque orientation que vous prenez en charge, vous devez prendre en charge une conversion des axes de référence dans cette orientation.
+Vous pouvez effectuer une requête sur les valeurs d’orientation dans la classe [**DisplayInformation**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayInformation) à l’aide de la méthode [**GetForCurrentView**](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.getforcurrentview) avec la propriété [**CurrentOrientation**](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.currentorientation). Vous pouvez ensuite créer une logique en la comparant à l’énumération [**DisplayOrientations**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations) . Souvenez-vous que, pour chaque orientation que vous prenez en charge, vous devez prendre en charge une conversion des axes de référence dans cette orientation.
 
 ## <a name="landscape-first-vs-portrait-first-devices"></a>Appareils à priorité Paysage ou à priorité Portrait
 
@@ -48,10 +48,10 @@ Les fabricants produisent des appareils à priorité Paysage ou Portrait. Le cad
 
 | Orientation | Priorité Paysage | Priorité Portrait |
 |-------------|-----------------|----------------|
-| **Jardin** | ![Appareil à priorité Paysage en mode d’orientation Landscape](images/sensor-orientation-0.PNG) | ![Appareil à priorité Portrait en mode d’orientation Landscape](images/sensor-orientation-1.PNG) |
-| **Aperçu** | ![Appareil à priorité Paysage en mode d’orientation Portrait](images/sensor-orientation-2.PNG) | ![Appareil à priorité Portrait en mode d’orientation Portrait](images/sensor-orientation-3.PNG) |
-| **LandscapeFlipped** | ![Appareil à priorité Paysage en mode d’orientation LandscapeFlipped](images/sensor-orientation-4.PNG) | ![Appareil à priorité Portrait en mode d’orientation LandscapeFlipped](images/sensor-orientation-5.PNG) | 
-| **PortraitFlipped** | ![Appareil à priorité Paysage en mode d’orientation PortraitFlipped](images/sensor-orientation-6.PNG)| ![Appareil à priorité Portrait en mode d’orientation PortraitFlipped](images/sensor-orientation-7.PNG) |
+| **Paysage** | ![Appareil à priorité Paysage en mode d’orientation Landscape](images/sensor-orientation-0-small.jpg) | ![Appareil à priorité Portrait en mode d’orientation Landscape](images/sensor-orientation-1-small.jpg) |
+| **Portrait** | ![Appareil à priorité Paysage en mode d’orientation Portrait](images/sensor-orientation-2-small.jpg) | ![Appareil à priorité Portrait en mode d’orientation Portrait](images/sensor-orientation-3-small.jpg) |
+| **LandscapeFlipped** | ![Appareil à priorité Paysage en mode d’orientation LandscapeFlipped](images/sensor-orientation-4-small.jpg) | ![Appareil à priorité Portrait en mode d’orientation LandscapeFlipped](images/sensor-orientation-5-small.jpg) | 
+| **PortraitFlipped** | ![Appareil à priorité Paysage en mode d’orientation PortraitFlipped](images/sensor-orientation-6-small.jpg)| ![Appareil à priorité Portrait en mode d’orientation PortraitFlipped](images/sensor-orientation-7-small.jpg) |
 
 ## <a name="devices-broadcasting-display-and-headless-devices"></a>Appareils diffusant leur affichage et appareils sans affichage
 
@@ -63,12 +63,12 @@ En outre, certains appareils n’ont pas d’affichage. L’orientation par déf
 
 L’orientation de la boussole dépend des axes de référence. Elle change donc avec l’orientation de l’appareil. Vous compensez en vous appuyant sur le tableau suivant (en supposant que l’utilisateur est orienté au nord).
 
-| Orientation de l’affichage | Axe de référence pour l’orientation de la boussole | Orientation de la boussole de l’API avec une orientation au nord (à priorité Paysage) | Orientation de la boussole de l’API avec une orientation au nord (à priorité Portrait) |Compensation de l’orientation de la boussole (à priorité Paysage) | Compensation de l’orientation de la boussole (à priorité Portrait) |
+| Orientation de l’affichage | Axe de référence pour l’orientation de la boussole | Titre de l’API Compass lorsque le nord est orienté vers le Nord (paysage en premier) | En-tête API Compass en regard du Nord (en premier) |Compensation de l’en-tête de boussole (paysage-First) | Compensation de l’en-tête de boussole (portrait-premier) |
 |---------------------|------------------------------------|---------------------------------------------------------|--------------------------------------------------------|------------------------------------------------|-----------------------------------------------|
 | Paysage           | -Z | 0   | 270 | Orientation               | (Orientation + 90) % 360  |
-| Portrait            |  Y | 90  | 0   | (Orientation + 270) % 360 |  Orientation              |
+| Portrait            |  O | 90  | 0   | (Orientation + 270) % 360 |  Orientation              |
 | LandscapeFlipped    |  Z | 180 | 90  | (Orientation + 180) % 360 | (Orientation + 270) % 360 |
-| PortraitFlipped     |  Y | 270 | 180 | (Orientation + 90) % 360  | (Orientation + 180) % 360 |
+| PortraitFlipped     |  O | 270 | 180 | (Orientation + 90) % 360  | (Orientation + 180) % 360 |
 
 Modifiez le cap de la boussole tel qu’indiqué dans le tableau pour afficher correctement le cap. L’extrait de code suivant montre comment procéder.
 
@@ -108,12 +108,12 @@ private void ReadingChanged(object sender, CompassReadingChangedEventArgs e)
 
 Le tableau suivant convertit les données de l’accéléromètre et du gyromètre pour obtenir l’orientation de l’affichage.
 
-| Axes de référence        |  X |  Y | Z |
+| Axes de référence        |  X |  O | Z |
 |-----------------------|----|----|---|
-| **Jardin**         |  X |  Y | Z |
-| **Aperçu**          |  Y | -X | Z |
-| **LandscapeFlipped**  | -X | -Y | Z |
-| **PortraitFlipped**   | -Y |  X | Z |
+| **Paysage**         |  X |  O | Z |
+| **Portrait**          |  O | -X | Z |
+| **LandscapeFlipped**  | -X | -y | Z |
+| **PortraitFlipped**   | -y |  X | Z |
 
 L’exemple de code suivant applique ces conversions au gyromètre.
 
@@ -159,19 +159,23 @@ private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
 
 ## <a name="display-orientation-and-device-orientation"></a>Orientation d’affichage et orientation d’appareil
 
-Les données [**OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor) doivent être modifiées d’une autre façon. Considérez ces différentes orientations comme des rotations dans le sens inverse des aiguilles d’une position vers l’axe Z. nous devons donc inverser la rotation pour revenir à l’orientation de l’utilisateur. Pour les données de quaternion, nous pouvons utiliser la formule d’Euler pour définir une rotation avec un quaternion de référence. Nous pouvons également utiliser une matrice de rotation de référence.
+Les données [**OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor) doivent être modifiées d’une manière différente. Considérez ces différentes orientations comme des rotations dans le sens inverse des aiguilles d’une position vers l’axe Z. nous devons donc inverser la rotation pour revenir à l’orientation de l’utilisateur. Pour les données de quaternion, nous pouvons utiliser la formule d’Euler pour définir une rotation avec un quaternion de référence. Nous pouvons également utiliser une matrice de rotation de référence.
 
-![Formule d’Euler](images/eulers-formula.png)
+![Formule de Euler](images/eulers-formula.png)
 
-Pour obtenir l’orientation relative souhaitée, multipliez l’objet de référence par l’objet absolu. Notez que cette formule mathématique n’est pas commutative.
+Pour obtenir l’orientation relative souhaitée, multipliez l’objet de référence par rapport à l’objet absolu. Notez que cette formule mathématique n’est pas commutative.
 
-![Multipliez l’objet de référence par l’objet absolu](images/orientation-formula.png)
+![Multiplier l’objet de référence par rapport à l’objet absolu](images/orientation-formula.png)
 
-Dans l’expression précédente, l’objet absolu est retourné par les données du capteur.
+Dans l’expression précédente, l’objet absolu est retourné par les données de capteur.
 
 | Orientation de l’affichage  | Rotation dans le sens inverse des aiguilles d’une montre autour de Z | Quaternion de référence (rotation inverse) | Matrice de rotation de référence (rotation inverse) |
 |----------------------|------------------------------------|-----------------------------------------|----------------------------------------------|
-| **Jardin**        | 0                                  | 1 + 0i + 0j + 0k                        | \[1 0 0<br/> 0 1 0<br/> 0 0 1\]               |
-| **Aperçu**         | 90                                 | cos(-45⁰) + (i + j + k)*sin(-45⁰)       | \[0 1 0<br/>-1 0 0<br/>0 0 1]              |
+| **Paysage**        | 0                                  | 1 + 0i + 0j + 0k                        | \[1 0 0<br/> 0 1 0<br/> 0 0 1\]               |
+| **Portrait**         | 90                                 | cos(-45⁰) + (i + j + k)*sin(-45⁰)       | \[0 1 0<br/>-1 0 0<br/>0 0 1]              |
 | **LandscapeFlipped** | 180                                | 0 - i - j - k                           | \[1 0 0<br/> 0 1 0<br/> 0 0 1]               |
-| **PortraitFlipped**  | 270                                | cos(-135⁰) + (i + j + k)*sin(-135⁰)     | \[0 -1 0<br/> 1  0 0<br/> 0  0 1]             |
+| **PortraitFlipped**  | 270                                | cos(-135⁰) + (i + j + k)*sin(-135⁰)     | \[0 -1 0<br/> 1 0 0<br/> 0 0 1]             |
+
+## <a name="see-also"></a>Voir aussi
+
+[Intégration de capteurs de mouvement et d’orientation](https://docs.microsoft.com/windows-hardware/design/whitepapers/integrating-motion-and-orientation-sensors)
