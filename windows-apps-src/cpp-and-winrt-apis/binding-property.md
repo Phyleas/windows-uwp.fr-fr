@@ -5,12 +5,12 @@ ms.date: 06/21/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, XAML, contrôle, liaison, propriété
 ms.localizationpriority: medium
-ms.openlocfilehash: 06934c1c3b23c244fb32ffa957cffb926ffd1bb0
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 12a20ae3df6ae83723550bf365aadab99b1b3b7b
+ms.sourcegitcommit: 90fe7a9a5bfa7299ad1b78bbef289850dfbf857d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79209194"
+ms.lasthandoff: 06/13/2020
+ms.locfileid: "84756526"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrt-property"></a>Contrôles XAML ; liaison à une propriété C++/WinRT
 Une propriété qui peut être efficacement liée à un contrôle XAML est appelée propriété *observable*. Ce concept est basé sur le modèle de conception logicielle appelé *modèle observateur*. Cette rubrique montre comment implémenter des propriétés observables en [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) et y lier des contrôles XAML (pour des informations de référence, consultez [Liaison de données](/windows/uwp/data-binding).
@@ -49,14 +49,20 @@ namespace Bookstore
 >
 > Toute classe runtime que vous déclarez dans l’application et qui *dérive* d’une classe de base est appelée classe *composable*. Et ces classes composables sont soumises à certaines contraintes. Pour qu’une application puisse réussir les tests du [Kit de certification des applications Windows](../debug-test-perf/windows-app-certification-kit.md) utilisés par Visual Studio et par le Microsoft Store afin de valider les soumissions (et par conséquent, pour que l’application puisse être ingérée avec succès dans le Microsoft Store), une classe composable doit finalement dériver d’une classe de base Windows. Ce qui signifie que le type de la classe à la racine de la hiérarchie d’héritage doit provenir d’un espace de noms Windows.*. Si vous devez dériver une classe runtime d’une classe de base&mdash;par exemple, pour implémenter une classe **BindableBase** afin que l’ensemble de vos modèles de vue dérivent de&mdash;, vous pouvez la dériver de [**Windows.UI.Xaml.DependencyObject**](/uwp/api/windows.ui.xaml.dependencyobject).
 >
-> Un modèle de vue est une abstraction d’une vue, et par conséquent, il est directement lié à la vue (le balisage XAML). Un modèle de données est une abstraction de données, et il est consommé uniquement à partir de vos modèles de vue et non directement lié à XAML. Vous pouvez donc déclarer vos modèles de données non pas comme des classes runtime, mais comme des structures ou des classes C++. Elles ne doivent être déclarées dans MIDL, et vous êtes libre d’utiliser la hiérarchie d’héritage de votre choix.
+> Un modèle de vue est une abstraction d’une vue, et par conséquent, il est directement lié à la vue (le balisage XAML). Un modèle de données est une abstraction de données, et il est consommé uniquement à partir de vos modèles de vue et non directement lié à XAML. Vous pouvez donc déclarer vos modèles de données non pas comme des classes runtime, mais comme des structs ou des classes C++. Elles ne doivent être déclarées dans MIDL, et vous êtes libre d’utiliser la hiérarchie d’héritage de votre choix.
 
 Enregistrez le fichier et générez le projet. Pendant le processus de génération, l’outil `midl.exe` est exécuté pour créer un fichier de métadonnées Windows Runtime (`\Bookstore\Debug\Bookstore\Unmerged\BookSku.winmd`) décrivant la classe runtime. Puis, l’outil `cppwinrt.exe` est exécuté pour générer les fichiers de code source et vous aider à créer et utiliser votre classe runtime. Ces fichiers incluent des stubs pour vous aider à implémenter la classe runtime **BookSku** que vous avez déclarée dans votre fichier IDL. Ces stubs sont `\Bookstore\Bookstore\Generated Files\sources\BookSku.h` et `BookSku.cpp`.
 
 Cliquez avec le bouton droit de la souris sur le nœud du projet, puis cliquez sur **Ouvrir le dossier dans l'Explorateur de fichiers**. Le dossier du projet s’ouvre dans l'Explorateur de fichiers. Copiez les fichiers stub `BookSku.h` et `BookSku.cpp` du dossier `\Bookstore\Bookstore\Generated Files\sources\` vers le dossier du projet, à savoir `\Bookstore\Bookstore\`. Dans l’**Explorateur de solutions**, avec le nœud de projet sélectionné, assurez-vous que l’option **Afficher tous les fichiers** est activée. Cliquez avec le bouton droit sur les fichiers stub que vous avez copiés, puis cliquez sur **Inclure dans le projet**.
 
 ## <a name="implement-booksku"></a>Implémenter **BookSku**
-Maintenant, nous allons ouvrir `\Bookstore\Bookstore\BookSku.h` et `BookSku.cpp`, et implémenter notre classe runtime. Dans `BookSku.h`, ajoutez un constructeur qui prend un [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring), un membre privé pour stocker la chaîne de titre, et un autre pour l’événement que nous allons générer lorsque le titre change. Après avoir apporté ces modifications, votre `BookSku.h` se présentera comme suit.
+Maintenant, ouvrons `\Bookstore\Bookstore\BookSku.h` et `BookSku.cpp` et implémentons la classe runtime. Dans `BookSku.h`, apportez ces modifications.
+
+- Ajoutez un constructeur qui prend une valeur [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring). Cette valeur est la chaîne de titre (« title »).
+- Ajoutez un membre privé pour stocker la chaîne de titre.
+- Ajoutez un autre membre privé pour l’événement que nous déclencherons quand le titre changera.
+
+Après avoir apporté ces modifications, votre `BookSku.h` se présentera comme suit.
 
 ```cppwinrt
 // BookSku.h
@@ -122,7 +128,7 @@ namespace winrt::Bookstore::implementation
 }
 ```
 
-Dans la fonction mutateur **Titre**, nous vérifions si une valeur définie est différente de la valeur actuelle. Et, si tel est le cas, nous mettons à jour le titre et déclenchons également l’événement [**INotifyPropertyChanged::PropertyChanged**](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged) avec un argument égal au nom de la propriété qui a changé. De cette façon, l’interface utilisateur saura quelle valeur de propriété elle doit réinterroger.
+Dans la fonction mutateur **Titre**, nous vérifions si une valeur définie est différente de la valeur actuelle. Et, si tel est le cas, nous mettons à jour le titre et déclenchons aussi l’événement [**INotifyPropertyChanged::PropertyChanged**](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged) avec un argument égal au nom de la propriété qui a changé. De cette façon, l’interface utilisateur saura quelle valeur de propriété elle doit réinterroger.
 
 ## <a name="declare-and-implement-bookstoreviewmodel"></a>Déclarer et implémenter **BookstoreViewModel**
 Notre page XAML principale va établir une liaison à un modèle d’affichage principal. Et ce modèle d’affichage va avoir plusieurs propriétés, y compris une de type **BookSku**. Dans cette étape, nous allons déclarer et implémenter la classe runtime de notre modèle d’affichage principal.

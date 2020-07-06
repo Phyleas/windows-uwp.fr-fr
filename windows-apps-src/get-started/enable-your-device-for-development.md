@@ -6,12 +6,12 @@ keywords: Commencer avec une licence de développeur Visual Studio, appareil ave
 ms.date: 05/22/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f41c7b706f4c088142a77092cf176ed543e21567
-ms.sourcegitcommit: e51f9489d8c977c3498afb1a75c91f96ac3a642b
+ms.openlocfilehash: 4402200726da93bb820946c9849d8c15bd1c5d8d
+ms.sourcegitcommit: 48e047a581fcfcc9a4084d65a78b89f2c01cf4f3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83854775"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85448389"
 ---
 # <a name="enable-your-device-for-development"></a>Activer votre appareil pour le développement
 
@@ -39,43 +39,6 @@ Pour activer le mode développeur ou accéder à d’autres paramètres :
 
 > [!NOTE]
 > L’activation du mode développeur requiert un accès administrateur. Si votre appareil appartient à votre organisation, il se peut que cette option soit désactivée.
-
-Voici la page de paramètres pour la famille d’appareils de bureau.
-
-![Pour afficher vos options, accédez aux Paramètres, sélectionnez Mise à jour et sécurité, puis Pour les développeurs.](images/devmode-pc-options.png)
-
-## <a name="which-setting-should-i-choose-sideload-apps-or-developer-mode"></a>Quel paramètre choisir : Charger la version test des applications ou Mode développeur ?
-
-> [!NOTE]
-> Depuis l’arrivée de Windows Insider Build 18956, l’option de chargement de version test a été supprimée et le Mode développeur est maintenant une bascule. Pour plus d’informations sur le chargement de version test, consultez la section suivante.
-
- Vous pouvez activer un appareil pour le développement ou simplement pour le chargement indépendant.
-
--   *Applications du Microsoft Store* est le paramètre par défaut. Si vous ne développez pas des applications, ou si vous utilisez des applications internes spécifiques développées par votre entreprise, ce paramètre doit être activé.
--   *Charger la version test des applications* consiste à installer, puis à exécuter ou tester une application qui n’a pas été certifiée par le Microsoft Store. Il peut par exemple s’agir d’une application utilisée en interne au sein de votre entreprise.
--   Le *mode développeur* vous permet de procéder au chargement indépendant des applications et d’exécuter des applications à partir de Visual Studio en mode débogage.
-
-Par défaut, vous pouvez uniquement installer des applications de plateforme Windows universelle (UWP) à partir du Microsoft Store. La modification de ces paramètres en vue d’utiliser les fonctionnalités de développement peut entraîner la modification du niveau de sécurité de votre appareil. N’installez pas d’applications à partir de sources non vérifiées.
-
-### <a name="sideload-apps"></a>Charger la version test des applications
-
-> [!NOTE]
-> Depuis l’arrivée de Windows Insider Build 18956, le chargement de version test est activé par défaut. Désormais, vous pouvez déployer un package MSIX signé sur un appareil sans configuration particulière.
-
-Le paramètre Charger la version test des applications est généralement utilisé par des sociétés ou des écoles qui ont besoin d’installer des applications personnalisées sur des appareils gérés, sans passer par le Microsoft Store, ou par toute personne devant exécuter des applications à partir de sources tierces. Dans ce cas, l’organisation applique généralement une stratégie visant à désactiver le paramètre *Applications UWP*, comme le montre l’image précédente de la page des paramètres. L’organisation fournit aussi le certificat nécessaire et l’emplacement d’installation pour le chargement indépendant des applications. Pour plus d’informations, consultez les articles TechNet [Chargement indépendant d’applications dans Windows 10](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10) et [Notions de base de Microsoft Intune](https://docs.microsoft.com/mem/intune/fundamentals/).
-
-Informations spécifiques à la famille d’appareils
-
--   Pour la famille d’appareils de bureau : Vous pouvez installer un package d’application (.appx) et tout certificat nécessaire à l’exécution de l’application en exécutant le script Windows PowerShell créé avec le package (« Add-AppDevPackage.ps1 »). Pour plus d’informations, voir [Création de packages d’application UWP](/windows/msix/package/packaging-uwp-apps).
-
--   Pour la famille d’appareils mobiles : Si le certificat requis est déjà installé, vous pouvez appuyer sur le fichier pour installer tout fichier .appx reçu par courrier électronique ou sur une carte SD.
-
-
-Le paramètre **Charger la version test des applications** est une option plus sécurisée que le mode développeur, car vous ne pouvez pas installer d’applications sans certificat approuvé sur l’appareil.
-
-> [!NOTE]
-> Si vous effectuez un chargement indépendant des applications, veillez à ce que les applications que vous installez proviennent toujours de sources fiables. Quand vous procédez au chargement d’une version test d’une application qui n’a pas été certifiée par le Microsoft Store, vous indiquez que vous avez obtenu l’ensemble des droits nécessaires au chargement d’une version test de cette application et que vous êtes l’unique responsable des dommages résultant de l’installation et de l’exécution de cette application. Voir la section Windows &gt; Microsoft Store de cette [déclaration de confidentialité](https://privacy.microsoft.com/privacystatement).
-
 
 ### <a name="developer-mode"></a>Mode développeur
 
@@ -106,6 +69,26 @@ Pour obtenir des instructions d’installation spécifiques pour l’appareil, v
 - [Portail d’appareil pour Xbox](../xbox-apps/device-portal-xbox.md)
 
 Si vous rencontrez des difficultés pour activer le mode développeur ou le portail d’appareil, consultez le forum [Problèmes connus](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22) pour chercher des solutions à ces problèmes, ou visitez la page relatif à l’[échec de l’installation du package Mode développeur](#failure-to-install-developer-mode-package) pour plus d’informations et pour savoir quelles bases de connaissances WSUS autoriser afin de débloquer le package Mode développeur.
+
+### <a name="sideload-apps"></a>Charger la version test des applications
+
+> [!NOTE]
+> Depuis la dernière mise à jour de Windows 10, le chargement indépendant est activé par défaut. Désormais, vous pouvez déployer un package MSIX signé sur un appareil sans configuration particulière. Si vous utilisez une version précédente de Windows 10, vos paramètres par défaut vous permettent uniquement d’exécuter les applications du Microsoft Store, et vous devez activer le chargement indépendant pour installer des applications issues d’autres sources que Microsoft.
+
+Le paramètre Charger la version test des applications est généralement utilisé par des sociétés ou des écoles qui ont besoin d’installer des applications personnalisées sur des appareils gérés, sans passer par le Microsoft Store, ou par toute personne devant exécuter des applications à partir de sources tierces. Dans ce cas, l’organisation applique généralement une stratégie visant à désactiver le paramètre *Applications UWP*, comme le montre l’image précédente de la page des paramètres. L’organisation fournit aussi le certificat nécessaire et l’emplacement d’installation pour le chargement indépendant des applications. Pour plus d’informations, consultez les articles TechNet [Chargement indépendant d’applications dans Windows 10](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10) et [Notions de base de Microsoft Intune](https://docs.microsoft.com/mem/intune/fundamentals/).
+
+Informations spécifiques à la famille d’appareils
+
+-   Pour la famille d’appareils de bureau : Vous pouvez installer un package d’application (.appx) et tout certificat nécessaire à l’exécution de l’application en exécutant le script Windows PowerShell créé avec le package (« Add-AppDevPackage.ps1 »). Pour plus d’informations, voir [Création de packages d’application UWP](/windows/msix/package/packaging-uwp-apps).
+
+-   Pour la famille d’appareils mobiles : Si le certificat requis est déjà installé, vous pouvez appuyer sur le fichier pour installer tout fichier .appx reçu par courrier électronique ou sur une carte SD.
+
+
+Le paramètre **Charger la version test des applications** est une option plus sécurisée que le mode développeur, car vous ne pouvez pas installer d’applications sans certificat approuvé sur l’appareil.
+
+> [!NOTE]
+> Si vous effectuez un chargement indépendant des applications, veillez à ce que les applications que vous installez proviennent toujours de sources fiables. Quand vous procédez au chargement d’une version test d’une application qui n’a pas été certifiée par le Microsoft Store, vous indiquez que vous avez obtenu l’ensemble des droits nécessaires au chargement d’une version test de cette application et que vous êtes l’unique responsable des dommages résultant de l’installation et de l’exécution de cette application. Voir la section Windows &gt; Microsoft Store de cette [déclaration de confidentialité](https://privacy.microsoft.com/privacystatement).
+
 
 ### <a name="ssh"></a>SSH
 

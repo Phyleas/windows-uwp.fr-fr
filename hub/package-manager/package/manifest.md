@@ -1,17 +1,15 @@
 ---
 title: Créer votre manifeste de package
-description: ''
-author: denelon
-ms.author: denelon
+description: Si vous voulez soumettre un package logiciel au dépôt du Gestionnaire de package Windows, commencez par créer un manifeste de package.
 ms.date: 04/29/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8eceb29abbdc7f765628dbd8dbd6f6d0be21f132
-ms.sourcegitcommit: e2689c72d5b381eafdb1075090d1961f4c1cb37a
+ms.openlocfilehash: 7ecc6687527ca330f466e6a97ef14c0b5c9b56cf
+ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84055153"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85334614"
 ---
 # <a name="create-your-package-manifest"></a>Créer votre manifeste de package
 
@@ -58,7 +56,7 @@ License: string # The open source license or copyright.
 InstallerType: string # Enumeration of supported installer types (exe, msi, msix, inno, wix, nullsoft, appx).
 Installers:
   - Arch: string # Enumeration of supported architectures.
-  - URL: string # Path to download installation file.
+  - Url: string # Path to download installation file.
   - Sha256: string # SHA256 calculated from installer.
 ManifestVersion: 0.1.0
 ```
@@ -164,6 +162,17 @@ ManifestVersion: 0.1.0
 
 > [!NOTE]
 > Si votre programme d’installation est un .exe qui a été créé à l’aide de Nullsoft ou Inno, vous pouvez spécifier ces valeurs à la place. Quand Nullsoft ou Inno sont spécifiés, le client définit automatiquement les comportements Installation sans assistance et Installation sans assistance avec progression pour le programme d’installation.
+
+## <a name="installer-switches"></a>Commutateurs de programme d’installation
+
+Vous pouvez souvent déterminer quels sont les commutateurs (`Switches`) silencieux disponibles pour un programme d’installation en transmettant un `-?` au programme d’installation à partir de la ligne de commande. Voici quelques `Swtiches` silencieux courants qui peuvent être utilisés pour différents types de programme d’installation.
+
+| Programme d’installation | Commande  | Documentation |  
+| :--- | :-- | :--- |  
+| MSI | `/q` | [Options de ligne de commande MSI](https://docs.microsoft.com/windows/win32/msi/command-line-options) |
+| InstallShield | `/s`  | [Paramètres de ligne de commande InstallShield](https://docs.flexera.com/installshield19helplib/helplibrary/IHelpSetup_EXECmdLine.htm) |
+| Inno Setup | `/SILENT or /VERYSILENT` | [Documentation Inno Setup](https://jrsoftware.org/ishelp/) |
+| Nullsoft | `/S` | [Programmes d’installation/de désinstallation sans assistance Nullsoft](https://nsis.sourceforge.io/Docs/Chapter4.html#silent) |
 
 ## <a name="tips-and-best-practices"></a>Conseils et bonnes pratiques
 

@@ -8,25 +8,25 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: ab67507153e0ff7065baffa92ea6ec35aee5b132
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: 8775113c22716259f9449899b577481738dc6c0f
+ms.sourcegitcommit: da1c0ae251883987f105bc2919b2d67846194bc5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83580766"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85198517"
 ---
 # <a name="get-started-with-winui-30-for-desktop-apps"></a>Bien démarrer avec WinUI 3.0 pour les applications de bureau
 
-WinUI 3.0 Preview 1 introduit de nouveaux modèles de projet qui vous permettent de créer des applications de bureau C#/.NET managées et C++/Win32 natives avec une interface utilisateur entièrement basée sur WinUI. Quand vous créez des applications à l’aide de ces modèles de projet, la totalité de l’interface utilisateur de votre application est implémentée à l’aide de fenêtres, de contrôles et d’autres types d’interface utilisateur fournis par WinUI 3.0. 
+WinUI 3.0 Preview 1 introduit de nouveaux modèles de projet qui vous permettent de créer des applications de bureau C#/.NET managées et C++/Win32 natives avec une interface utilisateur entièrement basée sur WinUI. Quand vous créez des applications à l’aide de ces modèles de projet, la totalité de l’interface utilisateur de votre application est implémentée à l’aide de fenêtres, de contrôles et d’autres types d’interface utilisateur fournis par WinUI 3.0.
 
-WinUI 3.0 Preview 1 ajoute les modèles de projet **WinUI in Desktop** suivants dans Visual Studio 2019 :
+WinUI 3.0 Preview 1 ajoute les modèles de projet suivants à Visual Studio 2019 pour générer des applications de bureau qui utilisent WinUI 3.0 :
 
-* Applications et bibliothèques C# qui ciblent .NET 5 :
-  * Blank App, Packaged (WinUI in Desktop)
-  * Class Library (WinUI in Desktop)
+* Modèles de projet pour bibliothèques et applications C# qui ciblent .NET 5 :
+  * **Blank App, Packaged (WinUI in Desktop)**
+  * **Class Library (WinUI in Desktop)**
 
-* Applications C++/Win32 :
-  * Blank App, Packaged (WinUI in Desktop)
+* Modèles de projet pour applications C++/Win32 :
+  * **Blank App, Packaged (WinUI in Desktop)**
 
 Les modèles de projet d’application génèrent un projet d’application WinUI et un [Projet de création de packages d’applications Windows](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) configuré pour générer l’application dans un package [MSIX](https://docs.microsoft.com/windows/msix/overview) pour le déploiement.
 
@@ -41,6 +41,9 @@ Pour utiliser les modèles de projet WinUI 3 pour applications de bureau décri
 3. Installez les versions x64 et x86 de .NET 5 Preview 4 :
     * x64 : [https://aka.ms/dotnet/net5/preview4/Sdk/dotnet-sdk-win-x64.exe](https://aka.ms/dotnet/net5/preview4/Sdk/dotnet-sdk-win-x64.exe)
     * x86 : [https://aka.ms/dotnet/net5/preview4/Sdk/dotnet-sdk-win-x86.exe](https://aka.ms/dotnet/net5/preview4/Sdk/dotnet-sdk-win-x86.exe)
+
+    > [!NOTE]
+    > WinUI 3.0 Preview 1 nécessite .NET 5 Preview 4. Les préversions ultérieures de .NET 5 ne sont pas prises en charge avec WinUI 3.0 Preview 1.
 
 4. Installez l’extension VSIX qui comprend les modèles de projet WinUI 3.0 Preview 1 pour Visual Studio 2019. Pour plus d’informations, consultez [ces instructions](index.md#visual-studio-project-templates).
 

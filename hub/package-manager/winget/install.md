@@ -1,17 +1,15 @@
 ---
 title: install, commande
 description: Installe l’application spécifiée.
-author: KevinLaMS
-ms.author: kevinla
 ms.date: 04/28/2020
 ms.topic: overview
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c460ccd18bb1bb12e5322e0e08a17edbd9692f7
-ms.sourcegitcommit: 5a145eda92b5915393e58006867cdd8b98e922f5
+ms.openlocfilehash: 5daae6dabee1201dd9df0b83dc56f98b06b15487
+ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84166238"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85334526"
 ---
 # <a name="install-command-winget"></a>install, commande (winget)
 
@@ -78,6 +76,12 @@ winget install --id Microsoft.PowerToys --version 0.15.2
 ## <a name="multiple-selections"></a>Sélections multiples
 
 Si la requête fournie à **winget** détecte plusieurs applications, **winget** affiche les résultats de la recherche. Vous avez alors les données supplémentaires nécessaires pour affiner la recherche d’une installation correcte.
+
+La meilleure façon de limiter la sélection à un seul fichier est d’utiliser l’**id** de l’application et le combiner à l’option de requête **exact**.  Par exemple :
+
+```CMD
+winget install --id Git.Git -e 
+```
 
 ## <a name="local-install"></a>Installation locale
 

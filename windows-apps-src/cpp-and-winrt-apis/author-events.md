@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, créer, événement
 ms.localizationpriority: medium
-ms.openlocfilehash: fc12bf1abeabd1a1c3cfccfe3c6d3f12ebda65f3
-ms.sourcegitcommit: c4f912ba0313ae49632f81e38d7d2d983ac132ad
+ms.openlocfilehash: e7cb0e10efec9077292faa8f8d72a7dad1da2c1b
+ms.sourcegitcommit: 83f4a528b5e3fc2b140c76fdf2acf734d6d851d4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84200782"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84683378"
 ---
 # <a name="author-events-in-cwinrt"></a>Créer des événements en C++/WinRT
 
@@ -26,7 +26,7 @@ Cette rubrique montre comment créer un composant Windows Runtime qui contient u
 
 Commencez par créer un nouveau projet dans Microsoft Visual Studio. Créez un projet **Composant Windows Runtime (C++/WinRT)** et nommez-le *BankAccountWRC* (pour « composant Windows Runtime de compte bancaire »). Si vous nommez le projet *BankAccountWRC*, vous suivrez le reste des étapes de cette rubrique le plus facilement possible. Ne générez pas encore le projet.
 
-Le projet nouvellement créé contient un fichier nommé `Class.idl`. Renommez ce fichier `BankAccount.idl` (la modification du nom du fichier `.idl` renomme également automatiquement les fichiers `.h` et `.cpp` associés). Remplacez le contenu de l’élément `BankAccount.idl` par le listing ci-dessous.
+Le projet nouvellement créé contient un fichier nommé `Class.idl`. Dans l’Explorateur de solutions, renommez ce fichier `BankAccount.idl` (le fait de renommer le fichier `.idl` a aussi pour effet de renommer automatiquement les fichiers dépendants `.h` et `.cpp`). Remplacez le contenu de l’élément `BankAccount.idl` par le listing ci-dessous.
 
 ```idl
 // BankAccountWRC.idl
@@ -92,6 +92,8 @@ namespace winrt::BankAccountWRC::implementation
 }
 ```
 
+Vous devrez aussi supprimer `static_assert` des deux fichiers.
+
 > [!NOTE]
 > Pour savoir ce qu’est un revoker d’événement automatique, consultez [Révoquer un délégué inscrit](handle-events.md#revoke-a-registered-delegate). L’implémentation d’un revoker d’événement automatique est gratuite pour votre événement. En d’autres termes, vous n’avez pas besoin d’implémenter la surcharge pour le revoker d’événement puisque l’implémentation vous est fournie par la projection C++/WinRT.
 
@@ -103,7 +105,7 @@ Si un avertissement vous empêche de procéder à la génération, corrigez les 
 
 ## <a name="create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component"></a>Créer une application de base (BankAccountCoreApp) pour tester le composant Windows Runtime
 
-Créez à présent un nouveau projet (dans votre solution *BankAccountWRC* ou dans une nouvelle solution). Créez un projet **Application de base (C++/WinRT)** et nommez-le *BankAccountCoreApp*.
+Créez à présent un nouveau projet (dans votre solution *BankAccountWRC* ou dans une nouvelle solution). Créez un projet **Application de base (C++/WinRT)** et nommez-le *BankAccountCoreApp*. Définissez *BankAccountCoreApp* comme projet de démarrage si les deux projets se trouvent dans la même solution.
 
 > [!NOTE]
 > Comme mentionné précédemment, le fichier de métadonnées Windows Runtime de votre composant Windows Runtime (dont vous avez nommé le projet *BankAccountWRC*) est créé dans le dossier `\BankAccountWRC\Debug\BankAccountWRC\`. Le premier segment de ce chemin correspond au nom du dossier qui contient votre fichier de solution, le segment suivant est le sous-répertoire du projet nommé `Debug` et le dernier segment est le sous-répertoire du projet nommé de votre composant Windows Runtime. Si vous n’avez pas nommé votre projet *BankAccountWRC*, votre fichier de métadonnées se trouve dans le dossier `\<YourProjectName>\Debug\<YourProjectName>\`.
@@ -155,11 +157,117 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 
 Chaque fois que vous cliquez sur la fenêtre, vous retirez 1 du solde du compte bancaire. Pour démontrer que l’événement est déclenché comme prévu, insérez un point d’arrêt à l’intérieur de l’expression lambda qui gère l’événement **AccountIsInDebit**, exécutez l’application, puis cliquez à l’intérieur de la fenêtre.
 
-## <a name="parameterized-delegates-and-simple-signals-across-an-abi"></a>Délégués paramétrables et signaux simples dans une ABI
+## <a name="parameterized-delegates-across-an-abi"></a>Délégués paramétrables dans une interface ABI
 
 Si votre événement doit être accessible via une interface binaire d'application (ABI)&mdash;par exemple entre un composant et son application consommatrice&mdash;votre événement doit utiliser un type de délégué Windows Runtime. L’exemple ci-dessus utilise le type de délégué Windows Runtime [**Windows::Foundation::EventHandler\<T\>** ](/uwp/api/windows.foundation.eventhandler). [**TypedEventHandler\<TSender, TResult\>** ](/uwp/api/windows.foundation.eventhandler) est un autre exemple de type de délégué Windows Runtime.
 
-Comme les paramètres de type pour ces deux types de délégués doivent traverser l'ABI, ils doivent donc aussi être de type Windows Runtime. Cela inclut les classes runtime de premier et de troisième niveaux, ainsi que les types primitifs tels que les nombres et les chaînes de caractères. Le compilateur vous aide en affichant une erreur « *must be WinRT type* » (doit être de type WinRT) si vous oubliez cette contrainte.
+Comme les paramètres de type pour ces deux types de délégués doivent traverser l'ABI, ils doivent donc aussi être de type Windows Runtime. Cela inclut les classes runtime Windows et tierces ainsi que les types primitifs tels que les nombres et les chaînes. Le compilateur vous aide en affichant une erreur « *must be WinRT type* » (doit être de type WinRT) si vous oubliez cette contrainte.
+
+Vous trouverez ci-dessous un exemple sous forme de listes de code. Commencez par les projets **BankAccountWRC** et **BankAccountCoreApp** que vous avez créés précédemment dans cette rubrique, puis modifiez le code de ces projets en reproduisant le code figurant dans ces listes.
+
+La première liste concerne le projet **BankAccountWRC**. Après avoir modifié `BankAccountWRC.idl` comme indiqué ci-dessous, générez le projet, puis copiez `MyEventArgs.h` et `.cpp` dans le projet (à partir du dossier `Generated Files`) comme vous l’avez fait précédemment avec `BankAccount.h` et `.cpp`.
+
+```cppwinrt
+// BankAccountWRC.idl
+namespace BankAccountWRC
+{
+    [default_interface]
+    runtimeclass MyEventArgs
+    {
+        Single Balance{ get; };
+    }
+
+    [default_interface]
+    runtimeclass BankAccount
+    {
+        ...
+        event Windows.Foundation.EventHandler<BankAccountWRC.MyEventArgs> AccountIsInDebit;
+        ...
+    };
+}
+
+// MyEventArgs.h
+#pragma once
+#include "MyEventArgs.g.h"
+
+namespace winrt::BankAccountWRC::implementation
+{
+    struct MyEventArgs : MyEventArgsT<MyEventArgs>
+    {
+        MyEventArgs() = default;
+        MyEventArgs(float balance);
+        float Balance();
+
+    private:
+        float m_balance{ 0.f };
+    };
+}
+
+// MyEventArgs.cpp
+#include "pch.h"
+#include "MyEventArgs.h"
+#include "MyEventArgs.g.cpp"
+
+namespace winrt::BankAccountWRC::implementation
+{
+    MyEventArgs::MyEventArgs(float balance) : m_balance(balance)
+    {
+    }
+
+    float MyEventArgs::Balance()
+    {
+        return m_balance;
+    }
+}
+
+// BankAccount.h
+...
+struct BankAccount : BankAccountT<BankAccount>
+{
+...
+    winrt::event_token AccountIsInDebit(Windows::Foundation::EventHandler<BankAccountWRC::MyEventArgs> const& handler);
+...
+private:
+    winrt::event<Windows::Foundation::EventHandler<BankAccountWRC::MyEventArgs>> m_accountIsInDebitEvent;
+...
+}
+...
+
+// BankAccount.cpp
+#include "MyEventArgs.h"
+...
+winrt::event_token BankAccount::AccountIsInDebit(Windows::Foundation::EventHandler<BankAccountWRC::MyEventArgs> const& handler) { ... }
+...
+void BankAccount::AdjustBalance(float value)
+{
+    m_balance += value;
+
+    if (m_balance < 0.f)
+    {
+        auto args = winrt::make_self<winrt::BankAccountWRC::implementation::MyEventArgs>(m_balance);
+        m_accountIsInDebitEvent(*this, *args);
+    }
+}
+...
+```
+
+Cette liste concerne le projet **BankAccountCoreApp**.
+
+```cppwinrt
+// App.cpp
+...
+void Initialize(CoreApplicationView const&)
+{
+    m_eventToken = m_bankAccount.AccountIsInDebit([](const auto&, BankAccountWRC::MyEventArgs args)
+    {
+        float balance = args.Balance();
+        WINRT_ASSERT(balance < 0.f); // Put a breakpoint here.
+    });
+}
+...
+```
+
+## <a name="simple-signals-across-an-abi"></a>Signaux simples dans une interface ABI
 
 Si vous n'avez pas besoin de passer des paramètres ou des arguments avec votre événement, vous pouvez définir votre propre type de délégué Windows Runtime simple. L’exemple ci-dessous montre une version plus simple de la classe runtime **BankAccount**. Il déclare un type de délégué nommé **SignalDelegate** puis l'utilise pour déclencher un événement de type signal au lieu d'un événement avec un paramètre.
 

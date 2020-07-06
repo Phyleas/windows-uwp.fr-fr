@@ -1,16 +1,16 @@
 ---
 title: Utiliser une base de données SQLite dans une application UWP
 description: Utilisez une base de données SQLite dans une application UWP.
-ms.date: 11/30/2018
+ms.date: 06/26/2020
 ms.topic: article
 keywords: windows 10, uwp, SQLite, base de données
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e10dc35464472a16f64ec94cd0fdd78c41eb484
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: c8eb384be08addd75e77f37d6fb579a179e68581
+ms.sourcegitcommit: 48e047a581fcfcc9a4084d65a78b89f2c01cf4f3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75302723"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85448349"
 ---
 # <a name="use-a-sqlite-database-in-a-uwp-app"></a>Utiliser une base de données SQLite dans une application UWP
 Vous pouvez utiliser SQLite pour stocker et récupérer des données dans une base de données légère sur l’appareil de l’utilisateur. Ce guide vous explique comment procéder.
@@ -98,6 +98,9 @@ Commençons par ajouter une bibliothèque de classes .NET Standard 2.0 à votr
 Cliquez avec le bouton droit sur la solution, puis cliquez sur **Gérer les packages NuGet pour la solution**.
 
 ![Gérer des packages NuGet](images/manage-nuget-2.png)
+
+> [!NOTE]
+> Si vous voulez que votre bibliothèque de classes .NET Standard puisse accéder aux dossiers d’application et aux ressources d’image de votre application UWP, vous devez la marquer avec **EmbeddedResource** et **CopyAlways** dans ses **propriétés**.
 
 À ce stade, vous avez plusieurs possibilités. Vous pouvez utiliser la version de SQLite fournie avec Windows. Si vous avez besoin d’utiliser une version spécifique de SQLite, vous pouvez inclure la bibliothèque SQLite dans votre package.
 

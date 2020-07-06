@@ -5,12 +5,12 @@ ms.date: 11/30/2018
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, port, migrer, interopérabilité, ABI
 ms.localizationpriority: medium
-ms.openlocfilehash: 91602c75cdaddc325407529ab4d231db46ecca39
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 4249618a4b26fd7e8129547a679c80c5e2ed6903
+ms.sourcegitcommit: a2b340dc3a28e845830eeb9ce00342a3f7351d62
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79209144"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85834997"
 ---
 # <a name="interop-between-cwinrt-and-the-abi"></a>Interopérabilité entre C++/WinRT et ABI
 
@@ -108,6 +108,9 @@ int main()
 
 Les implémentations des fonctions **as** appellent [**QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)). Si vous souhaitez des conversions de niveau inférieur qui appellent uniquement [**AddRef**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref), vous pouvez utiliser les fonctions d’assistance [**winrt::copy_to_abi**](/uwp/cpp-ref-for-winrt/copy-to-abi) et [**winrt::copy_from_abi**](/uwp/cpp-ref-for-winrt/copy-from-abi). L’exemple de code suivant ajoute ces conversions de niveau inférieur à l’exemple de code ci-dessus.
 
+> [!IMPORTANT]
+> Dans le cas d’une interopérabilité avec les types ABI, il est essentiel que le type ABI utilisé corresponde à l’interface par défaut de l’objet C++/WinRT. Sinon, les appels de méthodes sur le type ABI finiront en fait par appeler des méthodes dans le même emplacement vtable de l’interface par défaut avec des résultats très inattendus. Notez que [**winrt::copy_to_abi**](/uwp/cpp-ref-for-winrt/copy-from-abi) n’empêche pas cela de se produire au moment de la compilation, car il utilise **void\*** pour tous les types ABI et part du principe que l’appelant a veillé à ne pas dépareiller les types. Le but est ici d’éviter que les en-têtes C++/WinRT soient contraints de faire référence à des en-têtes ABI alors que les types ABI risquent de ne jamais être utilisés.
+
 ```cppwinrt
 int main()
 {
@@ -117,11 +120,11 @@ int main()
 
     // Convert to an ABI type.
     ptr = nullptr;
-    winrt::copy_to_abi(uri, *ptr.put_void());
+    winrt::copy_to_abi(uriAsIStringable, *ptr.put_void());
 
     // Convert from an ABI type.
     uri = nullptr;
-    winrt::copy_from_abi(uri, ptr.get());
+    winrt::copy_from_abi(uriAsIStringable, ptr.get());
     ptr = nullptr;
 }
 ```
@@ -133,17 +136,17 @@ Voici d’autres techniques de conversions de bas niveau similaires, mais cette 
 
     // Copy to an owning raw ABI pointer with copy_to_abi.
     abi::IStringable* owning{ nullptr };
-    winrt::copy_to_abi(uri, *reinterpret_cast<void**>(&owning));
+    winrt::copy_to_abi(uriAsIStringable, *reinterpret_cast<void**>(&owning));
 
     // Copy from a raw ABI pointer.
     uri = nullptr;
-    winrt::copy_from_abi(uri, owning);
+    winrt::copy_from_abi(uriAsIStringable, owning);
     owning->Release();
 ```
 
 Pour les conversions des niveaux les plus bas, qui copient uniquement les adresses, vous pouvez utiliser les fonctions d’assistance [**winrt::get_abi**](/uwp/cpp-ref-for-winrt/get-abi), [**winrt::detach_abi**](/uwp/cpp-ref-for-winrt/detach-abi) et [**winrt::attach_abi**](/uwp/cpp-ref-for-winrt/attach-abi).
 
-`WINRT_ASSERT` est une définition de macro qui s’étend à [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros).
+`WINRT_ASSERT` est une définition de macro qui est développée en [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros).
 
 ```cppwinrt
     // The code in main() already shown above remains here.
@@ -151,14 +154,14 @@ Pour les conversions des niveaux les plus bas, qui copient uniquement les adress
     // Lowest-level conversions that only copy addresses
 
     // Convert to a non-owning ABI object with get_abi.
-    abi::IStringable* non_owning{ static_cast<abi::IStringable*>(winrt::get_abi(uri)) };
+    abi::IStringable* non_owning{ static_cast<abi::IStringable*>(winrt::get_abi(uriAsIStringable)) };
     WINRT_ASSERT(non_owning);
 
     // Avoid interlocks this way.
-    owning = static_cast<abi::IStringable*>(winrt::detach_abi(uri));
-    WINRT_ASSERT(!uri);
-    winrt::attach_abi(uri, owning);
-    WINRT_ASSERT(uri);
+    owning = static_cast<abi::IStringable*>(winrt::detach_abi(uriAsIStringable));
+    WINRT_ASSERT(!uriAsIStringable);
+    winrt::attach_abi(uriAsIStringable, owning);
+    WINRT_ASSERT(uriAsIStringable);
 ```
 
 ## <a name="convert_from_abi-function"></a>Fonction convert_from_abi

@@ -14,12 +14,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 80072be15a28883e5d29a7393edd112cf6fa47be
-ms.sourcegitcommit: 7e8c7f89212c88dcc0274c69d2c3365194c0954a
+ms.openlocfilehash: d5308f49499f4bdec9db0087cef54ac2fa0bb805
+ms.sourcegitcommit: 69b7fe203d8384d0ade37122ae9d2c4568f6d168
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83688493"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85267166"
 ---
 # <a name="treeview"></a>TreeView
 
@@ -488,6 +488,10 @@ Si votre arborescence a des nœuds non réalisés, ils ne sont pas pris en compt
 - Si un utilisateur sélectionne un nœud parent, tous les enfants réalisés sous ce parent sont également sélectionnés. De même, si tous les nœuds enfants sont sélectionnés, le nœud parent est également sélectionné.
 - La méthode **SelectAll** ajoute uniquement des nœuds réalisés à la collection **SelectedNodes**.
 - Si un nœud parent avec des enfants non réalisés est sélectionné, les enfants sont sélectionnés quand ils sont réalisés.
+
+#### <a name="selecteditemselecteditems"></a>SelectedItem/SelectedItems
+
+Depuis WinUI 2.2, TreeView possède les propriétés [SelectedItem](/uwp/api/microsoft.ui.xaml.controls.treeview.selecteditem) et [SelectedItems](/uwp/api/microsoft.ui.xaml.controls.treeview.selecteditems). Vous pouvez utiliser ces propriétés pour récupérer directement le contenu des nœuds sélectionnés. Si la sélection multiple est activée, SelectedItem contient le premier élément de la collection SelectedItems.
 
 ## <a name="code-examples"></a>Exemples de code
 

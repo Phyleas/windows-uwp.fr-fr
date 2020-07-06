@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: ed6aa406cd1372819c25bd43b59cd416130b09e0
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 1a2b5722ab836e715bce1b4c94fab97e6a28646e
+ms.sourcegitcommit: cee2060bfc8489236e00e5951751bcc5bd632b0a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80482513"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84614912"
 ---
 # <a name="host-a-standard-uwp-control-in-a-wpf-app-using-xaml-islands"></a>Héberger un contrôle UWP standard dans une application WPF à l’aide d’îlots XAML
 
@@ -104,7 +104,10 @@ Ensuite, ajoutez un projet d’application UWP à votre solution et modifiez la 
 
 6. Supprimez le fichier **MainPage.xaml** du projet d’application UWP.
 7. Générez le projet d’application UWP.
-8. Dans votre projet WPF, cliquez avec le bouton droit sur le nœud **Dépendances** et ajoutez une référence à votre projet d’application UWP.
+8. Dans votre projet WPF, ajoutez une référence à votre projet d’application UWP. 
+
+    * Si votre projet WPF cible .NET Core, cliquez avec le bouton droit sur le nœud **Dépendances**, puis ajoutez une référence à votre projet d’application UWP. 
+    * Si votre projet WPF cible le .NET Framework, cliquez avec le bouton droit sur le nœud du projet, sélectionnez **Dépendances de build** -> **Dépendances du projet**, puis sélectionnez votre projet d’application UWP.
 
 ## <a name="instantiate-the-xamlapplication-object-in-the-entry-point-of-your-wpf-app"></a>Instancier l’objet XamlApplication dans le point d’entrée de votre application WPF
 
@@ -144,7 +147,7 @@ Votre projet étant configuré pour utiliser des îlots XAML UWP, vous pouvez aj
 
 1. Dans l’**Explorateur de solutions**, ouvrez le fichier **MainWindow.xaml**.
 
-2. Dans l’élément **Window** au début du fichier XAML, ajoutez l’attribut suivant. Ce dernier référence l’espace de noms XAML pour les contrôles UWP wrappés [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) et [InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar).
+2. Dans l’élément **Window** vers le début du fichier XAML, ajoutez l’attribut suivant. Ce dernier référence l’espace de noms XAML pour les contrôles UWP wrappés [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) et [InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar).
 
     ```xml
     xmlns:Controls="clr-namespace:Microsoft.Toolkit.Wpf.UI.Controls;assembly=Microsoft.Toolkit.Wpf.UI.Controls"
@@ -184,7 +187,7 @@ Votre projet étant configuré pour utiliser des îlots XAML UWP, vous pouvez aj
 
 4. Enregistrez le fichier **MainWindow.xaml**.
 
-    Si vous avez un appareil qui prend en charge un stylet numérique, tel qu’une Surface, et que vous suivez ce labo sur un ordinateur physique, vous pouvez maintenant générer et exécuter l’application et dessiner avec de l’encre numérique sur l’écran au moyen du stylet. Toutefois, si vous n’avez pas d’appareil avec stylet et que vous essayez de signer avec la souris, rien ne se passe. En effet, le contrôle **InkCanvas** est activé uniquement pour les stylets numériques par défaut. Cependant, vous pouvez changer ce comportement.
+    Si vous avez un appareil qui prend en charge un stylet numérique, tel qu’une Surface, et que vous suivez ce labo sur un ordinateur physique, vous pouvez maintenant générer et exécuter l’application et dessiner avec de l’encre numérique sur l’écran au moyen du stylet. Toutefois, si vous n’avez pas d’appareil avec stylet et que vous essayez de signer avec la souris, rien ne se produit. En effet, le contrôle **InkCanvas** est activé uniquement pour les stylets numériques par défaut. Cependant, vous pouvez changer ce comportement.
 
 5. Ouvrez le fichier **MainWindow.xaml.cs**.
 
@@ -213,7 +216,7 @@ Les contrôles UWP wrappés [InkCanvas](https://docs.microsoft.com/windows/commu
 
 1. Dans l’**Explorateur de solutions**, ouvrez le fichier **MainWindow.xaml**.
 
-2. Dans l’élément **Window** au début du fichier XAML, ajoutez l’attribut suivant. Ce dernier référence l’espace de noms XAML pour le contrôle [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost).
+2. Dans l’élément **Window** vers le début du fichier XAML, ajoutez l’attribut suivant. Ce dernier référence l’espace de noms XAML pour le contrôle [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost).
 
     ```xml
     xmlns:xamlhost="clr-namespace:Microsoft.Toolkit.Wpf.UI.XamlHost;assembly=Microsoft.Toolkit.Wpf.UI.XamlHost"

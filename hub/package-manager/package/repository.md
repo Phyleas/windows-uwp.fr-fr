@@ -1,17 +1,15 @@
 ---
 title: Envoyer votre manifeste au dépôt
-description: ''
-author: denelon
-ms.author: denelon
+description: Une fois que vous avez créé un manifeste de package qui décrit votre application, vous pouvez le soumettre au dépôt du Gestionnaire de package Windows.
 ms.date: 04/29/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c5ebcc564b4db16c1d16385cbeaf7fd6d82c8f18
-ms.sourcegitcommit: 8193aef04deb3514eb2d34bfe5cb9424ba12cd76
+ms.openlocfilehash: 19a66b2d0724eb0f4f8c3f171033e4e616751717
+ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83865026"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85334590"
 ---
 # <a name="submit-your-manifest-to-the-repository"></a>Envoyer votre manifeste au dépôt
 
@@ -112,7 +110,7 @@ Tous les envois d’application au dépôt du Gestionnaire de package Windows do
 
 * Le manifeste est conforme aux [spécifications du schéma](manifest.md#manifest-contents).
 * Toutes les URL du manifeste mènent à des sites web sécurisés.
-* Le programme d’installation et l’application sont sans virus.
+* Le programme d’installation et l’application sont sans virus. Le package peut être identifié à tort comme étant un programme malveillant. Si vous pensez qu’il s’agit d’un faux positif, vous pouvez faire analyser le programme d’installation par l’équipe Defender à partir de [cette page](https://www.microsoft.com/wdsi/filesubmission).
 * L’application s’installe et se désinstalle correctement pour les administrateurs et les non-administrateurs.
 * Le programme d’installation prend en charge les modes non interactifs.
 * Toutes les entrées du manifeste sont justes et sans équivoque.
