@@ -4,12 +4,12 @@ description: Liste les packages NuGet pour la bibliothèque d’interface utilis
 ms.topic: article
 ms.date: 04/15/2020
 keywords: windows 10, uwp, sdk kit de ressources
-ms.openlocfilehash: 2bda405977733a6191c4434fd8bd2c63b2ce10ce
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: fdb11193273f7f6c54ef82076939c033d5a4168c
+ms.sourcegitcommit: 6cdba316bdbd85a2429259ebfb59ff94440e234a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83580706"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85882875"
 ---
 # <a name="windows-ui-library-nuget-packages"></a>Packages NuGet de la bibliothèque d’IU Windows
 
@@ -25,7 +25,7 @@ NuGet est un gestionnaire de package standard pour les applications .Net qui est
 
 En recherchant dans le gestionnaire de package Visual Studio, vous devriez voir une liste semblable à celle-ci (les numéros de version peuvent être différents, mais les noms devraient être identiques).
 
-![](images/NugetPackages.png)
+![Gestionnaire de package NuGet](images/NugetPackages.png)
 
 ## <a name="update-nuget-packages"></a>Mettre à jour les packages NuGet
 

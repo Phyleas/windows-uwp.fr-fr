@@ -8,12 +8,12 @@ author: mcleanbyron
 keywords: windows 10, uwp, windows forms, wpf, xaml islands, îles xaml
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 6a52e12f9d60ee4abb4b1aed3043a69c25845267
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 9d08dd0f43f1c505124203028c69326e10eea26c
+ms.sourcegitcommit: 6cdba316bdbd85a2429259ebfb59ff94440e234a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "71317106"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85882880"
 ---
 # <a name="part-1-migrate-the-contoso-expenses-app-to-net-core-3"></a>Partie 1 : Effectuer une migration de l'application Contoso Expenses vers .NET Core 3
 
@@ -234,7 +234,7 @@ Pour résoudre ces erreurs, installez le package NuGet [Compatibilité Windows](
 2. Choisissez **Gérer les packages NuGet**.
 3. Dans la fenêtre **Gestionnaire de package NuGet**, cliquez sur **Parcourir**. Recherchez le package `Microsoft.Windows.Compatibility` et installez la dernière version stable.
 
-    ![](images/wpf-modernize-tutorial/WindowsCompatibilityPack.png)
+    ![Installer le package NuGet](images/wpf-modernize-tutorial/WindowsCompatibilityPack.png)
 
 4. Maintenant, réessayez de compiler le projet, en cliquant avec le bouton droit sur le projet **ContosoExpenses.Data** et en choisissant **Générer**.
 
