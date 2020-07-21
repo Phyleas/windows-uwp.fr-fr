@@ -1,14 +1,14 @@
 ---
 title: Notes de publication de WinUI 2.1
 description: Notes de publication de WinUI 2.1, nouvelles fonctionnalités et corrections de bogues incluses.
-ms.date: 04/15/2020
+ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: f62dd912d76f8045a46d467f49167cdc426b75c2
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: f362c4ae7654d6ef3b888b908c4779fce62af5fe
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83580616"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493084"
 ---
 # <a name="windows-ui-library-21"></a>Bibliothèque d’IU Windows 2.1
 

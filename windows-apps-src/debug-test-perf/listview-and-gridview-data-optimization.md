@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d00a41c5a58935a4ecfe623c71a1264a2dc1132
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 6db47510b28e42ab1ef638af6a980eb4ca7290d4
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "71339610"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493164"
 ---
 # <a name="listview-and-gridview-data-virtualization"></a>Virtualisation des données ListView et GridView
 
@@ -41,7 +41,7 @@ La virtualisation incrémentielle des données assure le chargement séquentiel 
 
 Une source de données de ce type constitue une liste en mémoire qui peut être étendue en permanence. Le contrôle d’éléments demande les éléments à l’aide des propriétés de nombre et d’indexeur [**IList**](https://docs.microsoft.com/dotnet/api/system.collections.ilist) standard. Le nombre doit représenter le nombre d’éléments localement et non la taille réelle du jeu de données.
 
-Lorsque le contrôle d’éléments approche de la fin des données existantes, il appelle [**ISupportIncrementalLoading.HasMoreItems**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.isupportincrementalloading.hasmoreitems). Si vous renvoyez **true**, il appellera [**ISupportIncrementalLoading.LoadMoreItemsAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.isupportincrementalloading.loadmoreitemsasync) en transmettant un nombre conseillé d’éléments à charger. Selon la source des données chargées (disque local, réseau ou cloud), vous pouvez choisir de charger un nombre d’éléments différent de celui recommandé. Par exemple, si votre service prend en charge les lots de 50 éléments, mais que le contrôle d’éléments en demande seulement 10, vous pouvez en charger 50. Chargez les données depuis votre back end, ajoutez-les à votre liste et déclenchez une notification de modification via [**INotifyCollectionChanged**](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged) ou [**IObservableVector&lt;T&gt;** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IObservableVector_T_) afin que le contrôle d’éléments soit informé des nouveaux éléments. Renvoyez également le nombre d’éléments que vous avez effectivement chargés. Si vous chargez moins d’éléments que le nombre recommandé ou que l’utilisateur a parcouru le contrôle d’éléments encore plus loin entre-temps, de nouveaux éléments sont demandés à votre source de données et le cycle se poursuit. Pour en savoir plus, téléchargez l’[exemple de liaison de données XAML](https://code.msdn.microsoft.com/windowsapps/Data-Binding-7b1d67b5) pour Windows 8.1 et réutilisez le code source dans votre application Windows 10.
+Lorsque le contrôle d’éléments approche de la fin des données existantes, il appelle [**ISupportIncrementalLoading.HasMoreItems**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.isupportincrementalloading.hasmoreitems). Si vous renvoyez **true**, il appellera [**ISupportIncrementalLoading.LoadMoreItemsAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.isupportincrementalloading.loadmoreitemsasync) en transmettant un nombre conseillé d’éléments à charger. Selon la source des données chargées (disque local, réseau ou cloud), vous pouvez choisir de charger un nombre d’éléments différent de celui recommandé. Par exemple, si votre service prend en charge les lots de 50 éléments, mais que le contrôle d’éléments en demande seulement 10, vous pouvez en charger 50. Chargez les données depuis votre back end, ajoutez-les à votre liste et déclenchez une notification de modification via [**INotifyCollectionChanged**](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged) ou [**IObservableVector&lt;T&gt;** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IObservableVector_T_) afin que le contrôle d’éléments soit informé des nouveaux éléments. Renvoyez également le nombre d’éléments que vous avez effectivement chargés. Si vous chargez moins d’éléments que le nombre recommandé ou que l’utilisateur a parcouru le contrôle d’éléments encore plus loin entre-temps, de nouveaux éléments sont demandés à votre source de données et le cycle se poursuit. Pour en savoir plus, téléchargez l’[exemple de liaison de données XAML](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20data%20binding%20sample%20(Windows%208)) pour Windows 8.1 et réutilisez le code source dans votre application Windows 10.
 
 ## <a name="random-access-data-virtualization"></a>Virtualisation des données par accès aléatoire
 

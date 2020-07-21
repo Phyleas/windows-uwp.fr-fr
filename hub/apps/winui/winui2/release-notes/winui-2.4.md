@@ -1,14 +1,14 @@
 ---
 title: Notes de publication de WinUI 2.4
 description: Notes de publication de WinUI 2.4, nouvelles fonctionnalités et corrections de bogues incluses.
-ms.date: 05/08/2020
+ms.date: 07/15/2020
 ms.topic: reference
-ms.openlocfilehash: 88b75ae5ec0fbda545106ec0e7f7b86033808f70
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: 22fd028ba2059a092ee2f2be47a114fb2d618ce1
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83580306"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86492824"
 ---
 # <a name="windows-ui-library-24"></a>Bibliothèque d’IU Windows 2.4
 
