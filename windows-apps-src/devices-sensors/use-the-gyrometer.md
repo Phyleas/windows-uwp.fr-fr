@@ -6,32 +6,32 @@ ms.date: 06/06/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a5898d4157b216175c77356e5a27b4c58d049d9a
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 8a6ad3b98c559dff8781c96a98a6428a4d1f95a4
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259637"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493124"
 ---
 # <a name="use-the-gyrometer"></a>Utiliser le gyromètre
 
 
 **API importantes**
 
--   [**Windows. Devices. Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
--   [**Gyromètre**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Gyrometer)
+-   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
+-   [**Gyrometer**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Gyrometer)
 
 **Exemple**
 
--   Pour une implémentation plus complète, consultez l’[exemple de gyromètre](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/gyrometer).
+-   Pour une implémentation plus complète, consultez l' [exemple gyromètre](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/gyrometer).
 
 Découvrez comment utiliser le gyromètre pour détecter les changements de mouvements de l’utilisateur.
 
 Les gyromètres viennent compléter les accéléromètres en tant que contrôleurs de jeu. Tandis que l’accéléromètre peut mesurer le déplacement linéaire, le gyromètre mesure la vitesse angulaire ou déplacement rotatoire.
 
-## <a name="prerequisites"></a>Conditions préalables requises
+## <a name="prerequisites"></a>Prérequis
 
-Vous devez être familiarisé avec Extensible Application Markup Language (XAML), Microsoft Visual C#et les événements.
+Vous devez maîtriser le langage XAML (Extensible Application Markup Language), Microsoft Visual C# et les événements.
 
 L’appareil ou émulateur que vous utilisez doit prendre en charge un gyromètre.
 
@@ -41,7 +41,7 @@ Cette section se divise en deux sous-sections. La première sous-section vous p
 
 ###  <a name="instructions"></a>Instructions
 
--   Créez un projet en choisissant une **Application vide (Windows universel)** dans les modèles de projet **Visual C#** .
+-   Créez un projet en choisissant une **Application vide (Windows universel)** dans les modèles de projet **Visual C#**.
 
 -   Ouvrez le fichier MainPage.xaml.cs de votre projet et remplacez le code existant par ce qui suit.
 
@@ -136,11 +136,11 @@ Vous devez remplacer le nom de l’espace de noms dans l’extrait de code préc
 
 Vous devez remplacer la première partie du nom de la classe dans l’extrait de code précédent par l’espace de noms de votre application. Par exemple, si vous avez créé un projet nommé **GyrometerCS**, vous devez remplacer `x:Class="App1.MainPage"` par `x:Class="GyrometerCS.MainPage"`. Vous devez aussi remplacer `xmlns:local="using:App1"` par `xmlns:local="using:GyrometerCS"`.
 
--   Appuyez sur F5 ou sélectionnez **Déboguer** > **Démarrer le débogage** pour générer, déployer et exécuter l’application.
+-   Appuyez sur F5 ou sélectionnez **Déboguer**  >  **Démarrer le débogage** pour générer, déployer et exécuter l’application.
 
 Une fois l’application en cours d’exécution, vous pouvez modifier les valeurs du gyromètre en déplaçant l’appareil ou à l’aide des outils de l’émulateur.
 
--   Pour arrêter l’application, retournez dans Visual Studio et appuyez sur Maj+F5, ou sélectionnez **Déboguer** > **Arrêter le débogage**.
+-   Arrêtez l’application en retournant dans Visual Studio et en appuyant sur Maj + F5 ou sélectionnez **Déboguer**  >  **arrêter le débogage** pour arrêter l’application.
 
 ###  <a name="explanation"></a>Explication
 
@@ -180,4 +180,4 @@ Ces nouvelles valeurs sont écrites dans les TextBlocks identifiés dans le code
 
  ## <a name="related-topics"></a>Rubriques connexes
 
-* [Exemple gyromètre](https://code.msdn.microsoft.com/windowsapps/Gyrometer-Sensor-Sample-4fe891d9)
+* [Exemple de gyromètre](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Gyrometer%20sensor%20sample%20(Windows%208))

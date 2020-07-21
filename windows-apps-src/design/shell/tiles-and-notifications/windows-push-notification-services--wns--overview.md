@@ -7,12 +7,12 @@ ms.date: 03/06/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fa70346dc6033ac1f879a1c2429c3c4222b8c0ec
-ms.sourcegitcommit: 368660812e143de5def5e5328a2eadb178cd5544
+ms.openlocfilehash: 41f258124824e6dc7d11aae085365e0d50d8a0f2
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85129106"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493264"
 ---
 # <a name="windows-push-notification-services-wns-overview"></a>Vue d’ensemble des services de notifications Push Windows (WNS) 
 
@@ -86,7 +86,7 @@ Une fois que l’application a créé un URI de canal, elle l’envoie à son se
 
 ### <a name="important-notes"></a>Remarques importantes
 
--   Nous ne garantissons pas que l’URI de canal de notification d’une application restera toujours le même. Nous vous conseillons de faire en sorte que l’application demande un nouveau canal chaque fois qu’elle s’exécute et qu’elle mette à jour son service lorsque l’URI change. Le développeur ne doit jamais modifier l’URI de canal et doit le considérer comme une chaîne de boîte noire. Actuellement, les URI de canal expirent au bout de 30 jours. Si votre application Windows 10 renouvelle périodiquement son canal en arrière-plan, vous pouvez télécharger l’[exemple de notifications Push et périodiques](https://code.msdn.microsoft.com/windowsapps/push-and-periodic-de225603) pour Windows 8.1, et réutiliser son code source et/ou le modèle qu’il présente.
+-   Nous ne garantissons pas que l’URI de canal de notification d’une application restera toujours le même. Nous vous conseillons de faire en sorte que l’application demande un nouveau canal chaque fois qu’elle s’exécute et qu’elle mette à jour son service lorsque l’URI change. Le développeur ne doit jamais modifier l’URI de canal et doit le considérer comme une chaîne de boîte noire. Actuellement, les URI de canal expirent au bout de 30 jours. Si votre application Windows 10 renouvelle périodiquement son canal en arrière-plan, vous pouvez télécharger l’[exemple de notifications Push et périodiques](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Push%20and%20periodic%20notifications%20client-side%20sample%20(Windows%208)) pour Windows 8.1, et réutiliser son code source et/ou le modèle qu’il présente.
 -   C’est vous, le développeur, qui implémentez l’interface entre le service cloud et l’application cliente. Nous recommandons que l’application passe par un processus d’authentification auprès de son propre service et qu’elle transmette les données par le biais d’un protocole sécurisé tel que HTTPS.
 -   Il est important que le service cloud offre toujours la garantie que l’URI de canal utilise le domaine « notify.windows.com ». Le service ne doit jamais effectuer une transmission de type push de notifications vers un canal se trouvant sur un autre domaine. Si jamais le rappel pour votre application était compromis, une personne malveillante pourrait soumettre un URI de canal pour tromper WNS. Sans inspecter le domaine, votre service Cloud pourrait potentiellement divulguer des informations à cette personne malveillante sans le savoir.
 -   Si votre service cloud tente d'envoyer une notification à un canal ayant expiré, le service WNS renvoie le [code de réponse 410](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)). En réponse à ce code, votre service ne doit plus chercher à envoyer des notifications à cet URI.

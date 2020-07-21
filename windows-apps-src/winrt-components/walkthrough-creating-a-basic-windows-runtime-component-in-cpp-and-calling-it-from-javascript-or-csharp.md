@@ -1,43 +1,43 @@
 ---
-title: Procédure pas à pas C++de création d’un composant Windows Runtime/CX et appel de ce dernier à partir de JavaScript ouC#
+title: Procédure pas à pas pour créer un composant C++/CX/Windows Runtime et l’appeler à partir de JavaScript ou C#
 description: Cette procédure pas à pas indique comment créer une DLL de composant Windows Runtime de base qui peut être appelée à partir de JavaScript, C# ou Visual Basic.
 ms.assetid: 764CD9C6-3565-4DFF-88D7-D92185C7E452
 ms.date: 05/14/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b4cd9bb5921209be852e183e1fa7a93ea18816a
-ms.sourcegitcommit: 5618242614997045593821fdbe5ed8878fd8c01e
+ms.openlocfilehash: 605b8cf927067da78785ec470cfdbe27852205fd
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80578687"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493184"
 ---
-# <a name="walkthrough-of-creating-a-ccx-windows-runtime-component-and-calling-it-from-javascript-or-c"></a>Procédure pas à pas C++de création d’un composant Windows Runtime/CX et appel de ce dernier à partir de JavaScript ouC#
+# <a name="walkthrough-of-creating-a-ccx-windows-runtime-component-and-calling-it-from-javascript-or-c"></a>Procédure pas à pas pour créer un composant C++/CX/Windows Runtime et l’appeler à partir de JavaScript ou C#
 
 > [!NOTE]
-> Cette rubrique a pour but de vous aider à maintenir votre application C++/CX. Mais nous vous recommandons d’utiliser [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) pour de nouvelles applications. C++/WinRT est une projection de langage C++17 moderne entièrement standard pour les API Windows Runtime (WinRT), implémentée en tant que bibliothèque basée sur un fichier d'en-tête et conçue pour vous fournir un accès de première classe à l’API Windows moderne. Pour savoir comment créer un composant Windows Runtime à l' C++aide de/WinRT, consultez [événements C++de création dans/WinRT](../cpp-and-winrt-apis/author-events.md).
+> Cette rubrique existe pour vous aider à gérer votre application C++/CX. Toutefois, nous vous recommandons d’utiliser [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) pour les nouvelles applications. C++/WinRT est une projection de langage C++17 moderne entièrement standard pour les API Windows Runtime (WinRT), implémentée en tant que bibliothèque basée sur un fichier d’en-tête et conçue pour vous fournir un accès de première classe à l’API Windows moderne. Pour savoir comment créer un composant Windows Runtime à l’aide de C++/WinRT, consultez [Windows Runtime composants avec c++/WinRT](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt).
 
-Cette procédure pas à pas indique comment créer une DLL de composant Windows Runtime de base qui peut être appelée à partir de JavaScript, C# ou Visual Basic. Avant de commencer cette procédure pas à pas, assurez-vous de comprendre les concepts tels que l’interface binaire abstraite (ABI), les classes ref et les extensions de composants Visual C++ qui facilitent l’utilisation des classes ref. Pour plus d’informations, consultez [Windows Runtime Components with/CX C++](creating-windows-runtime-components-in-cpp.md) and [Visual C++ LanguageC++Reference (/CX) (en anglais)](https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx).
+Cette procédure pas à pas indique comment créer une DLL de composant Windows Runtime de base qui peut être appelée à partir de JavaScript, C# ou Visual Basic. Avant d’entreprendre cette procédure pas à pas, vous devez maîtriser des concepts tels que l’interface binaire abstraite (ABI), les classes ref et les extensions des composants Visual C++ qui facilitent l’utilisation des classes ref. Pour plus d’informations, consultez [Windows Runtime Components with c++/CX](creating-windows-runtime-components-in-cpp.md) et [Visual C++ Language Reference (c++/CX)](https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx).
 
 ## <a name="creating-the-c-component-dll"></a>Création de la DLL du composant C++
-Dans cet exemple, nous commençons par créer le projet du composant, mais vous pouvez très bien créer le projet JavaScript en premier. L'ordre n'a pas d'importance.
+Dans cet exemple, nous commençons par créer le projet du composant, mais vous pouvez très bien créer le projet JavaScript en premier. L’ordre n’a pas d’importance.
 
-Notez que la classe principale du composant contient des exemples de propriété et de définitions de méthode, ainsi qu'une déclaration d'événement. Ces éléments sont fournis uniquement pour vous montrer le fonctionnement. ils ne sont pas obligatoires, et dans cet exemple, nous remplacerons le code généré par notre propre code.
+Notez que la classe principale du composant contient des exemples de définitions de propriété et de méthode, ainsi qu’une déclaration d’événement. Ces éléments sont fournis uniquement pour vous en montrer le fonctionnement. Ils ne sont pas obligatoires, et dans cet exemple, nous remplacerons l’ensemble du code généré par notre propre code.
 
-### <a name="to-create-the-c-component-project"></a>**Pour créer le C++ projet de composant**
-1. Dans la barre de menus Visual Studio, choisissez **Fichier &gt; Nouveau &gt; Projet**.
+### <a name="to-create-the-c-component-project"></a>**Pour créer le projet du composant C++**
+1. Dans la barre de menus de Visual Studio, choisissez **fichier, nouveau, projet**.
 
-2. Dans le volet gauche de la boîte de dialogue **Nouveau projet**, développez **Visual C++** , puis sélectionnez le nœud des applications Windows universelles.
+2. Dans le volet gauche de la boîte de dialogue **Nouveau projet**, développez **Visual C++**, puis sélectionnez le nœud des applications Windows universelles.
 
-3. Dans le volet central, sélectionnez **Windows Runtime composant** , puis nommez le projet WINRT\_cpp.
+3. Dans le volet central, sélectionnez **Windows Runtime composant** , puis nommez le projet WinRT \_ cpp.
 
 4. Choisissez le bouton **OK**.
 
 ## <a name="to-add-an-activatable-class-to-the-component"></a>**Pour ajouter une classe activable au composant**
-Une classe activable est une classe que le code client peut créer à l’aide d’une expression **new** (**New** en Visual Basic ou **ref new** en C++). Dans votre composant, vous devez la déclarer sous la forme **public ref class sealed**. En fait, les fichiers Class1.h et .cpp ont déjà une classe de référence. Vous pouvez changer le nom, mais dans cet exemple, nous utiliserons celui par défaut : Class1. Vous pouvez définir des classes ref ou standard supplémentaires dans votre composant si elles sont requises. Pour plus d’informations sur les classes ref, voir [Système de types (C++/CX)](https://docs.microsoft.com/cpp/cppcx/type-system-c-cx).
+Une classe activable est une classe que le code client peut créer à l’aide d’une expression **new** (**New** en Visual Basic ou **ref new** en C++). Dans votre composant, vous devez la déclarer sous la forme **public ref class sealed**. En fait, les fichiers Class1.h et .cpp disposent déjà d’une classe ref. Vous pouvez changer le nom, mais dans cet exemple, nous utiliserons celui par défaut : Class1. Vous pouvez définir des classes ref ou standard supplémentaires dans votre composant si nécessaire. Pour plus d’informations sur les classes ref, voir [Système de types (C++/CX)](https://docs.microsoft.com/cpp/cppcx/type-system-c-cx).
 
-Ajoutez ces \#inclure des directives à Class1. h :
+Ajoutez ces \# directives include à Class1. h :
 
 ```cpp
 #include <collection.h>
@@ -49,7 +49,7 @@ Ajoutez ces \#inclure des directives à Class1. h :
 collection.h est le fichier d’en-tête pour les classes C++ concrètes, telles que les classes Platform::Collections::Vector et Platform::Collections::Map, qui implémentent des interfaces indépendantes du langage définies par Windows Runtime. Les en-têtes amp sont utilisés pour exécuter des calculs sur le GPU. Ils n’ont pas d’équivalent dans Windows Runtime, mais cela ne pose pas de problème, car ils sont privés. En règle générale, pour des raisons de performance, vous devez utiliser du code C++ ISO et des bibliothèques standard en interne dans le composant ; seule l’interface Windows Runtime doit être exprimée en types Windows Runtime.
 
 ## <a name="to-add-a-delegate-at-namespace-scope"></a>Pour ajouter un délégué à la portée espace de noms
-Un délégué est une construction qui définit les paramètres et le type de retour pour les méthodes. Un événement est une instance d'un type délégué particulier, et toute méthode de gestionnaire d'événements qui s'abonne à l'événement doit avoir la signature spécifiée dans le délégué. Le code suivant définit un type délégué qui prend un int et retourne void. Ensuite, le code déclare un événement public de ce type ; cela permet au code client de fournir les méthodes appelées lorsque l’événement est déclenché.
+Un délégué est une construction qui définit les paramètres et le type de retour pour les méthodes. Un événement est une instance d’un type délégué particulier, et toute méthode de gestionnaire d’événements qui s’abonne à l’événement doit présenter la signature spécifiée dans le délégué. Le code suivant définit un type délégué qui prend un int et retourne void. Ensuite, le code déclare un événement public de ce type ; cela permet au code client de fournir les méthodes appelées lorsque l’événement est déclenché.
 
 Ajoutez la déclaration delegate suivante à la portée espace de noms dans Class1.h, juste avant la déclaration Class1.
 
@@ -57,10 +57,10 @@ Ajoutez la déclaration delegate suivante à la portée espace de noms dans Clas
 public delegate void PrimeFoundHandler(int result);
 ```
 
-Si le code ne s'aligne pas correctement quand vous le collez dans Visual Studio, appuyez sur Ctrl+K+D pour corriger la mise en retrait pour le fichier complet.
+Si le code ne s’aligne pas correctement lorsque vous le collez dans Visual Studio, il vous suffit d’appuyer sur Ctrl+K+D pour corriger la mise en retrait pour le fichier complet.
 
 ## <a name="to-add-the-public-members"></a>Pour ajouter les membres publics
-La classe expose trois méthodes publiques et un événement public. La première méthode est synchrone, car elle s'exécute toujours très rapidement. Étant donné que les deux autres méthodes peuvent prendre un certain temps, elles sont asynchrones afin de ne pas bloquer le thread d'interface utilisateur. Ces méthodes retournent IAsyncOperationWithProgress et IAsyncActionWithProgress. Le premier définit une méthode asynchrone qui retourne un résultat, et le second définit une méthode asynchrone qui retourne void. Ces interfaces permettent également au code client de recevoir des mises à jour sur la progression de l'opération.
+La classe expose trois méthodes publiques et un événement public. La première méthode est synchrone, car elle s’exécute toujours très rapidement. Étant donné que les deux autres méthodes peuvent prendre un certain temps, elles sont asynchrones afin de ne pas bloquer le thread d’interface utilisateur. Ces méthodes retournent les interfaces IAsyncOperationWithProgress et IAsyncActionWithProgress. La première définit une méthode asynchrone qui retourne un résultat et la seconde une méthode asynchrone qui retourne void. Ces interfaces permettent également au code client de recevoir des mises à jour sur la progression de l’opération.
 
 ```cpp
 public:
@@ -86,7 +86,7 @@ private:
         Windows::UI::Core::CoreDispatcher^ m_dispatcher;
 ```
 
-### <a name="to-add-the-header-and-namespace-directives"></a>Pour ajouter les directives d'en-tête et d'espace de noms
+### <a name="to-add-the-header-and-namespace-directives"></a>Pour ajouter les directives d’en-tête et d’espace de noms
 1. Dans Class1.cpp, ajoutez ces directives #include :
 
 ```cpp
@@ -104,8 +104,8 @@ using namespace Windows::Foundation;
 using namespace Windows::UI::Core;
 ```
 
-## <a name="to-add-the-implementation-for-computeresult"></a>Pour ajouter l'implémentation pour ComputeResult
-Dans Class1.cpp, ajoutez l'implémentation de méthode suivante. Cette méthode s'exécute de façon synchrone sur le thread appelant, mais elle est très rapide, car elle utilise C++ AMP pour paralléliser le calcul sur le GPU. Pour plus d'informations, consultez Présentation de C++ AMP. Les résultats sont ajoutés à un type concret Platform::Collections::Vector<T>, qui est implicitement converti en Windows::Foundation::Collections::IVector<T> quand il est retourné.
+## <a name="to-add-the-implementation-for-computeresult"></a>Pour ajouter l’implémentation pour ComputeResult
+Dans Class1.cpp, ajoutez l’implémentation de méthode suivante. Cette méthode s’exécute de façon synchrone sur le thread appelant, mais elle est très rapide, car elle utilise C++ AMP pour paralléliser le calcul sur le GPU. Pour plus d’informations, consultez l’article Vue d’ensemble de C++ AMP. Les résultats sont ajoutés à un type concret Platform::Collections::Vector<T>, qui est implicitement converti en Windows::Foundation::Collections::IVector<T> quand il est retourné.
 
 ```cpp
 //Public API
@@ -137,10 +137,10 @@ IVector<double>^ Class1::ComputeResult(double input)
     return res;
 }
 ```
-## <a name="to-add-the-implementation-for-getprimesordered-and-its-helper-method"></a>Pour ajouter l'implémentation pour GetPrimesOrdered et sa méthode d'assistance
+## <a name="to-add-the-implementation-for-getprimesordered-and-its-helper-method"></a>Pour ajouter l’implémentation pour GetPrimesOrdered et sa méthode d’assistance
 Dans Class1.cpp, ajoutez les implémentations pour GetPrimesOrdered et la méthode d’assistance is_prime. GetPrimesOrdered utilise une classe concurrent_vector et une boucle de fonction parallel_for afin de diviser le travail et d’utiliser les ressources maximales de l’ordinateur sur lequel le programme est exécuté pour produire des résultats. Une fois que les résultats sont calculés, stockés et triés, ils sont ajoutés à Platform::Collections::Vector<T> et retournés en tant que Windows::Foundation::Collections::IVector<T> au code client.
 
-Notez le code du rapporteur de progression, qui permet au client de connecter une barre de progression ou toute autre interface utilisateur permettant à l'utilisateur de voir combien de temps l'opération va encore prendre. Le rapport de progression a un coût. Un événement doit être déclenché du côté du composant et géré sur le thread d'interface utilisateur, et la valeur de progression doit être stockée à chaque itération. Un moyen de réduire le coût consiste à limiter la fréquence à laquelle un événement de progression est déclenché. Si le coût est encore excessif, ou si vous ne pouvez pas estimer la longueur de l'opération, envisagez d'utiliser une boucle de progression ; elle indique qu'une opération est en cours sans afficher le temps restant jusqu'à la fin.
+Notez le code du rapporteur de progression, qui permet au client de connecter une barre de progression ou toute autre interface utilisateur indiquant à l’utilisateur combien de temps l’opération va encore prendre. Le rapport de progression a un coût. Un événement doit être déclenché du côté du composant et géré sur le thread d’interface utilisateur, et la valeur de progression doit être stockée à chaque itération. Un moyen de réduire le coût consiste à limiter la fréquence à laquelle un événement de progression est déclenché. Si le coût est encore excessif, ou si vous ne pouvez pas estimer la longueur de l’opération, envisagez d’utiliser une boucle de progression afin d’indiquer qu’une opération est en cours sans afficher le temps restant avant la fin.
 
 ```cpp
 // Determines whether the input value is prime.
@@ -206,8 +206,8 @@ IAsyncOperationWithProgress<IVector<int>^, double>^ Class1::GetPrimesOrdered(int
 }
 ```
 
-## <a name="to-add-the-implementation-for-getprimesunordered"></a>Pour ajouter l'implémentation pour GetPrimesUnordered
-La dernière étape pour créer le composant C++ consiste à ajouter l’implémentation pour GetPrimesUnordered dans Class1.cpp. Cette méthode retourne chaque résultat dès qu'il est trouvé, sans attendre que tous les résultats soient trouvés. Chaque résultat est retourné dans le gestionnaire d'événements et affiché dans l'interface utilisateur en temps réel. Là encore, notez qu'un rapporteur de progression est utilisé. Cette méthode utilise également la méthode d’assistance is_prime.
+## <a name="to-add-the-implementation-for-getprimesunordered"></a>Pour ajouter l’implémentation pour GetPrimesUnordered
+La dernière étape pour créer le composant C++ consiste à ajouter l’implémentation pour GetPrimesUnordered dans Class1.cpp. Cette méthode retourne chaque résultat dès qu’il est trouvé, sans attendre que tous les résultats soient trouvés. Chaque résultat est retourné dans le gestionnaire d’événements et affiché dans l’interface utilisateur en temps réel. Là encore, notez qu’un rapporteur de progression est utilisé. Cette méthode utilise également la méthode d’assistance is_prime.
 
 ```cpp
 // This method returns no value. Instead, it fires an event each time a
@@ -269,7 +269,7 @@ IAsyncActionWithProgress<double>^ Class1::GetPrimesUnordered(int first, int last
 
 ## <a name="creating-a-javascript-client-app-visual-studio-2017"></a>Création d’une application cliente JavaScript (Visual Studio 2017)
 
-Si vous souhaitez créer un C# client, vous pouvez ignorer cette section.
+Si vous souhaitez créer un client C#, vous pouvez ignorer cette section.
 
 > [!NOTE]
 > Les projets plateforme Windows universelle (UWP) ne sont pas pris en charge dans Visual Studio 2019. Consultez [JavaScript et machine à écrire dans Visual Studio 2019](/visualstudio/javascript/javascript-in-vs-2019?view=vs-2019#projects). Pour suivre cette section, nous vous recommandons d’utiliser Visual Studio 2017. Consultez [JavaScript dans Visual Studio 2017](/visualstudio/javascript/javascript-in-vs-2017).
@@ -277,22 +277,22 @@ Si vous souhaitez créer un C# client, vous pouvez ignorer cette section.
 ### <a name="to-create-a-javascript-project"></a>Pour créer un projet JavaScript
 1. Dans Explorateur de solutions (dans Visual Studio 2017 ; Voir la **Remarque** ci-dessus), ouvrez le menu contextuel du nœud solution et choisissez **Ajouter, nouveau projet**.
 
-2. Développez JavaScript (il peut être imbriqué dans **Autres langages**) et choisissez **Application vide (Windows universel)** .
+2. Développez JavaScript (il peut être imbriqué dans **Autres langages**) et choisissez **Application vide (Windows universel)**.
 
-3. Acceptez le nom par défaut&mdash;App1&mdash;en cliquant sur le bouton **OK** .
+3. Acceptez le nom par défaut &mdash; App1 &mdash; en choisissant le bouton **OK** .
 
 4. Ouvrez le menu contextuel du nœud de projet App1, puis choisissez **Définir comme projet de démarrage**.
 
-5. Ajoutez une référence de projet à WinRT_CPP :
+5. Ajoutez une référence de projet à WinRT_CPP :
 
 6. Ouvrez le menu contextuel du nœud Références, puis choisissez **Ajouter une référence**.
 
 7. Dans le volet gauche de la boîte de dialogue Gestionnaire de références, sélectionnez **Projets**, puis **Solution**.
 
-8. Dans le volet central, sélectionnez WinRT_CPP, puis cliquez sur le bouton **OK**.
+8. Dans le volet central, sélectionnez WinRT_CPP, puis choisissez le bouton **OK** .
 
-## <a name="to-add-the-html-that-invokes-the-javascript-event-handlers"></a>Pour ajouter le code HTML qui appelle les gestionnaires d'événements JavaScript
-Collez ce code HTML dans le nœud <body> de la page default.html :
+## <a name="to-add-the-html-that-invokes-the-javascript-event-handlers"></a>Pour ajouter le code HTML qui appelle les gestionnaires d’événements JavaScript
+Collez ce code HTML dans le <body> nœud de la page default.html :
 
 ```HTML
 <div id="LogButtonDiv">
@@ -362,8 +362,8 @@ font-size:smaller;
 }
 ```
 
-## <a name="to-add-the-javascript-event-handlers-that-call-into-the-component-dll"></a>Pour ajouter les gestionnaires d'événements JavaScript faisant appel à la DLL du composant
-Ajoutez les fonctions suivantes à la fin du fichier default.js : Ces fonctions sont appelées lorsque les boutons de la page principale sont sélectionnés. Notez que JavaScript active la classe C++, appelle ensuite ses méthodes, puis utilise des valeurs de retour pour remplir les étiquettes HTML.
+## <a name="to-add-the-javascript-event-handlers-that-call-into-the-component-dll"></a>Pour ajouter les gestionnaires d’événements JavaScript qui appellent le composant DLL
+Ajoutez les fonctions suivantes à la fin du fichier default.js. Ces fonctions sont appelées lorsque les boutons de la page principale sont sélectionnés. Notez que JavaScript active la classe C++, puis appelle ses méthodes et utilise les valeurs de retour pour remplir les étiquettes HTML.
 
 ```JavaScript
 var nativeObject = new WinRT_CPP.Class1();
@@ -441,9 +441,9 @@ args.setPromise(WinJS.UI.processAll().then( function completed() {
 }));
 ```
 
-Appuyez sur F5 pour exécuter l'application.
+Appuyez sur F5 pour exécuter l’application.
 
-## <a name="creating-a-c-client-app"></a>Création d'une application cliente C#
+## <a name="creating-a-c-client-app"></a>Création d’une application cliente C#
 
 ### <a name="to-create-a-c-project"></a>Pour créer un projet C#
 1. Dans l’Explorateur de solutions, ouvrez le menu contextuel du nœud Solution, puis choisissez **Ajouter &gt; Nouveau projet**.
@@ -454,15 +454,15 @@ Appuyez sur F5 pour exécuter l'application.
 
 4. Ouvrez le menu contextuel du nœud de projet CS_Client, puis choisissez **Définir comme projet de démarrage**.
 
-5. Ajoutez une référence de projet à WinRT_CPP :
+5. Ajoutez une référence de projet à WinRT_CPP :
 
-   - Ouvrez le menu contextuel du nœud **Références**, puis choisissez **Ajouter une référence**.
+   - Ouvrez le menu contextuel du nœud **références** , puis choisissez **Ajouter une référence**.
 
-   - Dans le volet gauche de la boîte de dialogue **Gestionnaire de références**, sélectionnez **Projets**, puis **Solution**.
+   - Dans le volet gauche de la boîte de dialogue **Gestionnaire de références** , sélectionnez **projets** , puis sélectionnez **solution**.
 
    - Dans le volet central, sélectionnez WinRT_CPP, puis cliquez sur le bouton **OK**.
 
-## <a name="to-add-the-xaml-that-defines-the-user-interface"></a>Pour ajouter le code XAML qui définit l'interface utilisateur
+## <a name="to-add-the-xaml-that-defines-the-user-interface"></a>Pour ajouter le code XAML qui définit l’interface utilisateur
 Dans le fichier MainPage.xaml, copiez le code suivant dans l’élément Grid.
 
 ```xaml
@@ -483,7 +483,7 @@ Dans le fichier MainPage.xaml, copiez le code suivant dans l’élément Grid.
 </ScrollViewer>
 ```
 
-## <a name="to-add-the-event-handlers-for-the-buttons"></a>Pour ajouter les gestionnaires d'événements pour les boutons
+## <a name="to-add-the-event-handlers-for-the-buttons"></a>Pour ajouter les gestionnaires d’événements pour les boutons
 Dans l’Explorateur de solutions, ouvrez MainPage.xaml.cs. (Ce fichier pourrait se trouver sous MainPage.xaml.) Ajoutez une directive using pour System.Text, puis ajoutez le gestionnaire d’événements pour le calcul de logarithme dans la classe MainPage.
 
 ```csharp
@@ -504,7 +504,7 @@ private void Button1_Click_1(object sender, RoutedEventArgs e)
 }
 ```
 
-Ajoutez le gestionnaire d'événements pour le résultat ordonné :
+Ajoutez le gestionnaire d’événements pour le résultat ordonné :
 
 ```csharp
 async private void PrimesOrderedButton_Click_1(object sender, RoutedEventArgs e)
@@ -542,7 +542,7 @@ async private void PrimesOrderedButton_Click_1(object sender, RoutedEventArgs e)
 }
 ```
 
-Ajoutez le gestionnaire d'événements pour le résultat non ordonné, et pour le bouton qui efface les résultats afin de pouvoir exécuter à nouveau le code.
+Ajoutez le gestionnaire d’événements pour le résultat non ordonné, et pour le bouton qui efface les résultats afin de pouvoir exécuter à nouveau le code.
 
 ```csharp
 private void PrimesUnOrderedButton_Click_1(object sender, RoutedEventArgs e)
@@ -584,21 +584,21 @@ private void Clear_Button_Click(object sender, RoutedEventArgs e)
 ```
 
 ## <a name="running-the-app"></a>Exécution de l'application
-Sélectionnez le projet C# ou le projet JavaScript en tant que projet de démarrage en ouvrant le menu contextuel du nœud de projet dans l’Explorateur de solutions et en sélectionnant **Définir comme projet de démarrage**. Appuyez ensuite sur F5 pour une exécution avec débogage, ou sur Ctrl+F5 pour une exécution sans débogage.
+Sélectionnez le projet C# ou le projet JavaScript en tant que projet de démarrage en ouvrant le menu contextuel du nœud de projet dans l’Explorateur de solutions et en sélectionnant **Définir comme projet de démarrage**. Appuyez ensuite sur F5 pour une exécution avec débogage ou sur Ctrl+F5 pour une exécution sans débogage.
 
-## <a name="inspecting-your-component-in-object-browser-optional"></a>Examen de votre composant dans l'Explorateur d'objets (facultatif)
+## <a name="inspecting-your-component-in-object-browser-optional"></a>Examen de votre composant dans l’Explorateur d’objets (facultatif)
 Dans l’Explorateur d’objets, vous pouvez examiner tous les types Windows Runtime définis dans les fichiers.winmd. Cela inclut les types de l’espace de noms Platform et de l’espace de noms par défaut. Toutefois, étant donné que les types de l’espace de noms Platform::Collections sont définis dans le fichier d’en-tête collections.h et non dans un fichier winmd, ils n’apparaissent pas dans l’Explorateur d’objets.
 
-### <a name="to-inspect-a-component"></a>**Pour inspecter un composant**
+### <a name="to-inspect-a-component"></a>**Pour examiner un composant**
 1. Dans la barre de menus, choisissez **Afficher, Explorateur d’objets** (Ctrl+Alt+J).
 
-2. Dans le volet gauche de l’Explorateur d’objets, développez le nœud WinRT\_CPP pour afficher les types et les méthodes définis sur votre composant.
+2. Dans le volet gauche de l’Explorateur d’objets, développez le \_ nœud CPP WinRT pour afficher les types et les méthodes définis sur votre composant.
 
 ## <a name="debugging-tips"></a>Conseils de débogage
 Pour optimiser le débogage, téléchargez les symboles de débogage à partir des serveurs de symboles publics de Microsoft :
 
 ### <a name="to-download-debugging-symbols"></a>**Pour télécharger les symboles de débogage**
-1. Dans la barre de menus, choisissez **Outils, Options**.
+1. Dans la barre de menus, choisissez **Outils, options**.
 
 2. Dans la boîte de dialogue **Options**, développez **Débogage** et sélectionnez **Symboles**.
 
@@ -606,13 +606,13 @@ Pour optimiser le débogage, téléchargez les symboles de débogage à partir d
 
 Le téléchargement des symboles peut prendre un certain temps la première fois. Pour accélérer les performances la prochaine fois que vous appuierez sur F5, spécifiez un répertoire local dans lequel mettre en cache les symboles.
 
-Lorsque vous déboguez une solution JavaScript qui contient une DLL de composant, vous pouvez définir le débogueur pour activer la progression dans le script ou dans le code natif du composant, mais pas les deux à la fois. Pour changer ce paramètre, ouvrez le menu contextuel du nœud de projet JavaScript dans l’Explorateur de solutions, puis sélectionnez **Propriétés, Débogage, Type de débogueur**.
+Lorsque vous déboguez une solution JavaScript qui contient une DLL de composant, vous pouvez configurer le débogueur de manière à activer l’exécution pas à pas du script ou du code natif du composant, mais pas les deux à la fois. Pour changer ce paramètre, ouvrez le menu contextuel du nœud de projet JavaScript dans l’Explorateur de solutions, puis sélectionnez **Propriétés, Débogage, Type de débogueur**.
 
 Veillez à sélectionner les fonctionnalités appropriées dans le concepteur de packages. Vous pouvez lancer le concepteur de packages en ouvrant le fichier Package.appxmanifest. Par exemple, si vous essayez d’accéder par programmation à des fichiers du dossier Images, veillez à activer la case à cocher **Bibliothèque d’images** dans le volet **Capacités** du concepteur de packages.
 
 Si votre code JavaScript ne reconnaît pas les propriétés ou méthodes publiques du composant, assurez-vous que vous utilisez la casse mixte dans JavaScript. Par exemple, la méthode C++ `ComputeResult` doit être référencée sous la forme `computeResult` dans JavaScript.
 
-Si vous supprimez un projet de composant Windows Runtime C++ dans une solution, vous devez également supprimer manuellement la référence de ce projet dans le projet JavaScript. Sinon, les opérations de débogage ou de génération suivantes ne peuvent pas être effectuées. Si nécessaire, ajoutez ensuite une référence d'assembly à la DLL.
+Si vous supprimez un projet de composant Windows Runtime C++ dans une solution, vous devez également supprimer manuellement la référence de ce projet dans le projet JavaScript. Sinon, il ne sera plus possible d’effectuer d’opérations de débogage ou de génération. Si nécessaire, ajoutez ensuite une référence d’assembly à la DLL.
 
 ## <a name="related-topics"></a>Rubriques connexes
 * [Composants Windows Runtime avec C++/CX](creating-windows-runtime-components-in-cpp.md)

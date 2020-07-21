@@ -2,16 +2,16 @@
 ms.assetid: B4A550E7-1639-4C9A-A229-31E22B1415E7
 title: Orientation de capteur
 description: Les données du capteur provenant des classes Accelerometer, Gyrometer, Compass, Inclinometer et OrientationSensor sont définies par leurs axes de référence. Ces axes sont définis par l’orientation paysage de l’appareil et pivotent avec celui-ci à mesure que l’utilisateur le fait tourner.
-ms.date: 05/24/2017
+ms.date: 07/03/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4659aaba330d3b41451e91e450ff601e3fcf5407
-ms.sourcegitcommit: 42a2d9e47f682ba42d91fed587f4d5924bde9c9a
+ms.openlocfilehash: b61b7bcd18419ec9be719b5f565e5503953be7c3
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85840763"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493467"
 ---
 # <a name="sensor-orientation"></a>Orientation de capteur
 
@@ -26,7 +26,12 @@ Les données de capteur des classes [**accéléromètre**](https://docs.microsof
 
 Pour comprendre les axes de référence pour les capteurs, vous devez distinguer l’orientation de l’affichage de l’orientation de l’appareil. L’orientation de l’affichage correspond au sens dans lequel le texte et les images sont affichés à l’écran, alors que l’orientation de l’appareil correspond au positionnement physique de l’appareil.
 
-Dans les diagrammes suivants, l’orientation de l’appareil et de l’affichage est en [paysage](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations) (les axes de capteur sont spécifiques à l’orientation paysage), avec l’axe z positif qui s’étend à partir de l’appareil.
+> [!NOTE]
+> L’axe z positif s’étend à partir de l’écran de l’appareil, comme indiqué dans l’image suivante.
+> :::image type="content" source="images/sensor-orientation-zaxis-1-small.png" alt-text="Axe Z pour ordinateur portable":::
+
+Dans les diagrammes suivants, l’orientation de l’appareil et de l’affichage est en [paysage](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations) (les axes de capteur affichés sont spécifiques à l’orientation paysage).
+
 
 Ce diagramme illustre l’affichage et l’orientation de l’appareil en [mode paysage](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations).
 
@@ -34,11 +39,11 @@ Ce diagramme illustre l’affichage et l’orientation de l’appareil en [mode 
 
 Le diagramme suivant montre l’orientation de l’affichage et de l’appareil dans [LandscapeFlipped](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations).
 
-![Orientation de l’affichage et de l’appareil en mode LandscapeFlipped](images/sensor-orientation-b-small.jpg)
+:::image type="content" source="images/sensor-orientation-b-small.jpg" alt-text="Orientation de l’affichage et de l’appareil en mode LandscapeFlipped":::
 
 Ce diagramme final montre l’orientation d’affichage en paysage alors que l’orientation de l’appareil est [LandscapeFlipped](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations).
 
-![Orientation d’affichage en mode Landscape tandis que l’orientation de l’appareil est en mode LandscapeFlipped.](images/sensor-orientation-c-small.jpg)
+:::image type="content" source="images/sensor-orientation-c-small.jpg" alt-text="Orientation d’affichage en mode Landscape tandis que l’orientation de l’appareil est en mode LandscapeFlipped.":::
 
 Vous pouvez effectuer une requête sur les valeurs d’orientation dans la classe [**DisplayInformation**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayInformation) à l’aide de la méthode [**GetForCurrentView**](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.getforcurrentview) avec la propriété [**CurrentOrientation**](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.currentorientation). Vous pouvez ensuite créer une logique en la comparant à l’énumération [**DisplayOrientations**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations) . Souvenez-vous que, pour chaque orientation que vous prenez en charge, vous devez prendre en charge une conversion des axes de référence dans cette orientation.
 
@@ -48,10 +53,10 @@ Les fabricants produisent des appareils à priorité Paysage ou Portrait. Le cad
 
 | Orientation | Priorité Paysage | Priorité Portrait |
 |-------------|-----------------|----------------|
-| **Paysage** | ![Appareil à priorité Paysage en mode d’orientation Landscape](images/sensor-orientation-0-small.jpg) | ![Appareil à priorité Portrait en mode d’orientation Landscape](images/sensor-orientation-1-small.jpg) |
-| **Portrait** | ![Appareil à priorité Paysage en mode d’orientation Portrait](images/sensor-orientation-2-small.jpg) | ![Appareil à priorité Portrait en mode d’orientation Portrait](images/sensor-orientation-3-small.jpg) |
-| **LandscapeFlipped** | ![Appareil à priorité Paysage en mode d’orientation LandscapeFlipped](images/sensor-orientation-4-small.jpg) | ![Appareil à priorité Portrait en mode d’orientation LandscapeFlipped](images/sensor-orientation-5-small.jpg) | 
-| **PortraitFlipped** | ![Appareil à priorité Paysage en mode d’orientation PortraitFlipped](images/sensor-orientation-6-small.jpg)| ![Appareil à priorité Portrait en mode d’orientation PortraitFlipped](images/sensor-orientation-7-small.jpg) |
+| **Paysage** | :::image type="content" source="images/sensor-orientation-0-small.jpg" alt-text="Appareil à priorité Paysage en mode d’orientation Landscape"::: | :::image type="content" source="images/sensor-orientation-1-small.jpg" alt-text="Appareil à priorité Portrait en mode d’orientation Landscape"::: |
+| **Portrait** | :::image type="content" source="images/sensor-orientation-2-small.jpg" alt-text="Appareil à priorité Paysage en mode d’orientation Portrait"::: | :::image type="content" source="images/sensor-orientation-3-small.jpg" alt-text="Appareil à priorité Portrait en mode d’orientation Portrait"::: |
+| **LandscapeFlipped** | :::image type="content" source="images/sensor-orientation-4-small.jpg" alt-text="Appareil à priorité Paysage en mode d’orientation LandscapeFlipped"::: | :::image type="content" source="images/sensor-orientation-5-small.jpg" alt-text="Appareil à priorité Portrait en mode d’orientation LandscapeFlipped":::
+| **PortraitFlipped** | :::image type="content" source="images/sensor-orientation-6-small.jpg" alt-text="Appareil à priorité Paysage en mode d’orientation PortraitFlipped"::: | :::image type="content" source="images/sensor-orientation-7-small.jpg" alt-text="Appareil à priorité Portrait en mode d’orientation PortraitFlipped"::: |
 
 ## <a name="devices-broadcasting-display-and-headless-devices"></a>Appareils diffusant leur affichage et appareils sans affichage
 
@@ -66,9 +71,9 @@ L’orientation de la boussole dépend des axes de référence. Elle change donc
 | Orientation de l’affichage | Axe de référence pour l’orientation de la boussole | Titre de l’API Compass lorsque le nord est orienté vers le Nord (paysage en premier) | En-tête API Compass en regard du Nord (en premier) |Compensation de l’en-tête de boussole (paysage-First) | Compensation de l’en-tête de boussole (portrait-premier) |
 |---------------------|------------------------------------|---------------------------------------------------------|--------------------------------------------------------|------------------------------------------------|-----------------------------------------------|
 | Paysage           | -Z | 0   | 270 | Orientation               | (Orientation + 90) % 360  |
-| Portrait            |  O | 90  | 0   | (Orientation + 270) % 360 |  Orientation              |
+| Portrait            |  Y | 90  | 0   | (Orientation + 270) % 360 |  Orientation              |
 | LandscapeFlipped    |  Z | 180 | 90  | (Orientation + 180) % 360 | (Orientation + 270) % 360 |
-| PortraitFlipped     |  O | 270 | 180 | (Orientation + 90) % 360  | (Orientation + 180) % 360 |
+| PortraitFlipped     |  Y | 270 | 180 | (Orientation + 90) % 360  | (Orientation + 180) % 360 |
 
 Modifiez le cap de la boussole tel qu’indiqué dans le tableau pour afficher correctement le cap. L’extrait de code suivant montre comment procéder.
 
@@ -111,7 +116,7 @@ Le tableau suivant convertit les données de l’accéléromètre et du gyromèt
 | Axes de référence        |  X |  O | Z |
 |-----------------------|----|----|---|
 | **Paysage**         |  X |  O | Z |
-| **Portrait**          |  O | -X | Z |
+| **Portrait**          |  Y | -X | Z |
 | **LandscapeFlipped**  | -X | -y | Z |
 | **PortraitFlipped**   | -y |  X | Z |
 
@@ -159,13 +164,13 @@ private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
 
 ## <a name="display-orientation-and-device-orientation"></a>Orientation d’affichage et orientation d’appareil
 
-Les données [**OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor) doivent être modifiées d’une manière différente. Considérez ces différentes orientations comme des rotations dans le sens inverse des aiguilles d’une position vers l’axe Z. nous devons donc inverser la rotation pour revenir à l’orientation de l’utilisateur. Pour les données de quaternion, nous pouvons utiliser la formule d’Euler pour définir une rotation avec un quaternion de référence. Nous pouvons également utiliser une matrice de rotation de référence.
+Les données [**OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor) doivent être modifiées d’une manière différente. Considérez ces différentes orientations comme des rotations dans le sens inverse des aiguilles d’une position vers l’axe z. nous devons donc inverser la rotation pour revenir à l’orientation de l’utilisateur. Pour les données de quaternion, nous pouvons utiliser la formule d’Euler pour définir une rotation avec un quaternion de référence. Nous pouvons également utiliser une matrice de rotation de référence.
 
-![Formule de Euler](images/eulers-formula.png)
+:::image type="content" source="images/eulers-formula.png" alt-text="Formule de Euler":::
 
 Pour obtenir l’orientation relative souhaitée, multipliez l’objet de référence par rapport à l’objet absolu. Notez que cette formule mathématique n’est pas commutative.
 
-![Multiplier l’objet de référence par rapport à l’objet absolu](images/orientation-formula.png)
+:::image type="content" source="images/orientation-formula.png" alt-text="Multiplier l’objet de référence par rapport à l’objet absolu":::
 
 Dans l’expression précédente, l’objet absolu est retourné par les données de capteur.
 

@@ -1,25 +1,27 @@
 ---
 title: Windows Hello et déverrouillage avec des appareils compagnons
-description: Un appareil complémentaire Windows Hello est un appareil pouvant agir en conjonction avec votre ordinateur de bureau Windows 10 pour améliorer l’expérience d’authentification utilisateur. À l’aide de l’infrastructure d’appareil Windows Hello Companion, un appareil auxiliaire peut fournir une expérience enrichie pour Windows Hello même lorsque la biométrie n’est pas disponible (par exemple, si le bureau Windows 10 ne dispose pas d’un appareil photo pour l’authentification face ou le périphérique lecteur d’empreinte digitale , par exemple).
+description: Un appareil complémentaire Windows Hello est un appareil pouvant agir en conjonction avec votre ordinateur de bureau Windows 10 pour améliorer l’expérience d’authentification utilisateur. À l’aide de l’infrastructure d’appareil Windows Hello Companion, un appareil auxiliaire peut fournir une expérience enrichie pour Windows Hello même lorsque la biométrie n’est pas disponible (par exemple, si le bureau Windows 10 n’a pas de caméra pour l’authentification face ou le périphérique lecteur d’empreinte digitale, par exemple).
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, sécurité
 ms.assetid: 89f3d331-20cd-457b-83e8-1a22aaab2658
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b04ca1b841f72284ccab9df6c0ab1be8adab5c5
-ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
+ms.openlocfilehash: 1e1e27ad47385b3ded743d39cc6a347cab5960ce
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74735124"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493134"
 ---
 # <a name="windows-unlock-with-windows-hello-companion-iot-devices"></a>Déverrouillage Windows avec les appareils (IoT) complémentaires
 
-Un appareil complémentaire Windows Hello est un appareil pouvant agir en conjonction avec votre ordinateur de bureau Windows 10 pour améliorer l’expérience d’authentification utilisateur. À l’aide de l’infrastructure d’appareil Windows Hello Companion, un appareil auxiliaire peut fournir une expérience enrichie pour Windows Hello même lorsque la biométrie n’est pas disponible (par exemple, si le bureau Windows 10 ne dispose pas d’un appareil photo pour l’authentification face ou le périphérique lecteur d’empreinte digitale , par exemple).
+Un appareil complémentaire Windows Hello est un appareil pouvant agir en conjonction avec votre ordinateur de bureau Windows 10 pour améliorer l’expérience d’authentification utilisateur. À l’aide de l’infrastructure d’appareil Windows Hello Companion, un appareil auxiliaire peut fournir une expérience enrichie pour Windows Hello même lorsque la biométrie n’est pas disponible (par exemple, si le bureau Windows 10 n’a pas de caméra pour l’authentification face ou le périphérique lecteur d’empreinte digitale, par exemple).
 
-> **Remarque** Microsoft va déprécier l’API pour l’infrastructure d’appareils Windows Hello Companion au cours de la première moitié de 2020.
+> [!NOTE]
+> L’API pour l’infrastructure d’appareil Windows Hello Companion est dépréciée dans Windows 10, version 2004.
 
-> **Remarque** L’infrastructure du dispositif complémentaire Windows Hello est une fonctionnalité spécialisée qui n’est pas disponible pour tous les développeurs d’applications. Pour utiliser cette infrastructure, votre application doit être spécialement approvisionnée par Microsoft et répertorier la fonctionnalité *secondaryAuthenticationFactor* dans son manifeste. Pour obtenir l’approbation, contactez [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com).
+> [!NOTE]
+> Windows Hello Companion Device Framework est une fonctionnalité spécialisée qui n’est pas disponible pour tous les développeurs d’applications. Pour utiliser cette infrastructure, votre application doit être spécialement approvisionnée par Microsoft et répertorier la fonctionnalité *secondaryAuthenticationFactor* dans son manifeste. Pour obtenir une approbation, contactez [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com) .
 
 ## <a name="introduction"></a>Introduction
 
@@ -27,7 +29,7 @@ Un appareil complémentaire Windows Hello est un appareil pouvant agir en conjon
 
 > Pour obtenir des exemples de code, voir le [référentiel Github de l’infrastructure du dispositif complémentaire Windows Hello](https://github.com/Microsoft/companion-device-framework).
 
-### <a name="use-cases"></a>Cas d’utilisation
+### <a name="use-cases"></a>Cas d'utilisation
 
 Il existe de nombreuses façons de créer une excellente expérience de déverrouillage Windows avec un dispositif complémentaire à l’aide de l’infrastructure du dispositif complémentaire Windows Hello. Les utilisateurs peuvent, par exemple :
 
@@ -38,7 +40,7 @@ Il existe de nombreuses façons de créer une excellente expérience de déverro
 
 ### <a name="biometric-enabled-windows-hello-companion-devices"></a>Appareils complémentaires Windows Hello fonctionnant par biométrie
 
-Si l’appareil complémentaire prend en charge la biométrie, [Windows Biometric Framework](https://msdn.microsoft.com/windows/hardware/commercialize/design/device-experiences/windows-hello) peut, dans certains cas, s’avérer être une meilleure solution que l’infrastructure d’appareil complémentaire Windows Hello. Contactez [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com) pour que nous vous aidions à choisir l’approche la mieux adaptée.
+Si l’appareil complémentaire prend en charge la biométrie, [Windows Biometric Framework](https://msdn.microsoft.com/windows/hardware/commercialize/design/device-experiences/windows-hello) peut, dans certains cas, s’avérer être une meilleure solution que l’infrastructure d’appareil complémentaire Windows Hello. Veuillez contacter [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com) et nous vous aiderons à choisir l’approche appropriée.
 
 ### <a name="components-of-the-solution"></a>Composants de la solution
 
@@ -76,7 +78,7 @@ Un nombre quelconque de ces signaux utilisateur peut être combiné en un seul s
 
 Un dispositif complémentaire Windows Hello doit être inscrit auprès de l’infrastructure du dispositif complémentaire Windows Hello avant de pouvoir le relier à cette dernière. L’expérience d’inscription est entièrement dictée par l’application du dispositif complémentaire Windows Hello.
 
-L’interconnexion entre le dispositif complémentaire Windows Hello et l’appareil de bureau Windows 10 peut servir plusieurs appareils (c’est-à-dire qu’un seul dispositif complémentaire peut être utilisé pour plusieurs appareils de bureau Windows 10). Toutefois, chaque dispositif complémentaire Windows Hello peut uniquement être utilisé pour un seul utilisateur sur chaque appareil de bureau Windows 10.   
+La relation entre l’appareil compagnon Windows Hello et l’appareil de bureau Windows 10 peut être un à plusieurs (par exemple, un appareil auxiliaire peut être utilisé pour de nombreux appareils Windows 10 Desktop). Toutefois, chaque appareil compagnon Windows Hello ne peut être utilisé que pour un seul utilisateur sur chaque appareil de bureau Windows 10.   
 
 Le type de transport entre le PC et le dispositif complémentaire Windows Hello doit être configuré avant de pouvoir établir une communication entre les deux appareils. Ce choix est fait par l’application du dispositif complémentaire Windows Hello ; l’infrastructure du dispositif complémentaire Windows Hello n’impose aucune restriction sur le type de transport (USB, NFC, Wi-Fi, BT, BLE, etc.) ou le protocole utilisé entre le dispositif complémentaire Windows Hello et l’application du dispositif complémentaire Windows Hello du côté de l’appareil de bureau Windows 10. Elle soulève cependant certaines considérations de sécurité liées à la couche transport, indiquées à la section « Exigences de sécurité » du présent document. Il incombe au fournisseur de l’appareil de faire respecter ces exigences. Cela n’est pas du ressort de l’infrastructure.
 
@@ -92,7 +94,7 @@ Un flux de travail classique se présente de la manière suivante :
 
 Remarques :
 
-- Nous vous recommandons d’utiliser la découverte, le téléchargement et le lancement de l’application de l’appareil compagnon Windows Hello, et ce, si possible, automatisé (par exemple, l’application peut être téléchargée en appuyant sur l’appareil Windows Hello Companion sur un lecteur NFC sur un appareil Windows 10 Desktop). côté). Le dispositif complémentaire Windows Hello et son application doivent cependant les appliquer automatiquement.
+- Nous recommandons la découverte, le téléchargement et le lancement de l’application Windows Hello Companion Device est rationalisée et, si possible, automatisée (par exemple, l’application peut être téléchargée en appuyant sur l’appareil Windows Hello Companion sur un lecteur NFC sur Windows 10 Desktop Device). Le dispositif complémentaire Windows Hello et son application doivent cependant les appliquer automatiquement.
 - Dans un environnement d’entreprise, l’application de dispositif complémentaire Windows Hello peut être déployée à l’aide de la GPM.
 - L’application de dispositif complémentaire Windows Hello doit afficher à l’utilisateur tout message d’erreur lié à l’inscription.
 
@@ -130,7 +132,7 @@ La bibliothèque d’aide de l’application du dispositif complémentaire Windo
 
 Si plusieurs tâches sont exécutées en arrière-plan du dispositif complémentaire Windows Hello, la première tâche en arrière-plan ayant terminé le processus d’authentification déverrouille le PC. Le service d’authentification du dispositif complémentaire ignore tous les appels d’authentification restants.
 
-L’expérience du côté du dispositif complémentaire Windows Hello est gérée par l’application du dispositif complémentaire Windows Hello, qui en est également le propriétaire. L’infrastructure du dispositif complémentaire Windows Hello ne contrôle en aucun cas cette partie de l’expérience utilisateur. Plus précisément, le fournisseur d’authentification auxiliaire informe l’application de l’appareil Windows Hello Companion (via son application en arrière-plan) des modifications d’État dans l’interface utilisateur d’ouverture de session (par exemple, l’écran de verrouillage vient d’être indisponible, ou l’utilisateur vient simplement dispelled écran de verrouillage en appuyant sur la barre d’espace). et il est de la responsabilité de l’application de l’appareil compagnon Windows Hello de créer une expérience autour de celle-ci (par exemple, lorsqu’un utilisateur appuie sur l’écran de déverrouillage de l’espace et de la désorthographe, commence à Rechercher l’appareil sur USB).
+L’expérience du côté du dispositif complémentaire Windows Hello est gérée par l’application du dispositif complémentaire Windows Hello, qui en est également le propriétaire. L’infrastructure du dispositif complémentaire Windows Hello ne contrôle en aucun cas cette partie de l’expérience utilisateur. Plus précisément, le fournisseur d’authentification auxiliaire informe l’application de l’appareil Windows Hello Companion (via son application en arrière-plan) des modifications d’État dans l’interface utilisateur d’ouverture de session (par exemple, l’écran de verrouillage vient d’être éteint, ou l’utilisateur vient simplement de dispelled verrouiller l’écran en appuyant sur la barre d’espace) et il est de la responsabilité de l’application d’appareil Windows Hello Companion pour créer une expérience autour de cela (par exemple, lorsqu’un utilisateur appuie sur la barre d’espace et sur l’écran de déverrouillage , commencez à Rechercher l’appareil sur USB).
 
 L’infrastructure du dispositif complémentaire Windows Hello fournira un ensemble de textes (localisés) et de messages d’erreur à partir desquels l’application du dispositif complémentaire Windows Hello fait son choix. Ceux-ci apparaissent en haut de l’écran de verrouillage (ou dans l’interface utilisateur d’ouverture de session). Pour en savoir plus, voir la section Messages et erreurs.
 
@@ -164,7 +166,7 @@ Les utilisateurs peuvent supprimer un dispositif complémentaire Windows Hello d
 Les entreprises disposent de deux options pour contrôler l’infrastructure du dispositif complémentaire Windows Hello :
 
 - L’activation/désactivation de la fonctionnalité
-- L’établissement d’une liste approuvée de dispositifs complémentaires Windows Hello autorisés à l’aide de Windows AppLocker
+- L’établissement d’une liste blanche de dispositifs complémentaires Windows Hello autorisés à l’aide de Windows AppLocker
 
 L’infrastructure du dispositif complémentaire Windows Hello ne tient pas d’inventaire centralisé des dispositifs complémentaires disponibles, et ne prend en charge aucune méthode pour définir quelles instances d’un type de dispositif complémentaire Windows Hello sont autorisées (par exemple, seul un dispositif complémentaire dont le numéro de série est compris entre X et Y est autorisé). Les développeurs d’applications peuvent, cependant, créer un service pour fournir cette fonctionnalité. Pour en savoir plus, voir la section Itinérance, révocation et service de filtre.
 
@@ -179,7 +181,7 @@ Les fournisseurs de dispositifs complémentaires peuvent toutefois créer un ser
 Les fournisseurs de dispositifs complémentaires peuvent implémenter un service web pouvant être utilisé dans les scénarios suivants :
 
 - Un service de filtre pour les entreprises : une entreprise peut limiter le nombre de dispositifs complémentaires Windows Hello s’exécutant dans son environnement à quelques dispositifs issus d’un fournisseur spécifique. Par exemple, la société Contoso pourrait commander 10 000 modèles Y de dispositifs complémentaires provenant d’un fournisseur X et faire en sorte que seuls ces dispositifs fonctionnent dans le domaine de Contoso (et aucun autre modèle du fournisseur X).
-- Inventaire : une entreprise peut déterminer la liste des dispositifs complémentaires existants utilisés dans un environnement d’entreprise.
+- Inventaire : une entreprise peut déterminer la liste des appareils compagnons existants utilisés dans un environnement d’entreprise.
 - Révocation en temps réel : si un employé signale la perte ou le vol de son dispositif complémentaire, le service web peut servir à révoquer le dispositif en question.
 - Itinérance : un utilisateur ne doit inscrire son dispositif complémentaire qu’une seule fois ; ce dernier fonctionne alors sur tous ses bureaux Windows 10 et appareils mobile.
 
@@ -187,7 +189,7 @@ L’implémentation de ces fonctionnalités nécessite que l’application du di
 
 ## <a name="windows-hello-companion-device-framework-api-model"></a>Modèle d’API d’infrastructure du dispositif complémentaire Windows Hello
 
-### <a name="overview"></a>Vue d'ensemble
+### <a name="overview"></a>Vue d’ensemble
 
 Une application du dispositif complémentaire Windows Hello doit contenir deux composants : une application au premier plan avec une interface utilisateur responsable de l’inscription et de la désinscription du dispositif, et une tâche en arrière-plan qui gère l’authentification.
 
@@ -205,7 +207,7 @@ Le processus global de l’API se déroule comme suit :
     * CollectingCredential : attendre cet événement si l’appareil compagnon Windows Hello s’appuie sur l’action/le mouvement de l’utilisateur côté PC pour démarrer le workflow d’authentification (par exemple, en appuyant sur la barre d’espace)
     * Autres déclencheurs, tels qu’une carte à puce : envoyer une requête à l’état d’authentification actuel pour qu’il appelle les API appropriées.
 4. Tenir l’utilisateur informé des messages d’erreur ou des étapes suivantes nécessaires en appelant la méthode ShowNotificationMessageAsync. Appeler uniquement cette API une fois qu’un signal d’intention est capturé.
-5. Unlock
+5. Déverrouiller
     * S’assurer que les signaux d’intention et de présence de l’utilisateur ont été capturés
     * Appeler la méthode StartAuthenticationAsync
     * Communiquer avec le dispositif complémentaire pour effectuer des opérations HMAC requises
@@ -383,14 +385,14 @@ L’infrastructure du dispositif complémentaire Windows Hello aide l’applicat
 
 Voici les détails de chacun de ces états :
 
-| Région                         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| État                         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 |----------------------------   |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------    |
-| WaitingForUserConfirmation    | Cet événement de notification de changement d’État est déclenché lorsque l’écran de verrouillage s’affiche (par exemple, l’utilisateur a appuyé sur Windows + L). Nous recommandons de ne pas demander des messages d’erreur concernant des difficultés pour trouver un appareil dans cet état. En règle générale, nous recommandons d’afficher des messages seulement en présence d’un signal d’intention. L’application de l’appareil compagnon Windows Hello doit effectuer le premier appel d’API pour l’authentification dans cet État si l’appareil auxiliaire collecte le signal intentionnel (par exemple, en appuyant sur un lecteur NFC, en appuyant sur un bouton de l’appareil compagnon ou sur un geste spécifique, comme applaudissements ), et la tâche d’arrière-plan de l’application d’appareil Windows Hello Companion reçoit une indication de la part de l’appareil pour lequel le signal d’intention a été détecté. Dans le cas contraire, si l’application du dispositif complémentaire Windows Hello dépend du PC pour lancer le flux d’authentification (l’utilisateur devant effectuer un balayage vers le haut sur l’écran de verrouillage ou appuyer sur la barre d’espace), elle doit attendre l’état suivant (CollectingCredential).   |
-| CollectingCredential          | Cet événement de notification de changement d’état est déclenché lorsque l’utilisateur ouvre son portable, appuie sur une touche quelconque du clavier ou effectue un balayage vers le haut sur l’écran de verrouillage. Si le périphérique compagnon Windows Hello s’appuie sur les actions ci-dessus pour commencer à collecter le signal intentionnel, alors l’application de l’appareil compagnon Windows Hello doit commencer à la collecter (par exemple, via une fenêtre contextuelle sur l’appareil compagnon qui demande si l’utilisateur souhaite déverrouiller le PC) . C’est le moment approprié de fournir des cas d’erreur si l’application du dispositif complémentaire Windows Hello nécessite que l’utilisateur fournisse un signal de présence sur le dispositif complémentaire (tel que la saisie d’un PIN sur le dispositif complémentaire Windows Hello).                                                                                                                                                                                                                                                                                                                                             |
+| WaitingForUserConfirmation    | Cet événement de notification de changement d’État est déclenché lorsque l’écran de verrouillage s’affiche (par exemple, l’utilisateur a appuyé sur Windows + L). Nous recommandons de ne pas demander des messages d’erreur concernant des difficultés pour trouver un appareil dans cet état. En règle générale, nous recommandons d’afficher des messages seulement en présence d’un signal d’intention. L’application de l’appareil compagnon Windows Hello doit effectuer le premier appel d’API pour l’authentification dans cet État si l’appareil auxiliaire collecte le signal intentionnel (par exemple, en appuyant sur un lecteur NFC, en appuyant sur un bouton sur l’appareil compagnon ou sur un geste spécifique, comme applaudissements), et la tâche d’arrière-plan de l’application d’appareil Windows Hello Companion reçoit une indication de Dans le cas contraire, si l’application du dispositif complémentaire Windows Hello dépend du PC pour lancer le flux d’authentification (l’utilisateur devant effectuer un balayage vers le haut sur l’écran de verrouillage ou appuyer sur la barre d’espace), elle doit attendre l’état suivant (CollectingCredential).   |
+| CollectingCredential          | Cet événement de notification de changement d’état est déclenché lorsque l’utilisateur ouvre son portable, appuie sur une touche quelconque du clavier ou effectue un balayage vers le haut sur l’écran de verrouillage. Si le périphérique compagnon Windows Hello s’appuie sur les actions ci-dessus pour commencer à collecter le signal intentionnel, l’application de l’appareil Windows Hello Companion doit commencer à la collecter (par exemple, par le biais d’une fenêtre contextuelle sur l’appareil associé qui demande si l’utilisateur souhaite déverrouiller le PC). C’est le moment approprié de fournir des cas d’erreur si l’application du dispositif complémentaire Windows Hello nécessite que l’utilisateur fournisse un signal de présence sur le dispositif complémentaire (tel que la saisie d’un PIN sur le dispositif complémentaire Windows Hello).                                                                                                                                                                                                                                                                                                                                             |
 | SuspendingAuthentication      | Lorsque l’application du dispositif complémentaire Windows Hello reçoit cet état, cela signifie que le service d’authentification par dispositif complémentaire n’accepte plus les demandes d’authentification.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | CredentialCollected           | Cela signifie qu’une autre application de dispositif complémentaire Windows Hello a appelé la deuxième API et que le service d’authentification par dispositif complémentaire vérifie l’envoi. À ce stade, le service d’authentification par dispositif complémentaire n’accepte plus aucune demande d’authentification, sauf si la demande en cours n’est pas acceptée. L’application du dispositif complémentaire Windows Hello doit rester opérationnelle jusqu’à ce que l’état suivant soit atteint.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | CredentialAuthenticated       | Cela signifie que les informations d’identification envoyées ont été acceptées. L’état credentialAuthenticated détient l’ID de dispositif du dispositif complémentaire Windows Hello ayant réussi. L’application du dispositif complémentaire Windows Hello doit vérifier cette information pour voir s’il s’agit du dispositif qui lui est associé. Si ce n’est pas le cas, l’application du dispositif complémentaire Windows Hello ne doit pas afficher de flux de post-authentification (comme un message de réussite sur le dispositif complémentaire ou éventuellement une vibration de ce dernier). Notez que si les informations d’identification soumises n’ont pas fonctionné, l’état actuel passera à l’état CollectingCredential.                                                                                                                                                                                                                                                                                                                                                                                       |
-| StoppingAuthentication        | L’authentification a réussi et l’utilisateur voit le bureau. Vous devez terminer la tâche en arrière-plan. Inscrire les fonctions de gestionnaire d’événements auprès des tâches en arrière-plan nouvelles et existantes Cela permettra de fermer rapidement la tâche en arrière-plan.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| StoppingAuthentication        | L’authentification a réussi et l’utilisateur voit le bureau. Temps nécessaire pour terminer votre tâche en arrière-plan. Avant de quitter la tâche d’arrondi, désinscrivez explicitement le gestionnaire StageEvent. Cela permet de quitter rapidement la tâche en arrière-plan.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 
 
 
@@ -628,21 +630,21 @@ Les applications de dispositif complémentaire Windows Hello peuvent utiliser Sh
 
 Il existe deux types de messages : les aides et les erreurs.
 
-Les messages d’aide sont conçus pour montrer à l’utilisateur comment lancer le processus de déverrouillage. Ces messages ne s’affichent qu’une seule fois sur l’écran de verrouillage, lors de la première inscription de l’appareil. Ces messages continueront d’apparaître sous l’écran de verrouillage.
+Les messages d’aide sont conçus pour montrer à l’utilisateur comment lancer le processus de déverrouillage. Ces messages sont uniquement affichés à l’utilisateur une fois sur l’écran de verrouillage, lors de la première inscription de l’appareil et ne s’affichent plus. Ces messages continuent de s’afficher sous l’écran de verrouillage.
 
-Les messages d’erreur s’affichent systématiquement et apparaissent après la fourniture d’un signal d’intention. Étant donné qu’un signal d’intention doit être capturé pour que les messages s’affichent à l’utilisateur, et que l’utilisateur fournit ce signal à l’aide de l’un des dispositifs complémentaire Windows Hello, un scénario dans lequel plusieurs dispositifs complémentaires Windows Hello tentent d’afficher des messages d’erreur ne doit en aucun cas se produire. Par conséquent, l’infrastructure du dispositif complémentaire Windows Hello ne comporte pas de file d’attente. Lorsqu’un appelant demande un message d’erreur, ce dernier s’affiche pendant 5 secondes, et toutes les autres demandes de message d’erreur survenant dans ce délai de 5 secondes sont ignorées. Une fois que ces 5 secondes sont écoulées, un autre appelant peut demander l’affichage d’un message d’erreur. Nous empêchons tout appelant de bloquer le canal d’erreur.
+Les messages d’erreur sont toujours affichés et s’affichent une fois qu’un signal d’intention est fourni. Étant donné qu’un signal d’intention doit être capturé pour que les messages s’affichent à l’utilisateur, et que l’utilisateur fournit ce signal à l’aide de l’un des dispositifs complémentaire Windows Hello, un scénario dans lequel plusieurs dispositifs complémentaires Windows Hello tentent d’afficher des messages d’erreur ne doit en aucun cas se produire. Par conséquent, l’infrastructure du dispositif complémentaire Windows Hello ne comporte pas de file d’attente. Lorsqu’un appelant demande un message d’erreur, ce dernier s’affiche pendant 5 secondes, et toutes les autres demandes de message d’erreur survenant dans ce délai de 5 secondes sont ignorées. Une fois que ces 5 secondes sont écoulées, un autre appelant peut demander l’affichage d’un message d’erreur. Nous empêchons tout appelant de bloquer le canal d’erreur.
 
 Les messages d’erreur et d’aide sont les suivants. Le nom du dispositif est un paramètre transmis par l’application du dispositif complémentaire dans le cadre de la méthode ShowNotificationMessageAsync.
 
-**Conduite**
+**Assistance**
 
 - « Effectuez un balayage vers le haut ou appuyez sur la barre d’espace pour vous connecter avec *nom de l’appareil*. »
-- « Configuration de votre appareil compagnon. Veuillez patienter ou utilisez une autre option de connexion. »
-- « Appuyez sur *nom de l’appareil* sur le lecteur NFC pour vous connecter. »
+- «Configuration de votre appareil compagnon. Veuillez patienter ou utiliser une autre option de connexion.»
+- « Posez *nom de l’appareil* sur le lecteur NFC pour vous connecter. »
 - « Recherche en cours de *nom de l’appareil*... »
 - « Branchez *nom de l’appareil* sur un port USB pour vous connecter. »
 
-**Sont**
+**Erreurs**
 
 - « Voir *nom de l’appareil* pour obtenir des instructions de connexion. »
 - « Activez le Bluetooth pour utiliser *nom de l’appareil* pour vous connecter. »
@@ -654,7 +656,7 @@ Les messages d’erreur et d’aide sont les suivants. Le nom du dispositif est 
 - « Maintenez votre doigt sur *nom de l’appareil* pour vous connecter. »
 - « Effectuez un balayage avec votre doigt sur *nom de l’appareil* pour vous connecter. »
 - « Impossible de se connecter avec *nom de l’appareil*. Utilisez une autre option de connexion. »
-- « Un problème est survenu. Utilisez une autre option de connexion, puis configurez de nouveau *nom de l’appareil*. »
+- «Un problème s’est produit. Utilisez une autre option de connexion, puis configurez de nouveau *nom de l’appareil*. »
 - « Réessayez. »
 - « Dites votre phrase secrète à *nom de l’appareil*. »
 - « Prêt pour la connexion avec *nom de l’appareil*. »
@@ -675,7 +677,7 @@ La première étendue retourne la liste des dispositifs complémentaires pour l�
 
 Notez que, même si l’application n’effectue pas cette vérification, le PC l’effectue et rejettera une deuxième inscription du dispositif complémentaire Windows Hello. Au moment de l’authentification, l’utilisation de l’étendue AllUsers permet d’aider l’application du dispositif complémentaire Windows Hello à prendre en charge le changement de flux d’utilisateur : connexion de l’utilisateur A lorsque l’utilisateur B est déjà connecté (cela nécessite que les deux utilisateurs aient installé l’application du dispositif complémentaire Windows Hello et que l’utilisateur A ait inscrit ses dispositifs complémentaires auprès du PC. Le PC doit également présenter l’écran de verrouillage (ou l’écran d’ouverture de session)).
 
-## <a name="security-requirements"></a>Exigences de sécurité
+## <a name="security-requirements"></a>Spécifications de sécurité
 
 Le service d’authentification par dispositif complémentaire fournit les protections de sécurité suivantes :
 

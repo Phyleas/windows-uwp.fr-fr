@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b04e48163af47b7e753bc3bc050e44a947b122fc
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 5eb90e47a1d821c489e06a9ce19c913eb6702767
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259698"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493234"
 ---
 # <a name="raw-notification-overview"></a>Vue d’ensemble des notifications brutes
 
@@ -36,7 +36,7 @@ Pour donner un exemple d’application pouvant bénéficier de notifications bru
 Toutes les notifications brutes sont des notifications Push. C’est pourquoi la configuration requise pour envoyer et recevoir des notifications Push concerne également les notifications brutes :
 
 -   Vous devez disposer d’un canal WNS valide pour envoyer des notifications brutes. Pour plus d’informations sur l’acquisition d’un canal de notification Push, voir [Comment demander, créer et enregistrer un canal de notification](https://docs.microsoft.com/previous-versions/windows/apps/hh465412(v=win.10)).
--   Vous devez inclure la fonctionnalité **Internet** dans le manifeste de votre application. Vous trouverez cette option sous la forme **Internet (client)** dans l’onglet **Capacités** de l’éditeur de manifeste Microsoft Visual Studio. Pour plus d’informations, voir [**Capabilities**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-capabilities).
+-   Vous devez inclure la fonctionnalité **Internet** dans le manifeste de votre application. Vous trouverez cette option sous la forme **Internet (client)** dans l’onglet **Capacités** de l’éditeur de manifeste Microsoft Visual Studio. Pour plus d’informations, consultez [**fonctionnalités**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-capabilities).
 
 Le corps de la notification apparaît dans un format défini par l’application. Le client reçoit les données sous la forme d’une chaîne (**HSTRING**) terminée par un caractère NULL que seule l’application doit comprendre.
 
@@ -72,9 +72,9 @@ Une application peut recourir à ces deux mécanismes pour recevoir des notifica
 
 ### <a name="notification-delivery-events"></a>Événements de remise de notification
 
-Votre application peut utiliser un événement de remise de notification ([**PushNotificationReceived**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannel.PushNotificationReceived)) pour recevoir des notifications brutes lorsque l’application est en cours d’utilisation. Quand le service cloud envoie une notification brute, l’application est en cours d’exécution peut la recevoir en gérant l’événement de remise de notification sur l’URI de canal.
+Votre application peut utiliser un événement de remise des notifications ([**PushNotificationReceived**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannel.PushNotificationReceived)) pour recevoir des notifications brutes pendant que l’application est en cours d’utilisation. Quand le service cloud envoie une notification brute, l’application est en cours d’exécution peut la recevoir en gérant l’événement de remise de notification sur l’URI de canal.
 
-Si votre application n’est pas en cours d’exécution et ne fait appel à aucune [tâche en arrière-plan](#background-tasks-triggered-by-raw-notifications)), toutes les notifications brutes transmises à cette application sont ignorées par WNS dès réception. Pour éviter de gaspiller les ressources de votre service cloud, vous pouvez envisager la mise en place d’une logique sur le service pour contrôler si l’application est active ou non. Pour ces informations, il existe deux sources : une application peut explicitement indiquer au service qu’elle est prête à recevoir des notifications et la fonctionnalité WNS peut indiquer au service quand arrêter.
+Si votre application n’est pas en cours d’exécution et n’utilise pas de [tâches en arrière-plan](#background-tasks-triggered-by-raw-notifications)), toute notification brute envoyée à cette application est supprimée par WNS à la réception. Pour éviter de gaspiller les ressources de votre service cloud, vous pouvez envisager la mise en place d’une logique sur le service pour contrôler si l’application est active ou non. Pour ces informations, il existe deux sources : une application peut explicitement indiquer au service qu’elle est prête à recevoir des notifications et la fonctionnalité WNS peut indiquer au service quand arrêter.
 
 -   **L’application informe le service cloud** : l’application peut contacter son service pour l’informer que l’application fonctionne au premier plan. L’inconvénient de cette approche est que l’application peut finir par contacter votre service de manière très fréquente. En revanche, elle présente l’avantage que le service saura toujours lorsque l’application est prête à recevoir des notifications brutes entrantes. Un autre avantage réside dans le fait que, lorsque l’application contacte son service, celui-ci sait alors qu’il faut envoyer des notifications brutes à l’instance spécifique de cette application plutôt que procéder à une diffusion.
 -   **Le service cloud répond aux messages de réponse WNS** : le service de votre application peut utiliser les informations [X-WNS-NotificationStatus](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)) et [X-WNS-DeviceConnectionStatus](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)) renvoyées par la fonctionnalité WNS pour déterminer à quel moment cesser l’envoi de notifications brutes à l’application. Lorsque votre service envoie une notification à un canal sous la forme d’une demande POST HTTP, il peut recevoir l’un des messages suivants en guise de réponse :
@@ -103,23 +103,23 @@ Pour donner un exemple illustrant la manière dont fonctionnent les tâches en a
 
 Pour utiliser une notification brute déclenchant une tâche en arrière-plan, votre application doit effectuer les opérations suivantes :
 
-1.  demander l’autorisation d’exécuter des tâches en arrière-plan (que l’utilisateur peut révoquer à tout moment) à l’aide de l’élément [**BackgroundExecutionManager.RequestAccessAsync**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundExecutionManager#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessAsync_System_String_) ;
-2.  implémenter la tâche en arrière-plan. Pour plus d’informations, voir [Définir des tâches en arrière-plan pour les besoins de votre application](../../../launch-resume/support-your-app-with-background-tasks.md).
+1.  Demandez l’autorisation d’exécuter des tâches en arrière-plan (que l’utilisateur peut révoquer à tout moment) à l’aide de [**BackgroundExecutionManager. RequestAccessAsync**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundExecutionManager#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessAsync_System_String_).
+2.  implémenter la tâche en arrière-plan. Pour plus d’informations, consultez [prendre en charge votre application avec des tâches en arrière-plan](../../../launch-resume/support-your-app-with-background-tasks.md)
 
-Votre tâche en arrière-plan est ensuite appelée en réponse à l’événement [**PushNotificationTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger) chaque fois qu’une notification brute est reçue pour votre application. Votre tâche en arrière-plan interprète alors la charge utile spécifique à l’application de la notification brute et intervient en conséquence.
+Votre tâche en arrière-plan est ensuite appelée en réponse à [**PushNotificationTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger), chaque fois qu’une notification brute est reçue pour votre application. Votre tâche en arrière-plan interprète alors la charge utile spécifique à l’application de la notification brute et intervient en conséquence.
 
 Pour chaque application, une seule tâche en arrière-plan peut être exécutée à la fois. Si vous déclenchez une tâche en arrière-plan pour une application pour laquelle une tâche en arrière-plan est déjà en cours d’exécution, la première tâche en arrière-plan doit arriver à terme avant que la nouvelle ne soit exécutée.
 
 ## <a name="other-resources"></a>Autres ressources
 
 
-Vous pouvez en savoir plus en téléchargeant l' [exemple de notifications brutes](https://code.msdn.microsoft.com/windowsapps/Raw-notifications-sample-3bc28c5d) pour Windows 8.1, ainsi que les [notifications push et périodiques](https://code.msdn.microsoft.com/windowsapps/push-and-periodic-de225603) pour Windows 8.1 et en réutilisant leur code source dans votre application Windows 10.
+Pour plus d’informations, téléchargez l’[exemple de notifications brutes](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Raw%20notifications%20sample%20(Windows%208)) pour Windows 8.1 et l’[exemple de notifications Push et périodiques](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Push%20and%20periodic%20notifications%20client-side%20sample%20(Windows%208)) pour Windows 8.1, puis réutilisez leur code source dans votre application Windows 10.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Instructions pour les notifications brutes](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-raw-notification-overview)
-* [Démarrage rapide : création et inscription d’une tâche en arrière-plan de notification brute](https://docs.microsoft.com/previous-versions/windows/apps/jj676800(v=win.10))
-* [Démarrage rapide : interception des notifications push pour les applications en cours d’exécution](https://docs.microsoft.com/previous-versions/windows/apps/jj709908(v=win.10))
+* [Recommandations en matière de notifications brutes](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-raw-notification-overview)
+* [Démarrage rapide : création et inscription d’une tâche de notification brute en arrière-plan](https://docs.microsoft.com/previous-versions/windows/apps/jj676800(v=win.10))
+* [Démarrage rapide : interception de notifications Push dans des applications en cours d’exécution](https://docs.microsoft.com/previous-versions/windows/apps/jj709908(v=win.10))
 * [**RawNotification**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.RawNotification)
 * [**BackgroundExecutionManager.RequestAccessAsync**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundExecutionManager#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessAsync_System_String_)
  

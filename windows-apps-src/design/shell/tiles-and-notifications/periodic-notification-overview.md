@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 617b5d013c8452733fae2a1fa7c16180d37fbe57
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 241d59d096775646a5da1301bdd4b44f67c6abf1
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259719"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493414"
 ---
 # <a name="periodic-notification-overview"></a>Vue d’ensemble des notifications périodiques
  
@@ -25,7 +25,7 @@ Les notifications périodiques, également appelées notifications interrogées,
 
 Les notifications périodiques permettent à votre application d’obtenir des mises à jour de vignettes dynamiques avec un minimum d’intervention du service cloud et d’investissement client. Les notifications périodiques sont une bonne méthode de distribution du même contenu à un large public.
 
-**Notez**   vous pouvez en savoir plus en téléchargeant l' [exemple de notifications push et périodiques](https://code.msdn.microsoft.com/windowsapps/push-and-periodic-de225603) pour Windows 8.1 et en réutilisant son code source dans votre application Windows 10.
+**Remarque**    Vous pouvez en savoir plus en téléchargeant l' [exemple notifications push et périodiques](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Push%20and%20periodic%20notifications%20client-side%20sample%20(Windows%208)) pour Windows 8.1 et réutiliser son code source dans votre application Windows 10.
 
  
 
@@ -68,9 +68,9 @@ Si vous indiquez une heure de début, le premier appel de la méthode entraîne 
 
 L’URI est interrogé seulement si l’appareil est en ligne. Si le réseau est disponible, mais que l’URI ne peut pas être contacté pour une raison quelconque, cette itération de l’intervalle d’interrogation est ignorée et l’URI est réinterrogé lors du prochain intervalle. Si l’appareil est dans un état d’arrêt, de veille ou de veille prolongée quand un intervalle d’interrogation est atteint, l’URI est interrogé quand l’appareil quitte son état d’arrêt ou de veille.
 
-### <a name="handling-app-updates"></a>Gestion des mises à jour des applications
+### <a name="handling-app-updates"></a>Gestion des mises à jour d’application
 
-Si vous publiez une mise à jour d’application qui modifie votre URI d’interrogation, vous devez ajouter une [tâche en arrière-plan TimeTrigger](../../../launch-resume/run-a-background-task-on-a-timer-.md) quotidienne qui appelle StartPeriodicUpdate avec le nouveau URI pour vérifier que vos vignettes utilisent le nouvel URI. Sinon, si les utilisateurs reçoivent la mise à jour de votre application, mais ne lancent pas votre application, les vignettes utiliseront encore l’ancien URI, ce qui risque d’entraîner un échec de l’affichage si l’URI n’est plus valide ou si la charge utile renvoyée fait référence à des images locales qui n’existent plus.
+Si vous publiez une mise à jour d’application qui modifie votre URI d’interrogation, vous devez ajouter une [tâche d’arrière-plan de déclencheur horaire](../../../launch-resume/run-a-background-task-on-a-timer-.md) quotidien qui appelle StartPeriodicUpdate avec le nouvel URI pour vérifier que vos vignettes utilisent le nouvel URI. Sinon, si les utilisateurs reçoivent la mise à jour de votre application, mais ne lancent pas votre application, leurs vignettes utilisent toujours l’ancien URI, ce qui peut ne pas s’afficher si l’URI n’est pas valide ou si la charge utile retournée fait référence à des images locales qui n’existent plus.
 
 ## <a name="expiration-of-tile-and-badge-notifications"></a>Expiration des notifications par vignette et par badge
 
@@ -98,12 +98,12 @@ Pour implémenter une file d’attente de notifications, activez d’abord la fi
 
 ### <a name="polling-for-more-than-one-notification-at-a-time"></a>Interrogation de plusieurs notifications à la fois
 
-Vous devez fournir un URI unique pour chaque notification que Windows doit télécharger pour votre vignette. À l’aide de la méthode [**StartPeriodicUpdateBatch**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdateBatch_Windows_Foundation_Collections_IIterable_1_Windows_UI_Notifications_PeriodicUpdateRecurrence_), vous pouvez fournir jusqu’à cinq URI à la fois utilisables par la file d’attente de notifications. Chaque URI fait l’objet d’une interrogation pour une seule charge utile de notification, plus ou moins au même moment. Chaque URI interrogé peut renvoyer son propre délai d’expiration et sa propre valeur de balise.
+Vous devez fournir un URI unique pour chaque notification que Windows doit télécharger pour votre vignette. À l’aide de la méthode [**StartPeriodicUpdateBatch**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdateBatch_Windows_Foundation_Collections_IIterable_1_Windows_UI_Notifications_PeriodicUpdateRecurrence_) , vous pouvez fournir jusqu’à cinq URI à la fois en vue de leur utilisation avec la file d’attente de notification. Chaque URI fait l’objet d’une interrogation pour une seule charge utile de notification, plus ou moins au même moment. Chaque URI interrogé peut renvoyer son propre délai d’expiration et sa propre valeur de balise.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
 
-* [Instructions pour les notifications périodiques](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-periodic-notification-overview)
+* [Recommandations en matière de notifications périodiques](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-periodic-notification-overview)
 * [Comment configurer des notifications périodiques pour les badges](https://docs.microsoft.com/previous-versions/windows/apps/hh761476(v=win.10))
-* [Comment configurer des notifications périodiques pour les vignettes](https://docs.microsoft.com/previous-versions/windows/apps/hh761476(v=win.10))
+* [Comment configurer des notifications périodiques pour des vignettes](https://docs.microsoft.com/previous-versions/windows/apps/hh761476(v=win.10))
  
