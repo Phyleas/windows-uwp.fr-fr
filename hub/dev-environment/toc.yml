@@ -12,7 +12,7 @@
         - name: Bien démarrer avec l’automatisation
           href: ../python/scripting.md
         - name: Bien démarrer avec les bases de données
-          href: ../python/databases.md
+          href: 'https://docs.microsoft.com/windows/wsl/tutorials/wsl-database'
         - name: Foire aux questions
           href: ../python/faqs.md
         - name: Ressources
@@ -30,7 +30,7 @@
         - name: Bien démarrer avec les frameworks web
           href: ../nodejs/web-frameworks.md
         - name: Bien démarrer avec les bases de données
-          href: ../nodejs/databases.md
+          href: '.https://docs.microsoft.com/windows/wsl/tutorials/wsl-database'
         - name: Bien démarrer avec les conteneurs
           href: ../nodejs/containers.md
     - name: Développer avec Android
@@ -92,10 +92,10 @@
         - name: Changement de votre environnement de développement
           href: mac-to-windows.md
         - name: Raccourcis clavier
-          href: 'mac-to-windows.md#keyboard-shortcuts'
+          href: mac-to-windows.md#keyboard-shortcuts
         - name: Raccourcis sur pavé tactile
-          href: 'mac-to-windows.md#trackpad-shortcuts'
+          href: mac-to-windows.md#trackpad-shortcuts
         - name: Terminal et shell
-          href: 'mac-to-windows.md#terminal-and-shell'
+          href: mac-to-windows.md#terminal-and-shell
         - name: Applications et utilitaires
-          href: 'mac-to-windows.md#apps-and-utilities'
+          href: mac-to-windows.md#apps-and-utilities
