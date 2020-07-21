@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, norme, c++, cpp, winrt, projection, bien démarrer, prise en main
 ms.localizationpriority: medium
-ms.openlocfilehash: c058a727e09f00e01664c314d8c198f3f25e841e
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 968c347927edf0ad44476ec4bdca97aae19bb9a4
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74255133"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493034"
 ---
 # <a name="get-started-with-cwinrt"></a>Bien démarrer avec C++/WinRT
 
@@ -22,7 +22,7 @@ Pour vous aider à vous familiariser avec [C++/WinRT](/windows/uwp/cpp-and-winrt
 ## <a name="a-cwinrt-quick-start"></a>Démarrage rapide avec C++/WinRT
 
 > [!NOTE]
-> Pour plus d’informations sur la configuration du développement Visual Studio pour C++/WinRT&mdash;notamment l’installation et l’utilisation de l’extension VSIX (Visual Studio Extension) C++/WinRT et du package NuGet (qui fournissent ensemble la prise en charge des modèles et des builds de projet)&mdash;, consultez [Prise en charge de Visual Studio pour C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+> Pour plus d’informations sur la configuration du développement Visual Studio pour C++/WinRT&mdash;notamment l’installation et l’utilisation de l’extension VSIX (Visual Studio Extension) C++/WinRT et du package NuGet (qui fournissent ensemble la prise en charge des modèles et des builds de projet)&mdash;, consultez [Prise en charge de Visual Studio pour C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 Créez un projet **Application console Windows (C++/WinRT)** .
 

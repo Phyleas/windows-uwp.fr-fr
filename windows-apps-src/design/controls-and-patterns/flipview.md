@@ -11,12 +11,12 @@ pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: f4871b4a43284052a89d0fd37412528840e1ea5a
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 51c43efc859e20606679b385051684730eee1922
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968734"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493384"
 ---
 # <a name="flip-view"></a>Vue symétrique
 
@@ -24,9 +24,10 @@ La vue symétrique permet d’afficher les images ou d’autres éléments d’u
 
 **Obtenir la bibliothèque d’interface utilisateur Windows**
 
-|  |  |
-| - | - |
-| ![Logo WinUI](images/winui-logo-64x64.png) | La bibliothèque d’interface utilisateur Windows version 2.2 ou ultérieure inclut pour ce contrôle un nouveau modèle qui utilise des angles arrondis. Pour plus d’informations, consultez [Rayons des angles](/windows/uwp/design/style/rounded-corner). WinUI est un package NuGet qui contient de nouveaux contrôles et des fonctionnalités d’interface utilisateur pour les applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+<img src="images/winui-logo-64x64.png" alt="WinUI logo"
+     style="float: left; margin-right: 15px;" />
+
+La bibliothèque d’interface utilisateur Windows version 2.2 ou ultérieure inclut pour ce contrôle un nouveau modèle qui utilise des angles arrondis. Pour plus d’informations, consultez [Rayons des angles](/windows/uwp/design/style/rounded-corner). WinUI est un package NuGet qui contient de nouveaux contrôles et des fonctionnalités d’interface utilisateur pour les applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
 
 > **API de plateforme :** [classe FlipView](/uwp/api/windows.ui.xaml.controls.flipview), [propriété ItemsSource](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource), [propriété ItemTemplate](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)
 
@@ -207,7 +208,7 @@ Pour les plus grandes collections (10 à 25 éléments), un indicateur qui propo
 
 ![Exemple d’indicateur de contexte](images/controls_contextindicator.jpg)
 
-Pour obtenir un exemple de code montrant comment ajouter un indicateur de contexte à un FlipView, consultez [Exemple de ListView XAML](https://code.msdn.microsoft.com/windowsapps/XAML-FlipView-control-0ae45312).
+Pour obtenir un exemple de code montrant comment ajouter un indicateur de contexte à un FlipView, consultez [Exemple de ListView XAML](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20FlipView%20control%20sample%20(Windows%208)).
 
 ## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
 

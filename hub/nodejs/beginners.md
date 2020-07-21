@@ -8,12 +8,12 @@ ms.topic: article
 keywords: NodeJS, Node.js, windows 10, microsoft, découvrir nodejs, node sous windows, node sous windows pour les débutants, développer avec node sous windows, développer avec nodejs sous windows
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: 433eb5701696f590f10d8b3276481098b9ec073d
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: d40d701dc3ae973e0834d0b329527e69854b9e36
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75657081"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86492864"
 ---
 # <a name="get-started-using-nodejs-on-windows-for-beginners"></a>Prise en main de Node.js sous Windows pour les débutants
 
@@ -67,9 +67,9 @@ Node.js est un runtime JavaScript principalement utilisé pour créer des applic
 > [!TIP]
 > Essayez le nouveau [terminal Windows](https://github.com/microsoft/terminal/blob/master/doc/user-docs/index.md) si vous prévoyez d'utiliser plusieurs lignes de commande (Ubuntu, PowerShell, invite de commandes Windows, etc.) ou si vous souhaitez [personnaliser votre terminal](https://github.com/microsoft/terminal/blob/master/doc/user-docs/UsingJsonSettings.md) (texte, couleurs d'arrière-plan, combinaisons de touches, volets multiples, etc.).
 
-## <a name="set-up-a-basic-web-app-framework-by-using-express"></a>Configurer un framework d'application web de base à l'aide d'Express
+## <a name="set-up-a-basic-web-app-framework-by-using-express"></a>Configurer une infrastructure d’application web de base avec Express
 
-Express est un framework Node.js minimal, flexible et rationalisé qui facilite le développement d'une application web capable de traiter plusieurs types de demandes, comme GET, PUT, POST et DELETE. Express est fourni avec un générateur d'application qui crée automatiquement une architecture de fichiers pour votre application.
+Express est une infrastructure Node.js minimale, flexible et rationalisée qui facilite le développement d’une application web pouvant traiter plusieurs types de requêtes, notamment GET, PUT, POST et DELETE. Express est fourni avec un générateur d’applications qui crée automatiquement une architecture de fichiers pour l’application.
 
 Pour créer un projet avec Express.js :
 
@@ -78,18 +78,18 @@ Pour créer un projet avec Express.js :
 3. Utilisez Express pour créer un modèle de projet HelloWorld : `npx express-generator HelloWorld --view=pug`
 
 >[!NOTE]
-> Nous utilisons ici la commande `npx` pour exécuter le package Node Express.js sans l'installer réellement (ou en l'installant temporairement selon le point de vue). Si vous essayez d'utiliser la commande `express` ou de vérifier la version d'Express installée à l'aide de `express --version`, vous recevrez une réponse indiquant qu'Express est introuvable. Si vous souhaitez procéder à une installation globale d'Express afin de pouvoir l'utiliser à volonté, utilisez : `npm install -g express-generator`. Pour consulter la liste des packages qui ont été installés par npm, utilisez : `npm list`. Ceux-ci seront répertoriés par profondeur (nombre de répertoires imbriqués). Les packages que vous avez installés seront à la profondeur 0. Les dépendances de ces packages seront à la profondeur 1, d'autres à la profondeur 2, et ainsi de suite. Pour plus d'informations, consultez [Différence entre npx et npm](https://stackoverflow.com/questions/50605219/difference-between-npx-and-npm) sur StackOverflow.
+> Nous utilisons ici la commande `npx` pour exécuter le package Node Express.js sans l'installer réellement (ou en l'installant temporairement selon le point de vue). Si vous essayez d'utiliser la commande `express` ou de vérifier la version d'Express installée à l'aide de `express --version`, vous recevrez une réponse indiquant qu'Express est introuvable. Si vous souhaitez procéder à une installation globale d'Express afin de pouvoir l'utiliser à volonté, utilisez : `npm install -g express-generator`. Pour consulter la liste des packages qui ont été installés par npm, utilisez : `npm list`. Ils sont triés par profondeur (nombre de répertoires imbriqués). Les packages que vous avez installés sont à la profondeur 0, leurs dépendances à la profondeur 1, les suivantes à la profondeur 2 et ainsi de suite. Pour plus d'informations, consultez [Différence entre npx et npm](https://stackoverflow.com/questions/50605219/difference-between-npx-and-npm) sur StackOverflow.
 
 4. Examinez les fichiers et dossiers inclus dans le projet Express en ouvrant celui-ci dans VS Code : `code .`
 
    Les fichiers générés par Express créent une application web dont l'architecture qui peut sembler impressionnante au premier abord. La fenêtre **Explorer** de VS Code (accessible via Ctrl + Maj + E) montre que les fichiers et dossiers suivants ont été générés :
 
-   - `bin`. Contient le fichier exécutable qui démarre votre application. Il démarre un serveur (sur le port 3000 si aucune alternative n'est fournie) et configure la gestion des erreurs de base. 
-   - `public`. Contient tous les fichiers accessibles au public, y compris les fichiers JavaScript, les feuilles de style CSS, les fichiers de polices, les images et toute autre ressource dont les utilisateurs ont besoin lorsqu'ils se connectent à votre site web.
-   - `routes`. Contient tous les gestionnaires de routage de l'application. Deux fichiers, `index.js` et `users.js`, sont automatiquement générés dans ce dossier pour servir d'exemples de séparation de la configuration de routage de votre application.
-   - `views`. Contient les fichiers utilisés par votre moteur de modèle. Express est configuré pour rechercher une vue correspondante lorsque la méthode Render est appelée. Le moteur de modèle par défaut est Jade, mais Jade a été déconseillé en faveur de Pug. Nous avons donc utilisé l'indicateur `--view` pour modifier le moteur view (modèle). Pour afficher les options d'indicateur `--view`, entre autres, utilisez `express --help`.
-   - `app.js`. Point de départ de votre application. Il charge tout et commence à servir les demandes des utilisateurs. Il s'agit en quelque sorte de la colle qui permet de maintenir les différentes pièces ensemble.
-   - `package.json`. Contient la description du projet, le gestionnaire de scripts et le manifeste de l'application. Son rôle consiste principalement à de suivre les dépendances de votre application et leurs versions respectives.
+   - `bin`. contient le fichier exécutable qui lance l’application. Il déclenche un serveur (sur le port 3000 si aucun autre n’est indiqué) et configure la gestion des erreurs de base. 
+   - `public`. contient tous les fichiers publiquement accessibles, notamment les fichiers JavaScript, les feuilles de style CSS, les fichiers de police, les images et toutes les autres ressources nécessaires à tous ceux qui se connectent au site web.
+   - `routes`. contient tous les gestionnaires de routage de l’application. Deux fichiers, `index.js` et `users.js`, sont automatiquement générés dans ce dossier pour servir d’exemples illustrant la séparation de la configuration du routage de l’application.
+   - `views`. contient les fichiers utilisés par le moteur de modèle. Express est configuré pour rechercher à cet endroit une vue correspondante lorsque la méthode de rendu est appelée. Le moteur de modèle par défaut est Jade, mais il a été déprécié au profit de Pug. Nous utilisons donc l’indicateur `--view` pour modifier le moteur d’affichage (de modèle). Pour voir les options d’indicateur `--view`, entre autres, utilisez `express --help`.
+   - `app.js`. point de départ de l’application. Il charge tout et commence à traiter les demandes des utilisateurs. C’est en somme le ciment qui maintient toutes les pièces ensemble.
+   - `package.json`. contient la description du projet, le gestionnaire de scripts et le manifeste de l’application. Son rôle principal est d’assurer le suivi des dépendances de l’application et de leurs versions respectives.
 
 5. Vous devez maintenant installer les dépendances qu'Express utilise pour créer et exécuter votre application Express HelloWorld (packages utilisés pour des tâches telles que l'exécution du serveur, comme défini dans le fichier `package.json`). Dans VS Code, ouvrez votre terminal en sélectionnant **Afficher** > **Terminal** (ou sélectionnez Ctrl + `, en utilisant le caractère d'impulsion), et assurez-vous que vous êtes toujours dans le répertoire du projet « HelloWorld ». Installez les dépendances du package Express :
 
@@ -97,7 +97,7 @@ Pour créer un projet avec Express.js :
 npm install
 ```
 
-6. À ce stade, le framework est configuré pour une application web de plusieurs pages qui a accès à une grande variété d'API, d'intergiciels et de méthodes utilitaires HTTP, ce qui facilite la création d'une API robuste. Démarrez l'application Express sur un serveur virtuel en entrant :
+6. L’infrastructure est maintenant définie pour une application web de plusieurs pages ayant accès à un large éventail d’API, de méthodes utilitaires HTTP et d’intergiciels (middleware), ce qui facilite la création d’une API robuste. Démarrez l'application Express sur un serveur virtuel en entrant :
 
 ```bash
 npx cross-env DEBUG=HelloWorld:* npm start
@@ -114,21 +114,21 @@ npx cross-env DEBUG=HelloWorld:* npm start
 
 9. Pour arrêter l'exécution de votre application Express, sur votre terminal, entrez : **Ctrl + C**
 
-## <a name="try-using-a-nodejs-module"></a>Essayer d’utiliser un module Node.js
+## <a name="try-using-a-nodejs-module"></a>Utiliser un module Node.js
 
-Node.js dispose d'outils qui vous permettent de développer des applications web côté serveur, dont certaines sont intégrées et beaucoup d'autres sont disponibles via npm. Ces modules peuvent vous aider à accomplir de nombreuses tâches :
+Node.js comprend des outils servant à faciliter le développement d’applications web côté serveur, dont certains sont intégrés et beaucoup d’autres disponibles avec npm. Ces modules sont utiles pour de nombreuses tâches :
 
-|Outil               |Rôle                                                                                                  |
+|Outil               |Usage                                                                                                  |
 |:----------------- |:---------------------------------------------------------------------------------------------------------|
-|gm, sharp          |Manipulation d'images (modification, redimensionnement, compression, etc.) directement dans votre code JavaScript |
-|PDFKit             |Génération de fichiers PDF                                                                                            |
-|validator.js       |Validation de chaîne                                                                                         |
+|gm, sharp          |Manipulation d’images (modification, redimensionnement, compression, etc.) directement dans le code JavaScript |
+|PDFKit             |Génération de PDF                                                                                            |
+|validator.js       |Validation de chaînes                                                                                         |
 |imagemin, UglifyJS2|Minimisation                                                                                              |
-|spritesmith        |Génération de feuilles Sprite                                                                                   |
+|spritesmith        |Génération de feuilles de sprites                                                                                   |
 |winston            |Journalisation                                                                                                  |
-|commander.js       |Création d'applications en ligne de commande                                                                       |
+|commander.js       |Création d’applications en ligne de commande                                                                       |
 
-Utilisons le module OS intégré pour obtenir des informations sur le système d'exploitation de votre ordinateur :
+Utilisons le module de système d’exploitation intégré pour obtenir des informations sur le système d’exploitation de l’ordinateur :
 
 1) Sur votre ligne de commande, ouvrez l'interface CLI de Node.js. Vous verrez l'invite `>` indiquant que vous utilisez Node.js après avoir entré : `node`
 
@@ -148,5 +148,5 @@ Utilisons le module OS intégré pour obtenir des informations sur le système d
 Dans ce guide, vous avez découvert les bases de ce que vous pouvez accomplir avec Node.js, vous avez essayé d'utiliser l'interface de ligne de commande de Node.js dans VS Code, vous avez créé une application web simple à l'aide d'Express.js avant de l'exécuter localement dans votre navigateur web, puis vous avez essayé d'utiliser quelques-uns des modules Node.js intégrés. Pour en savoir plus sur l'installation et l'utilisation des frameworks web les plus populaires de Node.js, passez au guide suivant qui couvre Next.js (framework web de rendu coté serveur basé sur React), Nuxt.js (framework web de rendu coté serveur basé sur Vue) et Gatsby (framework web de rendu statique basé sur React). Vous pouvez également apprendre à utiliser des bases de données MongoDB ou PostgreSQL, ou des conteneurs Docker.
 
 - [Prise en main des frameworks web Node.js sous Windows](./web-frameworks.md)
-- [Prise en main de la connexion des applications Node.js à une base de données](./databases.md)
+- [Prise en main de la connexion des applications Node.js à une base de données](https://docs.microsoft.com/windows/wsl/tutorials/wsl-database)
 - [Prise en main des conteneurs Docker avec Node.js](./containers.md)
