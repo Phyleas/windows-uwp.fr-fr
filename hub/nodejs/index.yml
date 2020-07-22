@@ -10,12 +10,12 @@ metadata:
   ms.prod: dev-environment
   ms.technology: windows-node
   ms.topic: landing-page
-  ms.openlocfilehash: 32c477cf230b7f8b5490b6f8ae7d227b6000aa77
-  ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+  ms.openlocfilehash: 6af50395c4ffd8e9ea0b2e0eb9543be3e47367f7
+  ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
   ms.translationtype: HT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 04/29/2020
-  ms.locfileid: "72314803"
+  ms.lasthandoff: 07/20/2020
+  ms.locfileid: "86493454"
 landingContent:
 - title: Configurer votre environnement de développement Node.js
   linkLists:
@@ -53,16 +53,10 @@ landingContent:
       url: ./web-frameworks.md#get-started-with-gatsbyjs
 - title: Bien démarrer avec les bases de données
   linkLists:
-  - linkListType: concept
-    links:
-    - text: MongoDB ou PostgreSQL
-      url: ./databases.md
   - linkListType: quickstart
     links:
-    - text: Bien démarrer avec MongoDB
-      url: ./databases.md#install-mongodb
-    - text: Bien démarrer avec PostgreSQL
-      url: ./databases.md#install-postgresql
+    - text: Installer et exécuter MySQL, PostgreSQL, SQLite, Microsoft SQL Server, MongoDB ou Redis
+      url: https://docs.microsoft.com/windows/wsl/tutorials/wsl-database
 - title: Bien démarrer avec les conteneurs
   linkLists:
   - linkListType: concept

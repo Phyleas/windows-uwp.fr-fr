@@ -7,6 +7,8 @@
           href: desktop/index.md
         - name: Choisir votre plateforme d’application
           href: desktop/choose-your-platform.md
+        - name: Modèles Visual Studio pour les applications Windows
+          href: desktop/visual-studio-templates.md
         - name: Moderniser vos applications de bureau
           items:
             - name: Vue d’ensemble
@@ -77,18 +79,23 @@
       items:
         - name: Vue d’ensemble
           href: winui/index.md
-        - name: "Bibliothèque d’interface utilisateur Windows\_3.0 Preview\_1"
+        - name: "Bibliothèque d’interface utilisateur Windows\_3.0 Preview\_2"
           items:
-            - name: Téléchargement et notes de publication
+            - name: Vue d’ensemble et notes de publication
               href: winui/winui3/index.md
-            - name: "Bien démarrer avec WinUI\_3.0 pour les applications de bureau"
+            - name: "Bien démarrer avec WinUI\_3 pour les applications de bureau"
               href: winui/winui3/get-started-winui3-for-desktop.md
+            - name: "Bien démarrer avec WinUI\_3 pour les applications UWP"
+              href: winui/winui3/get-started-winui3-for-uwp.md
+            - name: "Contrôles XAML basés sur un modèle pour les applications UWP et WinUI\_3 avec C++/WinRT"
+              href: winui/winui3/xaml-templated-controls-cppwinrt-winui3.md
         - name: "Bibliothèque Windows UI\_2.x"
-          href: winui/winui2/index.md
           items:
+            - name: Vue d’ensemble
+              href: winui/winui2/index.md
             - name: Installation
               items:
-                - name: Prendre en main
+                - name: "Bien démarrer avec WinUI\_2.x"
                   href: winui/winui2/getting-started.md
                 - name: Liste de packages NuGet
                   href: winui/winui2/nuget-packages.md

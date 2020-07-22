@@ -7,12 +7,12 @@ keywords: développement d’applications de bureau Win32 pour Windows
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: d052ad0f670bccd9b32d2e3643520dd6129ed22a
-ms.sourcegitcommit: cc645386b996f6e59f1ee27583dcd4310f8fb2a6
+ms.openlocfilehash: 20399b9a6398b1f17f74d2de74cc4b5e4ba270ac
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84262740"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86492994"
 ---
 # <a name="build-desktop-apps-for-windows-pcs"></a>Créer des applications de bureau pour les PC Windows
 
@@ -20,9 +20,7 @@ Cet article fournit les informations dont vous avez besoin pour commencer à cr�
 
 ## <a name="platforms-for-desktop-apps"></a>Plateformes pour les applications de bureau
 
-Il existe quatre plateformes principales pour créer des applications de bureau pour les PC Windows. Chaque plateforme fournit un modèle d’application qui définit le cycle de vie de l’application, un ensemble complet de contrôles d’interface utilisateur, et l’accès à un ensemble complet d’API managées ou natives pour l’utilisation des fonctionnalités Windows.
-
-Le tableau suivant présente les plateformes. Pour une comparaison détaillée de ces plateformes ainsi que des ressources supplémentaires pour chaque plateforme, consultez [Choisir votre plateforme d’application](choose-your-platform.md).
+Il existe quatre plateformes principales pour créer des applications de bureau pour les PC Windows. Chaque plateforme fournit un modèle d’application qui définit le cycle de vie de l’application, un framework d’interface utilisateur complet et un ensemble de contrôles d’interface utilisateur qui vous permettent de créer des applications de bureau comme Word, Excel et Photoshop, et un accès à un ensemble complet d’API managées ou natives pour utiliser les fonctionnalités Windows. Pour une comparaison détaillée de ces plateformes ainsi que des ressources supplémentaires pour chaque plateforme, consultez [Choisir votre plateforme d’application](choose-your-platform.md).
 
 <br/>
 
@@ -46,8 +44,8 @@ Le tableau suivant présente les plateformes. Pour une comparaison détaillée d
 <td><a href="/windows/uwp/get-started/">Bien démarrer</a><br/><a href="/uwp/">Informations de référence sur les API</a><br/><a href="https://github.com/Microsoft/Windows-universal-samples">Exemples</a></td>
 </tr>
 <tr class="even">
-<td><a href="https://docs.microsoft.com/windows/win32/">Win32</a></td>
-<td><p>Plateforme préférée pour les applications Windows C/C++ natives qui nécessitent un accès direct à Windows et à du matériel.</p></td>
+<td><a href="https://docs.microsoft.com/windows/win32/">C++/Win32</a></td>
+<td><p>Plateforme préférée pour les applications Windows natives qui nécessitent un accès direct à Windows et à du matériel.</p></td>
 <td><a href="/windows/win32/desktop-programming/">Bien démarrer</a><br/><a href="/windows/win32/apiindex/windows-api-list/">Informations de référence sur les API</a><br/><a href="https://github.com/Microsoft/Windows-classic-samples">Exemples</a></td>
 </tr>
 <tr class="odd">
@@ -64,7 +62,7 @@ Le tableau suivant présente les plateformes. Pour une comparaison détaillée d
 </table>
 
 > [!NOTE]
-> Toutes ces plateformes d’application fournissent un framework d’interface utilisateur et un ensemble de contrôles d’interface utilisateur complets qui vous permettent de créer des applications de bureau telles que Word, Excel et Photoshop qui s’exécutent sur le bureau Windows classique et tirent pleinement parti des fonctionnalités propres à cet environnement. Sur Windows 10, chacune de ces plateformes prend également en charge l’utilisation de la bibliothèque d’interface utilisateur Windows (WinUI) pour créer son interface utilisateur. Pour plus d’informations sur WinUI pour les applications de bureau, consultez [cette section](choose-your-platform.md#windows-ui-library).
+> Sur Windows 10, chacune de ces plateformes prend également en charge l’utilisation de la bibliothèque d’interface utilisateur Windows (WinUI) pour créer des interfaces utilisateur. Pour plus d’informations sur WinUI pour les applications de bureau, consultez [cette section](choose-your-platform.md#windows-ui-library).
 
 ## <a name="update-existing-desktop-apps-for-windows-10"></a>Mettre à jour les applications de bureau existantes pour Windows 10
 
@@ -94,6 +92,7 @@ Si vous créez une application de bureau pour Windows, voici des ressources pour
 | Article | Description |
 |---------|-------------|
 | [Choisir votre plateforme d’application](choose-your-platform.md) | Fournit une comparaison détaillée des plateformes d’application de bureau principales et peut vous aider à choisir la plateforme qui correspond à vos besoins. Cet article fournit également des liens utiles vers la documentation de chaque plateforme. |
+| [Modèles de projet Visual Studio pour les applications Windows](visual-studio-templates.md) | Décrit les modèles de projet et d’élément que Visual Studio fournit pour vous aider à générer des applications pour les appareils Windows 10 à l’aide de C\# ou de C++. |
 | [Moderniser les applications de bureau](/windows/apps/desktop/modernize) | Décrit les dernières fonctionnalités de développement Windows 10 et UWP que vous pouvez utiliser dans n’importe quelle application de bureau, y compris les applications WPF, Windows Forms et C++ Win32. |
 | [Fonctionnalités et technologies](/windows/apps/features-and-technologies) | Fournit une vue d’ensemble des fonctionnalités Windows qui sont accessibles via chacune des plateformes d’application de bureau principales, ainsi que des liens vers la documentation associée. |
 
