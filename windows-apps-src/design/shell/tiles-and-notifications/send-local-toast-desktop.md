@@ -8,12 +8,12 @@ ms.date: 01/23/2018
 ms.topic: article
 keywords: Windows 10, UWP, Win32, Desktop, notifications Toast, envoyer un toast, envoyer un toast local, un pont de bureau, msix, packages éparss, C#, C Sharp, notification Toast, WPF
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d8332745b44bc688fbf2ca7cf3b42cf7300d579
-ms.sourcegitcommit: 179f8098d10e338ad34fa84934f1654ec58161cd
+ms.openlocfilehash: 6f1eef86045f44fa75363b54fa58e3e7089d64e0
+ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85717645"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997926"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>Envoyer une notification Toast locale à partir d’applications Desktop C#
 
@@ -58,15 +58,15 @@ public class MyNotificationActivator : NotificationActivator
 Ensuite, vous devez vous inscrire auprès de la plateforme de notification. Différentes étapes varient selon que vous utilisez des packages MSIX/épars ou Win32 classique. Si vous prenez en charge les deux, vous devez effectuer les deux étapes (Toutefois, vous n’avez pas besoin de répliquer votre code, notre bibliothèque le gère pour vous !).
 
 
-### <a name="msixsparse-packages"></a>Packages MSIX/Sparse
+#### <a name="msixsparse-packages"></a>[Packages MSIX/Sparse](#tab/msix-sparse)
 
 Si vous utilisez un package [MSIX](https://docs.microsoft.com/windows/msix/desktop/source-code-overview) ou [Sparse](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) (ou si vous prenez en charge les deux), dans votre **Package. appxmanifest**, ajoutez :
 
 1. Déclaration pour **xmlns : com**
 2. Déclaration pour **xmlns : Desktop**
 3. Dans l’attribut **ignorablenamespaces en spécifiant** , **com** et **Desktop**
-4. **com : extension** pour l’activateur com à l’aide du GUID de l’étape #4. Veillez à inclure le `Arguments="-ToastActivated"` pour que vous sachiez que votre lancement s’est bien fait d’un toast
-5. **Desktop : extension** pour **Windows. toastNotificationActivation** pour déclarer le CLSID de votre activateur Toast (le GUID de l’étape #3).
+4. **com : extension** pour l’activateur com à l’aide du GUID de l’étape #2. Veillez à inclure le `Arguments="-ToastActivated"` pour que vous sachiez que votre lancement s’est bien fait d’un toast
+5. **Desktop : extension** pour **Windows. toastNotificationActivation** pour déclarer le CLSID de votre activateur Toast (le GUID de l’étape #2).
 
 **Package.appxmanifest**
 
@@ -104,15 +104,15 @@ Si vous utilisez un package [MSIX](https://docs.microsoft.com/windows/msix/deskt
 ```
 
 
-### <a name="classic-win32"></a>Win32 classique
+#### <a name="classic-win32"></a>[Win32 classique](#tab/classic)
 
-Si vous utilisez Win32 classique (ou si vous prenez en charge les deux), vous devez déclarer l’ID de modèle utilisateur de l’application (identifiant AUMID) et le CLSID de l’activateur Toast (le GUID à partir de l’étape #3) sur le raccourci de votre application dans Démarrer.
+Si vous utilisez Win32 classique (ou si vous prenez en charge les deux), vous devez déclarer l’ID de modèle utilisateur de l’application (identifiant AUMID) et le CLSID de l’activateur Toast (le GUID à partir de l’étape #2) sur le raccourci de votre application dans Démarrer.
 
 Choisissez un identifiant AUMID unique qui identifie votre application Win32. Il se présente généralement sous la forme [CompanyName]. [AppName], mais vous voulez vous assurer qu’il est unique pour toutes les applications (n’hésitez pas à ajouter des chiffres à la fin).
 
-#### <a name="step-31-wix-installer"></a>Étape 3,1 : programme d’installation de WiX
+### <a name="step-31-wix-installer"></a>Étape 3,1 : programme d’installation de WiX
 
-Si vous utilisez WiX pour votre programme d’installation, modifiez le fichier **Product. wxs** pour ajouter les deux propriétés de raccourci au raccourci du menu Démarrer, comme indiqué ci-dessous. Assurez-vous que le GUID de l’étape #3 est inséré `{}` comme indiqué ci-dessous.
+Si vous utilisez WiX pour votre programme d’installation, modifiez le fichier **Product. wxs** pour ajouter les deux propriétés de raccourci au raccourci du menu Démarrer, comme indiqué ci-dessous. Assurez-vous que le GUID de l’étape #2 est inséré `{}` comme indiqué ci-dessous.
 
 **Product. wxs**
 
@@ -132,9 +132,9 @@ Si vous utilisez WiX pour votre programme d’installation, modifiez le fichier 
 > Pour utiliser réellement les notifications, vous devez installer votre application par le biais du programme d’installation avant de procéder au débogage normalement, afin que le raccourci de démarrage avec votre identifiant AUMID et CLSID soit présent. Une fois le raccourci de démarrage présent, vous pouvez déboguer à l’aide de la touche F5 à partir de Visual Studio.
 
 
-#### <a name="step-32-register-aumid-and-com-server"></a>Étape 3,2 : inscrire identifiant AUMID et le serveur COM
+### <a name="step-32-register-aumid-and-com-server"></a>Étape 3,2 : inscrire identifiant AUMID et le serveur COM
 
-Ensuite, quel que soit votre programme d’installation, dans le code de démarrage de votre application (avant d’appeler les API de notification), appelez la méthode **RegisterAumidAndComServer** , en spécifiant votre classe d’activateur de notification à partir de l’étape #3 et votre identifiant aumid utilisé ci-dessus.
+Ensuite, quel que soit votre programme d’installation, dans le code de démarrage de votre application (avant d’appeler les API de notification), appelez la méthode **RegisterAumidAndComServer** , en spécifiant votre classe d’activateur de notification à partir de l’étape #2 et votre identifiant aumid utilisé ci-dessus.
 
 ```csharp
 // Register AUMID and COM server (for MSIX/sparse package apps, this no-ops)
@@ -145,12 +145,14 @@ Si vous prenez en charge à la fois le package MSIX/Sparse et le Win32 classique
 
 Cette méthode vous permet d’appeler les API de compatibilité pour envoyer et gérer des notifications sans avoir à fournir constamment vos identifiant AUMID. Elle insère la clé de registre LocalServer32 pour le serveur COM.
 
+---
+
 
 ## <a name="step-4-register-com-activator"></a>Étape 4 : inscrire l’activateur COM
 
 Pour le package MSIX/Sparse et les applications Win32 classiques, vous devez inscrire votre type d’activateur de notification, afin de pouvoir gérer les activations Toast.
 
-Dans le code de démarrage de votre application, appelez la méthode **RegisterActivator** suivante, en transmettant votre implémentation de la classe **NotificationActivator** que vous avez créée à l’étape #3. Cette méthode doit être appelée pour que vous puissiez recevoir des activations Toast.
+Dans le code de démarrage de votre application, appelez la méthode **RegisterActivator** suivante, en transmettant votre implémentation de la classe **NotificationActivator** que vous avez créée à l’étape #2. Cette méthode doit être appelée pour que vous puissiez recevoir des activations Toast.
 
 ```csharp
 // Register COM server and activator type
@@ -165,7 +167,7 @@ L’envoi d’une notification est identique aux applications UWP, sauf que vous
 > [!NOTE]
 > Installez la [bibliothèque de notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) afin de pouvoir créer des notifications à l’aide de C#, comme indiqué ci-dessous, au lieu d’utiliser des données XML brutes.
 
-Veillez à utiliser le **ToastContent** présenté ci-dessous (ou le modèle ToastGeneric si vous créez un fichier XML), car les modèles de notification Windows 8.1 Toast hérités n’activeront pas votre activateur de notification com que vous avez créé à l’étape #3.
+Veillez à utiliser le **ToastContent** présenté ci-dessous (ou le modèle ToastGeneric si vous créez un fichier XML), car les modèles de notification Windows 8.1 Toast hérités n’activeront pas votre activateur de notification com que vous avez créé à l’étape #2.
 
 > [!IMPORTANT]
 > Les images http sont uniquement prises en charge dans les applications de package MSIX/Sparse qui disposent de la fonctionnalité Internet dans leur manifeste. Les applications Win32 classiques ne prennent pas en charge les images http ; vous devez télécharger l’image dans vos données d’application locales et la référencer localement.

@@ -8,19 +8,19 @@ keywords: voix, vocal, reconnaissance vocale, langage naturel, dictée, saisie, 
 ms.date: 10/25/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5192177edf284d1fe6e0c6eb06bf8713fbff8b4e
-ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
+ms.openlocfilehash: 8ecdd882357a7e20506ab6116748d57ab0dde33f
+ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80218379"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997716"
 ---
 # <a name="speech-recognition"></a>Reconnaissance vocale
 
 
 La reconnaissance vocale permet de fournir une saisie vocale, de spécifier une action ou une commande et d’accomplir différentes tâches.
 
-> **API importantes** : [**Windows.Media.SpeechRecognition**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition)
+> **API importantes**: [ **Windows. Media. SpeechRecognition**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition)
 
 La reconnaissance vocale se compose d’un runtime de fonctions vocales, d’API de reconnaissance vocale pour programmer le runtime, de grammaires prêtes à l’emploi pour la dictée et la recherche web, ainsi que d’une interface utilisateur système par défaut permettant aux utilisateurs de découvrir et d’utiliser les fonctionnalités de reconnaissance vocale.
 
@@ -216,26 +216,26 @@ Vous pouvez utiliser les types de contraintes suivants pour la reconnaissance de
 
 Les grammaires de dictée et de recherche web prédéfinies vous permettent d’activer la reconnaissance vocale dans votre application sans créer votre propre grammaire. Si vous optez pour ces grammaires, la reconnaissance vocale est effectuée par un service web distant qui renvoie les résultats à l’appareil.
 
-La grammaire de dictée de texte libre par défaut peut reconnaître la plupart des mots et expressions prononcés par un utilisateur dans une langue spécifique. Elle est optimisée pour reconnaître les expressions courtes. La grammaire de dictée prédéfinie est utilisée si vous ne spécifiez pas de contrainte pour votre objet [**SpeechRecognizer**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer). La dictée de texte libre est utile si vous ne souhaitez pas limiter ce qu’un utilisateur peut dire. Elle est généralement utilisée pour créer des notes ou dicter le contenu d’un message.
+La grammaire de dictée de texte libre par défaut peut reconnaître la plupart des mots et expressions prononcés par un utilisateur dans une langue spécifique. Elle est optimisée pour reconnaître les expressions courtes. La syntaxe de dictée prédéfinie est utilisée si vous ne spécifiez aucune contrainte pour votre objet [**SpeechRecognizer**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer) . La dictée de texte libre est utile si vous ne souhaitez pas limiter ce qu’un utilisateur peut dire. Elle est généralement utilisée pour créer des notes ou dicter le contenu d’un message.
 
 La grammaire de recherche web, comme une grammaire de dictée, contient un grand nombre de mots et expressions qu’un utilisateur peut dire. Toutefois, elle est optimisée pour reconnaître les termes que les personnes utilisent généralement lors des recherches sur le web.
 
 > [!NOTE]
-> étant donné que les grammaires prédéfinies et les grammaires de recherche Web peuvent être volumineuses, et parce qu’elles sont en ligne (et non sur l’appareil), les performances peuvent ne pas être aussi rapides qu’avec une grammaire personnalisée installée sur l’appareil.     
+> Étant donné que les grammaires de dictée et de recherche web prédéfinies peuvent être volumineuses et qu’elles sont hébergées en ligne (elles ne se trouvent pas sur l’appareil), les performances obtenues peuvent ne pas être aussi bonnes qu’avec des grammaires personnalisées qui sont installées sur l’appareil.     
 
 Ces grammaires prédéfinies peuvent être utilisées pour reconnaître jusqu’à 10 secondes de saisie vocale et ne nécessitent aucun effort de création de votre part. Toutefois, elles requièrent une connexion à un réseau.
 
-Pour utiliser les contraintes de service web, vous devez activer la prise en charge de la saisie vocale et de la dictée dans **Paramètres** en activant l’option « Reconnaître ma voix » dans la page **Paramètres -> Confidentialité -> Voix, entrée manuscrite et frappe**.
+Pour utiliser les contraintes de service Web, l’entrée vocale et la prise en charge de la dictée doivent être activées dans les **paramètres** en activant l’option « obtenir un savoir-faire » dans **paramètres-> la confidentialité > la reconnaissance vocale, l’entrée manuscrite et la saisie**.
 
-Nous indiquons ici comment vérifier si la saisie vocale est activée et comment ouvrir la page Paramètres -> Confidentialité -> Voix, entrée manuscrite et frappe si cette fonction n’est pas activée.
+Ici, nous montrons comment tester si les entrées vocales sont activées et ouvrir la page Paramètres-> confidentialité-> la parole, l’entrée manuscrite et la frappe, si ce n’est pas le cas.
 
-Nous commençons par initialiser une variable globale (HResultPrivacyStatementDeclined) sur la valeur HResult de 0x80045509. Consultez [gestion des exceptions pour en C\# ou Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/dn532194(v=win.10)).
+Nous commençons par initialiser une variable globale (HResultPrivacyStatementDeclined) sur la valeur HResult de 0x80045509. Consultez [gestion des exceptions pour dans C \# ou Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/dn532194(v=win.10)).
 
 ```csharp
 private static uint HResultPrivacyStatementDeclined = 0x80045509;
 ```
 
-Nous interceptons ensuite les exceptions standard au cours de la reconnaissance continue et nous testons si la valeur de [**HResult**](https://docs.microsoft.com/uwp/api/Windows.Foundation.HResult) est égale à celle de la variable HResultPrivacyStatementDeclined. Dans l’affirmative, nous affichons un avertissement et un appel `await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-accounts"));` d’ouverture de la page de paramètres.
+Nous interceptons ensuite toutes les exceptions standard pendant recogntion et testons si la valeur [**HRESULT**](https://docs.microsoft.com/uwp/api/Windows.Foundation.HResult) est égale à la valeur de la variable HResultPrivacyStatementDeclined. Si c’est le cas, nous affichons un avertissement et appelons `await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-accounts"));` pour ouvrir la page des paramètres.
 
 ```csharp
 catch (Exception exception)
@@ -278,9 +278,9 @@ Contrairement à une contrainte de liste de programmation, une grammaire SRGS (S
 
 Utilisez un fichier XML VCD (Voice Command Definition) pour définir les commandes que l’utilisateur peut prononcer pour lancer des actions au moment de l’activation de votre application. Pour plus d’informations, consultez [activer une application de premier plan avec des commandes vocales via Cortana](https://docs.microsoft.com/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana).
 
-Voir [**SpeechRecognitionVoiceCommandDefinitionConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionVoiceCommandDefinitionConstraint)/
+Voir [ **SpeechRecognitionVoiceCommandDefinitionConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionVoiceCommandDefinitionConstraint)/
 
-**Notez**  le type de contrainte que vous utilisez dépend de la complexité de l’expérience de reconnaissance que vous souhaitez créer. Un type de contrainte peut être mieux adapté à une tâche de reconnaissance vocale particulière, mais vous pouvez aussi combiner tous les types de contrainte dans votre application.
+**Remarque**    Le type de contrainte que vous utilisez dépend de la complexité de l’expérience de reconnaissance que vous souhaitez créer. Un type de contrainte peut être mieux adapté à une tâche de reconnaissance vocale particulière, mais vous pouvez aussi combiner tous les types de contrainte dans votre application.
 Pour apprendre à utiliser des contraintes, voir [Définir des contraintes de reconnaissance vocale personnalisées](define-custom-recognition-constraints.md).
 
 La grammaire de dictée prédéfinie d’une application Windows universelle reconnaît la plupart des mots et des expressions courtes dans une langue donnée. Elle est activée par défaut lorsqu’un objet du moteur de reconnaissance vocale est instancié sans contraintes personnalisées.
@@ -289,7 +289,7 @@ Dans cet exemple, nous montrons comment effectuer les opérations suivantes :
 
 - créer un moteur de reconnaissance vocale ;
 - compiler les contraintes de l’application Windows universelle par défaut (aucune grammaire n’a été ajoutée à l’ensemble de grammaires du moteur de reconnaissance vocale) ;
-- commencer à écouter les données vocales en utilisant l’interface utilisateur de reconnaissance vocale de base et le retour de la conversion de texte par synthèse vocale (TTS) fourni par la méthode [**RecognizeWithUIAsync**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.recognizewithuiasync). Utilisez la méthode [**RecognizeAsync**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.recognizeasync) si l’interface utilisateur par défaut n’est pas requise.
+- Commencez à écouter la parole à l’aide de l’interface utilisateur de reconnaissance de base et des commentaires TTS fournis par la méthode [**RecognizeWithUIAsync**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.recognizewithuiasync) . Utilisez la méthode [**RecognizeAsync**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.recognizeasync) si l’interface utilisateur par défaut n’est pas requise.
 
 ```CSharp
 private async void StartRecognizing_Click(object sender, RoutedEventArgs e)
@@ -312,7 +312,7 @@ private async void StartRecognizing_Click(object sender, RoutedEventArgs e)
 ## <a name="customize-the-recognition-ui"></a>Personnaliser l’interface utilisateur de reconnaissance vocale
 
 
-Quand votre application tente une reconnaissance vocale en appelant la méthode [**SpeechRecognizer.RecognizeWithUIAsync**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.recognizewithuiasync), plusieurs écrans s’affichent dans l’ordre suivant.
+Lorsque votre application tente de reconnaître la reconnaissance vocale en appelant [**SpeechRecognizer. RecognizeWithUIAsync**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.recognizewithuiasync), plusieurs écrans sont affichés dans l’ordre suivant.
 
 Si vous utilisez une contrainte basée sur une grammaire prédéfinie (dictée ou recherche web) :
 
@@ -368,17 +368,8 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 
 ## <a name="related-articles"></a>Articles connexes
 
-
-**Les développeurs**
 * [Interactions vocales](speech-interactions.md)
-**Concepteurs**
-* [Recommandations en matière de conception de fonctions vocales](https://docs.microsoft.com/windows/uwp/input-and-devices/speech-interactions)
+
 **Exemples**
-* [Exemple de reconnaissance vocale et de synthèse vocale](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)
- 
 
- 
-
-
-
-
+* [Reconnaissance vocale et exemple de synthèse vocale](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)
