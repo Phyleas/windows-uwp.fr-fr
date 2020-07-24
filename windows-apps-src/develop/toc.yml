@@ -426,7 +426,7 @@
                 - name: Spots publicitaires
                   href: ../monetize/interstitial-ads.md
                   items:
-                    - name: 'Exemple de code pour spot publicitaire en C#'
+                    - name: Exemple de code pour spot publicitaire en C#
                       href: ../monetize/interstitial-ad-sample-code-in-c.md
                     - name: Exemple de code pour spot publicitaire en JavaScript
                       href: ../monetize/interstitial-ad-sample-code-in-javascript.md
@@ -448,7 +448,7 @@
                 - name: Gérer des erreurs dans les publicités
                   href: ../monetize/error-handling-with-advertising-libraries.md
                   items:
-                    - name: 'Procédure pas à pas pour gérer les erreurs dans XAML/C#'
+                    - name: Procédure pas à pas pour gérer les erreurs dans XAML/C#
                       href: ../monetize/error-handling-in-xamlc-walkthrough.md
                     - name: Gestion des erreurs dans la procédure pas à pas pour JavaScript
                       href: ../monetize/error-handling-in-javascript-walkthrough.md
@@ -457,7 +457,7 @@
               items:
                 - name: Guide de résolution des problèmes pour HTML et JavaScript
                   href: ../monetize/html-and-javascript-troubleshooting-guide.md
-                - name: 'Guide de résolution des problèmes pour XAML et C#'
+                - name: Guide de résolution des problèmes pour XAML et C#
                   href: ../monetize/xaml-and-c-troubleshooting-guide.md
             - name: Notes de publication
               href: ../monetize/release-notes-for-the-advertising-libraries.md
@@ -722,8 +722,6 @@
                   href: ../monetize/change-the-billing-state-of-a-subscription-for-a-user.md
                 - name: "Renouveler une clé d’ID du Microsoft\_Store"
                   href: ../monetize/renew-a-windows-store-id-key.md
-            - name: API de métadonnées d’application pour les réseaux publicitaires
-              href: ../monetize/app-metadata-api-for-advertising-networks.md
         - name: "Envoyer des requêtes au Microsoft\_Store"
           href: ../monetize/send-requests-to-the-store.md
         - name: Ajouter des fonctionnalités de démonstration commerciale (RDX)
@@ -749,7 +747,7 @@
       items:
         - name: Introduction
           href: ../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md
-        - name: Prendre en main
+        - name: Prise en main
           href: ../cpp-and-winrt-apis/get-started.md
         - name: Nouveautés
           href: ../cpp-and-winrt-apis/news.md
@@ -799,9 +797,9 @@
           href: ../cpp-and-winrt-apis/interop-winrt-cx.md
         - name: Passer de WRL à C++/WinRT
           href: ../cpp-and-winrt-apis/move-to-winrt-from-wrl.md
-        - name: 'Portage d’un exemple d’application à partir de C#'
+        - name: Portage d’un exemple d’application à partir de C#
           href: ../cpp-and-winrt-apis/clipboard-to-winrt-from-csharp.md
-        - name: 'Passer de C# à C++/WinRT'
+        - name: Passer de C# à C++/WinRT
           href: ../cpp-and-winrt-apis/move-to-winrt-from-csharp.md
         - name: Interopérabilité avec ABI
           href: ../cpp-and-winrt-apis/interop-winrt-abi.md
@@ -819,7 +817,7 @@
           items:
             - name: Catégories de valeurs et références
               href: ../cpp-and-winrt-apis/cpp-value-categories.md
-    - name: 'C#/WinRT'
+    - name: C#/WinRT
       href: ../csharp-winrt/index.md
     - name: Sécurité
       href: ../security/index.md
@@ -930,11 +928,13 @@
     - name: Composants Windows Runtime
       href: ../winrt-components/index.md
       items:
+        - name: Composants Windows Runtime avec C++/WinRT
+          href: ../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md
         - name: Composants Windows Runtime avec C++/CX
           href: ../winrt-components/creating-windows-runtime-components-in-cpp.md
         - name: Procédure pas à pas d’un composant Windows Runtime C++/CX
           href: ../winrt-components/walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md
-        - name: 'Composants Windows Runtime avec C# et Visual Basic'
+        - name: Composants Windows Runtime avec C# et Visual Basic
           href: ../winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md
           items:
             - name: "Événements et accesseurs d’événement personnalisés dans les composants Windows\_Runtime"
@@ -947,7 +947,7 @@
               href: ../winrt-components/distributing-a-managed-windows-runtime-component.md
             - name: Mappages .NET des types Windows Runtime
               href: ../winrt-components/net-framework-mappings-of-windows-runtime-types.md
-        - name: 'Procédure pas à pas d’un composant Windows Runtime C# ou Visual Basic'
+        - name: Procédure pas à pas d’un composant Windows Runtime C# ou Visual Basic
           href: ../winrt-components/walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md
         - name: "Déclenchement d’événements dans les composants Windows\_Runtime"
           href: ../winrt-components/raising-events-in-windows-runtime-components.md
@@ -1438,7 +1438,7 @@
           href: ../threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md
         - name: Meilleures pratiques pour l’utilisation du pool de threads
           href: ../threading-async/best-practices-for-using-the-thread-pool.md
-        - name: 'Appeler des API asynchrones en C# ou Visual Basic'
+        - name: Appeler des API asynchrones en C# ou Visual Basic
           href: ../threading-async/call-asynchronous-apis-in-csharp-or-visual-basic.md
         - name: Créer un élément de travail périodique
           href: ../threading-async/create-a-periodic-work-item.md

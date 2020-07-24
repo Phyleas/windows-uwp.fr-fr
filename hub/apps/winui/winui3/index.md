@@ -3,12 +3,12 @@ title: WinUI 3 Preview 2 (juillet 2020)
 description: Vue d’ensemble de la version WinUI 3 Preview 2.
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: 6dd29b7da0ce2d0f3a08538d392792337f1e1b5a
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 0acea4520f10d5f64baa29cb64fdf0ba1cc4552e
+ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493053"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997956"
 ---
 # <a name="windows-ui-library-3-preview-2-july-2020"></a>Bibliothèque d’interface utilisateur Windows 3 Preview 2 (juillet 2020)
 
@@ -21,7 +21,7 @@ La bibliothèque d’interface utilisateur Windows (WinUI) 3 est un framework d
 > [!Important]
 > Cette préversion de WinUI 3 est destinée à une évaluation anticipée et à la collecte de commentaires de la communauté des développeurs. Il ne doit **PAS** être utilisé pour les applications de production.
 >
-> Nous continuerons à fournir des préversions de WinUI 3 tout au long de 2020 et au début de 2021, après quoi la première version officielle sera mise à disposition.
+> Nous continuerons à fournir des préversions de WinUI 3 tout au long de 2020 et au début de 2021, après quoi la première version officielle sera rendue disponible.
 >
 > Utilisez le [dépôt GitHub WinUI](https://github.com/microsoft/microsoft-ui-xaml) pour fournir des commentaires et journaliser des suggestions et des problèmes.
 
@@ -103,6 +103,9 @@ Les modèles d’élément suivants sont disponibles pour être utilisés dans u
 ## <a name="bug-fixes-and-other-improvements-in-winui-3-preview-2"></a>Résolutions de bogues et autres améliorations dans WinUI 3 Preview 2
 
 Il s’agit d’une liste complète des corrections de bogues et d’autres mises à jour pour Preview 2. Pour obtenir la liste des corrections de bogues les plus critiques résolus dans cette version, consultez notre [annonce de version](https://aka.ms/winui3/preview2-announcement).
+
+> [!NOTE]
+> WinUI 3 Preview 2 utilise la version 2.4.2 de la bibliothèque WinUI 2. 
 
 - [INotifyCollectionChanged](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged?view=net-5.0) et [INotifyPropertyChanged](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged?view=net-5.0) fonctionnent désormais comme prévu dans les applications de bureau C#
   - Cela a supprimé certains autres problèmes qui concernaient les contrôles de collection qui n’étaient pas mis à jour dans l’interface utilisateur alors qu’ils l’étaient dans le back-end.
