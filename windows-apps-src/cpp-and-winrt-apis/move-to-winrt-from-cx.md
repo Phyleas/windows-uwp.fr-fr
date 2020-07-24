@@ -5,12 +5,12 @@ ms.date: 01/17/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, porter, migrer, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: c5f8b9548bba704a7035b014ca3728db8bcbcc16
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 7282f85d5dcc093cbdabb1e03471ed533136fa7f
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80662412"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493574"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>Passer de C++/CX à C++/WinRT
 
@@ -18,7 +18,7 @@ Cette rubrique décrit les détails techniques impliqués dans le portage du cod
 
 ## <a name="porting-strategies"></a>Stratégies de portage
 
-Si vous le souhaitez, vous pouvez porter progressivement votre code C++/CX vers C++/WinRT. Le code C++/CX et C++/WinRT peut coexister dans le même projet, à l’exception de la prise en charge du compilateur XAML et les composants Windows Runtime. Pour ces deux exceptions, vous devrez cibler C++/CX ou C++/WinRT dans le même projet.
+Si vous le souhaitez, vous pouvez porter progressivement votre code C++/CX vers C++/WinRT. Le code C++/CX et C++/WinRT peut coexister dans le même projet, à l’exception de la prise en charge du compilateur XAML et les composants Windows Runtime. Pour ces deux exceptions, vous devrez cibler C++/CX ou C++/WinRT dans le même projet. Cela signifie que tous vos types de pages XAML doivent être entièrement C++/CX ou entièrement C++/WinRT. Vous pouvez toujours mélanger C++/CX et C++/WinRT en dehors des types de pages XAML dans le même projet.
 
 > [!IMPORTANT]
 > Si votre projet génère une application XAML, nous vous recommandons un flux de travail consistant à d’abord créer un nouveau projet dans Visual Studio à l’aide d’un des modèles de projet C++/WinRT (consultez [Prise en charge de Visual Studio pour C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)). Puis, commencez à copier le code source et le balisage à partir du projet C++/CX. Vous pouvez ajouter de nouvelles pages XAML à l’aide du menu **Projet** \> **Ajouter un nouvel élément...** \> **Visual C++**  > **Page vierge (C++/WinRT)** .
@@ -28,9 +28,13 @@ Si vous le souhaitez, vous pouvez porter progressivement votre code C++/CX vers 
 > [!NOTE]
 > [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) et le SDK Windows déclarent tous les deux les types dans l’espace de noms racine **Windows**. Un type Windows projeté en C++/WinRT a le même nom complet que le type Windows, mais il est placé dans l'espace de noms C++ **winrt**. Ces espaces de noms distincts vous permettent de porter le code C++/CX vers C++/WinRT à votre propre rythme.
 
-En tenant compte des exceptions mentionnées ci-dessus, la première étape du portage d’un projet C++/CX vers C++/WinRT consiste à ajouter manuellement la prise en charge C++/WinRT à ce projet (voir [Prise en charge de Visual Studio pour C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)). Pour cela, installez le [package NuGet Microsoft.Windows.CppWinRT](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) dans votre projet. Ouvrez le projet dans Visual Studio, cliquez sur **Projet** \> **Gérer les packages NuGet...** \> **Parcourir**, tapez ou collez **Microsoft.Windows.CppWinRT** dans la zone de recherche, sélectionnez l’élément dans les résultats de la recherche, puis cliquez sur **Installer** pour installer le package correspondant à ce projet. Un effet de cette modification est la désactivation de la prise en charge de C++/CX dans le projet. Il est conseillé de laisser la prise en charge désactivée pour permettre aux messages de génération de rechercher toutes vis dépendances et les porter sur C++/CX. Sinon, vous pouvez réactiver la prise en charge (dans les propriétés du projet, **C/C++** \> **général** \> **Consommer l'extension Windows Runtime** \> **Oui (/ZW)** ) et effectuer le portage progressivement.
+## <a name="first-steps-in-porting-a-ccx-project-to-cwinrt"></a>Premières étapes du portage d’un projet C++/CX vers C++/WinRT
 
-Vous pouvez également ajouter manuellement la propriété suivante à votre fichier `.vcxproj` à l’aide de la page de propriété du projet C++/WinRT dans Visual Studio. Pour obtenir la liste des options de personnalisation similaires (permettant d’ajuster le comportement de l’outil `cppwinrt.exe`), consultez le fichier [Lisez-moi](https://github.com/microsoft/cppwinrt/blob/master/nuget/readme.md#customizing) du package NuGet Microsoft.Windows.CppWinRT.
+En tenant compte des exceptions mentionnées ci-dessus, la première étape du portage d’un projet C++/CX vers C++/WinRT consiste à ajouter manuellement la prise en charge C++/WinRT à ce projet (voir [Prise en charge de Visual Studio pour C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)). Pour cela, installez le [package NuGet Microsoft.Windows.CppWinRT](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) dans votre projet. Ouvrez le projet dans Visual Studio, cliquez sur **Projet** \> **Gérer les packages NuGet...** \> **Parcourir**, tapez ou collez **Microsoft.Windows.CppWinRT** dans la zone de recherche, sélectionnez l’élément dans les résultats de la recherche, puis cliquez sur **Installer** pour installer le package correspondant à ce projet. Un effet de cette modification est la désactivation de la prise en charge de C++/CX dans le projet.
+
+Si vous pouvez effectuer un portage en une seule fois, il est judicieux de laisser la prise en charge désactivée afin que les messages de génération vous permettent de rechercher (et de porter) toutes vos dépendances sur C++/CX.
+
+Si vous devez effectuer le portage progressivement, réactivez la prise en charge (dans les propriétés du projet, **C/C++** \> **Général** \> **Consommer l’extension Windows Runtime** \> **Oui (/ZW)** ). Sinon, (ou en plus, pour un projet XAML), ajoutez manuellement la propriété suivante à votre fichier `.vcxproj` à l’aide de la page de propriétés du projet C++/WinRT dans Visual Studio (dans les propriétés du projet, **Propriétés communes** \> **C++/WinRT** \> **Langage du projet** \> **C++/CX**). Pour obtenir la liste des options de personnalisation similaires (permettant d’ajuster le comportement de l’outil `cppwinrt.exe`), consultez le fichier [Lisez-moi](https://github.com/microsoft/cppwinrt/blob/master/nuget/readme.md#customizing) du package NuGet Microsoft.Windows.CppWinRT. N’oubliez pas que vous devrez réaffecter la valeur **C++/WinRT** à cette propriété chaque fois que vous devrez traiter le contenu d’un **Fichier Midl (.idl)** dans des fichiers stub.
 
 ```xml
 <syntaxhighlight lang="xml">
@@ -48,7 +52,7 @@ Dans votre fichier d’en-tête précompilé (généralement `pch.h`), incluez `
 #include <winrt/base.h>
 ```
 
-Si vous incluez des en-têtes d'API Windows projetées en C++/WinRT (par exemple, `winrt/Windows.Foundation.h`), vous n’avez pas besoin d’inclure `winrt/base.h` explicitement ainsi, car il sera automatiquement inclus pour vous.
+Si vous incluez des en-têtes d’API Windows projetées C++/WinRT (par exemple, `winrt/Windows.Foundation.h`), vous n’avez pas besoin d’inclure explicitement `winrt/base.h` ainsi, car il le sera automatiquement.
 
 Si votre projet utilise également des types [Bibliothèque de modèles C++ Windows Runtime (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl), consultez [Passer de WRL à C++/WinRT](move-to-winrt-from-wrl.md).
 
@@ -56,7 +60,7 @@ Si votre projet utilise également des types [Bibliothèque de modèles C++ Wind
 
 ### <a name="xaml-markup-files"></a>Fichiers de balisage XAML
 
-| | C++/CX | C++/WinRT |
+| Origine du fichier | C++/CX | C++/WinRT |
 | - | - | - |
 | **Fichiers XAML pour les développeurs** | MyPage.xaml<br/>MyPage.xaml.h<br/>MyPage.xaml.cpp | MyPage.xaml<br/>MyPage.h<br/>MyPage.cpp<br/>MyPage.idl (voir ci-dessous) |
 | **Fichiers XAML générés** | MyPage.xaml.g.h<br/>MyPage.xaml.g.hpp | MyPage.xaml.g.h<br/>MyPage.xaml.g.hpp<br/>MyPage.g.h |
@@ -114,7 +118,7 @@ winrt::hstring NameOfFirstVideoTrack(MediaPlaybackItem const& item)
 }
 ```
 
-En revanche, même si l’événement **MediaPlaybackItem.AudioTracksChanged** est de type **TypedEventHandler\<MediaPlaybackItem, Windows.Foundation.Collections.IVectorChangedEventArgs\>** , nous n’avons pas besoin d’inclure `winrt/Windows.Foundation.Collections.h`, car nous n’avons pas utilisé cet événement.
+D’autre part, même si l’événement **MediaPlaybackItem.AudioTracksChanged** est de type **TypedEventHandler\<MediaPlaybackItem, Windows.Foundation.Collections.IVectorChangedEventArgs\>** , nous n’avons pas besoin d’inclure `winrt/Windows.Foundation.Collections.h` car nous n’avons pas utilisé cet événement.
 
 C++/WinRT exige également que vous ajoutiez des fichiers d’en-tête pour les espaces de noms qui sont utilisés par le balisage XAML.
 
@@ -507,7 +511,7 @@ Pour C++/WinRT, utilisez plutôt des coroutines et `co_await`. Pour plus d’inf
 
 Dans un projet C++/CX, vous pouvez utiliser des éléments nommés et des membres privés à partir du balisage XAML. Toutefois, dans C++/WinRT, toutes les entités utilisées via [**l’extension de balisage {x:Bind}** ](/windows/uwp/xaml-platform/x-bind-markup-extension) XAML doivent être exposées publiquement dans IDL.
 
-En outre, une liaison à un booléen affiche `true` ou `false` dans C++/CX, mais affichera **Windows.Foundation.IReference`1\<Boolean\>** dans C++/WinRT.
+De plus, une liaison à un booléen affiche `true` ou `false` en C++/CX, mais affiche **Windows.Foundation.IReference`1\<Boolean\>** en C++/WinRT.
 
 Pour obtenir plus d’informations et d’exemples de code, consultez [Utilisation d’objets à partir du balisage](/windows/uwp/cpp-and-winrt-apis/binding-property#consuming-objects-from-xaml-markup).
 
@@ -699,7 +703,7 @@ Ces liaisons effectuent la conversion **winrt::to_hstring** de la propriété li
 
 C++/CX et C++/WinRT se basent sur le type **std:: wstringstream** standard pour la génération de chaînes.
 
-| | C++/CX | C++/WinRT |
+| Opération | C++/CX | C++/WinRT |
 |-|-|-|
 | Ajout de chaîne, conservation des valeurs null | `stream.print(s->Data(), s->Length);` | `stream << std::wstring_view{ s };` |
 | Ajout de chaîne, arrêt à la première valeur null | `stream << s->Data();` | `stream << s.c_str();` |
@@ -722,16 +726,16 @@ Dans les exemples ci-dessous , *ws* est une variable de type **std::wstring**. E
 ## <a name="important-apis"></a>API importantes
 * [Modèle de structure winrt::delegate](/uwp/cpp-ref-for-winrt/delegate)
 * [Structure winrt::hresult_error](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
-* [Structure winrt::hstring](/uwp/cpp-ref-for-winrt/hstring)
+* [winrt::hstring struct](/uwp/cpp-ref-for-winrt/hstring)
 * [Espace de noms winrt](/uwp/cpp-ref-for-winrt/winrt)
 
 ## <a name="related-topics"></a>Rubriques connexes
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
-* [Créer des événements en C++/WinRT](author-events.md)
-* [Opérations concurrentes et asynchrones avec C++/WinRT](concurrency.md)
-* [Utiliser des API avec C++/WinRT](consume-apis.md)
-* [Gérer des événements en utilisant des délégués en C++/WinRT](handle-events.md)
-* [Interopérabilité entre C++/WinRT et C++/CX](interop-winrt-cx.md)
+* [Créer des événements en C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-events)
+* [Opérations concurrentes et asynchrones avec C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)
+* [Utiliser des API avec C++/WinRT](/windows/uwp/cpp-and-winrt-apis/consume-apis)
+* [Gérer des événements en utilisant des délégués en C++/WinRT](/windows/uwp/cpp-and-winrt-apis/handle-events)
+* [Interopérabilité entre C++/WinRT et C++/CX](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx)
 * [Référence de Microsoft Interface Definition Language 3.0](/uwp/midl-3)
-* [Passer de WRL à C++/WinRT](move-to-winrt-from-wrl.md)
-* [Gestion des chaînes en C++/WinRT](strings.md)
+* [Passer de WRL à C++/WinRT](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-wrl)
+* [Gestion des chaînes en C++/WinRT](/windows/uwp/cpp-and-winrt-apis/strings)

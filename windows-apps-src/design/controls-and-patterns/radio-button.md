@@ -12,78 +12,98 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 6705c314d9a70f8b6282841a7f8b1df76c6ef880
-ms.sourcegitcommit: 6dd6d61c912daab2cc4defe5ba0cf717339f7765
+ms.openlocfilehash: dc6f5eb32cdedf442b6866e1e53be85edfb98dcb
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84978401"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493434"
 ---
 # <a name="radio-buttons"></a>Cases d’option
 
-Les cases d’option permettent aux utilisateurs de sélectionner une option dans une collection constituée d’au moins deux options apparentées, mais qui s’excluent mutuellement. Chaque option est représentée par une case d’option.
+Les cases d’option, ou boutons radio, permettent aux utilisateurs de sélectionner une option dans une collection constituée d’au moins deux options apparentées, mais qui s’excluent mutuellement. Chaque option est représentée par une case d’option.
 
-Dans l’état par défaut, aucune case d’option n’est sélectionnée dans un groupe. Cependant, du moment qu’une case d’option est sélectionnée par un utilisateur, l’état désélectionné du groupe ne peut pas être rétabli par l’utilisateur.
+Dans l’état par défaut, aucune case d’option n’est sélectionnée dans un groupe RadioButtons. Autrement dit, toutes les cases d’option sont désactivées. Toutefois, quand une case d’option est sélectionnée, l’état désactivé du groupe ne peut pas être restauré.
 
-Le comportement singulier d’un groupe de cases d’option le distingue des [cases à cocher](checkbox.md), qui prennent en charge la sélection multiple et la désélection.
+Le comportement singulier d’un groupe RadioButtons le distingue des [cases à cocher](checkbox.md), qui prennent en charge la sélection multiple et la désélection ou la désactivation.
 
-![Cases d’option](images/controls/radio-button.png)
+![Exemple de groupe RadioButtons avec une case d’option sélectionnée](images/controls/radio-button.png)
 
-**Obtenir la bibliothèque d’interface utilisateur Windows**
+## <a name="get-the-windows-ui-library"></a>Obtenir la bibliothèque d’interface utilisateur Windows
 
-|  |  |
+| &nbsp; | &nbsp; |
 | - | - |
-| ![Logo WinUI](images/winui-logo-64x64.png) | Le contrôle **RadioButtons** est inclus dans la bibliothèque d’IU Windows, package NuGet qui contient les nouveaux contrôles et fonctionnalités d’interface utilisateur pour les applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![Logo WinUI](images/winui-logo-64x64.png) | Le contrôle RadioButtons est inclus dans la bibliothèque d’IU Windows, package NuGet qui contient les nouveaux contrôles et fonctionnalités d’interface utilisateur pour les applications Windows. Pour plus d’informations et pour obtenir des instructions d’installation, consultez la [bibliothèque d’IU Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
-> **API de la bibliothèque d’interface utilisateur Windows :** [RadioButtons, classe](/uwp/api/microsoft.ui.xaml.controls.radiobuttons), [SelectionChanged, événement](/uwp/api/microsoft.ui.xaml.controls.radiobuttons.selectionchanged), [SelectedItem, propriété](/uwp/api/microsoft.ui.xaml.controls.radiobuttons.selecteditem), [SelectedIndex, propriété](/uwp/api/microsoft.ui.xaml.controls.radiobuttons.selectedindex)
->
-> **API de plateforme :** [classe RadioButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RadioButton), [événement Checked](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.Checked), [propriété IsChecked](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked)
+**API de la bibliothèque d’interface utilisateur Windows** : 
+* [Classe RadioButtons](/uwp/api/microsoft.ui.xaml.controls.radiobuttons)
+* [Événement SelectionChanged](/uwp/api/microsoft.ui.xaml.controls.radiobuttons.selectionchanged)
+* [Propriété SelectedItem](/uwp/api/microsoft.ui.xaml.controls.radiobuttons.selecteditem)
+* [Propriété SelectedIndex](/uwp/api/microsoft.ui.xaml.controls.radiobuttons.selectedindex)
+
+**API de plateforme** : 
+* [Classe RadioButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RadioButton)
+* [Événement Checked](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.Checked)
+* [Propriété IsChecked](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
 Utilisez les cases d’option pour permettre aux utilisateurs d’effectuer une sélection parmi au moins deux options qui s’excluent mutuellement.
 
-![Groupe de cases d’option](images/radiobutton_basic.png)
+![Groupe RadioButtons avec une case d’option sélectionnée](images/radiobutton_basic.png)
 
-Utilisez les cases d’option lorsque les utilisateurs ont besoin de voir toutes les options pour effectuer une sélection. Sachant que les cases d’option mettent en évidence toutes les options de la même manière, elles peuvent donner plus d’importance à une option qu’elle n’en a vraiment ou que vous voulez lui en donner. À moins que les options méritent toutes la même attention de la part de l’utilisateur, envisagez d’utiliser d’autres contrôles. Par exemple, si l’option par défaut est recommandée pour la plupart des utilisateurs et dans la plupart des situations, utilisez plutôt une [zone de liste modifiable](combo-box.md).
+Utilisez les cases d’option quand les utilisateurs ont besoin de voir toutes les options avant d’effectuer une sélection. Les cases d’option mettent en évidence toutes les options de la même manière. Ainsi, elles peuvent donner plus d’importance à une option qu’elle n’en a vraiment ou que vous voulez lui en donner. 
 
-![Liste déroulante utilisée pour mettre en évidence une option par défaut](images/combo_box_collapsed.png)
+À moins que les options méritent toutes la même attention, envisagez d’utiliser d’autres contrôles. Par exemple, pour recommander l’option convenant le mieux à la plupart des utilisateurs dans la plupart des cas, utilisez une [zone de liste modifiable](combo-box.md) pour l’afficher comme option par défaut.
 
-S’il n’y a que deux options qui s’excluent mutuellement, combinez-les dans une [case à cocher](checkbox.md) ou un [bouton bascule](toggles.md) unique. Par exemple, utilisez une case à cocher pour « J’accepte », plutôt que deux cases d’option pour « J’accepte » et « Je n’accepte pas ».
+![Zone de liste modifiable affichant une option par défaut](images/combo_box_collapsed.png)
 
-![Une case à cocher est une bonne alternative pour présenter un choix binaire](images/radiobutton_vs_checkbox.png)
+S’il n’y a que deux options qui s’excluent mutuellement, combinez-les dans un contrôle de [case à cocher](checkbox.md) ou de [bouton bascule](toggles.md) unique. Par exemple, utilisez une case à cocher unique pour « J’accepte », plutôt que deux cases d’option pour « J’accepte » et « Je n’accepte pas ».
 
-Si l’utilisateur peut sélectionner plusieurs options, utilisez une [case à cocher](checkbox.md).
+![Une case à cocher est une bonne alternative pour présenter un choix binaire.](images/radiobutton_vs_checkbox.png)
 
-![Les cases à cocher prennent en charge la sélection multiple](images/checkbox2.png)
+Quand les utilisateurs peuvent sélectionner plusieurs options, utilisez des [cases à cocher](checkbox.md).
 
-Lorsque les options sont des numéros incrémentés de manière fixe (10, 20, 30), utilisez un contrôle [curseur](slider.md).
+![Les cases à cocher prennent en charge la sélection multiple.](images/checkbox2.png)
 
-![Curseur utilisé pour sélectionner des valeurs par paliers](images/controls/slider.png)
+Quand les utilisateurs doivent choisir une valeur dans une plage de valeurs (par exemple, *10, 20, 30,... 100*), utilisez un contrôle de [curseur](slider.md).
 
-S’il y a plus de huit options, utilisez une [zone de liste modifiable ou une zone de liste](combo-box.md).
+![Contrôle de curseur affichant une valeur dans une plage de valeurs](images/controls/slider.png)
 
-![Zone de liste utilisée pour présenter plusieurs options](images/combo_box_scroll.png)
+Si au moins huit options sont proposées, utilisez une [zone de liste modifiable](combo-box.md).
+
+![Zone de liste affichant plusieurs options](images/combo_box_scroll.png)
 
 > [!NOTE]
-> Si les options disponibles dépendent du contexte actuel de l’application ou si elles peuvent changer de façon dynamique, utilisez une [zone de liste](combo-box.md#list-boxes) à sélection unique.
+> Si les options disponibles dépendent du contexte actuel d’une application ou si elles peuvent changer de façon dynamique, utilisez un contrôle de liste.
 
 ## <a name="radiobuttons-behavior"></a>Comportement de RadioButtons
 
-L’accès clavier et le comportement de navigation ont été optimisés dans les groupes [RadioButton](/uwp/api/windows.ui.xaml.controls.radiobutton?view=winrt-19041) pour favoriser l’accessibilité et permettre aux utilisateurs avec pouvoir de naviguer dans la liste d’options avec plus de facilité et de rapidité à l’aide du clavier.
+L’accès clavier et le comportement de navigation ont été optimisés dans la [classe RadioButton](/uwp/api/windows.ui.xaml.controls.radiobutton?view=winrt-19041). Ces améliorations favorisent l’accessibilité et permettent aux utilisateurs privilégiant l’utilisation du clavier de naviguer dans la liste d’options plus rapidement et plus facilement.
 
-En plus des raccourcis clavier et des améliorations sur le plan de l’accessibilité, la disposition visuelle par défaut des cases d’option individuelles au sein d’un groupe RadioButton a aussi été optimisée via les paramètres automatisés d’orientation d’espacement et de marges. Il n’est donc plus nécessaire de spécifier ces propriétés, comme pouvait l’exiger un contrôle de regroupement plus primitif comme [StackPanel](../layout/layout-panels.md#stackpanel) ou [Grid](../layout/layout-panels.md#grid).
+En plus de ces améliorations, la disposition visuelle par défaut des cases d’option individuelles au sein d’un groupe RadioButtons a également été optimisée avec des paramètres automatisés d’orientation, d’espacement et de marges. Ces améliorations vous dispensent de spécifier ces propriétés, comme pouvait l’exiger un contrôle de regroupement plus primitif comme [StackPanel](../layout/layout-panels.md#stackpanel) ou [Grid](../layout/layout-panels.md#grid).
 
 ### <a name="navigating-a-radiobuttons-group"></a>Navigation dans un groupe RadioButtons
 
 Le contrôle RadioButtons prend en charge deux états :
 
-- Liste de contrôles RadioButton dans laquelle aucun contrôle n’est sélectionné/activé
-- Liste de contrôles RadioButton dans laquelle un contrôle est déjà sélectionné/activé
+- Aucune case d’option n’est sélectionnée.
+- Une case d’option est sélectionnée.
 
 Les deux sections suivantes se penchent sur les deux comportements de focus pour les cases d’option.
 
-#### <a name="item-already-selected"></a>Élément déjà sélectionné
+#### <a name="no-radio-button-is-selected"></a>Aucune case d’option n’est sélectionnée.
+
+Quand aucune case d’option n’est sélectionnée, la première case d’option de la liste obtient le focus.
+
+> [!NOTE]
+> L’élément qui reçoit le focus au début de la navigation par touche de tabulation n’est pas sélectionné.
+
+|Liste sans le focus de tabulation | Liste avec le focus de tabulation initial|
+|:--:|:--:|
+| ![Liste sans le focus de tabulation](images/radiobutton-no-selected-item-no-tab-focus.png) | ![Liste avec le focus de tabulation initial](images/radiobutton-no-selected-item-tab-focus.png)|
+
+#### <a name="one-radio-button-is-selected"></a>Une case d’option est sélectionnée.
 
 Quand une case d’option est sélectionnée et que l’utilisateur accède à la liste à l’aide de la touche de tabulation, la case d’option sélectionnée obtient le focus.
 
@@ -91,67 +111,59 @@ Quand une case d’option est sélectionnée et que l’utilisateur accède à l
 |:--:|:--:|
 | ![Liste sans le focus de tabulation](images/radiobutton-selected-item-no-tab-focus.png) | ![Liste avec le focus de tabulation initial](images/radiobutton-selected-item-tab-focus.png)|
 
-#### <a name="no-item-selected"></a>Aucun élément sélectionné
-
-Quand aucune case d’option n’est sélectionnée, la première case d’option de la liste obtient le focus.
-
-> [!NOTE]
-> L’élément qui reçoit le focus de tabulation à partir de la navigation initiale avec la touche de tabulation n’est pas sélectionné/activé.
-
-|Liste sans le focus de tabulation | Liste avec le focus de tabulation initial|
-|:--:|:--:|
-| ![Liste sans le focus de tabulation](images/radiobutton-no-selected-item-no-tab-focus.png) | ![Liste avec le focus de tabulation initial](images/radiobutton-no-selected-item-tab-focus.png)|
 
 ### <a name="keyboard-navigation"></a>Navigation au clavier
 
-Quand vous avez une seule ligne ou colonne de cases d’option et qu’un élément a déjà reçu le focus de tabulation, les touches de direction permettent une « navigation interne » entre les éléments du contrôle RadioButtons. Pour plus d’informations sur les comportements de navigation avec le clavier, consultez [Interactions avec le clavier – Navigation](../input/keyboard-interactions.md#navigation).
+Quand les utilisateurs ont une seule ligne ou colonne de cases d’option et qu’un élément a déjà reçu le focus de tabulation, ils peuvent utiliser les touches de direction pour effectuer une « navigation interne » entre les éléments du contrôle RadioButtons. Pour plus d’informations sur les comportements de navigation avec le clavier, consultez [Interactions avec le clavier – Navigation](../input/keyboard-interactions.md#navigation).
 
-Pour un contrôle RadioButtons, quand la liste d’options est organisée verticalement (exclusivement), les touches de direction haut/bas permettent de naviguer entre les éléments, tandis que les touches de direction gauche/droite sont inopérantes. En revanche, dans une liste organisée horizontalement (exclusivement), les touches de direction gauche/droite et haut/bas permettent de naviguer entre les éléments de la même façon.
+Pour un contrôle RadioButtons, quand la liste d’options est organisée verticalement uniquement, les touches de direction haut et bas permettent de naviguer entre les éléments, tandis que les touches de direction gauche et droite sont inopérantes. En revanche, dans une liste organisée horizontalement uniquement, les touches de direction gauche et droite et haut et bas permettent de naviguer entre les éléments de la même façon.
 
-![Exemple de navigation au clavier dans un groupe RadioButton à une seule colonne/ligne](images/radiobutton-keyboard-navigation-single-column-row.png)<br/>
-*Exemple de navigation au clavier dans un groupe RadioButton à une seule colonne/ligne*
+![Exemple de navigation au clavier dans un groupe RadioButtons à une seule colonne ou une seule ligne](images/radiobutton-keyboard-navigation-single-column-row.png)<br/>
+*Exemple de navigation au clavier dans un groupe RadioButtons à une seule colonne ou une seule ligne*
 
-#### <a name="navigating-within-multi-columnrow-layouts"></a>Navigation dans les dispositions à plusieurs colonnes/lignes
+#### <a name="navigating-within-multi-column-or-multi-row-layouts"></a>Navigation dans les dispositions à plusieurs colonnes ou plusieurs lignes
 
-Dans l’ordre « column-major » (où les éléments sont renseignés de haut en bas et de gauche à droite), quand le focus est sur le dernier élément d’une colonne et que la touche de direction bas est enfoncée, le focus se déplace sur le premier élément de la colonne suivante. Le même comportement est observé dans le cas inverse : quand le focus est défini sur le premier élément d’une colonne et que la touche de direction haut est enfoncée, le focus se déplace sur le dernier élément de la colonne précédente.
+Dans l’ordre column-major, le focus se déplace de haut en bas et de gauche à droite. Quand le focus est sur le dernier élément d’une colonne et que la touche de direction bas est enfoncée, le focus se place sur le premier élément de la colonne suivante. Ce comportement concerne également l’ordre inverse : quand le focus est placé sur le premier élément d’une colonne et que la touche de direction haut est enfoncée, le focus se place sur le dernier élément de la colonne précédente.
 
-![Exemple de navigation au clavier dans un groupe RadioButton à plusieurs colonnes/lignes](images/radiobutton-keyboard-navigation-multi-column-row.png)
+![Exemple de navigation au clavier dans un groupe RadioButtons à plusieurs colonnes/lignes](images/radiobutton-keyboard-navigation-multi-column-row.png)
 
-Dans un ordre « row-major » (où les éléments sont renseignés de gauche à droite et de haut en bas), quand le focus est sur le dernier élément d’une ligne et que la touche de direction droite est enfoncée, le focus se déplace sur le premier élément de la ligne suivante. Le même comportement est observé dans le cas inverse : quand le focus est défini sur le premier élément d’une ligne et que la touche de direction gauche est enfoncée, le focus se déplace sur le dernier élément de la ligne précédente.
+Dans un ordre « row-major » (où les éléments sont renseignés de gauche à droite et de haut en bas), quand le focus est sur le dernier élément d’une ligne et que la touche de direction droite est enfoncée, le focus se déplace sur le premier élément de la ligne suivante. Ce comportement concerne également l’ordre inverse : quand le focus est placé sur le premier élément d’une ligne et que la touche de direction gauche est enfoncée, le focus se place sur le dernier élément de la ligne précédente.
+
+Pour plus d’informations, consultez [Interactions avec le clavier](https://docs.microsoft.com/windows/uwp/design/input/keyboard-interactions#wrapping-homogeneous-list-and-grid-view-items).
 
 ##### <a name="wrapping"></a>Renvoi à la ligne
 
-Le groupe RadioButtons n’est pas renvoyé à la ligne. En effet, dans le cas où un lecteur d’écran est utilisé, il n’y a plus ce sentiment de limite et d’indication claire de début et de fin, ce qui rend difficile la navigation dans la liste pour les utilisateurs malvoyants. Le contrôle RadioButtons ne prend pas non plus en charge l’énumération, car elle est censée contenir un nombre raisonnable d’éléments (voir [Est-ce le bon contrôle ?](#is-this-the-right-control)).
+Le groupe RadioButtons n’est pas renvoyé à la ligne. En effet, les utilisateurs qui ont recours à un lecteur d’écran perdent ce sentiment de limite et n’ont plus d’indication claire de début et de fin. La navigation dans la liste devient alors particulièrement difficile pour les utilisateurs malvoyants. Le contrôle RadioButtons ne prend pas non plus en charge l’énumération, car il est censé contenir un nombre raisonnable d’éléments (consultez [Est-ce le bon contrôle ?](#is-this-the-right-control)).
 
-## <a name="selection-follows-focus"></a>La sélection suit le focus
+## <a name="selection-follows-focus"></a>La sélection suit le focus.
 
-Quand vous vous servez du clavier pour naviguer entre les éléments d’une liste RadioButtons (où un élément est déjà sélectionné), à mesure que le focus passe d’un élément à l’autre, l’élément qui prend le focus est sélectionné/activé et l’élément qui le perd est désélectionné/désactivé.
+Quand les utilisateurs ont recours au clavier pour naviguer entre les éléments d’une liste RadioButtons (dans laquelle un élément est déjà sélectionné), quand le focus passe d’un élément à l’autre, l’élément qui prend le focus est sélectionné et l’élément qui le perd est désactivé.
 
 |Avant la navigation au clavier | Après la navigation au clavier|
 |:--|:--|
-| ![Exemple de focus et de sélection avant la navigation au clavier](images/radiobutton-two-selected-before-keyboard-navigation.png)</br>*Exemple de focus et de sélection avant la navigation au clavier* | ![Exemple de focus et de sélection après la navigation au clavier](images/radiobutton-three-selected-after-keyboard-navigation.png)<br/>*Exemple de focus et de sélection après la navigation au clavier où la touche de direction bas ou droite déplace le focus sur le RadioButton « 3 », sélectionne « 3 » et désélectionne « 2 ».*
+| ![Exemple de focus et de sélection avant la navigation au clavier](images/radiobutton-two-selected-before-keyboard-navigation.png)</br>*Exemple de focus et de sélection avant la navigation au clavier* | ![Exemple de focus et de sélection après la navigation au clavier](images/radiobutton-three-selected-after-keyboard-navigation.png)<br/>*Exemple de focus et de sélection après la navigation au clavier où la touche de direction bas ou droite déplace le focus sur la case d’option 3, la sélectionne et désactive la case d’option 2* |
 
 ### <a name="navigating-with-xbox-gamepad-and-remote-control"></a>Navigation avec une manette de jeu ou une télécommande Xbox
 
-Si vous utilisez une manette de jeu ou une télécommande Xbox pour naviguer dans un contrôle RadioButtons, le comportement « la sélection suit le focus » est désactivé et le bouton « A » doit être enfoncé pour sélectionner la case d’option qui a le focus.
+Si un utilisateur navigue entre des cases d’option à l’aide d’une télécommande ou d’une manette de jeu Xbox, le comportement « la sélection suit le focus » est désactivé et il doit appuyer sur le bouton « A » pour sélectionner la case d’option qui a le focus.
 
 ## <a name="accessibility-behavior"></a>Comportement en matière d’accessibilité
 
-Le tableau suivant détaille la façon dont le Narrateur gère un groupe de cases d’option et ce qui est annoncé (en fonction des préférences du Narrateur qu sont définies par l’utilisateur).
+Le tableau suivant décrit la façon dont le Narrateur gère un groupe RadioButtons et ce qui est annoncé. Ce comportement dépend de la manière dont l’utilisateur a défini les préférences du Narrateur.
 
 | Focus initial | Le focus se déplace sur l’élément sélectionné |
 |:--|:--|
-| Collection RadioButton « Nom de groupe », x sur N sélectionné | « Nom » de RadioButton sélectionné, x sur N |
-|Collection RadioButton « nom de groupe », aucun sélectionné| « Nom » de RadioButton non sélectionné, x sur N <br> *(Dans le cas d’une navigation avec les touches Maj-Flèche, ce qui indique que la sélection ne suit pas le focus)* |
+| La collection RadioButton « Nom de groupe » a le focus, et l’élément x (sur N éléments) est sélectionné. | Si le RadioButton « nom » est sélectionné, l’élément x a le focus. |
+| La collection RadioButton « Nom de groupe » a le focus, et aucun élément n’est sélectionné.| Si le RadioButton « nom » n’est pas sélectionné, l’élément x a le focus. <br> Si l’utilisateur utilise les touches Maj-Flèche, aucune sélection ne suit le focus. |
 
 ## <a name="examples"></a>Exemples
 
 <table>
 <th align="left">Galerie de contrôles XAML<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="The XAML Controls Gallery app icon"></img></td>
 <td>
-    <p>Si vous disposez de l'application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/RadioButton">ouvrir l’application et voir l'objet RadioButton en action</a>.</p>
+    <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, <a href="xamlcontrolsgallery:/item/RadioButton">ouvrez-la pour voir comment fonctionne le contrôle RadioButtons</a>.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
@@ -166,7 +178,7 @@ Si vous utilisez [WinUI](https://github.com/microsoft/microsoft-ui-xaml), nous v
 
 Le contrôle RadioButtons est facile à configurer et à utiliser, et il garantit un comportement approprié et prévisible du clavier et du Narrateur.
 
-Ici, nous déclarons un contrôle RadioButtons de base avec trois options.
+Dans le code suivant, vous déclarez un contrôle RadioButtons de base avec trois options :
 
 ```xaml
 <RadioButtons Header="App Mode" SelectedIndex="2">
@@ -175,6 +187,7 @@ Ici, nous déclarons un contrôle RadioButtons de base avec trois options.
     <RadioButton>Item 3</RadioButton>
 </RadioButtons>
 ```
+Le résultat est présenté dans l’image suivante :
 
 ![Cases d’option en deux groupes](images/default-radiobutton-group.png)
 
@@ -193,11 +206,11 @@ Vous pouvez déclarer un contrôle RadioButtons multicolonne en spécifiant la [
 </muxc:RadioButtons>
 ```
 
-![Cases d’option dans des groupes à deux colonnes](images/radiobutton-multi-columns.png)
+![Cases d’option dans deux groupes à trois colonnes](images/radiobutton-multi-columns.png)
 
 ### <a name="data-binding"></a>Liaison de données
 
-Le contrôle RadioButtons prend en charge la liaison de données en utilisant sa propriété [ItemsSource](/uwp/api/microsoft.ui.xaml.controls.radiobuttons.itemssource), comme illustré dans l’extrait de code suivant.
+Le contrôle RadioButtons prend en charge la liaison de données, qui utilise sa propriété [ItemsSource](/uwp/api/microsoft.ui.xaml.controls.radiobuttons.itemssource) comme illustré dans l’extrait de code suivant.
 
 ```xaml
 <RadioButtons Header="App Mode" ItemsSource="{x:Bind radioButtonItems}" />
@@ -229,17 +242,17 @@ public sealed partial class MainPage : Page
 }
 ```
 
-## <a name="create-your-own-radio-button-group"></a>Créer votre propre groupe de cases d’option
+## <a name="create-your-own-radiobuttons-group"></a>Créer votre propre groupe RadioButtons
 
 > [!Important]
-> Nous vous recommandons d’utiliser le contrôle RadioButtons de WinUI pour regrouper des éléments RadioButton (sauf si vous utilisez une ancienne version de WinUI).
+> Nous vous recommandons d’utiliser le contrôle RadioButtons de WinUI pour regrouper des éléments RadioButton, sauf si vous utilisez une ancienne version de WinUI.
 
-Les cases d’option s’utilisent en groupes. Les 2 méthodes permettant de grouper des contrôles de cases d’option sont les suivantes :
+Les cases d’option s’utilisent en groupes. Vous pouvez regrouper les cases d’option de l’une des deux façons suivantes :
 
 - Placez-les dans le même conteneur parent.
-- Attribuez la même valeur à la propriété [GroupName](/uwp/api/Windows.UI.Xaml.Controls.RadioButton.GroupName) de chaque case d’option.
+- Définissez la propriété [GroupName](/uwp/api/Windows.UI.Xaml.Controls.RadioButton.GroupName) de chaque case d’option sur la même valeur.
 
-Dans cet exemple, le premier groupe de cases d’option est implicitement formé en raison de son appartenance au même panneau d’empilement. Le second groupe est divisé entre 2 panneaux d’empilement, si bien que les cases d’option sont explicitement regroupées par GroupName.
+Dans cet exemple, le premier groupe de cases d’option est implicitement formé en raison de son appartenance au même panneau d’empilement. Le second groupe est divisé entre deux panneaux d’empilement. Ainsi, les cases d’option sont explicitement regroupées par GroupName.
 
 ```xaml
 <StackPanel>
@@ -321,36 +334,36 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 }
 ```
 
-Voici comment se présente ce groupe de cases d’option :
+Voici comment se présente ce groupe RadioButtons :
 
 ![Cases d’option en deux groupes](images/radio-button-groups.png)
 
 ## <a name="radio-button-states"></a>États des cases d’option
 
-Les cases d’option peuvent avoir l’un des deux états suivants : activé ou désactivé. Lorsqu’une case d’option est sélectionnée, sa propriété [IsChecked](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked) vaut **true**. Quand une case d’option est désactivée, sa propriété **IsChecked** a la valeur **false**. Une case d’option peut être désactivée en cliquant sur une autre case d’option du même groupe, mais elle ne peut pas l’être en cliquant à nouveau dessus. Toutefois, vous pouvez désactiver une case d’option par programmation en définissant sa propriété IsChecked sur **false**.
+Une case d’option a deux états : sélectionnée ou désactivée. Quand une case d’option est sélectionnée, sa propriété [IsChecked](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked) a la valeur `true`. Quand une case d’option est désactivée, sa propriété IsChecked a la valeur `false`. Une case d’option peut être désactivée si l’utilisateur sélectionne une autre case d’option dans le même groupe, mais pas s’il la sélectionne de nouveau. Toutefois, vous pouvez désactiver une case d’option par programmation en définissant sa propriété IsChecked sur `false`.
 
 ## <a name="recommendations"></a>Recommandations
 
-- Assurez-vous que le but et l’état actuel d’un ensemble de cases d’option sont clairs.
-- Limitez le contenu du texte de la case d’option à une seule ligne.
-- Si le contenu du texte est dynamique, songez au redimensionnement du bouton et à ses conséquences sur les effets visuels environnant.
+- Assurez-vous que le but et l’état actuel d’un ensemble de cases d’option sont explicites.
+- Limitez l’étiquette de texte de la case d’option à une seule ligne.
+- Si l’étiquette de texte est dynamique, songez au redimensionnement automatique du bouton et à ses conséquences sur les effets visuels environnants.
 - Utilisez la police par défaut à moins que votre organisation ait passé d’autres consignes.
-- Ne placez pas deux groupes de cases d’option côte à côte. Lorsque deux groupes de cases d’option sont adjacents, il est difficile de déterminer quelles cases appartiennent à quel groupe.
+- Ne placez pas deux groupes RadioButtons côte à côte. Quand deux groupes RadioButtons sont adjacents, il peut être difficile pour les utilisateurs de déterminer quelles cases appartiennent à quel groupe.
 
 ### <a name="visuals-to-consider"></a>Visuels à prendre en considération
 
-Les images suivantes montrent la meilleure disposition possible des cases d’option dans un groupe RadioButton.
+Les images suivantes montrent la meilleure organisation possible des cases d’option dans un groupe RadioButtons.
 
-![Ensemble de cases d’option](images/radiobutton-layout.png)
+![Image montrant un ensemble de cases d’option organisées verticalement](images/radiobutton-layout.png)
 
-![recommandations d'espacement en matière de cases d’option](images/radiobutton-redline.png)
+![Image montrant les recommandations d’espacement des cases d’option](images/radiobutton-redline.png)
 
 > [!NOTE]
 > Si vous utilisez un contrôle RadioButtons de WinUI, l’espacement, les marges et l’orientation sont déjà optimisés.
 
 ## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
 
-- [Exemple de Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) : tous les contrôles XAML dans un format interactif.
+- Pour obtenir tous les contrôles XAML dans un format interactif, consultez [Exemple de Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery). 
 
 ## <a name="related-topics"></a>Rubriques connexes
 

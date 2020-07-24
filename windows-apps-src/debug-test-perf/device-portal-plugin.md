@@ -2,29 +2,29 @@
 ms.assetid: 82ab5fc9-3a7f-4d9e-9882-077ccfdd0ec9
 title: Écrire un plug-in personnalisé pour le portail d’appareil
 description: Découvrez comment écrire une application UWP qui utilise le Portail d'appareil Windows pour héberger une page web et fournir des informations de diagnostic.
-ms.date: 03/24/2017
+ms.date: 07/06/2020
 ms.topic: article
 keywords: windows 10, uwp, portail d’appareil
 ms.localizationpriority: medium
-ms.openlocfilehash: 4881fe961979243849728d3f835c449e0f71f4b4
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: b806344fa7e0517caf4d04efaaa605371a200202
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75683842"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493204"
 ---
 # <a name="write-a-custom-plugin-for-device-portal"></a>Écrire un plug-in personnalisé pour le portail d’appareil
 
 Découvrez comment écrire une application UWP qui utilise le Portail d'appareil Windows pour héberger une page web et fournir des informations de diagnostic.
 
-À partir de la version Creators Update, vous pouvez utiliser le Portail d'appareil pour héberger les interfaces de diagnostic de votre application. Cet article décrit les trois tâches requises pour la création d’une fonctionnalité DevicePortalProvider pour votre application : les modifications du fichier appxmanifest, la configuration de la connexion de votre application au service Portail d’appareil et la gestion d’une requête entrante. Un exemple d’application est également fourni pour la prise en main (bientôt disponible). 
+À compter de Windows 10 Creators Update (version 1703, build 15063), vous pouvez utiliser le Portail d’appareil pour héberger les interfaces de diagnostic de votre application. Cet article décrit les trois tâches nécessaires pour créer un DevicePortalProvider pour votre application : les changements du [manifeste du package d’application](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest), la configuration de la connexion de votre application au [service Portail d’appareil](/windows/uwp/debug-test-perf/device-portal) et la gestion d’une demande entrante.
 
 ## <a name="create-a-new-uwp-app-project"></a>Créer un projet d’application UWP
-Dans ce guide, nous allons créer tous les éléments dans une seule solution par souci de simplicité.
 
-Dans Microsoft Visual Studio 2019, créez un projet d’application UWP. Accédez à Fichier > Nouveau > Projet et sélectionnez Application vide (Windows universelle) pour C#, puis cliquez sur Suivant. Dans la boîte de dialogue Configurer votre nouveau projet. Nommez le projet « DevicePortalProvider », puis cliquez sur Créer. Il s’agira de l’application qui contient le service d’application. Veillez à choisir « Windows 10 Creators Update (10.0 ; build 15063) » pour la prise en charge.  Vous devrez peut-être mettre à jour Visual Studio ou installer le nouveau Kit de développement logiciel (SDK) ; pour plus d’informations, voir [ici](https://blogs.windows.com/buildingapps/2017/04/05/updating-tooling-windows-10-creators-update/). 
+Dans Microsoft Visual Studio, créez un projet d’application UWP. Accédez à **Fichier > Nouveau > Projet**, sélectionnez **Application vide (Windows universelle) pour C#** , puis cliquez sur **Suivant**. Dans la boîte de dialogue **Configurer votre nouveau projet**, nommez le projet « DevicePortalProvider », puis cliquez sur **Créer**. Il s’agira de l’application qui contient le service d’application. Vous devrez peut-être mettre à jour Visual Studio ou installer le [SDK Windows](https://developer.microsoft.com/windows/downloads/windows-10-sdk/) le plus récent.
 
-## <a name="add-the-deviceportalprovider-extension-to-your-packageappxmanifest-file"></a>Ajouter l’extension devicePortalProvider à votre fichier package.appxmanifest
+## <a name="add-the-deviceportalprovider-extension-to-your-application-package-manifest"></a>Ajouter l’extension devicePortalProvider à votre manifeste du package d’application
+
 Vous devrez ajouter du code à votre fichier *package.appxmanifest* pour faire fonctionner votre application en tant que plug-in du Portail d'appareil. Commencez par ajouter les définitions d’espace de noms suivants au début du fichier. Ajoutez également ces définitions à l’attribut `IgnorableNamespaces`.
 
 ```xml

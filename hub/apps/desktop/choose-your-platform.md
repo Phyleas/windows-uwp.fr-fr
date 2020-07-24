@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 keywords: développement d’applications de bureau Win32 pour Windows
-ms.openlocfilehash: c14b092b9cce9ce7e3b180eaedef657e2d3d03db
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: 778c15bc511404fad9cf5713876f89c7fef56165
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83580006"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493004"
 ---
 # <a name="choose-your-app-platform"></a>Choisir votre plateforme d’application
 
@@ -39,6 +39,7 @@ Outre le fait que pouvez utiliser UWP afin de créer des applications de bureau 
 Pour plus d’informations sur UWP, consultez les articles suivants :
 
 * [Bien démarrer](/windows/uwp/get-started/)
+* [Modèles de projet](visual-studio-templates.md#uwp-templates)
 * [Conception et interface utilisateur](/windows/uwp/design/)
 * [Fonctionnalités et technologies](/windows/uwp/develop/)
 * [Informations de référence sur les API](/uwp/)
@@ -50,7 +51,8 @@ WPF est la plateforme établie pour les applications Windows managées. Elle off
 
 Pour plus d’informations sur WPF, consultez les articles suivants :
 
-* [Bien démarrer (WPF)](https://docs.microsoft.com/dotnet/framework/wpf/getting-started/).
+* [Bien démarrer (WPF)](https://docs.microsoft.com/dotnet/framework/wpf/getting-started/)
+* [Modèles de projet](visual-studio-templates.md#net-templates)
 * [Créer votre première application (.NET Core)](/visualstudio/get-started/csharp/tutorial-wpf/)
 * [Créer votre première application (.NET Framework)](/dotnet/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application/)
 * [Migrer des applications WPF vers .NET Core](/dotnet/desktop-wpf/migration/convert-project-from-net-framework/)
@@ -64,6 +66,7 @@ Windows Forms est la plateforme d’origine pour les applications Windows manag�
 Pour plus d’informations sur Windows Forms, consultez les articles suivants :
 
 * [Bien démarrer avec Windows Forms](https://docs.microsoft.com/dotnet/framework/winforms/getting-started-with-windows-forms)
+* [Modèles de projet](visual-studio-templates.md#net-templates)
 * [Créer votre première application Windows Forms](/dotnet/framework/winforms/creating-a-new-windows-form)
 * [Tutoriel : Créer une visionneuse d’images](/visualstudio/ide/tutorial-1-create-a-picture-viewer?view=vs-2019)
 * [Informations de référence sur les API (.NET)](https://docs.microsoft.com/dotnet/api/index)
@@ -84,6 +87,7 @@ Voici quelques-unes des principales fonctionnalités que vous offrent l’API Wi
 Pour plus d’informations, consultez les articles suivants :
 
 * [Bien démarrer](/windows/win32/desktop-programming/)
+* [Modèles de projet](visual-studio-templates.md#cwin32-templates)
 * [Créer votre première application Win32 et C++](/windows/win32/learnwin32/learn-to-program-for-windows/)
 * [Fonctionnalités et technologies](/windows/win32/desktop-app-technologies)
 * [Informations de référence sur les API](/windows/win32/apiindex/windows-api-list/)
@@ -97,7 +101,7 @@ Vous pouvez utiliser WinUI des manières suivantes dans les applications de bure
 
 * Les applications UWP peuvent utiliser des contrôles WinUI à la place des contrôles UWP fournis par le SDK Windows.
 * Vous pouvez mettre à jour des applications WPF, Windows Forms et C++/Win32 existantes pour utiliser [XAML Islands](modernize/xaml-islands.md) afin d’héberger des contrôles WinUI 2.x dans les applications.
-* À compter de [WinUi 3.0 Preview 1](../winui/winui3/index.md), vous pouvez créer des [applications .NET et C++/Win32 qui utilisent une interface utilisateur entièrement basée sur WinUI](../winui/winui3/get-started-winui3-for-desktop.md).
+* À compter de [WinUi 3.0](../winui/winui3/index.md), vous pouvez créer des [applications .NET et C++/Win32 qui utilisent une interface utilisateur entièrement basée sur WinUI](../winui/winui3/get-started-winui3-for-desktop.md).
 
 ## <a name="platform-comparison-uwp-wpf-and-windows-forms"></a>Comparaison des plateformes : UWP, WPF et Windows Forms
 

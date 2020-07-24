@@ -4,12 +4,12 @@ description: Interroge les sources pour rechercher les applications disponibles 
 ms.date: 04/28/2020
 ms.topic: overview
 ms.localizationpriority: medium
-ms.openlocfilehash: 366d2176fe9465495d8ed8f2eeb7912229bd07f1
-ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
+ms.openlocfilehash: 7038f9b31c4c0446e3af56cac2d118598347d4d3
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85334475"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493254"
 ---
 # <a name="search-command-winget"></a>search, commande (winget)
 
@@ -48,7 +48,7 @@ Les chaînes de recherche peuvent être filtrées à l’aide des options suivan
 | **--name**      |  Limite la recherche au nom de l’application. |
 | **--moniker**  |    Limite la recherche au moniker spécifié. |
 | **--tag**    |  Limite la recherche aux étiquettes listées pour l’application. |
-| **--command**   |   Limite la recherche au nom de l’application. |
+| **--command**   |   Limite la recherche aux commandes listées pour l’application. |
 
 La chaîne sera traitée comme une sous-chaîne. La recherche par défaut n’est pas sensible à la casse. Par exemple, `winget search micro` peut retourner les résultats suivants :
 

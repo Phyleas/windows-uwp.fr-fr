@@ -6,24 +6,24 @@ ms.date: 01/25/2017
 ms.topic: article
 keywords: windows 10, uwp, première application, c#, c++, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: d0870212df4deb7f12f790107ec988fac3eb69ab
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: d1731ec0a2b2df247d88be008af2cc6647a3bd6b
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75685148"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493374"
 ---
 # <a name="create-your-first-app"></a>Créer votre première application
 
 Bienvenue sur la [plateforme UWP](universal-application-platform-guide.md) ! Ces didacticiels visent à vous aider à créer votre première application UWP dans le langage de votre choix.
 
-Pour commencer, choisissez un langage.
+Pour commencer, choisissez le langage de votre choix.
 
 ## <a name="c-and-xaml"></a>C# et XAML
 
-Exploitez vos compétences .NET, WPF ou Silverlight pour créer des application en XAML avec C#.
+Utilisez vos compétences .NET, WPF ou Silverlight pour créer des applications en C# avec XAML (eXtensible Application Markup Language).
 
-* [Créer une application « Hello World » en utilisant XAML avec C#](create-a-hello-world-app-xaml-universal.md)
+* [Créer une application « Hello, World! » en utilisant XAML avec C#](create-a-hello-world-app-xaml-universal.md)
 
 Si vous souhaitez découvrir les notions de base ou simplement vous rafraîchir la mémoire, consultez ces ressources :
 
@@ -31,26 +31,26 @@ Si vous souhaitez découvrir les notions de base ou simplement vous rafraîchir 
 * [Principes de base de VB pour les néophytes](https://docs.microsoft.com/learn/?l=jqMOvLKbC_9206218965)
 * [Guide du développeur pour Windows 10](https://docs.microsoft.com/learn/)
 
-Si vous souhaitez consulter des ressources un peu plus amusantes que « Hello, World! », essayez ces didacticiels :
+## <a name="cwinrt-and-xaml"></a>C++/WinRT et XAML
 
-* [XAML et liaison de données dans UWP](xaml-basics-intro.md)
-* [Un jeu UWP simple en 2D pour le Microsoft Store, écrit en C# et MonoGame](get-started-tutorial-game-mg2d.md)
+Tirez parti de votre expertise en programmation en C++ standard pour générer des applications en utilisant C++/WinRT avec XAML (eXtensible Application Markup Language).
 
+* [Créer une application « Hello, World! » en utilisant C++/WinRT](/windows/uwp/get-started/create-a-basic-windows-10-app-in-cppwinrt)
+
+Découvrez-en plus sur C++/WinRT.
+
+* [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/)
 
 ## <a name="visualc-component-extensions-ccx-and-xaml"></a>Extensions des composants Visual C++ (C++/CX) et XAML
 
-Exploitez votre savoir-faire en matière de programmation C++ pour créer des applications à l’aide d’extensions de composants Visual C++ (C++/CX) avec XAML.
+Tirez parti de votre expertise en programmation en C++ pour générer des applications à l’aide d’extensions de composants Visual C++ (C++/CX) avec XAML (eXtensible Application Markup Language).
 
-* [Créer une application « Hello World » en utilisant XAML avec C++/CX](create-a-basic-windows-10-app-in-cpp.md)
+* [Créer une application « Hello, World! » avec C++/CX](create-a-basic-windows-10-app-in-cpp.md)
 
-En savoir plus sur C++ :
+Découvrez-en plus sur C++ ici.
 
 * [C++ pour les applications UWP](https://docs.microsoft.com/cpp/cppcx/universal-windows-apps-cpp?view=vs-2019)
 * [C++ pour les applications de bureau](https://docs.microsoft.com/cpp/windows/desktop-applications-visual-cpp?view=vs-2019)
-
-Si vous souhaitez consulter des ressources un peu plus amusantes que « Hello, World! », essayez ces didacticiels :
-
-* [XAML et liaison de données dans UWP](xaml-basics-intro.md)
 
 ## <a name="javascript-and-html"></a>JavaScript et HTML
 
@@ -68,6 +68,12 @@ Les applications web peuvent être facilement empaquetées dans l’infrastructu
 * [Applications web hébergées](https://developer.microsoft.com/windows/pwa)
 * [Convertir votre application web en application UWP](../porting/hwa-create-windows.md)
 
+## <a name="next-steps"></a>Étapes suivantes
+
+Quand vous vous sentez prêt à essayer quelque chose de plus amusant que « Hello, World! », suivez ces tutoriels.
+
+* [Tutoriel : Créer une interface utilisateur](/windows/uwp/design/basics/xaml-basics-ui)
+* [Un jeu UWP simple en 2D pour le Microsoft Store, écrit en C# et MonoGame](get-started-tutorial-game-mg2d.md)
 
 ## <a name="see-also"></a>Voir aussi
 

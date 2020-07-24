@@ -8,44 +8,20 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 8775113c22716259f9449899b577481738dc6c0f
-ms.sourcegitcommit: da1c0ae251883987f105bc2919b2d67846194bc5
+ms.openlocfilehash: 7393d4d1bae227bf3b586a54fba5d43ca2dcb53e
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85198517"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493404"
 ---
-# <a name="get-started-with-winui-30-for-desktop-apps"></a>Bien démarrer avec WinUI 3.0 pour les applications de bureau
+# <a name="get-started-with-winui-3-for-desktop-apps"></a>Bien démarrer avec WinUI 3 pour les applications de bureau
 
-WinUI 3.0 Preview 1 introduit de nouveaux modèles de projet qui vous permettent de créer des applications de bureau C#/.NET managées et C++/Win32 natives avec une interface utilisateur entièrement basée sur WinUI. Quand vous créez des applications à l’aide de ces modèles de projet, la totalité de l’interface utilisateur de votre application est implémentée à l’aide de fenêtres, de contrôles et d’autres types d’interface utilisateur fournis par WinUI 3.0.
-
-WinUI 3.0 Preview 1 ajoute les modèles de projet suivants à Visual Studio 2019 pour générer des applications de bureau qui utilisent WinUI 3.0 :
-
-* Modèles de projet pour bibliothèques et applications C# qui ciblent .NET 5 :
-  * **Blank App, Packaged (WinUI in Desktop)**
-  * **Class Library (WinUI in Desktop)**
-
-* Modèles de projet pour applications C++/Win32 :
-  * **Blank App, Packaged (WinUI in Desktop)**
-
-Les modèles de projet d’application génèrent un projet d’application WinUI et un [Projet de création de packages d’applications Windows](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) configuré pour générer l’application dans un package [MSIX](https://docs.microsoft.com/windows/msix/overview) pour le déploiement.
+WinUI 3 Preview 2 introduit de nouveaux modèles de projet qui vous permettent de créer des applications de bureau C#/.NET Core gérées et C++/Win32 natives avec une interface utilisateur entièrement basée sur WinUI. Quand vous créez des applications en utilisant ces modèles de projet, la totalité de l’interface utilisateur de votre application est implémentée à l’aide de fenêtres, de contrôles et d’autres types d’interface utilisateur fournis par WinUI 3. Pour obtenir la liste complète des modèles de projet, consultez [cette section](index.md#project-templates-for-winui-3).
 
 ## <a name="prerequisites"></a>Prérequis
 
-Pour utiliser les modèles de projet WinUI 3 pour applications de bureau décrits dans cet article, configurez votre ordinateur de développement en suivant les instructions ci-dessous :
-
-1. Vérifiez que votre ordinateur de développement dispose de Windows 10, version 1803 (build 17134) ou d’une version plus récente. WinUI 3 pour les applications de bureau nécessite la version 1803 ou une version ultérieure du système d’exploitation.
-
-2. Installez Visual Studio 2019, version 16.7 Preview 1. Pour plus d’informations, consultez [ces instructions](index.md#configure-your-dev-environment).
-
-3. Installez les versions x64 et x86 de .NET 5 Preview 4 :
-    * x64 : [https://aka.ms/dotnet/net5/preview4/Sdk/dotnet-sdk-win-x64.exe](https://aka.ms/dotnet/net5/preview4/Sdk/dotnet-sdk-win-x64.exe)
-    * x86 : [https://aka.ms/dotnet/net5/preview4/Sdk/dotnet-sdk-win-x86.exe](https://aka.ms/dotnet/net5/preview4/Sdk/dotnet-sdk-win-x86.exe)
-
-    > [!NOTE]
-    > WinUI 3.0 Preview 1 nécessite .NET 5 Preview 4. Les préversions ultérieures de .NET 5 ne sont pas prises en charge avec WinUI 3.0 Preview 1.
-
-4. Installez l’extension VSIX qui comprend les modèles de projet WinUI 3.0 Preview 1 pour Visual Studio 2019. Pour plus d’informations, consultez [ces instructions](index.md#visual-studio-project-templates).
+Pour utiliser les modèles de projet WinUI 3 pour applications de bureau décrits dans cet article, configurez votre ordinateur de développement et installez WinUI 3 Preview 2 en suivant les instructions mentionnées [ici](index.md#install-winui-3-preview-2).
 
 ## <a name="create-a-winui-3-desktop-app-for-c-and-net-5"></a>Créer une application de bureau WinUI 3 pour C# et .NET 5
 
@@ -69,18 +45,11 @@ Pour utiliser les modèles de projet WinUI 3 pour applications de bureau décri
 
         ![Ajouter un projet](images/WinUI-csharp-appproject.png)
 
-    * ***Nom du projet* (Package)**  : il s’agit d’un [Projet de création de packages d’applications Windows](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) configuré pour générer l’application dans un package MSIX pour le déploiement. Ce projet contient le [manifeste du package](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root) pour votre application, et il s’agit du projet de démarrage de votre solution par défaut.
+    * ***Nom du projet* (Package)**  : il s’agit d’un [Projet de création de packages d’applications Windows](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) configuré pour générer l’application dans un [package MSIX](https://docs.microsoft.com/windows/msix/overview). Vous bénéficiez ainsi d’une expérience de déploiement moderne, de la possibilité de l’intégrer aux fonctionnalités de Windows 10 par le biais d’extensions de package et bien plus encore. Ce projet contient le [manifeste du package](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root) pour votre application, et il s’agit du projet de démarrage de votre solution par défaut.
 
         ![Ajouter un projet](images/WinUI-csharp-packageproject.png)
 
-7. Pour ajouter un nouvel élément à votre projet d’application, cliquez avec le bouton droit sur le nœud du projet ***Nom du projet* (Desktop)** dans l’**Explorateur de solutions** et sélectionnez **Ajouter** -> **Nouvel élément**. Dans la boîte de dialogue **Ajouter un nouvel élément**, sélectionnez l’onglet **WinUI**, choisissez l’élément que vous souhaitez ajouter, puis cliquez sur **Ajouter**. Vous pouvez choisir parmi les types d’éléments suivants :
-
-    * **Page vierge**
-    * **Fenêtre vide**
-    * **Contrôle personnalisé**
-    * **Dictionnaire de ressources**
-    * **Fichier de ressources**
-    * **Contrôle utilisateur**
+7. Pour ajouter un nouvel élément à votre projet d’application, cliquez avec le bouton droit sur le nœud du projet ***Nom du projet* (Desktop)** dans l’**Explorateur de solutions** et sélectionnez **Ajouter** -> **Nouvel élément**. Dans la boîte de dialogue **Ajouter un nouvel élément**, sélectionnez l’onglet **WinUI**, choisissez l’élément que vous souhaitez ajouter, puis cliquez sur **Ajouter**. Pour plus d’informations sur les éléments disponibles, consultez [cette section](index.md#item-templates-for-winui-3).
 
     ![Nouvel élément](images/WinUI-csharp-newitem.png)
 
@@ -108,18 +77,11 @@ Pour utiliser les modèles de projet WinUI 3 pour applications de bureau décri
 
         ![Ajouter un projet](images/WinUI-cpp-appproject.png)
 
-    * ***Nom du projet* (Package)**  : il s’agit d’un [Projet de création de packages d’applications Windows](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) configuré pour générer l’application dans un package MSIX pour le déploiement. Ce projet contient le [manifeste du package](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root) pour votre application, et il s’agit du projet de démarrage de votre solution par défaut.
+    * ***Nom du projet* (Package)**  : il s’agit d’un [Projet de création de packages d’applications Windows](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) configuré pour générer l’application dans un [package MSIX](https://docs.microsoft.com/windows/msix/overview). Vous bénéficiez ainsi d’une expérience de déploiement moderne, de la possibilité de l’intégrer aux fonctionnalités de Windows 10 par le biais d’extensions de package et bien plus encore. Ce projet contient le [manifeste du package](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root) pour votre application, et il s’agit du projet de démarrage de votre solution par défaut.
 
         ![Projet du package](images/WinUI-cpp-packageproject.png)
 
-7. Pour ajouter un nouvel élément à votre projet d’application, cliquez avec le bouton droit sur le nœud du projet ***Nom du projet* (Desktop)** dans l’**Explorateur de solutions** et sélectionnez **Ajouter** -> **Nouvel élément**. Dans la boîte de dialogue **Ajouter un nouvel élément**, sélectionnez l’onglet **WinUI**, choisissez l’élément que vous souhaitez ajouter, puis cliquez sur **Ajouter**. Vous pouvez choisir parmi les types d’éléments suivants :
-
-    * **Page vierge**
-    * **Fenêtre vide**
-    * **Contrôle personnalisé**
-    * **Dictionnaire de ressources**
-    * **Fichier de ressources**
-    * **Contrôle utilisateur**
+7. Pour ajouter un nouvel élément à votre projet d’application, cliquez avec le bouton droit sur le nœud du projet ***Nom du projet* (Desktop)** dans l’**Explorateur de solutions** et sélectionnez **Ajouter** -> **Nouvel élément**. Dans la boîte de dialogue **Ajouter un nouvel élément**, sélectionnez l’onglet **WinUI**, choisissez l’élément que vous souhaitez ajouter, puis cliquez sur **Ajouter**. Pour plus d’informations sur les éléments disponibles, consultez [cette section](index.md#item-templates-for-winui-3).
 
     ![Nouvel élément](images/WinUI-cpp-newitem.png)
 
@@ -127,8 +89,8 @@ Pour utiliser les modèles de projet WinUI 3 pour applications de bureau décri
 
 ## <a name="known-issues-and-limitations"></a>Limitations et problèmes connus
 
-Pour obtenir la liste des problèmes connus et des limitations de Preview 1, consultez [cette section](index.md#preview-1-limitations-and-known-issues).
+Pour obtenir la liste des problèmes connus et des limitations, consultez [cette section](index.md#preview-2-limitations-and-known-issues).
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [WinUI 3.0](index.md)
+* [Bibliothèque d’interface utilisateur Windows 3](index.md)

@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, windows 10, microsoft, learning python, python sur windows pour les débutants, installer python avec le microsoft store, python avec vs code, pygame sur windows
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 688ae004dad8653e70d86b3b91652b6898c1e9d3
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 5dee553fedc81f0b482d4b79f4d7d8be3a7bb106
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74881286"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493494"
 ---
 # <a name="get-started-using-python-on-windows-for-beginners"></a>Prise en main de Python sur Windows pour les débutants
 
@@ -202,7 +202,7 @@ Nous vous recommandons de consulter les ressources suivantes pour vous familiari
 
 ### <a name="working-with-python-in-vs-code"></a>Utilisation de Python dans VS Code
 
-- [Modification du code Python dans VS Code](https://code.visualstudio.com/docs/python/editing) : Découvrez comment tirer parti de la complétion automatique de VS Code et de la prise en charge d’IntelliSense pour Python, comment personnaliser leurs comportements ou simplement les désactiver.
+- [Modification du code Python dans VS Code](https://code.visualstudio.com/docs/python/editing) : Découvrez comment tirer parti de la complétion automatique de VS Code et de la prise en charge d’IntelliSense pour Python et notamment comment personnaliser leur comportement ou simplement les désactiver.
 
 - [Linting Python](https://code.visualstudio.com/docs/python/linting) : Le linting (vérification) est le processus qui consiste à exécuter un programme qui analysera le code pour identifier les erreurs potentielles. En savoir plus sur les différentes formes de prise en charge du linting fournies par VS Code pour Python et comment les configurer.
 

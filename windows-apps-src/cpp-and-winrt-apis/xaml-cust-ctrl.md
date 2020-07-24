@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, XAML, personnalisé, basé sur modèle, contrôle
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: a6cde5a62367dccd83ca8dc6a46c203587850422
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 2bd71e5ec78f3e0d1317c4e69ecd234985b2d8ab
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80760524"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86492844"
 ---
 # <a name="xaml-custom-templated-controls-with-cwinrt"></a>Contrôles XAML personnalisés (basés sur un modèle) avec C++/WinRT
 
@@ -21,7 +21,8 @@ ms.locfileid: "80760524"
 L’une des fonctionnalités les plus puissantes de la plateforme Windows universelle (UWP) est la flexibilité que fournit la pile de l’interface utilisateur (IU) pour créer des contrôles personnalisés basés sur le type [**Control**](/uwp/api/windows.ui.xaml.controls.control) XAML. Le framework IU XAML fournit des fonctionnalités comme les [propriétés de dépendance personnalisées](/windows/uwp/xaml-platform/custom-dependency-properties) et les [propriétés jointes](/windows/uwp/xaml-platform/custom-attached-properties), et des [modèles de contrôle](/windows/uwp/design/controls-and-patterns/control-templates), qui facilitent la création de contrôles personnalisables riches en fonctionnalités. Cette rubrique vous guide tout au long des étapes de création d’un contrôle personnalisé (basé sur modèle) à l’aide de C++/WinRT.
 
 ## <a name="create-a-blank-app-bglabelcontrolapp"></a>Créer une application vide (BgLabelControlApp)
-Commencez par créer un nouveau projet dans Microsoft Visual Studio. Créez un projet **Application vide (C++/WinRT)** , définissez son nom sur *BgLabelControlApp* et (pour que votre structure de dossiers corresponde à la procédure pas à pas), vérifiez que la case **Placer la solution et le projet dans le même répertoire** est décochée.
+
+Commencez par créer un nouveau projet dans Microsoft Visual Studio. Créez un projet **Application vide (C++/WinRT)** , définissez son nom sur *BgLabelControlApp* et (pour que votre structure de dossiers corresponde à la procédure pas à pas), vérifiez que la case **Placer la solution et le projet dans le même répertoire** est décochée. Ciblez la dernière version en disponibilité générale (autrement dit, pas la préversion) du SDK Windows.
 
 Dans une section ultérieure de cette rubrique, il vous sera demandé de générer votre projet (ne le générez pas avant cela).
 
@@ -50,11 +51,13 @@ La liste ci-dessus illustre le modèle qui vous suivez lorsque vous déclarez un
 > [!NOTE]
 > Si vous voulez une propriété de dépendance (DP) avec un type à virgule flottante, alors donnez-lui la valeur `double` (`Double` dans [MIDL 3.0](/uwp/midl-3/)). La déclaration et l’implémentation d’une propriété de dépendance (DP) de type `float` (`Single` dans MIDL), puis la définition d’une valeur pour cette propriété de dépendance dans le balisage XAML, génère l’erreur *Impossible de créer un « Windows.Foundation.Single » à partir du texte '<NUMBER>'* .
 
-Enregistrez le fichier et générez le projet. Pendant le processus de génération, l’outil `midl.exe` est exécuté pour créer un fichier de métadonnées Windows Runtime (`\BgLabelControlApp\Debug\BgLabelControlApp\Unmerged\BgLabelControl.winmd`) décrivant la classe runtime. Puis, l’outil `cppwinrt.exe` est exécuté pour générer les fichiers de code source et vous aider à créer et utiliser votre classe runtime. Ces fichiers incluent des stubs pour vous aider à implémenter la classe runtime **BgLabelControl** que vous avez déclarée dans votre fichier IDL. Ces stubs sont `\BgLabelControlApp\BgLabelControlApp\Generated Files\sources\BgLabelControl.h` et `BgLabelControl.cpp`.
+Enregistrez le fichier. Le projet ne sera pas généré complètement pour le moment, mais cette étape est utile car elle regénère les fichiers de code source dans lesquels vous allez implémenter la classe runtime **BgLabelControl**. Continuez et générez le projet maintenant (les erreurs de génération auxquelles vous pouvez vous attendre à ce stade sont liées à un « symbole externe non résolu »).
+
+Pendant le processus de génération, l’outil `midl.exe` est exécuté pour créer un fichier de métadonnées Windows Runtime (`\BgLabelControlApp\Debug\BgLabelControlApp\Unmerged\BgLabelControl.winmd`) décrivant la classe runtime. Puis, l’outil `cppwinrt.exe` est exécuté pour générer les fichiers de code source et vous aider à créer et utiliser votre classe runtime. Ces fichiers incluent des stubs pour vous aider à implémenter la classe runtime **BgLabelControl** que vous avez déclarée dans votre fichier IDL. Ces stubs sont `\BgLabelControlApp\BgLabelControlApp\Generated Files\sources\BgLabelControl.h` et `BgLabelControl.cpp`.
 
 Copiez les fichiers stub `BgLabelControl.h` et `BgLabelControl.cpp` à partir de `\BgLabelControlApp\BgLabelControlApp\Generated Files\sources\` dans le dossier de projet, à savoir `\BgLabelControlApp\BgLabelControlApp\`. Dans l’**Explorateur de solutions**, assurez-vous que l’option **Afficher tous les fichiers** est activée. Cliquez avec le bouton droit sur les fichiers stub que vous avez copiés, puis cliquez sur **Inclure dans le projet**.
 
-Vous verrez un `static_assert` en haut de `BgLabelControl.h` et de `BgLabelControl.cpp`, que vous devrez supprimer avant que le projet ne soit généré.
+Vous verrez un `static_assert` en haut de `BgLabelControl.h` et de `BgLabelControl.cpp`, que vous devrez supprimer. Le projet peut à présent être généré.
 
 ## <a name="implement-the-bglabelcontrol-custom-control-class"></a>Implémenter la classe de contrôle personnalisé **BgLabelControl**
 Maintenant, nous allons ouvrir `\BgLabelControlApp\BgLabelControlApp\BgLabelControl.h` et `BgLabelControl.cpp`, et implémenter notre classe runtime. Dans `BgLabelControl.h`, modifiez le constructeur pour définir la clé de style par défaut, implémentez **Label** et **LabelProperty**, ajoutez un gestionnaire d’événements statiques nommé **OnLabelChanged** pour traiter les modifications apportées à la valeur de la propriété de dépendance, et ajoutez un membre privé pour stocker le champ de sauvegarde pour **LabelProperty**.

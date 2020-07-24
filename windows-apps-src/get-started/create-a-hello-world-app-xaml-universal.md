@@ -6,14 +6,14 @@ ms.date: 03/06/2017
 ms.topic: article
 keywords: windows 10, uwp, première application, hello world
 ms.localizationpriority: medium
-ms.openlocfilehash: 93c78845a218620a8a46fc4439733734099b9853
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 7c4d4ba374c68509c0378e769262afda0dae7422
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "73847602"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86492834"
 ---
-# <a name="create-a-hello-world-app-xaml"></a>Créer une application « Hello World » (XAML)
+# <a name="create-a-hello-world-app-xaml"></a>Créer une application « Hello, World! » (XAML)
 
 Ce didacticiel vous explique comment utiliser XAML et C# pour créer une simple application « Hello World » pour la plateforme Windows universelle (UWP) sur Windows 10. Dans Microsoft Visual Studio, un seul projet vous permet de générer une application qui s’exécute sur n’importe quel appareil Windows 10.
 

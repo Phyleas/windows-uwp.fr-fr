@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projeté, projection, gérer, événement, délégué
 ms.localizationpriority: medium
-ms.openlocfilehash: eae966c130c52305b53cc4122844aeae49ecab92
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 5960de52c6cd68e98f80e7618f34dd0a94d08312
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82267496"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493364"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>Gérer des événements en utilisant des délégués en C++/WinRT
 
@@ -111,7 +111,7 @@ La syntaxe de l’opérateur d’appel de fonction est également intéressante.
 >
 >  Comme vous pouvez le voir, le délégué doit être déclaré avec un **IInspectable** comme expéditeur et une instance de la [classe KeyRoutedEventArgs](/uwp/api/windows.ui.xaml.input.keyroutedeventargs) comme arguments.
 >
-> Pour prendre un autre exemple, examinons [l’événement Popup.Closed](/uwp/api/windows.ui.xaml.controls.primitives.popup.closed). Son type de délégué est [EventHandler\<IInspectable\>](/uwp/api/windows.foundation.eventhandler). Par conséquent, votre délégué prendra **IInspectable** comme expéditeur et un autre **IInspectable** (car c’est le paramètre type de **EventHandler**) comme arguments.
+> Pour prendre un autre exemple, examinons [l’événement Popup.Closed](/uwp/api/windows.ui.xaml.controls.primitives.popup.closed). Son type délégué est [EventHandler\<IInspectable\>](/uwp/api/windows.foundation.eventhandler). Par conséquent, votre délégué prendra **IInspectable** comme expéditeur et un autre **IInspectable** (car c’est le paramètre type de **EventHandler**) comme arguments.
 
 Si vous n’effectuez pas beaucoup de tâches dans votre gestionnaire d’événements, vous pouvez utiliser une fonction lambda au lieu d’une fonction membre. Là encore, l’exemple de code ci-dessous n’est peut-être pas très parlant, mais un délégué **RoutedEventHandler** est construit à partir d’une fonction lambda qui, à nouveau, doit correspondre à la syntaxe de l’opérateur d’appel de fonction dont nous avons discuté plus haut.
 
@@ -295,6 +295,6 @@ Si vous gérez un événement avec la fonction membre d’un objet, ou à partir
 * [Fonction winrt::implements::get_strong](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function)
 
 ## <a name="related-topics"></a>Rubriques connexes
-* [Créer des événements en C++/WinRT](author-events.md)
-* [Opérations concurrentes et asynchrones avec C++/WinRT](concurrency.md)
-* [Références fortes et faibles en C++/WinRT](weak-references.md)
+* [Créer des événements en C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-events)
+* [Opérations concurrentes et asynchrones avec C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)
+* [Références fortes et faibles en C++/WinRT](/windows/uwp/cpp-and-winrt-apis/weak-references)
