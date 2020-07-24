@@ -1,4 +1,4 @@
-- name: Vue d’ensemble
+- name: Vue d'ensemble
   href: index.md
 - name: Notions de base de la conception
   items:
@@ -84,19 +84,19 @@
       items:
         - name: Boutons
           href: controls-and-patterns/buttons.md
-        - name: Case à cocher
+        - name: Cases à cocher
           href: controls-and-patterns/checkbox.md
         - name: Zones de liste modifiables et zones de liste
           href: controls-and-patterns/combo-box.md
         - name: Liens hypertexte
           href: controls-and-patterns/hyperlinks.md
-        - name: Radio button
+        - name: Cases d’option
           href: controls-and-patterns/radio-button.md
         - name: Contrôle d’évaluation
           href: controls-and-patterns/rating.md
-        - name: Curseur
+        - name: Curseurs
           href: controls-and-patterns/slider.md
-        - name: Bascule
+        - name: Boutons bascule
           href: controls-and-patterns/toggles.md
     - name: Regroupements
       items:
@@ -360,7 +360,7 @@
                   items:
                     - name: Vue d’ensemble
                       href: shell/tiles-and-notifications/toast-desktop-apps.md
-                    - name: 'Applications C#'
+                    - name: Applications C#
                       href: shell/tiles-and-notifications/send-local-toast-desktop.md
                     - name: Applications WRL en C++
                       href: shell/tiles-and-notifications/send-local-toast-desktop-cpp-wrl.md
@@ -525,7 +525,7 @@
       href: devices/designing-for-MR.md
 - name: Facilité d'utilisation
   items:
-    - name: Vue d’ensemble
+    - name: Vue d'ensemble
       href: usability/index.md
     - name: Accessibilité
       href: accessibility/accessibility.md
