@@ -5,12 +5,12 @@ ms.date: 05/22/2020
 ms.topic: article
 keywords: Windows 10 s, Always connected, ARM, ARM64, émulation x86
 ms.localizationpriority: medium
-ms.openlocfilehash: 006de4f1f04ffb98d46b6ceb981d3d0fba311026
-ms.sourcegitcommit: e51f9489d8c977c3498afb1a75c91f96ac3a642b
+ms.openlocfilehash: 679afeb1915bfcb84445ca97453a884654249a0e
+ms.sourcegitcommit: 2aa82d60d7f9edf7ae7f9a550a8d044e2040c08a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83854745"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87443349"
 ---
 # <a name="windows-10-on-arm"></a>Windows 10 sur ARM
 À l’origine, Windows 10 (distingué de Windows 10 mobile) pouvait s’exécuter uniquement sur des PC qui étaient équipés de processeurs x86 et x64. Désormais, Windows 10 Desktop peut s’exécuter sur des machines qui sont alimentées par des processeurs ARM64 avec la mise à jour des créateurs de automne ou une version plus récente. La nature de l’économie d’énergie de l’architecture de l’UC ARM permet à ces PC d’avoir une autonomie de batterie et une prise en charge de tous les jours pour les réseaux de données mobiles. Ces PC offrent une excellente compatibilité des applications et vous permettent d’exécuter vos applications Win32 x86 existantes sans les modifier. Pour plus d’informations ou pour obtenir une démonstration, consultez la [vidéo Channel 9 pour le PC Always Connected](https://channel9.msdn.com/Events/Build/2017/P4171).
@@ -41,11 +41,11 @@ Visual Studio 2019 fournit plusieurs téléchargements d’outils pour Windows 1
 
 ### <a name="visual-c-redistributable"></a>Redistributable Visual C++
 
-Le package Redist Visual C++ est disponible pour les applications ARM. Accédez à la [page downlaods de Visual Studio](https://visualstudio.microsoft.com/downloads/) pour accéder à **tous les téléchargements**, ouvrez d' **autres outils et infrastructures**, puis accédez à l’entrée **redistribuable Microsoft Visual C++ pour Visual Studio 2019** . Sélectionnez la case d’option **ARM64** , puis **Téléchargez**.
+Le package Redist Visual C++ est disponible pour les applications ARM. Visitez la [page de téléchargements de Visual Studio](https://visualstudio.microsoft.com/downloads/) pour accéder à **tous les téléchargements**, ouvrir d' **autres outils et infrastructures**, puis accédez à l’entrée **redistribuable Microsoft Visual C++ pour Visual Studio 2019** . Sélectionnez la case d’option **ARM64** , puis **Téléchargez**.
 
 ### <a name="remote-tools"></a>Outils de contrôle à distance
 
-Outils de contrôle à distance de Visual Studio sont disponibles pour les applications ARM. Accédez à la [page downlaods de Visual Studio](https://visualstudio.microsoft.com/downloads/) pour accéder à **tous les téléchargements**, ouvrez **outils pour Visual Studio 2019**, puis accédez à l’entrée **outils de contrôle à distance de Visual Studio 2019** . Sélectionnez la case d’option **ARM64* , puis **Téléchargez**.
+Outils de contrôle à distance de Visual Studio sont disponibles pour les applications ARM. Visitez la [page de téléchargements de Visual Studio](https://visualstudio.microsoft.com/downloads/) pour accéder à **tous les téléchargements**, ouvrez **outils pour Visual Studio 2019**, puis accédez à l’entrée **outils de contrôle à distance de Visual Studio 2019** . Sélectionnez la case d’option **ARM64* , puis **Téléchargez**.
 
 
 ## <a name="in-this-section"></a>Contenu de cette section
