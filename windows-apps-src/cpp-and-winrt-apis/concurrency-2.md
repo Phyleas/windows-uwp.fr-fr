@@ -5,12 +5,12 @@ ms.date: 07/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, concurrence, asynchrone, async
 ms.localizationpriority: medium
-ms.openlocfilehash: 26a0ea1ec70f4ae4255030541a6513541db1fb99
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: ff00264d0806e7fbdfcabd000ec68857b1485dcd
+ms.sourcegitcommit: 1e8f51d5730fe748e9fe18827895a333d94d337f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82267500"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87296154"
 ---
 # <a name="more-advanced-concurrency-and-asynchrony-with-cwinrt"></a>Concurrence et opérations asynchrones plus avancées avec C++/WinRT
 
@@ -81,11 +81,14 @@ IAsyncAction DoWorkAsync(TextBlock textblock)
     co_await winrt::resume_background();
     // Do compute-bound work here.
 
-    co_await winrt::resume_foreground(textblock.Dispatcher()); // Switch to the foreground thread associated with textblock.
+    // Switch to the foreground thread associated with textblock.
+    co_await winrt::resume_foreground(textblock.Dispatcher());
 
     textblock.Text(L"Done!"); // Guaranteed to work.
 }
 ```
+
+La fonction **winrt::resume_foreground** prend un paramètre de priorité facultatif. Si vous utilisez ce paramètre, le modèle indiqué ci-dessus est approprié. Si ce n’est pas le cas, vous pouvez choisir de simplifier `co_await winrt::resume_foreground(someDispatcherObject);` en `co_await someDispatcherObject;`.
 
 ## <a name="execution-contexts-resuming-and-switching-in-a-coroutine"></a>Contextes d’exécution, reprise et basculement dans une coroutine
 
@@ -655,7 +658,7 @@ Le premier argument (l’*expéditeur*) n’est pas nommé, car nous ne l’util
 
 ## <a name="awaiting-a-kernel-handle"></a>En attente d’un handle de noyau
 
-C++/WinRT fournit une classe **resume_on_signal** que vous pouvez utiliser pour interrompre l’opération jusqu’à ce qu’un événement de noyau soit signalé. Vous êtes tenu de vous assurer que le handle reste valide jusqu’au retour de votre `co_await resume_on_signal(h)`. **resume_on_signal** ne peut pas le faire à votre place, car vous avez peut-être perdu le handle avant le démarrage de **resume_on_signal**, comme dans le premier exemple.
+C++/WinRT fournit une fonction [**winrt::resume_on_signal**](/uwp/cpp-ref-for-winrt/resume-on-signal) que vous pouvez utiliser pour interrompre l’opération jusqu’à ce qu’un événement de noyau soit signalé. Vous êtes tenu de vous assurer que le handle reste valide jusqu’au retour de votre `co_await resume_on_signal(h)`. **resume_on_signal** ne peut pas le faire à votre place, car vous avez peut-être perdu le handle avant le démarrage de **resume_on_signal**, comme dans le premier exemple.
 
 ```cppwinrt
 IAsyncAction Async(HANDLE event)
@@ -712,6 +715,21 @@ IAsyncAction SampleCaller()
     event.close(); // Our handle is closed, but Async still has a valid handle.
 
     co_await async; // Will wake up when *event* is signaled.
+}
+```
+
+Vous pouvez passer une valeur de délai d’attente à **resume_on_signal**, comme dans cet exemple.
+
+```cppwinrt
+winrt::handle event = ...
+
+if (co_await winrt::resume_on_signal(event.get(), std::literals::2s))
+{
+    puts("signaled");
+}
+else
+{
+    puts("timed out");
 }
 ```
 

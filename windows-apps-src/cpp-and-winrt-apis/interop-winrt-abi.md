@@ -5,12 +5,12 @@ ms.date: 11/30/2018
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, port, migrer, interopérabilité, ABI
 ms.localizationpriority: medium
-ms.openlocfilehash: 4249618a4b26fd7e8129547a679c80c5e2ed6903
-ms.sourcegitcommit: a2b340dc3a28e845830eeb9ce00342a3f7351d62
+ms.openlocfilehash: db66e276ffa0337da943917543a0065ac160e468
+ms.sourcegitcommit: 1e8f51d5730fe748e9fe18827895a333d94d337f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85834997"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87296180"
 ---
 # <a name="interop-between-cwinrt-and-the-abi"></a>Interopérabilité entre C++/WinRT et ABI
 
@@ -333,6 +333,14 @@ GUID abiguid;
 |-|-|-|
 | De **winrt::guid** en **GUID** | `abiguid = winrtguid;` | `abiguid = reinterpret_cast<GUID&>(winrtguid);` |
 | De **GUID** en **winrt::guid** | `winrtguid = abiguid;` | `winrtguid = reinterpret_cast<winrt::guid&>(abiguid);` |
+
+Vous pouvez construire un **winrt::guid** comme ceci.
+
+```cppwinrt
+winrt::guid myGuid{ 0xC380465D, 0x2271, 0x428C, { 0x9B, 0x83, 0xEC, 0xEA, 0x3B, 0x4A, 0x85, 0xC1} };
+```
+
+Pour obtenir un Gist qui montre comment construire un **winrt::guid** à partir d’une chaîne, consultez [make_guid.cpp](https://gist.github.com/kennykerr/6c948882de395c25b3218ad8d4daf362).
 
 ## <a name="interoperating-with-the-abis-hstring"></a>Interopération avec HSTRING d’ABI
 

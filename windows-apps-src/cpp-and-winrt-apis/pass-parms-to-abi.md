@@ -5,12 +5,12 @@ ms.date: 07/10/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, passer, paramètres, ABI
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c5ce6a30e68fe6fc26316bc2f41c6e2556b98ef
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 51cde2332d3d9df9d1f488aa7f8246f9e1e2ed36
+ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82255253"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997976"
 ---
 # <a name="passing-parameters-into-the-abi-boundary"></a>Passage de paramètres à la frontière ABI
 
@@ -57,7 +57,7 @@ Les collections Windows Runtime prennent déjà en charge **IIterable**.
 
 Notez que **IIterable\<U\>** et **std::vector\<U\>** ne sont pas autorisés, même si **U** est convertible en **T**. Pour **std::vector\<U\>** , vous pouvez utiliser la version à double itérateur (plus de détails ci-dessous).
 
-Dans certains cas, l’objet que vous avez peut implémenter l’**IIterable** que vous souhaitez. Par exemple, l’**IVectorView\<StorageFile\>** produit par [**FileOpenPicker.PickMultipleFilesAsync**](/uwp/api/windows.storage.pickers.fileopenpicker.pickmultiplefilesasync) implémente **IIterable<StorageFile>** . Mais il implémente également **IIterable<IStorageItem>**  ; il vous suffit de le demander explicitement.
+Dans certains cas, l’objet que vous avez peut implémenter l’**IIterable** que vous souhaitez. Par exemple, l’**IVectorView\<StorageFile\>** produit par [**FileOpenPicker.PickMultipleFilesAsync**](/uwp/api/windows.storage.pickers.fileopenpicker.pickmultiplefilesasync) implémente **IIterable\<StorageFile\>** . Mais il implémente également **IIterable\<IStorageItem\>**  ; il vous suffit de le demander explicitement.
 
 ```cppwinrt
 IVectorView<StorageFile> pickedFiles{ co_await filePicker.PickMultipleFilesAsync() };
@@ -127,7 +127,7 @@ Vous pouvez utiliser **IMap::GetView** pour obtenir un **IMapView** à partir d�
 
 ## <a name="vector-parameters"></a>Paramètres de vecteur
 
-**winrt::param::vector\<T\>** simplifie le passage de paramètres aux API acceptant **IVector\<T\>** .
+**winrt::param::vector\<T\>** simplifie le passage de paramètres aux API qui acceptent **IVector\<T\>** .
 
 |Types que vous pouvez passer|Remarques|
 |-|-|
@@ -140,7 +140,7 @@ Si la méthode mute le vecteur, la seule façon d’observer la mutation consist
 
 ## <a name="map-parameters"></a>Paramètre de carte
 
-**winrt::param::map\<T\>** simplifie le passage de paramètres aux API acceptant **IMap\<T\>** .
+**winrt::param::map\<T\>** simplifie le passage de paramètres aux API qui acceptent **IMap\<T\>** .
 
 |Types que vous pouvez passer|Remarques|
 |-|-|
@@ -154,7 +154,7 @@ Si la méthode mute la carte, la seule façon d’observer la mutation consiste 
 
 ## <a name="array-parameters"></a>Paramètres de tableau
 
-**winrt::array_view\<T\>** n’est pas dans l’espace de noms **winrt::param**, mais il est utilisé pour les paramètres qui sont des tableaux de style C (également appelés *tableaux conformes*).
+**winrt::array_view\<T\>** n’est pas dans l’espace de noms **winrt::param**, mais il est utilisé pour les paramètres qui sont des tableaux de style C&mdash;également appelés *tableaux conformes*.
 
 |Types que vous pouvez passer|Remarques|
 |-|-|

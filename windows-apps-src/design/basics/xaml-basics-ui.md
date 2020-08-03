@@ -5,12 +5,12 @@ keywords: XAML, UWP, Bien démarrer
 ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c23a9539d0fc3902f715917b380e8b6b3e132c15
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 23cadaca6f82d7cb43834f5a86c56a3fa34cb00e
+ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "68974460"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997796"
 ---
 # <a name="tutorial-create-a-user-interface"></a>Tutoriel : Créer une interface utilisateur
 
@@ -383,7 +383,7 @@ Exécutez maintenant l’application pour voir le contrôle **GridView** avec le
 
 ## <a name="part-4-modify-the-item-container-style"></a>Partie 4 : Modifier le style du conteneur d’éléments
 
-Un modèle de contrôle d’un élément contient les visuels qui affichent l’état, comme la sélection, le pointage et le focus. Ces visuels sont rendus au-dessus ou en dessous du modèle de données. Ici, vous allez modifier les propriétés **Background** et **Margin** du modèle de contrôle afin de donner aux éléments de **GridView** un arrière-plan grisé.
+Le modèle de contrôle d’un élément contient les visuels qui affichent l’état, comme la sélection, le pointage et le focus. Ces visuels sont rendus au-dessus ou en dessous du modèle de données. Ici, vous allez modifier les propriétés **Background** et **Margin** du modèle de contrôle afin de donner aux éléments de **GridView** un arrière-plan grisé.
 
 Pour modifier le conteneur d’éléments
 
@@ -558,5 +558,4 @@ Maintenant que vous avez créé l’interface utilisateur de base, consultez ces
 
 ## <a name="get-the-final-version-of-the-photolab-sample"></a>Obtenir la version finale de l’exemple PhotoLab
 
-Ce tutoriel ne génère pas l’application de retouche photo complète. Veillez donc à examiner la [version définitive](https://github.com/Microsoft/Windows-appsample-photo-lab) pour voir d’autres fonctionnalités telles que les animations personnalisées et le support téléphonique.
-
+Ce tutoriel ne génère pas l’application de retouche photo complète. Veillez donc à examiner la [version finale](https://github.com/Microsoft/Windows-appsample-photo-lab) pour voir d’autres fonctionnalités, comme les animations personnalisées et les dispositions adaptatives.

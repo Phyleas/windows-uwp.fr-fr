@@ -12,12 +12,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 57002a1edafd5dd7a367220fc0425fdc52b711d1
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: b68b5bc5fc6042d7abeae6944c351af178b70874
+ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970844"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86998016"
 ---
 # <a name="password-box"></a>Zone de mot de passe
 
@@ -145,9 +145,7 @@ La valeur de la propriété [PasswordRevealMode](https://docs.microsoft.com/uwp/
 
 Les autres valeurs d’énumération [PasswordRevealMode](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordRevealMode), **Hidden** et **Visible**, masquent le bouton d’affichage du mot de passe et vous permettent de gérer par programme si le mot de passe est masqué.
 
-Pour toujours masquer le mot de passe, définissez PasswordRevealMode sur Hidden. Sauf si vous avez besoin que le mot de passe soit toujours masqué, vous pouvez fournir une interface utilisateur personnalisée pour permettre à l’utilisateur de faire basculer PasswordRevealMode de la valeur Hidden à Visible.
-
-Dans les versions précédentes de Windows Phone, PasswordBox utilisait une case à cocher pour choisir d’afficher ou de masquer le mot de passe. Vous pouvez créer une interface utilisateur similaire pour votre application, comme illustré dans l’exemple suivant. Vous pouvez également utiliser d’autres contrôles, tels que [ToggleButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton), pour permettre à l’utilisateur de basculer entre les modes.
+Pour toujours masquer le mot de passe, définissez PasswordRevealMode sur Hidden. Sauf si vous avez besoin que le mot de passe soit toujours masqué, vous pouvez fournir une interface utilisateur personnalisée pour permettre à l’utilisateur de faire basculer PasswordRevealMode de la valeur Hidden à Visible. Par exemple, vous pouvez utiliser une case à cocher pour choisir d’afficher ou de masquer le mot de passe, comme illustré dans l’exemple suivant. Vous pouvez également utiliser d’autres contrôles, tels que [ToggleButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton), pour permettre à l’utilisateur de basculer entre les modes.
 
 Cet exemple montre comment utiliser un élément [CheckBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox) pour permettre à un utilisateur de changer le mode d’affichage d’un élément PasswordBox.
 

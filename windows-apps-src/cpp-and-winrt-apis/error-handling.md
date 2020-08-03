@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, erreur, gestion, exception
 ms.localizationpriority: medium
-ms.openlocfilehash: 37819d1626d3adc6f5647f447567a9273e72668d
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 1092427659cfbf2fb7d1b5dbfc9cb8802dcfeccd
+ms.sourcegitcommit: 1e8f51d5730fe748e9fe18827895a333d94d337f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "68270129"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87296157"
 ---
 # <a name="error-handling-with-cwinrt"></a>Gestion des erreurs avec C++/WinRT
 
@@ -58,7 +58,7 @@ IAsyncAction MakeThumbnailsAsync()
         }
         catch (winrt::hresult_error const& ex)
         {
-            winrt::hresult hr = ex.to_abi(); // HRESULT_FROM_WIN32(ERROR_FILE_NOT_FOUND).
+            winrt::hresult hr = ex.code(); // HRESULT_FROM_WIN32(ERROR_FILE_NOT_FOUND).
             winrt::hstring message = ex.message(); // The system cannot find the file specified.
         }
     }
@@ -66,6 +66,8 @@ IAsyncAction MakeThumbnailsAsync()
 ```
 
 Utilisez ce même modèle dans une coroutine lorsque vous appelez une fonction faisant l’objet d’une instruction `co_await`. Un autre exemple de cette conversion de HRESULT en exception est le cas où une API du composant retourne E_OUTOFMEMORY, ce qui entraîne la levée d’un **std::bad_alloc**.
+
+Préférez [**winrt::hresult_error::code**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error#hresult_errorcode-function) quand vous jetez juste un coup d’œil à un code HRESULT. La fonction [**winrt::hresult_error::to_abi**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error#hresult_errorto_abi-function), en revanche, est convertie en objet d’erreur COM et envoie (push) l’état dans le stockage local des threads COM.
 
 ## <a name="throwing-exceptions"></a>Levée des exceptions
 Dans certains cas, vous déciderez que, si votre appel à une fonction donnée échoue, votre application ne pourra pas être restaurée (vous ne pourrez plus être sûr qu’elle fonctionnera de manière prévisible). L’exemple de code ci-dessous utilise une valeur [**winrt::handle**](/uwp/cpp-ref-for-winrt/handle) comme wrapper autour du HANDLE renvoyé par [**CreateEvent**](https://docs.microsoft.com/windows/desktop/api/synchapi/nf-synchapi-createeventa). Il passe ensuite le handle (en créant une valeur `bool` à partir de celui-ci) au modèle de fonction [**winrt::check_bool**](/uwp/cpp-ref-for-winrt/error-handling/check-bool). **winrt::check_bool** fonctionne avec une valeur `bool` ou avec n’importe quelle valeur convertible en valeur `false` (condition d’erreur) ou `true` (condition de réussite).

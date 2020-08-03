@@ -7,13 +7,13 @@ manager: jken
 ms.topic: article
 keywords: NodeJS, Node.js, windows 10, microsoft, découvrir nodejs, node sur windows, node sur wsl, node sur linux sur windows, installer node sur windows, nodejs avec vs code, développer avec node sur windows, développer avec nodejs sur windows, installer node sur WSL, NodeJS sur le Sous-système Windows pour Linux
 ms.localizationpriority: medium
-ms.date: 06/09/2020
-ms.openlocfilehash: e8fb06cb1e68d5dfa7f23e6966f917c96eb79859
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.date: 07/28/2020
+ms.openlocfilehash: ce4e736751d5586c6ab4489e976fc397b1be0301
+ms.sourcegitcommit: 6b83f1854a113490dcd4f52425ecade9e66e0b44
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493274"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87333793"
 ---
 # <a name="set-up-your-nodejs-development-environment-with-wsl-2"></a>Configurer votre environnement de développement Node.js avec WSL 2
 
@@ -85,7 +85,10 @@ Si nvm est actuellement le gestionnaire de versions le plus couramment utilisé 
 
 ## <a name="install-your-favorite-code-editor"></a>Installer votre éditeur de code favori
 
-Nous vous recommandons d’utiliser **Visual Studio Code** avec l’**extension Remote-WSL** pour les projets Node.js. Cela a pour effet de diviser VS Code en une architecture « client-serveur », avec le client (l’interface utilisateur) s’exécutant sur votre ordinateur Windows, et le serveur (votre code, Git, plug-in, etc.) s’exécutant à distance.
+Nous vous recommandons d’utiliser Visual Studio Code avec l’extension Remote-WSL pour les projets Node.js. Cela a pour effet de diviser VS Code en une architecture « client-serveur », avec le client (l’interface utilisateur VS Code) s’exécutant sur votre système d’exploitation Windows, et le serveur (votre code, Git, plug-in, etc.) s’exécutant « à distance » sur votre distribution Linux WSL. 
+
+> [!NOTE]
+> Ce scénario « distant » est un peu différent de ce à quoi vous pouvez être habitué. WSL prend en charge une distribution Linux réelle dans laquelle le code de votre projet est exécuté, indépendamment de votre système d’exploitation Windows, mais toujours sur votre ordinateur local. L’extension Remote-WSL se connecte à votre sous-système Linux comme s’il s’agissait d’un serveur distant, même s’il n’est pas en cours d’exécution dans le cloud. Il est toujours en cours d’exécution sur votre ordinateur local dans l’environnement WSL que vous avez activé pour s’exécuter avec Windows. 
 
 - Les solutions IntelliSense et Linting basées sur Linux sont prises en charge.
 - Votre projet sera automatiquement généré dans Linux.

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f08c2cc39bb4cdf9a49351f70143a0f86df1fb7
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 2c717a74824db43984794b67638dd19b51b5dacd
+ms.sourcegitcommit: 83225cd9f3ef184277fc293d09982ecd511cc088
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74254723"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87160873"
 ---
 <a name="sample-data-on-the-design-surface-and-for-prototyping"></a>Exemples de données sur l’aire de conception et pour la création d’un prototype
 =============================================================================================
@@ -26,6 +26,10 @@ Il peut être impossible ou non souhaitable (peut-être pour des raisons de conf
 
 -   Téléchargez l’application [Bookstore1](https://codeload.github.com/MicrosoftDocs/windows-topic-specific-samples/zip/Bookstore1Universal_10).
 -   Téléchargez l’application [Bookstore2](https://codeload.github.com/MicrosoftDocs/windows-topic-specific-samples/zip/Bookstore2Universal_10).
+
+
+> [!NOTE]
+> Les captures d’écran de cet article proviennent d’une version antérieure de Visual Studio. Elles peuvent ne pas correspondre précisément à votre expérience de développement si vous utilisez Visual Studio 2019.
 
 <a name="setting-datacontext-in-markup"></a>Configuration de DataContext dans le balisage
 -----------------------------
@@ -44,7 +48,7 @@ En procédant ainsi, votre page n’est plus aussi « configurable » qu’ell
 
 ![Interface utilisateur de conception partiellement allouée.](images/displaying-data-in-the-designer-01.png)
 
-La première solution à essayer consiste à commenter l’affectation de cette propriété **DataContext** et définir **DataContext** plutôt dans le balisage de la page. Ainsi, vos données actives s’affichent au moment de la conception et de l’exécution. Pour ce faire, ouvrez d’abord votre page XAML. Ensuite, dans la fenêtre **Structure du document**, cliquez sur l’élément configurable racine (généralement intitulé **\[Page\]** ) pour le sélectionner. Dans la fenêtre **Propriétés**, recherchez la propriété **DataContext** (à l’intérieur de la catégorie Common), puis cliquez sur **Nouveau**. Cliquez sur le type de modèle de vue à partir de la boîte de dialogue **Sélectionner un objet**, puis cliquez sur **OK**.
+La première solution à essayer consiste à commenter l’affectation de cette propriété **DataContext** et définir **DataContext** plutôt dans le balisage de la page. Ainsi, vos données actives s’affichent au moment de la conception et de l’exécution. Pour ce faire, ouvrez d’abord votre page XAML. Ensuite, dans la fenêtre **Structure du document**, cliquez sur l’élément configurable racine (généralement intitulé **\[Page\]** ) pour le sélectionner. Dans la fenêtre **Propriétés**, recherchez la propriété **DataContext** (à l’intérieur de la catégorie Common), puis modifiez-la. Sélectionnez le type de modèle de vue à partir de la boîte de dialogue **Sélectionner un objet**, puis cliquez sur **OK**.
 
 ![Interface utilisateur pour la configuration de DataContext.](images/displaying-data-in-the-designer-02.png)
 

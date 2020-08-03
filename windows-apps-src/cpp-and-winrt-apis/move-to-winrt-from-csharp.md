@@ -5,12 +5,12 @@ ms.date: 07/15/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, porter, migrer, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: 21032a99c389e968728fe2dac2875475efc351c4
-ms.sourcegitcommit: 379fd00bfcc6c5f1e3c7e379a367b08641a7f961
+ms.openlocfilehash: 734173812ff5a853abfb93eb34fcfa43b9f16872
+ms.sourcegitcommit: 1e8f51d5730fe748e9fe18827895a333d94d337f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84819010"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87296199"
 ---
 # <a name="move-to-cwinrt-from-c"></a>Passer de C# à C++/WinRT
 
@@ -274,6 +274,34 @@ Pour la génération de chaînes, C# possède un type [**StringBuilder**](/dotne
 | Accéder au résultat | `s = builder.ToString();` | `ws = builder.str();` |
 
 Consultez également [Portage de la méthode **BuildClipboardFormatsOutputString**](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#buildclipboardformatsoutputstring) et [Portage de la méthode **DisplayChangedFormats**](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#displaychangedformats).
+
+### <a name="running-code-on-the-main-ui-thread"></a>Exécution de code sur le thread d’interface utilisateur principal 
+
+Cet exemple est tiré de l’[exemple de scanneur de codes-barres](/samples/microsoft/windows-universal-samples/barcodescanner/).
+
+Lorsque vous souhaitez travailler sur le thread d’interface utilisateur principal dans un projet C#, vous utilisez généralement la méthode [**CoreDispatcher.RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync), comme ceci.
+
+```csharp
+private async void Watcher_Added(DeviceWatcher sender, DeviceInformation args)
+{
+    await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+    {
+        // Do work on the main UI thread here.
+    });
+}
+```
+
+Il est bien plus simple d’exprimer cela en C++/WinRT. Notez que nous acceptons les paramètres par valeur en supposant que nous allons vouloir y accéder après le premier point de suspension (`co_await`, dans le cas présent). Pour plus d’informations, consultez [Passage de paramètres](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing).
+
+```cppwinrt
+winrt::fire_and_forget Watcher_Added(DeviceWatcher sender, winrt::DeviceInformation args)
+{
+    co_await Dispatcher();
+    // Do work on the main UI thread here.
+}
+```
+
+Si vous devez effectuer le travail à une priorité différente de celle par défaut, consultez la fonction [**winrt::resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground), qui a une surcharge qui est prioritaire. Pour obtenir des exemples de code montrant comment attendre un appel à **winrt::resume_foreground**, consultez [Programmation en tenant compte de l’affinité des threads](/windows/uwp/cpp-and-winrt-apis/concurrency-2#programming-with-thread-affinity-in-mind).
 
 ## <a name="porting-related-tasks-that-are-specific-to-cwinrt"></a>Tâches relatives au portage spécifiques à C++/WinRT
 

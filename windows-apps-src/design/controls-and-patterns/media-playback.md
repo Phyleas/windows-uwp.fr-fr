@@ -9,12 +9,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bc12d76cf34b5a631435a7535567aab0cafb0f44
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: dcccc862768b276c3c7965e51e8b2c30dca61e59
+ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970374"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86998006"
 ---
 # <a name="media-player"></a>Lecteur multimédia
 
@@ -85,7 +85,7 @@ Les contrôles de transport prennent en charge les dispositions sur une seule et
 
 La disposition des contrôles sur deux lignes (voir ci-dessous) est recommandée pour la plupart des scénarios d’utilisation, en particulier sur les écrans plus grands. Cette disposition offre davantage d’espace pour les contrôles et simplifie l’utilisation de la chronologie.
 
-![Exemple de contrôles MTC sur téléphone répartis sur deux lignes](images/controls/mtc_double_inprod.png)
+![Exemple de contrôles MTC répartis sur deux lignes](images/controls/mtc_double_inprod.png)
 
 **Contrôles de transport de média système**
 

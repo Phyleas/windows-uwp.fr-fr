@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projeté, projection, gérer, événement, délégué
 ms.localizationpriority: medium
-ms.openlocfilehash: 5960de52c6cd68e98f80e7618f34dd0a94d08312
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: cd67ea63fc633716cabf9a293a5faeeed6d24b70
+ms.sourcegitcommit: 1e8f51d5730fe748e9fe18827895a333d94d337f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493364"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87296183"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>Gérer des événements en utilisant des délégués en C++/WinRT
 
@@ -39,10 +39,14 @@ Un exemple simple consiste à gérer l’événement de clic d’un bouton. Il e
 
 ```cppwinrt
 // MainPage.h
-void ClickHandler(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& args);
+void ClickHandler(
+    winrt::Windows::Foundation::IInspectable const& sender,
+    winrt::Windows::UI::Xaml::RoutedEventArgs const& args);
 
 // MainPage.cpp
-void MainPage::ClickHandler(IInspectable const& /* sender */, RoutedEventArgs const& /* args */)
+void MainPage::ClickHandler(
+    IInspectable const& /* sender */,
+    RoutedEventArgs const& /* args */)
 {
     Button().Content(box_value(L"Clicked"));
 }
@@ -67,7 +71,9 @@ Voici un exemple qui utilise une fonction membre statique (vous remarquerez la s
 
 ```cppwinrt
 // MainPage.h
-static void ClickHandler(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& args);
+static void ClickHandler(
+    winrt::Windows::Foundation::IInspectable const& sender,
+    winrt::Windows::UI::Xaml::RoutedEventArgs const& args);
 
 // MainPage.cpp
 MainPage::MainPage()
@@ -76,7 +82,9 @@ MainPage::MainPage()
 
     Button().Click( MainPage::ClickHandler );
 }
-void MainPage::ClickHandler(IInspectable const& /* sender */, RoutedEventArgs const& /* args */) { ... }
+void MainPage::ClickHandler(
+    IInspectable const& /* sender */,
+    RoutedEventArgs const& /* args */) { ... }
 ```
 
 Il existe d’autres façons de construire un **RoutedEventHandler**. Vous trouverez ci-dessous le bloc de syntaxe extrait de la rubrique de documentation relative à [**RoutedEventHandler**](/uwp/api/windows.ui.xaml.routedeventhandler) (choisir *C++/WinRT* dans la liste déroulante **Langage** en haut à droite de la page web). Notez les différents constructeurs : l’un d’entre eux prend une expression lambda ; un autre une fonction gratuite, et un autre (celui que nous avons utilisé ci-dessus) prend un objet et un pointeur-vers-fonction-membre.
@@ -106,7 +114,9 @@ La syntaxe de l’opérateur d’appel de fonction est également intéressante.
 > Ces informations nous indiquent que l’événement **UIElement.KeyDown** (la rubrique active) a un type de délégué **KeyEventHandler**, puisque c’est le type que vous transmettez lorsque vous inscrivez un délégué avec ce type d’événement. Donc, maintenant, suivez le lien dans la rubrique vers le type [Délégué KeyEventHandler](/uwp/api/windows.ui.xaml.input.keyeventhandler). Ici, le bloc de syntaxe contient un opérateur d’appel de fonction. Et, comme mentionné ci-dessus, elle vous indique ce que doivent être les paramètres de votre délégué.
 > 
 > ```cppwinrt
-> void operator()(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::Input::KeyRoutedEventArgs const& e) const;
+> void operator()(
+    winrt::Windows::Foundation::IInspectable const& sender,
+    winrt::Windows::UI::Xaml::Input::KeyRoutedEventArgs const& e) const;
 > ```
 >
 >  Comme vous pouvez le voir, le délégué doit être déclaré avec un **IInspectable** comme expéditeur et une instance de la [classe KeyRoutedEventArgs](/uwp/api/windows.ui.xaml.input.keyroutedeventargs) comme arguments.
@@ -182,7 +192,10 @@ struct Example : ExampleT<Example>
 {
     Example(winrt::Windows::UI::Xaml::Controls::Button button)
     {
-        m_event_revoker = button.Click(winrt::auto_revoke, [this](IInspectable const& /* sender */, RoutedEventArgs const& /* args */)
+        m_event_revoker = button.Click(
+            winrt::auto_revoke,
+            [this](IInspectable const& /* sender */,
+            RoutedEventArgs const& /* args */)
         {
             // ...
         });
@@ -193,7 +206,7 @@ private:
 };
 ```
 
-Vous trouverez ci-dessous le bloc de syntaxe extrait de la rubrique de documentation relative à l’événement [**ButtonBase::Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click). Il montre les trois fonctions différentes d’inscription et de révocation. Vous pouvez voir exactement quel type de révocateur d’événement vous devez déclarer à partir de la surcharge tierce.
+Vous trouverez ci-dessous le bloc de syntaxe extrait de la rubrique de documentation relative à l’événement [**ButtonBase::Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click). Il montre les trois fonctions différentes d’inscription et de révocation. Vous pouvez voir exactement quel type de révocateur d’événement vous devez déclarer à partir de la surcharge tierce. De plus, vous pouvez passer les mêmes genres de délégués aux surcharges *register* et *revoke with event_revoker*.
 
 ```cppwinrt
 // Register
@@ -236,14 +249,20 @@ void ProcessFeedAsync()
     auto async_op_with_progress = syndicationClient.RetrieveFeedAsync(rssFeedUri);
 
     async_op_with_progress.Progress(
-        [](IAsyncOperationWithProgress<SyndicationFeed, RetrievalProgress> const& /* sender */, RetrievalProgress const& args)
+        [](
+            IAsyncOperationWithProgress<SyndicationFeed,
+            RetrievalProgress> const& /* sender */,
+            RetrievalProgress const& args)
         {
             uint32_t bytes_retrieved = args.BytesRetrieved;
             // use bytes_retrieved;
         });
 
     async_op_with_progress.Completed(
-        [](IAsyncOperationWithProgress<SyndicationFeed, RetrievalProgress> const& sender, AsyncStatus const /* asyncStatus */)
+        [](
+            IAsyncOperationWithProgress<SyndicationFeed,
+            RetrievalProgress> const& sender,
+            AsyncStatus const /* asyncStatus */)
         {
             SyndicationFeed syndicationFeed = sender.GetResults();
             // use syndicationFeed;

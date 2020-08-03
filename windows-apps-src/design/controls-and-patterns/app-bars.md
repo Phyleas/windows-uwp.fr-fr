@@ -4,7 +4,7 @@ title: Barre de commandes
 label: App bars/command bars
 template: detail.hbs
 op-migration-status: ready
-ms.date: 05/19/2017
+ms.date: 07/23/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 868b4145-319b-4a97-82bd-c98d966144db
@@ -13,12 +13,12 @@ design-contact: ksulliv
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 97507e0d9a954bc102bd4d2bcd825369df4cced7
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: f7b2c260d20c95012297c1f78037626844f6badf
+ms.sourcegitcommit: 83225cd9f3ef184277fc293d09982ecd511cc088
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970044"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87160885"
 ---
 # <a name="command-bar"></a>Barre de commandes
 
@@ -54,10 +54,6 @@ Le contrôle CommandBar est un contrôle à usage général, flexible et léger 
 Une barre de commandes développée.
 
 ![Barre de commandes développée](images/control-examples/command-bar-photos.png)
-
-Une barre de commandes dans le Calendrier Outlook sur Windows Phone.
-
-![Barre de commandes dans l’application Calendrier Outlook](images/control-examples/command-bar-calendar-phone.png)
 
 ## <a name="anatomy"></a>Anatomie
 
@@ -260,7 +256,7 @@ Bien que les modes Minimal et Hidden soient utiles dans certaines situations, n�
 La modification de la propriété ClosedDisplayMode pour fournir plus ou moins d’indications à l’utilisateur affecte la disposition des éléments environnants. En revanche, lorsque CommandBar passe de l’état fermé à ouvert ou inversement, cela n’affecte pas la disposition des autres éléments.
 
 ## <a name="placement"></a>Sélection élective
-Les barres de commandes peuvent être placées en haut et en bas de la fenêtre d’application et en ligne.
+Les barres de commandes peuvent être placées en haut et en bas de la fenêtre d’application, et inline, en les incorporant dans un contrôle de disposition comme ```Grid.row```.
 
 ![Exemple 1 de placement de la barre d’application](images/AppbarGuidelines_Placement1.png)
 

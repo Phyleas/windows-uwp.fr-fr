@@ -5,12 +5,12 @@ keywords: XAML, UWP, Bien démarrer
 ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b9c5348063f277d4d76cbea120689328bcc217b1
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 389b4ec2566a392de35ae43505274511b4294f9f
+ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684154"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997786"
 ---
 # <a name="tutorial-create-adaptive-layouts"></a>Tutoriel : Créer des dispositions adaptatives
 
@@ -332,4 +332,4 @@ Si vous souhaitez en savoir plus sur la manière dont l’application de retouch
 
 ## <a name="get-the-final-version-of-the-photolab-sample"></a>Obtenir la version finale de l’exemple PhotoLab
 
-Comme ce tutoriel ne génère pas l’application de retouche photo complète, veillez à examiner la [version finale](https://github.com/Microsoft/Windows-appsample-photo-lab) pour voir d’autres fonctionnalités, comme les animations personnalisées et le support téléphonique.
+Comme ce tutoriel ne génère pas l’application de retouche photo complète, veillez à examiner la [version finale](https://github.com/Microsoft/Windows-appsample-photo-lab) pour voir d’autres fonctionnalités, comme les animations personnalisées et les styles.

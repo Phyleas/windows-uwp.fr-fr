@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, norme, c++, cpp, winrt, projection, bien démarrer, prise en main
 ms.localizationpriority: medium
-ms.openlocfilehash: 968c347927edf0ad44476ec4bdca97aae19bb9a4
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 3e17e3f8107e82547ec0d367099f621e5b2e590a
+ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493034"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997846"
 ---
 # <a name="get-started-with-cwinrt"></a>Bien démarrer avec C++/WinRT
 
@@ -71,7 +71,9 @@ Avec les paramètres de projet par défaut, les en-têtes inclus proviennent du 
 Les en-têtes contiennent les API Windows projetées dans C++/WinRT. En d’autres termes, pour chaque type Windows, C++/WinRT définit un équivalent compatible en C++ (appelé *type projeté*). Un type projeté a le même nom complet que le type Windows, mais il est placé dans l’espace de noms C++ **winrt**. Le fait de placer ces inclusions dans votre en-tête précompilé permet de réduire les délais de builds incrémentielles.
 
 > [!IMPORTANT]
-> Chaque fois que vous souhaitez utiliser un type à partir d’un espace de noms Windows, incluez le fichier d’en-tête d’espace de noms Windows C++/WinRT, comme indiqué ci-dessus. L’en-tête *correspondant* est celui qui a le même nom que l’espace de noms du type. Par exemple, pour utiliser la projection C++/WinRT pour la classe runtime [**Windows::Foundation::Collections::PropertySet**](/uwp/api/windows.foundation.collections.propertyset), `#include <winrt/Windows.Foundation.Collections.h>`. Si vous incluez `winrt/Windows.Foundation.Collections.h`, vous n’avez pas *également* à inclure `winrt/Windows.Foundation.h`. Chaque en-tête de projection C++/WinRT inclut automatiquement son fichier d’en-tête d’espace de noms parent. Vous n’avez donc pas *besoin* de l’inclure explicitement. Toutefois, si vous le faites, aucune erreur n’est générée.
+> Chaque fois que vous souhaitez utiliser un type à partir d’un espace de noms Windows, vous devez inclure (`#include`) le fichier d’en-tête d’espace de noms Windows C++/WinRT correspondant, comme indiqué ci-dessus. L’en-tête *correspondant* est celui qui a le même nom que l’espace de noms du type. Par exemple, pour utiliser la projection C++/WinRT pour la classe runtime [**Windows::Foundation::Collections::PropertySet**](/uwp/api/windows.foundation.collections.propertyset), incluez l’en-tête `winrt/Windows.Foundation.Collections.h`.
+> 
+> Il est normal pour un en-tête de projection C++/WinRT d’inclure automatiquement son fichier d’en-tête d’espace de noms parent. Ainsi, par exemple, `winrt/Windows.Foundation.Collections.h` comprend `winrt/Windows.Foundation.h`. Toutefois, vous ne devez pas vous fier à ce comportement, car il s’agit d’un détail d’implémentation qui change au fil du temps. Vous devez inclure explicitement les en-têtes dont vous avez besoin.
 
 ```cppwinrt
 using namespace winrt;

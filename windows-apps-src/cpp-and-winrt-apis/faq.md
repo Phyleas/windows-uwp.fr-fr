@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, questions, fréquentes, FAQ, forum aux questions
 ms.localizationpriority: medium
-ms.openlocfilehash: 95f5ad82831b6b07e0bbc2127947f777f0cd50e5
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 23f1733f5710d86c8481899f5865d0c190e21885
+ms.sourcegitcommit: 1e8f51d5730fe748e9fe18827895a333d94d337f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81759925"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87296194"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>Forum aux questions sur C++/WinRT
 Réponses aux questions que vous êtes susceptibles de vous poser sur la création et l’utilisation d’API Windows Runtime avec [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
@@ -198,5 +198,8 @@ Pour résoudre l’un de ces problèmes ou les deux, procédez comme suit.
 #pragma pop_macro("GetCurrentTime")
 ```
 
+## <a name="how-do-i-speed-up-symbol-loading"></a>Comment accélérer le chargement des symboles ?
+Dans Visual Studio, **Outils** > **Options** > **Débogage** > **Symboles** > cochez *Charger uniquement les modules spécifiés*. Vous pouvez ensuite cliquer avec le bouton droit sur les DLL dans la liste des piles et charger des modules individuels.
+
 > [!NOTE]
-> Si cette rubrique n’a pas répondu à votre question, vous pouvez rechercher de l’aide en accédant à la page de la [Communauté de développeurs Visual Studio C++](https://developercommunity.visualstudio.com/spaces/62/index.html) ou en utilisant le mot-clé [`c++-winrt` sur Stack Overflow](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt).
+> Si cette rubrique n’a pas répondu à votre question, vous pouvez rechercher de l’aide en accédant à la page de la [Communauté de développeurs Visual Studio C++](https://developercommunity.visualstudio.com/spaces/62/index.html) ou en utilisant la [balise `c++-winrt` sur Stack Overflow](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt).
