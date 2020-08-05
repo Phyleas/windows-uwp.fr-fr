@@ -9,20 +9,20 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: 14c447312361166148da6a5a8c2b20165fabbe97
-ms.sourcegitcommit: df0cd9c82d1c0c17ccde424e3c4a6ff680c31a35
+ms.openlocfilehash: 1e06a87ce771f603721c928b984d0f57d8e45013
+ms.sourcegitcommit: 1d53d89bd3d044f4a2dc290b93c1ad15a088b361
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80487523"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87547311"
 ---
 # <a name="create-and-register-a-winmain-com-background-task"></a>Créer et inscrire une tâche en arrière-plan COM WinMain
 
 > [!TIP]
-> la méthode BackgroundTaskBuilder. SetTaskEntryPointClsid est disponible à partir de Windows 10, version 2004.
+> La méthode BackgroundTaskBuilder. SetTaskEntryPointClsid est disponible à partir de Windows 10, version 2004.
 
 > [!NOTE]
-> ce scénario n’est pas applicable aux applications WinMain empaquetées. Les applications UWP rencontreront des erreurs lors de la mise en œuvre de ce scénario.
+> Ce scénario s’applique uniquement aux applications WinMain empaquetées. Les applications UWP rencontreront des erreurs lors de la mise en œuvre de ce scénario.
 
 **API importantes**
 
@@ -41,11 +41,11 @@ Les étapes suivantes vous montrent comment écrire une nouvelle classe qui impl
 2.  Dans cette nouvelle classe, implémentez l’interface [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) . La méthode [**IBackgroundTask. Run**](/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) est un point d’entrée obligatoire qui est appelé lorsque l’événement spécifié est déclenché. Cette méthode est requise dans chaque tâche en arrière-plan.
 
 > [!NOTE]
-> La classe de tâche en arrière-plan elle-même&mdash;et toutes les autres classes dans le projet de tâche en arrière-plan&mdash;doivent être **publiques**.
+> La classe de tâche d’arrière-plan elle-même &mdash; et toutes les autres classes dans le projet de tâche en arrière-plan &mdash; doivent être **publiques**.
 
 L’exemple de code suivant montre une classe de base de tâche en arrière-plan qui compte des premières et les écrit dans un fichier jusqu’à ce qu’elle soit demandée pour être annulée.
 
-L' C++exemple/WinRT implémente la classe de tâche en arrière-plan en tant que [**coclasse COM**](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/author-coclasses#implement-the-coclass-and-class-factory).
+L’exemple C++/WinRT implémente la classe de tâche en arrière-plan en tant que [**coclasse COM**](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/author-coclasses#implement-the-coclass-and-class-factory).
 
 
 <details>
@@ -264,9 +264,9 @@ namespace PackagedWinMainBackgroundTaskSample {
 
 ## <a name="add-the-support-code-to-instantiate-the-com-class"></a>Ajouter le code de prise en charge pour instancier la classe COM
 
-Pour que la tâche en arrière-plan soit activée dans une application WinMain de confiance totale, la classe de tâche en arrière-plan doit avoir un code de prise en charge tel que COM pour savoir comment démarrer le processus d’application s’il n’est pas en cours d’exécution, puis comprendre l’instance du processus. actuellement le serveur pour gérer les nouvelles activations pour cette tâche en arrière-plan.
+Pour que la tâche en arrière-plan soit activée dans une application WinMain de confiance totale, la classe de tâche en arrière-plan doit avoir un code de prise en charge tel que COM pour savoir comment démarrer le processus d’application s’il n’est pas en cours d’exécution, puis comprendre quelle instance du processus est actuellement le serveur pour gérer les nouvelles activations pour cette tâche en arrière-plan.
 
-1.  COM doit comprendre comment lancer le processus d’application s’il n’est pas déjà en cours d’exécution. Le processus d’application qui héberge le code de tâche en arrière-plan doit être déclaré dans le manifeste du package. L’exemple de code suivant montre comment le **SampleTask** est hébergé dans **SampleBackgroundApp. exe**. Lorsque la tâche en arrière-plan est lancée quand aucun processus n’est en cours d’exécution, **SampleBackgroundApp. exe** est lancé avec les arguments de processus **« -StartSampleTaskServer »** .
+1.  COM doit comprendre comment lancer le processus d’application s’il n’est pas déjà en cours d’exécution. Le processus d’application qui héberge le code de tâche en arrière-plan doit être déclaré dans le manifeste du package. L’exemple de code suivant montre comment le **SampleTask** est hébergé dans **SampleBackgroundApp.exe**. Lorsque la tâche en arrière-plan est lancée alors qu’aucun processus n’est en cours d’exécution, **SampleBackgroundApp.exe** est lancé avec les arguments de processus **« -StartSampleTaskServer »**.
 
 ```xml
 
@@ -471,7 +471,7 @@ if (!taskRegistered)
 
 ```
 
-1.  Vous pouvez ajouter une condition afin de contrôler à quel moment votre tâche sera exécutée après que l’événement de déclencheur est survenu (facultatif). Par exemple, si vous ne souhaitez pas que la tâche s’exécute tant que Internet n’est pas disponible, utilisez la condition **InternetAvailable**. Pour obtenir la liste des conditions possibles, voir [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType).
+1.  Vous pouvez ajouter une condition afin de contrôler à quel moment votre tâche sera exécutée après que l’événement de déclencheur est survenu (facultatif). Par exemple, si vous ne souhaitez pas que la tâche s’exécute tant que Internet n’est pas disponible, utilisez la condition **InternetAvailable**. Pour obtenir la liste des conditions possibles, consultez [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType).
 
 L’exemple de code suivant affecte une condition qui exige la présence de l’utilisateur :
 
@@ -485,7 +485,7 @@ builder.AddCondition(SystemCondition{ SystemConditionType::InternetAvailable });
 // The code in the next step goes here.
 ```
 
-4.  Inscrivez la tâche en arrière-plan en appelant la méthode Register sur l’objet [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder). Stockez le résultat [**BackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration) pour pouvoir l’utiliser à l’étape suivante. Notez que la fonction Register peut retourner des erreurs sous la forme d’exceptions. Veillez à appeler Register dans une tentative d’interception.
+4.  Inscrivez la tâche en arrière-plan en appelant la méthode Register sur l’objet [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) . Stockez le résultat de [**BackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration) afin qu’il puisse être utilisé à l’étape suivante. Notez que la fonction Register peut retourner des erreurs sous la forme d’exceptions. Veillez à appeler Register dans une tentative d’interception.
 
 Le code qui suit inscrit la tâche en arrière-plan et stocke le résultat :
 
@@ -1056,17 +1056,17 @@ Consultez les rubriques connexes suivantes pour obtenir des informations de réf
 * [Définir des conditions pour l’exécution d’une tâche en arrière-plan](set-conditions-for-running-a-background-task.md)
 * [Utiliser un déclencheur de maintenance](use-a-maintenance-trigger.md)
 * [Gérer une tâche en arrière-plan annulée](handle-a-cancelled-background-task.md)
-* [Superviser la progression et l’exécution des tâches en arrière-plan](monitor-background-task-progress-and-completion.md)
+* [Surveiller la progression et l’achèvement des tâches en arrière-plan](monitor-background-task-progress-and-completion.md)
 * [Exécuter une tâche en arrière-plan en fonction d’un minuteur](run-a-background-task-on-a-timer-.md)
-* [Créez et inscrivez une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md).
-* [Convertir une tâche en arrière-plan out-of-process en tâche d’arrière-plan in-process](convert-out-of-process-background-task.md)
+* [Créer et inscrire une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md).
+* [Convertir une tâche en arrière-plan hors processus en une tâche en arrière-plan in-process](convert-out-of-process-background-task.md)
 
-**Aide sur les tâches en arrière-plan**
+**Recommandations en matière de tâches en arrière-plan**
 
 * [Recommandations relatives aux tâches en arrière-plan](guidelines-for-background-tasks.md)
 * [Déboguer une tâche en arrière-plan](debug-a-background-task.md)
 * [Comment déclencher des événements de suspension, de reprise et d’arrière-plan dans des applications UWP (lors du débogage)](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.110).aspx)
 
-**Informations de référence sur l’API tâche en arrière-plan**
+**Informations de référence d’API de tâche en arrière-plan**
 
-* [**Windows. ApplicationModel. Background**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
+* [**Windows.ApplicationModel.Background**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
