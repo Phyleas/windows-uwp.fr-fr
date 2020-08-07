@@ -1,5 +1,4 @@
 ---
-author: mijacobs
 Description: De nombreuses entreprises utilisent des pare-feu pour bloquer le trafic indésirable. Ce document décrit comment autoriser le trafic WNS à traverser des pare-feu.
 title: Ajout du trafic WNS au pare-feu Allowlist
 ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
@@ -8,19 +7,19 @@ ms.date: 05/20/2019
 ms.topic: article
 keywords: Windows 10, UWP, WNS, service de notification Windows, notification, Windows, pare-feu, dépannage, IP, trafic, entreprise, réseau, IPv4, VIP, nom de domaine complet, adresse IP publique
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f87dc0cc174a22f474c91a58f3ffeb738822fa8
-ms.sourcegitcommit: 963316e065cf36c17b6360c3f89fba93a1a94827
+ms.openlocfilehash: 9594b90bd3bf9a4db082586a2823f4013340b85a
+ms.sourcegitcommit: b5232934702b28102c4014a96b34f2e459c9660d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82868906"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87928006"
 ---
 # <a name="enterprise-firewall-and-proxy-configurations-to-support-wns-traffic"></a>Pare-feu d’entreprise et configurations de proxy pour prendre en charge le trafic WNS
 
 ## <a name="background"></a>Arrière-plan
 De nombreuses entreprises utilisent des pare-feu pour bloquer le trafic réseau et les ports indésirables. Malheureusement, cela peut également bloquer des éléments importants tels que les communications du service de notification Windows. Cela signifie que toutes les notifications envoyées via WNS seront supprimées dans certaines configurations réseau. Pour éviter ce risque, les administrateurs réseau peuvent ajouter la liste des noms de domaine complets WNS approuvés ou des adresses IP virtuelles à leur liste d’exemptions pour permettre au trafic WNS de traverser le pare-feu. Vous trouverez ci-dessous des informations supplémentaires sur la façon dont et les éléments à ajouter, ainsi que la prise en charge de différents types de proxy.
 
-## <a name="proxy-support"></a>Prise en charge de proxy
+## <a name="proxy-support"></a>Prise en charge du proxy
 
 > [!Note]
 > Les clients Windows **ne prennent pas** en charge tous les proxies, la connexion à WNS doit être une connexion directe.
