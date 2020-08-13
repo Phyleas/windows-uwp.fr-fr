@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, tâche en arrière-plan
 ms.localizationpriority: medium
-ms.openlocfilehash: 32472f698381f4b109f280f0b964f00cdbcec66a
-ms.sourcegitcommit: 2571af6bf781a464a4beb5f1aca84ae7c850f8f9
+ms.openlocfilehash: e1580bdc62585cb777334c217419b4de6a691add
+ms.sourcegitcommit: 894decaf374f22bf39d4aecc1ab50d34ac011e31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82606198"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88162564"
 ---
 # <a name="declare-background-tasks-in-the-application-manifest"></a>Déclarer des tâches en arrière-plan dans le manifeste de l’application
 
@@ -21,7 +21,7 @@ ms.locfileid: "82606198"
 **API importantes**
 
 -   [**Schéma BackgroundTasks**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
--   [**Windows. ApplicationModel. Background**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
+-   [**Windows.ApplicationModel.Background**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
 
 Activez l’utilisation des tâches en arrière-plan en les déclarant comme extensions dans le manifeste de l’application.
 
@@ -90,7 +90,7 @@ Copiez ce code dans l’élément Extensions (vous ajouterez des attributs aux �
 
 2.  Modifiez la liste de l’attribut Task Type pour indiquer le type d’inscription de tâche utilisé avec cette tâche en arrière-plan. Si la tâche en arrière-plan est inscrite avec plusieurs types de déclencheur, ajoutez des éléments Task et des attributs Type supplémentaires pour chacun d’eux.
 
-    **Remarque**  veillez à répertorier chacun des types de déclencheurs que vous utilisez, ou la tâche en arrière-plan ne s’inscrira pas avec les types de déclencheurs non déclarés (la méthode [**Register**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.register) échouera et lèvera une exception).
+    **Remarque**    Veillez à répertorier chacun des types de déclencheurs que vous utilisez, ou la tâche en arrière-plan ne s’inscrira pas avec les types de déclencheurs non déclarés (la méthode [**Register**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.register) échouera et lèvera une exception).
 
     Cet extrait de code montre que des déclencheurs d’événements système et des notifications Push sont utilisés :
 
@@ -107,7 +107,7 @@ Copiez ce code dans l’élément Extensions (vous ajouterez des attributs aux �
 
 Répétez l’étape 2 pour chaque classe de tâche en arrière-plan supplémentaire inscrite par votre application.
 
-L’exemple suivant représente l’élément Application complet de l’[exemple de tâche en arrière-plan]( https://code.msdn.microsoft.com/windowsapps/Background-Task-Sample-9209ade9). Il illustre l’utilisation de deux classes de tâche en arrière-plan avec au total trois types de déclencheur. Copiez la section Extensions de cet exemple et modifiez-la si nécessaire pour déclarer des tâches en arrière-plan dans le manifeste de l’application.
+L’exemple suivant représente l’élément Application complet de l’[exemple de tâche en arrière-plan](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask). Il illustre l’utilisation de deux classes de tâche en arrière-plan avec au total trois types de déclencheur. Copiez la section Extensions de cet exemple et modifiez-la si nécessaire pour déclarer des tâches en arrière-plan dans le manifeste de l’application.
 
 ```xml
 <Applications>
@@ -152,7 +152,7 @@ L’exemple suivant représente l’élément Application complet de l’[exempl
 
 Vous pouvez spécifier l’emplacement d’exécution de vos tâches en arrière-plan :
 
-* Par défaut, ils s’exécutent dans le processus BackgroundTaskHost. exe.
+* Par défaut, ils s’exécutent dans le processus de BackgroundTaskHost.exe.
 * Dans le même processus que votre application de premier plan.
 * Utilisez `ResourceGroup` pour placer plusieurs tâches en arrière-plan dans le même processus d’hébergement ou pour les séparer en différents processus.
 * Utilisez `SupportsMultipleInstances` pour exécuter le processus en arrière-plan dans un nouveau processus qui obtient ses propres limites de ressources (mémoire, processeur) chaque fois qu’un nouveau déclencheur est déclenché.
@@ -230,7 +230,7 @@ Cet exemple déclare une tâche en arrière-plan qui s’exécute dans un nouvea
 ```
 
 > [!NOTE]
-> Vous ne pouvez `ResourceGroup` pas `ServerName` spécifier ou conjointement `SupportsMultipleInstances`avec.
+> Vous ne pouvez pas spécifier `ResourceGroup` ou `ServerName` conjointement avec `SupportsMultipleInstances` .
 
 ## <a name="related-topics"></a>Rubriques connexes
 
