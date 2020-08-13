@@ -6,12 +6,19 @@ ms.topic: article
 keywords: windows 10, uwp, version, build, versions, windows, choisir, mettre à jour, mises à jour
 ms.assetid: a8b7830f-4929-44c6-90be-91f38be5f364
 ms.localizationpriority: medium
-ms.openlocfilehash: db336eedd2ce683196c8d4914f0ac661cb3ed088
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+f1_keywords:
+- UniversalProjects.TargetPlatformWizardPicker
+dev_langs:
+- csharp
+- cppwinrt
+- cpp
+- vb
+ms.openlocfilehash: 9e6e5309587a085a1c2e8a2a88886be3deb268f1
+ms.sourcegitcommit: 29eb375bc634bf733be58107c1d648dc818da7f8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234770"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88051334"
 ---
 # <a name="choose-a-uwp-version"></a>Choisir une version UWP
 
