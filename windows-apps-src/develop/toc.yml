@@ -60,7 +60,7 @@
           href: ../audio-video-camera/process-media-frames-with-mediaframereader.md
           items:
             - name: Traiter des trames audio avec MediaFrameReader
-              href: ../audio-video-camera/use-opencv-with-mediaframereader.md
+              href: ../audio-video-camera/process-audio-frames-with-mediaframereader.md
             - name: Utiliser OpenCV avec MediaFrameReader
               href: ../audio-video-camera/use-opencv-with-mediaframereader.md
         - name: Capture à partir de plusieurs sources à l’aide de MediaFrameSourceGroup
@@ -795,6 +795,8 @@
           href: ../cpp-and-winrt-apis/move-to-winrt-from-cx.md
         - name: Interopérabilité avec C++/CX
           href: ../cpp-and-winrt-apis/interop-winrt-cx.md
+        - name: Asynchronisme et interopérabilité avec C++/CX
+          href: ../cpp-and-winrt-apis/interop-winrt-cx-async.md
         - name: Passer de WRL à C++/WinRT
           href: ../cpp-and-winrt-apis/move-to-winrt-from-wrl.md
         - name: Portage d’un exemple d’application à partir de C#
