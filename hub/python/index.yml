@@ -3,19 +3,19 @@ title: Documentation Python sur Windows
 summary: Commencez à développer avec Python en utilisant Windows, notamment pour la configuration de votre environnement de développement, l’écriture de scripts et l’automatisation, la création d’applications web et les questions fréquentes (FAQ).
 metadata:
   author: mattwojo
-  description: Commencez à développer avec Python sur Windows.
+  description: Commencez à développer avec Python sur Windows. Consultez les ressources pour configurer votre environnement de développement, créer des applications web et vous connecter à une base de données.
   manager: jken
   ms.author: mattwoj
   ms.date: 09/15/2019
   ms.prod: dev-environment
   ms.technology: windows-python
   ms.topic: landing-page
-  ms.openlocfilehash: e9bf81f267010fa7500a60fcf327ab7540683efa
-  ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+  ms.openlocfilehash: 5c19f6fba69ede76c6a29a1fd3dda7637d40373f
+  ms.sourcegitcommit: b6138f9565252460ace6fa0acdc2a902e591681a
   ms.translationtype: HT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 07/20/2020
-  ms.locfileid: "86493584"
+  ms.lasthandoff: 08/15/2020
+  ms.locfileid: "88243251"
 landingContent:
 - title: Bien démarrer pour les débutants
   linkLists:
