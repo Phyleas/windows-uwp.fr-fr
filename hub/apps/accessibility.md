@@ -6,12 +6,12 @@ ms.date: 09/12/2019
 keywords: Accessibilité dans Windows 10, Accessibilité, conception d’applications win32 accessibles, conception d’applications UWP accessibles, conception d’applications WPF accessibles, conception d’applications WinForms accessibles
 ms.author: kbridge
 author: Karl-Bridge-Microsoft
-ms.openlocfilehash: 2739546061febcfc96403ed5520fdcbd8bc2c462
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 04dc3571f6b2d8ddf57a3695330070d7c5b5061e
+ms.sourcegitcommit: 9beb6cce7375b726ad90ee84b72754268ae2819a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "76725932"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88047786"
 ---
 # <a name="accessibility-in-windows-10"></a>Accessibilité dans Windows 10
 
@@ -140,7 +140,7 @@ Téléchargez et exécutez des exemples Windows complets qui illustrent diverses
       Le nouveau navigateur d’exemples qui remplace MSDN Code Gallery.
    :::column-end:::
    :::column:::
-      [MSDN Code Gallery (hors service)](https://code.msdn.microsoft.com/site/search?query=accessibility&f%5B0%5D.Value=accessibility&f%5B0%5D.Type=SearchText&ac=2)
+      [MSDN Code Gallery (archive GitHub)](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample)
 
       Téléchargez des exemples pour Windows, Windows Phone, Microsoft Azure, Office, SharePoint, Silverlight et d’autres produits.
    :::column-end:::

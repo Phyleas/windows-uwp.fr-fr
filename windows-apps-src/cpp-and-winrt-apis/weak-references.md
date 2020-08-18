@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, forte, faible, référence
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: dc991ff485d9e4ba90264e1b8082a40e0f4ab801
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: c8ca914737698c22d52657d20ee655d20491b3e8
+ms.sourcegitcommit: a9f44bbb23f0bc3ceade3af7781d012b9d6e5c9a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82267477"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88180764"
 ---
 # <a name="strong-and-weak-references-in-cwinrt"></a>Références fortes et faibles en C++/WinRT
 
@@ -105,7 +105,7 @@ IAsyncOperation<winrt::hstring> RetrieveValueAsync()
 }
 ```
 
-Une classe C++/WinRT dérive directement ou indirectement d’un modèle [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements). Pour cette raison, l’objet C++/WinRT peut appeler sa fonction membre protégée [**implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function) pour récupérer une référence forte à son pointeur *this*. Notez qu’il est inutile d’utiliser la variable `strong_this` dans l’exemple de code ci-dessus. Il vous suffit d’appeler **get_strong** pour incrémenter le nombre de références de l’objet C++/WinRT et pour que son pointeur implicite *this* reste valide.
+Une classe C++/WinRT dérive directement ou indirectement d’un modèle [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements). Pour cette raison, l’objet C++/WinRT peut appeler sa fonction membre protégée [**implements::get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function) pour récupérer une référence forte à son pointeur *this*. Notez qu’il est inutile d’utiliser la variable `strong_this` dans l’exemple de code ci-dessus. Il vous suffit d’appeler **get_strong** pour incrémenter le nombre de références de l’objet C++/WinRT et pour que son pointeur implicite *this* reste valide.
 
 > [!IMPORTANT]
 > Étant donné que **get_strong** est une fonction membre du modèle struct **winrt::implements**, vous pouvez l’appeler uniquement à partir d’une classe qui dérive directement ou indirectement de **winrt::implements**, comme la classe C++/WinRT. Pour plus d’informations sur la dérivation à partir de **winrt::implements**, et pour obtenir des exemples, consultez [Créer des API avec C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis).
@@ -253,7 +253,7 @@ Dans les deux cas, nous allons simplement capturer le pointeur *this* brut. Cela
 
 ### <a name="the-solution"></a>La solution
 
-La solution consiste à capturer une référence forte (ou, comme nous le verrons, une référence faible si celle-ci est plus appropriée). Une référence forte *incrémente* le nombre de références et *préserve* l’objet actuel. Il vous suffit de déclarer une variable de capture (appelée `strong_this` dans cet exemple) et de l’initialiser avec un appel à [**implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function), qui récupère une référence forte à notre pointeur *this*.
+La solution consiste à capturer une référence forte (ou, comme nous le verrons, une référence faible si celle-ci est plus appropriée). Une référence forte *incrémente* le nombre de références et *préserve* l’objet actuel. Il vous suffit de déclarer une variable de capture (appelée `strong_this` dans cet exemple) et de l’initialiser avec un appel à [**implements::get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function), qui récupère une référence forte à notre pointeur *this*.
 
 > [!IMPORTANT]
 > Étant donné que **get_strong** est une fonction membre du modèle struct **winrt::implements**, vous pouvez l’appeler uniquement à partir d’une classe qui dérive directement ou indirectement de **winrt::implements**, comme la classe C++/WinRT. Pour plus d’informations sur la dérivation à partir de **winrt::implements**, et pour obtenir des exemples, consultez [Créer des API avec C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis).

@@ -9,12 +9,12 @@ ms.technology: windows-nodejs
 keywords: Configurer Windows, environnement de développement, outils de développement, chemins de développement, Microsoft, Windows, développeur, conseils, performances, WSL, terminal, NodeJS, Python
 ms.localizationpriority: medium
 ms.date: 07/24/2020
-ms.openlocfilehash: e62ca938a23910290a8c63682fc2fde77ec0ea92
-ms.sourcegitcommit: 1e06168ada5ce6013b1d07c428548f084464a286
+ms.openlocfilehash: 4c9311c8aacf708e92feaea0b26ac20a01403257
+ms.sourcegitcommit: 894decaf374f22bf39d4aecc1ab50d34ac011e31
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87363725"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88162574"
 ---
 # <a name="set-up-your-development-environment-on-windows-10"></a>Configurer votre environnement de développement sur Windows 10
 
@@ -87,8 +87,8 @@ Ce guide vous permet de commencer à installer et configurer les langages et les
     :::column:::
        [![Gestionnaire de package Windows](../images/winget.png)](https://docs.microsoft.com/windows/package-manager/)<br>
         **[Gestionnaire de package Windows](https://docs.microsoft.com/windows/package-manager/)**<br>
-        Utilisez le gestionnaire de package complet WinGet avec votre outil en ligne de commande pour installer des applications sur Windows 10.<br>
-        [Installer WinGet (préversion publique)](https://docs.microsoft.com/windows/package-manager/winget/#install-winget)
+        Utilisez le client winget.exe, un gestionnaire de package complet, avec votre ligne de commande pour installer des applications sur Windows 10.<br>
+        [Installer le gestionnaire de packages Windows (préversion publique)](https://docs.microsoft.com/windows/package-manager/winget/#install-winget)
     :::column-end:::
     :::column:::
        [![PowerToys](../images/powertoys.png)](https://github.com/microsoft/PowerToys)<br>

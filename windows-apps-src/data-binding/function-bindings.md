@@ -5,17 +5,17 @@ ms.date: 02/06/2019
 ms.topic: article
 keywords: windows 10, uwp, xBind
 ms.localizationpriority: medium
-ms.openlocfilehash: 879be9591bae36a1dbcd485387fbb4ac7f502fea
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 5d74e99526ed5531db92ba88a1053e07a3fc993b
+ms.sourcegitcommit: c7f33dbe9516d28664df1b91e03edca3cb9fb0c8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "66360082"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87871685"
 ---
 # <a name="functions-in-xbind"></a>Fonctions dans x:Bind
 
 > [!NOTE]
-> Pour obtenir des informations générales sur l’utilisation de la liaison de données dans votre application avec **{x:Bind}** (et pour une comparaison entre **{x:Bind}** et **{Binding}** ), consultez [Présentation détaillée de la liaison de données](data-binding-in-depth.md).
+> Pour obtenir des informations générales sur l’utilisation de la liaison des données dans votre application avec **{x:Bind}** (et pour une comparaison entre **{x:Bind}** et **{Binding}** ), consultez [Liaison des données en profondeur](data-binding-in-depth.md) et [Extension de balisage {x:Bind}](../xaml-platform/x-bind-markup-extension.md).
 
 À compter de Windows 10, version 1607, **{x : Bind}** prend en charge l’utilisation d’une fonction comme niveau feuille du chemin de liaison. Cela présente les avantages suivants :
 
@@ -61,7 +61,7 @@ class ColorEntry
 
 ## <a name="path-to-the-function"></a>Chemin de la fonction
 
-Le chemin de la fonction est spécifié comme tout autre chemin de propriété et peut inclure des points (.), des indexeurs ou des casts pour localiser la fonction.
+Le [chemin d’accès à la fonction](../xaml-platform/x-bind-markup-extension.md#property-path) est spécifié comme tout autre chemin d’accès aux propriétés et peut inclure des [points](../xaml-platform/x-bind-markup-extension.md#property-path-resolution) (.), des [indexeurs](../xaml-platform/x-bind-markup-extension.md#collections) ou des [casts](../xaml-platform/x-bind-markup-extension.md#casting) pour localiser la fonction.
 
 Des fonctions statiques peuvent être spécifiées en utilisant la syntaxe XMLNamespace:ClassName.MethodName. Par exemple, utilisez la syntaxe ci-dessous pour la liaison à des fonctions statiques dans le code-behind.
 
@@ -120,7 +120,7 @@ Le moteur de liaison réagit aux notifications de changements de propriétés d�
 ```
 
 ```csharp
-public class Person:INotifyPropertyChanged
+public class Person : INotifyPropertyChanged
 {
     //Implementation for an Icon property and a CancellationToken property with PropertyChanged notifications
     ...
@@ -183,3 +183,6 @@ Dans un scénario de liaison bidirectionnelle, une deuxième fonction doit être
 ```xaml
 <TextBlock Text="{x:Bind a.MyFunc(b), BindBack=a.MyFunc2, Mode=TwoWay}" />
 ```
+
+## <a name="see-also"></a>Voir aussi
+* [Extension de balisage {x:Bind}](../xaml-platform/x-bind-markup-extension.md)
