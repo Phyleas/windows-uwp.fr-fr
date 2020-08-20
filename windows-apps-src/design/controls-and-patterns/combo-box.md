@@ -10,12 +10,12 @@ pm-contact: stmoy
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: f484df97c6d29281941c8eed7b91fd0b156fff60
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 65f65fc62f839e379535f4e1a3df8a188620fed9
+ms.sourcegitcommit: 99100b58a5b49d8ba78905b15b076b2c5cffbe49
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968777"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88502357"
 ---
 # <a name="combo-box-and-list-box"></a>Zone de liste modifiable et zone de liste
 
@@ -23,7 +23,7 @@ Utilisez une liste déroulante pour présenter à l’utilisateur une liste d’
 
 Quand la liste déroulante est fermée, elle affiche la sélection actuelle ou elle est vide si aucun élément n’est sélectionné. Quand l’utilisateur développe la liste déroulante, elle affiche la liste des éléments sélectionnables.
 
-![Exemple de liste déroulante à l’état compact](images/combo_box_collapsed.png)
+![Exemple de liste déroulante à l’état compact](images/combo-box-expand.gif)
 
 > _Zone de liste modifiable à l’état compact avec un en-tête_
 
