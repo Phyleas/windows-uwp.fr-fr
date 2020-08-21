@@ -6,15 +6,20 @@ ms.date: 03/05/2019
 ms.topic: article
 keywords: Windows 10, UWP, taxes, taxes d’application, exigences fiscales, expansion commerce, taux d’imposition
 ms.localizationpriority: medium
-ms.openlocfilehash: f81d469760e8c690066e668416116d9fc8ba879d
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: f1147ab6ee76b1d7615d6acaadaf6190db96c668
+ms.sourcegitcommit: 829af8cf4679a6aa9e7ecad961e1e33a09235028
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234565"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88681260"
 ---
 # <a name="tax-details-for-windows-appgame-developers-and-azure-marketplace-publishers"></a>Détails fiscaux pour les développeurs d’applications/jeux Windows et les éditeurs de la place de marché Azure
 
+En général, les responsabilités pour les taxes sur les ventes des clients finaux sont allouées entre Microsoft et un développeur/éditeur en fonction du pays et du scénario d’achat dans lequel les offres sont vendues.  Dans certains pays (Pays gérés par Microsoft), Microsoft assume la responsabilité de la gestion de la taxation des clients finaux, ce qui peut inclure la validation du statut commercial des clients par l’obtention des numéros d’immatriculation fiscale ou des certificats d’exonération, des relations mieux gérées avec les clients et le calcul, la collecte et/ou le versement des taxes. Dans les cas où les ventes sont réalisées par l’intermédiaire de partenaires, Microsoft part du principe que tous les partenaires sont des entreprises qui s’acquittent de façon appropriée de leurs obligations fiscales. Microsoft gère la taxation des clients finaux pour les éditeurs pour des raisons pratiques et a adopté les scénarios les plus courants pour déterminer les pays et les stratégies de gestion de la taxation des clients finaux.  Microsoft ne garantit pas que ses actions répondront entièrement aux obligations des éditeurs dans les Pays gérés par Microsoft. Pour tous les pays gérés par Microsoft, Microsoft recommande vivement aux développeurs/éditeurs de travailler avec leurs propres conseillers fiscaux pour s’assurer que la remise fiscale gérée par Microsoft répond suffisamment aux exigences de conformité du développeur et du serveur de publication. Cela est particulièrement important pour les Pays gérés par Microsoft dans lesquels les éditeurs vendent leurs produits. Par exemple, un développeur/serveur de publication établi dans et en vendant des offres en Arabie saoudite peut déterminer que la confiance de Microsoft pour gérer les taxes peut ne pas suffire pour répondre aux obligations de conformité du développeur/du serveur de publication.
+
+Pour tous les pays qui ne sont pas des pays gérés par Microsoft (pays managés pour les développeurs et les éditeurs), les éditeurs reconnaissent et conviennent que les éditeurs sont à la seule responsabilité pour déterminer et gérer la fiscalité des clients finaux, tels que l’enregistrement, le calcul de la taxe, la collecte et la remise, la validation de l’état des clients et la fourniture de factures d’impôt aux clients, pour toutes les offres que ces éditeurs choisissent de rendre disponibles dans les pays gérés des développeurs Les éditeurs reconnaissent que, en ce qui concerne les ventes dans un pays géré par un développeur ou un éditeur, Microsoft ne peut actuellement pas être en mesure de fournir.
+
+Dans certains cas, les pays gérés par Microsoft peuvent devenir des pays gérés par les développeurs/serveurs de publication et vice versa.
 
 Pour comprendre vos considérations fiscales relatives à la sélection du prix et à la responsabilité fiscale dans le cadre du contrat de développeur d’applications ou du contrat d’éditeur moderne, consultez les pays/régions de distribution dans les tableaux ci-dessous.
 
@@ -74,7 +79,7 @@ Pour comprendre vos considérations fiscales relatives à la sélection du prix 
 | Caïmans (îles)                   | Le prix sélectionné est le prix de vente final et comprend toutes les taxes applicables.                                                                   | Prix moins les frais de Store                 | Développeur          |
 | République centrafricaine         | Le prix sélectionné est le prix de vente final et comprend toutes les taxes applicables.                                                                   | Prix moins les frais de Store                 | Développeur          |
 | Tchad                             | Le prix sélectionné est le prix de vente final et comprend toutes les taxes applicables.                                                                   | Prix moins les frais de Store                 | Développeur          |
-| Chili                            | Le prix sélectionné est le prix de vente final et comprend toutes les taxes applicables.                                                                   | Prix moins les frais de Store                 | Développeur          |
+| Chili                            | Le prix sélectionné est le prix de vente final et comprend toutes les taxes applicables. Les taxes sont soustraites du prix avant paiement. exigible.       | Prix moins 19 % de taxe, moins les frais de Store  | Microsoft          |
 | Chine                            | Le prix sélectionné est le prix de vente final et comprend toutes les taxes applicables.                                                                   | Prix moins les frais de Store                 | Développeur          |
 | Christmas (île)                 | Le prix sélectionné est le prix de vente final et comprend toutes les taxes applicables.                                                                   | Prix moins les frais de Store                 | Développeur          |
 | Îles Cocos (Keeling)          | Le prix sélectionné est le prix de vente final et comprend toutes les taxes applicables.                                                                   | Prix moins les frais de Store                 | Développeur          |
@@ -164,7 +169,7 @@ Pour comprendre vos considérations fiscales relatives à la sélection du prix 
 | Mauritanie                       | Le prix sélectionné est le prix de vente final et comprend toutes les taxes applicables.                                                                   | Prix moins les frais de Store                 | Développeur          |
 | Maurice (île)                        | Le prix sélectionné est le prix de vente final et comprend toutes les taxes applicables.                                                                   | Prix moins les frais de Store                 | Développeur          |
 | Mayotte                          | Le prix sélectionné est le prix de vente final et comprend toutes les taxes applicables.                                                                   | Prix moins les frais de Store                 | Développeur          |
-| Mexique                           | Le prix sélectionné est le prix de vente final et comprend toutes les taxes applicables.                                                                   | Prix moins les frais de Store                 | Développeur          |
+| Mexique                           | Le prix sélectionné est le prix de vente final et comprend toutes les taxes applicables. Les taxes sont soustraites du prix avant paiement.              | Prix moins 16 % de taxe, moins les frais de Store  | Microsoft          |
 | Micronésie                       | Le prix sélectionné est le prix de vente final et comprend toutes les taxes applicables.                                                                   | Prix moins les frais de Store                 | Développeur          |
 | Moldova                          | Le prix sélectionné est le prix de vente final et comprend toutes les taxes applicables.                                                                   | Prix moins les frais de Store                 | Développeur          |
 | Monaco                           | Le prix sélectionné est le prix de vente final et comprend toutes les taxes applicables. Les taxes sont soustraites du prix avant paiement.              | Prix moins 20 % de taxe, moins les frais de Store  | Microsoft          |
