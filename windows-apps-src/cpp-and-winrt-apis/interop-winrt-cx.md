@@ -5,12 +5,12 @@ ms.date: 10/09/2018
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, port, migrer, interopérabilité, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: c786256efb5488fff65a8e2bdb4c5d2ca0fa181c
-ms.sourcegitcommit: a9f44bbb23f0bc3ceade3af7781d012b9d6e5c9a
+ms.openlocfilehash: d3fa04f0aabe001dc87ce4292dff7557432583a6
+ms.sourcegitcommit: 99100b58a5b49d8ba78905b15b076b2c5cffbe49
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88180794"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88502284"
 ---
 # <a name="interop-between-cwinrt-and-ccx"></a>Interopérabilité entre C++/WinRT et C++/CX
 
@@ -27,7 +27,9 @@ Après avoir lu cette rubrique, pour obtenir des informations et des exemples de
 
 ## <a name="the-from_cx-and-to_cx-functions"></a>Les fonctions **from_cx** et **to_cx**
 
-Voici une liste de codes sources d’un fichier d’en-tête nommé `interop_helpers.h`, contenant deux fonctions d’application auxiliaire de conversion. Les sections suivantes expliquent les fonctions et comment créer et utiliser le fichier d’en-tête dans votre projet.
+Voici une liste de codes sources d’un fichier d’en-tête nommé `interop_helpers.h`, contenant deux fonctions d’application auxiliaire de conversion. Au fur et à mesure du portage de votre projet, certaines parties resteront en C++/CX, et d’autres en C++/WinRT. Vous pouvez utiliser ces fonctions auxiliaires pour convertir des objets de et vers C++/CX et C++/WinRT dans votre projet aux points limites entre ces deux parties.
+
+Les sections qui suivent la liste des codes expliquent les deux fonctions et comment créer et utiliser le fichier d’en-tête dans votre projet.
 
 ```cppwinrt
 // interop_helpers.h
@@ -39,8 +41,7 @@ T from_cx(Platform::Object^ from)
     T to{ nullptr };
 
     winrt::check_hresult(reinterpret_cast<::IUnknown*>(from)
-        ->QueryInterface(winrt::guid_of<T>(),
-            reinterpret_cast<void**>(winrt::put_abi(to))));
+        ->QueryInterface(winrt::guid_of<T>(), winrt::put_abi(to)));
 
     return to;
 }
@@ -99,11 +100,9 @@ Si vous déplacez en une seule passe, cela n’est pas nécessaire. Toutefois, s
 Sinon (ou, pour un projet XAML, en outre) vous pouvez également ajouter le support C++/CX à l’aide de la page de propriétés du projet C++/WinRT dans Visual Studio. Dans les propriétés du projet, **Propriétés communes** \> **C++/WinRT** \> **Langue du projet** \> **C++/CX**. Si vous procédez ainsi, vous ajouterez la propriété suivante à votre fichier `.vcxproj`.
 
 ```xml
-<syntaxhighlight lang="xml">
   <PropertyGroup Label="Globals">
     <CppWinRTProjectLanguage>C++/CX</CppWinRTProjectLanguage>
   </PropertyGroup>
-</syntaxhighlight>
 ```
 
 > [!IMPORTANT]

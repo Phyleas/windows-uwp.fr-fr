@@ -4,16 +4,16 @@ title: Recommandations en matière de paramètres de l’application
 ms.assetid: 2D765E90-3FA0-42F5-A5CB-BEDC14C3F60A
 label: Guidelines
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 08/07/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a9b27094a5861151b907dc7787828068122e4a54
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 418c33952c4be6be08683b5e396f423f771bb997
+ms.sourcegitcommit: 99100b58a5b49d8ba78905b15b076b2c5cffbe49
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83233985"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88502377"
 ---
 # <a name="guidelines-for-app-settings"></a>Recommandations en matière de paramètres de l’application
 
@@ -46,13 +46,13 @@ La manière dont les utilisateurs accèdent à votre page de paramètres d’app
 
 Pour une disposition de volet de navigation, les paramètres d’application doivent correspondre au dernier élément de la liste de choix de navigation et être épinglés dans la partie inférieure :
 
-![point d’entrée des paramètres d’application pour un volet de navigation](images/appsettings-entrypoint-navpane.png)
+![point d’entrée des paramètres d’application pour un volet de navigation](images/appsettings-nav-settings.png)
 
 **Barre de l’application**
 
-Si vous utilisez une [barre de l’application](../controls-and-patterns/app-bars.md) ou une barre d’outils, placez le point d’entrée des paramètres en tant que dernier élément du sous-menu « Plus ». Si vous avez besoin d’améliorer la détectabilité du point d’entrée des paramètres pour votre application, placez le point d’entrée directement dans la barre de l’application plutôt que dans le sous-menu.
+Si vous utilisez une [barre de l’application](../controls-and-patterns/app-bars.md) ou une barre d’outils, placez le point d’entrée des paramètres en tant que l’un des derniers éléments du sous-menu « Plus ». Si vous avez besoin d’améliorer la détectabilité du point d’entrée des paramètres pour votre application, placez le point d’entrée directement dans la barre de l’application plutôt que dans le sous-menu.
 
-![point d’entrée des paramètres d’application pour une barre d’application](images/appsettings-entrypoint-tabs.png)
+![point d’entrée des paramètres d’application pour une barre d’application](../controls-and-patterns/images/appbar_rs2_overflow_icons.png)
 
 **Hub**
 
@@ -69,15 +69,10 @@ Plutôt que d’enfouir profondément le point d’entrée des paramètres d’a
 ## <a name="layout"></a>Disposition
 
 
-Sur les appareils de bureau et les appareils mobiles, la fenêtre des paramètres d’application doit s’ouvrir en mode plein écran et remplir toute la fenêtre. Si votre menu de paramètres d’application ne comporte pas plus de quatre groupes de niveau supérieur, ces groupes doivent s’afficher en cascade en descendant d’une colonne.
-
-Bureau :
+La fenêtre des paramètres d’application doit s’ouvrir en mode plein écran et remplir toute la fenêtre. Si votre menu de paramètres d’application ne comporte pas plus de quatre groupes de niveau supérieur, ces groupes doivent s’afficher en cascade en descendant d’une colonne.
 
 ![disposition d’une page de paramètres d’application sur un appareil de bureau](images/appsettings-layout-navpane-desktop.png)
 
-Mobile :
-
-![disposition d’une page de paramètres d’application sur un téléphone](images/appsettings-layout-navpane-mobile.png)
 
 ## <a name="color-mode-settings"></a>Paramètres du « Mode couleur »
 

@@ -6,17 +6,17 @@ label: Search
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c6eb22fbe0488fa9a36160ce9e704d10727e4c9
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 8bb01c76879bd00e10286ef429415cf4817315b7
+ms.sourcegitcommit: 99100b58a5b49d8ba78905b15b076b2c5cffbe49
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "66364480"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88502406"
 ---
 # <a name="search-and-find-in-page"></a>Recherche et recherche dans la page
 
@@ -56,13 +56,13 @@ La fonction recherche est d’utilisation. Les interfaces utilisateur de recherc
 
 Voici quelques exemples d’étendues de recherche courantes :
 
-**Global** et **Contextuel/Optimal.**   Rechercher dans plusieurs sources du cloud et du contenu local. Résultats variés incluant des URL, des documents, des médias, des actions, des applications et plus encore.
+**Global** et **Contextuel/Optimal.**  Rechercher dans plusieurs sources du cloud et du contenu local. Résultats variés incluant des URL, des documents, des médias, des actions, des applications et plus encore.
 
 **Web.**   Rechercher dans un index web. Les résultats peuvent contenir des pages, des entités et des réponses.
 
 **Mes sélections.**   Rechercher des informations sur plusieurs appareils, dans le cloud, dans des graphes sociaux et plus encore. Les résultats sont différents, mais sont limités par le lien aux comptes d’utilisateur.
 
-Utilisez un texte d’information afin d’indiquer l’étendue de la recherche. Exemples :
+Utilisez un texte d’information afin d’indiquer l’étendue de la recherche. Voici quelques exemples :
 
 « Rechercher sur Windows et sur le Web »
 
@@ -87,13 +87,12 @@ Les champs d’entrée de texte sont recommandés pour la plupart des applicatio
 
 Avant de cliquer sur l’icône de recherche :
 
-![Exemple d’icône de recherche et de zone de recherche réduite](images/search-icon-collapsed.png)
+![Exemple d’icône de recherche et de zone de recherche réduite](images/search-icon-collapsed-maps.png)
 
- 
 
 Après avoir cliqué sur l’icône de recherche :
 
-![Exemple d’icône de recherche et de zone de recherche développée](images/search-icon-expanded.png)
+![Exemple de recherche dans un menu de navigation](images/search-icon-expanded-maps.png)
 
  
 
@@ -120,13 +119,13 @@ Recherche en tant qu’action dans la barre d’outils Windows :
 
 Recherche en tant qu’entrée sur le canevas d’application :
 
-![Exemple de recherche sur un canevas d’application](images/search-canvas-contacts.png)
+![Exemple de recherche sur un canevas d’application](images/search-app-canvas.png)
 
  
 
-Recherche dans un volet de navigation :
+Recherche dans un volet de navigation de l’application Cartes :
 
-![Exemple de recherche dans un menu de navigation](images/search-navmenu.png)
+![Exemple de recherche dans un menu de navigation](images/search-icon-expanded-maps.png)
 
  
 

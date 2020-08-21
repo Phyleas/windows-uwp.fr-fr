@@ -4,19 +4,19 @@ title: Zoom sémantique
 ms.assetid: B5C21FE7-BA83-4940-9CC1-96F6A2DC28C7
 label: Semantic zoom
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 08/07/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 35613366078531a9e342df0b4314d049fde844e9
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 3398be1569143e253b2b9cb9ee25133ee7fe5fd9
+ms.sourcegitcommit: 99100b58a5b49d8ba78905b15b076b2c5cffbe49
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80081574"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88502337"
 ---
 # <a name="semantic-zoom"></a>Zoom sémantique
 
@@ -59,17 +59,17 @@ Ne confondez pas le zoom sémantique avec le zoom optique. Ces deux types de zoo
 </tr>
 </table>
 
+**Galerie de contrôles XAML**
+
+La section SemanticZoom de la Galerie de contrôles illustre une expérience de navigation qui permet aux utilisateurs d’effectuer rapidement un zoom avant et arrière sur des sections groupées de types de contrôle. 
+
+![exemple de zoom sémantique utilisé dans la Galerie de contrôles XAMl](images/semanticzoom-gallery.gif)
+
 **Application Photos**
 
 Zoom sémantique utilisé dans l’application Photos. Les photos sont regroupées par mois. La sélection d’un en-tête de mois dans l’affichage Grille par défaut effectue un zoom arrière sur l’affichage Liste du mois pour une navigation plus rapide.
 
 ![Zoom sémantique utilisé dans l’application Photos](images/control-examples/semantic-zoom-photos.png)
-
-**Carnet d’adresses**
-
-Un carnet d’adresses est un autre exemple de jeu de données dans lequel la navigation peut être considérablement simplifiée à l’aide du zoom sémantique. Vous pouvez utiliser la vue avec zoom arrière pour accéder rapidement à la lettre dont vous avez besoin (image de gauche), tandis que la vue avec zoom avant affiche les éléments de données individuels (image de droite).
-
-![Exemple de zoom sémantique utilisé dans une liste de contacts](images/semanticzoom-win10.png)
 
 ## <a name="create-a-semantic-zoom"></a>Créer un zoom sémantique
 
@@ -200,7 +200,7 @@ private void SemanticZoom_ViewChangeStarted(object sender, SemanticZoomViewChang
 
 ## <a name="related-articles"></a>Articles connexes
 
-- [Notions de base de la conception de la navigation](../basics/navigation-basics.md)
+- [Informations de base relatives à la conception de la navigation](../basics/navigation-basics.md)
 - [Mode Liste et affichage Grille](listview-and-gridview.md)
 - [Modèles et conteneurs d’éléments](item-containers-templates.md)
 

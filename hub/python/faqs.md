@@ -1,6 +1,6 @@
 ---
 title: Questions fréquemment posées sur l’utilisation de Python sur Windows
-description: Questions fréquemment posées sur l’utilisation de Python sur Windows
+description: Obtenez de l’aide en consultant les questions fréquentes (FAQ) sur l’utilisation de Python sous Windows dans le cadre du développement.
 author: mattwojo
 ms.author: mattwoj
 manager: jken
@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, windows 10, microsoft, pip, py.exe, chemins d’accès aux fichiers, PYTHONPATH, déploiement python, création de package python
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 6dbf86e0f9435e44140159ebb2bcbc3d67928999
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 2541186a1dd0f205d88e1e14c146934490afff55
+ms.sourcegitcommit: b6138f9565252460ace6fa0acdc2a902e591681a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74663556"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88243261"
 ---
 # <a name="frequently-asked-questions-about-using-python-on-windows"></a>Questions fréquemment posées sur l’utilisation de Python sur Windows
 

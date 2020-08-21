@@ -1,6 +1,6 @@
 ---
 title: Ressources relatives au développement via Python sur Windows
-description: Liste de ressources pour développer avec Python sur Windows.
+description: Découvrez des ressources utiles pour le développement avec Python sous Windows, telles que des cours en ligne et le développement web.
 author: mattwojo
 ms.author: mattwoj
 manager: jken
@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Python, Microsoft, Windows 10, didacticiels, cours en ligne, blogs, événements
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 24bda3a9eb76dac2e584540161e551ce6bb7ff4e
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 136da1d69a61cb90c9c80cab5d7ecd822d64820d
+ms.sourcegitcommit: b6138f9565252460ace6fa0acdc2a902e591681a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75683662"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88243241"
 ---
 # <a name="resources-for-developing-with-python-on-windows"></a>Ressources relatives au développement via Python sur Windows
 
@@ -55,7 +55,7 @@ Liste de liens que nous recommandons pour les développeurs Python travaillant s
 
 - [Didacticiels Python.org](https://docs.python.org/3/tutorial/index.html) : présente au lecteur les concepts et fonctionnalités de base du langage et du système Python, de manière informelle.
 
-- [Découvrir Python sur Lynda.com](https://www.lynda.com/Python-tutorials/Learning-Python/661773-2.html) : introduction de base à Python.
+- [Découvrir Python sur Lynda.com](https://www.lynda.com/Python-tutorials/Learning-Python/661773-2.html) : Une introduction de base Python.
 
 - [Real Python](https://realpython.com/) : Centre de ressources pour les développeurs de Python : tutoriels sur Python, cours vidéo, quiz, livres, exemples de code, etc.
 
