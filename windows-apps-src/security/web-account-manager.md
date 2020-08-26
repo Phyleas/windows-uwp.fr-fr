@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, sécurité
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
-ms.openlocfilehash: e5b835c837ca750f2ccc1ebad9ec119047b02ce7
-ms.sourcegitcommit: 97d2ef33253af210ad2d4f036b4820056ff03f62
+ms.openlocfilehash: 7cf4cfa4b87842cd7113b36220cdfdff69449a3a
+ms.sourcegitcommit: 720413d2053c8d5c5b34d6873740be6e913a4857
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85441626"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88846789"
 ---
 # <a name="web-account-manager"></a>Gestionnaire de comptes web
 
@@ -174,7 +174,7 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 
 Dans cet exemple, nous transmettons la chaîne « WL. Basic » au paramètre _scope_ . L’étendue représente le type d’informations concernant un utilisateur spécifique que vous demandez au service fournisseur. Certaines étendues fournissent un accès uniquement aux informations de base d’un utilisateur, telles que le nom et l’adresse de messagerie, tandis que d’autres étendues peuvent accorder l’accès à des informations sensibles telles que les photos de l’utilisateur ou la boîte de réception de l’e-mail. En règle générale, votre application doit utiliser l’étendue la moins permissive nécessaire pour atteindre sa fonction. Les fournisseurs de services fournissent de la documentation sur les étendues nécessaires pour obtenir des jetons à utiliser avec leurs services. 
 
-* Pour les étendues Office 365 et Outlook.com, consultez [Authentification des API Office 365 et Outlook.com à l’aide du point de terminaison d’authentification v2.0](https://developer.microsoft.com/graph/docs/concepts/auth_overview). 
+* Pour Microsoft 365 et les étendues Outlook.com, consultez [utiliser l’API REST d’Outlook (version 2,0)](/previous-versions/office/office-365-api/api/version-2.0/use-outlook-rest-api). 
 * Pour les étendues OneDrive, consultez [authentification et connexion onedrive](https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes). 
 
 > [!TIP]

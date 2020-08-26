@@ -4,14 +4,14 @@ title: Rapport d’utilisation
 ms.assetid: 5F0E7F94-D121-4AD3-A6E5-9C0DEC437BD3
 ms.date: 10/31/2018
 ms.topic: article
-keywords: windows 10, uwp, utilisation, événement personnalisé, rapport, télémétrie, sessions utilisateur
+keywords: Windows 10, UWP, utilisation, événement personnalisé, rapport, télémétrie, sessions utilisateur
 ms.localizationpriority: medium
-ms.openlocfilehash: 45f42b7cf31eb0c22ef68ef9191d773f9044421e
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: bced71620b5e52e90b104a9a50d8fb774ba14228
+ms.sourcegitcommit: 720413d2053c8d5c5b34d6873740be6e913a4857
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75685109"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88846809"
 ---
 # <a name="usage-report"></a>Rapport d’utilisation
 
@@ -19,34 +19,33 @@ ms.locfileid: "75685109"
 Le rapport d' **utilisation** de l' [espace partenaires](https://partner.microsoft.com/dashboard) vous permet de voir comment les clients sur Windows 10 (y compris la Xbox) utilisent votre application et affichent des informations sur les événements personnalisés que vous avez définis. Vous pouvez afficher ces données dans l’espace partenaires ou [Télécharger le rapport](download-analytic-reports.md) en mode hors connexion.
 
 
-## <a name="apply-filters"></a>Appliquer les filtres
+## <a name="apply-filters"></a>Appliquer des filtres
 
-Dans la zone supérieure de la page, vous pouvez sélectionner la période sur laquelle portent les données qui vous intéressent. La valeur par défaut est de **30D** (30 jours), mais vous pouvez choisir d’afficher les données portant sur des périodes de 3, 6 ou 12 mois, ou sur une plage de dates personnalisée que vous spécifiez.
+Près du haut de la page, vous pouvez sélectionner la période pour laquelle vous souhaitez afficher les données. La sélection par défaut est **30D** (30 jours), mais vous pouvez choisir d’afficher les données pour 3, 6 ou 12 mois, ou pour une plage de données personnalisée que vous spécifiez.
 
-Vous pouvez également développer l’option **Filtres** pour filtrer les données de cette page par version de package, par marché et/ou par type d’appareil.
+Vous pouvez également développer des **filtres** pour filtrer les données sur cette page par version de package, marché et/ou type de périphérique.
 
--   **Version du package** : le paramétrage par défaut est **Toutes**. Si votre application comporte plusieurs packages, vous pouvez en choisir un ici.
--   **Marché** : le filtre par défaut est **Tous les marchés**, mais vous pouvez restreindre les données à un ou plusieurs marchés.
--   **Type d’appareil** : le paramétrage par défaut est **Tous**, mais vous pouvez choisir d’afficher uniquement les données relatives à un type d’appareil spécifique (PC, console ou tablette, par exemple).
+-   **Version du package** : la valeur par défaut de ce filtre est **Toutes**. Si votre application comporte plusieurs packages, vous pouvez en choisir un ici.
+-   **Marché**: le filtre par défaut est **tous les marchés**, mais vous pouvez limiter les données à un ou plusieurs marchés.
+-   **Type d’appareil**: le paramètre par défaut est tout, mais vous pouvez choisir d’afficher **les**données pour un seul type d’appareil spécifique (PC, console, tablette, etc.).
 
-Les informations figurant dans tous les graphiques répertoriés ci-après correspondent à la plage de dates et aux filtres que vous avez sélectionnés (à l’exception des données **Nouveaux utilisateurs** du graphique **Utilisation** qui n’apparaissent pas si des filtres sont sélectionnés). Certaines sections vous permettent également d’appliquer des filtres supplémentaires.
+Les informations de tous les graphiques répertoriés ci-dessous reflètent la plage de dates et les filtres que vous avez sélectionnés (à l’exception des **nouveaux utilisateurs** dans le graphique d' **utilisation** , qui ne s’affichent pas si des filtres sont sélectionnés). Certaines sections vous permettent également d’appliquer des filtres supplémentaires.
 
 > [!IMPORTANT]
-> Ce rapport intègre uniquement les données d’utilisation des clients sur Windows 10 (y compris Xbox) qui n’ont pas refusé de fournir des informations de télémétrie. Les données d’utilisation pour les jeux Xbox sont incluses ici, que le client ait été connecté à Xbox Live ou non. 
+> Ce rapport inclut uniquement les données d’utilisation des clients sur Windows 10 (y compris la Xbox) qui n’ont pas choisi de fournir des informations de télémétrie. Les données d’utilisation pour les jeux Xbox sont incluses ici, que le client ait été connecté à Xbox Live ou non. 
 
 
-## <a name="usage"></a>Utilisation
+## <a name="usage"></a>Usage
 
-Le graphique **Utilisation** affiche des détails sur la façon dont vos clients utilisent votre application au cours de la période sélectionnée. Notez que ce graphique n’effectue pas le suivi des utilisateurs uniques de votre application ni des sessions utilisateur uniques (autrement dit, les utilisateurs qui figurent dans ce graphique peuvent avoir utilisé votre application une ou plusieurs fois).
+Le graphique **utilisation** affiche des détails sur la façon dont vos clients utilisent votre application pendant la période sélectionnée. Notez que ce graphique n’effectue pas le suivi des utilisateurs uniques pour votre application ou des sessions utilisateur uniques (autrement dit, un utilisateur est représenté dans ce graphique, qu’il ait utilisé votre application une seule fois ou plusieurs fois).
 
 Ce graphique comporte des onglets distincts que vous pouvez afficher en indiquant l’utilisation par jour ou par semaine (selon la durée sélectionnée).
 
-- **Utilisateurs** : affiche le nombre total de **sessions utilisateur** au cours de la période sélectionnée. Chaque session utilisateur représente une période de temps distincte, qui commence au lancement de l’application (début du processus) et qui se termine à l’arrêt de l’application (fin du processus) ou après une période d’inactivité. Pour cette raison, un client unique peut avoir plusieurs sessions utilisateur sur un même jour ou une même semaine. Le nombre total **d’utilisateurs actifs** (tout client utilisant l’application ce jour ou cette semaine-là) et de **nouveaux utilisateurs** (clients ayant utilisé votre application pour la première fois ce jour ou cette semaine-là) est également affiché. Notez que si vous avez appliqué des filtres à la page, la valeur **Nouveaux utilisateurs** n’apparaît pas dans ce graphique.
-- **Appareils** : affiche le nombre d’appareils utilisés quotidiennement par tous les utilisateurs pour interagir avec votre application.
-- **Durée** : indique le nombre total d’heures d’engagement (heures pendant lesquelles un utilisateur utilise activement votre application).
+- **Utilisateurs**: affiche le nombre total de **sessions utilisateur** sur la période sélectionnée. Chaque session utilisateur représente une période distincte, en commençant à la fin de l’exécution de l’application (démarrer le processus) et jusqu’à la fin de la procédure (fin du processus) ou après une période d’inactivité. Pour cette raison, un seul client peut avoir plusieurs sessions utilisateur au cours du même jour ou de la même semaine. Le nombre total d' **utilisateurs actifs** (n’importe quel client utilisant l’application le jour ou la semaine) et les **nouveaux utilisateurs** (un client qui a utilisé votre application pour la première fois ce jour ou cette semaine) sont également affichés. Notez que si vous avez appliqué des filtres à la page, vous ne verrez pas de **nouveaux utilisateurs** dans ce graphique.
+- **Appareils**: affiche le nombre d’appareils quotidiens utilisés pour interagir avec votre application par tous les utilisateurs.
+- **Durée**: affiche le nombre total d’heures d’engagement (heures où un utilisateur utilise activement votre application).
 - **Engagement**: affiche le nombre moyen de minutes d’engagement par utilisateur (durée moyenne de toutes les sessions utilisateur). 
-- **Rétention** : affiche le nombre total **d’utilisateurs actifs quotidiennement/d’utilisateurs actifs mensuels** au cours de la période sélectionnée.
-- Prédiction de l' **évolution**: montre le nombre d’utilisateurs que nous prévoyons susceptibles de cesser d’utiliser votre application prochainement, en fonction de leur utilisation récente.
+- **Rétention**: affiche le nombre total de **UAQ/Mau** (utilisateurs actifs quotidiens/utilisateurs actifs mensuels) sur la période sélectionnée.
 
 Lorsque la période **30D** est sélectionnée, vous pouvez voir des marqueurs de cercle quand vous affichez les onglets **utilisateurs**, **appareils**ou **durée** . Celles-ci représentent une augmentation ou une diminution significatives d’une valeur donnée que nous pensons avoir à connaître. La date à laquelle le cercle apparaît représente la fin de la semaine au cours de laquelle nous avons détecté une augmentation ou une diminution significative par rapport à la semaine qui précède. Pour obtenir plus de détails sur les modifications, pointez sur le cercle.  
 
@@ -56,34 +55,34 @@ Lorsque la période **30D** est sélectionnée, vous pouvez voir des marqueurs d
 
 ## <a name="user-sessions"></a>Sessions utilisateur
 
-Le graphique **Sessions utilisateur** affiche le nombre total de sessions utilisateur de votre application par marché au cours de la période sélectionnée.
+Le graphique **sessions utilisateur** affiche le nombre total de sessions utilisateur pour votre application par marché, sur la période sélectionnée.
 
-Comme dans le cas des informations **Sessions utilisateur** du graphique **Utilisation**, une session utilisateur représente une période donnée au cours de laquelle un client a interagi avec votre application, et ce graphique n’effectue pas le suivi des utilisateurs uniques de votre application.
+Comme avec les informations sur les **sessions utilisateur** dans le graphique d' **utilisation** , une session utilisateur représente une période distincte où un client interagit avec votre application, et ce graphique n’effectue pas le suivi des utilisateurs uniques pour votre application.
 
-Vous pouvez visualiser ces données sous la forme visuelle **Carte** ou **Tableau**. La représentation sous forme de tableau affiche cinq marchés à la fois, soit dans l’ordre alphabétique, soit par nombre maximal ou minimal de sessions utilisateur. Vous pouvez également télécharger ces données afin de visualiser d’un seul coup d’œil les informations relatives à la totalité des marchés.
+Vous pouvez afficher ces données sous forme de **carte** visuelle ou basculer le paramètre pour l’afficher sous forme de **tableau** . Le formulaire de table présentera cinq marchés à la fois, triés par ordre alphabétique ou par le plus grand nombre de sessions utilisateur. Vous pouvez également télécharger les données pour afficher des informations sur tous les marchés ensemble.
 
 
-## <a name="package-version"></a>version du package.
+## <a name="package-version"></a>Version du package
 
-Le graphique **Sessions utilisateur** affiche le nombre total de sessions utilisateur quotidiennes de votre application par version de package au cours de la période sélectionnée.
+Le graphique **sessions utilisateur** affiche le nombre total de sessions utilisateur quotidiennes pour votre application par version de package sur la période sélectionnée.
 
-Comme dans le cas du graphique **Sessions utilisateur**, une session utilisateur représente une période donnée au cours de laquelle un client a interagi avec votre application, et ce graphique n’effectue pas le suivi des utilisateurs uniques de votre application.
+Comme pour le graphique **sessions utilisateur** , une session utilisateur représente une période distincte pendant laquelle un client interagit avec votre application, et ce graphique n’effectue pas le suivi des utilisateurs uniques pour votre application.
 
 
 ## <a name="custom-events"></a>Événements personnalisés
 
-Le graphique **Événements personnalisés** affiche le nombre total d’occurrences d’événements personnalisés que vous avez définis pour votre application. Ces informations peuvent concerner plusieurs occurrences pour un même client. Vous pouvez utiliser les filtres pour sélectionner des événements personnalisés spécifiques pour lesquels vous souhaitez visualiser ces données.
+Le graphique **événements personnalisés** affiche le nombre total d’occurrences pour les événements personnalisés que vous avez définis pour votre application. Ces informations peuvent concerner plusieurs occurrences pour un même client. Vous pouvez utiliser les filtres pour sélectionner les événements personnalisés spécifiques pour lesquels vous souhaitez afficher ces données.
 
-Les événements personnalisés sont implémentés à l’aide de la méthode [StoreServicesCustomEventLogger.Log](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) de [Microsoft Store Services SDK](../monetize/microsoft-store-services-sdk.md).
+Les événements personnalisés sont implémentés à l’aide de la méthode [StoreServicesCustomEventLogger.Log](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) de [Microsoft Store Services SDK](../monetize/microsoft-store-services-sdk.md).
 
-Pour plus d’informations, consultez l’article [Consigner des événements personnalisés pour le Centre de développement](../monetize/log-custom-events-for-dev-center.md).
+Pour plus d’informations, consultez [consigner les événements personnalisés pour le centre de développement](../monetize/log-custom-events-for-dev-center.md).
 
 
 ## <a name="custom-events-breakdown"></a>Répartition des événements personnalisés
 
-Le graphique **Répartition des événements personnalisés** affiche des détails supplémentaires sur la fréquence à laquelle chacun de vos événements personnalisés est survenu. Cela peut vous aider à déterminer si des événements se produisent plus souvent pour un marché, un type d’appareil ou des versions de package spécifiques.
+Le graphique **répartition des événements personnalisés** affiche plus de détails sur la fréquence à laquelle chacun de vos événements personnalisés s’est produit. Cela peut vous aider à déterminer si les événements se produisent plus souvent pour un marché particulier, un type d’appareil ou des versions de package.
 
-Pour chaque événement, le graphique indique le nom de l’événement et le nombre d’événements correspondant à une combinaison spécifique de marché, de type d’appareil et de version du package de l’utilisateur. En règle générale, un événement est répertorié à plusieurs reprises avec différentes combinaisons de ces facteurs. 
+Pour chaque événement, vous verrez le nom de l’événement et un nombre d’événements qui correspondent à une combinaison spécifique du marché de l’utilisateur, du type d’appareil et de la version du package. En règle générale, vous verrez un événement répertorié plusieurs fois avec différentes combinaisons de ces facteurs. 
 
 
 

@@ -1,21 +1,21 @@
 ---
 Description: Découvrez comment les applications Win32 C# peuvent envoyer des notifications Toast locales et gérer l’utilisateur en cliquant sur le Toast.
-title: Envoyer une notification Toast locale à partir d’applications Desktop C#
+title: Envoyer une notification toast locale à partir d’applications de bureau en C#
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
 label: Send a local toast notification from desktop C# apps
 template: detail.hbs
 ms.date: 01/23/2018
 ms.topic: article
-keywords: Windows 10, UWP, Win32, Desktop, notifications Toast, envoyer un toast, envoyer un toast local, un pont de bureau, msix, packages éparss, C#, C Sharp, notification Toast, WPF
+keywords: 'Windows 10, UWP, Win32, Desktop, notifications Toast, envoyer un toast, envoyer un toast local, Desktop Bridge, msix, packages épars, C#, C Sharp, Toast notification, WPF, envoyer une notification Toast, WPF, envoyer une notification Toast, envoyer une notification Toast c#, envoyer une notification, WPF, envoyer une notification Toast, notification Toast, WPF, notification Toast C #'
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f1eef86045f44fa75363b54fa58e3e7089d64e0
-ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
+ms.openlocfilehash: 8a339a4f2dca52a9bc04b1bba92f149a3e627878
+ms.sourcegitcommit: 720413d2053c8d5c5b34d6873740be6e913a4857
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997926"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88846749"
 ---
-# <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>Envoyer une notification Toast locale à partir d’applications Desktop C#
+# <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>Envoyer une notification toast locale à partir d’applications de bureau en C#
 
 Les applications de bureau (y compris les applications [MSIX](https://docs.microsoft.com/windows/msix/desktop/source-code-overview) empaquetées, les applications qui utilisent des [packages éparss](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) pour obtenir l’identité du package et les applications Win32 non empaquetées classiques) peuvent envoyer des notifications de Toast interactives comme des applications Windows. Toutefois, il existe quelques étapes spéciales pour les applications de bureau en raison des différents schémas d’activation et de l’absence potentielle d’identité de package si vous n’utilisez pas de packages MSIX ou épars.
 
