@@ -6,12 +6,12 @@ ms.date: 04/17/2019
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 31d7805e7ae936e5c7427b54f2eb9b0ad4b4c3e9
-ms.sourcegitcommit: 37e4af3ba203295c7e88448414cf7ea537ab5402
+ms.openlocfilehash: c871149f764024de41309f21dbd036848633a2af
+ms.sourcegitcommit: 720413d2053c8d5c5b34d6873740be6e913a4857
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84257380"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88846729"
 ---
 # <a name="modernize-your-desktop-apps"></a>Moderniser vos applications de bureau
 
@@ -97,7 +97,7 @@ Que vous développiez une application UWP ciblant exclusivement la famille d’a
 
 Microsoft Graph est une collection d’API avec lesquelles vous pouvez créer des applications destinées aux organisations ou aux consommateurs qui interagissent avec les données de millions d’utilisateurs. Microsoft Graph expose des API REST et des bibliothèques clientes pour accéder aux données des sources suivantes :
 * Azure Active Directory
-* Services Office 365 : SharePoint, OneDrive, Outlook/Exchange, Microsoft Teams, OneNote, Planner et Excel
+* Applications Microsoft 365 Office : SharePoint, OneDrive, Outlook/Exchange, Microsoft Teams, OneNote, Planner et Excel
 * Services Enterprise Mobility + Security : Identity Manager, Intune, Advanced Threat Analytics et Advanced Threat Protection.
 * Services Windows 10 : appareils et activités
 
