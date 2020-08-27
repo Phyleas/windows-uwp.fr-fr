@@ -1,27 +1,27 @@
 ---
-title: Entrée de jeu pour jeux DirectX
-description: Entrée de jeu pour votre jeu DirectX.
+title: Entrée de jeu pour les jeux DirectX
+description: Affichez des liens vers des rubriques qui expliquent comment ajouter des entrées à vos jeux DirectX à partir de contrôles de déplacement, de déplacement relatif de souris et de contrôles tactiles de base.
 ms.assetid: 4c7dff42-978b-475e-a1a6-88c99bf2350a
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp, jeu, directx, entrée, souris, tactile, contrôle
+keywords: Windows 10, UWP, jeu, DirectX, entrée, souris, toucher, contrôle
 ms.localizationpriority: medium
-ms.openlocfilehash: 549a4da0614dd1c7cc6884c5556c061edfccaf18
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: cff165108e2773725fa3b7460f007ee82ef7c856
+ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57599454"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88943079"
 ---
-# <a name="game-input-for-directx-games"></a>Entrée de jeu pour jeux DirectX
+# <a name="game-input-for-directx-games"></a>Entrée de jeu pour les jeux DirectX
 
-Cette section fournit des informations sur l’ajout de différents types d’entrées pour les jeux DirectX.
+Cette section fournit des informations sur l’ajout de différents types d’entrées pour vos jeux DirectX.
 
-La rubrique Contrôles de déplacement/vue pour les jeux explique comment ajouter des commandes de souris et de clavier classiques à votre jeu DirectX.
+La rubrique relative aux contrôles Move-look pour les jeux explique comment ajouter des contrôles de souris et de clavier traditionnels à votre jeu DirectX.
 
-La rubrique Mouvements de souris relatifs explique comment vous pouvez mettre en place le contrôle de la souris, en effectuant le suivi du delta des pixels entre les mouvements de la souris.
+La rubrique relative au déplacement de la souris explique comment implémenter le contrôle de souris en effectuant le suivi du delta de pixel entre les mouvements de la souris.
 
-La rubrique Contrôles tactiles pour les jeux explique comment ajouter des contrôles tactiles pour déplacer une caméra de plan fixe dans un environnement Direct3D.
+La rubrique contrôles tactiles pour les jeux explique comment ajouter des contrôles tactiles pour déplacer un appareil photo à plan fixe dans un environnement Direct3D.
 
 <table>
 <colgroup>
@@ -36,16 +36,16 @@ La rubrique Contrôles tactiles pour les jeux explique comment ajouter des contr
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="tutorial--adding-move-look-controls-to-your-directx-game.md">Présentation de déplacement des contrôles pour les jeux</a></p></td>
-<td align="left"><p>Ajouter des contrôles de déplacement/vue.</p></td>
+<td align="left"><p><a href="tutorial--adding-move-look-controls-to-your-directx-game.md">Contrôles de déplacement/vue pour les jeux</a></p></td>
+<td align="left"><p>Ajoutez des contrôles Move-look.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="relative-mouse-movement.md">Mouvement de souris relatif</a></p></td>
-<td align="left"><p>Gestion des mouvements de souris relatifs.</p></td>
+<td align="left"><p><a href="relative-mouse-movement.md">Mouvements de souris relatifs</a></p></td>
+<td align="left"><p>Gérer le mouvement relatif de la souris.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="tutorial--adding-touch-controls-to-your-directx-game.md">Contrôles tactiles pour les jeux</a></p></td>
-<td align="left"><p>Ajouter des contrôles tactiles de base à votre jeu.</p></td>
+<td align="left"><p>Ajoutez des contrôles tactiles de base à votre jeu.</p></td>
 </tr>
 </tbody>
 </table>

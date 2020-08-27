@@ -1,17 +1,17 @@
 ---
 ms.assetid: 454953E1-DD8F-44B7-A614-7BAD8C683536
 title: Utiliser le gyromètre
-description: Découvrez comment utiliser le gyromètre pour détecter les changements de mouvements de l’utilisateur.
+description: Découvrez comment utiliser l’API gyromètre pour intégrer des entrées gyromètre dans votre application, qui détectent les modifications apportées au déplacement utilisateur, telles que la vélocité angulaire et le mouvement de rotation.
 ms.date: 06/06/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a6ad3b98c559dff8781c96a98a6428a4d1f95a4
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 10d65a6b752c904d7145c3c5e09194dab7c8e0a5
+ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493124"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88943089"
 ---
 # <a name="use-the-gyrometer"></a>Utiliser le gyromètre
 

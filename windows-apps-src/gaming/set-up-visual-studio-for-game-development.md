@@ -1,17 +1,17 @@
 ---
 title: Visual Studio Tools pour la programmation de jeux
-description: Vue d’ensemble des outils propres à DirectX disponibles dans Visual Studio.
+description: Découvrez les outils pour la programmation de jeux DirectX disponibles dans Visual Studio, y compris l’éditeur d’images, l’éditeur de modèle et le concepteur de nuanceur.
 ms.assetid: 43137bfc-7876-70e0-515c-4722f68bd064
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp, jeux, visual studio, outils, directx
+keywords: Windows 10, UWP, jeux, Visual Studio, outils, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: f4ff471ae4c45761a1c1dad5819e97c8245746a1
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: c97c24eca55cf43559b9f518eaf2fbc4656aa374
+ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368134"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88942806"
 ---
 # <a name="visual-studio-tools-for-game-programming"></a>Visual Studio Tools pour la programmation de jeux
 
@@ -27,7 +27,7 @@ Si vous utilisez Visual Studio Ultimate pour développer des applications Direct
 
 Cette rubrique donne une vue d’ensemble de ces fonctionnalités.
 
-## <a name="image-editor"></a>Éditeur d’images
+## <a name="image-editor"></a>éditeur d’images
 
 
 Utilisez l’Éditeur d’images pour exploiter les types de formats de texture et d’image enrichis que DirectX utilise. L’Éditeur d’images prend en charge les formats suivants :
@@ -45,14 +45,14 @@ Créez des [fichiers de personnalisations de la build](#build-customizations-for
 
 Pour plus d’informations, voir [Utilisation de textures et d’images](https://docs.microsoft.com/visualstudio/designers/working-with-textures-and-images?view=vs-2015).
 
-> **Remarque**  l’éditeur d’images n’est pas censée être un remplacement pour une image complète des fonctionnalités de modification d’application, mais il est judicieux pour les nombreux simple affichage et modification des scénarios.
+> **Remarque**    L’éditeur d’images n’est pas destiné à remplacer une application de modification d’image de fonctionnalité complète, mais convient à de nombreux scénarios d’affichage et de modification simples.
 
  
 
-## <a name="model-editor"></a>Éditeur de modèles
+## <a name="model-editor"></a>Éditeur de modèle
 
 
-Vous pouvez utiliser l’Éditeur de modèles pour créer des modèles en 3D de base ex nihilo ou pour afficher et modifier des modèles en 3D plus complexes à partir d’outils de modélisation en 3D complets. L’Éditeur de modèles prend en charge plusieurs formats de modèles en 3D qui sont utilisés dans le cadre du développement d’applications DirectX. Vous pouvez créer des [fichiers de personnalisations de la build](#build-customizations-for-3d-assets) pour les convertir en fichiers .cmo au moment de la création.
+Vous pouvez utiliser l’Éditeur de modèles pour créer des modèles en 3D de base ex nihilo ou pour afficher et modifier des modèles en 3D plus complexes à partir d’outils de modélisation en 3D complets. L’éditeur de modèle prend en charge plusieurs formats de modèle 3D qui sont utilisés dans le développement d’applications DirectX. Vous pouvez créer des [fichiers de personnalisations de la build](#build-customizations-for-3d-assets) pour les convertir en fichiers .cmo au moment de la création.
 
 -   .fbx
 -   .dae
@@ -64,11 +64,11 @@ Voici la capture d’écran d’un modèle dans l’éditeur auquel un éclairag
 
 Pour plus d’informations, voir [Utilisation de modèles en 3D](https://docs.microsoft.com/visualstudio/designers/working-with-3-d-models?view=vs-2015).
 
-> **Remarque**  l’éditeur de modèle n’est pas destinée à être un remplacement pour un modèle complet de fonctionnalités de modification d’application, mais il est judicieux pour les nombreux simple affichage et modification des scénarios.
+> **Remarque**    L’éditeur de modèle n’est pas destiné à remplacer une application de modification de modèle de fonctionnalités complète, mais convient à de nombreux scénarios d’affichage et de modification simples.
 
  
 
-## <a name="shader-designer"></a>Concepteur de nuanceurs
+## <a name="shader-designer"></a>Concepteur Shader
 
 
 Utilisez le Concepteur de nuanceurs pour créer des effets visuels personnalisés pour votre jeu ou application, même si vous ne connaissez pas la programmation HLSL.
@@ -114,9 +114,9 @@ Pour plus d’informations, voir [Utilisation de nuanceurs](https://docs.microso
 ## <a name="build-customizations-for-3d-assets"></a>Personnalisations de la build pour les ressources 3D
 
 
-Vous pouvez ajouter des personnalisations de la build à votre projet afin que Visual Studio convertisse les ressources en formats utilisables. Après cela, vous pouvez charger les ressources dans votre application et les utiliser en créant et remplissant des ressources DirectX comme vous le feriez dans toute autre application DirectX.
+Vous pouvez ajouter des personnalisations de la build à votre projet afin que Visual Studio convertisse les ressources en formats utilisables. Ensuite, vous pouvez charger les ressources dans votre application et les utiliser en créant et complétant des ressources DirectX comme dans n'importe quelle autre application DirectX.
 
-Pour ajouter une personnalisation de la build, cliquez avec le bouton droit sur le projet dans l’**Explorateur de solutions** et sélectionnez **Personnalisations de la build...** . Vous pouvez ajouter les types ci-après de personnalisations de la build à votre projet.
+Pour ajouter une personnalisation de build, cliquez avec le bouton droit sur le projet dans le **Explorateur de solutions** puis sélectionnez **personnalisations de la Build...**. Vous pouvez ajouter les types de personnalisations de build suivants à votre projet.
 
 -   Le pipeline de contenu d’image prend les fichiers image en tant qu’entrée et génère des fichiers DirectDraw Surface (.dds).
 -   Le pipeline de contenu de maillage prend les fichiers de maillage (notamment .fbx) et génère des fichiers de maillage .cmo.

@@ -1,6 +1,6 @@
 ---
-Description: Découvrez comment le mouvement Fluent utilise la direction et la gravité.
 title: Orientation et gravité-animation dans les applications Windows
+description: En savoir plus sur l’utilisation de la direction du mouvement, la direction de navigation et la gravité dans des scènes animées en affichant des exemples.
 label: Directionality and gravity
 template: detail.hbs
 ms.date: 10/02/2018
@@ -11,12 +11,12 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: ddcfac5e36500a8fc6dc41c7c86037f5a1483203
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: a9b6fbc639ac225e68a6ae1b008537cba6f72ead
+ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970644"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88943109"
 ---
 # <a name="directionality-and-gravity"></a>Direction et gravité
 
@@ -59,7 +59,7 @@ Lorsque la navigation entraîne le déplacement d’un objet de la scène préc�
 
 Pour la navigation vers l’arrière, le déplacement est inversé (B-to-A). Lorsque l’utilisateur navigue vers l’arrière, il est attendu de revenir à l’état précédent dès que possible. La synchronisation est plus rapide, plus directe et utilise l’accélération de décélération.
 
-Ici, ces priciples sont appliqués lorsque l’élément sélectionné reste à l’écran pendant la navigation vers l’avant et l’arrière.
+Ici, ces principes sont appliqués lorsque l’élément sélectionné reste à l’écran pendant la navigation vers l’avant et l’arrière.
 
 ![Exemple d’interface utilisateur de mouvement en continu](images/continuous3.gif)
 

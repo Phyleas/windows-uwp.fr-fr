@@ -1,65 +1,65 @@
 ---
-title: Informations de référence sur les API de déploiement de Device Portal
-description: Découvrez comment accéder aux API d’informations de déploiement par programmation.
+title: Informations de référence sur l’API de déploiement du portail de périphérique
+description: Découvrez comment utiliser l’API REST du portail d’appareils Xbox DeployInfo pour demander des informations de déploiement pour un ou plusieurs packages installés.
 ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
-ms.openlocfilehash: 7543b41c6ee1d9c07f4540012f84dccc10bb4d76
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5260125625ced6c258a683bcfb9b552e57d07f06
+ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57638004"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88942999"
 ---
-# <a name="requests-deployment-information-for-one-or-more-installed-packages"></a>Nécessite des informations de déploiement pour un ou plusieurs packages installés.
+# <a name="requests-deployment-information-for-one-or-more-installed-packages"></a>Demande des informations de déploiement pour un ou plusieurs packages installés.
 
-**Demande**
+**Requête**
 
-Méthode      | URI de requête
+Méthode      | URI de demande
 :------     | :------
 POST | /ext/app/deployinfo
 <br />
 **Paramètres d’URI**
 
- - Aucune
+ - Aucun
 
-**En-têtes de demande**
+**En-têtes de requête**
 
-- Aucune
+- Aucun
 
 **Corps de la demande**
 
 Tableau JSON au format suivant :
 
 * DeployInfo
-  * PackageFullName - nom du package à propos duquel nous demandons des informations.
-  * OverlayFolder - chemin d’accès facultatif vers un chemin d’accès du dossier de superposition si nous utilisons cette fonctionnalité.
+  * PackageFullName : nom du package sur lequel nous demandons des informations.
+  * OverlayFolder : chemin d’accès facultatif à un chemin d’accès de dossier de superposition si vous utilisez cette fonctionnalité.
 
-###<a name="response"></a>Réponse
+###<a name="response"></a>response
 
 **Corps de la réponse**
 
-Un tableau JSON au format suivant (certains champs sont facultatifs) :
+Tableau JSON au format suivant (certains champs sont facultatifs) :
 
 * DeployInfo
-  * PackageFullName - nom du package à propos duquel nous recevons des informations.
-  * DeployType - type du déploiement.
-  * DeployPathOrSpecifiers - chemin d’accès destiné aux déploiements libres ou aux spécificateurs installés pour les déploiements en packages.
-  * DeployDrive - le lecteur sur lequel le package est déployé pour les types de déploiement applicables.
-  * DeploySizeInBytes - la taille (en octets) du package pour les types de déploiement applicables.
-  * OverlayFolder - le dossier de superposition pour les déploiements qui prennent en charge cette fonctionnalité.
+  * PackageFullName : nom du package sur lequel nous recevons des informations.
+  * DeployType : type de déploiement.
+  * DeployPathOrSpecifiers : chemin de déploiement pour les déploiements libres ou les spécificateurs installés pour les déploiements empaquetés.
+  * DeployDrive : le lecteur sur lequel le package est déployé pour les types de déploiement applicables.
+  * DeploySizeInBytes : taille en octets du package pour les types de déploiement applicables.
+  * OverlayFolder : dossier de superposition pour les déploiements qui prennent en charge cette fonctionnalité.
 
-**Code d’état**
+**Code d'état**
 
 Cette API comporte les codes d’état attendus suivants.
 
-Code d’état HTTP      | Description
+Code d'état HTTP      | Description
 :------     | :-----
-200 | Réussite
+200 | Succès
 4XX | Codes d’erreur
 5XX | Codes d’erreur
 <br />
 
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Xbox

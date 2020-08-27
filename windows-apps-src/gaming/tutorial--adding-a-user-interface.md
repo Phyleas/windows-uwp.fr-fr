@@ -1,17 +1,17 @@
 ---
 title: Ajouter une interface utilisateur
-description: Découvrez comment ajouter une superposition d’interface utilisateur 2D à un jeu DirectX UWP.
+description: Découvrez comment utiliser les API Direct2D pour ajouter une superposition d’interface utilisateur 2D avec des menus d’affichage et d’état de jeu de haut en haut dans un jeu DirectX UWP.
 ms.assetid: fa40173e-6cde-b71b-e307-db90f0388485
 ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, UWP, jeux, interface utilisateur, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: b6b59bd4f42d31e1f29cc1af298199b42cce6781
-ms.sourcegitcommit: 20969781aca50738792631f4b68326f9171a3980
+ms.openlocfilehash: cbe67a50cd51f17aa628ff2e02955fd90781392f
+ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85409538"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88942819"
 ---
 # <a name="add-a-user-interface"></a>Ajouter une interface utilisateur
 
@@ -240,9 +240,9 @@ La superposition est créée à l’aide de la classe [**GameInfoOverlay**](http
 
 La superposition est divisée en deux sections : **État** et **action**. Le Secton d' **État** est ensuite divisé en rectangles de **titre** et de **corps** . La section **action** n’a qu’un seul rectangle. Chaque rectangle a un objectif différent.
 
--   `titleRectangle`contient le texte du titre.
--   `bodyRectangle`contient le texte du corps.
--   `actionRectangle`contient le texte qui informe le joueur à prendre une mesure spécifique.
+-   `titleRectangle` contient le texte du titre.
+-   `bodyRectangle` contient le texte du corps.
+-   `actionRectangle` contient le texte qui informe le joueur à prendre une mesure spécifique.
 
 Le jeu comprend six États qui peuvent être définis. État du jeu acheminé à l’aide de la partie **État** de la superposition. Les rectangles d' **État** sont mis à jour à l’aide d’un certain nombre de méthodes correspondant aux États suivants.
 
@@ -258,7 +258,7 @@ La partie **action** de la superposition est mise à jour à l’aide de la mét
 - « Appuyez pour rejouer... »
 - « Niveau de chargement, veuillez patienter... »
 - « Appuyez pour continuer... »
-- None
+- Aucun
 
 > [!NOTE]
 > Ces deux méthodes seront abordées plus en détail dans la section [représentant l’état du jeu](#representing-game-state) .
@@ -317,7 +317,7 @@ La méthode [**GameInfoOverlay :: CreateWindowsSizeDependentResources**](https:
     ```
 
 - Une image bitmap est créée `m_levelBitmap` , qui prend en compte les PPP actuels à l’aide de **CreateBitmap**.
-- `m_levelBitmap`est défini en tant que cible de rendu 2D à l’aide de [**ID2D1DeviceContext :: SetTarget**](/windows/desktop/api/d2d1_1/nf-d2d1_1-id2d1devicecontext-settarget).
+- `m_levelBitmap` est défini en tant que cible de rendu 2D à l’aide de [**ID2D1DeviceContext :: SetTarget**](/windows/desktop/api/d2d1_1/nf-d2d1_1-id2d1devicecontext-settarget).
 - La bitmap est effacée chaque pixel noir à l’aide de [**ID2D1RenderTarget :: Clear**](/windows/desktop/api/d2d1/nf-d2d1-id2d1rendertarget-clear).
 - [**ID2D1RenderTarget :: BeginDraw**](/windows/desktop/api/d2d1/nf-d2d1-id2d1rendertarget-begindraw) est appelé pour initier le dessin. 
 - **DrawText** est appelé pour dessiner le texte stocké dans `m_titleString` , `m_bodyString` et `m_actionString` dans le rectangle Approperiate à l’aide du **ID2D1SolidColorBrush**correspondant.
@@ -342,7 +342,7 @@ La partie **État** de la superposition est définie avec un appel à l’une de
 Chargement | [GameInfoOverlay::SetGameLoading](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L254-L306) |**Titre**</br>Chargement des ressources </br>**Corps**</br> Imprime de manière incrémentielle « . » pour impliquer l’activité de chargement.
 Statistiques de début/de score élevé | [GameInfoOverlay::SetGameStats](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L310-L354) |**Titre**</br>Score élevé</br> **Corps**</br> Niveaux terminés # </br>Total des points #</br>Nombre total de captures #
 Début du niveau | [GameInfoOverlay::SetLevelStart](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L413-L471) |**Titre**</br>Niveau #</br>**Corps**</br>Description de l’objectif de niveau.
-Jeu suspendu | [GameInfoOverlay::SetPause](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L475-L502) |**Titre**</br>Jeu suspendu</br>**Corps**</br>None
+Jeu suspendu | [GameInfoOverlay::SetPause](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L475-L502) |**Titre**</br>Jeu suspendu</br>**Corps**</br>Aucun
 Fin du jeu | [GameInfoOverlay::SetGameOver](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L358-L409) |**Titre**</br>Fin du jeu</br> **Corps**</br> Niveaux terminés # </br>Total des points #</br>Nombre total de captures #</br>Niveaux terminés #</br>Score élevé #
 Jeu gagné | [GameInfoOverlay::SetGameOver](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L358-L409) |**Titre**</br>Vous avez gagné !</br> **Corps**</br> Niveaux terminés # </br>Total des points #</br>Nombre total de captures #</br>Niveaux terminés #</br>Score élevé #
 

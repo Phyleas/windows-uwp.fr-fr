@@ -1,17 +1,17 @@
 ---
-Description: Questions courantes sur les campagnes de publicité
-title: Questions courantes sur les campagnes de publicité
+title: Affichez les réponses aux questions courantes sur les campagnes publicitaires pour vos applications sur des sujets tels que le coût, la facturation, la personnalisation et le support.
+description: Questions courantes sur les campagnes de publicité
 ms.assetid: EAF7CC74-7DE4-4D11-B9A6-29C6EA6E734B
 ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: eec32cab8da41b6069862484372ae8bc55ad1a0c
-ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
+ms.openlocfilehash: 9294ea5928b5da9feb1c94e6b134dc45ccb1c053
+ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77506823"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88943009"
 ---
 # <a name="common-questions-about-ad-campaigns"></a>Questions courantes sur les campagnes de publicité
 
@@ -24,7 +24,7 @@ Cela dépend de vous, mais n’oubliez pas : plus vous dépensez, plus le nombre
 
 ### <a name="how-can-i-increase-the-maximum-monthly-budget-amount-allowed-for-my-ad-campaign"></a>Comment puis-je augmenter le budget mensuel maximum autorisé pour ma campagne de publicité ?
 
-Si vous prévoyez de consacrer plus de 10 000 $ par mois à vos campagnes de publicité, contactez [aiacare@microsoft.com](mailto:aiacare@microsoft.com). Nous vous attribuerons un compte premium, qui permet de dépenser jusqu’à 50 000 $ par campagne. Un compte premium offre également des fonctionnalités supplémentaires, comme la définition des dates de début et de fin de la campagne et l’URL cible de votre campagne.
+Si vous envisagez de consacrer plus de $10 000 mois à vos campagnes publicitaires, contactez [aiacare@microsoft.com](mailto:aiacare@microsoft.com) . Nous vous attribuerons un compte premium, qui permet de dépenser jusqu’à 50 000 $ par campagne. Un compte premium offre également des fonctionnalités supplémentaires, comme la définition des dates de début et de fin de la campagne et l’URL cible de votre campagne.
 
 ### <a name="can-i-run-ads-for-one-of-my-apps-in-my-other-apps"></a>Puis-je exécuter des publicités pour l’une de mes applications dans mes autres applications ?
 
@@ -40,7 +40,7 @@ Si vous utilisez un des modèles de publicité par défaut, vous pouvez choisir 
 
 ### <a name="where-will-my-ad-appear"></a>Où apparaît ma publicité ?
 
-Votre publicité apparaît dans les applications qui utilisent la même évaluation de l'âge et la même version de système d'exploitation que votre application. Vous définissez ces propriétés lorsque vous publiez votre application dans la Microsoft Store. Pour les campagnes « universelles », vos annonces apparaîtront également dans MSN.com, Outlook.com, Skype et d'autres propriétés premium de Microsoft.
+Votre publicité apparaît dans les applications qui utilisent la même évaluation de l'âge et la même version de système d'exploitation que votre application. Vous définissez ces propriétés lorsque vous publiez votre application dans la Microsoft Store. Pour les campagnes « universelles », vos annonces s’affichent également dans MSN.com, Outlook.com, Skype et d’autres propriétés Microsoft Premium.
 
 Les campagnes de publicité sont actuellement prises en charge dans les pays et régions suivants :
 
@@ -62,5 +62,5 @@ Si vous ne voulez pas attendre d’être facturé, payez votre facture immédiat
 
 ### <a name="how-do-i-delete-a-credit-card-or-edit-the-details-of-a-credit-card"></a>Comment supprimer une carte de crédit ou modifier les détails d’une carte de crédit ?
 
-Accédez à [https://commerce.microsoft.com](https://commerce.microsoft.com), connectez-vous avec vos informations d’identification de compte Microsoft et apportez les modifications nécessaires.
+Accédez à [https://commerce.microsoft.com](https://commerce.microsoft.com) , connectez-vous avec vos informations d’identification de compte Microsoft et apportez les modifications nécessaires.
 

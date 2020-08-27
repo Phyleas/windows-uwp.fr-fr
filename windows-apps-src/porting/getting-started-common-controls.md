@@ -1,17 +1,17 @@
 ---
 ms.assetid: E2B73380-D673-48C6-9026-96976D745017
-description: 'Prise en main : Contrôles courants'
 title: 'Prise en main : Contrôles courants'
+description: Affichez une liste de liens vers les rubriques relatives aux contrôles de plateforme Windows universelle courants (UWP) et à leurs contrôles iOS équivalents.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 979dabe193fc1ab6ecaa8c31a70ca2364448986e
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 86debeae4a4d8d3e3fb1a4084a3cf1ebef10f9d6
+ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493284"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88943068"
 ---
 # <a name="getting-started-common-controls"></a>Prise en main : Contrôles courants
 
