@@ -1,17 +1,17 @@
 ---
 title: Compagnon du mode de développement Xbox
-description: Fournit des informations sur l’application Compagnon du mode de développement Xbox.
+description: Découvrez l’application auxiliaire du mode de développement Xbox qui vous permet de vous connecter à distance à une console Xbox One et de la contrôler.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: ed84f232-ddb5-4ba1-bf1c-578e8df47602
 ms.localizationpriority: medium
-ms.openlocfilehash: b04272c99d9062be2eaea27aa5b107e6078872f8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 372f9e5e5d7a719025d3b70e2d921101efea9c73
+ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57616824"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88970277"
 ---
 # <a name="xbox-dev-mode-companion"></a>Compagnon du mode de développement Xbox
 
@@ -23,7 +23,7 @@ Téléchargez le [Compagnon du mode de développement Xbox (préversion)](https:
 ## <a name="how-to-connect"></a>Comment se connecter   
 Pour vous connecter à votre console :
 
-1. Lancez l’application.   
+1. Lancer l’application.   
 2. Si votre console ne figure pas dans la boîte de dialogue de connexion, tapez l’adresse IP de la console dans la zone de texte en bas de la boîte de dialogue et sélectionnez **Se connecter**.
 
 ## <a name="streaming-controls"></a>Commandes de streaming
@@ -40,8 +40,8 @@ Vous pouvez également utiliser les touches de direction, d’entrée et d’éc
    
 Enfin, dans les zones de texte, vous pouvez taper du texte avec votre clavier pour l’envoyer à la console.   
 
-## <a name="help"></a>Help
+## <a name="help"></a>Aide
 Vous pouvez afficher la page d’aide en cliquant sur l’icône ? dans la boîte de dialogue de connexion ou la barre de commandes.
 
-## <a name="see-also"></a>Voir également
+## <a name="see-also"></a>Voir aussi
 - [UWP sur Xbox One](index.md)

@@ -1,6 +1,6 @@
 ---
-Description: Optimisez votre application pour l’entrée à partir du boîtier d’accès Xbox et du contrôle à distance.
 title: Interactions entre le boîtier de commande et la télécommande
+description: Consultez l’aide, les recommandations et les suggestions relatives à l’optimisation de votre application en entrée à partir du boîtier de commande Xbox et du contrôle à distance.
 ms.assetid: 784a08dc-2736-4bd3-bea0-08da16b1bd47
 label: Gamepad and remote interactions
 template: detail.hbs
@@ -9,12 +9,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fd39acbf6549cddc075f8b63779f06a802bfdbb
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 34bdda207350d980e323b27a7b98e3c0112d06f4
+ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234678"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88970177"
 ---
 # <a name="gamepad-and-remote-control-interactions"></a>Interactions entre le boîtier de commande et la télécommande
 
@@ -158,10 +158,10 @@ Le tableau suivant répertorie la prise en charge intégrée des accélérateurs
 | Interaction   | Clavier/souris   | Boîtier de commande      | Intégrée pour :  | Recommandée pour : |
 |---------------|------------|--------------|----------------|------------------|
 | Page vers le haut/bas  | Page vers le haut/bas | Gâchette gauche/droite | [CalendarView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarView), [ListBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox), [ListViewBase](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListViewBase), [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), `ScrollViewer`, [Selector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector), [LoopingSelector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector), [ComboBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [FlipView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView) | Affichages qui prennent en charge le défilement vertical
-| Page vers la gauche/droite | Aucune | Gâchettes hautes gauche/droite | [Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot), [ListBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox), [ListViewBase](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListViewBase), [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), `ScrollViewer`, [Selector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector), [LoopingSelector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector), [FlipView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView) | Affichages qui prennent en charge le défilement horizontal
-| Zoom avant/arrière        | Ctrl +/- | Gâchette gauche/droite | Aucune | `ScrollViewer`, les affichages qui prennent en charge le zoom avant et arrière |
-| Ouvrir/fermer le volet de navigation | Aucune | Affichage | Aucune | Volets de navigation |
-| Recherche | Aucune | Bouton Y | Aucune | Raccourci pour la fonction de recherche principale dans l’application |
+| Page vers la gauche/droite | Aucun | Gâchettes hautes gauche/droite | [Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot), [ListBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox), [ListViewBase](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListViewBase), [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), `ScrollViewer`, [Selector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector), [LoopingSelector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector), [FlipView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView) | Affichages qui prennent en charge le défilement horizontal
+| Zoom avant/arrière        | Ctrl +/- | Gâchette gauche/droite | Aucun | `ScrollViewer`, les affichages qui prennent en charge le zoom avant et arrière |
+| Ouvrir/fermer le volet de navigation | Aucun | Affichage | Aucun | Volets de navigation |
+| Recherche | Aucun | Bouton Y | Aucun | Raccourci pour la fonction de recherche principale dans l’application |
 | [Ouvrir le menu contextuel](#commandbar-and-contextflyout) | Cliquez avec le bouton droit sur | Bouton Menu | [ContextFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout) | Menu contextuels |
 
 ## <a name="xy-focus-navigation-and-interaction"></a>Interaction et navigation en mode focus XY
@@ -292,7 +292,7 @@ Que se passe-t-il si vous placez le contrôle `CommandBar` *au-dessus* de la lis
 
 Bien qu’il soit impossible d’empiler les éléments d’une `CommandBar` verticalement, le fait de les placer en face du défilement (par exemple, à gauche ou à droite d’une liste avec défilement vertical, ou en haut ou en bas d’une liste avec défilement horizontal) constitue une autre option que vous devrez peut-être prendre en compte si elle fonctionne bien pour la disposition de votre interface utilisateur.
 
-Si votre application dispose d’une `CommandBar` dont les éléments doivent être facilement accessibles aux utilisateurs, vous devrez peut-être les placer à l’intérieur d’un [ContextFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout) et les supprimer de la `CommandBar`. `ContextFlyout`est une propriété d' [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) et est le [menu contextuel](../controls-and-patterns/dialogs-and-flyouts/index.md) associé à cet élément. Sur PC, lorsque cliquez à l’aide du bouton droit sur un élément avec un `ContextFlyout`, ce menu contextuel apparaît. Sur Xbox One, cela se produit lorsque vous appuyez sur le bouton **Menu** tandis que le focus se trouve sur un tel élément.
+Si votre application dispose d’une `CommandBar` dont les éléments doivent être facilement accessibles aux utilisateurs, vous devrez peut-être les placer à l’intérieur d’un [ContextFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout) et les supprimer de la `CommandBar`. `ContextFlyout` est une propriété d' [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) et est le [menu contextuel](../controls-and-patterns/dialogs-and-flyouts/index.md) associé à cet élément. Sur PC, lorsque cliquez à l’aide du bouton droit sur un élément avec un `ContextFlyout`, ce menu contextuel apparaît. Sur Xbox One, cela se produit lorsque vous appuyez sur le bouton **Menu** tandis que le focus se trouve sur un tel élément.
 
 ### <a name="ui-layout-challenges"></a>Défis en matière de disposition de l’interface utilisateur
 
@@ -319,7 +319,7 @@ La [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListVi
 
 #### <a name="solutions"></a>Solutions
 
-**Réorganisation de l’interface utilisateur<a name="ui-rearrange"></a>**
+**Réorganisation de l’interface utilisateur <a name="ui-rearrange"></a>**
 
 À moins que le focus initial ne soit placé au bas de la page, les éléments d’interface utilisateur placés au-dessus d’une liste à long défilement sont en général plus facilement accessibles que s’ils étaient placés au-dessous.
 Si cette nouvelle disposition fonctionne pour d’autres appareils, il serait moins coûteux en ressources de modifier la disposition pour toutes les familles d’appareils au lieu d’apporter des modifications d’interface utilisateur spécifiques pour Xbox One.
@@ -327,7 +327,7 @@ En outre, le fait de placer des éléments d’interface utilisateur à l’oppo
 
 ![Application pour le secteur immobilier : Placement des boutons au-dessus d’une liste à long défilement](images/designing-for-tv/2d-focus-navigation-and-interaction-ui-rearrange.png)
 
-**Focalisation sur l’engagement<a name="engagement"></a>**
+**Focalisation sur l’engagement <a name="engagement"></a>**
 
 Lorsqu’une activation est *requise*, la totalité de la `ListView` devient une cible du focus unique. L’utilisateur sera en mesure d’ignorer le contenu de la liste afin d’accéder au prochain élément pouvant être actif. Pour en savoir plus sur les contrôles prenant en charge l’activation et sur leur utilisation, consultez la section [Activation du focus](#focus-engagement).
 
@@ -485,7 +485,7 @@ L’activation du focus est conçue pour faciliter l’utilisation d’une manet
 Lorsque la propriété `IsFocusEngagementEnabled` d’un objet [FrameworkElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) est définie sur `True`, elle signale le contrôle comme nécessitant l’activation du focus. Cela signifie que l’utilisateur doit appuyer sur le bouton **A/Sélectionner** pour activer le contrôle et interagir avec ce dernier. Lorsqu’il a terminé, l’utilisateur peut appuyer sur le bouton **B/Précédent** pour désactiver le contrôle et naviguer hors de ce dernier.
 
 > [!NOTE]
-> `IsFocusEngagementEnabled`est une nouvelle API qui n’est pas encore documentée.
+> `IsFocusEngagementEnabled` est une nouvelle API qui n’est pas encore documentée.
 
 ### <a name="focus-trapping"></a>Interruption du focus
 
@@ -515,8 +515,8 @@ Lorsque le `Slider` nécessite une activation du focus, l’utilisateur peut acc
 Outre le contrôle [Slider](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider), il existe d’autres contrôles que vous souhaiterez peut-être activer :
 
 - [ListBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox)
-- [Affichage de liste](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)
-- [Affichage de grille](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)
+- [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)
+- [GridView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)
 - [FlipView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView)
 
 Contrairement au contrôle `Slider`, ces contrôles n’interrompent pas le focus en leur sein ; cependant, ils peuvent poser des problèmes en matière de facilité d’utilisation s’ils contiennent de grandes quantités de données. Voici un exemple d’un contrôle `ListView` qui contient une grande quantité de données.
@@ -548,14 +548,14 @@ Certains contrôles provoquent une interruption du focus assez fréquente pour j
 
 | Control               | Paramètre par défaut de l’activation du focus  |
 |-----------------------|---------------------------|
-| CalendarDatePicker    | Il en va                        |
-| FlipView              | Off                       |
-| Affichage de grille              | Off                       |
-| ListBox               | Off                       |
-| Affichage de liste              | Off                       |
-| ScrollViewer          | Off                       |
-| SemanticZoom          | Off                       |
-| Curseur                | Il en va                        |
+| CalendarDatePicker    | Activé                        |
+| FlipView              | Désactivé                       |
+| Affichage de grille              | Désactivé                       |
+| ListBox               | Désactivé                       |
+| Affichage de liste              | Désactivé                       |
+| ScrollViewer          | Désactivé                       |
+| SemanticZoom          | Désactivé                       |
+| Curseur                | Activé                        |
 
 Tous les autres contrôles Windows entraînent l’absence de modifications visuelles ou de comportement `IsFocusEngagementEnabled="True"` .
 
@@ -565,5 +565,5 @@ Vous pouvez créer des applications Windows optimisées pour un appareil ou une 
 
 ## <a name="related-articles"></a>Articles connexes
 
-- [Conception pour Xbox et télévision](../devices/designing-for-tv.md)
+- [Conception pour Xbox et TV](../devices/designing-for-tv.md)
 - [Initiation de l’appareil pour les applications Windows](index.md)

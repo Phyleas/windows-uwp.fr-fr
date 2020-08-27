@@ -1,26 +1,26 @@
 ---
 ms.assetid: 08b4ae43-69e8-4424-b3c0-a07c93d275c3
-description: Découvrez comment intercepter les erreurs AdControl dans votre application.
+description: Découvrez comment intercepter et gérer les erreurs d’un classe AdControl dans une application JavaScript et HTML5 en suivant cette procédure pas à pas.
 title: Gestion des erreurs dans la procédure pas à pas pour JavaScript
 ms.date: 02/18/2020
 ms.topic: article
-keywords: windows 10, uwp, annonces publicitaires, publicité, gestion des erreurs, javascript
+keywords: Windows 10, UWP, ADS, publicité, gestion des erreurs, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: 918c2d289317b63216f11aecc3ec3c758921c19f
-ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
+ms.openlocfilehash: 6bbd892f47f0191455df3b235bdb5125a45ea4fc
+ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77507133"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88970247"
 ---
 # <a name="error-handling-in-javascript-walkthrough"></a>Gestion des erreurs dans la procédure pas à pas pour JavaScript
 
 >[!WARNING]
 > Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
-Cette procédure pas à pas montre comment intercepter les erreurs liées aux publicités dans votre application JavaScript. Cette procédure pas à pas utilise un [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) pour afficher une bannière, mais les concepts généraux s’appliquent également aux spots publicitaires et aux publicités natives.
+Cette procédure pas à pas montre comment intercepter des erreurs liées à Active Directory dans votre application JavaScript. Cette procédure pas à pas utilise un [classe AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) pour afficher une bannière publicitaire, mais les concepts généraux qu’il contient s’appliquent également aux publicités interstitielles et aux publicités natives.
 
-Ces exemples partent du principe que vous disposez d’une application JavaScript qui contient un **AdControl**. Pour obtenir des instructions pas à pas qui montrent comment ajouter un **AdControl** à votre application, voir [AdControl en HTML 5 JavaScript](adcontrol-in-html-5-and-javascript.md). Pour un exemple de projet complet illustrant l’ajout de bannières publicitaires à une application HTML/JavaScript, voir [Exemples de publicité sur GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising).
+Ces exemples supposent que vous disposez d’une application JavaScript qui contient un **classe AdControl**. Pour obtenir des instructions pas à pas qui montrent comment ajouter un **AdControl** à votre application, voir [AdControl en HTML 5 JavaScript](adcontrol-in-html-5-and-javascript.md). Pour un exemple de projet complet illustrant l’ajout de bannières publicitaires à une application HTML/JavaScript, voir [Exemples de publicité sur GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising).
 
 1.  Dans le fichier default.html, ajoutez une valeur pour l’événement **onErrorOccurred** où vous définissez les options **data-win-options** dans l’élément **div** du contrôle **AdControl**. Recherchez le code ci-dessous dans le fichier default.html.
     ``` HTML

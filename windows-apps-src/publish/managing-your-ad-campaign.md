@@ -1,24 +1,24 @@
 ---
-Description: Gérez les campagnes Active Directory pour vos applications dans l’espace partenaires.
 title: Gérer votre campagne de publicité
+description: Découvrez les fonctionnalités de l’espace partenaires pour la gestion des campagnes Active Directory pour votre application, notamment la modification et la création de rapports sur les détails de la campagne.
 ms.assetid: 42A9457E-15BD-4A61-B828-1C51D0FC9DA0
 ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f7ee8f95ad1471c73d5ac9e7bb08796dadd6411
-ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
+ms.openlocfilehash: 6a2cccf0392c4e71cc76449d1cfe505af092871e
+ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77507023"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88970147"
 ---
 # <a name="manage-your-ad-campaign"></a>Gérer votre campagne de publicité
 
 >[!WARNING]
 > Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
-Pour gérer les campagnes de publicité pour votre application dans l' [espace partenaires](https://partner.microsoft.com/dashboard), développez **attirer** dans le menu de navigation de gauche, puis sélectionnez **campagnes Active Directory**. Vous voyez apparaître l’ensemble des campagnes de publicité associées à vos applications, ainsi que les expositions, les clics et les installations relatifs à chacune de ces campagnes. Pour plus d’informations sur les expositions, les clics et les installations, consultez les définitions de ces termes dans l’article [Rapport de campagne de publicité](promote-your-app-report.md).
+Pour gérer les campagnes de publicité pour votre application dans l' [espace partenaires](https://partner.microsoft.com/dashboard), développez **attirer** dans le menu de navigation de gauche, puis sélectionnez **campagnes Active Directory**. Vous verrez toutes les campagnes publicitaires associées à vos applications, ainsi que les impressions, les clics et les installations pour chaque campagne publicitaire. Pour plus d’informations sur les impressions, les clics et les installations, consultez les définitions de ces termes dans le [rapport des campagnes Active Directory](promote-your-app-report.md).
 
 Pour filtrer la liste des campagnes de publicité, cliquez sur la liste déroulante **Filtres de section** et faites votre choix parmi les filtres suivants :
 
@@ -30,10 +30,10 @@ Pour filtrer la liste des campagnes de publicité, cliquez sur la liste déroula
     -   L’option **Requiert votre attention** indique que la campagne de publicité présente des problèmes qui nécessitent votre attention, comme une défaillance de facturation ou un défaut de validation d’une conception publicitaire personnalisée. Pour résoudre les problèmes, cliquez sur le texte de la colonne **Action** du tableau des campagnes de publicité.
 -   **Type de campagne** : cette valeur précise le type de campagnes de publicité à afficher (payées ou [maison](about-house-ads.md)).
 
-## <a name="reporting"></a>Reporting
+## <a name="reporting"></a>Rapports
 
 
-Cette page affiche les détails des rapports. Pour plus d’informations, consultez l’article [Rapport de campagne de publicité](promote-your-app-report.md).
+Les détails du rapport sont affichés dans cette page. Pour plus d’informations, consultez [rapport des campagnes Active Directory](promote-your-app-report.md).
 
 
 ## <a name="edit-an-ad-campaign"></a>Modifier une campagne de publicité
@@ -44,7 +44,7 @@ Pour apporter des modifications à une campagne de publicité, cliquez sur son n
 ## <a name="related-topics"></a>Rubriques connexes
 
 
-* [Créer une campagne publicitaire pour votre application](create-an-ad-campaign-for-your-app.md)
+* [Création d’une campagne de publicité pour votre application](create-an-ad-campaign-for-your-app.md)
 * [À propos des publicités maison](about-house-ads.md)
 * [Rapport de publicité sur l’installation d’applications](app-install-ads-reports.md)
 * [Questions courantes](common-questions.md)

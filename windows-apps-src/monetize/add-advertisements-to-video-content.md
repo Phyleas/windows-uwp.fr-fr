@@ -1,35 +1,35 @@
 ---
 ms.assetid: cc24ba75-a185-4488-b70c-fd4078bc4206
-description: Apprenez à utiliser la classe AdScheduler pour afficher des publicités dans du contenu vidéo.
+description: Découvrez comment utiliser la classe AdScheduler pour afficher des publicités dans du contenu vidéo dans une application plateforme Windows universelle (UWP) qui a été écrite à l’aide de JavaScript avec HTML.
 title: Afficher des publicités dans du contenu vidéo
 ms.date: 02/18/2020
 ms.topic: article
-keywords: Windows 10, uwp, annonces, publicités, vidéo, planificateur, javascript
+keywords: Windows 10, UWP, ADS, publicité, vidéo, planificateur, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b07b24de9d89d8021090312f62df4f0fb1e78dc
-ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
+ms.openlocfilehash: b42c917a0532a015a789c8b4ac57d59c65804ce1
+ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77507173"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88970197"
 ---
 # <a name="show-ads-in-video-content"></a>Afficher des publicités dans du contenu vidéo
 
 >[!WARNING]
 > Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
-Cette procédure pas à pas montre comment utiliser la classe **AdScheduler** pour afficher des publicités dans du contenu vidéo dans une application de plateforme Windows universelle (UWP) écrite en JavaScript avec HTML.
+Cette procédure pas à pas montre comment utiliser la classe **AdScheduler** pour afficher les publicités du contenu vidéo dans une application plateforme Windows universelle (UWP) qui a été écrite à l’aide de JavaScript avec html.
 
 > [!NOTE]
-> Cette fonctionnalité n’est actuellement prise en charge que pour les applications UWP écrites en JavaScript avec HTML.
+> Cette fonctionnalité n’est actuellement prise en charge que pour les applications UWP écrites à l’aide de JavaScript avec HTML.
 
 **AdScheduler** fonctionne avec les médias à diffusion progressive ou continue et utilise les formats de charge utile standard de l’IAB : VAST (Video Ad Serving Template) 2.0/3.0 et VMAP. L’utilisation des normes rend **AdScheduler** indépendant du service de publicité avec lequel il interagit.
 
 La publicité pour contenu vidéo varie selon que le programme dure moins de dix minutes (format court) ou plus de dix minutes (format long). Bien que ce dernier soit plus difficile à mettre en place au niveau du service, la façon d’écrire le code côté client ne présente en fait aucune différence. Si **AdScheduler** reçoit une charge utile VAST avec une seule publicité au lieu d’un manifeste, elle est traitée comme si le manifeste appelait une publicité précédant la vidéo (s’arrêtant à 00:00).
 
-## <a name="prerequisites"></a>Composants requis
+## <a name="prerequisites"></a>Prérequis
 
-* Installer le [SDK Microsoft Advertising](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) avec Visual Studio 2015 ou version ultérieure.
+* Installez le [Kit de développement logiciel (SDK) Microsoft Advertising](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) avec Visual Studio 2015 ou une version ultérieure.
 
 * Votre projet doit utiliser le contrôle [MediaPlayer](https://github.com/Microsoft/TVHelpers/wiki/MediaPlayer-Overview) pour afficher le contenu vidéo dans lequel les publicités doivent apparaître. Ce contrôle est disponible dans la collection [TVHelpers](https://github.com/Microsoft/TVHelpers) des bibliothèques mises à la disposition sur GitHub par Microsoft.
 
@@ -54,7 +54,7 @@ La publicité pour contenu vidéo varie selon que le programme dure moins de dix
 
 3. Ajoutez une référence à la bibliothèque du **Kit de développement logiciel (SDK) Microsoft Advertising pour JavaScript** à votre projet.
 
-    1. Dans la fenêtre **Explorateur de solutions**, cliquez avec le bouton droit sur **Références**, puis sélectionnez **Ajouter une référence.**
+    1. Dans la fenêtre **Explorateur de solutions** , cliquez avec le bouton droit sur **références**, puis sélectionnez **Ajouter une référence...**
     2. Dans **Gestionnaire de références**, développez **Windows universel**, cliquez sur **Extensions**, puis cochez la case en regard de **Kit de développement logiciel (SDK) Microsoft Advertising pour JavaScript** (version 10.0).
     3. Dans **Gestionnaire de références**, cliquez sur OK.
 
@@ -71,26 +71,26 @@ La publicité pour contenu vidéo varie selon que le programme dure moins de dix
     ```
 
     > [!NOTE]
-    > Vous devez placer cette ligne dans la section `<head>` après l’inclusion de main.js, faute de quoi vous rencontrerez une erreur pendant la génération de votre projet.
+    > Cette ligne doit être placée dans la `<head>` section après l’inclusion de main.js ; dans le cas contraire, vous rencontrerez une erreur lors de la génération de votre projet.
 
 6.  Dans le fichier main.js de votre projet, ajoutez le code qui crée un objet **AdScheduler**. Transmettez le **MediaPlayer** qui héberge votre contenu vidéo. Le code doit être placé de telle sorte qu’il s’exécute après [WinJS.UI.processAll](https://docs.microsoft.com/previous-versions/windows/apps/hh440975).
 
     [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet2)]
 
-7.  Utilisez les méthodes **requestSchedule** ou **requestScheduleByUrl** de l'objet **AdScheduler** pour demander une planification publicitaire auprès du serveur, l’insérer dans la chronologie **MediaPlayer**, puis lire le média vidéo.
+7.  Utilisez les méthodes **requestSchedule** ou **requestScheduleByUrl** de l’objet **AdScheduler** pour demander une planification ad à partir du serveur, puis insérez-la dans la chronologie de **MediaPlayer** , puis lisez le support vidéo.
 
     * Si vous êtes partenaire Microsoft et que vous avez reçu l’autorisation de demander une planification publicitaire auprès du serveur d’annonces Microsoft, utilisez **requestSchedule** et spécifiez l’ID d’application et l’ID d’unité publicitaire qui vous ont été fournis par votre représentant Microsoft.
 
-        Cette méthode prend la forme d’une [Promesse](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-universal-windows-platform-apps#asynchronous-patterns-in-uwp-using-javascript), soit une structure asynchrone dans laquelle des pointeurs à deux fonctions sont transmis : un pointeur pour la fonction **onComplete** à appeler lorsque la promesse est correctement finalisée et un pointeur pour la fonction **onError** à appeler si une erreur s’est produite. Dans la fonction **onComplete**, démarrez la lecture de votre contenu vidéo. La publicité démarrera la lecture à l’heure planifiée. Dans votre fonction **onError**, traitez l'erreur, puis démarrez la lecture de votre vidéo. Votre contenu vidéo sera lu sans publicité. L’argument de la fonction **onError** est un objet qui contient les membres suivants.
+        Cette méthode prend la forme d’une [promesse](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-universal-windows-platform-apps#asynchronous-patterns-in-uwp-using-javascript), qui est une construction asynchrone où deux pointeurs de fonction sont passés : un pointeur pour la fonction **OnComplete** à appeler lorsque la promesse se termine avec succès et un pointeur pour la fonction **OnError** à appeler si une erreur est rencontrée. Dans la fonction **OnComplete** , démarrez la lecture de votre contenu vidéo. La publicité commence à l’heure planifiée. Dans votre fonction **OnError** , gérez l’erreur, puis démarrez la lecture de votre vidéo. Votre contenu vidéo s’exécutera sans publicité. L’argument de la fonction **OnError** est un objet qui contient les membres suivants.
 
         [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet3)]
 
-    * Pour demander une planification publicitaire auprès d’un serveur d’annonces non Microsoft, utilisez **requestScheduleByUrl** et transmettez l’URI du serveur. Cette méthode prend également la forme d’une **promesse** qui accepte des pointeurs pour les fonctions **onComplete** et **onError**. La charge utile de la publicité qui est retournée à partir du serveur doit respecter les formats de charge utile vidéo VAST (Video Ad Serving Template) ou VMAP (Video Multiple Ad Playlist).
+    * Pour demander une planification ad à partir d’un serveur AD non-Microsoft, utilisez **requestScheduleByUrl**et transmettez l’URI du serveur. Cette méthode prend également la forme d’une **promesse** qui accepte des pointeurs pour les fonctions **OnComplete** et **OnError** . La charge utile Active Directory qui est retournée par le serveur doit être conforme au format de charge utile de la vidéo Active Directory (vaste) ou de la sélection de vidéo (VMAP).
 
         [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet4)]
 
     > [!NOTE]
-    > Vous devez attendre le retour des fonctions **requestSchedule** ou **requestScheduleByUrl** avant de commencer la lecture du contenu vidéo principal dans le **MediaPlayer**. Si vous commencez à lire le contenu multimédia avant les retours **requestSchedule** (dans le cas d’une publication précédant la vidéo), la vidéo précédant la vidéo interrompra le contenu vidéo principal. Vous devez appeler **play** même si la fonction échoue, car **AdScheduler** demande à **MediaPlayer** d’ignorer la ou les annonces et de passer directement au contenu. Vous pouvez avoir une exigence différente, telle que l’insertion d’une publicité intégrée dans le cas où une annonce ne peut pas être récupérée à distance.
+    > Vous devez attendre que **requestSchedule** ou **requestScheduleByUrl** retourne avant de commencer à lire le contenu vidéo principal dans le **MediaPlayer**. À partir du début de la lecture du média avant que **requestSchedule** ne retourne (dans le cas d’une publication préliminaire), le pré-roll interrompt le contenu vidéo principal. Vous devez appeler **Play** même si la fonction échoue, car le **AdScheduler** indique au **MediaPlayer** d’ignorer la ou les annonces et de se déplacer directement vers le contenu. Vous pouvez avoir une exigence différente, telle que l’insertion d’une publicité intégrée dans le cas où une annonce ne peut pas être récupérée à distance.
 
 8.  Pendant la lecture, vous pouvez gérer d’autres événements qui permettent à votre application de suivre la progression et/ou les erreurs susceptibles de se produire après le processus de sélection d’annonce initial. Le code suivant contient certains de ces événements, dont **onPodStart**, **onPodEnd**, **onPodCountdown**, **onAdProgress**, **onAllComplete** et **onErrorOccurred**.
 
@@ -98,95 +98,95 @@ La publicité pour contenu vidéo varie selon que le programme dure moins de dix
 
 ## <a name="adscheduler-members"></a>Membres AdScheduler
 
-Cette section fournit des détails sur les membres de l'objet **AdScheduler**. Pour plus d’informations sur ces membres, reportez-vous aux commentaires et aux définitions se trouvant dans le fichier AdScheduler.js de votre projet.
+Cette section fournit des détails sur les membres de l’objet **AdScheduler** . Pour plus d’informations sur ces membres, consultez les commentaires et les définitions dans le fichier AdScheduler.js de votre projet.
 
 ### <a name="requestschedule"></a>requestSchedule
 
-Cette méthode demande une planification publicitaire à partir du serveur Active Directory de Microsoft et l’insère dans la chronologie du **MediaPlayer** qui a été transmise au constructeur **AdScheduler**.
+Cette méthode demande une planification ad à partir du serveur Microsoft ad et l’insère dans la chronologie du **MediaPlayer** qui a été passé au constructeur **AdScheduler** .
 
-Le troisième paramètre optionnel (*adTags*) est une collection JSON de paires nom/valeur qui peut être utilisée pour les apps dotées de fonctions de ciblage avancées. Par exemple, une app qui lit une variété de vidéos sur l'univers automobile peut compléter l’ID d’unité publicitaire avec la marque et le modèle des voitures présentées. Ce paramètre peut uniquement être utilisé par les partenaires ayant reçu une approbation de la part de Microsoft pour utiliser des balises publicitaires.
+Le troisième paramètre facultatif (*adTags*) est une collection JSON de paires nom/valeur qui peut être utilisée pour les applications qui ont un ciblage avancé. Par exemple, une application qui joue un grand nombre de vidéos liées automatiquement peut compléter l’ID d’unité ad avec la marque et le modèle de la voiture affichée. Ce paramètre est destiné à être utilisé uniquement par les partenaires qui reçoivent l’approbation de Microsoft pour utiliser des balises ad.
 
-Il convient de noter les éléments suivants lorsque vous faites référence à *adTags* :
+Les éléments suivants doivent être notés quand vous faites référence à *adTags*:
 
-* Ce paramètre est une option très rarement utilisée. L’éditeur doit travailler en étroite collaboration avec Microsoft avant d’utiliser adTags.
-* Les noms et les valeurs doivent être prédéterminés sur le service de publicité. Les balises publicitaires ne constituent pas des termes de recherche ou des mots clés ouverts.
-* Le nombre maximal de balises est limité à 10.
-* Les noms de balises sont limités à 16 caractères.
-* Les valeurs des balises peuvent contenir un maximum de 128 caractères.
+* Ce paramètre est une option très rarement utilisée. Le serveur de publication doit travailler en étroite collaboration avec Microsoft avant d’utiliser adTags.
+* Les noms et les valeurs doivent être prédéterminés sur le service Active Directory. Les balises ad ne sont pas ouvertes termes de recherche ou Mots clés.
+* Le nombre maximal de balises prises en charge est de 10.
+* Les noms de balises sont limités à 16 caractères.
+* Les valeurs des balises ne doivent pas dépasser 128 caractères.
 
 ### <a name="requestschedulebyuri"></a>requestScheduleByUri
 
-Cette méthode demande une planification publicitaire à partir du serveur publicitaire tiers (non Microsoft) spécifié dans l'URI et l’insère dans la chronologie du **MediaPlayer** qui a été transmis par le constructeur **AdScheduler**. La charge utile de la publicité retournée par le serveur publicitaire doit respecter les formats de charge utile vidéo VAST (Video Ad Serving Template) ou VMAP (Video Multiple Ad Playlist).
+Cette méthode demande une planification ad à partir du serveur AD non-Microsoft spécifié dans l’URI et l’insère dans la chronologie du **MediaPlayer** qui a été passé au constructeur **AdScheduler** . La charge utile Active Directory qui est retournée par le serveur Active Directory doit être conforme au format de charge utile de la vidéo Active Directory (vaste) ou de la sélection de vidéo (VMAP).
 
 ### <a name="mediatimeout"></a>mediaTimeout
 
-Cette propriété obtient ou définit le nombre de millisecondes durant lesquelles le contenu multimédia doit être lisible. La valeur 0 indique au système qu'il n'existe aucun délai d’expiration. La valeur par défaut est 30 000 millisecondes (30 secondes).
+Cette propriété obtient ou définit le nombre de millisecondes pendant lesquelles le média doit être lisible. La valeur 0 indique au système de ne jamais avoir expiré. La valeur par défaut est 30000 ms (30 secondes).
 
 ### <a name="playskippedmedia"></a>playSkippedMedia
 
-Cette propriété obtient ou définit une valeur **booléenne** qui indique si le support sera lu si l’utilisateur avance directement à un point situé au-delà de l'heure de début planifiée.
+Cette propriété obtient ou définit une valeur **booléenne** qui indique si le média planifié est lu si l’utilisateur avance jusqu’à un point situé après une heure de début planifiée.
 
-Le client publicitaire et le lecteur multimédia appliqueront des règles visant à définir ce qu'il advient des publicités durant l'avance rapide ou le retour rapide du contenu vidéo principal. Dans la plupart des cas, les développeurs d’apps ne permettent pas que les publicités soient entièrement ignorées, mais souhaitent toutefois garantir une expérience raisonnable pour l'utilisateur. Les deux options suivantes répondent aux besoins de la plupart des développeurs :
+Le client Active Directory et le lecteur multimédia appliquent les règles en termes de publication pendant le transfert rapide et le rembobinage du contenu vidéo principal. Dans la plupart des cas, les développeurs d’applications n’autorisent pas l’ignorance complète des publications, mais elles souhaitent fournir une expérience raisonnable à l’utilisateur. Les deux options suivantes répondent aux besoins de la plupart des développeurs :
 
-1. Autoriser les utilisateurs finaux à ignorer les pods publicitaires à volonté.
-2. Autoriser les utilisateurs à ignorer les pods publicitaires, mais lire le pod publicitaire le plus récent lors de la reprise de la lecture.
+1. Autorisez les utilisateurs finaux à ignorer les modules de publication à l’adresse.
+2. Autorisez les utilisateurs à ignorer les gousses de publication, mais à lire le bloc le plus récent lors de la reprise de la lecture.
 
-La propriété **playSkippedMedia** remplit les conditions suivantes :
+La propriété **playSkippedMedia** a les conditions suivantes :
 
-* Les publicités ne peuvent pas être ignorées ou avancées rapidement une fois qu'elles ont démarré.
-* Toutes les publicités d'un pod publicitaire seront lues une fois que le pod a démarré.
-* Une fois qu'elle a été lue, une publicité ne sera pas lue à nouveau pendant le contenu principal (film, épisode, etc.) ; les marqueurs publicitaires indiqueront que ce contenu a été lu ou supprimé.
-* Les publicités préalables au contenu ne peuvent pas être ignorées.
+* Les publications ne peuvent pas être ignorées ou transmises rapidement après le début de la publication.
+* Toutes les publications dans un pod de publication sont lues une fois que le POD a démarré.
+* Une fois jouée, une publication n’est pas lue pendant le contenu principal (film, épisode, etc.); les marqueurs de publication sont marqués comme lus ou supprimés.
+* Les publications de pré-déploiement ne peuvent pas être ignorées.
 
-Lors de la reprise de la lecture d'un contenu contenant des publicités, définissez **playSkippedMedia** sur **false** pour ignorer les publicités préalables au contenu et éviter la lecture de la coupure publicitaire la plus récente. Ensuite, une fois que le contenu aura démarré, définissez **playSkippedMedia** sur **true** pour vous assurer que les utilisateurs ne peuvent pas avancer rapidement les publicités suivantes.
+Quand vous reprenez du contenu contenant des publicités, définissez **playSkippedMedia** sur **false** pour ignorer les présélections et empêcher la dernière exécution de la dernière. Ensuite, une fois le contenu démarré, affectez à **playSkippedMedia** la **valeur true** pour vous assurer que les utilisateurs ne peuvent pas avancer rapidement par le biais de publicités ultérieures.
 
 > [!NOTE]
-> Un pod est un groupe de publicités lues dans une séquence, tel un groupe de publicités lues durant une coupure publicitaire. Pour plus d’informations, consultez la spécification IAB Digital Video Ad Serving Template (VAST).
+> Un Pod est un groupe de publicités qui s’exécutent dans une séquence, par exemple un groupe de publicités qui s’exécutent pendant une pause commerciale. Pour plus d’informations, consultez la spécification du modèle de service d’annonces numériques de l’IAB.
 
 ### <a name="requesttimeout"></a>requestTimeout
 
-Cette propriété obtient ou définit le nombre de millisecondes à patienter avant l'expiration d'une réponse à une demande de publicité. La valeur 0 indique au système qu'il n'existe aucun délai d’expiration. La valeur par défaut est 30 000 millisecondes (30 secondes).
+Cette propriété obtient ou définit le nombre de millisecondes d’attente d’une réponse de demande Active Directory avant le dépassement du délai d’attente. La valeur 0 indique au système de ne jamais avoir expiré. La valeur par défaut est 30000 ms (30 secondes).
 
-### <a name="schedule"></a>calendrier
+### <a name="schedule"></a>schedule
 
-Cette propriété obtient les données de planification récupérées auprès du serveur publicitaire. Cet objet comprend la hiérarchie complète des données correspondant à la structure de la charge utile VAST (Video Ad Serving Template) ou VMAP (Video Multiple Ad Playlist).
+Cette propriété obtient les données de planification qui ont été récupérées à partir du serveur AD. Cet objet comprend la hiérarchie complète des données qui correspond à la structure du modèle de service vidéo (vaste) ou à la charge utile de la playlist de vidéo multiple ad (VMAP).
 
 ### <a name="onadprogress"></a>onAdProgress  
 
-Cet événement est déclenché lorsque la lecture de publicités atteint des points de contrôle quartiles. Le deuxième paramètre du gestionnaire d’événements (*eventInfo*) est un objet JSON comprenant les membres suivants :
+Cet événement est déclenché lorsque la lecture Active Directory atteint les points de contrôle du quartile. Le deuxième paramètre du gestionnaire d’événements (*EventInfo*) est un objet JSON avec les membres suivants :
 
-* **progress** : l’état de la lecture de la publicité (l'une des valeurs d’énumération **MediaProgress** définies dans AdScheduler.js).
-* **clip** : le clip vidéo en cours de lecture. Cet objet n’est pas destiné à être utilisé dans votre code.
-* **adPackage** : un objet qui représente la partie de la charge utile publicitaire correspondant à la publicité en cours de lecture. Cet objet n’est pas destiné à être utilisé dans votre code.
+* **Progress**: état de la lecture ad (l’une des valeurs d’énumération **MediaProgress** définie dans AdScheduler.js).
+* **clip**: le clip vidéo en cours de lecture. Cet objet n’est pas destiné à être utilisé dans votre code.
+* **adPackage**: objet qui représente la partie de la charge active ad qui correspond à la publicité en cours de diffusion. Cet objet n’est pas destiné à être utilisé dans votre code.
 
 ### <a name="onallcomplete"></a>onAllComplete  
 
-Cet événement est déclenché lorsque le contenu principal prend fin et que toute publicité suivant le contenu est également terminée.
+Cet événement est déclenché lorsque le contenu principal atteint la fin et que toute publicité postérieure à la planification est également terminée.
 
 ### <a name="onerroroccurred"></a>onErrorOccurred  
 
-Cet événement est déclenché lorsque **AdScheduler** rencontre une erreur. Pour plus d'informations sur les valeurs de code d'erreur, consultez [ErrorCode](https://docs.microsoft.com/uwp/api/microsoft.advertising.errorcode).
+Cet événement est déclenché lorsque le **AdScheduler** rencontre une erreur. Pour plus d’informations sur les valeurs des codes d’erreur, consultez [ErrorCode](https://docs.microsoft.com/uwp/api/microsoft.advertising.errorcode).
 
 ### <a name="onpodcountdown"></a>onPodCountdown
 
-Cet événement est déclenché lorsqu'une publicité est en cours de lecture et indique combien de temps il reste dans le pod actuel. Le deuxième paramètre du gestionnaire d’événements (*eventData*) est un objet JSON comprenant les membres suivants :
+Cet événement est déclenché lorsqu’une publicité est lue et indique le temps restant dans le pod actuel. Le deuxième paramètre du gestionnaire d’événements (*EventData*) est un objet JSON avec les membres suivants :
 
-* **remainingAdTime** : le nombre de secondes restantes pour la publicité en cours de lecture.
-* **remainingPodTime** : le nombre de secondes restantes pour le pod en cours de lecture.
+* **remainingAdTime**: nombre de secondes restantes pour la publicité active.
+* **remainingPodTime**: nombre de secondes restantes pour le pod actuel.
 
 > [!NOTE]
-> Un pod est un groupe de publicités lues dans une séquence, tel un groupe de publicités lues durant une coupure publicitaire. Pour plus d’informations, consultez la spécification IAB Digital Video Ad Serving Template (VAST).
+> Un Pod est un groupe de publicités qui s’exécutent dans une séquence, par exemple un groupe de publicités qui s’exécutent pendant une pause commerciale. Pour plus d’informations, consultez la spécification du modèle de service d’annonces numériques de l’IAB.
 
 ### <a name="onpodend"></a>onPodEnd  
 
-Cet événement est déclenché lorsqu’un pod se termine. Le deuxième paramètre du gestionnaire d’événements (*eventData*) est un objet JSON comprenant les membres suivants :
+Cet événement est déclenché lorsqu’un bloc publicitaire se termine. Le deuxième paramètre du gestionnaire d’événements (*EventData*) est un objet JSON avec les membres suivants :
 
-* **startTime** : l'heure de début du pod, en secondes.
-* **pod** : un objet représentant le pod. Cet objet n’est pas destiné à être utilisé dans votre code.
+* **StartTime**: l’heure de début du Pod, en secondes.
+* **Pod**: objet qui représente le POD. Cet objet n’est pas destiné à être utilisé dans votre code.
 
 ### <a name="onpodstart"></a>onPodStart
 
-Cet événement est déclenché lorsqu’un pod démarre. Le deuxième paramètre du gestionnaire d’événements (*eventData*) est un objet JSON comprenant les membres suivants :
+Cet événement est déclenché lors du démarrage d’un pod. Le deuxième paramètre du gestionnaire d’événements (*EventData*) est un objet JSON avec les membres suivants :
 
-* **startTime** : l'heure de début du pod, en secondes.
-* **pod** : un objet représentant le pod. Cet objet n’est pas destiné à être utilisé dans votre code.
+* **StartTime**: l’heure de début du Pod, en secondes.
+* **Pod**: objet qui représente le POD. Cet objet n’est pas destiné à être utilisé dans votre code.

@@ -1,17 +1,17 @@
 ---
 title: Programmation DirectX
-description: Programmation de jeux UWP utilisant DirectX.
+description: Affichez une liste de liens vers des rubriques qui fournissent des informations sur le développement de jeux plateforme Windows universelle (UWP) à l’aide de DirectX.
 ms.assetid: ba77b081-b8c0-4674-b8bf-7a94466a67f7
 ms.date: 06/23/2017
 ms.topic: article
-keywords: windows 10, uwp, jeu, vue d’ensemble, programmation, directx
+keywords: Windows 10, UWP, jeu, vue d’ensemble, programmation, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: 56da2fabbe0e3e6ae49ebb817a6f57e4d62d7ae9
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 24c15516bc18eacd6c5dfcad8edec9a2c088fc7f
+ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368802"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88970257"
 ---
 # <a name="directx-programming"></a>Programmation DirectX
 
@@ -31,37 +31,37 @@ Cette section fournit des informations sur le développement de jeux UWP avec Di
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="directx-getting-started.md">Bien démarrer</a></p></td>
-<td align="left"><p>Introduction à la programmation DirectX.</p></td>
+<td align="left"><p>Présentation de la programmation DirectX.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="directx-samples.md">Exemples</a></p></td>
-<td align="left"><p>Découvrez DirectX à travers des exemples de jeux.</p></td>
+<td align="left"><p>Découvrez DirectX par le biais d’exemples de jeux.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="directx-fundamentals.md">Fundamentals</a></p></td>
-<td align="left"><p>Explique les concepts de programmation de base DirectX.</p></td>
+<td align="left"><p><a href="directx-fundamentals.md">Notions de base</a></p></td>
+<td align="left"><p>Explique les concepts de programmation DirectX Basic.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="directx-add-features.md">Ajouter des fonctionnalités</a></p></td>
-<td align="left"><p>Décrit comment ajouter des fonctionnalités de jeu à votre jeu DirectX.</p></td>
+<td align="left"><p>Décrit comment ajouter différentes fonctionnalités de jeu à votre jeu DirectX.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="directx-optimization-and-advanced-topics.md">L’optimisation et rubriques avancées</a></p></td>
+<td align="left"><p><a href="directx-optimization-and-advanced-topics.md">Optimisation et rubriques avancées</a></p></td>
 <td align="left"><p>En savoir plus sur l’optimisation et d’autres rubriques avancées.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="porting-your-directx-9-game-to-windows-store.md">Port DirectX 9 vers UWP</a></p></td>
-<td align="left"><p>Découvrez comment porter votre jeu DirectX 9 vers UWP.</p></td>
+<td align="left"><p><a href="porting-your-directx-9-game-to-windows-store.md">Porter DirectX 9 sur UWP</a></p></td>
+<td align="left"><p>Découvrez comment déplacer votre jeu DirectX 9 vers UWP.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="port-from-opengl-es-2-0-to-directx-11-1.md">OpenGL de port à Direct3D</a></p></td>
-<td align="left"><p>Découvrez comment porter votre jeu OpenGL ES 2.0 vers Direct3D 11.</p></td>
+<td align="left"><p><a href="port-from-opengl-es-2-0-to-directx-11-1.md">Porter OpenGL sur Direct3D</a></p></td>
+<td align="left"><p>Découvrez comment porter votre jeu OpenGL ES 2,0 vers Direct3D 11.</p></td>
 </tr>
 </tbody>
 </table>
 
 
-Pour les guides de référence et de programmation DirectX, voir [Graphiques Direct3D 11](https://docs.microsoft.com/windows/desktop/direct3d11/atoc-dx-graphics-direct3d-11) et [Graphiques Direct3D 12](https://docs.microsoft.com/windows/desktop/direct3d12/direct3d-12-graphics).
+Pour obtenir des guides de référence et de programmation DirectX, consultez [graphiques Direct3D 11](https://docs.microsoft.com/windows/desktop/direct3d11/atoc-dx-graphics-direct3d-11) Graphics and [Direct3D 12 Graphics](https://docs.microsoft.com/windows/desktop/direct3d12/direct3d-12-graphics).
  
 
 

@@ -1,32 +1,32 @@
 ---
-Description: Découvrez comment regrouper les notifications dans le centre de maintenance à l’aide de regroupements.
-title: Collections de toasts
+title: Collections Toast
+description: Découvrez comment organiser les notifications toast pour votre application en créant, en mettant à jour ou en supprimant des regroupements de notification dans le centre de maintenance.
 label: Toast Collections
 template: detail.hbs
 ms.date: 05/16/2018
 ms.topic: article
-keywords: windows 10, uwp, notification, collections, collection, notifications de groupe, notifications de regroupement, regrouper, organiser, centre de notifications, toast
+keywords: Windows 10, UWP, notification, collections, collection, notifications de groupe, notifications de regroupement, groupe, organiser, centre de maintenance, Toast
 ms.localizationpriority: medium
-ms.openlocfilehash: 19fc1ed49fe5a3ea7d628684226b960ef2bc0732
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: aff6b933e04611013761c10ad7a76824f7347855
+ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684183"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88970067"
 ---
 # <a name="grouping-toast-notifications-with-collections"></a>Regroupement de notifications toast avec des collections
-Utilisez des regroupements pour organiser les toasts de votre application dans le centre de notifications. Les collections permettent aux utilisateurs de localiser plus facilement les informations dans le centre de notifications et aux développeurs de mieux gérer leurs notifications.  Les API ci-dessous permettent de supprimer, de créer et de mettre à jour des collections de notifications.
+Utilisez des regroupements pour organiser les toasts de votre application dans le centre de maintenance. Les regroupements aident les utilisateurs à localiser plus facilement des informations dans le centre de maintenance et permettent aux développeurs de mieux gérer leurs notifications.  Les API ci-dessous permettent de supprimer, de créer et de mettre à jour les collections de notifications.
 
 > [!IMPORTANT]
-> **Nécessite Creators Update** : vous devez cibler le Kit de développement logiciel (SDK) 15063 et exécuter la Build 15063 ou une version plus récente pour utiliser les collections de toasts. Les API associées sont [Windows.UI.Notifications.ToastCollection](https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastcollection) et [Windows.UI.Notifications.ToastCollectionManager](https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastcollectionmanager)
+> **Nécessite Creators Update**: vous devez cibler le kit de développement logiciel (SDK) 15063 et exécuter la build 15063 ou une version ultérieure pour utiliser les collections Toast. Les API associées sont [Windows. UI. notifications. ToastCollection](https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastcollection)et [Windows. UI. notifications. ToastCollectionManager](https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastcollectionmanager)
 
-Vous pouvez voir l’exemple ci-dessous, avec une application de messagerie qui sépare les notifications en fonction du groupe de discussion ; chaque titre (Comp Sci 160A Project Chat, Direct Messages, Lacrosse Team Chat) est une collection distincte.  Notez la façon dont les notifications sont nettement regroupées comme si elles venaient d’une application distincte, même si ce sont toutes des notifications provenant de la même application.  Si vous recherchez un moyen plus subtil d'organiser vos notifications, consultez [en-têtes de toasts](toast-headers.md).  
-![exemple de collection avec deux groupes différents de notifications](images/toast-collection-example.png)
+Vous pouvez voir l’exemple ci-dessous avec une application de messagerie qui sépare les notifications en fonction du groupe de conversation. chaque titre (COMP SCI 160A Project chat, direct messages, Lacrosse Team Chat) est un regroupement distinct.  Notez que les notifications sont regroupées de manière distincte comme si elles se trouvaient dans une application distincte, même s’il s’agit de toutes les notifications de la même application.  Si vous recherchez une façon plus subtile d’organiser vos notifications, consultez [en-têtes Toast](toast-headers.md).  
+![Exemple de collection avec deux groupes différents de notifications](images/toast-collection-example.png)
 
-## <a name="creating-collections"></a>Création de collections
-Lors de la création de chaque collection, vous devez fournir un nom d’affichage et une icône, qui sont affichés dans le centre de notifications dans le cadre du titre de la collection, comme illustré dans l’image ci-dessus. Les collections requièrent également un argument de lancement pour aider l’application à accéder à l’emplacement approprié au sein de l’application lorsque le titre de la collection est activé par l’utilisateur.  
+## <a name="creating-collections"></a>Créer des collections
+Lorsque vous créez chaque collection, vous devez fournir un nom d’affichage et une icône qui s’affichent dans le centre de maintenance dans le cadre du titre de la collection, comme indiqué dans l’image ci-dessus. Les collections requièrent également un argument Launch pour aider l’application à accéder à l’emplacement approprié dans l’application lorsque l’utilisateur clique sur le titre de la collection.  
 
-### <a name="create-a-collection"></a>Créer une collection
+### <a name="create-a-collection"></a>Création d'une collection
 
 ``` csharp 
 public const string toastCollectionId = "ToastCollection";
@@ -49,10 +49,10 @@ public async void CreateToastCollection()
 }
 ```
 
-## <a name="sending-notifications-to-a-collection"></a>Envoyer des notifications à une collection
-Nous allons traiter de l'envoi de notifications à partir de trois pipelines de toasts différents : local, planifié et push.  Pour chacun de ces exemples, nous créerons un exemple de toast à envoyer avec le code immédiatement dessous, puis nous nous concentrerons sur l’ajout de la notification toast à une collection via chaque pipeline.
+## <a name="sending-notifications-to-a-collection"></a>Envoi de notifications à un regroupement
+Nous traiterons de l’envoi de notifications à partir de trois pipelines Toast différents : local, planifié et Push.  Pour chacun de ces exemples, nous allons créer un exemple de toast à envoyer avec le code immédiatement après, puis nous allons nous concentrer sur la façon d’ajouter le toast à une collection via chaque pipeline.
 
-Construire la charge utile de la notification :
+Construisez la charge utile de notification :
 
 ``` csharp
 public const string toastCollectionId = "MyToastCollection";
@@ -85,7 +85,7 @@ var notifier = await ToastNotificationManager.GetDefault().GetToastNotifierForTo
 notifier.Show(toast);
 ```
 
-### <a name="add-a-scheduled-toast-to-a-collection"></a>Ajouter un toast planifié à une collection
+### <a name="add-a-scheduled-toast-to-a-collection"></a>Ajouter un toast planifié à un regroupement
 
 ``` csharp
 // Create scheduled toast from XML above
@@ -98,28 +98,28 @@ var notifier = await ToastNotificationManager.GetDefault().GetToastNotifierForTo
 notifier.AddToSchedule(scheduledToast);
 ```
 
-### <a name="send-a-push-toast-to-a-collection"></a>Envoyer un toast push à une collection
-Pour les toasts push, vous devez ajouter l’en-tête X-WNS-CollectionId au message POST.
+### <a name="send-a-push-toast-to-a-collection"></a>Envoyer un toast de transmission de type push à une collection
+Pour les toasts push, vous devez ajouter l’en-tête X-WNS-type au message de publication.
 ```csharp
 // Add header to HTTP request
 request.Headers.Add("X-WNS-CollectionId", collectionId); 
 
 ```
 
-## <a name="managing-collections"></a>Gestion des collections
-#### <a name="create-the-toast-collection-manager"></a>Créer le gestionnaire de collection de toast
-Pour le reste des extraits de code de cette section «Gestion des collections », nous allons utiliser le collectionManager ci-dessous.
+## <a name="managing-collections"></a>Gestion des regroupements
+#### <a name="create-the-toast-collection-manager"></a>Créer le gestionnaire de collections Toast
+Pour le reste des extraits de code de cette section « gestion des collections », nous allons utiliser le collectionManager ci-dessous.
 ```csharp
 ToastCollectionManger collectionManager = ToastNotificationManager.GetDefault().GetToastCollectionManager();
 ```
 
-#### <a name="get-all-collections"></a>Obtenir toutes les collections
+#### <a name="get-all-collections"></a>Obtenir tous les regroupements
 
 ``` csharp
 IReadOnlyList<ToastCollection> collections = await collectionManager.FindAllToastCollectionsAsync();
 ``` 
 
-#### <a name="get-the-number-of-collections-created"></a>Obtenir le nombre de collections créées
+#### <a name="get-the-number-of-collections-created"></a>Obtient le nombre de collections créées
 
 ``` csharp
 int toastCollectionCount = (await collectionManager.FindAllToastCollectionsAsync()).Count;
@@ -131,8 +131,8 @@ int toastCollectionCount = (await collectionManager.FindAllToastCollectionsAsync
 await collectionManager.RemoveToastCollectionAsync(MainPage.toastCollectionId);
 ```
 
-#### <a name="update-a-collection"></a>Mettre à jour une collection
-Vous pouvez mettre à jour les collections en créant une nouvelle collection ayant le même ID et en enregistrant la nouvelle instance de la collection.
+#### <a name="update-a-collection"></a>Mettre à jour un regroupement
+Vous pouvez mettre à jour les collections en créant une nouvelle collection avec le même ID et en enregistrant la nouvelle instance de la collection.
 ``` csharp
 string displayName = "Updated Display Name"; 
 string launchArg = "UpdatedLaunchArgs"; 
@@ -149,10 +149,10 @@ await collectionManager.SaveToastCollectionAsync(updatedToastCollection);
 ```
 ## <a name="managing-toasts-within-a-collection"></a>Gestion des toasts au sein d’une collection
 #### <a name="group-and-tag-properties"></a>Propriétés de groupe et de balise
-Les propriétés de groupe et de balise identifient ensemble une notification de manière unique dans une collection.  Le groupe (et la balise) sert de clé primaire composite (plusieurs identificateurs) pour identifier votre notification. Par exemple, si vous souhaitez supprimer ou remplacer une notification, vous devez être en mesure de spécifier *quelle notification* vous souhaitez supprimer/remplacer. Vous le faites en spécifiant la balise et le groupe. Une application de messagerie en est exemple.  Le développeur peut utiliser l’ID de conversation en tant que le groupe et l’ID de message en tant que la balise.
+Les propriétés Group et tag identifient ensemble de façon unique une notification dans une collection.  Le groupe (et la balise) sert de clé primaire composite (plusieurs identificateurs) pour identifier votre notification. Par exemple, si vous souhaitez supprimer ou remplacer une notification, vous devez être en mesure de spécifier la *notification* à supprimer ou à remplacer ; pour ce faire, spécifiez la balise et le groupe. Par exemple, une application de messagerie.  Le développeur peut utiliser l’ID de conversation comme groupe et l’ID de message en tant que balise.
 
-#### <a name="remove-a-toast-from-a-collection"></a>Supprimer un toast d'une collection
-Vous pouvez supprimer des toasts individuels à l’aide de l’ID de balise et de groupe ou effacer toutes les notifications toast d'une collection.
+#### <a name="remove-a-toast-from-a-collection"></a>Supprimer un toast d’une collection
+Vous pouvez supprimer des toasts individuels à l’aide de la balise et des ID de groupe, ou effacer tous les toasts d’une collection.
 ``` csharp
 // Get the history
 var collectionHistory = await ToastNotificationManager.GetDefault().GetHistoryForToastCollectionAsync(MainPage.toastCollectionId);
@@ -161,7 +161,7 @@ var collectionHistory = await ToastNotificationManager.GetDefault().GetHistoryFo
 collectionHistory.Remove(tag, group); 
 ```
 
-#### <a name="clear-all-toasts-within-a-collection"></a>Effacer tous les toasts d’une collection
+#### <a name="clear-all-toasts-within-a-collection"></a>Effacer tous les toasts au sein d’une collection
 ``` csharp
 // Get the history
 var collectionHistory = await ToastNotificationManager.GetDefault().GetHistoryForToastCollectionAsync(MainPage.toastCollectionId);
@@ -171,23 +171,23 @@ collectionHistory.Clear();
 ```
 
 
-## <a name="collections-in-notifications-visualizer"></a>Collections dans le Visualiseur de notifications
-Vous pouvez utiliser l'outil [Notifications Visualizer](notifications-visualizer.md) pour vous aider à concevoir vos collections. Suivez les étapes ci-dessous :
+## <a name="collections-in-notifications-visualizer"></a>Collections dans le visualiseur de notifications
+Vous pouvez utiliser l’outil de [visualisation des notifications](notifications-visualizer.md) pour vous aider à concevoir vos collections. Effectuez les étapes ci-dessous :
 
-* Cliquez sur l’icône de des paramètres (roue crantée) dans le coin inférieur droit. 
-* Sélectionnez « Toast collections ».
-* Au-dessus de l’aperçu de la notification toast, il existe un menu déroulant de « Toast Collection ». Sélectionnez « Manage collections ».
-* Cliquez sur « Add collection », renseignez les détails de la collection et enregistrez.
-* Vous pouvez ajouter d'autres collections ou décocher la zone de gestion des collections pour revenir à l’écran principal.
-* Sélectionnez la collection à laquelle vous souhaitez ajouter le toast dans le menu déroulant « Toast collection ».
-* Lorsque vous démarrerez la notification toast, elle sera ajoutée à la collection appropriée dans le centre de notifications.
+* Cliquez sur l’icône d’engrenage dans le coin inférieur droit. 
+* Sélectionnez « collections Toast ».
+* Au-dessus de l’aperçu du Toast, il existe un menu déroulant « Toast collection ». Sélectionnez gérer les regroupements.
+* Cliquez sur « Ajouter une collection », renseignez les détails de la collection et enregistrez.
+* Vous pouvez ajouter d’autres regroupements ou cliquer sur la zone gérer les regroupements pour revenir à l’écran principal.
+* Sélectionnez le regroupement auquel vous souhaitez ajouter le Toast dans le menu déroulant « regroupement Toast ».
+* Quand vous activez le toast, il est ajouté à la collection appropriée dans le centre de maintenance.
 
 
 ## <a name="other-details"></a>Autres détails
-Les collections de toast que vous créez seront également répercutées dans les paramètres de notification de l’utilisateur.  Vous pouvez activer les paramètres de chaque collection de façon à activer ou désactiver ces sous-groupes.  Si les notifications sont désactivées au niveau supérieur de l’application, toutes les notifications de collections seront également désactivées.  En outre, chaque collection affiche par défaut 3 notifications dans le centre de notifications et l’utilisateur peut la développer pour afficher jusqu'à 20 notifications.
+Les collections Toast que vous créez sont également reflétées dans les paramètres de notification de l’utilisateur.  Les utilisateurs peuvent activer ou désactiver les paramètres de chaque regroupement pour activer ou désactiver ces sous-groupes.  Si les notifications sont désactivées au niveau supérieur de l’application, toutes les notifications de regroupements sont également désactivées.  En outre, chaque regroupement affiche par défaut 3 notifications dans le centre de maintenance, et l’utilisateur peut le développer pour afficher jusqu’à 20 notifications.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Contenu Toast](adaptive-interactive-toasts.md)
+* [Contenu des toasts](adaptive-interactive-toasts.md)
 * [En-têtes Toast](toast-headers.md)
 * [Bibliothèque de notifications sur GitHub (qui fait partie de la boîte à outils de la communauté Windows)](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)

@@ -1,57 +1,57 @@
 ---
 ms.assetid: ''
-description: Montre comment gérer la diffusion de jeu pour une application UWP.
+description: Découvrez comment gérer la diffusion de jeux pour une application plateforme Windows universelle (UWP) à l’aide de l’interface utilisateur du système Windows et des extensions de bureau Windows pour UWP.
 title: Gérer la diffusion d’un jeu
 ms.date: 09/27/2017
 ms.topic: article
-keywords: windows 10, jeu, diffusion
+keywords: Windows 10, jeu, diffusion
 ms.localizationpriority: medium
-ms.openlocfilehash: 0936312b530ad4480371857851bd155b73e37a50
-ms.sourcegitcommit: 49a34e957433966ac8d4822b5822f21087aa61c3
+ms.openlocfilehash: 5dc7042a04ae653434b1742b913b2735b09e8b03
+ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74153704"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88970117"
 ---
 # <a name="manage-game-broadcasting"></a>Gérer la diffusion d’un jeu
-Cet article montre comment gérer la diffusion de jeu pour une application UWP. Les utilisateurs doivent lancer la diffusion de jeu à l’aide de l’interface utilisateur système qui est intégrée à Windows. Toutefois, à partir de Windows 10, version 1709, les applications peuvent lancer l’interface utilisateur de diffusion système et recevoir des notifications lorsque la diffusion démarre et s’arrête.
+Cet article explique comment gérer la diffusion de jeux pour une application UWP. Les utilisateurs doivent lancer la diffusion à l’aide de l’interface utilisateur système intégrée à Windows, mais à partir de la version 1709 de Windows 10, les applications peuvent lancer l’interface utilisateur de diffusion du système et recevoir des notifications au démarrage et à l’arrêt de la diffusion.
 
-## <a name="add-the-windows-desktop-extensions-for-the-uwp-to-your-app"></a>Ajouter les extensions de bureau Windows pour UWP à votre application
-Les API utilisées pour la gestion de diffusion d’application, disponibles dans l’espace de noms **[Windows.Media.AppBroadcasting](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting)** , ne sont pas incluses dans le contrat API universelle. Pour accéder à ces API, vous devez ajouter une référence aux extensions de bureau Windows pour UWP à votre application en procédant comme suit.
+## <a name="add-the-windows-desktop-extensions-for-the-uwp-to-your-app"></a>Ajouter les extensions de bureau Windows pour la série UWP à votre application
+Les API de gestion de la diffusion d’applications, qui se trouvent dans l’espace de noms **[Windows. Media. AppBroadcasting](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting)** , ne sont pas incluses dans le contrat d’API universel. Pour accéder aux API, vous devez ajouter une référence aux extensions de bureau Windows pour la série UWP à votre application en suivant les étapes ci-dessous.
 
-1. Dans Visual Studio, dans l’**Explorateur de solutions**, développez votre projet UWP, cliquez avec le bouton droit sur **Références** et sélectionnez **Ajouter une référence...** . 
+1. Dans Visual Studio, dans **Explorateur de solutions**, développez votre projet UWP et cliquez avec le bouton droit sur **références** , puis sélectionnez **Ajouter une référence...**. 
 2. Développez le nœud **Windows universel** et sélectionnez **Extensions**.
-3. Dans la liste d’extensions, cochez la case en regard de l’entrée **Extensions de bureau Windows pour UWP** qui correspond à la version cible de votre projet. Pour les fonctionnalités de diffusion d’application, il doit s’agir au minimum de la version 1709.
-4. Cliquez sur **OK**.
+3. Dans la liste des extensions, cochez la case en regard des **extensions du bureau Windows pour l’entrée UWP** correspondant à la build cible de votre projet. Pour les fonctionnalités de diffusion d’application, la version doit être supérieure ou égale à 1709.
+4. Cliquez sur **OK**.
 
-## <a name="launch-the-system-ui-to-allow-the-user-to-initiate-broadcasting"></a>Lancer l’interface utilisateur système pour permettre à l’utilisateur de commencer la diffusion
-Il existe plusieurs raisons pour lesquelles votre application peut ne pas être en mesure d’effectuer la diffusion actuellement. Ceci est notamment le cas si l’appareil utilisé ne satisfait pas la configuration matérielle requise pour la diffusion ou si une autre application est en cours de diffusion. Avant de lancer l’interface utilisateur système, vous pouvez vérifier si votre application peut effectuer la diffusion actuellement. Tout d’abord, vérifiez si les API de diffusion sont disponibles sur l’appareil actuel. Les API ne sont pas disponibles sur les appareils exécutant une version du système d’exploitation antérieure à Windows 10, version 1709. Plutôt que de rechercher une version spécifique du système d’exploitation, utilisez la méthode **[ApiInformation.IsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent)** pour rechercher *Windows.Media.AppBroadcasting.AppBroadcastingContract* version 1.0. Si ce contrat est présent, les API de diffusion sont disponibles sur l’appareil.
+## <a name="launch-the-system-ui-to-allow-the-user-to-initiate-broadcasting"></a>Lancer l’interface utilisateur du système pour permettre à l’utilisateur de lancer la diffusion
+Il existe plusieurs raisons pour lesquelles votre application peut ne pas être en mesure de diffuser actuellement, y compris si l’appareil actuel ne répond pas à la configuration matérielle requise pour la diffusion ou si une autre application est en cours de diffusion. Avant de lancer l’interface utilisateur du système, vous pouvez vérifier si votre application est actuellement en mesure de diffuser. Tout d’abord, vérifiez si les API de diffusion sont disponibles sur l’appareil actuel. Les API ne sont pas disponibles sur les appareils exécutant une version du système d’exploitation antérieure à Windows 10, version 1709. Au lieu de vérifier une version spécifique du système d’exploitation, utilisez la méthode **[ApiInformation. IsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent)** pour rechercher la version de *Windows. Media. AppBroadcasting. AppBroadcastingContract* version 1,0. Si ce contrat est présent, les API de diffusion sont disponibles sur l’appareil.
 
-Ensuite, obtenez une instance de la classe **[AppBroadcastingUI](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting.appbroadcastingui)** en appelant la méthode de fabrique **[GetDefault](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting.appbroadcastingui.GetDefault)** sur le PC, sur lequel un seul utilisateur est connecté à la fois. Sur Xbox, où plusieurs utilisateurs peuvent être connectés, appelez **[GetForUser](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting.appbroadcastingui.getforuser)** à la place. Ensuite, appelez **[GetStatus](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting.appbroadcastingui.GetStatus)** pour obtenir l’état de diffusion de votre application.
+Ensuite, récupérez une instance de la classe **[AppBroadcastingUI](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting.appbroadcastingui)** en appelant la méthode de fabrique **[GetDefault](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting.appbroadcastingui.GetDefault)** sur PC, où un seul utilisateur est connecté à la fois. Sur Xbox, où plusieurs utilisateurs peuvent être connectés, appelez **[GetForUser](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting.appbroadcastingui.getforuser)** à la place. Appelez ensuite **[GetStatus](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting.appbroadcastingui.GetStatus)** pour recevoir l’état de diffusion de votre application.
 
-La propriété **[CanStartBroadcast](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting.appbroadcastingstatus.CanStartBroadcast)** de la classe **AppBroadcastingStatus** vous indique si l’application peut démarrer la diffusion actuellement. Sinon, vous pouvez vérifier la propriété **[Details](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting.appbroadcastingstatus.Details)** pour déterminer pour quelle raison la diffusion n’est pas disponible. En fonction de la raison, vous voudrez peut-être afficher l’état à l’utilisateur ou afficher des instructions pour l’activation de la diffusion.
+La propriété **[CanStartBroadcast](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting.appbroadcastingstatus.CanStartBroadcast)** de la classe **AppBroadcastingStatus** vous indique si l’application peut actuellement démarrer la diffusion. Si ce n’est pas le cas, vous pouvez vérifier la propriété **[Details](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting.appbroadcastingstatus.Details)** pour déterminer la raison pour laquelle la diffusion n’est pas disponible. Selon la raison, vous souhaiterez peut-être afficher l’état de l’utilisateur ou afficher les instructions d’activation de la diffusion.
 
 [!code-cpp[CanStartBroadcast](./code/AppBroadcast/cpp/AppBroadcastExampleApp/App.cpp#SnippetCanStartBroadcast)]
 
-Demandez l’affichage par le système de l’interface utilisateur de diffusion d’application en appelant **[ShowBroadcastUI](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting.appbroadcastingui.ShowBroadcastUI)** .
+Demandez à ce que l’interface utilisateur de diffusion d’application soit affichée par le système en appelant **[ShowBroadcastUI](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting.appbroadcastingui.ShowBroadcastUI)**.
 
 > [!NOTE] 
-> La méthode **ShowBroadcastUI** représente une requête qui peut échouer, selon l’état actuel du système. Votre application ne doit pas supposer que la diffusion a commencé après l’appel de cette méthode. Utilisez l’événement **[IsCurrentAppBroadcastingChanged](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting.appbroadcastingmonitor.IsCurrentAppBroadcastingChanged)** pour être averti lorsque la diffusion démarre ou s’arrête.
+> La méthode **ShowBroadcastUI** représente une demande qui peut échouer, en fonction de l’état actuel du système. Votre application ne doit pas supposer que la diffusion a commencé après l’appel de cette méthode. Utilisez l’événement **[IsCurrentAppBroadcastingChanged](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting.appbroadcastingmonitor.IsCurrentAppBroadcastingChanged)** pour être averti lorsque la diffusion démarre ou s’arrête.
 
 [!code-cpp[LaunchBroadcastUI](./code/AppBroadcast/cpp/AppBroadcastExampleApp/App.cpp#SnippetLaunchBroadcastUI)]
 
-## <a name="receive-notifications-when-broadcasting-starts-and-stops"></a>Recevoir des notifications lors du démarrage et de l’arrêt de la diffusion
-Inscrivez-vous pour recevoir des notifications lorsque l’utilisateur utilise l’interface utilisateur système pour démarrer ou arrêter la diffusion de votre application en initialisant une instance de la classe **[AppBroadcastingMonitor](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting.appbroadcastingmonitor)** et en inscrivant un gestionnaire pour l’événement **[IsCurrentAppBroadcastingChanged](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting.appbroadcastingmonitor.IsCurrentAppBroadcastingChanged)** . Comme indiqué dans la section précédente, assurez-vous d’utiliser **[ApiInformation.IsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent)** à un moment donné pour vérifier que les API de diffusion sont présentes sur l’appareil avant de tenter de les utiliser. 
+## <a name="receive-notifications-when-broadcasting-starts-and-stops"></a>Recevoir des notifications au démarrage et à l’arrêt de la diffusion
+Inscrivez-vous pour recevoir des notifications lorsque l’utilisateur utilise l’interface utilisateur du système pour démarrer ou arrêter la diffusion de votre application en initialisant une instance de la classe **[AppBroadcastingMonitor](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting.appbroadcastingmonitor)** et en inscrivant un gestionnaire pour l’événement  **[IsCurrentAppBroadcastingChanged](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting.appbroadcastingmonitor.IsCurrentAppBroadcastingChanged)** . Comme indiqué dans la section précédente, veillez à utiliser **[ApiInformation. IsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent)** à un moment donné pour vérifier que les API de diffusion sont présentes sur l’appareil avant d’essayer de les utiliser. 
 
 [!code-cpp[AppBroadcastingRegisterChangedHandler](./code/AppBroadcast/cpp/AppBroadcastExampleApp/App.cpp#SnippetAppBroadcastingRegisterChangedHandler)]
 
-Dans le gestionnaire de l’événement **IsCurrentAppBroadcastingChanged**, vous pouvez éventuellement mettre à jour l’interface utilisateur de votre application afin de refléter l’état actuel de diffusion.
+Dans le gestionnaire de l’événement **IsCurrentAppBroadcastingChanged** , vous souhaiterez peut-être mettre à jour l’interface utilisateur de votre application pour refléter l’état actuel de la diffusion.
 
 [!code-cpp[AppBroadcastingChangedHandler](./code/AppBroadcast/cpp/AppBroadcastExampleApp/App.cpp#SnippetAppBroadcastingChangedHandler)]
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Jouer](index.md)
+* [Jeux](index.md)
 
  
 

@@ -1,23 +1,23 @@
 ---
 title: Présentation des applications multi-utilisateurs
-description: Présentation générale simple du modèle multi-utilisateur Xbox.
+description: Découvrez une présentation détaillée du modèle multi-utilisateur Xbox One qui prend en charge plusieurs utilisateurs qui jouent des jeux de manière coopérative sur un seul appareil.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 2dde6ed3-7f53-48a6-aebe-2605230decb8
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b6c3303950c29ffb88d13fb9bcecff4d43e304a
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 0364964f069537ee934771184eb9c6ffda6f346f
+ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372093"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88970287"
 ---
 # <a name="introduction-to-multi-user-applications"></a>Présentation des applications multi-utilisateurs
 
 Cette rubrique est une simple présentation générale du modèle multi-utilisateur Xbox.
 
-Le modèle utilisateur Xbox One répond aux exigences d’une console de jeu qui prend en charge plusieurs utilisateurs jouant ensemble sur un seul et même appareil. Ce modèle permet à plusieurs utilisateurs, disposant chacun de leur propre manette, de se connecter et d’accéder à la console simultanément dans le cadre d’une même session interactive. Cette technique diffère de celle mise en œuvre sur d’autres appareils Windows. Exemple :
+Le modèle utilisateur Xbox One répond aux exigences d’une console de jeu qui prend en charge plusieurs utilisateurs jouant ensemble sur un seul et même appareil. Ce modèle permet à plusieurs utilisateurs, disposant chacun de leur propre manette, de se connecter et d’accéder à la console simultanément dans le cadre d’une même session interactive. Cette technique diffère de celle mise en œuvre sur d’autres appareils Windows. Par exemple :
 * Les **PC de bureau Windows** permettent à plusieurs utilisateurs d’utiliser le même appareil, mais chaque utilisateur dispose de sa propre session interactive, et chacune des sessions est totalement indépendante des autres sessions sur l’appareil.
 * Les **téléphones Windows** ne sont utilisables que par une seule personne. Cet utilisateur unique est déterminé lors de la phase OOBE (out-of-box experience) et ne peut plus se déconnecter une fois connecté. En effet, si une autre personne veut utiliser l’appareil, ce dernier doit être réinitialisé. 
 * Les **consoles Xbox One** permettent à plusieurs utilisateurs de se connecter et d’utiliser l’appareil en même temps au cours d’une seule et même session interactive.
