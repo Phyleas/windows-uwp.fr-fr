@@ -1,44 +1,44 @@
 ---
-Description: Découvrez comment utiliser la faire disparaître universelle sur vos notifications de toast.
 title: Masquage universel
+description: Découvrez comment utiliser la fonction de masquage universel pour faire disparaître une notification Toast d’un appareil et faire en sorte que la même notification soit ignorée sur d’autres appareils.
 label: Universal Dismiss
 template: detail.hbs
 ms.date: 12/15/2017
 ms.topic: article
-keywords: windows 10, uwp, toast, centre de notifications dans le cloud, masquage universel, notification, sur plusieurs appareils, masquer une fois, masquer partout
+keywords: Windows 10, UWP, toast, centre de maintenance dans le Cloud, rejet universel, notification, Cross Device, ignorer une fois l’opération ignorer partout
 ms.localizationpriority: medium
-ms.openlocfilehash: 0dc87e8856e35d60660c2643b70b820b2857b488
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: fff9315b9a5645d8a981ca899c1c37acb04de07c
+ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57605094"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89043451"
 ---
 # <a name="universal-dismiss"></a>Masquage universel
 
-Le masquage universel, pris en charge par le centre de notifications dans le cloud, signifie que lorsque vous masquez une notification sur un appareil, la même notification est également masquée sur les autres appareils.
+L’opération de fermeture universelle, optimisée par le centre de maintenance dans le Cloud, signifie que lorsque vous ignorez une notification d’un appareil, la même notification sur vos autres appareils est également fermée.
 
 > [!IMPORTANT]
-> **Requiert la mise à jour anniversaire**: Vous devez cibler le Kit de développement logiciel 14393 et être en cours d’exécution build 14393 ou ultérieure pour utiliser ignorer universelle.
+> **Nécessite une mise à jour anniversaire**: vous devez cibler le SDK 14393 et exécuter la version 14393 ou ultérieure pour utiliser la fermeture universelle.
 
-Les rappels du calendrier sont un exemple courant de ce scénario.... vous disposez d’une application de calendrier sur vos deux appareils... vous recevez un rappel sur votre téléphone et votre application de bureau... vous cliquez sur Masquer sur votre application de bureau... grâce au masquage universel, le rappel sur votre téléphone est également masqué ! **L’activation de faire disparaître universelle nécessite uniquement une seule ligne de code !**
+L’exemple courant de ce scénario est les rappels du calendrier... vous avez une application de calendrier sur vos deux appareils... vous recevez un rappel sur votre téléphone et votre bureau... vous cliquez sur Ignorer sur votre bureau... Grâce à la fermeture universelle, le rappel sur votre téléphone est également supprimé. **L’activation de la fermeture de la chaîne universelle nécessite une seule ligne de code.**
 
 <img alt="Diagram of Universal Dismiss" src="images/universal-dismiss.gif" width="406"/>
 
-Dans ce scénario, l’important est que **la même application est installée sur plusieurs appareils**, ce qui signifie que **chaque appareil reçoit déjà des notifications**. Une application de calendrier est l’exemple typique, car la même application de calendrier est généralement installée sur votre PC Windows et votre téléphone, et chaque instance de l’application vous envoie déjà des rappels sur chaque appareil. En ajoutant la prise en charge du masquage universel, les instances des mêmes rappels peuvent être liées sur plusieurs appareils.
+Dans ce scénario, le fait clé est que **la même application est installée sur plusieurs appareils**, ce qui signifie que **chaque appareil reçoit déjà des notifications**. Une application de calendrier est l’exemple sous forme, car vous avez généralement la même application de calendrier installée sur votre PC Windows et votre téléphone, et chaque instance de l’application envoie déjà des rappels sur chaque appareil. En ajoutant la prise en charge de la fermeture universelle, ces instances des mêmes rappels peuvent être liées entre les appareils.
 
 
-## <a name="how-to-enable-universal-dismiss"></a>Activation du masquage universel
+## <a name="how-to-enable-universal-dismiss"></a>Comment activer la fermeture de la configuration universelle
 
-En tant que développeur, l’activation du masquage universel est extrêmement facile. Vous devez simplement fournir un ID qui nous permet de lier chaque notification sur plusieurs appareils. Ainsi, lorsque l’utilisateur masque une notification sur un appareil, la notification liée correspondante est également masquée sur l’autre appareil.
+En tant que développeur, l’activation de la fermeture de la variable universelle est très facile. Vous devez simplement fournir un ID qui nous permet de lier chaque notification à travers les appareils, de sorte que lorsque l’utilisateur ignore une notification d’un appareil, la notification liée correspondante est rejetée de l’autre appareil.
 
-![Diagramme RemoteId de masquage universel](images/universal-dismiss-remoteid.jpg)
+![Diagramme de RemoteId d’un rejet universel](images/universal-dismiss-remoteid.jpg)
 
-> **RemoteId**: Un identificateur qui identifie de façon unique une notification *sur des appareils*.
+> **RemoteId**: identificateur qui identifie de façon unique une notification *sur les appareils*.
 
-Une seule ligne de code est utilisée pour ajouter RemoteId, ce qui active la prise en charge du masquage universel ! C’est vous qui décidez comment générer votre RemoteId. Toutefois, vous devez veiller à ce qu’il identifie de manière unique votre notification sur plusieurs appareils, et que le même identificateur puisse être généré à partir de différentes instances de votre application s’exécutant sur plusieurs appareils.
+t ne prend qu’une seule ligne de code pour ajouter RemoteId, ce qui active la prise en charge de la fermeture universelle. La façon dont vous générez votre RemoteId dépend toutefois de vous, vous devez vous assurer qu’elle identifie de manière unique votre notification sur tous les appareils, et que le même identificateur peut être généré à partir de différentes instances de votre application exécutées sur différents appareils.
 
-Par exemple, dans mon application de planification de devoirs, je génère mon RemoteId en indiquant que son type est « rappel », puis j’inclus l’ID du compte en ligne et l’identificateur en ligne du devoir. Je peux générer de manière cohérente le même RemoteId, quel que soit l’appareil qui envoie la notification, car ces ID en ligne sont partagés sur les différents appareils.
+Par exemple, dans mon application collégiens Planner, je génère mon RemoteId en disant qu’il est de type « rappel », puis j’inclut l’ID de compte en ligne et l’identificateur en ligne de l’élément de la maison. Je peux générer de manière cohérente le même RemoteId, quel que soit l’appareil qui envoie la notification, puisque ces ID en ligne sont partagés entre les appareils.
 
 ```csharp
 var toast = new ScheduledToastNotification(content.GetXml(), startTime);
@@ -53,16 +53,16 @@ if (ApiInformation.IsPropertyPresent(typeof(ScheduledToastNotification).FullName
 ToastNotificationManager.CreateToastNotifier().AddToSchedule(toast);
 ```
 
-Le code suivant s’exécute sur mon téléphone et sur mon application de bureau, ce qui signifie que la notification sur les deux appareils aura le même RemoteId.
+Le code suivant s’exécute à la fois sur mon téléphone et sur l’application de bureau, ce qui signifie que la notification sur les deux appareils aura le même RemoteId.
 
-C’est tout ce que vous avez à faire ! Lorsque l’utilisateur masque (ou clique sur) une notification, nous vérifions si elle a un RemoteId, auquel cas, nous envoyons une demande de masquage de ce RemoteId sur tous les appareils de l’utilisateur.
+C’est tout ce que vous avez à faire ! Lorsque l’utilisateur ignore (ou clique sur) une notification, nous vérifions s’il a un RemoteId et, si c’est le cas, nous allons dépanner ce RemoteId sur tous les appareils de l’utilisateur.
 
-**Problème connu**: Récupération de la **RemoteId** via la `ToastNotificationHistory.GetHistory()` l’API retourne toujours une chaîne vide plutôt que la **RemoteId** que vous avez spécifié. Ne vous inquiétez pas, tout est normal : seule la valeur incorrecte est récupérée.
+**Problème connu**: la récupération du **RemoteId** via les `ToastNotificationHistory.GetHistory()` API renverra toujours une chaîne vide plutôt que le **RemoteId** que vous avez spécifié. Ne vous inquiétez pas, tout est fonctionnel : il récupère uniquement la valeur qui est rompue.
 
 > [!NOTE]
-> Si l’utilisateur ou l’entreprise désactive la [mise en miroir des notifications](notification-mirroring.md) pour votre application (ou désactive complètement la mise en miroir des notifications), le masquage universel ne fonctionne pas, car vos notifications ne sont pas disponibles dans le cloud.
+> Si l’utilisateur ou l’entreprise désactive la [mise en miroir des notifications](notification-mirroring.md) pour votre application (ou désactive complètement la mise en miroir des notifications), l’opération de rejet universelle ne fonctionnera pas, car nous n’avons pas vos notifications dans le Cloud.
 
 
 ## <a name="supported-devices"></a>Appareils pris en charge
 
-Depuis la mise à jour anniversaire, le masquage universel est pris en charge sur Windows Mobile et Windows Desktop. Le masquage universel fonctionne dans les deux sens, entre un PC et un PC, un PC et un téléphone et un téléphone et un téléphone.
+Depuis la mise à jour anniversaire, le rejet universel est pris en charge sur Windows Mobile et Windows Desktop. La fermeture de la fermeture universelle fonctionne dans les deux sens, entre PC PC, PC-Phone et téléphone-téléphone.

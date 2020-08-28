@@ -1,33 +1,33 @@
 ---
-Description: Vous pouvez proposer des applications dans le Microsoft Store dans plus de 100 langues.
 title: Langues prises en charge
+description: Affichez un tableau des langues et des codes de langue correspondants qui sont pris en charge pour l’envoi d’applications au Microsoft Store.
 ms.assetid: FCA66311-4145-46AC-8B20-1E736F940976
 ms.date: 03/07/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 716a6e86e03feb6edcbc5cde5aa37d0282df6aca
-ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
-ms.translationtype: HT
+ms.openlocfilehash: a3b3ada3415e6f1abc98dc3c351f6db791adc984
+ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59244285"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89043431"
 ---
 # <a name="supported-languages"></a>Langues prises en charge
 
 
-Vous pouvez proposer des applications dans le Microsoft Store dans plus de 100 langues.
+Vous pouvez soumettre des applications au Microsoft Store dans plus de 100 langues.
 
-Pour en savoir plus sur la configuration des langues dans vos applications, consultez [globalisation et localisation](../design/globalizing/globalizing-portal.md) et [langues de profil utilisateur de comprendre et d’application manifest langues](../design/globalizing/manage-language-and-region.md). Nous avons également un [Kit de ressources pour application multilingue](https://docs.microsoft.com/windows/uwp/design/globalizing/use-mat) pour vous aider à écrire des applications qui prennent en charge plusieurs langues.
+Pour en savoir plus sur la configuration des langues dans vos applications, consultez [globalisation et localisation](../design/globalizing/globalizing-portal.md) et présentation des langages de [profil utilisateur et des langages de manifeste d’application](../design/globalizing/manage-language-and-region.md). Nous avons également un [Kit de ressources pour application multilingue](https://docs.microsoft.com/windows/uwp/design/globalizing/use-mat) pour vous aider à écrire des applications qui prennent en charge plusieurs langues.
 
 ## <a name="supported-languages"></a>Langues prises en charge
 
 
-Ce sont les langues qui prend en charge par le Microsoft Store. Votre application doit prendre en charge au moins une de ces langues. 
+Il s’agit des langues prises en charge par le Microsoft Store. Votre application doit prendre en charge au moins l’une de ces langues. 
 
-Les codes de langue qui ne sont pas incluses ici ne sont pas pris en charge par le Store. Nous recommandons que vous n’incluez pas les packages ciblant les codes de langue autre que ceux répertoriés ci-dessous ; Ces packages ne seront pas distribués aux clients et peuvent entraîner des retards ou échecs de certification.
+Les codes de langue qui ne sont pas inclus ici ne sont pas pris en charge par le magasin. Nous vous recommandons de ne pas inclure les packages ciblant des codes de langue autres que ceux listés ci-dessous. Ces packages ne seront pas distribués aux clients et peuvent entraîner des retards ou des échecs de certification.
 
-| Nom de la langue         | Codes de langue pris en charge                                                                                                                                                                              |
+| Nom de la langue         | Codes des langues prises en charge                                                                                                                                                                              |
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Arabe                | ar, ar-sa, ar-ae, ar-bh, ar-dz, ar-eg, ar-iq, ar-jo, ar-kw, ar-lb, ar-ly, ar-ma, ar-om, ar-qa, ar-sy, ar-tn, ar-ye                                                                                    |
 | Afrikaans             | af, af-za                                                                                                                                                                                             |
@@ -35,32 +35,32 @@ Les codes de langue qui ne sont pas incluses ici ne sont pas pris en charge par 
 | Amharique               | am, am-et                                                                                                                                                                                             |
 | Arménien              | hy, hy-am                                                                                                                                                                                             |
 | Assamais              | as, as-in                                                                                                                                                                                             |
-| Azerbaïdjanais           | az-arab, az-arab-az, az-cyrl, az-cyrl-az, az-latn, az-latn-az                                                                                                                                     |
+| Azéri           | AZ-arabe, AZ-arabe-AZ, az-Cyrl, az-Cyrl-AZ, az-Latn, az-Latn-AZ                                                                                                                                     |
 | Basque (Basque)       | eu, eu-es                                                                                                                                                                                             |
-| Bélarusse            | be, be-by                                                                                                                                                                                             |
-| Bengali                | bn, bn-bd, bn-in                                                                                                                                                                                      |
+| Biélorusse            | be, be-by                                                                                                                                                                                             |
+| Bangla                | bn, bn-bd, bn-in                                                                                                                                                                                      |
 | Bosniaque               | bs, bs-cyrl, bs-cyrl-ba, bs-latn, bs-latn-ba                                                                                                                                                          |
 | Bulgare             | bg, bg-bg                                                                                                                                                                                             |
 | Catalan               | ca, ca-es, ca-es-valencia                                                                                                                                                                             |
 | Cherokee              | chr-cher, chr-cher-us, chr-latn                                                                                                                                                                       |
-| Chinois (simplifié)  | zh-Hans, zh-cn, zh-hans-cn, zh-sg, zh-hans-sg                                                                                                                                                     |
+| Chinois (simplifié)  | zh-Hans, zh-CN, zh-Hans-CN, zh-SG, zh-Hans-SG                                                                                                                                                     |
 | Chinois (traditionnel) | zh-Hant, zh-hk, zh-mo, zh-tw, zh-hant-hk, zh-hant-mo, zh-hant-tw                                                                                                                                      |
 | Croate              | hr, hr-hr, hr-ba                                                                                                                                                                                      |
 | Tchèque                 | cs, cs-cz                                                                                                                                                                                             |
 | Danois                | da, da-dk                                                                                                                                                                                             |
 | Dari                  | prs, prs-af, prs-arab                                                                                                                                                                                 |
-| Hollandais                 | nl, nl-nl, nl-be                                                                                                                                                                                      |
+| Néerlandais                 | nl, nl-nl, nl-be                                                                                                                                                                                      |
 | Anglais               | en, en-au, en-ca, en-gb, en-ie, en-in, en-nz, en-sg, en-us, en-za, en-bz, en-hk, en-id, en-jm, en-kz, en-mt, en-my, en-ph, en-pk, en-tt, en-vn, en-zw, en-053, en-021, en-029, en-011, en-018, en-014 |
 | Estonien              | et, et-ee                                                                                                                                                                                             |
-| Philippin              | fil, fil-latn, fil-ph                                                                                                                                                                                 |
-| Finlandais               | fi, fi-fi                                                                                                                                                                                             |
+| Filipino              | fil, fil-latn, fil-ph                                                                                                                                                                                 |
+| Finnois               | fi, fi-fi                                                                                                                                                                                             |
 | Français                | fr, fr-be , fr-ca , fr-ch , fr-fr , fr-lu, fr-015, fr-cd, fr-ci, fr-cm, fr-ht, fr-ma, fr-mc, fr-ml, fr-re, frc-latn, frp-latn, fr-155, fr-029, fr-021, fr-011                                         |
 | Galicien              | gl, gl-es                                                                                                                                                                                             |
 | Géorgien              | ka, ka-ge                                                                                                                                                                                             |
 | Allemand                | de, de-at, de-ch, de-de, de-lu, de-li                                                                                                                                                                 |
 | Grec                 | el, el-gr                                                                                                                                                                                             |
-| Goudjarati              | gu, gu-in                                                                                                                                                                                             |
-| Haoussa                 | ha, ha-latn, ha-latn-ng                                                                                                                                                                               |
+| Goudjrati              | gu, gu-in                                                                                                                                                                                             |
+| Hausa                 | ha, ha-latn, ha-latn-ng                                                                                                                                                                               |
 | Hébreu                | he, he-il                                                                                                                                                                                             |
 | Hindi                 | hi, hi-in                                                                                                                                                                                             |
 | Hongrois             | hu, hu-hu                                                                                                                                                                                             |
@@ -70,7 +70,7 @@ Les codes de langue qui ne sont pas incluses ici ne sont pas pris en charge par 
 | Inuktitut (Latin)     | iu-cans, iu-latn, iu-latn-ca                                                                                                                                                                          |
 | Irlandais                 | ga, ga-ie                                                                                                                                                                                             |
 | isiXhosa              | xh, xh-za                                                                                                                                                                                             |
-| isiZulu               | zu, zu-za                                                                                                                                                                                             |
+| Zoulou               | zu, zu-za                                                                                                                                                                                             |
 | Italien               | it, it-it, it-ch                                                                                                                                                                                      |
 | Japonais              | ja, ja-jp                                                                                                                                                                                            |
 | Kannada               | kn, kn-in                                                                                                                                                                                             |
@@ -80,7 +80,7 @@ Les codes de langue qui ne sont pas incluses ici ne sont pas pris en charge par 
 | Kinyarwanda           | rw, rw-rw                                                                                                                                                                                             |
 | Kiswahili             | sw, sw-ke                                                                                                                                                                                             |
 | Konkani               | kok, kok-in                                                                                                                                                                                           |
-| Korean                | ko, ko-kr                                                                                                                                                                                             |
+| Coréen                | ko, ko-kr                                                                                                                                                                                             |
 | Kurde               | ku-arab, ku-arab-iq                                                                                                                                                                                   |
 | Kirghiz                | ky-kg, ky-cyrl                                                                                                                                                                                        |
 | Lao                   | lo, lo-la                                                                                                                                                                                             |
@@ -119,19 +119,19 @@ Les codes de langue qui ne sont pas incluses ici ne sont pas pris en charge par 
 | Tadjik (cyrillique)      | tg-arab, tg-cyrl, tg-cyrl-tj, tg-latn                                                                                                                                                                 |
 | Tamoul                 | ta, ta-in                                                                                                                                                                                             |
 | Tatar                 | tt-arab, tt-cyrl, tt-latn, tt-ru                                                                                                                                                                      |
-| Telugu                | te, te-in                                                                                                                                                                                             |
+| Télougou                | te, te-in                                                                                                                                                                                             |
 | Thaï                  | th, th-th                                                                                                                                                                                             |
-| Tigrinya              | ti, ti-et                                                                                                                                                                                             |
+| Tigrigna              | ti, ti-et                                                                                                                                                                                             |
 | Turc               | tr, tr-tr                                                                                                                                                                                             |
 | Turkmène               | tk-cyrl, tk-latn, tk-tm, tk-latn-tr, tk-cyrl-tr                                                                                                                                                       |
 | Ukrainien             | uk, uk-ua                                                                                                                                                                                             |
 | Ourdou                  | ur, ur-pk                                                                                                                                                                                             |
-| Ouïghour                | ug-arab, ug-cn, ug-cyrl, ug-latn                                                                                                                                                                      |
+| Ouïgour                | ug-arab, ug-cn, ug-cyrl, ug-latn                                                                                                                                                                      |
 | Ouzbek (latin)         | uz, uz-cyrl, uz-latn, uz-latn-uz                                                                                                                                                                      |
 | Vietnamien            | vi, vi-vn                                                                                                                                                                                             |
 | Gallois                 | cy, cy-gb                                                                                                                                                                                             |
 | Wolof                 | wo, wo-sn                                                                                                                                                                                             |
-| Yorouba                | yo-latn, yo-ng                                                                                                                                                                                        |
+| Yoruba                | yo-latn, yo-ng                                                                                                                                                                                        |
 
  
 

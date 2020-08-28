@@ -1,55 +1,55 @@
 ---
-title: Informations de référence sur les API de code confidentiel SSH Device Portal
-description: Découvrez comment supprimer par programmation tous les codes confidentiels SSH approuvés.
+title: Informations de référence sur l’API des pin SSH du portail d’appareil
+description: Découvrez comment supprimer tous les codes confidentiels de Secure Shell sécurisés (SSH) par programmation à l’aide de l’API REST du portail d’appareils Xbox/ext/App/sshpins.
 ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
-ms.openlocfilehash: 2c7dc6fab021c11c98276ee53af161bea25601a9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 307af4cdd4e998832f4a2fe7a8f874615fe10ad7
+ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57663354"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89043531"
 ---
-# <a name="ssh-pins-api-reference"></a>Informations de référence sur les codes confidentiels SSH API
-Vous pouvez supprimer tous les codes confidentiels SSH approuvés sur votre Kit de développement à l’aide de cette API REST.
+# <a name="ssh-pins-api-reference"></a>Informations de référence sur l’API pin SSH
+Vous pouvez supprimer tous les codes confidentiels SSH de confiance sur vos DevKit à l’aide de cette API REST.
 
 ## <a name="remove-trusted-ssh-pins"></a>Supprimer les codes confidentiels SSH approuvés
 
-**Demande**
+**Requête**
 
-Méthode      | URI de requête
+Méthode      | URI de demande
 :------     | :-----
-DELETE | /ext/app/sshpins
+Suppression | /ext/app/sshpins
 <br />
 **Paramètres d’URI**
 
-- Aucune
+- Aucun
 
-**En-têtes de demande**
+**En-têtes de requête**
 
-- Aucune
+- Aucun
 
 **Corps de la demande**   
 
-- Aucune
+- Aucun
 
 **Réponse**   
 
-- Aucune 
+- Aucun 
 
 **Code d’état**
 
 Cette API comporte les codes d’état attendus suivants.
 
-Code d’état HTTP      | Description
+Code d'état HTTP      | Description
 :------     | :-----
-204 | La demande d'effacement des codes confidentiels a réussi.
+204 | La demande d’effacement des codes confidentiels s’est déroulée correctement.
 4XX | Codes d’erreur
 5XX | Codes d’erreur
 
 <br />
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Xbox
 

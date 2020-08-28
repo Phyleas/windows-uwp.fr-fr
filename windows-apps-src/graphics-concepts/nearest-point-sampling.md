@@ -1,52 +1,52 @@
 ---
 title: Échantillonnage des points les plus proches
-description: Les applications ne sont pas tenues d’utiliser le filtrage de textures.
+description: En savoir plus sur l’utilisation de l’échantillonnage par point le plus proche dans Direct3D comme alternative au filtrage de texture pour le traitement des textures dans une application.
 ms.assetid: D7F88320-2C61-47E9-9B92-EC31D48DB079
 keywords:
 - Échantillonnage des points les plus proches
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 18703a75747e09436e7938e1229dda09cd457fa5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 090c148e05e664ffe0b027fe9af7eb69c11b22a9
+ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57589844"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89043491"
 ---
-# <a name="span-iddirect3dconceptsnearest-pointsamplingspannearest-point-sampling"></a><span id="direct3dconcepts.nearest-point_sampling"></span>Le plus proche de point d’échantillonnage
+# <a name="span-iddirect3dconceptsnearest-point_samplingspannearest-point-sampling"></a><span id="direct3dconcepts.nearest-point_sampling"></span>Échantillonnage des points les plus proches
 
 
-Les applications ne sont pas tenues d’utiliser le filtrage de textures. Direct3D peut être configuré pour calculer l’adresse des texels, qui souvent ne correspond pas à des entiers, et pour copier la couleur des texels avec l’adresse à valeur entière la plus proche. Ce processus est appelé *échantillonnage des points les plus proches*. L’échantillonnage des points les plus proches peut constituer un moyen simple et efficace de traiter les textures, si la taille de la texture est similaire à la taille de l’image de la primitive sur l’écran. Si ce n’est pas le cas, la texture doit être agrandie ou réduite. Une non-concordance entre la taille de texture et la taille de l’image de la primitive peut générer une image indistincte, crénelée ou floue.
+Les applications ne sont pas tenues d’utiliser le filtrage de texture. Direct3D peut être défini de manière à ce qu’il calcule l’adresse Texel, qui ne correspond souvent pas à des entiers, et copie la couleur de l’Texel avec l’adresse entière la plus proche. Ce processus est appelé *échantillonnage à point le plus proche*. L’échantillonnage à point le plus proche peut être tel que si la taille de la texture est similaire à la taille de l’image de la primitive sur l’écran. Si ce n’est pas le cas, la texture doit être agrandie ou minimisés. Le résultat de la non-correspondance des tailles de texture avec la taille de l’image primitive peut être une image composée, avec un alias ou flou.
 
-Recourez avec précaution à l’échantillonnage des points les plus proches, dans la mesure où cette opération peut parfois générer des artefacts graphiques quand la texture est échantillonnée au niveau de la limite entre 2 texels. Cette limite correspond à la position le long de la texture (u ou v), à laquelle le texel échantillonné passe d’un texel au suivant. Lorsque l’échantillonnage des points est utilisé, le système choisit un des deux texels échantillonnés. Selon qu’il s’agisse de l’un ou de l’autre, le résultat peut changer abruptement, dans la mesure où la limite est franchie. Cela peut créer des artefacts graphiques non souhaités dans la structure affichée. Lorsque le filtrage linéaire est utilisé, le texel obtenu est calculé à partir des deux texels adjacents et se fond entre eux, alors que l’index de texture traverse la limite.
+Utilisez l’échantillonnage à point le plus proche avec précaution, car il peut parfois provoquer des artefacts graphiques lorsque la texture est échantillonnée à la limite entre deux texels. Cette limite est la position le long de la texture (u ou v) à partir de laquelle le Texel échantillonné passe d’un Texel au suivant. Lorsque l’échantillonnage de point est utilisé, le système choisit un exemple de Texel ou l’autre, et le résultat peut changer brusquement d’une Texel à la Texel suivante lorsque la limite est franchie. Cet effet peut apparaître sous la forme d’artefacts graphiques indésirables dans la texture affichée. Lorsque le filtrage linéaire est utilisé, le Texel qui en résulte est calculé à partir des texels contigus et est lissé en douceur entre eux lorsque l’index de texture se déplace dans la limite.
 
-Cela peut se produire lors du mappage d’une structure très réduite sur un polygone très grand : une opération souvent appelée « grossissement ». Par exemple, lorsque la texture utilisée est similaire à un damier, l’échantillonnage des points les plus proches génère un damier plus grand, qui laisse apparaître distinctement les bords. A contrario, le filtrage de texture linéaire génère une image sur laquelle les couleurs du damier varient légèrement sur le polygone.
+Cet effet peut être observé lors du mappage d’une très petite texture sur un polygone de très grande taille : une opération souvent appelée grossissement. Par exemple, lorsque vous utilisez une texture qui ressemble à un damier, l’échantillonnage à point le plus proche se traduit par un damier plus large qui affiche des bords distincts. En revanche, le filtrage de texture linéaire génère une image où les couleurs des damiers varient harmonieusement sur le polygone.
 
-Dans la plupart des cas, les applications obtiennent des résultats optimaux en évitant dans la mesure du possible de recourir à l’échantillonnage des points les plus proches. Aujourd’hui, la majorité des composants matériels sont optimisés pour le filtrage linéaire, ce qui réduit le risque de dégradation des performances de votre application. Si l’effet souhaité nécessite absolument le recours à l’échantillonnage des points les plus proches, comme lors de l’utilisation des textures pour l’affichage de caractères de texte lisibles, votre application doit éviter à tout prix d’échantillonner les limites de texel, afin d’éviter toute conséquence fâcheuse. L’illustration suivante représente des exemples de ces artefacts.
+Dans la plupart des cas, les applications reçoivent les meilleurs résultats en évitant les échantillons les plus proches chaque fois que cela est possible. La majorité du matériel aujourd’hui étant optimisé pour le filtrage linéaire, votre application ne doit pas avoir de dégradation des performances. Si l’effet souhaité requiert l’utilisation de l’échantillonnage à point le plus proche (par exemple, lors de l’utilisation de textures pour afficher des caractères de texte lisibles), votre application doit être extrêmement prudente pour éviter l’échantillonnage aux limites de Texel, ce qui peut entraîner des effets indésirables. L’illustration suivante montre à quoi ces artefacts peuvent ressembler.
 
-![illustration d’une zone à six sections avec des lignes horizontales non continues dans les carrés du coin supérieur droit](images/ptrtfct.png)
+![illustration d’une zone à six sections avec lignes horizontales non continues dans les deux carrés en haut à droite](images/ptrtfct.png)
 
-Les deux carrés du coin supérieur droit du groupe présentent un aspect différent de leurs voisins ; ils sont pourvus de décalages diagonaux. Pour empêcher les artefacts graphiques de ce type, vous devez maîtriser les règles d’échantillonnage de textures Direct3D pour le filtrage des points les plus proches. Direct3D mappe une coordonnée de texture à virgule flottante compris entre \[0.0, 1.0\] (0.0 à 1.0 inclus) à une valeur d’espace de texel entier allant de \[ - 0,5, n - 0,5\], où n est le nombre de texels dans une donnée dimension sur la texture. L’index de texture obtenu est arrondi au nombre entier le plus proche. Ce mappage peut introduire des inexactitudes d’échantillonnage sur les limites de texels.
+Les deux carrés situés en haut à droite du groupe apparaissent différemment de leurs voisins, avec des décalages en diagonale. Pour éviter les artefacts graphiques comme ceux-ci, vous devez vous familiariser avec les règles d’échantillonnage de texture Direct3D pour le filtrage à point le plus proche. Direct3D mappe une coordonnée de texture à virgule flottante allant de \[ 0,0 1,0 \] (0,0 à 1,0, inclusivement) à une valeur d’espace de Texel d’entier comprise entre \[ -0,5, n-0,5 \] , où n est le nombre de texels dans une dimension donnée sur la texture. L’index de texture résultant est arrondi à l’entier le plus proche. Ce mappage peut introduire des imprécisions d’échantillonnage au niveau des limites de Texel.
 
-Pour prendre un exemple simple, imaginons une application qui génère des polygones avec le mode d’adressage de texture Wrap. À l’aide du mappage employé par Direct3D, l’index de texture u mappe comme illustré dans le diagramme suivant pour une texture présentant une largeur de 4 texels.
+Pour obtenir un exemple simple, Imaginez une application qui restitue des polygones avec le mode d’adressage de texture de retour à la ligne. À l’aide du mappage utilisé par Direct3D, l’index de texture u est mappé comme indiqué dans le diagramme suivant pour une texture avec une largeur de 4 texels.
 
-![coordonnées 0,0 et 1,0 du diagramme de texture à la limite entre les texels](images/ptsmpprb.png)
+![diagramme des coordonnées de texture 0,0 et 1,0 à la limite entre les texels](images/ptsmpprb.png)
 
-Les coordonnées de texture, 0.0 et 1.0 pour cette illustration, se trouvent exactement à la limite entre les texels. À l’aide de la méthode par laquelle Direct3D mappe les valeurs, la texture coordonne la plage comprise entre \[ - 0,5, 4 - 0,5\], où 4 est la largeur de la texture. Dans ce cas, le texel échantillonné est le texel 0 pour un index de texture de 1.0. Toutefois, si la coordonnée de la texture était légèrement inférieure à 1,0, le texel échantillonné sera le texel n, en lieu et place du texel 0.
+Les coordonnées de texture, 0,0 et 1,0 pour cette illustration, sont exactement à la limite entre les texels. À l’aide de la méthode par laquelle Direct3D mappe les valeurs, les coordonnées de texture sont comprises entre \[ -0,5, 4-0,5 \] , où 4 représente la largeur de la texture. Dans ce cas, le Texel échantillonné est le Texel 0 pour un index de texture de 1,0. Toutefois, si la coordonnée de texture était légèrement inférieure à 1,0, le Texel échantillonné est le Texel n plutôt que le Texel 0.
 
-Par conséquent, l’agrandissement d’une petite structure avec des coordonnées de texture exactement égales à 0,0 et 1,0 à l’aide du filtrage des points les plus proches sur un triangle aligné de la taille de l’écran génère des pixels dont la carte de texture est échantillonnée à la limite entre les texels. Toute inexactitude dans le calcul des coordonnées de texture, même minime, produit des artefacts à proximité des zones de l’image affichée correspondant aux bords de texels d’une carte de texture.
+En effet, l’agrandissement d’une petite texture à l’aide des coordonnées de texture de 0,0 et 1,0 exactement avec le filtrage à point le plus proche sur un triangle aligné sur l’espace à l’écran se traduit par des pixels pour lesquels la carte de texture est échantillonnée à la limite entre les texels. Toutes les inexactitudes dans le calcul des coordonnées de texture, mais peu volumineuses, entraînent des artefacts le long des zones de l’image rendue qui correspondent aux bords de Texel de la carte de texture.
 
-L’opération de mappage avec une exactitude parfaite de ces coordonnées de texture à virgule flottante sur des texels d’entiers s’avère difficile, chronophage et généralement inutile. La plupart des implémentations matérielles valorisent une approche itérative pour calculer des coordonnées de texture à chaque emplacement de pixel d’un triangle. Les approches itératives ont tendance à masquer ces inexactitudes, dans la mesure où ces erreurs sont accumulées de manière régulière durant l’itération.
+L’exécution de ce mappage de coordonnées de texture à virgule flottante à des texels d’entiers avec une précision parfaite est difficile, fastidieuse en termes de temps de calcul et n’est généralement pas nécessaire. La plupart des implémentations matérielles utilisent une approche itérative pour le calcul des coordonnées de texture à chaque emplacement de pixel au sein d’un triangle. Les approches itératives ont tendance à masquer ces imprécisions, car les erreurs sont accumulées uniformément pendant l’itération.
 
-Le rastériseur de référence Direct3D applique une approche d’évaluation directe pour calculer les index de calcul à chaque emplacement de pixel. L’évaluation directe diffère de l’approche itérative, en ce sens qu’une inexactitude dans l’opération présente une distribution d’erreurs plus aléatoire. En conséquence, les erreurs d’échantillonnage se produisant sur les limites peuvent être plus flagrantes, car le rastériseur de référence n’exécute pas cette opération avec une exactitude parfaite.
+Le rastériseur de référence Direct3D utilise une approche d’évaluation directe pour calculer les index de texture à chaque emplacement de pixel. L’évaluation directe diffère de l’approche itérative dans le cas où toute inexactitude dans l’opération présente une distribution d’erreurs plus aléatoire. Cela est dû au fait que les erreurs d’échantillonnage qui se produisent au niveau des limites peuvent être plus perceptibles, car le rastériseur de référence n’effectue pas cette opération avec une précision parfaite.
 
-La meilleure approche consiste à utiliser le filtrage des points les plus proches uniquement lorsque cela s’avère nécessaire. Lorsque vous devez recourir à cette méthode, nous vous recommandons de décaler légèrement les coordonnées de texture de la limite, ceci pour éviter les artefacts.
+La meilleure approche consiste à utiliser le filtrage de point le plus proche uniquement lorsque cela est nécessaire. Quand vous devez l’utiliser, il est recommandé de décaler légèrement les coordonnées de texture à partir des positions de limite pour éviter les artefacts.
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
-[Filtrage de texture](texture-filtering.md)
+[Filtrage de textures](texture-filtering.md)
 
  
 

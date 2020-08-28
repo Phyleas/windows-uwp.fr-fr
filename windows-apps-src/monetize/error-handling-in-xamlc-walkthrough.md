@@ -1,24 +1,24 @@
 ---
 ms.assetid: cf0d2709-21a1-4d56-9341-d4897e405f5d
-description: Découvrez comment intercepter les erreurs AdControl dans votre application.
 title: Procédure pas à pas pour gérer les erreurs dans XAML/C#
+description: Découvrez comment intercepter et gérer les erreurs d’un classe AdControl dans une application XAML/C# en suivant cette procédure pas à pas.
 ms.date: 02/18/2020
 ms.topic: article
-keywords: windows 10, uwp, annonces publicitaires, publicité, gestion des erreurs, XAML, c#
+keywords: 'Windows 10, UWP, ADS, publicité, gestion des erreurs, XAML, c #'
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c856322c4940e5bbb28cb17c6da7fa49d4c3465
-ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
+ms.openlocfilehash: 4526f44c1a38af79886a7404eb932416a4414f77
+ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77507123"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89043501"
 ---
 # <a name="error-handling-in-xamlc-walkthrough"></a>Procédure pas à pas pour gérer les erreurs dans XAML/C#
 
 >[!WARNING]
 > Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
-Cette procédure pas à pas montre comment intercepter les erreurs liées à aux publicités dans votre application. Cette procédure pas à pas utilise un [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) pour afficher une bannière, mais les concepts généraux s’appliquent également aux spots publicitaires et aux publicités natives.
+Cette procédure pas à pas montre comment intercepter des erreurs liées à Active Directory dans votre application. Cette procédure pas à pas utilise un [classe AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) pour afficher une bannière publicitaire, mais les concepts généraux qu’il contient s’appliquent également aux publicités interstitielles et aux publicités natives.
 
 Ces exemples partent du principe que vous disposez d’une application XAML/C# qui contient un **AdControl**. Pour obtenir des instructions pas à pas qui montrent comment ajouter un **AdControl** à votre application, voir [AdControl en XAML et .NET](adcontrol-in-xaml-and--net.md). 
 

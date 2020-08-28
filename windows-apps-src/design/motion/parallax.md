@@ -1,6 +1,6 @@
 ---
-Description: Utilisez le contrôle ParallaxView pour ajouter une profondeur et un déplacement à votre application.
-title: Utilisez parallaxe pour ajouter une profondeur et un déplacement à votre application.
+title: Utiliser l’effet de parallaxe pour ajouter de la profondeur et un déplacement à votre application
+description: Découvrez comment utiliser le contrôle ParallaxView dans une application UWP pour créer un effet visuel où les éléments plus proches de la visionneuse se déplacent plus rapidement que les éléments en arrière-plan.
 ms.assetid: ''
 label: Parallax View
 template: detail.hbs
@@ -12,12 +12,12 @@ design-contact: conrwi
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d659683d6871d9d48fd17b73c74477e7bd03e258
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 5ded09e2de6e3aafa0108d3f7ef66808cb02bfd8
+ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970494"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89043571"
 ---
 # <a name="parallax"></a>Parallaxe
 
@@ -45,7 +45,7 @@ La parallaxe est un effet visuel où les éléments plus proches de la visionneu
 
 ## <a name="parallax-and-the-fluent-design-system"></a>Parallaxe et le système de conception Fluent
 
- Le système Fluent Design vous aide à créer une interface utilisateur moderne et claire, qui incorpore de la lumière, de la profondeur, du mouvement, des matériaux et une mise à l’échelle. Parallaxe est un composant du système de conception Fluent qui ajoute des mouvements, des détails et une mise à l’échelle à votre application. Pour plus d’informations, consultez la [vue d’ensemble de la conception Fluent](/windows/apps/fluent-design-system).
+ Le système Fluent Design vous aide à créer une interface utilisateur moderne et claire qui incorpore de la lumière, de la profondeur, du mouvement, des matières et une mise à l’échelle. Parallaxe est un composant du système de conception Fluent qui ajoute des mouvements, des détails et une mise à l’échelle à votre application. Pour plus d’informations, consultez [Vue d’ensemble de Fluent Design](/windows/apps/fluent-design-system).
 
 ## <a name="how-it-works-in-a-user-interface"></a>Fonctionnement dans une interface utilisateur
 
@@ -125,4 +125,4 @@ Pour obtenir la liste complète des méthodes de personnalisation de la parallax
 
 - [ParallaxView, classe](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview) 
 - [Fluent Design pour UWP](/windows/apps/fluent-design-system)
-- [Science du système : conception et profondeur Fluent](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
+- [Science in the System: Fluent Design and Depth](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
