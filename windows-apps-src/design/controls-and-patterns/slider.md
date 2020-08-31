@@ -1,6 +1,6 @@
 ---
-Description: Permet à l’utilisateur de définir une valeur comprise dans une plage donnée.
 title: Curseurs
+description: Découvrez comment implémenter un contrôle Slider de bibliothèque d’interface utilisateur Windows qui permet à l’utilisateur d’effectuer une sélection parmi une plage de valeurs en déplaçant un contrôle curseur de position le long d’une ligne.
 ms.assetid: 7EC7EA33-BE7E-4FD5-B205-B8FA7B729ACC
 label: Sliders
 template: detail.hbs
@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a1de8437c5b463b13e3adb8c4d7eb7161663f4d6
-ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
+ms.openlocfilehash: a51bfb262e81668d167a380a9f3572011dbf7e2c
+ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997966"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88943099"
 ---
 # <a name="sliders"></a>Curseurs
 

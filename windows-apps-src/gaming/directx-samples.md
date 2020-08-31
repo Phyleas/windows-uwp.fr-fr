@@ -1,17 +1,17 @@
 ---
 title: Exemples DirectX
-description: Exemples de jeux DirectX.
+description: Procurez-vous des exemples de code pour le développement d’un jeu DirectX 3D de base et un jeu qui fonctionne sur différents types d’appareils.
 ms.assetid: a54273f8-1e91-4d02-8762-6eab2f00f7b0
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Game, DirectX, exemples, 3D
 ms.localizationpriority: medium
-ms.openlocfilehash: 94c8b8051211d5f29bc32215b75d49e41feee713
-ms.sourcegitcommit: 20969781aca50738792631f4b68326f9171a3980
+ms.openlocfilehash: dc2b3dd7fd1df22ff5b7f795ca8b82dbe6e1e874
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85409528"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89053679"
 ---
 # <a name="directx-samples"></a>Exemples DirectX
 

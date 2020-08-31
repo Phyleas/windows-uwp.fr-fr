@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: e7dee32d-3756-430d-a026-32c1ee288a85
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ff826be0f5b0b8e9a6723fbb1593663f1748c3d
-ms.sourcegitcommit: d708ac4ec4fac0135dafc0d8c5161ef9fd945ce7
+ms.openlocfilehash: 7d41e49f599e1fe5e835443f7c8cb732e625491e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85069469"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168593"
 ---
 # <a name="bluetooth-developer-faq"></a>FAQ sur le Bluetooth pour les développeurs
 
@@ -22,7 +22,7 @@ Il y a plusieurs discussions en ligne sur cette rubrique générale. nous allons
 
 ### <a name="bluetooth-le-windowsdevicesbluetoothgenericattributeprofile"></a>Bluetooth LE (Windows. Devices. Bluetooth. GenericAttributeProfile)
 
-Utilisez les API du GATT lorsque vous communiquez avec un appareil qui prend en charge Bluetooth Low Energy. Si votre cas d’utilisation est peu fréquent, une faible bande passante ou une alimentation faible, Bluetooth Low Energy est la solution. L’espace de noms principal qui comprend cette fonctionnalité est [Windows. Devices. Bluetooth. GenericAttributeProfile](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile). 
+Utilisez les API du GATT lorsque vous communiquez avec un appareil qui prend en charge Bluetooth Low Energy. Si votre cas d’utilisation est peu fréquent, une faible bande passante ou une alimentation faible, Bluetooth Low Energy est la solution. L’espace de noms principal qui comprend cette fonctionnalité est [Windows. Devices. Bluetooth. GenericAttributeProfile](/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile). 
 
 **Quand ne pas utiliser Bluetooth LE**
 - Large bande passante, scénarios à fréquence élevée. Si vous avez besoin de conserver constamment une synchronisation avec de grandes quantités de données, envisagez d’utiliser Bluetooth Classic ou peut-être même WiFi. 
@@ -33,7 +33,7 @@ Les API RFCOMM offrent aux développeurs un socket pour effectuer une communicat
 
 **Quand ne pas utiliser Bluetooth RFCOMM** 
 - Fonctionnalité. Le protocole Bluetooth GATT a une commande spécifique pour cela, ce qui se traduira par un temps de réponse beaucoup moins important et des temps de réponse plus rapides. 
-- Vérification de la détection de proximité ou de présence. Il est préférable d’utiliser les [API de publication](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement) et de se connecter via Bluetooth le. 
+- Vérification de la détection de proximité ou de présence. Il est préférable d’utiliser les [API de publication](/uwp/api/windows.devices.bluetooth.advertisement) et de se connecter via Bluetooth le. 
 
 
 ## <a name="why-does-my-bluetooth-le-device-stop-responding-after-a-disconnect"></a>Pourquoi mon périphérique Bluetooth LE ne répond plus après une déconnexion ?
@@ -63,7 +63,7 @@ Dans cet exemple, nous générons le jumelage avec un périphérique sans chiffr
 
 Vous n’avez pas besoin de coupler des appareils avant de les utiliser si vous tirez parti de Bluetooth RFCOMM (Classic). À compter de Windows 10 version 1607, vous pouvez simplement interroger les appareils à proximité et vous y connecter. L’[exemple de discussion RFCOMM](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/BluetoothRfcommChat) mis à jour présente cette fonctionnalité. 
 
-**(14393 et versions antérieures)** Cette fonctionnalité n’est pas disponible pour l’énergie Bluetooth faible (client GATT). vous devrez donc toujours effectuer une paire via la page paramètres ou les API [Windows. Devices. Enumeration](https://docs.microsoft.com/uwp/api/windows.devices.enumeration) pour accéder à ces appareils.
+**(14393 et versions antérieures)** Cette fonctionnalité n’est pas disponible pour l’énergie Bluetooth faible (client GATT). vous devrez donc toujours effectuer une paire via la page paramètres ou les API [Windows. Devices. Enumeration](/uwp/api/windows.devices.enumeration) pour accéder à ces appareils.
 
 **(15030 et versions ultérieures)** Le couplage des appareils Bluetooth n’est plus nécessaire. Utilisez les nouvelles API Async comme GetGattServicesAsync et GetCharacteristicsAsync afin d’interroger l’état actuel de l’appareil distant. Pour plus d’informations, consultez les [documents du client](gatt-client.md) . 
 

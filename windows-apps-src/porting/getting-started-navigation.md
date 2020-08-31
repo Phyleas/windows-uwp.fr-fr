@@ -1,17 +1,17 @@
 ---
 title: 'Prise en main : Navigation'
-description: 'Prise en main : Navigation'
+description: Découvrez comment ajouter la navigation entre les pages à une application Windows 10 qui a plusieurs vues à l’aide de la classe Frame plateforme Windows universelle (UWP).
 ms.assetid: F4DF5C5F-C886-4483-BBDA-498C4E2C1BAF
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 22d2f73ba6a14ace1319285ca436db4738f84548
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 3d26bf6e63c61207142b8945c48f9925a7459844
+ms.sourcegitcommit: 45dec3dc0f14934b8ecf1ee276070b553f48074d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493294"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89094686"
 ---
 # <a name="getting-started-navigation"></a>Bien démarrer : Navigation
 

@@ -1,45 +1,45 @@
 ---
 title: Nouveautés de la plateforme UWP sur Xbox One
-description: Cette rubrique présente les nouvelles fonctionnalités des applications UWP sur Xbox One.
+description: Consultez les nouvelles fonctionnalités, les mises à jour des fonctionnalités existantes et les correctifs de bogues pour les développeurs dans la dernière mise à jour de UWP sur Xbox One.
 ms.date: 03/29/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: fe63c527-8f06-43a5-868f-de909f5664b3
 ms.localizationpriority: medium
-ms.openlocfilehash: 27810fb850a54b70e620f06ea033b7c362792bfc
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 937d13c8764cda2f0a4592f6ca3a78d3b35a9529
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372961"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168953"
 ---
 # <a name="whats-new-for-developers-in-the-latest-update-of-uwp-on-xbox-one"></a>Nouveautés de la dernière mise à jour de la plateforme UWP sur Xbox One pour les développeurs
 
-La dernière version de la plateforme Windows universelle (UWP) sur Xbox One contient les nouvelles fonctionnalités, mises à jour de fonctionnalités et résolutions de bogues suivantes.
+La dernière mise à jour de plateforme Windows universelle (UWP) sur Xbox 1 contient les nouvelles fonctionnalités suivantes, les mises à jour des fonctionnalités existantes et les correctifs de bogues.
 
-## <a name="x86-apps-and-games-are-no-longer-supported-on-xbox"></a>Les jeux et applications x86 ne sont plus pris en charge sur Xbox  
-Xbox ne prend plus en charge le développement d’applications x86 ni les soumissions d’applications x86 dans le Store.
+## <a name="x86-apps-and-games-are-no-longer-supported-on-xbox"></a>les applications et les jeux x86 ne sont plus pris en charge sur Xbox  
+Xbox ne prend plus en charge le développement d’applications x86 ou les envois d’application x86 au magasin.
 
-## <a name="apps-can-now-support-navigating-back-to-the-previous-app"></a>Les applications prennent désormais en charge la navigation vers l’application précédente 
-Les applications UWP sur Xbox One prennent désormais en charge la navigation vers l’application précédente. Pour ce faire, abonnez-vous à l’événement [**Windows.UI.Core.SystemNavigationManager.BackRequested**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.SystemNavigationManager) et réglez la propriété **Handled** sur **false** (faux) dans votre gestionnaire d’événements.
+## <a name="apps-can-now-support-navigating-back-to-the-previous-app"></a>Les applications peuvent désormais prendre en charge la navigation vers l’application précédente 
+UWP sur Xbox une application peut désormais prendre en charge la navigation vers l’application précédente. Pour ce faire, abonnez-vous à l’événement [**Windows.UI.Core.SystemNavigationManager. Rerequested**](/uwp/api/Windows.UI.Core.SystemNavigationManager) et affectez à la propriété **Handled** la **valeur false** dans votre gestionnaire d’événements.
 
 > [!NOTE]
-> Pour des raisons de compatibilité, cette fonctionnalité n’est disponible que pour les applications créées avec la version la plus récente d’UWP sur Xbox One. 
+> Pour des raisons de compatibilité, cette fonctionnalité est disponible uniquement pour les applications qui sont créées avec la version la plus récente de UWP sur Xbox One. 
 
-## <a name="dev-home-is-now-the-default-home-experience-on-development-consoles"></a>Accueil du développeur (Dev Home) constitue dorénavant l’accueil par défaut sur les consoles de développement
-Les consoles de développement chargent désormais l’Accueil du développeur (Dev Home) par défaut. Ainsi, vous accédez directement à la zone de travail en évitant une série fastidieuse de clics à partir de l’écran d’accueil de la vente au détail. L’Accueil du développeur intègre maintenant une action rapide permettant de lancer l’écran d’accueil de la vente au détail. En outre, un nouveau paramètre vous permet de charger par défaut l’écran d’accueil de la vente au détail. 
+## <a name="dev-home-is-now-the-default-home-experience-on-development-consoles"></a>La page d’hébergement dev est désormais l’expérience d’utilisation par défaut sur les consoles de développement
+Les consoles de développement lancent désormais la page d’hébergement dev comme expérience d’utilisation par défaut. Cela vous permet de travailler sans avoir à cliquer dans l’écran d’accueil de la vente au détail. La page d’accueil dev comprend désormais une action rapide pour lancer l’écran d’accueil de la vente au détail. En outre, un nouveau paramètre vous permet de faire de la vente au détail l’expérience par défaut. 
 
-## <a name="new-dev-home-user-interface"></a>Nouvelle interface utilisateur Accueil du développeur
-L’interface utilisateur Accueil du développeur comprend désormais les améliorations de productivité suivantes :
- - Les données importantes telles que l’adresse IP et la version de récupération s’affichent dorénavant en haut de l’écran pour une meilleure visibilité. 
- - L’Accueil du développeur dispose maintenant d’une interface utilisateur à onglets regroupant les outils par ensembles logiques, ce qui accélère la navigation.
- - Les boutons d’action rapide du premier onglet de l’Accueil du développeur permettent d’accéder rapidement aux actions les plus courantes. 
+## <a name="new-dev-home-user-interface"></a>Nouvelle interface utilisateur de développement
+L’interface utilisateur de dev Developer comprend désormais les améliorations de productivité suivantes :
+ - Les données importantes, telles que l’adresse IP et la version de récupération, s’affichent désormais en haut de l’écran pour la visibilité. 
+ - La page d’hébergement dev dispose désormais d’une interface utilisateur avec onglets qui regroupe les outils en jeux logiques, ce qui permet de naviguer rapidement.
+ - Les boutons d’action rapide sur le premier onglet de la page d’hébergement dev permettent un accès rapide aux actions les plus couramment utilisées. 
 
 ## <a name="wdp-for-xbox-enhancements"></a>Améliorations de WDP pour Xbox
-Windows Device Portal (WDP) intègre désormais la prise en charge de paramètres supplémentaires de la console. 
+Le portail d’appareils Windows (WDP) comprend désormais une prise en charge supplémentaire des paramètres de la console. 
 
-## <a name="you-can-now-switch-the-type-of-your-uwp-title-between-app-and-game"></a>Vous pouvez maintenant commuter le type de votre titre UWP entre « Application » et « Jeu »
-Le fait de commuter le type de votre titre UWP entre « Application » et « Jeu » permet de tester les scénarios du jeu sans avoir à le publier dans le Windows Store. Dans l’Accueil du développeur, sélectionnez l’application dans le volet **Jeux et applications**, appuyez sur le bouton Affichage du contrôleur, sélectionnez **Détails de l’application** et choisissez le type « Application » ou « Jeu ».
+## <a name="you-can-now-switch-the-type-of-your-uwp-title-between-app-and-game"></a>Vous pouvez maintenant basculer le type de votre titre UWP entre « application » et « Game »
+Le passage du type de votre titre UWP entre « application » et « Game » vous permet de tester des scénarios de jeux sans les publier dans le Windows Store. Dans Developer orig, sélectionnez l’application dans le volet **jeux & Apps** , appuyez sur le bouton afficher du contrôleur, sélectionnez Détails de l' **application** , puis modifiez le type en « application » ou « jeu ».
 
 ## <a name="see-also"></a>Voir aussi
 - [Problèmes connus](known-issues.md)

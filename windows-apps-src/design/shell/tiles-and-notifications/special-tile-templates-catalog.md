@@ -7,34 +7,34 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 739abc139eabc9f773938f55c15d3e18aaf562ce
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 4368c3d504b01a48b05fcaffdb01a71b916d9d43
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365963"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169303"
 ---
 # <a name="special-tile-templates"></a>Modèles de vignette spéciaux
  
 
-Les modèles de vignette spéciaux sont des modèles uniques qui sont animés, ou qui vous permettent simplement d’effectuer des opérations qui ne sont pas possibles avec des vignettes adaptatives. Chaque modèle de vignette spéciale a été spécifiquement conçu pour Windows 10, sauf pour le modèle de vignette sous forme d’icône, un modèle classique de spécial qui a été mis à jour pour Windows 10. Cet article couvre trois modèles de vignette spéciale : Sous forme d’icône, Photos et les personnes.
+Les modèles de vignette spéciaux sont des modèles uniques qui sont animés, ou qui vous permettent simplement d’effectuer des opérations qui ne sont pas possibles avec des vignettes adaptatives. Chaque modèle de vignette spécial a été spécifiquement conçu pour Windows 10, sauf pour le modèle de vignette Icônes, modèle spécial classique qui a été mis à jour pour Windows 10. Cet article traite des trois modèles de vignette spéciaux : Icônes, Photos et Contacts.
 
 ## <a name="iconic-tile-template"></a>Modèle de vignette Icônes
 
 
-Le modèle sous forme d’icône (également connu sous le nom de modèle « IconWithBadge ») vous permet d’afficher une petite image au centre de la vignette. Windows 10 prend en charge le modèle de téléphone et tablette/bureau.
+Le modèle sous forme d’icône (également connu sous le nom de modèle « IconWithBadge ») vous permet d’afficher une petite image au centre de la vignette. Windows 10 prend en charge le modèle à la fois sur les téléphones et sur les tablettes/ordinateurs de bureau.
 
 ![Vignettes de courrier petites et moyennes](images/iconic-template-mail-2sizes.png)
 
 ### <a name="how-to-create-an-iconic-tile"></a>Comment créer une vignette Icônes
 
-Les étapes suivantes expliquent tout ce que vous devez savoir pour créer une vignette sous forme d’icône pour Windows 10. D’un point de vue général, vous avez besoin de la ressource de votre image d’icône, puis vous envoyez une notification à la vignette à l’aide du modèle Icônes, et enfin vous envoyez une notification de badge qui fournit le numéro devant être affiché sur la vignette.
+Les étapes suivantes couvrent tout ce que vous devez savoir pour créer une vignette Icônes pour Windows 10. D’un point de vue général, vous avez besoin de la ressource de votre image d’icône, puis vous envoyez une notification à la vignette à l’aide du modèle Icônes, et enfin vous envoyez une notification de badge qui fournit le numéro devant être affiché sur la vignette.
 
 ![Flux de développeur de la vignette Icônes](images/iconic-template-dev-flow.png)
 
-**Étape 1 : Créer vos ressources d’image au format PNG**
+**Étape 1 : créez vos ressources d’image au format PNG**
 
-Créez les ressources d’icônes pour la vignette et placez-les dans votre projet avec vos autres ressources. Créez une icône d’au moins 200 x 200 pixels, qui peut être utilisée pour les petites et moyennes vignettes sur le téléphone et le bureau. Pour une meilleure expérience utilisateur, créez une icône pour chaque taille. Aucun remplissage n’est nécessaire sur ces ressources. Voir les détails de dimensionnement dans l’image présentée plus bas.
+Créez les ressources d’icônes pour la vignette et placez-les dans votre projet avec vos autres ressources. Créez une icône d’au moins 200 x 200 pixels, qui peut être utilisée pour les petites et moyennes vignettes sur le téléphone et le bureau. Pour une meilleure expérience utilisateur, créez une icône pour chaque taille. Aucun remplissage n’est nécessaire sur ces éléments multimédias. Voir les détails de dimensionnement dans l’image présentée plus bas.
 
 Enregistrez les ressources d’icônes au format PNG avec une transparence. Sur Windows Phone, chaque pixel non transparent s’affiche en blanc (RVB 255, 255, 255). Pour plus de cohérence et de simplicité, utilisez également le blanc pour les icônes du bureau.
 
@@ -54,13 +54,13 @@ Pour les ressources non carrées, un centrage horizontal/vertical automatique et
 
 ![Dimensionnement des ressources non carrées, avec et sans badge](images/assetguidance26b.png)
 
-**Étape 2 : Créer votre mosaïque de base**
+**Étape 2 : créez votre vignette de base**
 
 Vous pouvez utiliser le modèle Icônes sur les vignettes principales et secondaires. Si vous l’utilisez sur une vignette secondaire, vous devez tout d’abord créer la vignette secondaire ou utiliser une vignette secondaire déjà épinglée. Les vignettes principales sont implicitement épinglées et peuvent toujours recevoir des notifications.
 
-**Étape 3 : Envoyer une notification à votre vignette**
+**Étape 3 : envoyez une notification à votre vignette**
 
-Bien que cette étape puisse varier si la notification est envoyée localement ou par transmission des messages par le serveur, la charge utile XML que vous envoyez reste identique. Pour envoyer une notification à une vignette locale, créez un [**TileUpdater**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater) pour votre vignette (vignette principale ou secondaire), puis envoyez une notification à la vignette qui utilise le modèle de vignette Icônes comme illustré ci-dessous. Dans l’idéal, vous devez également inclure des liaisons pour des tailles de vignettes grandes et larges à l’aide de [modèles de vignette adaptative](create-adaptive-tiles.md).
+Bien que cette étape puisse varier si la notification est envoyée localement ou par transmission des messages par le serveur, la charge utile XML que vous envoyez reste identique. Pour envoyer une notification de vignette locale, créez un [**TileUpdater**](/uwp/api/Windows.UI.Notifications.TileUpdater) pour votre vignette (vignette principale ou secondaire), puis envoyez une notification à la vignette qui utilise le modèle de vignette sous forme, comme indiqué ci-dessous. Dans l’idéal, vous devez également inclure des liaisons pour des tailles de vignettes grandes et larges à l’aide de [modèles de vignette adaptative](create-adaptive-tiles.md).
 
 Voici un exemple de code pour la charge utile XML :
 
@@ -82,9 +82,9 @@ Voici un exemple de code pour la charge utile XML :
 
 Cette charge utile XML du modèle de vignette Icônes utilise un élément d’image qui pointe vers l’image que vous avez créée à l’étape 1. Votre vignette est maintenant prête à afficher le badge en regard de votre icône ; il ne reste plus qu’à envoyer des notifications de badge.
 
-**Étape 4 : Envoyer une notification de badge à votre vignette**
+**Étape 4 : envoyez une notification de badge à votre vignette**
 
-Comme à l’étape 3, cette étape peut varier si la notification est envoyée localement ou par transmission des messages par le serveur. Cependant, la charge utile XML que vous envoyez reste identique. Pour envoyer une notification de badge locale, créez un [**BadgeUpdater**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.BadgeUpdater) pour votre vignette (vignette principale ou secondaire), puis envoyez une notification de badge avec la valeur souhaitée (ou effacez le badge).
+Comme à l’étape 3, cette étape peut varier si la notification est envoyée localement ou par transmission des messages par le serveur. Cependant, la charge utile XML que vous envoyez reste identique. Pour envoyer une notification par badge locale, créez un [**BadgeUpdater**](/uwp/api/Windows.UI.Notifications.BadgeUpdater) pour votre vignette (vignette principale ou secondaire), puis envoyez une notification par badge avec la valeur souhaitée (ou effacez le badge).
 
 Voici un exemple de code pour la charge utile XML :
 
@@ -94,9 +94,9 @@ Voici un exemple de code pour la charge utile XML :
 
 Le badge de la vignette se met à jour en conséquence.
 
-**Étape 5 : Vue d’ensemble**
+**Étape 5 : synthèse de tous les éléments**
 
-L’image suivante illustre la façon dont les différentes API et charges utiles sont associées à chacun des aspects du modèle de vignette Icônes. Une [notification par vignette](https://docs.microsoft.com/previous-versions/windows/apps/hh779724(v=win.10)) (qui contient les éléments &lt;binding&gt;) est utilisée pour spécifier le modèle Icônes et les ressources d’image ; une [notification de badge](https://docs.microsoft.com/previous-versions/windows/apps/hh779719(v=win.10)) spécifie la valeur numérique, et les propriétés de vignette contrôlent le nom d’affichage de la vignette, la couleur et plus encore.
+L’image suivante illustre la façon dont les différentes API et charges utiles sont associées à chacun des aspects du modèle de vignette Icônes. Une [notification par vignette](/previous-versions/windows/apps/hh779724(v=win.10)) (qui contient les éléments &lt;binding&gt;) est utilisée pour spécifier le modèle Icônes et les ressources d’image ; une [notification de badge](/previous-versions/windows/apps/hh779719(v=win.10)) spécifie la valeur numérique, et les propriétés de vignette contrôlent le nom d’affichage de la vignette, la couleur et plus encore.
 
 ![API et charges utiles associées au modèle de vignette Icônes](images/iconic-template-properties-info.png)
 
@@ -184,7 +184,7 @@ TileContent content = new TileContent()
 ## <a name="people-tile-template"></a>Modèle de vignette Contacts
 
 
-L’application Contacts dans Windows 10 utilise un modèle de vignette spécial qui affiche une collection d’images dans des cercles qui peuvent glisser verticalement ou horizontalement sur la vignette. Ce modèle de vignette est disponible depuis Windows 10 Build 10572, et tout le monde n’hésitez pas à utiliser dans leur application.
+L’application Contacts dans Windows 10 utilise un modèle de vignette spécial qui affiche une collection d’images dans des cercles qui peuvent glisser verticalement ou horizontalement sur la vignette. Ce modèle de vignette est disponible depuis Windows 10 Build 10572 et tout le monde est invité à l’utiliser dans son application.
 
 Le modèle de vignette Contacts fonctionne sur les vignettes des tailles suivantes :
 
@@ -261,9 +261,9 @@ TileContent content = new TileContent()
 
 Pour une expérience utilisateur optimale, nous vous recommandons d’indiquer le nombre de photos suivant pour chaque taille de vignette :
 
--   Vignette moyenne : 9 photos
--   Vignette large : 15 photos
--   Grande vignette : 20 photos
+-   Vignette moyenne : 9 photos
+-   Vignette large : 15 photos
+-   Grande vignette : 20 photos
 
 Avec ce nombre de photos, cela permet de garder quelques cercles vides, et la vignette ne sera pas trop occupée visuellement. N’hésitez pas à modifier le nombre de photos pour obtenir l’apparence qui correspond le mieux à vos besoins.
 
@@ -275,12 +275,8 @@ Pour envoyer la notification, voir [Choisir une méthode de remise de notificati
 * [Exemple de code complet sur GitHub](https://github.com/WindowsNotifications/quickstart-people-tile-template)
 * [Bibliothèque de notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 * [Vignettes, badges et notifications](index.md)
-* [Créer des vignettes ADAPTATIF](create-adaptive-tiles.md)
+* [Créer des vignettes adaptatives](create-adaptive-tiles.md)
 * [Schéma de contenu de vignette](../tiles-and-notifications/tile-schema.md)
  
 
  
-
-
-
-

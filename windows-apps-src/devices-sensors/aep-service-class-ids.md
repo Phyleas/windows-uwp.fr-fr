@@ -6,22 +6,22 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0af0e8b17578c2ef3cd3fb0a466446b06f8e4a00
-ms.sourcegitcommit: e51f9489d8c977c3498afb1a75c91f96ac3a642b
+ms.openlocfilehash: 025db9ae6ed3b7ab2c532ddc140fd5279db58777
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83854735"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168613"
 ---
 # <a name="aep-service-class-ids"></a>ID de classe de service AEP
 
 Les services de point de terminaison d’association (AEP) offrent un contrat de programmation pour les services qu’un appareil prend en charge sur un protocole donné. Plusieurs de ces services ont des identificateurs établis qui doivent être utilisés lors de leur référencement. Ces contrats sont identifiés à l’aide de la propriété **System.Devices.AepService.ServiceClassId**. Cette rubrique répertorie plusieurs ID de classe de service AEP bien connus. L’ID de classe de service AEP est également applicable aux protocoles dont l’ID de classe est personnalisé.
 
-Un développeur d’application doit utiliser des filtres de syntaxe de recherche avancée (AQS) basés sur les ID de classe afin de limiter les requêtes aux services AEP qu’ils prévoient d’utiliser. Cela limite les résultats de requête aux services pertinents et augmente considérablement les performances, l’autonomie de la batterie et la qualité de service de l’appareil. Par exemple, une application peut se servir de ces ID de classe de service pour utiliser un appareil tel qu’un synchroniseur Miracast ou un appareil multimédia de rendu numérique (DMR) DLNA. Pour plus d’informations sur l’interaction entre les appareils et les services, voir [**DeviceInformationKind**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind).
+Un développeur d’application doit utiliser des filtres de syntaxe de recherche avancée (AQS) basés sur les ID de classe afin de limiter les requêtes aux services AEP qu’ils prévoient d’utiliser. Cela limite les résultats de requête aux services pertinents et augmente considérablement les performances, l’autonomie de la batterie et la qualité de service de l’appareil. Par exemple, une application peut se servir de ces ID de classe de service pour utiliser un appareil tel qu’un synchroniseur Miracast ou un appareil multimédia de rendu numérique (DMR) DLNA. Pour plus d’informations sur l’interaction entre les appareils et les services, voir [**DeviceInformationKind**](/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind).
 
 > **API importantes**
 >
-> - [**Windows.Devices.Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration)
+> - [**Windows.Devices.Enumeration**](/uwp/api/Windows.Devices.Enumeration)
 
 ## <a name="bluetooth-and-bluetooth-le-services"></a>Services Bluetooth et Bluetooth LE
 
@@ -110,7 +110,7 @@ En règle générale, tous les services WSD ont leur nom haché dans un GUID à 
 
 ## <a name="aqs-sample"></a>Exemple AQS
 
-Cette AQS filtre tous les objets **AssociationEndpointService** UPnP qui prennent en charge la commande NUMÉROTER. Dans ce cas, le paramètre [**DeviceInformationKind**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind) est défini sur **AsssociationEndpointService**.
+Cette AQS filtre tous les objets **AssociationEndpointService** UPnP qui prennent en charge la commande NUMÉROTER. Dans ce cas, le paramètre [**DeviceInformationKind**](/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind) est défini sur **AsssociationEndpointService**.
 
 ``` syntax
 System.Devices.AepService.ProtocolId:="{0e261de4-12f0-46e6-91ba-428607ccef64}" AND

@@ -1,43 +1,43 @@
 ---
-Description: Découvrez comment utiliser l'Écouteur de notification pour accéder à toutes les notifications de l’utilisateur.
+Description: Découvrez comment utiliser l’écouteur de notification pour accéder à toutes les notifications de l’utilisateur.
 title: Écouteur de notification
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
 label: Chaseable tiles
 template: detail.hbs
 ms.date: 06/13/2017
 ms.topic: article
-keywords: windows 10, uwp, écouteur de notification, usernotificationlistener, documentation, notifications d’accès
+keywords: Windows 10, UWP, écouteur de notifications, usernotificationlistener, documentation, notifications d’accès
 ms.localizationpriority: medium
-ms.openlocfilehash: d6c18740cbba0ea037440300edbe2d7ba4fd116e
-ms.sourcegitcommit: 1d04910a6bbfcaa985d2074caf8f898c35eab7ab
+ms.openlocfilehash: dc2afb36337439cd115273cd9df8ee1cb2eb3741
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65933162"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169183"
 ---
-# <a name="notification-listener-access-all-notifications"></a>Écouteur de notification : Accéder à toutes les notifications
+# <a name="notification-listener-access-all-notifications"></a>Écouteur de notification : accéder à toutes les notifications
 
-L'Écouteur de notification donne accès à toutes les notifications d'un utilisateur. Les montres intelligentes et d'autres appareils portables peuvent utiliser l’écouteur de notification pour envoyer les notifications du téléphone à l’appareil portable. Applications de la domotique peuvent utiliser écouteur de notification pour effectuer des actions spécifiques lors de la réception des notifications, telles que ceux-ci clignotent lorsque vous recevez un appel de fabrication. 
+L’écouteur de notification fournit l’accès aux notifications d’un utilisateur. Smartwatches et d’autres appareils, peuvent utiliser l’écouteur de notification pour envoyer les notifications du téléphone à l’appareil portable. Les applications domotiques peuvent utiliser l’écouteur de notification pour effectuer des actions spécifiques lors de la réception de notifications, par exemple faire clignoter les voyants quand vous recevez un appel. 
 
 > [!IMPORTANT]
-> **Requiert la mise à jour anniversaire**: Vous devez cibler le Kit de développement logiciel 14393 et être en cours d’exécution build 14393 ou ultérieure pour pouvoir utiliser l’écouteur de Notification.
+> **Nécessite une mise à jour anniversaire**: vous devez cibler le SDK 14393 et exécuter Build 14393 ou version ultérieure pour utiliser l’écouteur de notification.
 
 
-> **API importantes** : [Classe de UserNotificationListener](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.Management.UserNotificationListener), [UserNotificationChangedTrigger classe](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.UserNotificationChangedTrigger)
+> **API importantes**: [classe UserNotificationListener](/uwp/api/Windows.UI.Notifications.Management.UserNotificationListener), [classe UserNotificationChangedTrigger](/uwp/api/Windows.ApplicationModel.Background.UserNotificationChangedTrigger)
 
 
-## <a name="enable-the-listener-by-adding-the-user-notification-capability"></a>Activer l'écouteur en ajoutant la fonctionnalité Notification à l'utilisateur 
+## <a name="enable-the-listener-by-adding-the-user-notification-capability"></a>Activer l’écouteur en ajoutant la fonctionnalité de notification de l’utilisateur 
 
-Pour utiliser l’écouteur de notification, vous devez ajouter la fonctionnalité Écouteur de notification à l'utilisateur à votre manifeste d’application.
+Pour utiliser l’écouteur de notification, vous devez ajouter la fonctionnalité d’écouteur de notification utilisateur au manifeste de votre application.
 
-1. Dans Visual Studio, dans l'Explorateur de solutions, double-cliquez sur votre fichier `Package.appxmanifest` pour ouvrir le concepteur du manifeste.
-2. Ouvrez l’onglet Fonctionnalités.
-3. Cochez la fonctionnalité **Écouteur de notification à l'utilisateur**.
+1. Dans Visual Studio, dans la Explorateur de solutions, double-cliquez sur votre `Package.appxmanifest` fichier pour ouvrir le concepteur de manifeste.
+2. Ouvrez l’onglet Capacités.
+3. Vérifiez la capacité de l' **écouteur de notification utilisateur** .
 
 
 ## <a name="check-whether-the-listener-is-supported"></a>Vérifier si l’écouteur est pris en charge
 
-Si votre application prend en charge des versions antérieures de Windows 10, vous devez utiliser la [classe ApiInformation](https://docs.microsoft.com/uwp/api/Windows.Foundation.Metadata.ApiInformation) pour vérifier si l’écouteur est pris en charge.  Si l’écouteur n'est pas pris en charge, évitez d’exécuter des appels vers les API de l'écouteur.
+Si votre application prend en charge des versions antérieures de Windows 10, vous devez utiliser la [classe ApiInformation](/uwp/api/Windows.Foundation.Metadata.ApiInformation) pour vérifier si l’écouteur est pris en charge.  Si l’écouteur n’est pas pris en charge, évitez d’exécuter des appels aux API d’écouteur.
 
 ```csharp
 if (ApiInformation.IsTypePresent("Windows.UI.Notifications.Management.UserNotificationListener"))
@@ -54,7 +54,7 @@ else
 
 ## <a name="requesting-access-to-the-listener"></a>Demande d’accès à l’écouteur
 
-Dans la mesure où l’écouteur permet d’accéder aux notifications de l’utilisateur, les utilisateurs doivent accorder à votre application l’autorisation d’accéder à leurs notifications. Lors de la première exécution de votre application, vous devez demander l’accès pour utiliser l’écouteur de notification. Si vous le souhaitez, vous pouvez afficher une interface utilisateur préliminaire qui explique pourquoi votre application a besoin d’accéder aux notifications de l’utilisateur avant d’appeler [RequestAccessAsync](https://docs.microsoft.com/uwp/api/windows.ui.notifications.management.usernotificationlistener.RequestAccessAsync), de sorte que l’utilisateur comprenne pourquoi il doit autoriser l’accès.
+Étant donné que l’écouteur autorise l’accès aux notifications de l’utilisateur, les utilisateurs doivent accorder à votre application l’autorisation d’accéder à leurs notifications. Lors de la première exécution de votre application, vous devez demander l’accès pour utiliser l’écouteur de notification. Si vous le souhaitez, vous pouvez afficher une interface utilisateur préliminaire qui explique pourquoi votre application a besoin d’accéder aux notifications de l’utilisateur avant d’appeler [RequestAccessAsync](/uwp/api/windows.ui.notifications.management.usernotificationlistener.RequestAccessAsync), afin que l’utilisateur comprenne la raison pour laquelle il doit autoriser l’accès.
 
 ```csharp
 // Get the listener
@@ -91,12 +91,12 @@ switch (accessStatus)
 }
 ```
 
-L’utilisateur peut révoquer l’accès à tout moment via les paramètres de Windows. Par conséquent, votre application doit toujours vérifier l’état de l’accès via le [GetAccessStatus](https://docs.microsoft.com/uwp/api/windows.ui.notifications.management.usernotificationlistener.GetAccessStatus) méthode avant l’exécution de code qui utilise l’écouteur de notification. Si l’utilisateur révoque l’accès, l’API échouera sans avertissement plutôt que de lever une exception (par exemple, l’API permettant d'obtenir toutes les notifications renverra simplement une liste vide).
+L’utilisateur peut révoquer l’accès à tout moment via les paramètres Windows. Par conséquent, votre application doit toujours vérifier l’état de l’accès à l’aide de la méthode [GetAccessStatus](/uwp/api/windows.ui.notifications.management.usernotificationlistener.GetAccessStatus) avant d’exécuter du code qui utilise l’écouteur de notification. Si l’utilisateur révoque l’accès, les API échouent silencieusement au lieu de lever une exception (par exemple, l’API pour obtenir toutes les notifications renverra simplement une liste vide).
 
 
-## <a name="access-the-users-notifications"></a>Accès aux notifications de l’utilisateur
+## <a name="access-the-users-notifications"></a>Accéder aux notifications de l’utilisateur
 
-Avec l’écouteur de notification, vous pouvez obtenir une liste des notifications actuelles de l’utilisateur. Il vous suffit d’appeler la méthode [GetNotificationsAsync](https://docs.microsoft.com/uwp/api/windows.ui.notifications.management.usernotificationlistener.GetNotificationsAsync) et de spécifier le type de notifications que vous souhaitez obtenir (actuellement, seules les notifications toast sont prises en charge).
+Avec l’écouteur de notification, vous pouvez obtenir la liste des notifications actuelles de l’utilisateur. Appelez simplement la méthode [GetNotificationsAsync](/uwp/api/windows.ui.notifications.management.usernotificationlistener.GetNotificationsAsync) et spécifiez le type de notifications que vous souhaitez obtenir (actuellement, le seul type de notifications prises en charge sont les notifications Toast).
 
 ```csharp
 // Get the toast notifications
@@ -106,7 +106,7 @@ IReadOnlyList<UserNotification> notifs = await listener.GetNotificationsAsync(No
 
 ## <a name="displaying-the-notifications"></a>Affichage des notifications
 
-Chaque notification est représentée sous forme de [UserNotification](https://docs.microsoft.com/uwp/api/windows.ui.notifications.usernotification), qui fournit des informations sur l’application d'où provient la notification, l'heure à laquelle la notification a été créée, l’ID de la notification et la notification elle-même.
+Chaque notification est représentée sous la forme d’un [UserNotification](/uwp/api/windows.ui.notifications.usernotification), qui fournit des informations sur l’application dont provient la notification, l’heure à laquelle la notification a été créée, l’ID de la notification et la notification elle-même.
 
 ```csharp
 public sealed class UserNotification
@@ -118,10 +118,10 @@ public sealed class UserNotification
 }
 ```
 
-La propriété [AppInfo](https://docs.microsoft.com/uwp/api/windows.ui.notifications.usernotification.AppInfo) fournit les informations dont vous avez besoin pour afficher la notification.
+La propriété [appinfo](/uwp/api/windows.ui.notifications.usernotification.AppInfo) fournit les informations dont vous avez besoin pour afficher la notification.
 
 > [!NOTE]
-> Nous vous recommandons d'insérer tout votre code de traitement d’une notification unique dans un bloc try/catch, au cas où une exception inattendue se produirait lorsque vous capturez une seule notification. L'affichage d'autres notifications ne doit pas échouer complètement juste à cause d’un problème lié à une notification spécifique.
+> Nous vous recommandons de placer tout votre code pour traiter une seule notification dans un bloc try/catch, si une exception inattendue se produit lorsque vous capturez une seule notification. Vous ne devriez pas complètement faire échouer l’affichage d’autres notifications en raison d’un problème avec une notification spécifique.
 
 ```csharp
 // Select the first notification
@@ -136,9 +136,9 @@ RandomAccessStreamReference appLogoStream = notif.AppInfo.DisplayInfo.GetLogo(ne
 await appLogo.SetSourceAsync(await appLogoStream.OpenReadAsync());
 ```
 
-Le contenu de la notification elle-même, par exemple, le texte de la notification, est contenu dans la propriété [Notification](https://docs.microsoft.com/uwp/api/windows.ui.notifications.usernotification.Notification). Cette propriété contient la partie visuelle de la notification. (Si vous êtes familiarisé avec l’envoi de notifications sur Windows, vous remarquerez que les propriétés [Visual](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notification.Visual) et [Visual.Bindings](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notificationvisual.Bindings) de l'objet [Notification](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notification) correspondent à ce que les développeurs envoient lors de l'affichage d'une notification.)
+Le contenu de la notification lui-même, tel que le texte de notification, est contenu dans la propriété de [notification](/uwp/api/windows.ui.notifications.usernotification.Notification) . Cette propriété contient la partie visuelle de la notification. (Si vous êtes familiarisé avec l’envoi de notifications sur Windows, vous remarquerez que les propriétés [visuelles](/uwp/api/windows.ui.notifications.notification.Visual) et visuelles [. Bindings](/uwp/api/windows.ui.notifications.notificationvisual.Bindings) de l’objet de [notification](/uwp/api/windows.ui.notifications.notification) correspondent à ce que les développeurs envoient lorsqu’ils dépassent une notification.)
 
-Nous voulons rechercher la liaison de toast (pour un code infaillible, vous devez vérifier que la liaison n’a pas la valeur null). À partir de la liaison, vous pouvez obtenir les éléments de texte. Vous pouvez choisir d’afficher autant d'éléments de texte que vous le souhaitez. (Dans l’idéal, vous devez afficher toutes les). Vous pouvez choisir de traiter les éléments de texte de façon ; par exemple, traite le premier sous forme de texte de titre et les éléments suivants en tant que corps de texte.
+Nous souhaitons Rechercher la liaison Toast (pour le code de vérification d’erreur, vous devez vérifier que la liaison n’est pas null). À partir de la liaison, vous pouvez obtenir les éléments de texte. Vous pouvez choisir d’afficher autant d’éléments de texte que vous le souhaitez. (Idéalement, vous devriez les afficher tous.) Vous pouvez choisir de traiter les éléments de texte différemment. par exemple, considérez la première comme un texte de titre et les éléments suivants comme corps de texte.
 
 ```csharp
 // Get the toast binding, if present
@@ -161,7 +161,7 @@ if (toastBinding != null)
 
 ## <a name="remove-a-specific-notification"></a>Supprimer une notification spécifique
 
-Si votre appareil portable ou votre service permet à l’utilisateur d'ignorer les notifications, vous pouvez supprimer la notification proprement dite pour que l’utilisateur ne la voit pas ultérieurement sur son téléphone ou son PC. Fournissez simplement l’ID de notification (obtenu à partir de l'objet [UserNotification](https://docs.microsoft.com/uwp/api/windows.ui.notifications.usernotification)) de la notification que vous souhaitez supprimer : 
+Si votre service ou portable autorise l’utilisateur à ignorer les notifications, vous pouvez supprimer la notification proprement dite afin que l’utilisateur ne l’affiche plus par la suite sur son téléphone ou sur son PC. Il vous suffit de fournir l’ID de notification (obtenu à partir de l’objet [UserNotification](/uwp/api/windows.ui.notifications.usernotification) ) de la notification que vous souhaitez supprimer : 
 
 ```csharp
 // Remove the notification
@@ -171,7 +171,7 @@ listener.RemoveNotification(notifId);
 
 ## <a name="clear-all-notifications"></a>Effacer toutes les notifications
 
-La méthode [UserNotificationListener.ClearNotifications](https://docs.microsoft.com/uwp/api/windows.ui.notifications.management.usernotificationlistener.ClearNotifications) efface toutes les notifications de l’utilisateur. Utilisez cette méthode avec précaution. Vous ne devez effacer toutes les notifications que si votre appareil portable ou votre service affiche TOUTES les notifications. Si votre appareil portable ou votre service n’affiche que certaines notifications, lorsque l’utilisateur clique sur le bouton « Effacer les notifications », il s’attend à ce qu'uniquement ces notifications spécifiques soient supprimées. Toutefois, l'appel à la méthode [ClearNotifications](https://docs.microsoft.com/uwp/api/windows.ui.notifications.management.usernotificationlistener.ClearNotifications) entraînera la suppression effective de toutes les notifications, y compris celles que votre appareil portable ou votre service n’affichait pas.
+La méthode [UserNotificationListener. ClearNotifications](/uwp/api/windows.ui.notifications.management.usernotificationlistener.ClearNotifications) efface toutes les notifications de l’utilisateur. Utilisez cette méthode avec précaution. Vous ne devez effacer que toutes les notifications si votre service ou portable affiche toutes les notifications. Si votre service ou portable affiche uniquement certaines notifications, lorsque l’utilisateur clique sur le bouton « Effacer les notifications », l’utilisateur ne s’attend à supprimer que les notifications spécifiques. Toutefois, l’appel de la méthode [ClearNotifications](/uwp/api/windows.ui.notifications.management.usernotificationlistener.ClearNotifications) entraînerait la suppression de toutes les notifications, y compris celles que votre service ou portable n’affichait pas.
 
 ```csharp
 // Clear all notifications. Use with caution.
@@ -179,11 +179,11 @@ listener.ClearNotifications();
 ```
 
 
-## <a name="background-task-for-notification-addeddismissed"></a>Tâche en arrière-plan pour une notification ajoutée/ignorée
+## <a name="background-task-for-notification-addeddismissed"></a>Tâche en arrière-plan pour la notification ajoutée/fermée
 
-Une méthode courante pour permettre à une application de détecter les notifications consiste à définir une tâche en arrière-plan, de sorte que vous pouvez savoir quand une notification a été ajoutée ou ignorée, que votre application soit ou non en cours d’exécution.
+Une méthode courante pour permettre à une application d’écouter les notifications consiste à configurer une tâche en arrière-plan, afin que vous puissiez savoir quand une notification a été ajoutée ou fermée, que votre application soit en cours d’exécution ou non.
 
-Grâce au [modèle de processus unique](../../../launch-resume/create-and-register-an-inproc-background-task.md) ajouté dans la mise à jour anniversaire, l'ajout de tâches en arrière-plan est assez simple. Dans le code principal de votre application, une fois que vous avez obtenu l’accès de l'utilisateur à l’Écouteur de notification et l’accès pour exécuter des tâches en arrière-plan, enregistrez simplement une tâche en arrière-plan et définissez le [UserNotificationChangedTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.usernotificationchangedtrigger) à l’aide du [type de notification toast](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notificationkinds).
+Grâce au [modèle à processus unique](../../../launch-resume/create-and-register-an-inproc-background-task.md) ajouté dans la mise à jour anniversaire, l’ajout de tâches en arrière-plan est relativement simple. Dans le code de votre application principale, après avoir obtenu l’accès de l’utilisateur à l’écouteur de notifications et obtenu l’accès pour exécuter des tâches en arrière-plan, il vous suffit d’enregistrer une nouvelle tâche en arrière-plan et de définir [UserNotificationChangedTrigger](/uwp/api/windows.applicationmodel.background.usernotificationchangedtrigger) à l’aide du [type de notification Toast](/uwp/api/windows.ui.notifications.notificationkinds).
 
 ```csharp
 // TODO: Request/check Listener access via UserNotificationListener.Current.RequestAccessAsync
@@ -207,7 +207,7 @@ if (!BackgroundTaskRegistration.AllTasks.Any(i => i.Value.Name.Equals("UserNotif
 }
 ```
 
-Puis, dans votre App.xaml.cs, remplacez la méthode [OnBackgroundActivated](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.OnBackgroundActivated) si ce n'est pas déjà fait et utilisez une instruction switch sur le nom de la tâche pour déterminer lequel de vos nombreux déclencheurs de tâche en arrière-plan a été appelé.
+Ensuite, dans votre App.xaml.cs, remplacez la méthode [OnBackgroundActivated](/uwp/api/windows.ui.xaml.application.OnBackgroundActivated) si vous ne l’avez pas encore fait, et utilisez une instruction switch sur le nom de la tâche pour déterminer lequel de vos nombreux déclencheurs de tâche en arrière-plan a été appelé.
 
 ```csharp
 protected override async void OnBackgroundActivated(BackgroundActivatedEventArgs args)
@@ -227,14 +227,14 @@ protected override async void OnBackgroundActivated(BackgroundActivatedEventArgs
 }
 ```
 
-La tâche en arrière-plan est une simple indication : elle ne fournit aucune information sur la notification spécifique qui a été ajoutée ou supprimée. Lorsque votre tâche en arrière-plan est déclenchée, vous devez synchroniser les notifications sur votre appareil portable afin qu’elles reflètent les notifications dans la plateforme. Cela garantit qu'en cas d'échec de votre tâche en arrière-plan, des notifications sur votre appareil portable peuvent encore être récupérées lors de la prochaine exécution de votre tâche en arrière-plan.
+La tâche en arrière-plan est simplement un « robinet d’épaule » : elle ne fournit pas d’informations sur la notification spécifique qui a été ajoutée ou supprimée. Lorsque votre tâche en arrière-plan est déclenchée, vous devez synchroniser les notifications sur votre portable afin qu’elles reflètent les notifications dans la plateforme. Cela garantit que si votre tâche en arrière-plan échoue, les notifications sur votre portable peuvent toujours être récupérées lors de la prochaine exécution de la tâche en arrière-plan.
 
-`SyncNotifications` est une méthode que vous implémentez ; la prochaine section montre comment. 
+`SyncNotifications` est une méthode que vous implémentez ; la section suivante montre comment procéder. 
 
 
-## <a name="determining-which-notifications-were-added-and-removed"></a>Déterminer les notifications qui ont été ajoutées et supprimées
+## <a name="determining-which-notifications-were-added-and-removed"></a>Détermination des notifications qui ont été ajoutées et supprimées
 
-Dans votre méthode `SyncNotifications`, pour déterminer les notifications qui ont été ajoutées ou supprimées (en synchronisant les notifications avec votre appareil portable), vous devez calculer le delta entre votre collection de notifications actuelle et les notifications présentes dans la plateforme.
+Dans votre `SyncNotifications` méthode, pour déterminer quelles notifications ont été ajoutées ou supprimées (en synchronisant des notifications avec votre portable), vous devez calculer le delta entre votre collection de notifications actuelle et les notifications dans la plateforme.
 
 ```csharp
 // Get all the current notifications from the platform
@@ -274,12 +274,12 @@ foreach (uint id in toBeRemoved)
 ```
 
 
-## <a name="foreground-event-for-notification-addeddismissed"></a>Événement en arrière-plan pour une notification ajoutée/ignorée
+## <a name="foreground-event-for-notification-addeddismissed"></a>Événement de premier plan pour la notification ajoutée/ignorée
 
 > [!IMPORTANT] 
-> Problème connu : Dans les builds avant de générer des 17763 / octobre 2018 mise à jour / 1809 de Version, l’événement de premier plan provoque une boucle de processeur et/ou n’a pas fonctionné. Si vous avez besoin de la prise en charge sur ces versions antérieures, utilisez à la place la tâche en arrière-plan.
+> Problème connu : dans les builds antérieures à la version 17763/octobre 2018 mise à jour/version 1809, l’événement de premier plan entraîne une boucle d’UC et/ou n’a pas fonctionné. Si vous avez besoin d’une prise en charge sur ces versions antérieures, utilisez la tâche en arrière-plan à la place.
 
-Vous pouvez également écouter les notifications à partir d’un gestionnaire d’événements de mémoire...
+Vous pouvez également écouter les notifications à partir d’un gestionnaire d’événements en mémoire...
 
 ```csharp
 // Subscribe to foreground event
@@ -294,4 +294,4 @@ private void Listener_NotificationChanged(UserNotificationListener sender, UserN
 
 ## <a name="howto-fixdelays-in-the-background-task"></a>Comment corriger des retards dans la tâche en arrière-plan
 
-Lorsque vous testez votre application, vous pouvez remarquer que la tâche en arrière-plan est parfois retardée et ne déclenche pas pendant plusieurs minutes. Pour corriger le délai, invite l’utilisateur à accéder aux paramètres du système -> système -> batterie -> utilisation de la batterie par application, recherchez votre application dans la liste, sélectionnez-le, puis définissez qu’elle soit « Toujours autorisé en arrière-plan ». Après cela, la tâche en arrière-plan doit toujours être déclenchée dans autour d’une seconde de la notification en cours de réception.
+Lorsque vous testez votre application, vous remarquerez peut-être que la tâche en arrière-plan est parfois retardée et ne se déclenche pas pendant plusieurs minutes. Pour résoudre ce problème, invitez l’utilisateur à accéder aux paramètres système-> système-> > l’utilisation de la batterie par l’application, recherchez votre application dans la liste, sélectionnez-la, puis définissez-la comme « toujours autorisée en arrière-plan ».Après cela, la tâche en arrière-plan doit toujours être déclenchée dans environ une seconde de la notification en cours de réception.

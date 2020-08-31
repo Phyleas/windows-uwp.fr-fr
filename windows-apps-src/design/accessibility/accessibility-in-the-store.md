@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ad128aca1a633c5ce33830b5ee9231f7a794a60c
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 320d5cc4232d613a4fb437fbd11f3c83287b3030
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82969674"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154103"
 ---
 # <a name="accessibility-in-the-store"></a>Accessibilité dans le Windows Store  
 
@@ -40,7 +40,7 @@ Vous devez déclarer votre application comme accessible si vous l’avez créée
     * d’utiliser des raccourcis clavier pour atteindre les fonctionnalités essentielles de l’application.
     * d’utiliser les mouvements tactiles du Narrateur comme équivalents de la touche Tab et des touches de direction pour les appareils sans clavier.
 * vérifié que l’interface utilisateur de votre application est visuellement accessible, qu’elle a un coefficient de contraste de texte minimal de 4,5 pour 1, qu’elle n’utilise pas simplement la couleur pour transmettre des informations, etc. ;
-* Utilisation d’outils de test d’accessibilité tels que [**inspecter**](https://docs.microsoft.com/windows/desktop/WinAuto/inspect-objects) et [**UIAVerify**](https://docs.microsoft.com/windows/desktop/WinAuto/ui-automation-verify) pour vérifier votre implémentation de l’accessibilité et résoudre toutes les erreurs de priorité 1 signalées par ces outils.
+* Utilisation d’outils de test d’accessibilité tels que [**inspecter**](/windows/desktop/WinAuto/inspect-objects) et [**UIAVerify**](/windows/desktop/WinAuto/ui-automation-verify) pour vérifier votre implémentation de l’accessibilité et résoudre toutes les erreurs de priorité 1 signalées par ces outils.
 * vérifié les scénarios principaux de votre application de bout en bout à l’aide du Narrateur, de la Loupe, du Clavier visuel, d’un thème à contraste élevé et de paramètres haute résolution ajustés.
 
 Pour obtenir un examen de cette procédure et des liens vers des ressources qui vous aideront à les appliquer, voir [Liste de vérification de l’accessibilité](accessibility-checklist.md).
@@ -48,4 +48,4 @@ Pour obtenir un examen de cette procédure et des liens vers des ressources qui 
 <span id="related_topics"/>
 
 ## <a name="related-topics"></a>Rubriques connexes    
-* [Accessibilité](accessibility.md) 
+* [Accessibilité](accessibility.md)

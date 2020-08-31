@@ -1,17 +1,17 @@
 ---
 title: Recommandations en matière de tâches en arrière-plan
-description: Assurez-vous que votre application répond aux exigences relatives à l’exécution de tâches en arrière-plan.
+description: Consultez des conseils détaillés sur le développement et l’exécution de tâches en arrière-plan in-process et out-of-process dans votre application.
 ms.assetid: 18FF1104-1F73-47E1-9C7B-E2AA036C18ED
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, tâche en arrière-plan
 ms.localizationpriority: medium
-ms.openlocfilehash: 7709e93ba14d3ecf5418accc41a9fe52c968fcec
-ms.sourcegitcommit: cc645386b996f6e59f1ee27583dcd4310f8fb2a6
+ms.openlocfilehash: bdcf398b448a3b0571b07063b9d4e70800259248
+ms.sourcegitcommit: 45dec3dc0f14934b8ecf1ee276070b553f48074d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84262760"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89094586"
 ---
 # <a name="guidelines-for-background-tasks"></a>Recommandations en matière de tâches en arrière-plan
 
@@ -33,7 +33,7 @@ Si vous utilisez une tâche en arrière-plan pour lire du contenu multimédia en
 |Déclencheurs disponibles | Les tâches en arrière-plan in-process ne prennent pas en charge les déclencheurs suivants : [DeviceUseTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.deviceusetrigger?f=255&MSPPError=-2147217396), [DeviceServicingTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.deviceservicingtrigger) et **IoTStartupTask**. |
 |VoIP | Les tâches en arrière-plan in-process ne prennent pas en charge l’activation d’une tâche en arrière-plan VoIP dans votre application. |  
 
-**Limites du nombre d’instances de déclencheur :** Il existe des limites quant au nombre d’instances d’un déclencheur qu’une application peut inscrire. Une application ne peut inscrire [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger), [MediaProcessingTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger) et [DeviceUseTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.deviceusetrigger?f=255&MSPPError=-2147217396) qu’une seule fois par instance de l’application. Si une application dépasse cette limite, l’inscription lève une exception.
+**Limites du nombre d’instances de déclencheur :** Il existe des limites quant au nombre d’instances d’un déclencheur qu’une application peut inscrire. Une application ne peut inscrire   [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger), [MediaProcessingTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger) et [DeviceUseTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.deviceusetrigger?f=255&MSPPError=-2147217396) qu’une seule fois par instance de l’application. Si une application dépasse cette limite, l’inscription lève une exception.
 
 **Quotas de processeur :** les tâches en arrière-plan sont limitées par la quantité de temps d’utilisation de l’horloge en fonction de leur type de déclencheur. La plupart des déclencheurs sont limités à 30 secondes d’utilisation de l’horloge, mais certains ont une capacité d’exécution pouvant atteindre 10 minutes pour exécuter des tâches intensives. Les tâches en arrière-plan doivent être légères pour préserver l’autonomie de la batterie et assurer une meilleure expérience utilisateur pour les applications de premier plan. Pour plus d’informations sur les contraintes de ressource appliquées aux tâches en arrière-plan, consultez [Prendre en charge votre application avec des tâches en arrière-plan](support-your-app-with-background-tasks.md).
 
@@ -102,7 +102,7 @@ Pour plus d’informations sur le choix des utilisateurs concernant l’activit�
 * [Surveiller la progression et l’achèvement des tâches en arrière-plan](monitor-background-task-progress-and-completion.md)
 * [Inscrire une tâche en arrière-plan](register-a-background-task.md)
 * [Répondre aux événements système avec des tâches en arrière-plan](respond-to-system-events-with-background-tasks.md)
-* [Définir des conditions pour exécuter une tâche en arrière-plan](set-conditions-for-running-a-background-task.md)
+* [Définir des conditions pour l’exécution d’une tâche en arrière-plan](set-conditions-for-running-a-background-task.md)
 * [Mettre à jour une vignette dynamique à partir d’une tâche en arrière-plan](update-a-live-tile-from-a-background-task.md)
 * [Utiliser un déclencheur de maintenance](use-a-maintenance-trigger.md)
 * [Exécuter une tâche en arrière-plan en fonction d’un minuteur](run-a-background-task-on-a-timer-.md)

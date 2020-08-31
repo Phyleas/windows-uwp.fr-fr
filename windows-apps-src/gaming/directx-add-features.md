@@ -1,27 +1,27 @@
 ---
-title: Ajouter des fonctionnalités à des jeux DirectX
-description: Ajouter des fonctionnalités à votre jeu DirectX.
+title: Ajouter des fonctionnalités aux Jeux DirectX
+description: Découvrez comment utiliser DirectX et XAML pour créer des interfaces d’interface utilisateur, ajouter des contrôles et gérer la rotation d’écran dans vos jeux DirectX.
 ms.assetid: 78e17048-a4a5-47d3-b250-19375b6f186c
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp, jeu, directx, xaml, rotation écran, entrée
+keywords: Windows 10, UWP, Game, DirectX, XAML, rotation d’écran, entrée
 ms.localizationpriority: medium
-ms.openlocfilehash: 432e7716363f6a51254e1476dac38f713c94fb69
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d6d32097675ee5a85b689203d7e1034f31246221
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57599504"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89053829"
 ---
-# <a name="add-features-to-directx-games"></a>Ajouter des fonctionnalités à des jeux DirectX
+# <a name="add-features-to-directx-games"></a>Ajouter des fonctionnalités aux Jeux DirectX
 
-Cette section fournit des informations sur l’ajout de diverses fonctionnalités à vos jeux DirectX.
+Cette section fournit des informations sur l’ajout de plusieurs fonctionnalités à vos jeux DirectX.
 
-La rubrique Interopérabilité DirectX et XAML explique comment utiliser ensemble XAML (Extensible Application Markup Language) et DirectX pour générer les infrastructures d’interface utilisateur.
+DirectX and XAML Interop topic explique comment utiliser Extensible Application Markup Language (XAML) et DirectX ensemble pour créer des infrastructures d’interface utilisateur.
 
-La rubrique Entrée de jeu fournit des informations sur l’ajout de différents types de commandes à votre jeu.
+La rubrique entrée de jeu fournit des informations sur l’ajout de différents types de contrôles à votre jeu.
 
-La rubrique Prise en charge de l’orientation de l’écran décrit les meilleures pratiques à appliquer pour la gestion de la rotation écran dans votre jeu UWP DirectX.
+La rubrique prise en charge de l’orientation de l’écran présente les bonnes pratiques pour gérer la rotation de l’écran dans votre jeu DirectX UWP.
 
 <table>
 <colgroup>
@@ -36,16 +36,16 @@ La rubrique Prise en charge de l’orientation de l’écran décrit les meilleu
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="directx-and-xaml-interop.md">Interopérabilité DirectX et XAML</a></p></td>
-<td align="left"><p>Activer l'interopérabilité DirectX et XAML</p></td>
+<td align="left"><p><a href="directx-and-xaml-interop.md">Technologie interop DirectX et XAML</a></p></td>
+<td align="left"><p>Activez DirectX et l’interopérabilité XAML.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="directx-game-input.md">Entrée de jeu</a></p></td>
-<td align="left"><p>Ajouter des méthodes d’entrée à votre jeu.</p></td>
+<td align="left"><p>Ajoutez des méthodes d’entrée à votre jeu.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="supporting-screen-rotation-directx-and-cpp.md">Prise en charge d’orientation de l’écran</a></p></td>
-<td align="left"><p>Ajouter la prise en charge de l’orientation de l’écran.</p></td>
+<td align="left"><p><a href="supporting-screen-rotation-directx-and-cpp.md">Prise en charge de l’orientation de l’écran</a></p></td>
+<td align="left"><p>Ajoutez la prise en charge de l’orientation de l’écran.</p></td>
 </tr>
 </tbody>
 </table>

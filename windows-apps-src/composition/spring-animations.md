@@ -1,85 +1,85 @@
 ---
 title: Animations à effet ressort
-description: Découvrez comment utiliser des animations de mouvement naturelles à effet ressort.
+description: Découvrez comment créer des expériences de ressort dans vos applications à l’aide des API NaturalMotionAnimation.
 ms.date: 10/10/2017
 ms.topic: article
-keywords: windows 10, uwp, animation
+keywords: Windows 10, UWP, animation
 ms.localizationpriority: medium
-ms.openlocfilehash: f86ab8b3e55b7680c5ba3e47c37d1cda8c42cebb
-ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
+ms.openlocfilehash: ecfb6fc001fbf42f70d40ee16abc45aa221c0a75
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73062003"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89053869"
 ---
 # <a name="spring-animations"></a>Animations à effet ressort
 
-L’article montre comment utiliser des NaturalMotionAnimations à effet ressort.
+L’article montre comment utiliser Spring NaturalMotionAnimations.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
-À ce stade, nous partons du principe que vous êtes familiarisé avec les concepts abordés dans les articles suivants :
+Ici, nous partons du principe que vous êtes familiarisé avec les concepts abordés dans les articles suivants :
 
 - [Animations de mouvement naturel](natural-animations.md)
 
-## <a name="why-springs"></a>Pourquoi des effets ressort ?
+## <a name="why-springs"></a>Pourquoi les ressorts ?
 
-Les effets ressort sont une expérience de mouvement courante, que nous avons tous expérimentée à un moment de nos vies, que ce soit avec des jouets à ressort ou en classe de physique en faisant des expériences avec un bloc attaché à un ressort. Le mouvement d'oscillation d'un ressort provoque souvent une réaction émotionnelle ludique et enjouée chez l'observateur. Par conséquent, le mouvement d’un ressort se traduit bien en interface utilisateur d’application pour ceux qui souhaitent créer une expérience de mouvement plus vivante qui « parle » plus à l’utilisateur final qu'une courbe de Bézier cubique classique. Dans ce cas, le mouvement de ressort non seulement crée une expérience de mouvement plus vivante, mais peut également contribuer à attirer l’attention sur le contenu d'animation nouveau ou en cours. Selon la personnalisation de l'application ou le langage du mouvement, l’oscillation est plus prononcée et visible, mais dans d’autres cas, elle est plus subtile.
+Les ressorts sont une expérience de mouvement courante que nous avons rencontrée à un moment donné de nos vies. allant de Symposium Toys à des expériences de classe physique avec un bloc lié à un ressort. Le mouvement oscillant d’un ressort incite souvent une réponse émotionnelle Playful et léger de ceux qui l’observent. Par conséquent, le mouvement d’un ressort se convertit en interface utilisateur d’application pour ceux qui cherchent à créer une expérience de mouvement livelier qui « dépile » plus d’un utilisateur final qu’une courbe de Bézier cubique traditionnelle. Dans ces cas-là, Spring Motion crée non seulement une expérience de mouvement livelier, mais peut également attirer l’attention sur le contenu nouveau ou animé actuellement. En fonction de la personnalisation de l’application ou du langage motion, l’oscillation est plus prononcée et visible, mais dans d’autres cas, il est plus subtil.
 
-![motion avec l’animation Spring](images/animation/offset-spring.gif)
-![mouvement avec une animation de Bézier cubique](images/animation/offset-cubic-bezier.gif)
+![Mouvement avec animation de ressort ](images/animation/offset-spring.gif)
+ ![ avec animation de Bézier cubique](images/animation/offset-cubic-bezier.gif)
 
-## <a name="using-springs-in-your-ui"></a>Utilisation d'effets ressort dans votre interface utilisateur
+## <a name="using-springs-in-your-ui"></a>Utilisation de ressorts dans votre interface utilisateur
 
-Comme mentionné précédemment, les effets ressort peuvent être un mouvement utile à intégrer dans votre application pour proposer une expérience d’interface utilisateur très familière et amusante. Exemples d'utilisation courante des effets ressort dans l’interface utilisateur :
+Comme mentionné précédemment, les ressorts peuvent être utiles pour s’intégrer à votre application et introduire une expérience d’interface utilisateur très familière et Playful. L’utilisation courante des ressorts dans l’interface utilisateur est la suivante :
 
-| Description de l'utilisation des effets ressort | Exemple visuel |
+| Description de l’utilisation des ressorts | Exemple visuel |
 | ------------------------ | -------------- |
-| Mettre en valeur et rendre plus vivante une expérience de mouvement. (échelle d'animation) | ![Mouvement d'échelle avec animation à effet ressort](images/animation/scale-spring.gif) |
-| Rendre une expérience de mouvement sensiblement plus dynamique (décalage d'animation) | ![Mouvement de décalage avec animation à effet ressort](images/animation/offset-spring.gif) |
+| Faites une expérience de mouvement « Pop » et regardez livelier. (Animation de l’échelle) | ![Mettre à l’échelle le mouvement avec l’animation Spring](images/animation/scale-spring.gif) |
+| Faire de l’expérience de mouvement une apparence plus énergique (en animant le décalage) | ![Mouvement de décalage avec l’animation de ressort](images/animation/offset-spring.gif) |
 
-Dans chacun de ces cas, le mouvement de ressort peut se déclencher soit en « sautant vers » et en oscillant autour d’une nouvelle valeur, soit en oscillant autour de sa valeur actuelle avec une certaine rapidité initiale.
+Dans chacun de ces cas, le mouvement du ressort peut être déclenché en « ressort » et en oscillant autour d’une nouvelle valeur ou en oscillant autour de sa valeur actuelle avec une rapidité initiale.
 
-![Oscillation d'animation à effet ressort](images/animation/spring-animation-diagram.png)
+![Oscillation de l’animation ressort](images/animation/spring-animation-diagram.png)
 
 ## <a name="defining-your-spring-motion"></a>Définition de votre mouvement de ressort
 
-Vous créez une expérience d'effet ressort à l’aide de l'API NaturalMotionAnimation. Plus précisément, vous créez une SpringNaturalMotionAnimation en utilisant les méthodes Create* à partir du compositeur. Vous pouvez ensuite définir les propriétés suivantes du mouvement :
+Vous créez une expérience de printemps à l’aide des API NaturalMotionAnimation. Plus précisément, vous créez un SpringNaturalMotionAnimation à l’aide des méthodes Create * du compositeur. Vous pouvez ensuite définir les propriétés suivantes du mouvement :
 
 - DampingRatio : exprime le niveau d’amortissement du mouvement de ressort utilisé dans l’animation.
 
-| Valeur du rapport d’amortissement | Description |
+| Valeur du ratio d’amortissement | Description |
 | ------------------- | ----------- |
-| DampingRatio = 0 | Undamped : le ressort va osciller pendant longtemps |
-| 0 < DampingRatio < 1 | Underdamped : le ressort va osciller de légèrement à fortement. |
-| DampingRatio = 1 | Criticallydamped : le ressort n’effectuera aucune oscillation. |
-| DampingRatio > 1 | Overdamped : le ressort va rapidement atteindre sa destination avec une décélération brusque et aucune oscillation |
+| DampingRatio = 0 | Désamortie : le ressort oscille pendant une longue période |
+| 0 < DampingRatio < 1 | Sous-amortie : le ressort oscille d’un peu à un grand. |
+| DampingRatio = 1 | Criticallydamped : le printemps n’effectue aucune oscillation. |
+| DampingRation > 1 | Suramortie : le ressort atteint rapidement sa destination avec une décélération brusque et aucune oscillation |
 
-- Period : temps nécessaire au ressort pour effectuer une seule oscillation.
-- Valeur de fin/début : positions définies de début et de fin du mouvement de ressort (si elles ne sont pas définies, la valeur de début et/ou la valeur de fin auront la valeur actuelle).
-- Rapidité initiale : rapidité initiale par programmation du mouvement.
+- Période : temps nécessaire à la détente pour effectuer une seule oscillation.
+- Valeur finale/de départ : positions de début et de fin définies par le mouvement de ressort (si elles ne sont pas définies, la valeur de départ et/ou la valeur finale est la valeur actuelle).
+- Rapidité initiale : rapidité initiale de programmation pour le mouvement.
 
-Vous pouvez également définir un ensemble de propriétés du mouvement identiques aux KeyFrameAnimations :
+Vous pouvez également définir un ensemble de propriétés de motion qui sont identiques à KeyFrameAnimations :
 
-- DelayTime / Delay Behavior
+- Comportement de DelayTime/Delay
 - StopBehavior
 
-Dans les cas courants de décalage et d'échelle/de taille d'animation, l’équipe de conception Windows recommande les valeurs suivantes de DampingRatio et Period pour différents types d'effets ressort :
+Dans les cas courants d’animation du décalage et de la taille/taille, les valeurs suivantes sont recommandées par l’équipe de conception Windows pour DampingRatio et period pour les différents types de ressorts :
 
-| Propriété | Ressort normal | Ressort amorti | Ressort moins amorti |
+| Property | Ressort normal | Ressort amorti | Ressort moins amorti |
 | -------- | ------------- | --------------- | -------------------- |
-| Offset | Damping Ratio = 0,8 <br/> Period = 50 ms | Damping Ratio = 0,85 <br/> Period = 50 ms | Damping Ratio = 0,65 <br/> Period = 60 ms |
-| Scale/Size | Damping Ratio = 0,7 <br/> Period = 50 ms | Damping Ratio = 0,8 <br/> Period = 50 ms | Damping Ratio = 0,6 <br/> Period = 60 ms |
+| Offset | Ratio d’amortissement = 0,8 <br/> Période = 50 ms | Ratio d’amortissement = 0,85 <br/> Période = 50 ms | Ratio d’amortissement = 0,65 <br/> Période = 60 ms |
+| Échelle/taille | Ratio d’amortissement = 0,7 <br/> Période = 50 ms | Ratio d’amortissement = 0,8 <br/> Période = 50 ms | Ratio d’amortissement = 0,6 <br/> Période = 60 ms |
 
-Une fois que vous avez défini les propriétés, vous pouvez ensuite transmettre votre NaturalMotionAnimation d'effet ressort à la méthode StartAnimation d’un CompositionObject ou à la propriété Motion d’un InertiaModifier d'InteractionTracker.
+Une fois que vous avez défini les propriétés, vous pouvez passer votre NaturalMotionAnimation Spring dans la méthode StartAnimation d’un CompositionObject ou la propriété motion d’un InertiaModifier InteractionTracker.
 
 ## <a name="example"></a>Exemple
 
-Dans cet exemple, vous créez une expérience d’interface utilisateur de navigation et de canevas dans lequel, lorsque l’utilisateur clique sur un bouton de développement, un volet de navigation s'anime avec un mouvement d'oscillation élastique.
+Dans cet exemple, vous créez une expérience d’interface utilisateur de navigation et de canevas dans laquelle, quand l’utilisateur clique sur un bouton de développement, un volet de navigation est animé avec un mouvement élastique et oscillant.
 
-![Animation à effet ressort lancée par clic](images/animation/spring-animation-on-click.gif)
+![Animation Spring sur clic](images/animation/spring-animation-on-click.gif)
 
-Commencez par définir l’animation à effet ressort dans l’événement de clic à l'apparition du volet de navigation. Ensuite, vous définissez les propriétés de l’animation, à l'aide de la fonctionnalité InitialValueExpression afin d'utiliser une Expression pour définir la FinalValue. Vous assurez également le suivi pour déterminer si le volet est ouvert ou non et, lorsque vous êtes prêt, vous démarrez l’animation.
+Commencez par définir l’animation Spring dans l’événement de clic pour lorsque le volet de navigation s’affiche. Vous définissez ensuite les propriétés de l’animation, à l’aide de la fonctionnalité InitialValueExpression pour utiliser une expression pour définir le FinalValue. Vous gardez également à l’esprit si le volet est ouvert ou non et, lorsque vous êtes prêt, démarrez l’animation.
 
 ```csharp
 private void Button_Clicked(object sender, RoutedEventArgs e)
@@ -103,11 +103,11 @@ _springAnimation.InitialValueExpression["FinalValue"] = "this.StartingValue - 25
 }
 ```
 
-Maintenant que se passe-t-il si vous souhaitez lier ce mouvement à une entrée ? Vous voulez faire en sorte que si l’utilisateur fait un balayage, les volets apparaissent avec un mouvement de ressort ? Plus important encore, si l’utilisateur effectue un balayage plus fort ou plus rapide, le mouvement s’adapte à la vitesse de l’utilisateur final.
+Que se passe-t-il si vous souhaitez lier ce mouvement à l’entrée ? Par conséquent, si l’utilisateur final fait défiler les volets, les volets s’accompagnent d’un mouvement de ressort ? Plus important encore, si l’utilisateur effectue un balayage plus complexe ou plus rapide, l’adaptateur de mouvement est basé sur la vélocité de l’utilisateur final.
 
-![Animation à effet ressort lancée par balayage](images/animation/spring-animation-on-swipe.gif)
+![Animation de ressort lors du balayage](images/animation/spring-animation-on-swipe.gif)
 
-Pour ce faire, vous pouvez utiliser la même animation à effet ressort et la transmettre à un InertiaModifier avec InteractionTracker. Pour plus d’informations sur les InputAnimations et l'InteractionTracker, voir [Expériences personnalisées de manipulation avec InteractionTracker](interaction-tracker-manipulations.md). Nous supposons que dans cet exemple de code, vous avez déjà configuré votre InteractionTracker et votre VisualInteractionSource. Nous allons nous concentrer sur la création des InertiaModifiers qui vont intégrer une NaturalMotionAnimation, dans ce cas, un effet ressort.
+Pour ce faire, vous pouvez utiliser la même animation Spring et la transmettre à un InertiaModifier avec InteractionTracker. Pour plus d’informations sur InputAnimations et InteractionTracker, consultez [expériences de manipulation personnalisées avec InteractionTracker](interaction-tracker-manipulations.md). Nous partons du principe que vous avez déjà configuré vos InteractionTracker et VisualInteractionSource pour cet exemple de code. Nous allons nous concentrer sur la création des InertiaModifiers qui prendront en compte un NaturalMotionAnimation, dans ce cas un ressort.
 
 ```csharp
 // InteractionTracker and the VisualInteractionSource previously setup
@@ -145,18 +145,18 @@ StartAnimation("Translation.X", exp);
 }
 ```
 
-Vous disposez désormais d'une animation à effet ressort à la fois pilotée par une entrée et par programmation dans votre interface utilisateur !
+Vous disposez à présent d’une animation de programmation et de ressort pilotée par l’entrée dans votre interface utilisateur !
 
-En résumé, voici les étapes nécessaires pour utiliser une animation à effet ressort dans votre application :
+En résumé, les étapes à suivre pour utiliser une animation Spring dans votre application :
 
-1. Créez votre SpringAnimation à partir de votre compositeur.
-1. Définissez les propriétés de la SpringAnimation si vous souhaitez d'autres valeurs que celles par défaut :
+1. Créez vos SpringAnimation à partir de votre compositeur.
+1. Définissez les propriétés du SpringAnimation si vous souhaitez des valeurs autres que celles par défaut :
     - DampingRatio
     - Période
-    - Valeur de fin
+    - Valeur finale
     - Valeur initiale
     - Rapidité initiale
-1. Affectez à la cible.
+1. Assigner à la cible.
     - Si vous animez une propriété CompositionObject, transmettez SpringAnimation en tant que paramètre à StartAnimation.
-    - Si vous souhaitez une utilisation avec une entrée, affectez la propriété NaturalMotion d'un InertiaModifier à SpringAnimation.
+    - Si vous souhaitez utiliser with Input, définissez la propriété NaturalMotion d’un InertiaModifier sur SpringAnimation.
 

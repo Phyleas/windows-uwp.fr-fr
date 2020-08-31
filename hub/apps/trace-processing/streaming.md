@@ -5,12 +5,12 @@ author: maiak
 ms.author: maiak
 ms.date: 02/23/2020
 ms.topic: tutorial
-ms.openlocfilehash: e04f306a6a5c03d1f502b9cfb6c2cbb737e0098f
-ms.sourcegitcommit: 4fdab7be28aca18cb3879fc205eb49edc4f9a96b
+ms.openlocfilehash: 6ad0f5977ed4d739ce3133c9e67c0eefc6e0cbd9
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77629080"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168823"
 ---
 # <a name="use-streaming-with-traceprocessor"></a>Utiliser la diffusion en continu avec TraceProcessor
 
@@ -141,7 +141,7 @@ Par défaut, toutes les données de streaming sont fournies lors de la première
 
 Les principales différences d’utilisation entre la mise en mémoire tampon et la diffusion en continu :
 
-1. La mise en mémoire tampon retourne un [IPendingResult&lt;t&gt;](https://docs.microsoft.com/dotnet/api/microsoft.windows.eventtracing.ipendingresult-1)et le résultat qu’elle contient est uniquement disponible avant le traitement de la trace. Une fois que la trace a été traitée, les résultats peuvent être énumérés à l’aide de techniques telles que foreach et LINQ.
+1. La mise en mémoire tampon retourne un [IPendingResult &lt; T &gt; ](/dotnet/api/microsoft.windows.eventtracing.ipendingresult-1)et le résultat qu’elle contient est uniquement disponible avant le traitement de la trace. Une fois que la trace a été traitée, les résultats peuvent être énumérés à l’aide de techniques telles que foreach et LINQ.
 2. La diffusion en continu retourne void et accepte à la place un argument de rappel. Elle appelle le rappel une fois que chaque élément est disponible. Étant donné que les données ne sont pas mises en mémoire tampon, il n’y a jamais de liste de résultats à énumérer avec foreach ou LINQ : le rappel de streaming doit mettre en mémoire tampon la partie des données qu’il souhaite enregistrer pour une utilisation une fois le traitement terminé.
 3. Le code pour le traitement des données mises en mémoire tampon apparaît après l’appel à trace. Process (), lorsque les résultats en attente sont disponibles.
 4. Le code pour le traitement des données de streaming apparaît avant l’appel à trace. Process (), en tant que rappel de la trace. UseStreaming. use... méthode ().

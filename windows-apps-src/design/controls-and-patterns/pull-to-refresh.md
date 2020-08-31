@@ -1,6 +1,6 @@
 ---
-Description: Utilisez le contrôle « Tirer pour actualiser » afin d’importer le contenu nouveau dans une liste.
 title: Tirer pour actualiser
+description: Découvrez comment implémenter un contrôle Balayer pour actualiser qui permet à un utilisateur de dérouler une liste de données à l’aide de la fonction tactile afin de récupérer davantage de données.
 label: Pull-to-refresh
 template: detail.hbs
 ms.date: 03/07/2018
@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: faff0857679d50f6995640bbf9bf0222bb0d2e37
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 1164113b4e4c6b64c6ee1e3d98e0bdc4c8b635ea
+ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80081610"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88942849"
 ---
 # <a name="pull-to-refresh"></a>Tirer pour actualiser
 

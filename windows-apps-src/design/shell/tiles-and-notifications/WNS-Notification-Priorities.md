@@ -5,12 +5,12 @@ ms.date: 01/10/2017
 ms.topic: article
 keywords: Windows 10, UWP, API WinRT, WNS
 localizationpriority: medium
-ms.openlocfilehash: 3310b34b2748bd684e46e04775c973680f8e03a9
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: 3b6642054f9c63a03764267e5886b67fd4a9ac7d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282244"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169213"
 ---
 # <a name="wns-notification-priorities"></a>Priorités de notification WNS
 En définissant la priorité d’une notification avec un en-tête simple pour les messages WNS, vous pouvez contrôler la façon dont les notifications sont remises dans des situations sensibles à la batterie.
@@ -25,12 +25,12 @@ Chaque appareil Windows fonctionne par le biais de divers modes d’alimentation
 
 Windows ne sait pas quelles notifications sont importantes pour un utilisateur ou une application. le système s’appuie donc entièrement sur les applications pour définir la priorité appropriée pour leurs notifications. 
 
-## <a name="priorities"></a>Priorité
+## <a name="priorities"></a>Priorités
 Une application peut utiliser quatre priorités pour l’envoi de notifications push. La priorité est définie sur des notifications individuelles, ce qui vous permet de choisir les notifications à remettre instantanément (par exemple, un message de messagerie instantanée) et celles qui peuvent être patientées (par exemple, contacter des mises à jour de photos).
 
 Les priorités sont les suivantes : 
 
-|    Priority    |    Remplacement de l’utilisateur    |    Description    |    Exemple    |
+|    Priorité    |    Remplacement de l’utilisateur    |    Description    |    Exemple    |
 |----------------|---------------------|-------------------|---------------|
 |    Élevé    |    Oui : l’utilisateur peut bloquer toutes les notifications d’une application ou empêcher une application d’être limitée en mode économiseur de batterie.    |    Les notifications les plus importantes doivent être remises en tout cas lorsque l’appareil peut recevoir des notifications. Par exemple, les appels VoIP ou les alertes critiques qui doivent sortir de veille de l’appareil appartiennent à cette catégorie.    |    Appels VoIP, alertes à durée critique    |
 |    Moyenne    |    Oui : l’utilisateur peut bloquer toutes les notifications d’une application ou empêcher une application d’être limitée en mode économiseur de batterie.    |    Ce sont des éléments qui ne sont pas aussi importants que les choses qui n’ont pas besoin de se produire immédiatement, mais les utilisateurs sont importuns s’ils ne s’exécutent pas en arrière-plan.    |    Synchronisation du compte de messagerie secondaire, mises à jour de vignettes dynamiques.    |
@@ -41,13 +41,13 @@ Notez que de nombreuses applications auront des notifications de priorité diff�
 
 ## <a name="setting-the-priority"></a>Définition de la priorité
 
-La définition de la priorité sur la demande de notification est effectuée via un en-tête supplémentaire sur la demande de publication, `X-WNS-PRIORITY`. Il s’agit d’une valeur entière comprise entre 1 et 4, qui correspond à une priorité : 
+La définition de la priorité sur la demande de notification est effectuée via un en-tête supplémentaire sur la demande de publication, `X-WNS-PRIORITY` . Il s’agit d’une valeur entière comprise entre 1 et 4, qui correspond à une priorité : 
 
 | Nom de la priorité | X-WNS-valeur PRIORITy | Valeur par défaut pour : |
 |---------------|----------------------|------------------|
 | Élevé | 1 | Toasts |
 | Moyen | 2 | Vignettes et badges |
-| Faible | 3 | Brute |
+| Faible | 3 | Brut |
 | Très faible | 4 |  |
 
 Pour une compatibilité descendante, il n’est pas nécessaire de définir une priorité. Si une application ne définit pas la priorité de ses notifications, le système fournira une priorité par défaut. Les valeurs par défaut sont indiquées dans le graphique ci-dessus et correspondent au comportement des versions existantes de Windows. 
@@ -58,17 +58,17 @@ Si vous expédiez votre application sur différentes références SKU de Windows
 
 Les comportements recommandés plus spécifiques pour chaque priorité sont répertoriés ci-dessous. Cela ne garantit pas que chaque appareil fonctionnera exactement en fonction du graphique. Les fabricants d’ordinateurs OEM sont libres de configurer le comportement différemment, mais la plupart sont proches de ce graphique. 
 
-| État de l’appareil    | IMPORTANCE Élevé    |    IMPORTANCE Moyenne        | IMPORTANCE Faible    |    IMPORTANCE Très faible    |
+| État de l’appareil    | PRIORITÉ : haute    |    PRIORITÉ : moyenne        | PRIORITÉ : faible    |    PRIORITÉ : très faible    |
 |-------------------------------------------------------|----------------------------------------------------|----------------------------------------------------|----------------------------------------------------|--------------------------|
-|    Écran allumé ou branché    |    Apportera    |    Apportera    |    Apportera    |    Apportera    |
-|    Éteindre l’écran et la batterie    |    Apportera    |    Si l’utilisateur est exempté : fournir autre chose : batch     |    Si l’utilisateur est exempté : fournir autre chose : cache *    |    Cache    |
-|    Économiseur de batterie activé    |    Si l’utilisateur est exempté : fournir autre chose : cache    |    Si l’utilisateur est exempté : fournir autre chose : cache    |    Si l’utilisateur est exempté : fournir autre chose : cache    |    Cache     |
-|    Sur batterie + économiseur de batterie activé + écran désactivé    |    Si l’utilisateur est exempté : fournir autre chose : cache    |    Si l’utilisateur est exempté : fournir autre chose : cache    |    Si l’utilisateur est exempté : fournir autre chose : cache    |    Cache    |
+|    Écran allumé ou branché    |    Remettre    |    Remettre    |    Remettre    |    Remettre    |
+|    Éteindre l’écran et la batterie    |    Remettre    |    Si l’utilisateur est exempté : fournir autre chose : batch     |    Si l’utilisateur est exempté : fournir autre chose : cache *    |    d'instance/de clé    |
+|    Économiseur de batterie activé    |    Si l’utilisateur est exempté : fournir autre chose : cache    |    Si l’utilisateur est exempté : fournir autre chose : cache    |    Si l’utilisateur est exempté : fournir autre chose : cache    |    d'instance/de clé     |
+|    Sur batterie + économiseur de batterie activé + écran désactivé    |    Si l’utilisateur est exempté : fournir autre chose : cache    |    Si l’utilisateur est exempté : fournir autre chose : cache    |    Si l’utilisateur est exempté : fournir autre chose : cache    |    d'instance/de clé    |
 
 Notez que les notifications de faible priorité sont remises par défaut pour l’écran et la batterie uniquement pour les appareils Windows Phone. Cela permet de maintian la compatibilité avec la stratégie MPNS préexistante. Notez également que les quatrième et cinquième lignes sont identiques, en appelant simplement des scénarios différents.
 
-Pour exempter une application dans l’économiseur de batterie, les utilisateurs doivent accéder à l’option « utilisation de la batterie par l’application » dans paramètres, puis sélectionner « autoriser l’application à exécuter des tâches en arrière-plan ». Cette sélection d’utilisateur exempte l’application de l’économiseur de batterie pour les notifications haute, moyenne et basse priorité. Vous pouvez également appeler l' [API BackgroundExecutionManager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccesskindasync#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessKindAsync_Windows_ApplicationModel_Background_BackgroundAccessRequestKind_System_String_) pour demander l’autorisation de l’utilisateur.  
+Pour exempter une application dans l’économiseur de batterie, les utilisateurs doivent accéder à l’option « utilisation de la batterie par l’application » dans paramètres, puis sélectionner « autoriser l’application à exécuter des tâches en arrière-plan ». Cette sélection d’utilisateur exempte l’application de l’économiseur de batterie pour les notifications haute, moyenne et basse priorité. Vous pouvez également appeler l' [API BackgroundExecutionManager](/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccesskindasync#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessKindAsync_Windows_ApplicationModel_Background_BackgroundAccessRequestKind_System_String_) pour demander l’autorisation de l’utilisateur.  
 
 ## <a name="related-topics"></a>Rubriques connexes
 - [Vue d’ensemble des services de notifications Push Windows (WNS)](windows-push-notification-services--wns--overview.md)
-- [Demande d’autorisation pour s’exécuter en arrière-plan](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccesskindasync#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessKindAsync_Windows_ApplicationModel_Background_BackgroundAccessRequestKind_System_String_)
+- [Demande d’autorisation pour s’exécuter en arrière-plan](/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccesskindasync#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessKindAsync_Windows_ApplicationModel_Background_BackgroundAccessRequestKind_System_String_)

@@ -1,16 +1,16 @@
 ---
-description: Découvrez comment développer une application UWP.
+description: Consultez une liste de liens vers des articles sur le développement d’applications de plateforme Windows universelle (UWP) pour Windows 10, notamment une vue d’ensemble, des exemples et des informations de référence sur les API.
 title: Développer des applications UWP
 keywords: développement d’applications uwp, threading, asynchrone, vue d’ensemble de la plateforme, portail des développeurs
 ms.date: 03/29/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 86fa9fb7f2cea7f190640b02fdcf219c3376115d
-ms.sourcegitcommit: 6cdba316bdbd85a2429259ebfb59ff94440e234a
+ms.openlocfilehash: 6d1f4b63f6caee6b7bb081a03158dc4798c0435d
+ms.sourcegitcommit: 45dec3dc0f14934b8ecf1ee276070b553f48074d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85882851"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89094715"
 ---
 # <a name="develop-uwp-apps"></a>Développer des applications UWP
 

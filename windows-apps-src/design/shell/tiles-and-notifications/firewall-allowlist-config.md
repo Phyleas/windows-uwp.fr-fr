@@ -7,12 +7,12 @@ ms.date: 05/20/2019
 ms.topic: article
 keywords: Windows 10, UWP, WNS, service de notification Windows, notification, Windows, pare-feu, dépannage, IP, trafic, entreprise, réseau, IPv4, VIP, nom de domaine complet, adresse IP publique
 ms.localizationpriority: medium
-ms.openlocfilehash: 9594b90bd3bf9a4db082586a2823f4013340b85a
-ms.sourcegitcommit: b5232934702b28102c4014a96b34f2e459c9660d
+ms.openlocfilehash: a2eb09a0b1cc6f135a23b038207bb442eb741bf8
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87928006"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169203"
 ---
 # <a name="enterprise-firewall-and-proxy-configurations-to-support-wns-traffic"></a>Pare-feu d’entreprise et configurations de proxy pour prendre en charge le trafic WNS
 
@@ -85,10 +85,10 @@ Si vous utilisez le service de notification hérité, MPNS, les plages d’adres
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Démarrage rapide : envoi d’une notification Push](https://docs.microsoft.com/previous-versions/windows/apps/hh868252(v=win.10))
-* [Comment demander, créer et enregistrer un canal de notification](https://docs.microsoft.com/previous-versions/windows/apps/hh465412(v=win.10))
-* [Comment intercepter les notifications pour les applications en cours d’exécution](https://docs.microsoft.com/previous-versions/windows/apps/jj709907(v=win.10))
-* [Comment s’authentifier auprès des services de notifications Push Windows (WNS)](https://docs.microsoft.com/previous-versions/windows/apps/hh465407(v=win.10))
-* [En-têtes des demandes et des réponses du service de notifications Push](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))
-* [Recommandations et liste de vérification sur les notifications Push](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
+* [Démarrage rapide : envoi d’une notification Push](/previous-versions/windows/apps/hh868252(v=win.10))
+* [Comment demander, créer et enregistrer un canal de notification](/previous-versions/windows/apps/hh465412(v=win.10))
+* [Comment intercepter les notifications pour les applications en cours d’exécution](/previous-versions/windows/apps/jj709907(v=win.10))
+* [Comment s’authentifier auprès des services de notifications Push Windows (WNS)](/previous-versions/windows/apps/hh465407(v=win.10))
+* [En-têtes des demandes et des réponses du service de notifications Push](/previous-versions/windows/apps/hh465435(v=win.10))
+* [Recommandations et liste de vérification sur les notifications Push](./windows-push-notification-services--wns--overview.md)
  

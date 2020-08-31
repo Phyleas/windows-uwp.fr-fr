@@ -4,12 +4,12 @@ description: Cet article présente la nouvelle API CPUSets disponible sur la pl
 ms.topic: article
 ms.localizationpriority: medium
 ms.date: 02/08/2017
-ms.openlocfilehash: 693abe68fcc7e4a341d773c6fa1af0d777c60c15
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: a20838a6d58eede75efb2441680aba6629db1700
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67322157"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154203"
 ---
 # <a name="cpusets-for-game-development"></a>API CPUSets pour le développement de jeux
 
@@ -43,7 +43,7 @@ GetSystemCpuSetInformation(cpuSets, size, &size, curProc, 0);
 
 Chaque instance **SYSTEM_CPU_SET_INFORMATION** renvoyée contient des informations sur une unité de traitement unique, également appelée « jeu de processeurs ». Cela ne signifie pas forcément qu’elle représente un seul composant matériel physique. Sur les UC qui exploitent l’hyperthreading, plusieurs cœurs logiques s’exécutent sur un seul cœur de traitement physique. La planification de plusieurs threads sur différents cœurs logiques résidant sur le même cœur physique permet une optimisation des ressources au niveau du matériel qui, dans le cas contraire, nécessiterait des tâches supplémentaires au niveau du noyau. Deux threads planifiés sur des cœurs logiques distincts situés sur le même cœur physique doivent se partager le temps processeur, mais s’exécutent plus efficacement que s’ils étaient planifiés pour fonctionner sur le même cœur logique.
 
-### <a name="systemcpusetinformation"></a>SYSTEM_CPU_SET_INFORMATION
+### <a name="system_cpu_set_information"></a>SYSTEM_CPU_SET_INFORMATION
 
 Les informations contenues dans chaque instance de cette structure de données renvoyée par la fonction **GetSystemCpuSetInformation** contiennentt des informations sur une unité de traitement unique sur laquelle l’exécution de threads peut être planifiée. Étant donné la portée possible des appareils cibles, une grande partie des informations de la structure de données **SYSTEM_CPU_SET_INFORMATION** peut ne pas être applicable pour le développement de jeux. Le tableau 1 fournit une explication sur les membres de données qui sont utiles pour le développement de jeux.
 
@@ -51,9 +51,9 @@ Les informations contenues dans chaque instance de cette structure de données r
 
 | Nom du membre  | Type de données | Description |
 | ------------- | ------------- | ------------- |
-| type  | CPU_SET_INFORMATION_TYPE  | Type des informations dans la structure. Si la valeur de ce paramètre n’est pas **CpuSetInformation**, il doit être ignoré.  |
+| Type  | CPU_SET_INFORMATION_TYPE  | Type des informations dans la structure. Si la valeur de ce paramètre n’est pas **CpuSetInformation**, il doit être ignoré.  |
 | Id  | unsigned long  | ID du jeu de processeurs spécifié. Il s’agit de l’ID qui doit être utilisé avec les fonctions du jeu de processeurs, comme **SetThreadSelectedCpuSets**.  |
-| Regrouper  | unsigned short  | Spécifie le groupe de processeurs du jeu de processeurs. Les groupes de processeurs permettent à un PC de disposer de plus de 64 cœurs logiques et rendent possible l’échange à chaud des UC alors que le système est en cours d’exécution. Il est rare de rencontrer un PC qui n’est pas un serveur disposant de plusieurs groupes. Sauf si vous écrivez des applications destinées à s’exécuter sur des serveurs de grandes tailles ou batteries de serveurs, il est préférable d’utiliser des jeux de processeurs dans un groupe unique, car la plupart des PC grand public ne possèdent qu’un seul groupe de processeurs. Toutes les autres valeurs de cette structure portent sur le groupe.  |
+| Grouper  | unsigned short  | Spécifie le groupe de processeurs du jeu de processeurs. Les groupes de processeurs permettent à un PC de disposer de plus de 64 cœurs logiques et rendent possible l’échange à chaud des UC alors que le système est en cours d’exécution. Il est rare de rencontrer un PC qui n’est pas un serveur disposant de plusieurs groupes. Sauf si vous écrivez des applications destinées à s’exécuter sur des serveurs de grandes tailles ou batteries de serveurs, il est préférable d’utiliser des jeux de processeurs dans un groupe unique, car la plupart des PC grand public ne possèdent qu’un seul groupe de processeurs. Toutes les autres valeurs de cette structure portent sur le groupe.  |
 | LogicalProcessorIndex  | unsigned char  | Index relatif au groupe du jeu de processeurs.  |
 | CoreIndex  | unsigned char  | Index relatif au groupe du cœur de processeur physique dans lequel se trouve le jeu de processeurs.  |
 | LastLevelCacheIndex  | unsigned char  | Index relatif au groupe du dernier cache associé à ce jeu de processeurs. Il s’agit du cache le plus lent, sauf si le système utilise des nœuds NUMA ; en général, c’est le cache L2 ou L3.  |
@@ -64,15 +64,15 @@ Les autres membres de données fournissent des informations qui ont peu de chanc
 
 Voici quelques exemples du type d’informations collectées à partir des applications UWP qui s’exécutent sur différentes sortes de composants matériels.
 
-**Tableau 2. Informations renvoyées à partir d’une application UWP s’exécutant sur un appareil Microsoft Lumia 950. Voici un exemple de système doté de plusieurs caches de dernier niveau. Le Lumia 950 propose un processus Qualcomm 808 Snapdragon qui contient une double cœur ARM Cortex A57 et l’ARM Cortex A53 processeurs quatre cœurs.**
+**Tableau 2. Informations retournées par une application UWP en cours d’exécution sur un Microsoft Lumia 950. Il s’agit d’un exemple de système qui a plusieurs caches de dernier niveau. Le Lumia 950 propose un processus de Snapdragon Qualcomm 808 qui contient un double cœur ARM Cortex A57 et quatre cœurs ARM Cortex A53 UC.**
 
-  ![Tableau 2](images/cpusets-table2.png)
+  ![Table 2](images/cpusets-table2.png)
 
-**Tableau 3. Informations renvoyées à partir d’une application UWP s’exécutant sur un PC classique. Voici un exemple de système qui utilise l’hyperthreading ; chaque cœur physique est doté de deux cœurs logiques sur lesquels les threads peuvent être planifiés. Dans ce cas, le système contenait un xénon Intel CPU E5-2620.**
+**Tableau 3. Informations retournées par une application UWP s’exécutant sur un PC standard. Il s’agit d’un exemple de système qui utilise l’hyperthreading. chaque noyau physique a deux cœurs logiques sur lesquels les threads peuvent être planifiés. Dans ce cas, le système contenait un processeur Intel de xénon E5-2620.**
 
   ![Tableau 3](images/cpusets-table3.png)
 
-**Tableau 4. Informations renvoyées à partir d’une application UWP s’exécutant sur un appareil Microsoft Surface Pro 4 à quatre cœurs. Ce système avait un processeur d’i5-6300 Intel Core.**
+**Tableau 4. Informations retournées par une application UWP s’exécutant sur un processeur quadruple cœur Microsoft surface Pro 4. Ce système disposait d’un processeur Intel Core i5-6300.**
 
   ![Tableau 4](images/cpusets-table4.png)
 
@@ -182,16 +182,15 @@ for (size_t i = 0; i < count; ++i)
 
 La disposition du cache illustrée dans la Figure 1 est un exemple du type de disposition qu’un système peut afficher. Cette figure représente les caches détectés dans un appareil Microsoft Lumia 950. Les communications entre les threads qui se produisent entre les UC 256 et 260 peuvent entraîner un temps système considérable, car elles nécessitent une cohérence entre les différents caches L2.
 
-**Figure 1. Architecture de cache détecté sur un périphérique Microsoft Lumia 950.**
+**Figure 1. Architecture du cache détectée sur un appareil Microsoft Lumia 950.**
 
 ![Cache de l’appareil Lumia 950](images/cpusets-lumia950cache.png)
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 L’API CPUSets disponible pour le développement UWP fournit une quantité considérable d’informations, ainsi qu’un contrôle étroit sur les options de multithreading. Par rapport aux précédentes API multithread pour le développement Windows, la complexité ajoutée peut nécessiter certaines améliorations, mais la flexibilité améliorée de cette API offre de meilleures performances sur différents PC grand public et autres cibles matérielles.
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
-- [Jeux de processeur (MSDN)](https://docs.microsoft.com/windows/desktop/ProcThread/cpu-sets)
-- [Exemple CPUSets fourni par ATG](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/CPUSets)
+- [Jeux de processeurs (MSDN)](/windows/desktop/ProcThread/cpu-sets)
+- [Exemple de jeux de processeurs fournis par ATG](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/CPUSets)
 - [UWP sur Xbox One](index.md)
-

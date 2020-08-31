@@ -1,19 +1,19 @@
 ---
 description: Montre comment lancer la boîte de dialogue de rédaction d’un message électronique pour permettre à l’utilisateur d’envoyer un message électronique. Vous pouvez préremplir les champs de l’e-mail avec des données avant d’afficher la boîte de dialogue. Le message ne sera pas envoyé tant que l’utilisateur n’aura pas appuyé sur le bouton d’envoi.
-title: Envoi de courrier électronique
+title: Envoyer un e-mail
 ms.assetid: 74511E90-9438-430E-B2DE-24E196A111E5
 keywords: contacts, e-mail, envoi
 ms.date: 10/11/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: e7839a26afca81913e50296ac5ed9bb9210edbf2
-ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
+ms.openlocfilehash: 47d07fa1932aae87704f7922762a8f0b7e430444
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997896"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154663"
 ---
-# <a name="send-email"></a>Envoi de courrier électronique
+# <a name="send-email"></a>Envoyer un e-mail
 
 Montre comment lancer la boîte de dialogue de rédaction d’un message électronique pour permettre à l’utilisateur d’envoyer un message électronique. Vous pouvez préremplir les champs de l’e-mail avec des données avant d’afficher la boîte de dialogue. Le message ne sera pas envoyé tant que l’utilisateur n’aura pas appuyé sur le bouton d’envoi.
 
@@ -25,7 +25,7 @@ Montre comment lancer la boîte de dialogue de rédaction d’un message électr
 
 ## <a name="launch-the-compose-email-dialog"></a>Lancer la boîte de dialogue de rédaction d’un message électronique
 
-Créez un objet [**EmailMessage**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Email.EmailMessage) et définissez les données à préremplir dans la boîte de dialogue de rédaction d’un message électronique. Appelez [**ShowComposeNewEmailAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.emailmanager.showcomposenewemailasync) pour afficher la boîte de dialogue.
+Créez un objet [**EmailMessage**](/uwp/api/Windows.ApplicationModel.Email.EmailMessage) et définissez les données à préremplir dans la boîte de dialogue de rédaction d’un message électronique. Appelez [**ShowComposeNewEmailAsync**](/uwp/api/windows.applicationmodel.email.emailmanager.showcomposenewemailasync) pour afficher la boîte de dialogue.
 
 ``` cs
 private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipient,
@@ -47,11 +47,11 @@ private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipi
 ```
 
 >[!NOTE]
-> Les pièces jointes que vous ajoutez à un message électronique à l’aide de la classe [EmailAttachment](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.emailattachment) s’affichent uniquement dans l’application de messagerie. Si les utilisateurs ont un autre programme de messagerie configuré comme programme de messagerie par défaut, la fenêtre composer s’affiche sans la pièce jointe. Il s'agit d'un problème connu.
+> Les pièces jointes que vous ajoutez à un message électronique à l’aide de la classe [EmailAttachment](/uwp/api/windows.applicationmodel.email.emailattachment) s’affichent uniquement dans l’application de messagerie. Si les utilisateurs ont un autre programme de messagerie configuré comme programme de messagerie par défaut, la fenêtre composer s’affiche sans la pièce jointe. Il s'agit d'un problème connu.
 
 ## <a name="summary-and-next-steps"></a>Résumé et étapes suivantes
 
-Cette rubrique vous a montré comment lancer la boîte de dialogue de rédaction d’un message électronique. Pour plus d’informations sur la sélection de contacts en tant que destinataires d’un message électronique, voir [Sélectionner des contacts](selecting-contacts.md). Voir [**PickSingleFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.picksinglefileasync) pour sélectionner un fichier à utiliser en pièce jointe d’un message électronique.
+Cette rubrique vous a montré comment lancer la boîte de dialogue de rédaction d’un message électronique. Pour plus d’informations sur la sélection de contacts en tant que destinataires d’un message électronique, voir [Sélectionner des contacts](selecting-contacts.md). Voir [**PickSingleFileAsync**](/uwp/api/windows.storage.pickers.fileopenpicker.picksinglefileasync) pour sélectionner un fichier à utiliser en pièce jointe d’un message électronique.
 
 ## <a name="related-topics"></a>Rubriques connexes
 

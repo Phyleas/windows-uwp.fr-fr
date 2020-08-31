@@ -7,12 +7,12 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: Windows 10, UWP, notification, collection, groupe, expérience utilisateur, conseils, conseils, action, toast, centre de maintenance, notifications non interinterrompues, notifications efficaces, notifications non intrusives, action possible, gérer, organiser
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e970b5ae2019dcc0290dc6b0b72b48208eb5c12
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 9879d052882532e4d47c27c0b636f728293311cf
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684598"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169173"
 ---
 # <a name="toast-notification-ux-guidance"></a>Guide d’expérience utilisateur des notifications Toast
 Les notifications sont un élément essentiel de la vie moderne ; ils aident les utilisateurs à être plus productifs et à être engagés avec des applications et des sites Web, et à rester à jour avec toutes les mises à jour. Toutefois, les notifications peuvent rapidement devenir utiles pour se décharger et intrusives si elles ne sont pas conçues de façon centrée sur l’utilisateur. Vos notifications sont accessibles par un clic droit à l’extérieur et il est peu probable qu’elles soient désactivées. elles sont réactivées.  Par conséquent, assurez-vous que vos notifications respectent l’espace et l’heure de l’écran de l’utilisateur, ce qui vous permet de garder ce canal d’engagement ouvert.
@@ -26,7 +26,7 @@ Les notifications exploitables permettent à vos utilisateurs d’être producti
 
 ![Notification actionnable avec zone de texte d’entrée et boutons pour définir des rappels et répondre à la notification](images/actionable-notification-example01.png)
 
-L’exemple ci-dessus illustre une notification qui s’appuie sur des actions. Le sentiment de la finition des tâches est un sentiment universellement positif. vous pouvez apporter cette sensation à votre application ou site Web en envoyant des notifications qui contiennent du contenu actionnable. Les notifications exploitables peuvent également contribuer à augmenter la productivité, dans les scénarios d’entreprise et de consommation, en diminuant le temps nécessaire aux utilisateurs pour accomplir ces tâches plus petites. Nous vous recommandons d’inclure les actions que vos utilisateurs prennent régulièrement, ou les éléments que vous essayez d’apprendre à former vos utilisateurs.  Certains exemples comprennent notamment :
+L’exemple ci-dessus illustre une notification qui s’appuie sur des actions. Le sentiment de la finition des tâches est un sentiment universellement positif. vous pouvez apporter cette sensation à votre application ou site Web en envoyant des notifications qui contiennent du contenu actionnable. Les notifications exploitables peuvent également contribuer à augmenter la productivité, dans les scénarios d’entreprise et de consommation, en diminuant le temps nécessaire aux utilisateurs pour accomplir ces tâches plus petites. Nous vous recommandons d’inclure les actions que vos utilisateurs prennent régulièrement, ou les éléments que vous essayez d’apprendre à former vos utilisateurs.  Voici quelques exemples :
 * Souhaits, placement, marquage ou contenu de acteurs
 * Approuver ou refuser des notes de frais, des congés, des autorisations, etc.
 * Réponse en ligne à des messages, e-mails, conversations de groupe, commentaires, etc.
@@ -38,18 +38,18 @@ Les notifications exploitables sont un outil très puissant pour aider vos utili
 ## <a name="2-timing-and-urgency"></a>2. minutage et urgence
 Contrairement à la façon dont nous pensons souvent aux notifications, le temps réel n’est pas forcément le meilleur ! Nous recommandons vivement aux développeurs de réfléchir à l’utilisateur et, si la notification qu’il envoie est des informations urgentes ou non. Les utilisateurs peuvent facilement être surchargés avec trop d’informations et être frustrés s’ils sont interrompus alors qu’ils essaient de se concentrer. Windows fournit quelques options pour tenir compte de l’intrusion des notifications envoyées :
 
-**Notifications brutes :** L’utilisation de [notifications brutes](raw-notification-overview.md) peut être bénéfique pour de nombreuses raisons, en particulier lorsqu’il s’agit de réduire les interruptions à l’utilisateur.  L’envoi de notifications brutes met en éveil votre application en arrière-plan, ce qui vous permet d’évaluer si la notification est logique de remettre immédiatement dans le contexte de votre application. Si vous pensez que l’utilisateur doit s’afficher immédiatement, vous pouvez dépiler un [Toast local](send-local-toast.md) à partir de là.  S’il s’agit d’un nom que l’utilisateur n’a pas besoin de voir pour l’instant, vous pouvez créer un [Toast planifié](https://blogs.msdn.microsoft.com/tiles_and_toasts/2016/09/30/quickstart-sending-an-alarm-in-windows-10/) qui s’activera ultérieurement.
+**Notifications brutes :** L’utilisation de [notifications brutes](raw-notification-overview.md) peut être bénéfique pour de nombreuses raisons, en particulier lorsqu’il s’agit de réduire les interruptions à l’utilisateur.  L’envoi de notifications brutes met en éveil votre application en arrière-plan, ce qui vous permet d’évaluer si la notification est logique de remettre immédiatement dans le contexte de votre application. Si vous pensez que l’utilisateur doit s’afficher immédiatement, vous pouvez dépiler un [Toast local](send-local-toast.md) à partir de là.  S’il s’agit d’un nom que l’utilisateur n’a pas besoin de voir pour l’instant, vous pouvez créer un [Toast planifié](/archive/blogs/tiles_and_toasts/quickstart-sending-an-alarm-in-windows-10) qui s’activera ultérieurement.
 
 
-**Ghost Toast :** vous pouvez également déclencher une notification qui s’affiche dans le coin inférieur droit de l’écran et envoie la notification directement au centre de maintenance. Pour ce faire, affectez la valeur true à la [propriété SupressPopup](https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastnotification.suppresspopup) . Bien qu’il puisse y avoir un certain risque de ne pas détourner les notifications en dehors du centre de maintenance, nous voyons un engagement 2-3 fois plus élevé pour les toasts qui vivent dans le centre de maintenance sur le Toast dépilé.  Les utilisateurs sont plus réactifs lorsqu’ils sont prêts à recevoir des notifications et peuvent contrôler le moment où ils sont interrompus, ce qui explique pourquoi le contenu du centre de maintenance peut être tellement plus efficace pour notifier les utilisateurs de manière non invasive.
+**Ghost Toast :** vous pouvez également déclencher une notification qui s’affiche dans le coin inférieur droit de l’écran et envoie la notification directement au centre de maintenance. Pour ce faire, affectez la valeur true à la [propriété SupressPopup](/uwp/api/windows.ui.notifications.toastnotification.suppresspopup) . Bien qu’il puisse y avoir un certain risque de ne pas détourner les notifications en dehors du centre de maintenance, nous voyons un engagement 2-3 fois plus élevé pour les toasts qui vivent dans le centre de maintenance sur le Toast dépilé.  Les utilisateurs sont plus réactifs lorsqu’ils sont prêts à recevoir des notifications et peuvent contrôler le moment où ils sont interrompus, ce qui explique pourquoi le contenu du centre de maintenance peut être tellement plus efficace pour notifier les utilisateurs de manière non invasive.
 
 ## <a name="3-clear-out-the-clutter"></a>3. éliminez le désordre
 Les notifications peuvent être conservées dans le centre de notifications pendant une durée relativement longue (trois jours par défaut).  Il est impératif de vérifier que le contenu qui se trouve ici est à jour et pertinent chaque fois que l’utilisateur ouvre le centre de maintenance. Vous gaspillez l’espace d’écran de l’utilisateur et vous occupez des emplacements qui peuvent être utilisés pour un plus grand nombre de mises à jour.  Supposons que l’utilisateur installe votre application de gestion de la messagerie et reçoit dix courriers électroniques et dix notifications avec ces messages.  En fonction de l’expérience souhaitée, vous pouvez envisager de désactiver ces notifications si l’utilisateur a lu l’e-mail correspondant, ou d’ouvrir l’application pour supprimer les anciens courriers électroniques du centre de maintenance.
 
-Nous disposons d’une série d’API [ToastNotificationHistory](https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastnotificationhistory) qui vous permettent de voir le contenu qui se trouve dans le centre de maintenance, ainsi que de gérer ces notifications. Soyez respectueux de l’espace d’écran de l’utilisateur et veillez à ne montrer que le contenu pertinent et actuel aux utilisateurs.
+Nous disposons d’une série d’API [ToastNotificationHistory](/uwp/api/windows.ui.notifications.toastnotificationhistory) qui vous permettent de voir le contenu qui se trouve dans le centre de maintenance, ainsi que de gérer ces notifications. Soyez respectueux de l’espace d’écran de l’utilisateur et veillez à ne montrer que le contenu pertinent et actuel aux utilisateurs.
 
 ## <a name="4-keeping-organized"></a>4. maintien de l’Organisation
-Comme mentionné précédemment, le contenu dans le centre de maintenance des actions est conservé pendant trois jours.  Pour aider vos utilisateurs à choisir les informations qu’ils recherchent rapidement, organisez les notifications dans le centre de maintenance à l’aide d'[en-têtes](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/toast-headers) ou de [regroupements](https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastcollection). Vous pouvez voir un exemple d’en-tête ci-dessous.
+Comme mentionné précédemment, le contenu dans le centre de maintenance des actions est conservé pendant trois jours.  Pour aider vos utilisateurs à choisir les informations qu’ils recherchent rapidement, organisez les notifications dans le centre de maintenance à l’aide d' [en-têtes](./toast-headers.md) ou de [regroupements](/uwp/api/windows.ui.notifications.toastcollection). Vous pouvez voir un exemple d’en-tête ci-dessous.
 
 ![Exemples toast avec en-têtes étiquetés « Camping !! »](images/toast-headers-action-center.png)
 
@@ -61,7 +61,7 @@ Ces quatre points ci-dessus sont des conseils que nous avons constatés par notr
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Contenu Toast](adaptive-interactive-toasts.md)
+* [Contenu des toasts](adaptive-interactive-toasts.md)
 * [Notifications brutes](raw-notification-overview.md)
 * [Mise à jour en attente](toast-pending-update.md)
 * [Bibliothèque de notifications sur GitHub (qui fait partie de la boîte à outils de la communauté Windows)](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)

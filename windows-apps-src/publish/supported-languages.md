@@ -6,19 +6,19 @@ ms.date: 03/07/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a3b3ada3415e6f1abc98dc3c351f6db791adc984
-ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
+ms.openlocfilehash: 79d729f97bef68a429c57894e6c0eeeab389c642
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89043431"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170893"
 ---
 # <a name="supported-languages"></a>Langues prises en charge
 
 
 Vous pouvez soumettre des applications au Microsoft Store dans plus de 100 langues.
 
-Pour en savoir plus sur la configuration des langues dans vos applications, consultez [globalisation et localisation](../design/globalizing/globalizing-portal.md) et présentation des langages de [profil utilisateur et des langages de manifeste d’application](../design/globalizing/manage-language-and-region.md). Nous avons également un [Kit de ressources pour application multilingue](https://docs.microsoft.com/windows/uwp/design/globalizing/use-mat) pour vous aider à écrire des applications qui prennent en charge plusieurs langues.
+Pour en savoir plus sur la configuration des langues dans vos applications, consultez [globalisation et localisation](../design/globalizing/globalizing-portal.md) et présentation des langages de [profil utilisateur et des langages de manifeste d’application](../design/globalizing/manage-language-and-region.md). Nous avons également un [Kit de ressources pour application multilingue](../design/globalizing/use-mat.md) pour vous aider à écrire des applications qui prennent en charge plusieurs langues.
 
 ## <a name="supported-languages"></a>Langues prises en charge
 
@@ -138,7 +138,3 @@ Les codes de langue qui ne sont pas inclus ici ne sont pas pris en charge par le
  
 
  
-
-
-
-

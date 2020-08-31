@@ -1,17 +1,17 @@
 ---
-description: Quels sont les choix possibles lors du développement d’applications multiplateformes ?
+description: Découvrez les outils et les techniques qui peuvent vous aider à écrire des applications qui prennent en charge Windows, iOS et Android.
 title: Sélection d’une approche d’iOS et développement d’applications pour UWP
 ms.assetid: 5CDAB313-07B7-4A32-A49B-026361DCC853
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 538fbc33d161f5f91033427af76438f49d3d3b68
-ms.sourcegitcommit: 28bd367ab8acc64d4b6f3f73adca12100cbd359f
+ms.openlocfilehash: 83a316a729fc1c2042dde5541e2b187bf8903188
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82148587"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89171183"
 ---
 # <a name="selecting-an-approach-to-ios-and-uwp-app-development"></a>Sélection d’une approche d’iOS et développement d’applications pour UWP
 

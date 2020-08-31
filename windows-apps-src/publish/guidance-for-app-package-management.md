@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4615503c41df6cef891ab8e77024d9951c489b38
-ms.sourcegitcommit: 96b7be654a0922eeb421b5fa51ebfc586abe74fe
+ms.openlocfilehash: 5ecd8cc96196c31615eac032183956de3bee9e4b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84945946"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89171053"
 ---
 # <a name="guidance-for-app-package-management"></a>Aide sur la gestion des packages d’application
 
@@ -52,7 +52,7 @@ Après l’indisponibilité de l’application, vous la verrez toujours dans l�
 
 ## <a name="removing-packages-for-a-previously-supported-device-family"></a>Suppression de packages pour une famille d'appareils précédemment prise en charge
 
-Si vous supprimez tous les packages pour une certaine [famille d’appareils](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview) déjà prise en charge par votre application, vous êtes invité à confirmer qu’il s’agit de votre intention avant de pouvoir enregistrer vos modifications sur la page **packages** .
+Si vous supprimez tous les packages pour une certaine [famille d’appareils](/uwp/extension-sdks/device-families-overview) déjà prise en charge par votre application, vous êtes invité à confirmer qu’il s’agit de votre intention avant de pouvoir enregistrer vos modifications sur la page **packages** .
 
 Lorsque vous publiez une soumission qui supprime tous les packages qui peuvent s’exécuter sur une famille d’appareils que votre application prenait déjà en charge, les nouveaux clients ne peuvent pas acquérir l’application sur cette famille d’appareils. Vous pouvez toujours publier une autre mise à jour pour proposer de nouveau des packages pour cette famille d'appareils.
 

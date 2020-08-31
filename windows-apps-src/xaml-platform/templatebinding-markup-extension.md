@@ -6,16 +6,16 @@ ms.date: 10/29/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e784b14c30222a28a0e10f8ba0bcf96e6c7f9afd
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 3b368ca2f429d52674ba1cb3493012d54dc0848a
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372314"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154923"
 ---
 # <a name="templatebinding-markup-extension"></a>Extension de balisage {TemplateBinding}
 
-Lie la valeur d’une propriété dans un modèle de contrôle à la valeur d’une autre propriété exposée sur le contrôle basé sur un modèle. **TemplateBinding** peut uniquement être utilisé dans une définition [**ControlTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) en XAML.
+Lie la valeur d’une propriété dans un modèle de contrôle à la valeur d’une autre propriété exposée sur le contrôle basé sur un modèle. **TemplateBinding** ne peut être utilisé que dans une définition [**ControlTemplate**](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) en XAML.
 
 ## <a name="xaml-attribute-usage"></a>Utilisation des attributs XAML
 
@@ -36,36 +36,36 @@ Lie la valeur d’une propriété dans un modèle de contrôle à la valeur d’
 | propertyName | Nom de la propriété définie dans la syntaxe de la méthode setter. Il doit s’agir d’une propriété de dépendance. |
 | sourceProperty | Nom d’une autre propriété de dépendance qui existe sur le type qui est basé sur un modèle. |
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarques
 
-L’utilisation de **TemplateBinding** est un élément fondamental de la définition d’un modèle de contrôle, si vous êtes l’auteur d’un contrôle personnalisé ou si vous remplacez un modèle de contrôle pour des contrôles existants. Pour plus d’informations, consultez [Guide de démarrage rapide : Modèles de contrôle](https://docs.microsoft.com/previous-versions/windows/apps/hh465374(v=win.10)).
+L’utilisation de **TemplateBinding** est un élément fondamental de la définition d’un modèle de contrôle, si vous êtes l’auteur d’un contrôle personnalisé ou si vous remplacez un modèle de contrôle pour des contrôles existants. Pour plus d’informations, voir [Démarrage rapide : modèles de contrôles](/previous-versions/windows/apps/hh465374(v=win.10)).
 
-Il est relativement courant pour *propertyName* et *targetProperty* d’utiliser le même nom de propriété. Dans ce cas, un contrôle peut définir une propriété sur elle-même et la transmettre à une propriété existante nommée de manière intuitive de l’une de ses parties de composants. Par exemple, un contrôle qui incorpore un [ **TextBlock** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) dans sa composition, qui est utilisé pour afficher le contrôle propre **texte** propriété, peut inclure ce XAML en tant que partie dans le modèle de contrôle : `<TextBlock Text="{TemplateBinding Text}" .... />`
+Il est relativement courant pour *propertyName* et *targetProperty* d’utiliser le même nom de propriété. Dans ce cas, un contrôle peut définir une propriété sur elle-même et la transmettre à une propriété existante nommée de manière intuitive de l’une de ses parties de composants. Par exemple, un contrôle qui incorpore un [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) dans sa composition, qui est utilisée pour afficher la propriété de **texte** du contrôle, peut inclure ce XAML en tant que composant dans le modèle de contrôle : `<TextBlock Text="{TemplateBinding Text}" .... />`
 
-Les types utilisés comme valeur de la propriété de source et valeur de la propriété cible doivent correspondre. Il est impossible d’introduire un convertisseur lorsque vous utilisez **TemplateBinding**. Si les valeurs ne correspondent pas, une erreur se produit lors de l’analyse du code XAML. Si vous avez besoin d’un convertisseur, vous pouvez utiliser la syntaxe détaillée pour une liaison de modèle tels que : `{Binding RelativeSource={RelativeSource TemplatedParent}, Converter="..." ...}`
+Les types utilisés comme valeur de la propriété de source et valeur de la propriété cible doivent correspondre. Il est impossible d’introduire un convertisseur lorsque vous utilisez **TemplateBinding**. Si les valeurs ne correspondent pas, une erreur se produit lors de l’analyse du code XAML. Si vous avez besoin d’un convertisseur, vous pouvez utiliser la syntaxe détaillée pour une liaison de modèle, par exemple : `{Binding RelativeSource={RelativeSource TemplatedParent}, Converter="..." ...}`
 
-Toute tentative d’utilisation d’un **TemplateBinding** en dehors d’une définition [**ControlTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) en XAML engendre une erreur d’analyse.
+Toute tentative d’utilisation d’un **TemplateBinding** en dehors d’une définition [**ControlTemplate**](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) en XAML engendre une erreur d’analyse.
 
 Vous pouvez utiliser **TemplateBinding** lorsque la valeur du parent basé sur un modèle est également différée comme autre liaison. L’évaluation de **TemplateBinding** peut démarrer lorsque des valeurs sont affectées à des liaisons runtime requises.
 
-**TemplateBinding** est toujours une liaison à sens unique. Les deux propriétés impliquées doivent être des propriétés de dépendance.
+**TemplateBinding** est toujours une liaison à sens unique. Les deux propriétés doivent toutes être des propriétés de dépendance.
 
-**TemplateBinding** est une extension de balisage. Les extensions de balisage sont généralement implémentées lorsqu’il est nécessaire de procéder à l’échappement de valeurs d’attribut pour en faire autre chose que des valeurs littérales ou des noms de gestionnaires. Il s’agit d’une mesure plus globale que celle qui consiste à placer simplement des convertisseurs de types au niveau de certains types ou propriétés. Toutes les extensions de balisage XAML utilisent les caractères « { » et « } » dans leur syntaxe d’attribut, ce qui correspond à la convention qui permet au processeur XAML de reconnaître qu’une extension de balisage doit traiter l’attribut.
+**TemplateBinding** est une extension de balisage. Les extensions de balisage sont généralement implémentées pour éviter que les valeurs d’attribut ne soient autre chose que des valeurs littérales ou des noms de gestionnaire et lorsque l’exigence dépasse le cadre de la définition de convertisseurs de type sur certains types ou propriétés. Toutes les extensions de balisage XAML utilisent les caractères « { » et « } » dans leur syntaxe d’attribut, ce qui correspond à la convention qui permet au processeur XAML de reconnaître qu’une extension de balisage doit traiter l’attribut.
 
-**Remarque**  implémentation du processeur dans le XAML de Runtime de Windows, il n’existe aucune représentation de classe de stockage pour **TemplateBinding**. **TemplateBinding** est à utiliser exclusivement dans le balisage XAML. Il n’y a pas de moyen simple de reproduire le comportement dans du code.
+**Remarque**    Dans l’implémentation de processeur XAML Windows Runtime, il n’existe aucune représentation de classe de stockage pour **TemplateBinding**. **TemplateBinding** est à utiliser exclusivement dans le balisage XAML. Il n’y a pas de moyen simple de reproduire le comportement dans du code.
 
-### <a name="xbind-in-controltemplate"></a>x : Bind dans un ControlTemplate
+### <a name="xbind-in-controltemplate"></a>x :Bind dans ControlTemplate
 
 > [!NOTE]
-> À l’aide de x : Bind dans un ControlTemplate nécessite Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) ou version ultérieure. Pour plus d’informations sur les versions cibles, voir [Code adaptatif de version](https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
+> L’utilisation de x :Bind dans un ControlTemplate requiert Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) ou version ultérieure. Pour plus d’informations sur les versions cibles, voir [Code adaptatif de version](../debug-test-perf/version-adaptive-code.md).
 
-À partir de Windows 10, version 1809, vous pouvez utiliser la **x : Bind** extension de balisage n’importe où vous utilisez **TemplateBinding** dans un [ **ControlTemplate** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate). 
+À compter de Windows 10, version 1809, vous pouvez utiliser l’extension de balisage **x :bind** partout où vous utilisez **TemplateBinding** dans un [**ControlTemplate**](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate). 
 
-Le [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype) propriété est requise (non facultatifs) sur [ControlTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) lors de l’utilisation **x : Bind**.
+La propriété [TargetType](/uwp/api/windows.ui.xaml.controls.controltemplate.targettype) est obligatoire (pas facultative) sur [ControlTemplate](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) lors de l’utilisation de **x :bind**.
 
-Avec **x : Bind** prennent en charge, vous pouvez utiliser deux [fonction liaisons](../data-binding/function-bindings.md) , ainsi que des liaisons bidirectionnelles dans un [ControlTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate).
+Avec la prise en charge de **x :bind** , vous pouvez utiliser des [liaisons de fonction](../data-binding/function-bindings.md) ainsi que des liaisons bidirectionnelles dans un [ControlTemplate](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate).
 
-Dans cet exemple, le **TextBlock.Text** prend la valeur de propriété **Button.Content.ToString**. TargetType sur le ControlTemplate agit comme la source de données et effectue le même résultat qu’un TemplateBinding au parent.
+Dans cet exemple, la propriété **TextBlock. Text** prend la valeur **Button. Content. ToString**. Le TargetType sur le ControlTemplate fait office de source de données et atteint le même résultat qu’un TemplateBinding du parent.
 
 ```xaml
 <ControlTemplate TargetType="Button">
@@ -77,10 +77,9 @@ Dans cet exemple, le **TextBlock.Text** prend la valeur de propriété **Button.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Démarrage rapide : Modèles de contrôle](https://docs.microsoft.com/previous-versions/windows/apps/hh465374(v=win.10))
-* [Présentation détaillée de la liaison de données](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)
-* [**ControlTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate)
+* [Démarrage rapide : modèles de contrôle](/previous-versions/windows/apps/hh465374(v=win.10))
+* [Présentation détaillée de la liaison de données](../data-binding/data-binding-in-depth.md)
+* [**ControlTemplate**](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate)
 * [Vue d’ensemble du langage XAML](xaml-overview.md)
 * [Vue d’ensemble des propriétés de dépendance](dependency-properties-overview.md)
  
-

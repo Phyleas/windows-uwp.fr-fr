@@ -2,20 +2,23 @@
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: Portail d’appareil pour Windows Desktop
 description: Découvrez comment Windows Device Portal ouvre les diagnostics et l’automatisation sur votre bureau Windows.
-ms.date: 02/06/2019
+ms.date: 08/20/2020
 ms.topic: article
 keywords: windows 10, uwp, portail d’appareil
 ms.localizationpriority: medium
-ms.openlocfilehash: 73f7e827c0ec8ca289d3523da06601de978a91d2
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: dc3ca2379ae7dd704d96e383cc02314ee9423fb7
+ms.sourcegitcommit: 508fb9e763aa5967beebf7bf5e77d7ad12baa566
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79210185"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88714490"
 ---
 # <a name="device-portal-for-windows-desktop"></a>Portail d’appareil pour Windows Desktop
 
-Le portail d’appareil Windows vous permet d’afficher les informations de diagnostic et d’interagir avec votre ordinateur de bureau via une connexion HTTP, dans une fenêtre de votre navigateur. Vous pouvez utiliser Device Portal pour :
+Le Portail d’appareil Windows est un outil de débogage qui vous permet d’afficher des informations de diagnostic et d’interagir avec votre PC de bureau par le biais d’une connexion HTTP à partir d’un navigateur web. Pour déboguer d’autres appareils, consultez [Vue d’ensemble du Portail d’appareil Windows](device-portal.md).
+
+
+Vous pouvez utiliser Device Portal pour :
 - voir et manipuler une liste de processus en cours d’exécution ;
 - installer, supprimer, démarrer et arrêter des applications ;
 - modifier les profils de connexion Wi-Fi, afficher la force du signal et voir ipconfig ;
@@ -35,37 +38,46 @@ Le portail d’appareil Windows vous permet d’afficher les informations de dia
 
 ### <a name="turn-on-device-portal"></a>Activer Device Portal
 
-Vous pouvez activer le portail d’appareil dans la section **Pour les développeurs** des **paramètres**. Lorsque vous l’activez, vous devez également créer un nom d’utilisateur et un mot de passe. N’utilisez pas votre compte Microsoft ou d’autres informations d’identification Windows. 
+Vous pouvez activer le portail d’appareil dans la section **Pour les développeurs** des **paramètres**. Lorsque vous l’activez, vous devez également créer un nom d’utilisateur et un mot de passe. N’utilisez pas votre compte Microsoft ou d’autres informations d’identification Windows.
 
-![Section Portail d’appareil de l’application Paramètres](images/device-portal/device-portal-desk-settings.png) 
+![Section Portail d’appareil de l’application Paramètres](images/device-portal/device-portal-desk-settings.png)
 
-Une fois le portail d’appareil activé, des liens Web permettant d’y accéder apparaissent en bas de cette section. Notez le numéro de port apparaissant à la fin des URL : ce numéro est généré de manière aléatoire lorsque le portail d’appareil est activé, mais il doit rester cohérent entre deux redémarrages de l’ordinateur. 
+Une fois le portail d’appareil activé, des liens Web permettant d’y accéder apparaissent en bas de cette section. Notez le numéro de port apparaissant à la fin des URL : ce numéro est généré de manière aléatoire lorsque le portail d’appareil est activé, mais il doit rester cohérent entre deux redémarrages de l’ordinateur.
 
-Ces liens offrent deux modes de connexion au portail d’appareil : sur le réseau local (y compris le VPN) ou via l’hôte local.
+Ces liens offrent deux modes de connexion au portail d’appareil : sur le réseau local (y compris le VPN) ou via l’hôte local. Une fois connecté, voici à quoi cela doit ressembler :
+
+![Portail d’appareil](images/device-portal/device-portal-example.png)
+
+
+### <a name="turn-off-device-portal"></a>Désactiver le Portail d’appareil
+
+Vous pouvez désactiver le Portail d’appareil dans la section **Pour les développeurs** de **Paramètres**.
 
 ### <a name="connect-to-device-portal"></a>Connexion au portail d’appareil
 
-Pour une connexion via l’hôte local, ouvrez une fenêtre de navigateur et entrez l’adresse indiquée ici pour le type de connexion que vous utilisez.
+Pour vous connecter par le biais de l’hôte local, ouvrez une fenêtre de navigateur et entrez l’adresse indiquée ici pour le type de connexion que vous utilisez.
 
 * Hôte local : `http://127.0.0.1:<PORT>` ou `http://localhost:<PORT>`
 * Réseau local : `https://<IP address of the desktop>:<PORT>`
 
 Une connexion HTTPS est requise pour l’authentification et la communication sécurisée.
 
-Si vous utilisez le portail d’appareil dans un environnement protégé, comme un laboratoire de test, où vous faites confiance à tous les utilisateurs du réseau local, si aucune information personnelle n’est présente sur votre appareil et si vous présentez des exigences uniques, vous pouvez désactiver l’option Authentification. Cela permet une communication non chiffrée. Toute personne connaissant l’adresse IP de votre ordinateur pourra s’y connecter et le contrôler.
+Si vous utilisez le Portail d’appareil dans un environnement protégé, comme par exemple un laboratoire de test, où vous faites confiance à tous les utilisateurs du réseau local, si aucune information personnelle n’est présente sur votre appareil et si vous présentez des exigences uniques, vous pouvez désactiver l’option Authentification. Cela permet une communication non chiffrée. Toute personne connaissant l’adresse IP de votre ordinateur pourra s’y connecter et le contrôler.
 
 ## <a name="device-portal-content-on-windows-desktop"></a>Contenu du portail d’appareil sur Windows Desktop
 
-Le portail d’appareil sur Windows Desktop propose les ensembles de pages standard. Pour en obtenir une description détaillée, voir [Vue d’ensemble du portail d’appareil Windows](device-portal.md).
+Le Portail d’appareil sur Windows Desktop affiche l’ensemble de pages décrit dans [Vue d’ensemble du Portail d’appareil Windows](device-portal.md).
 
 - Gestionnaire d’applications
+- Xbox Live
 - Explorateur de fichiers
-- Processus en cours d’exécution
+- Processus actifs
 - Performances
-- Journal de débogage
-- Suivi d’événements pour Windows (ETW)
+- Débogage
+- Journalisation du suivi d’événements pour Windows (ETW)
 - Suivi des performances
 - Gestionnaire de périphériques
+- Bluetooth
 - Mise en réseau
 - Données d’incident
 - Fonctionnalités
@@ -73,6 +85,12 @@ Le portail d’appareil sur Windows Desktop propose les ensembles de pages stan
 - Débogueur d’installation en continu
 - Emplacement
 - Vide
+
+## <a name="using-device-portal-for-windows-desktop-to-test-and-debug-msix-apps"></a>Utilisation du Portail d’appareil pour Windows Desktop afin de tester et déboguer des applications MSIX
+
+
+> [!VIDEO https://www.youtube.com/embed/PdgXeOMt4hk]
+
 
 ## <a name="more-device-portal-options"></a>Autres options du portail d’appareil
 
@@ -105,7 +123,7 @@ Dans le chemin d’accès de la même clé de Registre, vous pouvez également d
     - Exécutez une version autonome du portail d’appareil avec une configuration spécifique et des messages de débogage visibles. Cela est particulièrement utile pour la création d’un [plug-in empaqueté](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-plugin). 
     - Pour plus d’informations sur cette exécution en tant que système pour tester complètement votre plug-in empaqueté, voir [l’article du MSDN Magazine](https://msdn.microsoft.com/magazine/mt826332.aspx).
 
-## <a name="common-errors-and-issues"></a>Erreurs et problèmes courants
+## <a name="troubleshooting"></a>Résolution des problèmes
 
 Voici quelques-unes des erreurs courantes que vous pouvez rencontrer lors de la configuration du portail d’appareil.
 
@@ -132,4 +150,4 @@ Cette erreur peut s’afficher si vous utilisez une connexion Internet limitée.
 ## <a name="see-also"></a>Voir aussi
 
 * [Vue d’ensemble du Portail d'appareil Windows](device-portal.md)
-* [Informations de référence sur les API principales du Portail d'appareil](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)
+* [Informations de référence sur les API principales Device Portal](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

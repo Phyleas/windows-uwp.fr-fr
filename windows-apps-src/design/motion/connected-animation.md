@@ -9,12 +9,12 @@ pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ad94d7b887e28ac01156592ac47cfc9ac4783193
-ms.sourcegitcommit: 3a7f9f05f0127bc8e38139b219e30a8df584cad3
+ms.openlocfilehash: ff252faf4dd49929ec46c2ceaa02f94011e6b225
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83775908"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169323"
 ---
 # <a name="connected-animation-for-windows-apps"></a>Animation connectée pour les applications Windows
 
@@ -22,7 +22,7 @@ Les animations connectées vous permettent de créer une expérience de navigati
 
 Dans une animation connectée, un élément semble « continuer » entre deux vues au cours d’une modification du contenu de l’interface utilisateur, volant à travers l’écran à partir de son emplacement dans la vue source jusqu’à sa destination dans la nouvelle vue. Cela met en évidence le contenu commun entre les vues et crée un effet magnifique et dynamique dans le cadre d’une transition.
 
-> **API importantes**: [classe ConnectedAnimation](/uwp/api/windows.ui.xaml.media.animation.connectedanimation), [classe ConnectedAnimationService](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice)
+> **API importantes**:  [classe ConnectedAnimation](/uwp/api/windows.ui.xaml.media.animation.connectedanimation), [classe ConnectedAnimationService](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice)
 
 
 ## <a name="examples"></a>Exemples
@@ -63,12 +63,12 @@ Lors de la navigation entre les pages, il est important que l’utilisateur sach
 
 ## <a name="when-to-use-connected-animation"></a>Quand utiliser l’animation connectée
 
-Les animations connectées sont généralement utilisées lors de la modification des pages, bien qu’elles puissent être appliquées à toute expérience dans laquelle vous modifiez le contenu d’une interface utilisateur et souhaitez que l’utilisateur conserve le contexte. Vous devez envisager d’utiliser une animation connectée au lieu d’une [exploration dans la transition de navigation à](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.NavigationThemeTransition) chaque fois qu’une image ou une autre partie de l’interface utilisateur est partagée entre les vues source et de destination.
+Les animations connectées sont généralement utilisées lors de la modification des pages, bien qu’elles puissent être appliquées à toute expérience dans laquelle vous modifiez le contenu d’une interface utilisateur et souhaitez que l’utilisateur conserve le contexte. Vous devez envisager d’utiliser une animation connectée au lieu d’une [exploration dans la transition de navigation à](/uwp/api/Windows.UI.Xaml.Media.Animation.NavigationThemeTransition) chaque fois qu’une image ou une autre partie de l’interface utilisateur est partagée entre les vues source et de destination.
 
 ## <a name="configure-connected-animation"></a>Configurer l’animation connectée
 
 > [!IMPORTANT]
-> Cette fonctionnalité requiert que la version cible de votre application soit Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) ou version ultérieure. La propriété de configuration n’est pas disponible dans les kits de développement logiciel précédents. Vous pouvez cibler une version minimale inférieure à celle du kit de développement logiciel (SDK) 17763 à l’aide de code adaptatif ou XAML conditionnel. Pour plus d’informations, consultez [version adaptative Apps](/windows/uwp/debug-test-perf/version-adaptive-apps).
+> Cette fonctionnalité requiert que la version cible de votre application soit Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) ou version ultérieure. La propriété de configuration n’est pas disponible dans les kits de développement logiciel précédents. Vous pouvez cibler une version minimale inférieure à celle du kit de développement logiciel (SDK) 17763 à l’aide de code adaptatif ou XAML conditionnel. Pour plus d’informations, consultez [version adaptative Apps](../../debug-test-perf/version-adaptive-apps.md).
 
 À compter de Windows 10, version 1809, les animations connectées incorporent davantage la conception Fluent en fournissant des configurations d’animation adaptées spécifiquement pour la navigation vers l’avant et vers l’arrière.
 

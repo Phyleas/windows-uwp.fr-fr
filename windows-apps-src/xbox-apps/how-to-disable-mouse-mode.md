@@ -1,17 +1,17 @@
 ---
 title: Comment désactiver le mode souris
-description: Instructions pour désactiver le mode souris par défaut.
+description: Découvrez comment désactiver le mode de souris par défaut dans les applications HTML et XAML/C# plateforme Windows universelle (UWP).
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: e57ee4e6-7807-4943-a933-c2b4dc80fc01
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e4b8868f416494daf978d65d4a4ccde02d6ccf5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 16b2df2d84c0064c2549c75d867123d90e663314
+ms.sourcegitcommit: 45dec3dc0f14934b8ecf1ee276070b553f48074d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57656624"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89094596"
 ---
 # <a name="how-to-disable-mouse-mode"></a>Comment désactiver le mode souris
 Le mode souris est activé par défaut sur toutes les applications. Toutes les applications qui ne le refusent pas reçoivent un pointeur de souris (semblable à celui du navigateur Microsoft Edge de la console). Nous vous recommandons vivement de désactiver cette fonctionnalité et d’optimiser la navigation par commande directionnelle.   
@@ -46,7 +46,7 @@ public App() {
 ## <a name="cdirectx"></a>C++/DirectX   
 Si vous écrivez une application C++/DirectX, vous n’avez rien à faire. Le mode souris s’applique uniquement aux applications HTML et XAML.
 
-## <a name="see-also"></a>Voir également
-- [Meilleures pratiques pour Xbox](tailoring-for-xbox.md)
+## <a name="see-also"></a>Voir aussi
+- [Bonnes pratiques pour Xbox](tailoring-for-xbox.md)
 - [UWP sur Xbox One](index.md)
 

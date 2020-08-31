@@ -6,12 +6,12 @@ ms.date: 03/05/2019
 ms.topic: article
 keywords: Windows 10, UWP, taxes, taxes d’application, exigences fiscales, expansion commerce, taux d’imposition
 ms.localizationpriority: medium
-ms.openlocfilehash: f1147ab6ee76b1d7615d6acaadaf6190db96c668
-ms.sourcegitcommit: 829af8cf4679a6aa9e7ecad961e1e33a09235028
+ms.openlocfilehash: 2d78a5a6af362a52b55830f279b3fffc1fb74346
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88681260"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170873"
 ---
 # <a name="tax-details-for-windows-appgame-developers-and-azure-marketplace-publishers"></a>Détails fiscaux pour les développeurs d’applications/jeux Windows et les éditeurs de la place de marché Azure
 
@@ -24,10 +24,10 @@ Dans certains cas, les pays gérés par Microsoft peuvent devenir des pays gér�
 Pour comprendre vos considérations fiscales relatives à la sélection du prix et à la responsabilité fiscale dans le cadre du contrat de développeur d’applications ou du contrat d’éditeur moderne, consultez les pays/régions de distribution dans les tableaux ci-dessous.
 
 > [!NOTE]
-> L’ajustement relatif à l’expansion du commerce peut avoir des implications de paiement dans un nombre limité de pays/régions. Pour plus de détails sur l’Ajustement du développement commercial et les marchés dans lesquels il s’applique, consultez le [Contrat du développeur de l’application](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) et la liste des [pays/régions impliqués](define-market-selection.md#price-considerations-for-specific-markets).
+> L’ajustement relatif à l’expansion du commerce peut avoir des implications de paiement dans un nombre limité de pays/régions. Pour plus de détails sur l’Ajustement du développement commercial et les marchés dans lesquels il s’applique, consultez le [Contrat du développeur de l’application](/legal/windows/agreements/app-developer-agreement) et la liste des [pays/régions impliqués](define-market-selection.md#price-considerations-for-specific-markets).
 
 > [!IMPORTANT]
-> La responsabilité fiscale pour les pays/régions et les circonstances des revendeurs (comme décrit [ci-dessous](#reseller-countriesregions)) est couverte par l’annexe b du [contrat de développeur d’applications](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement), nonobstant les informations du tableau ci-dessous.
+> La responsabilité fiscale pour les pays/régions et les circonstances des revendeurs (comme décrit [ci-dessous](#reseller-countriesregions)) est couverte par l’annexe b du [contrat de développeur d’applications](/legal/windows/agreements/app-developer-agreement), nonobstant les informations du tableau ci-dessous.
 > Notez que la colonne **implication de paiement** ne s’applique qu’aux développeurs d’applications/jeux Windows. Les taux d’imposition notés dans cette colonne sont susceptibles d’être modifiés à tout moment, et Microsoft ne peut pas garantir que les taux indiqués dans les tableaux ci-dessous seront toujours exacts.
 
 
@@ -289,7 +289,7 @@ Certains partenaires de facturation Microsoft peuvent recueillir et verser les t
 
 ## <a name="reseller-countriesregions"></a>Pays/régions des revendeurs
 
-Dans certains pays ou régions, Microsoft fait office de revendeur, plutôt que d’agent, pour la mise à disposition de vos applications et produits dans l’application dans le Store. Pour plus d’informations sur les modalités et conditions relatives aux pays/régions des revendeurs, voir le [Contrat du développeur de l’application](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement).
+Dans certains pays ou régions, Microsoft fait office de revendeur, plutôt que d’agent, pour la mise à disposition de vos applications et produits dans l’application dans le Store. Pour plus d’informations sur les modalités et conditions relatives aux pays/régions des revendeurs, voir le [Contrat du développeur de l’application](/legal/windows/agreements/app-developer-agreement).
 
 Les éléments suivants s’appliquent uniquement aux développeurs d’applications/jeux Windows :   
 

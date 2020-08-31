@@ -1,17 +1,17 @@
 ---
 title: Référence des API des paramètres de développement Xbox Device Portal
-description: Découvrez comment accéder aux paramètres de développement Xbox.
+description: Découvrez comment accéder aux paramètres Xbox One qui sont utiles pour le développement à l’aide de l’API REST du portail d’appareils Xbox.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 6ab12b99-2944-49c9-92d9-f995efc4f6ce
 ms.localizationpriority: medium
-ms.openlocfilehash: 54a15be26adf0da97105f15f3a44f26ee7bfc96d
-ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.openlocfilehash: 0aceb7afdce9cc76eab3ee330f0018fdc7ccd1bb
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59240037"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168983"
 ---
 # <a name="developer-settings-api-reference"></a>Informations de référence sur les API des paramètres de développement
 
@@ -19,11 +19,11 @@ Cette API vous permet d’accéder aux paramètres Xbox One utiles pour le déve
 
 ## <a name="get-all-developer-settings-at-once"></a>Obtenir tous les paramètres de développement à la fois
 
-**Demande**
+**Requête**
 
 Vous pouvez utiliser la requête suivante pour obtenir tous les paramètres de développement en une seule requête.
 
-Méthode      | URI de requête
+Méthode      | URI de demande
 :------     | :-----
 GET | /ext/settings
 
@@ -35,35 +35,35 @@ GET | /ext/settings
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
-**Réponse**   
+**Lutte**   
 La réponse est un tableau de paramètres JSON contenant tous les paramètres. Chaque paramètre inclut les champs suivants :
 
 * Name : (chaîne) le nom du paramètre.
 * Value : (chaîne) la valeur du paramètre.
 * RequiresReboot : (« Oui » | « Non ») ce champ indique si un redémarrage est nécessaire pour que le paramètre prenne effet.
-* Désactivé : (« Oui » | « Non ») ce champ indique si le paramètre est désactivé et ne peut pas être modifié.
+* Désactivé-(« Oui » | « Non ») ce champ indique si le paramètre est désactivé et ne peut pas être modifié.
 * Category : (chaîne) catégorie du paramètre.
-* Type : (« Texte » | « Nombre » | « Booléen » | « Sélection ») ce champ indique le type d’un paramètre : texte saisi, valeur booléenne (« vrai » ou « faux »), un nombre avec valeurs max et min ou une sélection dans une liste de valeurs spécifiques.
+* Type-("texte" | « Nombre » | « Bool » | « SELECT ») ce champ indique le type de paramètre : entrée de texte, valeur booléenne (« true » ou « false »), nombre avec min et Max ou SELECT avec une liste de valeurs spécifique.
 
 Si le paramètre est un nombre :
 
-* Min - (nombre), ce champ indique la valeur numérique minimale du paramètre.
-* Max - (nombre), ce champ indique la valeur numérique maximale du paramètre.
+* Min-(Number) ce champ indique la valeur numérique minimale du paramètre.
+* Max-(nombre) ce champ indique la valeur numérique maximale du paramètre.
 
 Si le paramètre est sélectionné :
 
-* OptionsVariable - (« Oui » | « Non ») ce champ indique si les options de paramétrage sont variable, si les options valides peuvent changer sans un redémarrage.
-* Options - tableau JSON contenant les options de sélection valides sous forme de chaînes.
+* OptionsVariable-(« Oui » | « Non ») ce champ indique si les options de paramétrage sont variables, si les options valides peuvent changer sans redémarrage.
+* Options : tableau JSON contenant les options Select valides en tant que chaînes.
 
 **Code d’état**
 
 Cette API comporte les codes d’état attendus suivants.
 
-Code d’état HTTP      | Description
+Code d'état HTTP      | Description
 :------     | :-----
 200 | Demande réussie
 4XX | Codes d’erreur
@@ -73,13 +73,13 @@ Code d’état HTTP      | Description
 
 Les paramètres peuvent également être récupérés individuellement.
 
-**Demande**
+**Requête**
 
 Vous pouvez utiliser la requête suivante pour obtenir des informations sur un paramètre individuel.
 
-Méthode      | URI de requête
+Méthode      | URI de demande
 :------     | :-----
-GET | /Ext/Settings/\<nom du paramètre\>
+GET | /ext/settings/\<setting name\>
 
 **Paramètres d’URI**
 
@@ -89,35 +89,35 @@ GET | /Ext/Settings/\<nom du paramètre\>
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
-**Réponse**   
+**Lutte**   
 La réponse est un objet JSON avec les champs suivants :
 
 * Name : (chaîne) le nom du paramètre.
 * Value : (chaîne) la valeur du paramètre.
 * RequiresReboot : (« Oui » | « Non ») ce champ indique si un redémarrage est nécessaire pour que le paramètre prenne effet.
-* Désactivé : (« Oui » | « Non ») ce champ indique si le paramètre est désactivé et ne peut pas être modifié.
+* Désactivé-(« Oui » | « Non ») ce champ indique si le paramètre est désactivé et ne peut pas être modifié.
 * Category : (chaîne) catégorie du paramètre.
-* Type : (« Texte » | « Nombre » | « Booléen » | « Sélection ») ce champ indique le type d’un paramètre : texte saisi, valeur booléenne (« vrai » ou « faux »), un nombre avec valeurs max et min ou une sélection dans une liste de valeurs spécifiques.
+* Type-("texte" | « Nombre » | « Bool » | « SELECT ») ce champ indique le type de paramètre : entrée de texte, valeur booléenne (« true » ou « false »), nombre avec min et Max ou SELECT avec une liste de valeurs spécifique.
 
 Si le paramètre est un nombre :
 
-* Min - (nombre), ce champ indique la valeur numérique minimale du paramètre.
-* Max - (nombre), ce champ indique la valeur numérique maximale du paramètre.
+* Min-(Number) ce champ indique la valeur numérique minimale du paramètre.
+* Max-(nombre) ce champ indique la valeur numérique maximale du paramètre.
 
 Si le paramètre est sélectionné :
 
-* OptionsVariable - (« Oui » | « Non ») ce champ indique si les options de paramétrage sont variable, si les options valides peuvent changer sans un redémarrage.
-* Options - tableau JSON contenant les options de sélection valides sous forme de chaînes.
+* OptionsVariable-(« Oui » | « Non ») ce champ indique si les options de paramétrage sont variables, si les options valides peuvent changer sans redémarrage.
+* Options : tableau JSON contenant les options Select valides en tant que chaînes.
 
 **Code d’état**
 
 Cette API comporte les codes d’état attendus suivants.
 
-Code d’état HTTP      | Description
+Code d'état HTTP      | Description
 :------     | :-----
 200 | Demande réussie
 4XX | Codes d’erreur
@@ -127,13 +127,13 @@ Code d’état HTTP      | Description
 
 Vous pouvez définir la valeur d’un paramètre.
 
-**Demande**
+**Requête**
 
 Vous pouvez utiliser la requête suivante pour définir la valeur d’un paramètre.
 
-Méthode      | URI de requête
+Méthode      | URI de demande
 :------     | :-----
-PUT | /Ext/Settings/\<nom du paramètre\>
+PUT | /ext/settings/\<setting name\>
 
 **Paramètres d’URI**
 
@@ -143,7 +143,7 @@ PUT | /Ext/Settings/\<nom du paramètre\>
 
 - Aucune
 
-**Corps de la requête**   
+**Corps de la demande**   
 Le corps de la requête est un objet JSON contenant le champ suivant :   
 Value : (chaîne) la nouvelle valeur du paramètre.
 
@@ -155,7 +155,7 @@ Value : (chaîne) la nouvelle valeur du paramètre.
 
 Cette API comporte les codes d’état attendus suivants.
 
-Code d’état HTTP      | Description
+Code d'état HTTP      | Description
 :------     | :-----
 200 | Demande réussie
 4XX | Codes d’erreur

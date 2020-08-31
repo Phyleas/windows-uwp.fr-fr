@@ -1,18 +1,18 @@
 ---
-title: Meilleures pratiques pour Xbox
-description: Découvrez comment optimiser votre application pour Xbox.
+title: Bonnes pratiques pour Xbox
+description: Découvrez comment optimiser votre application de plateforme Windows universelle (UWP) pour Xbox One en suivant ces meilleures pratiques de développement Xbox.
 ms.date: 10/12/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ce69549996a5adfb8c5d2d585753cf95ef3fdc3
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 8aaf8759b59c8ccbb5b09ba969675096700ce9e8
+ms.sourcegitcommit: 45dec3dc0f14934b8ecf1ee276070b553f48074d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684902"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89094456"
 ---
-# <a name="xbox-best-practices"></a>Meilleures pratiques pour Xbox
+# <a name="xbox-best-practices"></a>Bonnes pratiques pour Xbox
 
 Par défaut, toutes les applications UWP sont exécutées sur Xbox One sans aucune action de votre part. Toutefois, si vous voulez que votre application sorte du lot, suscite l’enthousiasme de vos clients et compte parmi les meilleures expériences d’applications sur Xbox, vous devriez suivre les pratiques ci-dessous.
   > [!NOTE]
@@ -37,7 +37,7 @@ One of the unique features of Xbox One is that users can snap apps such as Corta
 
 ### <a name="consider-draw-to-the-edge-of-the-screen"></a>*À envisager :* Étendre jusqu’au bord de l’écran
 
-Sur de nombreux téléviseurs, les bords de l’affichage sont coupés. Tout le contenu important de votre application doit donc être affiché dans la [zone adaptée à l’écran de TV](../design/devices/designing-for-tv.md#tv-safe-area). UWP utilise le *surbalayage* pour maintenir le contenu dans la zone adaptée à l’écran de TV, mais ce comportement par défaut peut dessiner une bordure visible autour de votre application. Pour une expérience optimale, désactivez le comportement par défaut et suivez les instructions de l’article [Comment étirer l’IU vers le bord de l’écran](turn-off-overscan.md).
+Sur de nombreux téléviseurs, les bords de l’affichage sont coupés. Tout le contenu important de votre application doit donc être affiché dans la [zone adaptée à l’écran de TV](../design/devices/designing-for-tv.md#tv-safe-area). UWP utilise la *suranalyse* pour conserver le contenu dans la zone de télévision sécurisée, mais ce comportement par défaut peut dessiner une bordure évidente autour de votre application. Pour une expérience optimale, désactivez le comportement par défaut et suivez les instructions de l’article [Comment étirer l’IU vers le bord de l’écran](turn-off-overscan.md).
 > [!IMPORTANT]
   > Si vous désactivez le surbalayage, vous devez vous-même vous assurer que les éléments et le texte interactifs demeurent dans la zone adaptée à l’écran de TV. 
 
@@ -49,19 +49,19 @@ Les écrans de télévision ne gèrent pas les intensités de couleurs extrêmes
 
 Les applications UWP sont automatiquement dimensionnées pour garantir la lisibilité des éléments d’interface utilisateur tels que les commandes et les polices sur tous les appareils. Les applications sont mises à une échelle de 200 % pour XAML et de 150 % pour les applications HTML. Si vous souhaitez contrôler davantage l’apparence de votre application sur Xbox, désactivez le facteur d’échelle par défaut et utilisez les dimensions en pixels réelles d’un téléviseur haute définition (1920 x 1080). Consultez les articles [Comment désactiver la mise à l’échelle](disable-scaling.md) et [Pixels effectifs et mise à l’échelle](../design/basics/design-and-ui-intro.md#effective-pixels-and-scaling) pour plus d’informations sur la personnalisation de votre application pour un rendu optimal sur Xbox.
 
-Si vous souhaitez obtenir un aperçu de ces pratiques appliquées à une application UWP, regardez cette vidéo !
+Si vous souhaitez obtenir un aperçu de ces pratiques appliquées à une application UWP, consultez cette vidéo !
 </br>
 </br>
 <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Tailoring-your-UWP-app-for-Xbox/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>
 
 ## <a name="channel-9"></a>Channel 9
 
-Les discussions suivantes sur [Channel 9](https://channel9.msdn.com/) sont une excellente source d’informations pour créer des applications sur Xbox :
+Les conversations suivantes sur [Channel 9](https://channel9.msdn.com/) constituent une source d’informations précieuse pour créer des applications étonnantes sur Xbox :
 
 - [Building Great Universal Windows Platform (UWP) Apps for Xbox](https://channel9.msdn.com/Events/Build/2016/B883)
 - [Adapt Your App for Xbox One and TV](https://channel9.msdn.com/Events/Build/2016/T651-R1)
-- [Développement UWP 1 : création d’une interface utilisateur adaptative](https://channel9.msdn.com/Events/Build/2016/L724-R1)
-- [Web Apps au-delà du navigateur : la plateforme multiplateforme répond à l’appareil](https://channel9.msdn.com/Events/Build/2016/B888)
+- [UWP Development 1: Building an Adaptive UI](https://channel9.msdn.com/Events/Build/2016/L724-R1)
+- [Web Apps Beyond the Browser: Cross-Platform Meets Cross Device](https://channel9.msdn.com/Events/Build/2016/B888)
 
 ## <a name="app-dev-on-xbox"></a>Application dev sur Xbox
 
@@ -70,7 +70,7 @@ L’événement **app dev on Xbox** est un excellent point de départ pour les d
 * [Surveiller les sessions enregistrées](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#WatchNow)
 * [Lire les billets de blog](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#BlogSeries)
 
-## <a name="see-also"></a>Articles associés
+## <a name="see-also"></a>Voir aussi
 
 - [UWP sur Xbox One](index.md)
 - [Conception pour Xbox et TV](../design/devices/designing-for-tv.md)

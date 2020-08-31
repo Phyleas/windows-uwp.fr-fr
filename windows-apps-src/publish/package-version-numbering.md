@@ -6,16 +6,16 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d5ac50cdba542de56ffb1daee01da12d4979ac45
-ms.sourcegitcommit: 96b7be654a0922eeb421b5fa51ebfc586abe74fe
+ms.openlocfilehash: 01e3a1d012e6c309f1c486417708457dd31c2c22
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84945975"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89171003"
 ---
 # <a name="package-version-numbering"></a>Numérotation des versions de packages
 
-Chaque package que vous fournissez doit avoir un numéro de version (fourni sous la forme d’une valeur dans l’attribut **Version** de l’élément [Package/Identity](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) dans le manifeste de l’application). Le Microsoft Store applique certaines règles relatives aux numéros de version, qui fonctionnent différemment dans différentes versions de système d’exploitation.
+Chaque package que vous fournissez doit avoir un numéro de version (fourni sous la forme d’une valeur dans l’attribut **Version** de l’élément [Package/Identity](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) dans le manifeste de l’application). Le Microsoft Store applique certaines règles relatives aux numéros de version, qui fonctionnent différemment dans différentes versions de système d’exploitation.
 
 > [!NOTE]
 > Cette rubrique fait référence aux « packages », mais sauf indication contraire, les mêmes règles s’appliquent aux numéros de version des fichiers. msix/. AppX et. msixbundle/. appxbundle.
@@ -28,7 +28,7 @@ Chaque package que vous fournissez doit avoir un numéro de version (fourni sous
 
 Lorsque vous choisissez un package UWP dans votre soumission publiée, le Microsoft Store utilisera toujours le package avec version la plus élevée applicable à l’appareil Windows 10 du client. Cela vous offre une plus grande souplesse et vous permet de contrôler les packages fournis aux clients sur des types spécifiques d’appareils. Il est important de noter que vous pouvez soumettre ces packages dans n’importe quel ordre ; vous n’êtes pas obligé de fournir des packages dont le numéro de version est supérieur avec chaque soumission ultérieure.
 
-Vous pouvez fournir plusieurs packages UWP avec le même numéro de version. Toutefois, les packages qui partagent un même numéro de version ne peuvent pas avoir la même architecture, car l’identité complète que le Windows Store utilise pour chaque package doit être unique. Pour plus d’informations, voir [**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity).
+Vous pouvez fournir plusieurs packages UWP avec le même numéro de version. Toutefois, les packages qui partagent un même numéro de version ne peuvent pas avoir la même architecture, car l’identité complète que le Windows Store utilise pour chaque package doit être unique. Pour plus d’informations, voir [**Identity**](/uwp/schemas/appxpackage/uapmanifestschema/element-identity).
 
 Lorsque vous fournissez plusieurs packages UWP qui utilisent le même numéro de version, l’architecture (dans l’ordre x64, x86, ARM, neutre) est utilisée pour déterminer celle qui est du rang le plus élevé (lorsque le magasin détermine le package à fournir à l’appareil d’un client). Lors du classement des ensembles d’applications qui utilisent la même version, le niveau d’architecture le plus élevé dans l’ensemble est pris en considération : un ensemble d’applications contenant un package x64 aura un classement plus élevé qu’un ensemble contenant uniquement un package x86.
 
@@ -79,11 +79,11 @@ Voici quelques exemples de ce qui se passe dans les différents scénarios de mi
 
 | Version de votre application dans le Store  | Version transférée | Une fois la nouvelle version dans le magasin, elle est installée dans une nouvelle acquisition | Une fois la nouvelle version dans le magasin, elle est mise à jour si un client a déjà l’application |
 |---------------------------------------------|-----------------------------|--------------------------------------------------------------------------------------------|----------|
-| Nothing                                     | x86, v1.0.0.0               | x86, v1.0.0.0 sur les ordinateurs x86 et x64                                                | Nothing. |
-| x86, v1.0.0.0                               | x64, v1.0.0.0               | v1.0.0.0 pour l’architecture de l’ordinateur du client                                                   | Nothing. Les numéros de version sont les mêmes. |
+| Nothing                                     | x86, v1.0.0.0               | x86, v1.0.0.0 sur les ordinateurs x86 et x64                                                | Rien. |
+| x86, v1.0.0.0                               | x64, v1.0.0.0               | v1.0.0.0 pour l’architecture de l’ordinateur du client                                                   | Rien. Les numéros de version sont les mêmes. |
 | x86, v1.0.0.0 <br> x64, v1.0.0.0            | x64, v1.0.0.1               | v1.0.0.0 pour les clients possédant un ordinateur x86 <br> v1.0.0.1 pour les clients possédant un ordinateur x64                 | Rien pour les clients exécutant l’application sur un ordinateur x86. <br> Mise à jour de v1.0.0.0 vers v1.0.0.1 pour les clients exécutant l’application sur un ordinateur x64. <br> **Remarque**    Si la version x86 de l’application s’exécute sur un ordinateur x64, l’application n’est pas mise à jour vers la version x64, à moins que le client ne soit désinstallé et réinstallé. |
-| Nothing                                     | neutre, v1.0.0.1           | neutre, v1.0.0.1 sur tous les ordinateurs                                                         | Nothing. |
-| neutre, v1.0.0.1                           | x86, v1.0.0.0 <br> x64, v1.0.0.0 <br> ARM, v1.0.0.0 | v1.0.0.0 pour l’architecture de l’ordinateur du client.          | Nothing. Les clients qui possèdent la version neutre v1.0.0.1 de l’application continuent de l’utiliser. |
+| Nothing                                     | neutre, v1.0.0.1           | neutre, v1.0.0.1 sur tous les ordinateurs                                                         | Rien. |
+| neutre, v1.0.0.1                           | x86, v1.0.0.0 <br> x64, v1.0.0.0 <br> ARM, v1.0.0.0 | v1.0.0.0 pour l’architecture de l’ordinateur du client.          | Rien. Les clients qui possèdent la version neutre v1.0.0.1 de l’application continuent de l’utiliser. |
 | neutre, v1.0.0.1 <br> x86, v1.0.0.0 <br> x64, v1.0.0.0 <br> ARM, v1.0.0.0 | x86, v1.0.0.1 <br> x64, v1.0.0.1 <br> ARM, v1.0.0.1 | v1.0.0.1 pour l’architecture de l’ordinateur du client. | Rien pour les clients qui exécutent la version neutre v1.0.0.1 de l’application. <br> Mise à jour de v1.0.0.0 vers v1.0.0.1 pour les clients exécutant la version v1.0.0.0 de l’application générée pour l’architecture de leur ordinateur. |
 | x86, v1.0.0.1 <br> x64, v1.0.0.1 <br> ARM, v1.0.0.1 | x86, v1.0.0.2 <br> x64, v1.0.0.2 <br> ARM, v1.0.0.2 | v1.0.0.2 pour l’architecture de l’ordinateur du client.  | Mise à jour de v1.0.0.1 vers v1.0.0.2 pour les clients exécutant la version v1.0.0.1 de l’application générée pour l’architecture de leur ordinateur. |
 

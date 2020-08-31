@@ -1,17 +1,17 @@
 ---
 ms.assetid: 7bb9fd81-8ab5-4f8d-a854-ce285b0669a4
-description: Technologies d’accès aux réseaux et aux services web.
+description: Consultez la liste des liens vers des articles sur les technologies des services web et réseau disponibles pour les développeurs de plateforme Windows universelle (UWP).
 title: Réseau et services web
 ms.date: 11/26/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 673f774c4d686726b59ff4e52e356ec0bc319379
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: 169412c21714f2777db3e6078a6528dc863277ea
+ms.sourcegitcommit: 45dec3dc0f14934b8ecf1ee276070b553f48074d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "66370764"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89094606"
 ---
 # <a name="networking-and-web-services"></a>Réseau et services web
 
@@ -19,8 +19,8 @@ Les technologies de réseau et services web suivantes sont disponibles pour les 
 
 | Rubrique | Description |
 | - | - |
-| [Notions de base relatives aux réseaux](networking-basics.md) | Ce que vous devez faire pour toute application réseau. |
-| [Quelle technologie réseau ?](which-networking-technology.md) | Un aperçu rapide des technologies de réseau disponibles pour un développeur UWP, avec des suggestions sur la façon de choisir les technologies appropriées pour votre application. |
+| [Notions de base en matière de réseau](networking-basics.md) | Ce que vous devez faire pour toute application réseau. |
+| [Quelle technologie de réseau ?](which-networking-technology.md) | Un aperçu rapide des technologies de réseau disponibles pour un développeur UWP, avec des suggestions sur la façon de choisir les technologies appropriées pour votre application. |
 | [Communications réseau en arrière-plan](network-communications-in-the-background.md) | Pour qu’une application puisse poursuivre la communication quand elle n’est pas en arrière-plan, elle doit utiliser des tâches en arrière-plan et un répartiteur de socket ou des déclencheurs de chaîne de contrôle. |
 | [Sockets](sockets.md) | Les sockets constituent une technologie de transfert de données de bas niveau sur laquelle repose l’implémentation d’un grand nombre de protocoles réseau. UWP propose des classes de socket TCP et UDP pour les applications client/serveur ou (P2P) pair à pair, qu’il s’agisse de connexions longue durée ou non établies. |
 | [WebSockets](websockets.md) | Les WebSockets fournissent un mécanisme de communication bidirectionnelle sécurisée et rapide entre un client et un serveur sur le web, à l’aide du protocole HTTP(S) et avec une prise en charge des messages UTF-8 et binaires. |

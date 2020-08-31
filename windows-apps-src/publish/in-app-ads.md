@@ -6,12 +6,12 @@ ms.date: 03/25/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 11d992baf42f320856134f0e8fba845c5ad61393
-ms.sourcegitcommit: 96b7be654a0922eeb421b5fa51ebfc586abe74fe
+ms.openlocfilehash: a1683cdad189b9e369700e25b47a6f0bf0796702
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84945927"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89171023"
 ---
 # <a name="in-app-ads"></a>Publicités dans l’application
 
@@ -61,8 +61,8 @@ Une fois que vous avez créé la nouvelle unité ad, elle apparaît dans la tabl
 
 Une fois que vous avez créé des unités AD pour une ou plusieurs applications de votre compte, celles-ci apparaissent dans un tableau en bas **de la** page de publicité &gt; **dans les annonces dans l’application** . Cette table affiche l' **ID d’application** et l' **ID d’unité ad** pour chaque unité ad, ainsi que d’autres informations. Pour afficher les publicités dans votre application, vous devez utiliser ces valeurs dans votre code. Pour plus d’informations, voir [Configurer des unités publicitaires dans votre application](../monetize/set-up-ad-units-in-your-app.md).
 
-* Si votre application affiche des [bannières publicitaires](../monetize/banner-ads.md), attribuez ces valeurs aux propriétés [ApplicationID](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) et [AdUnitId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.adunitid) de votre objet [classe AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) .
-* Si votre application affiche des [publicités interstitielles](../monetize/interstitial-ads.md), transmettez ces valeurs à la méthode [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) de votre objet [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) .
+* Si votre application affiche des [bannières publicitaires](../monetize/banner-ads.md), attribuez ces valeurs aux propriétés [ApplicationID](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) et [AdUnitId](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.adunitid) de votre objet [classe AdControl](/uwp/api/microsoft.advertising.winrt.ui.adcontrol) .
+* Si votre application affiche des [publicités interstitielles](../monetize/interstitial-ads.md), transmettez ces valeurs à la méthode [RequestAd](/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) de votre objet [InterstitialAd](/uwp/api/microsoft.advertising.winrt.ui.interstitialad) .
 * Si votre application affiche des [publicités natives](../monetize/native-ads.md), transmettez ces valeurs au constructeur **NativeAdsManagerV2** .
   > [!IMPORTANT]
   > Vous pouvez utiliser chaque unité ad dans une seule application. Si vous utilisez une unité ad dans plusieurs applications, les publicités ne sont pas prises en charge pour cette unité Active Directory.

@@ -5,12 +5,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, planification, date de publication, dates, lancement
 ms.localizationpriority: medium
-ms.openlocfilehash: b674b2569a40a4f7a504bc6b7bc55ac932b83d01
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 0ad59071b6a7298cbb6d896bb7dd60a9a5ee0451
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234799"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89171143"
 ---
 # <a name="configure-precise-release-scheduling"></a>Configurer une planification précise de la publication
 
@@ -63,7 +63,7 @@ Il est important de comprendre que cette option a le même impact que la sélect
 
 ## <a name="customize-the-schedule-for-specific-markets"></a>Personnaliser la planification pour des marchés spécifiques
 
-Par défaut, les options que vous sélectionnez ci-dessus s’appliquent à tous les marchés dans lesquels votre application est proposée. Pour personnaliser le prix de marchés spécifiques, cliquez sur **Personnaliser pour des marchés spécifiques**. La fenêtre contextuelle de **sélection du marché** s’affiche, répertoriant tous les marchés dans lesquels vous avez choisi de rendre votre application disponible. Si vous avez exclu un marché dans la section [Markets](define-pricing-and-market-selection.md) , ces marchés ne seront pas affichés.
+Par défaut, les options que vous sélectionnez ci-dessus s’appliquent à tous les marchés dans lesquels votre application est proposée. Pour personnaliser le prix de marchés spécifiques, cliquez sur **Personnaliser pour des marchés spécifiques**. La fenêtre contextuelle de **sélection du marché** s’affiche, répertoriant tous les marchés dans lesquels vous avez choisi de rendre votre application disponible. Si vous avez exclu un marché dans la section [Markets](./define-market-selection.md) , ces marchés ne seront pas affichés.
 
 Pour ajouter une planification pour un marché, sélectionnez-la, puis cliquez sur **Enregistrer**. Vous voyez alors les mêmes options de **mise en sortie** et d' **arrêt** que celles décrites ci-dessus, mais les sélections que vous effectuez ne s’appliquent qu’à ce marché.
 
@@ -78,7 +78,7 @@ Pour ajouter une planification personnalisée pour un marché supplémentaire, o
 
 Vous trouverez ci-dessous un tableau qui indique les fuseaux horaires spécifiques utilisés sur chaque marché. par conséquent, lorsque votre envoi utilise l’heure locale (par exemple, une version à 9 heures locales), vous pouvez déterminer l’heure à laquelle il sera publié sur chaque marché, en particulier sur les marchés qui ont plusieurs fuseaux horaires, tels que le Canada.
 
-| Market | Time Zone (Fuseau horaire) |
+| Marché | Time Zone (Fuseau horaire) |
 |--------|-----------|
 | Afghanistan  |  (UTC+04:30) Kaboul |
 | Albanie  |  (UTC+01:00) Sarajevo, Skopje, Varsovie, Zagreb |
@@ -110,10 +110,10 @@ Vous trouverez ci-dessous un tableau qui indique les fuseaux horaires spécifiqu
 | Bonaire, Saint-Eustache et Saba  |  (UTC-04:00) Heure de l’Atlantique (Canada) |
 | Bosnie-Herzégovine  |  (UTC+01:00) Sarajevo, Skopje, Varsovie, Zagreb |
 | Botswana  |  (UTC+01:00) Afrique Centrale de l’Ouest |
-| Bouvet (île)  |  (UTC+00:00) Monrovia, Reykjavik |
+| Bouvet (Île)  |  (UTC+00:00) Monrovia, Reykjavik |
 | Brésil  |  (UTC-03:00) Brasilia |
-| Territoires britanniques de l’océan Indien  |  (UTC+06:00) Dacca |
-| Îles Vierges britanniques  |  (UTC-04:00) Heure de l’Atlantique (Canada) |
+| Territoire britannique de l’Océan Indien  |  (UTC+06:00) Dacca |
+| Vierges britanniques (îles)  |  (UTC-04:00) Heure de l’Atlantique (Canada) |
 | Brunéi Darussalam  |  (UTC+08:00) Irkoutsk |
 | Bulgarie  |  (UTC+02:00) Chisinau |
 | Burkina Faso  |  (UTC+00:00) Monrovia, Reykjavik |
@@ -122,19 +122,19 @@ Vous trouverez ci-dessous un tableau qui indique les fuseaux horaires spécifiqu
 | Cambodge  |  (UTC+07:00) Bangkok, Hanoï, Jakarta |
 | Cameroun  |  (UTC+01:00) Afrique Centrale de l’Ouest |
 | Canada  |  (UTC-05:00) Heure de l’Est (États-Unis et Canada) |
-| Cabo Verde  |  (UTC-01:00) Îles du Cabo Verde |
-| Caïmans (îles)  |  (UTC-05:00) Heure de l’Est (États-Unis et Canada) |
+| Cap-Vert  |  (UTC-01:00) Îles du Cabo Verde |
+| Cayman (îles)  |  (UTC-05:00) Heure de l’Est (États-Unis et Canada) |
 | République centrafricaine  |  (UTC+01:00) Afrique Centrale de l’Ouest |
 | Tchad  |  (UTC+01:00) Afrique Centrale de l’Ouest |
 | Chili  |  (UTC-04:00) Santiago |
 | Chine  |  (UTC+08:00) Beijing, Chongqing, Hong Kong, Urumqi |
-| Christmas (île)  |  (UTC+07:00) Krasnoïarsk |
-| Îles Cocos (Keeling)  |  (UTC+06:30) Yangon (Rangoon) |
+| Christmas (Île)  |  (UTC+07:00) Krasnoïarsk |
+| Cocos-Keeling (îles)  |  (UTC+06:30) Yangon (Rangoon) |
 | Colombie  |  (UTC-05:00) Bogota, Lima, Quito, Rio Branco |
-| Comores  |  (UTC+03:00) Nairobi |
+| Comores (Les)  |  (UTC+03:00) Nairobi |
 | Congo  |  (UTC+01:00) Afrique Centrale de l’Ouest |
 | Congo (RDC)  |  (UTC+01:00) Afrique Centrale de l’Ouest |
-| Cook (îles)  |  (UTC-10:00) Hawaï |
+| Cook (Îles)  |  (UTC-10:00) Hawaï |
 | Costa Rica  |  (UTC-06:00) Heure du Centre (États-Unis et Canada) |
 | Croatie  |  (UTC+01:00) Sarajevo, Skopje, Varsovie, Zagreb |
 | CuraÃ § AO  |  (UTC-04:00) Cuiaba |
@@ -153,10 +153,10 @@ Vous trouverez ci-dessous un tableau qui indique les fuseaux horaires spécifiqu
 | Éthiopie  |  (UTC+03:00) Nairobi |
 | Malouines (îles)  |  (UTC-04:00) Santiago |
 | Féroé (îles)  |  (UTC+00:00) Dublin, Édimbourg, Lisbonne, Londres |
-| Fidji  |  (UTC+12:00) Fidji |
+| Fidji (îles)  |  (UTC+12:00) Fidji |
 | Finlande  |  (UTC+02:00) Helsinki, Kiev, Riga, Sofia, Tallinn, Vilnius |
 | France  |  (UTC+01:00) Bruxelles, Copenhague, Madrid, Paris |
-| Guyane française  |  (UTC-03:00) Cayenne, Fortaleza |
+| Guyane  |  (UTC-03:00) Cayenne, Fortaleza |
 | Polynésie française  |  (UTC-10:00) Hawaï |
 | Terres australes et antarctiques françaises  |  (UTC+05:00) Achgabat, Tachkent |
 | Gabon  |  (UTC+01:00) Afrique Centrale de l’Ouest |
@@ -202,12 +202,12 @@ Vous trouverez ci-dessous un tableau qui indique les fuseaux horaires spécifiqu
 | Lettonie  |  (UTC+02:00) Chisinau |
 | Liban  |  (UTC+02:00) Chisinau |
 | Lesotho  |  (UTC+02:00) Harare, Pretoria |
-| Liberia  |  (UTC+00:00) Monrovia, Reykjavik |
+| Libéria  |  (UTC+00:00) Monrovia, Reykjavik |
 | Libye  |  (UTC+02:00) Chisinau |
 | Liechtenstein  |  (UTC+01:00) Sarajevo, Skopje, Varsovie, Zagreb |
 | Lituanie  |  (UTC+02:00) Chisinau |
 | Luxembourg  |  (UTC+01:00) Sarajevo, Skopje, Varsovie, Zagreb |
-| Macao R.A.S.  |  (UTC+08:00) Beijing, Chongqing, Hong Kong, Urumqi |
+| Macao (R.A.S.)  |  (UTC+08:00) Beijing, Chongqing, Hong Kong, Urumqi |
 | Madagascar  |  (UTC+03:00) Nairobi |
 | Malawi  |  (UTC+02:00) Harare, Pretoria |
 | Malaisie  |  (UTC+08:00) Kuala Lumpur, Singapour |
@@ -215,10 +215,10 @@ Vous trouverez ci-dessous un tableau qui indique les fuseaux horaires spécifiqu
 | Mali  |  (UTC+00:00) Monrovia, Reykjavik |
 | Malte  |  (UTC+01:00) Sarajevo, Skopje, Varsovie, Zagreb |
 | Man, île de  |  (UTC+00:00) Dublin, Édimbourg, Lisbonne, Londres |
-| Marshall (îles)  |  (UTC+12:00) Petropavlovsk-Kamchatsky - Ancien |
+| Marshall (Îles)  |  (UTC+12:00) Petropavlovsk-Kamchatsky - Ancien |
 | Martinique  |  (UTC-04:00) Heure de l’Atlantique (Canada) |
 | Mauritanie  |  (UTC+00:00) Monrovia, Reykjavik |
-| Maurice (île)  |  (UTC+04:00) Port Louis |
+| Maurice  |  (UTC+04:00) Port Louis |
 | Mayotte  |  (UTC+03:00) Nairobi |
 | Mexique  |  (UTC-06:00) Guadalajara, Mexico City, Monterrey |
 | Micronésie  |  (UTC+10:00) Guam, Port Moresby |
@@ -234,22 +234,22 @@ Vous trouverez ci-dessous un tableau qui indique les fuseaux horaires spécifiqu
 | Nauru  |  (UTC+12:00) Petropavlovsk-Kamchatsky - Ancien |
 | Népal  |  (UTC+05:45) Katmandou |
 | Pays-Bas  |  (UTC+01:00) Amsterdam, Berlin, Berne, Rome, Stockholm, Vienne |
-| Nouvelle-Calédonie  |  (UTC+11:00) Îles Salomon, Nouvelle-Calédonie |
+| Nouvelle Calédonie  |  (UTC+11:00) Îles Salomon, Nouvelle-Calédonie |
 | Nouvelle-Zélande  |  (UTC+12:00) Auckland, Wellington |
 | Nicaragua  |  (UTC-06:00) Heure du Centre (États-Unis et Canada) |
 | Niger  |  (UTC+01:00) Afrique Centrale de l’Ouest |
-| Nigeria  |  (UTC+01:00) Afrique Centrale de l’Ouest |
+| Nigéria  |  (UTC+01:00) Afrique Centrale de l’Ouest |
 | Niue  |  (UTC+13:00) Samoa |
-| Norfolk (île)  |  (UTC+11:00) Îles Salomon, Nouvelle-Calédonie |
+| Norfolk (Île)  |  (UTC+11:00) Îles Salomon, Nouvelle-Calédonie |
 | Macédoine du Nord  |  (UTC+01:00) Sarajevo, Skopje, Varsovie, Zagreb |
-| Îles Marianne du Nord  |  (UTC+10:00) Guam, Port Moresby |
+| Mariannes du Nord (Îles)  |  (UTC+10:00) Guam, Port Moresby |
 | Norvège  |  (UTC+01:00) Amsterdam, Berlin, Berne, Rome, Stockholm, Vienne |
 | Oman  |  (UTC+04:00) Abu Dhabi, Mascate |
 | Pakistan  |  (UTC+05:00) Islamabad, Karachi |
 | Palau  |  (UTC+09:00) Osaka, Sapporo, Tokyo |
 | Autorité palestinienne  |  (UTC+02:00) Chisinau |
 | Panama  |  (UTC-05:00) Heure de l’Est (États-Unis et Canada) |
-| Papouasie Nouvelle Guinée  |  (UTC+10:00) Vladivostok |
+| Papouasie-Nouvelle-Guinée  |  (UTC+10:00) Vladivostok |
 | Paraguay  |  (UTC-04:00) Asuncion |
 | Pérou  |  (UTC-05:00) Bogota, Lima, Quito, Rio Branco |
 | Philippines  |  (UTC+08:00) Kuala Lumpur, Singapour |
@@ -265,14 +265,14 @@ Vous trouverez ci-dessous un tableau qui indique les fuseaux horaires spécifiqu
 | SÃ £ o TomÃ © et PrÃncipe  |  (UTC+00:00) Monrovia, Reykjavik |
 | Saint BarthÃ © lemy  |  (UTC+04:00) Erevan |
 | Sainte-Hélène, Ascension et Tristan da Cunha  |  (UTC+00:00) Dublin, Édimbourg, Lisbonne, Londres |
-| Saint-Christophe-et-Niévès  |  (UTC-04:00) Heure de l’Atlantique (Canada) |
+| Saint-Kitts-et-Nevis  |  (UTC-04:00) Heure de l’Atlantique (Canada) |
 | Sainte-Lucie  |  (UTC-04:00) Heure de l’Atlantique (Canada) |
 | Saint-Martin (partie française)  |  (UTC-04:00) Heure de l’Atlantique (Canada) |
-| Saint-Pierre-et-Miquelon  |  (UTC-02:00) Centre-Atlantique - Ancien |
-| Saint-Vincent-et-les-Grenadines  |  (UTC-04:00) Heure de l’Atlantique (Canada) |
+| Saint Pierre et Miquelon  |  (UTC-02:00) Centre-Atlantique - Ancien |
+| Saint-Vincent-et-les Grenadines  |  (UTC-04:00) Heure de l’Atlantique (Canada) |
 | Samoa  |  (UTC+13:00) Samoa |
 | Saint-Marin  |  (UTC+01:00) Sarajevo, Skopje, Varsovie, Zagreb |
-| Arabie Saoudite  |  (UTC+03:00) Koweït, Riyad |
+| Arabie saoudite  |  (UTC+03:00) Koweït, Riyad |
 | Sénégal  |  (UTC+00:00) Monrovia, Reykjavik |
 | Serbie  |  (UTC+01:00) Sarajevo, Skopje, Varsovie, Zagreb |
 | Seychelles  |  (UTC+04:00) Abu Dhabi, Mascate |
@@ -281,13 +281,13 @@ Vous trouverez ci-dessous un tableau qui indique les fuseaux horaires spécifiqu
 | Sint-Maarten (partie néerlandaise)  |  (UTC-04:00) Heure de l’Atlantique (Canada) |
 | Slovaquie  |  (UTC+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague |
 | Slovénie  |  (UTC+01:00) Sarajevo, Skopje, Varsovie, Zagreb |
-| Salomon (îles)  |  (UTC+11:00) Îles Salomon, Nouvelle-Calédonie |
+| Salomon (Îles)  |  (UTC+11:00) Îles Salomon, Nouvelle-Calédonie |
 | Somalie  |  (UTC+03:00) Nairobi |
 | Afrique du Sud  |  (UTC+02:00) Harare, Pretoria |
-| Géorgie du Sud et îles Sandwich du Sud  |  (UTC-02:00) Centre-Atlantique - Ancien |
+| Géorgie du Sud et Sandwich du Sud (Îles)  |  (UTC-02:00) Centre-Atlantique - Ancien |
 | Espagne  |  (UTC+01:00) Bruxelles, Copenhague, Madrid, Paris |
 | Sri Lanka  |  (UTC+05:30) Chennai, Kolkata, Mumbai, New Delhi |
-| Surinam  |  (UTC-03:00) Cayenne, Fortaleza |
+| Suriname  |  (UTC-03:00) Cayenne, Fortaleza |
 | Svalbard et Jan Mayen  |  (UTC+01:00) Sarajevo, Skopje, Varsovie, Zagreb |
 | Swaziland  |  (UTC+02:00) Harare, Pretoria |
 | Suède  |  (UTC+01:00) Amsterdam, Berlin, Berne, Rome, Stockholm, Vienne |
@@ -304,13 +304,13 @@ Vous trouverez ci-dessous un tableau qui indique les fuseaux horaires spécifiqu
 | Tunisie  |  (UTC+01:00) Sarajevo, Skopje, Varsovie, Zagreb |
 | Turquie  |  (UTC+03:00) Istanbul |
 | Turkménistan  |  (UTC+05:00) Achgabat, Tachkent |
-| Turques-et-Caïques (îles)  |  (UTC-05:00) Heure de l’Est (États-Unis et Canada) |
+| Turks et Caicos (îles)  |  (UTC-05:00) Heure de l’Est (États-Unis et Canada) |
 | Tuvalu  |  (UTC+12:00) Petropavlovsk-Kamchatsky - Ancien |
 | États-Unis Îles mineures éloignées des États-Unis  |  (UTC+13:00) Samoa |
 | États-Unis Îles Vierges  |  (UTC-04:00) Heure de l’Atlantique (Canada) |
 | Ouganda  |  (UTC+03:00) Nairobi |
 | Ukraine  |  (UTC+02:00) Chisinau |
-| Émirats Arabes Unis  |  (UTC+04:00) Abu Dhabi, Mascate |
+| Émirats arabes unis  |  (UTC+04:00) Abu Dhabi, Mascate |
 | Royaume-Uni  |  (UTC+00:00) Dublin, Édimbourg, Lisbonne, Londres |
 | États-Unis  |  (UTC-05:00) Heure de l’Est (États-Unis et Canada) |
 | Uruguay  |  (UTC-03:00) Brasilia |

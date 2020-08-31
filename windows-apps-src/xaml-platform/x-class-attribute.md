@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: dcda1677a8b5d289fd4c5e86db69212004f00824
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: be238be3414fb17ff64a5c6d5da713f614c297be
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371103"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169083"
 ---
 # <a name="xclass-attribute"></a>Attribut x:Class
 
@@ -31,12 +31,12 @@ Configure la compilation XAML afin de joindre des classes partielles entre le ba
 
 | Terme | Description |
 |------|-------------|
-| espace de noms | Facultatif. Spécifie un espace de noms qui contient la classe partielle identifiée par _classname_. Si _namespace_ est spécifié, un point (.) sépare _namespace_ et _classname_. Si _namespace_ est omis, _classname_ est considéré comme n’ayant pas d’espace de noms. |
+| espace de noms | Optionnel. Spécifie un espace de noms qui contient la classe partielle identifiée par _classname_. Si _namespace_ est spécifié, un point (.) sépare _namespace_ et _classname_. Si _namespace_ est omis, _classname_ est considéré comme n’ayant pas d’espace de noms. |
 | classname | Obligatoire. Spécifie le nom de la classe partielle qui connecte le code XAML chargé et votre code-behind pour ce code XAML. | 
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarques
 
-Il est possible de déclarer **x:Class** en tant qu’attribut pour un élément qui est la racine d’une arborescence d’objets/d’un fichier XAML et qui est compilé par des actions de génération, ou pour la racine de la classe [**Application**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Application) dans la définition d’application d’une application compilée. La déclaration de **x:Class** sur un élément autre qu’un nœud racine, et dans toutes les circonstances pour un fichier XAML qui n’est pas compilé avec l’action de génération **Page**, engendre une erreur au moment de la compilation.
+Il est possible de déclarer **x:Class** en tant qu’attribut pour un élément qui est la racine d’une arborescence d’objets/d’un fichier XAML et qui est compilé par des actions de génération, ou pour la racine de la classe [**Application**](/uwp/api/Windows.UI.Xaml.Application) dans la définition d’application d’une application compilée. La déclaration de **x:Class** sur un élément autre qu’un nœud racine, et dans toutes les circonstances pour un fichier XAML qui n’est pas compilé avec l’action de génération **Page**, engendre une erreur au moment de la compilation.
 
 La classe utilisée en tant que **x:Class** ne peut pas être une classe imbriquée.
 
@@ -45,4 +45,3 @@ La valeur de l’attribut **x:Class** doit être une chaîne qui spécifie le no
 ## <a name="clr-language-rules"></a>Règle du langage CLR
 
 Bien que votre fichier code-behind puisse être un fichier C++, il existe certaines conventions qui suivent quand même la forme du langage CLR, afin qu’il n’y ait aucune différence dans la syntaxe XAML. En particulier, le séparateur entre l’espace de noms et les composants de nom de classe d’une valeur **x:Class** est toujours un point (« . »), même si le séparateur entre l’espace de noms et le nom de classe dans le fichier de code C++ associé au XAML est « :: ». Si vous déclarez des espaces de noms imbriqués en C++, le séparateur entre les chaînes d’espaces de noms imbriquées successives doit être également « . » plutôt que « :: » quand vous spécifiez la partie *namespace* de la valeur **x:Class**.
-

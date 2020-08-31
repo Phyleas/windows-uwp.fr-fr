@@ -1,6 +1,6 @@
 ---
-Description: Découvrez comment utiliser des transitions de page dans vos applications Windows.
 title: Transitions de page
+description: Découvrez comment utiliser des transitions de page plateforme Windows universelle (UWP) pour fournir aux utilisateurs des commentaires sur la relation entre les pages de votre application.
 template: detail.hbs
 ms.date: 04/08/2018
 ms.topic: article
@@ -8,12 +8,12 @@ keywords: windows 10, uwp
 pm-contact: stmoy
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 6239d8409767cab06d4d2c8c9c3abb9d743ca1c9
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: c77f99e170bdfe6689a9bfd4e8d8075ec2154d28
+ms.sourcegitcommit: 45dec3dc0f14934b8ecf1ee276070b553f48074d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970514"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89094675"
 ---
 # <a name="page-transitions"></a>Transitions de page
 

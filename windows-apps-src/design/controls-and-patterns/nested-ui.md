@@ -1,6 +1,6 @@
 ---
-Description: Utilisez l’interface utilisateur imbriquée pour permettre plusieurs actions sur un élément de liste
 title: Interface utilisateur imbriquée dans des éléments de liste
+description: Découvrez comment créer une interface utilisateur imbriquée dans des éléments ListView et GridView afin de présenter à un utilisateur des options supplémentaires pour exécuter des actions importantes.
 label: Nested UI in list items
 template: detail.hbs
 ms.date: 05/19/2017
@@ -11,12 +11,12 @@ pm-contact: chigy
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d2372044076e1885602dec806df95ad60e789cdd
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 9a8b53eef3538ca637fa5b351b74125eebdfe2b3
+ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968084"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88942839"
 ---
 # <a name="nested-ui-in-list-items"></a>Interface utilisateur imbriquée dans des éléments de liste
 

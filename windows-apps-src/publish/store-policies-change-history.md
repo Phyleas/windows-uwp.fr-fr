@@ -1,17 +1,17 @@
 ---
 title: Historique des modifications des politiques du Microsoft Store
-description: Historique des modifications des politiques du Microsoft Store
+description: Affichez un tableau présentant l’historique des modifications apportées aux Politiques du Microsoft Store avec des descriptions des ajouts, des mises à jour et des suppressions pour chaque modification.
 ms.date: 10/01/2019
 ms.topic: article
 keywords: contrat définissant les politiques du microsoft store
 ms.localizationpriority: high
 ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
-ms.openlocfilehash: 3fbdc8e4831a39386396dc2c1dad25581f12fbf9
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: bfdcaca05d704b0f6b62aa5c1023ea09ed2392c0
+ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "77607282"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88942859"
 ---
 # <a name="change-history-for-microsoft-store-policies"></a>Historique des modifications des politiques du Microsoft Store
 

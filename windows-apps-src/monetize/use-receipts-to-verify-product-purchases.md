@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, achats dans l’application, IAPs, reçus, Windows. ApplicationModel. Store
 ms.localizationpriority: medium
-ms.openlocfilehash: ba87de0755469f373f9000f3d96d3021c9197985
-ms.sourcegitcommit: 28bd367ab8acc64d4b6f3f73adca12100cbd359f
+ms.openlocfilehash: 0bbdaa8164e5d3a7e660fc4667b7cfe3c090bc10
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82148885"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89171323"
 ---
 # <a name="use-receipts-to-verify-product-purchases"></a>Utiliser des reçus pour vérifier les achats de produits
 
@@ -20,15 +20,15 @@ Chaque transaction Microsoft Store qui produit un achat de produit réussi peut 
 Le fait d’avoir accès à ces informations prend en charge des scénarios dans lesquels votre application doit vérifier qu’un utilisateur a acheté votre application ou a effectué des achats (également appelés produits dans l’application ou IAP) à partir de la Microsoft Store. Par exemple, imaginez un jeu qui propose du contenu téléchargé. Si l’utilisateur qui a acheté le contenu du jeu veut jouer à ce jeu sur un autre appareil, vous devez vérifier qu’il a bien acheté le contenu. Voici comment faire.
 
 > [!IMPORTANT]
-> Cet article explique comment utiliser les membres de l’espace de noms [Windows. ApplicationModel. Store](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store) pour obtenir et valider un accusé de réception pour un achat dans une application. Si vous utilisez l’espace de noms [Windows. services. Store](https://docs.microsoft.com/uwp/api/Windows.Services.Store) pour les achats dans l’application (introduits dans Windows 10, version 1607 et disponibles pour les projets qui ciblent l' **édition anniversaire windows 10 (10,0 ; Build 14393)** ou une version ultérieure dans Visual Studio), cet espace de noms ne fournit pas d’API pour obtenir des reçus d’achat pour les achats dans l’application. Toutefois, vous pouvez utiliser une méthode REST dans l’API de collection Microsoft Store pour obtenir des données pour une transaction d’achat. Pour plus d’informations, consultez [Reçus d’achats in-app](in-app-purchases-and-trials.md#receipts).
+> Cet article explique comment utiliser les membres de l’espace de noms [Windows. ApplicationModel. Store](/uwp/api/Windows.ApplicationModel.Store) pour obtenir et valider un accusé de réception pour un achat dans une application. Si vous utilisez l’espace de noms [Windows. services. Store](/uwp/api/Windows.Services.Store) pour les achats dans l’application (introduits dans Windows 10, version 1607 et disponibles pour les projets qui ciblent l' **édition anniversaire windows 10 (10,0 ; Build 14393)** ou une version ultérieure dans Visual Studio), cet espace de noms ne fournit pas d’API pour obtenir des reçus d’achat pour les achats dans l’application. Toutefois, vous pouvez utiliser une méthode REST dans l’API de collection Microsoft Store pour obtenir des données pour une transaction d’achat. Pour plus d’informations, consultez [Reçus d’achats in-app](in-app-purchases-and-trials.md#receipts).
 
 ## <a name="requesting-a-receipt"></a>Demande d’un reçu
 
 
 L’espace de noms **Windows.ApplicationModel.Store** prend en charge plusieurs modes pour obtenir un reçu :
 
-* Lorsque vous effectuez un achat à l’aide de [CurrentApp.RequestAppPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestapppurchaseasync) ou [CurrentApp.RequestProductPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestproductpurchaseasync) (ou l’une des autres surcharges de cette méthode), la valeur de retour contient le reçu.
-* Vous pouvez appeler la méthode [CurrentApp.GetAppReceiptAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.getappreceiptasync) pour récupérer les informations du reçu de votre application et des modules complémentaires de votre application.
+* Lorsque vous effectuez un achat à l’aide de [CurrentApp.RequestAppPurchaseAsync](/uwp/api/windows.applicationmodel.store.currentapp.requestapppurchaseasync) ou [CurrentApp.RequestProductPurchaseAsync](/uwp/api/windows.applicationmodel.store.currentapp.requestproductpurchaseasync) (ou l’une des autres surcharges de cette méthode), la valeur de retour contient le reçu.
+* Vous pouvez appeler la méthode [CurrentApp.GetAppReceiptAsync](/uwp/api/windows.applicationmodel.store.currentapp.getappreceiptasync) pour récupérer les informations du reçu de votre application et des modules complémentaires de votre application.
 
 Un reçu d’application ressemble à ceci.
 
@@ -87,7 +87,7 @@ Vous pouvez utiliser ces exemples de reçu pour tester votre code de validation.
 
 ## <a name="validating-a-receipt"></a>Validation d’un reçu
 
-Pour valider l’authenticité d’un reçu, vous avez besoin de votre système dorsal (service web ou autre) afin d’en vérifier la signature à l’aide du certificat public. Pour accéder à ce certificat, utilisez l' ```https://lic.apps.microsoft.com/licensing/certificateserver/?cid=CertificateId%60%60%60, where ```URL CertificateId «» est la valeur **CertificateId** dans la réception.
+Pour valider l’authenticité d’un reçu, vous avez besoin de votre système dorsal (service web ou autre) afin d’en vérifier la signature à l’aide du certificat public. Pour accéder à ce certificat, utilisez l’URL ```https://lic.apps.microsoft.com/licensing/certificateserver/?cid=CertificateId%60%60%60, where ``` CertificateId «» est la valeur **CertificateId** dans la réception.
 
 Voici un exemple de ce processus de validation. Ce code s’exécute dans une application de console .NET Framework, qui inclut une référence à l’assemblage **System.Security**.
 
@@ -106,8 +106,8 @@ L’élément racine de ce fichier est l’élément **Receipt**, qui contient d
 
 |  Élément  |  Obligatoire  |  Quantité  |  Description   |
 |-------------|------------|--------|--------|
-|  [AppReceipt](#appreceipt)  |    Non         |  0 ou 1  |  Contient des informations sur l’achat pour l’application actuelle.            |
-|  [ProductReceipt](#productreceipt)  |     Non        |  0 ou plus    |   Contient des informations sur un achat in-app pour l’application actuelle.     |
+|  [AppReceipt](#appreceipt)  |    Non        |  0 ou 1  |  Contient des informations sur l’achat pour l’application actuelle.            |
+|  [ProductReceipt](#productreceipt)  |     Non       |  0 ou plus    |   Contient des informations sur un achat in-app pour l’application actuelle.     |
 |  Signature  |      Oui      |  1   |   Cet élément est une construction [XML-DSIG](https://www.w3.org/TR/xmldsig-core/) standard. Il contient un élément **SignatureValue** qui contient la signature que vous pouvez utiliser pour valider le reçu, un élément **SignedInfo**.      |
 
 L’élément **Receipt** a les attributs suivants :
@@ -146,7 +146,7 @@ L’élément **ProductReceipt** a les attributs suivants :
 |-------------|-------------------|
 |  **Id**  |    Identifie l’achat.           |
 |  **AppId**  |     Identifie l’application avec laquelle l’utilisateur a effectué l’achat.           |
-|  **Réf**  |     Identifie le produit acheté.           |
+|  **ProductId**  |     Identifie le produit acheté.           |
 |  **ProductType**  |    Détermine le type de produit. Actuellement, ne prend en charge que la valeur **Durable**.          |  
 |  **PurchaseDate**  |    Date à laquelle l’achat a eu lieu.          |  |
 
