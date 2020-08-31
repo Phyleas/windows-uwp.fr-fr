@@ -6,19 +6,19 @@ ms.date: 05/14/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 605b8cf927067da78785ec470cfdbe27852205fd
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: c7f0e1ba5c78ce41a5326d3643b5afe80f380b3c
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493184"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89155173"
 ---
 # <a name="walkthrough-of-creating-a-ccx-windows-runtime-component-and-calling-it-from-javascript-or-c"></a>Procédure pas à pas pour créer un composant C++/CX/Windows Runtime et l’appeler à partir de JavaScript ou C#
 
 > [!NOTE]
-> Cette rubrique existe pour vous aider à gérer votre application C++/CX. Toutefois, nous vous recommandons d’utiliser [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) pour les nouvelles applications. C++/WinRT est une projection de langage C++17 moderne entièrement standard pour les API Windows Runtime (WinRT), implémentée en tant que bibliothèque basée sur un fichier d’en-tête et conçue pour vous fournir un accès de première classe à l’API Windows moderne. Pour savoir comment créer un composant Windows Runtime à l’aide de C++/WinRT, consultez [Windows Runtime composants avec c++/WinRT](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt).
+> Cette rubrique existe pour vous aider à gérer votre application C++/CX. Toutefois, nous vous recommandons d’utiliser [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) pour les nouvelles applications. C++/WinRT est une projection de langage C++17 moderne entièrement standard pour les API Windows Runtime (WinRT), implémentée en tant que bibliothèque basée sur un fichier d’en-tête et conçue pour vous fournir un accès de première classe à l’API Windows moderne. Pour savoir comment créer un composant Windows Runtime avec C++/WinRT, consultez [Composants Windows Runtime avec C++/WinRT](./create-a-windows-runtime-component-in-cppwinrt.md).
 
-Cette procédure pas à pas indique comment créer une DLL de composant Windows Runtime de base qui peut être appelée à partir de JavaScript, C# ou Visual Basic. Avant d’entreprendre cette procédure pas à pas, vous devez maîtriser des concepts tels que l’interface binaire abstraite (ABI), les classes ref et les extensions des composants Visual C++ qui facilitent l’utilisation des classes ref. Pour plus d’informations, consultez [Windows Runtime Components with c++/CX](creating-windows-runtime-components-in-cpp.md) et [Visual C++ Language Reference (c++/CX)](https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx).
+Cette procédure pas à pas indique comment créer une DLL de composant Windows Runtime de base qui peut être appelée à partir de JavaScript, C# ou Visual Basic. Avant d’entreprendre cette procédure pas à pas, vous devez maîtriser des concepts tels que l’interface binaire abstraite (ABI), les classes ref et les extensions des composants Visual C++ qui facilitent l’utilisation des classes ref. Pour plus d’informations, consultez [Windows Runtime Components with c++/CX](creating-windows-runtime-components-in-cpp.md) et [Visual C++ Language Reference (c++/CX)](/cpp/cppcx/visual-c-language-reference-c-cx).
 
 ## <a name="creating-the-c-component-dll"></a>Création de la DLL du composant C++
 Dans cet exemple, nous commençons par créer le projet du composant, mais vous pouvez très bien créer le projet JavaScript en premier. L’ordre n’a pas d’importance.
@@ -35,7 +35,7 @@ Notez que la classe principale du composant contient des exemples de définition
 4. Choisissez le bouton **OK**.
 
 ## <a name="to-add-an-activatable-class-to-the-component"></a>**Pour ajouter une classe activable au composant**
-Une classe activable est une classe que le code client peut créer à l’aide d’une expression **new** (**New** en Visual Basic ou **ref new** en C++). Dans votre composant, vous devez la déclarer sous la forme **public ref class sealed**. En fait, les fichiers Class1.h et .cpp disposent déjà d’une classe ref. Vous pouvez changer le nom, mais dans cet exemple, nous utiliserons celui par défaut : Class1. Vous pouvez définir des classes ref ou standard supplémentaires dans votre composant si nécessaire. Pour plus d’informations sur les classes ref, voir [Système de types (C++/CX)](https://docs.microsoft.com/cpp/cppcx/type-system-c-cx).
+Une classe activable est une classe que le code client peut créer à l’aide d’une expression **new** (**New** en Visual Basic ou **ref new** en C++). Dans votre composant, vous devez la déclarer sous la forme **public ref class sealed**. En fait, les fichiers Class1.h et .cpp disposent déjà d’une classe ref. Vous pouvez changer le nom, mais dans cet exemple, nous utiliserons celui par défaut : Class1. Vous pouvez définir des classes ref ou standard supplémentaires dans votre composant si nécessaire. Pour plus d’informations sur les classes ref, voir [Système de types (C++/CX)](/cpp/cppcx/type-system-c-cx).
 
 Ajoutez ces \# directives include à Class1. h :
 
@@ -426,7 +426,7 @@ function ButtonClear_Click() {
 }
 ```
 
-Ajoutez du code pour ajouter les détecteurs d’événements en remplaçant l’appel existant à WinJS.UI.processAll dans app.onactivated dans le fichier default.js par le code suivant, qui implémente l’inscription d’événements dans un bloc then. Pour obtenir une explication détaillée de ce point, consultez [créer une application « Hello, World » (js)](/windows/uwp/get-started/create-a-hello-world-app-js-uwp).
+Ajoutez du code pour ajouter les détecteurs d’événements en remplaçant l’appel existant à WinJS.UI.processAll dans app.onactivated dans le fichier default.js par le code suivant, qui implémente l’inscription d’événements dans un bloc then. Pour obtenir une explication détaillée de ce point, consultez [créer une application « Hello, World » (js)](../get-started/create-a-hello-world-app-js-uwp.md).
 
 ```JavaScript
 args.setPromise(WinJS.UI.processAll().then( function completed() {

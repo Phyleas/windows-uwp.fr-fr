@@ -1,17 +1,17 @@
 ---
 ms.assetid: F90686F5-641A-42D9-BC44-EC6CA11B8A42
 title: Utiliser l’accéléromètre
-description: Découvrez comment utiliser l’accéléromètre pour répondre aux mouvements de l’utilisateur.
+description: Découvrez comment créer une application de base qui repose sur un seul capteur, l’accéléromètre, pour répondre aux mouvements de l’utilisateur.
 ms.date: 06/06/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b2fe6fe4c7fe22d71e2154be2db082bb43cc4ed1
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: e38d64750b410369a9ff9ebf871267b03e0ad07e
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66369691"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89054339"
 ---
 # <a name="use-the-accelerometer"></a>Utiliser l’accéléromètre
 
@@ -23,7 +23,7 @@ ms.locfileid: "66369691"
 
 **Exemple**
 
--   Pour une implémentation plus complète, consultez l’[exemple d'accéléromètre](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Accelerometer).
+-   Pour une implémentation plus complète, consultez l' [exemple accéléromètre](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Accelerometer).
 
 Découvrez comment utiliser l’accéléromètre pour répondre aux mouvements de l’utilisateur.
 
@@ -31,7 +31,7 @@ Une application de jeu simple repose sur un capteur unique, l’accéléromètre
 
 ## <a name="prerequisites"></a>Prérequis
 
-Vous devez être familiarisé avec Extensible Application Markup Language (XAML), Microsoft Visual C#et les événements.
+Vous devez maîtriser le langage XAML (Extensible Application Markup Language), Microsoft Visual C# et les événements.
 
 L’appareil ou émulateur que vous utilisez doit prendre en charge un accéléromètre.
 
@@ -41,7 +41,7 @@ Cette section se divise en deux sous-sections. La première sous-section vous p
 
 ### <a name="instructions"></a>Instructions
 
--   Créez un projet en choisissant une **Application vide (Windows universel)** dans les modèles de projet **Visual C#** .
+-   Créez un projet en choisissant une **Application vide (Windows universel)** dans les modèles de projet **Visual C#**.
 
 -   Ouvrez le fichier MainPage.xaml.cs de votre projet et remplacez le code existant par ce qui suit.
 
@@ -136,11 +136,11 @@ Vous devez remplacer le nom de l’espace de noms dans l’extrait de code préc
 
 Vous devez remplacer la première partie du nom de la classe dans l’extrait de code précédent par l’espace de noms de votre application. Par exemple, si vous avez créé un projet nommé **AccelerometerCS**, vous devez remplacer `x:Class="App1.MainPage"` par `x:Class="AccelerometerCS.MainPage"`. Vous devez aussi remplacer `xmlns:local="using:App1"` par `xmlns:local="using:AccelerometerCS"`.
 
--   Appuyez sur F5 ou sélectionnez **déboguer** &gt; **démarrer le débogage** pour générer, déployer et exécuter l’application.
+-   Appuyez sur F5 ou sélectionnez **Déboguer** &gt; **Démarrer le débogage** pour générer, déployer et exécuter l’application.
 
 Une fois l’application en cours d’exécution, vous pouvez modifier les valeurs de l’accéléromètre en déplaçant l’appareil ou à l’aide des outils de l’émulateur.
 
--   Arrêter l’application en revenir à Visual Studio en appuyant sur MAJ + F5 ou sélectionnez **déboguer** &gt; **arrêter le débogage** pour arrêter l’application.
+-   Pour arrêter l’application, retournez dans Visual Studio et appuyez sur Maj+F5, ou sélectionnez **Déboguer** &gt; **Arrêter le débogage**.
 
 ### <a name="explanation"></a>Explication
 

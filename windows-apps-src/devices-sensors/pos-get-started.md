@@ -5,12 +5,12 @@ ms.date: 05/02/2018
 ms.topic: article
 keywords: Windows 10, UWP, point de service, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: f5f19d1337a7ae49f46ab65d8420fedb775eeb2f
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: 7f8f180c25aca0be3bfe9131de4e2c415fbe7968
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82730384"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168463"
 ---
 # <a name="getting-started-with-point-of-service"></a>Prise en main du point de service
 
@@ -205,7 +205,7 @@ if (claimedBarcodeScanner != null)
 ```
 
 > [!NOTE]
-> Les classes d’appareils de point de service réclamées et non revendiquées implémentent l' [interface IClosable](https://docs.microsoft.com/uwp/api/windows.foundation.iclosable). Si un appareil est connecté à une application via réseau ou Bluetooth, les objets revendiqués et non revendiqués doivent être supprimés avant qu’une autre application puisse se connecter.
+> Les classes d’appareils de point de service réclamées et non revendiquées implémentent l' [interface IClosable](/uwp/api/windows.foundation.iclosable). Si un appareil est connecté à une application via réseau ou Bluetooth, les objets revendiqués et non revendiqués doivent être supprimés avant qu’une autre application puisse se connecter.
 
 ## <a name="see-also"></a>Voir aussi
 + [Exemple de scanneur de codes-barres](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)
@@ -213,4 +213,3 @@ if (claimedBarcodeScanner != null)
 + [Exemple d’affichage de ligne](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LineDisplay)
 + [Exemple de lecteur de bande magnétique](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MagneticStripeReader)
 + [Exemple POSPrinter](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/PosPrinter)
-

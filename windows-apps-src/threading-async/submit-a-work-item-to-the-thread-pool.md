@@ -6,32 +6,32 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, threads, pool de threads
 ms.localizationpriority: medium
-ms.openlocfilehash: a9da63e05380987d69d97a74123e593acd0b8cb1
-ms.sourcegitcommit: 2dbf4a3f3473c1d3a0ad988bcbae6e75dfee3640
+ms.openlocfilehash: 3576f907e4ab601013d22fe9ae7697e0ec523ce4
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82619343"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89155203"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>Envoyer un élément de travail au pool de threads
 
-\[Mise à jour pour les applications UWP sur Windows 10. Pour les articles Windows 8. x, consultez l' [Archive](https://docs.microsoft.com/previous-versions/windows/apps/mt244353(v=win.10)?redirectedfrom=MSDN)\]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles Windows 8. x, consultez l' [Archive](/previous-versions/windows/apps/mt244353(v=win.10))\]
 
 <b>API importantes</b>
 
--   [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync)
--   [**IAsyncAction**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction)
+-   [**RunAsync**](/uwp/api/windows.system.threading.threadpool.runasync)
+-   [**IAsyncAction**](/uwp/api/Windows.Foundation.IAsyncAction)
 
 Découvrez comment effectuer des tâches dans un thread distinct en envoyant un élément de travail au pool de threads. Cela vous permet de maintenir une interface utilisateur réactive tout en effectuant des tâches dont l’exécution nécessite un temps non négligeable, et utilisez-la pour accomplir plusieurs tâches en parallèle.
 
 ## <a name="create-and-submit-the-work-item"></a>Créer et envoyer l’élément de travail
 
-Créez un élément de travail en appelant [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync). Fournissez un délégué pour effectuer le travail (vous pouvez utiliser une expression lambda ou une fonction déléguée). Notez que **RunAsync** retourne un objet [**IAsyncAction**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction). Stockez cet objet en vue de son utilisation à la prochaine étape.
+Créez un élément de travail en appelant [**RunAsync**](/uwp/api/windows.system.threading.threadpool.runasync). Fournissez un délégué pour effectuer le travail (vous pouvez utiliser une expression lambda ou une fonction déléguée). Notez que **RunAsync** retourne un objet [**IAsyncAction**](/uwp/api/Windows.Foundation.IAsyncAction). Stockez cet objet en vue de son utilisation à la prochaine étape.
 
-Trois versions de [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync) sont disponibles afin que vous puissiez éventuellement spécifier la priorité de l’élément de travail et contrôler s’il s’exécute simultanément avec d’autres éléments de travail.
+Trois versions de [**RunAsync**](/uwp/api/windows.system.threading.threadpool.runasync) sont disponibles afin que vous puissiez éventuellement spécifier la priorité de l’élément de travail et contrôler s’il s’exécute simultanément avec d’autres éléments de travail.
 
 >[!NOTE]
->Utilisez [**CoreDispatcher. RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) pour accéder au thread d’interface utilisateur et afficher la progression à partir de l’élément de travail.
+>Utilisez [**CoreDispatcher. RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync) pour accéder au thread d’interface utilisateur et afficher la progression à partir de l’élément de travail.
 
 L’exemple suivant crée un élément de travail et fournit une expression lambda pour effectuer la tâche :
 
@@ -269,13 +269,13 @@ auto asyncAction = ThreadPool::RunAsync(workItem);
 m_workItem = asyncAction;
 ```
 
-Après l’appel à [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync), l’élément de travail est mis en file d’attente par le pool de threads et s’exécute lorsque le thread devient disponible. Les éléments de travail du pool de threads s’exécutent de manière asynchrone. De plus, étant donné qu’ils peuvent s’exécuter dans n’importe quel ordre, assurez-vous qu’ils fonctionnent de manière indépendante.
+Après l’appel à [**RunAsync**](/uwp/api/windows.system.threading.threadpool.runasync), l’élément de travail est mis en file d’attente par le pool de threads et s’exécute lorsque le thread devient disponible. Les éléments de travail du pool de threads s’exécutent de manière asynchrone. De plus, étant donné qu’ils peuvent s’exécuter dans n’importe quel ordre, assurez-vous qu’ils fonctionnent de manière indépendante.
 
-Notez que l’élément de travail vérifie la propriété [**IAsyncInfo.Status**](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncinfo.status) et se ferme s’il est annulé.
+Notez que l’élément de travail vérifie la propriété [**IAsyncInfo.Status**](/uwp/api/windows.foundation.iasyncinfo.status) et se ferme s’il est annulé.
 
 ## <a name="handle-work-item-completion"></a>Gérer l’achèvement de l’élément de travail
 
-Fournissez un gestionnaire d’achèvement en définissant la propriété [**IAsyncAction. Completed**](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncaction.completed) de l’élément de travail. Fournissez un délégué (vous pouvez utiliser une expression lambda ou une fonction déléguée) pour gérer l’achèvement de l’élément de travail. Par exemple, utilisez [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) pour accéder au thread d’interface utilisateur et afficher le résultat.
+Fournissez un gestionnaire d’achèvement en définissant la propriété [**IAsyncAction. Completed**](/uwp/api/windows.foundation.iasyncaction.completed) de l’élément de travail. Fournissez un délégué (vous pouvez utiliser une expression lambda ou une fonction déléguée) pour gérer l’achèvement de l’élément de travail. Par exemple, utilisez [**CoreDispatcher.RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync) pour accéder au thread d’interface utilisateur et afficher le résultat.
 
 L’exemple suivant met à jour l’interface utilisateur avec le résultat de l’élément de travail envoyé à l’étape 1 :
 
@@ -350,11 +350,11 @@ Notez que le gestionnaire d’achèvement vérifie si l’élément de travail a
 
 ## <a name="summary-and-next-steps"></a>Résumé et étapes suivantes
 
-Vous pouvez en savoir plus en téléchargeant le code de ce guide de démarrage rapide dans l' [exemple de création d’un élément de travail ThreadPool](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Thread%20pool%20sample) écrit pour Windows 8.1 et en\_réutilisant le code source dans une application Windows 10 Win UNAP.
+Vous pouvez en savoir plus en téléchargeant le code de ce guide de démarrage rapide dans l' [exemple de création d’un élément de travail ThreadPool](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Thread%20pool%20sample) écrit pour Windows 8.1 et en réutilisant le code source dans une \_ application Windows 10 Win UNAP.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Envoyer un élément de travail au pool de threads](submit-a-work-item-to-the-thread-pool.md)
-* [Bonnes pratiques pour l’utilisation du pool de threads](best-practices-for-using-the-thread-pool.md)
+* [Meilleures pratiques pour l’utilisation du pool de threads](best-practices-for-using-the-thread-pool.md)
 * [Utiliser un minuteur pour envoyer un élément de travail](use-a-timer-to-submit-a-work-item.md)
  

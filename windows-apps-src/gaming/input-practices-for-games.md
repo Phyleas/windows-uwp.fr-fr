@@ -1,17 +1,17 @@
 ---
 title: Pratiques d’entrée pour les jeux
-description: Découvrez les modèles et techniques pour utiliser efficacement les périphériques d’entrée.
+description: Découvrez les modèles et les techniques permettant d’utiliser efficacement des appareils d’entrée dans les jeux plateforme Windows universelle (UWP).
 ms.assetid: CBAD3345-3333-4924-B6D8-705279F52676
 ms.date: 11/20/2017
 ms.topic: article
 keywords: Windows 10, UWP, jeux, entrée
 ms.localizationpriority: medium
-ms.openlocfilehash: aa2036cb8d91b17d084e4e4922d01d4256bdb7de
-ms.sourcegitcommit: 29eb375bc634bf733be58107c1d648dc818da7f8
+ms.openlocfilehash: eb543e86221f8f1a37565c2e6e6bf1fe4a8d3635
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88051324"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89054489"
 ---
 # <a name="input-practices-for-games"></a>Pratiques d’entrée pour les jeux
 

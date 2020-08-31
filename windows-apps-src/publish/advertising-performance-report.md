@@ -1,72 +1,72 @@
 ---
-Description: Pour afficher les données de performances pour les unités ad dans vos applications, utilisez le rapport de performances de publicité dans Partner Center.
+Description: Pour afficher les données de performances des unités ad dans vos applications, utilisez le rapport des performances de publication dans l’espace partenaires.
 title: Rapport sur les performances publicitaires
 ms.assetid: 32E555C3-C34D-4503-82BB-4C3F5CAE4500
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a96f6f6593a8ccc6714f67b6f825a6416750b432
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: bb9c6a43b9411b2297cc4cbf35dfdb2177e5dab7
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57640274"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89155373"
 ---
 # <a name="advertising-performance-report"></a>Rapport sur les performances publicitaires
 
 
-Le **publier le rapport de performances** dans [partenaires](https://partner.microsoft.com/dashboard) montre comment votre [d’unités publicitaires](in-app-ads.md) effectuez, y compris les publicités de la Communauté. Ce rapport comporte les données provenant de plusieurs fournisseurs de publicités dans les applications UWP qui utilisent la [médiation publicitaire](in-app-ads.md#mediation).
+Le **rapport** sur les performances de la publication dans l' [espace partenaires](https://partner.microsoft.com/dashboard) montre comment vos [unités publicitaires](in-app-ads.md) fonctionnent, y compris les publicités de la communauté. Ce rapport comprend les données de plusieurs fournisseurs ad dans les applications UWP qui utilisent la [médiation ad](in-app-ads.md#mediation).
 
-Pour visualiser ce rapport, développez **Analyser** dans le menu de navigation de gauche, puis sélectionnez **Performances de la publicité**. Vous pouvez afficher ces données dans l’espace partenaires, ou télécharger les données du rapport à afficher en mode hors connexion en cliquant sur les icônes de flèche sur la page. Vous pouvez également récupérer ces données par programme à l’aide de la méthode [Obtenir les données relatives aux performances publicitaires](../monetize/get-ad-performance-data.md) dans notre [API REST d’analyse](../monetize/access-analytics-data-using-windows-store-services.md).
+Pour afficher ce rapport, développez **analyser** dans le menu de navigation de gauche, puis sélectionnez **performances Active Directory**. Vous pouvez afficher ces données dans l’espace partenaires ou télécharger les données de rapport pour les afficher hors connexion en cliquant sur les icônes de flèche dans la page. Vous pouvez également récupérer ces données par programme à l’aide de la méthode d' [extraction des données de performances Active Directory](../monetize/get-ad-performance-data.md) dans notre [API REST Analytics](../monetize/access-analytics-data-using-windows-store-services.md).
 
-Lorsque vous visualisez les rapports sur les performances publicitaires, notez que les données des rapports portant sur les trois derniers jours sont susceptibles de changer à mesure que nous recevons et traitons de nouvelles données provenant de différentes sources. En outre, les données datant de jusqu’à 90 jours peuvent faire l’objet d’un ajustement.
+Lorsque vous affichez les rapports de performances publicitaires, sachez que les données de rapport pour les trois derniers jours peuvent changer à mesure que nous recevons et traiterons de nouvelles données à partir de différentes sources. En outre, les reportions de données peuvent se produire jusqu’à 90 jours dans le passé.
 
-## <a name="apply-filters"></a>Appliquer les filtres
+## <a name="apply-filters"></a>Appliquer des filtres
 
-Dans la zone supérieure de la page, vous pouvez sélectionner la période sur laquelle portent les données qui vous intéressent. La valeur par défaut est de 30D (30 jours), mais vous pouvez choisir d’afficher les données portant sur des périodes de 3, 6 ou 12 mois, ou sur une plage de dates personnalisée que vous spécifiez.
+Près du haut de la page, vous pouvez sélectionner la période pour laquelle vous souhaitez afficher les données. La sélection par défaut est 30D (30 jours), mais vous pouvez choisir d’afficher les données pour 3, 6 ou 12 mois, ou pour une plage de données personnalisée que vous spécifiez.
 
-Vous pouvez également développer l’option **Filtres** pour filtrer toutes les données de cette page par unité publicitaire, application, fournisseur de publicité et type d’appareil. Vous pouvez choisir parmi les options suivantes :
+Vous pouvez également développer des **filtres** pour filtrer toutes les données de cette page par unité publicitaire, application, fournisseur ad et type d’appareil. Vous pouvez choisir parmi les options suivantes :
 
-* **Agrégation**: Choisissez la façon dont les données de rapport sont agrégées et comment il peut être filtré davantage. Par défaut, ce filtre est défini sur **Toutes les unités publicitaires**. Vous pouvez éventuellement modifier ce filtre sur **Toutes les applications** ou **Tous les fournisseurs de publicité**, ou vous pouvez choisir de pratiquer l'agrégation selon une application particulière dans laquelle vous utilisez des publicités.
-* **Les fournisseurs AD**: Filtrer le rapport pour les données de performances pour certaines [les fournisseurs ad](in-app-ads.md#paid-networks). Par défaut, le rapport affiche les données provenant de tous les fournisseurs de publicités. Si vous avez choisi l’option **All ad providers** dans la liste déroulante **Agrégation**, cette option est désactivée.
-* **APPAREIL**: Filtrer le rapport pour les données de performances pour certains types d’appareils. Par défaut, le rapport affiche les données de tous les types d’appareils.
+* **Agrégation**: choisissez la façon dont les données du rapport sont agrégées et comment elles peuvent être filtrées plus en détail. Par défaut, ce filtre est défini sur **toutes les unités ad**. Vous pouvez éventuellement modifier ce filtre pour **toutes les applications** ou **tous les fournisseurs ad**, ou vous pouvez choisir d’effectuer une agrégation par une application spécifique dans laquelle vous utilisez des publicités.
+* **Fournisseurs d’annuaires Active Directory**: filtrez le rapport sur les données de performances de certains [fournisseurs ad](in-app-ads.md#paid-networks). Par défaut, le rapport affiche les données de tous les fournisseurs ad. Cette option est désactivée si vous avez choisi **tous les fournisseurs ad** dans la liste déroulante **agrégation** .
+* **Appareil**: filtrez le rapport sur les données de performances de certains types d’appareils. Par défaut, le rapport affiche les données de tous les types d’appareils.
 
 ## <a name="overall-performance"></a>Performances globales
 
-Cette section affiche les mesures de performance publicitaire dans un graphique ou une carte du monde pour les unités publicitaires, les applications et les fournisseurs de publicités que vous avez sélectionnés dans les filtres du rapport.
+Cette section affiche les métriques de performances Active Directory dans un graphique ou une vue cartographique du monde pour les unités ad, les applications et les fournisseurs Active Directory que vous avez sélectionnés dans les filtres de rapport.
 
-Pour basculer vers un autre affichage des données, cliquez sur **Graphique** ou **Carte** en haut de la section **Performances globales**. Dans la vue carte, les nuances plus foncées représentent des valeurs plus élevées et les nuances plus légères représentent des valeurs inférieures. Vous pouvez pointer sur un pays ou une région sur la carte pour analyser la valeur de la métrique sélectionnée. Vous pouvez également effectuer un zoom avant sur une zone de la carte pour afficher les données des plus petits pays.
+Pour basculer vers une vue différente des données, cliquez sur **graphique** ou **mapper** en haut de la section **performances globales** . Dans la vue carte, les nuances plus foncées représentent des valeurs plus élevées et les nuances plus légères représentent des valeurs inférieures. Vous pouvez pointer sur un pays ou une région sur la carte pour analyser la valeur de la métrique sélectionnée. Vous pouvez également effectuer un zoom avant sur une zone de la carte pour afficher les données des plus petits pays.
 
-Vous pouvez affiner les données affichées dans le graphique ou la carte en cliquant sur l’icône de filtre en regard de la liste déroulante **Graphique** ou **Carte**. Ce filtre permet de choisir jusqu'à six différentes unités publicitaires, applications ou fournisseurs de publicités pour les comparer dans l’affichage graphique ou de la carte. Le type de données que vous pouvez choisir à partir de ce filtre varie selon ce que vous avez sélectionné pour le filtre de niveau supérieur **Agrégation** en haut du rapport.
+Vous pouvez affiner les données affichées dans le graphique ou la carte en cliquant sur l’icône de filtre en regard de la liste déroulante du **graphique** ou de la **carte** . Ce filtre vous permet de choisir parmi jusqu’à six unités ad, applications ou fournisseurs ad différentes à comparer dans le graphique ou la vue cartographique. Le type de données que vous pouvez choisir dans ce filtre dépend de ce que vous avez sélectionné pour le filtre de niveau supérieur de l' **agrégation** en haut du rapport.
 
 
-## <a name="overall-performance-breakdown"></a>Répartition des performances globales
+## <a name="overall-performance-breakdown"></a>Répartition globale des performances
 
-Cette section affiche un tableau qui contient toutes les mesures de performances publicitaires pour le jeu de données spécifié par les filtres que vous avez sélectionnés dans le rapport.
+Cette section affiche une table qui contient toutes les métriques de performances Active Directory pour le jeu de données spécifié par les filtres que vous avez sélectionnés dans le rapport.
 
-## <a name="performance-metrics"></a>Indicateurs de performances
+## <a name="performance-metrics"></a>Mesures de performances
 
-Le **Rapport sur les performances publicitaires** comprend des données correspondant aux indicateurs de performance suivants. Certains indicateurs ne sont affichés que pour certains fournisseurs de publicités.
+Le rapport de **performances de publicité** comprend des données pour les mesures de performances suivantes. Certaines mesures sont affichées uniquement pour certains fournisseurs d’annuaires Active Directory.
 
 |  Métrique  |  Description  |
 |----------|---------------|
-| Estimation des revenus  |  Estimation des revenus générés par les publicités diffusées dans votre application. |
-| eCPM  |  Coût par impression électronique effectif pour mille impressions. |
-| Demandes  | Nombre de fois où une demande de publicité a été envoyée à partir de votre application.  |
+| Revenu estimé  |  Estimation de la quantité d’argent reçue des publicités exécutées sur votre application. |
+| eCPM  |  Coût effectif par mille impressions. |
+| Demandes  | Nombre de fois où une demande ad a été envoyée à partir de votre application.  |
 | Impressions  | Nombre de fois où une publicité a été affichée dans votre application.  |
-| Taux de remplissage  | Pourcentage de demandes de publicité envoyées à partir de votre application dans lesquelles une publicité était affichée.  |
-| Clics  |  Nombre de fois où quelqu’un a cliqué sur une publicité dans votre application. |
-| CTR  |  Taux de clic : nombre de fois où quelqu’un a cliqué sur une publicité divisé par le nombre d’impressions. |
-| La plupart des ordinateurs | Le pourcentage d’exposition publicitaire qui sont visibles dans votre application. Pour plus d’informations sur la façon dont cette valeur est calculée, consultez [optimiser la plupart des ordinateurs de vos unités ad](../monetize/optimize-ad-unit-viewability.md). |
-| Crédits obtenus  | Si vous exécutez une campagne [publicité de la communauté](https://docs.microsoft.com/windows/uwp/publish/about-community-ads), cette valeur indique le nombre de crédits que vous avez gagnés pour un espace publicitaire promotionnel en affichant la publicité de la communauté dans votre application.  |
-| Crédits dépensés  | Si vous exécutez une campagne [publicité de la communauté](https://docs.microsoft.com/windows/uwp/publish/about-community-ads), cette valeur indique le nombre de crédits que vous avez dépensés pour des publicités pour votre application.  |
+| Taux de remplissage  | Pourcentage de demandes ad envoyées par votre application dans laquelle une publicité a été affichée.  |
+| Clicks  |  Nombre de fois où un utilisateur a cliqué sur une publicité dans votre application. |
+| CTR  |  Taux de clics, qui correspond au nombre de clics effectués sur une publicité, divisé par le nombre d’impressions. |
+| Affichage | Pourcentage d’impressions publicitaires visibles dans votre application. Pour plus d’informations sur la façon dont cette valeur est calculée, consultez [optimiser la vue de vos unités ad](../monetize/optimize-ad-unit-viewability.md). |
+| Crédits acquis  | Si vous exécutez une campagne de [publicité communautaire](./about-community-ads.md) , cela indique le nombre de crédits que vous avez gagnés pour l’espace publicitaire promotionnel en présentant les publicités de la Communauté dans votre application.  |
+| Crédits dépensé  | Si vous exécutez une campagne de [publicité communautaire](./about-community-ads.md) , cela indique le nombre de crédits que vous avez consacrés aux publicités pour votre application.  |
 
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Publicités dans l’application](in-app-ads.md)
-* [Afficher des publicités dans votre application avec le kit SDK Microsoft Advertising](../monetize/display-ads-in-your-app.md)
-* [Optimiser la plupart des ordinateurs de vos unités d’ad](../monetize/optimize-ad-unit-viewability.md)
+* [Afficher des publicités dans votre application avec le SDK Microsoft Advertising](../monetize/display-ads-in-your-app.md)
+* [Optimiser la visibilité de vos unités publicitaires](../monetize/optimize-ad-unit-viewability.md)
 
 
  

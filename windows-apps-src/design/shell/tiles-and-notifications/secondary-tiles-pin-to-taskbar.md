@@ -1,5 +1,5 @@
 ---
-Description: Découvrez comment épingler des vignettes secondaires à la barre des tâches.
+description: Découvrez comment épingler des vignettes secondaires à la barre des tâches, ce qui permet à vos utilisateurs d’accéder rapidement au contenu de votre application.
 title: Épingler les vignettes secondaires à la barre des tâches
 label: Pin secondary tiles to taskbar
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 11/28/2018
 ms.topic: article
 keywords: Windows 10, UWP, épingler à la barre des tâches, vignette secondaire, épingler les vignettes secondaires à la barre des tâches, raccourci
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d4041faf2fbc729291da902e66be1e0979f9d97
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: a57fa9c6a268b22df3c1772e0aec111c769d907b
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82971014"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89054189"
 ---
 # <a name="pin-secondary-tiles-to-taskbar"></a>Épingler les vignettes secondaires à la barre des tâches
 
@@ -21,12 +21,12 @@ Tout comme l’épinglage des vignettes secondaires pour démarrer, vous pouvez 
 <img alt="Taskbar pinning" src="../images/taskbar/pin-secondary-ui.png" width="972"/>
 
 > [!IMPORTANT]
-> **API à accès limité**: cette API est une fonctionnalité à accès limité. Pour utiliser cette API, contactez [taskbarsecondarytile@microsoft.com](mailto:taskbarsecondarytile@microsoft.com?Subject=Limited%20Access%20permission%20to%20use%20secondary%20tiles%20on%20taskbar).
+> **API à accès limité**: cette API est une fonctionnalité à accès limité. Pour utiliser cette API, contactez [taskbarsecondarytile@microsoft.com](mailto:taskbarsecondarytile@microsoft.com?Subject=Limited%20Access%20permission%20to%20use%20secondary%20tiles%20on%20taskbar) .
 
 > **Nécessite la mise à jour du 2018 octobre**: vous devez cibler le SDK 17763 et exécuter Build 17763 ou une version ultérieure pour épingler à la barre des tâches.
 
 
-## <a name="guidance"></a>Instructions
+## <a name="guidance"></a>Guidance
 
 Une vignette secondaire offre un moyen cohérent et efficace pour les utilisateurs d’accéder directement à des zones spécifiques au sein d’une application. Bien qu’un utilisateur décide s’il faut ou non « épingler » une vignette secondaire à la barre des tâches, les zones regroupement dans une application sont déterminées par le développeur. Pour plus d’informations, consultez aide sur les [vignettes secondaires](secondary-tiles-guidance.md).
 
@@ -229,4 +229,4 @@ await StartScreenManager.GetDefault().TryRemoveSecondaryTileAsync("myTileId");
 ## <a name="resources"></a>Ressources
 
 * [TaskbarManager, classe](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager)
-* [Épingler les vignettes secondaires au début](secondary-tiles-pinning.md)
+* [Épingler les vignettes secondaires au menu Démarrer](secondary-tiles-pinning.md)

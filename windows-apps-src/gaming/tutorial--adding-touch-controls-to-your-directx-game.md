@@ -4,14 +4,14 @@ description: Découvrez comment ajouter des contrôles tactiles de base à votre
 ms.assetid: 9d40e6e4-46a9-97e9-b848-522d61e8e109
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp, jeux, tactile, contrôles, directx, entrée
+keywords: Windows 10, UWP, jeux, Touch, contrôles, DirectX, entrée
 ms.localizationpriority: medium
-ms.openlocfilehash: b1f683f2d357057e33f3daa613e1b027a83776af
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 546d36e26489563720f5aad8a0c9f81f85649e5a
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66367767"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168283"
 ---
 # <a name="touch-controls-for-games"></a>Contrôles tactiles pour les jeux
 
@@ -21,7 +21,7 @@ Découvrez comment ajouter des contrôles tactiles de base à votre jeu de plate
 
 Vous pouvez incorporer ces contrôles à des jeux où le joueur doit faire glisser pour effectuer un défilement ou un panoramique dans un environnement 3D, par exemple une carte ou un terrain de jeux. Par exemple, dans un jeu de stratégie ou de casse-tête, vous pouvez utiliser ces contrôles pour permettre au joueur de voir un environnement de jeu plus grand que l’écran par un mouvement panoramique gauche ou droit.
 
-> **Remarque**  notre code fonctionne également avec les contrôles de panoramiques en fonction de la souris. Les événements associés au pointeur étant abstraits par les API Windows Runtime, ils peuvent gérer les événements de pointeur tactiles ou avec la souris.
+> **Remarque**    Notre code fonctionne également avec les contrôles de panoramique basés sur la souris. Les événements associés au pointeur étant abstraits par les API Windows Runtime, ils peuvent gérer les événements de pointeur tactiles ou avec la souris.
 
  
 
@@ -104,12 +104,12 @@ public:
 
 Les champs privés contiennent l’état actuel du contrôleur de la caméra. Passons-les en revue.
 
--   **m\_position** correspond à la position de l’appareil photo dans l’espace de la scène. Dans cet exemple, la valeur de coordonnée z est fixée à 0. Nous pourrions utiliser DirectX::XMFLOAT2 pour représenter cette valeur, mais dans le cadre de cet exemple et à des fins d’extensibilité future, nous utilisons DirectX::XMFLOAT3. Nous transmettons cette valeur via la **obtenir\_Position** propriété à l’application proprement dit qu’il peut mettre à jour la fenêtre d’affichage en conséquence.
--   **m\_panInUse** est une valeur booléenne qui indique si une opération de panoramique est active ; ou, plus précisément, si le lecteur est toucher l’écran et déplacement de la caméra.
--   **m\_panPointerID** est un identificateur unique pour le pointeur. Nous ne l’utiliserons pas dans cet exemple, mais il est conseillé d’associer la classe de l’état du contrôleur à un pointeur spécifique.
--   **m\_panFirstDown** est le point sur l’écran dans lequel le joueur tout d’abord touche l’écran ou cliqué avec la souris lors de l’action de panoramique de la caméra. Nous utiliserons cette valeur plus tard pour définir une zone morte afin d’empêcher tout sautillement lorsque l’écran est touché ou que la souris bouge légèrement.
--   **m\_panPointerPosition** est le point sur l’écran dans lequel le joueur a déplacé actuellement le pointeur. Nous l’utilisons pour déterminer la direction de l’acteur souhaitait migrer en examinant relatif à **m\_panFirstDown**.
--   **m\_panCommand** est la commande finale calculée pour le contrôleur d’appareil photo : haut, bas, gauche ou vers la droite. Dans la mesure où nous utilisons une caméra fixée au plan x-y, il pourrait s’agir d’une valeur DirectX::XMFLOAT2 à la place.
+-   **m \_ position** est la position de l’appareil photo dans l’espace de la scène. Dans cet exemple, la valeur de coordonnée z est fixée à 0. Nous pourrions utiliser DirectX::XMFLOAT2 pour représenter cette valeur, mais dans le cadre de cet exemple et à des fins d’extensibilité future, nous utilisons DirectX::XMFLOAT3. Nous passons cette valeur via la propriété d’extraction de la ** \_ position** à l’application elle-même, afin qu’elle puisse mettre à jour la fenêtre d’affichage en conséquence.
+-   **m \_ panInUse** est une valeur booléenne qui indique si une opération panoramique est active ou, plus spécifiquement, si le joueur touche l’écran et bouge l’appareil photo.
+-   **m \_ panPointerID** est un ID unique pour le pointeur. Nous ne l’utiliserons pas dans cet exemple, mais il est conseillé d’associer la classe de l’état du contrôleur à un pointeur spécifique.
+-   **m \_ panFirstDown** est le point de l’écran où le joueur touche d’abord l’écran ou clique sur la souris pendant l’action panoramique de l’appareil photo. Nous utiliserons cette valeur plus tard pour définir une zone morte afin d’empêcher tout sautillement lorsque l’écran est touché ou que la souris bouge légèrement.
+-   **m \_ panPointerPosition** est le point de l’écran où le joueur a actuellement déplacé le pointeur. Nous l’utilisons pour déterminer la direction que le joueur souhaitait déplacer en l’examinant par rapport à **m \_ panFirstDown**.
+-   **m \_ panCommand** est la commande finale calculée pour le contrôleur d’appareil photo : haut, haut, gauche ou droite. Dans la mesure où nous utilisons une caméra fixée au plan x-y, il pourrait s’agir d’une valeur DirectX::XMFLOAT2 à la place.
 
 Nous utilisons ces 3 gestionnaires d’événements pour mettre à jour les informations sur l’état du contrôleur de la caméra.
 
@@ -119,10 +119,10 @@ Nous utilisons ces 3 gestionnaires d’événements pour mettre à jour les inf
 
 Enfin, nous utilisons les méthodes et propriétés suivantes pour accéder aux informations sur l’état du contrôleur de la caméra, les initialiser et les mettre à jour.
 
--   **Initialize** est un gestionnaire d’événements que notre application appelle pour initialiser les contrôles et les associer à l’objet [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) qui décrit la fenêtre d’affichage.
+-   **Initialize** est un gestionnaire d’événements que notre application appelle pour initialiser les contrôles et les associer à l’objet [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) qui décrit la fenêtre d’affichage.
 -   **SetPosition** est une méthode que notre application appelle pour définir les coordonnées (x, y et z) des contrôles dans l’espace de scène. Notez que la coordonnée z présente la valeur 0 tout au long de ce didacticiel.
--   **obtenir\_Position** est une propriété qui accède à notre application pour obtenir la position actuelle de l’appareil photo dans l’espace de la scène. Vous utilisez cette propriété comme méthode de communication de la position actuelle de la caméra à l’application.
--   **obtenir\_FixedLookPoint** est une propriété qui accède à notre application pour obtenir le point actuel vers laquelle l’appareil photo de contrôleur est face. Dans cet exemple, il est verrouillé perpendiculairement au plan x-y.
+-   en **savoir \_ plus Position** est une propriété à laquelle notre application accède pour obtenir la position actuelle de l’appareil photo dans l’espace de la scène. Vous utilisez cette propriété comme méthode de communication de la position actuelle de la caméra à l’application.
+-   en **savoir \_ plus FixedLookPoint** est une propriété à laquelle notre application accède pour obtenir le point actuel vers lequel la caméra du contrôleur est dirigée. Dans cet exemple, il est verrouillé perpendiculairement au plan x-y.
 -   **Update** est une méthode qui lit l’état du contrôleur et met à jour la position de la caméra. Vous appelez continuellement cet &lt;élément&gt; à partir de la boucle principale de l’application pour actualiser les données de contrôleur de la caméra et la position de la caméra dans l’espace de scène.
 
 Vous disposez à présent ici de tous les composants nécessaires pour implémenter les contrôles tactiles. Vous pouvez détecter quand et où les événements de pointeur de souris ou tactile se sont produits, et identifier l’action. Vous pouvez définir la position et l’orientation de la caméra par rapport à l’espace de scène et assurer le suivi des modifications. Enfin, vous pouvez communiquer la nouvelle position de la caméra à l’application appelante.
@@ -134,15 +134,15 @@ Rassemblons maintenant tous ces éléments.
 
 Le répartiteur d’événements Windows Runtime fournit 3 événements qui doivent être gérés par notre application :
 
--   [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerpressed)
--   [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved)
--   [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerreleased)
+-   [**PointerPressed**](/uwp/api/windows.ui.core.corewindow.pointerpressed)
+-   [**PointerMoved**](/uwp/api/windows.ui.core.corewindow.pointermoved)
+-   [**PointerReleased**](/uwp/api/windows.ui.core.corewindow.pointerreleased)
 
-Ces événements sont implémentés sur le type [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow). Nous supposons que vous disposez d’un objet **CoreWindow** à manipuler. Pour plus d’informations, voir [Configuration d’une application UWP en C++ pour afficher une vue DirectX](https://docs.microsoft.com/previous-versions/windows/apps/hh465077(v=win.10)).
+Ces événements sont implémentés sur le type [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow). Nous supposons que vous disposez d’un objet **CoreWindow** à manipuler. Pour plus d’informations, voir [Configuration d’une application UWP en C++ pour afficher une vue DirectX](/previous-versions/windows/apps/hh465077(v=win.10)).
 
 Comme ces événements sont déclenchés pendant que notre application est en cours d’exécution, les gestionnaires mettent à jour les informations sur l’état du contrôleur de la caméra définies dans nos champs privés.
 
-Commençons par remplir les gestionnaires d’événements de pointeur tactile. Dans le premier gestionnaire d’événements (**OnPointerPressed**), nous obtenons les coordonnées x-y du pointeur de la part de l’élément [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) qui gère notre affichage lorsque l’utilisateur clique avec la souris ou touche l’écran.
+Commençons par remplir les gestionnaires d’événements de pointeur tactile. Dans le premier gestionnaire d’événements (**OnPointerPressed**), nous obtenons les coordonnées x-y du pointeur de la part de l’élément [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) qui gère notre affichage lorsque l’utilisateur clique avec la souris ou touche l’écran.
 
 **OnPointerPressed**
 
@@ -170,7 +170,7 @@ void CameraPanController::OnPointerPressed(
 }
 ```
 
-Nous utilisons ce gestionnaire pour vous permettre d’actuel **CameraPanController** instance connaître ce contrôleur d’appareil photo doit être traité comme étant actif en définissant **m\_panInUse** sur TRUE. Ainsi, lorsque l’application appelle **Update**, elle utilise les données de la position actuelle pour mettre à jour la fenêtre d’affichage.
+Nous utilisons ce gestionnaire pour permettre à l’instance **CameraPanController** actuelle de savoir que le contrôleur de l’appareil photo doit être traité comme actif en affectant la valeur true à la propriété **m \_ panInUse** . Ainsi, lorsque l’application appelle **Update**, elle utilise les données de la position actuelle pour mettre à jour la fenêtre d’affichage.
 
 Maintenant que nous avons établi les valeurs de base pour le mouvement de la caméra lorsque l’utilisateur touche l’écran ou clique/appuie dans la fenêtre d’affichage, nous devons identifier les actions à effectuer lorsque l’utilisateur fait glisser le point sur lequel il a appuyé ou déplace la souris avec le bouton enfoncé.
 
@@ -190,7 +190,7 @@ void CameraPanController::OnPointerMoved(
 }
 ```
 
-Enfin, nous devons désactiver le mouvement panoramique de la caméra lorsque le joueur cesse de toucher l’écran. Nous utilisons **OnPointerReleased**, qui est appelé lorsque [ **PointerReleased** ](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerreleased) est déclenché pour définir **m\_panInUse** sur FALSE et désactiver le mouvement panoramique de caméra et l’ID du pointeur la valeur est 0.
+Enfin, nous devons désactiver le mouvement panoramique de la caméra lorsque le joueur cesse de toucher l’écran. Nous utilisons **OnPointerReleased**, qui est appelé lorsque [**PointerReleased**](/uwp/api/windows.ui.core.corewindow.pointerreleased) est activé, pour définir **m \_ panInUse** sur false et désactiver le mouvement panoramique de l’appareil photo, et définir l’ID du pointeur sur 0.
 
 **OnPointerReleased**
 
@@ -212,7 +212,7 @@ void CameraPanController::OnPointerReleased(
 
 Rassemblons les événements et initialisons tous les champs des états de base du contrôleur de la caméra.
 
-**Initialize**
+**Initialiser**
 
 ```cpp
 void CameraPanController::Initialize( _In_ CoreWindow^ window )
@@ -239,7 +239,7 @@ void CameraPanController::Initialize( _In_ CoreWindow^ window )
 }
 ```
 
-**Initialize** fait référence à l’instance [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) de l’application en tant que paramètre et inscrit les gestionnaires d’événements développés dans les événements appropriés sur cet élément **CoreWindow**.
+**Initialize** fait référence à l’instance [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) de l’application en tant que paramètre et inscrit les gestionnaires d’événements développés dans les événements appropriés sur cet élément **CoreWindow**.
 
 ## <a name="getting-and-setting-the-position-of-the-camera-controller"></a>Obtention et définition de la position du contrôleur de la caméra
 
@@ -271,14 +271,14 @@ DirectX::XMFLOAT3 CameraPanController::get_FixedLookPoint()
 
 **SetPosition** est une méthode publique que nous pouvons appeler à partir de notre application si nous devons définir un point spécifique comme position du contrôleur de la caméra.
 
-**obtenir\_Position** est notre propriété publique la plus importante : c’est le moyen de notre application obtient la position actuelle du contrôleur d’appareil photo dans l’espace de la scène, il peut mettre à jour la fenêtre d’affichage en conséquence.
+en **savoir \_ plus La position** est la propriété publique la plus importante : il s’agit de la façon dont notre application obtient la position actuelle du contrôleur d’appareil photo dans l’espace de la scène afin de pouvoir mettre à jour la fenêtre d’affichage en conséquence.
 
-**obtenir\_FixedLookPoint** est une propriété publique qui, dans cet exemple, obtient un point d’aspect qui est normale pour le plan x-y. Vous pouvez modifier cette méthode pour utiliser les fonctions trigonométriques, sin et cos, lors du calcul des valeurs des coordonnées x, y et z si vous voulez créer d’autres angles obliques pour la caméra fixe.
+en **savoir \_ plus FixedLookPoint** est une propriété publique qui, dans cet exemple, obtient un point d’aspect normal du plan x-y. Vous pouvez modifier cette méthode pour utiliser les fonctions trigonométriques, sin et cos, lors du calcul des valeurs des coordonnées x, y et z si vous voulez créer d’autres angles obliques pour la caméra fixe.
 
 ## <a name="updating-the-camera-controller-state-information"></a>Mise à jour des informations sur l’état du contrôleur de la caméra
 
 
-Maintenant, nous effectuons nos calculs qui convertissent les informations de coordonnées du pointeur suivies dans **m\_panPointerPosition** dans les nouvelles informations de coordonnées respectifs de notre espace de la scène 3D. Notre application appelle cette méthode chaque fois que nous actualisons la boucle principale de l’application. Nous calculons alors les nouvelles informations de position que nous souhaitons transmettre à l’application utilisée pour la mise à jour de la matrice globale avant projection dans la fenêtre d’affichage.
+À présent, nous effectuons nos calculs qui convertissent les informations de coordonnée du pointeur suivies en **m \_ panPointerPosition** en nouvelles coordonnées respectives de notre espace de scène 3D. Notre application appelle cette méthode chaque fois que nous actualisons la boucle principale de l’application. Nous calculons alors les nouvelles informations de position que nous souhaitons transmettre à l’application utilisée pour la mise à jour de la matrice globale avant projection dans la fenêtre d’affichage.
 
 ```cpp
 
@@ -339,7 +339,7 @@ Nous pouvons maintenant obtenir une coordonnée d’espace de scène sur laquell
         );  
 ```
 
-Félicitations ! Vous avez implémenté un ensemble simple de contrôles tactiles de panoramique de la caméra dans votre jeu.
+Félicitations ! Vous avez implémenté un ensemble simple de contrôles tactiles de panoramique de la caméra dans votre jeu.
 
 
  
@@ -347,7 +347,3 @@ Félicitations ! Vous avez implémenté un ensemble simple de contrôles tactil
  
 
  
-
-
-
-

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, sécurité
 ms.assetid: 89f3d331-20cd-457b-83e8-1a22aaab2658
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e1e27ad47385b3ded743d39cc6a347cab5960ce
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: d9d9041b5e90ce8ffc16fe0158dda597f99b41bc
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493134"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157943"
 ---
 # <a name="windows-unlock-with-windows-hello-companion-iot-devices"></a>Déverrouillage Windows avec les appareils (IoT) complémentaires
 
@@ -40,7 +40,7 @@ Il existe de nombreuses façons de créer une excellente expérience de déverro
 
 ### <a name="biometric-enabled-windows-hello-companion-devices"></a>Appareils complémentaires Windows Hello fonctionnant par biométrie
 
-Si l’appareil complémentaire prend en charge la biométrie, [Windows Biometric Framework](https://msdn.microsoft.com/windows/hardware/commercialize/design/device-experiences/windows-hello) peut, dans certains cas, s’avérer être une meilleure solution que l’infrastructure d’appareil complémentaire Windows Hello. Veuillez contacter [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com) et nous vous aiderons à choisir l’approche appropriée.
+Si l’appareil complémentaire prend en charge la biométrie, [Windows Biometric Framework](/windows-hardware/design/device-experiences/windows-hello) peut, dans certains cas, s’avérer être une meilleure solution que l’infrastructure d’appareil complémentaire Windows Hello. Veuillez contacter [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com) et nous vous aiderons à choisir l’approche appropriée.
 
 ### <a name="components-of-the-solution"></a>Composants de la solution
 
@@ -52,7 +52,7 @@ L’infrastructure du dispositif complémentaire Windows Hello est implémentée
 
 L’intégration avec l’infrastructure du dispositif complémentaire Windows Hello nécessite les éléments suivants :
 
-- une application de [plateforme Windows universelle (UWP)](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) pour le dispositif complémentaire Windows Hello, téléchargée à partir du Windows Store ; 
+- une application de [plateforme Windows universelle (UWP)](../get-started/universal-application-platform-guide.md) pour le dispositif complémentaire Windows Hello, téléchargée à partir du Windows Store ; 
 - la possibilité de créer deux clés HMAC 256 bits sur le dispositif complémentaire Windows Hello et de générer un HMAC avec ce dernier (à l’aide de SHA-256).
 - une bonne configuration des paramètres de sécurité sur le Bureau Windows 10. Le service d’authentification par dispositif complémentaire nécessite ce PIN avant de pouvoir accueillir un dispositif complémentaire Windows Hello. Les utilisateurs doivent configurer ce PIN dans Paramètres &gt; Comptes &gt; Options de connexion.
 
@@ -385,7 +385,7 @@ L’infrastructure du dispositif complémentaire Windows Hello aide l’applicat
 
 Voici les détails de chacun de ces états :
 
-| État                         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| State                         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 |----------------------------   |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------    |
 | WaitingForUserConfirmation    | Cet événement de notification de changement d’État est déclenché lorsque l’écran de verrouillage s’affiche (par exemple, l’utilisateur a appuyé sur Windows + L). Nous recommandons de ne pas demander des messages d’erreur concernant des difficultés pour trouver un appareil dans cet état. En règle générale, nous recommandons d’afficher des messages seulement en présence d’un signal d’intention. L’application de l’appareil compagnon Windows Hello doit effectuer le premier appel d’API pour l’authentification dans cet État si l’appareil auxiliaire collecte le signal intentionnel (par exemple, en appuyant sur un lecteur NFC, en appuyant sur un bouton sur l’appareil compagnon ou sur un geste spécifique, comme applaudissements), et la tâche d’arrière-plan de l’application d’appareil Windows Hello Companion reçoit une indication de Dans le cas contraire, si l’application du dispositif complémentaire Windows Hello dépend du PC pour lancer le flux d’authentification (l’utilisateur devant effectuer un balayage vers le haut sur l’écran de verrouillage ou appuyer sur la barre d’espace), elle doit attendre l’état suivant (CollectingCredential).   |
 | CollectingCredential          | Cet événement de notification de changement d’état est déclenché lorsque l’utilisateur ouvre son portable, appuie sur une touche quelconque du clavier ou effectue un balayage vers le haut sur l’écran de verrouillage. Si le périphérique compagnon Windows Hello s’appuie sur les actions ci-dessus pour commencer à collecter le signal intentionnel, l’application de l’appareil Windows Hello Companion doit commencer à la collecter (par exemple, par le biais d’une fenêtre contextuelle sur l’appareil associé qui demande si l’utilisateur souhaite déverrouiller le PC). C’est le moment approprié de fournir des cas d’erreur si l’application du dispositif complémentaire Windows Hello nécessite que l’utilisateur fournisse un signal de présence sur le dispositif complémentaire (tel que la saisie d’un PIN sur le dispositif complémentaire Windows Hello).                                                                                                                                                                                                                                                                                                                                             |

@@ -1,36 +1,36 @@
 ---
 title: Créer un service de connexion Windows Hello
-description: Voici la deuxième partie de la procédure complète sur l’utilisation de Windows Hello comme alternative aux systèmes d’authentification par nom d’utilisateur et mot de passe traditionnels dans des applications UWP Windows 10.
+description: Il s’agit de la deuxième partie d’une procédure pas à pas complète sur l’utilisation de Windows Hello comme alternative aux systèmes d’authentification de nom d’utilisateur et de mot de passe traditionnels dans les applications Windows 10 UWP (plateforme Windows universelle).
 ms.assetid: ECC9EF3D-E0A1-4BC4-94FA-3215E6CFF0E4
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, sécurité
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d15173471b7f1ef3f1c6b042671eb85b7a53dc4
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: 1a875a0cb56e6a2a29627f05e6c01398233c8a48
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282343"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89155393"
 ---
 # <a name="create-a-windows-hello-login-service"></a>Créer un service de connexion Windows Hello
 
-Voici la deuxième partie de la procédure complète sur l’utilisation de Windows Hello comme alternative aux systèmes d’authentification par nom d’utilisateur et mot de passe traditionnels dans des applications UWP Windows 10. Cet article prend la suite de la première partie, [Application de connexion Windows Hello](microsoft-passport-login.md), et étend la fonctionnalité pour illustrer comment intégrer Windows Hello à votre application existante.
+Il s’agit de la deuxième partie d’une procédure pas à pas complète sur l’utilisation de Windows Hello comme alternative aux systèmes d’authentification de nom d’utilisateur et de mot de passe traditionnels dans les applications Windows 10 UWP (plateforme Windows universelle). Cet article reprend là où la partie 1, l' [application de connexion Windows Hello](microsoft-passport-login.md), est désactivée et étend les fonctionnalités pour montrer comment intégrer Windows Hello à votre application existante.
 
 Pour créer ce projet, il vous faut connaître C# et XAML. Vous devrez également utiliser Visual Studio 2015 (Community Edition ou version ultérieure) sur un ordinateur Windows 10.
 
 ## <a name="exercise-1-server-side-logic"></a>Exercice 1 : Logique côté serveur
 
 
-Dans cet exercice, vous commencerez par créer une base de données et un serveur locaux fictifs à l’aide de l’application Windows Hello conçue précédemment. Ces travaux pratiques sont conçus pour apprendre comment Windows Hello peut être intégré à un système existant. L’utilisation d’une base de données et d’un serveur fictifs permet de réduire le nombre d’étapes de configuration inutiles. Dans vos propres applications, vous devez remplacer les objets fictifs avec des bases de données et des services réels.
+Dans cet exercice, vous allez commencer par l’application Windows Hello générée dans le premier laboratoire et créer un serveur fictif et une base de données. Ce laboratoire pratique est conçu pour apprendre comment Windows Hello peut être intégré à un système existant. L’utilisation d’une base de données et d’un serveur fictifs permet de réduire le nombre d’étapes de configuration inutiles. Dans vos propres applications, vous devez remplacer les objets fictifs avec des bases de données et des services réels.
 
 -   Pour commencer, ouvrez la solution PassportLogin à partir du premier atelier de travaux pratiques Passport.
 -   Commencez par implémenter la base de données et le serveur fictifs. Créez un dossier appelé AuthService. Dans l’Explorateur de solutions, cliquez avec le bouton droit sur la solution PassportLogin (Windows universelle) et sélectionnez Ajouter &gt; Nouveau dossier.
 -   Créez des classes UserAccount et PassportDevices qui feront office de modèles pour les données à enregistrer dans la base de données fictive. UserAccount sera similaire au modèle utilisateur implémenté sur un serveur d’authentification traditionnel. Cliquez avec le bouton droit sur le dossier AuthService, puis ajoutez une nouvelle classe appelée UserAccount.cs.
 
-    ![Création de fichier d’autorisation Windows Hello](images/passport-auth-1.png)
+    ![Dossier de création d’autorisation Windows Hello](images/passport-auth-1.png)
 
-    ![Création de classe d’autorisation Windows Hello](images/passport-auth-2.png)
+    ![Création d’une classe d’autorisation Windows Hello](images/passport-auth-2.png)
 
 -   Rendez la définition de classe publique, puis ajoutez les propriétés publiques suivantes. Vous aurez besoin des références suivantes.
 
@@ -51,9 +51,9 @@ Dans cet exercice, vous commencerez par créer une base de données et un serveu
     }
     ```
 
-    Vous avez peut-être remarqué la liste commentée de PassportDevices. Il s’agit d’une modification que vous devrez apporter à un modèle utilisateur existant dans votre implémentation actuelle. La liste PassportDevices contient un deviceID, la clé publique obtenue à partir de Windows Hello, ainsi qu’une [**KeyCredentialAttestationResult**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.KeyCredentialAttestationResult). Pour ces travaux pratiques, vous devez implémenter keyAttestationResult, car cette variable est uniquement fournie par Windows Hello sur les appareils disposant d’une puce TPM (Trusted Platform Module). **KeyCredentialAttestationResult** est une combinaison de plusieurs propriétés et doit être fractionnée afin de les enregistrer et de les charger avec une base de données.
+    Vous avez peut-être remarqué la liste commentée de PassportDevices. Il s’agit d’une modification que vous devrez apporter à un modèle utilisateur existant dans votre implémentation actuelle. La liste des PassportDevices contient un deviceID, la clé publique créée à partir de Windows Hello et un [**KeyCredentialAttestationResult**](/uwp/api/Windows.Security.Credentials.KeyCredentialAttestationResult). Pour ce laboratoire pratique, vous devez implémenter les keyAttestationResult, car ils sont fournis uniquement par Windows Hello sur les appareils dotés d’un processeur TPM (Trusted Platform Modules). **KeyCredentialAttestationResult** est une combinaison de plusieurs propriétés et doit être fractionnée afin de les enregistrer et de les charger avec une base de données.
 
--   Créez dans le dossier AuthService une classe appelée PassportDevice.cs. Il s’agit du modèle destiné aux appareils Windows Hello décrit ci-dessus. Modifiez la définition de classe sur publique, puis ajoutez les propriétés suivantes.
+-   Créez dans le dossier AuthService une classe appelée PassportDevice.cs. Il s’agit du modèle pour les appareils Windows Hello, comme indiqué ci-dessus. Modifiez la définition de classe sur publique, puis ajoutez les propriétés suivantes.
 
     ```cs
     namespace PassportLogin.AuthService
@@ -72,7 +72,7 @@ Dans cet exercice, vous commencerez par créer une base de données et un serveu
     }
     ```
 
--   Revenez dans UserAccount.cs, puis supprimez les marques de commentaire de la liste des appareils Windows Hello.
+-   Revenez à dans UserAccount.cs et supprimez les marques de commentaire de la liste des appareils Windows Hello.
 
     ```cs
     using System.Collections.Generic;
@@ -182,7 +182,7 @@ Dans cet exercice, vous commencerez par créer une base de données et un serveu
     }
 ```
 
--   Dans la méthode Load, vous avez peut-être remarqué qu’une méthode InitializeSampleUserAccounts a été commentée. Vous devez créer cette méthode dans MockStore.cs. Cette méthode remplit la liste de comptes utilisateur afin qu’une connexion puisse s’effectuer. Dans le monde réel, la base de données utilisateur serait déjà remplie. Lors de cette étape, vous allez également créer un constructeur qui initialisera le chargement de la liste utilisateur et de l’appel.
+-   Dans la méthode Load, vous avez peut-être remarqué qu’une méthode InitializeSampleUserAccounts a été commentée. Vous devrez créer cette méthode dans le MockStore.cs. Cette méthode remplit la liste de comptes utilisateur afin qu’une connexion puisse s’effectuer. Dans le monde réel, la base de données utilisateur serait déjà remplie. Lors de cette étape, vous allez également créer un constructeur qui initialisera le chargement de la liste utilisateur et de l’appel.
 
     ```cs
     namespace PassportLogin.AuthService
@@ -245,7 +245,7 @@ Dans cet exercice, vous commencerez par créer une base de données et un serveu
     }
     ```
 
--   La liste de comptes utilisateur du Windows Store fictif peut désormais être enregistrée et chargée. D’autres parties de l’application auront besoin d’accéder à cette liste, il faudra donc des méthodes pour récupérer ces données. En dessous de la méthode InitializeSampleUserAccounts, ajoutez les méthodes Get suivantes. Elles vous permettront d’obtenir un identifiant utilisateur, un utilisateur unique, une liste d’utilisateurs pour un appareil Windows Hello spécifique, ainsi que la clé publique pour l’utilisateur sur un appareil spécifique.
+-   La liste de comptes utilisateur du Windows Store fictif peut désormais être enregistrée et chargée. D’autres parties de l’application auront besoin d’accéder à cette liste, il faudra donc des méthodes pour récupérer ces données. En dessous de la méthode InitializeSampleUserAccounts, ajoutez les méthodes Get suivantes. Ils vous permettent d’obtenir un ID utilisateur, un seul utilisateur, une liste d’utilisateurs pour un appareil Windows Hello spécifique et d’obtenir la clé publique de l’utilisateur sur un appareil spécifique.
 
     ```cs
     public Guid GetUserId(string username)
@@ -295,7 +295,7 @@ Dans cet exercice, vous commencerez par créer une base de données et un serveu
     }
     ```
 
--   Les méthodes suivantes à implémenter gèrent les opérations simples pour ajouter un compte, supprimer le compte et supprimer l’appareil. La suppression des appareils est nécessaire, car Windows Hello est propre à l’appareil. Pour chaque appareil auquel vous êtes connecté, une paire de clés publique et privée est créée par Windows Hello. C’est comme si vous aviez un mot de passe différent pour chaque appareil, à part que vous n’avez pas besoin de vous en souvenir puisque c’est le serveur qui s’en charge. Ajoutez les méthodes suivantes dans MockStore.cs.
+-   Les méthodes suivantes à implémenter gèrent les opérations simples pour ajouter un compte, supprimer le compte et supprimer l’appareil. La suppression de l’appareil est nécessaire car Windows Hello est spécifique à l’appareil. Pour chaque appareil auquel vous vous connectez, une nouvelle paire de clés publique et privée est créée par Windows Hello. C’est comme si vous aviez un mot de passe différent pour chaque appareil, à part que vous n’avez pas besoin de vous en souvenir puisque c’est le serveur qui s’en charge. Ajoutez les méthodes suivantes dans MockStore.cs.
 
     ```cs
     public UserAccount AddAccount(string username)
@@ -358,7 +358,7 @@ Dans cet exercice, vous commencerez par créer une base de données et un serveu
     }
     ```
 
-- Dans la classe MockStore, ajoutez une méthode qui ajoutera les informations Windows Hello relatives à un UserAccount existant. Cette méthode est appelée PassportUpdateDetails et prend des paramètres pour identifier l’utilisateur et les détails Windows Hello. KeyAttestationResult a été commentée lors de la création de PassportDevice (nécessaire également dans le monde réel).
+- Dans la classe MockStore, ajoutez une méthode qui ajoutera des informations relatives à Windows Hello à un UserAccount existant. Cette méthode sera appelée PassportUpdateDetails et prendra les paramètres pour identifier l’utilisateur et les détails Windows Hello. KeyAttestationResult a été commentée lors de la création de PassportDevice (nécessaire également dans le monde réel).
 
     ```cs
     using Windows.Security.Credentials;
@@ -505,7 +505,7 @@ Dans cet exercice, vous commencerez par créer une base de données et un serveu
     }
     ```
 
--   La classe AuthService a besoin d’une méthode Request challenge qui renvoie un défi au client pour valider l’utilisateur qu’il prétend être. Une méthode est également nécessaire dans la classe AuthService pour recevoir le défi signé par le client. Dans le cadre de ces travaux pratiques, la méthode permettant de déterminer si le défi signé est terminé a été laissée incomplète. Toutes les implémentations de Windows Hello dans un système d’authentification existant seront légèrement différentes. La clé publique stockée sur le serveur doit correspondre au résultat renvoyé par le client au serveur. Ajoutez ces deux méthodes à AuthService.cs.
+-   La classe AuthService a besoin d’une méthode Request challenge qui renvoie un défi au client pour valider l’utilisateur qu’il prétend être. Une méthode est également nécessaire dans la classe AuthService pour recevoir le défi signé par le client. Dans le cadre de ces travaux pratiques, la méthode permettant de déterminer si le défi signé est terminé a été laissée incomplète. Chaque implémentation de Windows Hello dans un système d’authentification existant sera légèrement différente. La clé publique stockée sur le serveur doit correspondre au résultat renvoyé par le client au serveur. Ajoutez ces deux méthodes à AuthService.cs.
 
     ```cs
     using Windows.Security.Cryptography;
@@ -548,7 +548,7 @@ Dans cet exercice, vous allez modifier les vues et les classes d’assistance c�
     }
     ```
 
--   Mettez à jour l’interface de la page de connexion pour demander qu’un compte Passport soit entré. Ces travaux pratiques montrent comment un système existant peut être migré pour utiliser Windows Hello et comment les comptes existants disposeront d’un nom utilisateur et d’un mot de passe. Mettez également à jour l’explication en bas du code XAML afin d’ inclure le mot de passe par défaut. Mettre à jour le code XAML suivant dans Login.xaml
+-   Mettez à jour l’interface de la page de connexion pour demander qu’un compte Passport soit entré. Ce laboratoire pratique démontre comment un système existant peut être migré pour utiliser Windows Hello et que les comptes existants auront un nom d’utilisateur et un mot de passe. Mettez également à jour l’explication en bas du code XAML afin d’ inclure le mot de passe par défaut. Mettre à jour le code XAML suivant dans Login.xaml
 
     ```xml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -731,7 +731,7 @@ Dans cet exercice, vous allez modifier les vues et les classes d’assistance c�
     }
     ```
 
--   Dans la mesure où Windows Hello crée une paire de clés publique et privée différente pour chaque compte sur chaque appareil, la page d’accueil doit afficher la liste des appareils inscrits pour le compte connecté et permettre à chacun d’entre eux d’être oubliés. Dans Welcome.xaml, ajoutez le code XAML suivant sous ForgetButton. Cette opération permet d’implémenter un bouton oublier l’appareil, une zone de texte d’erreur et une liste affichant tous les appareils.
+-   Lorsque Windows Hello créera une paire de clés publique et privée différente pour chaque compte de chaque appareil, la page d’accueil devra afficher la liste des appareils inscrits pour le compte connecté et autoriser l’oubli de chacun d’entre eux. Dans Welcome.xaml, ajoutez le code XAML suivant sous ForgetButton. Cette opération permet d’implémenter un bouton oublier l’appareil, une zone de texte d’erreur et une liste affichant tous les appareils.
 
     ```xml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -804,7 +804,7 @@ Dans cet exercice, vous allez modifier les vues et les classes d’assistance c�
     }
     ```
 
--   Comme vous allez utiliser le AuthService lors de la suppression d’un compte, la référence au AccountHelper dans le bouton\_oublier\_utilisateur\_méthode peut être supprimée. La méthode doit maintenant se présenter comme suit.
+-   Comme vous allez utiliser le AuthService lors de la suppression d’un compte, la référence à AccountHelper dans le bouton \_ oublie l' \_ utilisateur \_ clic peut être supprimée. La méthode doit maintenant se présenter comme suit.
 
     ```cs
     private void Button_Forget_User_Click(object sender, RoutedEventArgs e)
@@ -984,13 +984,13 @@ Dans cet exercice, vous allez modifier les vues et les classes d’assistance c�
     }
     ```
 
--   Créez et exécutez l’application (F5). Connectez-vous au compte utilisateur servant d’exemple avec les informations d’identification sampleUsername et samplePassword. Sur l’écran d’accueil, vous avez peut-être remarqué que le bouton Forget devices s’affiche, mais qu’il n’y a aucun appareil. Lorsque vous créez ou migrez un utilisateur pour travailler avec Windows Hello, les informations de Passport ne sont pas transmises à AuthService.
+-   Créez et exécutez l’application (F5). Connectez-vous au compte utilisateur servant d’exemple avec les informations d’identification sampleUsername et samplePassword. Sur l’écran d’accueil, vous avez peut-être remarqué que le bouton Forget devices s’affiche, mais qu’il n’y a aucun appareil. Lorsque vous créez ou migrez un utilisateur pour travailler avec Windows Hello, les informations Passport ne sont pas transmises au AuthService.
 
-    ![Page de connexion Windows Hello](images/passport-auth-3.png)
+    ![Écran de connexion Windows Hello](images/passport-auth-3.png)
 
-    ![Connexion réussie Windows Hello](images/passport-auth-4.png)
+    ![Connexion à Windows Hello réussie](images/passport-auth-4.png)
 
--   Pour transmettre les informations de Passport à AuthService, MicrosoftPassportHelper.cs doit être mise à jour. Dans la méthode CreatePassportKeyAsync, au lieu de renvoyer uniquement la valeur True en cas de réussite, vous devez appeler une nouvelle méthode qui essaie d’obtenir KeyAttestation. Bien que ces travaux pratiques n’enregistrent pas ces informations dans AuthService, vous allez découvrir comment obtenir ces informations côté client. Mettez à jour la méthode CreatePassportKeyAsync.
+-   Pour récupérer les informations Passport sur le AuthService, le MicrosoftPassportHelper.cs doit être mis à jour. Dans la méthode CreatePassportKeyAsync, au lieu de renvoyer uniquement la valeur True en cas de réussite, vous devez appeler une nouvelle méthode qui essaie d’obtenir KeyAttestation. Bien que ces travaux pratiques n’enregistrent pas ces informations dans AuthService, vous allez découvrir comment obtenir ces informations côté client. Mettez à jour la méthode CreatePassportKeyAsync.
 
     ```cs
     public static async Task<bool> CreatePassportKeyAsync(Guid userId, string username)
@@ -1018,7 +1018,7 @@ Dans cet exercice, vous allez modifier les vues et les classes d’assistance c�
     }
     ```
 
--   Créez cette méthode GetKeyAttestationAsync dans MicrosoftPassportHelper.cs. Cette méthode vous montrera comment vous procurer les informations nécessaires fournies par Windows Hello pour chaque compte sur un appareil spécifique.
+-   Créez cette méthode GetKeyAttestationAsync dans MicrosoftPassportHelper.cs. Cette méthode montre comment obtenir toutes les informations nécessaires qui peuvent être fournies par Windows Hello pour chaque compte sur un appareil spécifique.
 
     ```cs
     using Windows.Storage.Streams;
@@ -1060,7 +1060,7 @@ Dans cet exercice, vous allez modifier les vues et les classes d’assistance c�
     }
     ```
 
--   Dans la méthode GetKeyAttestationAsync que vous venez d’ajouter, vous avez peut-être remarqué que la dernière ligne a été commentée. Cette dernière ligne sera une nouvelle méthode que vous créerez et qui enverra toutes les informations Windows Hello à AuthService. Dans le monde réel, vous devez envoyer ces informations à un serveur réel avec une API Web.
+-   Vous avez peut-être remarqué que la méthode GetKeyAttestationAsync que vous venez d’ajouter à la dernière ligne a été commentée. Cette dernière ligne est une nouvelle méthode que vous créez, qui envoie toutes les informations Windows Hello à AuthService. Dans le monde réel, vous devez envoyer ces informations à un serveur réel avec une API Web.
 
     ```cs
     using System.Runtime.InteropServices.WindowsRuntime;
@@ -1077,10 +1077,10 @@ Dans cet exercice, vous allez modifier les vues et les classes d’assistance c�
     }
     ```
 
--   Supprimez les marques de commentaire de la dernière ligne de la méthode GetKeyAttestationAsync afin d’envoyer les informations Windows Hello à AuthService.
+-   Supprimez les marques de commentaire de la dernière ligne de la méthode GetKeyAttestationAsync afin que les informations Windows Hello soient envoyées à AuthService.
 -   Générez et exécutez l’application, puis connectez-vous avec les informations d’identification par défaut comme précédemment. Sur l’écran d’accueil, vous voyez maintenant que l’ID d’appareil est affiché. Si vous êtes connecté sur un autre appareil, celui-ci s’affiche également ici (si vous disposez d’un service d’autorisation hébergé dans le cloud). Pour ces travaux pratiques, l’ID d’appareil réel est affiché. Dans une implémentation réelle, il vous faudrait afficher un nom convivial compréhensible pour l’utilisateur, qui lui permette d’identifier chaque appareil.
 
-    ![ID d’appareil de connexion réussie Windows Hello](images/passport-auth-5.png)
+    ![ID d’appareil de connexion Windows Hello réussi](images/passport-auth-5.png)
 
 -   21. Pour terminer cet exercice pratique, vous avez besoin d’une demande et d’un défi pour l’utilisateur lorsqu’il fait son choix dans la page de sélection d’utilisateur et qu’il se reconnecte. AuthService contient les deux méthodes que vous avez créées pour demander un défi, et l’une d’elle utilise un défi signé. Dans MicrosoftPassportHelper.cs, créez une méthode appelée RequestSignAsync pour demander un défi à AuthService, connectez localement ce défi à l’aide d’une API Passport et envoyez le défi signé à AuthService. Dans ces travaux pratiques, AuthService recevra le défi signé et renverra la valeur True. Dans une implémentation réelle, vous devrez implémenter un mécanisme de vérification pour déterminer si le défi a été signé par l’utilisateur approprié sur l’appareil approprié. Ajouter la méthode ci-dessous à MicrosoftPassportHelper.cs
 
@@ -1165,13 +1165,13 @@ Dans cet exercice, vous allez modifier les vues et les classes d’assistance c�
     ```
 
 -   Tout au long de cet exercice, vous avez mis à jour l’application côté client pour utiliser AuthService. En procédant ainsi, vous avez pu éliminer la nécessité pour les classes Account et AccountHelper. Supprimez la classe Account, le dossier Modèles et la classe AccountHelper dans le dossier Utilitaires. Vous devez supprimer toute référence à l’espace de noms Modèles tout au long de l’application pour que la solution soit générée correctement.
--   Générez et exécutez l’application, et profitez de Windows Hello avec la base de données et le service fictifs.
+-   Générez et exécutez l’application et profitez de l’utilisation de Windows Hello avec le service et la base de données fictifs.
 
-Dans ces travaux pratiques, vous avez appris à utiliser les API Windows Hello afin de remplacer les mots de passe pour l’authentification à partir d’un ordinateur Windows 10. Si vous tenez compte de l’énergie dépensée pour l’entretien des mots de passe et la prise en charge des mots de passe perdus sur les systèmes existants, vous comprendrez tout de suite l’utilité du nouveau système d’authentification Windows Hello.
+Dans ce laboratoire pratique, vous avez appris à utiliser les API Windows Hello pour remplacer le besoin de mots de passe lors de l’utilisation de l’authentification à partir d’un ordinateur Windows 10. Lorsque vous prenez en compte la quantité d’énergie consommée par les personnes qui maintiennent les mots de passe et la prise en charge des mots de passe perdus dans les systèmes existants, vous devriez voir l’avantage de passer à ce nouveau système Windows Hello d’authentification.
 
-Nous avons laissé en guise d’exercice les détails sur la manière d’implémenter l’authentification côté service et côté serveur. La majorité d’entre vous dispose de systèmes existants qui devront être migrés pour pouvoir utiliser Windows Hello et les détails de chaque système diffèrent.
+Nous avons laissé en guise d’exercice les détails sur la manière d’implémenter l’authentification côté service et côté serveur. La plupart d’entre vous auront des systèmes existants qui devront être migrés pour commencer à utiliser Windows Hello et les détails de chaque système seront différents.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Windows Hello](microsoft-passport.md)
+* [Windows Hello](microsoft-passport.md)
 * [Application de connexion Windows Hello](microsoft-passport-login.md)

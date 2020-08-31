@@ -1,28 +1,28 @@
 ---
-title: Partage d’appareil PointOfService
-description: Partage de périphériques de PointOfService avec d’autres utilisateurs
+title: Partage d’appareils PointOfService
+description: Découvrez comment partager des périphériques réseau ou Bluetooth connectés avec d’autres ordinateurs dans un environnement où plusieurs PC s’appuient sur des périphériques partagés.
 ms.date: 06/14/2018
 ms.topic: article
-keywords: windows 10, uwp, point de vente, pdv
+keywords: Windows 10, UWP, point de service, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: 53dc22b2aa35b5e69854f6fb489ff6a454c73bf6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5416628b88a070c7bd4f361f9f438fe690951d34
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57618944"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89054159"
 ---
-# <a name="pointofservice-device-sharing"></a>Partage d’appareil PointOfService
+# <a name="pointofservice-device-sharing"></a>Partage d’appareils PointOfService
 
-Découvrez comment partager des périphériques Bluetooth connecté ou réseau avec d’autres ordinateurs dans un environnement où plusieurs PC s’appuient sur les périphériques partagés plutôt que des périphériques dédiés attachés à chaque ordinateur.
+Découvrez comment partager des périphériques réseau ou Bluetooth connectés avec d’autres ordinateurs dans un environnement où plusieurs PC s’appuient sur des périphériques partagés plutôt que sur des périphériques dédiés connectés à chaque ordinateur.
 
-## <a name="device-sharing"></a>Partage de périphériques
+## <a name="device-sharing"></a>Partage d’appareils
 
-Réseau et Bluetooth périphériques PointOfService connectés sont généralement utilisés dans un environnement wheere plusieurs périphériques clients partagent les mêmes périphériques pendant la journée.  Dans un environnement de vente au détail ou des services de produits alimentaires occupé tout retard dans la possibilité pour un appareil client à attacher à un périphérique a un impact sur l’efficacité dans laquelle un collaborateur peut fermer une transaction avec le client et passer à la suivante. Dans un scénario de restaurant rapide du service dans lequel une imprimante réception est utilisée comme une imprimante cuisine pour transférer les détails d’une commande client à la cuisine pour la préparation des il y aura plusieurs périphériques clients prendre les commandes des clients.  Une fois que la commande est terminée, chaque appareil client doit être en mesure de revendication de l’imprimante partagée et imprimer immédiatement l’ordre pour la cuisine.
+Les périphériques PointOfService connectés réseau et Bluetooth sont généralement utilisés dans un environnement wheere plusieurs périphériques clients partagent les mêmes périphériques tout au long de la journée.  Dans un environnement de vente au détail ou dans le secteur de l’alimentation, tout délai de la possibilité pour un appareil client de s’attacher à un périphérique a un impact sur l’efficacité dans laquelle un partenaire Associate peut fermer une transaction avec le client et passer à la suivante. Dans un scénario de restaurant de service rapide où une imprimante de réception est utilisée comme imprimante de cuisine pour transférer les détails de la commande d’un client à la cuisine en vue de sa préparation, plusieurs appareils clients prennent des commandes de la part des clients.  Une fois la commande terminée, chaque appareil client doit pouvoir revendiquer l’imprimante partagée et imprimer immédiatement la commande pour la cuisine.
 
-Dans ces environnements, il est important pour l’application entièrement **dispose** l’appareil de l’objet afin qu’un autre peut réclamer le même appareil.
+Dans ces environnements, il est important que l’application **supprime** complètement l’objet appareil pour qu’un autre puisse revendiquer le même appareil.
 
-Mettre à disposition un PosPrinter à la fin d’un bloc 'using'
+Suppression d’un PosPrinter à la fin d’un bloc’Using'
 
 ```Csharp 
 using Windows.Devices.PointOfService;
@@ -39,7 +39,7 @@ using(PosPrinter printer = await PosPrinter.FromIdAsync("Device ID"))
 ```
 
 
-Mettre à disposition un PosPrinter en appelant explicitement de Dispose()
+Suppression d’un PosPrinter en appelant la méthode Dispose () explicitement
 
 ```Csharp 
 using Windows.Devices.PointOfService;
@@ -54,11 +54,11 @@ if (printer != null)
 
 ## <a name="api-methods-used"></a>Méthodes d’API utilisées 
 
-+ [BarcodeScanner.Dispose](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.dispose) 
-+ [CashDrawer.Dispose](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.cashdrawer.dispose) 
-+ [LineDisplay.Dispose](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.linedisplay.dispose) 
-+ [MagneticStripeReader.Dispose](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereader.dispose)  
-+ [PosPrinter.Dispose](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.posprinter.dispose) 
++ [BarcodeScanner. dispose](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.dispose) 
++ [CashDrawer. dispose](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.cashdrawer.dispose) 
++ [LineDisplay. dispose](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.linedisplay.dispose) 
++ [MagneticStripeReader. dispose](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereader.dispose)  
++ [PosPrinter. dispose](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.posprinter.dispose) 
 
 
 [!INCLUDE [feedback](./includes/pos-feedback.md)]

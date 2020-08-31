@@ -1,82 +1,82 @@
 ---
 title: Étape Geometry Shader (GS)
-description: L’étape du nuanceur de géométrie (GS, Geometry Shader) traite des primitives complètes (triangles, lignes et points), ainsi que leurs vertex adjacents.
+description: L’étape de nuanceur Geometry (GS) traite les triangles, les lignes et les points de la totalité des primitives, ainsi que leurs vertex adjacents.
 ms.assetid: 8A1350DD-B006-488F-9DAF-14CD2483BA4E
 keywords:
 - Étape Geometry Shader (GS)
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ea3e7ec73b042eeef560af3d88754afdfa5b441
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 61d794e93718bc9450c1a0f3dce2e921da7e513d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370459"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168073"
 ---
 # <a name="geometry-shader-gs-stage"></a>Étape Geometry Shader (GS)
 
 
-L’étape du nuanceur de géométrie (GS, Geometry Shader) traite des primitives complètes (triangles, lignes et points), ainsi que leurs vertex adjacents. Cette étape se révèle utile pour les algorithmes tels que l’expansion de point-sprites, les systèmes de particules dynamiques et la génération de volumes d’ombre. Cette étape prend en charge l’amplification et le filtrage de géométrie.
+L’étape de nuanceur Geometry (GS) traite les primitives entières : les triangles, les lignes et les points, ainsi que leurs vertex adjacents. Elle est utile pour les algorithmes, y compris l’expansion point Sprite, les systèmes de particule dynamiques et la génération du volume de cliché instantané. Il prend en charge l’amplification et la désamplification Geometry.
 
-## <a name="span-idpurposeandusesspanspan-idpurposeandusesspanspan-idpurposeandusesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>Rôle et les utilisations
+## <a name="span-idpurpose_and_usesspanspan-idpurpose_and_usesspanspan-idpurpose_and_usesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>Usage et utilisations
 
 
-L’étape du nuanceur de géométrie traite des primitives complètes : triangles (3 vertex présentant jusqu’à 3 vertex adjacents), lignes (2 vertex présentant jusqu’à 2 vertex adjacents) et points (1 vertex).
+L’étape de nuanceur Geometry traite les primitives entières : les triangles (3 sommets avec jusqu’à 3 sommets adjacents), les lignes (2 sommets avec 2 vertex adjacents) et les points (1 vertex).
 
 ![illustration d’un triangle et d’une ligne avec des vertex adjacents](images/d3d10-gs.png)
 
-Le nuanceur de géométrie prend également en charge l’amplification et le filtrage de géométrie limités. Pour une primitive d’entrée donnée, le nuanceur de géométrie peut ignorer la primitive ou émettre une ou plusieurs nouvelles primitives.
+Le nuanceur Geometry prend également en charge l’amplification et la désamplification Geometry limitées. En fonction d’une primitive d’entrée, le nuanceur Geometry peut ignorer la primitive ou émettre une ou plusieurs nouvelles primitives.
 
-L’étape du nuanceur de géométrie (GS) est une étape de nuanceur programmable ; elle apparaît sous la forme d’un bloc arrondi dans le diagramme du [pipeline graphique](graphics-pipeline.md). Cette étape du nuanceur expose sa propre fonctionnalité unique, qui repose sur les modèles de nuanceur (voir l’article [Noyau de nuanceur commun](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-common-core)).
+L’étape de nuanceur Geometry (GS) est une étape de nuanceur programmable ; Il est affiché sous la forme d’un bloc arrondi dans le diagramme de [pipeline graphique](graphics-pipeline.md) . Cette étape de nuanceur expose ses propres fonctionnalités uniques, basées sur les modèles de nuanceur (voir [Common-Shader Core](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-common-core)).
 
-L’étape du nuanceur de géométrie est bien adaptée à différents algorithmes, notamment :
+L’étape de nuanceur Geometry convient parfaitement aux algorithmes, notamment :
 
--   Expansion de point-sprites
--   Systèmes de particules dynamiques
--   Génération de fourrure
--   Génération de volumes d’ombre
--   Rendu sous forme de cubemap en une seule passe
--   Échange de matériaux par primitive
--   Configuration de matériaux par primitive : cette fonctionnalité inclut la génération de coordonnées barycentriques en tant que données de primitive pour permettre à un nuanceur de pixels d’effectuer une interpolation d’attributs personnalisés.
+-   Expansion point Sprite
+-   Systèmes de particule dynamiques
+-   Génération de fourrure/fin
+-   Génération du volume de cliché instantané
+-   Rendu à passage unique-à-carte cubique
+-   Échange de matériel par primitive
+-   Configuration des matériaux par primitive : cette fonctionnalité comprend la génération de coordonnées Barycentric en tant que données primitives afin qu’un nuanceur de pixels puisse effectuer une interpolation d’attributs personnalisés.
 
-## <a name="span-idinputspanspan-idinputspanspan-idinputspaninput"></a><span id="Input"></span><span id="input"></span><span id="INPUT"></span>entrée
+## <a name="span-idinputspanspan-idinputspanspan-idinputspaninput"></a><span id="Input"></span><span id="input"></span><span id="INPUT"></span>Entrée
 
 
-L’étape du nuanceur de géométrie exécute le code du nuanceur spécifié par l’application avec des primitives complètes en guise d’entrée et la possibilité de générer des vertex en sortie. Contrairement aux nuanceurs de vertex, qui opèrent sur un seul vertex, les entrées du nuanceur de géométrie correspondent aux vertex d’une primitive complète (trois vertex pour les triangles, deux vertex pour les lignes ou un seul vertex pour les points). Les nuanceurs de géométrie peuvent également introduire en tant qu’entrée les données de vertex relatives aux primitives adjacentes aux arêtes (trois vertex supplémentaires pour un triangle, et deux vertex supplémentaires pour une ligne).
+L’étape de nuanceur Geometry exécute un code de nuanceur spécifié par l’application avec des primitives entières comme entrée et la possibilité de générer des vertex sur la sortie. Contrairement aux nuanceurs de vertex, qui opèrent sur un seul vertex, les entrées du nuanceur Geometry sont les vertex pour une primitive complète (trois vertex pour triangles, deux sommets pour les lignes ou un vertex unique pour le point). Les nuanceurs de géométrie peuvent également intégrer les données de vertex pour les primitives adjacentes au bord comme entrée (trois autres sommets pour un triangle, deux autres sommets pour une ligne).
 
-L’étape du nuanceur de géométrie peut consommer le **SV\_PrimitiveID** valeur générée par le système qui est généré automatiquement par le [étape de l’assembleur d’entrée (IA)](input-assembler-stage--ia-.md). Ceci permet d’extraire ou de calculer les données par primitive selon les besoins.
+L’étape de nuanceur Geometry peut utiliser la valeur générée par le système **SV \_ PrimitiveID** qui est générée automatiquement par l’étape de l' [assembleur d’entrée (IA)](input-assembler-stage--ia-.md). Cela permet de récupérer ou de calculer des données par primitives si vous le souhaitez.
 
-Lorsqu’un nuanceur de géométrie est actif, il est invoqué une fois par primitive transmise ou générée précédemment dans le pipeline. Chaque invocation du nuanceur de géométrie voit en tant qu’entrée les données de la primitive invoquant le nuanceur, qu’il s’agisse d’un point unique, d’une ligne unique ou d’un triangle unique. Une bande de triangles provenant d’une étape précédente du pipeline entraînerait une invocation du nuanceur de géométrie pour chacun des triangles de la bande (comme si la bande était développée sous la forme d’une liste de triangles). Toutes les données d’entrée pour chaque vertex de la primitive concernée sont disponibles (autrement dit, 3 vertex pour un triangle), ainsi que les données des vertex adjacents si elles sont applicables et disponibles.
+Lorsqu’un nuanceur Geometry est actif, il est appelé une fois pour chaque primitive passée ou générée précédemment dans le pipeline. Chaque appel du nuanceur Geometry considère comme entrée les données pour l’appel de la primitive, qu’il s’agisse d’un point unique, d’une ligne unique ou d’un triangle unique. Une bande de triangles de plus tôt dans le pipeline se traduirait par un appel du nuanceur Geometry pour chaque triangle de la bande (comme si la bande était développée dans une liste de triangles). Toutes les données d’entrée pour chaque vertex de la primitive individuelle sont disponibles (autrement dit, 3 sommets pour un triangle), ainsi que les données de vertex adjacentes, le cas échéant et disponibles.
 
-Abréviations de vertex courantes :
+Abréviations courantes des vertex :
 
 |     |                 |
 |-----|-----------------|
-| TV  | Vertex de triangle |
-| LV  | Vertex de ligne     |
-| AV  | Vertex adjacent |
+| TV  | Sommet de triangle |
+| LV  | Sommet de ligne     |
+| ALTERNATIF  | Sommet adjacent |
 
  
 
 ## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Sortie
 
 
-L’étape du nuanceur de géométrie (GS) peut produire en sortie plusieurs vertex formant une seule topologie sélectionnée. Les topologies de sortie du nuanceur de géométrie disponibles sont **tristrip**, **linestrip** et **pointlist**. Le nombre de primitives émises peut varier librement au sein d’une invocation du nuanceur de géométrie, bien que le nombre maximal de vertex pouvant être émis doive être déclaré de manière statique. Les longueurs de bande émises à partir d’une invocation du nuanceur de géométrie peuvent être arbitraires, et d’autres bandes peuvent être créées par le biais de la fonction HLSL [RestartStrip](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-so-restartstrip).
+L’étape de nuanceur Geometry (GS) est en charge de la génération de plusieurs vertex formant une seule topologie sélectionnée. Les topologies de sortie de nuanceur Geometry disponibles sont **tristrip**, **linestrip**et **PointList**. Le nombre de primitives émises peut varier librement au sein de n’importe quel appel du nuanceur Geometry, bien que le nombre maximal de vertex pouvant être émis doive être déclaré statiquement. Les longueurs de bande émises à partir d’un appel de nuanceur Geometry peuvent être arbitraires et de nouvelles bandes peuvent être créées via la fonction HLSL [RestartStrip](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-so-restartstrip) .
 
-L’exécution d’une instance du nuanceur de géométrie est effectuée de manière atomique à partir d’autres invocations, à ceci près que les données ajoutées aux flux sont des données en série. Les sorties d’une invocation donnée d’un nuanceur de géométrie sont indépendantes des autres invocations (bien que l’ordre soit respecté). Un nuanceur de géométrie générant des bandes de triangles démarrera une nouvelle bande à chaque invocation.
+L’exécution d’une instance geometry Shader est atomique d’autres appels, à ceci près que les données ajoutées aux flux sont en série. Les sorties d’un appel donné d’un nuanceur Geometry sont indépendantes des autres appels (bien que le classement soit respecté). Un nuanceur de géométrie qui génère des bandes de triangle démarre une nouvelle bande à chaque appel.
 
-La sortie du nuanceur de géométrie peut être transmise à l’étape du rastériseur et/ou à un tampon de vertex en mémoire par le biais de l’étape de sortie de flux. La sortie transmise à la mémoire est développée sous forme de listes de points/lignes/triangles (exactement comme si ces dernières étaient transmises au rastériseur).
+La sortie du nuanceur Geometry peut être alimentée à l’étape de rastérisation et/ou à une mémoire tampon de vertex en mémoire via l’étape de sortie de flux. La sortie alimentée en mémoire est étendue à des listes point/ligne/triangle individuelles (exactement telles qu’elles sont transmises au rastériseur).
 
-Un nuanceur de géométrie produit en sortie les données d’un seul vertex à la fois en ajoutant des vertex à un objet de flux de sortie. La topologie des flux est déterminée par une déclaration fixe, choisissant un élément **TriangleStream**, **LineStream** et **PointStream** en tant que sortie pour l’étape GS.
+Un nuanceur Geometry génère des données d’un vertex à la fois en ajoutant des sommets à un objet de flux de sortie. La topologie des flux est déterminée par une déclaration fixe, en choisissant un **TriangleStream**, **LineStream** et **PointStream** comme sortie de l’étape GS.
 
-Il existe trois types d’objets de flux disponibles : **TriangleStream**, **LineStream** et **PointStream**, qui sont tous basés sur des modèles objets. La topologie de la sortie est déterminée par leurs types d’objets respectifs, tandis que le format des vertex ajoutés au flux est déterminé par le type de modèle.
+Trois types d’objets de flux sont disponibles : **TriangleStream**, **LineStream** et **PointStream**, qui sont tous des objets basés sur un modèle. La topologie de la sortie est déterminée par le type d’objet respectif, tandis que le format des vertex ajoutés au flux est déterminé par le type de modèle.
 
-Quand une sortie du nuanceur de géométrie est identifié en tant que système interprété valeur (par exemple, **SV\_RenderTargetArrayIndex** ou **SV\_Position**), matériel examine ces données et effectue un comportement dépendant de la valeur, en plus de pouvoir transmettre les données elles-mêmes à l’étape suivante de nuanceur pour l’entrée. Lorsque ces données issues du nuanceur de géométrie a une signification pour le matériel sur une base par primitive (tel que **SV\_RenderTargetArrayIndex** ou **SV\_ViewportArrayIndex**), plutôt que sur une base par vertex (tel que **SV\_ClipDistance\[n\]**  ou **SV\_Position**), les données par primitive sont obtenue à partir du début vertex émis pour la primitive.
+Quand une sortie de nuanceur Geometry est identifiée comme une valeur interprétée par le système (par exemple, **SV \_ RenderTargetArrayIndex** ou **SV \_ position**), le matériel examine ces données et effectue un comportement dépendant de la valeur, en plus de pouvoir passer les données elles-mêmes à l’étape de nuanceur suivante pour l’entrée. Lorsque la sortie de ce type de données du nuanceur Geometry a un sens pour le matériel au niveau de la primitive (par exemple, **SV \_ RenderTargetArrayIndex** ou **SV \_ ViewportArrayIndex** **), \_ **les données par primitives sont extraites du sommet de début émis pour la primitive, et non ** \_ \[ \] de la même façon** .
 
-Si le nuanceur de géométrie prend fin et qu’une primitive est incomplète, le nuanceur peut générer une primitive partiellement complétée. Les primitives incomplètes sont ignorées sans avertissement. Ce comportement est comparable à la façon dont l’étape IA traite les primitives partiellement complétées.
+Les primitives partiellement terminées peuvent être générées par le nuanceur Geometry si le nuanceur Geometry se termine et que la primitive est incomplète. Les primitives incomplètes sont ignorées silencieusement. Cela est similaire à la façon dont l’IA traite les primitives partiellement terminées.
 
-Le nuanceur de géométrie peut exécuter des opérations de chargement et d’échantillonnage de texture lorsque des dérivés d’espace à l’écran ne sont pas requis (**samplelevel**, **samplecmplevelzero**, **samplegrad**).
+Le nuanceur Geometry peut effectuer des opérations d’échantillonnage de charge et de texture où les dérivés de l’espace écran ne sont pas nécessaires (**samplelevel**, **samplecmplevelzero**, **samplegrad**).
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
@@ -86,7 +86,3 @@ Le nuanceur de géométrie peut exécuter des opérations de chargement et d’�
  
 
  
-
-
-
-

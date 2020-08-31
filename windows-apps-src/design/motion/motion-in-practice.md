@@ -1,5 +1,5 @@
 ---
-Description: Découvrez comment les notions de base du mouvement Fluent sont rassemblées dans votre application.
+description: Découvrez comment les notions de base du mouvement Fluent, telles que le minutage, l’accélération, la direction et la gravité, sont rassemblées dans votre application.
 title: Mouvement en pratique-animation dans les applications Windows
 label: Motion in practice
 template: detail.hbs
@@ -11,12 +11,12 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 45ab6c593b9e20f778e4b352a8b284cefe57c9a8
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 8604d925ffefc96cd74726909afab6e2016cce76
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970324"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89054529"
 ---
 # <a name="bringing-it-together"></a>Regroupement
 
@@ -94,7 +94,7 @@ Vous pouvez animer de manière implicite les modifications apportées aux propri
 - [UIElement](/uwp/api/windows.ui.xaml.uielement)
   - **Opacity**
   - **Rotation**
-  - **Mise à l’échelle**
+  - **Mettre à l'échelle**
   - **Traduction**
 
 - [Border](/uwp/api/windows.ui.xaml.controls.border), [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter)ou [Panel](/uwp/api/windows.ui.xaml.controls.panel)

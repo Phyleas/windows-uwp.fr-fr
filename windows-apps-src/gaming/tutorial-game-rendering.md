@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, UWP, jeux, rendu
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a3f689f86e629ce81946927fa732a3ab692b219
-ms.sourcegitcommit: 20969781aca50738792631f4b68326f9171a3980
+ms.openlocfilehash: a87382aeffb0e0b7a8eaca1c4baec8561049e91e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85409508"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168243"
 ---
 # <a name="rendering-framework-ii-game-rendering"></a>Infrastructure de rendu II : rendu de jeu
 
@@ -21,7 +21,7 @@ ms.locfileid: "85409508"
 Dans l' [infrastructure de rendu I](tutorial--assembling-the-rendering-pipeline.md), nous avons abordé la manière dont nous prenons les informations de scène et nous la présentons sur l’écran d’affichage. Nous allons maintenant effectuer un pas à pas détaillé et apprendre à préparer les données pour le rendu.
 
 >[!Note]
->Si vous n’avez pas téléchargé le dernier code de jeu pour cet exemple, accédez à l' [exemple de jeu Direct3D](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX). Cet exemple fait partie d’une grande collection d’exemples de fonctionnalités UWP. Pour obtenir des instructions sur le téléchargement de l’exemple, consultez [obtenir les exemples UWP à partir de GitHub](/windows/uwp/get-started/get-uwp-app-samples).
+>Si vous n’avez pas téléchargé le dernier code de jeu pour cet exemple, accédez à l' [exemple de jeu Direct3D](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX). Cet exemple fait partie d’une grande collection d’exemples de fonctionnalités UWP. Pour obtenir des instructions sur le téléchargement de l’exemple, consultez [obtenir les exemples UWP à partir de GitHub](../get-started/get-app-samples.md).
 
 ## <a name="objective"></a>Objectif
 
@@ -243,7 +243,7 @@ Cette méthode permet d’effectuer les opérations suivantes :
 * Créer un objet d' [État](tutorial--assembling-the-rendering-pipeline.md#sampler-state) d’échantillonnage qui encapsule les informations d’échantillonnage pour une texture
 * Créez un groupe de tâches qui contient toutes les tâches asynchrones créées par la méthode. Elle attend la fin de toutes ces tâches Async, puis appelle __FinalizeCreateGameDeviceResources__.
 * Créez un chargeur à l’aide du [chargeur de base](tutorial--assembling-the-rendering-pipeline.md#the-basicloader-class). Ajoutez les opérations de chargement asynchrone du chargeur en tant que tâches dans le groupe de tâches créé précédemment.
-* Des méthodes telles que __BasicLoader :: LoadShaderAsync__ et __BasicLoader :: LoadTextureAsync__ sont utilisées pour charger :
+* Des méthodes telles que __BasicLoader :: LoadShaderAsync__ et  __BasicLoader :: LoadTextureAsync__ sont utilisées pour charger :
     * objets de nuanceur compilés (VertextShader. CSO, VertexShaderFlat. CSO, PixelShader. CSO et PixelShaderFlat. CSO). Pour plus d’informations, accédez à [différents formats de fichiers de nuanceur](tutorial--assembling-the-rendering-pipeline.md#various-shader-file-formats).
     * textures spécifiques aux jeux (biens de \\ surface. DDS, metal_texture. DDS, cellceiling. DDS, cellfloor. DDS, cellwall. DDS).
 

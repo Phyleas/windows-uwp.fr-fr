@@ -6,12 +6,12 @@ keywords: liste de vérification, Windows, UWP, envoi, envoi, jeu, application, 
 ms.date: 10/31/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 39a71a54fcc2792b799f630a94d1382c01643536
-ms.sourcegitcommit: 96b7be654a0922eeb421b5fa51ebfc586abe74fe
+ms.openlocfilehash: 1359fb530dec1a35b2ab2994442b65ec441cc0ac
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84945962"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89158063"
 ---
 # <a name="app-submissions"></a>Soumissions d’application
 
@@ -40,7 +40,7 @@ Les éléments que vous devez obligatoirement fournir ou spécifier sont signal�
 ### <a name="pricing-and-availability-page"></a>Page Tarification et disponibilité
 | Nom du champ                    | Notes                                       | Informations supplémentaires                                                             |
 |-------------------------------|---------------------------------------------|---------------------------------------------------------------------------|
-| **Marchés**                   | Valeur par défaut : tous les marchés possibles  | [Définition du prix et sélection du marché](define-pricing-and-market-selection.md)         |
+| **Marchés**                   | Valeur par défaut : tous les marchés possibles  | [Définition du prix et sélection du marché](./define-market-selection.md)         |
 | **Public ciblé**                | Par défaut : public public | [Public ciblé](choose-visibility-options.md#audience) |
 | **Détectabilité**                | Par défaut : rendre cette application disponible et détectable dans le Windows Store | [Détectabilité](choose-visibility-options.md#discoverability) |
 | **Planification**                  | Valeur par défaut : publication dès que possible        | [Configurer une planification précise de la publication](configure-precise-release-scheduling.md) |
@@ -56,12 +56,12 @@ Les éléments que vous devez obligatoirement fournir ou spécifier sont signal�
 | Nom du champ                    | Notes                                       | Informations supplémentaires                                                             |
 |-------------------------------|---------------------------------------------|---------------------------------------------------------------------------|
 | **Catégorie et sous-catégorie**  | Obligatoire                                    | [Tableau des catégories et sous-catégories](category-and-subcategory-table.md)       |
-| **URL de la politique de confidentialité**            | Requis pour de nombreuses applications. Consultez le [contrat de développeur d’applications](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) et les [stratégies de Microsoft Store](store-policies.md#105-personal-information) | [URL de la politique de confidentialité](enter-app-properties.md#privacy-policy-url)        |
+| **URL de la politique de confidentialité**            | Requis pour de nombreuses applications. Consultez le [contrat de développeur d’applications](/legal/windows/agreements/app-developer-agreement) et les [stratégies de Microsoft Store](store-policies.md#105-personal-information) | [URL de la politique de confidentialité](enter-app-properties.md#privacy-policy-url)        |
 | **Site web**                   | Facultatif                                    | [Site web](enter-app-properties.md#website)                   |
 | **Coordonnées du support technique**      | Obligatoire si votre produit est disponible sur Xbox ; Sinon, facultatif (mais recommandé)                                   | [Coordonnées du support technique](enter-app-properties.md#support-contact-info)              |
 | **Paramètres du jeu**             | Facultatif (applicable uniquement aux jeux)         | [Paramètres du jeu](enter-app-properties.md#game-settings) |
 | **Mode d’affichage**             | Facultatif                   | [Mode d’affichage](enter-app-properties.md#display-mode) |
-| **Déclarations de produit**          | Par défaut : les clients peuvent installer cette application sur un autre lecteur ou dispositif de stockage. Windows peut inclure les données de cette application dans les sauvegardes automatiques sur OneDrive | [Déclarations de produit](app-declarations.md) |
+| **Déclarations de produit**          | Par défaut : les clients peuvent installer cette application sur un autre lecteur ou dispositif de stockage. Windows peut inclure les données de cette application dans les sauvegardes automatiques sur OneDrive | [Déclarations de produit](./product-declarations.md) |
 | **Configuration système requise**      | Facultatif                                    | [Configuration système requise](enter-app-properties.md#system-requirements)      |
 
 <span/>
@@ -70,7 +70,7 @@ Les éléments que vous devez obligatoirement fournir ou spécifier sont signal�
 
 | Nom du champ                    | Notes                                       | Informations supplémentaires                          |
 |-------------------------------|---------------------------------------------|----------------------------------------|
-| **Évaluations de l’âge**               | Obligatoire                                    | [Évaluations de l’âge](age-ratings.md)          |
+| **Classification par âge**               | Obligatoire                                    | [Classification par âge](age-ratings.md)          |
 
 <span/>
 
@@ -78,7 +78,7 @@ Les éléments que vous devez obligatoirement fournir ou spécifier sont signal�
 
 | Nom du champ                    | Notes                                  | Informations supplémentaires                          |
 |-------------------------------|----------------------------------------|----------------------------------------|
-| **Contrôle du chargement des packages**    | Obligatoire (au moins un package)        | [Chargement de packages d’applications](upload-app-packages.md) |
+| **Contrôle du chargement des packages**    | Obligatoire (au moins un package)        | [Chargement des packages d’application](upload-app-packages.md) |
 | **Disponibilité de la famille d’appareils** | Par défaut : basée sur les packages       | [Disponibilité de la famille d’appareils](device-family-availability.md) |
 | **Lancement de package progressif**   | Facultatif (pour les mises à jour uniquement)            | [Lancement de package progressif](gradual-package-rollout.md) |
 | **Mise à jour obligatoire**          | Facultatif (pour les mises à jour uniquement)            | [Mise à jour obligatoire](upload-app-packages.md#mandatory-update)

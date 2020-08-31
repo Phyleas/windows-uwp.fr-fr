@@ -1,17 +1,17 @@
 ---
 title: Utilisation des services de cloud computing pour les jeux UWP
-description: Apprenez-en davantage sur l’implémentation de services de cloud computing en tant que serveur principal pour vos jeux UWP.
+description: Lors du développement de jeux UWP sur des plateformes et des appareils, utilisez un backend Cloud pour faciliter la mise à l’échelle de vos jeux en fonction de la demande.
 ms.assetid: 1a7088e0-0d7b-11e6-8e05-0002a5d5c51b
 ms.date: 03/27/2018
 ms.topic: article
 keywords: Windows 10, UWP, jeux, cloud services
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d959c490474a6280d878be9679abafc31b565d8
-ms.sourcegitcommit: 720413d2053c8d5c5b34d6873740be6e913a4857
+ms.openlocfilehash: 7c0cfd98a37c4822d80eded7fe69e23c54bcdc89
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88846859"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89054409"
 ---
 #  <a name="using-cloud-services-for-uwp-games"></a>Utilisation des services de cloud computing pour les jeux UWP
 
@@ -150,7 +150,7 @@ Tout d’abord, vous devez prendre en considération le niveau de service le mie
 
     La plateforme en tant que service (PaaS) est comme l’infrastructure en tant que service, à ceci près qu’elle intègre également une gestion de l’infrastructure comme les serveurs, le stockage et la mise en réseau. Aussi, non seulement vous n’êtes pas obligé d’acheter des serveurs physiques et une infrastructure de base de données, mais vous n’êtes pas obligé non plus d’acheter ni de gérer des licences logicielles, une infrastructure applicative sous-jacente, un middleware, des outils de développement ou autres ressources.
 
-* [Logiciel en tant que service (SaaS)](https://azure.microsoft.com/overview/what-is-saas/)
+* [SaaS (Software as a Service)](https://azure.microsoft.com/overview/what-is-saas/)
 
     Le modèle SaaS permet aux utilisateurs de se connecter via Internet à des applications basées sur le cloud et de les utiliser. Il fournit une solution logicielle complète que vous achetez sur la base d’un paiement à l’exécution d’un fournisseur de services Cloud.  Les exemples les plus courants sont les outils de messagerie, de calendrier et Office (tels que les applications Microsoft 365 Office). Vous louez l’utilisation d’une application pour votre organisation et vos utilisateurs s’y connectent via Internet, généralement avec un navigateur Web. Toute l’infrastructure sous-jacente, incluant l’intergiciel (middleware), les logiciels applicatifs et les données d’application, est située dans le centre de données du fournisseur de services. Le fournisseur de services gère le matériel et les logiciels, et avec le contrat de service approprié, garantira également la disponibilité et la sécurité du jeu et de vos données. SaaS permet à votre organisation de disposer rapidement d’une application opérationnelle, moyennant un investissement initial minimal.
 

@@ -6,12 +6,12 @@ ms.date: 03/07/2019
 ms.topic: article
 keywords: Windows 10, UWP, code de fin, vidéo, capture d’écran, image, icône, liste des boutiques, images de la liste des boutiques
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a09395a57a83eaa57124173723b96a87d14b3b3
-ms.sourcegitcommit: a937963ce63a14c254420926661b9b68be28a8ee
+ms.openlocfilehash: da9d6517a43550693596d15c735e3134c5c60a7a
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84746749"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89155313"
 ---
 # <a name="app-screenshots-images-and-trailers"></a>Captures d’écran, images et bandes-annonces de l’application
 
@@ -32,7 +32,7 @@ Vous avez la possibilité de fournir des captures d’écran pour les différent
 Une seule capture d’écran (pour toutes les familles d’appareils) est requise pour votre soumission, même si vous pouvez en fournir plusieurs ; captures d’écran allant jusqu’à 9 postes de travail et jusqu’à 8 captures d’écran pour les autres familles d’appareils. Nous vous suggérons de fournir au moins quatre captures d’écran pour chaque famille d’appareils que votre application prend en charge afin que les utilisateurs puissent voir comment l’application s’affiche sur leur type d’appareil. (N’incluez pas de captures d’écran pour les familles d’appareils non prises en charge par votre application.) Notez que les captures d’écran du **Bureau** seront également présentées aux clients sur surface Hub appareils.
 
 > [!NOTE]
-> Microsoft Visual Studio fournit un [outil pour vous aider à capturer des captures d’écran](https://docs.microsoft.com/visualstudio/debugger/run-windows-store-apps-in-the-simulator#BKMK_Capture_a_screenshot_of_your_app_for_submission_to_the_Microsoft_Store).
+> Microsoft Visual Studio fournit un [outil pour vous aider à capturer des captures d’écran](/visualstudio/debugger/run-windows-store-apps-in-the-simulator#BKMK_Capture_a_screenshot_of_your_app_for_submission_to_the_Microsoft_Store).
 
 Chaque capture d’écran doit être un fichier. png dans l’orientation paysage ou portrait, et la taille du fichier ne peut pas être supérieure à 50 Mo.
 
@@ -81,7 +81,7 @@ Cette image peut apparaître dans différentes pages du magasin pour Windows 10 
 
 Cette image est nécessaire pour un affichage correct sur Windows Phone 8,1 et versions antérieures. Si votre application précédemment publiée prend en charge Windows Phone 8,1 ou une version antérieure et que vous ne fournissez pas cette image, les clients verront une icône vide avec la liste de votre application. (Cela s’applique également aux clients sur Windows 10 si votre application n’a que des packages ciblant Windows Phone 8,1 ou une version antérieure.)
 
-Si votre envoi comprend *uniquement* des packages UWP, vous n’avez pas besoin de fournir cette image (sauf si vous activez la case à cocher pour les **clients sur Windows 10 et Xbox, vous pouvez afficher des images de logos téléchargés à la place des images de mes packages**, comme décrit dans la section suivante).
+Si votre envoi comprend *uniquement* des packages UWP, vous n’avez pas besoin de fournir cette image (sauf si vous activez la case à cocher pour les  **clients sur Windows 10 et Xbox, vous pouvez afficher des images de logos téléchargés à la place des images de mes packages**, comme décrit dans la section suivante).
 
 ### <a name="display-only-uploaded-logo-images-in-the-store"></a>Afficher uniquement les images de logo chargées dans le Store
 
@@ -169,7 +169,7 @@ Des exigences supplémentaires varient en fonction du type de fichier.
 
 | Vidéo | Audio |
 | --- | --- |
-| <ul><li>Codec : [H. 264](https://docs.microsoft.com/windows/desktop/DirectShow/h-264-video-types) (AVC1)  </li><li>Analyse progressive (aucune entrelacement)</li><li>Profil élevé</li><li>2 frames B consécutifs</li><li>Groupe d’images fermé. GOP de la moitié de la fréquence d’images</li><li>CABAC</li><li>50 Mo/s </li><li>Espace colorimétrique : 4.2.0</li></ul> | <ul><li>Codec : AAC-LC</li><li>Canaux : son stéréo ou surround</li><li>Taux d’échantillonnage : 48 KHz</li><li>Débit binaire audio : 384 Ko/s pour stéréo, 512 Ko/s pour le son surround</li></ul> |
+| <ul><li>Codec : [H. 264](/windows/desktop/DirectShow/h-264-video-types) (AVC1)  </li><li>Analyse progressive (aucune entrelacement)</li><li>Profil élevé</li><li>2 frames B consécutifs</li><li>Groupe d’images fermé. GOP de la moitié de la fréquence d’images</li><li>CABAC</li><li>50 Mo/s </li><li>Espace colorimétrique : 4.2.0</li></ul> | <ul><li>Codec : AAC-LC</li><li>Canaux : son stéréo ou surround</li><li>Taux d’échantillonnage : 48 KHz</li><li>Débit binaire audio : 384 Ko/s pour stéréo, 512 Ko/s pour le son surround</li></ul> |
 
 > [!WARNING]
 > Les clients ne peuvent pas entendre l’audio pour les fichiers MP4 encodés avec des codecs autres que AVC1.
@@ -231,7 +231,3 @@ Si votre application envoyée précédemment prend en charge des versions de sys
 > Veillez à fournir une image d’icône de vignette d’application 300 x 300 dans la section [logos des boutiques](#store-logos) pour toute soumission prenant en charge Windows Phone 8,1 ou une version antérieure. Cela permet de s’assurer que votre application n’apparaît pas dans le magasin avec une icône vide.  
 
 **Pour Windows 8.1 et versions antérieures**, certaines dispositions promotionnelles peuvent utiliser une image de la taille de **414 x 180** pixels. Si votre application s’exécute sur Windows 8.1 ou une version antérieure, nous vous recommandons de fournir une image de cette taille.
-
-
-
-

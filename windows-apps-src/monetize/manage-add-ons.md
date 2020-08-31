@@ -4,18 +4,18 @@ description: Utilisez ces méthodes dans l’API de soumission Microsoft Store p
 title: Gérer les extensions
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp, API de soumission au Microsoft Store, extensions, produit dans l'app, FAI
+keywords: Windows 10, UWP, Microsoft Store l’API de soumission, les modules complémentaires, le produit dans l’application, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e06f8e915466f116692c63df5c53c2a0f97447f
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 7f02e222cf495f56352a645ac3a366da39dc5e3a
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209655"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89158413"
 ---
 # <a name="manage-add-ons"></a>Gérer les extensions
 
-Utilisez les méthodes suivantes dans l’API de soumission au Microsoft Store pour gérer les extensions de vos apps. Pour obtenir une présentation de l’API de soumission au Microsoft Store, notamment les conditions préalables à l’utilisation de l’API, voir [Créer et gérer des soumissions à l’aide des services au Microsoft Store](create-and-manage-submissions-using-windows-store-services.md).
+Utilisez les méthodes suivantes dans l’API Microsoft Store soumission pour gérer les modules complémentaires pour vos applications. Pour obtenir une présentation de l’API de soumission Microsoft Store, y compris les conditions préalables à l’utilisation de l’API, consultez [créer et gérer des soumissions à l’aide des services Microsoft Store](create-and-manage-submissions-using-windows-store-services.md).
 
 Ces méthodes peuvent uniquement être utilisées pour obtenir, créer ou supprimer des extensions. Pour créer des soumissions pour des extensions, voir les méthodes indiquées dans [Gérer les soumissions d’extensions](manage-add-on-submissions.md).
 
@@ -36,33 +36,33 @@ Ces méthodes peuvent uniquement être utilisées pour obtenir, créer ou suppri
 <tr>
 <td align="left">GET</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/inappproducts</td>
-<td align="left"><a href="get-all-add-ons.md">Obtenir tous les modules complémentaires pour vos applications</a></td>
+<td align="left"><a href="get-all-add-ons.md">Obtient toutes les extensions pour vos applications</a></td>
 </tr>
 <tr>
 <td align="left">GET</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}</td>
-<td align="left"><a href="get-an-add-on.md">Obtenir un module complémentaire spécifique</a></td>
+<td align="left"><a href="get-an-add-on.md">Obtient une extension spécifique</a></td>
 </tr>
 <tr>
 <td align="left">POST</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/inappproducts</td>
-<td align="left"><a href="create-an-add-on.md">Créer un module complémentaire</a></td>
+<td align="left"><a href="create-an-add-on.md">Créer une extension</a></td>
 </tr>
 <tr>
-<td align="left">DELETE</td>
+<td align="left">Suppression</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}</td>
-<td align="left"><a href="delete-an-add-on.md">Supprimer un module complémentaire</a></td>
+<td align="left"><a href="delete-an-add-on.md">Supprime une extension</a></td>
 </tr>
 </tbody>
 </table>
 
-## <a name="prerequisites"></a>Composants requis
+## <a name="prerequisites"></a>Prérequis
 
-Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission au Microsoft Store avant d’essayer d’utiliser l’une de ces méthodes.
+Si vous ne l’avez pas déjà fait, renseignez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) pour l’API de soumission Microsoft Store avant d’essayer d’utiliser l’une de ces méthodes.
 
 ## <a name="data-resources"></a>Ressources de données
 
-Les méthodes de l’API de soumission au Microsoft Store pour gérer les extensions utilisent les ressources de données JSON suivantes.
+Les méthodes d’API de soumission Microsoft Store pour la gestion des modules complémentaires utilisent les ressources de données JSON suivantes.
 
 <span id="add-on-object" />
 
@@ -99,16 +99,16 @@ Cette ressource a les valeurs suivantes.
 
 | Valeur      | Type   | Description        |
 |------------|--------|--------------|
-| applications      | array  | Tableau qui contient une [ressource d’application](#application-object) qui représente l’application à laquelle cette extension est associée. Un seul élément est pris en charge dans ce tableau.  |
-| id | chaîne  | ID Windows Store de l’extension. Cette valeur est fournie par le Windows Store. Exemple d’ID Windows Store : 9NBLGGH4TNMP.  |
-| productId | chaîne  | ID de produit de l’extension. Il s’agit de l’ID fourni par le développeur au moment de la création de l’extension. Pour plus d’informations, consultez [Définir le type et l’ID de votre produit](https://docs.microsoft.com/windows/uwp/publish/set-your-iap-product-id). |
-| productType | chaîne  | Type de produit de l’extension. Les valeurs suivantes sont prises en charge : **Durable** et **Consommable**.  |
-| lastPublishedInAppProductSubmission       | objet | [Ressource de soumission](#submission-object) qui fournit des informations sur la dernière soumission publiée de l’extension.         |
-| pendingInAppProductSubmission        | objet  |  [Ressource de soumission](#submission-object) qui fournit des informations sur la soumission actuellement en attente pour l’extension.  |   |
+| applications      | tableau  | Tableau qui contient une [ressource d’application](#application-object) qui représente l’application à laquelle cette extension est associée. Un seul élément est pris en charge dans ce tableau.  |
+| id | string  | ID Windows Store de l’extension. Cette valeur est fournie par le Windows Store. Exemple d’ID Windows Store : 9NBLGGH4TNMP.  |
+| productId | string  | ID de produit de l’extension. Il s’agit de l’ID fourni par le développeur au moment de la création de l’extension. Pour plus d’informations, consultez [Définir le type et l’ID de votre produit](../publish/set-your-add-on-product-id.md). |
+| productType | string  | Type de produit de l’extension. Les valeurs suivantes sont prises en charge : **Durable** et **Consommable**.  |
+| lastPublishedInAppProductSubmission       | object | [Ressource de soumission](#submission-object) qui fournit des informations sur la dernière soumission publiée de l’extension.         |
+| pendingInAppProductSubmission        | object  |  [Ressource de soumission](#submission-object) qui fournit des informations sur la soumission actuellement en attente pour l’extension.  |   |
 
 <span id="application-object" />
 
-### <a name="application-resource"></a>Ressource d’application
+### <a name="application-resource"></a>Ressource d'application
 
 Cette ressource décrit l’application à laquelle une extension est associée. L’exemple suivant illustre le format de cette ressource.
 
@@ -130,7 +130,7 @@ Cette ressource a les valeurs suivantes.
 
 | Valeur           | Type    | Description        |
 |-----------------|---------|-----------|
-| valeur            | objet  |  Objet qui contient les valeurs suivantes : <br/><br/> <ul><li>*id*. ID Microsoft Store de l’app. Pour plus d’informations sur l’ID Windows Store, voir [Visualiser les informations d’identité des applications](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details).</li><li>*resourceLocation*. Chemin relatif à ajouter à l’URI de requête ```https://manage.devcenter.microsoft.com/v1.0/my/``` de base pour récupérer les données complètes de l’application.</li></ul>   |
+| value            | object  |  Objet qui contient les valeurs suivantes : <br/><br/> <ul><li>*ID*. ID du magasin de l’application. Pour plus d’informations sur l’ID Windows Store, voir [Visualiser les informations d’identité des applications](../publish/view-app-identity-details.md).</li><li>*resourceLocation*. Chemin relatif à ajouter à l’URI de requête ```https://manage.devcenter.microsoft.com/v1.0/my/``` de base pour récupérer les données complètes de l’application.</li></ul>   |
 | totalCount   | int  | Nombre d’objets d’application dans le tableau *applications* du corps de la réponse.                                                                                                                                                 |
 
 <span id="submission-object" />
@@ -152,8 +152,8 @@ Cette ressource a les valeurs suivantes.
 
 | Valeur           | Type    | Description     |
 |-----------------|---------|------------------|
-| id            | chaîne  | ID de la soumission.    |
-| resourceLocation   | chaîne  | Chemin relatif à ajouter à l’URI de requête ```https://manage.devcenter.microsoft.com/v1.0/my/``` de base pour récupérer les données complètes de la soumission.     |
+| id            | string  | ID de la soumission.    |
+| resourceLocation   | string  | Chemin relatif à ajouter à l’URI de requête ```https://manage.devcenter.microsoft.com/v1.0/my/``` de base pour récupérer les données complètes de la soumission.     |
  
 <span/>
 
@@ -161,7 +161,7 @@ Cette ressource a les valeurs suivantes.
 
 * [Créer et gérer des envois à l’aide des services Microsoft Store](create-and-manage-submissions-using-windows-store-services.md)
 * [Gérer les envois de module complémentaire à l’aide de l’API de soumission Microsoft Store](manage-add-on-submissions.md)
-* [Récupération de tous les modules complémentaires](get-all-add-ons.md)
-* [Procurez-vous un module complémentaire](get-an-add-on.md)
-* [Créer un module complémentaire](create-an-add-on.md)
-* [Supprimer un module complémentaire](delete-an-add-on.md)
+* [Obtenir toutes les extensions](get-all-add-ons.md)
+* [Obtenir une extension](get-an-add-on.md)
+* [Créer une extension](create-an-add-on.md)
+* [Supprime une extension](delete-an-add-on.md)

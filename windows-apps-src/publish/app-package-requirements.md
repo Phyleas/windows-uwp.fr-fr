@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, spécifications du package, packages, format de package, version prise en charge, envoyer
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c478b038ff729f753696d10fc18b21391a3a7de
-ms.sourcegitcommit: 96b7be654a0922eeb421b5fa51ebfc586abe74fe
+ms.openlocfilehash: 851aaa28a7c42d395a16ee78a49a7e8bc5712f62
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84945987"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89158103"
 ---
 # <a name="app-package-requirements"></a>Exigences relatives aux packages d’application
 
@@ -47,9 +47,9 @@ Avec un ensemble d’applications, un utilisateur ne télécharge que les fichie
 
 ## <a name="building-the-app-package-manually"></a>Génération manuelle du package d’application
 
-Si vous n’utilisez pas Visual Studio pour créer votre package, vous devez [créer manuellement votre manifeste de package](https://docs.microsoft.com/uwp/schemas/appxpackage/how-to-create-a-package-manifest-manually).
+Si vous n’utilisez pas Visual Studio pour créer votre package, vous devez [créer manuellement votre manifeste de package](/uwp/schemas/appxpackage/how-to-create-a-package-manifest-manually).
 
-Pour obtenir des détails complets et les conditions requises concernant le manifeste, consultez la documentation [Manifeste du package d’application](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest). Pour obtenir la certification, votre manifeste doit suivre le schéma du manifeste du package.
+Pour obtenir des détails complets et les conditions requises concernant le manifeste, consultez la documentation [Manifeste du package d’application](/uwp/schemas/appxpackage/appx-package-manifest). Pour obtenir la certification, votre manifeste doit suivre le schéma du manifeste du package.
 
 Votre manifeste doit inclure des informations spécifiques concernant votre compte et votre application. Pour trouver ces informations, consultez [Visualiser les détails d’identité d’application](view-app-identity-details.md) dans la section **Gestion de l’application** de la page de présentation de votre application, dans le tableau de bord.
 
@@ -57,7 +57,7 @@ Votre manifeste doit inclure des informations spécifiques concernant votre comp
 > Les valeurs dans le manifeste respectent la casse. Les espaces et autres symboles de ponctuation doivent également correspondre. Saisissez les valeurs correctement et vérifiez-les pour vous assurer qu’elles sont correctes.
 
 
-Les offres groupées d’applications (. msixbundle ou. appxbundle) utilisent un autre manifeste. Pour obtenir les détails et conditions requises concernant les manifestes d’offres groupées d’applications, consultez la documentation relative au [manifeste d’offre groupée](https://docs.microsoft.com/uwp/schemas/bundlemanifestschema/bundle-manifest). Notez que dans un fichier. msixbundle ou. appxbundle, le manifeste de chaque package inclus doit utiliser les mêmes éléments et attributs, à l’exception de l’attribut **ProcessorArchitecture** de l’élément [Identity](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) .
+Les offres groupées d’applications (. msixbundle ou. appxbundle) utilisent un autre manifeste. Pour obtenir les détails et conditions requises concernant les manifestes d’offres groupées d’applications, consultez la documentation relative au [manifeste d’offre groupée](/uwp/schemas/bundlemanifestschema/bundle-manifest). Notez que dans un fichier. msixbundle ou. appxbundle, le manifeste de chaque package inclus doit utiliser les mêmes éléments et attributs, à l’exception de l’attribut **ProcessorArchitecture** de l’élément [Identity](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) .
 
 > [!TIP]
 > Veillez à exécuter le [Kit de certification des applications Windows](../debug-test-perf/windows-app-certification-kit.md) avant de soumettre vos packages. Vous pouvez ainsi déterminer si votre manifeste présente des problèmes susceptibles de faire échouer la certification ou la soumission.
@@ -77,7 +77,7 @@ Les packages de votre application doivent être conformes aux exigences ci-aprè
 
 ## <a name="supported-versions"></a>Versions prises en charge
 
-Pour les applications UWP, tous les packages doivent cibler une version de Windows 10 prise en charge par le magasin. Les versions prises en charge par votre package doivent être indiquées dans les attributs **MinVersion** et **MaxVersionTested** de l’élément [TargetDeviceFamily](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) du manifeste de l’application.
+Pour les applications UWP, tous les packages doivent cibler une version de Windows 10 prise en charge par le magasin. Les versions prises en charge par votre package doivent être indiquées dans les attributs **MinVersion** et **MaxVersionTested** de l’élément [TargetDeviceFamily](/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) du manifeste de l’application.
 
 Les versions actuellement prises en charge sont les suivantes : 
 - Minimum : 10.0.10240.0
@@ -86,12 +86,8 @@ Les versions actuellement prises en charge sont les suivantes :
 
 ## <a name="storemanifest-xml-file"></a>Fichier XML StoreManifest
 
-Le fichier StoreManifest.xml est un fichier de configuration facultatif qui peut être inclus dans les packages d’application. Son objectif est d’activer des fonctionnalités, telles que la déclaration de votre application en tant qu’application d’appareil Microsoft Store ou la déclaration d’exigences dont dépend un package pour s’appliquer à un appareil, que le manifeste du package ne couvre pas. S’il est utilisé, StoreManifest.xml est soumis avec le package d’application et doit se trouver dans le dossier racine du projet principal de votre application. Pour plus d’informations, voir [Schéma StoreManifest](https://docs.microsoft.com/uwp/schemas/storemanifest/store-manifest-schema-portal).
+Le fichier StoreManifest.xml est un fichier de configuration facultatif qui peut être inclus dans les packages d’application. Son objectif est d’activer des fonctionnalités, telles que la déclaration de votre application en tant qu’application d’appareil Microsoft Store ou la déclaration d’exigences dont dépend un package pour s’appliquer à un appareil, que le manifeste du package ne couvre pas. S’il est utilisé, StoreManifest.xml est soumis avec le package d’application et doit se trouver dans le dossier racine du projet principal de votre application. Pour plus d’informations, voir [Schéma StoreManifest](/uwp/schemas/storemanifest/store-manifest-schema-portal).
 
  
 
  
-
-
-
-

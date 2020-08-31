@@ -1,5 +1,5 @@
 ---
-Description: Découvrez comment utiliser la mise en miroir des notifications sur vos notifications Toast.
+description: Découvrez comment utiliser la mise en miroir des notifications, optimisé par le centre de maintenance dans le Cloud, pour voir les notifications de Toast de votre téléphone sur votre PC.
 title: Mise en miroir des notifications
 label: Notification mirroring
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 12/15/2017
 ms.topic: article
 keywords: Windows 10, UWP, toast, centre de maintenance dans le Cloud, mise en miroir des notifications, notification, Cross Device
 ms.localizationpriority: medium
-ms.openlocfilehash: b897c6574f6cbfe78406d1c624f2e3b7286ef582
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 13e3e9f0b675ef0e5f9e0787f0544f87689cf74a
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82971054"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89054009"
 ---
 # <a name="notification-mirroring"></a>Mise en miroir des notifications
 
@@ -52,7 +52,7 @@ Les développeurs d’applications Windows, les entreprises et les utilisateurs 
 
 Vous pouvez parfois avoir une notification spécifique à l’appareil que vous ne souhaitez pas mettre en miroir sur d’autres appareils. Vous pouvez empêcher la mise en miroir d’une notification spécifique en définissant la propriété de **mise en miroir** sur la notification Toast. Actuellement, cette propriété de mise en miroir ne peut être définie que sur les notifications locales (elle ne peut pas être spécifiée lors de l’envoi d’une notification push WNS).
 
-**Problème connu**: la récupération de la propriété de mise en `ToastNotificationHistory.GetHistory()` miroir via les API retourne toujours la valeur par défaut (**autorisée**) au lieu de l’option que vous avez spécifiée. Ne vous inquiétez pas, tout est fonctionnel : il récupère uniquement la valeur qui est rompue.
+**Problème connu**: la récupération de la propriété de mise en miroir via les `ToastNotificationHistory.GetHistory()` API retourne toujours la valeur par défaut (**autorisée**) au lieu de l’option que vous avez spécifiée. Ne vous inquiétez pas, tout est fonctionnel : il récupère uniquement la valeur qui est rompue.
 
 ```csharp
 var toast = new ToastNotification(xml)
@@ -67,7 +67,7 @@ ToastNotificationManager.CreateToastNotifier().Show(toast);
 
 ### <a name="as-a-developer-opt-out-completely"></a>En tant que développeur, désinscrivez-vous entièrement
 
-Certains développeurs peuvent choisir d’annuler complètement la mise en miroir de notifications de leur application. Bien que nous pensons que toutes les applications tirent parti de la mise en miroir, nous pouvons facilement les refuser. Appelez simplement la méthode suivante une seule fois, et votre application sera désactivée. Par exemple, vous pouvez placer cet appel dans le constructeur de votre application `App.xaml.cs`à l’intérieur de...
+Certains développeurs peuvent choisir d’annuler complètement la mise en miroir de notifications de leur application. Bien que nous pensons que toutes les applications tirent parti de la mise en miroir, nous pouvons facilement les refuser. Appelez simplement la méthode suivante une seule fois, et votre application sera désactivée. Par exemple, vous pouvez placer cet appel dans le constructeur de votre application à l’intérieur de `App.xaml.cs` ...
 
 ```csharp
 public App()

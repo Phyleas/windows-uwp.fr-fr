@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, sécurité
 ms.localizationpriority: medium
-ms.openlocfilehash: 28419df1a37ff640db7246b54e50da5bfce9fedb
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 7c8d3fd007e688bd11423c32bd175203a6f1917d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372618"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157883"
 ---
 # <a name="intro-to-certificates"></a>Présentation de certificats
 
@@ -22,13 +22,13 @@ Cet article traite de l’utilisation de certificats dans les applications de pl
 
 ### <a name="shared-certificate-stores"></a>Magasins de certificats partagés
 
-Les applications UWP utilisent le nouveau modèle d’application de groupuscules introduit dans Windows 8. Selon ce modèle, une application de s’exécuter dans une construction de système d’exploitation de bas niveau, appelée « conteneur d’application », qui empêche l’application d’accéder à des ressources ou des fichiers extérieurs, sauf autorisation explicite de le faire. Les sections suivantes décrivent les conséquences de ce modèle sur l’infrastructure à clé publique (PKI).
+Les applications UWP utilisent le nouveau modèle d’application « isolationniste » introduit dans Windows 8. Selon ce modèle, une application de s’exécuter dans une construction de système d’exploitation de bas niveau, appelée « conteneur d’application », qui empêche l’application d’accéder à des ressources ou des fichiers extérieurs, sauf autorisation explicite de le faire. Les sections suivantes décrivent les conséquences de ce modèle sur l’infrastructure à clé publique (PKI).
 
 ### <a name="certificate-storage-per-app-container"></a>Stockage de certificats par conteneur d’application
 
 Les certificats qui sont destinés à être utilisés dans un conteneur d’application spécifique sont stockés dans des emplacements de conteneurs par utilisateur et par application. Une application s’exécutant dans un conteneur d’application ne dispose d’un accès en écriture que pour son propre magasin de certificats. Si l’application ajoute des certificats à n’importe quel de ses magasins, ces certificats ne peuvent pas être lus par d’autres applications. Si une application est désinstallée, tout certificat qui lui est spécifique est également supprimé. De même, une application ne dispose d’un accès en lecture que pour les magasins de certificats de l’ordinateur local autres que le magasin MY et REQUEST.
 
-### <a name="cache"></a>Cache
+### <a name="cache"></a>d'instance/de clé
 
 Chaque conteneur d’application a un cache isolé dans lequel il peut stocker les certificats d’émetteur nécessaires pour la validation, les listes de révocation de certificats et les réponses OSCP (Online Certificate Status Protocol).
 
@@ -53,7 +53,7 @@ La norme de certificat de clé publique X.509 a été révisée au fil du temps.
 
 ![certificat x.509 versions 1, 2 et 3](images/x509certificateversions.png)
 
-Certains de ces champs et extensions peuvent être spécifiés directement lorsque vous utilisez la classe [**CertificateRequestProperties**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Certificates.CertificateRequestProperties) pour créer une demande de certificat. La plupart ne peuvent pas. Ces champs peuvent être complétés par l’autorité émettrice ou rester vides. Pour plus d’informations sur les champs, voir les sections suivantes :
+Certains de ces champs et extensions peuvent être spécifiés directement lorsque vous utilisez la classe [**CertificateRequestProperties**](/uwp/api/Windows.Security.Cryptography.Certificates.CertificateRequestProperties) pour créer une demande de certificat. La plupart ne peuvent pas. Ces champs peuvent être complétés par l’autorité émettrice ou rester vides. Pour plus d’informations sur les champs, voir les sections suivantes :
 
 ### <a name="version-1-fields"></a>Champs version 1
 
@@ -64,7 +64,7 @@ Certains de ces champs et extensions peuvent être spécifiés directement lorsq
 | Algorithme de signature | Contient un identificateur d’objet (OID) qui indique l’algorithme utilisé par l’autorité de certification pour signer le certificat. Par exemple, 1.2.840.113549.1.1.5 indique un algorithme de hachage SHA-1 associé à l’algorithme de chiffrement RSA de RSA Laboratories. |
 | Émetteur | Contient le nom unique X.500 de l’autorité de certification qui a créé et signé le certificat. |
 | Validité | Indique l’intervalle de temps pendant lequel le certificat est valable. Les dates jusqu’à fin 2049 utilisent le format UTC (temps universel coordonné) (Heure de Greenwich) (yymmddhhmmssz). Les dates à partir du 1er janvier 2050 utilisent le format de temps généralisé (yyyymmddhhmmssz). |
-| Subject | Contient le nom unique X.500 de l’entité associée à la clé publique incluse dans le certificat. |
+| Objet | Contient le nom unique X.500 de l’entité associée à la clé publique incluse dans le certificat. |
 | Clé publique | Contient la clé publique et des informations sur l’algorithme associé. |
 
 ### <a name="version-2-fields"></a>Champs version 2
@@ -82,9 +82,9 @@ Un certificat X.509 version 3 contient les champs définis dans les versions 1 e
 
 | Champ  | Description |
 |--------|-------------|
-| Identificateur de clé de l’autorité | Identifie la clé publique de l’autorité de certification qui correspond à la clé privée de l’autorité de certification utilisée pour signer le certificat. |
+| Identificateur de clé d’autorité | Identifie la clé publique de l’autorité de certification qui correspond à la clé privée de l’autorité de certification utilisée pour signer le certificat. |
 | Contraintes de base | Indique si l’entité peut être utilisée en tant qu’autorité de certification et, le cas échéant, le nombre d’autorités de certification secondaires pouvant exister en dessous dans la chaîne de certificats. |
-| Stratégies de certificat | Indique les stratégies sous lesquelles le certificat a été émis et les fins auxquelles il peut être utilisé. |
+| Stratégies du certificat | Indique les stratégies sous lesquelles le certificat a été émis et les fins auxquelles il peut être utilisé. |
 | Points de distribution de la liste de révocation de certificats | Contient l’URI de la liste de révocation de certificats de base. |
 | Utilisation améliorée de la clé | Indique la façon dont la clé publique contenue dans le certificat peut être utilisée. |
 | Autre nom de l’émetteur | Indique un ou plusieurs autres noms pour l’émetteur de la demande de certificat. |
@@ -93,7 +93,6 @@ Un certificat X.509 version 3 contient les champs définis dans les versions 1 e
 | Contraintes de stratégie | Contraint la validation du chemin d’accès en interdisant le mappage de stratégie ou en exigeant que tous les certificats de la hiérarchie contiennent un identificateur de stratégie acceptable. L’extension n’est utilisée que dans un certificat d’autorité de certification. |
 | Mappages de stratégie | Indique les stratégies dans une autorité de certification secondaire qui correspondent aux stratégies dans l’autorité de certification émettrice. |
 | Durée de l’utilisation de la clé privée | Indique une durée de validité pour la clé privée qui est différente de celle du certificat auquel la clé privée est associée. |
-| Autre nom de l’objet | Indique une ou plusieurs autres formes de noms pour le sujet de la demande de certificat. Parmi les autres formes, citons : adresses de messagerie, noms DNS, adresses IP et URI. |
+| Autre nom de l'objet | Indique une ou plusieurs autres formes de noms pour le sujet de la demande de certificat. Parmi les autres formes, citons : adresses de messagerie, noms DNS, adresses IP et URI. |
 | Attributs d’annuaire du sujet | Véhicule des attributs d’identification tels que la nationalité du sujet du certificat. La valeur de l’extension est une séquence de paires OID-valeur. |
 | Identificateur de la clé du sujet | Fait la distinction entre plusieurs clés publiques détenues par le sujet du certificat. La valeur de l’extension est généralement un hachage SHA-1 de la clé. |
-

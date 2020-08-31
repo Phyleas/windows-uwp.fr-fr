@@ -1,34 +1,34 @@
 ---
 Description: Découvrez les différentes façons dont vous pouvez permettre aux clients d’évaluer et de passer en revue votre application par programmation.
-title: Demander des évaluations et des avis pour votre app
+title: Demander des évaluations et des révisions pour votre application
 ms.date: 01/22/2019
 ms.topic: article
-keywords: windows 10, uwp, évaluations et avis
+keywords: Windows 10, UWP, évaluations, revues
 ms.localizationpriority: medium
-ms.openlocfilehash: b167f4cc40ee72e6405436bacee28f2f20b4623c
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: c0a668ac66f48e386a6299a64e5bcc18cec4fccc
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79210715"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89158373"
 ---
-# <a name="request-ratings-and-reviews-for-your-app"></a>Demander des évaluations et des avis pour votre app
+# <a name="request-ratings-and-reviews-for-your-app"></a>Demander des évaluations et des révisions pour votre application
 
-Vous pouvez ajouter du code à votre app de plateforme Windows universelle (UWP) pour inviter par programmation vos clients à évaluer ou à donner un avis sur votre app. Il existe plusieurs façons de procéder :
-* Vous pouvez afficher une boîte de dialogue d'avis et d'évaluation directement dans le contexte de votre app.
-* Vous pouvez ouvrir par programmation la page d’évaluation et d'avis de votre app dans le Microsoft Store.
+Vous pouvez ajouter du code à votre application plateforme Windows universelle (UWP) pour inviter vos clients à évaluer ou à passer en revue votre application. Vous pouvez procéder de plusieurs façons :
+* Vous pouvez afficher une boîte de dialogue d’évaluation et de révision directement dans le contexte de votre application.
+* Vous pouvez ouvrir par programmation la page évaluation et vérification de votre application dans la Microsoft Store.
 
 Lorsque vous êtes prêt à analyser vos évaluations et à consulter les données, vous pouvez afficher les données dans l’espace partenaires ou utiliser l’API Microsoft Store Analytics pour récupérer ces données par programme.
 
 > [!IMPORTANT]
-> Lorsque vous ajoutez une fonction d’évaluation au sein de votre application, toutes les révisions doivent envoyer l’utilisateur aux mécanismes d’évaluation de la boutique, quelle que soit l’évaluation de l’étoile choisie. Si vous collectez des commentaires ou des commentaires d’utilisateurs, il doit être clair qu’il n’est pas lié à l’évaluation des applications ou aux révisions dans le magasin, mais qu’il est envoyé directement au développeur de l’application. Pour plus d’informations sur les [activités frauduleuses ou malhonnêtes](https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct#3-fraudulent-or-dishonest-activities), consultez Code de réalisation du développeur.
+> Lorsque vous ajoutez une fonction d’évaluation au sein de votre application, toutes les révisions doivent envoyer l’utilisateur aux mécanismes d’évaluation de la boutique, quelle que soit l’évaluation de l’étoile choisie. Si vous collectez des commentaires ou des commentaires d’utilisateurs, il doit être clair qu’il n’est pas lié à l’évaluation des applications ou aux révisions dans le magasin, mais qu’il est envoyé directement au développeur de l’application. Pour plus d’informations sur les [activités frauduleuses ou malhonnêtes](/legal/windows/agreements/store-developer-code-of-conduct#3-fraudulent-or-dishonest-activities), consultez Code de réalisation du développeur.
 
-## <a name="show-a-rating-and-review-dialog-in-your-app"></a>Afficher une boîte de dialogue d'évaluation et d'avis dans votre app
+## <a name="show-a-rating-and-review-dialog-in-your-app"></a>Afficher une boîte de dialogue d’évaluation et de vérification dans votre application
 
-Pour afficher par programme une boîte de dialogue de votre application qui demande à votre client d’évaluer votre application et de soumettre une revue, appelez la méthode [RequestRateAndReviewAppAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestrateandreviewappasync) dans l’espace de noms [Windows. services. Store](https://docs.microsoft.com/uwp/api/windows.services.store) . 
+Pour afficher par programme une boîte de dialogue de votre application qui demande à votre client d’évaluer votre application et de soumettre une revue, appelez la méthode [RequestRateAndReviewAppAsync](/uwp/api/windows.services.store.storecontext.requestrateandreviewappasync) dans l’espace de noms [Windows. services. Store](/uwp/api/windows.services.store) . 
 
 > [!IMPORTANT]
-> La demande d'affichage de la boîte de dialogue d'évaluations et d'avis peut être appelée sur le thread d'interface utilisateur de votre app.
+> La demande d’affichage de la boîte de dialogue évaluation et examen doit être appelée sur le thread d’interface utilisateur dans votre application.
 
 ```csharp
 using Windows.ApplicationModel.Store;
@@ -103,11 +103,11 @@ private async Task PromptUserToRateApp()
 
 La méthode **RequestRateAndReviewAppAsync** a été introduite dans Windows 10, version 1809, et elle ne peut être utilisée que dans les projets qui ciblent la **mise à jour 2018 d’octobre de windows 10 (10,0 ; Build 17763)** ou une version ultérieure dans Visual Studio.
 
-### <a name="response-data-for-the-rating-and-review-request"></a>Données de réponse pour les requêtes d’évaluations et d'avis
+### <a name="response-data-for-the-rating-and-review-request"></a>Données de réponse pour la demande d’évaluation et de vérification
 
-Une fois que vous avez envoyé la demande pour afficher la boîte de dialogue évaluation et examen, la propriété [ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storerateandreviewresult.extendedjsondata) de la classe [StoreRateAndReviewResult](https://docs.microsoft.com/uwp/api/windows.services.store.storerateandreviewresult) contient une chaîne au format JSON qui indique si la demande a réussi.
+Une fois que vous avez envoyé la demande pour afficher la boîte de dialogue évaluation et examen, la propriété [ExtendedJsonData](/uwp/api/windows.services.store.storerateandreviewresult.extendedjsondata) de la classe [StoreRateAndReviewResult](/uwp/api/windows.services.store.storerateandreviewresult) contient une chaîne au format JSON qui indique si la demande a réussi.
 
-L’exemple suivant montre la valeur de retour pour cette requête après qu'un client a soumis avec succès une évaluation ou un avis.
+L’exemple suivant illustre la valeur de retour de cette demande après que le client a envoyé une évaluation ou une évaluation.
 
 ```json
 { 
@@ -119,7 +119,7 @@ L’exemple suivant montre la valeur de retour pour cette requête après qu'un 
 }
 ```
 
-L’exemple suivant montre la valeur de retour pour cette requête après qu'un client a décidé de ne pas soumettre une évaluation ou un avis.
+L’exemple suivant illustre la valeur de retour de cette demande après que le client a choisi de ne pas soumettre une évaluation ou une révision.
 
 ```json
 { 
@@ -128,32 +128,32 @@ L’exemple suivant montre la valeur de retour pour cette requête après qu'un 
 }
 ```
 
-Le tableau ci-après décrit les champs qui figurent dans la chaîne de données au format JSON.
+Le tableau suivant décrit les champs de la chaîne de données au format JSON.
 
 | Champ          | Description                                                                                                                                   |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
-| *statu*       | Une chaîne qui indique si le client a soumis avec succès une évaluation ou un avis. Les valeurs prises en charge sont  **success** et **aborted**. |
-| *métadonnée*         | Un objet qui contient une valeur booléenne unique nommée *updated*. Cette valeur indique si le client a mis à jour une évaluation ou un avis existant(e). L'objet *data* est uniquement inclus dans les réponses de réussite. |
-| *errorDetails* | Une chaîne qui contient les détails de l’erreur relative à la demande.                                                                                     |
+| *statut*       | Chaîne qui indique si le client a envoyé une évaluation ou une révision. Les valeurs prises en charge sont **réussite** et **abandon**. |
+| *data*         | Objet qui contient une valeur booléenne unique nommée *updated*. Cette valeur indique si le client a mis à jour une évaluation ou une révision existante. L’objet de *données* est inclus uniquement dans les réponses de réussite. |
+| *errorDetails* | Chaîne qui contient les détails de l’erreur de la demande.                                                                                     |
 
-## <a name="launch-the-rating-and-review-page-for-your-app-in-the-store"></a>Lancer la page d'évaluations et d'avis pour votre app dans le Microsoft Store
+## <a name="launch-the-rating-and-review-page-for-your-app-in-the-store"></a>Lancer la page évaluation et vérification de votre application dans le Store
 
-Si vous souhaitez programmer l'ouverture de la page d'évaluations et d'avis pour votre app dans le Microsoft Store, vous pouvez utiliser la méthode [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) avec le schéma d'URI ```ms-windows-store://review```, comme indiqué dans cet exemple de code.
+Si vous souhaitez ouvrir par programmation la page évaluation et vérification de votre application dans le magasin, vous pouvez utiliser la méthode [LaunchUriAsync](/uwp/api/windows.system.launcher.launchuriasync) avec le schéma d' ```ms-windows-store://review``` URI, comme illustré dans cet exemple de code.
 
 ```csharp
 bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-store://review/?ProductId=9WZDNCRFHVJL"));
 ```
 
-Pour plus d’informations, voir [Lancer l'app Microsoft Store](../launch-resume/launch-store-app.md).
+Pour plus d’informations, consultez [lancer l’application Microsoft Store](../launch-resume/launch-store-app.md).
 
-## <a name="analyze-your-ratings-and-reviews-data"></a>Analyser vos données d'évaluations et avis
+## <a name="analyze-your-ratings-and-reviews-data"></a>Analysez vos évaluations et vos données de révision
 
-Vous pouvez analyser les données d'évaluations et d’avis de vos clients de plusieurs manières :
-* Vous pouvez utiliser le rapport [évaluations](../publish/reviews-report.md) dans l’espace partenaires pour afficher les évaluations et les évaluations de vos clients. Vous pouvez également télécharger ce rapport pour le consulter hors ligne.
-* Vous pouvez utiliser les méthodes [Obtenir des évaluations de l’app](get-app-ratings.md) et [Obtenir les avis sur les apps](get-app-reviews.md) dans l’API d’analytique du Microsoft Store pour programmer la récupération des évaluations et avis de vos clients au format JSON.
+Pour analyser les évaluations et examiner les données de vos clients, vous avez le choix entre plusieurs options :
+* Vous pouvez utiliser le rapport [évaluations](../publish/reviews-report.md) dans l’espace partenaires pour afficher les évaluations et les évaluations de vos clients. Vous pouvez également télécharger ce rapport pour l’afficher hors connexion.
+* Vous pouvez utiliser les méthodes [obtenir les évaluations des applications](get-app-ratings.md) et obtenir des revues d' [applications](get-app-reviews.md) dans l’API Windows Store Analytics pour récupérer par programmation les évaluations et les révisions de vos clients au format JSON.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Envoyer des demandes au magasin](send-requests-to-the-store.md)
-* [Lancer l’application du Microsoft Store](../launch-resume/launch-store-app.md)
-* [Rapport Avis](../publish/reviews-report.md)
+* [Envoyer des requêtes au Microsoft Store](send-requests-to-the-store.md)
+* [Lancer l’application Microsoft Store](../launch-resume/launch-store-app.md)
+* [Rapport sur les révisions](../publish/reviews-report.md)

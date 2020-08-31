@@ -1,54 +1,54 @@
 ---
-Description: Ciblez des segments de clients spécifiques avec un contenu personnalisé pour augmenter l’engagement, la rétention et la monétisation.
+Description: Ciblez des segments spécifiques de vos clients avec un contenu personnalisé pour augmenter l’engagement, la rétention et la monétisation.
 title: Utiliser des offres ciblées pour optimiser l’engagement et les conversions
 ms.date: 10/31/2018
 ms.topic: article
-keywords: windows 10, uwp, offres ciblées, offres, notifications
+keywords: Windows 10, UWP, offres ciblées, offres, notifications
 ms.localizationpriority: medium
-ms.openlocfilehash: fd4cf135e5129ed4f3dbdbcebfb2003e7573182a
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: ff2c3049154ffcc18164b8084bc9e34a9121905d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75685101"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89155303"
 ---
 # <a name="use-targeted-offers-to-maximize-engagement-and-conversions"></a>Utiliser des offres ciblées pour optimiser l’engagement et les conversions
 
-Ciblez des segments de clients spécifiques avec un contenu attractif et personnalisé pour augmenter l’engagement, la rétention et la monétisation.
+Ciblez des segments spécifiques de vos clients avec un contenu attrayant et personnalisé pour augmenter l’engagement, la rétention et la monétisation.
 
 > [!IMPORTANT]
-> Les offres ciblées ne sont utilisables qu’avec les applications UWP qui comprennent des extensions.
+> Les offres ciblées peuvent uniquement être utilisées avec des applications UWP qui incluent des modules complémentaires.
 
-## <a name="targeted-offer-overview"></a>Vue d’ensemble des offres ciblées
+## <a name="targeted-offer-overview"></a>Présentation de l’offre ciblée
 
-De façon générale, vous devez effectuer trois opérations pour utiliser des offres ciblées :
+À un niveau élevé, vous devez effectuer trois opérations pour utiliser des offres ciblées :
 
-1. **Créez l’offre dans l' [espace partenaires](https://partner.microsoft.com/dashboard).** Accédez à la page **Engager > Offres ciblées** pour créer des offres. Vous trouverez d’autres informations sur ce processus ci-dessous.
-2. **Implémentez l’expérience d’offre dans l’application.** Utilisez l' *API Microsoft Store ciblée offres* dans le code de votre application pour récupérer les offres disponibles pour un utilisateur donné. Vous devez également créer une expérience interne à l’application pour l’offre ciblée. Pour plus d’informations, consultez l’article [Gérer les offres ciblées à l’aide des services du Windows Store](../monetize/manage-targeted-offers-using-windows-store-services.md).
-3. **Envoyez votre application au Windows Store.** Votre application doit être publiée avec la mise en place des offres dans l’application afin que les offres soit mises à la disposition des clients.
+1. **Créez l’offre dans l' [espace partenaires](https://partner.microsoft.com/dashboard).** Accédez à la page **impliquer > offres ciblées** pour créer des offres. Pour plus d’informations sur ce processus, voir ci-dessous.
+2. **Implémentez l’expérience d’offre dans l’application.** Utilisez l' *API Microsoft Store ciblée offres* dans le code de votre application pour récupérer les offres disponibles pour un utilisateur donné. Vous devez également créer l’expérience dans l’application pour l’offre ciblée. Pour plus d’informations, consultez [gérer les offres ciblées à l’aide des services de magasin](../monetize/manage-targeted-offers-using-windows-store-services.md).
+3. **Envoyez votre application au Windows Store.** Votre application doit être publiée avec l’expérience d’offre en place dans l’application afin que les offres soient mises à la disposition des clients.
 
-Une fois que vous avez exécuté ces étapes, les clients qui utilisent votre application voient s’afficher les offres qui leur sont disponibles à ce stade, en fonction de leur appartenance aux segments associés à vos offres. Veuillez noter que, bien que nous nous efforcions d’afficher toutes les offres disponibles pour vos clients, certains problèmes susceptibles d’affecter la disponibilité des offres peuvent parfois survenir.
+Une fois ces étapes terminées, les clients qui utilisent votre application verront les offres disponibles à ce moment-là, en fonction de leur appartenance au (x) segment (s) associé (s) à vos offres. Notez que même si nous nous efforçons de montrer toutes les offres disponibles à vos clients, il peut y avoir des problèmes susceptibles d’affecter la disponibilité de l’offre.
 
 
 ## <a name="to-create-and-send-a-targeted-offer"></a>Pour créer et envoyer une offre ciblée
 
 1.  Dans l' [espace partenaires](https://partner.microsoft.com/dashboard), développez **engagement** dans le menu de navigation gauche, puis sélectionnez **offres ciblées**.
-2.  Sur la page **Offres ciblées**, examinez les offres disponibles. Sélectionnez **Créer une nouvelle offre** pour toute offre que vous souhaitez implémenter.
+2.  Sur la page **offres ciblées** , passez en revue les offres disponibles. Sélectionnez **créer une offre** pour toute offre que vous souhaitez implémenter.
 
     > [!NOTE]
-    > Les offres disponibles que vous verrez s’afficher peuvent varier au fil du temps et selon les critères du compte.
+    > Les offres disponibles que vous verrez peuvent varier au fil du temps et en fonction des critères du compte.
 
-3.  Dans la nouvelle ligne qui s’affiche sous les offres disponibles, sélectionnez le produit (application) dans lequel l’offre sera disponible. Ensuite, sélectionnez l’extension que vous souhaitez associer à l’offre.
-4.  Si vous souhaitez créer des offres supplémentaires, répétez les étapes 2 et 3. Vous pouvez implémenter le même type d’offre plusieurs fois pour la même application, tant que vous sélectionnez des extensions différentes pour chaque offre. En outre, vous pouvez associer la même extension à plusieurs types d’offres.
-5.  Lorsque vous avez fini de créer les offres, cliquez sur **Enregistrer**.
+3.  Dans la nouvelle ligne qui s’affiche sous les offres disponibles, choisissez le produit (l’application) dans lequel l’offre sera disponible. Sélectionnez ensuite le module complémentaire que vous souhaitez associer à l’offre.
+4.  Répétez les étapes 2 et 3 Si vous souhaitez créer des offres supplémentaires. Vous pouvez implémenter le même type d’offre plusieurs fois pour la même application, à condition de sélectionner différents modules complémentaires pour chaque offre. En outre, vous pouvez associer le même module complémentaire à plusieurs types d’offres.
+5.  Lorsque vous avez terminé de créer des offres, cliquez sur **Enregistrer**.
 
 Une fois que vous avez implémenté vos offres, vous pouvez revenir à la page **offres ciblées** dans l’espace partenaires pour afficher les conversions totales pour chaque offre.
 
-Si vous décidez de ne pas utiliser une offre (ou que vous ne voulez plus l’utiliser), cliquez sur **Supprimer**.
+Si vous décidez de ne pas utiliser une offre (ou si vous ne souhaitez plus continuer à l’utiliser, cliquez sur **Supprimer.**
 
 > [!IMPORTANT]
-> Assurez-vous que vous avez publié le code pour récupérer les offres disponibles pour un utilisateur donné et pour créer l’expérience interne à l’application. Pour plus d’informations, consultez l’article [Gérer les offres ciblées à l’aide des services du Windows Store](../monetize/manage-targeted-offers-using-windows-store-services.md).
+> Vérifiez que vous avez publié le code pour récupérer les offres disponibles pour un utilisateur donné et pour créer l’expérience dans l’application. Pour plus d’informations, consultez [gérer les offres ciblées à l’aide des services de magasin](../monetize/manage-targeted-offers-using-windows-store-services.md).
 >
-> Lorsque vous étudiez le contenu de vos offres ciblées, n’oubliez pas que, comme pour tous les contenus d’application, le contenu de vos offres doit respecter les [Politiques relatives au contenu](https://docs.microsoft.com/legal/windows/agreements/store-policies) du Windows Store.
+> Lorsque vous examinez le contenu de vos offres ciblées, gardez à l’esprit que, comme avec tout le contenu de l’application, le contenu de vos offres doit être conforme aux [stratégies de contenu](/legal/windows/agreements/store-policies)du Store.
 >
-> Notez également que si un client qui utilise votre application (et qui est connecté à son compte Microsoft au moment où son appartenance au segment est déterminée) confie ultérieurement son appareil à un tiers pour que celui-ci l’utilise, ce tiers peut voir les offres destinées au client initial.
+> Sachez également que si un client qui utilise votre application (et qui est connecté avec son compte Microsoft au moment où l’appartenance au segment est déterminée) donne à son appareil une autre personne à utiliser, l’autre personne peut voir les offres qui ont été ciblées au niveau du client d’origine.

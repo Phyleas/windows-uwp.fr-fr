@@ -7,16 +7,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 608f254114a200850341837528cb7506597c3bed
-ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
+ms.openlocfilehash: ef0f712a87f0b2aea7fdb2204691e9b439315b44
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89043521"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89155383"
 ---
 # <a name="move-from-ios-to-uwp"></a>Migrer d’iOS vers UWP
 
-Si vous êtes un développeur iOS et que vous vous demandez comment développer votre base d’utilisateurs pour inclure Windows 10 et la plateforme Windows universelle (UWP), il existe un nombre croissant d’outils pour vous aider. Les approches que vous pouvez adopter dépendent du type d’application sur lesquelles vous travaillez (jeux, style de vie, entreprise, etc.) et de l’étape où vous vous trouvez dans le processus de développement. Par exemple, un jeu terminé ou presque terminé dépendant fortement d’OpenGL ou de Cocos2D est un candidat idéal pour le [pont Windows pour iOS](https://developer.microsoft.com/windows/bridges/ios), tandis que si vous envisagez une application interplateforme pour une petite entreprise, vous devriez privilégier [Xamarin.Forms](https://docs.microsoft.com/xamarin/xamarin-forms/). Et si vous avez écrit votre application dans un outil interplateforme comme Unity, [la publication sur Windows](https://blogs.unity3d.com/2015/09/09/windows-10-universal-apps-in-unity-5-2/) est assez simple.
+Si vous êtes un développeur iOS et que vous vous demandez comment développer votre base d’utilisateurs pour inclure Windows 10 et la plateforme Windows universelle (UWP), il existe un nombre croissant d’outils pour vous aider. Les approches que vous pouvez adopter dépendent du type d’application sur lesquelles vous travaillez (jeux, style de vie, entreprise, etc.) et de l’étape où vous vous trouvez dans le processus de développement. Par exemple, un jeu terminé ou presque terminé dépendant fortement d’OpenGL ou de Cocos2D est un candidat idéal pour le [pont Windows pour iOS](https://developer.microsoft.com/windows/bridges/ios), tandis que si vous envisagez une application interplateforme pour une petite entreprise, vous devriez privilégier [Xamarin.Forms](/xamarin/xamarin-forms/). Et si vous avez écrit votre application dans un outil interplateforme comme Unity, [la publication sur Windows](https://blogs.unity3d.com/2015/09/09/windows-10-universal-apps-in-unity-5-2/) est assez simple.
 
 ## <a name="why-windows"></a>Pourquoi Windows ?
 
@@ -33,5 +33,5 @@ Aujourd’hui, Windows est exécuté sur un nombre considérable d’appareils. 
 ## <a name="related-topics"></a>Rubriques connexes
 
 **Pour les concepteurs et les développeurs**
-* [Développement d’applications Windows universelles pour tous les appareils Windows](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
-* [Télécharger les ressources de conception pour les applications UWP](https://docs.microsoft.com/windows/uwp/design/downloads/index)
+* [Développement d’applications Windows universelles pour tous les appareils Windows](../get-started/universal-application-platform-guide.md)
+* [Télécharger les ressources de conception pour les applications UWP](../design/downloads/index.md)

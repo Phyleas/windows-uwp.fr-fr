@@ -1,33 +1,33 @@
 ---
-Description: Découvrez comment utiliser audio personnalisé sur vos notifications toast.
-title: Contenu audio personnalisé des toast
+description: Découvrez comment utiliser l’audio personnalisé sur vos notifications toast pour permettre à votre application d’exprimer les effets audio uniques de votre image.
+title: Audio personnalisé sur les toasts
 label: Custom audio on toasts
 template: detail.hbs
 ms.date: 12/15/2017
 ms.topic: article
-keywords: windows 10, uwp, toast, contenu audio personnalisé, notification, audio, son
+keywords: Windows 10, UWP, toast, audio personnalisé, notification, audio, son
 ms.localizationpriority: medium
-ms.openlocfilehash: 982340901d13f17945c1e7ffa11099f52732f619
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 81bec439f17cadb7db0576dafcf4299f0978b192
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57644064"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89054459"
 ---
-# <a name="custom-audio-on-toasts"></a>Contenu audio personnalisé des toast
+# <a name="custom-audio-on-toasts"></a>Audio personnalisé sur les toasts
 
-Les notifications toast peuvent utiliser du contenu audio personnalisé, qui permet à votre application d’exprimer les effets sonores uniques de votre marque. Par exemple, une application de messagerie peut utiliser le propre son de message de ses notifications toast, afin que l’utilisateur puisse être instantanément informé de la réception d’une notification de l’application, au lieu d’entendre le son de notification générique.
+Les notifications Toast peuvent utiliser du son personnalisé, ce qui permet à votre application d’exprimer les effets audio uniques de votre image. Par exemple, une application de messagerie peut utiliser son propre son de messagerie sur les notifications de Toast, afin que l’utilisateur sache instantanément qu’il a reçu une notification de l’application, au lieu d’entendre le son de notification générique.
 
-## <a name="install-uwp-community-toolkit-nuget-package"></a>Installer le package NuGet UWP Community Toolkit
+## <a name="install-uwp-community-toolkit-nuget-package"></a>Installer le package NuGet Community Toolkit pour UWP
 
-Pour créer des notifications par le biais de code, nous vous recommandons vivement d’utiliser la bibliothèque UWP Community Toolkit Notifications, qui fournit un modèle d’objet pour le contenu XML de la notification. Vous pouvez construire manuellement le contenu XML de la notification, mais cette méthode est sujette aux erreurs et compliquée. La bibliothèque Notifications dans UWP Community Toolkit est créée et gérée par l’équipe propriétaire des notifications chez Microsoft.
+Pour créer des notifications par le biais du code, nous vous recommandons vivement d’utiliser la bibliothèque de notifications du kit de modèles de la communauté UWP, qui fournit un modèle d’objet pour le contenu XML de la notification. Vous pouvez construire manuellement le document XML de notification, mais cela peut être source d’erreurs et confus. La bibliothèque de notifications dans la boîte à outils de la communauté UWP est construite et gérée par l’équipe qui possède les notifications chez Microsoft.
 
-Installez [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) à partir de NuGet (nous utilisons la version 1.0.0 dans cette documentation).
+Installez [Microsoft. Toolkit. UWP. notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) à partir de NuGet (nous utilisons la version 1.0.0 dans cette documentation).
 
 
-## <a name="add-namespace-declarations"></a>Ajouter des déclarations d’espace de noms
+## <a name="add-namespace-declarations"></a>Ajout de déclarations d'espaces de noms
 
-`Windows.UI.Notifications` inclut la vignette, puis l’API de Toast. `Microsoft.Toolkit.Uwp.Notifications` inclut la bibliothèque de Notifications.
+`Windows.UI.Notifications` comprend les API Tile et Toast. `Microsoft.Toolkit.Uwp.Notifications` comprend la bibliothèque de notifications.
 
 ```csharp
 using Microsoft.Toolkit.Uwp.Notifications;
@@ -37,7 +37,7 @@ using Windows.UI.Notifications;
 
 ## <a name="construct-the-notification"></a>Construire la notification
 
-Le contenu de la notification toast inclut du texte et des images, ainsi que des boutons et des entrées. Pour afficher un extrait de code complet, voir [Envoyer un toast local](send-local-toast.md) .
+Le contenu de la notification Toast comprend du texte et des images, ainsi que des boutons et des entrées. Consultez [Envoyer un toast local](send-local-toast.md) pour voir un extrait de code complet.
 
 ```csharp
 ToastContent toastContent = new ToastContent()
@@ -50,11 +50,11 @@ ToastContent toastContent = new ToastContent()
 ```
 
 
-## <a name="add-the-custom-audio"></a>Ajouter le contenu audio personnalisé
+## <a name="add-the-custom-audio"></a>Ajouter l’audio personnalisé
 
-Windows Mobile a toujours pris en charge le contenu audio personnalisé des notifications toast. Toutefois, Desktop a uniquement ajouté la prise en charge du contenu audio personnalisé dans la version 1511 (build 10586). Si vous envoyez un toast contenant des données audio personnalisées à un appareil de bureau avant la version 1511, le toast est en mode silencieux. Par conséquent, pour la version préliminaire 1511 de Desktop, vous Ne devez PAS inclure le contenu audio personnalisé de votre notification toast, afin que la notification utilise au moins le son de notification par défaut.
+Windows Mobile a toujours pris en charge l’audio personnalisée dans les notifications Toast. Toutefois, Desktop a ajouté uniquement la prise en charge de l’audio personnalisé dans la version 1511 (Build 10586). Si vous envoyez un toast qui contient du son personnalisé à un appareil de bureau avant la version 1511, le Toast sera silencieux. Par conséquent, pour les ordinateurs de bureau antérieurs à la version 1511, vous ne devez pas inclure l’audio personnalisé dans votre notification Toast, afin que la notification utilise au moins le son de notification par défaut.
 
-**Problème connu**: Si vous utilisez la Version 1511 de bureau, l’audio de toast personnalisé fonctionne uniquement si votre application est installée via le Store. Cela signifie que vous ne pouvez pas tester localement votre contenu audio personnalisé sur l'appareil de bureau avant de l’envoyer au Store, mais le contenu audio fonctionne correctement une fois installé à partir du Store. Nous avons résolu ce problème dans la mise à jour anniversaire, afin que le contenu audio personnalisé de votre application déployée localement fonctionne correctement.
+**Problème connu**: Si vous utilisez la version 1511 du bureau, le fichier audio Toast personnalisé ne fonctionnera que si votre application est installée via le Windows Store. Cela signifie que vous ne pouvez pas tester localement votre audio personnalisé sur le Bureau avant de l’envoyer au Store, mais le son fonctionnera correctement une fois installé à partir du Store. Nous avons résolu cela dans la mise à jour anniversaire, afin que l’audio personnalisé de votre application déployée localement fonctionne correctement.
 
 ```csharp
 ?
@@ -77,10 +77,10 @@ if (supportsCustomAudio)
 }
 ```
 
-Les types de fichier audio pris en charge sont...
+Les types de fichiers audio pris en charge incluent...
 
 - .aac
-- .flac
+- . FLAC
 - .m4a
 - .mp3
 - .wav
@@ -89,7 +89,7 @@ Les types de fichier audio pris en charge sont...
 
 ## <a name="send-the-notification"></a>Envoyer la notification
 
-Maintenant que le contenu de votre toast est terminé, l’envoi de la notification est très simple.
+Maintenant que votre contenu Toast est terminé, l’envoi de la notification est assez simple.
 
 ```csharp
 // Create the toast notification from the previous toast content
@@ -104,4 +104,4 @@ ToastNotificationManager.CreateToastNotifier().Show(notification);
 
 - [Exemple de code complet sur GitHub](https://github.com/WindowsNotifications/quickstart-toast-with-custom-audio)
 - [Envoyer un toast local](send-local-toast.md)
-- [Documentation de contenu de toast](adaptive-interactive-toasts.md)
+- [Documentation sur le contenu Toast](adaptive-interactive-toasts.md)

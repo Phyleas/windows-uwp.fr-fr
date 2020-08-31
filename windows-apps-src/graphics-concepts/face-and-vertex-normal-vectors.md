@@ -1,89 +1,89 @@
 ---
 title: Vecteurs normaux à une face ou un sommet
-description: Chaque face d'un maillage comporte un vecteur normal d'une unité perpendiculaire. La direction du vecteur est déterminée par l'ordre dans lequel les vertex sont définis et de si le système de coordonnées se trouve à droite ou à gauche.
+description: Chaque face d’une maille a un vecteur normal d’unité perpendiculaire. La direction du vecteur est déterminée par l’ordre dans lequel les vertex sont définis et selon que le système de coordonnées est droitier ou gauche.
 ms.assetid: 02333579-9749-4612-B121-23F97898A3E0
 keywords:
 - Vecteurs normaux à une face ou un sommet
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7146fe6489d61c641b7104e8c7c25728550c1c54
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: ef0d3ea5a3bc0f5c4ac6b6b660dc543919d297ec
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370664"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168163"
 ---
 # <a name="face-and-vertex-normal-vectors"></a>Vecteurs normaux à une face ou un sommet
 
 
-Chaque face d'un maillage comporte un vecteur normal d'une unité perpendiculaire. La direction du vecteur est déterminée par l'ordre dans lequel les vertex sont définis et de si le système de coordonnées se trouve à droite ou à gauche.
+Chaque face d’une maille a un vecteur normal d’unité perpendiculaire. La direction du vecteur est déterminée par l’ordre dans lequel les vertex sont définis et selon que le système de coordonnées est droitier ou gauche.
 
-## <a name="span-idperpendicularunitnormalvectorforafrontfacespanspan-idperpendicularunitnormalvectorforafrontfacespanspan-idperpendicularunitnormalvectorforafrontfacespanperpendicular-unit-normal-vector-for-a-front-face"></a><span id="Perpendicular_unit_normal_vector_for_a_front_face"></span><span id="perpendicular_unit_normal_vector_for_a_front_face"></span><span id="PERPENDICULAR_UNIT_NORMAL_VECTOR_FOR_A_FRONT_FACE"></span>Vecteur normal d’unité perpendiculaire pour une face avant
-
-
-Chaque face d'un maillage comporte un vecteur normal d'une unité perpendiculaire. La direction du vecteur est déterminée par l'ordre dans lequel les vertex sont définis et de si le système de coordonnées se trouve à droite ou à gauche. La normale de la face pointe dans la direction opposée au côté avant de la face. Dans Direct3D, seul l’avant d’une face est visible. Une face avant est une face dont les vertex sont définis dans l’ordre des aiguilles d’une montre.
-
-La figure ci-après illustre un vecteur normal d’une face avant :
-
-![vecteur normal d’une face avant](images/nrmlvect.png)
-
-## <a name="span-idcullingbackfacesspanspan-idcullingbackfacesspanspan-idcullingbackfacesspanculling-back-faces"></a><span id="Culling_back_faces"></span><span id="culling_back_faces"></span><span id="CULLING_BACK_FACES"></span>Élimination de retour est confrontée
+## <a name="span-idperpendicular_unit_normal_vector_for_a_front_facespanspan-idperpendicular_unit_normal_vector_for_a_front_facespanspan-idperpendicular_unit_normal_vector_for_a_front_facespanperpendicular-unit-normal-vector-for-a-front-face"></a><span id="Perpendicular_unit_normal_vector_for_a_front_face"></span><span id="perpendicular_unit_normal_vector_for_a_front_face"></span><span id="PERPENDICULAR_UNIT_NORMAL_VECTOR_FOR_A_FRONT_FACE"></span>Vecteur normal d’unité perpendiculaire pour une face avant
 
 
-Toute face autre qu’une face avant est une face arrière. Direct3D ne procède pas systématiquement au rendu des faces arrière ; dans ce cas, on parle d’élimination des faces arrière. L’élimination des faces arrière consiste à supprimer les faces arrière du rendu. Si vous le souhaitez, vous pouvez modifier le mode d’élimination de façon à obtenir le rendu des faces arrière. Pour plus d’informations, consultez l’article [État d’élimination](https://docs.microsoft.com/windows/desktop/direct3d9/culling-state).
+Chaque face d’une maille a un vecteur normal d’unité perpendiculaire. La direction du vecteur est déterminée par l’ordre dans lequel les vertex sont définis et selon que le système de coordonnées est droitier ou gauche. La face normale pointe à l’extérieur du visage. Dans Direct3D, seul le recto d’une face est visible. Une face avant est une face dans laquelle les sommets sont définis dans l’ordre des aiguilles d’une montre.
 
-## <a name="span-idvertexunitnormalsspanspan-idvertexunitnormalsspanspan-idvertexunitnormalsspanvertex-unit-normals"></a><span id="Vertex_unit_normals"></span><span id="vertex_unit_normals"></span><span id="VERTEX_UNIT_NORMALS"></span>Normales des sommets unité
+L’illustration suivante montre un vecteur normal pour une face avant :
 
+![vecteur normal pour une face avant](images/nrmlvect.png)
 
-Direct3D utilise les normales d’unité de vertex pour les effets d’ombrage Gouraud, d’éclairage et d’application de textures.
-
-La figure ci-après illustre des normales de vertex :
-
-![normales de vertex](images/vertnrml.png)
-
-Lorsque vous appliquez un ombrage Gouraud à un polygone, Direct3D utilise les normales de vertex pour calculer l’angle entre la source de lumière et la surface. Il calcule les valeurs de couleur et d’intensité pour les vertex et les interpole pour chaque point sur l’ensemble des surfaces de la primitive. Direct3D calcule la valeur de l’intensité lumineuse à l’aide de l’angle. Plus l’angle est important, moins la lumière brille sur la surface.
-
-## <a name="span-idflatsurfacesspanspan-idflatsurfacesspanspan-idflatsurfacesspanflat-surfaces"></a><span id="Flat_surfaces"></span><span id="flat_surfaces"></span><span id="FLAT_SURFACES"></span>Surfaces plats
+## <a name="span-idculling_back_facesspanspan-idculling_back_facesspanspan-idculling_back_facesspanculling-back-faces"></a><span id="Culling_back_faces"></span><span id="culling_back_faces"></span><span id="CULLING_BACK_FACES"></span>Élimination des faces arrière
 
 
-Si vous créez un objet plat, définissez les normales de vertex pour qu’elles pointent perpendiculairement à la surface.
+Tout visage qui n’est pas une face avant est une face arrière. Direct3D n’affiche pas toujours les faces arrière ; les faces arrière sont dites en suspens. L’élimination des faces arrière signifie l’élimination des faces arrière du rendu. Vous pouvez modifier le mode d’élimination pour restituer les faces arrière si vous le souhaitez. Pour plus d’informations, consultez élimination de l' [État](/windows/desktop/direct3d9/culling-state) .
 
-La figure ci-après illustre une surface plate composée de deux triangles avec des normales de vertex :
+## <a name="span-idvertex_unit_normalsspanspan-idvertex_unit_normalsspanspan-idvertex_unit_normalsspanvertex-unit-normals"></a><span id="Vertex_unit_normals"></span><span id="vertex_unit_normals"></span><span id="VERTEX_UNIT_NORMALS"></span>Normales des unités de vertex
+
+
+Direct3D utilise l’unité de vertex Normals pour les effets d’ombrage, d’éclairage et de texture Gouraud.
+
+L’illustration suivante montre les normales des vertex :
+
+![normales aux vertex](images/vertnrml.png)
+
+Lors de l’application de l’ombrage Gouraud à un polygone, Direct3D utilise les normales des sommets pour calculer l’angle entre la source de lumière et l’aire. Il calcule les valeurs de couleur et d’intensité pour les vertex et les interpole pour chaque point sur toutes les surfaces de la primitive. Direct3D calcule la valeur d’intensité de la lumière en utilisant l’angle. Plus l’angle est grand, moins la lumière est éclairée sur l’aire.
+
+## <a name="span-idflat_surfacesspanspan-idflat_surfacesspanspan-idflat_surfacesspanflat-surfaces"></a><span id="Flat_surfaces"></span><span id="flat_surfaces"></span><span id="FLAT_SURFACES"></span>Surfaces plates
+
+
+Si vous créez un objet qui est plat, définissez les normales des sommets de façon à ce qu’elles pointent perpendiculairement à la surface.
+
+L’illustration suivante montre une surface plate composée de deux triangles avec des normales de vertex :
 
 ![surface plate composée de deux triangles avec des normales de vertex](images/flatvert.png)
 
-## <a name="span-idsmoothshadingonanon-flatobjectspanspan-idsmoothshadingonanon-flatobjectspanspan-idsmoothshadingonanon-flatobjectspansmooth-shading-on-a-non-flat-object"></a><span id="Smooth_shading_on_a_non-flat_object"></span><span id="smooth_shading_on_a_non-flat_object"></span><span id="SMOOTH_SHADING_ON_A_NON-FLAT_OBJECT"></span>Ombrage sur un objet non plat
+## <a name="span-idsmooth_shading_on_a_non-flat_objectspanspan-idsmooth_shading_on_a_non-flat_objectspanspan-idsmooth_shading_on_a_non-flat_objectspansmooth-shading-on-a-non-flat-object"></a><span id="Smooth_shading_on_a_non-flat_object"></span><span id="smooth_shading_on_a_non-flat_object"></span><span id="SMOOTH_SHADING_ON_A_NON-FLAT_OBJECT"></span>Ombrage lissé sur un objet non plat
 
 
-Au lieu d’être plat, votre objet se compose plutôt probablement de bandes de triangles qui ne sont pas coplanaires. Un moyen simple d’appliquer un ombrage lisse à l’ensemble des triangles d’une bande consiste à commencer par calculer le vecteur normal de surface pour chaque face polygonale à laquelle le vertex est associé. Il est possible de définir la normale de vertex pour qu’elle forme un angle égal avec chaque normale de surface. Toutefois, cette méthode risque de ne pas se révéler suffisamment efficace pour les primitives complexes.
+Au lieu d’un objet plat, il est plus probable que votre objet soit constitué de bandes triangulaires et que les triangles ne soient pas coplanés. Un moyen simple d’obtenir un ombrage lissé sur tous les triangles de la bande consiste à calculer d’abord le vecteur normal de surface pour chaque facette polygonale à laquelle le vertex est associé. La normale du vertex peut être définie pour créer un angle égal avec chaque surface normale. Toutefois, cette méthode peut ne pas être suffisamment efficace pour les primitives complexes.
 
-Cette méthode est illustrée par le diagramme ci-après, qui présente deux surfaces, S1 et S2, vues d’en haut par la tranche. Les vecteurs normaux des surfaces S1 et S2 sont affichés en bleu. Le vecteur normal de vertex est représenté en rouge. L’angle que forme le vecteur normal de vertex avec la normale de la surface S1 est identique à celui formé par la normale de vertex avec la normale de la surface S2. Lorsque ces deux surfaces sont éclairées et ombrées à l’aide d’un ombrage Gouraud, le résultat obtenu est une arête à ombrage et à arrondi lisses entre les deux surfaces.
+Cette méthode est illustrée par le diagramme suivant, qui illustre deux surfaces, S1 et S2 vu le bord ci-dessus. Les vecteurs normaux pour S1 et S2 sont affichés en bleu. Le vecteur de la normale du vertex est affiché en rouge. L’angle que le vecteur de la normale du vertex effectue avec la normale de surface de S1 est le même que l’angle entre la normale du vertex et la surface normale de S2. Lorsque ces deux surfaces sont éclairées et grisées à l’aide de l’ombrage Gouraud, le résultat est un bord lisse et correctement arrondi entre eux.
 
-La figure ci-après illustre deux surfaces (S1 et S2) avec leurs vecteurs normaux et le vecteur normal de vertex :
+L’illustration suivante montre deux surfaces (S1 et S2) et leurs vecteurs normaux et vecteur normal de vertex :
 
-![deux surfaces (s1 et s2) avec leurs vecteurs normaux et le vecteur normal de vertex](images/gvert.png)
+![deux surfaces (S1 et S2) et leurs vecteurs normaux et vecteur normal de vertex](images/gvert.png)
 
-Si la normale de vertex est orientée vers l’une des faces à laquelle elle est associée, il en résulte une augmentation ou une diminution de l’intensité lumineuse appliquée aux points de cette surface, selon l’angle qu’elle forme avec la source de lumière. Le diagramme ci-après en présente un exemple. Ces surfaces sont vues par la tranche. La normale de vertex penche vers S1, formant ainsi un angle avec la source de lumière plus petit que si la normale de vertex présentait des angles égaux avec les normales de surface.
+Si la normale du vertex se rapproche de l’une des visages avec laquelle elle est associée, elle provoque l’augmentation ou la diminution de l’intensité de la lumière pour les points de cette surface, en fonction de l’angle qu’elle effectue avec la source de lumière. Le diagramme suivant montre un exemple. Ces surfaces sont vues latéralement. La normale au vertex se rapproche de S1, provoquant ainsi un angle plus petit avec la source de lumière que si la normale du vertex avait des angles égaux avec les normales de surface.
 
-La figure ci-après illustre deux surfaces (S1 et S2) avec un vecteur normal de vertex orienté vers l’une des faces :
+L’illustration suivante montre deux surfaces (S1 et S2) avec un vecteur de la normale de vertex qui se rapproche d’une face :
 
-![deux surfaces (s1 et s2) avec un vecteur normal de vertex orienté vers l’une des faces](images/gvert2.png)
+![deux surfaces (S1 et S2) avec un vecteur de la normale au sommet qui se rapproche d’une face](images/gvert2.png)
 
-## <a name="span-idsharpedgesspanspan-idsharpedgesspanspan-idsharpedgesspansharp-edges"></a><span id="Sharp_edges"></span><span id="sharp_edges"></span><span id="SHARP_EDGES"></span>Bords tranchants
+## <a name="span-idsharp_edgesspanspan-idsharp_edgesspanspan-idsharp_edgesspansharp-edges"></a><span id="Sharp_edges"></span><span id="sharp_edges"></span><span id="SHARP_EDGES"></span>Bords nets
 
 
-Vous pouvez utiliser l’ombrage Gouraud pour afficher certains objets d’une scène 3D avec des arêtes vives. Pour ce faire, dupliquez les vecteurs normaux de vertex à chaque intersection des faces où une arête vive est requise.
+Vous pouvez utiliser l’ombrage Gouraud pour afficher des objets dans une scène 3D avec des bords tranchants. Pour ce faire, dupliquez les vecteurs normaux de vertex à n’importe quelle intersection de faces où un bord aigu est requis.
 
-La figure ci-après illustre des vecteurs normaux de vertex dupliqués au niveau des arêtes vives :
+L’illustration suivante montre les vecteurs normaux de vertex dupliqués à des arêtes aiguës :
 
-![vecteurs normaux de vertex dupliqués au niveau des arêtes vives](images/shade1.png)
+![vecteurs normaux de vertex dupliqués à bords aigus](images/shade1.png)
 
-Si vous utilisez les méthodes DrawPrimitive pour effectuer le rendu de votre scène, définissez l’objet doté d’arêtes vives sous la forme d’une liste de triangles, et non d’une bande de triangles. Lorsque vous définissez un objet sous la forme d’une bande de triangles, Direct3D le traite comme un seul polygone constitué de plusieurs faces triangulaires. L’ombrage Gouraud est appliqué à la fois à chacune des faces du polygone et entre les faces adjacentes.
+Si vous utilisez les méthodes DrawPrimitive pour restituer votre scène, définissez l’objet avec des bords nets comme une liste de triangles, plutôt qu’une bande triangulaire. Lorsque vous définissez un objet en tant que bande triangulaire, Direct3D le traite comme un seul Polygone composé de plusieurs visages triangulaires. L’ombrage Gouraud est appliqué à la fois sur chaque face du polygone et entre les faces adjacentes.
 
-Le résultat obtenu est un objet soumis à un ombrage lisse d’une face à l’autre. Étant donné qu’une liste de triangles est un polygone composé d’une série de faces triangulaires disjointes, Direct3D applique un ombrage Gouraud à chacune des faces du polygone. Toutefois, cet ombrage n’est pas appliqué d’une face à l’autre. Si au moins deux triangles d’une liste de triangles sont adjacents, une arête vive apparaît entre eux.
+Le résultat est un objet qui est progressivement ombré d’un visage à l’autres. Étant donné qu’une liste de triangles est un polygone composé d’une série de faces triangulaires disjointes, Direct3D applique l’ombrage Gouraud sur chaque face du polygone. Toutefois, il n’est pas appliqué d’un visage à un visage. Si deux ou plusieurs triangles d’une liste triangulaire sont adjacents, ils semblent avoir un bord aigu entre eux.
 
-Une autre solution consiste à opter pour un ombrage constant lors du rendu d’objets présentant des arêtes vives. Cette méthode se révèle la plus efficace d’un point de vue calcul, mais peut entraîner un rendu moins réaliste des objets de la scène que pour les objets soumis à un ombrage Gouraud.
+Une autre solution consiste à passer à l’ombrage plat lors du rendu d’objets avec des bords nets. Il s’agit de la méthode la plus efficace, mais cela peut entraîner la non-affichage des objets de la scène comme les objets qui sont grisés à l’Gouraud.
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
@@ -93,7 +93,3 @@ Une autre solution consiste à opter pour un ombrage constant lors du rendu d’
  
 
  
-
-
-
-

@@ -1,17 +1,17 @@
 ---
 ms.assetid: 16AD53CA-1252-456C-8567-2263D3EC95F3
 title: Utiliser l’inclinomètre
-description: Découvrez comment utiliser l’inclinomètre pour déterminer le tangage, le roulis et le lacet.
+description: Découvrez comment créer une application de base qui utilise l’appareil d’entrée inclinometer pour déterminer la tonalité, le roulement et le lacet.
 ms.date: 06/06/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 15ea49ea0e8e334158000248caf26f662ee5bd35
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: ebfbdda8f5f7bf308ee427ab79d8dd45969e3108
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66369646"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89054329"
 ---
 # <a name="use-the-inclinometer"></a>Utiliser l’inclinomètre
 
@@ -19,11 +19,11 @@ ms.locfileid: "66369646"
 **API importantes**
 
 -   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
--   [**Inclinomètre**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Inclinometer)
+-   [**Inclinometer**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Inclinometer)
 
 **Exemple**
 
--   Pour une implémentation plus complète, consultez l’[exemple d'inclinomètre](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Inclinometer).
+-   Pour une implémentation plus complète, consultez l' [exemple inclinometer](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Inclinometer).
 
 Découvrez comment utiliser l’inclinomètre pour déterminer le tangage, le roulis et le lacet.
 
@@ -31,7 +31,7 @@ Certaines jeux 3D requièrent un inclinomètre en tant que périphérique d’e
 
  ## <a name="prerequisites"></a>Prérequis
 
-Vous devez être familiarisé avec Extensible Application Markup Language (XAML), Microsoft Visual C#et les événements.
+Vous devez maîtriser le langage XAML (Extensible Application Markup Language), Microsoft Visual C# et les événements.
 
 L’appareil ou émulateur que vous utilisez doit prendre en charge un inclinomètre.
 
@@ -41,7 +41,7 @@ Cette section se divise en deux sous-sections. La première sous-section vous p
 
 ###  <a name="instructions"></a>Instructions
 
--   Créez un projet en choisissant une **Application vide (Windows universel)** dans les modèles de projet **Visual C#** .
+-   Créez un projet en choisissant une **Application vide (Windows universel)** dans les modèles de projet **Visual C#**.
 
 -   Ouvrez le fichier MainPage.xaml.cs de votre projet et remplacez le code existant par ce qui suit.
 
@@ -136,11 +136,11 @@ Vous devez remplacer le nom de l’espace de noms dans l’extrait de code préc
 
 Vous devez remplacer la première partie du nom de la classe dans l’extrait de code précédent par l’espace de noms de votre application. Par exemple, si vous avez créé un projet nommé **InclinometerCS**, vous devez remplacer `x:Class="App1.MainPage"` par `x:Class="InclinometerCS.MainPage"`. Vous devez aussi remplacer `xmlns:local="using:App1"` par `xmlns:local="using:InclinometerCS"`.
 
--   Appuyez sur F5 ou sélectionnez **Déboguer** > **Démarrer le débogage** pour générer, déployer et exécuter l’application.
+-   Appuyez sur F5 ou sélectionnez **Déboguer**  >  **Démarrer le débogage** pour générer, déployer et exécuter l’application.
 
 Une fois l’application en cours d’exécution, vous pouvez modifier les valeurs de l’inclinomètre en déplaçant l’appareil ou à l’aide des outils de l’émulateur.
 
--   Pour arrêter l’application, retournez dans Visual Studio et appuyez sur Maj+F5, ou sélectionnez **Déboguer** > **Arrêter le débogage**.
+-   Arrêtez l’application en retournant dans Visual Studio et en appuyant sur Maj + F5 ou sélectionnez **Déboguer**  >  **arrêter le débogage** pour arrêter l’application.
 
 ###  <a name="explanation"></a>Explication
 

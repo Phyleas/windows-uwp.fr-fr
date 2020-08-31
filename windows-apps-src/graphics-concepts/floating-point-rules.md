@@ -1,161 +1,157 @@
 ---
 title: Règles en matière de virgule flottante
-description: Direct3D prend en charge plusieurs représentations à virgule flottante. Tous les calculs à virgule flottante fonctionnent sous un sous-ensemble défini de règles de représentation des nombres à virgule flottante 32 bits simple précision conformément à l'IEEE 754.
+description: Direct3D prend en charge plusieurs représentations à virgule flottante. Tous les calculs à virgule flottante fonctionnent sous un sous-ensemble défini des règles à virgule flottante simple précision IEEE 754 32 bits.
 ms.assetid: 3B0C95E2-1025-4F70-BF14-EBFF2BB53AFF
 keywords:
 - Règles en matière de virgule flottante
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a29fbe49e45b819ddf4ffc3172445996d3622360
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 7832d4ad344e425bc479d52e1516ae0c63dff624
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370627"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168063"
 ---
-# <a name="span-iddirect3dconceptsfloating-pointrulesspanfloating-point-rules"></a><span id="direct3dconcepts.floating-point_rules"></span>Règles à virgule flottante
+# <a name="span-iddirect3dconceptsfloating-point_rulesspanfloating-point-rules"></a><span id="direct3dconcepts.floating-point_rules"></span>Règles en matière de virgule flottante
 
 
-Direct3D prend en charge plusieurs représentations à virgule flottante. Tous les calculs à virgule flottante fonctionnent sous un sous-ensemble défini de règles de représentation des nombres à virgule flottante 32 bits simple précision conformément à l'IEEE 754.
+Direct3D prend en charge plusieurs représentations à virgule flottante. Tous les calculs à virgule flottante fonctionnent sous un sous-ensemble défini des règles à virgule flottante simple précision IEEE 754 32 bits.
 
-## <a name="span-idalpha32bitspanspan-idalpha32bitspan32-bit-floating-point-rules"></a><span id="alpha_32_bit"></span><span id="ALPHA_32_BIT"></span>règles à virgule flottante 32 bits
+## <a name="span-idalpha_32_bitspanspan-idalpha_32_bitspan32-bit-floating-point-rules"></a><span id="alpha_32_bit"></span><span id="ALPHA_32_BIT"></span>règles à virgule flottante 32 bits
 
 
-Il existe deux ensembles de règles : les règles qui sont conformes à la norme IEEE-754, et celles qui s’en écartent.
+Il existe deux ensembles de règles : ceux qui se conforment à IEEE-754 et ceux qui s’écartent de la norme.
 
-### <a name="span-idalpha754rulesspanspan-idalpha754rulesspanspan-idalpha754rulesspanhonored-ieee-754-rules"></a><span id="alpha_754_Rules"></span><span id="alpha_754_rules"></span><span id="ALPHA_754_RULES"></span>Règles IEEE-754 honorés
+### <a name="span-idalpha_754_rulesspanspan-idalpha_754_rulesspanspan-idalpha_754_rulesspanhonored-ieee-754-rules"></a><span id="alpha_754_Rules"></span><span id="alpha_754_rules"></span><span id="ALPHA_754_RULES"></span>Règles IEEE-754 honorées
 
-Certaines de ces règles constituent une simple option dans laquelle IEEE-754 propose des choix.
+Certaines de ces règles sont une option unique où IEEE-754 offre des choix.
 
--   La division par 0 produit +/- INF (infini), sauf 0/0 qui donne une valeur NaN (n’est pas un nombre).
--   Le logarithme de (+/-) 0 produit -INF.  
+-   La division par 0 produit +/-INF, à l’exception de 0/0, ce qui donne NaN.
+-   le journal de (+/-) 0 produit-INF.  
 
-    Le logarithme d’une valeur négative (différente de -0) produit NaN.
--   La racine carrée réciproque (rsq) ou la racine carrée (sqrt) d’une valeur négative produit NaN.  
+    le journal d’une valeur négative (autre que-0) produit une valeur NaN.
+-   La racine carrée réciproque (rsq) ou la racine carrée (sqrt) d’un nombre négatif produit une valeur NaN.  
 
-    La seule exception est -0 ; sqrt(-0) produit -0, et rsq(-0) donne -INF.
--   INF - INF = NaN
--   (+/-)INF / (+/-)INF = NaN
--   (+/-) INF \* 0 = NaN
--   NaN (toute opération) toute valeur = NaN
--   Lorsque l’une des opérandes ou les deux correspondent à NaN, les comparaisons EQ (égal à), GT (supérieur à), GE (supérieur ou égal à), LT (inférieur à) et LE (inférieur ou égal à) renvoient la valeur **FALSE**.
--   Les comparaisons ignorent le signe de la valeur 0 (donc, +0 est égal à -0).
--   Lorsque l’une des opérandes ou les deux correspondent à NaN, la comparaison NE (différent de) renvoie la valeur **TRUE**.
--   Les comparaisons de toute valeur différente de NaN avec +/- INF renvoient le résultat correct.
+    L’exception est-0 ; sqrt (-0) génère-0, et rsq (-0) produit-INF.
+-   INF-INF = NaN
+-   (+/-) INF/(+/-) INF = NaN
+-   (+/-) INF \* 0 = Nan
+-   NaN (any OP) any-value = NaN
+-   Les comparaisons EQ, GT, GE, LT et LE, lorsque l’un ou l’autre ou les deux opérandes sont NaN, retourne **false**.
+-   Les comparaisons ignorent le signe 0 (par conséquent + 0 est égal à-0).
+-   La comparaison ne, lorsque l’un des opérandes ou les deux, est NaN retourne la **valeur true**.
+-   Les comparaisons de toute valeur non NaN par rapport à +/-INF renvoient le résultat correct.
 
-### <a name="span-idalpha754deviationsspanspan-idalpha754deviationsspanspan-idalpha754deviationsspandeviations-or-additional-requirements-from-ieee-754-rules"></a><span id="alpha_754_Deviations"></span><span id="alpha_754_deviations"></span><span id="ALPHA_754_DEVIATIONS"></span>Les écarts ou des exigences supplémentaires à partir de règles de la norme IEEE-754
+### <a name="span-idalpha_754_deviationsspanspan-idalpha_754_deviationsspanspan-idalpha_754_deviationsspandeviations-or-additional-requirements-from-ieee-754-rules"></a><span id="alpha_754_Deviations"></span><span id="alpha_754_deviations"></span><span id="ALPHA_754_DEVIATIONS"></span>Écarts ou exigences supplémentaires des règles IEEE-754
 
--   IEEE-754 exige que les opérations en virgule flottante produisent un résultat qui constitue la valeur représentable la plus proche d’un résultat infiniment précis, connu sous le terme d’arrondi au chiffre pair le plus proche.
+-   IEEE-754 nécessite des opérations à virgule flottante pour produire un résultat qui est la valeur représentable la plus proche d’un résultat à précision infinie, connu sous le nom d’arrondi à le plus proche, même.
 
-    Direct3D 11 et définir jusqu'à la même exigence en tant que norme IEEE-754 : les opérations à virgule flottante 32 bits produisent un résultat qui est au sein de 0,5 (ULP) unité-dernière place du résultat précis à l’infini. Cela signifie par exemple que le matériel est autorisé à tronquer les résultats à 32 bits au lieu d’effectuer un arrondi au chiffre pair le plus proche, car cette opération entraînerait une erreur de 0,5 ULP au plus. Cette règle s’applique uniquement aux additions, aux soustractions et aux multiplications.
+    Direct3D 11 et up définissent la même exigence que IEEE-754 : les opérations à virgule flottante 32 bits produisent un résultat qui se trouve dans 0,5 unité-Last-place (ULP) du résultat infiniment précis. Cela signifie que, par exemple, le matériel est autorisé à tronquer les résultats à 32 bits plutôt qu’à effectuer un arrondi vers le plus proche, même si cela entraînerait une erreur d’au plus 0,5 ULP. Cette règle s’applique uniquement à l’addition, la soustraction et la multiplication.
 
-    Les versions antérieures de Direct3D définissent un impératif plus souple que IEEE-754 : les opérations à virgule flottante 32 bits produisent un résultat qui se trouve dans une unité last-sur place (1 ULP) du résultat précis à l’infini. Cela signifie par exemple que le matériel est autorisé à tronquer les résultats à 32 bits au lieu d’effectuer un arrondi au chiffre pair le plus proche, car cette opération entraînerait une erreur de 1 ULP au plus.
+    Les versions antérieures de Direct3D définissent une exigence plus faible que IEEE-754 : les opérations à virgule flottante 32 bits produisent un résultat qui se trouve dans une unité-Last-place (1 ULP) du résultat à précision infinie. Cela signifie que, par exemple, le matériel est autorisé à tronquer les résultats à 32 bits plutôt qu’à effectuer un arrondi vers le plus proche, même si cela entraînerait une erreur d’au plus un ULP.
 
--   Il n’existe aucune prise en charge pour les exceptions de virgule flottante, les bits d’état ou les interruptions.
--   Les nombres dénormalisés sont remplacés par une valeur zéro avec conservation du signe sur l’entrée et la sortie de toute opération mathématique en virgule flottante. Il existe des exceptions pour des opérations d’E/S ou de déplacement de données qui ne manipulent pas les données.
--   Les états qui contiennent des valeurs en virgule flottante, telles que des valeurs Viewport MinDepth/MaxDepth ou BorderColor, peuvent être fournis sous forme de valeurs dénormalisées et être ou non vidés avant que le matériel ne les utilise.
--   Les opérations min ou max vident les nombres dénormalisés pour la comparaison, mais le résultat peut ou non faire l’objet d’un vidage des nombres dénormalisés.
--   L’entrée d’une valeur NaN dans une opération produit toujours une valeur NaN en sortie. Toutefois, il n’est pas nécessaire que la configuration binaire exacte de la valeur NaN reste identique (sauf si l’opération est une instruction de déplacement brute, ce qui ne modifie pas les données).
--   Les opérations min ou max dans lesquelles une seule opérande est une valeur NaN renvoient l’autre opérande comme résultat (contrairement aux règles de comparaison que nous avons examinées plus haut). Ceci est une règle énoncée par la norme IEEE 754R.
+-   Il n’existe aucune prise en charge des exceptions à virgule flottante, des bits d’État ou des interruptions.
+-   Les dénormes sont vidées du zéro protégé contre la signature lors de l’entrée et de la sortie d’une opération mathématique à virgule flottante. Des exceptions sont faites pour toute opération de déplacement de données ou d’e/s qui ne manipule pas les données.
+-   Les États qui contiennent des valeurs à virgule flottante, telles que les valeurs Viewport MinDepth/MaxDepth ou BorderColor, peuvent être fournis en tant que valeurs dénormales et peuvent ou non être vidés avant que le matériel ne les utilise.
+-   Les opérations min ou Max vident les dénormes pour la comparaison, mais le résultat peut ou non être vidé de la norme.
+-   L’entrée NaN d’une opération produit toujours NaN à la sortie. Toutefois, le modèle binaire exact de la valeur NaN n’est pas requis pour rester le même (sauf si l’opération est une instruction Move brute, qui ne modifie pas les données).
+-   Les opérations min ou Max pour lesquelles un seul opérande est NaN retournent l’autre opérande en tant que résultat (contrairement aux règles de comparaison que nous avons consultées précédemment). Il s’agit d’une règle IEEE 754R.
 
-    La spécification IEEE-754R relative aux opérations min et max en virgule flottante stipule que si l’une des entrées de l’opération min ou max est une valeur NaN silencieuse (QNaN), le résultat de l’opération correspond à l’autre paramètre. Exemple :
+    La spécification IEEE-754R pour les opérations min et Max à virgule flottante indique que si l’une des entrées de min ou Max est une valeur QNaN silencieuse, le résultat de l’opération est l’autre paramètre. Par exemple :
 
     ```ManagedCPlusPlus
     min(x,QNaN) == min(QNaN,x) == x (same for max)
     ```
 
-    Une révision apportée à la spécification IEEE-754R stipule désormais un autre comportement pour les opérations min et max lorsque l’une des entrées est une valeur NaN « signalée » (SNaN) opposée à une valeur QNaN :
+    Une révision de la spécification IEEE-754R a adopté un comportement différent pour min et Max lorsqu’une entrée est une valeur SNaN « signaling » et une valeur QNaN :
 
     ```ManagedCPlusPlus
     min(x,SNaN) == min(SNaN,x) == QNaN (same for max)
      
     ```
 
-    En règle générale, Direct3D suit les normes pour les opérations arithmétiques : IEEE-754 et IEEE-754R. Toutefois, dans ce cas précis, il existe une différence.
+    En règle générale, Direct3D suit les normes pour les opérations arithmétiques : IEEE-754 et IEEE-754R. Mais dans ce cas, nous avons un écart.
 
-    Les règles arithmétiques dans Direct3D 10 et les versions ultérieures ne font pas de distinction entre les valeurs NaN silencieuses et signalées (QNaN/SNaN). Toutes les valeurs NaN sont gérées de la même façon. Dans le cas des opérations min et max, le comportement Direct3D vis-à-vis de toute valeur NaN est identique au traitement des valeurs QNaN défini dans la spécification IEEE-754R. (À titre de complément d’information, si les deux entrées correspondent à une valeur NaN, n’importe quelle valeur NaN est renvoyée.)
+    Les règles arithmétiques dans Direct3D 10 et les versions ultérieures ne font aucune distinction entre les valeurs NaN et les valeurs NaN de signalisation (QNaN contre SNaN). Toutes les valeurs NaN sont gérées de la même façon. Dans le cas de min et Max, le comportement Direct3D pour toute valeur NaN est semblable à la façon dont QNaN est géré dans la définition IEEE-754R. (Pour l’exhaustivité : si les deux entrées sont NaN, toute valeur NaN est retournée.)
 
--   Une autre règle IEEE 754R stipule que min(-0,+0) == min(+0,-0) == -0, et que max(-0,+0) == max(+0,-0) == +0, ce qui conserve le signe, par contraste avec les règles de comparaison relatives au zéro signé (comme nous l’avons vu précédemment). Direct3D recommande le comportement IEEE 754R dans ce cas précis, mais ne l’applique pas ; le résultat de la comparaison de valeurs 0 est autorisé à dépendre de l’ordre des paramètres, à l’aide d’une comparaison qui ignore les signes.
--   x\*1.0f entraîne toujours x (sauf denorm vidées).
--   x/1.0f produit toujours x (à l’exception du vidage des nombres dénormalisés).
--   x +/- 0.0f produit toujours x (à l’exception du vidage des nombres dénormalisés). Mais -0 + 0 = +0.
--   Les opérations fusionnées (telles que mad, dp3) produisent des résultats aussi précis que le pire ordre séquentiel d’évaluation possible du développement non fusionné de l’opération. La définition du pire ordre possible, pour les besoins de tolérance, n’est pas une définition fixe pour une opération fusionne donnée ; elle dépend des valeurs spécifiques des entrées. Une tolérance de 1 ULP est autorisée pour chacune des étapes du développement non fusionné (dans le cas des instructions appelées par Direct3D avec une tolérance plus souple que 1 ULP, cette tolérance plus souple est autorisée).
--   Les opérations fusionnées respectent les mêmes règles en matière de valeurs NaN que les opérations non fusionnées.
--   Les opérations sqrt et rcp présentent une tolérance de 1 ULP. Les instructions de réciproque de nuanceur et de racine carrée réciproque, [**rcp**](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/hh447205(v=vs.85)) et [**rsq**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/rsq--sm4---asm-), présentent leur propre exigence distincte assouplie en matière de précision.
--   Les multiplications et les divisions opèrent chacune au niveau de précision des nombres en virgule flottante 32 bits (niveau de précision de 0,5 ULP pour les multiplication, et de 1,0 ULP pour la réciproque). Si x/y est implémenté directement, les résultats doivent présenter une précision supérieure ou égale à celle d’une méthode à deux étapes.
+-   Une autre règle IEEE 754R est que min (-0, + 0) = = min (+ 0,-0) = =-0 et Max (-0, + 0) = = max (+ 0,-0) = = + 0, qui honore le signe, contrairement aux règles de comparaison pour le zéro signé (comme nous l’avons vu précédemment). Direct3D recommande le comportement IEEE 754R ici, mais ne l’applique pas. Il est possible que le résultat de la comparaison des zéros dépende de l’ordre des paramètres, à l’aide d’une comparaison qui ignore les signes.
+-   x \* 1.0 f aboutit toujours à x (sauf denorme Flush).
+-   x/1.0 a toujours pour résultat x (à l’exception de la dénorme Flush).
+-   x +/-0.0 f produit toujours x (à l’exception de la dénorme Flush). Mais-0 + 0 = + 0.
+-   Les opérations fusionnées (par exemple, Mad, DP3) produisent des résultats qui ne sont pas moins précis que le plus mauvais ordonnancement en série de l’évaluation de l’expansion déroutée de l’opération. La définition du pire classement possible, dans le but de la tolérance, n’est pas une définition fixe pour une opération fusionnée donnée. elle dépend des valeurs particulières des entrées. Les étapes individuelles de l’expansion sans fusible sont chacune autorisées 1 tolérance ULP (ou pour toutes les instructions Direct3D appelle avec une tolérance plus Lax que 1 ULP, la tolérance la plus LAX est autorisée).
+-   Les opérations fusionnées adhèrent aux mêmes règles NaN que les opérations non fusionnées.
+-   sqrt et RCP ont 1 tolérance ULP. Les instructions de la racine carrée de nuanceur réciproque et réciproque, [**RCP**](/previous-versions/windows/desktop/legacy/hh447205(v=vs.85)) et [**rsq**](/windows/desktop/direct3dhlsl/rsq--sm4---asm-), ont leur propre exigence de précision souple distincte.
+-   La multiplication et la Division de chacune fonctionnent au niveau de précision à virgule flottante 32 bits (précision à 0,5 ULP pour multiplier, 1,0 ULP pour réciproque). Si x/y est implémenté directement, les résultats doivent être d’une précision supérieure ou égale à celle d’une méthode en deux étapes.
 
-## <a name="span-iddoubleprec64bitspanspan-iddoubleprec64bitspan64-bit-double-precision-floating-point-rules"></a><span id="double_prec_64_bit"></span><span id="DOUBLE_PREC_64_BIT"></span>64 bits (double précision) flottante des règles de point
-
-
-Les pilotes matériels et d’affichage prennent en charge en option les nombres en virgule flottante double précision. Pour indiquer la prise en charge, lorsque vous appelez [ **ID3D11Device::CheckFeatureSupport** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkfeaturesupport) avec [ **D3D11\_fonctionnalité\_DOUBLES** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ne-d3d11-d3d11_feature), les jeux de pilote **DoublePrecisionFloatShaderOps** de [ **D3D11\_fonctionnalité\_données\_DOUBLES** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_feature_data_doubles) sur TRUE. Le pilote et le matériel doivent alors prendre en charge toutes les instructions en virgule flottante double précision.
-
-Les instructions double précision respectent les exigences de comportement stipulées par la norme IEEE 754R.
-
-Les données double précision requièrent la prise en charge de la génération de valeurs dénormalisées (aucun comportement de remplacement de ces valeurs par zéro). De même, les instructions ne lisent pas les données dénormalisées sous la forme d’un zéro signé, mais respectent la valeur dénormalisée.
-
-## <a name="span-idalpha16bitspanspan-idalpha16bitspan16-bit-floating-point-rules"></a><span id="alpha_16_bit"></span><span id="ALPHA_16_BIT"></span>règles à virgule flottante 16 bits
+## <a name="span-iddouble_prec_64_bitspanspan-iddouble_prec_64_bitspan64-bit-double-precision-floating-point-rules"></a><span id="double_prec_64_bit"></span><span id="DOUBLE_PREC_64_BIT"></span>règles à virgule flottante 64 bits (double précision)
 
 
-Direct3D prend également en charge les représentations de nombres en virgule flottante 16 bits.
+Le matériel et les pilotes d’affichage prennent éventuellement en charge la virgule flottante double précision. Pour indiquer la prise en charge, quand vous appelez [**ID3D11Device :: CheckFeatureSupport**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkfeaturesupport) avec [**d3d11 \_ Feature \_ double**](/windows/desktop/api/d3d11/ne-d3d11-d3d11_feature), le pilote affecte la valeur true à **DoublePrecisionFloatShaderOps** de données de la [** \_ fonctionnalité \_ \_ d3d11**](/windows/desktop/api/d3d11/ns-d3d11-d3d11_feature_data_doubles) . Le pilote et le matériel doivent ensuite prendre en charge toutes les instructions à virgule flottante double précision.
 
-Format :
+Les instructions à double précision suivent les spécifications de comportement IEEE 754R.
 
--   1 bit de signe (s) à la position binaire du bit de poids fort (MSB)
--   5 bits d’exposant biaisé (e)
--   10 bits de fraction (f), avec un bit masqué supplémentaire
+La prise en charge de la génération de valeurs dénormalisées est requise pour les données à double précision (aucun comportement de vidage à zéro). De même, les instructions ne lisent pas les données dénormalisées comme un zéro signé, elles respectent la valeur de la norme.
 
-Une valeur float16 (v) respecte les règles suivantes :
-
--   Si e == 31 et f != 0, alors v est égal à NaN, quel que soit s.
--   if e == 31 and f == 0, then v = (-1)s\*infinity (signed infinity)
--   Si e est entre 0 et 31, v = (-1) s\*2(e-15)\*(1.f ne le)
--   Si e == 0 et f ! = 0, v = (-1) s\*2(e-14)\*(0.f) (nombres dénormalisés)
--   if e == 0 and f == 0, then v = (-1)s\*0 (signed zero)
-
-Les règles en matière de virgule flottante 32 bits s’appliquent également aux nombres en virgule flottante 16 bits, et sont ajustées pour la disposition binaire précédemment décrite. Les exceptions à cette règle sont les suivantes :
-
--   Précision : Structure d’opérations sur les nombres à virgule flottante 16 bits produire un résultat qui est le plus proche de la valeur représentable en un résultat précis à l’infini (arrondi à la plus proche, par la norme IEEE-754, appliquée aux valeurs de 16 bits). Les règles en matière de virgule flottante 32 bits respectent une tolérance de 1 ULP, et celles en matière de virgule flottante 16 bits appliquent une tolérance de 0,5 ULP pour les opérations non fusionnées et de 0,6 ULP pour les opérations fusionnées.
--   Les nombres en virgule flottante 16 bits conservent les valeurs dénormalisées.
-
-## <a name="span-idalpha11bitspanspan-idalpha11bitspan11-bit-and-10-bit-floating-point-rules"></a><span id="alpha_11_bit"></span><span id="ALPHA_11_BIT"></span>règles à virgule flottante 11 et 10 bits
+## <a name="span-idalpha_16_bitspanspan-idalpha_16_bitspan16-bit-floating-point-rules"></a><span id="alpha_16_bit"></span><span id="ALPHA_16_BIT"></span>règles à virgule flottante 16 bits
 
 
-Direct3D prend également en charge les formats de virgule flottante 11 et 10 bits.
+Direct3D prend également en charge les représentations 16 bits des nombres à virgule flottante.
 
-Format :
+Format:
+
+-   1 bit (s) de signe dans la position de bit du MSB
+-   5 bits d’exposant biaisé (e)
+-   10 bits de fraction (f), avec un bit masqué supplémentaire
+
+Une valeur float16 (v) suit les règles suivantes :
+
+-   Si e = = 31 et f ! = 0, alors v est NaN indépendamment de s
+-   Si e = = 31 et f = = 0, v = (-1) s \* infini (infini signé)
+-   Si e est compris entre 0 et 31, v = (-1) s \* 2 (e-15) \* (1. f)
+-   Si e = = 0 et f ! = 0, alors v = (-1) s \* 2 (e-14) \* (0. f) (nombres dénormalisés)
+-   Si e = = 0 et f = = 0, v = (-1) s \* 0 (zéro signé)
+
+les règles à virgule flottante 32 bits sont également conservées pour les nombres à virgule flottante 16 bits, ajustées pour la disposition en bits décrite précédemment. Les exceptions à cette règle sont les suivantes :
+
+-   Précision : les opérations non ancrées sur les nombres à virgule flottante 16 bits produisent un résultat qui est la valeur représentable la plus proche d’un résultat à précision infinie (arrondi au plus proche pair, par IEEE-754, appliqué aux valeurs 16 bits). les règles à virgule flottante 32 bits adhèrent à 1 tolérance ULP, les règles à virgule flottante de 16 bits adhèrent à 0,5 ULP pour les opérations non fusionnées et 0,6 ULP pour les opérations fusionnées.
+-   les nombres à virgule flottante 16 bits préservent les dénormes.
+
+## <a name="span-idalpha_11_bitspanspan-idalpha_11_bitspan11-bit-and-10-bit-floating-point-rules"></a><span id="alpha_11_bit"></span><span id="ALPHA_11_BIT"></span>règles à virgule flottante 11 bits et 10 bits
+
+
+Direct3D prend également en charge les formats à virgule flottante 11 bits et 10 bits.
+
+Format:
 
 -   Aucun bit de signe
--   5 bits d’exposant biaisé (e)
--   6 bits de fraction (f) pour un format 11 bits, 5 bits de fraction (f) pour un format 10 bits, avec un bit masqué supplémentaire dans les deux cas
+-   5 bits d’exposant biaisé (e)
+-   6 bits de fraction (f) pour un format 11 bits, 5 bits de fraction (f) pour un format 10 bits, avec un bit masqué supplémentaire dans les deux cas.
 
 Une valeur float11/float10 (v) respecte les règles suivantes :
 
--   Si e == 31 et f != 0, alors v est égal à NaN.
--   Si e == 31 et f == 0, alors v = +infini.
--   Si e est entre 0 et 31, v puis = 2(e-15)\*(1.f ne le)
--   Si e == 0 et f ! = 0, v = \*2(e-14)\*(0.f) (nombres dénormalisés)
--   Si e == 0 et f == 0, alors v = 0 (zéro).
+-   Si e = = 31 et f ! = 0, alors v est NaN
+-   Si e = = 31 et f = = 0, alors v = + Infinity
+-   Si e est compris entre 0 et 31, v = 2 (e-15) \* (1. f)
+-   Si e = = 0 et f ! = 0, alors v = \* 2 (e-14) \* (0. f) (nombres dénormalisés)
+-   Si e = = 0 et f = = 0, alors v = 0 (zéro)
 
-Les règles en matière de virgule flottante 32 bits s’appliquent également aux nombres en virgule flottante 11 et 10 bits, et sont ajustées pour la disposition binaire précédemment décrite. Les exceptions sont les suivantes :
+les règles à virgule flottante 32 bits contiennent également des nombres à virgule flottante de 11 et 10 bits, ajustés pour la disposition en bits décrite précédemment. Voici certaines exceptions :
 
--   Précision : 0,5 ULP respectent les règles à virgule flottante 32 bits.
--   Les nombres en virgule flottante 10/11 bits conservent les valeurs dénormalisées.
--   Toute opération qui produirait un résultat inférieur à zéro est limitée à zéro.
+-   Précision : les règles à virgule flottante 32 bits adhèrent à 0,5 ULP.
+-   les nombres à virgule flottante 10/11 bits préservent les dénormes.
+-   Toute opération qui aboutirait à un nombre inférieur à zéro est ancrée à zéro.
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
 [Annexes](appendix.md)
 
-[Ressources](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources)
+[Ressources](/windows/desktop/direct3d11/overviews-direct3d-11-resources)
 
-[Textures](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-textures)
-
- 
+[Textures](/windows/desktop/direct3d11/overviews-direct3d-11-resources-textures)
 
  
 
-
-
-
+ 

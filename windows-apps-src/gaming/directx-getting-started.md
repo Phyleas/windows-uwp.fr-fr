@@ -1,27 +1,27 @@
 ---
 title: Prise en main de DirectX
-description: Prise en main avec la programmation de DirectX
+description: Consultez les articles sur la prise en main du développement de jeux UWP qui utilisent l’infrastructure d’interface utilisateur DirectX Core.
 ms.assetid: 7e7b95ef-faf9-48e1-8b53-a143be3b08e9
 ms.date: 06/23/2017
 ms.topic: article
-keywords: windows 10, uwp, directx
+keywords: Windows 10, UWP, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: 127d600b840c21eb78c3f6b98a100b7639ea25bc
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 75c4cfd74dd6eaa416e00171b742e02968cb3b91
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57660224"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89054509"
 ---
-# <a name="directx-getting-started"></a>DirectX : Prise en main
+# <a name="directx-getting-started"></a>DirectX : prise en main
 
-Cette section fournit des informations pour vous aider à démarrer au niveau du développement de jeux UWP utilisant DirectX. 
+Cette section fournit des informations pour vous aider à commencer à développer des jeux UWP à l’aide de DirectX. 
 
-La rubrique Objet d’application et DirectX explique comment utiliser l’infrastructure de l’interface utilisateur avec DirectX. En effet, les jeux DirectX s’exécutent à un niveau inférieur de la pile Windows Runtime, par conséquent ils doivent interopérer avec l’infrastructure d’interface utilisateur d’une manière plus basique : en accédant directement à l’objet d'application et en interopérant avec lui.
+L’objet d’application et la rubrique DirectX expliquent comment utiliser l’infrastructure d’interface utilisateur de base avec DirectX. Étant donné que les jeux DirectX s’exécutent à un niveau inférieur dans la pile de Windows Runtime, ils doivent interagir de façon plus fondamentale avec l’infrastructure d’interface utilisateur : en accédant et en interagissant directement avec l’objet d’application.
 
-La rubrique Modèles de projet et outils pour les jeux explique comment créer un projet de jeu DirectX à partir d’un modèle. Cette rubrique présente les outils d'édition et de diagnostic comme l’Éditeur de modèles, le Concepteur de nuanceurs et l'analyse des frames graphiques qui peuvent vous aider à créer, à prévisualiser et à résoudre les problèmes graphiques sur DirectX.
+La rubrique modèles de projet et outils pour les jeux explique comment créer un projet de jeu DirectX à partir d’un modèle. Il présente les outils d’édition et de diagnostic tels que l’éditeur de modèle, le concepteur de nuanceur et les analyse des frames graphiques qui peuvent vous aider à créer, afficher un aperçu et résoudre les problèmes liés à DirectX Graphics.
 
-La rubrique Lancement et reprise des applications explique comment vous pouvez définir l’expérience d’activation d’un jeu UWP DirectX, comment enregistrer les données système d’état et d'application importantes et comment restaurer les données d’application importantes à la reprise du jeu.
+La rubrique lancement et reprise des applications explique comment vous pouvez définir l’expérience d’activation d’un jeu DirectX UWP, comment enregistrer des données importantes sur l’état du système et les applications, et comment restaurer des données d’application importantes lors de la reprise de votre jeu.
 
 <table>
 <colgroup>
@@ -36,16 +36,16 @@ La rubrique Lancement et reprise des applications explique comment vous pouvez d
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="about-the-uwp-user-interface-and-directx.md">L’objet d’application et DirectX</a></p></td>
-<td align="left"><p>Accès et interaction directe avec l’objet application.</p></td>
+<td align="left"><p><a href="about-the-uwp-user-interface-and-directx.md">Objet application et DirectX</a></p></td>
+<td align="left"><p>Accédez et interagissez avec l’objet d’application directement.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="prepare-your-dev-environment-for-windows-store-directx-game-development.md">Modèles de projet et des outils pour les jeux</a></p></td>
-<td align="left"><p>Préparer votre environnement pour le développement de jeux UWP DirectX.</p></td>
+<td align="left"><p><a href="prepare-your-dev-environment-for-windows-store-directx-game-development.md">Modèles de projet et outils pour les jeux</a></p></td>
+<td align="left"><p>Préparez votre environnement de développement pour le développement de jeux DirectX UWP.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="launching-and-resuming-apps-directx-and-cpp.md">Lancement et la reprise des applications</a></p></td>
-<td align="left"><p>Lancer, interrompre et reprendre votre jeu DirectX UWP.</p></td>
+<td align="left"><p><a href="launching-and-resuming-apps-directx-and-cpp.md">Lancement et reprise des applications</a></p></td>
+<td align="left"><p>Lancez, suspendez et reprenez votre jeu DirectX UWP.</p></td>
 </tr>
 </tbody>
 </table>

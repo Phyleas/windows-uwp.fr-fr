@@ -1,99 +1,99 @@
 ---
-title: Animations basées sur une relation
-description: Créer un mouvement basé sur une propriété sur un autre objet.
+title: Animations basées sur les relations
+description: Découvrez comment utiliser ExpressionAnimations pour créer des animations basées sur les relations lorsque Motion dépend d’une propriété d’un autre objet.
 ms.date: 10/10/2017
 ms.topic: article
-keywords: windows 10, uwp, animation
+keywords: Windows 10, UWP, animation
 ms.localizationpriority: medium
-ms.openlocfilehash: bfed00cf4866d79d4ac3097026cc09c70f9327cd
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 91e3ae5b23b7429633053f4d4d876f02127d26e3
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318166"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89054419"
 ---
-# <a name="relation-based-animations"></a>Animations basées sur une relation
+# <a name="relation-based-animations"></a>Animations basées sur les relations
 
-Cet article fournit une vue d’ensemble sur la réalisation d'animations basées sur une relation à l’aide de Composition ExpressionAnimations.
+Cet article fournit une brève présentation de la création d’animations basées sur les relations à l’aide de la composition ExpressionAnimations.
 
-## <a name="dynamic-relation-based-experiences"></a>Expériences dynamiques basées sur une relation
+## <a name="dynamic-relation-based-experiences"></a>Expériences dynamiques basées sur les relations
 
-Lorsque vous créez des expériences de mouvement dans une application, il arrive parfois que le mouvement ne soit pas basé sur le temps, mais plutôt dépendant d'une propriété sur un autre objet. Les KeyFrameAnimations ne parviennent pas à exprimer très facilement ces types d’expériences de mouvement. Dans ces cas spécifiques, le mouvement n’a plus besoin d’être discret et prédéfini. Au lieu de cela, le mouvement peut s’adapter dynamiquement en fonction de sa relation avec d’autres propriétés de l’objet. Par exemple, vous pouvez animer l’opacité d’un objet en fonction de sa position horizontale. Autres exemples d'expériences de mouvement : les en-têtes rémanents et l’effet parallaxe.
+Lors de la création d’expériences de mouvement dans une application, il peut arriver que le mouvement ne soit pas basé sur le temps, mais plutôt dépendant d’une propriété sur un autre objet. Les KeyFrameAnimations ne sont pas en mesure d’exprimer très facilement ces types d’expériences de mouvement. Dans ces instances spécifiques, motion ne doit plus être discret et prédéfini. Au lieu de cela, le mouvement peut s’adapter dynamiquement en fonction de sa relation aux autres propriétés de l’objet. Par exemple, vous pouvez animer l’opacité d’un objet en fonction de sa position horizontale. D’autres exemples incluent des expériences de mouvement comme les en-têtes et le parallaxe.
 
-Ces types d’expériences de mouvement vous permettent de créer une interface utilisateur qui semble plus connectée, au lieu de paraître singulière et indépendante. Pour l'utilisateur, cela donne l’impression d’une expérience d’interface utilisateur dynamique.
+Ces types d’expériences de mouvement vous permettent de créer une interface utilisateur qui semble plus connectée, au lieu d’en faire un singulier et indépendant. Pour l’utilisateur, cela donne l’impression d’une expérience d’interface utilisateur dynamique.
 
-![Cercle en orbite](images/animation/orbit.gif)
+![Cercle d’orbite](images/animation/orbit.gif)
 
-![Affichage liste avec parallaxe](images/animation/parallax.gif)
+![Mode liste avec parallaxe](images/animation/parallax.gif)
 
-## <a name="using-expressionanimations"></a>Utilisation d'ExpressionAnimations
+## <a name="using-expressionanimations"></a>Utilisation de ExpressionAnimations
 
-Pour créer des expériences de mouvement basées sur la relation, vous utilisez le type ExpressionAnimation. Les ExpressionAnimations (ou Expressions pour faire court), sont un nouveau type d’animation qui vous permet d’exprimer une relation mathématique : une relation que le système utilise pour calculer la valeur d’une propriété d’animation à chaque image. Autrement dit, les Expressions sont simplement une équation mathématique qui définit la valeur souhaitée d’une propriété d’animation par trame. Les Expressions sont un composant très polyvalent qui peut être utilisé sur un large éventail de scénarios, notamment les exemples suivants :
+Pour créer des expériences de mouvement basées sur les relations, vous utilisez le type ExpressionAnimation. ExpressionAnimations (ou expressions pour Short) est un nouveau type d’animation qui vous permet d’exprimer une relation mathématique : une relation que le système utilise pour calculer la valeur d’une propriété d’animation à chaque trame. En d’autres termes, les expressions sont simplement une équation mathématique qui définit la valeur souhaitée d’une propriété d’animation par image. Les expressions sont un composant très polyvalent qui peut être utilisé dans un large éventail de scénarios, notamment :
 
 - Taille relative, animations de décalage.
-- En-têtes rémanents, effet de parallaxe avec ScrollViewer. (Voir [Améliorer les expériences ScrollViewer existantes](scroll-input-animations.md).)
-- Points d'ancrage avec InertiaModifiers et InteractionTracker. (Voir [Créer des points d’ancrage à l'aide de modificateurs d'inertie](inertia-modifiers.md).)
+- En-têtes collants, parallaxe avec ScrollViewer. (Voir [améliorer les expériences ScrollViewer existantes](scroll-input-animations.md).)
+- Points d’alignement avec InertiaModifiers et InteractionTracker. (Consultez [créer des points d’ancrage avec des modificateurs d’inertie](inertia-modifiers.md).)
 
-Lorsque vous travaillez avec des ExpressionAnimations, il est important de connaître à l'avance ces quelques points :
+Lorsque vous travaillez avec ExpressionAnimations, il est important de mentionner les points suivants :
 
-- Sans fin : contrairement à leur équivalent KeyFrameAnimation, les Expressions n’ont pas de durée limitée. Comme les Expressions sont des relations mathématiques, ce sont des animations qui sont constamment « en cours d'exécution ». Vous avez la possibilité d’arrêter ces animations si vous le souhaitez.
-- En exécution, mais pas toujours en évaluation : les performances sont toujours un problème avec des animations qui s’exécutent en permanence. Pas d'inquiétude, cependant. Le système est suffisamment intelligent pour que l’Expression se réévalue uniquement en cas de changement d'une de ses entrées ou d'un de ces paramètres.
-- Résolution dans le bon type d’objet : comme les Expressions sont des relations mathématiques, il est important de s’assurer que l’équation qui définit l’Expression se résout dans le même type que la propriété ciblée par l’animation. Par exemple, si vous animez Offset, votre Expression doit se résoudre en un type de valeur Vector3.
+- Ne jamais se terminer, contrairement à son frère KeyFrameAnimation, les expressions n’ont pas une durée finie. Étant donné que les expressions sont des relations mathématiques, il s’agit d’animations qui sont constamment « en cours d’exécution ». Vous avez la possibilité d’arrêter ces animations si vous le souhaitez.
+- En cours d’exécution, mais pas toujours en cours d’évaluation, les performances sont toujours un problème avec les animations qui s’exécutent en permanence. Vous n’avez pas besoin de vous préoccuper du fait que le système est suffisamment intelligent pour que l’expression ne soit réévaluée que si l’une de ses entrées ou ses paramètres a changé.
+- Résolution vers le type d’objet approprié : étant donné que les expressions sont des relations mathématiques, il est important de s’assurer que l’équation qui définit l’expression correspond au même type de la propriété ciblée par l’animation. Par exemple, en cas d’animation du décalage, votre expression doit être résolue en un type Vector3.
 
-### <a name="components-of-an-expression"></a>Composants d'une Expression
+### <a name="components-of-an-expression"></a>Composants d’une expression
 
-Lorsque vous créez la relation mathématique d’une Expression, il existe plusieurs composants principaux :
+Lors de la création de la relation mathématique d’une expression, il existe plusieurs composants principaux :
 
-- Paramètres : valeurs représentant des valeurs de constantes ou des références à d’autres objets de Composition.
-- Opérateurs mathématiques : opérateurs mathématiques standard plus (+), moins (-), multiplier (*), diviser (/) qui lient des paramètres ensemble pour former une équation. Vous trouverez également des opérateurs conditionnels comme supérieur à (>), égal (==), opérateur ternaire (condition ? ifTrue : ifFalse), etc.
-- Fonctions mathématiques : fonctions/raccourcis mathématiques basés sur System.Numerics. Pour obtenir une liste complète des fonctions prises en charge, voir [ExpressionAnimation](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.ExpressionAnimation).
+- Parameters : valeurs représentant des valeurs constantes ou des références à d’autres objets composition.
+- Opérateurs mathématiques : opérateurs mathématiques classiques plus (+), moins (-), multiplication (*), Division (/) qui associent des paramètres pour former une équation. Les opérateurs conditionnels tels que supérieur à (>), égal (= =), ternaire Operator (condition) sont également inclus. ifTrue : ifFalse), etc.
+- Fonctions mathématiques : fonctions mathématiques/raccourcis basés sur System. Numerics. Pour obtenir la liste complète des fonctions prises en charge, consultez [ExpressionAnimation](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.ExpressionAnimation).
 
-Les Expressions prennent également en charge un ensemble de mots clés : expressions spéciales qui ont une signification distincte uniquement dans le système ExpressionAnimation. Ils sont répertoriés (ainsi que la liste complète des fonctions mathématiques) dans la documentation [ExpressionAnimation](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.ExpressionAnimation).
+Les expressions prennent également en charge un ensemble de mots clés (expressions spéciales qui ont une signification distincte uniquement dans le système ExpressionAnimation). Celles-ci sont répertoriées (ainsi que la liste complète des fonctions mathématiques) dans la documentation [ExpressionAnimation](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.ExpressionAnimation) .
 
-### <a name="creating-expressions-with-expressionbuilder"></a>Création d’Expressions avec ExpressionBuilder
+### <a name="creating-expressions-with-expressionbuilder"></a>Création d’expressions avec ExpressionBuilder
 
-Il existe deux options de création d’Expressions dans les applications UWP :
+Il existe deux options pour créer des expressions dans leur application UWP :
 
-1. Création de l’équation en tant que chaîne via l’API officielle, publique.
-1. Création de l’équation dans un modèle d’objet de type sécurisé via l’outil open source ExpressionBuilder. Consultez [Source et documentation Github](https://github.com/microsoft/WindowsCompositionSamples/tree/master/ExpressionBuilder).
+1. Génération de l’équation sous forme de chaîne via l’API publique officielle.
+1. Génération de l’équation dans un modèle objet de type sécurisé via l’outil ExpressionBuilder Open source. Consultez la [source et la documentation GitHub](https://github.com/microsoft/WindowsCompositionSamples/tree/master/ExpressionBuilder).
 
-Dans le cadre de ce document, nous allons définir nos Expressions à l’aide d'ExpressionBuilder.
+Pour les besoins de ce document, nous allons définir nos expressions à l’aide de ExpressionBuilder.
 
 ### <a name="parameters"></a>Paramètres
 
-Les paramètres constituent le cœur d’une Expression. Il existe deux types de paramètres :
+Les paramètres constituent le cœur d’une expression. Il existe deux types de paramètres :
 
-- Constantes : il s’agit de paramètres qui représentent les variables System.Numeric typées. Des valeurs sont attribuées à ces paramètres une fois au démarrage de l’animation.
-- Références : il s’agit des paramètres qui représentent des références aux CompositionObjects : les valeurs de ces paramètres sont mises à jour en permanence après le démarrage d'une animation.
+- Constantes : il s’agit de paramètres représentant des variables typées System. Numeric. Ces paramètres voient leurs valeurs affectées une fois que l’animation est démarrée.
+- Références : ces paramètres représentent des références à CompositionObjects : ces paramètres obtiennent en continu leurs valeurs mises à jour après le démarrage d’une animation.
 
-En général, les Références sont l’élément essentiel pour déterminer le changement dynamique de la sortie d’une Expression. Comme ces références changent, la sortie de l’Expression change en conséquence. Si vous créez votre Expression avec des chaînes ou les utilisez dans un scénario de création de modèles (en utilisant votre Expression pour cibler plusieurs CompositionObjects), vous devez nommer et définir les valeurs de vos paramètres. Voir la section Exemple pour plus d'informations.
+En général, les références sont l’aspect principal de la façon dont la sortie d’une expression peut changer dynamiquement. À mesure que ces références changent, la sortie de l’expression change en conséquence. Si vous créez votre expression avec des chaînes ou si vous les utilisez dans un scénario de création de modèles (à l’aide de votre expression pour cibler plusieurs CompositionObjects), vous devez nommer et définir les valeurs de vos paramètres. Voir la section Exemple pour plus d'informations.
 
 ### <a name="working-with-keyframeanimations"></a>Utilisation de KeyFrameAnimations
 
-Les Expressions peuvent également être utilisées avec des KeyFrameAnimations. Dans ce cas, vous pouvez utiliser une Expression pour définir la valeur d’une image clé à un point temporel : ces types d'images clés sont appelées ExpressionKeyFrames.
+Les expressions peuvent également être utilisées avec KeyFrameAnimations. Dans ce cas, vous souhaitez utiliser une expression pour définir la valeur d’une image clé à un moment donné. ces types de trames sont appelés ExpressionKeyFrames.
 
 ```csharp
 KeyFrameAnimation.InsertExpressionKeyFrame(Single, String)
 KeyFrameAnimation.InsertExpressionKeyFrame(Single, ExpressionNode)
 ```
 
-Toutefois, contrairement aux ExpressionAnimations, les ExpressionKeyFrames sont évaluées une seule fois au démarrage de la KeyFrameAnimation. Gardez à l’esprit que vous ne transmettez pas un élément ExpressionAnimation comme valeur de l'image clé, plutôt une chaîne (ou un ExpressionNode, si vous utilisez ExpressionBuilder).
+Toutefois, contrairement à ExpressionAnimations, les ExpressionKeyFrames ne sont évalués qu’une seule fois lorsque le KeyFrameAnimation est démarré. N’oubliez pas que vous ne transmettez pas un ExpressionAnimation en tant que valeur de l’image clé, plutôt qu’une chaîne (ou un ExpressionNode, si vous utilisez ExpressionBuilder).
 
 ## <a name="example"></a>Exemple
 
-Examinons maintenant un exemple d’utilisation d’Expressions, plus précisément l’exemple PropertySet de la galerie d’exemples de l’interface utilisateur Windows. Nous allons étudier l’Expression qui gère le comportement de mouvement en orbite de la bille bleue.
+Passons maintenant en revue un exemple d’utilisation d’expressions, en particulier l’exemple PropertySet de la Galerie d’exemples d’interfaces utilisateur Windows. Nous allons examiner l’expression qui gère le comportement de mouvement orbite de la boule bleue.
 
-![Cercle en orbite](images/animation/orbit.gif)
+![Cercle d’orbite](images/animation/orbit.gif)
 
-Trois composants sont en œuvre dans l’expérience totale :
+Il existe trois composants en lecture pour l’expérience totale :
 
-1. Une KeyFrameAnimation qui anime le décalage Y de la bille rouge.
-1. Une classe PropertySet avec une propriété **Rotation** qui permet de piloter l’orbite, animée par une autre KeyFrameAnimation.
-1. Un élément ExpressionAnimation qui pilote le décalage de la bille bleue en référençant le décalage de la bille rouge et la propriété de Rotation pour conserver un orbite parfait.
+1. Un KeyFrameAnimation, en animant le décalage Y de la boule rouge.
+1. PropertySet avec une propriété de **rotation** qui permet de piloter l’orbite, animée par un autre KeyFrameAnimation.
+1. Un ExpressionAnimation qui pilote le décalage de la boule bleue référençant le décalage de la bille rouge et la propriété de rotation pour maintenir un orbite parfait.
 
-Nous allons nous concentrer sur l'ExpressionAnimation définie dans le 3e point. Nous avons également utiliser les classes ExpressionBuilder pour construire cette Expression. Une copie du code utilisé pour créer cette expérience via des chaînes est répertorié à la fin.
+Nous nous concentrerons sur le ExpressionAnimation défini dans #3. Nous utiliserons également les classes ExpressionBuilder pour construire cette expression. Une copie du code utilisé pour générer cette expérience via des chaînes est indiquée à la fin.
 
-Dans cette équation, il existe deux propriétés, que vous devez référencer à partir de la classe PropertySet : l'une est un décalage de point central et l’autre est la rotation.
+Dans cette équation, il existe deux propriétés que vous devez référencer à partir de PropertySet ; l’un est un décalage Centerpoint et l’autre est la rotation.
 
 ```
 var propSetCenterPoint =
@@ -103,7 +103,7 @@ _propertySet.GetReference().GetVector3Property("CenterPointOffset");
 var propSetRotation = _propertySet.GetReference().GetScalarProperty("Rotation");
 ```
 
-Ensuite, vous devez définir le composant Vector3 qui tient compte de la rotation en orbite réelle.
+Ensuite, vous devez définir le composant Vector3 qui tient compte de la rotation d’orbite réelle.
 
 ```
 var orbitRotation = EF.Vector3(
@@ -112,18 +112,18 @@ var orbitRotation = EF.Vector3(
 ```
 
 > [!NOTE]
-> `EF` est une notation en raccourci « using » pour définir ExpressionBuilder.ExpressionFunctions.
+> `EF` est une notation « using » abrégée pour définir ExpressionBuilder. ExpressionFunctions.
 
-Enfin, combinez ces composants et référencez la position de la bille rouge pour définir la relation mathématique.
+Enfin, Combinez ces composants et référencez la position de la boule rouge pour définir la relation mathématique.
 
 ```
 var orbitExpression = redSprite.GetReference().Offset + propSetCenterPoint + orbitRotation;
 blueSprite.StartAnimation("Offset", orbitExpression);
 ```
 
-Dans une situation hypothétique, que se passe-t-il si vous souhaitez utiliser cette même Expression, mais avec deux autres objets visuels, c'est-a-dire 2 ensembles de cercles en orbite. Avec des CompositionAnimations, vous pouvez réutiliser l’animation et cibler plusieurs CompositionObjects. La seule chose que vous devez modifier lorsque vous utilisez cette Expression dans le cas d'une orbite supplémentaire est la référence à l’élément visuel. Nous appelons cela une création de modèles.
+Dans une situation hypothétique, que se passerait-il si vous souhaitiez utiliser cette même expression mais avec deux autres visuels, ce qui signifie 2 jeux de cercles d’orbite. Avec CompositionAnimations, vous pouvez réutiliser l’animation et cibler plusieurs CompositionObjects. La seule chose que vous devez modifier lorsque vous utilisez cette expression pour le cas Orbit supplémentaire est la référence à l’élément visuel. Nous appelons ce modèles.
 
-Dans ce cas, vous modifiez l’Expression que vous avez créée précédemment. Au lieu d’« obtenir » une référence au CompositionObject, vous créez une référence avec un nom et ensuite, vous affectez des valeurs différentes :
+Dans ce cas, vous modifiez l’expression que vous avez créée précédemment. Au lieu d’obtenir une référence à CompositionObject, vous créez une référence avec un nom, puis vous affectez des valeurs différentes :
 
 ```
 var orbitExpression = ExpressionValues.Reference.CreateVisualReference("orbitRoundVisual");
@@ -134,7 +134,7 @@ orbitExpression.SetReferenceParameter("orbitRoundVisual", yellowSprite);
 greenSprite.StartAnimation("Offset", orbitExpression);
 ```
 
-Voici le code si vous avez défini l’Expression avec des chaînes au moyen de l’API publique.
+Voici le code si vous avez défini votre expression avec des chaînes via l’API publique.
 
 ```
 ExpressionAnimation expressionAnimation =

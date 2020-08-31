@@ -1,50 +1,50 @@
 ---
 title: Créer une application de connexion Windows Hello
-description: Voici la première partie de la procédure complète sur la création d’une application UWP Windows 10 qui utilise Windows Hello comme alternative aux systèmes d’authentification par nom d’utilisateur et mot de passe traditionnels.
+description: Il s’agit de la première partie d’une procédure pas à pas sur la création d’une application Windows 10 UWP (plateforme Windows universelle) qui utilise Windows Hello comme alternative aux systèmes d’authentification de nom d’utilisateur et de mot de passe traditionnels.
 ms.assetid: A9E11694-A7F5-4E27-95EC-889307E0C0EF
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, sécurité
 ms.localizationpriority: medium
-ms.openlocfilehash: 8248e17a342563a0746e3c54c3a69a52f027d072
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: dcfa3702f43907453da0769cf5c6430cfbcae6d5
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282436"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157953"
 ---
 # <a name="create-a-windows-hello-login-app"></a>Créer une application de connexion Windows Hello
 
-Voici la première partie de la procédure complète sur la création d’une application UWP Windows 10 qui utilise Windows Hello comme alternative aux systèmes d’authentification par nom d’utilisateur et mot de passe traditionnels. L’application utilise un nom d’utilisateur pour la connexion et crée une clé Hello pour chaque compte. Ces comptes sont protégés par le code PIN configuré dans les paramètres Windows lors de la configuration de Windows Hello.
+Il s’agit de la première partie d’une procédure pas à pas sur la création d’une application Windows 10 UWP (plateforme Windows universelle) qui utilise Windows Hello comme alternative aux systèmes d’authentification de nom d’utilisateur et de mot de passe traditionnels. L’application utilise un nom d’utilisateur pour la connexion et crée une clé Hello pour chaque compte. Ces comptes seront protégés par le code confidentiel configuré dans paramètres Windows sur la configuration de Windows Hello.
 
-Cette procédure pas à pas est en deux parties : création de l’application et connexion au service principal. Lorsque vous avez terminé avec cet article, passez à la partie 2 : [Service de connexion Windows Hello](microsoft-passport-login-auth-service.md).
+Cette procédure pas à pas est en deux parties : création de l’application et connexion au service principal. Lorsque vous avez terminé avec cet article, passez à la partie 2 : [service de connexion Windows Hello](microsoft-passport-login-auth-service.md).
 
-Avant de commencer, consultez la vue d’ensemble [Windows Hello](microsoft-passport.md) pour bien comprendre le fonctionnement de Windows Hello.
+Avant de commencer, vous devez lire la vue d’ensemble de [Windows Hello](microsoft-passport.md) pour une compréhension générale du fonctionnement de Windows Hello.
 
-## <a name="get-started"></a>Prise en main
+## <a name="get-started"></a>Bien démarrer
 
 
 Pour créer ce projet, il vous faut connaître C# et XAML. Vous devez également utiliser Visual Studio 2015 (édition Community ou supérieure) ou une version ultérieure de Visual Studio sur un ordinateur Windows 10. Alors que Visual Studio 2015 est la version minimale requise, nous vous recommandons d’utiliser la dernière version de Visual Studio pour les dernières mises à jour de sécurité et de développement.
 
--   Ouvrez Visual Studio et sélectionnez Fichier > nouveau projet >.
+-   Ouvrez Visual Studio et sélectionnez fichier > nouveau projet >.
 -   Une fenêtre Nouveau projet s’ouvre. Navigation vers Modèles &gt; Visual C#.
 -   Choisissez une application vide (Windows universelle) et appelez-la « PassportLogin ».
--   Générez et exécutez la nouvelle application (F5). Une fenêtre vide doit s’afficher sur l’écran. Fermez l’application.
+-   Générez et exécutez la nouvelle application (F5). Une fenêtre vide doit s’afficher sur l’écran. Fermez l'application.
 
 ![Nouveau projet Windows Hello](images/passport-login-1.png)
 
-## <a name="exercise-1-login-with-microsoft-passport"></a>Exercice 1 : Se connecter avec Microsoft Passport
+## <a name="exercise-1-login-with-microsoft-passport"></a>Exercice 1 : Connexion avec Microsoft Passport
 
 
-Dans cet exercice, vous découvrirez comment vérifier que Windows Hello est bien installé sur l’ordinateur et comment vous connecter à un compte à l’aide de Windows Hello.
+Dans cet exercice, vous allez apprendre à vérifier si Windows Hello est configuré sur la machine et à vous connecter à un compte à l’aide de Windows Hello.
 
 -   Dans le nouveau projet, créez un dossier dans la solution appelé « Vues ». Ce dossier contient les pages que vous consulterez dans cet exemple. Cliquez avec le bouton droit sur le projet dans l’Explorateur de solutions, sélectionnez Ajouter &gt; Nouveau dossier, puis renommez le dossier en Vues.
 
-    ![Ajouter un dossier Windows Hello](images/passport-login-2.png)
+    ![Dossier d’ajout Windows Hello](images/passport-login-2.png)
 
 -   Cliquez avec le bouton droit sur le nouveau dossier Vues, sélectionnez Ajouter &gt; Nouvel élément, puis sélectionnez Page vierge. Nommez cette page « Login.xaml ».
 
-    ![Ajouter une page vierge Windows Hello](images/passport-login-3.png)
+    ![Page Ajouter un espace Windows Hello](images/passport-login-3.png)
 
 -   Pour définir l’interface utilisateur de la nouvelle page de connexion, ajoutez le code XAML suivant. Ce code XAML définit un élément StackPanel pour aligner les enfants suivants :
 
@@ -52,7 +52,7 @@ Dans cet exercice, vous découvrirez comment vérifier que Windows Hello est bie
     -   TextBlock pour les messages d’erreur.
     -   TextBox pour le nom d’utilisateur à saisir.
     -   Bouton pour naviguer vers une page d’inscription.
-    -   TextBlock qui contient le statut de Windows Hello.
+    -   TextBlock pour contenir l’état de Windows Hello.
     -   TextBlock pour expliquer la page de connexion en l’absence de serveur principal ou d’utilisateurs configurés.
 
     ```xml
@@ -130,7 +130,7 @@ Dans cet exercice, vous découvrirez comment vérifier que Windows Hello est bie
     }
     ```
 
--   Sur la page de connexion, vous devez gérer l’événement OnNavigatedTo pour valider la présence de Windows Hello sur cet ordinateur. Dans le fichier Login.xaml.cs, implémentez les éléments suivants. L’objet MicrosoftPassportHelper signale une erreur, car nous ne l’avons pas encore implémenté.
+-   Dans la page de connexion, vous devez gérer l’événement OnNavigatedTo pour valider si Windows Hello est disponible sur cet ordinateur. Dans le fichier Login.xaml.cs, implémentez les éléments suivants. L’objet MicrosoftPassportHelper signale une erreur, car nous ne l’avons pas encore implémenté.
 
     ```cs
     public sealed partial class Login : Page
@@ -163,7 +163,7 @@ Dans cet exercice, vous découvrirez comment vérifier que Windows Hello est bie
     ![création d’une classe d’assistance dans Passport](images/passport-login-5.png)
 
 -   Cliquez avec le bouton droit sur le dossier Utilitaires, puis cliquez sur Ajouter &gt; Classe. Nommez cette classe « MicrosoftPassportHelper.cs ».
--   Modifiez la définition de classe de MicrosoftPassportHelper sur statique publique, puis ajoutez la méthode suivante pour indiquer à l’utilisateur si Windows Hello est prêt à être utilisé. Vous devez ajouter les espaces de noms requis.
+-   Remplacez la définition de classe de MicrosoftPassportHelper par public static, puis ajoutez la méthode suivante pour informer l’utilisateur si Windows Hello est prêt à être utilisé ou non. Vous devez ajouter les espaces de noms requis.
 
     ```cs
     using System;
@@ -205,11 +205,11 @@ Dans cet exercice, vous découvrirez comment vérifier que Windows Hello est bie
     using PassportLogin.Utils;
     ```
 
--   Créez et exécutez l’application (F5). Vous accédez à la page de connexion et la bannière Windows Hello vous indique que Hello est prêt à être utilisé. Vous devez voir une bannière bleue ou verte indiquant le statut de Windows Hello sur votre ordinateur.
+-   Créez et exécutez l’application (F5). Vous allez accéder à la page de connexion. la bannière Windows Hello vous indiquera si Hello est prêt à être utilisé. Vous devez voir la bannière verte ou bleue indiquant l’état de Windows Hello sur votre ordinateur.
 
-    ![Page de connexion Windows Hello prête](images/passport-login-6.png)
+    ![Écran de connexion Windows Hello prêt](images/passport-login-6.png)
 
-    ![Page de connexion Windows Hello non prête](images/passport-login-7.png)
+    ![Écran de connexion Windows Hello non configuré](images/passport-login-7.png)
 
 -   L’étape suivante consiste à générer la logique de connexion. Créez un dossier appelé « Modèles ».
 -   Dans le dossier Modèles, créez une classe appelée « Account.cs ». Cette classe fera office de modèle de compte. Comme il s’agit d’un modèle, il contient uniquement un nom d’utilisateur. Modifiez la définition de classe sur publique et ajoutez la propriété Nom d’utilisateur.
@@ -419,7 +419,7 @@ Dans cet exercice, vous découvrirez comment vérifier que Windows Hello est bie
     }
     ```
 
--   Vous avez peut-être remarqué le code commenté qui faisait référence à une méthode dans MicrosoftPassportHelper. Dans MicrosoftPassportHelper.cs, ajoutez une nouvelle méthode appelée CreatePassportKeyAsync. Cette méthode utilise l’API Windows Hello dans la classe [**KeyCredentialManager**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.KeyCredentialManager). L’appel de [**RequestCreateAsync**](https://docs.microsoft.com/previous-versions/windows/dn973048(v=win.10)) crée une clé Passport propre au *accountId* et à l’ordinateur local. Notez les commentaires dans l’instruction switch si vous voulez implémenter ce scénario dans le monde réel.
+-   Vous avez peut-être remarqué le code commenté qui faisait référence à une méthode dans MicrosoftPassportHelper. Dans MicrosoftPassportHelper.cs, ajoutez une nouvelle méthode appelée CreatePassportKeyAsync. Cette méthode utilise l’API Windows Hello dans [**KeyCredentialManager**](/uwp/api/Windows.Security.Credentials.KeyCredentialManager). L’appel de [**RequestCreateAsync**](/previous-versions/windows/dn973048(v=win.10)) crée une clé Passport propre au *accountId* et à l’ordinateur local. Notez les commentaires dans l’instruction switch si vous voulez implémenter ce scénario dans le monde réel.
 
     ```cs
     /// <summary>
@@ -486,14 +486,14 @@ Dans cet exercice, vous découvrirez comment vérifier que Windows Hello est bie
     }
     ```
 
--   Créez et exécutez l’application. Vous arriverez sur le page de connexion. Tapez « sampleUsername » et cliquez sur Connexion. Une invite Windows Hello vous demande d’entrer votre code PIN. Une fois le code PIN correct saisi, la méthode CreatePassportKeyAsync peut créer une clé Windows Hello. Contrôlez les fenêtres de sortie pour voir si un message indiquant que l’opération a réussi s’affiche.
+-   Générez et exécutez l’application. Vous arriverez sur le page de connexion. Tapez « sampleUsername » et cliquez sur Connexion. Une invite Windows Hello s’affiche et vous demande d’entrer votre code PIN. Une fois que vous avez entré correctement votre code PIN, la méthode CreatePassportKeyAsync peut créer une clé Windows Hello. Contrôlez les fenêtres de sortie pour voir si un message indiquant que l’opération a réussi s’affiche.
 
-    ![Invite de connexion Windows Hello](images/passport-login-8.png)
+    ![Invite de code confidentiel de connexion Windows Hello](images/passport-login-8.png)
 
-## <a name="exercise-2-welcome-and-user-selection-pages"></a>Exercice 2 : Pages d’accueil et de sélection de l’utilisateur
+## <a name="exercise-2-welcome-and-user-selection-pages"></a>Exercice 2 : Pages d’accueil et de sélection d’utilisateur
 
 
-Cet exercice est la suite de l’exercice précédent. Lorsqu’un utilisateur réussit à se connecter, il arrive sur une page d’accueil sur laquelle il peut se déconnecter ou supprimer son compte. Puisque Windows Hello crée une clé pour chaque ordinateur, un écran de sélection utilisateur affichant tous les utilisateurs qui se sont connectés à cet ordinateur peut être créé. Un utilisateur peut ensuite sélectionner l’un de ces comptes et accéder directement à l’écran d’accueil sans devoir saisir de nouveau un mot de passe, puisqu’il a déjà été authentifié pour accéder à l’ordinateur.
+Cet exercice est la suite de l’exercice précédent. Lorsqu’un utilisateur réussit à se connecter, il arrive sur une page d’accueil sur laquelle il peut se déconnecter ou supprimer son compte. Lorsque Windows Hello crée une clé pour chaque ordinateur, un écran de sélection de l’utilisateur peut être créé, qui affiche tous les utilisateurs qui ont été connectés sur cet ordinateur. Un utilisateur peut ensuite sélectionner l’un de ces comptes et accéder directement à l’écran d’accueil sans devoir saisir de nouveau un mot de passe, puisqu’il a déjà été authentifié pour accéder à l’ordinateur.
 
 -   Dans le dossier Vues, ajoutez une nouvelle page vierge appelée « Welcome.xaml ». Ajoutez le code XAML suivant pour terminer l’interface utilisateur. Cette dernière affiche un titre, le nom de l’utilisateur connecté et deux boutons. L’un permet de revenir à la liste des utilisateurs (que vous créerez plus tard) et l’autre permet de gérer l’oubli de l’utilisateur.
 
@@ -559,7 +559,7 @@ Cet exercice est la suite de l’exercice précédent. Lorsqu’un utilisateur r
     }
     ```
 
--   Vous avez peut-être remarqué une ligne commentée dans l’événement click oublier l’utilisateur. Le compte est en cours de suppression de votre liste locale, mais il n’existe pour le moment aucun moyen de le supprimer de Windows Hello. Vous devez implémenter une nouvelle méthode dans MicrosoftPassportHelper.cs pour gérer la suppression d’un utilisateur Windows Hello. Cette méthode utilise d’autres API Windows Hello pour ouvrir et supprimer le compte. Lorsque vous supprimez un compte dans le monde réel, la base de données ou le serveur doit être notifié afin que la base de données utilisateur reste valide. Vous aurez besoin d’une référence au dossier Modèles.
+-   Vous avez peut-être remarqué une ligne commentée dans l’événement click oublier l’utilisateur. Le compte est en cours de suppression de votre liste locale, mais il n’est actuellement pas possible de le supprimer de Windows Hello. Vous devez implémenter une nouvelle méthode dans MicrosoftPassportHelper.cs qui gérera la suppression d’un utilisateur Windows Hello. Cette méthode utilisera d’autres API Windows Hello pour ouvrir et supprimer le compte. Lorsque vous supprimez un compte dans le monde réel, la base de données ou le serveur doit être notifié afin que la base de données utilisateur reste valide. Vous aurez besoin d’une référence au dossier Modèles.
 
     ```cs
     using PassportLogin.Models;
@@ -624,11 +624,11 @@ Cet exercice est la suite de l’exercice précédent. Lorsqu’un utilisateur r
     }
     ```
 
--   Créez et exécutez l’application. Connectez-vous avec « sampleUsername » et cliquez sur Connexion. Entrez votre code PIN. Si tout fonctionne correctement, vous accédez à l’écran d’accueil. Essayez de cliquer sur oublier l’utilisateur et contrôlez la fenêtre Sortie pour voir si l’utilisateur a été supprimé. Lorsque l’utilisateur est supprimé, vous restez sur la page d’accueil. Vous devez créer une page de sélection d’utilisateur à laquelle l’application peut accéder.
+-   Générez et exécutez l’application. Connectez-vous avec « sampleUsername » et cliquez sur Connexion. Entrez votre code PIN. Si tout fonctionne correctement, vous accédez à l’écran d’accueil. Essayez de cliquer sur oublier l’utilisateur et contrôlez la fenêtre Sortie pour voir si l’utilisateur a été supprimé. Lorsque l’utilisateur est supprimé, vous restez sur la page d’accueil. Vous devez créer une page de sélection d’utilisateur à laquelle l’application peut accéder.
 
-    ![Écran d’accueil Windows Hello](images/passport-login-9.png)
+    ![Écran d’accueil Windows Hello](images/passport-login-9.png)
 
--   Dans le dossier Vues, créez une page vierge appelée « UserSelection.xaml » et ajoutez le code XAML suivant pour définir l’interface utilisateur. Cette page contient un [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) qui affiche tous les utilisateurs de la liste locale des comptes et un bouton qui accède à la page de connexion pour permettre à l’utilisateur d’ajouter un autre compte.
+-   Dans le dossier Vues, créez une page vierge appelée « UserSelection.xaml » et ajoutez le code XAML suivant pour définir l’interface utilisateur. Cette page contient un [**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView) qui affiche tous les utilisateurs dans la liste des comptes locaux, ainsi qu’un bouton qui permet d’accéder à la page de connexion pour permettre à l’utilisateur d’ajouter un autre compte.
 
     ```xml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -872,14 +872,14 @@ Cet exercice est la suite de l’exercice précédent. Lorsqu’un utilisateur r
     }
     ```
 
--   Créez et exécutez l’application. Connectez-vous avec « sampleUsername ». Entrez votre code PIN. Si tout fonctionne correctement, vous accédez à l’écran d’accueil. Cliquez pour revenir à la liste des utilisateurs. Vous devez maintenant voir un utilisateur dans la liste. Si vous cliquez sur cet utilisateur, Passport vous permet de vous reconnecter sans avoir à entrer à nouveau le mot de passe.
+-   Générez et exécutez l’application. Connectez-vous avec « sampleUsername ». Entrez votre code PIN. Si tout fonctionne correctement, vous accédez à l’écran d’accueil. Cliquez pour revenir à la liste des utilisateurs. Vous devez maintenant voir un utilisateur dans la liste. Si vous cliquez sur cet utilisateur, Passport vous permet de vous reconnecter sans avoir à entrer à nouveau le mot de passe.
 
-    ![Liste de sélection des utilisateurs Windows Hello](images/passport-login-10.png)
+    ![Liste de sélection d’utilisateurs Windows Hello](images/passport-login-10.png)
 
-## <a name="exercise-3-registering-a-new-windows-hello-user"></a>Exercice 3 : Inscription d’un nouvel utilisateur Windows Hello
+## <a name="exercise-3-registering-a-new-windows-hello-user"></a>Exercice 3 : inscription d’un nouvel utilisateur Windows Hello
 
 
-Dans cet exercice, vous créerez une page pour créer un compte avec Windows Hello. Son fonctionnement sera identique à celui de la page de connexion. La page de connexion est implémentée pour un utilisateur existant qui migre pour utiliser Windows Hello. Une page PassportRegister crée l’inscription auprès de Windows Hello pour un nouvel utilisateur.
+Dans cet exercice, vous allez créer une nouvelle page qui créera un nouveau compte avec Windows Hello. Son fonctionnement sera identique à celui de la page de connexion. La page de connexion est implémentée pour un utilisateur existant qui effectue une migration pour utiliser Windows Hello. Une page PassportRegister va créer l’inscription Windows Hello pour un nouvel utilisateur.
 
 -   Dans le dossier Vues, créez une page vierge appelée « PassportRegister.xaml ». Dans le code XAML, ajoutez le code ci-dessous pour configurer l’interface utilisateur. L’interface est similaire à la page de connexion.
 
@@ -961,13 +961,13 @@ Dans cet exercice, vous créerez une page pour créer un compte avec Windows Hel
     }
     ```
 
--   Créez et exécutez l’application. Essayez d’inscrire un nouvel utilisateur. Revenez à la liste des utilisateurs et vérifiez que vous pouvez sélectionner cet utilisateur et vous connecter.
+-   Générez et exécutez l’application. Essayez d’inscrire un nouvel utilisateur. Revenez à la liste des utilisateurs et vérifiez que vous pouvez sélectionner cet utilisateur et vous connecter.
 
-    ![Inscription d’un nouvel utilisateur Windows Hello](images/passport-login-11.png)
+    ![Windows Hello inscrire un nouvel utilisateur](images/passport-login-11.png)
 
-Dans cet exercice pratique, vous avez appris les bases pour utiliser la nouvelle API Windows Hello permettant d’authentifier les utilisateurs existants et de créer des comptes pour les nouveaux utilisateurs. Avec ces nouvelles connaissances, les utilisateurs n’ont plus besoin de mémoriser un mot de passe, mais n’ayez crainte, votre application reste protégée grâce à l’authentification utilisateur. Windows 10 utilise la nouvelle technologie d’authentification Windows Hello pour prendre en charge ses options de connexion biométrique.
+Dans ce laboratoire, vous avez appris les compétences essentielles dont vous avez besoin pour utiliser la nouvelle API Windows Hello afin d’authentifier les utilisateurs existants et de créer des comptes pour les nouveaux utilisateurs. Avec ces nouvelles connaissances, les utilisateurs n’ont plus besoin de mémoriser un mot de passe, mais n’ayez crainte, votre application reste protégée grâce à l’authentification utilisateur. Windows 10 utilise la nouvelle technologie d’authentification de Windows Hello pour prendre en charge ses options de connexion biométriques.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Windows Hello](microsoft-passport.md)
+* [Windows Hello](microsoft-passport.md)
 * [Service de connexion Windows Hello](microsoft-passport-login-auth-service.md)
