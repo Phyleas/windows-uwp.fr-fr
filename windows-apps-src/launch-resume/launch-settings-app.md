@@ -10,24 +10,24 @@ ms.custom: 19H1
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: 1ef32816d04516bf4c8ce8677d7f682d2d59f657
-ms.sourcegitcommit: db48036af630f33f0a2f7a908bfdfec945f3c241
+ms.openlocfilehash: 5f62fa915c7a00d2e359989e6e10718f704854ab
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84437170"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173003"
 ---
 # <a name="launch-the-windows-settings-app"></a>Lancer l’application Paramètres Windows
 
 **API importantes**
 
--   [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync)
--   [**PreferredApplicationPackageFamilyName**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.preferredapplicationpackagefamilyname)
--   [**DesiredRemainingView**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview)
+-   [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync)
+-   [**PreferredApplicationPackageFamilyName**](/uwp/api/windows.system.launcheroptions.preferredapplicationpackagefamilyname)
+-   [**DesiredRemainingView**](/uwp/api/windows.system.launcheroptions.desiredremainingview)
 
 Découvrez comment lancer l’application Paramètres Windows. Cette rubrique décrit le schéma **MS-Settings :** URI. Utilisez ce schéma d’URI pour lancer l’application Paramètres Windows en ouvrant des pages de paramètres spécifiques.
 
-Le lancement de l’application Paramètres est une partie importante de l’écriture d’une application prenant en charge la confidentialité. Si votre application ne peut pas accéder à une ressource sensible, nous vous recommandons de fournir à l’utilisateur un lien pratique lui permettant d’accéder aux paramètres de confidentialité relatifs à cette ressource. Pour plus d’informations, voir [Recommandations en matière d’applications prenant en charge la confidentialité](https://docs.microsoft.com/windows/uwp/security/index).
+Le lancement de l’application Paramètres est une partie importante de l’écriture d’une application prenant en charge la confidentialité. Si votre application ne peut pas accéder à une ressource sensible, nous vous recommandons de fournir à l’utilisateur un lien pratique lui permettant d’accéder aux paramètres de confidentialité relatifs à cette ressource. Pour plus d’informations, voir [Recommandations en matière d’applications prenant en charge la confidentialité](../security/index.md).
 
 ## <a name="how-to-launch-the-settings-app"></a>Comment lancer l’application Paramètres
 
@@ -47,7 +47,7 @@ Dans cet exemple, un contrôle Hyperlink XAML est utilisé pour ouvrir la page d
 </TextBlock>
 ```
 
-Votre application peut également appeler la méthode [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) pour lancer l’application **paramètres** . Cet exemple montre comment ouvrir la page des paramètres de confidentialité relatifs à l’appareil photo en utilisant l’URI `ms-settings:privacy-webcam`.
+Votre application peut également appeler la méthode [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync) pour lancer l’application **paramètres** . Cet exemple montre comment ouvrir la page des paramètres de confidentialité relatifs à l’appareil photo en utilisant l’URI `ms-settings:privacy-webcam`.
 
 ```cs
 bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-webcam"));
@@ -80,7 +80,7 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 
 ## <a name="accounts"></a>Comptes
 
-|Page Paramètres| URI |
+|Page de paramètres| URI |
 |-------------|-----|
 | Accès Professionnel ou Scolaire | ms-settings:workplace |
 | Comptes de messagerie et d'application  | ms-settings:emailandaccounts |
@@ -91,9 +91,9 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 | Programme d’installation de Windows Hello | MS-Settings : signinoptions-launchfaceenrollment<br>MS-Settings : signinoptions-launchfingerprintenrollment |
 | Vos informations | ms-settings:yourinfo |
 
-## <a name="apps"></a>Applications
+## <a name="apps"></a>Apps
 
-|Page Paramètres| URI |
+|Page de paramètres| URI |
 |-------------|-----|
 | Applications et fonctionnalités | MS-paramètres : appsfeatures |
 | Fonctionnalités de l’application | MS-Settings : appsfeatures-App (réinitialiser, gérer le module complémentaire & le contenu téléchargeable, etc. pour l’application)|
@@ -106,7 +106,7 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 
 ## <a name="cortana"></a>Cortana
 
-|Page Paramètres| URI |
+|Page de paramètres| URI |
 |-------------|-----|
 | Cortana sur mes appareils | MS-paramètres : Cortana-notifications |
 | Détails supplémentaires | MS-paramètres : Cortana-moredetails |
@@ -119,10 +119,10 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 
 ## <a name="devices"></a>Appareils
 
-|Page Paramètres| URI |
+|Page de paramètres| URI |
 |-------------|-----|
 | Lecture automatique | MS-Settings : exécution automatique |
-| BlueTooth | ms-settings:bluetooth |
+| Bluetooth | ms-settings:bluetooth |
 | Appareils connectés | ms-settings:connecteddevices |
 | Appareil photo par défaut | MS-Settings : appareil photo (**déconseillé dans Windows 10, version 1809 et versions ultérieures**) |
 | Souris et pavé tactile | MS-Settings : mousetouchpad (paramètres du pavé tactile disponibles uniquement sur les appareils dotés d’un pavé tactile) |
@@ -136,7 +136,7 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 
 ## <a name="ease-of-access"></a>Options d’ergonomie
 
-|Page Paramètres| URI |
+|Page de paramètres| URI |
 |-------------|-----|
 | Audio | MS-Settings : easeofaccess-audio |
 | Sous-titres | ms-settings:easeofaccess-closedcaptioning |
@@ -144,7 +144,7 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 | Taille du curseur et du pointeur | MS-Settings : easeofaccess-cursorandpointersize |
 | Afficher | MS-Settings : easeofaccess-Display |
 | Contrôle visuel | MS-Settings : easeofaccess-eyecontrol |
-| Fonts | MS-paramètres : polices |
+| Polices | MS-paramètres : polices |
 | Contraste élevé | ms-settings:easeofaccess-highcontrast |
 | Clavier | ms-settings:easeofaccess-keyboard |
 | Loupe | ms-settings:easeofaccess-magnifier |
@@ -155,15 +155,15 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 
 ## <a name="extras"></a>Extras
 
-|Page Paramètres| URI |
+|Page de paramètres| URI |
 |-------------|-----|
 | Extras | MS-paramètres : Extras (disponible uniquement si les « applications de paramètres » sont installées, par exemple, par un tiers) |
 
 ## <a name="gaming"></a>Jeux
 
-|Page Paramètres| URI |
+|Page de paramètres| URI |
 |-------------|-----|
-| Diffuseur | MS-paramètres : diffusion de jeux |
+| Diffusion | MS-paramètres : diffusion de jeux |
 | Barre de jeu | MS-Settings : jeu-gamebar |
 | Jeux DVR | MS-Settings : jeu-gamedvr |
 | Mode jeu | MS-Settings : jeu-GameMode |
@@ -173,7 +173,7 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 
 ## <a name="home-page"></a>page d'accueil
 
-|Page Paramètres| URI |
+|Page de paramètres| URI |
 |-------------|-----|
 | Page d’hébergement des paramètres | ms-settings: |
 
@@ -182,7 +182,7 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 > [!NOTE]
 > Ces paramètres sont disponibles uniquement si l’application portail de réalité mixte est installée.
 
-| Page Paramètres | URI |
+| Page de paramètres | URI |
 |---------------|-----|
 | Audio et discours | MS-Settings : holographique-audio |
 | Environnement | MS-Settings : confidentialité-holographique-environnement |
@@ -191,7 +191,7 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 
 ## <a name="network--internet"></a>Réseau & Internet
 
-|Page Paramètres| URI |
+|Page de paramètres| URI |
 |-------------|-----|
 | Mode avion | ms-settings:network-airplanemode<br/>ms-settings:proximity |
 | Réseau cellulaire et SIM | ms-settings:network-cellular |
@@ -208,9 +208,9 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 | Wi-Fi | MS-Settings : Network-WiFi (disponible uniquement si l’appareil possède un adaptateur Wi-Fi) |
 | Appel Wi-Fi | MS-Settings : Network-wificalling (disponible uniquement si l’appel Wi-Fi est activé) |
 
-## <a name="personalization"></a>Personalization
+## <a name="personalization"></a>Personnalisation
 
-|Page Paramètres| URI |
+|Page de paramètres| URI |
 |-------------|-----|
 | Arrière-plan | ms-settings:personalization-background |
 | Choisir les dossiers à afficher au démarrage | MS-paramètres : personnalisation-Start-places |
@@ -223,15 +223,15 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 | Barre des tâches | MS-Settings : barre des tâches |
 | Thèmes | MS-paramètres : thèmes |
 
-## <a name="phone"></a>Mode
+## <a name="phone"></a>Téléphone
 
-|Page Paramètres| URI |
+|Page de paramètres| URI |
 |-------------|-----|
 | Votre téléphone | MS-Settings : appareils mobiles<br/>MS-Settings : Mobile-Devices-addphone<br/>MS-Settings : Mobile-Devices-addphone-direct (ouvre **votre application téléphonique** ) |
 
 ## <a name="privacy"></a>Confidentialité
 
-|Page Paramètres| URI |
+|Page de paramètres| URI |
 |-------------|-----|
 | Applications pour accessoires | MS-Settings : privacy-accessoryapps (**déconseillé dans Windows 10, version 1809 et versions ultérieures**) |
 | Informations sur le compte | ms-settings:privacy-accountinfo |
@@ -267,7 +267,7 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 
 ## <a name="surface-hub"></a>Surface Hub
 
-|Page Paramètres| URI |
+|Page de paramètres| URI |
 |-------------|-----|
 | Comptes | MS-Settings : surfacehub-comptes |
 | Nettoyage de session | MS-Settings : surfacehub-sessioncleanup |
@@ -277,7 +277,7 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 
 ## <a name="system"></a>Système
 
-|Page Paramètres| URI |
+|Page de paramètres| URI |
 |-------------|-----|
 | À propos de | ms-settings:about |
 | Paramètres d’affichage avancés | MS-Settings : Affichage-avancé (disponible uniquement sur les appareils qui prennent en charge les options d’affichage avancées) |
@@ -297,14 +297,14 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 | Messagerie | ms-settings:messaging |
 | Multitâche | MS-Settings : multitâche |
 | Paramètres d’éclairage nocturne | MS-paramètres : Nightlight |
-| Mode | MS-Settings : téléphone-defaultapps |
+| Téléphone | MS-Settings : téléphone-defaultapps |
 | Projection sur ce PC | MS-paramètres : projet |
 | Expériences partagées | MS-paramètres : crossdevice |
 | Mode Tablette | MS-paramètres : tabletmode |
 | Barre des tâches | MS-Settings : barre des tâches |
 | Notifications et actions | ms-settings:notifications |
 | Bureau à distance | MS-paramètres : RemoteDesktop |
-| Mode | MS-Settings : téléphone (**déconseillé dans Windows 10, version 1809 et versions ultérieures**) |
+| Téléphone | MS-Settings : téléphone (**déconseillé dans Windows 10, version 1809 et versions ultérieures**) |
 | Alimentation et mise en veille | ms-settings:powersleep |
 | Son | MS-Settings : son |
 | Stockage | ms-settings:storagesense |
@@ -312,7 +312,7 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 
 ## <a name="time-and-language"></a>Heure et langue
 
-|Page Paramètres| URI |
+|Page de paramètres| URI |
 |-------------|-----|
 | Date et heure | ms-settings:dateandtime |
 | Paramètres IME du Japon | MS-Settings : regionlanguage-jpnime (disponible si l’éditeur de méthode d’entrée Microsoft Japan est installé) |
@@ -324,7 +324,7 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 
 ## <a name="update--security"></a>Mise à jour et sécurité
 
-|Page Paramètres| URI |
+|Page de paramètres| URI |
 |-------------|-----|
 | Activation | MS-Settings : activation |
 | Sauvegarde | MS-paramètres : sauvegarde |
@@ -342,7 +342,7 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 
 ## <a name="user-accounts"></a>Comptes d'utilisateurs
 
-|Page Paramètres| URI |
+|Page de paramètres| URI |
 |-------------|-----|
 | Approvisionnement | MS-Settings : mise en service de l’espace de travail (disponible uniquement si Enterprise a déployé un package d’approvisionnement) |
 | Approvisionnement | MS-Settings : approvisionnement (disponible uniquement sur les appareils mobiles et si l’entreprise a déployé un package d’approvisionnement) |

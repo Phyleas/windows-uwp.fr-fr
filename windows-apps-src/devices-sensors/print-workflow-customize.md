@@ -6,24 +6,24 @@ ms.date: 07/03/2020
 ms.topic: article
 keywords: Windows 10, UWP, impression
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bcfc5a24ff9202840b59166de625ac619c05670
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 779965ca46efe7fb63adac46ef2568c2ecff66f1
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493394"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172193"
 ---
 # <a name="customize-the-print-workflow"></a>Personnaliser le workflow d’impression
 
 ## <a name="overview"></a>Vue d’ensemble
 
-Les développeurs peuvent personnaliser l’expérience de flux de travail d’impression via l’utilisation d’une application de flux de travail d’impression. Les applications de flux de travail d’impression sont des applications UWP qui étendent les fonctionnalités des [applications de périphériques Microsoft Store (WSDAs)](https://docs.microsoft.com/windows-hardware/drivers/devapps/). il est donc utile de vous familiariser avec WSDAs avant de continuer.
+Les développeurs peuvent personnaliser l’expérience de flux de travail d’impression via l’utilisation d’une application de flux de travail d’impression. Les applications de flux de travail d’impression sont des applications UWP qui étendent les fonctionnalités des [applications de périphériques Microsoft Store (WSDAs)](/windows-hardware/drivers/devapps/). il est donc utile de vous familiariser avec WSDAs avant de continuer.
 
 Tout comme dans le cas de WSDAs, lorsque l’utilisateur d’une application source choisit d’imprimer un texte et parcourt la boîte de dialogue d’impression, le système vérifie si une application de workflow est associée à cette imprimante. Si c’est le cas, l’application de flux de travail d’impression démarre (principalement en tant que tâche en arrière-plan ; en savoir plus sur ce qui suit). Une application de flux de travail est en mesure de modifier à la fois le ticket d’impression (le document XML qui configure les paramètres de l’imprimante pour la tâche d’impression en cours) et le contenu XPS réel à imprimer. Il peut éventuellement exposer cette fonctionnalité à l’utilisateur en lançant une interface utilisateur au milieu du processus. Après avoir effectué son travail, il transmet le contenu d’impression et le ticket d’impression au pilote.
 
 Comme il implique des composants d’arrière-plan et de premier plan, et parce qu’il est associé de façon fonctionnelle à d’autres applications, une application de flux de travail d’impression peut être plus compliquée à implémenter que d’autres catégories d’applications UWP. Nous vous recommandons d’examiner l' [exemple d’application de workflow](https://github.com/Microsoft/print-oem-samples) tout en lisant ce guide pour mieux comprendre comment les différentes fonctionnalités peuvent être implémentées. Certaines fonctionnalités, telles que les vérifications des erreurs et la gestion de l’interface utilisateur, sont absentes de ce guide pour des raisons de simplicité.
 
-## <a name="getting-started"></a>Prise en main
+## <a name="getting-started"></a>Mise en route
 
 L’application de flux de travail doit indiquer son point d’entrée au système d’impression afin qu’elle puisse être lancée à l’heure appropriée. Pour ce faire, insérez la déclaration suivante dans l' `Application/Extensions` élément du fichier *Package. appxmanifest* du projet UWP.
 
@@ -39,7 +39,7 @@ Si une application de workflow est associée à l’application source qui a dé
 
 ## <a name="do-background-work-on-the-print-ticket"></a>Effectuer un travail en arrière-plan sur le ticket d’impression
 
-La première chose que fait le système d’impression avec l’application de flux de travail est d’activer sa tâche en arrière-plan (dans ce cas, la `WfBackgroundTask` classe dans l' `WFBackgroundTasks` espace de noms). Dans la méthode de la tâche en arrière-plan `Run` , vous devez effectuer un cast des détails du déclencheur de la tâche en instance **[PrintWorkflowTriggerDetails](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowtriggerdetails)** . Cela fournira les fonctionnalités spéciales pour une tâche d’arrière-plan du flux de travail d’impression. Il expose la propriété **[PrintWorkflowSession](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowtriggerdetails.PrintWorkflowSession)** , qui est une instance de **[PrintWorkFlowBackgroundSession](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowbackgroundsession)**. Imprimer les classes de session de workflow-à la fois les variétés d’arrière-plan et de premier plan : contrôle les étapes séquentielles de l’application de flux de travail d’impression.
+La première chose que fait le système d’impression avec l’application de flux de travail est d’activer sa tâche en arrière-plan (dans ce cas, la `WfBackgroundTask` classe dans l' `WFBackgroundTasks` espace de noms). Dans la méthode de la tâche en arrière-plan `Run` , vous devez effectuer un cast des détails du déclencheur de la tâche en instance **[PrintWorkflowTriggerDetails](/uwp/api/windows.graphics.printing.workflow.printworkflowtriggerdetails)** . Cela fournira les fonctionnalités spéciales pour une tâche d’arrière-plan du flux de travail d’impression. Il expose la propriété **[PrintWorkflowSession](/uwp/api/windows.graphics.printing.workflow.printworkflowtriggerdetails.PrintWorkflowSession)** , qui est une instance de **[PrintWorkFlowBackgroundSession](/uwp/api/windows.graphics.printing.workflow.printworkflowbackgroundsession)**. Imprimer les classes de session de workflow-à la fois les variétés d’arrière-plan et de premier plan : contrôle les étapes séquentielles de l’application de flux de travail d’impression.
 
 Enregistrez ensuite les méthodes de gestionnaire pour les deux événements déclenchés par cette classe de session. Vous allez définir ces méthodes ultérieurement.
 
@@ -67,7 +67,7 @@ public void Run(IBackgroundTaskInstance taskInstance) {
 }
 ```
 
-Lorsque la `Start` méthode est appelée, le gestionnaire de sessions déclenche d’abord l’événement **[SetupRequested](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowbackgroundsession.SetupRequested)** . Cet événement expose des informations générales sur la tâche d’impression, ainsi que le ticket d’impression. À ce niveau, le ticket d’impression peut être modifié en arrière-plan.
+Lorsque la `Start` méthode est appelée, le gestionnaire de sessions déclenche d’abord l’événement **[SetupRequested](/uwp/api/windows.graphics.printing.workflow.printworkflowbackgroundsession.SetupRequested)** . Cet événement expose des informations générales sur la tâche d’impression, ainsi que le ticket d’impression. À ce niveau, le ticket d’impression peut être modifié en arrière-plan.
 
 ```csharp
 private void OnSetupRequested(PrintWorkflowBackgroundSession sessionManager, PrintWorkflowBackgroundSetupRequestedEventArgs printTaskSetupArgs) {
@@ -104,14 +104,14 @@ setupRequestedDeferral.Complete();
 
 ## <a name="do-foreground-work-on-the-print-job-optional"></a>Effectuer un travail de premier plan sur le travail d’impression (facultatif)
 
-Si la méthode **[SetRequiresUI](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowbackgroundsetuprequestedeventargs.SetRequiresUI)** a été appelée, le système d’impression examinera le fichier manifeste pour le point d’entrée vers l’application de premier plan. L' `Application/Extensions` élément de votre fichier *Package. appxmanifest* doit contenir les lignes suivantes. Remplacez la valeur de `EntryPoint` par le nom de l’application de premier plan.
+Si la méthode **[SetRequiresUI](/uwp/api/windows.graphics.printing.workflow.printworkflowbackgroundsetuprequestedeventargs.SetRequiresUI)** a été appelée, le système d’impression examinera le fichier manifeste pour le point d’entrée vers l’application de premier plan. L' `Application/Extensions` élément de votre fichier *Package. appxmanifest* doit contenir les lignes suivantes. Remplacez la valeur de `EntryPoint` par le nom de l’application de premier plan.
 
 ```xml
 <uap:Extension Category="windows.printWorkflowForegroundTask"  
     EntryPoint="MyWorkFlowForegroundApp.App" />
 ```
 
-Ensuite, le système d’impression appelle la méthode **OnActivated** pour le point d’entrée de l’application donné. Dans la méthode **OnActivated** de son fichier _app.Xaml.cs_ , l’application de flux de travail doit vérifier le type d’activation pour vérifier qu’il s’agit d’une activation de flux de travail. Si c’est le cas, l’application de flux de travail peut effectuer un cast des arguments d’activation vers un objet **[PrintWorkflowUIActivatedEventArgs](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowuiactivatedeventargs)** , qui expose un objet **[PrintWorkflowForegroundSession](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowforegroundsession)** en tant que propriété. Cet objet, comme son équivalent d’arrière-plan dans la section précédente, contient des événements déclenchés par le système d’impression et vous pouvez assigner des gestionnaires à ces objets. Dans ce cas, la fonctionnalité de gestion des événements sera implémentée dans une classe distincte appelée `WorkflowPage` .
+Ensuite, le système d’impression appelle la méthode **OnActivated** pour le point d’entrée de l’application donné. Dans la méthode **OnActivated** de son fichier _app.Xaml.cs_ , l’application de flux de travail doit vérifier le type d’activation pour vérifier qu’il s’agit d’une activation de flux de travail. Si c’est le cas, l’application de flux de travail peut effectuer un cast des arguments d’activation vers un objet **[PrintWorkflowUIActivatedEventArgs](/uwp/api/windows.graphics.printing.workflow.printworkflowuiactivatedeventargs)** , qui expose un objet **[PrintWorkflowForegroundSession](/uwp/api/windows.graphics.printing.workflow.printworkflowforegroundsession)** en tant que propriété. Cet objet, comme son équivalent d’arrière-plan dans la section précédente, contient des événements déclenchés par le système d’impression et vous pouvez assigner des gestionnaires à ces objets. Dans ce cas, la fonctionnalité de gestion des événements sera implémentée dans une classe distincte appelée `WorkflowPage` .
 
 Tout d’abord, dans le fichier _app.Xaml.cs_ :
 
@@ -151,7 +151,7 @@ protected override void OnActivated(IActivatedEventArgs args){
 }
 ```
 
-Une fois que l’interface utilisateur a attaché des gestionnaires d’événements et que la méthode **OnActivated** s’est arrêtée, le système d’impression déclenche l’événement **[SetupRequested](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowforegroundsession.SetupRequested)** à gérer par l’interface utilisateur. Cet événement fournit les mêmes données que l’événement de configuration de tâche en arrière-plan, y compris les informations sur le travail d’impression et le document de ticket d’impression, mais sans la possibilité de demander le lancement d’une interface utilisateur supplémentaire. Dans le fichier _WorkflowPage.Xaml.cs_ :
+Une fois que l’interface utilisateur a attaché des gestionnaires d’événements et que la méthode **OnActivated** s’est arrêtée, le système d’impression déclenche l’événement **[SetupRequested](/uwp/api/windows.graphics.printing.workflow.printworkflowforegroundsession.SetupRequested)** à gérer par l’interface utilisateur. Cet événement fournit les mêmes données que l’événement de configuration de tâche en arrière-plan, y compris les informations sur le travail d’impression et le document de ticket d’impression, mais sans la possibilité de demander le lancement d’une interface utilisateur supplémentaire. Dans le fichier _WorkflowPage.Xaml.cs_ :
 
 ```csharp
 internal void OnSetupRequested(PrintWorkflowForegroundSession sessionManager, PrintWorkflowForegroundSetupRequestedEventArgs printTaskSetupArgs) {
@@ -185,7 +185,7 @@ internal void OnSetupRequested(PrintWorkflowForegroundSession sessionManager, Pr
 }
 ```
 
-Ensuite, le système d’impression déclenche l’événement **[XpsDataAvailable](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowforegroundsession.XpsDataAvailable)** pour l’interface utilisateur. Dans le gestionnaire de cet événement, l’application de workflow peut accéder à toutes les données disponibles pour l’événement d’installation et peut également lire directement les données XPS, soit en tant que flux d’octets bruts, soit en tant que modèle objet. L’accès aux données XPS permet à l’interface utilisateur de fournir des services d’aperçu avant impression et de fournir à l’utilisateur des informations supplémentaires sur les opérations que l’application de flux de travail exécutera sur les données.
+Ensuite, le système d’impression déclenche l’événement **[XpsDataAvailable](/uwp/api/windows.graphics.printing.workflow.printworkflowforegroundsession.XpsDataAvailable)** pour l’interface utilisateur. Dans le gestionnaire de cet événement, l’application de workflow peut accéder à toutes les données disponibles pour l’événement d’installation et peut également lire directement les données XPS, soit en tant que flux d’octets bruts, soit en tant que modèle objet. L’accès aux données XPS permet à l’interface utilisateur de fournir des services d’aperçu avant impression et de fournir à l’utilisateur des informations supplémentaires sur les opérations que l’application de flux de travail exécutera sur les données.
 
 Dans le cadre de ce gestionnaire d’événements, l’application de flux de travail doit acquérir un objet report s’il continue à interagir avec l’utilisateur. Sans Report, le système d’impression considère que la tâche d’interface utilisateur se termine lorsque le gestionnaire d’événements **XpsDataAvailable** s’arrête ou lorsqu’il appelle une méthode Async. Lorsque l’application a rassemblé toutes les informations requises de l’interaction de l’utilisateur avec l’interface utilisateur, elle doit effectuer le report pour que le système d’impression puisse avancer.
 
@@ -216,14 +216,14 @@ internal async void OnXpsDataAvailable(PrintWorkflowForegroundSession sessionMan
 }
 ```
 
-En outre, l’instance **[PrintWorkflowSubmittedOperation](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedoperation)** exposée par les arguments d’événement donne la possibilité d’annuler le travail d’impression ou d’indiquer que le travail a réussi, mais qu’aucun travail d’impression de sortie n’est nécessaire. Pour ce faire, appelez la méthode **[Complete](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedoperation.Complete)** avec une valeur **[PrintWorkflowSubmittedStatus](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedstatus)** .
+En outre, l’instance **[PrintWorkflowSubmittedOperation](/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedoperation)** exposée par les arguments d’événement donne la possibilité d’annuler le travail d’impression ou d’indiquer que le travail a réussi, mais qu’aucun travail d’impression de sortie n’est nécessaire. Pour ce faire, appelez la méthode **[Complete](/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedoperation.Complete)** avec une valeur **[PrintWorkflowSubmittedStatus](/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedstatus)** .
 
 > [!NOTE]
 > Si l’application de workflow annule le travail d’impression, il est vivement recommandé de fournir une notification Toast indiquant la raison pour laquelle le travail a été annulé.
 
 ## <a name="do-final-background-work-on-the-print-content"></a>Effectuer le travail d’arrière-plan final sur le contenu d’impression
 
-Une fois que l’interface utilisateur a terminé le report dans l’événement **PrintTaskXpsDataAvailable** (ou si l’étape de l’interface utilisateur a été contournée), le système d’impression déclenche l’événement **[soumis](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowbackgroundsession.Submitted)** pour la tâche en arrière-plan. Dans le gestionnaire de cet événement, l’application de workflow peut accéder à toutes les données fournies par l’événement **XpsDataAvailable** . Toutefois, contrairement à l’un des événements précédents, l' **envoi** fournit également un accès en *écriture* au contenu du travail d’impression final via une instance **[PrintWorkflowTarget](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowtarget)** .
+Une fois que l’interface utilisateur a terminé le report dans l’événement **PrintTaskXpsDataAvailable** (ou si l’étape de l’interface utilisateur a été contournée), le système d’impression déclenche l’événement **[soumis](/uwp/api/windows.graphics.printing.workflow.printworkflowbackgroundsession.Submitted)** pour la tâche en arrière-plan. Dans le gestionnaire de cet événement, l’application de workflow peut accéder à toutes les données fournies par l’événement **XpsDataAvailable** . Toutefois, contrairement à l’un des événements précédents, l' **envoi** fournit également un accès en *écriture* au contenu du travail d’impression final via une instance **[PrintWorkflowTarget](/uwp/api/windows.graphics.printing.workflow.printworkflowtarget)** .
 
 L’objet qui est utilisé pour spouler les données pour l’impression finale varie selon que les données sources sont accessibles en tant que flux d’octets bruts ou en tant que modèle objet XPS. Lorsque l’application de workflow accède aux données sources via un flux d’octets, un flux d’octets de sortie est fourni pour écrire les données finales du travail dans. Lorsque l’application de workflow accède aux données sources via le modèle objet, un enregistreur de documents est fourni pour écrire des objets dans le travail de sortie. Dans les deux cas, l’application de flux de travail doit lire toutes les données sources, modifier les données requises et écrire les données modifiées dans la cible de sortie.
 
@@ -233,7 +233,7 @@ Lorsque la tâche en arrière-plan termine l’écriture des données, elle doit
 
 ### <a name="register-the-print-workflow-app-to-the-printer"></a>Inscrire l’application de flux de travail d’impression sur l’imprimante
 
-Votre application de flux de travail est associée à une imprimante utilisant le même type d’envoi de fichier de métadonnées que pour WSDAs. En fait, une seule application UWP peut agir à la fois comme une application de flux de travail et un WSDA qui fournit des fonctionnalités d’impression des paramètres de tâche. Suivez les [étapes WSDA correspondantes pour créer l’Association de métadonnées](https://docs.microsoft.com/windows-hardware/drivers/devapps/step-2--create-device-metadata).
+Votre application de flux de travail est associée à une imprimante utilisant le même type d’envoi de fichier de métadonnées que pour WSDAs. En fait, une seule application UWP peut agir à la fois comme une application de flux de travail et un WSDA qui fournit des fonctionnalités d’impression des paramètres de tâche. Suivez les [étapes WSDA correspondantes pour créer l’Association de métadonnées](/windows-hardware/drivers/devapps/step-2--create-device-metadata).
 
 La différence réside dans le fait que lorsque les WSDAs sont automatiquement activés pour l’utilisateur (l’application est toujours lancée lorsque cet utilisateur imprime sur l’appareil associé), les applications de flux de travail ne le sont pas. Elles ont une stratégie distincte qui doit être définie.
 
@@ -257,4 +257,4 @@ Un utilisateur local peut exécuter cette stratégie sur une imprimante locale, 
 
 [Exemple d’application de workflow](https://github.com/Microsoft/print-oem-samples)
 
-[Espace de noms Windows. Graphics. Printing. Workflow](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow)
+[Espace de noms Windows. Graphics. Printing. Workflow](/uwp/api/windows.graphics.printing.workflow)

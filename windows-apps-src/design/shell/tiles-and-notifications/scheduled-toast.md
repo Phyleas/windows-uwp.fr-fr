@@ -7,12 +7,12 @@ ms.date: 04/09/2020
 ms.topic: article
 keywords: Windows 10, UWP, notification Toast planifiée, scheduledtoastnotification, Guide de démarrage rapide, prise en main, exemple de code, procédure pas à pas
 ms.localizationpriority: medium
-ms.openlocfilehash: 07339cf793bdada51f79d70d9e9e6b6d4a41851b
-ms.sourcegitcommit: 017f2f1492f3220da0fae8b4c99de7206a185dff
+ms.openlocfilehash: bc80cf04c1e1461612401ef4ced898058e2dd4ac
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "81386428"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172353"
 ---
 # <a name="schedule-a-toast-notification"></a>Planifier une notification Toast
 
@@ -21,29 +21,29 @@ Les notifications Toast planifiées vous permettent de planifier l’affichage d
 Notez que les notifications Toast planifiées ont une fenêtre de remise de 5 minutes. Si l’ordinateur est éteint pendant l’heure de remise planifiée et reste inactif pendant plus de 5 minutes, la notification est « supprimée », car elle n’est plus pertinente pour l’utilisateur. Si vous avez besoin de garantir la remise des notifications, quelle que soit la durée de l’arrêt de l’ordinateur, nous vous recommandons d’utiliser une tâche en arrière-plan avec un déclencheur de temps, comme illustré dans [cet exemple de code](https://github.com/WindowsNotifications/quickstart-snoozable-toasts-even-if-computer-is-off).
 
 > [!IMPORTANT]
-> Les applications de bureau (packages MSIX/épars et Win32 classiques) présentent des étapes légèrement différentes pour l’envoi de notifications et la gestion de l’activation. Suivez les instructions ci-dessous, mais remplacez `ToastNotificationManager` par la classe `DesktopNotificationManagerCompat` de la documentation sur les [applications de bureau](toast-desktop-apps.md) .
+> Les applications de bureau (packages MSIX/épars et Win32 classiques) présentent des étapes légèrement différentes pour l’envoi de notifications et la gestion de l’activation. Suivez les instructions ci-dessous, mais remplacez `ToastNotificationManager` par la `DesktopNotificationManagerCompat` classe de la documentation sur les [applications de bureau](toast-desktop-apps.md) .
 
-> **API importantes**: [classe ScheduledToastNotification](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ScheduledToastNotification)
-
-
-## <a name="prerequisites"></a>Composants requis
-
-Pour bien comprendre cette rubrique, il est utile de disposer de ce qui suit...
-
-* Une connaissance pratique des concepts et des termes relatifs aux notifications toast. Pour plus d’informations, consultez [Toast and Action Center Overview](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/07/08/toast-notification-and-action-center-overview-for-windows-10/).
-* Une bonne connaissance du contenu d’une notification toast Windows 10. Pour plus d’informations, voir la [documentation sur le contenu des toasts](adaptive-interactive-toasts.md).
-* Un projet d’application UWP Windows 10
+> **API importantes**: [classe ScheduledToastNotification](/uwp/api/Windows.UI.Notifications.ScheduledToastNotification)
 
 
-## <a name="install-nuget-packages"></a>Installer des packages NuGet
+## <a name="prerequisites"></a>Prérequis
 
-Nous vous recommandons d’installer les deux packages NuGet suivants à votre projet. Notre exemple de code les utilise.
+Pour bien comprendre cette rubrique, les éléments suivants sont utiles...
 
-* [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) : générez des charges utiles de toast via des objets à la place de code XML brut.
-* [QueryString.NET](https://www.nuget.org/packages/QueryString.NET/) : générez et analysez les chaînes de requête en C#.
+* Une connaissance pratique des termes et des concepts de notification Toast. Pour plus d’informations, consultez [Toast and Action Center Overview](/archive/blogs/tiles_and_toasts/toast-notification-and-action-center-overview-for-windows-10).
+* Une bonne connaissance du contenu de notification Windows 10 Toast. Pour plus d’informations, consultez [la documentation sur le contenu Toast](adaptive-interactive-toasts.md).
+* Un projet d’application UWP Windows 10
 
 
-## <a name="add-namespace-declarations"></a>Ajouter des déclarations d’espace de noms
+## <a name="install-nuget-packages"></a>Installer les packages NuGet
+
+Nous vous recommandons d’installer les deux packages NuGet suivants dans votre projet. Notre exemple de code utilisera ces packages.
+
+* [Microsoft. Toolkit. UWP. notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/): générer des charges utiles Toast par le biais d’objets au lieu de données XML brutes.
+* [QueryString.net](https://www.nuget.org/packages/QueryString.NET/): générer et analyser les chaînes de requête avec C #
+
+
+## <a name="add-namespace-declarations"></a>Ajout de déclarations d'espaces de noms
 
 `Windows.UI.Notifications` comprend les API Toast.
 
@@ -56,11 +56,11 @@ using Microsoft.QueryStringDotNET; // QueryString.NET
 
 ## <a name="construct-the-toast-content"></a>Construire le contenu Toast
 
-Dans Windows 10, le contenu de votre notification toast est décrit à l’aide d’un langage adaptatif qui permet une grande flexibilité en termes d’apparence de notification. Pour plus d’informations, voir la [documentation sur le contenu des toasts](adaptive-interactive-toasts.md).
+Dans Windows 10, le contenu de vos notifications Toast est décrit à l’aide d’un langage adaptable qui offre une grande flexibilité en ce qui concerne l’apparence de votre notification. Pour plus d’informations, consultez la documentation sur le [contenu Toast](adaptive-interactive-toasts.md) .
 
-Grâce à la bibliothèque de notifications, la génération du contenu XML est simple. Si vous n’installez pas la bibliothèque Notifications à partir de NuGet, vous devez construire le code XML manuellement, ce qui peut prêter aux erreurs.
+Grâce à la bibliothèque de notifications, la génération du contenu XML est simple. Si vous n’installez pas la bibliothèque de notifications à partir de NuGet, vous devez construire le XML manuellement, ce qui laisse de l’espace pour les erreurs.
 
-Vous devez toujours définir la propriété **Launch** de manière à ce que lorsque l’utilisateur appuie sur le corps du toast et que votre application est lancée, cette dernière sait quel contenu elle doit afficher.
+Vous devez toujours définir la propriété **Launch** . par conséquent, quand l’utilisateur appuie sur le corps du Toast et que votre application est lancée, votre application connaît le contenu à afficher.
 
 ```csharp
 // In a real app, these would be initialized with actual data
@@ -101,7 +101,7 @@ ToastContent toastContent = new ToastContent()
 
 ## <a name="create-the-scheduled-toast"></a>Créer le Toast planifié
 
-Une fois que vous avez initialisé votre contenu Toast, créez un nouveau [ScheduledToastNotification](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ScheduledToastNotification) et transmettez le code XML du contenu, ainsi que l’heure à laquelle vous souhaitez que la notification soit remise.
+Une fois que vous avez initialisé votre contenu Toast, créez un nouveau [ScheduledToastNotification](/uwp/api/Windows.UI.Notifications.ScheduledToastNotification) et transmettez le code XML du contenu, ainsi que l’heure à laquelle vous souhaitez que la notification soit remise.
 
 ```csharp
 // Create the scheduled notification
@@ -113,9 +113,9 @@ var toast = new ScheduledToastNotification(toastContent.GetXml(), DateTime.Now.A
 
 Si vous souhaitez annuler, supprimer ou remplacer par programmation la notification planifiée, vous devez utiliser la propriété Tag (et éventuellement la propriété Group) pour fournir une clé primaire pour votre notification. Ensuite, vous pouvez utiliser cette clé primaire à l’avenir pour annuler, supprimer ou remplacer la notification.
 
-Pour plus d’informations sur le remplacement/la suppression des notifications toast déjà remises, voir [Démarrage rapide : gestion des notifications toast dans le centre de notifications (XAML)](https://docs.microsoft.com/previous-versions/windows/apps/dn631260(v=win.10)).
+Pour plus d’informations sur le remplacement ou la suppression des notifications Toast déjà fournies, consultez [démarrage rapide : gestion des notifications Toast dans le centre de maintenance (XAML)](/previous-versions/windows/apps/dn631260(v=win.10)).
 
-Les propriétés Tag et Group combinées font office de clé primaire composite. La propriété Group est l’identificateur le plus générique, où vous pouvez affecter des groupes tels que « wallPosts », « messages », « friendRequests », etc. tandis que la propriété Tag doit identifier de manière unique la notification proprement dite au sein du groupe. En utilisant un groupe générique, vous pouvez ensuite supprimer toutes les notifications de ce groupe à l’aide de l’[API RemoveGroup](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_).
+Les balises et les groupes fonctionnent comme une clé primaire composite. Group est l’identificateur plus générique, dans lequel vous pouvez assigner des groupes tels que « wallPosts », « messages », « friendRequests », etc. La balise doit ensuite identifier de manière unique la notification proprement dite à partir du groupe. À l’aide d’un groupe générique, vous pouvez supprimer toutes les notifications de ce groupe à l’aide de l' [API RemoveGroup](/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_).
 
 ```csharp
 toast.Tag = "18365";
@@ -125,7 +125,7 @@ toast.Group = "ASTR 170B1";
 
 ## <a name="schedule-the-notification"></a>Planifier la notification
 
-Enfin, créez un [ToastNotifier](https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastnotifier) et appelez AddToSchedule (), en transmettant votre notification Toast planifiée.
+Enfin, créez un [ToastNotifier](/uwp/api/windows.ui.notifications.toastnotifier) et appelez AddToSchedule (), en transmettant votre notification Toast planifiée.
 
 ```csharp
 // And your scheduled toast to the schedule
@@ -133,7 +133,7 @@ ToastNotificationManager.CreateToastNotifier().AddToSchedule(toast);
 ```
 
 
-## <a name="cancel-scheduled-notifications"></a>Annuler les notifications planifiées
+## <a name="cancel-scheduled-notifications"></a>Annuler des notifications planifiées
 
 Pour annuler une notification planifiée, vous devez d’abord récupérer la liste de toutes les notifications planifiées.
 
@@ -169,4 +169,4 @@ Consultez la documentation [Envoyer un toast local](send-local-toast.md) pour en
 ## <a name="resources"></a>Ressources
 
 * [Documentation sur le contenu Toast](adaptive-interactive-toasts.md)
-* [ScheduledToastNotification, classe](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ScheduledToastNotification)
+* [ScheduledToastNotification, classe](/uwp/api/Windows.UI.Notifications.ScheduledToastNotification)

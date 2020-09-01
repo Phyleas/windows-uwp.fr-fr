@@ -4,14 +4,14 @@ description: Dans le cadre du portage du convertisseur simple OpenGL ES 2.0, vou
 ms.assetid: 0383b774-bc1b-910e-8eb6-cc969b3dcc08
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp, jeux , portage, nuanceur, direct3d, opengl
+keywords: Windows 10, UWP, jeux, port, nuanceur, Direct3D, OpenGL
 ms.localizationpriority: medium
-ms.openlocfilehash: b800a32149011376e1d97e0da44d32c733ddfb93
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: a5405b49bddb31752c42ace82d89b128a71d78a2
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368233"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89171993"
 ---
 # <a name="port-the-shader-objects"></a>Porter les objets nuanceur
 
@@ -20,16 +20,16 @@ ms.locfileid: "66368233"
 
 **API importantes**
 
--   [**ID3D11Device**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11device)
--   [**ID3D11DeviceContext**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext)
+-   [**ID3D11Device**](/windows/desktop/api/d3d11/nn-d3d11-id3d11device)
+-   [**ID3D11DeviceContext**](/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext)
 
 Dans le cadre du portage du convertisseur simple OpenGL ES 2.0, vous devez commencer par créer les objets des nuanceurs de vertex et de fragments équivalents dans Direct3D 11, mais également vous assurer que le programme principal sera en mesure de communiquer avec ces différents objets une fois compilés.
 
-> **Remarque**    vous avez créé un nouveau projet de Direct3D ? suivez les instructions fournies dans l’article [Créer un projet DirectX 11 pour la plateforme Windows universelle (UWP)](user-interface.md). Cette procédure pas à pas suppose que vous disposez des ressources DXGI et Direct3D nécessaires pour le dessin à l’écran (celles fournies dans le modèle).
+> **Remarque**    Avez-vous créé un nouveau projet Direct3D ? suivez les instructions fournies dans l’article [Créer un projet DirectX 11 pour la plateforme Windows universelle (UWP)](user-interface.md). Cette procédure pas à pas suppose que vous disposez des ressources DXGI et Direct3D nécessaires pour le dessin à l’écran (celles fournies dans le modèle).
 
  
 
-De la même façon que dans OpenGL ES 2.0, les nuanceurs compilés dans Direct3D doivent être associés à un contexte de dessin. Toutefois, comme Direct3D n’utilise pas le concept d’objet programme de nuanceur, vous devez à la place affecter directement les nuanceurs à un objet [**ID3D11DeviceContext**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext). Cette étape, qui suit le processus OpenGL ES 2.0 de création et de liaison d’objets nuanceur, vous permet d’obtenir les comportements d’API correspondants dans Direct3D.
+De la même façon que dans OpenGL ES 2.0, les nuanceurs compilés dans Direct3D doivent être associés à un contexte de dessin. Toutefois, comme Direct3D n’utilise pas le concept d’objet programme de nuanceur, vous devez à la place affecter directement les nuanceurs à un objet [**ID3D11DeviceContext**](/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext). Cette étape, qui suit le processus OpenGL ES 2.0 de création et de liaison d’objets nuanceur, vous permet d’obtenir les comportements d’API correspondants dans Direct3D.
 
 <a name="instructions"></a>Instructions
 ------------
@@ -38,7 +38,7 @@ De la même façon que dans OpenGL ES 2.0, les nuanceurs compilés dans Direct3D
 
 Dans cet exemple simple de code OpenGL ES 2.0, les nuanceurs sont enregistrés sous forme de fichiers texte, puis chargés en tant que données de type chaîne à compiler au moment de l’exécution.
 
-OpenGL ES 2.0 : Compiler un nuanceur
+OpenGL ES 2.0 : compiler un nuanceur
 
 ``` syntax
 GLuint __cdecl CompileShader (GLenum shaderType, const char *shaderSrcStr)
@@ -78,11 +78,11 @@ GLuint __cdecl CompileShader (GLenum shaderType, const char *shaderSrcStr)
 
 Dans Direct3D, les nuanceurs ne sont pas compilés au moment de l’exécution : ils sont toujours compilés dans des fichiers CSO en même temps que les autres éléments du programme. Lorsque vous compilez votre application avec Microsoft Visual Studio, les fichiers HLSL sont compilés dans des fichiers CSO (.cso) que votre application doit ensuite charger. Vous devez donc veiller à bien inclure ces fichiers CSO dans le package de votre application !
 
-> **Remarque**    l’exemple suivant effectue la nuanceur le chargement et la compilation à l’aide de façon asynchrone le **automatique** syntaxe lambda et le mot clé. La méthode ReadDataAsync(), implémentée pour le modèle, lit les données d’un fichier CSO sous forme de tableau d’octets (fileData).
+> **Remarque**    L’exemple suivant effectue le chargement et la compilation du nuanceur de manière asynchrone à l’aide du mot clé **auto** et de la syntaxe lambda. La méthode ReadDataAsync(), implémentée pour le modèle, lit les données d’un fichier CSO sous forme de tableau d’octets (fileData).
 
  
 
-Direct3D 11 : Compiler un nuanceur
+Direct3D 11 : compiler un nuanceur
 
 ``` syntax
 auto loadVSTask = DX::ReadDataAsync(m_projectDir + "SimpleVertexShader.cso");
@@ -105,11 +105,11 @@ auto createPSTask = loadPSTask.then([this](Platform::Array<byte>^ fileData) {
 };
 ```
 
-### <a name="step-2-create-and-load-the-vertex-and-fragment-pixel-shaders"></a>Étape 2 : Créer et charger le vertex et des nuanceurs (en pixels) du fragment
+### <a name="step-2-create-and-load-the-vertex-and-fragment-pixel-shaders"></a>Étape 2 : Créer et charger les nuanceurs de vertex et de fragments (pixels)
 
 OpenGL ES 2.0 renferme la notion de « programme » de nuanceur. Ce programme joue le rôle d’interface de communication entre le programme principal exécuté par le processeur UC et les différents nuanceurs qui sont exécutés par le processeur GPU. Les nuanceurs sont compilés (ou chargés à partir des ressources compilées), puis ils sont associés à un programme exécutable par le processeur GPU.
 
-OpenGL ES 2.0 : Charger les nuanceurs de sommets et de fragment dans un programme de trame
+OpenGL ES 2.0 : charger les nuanceurs de vertex et de fragments dans un programme d’ombrage
 
 ``` syntax
 GLuint __cdecl LoadShaderProgram (const char *vertShaderSrcStr, const char *fragShaderSrcStr)
@@ -168,9 +168,9 @@ GLuint __cdecl LoadShaderProgram (const char *vertShaderSrcStr, const char *frag
 glUseProgram(renderer->programObject);
 ```
 
-Direct3D n’utilise pas le concept d’objet programme de nuanceur. À la place, les nuanceurs sont créés lors de l’appel d’une méthode de création de nuanceur sur l’interface [**ID3D11Device**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11device) (par exemple, [**ID3D11Device::CreateVertexShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createvertexshader) ou [**ID3D11Device::CreatePixelShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createpixelshader)). Pour définir des nuanceurs adaptés au contexte de dessin actuel, nous les associons aux objets [**ID3D11DeviceContext**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext) correspondants à l’aide d’une méthode « set shader », telle que [**ID3D11DeviceContext::VSSetShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-vssetshader) pour le nuanceur de vertex ou [**ID3D11DeviceContext::PSSetShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-pssetshader) pour le nuanceur de fragments.
+Direct3D n’utilise pas le concept d’objet programme de nuanceur. Au lieu de cela, les nuanceurs sont créés lorsque l’une des méthodes de création de nuanceur sur l’interface [**ID3D11Device**](/windows/desktop/api/d3d11/nn-d3d11-id3d11device) (comme [**ID3D11Device :: CreateVertexShader**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createvertexshader) ou [**ID3D11Device :: CreatePixelShader**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createpixelshader)) est appelée. Pour définir les nuanceurs du contexte de dessin actuel, nous les fournissons aux [**ID3D11DeviceContext**](/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext) correspondants à l’aide d’une méthode de nuanceur définie, telle que [**ID3D11DeviceContext :: VSSetShader**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-vssetshader) pour le nuanceur de sommets ou [**ID3D11DeviceContext ::P ssetshader**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-pssetshader) pour le nuanceur de fragments.
 
-Direct3D 11 : Définissez les nuanceurs pour le contexte de dessin du périphérique graphique.
+Direct3D 11 : définir les nuanceurs pour le contexte de dessin du périphérique graphique
 
 ``` syntax
 m_d3dContext->VSSetShader(
@@ -184,18 +184,18 @@ m_d3dContext->PSSetShader(
   0);
 ```
 
-### <a name="step-3-define-the-data-to-supply-to-the-shaders"></a>Étape 3 : Définir les données à fournir pour les nuanceurs
+### <a name="step-3-define-the-data-to-supply-to-the-shaders"></a>Étape 3 : Indiquer les données à transmettre aux nuanceurs
 
 Dans notre exemple de code OpenGL ES 2.0, nous devons déclarer la variable **uniform** pour le pipeline des nuanceurs :
 
--   **u\_mvpMatrix**: un tableau de 4 x 4 de valeurs en virgule flottante qui représente la matrice de transformation de modèle-vue-projection finale qui utilise le modèle de coordonnées pour le cube et les transforme en coordonnées 2D de projection pour la conversion d’analyse.
+-   **u \_ mvpMatrix**: tableau 4x4 de valeurs float qui représente la matrice de transformation modèle-vue-projection finale qui prend les coordonnées du modèle pour le cube et les transforme en coordonnées de projection 2D pour la conversion de l’analyse.
 
 Nous devons également déclarer deux valeurs **attribute** pour les données de vertex :
 
--   **un\_position**: un vecteur de 4-float pour les coordonnées de modèle d’un vertex.
--   **un\_couleur**: Un vecteur de 4-float pour la valeur de couleur RVBA associé au vertex.
+-   ** \_ position**: vecteur de 4-float pour les coordonnées de modèle d’un vertex.
+-   ** \_ couleur**: vecteur à quatre nombres pour la valeur de couleur RVBA associée au vertex.
 
-Open GL ES 2.0 : Définitions de GLSL pour les attributs et uniformes
+Open GL ES 2.0 : définitions GLSL pour les variables uniformes et les attributs
 
 ``` syntax
 uniform mat4 u_mvpMatrix;
@@ -203,9 +203,9 @@ attribute vec4 a_position;
 attribute vec4 a_color;
 ```
 
-Ici, les variables du programme principal correspondantes sont définies sous forme de champs de l’objet convertisseur. (Reportez-vous à l’en-tête dans [Comment : port un simple convertisseur OpenGL ES 2.0 vers Direct3D 11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md).) Une fois que nous avons fait cela, nous devons spécifier les emplacements dans la mémoire où le programme principal fournit ces valeurs pour le pipeline de nuanceur, ce que nous faisons généralement juste avant un appel de dessin :
+Ici, les variables du programme principal correspondantes sont définies sous forme de champs de l’objet convertisseur. (Voir l’en-tête dans [Procédure : portage d’un convertisseur simple OpenGL ES 2.0 sur Direct3D 11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md).) Nous devons ensuite indiquer à quels emplacements mémoire le programme principal doit fournir ces valeurs destinées au pipeline de nuanceurs. Cela se passe généralement juste avant un appel de dessin :
 
-OpenGL ES 2.0 : L’emplacement de données uniforme et d’attribut
+OpenGL ES 2.0 : marquage de l’emplacement des variables uniformes et des attributs
 
 ``` syntax
 
@@ -227,9 +227,9 @@ renderer->mvpLoc = glGetUniformLocation(renderer->programObject, "u_mvpMatrix");
 
 Direct3D n’utilise pas le concept de variables uniformes (« uniform ») et d’attributs (« attribute ») sous le même angle (ou pas avec la même syntaxe). À la place, il se sert de mémoires tampons constantes, représentant des sous-ressources Direct3D qui sont partagées entre le programme principal et les programmes de nuanceur. Certaines de ces sous-ressources, telles que les positions et couleurs de vertex, sont décrites sous forme de sémantiques HLSL. Pour plus d’informations sur les mémoires tampons constantes et les sémantiques HLSL sous-jacentes aux concepts OpenGL ES 2.0, voir [Porter des objets tampon de trame, des variables uniformes et des attributs](porting-uniforms-and-attributes.md).
 
-Pour adapter ce processus à Direct3D, nous convertissons la variable uniforme en mémoire tampon constante Direct3D (cbuffer) et nous lui affectons un registre pour la recherche, avec la sémantique HLSL **register**. Les deux attributs de vertex sont gérés en tant qu’éléments d’entrée lors des étapes du pipeline de nuanceurs et sont également associés à des [sémantiques HLSL](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dcl-usage---ps) (POSITION et COLOR0) qui renseignent les nuanceurs sur la position et la couleur du vertex. Le nuanceur de pixels prend un SV\_POSITION, avec la VP\_ préfixe indiquant qu’il est une valeur de système générée par le GPU. (Dans ce cas, il est une position de pixel générée pendant la conversion d’analyse.) VertexShaderInput et PixelShaderInput ne sont pas déclarés comme constante met en mémoire tampon car le premier sera utilisé pour définir la mémoire tampon vertex (consultez [les mémoires tampons de vertex et les données de Port](port-the-vertex-buffers-and-data-config.md)), et les données de ce dernier sont générées comme résultat d’un étape précédente dans le pipeline, ce qui est dans ce cas le nuanceur de sommets.
+Pour adapter ce processus à Direct3D, nous convertissons la variable uniforme en mémoire tampon constante Direct3D (cbuffer) et nous lui affectons un registre pour la recherche, avec la sémantique HLSL **register**. Les deux attributs de vertex sont gérés en tant qu’éléments d’entrée lors des étapes du pipeline de nuanceurs et sont également associés à des [sémantiques HLSL](/windows/desktop/direct3dhlsl/dcl-usage---ps) (POSITION et COLOR0) qui renseignent les nuanceurs sur la position et la couleur du vertex. Le nuanceur de pixels prend une \_ position de SV, avec le \_ préfixe VP indiquant qu’il s’agit d’une valeur système générée par le GPU. (Dans notre exemple, la valeur correspond à la position d’un pixel générée lors de la conversion de numérisation.) VertexShaderInput et PixelShaderInput ne sont pas déclarés en tant que mémoires tampons constantes, car VertexShaderInput est utilisé pour définir la mémoire tampon de vertex (voir [Porter les mémoires tampons et données de vertex](port-the-vertex-buffers-and-data-config.md)), et les données de PixelShaderInput sont générées lors d’une étape précédente dans le pipeline, à savoir ici le nuanceur de vertex.
 
-Direct3D : Définitions de HLSL pour les mémoires tampons constantes et les données de vertex
+Direct3D : définitions HLSL pour les mémoires tampons constantes et les données de vertex
 
 ``` syntax
 cbuffer ModelViewProjectionConstantBuffer : register(b0)
@@ -256,7 +256,7 @@ Pour plus d’informations sur le portage des mémoires tampons constantes et l�
 
 Voici les structures de disposition des données qui sont transmises au pipeline de nuanceurs avec une mémoire tampon constante ou de vertex.
 
-Direct3D 11 : Déclaration de la disposition de mémoires tampons vertex et (constante)
+Direct3D 11 : déclaration de la disposition d’une mémoire tampon constante ou de vertex
 
 ``` syntax
 // Constant buffer used to send MVP matrices to the vertex shader.
@@ -273,11 +273,11 @@ struct VertexPositionColor
 };
 ```
 
-Utiliser le XM DirectXMath\* types pour la constante de la mémoire tampon éléments, car ils fournissent compression appropriée et l’alignement du contenu lorsqu’ils sont envoyés vers le pipeline de nuanceur. Si vous utilisez les types et tableaux de valeurs flottantes standard de la plateforme Windows, vous devez effectuer le packaging et l’alignement manuellement.
+Utilisez les types XM DirectXMath \* pour vos éléments de mémoire tampon constantes, car ils fournissent une compression et un alignement appropriés pour le contenu lorsqu’ils sont envoyés au pipeline du nuanceur. Si vous utilisez les types et tableaux de valeurs flottantes standard de la plateforme Windows, vous devez effectuer le packaging et l’alignement manuellement.
 
-Pour lier un mémoire tampon constante, créez une description de la mise en page comme un [ **CD3D11\_tampon\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-cd3d11_buffer_desc) structurer et transmettez-le à [ **ID3DDevice :: CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer). Ensuite, dans votre méthode de rendu, transmettez la mémoire tampon constante à [**ID3D11DeviceContext::UpdateSubresource**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-updatesubresource) avant de procéder au dessin.
+Pour lier une mémoire tampon constante, créez une description de disposition en tant que structure [** \_ \_ desc de tampon CD3D11**](/windows/desktop/api/d3d11/ns-d3d11-cd3d11_buffer_desc) et transmettez-la à [**ID3DDevice :: CreateBuffer**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer). Ensuite, dans votre méthode de rendu, transmettez la mémoire tampon constante à [**ID3D11DeviceContext::UpdateSubresource**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-updatesubresource) avant de procéder au dessin.
 
-Direct3D 11 : Lier la mémoire tampon constante
+Direct3D 11 : lier la mémoire tampon constante
 
 ``` syntax
 CD3D11_BUFFER_DESC constantBufferDesc(sizeof(ModelViewProjectionConstantBuffer), D3D11_BIND_CONSTANT_BUFFER);
@@ -304,22 +304,18 @@ La mémoire tampon de vertex est créée et mise à jour de manière similaire. 
 <a name="next-step"></a>Étape suivante
 ---------
 
-[Les mémoires tampons de vertex et les données de port](port-the-vertex-buffers-and-data-config.md)
+[Porter les mémoires tampons et données de vertex](port-the-vertex-buffers-and-data-config.md)
 ## <a name="related-topics"></a>Rubriques connexes
 
 
-[Comment : port un simple convertisseur OpenGL ES 2.0 vers Direct3D 11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
+[Comment : porter un convertisseur OpenGL ES 2,0 simple vers Direct3D 11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
 
-[Les mémoires tampons de vertex et les données de port](port-the-vertex-buffers-and-data-config.md)
+[Porter les mémoires tampons et données de vertex](port-the-vertex-buffers-and-data-config.md)
 
-[Port du GLSL](port-the-glsl.md)
+[Porter le langage GLSL](port-the-glsl.md)
 
 [Dessiner à l’écran](draw-to-the-screen.md)
 
  
 
  
-
-
-
-

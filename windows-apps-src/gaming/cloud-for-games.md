@@ -6,12 +6,12 @@ ms.date: 03/27/2018
 ms.topic: article
 keywords: Windows 10, UWP, jeux, cloud services
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c0cfd98a37c4822d80eded7fe69e23c54bcdc89
-ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
+ms.openlocfilehash: ca575975b27a71798b7cad1cac0cc83ec870d756
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89054409"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173173"
 ---
 #  <a name="using-cloud-services-for-uwp-games"></a>Utilisation des services de cloud computing pour les jeux UWP
 
@@ -159,7 +159,7 @@ Tout d’abord, vous devez prendre en considération le niveau de service le mie
 
 Voici quelques-unes des façons dont vous pouvez utiliser les offres de services de cloud computing Azure pour un jeu. Azure fonctionne avec Windows, Linux et les technologies Open Source que vous connaissez comme Ruby, Python, Java et PHP. Pour plus d’informations, voir [Azure pour les jeux](https://azure.microsoft.com/solutions/gaming/).
 
-| Configuration requise                 | Scénarios d’activité                            | Offre de produit                      | Fonctionnalités de produit                                    |
+| Spécifications                 | Scénarios d’activité                            | Offre de produit                      | Fonctionnalités de produit                                    |
 |-----------------------------------|-----------------------------------------------|---------------------------------------|----------------------------------------------------|
 | Hébergement de votre domaine dans le cloud     | Répondre efficacement aux requêtes DNS            | [DNS Azure](https://azure.microsoft.com/services/dns/) | Hébergement de votre domaine avec des performances et une disponibilité élevées  |
 | Connexion et vérification d’identité      | Le joueur se connecte et son identité est authentifiée  | [Azure Active Directory](https://azure.microsoft.com/services/active-directory/) | Authentification unique à toute application web sur site et dans le cloud avec une authentification multifacteur            | 
@@ -170,7 +170,7 @@ Voici quelques-unes des façons dont vous pouvez utiliser les offres de services
 | Stockage dans le cloud des données de jeu       | Les dernières données de jeu sont stockées dans le cloud et envoyées aux appareils des clients | [Stockage Blob Azure](https://azure.microsoft.com/services/storage/blobs/)| Aucune restriction sur les types de fichiers qui peuvent être stockés ; stockage d’objets pour de grandes quantités de données non structurées comme les images, les fichiers audio, vidéo et plus encore  |
 | Tables de stockage de données temporaires| Les transactions de jeu (changements dans les états de jeu) sont stockées temporairement dans les tables | [Stockage de tables Azure](https://azure.microsoft.com/services/storage/tables/)| Les données de jeu peuvent être stockées dans un schéma flexible en fonction des besoins du jeu |
 | Mise en file d’attente des transactions/requêtes de jeu| Les transactions de jeu sont traitées sous la forme d’une file d’attente | [Stockage File d’attente Azure](https://azure.microsoft.com/services/storage/queues/)| Les files d’attente absorbent les pics de trafic inattendus et peuvent empêcher les serveurs d’être submergés par un flux soudain de demandes en cours de jeu   |
-| Base de données de jeu relationnelle évolutive| Stockage structuré de données relationnelles de type transactions dans le jeu vers base de données | [Azure SQL Database](https://azure.microsoft.com/services/sql-database/)| Base de données SQL en tant que service ([comparaison avec SQL sur un ordinateur virtuel](https://azure.microsoft.com/documentation/articles/data-management-azure-sql-database-and-sql-server-iaas/))  |
+| Base de données de jeu relationnelle évolutive| Stockage structuré de données relationnelles de type transactions dans le jeu vers base de données | [Azure SQL Database](https://azure.microsoft.com/services/sql-database/)| Base de données SQL en tant que service ([comparaison avec SQL sur un ordinateur virtuel](/azure/azure-sql/azure-sql-iaas-vs-paas-what-is-overview))  |
 | Base de données de jeu évolutive et distribuée à faible latence| Rapidité des lectures, écritures et requêtes de jeu et des données du joueur avec flexibilité du schéma | [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/)| Base de données de documents NoSQL à faible latence, gérée en tant que service   |
 | Utilisation de votre propre centre de données avec les services Azure | Le jeu est récupéré depuis votre propre centre de données et envoyé sur les appareils du client | [Azure Stack](https://azure.microsoft.com/overview/azure-stack/) | Permet à votre organisation de transmettre des services Windows Azure depuis votre propre centre de données pour plus d’efficacité  |
 | Transfert de blocs de données volumineux| Les fichiers volumineux comme les images, les fichiers audio et les vidéos du jeu peuvent être envoyés aux utilisateurs à partir de l’emplacement POP CDN (réseau de diffusion de contenu) le plus proche avec Azure CDN    | [Azure Content Delivery Network](https://azure.microsoft.com/services/cdn/) | Basé sur une topologie réseau moderne avec nœuds centralisés de grande taille, Azure CDN gère les pics soudains de trafic et les charges élevées pour augmenter considérablement la vitesse et la disponibilité, ce qui conduit à une amélioration significative de l’expérience utilisateur  |
@@ -221,7 +221,7 @@ Nous innovons en permanence et ajoutons de nouvelles fonctionnalités. Pour plus
 
 ## <a name="related-links"></a>Liens connexes
 
-* [Guide de développement de jeux Windows 10](https://docs.microsoft.com/windows/uwp/gaming/e2e)
+* [Guide de développement de jeux Windows 10](./e2e.md)
 * [Azure pour les jeux](https://azure.microsoft.com/solutions/gaming/)
 * [Playfab](https://playfab.com/)
 * [Microsoft for Startups](https://startups.microsoft.com)

@@ -7,12 +7,12 @@ ms.date: 05/25/2017
 ms.topic: article
 keywords: Windows 10, UWP, vignettes secondaires, conseils, recommandations, meilleures pratiques
 ms.localizationpriority: medium
-ms.openlocfilehash: 400b0d48fd68c720d613325d1938c0c4a70931a7
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 83f8a095a4e15c3ec0ebb02eebc183cf4beb01ea
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82971024"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172333"
 ---
 # <a name="secondary-tile-guidance"></a>Aide sur les vignettes secondaires
 
@@ -49,6 +49,6 @@ Tenez compte des recommandations suivantes lors de l’activation des vignettes 
 
 * [Vue d’ensemble des vignettes secondaires](secondary-tiles.md)
 * [Épingler les vignettes secondaires](secondary-tiles-pinning.md)
-* [Ressources de vignette](app-assets.md)
+* [Ressources de vignette](../../style/app-icons-and-logos.md)
 * [Documentation sur le contenu de la vignette](create-adaptive-tiles.md)
 * [Envoyer une notification par vignette locale](sending-a-local-tile-notification.md)

@@ -1,54 +1,54 @@
 ---
 ms.assetid: 87708690-079A-443D-807E-D2BF9F614DDF
-description: Utilisez cette méthode dans l’API de soumission de Microsoft Store pour obtenir des données pour un vol de package pour une application qui est inscrit pour votre compte espace partenaires.
+description: Utilisez cette méthode dans l’API de soumission Microsoft Store pour obtenir des données pour un vol de package pour une application inscrite auprès de votre compte espace partenaires.
 title: Obtient une version d’évaluation du package
 ms.date: 04/17/2018
 ms.topic: article
-keywords: windows 10, uwp, API de soumission au Microsoft Store, version d’évaluation, version d'évaluation du package
+keywords: Windows 10, UWP, API de soumission Microsoft Store, vol, vol de packages
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a02a299682610cd516067acefc795df9512a268
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 3916328f2c48642596c6a0b11401f583957bc973
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371764"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172903"
 ---
 # <a name="get-a-package-flight"></a>Obtient une version d’évaluation du package
 
-Utilisez cette méthode dans l’API de soumission de Microsoft Store pour obtenir des données pour un vol de package pour une application qui est inscrit pour votre compte espace partenaires.
+Utilisez cette méthode dans l’API de soumission Microsoft Store pour obtenir des données pour un vol de package pour une application inscrite auprès de votre compte espace partenaires.
 
 ## <a name="prerequisites"></a>Prérequis
 
 Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
 
-* Si ce n’est pas déjà le cas, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission au Microsoft Store.
-* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
+* Si vous ne l’avez pas déjà fait, renseignez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) pour l’API de soumission Microsoft Store.
+* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Une fois que vous avez récupéré le jeton d’accès, vous avez 60 minutes pour l’utiliser avant qu’il n’expire. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 
-## <a name="request"></a>Demande
+## <a name="request"></a>Requête
 
 Cette méthode présente la syntaxe suivante. Consultez les sections suivantes pour obtenir des exemples d’utilisation et une description de l’en-tête et du corps de la requête.
 
-| Méthode | URI de requête                                                      |
+| Méthode | URI de demande                                                      |
 |--------|------------------------------------------------------------------|
 | GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}` |
 
 
 ### <a name="request-header"></a>En-tête de requête
 
-| Header        | type   | Description                                                                 |
+| En-tête        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | chaîne | Obligatoire. Le jeton d’accès Azure AD sous la forme **PORTEUR** &lt; *jeton*&gt;. |
+| Autorisation | string | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer** &lt;*jeton*&gt;. |
 
 
-### <a name="request-parameters"></a>Paramètres de la requête
+### <a name="request-parameters"></a>Paramètres de la demande
 
-| Nom        | type   | Description                                                                 |
+| Nom        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | chaîne | Obligatoire. ID Windows Store de l’application qui contient la version d’évaluation du package à obtenir. L’ID de Store pour l’application est disponible dans le centre de partenaires.  |
-| flightId | chaîne | Obligatoire. ID de la version d’évaluation du package à obtenir. Cet ID est disponible dans les données de réponse des requêtes pour [créer une version d’évaluation du package](create-a-flight.md) ou [obtenir des versions d’évaluation du package pour une application](get-flights-for-an-app.md). Pour un vol a été créé dans le centre de partenaires, cet ID est également disponible dans l’URL de la page de vol de partenaires.  |
+| applicationId | string | Obligatoire. ID Windows Store de l’application qui contient la version d’évaluation du package à obtenir. L’ID de magasin de l’application est disponible dans l’espace partenaires.  |
+| flightId | string | Obligatoire. ID de la version d’évaluation du package à obtenir. Cet ID est disponible dans les données de réponse pour les demandes de [création d’un vol de packages](create-a-flight.md) et l' [extraction des vols de packages pour une application](get-flights-for-an-app.md). Pour un vol créé dans l’espace partenaires, cet ID est également disponible dans l’URL de la page de vol de l’espace partenaires.  |
 
 
-### <a name="request-body"></a>Corps de la requête
+### <a name="request-body"></a>Corps de la demande
 
 Ne fournissez pas de corps de requête pour cette méthode.
 
@@ -61,7 +61,7 @@ GET https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/fli
 Authorization: Bearer <your access token>
 ```
 
-## <a name="response"></a>Réponse
+## <a name="response"></a>response
 
 L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à cette méthode. Pour plus d’informations sur les valeurs figurant dans le corps de réponse, voir les sections suivantes.
 
@@ -84,16 +84,16 @@ L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à c
 }
 ```
 
-### <a name="response-body"></a>Corps de la réponse
+### <a name="response-body"></a>Response body
 
-| Value      | type   | Description                                                                                                                                                                                                                                                                         |
+| Valeur      | Type   | Description                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| flightId            | chaîne  | ID de la version d’évaluation du package. Cette valeur est fournie par les partenaires.  |
-| friendlyName           | chaîne  | Nom de la version d’évaluation du package, tel que spécifié par le développeur.   |  
-| lastPublishedFlightSubmission       | objet | Objet qui fournit des informations sur la dernière soumission publiée de la version d’évaluation du package. Pour plus d’informations, voir la section [Objet de la soumission](#submission_object) ci-dessous.  |
-| pendingFlightSubmission        | objet  |  Objet qui fournit des informations sur la soumission actuellement en attente pour la version d’évaluation du package. Pour plus d’informations, voir la section [Objet de la soumission](#submission_object) ci-dessous.  |   
-| groupIds           | tableau  | Tableau de chaînes qui contiennent les ID des groupes de versions d’évaluation associés à la version d’évaluation du package. Pour plus d’informations sur les groupes de versions d’évaluation, voir [Versions d’évaluation du package](https://docs.microsoft.com/windows/uwp/publish/package-flights).   |
-| rankHigherThan           | chaîne  | Nom convivial de la version d’évaluation du package classée juste en dessous de la version d’évaluation du package actuelle. Pour plus d’informations sur le classement des groupes de versions d’évaluation, voir [Versions d’évaluation de package](https://docs.microsoft.com/windows/uwp/publish/package-flights).  |
+| flightId            | string  | ID de la version d’évaluation du package. Cette valeur est fournie par l’espace partenaires.  |
+| friendlyName           | string  | Nom de la version d’évaluation du package, tel que spécifié par le développeur.   |  
+| lastPublishedFlightSubmission       | object | Objet qui fournit des informations sur la dernière soumission publiée de la version d’évaluation du package. Pour plus d’informations, voir la section [Objet de la soumission](#submission_object) ci-dessous.  |
+| pendingFlightSubmission        | object  |  Objet qui fournit des informations sur la soumission actuellement en attente pour la version d’évaluation du package. Pour plus d’informations, voir la section [Objet de la soumission](#submission_object) ci-dessous.  |   
+| groupIds           | tableau  | Tableau de chaînes qui contiennent les ID des groupes de versions d’évaluation associés à la version d’évaluation du package. Pour plus d’informations sur les groupes de versions d’évaluation, voir [Versions d’évaluation du package](../publish/package-flights.md).   |
+| rankHigherThan           | string  | Nom convivial de la version d’évaluation du package classée juste en dessous de la version d’évaluation du package actuelle. Pour plus d’informations sur le classement des groupes de versions d’évaluation, voir [Versions d’évaluation de package](../publish/package-flights.md).  |
 
 
 <span id="submission_object" />
@@ -102,25 +102,25 @@ L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à c
 
 Les valeurs *lastPublishedFlightSubmission* et *pendingFlightSubmission* dans le corps de la réponse contiennent des objets qui fournissent des informations sur les ressources d’une soumission de version d’évaluation du package. Ces objets ont les valeurs suivantes.
 
-| Value           | type    | Description                                                                                                                                                                                                                          |
+| Valeur           | Type    | Description                                                                                                                                                                                                                          |
 |-----------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| id            | chaîne  | ID de la soumission.    |
-| resourceLocation   | chaîne  | Chemin relatif à ajouter à l’URI de requête `https://manage.devcenter.microsoft.com/v1.0/my/` de base pour récupérer les données complètes de la soumission.               |
+| id            | string  | ID de la soumission.    |
+| resourceLocation   | string  | Chemin relatif à ajouter à l’URI de requête `https://manage.devcenter.microsoft.com/v1.0/my/` de base pour récupérer les données complètes de la soumission.               |
 
 
 ## <a name="error-codes"></a>Codes d’erreur
 
 Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’erreur HTTP suivants.
 
-| Error code |  Description     |
+| Code d'erreur |  Description     |
 |--------|---------------------  |
 | 400  | La requête n’est pas valide. |
 | 404  | La version d’évaluation du package spécifiée est introuvable.   |   
-| 409  | L’application utilise une fonctionnalité de partenaires est [actuellement ne pas pris en charge par l’API de soumission de Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |                                                                                                 
+| 409  | L’application utilise une fonctionnalité d’espace partenaires qui n’est [actuellement pas prise en charge par l’API de soumission Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |                                                                                                 
 
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Créer et gérer des envois à l’aide des services de Microsoft Store](create-and-manage-submissions-using-windows-store-services.md)
-* [Créer un package de vol](create-a-flight.md)
-* [Supprimer un vol de package](delete-a-flight.md)
+* [Créer et gérer des envois à l’aide des services Microsoft Store](create-and-manage-submissions-using-windows-store-services.md)
+* [Crée une version d’évaluation du package](create-a-flight.md)
+* [Supprimer une version d’évaluation de package](delete-a-flight.md)

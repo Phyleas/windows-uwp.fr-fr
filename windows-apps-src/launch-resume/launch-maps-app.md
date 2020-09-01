@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bf17a6b835e0e594454f433770edb598ae637a0
-ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
+ms.openlocfilehash: e020972a8dff0b0721fd2c5726999a7896d359c4
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88942829"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89167903"
 ---
 # <a name="launch-the-windows-maps-app"></a>Lancer l’application Cartes Windows
 
@@ -51,7 +51,7 @@ Pour obtenir la liste complète des paramètres disponibles, voir les référenc
 ## <a name="launch-a-uri-from-your-app"></a>Lancer un URI à partir de votre application
 
 
-Pour lancer l’application Cartes Windows à partir de votre application, appelez la méthode [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) avec un URI **bingmaps:**, **ms-drive-to:** ou **ms-walk-to:**. L’exemple suivant lance le même URI à partir de l’exemple précédent. Pour plus d’informations sur le lancement d’une application via un URI, voir [Lancer l’application par défaut pour un URI](launch-default-app.md).
+Pour lancer l’application Cartes Windows à partir de votre application, appelez la méthode [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync) avec un URI **bingmaps:**, **ms-drive-to:** ou **ms-walk-to:**. L’exemple suivant lance le même URI à partir de l’exemple précédent. Pour plus d’informations sur le lancement d’une application via un URI, voir [Lancer l’application par défaut pour un URI](launch-default-app.md).
 
 ```cs
 // Center on New York City
@@ -63,7 +63,7 @@ launcherOptions.TargetApplicationPackageFamilyName = "Microsoft.WindowsMaps_8wek
 var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherOptions);
 ```
 
-Dans cet exemple, la classe [**LauncherOptions**](https://docs.microsoft.com/uwp/api/Windows.System.LauncherOptions) est utilisée pour garantir que l’application Windows Maps est lancée.
+Dans cet exemple, la classe [**LauncherOptions**](/uwp/api/Windows.System.LauncherOptions) est utilisée pour garantir que l’application Windows Maps est lancée.
 
 ## <a name="display-known-locations"></a>Afficher des emplacements connus
 

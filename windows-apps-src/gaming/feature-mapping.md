@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, jeux, DirectX 9, DirectX 11, Portage
 ms.localizationpriority: medium
-ms.openlocfilehash: 3470c8153cc0f6ba6d272e5ed1163c7f2c911c4c
-ms.sourcegitcommit: 7c1711d68496b781ed7d5b54e8ef5442e58661fa
+ms.openlocfilehash: 8f7bdc8cef43ffa323cae89459ac9bcb549c10f1
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88578223"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172043"
 ---
 # <a name="map-directx-9-features-to-directx-11-apis"></a>Mapper les fonctionnalités DirectX 9 aux API DirectX 11
 
@@ -21,23 +21,23 @@ Consultez également [planifier votre port DirectX](plan-your-directx-port.md)et
 
 ## <a name="mapping-direct3d-9-to-directx-11-apis"></a>Mappage des API Direct3D 9 aux API DirectX 11
 
-[Direct3D](https://docs.microsoft.com/windows/desktop/direct3d) reste la base des graphismes DirectX, mais l’API a changé depuis DirectX 9 :
+[Direct3D](/windows/desktop/direct3d) reste la base des graphismes DirectX, mais l’API a changé depuis DirectX 9 :
 
--   L’infrastructure DXGI (Microsoft DirectX Graphics Infrastructure) sert à configurer les cartes graphiques. Utilisez [DXGI](https://docs.microsoft.com/windows/desktop/direct3ddxgi/dx-graphics-dxgi) pour sélectionner le format des tampons, créer des chaînes d’échange, présenter des trames et créer des ressources partagées. Voir [Vue d’ensemble de DXGI](https://docs.microsoft.com/windows/desktop/direct3ddxgi/d3d10-graphics-programming-guide-dxgi).
--   Un contexte de périphérique Direct3D permet de définir l’état du pipeline et de générer des commandes de rendu. La plupart de nos exemples utilisent un contexte immédiat pour effectuer un rendu directement sur le périphérique. Direct3D 11 prend aussi en charge le rendu multithread associé aux contextes différés. Voir [Présentation d’un périphérique dans Direct3D 11](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-devices-intro).
--   Certaines fonctionnalités ont été abandonnées, notamment le pipeline à fonctions fixes. Voir [Fonctionnalités obsolètes](https://docs.microsoft.com/windows/desktop/direct3d10/d3d10-graphics-programming-guide-api-features-deprecated).
+-   L’infrastructure DXGI (Microsoft DirectX Graphics Infrastructure) sert à configurer les cartes graphiques. Utilisez [DXGI](/windows/desktop/direct3ddxgi/dx-graphics-dxgi) pour sélectionner le format des tampons, créer des chaînes d’échange, présenter des trames et créer des ressources partagées. Voir [Vue d’ensemble de DXGI](/windows/desktop/direct3ddxgi/d3d10-graphics-programming-guide-dxgi).
+-   Un contexte de périphérique Direct3D permet de définir l’état du pipeline et de générer des commandes de rendu. La plupart de nos exemples utilisent un contexte immédiat pour effectuer un rendu directement sur le périphérique. Direct3D 11 prend aussi en charge le rendu multithread associé aux contextes différés. Voir [Présentation d’un périphérique dans Direct3D 11](/windows/desktop/direct3d11/overviews-direct3d-11-devices-intro).
+-   Certaines fonctionnalités ont été abandonnées, notamment le pipeline à fonctions fixes. Voir [Fonctionnalités obsolètes](/windows/desktop/direct3d10/d3d10-graphics-programming-guide-api-features-deprecated).
 
-Pour obtenir la liste complète des fonctionnalités de Direct3D 11, voir [Fonctionnalités de Direct3D 11](https://docs.microsoft.com/windows/desktop/direct3d11/direct3d-11-features) et [Fonctionnalités de Direct3D 11](https://docs.microsoft.com/windows/desktop/direct3d11/direct3d-11-1-features).
+Pour obtenir la liste complète des fonctionnalités de Direct3D 11, voir [Fonctionnalités de Direct3D 11](/windows/desktop/direct3d11/direct3d-11-features) et [Fonctionnalités de Direct3D 11](/windows/desktop/direct3d11/direct3d-11-1-features).
 
 ## <a name="moving-from-direct2d-9-to-direct2d-11"></a>Passage de Direct2D 9 à Direct2D 11
 
-[Direct2D (Windows)](https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-portal) occupe toujours une place importante dans les graphismes DirectX et Windows. Vous pouvez l’utiliser pour dessiner des jeux en 2D et des superpositions (affichages à tête haute) par-dessus Direct3D.
+[Direct2D (Windows)](/windows/desktop/Direct2D/direct2d-portal) occupe toujours une place importante dans les graphismes DirectX et Windows. Vous pouvez l’utiliser pour dessiner des jeux en 2D et des superpositions (affichages à tête haute) par-dessus Direct3D.
 
 Direct2D s’exécute par-dessus Direct3D. Les jeux en 2D peuvent être implémentés à l’aide de l’une ou l’autre des API. Par exemple, un jeu en 2D implémenté avec Direct3D peut utiliser la projection orthographique, définir des valeurs Z pour contrôler l’ordre de tracé des primitives et utiliser des nuanceurs de pixels pour ajouter des effets spéciaux.
 
-Dans la mesure où Direct2D repose sur Direct3D, il utilise aussi DXGI et les contextes de périphérique. Voir [Vue d’ensemble des API de Direct2D](https://docs.microsoft.com/windows/desktop/Direct2D/the-direct2d-api).
+Dans la mesure où Direct2D repose sur Direct3D, il utilise aussi DXGI et les contextes de périphérique. Voir [Vue d’ensemble des API de Direct2D](/windows/desktop/Direct2D/the-direct2d-api).
 
-L’API [DirectWrite](https://docs.microsoft.com/windows/desktop/DirectWrite/direct-write-portal) permet la prise en charge du texte mis en forme avec Direct2D. Voir [Présentation de DirectWrite](https://docs.microsoft.com/windows/desktop/DirectWrite/introducing-directwrite).
+L’API [DirectWrite](/windows/desktop/DirectWrite/direct-write-portal) permet la prise en charge du texte mis en forme avec Direct2D. Voir [Présentation de DirectWrite](/windows/desktop/DirectWrite/introducing-directwrite).
 
 ## <a name="replace-deprecated-helper-libraries"></a>Remplacer les bibliothèques d’assistance déconseillées
 
@@ -49,56 +49,56 @@ D3DX et DXUT sont déconseillés et ne peuvent pas être utilisés par des jeux 
 
 ## <a name="move-shader-programs-from-fx-to-hlsl"></a>Déplacer les programmes de nuanceurs de FX à HLSL
 
-La bibliothèque des utilitaires D3DX (D3DX 9, D3DX 10 et D3DX 11), y compris Effects, est déconseillée pour UWP. Tous les jeux DirectX pour UWP pilotent le pipeline graphique à l’aide de [HLSL](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl) sans la bibliothèque d’effets.
+La bibliothèque des utilitaires D3DX (D3DX 9, D3DX 10 et D3DX 11), y compris Effects, est déconseillée pour UWP. Tous les jeux DirectX pour UWP pilotent le pipeline graphique à l’aide de [HLSL](/windows/desktop/direct3dhlsl/dx-graphics-hlsl) sans la bibliothèque d’effets.
 
 Visual Studio utilise toujours FXC pour compiler les objets nuanceurs. Les nuanceurs UWP sont compilés à l’avance. Le bytecode est chargé à l’exécution, puis chaque ressource de nuanceur est liée au pipeline graphique pendant l’étape de rendu appropriée. Les nuanceurs doivent être déplacés vers leurs propres fichiers .HLSL et des techniques de rendu doivent être implémentées dans votre code C++.
 
 Pour un aperçu du chargement des ressources de nuanceur, voir [Portage simple de Direct3D 9 vers UWP](walkthrough--simple-port-from-direct3d-9-to-11-1.md).
 
-Direct3D 11 a introduit le Shader Model 5, qui requiert le niveau de fonctionnalité Direct3D 11 \_ 0 (ou supérieur). Voir [Fonctionnalités du modèle de nuanceur 5 HLSL pour Direct3D 11](https://docs.microsoft.com/windows/desktop/direct3dhlsl/overviews-direct3d-11-hlsl).
+Direct3D 11 a introduit le Shader Model 5, qui requiert le niveau de fonctionnalité Direct3D 11 \_ 0 (ou supérieur). Voir [Fonctionnalités du modèle de nuanceur 5 HLSL pour Direct3D 11](/windows/desktop/direct3dhlsl/overviews-direct3d-11-hlsl).
 
 ## <a name="replace-xnamath-and-d3dxmath"></a>Remplacer XNAMath et D3DXMath
 
-Le code qui utilise XNAMath (ou D3DXMath) doit être migré vers [DirectXMath](https://docs.microsoft.com/windows/desktop/dxmath/directxmath-portal). DirectXMath inclut des types pouvant être portés sur des processeurs x86, x64 et ARM. Voir [Migration du code de la bibliothèque XNA Math](https://docs.microsoft.com/windows/desktop/dxmath/pg-xnamath-migration).
+Le code qui utilise XNAMath (ou D3DXMath) doit être migré vers [DirectXMath](/windows/desktop/dxmath/directxmath-portal). DirectXMath inclut des types pouvant être portés sur des processeurs x86, x64 et ARM. Voir [Migration du code de la bibliothèque XNA Math](/windows/desktop/dxmath/pg-xnamath-migration).
 
-Notez que les types float DirectXMath conviennent parfaitement aux nuanceurs. Par exemple, [**XMFLOAT4**](https://docs.microsoft.com/windows/desktop/api/directxmath/ns-directxmath-xmfloat4) et [**XMFLOAT4X4**](https://docs.microsoft.com/windows/desktop/api/directxmath/ns-directxmath-xmfloat4x4) alignent facilement les données pour les mémoires tampons constantes.
+Notez que les types float DirectXMath conviennent parfaitement aux nuanceurs. Par exemple, [**XMFLOAT4**](/windows/desktop/api/directxmath/ns-directxmath-xmfloat4) et [**XMFLOAT4X4**](/windows/desktop/api/directxmath/ns-directxmath-xmfloat4x4) alignent facilement les données pour les mémoires tampons constantes.
 
 ## <a name="replace-directsound-with-xaudio2-and-background-audio"></a>Remplacer DirectSound par XAudio2 (et l’audio en arrière-plan)
 
 DirectSound n’est pas pris en charge pour UWP :
 
--   Utilisez [XAudio2](https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-apis-portal) pour ajouter des effets sonores à votre jeu.
+-   Utilisez [XAudio2](/windows/desktop/xaudio2/xaudio2-apis-portal) pour ajouter des effets sonores à votre jeu.
 
 ##  <a name="replace-directinput-with-xinput-and-windows-runtime-apis"></a>Remplacer DirectInput par XInput et les API Windows Runtime
 
 DirectInput n’est pas pris en charge pour UWP :
 
--   Utilisez les rappels d’événement d’entrée [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) pour la souris, le clavier et les entrées tactiles.
--   Utilisez [XInput](https://docs.microsoft.com/windows/desktop/xinput/getting-started-with-xinput) 1.4 pour la prise en charge des contrôleurs de jeu (et la prise en charge du casque des contrôleurs de jeu). Si vous utilisez une base de code partagé pour les applications de bureau et UWP, voir [Versions XInput](https://docs.microsoft.com/windows/desktop/xinput/xinput-versions) pour plus d’informations sur la compatibilité descendante.
--   Inscrivez-vous aux événements [**EdgeGesture**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.EdgeGesture) si votre jeu doit utiliser la barre de l’application.
+-   Utilisez les rappels d’événement d’entrée [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) pour la souris, le clavier et les entrées tactiles.
+-   Utilisez [XInput](/windows/desktop/xinput/getting-started-with-xinput) 1.4 pour la prise en charge des contrôleurs de jeu (et la prise en charge du casque des contrôleurs de jeu). Si vous utilisez une base de code partagé pour les applications de bureau et UWP, voir [Versions XInput](/windows/desktop/xinput/xinput-versions) pour plus d’informations sur la compatibilité descendante.
+-   Inscrivez-vous aux événements [**EdgeGesture**](/uwp/api/Windows.UI.Input.EdgeGesture) si votre jeu doit utiliser la barre de l’application.
 
 ## <a name="use-microsoft-media-foundation-instead-of-directshow"></a>Utiliser Microsoft Media Foundation au lieu de DirectShow
 
-DirectShow ne fait plus partie de l’API DirectX (ou de l’API Windows). [Microsoft Media Foundation](https://docs.microsoft.com/windows/desktop/medfound/microsoft-media-foundation-sdk) fournit le contenu vidéo à Direct3D via les surfaces partagées. Voir [API vidéo de Direct3D 11](https://docs.microsoft.com/windows/desktop/medfound/direct3d-11-video-apis).
+DirectShow ne fait plus partie de l’API DirectX (ou de l’API Windows). [Microsoft Media Foundation](/windows/desktop/medfound/microsoft-media-foundation-sdk) fournit le contenu vidéo à Direct3D via les surfaces partagées. Voir [API vidéo de Direct3D 11](/windows/desktop/medfound/direct3d-11-video-apis).
 
 ## <a name="replace-directplay-with-networking-code"></a>Remplacer DirectPlay par du code réseau
 
 Microsoft DirectPlay est déconseillé. Si votre jeu utilise des services réseau, vous devez fournir du code réseau conforme aux exigences UWP. Utilisez les API suivantes :
 
--   [Win32 et COM pour les applications UWP (mise en réseau) (Windows)](https://docs.microsoft.com/uwp/win32-and-com/win32-and-com-for-uwp-apps)
--   [**Espace de noms Windows.Networking (Windows)**](https://docs.microsoft.com/uwp/api/Windows.Networking)
--   [**Espace de noms Windows.Networking.Sockets (Windows)**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets)
--   [**Espace de noms Windows.Networking.Connectivity (Windows)**](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity)
--   [**Espace de noms Windows.ApplicationModel.Background (Windows)**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
+-   [Win32 et COM pour les applications UWP (mise en réseau) (Windows)](/uwp/win32-and-com/win32-and-com-for-uwp-apps)
+-   [**Espace de noms Windows.Networking (Windows)**](/uwp/api/Windows.Networking)
+-   [**Espace de noms Windows.Networking.Sockets (Windows)**](/uwp/api/Windows.Networking.Sockets)
+-   [**Espace de noms Windows.Networking.Connectivity (Windows)**](/uwp/api/Windows.Networking.Connectivity)
+-   [**Espace de noms Windows.ApplicationModel.Background (Windows)**](/uwp/api/Windows.ApplicationModel.Background)
 
 Les articles suivants vous aident à ajouter des fonctionnalités réseau et à déclarer la prise en charge réseau dans le manifeste du package de votre application.
 
--   [Connexion à l’aide de Sockets (applications UWP à l’aide de C#/VB/C + + et XAML) (Windows)](https://docs.microsoft.com/previous-versions/windows/apps/hh452976(v=win.10))
--   [Connexion à WebSockets (applications UWP à l’aide de C#/VB/C + + et XAML) (Windows)](https://docs.microsoft.com/previous-versions/windows/apps/hh994396(v=win.10))
--   [Connexion aux services Web (applications UWP à l’aide de C#/VB/C + + et XAML) (Windows)](https://docs.microsoft.com/previous-versions/windows/apps/hh761504(v=win.10))
--   [Notions de base en matière de réseau](https://docs.microsoft.com/windows/uwp/networking/networking-basics)
+-   [Connexion à l’aide de Sockets (applications UWP à l’aide de C#/VB/C + + et XAML) (Windows)](/previous-versions/windows/apps/hh452976(v=win.10))
+-   [Connexion à WebSockets (applications UWP à l’aide de C#/VB/C + + et XAML) (Windows)](/previous-versions/windows/apps/hh994396(v=win.10))
+-   [Connexion aux services Web (applications UWP à l’aide de C#/VB/C + + et XAML) (Windows)](/previous-versions/windows/apps/hh761504(v=win.10))
+-   [Notions de base en matière de réseau](../networking/networking-basics.md)
 
-Notez que toutes les applications pour UWP (y compris les jeux) utilisent des types spécifiques de tâches en arrière-plan pour maintenir la connectivité pendant la suspension de l’application. Si votre jeu doit rester en état de connexion pendant sa suspension, voir [Notions de base en matière de réseau](https://docs.microsoft.com/windows/uwp/networking/networking-basics).
+Notez que toutes les applications pour UWP (y compris les jeux) utilisent des types spécifiques de tâches en arrière-plan pour maintenir la connectivité pendant la suspension de l’application. Si votre jeu doit rester en état de connexion pendant sa suspension, voir [Notions de base en matière de réseau](../networking/networking-basics.md).
 
 ## <a name="function-mapping"></a>Mappage de fonctions
 
@@ -134,7 +134,7 @@ Aidez-vous du tableau suivant pour convertir du code Direct3D 9 en Direct3D 11. 
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9helper/nf-d3d9helper-idirect3ddevice9-testcooperativelevel">IDirect3DDevice9::TestCooperativeLevel</a></p></td>
-<td align="left"><p>Appelez <a href="https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-present1">IDXGISwapChain1 ::P resent1</a> avec l’indicateur DXGI_PRESENT_TEST défini.</p></td>
+<td align="left"><p>Appelez <a href="/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-present1">IDXGISwapChain1 ::P resent1</a> avec l’indicateur DXGI_PRESENT_TEST défini.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9helper/nn-d3d9helper-idirect3dbasetexture9">IDirect3DBaseTexture9</a></p>
@@ -194,7 +194,7 @@ Aidez-vous du tableau suivant pour convertir du code Direct3D 9 en Direct3D 11. 
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-reset">IDirect3DDevice9 :: Reset</a></p></td>
-<td align="left"><p>Le périphérique LOST et POOL_MANAGED n’existent plus. <a href="https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-present1">IDXGISwapChain1 ::P resent1</a> peut échouer avec une valeur de retour <a href="https://docs.microsoft.com/windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR_DEVICE_REMOVED</a> .</p></td>
+<td align="left"><p>Le périphérique LOST et POOL_MANAGED n’existent plus. <a href="/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-present1">IDXGISwapChain1 ::P resent1</a> peut échouer avec une valeur de retour <a href="https://docs.microsoft.com/windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR_DEVICE_REMOVED</a> .</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-drawrectpatch">IDirect3DDevice9:DrawRectPatch</a></p>

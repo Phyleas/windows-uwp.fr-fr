@@ -1,47 +1,47 @@
 ---
 title: Mappages dans un pool de vignettes
-description: Lorsque qu'une ressource est créée en tant que ressource de diffusion en continu, les vignettes qui la constituent proviennent du pointage dans des emplacements d'un pool de vignettes. Un pool de vignettes est un pool de mémoire (pris en charge par une ou plusieurs allocations masquées, auxquelles l'application n'a pas accès).
+description: Lorsqu’une ressource est créée en tant que ressource de diffusion en continu, les vignettes qui composent la ressource proviennent du pointage sur les emplacements d’un pool de mosaïques. Un pool de mosaïques est un pool de mémoire (sauvegardé par une ou plusieurs allocations en arrière-plan, non visible par l’application).
 ms.assetid: 58B8DBD5-62F5-4B94-8DD1-C7D57A812185
 keywords:
 - Mappages dans un pool de vignettes
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a68623b0a61672426c9b6eef85cb7d1ddc990a19
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: b021fc47eee6063761635422a780bb5f9f341f4d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370989"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89171913"
 ---
 # <a name="mappings-are-into-a-tile-pool"></a>Mappages dans un pool de vignettes
 
 
-Lorsque qu'une ressource est créée en tant que ressource de diffusion en continu, les vignettes qui la constituent proviennent du pointage dans des emplacements d'un pool de vignettes. Un pool de vignettes est un pool de mémoire (pris en charge par une ou plusieurs allocations masquées, auxquelles l'application n'a pas accès). Le système d’exploitation et le pilote d’affichage gèrent ce pool de mémoire ; l’encombrement de mémoire est facilement appréhendé par les applications. Les ressources de diffusion en continu mappent des régions de 64 Ko en pointant vers des emplacements d’un pool de vignettes. Cette configuration permet à plusieurs ressources de partager et de réutiliser les mêmes vignettes, et prend en charge la réutilisation des mêmes vignettes à différents emplacements d’une ressource, en fonction des besoins.
+Lorsqu’une ressource est créée en tant que ressource de diffusion en continu, les vignettes qui composent la ressource proviennent du pointage sur les emplacements d’un pool de mosaïques. Un pool de mosaïques est un pool de mémoire (sauvegardé par une ou plusieurs allocations en arrière-plan, non visible par l’application). Le système d’exploitation et le pilote d’affichage gèrent ce pool de mémoire, et l’encombrement mémoire est facilement compréhensible par une application. Les ressources de streaming mappent des régions de 64 Ko en pointant sur des emplacements dans un pool de mosaïques. Un Fallout de cette installation permet à plusieurs ressources de partager et réutiliser les mêmes vignettes, et également de réutiliser les mêmes vignettes à différents emplacements au sein d’une ressource, si vous le souhaitez.
 
-Avec cette méthode flexible d’intégration des vignettes d’une ressource à partir d’un pool de vignettes, la ressource est chargée de la définition et de la gestion des mappages des vignettes du pool requises. Les mappages de vignettes peuvent être modifiés. En outre, il n’est pas nécessaire de mapper simultanément l’ensemble des vignettes d’une ressource ; cette dernière peut présenter des mappages **NULL**. Un mappage **NULL** définit une vignette comme non disponible, du point de vue de la ressource qui y accède.
+Le coût de la flexibilité de remplissage des vignettes pour une ressource à partir d’un pool de mosaïques est que la ressource doit effectuer la définition et la maintenance du mappage des vignettes dans le pool de mosaïques pour représenter les vignettes nécessaires pour la ressource. Les mappages de vignette peuvent être modifiés. En outre, toutes les vignettes d’une ressource n’ont pas besoin d’être mappées à la fois ; une ressource peut avoir des mappages **null** . Un mappage **null** définit une vignette comme n’étant pas disponible du point de vue de la ressource qui y accède.
 
-Plusieurs pools de vignettes peuvent être créés, et un nombre illimité de ressources de diffusion en continu peuvent mapper simultanément sur un pool de vignettes donné. Les pools de vignettes peuvent être augmentés ou réduits. Pour plus d’informations, voir [Redimensionnement d’un pool de vignettes](tile-pool-resizing.md). Pour que l’implémentation du disque d’affichage et de l’exécution puisse être simplifiée, une ressource donnée de diffusion en continu peut présenter des mappages dans un seul pool de vignettes simultanément.
+Vous pouvez créer plusieurs pools de mosaïques, et n’importe quel nombre de ressources de streaming peut être mappées à un pool de mosaïques donné en même temps. Les pools de vignettes peuvent également être développés ou réduits. Pour plus d’informations, consultez [redimensionnement de pool de mosaïques](tile-pool-resizing.md). Une contrainte qui existe pour simplifier l’implémentation du pilote d’affichage et du runtime est qu’une ressource de diffusion en continu donnée ne peut avoir que des mappages dans un seul pool de mosaïques à la fois (par opposition à un mappage simultané à plusieurs pools de mosaïques).
 
-Le volume de stockage associé à une ressource de diffusion en continu (mémoire indépendante du pool de vignettes) est plus ou moins proportionnel au nombre de vignettes mappées sur le pool à un moment donné. Avec le matériel, cela revient en fin de compte à mettre à l’échelle l’encombrement de mémoire associé au stockage de la table de page en fonction des vignettes mappées (par exemple, utiliser un schéma multiniveau approprié de table de page).
+La quantité de stockage associée à une ressource de streaming (autrement dit, la mémoire de pool de mosaïques indépendante) est à peu près proportionnelle au nombre de vignettes réellement mappées au pool à un moment donné. Dans le matériel, cela se résume à la mise à l’échelle de l’empreinte mémoire pour le stockage des tables de pages avec la quantité de vignettes mappées (par exemple, en utilisant un modèle de table de pages à plusieurs niveaux, le cas échéant).
 
-Le pool de vignettes peut être considéré comme une abstraction exclusivement logicielle permettant aux applications Direct3D de programmer les tables de page sur le processeur graphique (GPU), sans avoir à connaître les détails d’implémentation de niveau inférieur (ou traiter directement avec des adresses de pointeur). Les pools de vignettes n’appliquent aucun niveau supplémentaire d’indirection dans le matériel. Les optimisations d’une table de page de niveau unique exécutées à l’aide de constructions comme les répertoires de page sont indépendantes du concept de pool de vignettes.
+Le pool de mosaïques peut être considéré comme une abstraction logicielle complète qui permet aux applications Direct3D de programmer efficacement les tables de pages sur l’unité de traitement graphique (GPU) sans avoir à connaître les détails d’implémentation de bas niveau (ou gérer directement les adresses de pointeur). Les pools de mosaïques n’appliquent pas d’autres niveaux d’indirection dans le matériel. Les optimisations d’une table de page de niveau unique à l’aide de constructions telles que des répertoires de pages sont indépendantes du concept de pool de mosaïques.
 
-Découvrons ensemble quel serait, dans le pire des cas, le besoin en stockage de la table de page (bien qu’en pratique les implémentations nécessitent uniquement un volume de stockage plus ou moins proportionnel au contenu mappé).
+Examinons le stockage que la table de page lui-même peut nécessiter dans le pire des cas (Toutefois, dans les implémentations de la pratique, vous n’avez besoin que d’un stockage à peu près proportionnel à ce qui est mappé).
 
-Supposons que chacune des entrées de la table de page représente 64 bits.
+Supposons que chaque entrée de table de pages soit 64 bits.
 
-Pour la table des pages pire taille atteint pour une seule surface, étant donnée les limites de ressources dans Direct3D 11, supposons qu’une ressource de diffusion en continu est créée avec un format de 128 bits par élément (par exemple, float RVBA), par conséquent, une vignette de 64 Ko contient uniquement 4096 pixels. La valeur maximale prise en charge [ **Texture2DArray** ](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2darray) taille de 16384\*16384\*2048 (mais avec uniquement un mipmap unique) requièrent environ 1 Go de stockage dans la table des pages si entièrement remplie (à l’exclusion des mipmaps) à l’aide des entrées de table de 64 bits. Dans le pire des cas, l’ajout de mipmaps provoque l’accroissement du stockage de la table de page entièrement mappé d’environ un tiers ; il est alors d’environ 1,3 Go.
+Pour l’accès à la taille de la table de pages le plus défavorable pour une seule surface, étant donné les limites de ressources dans Direct3D 11, supposons qu’une ressource de streaming est créée avec un format de bit par élément de 128 (par exemple, un nombre de pixels en virgule flottante), de sorte qu’une vignette de 64 Ko ne contient que 4096 pixels. La taille de [**Texture2DArray**](/windows/desktop/direct3dhlsl/sm5-object-texture2darray) maximale prise en charge de 16384 \* 16384 \* 2048 (mais avec un seul mipmap) nécessite environ 1 Go de stockage dans la table de page en cas de remplissage complet (à l’exception de des mipmaps) à l’aide des entrées de table de bits 64. L’ajout de des mipmaps augmenterait le stockage de table de pages entièrement mappé (cas le plus défavorable) d’une troisième, à environ 1,3 Go.
 
-Dans cette configuration, vous aurez accès à environ 10 6 téraoctets de mémoire adressable. Toutefois, il peut exister une limite de quantité de mémoire adressable. Le cas échéant, ces volumes sont réduits, éventuellement autour d’un téraoctet.
+Ce cas donne accès à environ 10,6 téraoctets de mémoire adressable. Toutefois, il peut y avoir une limite sur la quantité de mémoire adressable, ce qui réduirait éventuellement les limites de la plage de téraoctets.
 
-Un autre cas à prendre en compte est un seul [ **Texture2D** ](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d) diffusion en continu de la ressource de 16384\*16384 avec un format 32 bits par élément, y compris les mipmaps. L’espace requis pour une table de page entièrement renseignée sera d’environ 170 Ko, avec des entrées de table de 64 bits;
+Un autre cas à prendre en compte est une ressource de streaming [**Texture2D**](/windows/desktop/direct3dhlsl/sm5-object-texture2d) unique de 16384 \* 16384 avec un format binaire par élément de 32, y compris des mipmaps. L’espace nécessaire dans une table de pages entièrement remplie serait 170KB à peu près avec des entrées de table de bits 64.
 
-Enfin, considérons un exemple valorisant le format BC, par exemple BC7, avec 128 bits par vignette de 4x4 pixels. Un pixel comporte un octet. Un [ **Texture2DArray** ](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2darray) de 16384\*16384\*2048, y compris des mipmaps nécessiterait environ 85 Mo à remplir entièrement cette mémoire dans une table de pages. Cela n’est pas si mal, car cela permet à une ressource de diffusion en continu de couvrir 550 gigapixels (512 Go de mémoire dans ce cas).
+Enfin, prenons un exemple utilisant un format BC, par exemple BC7 avec 128 bits par mosaïque de 4 x 4. Il s’agit d’un octet par pixel. Un [**Texture2DArray**](/windows/desktop/direct3dhlsl/sm5-object-texture2darray) de 16384 \* 16384 \* 2048, y compris des MIPMAPS, nécessite environ 85MB pour remplir entièrement cette mémoire dans une table de pages. Ce n’est pas une mauvaise considération. cela permet à une ressource de streaming de s’étendre sur 550 gigapixels (512 Go de mémoire dans ce cas).
 
-Dans la pratique, la définition de ces mappages intégraux est impossible, dans la mesure où la quantité de mémoire physique disponible est bien insuffisante pour des opérations de mappage et de référencement simultanées d’un tel volume. Cependant, avec un pool de vignettes, les applications pourraient opter pour la réutilisation des vignettes (prenons l’exemple simple de réutilisation d’une vignette de couleur noire pour les régions noires d’une image) via le pool de vignettes (mappages de table de page) comme outil pour la compression de mémoire.
+Dans la pratique, rien près de ces mappages complets serait défini, étant donné que la quantité de mémoire physique disponible ne permettrait pas à quelque point près qu’il soit possible de le mapper et de le référencer à la fois. Toutefois, avec un pool de mosaïques, les applications peuvent choisir de réutiliser les vignettes (en guise d’exemple simple, en réutilisant efficacement une vignette de couleur noire pour les grandes régions noires dans une image), en utilisant efficacement le pool de mosaïques (autrement dit, les mappages de tables de pages) comme un outil pour la compression de mémoire.
 
-L’ensemble des entrées de la table de page sont initialement définies sur **NULL**. Par ailleurs, les applications ne peuvent transmettre aucune donnée initiale dans la mémoire de la surface, car cette dernière ne comporte à l’origine aucune sauvegarde de mémoire.
+Le contenu initial de la table de page a la **valeur null** pour toutes les entrées. Les applications ne peuvent pas non plus transmettre des données initiales pour le contenu de la mémoire de l’aire, car elles démarrent sans stockage de mémoire.
 
 ## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>Dans cette section
 
@@ -59,16 +59,16 @@ L’ensemble des entrées de la table de page sont initialement définies sur **
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="tile-pool-creation.md">Création de pools de vignette</a></p></td>
-<td align="left"><p>Les applications peuvent créer un ou plusieurs pools de vignettes par appareil Direct3D. La taille totale de chaque pool de vignette est limitée à la limite de taille des ressources de Direct3D 11, qui est à peu près 1/4 de RAM de GPU.</p></td>
+<td align="left"><p><a href="tile-pool-creation.md">Création d’un pool de vignettes</a></p></td>
+<td align="left"><p>Les applications peuvent créer un ou plusieurs pools de mosaïques par appareil Direct3D. La taille totale de chaque pool de mosaïques est limitée à la limite de taille des ressources de Direct3D 11, soit environ 1/4 de RAM GPU.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="tile-pool-resizing.md">Redimensionnement de pool de vignette</a></p></td>
-<td align="left"><p>Redimensionnez un pool de vignettes pour l’augmenter si l’application nécessite plus de plages de travail pour les ressources de diffusion en continu mappées ou le réduire si moins d’espace est nécessaire.</p></td>
+<td align="left"><p><a href="tile-pool-resizing.md">Redimensionnement d’un pool de vignettes</a></p></td>
+<td align="left"><p>Redimensionner un pool de mosaïques pour augmenter un pool de mosaïques si l’application a besoin d’une plus grande plage de travail pour le mappage des ressources de streaming dans celle-ci, ou pour réduire l’espace nécessaire.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="hazard-tracking-versus-tile-pool-resources.md">Risque de suivi par rapport aux ressources de pool de vignette</a></p></td>
-<td align="left"><p>Pour les ressources autres que celles de diffusion en continu, Direct3D peut pallier certaines problématiques durant le rendu. Parallèlement, le suivi des risques se déroulant au niveau vignette pour les ressources de diffusion en continu, cette activité pourrait se révéler trop coûteuse sur ces dernières.</p></td>
+<td align="left"><p><a href="hazard-tracking-versus-tile-pool-resources.md">Suivi des risques ou ressources d’un pool de vignettes</a></p></td>
+<td align="left"><p>Pour les ressources qui ne sont pas diffusées en continu, Direct3D peut empêcher certaines conditions de danger pendant le rendu, mais comme le suivi des risques se trouve au niveau de la mosaïque pour les ressources de streaming, le suivi des conditions de danger lors du rendu des ressources de streaming peut être trop onéreux.</p></td>
 </tr>
 </tbody>
 </table>
@@ -83,7 +83,3 @@ L’ensemble des entrées de la table de page sont initialement définies sur **
  
 
  
-
-
-
-

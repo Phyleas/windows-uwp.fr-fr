@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c419b494af02f20b00c0a6da67ec3e0f7310e63
-ms.sourcegitcommit: 2a1ceeacf5cdadc803bad83dc3ceb57a16ce79a3
+ms.openlocfilehash: 80b3c4f46e595eedd2c6a259a03348822c9f51bc
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067521"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172223"
 ---
 # <a name="create-an-nfc-smart-card-app"></a>Créer une application de carte à puce NFC
 
@@ -22,7 +22,7 @@ Auparavant, Windows Phone 8.1 prenait en charge les applications d’émulation 
 
 ## <a name="what-you-need-to-develop-an-hce-app"></a>Éléments nécessaires au développement d’une application HCE
 
-Pour développer une application d’émulation de carte HCE pour Windows 10 Mobile, vous devez obtenir votre configuration d’environnement de développement. Pour ce faire, vous pouvez installer Microsoft Visual Studio 2015, qui comprend les outils des développeurs Windows et l’émulateur Windows 10 Mobile prenant en charge l’émulation NFC. Pour plus d’informations sur la configuration, voir [Se préparer](https://docs.microsoft.com/windows/uwp/get-started/get-set-up).
+Pour développer une application d’émulation de carte HCE pour Windows 10 Mobile, vous devez obtenir votre configuration d’environnement de développement. Pour ce faire, vous pouvez installer Microsoft Visual Studio 2015, qui comprend les outils des développeurs Windows et l’émulateur Windows 10 Mobile prenant en charge l’émulation NFC. Pour plus d’informations sur la configuration, voir [Se préparer](../get-started/get-set-up.md).
 
 Si vous le souhaitez, il est possible de tester un véritable appareil Windows 10 Mobile sans recourir à l’émulateur Windows 10 Mobile. Pour ce faire, vous avez besoin des éléments suivants :
 
@@ -94,7 +94,7 @@ En raison des exigences extrêmement strictes de performances associées au char
 
 ## <a name="create-and-register-your-background-task"></a>Créer et inscrire votre tâche en arrière-plan
 
-Vous devez créer une tâche en arrière-plan dans votre application HCE, afin de traiter les commandes APDU émise par le système, et d’y répondre. Lors du premier lancement de votre application, le premier plan enregistre une tâche en arrière-plan HCE qui implémente l’interface [**IBackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskRegistration) , comme indiqué dans le code suivant.
+Vous devez créer une tâche en arrière-plan dans votre application HCE, afin de traiter les commandes APDU émise par le système, et d’y répondre. Lors du premier lancement de votre application, le premier plan enregistre une tâche en arrière-plan HCE qui implémente l’interface [**IBackgroundTaskRegistration**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskRegistration) , comme indiqué dans le code suivant.
 
 ```cppcx
 var taskBuilder = new BackgroundTaskBuilder();
@@ -104,16 +104,16 @@ taskBuilder.SetTrigger(new SmartCardTrigger(SmartCardTriggerType.EmulatorHostApp
 bgTask = taskBuilder.Register();
 ```
 
-Notez que le déclencheur de tâche est défini sur [**SmartCardTriggerType**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardTriggerType). **EmulatorHostApplicationActivated**. Ainsi, chaque fois qu’une commande SELECT AID APDU est reçue par le système d’exploitation résolu sur votre application, votre tâche en arrière-plan est lancée.
+Notez que le déclencheur de tâche est défini sur [**SmartCardTriggerType**](/uwp/api/Windows.Devices.SmartCards.SmartCardTriggerType). **EmulatorHostApplicationActivated**. Ainsi, chaque fois qu’une commande SELECT AID APDU est reçue par le système d’exploitation résolu sur votre application, votre tâche en arrière-plan est lancée.
 
 ## <a name="receive-and-respond-to-apdus"></a>Recevoir les commandes APDU et y répondre
 
-Quand une commande APDU est dirigée vers votre application, le système lance votre tâche en arrière-plan. Votre tâche en arrière-plan reçoit la valeur APDU transmise via la propriété [**CommandApdu**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardemulatorapdureceivedeventargs.commandapdu) de l’objet [**SmartCardEmulatorApduReceivedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardEmulatorApduReceivedEventArgs) et répond au APDU à l’aide de la méthode [**TryRespondAsync**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardemulatorapdureceivedeventargs.tryrespondwithcryptogramsasync) du même objet. Pour des raisons de performance, songez à conserver votre tâche en arrière-plan pour les opérations légères. Par exemple, répondez immédiatement aux commandes APDU et fermez votre tâche en arrière-plan à l’issue du traitement. En raison de la nature des transactions NFC, les utilisateurs ont tendance à maintenir leur appareil contre le lecteur uniquement sur une courte période de temps. Votre tâche en arrière-plan continuera à recevoir le trafic à partir du lecteur jusqu’à ce que votre connexion soit désactivée. dans ce cas, vous recevrez un objet [**SmartCardEmulatorConnectionDeactivatedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardEmulatorConnectionDeactivatedEventArgs) . Votre connexion peut être désactivée pour les raisons suivantes, comme indiqué dans la propriété [**SmartCardEmulatorConnectionDeactivatedEventArgs. Reason**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardemulatorconnectiondeactivatedeventargs.reason) .
+Quand une commande APDU est dirigée vers votre application, le système lance votre tâche en arrière-plan. Votre tâche en arrière-plan reçoit la valeur APDU transmise via la propriété [**CommandApdu**](/uwp/api/windows.devices.smartcards.smartcardemulatorapdureceivedeventargs.commandapdu) de l’objet [**SmartCardEmulatorApduReceivedEventArgs**](/uwp/api/Windows.Devices.SmartCards.SmartCardEmulatorApduReceivedEventArgs) et répond au APDU à l’aide de la méthode [**TryRespondAsync**](/uwp/api/windows.devices.smartcards.smartcardemulatorapdureceivedeventargs.tryrespondwithcryptogramsasync) du même objet. Pour des raisons de performance, songez à conserver votre tâche en arrière-plan pour les opérations légères. Par exemple, répondez immédiatement aux commandes APDU et fermez votre tâche en arrière-plan à l’issue du traitement. En raison de la nature des transactions NFC, les utilisateurs ont tendance à maintenir leur appareil contre le lecteur uniquement sur une courte période de temps. Votre tâche en arrière-plan continuera à recevoir le trafic à partir du lecteur jusqu’à ce que votre connexion soit désactivée. dans ce cas, vous recevrez un objet [**SmartCardEmulatorConnectionDeactivatedEventArgs**](/uwp/api/Windows.Devices.SmartCards.SmartCardEmulatorConnectionDeactivatedEventArgs) . Votre connexion peut être désactivée pour les raisons suivantes, comme indiqué dans la propriété [**SmartCardEmulatorConnectionDeactivatedEventArgs. Reason**](/uwp/api/windows.devices.smartcards.smartcardemulatorconnectiondeactivatedeventargs.reason) .
 
 - Si la connexion est désactivée avec la valeur **ConnectionLost**, cela signifie que l’utilisateur a retiré son appareil du lecteur. Si votre application nécessite que l’utilisateur appuie plus longuement sur le terminal, vous pouvez envisager de lui transmettre des commentaires. Vous devez arrêter rapidement votre tâche en arrière-plan (en exécutant votre report), ceci pour garantir qu’aucun délai associé à la fermeture de la tâche en arrière-plan précédente ne sera respecté en cas de nouvel appui de l’utilisateur.
 - Si la connexion est désactivée avec l’élément **ConnectionRedirected**, cela signifie que le terminal a dirigé une nouvelle commande SELECT AID APDU vers un identificateur d’applet différent. Dans ce cas, votre application doit fermer immédiatement la tâche en arrière-plan (en exécutant votre report) afin de permettre l’exécution d’une autre tâche en arrière-plan.
 
-La tâche en arrière-plan doit également s’inscrire à l' [**événement Canceled**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.canceled) sur l' [**interface IBackgroundTaskInstance**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance)et quitter rapidement la tâche en arrière-plan (en terminant votre différé), car cet événement est déclenché par le système lorsqu’il est terminé avec votre tâche en arrière-plan. Voici le code associé à une tâche en arrière-plan d’une application HCE.
+La tâche en arrière-plan doit également s’inscrire à l' [**événement Canceled**](/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.canceled) sur l' [**interface IBackgroundTaskInstance**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance)et quitter rapidement la tâche en arrière-plan (en terminant votre différé), car cet événement est déclenché par le système lorsqu’il est terminé avec votre tâche en arrière-plan. Voici le code associé à une tâche en arrière-plan d’une application HCE.
 
 ```cppcx
 void BgTask::Run(
@@ -213,7 +213,7 @@ Durant la mise en service de la carte, intervenant lors du premier lancement de 
 
 La plupart des cartes de paiement sont inscrites auprès des mêmes identificateurs d’applet (PPSE) et identificateurs d’applet supplémentaires de carte réseau de paiement. Chaque groupe d’identificateurs d’applet représente une carte. Lorsque l’utilisateur active la carte, l’ensemble des identificateurs d’applet du groupe sont activés. De la même manière, lorsque l’utilisateur désactive la carte, l’ensemble des identificateurs d’applet du groupe sont désactivés.
 
-Pour inscrire un groupe d’aides, vous devez créer un objet [**SmartCardAppletIdGroup**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardAppletIdGroup) et définir ses propriétés de façon à ce qu’il s’agit d’une carte de paiement basée sur HCE. Votre nom complet doit être descriptif pour l’utilisateur, car il apparaît dans le menu des paramètres NFC, ainsi que dans les invites utilisateur. Pour les cartes de paiement HCE, la propriété [**SmartCardEmulationCategory**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationcategory) doit être définie sur **Payment** et la propriété [**SmartCardEmulationType**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationtype) doit être définie sur **Host**.
+Pour inscrire un groupe d’aides, vous devez créer un objet [**SmartCardAppletIdGroup**](/uwp/api/Windows.Devices.SmartCards.SmartCardAppletIdGroup) et définir ses propriétés de façon à ce qu’il s’agit d’une carte de paiement basée sur HCE. Votre nom complet doit être descriptif pour l’utilisateur, car il apparaît dans le menu des paramètres NFC, ainsi que dans les invites utilisateur. Pour les cartes de paiement HCE, la propriété [**SmartCardEmulationCategory**](/uwp/api/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationcategory) doit être définie sur **Payment** et la propriété [**SmartCardEmulationType**](/uwp/api/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationtype) doit être définie sur **Host**.
 
 ```cppcx
 public static byte[] AID_PPSE =
@@ -231,7 +231,7 @@ var appletIdGroup = new SmartCardAppletIdGroup(
                                 SmartCardEmulationType.Host);
 ```
 
-Pour les cartes HCE sans paiement, la propriété [**SmartCardEmulationCategory**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationcategory) doit être définie sur **Other** et la propriété [**SmartCardEmulationType**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationtype) doit être définie sur **Host**.
+Pour les cartes HCE sans paiement, la propriété [**SmartCardEmulationCategory**](/uwp/api/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationcategory) doit être définie sur **Other** et la propriété [**SmartCardEmulationType**](/uwp/api/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationtype) doit être définie sur **Host**.
 
 ```cppcx
 public static byte[] AID_OTHER =
@@ -250,19 +250,19 @@ var appletIdGroup = new SmartCardAppletIdGroup(
 
 Vous pouvez inclure jusqu’à 9 identificateurs d’applet (d’une longueur comprise entre 5 et 16 octets) par groupe d’identificateurs d’applet.
 
-Utilisez la méthode [**RegisterAppletIdGroupAsync**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardemulator.registerappletidgroupasync) pour inscrire votre groupe d’aide auprès du système, qui retourne un objet [**SmartCardAppletIdGroupRegistration**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) . Par défaut, la propriété [**ActivationPolicy**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) de l’objet d’inscription est définie sur **Disabled**. Cela signifie que même si vos identificateurs d’applet sont inscrits auprès du système, ils ne sont pas encore activés et ne reçoivent aucun trafic.
+Utilisez la méthode [**RegisterAppletIdGroupAsync**](/uwp/api/windows.devices.smartcards.smartcardemulator.registerappletidgroupasync) pour inscrire votre groupe d’aide auprès du système, qui retourne un objet [**SmartCardAppletIdGroupRegistration**](/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) . Par défaut, la propriété [**ActivationPolicy**](/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) de l’objet d’inscription est définie sur **Disabled**. Cela signifie que même si vos identificateurs d’applet sont inscrits auprès du système, ils ne sont pas encore activés et ne reçoivent aucun trafic.
 
 ```cppcx
 reg = await SmartCardEmulator.RegisterAppletIdGroupAsync(appletIdGroup);
 ```
 
-Vous pouvez activer vos cartes inscrites (groupes d’aides) à l’aide de la méthode [**RequestActivationPolicyChangeAsync**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) de la classe[**SmartCardAppletIdGroupRegistration**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) , comme indiqué ci-dessous. Dans la mesure où une seule carte de paiement peut être activée à la fois sur le système, la définition de l’élément [**ActivationPolicy**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) d’un groupe d’identificateurs d’applet de carte de paiement sur **Enabled** équivaut à la définition de la carte de paiement par défaut. L’utilisateur est invité à autoriser cette carte en tant que carte de paiement par défaut, indépendamment du fait qu’une carte de paiement par défaut soit déjà sélectionnée ou non. Cette allégation n’est pas vraie si votre application est déjà l’application de paiement par défaut, et qu’elle est modifiée simplement entre ses propres groupes d’identificateurs d’applet. Vous pouvez enregistrer jusqu’à 10 groupes d’identificateurs d’applet par application.
+Vous pouvez activer vos cartes inscrites (groupes d’aides) à l’aide de la méthode [**RequestActivationPolicyChangeAsync**](/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) de la classe[**SmartCardAppletIdGroupRegistration**](/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) , comme indiqué ci-dessous. Dans la mesure où une seule carte de paiement peut être activée à la fois sur le système, la définition de l’élément [**ActivationPolicy**](/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) d’un groupe d’identificateurs d’applet de carte de paiement sur **Enabled** équivaut à la définition de la carte de paiement par défaut. L’utilisateur est invité à autoriser cette carte en tant que carte de paiement par défaut, indépendamment du fait qu’une carte de paiement par défaut soit déjà sélectionnée ou non. Cette allégation n’est pas vraie si votre application est déjà l’application de paiement par défaut, et qu’elle est modifiée simplement entre ses propres groupes d’identificateurs d’applet. Vous pouvez enregistrer jusqu’à 10 groupes d’identificateurs d’applet par application.
 
 ```cppcx
 reg.RequestActivationPolicyChangeAsync(AppletIdGroupActivationPolicy.Enabled);
 ```
 
-Vous pouvez interroger les groupes d’identificateurs d’applet inscrits de votre application avec le système d’exploitation et contrôler leur stratégie d’activation à l’aide de la méthode [**GetAppletIdGroupRegistrationsAsync**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardemulator.getappletidgroupregistrationsasync).
+Vous pouvez interroger les groupes d’identificateurs d’applet inscrits de votre application avec le système d’exploitation et contrôler leur stratégie d’activation à l’aide de la méthode [**GetAppletIdGroupRegistrationsAsync**](/uwp/api/windows.devices.smartcards.smartcardemulator.getappletidgroupregistrationsasync).
 
 Une invite est transmise aux utilisateurs lorsque vous modifiez la stratégie d’activation d’une carte de paiement de **Disabled** en **Enabled**, seulement si votre application n’est pas déjà l’application de paiement par défaut. Une invite est transmise aux utilisateurs uniquement lorsque vous modifiez la stratégie d’activation d’une carte sans paiement de **Disabled** en **Enabled**, en cas de conflit d’identificateur d’applet.
 
@@ -288,13 +288,13 @@ bgTask = taskBuilder.Register();
 
 ## <a name="foreground-override-behavior"></a>Comportement de remplacement au premier plan
 
-Vous pouvez remplacer l’élément [**ActivationPolicy**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) de l’une de vos inscriptions de groupes d’identificateurs d’applet par **ForegroundOverride** lorsque votre application est au premier plan, sans inviter l’utilisateur. Lorsque l’utilisateur appuie vers un terminal sur son appareil lorsque l’application est au premier plan, le trafic est dirigé vers votre application, même si aucune de vos cartes de paiement n’a été choisie par l’utilisateur en tant que carte de paiement par défaut. Lorsque vous modifiez une stratégie d’activation de carte en **ForegroundOverride**, cette modification temporaire est conservée jusqu’à ce que votre application quitte le premier plan. Elle ne modifie en rien la carte de paiement par défaut actuellement définie par l’utilisateur. Pour modifier l’élément **ActivationPolicy** de vos cartes (avec ou sans paiement) à partir de votre application de premier plan, procédez comme suit : Notez que la méthode [**RequestActivationPolicyChangeAsync**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) peut être appelée uniquement à partir d’une application de premier plan, et pas d’une tâche en arrière-plan.
+Vous pouvez remplacer l’élément [**ActivationPolicy**](/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) de l’une de vos inscriptions de groupes d’identificateurs d’applet par **ForegroundOverride** lorsque votre application est au premier plan, sans inviter l’utilisateur. Lorsque l’utilisateur appuie vers un terminal sur son appareil lorsque l’application est au premier plan, le trafic est dirigé vers votre application, même si aucune de vos cartes de paiement n’a été choisie par l’utilisateur en tant que carte de paiement par défaut. Lorsque vous modifiez une stratégie d’activation de carte en **ForegroundOverride**, cette modification temporaire est conservée jusqu’à ce que votre application quitte le premier plan. Elle ne modifie en rien la carte de paiement par défaut actuellement définie par l’utilisateur. Pour modifier l’élément **ActivationPolicy** de vos cartes (avec ou sans paiement) à partir de votre application de premier plan, procédez comme suit : Notez que la méthode [**RequestActivationPolicyChangeAsync**](/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) peut être appelée uniquement à partir d’une application de premier plan, et pas d’une tâche en arrière-plan.
 
 ```cppcx
 reg.RequestActivationPolicyChangeAsync(AppletIdGroupActivationPolicy.ForegroundOverride);
 ```
 
-En outre, vous pouvez inscrire un groupe d’identificateurs d’applet composé d’un seul identificateur de longueur nulle. Dans cette configuration, le système dirige l’ensemble des commandes APDU indépendamment de l’identificateur, y compris les commandes transmises avant la réception d’une commande SELECT AID. Toutefois, un groupe d’identificateurs de ce type fonctionne uniquement lorsque votre application est au premier plan, car il peut être uniquement défini sur **ForegroundOverride**, et ne peut pas être activé en permanence. Par ailleurs, ce mécanisme fonctionne à la fois pour les valeurs **Host** et **UICC** de l’énumération [**SmartCardEmulationType**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardEmulationType), afin de diriger l’ensemble du trafic vers votre tâche en arrière-plan HCE ou vers la carte SIM.
+En outre, vous pouvez inscrire un groupe d’identificateurs d’applet composé d’un seul identificateur de longueur nulle. Dans cette configuration, le système dirige l’ensemble des commandes APDU indépendamment de l’identificateur, y compris les commandes transmises avant la réception d’une commande SELECT AID. Toutefois, un groupe d’identificateurs de ce type fonctionne uniquement lorsque votre application est au premier plan, car il peut être uniquement défini sur **ForegroundOverride**, et ne peut pas être activé en permanence. Par ailleurs, ce mécanisme fonctionne à la fois pour les valeurs **Host** et **UICC** de l’énumération [**SmartCardEmulationType**](/uwp/api/Windows.Devices.SmartCards.SmartCardEmulationType), afin de diriger l’ensemble du trafic vers votre tâche en arrière-plan HCE ou vers la carte SIM.
 
 ```cppcx
 public static byte[] AID_Foreground =
@@ -319,7 +319,7 @@ La fonction d’émulation de carte à puce NFC est activée uniquement sur Wind
 Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Devices.SmartCards.SmartCardEmulator");
 ```
 
-Vous pouvez également vérifier si l’appareil possède un matériel NFC capable d’effectuer une certaine forme d’émulation de carte en vérifiant si la méthode [**SmartCardEmulator. GetDefaultAsync**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardemulator.getdefaultasync) retourne la valeur null. Si tel est le cas, l’appareil ne prend en charge aucune émulation de carte NFC.
+Vous pouvez également vérifier si l’appareil possède un matériel NFC capable d’effectuer une certaine forme d’émulation de carte en vérifiant si la méthode [**SmartCardEmulator. GetDefaultAsync**](/uwp/api/windows.devices.smartcards.smartcardemulator.getdefaultasync) retourne la valeur null. Si tel est le cas, l’appareil ne prend en charge aucune émulation de carte NFC.
 
 ```cppcx
 var smartcardemulator = await SmartCardEmulator.GetDefaultAsync();<
@@ -335,7 +335,7 @@ Smartcardemulator.IsHostCardEmulationSupported();
 
 Windows 10 Mobile dispose de paramètres d’émulation de carte de niveau appareil, qui peuvent être définis par l’opérateur mobile ou le fabricant de l’appareil. Par défaut, le commutateur Toucher pour payer est désactivé et la stratégie d’activation au niveau appareil est définie sur Toujours, sauf si l’opérateur mobile ou le fabricant remplacent ces valeurs.
 
-Votre application peut interroger la valeur du [**EnablementPolicy**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardEmulatorEnablementPolicy) au niveau de l’appareil et prendre des mesures pour chaque cas, en fonction du comportement souhaité de votre application dans chaque État.
+Votre application peut interroger la valeur du [**EnablementPolicy**](/uwp/api/Windows.Devices.SmartCards.SmartCardEmulatorEnablementPolicy) au niveau de l’appareil et prendre des mesures pour chaque cas, en fonction du comportement souhaité de votre application dans chaque État.
 
 ```cppcx
 SmartCardEmulator emulator = await SmartCardEmulator.GetDefaultAsync();
@@ -373,7 +373,7 @@ Votre tâche en arrière-plan d’application est lancée, même si le télépho
 
 ## <a name="aid-registration-and-other-updates-for-sim-based-apps"></a>Inscription d’identificateur d’applet et autres mises à jour pour les applications sur carte SIM
 
-Les applications d’émulation de cartes qui utilisent la carte SIM en tant qu’élément sécurisé peut s’inscrire auprès du service Windows afin de communiquer les identificateurs d’applet pris en charge sur la carte SIM. Cette inscription est très similaire à l’inscription d’application HCE. La seule différence est [**SmartCardEmulationType**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardEmulationType), qui doit être défini sur UICC pour les applications SIM. Suite à l’inscription de la carte de paiement, le nom d’affichage de celle-ci apparaît également dans le menu des paramètres NFC.
+Les applications d’émulation de cartes qui utilisent la carte SIM en tant qu’élément sécurisé peut s’inscrire auprès du service Windows afin de communiquer les identificateurs d’applet pris en charge sur la carte SIM. Cette inscription est très similaire à l’inscription d’application HCE. La seule différence est [**SmartCardEmulationType**](/uwp/api/Windows.Devices.SmartCards.SmartCardEmulationType), qui doit être défini sur UICC pour les applications SIM. Suite à l’inscription de la carte de paiement, le nom d’affichage de celle-ci apparaît également dans le menu des paramètres NFC.
 
 ```cppcx
 var appletIdGroup = new SmartCardAppletIdGroup(
@@ -383,5 +383,9 @@ var appletIdGroup = new SmartCardAppletIdGroup(
                                 SmartCardEmulationType.Uicc);
 ```
 
+<<<<<<< HEAD
 > [!Important]
 > La prise en charge héritée de l’interception des SMS binaires de Windows Phone 8.1 a été supprimée et remplacée par une nouvelle prise en charge élargie des SMS dans Windows 10 Mobile, mais l’ensemble des applications Windows Phone 8.1 héritées utilisant cette fonctionnalité doivent être mises à jour pour prendre en charge les nouvelles API SMS Windows 10 Mobile.
+=======
+<b>Important</b>    La prise en charge de l’interception SMS binaire héritée dans Windows Phone 8,1 a été supprimée et remplacée par une nouvelle prise en charge de SMS plus large dans Windows 10 mobile, mais toutes les applications héritées Windows Phone 8,1 reposant sur doivent être mises à jour pour utiliser les nouvelles API SMS Windows 10 mobile.
+>>>>>>> 05b1708b6... Liens : Windows UWP

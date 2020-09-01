@@ -9,33 +9,33 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c69e8618aaba58fd3b8de163ce990371bbf3c945
-ms.sourcegitcommit: ce7610916fd662d4bb95d4bfe5c4cf0e45303014
+ms.openlocfilehash: c24e3bcc6ce10fb85f9e87ac213172e147d9e6b6
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71681992"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172273"
 ---
 # <a name="generate-a-3mf-package"></a>Générer un package 3MF
 
 **API importantes**
 
--   [**Windows. Graphics. Printing3D**](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d)
+-   [**Windows. Graphics. Printing3D**](/uwp/api/windows.graphics.printing3d)
 
-Ce guide décrit la structure du document 3D Manufacturing Format, ainsi que les procédures de création et de manipulation de ce type de fichier avec l’API [**Windows.Graphics.Printing3D**](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d).
+Ce guide décrit la structure du document 3D Manufacturing Format, ainsi que les procédures de création et de manipulation de ce type de fichier avec l’API [**Windows.Graphics.Printing3D**](/uwp/api/windows.graphics.printing3d).
 
 ## <a name="what-is-3mf"></a>Qu’est-ce que 3MF ?
 
 3MF (3D Manufacturing Format) est un ensemble de conventions régissant la description en langage XML de l’apparence et de la structure de modèles 3D à des fins de fabrication (impression 3D). Ce format définit une série de pièces (dont certaines sont requises et d’autres facultatives) et leurs relations, de façon à fournir toutes les informations nécessaires à un périphérique de fabrication 3D. Un jeu de données conforme au format 3MF peut être enregistré dans un fichier présentant l’extension .3mf.
 
-Dans Windows 10, la classe [**Printing3D3MFPackage**](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d.printing3d3mfpackage) de l’espace de noms **Windows. Graphics. Printing3D** est analogue à un fichier. 3mf unique, tandis que d’autres classes mappent aux éléments XML particuliers du fichier. Ce guide décrit la façon dont chacune des parties principales d’un document 3MF peut être créée et définie par programmation, le mode d’utilisation de l’extension 3MF Materials, ainsi que les procédures de conversion et d’enregistrement d’un objet **Printing3D3MFPackage** en fichier .3mf. Pour plus d’informations sur les normes 3MF ou sur l’extension 3MF Materials, voir la [Spécification 3MF](https://3mf.io/what-is-3mf/3mf-specification/).
+Dans Windows 10, la classe [**Printing3D3MFPackage**](/uwp/api/windows.graphics.printing3d.printing3d3mfpackage) de l’espace de noms **Windows.Graphics.Printing3D** est analogue à un fichier .3mf unique, tandis que d’autres classes sont mappées sur les différents éléments XML de ce fichier. Ce guide décrit la façon dont chacune des parties principales d’un document 3MF peut être créée et définie par programmation, le mode d’utilisation de l’extension 3MF Materials, ainsi que les procédures de conversion et d’enregistrement d’un objet **Printing3D3MFPackage** en fichier .3mf. Pour plus d’informations sur les normes 3MF ou sur l’extension 3MF Materials, voir la [Spécification 3MF](https://3mf.io/what-is-3mf/3mf-specification/).
 
 <!-- >**Note** This guide describes how to construct a 3MF document from scratch. If you wish to make changes to an already existing 3MF document provided in the form of a .3mf file, you simply need to convert it to a **Printing3D3MFPackage** and alter the contained classes/properties in the same way (see [link]) below). -->
 
 
 ## <a name="core-classes-in-the-3mf-structure"></a>Classes principales de la structure 3MF
 
-La classe **Printing3D3MFPackage** représente un document 3MF complet, au cœur duquel se trouve la partie modèle, représentée par la classe [**Printing3DModel**](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d.printing3dmodel). Nous spécifierons la plupart des informations relatives au modèle 3D considéré en définissant les propriétés de la classe **Printing3DModel** et les propriétés de leurs classes sous-jacentes.
+La classe **Printing3D3MFPackage** représente un document 3MF complet, au cœur duquel se trouve la partie modèle, représentée par la classe [**Printing3DModel**](/uwp/api/windows.graphics.printing3d.printing3dmodel). Nous spécifierons la plupart des informations relatives au modèle 3D considéré en définissant les propriétés de la classe **Printing3DModel** et les propriétés de leurs classes sous-jacentes.
 
 [!code-cs[InitClasses](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetInitClasses)]
 
@@ -49,7 +49,7 @@ La partie modèle d’un document 3MF peut contenir des métadonnées sous la f
 
 ## <a name="mesh-data"></a>Données de maillage
 
-Dans le contexte de ce guide, un maillage est un corps de géométrie en 3 dimensions construit à partir d’un seul ensemble de vertex (même s’il n’a pas besoin d’apparaître sous la forme d’un solide unique). Une partie maillage est représentée par la classe [**Printing3DMesh**](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d.printing3dmesh). Un objet de maillage valide doit contenir des informations sur l’emplacement de tous ses vertex et de toutes les faces triangulaires figurant entre certains ensembles de vertex.
+Dans le contexte de ce guide, un maillage est un corps de géométrie en 3 dimensions construit à partir d’un seul ensemble de vertex (même s’il n’a pas besoin d’apparaître sous la forme d’un solide unique). Une partie maillage est représentée par la classe [**Printing3DMesh**](/uwp/api/windows.graphics.printing3d.printing3dmesh). Un objet de maillage valide doit contenir des informations sur l’emplacement de tous ses vertex et de toutes les faces triangulaires figurant entre certains ensembles de vertex.
 
 La méthode suivante ajoute des vertex à un maillage et leur attribue des emplacements dans l’espace 3D :
 
@@ -83,9 +83,9 @@ Le type de matériau par défaut est le type **Matériau de base**, qui comporte
 [!code-cs[BaseMaterialGroup](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetBaseMaterialGroup)]
 
 > [!NOTE]
-> l’appareil de fabrication 3D détermine les éléments physiques disponibles mappés sur les éléments de matériel virtuel stockés dans le 3MF. Le mappage des matériaux n’est pas nécessairement de type 1:1. En effet, si une imprimante 3D n’utilise qu’un seul matériau, elle imprimera la totalité du modèle dans ce matériau, quels que soient les différents matériaux attribués à des objets ou faces spécifiques.
+> Le périphérique de fabrication 3D détermine le mappage entre les matériaux physiques disponibles et les éléments de matériau virtuels stockés dans le fichier 3MF. Le mappage des matériaux n’est pas nécessairement de type 1:1. En effet, si une imprimante 3D n’utilise qu’un seul matériau, elle imprimera la totalité du modèle dans ce matériau, quels que soient les différents matériaux attribués à des objets ou faces spécifiques.
 
-### <a name="color-materials"></a>Matériaux de couleur
+### <a name="color-materials"></a>Matériaux couleur
 
 Les **matériaux de couleur** sont semblables aux **matériaux de base**, mais n’indiquent pas de nom. Ils ne fournissent donc aucune instruction sur le type de matériau à utiliser par le périphérique. Ils ne comportent que des données de couleur et laissent le périphérique choisir le type de matériau (le périphérique peut alors demander à l’utilisateur d’effectuer lui-même ce choix). Dans le code ci-dessous, les objets `colrMat` issus de la méthode précédente sont utilisés séparément.
 
@@ -118,7 +118,7 @@ Afin de préciser les matériaux mappés sur les vertex de chaque triangle, nous
 
 ## <a name="components-and-build"></a>Composants et builds
 
-La structure des composants permet à l’utilisateur de placer plusieurs objets de maillage dans un modèle 3D imprimable. Un objet [**Printing3DComponent**](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d.printing3dcomponent) contient un maillage unique, ainsi qu’une liste de références à d’autres composants. Il s’agit en fait d’une liste d’objets [**Printing3DComponentWithMatrix**](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d.printing3dcomponentwithmatrix). Chaque objet **Printing3DComponentWithMatrix** contient un élément **Printing3DComponent** et, plus important encore, une matrice de transformation qui s’applique au maillage et aux composants de cet élément **Printing3DComponent**.
+La structure des composants permet à l’utilisateur de placer plusieurs objets de maillage dans un modèle 3D imprimable. Un objet [**Printing3DComponent**](/uwp/api/windows.graphics.printing3d.printing3dcomponent) contient un seul maillage et une liste de références à d’autres composants. Il s’agit en fait d’une liste d’objets [**Printing3DComponentWithMatrix**](/uwp/api/windows.graphics.printing3d.printing3dcomponentwithmatrix) . Chaque objet **Printing3DComponentWithMatrix** contient un élément **Printing3DComponent** et, plus important encore, une matrice de transformation qui s’applique au maillage et aux composants de cet élément **Printing3DComponent**.
 
 Par exemple, un modèle de voiture peut être constitué d’un élément **Printing3DComponent** « Châssis » qui contient le maillage du châssis de la voiture. Le composant « Châssis » peut alors comporter des références à quatre objets **Printing3DComponentWithMatrix** distincts, qui référencent tous le même élément **Printing3DComponent** avec le maillage « Roue » et contiennent quatre matrices de transformation (mappant les roues sur quatre positions différentes du châssis de la voiture). Dans ce scénario, le maillage « Châssis » et le maillage « Roue » ne doivent être stockés qu’une seule fois, même si le produit final comporte cinq maillages au total.
 
@@ -135,7 +135,7 @@ Cette fonction garantit que la texture est correctement spécifiée.
 
 [!code-cs[FixTexture](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetFixTexture)]
 
-Nous pouvons alors initialiser un travail d’impression dans l’application (voir [Impression 3D à partir de votre application](https://docs.microsoft.com/windows/uwp/devices-sensors/3d-print-from-app)), ou enregistrer cet objet **Printing3D3MFPackage** sous la forme d’un fichier .3mf.
+Nous pouvons alors initialiser un travail d’impression dans l’application (voir [Impression 3D à partir de votre application](./3d-print-from-app.md)), ou enregistrer cet objet **Printing3D3MFPackage** sous la forme d’un fichier .3mf.
 
 La méthode suivante sélectionne un objet **Printing3D3MFPackage** finalisé et enregistre ses données dans un fichier .3mf.
 
@@ -143,8 +143,8 @@ La méthode suivante sélectionne un objet **Printing3D3MFPackage** finalisé et
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-[impression 3D à partir de votre application](https://docs.microsoft.com/windows/uwp/devices-sensors/3d-print-from-app)  
-[exemple d’impression 3D-exemple UWP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)
+[Impression 3D à partir de votre application](./3d-print-from-app.md)  
+[Exemple d’impression 3D UWP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)
  
 
  

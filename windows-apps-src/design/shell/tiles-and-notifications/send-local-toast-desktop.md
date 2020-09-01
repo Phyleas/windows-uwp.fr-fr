@@ -8,16 +8,16 @@ ms.date: 01/23/2018
 ms.topic: article
 keywords: 'Windows 10, UWP, Win32, Desktop, notifications Toast, envoyer un toast, envoyer un toast local, Desktop Bridge, msix, packages épars, C#, C Sharp, Toast notification, WPF, envoyer une notification Toast, WPF, envoyer une notification Toast, envoyer une notification Toast c#, envoyer une notification, WPF, envoyer une notification Toast, notification Toast, WPF, notification Toast C #'
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a339a4f2dca52a9bc04b1bba92f149a3e627878
-ms.sourcegitcommit: 720413d2053c8d5c5b34d6873740be6e913a4857
+ms.openlocfilehash: 1e78e68cdd44890b50209f3f900c538278bd523c
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88846749"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172293"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>Envoyer une notification toast locale à partir d’applications de bureau en C#
 
-Les applications de bureau (y compris les applications [MSIX](https://docs.microsoft.com/windows/msix/desktop/source-code-overview) empaquetées, les applications qui utilisent des [packages éparss](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) pour obtenir l’identité du package et les applications Win32 non empaquetées classiques) peuvent envoyer des notifications de Toast interactives comme des applications Windows. Toutefois, il existe quelques étapes spéciales pour les applications de bureau en raison des différents schémas d’activation et de l’absence potentielle d’identité de package si vous n’utilisez pas de packages MSIX ou épars.
+Les applications de bureau (y compris les applications [MSIX](/windows/msix/desktop/source-code-overview) empaquetées, les applications qui utilisent des [packages éparss](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) pour obtenir l’identité du package et les applications Win32 non empaquetées classiques) peuvent envoyer des notifications de Toast interactives comme des applications Windows. Toutefois, il existe quelques étapes spéciales pour les applications de bureau en raison des différents schémas d’activation et de l’absence potentielle d’identité de package si vous n’utilisez pas de packages MSIX ou épars.
 
 > [!IMPORTANT]
 > Si vous écrivez une application UWP, consultez la [documentation UWP](send-local-toast.md). Pour les autres langages du bureau, consultez [Desktop C++ WRL](send-local-toast-desktop-cpp-wrl.md).
@@ -60,7 +60,7 @@ Ensuite, vous devez vous inscrire auprès de la plateforme de notification. Diff
 
 #### <a name="msixsparse-packages"></a>[Packages MSIX/Sparse](#tab/msix-sparse)
 
-Si vous utilisez un package [MSIX](https://docs.microsoft.com/windows/msix/desktop/source-code-overview) ou [Sparse](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) (ou si vous prenez en charge les deux), dans votre **Package. appxmanifest**, ajoutez :
+Si vous utilisez un package [MSIX](/windows/msix/desktop/source-code-overview) ou [Sparse](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) (ou si vous prenez en charge les deux), dans votre **Package. appxmanifest**, ajoutez :
 
 1. Déclaration pour **xmlns : com**
 2. Déclaration pour **xmlns : Desktop**
@@ -338,7 +338,7 @@ DesktopNotificationManagerCompat.History.Clear();
 
 ## <a name="step-8-deploying-and-debugging"></a>Étape 8 : déploiement et débogage
 
-Pour déployer et déboguer votre application MSIX, consultez [exécuter, déboguer et tester une application de bureau empaquetée](/windows/uwp/porting/desktop-to-uwp-debug).
+Pour déployer et déboguer votre application MSIX, consultez [exécuter, déboguer et tester une application de bureau empaquetée](/windows/msix/desktop/desktop-to-uwp-debug).
 
 Pour déployer et déboguer votre application Win32 classique, vous devez installer votre application par le biais du programme d’installation avant de déboguer normalement, afin que le raccourci de démarrage avec votre identifiant AUMID et CLSID soit présent. Une fois le raccourci de démarrage présent, vous pouvez déboguer à l’aide de la touche F5 à partir de Visual Studio.
 
@@ -359,4 +359,3 @@ Problème **résolu : l’application ne devient pas focalisée après avoir cl
 * [Exemple de code complet sur GitHub](https://github.com/WindowsNotifications/desktop-toasts)
 * [Notifications toast à partir d’applications de bureau](toast-desktop-apps.md)
 * [Documentation sur le contenu Toast](adaptive-interactive-toasts.md)
-

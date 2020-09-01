@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, Uri, capture, croquis
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: d9469dd6efd3598ab7abd9791a976385f4dfce49
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 2d7471f414922eb1e4923079082ee6abfd8418bd
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684660"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89167813"
 ---
 # <a name="launch-screen-snipping"></a>Lancer la capture d’écran
 
@@ -23,11 +23,11 @@ L’URI **MS-screenclip :** permet à votre application d’ouvrir automatiquem
 
 **MS-screenclip :** accepte les paramètres suivants :
 
-| Paramètre | Tapez | Requis | Description |
+| Paramètre | Type | Obligatoire | Description |
 | --- | --- | --- | --- |
-| source | chaîne | non | Chaîne de forme libre pour indiquer la source qui a lancé l’URI. |
-| delayInSeconds | entier | non | Valeur entière comprise entre 1 et 30. Spécifie le délai, en secondes entières, entre l’appel de l’URI et le début de l’capture. |
-| callbackformat | chaîne | non | Ce paramètre n’est pas disponible. |
+| source | string | non | Chaîne de forme libre pour indiquer la source qui a lancé l’URI. |
+| delayInSeconds | int | Non | Valeur entière comprise entre 1 et 30. Spécifie le délai, en secondes entières, entre l’appel de l’URI et le début de l’capture. |
+| callbackformat | string | non | Ce paramètre n’est pas disponible. |
 
 ## <a name="launching-the-snip--sketch-app"></a>Lancement de l’application d’esquisse & de capture
 
@@ -35,14 +35,14 @@ L’URI **MS-screensketch :** vous permet de lancer par programmation l’appli
 
 **MS-screensketch :** accepte les paramètres suivants :
 
-| Paramètre | Tapez | Requis | Description |
+| Paramètre | Type | Obligatoire | Description |
 | --- | --- | --- | --- |
-| sharedAccessToken | chaîne | non | Jeton identifiant le fichier à ouvrir dans l’application d’esquisse & de capture. Récupéré à partir de [SharedStorageAccessManager. AddFile](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.addfile). Si ce paramètre est omis, l’application est lancée sans fichier ouvert. |
-| secondarySharedAccessToken | chaîne | non | Chaîne identifiant un fichier JSON avec les métadonnées relatives à la capture. Les métadonnées peuvent inclure un champ **clipPoints** avec un tableau de coordonnées x, y et/ou un [userActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity). |
-| source | chaîne | non | Chaîne de forme libre pour indiquer la source qui a lancé l’URI. |
-| isTemporary | bool | non | Si la valeur est true, l’esquisse d’écran tente de supprimer le fichier après l’avoir ouvert. |
+| sharedAccessToken | string | non | Jeton identifiant le fichier à ouvrir dans l’application d’esquisse & de capture. Récupéré à partir de [SharedStorageAccessManager. AddFile](/uwp/api/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.addfile). Si ce paramètre est omis, l’application est lancée sans fichier ouvert. |
+| secondarySharedAccessToken | string | non | Chaîne identifiant un fichier JSON avec les métadonnées relatives à la capture. Les métadonnées peuvent inclure un champ **clipPoints** avec un tableau de coordonnées x, y et/ou un [userActivity](/uwp/api/windows.applicationmodel.useractivities.useractivity). |
+| source | string | non | Chaîne de forme libre pour indiquer la source qui a lancé l’URI. |
+| isTemporary | bool | Non | Si la valeur est true, l’esquisse d’écran tente de supprimer le fichier après l’avoir ouvert. |
 
-L’exemple suivant appelle la méthode [LaunchUriAsync](https://docs.microsoft.com/uwp/api/Windows.System.Launcher#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_) pour envoyer une image en vue de la capture & dessin à partir de l’application de l’utilisateur.
+L’exemple suivant appelle la méthode [LaunchUriAsync](/uwp/api/Windows.System.Launcher#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_) pour envoyer une image en vue de la capture & dessin à partir de l’application de l’utilisateur.
 
 ```csharp
 

@@ -9,12 +9,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 34bdda207350d980e323b27a7b98e3c0112d06f4
-ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
+ms.openlocfilehash: f5efe2fe1e8a4e24df175a0d019834cd0ba90388
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88970177"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172553"
 ---
 # <a name="gamepad-and-remote-control-interactions"></a>Interactions entre le boîtier de commande et la télécommande
 
@@ -100,7 +100,7 @@ UWP mappe automatiquement le comportement d’entrée clavier existant au boîti
 | Entrez                 | Bouton A/Sélectionner                       |
 | Caractère d'échappement                | Bouton B/Précédent*                        |
 
-\*Lorsque [les événements](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) KEYpoint et [KeyUp](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) pour le bouton B ne sont pas gérés par l’application, l’événement [SystemNavigationManager. rerequested](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.backrequested) est déclenché, ce qui devrait entraîner la navigation vers l’arrière dans l’application. Cependant, vous devez implémenter cela vous-même, comme dans l’extrait de code suivant :
+\*Lorsque [les événements](/uwp/api/windows.ui.xaml.uielement.keydown) KEYpoint et [KeyUp](/uwp/api/windows.ui.xaml.uielement.keyup) pour le bouton B ne sont pas gérés par l’application, l’événement [SystemNavigationManager. rerequested](/uwp/api/windows.ui.core.systemnavigationmanager.backrequested) est déclenché, ce qui devrait entraîner la navigation vers l’arrière dans l’application. Cependant, vous devez implémenter cela vous-même, comme dans l’extrait de code suivant :
 
 ```csharp
 // This code goes in the MainPage class
@@ -157,12 +157,12 @@ Le tableau suivant répertorie la prise en charge intégrée des accélérateurs
 
 | Interaction   | Clavier/souris   | Boîtier de commande      | Intégrée pour :  | Recommandée pour : |
 |---------------|------------|--------------|----------------|------------------|
-| Page vers le haut/bas  | Page vers le haut/bas | Gâchette gauche/droite | [CalendarView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarView), [ListBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox), [ListViewBase](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListViewBase), [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), `ScrollViewer`, [Selector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector), [LoopingSelector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector), [ComboBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [FlipView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView) | Affichages qui prennent en charge le défilement vertical
-| Page vers la gauche/droite | Aucun | Gâchettes hautes gauche/droite | [Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot), [ListBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox), [ListViewBase](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListViewBase), [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), `ScrollViewer`, [Selector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector), [LoopingSelector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector), [FlipView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView) | Affichages qui prennent en charge le défilement horizontal
-| Zoom avant/arrière        | Ctrl +/- | Gâchette gauche/droite | Aucun | `ScrollViewer`, les affichages qui prennent en charge le zoom avant et arrière |
-| Ouvrir/fermer le volet de navigation | Aucun | Affichage | Aucun | Volets de navigation |
-| Recherche | Aucun | Bouton Y | Aucun | Raccourci pour la fonction de recherche principale dans l’application |
-| [Ouvrir le menu contextuel](#commandbar-and-contextflyout) | Cliquez avec le bouton droit sur | Bouton Menu | [ContextFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout) | Menu contextuels |
+| Page vers le haut/bas  | Page vers le haut/bas | Gâchette gauche/droite | [CalendarView](/uwp/api/Windows.UI.Xaml.Controls.CalendarView), [ListBox](/uwp/api/Windows.UI.Xaml.Controls.ListBox), [ListViewBase](/uwp/api/Windows.UI.Xaml.Controls.ListViewBase), [ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView), `ScrollViewer`, [Selector](/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector), [LoopingSelector](/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector), [ComboBox](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [FlipView](/uwp/api/Windows.UI.Xaml.Controls.FlipView) | Affichages qui prennent en charge le défilement vertical
+| Page vers la gauche/droite | Aucune | Gâchettes hautes gauche/droite | [Pivot](/uwp/api/Windows.UI.Xaml.Controls.Pivot), [ListBox](/uwp/api/Windows.UI.Xaml.Controls.ListBox), [ListViewBase](/uwp/api/Windows.UI.Xaml.Controls.ListViewBase), [ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView), `ScrollViewer`, [Selector](/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector), [LoopingSelector](/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector), [FlipView](/uwp/api/Windows.UI.Xaml.Controls.FlipView) | Affichages qui prennent en charge le défilement horizontal
+| Zoom avant/arrière        | Ctrl +/- | Gâchette gauche/droite | Aucune | `ScrollViewer`, les affichages qui prennent en charge le zoom avant et arrière |
+| Ouvrir/fermer le volet de navigation | Aucune | Affichage | Aucune | Volets de navigation |
+| Recherche | Aucune | Bouton Y | Aucune | Raccourci pour la fonction de recherche principale dans l’application |
+| [Ouvrir le menu contextuel](#commandbar-and-contextflyout) | Cliquez avec le bouton droit sur | Bouton Menu | [ContextFlyout](/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout) | Menu contextuels |
 
 ## <a name="xy-focus-navigation-and-interaction"></a>Interaction et navigation en mode focus XY
 
@@ -178,7 +178,7 @@ Si la prise en charge du clavier est correctement implémentée, votre applicati
 
 ### <a name="debugging-focus-issues"></a>Débogage des problèmes de focus
 
-La méthode [FocusManager.GetFocusedElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager.getfocusedelement) vous indique sur quel élément le focus se trouve actuellement. Cela s’avère utile dans des situations où l’emplacement du focus visuel n’est pas clairement identifiable. Vous pouvez consigner les informations dans la fenêtre Sortie de Visual Studio :
+La méthode [FocusManager.GetFocusedElement](/uwp/api/windows.ui.xaml.input.focusmanager.getfocusedelement) vous indique sur quel élément le focus se trouve actuellement. Cela s’avère utile dans des situations où l’emplacement du focus visuel n’est pas clairement identifiable. Vous pouvez consigner les informations dans la fenêtre Sortie de Visual Studio :
 
 ```csharp
 page.GotFocus += (object sender, RoutedEventArgs e) =>
@@ -194,8 +194,8 @@ page.GotFocus += (object sender, RoutedEventArgs e) =>
 
 La navigation en mode XY peut ne pas fonctionner comme prévu pour trois raisons courantes :
 
-* La valeur de la propriété [IsTabStop](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.istabstop) ou [Visibility](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.visibility) est incorrecte.
-* Le contrôle sur lequel se trouve le focus est en réalité plus large que prévu&mdash;La navigation en mode XY examine la taille totale du contrôle ([ActualWidth](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.actualwidth) et [ActualHeight](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.actualheight)), et pas seulement la partie du contrôle effectuant le rendu d’un élément important.
+* La valeur de la propriété [IsTabStop](/uwp/api/windows.ui.xaml.controls.control.istabstop) ou [Visibility](/uwp/api/windows.ui.xaml.uielement.visibility) est incorrecte.
+* Le contrôle sur lequel se trouve le focus est en réalité plus large que prévu&mdash;La navigation en mode XY examine la taille totale du contrôle ([ActualWidth](/uwp/api/windows.ui.xaml.frameworkelement.actualwidth) et [ActualHeight](/uwp/api/windows.ui.xaml.frameworkelement.actualheight)), et pas seulement la partie du contrôle effectuant le rendu d’un élément important.
 * Un contrôle pouvant être actif se trouve au-dessus d’un autre&mdash;La navigation en mode XY ne prend pas en charge les contrôles qui se chevauchent.
 
 Si la navigation en mode XY ne fonctionne toujours pas après correction de ces problèmes courants, vous pouvez pointer manuellement vers l’élément sur lequel vous voulez un focus à l’aide de la méthode décrite dans [Remplacement de la navigation par défaut](#overriding-the-default-navigation).
@@ -203,7 +203,7 @@ Si la navigation en mode XY ne fonctionne toujours pas après correction de ces 
 Si la navigation en mode XY fonctionne comme prévu, mais qu’aucun focus visuel n’est affiché, l’un des problèmes suivants peut en être la cause :
 
 * Vous avez remodélisé le contrôle sans inclure de focus visuel. Définissez `UseSystemFocusVisuals="True"` ou ajoutez un focus visuel manuellement.
-* Vous avez déplacé le focus en appelant la méthode `Focus(FocusState.Pointer)`. Le paramètre [FocusState](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FocusState) détermine ce qui se produit pour le focus visuel. En général, vous devez définir ce paramètre sur `FocusState.Programmatic`, ce qui maintient la visibilité du focus visuel si ce dernier était déjà visible, et le maintient masqué si c’était le cas précédemment.
+* Vous avez déplacé le focus en appelant la méthode `Focus(FocusState.Pointer)`. Le paramètre [FocusState](/uwp/api/Windows.UI.Xaml.FocusState) détermine ce qui se produit pour le focus visuel. En général, vous devez définir ce paramètre sur `FocusState.Programmatic`, ce qui maintient la visibilité du focus visuel si ce dernier était déjà visible, et le maintient masqué si c’était le cas précédemment.
 
 Le reste de cette section décrit en détail les problèmes courants de conception lorsque la navigation en mode XY est utilisée, et propose plusieurs méthodes pour résoudre ces problèmes.
 
@@ -273,18 +273,18 @@ Dans l’exemple ci-dessus, si le focus est sur l’objet `Button` Two et l’ut
 
 ### <a name="path-of-least-clicks"></a>Chemin nécessitant le moins de clics
 
-Permettez à l’utilisateur d’effectuer les tâches les plus courantes avec le moins de clics possible. Dans l’exemple suivant, la classe [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) est placée entre le bouton **Lecture** (qui a initialement le focus) et un élément couramment utilisé ; un élément inutile est ainsi placé entre les tâches prioritaires.
+Permettez à l’utilisateur d’effectuer les tâches les plus courantes avec le moins de clics possible. Dans l’exemple suivant, la classe [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) est placée entre le bouton **Lecture** (qui a initialement le focus) et un élément couramment utilisé ; un élément inutile est ainsi placé entre les tâches prioritaires.
 
 ![Meilleures pratiques en matière de navigation nécessitant le moins de clics](images/designing-for-tv/2d-navigation-best-practices-provide-path-with-least-clicks.png)
 
-Dans l’exemple suivant, la classe [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) est placée au-dessus du bouton **Lecture** à la place.
+Dans l’exemple suivant, la classe [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) est placée au-dessus du bouton **Lecture** à la place.
 Le simple fait de réorganiser l’interface utilisateur afin que les éléments inutiles ne soient pas placés entre les tâches prioritaires améliore considérablement la facilité d’utilisation de votre application.
 
 ![TextBlock déplacée au-dessus du bouton de lecture afin qu’elle ne soit plus entre les tâches prioritaires](images/designing-for-tv/2d-navigation-best-practices-provide-path-with-least-clicks-2.png)
 
 ### <a name="commandbar-and-contextflyout"></a>CommandBar et ContextFlyout
 
-Lorsque vous utilisez une [CommandBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar), n’oubliez pas le problème de défilement dans une liste, comme mentionné dans [Problème : Éléments d’interface utilisateur localisés suite à un long défilement dans une liste/grille](#problem-ui-elements-located-after-long-scrolling-list-grid). L’image suivante illustre une disposition d’interface utilisateur avec la `CommandBar` en bas d’une liste/grille. L’utilisateur devrait faire défiler toute la liste/grille pour atteindre la `CommandBar`.
+Lorsque vous utilisez une [CommandBar](/uwp/api/Windows.UI.Xaml.Controls.CommandBar), n’oubliez pas le problème de défilement dans une liste, comme mentionné dans [Problème : Éléments d’interface utilisateur localisés suite à un long défilement dans une liste/grille](#problem-ui-elements-located-after-long-scrolling-list-grid). L’image suivante illustre une disposition d’interface utilisateur avec la `CommandBar` en bas d’une liste/grille. L’utilisateur devrait faire défiler toute la liste/grille pour atteindre la `CommandBar`.
 
 ![CommandBar en bas de la liste/grille](images/designing-for-tv/2d-navigation-best-practices-commandbar-and-contextflyout.png)
 
@@ -292,7 +292,7 @@ Que se passe-t-il si vous placez le contrôle `CommandBar` *au-dessus* de la lis
 
 Bien qu’il soit impossible d’empiler les éléments d’une `CommandBar` verticalement, le fait de les placer en face du défilement (par exemple, à gauche ou à droite d’une liste avec défilement vertical, ou en haut ou en bas d’une liste avec défilement horizontal) constitue une autre option que vous devrez peut-être prendre en compte si elle fonctionne bien pour la disposition de votre interface utilisateur.
 
-Si votre application dispose d’une `CommandBar` dont les éléments doivent être facilement accessibles aux utilisateurs, vous devrez peut-être les placer à l’intérieur d’un [ContextFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout) et les supprimer de la `CommandBar`. `ContextFlyout` est une propriété d' [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) et est le [menu contextuel](../controls-and-patterns/dialogs-and-flyouts/index.md) associé à cet élément. Sur PC, lorsque cliquez à l’aide du bouton droit sur un élément avec un `ContextFlyout`, ce menu contextuel apparaît. Sur Xbox One, cela se produit lorsque vous appuyez sur le bouton **Menu** tandis que le focus se trouve sur un tel élément.
+Si votre application dispose d’une `CommandBar` dont les éléments doivent être facilement accessibles aux utilisateurs, vous devrez peut-être les placer à l’intérieur d’un [ContextFlyout](/uwp/api/windows.ui.xaml.uielement.contextflyout) et les supprimer de la `CommandBar`. `ContextFlyout` est une propriété d' [UIElement](/uwp/api/Windows.UI.Xaml.UIElement) et est le [menu contextuel](../controls-and-patterns/dialogs-and-flyouts/index.md) associé à cet élément. Sur PC, lorsque cliquez à l’aide du bouton droit sur un élément avec un `ContextFlyout`, ce menu contextuel apparaît. Sur Xbox One, cela se produit lorsque vous appuyez sur le bouton **Menu** tandis que le focus se trouve sur un tel élément.
 
 ### <a name="ui-layout-challenges"></a>Défis en matière de disposition de l’interface utilisateur
 
@@ -313,7 +313,7 @@ Ce qui suit est un exemple d’application pour le secteur immobilier qui affich
 
 #### <a name="problem-ui-elements-located-after-long-scrolling-listgrid"></a>Problème : Éléments d’interface utilisateur situés après une liste/grille à long défilement <a name="problem-ui-elements-located-after-long-scrolling-list-grid"></a>
 
-La [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) des propriétés visibles dans l’image suivante est une très longue liste à faire défiler. Si l’[activation](#focus-engagement) n’est *pas* requise pour la `ListView`, le focus se place sur le premier élément de la liste lorsque l’utilisateur navigue vers cette dernière. L’utilisateur doit parcourir tous les éléments de la liste pour atteindre le bouton **Précédent** ou **Suivant**. Dans ces cas peu pratiques où l’utilisateur doit parcourir toute la liste &mdash;c’est-à-dire, lorsque la liste est trop longue pour que cette expérience soit acceptable&mdash;, vous devez envisager d’autres options.
+La [ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView) des propriétés visibles dans l’image suivante est une très longue liste à faire défiler. Si l’[activation](#focus-engagement) n’est *pas* requise pour la `ListView`, le focus se place sur le premier élément de la liste lorsque l’utilisateur navigue vers cette dernière. L’utilisateur doit parcourir tous les éléments de la liste pour atteindre le bouton **Précédent** ou **Suivant**. Dans ces cas peu pratiques où l’utilisateur doit parcourir toute la liste &mdash;c’est-à-dire, lorsque la liste est trop longue pour que cette expérience soit acceptable&mdash;, vous devez envisager d’autres options.
 
 ![Application pour le secteur immobilier : une liste comprenant 50 éléments nécessite 51 clics pour atteindre les boutons du bas.](images/designing-for-tv/2d-focus-navigation-and-interaction-real-estate-app-list.png)
 
@@ -335,7 +335,7 @@ Lorsqu’une activation est *requise*, la totalité de la `ListView` devient une
 
 #### <a name="problem-scrollviewer-without-any-focusable-elements"></a>Problème : ScrollViewer sans élément pouvant être actif
 
-Étant donné que la navigation en mode focus XY dépend de la navigation vers un seul élément d’interface utilisateur pouvant être actif à la fois, un [ScrollViewer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) ne contenant aucun élément pouvant être actif (par exemple, contenant seulement du texte), peut provoquer un scénario dans lequel l’utilisateur n’est pas en mesure d’afficher l’ensemble du contenu dans le `ScrollViewer`.
+Étant donné que la navigation en mode focus XY dépend de la navigation vers un seul élément d’interface utilisateur pouvant être actif à la fois, un [ScrollViewer](/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) ne contenant aucun élément pouvant être actif (par exemple, contenant seulement du texte), peut provoquer un scénario dans lequel l’utilisateur n’est pas en mesure d’afficher l’ensemble du contenu dans le `ScrollViewer`.
 Pour connaître les solutions de ce scénario et des scénarios connexes, voir [Activation du focus](#focus-engagement).
 
 ![Application pour le secteur immobilier : ScrollViewer contenant uniquement du texte](images/designing-for-tv/2d-focus-navigation-and-interaction-scrollviewer.png)
@@ -350,7 +350,7 @@ Dans ce cas, vous pouvez activer le [mode souris](#mouse-mode) pour permettre à
 ## <a name="mouse-mode"></a>Mode de la souris
 
 Comme décrit dans [Interaction et navigation en mode focus XY](#xy-focus-navigation-and-interaction), le focus est déplacé à l’aide du système de navigation XY sur Xbox One, ce qui permet à l’utilisateur de déplacer le focus entre les contrôles en effectuant des déplacements vers le haut, le bas, la gauche et la droite.
-Toutefois, certains contrôles comme [WebView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView) et [MapControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) nécessitent une interaction semblable à celle faite avec la souris, avec laquelle les utilisateurs peuvent déplacer le pointeur librement à l’intérieur des limites du contrôle.
+Toutefois, certains contrôles comme [WebView](/uwp/api/Windows.UI.Xaml.Controls.WebView) et [MapControl](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) nécessitent une interaction semblable à celle faite avec la souris, avec laquelle les utilisateurs peuvent déplacer le pointeur librement à l’intérieur des limites du contrôle.
 Certaines applications permettent également de déplacer le pointeur sur la page entière ; l’expérience boîtier de commande/télécommande est alors semblable à l’expérience souris sur PC.
 
 Pour ces scénarios, demandez un pointeur (mode souris) pour la page entière, ou sur un contrôle à l’intérieur d’une page.
@@ -383,7 +383,7 @@ Le schéma suivant montre les mappages de bouton pour le boîtier de commande/la
 > [!NOTE]
 > Le mode souris est uniquement pris en charge sur Xbox One avec boîtier de commande/télécommande. Il est ignoré sans avertissement dans d’autres familles d’appareils et types d’entrée.
 
-Utilisez la propriété [RequiresPointer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.requirespointer) sur un contrôle ou une page pour activer le mode souris. Cette propriété a trois valeurs possibles : `Never` (valeur par défaut), `WhenEngaged` et `WhenFocused` .
+Utilisez la propriété [RequiresPointer](/uwp/api/windows.ui.xaml.controls.requirespointer) sur un contrôle ou une page pour activer le mode souris. Cette propriété a trois valeurs possibles : `Never` (valeur par défaut), `WhenEngaged` et `WhenFocused` .
 
 ### <a name="activating-mouse-mode-on-a-control"></a>Activation du mode souris sur un contrôle
 
@@ -416,7 +416,7 @@ Lorsqu’une page dispose de la propriété `RequiresPointer="WhenFocused"`, le 
 ```
 
 > [!NOTE]
-> La valeur `WhenFocused` est uniquement prise en charge dans les objets [Page](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page). Une exception est levée si vous tentez de définir cette valeur sur un contrôle.
+> La valeur `WhenFocused` est uniquement prise en charge dans les objets [Page](/uwp/api/Windows.UI.Xaml.Controls.Page). Une exception est levée si vous tentez de définir cette valeur sur un contrôle.
 
 ### <a name="disabling-mouse-mode-for-full-screen-content"></a>Désactivation du mode souris pour le contenu en plein écran
 
@@ -454,7 +454,7 @@ Les expériences en plein écran, telles que la lecture de vidéos ou le visionn
 
 Révéler le focus est un effet d’éclairage qui anime la bordure d’éléments pouvant être actifs, tels qu’un bouton, lorsque l’utilisateur déplace le dispositif d’emboutment ou le focus clavier sur ceux-ci. En animant la lueur autour de la bordure des éléments ayant le focus, Reveal Focus permet aux utilisateurs de mieux comprendre où se trouve le focus et où se trouve le focus.
 
-L’option révéler le focus est désactivée par défaut. Pour les expériences de 10 pieds, vous devez vous abonner pour révéler le focus en définissant la [propriété application. FocusVisualKind](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.FocusVisualKind) dans le constructeur de votre application.
+L’option révéler le focus est désactivée par défaut. Pour les expériences de 10 pieds, vous devez vous abonner pour révéler le focus en définissant la [propriété application. FocusVisualKind](/uwp/api/windows.ui.xaml.application.FocusVisualKind) dans le constructeur de votre application.
 
 ```csharp
     if(AnalyticsInfo.VersionInfo.DeviceFamily == "Windows.Xbox")
@@ -463,13 +463,13 @@ L’option révéler le focus est désactivée par défaut. Pour les expérience
     }
 ```
 
-Pour plus d’informations, consultez les conseils relatifs à la [révélation du focus](/windows/uwp/design/style/reveal-focus).
+Pour plus d’informations, consultez les conseils relatifs à la [révélation du focus](../style/reveal-focus.md).
 
 ### <a name="customizing-the-focus-visual"></a>Personnaliser le focus visuel
 
 Si vous souhaitez personnaliser le focus visuel, vous pouvez le faire en modifiant les propriétés relatives au focus visuel pour chaque contrôle. Vous pouvez tirer parti de plusieurs de ces propriétés afin de personnaliser votre application.
 
-Vous pouvez même désactiver le focus visuel fourni par le système en dessinant votre propre focus visuel à l’aide des états visuels. Pour en savoir plus, voir [VisualState](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState).
+Vous pouvez même désactiver le focus visuel fourni par le système en dessinant votre propre focus visuel à l’aide des états visuels. Pour en savoir plus, voir [VisualState](/uwp/api/Windows.UI.Xaml.VisualState).
 
 ### <a name="light-dismiss-overlay"></a>Superposition de l’abandon interactif
 
@@ -482,7 +482,7 @@ L’activation du focus est conçue pour faciliter l’utilisation d’une manet
 > [!NOTE]
 > La définition de l’activation du focus n’affecte pas le clavier ou les autres périphériques d’entrée.
 
-Lorsque la propriété `IsFocusEngagementEnabled` d’un objet [FrameworkElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) est définie sur `True`, elle signale le contrôle comme nécessitant l’activation du focus. Cela signifie que l’utilisateur doit appuyer sur le bouton **A/Sélectionner** pour activer le contrôle et interagir avec ce dernier. Lorsqu’il a terminé, l’utilisateur peut appuyer sur le bouton **B/Précédent** pour désactiver le contrôle et naviguer hors de ce dernier.
+Lorsque la propriété `IsFocusEngagementEnabled` d’un objet [FrameworkElement](/uwp/api/Windows.UI.Xaml.FrameworkElement) est définie sur `True`, elle signale le contrôle comme nécessitant l’activation du focus. Cela signifie que l’utilisateur doit appuyer sur le bouton **A/Sélectionner** pour activer le contrôle et interagir avec ce dernier. Lorsqu’il a terminé, l’utilisateur peut appuyer sur le bouton **B/Précédent** pour désactiver le contrôle et naviguer hors de ce dernier.
 
 > [!NOTE]
 > `IsFocusEngagementEnabled` est une nouvelle API qui n’est pas encore documentée.
@@ -496,7 +496,7 @@ L’exemple suivant montre une interface utilisateur provoquant l’interruption
 ![Boutons à gauche et à droite d’un curseur horizontal](images/designing-for-tv/focus-engagement-focus-trapping.png)
 
 Si l’utilisateur veut accéder au bouton droit à partir du bouton gauche, il serait logique de supposer que la seule action requise serait d’appuyer deux fois sur le bouton multidirectionnel/stick analogique gauche.
-Toutefois, si le [Slider](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider) ne nécessite pas d’activation, le comportement suivant se produit : lorsque l’utilisateur appuie à droite pour la première fois, le focus est décalé vers le `Slider` ; lorsqu’il réappuie à droite, la poignée du `Slider` se déplace à droite. L’utilisateur continuerait de déplacer la poignée vers la droite sans toutefois réussir à atteindre le bouton.
+Toutefois, si le [Slider](/uwp/api/Windows.UI.Xaml.Controls.Slider) ne nécessite pas d’activation, le comportement suivant se produit : lorsque l’utilisateur appuie à droite pour la première fois, le focus est décalé vers le `Slider` ; lorsqu’il réappuie à droite, la poignée du `Slider` se déplace à droite. L’utilisateur continuerait de déplacer la poignée vers la droite sans toutefois réussir à atteindre le bouton.
 
 Plusieurs approches existent pour contourner ce problème. L’une consiste à concevoir une disposition différente, comme dans l’exemple d’application pour le secteur immobilier dans [Interaction et navigation en mode focus XY](#xy-focus-navigation-and-interaction), où nous avons déplacé les boutons **Précédent** et **Suivant** au-dessus de `ListView`. L’empilement vertical (et non horizontal) des contrôles, comme le montre l’image suivante, peut résoudre le problème.
 
@@ -512,12 +512,12 @@ Lorsque le `Slider` nécessite une activation du focus, l’utilisateur peut acc
 
 ### <a name="items-controls"></a>Contrôles d’éléments
 
-Outre le contrôle [Slider](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider), il existe d’autres contrôles que vous souhaiterez peut-être activer :
+Outre le contrôle [Slider](/uwp/api/Windows.UI.Xaml.Controls.Slider), il existe d’autres contrôles que vous souhaiterez peut-être activer :
 
-- [ListBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox)
-- [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)
-- [GridView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)
-- [FlipView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView)
+- [ListBox](/uwp/api/Windows.UI.Xaml.Controls.ListBox)
+- [ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView)
+- [GridView](/uwp/api/Windows.UI.Xaml.Controls.GridView)
+- [FlipView](/uwp/api/Windows.UI.Xaml.Controls.FlipView)
 
 Contrairement au contrôle `Slider`, ces contrôles n’interrompent pas le focus en leur sein ; cependant, ils peuvent poser des problèmes en matière de facilité d’utilisation s’ils contiennent de grandes quantités de données. Voici un exemple d’un contrôle `ListView` qui contient une grande quantité de données.
 
@@ -536,7 +536,7 @@ Cela permet à l’utilisateur de traverser rapidement le contrôle `ListView` e
 
 #### <a name="scrollviewer"></a>ScrollViewer
 
-Le contrôle [ScrollViewer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer), qui possède des caractéristiques particulières, diffère légèrement des contrôles précédents. Si vous disposez d’un `ScrollViewer` avec du contenu pouvant être actif, par défaut, la navigation vers `ScrollViewer` vous permet de parcourir ses éléments pouvant être actifs. Comme pour un contrôle `ListView`, vous devez parcourir chaque élément pour naviguer en dehors du contrôle `ScrollViewer`.
+Le contrôle [ScrollViewer](/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer), qui possède des caractéristiques particulières, diffère légèrement des contrôles précédents. Si vous disposez d’un `ScrollViewer` avec du contenu pouvant être actif, par défaut, la navigation vers `ScrollViewer` vous permet de parcourir ses éléments pouvant être actifs. Comme pour un contrôle `ListView`, vous devez parcourir chaque élément pour naviguer en dehors du contrôle `ScrollViewer`.
 
 Si le contrôle `ScrollViewer` n’a *pas* de contenu pouvant être actif &mdash; par exemple, s’il contient uniquement du texte&mdash;, vous pouvez définir `IsFocusEngagementEnabled="True"` afin que l’utilisateur puisse activer `ScrollViewer` à l’aide du bouton **A/Sélectionner**. Une fois activé, l’utilisateur peut faire défiler le texte à l’aide du **bouton multidirectionnel/stick analogique gauche**, puis appuyer sur le bouton **B/Précédent** pour le désactiver.
 

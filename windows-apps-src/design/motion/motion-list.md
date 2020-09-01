@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4264a9a3a75c076fc033bb98dad45ff8dc99f2ef
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: a2a61dd70915195673dacaed78510eb7b7c2f2f0
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970284"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172403"
 ---
 # <a name="add-and-delete-animations"></a>Ajout et suppression d’animations
 
@@ -21,7 +21,7 @@ ms.locfileid: "82970284"
 
 Les animations de liste vous permettent d’insérer ou de supprimer un ou plusieurs éléments dans une collection telle qu’un album photo ou une liste de résultats de recherche.
 
-> **API importantes**: [ **classe AddDeleteThemeTransition**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.adddeletethemetransition)
+> **API importantes**: [ **classe AddDeleteThemeTransition**](/uwp/api/windows.ui.xaml.media.animation.adddeletethemetransition)
 
 
 ## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
@@ -38,15 +38,11 @@ Les animations de liste vous permettent d’insérer ou de supprimer un ou plusi
 
 ## <a name="related-articles"></a>Articles connexes
 
-* [Vue d’ensemble des animations](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
-* [Animation d’ajouts et de suppressions dans la liste](https://docs.microsoft.com/previous-versions/windows/apps/jj649430(v=win.10))
-* [Démarrage rapide : Animation de votre interface utilisateur avec des animations de la bibliothèque](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
-* [**Classe AddDeleteThemeTransition**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.adddeletethemetransition)
+* [Vue d’ensemble des animations](./xaml-animation.md)
+* [Animation d’ajouts et de suppressions dans la liste](/previous-versions/windows/apps/jj649430(v=win.10))
+* [Démarrage rapide : Animation de votre interface utilisateur avec des animations de la bibliothèque](/previous-versions/windows/apps/hh452703(v=win.10))
+* [**Classe AddDeleteThemeTransition**](/uwp/api/windows.ui.xaml.media.animation.adddeletethemetransition)
 
  
 
  
-
-
-
-

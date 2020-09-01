@@ -7,12 +7,12 @@ ms.date: 11/07/2017
 ms.topic: article
 keywords: Windows 10, UWP, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f07e7901bf89ed73087833c92b7a3ba29165fec
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 4b914c0a2bcfae630b8b491ed702b237ce0eaaee
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493444"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172533"
 ---
 # <a name="make-your-app-localizable"></a>Rendre votre application localisable
 
@@ -87,7 +87,7 @@ Lorsque vous installez une application qui contient des données linguistiques l
 > [!NOTE]
 > Il n’est pas possible d’installer une prise en charge linguistique supplémentaire pour votre application après l’installation initiale. Si vous modifiez la langue par défaut après l’installation d’une application, l’application continue à utiliser uniquement les ressources de langue d’origine.
 
-Si vous souhaitez vous assurer que toutes les ressources de langue sont disponibles après l’installation, créez un fichier de configuration pour le package d’application qui spécifie que certaines ressources sont requises lors de l’installation (y compris les ressources de langue). Cette fonctionnalité d’installation optimisée est automatiquement activée lorsque le. appxbundle de votre application est généré pendant l’empaquetage. Pour plus d’informations, consultez [vérifier que les ressources sont installées sur un appareil, qu’un appareil en ait besoin ou non](https://docs.microsoft.com/previous-versions/dn482043(v=vs.140)).
+Si vous souhaitez vous assurer que toutes les ressources de langue sont disponibles après l’installation, créez un fichier de configuration pour le package d’application qui spécifie que certaines ressources sont requises lors de l’installation (y compris les ressources de langue). Cette fonctionnalité d’installation optimisée est automatiquement activée lorsque le. appxbundle de votre application est généré pendant l’empaquetage. Pour plus d’informations, consultez [vérifier que les ressources sont installées sur un appareil, qu’un appareil en ait besoin ou non](/previous-versions/dn482043(v=vs.140)).
 
 Si vous le souhaitez, pour vous assurer que toutes les ressources sont installées (pas seulement un sous-ensemble), vous pouvez désactiver la génération. appxbundle quand vous empaquetez votre application. Toutefois, cela n’est pas recommandé, car il peut augmenter le temps d’installation de votre application.
 
@@ -135,19 +135,19 @@ Une fois que les chaînes ont été séparées en fichiers de ressources, elles 
 Envisagez ces options.
 
 - **Les fichiers de ressources peuvent être traduits en étant ouverts directement dans le projet.** Cette approche fonctionne bien pour un projet qui comporte un petit volume de chaînes qui doivent être traduites en deux ou trois langues. Elle est adaptée pour un scénario dans lequel un développeur parlerait plusieurs langues et accepterait de traiter le processus de traduction. Cette approche tire parti de la rapidité, ne nécessite pas d’outils et minimise le risque de problèmes de traduction. Mais il n’est pas évolutif. En particulier, les ressources dans les différentes langues peuvent aisément se désynchroniser, ce qui peut entraîner de mauvaises expériences utilisateur et des difficultés de maintenance.
-- **Les fichiers de ressources de type chaîne sont au format de texte XML ou ResJSON. ils peuvent donc être rendus pour la traduction à l’aide de n’importe quel éditeur de texte. Les fichiers traduits sont ensuite recopiés dans le projet.** Cette approche présente un risque, car les traducteurs pourraient modifier accidentellement les balises XML. Cependant, elle permet le déroulement de la traduction en dehors du projet Microsoft Visual Studio. Cette approche pourrait bien fonctionner pour les projets devant être traduits vers un nombre réduit de langues. Le format XLIFF est un format XML spécifiquement conçu pour être utilisé en localisation et devrait être bien pris en charge par les prestataires de localisation et les outils de localisation. Vous pouvez utiliser le [Kit de ressources pour application multilingue](https://docs.microsoft.com/previous-versions/windows/apps/jj572370(v=win.10)) pour générer des fichiers XLIFF à partir d’autres fichiers de ressources, tels que les fichiers .resw ou .resjson.
+- **Les fichiers de ressources de type chaîne sont au format de texte XML ou ResJSON. ils peuvent donc être rendus pour la traduction à l’aide de n’importe quel éditeur de texte. Les fichiers traduits sont ensuite recopiés dans le projet.** Cette approche présente un risque, car les traducteurs pourraient modifier accidentellement les balises XML. Cependant, elle permet le déroulement de la traduction en dehors du projet Microsoft Visual Studio. Cette approche pourrait bien fonctionner pour les projets devant être traduits vers un nombre réduit de langues. Le format XLIFF est un format XML spécifiquement conçu pour être utilisé en localisation et devrait être bien pris en charge par les prestataires de localisation et les outils de localisation. Vous pouvez utiliser le [Kit de ressources pour application multilingue](/previous-versions/windows/apps/jj572370(v=win.10)) pour générer des fichiers XLIFF à partir d’autres fichiers de ressources, tels que les fichiers .resw ou .resjson.
 
 > [!NOTE]
 > La localisation peut également être nécessaire pour d’autres ressources, y compris des images et des fichiers audio.
 
 Vous devez également prendre en compte les éléments suivants :
 
-- **Outils de localisation** Un certain nombre d’outils de localisation sont disponibles pour analyser les fichiers de ressources et autoriser uniquement la modification des chaînes convertibles par les traducteurs. Cette approche réduit le risque qu’un traducteur modifie accidentellement les balises XML. Elle présente cependant l’inconvénient d’introduire un nouvel outil et un nouveau processus dans le processus de localisation. Un outil de localisation est parfait pour les projets avec un grand nombre de chaînes, mais un petit nombre de langages. Pour en savoir plus, voir [Comment utiliser le Kit de ressources pour application multilingue](https://docs.microsoft.com/previous-versions/windows/apps/jj572370(v=win.10)).
+- **Outils de localisation** Un certain nombre d’outils de localisation sont disponibles pour analyser les fichiers de ressources et autoriser uniquement la modification des chaînes convertibles par les traducteurs. Cette approche réduit le risque qu’un traducteur modifie accidentellement les balises XML. Elle présente cependant l’inconvénient d’introduire un nouvel outil et un nouveau processus dans le processus de localisation. Un outil de localisation est parfait pour les projets avec un grand nombre de chaînes, mais un petit nombre de langages. Pour en savoir plus, voir [Comment utiliser le Kit de ressources pour application multilingue](/previous-versions/windows/apps/jj572370(v=win.10)).
 - **Fournisseurs de localisation** Envisagez d’utiliser un fournisseur de localisation si votre application contient des chaînes étendues qui doivent être traduites dans un grand nombre de langues. Un prestataire de localisation peut conseiller des outils et des processus, ainsi que traduire vos fichiers de ressources. Il s’agit d’une solution idéale, mais c’est aussi l’option la plus coûteuse et elle peut augmenter le délai de traitement de votre contenu traduit.
 
 ## <a name="keep-access-keys-and-labels-consistent"></a>Maintenir la cohérence des clés d’accès et des étiquettes
 
-La « synchronisation » des touches d’accès rapide utilisées dans les options d’accessibilité avec l’affichage des touches d’accès rapide localisées relève du défi, car les deux ressources de type chaîne sont classées dans deux sections distinctes. Veillez à fournir des commentaires pour la chaîne d’étiquette, par exemple :`Make sure that the emphasized shortcut key  is synchronized with the access key.`
+La « synchronisation » des touches d’accès rapide utilisées dans les options d’accessibilité avec l’affichage des touches d’accès rapide localisées relève du défi, car les deux ressources de type chaîne sont classées dans deux sections distinctes. Veillez à fournir des commentaires pour la chaîne d’étiquette, par exemple : `Make sure that the emphasized shortcut key  is synchronized with the access key.`
 
 ## <a name="support-furigana-for-japanese-strings-that-can-be-sorted"></a>Prendre en charge Furigana pour les chaînes japonaises qui peuvent être triées
 

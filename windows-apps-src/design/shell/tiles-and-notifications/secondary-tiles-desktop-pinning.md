@@ -7,12 +7,12 @@ ms.date: 05/25/2017
 ms.topic: article
 keywords: Windows 10, Desktop Bridge, vignettes secondaires, pin, épinglage, démarrage rapide, exemple de code, exemple, secondarytile, application de bureau, Win32, WinForms, WPF
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ddcd96eadbb6d2edbc3a72fa58ff3cc8931a09b
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: 111d66e69ddb9cff56f36a26bd8094429fe808ef
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82730362"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172373"
 ---
 # <a name="pin-secondary-tiles-from-desktop-application"></a>Épingler les vignettes secondaires à partir de l’application de bureau
 
@@ -29,12 +29,12 @@ L’ajout d’une vignette secondaire à partir de votre application WPF ou WinF
 
 ## <a name="package-your-app-with-desktop-bridge"></a>Empaqueter votre application avec Desktop Bridge
 
-Si vous n’avez pas empaqueté votre application avec le pont de bureau, [vous devez d’abord le faire](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-root) avant de pouvoir utiliser les api de Windows Runtime.
+Si vous n’avez pas empaqueté votre application avec le pont de bureau, [vous devez d’abord le faire](/windows/msix/desktop/source-code-overview) avant de pouvoir utiliser les api de Windows Runtime.
 
 
 ## <a name="enable-access-to-iinitializewithwindow-interface"></a>Activer l’accès à l’interface IInitializeWithWindow
 
-Si votre application est écrite dans un langage managé tel que C# ou Visual Basic, déclarez l’interface IInitializeWithWindow dans le code de votre application avec l’attribut [ComImport](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.comimportattribute) et GUID, comme indiqué dans l’exemple C# suivant. Cet exemple suppose que votre fichier de code présente une instruction using pour l’espace de noms System.Runtime.InteropServices.
+Si votre application est écrite dans un langage managé tel que C# ou Visual Basic, déclarez l’interface IInitializeWithWindow dans le code de votre application avec l’attribut [ComImport](/dotnet/api/system.runtime.interopservices.comimportattribute) et GUID, comme indiqué dans l’exemple C# suivant. Cet exemple suppose que votre fichier de code présente une instruction using pour l’espace de noms System.Runtime.InteropServices.
 
 ```csharp
 [ComImport]
@@ -66,7 +66,7 @@ SecondaryTile tile = new SecondaryTile(
 
 ## <a name="assign-the-window-handle"></a>Assigner le handle de fenêtre
 
-Il s’agit de l’étape clé pour les applications de bureau. Effectuez un cast de l’objet en objet [IInitializeWithWindow](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) . Ensuite, appelez la méthode [IInitializeWithWindow. Initialize](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize) et transmettez le descripteur de la fenêtre qui doit être le propriétaire de la boîte de dialogue modale. L’exemple C# suivant montre comment passer le handle de la fenêtre principale de votre application à la méthode.
+Il s’agit de l’étape clé pour les applications de bureau. Effectuez un cast de l’objet en objet [IInitializeWithWindow](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) . Ensuite, appelez la méthode [IInitializeWithWindow.Initialize](/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize) et transmettez le descripteur de la fenêtre qui doit être le propriétaire de la boîte de dialogue modale. L’exemple C# suivant montre comment passer le handle de la fenêtre principale de votre application à la méthode.
 
 ```csharp
 // Assign the window handle
@@ -100,5 +100,5 @@ L’envoi de notifications de vignette ou de badge est identique à celui des ap
 * [Exemple de code complet](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SecondaryTileSample)
 * [Vue d’ensemble des vignettes secondaires](secondary-tiles.md)
 * [Épingler des vignettes secondaires (UWP)](secondary-tiles-pinning.md)
-* [Pont Desktop](https://developer.microsoft.com/windows/bridges/desktop)
+* [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop)
 * [Exemples de code du pont du Bureau](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)

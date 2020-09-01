@@ -5,12 +5,12 @@ author: maiak
 ms.author: maiak
 ms.date: 02/20/2020
 ms.topic: quickstart
-ms.openlocfilehash: 162646baff9b2d08f6fc0ea4862802216cff9619
-ms.sourcegitcommit: 4fdab7be28aca18cb3879fc205eb49edc4f9a96b
+ms.openlocfilehash: 5f8671d8a1490710837908bb4df8f4aa3c99ecdd
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77629100"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172653"
 ---
 # <a name="quickstart-process-your-first-trace"></a>Démarrage rapide : traiter votre première trace
 
@@ -22,9 +22,9 @@ Dans ce guide de démarrage rapide, vous allez apprendre à :
 2. Créez un TraceProcessor.
 3. Utilisez TraceProcessor pour accéder aux lignes de commande de processus contenues dans la trace.
 
-## <a name="prerequisites"></a>Composants requis
+## <a name="prerequisites"></a>Prérequis
 
-Visual Studio 2019
+Visual Studio 2019
 
 ## <a name="install-the-traceprocessing-nuget-package"></a>Installer le package NuGet TraceProcessing
 
@@ -79,7 +79,7 @@ Vous pouvez utiliser ce package dans une application de console pour répertorie
 
     Dans Explorateur de solutions, cliquez avec le bouton droit sur le projet et choisissez Propriétés. Basculez vers l’onglet déboguer et entrez le chemin d’accès à une trace (fichier. ETL) dans arguments de l’application.
 
-    Si vous n’avez pas encore de fichier de trace, vous pouvez utiliser l' [enregistreur de performances Windows](https://docs.microsoft.com/windows-hardware/test/wpt/start-a-recording) pour en créer un.
+    Si vous n’avez pas encore de fichier de trace, vous pouvez utiliser l' [enregistreur de performances Windows](/windows-hardware/test/wpt/start-a-recording) pour en créer un.
 
 3. Exécutez l'application.
 
@@ -121,7 +121,7 @@ Vous pouvez utiliser ce package dans une application de console pour répertorie
     }
     ```
 
-2. Réexécutez l’application.
+2. Exécutez de nouveau l'application.
 
     Cette fois, vous devez voir les lignes de commande de liste de tous les processus qui étaient en cours d’exécution pendant l’enregistrement de la trace.
 

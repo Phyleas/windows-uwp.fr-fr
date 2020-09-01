@@ -1,20 +1,20 @@
 ---
-Description: Il s’agit d’une rubrique de hub destinée aux développeurs abordant de manière exhaustive la relation de la Protection des informations Windows avec les fichiers, les mémoires tampons, le Presse-papiers, la mise en réseau, les tâches en arrière-plan et la protection des données verrouillées.
+Description: Il s’agit d’une rubrique centrale destinée aux développeurs qui décrit de manière exhaustive la relation de la Protection des informations Windows avec les fichiers, les mémoires tampon, le Presse-papiers, les réseaux, les tâches en arrière-plan et la protection des données verrouillées.
 MS-HAID: dev\_enterprise.edp\_hub
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: Protection des informations Windows (WIP)
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, Protection des informations Windows, données d’entreprise, protection des données d’entreprise, PDE, applications compatibles
+keywords: Windows 10, UWP, Windows Information Protection, données d’entreprise, protection des données d’entreprise, EDP, applications compatibles
 ms.assetid: 08f0cfad-f15d-46f7-ae7c-824a8b1c44ea
 ms.localizationpriority: medium
-ms.openlocfilehash: f6e3839ac2c15c1f976a9135b121ffea26174d41
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 69bab48836d7679d8bcec5f9132bca88d7607cdb
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259617"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173243"
 ---
 # <a name="windows-information-protection-wip"></a>Protection des informations Windows (WIP)
 
@@ -31,7 +31,7 @@ Avec la gestion des appareils mobiles, WIP permet à l’organisation de mieux c
 
 À l’aide de la gestion des appareils mobiles et de la gestion des applications mobiles, les administrateurs peuvent identifier les applications autorisées à accéder aux fichiers appartenant à l’organisation et indiquer si les utilisateurs peuvent copier des données à partir de ces fichiers pour les coller ensuite dans des documents personnels.
 
-Voici le principe : Les utilisateurs inscrivent leurs appareils dans le système de gestion des appareils mobiles (GPM) de l’organisation. Un administrateur de l’organisation de gestion utilise Microsoft Intune ou System Center Configuration Manager (SCCM) pour définir, puis déployer une stratégie sur les appareils inscrits.
+Voici comment cela fonctionne. Les utilisateurs inscrivent leurs appareils dans le système de gestion des appareils mobiles (GPM) de l’organisation. Un administrateur de l’organisation de gestion utilise Microsoft Intune ou System Center Configuration Manager (SCCM) pour définir, puis déployer une stratégie sur les appareils inscrits.
 
 Si les utilisateurs ne sont pas obligés d’inscrire leurs appareils, les administrateurs définissent et déploient une stratégie pour des applications spécifiques dans le système de gestion des applications mobiles. Quand les utilisateurs installent l’une de ces applications, la stratégie associée est implémentée.
 
@@ -41,9 +41,9 @@ Si les utilisateurs désinscrivent leur appareil à partir du système de gestio
 
 ![Cycle de vie de la Protection des informations Windows](images/wip-lifecycle.png)
 
-> **En savoir plus sur les travaux en cours** <br>
-* [Présentation de Windows Information Protection](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/bg-p/Windows10Blog)
-* [Protéger vos données d’entreprise à l’aide de Windows Information Protection (WIP)](https://docs.microsoft.com/windows/whats-new/edp-whats-new-overview)
+> **En savoir plus sur la Protection des informations Windows** <br>
+* [Présentation de la Protection des informations Windows](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/bg-p/Windows10Blog)
+* [Protéger les données d’entreprise avec Protection des informations Windows (WIP)](/windows/whats-new/edp-whats-new-overview)
 
 Si votre application se trouve sur la liste autorisée, toutes les données générées par votre application sont soumises aux restrictions de stratégie. Cela signifie que si les administrateurs révoquent l’accès de l’utilisateur aux données d’entreprise, ces utilisateurs perdent l’accès à toutes les données produites par votre application.
 
@@ -61,13 +61,13 @@ Par exemple, si la stratégie permet aux utilisateurs de coller des données d�
 
 Si vous êtes prêt à rendre votre application compatible, reportez-vous à l’un de ces guides :
 
-**Pour les applications plateforme Windows universelle (UWP) que vous créez à l’aide deC#**
+**Pour les applications de plateforme Windows universelle (UWP) que vous créez à l’aide de C #**
 
-[Guide du développeur sur la Protection des informations Windows](wip-dev-guide.md).
+[Guide du développeur Windows information protection (WIP)](wip-dev-guide.md).
 
-**Pour les applications de bureau que vous créez à l’aide deC++**
+**Pour les applications de bureau que vous créez à l’aide de C++**
 
-[Guide du développeur sur la Protection des informations Windows (C++)](https://docs.microsoft.com/previous-versions/windows/desktop/EDP/wip-developer-guide?redirectedfrom=MSDN).
+[Guide du développeur Windows information protection (WIP) (C++)](/previous-versions/windows/desktop/EDP/wip-developer-guide).
 
 
 ## <a name="create-non-enlightened-enterprise-app"></a>Créer une application non compatible qui utilise des données d’entreprise

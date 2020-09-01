@@ -1,44 +1,44 @@
 ---
 title: Étape de l’assembleur d’entrée (IA)
-description: L’étape de l’assembleur d’entrée (IA, Input Assembler) fournit au pipeline des données de primitive et de contiguïté, telles que des triangles, des lignes et des points, incluant des ID sémantiques pour améliorer l’efficacité des nuanceurs en réduisant le traitement aux primitives qui n’ont pas encore été traitées.
+description: L’assembleur d’entrée fournit des données de primitives et d’adjacence au pipeline, telles que des triangles, des lignes et des points, y compris des ID de sémantique pour faciliter l’efficacité des nuanceurs en réduisant le traitement des primitives qui n’ont pas encore été traitées.
 ms.assetid: AF1DC611-C872-47F1-BF1A-92C68C8903E6
 keywords:
 - Étape de l’assembleur d’entrée (IA)
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 70957cbce10da25943b3c6347ccbbc81aafb5739
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 8b1ba0205a837383e1c646664c0550e055227412
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370774"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173063"
 ---
 # <a name="input-assembler-ia-stage"></a>Étape de l’assembleur d’entrée (IA)
 
 
-L’étape de l’assembleur d’entrée (IA, Input Assembler) fournit au pipeline des données de primitive et de contiguïté, telles que des triangles, des lignes et des points, incluant des ID sémantiques pour améliorer l’efficacité des nuanceurs en réduisant le traitement aux primitives qui n’ont pas encore été traitées.
+L’assembleur d’entrée fournit des données de primitives et d’adjacence au pipeline, telles que des triangles, des lignes et des points, y compris des ID de sémantique pour faciliter l’efficacité des nuanceurs en réduisant le traitement des primitives qui n’ont pas encore été traitées.
 
-## <a name="span-idpurpose-and-usesspanspan-idpurpose-and-usesspanspan-idpurpose-and-usesspanpurpose-and-uses"></a><span id="Purpose-and-uses"></span><span id="purpose-and-uses"></span><span id="PURPOSE-AND-USES"></span>Rôle et les utilisations
-
-
-L’étape de l’assembleur d’entrée a pour vocation de lire les données de primitives (points, lignes et triangles) des mémoires tampons renseignées par les utilisateurs et d’assembler les données en primitives utilisées par d’autres étapes de pipelines, avant d’enfin associer les [valeurs générées par le système](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics) pour accroître l’efficacité des nuanceurs. Les valeurs générées par le système sont des chaînes textuelles, également appelées sémantiques. Les étapes programmables de nuanceur sont développées à partir d’un noyau de nuanceur commun, qui utilise les valeurs générées par le système (comme des ID de primitive, d’instance ou de vertex). De cette manière, l’étape de nuanceur peut dédier le traitement uniquement à ces primitives, instances ou vertex non encore traités.
-
-L’étape IA peut assembler des vertex en différents [types de primitives](primitive-topologies.md) (comme des listes de lignes, des triangles ou des primitives avec voisinage). Les types de primitives tels qu’une liste de triangles avec voisinage et une liste de lignes avec voisinage prennent en charge l’[étape du nuanceur de géométrie](geometry-shader-stage--gs-.md).
-
-Les informations de voisinage sont visibles par les applications uniquement dans un nuanceur de géométrie. Si un nuanceur de géométrie a été appelé avec un triangle avec voisinage, par exemple, les données d’entrée comportent 3 vertex pour chaque triangle et 3 vertex pour les données de voisinage par triangle.
-
-Lorsque l’étape IA est sollicitée pour la production des données de voisinage, les données d’entrée doivent inclure les données de voisinage. Il vous faudra éventuellement fournir un vertex factice (formant un triangle dégénéré), ou éventuellement marquer l’existence ou la non-existence du vertex sur l’un de ses attributs. Cette opération devra également être détectée et gérée par un nuanceur de géométrie, bien que l’élimination de la géométrie dégénérée intervient à l’étape du rastériseur.
-
-## <a name="span-idinputspanspan-idinputspanspan-idinputspaninput"></a><span id="Input"></span><span id="input"></span><span id="INPUT"></span>entrée
+## <a name="span-idpurpose-and-usesspanspan-idpurpose-and-usesspanspan-idpurpose-and-usesspanpurpose-and-uses"></a><span id="Purpose-and-uses"></span><span id="purpose-and-uses"></span><span id="PURPOSE-AND-USES"></span>Usage et utilisations
 
 
-L’étape IA lit les données de la mémoire : données de primitives (points, lignes et/ou triangles) des mémoires tampons renseignées par les utilisateurs.
+L’objectif de l’étape de l’assembleur d’entrée est de lire des données primitives (points, lignes et triangles) à partir de mémoires tampons remplies par l’utilisateur et d’assembler les données dans des primitives qui seront utilisées par les autres étapes de pipeline, et de joindre des [valeurs générées](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics) par le système pour améliorer l’efficacité des nuanceurs. Les valeurs générées par le système sont des chaînes de texte qui sont également appelées sémantiques. Les étapes du nuanceur programmable sont construites à partir d’un noyau de nuanceur commun, qui utilise des valeurs générées par le système (comme un ID primitif, un ID d’instance ou un ID de vertex), afin que l’étape du nuanceur puisse réduire le traitement uniquement aux primitives, instances ou vertex qui n’ont pas encore été traités.
+
+L’étape IA peut assembler des vertex dans plusieurs [types primitifs](primitive-topologies.md) différents (tels que des listes de lignes, des bandes triangulaires ou des primitives avec contiguïté). Les types primitifs tels qu’une liste de triangles avec contiguïté et une liste de lignes avec contiguïté prennent en charge l' [étape Geometry Shader (GS)](geometry-shader-stage--gs-.md).
+
+Les informations d’contiguïté sont visibles pour une application uniquement dans un nuanceur Geometry. Si un nuanceur Geometry a été appelé avec un triangle incluant une contiguïté, par exemple, les données d’entrée contiennent 3 sommets pour chaque triangle et 3 sommets pour les données d’contiguïté par triangle.
+
+Lorsque l’étape IA est demandée pour la sortie des données d’adjacence, les données d’entrée doivent inclure les données d’adjacence. Cela peut nécessiter la fourniture d’un vertex factice (formant un triangle dégenerate), ou peut-être en marquant l’un des attributs de vertex, que le vertex existe ou non. Elle doit également être détectée et gérée par un nuanceur Geometry, bien que l’élimination de la géométrie dégénérée se produise à l’étape de rastérisation.
+
+## <a name="span-idinputspanspan-idinputspanspan-idinputspaninput"></a><span id="Input"></span><span id="input"></span><span id="INPUT"></span>Entrée
+
+
+L’étape IA lit les données à partir de la mémoire : les données primitives (points, lignes et/ou triangles), à partir de mémoires tampons remplies par l’utilisateur.
 
 ## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Sortie
 
 
-L’étape IA assemble les données en primitives et associe les valeurs générées par le système, pour en définitive produire des primitives mises à profit par l’[étape du nuanceur de vertex](vertex-shader-stage--vs-.md), puis d’autres étapes de pipeline.
+L’étape IA assemble les données dans des primitives et attache des valeurs générées par le système, et génère des sorties en tant que primitives qui seront utilisées par l' [étape nuanceur de sommets (vs)](vertex-shader-stage--vs-.md) , puis d’autres étapes de pipeline.
 
 ## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>Dans cette section
 
@@ -56,12 +56,12 @@ L’étape IA assemble les données en primitives et associe les valeurs génér
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="primitive-topologies.md">Topologies primitifs</a></p></td>
-<td align="left"><p>Direct3D prend en charge plusieurs topologies de primitives, qui définissent l’interprétation et le rendu des vertex par le pipeline, en listes de points, listes de lignes ou triangles.</p></td>
+<td align="left"><p><a href="primitive-topologies.md">Topologies de primitive</a></p></td>
+<td align="left"><p>Direct3D prend en charge plusieurs topologies primitives, qui définissent la façon dont les vertex sont interprétés et restitués par le pipeline, tels que les listes de points, les listes de lignes et les bandes triangulaires.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="using-system-generated-values.md">À l’aide des valeurs générées par le système</a></p></td>
-<td align="left"><p>Les valeurs générées par le système sont produites par l’étape d’assembleur d’entrée (reposant sur les <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics">sémantiques</a> d’entrée fournies par l’utilisateur) afin d’accroître l’efficacité des opérations du nuanceur. L’association des données, comme un ID d’instance (visible par l’<a href="vertex-shader-stage--vs-.md">étape du nuanceur de vertex</a>), un ID de vertex (visible par le nuanceur de vertex) ou un ID de primitive (visible par l’<a href="geometry-shader-stage--gs-.md">étape du nuanceur de vertex</a>/<a href="pixel-shader-stage--ps-.md">du nuanceur de pixel</a>) permet à une étape ultérieure de nuanceur de rechercher ces valeurs système afin d’optimiser son traitement.</p></td>
+<td align="left"><p><a href="using-system-generated-values.md">Utilisation de valeurs générées par le système</a></p></td>
+<td align="left"><p>Les valeurs générées par le système sont générées par l’étape de l’assembleur d’entrée (en fonction de la <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics">sémantique</a>d’entrée fournie par l’utilisateur) pour permettre une certaine efficacité dans les opérations de nuanceur. En joignant des données, telles qu’un ID d’instance (visible à l' <a href="vertex-shader-stage--vs-.md">étape de nuanceur de sommets (vs)</a>), un ID de vertex (visible pour vs) ou un ID primitif (visible pour la phase de nuanceur de pixels de <a href="geometry-shader-stage--gs-.md">géométrie (GS</a>) de l’étape de / <a href="pixel-shader-stage--ps-.md">Pixel</a>), une étape de nuanceur ultérieure peut rechercher ces valeurs système afin d’optimiser le traitement.</p></td>
 </tr>
 </tbody>
 </table>
@@ -76,7 +76,3 @@ L’étape IA assemble les données en primitives et associe les valeurs génér
  
 
  
-
-
-
-

@@ -1,25 +1,25 @@
 ---
 title: Informations de référence sur les API de capture multimédia
-description: Découvrez comment accéder à l’API de capture multimédia par programmation.
+description: Découvrez comment capturer une représentation PNG de l’écran actuel à l’aide de l’API REST du portail d’appareils Xbox.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 3f92c8fd-4096-4972-97da-01ae5db6423c
 ms.localizationpriority: medium
-ms.openlocfilehash: 7dcd4c6c39a983ab11bfacd391bfa78942601258
-ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.openlocfilehash: ee1ccba3fe2a3f83a95c3538cb267730f7770c4c
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59244055"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172733"
 ---
 # <a name="media-capture-api-reference"></a>Informations de référence sur les API de capture multimédia #
 
-## <a name="request"></a>Demande
+## <a name="request"></a>Requête
 
 Vous pouvez capturer une représentation PNG de l’écran actuel en utilisant le format de requête suivant.
 
-| Méthode        | URI de requête     | 
+| Méthode        | URI de demande     | 
 | ------------- |-----------------|
 | GET           | /ext/screenshot |
 
@@ -37,17 +37,17 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 * Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 * Aucune
 
-## <a name="response"></a>Réponse
+## <a name="response"></a>response
 
 **Code d’état**
 
 Cette API comporte les codes d’état attendus suivants.
 
-| Code d’état HTTP   | Description     | 
+| Code d'état HTTP   | Description     | 
 | ------------------ |-----------------|
 | 200                | Demande de capture d’écran réussie et capture renvoyée |
 | 5XX                | Codes d’erreur des échecs inattendus |

@@ -1,22 +1,22 @@
 ---
 Description: Découvrez comment les applications Win32 C++ WRL peuvent envoyer des notifications Toast locales et gérer l’utilisateur en cliquant sur le Toast.
-title: Envoyer une notification Toast locale à partir d’applications Desktop C++ WRL
+title: Envoyer une notification toast locale depuis des applications WRL de bureau en C++
 label: Send a local toast notification from desktop C++ WRL apps
 template: detail.hbs
 ms.date: 03/07/2018
 ms.topic: article
 keywords: Windows 10, UWP, Win32, Desktop, notifications Toast, envoyer un toast, envoyer un toast local, Desktop Bridge, msix, package fragmenté, C++, CPP, Cplusplus, WRL
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e103c41de7bf169629085fd259e23e17804360d
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: e1aae390cf9047c8c93b4d24084c87bc90af8d80
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234668"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172303"
 ---
-# <a name="send-a-local-toast-notification-from-desktop-c-wrl-apps"></a>Envoyer une notification Toast locale à partir d’applications Desktop C++ WRL
+# <a name="send-a-local-toast-notification-from-desktop-c-wrl-apps"></a>Envoyer une notification toast locale depuis des applications WRL de bureau en C++
 
-Les applications de bureau (y compris les applications [MSIX](https://docs.microsoft.com/windows/msix/desktop/source-code-overview) empaquetées, les applications qui utilisent des [packages éparss](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) pour obtenir l’identité du package et les applications Win32 non empaquetées classiques) peuvent envoyer des notifications de Toast interactives comme des applications Windows. Toutefois, il existe quelques étapes spéciales pour les applications de bureau en raison des différents schémas d’activation et de l’absence potentielle d’identité de package si vous n’utilisez pas MSIX ou un package fragmenté.
+Les applications de bureau (y compris les applications [MSIX](/windows/msix/desktop/source-code-overview) empaquetées, les applications qui utilisent des [packages éparss](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) pour obtenir l’identité du package et les applications Win32 non empaquetées classiques) peuvent envoyer des notifications de Toast interactives comme des applications Windows. Toutefois, il existe quelques étapes spéciales pour les applications de bureau en raison des différents schémas d’activation et de l’absence potentielle d’identité de package si vous n’utilisez pas MSIX ou un package fragmenté.
 
 > [!IMPORTANT]
 > Si vous écrivez une application UWP, consultez la [documentation UWP](send-local-toast.md). Pour les autres langues du bureau, consultez [Desktop C#](send-local-toast-desktop.md).
@@ -94,7 +94,7 @@ Ensuite, vous devez vous inscrire auprès de la plateforme de notification. Diff
 
 ### <a name="msixsparse-package"></a>Package MSIX/Sparse
 
-Si vous utilisez [MSIX](https://docs.microsoft.com/windows/msix/desktop/source-code-overview) ou un [package fragmenté](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) (ou si vous prenez en charge les deux), dans votre **Package. appxmanifest**, ajoutez :
+Si vous utilisez [MSIX](/windows/msix/desktop/source-code-overview) ou un [package fragmenté](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) (ou si vous prenez en charge les deux), dans votre **Package. appxmanifest**, ajoutez :
 
 1. Déclaration pour **xmlns : com**
 2. Déclaration pour **xmlns : Desktop**
@@ -395,7 +395,7 @@ if (SUCCEEDED(hr))
 
 ## <a name="step-10-deploying-and-debugging"></a>Étape 10 : déploiement et débogage
 
-Pour déployer et déboguer votre application de package MSIX/Sparse, consultez [exécuter, déboguer et tester une application de bureau empaquetée](/windows/uwp/porting/desktop-to-uwp-debug).
+Pour déployer et déboguer votre application de package MSIX/Sparse, consultez [exécuter, déboguer et tester une application de bureau empaquetée](/windows/msix/desktop/desktop-to-uwp-debug).
 
 Pour déployer et déboguer votre application Win32 classique, vous devez installer votre application par le biais du programme d’installation avant de déboguer normalement, afin que le raccourci de démarrage avec votre identifiant AUMID et CLSID soit présent. Une fois le raccourci de démarrage présent, vous pouvez déboguer à l’aide de la touche F5 à partir de Visual Studio.
 
@@ -416,13 +416,13 @@ Si vous recevez de nombreuses `unresolved external symbol` Erreurs de compilatio
 
 Si vous prenez en charge la Windows 8.1 ou une valeur inférieure, vous pouvez vérifier au moment de l’exécution si vous utilisez Windows 10 avant d’appeler des API **DesktopNotificationManagerCompat** ou d’envoyer des toasts ToastGeneric.
 
-Windows 8 a introduit les notifications Toast, mais a utilisé les [modèles Toast hérités](https://docs.microsoft.com/previous-versions/windows/apps/hh761494(v=win.10)), tels que ToastText01. L’activation a été gérée par l’événement **activé** en mémoire sur la classe **ToastNotification** , car les toasts n’étaient que de courtes fenêtres contextuelles qui n’étaient pas conservées. Windows 10 a introduit les [toasts ToastGeneric interactifs](adaptive-interactive-toasts.md)et a également introduit le centre de maintenance dans lequel les notifications sont rendues persistantes pendant plusieurs jours. L’introduction du centre de maintenance nécessitait l’introduction d’un activateur COM, afin que votre toast puisse être activé jours après sa création.
+Windows 8 a introduit les notifications Toast, mais a utilisé les [modèles Toast hérités](/previous-versions/windows/apps/hh761494(v=win.10)), tels que ToastText01. L’activation a été gérée par l’événement **activé** en mémoire sur la classe **ToastNotification** , car les toasts n’étaient que de courtes fenêtres contextuelles qui n’étaient pas conservées. Windows 10 a introduit les [toasts ToastGeneric interactifs](adaptive-interactive-toasts.md)et a également introduit le centre de maintenance dans lequel les notifications sont rendues persistantes pendant plusieurs jours. L’introduction du centre de maintenance nécessitait l’introduction d’un activateur COM, afin que votre toast puisse être activé jours après sa création.
 
 | Système d''exploitation | ToastGeneric | Activateur COM | Modèles Toast hérités |
 | -- | ------------ | ------------- | ---------------------- |
-| Windows 10 | Prise en charge | Prise en charge | Pris en charge (mais n’active pas le serveur COM) |
-| Windows 8.1/8 | NON APPLICABLE | N/A | Prise en charge |
-| Windows 7 et versions antérieures | NON APPLICABLE | NON APPLICABLE | N/A |
+| Windows 10 | Pris en charge | Pris en charge | Pris en charge (mais n’active pas le serveur COM) |
+| Windows 8.1/8 | N/A | N/A | Pris en charge |
+| Windows 7 et versions antérieures | N/A | N/A | N/A |
 
 Pour vérifier si vous exécutez sur Windows 10, incluez l' `<VersionHelpers.h>` en-tête et vérifiez la méthode **IsWindows10OrGreater** . Si cette propriété retourne la valeur true, continuez à appeler toutes les méthodes décrites dans cette documentation. 
 

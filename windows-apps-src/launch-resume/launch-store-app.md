@@ -1,36 +1,36 @@
 ---
 title: Lancer l’application Microsoft Store
-description: Cette rubrique décrit le schéma d’URI ms-windows-store. Votre application peut utiliser ce schéma d’URI pour lancer l’application Microsoft Store à des pages spécifiques dans le Store.
+description: Cette rubrique décrit le schéma d’URI ms-windows-store. Votre application peut utiliser ce schéma d’URI pour lancer l’application Microsoft Store sur des pages spécifiques du Windows Store.
 ms.assetid: 9A9C6576-1637-47D1-AC3B-D1A20D49E0FF
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fd0e7137f31a8f1620f7937b52efe1ca84a6b99a
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 1a31c762c002e711a87e99e2f97de6c26e2c8b48
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370783"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172983"
 ---
 # <a name="launch-the-microsoft-store-app"></a>Lancer l’application Microsoft Store
 
 
 
-Cette rubrique décrit la **ms-windows-store :** Schéma d’URI. Votre application peut utiliser ce schéma d’URI pour lancer l’application Microsoft Store à des pages spécifiques dans le magasin à l’aide de la [ **LaunchUriAsync** ](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) (méthode).
+Cette rubrique décrit le schéma d’URI **ms-windows-store:**. Votre application peut utiliser ce schéma d’URI pour lancer l’application Microsoft Store sur des pages spécifiques du magasin à l’aide de la méthode [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync) .
 
-Cet exemple montre comment ouvrir le Store à la page Jeux :
+Cet exemple montre comment ouvrir le magasin sur la page de jeux :
 
 ```cs
 bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-store://navigatetopage/?Id=Games"));
 ```
 
-## <a name="ms-windows-store-uri-scheme-reference"></a>MS-windows-store : Référence de schéma d’URI
+## <a name="ms-windows-store-uri-scheme-reference"></a>Référence de schéma d’URI ms-windows-store:
 
 <table>
 <tr><th>Description</th><th></th><th>Schéma d’URI</th></tr>
 <tr><td>Lance la page d’accueil du Store.</td><td /><td>ms-windows-store://home</td></tr>
-<tr><td>Ouvre une verticale de niveau supérieur dans le Store.<p>Remarque: Certains utilisateurs n’ont accès à tous les marchés verticaux.</p>
+<tr><td>Ouvre une verticale de niveau supérieur dans le Store.<p>Remarque : les utilisateurs n’ont pas tous accès à toutes les verticales.</p>
 </td><td /><td>
 <p>ms-windows-store://navigatetopage/?Id=Apps </p>
 <p>ms-windows-store://navigatetopage/?Id=Games</p>
@@ -40,11 +40,11 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-s
 </td>
 </tr>
 <tr>
-<td rowspan="4">Lance la page de détails d’un produit (PDP). <p>ID de Store est recommandée pour les clients sur Windows 10 et fonctionne sur toutes les versions de système d’exploitation, mais dans les méthodes précédentes de les créer (ex : NFP) qui ne sont toujours pris en charge.</p>
-<p>Vous trouverez ces valeurs dans <a href="https://partner.microsoft.com/dashboard">partenaires</a> sur le <a href="https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details">identité de l’application</a> page dans la section de gestion d’application pour chaque application.</p>
+<td rowspan="4">Lance la page de détails d’un produit (PDP). <p>L’ID Windows Store est recommandé pour les clients Windows 10 et fonctionne sur toutes les versions du système d’exploitation, mais les méthodes antérieures de lancement (ex : PFN) sont toujours prises en charge.</p>
+<p>Ces valeurs se trouvent dans l' <a href="https://partner.microsoft.com/dashboard">espace partenaires</a> sur la page identité de l' <a href="https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details">application</a> de la section gestion des applications pour chaque application.</p>
 </td>
 <td>
-ID Windows Store <p>(recommandé)</p>
+ID Windows Store <p>(Recommandé)</p>
 </td>
 <td>
 <p>ms-windows-store://pdp/?ProductId=9WZDNCRFHVJL</p>
@@ -66,7 +66,7 @@ ID Windows Store <p>(recommandé)</p>
 </tr>
 <tr>
 <td rowspan="4">Lance la procédure d’écriture d’un avis pour un produit.</td>
-<td>ID Windows Store <p>(recommandé)</p></td>
+<td>ID Windows Store <p>(Recommandé)</p></td>
 <td>ms-windows-store://review/?ProductId=9WZDNCRFHVJL </td>
 </tr>
 <tr>

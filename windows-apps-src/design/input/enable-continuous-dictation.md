@@ -8,35 +8,35 @@ keywords: voix, vocal, reconnaissance vocale, langage naturel, dictée, saisie, 
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 73cfb6fd56b5ae06118ea01ef7ef0b3882db60da
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: eff53ac21be290315ea020a820c718f69019d71d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257992"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172523"
 ---
 # <a name="continuous-dictation"></a>Dictée continue
 
 Découvrez comment capturer et reconnaître une entrée vocale dictée en continu et sur une longue durée.
 
-> **API importantes** : [**SpeechContinuousRecognitionSession**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession), [**ContinuousRecognitionSession**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.continuousrecognitionsession)
+> **API importantes**: [**SpeechContinuousRecognitionSession**](/uwp/api/Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession), [**ContinuousRecognitionSession**](/uwp/api/windows.media.speechrecognition.speechrecognizer.continuousrecognitionsession)
 
-Dans [Reconnaissance vocale](speech-recognition.md), vous avez appris à capturer et à reconnaître des saisies vocales de durée relativement courte à l’aide des méthodes [**RecognizeAsync**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.recognizeasync) ou [**RecognizeWithUIAsync**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.recognizewithuiasync) d’un objet [**SpeechRecognizer**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer), par exemple, lorsque l’utilisateur compose un SMS ou pose une question.
+Dans [Reconnaissance vocale](speech-recognition.md), vous avez appris à capturer et à reconnaître des saisies vocales de durée relativement courte à l’aide des méthodes [**RecognizeAsync**](/uwp/api/windows.media.speechrecognition.speechrecognizer.recognizeasync) ou [**RecognizeWithUIAsync**](/uwp/api/windows.media.speechrecognition.speechrecognizer.recognizewithuiasync) d’un objet [**SpeechRecognizer**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer), par exemple, lorsque l’utilisateur compose un SMS ou pose une question.
 
-Pour les sessions de reconnaissance vocale en continu plus longues, tel qu’un texte dicté ou un e-mail, utilisez la propriété [**ContinuousRecognitionSession**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.continuousrecognitionsession) d’un [**SpeechRecognizer**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer) afin d’obtenir un objet [**SpeechContinuousRecognitionSession**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession).
+Pour les sessions de reconnaissance vocale en continu plus longues, tel qu’un texte dicté ou un e-mail, utilisez la propriété [**ContinuousRecognitionSession**](/uwp/api/windows.media.speechrecognition.speechrecognizer.continuousrecognitionsession) d’un [**SpeechRecognizer**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer) afin d’obtenir un objet [**SpeechContinuousRecognitionSession**](/uwp/api/Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession).
 
 > [!NOTE]
-> La prise en charge du langage de dictée dépend de l' [appareil](https://docs.microsoft.com/windows/uwp/design/devices/) sur lequel votre application s’exécute. Pour les PC et les ordinateurs portables, seul en-US est reconnu, tandis que la Xbox et les téléphones peuvent reconnaître toutes les langues prises en charge par la reconnaissance vocale. Pour plus d’informations, consultez [spécifier la langue du module de reconnaissance vocale](specify-the-speech-recognizer-language.md).
+> La prise en charge du langage de dictée dépend de l' [appareil](../devices/index.md) sur lequel votre application s’exécute. Pour les PC et les ordinateurs portables, seul en-US est reconnu, tandis que la Xbox et les téléphones peuvent reconnaître toutes les langues prises en charge par la reconnaissance vocale. Pour plus d’informations, consultez [spécifier la langue du module de reconnaissance vocale](specify-the-speech-recognizer-language.md).
 
-## <a name="set-up"></a>Configuration
+## <a name="set-up"></a>Configurer
 
 Votre application a besoin de plusieurs objets pour gérer une session de dictée continue :
 
-- une instance d’un objet [**SpeechRecognizer**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer) ;
+- Instance d’un objet [**SpeechRecognizer**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer) .
 - une référence de répartiteur d’interface utilisateur afin de mettre à jour l’interface utilisateur lors de la dictée ;
 - un dispositif de suivi des mots ajoutés par l’utilisateur.
 
-Dans cet exemple, nous déclarons une instance [**SpeechRecognizer**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer) comme un champ privé de la classe code-behind. Votre application doit stocker une référence à un autre emplacement, si vous voulez que la dictée en continu se poursuive sur d’autres pages XAML.
+Dans cet exemple, nous déclarons une instance [**SpeechRecognizer**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer) comme un champ privé de la classe code-behind. Votre application doit stocker une référence à un autre emplacement, si vous voulez que la dictée en continu se poursuive sur d’autres pages XAML.
 
 ```CSharp
 private SpeechRecognizer speechRecognizer;
@@ -55,7 +55,7 @@ private CoreDispatcher dispatcher;
 
 Pour suivre ce que dit l’utilisateur, vous devez gérer les événements de reconnaissance déclenchés par le module de reconnaissance vocale. Ces événements fournissent les résultats de reconnaissance des différents blocs d’énoncés de l’utilisateur.
 
-Ici, nous utilisons un objet [**StringBuilder**](https://docs.microsoft.com/dotnet/api/system.text.stringbuilder) pour contenir tous les résultats de reconnaissance obtenus pendant la session. Les nouveaux résultats sont ajoutés à l’objet **StringBuilder** lors de leur traitement.
+Ici, nous utilisons un objet [**StringBuilder**](/dotnet/api/system.text.stringbuilder) pour contenir tous les résultats de reconnaissance obtenus pendant la session. Les nouveaux résultats sont ajoutés à l’objet **StringBuilder** lors de leur traitement.
 
 ```CSharp
 private StringBuilder dictatedTextBuilder;
@@ -68,26 +68,26 @@ Pendant l’initialisation de la reconnaissance vocale en continu, vous devez :
 - Si vous mettez à jour l’interface utilisateur de votre application dans les gestionnaires d’événements de reconnaissance continue, récupérez le répartiteur pour le thread d’interface utilisateur.
 - Initialisez le module de reconnaissance vocale.
 - Compilez la grammaire de dictée intégrée.
-    **Remarque**   la reconnaissance vocale nécessite au moins une contrainte pour définir un vocabulaire reconnaissable. Si aucune contrainte n’est spécifiée, une grammaire de dictée prédéfinie est utilisée. Voir [Reconnaissance vocale](speech-recognition.md).
+    **Remarque**    La reconnaissance vocale nécessite au moins une contrainte pour définir un vocabulaire reconnaissable. Si aucune contrainte n’est spécifiée, une grammaire de dictée prédéfinie est utilisée. Voir [Reconnaissance vocale](speech-recognition.md).
 - Configurez les détecteurs d’événements pour les événements de reconnaissance.
 
-Nous initialisons la reconnaissance vocale dans l’événement de page [**OnNavigatedTo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto).
+Nous initialisons la reconnaissance vocale dans l’événement de page [**OnNavigatedTo**](/uwp/api/windows.ui.xaml.controls.page.onnavigatedto).
 
-1. Comme les événements déclenchés par le module de reconnaissance vocale se produisent sur un thread d’arrière-plan, créez une référence pour le répartiteur pour les mises à jour du thread d’interface utilisateur. [**OnNavigatedTo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto) est toujours appelé sur le thread d’interface utilisateur.
+1. Comme les événements déclenchés par le module de reconnaissance vocale se produisent sur un thread d’arrière-plan, créez une référence pour le répartiteur pour les mises à jour du thread d’interface utilisateur. [**OnNavigatedTo**](/uwp/api/windows.ui.xaml.controls.page.onnavigatedto) est toujours appelé sur le thread d’interface utilisateur.
 ```csharp
 this.dispatcher = CoreWindow.GetForCurrentThread().Dispatcher;
 ```
 
-2.  Nous initialisons ensuite l’instance [**SpeechRecognizer**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer).
+2.  Nous initialisons ensuite l’instance [**SpeechRecognizer**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer).
 ```csharp
 this.speechRecognizer = new SpeechRecognizer();
 ```
 
-3.  Ensuite, nous ajoutons et nous compilons la grammaire qui définit tous les mots et toutes les expressions pouvant être reconnus par le [**SpeechRecognizer**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer).
+3.  Nous allons ensuite ajouter et compiler la grammaire qui définit tous les mots et expressions qui peuvent être reconnus par le [**SpeechRecognizer**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer).
 
     Si vous ne spécifiez explicitement de grammaire, la grammaire de dictée continue est utilisée par défaut. En règle générale, la grammaire par défaut est préférable pour la dictée générale.
 
-    Ici, nous appelons [**CompileConstraintsAsync**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.compileconstraintsasync) immédiatement sans ajouter de grammaire.
+    Ici, nous appelons [**CompileConstraintsAsync**](/uwp/api/windows.media.speechrecognition.speechrecognizer.compileconstraintsasync) immédiatement sans ajouter de grammaire.
 
     
 ```csharp
@@ -97,35 +97,35 @@ SpeechRecognitionCompilationResult result =
 
 ## <a name="handle-recognition-events"></a>Gérer les événements de reconnaissance
 
-Ici, vous pouvez capturer un seul énoncé ou une seule expression de courte durée en appelant [**RecognizeAsync**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.recognizeasync) ou [**RecognizeWithUIAsync**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.recognizewithuiasync). 
+Vous pouvez capturer un énoncé ou une phrase unique, bref en appelant [**RecognizeAsync**](/uwp/api/windows.media.speechrecognition.speechrecognizer.recognizeasync) ou [**RecognizeWithUIAsync**](/uwp/api/windows.media.speechrecognition.speechrecognizer.recognizewithuiasync). 
 
 Toutefois, pour capturer une session de reconnaissance plus longue, continue, nous indiquons des détecteurs d’événements à exécuter en arrière-plan pendant que l’utilisateur parle et définissons des gestionnaires afin de créer la chaîne de dictée.
 
-Nous pouvons ensuite utiliser la propriété [**ContinuousRecognitionSession**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.continuousrecognitionsession) de notre module de reconnaissance vocale pour obtenir un objet [**SpeechContinuousRecognitionSession**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession) qui fournit des méthodes et des événements pour la gestion d’une session de reconnaissance vocale en continu.
+Nous pouvons ensuite utiliser la propriété [**ContinuousRecognitionSession**](/uwp/api/windows.media.speechrecognition.speechrecognizer.continuousrecognitionsession) de notre module de reconnaissance vocale pour obtenir un objet [**SpeechContinuousRecognitionSession**](/uwp/api/Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession) qui fournit des méthodes et des événements pour la gestion d’une session de reconnaissance vocale en continu.
 
 Deux événements sont particulièrement essentiels :
 
-- [**ResultGenerated**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated), qui se produit lorsque le module de reconnaissance a généré des résultats.
-- [**Terminé**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.completed), qui se produit lorsque la session de reconnaissance continue est terminée.
+- [**ResultGenerated**](/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated), qui se produit lorsque le module de reconnaissance a généré des résultats.
+- [**Terminé**](/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.completed), qui se produit lorsque la session de reconnaissance continue est terminée.
 
-L’événement [**ResultGenerated**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated) est déclenché lorsque l’utilisateur parle. Le module de reconnaissance écoute l’utilisateur en continu et déclenche périodiquement un événement qui transmet un segment d’entrée vocale. Examinez l’entrée vocale à l’aide de la propriété [**Result**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionresultgeneratedeventargs.result) de l’argument d’événement et prenez les mesures appropriées dans le gestionnaire d’événements, par exemple en ajoutant du texte à un objet StringBuilder.
+L’événement [**ResultGenerated**](/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated) est déclenché lorsque l’utilisateur parle. Le module de reconnaissance écoute l’utilisateur en continu et déclenche périodiquement un événement qui transmet un segment d’entrée vocale. Examinez l’entrée vocale à l’aide de la propriété [**Result**](/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionresultgeneratedeventargs.result) de l’argument d’événement et prenez les mesures appropriées dans le gestionnaire d’événements, par exemple en ajoutant du texte à un objet StringBuilder.
 
-En tant qu’instance de [**SpeechRecognitionResult**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResult), la propriété [**Result**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionresultgeneratedeventargs.result) permet d’indiquer si vous acceptez l’entrée vocale ou non : Une instance [**SpeechRecognitionResult**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResult) fournit deux propriétés spécifiques :
+En tant qu’instance de [**SpeechRecognitionResult**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResult), la propriété [**result**](/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionresultgeneratedeventargs.result) est utile pour déterminer si vous souhaitez accepter l’entrée vocale. Un [**SpeechRecognitionResult**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResult) fournit deux propriétés pour ce qui suit :
 
-- [**État**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognitionresult.status) indique si la reconnaissance a réussi. La reconnaissance peut échouer pour diverses raisons.
-- La [**confiance**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognitionresult.confidence) indique la confiance relative que le module de reconnaissance a compris les mots corrects.
+- [**État**](/uwp/api/windows.media.speechrecognition.speechrecognitionresult.status) indique si la reconnaissance a réussi. La reconnaissance peut échouer pour diverses raisons.
+- La [**confiance**](/uwp/api/windows.media.speechrecognition.speechrecognitionresult.confidence) indique la confiance relative que le module de reconnaissance a compris les mots corrects.
 
 Voici les étapes de base associées à la prise en charge de la reconnaissance continue :  
 
-1. Ici, nous inscrivons le gestionnaire pour l’événement de reconnaissance en continu [**ResultGenerated**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated) de l’événement de page [**OnNavigatedTo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto).
+1. Ici, nous enregistrons le gestionnaire pour l’événement de reconnaissance continue [**ResultGenerated**](/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated) dans l’événement de page [**OnNavigatedTo**](/uwp/api/windows.ui.xaml.controls.page.onnavigatedto) .
 ```csharp
 speechRecognizer.ContinuousRecognitionSession.ResultGenerated +=
         ContinuousRecognitionSession_ResultGenerated;
 ```
 
-2.  Nous vérifions ensuite la propriété [**Confidence**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognitionresult.confidence). Si la valeur de confiance est de [**Medium**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionConfidence) ou plus, nous ajoutons du texte au StringBuilder. Nous mettons également à jour l’interface utilisateur lorsque nous collectons des entrées.
+2.  Nous vérifions ensuite la propriété [**Confidence**](/uwp/api/windows.media.speechrecognition.speechrecognitionresult.confidence). Si la valeur de confiance est [**moyenne**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionConfidence) ou meilleure, nous ajoutons le texte à StringBuilder. Nous mettons également à jour l’interface utilisateur lorsque nous collectons des entrées.
 
-    **Notez**  l’événement [**ResultGenerated**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated) est déclenché sur un thread d’arrière-plan qui ne peut pas mettre à jour directement l’interface utilisateur. Si un gestionnaire a besoin de mettre à jour l’interface utilisateur (comme le fait l’exemple \[\] de synthèse vocale et TTS), vous devez distribuer les mises à jour au thread d’interface utilisateur par le biais de la méthode [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) du répartiteur.
+    **Remarque**    l’événement [**ResultGenerated**](/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated) est déclenché sur un thread d’arrière-plan qui ne peut pas mettre à jour directement l’interface utilisateur. Si un gestionnaire doit mettre à jour l’interface utilisateur (comme le \[ fait l’exemple Speech et TTS \] ), vous devez distribuer les mises à jour au thread d’interface utilisateur par le biais de la méthode [**RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync) du répartiteur.
 ```csharp
 private async void ContinuousRecognitionSession_ResultGenerated(
       SpeechContinuousRecognitionSession sender,
@@ -153,19 +153,19 @@ private async void ContinuousRecognitionSession_ResultGenerated(
       }
 ```
 
-3.  Ensuite, nous gérons l’événement [**Completed**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.completed), qui indique la fin de la dictée continue.
+3.  Ensuite, nous gérons l’événement [**Completed**](/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.completed), qui indique la fin de la dictée continue.
 
-    La session se termine lorsque vous appelez le [**StopAsync**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.stopasync) ou les méthodes [**CancelAsync**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.cancelasync) (voir la section suivante). La session peut également se terminer lorsqu’une erreur se produit, ou lorsque l’utilisateur cesse de parler. Vérifiez la propriété [**Status**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognitionresult.status) de l’argument d’événement afin de déterminer pourquoi la session s’est terminée ([**SpeechRecognitionResultStatus**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResultStatus)).
+    La session se termine lorsque vous appelez le [**StopAsync**](/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.stopasync) ou les méthodes [**CancelAsync**](/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.cancelasync) (voir la section suivante). La session peut également se terminer lorsqu’une erreur se produit, ou lorsque l’utilisateur cesse de parler. Vérifiez la propriété [**Status**](/uwp/api/windows.media.speechrecognition.speechrecognitionresult.status) de l’argument d’événement afin de déterminer pourquoi la session s’est terminée ([**SpeechRecognitionResultStatus**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResultStatus)).
 
-    Ici, nous inscrivons le gestionnaire pour l’événement de reconnaissance en continu [**Completed**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.completed) de l’événement de page [**OnNavigatedTo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto).
+    Ici, nous inscrivons le gestionnaire pour l’événement de reconnaissance en continu [**Completed**](/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.completed) de l’événement de page [**OnNavigatedTo**](/uwp/api/windows.ui.xaml.controls.page.onnavigatedto).
 ```csharp
 speechRecognizer.ContinuousRecognitionSession.Completed +=
       ContinuousRecognitionSession_Completed;
 ```
 
-4.  Le gestionnaire d’événements vérifie la propriété d’état afin de savoir si la reconnaissance a réussi. Il gère également le cas où l’utilisateur cesse de parler. Souvent, un [**TimeoutExceeded**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResultStatus) est considérée comme réussi lorsque l’utilisateur a fini de parler. Vous devez gérer ce cas dans votre code afin d’offrir une expérience optimale.
+4.  Le gestionnaire d’événements vérifie la propriété d’état afin de savoir si la reconnaissance a réussi. Il gère également le cas où l’utilisateur cesse de parler. Souvent, un [**TimeoutExceeded**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResultStatus) est considéré comme une reconnaissance réussie, car cela signifie que l’utilisateur a fini de parler. Vous devez gérer ce cas dans votre code afin d’offrir une expérience optimale.
 
-    **Notez**  l’événement [**ResultGenerated**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated) est déclenché sur un thread d’arrière-plan qui ne peut pas mettre à jour directement l’interface utilisateur. Si un gestionnaire a besoin de mettre à jour l’interface utilisateur (comme le fait l’exemple \[\] de synthèse vocale et TTS), vous devez distribuer les mises à jour au thread d’interface utilisateur par le biais de la méthode [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) du répartiteur.
+    **Remarque**    l’événement [**ResultGenerated**](/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated) est déclenché sur un thread d’arrière-plan qui ne peut pas mettre à jour directement l’interface utilisateur. Si un gestionnaire doit mettre à jour l’interface utilisateur (comme le \[ fait l’exemple Speech et TTS \] ), vous devez distribuer les mises à jour au thread d’interface utilisateur par le biais de la méthode [**RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync) du répartiteur.
 ```csharp
 private async void ContinuousRecognitionSession_Completed(
       SpeechContinuousRecognitionSession sender,
@@ -203,13 +203,13 @@ private async void ContinuousRecognitionSession_Completed(
 ## <a name="provide-ongoing-recognition-feedback"></a>Fournir des commentaires en cours de reconnaissance
 
 
-Lorsque des individus discutent, ces derniers s’appuient généralement sur le contexte pour déterminer le sens de la conversation. De la même manière, le module de reconnaissance vocale a souvent besoin de contexte pour fournir des résultats de reconnaissance très fiables. Par exemple, la différence entre les mots « poids » et « pois » est imperceptible tant qu’un contexte plus précis ne révèle leur sens. Tant que le module de reconnaissance n’est pas certain qu’un ou plusieurs mots ont été reconnus correctement, celui-ci ne déclenche pas l’événement [**ResultGenerated**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated).
+Lorsque des individus discutent, ces derniers s’appuient généralement sur le contexte pour déterminer le sens de la conversation. De la même manière, le module de reconnaissance vocale a souvent besoin de contexte pour fournir des résultats de reconnaissance très fiables. Par exemple, la différence entre les mots « poids » et « pois » est imperceptible tant qu’un contexte plus précis ne révèle leur sens. Tant que le module de reconnaissance n’a pas la certitude qu’un mot ou des mots ont été reconnus correctement, il ne déclenche pas l’événement [**ResultGenerated**](/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated) .
 
-Cela peut entraîner une expérience peu agréable, dans la mesure où l’utilisateur continue de parler sans qu’aucun résultat n’apparaisse, jusqu’à ce que le moteur de reconnaissance soit suffisamment certain pour déclencher l’événement [**ResultGenerated**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated).
+Cela peut se traduire par une expérience moins idéale pour l’utilisateur lorsqu’il continue de parler et qu’aucun résultat n’est fourni tant que le module de reconnaissance n’a pas suffisamment de confiance pour déclencher l’événement [**ResultGenerated**](/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated) .
 
-Gérer l’événement [**HypothesisGenerated**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.hypothesisgenerated) pour améliorer ce manque de réactivité apparent. Cet événement est déclenché chaque fois que le moteur de reconnaissance vocale génère un nouveau jeu de correspondances potentielles pour le mot en cours de traitement. L’argument d’événement fournit une propriété [**Hypothesis**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognitionhypothesisgeneratedeventargs.hypothesis) contenant les correspondances en cours. Affichez ces correspondances à mesure que l’utilisateur continue de parler afin de leur montrer que le traitement est toujours actif. Une fois le niveau confiance est suffisamment élevé et que le résultat de la reconnaissance a été déterminé, remplacez les résultats **Hypothesis** temporaires par le dernier [**Result**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionresultgeneratedeventargs.result) indiqué dans l’événement [**ResultGenerated**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated).
+Gérez l’événement [**HypothesisGenerated**](/uwp/api/windows.media.speechrecognition.speechrecognizer.hypothesisgenerated) pour améliorer ce manque de réactivité apparent. Cet événement est déclenché chaque fois que le moteur de reconnaissance vocale génère un nouveau jeu de correspondances potentielles pour le mot en cours de traitement. L’argument d’événement fournit une propriété d' [**hypothèse**](/uwp/api/windows.media.speechrecognition.speechrecognitionhypothesisgeneratedeventargs.hypothesis) qui contient les correspondances actuelles. Affichez ces correspondances à mesure que l’utilisateur continue de parler afin de leur montrer que le traitement est toujours actif. Une fois le niveau confiance est suffisamment élevé et que le résultat de la reconnaissance a été déterminé, remplacez les résultats **Hypothesis** temporaires par le dernier [**Result**](/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionresultgeneratedeventargs.result) indiqué dans l’événement [**ResultGenerated**](/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated).
 
-Ici, nous ajoutons le texte hypothétique et des points de suspension (« ... ») à la valeur actuelle de la sortie [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox). Le contenu de la zone de texte est mis à jour à mesure que de nouvelles hypothèses sont générées, jusqu’à ce que le résultat final soit obtenu à partir de l’événement [**ResultGenerated**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated).
+Ici, nous ajoutons le texte hypothétique et des points de suspension (« ... ») à la valeur actuelle de la [**zone**](/uwp/api/Windows.UI.Xaml.Controls.TextBox)de texte de sortie. Le contenu de la zone de texte est mis à jour à mesure que de nouvelles valeurs sont générées et jusqu’à ce que les résultats finaux soient obtenus à partir de l’événement [**ResultGenerated**](/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated) .
 
 ```CSharp
 private async void SpeechRecognizer_HypothesisGenerated(
@@ -231,9 +231,9 @@ private async void SpeechRecognizer_HypothesisGenerated(
 ## <a name="start-and-stop-recognition"></a>Démarrer et arrêter la reconnaissance
 
 
-Avant de démarrer une session de reconnaissance, vérifiez la valeur de la propriété [**State**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.state) du module de reconnaissance vocale. Le module de reconnaissance vocale doit être dans un état [**Idle**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizerState).
+Avant de démarrer une session de reconnaissance, vérifiez la valeur de la propriété [**State**](/uwp/api/windows.media.speechrecognition.speechrecognizer.state) du module de reconnaissance vocale. Le module de reconnaissance vocale doit être dans un état [**inactif**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizerState) .
 
-Une fois la vérification de l’état du module de reconnaissance vocale terminée, nous commençons la session en appelant la méthode [**StartAsync**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.startasync) de la propriété [**ContinuousRecognitionSession**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.continuousrecognitionsession) du module de reconnaissance vocale.
+Après avoir vérifié l’état du module de reconnaissance vocale, nous commençons la session en appelant la méthode [**StartAsync**](/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.startasync) de la propriété [**ContinuousRecognitionSession**](/uwp/api/windows.media.speechrecognition.speechrecognizer.continuousrecognitionsession) du module de reconnaissance vocale.
 
 ```CSharp
 if (speechRecognizer.State == SpeechRecognizerState.Idle)
@@ -244,10 +244,10 @@ if (speechRecognizer.State == SpeechRecognizerState.Idle)
 
 La reconnaissance peut être arrêtée de deux façons :
 
--   [**StopAsync**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.stopasync) permet à tous les événements de reconnaissance en attente d’être terminés ([**ResultGenerated**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated) continue à être déclenché jusqu’à ce que toutes les opérations de reconnaissance en attente soient terminées).
--   [**CancelAsync**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.cancelasync) met immédiatement fin à la session de reconnaissance et ignore les résultats en attente.
+-   [**StopAsync**](/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.stopasync) permet à tous les événements de reconnaissance en attente d’être terminés ([**ResultGenerated**](/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated) continue à être déclenché jusqu’à ce que toutes les opérations de reconnaissance en attente soient terminées).
+-   [**CancelAsync**](/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.cancelasync) met immédiatement fin à la session de reconnaissance et ignore les résultats en attente.
 
-Une fois la vérification de l’état du module de reconnaissance vocale terminée, nous arrêtons la session en appelant la méthode [**CancelAsync**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.cancelasync) de la propriété [**ContinuousRecognitionSession**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.continuousrecognitionsession) du module de reconnaissance vocale.
+Une fois la vérification de l’état du module de reconnaissance vocale terminée, nous arrêtons la session en appelant la méthode [**CancelAsync**](/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.cancelasync) de la propriété [**ContinuousRecognitionSession**](/uwp/api/windows.media.speechrecognition.speechrecognizer.continuousrecognitionsession) du module de reconnaissance vocale.
 
 ```CSharp
 if (speechRecognizer.State != SpeechRecognizerState.Idle)
@@ -257,23 +257,19 @@ if (speechRecognizer.State != SpeechRecognizerState.Idle)
 ```
 
 > [!NOTE]
-> Un événement [**ResultGenerated**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated) peut se produire après l’appel de [**CancelAsync**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.cancelasync).  
-> En raison du multithreading, un événement [**ResultGenerated**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated) peut rester dans la pile lorsque [**CancelAsync**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.cancelasync) est appelé. Dans ce cas, l’événement **ResultGenerated** est quand même déclenché.  
-> Si vous définissez tous les champs privés lors de l’annulation de la session de reconnaissance vocale, confirmez toujours leurs valeurs dans le gestionnaire [**ResultGenerated**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated). Par exemple, ne supposez pas qu’un champ est initialisé dans votre gestionnaire si vous définissez ces champs comme nuls lorsque vous annulez la session.
+> Un événement [**ResultGenerated**](/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated) peut se produire après un appel à [**CancelAsync**](/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.cancelasync).  
+> En raison du multithreading, un événement [**ResultGenerated**](/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated) peut encore rester sur la pile lorsque [**CancelAsync**](/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.cancelasync) est appelé. Dans ce cas, l’événement **ResultGenerated** est quand même déclenché.  
+> Si vous définissez des champs privés lors de l’annulation de la session de reconnaissance, confirmez toujours leurs valeurs dans le gestionnaire [**ResultGenerated**](/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated) . Par exemple, ne supposez pas qu’un champ est initialisé dans votre gestionnaire si vous définissez ces champs comme nuls lorsque vous annulez la session.
 
  
 
-## <a name="related-articles"></a>Articles associés
+## <a name="related-articles"></a>Articles connexes
 
 
 * [Interactions vocales](speech-interactions.md)
 
 **Exemples**
-* [Exemple de reconnaissance vocale et de synthèse vocale](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)
+* [Reconnaissance vocale et exemple de synthèse vocale](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)
  
 
  
-
-
-
-

@@ -1,20 +1,20 @@
 ---
 Description: Découvrez comment épingler une vignette secondaire pour démarrer à partir de votre application Windows.
-title: Épingler les vignettes secondaires au début
+title: Épingler les vignettes secondaires au menu Démarrer
 label: Pin secondary tiles to Start
 template: detail.hbs
 ms.date: 05/25/2017
 ms.topic: article
 keywords: Windows 10, UWP, vignettes secondaires, code confidentiel, épinglage, démarrage rapide, exemple de code, exemple, secondarytile
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c535e7e2abaf68212cb0a2f6daac8741b6548a5
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 7499a9a4040850595f616a5de0badb9efeab635f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82971044"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172313"
 ---
-# <a name="pin-secondary-tiles-to-start"></a>Épingler les vignettes secondaires au début
+# <a name="pin-secondary-tiles-to-start"></a>Épingler les vignettes secondaires au menu Démarrer
 
 
 Cette rubrique vous guide tout au long des étapes de création d’une vignette secondaire pour votre application Windows et de l’épingler au menu Démarrer.
@@ -181,6 +181,6 @@ Pour savoir comment afficher du contenu riche sur votre vignette via des notific
 
 * [Vue d’ensemble des vignettes secondaires](secondary-tiles.md)
 * [Aide sur les vignettes secondaires](secondary-tiles-guidance.md)
-* [Ressources de vignette](app-assets.md)
+* [Ressources de vignette](../../style/app-icons-and-logos.md)
 * [Documentation sur le contenu de la vignette](create-adaptive-tiles.md)
 * [Envoyer une notification par vignette locale](sending-a-local-tile-notification.md)

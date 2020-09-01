@@ -4,21 +4,21 @@ description: Configurez une Geofence dans votre application et découvrez commen
 ms.assetid: A3A46E03-0751-4DBD-A2A1-2323DB09BDBA
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp, carte, localisation, clôture virtuelle, notifications
+keywords: Windows 10, UWP, carte, emplacement, limite géographique, notifications
 ms.localizationpriority: medium
-ms.openlocfilehash: 6507b34a1a7f6d8947ce9ec2f05fb883adfc3030
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 9b991930ba37cfaec333146bf7a95b4c9a9c8b98
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260370"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89171703"
 ---
 # <a name="set-up-a-geofence"></a>Configurer une limite géographique
 
 
 
 
-Configurez une [**Geofence**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geofencing.Geofence) dans votre application et découvrez comment gérer les notifications au premier plan et en arrière-plan.
+Configurez une [**limite géographique**](/uwp/api/Windows.Devices.Geolocation.Geofencing.Geofence) dans votre application et apprenez à gérer les notifications au premier plan et en arrière-plan.
 
 **Conseil** Pour en savoir plus sur l’accès à l’emplacement dans votre application, téléchargez l’exemple suivant à partir du [référentiel Windows-universal-samples](https://github.com/Microsoft/Windows-universal-samples) sur GitHub.
 
@@ -42,7 +42,7 @@ Configurez une [**Geofence**](https://docs.microsoft.com/uwp/api/Windows.Devices
 
 ### <a name="step-1-request-access-to-the-users-location"></a>Étape 1 : Demander l’accès à l’emplacement de l’utilisateur
 
-**Important** Vous devez demander l’accès à l’emplacement de l’utilisateur à l’aide de la méthode [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.requestaccessasync) avant d’essayer d’y accéder. Vous devez appeler la méthode **RequestAccessAsync** à partir du thread de l’interface utilisateur et votre application doit être au premier plan. Votre application sera en mesure d’accéder aux informations d’emplacement de l’utilisateur une fois que l’utilisateur aura accordé l’autorisation à votre application.
+**Important** Vous devez demander l’accès à l’emplacement de l’utilisateur à l’aide de la méthode [**RequestAccessAsync**](/uwp/api/windows.devices.geolocation.geolocator.requestaccessasync) avant d’essayer d’y accéder. Vous devez appeler la méthode **RequestAccessAsync** à partir du thread de l’interface utilisateur et votre application doit être au premier plan. Votre application sera en mesure d’accéder aux informations d’emplacement de l’utilisateur une fois que l’utilisateur aura accordé l’autorisation à votre application.
 
 ```csharp
 using Windows.Devices.Geolocation;
@@ -50,13 +50,13 @@ using Windows.Devices.Geolocation;
 var accessStatus = await Geolocator.RequestAccessAsync();
 ```
 
-La méthode [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.requestaccessasync) demande à l’utilisateur l’autorisation d’accéder à son emplacement. L’utilisateur est invité une fois seulement (par application). Une fois la première autorisation accordée ou refusée, cette méthode ne demande plus d’autorisation. Pour aider l’utilisateur à modifier les autorisations d’emplacement une fois qu’il a été invité, nous vous recommandons de fournir un lien vers les paramètres d’emplacement, comme illustré plus loin dans cette rubrique.
+La méthode [**RequestAccessAsync**](/uwp/api/windows.devices.geolocation.geolocator.requestaccessasync) demande à l’utilisateur l’autorisation d’accéder à son emplacement. L’utilisateur est invité une fois seulement (par application). Une fois la première autorisation accordée ou refusée, cette méthode ne demande plus d’autorisation. Pour aider l’utilisateur à modifier les autorisations d’emplacement une fois qu’il a été invité, nous vous recommandons de fournir un lien vers les paramètres d’emplacement, comme illustré plus loin dans cette rubrique.
 
 ### <a name="step-2-register-for-changes-in-geofence-state-and-location-permissions"></a>Étape 2 : Inscrire les modifications d’autorisations d’emplacement et d’état de limite géographique
 
 Dans cet exemple, une instruction **switch** est utilisée avec l’élément **accessStatus** (de l’exemple précédent) afin d’agir uniquement lorsque l’accès à l’emplacement de l’utilisateur est autorisé. Si l’accès à l’emplacement de l’utilisateur est autorisé, le code accède aux limites géographiques actuelles et s’inscrit aux modifications de l’état des limites géographiques, ainsi qu’aux modifications des autorisations d’emplacement.
 
-**Conseil** Lorsque vous utilisez une limite géographique, surveillez les modifications des autorisations d’emplacement avec l’événement [**StatusChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geofencing.geofencemonitor.statuschanged) de la classe GeofenceMonitor plutôt qu’avec l’événement StatusChanged de la classe Geolocator. Un [**GeofenceMonitorStatus**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geofencing.GeofenceMonitorStatus) de **Disabled** équivaut à un [**PositionStatus**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.PositionStatus) désactivé : les deux indiquent que l’application n’est pas autorisée à accéder à l’emplacement de l’utilisateur.
+**Conseil** Lorsque vous utilisez une limite géographique, surveillez les modifications des autorisations d’emplacement avec l’événement [**StatusChanged**](/uwp/api/windows.devices.geolocation.geofencing.geofencemonitor.statuschanged) de la classe GeofenceMonitor plutôt qu’avec l’événement StatusChanged de la classe Geolocator. Un [**GeofenceMonitorStatus**](/uwp/api/Windows.Devices.Geolocation.Geofencing.GeofenceMonitorStatus) de **Disabled** équivaut à un [**PositionStatus**](/uwp/api/Windows.Devices.Geolocation.PositionStatus) désactivé : les deux indiquent que l’application n’est pas autorisée à accéder à l’emplacement de l’utilisateur.
 
 ```csharp
 switch (accessStatus)
@@ -97,7 +97,7 @@ protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
 
 ### <a name="step-3-create-the-geofence"></a>Étape 3 : créer la limite géographique
 
-Vous voici prêt à définir et configurer un objet [**Geofence**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geofencing.Geofence). Vous pouvez choisir parmi différentes surcharges de constructeur, selon vos besoins. Dans le constructeur de clôture virtuelle de base, spécifiez uniquement les éléments [**Id**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geofencing.geofence.id) et [**Geoshape**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geofencing.geofence.geoshape), comme illustré ici.
+Vous voici prêt à définir et configurer un objet [**Geofence**](/uwp/api/Windows.Devices.Geolocation.Geofencing.Geofence). Vous pouvez choisir parmi différentes surcharges de constructeur, selon vos besoins. Dans le constructeur de clôture virtuelle de base, spécifiez uniquement les éléments [**Id**](/uwp/api/windows.devices.geolocation.geofencing.geofence.id) et [**Geoshape**](/uwp/api/windows.devices.geolocation.geofencing.geofence.geoshape), comme illustré ici.
 
 ```csharp
 // Set the fence ID.
@@ -120,11 +120,11 @@ Geofence geofence = new Geofence(fenceId, geocircle);
 
 Vous pouvez ajuster davantage votre clôture virtuelle en utilisant l’un des autres constructeurs. Dans l’exemple suivant, le constructeur de limite géographique indique les paramètres supplémentaires ci-après :
 
--   [**MonitoredStates**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geofencing.geofence.monitoredstates) : indique les événements de la limite géographique pour lesquels vous souhaitez recevoir des notifications pour la saisie de la région définie, en laissant la région définie ou en supprimant la clôture.
--   [**SingleUse**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geofencing.geofence.singleuse) -supprime la clôture géographique une fois que tous les États dont la clôture géographique est surveillée sont satisfaits.
--   [**DwellTime**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geofencing.geofence.dwelltime) : indique la durée pendant laquelle l’utilisateur doit être à l’extérieur ou à l’extérieur de la zone définie avant le déclenchement des événements d’entrée/sortie.
--   [**StartTime**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geofencing.geofence.starttime) : indique quand démarrer l’analyse de la clôture géographique.
--   [**Duration**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geofencing.geofence.duration) : indique la période pour laquelle surveiller la clôture géographique.
+-   [**MonitoredStates**](/uwp/api/windows.devices.geolocation.geofencing.geofence.monitoredstates) : indique les événements de la limite géographique pour lesquels vous souhaitez recevoir des notifications pour la saisie de la région définie, en laissant la région définie ou en supprimant la clôture.
+-   [**SingleUse**](/uwp/api/windows.devices.geolocation.geofencing.geofence.singleuse) -supprime la clôture géographique une fois que tous les États dont la clôture géographique est surveillée sont satisfaits.
+-   [**DwellTime**](/uwp/api/windows.devices.geolocation.geofencing.geofence.dwelltime) : indique la durée pendant laquelle l’utilisateur doit être à l’extérieur ou à l’extérieur de la zone définie avant le déclenchement des événements d’entrée/sortie.
+-   [**StartTime**](/uwp/api/windows.devices.geolocation.geofencing.geofence.starttime) : indique quand démarrer l’analyse de la clôture géographique.
+-   [**Duration**](/uwp/api/windows.devices.geolocation.geofencing.geofence.duration) : indique la période pour laquelle surveiller la clôture géographique.
 
 ```csharp
 // Set the fence ID.
@@ -162,7 +162,7 @@ DateTimeOffset startTime = DateTime.Now;
 Geofence geofence = new Geofence(fenceId, geocircle, monitoredStates, singleUse, dwellTime, startTime, duration);
 ```
 
-Une fois créée, pensez à inscrire votre [**limite géographique**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geofencing.Geofence) sur le moniteur.
+Après la création, n’oubliez pas d’inscrire votre nouvelle [**limite géographique**](/uwp/api/Windows.Devices.Geolocation.Geofencing.Geofence) auprès du moniteur.
 
 ```csharp
 // Register the geofence
@@ -173,9 +173,9 @@ try {
 }
 ```
 
-### <a name="step-4-handle-changes-in-location-permissions"></a>Étape 4 : gérer les modifications apportées aux autorisations d’emplacement
+### <a name="step-4-handle-changes-in-location-permissions"></a>Étape 4 : gérer les modifications apportées aux autorisations d’emplacement
 
-L’objet [**GeofenceMonitor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geofencing.GeofenceMonitor) déclenche l’événement [**StatusChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geofencing.geofencemonitor.statuschanged) afin d’indiquer que les paramètres d’emplacement de l’utilisateur ont changé. Cet événement transmet l’état correspondant par le biais de la propriété **sender.Status** de l’argument (de type [**GeofenceMonitorStatus**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geofencing.GeofenceMonitorStatus)). Notez que cette méthode n’est pas appelée à partir du thread d’interface utilisateur et que l’objet [**Dispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher) invoque les modifications de l’interface utilisateur.
+L’objet [**GeofenceMonitor**](/uwp/api/Windows.Devices.Geolocation.Geofencing.GeofenceMonitor) déclenche l’événement [**StatusChanged**](/uwp/api/windows.devices.geolocation.geofencing.geofencemonitor.statuschanged) afin d’indiquer que les paramètres d’emplacement de l’utilisateur ont changé. Cet événement transmet l’état correspondant par le biais de la propriété **sender.Status** de l’argument (de type [**GeofenceMonitorStatus**](/uwp/api/Windows.Devices.Geolocation.Geofencing.GeofenceMonitorStatus)). Notez que cette méthode n’est pas appelée à partir du thread d’interface utilisateur et que l’objet [**Dispatcher**](/uwp/api/Windows.UI.Core.CoreDispatcher) invoque les modifications de l’interface utilisateur.
 
 ```csharp
 using Windows.UI.Core;
@@ -228,7 +228,7 @@ public async void OnGeofenceStatusChanged(GeofenceMonitor sender, object e)
 ## <a name="set-up-foreground-notifications"></a>Configurer les notifications au premier plan
 
 
-Après avoir créé vos limites géographiques, vous devez ajouter la logique pour gérer ce qui se passe en cas d’événement de limite géographique. En fonction de l’élément [**MonitoredStates**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geofencing.geofence.monitoredstates) que vous avez configuré, il est possible que vous receviez un événement quand :
+Après avoir créé vos limites géographiques, vous devez ajouter la logique pour gérer ce qui se passe en cas d’événement de limite géographique. En fonction de l’élément [**MonitoredStates**](/uwp/api/windows.devices.geolocation.geofencing.geofence.monitoredstates) que vous avez configuré, il est possible que vous receviez un événement quand :
 
 -   L’utilisateur est entré dans une région d’intérêt.
 -   L’utilisateur quitte une région d’intérêt.
@@ -299,7 +299,7 @@ public async void OnGeofenceStateChanged(GeofenceMonitor sender, object e)
 ## <a name="set-up-background-notifications"></a>Configurer les notifications en arrière-plan
 
 
-Après avoir créé vos limites géographiques, vous devez ajouter la logique pour gérer ce qui se passe en cas d’événement de limite géographique. En fonction de l’élément [**MonitoredStates**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geofencing.geofence.monitoredstates) que vous avez configuré, il est possible que vous receviez un événement quand :
+Après avoir créé vos limites géographiques, vous devez ajouter la logique pour gérer ce qui se passe en cas d’événement de limite géographique. En fonction de l’élément [**MonitoredStates**](/uwp/api/windows.devices.geolocation.geofencing.geofence.monitoredstates) que vous avez configuré, il est possible que vous receviez un événement quand :
 
 -   L’utilisateur est entré dans une région d’intérêt.
 -   L’utilisateur quitte une région d’intérêt.
@@ -313,7 +313,7 @@ Pour écouter un événement de limite géographique en arrière-plan
 
 ### <a name="step-1-register-for-geofence-state-change-events"></a>Étape 1 : inscrire les événements de changement d’état de limite géographique
 
-Dans le manifeste de votre application, dans l’onglet **Déclarations**, ajoutez une déclaration pour une tâche en arrière-plan d’emplacement. Pour cela, procédez comme suit :
+Dans le manifeste de votre application, dans l’onglet **Déclarations**, ajoutez une déclaration pour une tâche en arrière-plan d’emplacement. Pour cela :
 
 -   Ajoutez une déclaration de type **Tâches en arrière-plan**.
 -   Définissez une tâche de propriété de type **Emplacement**.
@@ -321,7 +321,7 @@ Dans le manifeste de votre application, dans l’onglet **Déclarations**, ajout
 
 ### <a name="step-2-register-the-background-task"></a>Étape 2 : inscrire la tâche en arrière-plan
 
-Le code utilisé dans cette étape inscrit la tâche de clôture virtuelle en arrière-plan. Rappelez-vous : au moment de créer la clôture virtuelle, nous avons vérifié les autorisations d’emplacement.
+Le code utilisé dans cette étape inscrit la tâche de limite géographique en arrière-plan. Rappelez-vous que lors de la création de la clôture géographique, nous avons vérifié les autorisations relatives à l’emplacement.
 
 ```csharp
 async private void RegisterBackgroundTask(object sender, RoutedEventArgs e)
@@ -431,7 +431,7 @@ Si les paramètres de confidentialité d’emplacement n’autorisent pas votre 
 </TextBlock>
 ```
 
-Par ailleurs, votre application peut appeler la méthode[**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) pour lancer l’application **Paramètres** à partir du code. Pour plus d’informations, voir [Lancer l’application Paramètres Windows](https://docs.microsoft.com/windows/uwp/launch-resume/launch-settings-app).
+Par ailleurs, votre application peut appeler la méthode[**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync) pour lancer l’application **Paramètres** à partir du code. Pour plus d’informations, voir [Lancer l’application Paramètres Windows](../launch-resume/launch-settings-app.md).
 
 ```csharp
 using Windows.System;
@@ -444,7 +444,7 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 
 Il est parfois difficile de procéder au test et au débogage d’applications de limite géographique, car ces dernières dépendent de l’emplacement d’un appareil. Nous présentons ici plusieurs méthodes qui permettent de tester les limites géographiques au premier plan et en arrière-plan.
 
-**Pour déboguer une application de géolimitation**
+**Pour déboguer une application de limite géographique, vous pouvez :**
 
 1.  Déplacer physiquement l’appareil
 2.  tester l’entrée dans une zone de clôture virtuelle en créant une zone qui inclut votre emplacement physique actuel, afin que vous soyez déjà dans la zone de clôture virtuelle et que l’événement d’« entrée dans la zone de clôture virtuelle » se déclenche immédiatement ;
@@ -452,35 +452,35 @@ Il est parfois difficile de procéder au test et au débogage d’applications d
 
 ### <a name="test-and-debug-a-geofencing-app-that-is-running-in-the-foreground"></a>Tester et déboguer une application de limite géographique s’exécutant au premier plan
 
-**Pour tester votre application de géolimitation qui s’exécute au premier plan**
+**Pour tester votre application de limite géographique s’exécutant au premier plan**
 
 1.  Générez votre application dans Visual Studio.
 2.  Lancez votre application dans l’émulateur Visual Studio.
-3.  Utilisez ces outils pour simuler différents emplacements internes et externes à votre zone de clôture virtuelle. Attendez suffisamment longtemps après l’heure spécifiée par la propriété [**DwellTime**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geofencing.geofence.dwelltime) pour déclencher l’événement. Notez que vous devez autoriser la demande de localisation géographique pour l’application. Pour plus d’informations sur la simulation d’emplacements, voir [Définir la localisation géographique simulée du périphérique](https://msdn.microsoft.com/library/windows/apps/hh441475(v=vs.120).aspx#BKMK_Set_the_simulated_geo_location_of_the_device).
+3.  Utilisez ces outils pour simuler différents emplacements internes et externes à votre zone de clôture virtuelle. Attendez suffisamment longtemps après l’heure spécifiée par la propriété [**DwellTime**](/uwp/api/windows.devices.geolocation.geofencing.geofence.dwelltime) pour déclencher l’événement. Notez que vous devez autoriser la demande de localisation géographique pour l’application. Pour plus d’informations sur la simulation d’emplacements, voir [Définir la localisation géographique simulée du périphérique](/previous-versions/hh441475(v=vs.120)#BKMK_Set_the_simulated_geo_location_of_the_device).
 4.  Vous pouvez également utiliser l’émulateur pour estimer la taille des limites et le temps approximatif nécessaire à leur détection à différents débits.
 
 ### <a name="test-and-debug-a-geofencing-app-that-is-running-in-the-background"></a>Tester et déboguer une application de limite géographique en arrière-plan
 
-**Pour tester votre application de géolimitation qui s’exécute en arrière-plan**
+**Pour tester votre application de limite géographique s’exécutant en arrière-plan**
 
 1.  Générez votre application dans Visual Studio. Notez que votre application doit définir le type de tâche en arrière-plan appelé **Emplacement**.
 2.  Déployez d’abord l’application en local.
 3.  Fermez votre application en cours d’exécution localement.
 4.  Lancez votre application dans l’émulateur Visual Studio. Notez que la simulation de géorepérage en arrière-plan n’est prise en charge que sur une seule application à la fois dans l’émulateur. Ne lancez pas plusieurs applications de géorepérage dans l’émulateur.
-5.  À l’aide de l’émulateur, simulez différents emplacements internes et externes à votre zone de clôture virtuelle. Attendez suffisamment longtemps après l’élément [**DwellTime**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geofencing.geofence.dwelltime) pour déclencher l’événement. Notez que vous devez autoriser la demande de localisation géographique pour l’application.
-6.  Utilisez Visual Studio pour déclencher la tâche d’arrière-plan relative à l’emplacement. Pour plus d’informations sur le déclenchement de tâches en arrière-plan dans Visual Studio, voir [Comment déclencher les tâches en arrière-plan](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.120).aspx#BKMK_Trigger_background_tasks).
+5.  À l’aide de l’émulateur, simulez différents emplacements internes et externes à votre zone de clôture virtuelle. Attendez suffisamment longtemps après l’élément [**DwellTime**](/uwp/api/windows.devices.geolocation.geofencing.geofence.dwelltime) pour déclencher l’événement. Notez que vous devez autoriser la demande de localisation géographique pour l’application.
+6.  Utilisez Visual Studio pour déclencher la tâche d’arrière-plan relative à l’emplacement. Pour plus d’informations sur le déclenchement de tâches en arrière-plan dans Visual Studio, voir [Comment déclencher les tâches en arrière-plan](/previous-versions/hh974425(v=vs.120)#BKMK_Trigger_background_tasks).
 
 ## <a name="troubleshoot-your-app"></a>Résoudre les problèmes de votre application
 
 
-Pour que votre application puisse accéder à l’emplacement, l’option **Localisation** doit être activée sur l’appareil. Dans l’application **Paramètres**, vérifiez que les **paramètres de confidentialité d’emplacement** suivants sont bien activés :
+Pour que votre application puisse accéder à l’emplacement, l’option **Localisation** doit être activée sur l’appareil. Dans l’application **Paramètres**, vérifiez que les **paramètres de confidentialité relatifs à la géolocalisation** suivants sont bien activés :
 
--   **Emplacement de cet appareil...** est activé **(non** applicable dans Windows 10 mobile)
+-   Le paramètre **Emplacement de cet appareil...** est **activé** (non applicable dans Windows 10 Mobile).
 -   Le paramètre des services de localisation **Emplacement** est **activé**.
 -   Sous **Choisir les applications qui peuvent utiliser votre emplacement**, votre application est **activée**.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Exemple de géolocalisation UWP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Geolocation)
-* [Instructions de conception pour le géorepérage](https://docs.microsoft.com/windows/uwp/maps-and-location/guidelines-for-geofencing)
-* [Recommandations de conception pour les applications prenant en charge la géolocalisation](https://docs.microsoft.com/windows/uwp/maps-and-location/guidelines-and-checklist-for-detecting-location)
+* [Recommandations en matière de conception pour le géorepérage](./guidelines-for-geofencing.md)
+* [Recommandations de conception pour les applications prenant en charge la géolocalisation](./guidelines-and-checklist-for-detecting-location.md)
