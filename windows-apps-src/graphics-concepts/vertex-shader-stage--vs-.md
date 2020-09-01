@@ -1,55 +1,55 @@
 ---
 title: Étape Vertex Shader (VS)
-description: L'étape du nuanceur de vertex (VS) traite les vertex, notamment en effectuant des opérations telles que des transformations, ainsi que l'application d'une apparence et d'un éclairage. Un nuanceur de vertex prend un vertex d’entrée spécifique et produit un seul vertex de sortie.
+description: L’étape vertex shader (VS) traite les vertex, en effectuant généralement des opérations telles que les transformations, les pelures et l’éclairage. Un nuanceur de sommets prend un vertex d’entrée unique et produit un seul vertex de sortie.
 ms.assetid: 5133C4BB-B4E6-4697-9276-F718AD44869C
 keywords:
 - Étape Vertex Shader (VS)
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5893719e43314eb15c684948a31de5a025a926fc
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 88a990470d0ff8aea5c6415584bd63b2b4b65981
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370828"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156053"
 ---
 # <a name="vertex-shader-vs-stage"></a>Étape Vertex Shader (VS)
 
 
-L'étape du nuanceur de vertex (VS) traite les vertex, notamment en effectuant des opérations telles que des transformations, ainsi que l'application d'une apparence et d'un éclairage. Un nuanceur de vertex prend un vertex d’entrée spécifique et produit un seul vertex de sortie.
+L’étape vertex shader (VS) traite les vertex, en effectuant généralement des opérations telles que les transformations, les pelures et l’éclairage. Un nuanceur de sommets prend un vertex d’entrée unique et produit un seul vertex de sortie.
 
-## <a name="span-idpurposeandusesspanspan-idpurposeandusesspanspan-idpurposeandusesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>Rôle et les utilisations
+## <a name="span-idpurpose_and_usesspanspan-idpurpose_and_usesspanspan-idpurpose_and_usesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>Usage et utilisations
 
 
-L’étape Vertex Shader (VS) est utilisée pour des traitements par vertex individuel :
+L’étape nuanceur de sommets (VS) est utilisée pour le traitement individuel par vertex, par exemple :
 
 -   Transformations
--   Application d’apparence
--   Morphose
+-   Apparence
+-   Métamorphose
 -   Éclairage par vertex
 
-L’étape Vertex Shader est une étape de nuanceur programmable ; elle s’affiche sous la forme d'un bloc arrondi dans le diagramme du [pipeline graphique](graphics-pipeline.md). Cette étape du nuanceur utilise le modèle de nuanceur 4.0 [nuanceur common core](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-common-core).
+L’étape du nuanceur de sommets est une étape de nuanceur programmable ; Il est affiché sous la forme d’un bloc arrondi dans le diagramme de [pipeline graphique](graphics-pipeline.md) . Cette étape de nuanceur utilise le modèle de nuanceur 4,0 [Common-Shader Core](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-common-core).
 
-L’étape Vertex Shader (VS) traite les sommets à partir de l’assembleur d’entrée. Les nuanceurs de vertex opèrent toujours sur un seul vertex d’entrée et produisent un seul vertex de sortie. L’étape du nuanceur de vertex doit toujours être active pour l'exécution du pipeline. Si aucune modification de vertex ni de transformation n’est nécessaire, un nuanceur de vertex direct doit être créé et défini sur le pipeline.
+L’étape vertex-shader (VS) traite les vertex de l’assembleur d’entrée. Les nuanceurs vertex fonctionnent toujours sur un vertex d’entrée unique et produisent un seul vertex de sortie. L’étape du nuanceur de sommets doit toujours être active pour que le pipeline s’exécute. Si aucune modification ou transformation de vertex n’est requise, un nuanceur de sommets directs doit être créé et défini sur le pipeline.
 
-Chaque vertex d’entrée d'un nuanceur de vertex peut comprendre jusqu'à 16 vecteurs de 32 bits (d'un maximum de 4 composants chacun). Chaque vertex de sortie peut également comprendre jusqu'à 16 vecteurs de 32 bits à 4 composants. Tous les nuanceurs de vertex doivent avoir au moins une entrée et une sortie, qui peuvent se réduire à une valeur scalaire.
+Chaque vertex d’entrée de nuanceur de sommets peut être constitué de vecteurs jusqu’à 16 32 bits (jusqu’à 4 composants chacun). Chaque vertex de sortie peut être constitué de plusieurs vecteurs à 4 16 32 bits. Tous les nuanceurs de vertex doivent avoir au minimum une entrée et une sortie, ce qui peut être aussi limité qu’une seule valeur scalaire.
 
-L’étape de nuanceur de sommets peut consommer des deux valeurs générées par le système à partir de l’assembleur d’entrée : VertexID et InstanceID (voir les valeurs système et la sémantique). Dans la mesure où VertexID et InstanceID sont tous deux significatifs au niveau d'un vertex, et comme les ID générés par le matériel ne peuvent être ajoutés qu'à la première étape qui les comprend, ces valeurs d’ID peuvent être ajoutées uniquement à l’étape du nuanceur de vertex.
+L’étape vertex-shader peut consommer deux valeurs générées par le système à partir de l’assembleur d’entrée : VertexID et InstanceID (consultez valeurs système et sémantiques). Étant donné que VertexID et InstanceID sont tous deux significatifs au niveau d’un vertex, et que les ID générés par le matériel peuvent uniquement être introduits dans la première étape qui les comprend, ces valeurs d’ID peuvent uniquement être chargées dans l’étape de nuanceur de sommets.
 
-Les nuanceurs de vertex sont toujours exécutés sur tous les sommets, y compris les sommets adjacents dans des topologies de primitive d’entrée avec voisinage. Le nombre d'exécution du nuanceur de vertex peut être interrogé à partir de l’UC à l’aide de la statistique de pipeline VSInvocations.
+Les nuanceurs vertex sont toujours exécutés sur tous les vertex, y compris les vertex adjacents dans les topologies de la primitive d’entrée avec contiguïté. Le nombre de fois que le nuanceur vertex a été exécuté peut être interrogé à partir du processeur à l’aide des statistiques de pipeline VSInvocations.
 
-Un nuanceur de sommets peut effectuer les opérations de l’échantillonnage de texture et de charge où les dérivés de l’espace à l’écran ne sont pas requises (à l’aide de fonctions intrinsèques HLSL : [Exemple (objet de Texture DirectX HLSL)](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-sample), [SampleCmpLevelZero (objet de Texture DirectX HLSL)](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-samplecmplevelzero), et [SampleGrad (objet de Texture DirectX HLSL)](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-samplegrad)).
+Un nuanceur de sommets peut effectuer des opérations d’échantillonnage de charge et de texture lorsque les dérivés de l’espace écran ne sont pas requis (à l’aide des fonctions intrinsèques HLSL : [Sample (DirectX HLSL texture Object)](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-sample), [SAMPLECMPLEVELZERO (DirectX HLSL texture Object)](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-samplecmplevelzero)et [SampleGrad (DirectX HLSL texture Object)](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-samplegrad)).
 
-## <a name="span-idinputspanspan-idinputspanspan-idinputspaninput"></a><span id="Input"></span><span id="input"></span><span id="INPUT"></span>entrée
+## <a name="span-idinputspanspan-idinputspanspan-idinputspaninput"></a><span id="Input"></span><span id="input"></span><span id="INPUT"></span>Entrée
 
 
-Vertex unique, avec des valeurs VertexID et InstanceID générées par le système. Chaque vertex d’entrée d'un nuanceur de vertex peut comprendre jusqu'à 16 vecteurs de 32 bits (d'un maximum de 4 composants chacun).
+Un vertex unique, avec des valeurs générées par le système VertexID et InstanceID. Chaque vertex d’entrée de nuanceur de sommets peut être constitué de vecteurs jusqu’à 16 32 bits (jusqu’à 4 composants chacun).
 
 ## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Sortie
 
 
-Vertex unique. Chaque vertex de sortie peut également comprendre jusqu'à 16 vecteurs de 32 bits à 4 composants.
+Un seul vertex. Chaque vertex de sortie peut être constitué de plusieurs vecteurs à 4 16 32 bits.
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
@@ -59,7 +59,3 @@ Vertex unique. Chaque vertex de sortie peut également comprendre jusqu'à 16 v
  
 
  
-
-
-
-

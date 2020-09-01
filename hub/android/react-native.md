@@ -7,12 +7,12 @@ manager: jken
 ms.topic: article
 keywords: Android, Windows, REACT native, émulateur, exposer, groupe Metro, terminal
 ms.date: 04/28/2020
-ms.openlocfilehash: db49e3ed12fee8e7ced7680e305a84afb89f32a2
-ms.sourcegitcommit: 24b19e7ee06e5bb11a0dae334806741212490ee9
+ms.openlocfilehash: 50c117154b103ca4e201f21bc643e7cbfa609b84
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82255233"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157713"
 ---
 # <a name="get-started-developing-for-android-using-react-native"></a>Prise en main du développement pour Android avec REACT Native
 
@@ -57,7 +57,7 @@ REACT native est une infrastructure d’application mobile [Open source](https:/
     ```
 
     > [!NOTE]
-    > Si vous êtes utilisé pour utiliser `npx create-react-native-app`, cela fonctionnera toujours, mais l’initialisation de l’interface de commande expose présente [quelques autres avantages](https://github.com/react-native-community/discussions-and-proposals/issues/23).
+    > Si vous êtes utilisé pour utiliser `npx create-react-native-app` , cela fonctionnera toujours, mais l’initialisation de l’interface de commande expose présente [quelques autres avantages](https://github.com/react-native-community/discussions-and-proposals/issues/23).
 
 3. Ouvrez votre nouveau répertoire « My-New-App » :
 
@@ -65,7 +65,7 @@ REACT native est une infrastructure d’application mobile [Open source](https:/
     cd my-new-app
     ```
 
-4. Pour exécuter votre projet, entrez la commande suivante. Une fenêtre localhost s’ouvre dans votre navigateur Internet par défaut. l’offre groupée de nœuds Metro est alors affichée. Il affiche également un code QR à la fois dans la ligne de commande et dans la fenêtre de navigateur de l’offreur de métro. * Vous pouvez également utiliser la commande `npm start` : `npm run android` ou.
+4. Pour exécuter votre projet, entrez la commande suivante. Une fenêtre localhost s’ouvre dans votre navigateur Internet par défaut. l’offre groupée de nœuds Metro est alors affichée. Il affiche également un code QR à la fois dans la ligne de commande et dans la fenêtre de navigateur de l’offreur de métro. * Vous pouvez également utiliser la commande : `npm start` ou `npm run android` .
 
      ```powershell
     expo start
@@ -75,11 +75,11 @@ REACT native est une infrastructure d’application mobile [Open source](https:/
 
 5. Pour afficher votre projet en cours d’exécution sur un appareil Android, vous devez d’abord [installer l’application cliente exposer avec le Google Play Store](https://play.google.com/store/apps/details?id=host.exp.exponent&hl=en_US) sur votre appareil Android. Une fois l’application exposer client installée, ouvrez-la sur votre appareil et sélectionnez **analyser le code QR**. Une fois le code QR inscrit, vous pouvez voir la génération du package sur votre appareil et dans la fenêtre du Bundleeur Metro s’exécutant sur localhost dans votre navigateur.
 
-6. Pour afficher votre projet s’exécutant sur un émulateur Android, vous devez d’abord ouvrir Android Studio, puis créer et démarrer un appareil virtuel. **Outils** > **AVD Manager** > **[+ créer un appareil virtuel...](https://developer.android.com/studio/run/managing-avds#createavd)**. Une fois votre appareil virtuel créé, sélectionnez le bouton de lancement ▷ sous la colonne **actions** de la Device Manager virtuelle Android pour démarrer l’émulation de l’appareil. Une fois l’appareil virtuel ouvert, revenez à la fenêtre du Bundleeur Metro s’exécutant dans la fenêtre de votre navigateur Internet et sélectionnez « exécuter sur un appareil/émulateur Android » dans la colonne de gauche. Vous devriez voir une fenêtre contextuelle vous informant que Metro Bundle tente d’ouvrir un simulateur... puis, l’application exposer client s’ouvre sur votre appareil Android émulé et, une fois que vous avez terminé le téléchargement de l’ensemble JavaScript, vous verrez votre application native REACT s’afficher. (Si vous rencontrez des problèmes, [activez la case à cocher exposer les documents de l’émulateur Android](https://docs.expo.io/workflow/android-studio-emulator/).)
+6. Pour afficher votre projet s’exécutant sur un émulateur Android, vous devez d’abord ouvrir Android Studio, puis créer et démarrer un appareil virtuel. **Outils**  >  **Gestionnaire AVD**  >  **[+ Créer un appareil virtuel...](https://developer.android.com/studio/run/managing-avds#createavd)** Une fois votre appareil virtuel créé, sélectionnez le bouton de lancement ▷ sous la colonne **actions** de la Device Manager virtuelle Android pour démarrer l’émulation de l’appareil. Une fois l’appareil virtuel ouvert, revenez à la fenêtre du Bundleeur Metro s’exécutant dans la fenêtre de votre navigateur Internet et sélectionnez « exécuter sur un appareil/émulateur Android » dans la colonne de gauche. Vous devriez voir une fenêtre contextuelle vous informant que Metro Bundle tente d’ouvrir un simulateur... puis, l’application exposer client s’ouvre sur votre appareil Android émulé et, une fois que vous avez terminé le téléchargement de l’ensemble JavaScript, vous verrez votre application native REACT s’afficher. (Si vous rencontrez des problèmes, [activez la case à cocher exposer les documents de l’émulateur Android](https://docs.expo.io/workflow/android-studio-emulator/).)
 
 7. Ouvrez votre projet Native REACT pour commencer à travailler sur votre application. Vos modifications doivent être mises à jour automatiquement dans l’application en cours d’exécution via le client Expo sur votre appareil ou dans votre Émulateur Android.
 
-8. Essayez de modifier le texte de la page d’accueil pour indiquer : « Hello World ! ». Vous pouvez le faire dans l’IDE de votre choix. (Nous vous recommandons VS Code ou Android Studio.) Le fichier de la page d’accueil varie en fonction du modèle que vous avez choisi. Il peut s' `App.js`agir `App.tsx`de, `HomeScreen.js`ou.
+8. Essayez de modifier le texte de la page d’accueil pour indiquer : « Hello World ! ». Vous pouvez le faire dans l’IDE de votre choix. (Nous vous recommandons VS Code ou Android Studio.) Le fichier de la page d’accueil varie en fonction du modèle que vous avez choisi. Il peut s’agir `App.js` de, `App.tsx` ou `HomeScreen.js` .
 
     ```typescript
     export default function App() {
@@ -109,7 +109,7 @@ REACT native est une infrastructure d’application mobile [Open source](https:/
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- [Développer des applications à deux écrans pour Android et obtenir le kit de développement logiciel (SDK) d’appareil surface Duo](https://docs.microsoft.com/dual-screen/android/)
+- [Développer des applications à deux écrans pour Android et obtenir le kit de développement logiciel (SDK) d’appareil surface Duo](/dual-screen/android/)
 
 - [Ajouter des exclusions Windows Defender pour améliorer les performances](defender-settings.md)
 

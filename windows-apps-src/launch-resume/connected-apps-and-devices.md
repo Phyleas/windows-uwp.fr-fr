@@ -6,34 +6,34 @@ ms.topic: article
 keywords: Windows 10, UWP, appareils connectés, systèmes distants, Rome, projet Rome
 ms.assetid: 7f39d080-1fff-478c-8c51-526472c1326a
 ms.localizationpriority: medium
-ms.openlocfilehash: 742ef56165ea26df3a03d54e99a17d2a00908cb6
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 08004f22575be69fff3f8d8017ea34327d9a0b7a
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684455"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156033"
 ---
 # <a name="connected-apps-and-devices-project-rome"></a>Applications et appareils connectés (projet Rome)
 
-Cette section explique comment connecter des applications sur des appareils et des plateformes à l’aide du [projet Rome](https://developer.microsoft.com/windows/project-rome). Pour savoir comment implémenter le projet Rome dans un scénario multiplateforme, visitez la [page principale docs pour le projet Rome](https://docs.microsoft.com/windows/project-rome/).
+Cette section explique comment connecter des applications sur des appareils et des plateformes à l’aide du [projet Rome](https://developer.microsoft.com/windows/project-rome). Pour savoir comment implémenter le projet Rome dans un scénario multiplateforme, visitez la [page principale docs pour le projet Rome](/windows/project-rome/).
 
-La plupart des utilisateurs ont plusieurs appareils et commencent souvent une activité sur un pour la terminer sur un autre. Pour répondre à cette situation, les applications doivent être accessibles sur plusieurs appareils et plateformes. Le projet Rome vous permet de découvrir des appareils distants, de lancer une application sur un appareil distant et de communiquer avec un service d’application sur un appareil distant.
+La plupart des utilisateurs disposent de plusieurs appareils et commencent souvent une activité sur un appareil et le terminent sur un autre. Pour répondre à cette situation, les applications doivent être accessibles sur plusieurs appareils et plateformes. Le projet Rome vous permet de découvrir des appareils distants, de lancer une application sur un appareil distant et de communiquer avec un service d’application sur un appareil distant.
 
-Les [API Systèmes distants](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems) intégrées dans Windows 10 version 1607 vous permettent d’écrire des applications grâce auxquelles les utilisateurs peuvent commencer une tâche sur un appareil et la terminer sur un autre. La tâche reste le point central, et les utilisateurs peuvent faire leur travail sur l’appareil le plus pratique pour eux. Par exemple, un utilisateur écoute la radio sur son téléphone en voiture, mais une fois à la maison, il voudra sans doute transférer la lecture à son Xbox One qui est raccordée à sa chaîne stéréo.
+Les [API de systèmes distants](/uwp/api/Windows.System.RemoteSystems) introduites dans Windows 10, version 1607 vous permettent d’écrire des applications qui permettent aux utilisateurs de démarrer une tâche sur un appareil et de le terminer sur un autre. La tâche reste le point central, et les utilisateurs peuvent faire leur travail sur l’appareil le plus pratique pour eux. Par exemple, un utilisateur peut écouter la radio sur son téléphone dans la voiture, mais lorsqu’il s’y connecte, il peut vouloir transférer la lecture sur son réseau Xbox qui est raccordé au système stéréo d’habitation.
 
-Vous pouvez également utiliser le projet Rome pour les appareils compléments ou des scénarios de contrôle à distance. Utilisez les API de messagerie de service d'application pour créer un canal d’application entre deux appareils afin d’échanger des messages personnalisés. Par exemple, vous pouvez écrire une application pour votre téléphone, qui contrôle la lecture sur votre téléviseur, ou une application complément qui fournit des informations sur les personnages d’une émission de télévision que vous regardez via une autre application.  
+Vous pouvez également utiliser le projet Rome pour les appareils compagnons ou les scénarios de contrôle à distance. Utilisez les API de messagerie App service pour créer un canal d’application entre deux appareils pour envoyer et recevoir des messages personnalisés. Par exemple, vous pouvez écrire une application pour votre téléphone qui contrôle la lecture sur votre téléviseur, ou une application auxiliaire qui fournit des informations sur les caractères d’une émission télévisée que vous regardez dans une autre application.  
 
-Les appareils peuvent être connectés à proximité par Bluetooth et sans fil, ou à distance par le cloud ; ils sont liés par le compte Microsoft (MSA) de la personne qui les utilise.
+Les appareils peuvent être connectés de façon proximale par le biais de Bluetooth et sans fil, ou à distance via le Cloud. ils sont liés par le compte Microsoft (MSA) de la personne qui les utilise.
 
-Pour des exemples illustrant comment détecter le système distant, lancer une application sur un système distant et utiliser des services d’application pour échanger des messages entre des applications qui s’exécutent sur deux systèmes, consultez la section [Exemple de Systèmes distants UWP](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems ).
+Consultez l' [exemple UWP](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems ) sur les systèmes distants pour obtenir des exemples montrant comment découvrir le système distant, lancer une application sur un système distant et utiliser app services pour envoyer des messages entre des applications exécutées sur deux systèmes.
 
-Pour plus d’informations sur le projet Rome en général, y compris les ressources pour l’intégration inter-plateforme, accédez à [aka.ms/project-rome](https://developer.microsoft.com/windows/project-rome).
+Pour plus d’informations sur le projet Rome en général, y compris les ressources pour l’intégration multiplateforme, accédez à [aka.MS/Project-Rome](https://developer.microsoft.com/windows/project-rome).
 
-| Sujet | Description |
+| Rubrique | Description |
 |-------|-------------|
-| [Lancer une application sur un appareil distant](launch-a-remote-app.md) | Découvrez comment lancer une application sur un appareil distant. Cette rubrique décrit le cas d'utilisation le plus simple et la configuration préliminaire.  |
-| [Découvrir des appareils distants](discover-remote-devices.md)  | Découvrez comment détecter les appareils auxquels vous pouvez vous connecter. |
+| [Lancer une application sur un appareil distant](launch-a-remote-app.md) | Découvrez comment lancer une application sur un appareil distant. Cette rubrique couvre le cas d’utilisation le plus simple et l’installation préliminaire.  |
+| [Détecter des appareils distants](discover-remote-devices.md)  | Découvrez comment détecter les appareils auxquels vous pouvez vous connecter. |
 | [Communiquer avec un service d’application distant](communicate-with-a-remote-app-service.md) | Découvrez comment interagir avec une application sur un appareil distant. |
-| [Connecter des appareils via des sessions à distance](remote-sessions.md) | Créez des expériences partagées sur plusieurs appareils en les rejoignant dans une session à distance. |
+| [Connecter des appareils par le biais de sessions à distance](remote-sessions.md) | Créez des expériences partagées sur plusieurs appareils en les rejoignant dans une session à distance. |
 | [Poursuivre l’activité utilisateur, même sur différents appareils](useractivities.md)| Aidez les utilisateurs à reprendre ce qu’ils faisaient dans votre application, même sur plusieurs appareils.|
-| [Meilleures pratiques relatives aux activités de l’utilisateur](useractivities-best-practices.md)| Découvrez les pratiques recommandées pour la création et la mise à jour des activités des utilisateurs.|
+| [Bonnes pratiques concernant les activités utilisateur](useractivities-best-practices.md)| Découvrez les pratiques recommandées pour la création et la mise à jour des activités des utilisateurs.|

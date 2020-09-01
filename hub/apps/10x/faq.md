@@ -6,18 +6,18 @@ ms.date: 06/02/2020
 ms.localizationpriority: medium
 ms.author: quradic
 author: QuinnRadich
-ms.openlocfilehash: 3ba14e33c098d3515522a9a5907065751fafba87
-ms.sourcegitcommit: 13bda6040988461a61b1b5561fde2f7a54835ccd
+ms.openlocfilehash: f321815658a1b59d941f8b2c0e1fa5aa0142b4f7
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84318235"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157673"
 ---
 # <a name="windows-10x-developer-faq"></a>FAQ développeur Windows 10X
 
 > [!IMPORTANT]
-> Nous avons récemment annoncé la modification de la définition de priorités pour Windows 10 et Windows 10X.
-> Ces annonces incluent les modifications apportées aux priorités de facteur de forme Windows 10X. [Apprenez-en davantage ici](https://blogs.windows.com/windowsexperience/2020/05/04/accelerating-innovation-in-windows-10-to-meet-customers-where-they-are/).
+> Nous avons récemment annoncé quelques changements dans la définition des priorités pour Windows 10 et Windows 10X.
+> Ces annonces incluent les changements apportés aux priorités des facteurs de forme Windows 10X. [En savoir plus ici.](https://blogs.windows.com/windowsexperience/2020/05/04/accelerating-innovation-in-windows-10-to-meet-customers-where-they-are/)
 
 Windows 10X est une gamme de produits de la famille Windows optimisée pour une utilisation sur des appareils à deux écrans. En tant que développeur, vous pouvez atteindre un public plus large en optimisant votre application pour Windows 10X, en tirant parti des nouvelles fonctionnalités spécifiques à un public et un public à deux écrans tout en bénéficiant de la même gamme de fonctionnalités Windows 10 et d’un support de bureau riche. [Nous avons annoncé Windows 10 à la fin du 2019](https://blogs.windows.com/windowsexperience/2019/10/02/introducing-windows-10x-enabling-dual-screen-pcs-in-2020/#6qxkItE2XMPu24uw.97), et nous sommes impatients de le publier au plus tard le 2020.
 
@@ -25,7 +25,7 @@ Windows 10X est une gamme de produits de la famille Windows optimisée pour une 
  
 *[Produit en version préliminaire affiché, écrans simulés et sujets à modification]*
 
-Pour plus d’informations sur la création d’expériences à deux écrans et de Windows 10X, consultez les sessions virtuelles du [Microsoft 365 du jour de développement](https://developer.microsoft.com/microsoft-365/virtual-events)ou des documents pour développeurs à [deux écrans](https://docs.microsoft.com/dual-screen/). Pour obtenir des informations en un clin d’œil, vous trouverez ici les réponses à certaines questions que vous pouvez rencontrer.
+Pour plus d’informations sur la création d’expériences à deux écrans et de Windows 10X, consultez les sessions virtuelles du [Microsoft 365 du jour de développement](https://developer.microsoft.com/microsoft-365/virtual-events)ou des documents pour développeurs à [deux écrans](/dual-screen/). Pour obtenir des informations en un clin d’œil, vous trouverez ici les réponses à certaines questions que vous pouvez rencontrer.
 
 ### <a name="how-is-this-different-from-developing-for-windows-10"></a>Comment est-ce différent du développement pour Windows 10 ?
 
@@ -41,7 +41,7 @@ Windows 10X sera relâché pour accompagner la surface Neo et les autres apparei
 
 ### <a name="when-can-i-start-development-for-windows-10x"></a>Quand puis-je commencer le développement pour Windows 10X ?
 
-Vous pouvez télécharger l' [émulateur Microsoft et l’image de l’émulateur Windows 10x](https://docs.microsoft.com/dual-screen/windows/get-dev-tools) dès aujourd’hui. Nous continuerons à améliorer cet émulateur et à l’ajouter en complément de la prise en charge d’autres appareils Windows 10X. Ces émulateurs, combinés à des versions préliminaires de la SDK Windows, vous permettent de développer pour Windows 10 fois avant que le premier appareil à deux écrans soit publié publiquement.
+Vous pouvez télécharger l' [émulateur Microsoft et l’image de l’émulateur Windows 10x](/dual-screen/windows/get-dev-tools) dès aujourd’hui. Nous continuerons à améliorer cet émulateur et à l’ajouter en complément de la prise en charge d’autres appareils Windows 10X. Ces émulateurs, combinés à des versions préliminaires de la SDK Windows, vous permettent de développer pour Windows 10 fois avant que le premier appareil à deux écrans soit publié publiquement.
 
 ### <a name="will-my-universal-windows-platform-uwp-apps-run-on-windows-10x"></a>Mes applications plateforme Windows universelle (UWP) s’exécutent-elles sur Windows 10X ?
 
@@ -57,4 +57,4 @@ Dans la mesure où Windows 10X poursuit son développement en version prélimina
 
 ### <a name="if-i-enhance-my-app-with-windows-10x-features-will-it-still-run-on-devices-running-desktop-windows-10"></a>Si j’améliore mon application avec des fonctionnalités Windows 10X, est-il toujours exécuté sur les appareils exécutant Desktop Windows 10 ?
 
-Les applications conçues pour Windows 10X fonctionnent toujours sur les appareils qui exécutent la version de bureau de Windows 10, bien que ces nouvelles API Windows ne soient pas ajoutées aux versions de bureau de Windows 10 jusqu’à la prochaine mise à jour majeure de la version. Comme si vous développiez une application prise en charge sur plusieurs versions de postes de travail Windows 10, suivez les [meilleures pratiques de codage adaptatif](https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code) pour vous assurer que votre application fonctionne correctement à la fois sur 10 et sur le bureau Windows 10. 
+Les applications conçues pour Windows 10X fonctionnent toujours sur les appareils qui exécutent la version de bureau de Windows 10, bien que ces nouvelles API Windows ne soient pas ajoutées aux versions de bureau de Windows 10 jusqu’à la prochaine mise à jour majeure de la version. Comme si vous développiez une application prise en charge sur plusieurs versions de postes de travail Windows 10, suivez les [meilleures pratiques de codage adaptatif](/windows/uwp/debug-test-perf/version-adaptive-code) pour vous assurer que votre application fonctionne correctement à la fois sur 10 et sur le bureau Windows 10.

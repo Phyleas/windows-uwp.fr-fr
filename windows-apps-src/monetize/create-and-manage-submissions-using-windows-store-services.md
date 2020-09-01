@@ -6,12 +6,12 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: API de soumission de Microsoft Store Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 38a59db4115332a374c96c8a4400dbaccff9cd82
-ms.sourcegitcommit: 720413d2053c8d5c5b34d6873740be6e913a4857
+ms.openlocfilehash: af0d36f2fa76fe9bb5bd253436f3d434a860e7ec
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88846819"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89155623"
 ---
 # <a name="create-and-manage-submissions"></a>Créer et gérer des soumissions
 
@@ -40,21 +40,21 @@ Les étapes suivantes décrivent le processus de bout en bout de l’utilisation
 
 Avant de commencer à écrire du code pour appeler l’API de soumission Microsoft Store, assurez-vous que vous avez rempli les conditions préalables suivantes.
 
-* Vous (ou votre organisation) devez disposer d’un annuaire Azure AD et de l’autorisation [Administrateur général](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) sur l’annuaire. Si vous utilisez déjà Microsoft 365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’un annuaire Azure AD. Dans le cas contraire, vous pouvez [créer un nouveau Azure ad dans l’espace partenaires](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) sans frais supplémentaires.
+* Vous (ou votre organisation) devez disposer d’un annuaire Azure AD et de l’autorisation [Administrateur général](/azure/active-directory/users-groups-roles/directory-assign-admin-roles) sur l’annuaire. Si vous utilisez déjà Microsoft 365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’un annuaire Azure AD. Dans le cas contraire, vous pouvez [créer un nouveau Azure ad dans l’espace partenaires](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) sans frais supplémentaires.
 
 * Vous devez [associer une application Azure AD à votre compte Espace partenaires](#associate-an-azure-ad-application-with-your-windows-partner-center-account) et récupérer votre ID tenant, votre ID client et votre clé. Ces valeurs sont nécessaires pour obtenir un jeton d’accès Azure AD, que vous utiliserez dans les appels à l’API de soumission au Microsoft Store.
 
 * Préparez votre application pour une utilisation avec l’API de soumission Microsoft Store :
 
-  * Si votre application n’existe pas encore dans l’espace partenaires, vous devez la [créer en réservant son nom dans l’espace partenaires](https://docs.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name). Vous ne pouvez pas utiliser l’API de soumission Microsoft Store pour créer une application dans l’espace partenaires. vous devez travailler dans l’espace partenaires pour le créer, puis, après cela, vous pouvez utiliser l’API pour accéder à l’application et créer par programme des soumissions pour celle-ci. En revanche, vous pouvez vous servir de l’API pour créer des extensions et des versions d’évaluation de package par programmation avant de créer des soumissions pour ces ressources.
+  * Si votre application n’existe pas encore dans l’espace partenaires, vous devez la [créer en réservant son nom dans l’espace partenaires](../publish/create-your-app-by-reserving-a-name.md). Vous ne pouvez pas utiliser l’API de soumission Microsoft Store pour créer une application dans l’espace partenaires. vous devez travailler dans l’espace partenaires pour le créer, puis, après cela, vous pouvez utiliser l’API pour accéder à l’application et créer par programme des soumissions pour celle-ci. En revanche, vous pouvez vous servir de l’API pour créer des extensions et des versions d’évaluation de package par programmation avant de créer des soumissions pour ces ressources.
 
-  * Avant de pouvoir créer une soumission pour une application donnée à l’aide de cette API, vous devez d’abord [créer une soumission pour l’application dans l’espace partenaires](https://docs.microsoft.com/windows/uwp/publish/app-submissions), y compris pour répondre au questionnaire sur les évaluations de l' [âge](https://docs.microsoft.com/windows/uwp/publish/age-ratings) . Après quoi, vous pourrez créer des soumissions par programmation pour cette application à l’aide de l’API. Vous n’avez pas besoin de créer une soumission d’extension ou de version d’évaluation de package avant d’utiliser l’API pour ces types de soumission.
+  * Avant de pouvoir créer une soumission pour une application donnée à l’aide de cette API, vous devez d’abord [créer une soumission pour l’application dans l’espace partenaires](../publish/app-submissions.md), y compris pour répondre au questionnaire sur les évaluations de l' [âge](../publish/age-ratings.md) . Après quoi, vous pourrez créer des soumissions par programmation pour cette application à l’aide de l’API. Vous n’avez pas besoin de créer une soumission d’extension ou de version d’évaluation de package avant d’utiliser l’API pour ces types de soumission.
 
-  * Si vous créez ou mettez à jour une soumission d’application et que vous devez inclure un package d’application, [préparez le package d’application](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements).
+  * Si vous créez ou mettez à jour une soumission d’application et que vous devez inclure un package d’application, [préparez le package d’application](../publish/app-package-requirements.md).
 
-  * Si vous créez ou mettez à jour une soumission d’application et que vous devez inclure des captures d’écran ou des images à des fins de présentation sur le Store, [préparez les captures d’écran et les images de l’application](https://docs.microsoft.com/windows/uwp/publish/app-screenshots-and-images).
+  * Si vous créez ou mettez à jour une soumission d’application et que vous devez inclure des captures d’écran ou des images à des fins de présentation sur le Store, [préparez les captures d’écran et les images de l’application](../publish/app-screenshots-and-images.md).
 
-  * Si vous créez ou mettez à jour une soumission d’extension et que vous devez inclure une icône, [préparez le package l’icône](https://docs.microsoft.com/windows/uwp/publish/create-iap-descriptions).
+  * Si vous créez ou mettez à jour une soumission d’extension et que vous devez inclure une icône, [préparez le package l’icône](../publish/create-add-on-store-listings.md).
 
 <span id="associate-an-azure-ad-application-with-your-windows-partner-center-account" />
 
@@ -79,7 +79,7 @@ Avant de pouvoir utiliser l’API de soumission Microsoft Store, vous devez asso
 
 Avant d’appeler l’une des méthodes de l’API de soumission Microsoft Store, vous devez d’abord obtenir un jeton d’accès Azure AD que vous transmettez à l’en-tête **authorization** de chaque méthode de l’API. Une fois que vous avez récupéré le jeton d’accès, vous avez 60 minutes pour l’utiliser avant qu’il n’expire. Une fois le jeton arrivé à expiration, vous pouvez l’actualiser pour pouvoir continuer à l’utiliser dans d’autres appels à l’API.
 
-Pour obtenir le jeton d’accès, suivez les instructions présentées dans l’article [Appels de service à service à l’aide des informations d’identification du client](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/) pour envoyer une requête HTTP POST au point de terminaison ```https://login.microsoftonline.com/<tenant_id>/oauth2/token```. Voici un exemple de requête.
+Pour obtenir le jeton d’accès, suivez les instructions présentées dans l’article [Appels de service à service à l’aide des informations d’identification du client](/azure/active-directory/azuread-dev/v1-oauth2-client-creds-grant-flow) pour envoyer une requête HTTP POST au point de terminaison ```https://login.microsoftonline.com/<tenant_id>/oauth2/token```. Voici un exemple de requête.
 
 ```json
 POST https://login.microsoftonline.com/<tenant_id>/oauth2/token HTTP/1.1
@@ -94,7 +94,7 @@ grant_type=client_credentials
 
 Pour la *valeur \_ ID de locataire* dans l’URI de publication et les paramètres * \_ ID client* et clé * \_ secrète client* , spécifiez l’ID de locataire, l’ID client et la clé de votre application que vous avez récupéré dans l’espace partenaires dans la section précédente. Pour le paramètre *resource*, vous devez spécifier ```https://manage.devcenter.microsoft.com```.
 
-Une fois votre jeton d’accès arrivé à expiration, vous pouvez l’actualiser en suivant les instructions fournies [ici](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens).
+Une fois votre jeton d’accès arrivé à expiration, vous pouvez l’actualiser en suivant les instructions fournies [ici](/azure/active-directory/azuread-dev/v1-protocols-oauth-code#refreshing-the-access-tokens).
 
 Pour obtenir des exemples qui montrent comment obtenir un jeton d’accès à l’aide de code C#, Java ou python, consultez [exemples de code](#code-examples)de l’API de soumission Microsoft Store.
 
@@ -132,11 +132,11 @@ Au lieu d’appeler directement l’API de soumission Microsoft Store, nous four
 
 Pour plus d’informations, consultez notre [page StoreBroker sur GitHub](https://github.com/Microsoft/StoreBroker).
 
-## <a name="troubleshooting"></a>Résolution des problèmes
+## <a name="troubleshooting"></a>Dépannage
 
 | Problème      | Résolution                                          |
 |---------------|---------------------------------------------|
-| Après avoir appelé l’API de soumission Microsoft Store à partir de PowerShell, les données de réponse pour l’API sont endommagées si vous la convertissez au format JSON en un objet PowerShell à l’aide de l’applet de commande [ConvertFrom-JSON](https://docs.microsoft.com/powershell/module/5.1/microsoft.powershell.utility/ConvertFrom-Json) , puis revenez au format JSON à l’aide de l’applet [de commande ConvertTo-JSON](https://docs.microsoft.com/powershell/module/5.1/microsoft.powershell.utility/ConvertTo-Json) . |  Par défaut, le paramètre *-Depth* de l’applet de commande [ConvertTo-JSON](https://docs.microsoft.com/powershell/module/5.1/microsoft.powershell.utility/ConvertTo-Json) est défini sur 2 niveaux d’objets, ce qui est trop superficiel pour la plupart des objets JSON retournés par l’API de soumission Microsoft Store. Quand vous appelez l’applet de commande [ConvertTo Json](https://docs.microsoft.com/powershell/module/5.1/microsoft.powershell.utility/ConvertTo-Json), attribuez au paramètre *-Depth* une valeur supérieure, par exemple 20. |
+| Après avoir appelé l’API de soumission Microsoft Store à partir de PowerShell, les données de réponse pour l’API sont endommagées si vous la convertissez au format JSON en un objet PowerShell à l’aide de l’applet de commande [ConvertFrom-JSON](/powershell/module/5.1/microsoft.powershell.utility/ConvertFrom-Json) , puis revenez au format JSON à l’aide de l’applet [de commande ConvertTo-JSON](/powershell/module/5.1/microsoft.powershell.utility/ConvertTo-Json) . |  Par défaut, le paramètre *-Depth* de l’applet de commande [ConvertTo-JSON](/powershell/module/5.1/microsoft.powershell.utility/ConvertTo-Json) est défini sur 2 niveaux d’objets, ce qui est trop superficiel pour la plupart des objets JSON retournés par l’API de soumission Microsoft Store. Quand vous appelez l’applet de commande [ConvertTo Json](/powershell/module/5.1/microsoft.powershell.utility/ConvertTo-Json), attribuez au paramètre *-Depth* une valeur supérieure, par exemple 20. |
 
 ## <a name="additional-help"></a>Aide supplémentaire
 

@@ -6,19 +6,19 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: 'Windows 10, UWP, ADS, publicité, gestion des erreurs, XAML, c #'
 ms.localizationpriority: medium
-ms.openlocfilehash: 4526f44c1a38af79886a7404eb932416a4414f77
-ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
+ms.openlocfilehash: 7ad3d7dfcbf191960fba03808270a55d3128d4f0
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89043501"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89158583"
 ---
 # <a name="error-handling-in-xamlc-walkthrough"></a>Procédure pas à pas pour gérer les erreurs dans XAML/C#
 
 >[!WARNING]
 > Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
-Cette procédure pas à pas montre comment intercepter des erreurs liées à Active Directory dans votre application. Cette procédure pas à pas utilise un [classe AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) pour afficher une bannière publicitaire, mais les concepts généraux qu’il contient s’appliquent également aux publicités interstitielles et aux publicités natives.
+Cette procédure pas à pas montre comment intercepter des erreurs liées à Active Directory dans votre application. Cette procédure pas à pas utilise un [classe AdControl](/uwp/api/microsoft.advertising.winrt.ui.adcontrol) pour afficher une bannière publicitaire, mais les concepts généraux qu’il contient s’appliquent également aux publicités interstitielles et aux publicités natives.
 
 Ces exemples partent du principe que vous disposez d’une application XAML/C# qui contient un **AdControl**. Pour obtenir des instructions pas à pas qui montrent comment ajouter un **AdControl** à votre application, voir [AdControl en XAML et .NET](adcontrol-in-xaml-and--net.md). 
 
@@ -34,7 +34,7 @@ Ces exemples partent du principe que vous disposez d’une application XAML/C# q
       Width="300" />
     ```
 
-2.   Après la propriété **Width**, mais avant la balise de fermeture, affectez le nom d’un gestionnaire d’événements d’erreur à l’événement [ErrorOccurred](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.erroroccurred). Dans cette procédure pas à pas, le nom du gestionnaire d’événements d’erreur est **OnAdError**.
+2.   Après la propriété **Width**, mais avant la balise de fermeture, affectez le nom d’un gestionnaire d’événements d’erreur à l’événement [ErrorOccurred](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.erroroccurred). Dans cette procédure pas à pas, le nom du gestionnaire d’événements d’erreur est **OnAdError**.
     ``` xml
     <UI:AdControl
       ApplicationId="3f83fe91-d6be-434d-a0ae-7351c5a997f1"
@@ -49,7 +49,7 @@ Ces exemples partent du principe que vous disposez d’une application XAML/C# q
 
 3.  Pour générer une erreur lors de l’exécution, créez un second contrôle **AdControl** avec un ID d’application différent. Comme tous les objets **AdControl** d’une application doivent utiliser le même ID d’application, la création d’un objet **AdControl** supplémentaire doté d’un autre ID d’application lève une erreur.
 
-    Définissez un second objet **AdControl** dans le fichier MainPage.xaml juste après le premier **AdControl**, puis définissez la propriété [ApplicationId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) sur zéro (« 0 »).
+    Définissez un second objet **AdControl** dans le fichier MainPage.xaml juste après le premier **AdControl**, puis définissez la propriété [ApplicationId](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) sur zéro (« 0 »).
     ``` xml
     <UI:AdControl
         ApplicationId="0"

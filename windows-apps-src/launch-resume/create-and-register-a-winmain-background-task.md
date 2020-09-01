@@ -9,14 +9,14 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: 1e06a87ce771f603721c928b984d0f57d8e45013
-ms.sourcegitcommit: 1d53d89bd3d044f4a2dc290b93c1ad15a088b361
+ms.openlocfilehash: 72b6196f0b4607f2414eb94220dd31190ef93245
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87547311"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156013"
 ---
-# <a name="create-and-register-a-winmain-com-background-task"></a>Créer et inscrire une tâche en arrière-plan COM WinMain
+# <a name="create-and-register-a-winmain-com-background-task"></a>Créer et inscrire une tâche en arrière-plan COM winmain
 
 > [!TIP]
 > La méthode BackgroundTaskBuilder. SetTaskEntryPointClsid est disponible à partir de Windows 10, version 2004.
@@ -26,18 +26,18 @@ ms.locfileid: "87547311"
 
 **API importantes**
 
--   [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
--   [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
+-   [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
+-   [**BackgroundTaskBuilder**](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
 
 Créez une classe de tâche d’arrière-plan COM et inscrivez-la pour qu’elle s’exécute dans votre application WinMain de confiance totale en réponse aux déclencheurs. Vous pouvez utiliser les tâches en arrière-plan pour fournir des fonctionnalités lorsque votre application est suspendue ou n’est pas en cours d’exécution. Cette rubrique montre comment créer et enregistrer une tâche en arrière-plan qui peut s’exécuter dans votre processus d’application de premier plan ou dans un autre processus.
 
 ## <a name="create-the-background-task-class"></a>Créer la classe de tâche en arrière-plan
 
-Vous pouvez exécuter du code en arrière-plan en écrivant des classes qui implémentent l’interface [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask). Ce code s’exécute lorsqu’un événement spécifique est déclenché à l’aide de, par exemple, [**événement systemtrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) ou [**timetrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.TimeTrigger).
+Vous pouvez exécuter du code en arrière-plan en écrivant des classes qui implémentent l’interface [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask). Ce code s’exécute lorsqu’un événement spécifique est déclenché à l’aide de, par exemple, [**événement systemtrigger**](/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) ou [**timetrigger**](/uwp/api/Windows.ApplicationModel.Background.TimeTrigger).
 
-Les étapes suivantes vous montrent comment écrire une nouvelle classe qui implémente l’interface [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) et l’ajoute à votre processus principal.
+Les étapes suivantes vous montrent comment écrire une nouvelle classe qui implémente l’interface [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) et l’ajoute à votre processus principal.
 
-1.  [**Consultez ces instructions**](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-enhance) pour référencer les API WinRT dans votre solution d’application WinMain empaquetée. Cela est nécessaire pour utiliser IBackgroundTask et les API associées.
+1.  [**Consultez ces instructions**](/windows/apps/desktop/modernize/desktop-to-uwp-enhance) pour référencer les API WinRT dans votre solution d’application WinMain empaquetée. Cela est nécessaire pour utiliser IBackgroundTask et les API associées.
 2.  Dans cette nouvelle classe, implémentez l’interface [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) . La méthode [**IBackgroundTask. Run**](/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) est un point d’entrée obligatoire qui est appelé lorsque l’événement spécifié est déclenché. Cette méthode est requise dans chaque tâche en arrière-plan.
 
 > [!NOTE]
@@ -45,7 +45,7 @@ Les étapes suivantes vous montrent comment écrire une nouvelle classe qui impl
 
 L’exemple de code suivant montre une classe de base de tâche en arrière-plan qui compte des premières et les écrit dans un fichier jusqu’à ce qu’elle soit demandée pour être annulée.
 
-L’exemple C++/WinRT implémente la classe de tâche en arrière-plan en tant que [**coclasse COM**](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/author-coclasses#implement-the-coclass-and-class-factory).
+L’exemple C++/WinRT implémente la classe de tâche en arrière-plan en tant que [**coclasse COM**](../cpp-and-winrt-apis/author-coclasses.md#implement-the-coclass-and-class-factory).
 
 
 <details>
@@ -391,7 +391,7 @@ sampleTaskServer.Start();
 
 ## <a name="register-the-background-task-to-run"></a>Inscrire la tâche en arrière-plan à des fins d’exécution
 
-1.  Déterminez si la tâche en arrière-plan est déjà inscrite en effectuant une itération au sein de la propriété [**BackgroundTaskRegistration. AllTasks**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.alltasks) . *Cette étape est importante*. Si votre application ne vérifie pas les inscriptions de tâches en arrière-plan existantes, elle peut facilement inscrire la tâche plusieurs fois, ce qui entraîne des problèmes de performances et atteignant le temps processeur disponible pour la tâche avant que le travail puisse se terminer. Une application est libre d’utiliser le même point d’entrée pour gérer toutes les tâches en arrière-plan et utiliser d’autres propriétés telles que le [**nom**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.name#Windows_ApplicationModel_Background_BackgroundTaskRegistration_Name) ou le [**taskId**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.taskid#Windows_ApplicationModel_Background_BackgroundTaskRegistration_TaskId) affecté à un [**BackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration) pour décider du travail à effectuer.
+1.  Déterminez si la tâche en arrière-plan est déjà inscrite en effectuant une itération au sein de la propriété [**BackgroundTaskRegistration. AllTasks**](/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.alltasks) . *Cette étape est importante*. Si votre application ne vérifie pas les inscriptions de tâches en arrière-plan existantes, elle peut facilement inscrire la tâche plusieurs fois, ce qui entraîne des problèmes de performances et atteignant le temps processeur disponible pour la tâche avant que le travail puisse se terminer. Une application est libre d’utiliser le même point d’entrée pour gérer toutes les tâches en arrière-plan et utiliser d’autres propriétés telles que le [**nom**](/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.name#Windows_ApplicationModel_Background_BackgroundTaskRegistration_Name) ou le [**taskId**](/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.taskid#Windows_ApplicationModel_Background_BackgroundTaskRegistration_TaskId) affecté à un [**BackgroundTaskRegistration**](/uwp/api/windows.applicationmodel.background.backgroundtaskregistration) pour décider du travail à effectuer.
 
 L’exemple suivant itère sur la propriété **AllTasks** et affecte à une variable d’indicateur la valeur true si la tâche est déjà inscrite.
 
@@ -432,9 +432,9 @@ for (auto const& task : allTasks)
 
 ```
 
-1.  Si la tâche en arrière-plan n’est pas déjà inscrite, utilisez [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) pour créer une instance de votre tâche en arrière-plan. Le point d’entrée de la tâche doit correspondre au nom de votre classe de tâche en arrière-plan précédé de l’espace de noms.
+1.  Si la tâche en arrière-plan n’est pas déjà inscrite, utilisez [**BackgroundTaskBuilder**](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) pour créer une instance de votre tâche en arrière-plan. Le point d’entrée de la tâche doit correspondre au nom de votre classe de tâche en arrière-plan précédé de l’espace de noms.
 
-Le déclencheur de tâche en arrière-plan contrôle à quel moment la tâche en arrière-plan. Pour obtenir la liste des déclencheurs possibles, consultez l’espace de noms [**Windows. ApplicationModel. Background**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background) .
+Le déclencheur de tâche en arrière-plan contrôle à quel moment la tâche en arrière-plan. Pour obtenir la liste des déclencheurs possibles, consultez l’espace de noms [**Windows. ApplicationModel. Background**](/uwp/api/windows.applicationmodel.background) .
 
 > [!NOTE]
 > Seul un sous-ensemble de déclencheurs est pris en charge pour les tâches d’arrière-plan de la WinMain packagé.
@@ -471,7 +471,7 @@ if (!taskRegistered)
 
 ```
 
-1.  Vous pouvez ajouter une condition afin de contrôler à quel moment votre tâche sera exécutée après que l’événement de déclencheur est survenu (facultatif). Par exemple, si vous ne souhaitez pas que la tâche s’exécute tant que Internet n’est pas disponible, utilisez la condition **InternetAvailable**. Pour obtenir la liste des conditions possibles, consultez [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType).
+1.  Vous pouvez ajouter une condition afin de contrôler à quel moment votre tâche sera exécutée après que l’événement de déclencheur est survenu (facultatif). Par exemple, si vous ne souhaitez pas que la tâche s’exécute tant que Internet n’est pas disponible, utilisez la condition **InternetAvailable**. Pour obtenir la liste des conditions possibles, consultez [**SystemConditionType**](/uwp/api/Windows.ApplicationModel.Background.SystemConditionType).
 
 L’exemple de code suivant affecte une condition qui exige la présence de l’utilisateur :
 
@@ -485,7 +485,7 @@ builder.AddCondition(SystemCondition{ SystemConditionType::InternetAvailable });
 // The code in the next step goes here.
 ```
 
-4.  Inscrivez la tâche en arrière-plan en appelant la méthode Register sur l’objet [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) . Stockez le résultat de [**BackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration) afin qu’il puisse être utilisé à l’étape suivante. Notez que la fonction Register peut retourner des erreurs sous la forme d’exceptions. Veillez à appeler Register dans une tentative d’interception.
+4.  Inscrivez la tâche en arrière-plan en appelant la méthode Register sur l’objet [**BackgroundTaskBuilder**](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) . Stockez le résultat de [**BackgroundTaskRegistration**](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration) afin qu’il puisse être utilisé à l’étape suivante. Notez que la fonction Register peut retourner des erreurs sous la forme d’exceptions. Veillez à appeler Register dans une tentative d’interception.
 
 Le code qui suit inscrit la tâche en arrière-plan et stocke le résultat :
 
@@ -1043,9 +1043,9 @@ int wmain(_In_ int argc, _In_reads_(argc) const wchar** argv)
 </details>
 
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarques
 
-Contrairement aux applications UWP qui peuvent exécuter des tâches en arrière-plan en mode de veille moderne, les applications WinMain ne peuvent pas exécuter le code à partir des phases de faible puissance de la mise en veille moderne. Pour en savoir plus, consultez la page [mise en veille moderne](https://docs.microsoft.com/windows-hardware/design/device-experiences/modern-standby) .
+Contrairement aux applications UWP qui peuvent exécuter des tâches en arrière-plan en mode de veille moderne, les applications WinMain ne peuvent pas exécuter le code à partir des phases de faible puissance de la mise en veille moderne. Pour en savoir plus, consultez la page [mise en veille moderne](/windows-hardware/design/device-experiences/modern-standby) .
 
 Consultez les rubriques connexes suivantes pour obtenir des informations de référence sur les API, des recommandations conceptuelles pour les tâches en arrière-plan, ainsi que des instructions plus détaillées pour écrire des applications qui utilisent des tâches en arrière-plan.
 
@@ -1065,8 +1065,8 @@ Consultez les rubriques connexes suivantes pour obtenir des informations de réf
 
 * [Recommandations relatives aux tâches en arrière-plan](guidelines-for-background-tasks.md)
 * [Déboguer une tâche en arrière-plan](debug-a-background-task.md)
-* [Comment déclencher des événements de suspension, de reprise et d’arrière-plan dans des applications UWP (lors du débogage)](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.110).aspx)
+* [Comment déclencher des événements de suspension, de reprise et d’arrière-plan dans des applications UWP (lors du débogage)](/previous-versions/hh974425(v=vs.110))
 
 **Informations de référence d’API de tâche en arrière-plan**
 
-* [**Windows.ApplicationModel.Background**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
+* [**Windows.ApplicationModel.Background**](/uwp/api/Windows.ApplicationModel.Background)

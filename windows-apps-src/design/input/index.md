@@ -1,5 +1,5 @@
 ---
-description: Optimisez votre application pour un stylet, Surface Dial et d’autres types d’entrées.
+description: Découvrez comment personnaliser votre application de plateforme Windows universelle (UWP) pour interagir avec des types spécifiques d’entrées comme le stylet, Surface Dial et la voix.
 title: Entrée et interactions
 keywords: entrées d’application, personnaliser une application UWP
 label: Input and interactions
@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.assetid: b771d452-c3ac-4d97-8482-eaf81bf34306
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c54101306d2382a4e0301e89410d58abfb87743
-ms.sourcegitcommit: dccba7256765116f06cf96143eb3cbaa12d7fe0b
+ms.openlocfilehash: 4fc0fa50bbf015c32934785e96b59924889d2f45
+ms.sourcegitcommit: 45dec3dc0f14934b8ecf1ee276070b553f48074d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87523535"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89094766"
 ---
 # <a name="input-and-interactions"></a>Entrée et interactions
 

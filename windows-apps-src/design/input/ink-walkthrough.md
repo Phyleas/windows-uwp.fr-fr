@@ -1,17 +1,17 @@
 ---
 ms.assetid: ''
-title: Prise en charge de l’encre dans votre application Windows
+title: Entrée manuscrite prise en charge dans votre application Windows
 description: Didacticiel pas à pas pour l’ajout de la prise en charge de l’encre à votre application Windows.
 keywords: encre, entrée manuscrite, tuorial
 ms.date: 01/25/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: d0df2b531510d86591c44bc69f6ed5c6ad9f200f
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 1972a266297d41e357bd2086f8485c154153d582
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234623"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157033"
 ---
 # <a name="tutorial-support-ink-in-your-windows-app"></a>Didacticiel : prendre en charge l’encre dans votre application Windows
 
@@ -27,7 +27,7 @@ Nous nous concentrons sur les éléments suivants :
 * Prise en charge de la reconnaissance des formes de base
 * Enregistrement et chargement de l’encre
 
-Pour plus d’informations sur l’implémentation de ces fonctionnalités, consultez interactions avec le [stylet et Windows Ink dans les applications Windows](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions).
+Pour plus d’informations sur l’implémentation de ces fonctionnalités, consultez interactions avec le [stylet et Windows Ink dans les applications Windows](./pen-and-stylus-interactions.md).
 
 ## <a name="introduction"></a>Introduction
 
@@ -40,8 +40,8 @@ Avec Windows Ink, vous pouvez fournir à vos clients l’équivalent numérique 
 * [SDK Windows 10 (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * Selon votre configuration, vous devrez peut-être installer le package NuGet [Microsoft. Netcore. UniversalWindowsPlatform](https://www.nuget.org/packages/Microsoft.NETCore.UniversalWindowsPlatform) et activer le **mode développeur** dans vos paramètres système (paramètres-> Update & Security-> pour les développeurs-> utiliser les fonctionnalités de développement).
 * Si vous ne connaissez pas le développement d’applications Windows avec Visual Studio, consultez les rubriques suivantes avant de commencer ce didacticiel :  
-    * [Se préparer](https://docs.microsoft.com/windows/uwp/get-started/get-set-up)
-    * [Créer une application « Hello World » (XAML)](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
+    * [Se préparer](../../get-started/get-set-up.md)
+    * [Créer une application « Hello World » (XAML)](../../get-started/create-a-hello-world-app-xaml-universal.md)
 * **[Facultatif]** Un stylet numérique et un ordinateur avec un affichage qui prend en charge l’entrée de ce stylet numérique.
 
 > [!NOTE] 
@@ -66,10 +66,10 @@ Ces objets fournissent la majeure partie de l’expérience d’entrée manuscri
 
 | Composant | Description |
 | --- | --- |
-| [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) | Un contrôle de plateforme d’interface utilisateur XAML, qui reçoit et affiche par défaut toutes les entrées à partir d’un stylet comme un trait d’encre ou un trait d’effacement. |
-| [**InkPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter) | Objet code-behind, instancié avec un contrôle [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) (exposé via la propriété [**InkCanvas. InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.InkPresenter) ). Cet objet fournit toutes les fonctionnalités d’encrage par défaut exposées par l' [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas), ainsi qu’un ensemble complet d’API pour une personnalisation et une personnalisation supplémentaires. |
-| [**InkToolbar**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkToolbar) | Contrôle de plateforme d’interface utilisateur XAML contenant une collection personnalisable et extensible de boutons qui activent les fonctionnalités liées à l’encre dans un [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas)associé. |
-| [**IInkD2DRenderer**](https://docs.microsoft.com/windows/desktop/api/inkrenderer/nn-inkrenderer-iinkd2drenderer)<br/>Nous ne couvrons pas cette fonctionnalité ici. pour plus d’informations, consultez l' [exemple d’encre complexe](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk). | Active le rendu des traits d’encre dans le contexte de périphérique Direct2D désigné d’une application Windows universelle, au lieu du contrôle [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) par défaut. |
+| [**InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas) | Un contrôle de plateforme d’interface utilisateur XAML, qui reçoit et affiche par défaut toutes les entrées à partir d’un stylet comme un trait d’encre ou un trait d’effacement. |
+| [**InkPresenter**](/uwp/api/Windows.UI.Input.Inking.InkPresenter) | Objet code-behind, instancié avec un contrôle [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) (exposé via la propriété [**InkCanvas. InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.InkPresenter) ). Cet objet fournit toutes les fonctionnalités d’encrage par défaut exposées par l' [**InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas), ainsi qu’un ensemble complet d’API pour une personnalisation et une personnalisation supplémentaires. |
+| [**InkToolbar**](/uwp/api/Windows.UI.Xaml.Controls.InkToolbar) | Contrôle de plateforme d’interface utilisateur XAML contenant une collection personnalisable et extensible de boutons qui activent les fonctionnalités liées à l’encre dans un [**InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas)associé. |
+| [**IInkD2DRenderer**](/windows/desktop/api/inkrenderer/nn-inkrenderer-iinkd2drenderer)<br/>Nous ne couvrons pas cette fonctionnalité ici. pour plus d’informations, consultez l' [exemple d’encre complexe](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk). | Active le rendu des traits d’encre dans le contexte de périphérique Direct2D désigné d’une application Windows universelle, au lieu du contrôle [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) par défaut. |
 
 ## <a name="step-1-run-the-sample"></a>Étape 1 : exécuter l’exemple
 
@@ -94,10 +94,10 @@ Vous avez peut-être déjà remarqué que l’application, dans sa forme initial
 
 Nous allons résoudre ce problème.
 
-Pour ajouter la fonctionnalité de base de l’encrage, placez simplement un contrôle [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) sur la page appropriée dans votre application.
+Pour ajouter la fonctionnalité de base de l’encrage, placez simplement un contrôle [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) sur la page appropriée dans votre application.
 
 > [!NOTE]
-> Un InkCanvas a des propriétés de [**hauteur**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Height) et de [**largeur**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Width) par défaut de zéro, sauf s’il s’agit de l’enfant d’un élément qui redimensionne automatiquement ses éléments enfants. 
+> Un InkCanvas a des propriétés de [**hauteur**](/uwp/api/windows.ui.xaml.frameworkelement.Height) et de [**largeur**](/uwp/api/windows.ui.xaml.frameworkelement.Width) par défaut de zéro, sauf s’il s’agit de l’enfant d’un élément qui redimensionne automatiquement ses éléments enfants. 
 
 ### <a name="in-the-sample"></a>Dans l'exemple :
 1. Ouvrez le fichier MainPage.xaml.cs.
@@ -112,7 +112,7 @@ Pour ajouter la fonctionnalité de base de l’encrage, placez simplement un con
 ```
 
 4. Ouvrez le fichier MainPage. Xaml.
-5. Recherchez le code marqué avec le titre de cette étape (« \< !--étape 2 : entrée de base avec InkCanvas--> »).
+5. Recherchez le code marqué avec le titre de cette étape (« \<!-- Step 2: Basic inking with InkCanvas --> »).
 6. Supprimez les marques de commentaire de la ligne suivante.  
 
 ``` xaml
@@ -129,14 +129,14 @@ Vous pouvez maintenant réexécuter l’application. Poursuivez avec Scribble, �
 
 Vous remarquerez que, par défaut, l’encre est prise en charge uniquement pour l’entrée de stylet. Si vous essayez d’écrire ou de dessiner avec votre doigt, votre souris ou votre pavé tactile, vous serez déçu.
 
-Pour faire tourner ce Smiley, vous devez ajouter une deuxième ligne de code. Cette fois-ci, il se trouve dans le code-behind pour le fichier XAML dans lequel vous avez déclaré votre [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas). 
+Pour faire tourner ce Smiley, vous devez ajouter une deuxième ligne de code. Cette fois-ci, il se trouve dans le code-behind pour le fichier XAML dans lequel vous avez déclaré votre [**InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas). 
 
-Dans cette étape, nous allons introduire l’objet [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter) , qui offre une gestion plus fine de l’entrée, du traitement et du rendu de l’entrée manuscrite (standard et modifiée) sur votre [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas).
+Dans cette étape, nous allons introduire l’objet [**InkPresenter**](/uwp/api/windows.ui.input.inking.inkpresenter) , qui offre une gestion plus fine de l’entrée, du traitement et du rendu de l’entrée manuscrite (standard et modifiée) sur votre [**InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas).
 
 > [!NOTE]
 > L’entrée d’encre standard (info-bulle ou bouton de gomme) n’est pas modifiée avec une offre de matériel secondaire, comme un bouton de stylet, un bouton droit de la souris ou un mécanisme similaire. 
 
-Pour activer la souris et l’entrée tactile, définissez la propriété [**InputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.InputDeviceTypes) de l' [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter) sur la combinaison des valeurs de [**CoreInputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.core.coreinputdevicetypes) que vous souhaitez.
+Pour activer la souris et l’entrée tactile, définissez la propriété [**InputDeviceTypes**](/uwp/api/windows.ui.input.inking.inkpresenter.InputDeviceTypes) de l' [**InkPresenter**](/uwp/api/windows.ui.input.inking.inkpresenter) sur la combinaison des valeurs de [**CoreInputDeviceTypes**](/uwp/api/windows.ui.core.coreinputdevicetypes) que vous souhaitez.
 
 ### <a name="in-the-sample"></a>Dans l'exemple :
 1. Ouvrez le fichier MainPage.xaml.cs.
@@ -153,19 +153,19 @@ Pour activer la souris et l’entrée tactile, définissez la propriété [**Inp
 Réexécutez l’application et vous verrez que tous vos rêves de peinture sur un ordinateur ont été vrais !
 
 > [!NOTE]
-> Lorsque vous spécifiez des types de périphériques d’entrée, vous devez indiquer la prise en charge de chaque type d’entrée spécifique (y compris Pen), car la définition de cette propriété remplace le paramètre [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) par défaut.
+> Lorsque vous spécifiez des types de périphériques d’entrée, vous devez indiquer la prise en charge de chaque type d’entrée spécifique (y compris Pen), car la définition de cette propriété remplace le paramètre [**InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas) par défaut.
 
 ## <a name="step-4-add-an-ink-toolbar"></a>Étape 4 : ajouter une barre d’outils d’encre
 
-Le [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) est un contrôle de plateforme UWP qui fournit un ensemble personnalisable et extensible de boutons permettant d’activer les fonctionnalités liées à l’encre. 
+Le [**InkToolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar) est un contrôle de plateforme UWP qui fournit un ensemble personnalisable et extensible de boutons permettant d’activer les fonctionnalités liées à l’encre. 
 
-Par défaut, le [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) comprend un ensemble de boutons de base qui permettent aux utilisateurs de sélectionner rapidement entre un stylo, un crayon, un surligneur ou un gomme, qui peut être utilisé avec un gabarit (règle ou véhicule). Les boutons stylet, crayon et surligneur fournissent chacun un menu volant permettant de sélectionner la couleur et la taille du trait de l’encre.
+Par défaut, le [**InkToolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar) comprend un ensemble de boutons de base qui permettent aux utilisateurs de sélectionner rapidement entre un stylo, un crayon, un surligneur ou un gomme, qui peut être utilisé avec un gabarit (règle ou véhicule). Les boutons stylet, crayon et surligneur fournissent chacun un menu volant permettant de sélectionner la couleur et la taille du trait de l’encre.
 
-Pour ajouter un [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) par défaut à une application d’encrage, placez-le simplement sur la même page que votre [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) et associez les deux contrôles.
+Pour ajouter un [**InkToolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar) par défaut à une application d’encrage, placez-le simplement sur la même page que votre [**InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas) et associez les deux contrôles.
 
 ### <a name="in-the-sample"></a>Dans l’exemple
 1. Ouvrez le fichier MainPage. Xaml.
-2. Recherchez le code marqué avec le titre de cette étape (« \< !--étape 4 : ajouter une barre d’outils d’encre--> »).
+2. Recherchez le code marqué avec le titre de cette étape (« \<!-- Step 4: Add an ink toolbar --> »).
 3. Supprimez les marques de commentaire des lignes suivantes.  
 
 ``` xaml
@@ -177,9 +177,9 @@ Pour ajouter un [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.x
 ```
 
 > [!NOTE]
-> Pour que l’interface utilisateur et le code ne soient pas encombrés et simples, nous utilisons une disposition de grille de base et déclarez le [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) après l' [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) dans une ligne de grille. Si vous la déclarez avant l' [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas), le [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) est affiché en premier, sous le canevas et inaccessible à l’utilisateur.  
+> Pour que l’interface utilisateur et le code ne soient pas encombrés et simples, nous utilisons une disposition de grille de base et déclarez le [**InkToolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar) après l' [**InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas) dans une ligne de grille. Si vous la déclarez avant l' [**InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas), le [**InkToolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar) est affiché en premier, sous le canevas et inaccessible à l’utilisateur.  
 
-Maintenant, exécutez à nouveau l’application pour voir le [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) et essayez certains des outils.
+Maintenant, exécutez à nouveau l’application pour voir le [**InkToolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar) et essayez certains des outils.
 
 ![InkToolbar de Sketchpad de l’espace de travail Ink](images/ink/ink-inktoolbar-default-small.png)
 
@@ -193,11 +193,11 @@ Maintenant, exécutez à nouveau l’application pour voir le [**InkToolbar**](h
 </td>
 <td>
 
-Voici un exemple de **[InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar)** personnalisé (à partir de Sketchpad dans l’espace de travail Windows Ink).
+Voici un exemple de **[InkToolbar](/uwp/api/windows.ui.xaml.controls.inktoolbar)** personnalisé (à partir de Sketchpad dans l’espace de travail Windows Ink).
 
 ![InkToolbar à partir de Sketchpad dans l’espace de travail Ink](images/ink/ink-inktoolbar-sketchpad-small.png)
 
-Pour plus d’informations sur la personnalisation d’un [InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar), consultez [Ajouter un InkToolbar à une application d’écriture manuscrite Windows](ink-toolbar.md).
+Pour plus d’informations sur la personnalisation d’un [InkToolbar](/uwp/api/windows.ui.xaml.controls.inktoolbar), consultez [Ajouter un InkToolbar à une application d’écriture manuscrite Windows](ink-toolbar.md).
 
 </td>
 </tr>
@@ -219,7 +219,7 @@ Dans cette étape, nous utilisons les fonctionnalités de reconnaissance de l’
 
 ### <a name="in-the-sample"></a>Dans l'exemple :
 1. Ouvrez le fichier MainPage. Xaml.
-2. Recherchez le code marqué avec le titre de cette étape (« \< !--étape 5 : prendre en charge la reconnaissance de l’écriture manuscrite--> »).
+2. Recherchez le code marqué avec le titre de cette étape (« \<!-- Step 5: Support handwriting recognition --> »).
 3. Supprimez les marques de commentaire des lignes suivantes.  
 
 ``` xaml
@@ -347,7 +347,7 @@ Pour cet exemple, nous n’essayons pas de redessiner les traits d’encre (bien
 
 ### <a name="in-the-sample"></a>Dans l'exemple :
 1. Ouvrir le fichier MainPage. Xaml
-2. Recherchez le code marqué avec le titre de cette étape (« \< !--étape 6 : reconnaître les formes--> »)
+2. Rechercher le code marqué avec le titre de cette étape (« \<!-- Step 6: Recognize shapes --> »)
 3. Supprimez les marques de commentaire de cette ligne.  
 
 ``` xaml
@@ -402,7 +402,7 @@ Au cours de cette étape, nous allons raccorder les boutons **Save** et **Load**
 
 ### <a name="in-the-sample"></a>Dans l'exemple :
 1. Ouvrez le fichier MainPage. Xaml.
-2. Recherchez le code marqué avec le titre de cette étape (« \< !--étape 7 : enregistrement et chargement de l’encre--> »).
+2. Recherchez le code marqué avec le titre de cette étape (« \<!-- Step 7: Saving and loading ink --> »).
 3. Supprimez les marques de commentaire des lignes suivantes. 
 
 ``` xaml
@@ -464,7 +464,7 @@ Félicitations, vous avez terminé le didacticiel **d’entrée : prise en char
 
 ## <a name="related-articles"></a>Articles connexes
 
-* [Interactions avec le stylet et Windows Ink dans les applications Windows](pen-and-stylus-interactions.md)
+* [Interactions avec le stylet et Windows Ink dans les applications Windows](pen-and-stylus-interactions.md)
 
 ### <a name="samples"></a>Exemples
 

@@ -1,66 +1,66 @@
 ---
 title: Vue d’ensemble de la transformation
-description: Les transformations de matrice gèrent une grande partie des calculs de bas niveau des graphiques 3D.
+description: Les transformations de matrice gèrent un grand nombre des mathématiques de bas niveau des graphiques 3D.
 ms.assetid: B5220EE8-2533-4B55-BF58-A3F9F612B977
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fe97d689711202511dcfec023b718cd1ba9b0b1d
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 0f8efd1984ae8a726870bd8e7aaa3960baf91218
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370933"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156213"
 ---
 # <a name="transform-overview"></a>Vue d’ensemble de la transformation
 
-Les transformations de matrice gèrent une grande partie des calculs de bas niveau des graphiques 3D.
+Les transformations de matrice gèrent un grand nombre des mathématiques de bas niveau des graphiques 3D.
 
-Le pipeline de géométrie prend les vertex en entrée. Le moteur de transformation applique les transformations universelles, de vue et de projection aux vertex, découpe le résultat et transmet le tout au rastériseur.
+Le pipeline Geometry prend des sommets comme entrée. Le moteur de transformation applique les transformations universelles, de vue et de projection aux sommets, découpe le résultat et transmet tout le contenu au rastériseur.
 
 | Transformation et espace                           | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 |-----------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Coordonnées du modèle dans l’espace modèle              | Au début du pipeline, les sommets d’un modèle sont déclarés par rapport à un système de coordonnées local. Il s’agit d’un point d’origine local et d'une orientation. Cette orientation de coordonnées est souvent appelée *espace du modèle*. Les coordonnées individuelles sont appelées *coordonnées du modèle*.                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| Transformation universelle dans l’espace universel              | La première étape du pipeline de géométrie transforme les vertex d’un modèle à partir de leur système de coordonnées local en un système de coordonnées utilisé par tous les objets d'une scène. Le processus de réorientation des vertex est appelé [transformation universelle](world-transform.md), qui convertit l'espace du modèle en une nouvelle orientation appelée *espace universel*. Chaque vertex de l’espace universel est déclaré à l’aide de *coordonnées universelles*.                                                                                                                                                                                                                                                                                                                           |
-| Transformation de vue dans l’espace d’affichage (espace de la caméra) | Dans l’étape suivante, les vertex qui décrivent votre monde en 3D sont adaptés à la caméra. Autrement dit, votre application choisit un point de vue de la scène, puis les coordonnées de l'espace universel sont déplacées et pivotent autour de la vue de la caméra, transformant l'espace universel en *espace de vue* (également appelé *espace de la caméra*). Il s’agit de la [transformation de vue](view-transform.md), qui convertit l’espace universel en espace de vue.                                                                                                                                                                                                                                                                                                                        |
-| Transformation de la projection en espace de projection    | L’étape suivante est la [transformation de la projection](projection-transform.md), qui convertit l’espace de vue en espace de projection. Dans cette partie du pipeline, les objets sont généralement mis à l’échelle en fonction de leur distance par rapport à l'observateur afin de donner une illusion de profondeur à une scène ; l'opération fait apparaître les objets proches plus grands que les objets distants. Par souci de simplicité, cette documentation fait référence à l’espace dans lequel les vertex existent après la transformation de la projection comme *espace de projection*. Certains livres graphiques peuvent se référer à l’espace de projection comme *espace homogène post-perspective*. Toutes les transformations de projection ne mettent pas la taille des objets à l’échelle dans une scène. Ce type de projection est parfois appelé *projection affine* ou *orthogonale*. |
-| Découpage dans l’espace d’écran                      | Dans la partie finale du pipeline, les vertex qui ne seront pas visibles sur l’écran sont supprimés afin que le module de rastérisation ne passe pas de temps à calculer les couleurs et l’ombrage d’un élément qui ne sera jamais affiché. Ce processus est nommé *découpage*. Après découpage, les vertex restants sont mis à l’échelle selon les paramètres de la fenêtre d’affichage et convertis en coordonnées d’écran. Les vertex résultants, visibles sur l’écran lorsque la scène est rastérisée, existent dans l'*espace d’écran*.                                                                                                                                                                                                                                                    |
+| Coordonnées de modèle dans l’espace du modèle              | Au début du pipeline, les vertex d’un modèle sont déclarés par rapport à un système de coordonnées local. Il s’agit d’une origine locale et d’une orientation. Cette orientation des coordonnées est souvent appelée espace de *modèle*. Les coordonnées individuelles sont appelées *coordonnées du modèle*.                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| Transformation universelle en espace universel              | La première étape du pipeline de géométrie transforme les vertex d’un modèle de leur système de coordonnées local en un système de coordonnées utilisé par tous les objets d’une scène. Le processus de réorientation des vertex est appelé la [transformation universelle](world-transform.md), qui convertit de l’espace de modèle en une nouvelle orientation appelée *espace universel*. Chaque vertex dans l’espace universel est déclaré à l’aide de *coordonnées universelles*.                                                                                                                                                                                                                                                                                                                           |
+| Afficher la transformation dans l’espace d’affichage (espace de l’appareil photo) | À l’étape suivante, les vertex qui décrivent votre monde 3D sont orientés par rapport à une caméra. Autrement dit, votre application choisit un point de vue pour la scène, et les coordonnées de l’espace universel sont déplacées et pivotées autour de la vue de l’appareil photo, ce qui fait de l’espace universel dans l' *espace d’affichage* (également appelé *espace de caméra*). Il s’agit de la [transformation de vue](view-transform.md), qui convertit à partir de l’espace universel pour afficher l’espace.                                                                                                                                                                                                                                                                                                                        |
+| Transformation de projection dans l’espace de projection    | L’étape suivante est la [transformation de projection](projection-transform.md), qui convertit l’espace d’affichage en espace de projection. Dans cette partie du pipeline, les objets sont généralement mis à l’échelle en fonction de leur distance par rapport à la visionneuse afin de fournir l’illusion de profondeur à une scène. les objets proches sont rendus plus volumineux que les objets distants. Par souci de simplicité, cette documentation fait référence à l’espace dans lequel les vertex existent après la transformation de projection en tant qu' *espace de projection*. Certains livres graphiques peuvent faire référence à l’espace de projection comme un *espace homogène après la perspective*. Toutes les transformations de projection n’ajustent pas la taille des objets dans une scène. Une projection telle que celle-ci est parfois appelée projection *affine* ou *orthogonale*. |
+| Découpage dans l’espace à l’écran                      | Dans la dernière partie du pipeline, tous les vertex qui ne seront pas visibles à l’écran sont supprimés, de sorte que le rastériseur ne prend pas le temps de calculer les couleurs et l’ombrage pour un élément qui ne sera jamais visible. Ce processus est appelé *découpage*. Après le découpage, les sommets restants sont mis à l’échelle en fonction des paramètres de la fenêtre d’affichage et convertis en coordonnées d’écran. Les vertex résultants, visibles à l’écran lorsque la scène est pixellisée, existent dans l’espace à l' *écran*.                                                                                                                                                                                                                                                    |
 
  
 
-Les transformations sont utilisées pour convertir la géométrie de l’objet d’un espace de coordonnées à un autre. Direct3D utilise des matrices pour effectuer les transformations 3D. Les matrices créent des transformations 3D. Vous pouvez combiner des matrices pour produire une matrice unique qui englobe plusieurs transformations.
+Les transformations sont utilisées pour convertir la géométrie d’un objet d’un espace de coordonnées à un autre. Direct3D utilise des matrices pour effectuer des transformations 3D. Les matrices créent des transformations 3D. Vous pouvez combiner des matrices pour produire une matrice unique qui englobe plusieurs transformations.
 
-Vous pouvez transformer les coordonnées entre l’espace du modèle, l'espace universel et l'espace de vue.
+Vous pouvez transformer les coordonnées entre l’espace de modèle, l’espace universel et l’espace d’affichage.
 
--   [Transformation universelle](world-transform.md) : convertit de l'espace du modèle à l'espace universel.
--   [Transformation de vue](view-transform.md) : convertit de l’espace universel à l’espace de vue.
--   [Transformation de projection](projection-transform.md) : convertit de l’espace de vue à l'espace de projection.
+-   [Transformation universelle](world-transform.md) : convertit de l’espace de modèle en espace universel.
+-   [Afficher la transformation](view-transform.md) : convertit à partir de l’espace universel pour afficher l’espace.
+-   [Transformation de projection](projection-transform.md) : convertit l’espace d’affichage en espace de projection.
 
-## <a name="span-idmatrixtransformsspanspan-idmatrixtransformsspanspan-idmatrixtransformsspanmatrix-transforms"></a><span id="Matrix_Transforms"></span><span id="matrix_transforms"></span><span id="MATRIX_TRANSFORMS"></span>Transformations de matrice
+## <a name="span-idmatrix_transformsspanspan-idmatrix_transformsspanspan-idmatrix_transformsspanmatrix-transforms"></a><span id="Matrix_Transforms"></span><span id="matrix_transforms"></span><span id="MATRIX_TRANSFORMS"></span>Transformations de matrice
 
 
-Dans les applications qui fonctionnent avec des graphiques 3D, vous pouvez utiliser les transformations géométriques pour effectuer les opérations suivantes :
+Dans les applications qui fonctionnent avec des graphiques 3D, vous pouvez utiliser les transformations géométriques pour effectuer les opérations suivantes :
 
--   Exprimer l’emplacement d’un objet par rapport à un autre.
--   Faire pivoter et dimensionner des objets.
--   Modifier les positions d’affichage, les directions et les perspectives.
+-   Exprimer l’emplacement d’un objet par rapport à un autre objet.
+-   Faire pivoter et dimensionner les objets.
+-   Modifiez les positions, les directions et les perspectives d’affichage.
 
-Vous pouvez transformer n’importe quel point (x, y, z) en un autre (x », y », z ») à l’aide d’une matrice 4 x 4, comme le montre l’équation suivante.
+Vous pouvez transformer n’importe quel point (x, y, z) en un autre point (x, y, z) à l’aide d’une matrice 4x4, comme illustré dans l’équation suivante.
 
-![équation de la transformation de n’importe quel point en un autre point](images/matmult.png)
+![équation de la transformation de tout point en un autre point](images/matmult.png)
 
-Effectuer les équations suivantes sur (x, y, z) et la matrice pour produire le point (x », y », z »).
+Effectuez les équations suivantes sur (x, y, z) et la matrice pour produire le point (x, y, z).
 
-![équations du nouveau point](images/matexpnd.png)
+![équations pour le nouveau point](images/matexpnd.png)
 
-Les transformations les plus courants sont la translation, la rotation et la mise à l’échelle. Vous pouvez combiner les matrices qui produisent ces effets en une matrice unique pour calculer plusieurs transformations à la fois. Par exemple, vous pouvez créer une matrice unique pour traduire et faire pivoter une série de points.
+Les transformations les plus courantes sont la traduction, la rotation et la mise à l’échelle. Vous pouvez combiner les matrices qui produisent ces effets dans une seule matrice pour calculer plusieurs transformations à la fois. Par exemple, vous pouvez créer une matrice unique pour traduire et faire pivoter une série de points.
 
-Les matrices s'écrivent dans l’ordre rangée-colonne. Une matrice qui s’adapte uniformément à des sommets le long de chaque axe, ce que l'on appelle mise à l’échelle uniforme, est représentée par la matrice suivante à l’aide d'une notation mathématique.
+Les matrices sont écrites dans l’ordre des colonnes de lignes. Une matrice qui ajuste uniformément les sommets le long de chaque axe, appelée mise à l’échelle uniforme, est représentée par la matrice suivante à l’aide de la notation mathématique.
 
-![équation d’une matrice de mise à l’échelle uniforme](images/matrix.png)
+![équation d’une matrice pour la mise à l’échelle uniforme](images/matrix.png)
 
-En langage C++, Direct3D déclare les matrices sous forme de tableau à deux dimensions à l’aide d’une structure de matrice. L’exemple suivant montre comment initialiser une structure [**D3DMATRIX**](https://docs.microsoft.com/windows/desktop/direct3d9/d3dmatrix) pour qu'elle agisse comme une mise à l’échelle uniforme de matrice (facteur d’échelle « s »).
+En C++, Direct3D déclare des matrices sous la forme d’un tableau à deux dimensions, à l’aide d’un struct de matrice. L’exemple suivant montre comment initialiser une structure [**D3DMATRIX**](/windows/desktop/direct3d9/d3dmatrix) pour qu’elle agisse comme une matrice de mise à l’échelle uniforme (facteur d’échelle « s »).
 
 ```cpp
 D3DMATRIX scale = {
@@ -74,11 +74,11 @@ D3DMATRIX scale = {
 ## <a name="span-idtranslatespanspan-idtranslatespanspan-idtranslatespantranslate"></a><span id="Translate"></span><span id="translate"></span><span id="TRANSLATE"></span>Traduire
 
 
-L’équation suivante convertit le point (x, y, z) en un nouveau point (x », y », z »).
+L’équation suivante traduit le point (x, y, z) en un nouveau point (x, y, z).
 
 ![équation d’une matrice de translation pour un nouveau point](images/transl8.png)
 
-Vous pouvez créer manuellement une matrice de translation en C++. L’exemple suivant montre le code source d'une fonction qui crée une matrice pour opérer une translation de vertex.
+Vous pouvez créer manuellement une matrice de traduction en C++. L’exemple suivant montre le code source d’une fonction qui crée une matrice pour traduire des vertex.
 
 ```cpp
 D3DXMATRIX Translate(const float dx, const float dy, const float dz) {
@@ -92,19 +92,19 @@ D3DXMATRIX Translate(const float dx, const float dy, const float dz) {
 }    // End of Translate
 ```
 
-## <a name="span-idscalespanspan-idscalespanspan-idscalespanscale"></a><span id="Scale"></span><span id="scale"></span><span id="SCALE"></span>Mise à l’échelle
+## <a name="span-idscalespanspan-idscalespanspan-idscalespanscale"></a><span id="Scale"></span><span id="scale"></span><span id="SCALE"></span>Échelle
 
 
-L’équation suivante met à l'échelle le point (x, y, z) à l'aide de valeurs arbitraires dans les directions x, y et z vers un nouveau point (x », y », z »).
+L’équation suivante met à l’échelle le point (x, y, z) en valeurs arbitraires dans les directions x, y et z vers un nouveau point (x, y, z).
 
-![équation d’une matrice de mise à l'échelle pour un nouveau point](images/matscale.png)
+![équation d’une matrice de mise à l’échelle pour un nouveau point](images/matscale.png)
 
-## <a name="span-idrotatespanspan-idrotatespanspan-idrotatespanrotate"></a><span id="Rotate"></span><span id="rotate"></span><span id="ROTATE"></span>Rotate
+## <a name="span-idrotatespanspan-idrotatespanspan-idrotatespanrotate"></a><span id="Rotate"></span><span id="rotate"></span><span id="ROTATE"></span>MUTE
 
 
-Les transformations décrites ici conviennent à des systèmes de coordonnées pour gaucher et peuvent donc différer des matrices de transformation que vous avez vues ailleurs.
+Les transformations décrites ici sont destinées aux systèmes de coordonnées de gauche et peuvent être différentes des matrices de transformation que vous avez vues ailleurs.
 
-L’équation suivante fait pivoter le point (x, y, z) autour de l’axe x, produisant un nouveau point (x », y », z »).
+L’équation suivante fait pivoter le point (x, y, z) autour de l’axe x, produisant un nouveau point (x, y, z).
 
 ![équation d’une matrice de rotation x pour un nouveau point](images/matxrot.png)
 
@@ -116,9 +116,9 @@ L’équation suivante fait pivoter le point autour de l’axe z.
 
 ![équation d’une matrice de rotation z pour un nouveau point](images/matzrot.png)
 
-Dans ces exemples de matrices, la lettre grecque thêta symbolise l’angle de rotation, en radians. Les angles sont mesurés dans le sens des aiguilles d'une montre en regardant le long de l’axe de rotation et en remontant vers l’origine.
+Dans ces exemples de matrices, la lettre grecque thêta représente l’angle de rotation, en radians. Les angles sont mesurés dans le sens des aiguilles d’une montre sur l’axe de rotation vers l’origine.
 
-Le code suivant montre une fonction permettant de gérer la rotation autour de l’axe X.
+Le code suivant illustre une fonction permettant de gérer la rotation autour de l’axe X.
 
 ```cpp
     // Inputs are a pointer to a matrix (pOut) and an angle in radians.
@@ -134,24 +134,24 @@ Le code suivant montre une fonction permettant de gérer la rotation autour de l
 }
 ```
 
-## <a name="span-idconcatenatingmatricesspanspan-idconcatenatingmatricesspanspan-idconcatenatingmatricesspanconcatenating-matrices"></a><span id="Concatenating_Matrices"></span><span id="concatenating_matrices"></span><span id="CONCATENATING_MATRICES"></span>Concaténation de Matrices
+## <a name="span-idconcatenating_matricesspanspan-idconcatenating_matricesspanspan-idconcatenating_matricesspanconcatenating-matrices"></a><span id="Concatenating_Matrices"></span><span id="concatenating_matrices"></span><span id="CONCATENATING_MATRICES"></span>Concaténation de matrices
 
 
-L’un des avantages de l’utilisation de matrices est que vous pouvez combiner les effets de deux matrices (ou davantage) en les multipliant. Cela signifie que, pour faire pivoter un modèle et le translater vers un emplacement, vous n’avez pas besoin d’appliquer deux matrices. Il suffit de multiplier les matrices de rotation et la translation pour produire une matrice composite qui contient tous leurs effets. Ce processus, appelé concaténation de matrice, peut s'écrire avec l’équation suivante.
+L’un des avantages de l’utilisation des matrices est que vous pouvez combiner les effets de deux matrices ou plus en les multipliant. Cela signifie que, pour faire pivoter un modèle, puis le traduire à un emplacement donné, vous n’avez pas besoin d’appliquer deux matrices. Au lieu de cela, vous multipliez les matrices de rotation et de translation pour produire une matrice composite qui contient tous les effets. Ce processus, appelé concaténation de matrice, peut être écrit avec l’équation suivante.
 
-![équation d'une concaténation de matrices](images/matrxcat.png)
+![équation de la concaténation de matrice](images/matrxcat.png)
 
-Dans cette équation, C est la matrice composite en cours de création et les matrices M₁ à Mₙ sont les matrices individuelles. Dans la plupart des cas, seules deux ou trois matrices sont concaténées, mais il n’existe aucune limite.
+Dans cette équation, C est la matrice composite en cours de création et M ₁ à mn sont les matrices individuelles. Dans la plupart des cas, seules deux ou trois matrices sont concaténées, mais il n’existe aucune limite.
 
-L’ordre dans lequel les matrices sont multipliées est essentiel. La formule précédente reflète la règle de concaténation de matrices de gauche à droite. Autrement dit, les effets visibles des matrices que vous utilisez pour créer une matrice composite se produisent de gauche à droite. L’exemple suivant montre une matrice universelle standard. Supposons que vous souhaitiez créer la matrice universelle d'un stéréotype de soucoupe volante. Vous voudrez probablement faire tourner cette soucoupe volante autour de son centre (l’axe y de l’espace du modèle) et le déplacer vers un autre emplacement de votre scène. Pour réaliser cet effet, vous devez tout d’abord créer une matrice de rotation et la multiplier par une matrice de translation, comme dans l’équation suivante.
+L’ordre dans lequel la multiplication de la matrice est effectuée est essentiel. La formule précédente reflète la règle de la concaténation de matrice de gauche à droite. Autrement dit, les effets visibles des matrices que vous utilisez pour créer une matrice composite se produisent dans l’ordre de gauche à droite. L’exemple suivant illustre une matrice universelle classique. Imaginez que vous créez la matrice universelle pour un soubattante volante de stéréotype. Vous souhaiterez probablement faire tourner le volant volant autour de son centre-l’axe y de l’espace de modèle, et le traduire à un autre emplacement de votre scène. Pour obtenir cet effet, vous créez d’abord une matrice de rotation, puis vous la multipliez par une matrice de traduction, comme illustré dans l’équation suivante.
 
-![équation de rotation basé sur une matrice de rotation et une matrice de translation](images/wrldexpl.png)
+![équation de spin basée sur une matrice de rotation et une matrice de traduction](images/wrldexpl.png)
 
-Dans cette formule, R<sub>y</sub> est une matrice de rotation autour de l’axe y et T<sub>w</sub> est une translation vers une position en coordonnées universelles.
+Dans cette formule, R<sub>y</sub> est une matrice de rotation autour de l’axe des y et T<sub>w</sub> est une translation à une position en coordonnées universelles.
 
-L’ordre dans lequel vous multipliez les matrices est important car, contrairement à la multiplication de deux valeurs scalaires, la multiplication de matrices n’est pas commutative. La multiplication des matrices dans l’ordre inverse donne l'impression de voir translater la soucoupe volante vers sa position dans l’espace universel, puis de la voir pivoter autour de l’origine du monde.
+L’ordre dans lequel vous multipliez les matrices est important car, contrairement à la multiplication de deux valeurs scalaires, la multiplication de matrices n’est pas commutative. La multiplication des matrices dans l’ordre opposé a pour effet visuel de traduire le volant volant en position d’espace universel, puis de le faire pivoter autour de l’origine du monde.
 
-Quel que soit le type de matrice que vous créez, n’oubliez pas la règle de gauche à droite pour être sûr d'obtenir les effets escomptés.
+Quel que soit le type de matrice que vous créez, n’oubliez pas la règle de gauche à droite pour vous assurer que vous atteignez les effets attendus.
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
@@ -161,7 +161,3 @@ Quel que soit le type de matrice que vous créez, n’oubliez pas la règle de g
  
 
  
-
-
-
-

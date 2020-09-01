@@ -7,12 +7,12 @@ ms.date: 11/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
-ms.openlocfilehash: 9998436b106acce6a9223140e66d2633c2210a54
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: c4f1857ba4afe5eba271f7022c64aca26eb6b6b8
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493354"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156933"
 ---
 # <a name="understand-user-profile-languages-and-app-manifest-languages"></a>Comprendre les langues de profil utilisateur et les langues du manifeste de l’application
 Un utilisateur Windows peut utiliser des **paramètres**  >  **&**  >  **région de langue & langue** pour configurer une liste triée de langues d’affichage préférées, ou simplement une langue d’affichage par défaut unique. Une langue peut avoir une variante régionale. Par exemple, vous pouvez sélectionner la langue espagnole telle qu’elle est parlée en Espagne, espagnole parlée au Mexique, espagnol comme parlé dans le États-Unis, entre autres.
@@ -170,7 +170,7 @@ Le tableau suivant contient des exemples de ce que l’utilisateur peut voir dan
 </tr>
 <tr>
 <td align="left">Espagnol (Espagne) (par défaut) ; espagnol (Mexique) ; espagnol (Amérique latine) ; portugais (Brésil)</td>
-<td align="left">Anglais (US)</td>
+<td align="left">Anglais (États-Unis)</td>
 <td align="left">aucun</td>
 <td align="left">Espagnol (Espagne)</td>
 <td align="left">Interface utilisateur : espagnol (Espagne) (utilise le paramètre par défaut car aucune langue de base n’est disponible pour l’anglais)<br>Dates/Heures/Nombres : espagnol (Espagne)</td>
@@ -193,7 +193,7 @@ Le tableau suivant contient des exemples de ce que l’utilisateur peut voir dan
 </table>
 
 >[!NOTE]
-> Pour obtenir la liste des codes pays/région standard utilisés par Microsoft, consultez la [liste pays/région officiels](/windows/uwp/publish/supported-languages).
+> Pour obtenir la liste des codes pays/région standard utilisés par Microsoft, consultez la [liste pays/région officiels](../../publish/supported-languages.md).
 
 ## <a name="important-apis"></a>API importantes
 * [GlobalizationPreferences. langues](/uwp/api/windows.system.userprofile.globalizationpreferences.Languages)

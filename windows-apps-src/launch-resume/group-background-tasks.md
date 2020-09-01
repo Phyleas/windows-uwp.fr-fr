@@ -1,37 +1,37 @@
 ---
-title: Regrouper une inscription de la tâche en arrière-plan.
-description: Inscrivez/désinscrivez des tâches en arrière-plan dans un groupe, afin d’isoler ces inscriptions.
+title: Grouper l’inscription des tâches en arrière-plan
+description: Inscrire/désinscrire des tâches en arrière-plan dans le cadre d’un groupe pour isoler ces inscriptions.
 ms.date: 04/05/2017
 ms.topic: article
-keywords: Windows 10, tâche en arrière-plan
-ms.openlocfilehash: a70c814e5e35359746076c5418d1f1d973e61773
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+keywords: Windows 10, tâche en arrière-plan
+ms.openlocfilehash: 61419ac45acd27758e3c874ac4b03510561ccaf8
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57623854"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89155863"
 ---
-# <a name="group-background-task-registration"></a>Regrouper une inscription de la tâche en arrière-plan.
+# <a name="group-background-task-registration"></a>Grouper l’inscription des tâches en arrière-plan
 
 **API importantes**
 
-[Classe de BackgroundTaskRegistrationGroup](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistrationgroup)
+[BackgroundTaskRegistrationGroup, classe](/uwp/api/windows.applicationmodel.background.backgroundtaskregistrationgroup)
 
-Les tâches en arrière-plan peuvent désormais être inscrites dans un groupe, que vous pouvez considérer comme un espace de noms logique. Cette isolation contribue à garantir que les différents composants d’une application, ou les différentes bibliothèques, n’interfèrent pas avec les inscriptions de tâche en arrière-plan des autres.
+Les tâches en arrière-plan peuvent maintenant être inscrites dans un groupe, que vous pouvez considérer comme un espace de noms logique. Cette isolation permet de s’assurer que les différents composants d’une application, ou des bibliothèques différentes, n’interfèrent pas avec l’inscription des tâches en arrière-plan de l’autre.
 
-Lorsqu’une application et l’infrastructure (ou bibliothèque) qu’elle utilise inscrit une tâche en arrière-plan qui porte le même nom, l’application peut par inadvertance supprimer les inscriptions des tâches en arrière-plan de l’infrastructure. Les auteurs d’application peuvent également supprimer accidentellement des inscriptions de tâches en arrière-plan d’infrastructure et de bibliothèque car ils peuvent désinscrire toutes les tâches en arrière-plan inscrites à l’aide de [BackgroundTaskRegistration.AllTasks](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.AllTasks).  Les groupes vous permettent d’isoler vos inscriptions de tâche en arrière-plan pour que cela ne se produise pas.
+Lorsqu’une application et l’infrastructure (ou bibliothèque) qu’elle utilise inscrit une tâche en arrière-plan portant le même nom, elle peut supprimer par inadvertance les inscriptions de tâches en arrière-plan du Framework. Les créateurs d’applications peuvent également supprimer accidentellement des inscriptions de tâches en arrière-plan de Framework et de bibliothèque, car elles peuvent annuler l’inscription de toutes les tâches d’arrière-plan inscrites à l’aide de [BackgroundTaskRegistration. AllTasks](/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.AllTasks).  Avec les groupes, vous pouvez isoler vos inscriptions de tâches en arrière-plan, ce qui ne se produit pas.
 
-## <a name="features-of-groups"></a>Caractéristiques des groupes
+## <a name="features-of-groups"></a>Fonctionnalités des groupes
 
-* Les groupes peuvent être identifiés de façon unique à l’aide d’un GUID. Ils peuvent également être associés à une chaîne de nom conviviale qui simplifie la lecture pendant le débogage.
-* Plusieurs tâches en arrière-plan peuvent être inscrites dans un groupe.
-* Les tâches en arrière-plan inscrites dans un groupe ne s’affichent pas dans [BackgroundTaskRegistration.AllTasks](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.AllTasks). Par conséquent, les applications qui utilisent actuellement **BackgroundTaskRegistration.AllTasks** pour désinscrire leurs tâches ne vont pas désinscrire par inadvertance leurs tâches en arrière-plan inscrites dans un groupe. Consultez [annuler l’inscription de tâches en arrière-plan dans un groupe](#unregister-background-tasks-in-a-group) ci-dessous pour voir comment annuler l’inscription de tous les déclencheurs d’arrière-plan qui ont été enregistrés en tant que partie d’un groupe.
-* Chaque inscription de tâche en arrière-plan est dotée d’une propriété Group permettant de déterminer le groupe auquel elle est associée.
-* Tâches en arrière-plan de l’inscription d’In-Process avec un groupe entraîne l’activation à passer par [BackgroundTaskRegistrationGroup.BackgroundActivated](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistrationgroup.BackgroundActivated) événements au lieu de [Application.OnBackgroundActivated](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onbackgroundactivated#Windows_UI_Xaml_Application_OnBackgroundActivated_Windows_ApplicationModel_Activation_BackgroundActivatedEventArgs_).
+* Les groupes peuvent être identifiés de manière unique par un GUID. Elles peuvent également avoir une chaîne de nom conviviale associée qui est plus facile à lire pendant le débogage.
+* Plusieurs tâches en arrière-plan peuvent être enregistrées dans un groupe.
+* Les tâches en arrière-plan enregistrées dans un groupe n’apparaissent pas dans [BackgroundTaskRegistration. AllTasks](/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.AllTasks). Par conséquent, les applications qui utilisent actuellement **BackgroundTaskRegistration. AllTasks** pour annuler l’inscription de leurs tâches ne désinscrivent pas par inadvertance les tâches d’arrière-plan inscrites dans un groupe. Consultez [Annuler l’inscription des tâches en arrière-plan dans un groupe](#unregister-background-tasks-in-a-group) ci-dessous pour savoir comment annuler l’inscription de tous les déclencheurs d’arrière-plan qui ont été enregistrés dans le cadre d’un groupe.
+* Chaque inscription de tâche en arrière-plan aura une propriété de groupe pour déterminer à quel groupe il est associé.
+* L’inscription des tâches en arrière-plan in-process avec un groupe entraîne l’activation de l’événement [BackgroundTaskRegistrationGroup. BackgroundActivated](/uwp/api/windows.applicationmodel.background.backgroundtaskregistrationgroup.BackgroundActivated) au lieu de [application. OnBackgroundActivated](/uwp/api/windows.ui.xaml.application.onbackgroundactivated#Windows_UI_Xaml_Application_OnBackgroundActivated_Windows_ApplicationModel_Activation_BackgroundActivatedEventArgs_).
 
 ## <a name="register-a-background-task-in-a-group"></a>Inscrire une tâche en arrière-plan dans un groupe
 
-L’exemple suivant montre comment inscrire une tâche en arrière-plan (déclenchée par un changement de fuseau horaire, dans cet exemple) comme élément d’un groupe.
+L’exemple suivant montre comment enregistrer une tâche en arrière-plan (déclenchée par une modification de fuseau horaire, dans cet exemple) dans le cadre d’un groupe.
 
 ```csharp
 private const string groupFriendlyName = "myGroup";
@@ -75,10 +75,10 @@ public static void RegisterBackgroundTaskInGroup()
 }
 ```
 
-## <a name="unregister-background-tasks-in-a-group"></a>Désinscrire des tâches en arrière-plan d’un groupe
+## <a name="unregister-background-tasks-in-a-group"></a>Annuler l’inscription des tâches en arrière-plan dans un groupe
 
-Voici comment désinscrire des tâches en arrière-plan qui ont été inscrites comme éléments d’un groupe.
-Comme les tâches en arrière-plan inscrites dans un groupe n’apparaissent pas dans [BackgroundTaskRegistration.AllTasks](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.AllTasks), vous devez parcourir les groupes, trouver les tâches en arrière-plan inscrites dans chaque groupe et les désinscrire.
+L’exemple suivant montre comment annuler l’inscription des tâches en arrière-plan qui ont été inscrites dans le cadre d’un groupe.
+Étant donné que les tâches en arrière-plan enregistrées dans un groupe n’apparaissent pas dans [BackgroundTaskRegistration. AllTasks](/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.AllTasks), vous devez itérer au sein des groupes, rechercher les tâches en arrière-plan inscrites dans chaque groupe et annuler leur inscription.
 
 ```csharp
 private static void UnRegisterAllTasks()
@@ -102,7 +102,7 @@ private static void UnRegisterAllTasks()
 
 ## <a name="register-persistent-events"></a>Inscrire des événements persistants
 
-Lorsque vous inscrivez des tâches en arrière-plan dans des groupes pour des tâches en arrière-plan in-process, les activations en arrière-plan sont dirigées vers l’événement du groupe et non vers celui de l’objet Application ou CoreApplication. Cela permet à plusieurs composants de votre application de gérer l’activation, plutôt que de placer tous les chemins de code d’activation dans l’objet Application. L’exemple suivant montre comment s’inscrire à l’événement d’arrière-plan activé du groupe. Vérifiez d’abord [BackgroundTaskRegistration.GetTaskGroup](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.gettaskgroup) pour déterminer si le groupe a déjà été inscrit. Si ce n’est pas le cas, créez un groupe avec votre identifiant et un nom convivial. Ensuite, inscrivez un gestionnaire d’événements à l’événement BackgroundActivated sur le groupe.
+Lorsque vous utilisez des groupes d’inscription de tâche en arrière-plan avec des tâches en arrière-plan in-process, les activations en arrière-plan sont dirigées vers l’événement du groupe au lieu de celui de l’objet application ou CoreApplication. Cela permet à plusieurs composants dans votre application de gérer l’activation plutôt que de placer tous les chemins de code d’activation dans l’objet d’application. L’exemple suivant montre comment s’inscrire pour l’événement d’arrière-plan du groupe. Commencez par vérifier [BackgroundTaskRegistration. GetTaskGroup](/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.gettaskgroup) pour déterminer si le groupe a déjà été inscrit. Si ce n’est pas le cas, créez un nouveau groupe avec votre ID et votre nom convivial. Ensuite, inscrivez un gestionnaire d’événements à l’événement BackgroundActivated sur le groupe.
 
 ```csharp
 void RegisterPersistentEvent()

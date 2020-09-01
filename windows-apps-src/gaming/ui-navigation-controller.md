@@ -4,14 +4,14 @@ description: Utilisez les API du contrôleur de navigation d’interface utilisa
 ms.assetid: 5A14926D-8C2E-4DE8-AAFB-BEEB9BFE91A5
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp, jeux, interface utilisateur, navigation
+keywords: Windows 10, UWP, jeux, interface utilisateur, navigation
 ms.localizationpriority: medium
-ms.openlocfilehash: ec5ba9d893a622e256030601cca204abab35045f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7cf5369bd01fbcf95c5af7bddc7055958cc50299
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57599924"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159083"
 ---
 # <a name="ui-navigation-controller"></a>Contrôleur de navigation d’interface utilisateur
 
@@ -40,14 +40,14 @@ Les commandes directionnelles sont conçues pour une [navigation en mode focus 
 Le tableau suivant récapitule ces commandes et leurs usages prévus, illustrés par des exemples.
 | Commande | Usage prévu
 | -------:| ---------------
-|      Up (Haut) | Navigation vers le haut en mode focus XY
-|    Vers le bas | Navigation vers le bas en mode focus XY
-|    Left (Gauche) | Navigation vers la gauche en mode focus XY
-|   Droit | Navigation vers la droite en mode focus XY
+|      Haut | Navigation vers le haut en mode focus XY
+|    Descendre | Navigation vers le bas en mode focus XY
+|    Gauche | Navigation vers la gauche en mode focus XY
+|   Right | Navigation vers la droite en mode focus XY
 |    Affichage | Affichage des informations de jeu _(score, statistiques de jeu, objectifs, carte du monde ou d’une zone)_
 |    Menu | Menu principal / Pause _(paramètres, état, équipement, inventaire, pause)_
-|  Accept | Réponse affirmative _(accepter, avancer, confirmer, démarrer, oui)_
-|  Cancel | Réponse négative _(rejeter, inverser, refuser, arrêter, non)_
+|  Acceptation | Réponse affirmative _(accepter, avancer, confirmer, démarrer, oui)_
+|  Annuler | Réponse négative _(rejeter, inverser, refuser, arrêter, non)_
 
 
 ### <a name="optional-set"></a>Ensemble facultatif
@@ -59,10 +59,10 @@ Les commandes contextuelles sont conçues explicitement pour des raccourcis de n
 Le tableau suivant récapitule ces commandes et leurs usages prévus.
 |     Commande | Usage prévu
 | -----------:| ------------
-|      PageUp (Pg. préc) | Aller vers le haut (à la page ou au groupe supérieur/précédent, verticalement)
-|    PageDown (Pg. suiv) | Aller vers le bas (à la page ou au groupe inférieur/suivant, verticalement)
-|    PageLeft (Page gauche) | Aller à gauche (à la page ou au groupe à gauche/précédent, horizontalement)
-|   PageRight (Page droite) | Aller à droite (à la page ou au groupe à droite/suivant, horizontalement)
+|      Pg préc | Aller vers le haut (à la page ou au groupe supérieur/précédent, verticalement)
+|    Pg suiv | Aller vers le bas (à la page ou au groupe inférieur/suivant, verticalement)
+|    PageLeft | Aller à gauche (à la page ou au groupe à gauche/précédent, horizontalement)
+|   PageRight | Aller à droite (à la page ou au groupe à droite/suivant, horizontalement)
 |    ScrollUp (Faire défiler vers le haut) | Faire défiler vers le haut (au sein de l’élément d’interface utilisateur ou du groupe de défilement actif)
 |  ScrollDown (Faire défiler vers le bas) | Faire défiler vers le bas (au sein de l’élément d’interface utilisateur ou du groupe de défilement actif)
 |  ScrollLeft (Faire défiler vers la gauche) | Faire défiler vers la gauche (au sein de l’élément d’interface utilisateur ou du groupe de défilement actif)
@@ -82,31 +82,31 @@ Le tableau suivant récapitule les mappages entre les commandes de navigation de
 
 | Commande de navigation | Entrée boîtier de commande                       | Entrée stick arcade | Entrée volant de course |
 | ------------------:| ----------------------------------- | ------------------ | ------------------ |
-|                 Up (Haut) | Stick analogique gauche vers le haut / bouton multidirectionnel vers le haut       | Stick vers le haut           | Bouton multidirectionnel vers le haut           |
-|               Vers le bas | Stick analogique gauche vers le bas / bouton multidirectionnel vers le bas   | Stick vers le bas         | Bouton multidirectionnel vers le bas         |
-|               Left (Gauche) | Stick analogique gauche vers la gauche / bouton multidirectionnel vers la gauche   | Stick vers la gauche         | Bouton multidirectionnel vers la gauche         |
-|              Droit | Stick analogique gauche vers la droite / bouton multidirectionnel vers la droite | Stick vers la droite        | Bouton multidirectionnel vers la droite        |
+|                 Haut | Stick analogique gauche vers le haut / bouton multidirectionnel vers le haut       | Stick vers le haut           | Bouton multidirectionnel vers le haut           |
+|               Descendre | Stick analogique gauche vers le bas / bouton multidirectionnel vers le bas   | Stick vers le bas         | Bouton multidirectionnel vers le bas         |
+|               Gauche | Stick analogique gauche vers la gauche / bouton multidirectionnel vers la gauche   | Stick vers la gauche         | Bouton multidirectionnel vers la gauche         |
+|              Right | Stick analogique gauche vers la droite / bouton multidirectionnel vers la droite | Stick vers la droite        | Bouton multidirectionnel vers la droite        |
 |               Affichage | Bouton Afficher                         | Bouton Afficher        | Bouton Afficher        |
 |               Menu | Bouton Menu                         | Bouton Menu        | Bouton Menu        |
-|             Accept | Bouton A                            | Bouton Action 1    | Bouton A           |
-|             Cancel | Bouton B                            | Bouton Action 2    | Bouton B           |
+|             Acceptation | Bouton A                            | Bouton Action 1    | Bouton A           |
+|             Annuler | Bouton B                            | Bouton Action 2    | Bouton B           |
 
 Le tableau suivant récapitule les mappages entre les commandes de navigation de l’_ensemble facultatif_ et les différents périphériques d’entrée.
 
 | Commande de navigation | Entrée boîtier de commande          | Entrée stick arcade | Entrée volant de course    |
 | ------------------:| ---------------------- | ------------------ | --------------------- |
-|             PageUp (Pg. préc) | Gâchette gauche           | _Non pris en charge_    | _Varie_              |
-|           PageDown (Pg. suiv) | Gâchette droite          | _Non pris en charge_    | _Varie_              |
-|           PageLeft (Page gauche) | Gâchette haute gauche            | _Non pris en charge_    | _Varie_              |
-|          PageRight (Page droite) | Gâchette haute droite           | _Non pris en charge_    | _Varie_              |
-|           ScrollUp (Faire défiler vers le haut) | Stick analogique droit vers le haut    | _Non pris en charge_    | _Varie_              |
-|         ScrollDown (Faire défiler vers le bas) | Stick analogique droit vers le bas  | _Non pris en charge_    | _Varie_              |
-|         ScrollLeft (Faire défiler vers la gauche) | Stick analogique droit vers la gauche  | _Non pris en charge_    | _Varie_              |
-|        ScrollRight (Faire défiler vers la droite) | Stick analogique droit vers la droite | _Non pris en charge_    | _Varie_              |
-|           Context1 (Contexte 1) | Bouton X               | _Non pris en charge_    | Bouton X (_en général_) |
-|           Context2 (Contexte 2) | Bouton Y               | _Non pris en charge_    | Bouton Y (_en général_) |
-|           Context3 (Contexte 3) | Appui sur stick analogique gauche  | _Non pris en charge_    | _Varie_              |
-|           Context4 (Contexte 4) | Appui sur stick analogique droit | _Non pris en charge_    | _Varie_              |
+|             Pg préc | Gâchette gauche           | _non pris en charge_    | _diffère_              |
+|           Pg suiv | Gâchette droite          | _non pris en charge_    | _diffère_              |
+|           PageLeft | Gâchette haute gauche            | _non pris en charge_    | _diffère_              |
+|          PageRight | Gâchette haute droite           | _non pris en charge_    | _diffère_              |
+|           ScrollUp (Faire défiler vers le haut) | Stick analogique droit vers le haut    | _non pris en charge_    | _diffère_              |
+|         ScrollDown (Faire défiler vers le bas) | Stick analogique droit vers le bas  | _non pris en charge_    | _diffère_              |
+|         ScrollLeft (Faire défiler vers la gauche) | Stick analogique droit vers la gauche  | _non pris en charge_    | _diffère_              |
+|        ScrollRight (Faire défiler vers la droite) | Stick analogique droit vers la droite | _non pris en charge_    | _diffère_              |
+|           Context1 (Contexte 1) | Bouton X               | _non pris en charge_    | Bouton X (_en général_) |
+|           Context2 (Contexte 2) | Bouton Y               | _non pris en charge_    | Bouton Y (_généralement_) |
+|           Context3 (Contexte 3) | Appui sur stick analogique gauche  | _non pris en charge_    | _diffère_              |
+|           Context4 (Contexte 4) | Appui sur stick analogique droit | _non pris en charge_    | _diffère_              |
 
 
 ## <a name="detect-and-track-ui-navigation-controllers"></a>Détecter et suivre les contrôleurs de navigation d’interface utilisateur
@@ -213,23 +213,23 @@ Vous pouvez avoir besoin de savoir quand un bouton passe de l’état appuyé à
 
 L’[exemple InputInterfacingUWP _(github)_](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/UWPSamples/System/InputInterfacingUWP) illustre le comportement de différents périphériques d’entrée utilisés comme contrôleurs de navigation d’interface utilisateur.
 
-## <a name="see-also"></a>Voir également
-[Windows.Gaming.Input.Gamepad][]
-[Windows.Gaming.Input.ArcadeStick][]
-[Windows.Gaming.Input.RacingWheel][]
-[Windows.Gaming.Input.IGameController][]
+## <a name="see-also"></a>Voir aussi
+[Windows. Gaming. Input. manette][] 
+ de jeu [Windows. Gaming. Input. ArcadeStick][] 
+ [Windows. Gaming. Input. RacingWheel][] 
+ [Windows. Gaming. Input. IGameController][]
 
 
-[Windows.Gaming.Input]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.aspx
-[Windows.Gaming.Input.Gamepad]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.gamepad.aspx
-[Windows.Gaming.Input.Arcadestick]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.arcadestick.aspx
-[Windows.Gaming.Input.Racingwheel]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.racingwheel.aspx
-[Windows.Gaming.Input.IGameController]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.aspx
-[uinavigationcontroller]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.uinavigationcontroller.aspx
-[uinavigationcontrollers]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.uinavigationcontroller.uinavigationcontrollers.aspx
-[uinavigationcontrolleradded]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.uinavigationcontroller.uinavigationcontrolleradded.aspx
-[uinavigationcontrollerremoved]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.uinavigationcontroller.uinavigationcontrollerremoved.aspx
-[getcurrentreading]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.uinavigationcontroller.getcurrentreading.aspx
-[uinavigationreading]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.uinavigationreading.aspx
-[requireduinavigationbuttons]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.requireduinavigationbuttons.aspx
-[optionaluinavigationbuttons]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.optionaluinavigationbuttons.aspx
+[Windows.Gaming.Input]: /uwp/api/Windows.Gaming.Input
+[Windows.Gaming.Input.Gamepad]: /uwp/api/Windows.Gaming.Input.Gamepad
+[Windows. Gaming. Input. Arcadestick]: /uwp/api/Windows.Gaming.Input.ArcadeStick
+[Windows. Gaming. Input. Racingwheel]: /uwp/api/Windows.Gaming.Input.RacingWheel
+[Windows.Gaming.Input.IGameController]: /uwp/api/Windows.Gaming.Input.IGameController
+[uinavigationcontroller]: /uwp/api/Windows.Gaming.Input.UINavigationController
+[uinavigationcontrollers]: /uwp/api/Windows.Gaming.Input.UINavigationController
+[uinavigationcontrolleradded]: /uwp/api/Windows.Gaming.Input.UINavigationController
+[uinavigationcontrollerremoved]: /uwp/api/Windows.Gaming.Input.UINavigationController
+[getcurrentreading]: /uwp/api/Windows.Gaming.Input.UINavigationController
+[uinavigationreading]: /uwp/api/Windows.Gaming.Input.UINavigationReading
+[requireduinavigationbuttons]: /uwp/api/Windows.Gaming.Input.RequiredUINavigationButtons
+[optionaluinavigationbuttons]: /uwp/api/Windows.Gaming.Input.OptionalUINavigationButtons

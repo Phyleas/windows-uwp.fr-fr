@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c48cd52d69d13b61f059894cc0dbea89eecf913
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: c0e92b422272488e49613531e4304587dc00e08f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360867"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157533"
 ---
 # <a name="hardware-drm"></a>Gestion des droits numériques en fonction du matériel
 
@@ -25,9 +25,9 @@ Les fournisseurs de contenu se tournent de plus en plus vers des protections mat
 
 ## <a name="windows-tee-implementation"></a>Implémentation TEE Windows
 
-Cette rubrique fournit une vue d’ensemble de la façon dont Windows 10 implémente l’environnement d’exécution approuvé (TEE).
+Cette rubrique présente succinctement la façon dont Windows 10 implémente l’environnement d’exécution de confiance (TEE).
 
-Les détails de l’implémentation TEE Windows n’entrent pas dans le cadre de ce document. Cependant, une brève description de la différence entre le port TEE du kit de portage standard et le port Windows sera utile. Windows implémente la couche proxy OEM et transfère les appels de fonctions PRITEE en série à un pilote en mode utilisateur dans le sous-système Windows Media Foundation. Ceux-ci seront finalement acheminés vers le pilote TrEE (Trusted Execution Environment) Windows ou le pilote graphique OEM. Les détails de ces deux approches n’entrent pas dans le cadre de ce document. Le diagramme suivant illustre l’interaction générale des composants pour le port Windows. Si vous souhaitez développer une implémentation TEE Windows PlayReady, vous pouvez contacter <WMLA@Microsoft.com>.
+Les détails de l’implémentation TEE Windows n’entrent pas dans le cadre de ce document. Cependant, une brève description de la différence entre le port TEE du kit de portage standard et le port Windows sera utile. Windows implémente la couche proxy OEM et transfère les appels de fonctions PRITEE en série à un pilote en mode utilisateur dans le sous-système Windows Media Foundation. Ceux-ci seront finalement acheminés vers le pilote TrEE (Trusted Execution Environment) Windows ou le pilote graphique OEM. Les détails de ces deux approches n’entrent pas dans le cadre de ce document. Le diagramme suivant illustre l’interaction générale des composants pour le port Windows. Si vous souhaitez développer une implémentation de TEE Windows PlayReady, vous pouvez contacter <WMLA@Microsoft.com> .
 
 ![diagramme des composants tee Windows](images/windowsteecomponentdiagram720.jpg)
 
@@ -35,8 +35,8 @@ Les détails de l’implémentation TEE Windows n’entrent pas dans le cadre de
 
 Cette rubrique fournit une courte liste des éléments à prendre en compte pendant le développement d’applications conçues pour utiliser la gestion des droits numériques en fonction du matériel. Comme expliqué dans [Gestion des droits numériques par PlayReady](playready-client-sdk.md#output-protection), avec la gestion des droits numériques en fonction du matériel par PlayReady pour Windows 10, toutes les protections de sortie sont appliquées à partir de l’implémentation TEE Windows, ce qui a des répercussions sur les comportements de protection de sortie :
 
--   **Prise en charge pour le niveau de protection de sortie (norme OPL) pour numérique non compressé 270 vidéo :** HWDRM PlayReady pour Windows 10 ne prend pas en charge vers le bas de la résolution et appliquera que HDCP est engagée. Nous recommandons que le contenu haute définition pour la gestion des droits numériques en fonction du matériel présente une norme OPL supérieure à 270 (même si ce n’est pas obligatoire). Par ailleurs, nous recommandons de définir une restriction du type de protection HDCP dans la licence (HDCP version 2.2 sur Windows 10).
--   **Contrairement aux logiciels DRM (SWDRM), les protections de sortie sont appliquées sur tous les moniteurs basées sur l’analyse moins apte à.** Par exemple, si l’utilisateur a deux moniteurs connectés dont un seul prend en charge la protection HDCP, la lecture échoue si la licence nécessite la protection HDCP, même si le contenu est uniquement affiché sur l’écran qui prend en charge la protection HDCP. Avec la gestion des droits numériques en fonction du logiciel, le contenu serait lu tant qu’il est affiché uniquement sur le moniteur qui prend en charge la protection HDCP.
+-   **Prise en charge du niveau de protection de sortie (norme OPL) 270 pour la vidéo numérique non compressée :** La gestion des droits numériques en fonction du matériel par PlayReady pour Windows 10 ne prend pas en charge la résolution inférieure et vérifie que la protection HDCP est enclenchée. Nous recommandons que le contenu haute définition pour la gestion des droits numériques en fonction du matériel présente une norme OPL supérieure à 270 (même si ce n’est pas obligatoire). Par ailleurs, nous recommandons de définir une restriction du type de protection HDCP dans la licence (HDCP version 2.2 sur Windows 10).
+-   **À la différence de la gestion des droits numériques en fonction du logiciel, les protections de sortie sont appliquées sur tous les moniteurs selon le moniteur le moins puissant.** Par exemple, si l’utilisateur a deux moniteurs connectés dont un seul prend en charge la protection HDCP, la lecture échoue si la licence nécessite la protection HDCP, même si le contenu est uniquement affiché sur l’écran qui prend en charge la protection HDCP. Avec la gestion des droits numériques en fonction du logiciel, le contenu serait lu tant qu’il est affiché uniquement sur le moniteur qui prend en charge la protection HDCP.
 -   **L’utilisation par le client et la sécurisation de la gestion des droits numériques en fonction du matériel ne sont garanties que si les conditions suivantes sont remplies** par les clés et les licences de contenu :
     -   La licence utilisée pour la clé de contenu vidéo doit présenter un niveau de sécurité minimal de 3 000.
     -   L’audio doit être chiffré selon une clé de contenu différente de celle de la vidéo, et la licence utilisée pour l’audio doit afficher un niveau de sécurité minimal de 2 000. Par ailleurs, l’audio peut rester en clair.
@@ -79,28 +79,28 @@ Pour chaque lecture multimédia, vous devez définir **MediaProtectionManager** 
 mediaProtectionManager.properties["Windows.Media.Protection.UseSoftwareProtectionLayer"] = true;
 ```
 
-La meilleure façon de savoir si vous êtes dans le matériel DRM ou logiciel DRM consiste à examiner à C:\\utilisateurs\\&lt;nom d’utilisateur&gt;\\AppData\\Local\\Packages\\ &lt;nom de l’application&gt;\\LocalCache\\PlayReady\\\*
+La meilleure façon de savoir si vous êtes dans la DRM matérielle ou le logiciel DRM consiste à consulter C : \\ Users \\ &lt; UserName &gt; \\ AppData \\ local \\ packages \\ &lt; nom d’application &gt; \\ localCache \\ PlayReady\\\*
 
 -   Si vous voyez un fichier mspr.hds, vous êtes en gestion des droits numériques en fonction du logiciel.
--   Si vous avez un autre \*.hds fichier, vous êtes dans le matériel DRM.
+-   Si vous avez un autre \* fichier. HDS, vous êtes dans la DRM matérielle.
 -   Vous pouvez aussi supprimer l’intégralité du dossier PlayReady et relancer votre test.
 
 ## <a name="detect-the-type-of-hardware-drm"></a>Détecter le type de gestion des droits numériques en fonction du matériel
 
 Cette section explique comment détecter le type de gestion des droits numériques en fonction du matériel qui est pris en charge sur le système.
 
-Vous pouvez utiliser la méthode [**PlayReadyStatics.CheckSupportedHardware**](https://docs.microsoft.com/uwp/api/windows.media.protection.playready.playreadystatics.checksupportedhardware) pour déterminer si le système prend en charge une fonctionnalité spécifique de gestion des droits numériques (DRM) en fonction du matériel. Exemple :
+Vous pouvez utiliser la méthode [**PlayReadyStatics. CheckSupportedHardware**](/uwp/api/windows.media.protection.playready.playreadystatics.checksupportedhardware) pour déterminer si le système prend en charge une fonctionnalité DRM matérielle spécifique. Par exemple :
 
 ```csharp
 bool isFeatureSupported = PlayReadyStatics.CheckSupportedHardware(PlayReadyHardwareDRMFeatures.HEVC);
 ```
 
-L’énumération [**PlayReadyHardwareDRMFeatures**](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady.PlayReadyHardwareDRMFeatures) contient la liste valide des valeurs de fonctionnalité de gestion des droits numériques en fonction du matériel pouvant être interrogées. Pour déterminer si la gestion des droits numériques en fonction du matériel est prise en charge, utilisez le membre **HardwareDRM** dans la requête. Pour déterminer si le matériel prend en charge le codec HEVC (High Efficiency Video Coding)/H.265, utilisez le membre **HEVC** dans la requête.
+L’énumération [**PlayReadyHardwareDRMFeatures**](/uwp/api/Windows.Media.Protection.PlayReady.PlayReadyHardwareDRMFeatures) contient la liste valide des valeurs de fonctionnalité de gestion des droits numériques en fonction du matériel pouvant être interrogées. Pour déterminer si la gestion des droits numériques en fonction du matériel est prise en charge, utilisez le membre **HardwareDRM** dans la requête. Pour déterminer si le matériel prend en charge le codec HEVC (High Efficiency Video Coding)/H.265, utilisez le membre **HEVC** dans la requête.
 
-Vous pouvez également utiliser la propriété [**PlayReadyStatics.PlayReadyCertificateSecurityLevel**](https://docs.microsoft.com/uwp/api/windows.media.protection.playready.playreadystatics.playreadycertificatesecuritylevel) pour obtenir le niveau de sécurité du certificat client afin de déterminer si la gestion des droits numériques en fonction du matériel est prise en charge. À moins que le niveau de sécurité renvoyé pour le certificat soit supérieur ou égal à 3 000, le client n’est pas individualisé ou configuré (auquel cas cette propriété renvoie 0) ou la gestion des droits numériques en fonction du matériel n’est pas utilisée (auquel cas cette propriété renvoie une valeur inférieure à 3 000).
+Vous pouvez également utiliser la propriété [**PlayReadyStatics. PlayReadyCertificateSecurityLevel**](/uwp/api/windows.media.protection.playready.playreadystatics.playreadycertificatesecuritylevel) pour obtenir le niveau de sécurité du certificat client afin de déterminer si la DRM matérielle est prise en charge. À moins que le niveau de sécurité renvoyé pour le certificat soit supérieur ou égal à 3 000, le client n’est pas individualisé ou configuré (auquel cas cette propriété renvoie 0) ou la gestion des droits numériques en fonction du matériel n’est pas utilisée (auquel cas cette propriété renvoie une valeur inférieure à 3 000).
 
-### <a name="detecting-support-for-aes128cbc-hardware-drm"></a>Détection de la prise en charge de la gestion des droits numériques en fonction du matériel AES128CBC
-À partir de Windows 10, version 1709, vous pouvez détecter la prise en charge du chiffrement matériel AES128CBC sur un appareil en appelant **[PlayReadyStatics.CheckSupportedHardware](https://docs.microsoft.com/uwp/api/windows.media.protection.playready.playreadystatics.checksupportedhardware)** et en spécifiant la valeur d’énumération [**PlayReadyHardwareDRMFeatures.Aes128Cbc**](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady.PlayReadyHardwareDRMFeatures). Dans les versions précédentes de Windows 10, la définition de cette valeur entraîne la levée d’une exception. Pour cette raison, vous devez vérifier la présence de la valeur d’énumération en appelant **[ApiInformation.IsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent)** et en spécifiant la version contractuelle principale 5 avant d’appeler **CheckSupportedHardware**.
+### <a name="detecting-support-for-aes128cbc-hardware-drm"></a>Détection de la prise en charge de la DRM matérielle AES128CBC
+À compter de Windows 10, version 1709, vous pouvez détecter la prise en charge du chiffrement matériel AES128CBC sur un appareil en appelant **[PlayReadyStatics. CheckSupportedHardware](/uwp/api/windows.media.protection.playready.playreadystatics.checksupportedhardware)** et en spécifiant la valeur d’énumération [**PlayReadyHardwareDRMFeatures. AES128CBC**](/uwp/api/Windows.Media.Protection.PlayReady.PlayReadyHardwareDRMFeatures). Dans les versions précédentes de Windows 10, la spécification de cette valeur provoquera la levée d’une exception. Pour cette raison, vous devez vérifier la présence de la valeur d’énumération en appelant **[ApiInformation. IsApiContractPresent](/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent)** et en spécifiant le contrat majeur version 5 avant d’appeler **CheckSupportedHardware**.
 
 ```csharp
 bool supportsAes128Cbc = ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract", 5);
@@ -112,4 +112,4 @@ if (supportsAes128Cbc)
 ```
 
 ## <a name="see-also"></a>Voir aussi
-- [PlayReady DRM](playready-client-sdk.md)
+- [Gestion des droits numériques PlayReady](playready-client-sdk.md)

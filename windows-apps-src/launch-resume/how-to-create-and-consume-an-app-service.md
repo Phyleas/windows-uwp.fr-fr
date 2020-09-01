@@ -6,20 +6,20 @@ keywords: communication entre l’application et l’application, communication 
 ms.date: 01/16/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d6edc49bc97a336b8d722c496c1980a5f9b0efb
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: bd67c8a94ae7fc46956f5a6f7c3358e0e28965d2
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393561"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89158823"
 ---
 # <a name="create-and-consume-an-app-service"></a>Créer et utiliser un service d’application
 
-Les services d’application sont des applications UWP qui fournissent des services à d’autres applications UWP. Ils sont semblables aux services web, sur un appareil. Un service d’application s’exécute sous forme de tâche en arrière-plan dans l’application hôte et peut fournir son service à d’autres applications. Un service d’application peut par exemple fournir un service de scanneur de code-barres que d’autres applications peuvent utiliser. Il peut également s’agir d’une suite d’applications d’entreprise partageant un service d’application de vérification orthographique, accessible aux autres applications de la suite.  Les services d’application vous permettent de créer des services sans interface utilisateur, que les applications peuvent appeler sur le même appareil et, à partir de Windows 10 version 1607, sur des appareils distants.
+Les services d’application sont des applications UWP qui fournissent des services à d’autres applications UWP. Ils sont analogues aux services Web, sur un appareil. Un app service s’exécute en tant que tâche en arrière-plan dans l’application hôte et peut fournir son service à d’autres applications. Par exemple, un service d’application peut fournir un service d’analyse de code-barres que d’autres applications peuvent utiliser. Ou peut-être une suite d’applications d’entreprise dispose d’un service d’application de vérification orthographique commun qui est disponible pour les autres applications de la suite.  Les services d’application vous permettent de créer des services sans interface utilisateur que les applications peuvent appeler sur le même appareil et à partir de Windows 10, version 1607, sur des appareils distants.
 
-À partir de Windows 10 version 1607, vous pouvez créer des services d’application qui s’exécutent dans le même processus que l’application hôte. Cet article porte sur la création et la consommation d'un service d’application qui s’exécute dans un processus en arrière-plan distinct. Voir [Convertir un service d’application pour qu’il s’exécute dans le même processus que son application hôte](convert-app-service-in-process.md) pour plus d’informations sur l’exécution d’un service d’application qui s’exécute dans le même processus que le fournisseur.
+À partir de Windows 10 version 1607, vous pouvez créer des services d’application qui s’exécutent dans le même processus que l’application hôte. Cet article se concentre sur la création et l’utilisation d’un app service qui s’exécute dans un processus d’arrière-plan distinct. Pour plus d’informations sur l’exécution d’un app service dans le même processus que le fournisseur, consultez [convertir un app service pour qu’il s’exécute dans le même processus que son application hôte](convert-app-service-in-process.md) .
 
-Pour obtenir un exemple de code de service d’application, voir [Exemples d’applications de plateforme Windows universelle (UWP)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices).
+Pour obtenir un exemple de code App service, consultez la page [exemples d’applications plateforme Windows universelle (UWP)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices).
 
 ## <a name="create-a-new-app-service-provider-project"></a>Créer un projet de fournisseur de service d’application
 
@@ -27,7 +27,7 @@ Dans la procédure décrite ici, nous allons créer tous les éléments dans une
 
 1. Dans Visual Studio 2015 ou version ultérieure, créez un projet d’application UWP et nommez-le **AppServiceProvider**.
     1. Sélectionnez **un fichier > nouveau > projet...** 
-    2. Dans la boîte de dialogue **créer un nouveau projet** , sélectionnez **application vide (Windows universel C#)** . Il s’agit de l’application qui fournit le service d’application à d’autres applications UWP.
+    2. Dans la boîte de dialogue **créer un nouveau projet** , sélectionnez **application vide (Windows universel) C#**. Il s’agit de l’application qui rend l’app service disponible pour d’autres applications UWP.
     3. Cliquez sur **suivant**, puis nommez le projet **AppServiceProvider**, choisissez un emplacement pour celui-ci, puis cliquez sur **créer**.
 
 2. Lorsque vous êtes invité à sélectionner une **cible** et une **version minimale** pour le projet, sélectionnez au moins **10.0.14393**. Si vous souhaitez utiliser le nouvel attribut **SupportsMultipleInstances** , vous devez utiliser visual studio 2017 ou visual studio 2019, et cibler **10.0.15063** (**Windows 10 Creators Update**) ou version ultérieure.
@@ -40,11 +40,11 @@ Dans le projet **AppServiceProvider** , ouvrez le fichier **Package. appxmanifes
 
 1. Cliquez avec le bouton droit sur le **Explorateur de solutions**. 
 2. Sélectionnez **Ouvrir avec**. 
-3. Sélectionnez **éditeur XML (texte)** . 
+3. Sélectionnez **éditeur XML (texte)**. 
 
-Ajoutez l’extension `AppService` suivante à l' `<Application>` intérieur de l’élément. Cet exemple publie le service `com.microsoft.inventory`, qui identifie cette application en tant que fournisseur de service d’application. Le service proprement dit est implémenté sous forme de tâche en arrière-plan. Le projet de service d’application expose le service aux autres applications. Nous vous recommandons d’utiliser un style de nom de domaine inverse pour le nom du service.
+Ajoutez l' `AppService` extension suivante à l’intérieur de l' `<Application>` élément. Cet exemple publie le service `com.microsoft.inventory`, qui identifie cette application en tant que fournisseur de service d’application. Le service proprement dit est implémenté sous forme de tâche en arrière-plan. Le projet App service expose le service à d’autres applications. Nous vous recommandons d’utiliser un style de nom de domaine inverse pour le nom du service.
 
-Notez que le préfixe d’espace de noms `xmlns:uap4` et l’attribut `uap4:SupportsMultipleInstances` sont uniquement valides si vous ciblez SDK Windows version 10.0.15063 ou une version ultérieure. Vous pouvez les supprimer en toute sécurité si vous ciblez des versions du SDK antérieures.
+Notez que le `xmlns:uap4` préfixe d’espace de noms et l' `uap4:SupportsMultipleInstances` attribut sont uniquement valides si vous ciblez SDK Windows version 10.0.15063 ou ultérieure. Vous pouvez les supprimer en toute sécurité si vous ciblez des versions antérieures du SDK.
 
 ``` xml
 <Package
@@ -71,12 +71,12 @@ L' `Category` attribut identifie cette application en tant que fournisseur App s
 
 L' `EntryPoint` attribut identifie la classe qualifiée d’espace de noms qui implémente le service, que nous allons implémenter ensuite.
 
-L' `SupportsMultipleInstances` attribut indique que chaque fois que l’app service est appelé, il doit s’exécuter dans un nouveau processus. Cette fonctionnalité n’est pas obligatoire, mais elle est disponible si vous avez besoin de cette fonctionnalité et que vous ciblez le kit de développement logiciel (SDK) 10.0.15063 (**Windows 10 Creators Update**) ou une version ultérieure. Il doit également être précédé par l’espace de noms `uap4`.
+L' `SupportsMultipleInstances` attribut indique que chaque fois que l’app service est appelé, il doit s’exécuter dans un nouveau processus. Cette fonctionnalité n’est pas obligatoire, mais elle est disponible si vous avez besoin de cette fonctionnalité et que vous ciblez le kit de développement logiciel (SDK) 10.0.15063 (**Windows 10 Creators Update**) ou une version ultérieure. Elle doit également être précédée de l' `uap4` espace de noms.
 
 ## <a name="create-the-app-service"></a>Créer le service d’application
 
-1.  Un service d’application peut être implémenté sous forme de tâche en arrière-plan. Cela permet à une application au premier plan d’appeler un service d’application dans une autre application. Pour créer un app service en tant que tâche en arrière-plan, ajoutez un nouveau Windows Runtime projet de composant à la solution (**fichier &gt; ajouter &gt; un nouveau projet**) nommé **MyAppService**. Dans la boîte de dialogue **Ajouter un nouveau projet** , sélectionnez **installé C# > composant Visual > Windows Runtime (Windows universel)** .
-2.  Dans le projet **AppServiceProvider** , ajoutez une référence de projet à projet au nouveau projet **MyAppService** (dans la **Explorateur de solutions**, cliquez avec le bouton droit sur le projet **AppServiceProvider** > **Ajouter**  >  > **Solution**de**projets** > deréférence,sélectionnezMyAppServiceOK). >  Cette étape est critique, car si vous n’ajoutez pas la référence, le service d’application ne se connecte pas lors de l’exécution.
+1.  Un app service peut être implémenté en tant que tâche en arrière-plan. Cela permet à une application de premier plan d’appeler un app service dans une autre application. Pour créer un app service en tant que tâche en arrière-plan, ajoutez un nouveau Windows Runtime projet de composant à la solution (**fichier &gt; Ajouter un &gt; nouveau projet**) nommé **MyAppService**. Dans la boîte de dialogue **Ajouter un nouveau projet** , sélectionnez **installé > Visual C# > composant Windows Runtime (Windows universel)**.
+2.  Dans le projet **AppServiceProvider** , ajoutez une référence de projet à projet au nouveau projet **MyAppService** (dans la **Explorateur de solutions**, cliquez avec le bouton droit sur le projet **AppServiceProvider** > **solution ajouter**des  >  projets de**référence**  >  **Projects**  >  **Solution**, puis sélectionnez **MyAppService**  >  **OK**). Cette étape est essentielle, car si vous n’ajoutez pas la référence, app service ne se connecte pas au moment de l’exécution.
 3.  Dans le projet **MyAppService** , ajoutez les instructions **using** suivantes au début de **Class1.cs**:
     ```cs
     using Windows.ApplicationModel.AppService;
@@ -126,14 +126,14 @@ L' `SupportsMultipleInstances` attribut indique que chaque fois que l’app serv
 
     C’est dans cette classe que le service d’application effectuera son travail.
 
-    La méthode **Run** est appelée lors de la création de la tâche en arrière-plan. Comme les tâches en arrière-plan sont arrêtées une fois **Run** terminé, le code effectue un report afin que la tâche en arrière-plan reste active pour traiter les demandes. Un service d’application qui est implémenté en tant que tâche en arrière-plan reste actif pendant environ 30 secondes après réception d’un appel, sauf s’il est à nouveau appelé dans cette fenêtre de temps ou si un report est pris en charge. Si app service est implémenté dans le même processus que l’appelant, la durée de vie de l’app service est liée à la durée de vie de l’appelant.
+    La méthode **Run** est appelée lors de la création de la tâche en arrière-plan. Étant donné que les tâches en arrière-plan sont terminées après la fin de l' **exécution** , le code extrait un report afin que la tâche en arrière-plan reste en attente de demandes. Un service d’application qui est implémenté en tant que tâche en arrière-plan reste actif pendant environ 30 secondes après réception d’un appel, sauf s’il est à nouveau appelé dans cette fenêtre de temps ou si un report est pris en charge. Si app service est implémenté dans le même processus que l’appelant, la durée de vie de l’app service est liée à la durée de vie de l’appelant.
 
-    La durée de vie du service d’application dépend de l’appelant :
+    La durée de vie d’App service dépend de l’appelant :
 
     * Si l’appelant est au premier plan, la durée de vie d’App service est identique à celle de l’appelant.
-    * Si l’appelant est en arrière-plan, l’exécution de l’app service est de 30 secondes. Un report offre une fois 5 secondes supplémentaires.
+    * Si l’appelant est en arrière-plan, l’exécution de l’app service est de 30 secondes. La mise en attente d’un report offre une durée supplémentaire de 5 secondes.
 
-    **OnTaskCanceled** est appelé quand la tâche est annulée. La tâche est annulée lorsque l’application cliente supprime le [AppServiceConnection](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.AppService.AppServiceConnection), que l’application cliente est interrompue, que le système d’exploitation est arrêté ou en veille ou que le système d’exploitation ne dispose pas des ressources nécessaires pour exécuter la tâche.
+    **OnTaskCanceled** est appelé quand la tâche est annulée. La tâche est annulée lorsque l’application cliente supprime le [AppServiceConnection](/uwp/api/Windows.ApplicationModel.AppService.AppServiceConnection), que l’application cliente est interrompue, que le système d’exploitation est arrêté ou en veille ou que le système d’exploitation ne dispose pas des ressources nécessaires pour exécuter la tâche.
 
 ## <a name="write-the-code-for-the-app-service"></a>Écrire le code du service d’application
 
@@ -202,15 +202,15 @@ private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequ
 }
 ```
 
-Notez que **OnRequestReceived** est **asynchrone** , car nous effectuons un appel de méthode pouvant être attendu à [SendResponseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appservice.appservicerequest.sendresponseasync) dans cet exemple.
+Notez que **OnRequestReceived** est **asynchrone** , car nous effectuons un appel de méthode pouvant être attendu à [SendResponseAsync](/uwp/api/windows.applicationmodel.appservice.appservicerequest.sendresponseasync) dans cet exemple.
 
-Un report est effectué afin que le service puisse utiliser des méthodes **Async** dans le gestionnaire **OnRequestReceived** . Cela permet de s’assurer que l’appel à **OnRequestReceived** ne se termine pas avant la fin du traitement du message.  [SendResponseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appservice.appservicerequest.sendresponseasync) envoie le résultat à l’appelant. **SendResponseAsync** n’indique pas l’achèvement de l’appel. Il s’agit de l’achèvement du report qui signale à [SendMessageAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appservice.appserviceconnection.sendmessageasync) que **OnRequestReceived** est terminé. L’appel à **SendResponseAsync** est encapsulé dans un bloc try/finally, car vous devez effectuer le report même si **SendResponseAsync** lève une exception.
+Un report est effectué afin que le service puisse utiliser des méthodes **Async** dans le gestionnaire **OnRequestReceived** . Elle garantit que l’appel à **OnRequestReceived** ne se termine pas tant que le traitement du message n’est pas terminé.  [SendResponseAsync](/uwp/api/windows.applicationmodel.appservice.appservicerequest.sendresponseasync) envoie le résultat à l’appelant. **SendResponseAsync** n’indique pas l’achèvement de l’appel. Il s’agit de l’achèvement du report qui signale à [SendMessageAsync](/uwp/api/windows.applicationmodel.appservice.appserviceconnection.sendmessageasync) que **OnRequestReceived** est terminé. L’appel à **SendResponseAsync** est encapsulé dans un bloc try/finally, car vous devez effectuer le report même si **SendResponseAsync** lève une exception.
 
-Les services d’application utilisent des objets [ValueSet](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.ValueSet) pour échanger des informations. La taille des données que vous pouvez transmettre est limitée uniquement par les ressources système. Il n’y a aucune clé prédéfinie utilisable dans votre classe **ValueSet**. Vous devez déterminer quelles valeurs de clé vous allez utiliser pour définir le protocole de votre service d’application. L’appelant doit être écrit avec ce protocole à l’esprit. Dans cet exemple, nous avons choisi une clé nommée `Command` dont la valeur indique si nous voulons que le service d’application fournisse le nom de l’article en stock ou son prix. L’index du nom d’inventaire est stocké sous la clé `ID`. La valeur renvoyée est stockée sous la clé `Result`.
+Les services d’application utilisent des objets [ValueSet](/uwp/api/Windows.Foundation.Collections.ValueSet) pour échanger des informations. La taille des données que vous pouvez transmettre est limitée uniquement par les ressources système. Il n’y a aucune clé prédéfinie utilisable dans votre classe **ValueSet**. Vous devez déterminer quelles valeurs de clé vous allez utiliser pour définir le protocole de votre service d’application. L’appelant doit être écrit avec ce protocole à l’esprit. Dans cet exemple, nous avons choisi une clé nommée `Command` qui a une valeur qui indique si vous souhaitez que l’app service fournisse le nom de l’article d’inventaire ou son prix. L’index du nom de l’inventaire est stocké sous la `ID` clé. La valeur de retour est stockée sous la `Result` clé.
 
-Une énumération [AppServiceClosedStatus](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.AppService.AppServiceClosedStatus) est renvoyée à l’appelant pour indiquer si l’appel au service d’application a réussi ou échoué. L’appel au service d’application peut échouer par exemple si le système d’exploitation abandonne le point de terminaison du service ou si les ressources sont dépassées. Vous pouvez renvoyer des informations d’erreur supplémentaires via la classe [ValueSet](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.ValueSet). Dans cet exemple, nous utilisons une clé nommée `Status` pour renvoyer des informations plus détaillées sur l’erreur à l’appelant.
+Une énumération [AppServiceClosedStatus](/uwp/api/Windows.ApplicationModel.AppService.AppServiceClosedStatus) est renvoyée à l’appelant pour indiquer si l’appel au service d’application a réussi ou échoué. Un exemple de la façon dont l’appel à App service peut échouer est si le système d’exploitation abandonne le point de terminaison de service, car ses ressources ont été dépassées. Vous pouvez renvoyer des informations d’erreur supplémentaires via la classe [ValueSet](/uwp/api/Windows.Foundation.Collections.ValueSet). Dans cet exemple, nous utilisons une clé nommée `Status` pour retourner des informations d’erreur plus détaillées à l’appelant.
 
-L’appel à [SendResponseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appservice.appservicerequest.sendresponseasync) renvoie la classe [ValueSet](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.ValueSet) à l’appelant.
+L’appel à [SendResponseAsync](/uwp/api/windows.applicationmodel.appservice.appservicerequest.sendresponseasync) renvoie la classe [ValueSet](/uwp/api/Windows.Foundation.Collections.ValueSet) à l’appelant.
 
 ## <a name="deploy-the-service-app-and-get-the-package-family-name"></a>Déployer l’application de service et obtenir le nom de la famille de packages
 
@@ -220,7 +220,7 @@ Vous aurez également besoin du nom de la famille de packages du fournisseur App
 
 ## <a name="write-a-client-to-call-the-app-service"></a>Écrire un client pour appeler le service d’application
 
-1.  Ajoutez un nouveau projet d’application universelle Windows vide à la solution à l’aide de **Fichier &gt; Ajouter &gt; Nouveau projet**. Dans la boîte de dialogue **Ajouter un nouveau projet** , sélectionnez **installé C# > Visual > application vide (Windows universel)** et nommez-le **ClientApp**.
+1.  Ajoutez un nouveau projet d’application universelle Windows vide à la solution avec **fichier &gt; Ajouter un &gt; nouveau projet**. Dans la boîte de dialogue **Ajouter un nouveau projet** , sélectionnez **installé > Visual C# > application vide (Windows universel)** et nommez-le **ClientApp**.
 
 2.  Dans le projet **ClientApp** , ajoutez l’instruction **using** suivante en haut de **MainPage.Xaml.cs**:
     ```cs
@@ -229,7 +229,7 @@ Vous aurez également besoin du nom de la famille de packages du fournisseur App
 
 3.  Ajoutez une zone de texte appelée **TextBox** et un bouton à **MainPage. Xaml**.
 
-4.  Ajoutez un gestionnaire de clic de bouton pour le bouton nommé **button_Click**, puis ajoutez le mot clé **Async** à la signature du gestionnaire de bouton.
+4.  Ajoutez un gestionnaire de clic de bouton pour le bouton appelé **button_Click**, puis ajoutez le mot clé **Async** à la signature du gestionnaire de bouton.
 
 5. Remplacez le stub de votre gestionnaire d’événement de clic pour le bouton par le code suivant. Veillez à inclure la déclaration de champ `inventoryService`.
     ```cs
@@ -295,31 +295,31 @@ Vous aurez également besoin du nom de la famille de packages du fournisseur App
    }
    ```
     
-    Remplacez le nom de la famille de packages de la ligne `this.inventoryService.PackageFamilyName = "Replace with the package family name";` par le nom de la famille de packages du projet **AppServiceProvider** que vous avez obtenu dans [Déployer l’application de service et obtenir le nom de la famille de packages](#deploy-the-service-app-and-get-the-package-family-name).
+    Remplacez le nom de la famille de packages dans la ligne `this.inventoryService.PackageFamilyName = "Replace with the package family name";` par le nom de la famille de packages du projet **AppServiceProvider** que vous avez obtenu dans [déployer l’application de service et obtenez le nom](#deploy-the-service-app-and-get-the-package-family-name)de la famille de packages.
 
     > [!NOTE]
     > Veillez à coller le littéral de chaîne au lieu de le placer dans une variable. Elle ne fonctionnera pas si vous utilisez une variable.
 
-    Le code établit tout d’abord une connexion avec le service d’application. La connexion reste alors ouverte jusqu’à ce que vous supprimiez `this.inventoryService`. Le nom du service d’application doit `AppService` correspondre à `Name` l’attribut de l’élément que vous avez ajouté au fichier **Package. appxmanifest** du projet **AppServiceProvider** . Dans cet exemple, il s’agit de `<uap3:AppService Name="com.microsoft.inventory"/>`.
+    Le code établit tout d’abord une connexion avec le service d’application. La connexion reste ouverte jusqu’à ce que vous supprimiez `this.inventoryService` . Le nom du service d’application doit correspondre à l' `AppService` attribut de l’élément `Name` que vous avez ajouté au fichier **Package. Appxmanifest** du projet **AppServiceProvider** . Dans cet exemple, il s’agit de `<uap3:AppService Name="com.microsoft.inventory"/>`.
 
-    Un [ValueSet](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.ValueSet) nommé `message` est créé pour spécifier la commande que nous voulons envoyer à App service. L’exemple de service d’application attend une commande pour indiquer laquelle des deux actions effectuer. Nous obtenons l’index à partir de la zone de texte dans l’application cliente, puis appelons `Item` le service avec la commande pour récupérer la description de l’élément. Ensuite, nous effectuons l’appel avec la commande `Price` afin d’obtenir le prix de l’article. Le texte du bouton est défini en fonction du résultat.
+    Un [ValueSet](/uwp/api/Windows.Foundation.Collections.ValueSet) nommé `message` est créé pour spécifier la commande que nous voulons envoyer à App service. L’exemple de service d’application attend une commande pour indiquer laquelle des deux actions effectuer. Nous obtenons l’index à partir de la zone de texte dans l’application cliente, puis appelons le service avec la `Item` commande pour récupérer la description de l’élément. Ensuite, nous effectuons l’appel avec la `Price` commande pour récupérer le prix de l’élément. Le texte du bouton est défini en fonction du résultat.
 
-    Étant donné que [AppServiceResponseStatus](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.AppService.AppServiceResponseStatus) indique uniquement si le système d’exploitation a réussi à connecter l’appel à App service, nous `Status` vérifions la clé dans le [ValueSet](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.ValueSet) que nous recevons de l’app service pour vous assurer qu’il a pu traiter le demande.
+    Étant donné que [AppServiceResponseStatus](/uwp/api/Windows.ApplicationModel.AppService.AppServiceResponseStatus) indique uniquement si le système d’exploitation a réussi à connecter l’appel à App service, nous vérifions la `Status` clé dans le [ValueSet](/uwp/api/Windows.Foundation.Collections.ValueSet) que nous recevons de l’app service pour vous assurer qu’il a pu traiter la demande.
 
-6. Définissez le projet **ClientApp** comme projet de démarrage (cliquez dessus avec le bouton droit dans le **Explorateur de solutions** > **définir comme projet de démarrage**) et exécutez la solution. Entrez le chiffre 1 dans la zone de texte et cliquez sur le bouton. Vous devez recevoir «chaise : Price = 88,99» à partir du service.
+6. Définissez le projet **ClientApp** comme projet de démarrage (cliquez dessus avec le bouton droit dans le **Explorateur de solutions**  >  **définir comme projet de démarrage**) et exécutez la solution. Entrez le chiffre 1 dans la zone de texte et cliquez sur le bouton. Le service doit renvoyer « Chair : Price = 88.99 ».
 
     ![exemple d’application affichant chair price=88.99](images/appserviceclientapp.png)
 
 Si l’appel App service échoue, vérifiez les éléments suivants dans le projet **ClientApp** :
 
-1.  Vérifiez que le nom de la famille de packages affecté à la connexion du service d’inventaire correspond au nom de la famille de packages de l’application **AppServiceProvider** . Consultez la ligne dans **le\_bouton** de `this.inventoryService.PackageFamilyName = "...";`clic avec.
-2.  Dans **Cliquer\_sur un bouton**, vérifiez que le nom App service affecté à la connexion au service d’inventaire correspond au nom de l’app service dans le fichier **Package. appxmanifest** de **AppServiceProvider**. Voir `this.inventoryService.AppServiceName = "com.microsoft.inventory";`.
+1.  Vérifiez que le nom de la famille de packages affecté à la connexion du service d’inventaire correspond au nom de la famille de packages de l’application **AppServiceProvider** . Consultez la ligne dans le **bouton de \_ clic** avec `this.inventoryService.PackageFamilyName = "...";` .
+2.  Dans ** \_ cliquer sur un bouton**, vérifiez que le nom App service affecté à la connexion au service d’inventaire correspond au nom de l’app service dans le fichier **Package. appxmanifest** de **AppServiceProvider**. Voir `this.inventoryService.AppServiceName = "com.microsoft.inventory";`.
 3.  Assurez-vous que l’application **AppServiceProvider** a été déployée. (Dans le **Explorateur de solutions**, cliquez avec le bouton droit sur la solution et choisissez **déployer la solution**).
 
 ## <a name="debug-the-app-service"></a>Déboguer le service d’application
 
-1.  Assurez-vous que la solution est déployée dans son intégralité avant le débogage, car l’application qui fournit le service d’application doit être déployée avant que le service puisse être appelé. (Dans Visual Studio, **Générer &gt; Déployer la solution**).
-2.  Dans le **Explorateur de solutions**, cliquez avec le bouton droit sur le projet **AppServiceProvider** et choisissez **Propriétés**. Dans l’onglet **Déboguer**, définissez **Action de démarrage** sur **Ne pas lancer, mais déboguer mon code au démarrage**. (Notez que si vous utilisez C++ pour implémenter votre fournisseur de services d’application, dans l’onglet **Débogage**, vous devez modifier **Lancer l’application** sur **Non**).
+1.  Assurez-vous que la solution est déployée avant le débogage, car l’application du fournisseur App service doit être déployée pour que le service puisse être appelé. (Dans Visual Studio, **Générer &gt; Déployer la solution**).
+2.  Dans le **Explorateur de solutions**, cliquez avec le bouton droit sur le projet **AppServiceProvider** et choisissez **Propriétés**. Dans l’onglet **Déboguer**, définissez **Action de démarrage** sur **Ne pas lancer, mais déboguer mon code au démarrage**. (Remarque : Si vous utilisez C++ pour implémenter votre fournisseur App service, dans l’onglet **débogage** , vous pouvez modifier l' **application de lancement** en **non**).
 3.  Dans le projet **MyAppService** , dans le fichier **Inventory.cs** , définissez un point d’arrêt dans **OnRequestReceived**.
 4.  Définissez le projet **AppServiceProvider** comme projet de démarrage et appuyez sur **F5**.
 5.  Démarrez **ClientApp** à partir du menu Démarrer (pas à partir de Visual Studio).
@@ -327,39 +327,39 @@ Si l’appel App service échoue, vérifiez les éléments suivants dans le proj
 
 ## <a name="debug-the-client"></a>Déboguer le client
 
-1.  Pour déboguer le client qui appelle le service d’application, suivez les instructions de l’étape précédente.
+1.  Suivez les instructions de l’étape précédente pour déboguer le client qui appelle App service.
 2.  Lancez **ClientApp** à partir du menu Démarrer.
-3.  Attachez le débogueur au processus **ClientApp. exe** (pas au processus **ApplicationFrameHost. exe** ). (Dans Visual Studio, choisissez **Déboguer &gt; Attacher au processus…** .)
-4.  Dans le projet **ClientApp** , définissez un point d’arrêt dans le **clic sur un bouton\_** .
+3.  Attachez le débogueur au processus de **ClientApp.exe** (pas au processus **ApplicationFrameHost.exe** ). (Dans Visual Studio, choisissez **Déboguer &gt; Attacher au processus…**.)
+4.  Dans le projet **ClientApp** , définissez un point d’arrêt dans le ** \_ clic sur un bouton**.
 5.  Les points d’arrêt à la fois dans le client et dans App service sont alors atteints lorsque vous entrez le numéro 1 dans la zone de texte de **ClientApp** et cliquent sur le bouton.
 
-## <a name="general-app-service-troubleshooting"></a>Résolution des problèmes du service d’application général
+## <a name="general-app-service-troubleshooting"></a>Résolution des problèmes généraux d’App service
 
 Si vous rencontrez un état **AppUnavailable** après avoir essayé de vous connecter à un app service, vérifiez les éléments suivants :
 
-- Assurez-vous que le projet de fournisseur de services d’application et le projet de service d’application sont déployés. Les deux doivent être déployés avant d’exécuter le client sans quoi ce dernier ne pourra se connecter à aucun élément. Vous pouvez effectuer un déploiement à partir de Visual Studio à l’aide de **Générer** > **Déployer la solution**.
+- Assurez-vous que le projet App Service Provider et le projet App service sont déployés. Les deux doivent être déployés avant l’exécution du client, car sinon, le client n’aura rien à connecter à. Vous pouvez déployer à partir de Visual Studio à l’aide de la solution de déploiement de **Build**  >  **Deploy Solution**.
 - Dans le **Explorateur de solutions**, assurez-vous que votre projet de fournisseur App service a une référence entre projets au projet qui implémente le service d’application.
 - Vérifiez que l' `<Extensions>` entrée et ses éléments enfants ont été ajoutés au fichier **Package. appxmanifest** appartenant au projet App Service Provider comme indiqué ci-dessus dans [Ajouter une extension App service à Package. appxmanifest](#appxmanifest).
-- Vérifiez que la chaîne [AppServiceConnection. AppServiceName](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appservice.appserviceconnection.appservicename) de votre client qui appelle le fournisseur App service correspond à `<uap3:AppService Name="..." />` la valeur spécifiée dans le fichier **Package. appxmanifest** du projet du fournisseur App service.
-- Vérifiez que [AppServiceConnection. PackageFamilyName](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appservice.appserviceconnection.packagefamilyname) correspond au nom de la famille de packages du composant fournisseur App service comme indiqué ci-dessus dans [Ajouter une extension App service au package. appxmanifest](#appxmanifest)
-- Pour les services d’application hors processus tels que celui utilisé dans cet exemple, vérifiez que le `EntryPoint` spécifié dans l' `<uap:Extension ...>` élément du fichier **Package. appxmanifest** du projet du fournisseur App service correspond à l’espace de noms et au nom de classe du public classe qui implémente [IBackgroundTask](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask) dans votre projet App service.
+- Vérifiez que la chaîne [AppServiceConnection. AppServiceName](/uwp/api/windows.applicationmodel.appservice.appserviceconnection.appservicename) de votre client qui appelle le fournisseur App service correspond à la valeur `<uap3:AppService Name="..." />` spécifiée dans le fichier **Package. appxmanifest** du projet du fournisseur App service.
+- Vérifiez que [AppServiceConnection. PackageFamilyName](/uwp/api/windows.applicationmodel.appservice.appserviceconnection.packagefamilyname) correspond au nom de la famille de packages du composant fournisseur App service comme indiqué ci-dessus dans [Ajouter une extension App service au package. appxmanifest](#appxmanifest)
+- Pour les services d’application hors processus tels que celui utilisé dans cet exemple, vérifiez que le `EntryPoint` spécifié dans l' `<uap:Extension ...>` élément du fichier **Package. appxmanifest** de votre projet App Service Provider correspond à l’espace de noms et au nom de classe de la classe publique qui implémente [IBackgroundTask](/uwp/api/windows.applicationmodel.background.ibackgroundtask) dans votre projet App service.
 
-### <a name="troubleshoot-debugging"></a>Résolution des problèmes de débogage
+### <a name="troubleshoot-debugging"></a>Résoudre les problèmes de débogage
 
-Si le débogueur ne s’arrête pas aux points d’arrêt de votre fournisseur de services d’application ou de vos projets de service d’application, vérifiez les éléments suivants :
+Si le débogueur ne s’arrête pas aux points d’arrêt dans vos projets App Service Provider ou App service, vérifiez les éléments suivants :
 
-- Assurez-vous que le projet de fournisseur de services d’application et le projet de service d’application sont déployés. Les deux doivent être déployées avant d’exécuter le client. Vous pouvez les déployer à partir de Visual Studio à l’aide de **Générer** > **Déployer la solution**.
-- Assurez-vous que le projet que vous souhaitez déboguer est défini comme projet de démarrage et que les propriétés de débogage de ce projet sont définies de manière à ne pas exécuter le projet lorsque la touche **F5** est enfoncée. Cliquez avec le bouton droit sur le projet, puis cliquez sur **Propriétés**, puis sur **Déboguer** (ou **Débogage** en langage C++). En C#, définissez **Action de démarrage** sur **Ne pas lancer, mais déboguer mon code au démarrage**. En langage C++, définissez **Lancer l’application** sur **Non**.
+- Assurez-vous que le projet App Service Provider et le projet App service sont déployés. Les deux doivent être déployés avant l’exécution du client. Vous pouvez les déployer à partir de Visual Studio à l’aide de la solution de déploiement de **Build**  >  **Deploy Solution**.
+- Assurez-vous que le projet que vous souhaitez déboguer est défini comme projet de démarrage et que les propriétés de débogage de ce projet sont définies de manière à ne pas exécuter le projet lorsque la touche **F5** est enfoncée. Cliquez avec le bouton droit sur le projet, puis cliquez sur **Propriétés**et **Déboguer** (ou **débogage** en C++). En C#, remplacez l' **action de démarrage** par **ne pas lancer, mais déboguez mon code au démarrage**. Dans C++, définissez **lancer l’application** sur **non**.
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarques
 
-Cet exemple offre une introduction simple à la création d’un service d’application qui s’exécute sous forme de tâche en arrière-plan et à l’appel de ce service à partir d’une autre application. Voici les points clés à noter :
+Cet exemple fournit une introduction à la création d’un app service qui s’exécute en tant que tâche en arrière-plan et l’appelle à partir d’une autre application. Voici les points clés à noter :
 
 * Créez une tâche en arrière-plan pour héberger le service d’application.
 * Ajoutez l' `windows.appService` extension au fichier **Package. appxmanifest** du fournisseur App service.
 * Obtenez le nom de la famille de packages du fournisseur App service afin de pouvoir vous y connecter à partir de l’application cliente.
 * Ajoutez une référence entre projets du projet App Service Provider au projet App service.
-* Utilisez [Windows. ApplicationModel. AppService. AppServiceConnection](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.AppService.AppServiceConnection) pour appeler le service.
+* Utilisez [Windows. ApplicationModel. AppService. AppServiceConnection](/uwp/api/Windows.ApplicationModel.AppService.AppServiceConnection) pour appeler le service.
 
 ## <a name="full-code-for-myappservice"></a>Code complet pour MyAppService
 
@@ -461,4 +461,4 @@ namespace MyAppService
 
 * [Convertir un service d’application pour qu’il s’exécute dans le même processus que son application hôte](convert-app-service-in-process.md)
 * [Prendre en charge votre application avec des tâches en arrière-plan](support-your-app-with-background-tasks.md)
-* [Exemple de code App serviceC#( C++, et VB)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices)
+* [App service code, exemple (C#, C++ et VB)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices)

@@ -1,6 +1,6 @@
 ---
 Description: Une vignette est la représentation d’une application dans le menu Démarrer. Chaque application dispose d’une vignette. Lorsque vous créez un projet d’application Windows dans Microsoft Visual Studio, il comprend une vignette par défaut qui affiche le nom et le logo de votre application.
-title: Vignettes pour les applications Windows
+title: Vignettes pour applications Windows
 ms.assetid: 09C7E1B1-F78D-4659-8086-2E428E797653
 label: Tiles
 template: detail.hbs
@@ -8,14 +8,14 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8823116b8fed3503ccf0dadc488956c93ae6c32b
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: f2c2dd6df44e477e34dfddfd6d2c1315b8f32ec2
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234451"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156773"
 ---
-# <a name="tiles-for-windows-apps"></a>Vignettes pour les applications Windows
+# <a name="tiles-for-windows-apps"></a>Vignettes pour applications Windows
 
  
 
@@ -51,15 +51,15 @@ Vous devez mettre à jour quelques éléments :
 -   ShortName : l’espace disponible pour le nom d’affichage sur les vignettes étant limité, nous vous recommandons de spécifier ce nom court pour éviter que le nom de votre application soit tronqué.
 -   Images de logo :
 
-    Vous devez remplacer ces images par vos propres images. Vous avez la possibilité de fournir des images pour différentes échelles visuelles, mais vous n’êtes pas obligé de le faire pour toutes. Pour vérifier que votre application s’affiche correctement sur divers appareils, nous vous recommandons de fournir des versions de chaque image aux échelles 100 %, 200 % et 400 %. Pour en savoir plus sur la génération de ces ressources [, consultez icônes et logos d’application](/windows/uwp/design/style/app-icons-and-logos) .
+    Vous devez remplacer ces images par vos propres images. Vous avez la possibilité de fournir des images pour différentes échelles visuelles, mais vous n’êtes pas obligé de le faire pour toutes. Pour vérifier que votre application s’affiche correctement sur divers appareils, nous vous recommandons de fournir des versions de chaque image aux échelles 100 %, 200 % et 400 %. Pour en savoir plus sur la génération de ces ressources [, consultez icônes et logos d’application](../../style/app-icons-and-logos.md) .
 
     Les images mises à l’échelle respectent la Convention d’affectation de noms suivante :
     
     * &lt; nom &gt; *de l’image.* &lt; facteur &gt; d’échelle*.* &lt; &gt;extension de fichier image* 
 
-    Par exemple : SplashScreen. Scale-100. png
+    Par exemple : SplashScreen.scale-100.png
 
-    Lorsque vous faites référence à l’image, vous y faites référence en tant que * &lt; nom &gt; d’image*.* &lt; &gt;extension de fichier image* (« splashscreen. png » dans cet exemple). Le système sélectionne automatiquement l’image à l’échelle appropriée pour l’appareil parmi les images que vous avez fournies.
+    Lorsque vous faites référence à l’image, vous y faites référence en tant que * &lt; nom &gt; d’image*.* &lt; &gt;extension de fichier image* (« SplashScreen.png » dans cet exemple). Le système sélectionne automatiquement l’image à l’échelle appropriée pour l’appareil parmi les images que vous avez fournies.
 
 -   Nous vous conseillons vivement de fournir des logos pour les vignettes de grande taille afin que l’utilisateur puisse redimensionner la vignette de votre application si nécessaire. Pour fournir ces images supplémentaires, vous créez un élément **DefaultTile** et utilisez les attributs **Wide310x150Logo** et **Square310x310Logo** pour spécifier les images supplémentaires :
 ```    XML

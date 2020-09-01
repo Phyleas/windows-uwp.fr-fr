@@ -6,12 +6,12 @@ ms.date: 10/03/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 77b47866bc064baec7c0ecf556eb615f67af0554
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 8599d1f493dc37095c0cb9464aa1d14c22072413
+ms.sourcegitcommit: 720413d2053c8d5c5b34d6873740be6e913a4857
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234386"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88846839"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17763"></a>Nouveautés de Windows 10 pour les développeurs, build 17763
 
@@ -47,7 +47,7 @@ Guide relatif aux contributions | Nous avons mis à jour le [guide relatif aux c
 Infrastructure DirectX Graphics (DXGI) | Une nouvelle documentation a été ajoutée pour les API DXGI manquantes, et nous avons fourni un article sur les meilleures pratiques pour la présentation sous Windows 10. </br> * [Pour des performances optimales, utilisez le modèle de retournement DXGI](https://docs.microsoft.com/windows/desktop/direct3ddxgi/for-best-performance--use-dxgi-flip-model) : fournit des conseils sur l'optimisation des performances et de l'efficacité de la pile de présentations dans les versions récentes de Windows. </br> * [Méthode IDXGIOutput6::CheckHardwareCompositionSupport](https://docs.microsoft.com/windows/desktop/api/dxgi1_6/nf-dxgi1_6-idxgioutput6-checkhardwarecompositionsupport) : informe les applications que l'extension matérielle est prise en charge. </br> * [Énumération DXGI_HARDWARE_COMPOSITION_SUPPORT_FLAGS](https://docs.microsoft.com/windows/desktop/api/dxgi1_6/ne-dxgi1_6-dxgi_hardware_composition_support_flags) : décrit les niveaux de composition matérielle pris en charge.
 Démarrer | Notre contenu de [Prise en main](../get-started/index.md) a été enrichi avec de nouvelles rubriques. Celles-ci fournissent aux développeurs qui débutent sous Windows 10 des informations et des conseils sur les tâches courantes suivantes : </br> * [Construire un formulaire](../get-started/construct-form-learning-track.md) </br> * [Afficher des clients dans une liste](../get-started/display-customers-in-list-learning-track.md) </br> * [Enregistrer et charger des paramètres](../get-started/settings-learning-track.md) </br> * [Utiliser des fichiers](../get-started/fileio-learning-track.md)
 Éditeur de feuilles de style de carte | Utilisez la nouvelle application [Éditeur de feuilles de style de carte](https://www.microsoft.com/p/map-style-sheet-editor/9nbhtcjt72ft?rtc=1#activetab=pivot:overviewtab) pour personnaliser de manière interactive l'apparence des cartes que vous ajoutez à votre application.
-Microsoft Learn | Le nouveau [site Microsoft Learn](https://www.microsoft.com/learning/default.aspx) offre de nouvelles possibilités d'apprentissage et de formation pratiques aux développeurs Microsoft. Actuellement, Microsoft Learn propose des formations et des certifications pour Microsoft 365, Microsoft Azure, Office 365 et Windows Server.
+Microsoft Learn | Le nouveau [site Microsoft Learn](https://www.microsoft.com/learning/default.aspx) offre de nouvelles possibilités d'apprentissage et de formation pratiques aux développeurs Microsoft. Actuellement, Microsoft Learn propose des formations et des certifications pour Microsoft 365, Microsoft Azure et Windows Server.
 Bloc-notes | Le [Bloc-notes a été mis à jour](https://blogs.windows.com/windowsexperience/2018/07/11/announcing-windows-10-insider-preview-build-17713/). Les fonctionnalités suivantes y ont été ajoutées : zoom, recherche/remplacement intégral et prise en charge des fins de ligne Unix/Linux (LF) et Mac (CR).
 Projet Rome | Le [Projet Rome](https://docs.microsoft.com/windows/project-rome/) offre désormais une expérience de programmation cohérente sur l'ensemble des plateformes et kits de développement logiciels (SDK) pris en charge. </br>  Les nouvelles [Notifications Microsoft Graph](https://developer.microsoft.com/graph/docs/concepts/notifications-concept-overview) utilisent le Projet Rome pour offrir à votre application une plateforme de notifications multiplateforme et centrée sur les personnes.
 Capture d'écran | Les nouveaux [schémas d'URI](../launch-resume/launch-screen-snipping.md) permettent à votre application d'ouvrir une nouvelle capture par programmation, ou de lancer l'application Capture d'écran et croquis avec une image spécifique à des fins d'annotation.

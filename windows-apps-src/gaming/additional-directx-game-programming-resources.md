@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, jeux, programmation
 ms.localizationpriority: medium
-ms.openlocfilehash: a87b979dc48f8977047599cac6a32ba0d901bd63
-ms.sourcegitcommit: 2571af6bf781a464a4beb5f1aca84ae7c850f8f9
+ms.openlocfilehash: 6c1da82eaff074dfd3e925c298f9839dbb70ee3d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82606358"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156503"
 ---
 # <a name="game-programming-resources"></a>Ressources de programmation de jeux
 
@@ -23,7 +23,7 @@ Pour plus d’informations sur la programmation des jeux sur Windows, consultez 
 ## <a name="game-programming-reference"></a>Informations de référence sur la programmation de jeux
 
 
--   [Graphiques et jeux](https://docs.microsoft.com/windows/desktop/graphics-and-multimedia)
+-   [Graphiques et jeux](/windows/desktop/graphics-and-multimedia)
 -   [Informations de référence sur OpenGL](https://www.opengl.org/sdk/docs/man4/)
 
 ## <a name="game-design-guidance"></a>Guide de conception de jeux
@@ -43,7 +43,7 @@ Pour plus d’informations sur la programmation des jeux sur Windows, consultez 
 
 -   [Kit de ressources DirectX](  https://github.com/Microsoft/DirectXTK)
 -   [Bibliothèque de traitement des textures DirectXTex](  https://github.com/Microsoft/DirectXTex)
--   [Diagnostics des graphiques](https://docs.microsoft.com/visualstudio/debugger/overview-of-visual-studio-graphics-diagnostics?view=vs-2015) Microsoft Visual Studio
+-   [Diagnostics des graphiques](/visualstudio/debugger/overview-of-visual-studio-graphics-diagnostics?view=vs-2015) Microsoft Visual Studio
 -   [Win2D](https://github.com/Microsoft/Win2D) : API Windows Runtime facile à utiliser pour le rendu d’éléments graphiques 2D en mode immédiat avec accélération GPU.
 -   [Angle pour Microsoft Store](https://github.com/microsoft/angle/wiki) : exécute le contenu OpenGL es sur Windows en traduisant les appels d’API OpenGL es en appels d’API DirectX 11.
 
@@ -81,7 +81,3 @@ Pour plus d’informations sur la programmation des jeux sur Windows, consultez 
  
 
  
-
-
-
-

@@ -1,27 +1,27 @@
 ---
 title: Infos de référence sur les API de chargement du dossier Device Portal
-description: Découvrez comment accéder par programme aux API de chargement des dossiers.
+description: Découvrez comment vous pouvez télécharger un dossier dans le répertoire de développement à l’aide de l’API REST du portail d’appareils Xbox.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: e1a2c7f0-0040-4ce7-94de-17224736e20b
 ms.localizationpriority: medium
-ms.openlocfilehash: 870d203271cb75ecf5531106bb2c10b3736db9b9
-ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.openlocfilehash: b71f60350bf5c8318adb2a4741bb1a275a4b0276
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59244045"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157753"
 ---
 # <a name="upload-a-folder-to-the-development-directory"></a>Télécharger un dossier dans le répertoire de développement
 
-**Demande**
+**Requête**
 
 Vous pouvez charger un dossier complet en une fois vers l’ID de dossier connu pour les fichiers de développement (ou dans un sous-dossier de ce dossier).
 
-Méthode      | URI de requête
+Méthode      | URI de demande
 :------     | :------
-PUBLIER | /api/app/packagemanager/upload 
+POST | /api/app/packagemanager/upload 
 
 **Paramètres d’URI**
 
@@ -36,7 +36,7 @@ destinationFolder (obligatoire) | Le nom du dossier de destination du dossier à
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Corps HTTP à parties multiples conforme du contenu du répertoire.
 
@@ -46,9 +46,9 @@ destinationFolder (obligatoire) | Le nom du dossier de destination du dossier à
 
 Cette API comporte les codes d’état attendus suivants.
 
-Code d’état HTTP      | Description
+Code d'état HTTP      | Description
 :------     | :-----
-200 | Opération réussie
+200 | Succès
 4XX | Codes d’erreur
 5XX | Codes d’erreur
 

@@ -6,12 +6,12 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, ADS, publicité, installation, kit de développement logiciel (SDK), bibliothèque de publication
 ms.localizationpriority: medium
-ms.openlocfilehash: d5c5c18c41996c5d46c261f351a900fea2532a93
-ms.sourcegitcommit: 45dec3dc0f14934b8ecf1ee276070b553f48074d
+ms.openlocfilehash: a7ec56281c5f1d441d3808fa91491d0d290018f3
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89094667"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89155493"
 ---
 # <a name="install-the-microsoft-advertising-sdk"></a>Installer le SDK Microsoft Advertising
 
@@ -69,7 +69,7 @@ Pour installer le kit de développement logiciel (SDK) Microsoft Advertising dan
 
 5. Dans la zone de recherche, tapez **Microsoft. Advertising. Xaml** (pour un projet XAML) ou **Microsoft.Advertising.JS** (pour un projet JavaScript/html) et installez le package correspondant. Une fois l’installation du package terminée, enregistrez votre solution.
     > [!NOTE]
-    > Si la fenêtre **sortie** signale une erreur *Install-Package* qui indique que le chemin d’accès spécifié est trop long, vous devrez peut-être configurer NuGet pour extraire les packages vers un autre emplacement avec un chemin d’accès plus petit que l’emplacement par défaut. Pour ce faire, ajoutez la valeur `repositoryPath` à un fichier nuget.config sur votre ordinateur, puis affectez-la à un chemin court de dossier, dans lequel extraire les packages. Pour plus d’informations, consultez [cet article](https://docs.microsoft.com/nuget/consume-packages/configuring-nuget-behavior) de la documentation NuGet. Sinon, vous pouvez essayer de déplacer votre projet Visual Studio vers un dossier différent présentant un chemin plus court.
+    > Si la fenêtre **sortie** signale une erreur *Install-Package* qui indique que le chemin d’accès spécifié est trop long, vous devrez peut-être configurer NuGet pour extraire les packages vers un autre emplacement avec un chemin d’accès plus petit que l’emplacement par défaut. Pour ce faire, ajoutez la valeur `repositoryPath` à un fichier nuget.config sur votre ordinateur, puis affectez-la à un chemin court de dossier, dans lequel extraire les packages. Pour plus d’informations, consultez [cet article](/nuget/consume-packages/configuring-nuget-behavior) de la documentation NuGet. Sinon, vous pouvez essayer de déplacer votre projet Visual Studio vers un dossier différent présentant un chemin plus court.
 
 6. Fermez votre solution, puis rouvrez-la.
 
@@ -104,7 +104,7 @@ Pour obtenir des procédures pas à pas qui montrent comment prendre en main les
 
 ## <a name="understanding-framework-packages-in-the-microsoft-advertising-sdk"></a>Compréhension des packages d’infrastructure dans le kit de développement logiciel (SDK) Microsoft Advertising
 
-La bibliothèque Microsoft.Advertising.dll dans le [Kit de développement logiciel (SDK) Microsoft Advertising](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) (pour les applications UWP) est configurée en tant que *package d’infrastructure*. Cette bibliothèque contient les API publicitaires des espaces de noms [Microsoft.Advertising](https://docs.microsoft.com/uwp/api/microsoft.advertising) et [Microsoft.Advertising.WinRT.UI](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui).
+La bibliothèque Microsoft.Advertising.dll dans le [Kit de développement logiciel (SDK) Microsoft Advertising](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) (pour les applications UWP) est configurée en tant que *package d’infrastructure*. Cette bibliothèque contient les API publicitaires des espaces de noms [Microsoft.Advertising](/uwp/api/microsoft.advertising) et [Microsoft.Advertising.WinRT.UI](/uwp/api/microsoft.advertising.winrt.ui).
 
 Étant donné que cette bibliothèque est un package d’infrastructure, cela signifie qu’après l’installation par un utilisateur d’une version de votre application qui utilise cette bibliothèque, cette bibliothèque est automatiquement mise à jour sur son appareil via Windows Update chaque fois que nous publions une nouvelle version de la bibliothèque avec des correctifs et des améliorations des performances. Cela permet de s’assurer que vos clients disposent toujours de la dernière version disponible de la bibliothèque installée sur leurs appareils.
 

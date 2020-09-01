@@ -1,24 +1,24 @@
 ---
 Description: Simulez et automatisez les entrées à partir d’appareils tels que le clavier, la souris, le toucher, le stylet et le boîtier de votre application Windows.
-title: Simuler une entrée d’utilisateur via une injection d’entrée
+title: Simuler une entrée utilisateur par une injection d’entrée
 label: Input injection
 template: detail.hbs
 keywords: appareil, digitaliseur, entrée, interaction, injection
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7bcd63d940e53d90d925f83f27e4c77165a11650
-ms.sourcegitcommit: 124cea09be7f12444bfff541badb65d539d55c83
+ms.openlocfilehash: f06414362b6a821233eabfb396ae59001f35c30d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84124121"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156893"
 ---
-# <a name="simulate-user-input-through-input-injection"></a>Simuler une entrée d’utilisateur via une injection d’entrée
+# <a name="simulate-user-input-through-input-injection"></a>Simuler une entrée utilisateur par une injection d’entrée
 
 Simuler et automatiser les entrées utilisateur à partir d’appareils tels que le clavier, la souris, la touche, le stylet et le boîtier de manette dans vos applications Windows.
 
-> **API importantes**: [ **Windows. UI. Input. preview. injection**](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection)
+> **API importantes**: [ **Windows. UI. Input. preview. injection**](/uwp/api/windows.ui.input.preview.injection)
 
 ## <a name="overview"></a>Vue d’ensemble
 
@@ -43,7 +43,7 @@ Pour utiliser les API d’injection d’entrée dans votre application Windows, 
 |:--:|
 | *Exemple d’injection de saisie tactile* |
 
-Dans cet exemple, nous montrons comment utiliser les API d’injection d’entrée ([Windows. UI. Input. preview. injection](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection)) pour écouter les événements d’entrée de souris dans une région d’une application et simuler les événements d’entrée tactile correspondants dans une autre région.
+Dans cet exemple, nous montrons comment utiliser les API d’injection d’entrée ([Windows. UI. Input. preview. injection](/uwp/api/windows.ui.input.preview.injection)) pour écouter les événements d’entrée de souris dans une région d’une application et simuler les événements d’entrée tactile correspondants dans une autre région.
 
 **Télécharger cet exemple à partir de l' [exemple d’injection d’entrée (souris à toucher)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-input-injection-mouse-to-touch.zip)**
 
@@ -168,13 +168,13 @@ Dans cet exemple, nous montrons comment utiliser les API d’injection d’entr�
 
 2. Nous allons ensuite initialiser notre application.
     
-    Dans cet extrait de code, nous déclarons nos objets globaux et déclarons les écouteurs pour les événements de pointeur ([AddHandler](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler)) dans la zone d’entrée de la souris qui peuvent être marqués comme gérés dans les événements de clic sur le bouton.
+    Dans cet extrait de code, nous déclarons nos objets globaux et déclarons les écouteurs pour les événements de pointeur ([AddHandler](/uwp/api/windows.ui.xaml.uielement.addhandler)) dans la zone d’entrée de la souris qui peuvent être marqués comme gérés dans les événements de clic sur le bouton.
 
-    L’objet [InputInjector](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector) représente l’appareil d’entrée virtuel pour l’envoi des données d’entrée.
+    L’objet [InputInjector](/uwp/api/windows.ui.input.preview.injection.inputinjector) représente l’appareil d’entrée virtuel pour l’envoi des données d’entrée.
 
     Dans le `ContainerInput_PointerPressed` Gestionnaire, nous appelons la fonction d’injection tactile.
 
-    Dans le `ContainerInput_PointerReleased` Gestionnaire, nous appelons UninitializeTouchInjection pour arrêter l’objet [InputInjector](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector) .
+    Dans le `ContainerInput_PointerReleased` Gestionnaire, nous appelons UninitializeTouchInjection pour arrêter l’objet [InputInjector](/uwp/api/windows.ui.input.preview.injection.inputinjector) .
 
     ```csharp
     public sealed partial class MainPage : Page
@@ -251,13 +251,13 @@ Dans cet exemple, nous montrons comment utiliser les API d’injection d’entr�
     ```
 3. Voici la fonction d’injection d’entrée tactile.
 
-    Tout d’abord, nous appelons [TryCreate](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector.trycreate) pour instancier l’objet [InputInjector](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector) .
+    Tout d’abord, nous appelons [TryCreate](/uwp/api/windows.ui.input.preview.injection.inputinjector.trycreate) pour instancier l’objet [InputInjector](/uwp/api/windows.ui.input.preview.injection.inputinjector) .
 
-    Ensuite, nous appelons [InitializeTouchInjection](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector.initializetouchinjection) avec un [InjectedInputVisualizationMode](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.injectedinputvisualizationmode) de `Default` .
+    Ensuite, nous appelons [InitializeTouchInjection](/uwp/api/windows.ui.input.preview.injection.inputinjector.initializetouchinjection) avec un [InjectedInputVisualizationMode](/uwp/api/windows.ui.input.preview.injection.injectedinputvisualizationmode) de `Default` .
 
-    Après avoir calculé le point d’injection, nous appelons [InjectedInputTouchInfo](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.injectedinputtouchinfo) pour initialiser la liste de points tactiles à injecter (pour cet exemple, nous créons un point tactile correspondant au pointeur d’entrée de la souris).
+    Après avoir calculé le point d’injection, nous appelons [InjectedInputTouchInfo](/uwp/api/windows.ui.input.preview.injection.injectedinputtouchinfo) pour initialiser la liste de points tactiles à injecter (pour cet exemple, nous créons un point tactile correspondant au pointeur d’entrée de la souris).
 
-    Enfin, nous appelons [InjectTouchInput](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector.injecttouchinput) deux fois, le premier pour un pointeur vers le haut et le second pour un pointeur vers le haut.
+    Enfin, nous appelons [InjectTouchInput](/uwp/api/windows.ui.input.preview.injection.inputinjector.injecttouchinput) deux fois, le premier pour un pointeur vers le haut et le second pour un pointeur vers le haut.
 
     ```csharp
     /// <summary>
@@ -359,7 +359,7 @@ Dans cet exemple, nous montrons comment utiliser les API d’injection d’entr�
     }
     ```
 
-4. Enfin, nous prenons en charge tous les événements routés de [clic](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase) de bouton dans la zone d’injection d’entrée et mettez à jour l’interface utilisateur avec le nom du bouton sur lequel vous avez cliqué.
+4. Enfin, nous prenons en charge tous les événements routés de [clic](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase) de bouton dans la zone d’injection d’entrée et mettez à jour l’interface utilisateur avec le nom du bouton sur lequel vous avez cliqué.
 
 ## <a name="see-also"></a>Voir aussi
 

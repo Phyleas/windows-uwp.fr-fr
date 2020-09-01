@@ -1,25 +1,25 @@
 ---
 title: Affichage des mémoires tampons de sommets (VBV) et d’index (IBV)
-description: La mémoire tampon de vertex conserve les données d'une liste de sommets.
+description: En savoir plus sur la vue de mémoire tampon de vertex (VBV) et la vue de mémoire tampon d’index (IBV), qui contiennent des index de données et d’entiers pour les vertex dans le rendu Direct3D.
 ms.assetid: 695115D2-9DA0-41F2-9416-33BFAB698129
 keywords:
-- Affichage d'une mémoire tampon de vertex (VBV)
+- Vue de la mémoire tampon de vertex (VBV)
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: cfb92c4f876d85388ce325f151408fe7b9e8d8b4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a616f2bad8f478b2d20e96b183ba944950fef8a8
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57636244"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156093"
 ---
 # <a name="vertex-buffer-view-vbv-and-index-buffer-view-ibv"></a>Affichage des mémoires tampons de sommets (VBV) et d’index (IBV)
 
 
-La mémoire tampon de vertex conserve les données d'une liste de sommets. Les données de chaque vertex sont notamment la position, la couleur, le vecteur normal, les coordonnées de texture, etc. La mémoire tampon d’index conserve des index entiers (décalages) dans une mémoire tampon de vertex et permet de définir et rendre un objet constitué d’un sous-ensemble de la liste complète des sommets.
+Une mémoire tampon de vertex contient des données pour une liste de vertex. Les données de chaque vertex peuvent inclure la position, la couleur, le vecteur normal, les coordonnées des textures, etc. Une mémoire tampon d’index contient des index d’entiers (offsets) dans une mémoire tampon de vertex et est utilisée pour définir et restituer un objet constitué d’un sous-ensemble de la liste complète des vertex.
 
-La définition d’un seul vertex dépend souvent de l’application, par exemple :
+La définition d’un seul vertex correspond souvent à l’application à définir, par exemple :
 
 ``` syntax
 struct CUSTOMVERTEX { 
@@ -30,12 +30,12 @@ struct CUSTOMVERTEX {
 }; 
 ```
 
-La définition de CUSTOMVERTEX serait transmise au pilote graphique lors de la création de mémoires tampons de vertex.
+La définition de CUSTOMVERTEX serait ensuite transmise au pilote Graphics lors de la création de mémoires tampons de vertex.
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
-[Vues](views.md)
+[Views](views.md)
 
  
 

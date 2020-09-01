@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, UWP, services Store, API Microsoft Store Analytics
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 51b0180d6b550cda082b5ee10530194824a48e33
-ms.sourcegitcommit: 720413d2053c8d5c5b34d6873740be6e913a4857
+ms.openlocfilehash: 8becf9149d0afa888d0024619df06f2103c7bf8b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88846799"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89158643"
 ---
 # <a name="access-analytics-data-using-store-services"></a>Accéder aux données d’analyse à l’aide des services Store
 
@@ -30,7 +30,7 @@ Les étapes suivantes décrivent le processus de bout en bout :
 
 Avant de commencer à écrire du code pour appeler l’API Microsoft Store Analytics, assurez-vous que vous avez rempli les conditions préalables suivantes.
 
-* Vous (ou votre organisation) devez disposer d’un annuaire Azure AD et de l’autorisation [Administrateur général](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) sur l’annuaire. Si vous utilisez déjà Microsoft 365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’un annuaire Azure AD. Dans le cas contraire, vous pouvez [créer un nouveau Azure ad dans l’espace partenaires](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) sans frais supplémentaires.
+* Vous (ou votre organisation) devez disposer d’un annuaire Azure AD et de l’autorisation [Administrateur général](/azure/active-directory/users-groups-roles/directory-assign-admin-roles) sur l’annuaire. Si vous utilisez déjà Microsoft 365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’un annuaire Azure AD. Dans le cas contraire, vous pouvez [créer un nouveau Azure ad dans l’espace partenaires](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) sans frais supplémentaires.
 
 * Vous devez associer une application Azure AD à votre compte espace partenaires, récupérer l’ID de locataire et l’ID client pour l’application et générer une clé. L’application Azure AD représente l’application ou le service à partir duquel vous souhaitez appeler l’API Microsoft Store Analytics. Il vous faut l’ID tenant, l’ID client et la clé pour obtenir un jeton d’accès Azure AD à transmettre à l’API.
     > [!NOTE]
@@ -52,7 +52,7 @@ Pour associer une application Azure AD à votre compte espace partenaires et ré
 
 Avant d’appeler l’une des méthodes de l’API Microsoft Store Analytics, vous devez d’abord obtenir un jeton d’accès Azure AD que vous transmettez à l’en-tête **authorization** de chaque méthode de l’API. Une fois que vous avez récupéré le jeton d’accès, vous avez 60 minutes pour l’utiliser avant qu’il n’expire. Une fois le jeton arrivé à expiration, vous pouvez l’actualiser pour pouvoir continuer à l’utiliser dans d’autres appels à l’API.
 
-Pour obtenir le jeton d’accès, suivez les instructions présentées dans l’article [Appels de service à service à l’aide des informations d’identification du client](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/) pour envoyer une requête HTTP POST au point de terminaison ```https://login.microsoftonline.com/<tenant_id>/oauth2/token```. Voici un exemple de requête.
+Pour obtenir le jeton d’accès, suivez les instructions présentées dans l’article [Appels de service à service à l’aide des informations d’identification du client](/azure/active-directory/azuread-dev/v1-oauth2-client-creds-grant-flow) pour envoyer une requête HTTP POST au point de terminaison ```https://login.microsoftonline.com/<tenant_id>/oauth2/token```. Voici un exemple de requête.
 
 ```json
 POST https://login.microsoftonline.com/<tenant_id>/oauth2/token HTTP/1.1
@@ -67,7 +67,7 @@ grant_type=client_credentials
 
 Pour la *valeur \_ ID de locataire* dans l’URI de publication et les paramètres * \_ ID client* et clé * \_ secrète client* , spécifiez l’ID de locataire, l’ID client et la clé de votre application que vous avez récupéré dans l’espace partenaires dans la section précédente. Pour le paramètre *resource*, vous devez spécifier ```https://manage.devcenter.microsoft.com```.
 
-Une fois votre jeton d’accès arrivé à expiration, vous pouvez l’actualiser en suivant les instructions fournies [ici](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens).
+Une fois votre jeton d’accès arrivé à expiration, vous pouvez l’actualiser en suivant les instructions fournies [ici](/azure/active-directory/azuread-dev/v1-protocols-oauth-code#refreshing-the-access-tokens).
 
 <span id="call-the-windows-store-analytics-api" />
 
@@ -95,18 +95,18 @@ Les méthodes d’analyse suivantes sont disponibles pour les applications UWP d
 
 ### <a name="methods-for-desktop-applications"></a>Méthodes pour les applications de bureau
 
-Les méthodes d’analyse suivantes peuvent être utilisées par les comptes de développeurs qui appartiennent au [programme d’application de bureau Windows](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program).
+Les méthodes d’analyse suivantes peuvent être utilisées par les comptes de développeurs qui appartiennent au [programme d’application de bureau Windows](/windows/desktop/appxpkg/windows-desktop-application-program).
 
 | Scénario       | Méthodes      |
 |---------------|--------------------|
 | Installe |  <ul><li>[Obtenir les installations d’applications de bureau](get-desktop-app-installs.md)</li></ul> |
-| Blocs |  <ul><li>[Obtenir les blocs de mise à niveau pour votre application de bureau](get-desktop-block-data.md)</li><li>[Obtenir des informations concernant les blocs de mise à niveau pour votre application de bureau](get-desktop-block-data-details.md)</li></ul> |
+| Blocs |  <ul><li>[Obtenir des blocs de mise à niveau pour votre application de bureau](get-desktop-block-data.md)</li><li>[Obtenir des informations concernant les blocs de mise à niveau pour votre application de bureau](get-desktop-block-data-details.md)</li></ul> |
 | Erreurs d’application |  <ul><li>[Obtenir les données de signalement d’erreurs pour votre application de bureau](get-desktop-application-error-reporting-data.md)</li><li>[Obtenir les informations sur une erreur de votre application de bureau](get-details-for-an-error-in-your-desktop-application.md)</li><li>[Obtenir la trace de pile concernant une erreur dans votre application de bureau](get-the-stack-trace-for-an-error-in-your-desktop-application.md)</li><li>[Télécharger le fichier CAB concernant une erreur dans votre application de bureau](download-the-cab-file-for-an-error-in-your-desktop-application.md)</li></ul> |
-| Insights | <ul><li>[Obtenir les données d’insights pour votre application de bureau](get-insights-data-for-your-desktop-app.md)</li></ul>  |
+| Insights | <ul><li>[Obtenir des données d'insights pour votre application de bureau](get-insights-data-for-your-desktop-app.md)</li></ul>  |
 
 ### <a name="methods-for-xbox-live-services"></a>Méthodes pour les services Xbox Live
 
-Les autres méthodes suivantes peuvent être utilisées par les comptes de développeurs avec des jeux qui utilisent les [services Xbox Live](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md).
+Les autres méthodes suivantes peuvent être utilisées par les comptes de développeurs avec des jeux qui utilisent les [services Xbox Live](/gaming/xbox-live/developer-program-overview.md).
 
 | Scénario       | Méthodes      |
 |---------------|--------------------|
@@ -116,7 +116,7 @@ Les autres méthodes suivantes peuvent être utilisées par les comptes de déve
 
 ### <a name="methods-for-hardware-and-drivers"></a>Méthodes pour le matériel et les pilotes
 
-Les comptes de développeurs qui appartiennent au [programme de tableau de bord matériel Windows](https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-started-with-the-hardware-dashboard) ont accès à un ensemble supplémentaire de méthodes pour récupérer des données d’analyse pour le matériel et les pilotes. Pour plus d’informations, consultez [API du tableau de bord matériel](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-api).
+Les comptes de développeurs qui appartiennent au [programme de tableau de bord matériel Windows](/windows-hardware/drivers/dashboard/get-started-with-the-hardware-dashboard) ont accès à un ensemble supplémentaire de méthodes pour récupérer des données d’analyse pour le matériel et les pilotes. Pour plus d’informations, consultez [API du tableau de bord matériel](/windows-hardware/drivers/dashboard/dashboard-api).
 
 ## <a name="code-example"></a>Exemple de code
 

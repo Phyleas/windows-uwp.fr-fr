@@ -7,18 +7,18 @@ ms.date: 05/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, notification, collections, collection, notifications de groupe, notifications de regroupement, groupe, organiser, centre de maintenance, Toast
 ms.localizationpriority: medium
-ms.openlocfilehash: aff6b933e04611013761c10ad7a76824f7347855
-ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
+ms.openlocfilehash: 7cd99519f7213f85c50a14db0597daa4e10f8360
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88970067"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156753"
 ---
 # <a name="grouping-toast-notifications-with-collections"></a>Regroupement de notifications toast avec des collections
 Utilisez des regroupements pour organiser les toasts de votre application dans le centre de maintenance. Les regroupements aident les utilisateurs à localiser plus facilement des informations dans le centre de maintenance et permettent aux développeurs de mieux gérer leurs notifications.  Les API ci-dessous permettent de supprimer, de créer et de mettre à jour les collections de notifications.
 
 > [!IMPORTANT]
-> **Nécessite Creators Update**: vous devez cibler le kit de développement logiciel (SDK) 15063 et exécuter la build 15063 ou une version ultérieure pour utiliser les collections Toast. Les API associées sont [Windows. UI. notifications. ToastCollection](https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastcollection)et [Windows. UI. notifications. ToastCollectionManager](https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastcollectionmanager)
+> **Nécessite Creators Update**: vous devez cibler le kit de développement logiciel (SDK) 15063 et exécuter la build 15063 ou une version ultérieure pour utiliser les collections Toast. Les API associées sont [Windows. UI. notifications. ToastCollection](/uwp/api/windows.ui.notifications.toastcollection)et [Windows. UI. notifications. ToastCollectionManager](/uwp/api/windows.ui.notifications.toastcollectionmanager)
 
 Vous pouvez voir l’exemple ci-dessous avec une application de messagerie qui sépare les notifications en fonction du groupe de conversation. chaque titre (COMP SCI 160A Project chat, direct messages, Lacrosse Team Chat) est un regroupement distinct.  Notez que les notifications sont regroupées de manière distincte comme si elles se trouvaient dans une application distincte, même s’il s’agit de toutes les notifications de la même application.  Si vous recherchez une façon plus subtile d’organiser vos notifications, consultez [en-têtes Toast](toast-headers.md).  
 ![Exemple de collection avec deux groupes différents de notifications](images/toast-collection-example.png)

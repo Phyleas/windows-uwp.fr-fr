@@ -1,6 +1,6 @@
 ---
-Description: L’article suivant décrit toutes les propriétés et tous les éléments au sein de la charge utile XML du contenu de notification toast.
-title: Schéma XML du contenu du toast
+Description: L’article suivant décrit les propriétés et les éléments de la charge utile XML du contenu Toast.
+title: Schéma XML de contenu Toast
 ms.assetid: AF49EFAC-447E-44C3-93C3-CCBEDCF07D22
 label: Toast content XML schema
 template: detail.hbs
@@ -8,22 +8,22 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 33244391ca9f2ffcba21adacccebf2e9b1d73419
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: cf3bf3733e17312ee0750006d2b8f94c70dbbd43
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66363362"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156653"
 ---
-# <a name="toast-content-xml-schema"></a>Schéma XML du contenu du toast
+# <a name="toast-content-xml-schema"></a>Schéma XML de contenu Toast
 
  
 
-L’article suivant décrit toutes les propriétés et tous les éléments au sein de la charge utile XML du contenu du toast.
+Les éléments suivants décrivent toutes les propriétés et tous les éléments dans la charge XML de contenu Toast.
 
 Dans les schémas XML suivants, le suffixe « ? » signifie qu’un attribut est facultatif.
 
-## <a name="ltvisualgt-and-ltaudiogt"></a>&lt;visual&gt; et &lt;audio&gt;
+## <a name="ltvisualgt-and-ltaudiogt"></a>&lt;visuel &gt; et &lt; audio&gt;
 
 ```
 <toast launch? duration? activationType? scenario? >
@@ -43,7 +43,7 @@ Dans les schémas XML suivants, le suffixe « ? » signifie qu’un attribut 
 </toast>
 ```
 
-**Attributs dans &lt;toast&gt;**
+**Attributs dans &lt; Toast&gt;**
 
 launch?
 
@@ -75,51 +75,51 @@ scenario?
 -   Vous n’en avez pas besoin, sauf si votre scénario consiste à présenter une alarme, un rappel ou un appel entrant.
 -   Ne l’utilisez pas dans le seul but d’assurer la persistance de votre notification à l’écran.
 
-**Attributs dans &lt;visual&gt;**
+**Attributs dans &lt; Visual&gt;**
 
 lang?
 
--   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual).
+-   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](/uwp/schemas/tiles/toastschema/element-visual).
 
 baseUri?
 
--   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual).
+-   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](/uwp/schemas/tiles/toastschema/element-visual).
 
 addImageQuery?
 
--   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual).
+-   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](/uwp/schemas/tiles/toastschema/element-visual).
 
-**Attributs dans &lt;liaison&gt;**
+**Attributs dans la &lt; liaison&gt;**
 
 template?
 
--   \[Important\] modèle ? = "ToastGeneric"
+-   \[\]Modèle important ? = "ToastGeneric"
 -   Si vous avez recours à l’une des nouvelles fonctionnalités des notifications adaptatives et interactives, vérifiez que vous commencez par utiliser le modèle « ToastGeneric » plutôt que le modèle hérité.
 -   Même si l’utilisation des modèles hérités avec les nouvelles actions fonctionne encore, il ne s’agit pas du cas d’utilisation prévu, et nous ne pouvons pas garantir que cette approche continuera de fonctionner à l’avenir.
 
 lang?
 
--   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual).
+-   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](/uwp/schemas/tiles/toastschema/element-visual).
 
 baseUri?
 
--   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual).
+-   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](/uwp/schemas/tiles/toastschema/element-visual).
 
 addImageQuery?
 
--   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual).
+-   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](/uwp/schemas/tiles/toastschema/element-visual).
 
-**Attributs dans &lt;texte&gt;**
+**Attributs dans du &lt; texte&gt;**
 
 lang?
 
--   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual).
+-   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](/uwp/schemas/tiles/toastschema/element-visual).
 
-**Attributs dans &lt;image&gt;**
+**Attributs dans l' &lt; image&gt;**
 
 src
 
--   Pour plus de détails sur cet attribut obligatoire, voir [cet article concernant le schéma des éléments](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-image).
+-   Pour plus de détails sur cet attribut obligatoire, voir [cet article concernant le schéma des éléments](/uwp/schemas/tiles/toastschema/element-image).
 
 placement?
 
@@ -131,11 +131,11 @@ placement?
 
 alt?
 
--   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-image).
+-   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](/uwp/schemas/tiles/toastschema/element-image).
 
 addImageQuery?
 
--   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-image).
+-   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](/uwp/schemas/tiles/toastschema/element-image).
 
 hint-crop?
 
@@ -144,21 +144,21 @@ hint-crop?
 -   L’élément « none » est la valeur par défaut qui signifie aucun rognage.
 -   L’élément « circle » rogne l’image pour lui donner une forme circulaire. Utilisez cette valeur pour les images de profil d’un contact, les images d’une personne, etc.
 
-**Attributs dans &lt;audio&gt;**
+**Attributs dans l' &lt; audio&gt;**
 
 src?
 
--   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-audio).
+-   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](/uwp/schemas/tiles/toastschema/element-audio).
 
 loop?
 
--   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-audio).
+-   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](/uwp/schemas/tiles/toastschema/element-audio).
 
 silent?
 
--   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-audio).
+-   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](/uwp/schemas/tiles/toastschema/element-audio).
 
-## <a name="schemas-ltactiongt"></a>Schémas : &lt;action&gt;
+## <a name="schemas-ltactiongt"></a>Schémas : &lt; action&gt;
 
 
 Dans les schémas XML suivants, le suffixe « ? » signifie qu’un attribut est facultatif.
@@ -177,7 +177,7 @@ Dans les schémas XML suivants, le suffixe « ? » signifie qu’un attribut 
 </toast>
 ```
 
-**Attributs dans &lt;d’entrée&gt;**
+**Attributs dans l' &lt; entrée&gt;**
 
 id
 
@@ -210,19 +210,19 @@ defaultInput?
 -   Si l’entrée présente le type « text », cette valeur sera traitée comme une entrée de chaîne.
 -   Si l’entrée présente le type « selection », cette valeur doit correspondre à l’identificateur de l’une des sélections disponibles dans les éléments de cette entrée.
 
-**Attributs dans &lt;sélection&gt;**
+**Attributs dans la &lt; sélection&gt;**
 
 id
 
 -   Cet attribut est obligatoire. Il permet d’identifier les sélections de l’utilisateur. L’identificateur est renvoyé à votre application.
 
-content
+contenu
 
 -   Cet attribut est obligatoire. Il fournit la chaîne à afficher pour cet élément de sélection.
 
-**Attributs dans &lt;action&gt;**
+**Attributs en &lt; action&gt;**
 
-content
+contenu
 
 -   content = chaîne
 -   L’attribut « content » est obligatoire. Il fournit la chaîne de texte affichée sur le bouton.
@@ -255,7 +255,7 @@ hint-inputId
 
 Le système peut gérer les actions de répétition et de masquage des notifications si vous ne voulez pas que votre application traite la répétition/replanification des notifications sous la forme d’une tâche en arrière-plan. Les actions gérées par le système peuvent être combinées (ou spécifiées individuellement), mais nous vous déconseillons d’implémenter une action de répétition sans une action de masquage.
 
-Liste déroulante de commandes système : SnoozeAndDismiss
+Combinaison de commandes système : SnoozeAndDismiss
 
 ```
 <toast>
@@ -290,13 +290,13 @@ Pour construire des actions de répétition et de masquage individuelles, procé
 -   Spécifiez : activationType = "system".
 -   Spécifiez : arguments = "snooze" | "dismiss".
 -   Spécifiez le contenu :
-    -   Si vous souhaitez afficher les chaînes localisées de « snooze » et de « dismiss » sur les actions, spécifiez le contenu comme étant une chaîne vide : &lt;action content = ""/&gt;
-    -   Si vous voulez définir une chaîne personnalisée, fournissez simplement sa valeur : &lt;action content="Me le rappeler ultérieurement" /&gt;
+    -   Si vous souhaitez que les chaînes localisées « répéter » et « ignorer » s’affichent sur les actions, spécifiez un contenu qui soit une chaîne vide : &lt; action content = ""/&gt;
+    -   Si vous souhaitez une chaîne personnalisée, indiquez simplement sa valeur : &lt; action content = "me le rappeler plus tard"/&gt;
 -   Spécifiez l’entrée :
     -   Si vous ne voulez pas que l’utilisateur sélectionne un intervalle de répétition, mais souhaitez simplement que votre notification se répète une seule fois pendant un intervalle de temps défini par le système (et cohérent dans l’ensemble du système d’exploitation), ne construisez aucun élément &lt;input&gt;.
     -   Si vous voulez fournir des sélections d’intervalle de répétition :
         -   Spécifiez l’attribut « hint-inputId » dans l’action de répétition.
-        -   Faites correspondre l’identificateur de l’entrée avec la valeur de l’attribut « hint-inputId » de l’action de répétition : &lt;input id="snoozeTime"&gt;&lt;/input&gt;&lt;action hint-inputId="snoozeTime"/&gt;
+        -   Faites correspondre l’ID de l’entrée à l’aide de l’indicateur-inputId de l’action de répétition : &lt; ID d’entrée = "snoozeTime" &gt; &lt; /Input d' &gt; &lt; action-inputId = "snoozeTime"/&gt;
         -   Spécifiez l’identificateur de sélection comme étant un entier non négatif (nonNegativeInteger) qui représente l’intervalle de répétition en minutes : &lt;selection id="240" /&gt; signifie une répétition pendant 4 heures.
         -   Assurez-vous que la valeur de l’attribut « defaultInput » dans &lt;input&gt; correspond à l’un des identificateurs des éléments enfants &lt;selection&gt;.
         -   Fournissez jusqu’à 5 valeurs &lt;selection&gt;.

@@ -7,19 +7,19 @@ ms.date: 01/11/2018
 ms.topic: article
 keywords: Windows 10, UWP, tâche en arrière-plan
 ms.localizationpriority: medium
-ms.openlocfilehash: f2700f0e5ffa8c2d1c9f0500e967096763757cd9
-ms.sourcegitcommit: 9aef3bc26a56b8d266b3089d509f79b119234b6f
+ms.openlocfilehash: 50ed0246941645824ee0705582a9efbf2b193dc9
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80538188"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89155773"
 ---
 # <a name="update-a-live-tile-from-a-background-task"></a>Mettre à jour une vignette dynamique à partir d’une tâche en arrière-plan
 
 **API importantes**
 
--   [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
--   [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
+-   [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
+-   [**BackgroundTaskBuilder**](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
 
 Utilisez une tâche en arrière-plan pour mettre à jour une vignette dynamique de votre application avec du contenu actualisé.
 
@@ -31,15 +31,15 @@ La vidéo suivante montre comment ajouter des vignettes dynamiques à vos applic
 
 Pour activer une vignette dynamique pour votre application, ajoutez un nouveau Windows Runtime projet de composant à votre solution. Il s’agit d’un assembly distinct que le système d’exploitation charge et exécute en arrière-plan lorsqu’un utilisateur installe votre application.
 
-1.  Dans l’Explorateur de solutions, cliquez avec le bouton droit sur la solution, cliquez sur **Ajouter**, puis cliquez sur **Nouveau projet**.
-2.  Dans la boîte de dialogue **Ajouter un nouveau projet**, sélectionnez le modèle **Composant Windows Runtime** dans la section **Installé &gt; Autres langages &gt; Visual C# &gt; Windows Universal**.
+1.  Dans l’Explorateur de solutions, cliquez avec le bouton droit sur la solution, cliquez sur **Ajouter**, puis sur **Nouveau projet**.
+2.  Dans la boîte de dialogue **Ajouter un nouveau projet** , sélectionnez le modèle de **composant Windows Runtime** dans la section « ** &gt; autres langages &gt; Visual C# &gt; Windows universel** ».
 3.  Nommez le projet BackgroundTasks, puis cliquez ou appuyez sur **OK**. Microsoft Visual Studio ajoute le nouveau projet à la solution.
 4.  Dans le projet principal, ajoutez une référence au projet BackgroundTasks.
 
 ## <a name="implement-the-background-task"></a>Implémenter la tâche en arrière-plan
 
 
-Implémentez l’interface [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) pour créer une classe qui met à jour la vignette dynamique de votre application. Votre tâche en arrière-plan va dans la méthode Run. Dans ce cas, la tâche obtient un flux de syndication pour les blogs MSDN. Pour éviter la fermeture prématurée de la tâche lorsque du code asynchrone est encore en cours d’exécution, obtenez un report.
+Implémentez l’interface [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) pour créer une classe qui met à jour la vignette dynamique de votre application. Votre tâche en arrière-plan va dans la méthode Run. Dans ce cas, la tâche obtient un flux de syndication pour les blogs MSDN. Pour éviter la fermeture prématurée de la tâche lorsque du code asynchrone est encore en cours d’exécution, obtenez un report.
 
 1.  Dans l’Explorateur de solutions, renommez le fichier généré automatiquement, Class1.cs, sous la forme BlogFeedBackgroundTask.cs.
 2.  Dans BlogFeedBackgroundTask.cs, remplacez le code généré automatiquement par le code stub pour la classe **BlogFeedBackgroundTask**.
@@ -152,16 +152,16 @@ Pour configurer le manifeste du package, ouvrez-le et ajoutez une nouvelle décl
 6.  Cliquez ou appuyez sur l’onglet **Interface utilisateur de l’application**.
 7.  Affectez à **Notifications de verrouillage de l’écran** la valeur **Badge et texte de mosaïque**.
 8.  Définissez un chemin d’accès à une icône de 24x24 pixels dans le champ **Logo du badge**.
-    **Important**  cette icône ne doit utiliser que des pixels monochrome et transparent.
+    **Important**    Cette icône ne doit utiliser que des pixels monochrome et transparent.
 9.  Dans le champ **Petit logo**, définissez un chemin d’accès à une icône de 30x30 pixels.
 10. Dans le champ **Logo large**, définissez un chemin d’accès vers une icône de 310x150 pixels.
 
 ## <a name="register-the-background-task"></a>Inscrire la tâche en arrière-plan
 
 
-Créez un élément [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) pour inscrire votre tâche.
+Créez un élément [**BackgroundTaskBuilder**](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) pour inscrire votre tâche.
 
-> **Notez**  à partir de Windows 8.1, les paramètres d’inscription des tâches en arrière-plan sont validés au moment de l’inscription. Si l’un des paramètres d’inscription n’est pas valide, une erreur est renvoyée. Votre application doit être en mesure de gérer les scénarios dans lesquels l’inscription de la tâche en arrière-plan échoue. Par exemple utilisez une instruction conditionnelle pour rechercher les erreurs d’inscription, puis retentez l’inscription qui a échoué avec d’autres valeurs de paramètre.
+> **Remarque**    À partir de Windows 8.1, les paramètres d’inscription des tâches en arrière-plan sont validés au moment de l’inscription. Si l’un des paramètres d’inscription n’est pas valide, une erreur est renvoyée. Votre application doit être en mesure de gérer les scénarios dans lesquels l’inscription de la tâche en arrière-plan échoue. Par exemple utilisez une instruction conditionnelle pour rechercher les erreurs d’inscription, puis retentez l’inscription qui a échoué avec d’autres valeurs de paramètre.
  
 
 Dans la page principale de votre application, ajoutez la méthode **RegisterBackgroundTask** et appelez-la dans le gestionnaire d’événements **OnNavigatedTo**.
@@ -256,11 +256,11 @@ Pour déboguer la tâche en arrière-plan, définissez un point d’arrêt dans 
 ## <a name="related-topics"></a>Rubriques connexes
 
 
-* [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
-* [**TileUpdateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdateManager)
-* [**TileNotification**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileNotification)
+* [**BackgroundTaskBuilder**](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
+* [**TileUpdateManager**](/uwp/api/Windows.UI.Notifications.TileUpdateManager)
+* [**TileNotification**](/uwp/api/Windows.UI.Notifications.TileNotification)
 * [Prendre en charge votre application avec des tâches en arrière-plan](support-your-app-with-background-tasks.md)
-* [Instructions et liste de vérification pour les vignettes et les badges](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-creating-tiles)
+* [Recommandations et liste de vérification sur les vignettes et les badges](../design/shell/tiles-and-notifications/creating-tiles.md)
 
  
 
