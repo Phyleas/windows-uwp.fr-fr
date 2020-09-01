@@ -1,23 +1,23 @@
 ---
-title: Ajouter des fonctionnalités de démonstration de la vente au détail (RDX) à votre application
+title: Ajouter des fonctionnalités de version de démonstration commerciale (RDX) à votre application
 description: Préparez votre application pour le mode de démonstration de la vente au détail, en vous aidant à présenter votre application sur la vente au détail.
 ms.assetid: f83f950f-7fdd-4f18-8127-b92a8f400061
 ms.date: 10/02/2018
 ms.topic: article
-keywords: windows 10, uwp, application de démonstration commerciale
+keywords: application de démonstration Windows 10, UWP, de la version commerciale
 ms.localizationpriority: medium
-ms.openlocfilehash: 5be39760ee2b8837cfb9b0809a354262e790970b
-ms.sourcegitcommit: 5dfa98a80eee41d97880dba712673168070c4ec8
+ms.openlocfilehash: 39f1cb7439c02f215824c6c632fb2e2fc6afdb39
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73052002"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89164533"
 ---
-# <a name="add-retail-demo-rdx-features-to-your-app"></a>Ajouter des fonctionnalités de démonstration de la vente au détail (RDX) à votre application
+# <a name="add-retail-demo-rdx-features-to-your-app"></a>Ajouter des fonctionnalités de version de démonstration commerciale (RDX) à votre application
 
 Incluez un mode de version de démonstration commerciale dans votre application Windows pour que les clients qui essaient des ordinateurs et des appareils sur le point de vente puissent y accéder.
 
-Lorsque les clients se trouvent dans un magasin de vente au détail, ils s’attendent à pouvoir essayer des démonstrations de PC et d’appareils. Ils consacrent souvent beaucoup de temps à la découverte des applications grâce à l' [expérience de démonstration de la vente au détail (RDX)](https://docs.microsoft.com/windows-hardware/customize/desktop/retail-demo-experience).
+Lorsque les clients se trouvent dans un magasin de vente au détail, ils s’attendent à pouvoir essayer des démonstrations de PC et d’appareils. Ils consacrent souvent beaucoup de temps à la découverte des applications grâce à l' [expérience de démonstration de la vente au détail (RDX)](/windows-hardware/customize/desktop/retail-demo-experience).
 
 Vous pouvez configurer votre application pour fournir différentes expériences en mode _normal_ ou _au détail_ . Par exemple, si votre application commence par un processus d’installation, vous pouvez ignorer cette dernière en mode de vente au détail et préremplir l’application avec les exemples de données et les paramètres par défaut pour qu’ils puissent accéder directement à.
 
@@ -35,7 +35,7 @@ Outre les exigences Microsoft Store pour les applications, les applications pren
 
 * **Concentrez-vous sur l’expérience**. Donnez à l’utilisateur le temps d’assimiler votre contenu. S’il est essentiel de les amener rapidement à découvrir les points forts, il faut également aménager des pauses pour leur permettre de profiter pleinement de l’expérience.
 
-## <a name="technical-requirements"></a>Spécifications techniques
+## <a name="technical-requirements"></a>Exigences techniques
 
 Étant donné que les applications prenant en charge l’interface RDX sont conçues pour présenter le meilleur de votre application aux clients de détail, elles doivent répondre aux exigences techniques et respecter les réglementations en matière de confidentialité que le Microsoft Store a pour toutes les applications de démonstration de la version commerciale.
 
@@ -45,11 +45,11 @@ Il peut être utilisé comme liste de vérification pour vous aider à préparer
 
 Les applications prenant en charge les RDX qui ne répondent pas à ces exigences critiques seront supprimées de tous les appareils de démonstration de la version commerciale dès que possible.
 
-* **Ne pas demander d’informations d’identification personnelle (PII)** . Cela comprend les informations de connexion, les informations de compte Microsoft ou les coordonnées.
+* **Ne pas demander d’informations d’identification personnelle (PII)**. Cela comprend les informations de connexion, les informations de compte Microsoft ou les coordonnées.
 
 * **Expérience sans erreur**. Votre application doit s’exécuter sans erreur. En outre, aucune fenêtre ou notification d’erreur ne doit s’afficher lorsque les clients utilisent les appareils de démonstration commerciale. Les erreurs se répercutent négativement sur l’application elle-même, sur la personnalisation, sur la réputation de l’appareil, sur la manufacturer’s de l’appareil et sur la réputation de Microsoft.
 
-* Les **applications payantes doivent avoir un mode d’évaluation**. Votre application doit être gratuite ou inclure un [mode d’évaluation](https://docs.microsoft.com/windows/uwp/monetize/exclude-or-limit-features-in-a-trial-version-of-your-app). Les clients ne souhaitent pas payer pour une expérience en magasin.
+* Les **applications payantes doivent avoir un mode d’évaluation**. Votre application doit être gratuite ou inclure un [mode d’évaluation](./exclude-or-limit-features-in-a-trial-version-of-your-app.md). Les clients ne souhaitent pas payer pour une expérience en magasin.
 
 ### <a name="high-priority-requirements"></a>Exigences de haute priorité
 
@@ -76,7 +76,7 @@ L’équipe commerciale Windows Store peut contacter directement les développeu
 ## <a name="retailinfo-api-preparing-your-code-for-demo-mode"></a>API RetailInfo : préparation de votre code en mode démo
 
 ### <a name="isdemomodeenabled"></a>IsDemoModeEnabled
-La propriété [**IsDemoModeEnabled**](https://docs.microsoft.com/uwp/api/windows.system.profile.retailinfo.isdemomodeenabled) de la classe de l’utilitaire [**RetailInfo**](https://docs.microsoft.com/uwp/api/Windows.System.Profile.RetailInfo) , qui fait partie de l’espace de noms [Windows. System. Profile](https://docs.microsoft.com/uwp/api/windows.system.profile) dans le kit de développement logiciel (SDK) Windows 10, est utilisée comme indicateur booléen pour spécifier le chemin de code sur lequel votre application s’exécute.mode ou le mode de _vente au détail_ .
+La propriété [**IsDemoModeEnabled**](/uwp/api/windows.system.profile.retailinfo.isdemomodeenabled) dans la classe de l’utilitaire [**RetailInfo**](/uwp/api/Windows.System.Profile.RetailInfo) , qui fait partie du [Windows.SysTEM. ](/uwp/api/windows.system.profile) Espace de noms de profil dans le kit de développement logiciel (SDK) Windows 10, est utilisé comme indicateur booléen pour spécifier le chemin de code du code sur lequel votre application s’exécute, le mode _normal_ ou le mode de _vente au détail_ .
 
 ``` csharp
 using Windows.Storage;
@@ -129,7 +129,7 @@ if (Windows.System.Profile.retailInfo.isDemoModeEnabled) {
 
 ### <a name="retailinfoproperties"></a>RetailInfo. Properties
 
-Quand [**IsDemoModeEnabled**](https://docs.microsoft.com/uwp/api/windows.system.profile.retailinfo.isdemomodeenabled) renvoie la valeur true, vous pouvez exécuter une requête concernant différentes propriétés de l’appareil à l’aide de [**RetailInfo.Properties**](https://docs.microsoft.com/uwp/api/windows.system.profile.retailinfo.properties) pour créer une expérience de démonstration commerciale plus personnalisée. Ces propriétés incluent [**ManufacturerName**](https://docs.microsoft.com/uwp/api/windows.system.profile.knownretailinfoproperties.manufacturername), [**Screensize**](https://docs.microsoft.com/uwp/api/windows.system.profile.knownretailinfoproperties.screensize), [**Memory**](https://docs.microsoft.com/uwp/api/windows.system.profile.knownretailinfoproperties.memory) et ainsi de suite.
+Quand [**IsDemoModeEnabled**](/uwp/api/windows.system.profile.retailinfo.isdemomodeenabled) retourne la valeur true, vous pouvez interroger un ensemble de propriétés sur l’appareil à l’aide de [**RetailInfo. Properties**](/uwp/api/windows.system.profile.retailinfo.properties) pour créer une expérience de démonstration de la vente au détail plus personnalisée. Ces propriétés incluent [**ManufacturerName**](/uwp/api/windows.system.profile.knownretailinfoproperties.manufacturername), [**Screensize**](/uwp/api/windows.system.profile.knownretailinfoproperties.screensize), [**Memory**](/uwp/api/windows.system.profile.knownretailinfoproperties.memory) et ainsi de suite.
 
 ```csharp
 using Windows.UI.Xaml.Controls;
@@ -239,7 +239,7 @@ Le nettoyage commence deux minutes après qu’un client a cessé d’interagir 
 
 Étape 2 : installation
 * Pour les appareils hors connexion : les dossiers restent vides
-* Pour les appareils en ligne : les ressources de démonstration commerciale peuvent être transférées vers l’appareil à partir du Microsoft Store
+* Pour les appareils en ligne : les ressources de démonstration de la vente au détail peuvent être transmises à l’appareil à partir de la Microsoft Store
 
 ### <a name="store-data-across-user-sessions"></a>Stocker des données entre les sessions utilisateur
 
@@ -247,7 +247,7 @@ Pour stocker des données entre les sessions utilisateur, vous pouvez stocker de
 
 ### <a name="customize-the-cleanup-process"></a>Personnaliser le processus de nettoyage
 
-Pour personnaliser le processus de nettoyage, implémentez l' `Microsoft-RetailDemo-Cleanup` App service dans votre application.
+Pour personnaliser le processus de nettoyage, implémentez `Microsoft-RetailDemo-Cleanup` app service dans votre application.
 
 Les scénarios dans lesquels une logique de nettoyage personnalisée est nécessaire incluent l’exécution d’une installation complète, le téléchargement et la mise en cache de données, ou la suppression des données *LocalState* .
 
@@ -359,7 +359,7 @@ namespace MyCompany.MyApp
 
 ## <a name="related-links"></a>Liens connexes
 
-* [Stocker et récupérer des données d’application](https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)
-* [Comment créer et utiliser un app service](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)
-* [Localisation du contenu de l’application](https://docs.microsoft.com/windows/uwp/globalizing/globalizing-portal)
-* [Expérience de démonstration de la vente au détail (RDX)](https://docs.microsoft.com/windows-hardware/customize/desktop/retail-demo-experience)
+* [Stocker et récupérer des données d’application](../design/app-settings/store-and-retrieve-app-data.md)
+* [Comment créer et utiliser un service d’application](../launch-resume/how-to-create-and-consume-an-app-service.md)
+* [Localiser les contenus d’une application](../design/globalizing/globalizing-portal.md)
+* [Expérience de démonstration de la vente au détail (RDX)](/windows-hardware/customize/desktop/retail-demo-experience)

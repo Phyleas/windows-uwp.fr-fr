@@ -5,16 +5,16 @@ author: maiak
 ms.author: maiak
 ms.date: 02/23/2020
 ms.topic: overview
-ms.openlocfilehash: 59722f1f31364c464a8a763d28f3d15ef13609a8
-ms.sourcegitcommit: cfba95a96202c4250de845115d1b99361412a779
+ms.openlocfilehash: f5680bdc6502c4b917667e5a59084286b445063c
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77903286"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166733"
 ---
 # <a name="extend-traceprocessor"></a>Étendre TraceProcessor
 
-De nombreux types de données de trace ont une prise en charge intégrée dans [TraceProcessor](https://docs.microsoft.com/dotnet/api/microsoft.windows.eventtracing.traceprocessor), mais si vous avez vos autres fournisseurs que vous souhaitez analyser (y compris vos propres fournisseurs personnalisés), ces données sont également disponibles à partir de la trace en direct pendant le traitement.
+De nombreux types de données de trace ont une prise en charge intégrée dans [TraceProcessor](/dotnet/api/microsoft.windows.eventtracing.traceprocessor), mais si vous avez vos autres fournisseurs que vous souhaitez analyser (y compris vos propres fournisseurs personnalisés), ces données sont également disponibles à partir de la trace en direct pendant le traitement.
 
 > [!NOTE]
 > Cette partie de l’API est en version préliminaire et en développement actif. Cela peut changer dans les versions ultérieures.
@@ -65,7 +65,7 @@ class CustomDataSource : IFilteredEventConsumer
 }
 ```
 
-## <a name="next-steps"></a>Étapes suivantes :
+## <a name="next-steps"></a>Étapes suivantes
 
 Dans ce didacticiel, vous avez appris à étendre TraceProcessor.
 

@@ -6,21 +6,21 @@ ms.date: 06/26/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 78faef0d6a6e02c43221d1d525adedd364dd6e34
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: ff40b506ef305ac4bc651864da34fe746f6229a3
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493154"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89164853"
 ---
 # <a name="launch-the-default-app-for-a-uri"></a>Lancer l’application par défaut pour un URI
 
 
 **API importantes**
 
-- [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync)
-- [**PreferredApplicationPackageFamilyName**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.preferredapplicationpackagefamilyname)
-- [**DesiredRemainingView**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview)
+- [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync)
+- [**PreferredApplicationPackageFamilyName**](/uwp/api/windows.system.launcheroptions.preferredapplicationpackagefamilyname)
+- [**DesiredRemainingView**](/uwp/api/windows.system.launcheroptions.desiredremainingview)
 
 Découvrez comment lancer l’application par défaut d’un URI (Uniform Resource Identifier). Un URI permet de lancer une autre application pour effectuer une tâche spécifique. Cette rubrique fournit également une vue d’ensemble des nombreux schémas d’URI intégrés à Windows. Vous pouvez également lancer des URI personnalisés. Pour plus d’informations sur l’inscription d’un schéma d’URI personnalisé et la gestion de l’activation des URI, voir [Gérer l’activation des URI](handle-uri-activation.md).
 
@@ -30,7 +30,7 @@ Cette rubrique décrit les schémas d’URI suivants qui sont intégrés dans Wi
 
 | Schéma d’URI | Lancement |
 | ----------:|----------|
-|[BingMaps :, MS-Drive-to : et MS-Walk-to :](#maps-app-uri-schemes) | Application Cartes |
+|[BingMaps :, MS-Drive-to : et MS-Walk-to : ](#maps-app-uri-schemes) | Application Cartes |
 |[protocoles](#http-uri-scheme) | Navigateur web par défaut |
 |[écrire](#email-uri-scheme) | Application de courrier électronique par défaut |
 |[ms-call:](#call-app-uri-scheme) |  Application d’appel |
@@ -54,9 +54,9 @@ En général, votre application ne peut pas sélectionner l’application à lan
 
 ### <a name="call-launchuriasync-to-launch-a-uri"></a>Appeler LaunchUriAsync pour lancer un URI
 
-Utilisez la méthode [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) pour lancer un URI. Lors de l’appel de cette méthode, votre application doit être au premier plan, c’est-à-dire qu’elle doit être visible pour l’utilisateur. Cette conditions contribue à garantir que l’utilisateur conserve le contrôle. Pour pouvoir la respecter, assurez-vous que vous avez relié directement tous les lancements d’URI à l’interface utilisateur de votre application. L’utilisateur doit toujours exercer une action pour initier un lancement d’URI. Si vous tentez de lancer un URI alors que votre application n’est pas au premier plan, le lancement échoue et votre rappel d’erreur est appelé.
+Utilisez la méthode [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync) pour lancer un URI. Lors de l’appel de cette méthode, votre application doit être au premier plan, c’est-à-dire qu’elle doit être visible pour l’utilisateur. Cette conditions contribue à garantir que l’utilisateur conserve le contrôle. Pour pouvoir la respecter, assurez-vous que vous avez relié directement tous les lancements d’URI à l’interface utilisateur de votre application. L’utilisateur doit toujours exercer une action pour initier un lancement d’URI. Si vous tentez de lancer un URI alors que votre application n’est pas au premier plan, le lancement échoue et votre rappel d’erreur est appelé.
 
-Commencez par créer un objet [**System.Uri**](https://docs.microsoft.com/dotnet/api/system.uri) pour représenter l’URI, puis passez-le à la méthode [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync). Utilisez le résultat renvoyé pour voir si l’appel a réussi, comme illustré dans l’exemple suivant.
+Commencez par créer un objet [**System.Uri**](https://docs.microsoft.com/dotnet/api/system.uri) pour représenter l’URI, puis passez-le à la méthode [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync). Utilisez le résultat renvoyé pour voir si l’appel a réussi, comme illustré dans l’exemple suivant.
 
 ```cs
 private async void launchURI_Click(object sender, RoutedEventArgs e)
@@ -117,9 +117,9 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 ### <a name="set-remaining-view-preference"></a>Définir une préférence d’affichage persistant
 
-Les applications sources qui appellent [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) peuvent demander qu’elles restent à l’écran après le lancement d’un URI. Par défaut, Windows essaie de partager tout l’espace disponible de manière équitable entre l’application source et l’application cible qui gère l’URI. Les applications sources peuvent utiliser la propriété [**DesiredRemainingView**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview) pour indiquer au système d’exploitation qu’elles préfèrent que leur fenêtre d’application occupe plus ou moins d’espace disponible. La propriété **DesiredRemainingView** peut également servir à indiquer que l’application source n’a pas besoin de rester à l’écran après le lancement de l’URI et qu’elle peut être complètement remplacée par l’application cible. Cette propriété spécifie uniquement la taille de fenêtre par défaut de l’application appelante. Elle ne spécifie pas le comportement d’autres applications qui peuvent se trouver en même temps sur l’écran.
+Les applications sources qui appellent [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync) peuvent demander qu’elles restent à l’écran après le lancement d’un URI. Par défaut, Windows essaie de partager tout l’espace disponible de manière équitable entre l’application source et l’application cible qui gère l’URI. Les applications sources peuvent utiliser la propriété [**DesiredRemainingView**](/uwp/api/windows.system.launcheroptions.desiredremainingview) pour indiquer au système d’exploitation qu’elles préfèrent que leur fenêtre d’application occupe plus ou moins d’espace disponible. La propriété **DesiredRemainingView** peut également servir à indiquer que l’application source n’a pas besoin de rester à l’écran après le lancement de l’URI et qu’elle peut être complètement remplacée par l’application cible. Cette propriété spécifie uniquement la taille de fenêtre par défaut de l’application appelante. Elle ne spécifie pas le comportement d’autres applications qui peuvent se trouver en même temps sur l’écran.
 
-**Remarque**    Windows prend en compte plusieurs facteurs différents lorsqu’il détermine la taille finale de la fenêtre de l’application source, par exemple, la préférence de l’application source, le nombre d’applications à l’écran, l’orientation de l’écran, et ainsi de suite. En définissant [**DesiredRemainingView**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview), vous n’êtes pas sûr d’un comportement de fenêtrage spécifique pour l’application source.
+**Remarque**    Windows prend en compte plusieurs facteurs différents lorsqu’il détermine la taille finale de la fenêtre de l’application source, par exemple, la préférence de l’application source, le nombre d’applications à l’écran, l’orientation de l’écran, et ainsi de suite. En définissant [**DesiredRemainingView**](/uwp/api/windows.system.launcheroptions.desiredremainingview), vous n’êtes pas sûr d’un comportement de fenêtrage spécifique pour l’application source.
 
 ```cs
 // Set the desired remaining view.
@@ -167,7 +167,7 @@ Utilisez les schémas **BingMaps :**, **MS-Drive-to :** et **MS-Walk-to :** U
 
 ![Exemple de l’application Cartes Windows.](images/mapnyc.png)
 
-Pour plus d’informations, consultez [Lancer l’application Cartes Windows](launch-maps-app.md). Pour utiliser le contrôle de carte dans votre propre application, voir [Afficher des cartes avec des vues 2D, 3D et Streetside](https://docs.microsoft.com/windows/uwp/maps-and-location/display-maps).
+Pour plus d’informations, consultez [Lancer l’application Cartes Windows](launch-maps-app.md). Pour utiliser le contrôle de carte dans votre propre application, voir [Afficher des cartes avec des vues 2D, 3D et Streetside](../maps-and-location/display-maps.md).
 
 ### <a name="messaging-app-uri-scheme"></a>Schéma d’URI pour l’application de messagerie
 
@@ -189,7 +189,7 @@ Utilisez le schéma **MS-tonepicker :** URI pour choisir des sonneries, des ala
 |------------|---------|
 | ms-tonepicker: | Sélectionnez les sonneries, alarmes et sons système. |
 
-Les paramètres sont transmis à l’API LaunchURI.à l’aide de la classe [ValueSet](https://docs.microsoft.com/uwp/api/windows.foundation.collections.valueset). Pour en savoir plus, voir [Sélectionner et enregistrer des tonalités à l’aide du schéma d’URI ms-tonepicker](launch-ringtone-picker.md).
+Les paramètres sont transmis à l’API LaunchURI.à l’aide de la classe [ValueSet](/uwp/api/windows.foundation.collections.valueset). Pour en savoir plus, voir [Sélectionner et enregistrer des tonalités à l’aide du schéma d’URI ms-tonepicker](launch-ringtone-picker.md).
 
 ### <a name="nearby-numbers-app-uri-scheme"></a>Schéma d’URI pour l’application Numéros à proximité
 
@@ -197,7 +197,7 @@ Utilisez le schéma **MS-Yellowpage :** URI pour lancer l’application de num�
 
 | Schéma d’URI | Résultats |
 |------------|---------|
-| MS-Yellowpage :? Input = \[ mot clé \]&méthode = \[ chaîne ou T9\] | Lance l’application Numéros à proximité.<br>`input`fait référence au mot clé dans lequel vous souhaitez effectuer la recherche.<br>`method`fait référence au type de recherche (chaîne ou recherche T9).<br>Si `method` est `T9` (un type de clavier), alors `keyword` doit être une chaîne numérique correspondant aux touches de clavier T9 à rechercher.<br>Si `method` est `String`, alors `keyword` est le mot-clé à rechercher. |
+| MS-Yellowpage :? Input = \[ mot clé \]&méthode = \[ chaîne ou T9\] | Lance l’application Numéros à proximité.<br>`input` fait référence au mot clé dans lequel vous souhaitez effectuer la recherche.<br>`method` fait référence au type de recherche (chaîne ou recherche T9).<br>Si `method` est `T9` (un type de clavier), alors `keyword` doit être une chaîne numérique correspondant aux touches de clavier T9 à rechercher.<br>Si `method` est `String`, alors `keyword` est le mot-clé à rechercher. |
 
 ### <a name="people-app-uri-scheme"></a>Schéma d’URI pour l’application Contacts
 
@@ -207,18 +207,18 @@ Pour plus d’informations, voir [Lancer l’application Contacts](launch-people
 ### <a name="photos-app-uri-scheme"></a>Modèle URI de l’application photos
 
 Utilisez le schéma **MS-photos :** URI pour lancer l’application photos et afficher une image ou modifier une vidéo. Par exemple :  
-Pour afficher une image :`ms-photos:viewer?fileName=c:\users\userName\Pictures\image.jpg`  
-Ou pour modifier une vidéo :`ms-photos:videoedit?InputToken=123abc&Action=Trim&StartTime=01:02:03`  
+Pour afficher une image : `ms-photos:viewer?fileName=c:\users\userName\Pictures\image.jpg`  
+Ou pour modifier une vidéo : `ms-photos:videoedit?InputToken=123abc&Action=Trim&StartTime=01:02:03`  
 
 > [!NOTE]
 > Les URI permettant de modifier une vidéo ou d’afficher une image sont uniquement disponibles sur le bureau.
 
 | Schéma d’URI |Résultats |
 |------------|--------|
-| MS-photos : visionneuse ? fileName = {filename} | Lance l’application photos pour afficher l’image spécifiée où {filename} est un nom de chemin d’accès complet. Par exemple : `c:\users\userName\Pictures\ImageToView.jpg` |
-| MS-photos : VideoEdit ? InputToken = {jeton d’entrée} | Lance l’application photos en mode d’édition vidéo pour le fichier représenté par le jeton de fichier. **InputToken** est obligatoire. Utilisez [SharedStorageAccessManager](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.SharedStorageAccessManager) pour obtenir un jeton pour un fichier. |
+| MS-photos : visionneuse ? fileName = {filename} | Lance l’application photos pour afficher l’image spécifiée où {filename} est un nom de chemin d’accès complet. Exemple : `c:\users\userName\Pictures\ImageToView.jpg`. |
+| MS-photos : VideoEdit ? InputToken = {jeton d’entrée} | Lance l’application photos en mode d’édition vidéo pour le fichier représenté par le jeton de fichier. **InputToken** est obligatoire. Utilisez  [SharedStorageAccessManager](/uwp/api/Windows.ApplicationModel.DataTransfer.SharedStorageAccessManager) pour obtenir un jeton pour un fichier. |
 | MS-photos : VideoEdit ? Action = {action} | Paramètre qui indique le mode d’édition vidéo dans lequel l’application photos est ouverte, où {action} est l’un des suivants : **SlowMotion**, **FrameExtraction**, **Trim**, **View**, **Ink**. **Action** requise. |
-| MS-photos : VideoEdit ? StartTime = {TimeSpan} | Paramètre facultatif qui spécifie où commencer la vidéo. `{timespan}`doit être au format `"hh:mm:ss.ffff"` . S’il n’est pas spécifié, la valeur par défaut est`00:00:00.0000` |
+| MS-photos : VideoEdit ? StartTime = {TimeSpan} | Paramètre facultatif qui spécifie où commencer la vidéo. `{timespan}` doit être au format `"hh:mm:ss.ffff"` . S’il n’est pas spécifié, la valeur par défaut est `00:00:00.0000` |
 
 ### <a name="settings-app-uri-scheme"></a>Schéma d’URI pour l’application Paramètres
 
@@ -244,4 +244,4 @@ Utilisez le schéma **msnweather :** URI pour lancer l’application météo.
 
 | Schéma d’URI | Résultats |
 |------------|---------|
-| msnweather://Forecast ? la = \[ latitude \]&Lo = \[ Longitude\] | Lance l’application météo dans la page prévision en fonction des coordonnées géographiques de l’emplacement.<br>`latitude`fait référence à la latitude de l’emplacement.<br> `longitude`fait référence à la longitude de l’emplacement.<br> |
+| msnweather://Forecast ? la = \[ latitude \]&Lo = \[ Longitude\] | Lance l’application météo dans la page prévision en fonction des coordonnées géographiques de l’emplacement.<br>`latitude` fait référence à la latitude de l’emplacement.<br> `longitude` fait référence à la longitude de l’emplacement.<br> |

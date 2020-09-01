@@ -6,24 +6,24 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: Windows 10, UWP, StoreRequestHelper, SendRequestAsync
 ms.localizationpriority: medium
-ms.openlocfilehash: 810c546eb0ee0263dcb50b3ce58e593ad294435c
-ms.sourcegitcommit: 577a54d36145f91c8ade8e4509d4edddd8319137
+ms.openlocfilehash: a02be93a56d6066ebd4d9547c8cc9ea1a96c9e09
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83867329"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89164493"
 ---
 # <a name="send-requests-to-the-microsoft-store"></a>Envoyer des demandes au Microsoft Store
 
-À compter de Windows 10, la version 1607, le SDK Windows fournit des API pour les opérations liées aux magasins (telles que les achats dans l’application) dans l’espace de noms [Windows. services. Store](https://docs.microsoft.com/uwp/api/windows.services.store) . Toutefois, bien que les services qui prennent en charge le magasin soient constamment mis à jour, étendus et améliorés entre les versions du système d’exploitation, les nouvelles API sont généralement ajoutées au SDK Windows uniquement pendant les versions majeures du système d’exploitation.
+À compter de Windows 10, la version 1607, le SDK Windows fournit des API pour les opérations liées aux magasins (telles que les achats dans l’application) dans l’espace de noms [Windows. services. Store](/uwp/api/windows.services.store) . Toutefois, bien que les services qui prennent en charge le magasin soient constamment mis à jour, étendus et améliorés entre les versions du système d’exploitation, les nouvelles API sont généralement ajoutées au SDK Windows uniquement pendant les versions majeures du système d’exploitation.
 
-Nous fournissons la méthode [SendRequestAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storerequesthelper.sendrequestasync) comme un moyen souple de rendre les nouvelles opérations de stockage disponibles pour les applications plateforme Windows universelle (UWP) avant la publication d’une nouvelle version du SDK Windows. Vous pouvez utiliser cette méthode pour envoyer des demandes au magasin pour les nouvelles opérations qui n’ont pas encore d’API correspondante disponible dans la dernière version de la SDK Windows.
+Nous fournissons la méthode [SendRequestAsync](/uwp/api/windows.services.store.storerequesthelper.sendrequestasync) comme un moyen souple de rendre les nouvelles opérations de stockage disponibles pour les applications plateforme Windows universelle (UWP) avant la publication d’une nouvelle version du SDK Windows. Vous pouvez utiliser cette méthode pour envoyer des demandes au magasin pour les nouvelles opérations qui n’ont pas encore d’API correspondante disponible dans la dernière version de la SDK Windows.
 
 > [!NOTE]
 > La méthode **SendRequestAsync** est disponible uniquement pour les applications qui ciblent Windows 10, version 1607 ou ultérieure. Certaines des requêtes prises en charge par cette méthode sont prises en charge uniquement dans les versions ultérieures à Windows 10, version 1607.
 
-**SendRequestAsync** est une méthode statique de la classe [StoreRequestHelper](https://docs.microsoft.com/uwp/api/windows.services.store.storerequesthelper) . Pour appeler cette méthode, vous devez passer les informations suivantes à la méthode :
-* Objet [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) qui fournit des informations sur l’utilisateur pour lequel vous souhaitez effectuer l’opération. Pour plus d’informations sur cet objet, consultez [prise en main de la classe StoreContext](in-app-purchases-and-trials.md#get-started-with-the-storecontext-class).
+**SendRequestAsync** est une méthode statique de la classe [StoreRequestHelper](/uwp/api/windows.services.store.storerequesthelper) . Pour appeler cette méthode, vous devez passer les informations suivantes à la méthode :
+* Objet [StoreContext](/uwp/api/windows.services.store.storecontext) qui fournit des informations sur l’utilisateur pour lequel vous souhaitez effectuer l’opération. Pour plus d’informations sur cet objet, consultez [prise en main de la classe StoreContext](in-app-purchases-and-trials.md#get-started-with-the-storecontext-class).
 * Entier qui identifie la demande que vous souhaitez envoyer au magasin.
 * Si la requête prend en charge des arguments, vous pouvez également passer une chaîne au format JSON qui contient les arguments à passer avec la requête.
 
@@ -86,11 +86,11 @@ L’exemple suivant montre le format des données JSON à passer à *parametersA
 }
 ```
 
-Une fois cette demande envoyée, la propriété [Response](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult.Response) de la valeur de retour [StoreSendRequestResult](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult) contient une chaîne au format JSON avec les champs suivants.
+Une fois cette demande envoyée, la propriété [Response](/uwp/api/windows.services.store.storesendrequestresult.Response) de la valeur de retour [StoreSendRequestResult](/uwp/api/windows.services.store.storesendrequestresult) contient une chaîne au format JSON avec les champs suivants.
 
 |  Champ  |  Description  |
 |----------------------|---------------|
-|  *anonyme*                   |  Valeur booléenne, où **true** indique que l’identité de l’utilisateur ou de l’appareil n’était pas présente dans la demande, et **false** indique que l’identité de l’utilisateur ou de l’appareil était présente dans la demande.  |
+|  *façon*                   |  Valeur booléenne, où **true** indique que l’identité de l’utilisateur ou de l’appareil n’était pas présente dans la demande, et **false** indique que l’identité de l’utilisateur ou de l’appareil était présente dans la demande.  |
 |  *name*                   |  Chaîne qui contient le nom du groupe de vols dont le classement est le plus élevé auquel appartient l’appareil ou l’utilisateur.  |
 |  *settings*                   |  Dictionnaire de paires clé/valeur qui contiennent le nom et la valeur des variables distantes que le développeur a configurées pour le groupe de vol.  |
 
@@ -129,7 +129,7 @@ L’exemple suivant montre le format des données JSON à passer à *parametersA
 }
 ```
 
-En cas d’erreur avec la demande, la propriété [HttpStatusCode](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult.HttpStatusCode) de la valeur de retour [StoreSendRequestResult](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult) contient le code de réponse.
+En cas d’erreur avec la demande, la propriété [HttpStatusCode](/uwp/api/windows.services.store.storesendrequestresult.HttpStatusCode) de la valeur de retour [StoreSendRequestResult](/uwp/api/windows.services.store.storesendrequestresult) contient le code de réponse.
 
 ### <a name="remove-the-current-device-or-user-from-a-flight-group"></a>Supprimer l’appareil ou l’utilisateur actuel d’un groupe de vol
 
@@ -152,9 +152,9 @@ L’exemple suivant montre le format des données JSON à passer à *parametersA
 }
 ```
 
-En cas d’erreur avec la demande, la propriété [HttpStatusCode](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult.HttpStatusCode) de la valeur de retour [StoreSendRequestResult](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult) contient le code de réponse.
+En cas d’erreur avec la demande, la propriété [HttpStatusCode](/uwp/api/windows.services.store.storesendrequestresult.HttpStatusCode) de la valeur de retour [StoreSendRequestResult](/uwp/api/windows.services.store.storesendrequestresult) contient le code de réponse.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Afficher une boîte de dialogue d’évaluation et de vérification dans votre application](request-ratings-and-reviews.md#show-a-rating-and-review-dialog-in-your-app)
-* [SendRequestAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storerequesthelper.sendrequestasync)
+* [SendRequestAsync](/uwp/api/windows.services.store.storerequesthelper.sendrequestasync)

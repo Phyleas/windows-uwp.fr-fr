@@ -1,50 +1,50 @@
 ---
 ms.assetid: f1297b7d-1a10-52ae-dd84-6d1ad2ae2fe6
-title: Éléments visuels
+title: Visuels de composition
 description: Les éléments visuels de composition constituent la structure de l’arborescence des éléments visuels sur laquelle reposent toutes les autres fonctionnalités de l’API Composition. L’API permet aux développeurs de définir et de créer un ou plusieurs objets visuels, qui représentent chacun un nœud unique dans une arborescence d’éléments visuels.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d6d150f2f882348bffb36dd2918f0f61ea1586c7
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 70f71265ff763ff8a160705694476e03bf8b6667
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360487"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166353"
 ---
-# <a name="composition-visual"></a>Éléments visuels
+# <a name="composition-visual"></a>Visuels de composition
 
 Les éléments visuels de composition constituent la structure de l’arborescence des éléments visuels sur laquelle reposent toutes les autres fonctionnalités de l’API Composition. L’API permet aux développeurs de définir et de créer un ou plusieurs objets visuels, qui représentent chacun un nœud unique dans une arborescence d’éléments visuels.
 
-## <a name="visuals"></a>Éléments visuels
+## <a name="visuals"></a>Visuels
 
 Il existe trois types d’élément visuel qui composent la structure de l’arborescence d’éléments visuels plus une classe de pinceau de base contenant plusieurs sous-classes qui affectent le contenu d’un élément visuel :
 
-- [**Visual** ](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Visual) : base de l’objet, la plupart des propriétés sont ici et héritées par les autres objets visuels.
-- [**ContainerVisual** ](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.ContainerVisual) – dérive [ **Visual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Visual)et ajoute la possibilité de créer les enfants.
-- [**SpriteVisual** ](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.SpriteVisual) – dérive [ **ContainerVisual** ](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.ContainerVisual) et ajoute la possibilité d’associer un pinceau afin que l’élément visuel peut restituer des pixels, y compris des images, des effets ou d’un solide Couleur.
+- [**Visuel**](/uwp/api/Windows.UI.Composition.Visual) : objet de base, la majorité des propriétés est ici et hérité par les autres objets visuels.
+- [**ContainerVisual**](/uwp/api/Windows.UI.Composition.ContainerVisual) : dérive de [**Visual**](/uwp/api/Windows.UI.Composition.Visual), et ajoute la possibilité de créer des enfants.
+- [**SpriteVisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) : dérive de [**ContainerVisual**](/uwp/api/Windows.UI.Composition.ContainerVisual) et ajoute la possibilité d’associer un pinceau afin que le visuel puisse restituer des pixels, y compris des images, des effets ou une couleur unie.
 
-Vous pouvez appliquer du contenu et des effets à SpriteVisuals à l’aide de la classe [**CompositionBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBrush) et de ses sous-classes, notamment [**CompositionColorBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionColorBrush), [**CompositionSurfaceBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) et [**CompositionEffectBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionEffectBrush). Pour plus d’informations sur les pinceaux, consultez notre article [**Vue d’ensemble des pinceaux de composition**](https://docs.microsoft.com/windows/uwp/composition/composition-brushes).
+Vous pouvez appliquer du contenu et des effets à SpriteVisuals à l’aide de [**CompositionBrush**](/uwp/api/Windows.UI.Composition.CompositionBrush) et de ses sous-classes, y compris [**CompositionColorBrush**](/uwp/api/Windows.UI.Composition.CompositionColorBrush), [**CompositionSurfaceBrush**](/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) et [**CompositionEffectBrush**](/uwp/api/Windows.UI.Composition.CompositionEffectBrush). Pour en savoir plus sur les pinceaux, consultez notre [**vue d’ensemble de CompositionBrush**](./composition-brushes.md).
 
 ## <a name="the-compositionvisual-sample"></a>Exemple CompositionVisual
 
-Ici, nous allons étudier un exemple de code qui illustre les trois différents types d’éléments visuels répertoriés précédemment. Même si cet exemple ne couvre pas des concepts comme celui des animations ou des effets plus complexes, il contient les éléments fondamentaux utilisés par tous ces systèmes. (L’exemple de code complet est répertorié à la fin de cet article.)
+Ici, nous examinerons un exemple de code qui illustre les trois types de visuels différents répertoriés précédemment. Même si cet exemple ne couvre pas des concepts comme celui des animations ou des effets plus complexes, il contient les éléments fondamentaux utilisés par tous ces systèmes. (L’exemple de code complet est indiqué à la fin de cet article.)
 
-Cet exemple présente plusieurs carrés de couleur unie sur lesquels vous pouvez cliquer et que vous pouvez faire glisser dans l’écran. Lorsque vous cliquez sur un carré, il s’affiche à l’avant, effectue une rotation de 45 degrés et devient opaque lorsque vous le faites glisser.
+Dans l’exemple se trouvent un certain nombre de carrés de couleur unie sur lesquels vous pouvez cliquer et faire glisser à propos de l’écran. Lorsque vous cliquez sur un carré, il s’affiche à l’avant, effectue une rotation de 45 degrés et devient opaque lorsque vous le faites glisser.
 
 Cela illustre un certain nombre de concepts de base sur l’utilisation de l’API, notamment :
 
 - Création d’un compositeur
-- Création d’un SpriteVisual avec un CompositionColorBrush
-- Découpage de l’élément visuel
-- Rotation de l’élément visuel
+- Création d’un SpriteVisual avec CompositionColorBrush
+- Découpage du visuel
+- Rotation du visuel
 - Définition de l’opacité
 - Modification de la position de l’élément visuel dans la collection
 
 ## <a name="creating-a-compositor"></a>Création d’un compositeur
 
-Il est facile de créer un [**Compositor**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Compositor) et de le stocker en tant que fabrique dans une variable. L’extrait de code suivant illustre la création d’un **Compositor** :
+La création d’un [**compositeur**](/uwp/api/Windows.UI.Composition.Compositor) et son stockage dans une variable pour une utilisation en tant que fabrique sont une tâche simple. L’extrait de code suivant illustre la création d’un **Compositor** :
 
 ```cs
 _compositor = new Compositor();
@@ -52,18 +52,18 @@ _compositor = new Compositor();
 
 ## <a name="creating-a-spritevisual-and-colorbrush"></a>Création d’un SpriteVisual et d’un ColorBrush
 
-En utilisant le [**Compositor**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Compositor), il est facile de créer des objets quand vous en avez besoin, par exemple un [**SpriteVisual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.SpriteVisual) et un [**CompositionColorBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionColorBrush) :
+À l’aide du [**compositeur**](/uwp/api/Windows.UI.Composition.Compositor) , il est facile de créer des objets chaque fois que vous en avez besoin, par exemple [**SpriteVisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) et [**CompositionColorBrush**](/uwp/api/Windows.UI.Composition.CompositionColorBrush):
 
 ```cs
 var visual = _compositor.CreateSpriteVisual();
 visual.Brush = _compositor.CreateColorBrush(Color.FromArgb(0xFF, 0xFF, 0xFF, 0xFF));
 ```
 
-Bien que cela soit uniquement quelques lignes de code, il montre un concept puissant : [**SpriteVisual** ](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.SpriteVisual) objets sont au cœur du système d’effets. Le **SpriteVisual** permet une grande flexibilité et une interconnexion de création de couleur, d’image et d’effet. Le **SpriteVisual** est un type d’élément visuel qui peut remplir un rectangle 2D à l’aide d’un pinceau, dans ce cas de couleur unie.
+Bien qu’il ne s’agit que de quelques lignes de code, il présente un concept puissant : les objets [**SpriteVisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) sont le cœur du système d’effets. Le **SpriteVisual** permet une grande flexibilité et une interconnexion de création de couleur, d’image et d’effet. Le **SpriteVisual** est un type de visuel unique qui peut remplir un rectangle 2D avec un pinceau, dans ce cas, une couleur unie.
 
 ## <a name="clipping-a-visual"></a>Découpage d’un élément visuel
 
-Le [**Compositor**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Compositor) permet également de créer des découpes dans un [**Visual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Visual). Vous trouverez ci-dessous un exemple d’utilisation de [**InsetClip**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.InsetClip) pour découper chaque côté de l’élément visuel :
+Le [**Compositor**](/uwp/api/Windows.UI.Composition.Compositor) permet également de créer des découpes dans un [**Visual**](/uwp/api/Windows.UI.Composition.Visual). Voici un exemple de l’utilisation de [**InsetClip**](/uwp/api/Windows.UI.Composition.InsetClip) pour ajuster chaque côté du visuel :
 
 ```cs
 var clip = _compositor.CreateInsetClip();
@@ -74,17 +74,17 @@ clip.BottomInset = 1.0f;
 _currentVisual.Clip = clip;
 ```
 
-À l’instar des autres objets de l’API, des animations peuvent être appliquées aux propriétés de [**InsetClip**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.InsetClip).
+À l’instar des autres objets de l’API, [**InsetClip**](/uwp/api/Windows.UI.Composition.InsetClip) peut avoir des animations appliquées à ses propriétés.
 
-## <a name="span-idrotatingaclipspanspan-idrotatingaclipspanspan-idrotatingaclipspanrotating-a-clip"></a><span id="Rotating_a_Clip"></span><span id="rotating_a_clip"></span><span id="ROTATING_A_CLIP"></span>Faire pivoter une image
+## <a name="span-idrotating_a_clipspanspan-idrotating_a_clipspanspan-idrotating_a_clipspanrotating-a-clip"></a><span id="Rotating_a_Clip"></span><span id="rotating_a_clip"></span><span id="ROTATING_A_CLIP"></span>Rotation d’un clip
 
-Un [**Visual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Visual) peut être transformé à l’aide d’une rotation. Notez que [**RotationAngle**](https://docs.microsoft.com/uwp/api/windows.ui.composition.visual.rotationangle) prend en charge les radians et les degrés. Les radians sont définis pas défaut, mais il est facile de spécifier des degrés, comme le montre l’extrait de code suivant :
+Un [**visuel**](/uwp/api/Windows.UI.Composition.Visual) peut être transformé à l’aide d’une rotation. Notez que [**RotationAngle**](/uwp/api/windows.ui.composition.visual.rotationangle) prend en charge les radians et les degrés. Les radians sont définis pas défaut, mais il est facile de spécifier des degrés, comme le montre l’extrait de code suivant :
 
 ```cs
 child.RotationAngleInDegrees = 45.0f;
 ```
 
-Rotation n’est qu’un des exemples des composants de transformation fournis par l’API qui facilitent ces tâches. On trouve également Offset, Scale, Orientation, RotationAxis et 4x4 TransformMatrix.
+Rotation n’est qu’un des exemples des composants de transformation fournis par l’API qui facilitent ces tâches. D’autres incluent offset, Scale, orientation, RotationAxis et 4x4 TransformMatrix.
 
 ## <a name="setting-opacity"></a>Définition de l’opacité
 
@@ -94,13 +94,13 @@ La définition de l’opacité d’un élément visuel est une opération simple
 visual.Opacity = 0.8f;
 ```
 
-Comme la rotation, la propriété [**Opacity**](https://docs.microsoft.com/uwp/api/windows.ui.composition.visual.opacity) peut être animée.
+À l’instar de la rotation, la propriété [**Opacity**](/uwp/api/windows.ui.composition.visual.opacity) peut être animée.
 
 ## <a name="changing-the-visuals-position-in-the-collection"></a>Modification de la position de l’élément visuel dans la collection
 
-L’API Composition permet la modification de la position d’un élément visuel dans une [**VisualCollection**](https://docs.microsoft.com/uwp/api/windows.ui.composition.visualcollection) de plusieurs façons : vous pouvez le placer au-dessus d’un autre élément visuel avec [**InsertAbove**](https://docs.microsoft.com/uwp/api/windows.ui.composition.visualcollection.insertabove), le placer au-dessous avec [**InsertBelow**](https://docs.microsoft.com/uwp/api/windows.ui.composition.visualcollection.insertbelow), le déplacer vers le haut avec [**InsertAtTop**](https://docs.microsoft.com/uwp/api/windows.ui.composition.visualcollection.insertattop)ou vers le bas avec [**InsertAtBottom**](https://docs.microsoft.com/uwp/api/windows.ui.composition.visualcollection.insertatbottom).
+L’API de composition permet de modifier la position d’un visuel dans un [**VisualCollection**](/uwp/api/windows.ui.composition.visualcollection) de plusieurs façons. Elle peut être placée au-dessus d’un autre visuel avec [**InsertAbove**](/uwp/api/windows.ui.composition.visualcollection.insertabove), placée sous [**InsertBelow**](/uwp/api/windows.ui.composition.visualcollection.insertbelow), déplacée vers le haut avec [**InsertAtTop**](/uwp/api/windows.ui.composition.visualcollection.insertattop), ou le bas avec [**InsertAtBottom**](/uwp/api/windows.ui.composition.visualcollection.insertatbottom).
 
-L’exemple illustre un [**Visual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Visual) sur lequel un utilisateur a cliqué et qui est classé vers le haut :
+Dans l’exemple, un [**visuel**](/uwp/api/Windows.UI.Composition.Visual) sur lequel l’utilisateur a cliqué est trié en haut :
 
 ```cs
 parent.Children.InsertAtTop(_currentVisual);
@@ -108,7 +108,7 @@ parent.Children.InsertAtTop(_currentVisual);
 
 ## <a name="full-example"></a>Exemple complet
 
-Dans l’exemple complet, tous les concepts décrits ci-dessus sont utilisés conjointement pour construire une arborescence simple d’objets [**Visual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Visual) afin de changer l’opacité sans avoir recours à XAML, WWA ni DirectX. Cet exemple illustre la création et l’ajout d’objets **Visual** enfants ainsi que la modification des propriétés.
+Dans l’exemple complet, tous les concepts ci-dessus sont utilisés ensemble pour construire et parcourir une arborescence simple d’objets [**visuels**](/uwp/api/Windows.UI.Composition.Visual) afin de modifier l’opacité sans utiliser XAML, WWA ou DirectX. Cet exemple illustre la création et l’ajout d’objets **Visual** enfants ainsi que la modification des propriétés.
 
 ```cs
 using System;

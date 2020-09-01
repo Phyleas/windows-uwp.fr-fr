@@ -6,12 +6,12 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, UWP, services Store, API Microsoft Store Analytics, installations d’applications
 ms.localizationpriority: medium
-ms.openlocfilehash: 9391ac3222f98a52d6c9aaf4ed39eb8ac2e3de56
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: f6a22d8f7763b6f6048992e546a70a7b747e771e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86492784"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89164683"
 ---
 # <a name="get-app-installs"></a>Obtenir les installations d’applications
 
@@ -89,7 +89,7 @@ Les éléments du tableau *Value* comportent les valeurs suivantes :
 | Date                | string | Première date de la plage de dates pour les données d’installation. Si la requête spécifiait un jour précis, cette valeur correspond à la date. Si la requête était relative à une semaine, un mois ou toute autre plage de dates, cette valeur correspond à la première date de la plage de dates. |
 | applicationId       | string | ID de stockage de l’application pour laquelle vous extrayez des données d’installation.     |
 | applicationName     | string | Nom d’affichage de l’application.     |
-| deviceType          | string | L’une des chaînes suivantes qui spécifie le type d’appareil qui a effectué l’installation :<p/><ul><li><strong>PC</strong></li><li><strong>Numéros</strong></li><li><strong>Console-Xbox One</strong></li><li><strong>Console-série Xbox X</strong></li><li><strong>IoT</strong></li><li><strong>Hologrammes</strong></li><li><strong>Unknown</strong></li></ul>  |
+| deviceType          | string | L’une des chaînes suivantes qui spécifie le type d’appareil qui a effectué l’installation :<p/><ul><li><strong>ORDINATEURS</strong></li><li><strong>Numéros</strong></li><li><strong>Console-Xbox One</strong></li><li><strong>Console-série Xbox X</strong></li><li><strong>IoT</strong></li><li><strong>Hologrammes</strong></li><li><strong>Unknown</strong></li></ul>  |
 | packageVersion           | string | Version du package qui a été installé.  |
 | osVersion           | string | L’une des chaînes suivantes qui spécifie la version du système d’exploitation sur laquelle l’installation s’est produite :<p/><ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows 8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows 10</strong></li><li><strong>Unknown</strong></li></ul>   |
 | market              | string | Code du pays ISO 3166 du marché sur lequel l’installation s’est produite.    |
@@ -121,5 +121,5 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Installe le rapport](../publish/installs-report.md)
+* [Installe le rapport](../publish/acquisitions-report.md)
 * [Accéder aux données d’analyse à l’aide des services Microsoft Store](access-analytics-data-using-windows-store-services.md)

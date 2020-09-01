@@ -6,19 +6,19 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, ADS, publicité, gestion des erreurs, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bbd892f47f0191455df3b235bdb5125a45ea4fc
-ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
+ms.openlocfilehash: f6567432714fb68618510923e49f2467daefdc54
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88970247"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89167683"
 ---
 # <a name="error-handling-in-javascript-walkthrough"></a>Gestion des erreurs dans la procédure pas à pas pour JavaScript
 
 >[!WARNING]
 > Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
-Cette procédure pas à pas montre comment intercepter des erreurs liées à Active Directory dans votre application JavaScript. Cette procédure pas à pas utilise un [classe AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) pour afficher une bannière publicitaire, mais les concepts généraux qu’il contient s’appliquent également aux publicités interstitielles et aux publicités natives.
+Cette procédure pas à pas montre comment intercepter des erreurs liées à Active Directory dans votre application JavaScript. Cette procédure pas à pas utilise un [classe AdControl](/uwp/api/microsoft.advertising.winrt.ui.adcontrol) pour afficher une bannière publicitaire, mais les concepts généraux qu’il contient s’appliquent également aux publicités interstitielles et aux publicités natives.
 
 Ces exemples supposent que vous disposez d’une application JavaScript qui contient un **classe AdControl**. Pour obtenir des instructions pas à pas qui montrent comment ajouter un **AdControl** à votre application, voir [AdControl en HTML 5 JavaScript](adcontrol-in-html-5-and-javascript.md). Pour un exemple de projet complet illustrant l’ajout de bannières publicitaires à une application HTML/JavaScript, voir [Exemples de publicité sur GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising).
 

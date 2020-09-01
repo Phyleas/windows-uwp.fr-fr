@@ -5,12 +5,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows 10, UWP, animation
 ms.localizationpriority: medium
-ms.openlocfilehash: 91e3ae5b23b7429633053f4d4d876f02127d26e3
-ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
+ms.openlocfilehash: 57d2f3729430faefc7db31cad6a0ac91ddaa2e02
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89054419"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166363"
 ---
 # <a name="relation-based-animations"></a>Animations basées sur les relations
 
@@ -46,9 +46,9 @@ Lors de la création de la relation mathématique d’une expression, il existe 
 
 - Parameters : valeurs représentant des valeurs constantes ou des références à d’autres objets composition.
 - Opérateurs mathématiques : opérateurs mathématiques classiques plus (+), moins (-), multiplication (*), Division (/) qui associent des paramètres pour former une équation. Les opérateurs conditionnels tels que supérieur à (>), égal (= =), ternaire Operator (condition) sont également inclus. ifTrue : ifFalse), etc.
-- Fonctions mathématiques : fonctions mathématiques/raccourcis basés sur System. Numerics. Pour obtenir la liste complète des fonctions prises en charge, consultez [ExpressionAnimation](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.ExpressionAnimation).
+- Fonctions mathématiques : fonctions mathématiques/raccourcis basés sur System. Numerics. Pour obtenir la liste complète des fonctions prises en charge, consultez [ExpressionAnimation](/uwp/api/Windows.UI.Composition.ExpressionAnimation).
 
-Les expressions prennent également en charge un ensemble de mots clés (expressions spéciales qui ont une signification distincte uniquement dans le système ExpressionAnimation). Celles-ci sont répertoriées (ainsi que la liste complète des fonctions mathématiques) dans la documentation [ExpressionAnimation](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.ExpressionAnimation) .
+Les expressions prennent également en charge un ensemble de mots clés (expressions spéciales qui ont une signification distincte uniquement dans le système ExpressionAnimation). Celles-ci sont répertoriées (ainsi que la liste complète des fonctions mathématiques) dans la documentation [ExpressionAnimation](/uwp/api/Windows.UI.Composition.ExpressionAnimation) .
 
 ### <a name="creating-expressions-with-expressionbuilder"></a>Création d’expressions avec ExpressionBuilder
 

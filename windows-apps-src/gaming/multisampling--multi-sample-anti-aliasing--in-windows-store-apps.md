@@ -4,20 +4,20 @@ description: Découvrez comment utiliser l’échantillonnage multiple dans des 
 ms.assetid: 1cd482b8-32ff-1eb0-4c91-83eb52f08484
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp, jeux, échantillonnage multiple, direct3d
+keywords: Windows 10, UWP, jeux, multiéchantillonnage, Direct3D
 ms.localizationpriority: medium
-ms.openlocfilehash: f4d3e590f99fdf6ca907fcc8fd5b412c5796f474
-ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
+ms.openlocfilehash: 0fccc549deb579a51cfedaad1fd0a1e1dd861fa8
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74735104"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165173"
 ---
-# <a name="span-iddev_gamingmultisampling__multi-sample_anti_aliasing__in_windows_store_appsspan-multisampling-in-universal-windows-platform-uwp-apps"></a><span id="dev_gaming.multisampling__multi-sample_anti_aliasing__in_windows_store_apps"></span>Applications d’échantillonnage multiple dans plateforme Windows universelle (UWP)
+# <a name="span-iddev_gamingmultisampling__multi-sample_anti_aliasing__in_windows_store_appsspan-multisampling-in-universal-windows-platform-uwp-apps"></a><span id="dev_gaming.multisampling__multi-sample_anti_aliasing__in_windows_store_apps"></span> Applications d’échantillonnage multiple dans plateforme Windows universelle (UWP)
 
 
 
-Découvrez comment utiliser l’échantillonnage multiple dans des applications de plateforme Windows universelle (UWP) générées avec Direct3D. L’échantillonnage multiple, également appelé anticrénelage multi-échantillon, est une technique graphique utilisée pour réduire l’apparence des bords crénelés. Elle consiste à dessiner plus de pixels que leur nombre réel dans la cible de rendu final, puis à effectuer une moyenne des valeurs afin de conserver l’apparence d’un bord « partiel » dans certains pixels. Pour une description détaillée du fonctionnement réel de l’échantillonnage multiple dans Direct3D, voir [Règles de rastérisation de l’anticrénelage multi-échantillon](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-rasterizer-stage-rules).
+Découvrez comment utiliser l’échantillonnage multiple dans des applications de plateforme Windows universelle (UWP) générées avec Direct3D. L’échantillonnage multiple, également appelé anticrénelage multi-échantillon, est une technique graphique utilisée pour réduire l’apparence des bords crénelés. Elle consiste à dessiner plus de pixels que leur nombre réel dans la cible de rendu final, puis à effectuer une moyenne des valeurs afin de conserver l’apparence d’un bord « partiel » dans certains pixels. Pour une description détaillée du fonctionnement réel de l’échantillonnage multiple dans Direct3D, voir [Règles de rastérisation de l’anticrénelage multi-échantillon](/windows/desktop/direct3d11/d3d10-graphics-programming-guide-rasterizer-stage-rules).
 
 ## <a name="multisampling-and-the-flip-model-swap-chain"></a>Échantillonnage multiple et chaîne d’échange de modèle de retournement
 
@@ -28,11 +28,11 @@ Les applications UWP qui utilisent DirectX doivent utiliser des chaînes d’éc
 
 Les niveaux de fonctionnalités Direct3D garantissent la prise en charge des possibilités minimales et spécifiques de dénombrement d’échantillons. En outre, ils garantissent que certains formats de mémoire tampon seront disponibles pour la prise en charge de l’échantillonnage multiple. Les périphériques graphiques prennent souvent en charge un éventail plus large de formats et de nombres d’échantillons que le minimum requis. La prise en charge de l’échantillonnage multiple peut être déterminée au moment de l’exécution en vérifiant la prise en charge des fonctionnalités d’échantillonnage multiple avec des formats DXGI spécifiques, puis en vérifiant les nombres d’échantillons utilisables avec chaque format pris en charge.
 
-1.  Appelez [**ID3D11Device::CheckFeatureSupport**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkfeaturesupport) pour connaître les formats DXGI utilisables avec l’échantillonnage multiple. Fournissez les formats de cibles de rendu utilisables par votre jeu. La cible de rendu et la cible de résolution doivent utiliser le même format. par conséquent, assurez-vous que le [**format D3D11\_\_prise en charge\_exemple d’échantillonnage multi\_RENDERTARGET**](https://docs.microsoft.com/windows/desktop/api/d3d11/ne-d3d11-d3d11_format_support) et **d3d11\_prise en charge\_MultiSample\_résoudre**.
+1.  Appelez [**ID3D11Device :: CheckFeatureSupport**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkfeaturesupport) pour savoir quels formats de dxgi peuvent être utilisés avec l’échantillonnage multiple. Fournissez les formats de cibles de rendu utilisables par votre jeu. La cible de rendu et la cible de résolution doivent utiliser le même format. par conséquent, assurez-vous que le [** \_ format d3d11 \_ prend en charge les \_ exemples \_ RENDERTARGET**](/windows/desktop/api/d3d11/ne-d3d11-d3d11_format_support) et le ** \_ format d3d11 \_ prend en charge l' \_ échantillonnage \_ **multi.
 
-    **Niveau de fonctionnalité 9 :  ** Bien que les appareils de niveau 9 [garantissent la prise en charge des formats de cible de rendu multiéchantillonnés](https://docs.microsoft.com/previous-versions/ff471324(v=vs.85)), la prise en charge n’est pas garantie pour les cibles d’échantillonnage multiversion. Cette vérification est nécessaire avant toute tentative d’utilisation de la technique d’échantillonnage multiple décrite dans cette rubrique.
+    **Niveau de fonctionnalité 9 :  ** Bien que les appareils de niveau 9 [garantissent la prise en charge des formats de cible de rendu multiéchantillonnés](/previous-versions/ff471324(v=vs.85)), la prise en charge n’est pas garantie pour les cibles d’échantillonnage multiversion. Cette vérification est nécessaire avant toute tentative d’utilisation de la technique d’échantillonnage multiple décrite dans cette rubrique.
 
-    Le code suivant vérifie la prise en charge de l’échantillonnage multiple pour toutes les valeurs de FORMAT de\_DXGI :
+    Le code suivant vérifie la prise en charge de l’échantillonnage multiple pour toutes les \_ valeurs de format dxgi :
 
     ```cpp
     // Determine the format support for multisampling.
@@ -55,7 +55,7 @@ Les niveaux de fonctionnalités Direct3D garantissent la prise en charge des pos
     }
     ```
 
-2.  Pour chaque format pris en charge, déterminez quelle est la prise en charge du nombre d’échantillons en appelant [**ID3D11Device::CheckMultisampleQualityLevels**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkmultisamplequalitylevels).
+2.  Pour chaque format pris en charge, interrogez la prise en charge du nombre d’échantillons en appelant [**ID3D11Device :: CheckMultisampleQualityLevels**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkmultisamplequalitylevels).
 
     Le code suivant vérifie la prise en charge de la taille des échantillons pour les formats DXGI pris en charge :
 
@@ -82,11 +82,11 @@ Les niveaux de fonctionnalités Direct3D garantissent la prise en charge des pos
     }
     ```
 
-    > **Notez**   utilisez [**ID3D11Device2 :: CheckMultisampleQualityLevels1**](https://docs.microsoft.com/windows/desktop/api/d3d11_2/nf-d3d11_2-id3d11device2-checkmultisamplequalitylevels1) à la place si vous devez vérifier la prise en charge de l’échantillonnage multiversion pour les mémoires tampons de ressources en mosaïque.
+    > **Remarque**    Utilisez [**ID3D11Device2 :: CheckMultisampleQualityLevels1**](/windows/desktop/api/d3d11_2/nf-d3d11_2-id3d11device2-checkmultisamplequalitylevels1) à la place si vous devez vérifier la prise en charge de l’échantillonnage multiversion pour les mémoires tampons de ressources en mosaïque.
 
      
 
-3.  Créez un tampon et un affichage de la cible de rendu avec le nombre d’échantillons souhaité. Utilisez le même FORMAT, la même largeur et la même hauteur\_DXGI que la chaîne de permutation, mais spécifiez un nombre d’échantillons supérieur à 1 et utilisez une dimension de texture à échantillonnage (**D3D11\_RTV\_dimension\_TEXTURE2DMS** , par exemple). Si nécessaire, vous pouvez recréer la chaîne d’échange avec de nouveaux paramètres optimaux pour l’échantillonnage multiple.
+3.  Créez un tampon et un affichage de la cible de rendu avec le nombre d’échantillons souhaité. Utilisez le même \_ format, la même largeur et la même hauteur dxgi que la chaîne de permutation, mais spécifiez un nombre d’échantillons supérieur à 1 et utilisez une dimension de texture à échantillonnages (**d3d11 de \_ \_ dimension RTV \_ TEXTURE2DMS** par exemple). Si nécessaire, vous pouvez recréer la chaîne d’échange avec de nouveaux paramètres optimaux pour l’échantillonnage multiple.
 
     Le code suivant crée une cible de rendu échantillonnée plusieurs fois :
 
@@ -179,7 +179,7 @@ Les niveaux de fonctionnalités Direct3D garantissent la prise en charge des pos
     m_d3dContext->RSSetViewports(1, &m_screenViewport);
     ```
 
-6.  Effectuez le rendu de chaque image vers la cible de rendu échantillonnée plusieurs fois. Une fois le rendu terminé, appelez [**ID3D11DeviceContext::ResolveSubresource**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-resolvesubresource) avant de présenter l’image. Cela indique à Direct3D qu’il doit effectuer l’opération d’échantillonnage multiple, calculer la valeur de chaque pixel à afficher et placer le résultat en mémoire tampon d’arrière-plan. La mémoire tampon d’arrière-plan contient l’image finale sans crénelage et peut être présentée.
+6.  Effectuez le rendu de chaque image vers la cible de rendu échantillonnée plusieurs fois. Une fois le rendu terminé, appelez [**ID3D11DeviceContext :: ResolveSubresource**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-resolvesubresource) avant de présenter le frame. Cela indique à Direct3D qu’il doit effectuer l’opération d’échantillonnage multiple, calculer la valeur de chaque pixel à afficher et placer le résultat en mémoire tampon d’arrière-plan. La mémoire tampon d’arrière-plan contient l’image finale sans crénelage et peut être présentée.
 
     Le code suivant résout la sous-ressource avant de présenter l’image :
 
@@ -206,7 +206,3 @@ Les niveaux de fonctionnalités Direct3D garantissent la prise en charge des pos
  
 
  
-
-
-
-

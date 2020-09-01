@@ -1,89 +1,89 @@
 ---
 title: Notifications de Mes Contacts
-description: Explique comment créer et utiliser les notifications de mes contacts, qui sont un nouveau type de notification toast.
+description: Explique comment créer et utiliser des notifications My People, un nouveau type de Toast.
 ms.date: 10/25/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c106df0efc7952895f882ec5c05cc1af52bcfac
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 3e00e3de9445a8b7c63ebaead70173c29b637b54
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75683497"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166323"
 ---
 # <a name="my-people-notifications"></a>Notifications de Mes Contacts
 
-Les notifications de mes contacts offrent une nouvelle façon pour les utilisateurs d’entrer en relation avec les personnes qui les intéressent par le biais de mouvements expressifs rapides. Cet article montre comment concevoir et implémenter les notifications de mes contacts dans votre application. Pour les implémentations complètes, voir l’[Exemple de notifications de mes contacts](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/MyPeopleNotifications).
+Les notifications de mes personnes offrent aux utilisateurs une nouvelle façon de se connecter aux personnes qui les intéressent, par le biais de gestes Express rapides. Cet article explique comment concevoir et implémenter des notifications My People dans votre application. Pour obtenir des implémentations complètes, consultez l' [exemple mes notifications de personnes.](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/MyPeopleNotifications)
 
-![notification par emoji représentant un cœur](images/heart-emoji-notification-small.gif)
+![notification d’Emoji cardiaque](images/heart-emoji-notification-small.gif)
 
-## <a name="requirements"></a>Conditions préalables
+## <a name="requirements"></a>Spécifications
 
-+ Windows 10 et Microsoft Visual Studio 2019. Pour en savoir plus sur l’installation, voir [Prendre en main Visual Studio](https://docs.microsoft.com/windows/uwp/get-started/get-set-up).
-+ Connaissances de base de C# ou d’un langage de programmation orienté objet similaire. Pour vous familiariser avec C#, voir [Créer une application « Hello, world »](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
++ Windows 10 et Microsoft Visual Studio 2019. Pour plus d’informations sur l’installation, consultez la page [obtenir une configuration avec Visual Studio](../get-started/get-set-up.md).
++ Connaissances de base de C# ou d’un langage de programmation orienté objet similaire. Pour commencer à utiliser C#, consultez [créer une application « Hello, World »](../get-started/create-a-hello-world-app-xaml-universal.md).
 
 ## <a name="how-it-works"></a>Fonctionnement
 
-Comme alternative aux notifications toast génériques, vous pouvez désormais envoyer des notifications par le biais de la fonctionnalité Mes Contacts pour proposer une expérience plus personnelle aux utilisateurs. Il s’agit d’un nouveau type de toast, envoyé à partir d’un contact épinglé sur la barre des tâches de l’utilisateur avec la fonctionnalité Mes Contacts. À réception de la notification, la photo du contact de l’expéditeur s’anime dans la barre des tâches et un son est émis pour signaler que la notification démarre. L’animation ou l’image définie dans la charge utile s’affiche pendant 5 secondes (ou, si la charge utile est une animation d’une durée inférieure à 5 secondes, elle s’exécute en boucle pendant 5 secondes).
+Comme alternative aux notifications Toast génériques, vous pouvez désormais envoyer des notifications via la fonctionnalité mes personnes pour offrir une expérience plus personnelle aux utilisateurs. Il s’agit d’un nouveau type de Toast, envoyé à partir d’un contact épinglé dans la barre des tâches de l’utilisateur avec la fonctionnalité mes contacts. Lorsque la notification est reçue, l’image de contact de l’expéditeur s’anime dans la barre des tâches et un son est lu, signalant que la notification démarre. L’animation ou l’image spécifiée dans la charge utile est affichée pendant 5 secondes (ou, si la charge utile est une animation inférieure à 5 secondes, elle est lue jusqu’à ce que 5 secondes se soient écoulées).
 
 ## <a name="supported-image-types"></a>Types d’images pris en charge
 
 + GIF
 + Image statique (JPEG, PNG)
-+ Spritesheet (vertical uniquement)
++ SpriteSheet (vertical uniquement)
 
 > [!NOTE]
-> Un Spritesheet est une animation dérivée d’une image statique (JPEG ou PNG). Les images sont disposées verticalement, de sorte que la première image soit placée au-dessus (même si vous pouvez spécifier une autre image de démarrage dans la charge utile de la notification toast). Chaque image doit avoir la même hauteur. Le programme les parcourt pour créer une séquence animée (comme un livret dans lequel les pages sont disposées verticalement). Un exemple de Spritesheet est illustré ci-dessous.
+> Un SpriteSheet est une animation dérivée d’une image statique (JPEG ou PNG). Les images individuelles sont organisées verticalement, de telle sorte que la première image se trouve au premier plan (vous pouvez cependant spécifier une autre image de départ dans la charge utile Toast). Chaque frame doit avoir la même hauteur, que le programme parcourt pour créer une séquence animée (comme un livret animé dont les pages sont présentées verticalement). Vous trouverez ci-dessous un exemple de SpriteSheet.
 
-![Spritesheet arc-en-ciel](images/shoulder-tap-rainbow-spritesheet.png)
+![arc-en-SpriteSheet](images/shoulder-tap-rainbow-spritesheet.png)
 
 ## <a name="notification-parameters"></a>Paramètres de notification
-Les notifications de mes contacts utilisent l’infrastructure de la [notification toast](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md), mais nécessitent un nœud de liaison supplémentaire dans la charge utile de la notification toast. La deuxième liaison doit inclure le paramètre suivant :
+Les notifications mes personnes utilisent l’infrastructure de [notification Toast](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md) , mais nécessitent un nœud de liaison supplémentaire dans la charge utile Toast. Cette deuxième liaison doit inclure le paramètre suivant :
 
 ```xml
 experienceType="shoulderTap"
 ```
 
-Cela indique que la notification toast doit être traitée comme une notification de mes contacts.
+Cela indique que le Toast doit être traité comme une notification mes contacts.
 
-Le nœud de l’image à l’intérieur de la liaison doit inclure les paramètres suivants :
+Le nœud d’image à l’intérieur de la liaison doit inclure les paramètres suivants :
 
 + **src**
-    + L’URI de la ressource. Il peut s’agir d’un URI web HTTP/HTTPS, d’un URI msappx ou d’un chemin d’accès à un fichier local.
+    + URI de l’élément multimédia. Il peut s’agir de l’URI Web HTTP/HTTPs, d’un URI msappx ou d’un chemin d’accès à un fichier local.
 + **SpriteSheet-SRC**
-    + L’URI de la ressource. Il peut s’agir d’un URI web HTTP/HTTPS, d’un URI msappx ou d’un chemin d’accès à un fichier local. Requis uniquement pour les animations Spritesheet.
+    + URI de l’élément multimédia. Il peut s’agir de l’URI Web HTTP/HTTPs, d’un URI msappx ou d’un chemin d’accès à un fichier local. Obligatoire uniquement pour les animations SpriteSheet.
 + **SpriteSheet-hauteur**
-    + La hauteur de l’image (en pixels). Requis uniquement pour les animations Spritesheet.
+    + Hauteur du frame (en pixels). Obligatoire uniquement pour les animations SpriteSheet.
 + **SpriteSheet-fps**
-    + Images par seconde (FPS). Requis uniquement pour les animations Spritesheet. Seules les valeurs de 1 à 120 sont prises en charge.
+    + Images par seconde (FPS). Obligatoire uniquement pour les animations SpriteSheet. Seules les valeurs 1-120 sont prises en charge.
 + **spritesheet-startingFrame**
-    + Numéro de l’image pour commencer l’animation. Uniquement utilisé pour les animations Spritesheet et a pour valeur par défaut 0 si le numéro n’est pas indiqué.
+    + Numéro de frame à partir duquel commencer l’animation. Utilisé uniquement pour les animations SpriteSheet et par défaut 0 si non fourni.
 + **alt**
     + Chaîne de texte utilisée pour la narration du lecteur d’écran.
 
 > [!NOTE]
-> Lorsque vous créez une notification animée, vous devez toujours spécifier une image statique dans le paramètre « src ». Elle sera utilisée comme un secours si l’animation ne parvient pas à s’afficher.
+> Quand vous créez une notification animée, vous devez toujours spécifier une image statique dans le paramètre « SRC ». Il sera utilisé comme un basculement si l’affichage de l’animation échoue.
 
-En outre, le nœud toast de niveau supérieur doit inclure le paramètre **hint-people** pour spécifier le contact d’envoi. Ce paramètre peut prendre les valeurs suivantes :
+En outre, le nœud Toast de niveau supérieur doit inclure le paramètre **Hint-People** pour spécifier le contact d’envoi. Ce paramètre peut prendre les valeurs suivantes :
 
 + **Adresse e-mail** 
-    + Exemple ` mailto:johndoe@mydomain.com `
+    + Par exemple, ` mailto:johndoe@mydomain.com `
 + **Numéro de téléphone** 
-    + Exemple tél : 888-888-8888
-+ **ID distant** 
-    + Exemple remoteid:1234
+    + Par exemple, Tél. : 888-888-8888
++ **Identifiant distant** 
+    + Par exemple, remoteid : 1234
 
 > [!NOTE]
-> Si votre application utilise les [API ContactStore](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactstore) et la propriété [StoredContact.RemoteId](https://docs.microsoft.com/uwp/api/Windows.Phone.PersonalInformation.StoredContact.RemoteId) pour lier des contacts stockés sur le PC avec des contacts stockés à distance, il est essentiel que la valeur de la propriété RemoteID soit stable et unique. Cela signifie que l’ID distant doit identifier de manière cohérente un compte d’utilisateur unique et doit contenir une balise unique afin de garantir qu’il n’est pas en conflit avec les ID distants des autres contacts sur le PC, y compris les contacts qui appartiennent à d’autres applications.
-> S’il n’est pas garanti que les ID distants utilisés par votre application soient stables et uniques, vous pouvez utiliser la [classe RemoteIdHelper](https://docs.microsoft.com/previous-versions/windows/apps/jj207024(v=vs.105)#BKMK_UsingtheRemoteIdHelperclass) afin d’ajouter une balise unique à l’ensemble de vos ID distants avant de les ajouter au système. Vous pouvez également choisir de ne pas utiliser du tout la propriété RemoteID et de créer à la place une propriété personnalisée étendue dans laquelle stocker les ID distants de vos contacts.
+> Si votre application utilise les [API ContactStore](/uwp/api/windows.applicationmodel.contacts.contactstore) et utilise la propriété [StoredContact. RemoteId](/uwp/api/Windows.Phone.PersonalInformation.StoredContact.RemoteId) pour lier des contacts stockés sur le PC à des contacts stockés à distance, il est essentiel que la valeur de la propriété RemoteId soit stable et unique. Cela signifie que l’ID distant doit identifier de manière cohérente un compte d’utilisateur unique et doit contenir une balise unique pour garantir qu’il n’est pas en conflit avec les ID distants d’autres contacts sur le PC, y compris les contacts appartenant à d’autres applications.
+> Si les ID distants utilisés par votre application ne sont pas forcément stables et uniques, vous pouvez utiliser la [classe RemoteIdHelper](/previous-versions/windows/apps/jj207024(v=vs.105)#BKMK_UsingtheRemoteIdHelperclass) pour ajouter une balise unique à tous vos ID distants avant de les ajouter au système. Vous pouvez également choisir de ne pas utiliser la propriété RemoteId et créer à la place une propriété étendue personnalisée dans laquelle stocker les ID distants de vos contacts.
 
-Outre la deuxième liaison et sa charge utile, vous devez inclure une autre charge utile dans la première liaison pour la notification toast de secours. La notification utilisera celle-ci si elle est forcée de revenir à un toast régulier (expliqué plus en détail à la [fin de cet article](/windows/uwp/contacts-and-calendar/my-people-notifications#falling-back-to-toast)).
+En plus de la deuxième liaison et de la charge utile, vous devez inclure une autre charge utile dans la première liaison pour le toast de secours. La notification l’utilise si elle est forcée à revenir à un toast normal (expliqué plus loin à la [fin de cet article](#falling-back-to-toast)).
 
 ## <a name="creating-the-notification"></a>Création de la notification
-Vous pouvez créer un modèle de notification de mes contacts comme vous créeriez une [notification toast](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md).
+Vous pouvez créer un modèle de notification mes personnes comme vous le feriez pour une [notification de Toast](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md).
 
-Voici un exemple montrant comment créer une notification de mes contacts avec une charge utile d’image statique :
+Voici un exemple de création d’une notification mes personnes avec une charge utile d’image statique :
 
 ```xml
 <toast hint-people="mailto:johndoe@mydomain.com">
@@ -99,11 +99,11 @@ Voici un exemple montrant comment créer une notification de mes contacts avec u
 </toast>
 ```
 
-Lorsque vous démarrez la notification, celle-ci doit ressembler à ceci :
+Quand vous démarrez la notification, elle doit ressembler à ceci :
 
 ![notification d’image statique](images/static-image-notification-small.gif)
 
-Voici un exemple montrant comment créer une notification avec une charge utile de Spritesheet animé : Ce Spritesheet a une hauteur d’image de 80 pixels, que nous allons animer à la vitesse de 25 images par seconde. Nous avons défini l’image de départ sur 15 pour et nous l’avons associée à une image de secours statique dans le paramètre « src ». L’image de secours est utilisée si l’animation de Spritesheet ne parvient pas à s’afficher.
+Voici un exemple de création d’une notification avec une charge utile SpriteSheet animée. Ce SpriteSheet a une hauteur de trame de 80 pixels, que nous allons animer à 25 images par seconde. Nous avons défini le frame de départ sur 15 et nous l’avons fourni avec une image de secours statique dans le paramètre « SRC ». L’image de secours est utilisée si l’animation SpriteSheet ne s’affiche pas.
 
 ```xml
 <toast hint-people="mailto:johndoe@mydomain.com">
@@ -121,12 +121,12 @@ Voici un exemple montrant comment créer une notification avec une charge utile 
 </toast>
 ```
 
-Lorsque vous démarrez la notification, celle-ci doit ressembler à ceci :
+Quand vous démarrez la notification, elle doit ressembler à ceci :
 
-![Notification par Spritesheet](images/pizza-notification-small.gif)
+![notification SpriteSheet](images/pizza-notification-small.gif)
 
 ## <a name="starting-the-notification"></a>Démarrage de la notification
-Pour démarrer une notification de mes contacts, nous devons convertir le modèle de notification toast en un objet [XmlDocument](https://docs.microsoft.com/uwp/api/windows.data.xml.dom.xmldocument). Lorsque vous avez défini la notification toast dans un fichier XML (ici nommé « content.xml »), vous pouvez utiliser ce code pour le démarrer :
+Pour démarrer une notification mes personnes, nous devons convertir le modèle de Toast en un objet [XmlDocument](/uwp/api/windows.data.xml.dom.xmldocument) . Une fois que vous avez défini le Toast dans un fichier XML (nommé « content.xml »), vous pouvez utiliser ce code pour le démarrer :
 
 ```CSharp
 string xmlText = File.ReadAllText("content.xml");
@@ -141,17 +141,17 @@ ToastNotification notification = new ToastNotification(xmlContent);
 ToastNotificationManager.CreateToastNotifier().Show(notification);
 ```
 
-## <a name="falling-back-to-toast"></a>Revenir à la notification toast
-Il existe certains cas dans lesquels une notification de mes contacts s’affichera à la place en tant que notification toast régulière. Une notification de mes contacts remplace une notification toast dans les conditions suivantes :
+## <a name="falling-back-to-toast"></a>Revenir à Toast
+Dans certains cas, une notification mes personnes s’affiche à la place en tant que notification Toast normale. Une notification mes personnes revient à Toast dans les conditions suivantes :
 
-+ La notification ne parvient pas à s’afficher
-+ Les notifications de mes contacts ne sont pas activées par le destinataire
-+ Le contact de l’expéditeur n’est pas épinglé sur la barre des tâches du destinataire
++ L’affichage de la notification échoue
++ Les notifications mes personnes ne sont pas activées par le destinataire
++ Le contact de l’expéditeur n’est pas épinglé à la barre des tâches du récepteur
 
-Si une notification de mes contacts remplace une notification toast, la deuxième liaison spécifique de mes contacts est ignorée, et seule la première liaison est utilisée pour afficher la notification toast. C’est pourquoi il est essentiel de fournir une charge utile de secours dans la première liaison toast.
+Si une notification mes personnes revient à Toast, la deuxième liaison propre à mes personnes est ignorée et seule la première est utilisée pour afficher le Toast. C’est pourquoi il est essentiel de fournir une charge utile de secours dans la première liaison Toast.
 
-## <a name="see-also"></a>Articles associés
+## <a name="see-also"></a>Voir aussi
 + [Exemple de notifications My People](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/MyPeopleNotifications)
 + [Ajout de la prise en charge de mes contacts](my-people-support.md)
 + [Notifications de Toast adaptatif](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)
-+ [ToastNotification, classe](https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastnotification)
++ [ToastNotification, classe](/uwp/api/windows.ui.notifications.toastnotification)

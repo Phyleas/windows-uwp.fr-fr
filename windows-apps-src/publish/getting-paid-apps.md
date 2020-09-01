@@ -6,12 +6,12 @@ ms.date: 05/29/2020
 ms.topic: article
 keywords: Windows 10, UWP, paiements, application Sales, application proceeds, paiement, frais de magasin, retenue de paiement, pourcentage
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d42677aeda694e2fc8924cee1832b62d98b15e5
-ms.sourcegitcommit: a937963ce63a14c254420926661b9b68be28a8ee
+ms.openlocfilehash: 5e2b67984c43d799f0f4e3a1c6662b57bdc6ae9d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84746769"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89167393"
 ---
 # <a name="getting-paid"></a>Processus de paiement
 Voici quelques informations importantes sur la réception des paiements pour vos applications, modules complémentaires et revenus publicitaires.
@@ -24,16 +24,16 @@ Voici quelques informations importantes sur la réception des paiements pour vos
 
 ## <a name="store-fee"></a>Frais de Store
 
-Quand vous [créez un compte de développeur](https://developer.microsoft.com/store/register), vous acceptez le [Contrat développeur d’applications](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). Le présent contrat explique la relation entre vous et Microsoft en ce qui concerne la vente d’applications dans le Microsoft Store, y compris les frais de stockage facturés par Microsoft pour chaque vente.
+Quand vous [créez un compte de développeur](https://developer.microsoft.com/store/register), vous acceptez le [Contrat développeur d’applications](/legal/windows/agreements/app-developer-agreement). Le présent contrat explique la relation entre vous et Microsoft en ce qui concerne la vente d’applications dans le Microsoft Store, y compris les frais de stockage facturés par Microsoft pour chaque vente.
 
-Ces frais sont officiellement définis dans le [Contrat développeur d’applications](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). Consultez toujours ce document si vous avez des questions.
+Ces frais sont officiellement définis dans le [Contrat développeur d’applications](/legal/windows/agreements/app-developer-agreement). Consultez toujours ce document si vous avez des questions.
 
 Les frais de stockage sont appliqués à toutes les ventes d’applications collectées par le Microsoft Store, y compris les modules complémentaires.
 
 
 ## <a name="price-tiers"></a>Niveaux de prix
 
-Le ou les niveaux de prix que vous sélectionnez déterminent le [prix de vente](set-and-schedule-app-pricing.md#base-price) dans tous les pays où vous choisissez de distribuer votre application. Vous pouvez également utiliser des fonctionnalités de tarification supplémentaires telles que le [choix de différents prix pour différents marchés](set-and-schedule-app-pricing.md#override-base-price-for-specific-markets) ou [la promotion de votre application](put-apps-and-add-ons-on-sale.md).
+Le ou les niveaux de prix que vous sélectionnez déterminent le [prix de vente](set-and-schedule-app-pricing.md#base-price) dans tous les pays où vous choisissez de distribuer votre application. Vous pouvez également utiliser des fonctionnalités de tarification supplémentaires telles que le  [choix de différents prix pour différents marchés](set-and-schedule-app-pricing.md#override-base-price-for-specific-markets) ou [la promotion de votre application](put-apps-and-add-ons-on-sale.md).
 
 Vous pouvez proposer votre application gratuitement, ou vous pouvez choisir un prix que les clients devront verser pour l’acquérir. Les niveaux de prix commencent à 0,99 USD, avec des incréments supplémentaires (1,09 USD, 1,19 USD, etc.). Les incréments entre les niveaux de prix augmentent à mesure que le prix est plus élevé.
 
@@ -72,7 +72,3 @@ Une fois que vous avez défini votre état de paiement en attente sur **Activé*
  
 
  
-
-
-
-

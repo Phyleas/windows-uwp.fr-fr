@@ -8,12 +8,12 @@ keywords: pavé tactile, PTP, entrées tactiles, pointeur, entrées, interaction
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ffc3ce96c7e8c2ad4a34aecd1ca85ff644bdef97
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 9e83cb1ceca96e5c7b51e71cb419b86b0395ea99
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234485"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165863"
 ---
 # <a name="touchpad-design-guidelines"></a>Recommandations en matière de conception pour le pavé tactile
 
@@ -42,7 +42,7 @@ Les données d’entrée fournies par le capteur du pavé tactile peuvent :
 
 Un pavé tactile combine l’entrée tactile multipoint indirecte et l’entrée de précision d’un dispositif de pointage comme la souris. Fort de cette combinaison, le pavé tactile est adapté à l’interface utilisateur optimisée pour l’interaction tactile et aux cibles d’applications de productivité, généralement plus petites, et à l’environnement de bureau. Optimisez votre conception d’application Windows pour les entrées tactiles et bénéficiez d’une prise en charge du pavé tactile par défaut.
 
-En raison de la convergence des expériences d’interaction prises en charge par les pavés tactiles, nous vous recommandons d’utiliser l’événement [**PointerEntered**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered) pour fournir des commandes d’interface utilisateur de type souris en plus de la prise en charge intégrée de l’entrée tactile. Par exemple, utilisez les boutons Précédent et Suivant pour permettre aux utilisateurs de tourner les pages de contenu ou d’effectuer un mouvement panoramique de ce contenu.
+En raison de la convergence des expériences d’interaction prises en charge par les pavés tactiles, nous vous recommandons d’utiliser l’événement [**PointerEntered**](/uwp/api/windows.ui.xaml.uielement.pointerentered) pour fournir des commandes d’interface utilisateur de type souris en plus de la prise en charge intégrée de l’entrée tactile. Par exemple, utilisez les boutons Précédent et Suivant pour permettre aux utilisateurs de tourner les pages de contenu ou d’effectuer un mouvement panoramique de ce contenu.
 
 Les mouvements et les instructions abordés ici permettent de vérifier que votre application prend en charge les entrées du pavé tactile de façon transparente, et avec un minimum de code.
 
@@ -119,7 +119,7 @@ Voici quelques exemples de mouvements optimisés pour le pavé tactile qui perme
 ## <a name="hardware"></a>Matériel
 
 
-Interrogez les fonctionnalités de la souris ([**MouseCapabilities**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.MouseCapabilities)) pour identifier les aspects de l’interface utilisateur de votre application auxquels le pavé tactile peut accéder directement. Nous vous conseillons de fournir une interface utilisateur pour les entrées tactiles et de la souris.
+Interrogez les fonctionnalités de la souris ([**MouseCapabilities**](/uwp/api/Windows.Devices.Input.MouseCapabilities)) pour identifier les aspects de l’interface utilisateur de votre application auxquels le pavé tactile peut accéder directement. Nous vous conseillons de fournir une interface utilisateur pour les entrées tactiles et de la souris.
 
 Pour plus d’informations concernant l’interrogation des fonctionnalités du périphérique, voir [Identifier des périphériques d’entrée](identify-input-devices.md).
 
@@ -132,14 +132,14 @@ Pour plus d’informations concernant l’interrogation des fonctionnalités du 
 -   N’utilisez pas de rectangles de sélection avec les interactions de pavé tactile. Réservez ceux-ci aux interactions avec le clavier.
 -   Affichez un retour visuel simultanément pour tous les éléments qui représentent la même cible d’entrée.
 
-Pour obtenir des conseils plus généraux concernant le retour visuel, voir [Recommandations en matière de retour visuel](https://docs.microsoft.com/windows/uwp/input-and-devices/guidelines-for-visualfeedback).
+Pour obtenir des conseils plus généraux concernant le retour visuel, voir [Recommandations en matière de retour visuel](./guidelines-for-visualfeedback.md).
 
 ## <a name="cursors"></a>Curseurs
 
 
 Un ensemble de curseurs standard est disponible pour servir de pointeurs de pavé tactile. Ces derniers sont utilisés pour indiquer l’action principale d’un élément.
 
-Chaque curseur standard possède une image par défaut correspondante qui lui est associée. L’utilisateur ou une application peut remplacer à tout moment l’image par défaut associée à n’importe quel curseur standard. Les applications UWP spécifient une image de curseur par le biais de la fonction [**PointerCursor**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointercursor) .
+Chaque curseur standard possède une image par défaut correspondante qui lui est associée. L’utilisateur ou une application peut remplacer à tout moment l’image par défaut associée à n’importe quel curseur standard. Les applications UWP spécifient une image de curseur par le biais de la fonction [**PointerCursor**](/uwp/api/windows.ui.core.corewindow.pointercursor) .
 
 Si vous avez besoin de personnaliser le curseur de la souris :
 
@@ -151,7 +151,7 @@ Si vous avez besoin de personnaliser le curseur de la souris :
 
 ## <a name="related-articles"></a>Articles connexes
 
-- [Gérer les entrées du pointeur](handle-pointer-input.md)
+- [Gestion des entrées du pointeur](handle-pointer-input.md)
 - [Identification des périphériques d’entrée](identify-input-devices.md)
 
 ### <a name="samples"></a>Exemples

@@ -1,30 +1,30 @@
 ---
 title: Cartes de lumière diffuse
-description: Les surfaces mates présentent une réflexion lumineuse diffuse.
+description: Apprenez à utiliser des cartes de lumière de texture pour simuler une réflexion de lumière diffuse complexe pour les surfaces de cache.
 ms.assetid: D02E76DB-1DA8-4B51-86EF-4DDB07C02541
 keywords:
 - Cartes de lumière diffuse
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0605de5313b59689c19b9560d10e088d26d29b52
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 25089911a1dd273cd7513cda7e0a904b8d36d6f5
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57627734"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165023"
 ---
 # <a name="diffuse-light-maps"></a>Cartes de lumière diffuse
 
 
-Les surfaces mates présentent une réflexion lumineuse diffuse. La luminosité de la lumière diffuse dépend de la distance entre la source de lumière et l’angle formé par la normale de surface avec le vecteur de direction de la source de lumière. Les textures de luminosité peuvent simuler un éclairage diffus complexe.
+Les surfaces de cache ont une réflexion lumineuse diffuse. La luminosité de la lumière diffuse dépend de la distance à partir de la source de lumière et de l’angle entre la normale de la surface et le vecteur de direction de la source de lumière. Les cartes de lumière de texture peuvent simuler une lumière diffuse complexe.
 
-Les effets d’éclairage diffus simulés par des calculs d’éclairage produisent uniquement des effets généraux. Votre application peut simuler un éclairage diffus plus complexe à l’aide des textures de luminosité.
+Les effets d’éclairage diffus simulés par les calculs d’éclairage produisent uniquement des effets généraux. Votre application peut simuler un éclairage diffus plus complexe avec des cartes de lumière de texture.
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
-[Mappage clair avec des textures](light-mapping-with-textures.md)
+[Mappage lumineux avec textures](light-mapping-with-textures.md)
 
  
 

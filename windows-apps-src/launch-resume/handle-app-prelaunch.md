@@ -6,22 +6,22 @@ ms.date: 07/05/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4029bcdd554b05363397f6a6946b8ebc2bbdd1de
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 219ca73115d5605f1e1483f2af224a13c28791ff
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371649"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89164863"
 ---
 # <a name="handle-app-prelaunch"></a>Gérer le prélancement d’une application
 
-Découvrez comment gérer le prélancement d’une application en remplaçant la méthode [**OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched).
+Découvrez comment gérer le prélancement d’application en substituant la méthode [**OnLaunched**](/uwp/api/windows.ui.xaml.application.onlaunched) .
 
 ## <a name="introduction"></a>Introduction
 
-Lorsque les ressources système disponibles permettent, les performances de démarrage des applications UWP sur les appareils de famille de poste sont améliorée en lançant proactive des applications plus fréquemment utilisées de l’utilisateur en arrière-plan. Une application prélancée est placée à l’état suspendu dans les secondes suivant son lancement. Ainsi, lorsque l’utilisateur appelle l’application, celle-ci reprend l’exécution à partir de l’état suspendu, ce qui est plus rapide que le lancement de l’application à froid. L’utilisateur peut donc lancer son application très rapidement.
+Lorsque les ressources système disponibles le permettent, les performances de démarrage des applications UWP sur les appareils de la famille des appareils de bureau sont améliorées en lançant de manière proactive les applications les plus fréquemment utilisées de l’utilisateur en arrière-plan. Une application prélancée est placée à l’état suspendu dans les secondes suivant son lancement. Ainsi, lorsque l’utilisateur appelle l’application, celle-ci reprend l’exécution à partir de l’état suspendu, ce qui est plus rapide que le lancement de l’application à froid. L’utilisateur peut donc lancer son application très rapidement.
 
-Avant Windows 10, les applications ne bénéficiaient pas automatiquement du prélancement. Dans Windows 10, version 1511, toutes les applications Universal Windows Platform (UWP) ont été candidats pour être prelaunched. Dans Windows 10, version 1607, vous devez autoriser le comportement de prélancement en appelant [CoreApplication.EnablePrelaunch(true)](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.enableprelaunch). Placez cet appel dans `OnLaunched()`, à proximité de l’emplacement où la vérification `if (e.PrelaunchActivated == false)` est effectuée.
+Avant Windows 10, les applications ne bénéficiaient pas automatiquement du prélancement. Dans Windows 10, version 1511, toutes les applications de plateforme Windows universelle (UWP) étaient candidates au prélancement. Dans Windows 10, version 1607, vous devez autoriser le comportement de prélancement en appelant [CoreApplication.EnablePrelaunch(true)](/uwp/api/windows.applicationmodel.core.coreapplication.enableprelaunch). Placez cet appel dans `OnLaunched()`, à proximité de l’emplacement où la vérification `if (e.PrelaunchActivated == false)` est effectuée.
 
 Le prélancement d’une application dépend des ressources système. Si le système manque de ressources, les applications ne sont pas prélancées.
 
@@ -35,7 +35,7 @@ Une fois qu’une application est prélancée, elle passe à l’état suspendu.
 
 ## <a name="detect-and-handle-prelaunch"></a>Détecter et gérer le prélancement
 
-Les applications reçoivent l’indicateur [**LaunchActivatedEventArgs.PrelaunchActivated**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.prelaunchactivated) pendant l’activation. Utilisez cet indicateur pour exécuter du code qui doit s’exécuter uniquement lorsque l’utilisateur lance explicitement l’application, comme indiqué dans la modification suivante à [ **Application.OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched).
+Les applications reçoivent l’indicateur [**LaunchActivatedEventArgs. PrelaunchActivated**](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.prelaunchactivated) lors de l’activation. Utilisez cet indicateur pour exécuter du code qui ne doit s’exécuter que lorsque l’utilisateur lance explicitement l’application, comme illustré dans la modification suivante apportée à [**application. OnLaunched**](/uwp/api/windows.ui.xaml.application.onlaunched).
 
 ```csharp
 protected override void OnLaunched(LaunchActivatedEventArgs e)
@@ -110,13 +110,13 @@ private void TryEnablePrelaunch()
 }
 ```
 
-Remarque la `TryEnablePrelaunch()` fonction ci-dessus. La raison pour laquelle l’appel à `CoreApplication.EnablePrelaunch()` est factorisée dans cette fonction est car lorsqu’une méthode est appelée, la compilation JIT (juste à la compilation de temps) va tenter de compiler la totalité de la méthode. Si votre application s’exécute sur une version de Windows 10 qui ne prend en charge `CoreApplication.EnablePrelaunch()`, le JIT échouera. En tenant compte de l’appel dans une méthode qui est appelée uniquement lorsque l’application détermine que la plateforme prend en charge `CoreApplication.EnablePrelaunch()`, nous éviter ce problème.
+Notez la `TryEnablePrelaunch()` fonction, ci-dessus. La raison pour laquelle l’appel à `CoreApplication.EnablePrelaunch()` est pris en compte dans cette fonction est que lorsqu’une méthode est appelée, le JIT (compilation juste-à-temps) tente de compiler la totalité de la méthode. Si votre application s’exécute sur une version de Windows 10 qui ne prend pas en charge `CoreApplication.EnablePrelaunch()` , le JIT échoue. En factorisant l’appel dans une méthode qui est appelée uniquement lorsque l’application détermine que la plateforme prend en charge `CoreApplication.EnablePrelaunch()` , nous évitons ce problème.
 
-Il est également du code dans l’exemple ci-dessus que vous pouvez ne pas commenter si votre application doit adhérer à de prélancement lors de l’exécution sur Windows 10, version 1511. Dans la version 1511, toutes les applications UWP ont été automatiquement choisies dans le prélancement, qui ne peut être approprié pour votre application.
+Dans l’exemple ci-dessus, il existe également un code qui vous permet de supprimer les marques de commentaire si votre application doit refuser le prélancement lors de l’exécution sur Windows 10, version 1511. Dans la version 1511, toutes les applications UWP ont été automatiquement choisies dans le prélancement, ce qui peut ne pas convenir à votre application.
 
 ## <a name="use-the-visibilitychanged-event"></a>Utiliser l’événement VisibilityChanged
 
-Les applications activées par prélancement ne sont pas visibles pour l’utilisateur. Elles le deviennent lorsque l’utilisateur bascule vers celles-ci. Vous souhaitez peut-être retarder certaines opérations jusqu’à ce que la fenêtre principale de votre application soit visible. Par exemple, si votre application affiche une liste des nouveaux éléments d’un flux, vous pouvez mettre à jour cette liste pendant l’événement [**VisibilityChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.visibilitychanged) plutôt que d’utiliser une liste qui a été générée lors du prélancement de l’application et qui peut être obsolète au moment où l’utilisateur active l’application. Le code suivant gère l’événement **VisibilityChanged** pour **MainPage** :
+Les applications activées par prélancement ne sont pas visibles pour l’utilisateur. Elles le deviennent lorsque l’utilisateur bascule vers celles-ci. Vous souhaitez peut-être retarder certaines opérations jusqu’à ce que la fenêtre principale de votre application soit visible. Par exemple, si votre application affiche une liste des nouveaux éléments d’un flux, vous pouvez mettre à jour cette liste pendant l’événement [**VisibilityChanged**](/uwp/api/windows.ui.xaml.window.visibilitychanged) plutôt que d’utiliser une liste qui a été générée lors du prélancement de l’application et qui peut être obsolète au moment où l’utilisateur active l’application. Le code suivant gère l’événement **VisibilityChanged** pour **MainPage** :
 
 ```csharp
 public sealed partial class MainPage : Page
@@ -138,7 +138,7 @@ public sealed partial class MainPage : Page
 
 ## <a name="directx-games-guidance"></a>Recommandations en matière de jeux DirectX
 
-Il n’est généralement pas conseillé d’activer le prélancement pour les jeux DirectX car de nombreux jeux DirectX s’initialisent avant que le prélancement puisse être détecté. À partir de Windows version 1607, édition anniversaire, le prélancement de votre jeu sera désactivé par défaut.  Si vous souhaitez activer le prélancement pour votre jeu, appelez l’élément [CoreApplication.EnablePrelaunch(true)](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.enableprelaunch).
+Il n’est généralement pas conseillé d’activer le prélancement pour les jeux DirectX car de nombreux jeux DirectX s’initialisent avant que le prélancement puisse être détecté. À partir de Windows version 1607, édition anniversaire, le prélancement de votre jeu sera désactivé par défaut.  Si vous souhaitez activer le prélancement pour votre jeu, appelez l’élément [CoreApplication.EnablePrelaunch(true)](/uwp/api/windows.applicationmodel.core.coreapplication.enableprelaunch).
 
 Si votre jeu utilise une version antérieure de Windows 10, vous pouvez gérer la condition de prélancement pour quitter l’application :
 
@@ -180,7 +180,7 @@ void ViewProvider::OnActivated(CoreApplicationView^ appView,IActivatedEventArgs^
 
 ## <a name="winjs-app-guidance"></a>Recommandations en matière d’applications WinJS
 
-Si votre application WinJS utilise une version antérieure de Windows 10, vous pouvez gérer la condition de prélancement dans votre gestionnaire [onactivated](https://docs.microsoft.com/previous-versions/windows/apps/br212679(v=win.10)) :
+Si votre application WinJS utilise une version antérieure de Windows 10, vous pouvez gérer la condition de prélancement dans votre gestionnaire [onactivated](/previous-versions/windows/apps/br212679(v=win.10)) :
 
 ```javascript
     app.onactivated = function (args) {
@@ -193,19 +193,19 @@ Si votre application WinJS utilise une version antérieure de Windows 10, vous 
     }
 ```
 
-## <a name="general-guidance"></a>Recommandations d’ordre général
+## <a name="general-guidance"></a>Conseils d’ordre général
 
 -   Les applications ne doivent pas effectuer d’opérations de longue durée pendant le prélancement, puisque l’application s’arrêtera si elle ne peut pas être suspendue rapidement.
--   Les applications ne doivent pas initier la lecture audio à partir de [**Application.OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched) lorsque l’application est prélancée, car l’application n’est pas visible et ne sera pas apparente lors de la lecture audio.
+-   Les applications ne doivent pas lancer la lecture audio à partir d' [**application. OnLaunched**](/uwp/api/windows.ui.xaml.application.onlaunched) quand l’application est prélancée, car l’application n’est pas visible et il n’est pas évident que la lecture audio est possible.
 -   Les applications ne doivent pas effectuer d’opérations lors du lancement, qui suppose que l’application est visible par l’utilisateur ou qu’elle a été lancée explicitement par l’utilisateur. Dans la mesure où une application peut maintenant être lancée en arrière-plan sans action explicite de l’utilisateur, les développeurs doivent prendre en compte la confidentialité, l’incidence sur les performances et l’expérience utilisateur.
     -   Le moment où une application sociale doit définir l’état de l’utilisateur sur « en ligne » est un exemple de considération relative à la confidentialité. Elle doit attendre que l’utilisateur bascule vers l’application au lieu de modifier l’état de celui-ci lors du prélancement de l’application.
     -   Exemple de considération relative à l’expérience utilisateur : vous possédez une application, telle qu’un jeu, qui affiche une séquence d’introduction lors de son lancement, et aimeriez avoir la possibilité de retarder la séquence d’introduction jusqu’à ce que l’utilisateur bascule vers l’application.
     -   En ce qui concerne l’incidence sur les performances, vous devrez peut-être attendre que l’utilisateur bascule vers l’application pour récupérer les informations météorologiques actuelles au lieu de les charger lors du prélancement de l’application, puis les charger une nouvelle fois lorsque l’application devient visible pour vous assurer que les informations sont à jour.
 -   Si votre application efface sa vignette dynamique lors de son lancement, reportez cette opération pour qu’elle ait lieu après l’événement VisibilityChanged.
 -   La télémétrie de votre application doit faire la distinction entre les activations de vignette standard et les activations de prélancement, afin que vous puissiez identifier plus facilement le scénario correspondant en cas de problème.
--   Si vous avez Microsoft Visual Studio 2015 Update 1 et Windows 10, Version 1511, vous pouvez simuler le prélancement d’application de votre application dans Visual Studio 2015 en choisissant **déboguer** &gt; **autres cibles de débogage** &gt; **Déboguer le prélancement d’application universelle Windows**.
+-   Si vous possédez Microsoft Visual Studio 2015 Update 1 et Windows 10 version 1511, vous pouvez simuler le prélancement de votre application dans Visual Studio 2015 en choisissant **Déboguer** &gt; **Autres cibles de débogage** &gt; **Déboguer le prélancement de l’application Windows universelle**.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Cycle de vie de l’application](app-lifecycle.md)
-* [CoreApplication.EnablePrelaunch](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.enableprelaunch)
+* [CoreApplication.EnablePrelaunch](/uwp/api/windows.applicationmodel.core.coreapplication.enableprelaunch)

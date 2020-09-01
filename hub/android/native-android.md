@@ -7,12 +7,12 @@ manager: jken
 ms.topic: article
 keywords: Android, Windows, Android Studio, Visual Studio, jeu Android c++, Windows Defender, émulateur, appareil virtuel, installation, Java, Kotlin
 ms.date: 04/28/2020
-ms.openlocfilehash: 31cdd5124c659b5d35a7e8192db1e87821b891f4
-ms.sourcegitcommit: 24b19e7ee06e5bb11a0dae334806741212490ee9
+ms.openlocfilehash: c9c718d2cccc6a38ac75d3220a79c7b2ec757f54
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82255223"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166843"
 ---
 # <a name="get-started-with-native-android-development-on-windows"></a>Prise en main du développement Android natif sur Windows
 
@@ -25,13 +25,13 @@ La façon la plus simple de créer une application Android Native consiste à ut
 Android Studio est l’environnement de développement intégré officiel pour le système d’exploitation Android de Google. [Téléchargez la dernière version de Android Studio pour Windows](https://developer.android.com/studio).
 
 - Si vous avez téléchargé un fichier. exe (recommandé), double-cliquez dessus pour le lancer.
-- Si vous avez téléchargé un fichier. zip, décompressez le fichier ZIP, copiez le dossier Android-Studio dans le dossier Program Files, puis ouvrez le dossier Android-Studio > bin et lancez Studio64. exe (pour les ordinateurs 64 bits) ou Studio. exe (pour les ordinateurs 32 bits).
+- Si vous avez téléchargé un fichier. zip, décompressez le fichier ZIP, copiez le dossier Android-Studio dans le dossier Program Files, puis ouvrez le dossier Android-Studio > bin et lancez studio64.exe (pour les ordinateurs 64 bits) ou studio.exe (pour les ordinateurs 32 bits).
 
-Suivez l’Assistant Installation de Android Studio et installez les packages du kit de développement logiciel (SDK) recommandés. À mesure que de nouveaux outils et d’autres API deviennent disponibles, Android Studio vous avertit de l’affichage d’une fenêtre contextuelle ou de la recherche de mises à jour en sélectionnant **aide** > **Rechercher les mises à jour**.
+Suivez l’Assistant Installation de Android Studio et installez les packages du kit de développement logiciel (SDK) recommandés. À mesure que de nouveaux outils et d’autres API deviennent disponibles, Android Studio vous avertit de l’affichage d’une fenêtre contextuelle ou de la recherche de mises à jour en sélectionnant **aide**  >  **Rechercher les mises à jour**.
 
 ## <a name="create-a-new-project"></a>Création d'un projet
 
-Sélectionnez **fichier** > **nouveau** > **nouveau projet**.
+Sélectionnez **fichier**  >  **nouveau**  >  **nouveau projet**.
 
 Dans la fenêtre **choisir votre projet** , vous pouvez choisir entre ces modèles :
 
@@ -46,7 +46,7 @@ Dans la fenêtre **choisir votre projet** , vous pouvez choisir entre ces modèl
 Les modèles sont couramment utilisés pour ajouter des activités à des modules d’application nouveaux et existants. Par exemple, pour créer un écran de connexion pour les utilisateurs de votre application, ajoutez une activité avec le [modèle d’activité de connexion](https://developer.android.com/studio/projects/templates#LoginActivity).
 
 > [!NOTE]
-> Le système d’exploitation Android est basé sur l’idée des **composants** et utilise l' **activité** des termes et l' **intention** de définir des interactions. Une **activité** représente une tâche unique et ciblée qu’un utilisateur peut faire. Une **activité** fournit une fenêtre pour créer l’interface utilisateur à l’aide de classes basées sur la classe de **vue** . Il existe un cycle de vie des **activités** dans le système d’exploitation Android, défini par un ensemble de six `onCreate()`rappels `onResume()`: `onPause()`, `onStop()` `onStart()`,, `onDestroy()`, et. Les composants d’activité interagissent les uns avec les autres à l’aide d’objets d' **intention** . Intention définit l’activité pour démarrer ou décrit le type d’action à effectuer (et le système sélectionne l’activité appropriée pour vous, ce qui peut même provenir d’une application différente). En savoir plus sur les [activités](https://developer.android.com/reference/android/app/Activity), le [cycle de vie des activités](https://developer.android.com/guide/components/activities/activity-lifecycle)et les [intentions](https://developer.android.com/reference/android/content/Intent.html) dans les documents Android.
+> Le système d’exploitation Android est basé sur l’idée des **composants** et utilise l' **activité** des termes et l' **intention** de définir des interactions. Une **activité** représente une tâche unique et ciblée qu’un utilisateur peut faire. Une **activité** fournit une fenêtre pour créer l’interface utilisateur à l’aide de classes basées sur la classe de **vue** . Il existe un cycle de vie des **activités** dans le système d’exploitation Android, défini par un ensemble de six rappels : `onCreate()` ,,,, `onStart()` `onResume()` `onPause()` `onStop()` et `onDestroy()` . Les composants d’activité interagissent les uns avec les autres à l’aide d’objets d' **intention** . Intention définit l’activité pour démarrer ou décrit le type d’action à effectuer (et le système sélectionne l’activité appropriée pour vous, ce qui peut même provenir d’une application différente). En savoir plus sur les [activités](https://developer.android.com/reference/android/app/Activity), le [cycle de vie des activités](https://developer.android.com/guide/components/activities/activity-lifecycle)et les [intentions](https://developer.android.com/reference/android/content/Intent.html) dans les documents Android.
 
 ### <a name="java-or-kotlin"></a>Java ou Kotlin
 
@@ -85,11 +85,11 @@ La fenêtre Android Studio **projet** , qui contient les fichiers suivants (Assu
 
 Activité principale et point d’entrée de votre application. Lorsque vous générez et exécutez votre application, le système lance une instance de cette activité et charge sa disposition.
 
-**mise en page de l’application > res > > activity_main. Xml**
+**mise en page de l’application > res > > activity_main.xml**
 
 Fichier XML définissant la disposition de l’interface utilisateur de l’activité. Elle contient un élément TextView avec le texte « Hello World »
 
-**manifestes d' > d’application > fichier AndroidManifest. Xml**
+**manifestes d' > d’application > AndroidManifest.xml**
 
 Fichier manifeste décrivant les caractéristiques fondamentales de l’application et de chacun de ses composants.
 
@@ -107,11 +107,11 @@ Pour créer un nouveau projet avec prise en charge de C/C++ :
 
 - Dans la section personnalisation de la **prise en charge de c++** de l’Assistant, vous pouvez personnaliser votre projet à l’aide du champ **standard c++** . Utilisez la liste déroulante pour sélectionner la normalisation de C++ que vous souhaitez utiliser. La sélection de **chaîne d’outils par défaut** utilise le paramètre cmake par défaut. Sélectionnez **Terminer**.
 
-- Une fois que Android Studio créé votre projet, vous pouvez trouver un dossier **CPP** dans le volet **projet** qui contient les fichiers sources natifs, les en-têtes, les scripts de génération pour cmake ou NDK-Build, ainsi que les bibliothèques prégénérées qui font partie de votre projet. Vous trouverez également un exemple de fichier source C++, `native-lib.cpp`, dans le `src/main/cpp/` dossier qui fournit une fonction `stringFromJNI()` simple qui retourne la chaîne « Hello from C++ ». En outre, vous trouverez un script de génération CMake, [`CMakeLists.txt`](https://developer.android.com/studio/projects/configure-cmake.html), dans le répertoire racine de votre module, requis pour la génération de votre bibliothèque native.
+- Une fois que Android Studio créé votre projet, vous pouvez trouver un dossier **CPP** dans le volet **projet** qui contient les fichiers sources natifs, les en-têtes, les scripts de génération pour cmake ou NDK-Build, ainsi que les bibliothèques prégénérées qui font partie de votre projet. Vous trouverez également un exemple de fichier source C++, `native-lib.cpp` , dans le `src/main/cpp/` dossier qui fournit une fonction simple qui `stringFromJNI()` retourne la chaîne « Hello from C++ ». En outre, vous trouverez un script de génération CMake, [`CMakeLists.txt`](https://developer.android.com/studio/projects/configure-cmake.html) , dans le répertoire racine de votre module, requis pour la génération de votre bibliothèque native.
 
 Pour plus d’informations, consultez la rubrique docs Android : [Ajouter du code C et C++ à votre projet](https://developer.android.com/studio/projects/add-native-code). Pour obtenir des exemples, consultez les [exemples d’Android NDK avec Android Studio intégration C++ référentiel](https://github.com/android/ndk-samples) sur GitHub. Pour compiler et exécuter un jeu C++ sur Android, utilisez l' [API Google Play Game services](https://developers.google.com/games/services/cpp/gettingStartedAndroid).
 
-## <a name="design-guidelines"></a>Recommandations en matière de conception
+## <a name="design-guidelines"></a>Instructions de conception
 
 Les utilisateurs de périphériques attendent que les applications s’affichent et se comportent d’une certaine façon... qu’il s’agisse de balayer ou de toucher ou d’utiliser des commandes vocales, les utilisateurs contiendront des attentes spécifiques quant à ce à quoi votre application doit ressembler et comment l’utiliser. Ces attentes doivent rester cohérentes afin de réduire la confusion et la frustration. Android offre un guide sur les attentes en matière de plateformes et d’appareils, qui combine la base de conception de documents Google pour les modèles visuels et de navigation, ainsi que des instructions de qualité pour la compatibilité, les performances et la sécurité.
 
@@ -133,7 +133,7 @@ Microsoft propose également des conseils de conception dans le but de fournir u
 
 - [Notions de base des applications Android](https://developer.android.com/guide/components/fundamentals)
 
-- [Développer des applications à deux écrans pour Android et obtenir le kit de développement logiciel (SDK) d’appareil surface Duo](https://docs.microsoft.com/dual-screen/android/)
+- [Développer des applications à deux écrans pour Android et obtenir le kit de développement logiciel (SDK) d’appareil surface Duo](/dual-screen/android/)
 
 - [Ajouter des exclusions Windows Defender pour améliorer les performances](defender-settings.md)
 

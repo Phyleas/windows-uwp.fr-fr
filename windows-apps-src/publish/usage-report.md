@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, utilisation, événement personnalisé, rapport, télémétrie, sessions utilisateur
 ms.localizationpriority: medium
-ms.openlocfilehash: bced71620b5e52e90b104a9a50d8fb774ba14228
-ms.sourcegitcommit: 720413d2053c8d5c5b34d6873740be6e913a4857
+ms.openlocfilehash: d2839112d36822be5eb8297b838cdc38bab5c71b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88846809"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89167273"
 ---
 # <a name="usage-report"></a>Rapport d’utilisation
 
@@ -35,7 +35,7 @@ Les informations de tous les graphiques répertoriés ci-dessous reflètent la p
 > Ce rapport inclut uniquement les données d’utilisation des clients sur Windows 10 (y compris la Xbox) qui n’ont pas choisi de fournir des informations de télémétrie. Les données d’utilisation pour les jeux Xbox sont incluses ici, que le client ait été connecté à Xbox Live ou non. 
 
 
-## <a name="usage"></a>Usage
+## <a name="usage"></a>Utilisation
 
 Le graphique **utilisation** affiche des détails sur la façon dont vos clients utilisent votre application pendant la période sélectionnée. Notez que ce graphique n’effectue pas le suivi des utilisateurs uniques pour votre application ou des sessions utilisateur uniques (autrement dit, un utilisateur est représenté dans ce graphique, qu’il ait utilisé votre application une seule fois ou plusieurs fois).
 
@@ -73,7 +73,7 @@ Comme pour le graphique **sessions utilisateur** , une session utilisateur repr�
 
 Le graphique **événements personnalisés** affiche le nombre total d’occurrences pour les événements personnalisés que vous avez définis pour votre application. Ces informations peuvent concerner plusieurs occurrences pour un même client. Vous pouvez utiliser les filtres pour sélectionner les événements personnalisés spécifiques pour lesquels vous souhaitez afficher ces données.
 
-Les événements personnalisés sont implémentés à l’aide de la méthode [StoreServicesCustomEventLogger.Log](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) de [Microsoft Store Services SDK](../monetize/microsoft-store-services-sdk.md).
+Les événements personnalisés sont implémentés à l’aide de la méthode [StoreServicesCustomEventLogger.Log](/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) de [Microsoft Store Services SDK](../monetize/microsoft-store-services-sdk.md).
 
 Pour plus d’informations, consultez [consigner les événements personnalisés pour le centre de développement](../monetize/log-custom-events-for-dev-center.md).
 

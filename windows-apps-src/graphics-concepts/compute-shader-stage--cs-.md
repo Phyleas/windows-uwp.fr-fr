@@ -1,27 +1,27 @@
 ---
 title: Étape Compute Shader (CS)
-description: L'étape Compute Shader (CS) assure des opérations de calcul général à haut débit et tire parti du grand nombre de processeurs parallèles sur le processeur graphique (GPU).
+description: L’étape de nuanceur de calcul (CS) offre un calcul universel à grande vitesse et tire parti du grand nombre de processeurs parallèles sur l’unité de traitement graphique (GPU).
 ms.assetid: 300D4C0C-5450-45F8-9F29-E1A101D38F73
 keywords:
 - Étape Compute Shader (CS)
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: bce484921a987f06ed79ad65007eb38d646c3227
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 62951db34cfd63c8d47f95a887b79aedea77a1c5
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259505"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165033"
 ---
 # <a name="compute-shader-cs-stage"></a>Étape Compute Shader (CS)
 
 
-L'étape Compute Shader (CS) assure des opérations de calcul général à haut débit et tire parti du grand nombre de processeurs parallèles sur le processeur graphique (GPU). L'étape Compute Shader fournit des fonctionnalités de partage de mémoire et de synchronisation de threads pour prendre en charge des méthodes de programmation parallèles plus efficaces.
+L’étape de nuanceur de calcul (CS) offre un calcul universel à grande vitesse et tire parti du grand nombre de processeurs parallèles sur l’unité de traitement graphique (GPU). L’étape de nuanceur de calcul fournit des fonctionnalités de partage de mémoire et de synchronisation de threads pour permettre des méthodes de programmation parallèles plus efficaces.
 
-Un nuanceur de calcul peut s’exécuter sur plusieurs threads en parallèle.
+Un nuanceur de calcul peut s’exécuter sur un grand nombre de threads en parallèle.
 
-Un nuanceur de calcul est une étape du nuanceur programmable [HLSL](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl) qui étend la portée de Direct3D au-delà de la programmation graphique à l’aide de la technologie [DirectCompute](https://blogs.msdn.com/b/chuckw/archive/2010/07/14/directcompute.aspx).
+Un nuanceur de calcul est une étape de nuanceur programmable en [HLSL](/windows/desktop/direct3dhlsl/dx-graphics-hlsl)qui développe Direct3D au-delà de la programmation graphique, en utilisant la technologie [DirectCompute](https://blogs.msdn.com/b/chuckw/archive/2010/07/14/directcompute.aspx) .
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
@@ -33,7 +33,3 @@ Un nuanceur de calcul est une étape du nuanceur programmable [HLSL](https://doc
  
 
  
-
-
-
-

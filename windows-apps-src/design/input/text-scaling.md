@@ -8,12 +8,12 @@ ms.date: 08/02/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 4db3af0d2ec0ce1dbd0866f569ad9bf9b0392aa8
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 386920532f4598ee2d1519d292454b47c285555b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970564"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165833"
 ---
 # <a name="text-scaling"></a>Mise à l’échelle du texte
 
@@ -100,7 +100,7 @@ Voici un extrait de code d’une application UWP de base qui comprend deux contr
 
 Ne spécifiez pas de tailles absolues pour vos contrôles. Dans la mesure du possible, laissez la plateforme redimensionner automatiquement vos contrôles en fonction des paramètres de l’utilisateur et de l’appareil.  
 
-Dans cet extrait de code de l’exemple précédent, nous `Auto` utilisons `*` les valeurs et Width d’un ensemble de colonnes de grille et laissons la plateforme ajuster la disposition de l’application en fonction de la taille des éléments contenus dans la grille.
+Dans cet extrait de code de l’exemple précédent, nous utilisons les `Auto` `*` valeurs et Width d’un ensemble de colonnes de grille et laissons la plateforme ajuster la disposition de l’application en fonction de la taille des éléments contenus dans la grille.
 
 ``` xaml
 <Grid.ColumnDefinitions>
@@ -116,7 +116,7 @@ Pour garantir que la disposition de votre application est aussi flexible et adap
 
 Si vous ne spécifiez pas l’habillage du texte, la plateforme utilise d’autres méthodes pour ajuster la disposition, y compris le découpage (Voir l’exemple précédent).
 
-Ici, nous utilisons les `AcceptsReturn` propriétés `TextWrapping` de zone de texte et pour nous assurer que notre disposition est la plus flexible possible.
+Ici, nous utilisons les `AcceptsReturn` `TextWrapping` Propriétés de zone de texte et pour nous assurer que notre disposition est la plus flexible possible.
 
 ``` xaml
 <TextBox PlaceholderText="Type something here" 
@@ -133,7 +133,7 @@ Si l’habillage du texte n’est pas le comportement par défaut, la plupart de
 > [!NOTE]
 > Si vous devez découper votre texte, découpez la fin de la chaîne, pas le début.
 
-Dans cet exemple, nous montrons comment découper du texte dans un TextBlock à l’aide de la propriété [TextTrimming](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.texttrimming) .
+Dans cet exemple, nous montrons comment découper du texte dans un TextBlock à l’aide de la propriété [TextTrimming](/uwp/api/windows.ui.xaml.controls.textblock.texttrimming) .
 
 ``` xaml
 <TextBlock TextTrimming="Clip">
@@ -163,19 +163,19 @@ Ici, nous ajoutons une info-bulle à un TextBlock qui ne prend pas en charge l�
 
 Lorsque vous utilisez des icônes de police pour l’accentuation ou la décoration, désactivez la mise à l’échelle sur ces caractères.
 
-Affectez [IsTextScaleFactorEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.istextscalefactorenabled) à `false` la propriété IsTextScaleFactorEnabled la valeur pour la plupart des contrôles XAML.
+Affectez à la propriété [IsTextScaleFactorEnabled](/uwp/api/windows.ui.xaml.controls.control.istextscalefactorenabled) la valeur `false` pour la plupart des contrôles XAML.
 
 ### <a name="support-text-scaling-natively"></a>Prendre en charge la mise à l’échelle du texte en mode natif
 
-Gérez l’événement système [TextScaleFactorChanged](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactorchanged) uisettings dans votre infrastructure et vos contrôles personnalisés. Cet événement est déclenché chaque fois que l’utilisateur définit le facteur d’échelle du texte sur son système.
+Gérez l’événement système [TextScaleFactorChanged](/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactorchanged) uisettings dans votre infrastructure et vos contrôles personnalisés. Cet événement est déclenché chaque fois que l’utilisateur définit le facteur d’échelle du texte sur son système.
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cette rubrique fournit une vue d’ensemble de la prise en charge de la mise à l’échelle du texte dans Windows et inclut l’expérience utilisateur et l’aide pour les développeurs sur la personnalisation de l’expérience utilisateur.
 
 ## <a name="related-articles"></a>Articles connexes
 
-### <a name="api-reference"></a>Informations de référence sur l'API
+### <a name="api-reference"></a>Informations de référence sur les API
 
-- [IsTextScaleFactorEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.istextscalefactorenabled)
-- [TextScaleFactorChanged](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactorchanged)
+- [IsTextScaleFactorEnabled](/uwp/api/windows.ui.xaml.controls.control.istextscalefactorenabled)
+- [TextScaleFactorChanged](/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactorchanged)

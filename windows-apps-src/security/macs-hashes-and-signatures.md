@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, sécurité
 ms.localizationpriority: medium
-ms.openlocfilehash: 78b14023f61dd3f8c27bc31f5876407ff0ed0366
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 7932636679a09834b982e2c320309b90c759c365
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371203"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89167143"
 ---
 # <a name="macs-hashes-and-signatures"></a>Codes d’authentification des messages, hachages et signatures
 
@@ -23,22 +23,22 @@ Cet article explique comment les codes d’authentification de message (MAC), le
 ## <a name="message-authentication-codes-macs"></a>Codes d’authentification des messages
 
 
-Le chiffrement permet d’empêcher un individu non autorisé de lire un message, mais il n’empêche pas cet individu de le falsifier. Un message altéré, même si l’altération ne produit rien d’autre qu’une absurdité, peut avoir des coûts réels. Un code d’authentification des messages (MAC) permet d’empêcher la falsification des messages. Prenons, par exemple, le scénario suivant :
+Le chiffrement permet d’empêcher un individu non autorisé de lire un message, mais il n’empêche pas cet individu de le falsifier. Un message altéré, même si l’altération ne produit rien d’autre qu’une absurdité, peut avoir des coûts réels. Un code d’authentification des messages (MAC) permet d’empêcher la falsification des messages. Par exemple, considérez le scénario suivant :
 
 -   Bob et Alice partagent une clé secrète et conviennent d’une fonction MAC à utiliser.
 -   Bob crée un message, puis entre le message et la clé secrète dans une fonction MAC pour récupérer une valeur MAC.
--   Bob envoie le \[non chiffrés\] valeur message et le MAC à Alice sur un réseau.
+-   Bob envoie le \[ message non chiffré \] et la valeur Mac à Alice sur un réseau.
 -   Alice utilise la clé secrète et le message comme entrée pour la fonction MAC. Elle compare la valeur MAC générée à la valeur MAC envoyée par Bob. Si elles sont identiques, cela indique que le message n’a pas été modifié lors du transit.
 
 Notez qu’Eve, une tierce personne effectuant une écoute clandestine de la conversation entre Bob et Alice, ne peut effectivement pas manipuler le message. Eve n’a pas accès à la clé privée et, par conséquent, ne peut pas créer de valeur MAC qui ferait apparaître le message falsifié comme légitime à Alice.
 
 La création d’un code d’authentification des messages garantit que le message d’origine n’a pas été altéré et, en utilisant une clé secrète partagée, que le hachage du message a été signé par une personne ayant accès à cette clé privée.
 
-Vous pouvez utiliser [**MacAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.MacAlgorithmProvider) pour énumérer les algorithmes MAC disponibles et générer une clé symétrique. Vous pouvez utiliser des méthodes statiques sur la classe [**CryptographicEngine**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.CryptographicEngine) pour effectuer le chiffrement nécessaire qui crée la valeur MAC.
+Vous pouvez utiliser [**MacAlgorithmProvider**](/uwp/api/Windows.Security.Cryptography.Core.MacAlgorithmProvider) pour énumérer les algorithmes Mac disponibles et générer une clé symétrique. Vous pouvez utiliser des méthodes statiques sur la classe [**CryptographicEngine**](/uwp/api/Windows.Security.Cryptography.Core.CryptographicEngine) pour effectuer le chiffrement nécessaire qui crée la valeur Mac.
 
 Les signatures numériques sont l’équivalent, pour les clés publiques, des codes d’authentification de message (MAC) des clés privées. Bien que les codes d’authentification des messages (MAC, Message Authentication Codes) utilisent des clés privées pour permettre au destinataire d’un message de vérifier qu’un message n’a pas été altéré pendant la transmission, les signatures utilisent une paire clé privée/clé publique.
 
-Cet exemple montre comment utiliser la classe [**MacAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.MacAlgorithmProvider) pour créer un code d’authentification de message haché (HMAC, Hashed Message Authentication Code).
+Cet exemple de code montre comment utiliser la classe [**MacAlgorithmProvider**](/uwp/api/Windows.Security.Cryptography.Core.MacAlgorithmProvider) pour créer un code d’authentification de message haché (HMAC).
 
 ```cs
 using Windows.Security.Cryptography;
@@ -125,23 +125,23 @@ namespace SampleMacAlgorithmProvider
 }
 ```
 
-## <a name="hashes"></a>Hachages
+## <a name="hashes"></a>Codes de hachage
 
 
 Une fonction de hachage de chiffrement prend un long bloc de données au hasard et renvoie une chaîne de bits de taille fixe. Les fonctions de hachage sont généralement utilisées dans le cadre de la signature de données. Comme la plupart des opérations de signature de clé publique sont gourmandes en calcul, il est plus efficace de signer (chiffrer) un hachage de message plutôt que le message d’origine. La procédure suivante représente un cas courant, bien que simplifié :
 
 -   Bob et Alice partagent une clé secrète et conviennent d’une fonction MAC à utiliser.
 -   Bob crée un message, puis entre le message et la clé secrète dans une fonction MAC pour récupérer une valeur MAC.
--   Bob envoie le \[non chiffrés\] valeur message et le MAC à Alice sur un réseau.
+-   Bob envoie le \[ message non chiffré \] et la valeur Mac à Alice sur un réseau.
 -   Alice utilise la clé secrète et le message comme entrée pour la fonction MAC. Elle compare la valeur MAC générée à la valeur MAC envoyée par Bob. Si elles sont identiques, cela indique que le message n’a pas été modifié lors du transit.
 
 Notez qu’Alice a envoyé un message non chiffré. Seul le hachage était chiffré. La procédure permet uniquement de s’assurer que le message d’origine n’a pas été modifié et, à l’aide de la clé publique d’Alice, que le hachage du message a été signé par quelqu’un qui a accès à la clé privée d’Alice, probablement Alice elle-même.
 
-Vous pouvez utiliser la classe [**HashAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.HashAlgorithmProvider) pour énumérer les algorithmes de hachage disponibles et créer une valeur [**CryptographicHash**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.CryptographicHash).
+Vous pouvez utiliser la classe [**HashAlgorithmProvider**](/uwp/api/Windows.Security.Cryptography.Core.HashAlgorithmProvider) pour énumérer les algorithmes de hachage disponibles et créer une valeur [**CryptographicHash**](/uwp/api/Windows.Security.Cryptography.Core.CryptographicHash).
 
 Les signatures numériques sont l’équivalent, pour les clés publiques, des codes d’authentification de message (MAC) des clés privées. Alors que les codes MAC utilisent des clés privées pour permettre au destinataire d’un message de vérifier que celui-ci n’a pas été modifié au cours de transmission, les signatures utilisent une paire de clés privée/publique.
 
-L’objet [**CryptographicHash**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.CryptographicHash) peut être utilisé pour hacher différentes données de manière répétée sans avoir à recréer l’objet pour chaque utilisation. La méthode [**Append**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.core.cryptographichash.append) ajoute de nouvelles données à une mémoire tampon en vue d’être hachées. La méthode [**GetValueAndReset**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.core.cryptographichash.getvalueandreset) hache les données et réinitialise l’objet en vue d’une autre utilisation. En voici une illustration dans l’exemple suivant.
+L’objet [**CryptographicHash**](/uwp/api/Windows.Security.Cryptography.Core.CryptographicHash) peut être utilisé pour hacher plusieurs fois des données différentes sans avoir à recréer l’objet pour chaque utilisation. La méthode [**Append**](/uwp/api/windows.security.cryptography.core.cryptographichash.append) ajoute de nouvelles données à une mémoire tampon en vue d’être hachées. La méthode [**GetValueAndReset**](/uwp/api/windows.security.cryptography.core.cryptographichash.getvalueandreset) hache les données et réinitialise l’objet pour une autre utilisation. En voici une illustration dans l’exemple suivant.
 
 ```cs
 public void SampleReusableHash()
@@ -191,4 +191,4 @@ Comme la plupart des opérations de signature de clé publique sont gourmandes e
 
 La signature permet uniquement de s’assurer que le message d’origine n’a pas été modifié et, à l’aide de la clé publique de l’expéditeur, que le hachage du message a été signé par quelqu’un qui a accès à la clé privée.
 
-Vous pouvez utiliser un objet [**AsymmetricKeyAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.AsymmetricKeyAlgorithmProvider) pour énumérer les algorithmes de signature disponibles et générer ou importer une paire de clés. Vous pouvez utiliser des méthodes statiques sur la classe [**CryptographicHash**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.CryptographicHash) pour signer un message ou vérifier une signature.
+Vous pouvez utiliser un objet [**AsymmetricKeyAlgorithmProvider**](/uwp/api/Windows.Security.Cryptography.Core.AsymmetricKeyAlgorithmProvider) pour énumérer les algorithmes de signature disponibles et générer ou importer une paire de clés. Vous pouvez utiliser des méthodes statiques sur la classe [**CryptographicHash**](/uwp/api/Windows.Security.Cryptography.Core.CryptographicHash) pour signer un message ou vérifier une signature.

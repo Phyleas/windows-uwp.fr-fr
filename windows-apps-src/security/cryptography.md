@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, sécurité
 ms.localizationpriority: medium
-ms.openlocfilehash: abe151bd78a0340b91aa1600ad34282b94b6d216
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: d8a4ff658e05f9483dc8afbb6beb9f70f39676a0
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372593"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89167243"
 ---
 # <a name="cryptography"></a>Chiffrement
 
@@ -20,7 +20,7 @@ ms.locfileid: "66372593"
 
 L’article fournit une vue d’ensemble des fonctionnalités de chiffrement disponibles pour les applications de plateforme Windows universelle (UWP). Pour plus d’informations sur des tâches particulières, voir le tableau à la fin de cet article.
 
-## <a name="terminology"></a>Terminology
+## <a name="terminology"></a>Terminologie
 
 
 The following terminology is commonly used in cryptography and public key infrastructure (PKI).
@@ -28,22 +28,22 @@ The following terminology is commonly used in cryptography and public key infras
 | Terme                        | Description                                                                                                                                                                                           |
 |-----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Chiffrement                  | The process of transforming data by using a cryptographic algorithm and key. The transformed data can be recovered only by using the same algorithm and the same (symmetric) or related (public) key. |
-| Decryption                  | The process of returning encrypted data to its original form.                                                                                                                                         |
+| Déchiffrement                  | The process of returning encrypted data to its original form.                                                                                                                                         |
 | Plaintext                   | Originally referred to an unencrypted text message. Currently refers to any unencrypted data.                                                                                                         |
 | Ciphertext                  | Originally referred to an encrypted, and therefore unreadable, text message. Currently refers to any encrypted data.                                                                                  |
 | Hashing                     | The process of converting variable length data into a fixed length, typically smaller, value. By comparing hashes, you can obtain reasonable assurance that two or more data are the same.            |
 | Signature                   | Encrypted hash of digital data typically used to authenticate the sender of the data or verify that the data was not tampered with during transmission.                                               |
 | Algorithm                   | A step-by-step procedure for encrypting data.                                                                                                                                                         |
-| Touche                         | A random or pseudorandom number used as input to a cryptographic algorithm to encrypt and decrypt data.                                                                                               |
+| Clé                         | A random or pseudorandom number used as input to a cryptographic algorithm to encrypt and decrypt data.                                                                                               |
 | Symmetric Key Cryptography  | Cryptography in which encryption and decryption use the same key. This is also known as secret key cryptography.                                                                                      |
 | Asymmetric Key Cryptography | Cryptography in which encryption and decryption use a different but mathematically related key. This is also called public key cryptography.                                                          |
-| Encoding                    | The process of encoding digital messages, including certificates, for transport across a network.                                                                                                     |
+| Encodage                    | The process of encoding digital messages, including certificates, for transport across a network.                                                                                                     |
 | Algorithm Provider          | A DLL that implements a cryptographic algorithm.                                                                                                                                                      |
-| Key Storage Provider        | A container for storing key material. Currently, keys can be stored in software, smart cards, or the trusted platform module (TPM).                                                                   |
+| Fournisseur de stockage de clés        | A container for storing key material. Currently, keys can be stored in software, smart cards, or the trusted platform module (TPM).                                                                   |
 | X.509 Certificate           | A digital document, typically issued by a certification authority, to verify the identity of an individual, system, or entity to other interested parties.                                            |
 
  
-## <a name="namespaces"></a>Namespaces
+## <a name="namespaces"></a>Espaces de noms
 
 The following namespaces are available for use in apps.
 
@@ -93,7 +93,7 @@ The simplified application programming interface available for apps enables the 
 
 ### <a name="cryptography-support"></a>Cryptography support
 
-Vous pouvez effectuer les tâches de chiffrement suivantes. Pour plus d’informations, voir l’espace de noms [**Windows.Security.Cryptography.Core**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core).
+Vous pouvez effectuer les tâches de chiffrement suivantes. Pour plus d’informations, voir l’espace de noms [**Windows.Security.Cryptography.Core**](/uwp/api/Windows.Security.Cryptography.Core).
 
 -   Créer des clés symétriques
 -   Perform symmetric encryption
@@ -104,21 +104,21 @@ Vous pouvez effectuer les tâches de chiffrement suivantes. Pour plus d’inform
 -   Hash content
 -   Digitally sign content
 
-The SDK also provides a simplified interface for password-based data protection. Vous pouvez l’utiliser pour effectuer les tâches suivantes. Pour plus d’informations, voir l’espace de noms [**Windows.Security.Cryptography.DataProtection**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection).
+The SDK also provides a simplified interface for password-based data protection. Vous pouvez l’utiliser pour effectuer les tâches suivantes. Pour plus d’informations, voir l’espace de noms [**Windows.Security.Cryptography.DataProtection**](/uwp/api/Windows.Security.Cryptography.DataProtection).
 
 -   Protection asynchrone des données statiques
 -   Asynchronous protection of a data stream
 
 ### <a name="encoding-support"></a>Prise en charge du codage
 
-Une application permet de coder les données de chiffrement avant leur transfert via un réseau et de décoder les données provenant d’une source réseau. Pour plus d’informations, voir les méthodes statiques disponibles dans l’espace de noms [**Windows.Security.Cryptography**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography).
+Une application permet de coder les données de chiffrement avant leur transfert via un réseau et de décoder les données provenant d’une source réseau. Pour plus d’informations, consultez les méthodes statiques disponibles dans l’espace de noms [**Windows. Security. Cryptography**](/uwp/api/Windows.Security.Cryptography) .
 
 ### <a name="pki-support"></a>Prise en charge de l’infrastructure à clé publique (PKI)
 
-Les applications pouvez effectuer les tâches PKI suivantes. Pour plus d’informations, voir l’espace de noms [**Windows.Security.Cryptography.Certificates**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Certificates).
+Les applications pouvez effectuer les tâches PKI suivantes. Pour plus d’informations, consultez l’espace de noms [**Windows. Security. Cryptography. Certificates**](/uwp/api/Windows.Security.Cryptography.Certificates) .
 
 -   Créer un certificat
--   Create a self-signed certificate
+-   Créer un certificat auto-signé
 -   Install a certificate response
 -   Import a certificate in PFX format
 -   Use smart card certificates and keys (sharedUserCertificates capabilities set)
@@ -141,11 +141,11 @@ Les articles suivants fournissent plus de détails sur la sécurité :
 
 | Rubrique                                                                         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 |-------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Certificats](certificates.md)                                               | Cet article traite de l’utilisation des certificats dans les applications UWP. Les certificats numériques sont utilisés dans le chiffrement à clé publique pour lier une clé publique à une personne, un ordinateur ou une organisation. Les identités liées sont le plus souvent utilisées pour authentifier une entité auprès d’une autre. Par exemple, les certificats sont souvent utilisés pour authentifier un serveur Web auprès d’un utilisateur ou vice versa. Vous pouvez créer des demandes de certificat et installer ou importer des certificats émis. Vous pouvez aussi inscrire un certificat dans une hiérarchie de certificats. |
+| [Certificates](certificates.md)                                               | Cet article traite de l’utilisation des certificats dans les applications UWP. Les certificats numériques sont utilisés dans le chiffrement à clé publique pour lier une clé publique à une personne, un ordinateur ou une organisation. Les identités liées sont le plus souvent utilisées pour authentifier une entité auprès d’une autre. Par exemple, les certificats sont souvent utilisés pour authentifier un serveur Web auprès d’un utilisateur ou vice versa. Vous pouvez créer des demandes de certificat et installer ou importer des certificats émis. Vous pouvez aussi inscrire un certificat dans une hiérarchie de certificats. |
 | [Clés de chiffrement](cryptographic-keys.md)                                   | Cet article montre comment utiliser les fonctions de dérivation de clés standard, et chiffrer du contenu à l’aide de clés symétriques et asymétriques.                                                                                                                                                                                                                                                                                                                                                                             |
-| [Protection des données](data-protection.md)                                         | Cet article explique comment utiliser la classe [DataProtectionProvider](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection.DataProtectionProvider) dans l’espace de noms [Windows.Security.Cryptography.DataProtection](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection) pour chiffrer et déchiffrer des données numériques dans une application UWP.                                                                                                                                                                                                                  |
-| [Codes d’authentification des messages, codes de hachage et signatures](macs-hashes-and-signatures.md)               | Cet article explique comment les codes d’authentification des messages, les hachages et les signatures peuvent être utilisés dans les applications UWP pour détecter une falsification des messages.                                                                                                                                                                                                                                                                                                                                                                                |
-| [Restrictions à l’exportation pour le chiffrement](export-restrictions-on-cryptography.md) | Utilisez ces informations pour déterminer si votre application emploie un type de chiffrement qui pourrait l’empêcher de figurer dans le Microsoft Store.                                                                                                                                                                                                                                                                                                                                                                                            |
+| [Protection des données](data-protection.md)                                         | Cet article explique comment utiliser la classe [DataProtectionProvider](/uwp/api/Windows.Security.Cryptography.DataProtection.DataProtectionProvider) dans l’espace de noms [Windows.Security.Cryptography.DataProtection](/uwp/api/Windows.Security.Cryptography.DataProtection) pour chiffrer et déchiffrer des données numériques dans une application UWP.                                                                                                                                                                                                                  |
+| [Codes d’authentification des messages, hachages et signatures](macs-hashes-and-signatures.md)               | Cet article explique comment les codes d’authentification des messages, les hachages et les signatures peuvent être utilisés dans les applications UWP pour détecter une falsification des messages.                                                                                                                                                                                                                                                                                                                                                                                |
+| [Restrictions à l’exportation liées à l’utilisation du chiffrement](export-restrictions-on-cryptography.md) | Utilisez ces informations pour déterminer si votre application utilise le chiffrement d’une manière susceptible de l’empêcher d’être listé dans le Microsoft Store.                                                                                                                                                                                                                                                                                                                                                                                            |
 | [Tâches courantes de chiffrement](common-cryptography-tasks.md)                     | Ces articles fournissent des exemples de code pour les tâches de chiffrement UWP courantes, telles que la création de nombres aléatoires, la comparaison de mémoires tampon, la conversion entre chaînes et données binaires, la copie de tableaux d’octets, et le codage/décodage de données.                                                                                                                                                                                                                                                                                    |
 
  

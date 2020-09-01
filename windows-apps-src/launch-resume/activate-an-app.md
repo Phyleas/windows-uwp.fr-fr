@@ -11,22 +11,22 @@ dev_langs:
 - cppwinrt
 - cpp
 - vb
-ms.openlocfilehash: 622fc4246c0ce8051135feab07295034b55a82e4
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 0c3aa86fd8eee3724e092799eea6d34f0b9d453b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370822"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89164993"
 ---
 # <a name="handle-app-activation"></a>Gérer l’activation d’une application
 
-Découvrez comment gérer l’activation d’application en substituant le [ **Application.OnLaunched** ](/uwp/api/windows.ui.xaml.application.onlaunched) (méthode).
+Découvrez comment gérer l’activation des applications en remplaçant la méthode [**application. OnLaunched**](/uwp/api/windows.ui.xaml.application.onlaunched) .
 
 ## <a name="override-the-launch-handler"></a>Remplacer le gestionnaire de lancement
 
-Quand une application est activée, pour une raison quelconque, le système envoie le [ **CoreApplicationView.Activated** ](/uwp/api/windows.applicationmodel.core.coreapplicationview.activated) événement. Pour obtenir la liste des types d’activation, voir l’énumération [**ActivationKind**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ActivationKind).
+Quand une application est activée, pour une raison quelconque, le système envoie l’événement [**CoreApplicationView. Activated**](/uwp/api/windows.applicationmodel.core.coreapplicationview.activated) . Pour obtenir la liste des types d’activations, consultez l’énumération [**ActivationKind**](/uwp/api/Windows.ApplicationModel.Activation.ActivationKind) .
 
-La classe [**Windows.UI.Xaml.Application**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Application) définit des méthodes que vous pouvez remplacer pour traiter les différents types d’activation. Plusieurs types d’activation ont une méthode spécifique que vous pouvez remplacer. Pour les autres types d’activation, remplacez la méthode [**OnActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onactivated).
+La classe [**Windows. UI. Xaml. application**](/uwp/api/Windows.UI.Xaml.Application) définit des méthodes que vous pouvez substituer pour gérer les différents types d’activation. Plusieurs types d’activation ont une méthode spécifique que vous pouvez remplacer. Pour les autres types d’activation, remplacez la méthode [**OnActivated**](/uwp/api/windows.ui.xaml.application.onactivated) .
 
 Définissez la classe pour votre application.
 
@@ -37,10 +37,10 @@ Définissez la classe pour votre application.
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 ```
 
-Remplacez la méthode [**OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched). Cette méthode est appelée chaque fois que l’utilisateur lance l’application. Le paramètre [**LaunchActivatedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.LaunchActivatedEventArgs) contient l’état précédent de votre application et les arguments d’activation.
+Substituez la méthode [**OnLaunched**](/uwp/api/windows.ui.xaml.application.onlaunched) . Cette méthode est appelée chaque fois que l’utilisateur lance l’application. Le paramètre [**LaunchActivatedEventArgs**](/uwp/api/Windows.ApplicationModel.Activation.LaunchActivatedEventArgs) contient l’état précédent de votre application et les arguments d’activation.
 
 > [!NOTE]
-> Sur Windows, lancement d’une application suspendue à partir de la liste de vignette ou l’application de démarrage n’appelle pas cette méthode.
+> Sur Windows, le lancement d’une application interrompue à partir de la vignette de démarrage ou de la liste d’applications n’appelle pas cette méthode.
 
 ```csharp
 using System;
@@ -187,7 +187,7 @@ void App::EnsurePageCreatedAndActivate()
 
 ## <a name="restore-application-data-if-app-was-suspended-then-terminated"></a>Restaurer les données d’application en cas de suspension puis d’arrêt de l’application
 
-Lorsque l’utilisateur bascule vers votre application arrêtée, le système envoie l’événement [**Activated**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationview.activated), avec [**Kind**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.iactivatedeventargs.kind) défini sur **Launch** et [**PreviousExecutionState**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.iactivatedeventargs.previousexecutionstate) sur **Terminated** ou **ClosedByUser**. L’application doit charger ses données d’application enregistrées et actualiser son contenu à l’écran.
+Lorsque l’utilisateur bascule vers votre application arrêtée, le système envoie l’événement [**Activated**](/uwp/api/windows.applicationmodel.core.coreapplicationview.activated), avec [**Kind**](/uwp/api/windows.applicationmodel.activation.iactivatedeventargs.kind) défini sur **Launch** et [**PreviousExecutionState**](/uwp/api/windows.applicationmodel.activation.iactivatedeventargs.previousexecutionstate) sur **Terminated** ou **ClosedByUser**. L’application doit charger ses données d’application enregistrées et actualiser son contenu à l’écran.
 
 ```csharp
 async protected override void OnLaunched(LaunchActivatedEventArgs args)
@@ -259,19 +259,19 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 }
 ```
 
-Si la valeur de [**PreviousExecutionState**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.iactivatedeventargs.previousexecutionstate) est **NotRunning**, l’application n’a pas réussi à enregistrer ses données d’application et doit redémarrer de zéro.
+Si la valeur de [**PreviousExecutionState**](/uwp/api/windows.applicationmodel.activation.iactivatedeventargs.previousexecutionstate) est **NotRunning**, l’application n’a pas réussi à enregistrer ses données d’application et doit redémarrer de zéro.
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarques
 
 > [!NOTE]
-> Les applications peuvent ignorer l’initialisation si un contenu est déjà défini sur la fenêtre active. Vous pouvez vérifier le [ **LaunchActivatedEventArgs.TileId** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.tileid) propriété pour déterminer si l’application a été lancée à partir d’un réplica principal ou une vignette secondaire et, en fonction de ces informations, décidez si vous devez : présenter une nouvelle ou reprendre l’expérience de l’application.
+> Les applications peuvent ignorer l’initialisation si un contenu est déjà défini sur la fenêtre active. Vous pouvez vérifier la propriété [**LaunchActivatedEventArgs. TileId**](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.tileid) pour déterminer si l’application a été lancée à partir d’une vignette principale ou secondaire et, en fonction de ces informations, décider si vous devez présenter une expérience d’application nouvelle ou de reprise.
 
 ## <a name="important-apis"></a>API importantes
-* [Windows.ApplicationModel.Activation](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation)
-* [Windows.UI.Xaml.Application](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Application)
+* [Windows. ApplicationModel. activation](/uwp/api/Windows.ApplicationModel.Activation)
+* [Windows.UI.Xaml.Application](/uwp/api/Windows.UI.Xaml.Application)
 
 ## <a name="related-topics"></a>Rubriques connexes
-* [Gérer l’interruption d’une application](suspend-an-app.md)
+* [Gérer la suspension d’une application](suspend-an-app.md)
 * [Gérer la reprise d’une application](resume-an-app.md)
-* [Instructions pour l’application interrompre et reprendre](https://docs.microsoft.com/windows/uwp/launch-resume/index)
+* [Recommandations pour la suspension et la reprise d’une application](./index.md)
 * [Cycle de vie de l’application](app-lifecycle.md)

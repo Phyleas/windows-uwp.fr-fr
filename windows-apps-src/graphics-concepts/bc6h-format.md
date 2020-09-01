@@ -1,69 +1,69 @@
 ---
 title: Format BC6H
-description: Le format BC6H est un format de compression de texture conçu pour prendre en charge les espaces de couleur à plage dynamique élevée (HDR) dans les données source.
+description: Le format BC6H est un format de compression de texture conçu pour prendre en charge les espaces de couleurs HDR (large-Dynamic Range) dans les données sources.
 ms.assetid: 6781D967-9262-4EE7-B354-7A6D0EA0498E
 keywords:
 - Format BC6H
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 50c8fa623130412688f14307fa46540c81f38554
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 5f53ebf6a7326bd9e6a99272c01d9eeb5c03f580
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370485"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165073"
 ---
 # <a name="bc6h-format"></a>Format BC6H
 
 
-Le format BC6H est un format de compression de texture conçu pour prendre en charge les espaces de couleur à plage dynamique élevée (HDR) dans les données source.
+Le format BC6H est un format de compression de texture conçu pour prendre en charge les espaces de couleurs HDR (large-Dynamic Range) dans les données sources.
 
-## <a name="span-idabout-bc6h-dxgi-format-bc6hspanspan-idabout-bc6h-dxgi-format-bc6hspanspan-idabout-bc6h-dxgi-format-bc6hspanabout-bc6hdxgiformatbc6h"></a><span id="About-BC6H-DXGI-FORMAT-BC6H"></span><span id="about-bc6h-dxgi-format-bc6h"></span><span id="ABOUT-BC6H-DXGI-FORMAT-BC6H"></span>À propos de BC6H/DXGI\_FORMAT\_BC6H
+## <a name="span-idabout-bc6h-dxgi-format-bc6hspanspan-idabout-bc6h-dxgi-format-bc6hspanspan-idabout-bc6h-dxgi-format-bc6hspanabout-bc6hdxgi_format_bc6h"></a><span id="About-BC6H-DXGI-FORMAT-BC6H"></span><span id="about-bc6h-dxgi-format-bc6h"></span><span id="ABOUT-BC6H-DXGI-FORMAT-BC6H"></span>À propos du format BC6H/DXGI \_ \_ BC6H
 
 
-Le format BC6H fournit une compression de haute qualité pour les images qui utilisent trois canaux de couleurs HDR, avec une valeur de 16 bits pour chaque canal de couleur de la valeur (16: 16:16). Le canaux alpha ne sont pas pris en charge.
+Le format BC6H fournit une compression de haute qualité pour les images qui utilisent trois canaux de couleur HDR, avec une valeur de 16 bits pour chaque canal de couleur de la valeur (16:16:16). Il n’existe pas de prise en charge d’un canal alpha.
 
-BC6H est spécifié par le suivant DXGI\_valeurs d’énumération de FORMAT :
+BC6H est spécifié par les valeurs d' \_ énumération de format dxgi suivantes :
 
--   **DXGI\_FORMAT\_BC6H\_TYPELESS**.
--   **DXGI\_FORMAT\_BC6H\_UF16**. Ce format BC6H n’utilise pas de bit de signe dans les valeurs de canal de couleur à virgule flottante de 16 bits.
--   **DXGI\_FORMAT\_BC6H\_SF16**. Ce format BC6H utilise un bit de signe dans les valeurs de canal de couleur à virgule flottante de 16 bits.
+-   **Dxgi \_ FORMAT \_ BC6H non \_ typé**.
+-   **Dxgi \_ FORMAT \_ BC6H \_ UF16**. Ce format BC6H n’utilise pas de bit de signe dans les valeurs de canaux de couleurs à virgule flottante 16 bits.
+-   **Dxgi \_ FORMAT \_ BC6H \_ SF16**. Ce format BC6H utilise un bit de signe dans les valeurs de canaux de couleurs à virgule flottante 16 bits.
 
-**Remarque**    le bit 16 format floating point pour les canaux de couleur est souvent appelé format à virgule flottante « moitié ». Ce format présente la disposition de bits suivante :
+**Remarque**    Le format à virgule flottante de 16 bits pour les canaux de couleur est souvent appelé format à virgule flottante « demi-point ». Ce format utilise la disposition en bits suivante :
 |                       |                                                 |
 |-----------------------|-------------------------------------------------|
-| UF16 (flottant non signé) | 5 bits exposants + 11 bits mantisse              |
-| SF16 (flottant signé)   | 1 bit de signe + 5 bits exposants + 10 bits mantisse |
+| UF16 (unsigned float) | 5 bits d’exposant + 11 bits de mantisse              |
+| SF16 (float signé)   | 1 bit de signe + 5 bits d’exposant + 10 bits de mantisse |
 
  
 
  
 
-Le format BC6H peut être utilisé pour les ressources de texture [Texture2D](https://docs.microsoft.com/windows/desktop/direct3d10/d3d10-graphics-reference-resource-structures) (y compris les tableaux), Texture3D ou TextureCube (y compris les tableaux). De même, ce format s’applique à toutes les surfaces de carte MIP associées à ces ressources.
+Le format BC6H peut être utilisé pour les ressources de texture [Texture2D](/windows/desktop/direct3d10/d3d10-graphics-reference-resource-structures) (y compris les tableaux), Texture3D ou TextureCube (y compris les tableaux). De même, ce format s’applique à toutes les surfaces de la carte MIP associées à ces ressources.
 
-BC6H utilise une taille de bloc fixe de 16 octets (128 bits) et une taille de vignette fixe de 4 x 4 texels. Comme pour les formats BC précédents, les images de texture d'une taille supérieure à la taille de vignette prise en charge (4 x 4) sont compressées à l’aide de plusieurs blocs. Cette identité d’adressage s’applique également aux images 3D, aux mipmaps, aux cartes de cube et aux tableaux de textures. Toutes les vignettes de l’image doivent être au même format.
+BC6H utilise une taille de bloc fixe de 16 octets (128 bits) et une taille de vignette fixe de texels 4x4. Comme avec les formats BC précédents, les images de texture plus volumineuses que la taille de vignette prise en charge (4x4) sont compressées à l’aide de plusieurs blocs. Cette identité d’adressage s’applique également aux images tridimensionnelles, aux mappages MIP, aux mappages de cube et aux tableaux de texture. Toutes les vignettes d’image doivent avoir le même format.
 
-Avertissements concernant le format BC6H :
+Avertissements avec le format BC6H :
 
--   Le format BC6H prend en charge la dénormalisation à virgule flottante, mais ni la représentation INF (infini) ni la représentation NaN (« Not a Number »). L’exception est le mode signé de BC6H (DXGI\_FORMAT\_BC6H\_SF16), qui prend en charge -INF (infini négatif). Cette prise en charge de -INF est simplement un artéfact du format lui-même et n’est pas spécifiquement prise en charge par les encodeurs pour ce format. En règle générale, quand un encodeur rencontre des données d'entrée INF (positif ou négatif) ou NaN, l’encodeur doit convertir ces données dans la valeur de représentation Non INF maximale autorisée et mapper NaN à la valeur 0 avant la compression.
--   BC6H ne prend pas en charge le canal alpha.
--   Le décodeur BC6H effectue la décompression avant d'appliquer le filtrage de textures.
--   La décompression BC6H doit être précise au bit près ; autrement dit, le matériel doit retourner des résultats identiques au décodeur décrit dans cette documentation.
+-   BC6H prend en charge la dénormalisation à virgule flottante, mais ne prend pas en charge INF (Infinity) et NaN (not a Number). L’exception est le mode signé de BC6H (DXGI \_ format \_ BC6H \_ SF16), qui prend en charge-INF (infini négatif). Cette prise en charge de-INF est simplement un artefact du format lui-même et n’est pas spécifiquement pris en charge par les encodeurs pour ce format. En général, lorsqu’un encodeur rencontre des données d’entrée INF (positives ou négatives) ou NaN, l’encodeur doit convertir ces données en valeur de représentation non-INF autorisée maximale et mapper NaN à 0 avant la compression.
+-   BC6H ne prend pas en charge un canal alpha.
+-   Le décodeur BC6H effectue la décompression avant d’effectuer un filtrage de texture.
+-   La décompression BC6H doit être de bits précis ; autrement dit, le matériel doit retourner des résultats qui sont identiques au décodeur décrit dans cette documentation.
 
 ## <a name="span-idbc6h-implementationspanspan-idbc6h-implementationspanspan-idbc6h-implementationspanbc6h-implementation"></a><span id="BC6H-implementation"></span><span id="bc6h-implementation"></span><span id="BC6H-IMPLEMENTATION"></span>Implémentation de BC6H
 
 
-Un bloc BC6H se compose de bits de mode, de points de terminaison compressés, d'indices compressés et d'un index de partition facultatif. Ce format spécifie 14 modes différents.
+Un bloc BC6H comprend des bits de mode, des points de terminaison compressés, des index compressés et un index de partition facultatif. Ce format spécifie 14 modes différents.
 
-Une couleur de point de terminaison est stockée sous la forme d'un triplet RVB. Le format BC6H définit une palette de couleurs sur une ligne approximative à travers un certain nombre de points de terminaison de couleur définis. En outre, selon le mode, une vignette peut être divisée en deux zones ou traitée comme une seule région, dans laquelle une vignette à deux zones comporte pour chaque zone un ensemble distinct de points de terminaison de couleur. BC6H stocke un index de palette par texel.
+Une couleur de point de terminaison est stockée sous la forme d’un triplet RVB. BC6H définit une palette de couleurs sur une ligne approximative sur un certain nombre de points de terminaison de couleur définis. En outre, selon le mode, une vignette peut être divisée en deux régions ou traitée comme une seule région, où une vignette à deux régions a un ensemble distinct de points de terminaison de couleur pour chaque région. BC6H stocke un index de palette par Texel.
 
-Dans le cas d'une vignette à deux zones, 32 partitions sont possibles.
+Dans le cas de deux régions, il existe 32 partitions possibles.
 
 ## <a name="span-iddecoding-the-bc6h-formatspanspan-iddecoding-the-bc6h-formatspanspan-iddecoding-the-bc6h-formatspandecoding-the-bc6h-format"></a><span id="Decoding-the-BC6H-format"></span><span id="decoding-the-bc6h-format"></span><span id="DECODING-THE-BC6H-FORMAT"></span>Décodage du format BC6H
 
 
-Le pseudo-code ci-dessous illustre les étapes permettant de décompresser le pixel (x, y) étant donné le bloc BC6H de 16 octets.
+Le pseudo-code ci-dessous montre les étapes à suivre pour décompresser le pixel à (x, y) en fonction du bloc BC6H de 16 octets.
 
 ``` syntax
 decompress_bc6h(x, y, block)
@@ -91,51 +91,51 @@ decompress_bc6h(x, y, block)
 }
 ```
 
-Le tableau suivant contient le nombre et les valeurs de bits pour chacun des 14 formats possibles pour les blocs BC6H.
+Le tableau suivant contient le nombre de bits et les valeurs pour chacun des 14 formats possibles pour les blocs BC6H.
 
 | Mode | Index de partition | Partition | Points de terminaison de couleur                  | Bits de mode      |
 |------|-------------------|-----------|----------------------------------|----------------|
-| 1    | 46 bits           | 5 bits    | 75 bits (10.555, 10.555, 10.555) | 2 bits (00)    |
-| 2    | 46 bits           | 5 bits    | 75 bits (7666, 7666, 7666)       | 2 bits (01)    |
-| 3    | 46 bits           | 5 bits    | 72 bits (11.555, 11.444, 11.444) | 5 bits (00010) |
-| 4    | 46 bits           | 5 bits    | 72 bits (11.444, 11.555, 11.444) | 5 bits (00110) |
-| 5    | 46 bits           | 5 bits    | 72 bits (11.444, 11.444, 11.555) | 5 bits (01010) |
-| 6    | 46 bits           | 5 bits    | 72 bits (9555, 9555, 9555)       | 5 bits (01110) |
-| 7    | 46 bits           | 5 bits    | 72 bits (8666, 8555, 8555)       | 5 bits (10010) |
-| 8    | 46 bits           | 5 bits    | 72 bits (8555, 8666, 8555)       | 5 bits (10110) |
-| 9    | 46 bits           | 5 bits    | 72 bits (8555, 8555, 8666)       | 5 bits (11010) |
-| 10   | 46 bits           | 5 bits    | 72 bits (6666, 6666, 6666)       | 5 bits (11110) |
-| 11   | 63 bits           | 0 bits    | 60 bits (10.10, 10.10, 10.10)    | 5 bits (00011) |
-| 12   | 63 bits           | 0 bits    | 60 bits (11.9, 11.9, 11.9)       | 5 bits (00111) |
-| 13   | 63 bits           | 0 bits    | 60 bits (12.8, 12.8, 12.8)       | 5 bits (01011) |
-| 14   | 63 bits           | 0 bits    | 60 bits (16.4, 16.4, 16.4)       | 5 bits (01111) |
+| 1    | 46 bits           | 5 bits    | 75 bits (10,555, 10,555, 10,555) | 2 bits (00)    |
+| 2    | 46 bits           | 5 bits    | 75 bits (7666, 7666, 7666)       | 2 bits (01)    |
+| 3    | 46 bits           | 5 bits    | 72 bits (11,555, 11,444, 11,444) | 5 bits (00010) |
+| 4    | 46 bits           | 5 bits    | 72 bits (11,444, 11,555, 11,444) | 5 bits (00110) |
+| 5    | 46 bits           | 5 bits    | 72 bits (11,444, 11,444, 11,555) | 5 bits (01010) |
+| 6    | 46 bits           | 5 bits    | 72 bits (9555, 9555, 9555)       | 5 bits (01110) |
+| 7    | 46 bits           | 5 bits    | 72 bits (8666, 8555, 8555)       | 5 bits (10010) |
+| 8    | 46 bits           | 5 bits    | 72 bits (8555, 8666, 8555)       | 5 bits (10110) |
+| 9    | 46 bits           | 5 bits    | 72 bits (8555, 8555, 8666)       | 5 bits (11010) |
+| 10   | 46 bits           | 5 bits    | 72 bits (6666, 6666, 6666)       | 5 bits (11110) |
+| 11   | 63 bits           | 0 bits    | 60 bits (10,10, 10,10, 10,10)    | 5 bits (00011) |
+| 12   | 63 bits           | 0 bits    | 60 bits (11,9, 11,9, 11,9)       | 5 bits (00111) |
+| 13   | 63 bits           | 0 bits    | 60 bits (12,8, 12,8, 12,8)       | 5 bits (01011) |
+| 14   | 63 bits           | 0 bits    | 60 bits (16,4, 16,4, 16,4)       | 5 bits (01111) |
 
  
 
-Chaque format présenté dans ce tableau peut être identifié de manière unique par les bits de mode. Les dix premiers modes sont utilisés pour les vignettes à deux zones, et le champ de bits de mode peut contenir deux ou cinq bits. Ces blocs comportent également des champs pour les points de terminaison de couleur compressés (72 ou 75 bits), la partition (5 bits) et les index de partition (46 bits).
+Chaque format de cette table peut être identifié de manière unique par les bits de mode. Les dix premiers modes sont utilisés pour les vignettes de deux régions, et le champ de bits de mode peut avoir deux ou cinq bits de long. Ces blocs comportent également des champs pour les points de terminaison de couleur compressés (72 ou 75 bits), la partition (5 bits) et les index de partition (46 bits).
 
-Pour les points de terminaison de couleur compressés, les valeurs données dans le tableau précédent indiquent la précision des points de terminaison RVB stockés et le nombre de bits utilisés pour chaque valeur de couleur. Par exemple, le mode 3 spécifie un niveau de précision de point de terminaison de couleur de 11 et le nombre de bits utilisés pour stocker les valeurs de delta des points de terminaison transformés pour les couleurs rouge, bleu et vert (5, 4 et 4, respectivement). Le mode 10 n’utilise pas de compression delta et stocke les quatre points de terminaison de couleur de manière explicite.
+Pour les points de terminaison de couleur compressés, les valeurs du tableau précédent indiquent la précision des points de terminaison RVB stockés et le nombre de bits utilisés pour chaque valeur de couleur. Par exemple, le mode 3 spécifie un niveau de précision de point de terminaison de couleur 11 et le nombre de bits utilisés pour stocker les valeurs Delta des points de terminaison transformés pour les couleurs rouge, bleu et vert (respectivement, 5, 4 et 4). Le mode 10 n’utilise pas la compression Delta et stocke à la place les quatre points de terminaison de couleur de manière explicite.
 
-Les quatre derniers modes de bloc sont utilisés pour les vignettes à une zone, où le champ de mode est de 5 bits. Ces blocs comportent des champs pour les points de terminaison (60 bits) et les index compressés (63 bits). Le mode 11 (comme le mode 10) n’utilise pas de compression delta et stocke deux points de terminaison de couleur de manière explicite.
+Les quatre derniers modes de blocage sont utilisés pour les vignettes d’une région, où le champ de mode est de 5 bits. Ces blocs ont des champs pour les points de terminaison (60 bits) et les index compressés (63 bits). Le mode 11 (comme le mode 10) n’utilise pas la compression Delta et stocke à la place les deux points de terminaison de couleur de manière explicite.
 
-Les modes 10011, 10111, 11011 et 11111 (non illustrés) sont réservés. Ne les utilisez pas dans votre encodeur. Si le matériel reçoit des blocs où l’un de ces modes est spécifié, le bloc décompressé obtenu doit contenir tous les zéros dans tous les canaux, à l’exception du canal alpha.
+Les modes 10011, 10111, 11011 et 11111 (non affichés) sont réservés. N’utilisez pas celles-ci dans votre encodeur. Si le matériel reçoit des blocs avec l’un de ces modes spécifiés, le bloc décompressé résultant doit contenir uniquement des zéros dans tous les canaux, sauf pour le canal alpha.
 
-Pour le format BC6H, le canal alpha doit toujours retourner 1.0, quel que soit le mode.
+Pour BC6H, le canal alpha doit toujours retourner 1,0 quel que soit le mode.
 
-### <a name="span-idbc6h-partition-setspanspan-idbc6h-partition-setspanspan-idbc6h-partition-setspanbc6h-partition-set"></a><span id="BC6H-partition-set"></span><span id="bc6h-partition-set"></span><span id="BC6H-PARTITION-SET"></span>Jeu de partitions BC6H
+### <a name="span-idbc6h-partition-setspanspan-idbc6h-partition-setspanspan-idbc6h-partition-setspanbc6h-partition-set"></a><span id="BC6H-partition-set"></span><span id="bc6h-partition-set"></span><span id="BC6H-PARTITION-SET"></span>Ensemble de partitions BC6H
 
-Une vignette à deux zones peut comporter 32 jeux de partitions possibles, que vous trouverez dans le tableau ci-dessous. Chaque bloc de 4 x 4 représente une forme unique.
+Il existe 32 jeux de partitions possibles pour une vignette de deux régions, qui sont définis dans le tableau ci-dessous. Chaque bloc 4x4 représente une forme unique.
 
-![Tableau des jeux de partitions BC6H](images/bc6h-partition-sets.png)
+![Table des jeux de partitions bc6h](images/bc6h-partition-sets.png)
 
-Dans ce tableau de jeux de partitions, les entrées en gras et soulignées représentent l’emplacement de l’index de correction pour un sous-ensemble 1 (qui est spécifié avec un bit de moins). L’index de correction pour le sous-ensemble 0 est toujours l'index 0, puisque le partitionnement est toujours organisé de sorte que cet index 0 soit toujours dans le sous-ensemble 0. L'ordre des partitions se lit de haut à gauche vers le bas à droite, puis de gauche à droite et de haut en bas.
+Dans ce tableau de jeux de partitions, l’entrée en gras et soulignée est l’emplacement de l’index de correction pour le sous-ensemble 1 (qui est spécifié avec un bit moins). L’index de correction pour le sous-ensemble 0 est toujours l’index 0, car le partitionnement est toujours organisé de telle sorte que l’index 0 soit toujours dans le sous-ensemble 0. L’ordre des partitions va de l’angle supérieur gauche à l’angle inférieur droit, en les déplaçant de gauche à droite, puis de haut en bas.
 
 ## <a name="span-idbc6h-compressed-endpoint-formatspanspan-idbc6h-compressed-endpoint-formatspanspan-idbc6h-compressed-endpoint-formatspanbc6h-compressed-endpoint-format"></a><span id="BC6H-compressed-endpoint-format"></span><span id="bc6h-compressed-endpoint-format"></span><span id="BC6H-COMPRESSED-ENDPOINT-FORMAT"></span>Format de point de terminaison compressé BC6H
 
 
-![Champs de bits pour les formats de point de terminaison BC6H compressés](images/bc6h-headers-med.png)
+![champs de bits pour les formats de point de terminaison compressés bc6h](images/bc6h-headers-med.png)
 
-Ce tableau indique les champs de bits pour les points de terminaison compressés en fonction du format de point de terminaison, où chaque colonne spécifie un encodage et chaque ligne un champ de bits. Cette approche occupe 82 bits pour les vignettes à deux zones et 65 bits pour les vignettes à une zone. Par exemple, les 5 premiers bits pour la région d’un \[16 4\] encodage ci-dessus (plus précisément, la colonne la plus à droite) sont des bits m\[4:0\], les 10 bits suivants sont des bits rw\[9:0\], et ainsi de suite avec les derniers bits 6 contenant bw\[10:15\].
+Ce tableau montre les champs de bits des points de terminaison compressés en tant que fonction du format de point de terminaison, chaque colonne spécifiant un encodage et chaque ligne spécifiant un champ de bits. Cette approche utilise 82 bits pour les vignettes à deux régions et 65 bits pour les vignettes d’une région. Par exemple, les 5 premiers bits pour l’encodage d’une région \[ 16 4 \] ci-dessus (plus précisément la colonne la plus à droite) sont bits m \[ 4:0 \] , les 10 bits suivants sont bits RW \[ 9:0 \] , et ainsi de suite avec les 6 derniers bits contenant BW \[ 10:15 \] .
 
 Les noms de champs dans le tableau ci-dessus sont définis comme suit :
 
@@ -143,26 +143,26 @@ Les noms de champs dans le tableau ci-dessus sont définis comme suit :
 |-------|-------------------|
 | m     | mode              |
 | d     | index de forme       |
-| rw    | endpt\[0\].A\[0\] |
-| rx    | endpt\[0\].B\[0\] |
-| ry    | endpt\[1\].A\[0\] |
-| rz    | endpt\[1\].B\[0\] |
-| gw    | endpt\[0\].A\[1\] |
-| gx    | endpt\[0\].B\[1\] |
-| gy    | endpt\[1\].A\[1\] |
-| gz    | endpt\[1\].B\[1\] |
-| bw    | endpt\[0\].A\[2\] |
-| bx    | endpt\[0\].B\[2\] |
-| par    | endpt\[1\].A\[2\] |
-| bz    | endpt\[1\].B\[2\] |
+| grave    | Endpt \[ 0 \] . \[0\] |
+| RX    | Endpt \[ 0 \] . B \[ 0\] |
+| quêtes    | Endpt \[ 1 \] . \[0\] |
+| cm    | Endpt \[ 1 \] . B \[ 0\] |
+| entrepôt    | Endpt \[ 0 \] . \[1\] |
+| GX    | Endpt \[ 0 \] . B \[ 1\] |
+| GY    | Endpt \[ 1 \] . \[1\] |
+| GZ    | Endpt \[ 1 \] . B \[ 1\] |
+| p.c.    | Endpt \[ 0 \] . A \[ 2\] |
+| BX    | Endpt \[ 0 \] . B \[ 2\] |
+| by    | Endpt \[ 1 \] . A \[ 2\] |
+| Via    | Endpt \[ 1 \] . B \[ 2\] |
 
  
 
-Endpt\[je\], où i est 0 ou 1, fait référence à l’ensemble de points de terminaison 0 ou 1 st respectivement.
+Endpt \[ i \] , où i est égal à 0 ou 1, fait référence respectivement au 0 ou au 1er ensemble de points de terminaison.
 ## <a name="span-idsign-extension-for-endpoint-valuesspanspan-idsign-extension-for-endpoint-valuesspanspan-idsign-extension-for-endpoint-valuesspansign-extension-for-endpoint-values"></a><span id="Sign-extension-for-endpoint-values"></span><span id="sign-extension-for-endpoint-values"></span><span id="SIGN-EXTENSION-FOR-ENDPOINT-VALUES"></span>Extension de signe pour les valeurs de point de terminaison
 
 
-Pour les vignettes à deux zones, quatre valeurs de point de terminaison peuvent avoir une extension de signe. Endpt\[0\]. Est signé uniquement si le format est un format signé ; les autres points de terminaison sont signés uniquement si le point de terminaison a été transformé, ou si le format est un format signé. Le code ci-dessous illustre l’algorithme permettant d’étendre le signe des valeurs de point de terminaison à deux zones.
+Pour les vignettes de deux régions, quatre valeurs de point de terminaison peuvent être étendues. Endpt \[ 0 \] . Un est signé uniquement si le format est un format signé ; les autres points de terminaison sont signés uniquement si le point de terminaison a été transformé ou si le format est un format signé. Le code ci-dessous illustre l’algorithme permettant d’étendre le signe des valeurs de point de terminaison à deux régions.
 
 ``` syntax
 static void sign_extend_two_region(Pattern &p, IntEndpts endpts[NREGIONS_TWO])
@@ -181,7 +181,7 @@ static void sign_extend_two_region(Pattern &p, IntEndpts endpts[NREGIONS_TWO])
 }
 ```
 
-Pour les vignettes de celui de la région, le comportement est le même qu’avec endpt\[1\] supprimé.
+Pour les vignettes d’une région, le comportement est le même, uniquement avec Endpt \[ 1 \] supprimé.
 
 ``` syntax
 static void sign_extend_one_region(Pattern &p, IntEndpts endpts[NREGIONS_ONE])
@@ -196,33 +196,33 @@ static void sign_extend_one_region(Pattern &p, IntEndpts endpts[NREGIONS_ONE])
 }
 ```
 
-## <a name="span-idtransform-inversion-for-endpoint-valuesspanspan-idtransform-inversion-for-endpoint-valuesspanspan-idtransform-inversion-for-endpoint-valuesspantransform-inversion-for-endpoint-values"></a><span id="Transform-inversion-for-endpoint-values"></span><span id="transform-inversion-for-endpoint-values"></span><span id="TRANSFORM-INVERSION-FOR-ENDPOINT-VALUES"></span>Transformer l’inversion des valeurs de point de terminaison
+## <a name="span-idtransform-inversion-for-endpoint-valuesspanspan-idtransform-inversion-for-endpoint-valuesspanspan-idtransform-inversion-for-endpoint-valuesspantransform-inversion-for-endpoint-values"></a><span id="Transform-inversion-for-endpoint-values"></span><span id="transform-inversion-for-endpoint-values"></span><span id="TRANSFORM-INVERSION-FOR-ENDPOINT-VALUES"></span>Transformer inversion pour les valeurs de point de terminaison
 
 
-Pour les vignettes de deux régions, la transformation s’applique à l’inverse de la différence d’encodage, l’ajout de la valeur de base au endpt\[0\]. Un pour les trois autres entrées pour un total de 9 Ajout d’opérations. Dans l’image ci-dessous, la valeur de base est représentée par « A0 » et est associée à la plus haute précision de virgule flottante. « A1 », « B0 » et « B1 » sont tous des deltas calculés à partir de la valeur d’ancrage, et ces valeurs delta sont représentées avec une précision plus faible. (A0 correspond à endpt\[0\]. A, B0 correspond à endpt\[0\]. B, A1 correspond à endpt\[1\]. A, B1 et correspond à endpt\[1\]. B.)
+Pour les vignettes de deux régions, la transformation applique l’inverse de l’encodage de différence, en ajoutant la valeur de base à Endpt \[ 0 \] . À trois autres entrées pour un total de 9 opérations d’ajout. Dans l’image ci-dessous, la valeur de base est représentée sous la forme « a0 » et a la précision à virgule flottante la plus élevée. « A1 », « B0 » et « B1 » sont tous des deltas calculés à partir de la valeur d’ancrage, et ces valeurs Delta sont représentées par une précision inférieure. (A0 correspond à Endpt \[ 0 \] . A, B0 correspond à Endpt \[ 0 \] . B, a1 correspond à Endpt \[ 1 \] . A, et B1 correspond à Endpt \[ 1 \] . B.)
 
-![Calcul des valeurs de point de terminaison pour l'inversion de transformation](images/bc6h-transform-inverse.png)
+![calcul des valeurs de point de terminaison d’inversion de transformation](images/bc6h-transform-inverse.png)
 
-Pour les vignettes à une zone, il n'y a qu'un seul décalage delta, et par conséquent seulement 3 opérations d'ajout.
+Pour les vignettes d’une région, il n’y a qu’un seul décalage Delta, et donc seulement 3 opérations d’ajout.
 
-Décompresseur devez vous assurer que le que les résultats de l’inverse transformer ne sera pas déborder la précision d’endpt\[0\]. un. Dans le cas contraire, les valeurs résultant de la transformation inverse doivent être encapsulées dans le même nombre de bits. Si la précision de A0 est « p bits », l’algorithme de transformation est le suivant :
+Le décompresseur doit s’assurer que les résultats de la transformation inverse ne dépassent pas la précision de Endpt \[ 0 \] . a. Dans le cas d’un dépassement de capacité, les valeurs résultant de la transformation inverse doivent être encapsulées dans le même nombre de bits. Si la précision de a0 est de « p » bits, l’algorithme de transformation est le suivant :
 
 `B0 = (B0 + A0) & ((1 << p) - 1)`
 
-Pour les formats signés, une extension du signe doit également être appliquée aux résultats du calcul du delta. Si l’opération d’extension du signe considère une extension des deux signes, où 0 est positif et 1 est négatif, l’extension de signe de 0 s’occupe du clamp ci-dessus. De la même manière, après le clamp ci-dessus, seule une valeur de 1 (négative) doit avoir une extension de signe.
+Pour les formats signés, les résultats du calcul Delta doivent également être étendus. Si l’opération d’extension de signe prend en compte l’extension des deux signes, où 0 est positif et 1 est négatif, l’extension de signe 0 s’occupe de la bride ci-dessus. De même, après la bride ci-dessus, seule une valeur de 1 (négatif) doit être une extension de signe.
 
-## <a name="span-idunquantization-of-color-endpointsspanspan-idunquantization-of-color-endpointsspanspan-idunquantization-of-color-endpointsspanunquantization-of-color-endpoints"></a><span id="Unquantization-of-color-endpoints"></span><span id="unquantization-of-color-endpoints"></span><span id="UNQUANTIZATION-OF-COLOR-ENDPOINTS"></span>Unquantization des points de terminaison de couleur
+## <a name="span-idunquantization-of-color-endpointsspanspan-idunquantization-of-color-endpointsspanspan-idunquantization-of-color-endpointsspanunquantization-of-color-endpoints"></a><span id="Unquantization-of-color-endpoints"></span><span id="unquantization-of-color-endpoints"></span><span id="UNQUANTIZATION-OF-COLOR-ENDPOINTS"></span>DÉQUANTIFICATION des points de terminaison de couleur
 
 
-Étant donnés les points de terminaison non compressés, l’étape suivante consiste à effectuer une déquantification initiale des points de terminaison de couleur. Cette opération comprend trois étapes :
+Étant donné les points de terminaison non compressés, l’étape suivante consiste à effectuer une DÉQUANTIFICATION initiale des points de terminaison de couleur. Cela implique trois étapes :
 
--   Déquantification des palettes de couleurs
+-   Une non-quantification des palettes de couleurs
 -   Interpolation des palettes
--   Finalisation de la déquantification
+-   Finalisation de la DÉQUANTIFICATION
 
-La séparation du processus de déquantification en deux parties (déquantification des palettes de couleurs avant interpolation et déquantification finale après interpolation) permet de réduire le nombre d’opérations de multiplication nécessaires par rapport à un processus de déquantification complet avant l’interpolation des palettes.
+En séparant le processus de DÉQUANTIFICATION en deux parties (la DÉQUANTIFICATION de la palette de couleurs avant l’interpolation et la DÉQUANTIFICATION finale après l’interpolation) réduit le nombre d’opérations de multiplication requises par rapport à un processus de DÉQUANTIFICATION complet avant l’interpolation de palette.
 
-Le code ci-dessous illustre le processus de récupération des estimations des valeurs de couleur 16 bits d’origine, qui utilise ensuite les valeurs de poids spécifiées pour ajouter 6 valeurs de couleurs supplémentaires à la palette. La même opération est effectuée sur chaque canal.
+Le code ci-dessous illustre le processus de récupération des estimations des valeurs de couleur 16 bits d’origine, puis l’utilisation des valeurs de pondération fournies pour ajouter 6 valeurs de couleur supplémentaires à la palette. La même opération est effectuée sur chaque canal.
 
 ``` syntax
 int aWeight3[] = {0, 9, 18, 27, 37, 46, 55, 64};
@@ -248,9 +248,9 @@ void generate_palette_unquantized(UINT8 uNumIndices, int c1, int c2, int prec, U
 
 L’exemple de code suivant illustre le processus d’interpolation, avec les observations suivantes :
 
--   Puisque la plage complète des valeurs de couleur pour la fonction **unquantize** (ci-dessous) est comprise entre-32 768 et 65 535, l’interpolateur est implémenté à l’aide d'une arithmétique signée de 17 bits.
--   Après l’interpolation, les valeurs sont passées à la **Terminer\_unquantize** (décrite dans le troisième exemple dans cette section), de la fonction qui s’applique la mise à l’échelle finale.
--   Tous les décompresseurs matériels sont nécessaires pour renvoyer des résultats d'une précision au bit près avec ces fonctions.
+-   Étant donné que la plage complète des valeurs de couleur pour la fonction **unquantification** (ci-dessous) est comprise entre-32768 et 65535, l’interpolateur est implémenté à l’aide de l’arithmétique signée 17 bits.
+-   Après l’interpolation, les valeurs sont passées à la fonction de non ** \_ quantification** (décrite dans le troisième exemple de cette section), qui applique la mise à l’échelle finale.
+-   Tous les décompresseurs de matériel sont requis pour retourner des résultats de bits précis avec ces fonctions.
 
 ``` syntax
 int unquantize(int comp, int uBitsPerComp)
@@ -296,7 +296,7 @@ int unquantize(int comp, int uBitsPerComp)
 }
 ```
 
-**Terminer\_unquantize** est appelée après l’interpolation de palette. La fonction **unquantize** diffère la mise à l’échelle de 31/32 pour les bits signés et de 31/64 pour les bits non signés. Ce comportement est nécessaire pour obtenir la valeur finale dans la demi-plage valide (-0x7BFF ~ 0x7BFF) après l'interpolation des palettes afin de réduire le nombre de multiplications nécessaires. **Terminer\_unquantize** applique la mise à l’échelle finale et retourne un **unsigned short** valeur obtient réinterprétée dans **moitié**.
+**terminer la \_ désquantification** est appelé après l’interpolation de palette. La fonction **unquantificateur** reporte la mise à l’échelle de 31/32 pour Signed, 31/64 pour unsigned. Ce comportement est nécessaire pour récupérer la valeur finale dans une demi-plage valide (-0x7BFF ~ 0x7BFF) une fois l’interpolation de palette terminée afin de réduire le nombre de multiplications nécessaires. **Terminer \_ unquantificateur** applique la mise à l’échelle finale et retourne une valeur **short non signée** qui est réinterprétée en **deux**.
 
 ``` syntax
 unsigned short finish_unquantize(int comp)
@@ -323,12 +323,8 @@ unsigned short finish_unquantize(int comp)
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
-[Compression de bloc de texture](texture-block-compression.md)
+[Compression de blocs de texture](texture-block-compression.md)
 
  
 
  
-
-
-
-

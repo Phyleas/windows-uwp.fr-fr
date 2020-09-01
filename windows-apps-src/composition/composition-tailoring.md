@@ -3,14 +3,14 @@ title: Personnalisation de la composition
 description: Utilisez les API de composition pour adapter votre interface utilisateur, optimiser les performances et prendre en charge les paramètres utilisateur et les caractéristiques des appareils.
 ms.date: 07/16/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 95a7355241f9ba4cc7b4bb743b78ac09169d65d9
-ms.sourcegitcommit: 2747d9266e1678fca96d3822ce47499ca91a2c70
+ms.openlocfilehash: 3d4aa82f70e9bad7a60a97b6b28f28f3dfd008c9
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77213676"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166403"
 ---
 # <a name="tailoring-effects--experiences-using-windows-ui"></a>Personnaliser les effets & expériences à l’aide de l’interface utilisateur Windows
 
@@ -22,7 +22,7 @@ La personnalisation de l’interface utilisateur est une catégorie étendue qui
 - Prise en accueillir des paramètres utilisateur pour les animations
 - Optimisation de l’interface utilisateur pour les fonctionnalités matérielles données
 
-Ici, nous allons aborder l’adaptation de vos effets et animations à la couche visuelle dans les zones ci-dessus, mais il existe de nombreux autres moyens de personnaliser votre application pour garantir une expérience utilisateur optimale. Des documents d’aide sont disponibles sur la façon d' [adapter votre interface utilisateur](/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-design) à différents appareils et de [créer une interface utilisateur réactive](/windows/uwp/design/layout/responsive-design).
+Ici, nous allons aborder l’adaptation de vos effets et animations à la couche visuelle dans les zones ci-dessus, mais il existe de nombreux autres moyens de personnaliser votre application pour garantir une expérience utilisateur optimale. Des documents d’aide sont disponibles sur la façon d' [adapter votre interface utilisateur](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md) à différents appareils et de [créer une interface utilisateur réactive](../design/layout/responsive-design.md).
 
 ## <a name="user-effects-settings"></a>Paramètres des effets utilisateur
 
@@ -30,7 +30,7 @@ Les utilisateurs peuvent personnaliser leur expérience Windows pour diverses ra
 
 ### <a name="transparency-effects-settings"></a>Paramètres des effets de transparence
 
-L’un des paramètres d’effet que les utilisateurs peuvent personnaliser est l’activation ou la désactivation des effets de transparence. Cela se trouve dans l’application paramètres, sous personnalisation > couleurs, ou via l’application Paramètres > facilité d’accès > Afficher.
+L’un des paramètres d’effet que les utilisateurs peuvent personnaliser est l’activation ou la désactivation des effets de transparence. Cela se trouve dans l’application paramètres, sous personnalisation > couleurs, ou via l’application paramètres > facilité d’accès > afficher.
 
 ![Option de transparence dans les paramètres](images/tailoring-transparency-setting.png)
 
@@ -38,10 +38,10 @@ Lorsqu’il est activé, tout effet qui utilise la transparence s’affiche comm
 
 Lorsque cette option est désactivée, le matériau acrylique repasse automatiquement à une couleur unie, car le pinceau acrylique de XAML a écouté cet événement par défaut. Ici, nous voyons que l’application de calculatrice revient à une couleur unie lorsque les effets de transparence ne sont pas activés :
 
-![calculatrice avec acrylique](images/tailoring-acrylic.png)
-![calculatrice avec acrylique répondant aux paramètres de transparence](images/tailoring-acrylic-fallback.png)
+![Calculatrice avec ](images/tailoring-acrylic.png)
+ ![ calculatrice acrylique avec acrylique répondant aux paramètres de transparence](images/tailoring-acrylic-fallback.png)
 
-Toutefois, pour les effets personnalisés, l’application doit répondre à la propriété [uisettings. AdvancedEffectsEnabled](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.advancedeffectsenabled) ou à l’événement [AdvancedEffectsEnabledChanged](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.advancedeffectsenabledchanged) et faire basculer le graphique effet/effet pour utiliser un effet sans transparence. Voici un exemple :
+Toutefois, pour les effets personnalisés, l’application doit répondre à la propriété [uisettings. AdvancedEffectsEnabled](/uwp/api/windows.ui.viewmanagement.uisettings.advancedeffectsenabled) ou à l’événement [AdvancedEffectsEnabledChanged](/uwp/api/windows.ui.viewmanagement.uisettings.advancedeffectsenabledchanged) et faire basculer le graphique effet/effet pour utiliser un effet sans transparence. Voici un exemple :
 
 ```cs
 public MainPage()
@@ -59,7 +59,7 @@ private void Uisettings_AdvancedEffectsEnabledChanged(UISettings sender, object 
 
 ## <a name="animations-settings"></a>Paramètres des animations
 
-De même, les applications doivent écouter et répondre à la propriété [uisettings. AnimationsEnabled](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.animationsenabled) pour s’assurer que les animations sont activées ou désactivées en fonction des paramètres utilisateur dans paramètres > la facilité d’accès > Afficher.
+De même, les applications doivent écouter et répondre à la propriété [uisettings. AnimationsEnabled](/uwp/api/windows.ui.viewmanagement.uisettings.animationsenabled) pour s’assurer que les animations sont activées ou désactivées en fonction des paramètres utilisateur dans paramètres > la facilité d’accès > afficher.
 
 ![Option animations dans les paramètres](images/tailoring-animations-setting.png)
 
@@ -118,11 +118,11 @@ Vous trouverez un exemple de code complet dans l' [interface utilisateur Windows
 
 En fonction des commentaires des méthodes [AreEffectsSupported](/uwp/api/windows.ui.composition.compositioncapabilities.areeffectssupported) et [AreEffectsFast](/uwp/api/windows.ui.composition.compositioncapabilities.areeffectsfast) fournies dans l’API CompositionCapabilities, l’application peut décider d’échanger des effets coûteux ou non pris en charge pour d’autres effets de leur choix qui sont optimisés pour l’appareil. Certains effets sont connus pour être plus gourmands en ressources que d’autres et doivent être utilisés avec modération, et d’autres effets peuvent être utilisés plus librement. Toutefois, pour tous les effets, vous devez être prudent lorsque vous utilisez le chaînage et l’animation, car certains scénarios ou combinaisons peuvent modifier les caractéristiques de performances du graphique d’effet. Voici quelques-unes des caractéristiques de performances de la règle de curseur pour des effets individuels :
 
-- Les effets connus pour avoir un impact élevé sur les performances sont les suivants : Flou gaussien, masque Shadow, BackDropBrush, HostBackDropBrush et visuel de couche. Celles-ci ne sont pas recommandées pour les appareils bas de gamme [(niveau de fonctionnalité 9.1-9.3)](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro)et doivent être utilisées judicieusement sur les appareils haut de gamme.
+- Les effets connus pour avoir un impact élevé sur les performances sont les suivants : Flou gaussien, masque Shadow, BackDropBrush, HostBackDropBrush et visuel de couche. Celles-ci ne sont pas recommandées pour les appareils bas de gamme [(niveau de fonctionnalité 9.1-9.3)](/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro)et doivent être utilisées judicieusement sur les appareils haut de gamme.
 - Les effets avec impact moyen sur les performances incluent la matrice de couleurs, certains effets de fusion BlendModes (luminosité, couleur, saturation et teinte), SpotLight, SceneLightingEffect et (selon le scénario) BorderEffect. Ces effets peuvent fonctionner avec certains scénarios sur des appareils de bas niveau, mais la prudence doit être utilisée lors du Chaînage et de l’animation. Recommander la restriction d’utilisation à deux ou moins et l’animation sur les transitions uniquement.
 - Tous les autres effets ont un impact faible sur les performances et fonctionnent dans tous les scénarios raisonnables lors de l’animation et du Chaînage.
 
 ## <a name="related-articles"></a>Articles connexes
 
-- [Techniques de conception réactive UWP](https://docs.microsoft.com/windows/uwp/design/layout/responsive-design)
-- [Personnalisation de l’appareil UWP](https://docs.microsoft.com/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-design)
+- [Techniques de conception réactive UWP](../design/layout/responsive-design.md)
+- [Personnalisation de l’appareil UWP](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md)
