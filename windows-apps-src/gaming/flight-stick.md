@@ -53,7 +53,7 @@ En tant que contrôleur de navigation de l’interface utilisateur, un bâton de
 |              Right | Manette de jeu droite                      |
 |               Affichage | Bouton **Afficher**                     |
 |               Menu | Bouton de **menu**                     |
-|             Acceptation | Bouton **FirePrimary**              |
+|             Accepter | Bouton **FirePrimary**              |
 |             Annuler | Bouton **FireSecondary**            |
 
 Les bâtons de vol ne mappent aucun des [jeux facultatifs](ui-navigation-controller.md#optional-set) de commandes de navigation.

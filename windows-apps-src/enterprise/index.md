@@ -1,31 +1,31 @@
 ---
 ms.assetid: 4b0c86d3-f05b-450b-bf9c-6ab4d3f07d31
 description: Cette feuille de route propose une vue d’ensemble des principales fonctionnalités d’entreprise pour les applications UWP (plateforme Windows universelle) et Windows 10.
-title: Enterprise
+title: Entreprise
 ms.date: 01/16/2020
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e17b155966c609537c40050edc4c11ee6935b0d
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: ff96cd25c32418f518f6b1807e08eb72c3e14c6a
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "77089465"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168433"
 ---
-# <a name="enterprise"></a>Enterprise
+# <a name="enterprise"></a>Entreprise
 
 Cet article propose une vue d’ensemble des principales fonctionnalités d’entreprise fournies par les applications UWP (plateforme Windows universelle) pour Windows 10. Pour regarder une vidéo présentant en détail certaines de ces fonctionnalités, consultez [Rapidly Construct LOB Applications with UWP and Visual Studio](https://channel9.msdn.com/Events/Build/2018/BRK3502).
 
-## <a name="feature-highlights"></a>Principales fonctionnalités
+## <a name="feature-highlights"></a>Présentation des fonctionnalités
 
 <a id="template-studio" />
 
-### <a name="windows-template-studio"></a>Windows Template Studio
+### <a name="windows-template-studio"></a>Windows Template Studio
 
-Windows Template Studio est une extension Visual Studio 2019 qui accélère la création d’applications UWP (plateforme Windows universelle) à l’aide d’un Assistant. Le projet UWP résultant est un code bien formé et lisible, qui intègre les dernières fonctionnalités de Windows 10 tout en implémentant les bonnes pratiques et les modèles ayant fait leurs preuves.
+Windows Template Studio est une extension Visual Studio 2019 qui accélère la création d’applications UWP (plateforme Windows universelle) à l’aide d’un Assistant. Le projet UWP résultant est constitué de code bien mis en forme et lisible, qui intègre les dernières fonctionnalités de Windows 10, tout en implémentant des modèles éprouvés et des bonnes pratiques.
 
-![Windows Template Studio](images/windows-template-studio.png)
+![Windows Template Studio](images/windows-template-studio.png)
 
 Consultez [Windows Template Studio](https://marketplace.visualstudio.com/items?itemName=WASTeamAccount.WindowsTemplateStudio)
 
@@ -35,7 +35,7 @@ Consultez [Windows Template Studio](https://marketplace.visualstudio.com/items?i
 
 Nous avons publié de nouveaux contrôles UWP XAML qui comblent le fossé entre une IU d’Application de bureau classique et une IU UWP.
 
-Par exemple, les nouveaux contrôles [MenuBar](/windows/uwp/design/controls-and-patterns/menus), [DropDownButton](/windows/uwp/design/controls-and-patterns/buttons#create-a-drop-down-button), [SplitButton](/windows/uwp/design/controls-and-patterns/buttons#create-a-split-button) et [CommandBarFlyout](/windows/uwp/design/controls-and-patterns/command-bar-flyout) vous offrent des moyens plus souples d’exposer les commandes. De plus, [EditableComboBox](/windows/uwp/design/controls-and-patterns/combo-box#make-a-combo-box-editable) permet à l’utilisateur d’entrer des valeurs qui ne figurent pas dans une liste prédéfinie d’options.
+Par exemple, les nouveaux contrôles [MenuBar](../design/controls-and-patterns/menus.md), [DropDownButton](../design/controls-and-patterns/buttons.md#create-a-drop-down-button), [SplitButton](../design/controls-and-patterns/buttons.md#create-a-split-button) et [CommandBarFlyout](../design/controls-and-patterns/command-bar-flyout.md) vous offrent des moyens plus souples d’exposer les commandes. De plus, [EditableComboBox](../design/controls-and-patterns/combo-box.md#make-a-combo-box-editable) permet à l’utilisateur d’entrer des valeurs qui ne figurent pas dans une liste prédéfinie d’options.
 
 ![MenuBar](images/menu-bar.png)
 
@@ -43,9 +43,9 @@ Par exemple, les nouveaux contrôles [MenuBar](/windows/uwp/design/controls-and-
 
 ### <a name="controls-to-support-enterprise-scenarios"></a>Contrôles permettant de prendre en charge des scénarios d’entreprise
 
-[DataGridView](https://docs.microsoft.com/windows/communitytoolkit/controls/datagrid) offre un moyen flexible d’afficher une collection de données en lignes et en colonnes.
+[DataGridView](/windows/communitytoolkit/controls/datagrid) offre un moyen flexible d’afficher une collection de données en lignes et en colonnes.
 
-[TreeView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/tree-view) active une liste hiérarchique comportant des nœuds que vous pouvez développer et réduire, et qui contiennent des éléments imbriqués. Vous pouvez l’utiliser pour illustrer une structure de dossiers ou des relations imbriquées dans votre IU.
+[TreeView](../design/controls-and-patterns/tree-view.md) active une liste hiérarchique comportant des nœuds que vous pouvez développer et réduire, et qui contiennent des éléments imbriqués. Vous pouvez l’utiliser pour illustrer une structure de dossiers ou des relations imbriquées dans votre IU.
 
 ![Contrôle DataGrid](images/DataGrid.gif)
 
@@ -56,7 +56,7 @@ La bibliothèque d’IU Windows est un ensemble de packages NuGet qui fournissen
 
 ![Bibliothèque d’IU Windows](images/win-ui.png)
 
-Consultez [Bibliothèque d’IU Windows (préversion)](https://docs.microsoft.com/uwp/toolkits/winui/).
+Consultez [Bibliothèque d’IU Windows (préversion)](/uwp/toolkits/winui/).
 
 <a id="xaml-islands" />
 
@@ -64,7 +64,7 @@ Consultez [Bibliothèque d’IU Windows (préversion)](https://docs.microsoft.co
 
 Windows 10 vous permet maintenant d’utiliser les contrôles UWP dans les applications de bureau WPF, Windows Forms et C++ Win32 avec une fonctionnalité appelée *XAML Islands*. Cela signifie que vous pouvez améliorer l’apparence et les fonctionnalités de vos Applications de bureau existantes à l’aide des dernières fonctionnalités de l’IU Windows 10. Celles-ci sont disponibles uniquement via les contrôles UWP, tels que Windows Ink, et les contrôles prenant en charge Fluent Design System. Cette fonctionnalité est désignée sous le nom d’îles XAML.
 
-Consultez [Contrôles UWP dans les applications de bureau](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls).
+Consultez [Contrôles UWP dans les applications de bureau](/windows/apps/desktop/modernize/xaml-islands).
 
 <a id="standard" />
 
@@ -74,15 +74,15 @@ Consultez [Contrôles UWP dans les applications de bureau](https://docs.microsof
 
 ![net-standard](images/dot-net-standard-project-template.png)
 
-Consultez [Partager du code entre une application de bureau et une application UWP](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-migrate).
+Consultez [Partager du code entre une application de bureau et une application UWP](../porting/desktop-to-uwp-migrate.md).
 
 <a id="sql-server" />
 
-### <a name="sql-server-connectivity"></a>Connectivité SQL Server
+### <a name="sql-server-connectivity"></a>Connectivité SQL Server
 
-Votre application peut se connecter directement à une base de données SQL Server, puis stocker et récupérer des données à l’aide de classes de l’espace de noms [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient).
+Votre application peut se connecter directement à une base de données SQL Server, puis stocker et récupérer des données à l’aide de classes de l’espace de noms [System.Data.SqlClient](/dotnet/api/system.data.sqlclient).
 
-Consultez [Utiliser une base de données SQL Server dans une application UWP](https://docs.microsoft.com/windows/uwp/data-access/sql-server-databases).
+Consultez [Utiliser une base de données SQL Server dans une application UWP](../data-access/sql-server-databases.md).
 
 <a id="MSIX" />
 
@@ -92,7 +92,7 @@ MSIX est un format de package d’application Windows qui regroupe les meilleure
 
 ![Icône MSIX](images/MSIX-App-Package.ico)
 
-Consultez la [documentation de MSIX](https://docs.microsoft.com/windows/msix/).
+Consultez la [documentation de MSIX](/windows/msix/).
 
 <a id="distribution" />
 
@@ -102,10 +102,10 @@ Windows 10 fournit une suite de fonctionnalités de sécurité qui permet aux d
 
 | Rubrique | Description |
 |-------|-------------|
-| [Présentation du développement d’applications Windows sécurisées](https://docs.microsoft.com/windows/uwp/security/intro-to-secure-windows-app-development) | Cet article introductif décrit les différentes fonctionnalités de sécurité Windows lors des phases d’authentification, de données en transit et de données au repos. Il explique aussi comment intégrer ces phases dans vos applications. Il couvre une large gamme de rubriques et vise essentiellement à aider les architectes d’application à mieux comprendre les fonctionnalités Windows qui facilitent et accélèrent la création d’applications de plateforme Windows universelle. |
-| [Authentification et identité des utilisateurs](https://docs.microsoft.com/windows/uwp/security/authentication-and-user-identity) | Les applications UWP disposent de plusieurs options pour l’authentification des utilisateurs qui sont décrites dans cet article. Pour l’entreprise, l’utilisation de la nouvelle fonctionnalité Microsoft Passport est fortement recommandée. Microsoft Passport remplace les mots de passe par la méthode d’authentification à 2 facteurs (2FA) forte en vérifiant les informations d’identification existantes et en créant des informations d’identification spécifiques à l’appareil, protégées par un mouvement de l’utilisateur reposant sur l’entrée de son code PIN ou par la biométrie. |
-| [Chiffrement](https://docs.microsoft.com/windows/uwp/security/cryptography) | La section sur le chiffrement fournit une vue d’ensemble des fonctionnalités de chiffrement disponibles pour les applications UWP. Les articles comprennent des procédures pas à pas introductives pour chiffrer facilement les données professionnelles sensibles et couvrent également des sujets avancés tels que la manipulation des clés de chiffrement et l’utilisation des codes d’authentification de message (MAC), codes de hachage et signatures. |
-| [Protection des informations Windows (WIP)](wip-hub.md) | Il s’agit d’une rubrique de hub destinée aux développeurs abordant de manière exhaustive la relation de la Protection des informations Windows avec les fichiers, les mémoires tampons, le Presse-papiers, la mise en réseau, les tâches en arrière-plan et la protection des données verrouillées. |
+| [Présentation du développement d’applications Windows sécurisées](../security/intro-to-secure-windows-app-development.md) | Cet article introductif décrit les différentes fonctionnalités de sécurité Windows lors des phases d’authentification, de données en transit et de données au repos. Il explique aussi comment intégrer ces phases dans vos applications. Il couvre une large gamme de rubriques et vise essentiellement à aider les architectes d’application à mieux comprendre les fonctionnalités Windows qui facilitent et accélèrent la création d’applications de plateforme Windows universelle. |
+| [Authentification et identité des utilisateurs](../security/authentication-and-user-identity.md) | Les applications UWP disposent de plusieurs options pour l’authentification des utilisateurs qui sont décrites dans cet article. Pour l’entreprise, l’utilisation de la nouvelle fonctionnalité Microsoft Passport est fortement recommandée. Microsoft Passport remplace les mots de passe par la méthode d’authentification à 2 facteurs (2FA) forte en vérifiant les informations d’identification existantes et en créant des informations d’identification spécifiques à l’appareil, protégées par un mouvement de l’utilisateur reposant sur l’entrée de son code PIN ou par la biométrie. |
+| [Cryptographie](../security/cryptography.md) | La section sur le chiffrement fournit une vue d’ensemble des fonctionnalités de chiffrement disponibles pour les applications UWP. Les articles comprennent des procédures pas à pas introductives pour chiffrer facilement les données professionnelles sensibles et couvrent également des sujets plus spécifiques comme la manipulation des clés de chiffrement et l’utilisation des codes d’authentification de message (MAC), codes de hachage et signatures. |
+| [Protection des informations Windows (WIP)](wip-hub.md) | Il s’agit d’une rubrique centrale destinée aux développeurs qui décrit de manière exhaustive la relation de la Protection des informations Windows avec les fichiers, les mémoires tampon, le Presse-papiers, les réseaux, les tâches en arrière-plan et la protection des données verrouillées. |
 
 ## <a name="data-binding-and-databases"></a>Liaison de données et bases de données
 
@@ -113,8 +113,8 @@ La liaison de données est un moyen dont dispose l’interface utilisateur de vo
 
 | Rubrique | Description |
 |-------|-------------|
-| [Vue d’ensemble de la liaison de données](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-quickstart) | Cette rubrique vous montre comment lier un contrôle (ou tout autre élément d’IU) à un seul élément, ou comment lier un contrôle d’éléments à une collection d’éléments dans une application UWP (plateforme Windows universelle). Elle explique également comment contrôler le rendu des éléments, implémenter une vue des détails en fonction d’une sélection et convertir des données pour l’affichage. |
-| [Entity Framework 7 pour UWP](https://docs.microsoft.com/windows/uwp/data-access/entity-framework-7-with-sqlite-for-csharp-apps) | Entity Framework 7, qui prend en charge UWP, vous permet d’exécuter facilement des requêtes complexes dans de grands ensembles de données. Dans cette procédure pas à pas, vous allez générer une application UWP qui propose un accès de base aux données d’une base de données SQLite locale à l’aide d’Entity Framework. |
+| [Vue d’ensemble de la liaison de données](../data-binding/data-binding-quickstart.md) | Cette rubrique vous montre comment lier un contrôle (ou tout autre élément d’IU) à un seul élément, ou comment lier un contrôle d’éléments à une collection d’éléments dans une application UWP (plateforme Windows universelle). Elle explique également comment contrôler le rendu des éléments, implémenter une vue des détails en fonction d’une sélection et convertir des données pour l’affichage. |
+| [Entity Framework 7 pour UWP](/ef/core/get-started/) | Entity Framework 7, qui prend en charge UWP, vous permet d’exécuter facilement des requêtes complexes dans de grands ensembles de données. Dans cette procédure pas à pas, vous allez générer une application UWP qui propose un accès de base aux données d’une base de données SQLite locale à l’aide d’Entity Framework. |
 | [Base de données SQLite locale](https://channel9.msdn.com/Series/A-Developers-Guide-to-Windows-10/10) | Cette vidéo est un guide du développeur complet sur l’utilisation de SQLite, la solution recommandée pour les bases de données d’applications locales. Visitez [SQLite](https://www.sqlite.org/download.html) pour télécharger la dernière version pour UWP, ou utilisez la version fournie avec le kit SDK Windows 10. |
 
 ## <a name="networking-and-data-serialization"></a>Réseau et sérialisation des données
@@ -123,20 +123,20 @@ Les applications métier ont souvent besoin de communiquer avec des données ou 
 
 | Rubrique | Description |
 |-------|-------------|
-| [Notions de base relatives aux réseaux](https://docs.microsoft.com/windows/uwp/networking/networking-basics) | Cette procédure pas à pas explique les concepts de mise en réseau de base pertinents pour toutes les applications UWP, quels que soient les protocoles de communication utilisés.  |
-| [Quelle technologie réseau ?](https://docs.microsoft.com/windows/uwp/networking/which-networking-technology) | Vue d’ensemble des technologies réseau disponibles pour les applications UWP, avec des conseils qui vous aideront à choisir les technologies appropriées pour votre application. |
-| [Sérialisation XML et SOAP](https://docs.microsoft.com/dotnet/framework/serialization/xml-and-soap-serialization) | La sérialisation XML convertit les objets en un flux XML conforme à un langage XSD (définition de schéma XML) spécifique. Pour effectuer une conversion entre XML et une classe fortement typée, vous pouvez utiliser la classe [XDocument](https://docs.microsoft.com/dotnet/api/system.xml.linq.xdocument) native ou une bibliothèque externe. |
-| [Sérialisation JSON](https://docs.microsoft.com/uwp/api/Windows.Data.Json) | La sérialisation JSON (JavaScript Object Notation) est un format populaire utilisé pour la communication avec les API REST. [Newtonsoft Json.NET](https://www.newtonsoft.com/json), qui est entièrement pris en charge pour les applications UWP. |
+| [Notions de base en matière de réseau](../networking/networking-basics.md) | Cette procédure pas à pas explique les concepts réseau de base qui s’appliquent à toutes les applications UWP, quels que soient les protocoles de communication utilisés.  |
+| [Quelle technologie de réseau ?](../networking/which-networking-technology.md) | Vue d’ensemble des technologies réseau disponibles pour les applications UWP, avec des conseils qui vous aideront à choisir les technologies appropriées pour votre application. |
+| [Sérialisation XML et SOAP](/dotnet/framework/serialization/xml-and-soap-serialization) | La sérialisation XML convertit les objets en un flux XML conforme à un langage XSD (définition de schéma XML) spécifique. Pour effectuer une conversion entre XML et une classe fortement typée, vous pouvez utiliser la classe [XDocument](/dotnet/api/system.xml.linq.xdocument) native ou une bibliothèque externe. |
+| [Sérialisation JSON](/uwp/api/Windows.Data.Json) | La sérialisation JSON (JavaScript Object Notation) est un format populaire utilisé pour la communication avec les API REST. [Newtonsoft Json.NET](https://www.newtonsoft.com/json), qui est entièrement pris en charge pour les applications UWP. |
 
-## <a name="devices"></a>.
+## <a name="devices"></a>Appareils
 
 Afin d’interagir avec des outils métier comme des imprimantes, des scanneurs de codes-barres ou des lecteurs de cartes à puce, vous jugerez peut-être nécessaire d’intégrer des appareils ou des capteurs externes à votre application. Voici quelques exemples des fonctionnalités que vous pouvez ajouter à votre application à l’aide de la technologie décrite dans cette section.
 
 | Rubrique  | Description |
 |--------|-------------|
-| [Énumérer les appareils](https://docs.microsoft.com/windows/uwp/devices-sensors/enumerate-devices) | Cet article décrit comment utiliser l’espace de noms [Windows.Devices.Enumeration](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration) pour rechercher des appareils connectés au système, en interne, en externe ou détectables sur les protocoles sans fil ou réseau. Commencez ici si vous créez une application qui fonctionne avec des appareils. |
-| [Impression et numérisation](https://docs.microsoft.com/windows/uwp/devices-sensors/printing-and-scanning) | Explique comment imprimer et numériser à partir de votre application, et notamment comment se connecter aux appareils métier (par exemple, les systèmes de point de vente (PDV), les imprimantes de reçus ainsi que les scanneurs à chargeur à grande capacité) et comment les utiliser. |
-| [Bluetooth](https://docs.microsoft.com/windows/uwp/devices-sensors/bluetooth) | En plus de l’utilisation des connexions Bluetooth traditionnelles pour envoyer et recevoir des données ou contrôler les appareils, Windows 10 permet d’utiliser la technologie Bluetooth Low Energy (BTLE) pour envoyer ou recevoir des balises en arrière-plan. Utilisez-la pour afficher des notifications ou activer des fonctionnalités quand un utilisateur s’approche d’un emplacement particulier ou le quitte. |
+| [Énumérer les appareils](../devices-sensors/enumerate-devices.md) | Cet article décrit comment utiliser l’espace de noms [Windows.Devices.Enumeration](/uwp/api/Windows.Devices.Enumeration) pour rechercher des appareils connectés au système, en interne, en externe ou détectables sur les protocoles sans fil ou réseau. Commencez ici si vous créez une application qui fonctionne avec des appareils. |
+| [Impression et numérisation](../devices-sensors/printing-and-scanning.md) | Explique comment imprimer et numériser à partir de votre application, et notamment comment se connecter aux appareils métier (par exemple, les systèmes de point de vente (PDV), les imprimantes de reçus ainsi que les scanneurs à chargeur à grande capacité) et comment les utiliser. |
+| [Bluetooth](../devices-sensors/bluetooth.md) | En plus de l’utilisation des connexions Bluetooth traditionnelles pour envoyer et recevoir des données ou contrôler les appareils, Windows 10 permet d’utiliser la technologie Bluetooth Low Energy (BTLE) pour envoyer ou recevoir des balises en arrière-plan. Utilisez-la pour afficher des notifications ou activer des fonctionnalités quand un utilisateur s’approche d’un endroit particulier ou le quitte. |
 | [Stockage partagé d’entreprise](enterprise-shared-storage.md) | Dans les scénarios où l’appareil est verrouillé, découvrez comment partager les données au sein de la même application, entre les instances d’une application ou entre les applications. |
 
 ## <a name="device-targeting"></a>Ciblage des appareils
@@ -145,7 +145,7 @@ Aujourd’hui, de nombreux utilisateurs travaillent avec leur propre téléphone
 
 | Rubrique | Description |
 |-------|-------------|
-| [Guide des applications UWP](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) | Dans ce guide introductif, vous allez découvrir la plateforme UWP Windows 10, notamment : ce qu’est une famille d’appareils et comment déterminer celle à cibler, quels sont les nouveaux volets et contrôles d’interface utilisateur permettant d’adapter votre interface utilisateur à différents facteurs de forme d’appareil, et comment utiliser et contrôler la surface d’API disponible dans votre application. |
+| [Guide des applications UWP](../get-started/universal-application-platform-guide.md) | Dans ce guide introductif, vous allez découvrir la plateforme UWP Windows 10, notamment : ce qu’est une famille d’appareils et comment déterminer celle à cibler, quels sont les nouveaux volets et contrôles d’interface utilisateur permettant d’adapter votre interface utilisateur à différents facteurs de forme d’appareil, et comment utiliser et contrôler la surface d’API disponible dans votre application. |
 | [Exemple de code d’IU XAML adaptative](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) | Cet exemple de code montre toutes les options de disposition et tous les contrôles possibles pour votre application, quel que soit le type d’appareil. Il vous permet d’interagir avec les panneaux pour découvrir comment obtenir les dispositions que vous recherchez. En plus de vous présenter la façon dont chaque contrôle répond à différents facteurs de forme, l’application réagit et indique les différentes méthodes permettant d’obtenir une interface utilisateur adaptative. |
 | [Rubrique Xamarin](/xamarin/) | Xamarin pour le ciblage du téléphone |
 
@@ -155,9 +155,9 @@ Vous disposez d’options pour distribuer les applications aux utilisateurs de v
 
 | Rubrique | Description |
 |-------|-------------|
-| [Documentation MSIX](https://docs.microsoft.com/windows/msix/) | MSIX est un format de package d’application Windows qui regroupe les meilleures fonctionnalités de MSI, .appx, App-V et ClickOnce pour proposer une expérience d’empaquetage moderne et fiable. |
-| [Distribuer des applications métier aux entreprises](https://docs.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises) | Découvrez les options pour distribuer des applications métier sans mettre les applications à la disposition du public, notamment le déploiement basé sur le Programme d’installation d’application, Microsoft Endpoint Configuration Manager et Microsoft Intune, et la publication sur le Microsoft Store pour Entreprises. |
-| [Charger des applications de façon indépendante](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10) | Quand vous chargez une application de façon indépendante (sideloading), vous déployez un package d’application signé sur un appareil. Vous conservez la signature, l’hébergement et le déploiement de ces applications. Le processus de sideloading d’applications est simplifié pour Windows 10.             |
+| [Documentation MSIX](/windows/msix/) | MSIX est un format de package d’application Windows qui regroupe les meilleures fonctionnalités de MSI, .appx, App-V et ClickOnce pour proposer une expérience d’empaquetage moderne et fiable. |
+| [Distribuer des applications métier aux entreprises](../publish/distribute-lob-apps-to-enterprises.md) | Découvrez les options pour distribuer des applications métier sans mettre les applications à la disposition du public, notamment le déploiement basé sur le Programme d’installation d’application, Microsoft Endpoint Configuration Manager et Microsoft Intune, et la publication sur le Microsoft Store pour Entreprises. |
+| [Charger la version test des applications](/windows/deploy/sideload-apps-in-windows-10) | Quand vous chargez une application de façon indépendante (sideloading), vous déployez un package d’application signé sur un appareil. Vous conservez la signature, l’hébergement et le déploiement de ces applications. Le processus de sideloading d’applications est simplifié pour Windows 10.             |
 | [Publier des applications sur le Microsoft Store](https://developer.microsoft.com/store/publish-apps) | Le Microsoft Store unifié vous permet de publier et de gérer toutes vos applications pour l’ensemble des appareils Windows. Personnalisez la disponibilité de votre application avec un tarif par marché, des contrôles de distribution et de visibilité et d’autres options. |
 
 ## <a name="enterprise-uwp-samples"></a>Exemples UWP pour entreprises

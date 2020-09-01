@@ -44,7 +44,7 @@ En raison des données personnelles potentiellement sensibles collectées par le
 
 En outre, si votre application collecte, stocke ou transfère des données de suivi oculaire, vous devez la décrire dans la déclaration de confidentialité de votre application et respecter toutes les autres exigences relatives aux **informations personnelles** dans le [contrat de développement d’application](/legal/windows/agreements/app-developer-agreement) et les stratégies de [Microsoft Store](/legal/windows/agreements/store-policies).
 
-## <a name="setup"></a>Programme d’installation
+## <a name="setup"></a>Configuration
 
 Pour utiliser les API de saisie en regard de votre application Windows, vous devez : 
 

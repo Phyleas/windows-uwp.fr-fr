@@ -6,12 +6,12 @@ ms.date: 11/29/2017
 ms.topic: article
 keywords: windows 10, uwp, monétiser, engager, promouvoir, services du Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 7beee974bceceab02984ae6499a9c5db0b0281b9
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: dd6262677cd548fa8e690fde5a90ab1f2662ea2a
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74259299"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89155643"
 ---
 # <a name="monetization-engagement-and-store-services"></a>Monétisation, implication et services du Store
 
@@ -52,7 +52,7 @@ Vous pouvez proposer une version d'évaluation gratuite de votre application pou
         ![Achats dans l'application](images/pricing-in-app-purchases.png)
     :::column-end:::
     :::column span="2":::
-**Achats dans l'application**
+**Achats in-app**
 
 Que votre application soit payante ou gratuite, vous pouvez utiliser les achats dans l'application pour vous assurer un flux de revenus continu. Utilisez les achats dans l’application pour permettre aux clients de passer d’une version gratuite de votre application à une version payante, ou proposer à la vente dans votre application des extensions durables ou consommables.
 
@@ -91,10 +91,10 @@ Optimisez les revenus publicitaires dans vos applications grâce au service de m
 
 :::row:::
     :::column:::
-        ![Analyses](images/monetize-analytics-pie-chart.png)
+        ![Analytics](images/monetize-analytics-pie-chart.png)
     :::column-end:::
     :::column span="2":::
-**Analytique**
+**Analyse**
 
 Les rapports d’analyse détaillés permettent de surveiller les performances de vos publicités dans les applications et vous fournissent les informations dont vous avez besoin pour optimiser vos revenus publicitaires. Nous proposons également une API RESTful utilisable pour obtenir ces données par programmation.
 
@@ -111,13 +111,13 @@ Vous êtes à la recherche d'autres moyens d'augmenter votre monétisation ? En
  Rubrique                | Description                 |
 |--------------------|-----------------------------|
 | [Programme d’affiliation Microsoft](https://www.microsoftaffiliates.com/) | Gagnez des commissions en ajoutant des liens vers les produits Microsoft depuis votre application, votre blog, votre page web ou d’autres supports de communication. Ces liens peuvent renvoyer vers des applications, des jeux, de la musique, des films, du matériel, des accessoires et d’autres produits vendus sur le Microsoft Store.
-| [Expérimentation A/B](https://docs.microsoft.com/windows/uwp/monetize/run-app-experiments-with-a-b-testing) | Effectuez des tests A/B sur vos applications afin de mesurer l’efficacité des modifications apportées aux fonctionnalités pour certains clients, avant d’effectuer la modification globale pour le reste des clients.
-| [Engager les clients avec le kit Microsoft Store Services SDK](microsoft-store-services-sdk.md) | Le kit Microsoft Store Services SDK contient des bibliothèques et des outils qui vous permettent de doter vos applications de fonctionnalités conçues pour vous aider à susciter l’engagement chez vos clients. Ces fonctionnalités incluent les notifications ciblées, les tests A/B et le lancement du hub de commentaires depuis votre application.
-| [Démarrer le Hub de commentaires à partir de votre application](launch-feedback-hub-from-your-app.md) | Ajoutez du code dans vos applications UWP pour diriger vos clients Windows 10 vers le Hub de commentaires, qui leur permettra de soumettre leurs problèmes, suggestions et votes pour. Gérez ensuite ces commentaires dans le [Rapport sur les commentaires](../publish/feedback-report.md) affiché dans l’Espace partenaires. Cette fonctionnalité nécessite Microsoft Store Services SDK. 
+| [Expérimentation A/B](./run-app-experiments-with-a-b-testing.md) | Effectuez des tests A/B sur vos applications afin de mesurer l’efficacité des modifications apportées aux fonctionnalités pour certains clients, avant d’effectuer la modification globale pour le reste des clients.
+| [Impliquer les clients avec Microsoft Store Services SDK](microsoft-store-services-sdk.md) | Le kit Microsoft Store Services SDK contient des bibliothèques et des outils qui vous permettent de doter vos applications de fonctionnalités conçues pour vous aider à susciter l’engagement chez vos clients. Ces fonctionnalités incluent les notifications ciblées, les tests A/B et le lancement du hub de commentaires depuis votre application.
+| [Lancer le Hub de commentaires à partir de votre application](launch-feedback-hub-from-your-app.md) | Ajoutez du code dans vos applications UWP pour diriger vos clients Windows 10 vers le Hub de commentaires, qui leur permettra de soumettre leurs problèmes, suggestions et votes pour. Gérez ensuite ces commentaires dans le [Rapport sur les commentaires](../publish/feedback-report.md) affiché dans l’Espace partenaires. Cette fonctionnalité nécessite Microsoft Store Services SDK. 
 | [Configurer votre application pour recevoir des notifications Push de l’Espace partenaires](configure-your-app-to-receive-dev-center-notifications.md) | Inscrivez un canal de notification pour votre application UWP pour qu’elle puisse recevoir les [notifications Push de l’Espace partenaires](../publish/send-push-notifications-to-your-apps-customers.md), et effectuez le suivi du taux de lancement d’applications résultant des notifications Push. Cette fonctionnalité nécessite Microsoft Store Services SDK.
 | [Journaliser des événements personnalisés pour l’Espace partenaires](log-custom-events-for-dev-center.md) | Journalisez des événements personnalisés depuis votre application UWP, et passez en revue les événements dans le [Rapport d’utilisation](../publish/usage-report.md) de l’Espace partenaires. Cette fonctionnalité nécessite Microsoft Store Services SDK.
 | [Demander des évaluations et des avis](request-ratings-and-reviews.md) | Incitez vos clients à évaluer ou à donner leur avis sur votre application en affichant par programmation une IU destinée aux évaluations et aux avis.
-| [Services du Microsoft Store](using-windows-store-services.md) | Découvrez comment utiliser les API RESTful pour automatiser les soumissions effectuées vers le Windows Store et d’autres tâches associées au Windows Store, et accéder aux données d’analyse.
+| [Services Microsoft Store](using-windows-store-services.md) | Découvrez comment utiliser les API RESTful pour automatiser les soumissions effectuées vers le Windows Store et d’autres tâches associées au Windows Store, et accéder aux données d’analyse.
 | [Ajouter des fonctionnalités de version de démonstration commerciale (RDX) à votre application](retail-demo-experience.md) | Incluez un mode de version de démonstration commerciale dans votre application Windows pour que les clients qui essaient des ordinateurs et des appareils sur le point de vente puissent y accéder.
 
 ## <a name="monetization-analytics"></a>Analyse de la monétisation
@@ -126,11 +126,11 @@ Vous êtes à la recherche d'autres moyens d'augmenter votre monétisation ? En
 
 Surveillez les performances de votre application dans le Microsoft Store grâce à ces rapports.
 
-- [Résumé du paiement](../publish/payout-summary.md)
+- [Récapitulatif des paiements](../publish/payout-summary.md)
 - [Rapport sur les acquisitions](../publish/acquisitions-report.md)
-- [Rapport sur les acquisitions d’extensions](../publish/add-on-acquisitions-report.md)
+- [Rapport sur les acquisitions des extensions](../publish/add-on-acquisitions-report.md)
 - [Rapport sur les performances publicitaires](../publish/advertising-performance-report.md)
 - [Extraire des données d’analyse à l’aide de notre API REST](access-analytics-data-using-windows-store-services.md)
 - [Créer des segments de clients](../publish/create-customer-segments.md)
-- [Rapport Commentaires](../publish/feedback-report.md)
+- [Rapport sur les commentaires](../publish/feedback-report.md)
 - [Rapport d’utilisation](../publish/usage-report.md)

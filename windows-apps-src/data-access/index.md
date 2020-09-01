@@ -6,12 +6,12 @@ ms.date: 11/13/2017
 ms.topic: article
 keywords: windows 10, uwp, données, base de données, relationnelle, tables, sqlite
 ms.localizationpriority: medium
-ms.openlocfilehash: 80cf97a7336fe912baf5cda151560dacfa12c2e2
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: d324c5b17e167b841761b92507eec2134e4b7009
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "71339714"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173643"
 ---
 # <a name="data-access"></a>Accès aux données
 
@@ -20,7 +20,7 @@ Vous pouvez stocker des données sur l’appareil de l’utilisateur à l’aide
 | Rubrique | Description|
 |-------|------------|
 | [Utiliser une base de données SQLite dans une application UWP](sqlite-databases.md) | Cette rubrique vous montre comment utiliser SQLite pour stocker et récupérer des données dans une base de données légère sur l’appareil des utilisateurs. SQLite est un moteur de base de données intégré, sans serveur. |
-| [Utiliser une base de données SQL Server dans une application UWP](sql-server-databases.md) | Cette rubrique vous montre comment vous connecter directement à une base de données SQL Server, puis stocker et récupérer des données à l’aide de classes dans l’espace de noms [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient). Aucune couche de service n’est requise. |
+| [Utiliser une base de données SQL Server dans une application UWP](sql-server-databases.md) | Cette rubrique vous montre comment vous connecter directement à une base de données SQL Server, puis stocker et récupérer des données à l’aide de classes dans l’espace de noms [System.Data.SqlClient](/dotnet/api/system.data.sqlclient). Aucune couche de service n’est requise. |
 
 ## <a name="related-topics"></a>Rubriques connexes
 
