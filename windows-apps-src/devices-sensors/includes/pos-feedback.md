@@ -3,7 +3,7 @@ title: Support et commentaires
 description: Fichier include de support et de commentaires
 ms.date: 06/12/2018
 ms.topic: include
-keywords: windows 10, uwp, point de vente, pdv
+keywords: Windows 10, UWP, point de service, pos
 ms.localizationpriority: medium
 ms.openlocfilehash: e1b6850c294e0427ac05ad4a4d7b2945df0dc34f
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
