@@ -4,12 +4,12 @@ description: Bibliothèques WinUI pour le développement d’applications Window
 ms.topic: article
 ms.date: 07/15/2020
 keywords: windows 10, uwp, sdk kit de ressources, winui, bibliothèque d’interface utilisateur Windows
-ms.openlocfilehash: 54b2d44dab1c311e6d1b75d0be35ed419056a953
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: eb87744ed5d3eb5882b4ebae75b8dcf295d89f10
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86492974"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166753"
 ---
 # <a name="windows-ui-library-winui"></a>Bibliothèque d’IU Windows (WinUI)
 
@@ -26,7 +26,7 @@ Avec la prise en charge des applications de bureau et UWP, vous pouvez effectuer
 
 ## <a name="windows-ui-2x-library"></a>Bibliothèque Windows UI 2.x
 
-Vous pouvez utiliser WinUI 2.x dans les applications UWP et l’incorporer à vos applications de bureau nouvelles ou existantes à l’aide de [XAML Islands](/windows/apps/desktop/modernize/xaml-islands).
+Vous pouvez utiliser WinUI 2.x dans les applications UWP et l’incorporer à vos applications de bureau nouvelles ou existantes à l’aide de [XAML Islands](../desktop/modernize/xaml-islands.md).
 
 > [!NOTE]
 > WinUI 2.4 est la version la plus récente de WinUI 2.x. Pour obtenir la liste des travaux planifiés dans la prochaine version, consultez la page du [jalon WinUI 2.5](https://github.com/microsoft/microsoft-ui-xaml/milestone/10).
@@ -42,7 +42,7 @@ Avec la compatibilité de bas niveau avec les versions antérieures de Windows 
 ### <a name="related-links-for-winui-2x"></a>Liens associés pour WinUI 2.x
 
 - [Vue d’ensemble de la bibliothèque WinUI 2.x](winui2/index.md)
-- [Documentation sur les API](https://docs.microsoft.com/uwp/api/overview/winui/)
+- [Documentation sur les API](/uwp/api/overview/winui/)
 - [Code source](https://aka.ms/winui)
 - [Application XAML Controls Gallery](https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt)
 
@@ -59,7 +59,7 @@ WinUI 3 est la prochaine version de WinUI, une plateforme d’interface utilisa
 
 En découplant entièrement le fichier XAML, la composition et les API d’entrée du [SDK Windows 10](https://developer.microsoft.com/windows/downloads/windows-10-sdk/), l’étendue de WinUI 3 inclut l’intégralité de la plateforme d’interface utilisateur native Windows 10.
 
-WinUI est la plateforme d’avenir par excellence pour toutes les applications Windows. Vous pouvez l’utiliser comme couche d’interface utilisateur sur votre application UWP ou Win32 native, ou pour moderniser progressivement votre application de bureau, composant par composant, avec [XAML Islands](https://docs.microsoft.com/windows/apps/desktop/modernize/xaml-islands).
+WinUI est la plateforme d’avenir par excellence pour toutes les applications Windows. Vous pouvez l’utiliser comme couche d’interface utilisateur sur votre application UWP ou Win32 native, ou pour moderniser progressivement votre application de bureau, composant par composant, avec [XAML Islands](../desktop/modernize/xaml-islands.md).
 
 Toutes les nouvelles fonctionnalités XAML seront finalement fournies dans le cadre de WinUI. Les API XAML UWP existantes fournies dans le cadre du système d’exploitation ne recevront plus de nouvelles mises à jour des fonctionnalités. Toutefois, elles continueront à recevoir des mises à jour de sécurité et des correctifs critiques conformément au cycle de vie de prise en charge de Windows 10.
 

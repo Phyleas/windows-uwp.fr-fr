@@ -60,21 +60,21 @@
             - name: Tester sur l’appareil ou l’émulateur
               href: ../android/emulator.md
         - name: Bien démarrer avec C et C++
-          href: 'https://docs.microsoft.com/cpp/'
+          href: /cpp/
         - name: Bien démarrer avec C#
-          href: 'https://docs.microsoft.com/dotnet/csharp/'
+          href: /dotnet/csharp/
         - name: Bien démarrer avec Java sur Azure
-          href: 'https://docs.microsoft.com/azure/developer/java/'
+          href: /azure/developer/java/
         - name: Bien démarrer avec PowerShell
-          href: 'https://docs.microsoft.com/powershell/'
+          href: /powershell/
         - name: Bien démarrer avec les bases de données sur WSL
-          href: 'https://docs.microsoft.com/windows/wsl/tutorials/wsl-database'
+          href: /windows/wsl/tutorials/wsl-database
     - name: Outils et plateformes
       items:
         - name: Sous-système Windows pour Linux
-          href: 'https://docs.microsoft.com/windows/wsl/'
+          href: /windows/wsl/
         - name: Terminal Windows
-          href: 'https://docs.microsoft.com/windows/terminal/'
+          href: /windows/terminal/
         - name: Gestionnaire de package Windows
           items:
             - name: Vue d’ensemble
@@ -110,8 +110,8 @@
         - name: VS Code
           href: 'https://code.visualstudio.com/docs'
         - name: Visual Studio
-          href: 'https://docs.microsoft.com/visualstudio/windows/?view=vs-2019'
+          href: /visualstudio/windows/?view=vs-2019
         - name: Azure
-          href: 'https://docs.microsoft.com/azure/?product=featured'
+          href: /azure/?product=featured
         - name: .NET
-          href: 'https://docs.microsoft.com/dotnet/'
+          href: /dotnet/

@@ -4,12 +4,12 @@ description: Avec l’outil en ligne de commande winget, les développeurs peuve
 ms.date: 04/28/2020
 ms.topic: overview
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b3f108de117fb937a7a670497a4a1a1d5810aca
-ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
+ms.openlocfilehash: 4c918dccb2873f47a16669c195c47180e2129476
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85334537"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168743"
 ---
 # <a name="use-the-winget-tool-to-install-and-manage-applications"></a>Utiliser l’outil winget pour installer et gérer des applications
 
@@ -38,7 +38,7 @@ Le comportement du programme d’installation peut être différent selon que vo
 
 * Si vous exécutez **winget** sans privilèges d’administrateur, certaines applications peuvent [nécessiter une élévation de privilèges](https://docs.microsoft.com/windows/security/identity-protection/user-account-control/) pour s’installer. À l’exécution du programme d’installation, Windows affiche une invite d’[élévation](https://docs.microsoft.com/windows/security/identity-protection/user-account-control). Si vous refusez l’élévation, l’installation de l’application échoue.  
 
-* Si vous exécutez **winget** à partir d’une invite de commandes administrateur, vous ne verrez pas d’[invites d’élévation](https://docs.microsoft.com/windows/security/identity-protection/user-account-control/how-user-account-control-works) même si l’application nécessite une élévation. Exécutez toujours une invite de commandes administrateur avec prudence et installez uniquement des applications approuvées.
+* Si vous exécutez **winget** à partir d’une invite de commandes administrateur, vous ne verrez pas d’[invites d’élévation](/windows/security/identity-protection/user-account-control/how-user-account-control-works) même si l’application nécessite une élévation. Exécutez toujours une invite de commandes administrateur avec prudence et installez uniquement des applications approuvées.
 
 ## <a name="use-winget"></a>Utiliser winget
 

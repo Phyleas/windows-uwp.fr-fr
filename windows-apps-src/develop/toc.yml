@@ -285,7 +285,7 @@
         - name: Accès rapide aux propriétés de fichier dans UWP
           href: ../files/fast-file-properties.md
     - name: Machine Learning
-      href: 'https://docs.microsoft.com/windows/ai/'
+      href: /windows/ai/
 - name: Déploiement
   items:
     - name: Choisir une version UWP
@@ -727,7 +727,7 @@
         - name: Ajouter des fonctionnalités de démonstration commerciale (RDX)
           href: ../monetize/retail-demo-experience.md
         - name: Simplifier les paiements avec l’API de demande de paiement
-          href: ../monetize/payment-request.md
+          href: ../monetize/index.md
     - name: Empaquetage d’applications
       items:
         - name: Vue d’ensemble
@@ -1276,7 +1276,7 @@
         - name: "Étude de cas\_: Bookstore2"
           href: ../porting/wpsl-to-uwp-case-study-bookstore2.md
     - name: "Convertir votre application web en application PWA sur Windows\_10"
-      href: 'https://docs.microsoft.com/microsoft-edge/progressive-web-apps'
+      href: /microsoft-edge/progressive-web-apps
       items:
         - name: "Créer un package d’application Windows\_7 en tant que PWA"
           href: 'https://docs.pwabuilder.com/jekyll/update/2018/02/03/how-to-package-windows7.html'

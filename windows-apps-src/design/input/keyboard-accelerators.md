@@ -10,12 +10,12 @@ pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 785047b3ee5f18fa4f6ea8fd78f6d8ab7a92e8e6
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 8a3231f608984c9d1f67df71de9cab4cfecd9a13
+ms.sourcegitcommit: deb2867924ce16efcabfa011892157b7aa4fa2d2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173423"
+ms.locfileid: "89187894"
 ---
 # <a name="keyboard-accelerators"></a>Raccourcis clavier
 
@@ -386,7 +386,7 @@ Par défaut, lorsque des accélérateurs de clavier sont déclarés, tous les co
 
 *Combinaison de touches d’accès rapide dans l’info-bulle*
 
-Pour les objets [Button](/uwp/api/windows.ui.xaml.controls.button), [AppBarButton](/uwp/api/windows.ui.xaml.controls.appbarbutton)et [AppBarToggleButton](/uwp/api/windows.ui.xaml.controls.appbartogglebutton) , l’accélérateur clavier est ajouté à l’info-bulle par défaut du contrôle. Pour les objets [MenuFlyoutItem](/uwp/api/windows.ui.xaml.controls.appbarbutton) et [ToggleMenuFlyoutItem](/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)), l’accélérateur clavier est affiché avec le texte du menu volant.
+Pour les objets [Button](/uwp/api/windows.ui.xaml.controls.button), [AppBarButton](/uwp/api/windows.ui.xaml.controls.appbarbutton)et [AppBarToggleButton](/uwp/api/windows.ui.xaml.controls.appbartogglebutton) , l’accélérateur clavier est ajouté à l’info-bulle par défaut du contrôle. Pour les objets [MenuFlyoutItem](/uwp/api/windows.ui.xaml.controls.appbarbutton) et [ToggleMenuFlyoutItem](/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem) , l’accélérateur clavier est affiché avec le texte du menu volant.
 
 > [!NOTE]
 > La spécification d’une info-bulle (voir Button1 dans l’exemple suivant) remplace ce comportement.

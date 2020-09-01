@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bb65acf606ffa44f075016720ebcd055ba5febc8
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 06cff7247dff4f370d9e20a736c4383a9c09c25a
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234464"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174613"
 ---
 # <a name="tiles-badges-and-notifications-for-windows-apps"></a>Vignettes, badges et notifications pour les applications Windows
  
@@ -37,7 +37,7 @@ Une vignette est la représentation d’une application dans le menu Démarrer. 
 | Article | Description |
 | --- | --- |
 | [Créer des vignettes](creating-tiles.md) | Personnalisez la vignette par défaut de votre application et fournissez des ressources pour différentes tailles d’écran. |
-| [Ressources d’icônes de l’application](app-assets.md) | Les ressources d’icône d’application, qui s’affichent sous différentes formes dans le système d’exploitation Windows 10, sont les cartes de visite de votre application Windows. Ces recommandations précisent où apparaissent les ressources d’icône d’application dans le système et fournissent des conseils de conception détaillés pour vous aider à créer les plus belles icônes. |
+| [Ressources d’icônes de l’application](../../style/app-icons-and-logos.md) | Les ressources d’icône d’application, qui s’affichent sous différentes formes dans le système d’exploitation Windows 10, sont les cartes de visite de votre application Windows. Ces recommandations précisent où apparaissent les ressources d’icône d’application dans le système et fournissent des conseils de conception détaillés pour vous aider à créer les plus belles icônes. |
 | [API de vignette principale](primary-tile-apis.md) | Demandez à épingler la vignette principale de votre application, puis vérifiez que la vignette principale est actuellement épinglée. |
 | [Contenu de vignette](create-adaptive-tiles.md) | Le contenu des notifications par vignette utilise les modèles de vignette adaptative, une nouvelle fonctionnalité de Windows 10 qui vous permet de concevoir votre propre contenu de notification par vignette à l’aide d’un langage de balisage simple et flexible adapté, à différentes densités d’écran. Cet article vous indique comment créer des vignettes dynamiques adaptatives pour votre application Windows. |
 | [Schéma de contenu de vignette](../tiles-and-notifications/tile-schema.md) | Voici les éléments et attributs permettant de créer des vignettes adaptatives. |

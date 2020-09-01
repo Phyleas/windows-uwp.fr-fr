@@ -3,12 +3,12 @@ title: Notes de publication de WinUI
 description: Index des notes de publication de WinUI.
 ms.date: 07/15/2020
 ms.topic: reference
-ms.openlocfilehash: 4161b8d8a74ffc493c44bba5104c54cb911861c6
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 33d4b9dfb497017f446549d4f3daf737a8fa5ebb
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86492874"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166693"
 ---
 # <a name="windows-ui-library-2x-release-notes"></a>Notes de publication de la bibliothèque Windows UI 2.x
 
@@ -22,7 +22,7 @@ WinUI comprend deux packages NuGet :
 
 * [Microsoft.UI.Xaml.Core.Direct](https://www.nuget.org/packages/Microsoft.UI.Xaml.Core.Direct) : API de bas niveau à utiliser dans les composants d’intergiciel (middleware).
 
-Vous pouvez télécharger et utiliser des packages WinUI dans votre application à l’aide du gestionnaire de package NuGet. Pour plus d’informations, consultez [Bien démarrer avec la bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/getting-started).
+Vous pouvez télécharger et utiliser des packages WinUI dans votre application à l’aide du gestionnaire de package NuGet. Pour plus d’informations, consultez [Bien démarrer avec la bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/getting-started).
 
 ## <a name="examples"></a>Exemples
 

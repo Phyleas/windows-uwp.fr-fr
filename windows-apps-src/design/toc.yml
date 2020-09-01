@@ -490,19 +490,19 @@
       href: input/cortana-interactions.md
       items:
         - name: Recommandations en matière de conception
-          href: 'https://docs.microsoft.com/cortana/voice-commands/voicecommand-design-guidelines'
+          href: /cortana/voice-commands/voicecommand-design-guidelines
         - name: Activer une application au premier plan
-          href: 'https://docs.microsoft.com/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana'
+          href: /cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana
         - name: Modifier les listes d’expressions de définition des commandes vocales (VCD)
-          href: 'https://docs.microsoft.com/cortana/voice-commands/dynamically-modify-voice-command-definition-vcd-phrase-lists'
+          href: /cortana/voice-commands/dynamically-modify-voice-command-definition-vcd-phrase-lists
         - name: Lancer une application en arrière-plan
-          href: 'https://docs.microsoft.com/cortana/voice-commands/launch-a-background-app-with-voice-commands-in-cortana'
+          href: /cortana/voice-commands/launch-a-background-app-with-voice-commands-in-cortana
         - name: Interagir avec une application en arrière-plan
-          href: 'https://docs.microsoft.com/cortana/voice-commands/interact-with-a-background-app-in-cortana'
+          href: /cortana/voice-commands/interact-with-a-background-app-in-cortana
         - name: Lien ciblé à partir d’une application en arrière-plan
-          href: 'https://docs.microsoft.com/cortana/voice-commands/deep-link-into-your-app-from-cortana'
+          href: /cortana/voice-commands/deep-link-into-your-app-from-cortana
         - name: Prendre en charge des commandes vocales en langage naturel
-          href: 'https://docs.microsoft.com/cortana/voice-commands/support-natural-language-voice-commands-in-cortana'
+          href: /cortana/voice-commands/support-natural-language-voice-commands-in-cortana
     - name: Entrées multiples
       href: input/multiple-input-design-guidelines.md
     - name: Injection d’entrée

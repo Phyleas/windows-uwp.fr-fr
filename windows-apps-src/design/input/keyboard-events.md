@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: cb82c137bf2aa0d1cd4e03025d3babace07549b5
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 151abd02b34263cdd92b917127f306c25ebc5e0d
+ms.sourcegitcommit: deb2867924ce16efcabfa011892157b7aa4fa2d2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173413"
+ms.locfileid: "89187836"
 ---
 # <a name="keyboard-events"></a>Événements de clavier
 
@@ -107,15 +107,16 @@ L’événement [**KeyDown**](/uwp/api/windows.ui.xaml.uielement.keydown) est d�
 
 Les touches de modification sont des touches, telles que Ctrl ou Maj, sur lesquelles les utilisateurs appuient généralement en même temps que d’autres touches. Votre application peut utiliser ces combinaisons de touches en tant que raccourcis clavier pour appeler des commandes d’application.
 
-Vous pouvez détecter les combinaisons de touches de raccourci en [**utilisant du code dans vos gestionnaires**](/uwp/api/windows.ui.xaml.uielement.keydown) d’événements KEYpoint et [**KeyUp**](/uwp/api/windows.ui.xaml.uielement.keyup) . Vous pouvez ensuite effectuer le suivi de l’état d’appui des touches de modification qui vous intéressent. Lorsqu’un événement de clavier se produit pour une touche qui n’est pas une touche de modification, vous pouvez vérifier en même temps si une touche de modification est à l’état appuyé.
+Vous pouvez détecter les combinaisons de touches de [**KeyDown**](/uwp/api/windows.ui.xaml.uielement.keydown) raccourci dans les gestionnaires d’événements KEYpoint et [**KeyUp**](/uwp/api/windows.ui.xaml.uielement.keyup) . Quand un événement de clavier se produit pour une clé qui n’est pas un modificateur, vous pouvez vérifier si une touche de modification est dans un état appuyé.
+
+Vous pouvez également utiliser la fonction [**GetKeyState ()**](/uwp/api/windows.ui.core.corewindow.getkeystate) de [**CoreWindow**](/uwp/api/windows.ui.core.corewindow) (obtenue par le biais de [**CoreWindow. GetForCurrentThread ()**](/uwp/api/windows.ui.core.corewindow.getforcurrentthread)) pour vérifier l’état du modificateur lorsqu’une touche non modificatrice est enfoncée.
+
+Les exemples suivants implémentent cette deuxième méthode, ainsi que le code stub pour la première implémentation.
 
 > [!NOTE]
 > La touche Alt est représentée par la valeur **VirtualKey.Menu**.
 
- 
-
 ### <a name="shortcut-keys-example"></a>Exemple de touches de raccourci
-
 
 L’exemple suivant explique comment implémenter des touches de raccourci. Dans cet exemple, les utilisateurs peuvent contrôler la lecture du contenu multimédia à l’aide des boutons Lecture, Pause et Arrêt ou des raccourcis clavier Ctrl+P, Ctrl+A et Ctrl+S. Le bouton XAML affiche les raccourcis à l’aide des info-bulles et des propriétés [**AutomationProperties**](/uwp/api/Windows.UI.Xaml.Automation.AutomationProperties) dans les étiquettes de bouton. Cette documentation d’auto-apprentissage est importante afin d’augmenter la facilité d’utilisation et l’accessibilité de votre application. Pour plus d’informations, voir [Accessibilité du clavier](../accessibility/keyboard-accessibility.md).
 

@@ -8,12 +8,12 @@ ms.date: 03/23/2020
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
-ms.openlocfilehash: 82e6d91b5a4147237cd04b46dc5b69b8151fece9
-ms.sourcegitcommit: 6dd6d61c912daab2cc4defe5ba0cf717339f7765
+ms.openlocfilehash: 08471b8a04d37c34378b549b8534979a4188d7b8
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84978381"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173953"
 ---
 # <a name="controls-for-windows-apps"></a>Contrôles pour les applications Windows
 
@@ -44,7 +44,7 @@ Vous pouvez personnaliser l’apparence de vos applications de nombreuses maniè
 
 |  |  |
 | - | - |
-| ![Logo WinUI](images/winui-logo-64x64.png) | Certains contrôles sont uniquement disponibles dans la bibliothèque d’interface utilisateur Windows (WinUI), package NuGet qui contient les nouveaux contrôles et fonctionnalités d’interface utilisateur. Pour l’obtenir, consultez [Vue d’ensemble et instructions d’installation de la bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/).<br/>À compter de WinUI 2.2, de nombreux contrôles utilisent des angles arrondis comme style par défaut. Pour plus d’informations, consultez [Rayons des angles](/windows/uwp/design/style/rounded-corner). |
+| ![Logo WinUI](images/winui-logo-64x64.png) | Certains contrôles sont uniquement disponibles dans la bibliothèque d’interface utilisateur Windows (WinUI), package NuGet qui contient les nouveaux contrôles et fonctionnalités d’interface utilisateur. Pour l’obtenir, consultez [Vue d’ensemble et instructions d’installation de la bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/).<br/>À compter de WinUI 2.2, de nombreux contrôles utilisent des angles arrondis comme style par défaut. Pour plus d’informations, consultez [Rayons des angles](../style/rounded-corner.md). |
 
 ## <a name="alphabetical-index"></a>Index alphabétique
 
@@ -79,7 +79,7 @@ Informations détaillées en matière de contrôles et de modèles spécifiques.
 - [Images et pinceaux image](images-imagebrushes.md)
 - [Contrôles pour l’entrée manuscrite](inking-controls.md)
 - [Vue Liste](listview-and-gridview.md)
-- [Contrôle de carte](../../maps-and-location/controls-map.md)
+- [Contrôle de carte](../../maps-and-location/display-maps.md)
 - [Maître/détails](master-details.md) (modèle)
 - [Lecture de contenu multimédia](media-playback.md)
 - [Barre de menus](menus.md#create-a-menu-bar) ![Logo WinUI](images/winui-logo-16x16.png)
