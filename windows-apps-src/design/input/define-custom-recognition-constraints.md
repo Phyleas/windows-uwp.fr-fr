@@ -8,46 +8,46 @@ keywords: voix, vocal, reconnaissance vocale, langage naturel, dictée, saisie, 
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b94c946222f510c7f1b1f7619b67ee83e6c2256
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: b48564469fd77f3c670739a7095124ed7399a1fe
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258003"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160073"
 ---
 # <a name="define-custom-recognition-constraints"></a>Définir des contraintes de reconnaissance vocale personnalisées
 
 Découvrez comment définir et utiliser des contraintes personnalisées pour la reconnaissance vocale.
 
-> **API importantes** : [**SpeechRecognitionTopicConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint), [**SpeechRecognitionListConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint), [**SpeechRecognitionGrammarFileConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint)
+> **API importantes**: [**SpeechRecognitionTopicConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint), [**SpeechRecognitionListConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint), [**SpeechRecognitionGrammarFileConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint)
 
 La reconnaissance vocale requiert au moins une contrainte pour définir un vocabulaire reconnaissable. Si aucune contrainte n’est spécifiée, la grammaire de dictée prédéfinie des applications Windows universelles est utilisée. Voir [Reconnaissance vocale](speech-recognition.md).
 
 ## <a name="add-constraints"></a>Ajouter des contraintes
 
-Utilisez la propriété [**SpeechRecognizer.Constraints**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.constraints) pour ajouter des contraintes à un moteur de reconnaissance vocale.
+Utilisez la propriété [**SpeechRecognizer.Constraints**](/uwp/api/windows.media.speechrecognition.speechrecognizer.constraints) pour ajouter des contraintes à un moteur de reconnaissance vocale.
 
-Nous abordons ici les trois types de contraintes de reconnaissance vocale utilisés à partir d’une application. (Pour les contraintes de commande vocale Cortana, consultez [lancer une application de premier plan avec des commandes vocales dans Cortana](https://docs.microsoft.com/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana).)
+Nous abordons ici les trois types de contraintes de reconnaissance vocale utilisés à partir d’une application. (Pour les contraintes de commande vocale Cortana, consultez [lancer une application de premier plan avec des commandes vocales dans Cortana](/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana).)
 
-- [**SpeechRecognitionTopicConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint): contrainte basée sur une grammaire prédéfinie (dictée ou recherche Web).
-- [**SpeechRecognitionListConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint): contrainte basée sur une liste de mots ou d’expressions.
-- [**SpeechRecognitionGrammarFileConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint): contrainte définie dans un fichier de spécification de la grammaire de la reconnaissance vocale (SRGS).
+- [**SpeechRecognitionTopicConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint): contrainte basée sur une grammaire prédéfinie (dictée ou recherche Web).
+- [**SpeechRecognitionListConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint): contrainte basée sur une liste de mots ou d’expressions.
+- [**SpeechRecognitionGrammarFileConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint) : contrainte définie dans un fichier SRGS (Speech Recognition Grammar Specification).
 
 Chaque moteur de reconnaissance vocale possède sa propre collection de contraintes. Seules les combinaisons de contraintes suivantes sont valides :
 
-- Une contrainte de sujet unique (dictée ou recherche web)
-- Pour Windows 10 Fall Creators Update (10.0.16299.15) et versions ultérieures, une contrainte de sujet unique peut être combinée avec une contrainte de liste
+- Une contrainte de rubrique unique (dictée ou recherche Web)
+- Pour Windows 10 automne Creators Update (10.0.16299.15) et versions ultérieures, une seule contrainte de rubrique peut être combinée avec une contrainte de liste
 - Une combinaison de contraintes de liste et/ou de contraintes de fichier de grammaire.
 
 > [!Important]
-> Appelez la méthode **[SpeechRecognizer.CompileConstraintsAsync](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.compileconstraintsasync)** pour compiler les contraintes avant de lancer le processus de reconnaissance.
+> Appelez la méthode **[SpeechRecognizer. CompileConstraintsAsync](/uwp/api/windows.media.speechrecognition.speechrecognizer.compileconstraintsasync)** pour compiler les contraintes avant de démarrer le processus de reconnaissance.
 
 ## <a name="specify-a-web-search-grammar-speechrecognitiontopicconstraint"></a>Spécifier une grammaire de recherche web (SpeechRecognitionTopicConstraint)
 
 Les contraintes de sujet (dictée ou grammaire de recherche web) doivent être ajoutées à la collection de contraintes d’un moteur de reconnaissance vocale.
 
 > [!NOTE]
-> Vous pouvez utiliser un objet [SpeechRecognitionListConstraint](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint) conjointement avec un [SpeechRecognitionTopicConstraint](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint) pour accroître la précision de la dictée grâce à un jeu de mots clés spécifiques à un domaine que vous pensez susceptibles d’être utilisés lors de la dictée.
+> Vous pouvez utiliser un [SpeechRecognitionListConstraint](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint) conjointement avec un [SpeechRecognitionTopicConstraint](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint) pour augmenter la précision de la dictée en fournissant un ensemble de mots clés spécifiques à un domaine que vous pensez être amené à utiliser pendant la dictée.
 
 Ici, nous ajoutons une grammaire de recherche web à la collection de contraintes.
 
@@ -137,7 +137,7 @@ Les grammaires SRGS offrent un ensemble complet de fonctionnalités pour vous ai
 - utiliser la sémantique pour définir ce que la reconnaissance vocale signifie pour votre application ;
 - spécifier des prononciations (soit intégrées à une grammaire, soit via un lien vers un lexique).
 
-Pour plus d’informations sur les éléments et les attributs SRGS, voir [Informations de référence XML sur la grammaire SRGS](https://msdn.microsoft.com/library/hh361653). Pour commencer à créer une grammaire SRGS, voir [Comment créer une grammaire XML de base](https://msdn.microsoft.com/library/hh361658).
+Pour plus d’informations sur les éléments et les attributs SRGS, voir [Informations de référence XML sur la grammaire SRGS](/previous-versions/office/developer/speech-technologies/hh361653(v=office.14)). Pour commencer à créer une grammaire SRGS, voir [Comment créer une grammaire XML de base](/previous-versions/office/developer/speech-technologies/hh361658(v=office.14)).
 
 Gardez à l’esprit les points suivants :
 
@@ -212,20 +212,20 @@ Ici, nous écoutons des variantes de « yes » et « no ».
 
 ## <a name="manage-constraints"></a>Gérer les contraintes
 
-Quand une collection de contraintes est chargée pour la reconnaissance vocale, votre application peut gérer les contraintes qui sont activées pour les opérations de reconnaissance vocale en affectant à la propriété [**IsEnabled**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.ispeechrecognitionconstraint.isenabled) d’une contrainte la valeur **true** ou **false**. Le paramètre par défaut est **true**.
+Quand une collection de contraintes est chargée pour la reconnaissance vocale, votre application peut gérer les contraintes qui sont activées pour les opérations de reconnaissance vocale en affectant à la propriété [**IsEnabled**](/uwp/api/windows.media.speechrecognition.ispeechrecognitionconstraint.isenabled) d’une contrainte la valeur **true** ou **false**. Le paramètre par défaut est **true**.
 
-Plutôt que de charger, décharger et compiler des contraintes pour chaque opération de reconnaissance vocale, il est généralement plus efficace de charger les contraintes une fois, et de les activer ou désactiver en fonction des besoins. Utilisez la propriété [**IsEnabled**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.ispeechrecognitionconstraint.isenabled), si nécessaire.
+Plutôt que de charger, décharger et compiler des contraintes pour chaque opération de reconnaissance vocale, il est généralement plus efficace de charger les contraintes une fois, et de les activer ou désactiver en fonction des besoins. Utilisez la propriété [**IsEnabled**](/uwp/api/windows.media.speechrecognition.ispeechrecognitionconstraint.isenabled), si nécessaire.
 
 En limitant le nombre de contraintes, vous limitez la quantité de données que le moteur de reconnaissance vocale doit parcourir pour trouver une correspondance à la saisie vocale de l’utilisateur. Cela permet d’améliorer aussi bien les performances que la précision de la reconnaissance vocale.
 
 Déterminez les contraintes à activer en fonction des expressions susceptibles d’être communiquées à votre application dans le cadre de la reconnaissance vocale. Par exemple, si votre application a pour contexte l’affichage d’une couleur, il est inutile d’activer une contrainte qui reconnaît les noms d’animaux.
 
-Pour informer l’utilisateur des expressions qu’il peut énoncer, utilisez les propriétés [**SpeechRecognizerUIOptions.AudiblePrompt**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizeruioptions.audibleprompt) et [**SpeechRecognizerUIOptions.ExampleText**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizeruioptions.exampletext), que vous définissez à l’aide de la propriété [**SpeechRecognizer.UIOptions**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.uioptions). En informant les utilisateurs de ce qu’ils peuvent dire pendant l’opération de reconnaissance vocale, ils seront plus à même de prononcer une expression qui pourra être associée à une contrainte active.
+Pour demander à l’utilisateur ce qu’il peut faire, utilisez les propriétés [**SpeechRecognizerUIOptions. AudiblePrompt**](/uwp/api/windows.media.speechrecognition.speechrecognizeruioptions.audibleprompt) et [**SpeechRecognizerUIOptions. ExampleText**](/uwp/api/windows.media.speechrecognition.speechrecognizeruioptions.exampletext) , qui sont définies au moyen de la propriété [**SpeechRecognizer. UIOptions**](/uwp/api/windows.media.speechrecognition.speechrecognizer.uioptions) . En informant les utilisateurs de ce qu’ils peuvent dire pendant l’opération de reconnaissance vocale, ils seront plus à même de prononcer une expression qui pourra être associée à une contrainte active.
 
-## <a name="related-articles"></a>Articles associés
+## <a name="related-articles"></a>Articles connexes
 
 - [Interactions vocales](speech-interactions.md)
 
 ### <a name="samples"></a>Exemples
 
-- [Exemple de reconnaissance vocale et de synthèse vocale](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)
+- [Reconnaissance vocale et exemple de synthèse vocale](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)

@@ -6,24 +6,24 @@ ms.date: 06/06/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c7fadaf902b4aa543234bc8d43fbc1595a54219
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 143d83a0c1257cf662fb686a5e0620db5cc6fb68
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66369683"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159523"
 ---
 # <a name="use-the-compass"></a>Utiliser le compas
 
 
 **API importantes**
 
--   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
--   [**Compass**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Compass)
+-   [**Windows.Devices.Sensors**](/uwp/api/Windows.Devices.Sensors)
+-   [**Boussole**](/uwp/api/Windows.Devices.Sensors.Compass)
 
 **Exemple**
 
--   Pour une implémentation plus complète, consultez l’[exemple de boussole](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Compass).
+-   Pour une implémentation plus complète, consultez l' [exemple Compass](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Compass).
 
 Découvrez comment utiliser la boussole pour déterminer l’orientation actuelle.
 
@@ -31,7 +31,7 @@ Une application peut récupérer l’orientation actuelle par rapport au nord ma
 
 ## <a name="prerequisites"></a>Prérequis
 
-Vous devez être familiarisé avec Extensible Application Markup Language (XAML), Microsoft Visual C#et les événements.
+Vous devez maîtriser le langage XAML (Extensible Application Markup Language), Microsoft Visual C# et les événements.
 
 L’appareil ou émulateur que vous utilisez doit prendre en charge une boussole.
 
@@ -41,7 +41,7 @@ Cette section se divise en deux sous-sections. La première sous-section vous p
 
 ### <a name="instructions"></a>Instructions
 
--   Créez un projet en choisissant une **Application vide (Windows universel)** dans les modèles de projet **Visual C#** .
+-   Créez un projet en choisissant une **Application vide (Windows universel)** dans les modèles de projet **Visual C#**.
 
 -   Ouvrez le fichier MainPage.xaml.cs de votre projet et remplacez le code existant par ce qui suit.
 
@@ -134,11 +134,11 @@ You'll need to rename the namespace in the previous snippet with the name you ga
 
 Vous devez remplacer la première partie du nom de la classe dans l’extrait de code précédent par l’espace de noms de votre application. Par exemple, si vous avez créé un projet nommé **CompassCS**, vous devez remplacer `x:Class="App1.MainPage"` par `x:Class="CompassCS.MainPage"`. Vous devez aussi remplacer `xmlns:local="using:App1"` par `xmlns:local="using:CompassCS"`.
 
--   Appuyez sur F5 ou sélectionnez **Déboguer** > **Démarrer le débogage** pour générer, déployer et exécuter l’application.
+-   Appuyez sur F5 ou sélectionnez **Déboguer**  >  **Démarrer le débogage** pour générer, déployer et exécuter l’application.
 
 Une fois l’application en cours d’exécution, vous pouvez modifier les valeurs de la boussole en déplaçant l’appareil ou à l’aide des outils de l’émulateur.
 
--   Pour arrêter l’application, retournez dans Visual Studio et appuyez sur Maj+F5, ou sélectionnez **Déboguer** > **Arrêter le débogage**.
+-   Arrêtez l’application en retournant dans Visual Studio et en appuyant sur Maj + F5 ou sélectionnez **Déboguer**  >  **arrêter le débogage** pour arrêter l’application.
 
 ### <a name="explanation"></a>Explication
 

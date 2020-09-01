@@ -6,51 +6,51 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d6c1b4c477bfe5c4f584227491ef5a94e375fa2
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 5b0c8f9909f59cb3a0dd5e16a6bb1c46fc069bfb
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74255659"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160803"
 ---
 # <a name="using-the-visual-layer-with-xaml"></a>Utilisation de la couche visuelle avec le contenu XAML
 
 La plupart des applications qui utilisent des fonctionnalités de couche visuelle font appel à l’infrastructure XAML pour définir le contenu d’interface utilisateur principal. Dans la mise à jour anniversaire Windows 10, il existe de nouvelles fonctionnalités dans l’infrastructure XAML et la couche visuelle qui facilitent la combinaison de ces deux technologies pour créer des expériences utilisateur incroyables.
-La fonctionnalité d’interopérabilité entre l’infrastructure XAML et la couche visuelle permet de créer des effets et des animations avancés qui ne sont pas disponibles à l’aide des API XAML seules. notamment :
+Les fonctionnalités XAML et d’interopérabilité des couches visuelles peuvent être utilisées pour créer des animations et des effets avancés non disponibles à l’aide des API XAML seules. notamment :
 
-- Effets de pinceau comme le flou et le verre givré
+- Effets de pinceau comme flou et verre dépoli
 - Effets d’éclairage dynamique
 - Parallaxe et animations par défilement
 - Animations de disposition automatique
-- Ombres portées au pixel près
+- Pixel-ombres de dépôt parfaite
 
-Comme ces effets et animations peuvent être appliqués au contenu XAML existant, vous n’avez pas besoin de restructurer énormément votre application XAML pour tirer parti des nouvelles fonctionnalités.
+Ces effets et animations peuvent être appliqués au contenu XAML existant. vous n’avez donc pas à restructurer radicalement votre application XAML pour tirer parti de la nouvelle fonctionnalité.
 Les animations de disposition, les ombres et les effets de flou sont abordés dans la section Recettes ci-après. Pour obtenir un exemple de code implémentant la parallaxe, consultez [l’exemple ParallaxingListItems](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK%2010586/ParallaxingListItems). Le [référentiel WindowsUIDevLabs](https://github.com/microsoft/WindowsCompositionSamples) comprend également plusieurs exemples pour implémenter des animations, des ombres et des effets.
 
-## <a name="the-xamlcompositionbrushbase-class"></a>Classe XamlCompositionBrushBase
+## <a name="the-xamlcompositionbrushbase-class"></a>La classe XamlCompositionBrushBase
 
-**XamlCompositionBrush** fournit une classe de base pour les pinceaux XAML qui peignent une zone avec un élément **CompositionBrush**. Cela permet d’appliquer facilement des effets de composition, comme le flou ou le verre givré, aux éléments de l’interface utilisateur XAML.
+**XamlCompositionBrush** fournit une classe de base pour les pinceaux XAML qui peignent une zone avec un **CompositionBrush**. Cela peut être utilisé pour appliquer facilement des effets de composition comme un flou ou un verre dépoli aux éléments d’interface utilisateur XAML.
 
-Consultez la section [**Pinceaux**](/windows/uwp/design/style/brushes#xamlcompositionbrushbase) pour en savoir plus sur l’utilisation des pinceaux avec l’interface utilisateur XAML.
+Consultez la section [**pinceaux**](../design/style/brushes.md#xamlcompositionbrushbase) pour plus d’informations sur l’utilisation de pinceaux avec l’interface utilisateur XAML.
 
-Pour obtenir des exemples de code, consultez la page de référence de la classe [**XamlCompositionBrushBase**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase).
+Pour obtenir des exemples de code, consultez la page de référence de la classe [**XamlCompositionBrushBase**](/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase).
 
-## <a name="the-xamllight-class"></a>Classe XamlLight
+## <a name="the-xamllight-class"></a>La classe XamlLight
 
-**XamlLight** fournit une classe de base pour les effets d’éclairage XAML qui illuminent de manière dynamique une zone avec un élément **CompositionLight**.
+**XamlLight** fournit une classe de base pour les effets d’éclairage XAML qui illuminent dynamiquement une zone avec un **CompositionLight**.
 
-Consultez la section [**Éclairage**](xaml-lighting.md) pour en savoir plus sur l’utilisation des éclairages, notamment les éléments d’éclairage de l’interface utilisateur XAML.
+Pour plus d’informations sur l’utilisation d’éclairages, consultez la section [**éclairage**](xaml-lighting.md) , y compris les éléments d’interface utilisateur XAML.
 
-Pour obtenir des exemples de code, voir la page de référence de la classe [**XamlLight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamllight).
+Pour obtenir des exemples de code, consultez la page de référence de [**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight).
 
-## <a name="the-elementcompositionpreview-class"></a>Classe ElementCompositionPreview
+## <a name="the-elementcompositionpreview-class"></a>La classe ElementCompositionPreview
 
-[**ElementCompositionPreview**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview) est une classe statique qui fournit des fonctionnalités d’interopérabilité des couches visuelles et XAML. Pour une vue d’ensemble de la couche visuelle et de ses fonctionnalités, consultez [Couche visuelle](https://docs.microsoft.com/windows/uwp/graphics/visual-layer). La classe **ElementCompositionPreview** propose les méthodes suivantes :
+[**ElementCompositionPreview**](/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview) est une classe statique qui fournit une fonctionnalité d’interopérabilité entre l’infrastructure XAML et la couche visuelle. Pour une vue d’ensemble de la couche visuelle et de ses fonctionnalités, consultez [Couche visuelle](./visual-layer.md). La classe **ElementCompositionPreview** propose les méthodes suivantes :
 
--   [**GetElementVisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): obtenir un visuel « document » utilisé pour restituer cet élément
--   [**SetElementChildVisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.setelementchildvisual): définit un visuel « main » comme dernier enfant de l’arborescence d’éléments visuels de cet élément. Ce visuel pourra dessiner par-dessus le reste de l’élément. 
--   [**GetElementChildVisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): récupère le jeu visuel à l’aide de **SetElementChildVisual**
--   [**GetScrollViewerManipulationPropertySet**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): obtenir un objet qui peut être utilisé pour créer des animations 60fps basées sur un décalage de défilement dans un **ScrollViewer**
+-   [**GetElementVisual**](/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): obtenir un visuel « document » utilisé pour restituer cet élément
+-   [**SetElementChildVisual**](/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.setelementchildvisual): définit un visuel « main » comme dernier enfant de l’arborescence d’éléments visuels de cet élément. Ce visuel pourra dessiner par-dessus le reste de l’élément. 
+-   [**GetElementChildVisual**](/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual) : récupérez le visuel défini à l’aide de **SetElementChildVisual**.
+-   [**GetScrollViewerManipulationPropertySet**](/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual) : obtenez un objet permettant de créer des animations de 60 FPS en fonction du décalage de défilement dans un élément **ScrollViewer**.
 
 ## <a name="remarks-on-elementcompositionpreviewgetelementvisual"></a>Remarques sur ElementCompositionPreview.GetElementVisual
 
@@ -96,7 +96,7 @@ ElementCompositionPreview.GetElementVisual(MyImage).StartAnimation("Offset", par
 
 ## <a name="getalphamask-methods"></a>Méthodes **GetAlphaMask**
 
-[**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image), [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)et [**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape) implémentent chacun une méthode appelée **GetAlphaMask** qui retourne un **CompositionBrush** représentant une image en nuances de gris avec la forme de l’élément. Cet élément **CompositionBrush** peut servir d’entrée pour une Composition **DropShadow**, de sorte que l’ombre puisse refléter la forme de l’élément plutôt qu’un rectangle. Cela permet d’obtenir des ombres de contour au pixel près pour le texte, les images avec masque alpha et les formes. Consultez la section *Ombre portée* ci-dessous pour obtenir un exemple de cette API.
+Les éléments [**Image**](/uwp/api/Windows.UI.Xaml.Controls.Image), [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) et [**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape) implémentent chacun une méthode appelée **GetAlphaMask** qui renvoie un élément **CompositionBrush** représentant une image en nuances de gris avec la forme de l’élément. Cet élément **CompositionBrush** peut servir d’entrée pour une Composition **DropShadow**, de sorte que l’ombre puisse refléter la forme de l’élément plutôt qu’un rectangle. Cela permet d’obtenir des ombres de contour au pixel près pour le texte, les images avec masque alpha et les formes. Consultez la section *Ombre portée* ci-dessous pour obtenir un exemple de cette API.
 
 ## <a name="recipes"></a>Recettes
 
@@ -151,7 +151,7 @@ Appliquez une ombre portée au pixel près à un élément **UIElement**, par ex
 3. Configurer l’élément **DropShadow** pour obtenir sa forme à partir de l’élément cible via un masque
     - L’élément **DropShadow** est rectangulaire par défaut, cette étape n’est donc pas nécessaire si la cible est rectangulaire
 4. Attacher l’ombre à un nouvel élément **SpriteVisual** et définir l’élément **SpriteVisual** comme l’enfant de l’élément hôte
-5. Lier la taille de l’élément **SpriteVisual** à la taille de l’hôte en utilisant une **ExpressionAnimation**.
+5. Lier la taille de l’élément **SpriteVisual** à la taille de l’hôte en utilisant une **ExpressionAnimation**
 
 ```xaml
 <Grid Width="200" Height="200">
@@ -199,7 +199,7 @@ private void InitializeDropShadow(UIElement shadowHost, Shape shadowTarget)
 }
 ```
 
-Les deux listes suivantes montrent les équivalents [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/index) et [C++/CX](https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx) du code C&#35; précédent à l’aide de la même structure XAML.
+Les deux listes suivantes illustrent les équivalents [c++/WinRT](../cpp-and-winrt-apis/index.md) et [c++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) du code précédent du&#35; C à l’aide de la même structure XAML.
 
 ```cppwinrt
 #include <winrt/Windows.UI.Composition.h>
@@ -291,8 +291,8 @@ Créez un effet qui estompe et teint le contenu en arrière-plan. Notez que les 
 2.  Créer une arborescence d’effet de flou à l’aide de Win2D et **CompositionEffectSourceParameter**
 3.  Créer un élément **CompositionEffectBrush** en fonction de l’arborescence d’effet
 4.  Définir l’entrée de l’élément **CompositionEffectBrush** sur **CompositionBackdropBrush**, ce qui permet d’appliquer un effet au contenu se trouvant derrière un élément **SpriteVisual**
-5.  Définir l’élément **CompositionEffectBrush** comme le contenu d’un nouvel élément **SpriteVisual** et définir l’élément **SpriteVisual** comme l’enfant de l’élément hôte. Vous pouvez également utiliser une classe XamlCompositionBrushBase.
-6.  Lier la taille de l’élément **SpriteVisual** à la taille de l’hôte en utilisant une **ExpressionAnimation**.
+5.  Définissez **CompositionEffectBrush** comme contenu d’un nouveau **SpriteVisual**, puis définissez **SpriteVisual** comme enfant de l’élément hôte. Vous pouvez également utiliser un XamlCompositionBrushBase.
+6.  Lier la taille de l’élément **SpriteVisual** à la taille de l’hôte en utilisant une **ExpressionAnimation**
 
 ```xaml
 <Grid Width="300" Height="300" Grid.Column="1">
@@ -360,10 +360,10 @@ private void InitializeFrostedGlass(UIElement glassHost)
 }
 ```
 
-## <a name="additional-resources"></a>Ressources complémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
-- [Vue d’ensemble des couches visuelles](https://docs.microsoft.com/windows/uwp/composition/visual-layer)
-- [**ElementCompositionPreview** , classe](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Hosting.ElementCompositionPreview)
+- [Vue d’ensemble de couche visuelle](./visual-layer.md)
+- [**ElementCompositionPreview** , classe](/uwp/api/Windows.UI.Xaml.Hosting.ElementCompositionPreview)
 - Exemples d’interface utilisateur et de composition avancés dans le [GitHub WindowsUIDevLabs](https://github.com/microsoft/WindowsCompositionSamples).
-- [Exemple BasicXamlInterop](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK%2010586/BasicXamlInterop)
-- [Exemple ParallaxingListItems](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK%2010586/ParallaxingListItems)
+- [Exemple de BasicXamlInterop](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK%2010586/BasicXamlInterop)
+- [Exemple de ParallaxingListItems](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK%2010586/ParallaxingListItems)

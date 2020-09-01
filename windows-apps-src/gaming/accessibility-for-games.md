@@ -4,26 +4,26 @@ description: Découvrez comment assurer l’accessibilité de vos jeux. Applique
 ms.assetid: f5ba1e60-0d7c-11e6-91ec-0002a5d5c51b
 ms.date: 11/09/2017
 ms.topic: article
-keywords: Windows 10, uwp, accessibilité, jeux
+keywords: Windows 10, UWP, accessibilité, jeux
 ms.localizationpriority: medium
-ms.openlocfilehash: 347f5c6900806ef4658b81b8db15957029d39116
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: f90f976f696d5c49e7f772627bbb7d0e3e3d0908
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77478645"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159433"
 ---
 #  <a name="making-games-accessible"></a>Proposer des jeux accessibles
 
-L’accessibilité contribue à accroître les capacités de l’ensemble des individus et des organisations de la planète, et cela se vérifie également dans le domaine des jeux vidéo. Cet article s’adresse aux développeurs, aux concepteurs et aux producteurs de jeux. Il offre une vue d’ensemble des recommandations en matière de conception de jeux accessibles émanant de diverses organisations (répertoriées dans la section de références à la fin de cet article) et présente le principe de conception de jeux inclusifs à appliquer pour améliorer l’accessibilité des jeux.
+L’accessibilité contribue à accroître les capacités de l’ensemble des individus et des organisations de la planète, et cela se vérifie également dans le domaine des jeux vidéo. Cet article est conçu pour les développeurs de jeux, les concepteurs de jeux et les producteurs. Il offre une vue d’ensemble des recommandations en matière de conception de jeux accessibles émanant de diverses organisations (répertoriées dans la section de références à la fin de cet article) et présente le principe de conception de jeux inclusifs à appliquer pour améliorer l’accessibilité des jeux.
 
 ## <a name="gaming-for-everyone"></a>Jeux tous publics
 
-Chez Microsoft, nous pensons que les jeux doivent permettre à tout le monde de s’amuser. « Nous nous efforçons de rendre les jeux agréables et accessibles à tous. Nous pensons vraiment que ce que nous créons pour nos fans et la manière dont nous le faisons (à l’intérieur et à l’extérieur de Microsoft) reflète ce que nous sommes. Nous avons conçu ce programme afin de refléter nos valeurs fondamentales et nous pensons que le programme pourrait aboutir à un changement positif (non seulement dans notre espace de travail, mais aussi dans les produits que nous développons pour nos joueurs) ». ([Billet de Blog](https://blogs.microsoft.com/blog/2016/06/13/gaming-for-everyone/) de Phil Spencer)
+Chez Microsoft, nous pensons que les jeux doivent être amusants pour tout le monde. Nous avons pensé à faire plus pour faire du jeu un environnement inclusif qui adoptait tout le monde. Nous pensons fondamentalement que ce que nous créons pour nos fans et le mode d’affichage, à l’intérieur et à l’extérieur des murs de Microsoft, est la réflexion de ce que nous faisons. Nous avons conçu le programme pour qu’il reflète les valeurs de base dont nous disposons en tant qu’organisation et que le programme puisse apporter des modifications positives, non seulement dans notre espace de travail, mais aussi dans les produits que nous créons pour les joueurs que nous utilisons. (Billet de[blog](https://blogs.microsoft.com/blog/2016/06/13/gaming-for-everyone/) de Phil Spencer)
 
-Nous voulons créer un environnement accueillant, amusant et varié accessible à tous. « Un virage culturel est indispensable pour qu’il y ait un impact durable et cela ne se fait pas du jour au lendemain. Toutefois, notre équipe s’engage à faire mieux chaque jour, à se concerter et à s’interrompre au cours du processus de prise de décision afin de réfléchir à l’incroyable diversité des besoins, aux capacités et aux centres d’intérêt des joueurs partout dans le monde. » ([Billet de Blog](https://blogs.microsoft.com/blog/2016/06/13/gaming-for-everyone/) de Phil Spencer)
+Nous souhaitons créer un environnement amusant, diversifié et inclusif dans lequel tout le monde peut jouer. «Pour réellement avoir un impact durable, il faut un décalage de culture, qui ne se produira pas au lendemain. Toutefois, notre équipe s’est engagée à être plus performante chaque jour, pour s’adapter à notre processus décisionnel et réfléchir à la diversité incroyable des besoins, des aptitudes et des intérêts entre les joueurs dans le monde entier.» (Billet de[blog](https://blogs.microsoft.com/blog/2016/06/13/gaming-for-everyone/) de Phil Spencer)
 
-Venez participer à cette aventure afin de faire du concept de [Jeux tous publics](https://news.microsoft.com/gamingforeveryone/) une réalité. 
+Nous espérons que vous nous rejoignerez à ce voyage pour faire [des jeux pour tout le monde](https://news.microsoft.com/gamingforeveryone/) . 
 
 ##  <a name="why-make-games-accessible"></a>Pourquoi proposer des jeux accessibles ?
 
@@ -33,25 +33,25 @@ Venez participer à cette aventure afin de faire du concept de [Jeux tous public
 
 Nombre d’utilisateurs pouvant jouer à votre jeu x niveau d’excellence du jeu = augmentation des ventes du jeu
 
-Si vous créez un jeu spectaculaire, mais si complexe ou alambiqué que seule une poignée de joueurs peuvent en profiter, vous limiterez votre nombre de ventes. De même, si vous concevez un jeu inutilisable par des personnes présentant des troubles physiques, sensoriels ou cognitifs, vous raterez des opportunités de ventes. Si l’on considère par exemple que [19 % de la population américaine souffre d’une forme quelconque de handicap ou d’invalidité](https://www.census.gov/newsroom/releases/archives/miscellaneous/cb12-134.html), [que 14 % environ des adultes américains éprouvent des difficultés à lire](https://nces.ed.gov/naal/estimates/overview.aspx), et [qu’environ 10 % des hommes souffrent d’une forme de trouble de la vision des couleurs](https://www.aao.org/eye-health/diseases/color-blindness-risk), cet aspect peut avoir une incidence considérable sur les revenus générés par votre jeu. 
+Si vous créez un jeu spectaculaire, mais si complexe ou alambiqué que seule une poignée de joueurs peuvent en profiter, vous limiterez votre nombre de ventes. De même, si vous concevez un jeu inutilisable par des personnes présentant des troubles physiques, sensoriels ou cognitifs, vous raterez des opportunités de ventes. En supposant que [19% des personnes du États-Unis présentent une certaine forme de handicap](https://www.census.gov/newsroom/releases/archives/miscellaneous/cb12-134.html), [14% des adultes estimés aux États-Unis ont des difficultés à lire](https://nces.ed.gov/naal/estimates/overview.aspx)et [10% des mâles ont une forme de défaillance de la vision des couleurs](https://www.aao.org/eye-health/diseases/color-blindness-risk), cela peut avoir un impact important sur le chiffre d’affaires de votre titre. 
 
-Pour découvrir d’autres justifications commerciales, voir [Proposer des jeux vidéo accessibles](https://docs.microsoft.com/windows/desktop/DxTechArts/accessibility-best-practices).
+Pour découvrir d’autres justifications commerciales, voir [Proposer des jeux vidéo accessibles](/windows/desktop/DxTechArts/accessibility-best-practices).
 
 ### <a name="better-games"></a>Amélioration des jeux
 
 La création d’un jeu plus accessible permet d’offrir un produit plus abouti au final. 
 
-Les jeux qui proposent des sous-titres en constituent un bon exemple. Par le passé, les jeux prenaient rarement en charge le sous-titrage des dialogues. Aujourd’hui, il est d’usage de proposer des jeux incluant des sous-titres et des légendes. Cette évolution n’a pas été inspirée par des joueurs souffrant de handicaps ou d’invalidités. Elle s’est effectuée sous l’impulsion de la localisation, et s’est étendue à un large éventail de joueurs qui préfèrent jouer avec des sous-titres, tout simplement car cela leur offre une meilleure expérience de jeu. Les joueurs activent les sous-titres et les légendes lorsqu’ils jouent dans un environnement présentant un bruit de fond important, lorsqu’ils éprouvent des difficultés d’audition des voix accompagnées de divers effets sonores ou bruits ambiants, ou simplement lorsqu’ils doivent maintenir le volume à bas niveau pour ne pas déranger leur entourage. L’affichage de sous-titres et de légendes a non seulement contribué à améliorer l’expérience de jeu des utilisateurs, mais a également étendu cette expérience aux personnes souffrant de handicaps ou d’invalidités.
+Les jeux qui proposent des sous-titres en constituent un bon exemple. Par le passé, les jeux prenaient rarement en charge le sous-titrage des dialogues. Aujourd’hui, il est d’usage de proposer des jeux incluant des sous-titres et des légendes. Cette évolution n’a pas été inspirée par des joueurs souffrant de handicaps ou d’invalidités. Au lieu de cela, il a été piloté par la localisation, mais il est devenu populaire avec un large éventail de joueurs qui préfèrent simplement jouer avec des sous-titres, car l’expérience de jeu a été améliorée. Les joueurs activent les sous-titres et les légendes lorsqu’ils jouent dans un environnement présentant un bruit de fond important, lorsqu’ils éprouvent des difficultés d’audition des voix accompagnées de divers effets sonores ou bruits ambiants, ou simplement lorsqu’ils doivent maintenir le volume à bas niveau pour ne pas déranger leur entourage. L’affichage de sous-titres et de légendes a non seulement contribué à améliorer l’expérience de jeu des utilisateurs, mais a également étendu cette expérience aux personnes souffrant de handicaps ou d’invalidités.
 
-Pour les mêmes raisons, la reconfiguration des manettes est une autre fonctionnalité progressivement adoptée en standard par l’industrie des jeux électroniques. Elle est très souvent présentée comme un avantage pour tous les joueurs. Certains joueurs aiment pouvoir personnaliser leur expérience de jeu, d’autres préfèrent simplement quelque chose de différent de ce que les concepteurs avaient à l’esprit. La plupart des gens ignorent que la possibilité de reconfigurer les boutons d’un périphérique d’entrée constitue en réalité une fonctionnalité d’accessibilité initialement conçue pour les utilisateurs présentant différents handicaps psychomoteurs et pour qui il était physiquement difficile, voir impossible de faire fonctionner certaines zones de la manette.
+Pour les mêmes raisons, la reconfiguration des manettes est une autre fonctionnalité progressivement adoptée en standard par l’industrie des jeux électroniques. Elle est généralement proposée en tant qu’avantage pour tous les joueurs. Certains joueurs apprécient la personnalisation de leurs expériences de jeux et d’autres préfèrent simplement les différences par rapport à ce que les concepteurs ont à l’esprit. Ce que la plupart des gens ne se rendent pas, c’est que la possibilité de remapper des boutons sur un appareil d’entrée est en fait également une fonctionnalité d’accessibilité qui a été conçue pour rendre un jeu lisible pour les personnes ayant différents types de handicaps moteurs, qui sont physiquement incapables de faire fonctionner certaines zones du contrôleur.
 
 Au final, la réflexion que vous aurez menée pour améliorer l’accessibilité de votre jeu se traduira généralement par l’obtention d’un jeu plus abouti, car vous offrirez à vos utilisateurs une expérience plus conviviale et personnalisable.
 
 ### <a name="social-space-and-quality-of-life"></a>Espace social et qualité de vie
 
-Les jeux vidéo sont l’une des formes de divertissement les plus largement répandues et peuvent offrir du bonheur pendant des heures. Toutefois, pour certaines personnes, le jeu permet non seulement de se divertir, mais également d’échapper à un lit d’hôpital, à une douleur chronique ou à une anxiété sociale invalidante. Les joueurs sont transportés au sein d’un univers qui leur offre la possibilité de devenir les personnages principaux du jeu vidéo. Grâce aux jeux, ils peuvent donner vie et prendre part à un espace social qui leur est destiné et qui leur fait oublier agréablement leur combat quotidien contre le handicap dont ils souffrent tout en leur offrant l’opportunité de communiquer avec des personnes avec lesquelles ils n’auraient peut-être pas la possibilité d’échanger dans d’autres circonstances. 
+Les jeux vidéo sont l’une des formes les plus élevées de divertissement et les jeux peuvent offrir des heures de joie. Toutefois, pour certaines personnes, le jeu permet non seulement de se divertir, mais également d’échapper à un lit d’hôpital, à une douleur chronique ou à une anxiété sociale invalidante. Les joueurs sont transportés au sein d’un univers qui leur offre la possibilité de devenir les personnages principaux du jeu vidéo. Grâce aux jeux, ils peuvent donner vie et prendre part à un espace social qui leur est destiné et qui leur fait oublier agréablement leur combat quotidien contre le handicap dont ils souffrent tout en leur offrant l’opportunité de communiquer avec des personnes avec lesquelles ils n’auraient peut-être pas la possibilité d’échanger dans d’autres circonstances. 
 
-Il s’agit également d’une culture. Le fait de pouvoir participer à la même activité que tous ses amis peut se révéler très valorisant pour une personne.
+Les jeux sont également une culture. La possibilité de prendre part à la même chose que l’ensemble de vos amis est quelque chose qui peut être très utile pour la qualité de vie d’un utilisateur.
 
 ##  <a name="is-the-game-you-are-making-today-accessible"></a>Le jeu que vous proposez aujourd’hui est-il accessible ?
 
@@ -63,7 +63,7 @@ Si vous envisagez pour la première fois de rendre votre jeu accessible, voici q
 * Prenez-vous en charge plusieurs types de périphériques d’entrée utilisables tout au long du jeu ?
 * Pouvez-vous jouer au jeu avec le son désactivé ?
 * Pouvez-vous jouer au jeu avec votre moniteur configuré en noir et blanc ?
-* Lorsque vous rechargez le dernier jeu enregistré au bout d’un mois, pouvez-vous savoir facilement où vous êtes arrivé et ce que vous devez faire afin de progresser ?
+* Lorsque vous chargez votre dernier jeu enregistré au bout d’un mois, pouvez-vous facilement déterminer où vous êtes dans le jeu et savoir ce que vous devez faire pour progresser ?
 
 Si vous répondez non à la plupart de ces questions ou que vous n’en connaissez pas les réponses, il est temps de passer à la vitesse supérieure et de garantir l’accessibilité de votre jeu.
 
@@ -74,24 +74,24 @@ Le terme « handicap/invalidité » désigne une incompatibilité entre les be
 ### <a name="vision"></a>Vision
 
 *   Affections médicales à long terme telles que le glaucome, la cataracte, le daltonisme, la myopie et la rétinopathie diabétique
-*   Situations circonstancielles à court terme comme un moniteur ou un écran de petite taille, un écran basse résolution ou la présence de reflets sur l’écran en raison de l’exposition du moniteur ou de l’écran de portable au soleil
+*   Conditions de situation, à court terme, telles qu’une petite taille d’écran ou d’écran, un écran à faible résolution ou un reflet de l’écran en raison de sources lumineuses vives comme le soleil sur un moniteur ou un écran mobile
         
-### <a name="hearing"></a>Audition
+### <a name="hearing"></a>Ouïe
 
 * Affections médicales à long terme telles qu’une surdité totale ou une perte d’audition partielle découlant de maladies ou de facteurs génétiques
-* Situations circonstancielles à court terme comme un bruit de fond excessif, une qualité audio médiocre ou une baisse du volume pour ne pas gêner l’entourage
+* Conditions à court terme, comme un bruit d’arrière-plan excessif, une qualité audio de qualité inférieure ou un volume restreint pour éviter d’en perturber d’autres
         
 ### <a name="motor"></a>Motricité
 
 * Affections médicales à long terme telles que la maladie de Parkinson, la sclérose latérale amyotrophique (SLA), l’arthrite et la dystrophie musculaire
 * Situations circonstancielles à court terme comme une blessure à la main ou le fait de tenir une boisson ou de porter un enfant dans ses bras
   
-### <a name="cognitive"></a>Capacités cognitives
+### <a name="cognitive"></a>Cognitif
 
 * Affections médicales à long terme telles que la dyslexie, l’épilepsie, le trouble déficitaire de l’attention avec hyperactivité (TDAH), la démence et l’amnésie
-* Situations circonstancielles à court terme comme la consommation d’alcool, le manque de sommeil ou les distractions temporaires telles que la sirène d’une ambulance passant à proximité
+* Conditions de situation, à court terme, telles que la consommation d’alcool, l’absence de sommeil ou les distractions temporaires comme sirène d’un véhicule d’urgence qui se dirige par la maison
 
-### <a name="speech"></a>Fonctions vocales
+### <a name="speech"></a>Speech
 
 * Affections médicales à long terme telles qu’une lésion des cordes vocales, une dysarthrie ou une apraxie
 * Situations circonstancielles à court terme comme des soins dentaires ou le fait de manger et de boire
@@ -103,41 +103,41 @@ Le terme « handicap/invalidité » désigne une incompatibilité entre les be
 
 La conception inclusive est axée sur la création de produits et de services plus accessibles à un plus vaste éventail de clients, y compris aux personnes souffrant de handicaps ou d’invalidités.
 
-Pour atteindre cet objectif, les concepteurs de jeux doivent désormais viser davantage que la simple création de jeux distrayants. Il leur faut tenir compte de l’impact de leur décisions de conception sur l’accessibilité globale du jeu, autrement dit sur la facilité de manipulation du jeu par l’ensemble des utilisateurs auxquels ils s’adressent, y compris ceux atteints de handicaps ou d’invalidités.
+Pour réussir, les concepteurs de jeux actuels doivent réfléchir à la création de jeux qu’ils apprécient. Les concepteurs de jeux doivent savoir comment leurs décisions de conception ont un impact sur l’accessibilité générale du jeu. la lecture du jeu pour l’ensemble de son public cible, y compris les personnes handicapées.
 
-Les paradigmes de conception de jeux traditionnels doivent donc évoluer afin de prendre en compte le concept de conception de jeux inclusive. La conception de jeux inclusive implique de dépasser le processus élémentaire de développement de jeux uniquement axé sur le divertissement du public cible en créant des personnages supplémentaires ou modifiés afin d’englober un plus large éventail de joueurs. Vous devez être parfaitement au courant des difficultés dans votre jeu et vous assurer qu’elles ne constituent pas des obstacles inutiles qui enlèvent le plaisir de jouer.
+Les paradigmes de conception de jeux traditionnels doivent donc évoluer afin de prendre en compte le concept de conception de jeux inclusive. La conception de jeux inclusive implique de dépasser le processus élémentaire de développement de jeux uniquement axé sur le divertissement du public cible en créant des personnages supplémentaires ou modifiés afin d’englober un plus large éventail de joueurs. Vous devez être conscient de la conception des barrières dans votre jeu et vous assurer qu’elles n’ajoutent pas d’obstacles inutiles qui ne sont pas amusants de l’expérience prévue.
 
-En identifiant ces lacunes, vous pouvez optimiser, itérer sur le concept de conception d’origine et améliorer ce dernier, ce qui permet à d’autres personnes de partager votre vision. Lorsque vous prenez le temps de mettre en place un processus de conception de jeux plus inclusif, vous améliorez l’accessibilité de votre jeu au final. Aucun jeu ne peut convenir à tout le monde. La définition d’un jeu nécessite certains degrés de difficulté, mais en tenant compte de l’accessibilité vous avez la certitude de n’exclure personne inutilement.
+En identifiant les lacunes, vous pouvez optimiser, effectuer une itération sur le concept de conception d’origine et le rendre plus efficace, ce qui permet à d’autres personnes d’expérimenter votre vision. Lorsque vous prenez le temps de mettre en place un processus de conception de jeux plus inclusif, vous améliorez l’accessibilité de votre jeu au final. Aucun jeu ne peut fonctionner pour tout le monde, la définition du jeu requiert un certain degré de défi, mais en prenant en compte l’accessibilité, vous pouvez vous assurer que personne n’est inutilement exclu.
 
 ### <a name="empower-gamers-give-gamers-options"></a>Accroissement des capacités des joueurs : élargissez les options des utilisateurs
 
-Presque toutes les solutions d’accessibilité se résument à deux principes. Le premier principe consiste à offrir aux joueurs une multitude d’options pour personnaliser leur expérience de jeu. Si vos jeux connaissent déjà une immense popularité, il est possible qu’une part non négligeable de vos fans refuse toute modification de l’expérience de jeu. Cela ne pose aucun problème. Offrez à vos joueurs la possibilité d’activer ou de désactiver les fonctionnalités d’accessibilité et de configurer ces dernières individuellement. Vous devez permettre aux joueurs de profiter au mieux du jeu en fonction de leurs besoins et de leurs préférences.
+Presque toutes les solutions d’accessibilité sont en passe de l’un des deux principes. La première offre à vos joueurs les options pour personnaliser leur expérience de jeux. Si vos jeux connaissent déjà une immense popularité, il est possible qu’une part non négligeable de vos fans refuse toute modification de l’expérience de jeu. Cela ne pose aucun problème. Offrez à vos joueurs la possibilité d’activer ou de désactiver les fonctionnalités d’accessibilité et de configurer ces dernières individuellement. Vous devez permettre aux utilisateurs d’expérimenter le jeu de la manière qui convient le mieux à leurs propres besoins et préférences.
 
-### <a name="reinforce-communicate-information-in-more-than-one-way"></a>Renforcer : communiquez les informations de plusieurs façons
+### <a name="reinforce-communicate-information-in-more-than-one-way"></a>Renforcement : communiquer des informations de plusieurs façons
 
-Le deuxième principe consiste à offrir une approche unique qui non seulement permet de rassembler plus de joueurs mais améliore également l’expérience dans son ensemble et c’est là qu’intervient le concept de conception universelle. Par exemple une image ainsi que du texte, un symbole ainsi que de la couleur. Une carte basée sur une plage de marqueurs de couleur différents est non seulement impossible pour les joueurs aveugles de couleurs d’utiliser, mais elle est également frustrante pour tous les autres personnes qui doivent se souvenir de ce que tout correspond à. L’ajout de symboles permet d’offrir une meilleure expérience à tous les utilisateurs.
+Le deuxième principe est l’endroit où se trouve le concept de conception universelle, une seule approche qui, non seulement, offre un plus grand nombre de joueurs mais améliore également l’expérience de tous. Par exemple, une image et du texte, un symbole et une couleur. Une carte basée sur une plage de marqueurs de couleur différents est non seulement impossible pour les joueurs aveugles de couleurs d’utiliser, mais elle est également frustrante pour tous les autres personnes qui doivent se souvenir de ce que tout correspond à. L’ajout de symboles offre une meilleure expérience à tous.
 
 ### <a name="innovate-be-creative"></a>Innovation : faites preuve de créativité
 
-Vous disposez de nombreux moyens pour améliorer l’accessibilité de votre jeu. Soyez inventif et inspirez-vous des autres jeux accessibles existants. Si vous avez déjà créé un jeu, efforcez-vous d’en identifier les fonctionnalités que vous pourriez améliorer tout en conservant les mécanismes clés du jeu et l’expérience de jeu initiale. Comme indiqué précédemment, l’accessibilité en matière de jeux repose entièrement sur l’offre de possibilités de personnalisation de l’expérience de jeu. Cela peut se faire en renforçant ou en communiquant les informations de plusieurs manières. 
+Vous disposez de nombreux moyens pour améliorer l’accessibilité de votre jeu. Soyez inventif et inspirez-vous des autres jeux accessibles existants. Si vous avez déjà créé un jeu, efforcez-vous d’en identifier les fonctionnalités que vous pourriez améliorer tout en conservant les mécanismes clés du jeu et l’expérience de jeu initiale. Comme indiqué précédemment, l’accessibilité en matière de jeux repose entièrement sur l’offre de possibilités de personnalisation de l’expérience de jeu. Il peut s’agir d’un renforcement ou d’une communication d’informations de plusieurs façons. 
 
-Le fait de réfléchir à l’accessibilité vous permet d’aborder la conception sous un nouvel angle et éventuellement de trouver des idées auxquelles vous n’auriez pas pensé sinon. Cette approche de la conception aboutit non seulement à des concepts intéressants, mais permet aussi de créer des produits adoptés massivement ou qui rencontrent un grand succès commercial. Parmi les exemples on trouve la saisie de texte prédictive personnalisée, la reconnaissance vocale, les entrées charretières, le haut-parleur, la machine à écrire et la reconnaissance optique de caractères (OCR). Ces produits ont été au départ imaginés par des personnes qui réfléchissaient à des solutions pour l’accessibilité.
+La prise en compte de l’accessibilité vous permet d’aborder la conception à partir d’un nouvel angle et éventuellement des idées que vous n’auriez pas pensé autrement. Cette approche de la conception a abouti non seulement à des concepts intéressants, mais a créé des produits qui ont une adoption étendue ou un succès commercial du marché de masse. Citons notamment le texte prédictif, la reconnaissance vocale, les coupes, le haut-parleur, la machine à écrire et la reconnaissance optique de caractères (OCR). Les idées de ces produits proviennent de ceux qui ont commencé à réfléchir aux solutions pour l’accessibilité.
 
-### <a name="adopt-quality-means-accessible-features"></a>Adopter : qualité signifie fonctionnalités accessibles
+### <a name="adopt-quality-means-accessible-features"></a>Adopter : la qualité signifie des fonctionnalités accessibles
 
-L’accessibilité est un critère de qualité. Elle devrait être obligatoire et non facultative. Par exemple, « L’adaptation d’une mini-carte pour les personnes daltoniennes » ne doit pas être considérée comme une tâche secondaire, de faible priorité que vous faites s’il vous reste du temps. Si cette tâche n’est pas effectuée, la fonctionnalité de minicarte est incomplète et ne peut pas être livrée.
+L’accessibilité est une mesure de la qualité. Il doit s’agir d’une spécification de fonctionnalité et non d’un élément de travail approprié. Par exemple, « adapter minicarte for colourblindness » n’est pas considéré comme un élément de travail de faible priorité auquel vous accédez si vous avez plus de temps. Si cet élément de travail n’est pas terminé, cela signifie simplement que la totalité de la fonctionnalité minicarte est incomplète et ne peut pas être expédiée.
 
 ### <a name="evangelize-make-accessibility-a-priority-in-your-game-studio"></a>Sensibilisation : mettez l’accent sur l’accessibilité dans votre studio de jeu
 
-Le développement de jeux étant fréquemment soumis à des délais serrés, votre capacité à hisser l’accessibilité au rang de vos priorités contribuera à simplifier ce processus. Un bon moyen de procéder consiste à concevoir vos jeux à partir de zéro en gardant l’accessibilité à l’esprit. Plus l’accessibilité est prise en compte tôt et plus il est facile et économique de la mettre en place. 
+Le développement de jeux étant fréquemment soumis à des délais serrés, votre capacité à hisser l’accessibilité au rang de vos priorités contribuera à simplifier ce processus. Un bon moyen de procéder consiste à concevoir vos jeux à partir de zéro en gardant l’accessibilité à l’esprit. Plus tôt vous considérez l’accessibilité, plus l’opération est simple et économique. 
 
-Partagez vos connaissances sur l’accessibilité avec les membres de votre équipe, présentez-leur les justifications commerciales de cette approche, et dissipez les idées reçues, à savoir que l’accessibilité profite à peu de monde et qu’elle est compliquée et onéreuse à mettre en place.
+Partagez vos connaissances en matière d’accessibilité avec votre équipe, partagez les justifications de l’entreprise et dissiper les conceptages courants, qu’elle n’offre pas beaucoup de gens, elle dilue votre mécanicien et il est difficile et coûteux à implémenter.
 
 ### <a name="review-constantly-evaluate-your-game"></a>Vérification : évaluez continuellement votre jeu
 
 Au cours du développement, vous pouvez introduire un processus de vérification destiné à vous assurer que chaque étape de la conception est axée sur l’accessibilité. Établissez une liste de contrôle semblable à celle ci-dessous pour aider votre équipe à déterminer continuellement si le jeu que vous créez est ou non accessible.
 
-| Liste de vérification                                         | Fonctionnalités d’accessibilité                                                                                                         |
+| Liste de contrôle                                         | Fonctionnalités d’accessibilité                                                                                                         |
 |---------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
 | Séquences animées au sein du jeu                                | Présentation de sous-titres et de légendes, test de photosensibilité des animations                                                                           |
 | Conception graphique globale (graphismes 2D et 3D)              | Couleurs et options aveugles de couleur, non dépendantes entièrement de la couleur pour l’identification, mais utilisant également des formes et des modèles|
@@ -148,13 +148,13 @@ Au cours du développement, vous pouvez introduire un processus de vérification
 
 ### <a name="playtest-and-iterate-get-gamers-feedback"></a>Test du jeu et itération : recueillez les commentaires des joueurs
 
-Lorsque vous organisez des sessions de test du jeu, invitez des personnes souffrant de handicaps ou d’invalidités à y participer afin de vérifier l’accessibilité de votre jeu. N’oubliez pas d’inclure des questions d’accessibilité dans les questionnaires de bêta-test. Les groupes de personnes handicapées sont une excellente source de participants. Observez la façon dont ces personnes utilisent votre jeu et recueillez leurs commentaires. Déterminez les changements à apporter afin d’améliorer votre jeu.
+Lorsque vous organisez des sessions de test du jeu, invitez des personnes souffrant de handicaps ou d’invalidités à y participer afin de vérifier l’accessibilité de votre jeu. N’oubliez pas d’inclure les questions d’accessibilité dans le test bêta questionaires. Les groupes d’infirmités locaux sont une source importante de participants. Observez la façon dont ces personnes utilisent votre jeu et recueillez leurs commentaires. Déterminez les changements à apporter afin d’améliorer votre jeu.
 
-Utilisez les médias sociaux et le forum de votre jeu pour recueillir des commentaires et savoir quelles sont les fonctionnalités d’accessibilité les plus importantes et comment elles doivent être implémentées. 
+Utilisez des réseaux sociaux et le Forum de votre jeu pour écouter les fonctionnalités d’accessibilité les plus importantes et comment elles doivent être implémentées. 
 
 ### <a name="shout-it-out-let-the-world-know-your-game-is-accessible"></a>Promotion : signalez l’accessibilité de votre jeu au monde entier
 
-Les utilisateurs ont besoin de savoir si votre jeu est manipulable par des personnes souffrant de handicaps ou d’invalidités. Signalez lisiblement l’accessibilité de votre jeu sur le site Web, les communiqués de presse et sur l’emballage du jeu pour vous assurer que les clients comprennent exactement les possibilités que leur offrira votre jeu. Pensez également à assurer l’accessibilité de votre site web et de tous les circuits de vente de votre jeu. Plus important encore, faites la promotion de votre jeu auprès de la communauté de joueurs concernés par l’accessibilité.
+Les utilisateurs ont besoin de savoir si votre jeu est manipulable par des personnes souffrant de handicaps ou d’invalidités. Indiquez clairement l’accessibilité du jeu sur le site Web du jeu, les communiqués de presse et l’empaquetage pour vous assurer que les consommateurs savent à quoi s’attendre quand ils achètent votre jeu. Pensez également à assurer l’accessibilité de votre site web et de tous les circuits de vente de votre jeu. Plus important encore, faites la promotion de votre jeu auprès de la communauté de joueurs concernés par l’accessibilité.
 
 ## <a name="game-accessibility-features"></a>Fonctionnalités d’accessibilité des jeux
 
@@ -173,9 +173,9 @@ Il existe trois types de cônes (rouges, verts et bleus) qui nous aident à visu
     * couleurs apparaissant comme similaires : toutes les nuances de rouge et de vert, y compris le marron et l’orange ;
     * couleurs qui ressortent : le bleu et le jaune.
     
-  + Ne comptez pas uniquement sur les couleurs pour communiquer ou distinguer les objets du jeu. Utilisez également des formes et des modèles.
-  + Si vous devez compter uniquement sur les couleurs, combinez des paramètres prédéfinis avec un libre choix de couleurs, afin que les joueurs qui en ont besoin puissent les personnaliser à leur guise et que cela n'engendre pas d'efforts supplémentaires pour les joueurs qui n’en ont pas besoin.
-  + Utilisez un simulateur de couleur aveugle pour tester vos conceptions afin de pouvoir afficher vos conceptions grâce aux yeux des aveugles. Cela va vous aider à éviter les problèmes de contraste élevé courants. La [couleur Oracle](https://www.colororacle.org) est un simulateur borgne de couleur gratuit qui peut simuler les trois types les plus courants d’insuffisance de la vision des couleurs : Deuteranopia, protanopia et tritanopia.
+  + Ne vous fiez pas uniquement à la couleur pour communiquer ou distinguer les objets de jeu. Utilisez également des formes et des modèles.
+  + Si vous devez vous appuyer uniquement sur des couleurs, combinez les présélections avec une sélection de couleurs libre, afin qu’elles puissent être entièrement personnalisables par les joueurs qui en ont besoin et ne pas créer de travail supplémentaire pour les joueurs qui n’en ont pas besoin.
+  + Utilisez un simulateur de couleur aveugle pour tester vos conceptions afin de pouvoir afficher vos conceptions grâce aux yeux des aveugles. Cela peut vous aider à éviter les problèmes de contraste courants. La [couleur Oracle](https://www.colororacle.org) est un simulateur borgne de couleur gratuit qui peut simuler les trois types les plus courants d’insuffisance de la vision des couleurs : Deuteranopia, protanopia et tritanopia.
   
 ### <a name="closed-captioning-and-subtitles"></a>Sous-titres et légendes
 
@@ -185,18 +185,18 @@ Voici quelques recommandations de base à prendre en compte lors de la conceptio
 
 *   Sélectionnez une police lisible simple.
 *   Choisissez une police suffisamment grande ou envisagez de proposer une option de taille de police ajustable afin d’améliorer la flexibilité. (La taille de police idéale dépend de la taille de l’écran, de l’éloignement de l’écran, etc.)
-*   Créez un contraste élevé entre la couleur d’arrière-plan et la couleur de police. Appliquez un contour et une ombre au texte. Utilisez un arrière-plan sombre pour les légendes et n’oubliez pas d’y associer des options permettant de l’activer ou de le désactiver. (Pour plus d’informations, voir [Coefficients de contraste](https://docs.microsoft.com/windows/uwp/accessibility/accessible-text-requirements).)
-* Affichez des phrases courtes à l’écran (38 caractères au maximum par ligne et 2 à 3 lignes maximum à la fois). (Veillez à ne pas gâcher le suspense de votre jeu en affichant le texte avant que l’événement correspondant ne se produise.)
+*   Créez un contraste élevé entre la couleur d’arrière-plan et la couleur de police. Utilisez le contour et les ombres fortes pour le texte. Utilisez une superposition d’arrière-plan sombre pour les légendes et n’oubliez pas de fournir des options pour qu’elles soient activées ou désactivées. (Pour plus d’informations, voir [Coefficients de contraste](../design/accessibility/accessible-text-requirements.md).)
+* Affichez des phrases courtes à l’écran, 38 caractères maximum par ligne et 2-3 lignes maximum à un moment donné. (Veillez à ne pas gâcher le suspense de votre jeu en affichant le texte avant que l’événement correspondant ne se produise.)
 *   Indiquez clairement la provenance de l’effet sonore ou le nom du personnage en train de parler. (Par exemple : « Daniel : Bonjour ! »)
 *   Offrez la possibilité d’activer et de désactiver les sous-titres et les légendes. (Fonctionnalité supplémentaire : possibilité de sélection de la quantité d’informations sonores affichées en fonction de leur importance.)
 
-### <a name="game-chat-transcription"></a>Transcription de tchat en cours de jeu
+### <a name="game-chat-transcription"></a>Transcription de conversation de jeu
 
-Si le jeu permet aux joueurs de communiquer verbalement et de s’envoyer des SMS, les fonctionnalités de reconnaissance vocale et de synthèse vocale doivent être disponibles en tant qu’option.
+Si votre titre autorise les joueurs à communiquer à l’aide de la voix et à envoyer des messages texte les uns aux autres, les fonctionnalités de conversion de texte par synthèse vocale et de synthèse vocale doivent être disponibles en option.
 
-Les personnes qui n’ont pas de microphones connectés à leur périphérique de jeu peuvent toujours avoir une conversation avec une personne qui parle. Elles peuvent saisir du texte dans la fenêtre de conversation et le convertir en messages vocaux. Cela permet aussi aux personnes qui n’entendent pas très bien de lire les messages texte retranscrits de la personne avec qu’ils ont une conversation vocale.
+Les personnes qui n’ont pas de microphones attachés à leur appareil de jeu peuvent toujours avoir une conversation vocale avec quelqu’un qui parle. Ils peuvent taper du texte dans la fenêtre de conversation et faire en sorte que ces messages soient convertis en voix. Il permet également à quelqu’un qui ne peut pas entendre très bien de lire les messages texte transcrits de la personne avec laquelle ils ont une conversation vocale.
 
-Pour les partenaires et les développeurs gérés dans le programme ID@Xbox, les fonctionnalités de reconnaissance vocale et de synthèse vocale sont disponibles en tant que [fonctionnalités d’accessibilité Game Chat 2](https://docs.microsoft.com/gaming/xbox-live/multiplayer/chat/using-game-chat-2.md#accessibility) dans le service Xbox Live. Pour plus d’informations, voir [Game Chat 2 Overview](https://docs.microsoft.com/gaming/xbox-live/multiplayer/chat/game-chat-2-overview.md).
+Pour les développeurs dans le ID@Xbox programme et les partenaires gérés, les fonctionnalités de synthèse vocale et de synthèse vocale sont disponibles dans le cadre des [fonctionnalités d’accessibilité de Game chat 2](/gaming/xbox-live/multiplayer/chat/using-game-chat-2.md#accessibility) dans le service Xbox Live. Pour plus d’informations, consultez [vue d’ensemble de Game chat 2](/gaming/xbox-live/multiplayer/chat/game-chat-2-overview.md).
 
 ### <a name="sound-feedback"></a>Retour audio
 
@@ -213,9 +213,9 @@ Certaines entreprises et organisations, telles que [Special Effect](https://www.
 
 En tant que développeur de jeux, vous pouvez améliorer l’accessibilité de votre jeu en autorisant les contrôles entièrement configurables afin d’offrir aux joueurs la possibilité de brancher leurs manettes personnalisées et de reconfigurer les touches selon leurs besoins.
 
-Les contrôles entièrement configurables sont également bénéfiques pour les personnes qui utilisent des contrôleurs standard. Les joueurs peuvent concevoir une disposition adaptée à leurs besoins individuels.
+Le fait de disposer de contrôles entièrement mappables est également bénéfique aux personnes qui utilisent des contrôleurs standard. Vos joueurs peuvent concevoir une disposition qui répond à leurs propres besoins individuels.
 
-Les manettes Xbox One standard et Xbox Elite sont personnalisables pour les jeux de précision. Pour profiter pleinement des fonctionnalités de remappage, __il est recommandé que les développeurs incluent le remappage directement dans le jeu__. Pour plus d’informations, voir [Xbox One](https://support.xbox.com/xbox-one/accessories/customize-standard-controller-with-accessories-app) et [Xbox Elite](https://support.xbox.com/xbox-one/accessories/use-accessories-app-configure-elite-controller).
+Les manettes Xbox One standard et Xbox Elite sont personnalisables pour les jeux de précision. Pour utliize entièrement leurs fonctionnalités de remappage, __il est recommandé que les développeurs incluent le remappage directement dans le jeu__. Pour plus d’informations, voir [Xbox One](https://support.xbox.com/xbox-one/accessories/customize-standard-controller-with-accessories-app) et [Xbox Elite](https://support.xbox.com/xbox-one/accessories/use-accessories-app-configure-elite-controller).
 
 ### <a name="wider-selection-of-difficulty-levels"></a>Large éventail de niveaux de difficulté
 
@@ -225,25 +225,25 @@ La mise au point du niveau de difficulté de votre jeu constitue un processus d�
 
 ### <a name="photosensitivity-epilepsy-testing"></a>Test contre les risques d’épilepsie photosensible
 
-L’épilepsie photosensible désigne le déclenchement de crises d’épilepsie par des stimuli visuels, notamment l’exposition à des lumières clignotantes ou à certains types de formes et de motifs visuels en mouvement. Ce type de trouble touche près de trois pour cent de la population et survient plus fréquemment chez les enfants et les adolescents. En termes de chiffres, cela touche environ [1 personne sur 4000 âgées de 5 à 24 ans](https://www.epilepsy.com/learn/professionals/about-epilepsy-seizures/reflex-seizures-and-related-epileptic-syndromes-0).
+L’épilepsie (PSE) est une condition dans laquelle les crises sont déclenchées par des stimuli visuels, y compris des expositions à des lampes clignotantes ou à certains modèles et modèles visuels mobiles. Ce type de trouble touche près de trois pour cent de la population et survient plus fréquemment chez les enfants et les adolescents. En termes de nombres, nous examinons environ [1 4000 personnes âgées de 5-24](https://www.epilepsy.com/learn/professionals/about-epilepsy-seizures/reflex-seizures-and-related-epileptic-syndromes-0).
 
 De nombreux facteurs peuvent entraîner une réaction photosensible lors de l’utilisation d’un jeu vidéo, comme la durée de la partie, la fréquence des clignotements, l’intensité lumineuse, le contraste de l’arrière-plan et des motifs lumineux, la distance entre l’écran et le joueur, ainsi que la longueur d’onde de la lumière.
 
-De nombreuses personnes découvrent qu’elles sont épileptiques lors de leur première crise. Les joueurs risquent de faire leur première crise à cause de jeux vidéo, et cela peut entraîner des blessures. Si vous développez des jeux, voici quelques conseils à suivre afin de réduire le risque de crises associées à l’épilepsie photosensible.
+De nombreuses personnes découvrent qu’elles ont une cessation d’épilepsie. Les joueurs peuvent et ont leurs premières crises par le biais de videogames, ce qui peut entraîner des blessures physiques. En tant que développeur, voici quelques conseils pour la conception d’un jeu afin de réduire le risque de crises en raison de l’épilepsie photosensible.
 
-Évitez ce qui suit :
-* Introduire des lumières clignotantes dont la fréquence est comprise entre 5 et 30 clignotements par seconde (Hertz), car cette fréquence de clignotements est la plus susceptible de déclencher des crises.
-* Des séquences d’images clignotantes qui durent plus de 5 secondes.
-* Plus de trois clignotements par seconde couvrant plus de 25 % de l’écran.
-* Déplacement de motifs répétés ou de texte uniforme, couvrant plus de 25 % de l’écran.
-* Motifs répétés statiques ou texte uniforme, couvrant plus de 40 % de l’écran.
-* Un important changement instantané dans la luminosité/le contraste (y compris des coupures rapides), ou vers ou depuis la couleur rouge.
-* Plus de cinq rayures à contraste élevé, espacées de manière égale (des lignes ou des colonnes telles que des grilles et des damiers) et composées de petits éléments réguliers.
-* Plus de cinq lignes de texte mises en forme en majuscules uniquement, avec peu d’espacement entre les lettres et un espacement de la même hauteur que les lignes elles-mêmes.
+Évitez les éléments suivants :
+* Avoir des lumières clignotantes d’une fréquence de 5 à 30 clignotements par seconde (Hertz) parce que les lumières clignotantes de cette plage sont susceptibles de déclencher des crises.
+* Toute séquence d’images clignotantes qui dure plus de 5 secondes
+* Plus de trois clignotements en une seule seconde, couvrant 25% + de l’écran
+* Déplacement de modèles répétés ou de texte uniforme, couvrant 25% et plus de l’écran
+* Répétitions statiques ou texte uniforme, couvrant 40% et plus de l’écran
+* Une haute modification instantanée de la luminosité/du contraste (y compris des coupes rapides) ou vers/à partir de la couleur rouge
+* Plus de cinq rayures répétées avec un contraste élevé uniformément espacées : lignes ou colonnes telles que les grilles et checkerboards, qui peuvent être composées d’éléments réguliers plus petits tels que Polkadots
+* Plus de cinq lignes de texte mises en majuscules uniquement, avec un peu d’espace entre les lettres, et l’interligne de la même hauteur que les lignes elles-mêmes, ce qui la rend en fait un contraste élevé de manière uniforme
 
-Utilisez un système automatisé pour rechercher dans votre jeu la présence éventuelle de stimuli risquant de provoquer une épilepsie photosensible. (Par exemple, utilisez les outils [Harding Test](https://www.hardingtest.com/index.php?page=test) et [Harding Flash and Pattern Analyzer (FPA) G2](https://www.hardingfpa.com/harding-fpa-for-games/) conçus par Cambridge Research System Ltd et le professeur Graham Harding.) 
+Utilisez un système automatisé pour rechercher dans votre jeu la présence éventuelle de stimuli risquant de provoquer une épilepsie photosensible. (Exemple : [Harding test](https://www.hardingtest.com/index.php?page=test) et [Harding Flash and Pattern Analyzer (FPA) G2](https://www.hardingfpa.com/harding-fpa-for-games/) développé par Cambridge Research System Ltd et professeur Graham Harding.) 
 
-Incluez **Flashing On/Off** comme option de paramétrage et définissez **Flashing** sur **Off** par défaut. Vous protégez ainsi les joueurs qui ne savent pas encore qu’ils peuvent être sujets à des crises.
+L’option **d’activation/désactivation du clignotement** et la **désactivation** du **clignotement** par défaut. Ce faisant, vous protégez les joueurs qui ne savent pas encore qu’ils sont susceptibles de se lancer.
 
 Introduisez des pauses entre les niveaux de jeu afin d’inciter les joueurs à s’arrêter de temps en temps au lieu de jouer pendant plusieurs heures d’affilée.
 
@@ -254,20 +254,20 @@ Vous trouverez ci-après quelques sites externes fournissant des informations su
 ### <a name="game-accessibility-guidelines"></a>Recommandations en matière de conception de jeux accessibles
 * [Instructions d’accessibilité aux jeux](http://gameaccessibilityguidelines.com/) (utilisées comme référence dans cette rubrique)
 * [AbleGamers Foundation Guidelines](https://accessible.games/accessible-player-experiences/) (utilisé comme référence dans cette rubrique)
-* [Concevoir des jeux UA (Universally accessible)](https://www.ics.forth.gr/hci/ua-games/index_main.php?l=e&c=555)
+* [Concevoir des jeux universellement accessibles (en anglais)](https://www.ics.forth.gr/hci/ua-games/index_main.php?l=e&c=555)
 
 ### <a name="custom-input-controllers"></a>Manettes de jeu personnalisées
-* [Effet spécial](https://www.specialeffect.org.uk/)
-* [War Fighter embrayé](https://www.warfighterengaged.org/)
+* [Special Effect (en anglais)](https://www.specialeffect.org.uk/)
+* [Warfighter Engaged (en anglais)](https://www.warfighterengaged.org/)
 
 ### <a name="other-references-used"></a>Autres références utilisées
-* [Reconnaissance des couleurs aveugles, société d’intérêt communautaire](https://www.colourblindawareness.org/colour-blindness/types-of-colour-blindness/)
-* [Comment faire des sous-titres&mdash;un article de blog sur Gamasutra de Ian Hamilton](https://www.gamasutra.com/blogs/IanHamilton/20150715/248571/How_to_do_subtitles_well__basics_and_good_practices.php)
-* [Innovation pour tous les programmes](https://www.inclusivedesign.no/practical-tools/definitions-article56-127.html)
+* [Color Blind Awareness, entreprise d’intérêt communautaire (en anglais)](https://www.colourblindawareness.org/colour-blindness/types-of-colour-blindness/)
+* [Comment faire des sous-titres bien &mdash; un article de blog sur Gamasutra de Ian Hamilton](https://www.gamasutra.com/blogs/IanHamilton/20150715/248571/How_to_do_subtitles_well__basics_and_good_practices.php)
+* [Innovation for All Programme (en anglais)](https://www.inclusivedesign.no/practical-tools/definitions-article56-127.html)
 * [Épilepsie-Fondation](https://www.epilepsy.com/)
 
 ### <a name="related-links"></a>Liens connexes
 * [Conception inclusive](https://www.microsoft.com/design/inclusive/)
-* [Hub Microsoft Accessibility Developer](https://developer.microsoft.com/windows/accessible-apps)
-* [Développement d’applications UWP accessibles](https://docs.microsoft.com/windows/uwp/accessibility/accessibility)
-* [Logiciel d’ingénierie pour l’eBook d’accessibilité](https://www.microsoft.com/download/details.aspx?id=19262)
+* [Hub de développeurs axés sur l’accessibilité Microsoft](https://developer.microsoft.com/windows/accessible-apps)
+* [Développement d’applications UWP accessibles](../design/accessibility/accessibility.md)
+* [Livre électronique sur la conception de logiciels accessibles](https://www.microsoft.com/download/details.aspx?id=19262)

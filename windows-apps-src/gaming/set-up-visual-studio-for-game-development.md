@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, jeux, Visual Studio, outils, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: c97c24eca55cf43559b9f518eaf2fbc4656aa374
-ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
+ms.openlocfilehash: 250450b2174ce249d1ec5afaf4c5188df9266f5e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88942806"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159263"
 ---
 # <a name="visual-studio-tools-for-game-programming"></a>Visual Studio Tools pour la programmation de jeux
 
@@ -43,7 +43,7 @@ Utilisez l’Éditeur d’images pour exploiter les types de formats de texture 
 
 Créez des [fichiers de personnalisations de la build](#build-customizations-for-3d-assets) pour les convertir en fichiers .dds au moment de la création.
 
-Pour plus d’informations, voir [Utilisation de textures et d’images](https://docs.microsoft.com/visualstudio/designers/working-with-textures-and-images?view=vs-2015).
+Pour plus d’informations, voir [Utilisation de textures et d’images](/visualstudio/designers/working-with-textures-and-images?view=vs-2015).
 
 > **Remarque**    L’éditeur d’images n’est pas destiné à remplacer une application de modification d’image de fonctionnalité complète, mais convient à de nombreux scénarios d’affichage et de modification simples.
 
@@ -62,7 +62,7 @@ Voici la capture d’écran d’un modèle dans l’éditeur auquel un éclairag
 
 ![Théière](images/modeleditor.png)
 
-Pour plus d’informations, voir [Utilisation de modèles en 3D](https://docs.microsoft.com/visualstudio/designers/working-with-3-d-models?view=vs-2015).
+Pour plus d’informations, voir [Utilisation de modèles en 3D](/visualstudio/designers/working-with-3-d-models?view=vs-2015).
 
 > **Remarque**    L’éditeur de modèle n’est pas destiné à remplacer une application de modification de modèle de fonctionnalités complète, mais convient à de nombreux scénarios d’affichage et de modification simples.
 
@@ -109,7 +109,7 @@ float3 LambertLighting(
 }
 ```
 
-Pour plus d’informations, voir [Utilisation de nuanceurs](https://docs.microsoft.com/visualstudio/designers/working-with-shaders?view=vs-2015).
+Pour plus d’informations, voir [Utilisation de nuanceurs](/visualstudio/designers/working-with-shaders?view=vs-2015).
 
 ## <a name="build-customizations-for-3d-assets"></a>Personnalisations de la build pour les ressources 3D
 
@@ -122,7 +122,7 @@ Pour ajouter une personnalisation de build, cliquez avec le bouton droit sur le 
 -   Le pipeline de contenu de maillage prend les fichiers de maillage (notamment .fbx) et génère des fichiers de maillage .cmo.
 -   Le pipeline de contenu de nuanceur prend les fichiers Visual Shader Graph (.dgsl) de l’Éditeur de nuanceurs Visual Studio et génère un fichier .cso (Compiled Shader Output).
 
-Pour plus d’informations, voir [Utilisation de ressources 3D dans vos jeux et applications](https://docs.microsoft.com/visualstudio/designers/using-3-d-assets-in-your-game-or-app?view=vs-2015).
+Pour plus d’informations, voir [Utilisation de ressources 3D dans vos jeux et applications](/visualstudio/designers/using-3-d-assets-in-your-game-or-app?view=vs-2015).
 
 ## <a name="debugging-directx-graphics"></a>Débogage de graphiques DirectX
 
@@ -139,7 +139,7 @@ Visual Studio fournit des outils de débogage propres aux graphiques. Utilisez c
 -   La prise en charge limitée de Direct2D.
 -   Les exigences en matière de système d’exploitation et de SDK.
 
-Pour plus d’informations, voir [Débogage de graphiques DirectX](https://docs.microsoft.com/visualstudio/debugger/visual-studio-graphics-diagnostics?view=vs-2015).
+Pour plus d’informations, voir [Débogage de graphiques DirectX](/visualstudio/debugger/visual-studio-graphics-diagnostics?view=vs-2015).
 
 
  
@@ -147,7 +147,3 @@ Pour plus d’informations, voir [Débogage de graphiques DirectX](https://docs.
  
 
  
-
-
-
-

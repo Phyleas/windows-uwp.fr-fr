@@ -7,12 +7,12 @@ keywords: IME, éditeur de méthode d’entrée, entrée, interaction
 ms.date: 07/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 438c53a0f3fbec1fdac0206bde3584c738759de4
-ms.sourcegitcommit: 86ce67a03e87fa1282849b2fcb4f89d1cf23a091
+ms.openlocfilehash: 8e7782dea8cd634fd9fe3bac4a3e4c870cd680e9
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87840020"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159943"
 ---
 # <a name="input-method-editors-ime"></a>Éditeurs de méthode d’entrée (IME)
 
@@ -41,7 +41,7 @@ Un IME tiers doit respecter les conditions suivantes :
 
 - Doit être signé numériquement
 - Doit être compatible avec [Text Services Framework (TSF)](/windows/win32/tsf/text-services-framework) , avec les indicateurs IME appropriés définis correctement
-- Doit suivre les instructions décrites dans [Configuration requise de l’éditeur de méthode d’entrée (IME)](input-method-editor-requirements.md) et [concevoir et coder des applications Windows](/windows/uwp/design/)
+- Doit suivre les instructions décrites dans [Configuration requise de l’éditeur de méthode d’entrée (IME)](input-method-editor-requirements.md) et [concevoir et coder des applications Windows](../index.md)
 
 L’exécution d’un IME tiers qui ne répond pas à ces exigences est bloquée.
 

@@ -7,12 +7,12 @@ manager: jken
 ms.topic: article
 keywords: Android, Windows, émulateur, appareil virtuel, configuration de l’appareil, activer l’appareil, développeur, configuration, virtualisation, Visual Studio, Hyper-v, Intel, haxm, AMD, plateforme d’hyperviseur Windows, WHPX
 ms.date: 04/28/2020
-ms.openlocfilehash: c651661d573695902368ffa595ce5d3014791a9a
-ms.sourcegitcommit: 24b19e7ee06e5bb11a0dae334806741212490ee9
+ms.openlocfilehash: 57e1d8d62ea7b3918c5e52724c11febcb9f03d72
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82255153"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89161553"
 ---
 # <a name="test-on-an-android-device-or-emulator"></a>Tester sur un appareil ou un émulateur Android
 
@@ -34,7 +34,7 @@ Pour un appareil exécutant une version récente d’Android 9.0 + :
 6. Sélectionnez **avancé**, faites défiler vers le bas, puis appuyez sur **Options du développeur**.
 7. Dans la fenêtre **Options du développeur** , faites défiler la liste pour rechercher et activer le **débogage USB**.
 
-Pour un appareil exécutant une version antérieure d’Android, consultez [configurer un appareil pour le développement](https://docs.microsoft.com/xamarin/android/get-started/installation/set-up-device-for-development).
+Pour un appareil exécutant une version antérieure d’Android, consultez [configurer un appareil pour le développement](/xamarin/android/get-started/installation/set-up-device-for-development).
 
 ### <a name="run-your-app-on-the-device"></a>Exécuter votre application sur l’appareil
 
@@ -63,9 +63,9 @@ Avant de créer un appareil virtuel avec l’émulateur Android, il est recomman
 > * Exécuter Windows 10 Build 1803 + ([vérifier votre Build #](ms-settings:about))
 > * Avoir mis à jour les pilotes graphiques (Device Manager > cartes d’affichage > pilote de mise à jour)
 >
-> Si votre ordinateur ne répond pas à ce critère, vous pourrez peut-être exécuter [Intel HAXM](https://github.com/intel/haxm/wiki/Installation-Instructions-on-Windows) ou l' [hyperviseur AMD](https://github.com/google/android-emulator-hypervisor-driver-for-amd-processors). Pour plus d’informations, consultez l’article : [accélération matérielle pour les performances de l’émulateur](https://docs.microsoft.com/xamarin/android/get-started/installation/android-emulator/hardware-acceleration) ou la documentation de l' [émulateur de Android Studio](https://developer.android.com/studio/run/emulator).
+> Si votre ordinateur ne répond pas à ce critère, vous pourrez peut-être exécuter [Intel HAXM](https://github.com/intel/haxm/wiki/Installation-Instructions-on-Windows) ou l' [hyperviseur AMD](https://github.com/google/android-emulator-hypervisor-driver-for-amd-processors). Pour plus d’informations, consultez l’article : [accélération matérielle pour les performances de l’émulateur](/xamarin/android/get-started/installation/android-emulator/hardware-acceleration) ou la documentation de l' [émulateur de Android Studio](https://developer.android.com/studio/run/emulator).
 
-1. Vérifiez que le matériel et le logiciel de votre ordinateur sont compatibles avec Hyper-V en ouvrant une invite de commandes et en entrant la commande suivante :`systeminfo`
+1. Vérifiez que le matériel et le logiciel de votre ordinateur sont compatibles avec Hyper-V en ouvrant une invite de commandes et en entrant la commande suivante : `systeminfo`
 
     ![Configuration requise pour Hyper-V à partir de SystemInfo dans l’invite de commandes](../images/systeminfo.png)
 
@@ -73,7 +73,7 @@ Avant de créer un appareil virtuel avec l’émulateur Android, il est recomman
 
 3. Une fois la liste des **fonctionnalités Windows** affichée, faites défiler l’affichage pour accéder à **Hyper-V** (y compris les outils d’administration et la plateforme) et à la **plateforme d’hyperviseur Windows**, assurez-vous que la case est cochée pour activer les deux, puis sélectionnez **OK**.
 
-4. Redémarrez votre ordinateur lorsque vous y êtes invité.
+4. À l’invite, redémarrez votre ordinateur.
 
 ### <a name="emulator-for-native-development-with-android-studio"></a>Émulateur pour le développement natif avec Android Studio
 
@@ -98,13 +98,13 @@ De nombreuses options de l' [émulateur Android](https://www.androidauthority.co
 
 ### <a name="install-android-emulator-with-visual-studio"></a>Installer l’émulateur Android avec Visual Studio
 
-1. Si vous ne l’avez pas encore fait, téléchargez [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/). Utilisez la Visual Studio Installer pour [modifier vos charges de travail](https://docs.microsoft.com/visualstudio/install/modify-visual-studio?view=vs-2019#modify-workloads) et vous assurer que vous disposez du **développement mobile avec la charge de travail .net**.
+1. Si vous ne l’avez pas encore fait, téléchargez [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/). Utilisez la Visual Studio Installer pour [modifier vos charges de travail](/visualstudio/install/modify-visual-studio?view=vs-2019#modify-workloads) et vous assurer que vous disposez du **développement mobile avec la charge de travail .net**.
 
-2. Créez un projet. Une fois que vous avez [configuré le émulateur Android](https://docs.microsoft.com/xamarin/android/get-started/installation/android-emulator/), vous pouvez utiliser la [Android Device Manager](https://docs.microsoft.com/xamarin/android/get-started/installation/android-emulator/device-manager?tabs=windows&pivots=windows#requirements) pour créer, dupliquer, personnaliser et lancer un large éventail d’appareils virtuels Android. Lancez le Android Device Manager à partir du menu outils avec : **Tools** > **Android** > **Android Device Manager**.
+2. Créez un projet. Une fois que vous avez [configuré le émulateur Android](/xamarin/android/get-started/installation/android-emulator/), vous pouvez utiliser la [Android Device Manager](/xamarin/android/get-started/installation/android-emulator/device-manager?pivots=windows&tabs=windows#requirements) pour créer, dupliquer, personnaliser et lancer un large éventail d’appareils virtuels Android. Lancez le Android Device Manager à partir du menu outils avec : **Tools**  >  **Android**  >  **Android Device Manager**.
 
 3. Une fois que le Android Device Manager s’ouvre, sélectionnez **+ nouveau** pour créer un nouvel appareil.
 
-4. Vous devez attribuer un nom à l’appareil, choisir le type d’appareil de base dans un menu déroulant, choisir un processeur et une version du système d’exploitation, ainsi que plusieurs autres variables pour l’appareil virtuel. Pour plus d’informations, [Android Device Manager écran principal](https://docs.microsoft.com/xamarin/android/get-started/installation/android-emulator/device-manager?tabs=windows&pivots=windows#main-screen).
+4. Vous devez attribuer un nom à l’appareil, choisir le type d’appareil de base dans un menu déroulant, choisir un processeur et une version du système d’exploitation, ainsi que plusieurs autres variables pour l’appareil virtuel. Pour plus d’informations, [Android Device Manager écran principal](/xamarin/android/get-started/installation/android-emulator/device-manager?pivots=windows&tabs=windows#main-screen).
 
 5. Dans la barre d’outils de Visual Studio, choisissez entre le **débogage** (joint au processus d’application en cours d’exécution dans l’émulateur après le démarrage de votre application) ou le mode de **mise** en service (désactive le débogueur). Choisissez ensuite un appareil virtuel dans le menu déroulant appareil, puis sélectionnez le bouton de **lecture** ▷ pour exécuter votre application dans l’émulateur.
 
@@ -112,6 +112,6 @@ De nombreuses options de l' [émulateur Android](https://www.androidauthority.co
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- [Développer des applications à deux écrans pour Android et obtenir le kit de développement logiciel (SDK) d’appareil surface Duo](https://docs.microsoft.com/dual-screen/android/)
+- [Développer des applications à deux écrans pour Android et obtenir le kit de développement logiciel (SDK) d’appareil surface Duo](/dual-screen/android/)
 
 - [Ajouter des exclusions Windows Defender pour améliorer les performances](defender-settings.md)

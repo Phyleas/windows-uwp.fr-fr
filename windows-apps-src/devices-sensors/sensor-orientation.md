@@ -6,21 +6,21 @@ ms.date: 07/03/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b61b7bcd18419ec9be719b5f565e5503953be7c3
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 8836753778b1dd5dcbc8856b0df5ec1f11d8e753
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493467"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159803"
 ---
 # <a name="sensor-orientation"></a>Orientation de capteur
 
-Les données de capteur des classes [**accéléromètre**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Accelerometer), [**gyromètre**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Gyrometer), [**Compass**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Compass), [**Inclinometer**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Inclinometer)et [**OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor) sont définies par leurs axes de référence. Ces axes sont définis par le frame de référence de l’appareil et pivotent avec l’appareil lorsque l’utilisateur l’active. Si votre application prend en charge la rotation automatique et se réoriente pour s’adapter à l’appareil à mesure que l’utilisateur le fait pivoter, vous devez ajuster vos données du capteur par rapport à la rotation avant de l’utiliser.
+Les données de capteur des classes [**accéléromètre**](/uwp/api/Windows.Devices.Sensors.Accelerometer), [**gyromètre**](/uwp/api/Windows.Devices.Sensors.Gyrometer), [**Compass**](/uwp/api/Windows.Devices.Sensors.Compass), [**Inclinometer**](/uwp/api/Windows.Devices.Sensors.Inclinometer)et [**OrientationSensor**](/uwp/api/Windows.Devices.Sensors.OrientationSensor) sont définies par leurs axes de référence. Ces axes sont définis par le frame de référence de l’appareil et pivotent avec l’appareil lorsque l’utilisateur l’active. Si votre application prend en charge la rotation automatique et se réoriente pour s’adapter à l’appareil à mesure que l’utilisateur le fait pivoter, vous devez ajuster vos données du capteur par rapport à la rotation avant de l’utiliser.
 
 ### <a name="important-apis"></a>API importantes
 
-- [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
-- [**Windows. Devices. Sensors. Custom**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Custom)
+- [**Windows.Devices.Sensors**](/uwp/api/Windows.Devices.Sensors)
+- [**Windows. Devices. Sensors. Custom**](/uwp/api/Windows.Devices.Sensors.Custom)
 
 ## <a name="display-orientation-vs-device-orientation"></a>Orientation de l’affichage et orientation de l’appareil
 
@@ -30,22 +30,22 @@ Pour comprendre les axes de référence pour les capteurs, vous devez distinguer
 > L’axe z positif s’étend à partir de l’écran de l’appareil, comme indiqué dans l’image suivante.
 > :::image type="content" source="images/sensor-orientation-zaxis-1-small.png" alt-text="Axe Z pour ordinateur portable":::
 
-Dans les diagrammes suivants, l’orientation de l’appareil et de l’affichage est en [paysage](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations) (les axes de capteur affichés sont spécifiques à l’orientation paysage).
+Dans les diagrammes suivants, l’orientation de l’appareil et de l’affichage est en [paysage](/uwp/api/Windows.Graphics.Display.DisplayOrientations) (les axes de capteur affichés sont spécifiques à l’orientation paysage).
 
 
-Ce diagramme illustre l’affichage et l’orientation de l’appareil en [mode paysage](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations).
+Ce diagramme illustre l’affichage et l’orientation de l’appareil en [mode paysage](/uwp/api/Windows.Graphics.Display.DisplayOrientations).
 
 :::image type="content" source="images/sensor-orientation-a-small.jpg" alt-text="Orientation de l’affichage et de l’appareil en mode Landscape":::
 
-Le diagramme suivant montre l’orientation de l’affichage et de l’appareil dans [LandscapeFlipped](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations).
+Le diagramme suivant montre l’orientation de l’affichage et de l’appareil dans [LandscapeFlipped](/uwp/api/Windows.Graphics.Display.DisplayOrientations).
 
 :::image type="content" source="images/sensor-orientation-b-small.jpg" alt-text="Orientation de l’affichage et de l’appareil en mode LandscapeFlipped":::
 
-Ce diagramme final montre l’orientation d’affichage en paysage alors que l’orientation de l’appareil est [LandscapeFlipped](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations).
+Ce diagramme final montre l’orientation d’affichage en paysage alors que l’orientation de l’appareil est [LandscapeFlipped](/uwp/api/Windows.Graphics.Display.DisplayOrientations).
 
 :::image type="content" source="images/sensor-orientation-c-small.jpg" alt-text="Orientation d’affichage en mode Landscape tandis que l’orientation de l’appareil est en mode LandscapeFlipped.":::
 
-Vous pouvez effectuer une requête sur les valeurs d’orientation dans la classe [**DisplayInformation**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayInformation) à l’aide de la méthode [**GetForCurrentView**](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.getforcurrentview) avec la propriété [**CurrentOrientation**](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.currentorientation). Vous pouvez ensuite créer une logique en la comparant à l’énumération [**DisplayOrientations**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations) . Souvenez-vous que, pour chaque orientation que vous prenez en charge, vous devez prendre en charge une conversion des axes de référence dans cette orientation.
+Vous pouvez effectuer une requête sur les valeurs d’orientation dans la classe [**DisplayInformation**](/uwp/api/Windows.Graphics.Display.DisplayInformation) à l’aide de la méthode [**GetForCurrentView**](/uwp/api/windows.graphics.display.displayinformation.getforcurrentview) avec la propriété [**CurrentOrientation**](/uwp/api/windows.graphics.display.displayinformation.currentorientation). Vous pouvez ensuite créer une logique en la comparant à l’énumération [**DisplayOrientations**](/uwp/api/Windows.Graphics.Display.DisplayOrientations) . Souvenez-vous que, pour chaque orientation que vous prenez en charge, vous devez prendre en charge une conversion des axes de référence dans cette orientation.
 
 ## <a name="landscape-first-vs-portrait-first-devices"></a>Appareils à priorité Paysage ou à priorité Portrait
 
@@ -70,10 +70,10 @@ L’orientation de la boussole dépend des axes de référence. Elle change donc
 
 | Orientation de l’affichage | Axe de référence pour l’orientation de la boussole | Titre de l’API Compass lorsque le nord est orienté vers le Nord (paysage en premier) | En-tête API Compass en regard du Nord (en premier) |Compensation de l’en-tête de boussole (paysage-First) | Compensation de l’en-tête de boussole (portrait-premier) |
 |---------------------|------------------------------------|---------------------------------------------------------|--------------------------------------------------------|------------------------------------------------|-----------------------------------------------|
-| Paysage           | -Z | 0   | 270 | Orientation               | (Orientation + 90) % 360  |
-| Portrait            |  Y | 90  | 0   | (Orientation + 270) % 360 |  Orientation              |
+| Paysage           | -Z | 0   | 270 | Direction               | (Orientation + 90) % 360  |
+| Portrait            |  O | 90  | 0   | (Orientation + 270) % 360 |  Direction              |
 | LandscapeFlipped    |  Z | 180 | 90  | (Orientation + 180) % 360 | (Orientation + 270) % 360 |
-| PortraitFlipped     |  Y | 270 | 180 | (Orientation + 90) % 360  | (Orientation + 180) % 360 |
+| PortraitFlipped     |  O | 270 | 180 | (Orientation + 90) % 360  | (Orientation + 180) % 360 |
 
 Modifiez le cap de la boussole tel qu’indiqué dans le tableau pour afficher correctement le cap. L’extrait de code suivant montre comment procéder.
 
@@ -116,7 +116,7 @@ Le tableau suivant convertit les données de l’accéléromètre et du gyromèt
 | Axes de référence        |  X |  O | Z |
 |-----------------------|----|----|---|
 | **Paysage**         |  X |  O | Z |
-| **Portrait**          |  Y | -X | Z |
+| **Portrait**          |  O | -X | Z |
 | **LandscapeFlipped**  | -X | -y | Z |
 | **PortraitFlipped**   | -y |  X | Z |
 
@@ -164,7 +164,7 @@ private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
 
 ## <a name="display-orientation-and-device-orientation"></a>Orientation d’affichage et orientation d’appareil
 
-Les données [**OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor) doivent être modifiées d’une manière différente. Considérez ces différentes orientations comme des rotations dans le sens inverse des aiguilles d’une position vers l’axe z. nous devons donc inverser la rotation pour revenir à l’orientation de l’utilisateur. Pour les données de quaternion, nous pouvons utiliser la formule d’Euler pour définir une rotation avec un quaternion de référence. Nous pouvons également utiliser une matrice de rotation de référence.
+Les données [**OrientationSensor**](/uwp/api/Windows.Devices.Sensors.OrientationSensor) doivent être modifiées d’une manière différente. Considérez ces différentes orientations comme des rotations dans le sens inverse des aiguilles d’une position vers l’axe z. nous devons donc inverser la rotation pour revenir à l’orientation de l’utilisateur. Pour les données de quaternion, nous pouvons utiliser la formule d’Euler pour définir une rotation avec un quaternion de référence. Nous pouvons également utiliser une matrice de rotation de référence.
 
 :::image type="content" source="images/eulers-formula.png" alt-text="Formule de Euler":::
 
@@ -183,4 +183,4 @@ Dans l’expression précédente, l’objet absolu est retourné par les donnée
 
 ## <a name="see-also"></a>Voir aussi
 
-[Intégration de capteurs de mouvement et d’orientation](https://docs.microsoft.com/windows-hardware/design/whitepapers/integrating-motion-and-orientation-sensors)
+[Intégration de capteurs de mouvement et d’orientation](/windows-hardware/design/whitepapers/integrating-motion-and-orientation-sensors)

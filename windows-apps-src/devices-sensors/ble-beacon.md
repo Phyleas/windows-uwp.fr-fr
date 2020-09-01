@@ -6,19 +6,19 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: ff10bbc0-03a7-492c-b5fe-c5b9ce8ca32e
 ms.localizationpriority: medium
-ms.openlocfilehash: 2300871292e08588b0c2124c67a379d403ae53b3
-ms.sourcegitcommit: 015291bdf2e7d67076c1c85fc025f49c840ba475
+ms.openlocfilehash: 319038f8922aac2686dab6836f94ead5018effdf
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85469524"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159743"
 ---
 # <a name="bluetooth-le-advertisements"></a>Annonces publicitaires Bluetooth LE
 
 
 **API importantes**
 
--   [**Windows.Devices.Bluetooth.Advertisement**](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement)
+-   [**Windows.Devices.Bluetooth.Advertisement**](/uwp/api/windows.devices.bluetooth.advertisement)
 
 Cet article fournit une vue d’ensemble des balises d’annonce Bluetooth Low Energy (LE) pour les applications de plateforme Windows universelle (UWP).  
 
@@ -31,8 +31,8 @@ Cet article fournit une vue d’ensemble des balises d’annonce Bluetooth Low E
 
 Un développeur peut exécuter deux fonctions principales à l’aide des API d’annonce Bluetooth LE :
 
--   [Advertisement Watcher](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher) : écouter les balises proches et les filtrer en fonction de la charge utile ou de la proximité.  
--   [Advertisement Publisher](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementpublisher) : définir une charge utile pour Windows afin de créer des annonces au nom des développeurs.  
+-   [Advertisement Watcher](/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher) : écouter les balises proches et les filtrer en fonction de la charge utile ou de la proximité.  
+-   [Advertisement Publisher](/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementpublisher) : définir une charge utile pour Windows afin de créer des annonces au nom des développeurs.  
 
 L’exemple de code complet est disponible dans l’[exemple d’annonce Bluetooth](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BluetoothAdvertisement) sur Github.
 
@@ -48,7 +48,7 @@ Pour utiliser les fonctionnalités Bluetooth LE de base dans une application de 
 
 Les annonces Bluetooth LE permettent à votre appareil de baliser en permanence une charge utile spécifique, appelée annonce publicitaire. Cette annonce est visible par n’importe quel appareil compatible Bluetooth LE à proximité, s’il est configuré pour écouter cette annonce spécifiquement.
 
-> **Remarque**: pour la confidentialité de l’utilisateur, la durée de vie de votre publication est liée à celle de votre application. Vous pouvez créer une annonce BluetoothLEAdvertisementPublisher et appeler Start dans une tâche en arrière-plan pour l’annonce en arrière-plan. Pour plus d’informations sur les tâches en arrière-plan, consultez [Lancement, reprise et tâches en arrière-plan](https://docs.microsoft.com/windows/uwp/launch-resume/index).
+> **Remarque**: pour la confidentialité de l’utilisateur, la durée de vie de votre publication est liée à celle de votre application. Vous pouvez créer une annonce BluetoothLEAdvertisementPublisher et appeler Start dans une tâche en arrière-plan pour l’annonce en arrière-plan. Pour plus d’informations sur les tâches en arrière-plan, consultez [Lancement, reprise et tâches en arrière-plan](../launch-resume/index.md).
 
 ### <a name="basic-publishing"></a>Publication de base
 

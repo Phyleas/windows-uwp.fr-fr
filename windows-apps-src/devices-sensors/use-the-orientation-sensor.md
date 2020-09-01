@@ -6,21 +6,21 @@ ms.date: 06/06/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 407c76c41d4a8620e2168e8e03dd2a3e24d73b61
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 0217567fd2b78542b745a02fbdfa3bd816d9a2b6
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66369572"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159453"
 ---
 # <a name="use-the-orientation-sensor"></a>Utiliser le capteur d’orientation
 
 
 **API importantes**
 
--   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
--   [**OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor)
--   [**SimpleOrientation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.SimpleOrientation)
+-   [**Windows.Devices.Sensors**](/uwp/api/Windows.Devices.Sensors)
+-   [**OrientationSensor**](/uwp/api/Windows.Devices.Sensors.OrientationSensor)
+-   [**SimpleOrientation**](/uwp/api/Windows.Devices.Sensors.SimpleOrientation)
 
 **Exemples**
 
@@ -29,11 +29,11 @@ ms.locfileid: "66369572"
 
 Découvrez comment utiliser les capteurs d’orientation pour déterminer l’orientation de l’appareil.
 
-Il existe deux types de capteur d’orientation API inclus dans le [ **Windows.Devices.Sensors** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors) espace de noms : [**OrientationSensor** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor) et [ **SimpleOrientation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.SimpleOrientation). Même si tous deux sont des capteurs d’orientation, ils sont utilisés à des fins très différentes. Toutefois, étant donné que les deux sont des capteurs d’orientation, ils sont traités tous les deux dans cet article.
+Il existe deux types différents d’API de capteur d’orientation inclus dans l’espace de noms [**Windows. Devices. Sensors**](/uwp/api/Windows.Devices.Sensors) : [**OrientationSensor**](/uwp/api/Windows.Devices.Sensors.OrientationSensor) et [**SimpleOrientation**](/uwp/api/Windows.Devices.Sensors.SimpleOrientation). Même si tous deux sont des capteurs d’orientation, ils sont utilisés à des fins très différentes. Toutefois, étant donné que les deux sont des capteurs d’orientation, ils sont traités tous les deux dans cet article.
 
-L’API [**OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor) est utilisée pour les applications 3D pour obtenir un quaternion et une matrice de rotation. Un quaternion peut être plus facilement interprété comme une rotation d’un point de \[x, y, z\] autour d’un axe arbitraire (contrairement à une matrice de rotation, qui représente les rotations autour des trois axes). Les quaternions s’appuient sur des mathématiques quelque peu exotiques en ce sens qu’elles impliquent les propriétés géométriques des nombres complexes et les propriétés mathématiques des nombres imaginaires. Toutefois, leur utilisation est simple, et les infrastructures telles que DirectX les prennent en charge. Une application en 3D peut utiliser le capteur d’orientation pour régler la perspective de l’utilisateur. Ce capteur associe les entrées de l’accéléromètre, du gyromètre et de la boussole.
+L’API [**OrientationSensor**](/uwp/api/Windows.Devices.Sensors.OrientationSensor) est utilisée pour les applications 3D, deux obtiennent un Quaternion et une matrice de rotation. Un Quaternion peut être plus facilement interprété comme une rotation des points \[ x, y, z \] sur un axe arbitraire (avec une matrice de rotation qui représente les rotations autour de trois axes). Les quaternions s’appuient sur des mathématiques quelque peu exotiques en ce sens qu’elles impliquent les propriétés géométriques des nombres complexes et les propriétés mathématiques des nombres imaginaires. Toutefois, leur utilisation est simple, et les infrastructures telles que DirectX les prennent en charge. Une application en 3D peut utiliser le capteur d’orientation pour régler la perspective de l’utilisateur. Ce capteur associe les entrées de l’accéléromètre, du gyromètre et de la boussole.
 
-L’API [**SimpleOrientation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.SimpleOrientation) permet de déterminer l’orientation de l’appareil en termes de définition comme portrait vers le haut, portrait vers le bas, paysage à gauche, paysage à droite. Il peut également détecter si un appareil est face vers le haut ou face vers le bas. Au lieu de retourner des propriétés telles que « portrait vers le haut » ou « paysage gauche », ce capteur retourne une valeur de rotation : « Pas pivoté », « Rotated90DegreesCounterclockwise » et ainsi de suite. Le tableau suivant établit une correspondance entre les propriétés d’orientation courantes et les lectures du capteur.
+L’API [**SimpleOrientation**](/uwp/api/Windows.Devices.Sensors.SimpleOrientation) permet de déterminer l’orientation de l’appareil en termes de définition comme portrait vers le haut, portrait vers le bas, paysage à gauche, paysage à droite. Il peut également détecter si un appareil est face vers le haut ou face vers le bas. Au lieu de renvoyer des propriétés telles que « Portrait vers le haut » ou « Paysage à gauche », ce capteur renvoie une valeur de rotation : « Sans rotation », « Rotation90DegrésSensAntiHoraire », etc. Le tableau suivant établit une correspondance entre les propriétés d’orientation courantes et les lectures du capteur.
 
 | Orientation     | Lecture du capteur correspondante      |
 |-----------------|-----------------------------------|
@@ -44,7 +44,7 @@ L’API [**SimpleOrientation**](https://docs.microsoft.com/uwp/api/Windows.Devic
 
 ## <a name="prerequisites"></a>Prérequis
 
-Vous devez être familiarisé avec Extensible Application Markup Language (XAML), Microsoft Visual C#et les événements.
+Vous devez maîtriser le langage XAML (Extensible Application Markup Language), Microsoft Visual C# et les événements.
 
 L’appareil ou émulateur que vous utilisez doit prendre en charge un capteur d’orientation.
 
@@ -54,7 +54,7 @@ Cette section se divise en deux sous-sections. La première sous-section vous p
 
 ###  <a name="instructions"></a>Instructions
 
--   Créez un projet en choisissant une **Application vide (Windows universel)** dans les modèles de projet **Visual C#** .
+-   Créez un projet en choisissant une **Application vide (Windows universel)** dans les modèles de projet **Visual C#**.
 
 -   Ouvrez le fichier MainPage.xaml.cs de votre projet et remplacez le code existant par ce qui suit.
 
@@ -177,11 +177,11 @@ Vous devez remplacer le nom de l’espace de noms dans l’extrait de code préc
 
 Vous devez remplacer la première partie du nom de la classe dans l’extrait de code précédent par l’espace de noms de votre application. Par exemple, si vous avez créé un projet nommé **OrientationSensorCS**, vous devez remplacer `x:Class="App1.MainPage"` par `x:Class="OrientationSensorCS.MainPage"`. Vous devez aussi remplacer `xmlns:local="using:App1"` par `xmlns:local="using:OrientationSensorCS"`.
 
--   Appuyez sur F5 ou sélectionnez **Déboguer** > **Démarrer le débogage** pour générer, déployer et exécuter l’application.
+-   Appuyez sur F5 ou sélectionnez **Déboguer**  >  **Démarrer le débogage** pour générer, déployer et exécuter l’application.
 
 Une fois l’application en cours d’exécution, vous pouvez modifier l’orientation en déplaçant l’appareil ou à l’aide des outils de l’émulateur.
 
--   Pour arrêter l’application, retournez dans Visual Studio et appuyez sur Maj+F5, ou sélectionnez **Déboguer** > **Arrêter le débogage**.
+-   Arrêtez l’application en retournant dans Visual Studio et en appuyant sur Maj + F5 ou sélectionnez **Déboguer**  >  **arrêter le débogage** pour arrêter l’application.
 
 ###  <a name="explanation"></a>Explication
 
@@ -216,7 +216,7 @@ Cette section se divise en deux sous-sections. La première sous-section vous p
 
 ### <a name="instructions"></a>Instructions
 
--   Créez un projet en choisissant une **Application vide (Windows universel)** dans les modèles de projet **Visual C#** .
+-   Créez un projet en choisissant une **Application vide (Windows universel)** dans les modèles de projet **Visual C#**.
 
 -   Ouvrez le fichier MainPage.xaml.cs de votre projet et remplacez le code existant par ce qui suit.
 
@@ -323,11 +323,11 @@ Vous devez remplacer le nom de l’espace de noms dans l’extrait de code préc
 
 Vous devez remplacer la première partie du nom de la classe dans l’extrait de code précédent par l’espace de noms de votre application. Par exemple, si vous avez créé un projet nommé **SimpleOrientationCS**, vous devez remplacer `x:Class="App1.MainPage"` par `x:Class="SimpleOrientationCS.MainPage"`. Vous devez aussi remplacer `xmlns:local="using:App1"` par `xmlns:local="using:SimpleOrientationCS"`.
 
--   Appuyez sur F5 ou sélectionnez **Déboguer** > **Démarrer le débogage** pour générer, déployer et exécuter l’application.
+-   Appuyez sur F5 ou sélectionnez **Déboguer**  >  **Démarrer le débogage** pour générer, déployer et exécuter l’application.
 
 Une fois l’application en cours d’exécution, vous pouvez modifier l’orientation en déplaçant l’appareil ou à l’aide des outils de l’émulateur.
 
--   Pour arrêter l’application, retournez dans Visual Studio et appuyez sur Maj+F5, ou sélectionnez **Déboguer** > **Arrêter le débogage**.
+-   Arrêtez l’application en retournant dans Visual Studio et en appuyant sur Maj + F5 ou sélectionnez **Déboguer**  >  **arrêter le débogage** pour arrêter l’application.
 
 ### <a name="explanation"></a>Explication
 

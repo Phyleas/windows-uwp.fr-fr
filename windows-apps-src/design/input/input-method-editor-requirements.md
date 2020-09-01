@@ -7,12 +7,12 @@ keywords: IME, éditeur de méthode d’entrée, entrée, interaction
 ms.date: 07/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ecf150973defb0a431fc7248181ddf648576ac77
-ms.sourcegitcommit: 86ce67a03e87fa1282849b2fcb4f89d1cf23a091
+ms.openlocfilehash: 5a34c15826bff757b7c4277b87cc5fed53a6f109
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87840045"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160003"
 ---
 # <a name="custom-input-method-editor-ime-requirements"></a>Configuration requise de l’éditeur de méthode d’entrée (IME) personnalisé
 
@@ -181,7 +181,7 @@ Lorsque des alternatives sont fournies, l’application doit traiter chaque alte
 
 ## <a name="ui-design-guidelines"></a>Indications pour la conception d’interface utilisateur
 
-Tous les IME doivent suivre les instructions d’expérience utilisateur décrites dans [conception et code applications Windows](/windows/uwp/design/).
+Tous les IME doivent suivre les instructions d’expérience utilisateur décrites dans [conception et code applications Windows](../index.md).
 
 ### <a name="dont-use-sticky-windows"></a>N’utilisez pas de fenêtres rémanentes
 
@@ -301,4 +301,4 @@ Implémentez la Convention suivante pour rendre vos IME conformes aux exigences 
 - [ITfFnSearchCandidateProvider](/windows/win32/api/ctffunc/nn-ctffunc-itffnsearchcandidateprovider)
 - [ITfIntegratableCandidateListUIElement](/windows/win32/api/ctffunc/nn-ctffunc-itfintegratablecandidatelistuielement)
 - [SendInput](/windows/win32/api/winuser/nf-winuser-sendinput)
-- [Accessibilité](/windows/uwp/design/accessibility/accessibility)
+- [Accessibilité](../accessibility/accessibility.md)

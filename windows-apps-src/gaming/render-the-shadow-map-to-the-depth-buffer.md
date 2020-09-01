@@ -4,21 +4,21 @@ description: Générez le rendu du point de vue de la lumière pour créer un ma
 ms.assetid: 7f3d0208-c379-8871-cc48-027047c6c2d0
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp, jeux, rendu, mappage d’ombres, tampon de profondeur, direct3d
+keywords: Windows 10, UWP, jeux, rendu, mappage des ombres, mémoire tampon de profondeur, Direct3D
 ms.localizationpriority: medium
-ms.openlocfilehash: a8ae67df457d4abafc8fb689a747139f62ca0e0e
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 5f492b1007a96b893abf6cdd1e7c6686cd5a41ee
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368073"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159233"
 ---
 # <a name="render-the-shadow-map-to-the-depth-buffer"></a>Restituer le plan d’ombres dans le tampon
 
 
 
 
-Générez le rendu du point de vue de la lumière pour créer un mappage de profondeur en deux dimensions qui représente le volume de l’ombre. Le mappage de profondeur masque l’espace qui sera rendu dans l’ombre. Partie 2 de [procédure pas à pas : Implémenter des volumes de clichés instantanés à l’aide des tampons de profondeur dans Direct3D 11](implementing-depth-buffers-for-shadow-mapping.md).
+Générez le rendu du point de vue de la lumière pour créer un mappage de profondeur en deux dimensions qui représente le volume de l’ombre. Le mappage de profondeur masque l’espace qui sera rendu dans l’ombre. Partie 2 de la [Procédure pas à pas : implémenter des volumes d’ombre à l’aide de tampons de profondeur dans Direct3D 11](implementing-depth-buffers-for-shadow-mapping.md).
 
 ## <a name="clear-the-depth-buffer"></a>Effacer le tampon de profondeur
 
@@ -37,7 +37,7 @@ Pour la passe de rendu d’ombre, spécifiez un tampon de profondeur mais ne sp�
 
 Spécifiez la fenêtre d’affichage de la lumière, un nuanceur de vertex et définissez les tampons constants de l’espace lumineux. Utilisez l’élimination de la face avant pour cette passe pour optimiser les valeurs de profondeur placées dans le tampon de l’ombre.
 
-Notez que sur la plupart des périphériques, vous pouvez spécifier nullptr pour le nuanceur de pixels (ou évitez totalement de spécifier un nuanceur de pixels). Mais certains pilotes risquent de lever une exception quand vous appelez le dessin sur le périphérique Direct3D avec un jeu de nuanceurs de pixels null. Pour éviter cette exception, vous pouvez définir un nuanceur de pixels minimal pour la passe de rendu d’ombre. La sortie de ce nuanceur est rejetée ; il peut appeler [**discard**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-discard) sur chaque pixel.
+Notez que sur la plupart des périphériques, vous pouvez spécifier nullptr pour le nuanceur de pixels (ou évitez totalement de spécifier un nuanceur de pixels). Mais certains pilotes risquent de lever une exception quand vous appelez le dessin sur le périphérique Direct3D avec un jeu de nuanceurs de pixels null. Pour éviter cette exception, vous pouvez définir un nuanceur de pixels minimal pour la passe de rendu d’ombre. Le résultat de ce nuanceur est rejeté. Il peut appeler la fonction [**ignore**](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-discard) à chaque pixel.
 
 Générez le rendu des objets pouvant projeter des ombres, mais ne vous embêtez pas à générer le rendu de la géométrie qui ne peut pas en projeter (comme un sol dans une salle ou des objets supprimés de la passe d’ombre pour des raisons d’optimisation).
 
@@ -125,7 +125,7 @@ void ShadowSceneRenderer::RenderShadowMap()
 }
 ```
 
-**Optimiser le frustum vue :**  Assurez-vous que votre implémentation calcule un frustum vue étroite afin que vous obtenez le plus précis en dehors de votre mémoire tampon de profondeur. Voir [Techniques courantes pour améliorer les mappages de profondeur d’ombre](https://docs.microsoft.com/windows/desktop/DxTechArts/common-techniques-to-improve-shadow-depth-maps) pour obtenir plus de conseils sur la technique d’ombrage.
+**Optimiser la vue frustum :**  Assurez-vous que votre implémentation calcule un frustum d’affichage étroit afin que vous obteniez la plus grande précision de votre mémoire tampon de profondeur. Voir [Techniques courantes pour améliorer les mappages de profondeur d’ombre](/windows/desktop/DxTechArts/common-techniques-to-improve-shadow-depth-maps) pour obtenir plus de conseils sur la technique d’ombrage.
 
 ## <a name="vertex-shader-for-shadow-pass"></a>Nuanceur de vertex pour la passe d’ombre
 
@@ -153,7 +153,3 @@ Dans la partie suivante de cette procédure pas à pas, découvrez comment ajout
  
 
  
-
-
-
-

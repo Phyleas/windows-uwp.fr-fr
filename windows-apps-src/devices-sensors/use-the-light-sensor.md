@@ -6,24 +6,24 @@ ms.date: 06/06/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 04d75d4c854a407fd733c6ecdfb3cabac84faef6
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: ae31e1dc26a5836285a438d3bff9c742f94b7177
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66369605"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159493"
 ---
 # <a name="use-the-light-sensor"></a>Utiliser le capteur de luminosité
 
 
 **API importantes**
 
--   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
--   [**LightSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.LightSensor)
+-   [**Windows.Devices.Sensors**](/uwp/api/Windows.Devices.Sensors)
+-   [**LightSensor**](/uwp/api/Windows.Devices.Sensors.LightSensor)
 
 **Exemple**
 
--   Pour une implémentation plus complète, consultez l’[exemple de capteur de luminosité](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LightSensor).
+-   Pour une implémentation plus complète, consultez l' [exemple capteur Light](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LightSensor).
 
 Découvrez comment utiliser le capteur de luminosité ambiante pour détecter les changements de luminosité.
 
@@ -31,7 +31,7 @@ Un capteur de lumière ambiante est l’un des types de capteur d’environnemen
 
 ## <a name="prerequisites"></a>Prérequis
 
-Vous devez être familiarisé avec Extensible Application Markup Language (XAML), Microsoft Visual C#et les événements.
+Vous devez maîtriser le langage XAML (Extensible Application Markup Language), Microsoft Visual C# et les événements.
 
 L’appareil ou émulateur que vous utilisez doit prendre en charge un capteur de luminosité ambiante.
 
@@ -41,7 +41,7 @@ Cette section se divise en deux sous-sections. La première sous-section vous p
 
 ###  <a name="instructions"></a>Instructions
 
--   Créez un projet en choisissant une **Application vide (Windows universel)** dans les modèles de projet **Visual C#** .
+-   Créez un projet en choisissant une **Application vide (Windows universel)** dans les modèles de projet **Visual C#**.
 
 -   Ouvrez le fichier BlankPage.xaml.cs de votre projet et remplacez le code existant par ce qui suit.
 
@@ -135,11 +135,11 @@ Vous devez remplacer le nom de l’espace de noms dans l’extrait de code préc
 
 Vous devez remplacer la première partie du nom de la classe dans l’extrait de code précédent par l’espace de noms de votre application. Par exemple, si vous avez créé un projet nommé **LightingCS**, vous devez remplacer `x:Class="App1.MainPage"` par `x:Class="LightingCS.MainPage"`. Vous devez aussi remplacer `xmlns:local="using:App1"` par `xmlns:local="using:LightingCS"`.
 
--   Appuyez sur F5 ou sélectionnez **Déboguer** > **Démarrer le débogage** pour générer, déployer et exécuter l’application.
+-   Appuyez sur F5 ou sélectionnez **Déboguer**  >  **Démarrer le débogage** pour générer, déployer et exécuter l’application.
 
 Une fois l’application en cours d’exécution, vous pouvez modifier les valeurs du capteur de luminosité en modifiant la lumière disponible pour le capteur ou à l’aide des outils de l’émulateur.
 
--   Pour arrêter l’application, retournez dans Visual Studio et appuyez sur Maj+F5, ou sélectionnez **Déboguer** > **Arrêter le débogage**.
+-   Arrêtez l’application en retournant dans Visual Studio et en appuyant sur Maj + F5 ou sélectionnez **Déboguer**  >  **arrêter le débogage** pour arrêter l’application.
 
 ###  <a name="explanation"></a>Explication
 
