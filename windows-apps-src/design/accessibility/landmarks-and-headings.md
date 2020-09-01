@@ -8,12 +8,12 @@ ms.date: 01/24/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 942c24e8f5c7c521502ee5a9f9eb7175bf04b94f
-ms.sourcegitcommit: 2a1ceeacf5cdadc803bad83dc3ceb57a16ce79a3
+ms.openlocfilehash: 4c05f39c0497a2e2ef369abd04ed437f8387e60f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067511"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173993"
 ---
 # <a name="landmarks-and-headings"></a>Repères et en-têtes
 
@@ -33,14 +33,14 @@ Une zone de modification de recherche est incluse dans un repère de recherche. 
 
 L’application paramètres est accessible sans les points de repère et les en-têtes, mais elle est plus utilisable. Un utilisateur de lecteur d’écran peut rapidement et facilement accéder au groupe (repère) dont il A besoin, puis accéder rapidement au sous-groupe (en-tête).
 
-Utilisez [AutomationProperties. LandmarkTypeProperty](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.LandmarkTypeProperty) pour configurer l’élément d’interface utilisateur en tant que [type d’élément géographique de](https://docs.microsoft.com/windows/desktop/WinAuto/landmark-type-identifiers) votre choix. Cet élément d’interface utilisateur repère encapsule tous les autres éléments d’interface utilisateur qui ont un sens pour ce repère.
+Utilisez [AutomationProperties. LandmarkTypeProperty](/uwp/api/windows.ui.xaml.automation.automationproperties.LandmarkTypeProperty) pour configurer l’élément d’interface utilisateur en tant que [type d’élément géographique de](/windows/desktop/WinAuto/landmark-type-identifiers) votre choix. Cet élément d’interface utilisateur repère encapsule tous les autres éléments d’interface utilisateur qui ont un sens pour ce repère.
 
-Utilisez [AutomationProperties. LocalizedLandmarkTypeProperty](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.LocalizedLandmarkTypeProperty) pour nommer spécifiquement le repère. Si vous sélectionnez un type de repère prédéfini, tel que principal ou de navigation, ces noms sont utilisés pour le nom du repère. Toutefois, si vous définissez le type de repère sur personnalisé, vous devez spécifiquement nommer le repère par le biais de cette propriété. Vous pouvez également utiliser cette propriété pour remplacer les noms par défaut des types d’éléments de rapport non personnalisés.
+Utilisez [AutomationProperties. LocalizedLandmarkTypeProperty](/uwp/api/windows.ui.xaml.automation.automationproperties.LocalizedLandmarkTypeProperty) pour nommer spécifiquement le repère. Si vous sélectionnez un type de repère prédéfini, tel que principal ou de navigation, ces noms sont utilisés pour le nom du repère. Toutefois, si vous définissez le type de repère sur personnalisé, vous devez spécifiquement nommer le repère par le biais de cette propriété. Vous pouvez également utiliser cette propriété pour remplacer les noms par défaut des types d’éléments de rapport non personnalisés.
 
-Utilisez [AutomationProperties. HeadingLevel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.headinglevelproperty) pour définir l’élément d’interface utilisateur en tant que titre d’un niveau spécifique, de *niveau1* à *Level9*.
+Utilisez [AutomationProperties. HeadingLevel](/uwp/api/windows.ui.xaml.automation.automationproperties.headinglevelproperty) pour définir l’élément d’interface utilisateur en tant que titre d’un niveau spécifique, de *niveau1* à *Level9*.
 
 ## <a name="examples"></a>Exemples
 
-Pour obtenir de nombreux exemples de code qui montrent comment résoudre de nombreux problèmes courants d’accessibilité par programme dans les applications de bureau Windows, consultez [exemples de code pour la résolution des problèmes courants d’accessibilité par programmation dans les applications de bureau Windows](https://docs.microsoft.com/accessibility-tools-docs/).
+Pour obtenir de nombreux exemples de code qui montrent comment résoudre de nombreux problèmes courants d’accessibilité par programme dans les applications de bureau Windows, consultez [exemples de code pour la résolution des problèmes courants d’accessibilité par programmation dans les applications de bureau Windows](/accessibility-tools-docs/).
 
 Ces exemples de code sont directement référencés par[ Microsoft Accessibility Insights pour Windows](https://github.com/microsoft/accessibility-insights-windows), ce qui peut aider à améliorer la plupart des problèmes d’accessibilité dans l’interface utilisateur.

@@ -8,12 +8,12 @@ ms.date: 11/20/2017
 ms.topic: article
 keywords: Windows 10, UWP, notifications Toast, toasts interactifs, toasts adaptatifs, contenu Toast, charge utile Toast
 ms.localizationpriority: medium
-ms.openlocfilehash: bda62b76973adb7b6cfe068cdd9ca33b1a54454c
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 97dd16d712dca3de69a98c608b7c8947ebbddfea
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970924"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173363"
 ---
 # <a name="toast-content"></a>Contenu des toasts
 
@@ -22,10 +22,10 @@ Les notifications Toast adaptatives et interactives vous permettent de créer de
 > **API importantes** : [Package NuGet UWP Community Toolkit Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
 > [!NOTE]
-> Pour afficher les modèles hérités de Windows 8.1 et Windows Phone 8,1, consultez le [catalogue de modèles Toast hérité](https://docs.microsoft.com/previous-versions/windows/apps/hh761494(v=win.10)).
+> Pour afficher les modèles hérités de Windows 8.1 et Windows Phone 8,1, consultez le [catalogue de modèles Toast hérité](/previous-versions/windows/apps/hh761494(v=win.10)).
 
 
-## <a name="getting-started"></a>Prise en main
+## <a name="getting-started"></a>Mise en route
 
 **Installez la bibliothèque Notifications.** Si vous préférez utiliser C# plutôt que XML pour générer les notifications, installez le package NuGet [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) (recherchez « notifications uwp ». Les exemples de code C# indiqués dans cet article utilisent la version 1.0.0 du package NuGet.
 
@@ -238,7 +238,7 @@ Pour les images Web distantes http et HTTPS, il existe des limites sur la taille
 
 | Connexion normale | Connexion limitée | Avant la mise à jour des créateurs de automne |
 | - | - | - |
-| 3 Mo | 1 Mo | 200 Ko |
+| 3 Mo | 1 Mo | 200 Ko |
 
 Si une image dépasse la taille du fichier ou ne peut pas être téléchargée, ou expire, l’image est supprimée et le reste de la notification s’affiche.
 
@@ -303,7 +303,7 @@ ToastContent toastContent = new ToastContent()
 Pour en savoir plus sur l’utilisation d’une barre de progression, consultez [barre de progression Toast](toast-progress-bar.md).
 
 
-## <a name="headers"></a>En-têtes
+## <a name="headers"></a>headers
 
 **Nouveautés de Creators Update**: vous pouvez regrouper les notifications sous les en-têtes dans le centre de maintenance. Par exemple, vous pouvez regrouper des messages d’une conversation de groupe sous un en-tête, ou des notifications de groupe d’un thème commun sous un en-tête, ou plus.
 
@@ -318,7 +318,7 @@ Pour en savoir plus sur l’utilisation des en-têtes, consultez [en-têtes Toas
 
 Ce contenu supplémentaire est spécifié à l’aide de Adaptive, qui vous permet d’en savoir plus sur en lisant la documentation sur les [vignettes adaptatives](create-adaptive-tiles.md).
 
-Notez que tout contenu adaptatif doit être contenu dans un [**AdaptiveGroup**](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/toast-schema#adaptivegroup). Dans le cas contraire, il ne sera pas rendu à l’aide de Adaptive.
+Notez que tout contenu adaptatif doit être contenu dans un [**AdaptiveGroup**](./toast-schema.md#adaptivegroup). Dans le cas contraire, il ne sera pas rendu à l’aide de Adaptive.
 
 
 ### <a name="columns-and-text-elements"></a>Colonnes et éléments de texte

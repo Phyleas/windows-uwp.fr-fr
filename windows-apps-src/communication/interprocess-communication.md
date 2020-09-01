@@ -4,22 +4,22 @@ description: Cette rubrique décrit les différentes façons d’effectuer des c
 ms.date: 03/23/2020
 ms.topic: article
 keywords: windows 10, uwp
-ms.openlocfilehash: 5db029db3ffb538802f39aa616c96dbe75601eac
-ms.sourcegitcommit: bf7d4f6739aeeaac735aae3dd0dcbda63a8c5e69
+ms.openlocfilehash: 0aa3c62100ecbb30e136c52cee3a6862cf15bef2
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85256379"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175623"
 ---
 # <a name="interprocess-communication-ipc"></a>Communication interprocessus (IPC)
 
 Cette rubrique décrit les différentes façons d’effectuer des communications interprocessus (IPC) entre des applications plateforme Windows universelle (UWP) et des applications Win32.
 
-## <a name="app-services"></a>Services d’application
+## <a name="app-services"></a>App Services
 
 Les services d’application permettent aux applications d’exposer des services qui acceptent et retournent des conteneurs de propriétés de primitives ([**ValueSet**](/uwp/api/Windows.Foundation.Collections.ValueSet)) en arrière-plan. Les objets enrichis peuvent être passés s’ils sont [sérialisés](https://stackoverflow.com/questions/46367985/how-to-make-a-class-that-can-be-added-to-the-windows-foundation-collections-valu).
 
-Les services d’application peuvent s’exécuter [hors processus](/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service) en tant que tâche en arrière-plan ou [dans le processus](/windows/uwp/launch-resume/convert-app-service-in-process) au sein de l’application de premier plan.
+Les services d’application peuvent s’exécuter [hors processus](../launch-resume/how-to-create-and-consume-an-app-service.md) en tant que tâche en arrière-plan ou [dans le processus](../launch-resume/convert-app-service-in-process.md) au sein de l’application de premier plan.
 
 Les services d’application conviennent mieux pour le partage de petites quantités de données lorsque la latence en temps quasi réel n’est pas nécessaire.
 
@@ -27,13 +27,13 @@ Les services d’application conviennent mieux pour le partage de petites quanti
 
 [Com](/windows/win32/com/component-object-model--com--portal) est un système orienté objet distribué permettant de créer des composants logiciels binaires capables d’interagir et de communiquer. En tant que développeur, vous utilisez COM pour créer des composants logiciels réutilisables et des couches d’automatisation pour une application. Les composants COM peuvent être en cours de traitement ou hors processus, et ils peuvent communiquer via un modèle [client et serveur](/windows/win32/com/com-clients-and-servers) . Les serveurs COM out-of-process ont longtemps été utilisés pour la [communication entre les objets](/windows/win32/com/inter-object-communication).
 
-Les applications empaquetées avec la fonctionnalité [runFullTrust](/windows/uwp/packaging/app-capability-declarations#restricted-capabilities) peuvent inscrire des serveurs com hors processus pour IPC via le [manifeste du package](/uwp/schemas/appxpackage/uapmanifestschema/element-com-extension). C’est ce qu’on appelle [com empaqueté](https://blogs.windows.com/windowsdeveloper/2017/04/13/com-server-ole-document-support-desktop-bridge/).
+Les applications empaquetées avec la fonctionnalité [runFullTrust](../packaging/app-capability-declarations.md#restricted-capabilities) peuvent inscrire des serveurs com hors processus pour IPC via le [manifeste du package](/uwp/schemas/appxpackage/uapmanifestschema/element-com-extension). C’est ce qu’on appelle [com empaqueté](https://blogs.windows.com/windowsdeveloper/2017/04/13/com-server-ole-document-support-desktop-bridge/).
 
 ## <a name="filesystem"></a>FileSystem
 
 ### <a name="broadfilesystemaccess"></a>BroadFileSystemAccess
 
-Les applications empaquetées peuvent exécuter IPC à l’aide du système de fichiers large en déclarant la fonctionnalité restreinte [broadFileSystemAccess](/windows/uwp/files/file-access-permissions#accessing-additional-locations) . Cette fonctionnalité accorde aux API [Windows. Storage](/uwp/api/Windows.Storage) et aux API Win32 [xxxFromApp](/previous-versions/windows/desktop/legacy/mt846585(v=vs.85)) l’accès au système de fichiers large.
+Les applications empaquetées peuvent exécuter IPC à l’aide du système de fichiers large en déclarant la fonctionnalité restreinte [broadFileSystemAccess](../files/file-access-permissions.md#accessing-additional-locations) . Cette fonctionnalité accorde aux API [Windows. Storage](/uwp/api/Windows.Storage) et aux API Win32 [xxxFromApp](/previous-versions/windows/desktop/legacy/mt846585(v=vs.85)) l’accès au système de fichiers large.
 
 Par défaut, IPC via le système de fichiers pour les applications empaquetées est limité aux autres mécanismes décrits dans cette section.
 
@@ -57,13 +57,13 @@ Si vous publiez plusieurs applications et que vous recherchez un mécanisme simp
 
 ## <a name="fulltrustprocesslauncher"></a>FullTrustProcessLauncher
 
-Avec la fonctionnalité [runFullTrust](/windows/uwp/packaging/app-capability-declarations#restricted-capabilities) , les applications empaquetées peuvent [lancer des processus de confiance totale](/uwp/api/Windows.ApplicationModel.FullTrustProcessLauncher) dans le même package.
+Avec la fonctionnalité [runFullTrust](../packaging/app-capability-declarations.md#restricted-capabilities) , les applications empaquetées peuvent [lancer des processus de confiance totale](/uwp/api/Windows.ApplicationModel.FullTrustProcessLauncher) dans le même package.
 
 Dans les scénarios où les restrictions de package sont fastidieuses, ou si les options IPC manquent, une application peut utiliser un processus de confiance totale en tant que proxy pour interagir avec le système, puis IPC avec le processus de confiance totale par le biais d’app services ou d’un autre mécanisme IPC bien pris en charge.
 
 ## <a name="launchuriforresultsasync"></a>LaunchUriForResultsAsync
 
-[LaunchUriForResultsAsync](/windows/uwp/launch-resume/how-to-launch-an-app-for-results) est utilisé pour l’échange de données simple ([ValueSet](/uwp/api/Windows.Foundation.Collections.ValueSet)) avec d’autres applications empaquetées qui implémentent le contrat d’activation [ProtocolForResults](/windows/uwp/launch-resume/how-to-launch-an-app-for-results#step-2-override-applicationonactivated-in-the-app-that-youll-launch-for-results) . Contrairement à app services, qui s’exécute généralement en arrière-plan, l’application cible est lancée au premier plan.
+[LaunchUriForResultsAsync](../launch-resume/how-to-launch-an-app-for-results.md) est utilisé pour l’échange de données simple ([ValueSet](/uwp/api/Windows.Foundation.Collections.ValueSet)) avec d’autres applications empaquetées qui implémentent le contrat d’activation [ProtocolForResults](../launch-resume/how-to-launch-an-app-for-results.md#step-2-override-applicationonactivated-in-the-app-that-youll-launch-for-results) . Contrairement à app services, qui s’exécute généralement en arrière-plan, l’application cible est lancée au premier plan.
 
 Les fichiers peuvent être partagés en passant des jetons [SharedStorageAccessManager](/uwp/api/Windows.ApplicationModel.DataTransfer.SharedStorageAccessManager) à l’application via ValueSet.
 
@@ -78,7 +78,7 @@ Pour assurer la sécurité et l’isolement réseau, les connexions de bouclage 
     * Chaque application doit répertorier l’autre dans son [LoopbackAccessRules](/uwp/schemas/appxpackage/uapmanifestschema/element-uap4-loopbackaccessrules). Le client déclare une règle « out » pour le serveur, et le serveur déclare des règles « in » pour ses clients pris en charge.
 
 > [!NOTE]
-> Le nom de la famille de packages requis pour identifier une application dans ces règles est disponible via l’éditeur de manifeste de package dans Visual Studio pendant le développement, via l' [espace partenaires](/windows/uwp/publish/view-app-identity-details) pour les applications publiées via le Microsoft Store, ou via la commande PowerShell [AppxPackage](/powershell/module/appx/get-appxpackage?view=win10-ps) pour les applications déjà installées.
+> Le nom de la famille de packages requis pour identifier une application dans ces règles est disponible via l’éditeur de manifeste de package dans Visual Studio pendant le développement, via l' [espace partenaires](../publish/view-app-identity-details.md) pour les applications publiées via le Microsoft Store, ou via la commande PowerShell [AppxPackage](/powershell/module/appx/get-appxpackage?view=win10-ps) pour les applications déjà installées.
 
 Les applications et les services non empaquetés n’ont pas d’identité de package et ne peuvent donc pas être déclarés dans [LoopbackAccessRules](/uwp/schemas/appxpackage/uapmanifestschema/element-uap4-loopbackaccessrules). Vous pouvez configurer une application empaquetée pour qu’elle se connecte par le biais du bouclage avec des applications et des services non empaquetés via [CheckNetIsolation.exe](/previous-versions/windows/apps/hh780593(v=win.10)). Toutefois, cela n’est possible que pour les scénarios chargement ou de débogage dans lesquels vous disposez d’un accès local à l’ordinateur, et vous disposez de privilèges d’administrateur.
 
@@ -89,7 +89,7 @@ Les applications et les services non empaquetés n’ont pas d’identité de pa
     * L' `-is` indicateur a été introduit dans Windows 10, version 1607 (10,0 ; Build 14393).
 
 > [!NOTE]
-> Le nom de famille de packages requis pour l' `-n` indicateur de [CheckNetIsolation.exe](/previous-versions/windows/apps/hh780593(v=win.10)) est disponible via l’éditeur de manifeste de package dans Visual Studio pendant le développement, via l' [espace partenaires](/windows/uwp/publish/view-app-identity-details) pour les applications publiées via le Microsoft Store ou via la commande PowerShell [AppxPackage](/powershell/module/appx/get-appxpackage?view=win10-ps) pour les applications qui sont déjà installées.
+> Le nom de famille de packages requis pour l' `-n` indicateur de [CheckNetIsolation.exe](/previous-versions/windows/apps/hh780593(v=win.10)) est disponible via l’éditeur de manifeste de package dans Visual Studio pendant le développement, via l' [espace partenaires](../publish/view-app-identity-details.md) pour les applications publiées via le Microsoft Store ou via la commande PowerShell [AppxPackage](/powershell/module/appx/get-appxpackage?view=win10-ps) pour les applications qui sont déjà installées.
 
 [CheckNetIsolation.exe](/previous-versions/windows/apps/hh780593(v=win.10)) est également utile pour [déboguer les problèmes d’isolement réseau](/previous-versions/windows/apps/hh780593(v=win.10)#debug-network-isolation-issues).
 
@@ -100,7 +100,7 @@ Les [canaux](/windows/win32/ipc/pipes) permettent une communication simple entre
 Les canaux [nommés](/windows/win32/ipc/named-pipes) et les [canaux anonymes](/windows/win32/ipc/anonymous-pipes) sont pris en charge avec les contraintes suivantes :
 
 * Par défaut, les canaux nommés dans les applications empaquetées sont pris en charge uniquement entre les processus au sein du même package, sauf si un processus est de confiance totale.
-* Les canaux nommés peuvent être partagés entre les packages en suivant les instructions relatives au [partage des objets nommés](/windows/uwp/communication/sharing-named-objects).
+* Les canaux nommés peuvent être partagés entre les packages en suivant les instructions relatives au [partage des objets nommés](./sharing-named-objects.md).
 * Les canaux nommés dans les applications empaquetées doivent utiliser la syntaxe du `\\.\pipe\LOCAL\` nom du canal.
 
 ## <a name="registry"></a>Registre
@@ -122,6 +122,6 @@ Les points de terminaison RPC peuvent également être gérée à des applicatio
 Le [mappage de fichier](/windows/win32/memory/sharing-files-and-memory) peut être utilisé pour partager un fichier ou une mémoire entre deux ou plusieurs processus avec les contraintes suivantes :
 
 * Par défaut, les mappages de fichiers dans les applications empaquetées sont pris en charge uniquement entre les processus dans le même package, sauf si un processus est de confiance totale.
-* Les mappages de fichiers peuvent être partagés entre les packages en suivant les instructions relatives au [partage des objets nommés](/windows/uwp/communication/sharing-named-objects).
+* Les mappages de fichiers peuvent être partagés entre les packages en suivant les instructions relatives au [partage des objets nommés](./sharing-named-objects.md).
 
 La mémoire partagée est recommandée pour partager et manipuler efficacement de grandes quantités de données.

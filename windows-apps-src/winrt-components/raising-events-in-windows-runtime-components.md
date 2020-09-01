@@ -6,17 +6,17 @@ ms.date: 07/19/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b5b5678ad1a0666e6f008a2ec69ba63c35441edf
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: b44e4ba86ab96474d4770c32024b8edc5641c396
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493514"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174283"
 ---
 # <a name="raising-events-in-windows-runtime-components"></a>Déclenchement d’événements dans les composants Windows Runtime
 
 > [!NOTE]
-> Pour plus d’informations sur le déclenchement d’événements dans un composant [c++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Windows Runtime, consultez [créer des événements en c++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-events).
+> Pour plus d’informations sur le déclenchement d’événements dans un composant [c++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) Windows Runtime, consultez [créer des événements en c++/WinRT](../cpp-and-winrt-apis/author-events.md).
 
 Si votre composant Windows Runtime déclenche un événement d’un type délégué défini par l’utilisateur sur un thread d’arrière-plan (thread de travail) et que vous souhaitez que JavaScript puisse recevoir l’événement, vous pouvez l’implémenter et/ou le déclencher de l’une des manières suivantes.
 

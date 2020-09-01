@@ -6,12 +6,12 @@ ms.date: 09/12/2019
 keywords: Reconnaissance vocale dans Windows 10, discours, voix, conversation, applications vocales Win32, applications vocales UWP, applications vocales WPF, applications vocales WinForms
 ms.author: kbridge
 author: Karl-Bridge-Microsoft
-ms.openlocfilehash: 7ac8d782591ce8f3716e491714c4cbf241e80b6c
-ms.sourcegitcommit: 8a88a05ad89aa180d41a93152632413694f14ef8
+ms.openlocfilehash: d810f08a2db60309e4528167bcb4bddc95d850c6
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76726549"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174153"
 ---
 # <a name="speech-voice-and-conversation-in-windows-10"></a>Discours, voix et conversation dans Windows 10
 
@@ -19,7 +19,7 @@ ms.locfileid: "76726549"
 
 La reconnaissance vocale peut être un moyen efficace, naturel et agréable pour les utilisateurs d’interagir avec vos applications Windows, en complément ou même en remplaçant les expériences d’interaction traditionnelles basées sur la souris, le clavier, le toucher, le contrôleur ou les gestes.
 
-Les fonctionnalités vocales telles que la reconnaissance vocale, la dictée, la synthèse vocale (également appelée conversion de texte par synthèse vocale ou TTS) et les assistants vocaux de conversation (tels que Cortana ou Alexa) peuvent fournir des expériences utilisateur accessibles et inclusifs qui permettent aux utilisateurs d’utiliser vos applications lorsque d’autres périphériques d’entrée peuvent ne pas suffire.
+Les fonctionnalités vocales telles que la reconnaissance vocale, la dictée, la synthèse vocale (également appelées synthèse vocale) et les assistants vocaux de conversation (tels que Cortana ou Alexa) peuvent fournir des expériences utilisateur accessibles et inclusifs qui permettent aux utilisateurs d’utiliser vos applications lorsque d’autres périphériques d’entrée peuvent ne pas suffire.
 
 Cette page fournit des informations sur la façon dont les différentes infrastructures de développement Windows assurent la reconnaissance vocale, la synthèse vocale et la prise en charge de la conversation pour les développeurs qui créent des applications Windows.
 
@@ -33,17 +33,17 @@ Cette page fournit des informations sur la façon dont les différentes infrastr
 
       Créez des applications vocales sur la plateforme moderne pour les applications et les jeux Windows 10, sur n’importe quel appareil Windows (y compris les PC, les téléphones, Xbox One, HoloLens, etc.) et publiez-les sur le Microsoft Store.
 
-      [Interactions vocales](https://docs.microsoft.com/windows/uwp/design/input/speech-interactions)
+      [Interactions vocales](/windows/uwp/design/input/speech-interactions)
 
-      [Reconnaissance vocale](https://docs.microsoft.com/windows/uwp/design/input/speech-recognition)
+      [Reconnaissance vocale](/windows/uwp/design/input/speech-recognition)
 
-      [Dictée continue](https://docs.microsoft.com/windows/uwp/design/input/enable-continuous-dictation)
+      [Dictée continue](/windows/uwp/design/input/enable-continuous-dictation)
 
-      [Synthèse vocale](https://docs.microsoft.com/uwp/api/windows.media.speechsynthesis)
+      [Synthèse vocale](/uwp/api/windows.media.speechsynthesis)
 
-      [Agents de conversation](https://docs.microsoft.com/uwp/api/windows.applicationmodel.conversationalagent)
+      [Agents de conversation](/uwp/api/windows.applicationmodel.conversationalagent)
 
-      [Commandes vocales Cortana](https://docs.microsoft.com/cortana/voice-commands/vcd)
+      [Commandes vocales Cortana](/cortana/voice-commands/vcd)
    :::column-end:::
    :::column:::
       ![Applications de plateforme Win32](images/platform-win32.png)
@@ -61,11 +61,11 @@ Cette page fournit des informations sur la façon dont les différentes infrastr
    :::column:::
       ![.NET](images/platform-dotnet.png)
 
-      **.NET Framework**
+      **.NET Framework**
 
       Développez des applications et des outils accessibles sur la plateforme établie pour les applications Windows gérées avec un modèle d’interface utilisateur XAML et le .NET Framework.
 
-      [Guide de programmation System.Speech pour le .NET Framework](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh361625(v=office.14))
+      [Guide de programmation System.Speech pour le .NET Framework](/previous-versions/office/developer/speech-technologies/hh361625(v=office.14))
    :::column-end:::
    :::column:::
       ![Services de reconnaissance vocale Azure](images/platform-azure-speech.png)
@@ -74,13 +74,13 @@ Cette page fournit des informations sur la façon dont les différentes infrastr
 
       Concevez, créez et testez des sites Web accessibles avec Azure Speech services.
 
-      [Parole en texte](https://azure.microsoft.com/services/cognitive-services/speech-to-text/)
+      [Reconnaissance vocale](https://azure.microsoft.com/services/cognitive-services/speech-to-text/)
 
-      [Conversion de texte par synthèse vocale](https://azure.microsoft.com/services/cognitive-services/text-to-speech/)
+      [Synthèse vocale](https://azure.microsoft.com/services/cognitive-services/text-to-speech/)
       
       [Traduction vocale](https://azure.microsoft.com/services/cognitive-services/speech-translation/)
 
-      [Assistants virtuels de la voix en premier](https://docs.microsoft.com/azure/cognitive-services/speech-service/voice-first-virtual-assistants)
+      [Assistants virtuels de la voix en premier](/azure/cognitive-services/speech-service/voice-first-virtual-assistants)
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -92,26 +92,26 @@ Cette page fournit des informations sur la façon dont les différentes infrastr
 :::row-end:::
 :::row:::
    :::column:::
-      [Agent Microsoft](https://docs.microsoft.com/windows/win32/lwef/microsoft-agent)
+      [Agent Microsoft](/windows/win32/lwef/microsoft-agent)
 
       [Kit de développement logiciel (SDK) Microsoft Speech application (SASDK) version 1,0](https://www.microsoft.com/download/details.aspx?id=2200)
    :::column-end:::
    :::column:::
-      [API Microsoft Speech (SAPI) 5,3](https://docs.microsoft.com/previous-versions/windows/desktop/ms723627(v=vs.85))
+      [API Microsoft Speech (SAPI) 5,3](/previous-versions/windows/desktop/ms723627(v=vs.85))
 
-      [API Microsoft Speech (SAPI) 5,4](https://docs.microsoft.com/previous-versions/windows/desktop/ee125663(v=vs.85))
+      [API Microsoft Speech (SAPI) 5,4](/previous-versions/windows/desktop/ee125663(v=vs.85))
 
-      [Contrôle de reconnaissance Reconnaissance vocale Bing](https://docs.microsoft.com/previous-versions/bing/speech/dn434583(v%3dmsdn.10))
+      [Contrôle de reconnaissance Reconnaissance vocale Bing](/previous-versions/bing/speech/dn434583(v=msdn.10))
    :::column-end:::
 :::row-end:::
 
-## <a name="samples"></a>Exemples
+## <a name="samples"></a>exemples
 
 Téléchargez et exécutez des exemples Windows complets qui illustrent diverses fonctionnalités d’accessibilité.
 
 :::row:::
    :::column:::
-      [Navigateur d’exemples de code](https://docs.microsoft.com/samples/browse/?term=speech)
+      [Navigateur d’exemples de code](/samples/browse/?term=speech)
 
       Le nouveau navigateur d’exemples (remplace la Galerie de code MSDN).
    :::column-end:::

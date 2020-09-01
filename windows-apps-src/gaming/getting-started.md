@@ -6,14 +6,14 @@ ms.date: 01/25/2018
 ms.topic: article
 keywords: Windows 10, UWP, jeux, prise en main
 localizationpriority: medium
-ms.openlocfilehash: eb2feeaa7d4ad67ecb9d6b54c5bc275faf9cc0bd
-ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
+ms.openlocfilehash: 7d3e50f5d32cd8c6a497ff3de67005972d3a0f7f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88970237"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175313"
 ---
-# <a name="getting-started"></a>Prise en main
+# <a name="getting-started"></a>Mise en route
 
 Cet article est un guide de mise en route pour les créateurs qui souhaitent développer des jeux sur Windows ou Xbox. 
 
@@ -54,7 +54,7 @@ Pour obtenir d’autres exemples, consultez [exemples de jeux](e2e.md#game-sampl
 
 Si vous souhaitez développer un jeu Xbox ou utiliser des fonctionnalités Xbox Live dans votre jeu, rejoignez le programme ou le programme des [créateurs Xbox Live](https://developer.microsoft.com/games/xbox/xboxlive/creator) [ID@Xbox](https://www.xbox.com/Developers/id) . 
 
-Pour en savoir plus sur les fonctionnalités de Xbox Live qui sont disponibles pour chacun des programmes, consultez [table des fonctionnalités](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#feature-table). Pour plus d’informations, consultez [Developer Programs](e2e.md#developer-programs).
+Pour en savoir plus sur les fonctionnalités de Xbox Live qui sont disponibles pour chacun des programmes, consultez [table des fonctionnalités](/gaming/xbox-live/developer-program-overview.md#feature-table). Pour plus d’informations, consultez [Developer Programs](e2e.md#developer-programs).
 
 > [!Note]
 > Xbox Live Creators est disponible pour tous les développeurs. **Tout le monde** peut publier un jeu Xbox. Pour faire de votre titre le programme des créateurs Xbox Live, il vous suffit d’activer cette option dans l’espace partenaires. Pour plus d’informations sur l’inscription à un compte espace partenaires, consultez l' [étape 5](#step-5-sign-up-for-a-partner-center-account) ci-dessous.

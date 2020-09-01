@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 58d3b59d8fdd1587a0bec8369a78863d0c3d4557
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 02a0b3c631d3ee85353eb0516d5c6d1aa511f77e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66358811"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174923"
 ---
 # <a name="getting-started-getting-around-in-visual-studio"></a>Bien démarrer : Savoir maîtriser Visual Studio
 
@@ -44,7 +44,7 @@ Faites de même avec le contrôle **TextBlock**, afin qu’il se présente comme
 
 ![conception de l’interface utilisateur dans visual studio](images/ios-to-uwp/vs-add-button-label.png)
 
-Contrairement à Xcode, qui masque les informations de disposition et de liaison à l’intérieur d’un fichier .xib ou d’une table de montage séquentiel, Visual Studio vous incite à modifier les fichiers XAML utilisés pour stocker ces détails. Il s’agit d’un langage riche, modifiable et déclaratif de type XML. Pour plus d’informations sur le langage XAML (Extensible Application Markup Language), voir [Vue d’ensemble du langage XAML](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-overview). Pour l’instant, sachez que tous les éléments affichés dans le volet **Conception** sont définis dans le volet **XAML**. Le volet **XAML** permet un contrôle précis si nécessaire et, quand vous en saurez davantage à ce sujet, vous pourrez rapidement développer manuellement un code d’interface utilisateur. Quoi qu’il en soit, pour le moment, concentrons-nous simplement sur les volets **Conception** et **Propriétés**.
+Contrairement à Xcode, qui masque les informations de disposition et de liaison à l’intérieur d’un fichier .xib ou d’une table de montage séquentiel, Visual Studio vous incite à modifier les fichiers XAML utilisés pour stocker ces détails. Il s’agit d’un langage riche, modifiable et déclaratif de type XML. Pour plus d’informations sur le langage XAML (Extensible Application Markup Language), voir [Vue d’ensemble du langage XAML](../xaml-platform/xaml-overview.md). Pour l’instant, sachez que tous les éléments affichés dans le volet **Conception** sont définis dans le volet **XAML**. Le volet **XAML** permet un contrôle précis si nécessaire et, quand vous en saurez davantage à ce sujet, vous pourrez rapidement développer manuellement un code d’interface utilisateur. Quoi qu’il en soit, pour le moment, concentrons-nous simplement sur les volets **Conception** et **Propriétés**.
 
 Modifions les détails du bouton. Comme vous le savez, pour modifier le nom du bouton dans Xcode, vous devez modifier la valeur du champ **Titre** dans son panneau de propriétés.
 
@@ -70,7 +70,7 @@ Visual Studio est très semblable. En haut de la fenêtre **Propriétés** se tr
 
 ![liste des événements du bouton dans visual studio](images/ios-to-uwp/vs-button-event.png)
 
-Pour ajouter du code à l’événement Click du bouton, commencez par sélectionner le bouton dans le volet **Conception**. Ensuite, cliquez sur le bouton identifié par un éclair, puis double-cliquez sur la zone vide à côté du mot **Click**. Visual Studio ajoute ensuite l’événement « myButton\_cliquez sur « à la **cliquez sur** zone, puis ajoute et affiche le Gestionnaire d’événements correspondants dans le fichier MainPage.xaml.cs, comme suit.
+Pour ajouter du code à l’événement Click du bouton, commencez par sélectionner le bouton dans le volet **Conception**. Ensuite, cliquez sur le bouton identifié par un éclair, puis double-cliquez sur la zone vide à côté du mot **Click**. Visual Studio ajoute ensuite l’événement « myButton \_ Click » à la zone de **clic** , puis ajoute et affiche le gestionnaire d’événements correspondant dans le fichier MainPage.Xaml.cs, comme ceci.
 
 ```csharp
 private void myButton_Click(object sender, RoutedEventArgs e)
@@ -98,7 +98,7 @@ Dans Visual Studio, vous n’avez pas besoin d’associer le contrôle, car cela
 
 ![fenêtre des propriétés du libellé dans visual studio](images/ios-to-uwp/vs-label-properties.png)
 
-Ajoutons maintenant un peu de code à l’événement Click du bouton. Pour ce faire, appuyez sur le fichier MainPage.xaml.cs et ajoutez le code suivant à la myButton\_Gestionnaire d’événements Click.
+Ajoutons maintenant un peu de code à l’événement Click du bouton. Pour ce faire, appuyez sur le fichier MainPage.xaml.cs et ajoutez le code suivant au gestionnaire d' \_ événements de clic MyButton.
 
 ```csharp
 private void myButton_Click(object sender, RoutedEventArgs e)
@@ -124,5 +124,4 @@ Pour quitter l’application, revenez à Visual Studio, appuyez sur le menu **D�
 
 ## <a name="next-step"></a>Étape suivante
 
-[Mise en route : Contrôles communs](getting-started-common-controls.md)
-
+[Mise en route : contrôles communs](getting-started-common-controls.md)

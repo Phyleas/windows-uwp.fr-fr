@@ -8,30 +8,30 @@ keywords: périphérique, numériseur, entrées, interactions
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 792b2f71408928de0278dd0c623f13923a2165a8
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: afd0a855ce35ecb37eb55ac8788ec51c063e8da7
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970024"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173433"
 ---
 # <a name="identify-input-devices"></a>Identifier des appareils d’entrée
 
 
 Identifiez les périphériques d’entrée connectés à un périphérique d’application Windows et identifiez leurs fonctionnalités et attributs.
 
-> **API importantes**: [**Windows. Devices. Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input), [**Windows. UI. Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Core), [**Windows. UI. Xaml. Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
+> **API importantes**: [**Windows. Devices. Input**](/uwp/api/Windows.Devices.Input), [**Windows. UI. Input**](/uwp/api/Windows.UI.Core), [**Windows. UI. Xaml. Input**](/uwp/api/Windows.UI.Input)
 
 ## <a name="retrieve-mouse-properties"></a>Récupérer les propriétés de la souris
 
 
-L’espace de noms [**Windows. Devices. Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input) contient la classe [**MouseCapabilities**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.MouseCapabilities) utilisée pour récupérer les propriétés exposées par une ou plusieurs souris connectées. Créez simplement un objet **MouseCapabilities** et obtenez les propriétés qui vous intéressent.
+L’espace de noms [**Windows. Devices. Input**](/uwp/api/Windows.Devices.Input) contient la classe [**MouseCapabilities**](/uwp/api/Windows.Devices.Input.MouseCapabilities) utilisée pour récupérer les propriétés exposées par une ou plusieurs souris connectées. Créez simplement un objet **MouseCapabilities** et obtenez les propriétés qui vous intéressent.
 
-**Notez**  que les valeurs retournées par les propriétés présentées ici sont basées sur toutes les souris détectées : les propriétés booléennes retournent une valeur différente de zéro si au moins une souris prend en charge une fonctionnalité spécifique, et les propriétés numériques retournent la valeur maximale exposée par une souris.
+**Remarque**    Les valeurs retournées par les propriétés décrites ici sont basées sur toutes les souris détectées : les propriétés booléennes retournent une valeur différente de zéro si au moins une souris prend en charge une fonctionnalité spécifique, et les propriétés numériques retournent la valeur maximale exposée par une souris.
 
  
 
-Le code suivant utilise une série d’éléments [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) pour afficher les propriétés et les valeurs individuelles de la souris.
+Le code suivant utilise une série d’éléments [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) pour afficher les propriétés et les valeurs individuelles de la souris.
 
 ```CSharp
 private void GetMouseProperties()
@@ -48,9 +48,9 @@ private void GetMouseProperties()
 ## <a name="retrieve-keyboard-properties"></a>Récupérer les propriétés du clavier
 
 
-L’espace de noms [**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input) contient la classe [**KeyboardCapabilities**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.KeyboardCapabilities), utilisée pour savoir si un clavier est connecté. Créez simplement un objet **KeyboardCapabilities** et obtenez la propriété [**KeyboardPresent**](https://docs.microsoft.com/uwp/api/windows.devices.input.keyboardcapabilities.keyboardpresent).
+L’espace de noms [**Windows.Devices.Input**](/uwp/api/Windows.Devices.Input) contient la classe [**KeyboardCapabilities**](/uwp/api/Windows.Devices.Input.KeyboardCapabilities), utilisée pour savoir si un clavier est connecté. Créez simplement un objet **KeyboardCapabilities** et obtenez la propriété [**KeyboardPresent**](/uwp/api/windows.devices.input.keyboardcapabilities.keyboardpresent).
 
-Le code suivant utilise un élément [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) pour afficher la propriété et la valeur de clavier.
+Le code suivant utilise un élément [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) pour afficher la propriété et la valeur de clavier.
 
 ```CSharp
 private void GetKeyboardProperties()
@@ -63,13 +63,13 @@ private void GetKeyboardProperties()
 ## <a name="retrieve-touch-properties"></a>Récupérer les propriétés de l’interaction tactile
 
 
-L’espace de noms [**Windows. Devices. Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input) contient la classe [**TouchCapabilities**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.TouchCapabilities) utilisée pour récupérer si des numériseurs tactiles sont connectés. Créez simplement un objet **TouchCapabilities** et obtenez les propriétés qui vous intéressent.
+L’espace de noms [**Windows. Devices. Input**](/uwp/api/Windows.Devices.Input) contient la classe [**TouchCapabilities**](/uwp/api/Windows.Devices.Input.TouchCapabilities) utilisée pour récupérer si des numériseurs tactiles sont connectés. Créez simplement un objet **TouchCapabilities** et obtenez les propriétés qui vous intéressent.
 
-**Notez**  que les valeurs retournées par les propriétés décrites ici sont basées sur tous les numériseurs tactiles détectés : les propriétés booléennes retournent une valeur différente de zéro si au moins un digitaliseur prend en charge une fonctionnalité spécifique, et les propriétés numériques retournent la valeur maximale exposée par un digitaliseur.
+**Remarque**    Les valeurs retournées par les propriétés décrites ici sont basées sur tous les numériseurs tactiles détectés : les propriétés booléennes retournent une valeur différente de zéro si au moins un digitaliseur prend en charge une fonctionnalité spécifique, et les propriétés numériques retournent la valeur maximale exposée par un digitaliseur.
 
  
 
-Le code suivant utilise une série d’éléments [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) permettant d’afficher les propriétés et valeurs de l’interaction tactile.
+Le code suivant utilise une série d’éléments [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) permettant d’afficher les propriétés et valeurs de l’interaction tactile.
 
 ```CSharp
 private void GetTouchProperties()
@@ -83,9 +83,9 @@ private void GetTouchProperties()
 ## <a name="retrieve-pointer-properties"></a>Récupérer les propriétés du pointeur
 
 
-L’espace de noms [**Windows. Devices. Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input) contient la classe [**PointerDevice**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.PointerDevice) utilisée pour récupérer si des appareils détectés prennent en charge l’entrée de pointeur (tactile, pavé tactile, souris ou stylet). Créez simplement un objet **PointerDevice** et obtenez les propriétés qui vous intéressent.
+L’espace de noms [**Windows. Devices. Input**](/uwp/api/Windows.Devices.Input) contient la classe [**PointerDevice**](/uwp/api/Windows.Devices.Input.PointerDevice) utilisée pour récupérer si des appareils détectés prennent en charge l’entrée de pointeur (tactile, pavé tactile, souris ou stylet). Créez simplement un objet **PointerDevice** et obtenez les propriétés qui vous intéressent.
 
-**Notez**  que les valeurs retournées par les propriétés décrites ici sont basées sur tous les périphériques de pointage détectés : les propriétés booléennes retournent une valeur différente de zéro si au moins un périphérique prend en charge une fonctionnalité spécifique, et les propriétés numériques retournent la valeur maximale exposée par un périphérique de pointeur.
+**Remarque**    Les valeurs retournées par les propriétés décrites ici sont basées sur tous les dispositifs de pointage détectés : les propriétés booléennes retournent une valeur différente de zéro si au moins un périphérique prend en charge une fonctionnalité spécifique, et les propriétés numériques retournent la valeur maximale exposée par un périphérique de pointeur.
 
 Le code suivant utilise un tableau permettant d’afficher les propriétés et valeurs de chaque périphérique de pointage.
 

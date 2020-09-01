@@ -1,43 +1,43 @@
 ---
 title: Partage de Mes Contacts
-description: Explique comment ajouter la prise en charge du partage de mes contacts
+description: Utilisez le partage de mes personnes pour permettre aux utilisateurs d’épingler des contacts à leur barre des tâches et de rester en contact facilement depuis n’importe où dans Windows.
 ms.date: 06/28/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ff37a243f88bdd378998070f58ec35196c62a6cf
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 76d52fe3ed7e7fb74ae5338e589ab34751bedebe
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75683487"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173663"
 ---
 # <a name="my-people-sharing"></a>Partage de Mes Contacts
 
-La fonctionnalité Mes Contact permet aux utilisateurs d’épingler des contacts à leur barre des tâches pour rester en contact facilement sous Windows à partir de n’importe quelle application. Maintenant, les utilisateurs peuvent partager leurs contacts épinglés en faisant glisser des fichiers à partir de l’Explorateur de fichiers vers Mes Contacts. Ils peuvent également partager tous les contacts du magasin de contacts Windows via l’icône de partage standard. Poursuivez votre lecture pour savoir comment activer votre application en tant que cible de partage Mes Contacts.
+La fonctionnalité mes contacts permet aux utilisateurs d’épingler des contacts à leur barre des tâches, ce qui leur permet de rester en contact aisé depuis n’importe où dans Windows, quelle que soit l’application à laquelle ils sont connectés. Désormais, les utilisateurs peuvent partager du contenu avec leurs contacts épinglés en faisant glisser les fichiers de l’Explorateur de fichiers vers leur code confidentiel mes contacts. Ils peuvent également partager des contacts dans le magasin de contacts Windows via la icône de partage standard. Poursuivez la lecture pour apprendre à activer votre application en tant que cible de partage de mes personnes.
 
-![Volet de partage Mes Contacts](images/my-people-sharing.png)
+![Panneau de partage de mes personnes](images/my-people-sharing.png)
 
-## <a name="requirements"></a>Conditions préalables
+## <a name="requirements"></a>Spécifications
 
-+ Windows 10 et Microsoft Visual Studio 2019. Pour en savoir plus sur l’installation, voir [Prendre en main Visual Studio](https://docs.microsoft.com/windows/uwp/get-started/get-set-up).
-+ Connaissances de base de C# ou d’un langage de programmation orienté objet similaire. Pour vous familiariser avec C#, voir [Créer une application « Hello, world »](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
++ Windows 10 et Microsoft Visual Studio 2019. Pour plus d’informations sur l’installation, consultez la page [obtenir une configuration avec Visual Studio](../get-started/get-set-up.md).
++ Connaissances de base de C# ou d’un langage de programmation orienté objet similaire. Pour commencer à utiliser C#, consultez [créer une application « Hello, World »](../get-started/create-a-hello-world-app-xaml-universal.md).
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d’ensemble
 
-Pour activer votre application en tant que cible de partage Mes Contacts, procédez comme suit :
+Vous devez suivre trois étapes pour activer votre application en tant que cible de partage de mes personnes :
 
-1. [Déclarez la prise en charge du contrat d’activation shareTarget dans le manifeste de votre application.](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
-2. [Annotez les contacts que les utilisateurs peuvent partager avec votre application.](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
-3. Prendre en charge plusieurs instances de l’application en cours d’exécution en même temps.  Les utilisateurs doivent pouvoir interagir avec une version complète de votre application tout en l’utilisant également pour effectuer des partages avec d’autres personnes. Ils peuvent l’utiliser dans plusieurs fenêtres de partage à la fois. Pour ce faire, votre application doit être en mesure d’exécuter plusieurs vues simultanément. Pour savoir comment procéder, consultez l’article [« afficher plusieurs vues d’une application »](https://docs.microsoft.com/windows/uwp/design/layout/show-multiple-views).
+1. [Déclarez la prise en charge du contrat d’activation shareTarget dans le manifeste de votre application.](#declaring-support-for-the-share-contract)
+2. [Annotez les contacts que les utilisateurs peuvent partager avec votre application.](#annotating-contacts)
+3. Prendre en charge plusieurs instances de l’application en cours d’exécution en même temps.  Les utilisateurs doivent être en mesure d’interagir avec une version complète de votre application tout en l’utilisant pour les partager avec d’autres personnes. Ils peuvent l’utiliser dans plusieurs fenêtres de partage à la fois. Pour prendre cela en charge, votre application doit être en mesure d’exécuter plusieurs vues simultanément. Pour savoir comment procéder, consultez l’article [« afficher plusieurs vues pour une application »](../design/layout/show-multiple-views.md).
 
-Une fois cette opération effectuée, votre application s’affiche en tant que cible de partage dans la fenêtre de partage de mes contacts, qui peut être lancée de deux manières :
-1. Un contact est choisi via l’icône de partage.
-2. Les fichiers sont glissés et déposés sur un contact épinglé à la barre des tâches.
+Une fois cette opération effectuée, votre application s’affiche en tant que cible de partage dans la fenêtre partage mes personnes, qui peut être lancée de deux façons :
+1. Un contact est choisi via l’icône partager.
+2. Le ou les fichiers sont déplacés et déplacés sur un contact épinglé à la barre des tâches.
 
-## <a name="declaring-support-for-the-share-contract"></a>Déclaration de prise en charge pour le contrat de partage
+## <a name="declaring-support-for-the-share-contract"></a>Déclaration de prise en charge du contrat de partage
 
-Pour déclarer la prise en charge de votre application en tant que cible de partage, ouvrez tout d’abord votre application dans Visual Studio. À partir de l’**Explorateur de solutions**, cliquez avec le bouton droit sur **Package.appxmanifest** et sélectionnez **Ouvrir avec**. Dans le menu, sélectionnez **Éditeur (de texte) XML** et cliquez sur **OK**. Apportez ensuite les modifications suivantes au manifeste :
+Pour déclarer la prise en charge de votre application en tant que cible de partage, commencez par ouvrir votre application dans Visual Studio. Dans le **Explorateur de solutions**, cliquez avec le bouton droit sur **Package. appxmanifest** , puis sélectionnez **Ouvrir avec**. Dans le menu, sélectionnez **éditeur XML (texte)** , puis cliquez sur **OK**. Ensuite, apportez les modifications suivantes au manifeste :
 
 
 **Avant**
@@ -75,15 +75,15 @@ Pour déclarer la prise en charge de votre application en tant que cible de part
 </Applications>
 ```
 
-Ce code ajoute la prise en charge de tous les formats de fichiers et de données. Toutefois, vous pouvez choisir de spécifier les types de fichiers et les formats de données pris en charge (voir la  [documentation relative à la classe ShareTarget](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-sharetarget) pour plus d’informations).
+Ce code ajoute la prise en charge de tous les fichiers et formats de données, mais vous pouvez choisir de spécifier les types de fichiers et les formats de données pris en charge (pour plus d’informations, consultez [la documentation relative à la classe ShareTarget](/uwp/schemas/appxpackage/appxmanifestschema/element-sharetarget) ).
 
 ## <a name="annotating-contacts"></a>Annoter des contacts
 
-Pour autoriser la fenêtre de partage de mes contacts à afficher votre application en tant que cible de partage pour vos contacts, vous devez les écrire dans le magasin de contacts Windows. Pour savoir comment écrire des contacts, reportez-vous à l’[exemple d’intégration à une carte de visite](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration). 
+Pour autoriser la fenêtre de partage de mes personnes à afficher votre application en tant que cible de partage pour vos contacts, vous devez les écrire dans le magasin de contacts Windows. Pour savoir comment écrire des contacts, consultez l' [exemple intégration](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)de la carte de visite. 
 
-Pour que votre application s’affiche en tant que cible de partage de mes contacts lorsque vous partagez un contact, celle-ci doit écrire une annotation dans ce contact. Les annotations sont des données issues de votre application qui sont associées à un contact. L’annotation doit contenir la classe activable correspondant à la vue de votre choix dans son membre **ProviderProperties** et déclarer prendre en charge l’opération **Share**.
+Pour que votre application apparaisse en tant que cible de partage mes personnes lors du partage avec un contact, elle doit écrire une annotation sur ce contact. Les annotations sont des éléments de données de votre application qui sont associés à un contact. L’annotation doit contenir la classe activable correspondant à la vue souhaitée dans son membre **ProviderProperties** et déclarer la prise en charge de l’opération de **partage** .
 
-Vous pouvez annoter les contacts à tout moment lorsque votre application est en cours d’exécution, mais généralement vous devez les annoter dès qu’ils sont ajoutés au magasin de contacts Windows.
+Vous pouvez annoter des contacts à tout moment pendant l’exécution de votre application, mais vous devez généralement annoter les contacts dès qu’ils sont ajoutés au magasin de contacts Windows.
 
 ```Csharp
 if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract", 5))
@@ -103,11 +103,11 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 }
 ```
 
-« appId » est le nom de la famille de packages, suivi de « ! » et l’ID de la classe activable. Pour rechercher votre Nom de la famille de packages, ouvrez **Package.appxmanifest** à l’aide de l’éditeur par défaut, puis regardez dans l’onglet « Packages ». Ici, « Application » est la classe activable correspondant à l’affichage de cible de partage.
+« AppId » est le nom de la famille de packages, suivi de «  ! » et l’ID de classe activable. Pour trouver le nom de la famille de packages, ouvrez **Package. appxmanifest** à l’aide de l’éditeur par défaut et recherchez dans l’onglet « Packaging ». Ici, « app » est la classe activable correspondant à la vue de la cible du partage.
 
-## <a name="running-as-a-my-people-share-target"></a>En cours d’exécution en tant que cible de partage de mes contacts
+## <a name="running-as-a-my-people-share-target"></a>Exécution en tant que cible de partage mes contacts
 
-Enfin, pour exécuter l’application, remplacez la méthode [OnShareTargetActivated](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Application#Windows_UI_Xaml_Application_OnShareTargetActivated_Windows_ApplicationModel_Activation_ShareTargetActivatedEventArgs_) de la classe principale de votre application pour gérer l’activation de la cible de partage. La propriété [ShareTargetActivatedEventArgs.ShareOperation.Contacts](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.sharetarget.shareoperation#Properties) contiendra le(s) contact(s) partagé(s) ou sera vide s’il s’agit d’une opération de partage standard (pas un partage de mes contacts).
+Enfin, pour exécuter l’application, remplacez la méthode [OnShareTargetActivated](/uwp/api/Windows.UI.Xaml.Application#Windows_UI_Xaml_Application_OnShareTargetActivated_Windows_ApplicationModel_Activation_ShareTargetActivatedEventArgs_) dans la classe principale de votre application pour gérer l’activation de la cible de partage. La propriété [ShareTargetActivatedEventArgs. ShareOperation. contacts](/uwp/api/windows.applicationmodel.datatransfer.sharetarget.shareoperation#Properties) contient le ou les contacts à partager, ou elle est vide s’il s’agit d’une opération de partage standard (et non d’un partage mes personnes).
 
 ```Csharp
 protected override void OnShareTargetActivated(ShareTargetActivatedEventArgs args)
@@ -131,7 +131,7 @@ protected override void OnShareTargetActivated(ShareTargetActivatedEventArgs arg
 }
 ```
 
-## <a name="see-also"></a>Articles associés
+## <a name="see-also"></a>Voir aussi
 + [Ajout de la prise en charge de mes contacts](my-people-support.md)
-+ [ShareTarget, classe](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-sharetarget)
++ [ShareTarget, classe](/uwp/schemas/appxpackage/appxmanifestschema/element-sharetarget)
 + [Exemple d’intégration de carte de visite](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)

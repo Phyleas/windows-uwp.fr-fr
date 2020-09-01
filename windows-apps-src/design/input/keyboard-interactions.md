@@ -11,12 +11,12 @@ pm-contact: chigy
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
-ms.openlocfilehash: 44cb122f70825df3ceef043d84e57cd077780749
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: f4f2e9e13f492dd9a38d737c0c86dd3b1e632279
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234699"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173483"
 ---
 # <a name="keyboard-interactions"></a>Interactions avec le clavier
 
@@ -143,10 +143,10 @@ Par défaut, les contrôles UWP suivent les comportements de clavier de base sui
 -   Les **touches de tabulation** permettent de naviguer entre les contrôles actionnables/actifs dans l’ordre de tabulation.
 -   **MAJ + TAB** permet de parcourir les contrôles dans l’ordre inverse de tabulation. Si l’utilisateur a navigué à l’intérieur du contrôle à l’aide de la touche de direction, le focus est défini sur la dernière valeur connue à l’intérieur du contrôle.
 -   Les **touches de direction** exposent la « navigation interne » spécifique au contrôle quand l’utilisateur entre « navigation interne », les touches de direction ne quittent pas un contrôle. Voici quelques exemples :
-    -   Touche flèche haut/bas déplace le focus à l’intérieur `ListView` et`MenuFlyout`
-    -   Modifiez les valeurs actuellement sélectionnées pour `Slider` et.`RatingsControl`
-    -   Déplacer le signe insertion à l’intérieur`TextBox`
-    -   Développer/réduire des éléments à l’intérieur`TreeView`
+    -   Touche flèche haut/bas déplace le focus à l’intérieur `ListView` et `MenuFlyout`
+    -   Modifiez les valeurs actuellement sélectionnées pour `Slider` et. `RatingsControl`
+    -   Déplacer le signe insertion à l’intérieur `TextBox`
+    -   Développer/réduire des éléments à l’intérieur `TreeView`
 
 Utilisez ces comportements par défaut pour optimiser la navigation au clavier de votre application.
 
@@ -284,7 +284,7 @@ Le tableau suivant est un petit exemple de raccourcis clavier fréquemment utili
 | Sélection continue                  | Maj+touche de direction                                  |
 | Enregistrer                                 | Ctrl+S                                           |
 | Rechercher                                 | Ctrl+F                                           |
-| Print                                | Ctrl+P                                           |
+| Impression                                | Ctrl+P                                           |
 | Copier                                 | Ctrl+C                                           |
 | Couper                                  | Ctrl+X                                           |
 | Coller                                | Ctrl+V                                           |
@@ -306,9 +306,9 @@ Vous pouvez regrouper un ensemble de contrôles associés ou complémentaires da
 #### <a name="arrow-key-navigation"></a>Navigation dans les touches de direction
 
 Les utilisateurs s’attendent à prendre en charge la navigation dans les touches de direction lorsqu’il existe un groupe de contrôles similaires, associés dans une région d’interface utilisateur :
--   `AppBarButtons`dans un`CommandBar`
--   `ListItems`ou `GridItems` à l’intérieur `ListView` ou`GridView`
--   `Buttons`dans`ContentDialog`
+-   `AppBarButtons` dans un `CommandBar`
+-   `ListItems` ou `GridItems` à l’intérieur `ListView` ou `GridView`
+-   `Buttons` dans `ContentDialog`
 
 Les contrôles UWP prennent en charge la navigation par touche de direction par défaut. Pour les dispositions personnalisées et les groupes de contrôles, utilisez `XYFocusKeyboardNavigation="Enabled"` pour fournir un comportement similaire.
 
@@ -347,7 +347,7 @@ Dans les cas où votre disposition suit un modèle d’interface utilisateur con
 
 Voici quelques exemples :
 -   `RadioButtons`
--   Plusieurs `ListViews` qui ressemblent et se comportent comme un seul`ListView`
+-   Plusieurs `ListViews` qui ressemblent et se comportent comme un seul `ListView`
 -   Toute interface utilisateur faite pour regarder et se comporter comme une grille de vignettes (comme les vignettes du menu Démarrer)
 
 #### <a name="specifying-control-group-behavior"></a>Spécification du comportement du groupe de contrôles
@@ -511,7 +511,7 @@ Testez votre application avec tous les périphériques d’entrée pris en charg
 * [Identification des périphériques d’entrée](identify-input-devices.md)
 * [Répondre à la présence du clavier tactile](respond-to-the-presence-of-the-touch-keyboard.md)
 * [Exemples de visuels de focus](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
-* [Caractéristiques de la carte de contrôle NavigationView](/windows/uwp/design/controls-and-patterns/navigationview#hierarchical-navigation) 
+* [Caractéristiques de la carte de contrôle NavigationView](../controls-and-patterns/navigationview.md#hierarchical-navigation) 
 
 ## <a name="appendix"></a>Annexe
 
@@ -538,16 +538,16 @@ En général, le clavier tactile ne disparaît pas automatiquement tant que l’
 Voici la liste des contrôles autres que d’édition qui peuvent recevoir le focus pendant une session d’entrée de texte à l’aide du clavier tactile sans que cela ait pour effet de masquer celui-ci. Au lieu de perturber inutilement l’interface utilisateur au risque de désorienter l’utilisateur, le clavier tactile reste bien en vue, car l’utilisateur va vraisemblablement passer des contrôles à l’entrée de texte à l’aide du clavier tactile.
 
 -   Case à cocher
--   Zone de liste modifiable
+-   Combo box
 -   Radio button
--   Barre de défilement
+-   Scroll bar
 -   Arborescence
 -   Élément d’arborescence
 -   Menu
 -   Barre de menus
 -   Élément de menu
--   Barre d'outils
--   List
+-   Barre d’outils
+-   Liste
 -   Élément de liste
 
 Voici quelques exemples des différents modes disponibles pour le clavier tactile. La première image représente la disposition classique, la seconde représente la disposition ergonomique (qui n’est pas forcément disponible dans toutes les langues).

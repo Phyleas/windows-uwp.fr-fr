@@ -4,14 +4,14 @@ description: 'Planifiez le portage de votre jeu DirectX 9 sur DirectX 11 et la
 ms.assetid: 3c0c33ca-5d15-ae12-33f8-9b5d8da08155
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp, directx , portage
+keywords: Windows 10, UWP, DirectX, port
 ms.localizationpriority: medium
-ms.openlocfilehash: 032eeaf2a17ef244287e25e6d9ff32a12c61e137
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 784d46d3f1a0c023d8c597c99e7a6cf9a0979d83
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258467"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175223"
 ---
 # <a name="plan-your-directx-port"></a>Planifier votre portage DirectX
 
@@ -29,42 +29,38 @@ Planifiez le portage de votre jeu DirectX 9 sur DirectX 11 et la plateforme Wi
 ## <a name="plan-to-port-graphics-code"></a>Planifier le portage du code graphique
 
 
-Avant de commencer le portage de votre jeu sur WPU, il est essentiel de vous assurer que ce jeu ne comporte plus d’éléments issus de Direct3D 8. Vérifiez notamment que votre jeu ne contient plus de références au pipeline de fonctions fixes. Pour obtenir la liste complète des fonctionnalités déconseillées, y compris le pipeline de fonctions fixes, voir [Fonctionnalités déconseillées](https://docs.microsoft.com/windows/desktop/direct3d10/d3d10-graphics-programming-guide-api-features-deprecated).
+Avant de commencer le portage de votre jeu sur WPU, il est essentiel de vous assurer que ce jeu ne comporte plus d’éléments issus de Direct3D 8. Vérifiez notamment que votre jeu ne contient plus de références au pipeline de fonctions fixes. Pour obtenir la liste complète des fonctionnalités déconseillées, y compris le pipeline de fonctions fixes, voir [Fonctionnalités déconseillées](/windows/desktop/direct3d10/d3d10-graphics-programming-guide-api-features-deprecated).
 
 La mise à niveau de Direct3D 9 vers Direct3D 11 ne se limite pas à une simple opération de recherche et remplacement. Vous devez savoir en quoi diffèrent ces versions sur le plan du périphérique Direct3D, du contexte de périphérique et de l’infrastructure graphique, mais aussi vous documenter sur les autres modifications majeures qui ont été apportées depuis la version Direct3D 9. Dans cette optique, nous vous recommandons de commencer par lire les autres rubriques de cette section.
 
 Vous devez remplacer les bibliothèques d’applications auxiliaires D3DX et DXUT par vos propres bibliothèques d’applications auxiliaires ou par des outils de la communauté. Pour plus d’informations, voir la section [Mappage des fonctionnalités](feature-mapping.md).
 
-> **Notez**   vous pouvez utiliser le [Kit d’outils DirectX](https://github.com/Microsoft/DirectXTK) ou [DirectXTex](https://github.com/Microsoft/DirectXTex) pour remplacer certaines fonctionnalités précédemment fournies par D3DX et DXUT.
+> **Remarque**    Vous pouvez utiliser le [Kit d’outils DirectX](https://github.com/Microsoft/DirectXTK) ou [DirectXTex](https://github.com/Microsoft/DirectXTex) pour remplacer certaines fonctionnalités précédemment fournies par D3DX et DXUT.
 
  
 
-Les nuanceurs écrits en langage assembleur doivent être mis à niveau vers le langage HLSL à l’aide du nuancier modèle 4 niveau 9\_1 ou 9\_3, et les nuanceurs écrits pour la bibliothèque d’effets devront être mis à jour vers une version plus récente de la syntaxe HLSL. Pour plus d’informations, voir la section [Mappage des fonctionnalités](feature-mapping.md).
+Les nuanceurs écrits en langage assembleur doivent être mis à niveau vers HLSL à l’aide des fonctionnalités de nuanceur modèle 4 de niveau 9 \_ 1 ou 9 \_ 3, et les nuanceurs écrits pour la bibliothèque d’effets devront être mis à jour vers une version plus récente de la syntaxe HLSL. Pour plus d’informations, voir la section [Mappage des fonctionnalités](feature-mapping.md).
 
-Familiarisez-vous avec les différents [niveaux de fonctionnalité Direct3D](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro). Ces niveaux de fonctionnalité permettent de classer les divers matériels vidéo selon des ensembles définis de fonctionnalités prises en charge. Chaque ensemble correspond globalement à une version de Direct3D (versions 9.1 à 11.2). Tous les niveaux de fonctionnalité s’appliquent à l’API DirectX 11.
+Familiarisez-vous avec les différents [niveaux de fonctionnalité Direct3D](/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro). Ces niveaux de fonctionnalité permettent de classer les divers matériels vidéo selon des ensembles définis de fonctionnalités prises en charge. Chaque ensemble correspond globalement à une version de Direct3D (versions 9.1 à 11.2). Tous les niveaux de fonctionnalité s’appliquent à l’API DirectX 11.
 
 ## <a name="plan-to-port-win32-ui-code-to-corewindow"></a>Planifier le portage du code d’interface utilisateur Win32 sur CoreWindow
 
 
-Les applications UWP s’exécutent dans une fenêtre créée pour un conteneur d’application, appelée [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow). Votre jeu contrôle cette fenêtre en héritant d’[**IFrameworkView**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.IFrameworkView), qui nécessite moins d’informations d’implémentation détaillées qu’une fenêtre de bureau. La boucle principale de votre jeu sera définie dans la méthode [**IFrameworkView::Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.run).
+Les applications UWP s’exécutent dans une fenêtre créée pour un conteneur d’application, appelée [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow). Votre jeu contrôle la fenêtre en héritant de [**IFrameworkView**](/uwp/api/Windows.ApplicationModel.Core.IFrameworkView), ce qui nécessite moins de détails d’implémentation qu’une fenêtre de bureau. La boucle principale de votre jeu sera définie dans la méthode [**IFrameworkView::Run**](/uwp/api/windows.applicationmodel.core.iframeworkview.run).
 
 Le cycle de vie d’une application UWP diffère de celui d’une application de bureau. Vous devez prévoir des enregistrements fréquents du jeu. En effet, durant le déclenchement d’un événement de suspension, votre application ne dispose que d’un court délai pour arrêter l’exécution du code, et vous voulez vous assurer que le joueur pourra revenir à l’endroit du jeu où il était initialement aussitôt après la reprise de l’application. Vous devez enregistrer votre jeu aussi souvent que nécessaire pour permettre au joueur de continuer sa partie normalement après la reprise, tout en limitant le nombre d’enregistrements afin de ne pas dégrader la fréquence d’images ni provoquer d’interruption de son dans le jeu. Votre jeu aura peut-être besoin de charger son état lorsqu’il quittera l’état « arrêté ».
 
-[DirectXMath](https://docs.microsoft.com/windows/desktop/dxmath/ovw-xnamath-progguide) peut avantageusement remplacer D3DXMath et XNAMath, en particulier si vous avez besoin d’une bibliothèque de fonctions mathématiques. DirectXMath fournit des types de données rapides et portables, ainsi que des types adaptés et groupés pour être utilisés avec des nuanceurs.
+[DirectXMath](/windows/desktop/dxmath/ovw-xnamath-progguide) peut avantageusement remplacer D3DXMath et XNAMath, en particulier si vous avez besoin d’une bibliothèque de fonctions mathématiques. DirectXMath fournit des types de données rapides et portables, ainsi que des types adaptés et groupés pour être utilisés avec des nuanceurs.
 
-Les bibliothèques natives, telles que l’[API Interlocked](https://docs.microsoft.com/windows/desktop/Sync/what-s-new-in-synchronization), ont été étendues afin de prendre en charge les intrinsèques ARM. Si votre jeu fait appel à des API à blocage, vous pouvez continuer à les utiliser dans DirectX 11 et UWP.
+Les bibliothèques natives, telles que l’[API Interlocked](/windows/desktop/Sync/what-s-new-in-synchronization), ont été étendues afin de prendre en charge les intrinsèques ARM. Si votre jeu fait appel à des API à blocage, vous pouvez continuer à les utiliser dans DirectX 11 et UWP.
 
-Nos modèles et exemples de code utilisent de nouvelles fonctionnalités C++ que vous ne connaissez peut-être pas encore. Citons, par exemple, les méthodes asynchrones que vous pouvez utiliser avec des [**lambda expressions**](https://docs.microsoft.com/cpp/cpp/lambda-expressions-in-cpp) pour charger les ressources Direct3D sans bloquer le thread d’interface utilisateur.
+Nos modèles et exemples de code utilisent de nouvelles fonctionnalités C++ que vous ne connaissez peut-être pas encore. Par exemple, les méthodes asynchrones sont utilisées avec des [**expressions lambda**](/cpp/cpp/lambda-expressions-in-cpp) pour charger des ressources Direct3D sans bloquer le thread d’interface utilisateur.
 
 Les deux concepts suivants vous seront souvent utiles :
 
--   Les références managées ([**l’opérateur ^** ](https://docs.microsoft.com/cpp/windows/handle-to-object-operator-hat-cpp-component-extensions)) et les [**classes managées**](https://docs.microsoft.com/cpp/windows/classes-and-structs-cpp-component-extensions) (classes de référence) sont des éléments fondamentaux de Windows Runtime. Vous aurez besoin d’utiliser des classes de référence managées pour assurer la communication avec les composants Windows Runtime, tels qu’[**IFrameworkView**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.IFrameworkView) (pour plus d’informations, voir la procédure pas à pas).
--   Si vous travaillez avec des interfaces COM Direct3D 11, optez pour le type de modèle [**Microsoft::WRL::ComPtr**](https://docs.microsoft.com/cpp/windows/comptr-class) afin de faciliter l’utilisation des pointeurs COM.
+-   Les références managées ([**l’opérateur ^**](/cpp/windows/handle-to-object-operator-hat-cpp-component-extensions)) et les [**classes managées**](/cpp/windows/classes-and-structs-cpp-component-extensions) (classes de référence) sont des éléments fondamentaux de Windows Runtime. Vous devrez utiliser des classes Ref managées pour l’interface avec les composants Windows Runtime, par exemple [**IFrameworkView**](/uwp/api/Windows.ApplicationModel.Core.IFrameworkView) (en savoir plus sur cela dans la procédure pas à pas).
+-   Lorsque vous travaillez avec des interfaces COM Direct3D 11, utilisez le type de modèle [**Microsoft :: WRL :: ComPtr**](/cpp/windows/comptr-class) pour faciliter l’utilisation des pointeurs com.
 
  
 
  
-
-
-
-

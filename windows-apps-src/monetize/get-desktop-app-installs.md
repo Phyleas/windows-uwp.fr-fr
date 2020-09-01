@@ -1,64 +1,64 @@
 ---
-description: Utilisez cet URI REST pour obtenir des données d’agrégation d’installation pour une application de bureau pendant une période donnée et d’autres filtres facultatifs.
-title: Obtenir des installations d’application de bureau
+description: Utilisez cet URI REST pour obtenir des données d’installation agrégées pour une application de bureau pendant une plage de dates donnée et d’autres filtres facultatifs.
+title: Obtenir les installations d’applications de bureau
 ms.date: 03/01/2018
 ms.topic: article
-keywords: Windows 10, application de bureau s’installe, programme d’Application de bureau de Windows
+keywords: Windows 10, installations d’applications de bureau, programme d’application de bureau Windows
 localizationpriority: medium
-ms.openlocfilehash: 27ee2f0b6977c551d50fce9dec26c864e3858413
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 1c4f7aaffc9e623d4863bee4de44daa75ae05852
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372135"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175023"
 ---
-# <a name="get-desktop-application-installs"></a>Obtenir des installations d’application de bureau
+# <a name="get-desktop-application-installs"></a>Obtenir les installations d’applications de bureau
 
 
-Cet URI REST permet d’obtenir des données d’agrégation d’installation au format JSON pour une application de bureau que vous avez ajoutés à la [programme d’Application de bureau Windows](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program). Cet URI permet d’obtenir des données de l’installation pendant une période donnée et d’autres filtres facultatifs. Ces informations sont également disponibles dans le [installe rapport](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program) pour les applications de bureau dans l’espace partenaires.
+Utilisez cet URI REST pour obtenir des données d’installation agrégées au format JSON pour une application de bureau que vous avez ajoutée au [programme d’application de bureau Windows](/windows/desktop/appxpkg/windows-desktop-application-program). Cet URI vous permet d’obtenir des données d’installation pendant une plage de dates donnée et d’autres filtres facultatifs. Ces informations sont également disponibles dans le [rapport installations](/windows/desktop/appxpkg/windows-desktop-application-program) pour les applications de bureau dans l’espace partenaires.
 
 ## <a name="prerequisites"></a>Prérequis
 
 
 Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
 
-* Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](access-analytics-data-using-windows-store-services.md#prerequisites) relatives à l’API d’analyse du Microsoft Store.
-* [Obtenez un jeton d’accès Azure AD](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
+* Si vous ne l’avez pas déjà fait, renseignez toutes les [conditions préalables](access-analytics-data-using-windows-store-services.md#prerequisites) pour l’API Microsoft Store Analytics.
+* [Obtenez un jeton d’accès Azure AD](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Une fois que vous avez récupéré le jeton d’accès, vous avez 60 minutes pour l’utiliser avant qu’il n’expire. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 
-## <a name="request"></a>Demande
+## <a name="request"></a>Requête
 
 
 ### <a name="request-syntax"></a>Syntaxe de la requête
 
-| Méthode | URI de requête       |
+| Méthode | URI de demande       |
 |--------|----------------------|
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/desktop/installbasedaily```|
 
 
 ### <a name="request-header"></a>En-tête de requête
 
-| Header        | type   | Description                                                                 |
+| En-tête        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | chaîne | Obligatoire. Le jeton d’accès Azure AD sous la forme **PORTEUR** &lt; *jeton*&gt;. |
+| Autorisation | string | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer** &lt;*jeton*&gt;. |
 
 
-### <a name="request-parameters"></a>Paramètres de la requête
+### <a name="request-parameters"></a>Paramètres de la demande
 
-| Paramètre        | type   |  Description      |  Obligatoire  
+| Paramètre        | Type   |  Description      |  Obligatoire  
 |---------------|--------|---------------|------|
-| applicationId | chaîne | L’ID de produit de l’application de bureau pour lequel vous souhaitez récupérer des données de l’installation. Pour obtenir l’ID de produit d’une application de bureau, ouvrez un [analytique de rapports pour votre application de bureau partenaires](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program) (telles que la **installe le rapport**) et récupérer l’ID de produit dans l’URL. |  Oui  |
-| startDate | date | Dans la plage de dates, la date de début de la récupération des données d'installation. La valeur par défaut est de 90 jours avant la date actuelle. |  Non  |
-| endDate | date | Dans la plage de dates, la date de fin de la récupération des données d'installation. La valeur par défaut est la date actuelle. |  Non  |
-| top | entier | Le nombre de lignes de données à renvoyer dans la requête. La valeur maximale et la valeur par défaut en l’absence de définition est 10000. Si la requête comporte davantage de lignes, le corps de la réponse inclut un lien sur lequel vous cliquez pour solliciter la page suivante de données. |  Non  |
-| skip | entier | Le nombre de lignes à ignorer dans la requête. Utilisez ce paramètre pour parcourir de grands ensembles de données. Par exemple, indiquez top=10000 et skip=0 pour obtenir les 10000 premières lignes de données, top=10000 et skip=10000 pour obtenir les 10000 lignes suivantes, et ainsi de suite. |  Non  |
-| Filter | chaîne  | Une ou plusieurs instructions qui filtrent les lignes de la réponse. Chaque instruction comporte un champ Nom dans le corps de la réponse et une valeur, qui sont associés aux opérateurs **eq** ou **ne**, et les instructions peuvent être combinées à l’aide des opérateurs **and** ou **or**. Les valeurs de chaîne doivent être entourées par des guillemets dans le paramètre *filter*. Vous pouvez spécifier les champs suivants dans le corps de réponse :<p/><ul><li><strong>applicationVersion</strong></li><li><strong>deviceType</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>osRelease</strong></li></ul> | Non   |
-| orderby | chaîne | Une instruction qui commande les valeurs de données de résultats pour chaque installation. Syntaxe : <em>orderby=field [order],field [order],...</em>. Le <em>champ</em> paramètre peut être l'un des champs suivants dans le corps de réponse :<p/><ul><li><strong>productName</strong></li><li><strong>date</strong><li><strong>applicationVersion</strong></li><li><strong>deviceType</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>osRelease</strong></li><li><strong>installBase</strong></li></ul><p>Le paramètre <em>order</em>, facultatif, peut comporter les valeurs <strong>asc</strong> ou <strong>desc</strong> afin de spécifier l’ordre croissant ou décroissant pour chaque champ. La valeur par défaut est <strong>asc</strong>.</p><p>Voici un exemple de chaîne <em>orderby</em> : <em>orderby=date,market</em></p> |  Non  |
-| groupby | chaîne | Une instruction qui applique l’agrégation des données uniquement sur les champs spécifiés. Vous pouvez spécifier les champs suivants dans le corps de réponse :<p/><ul><li><strong>applicationVersion</strong></li><li><strong>deviceType</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>osRelease</strong></li></ul><p>Les lignes de données renvoyées comportent les champs spécifiés dans le paramètre <em>groupby</em>, ainsi que dans les paramètres suivants :</p><ul><li><strong>applicationId</strong></li><li><strong>date</strong></li><li><strong>productName</strong></li><li><strong>installBase</strong></li></ul></p> |  Non  |
+| applicationId | string | ID de produit de l’application de bureau pour laquelle vous souhaitez récupérer des données d’installation. Pour obtenir l’ID de produit d’une application de bureau, ouvrez un [rapport analytique pour votre application de bureau dans l’espace partenaires](/windows/desktop/appxpkg/windows-desktop-application-program) (par exemple, le **rapport installations**) et récupérez l’ID de produit à partir de l’URL. |  Oui  |
+| startDate | Date | Date de début dans la plage de dates des données d’installation à récupérer. La valeur par défaut est de 90 jours avant la date actuelle. |  Non  |
+| endDate | Date | Date de fin dans la plage de dates des données d’installation à récupérer. La valeur par défaut est la date actuelle. |  Non  |
+| top | int | Le nombre de lignes de données à renvoyer dans la requête. La valeur maximale et la valeur par défaut en l’absence de définition est 10000. Si la requête comporte davantage de lignes, le corps de la réponse inclut un lien sur lequel vous cliquez pour solliciter la page suivante de données. |  Non  |
+| skip | int | Le nombre de lignes à ignorer dans la requête. Utilisez ce paramètre pour parcourir de grands ensembles de données. Par exemple, indiquez top=10000 et skip=0 pour obtenir les 10000 premières lignes de données, top=10000 et skip=10000 pour obtenir les 10000 lignes suivantes, et ainsi de suite. |  Non  |
+| Filter | string  | Une ou plusieurs instructions qui filtrent les lignes de la réponse. Chaque instruction contient un nom de champ du corps de la réponse et une valeur qui sont associés aux **opérateurs** **EQ** ou ne, et les instructions peuvent être combinées à l’aide **de and** ou **de ou de**. Les valeurs de chaîne doivent être entourées par des guillemets dans le paramètre *filter*. Vous pouvez spécifier les champs suivants dans le corps de la réponse :<p/><ul><li><strong>applicationVersion</strong></li><li><strong>deviceType</strong></li><li><strong>négoci</strong></li><li><strong>osVersion</strong></li><li><strong>osRelease</strong></li></ul> | Non   |
+| orderby | string | Instruction qui classe les valeurs des données de résultat pour chaque installation. La syntaxe est <em>orderby = Field [Order], champ [Order],...</em>. Le paramètre <em>Field</em> peut être l’un des champs suivants du corps de la réponse :<p/><ul><li><strong>productName</strong></li><li><strong>date</strong><li><strong>applicationVersion</strong></li><li><strong>deviceType</strong></li><li><strong>négoci</strong></li><li><strong>osVersion</strong></li><li><strong>osRelease</strong></li><li><strong>installBase</strong></li></ul><p>Le paramètre <em>order</em>, facultatif, peut comporter les valeurs <strong>asc</strong> ou <strong>desc</strong> afin de spécifier l’ordre croissant ou décroissant pour chaque champ. La valeur par défaut est <strong>ASC</strong>.</p><p>Voici un exemple de chaîne <em>orderby</em> : <em>orderby = date, Market</em></p> |  Non  |
+| groupby | string | Une instruction qui applique l’agrégation des données uniquement sur les champs spécifiés. Vous pouvez spécifier les champs suivants dans le corps de la réponse :<p/><ul><li><strong>applicationVersion</strong></li><li><strong>deviceType</strong></li><li><strong>négoci</strong></li><li><strong>osVersion</strong></li><li><strong>osRelease</strong></li></ul><p>Les lignes de données renvoyées comportent les champs spécifiés dans le paramètre <em>groupby</em>, ainsi que dans les paramètres suivants :</p><ul><li><strong>applicationId</strong></li><li><strong>date</strong></li><li><strong>productName</strong></li><li><strong>installBase</strong></li></ul></p> |  Non  |
 
 
 ### <a name="request-example"></a>Exemple de requête
 
-L’exemple suivant montre plusieurs demandes pour la mise en application de bureau installer des données. Remplacez le *applicationId* valeur avec l’ID de produit pour votre application de bureau.
+L’exemple suivant illustre plusieurs demandes d’obtention des données d’installation de l’application de bureau. Remplacez la valeur *ApplicationID* par l’ID de produit de votre application de bureau.
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/desktop/installbasedaily?applicationId=1234567890&startDate=2018-01-01&endDate=2018-02-01&top=10&skip=0 HTTP/1.1
@@ -68,31 +68,31 @@ GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/desktop/installbase
 Authorization: Bearer <your access token>
 ```
 
-## <a name="response"></a>Réponse
+## <a name="response"></a>response
 
 
-### <a name="response-body"></a>Corps de la réponse
+### <a name="response-body"></a>Response body
 
-| Value      | type   | Description                  |
+| Valeur      | Type   | Description                  |
 |------------|--------|-------------------------------------------------------|
-| Value      | tableau  | Tableau d’objets contenant les données d'installation agrégées. Pour plus d’informations sur les données incluses dans chaque objet, voir le tableau suivant. |
-| @nextLink  | chaîne | S’il existe des pages supplémentaires de données, cette chaîne comporte un URI que vous pouvez utiliser pour solliciter la page suivante de données. Par exemple, cette valeur est renvoyée si le paramètre **top** de la requête est défini sur 10000, mais que plus de 10000 lignes de données d’installation sont associées à la requête. |
-| TotalCount | entier    | Nombre total de lignes dans les résultats de la requête. |
+| Valeur      | tableau  | Tableau d’objets qui contiennent des données d’installation de regroupement. Pour plus d’informations sur les données de chaque objet, consultez le tableau suivant. |
+| @nextLink  | string | S’il existe des pages supplémentaires de données, cette chaîne comporte un URI que vous pouvez utiliser pour solliciter la page suivante de données. Par exemple, cette valeur est retournée si le paramètre **supérieur** de la demande est défini sur 10000, mais qu’il y a plus de 10000 lignes de données d’installation pour la requête. |
+| TotalCount | int    | Nombre total de lignes dans les résultats de la requête. |
 
 
 Les éléments du tableau *Value* comportent les valeurs suivantes :
 
-| Value               | type   | Description                           |
+| Valeur               | Type   | Description                           |
 |---------------------|--------|-------------------------------------------|
-| date                | chaîne | La date associée à la valeur de base d’installation. |
-| applicationId       | chaîne | Installer l’ID de produit de l’application de bureau pour lequel vous avez récupéré des données. |
-| productName         | chaîne | Le nom complet de l’application de bureau tel que dérivé des métadonnées de ses fichiers exécutables associés. |
-| applicationVersion  | chaîne | La version de l’exécutable de l’application qui a été installé. |
-| deviceType          | chaîne | Une des chaînes suivantes qui spécifie le type d’appareil sur lequel est installée l’application de bureau :<p/><ul><li><strong>PC</strong></li><li><strong>Serveur</strong></li><li><strong>Tablet</strong></li><li><strong>Inconnu</strong></li></ul> |
-| market              | chaîne | Le code de pays ISO 3166 du marché dans lequel est installée l’application de bureau. |
-| osVersion           | chaîne | Une des chaînes suivantes qui spécifie la version du système d'exploitation sur laquelle l’application de bureau est installée :<p/><ul><li><strong>Windows 7</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows 10</strong></li><li><strong>Windows Server 2016</strong></li><li><strong>Windows Server 1709</strong></li><li><strong>Inconnu</strong></li></ul>   |
-| osRelease           | chaîne | L'une des chaînes suivantes qui spécifie la version du système d’exploitation ou l'anneau de distribution de version d’évaluation (comme une sous-population dans la version du système d’exploitation) sur laquelle/lequel est installée l’application de bureau.<p/><p>Pour Windows 10 :</p><ul><li><strong>Version 1507</strong></li><li><strong>Version 1511</strong></li><li><strong>Version 1607</strong></li><li><strong>Version 1703</strong></li><li><strong>Version 1709</strong></li><li><strong>Release Preview</strong></li><li><strong>Insider rapide</strong></li><li><strong>Insider lente</strong></li></ul><p/><p>Pour Windows Server 1709 :</p><ul><li><strong>RTM</strong></li></ul><p>Pour Windows Server 2016 :</p><ul><li><strong>Version 1607</strong></li></ul><p>Pour Windows 8.1 :</p><ul><li><strong>Mise à jour 1</strong></li></ul><p>Pour Windows 7 :</p><ul><li><strong>Service Pack 1</strong></li></ul><p>Si la version du système d’exploitation ou l'anneau de distribution de version d’évaluation est inconnu(e), ce champ comporte la valeur <strong>Inconnu</strong>.</p> |
-| installBase         | nombre | Le nombre de périphériques distincts ayant produit installé au niveau de l’agrégation spécifiée. |
+| Date                | string | Date associée à la valeur de base de l’installation. |
+| applicationId       | string | ID de produit de l’application de bureau pour laquelle vous avez récupéré les données d’installation. |
+| ProductName         | string | Nom complet de l’application de bureau déduite des métadonnées de ses exécutables associés. |
+| applicationVersion  | string | Version de l’exécutable de l’application qui a été installée. |
+| deviceType          | string | L’une des chaînes suivantes qui spécifient le type d’appareil sur lequel l’application de bureau est installée :<p/><ul><li><strong>ORDINATEURS</strong></li><li><strong>Serveur</strong></li><li><strong>Tablet</strong></li><li><strong>Unknown</strong></li></ul> |
+| market              | string | Code du pays ISO 3166 du marché sur lequel l’application de bureau est installée. |
+| osVersion           | string | L’une des chaînes suivantes qui spécifient la version du système d’exploitation sur laquelle l’application de bureau est installée :<p/><ul><li><strong>Windows 7</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows 10</strong></li><li><strong>Windows Server 2016</strong></li><li><strong>Windows Server 1709</strong></li><li><strong>Unknown</strong></li></ul>   |
+| osRelease           | string | L’une des chaînes suivantes qui spécifient la version du système d’exploitation ou la sonnerie de vol (sous la forme d’un sous-remplissage dans la version du système d’exploitation) sur laquelle l’application de bureau est installée.<p/><p>Pour Windows 10 :</p><ul><li><strong>Version 1507</strong></li><li><strong>Version 1511</strong></li><li><strong>Version 1607</strong></li><li><strong>Version 1703</strong></li><li><strong>Version 1709</strong></li><li><strong>Version préliminaire</strong></li><li><strong>Insider rapidement</strong></li><li><strong>Insider lent</strong></li></ul><p/><p>Pour Windows Server 1709 :</p><ul><li><strong>COMMERCIALE</strong></li></ul><p>Pour Windows Server 2016 :</p><ul><li><strong>Version 1607</strong></li></ul><p>Pour Windows 8.1 :</p><ul><li><strong>Update 1</strong></li></ul><p>Pour Windows 7 :</p><ul><li><strong>Service Pack 1</strong></li></ul><p>Si la version du système d’exploitation ou la sonnerie de vol est inconnue, ce champ a la valeur <strong>Unknown</strong>.</p> |
+| installBase         | nombre | Nombre d’appareils distincts sur lesquels le produit est installé au niveau de l’agrégation spécifiée. |
 
 
 ### <a name="response-example"></a>Exemple de réponse
@@ -121,4 +121,4 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Programme d’Application de bureau Windows](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program)
+* [Programme d’application de bureau Windows](/windows/desktop/appxpkg/windows-desktop-application-program)

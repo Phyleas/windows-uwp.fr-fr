@@ -5,12 +5,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, Azure ad, client Azure, locataire AAD, client Azure ad, gestion des locataires, locataires
 ms.localizationpriority: medium
-ms.openlocfilehash: fa26f4ea3fa91f43dea117ff5ffd2fec87514544
-ms.sourcegitcommit: 720413d2053c8d5c5b34d6873740be6e913a4857
+ms.openlocfilehash: e30768b376b2bca01deb3d9b21d867db393d7604
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88846759"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174813"
 ---
 # <a name="associate-azure-active-directory-with-your-partner-center-account"></a>Associer Azure Active Directory à votre compte espace partenaires
 
@@ -19,7 +19,7 @@ Pour pouvoir [Ajouter et gérer des utilisateurs de comptes](add-users-groups-an
 L' [espace partenaires](https://partner.microsoft.com/dashboard) utilise Azure AD pour l’accès et la gestion des comptes multi-utilisateurs. Si votre organisation utilise déjà Microsoft 365 ou d’autres services professionnels de Microsoft, vous avez déjà Azure AD. Dans le cas contraire, vous pouvez créer un locataire Azure AD à partir de l’espace partenaires sans frais supplémentaires.
 
 > [!TIP]
-> Cette rubrique est spécifique au programme de développement d’applications Windows dans l' [espace partenaires](https://partner.microsoft.com/dashboard), mais l’Association d’un locataire et la gestion des utilisateurs fonctionnent de la même façon pour les comptes du programme d’application de bureau Windows (voir [programme d’application de bureau Windows](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#add-and-manage-account-users) [pour plus](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-administration) d’informations) et dans le programme Windows Hardware Developer (où les références au rôle **Gestionnaire** s’appliquent également aux comptes matériels **avec le rôle**
+> Cette rubrique est spécifique au programme de développement d’applications Windows dans l' [espace partenaires](https://partner.microsoft.com/dashboard), mais l’Association d’un locataire et la gestion des utilisateurs fonctionnent de la même façon pour les comptes du programme d’application de bureau Windows (voir [programme d’application de bureau Windows](/windows/desktop/appxpkg/windows-desktop-application-program#add-and-manage-account-users) [pour plus](/windows-hardware/drivers/dashboard/dashboard-administration) d’informations) et dans le programme Windows Hardware Developer (où les références au rôle **Gestionnaire** s’appliquent également aux comptes matériels **avec le rôle**
 
 Un locataire Azure AD unique peut être associé à plusieurs comptes de l’espace partenaires. Vous n’avez besoin que d’un seul Azure AD client associé à votre compte espace partenaires pour ajouter plusieurs utilisateurs de compte, mais vous avez également la possibilité d’ajouter plusieurs locataires Azure AD à un seul compte de l’espace partenaires. Les utilisateurs disposant du rôle **Manager** dans le compte de l’Espace partenaires peuvent ajouter et supprimer des locataires Azure AD du compte.
 
@@ -38,7 +38,7 @@ Si votre organisation utilise déjà Azure AD, procédez comme suit pour lier vo
 5.  Si l’association est réussie, vous pourrez ajouter et gérer les utilisateurs de compte dans la section **Utilisateurs** dans l’Espace partenaires.
 
 > [!IMPORTANT]
-> Afin de créer des utilisateurs ou d’apporter d’autres modifications à votre Azure AD, vous devez vous connecter à ce Azure AD locataire à l’aide d’un compte disposant d’une [autorisation d’administrateur général](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) pour ce locataire. Toutefois, vous n’avez pas besoin d’une autorisation d’administrateur général pour associer le locataire, ou pour ajouter des utilisateurs qui existent déjà dans ce locataire à votre compte espace partenaires.
+> Afin de créer des utilisateurs ou d’apporter d’autres modifications à votre Azure AD, vous devez vous connecter à ce Azure AD locataire à l’aide d’un compte disposant d’une [autorisation d’administrateur général](/azure/active-directory/users-groups-roles/directory-assign-admin-roles) pour ce locataire. Toutefois, vous n’avez pas besoin d’une autorisation d’administrateur général pour associer le locataire, ou pour ajouter des utilisateurs qui existent déjà dans ce locataire à votre compte espace partenaires.
 
 
 ## <a name="create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account"></a>Créer un tout nouveau Azure AD à associer à votre compte espace partenaires
@@ -78,5 +78,3 @@ Pour supprimer un locataire, recherchez son nom dans la page **locataires** (dan
 
 > [!TIP]
 > Vous ne pouvez pas supprimer un locataire si vous êtes actuellement connecté à l’Espace partenaires à l’aide d’un compte de ce locataire. Pour supprimer un locataire, vous devez vous connecter à l’Espace partenaires en tant que **Manager** pour un autre locataire associé au compte. S’il n’existe qu’un seul locataire associé au compte, ce locataire peut être supprimé uniquement après vous être connecté avec le compte Microsoft qui a ouvert le compte.
-
-

@@ -4,21 +4,21 @@ description: Découvrez comment créer les ressources de périphérique Direct3D
 ms.assetid: 86d5791b-1faa-17e4-44a8-bbba07062756
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, jeux, direct3d, tampon de profondeur
+keywords: Windows 10, UWP, jeux, Direct3D, mémoire tampon de profondeur
 ms.localizationpriority: medium
-ms.openlocfilehash: dfd45f620addcf7a3f6292ed2257bdfccc862cd3
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 0032d77bb8d572229ea77df736c807a0a85e9ecb
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368891"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175373"
 ---
 # <a name="create-depth-buffer-device-resources"></a>Créer des ressources de périphérique pour un tampon de profondeur
 
 
 
 
-Découvrez comment créer les ressources de périphérique Direct3D nécessaires pour prendre en charge le test de profondeur des volumes d’ombre. La partie 1 de [procédure pas à pas : Implémenter des volumes de clichés instantanés à l’aide des tampons de profondeur dans Direct3D 11](implementing-depth-buffers-for-shadow-mapping.md).
+Découvrez comment créer les ressources de périphérique Direct3D nécessaires pour prendre en charge le test de profondeur des volumes d’ombre. Partie 1 de la [Procédure pas à pas : implémenter des volumes d’ombre à l’aide de tampons de profondeur dans Direct3D 11](implementing-depth-buffers-for-shadow-mapping.md).
 
 ## <a name="resources-youll-need"></a>Ressources nécessaires
 
@@ -38,7 +38,7 @@ Notez que la création de ces ressources doit être incluse dans une routine de 
 ## <a name="check-feature-support"></a>Vérifier la prise en charge des fonctionnalités
 
 
-Avant de créer le mappage de profondeur, appelez le [ **CheckFeatureSupport** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkfeaturesupport) méthode sur le périphérique Direct3D, demandez **D3D11\_fonctionnalité\_D3D9\_ Clichés instantanés\_prise en charge**et fournir un [ **D3D11\_fonctionnalité\_données\_D3D9\_ombre\_prise en charge** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_feature_data_d3d9_shadow_support) structure.
+Avant de créer la carte de profondeur, appelez la méthode [**CheckFeatureSupport**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkfeaturesupport) sur l’appareil Direct3D, demandez la ** \_ \_ \_ \_ prise en charge des clichés instantanés de la fonctionnalité d3d11 d3d9**et fournissez une structure de [** \_ \_ \_ \_ \_ prise en charge des clichés instantanés d3d9 des données de fonctionnalités d3d11**](/windows/desktop/api/d3d11/ns-d3d11-d3d11_feature_data_d3d9_shadow_support)
 
 ```cpp
 D3D11_FEATURE_DATA_D3D9_SHADOW_SUPPORT isD3D9ShadowSupported;
@@ -55,14 +55,14 @@ if (isD3D9ShadowSupported.SupportsDepthAsTextureWithLessEqualComparisonFilter)
 
 ```
 
-Si cette fonctionnalité n’est pas pris en charge, n’essayez pas de charger les nuanceurs compilés pour le niveau de modèle 4 nuanceur 9\_x qui appellent des fonctions de comparaison d’exemple. Dans de nombreux cas, l’absence de prise en charge de cette fonctionnalité signifie que le GPU est un périphérique hérité doté d’un pilote qui n’est pas mis à jour pour prendre en charge au moins WDDM 1.2. Si le périphérique prend en charge des fonctionnalités au moins au niveau 10\_0, vous pouvez charger un exemple de nuanceur comparaison compilé pour le modèle de nuanceur 4\_0 à la place.
+Si cette fonctionnalité n’est pas prise en charge, n’essayez pas de charger les nuanceurs compilés pour le modèle de nuanceur 4 niveau 9 \_ x qui appellent des exemples de fonctions de comparaison. Dans de nombreux cas, l’absence de prise en charge de cette fonctionnalité signifie que le GPU est un périphérique hérité doté d’un pilote qui n’est pas mis à jour pour prendre en charge au moins WDDM 1.2. Si l’appareil prend en charge au moins le niveau de fonctionnalité 10 \_ 0, vous pouvez charger un exemple de nuanceur de comparaison compilé pour le modèle de nuanceur 4 0 à la \_ place.
 
 ## <a name="create-depth-buffer"></a>Créer un tampon de profondeur
 
 
 Pour commencer, essayez de créer le plan de profondeur dans un format de profondeur haute précision. Configurez d’abord les propriétés de la vue de ressource de nuanceur correspondantes. Si la création de ressource échoue, par exemple en raison d’un manque de mémoire du périphérique ou d’un format non pris en charge par le matériel, essayez un format de moindre précision et modifiez la correspondance des propriétés.
 
-Cette étape est facultative si vous devez uniquement un format de la profondeur de faible précision, par exemple lors du rendu sur le niveau de fonctionnalité Direct3D moyenne résolution 9\_appareils 1.
+Cette étape est facultative si vous avez uniquement besoin d’un format de profondeur de faible précision, par exemple lors du rendu sur des appareils de niveau de fonctionnalité Direct3D de résolution moyenne \_ .
 
 ```cpp
 D3D11_TEXTURE2D_DESC shadowMapDesc;
@@ -82,7 +82,7 @@ HRESULT hr = pD3DDevice->CreateTexture2D(
     );
 ```
 
-Ensuite, créez les vues de ressource. Définissez la tranche MIP sur zéro dans la vue de profondeur/gabarit et les niveaux MIP sur 1 dans la vue de ressource du nuanceur. Les deux ont une dimension de texture de TEXTURE2D, et les deux doivent utiliser une mise en correspondance [ **DXGI\_FORMAT**](https://docs.microsoft.com/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format).
+Ensuite, créez les vues de ressource. Définissez la tranche MIP sur zéro dans la vue de profondeur/gabarit et les niveaux MIP sur 1 dans la vue de ressource du nuanceur. Les deux ont une dimension de texture de TEXTURE2D, et les deux doivent utiliser [**un \_ format dxgi**](/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format)correspondant.
 
 ```cpp
 D3D11_DEPTH_STENCIL_VIEW_DESC depthStencilViewDesc;
@@ -113,11 +113,11 @@ hr = pD3DDevice->CreateShaderResourceView(
 ## <a name="create-comparison-state"></a>Créer un état de comparaison
 
 
-À présent, créez l’objet d’état de l’échantillonneur de comparaison. Fonctionnalité niveau 9\_1 prend uniquement en charge D3D11\_comparaison\_moins\_égale. Les options de filtre sont expliquées plus en détail dans [Prise en charge des plans d’ombres sur une gamme de matériels](target-a-range-of-hardware.md) ou vous pouvez choisir le filtrage de points pour des plans d’ombres plus rapides.
+À présent, créez l’objet d’état de l’échantillonneur de comparaison. Le niveau de fonctionnalité 9 \_ 1 ne prend en charge que la \_ comparaison d3d11 \_ moins \_ égale. Les options de filtre sont expliquées plus en détail dans [Prise en charge des plans d’ombres sur une gamme de matériels](target-a-range-of-hardware.md) ou vous pouvez choisir le filtrage de points pour des plans d’ombres plus rapides.
 
-Notez que vous pouvez spécifier le D3D11\_TEXTURE\_adresse\_mode d’adresse de bordure et il fonctionnera sur le niveau de fonctionnalité 9\_appareils 1. Cela s’applique aux nuanceurs de pixels qui ne testent pas si le pixel figure dans le tronc de cône (frustrum) de vue de la lumière avant d’effectuer le test de profondeur. En définissant chaque bordure sur 0 ou 1, vous pouvez contrôler si les pixels en dehors du tronc de cône de vue de la lumière réussissent ou échouent au test de profondeur, et par conséquent s’ils sont éclairés ou dans l’ombre.
+Notez que vous pouvez spécifier le \_ \_ mode d’adresse Border de la texture d3d11 et l' \_ utiliser sur les appareils de niveau de fonctionnalité 9 \_ 1. Cela s’applique aux nuanceurs de pixels qui ne testent pas si le pixel figure dans le tronc de cône (frustrum) de vue de la lumière avant d’effectuer le test de profondeur. En définissant chaque bordure sur 0 ou 1, vous pouvez contrôler si les pixels en dehors du tronc de cône de vue de la lumière réussissent ou échouent au test de profondeur, et par conséquent s’ils sont éclairés ou dans l’ombre.
 
-Sur la fonctionnalité de niveau 9\_1, les éléments suivants requis de valeurs doivent être définies : **MinLOD** est définie sur zéro, **MaxLOD** a la valeur **D3D11\_FLOAT32\_MAX**, et **MaxAnisotropy** est défini à zéro.
+Sur le niveau de fonctionnalité 9 \_ 1, les valeurs requises suivantes doivent être définies : **MinLOD** a la valeur zéro, **MaxLOD** est défini sur **d3d11 \_ FLOAT32 \_ Max**, et **MaxAnisotropy** est défini à zéro.
 
 ```cpp
 D3D11_SAMPLER_DESC comparisonSamplerDesc;
@@ -152,7 +152,7 @@ DX::ThrowIfFailed(
 ## <a name="create-render-states"></a>Créer des états de rendu
 
 
-Créez maintenant un état de rendu servant à activer l’élimination des faces avant. Notez ce niveau de fonctionnalité 9\_1 appareils nécessitent **DepthClipEnable** définie sur **true**.
+Créez maintenant un état de rendu servant à activer l’élimination des faces avant. Notez que les \_ appareils de niveau de fonctionnalité 9 1 requièrent que **DepthClipEnable** soit défini sur **true**.
 
 ```cpp
 D3D11_RASTERIZER_DESC drawingRenderStateDesc;
@@ -261,7 +261,3 @@ Dans la suite de cette procédure pas à pas, vous allez découvrir comment cré
  
 
  
-
-
-
-

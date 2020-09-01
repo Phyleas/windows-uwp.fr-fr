@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, jeux, développement de jeux
 ms.localizationpriority: medium
-ms.openlocfilehash: 24414ba36e2ee1af8f391eec38b04d9e17bb7237
-ms.sourcegitcommit: 2e597438dafedde3bde24424ef005bb4c24ba3bf
+ms.openlocfilehash: cf1566b804caaf39def783d95752a389536daa3b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84800325"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175333"
 ---
 # <a name="windows-10-game-development-guide"></a>Guide de développement de jeux Windows 10
 
@@ -111,9 +111,9 @@ Microsoft propose plusieurs programmes pour développeurs pour vous aider à dé
 
 #### <a name="xbox-live-creators-program"></a>Programme Xbox Live Creators
 
-Le programme de créateurs de Xbox Live permet à toute personne d’intégrer Xbox Live dans son titre et de la publier sur Xbox One et Windows 10. Il existe un processus de certification simplifié et aucune approbation de concept n’est requise en dehors des [stratégies de Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies)standard.
+Le programme de créateurs de Xbox Live permet à toute personne d’intégrer Xbox Live dans son titre et de la publier sur Xbox One et Windows 10. Il existe un processus de certification simplifié et aucune approbation de concept n’est requise en dehors des [stratégies de Microsoft Store](/legal/windows/agreements/store-policies)standard.
 
-Vous pouvez déployer, concevoir et publier votre jeu dans le programme Creators sans kit de développement dédié, en utilisant uniquement du matériel de vente au détail. Pour commencer, téléchargez l' [application d’activation en mode dev](https://docs.microsoft.com/windows/uwp/xbox-apps/devkit-activation) sur votre Xbox.
+Vous pouvez déployer, concevoir et publier votre jeu dans le programme Creators sans kit de développement dédié, en utilisant uniquement du matériel de vente au détail. Pour commencer, téléchargez l' [application d’activation en mode dev](../xbox-apps/devkit-activation.md) sur votre Xbox.
 
 Si vous souhaitez accéder à d’autres fonctionnalités Xbox Live, à une prise en charge du marketing et du développement dédié, et à la possibilité de figurer dans le magasin Xbox principal, appliquez le [ID@Xbox](https://www.xbox.com/Developers/id) programme.
 
@@ -138,11 +138,11 @@ Le ID@Xbox programme aide les développeurs de jeux qualifiés à publier eux-m�
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>ID@Xboxprogramme de développement</td>
+        <td>ID@Xbox programme de développement</td>
         <td><a href="https://www.xbox.com/Developers/id">Programme de développement indépendant pour Xbox One</a></td>
     </tr>
     <tr>
-        <td>ID@Xboxsite grand public</td>
+        <td>ID@Xbox site grand public</td>
         <td><a href="https://www.idatxbox.com/">ID@Xbox</a></td>
     </tr>
 </table>
@@ -463,7 +463,7 @@ Le langage HTML (HyperText Markup Language) est un langage de balisage d’inte
     </tr>
 </table>
  
-####Combinaison de technologies de présentation
+#### Combinaison de technologies de présentation
 
 L’infrastructure DXGI (DirectX Graphics Infrastructure) de Microsoft fournit interopérabilité et compatibilité entre plusieurs technologies graphiques. Pour des graphismes haute performance, vous pouvez allier XAML et DirectX, en utilisant XAML pour les menus et les autres éléments simples de l’interface utilisateur, et DirectX pour le rendu des scènes 2D et 3D complexes DXGI assure également la compatibilité entre Direct2D, Direct3D, DirectWrite, DirectCompute et Microsoft Media Foundation.
 
@@ -478,7 +478,7 @@ L’infrastructure DXGI (DirectX Graphics Infrastructure) de Microsoft fournit 
     </tr>
     <tr>
         <td>Combinaison de DirectX et XAML</td>
-        <td><a href="directx-and-xaml-interop.md">DirectX et interopérabilité XAML</a></td>
+        <td><a href="directx-and-xaml-interop.md">Technologie interop DirectX et XAML</a></td>
     </tr>
 </table>
  
@@ -512,11 +512,11 @@ C# (prononcez « C sharp ») est un langage moderne et innovant, qui est simpl
     </colgroup>
     <tr>
         <td>C# : Guide de programmation et informations de référence</td>
-        <td><a href="https://docs.microsoft.com/dotnet/articles/csharp/csharp">Référence du langage C#</a></td>
+        <td><a href="https://docs.microsoft.com/dotnet/articles/csharp/csharp">Informations de référence sur le langage C#</a></td>
     </tr>
 </table>
  
-####JavaScript
+#### JavaScript
 
 JavaScript est un langage de script dynamique largement utilisé pour les applications web modernes et les applications clientes enrichies.
 
@@ -616,7 +616,7 @@ PlayFab, qui fait désormais partie de la famille Microsoft, est une plateforme 
         <td><a href="https://playfab.com/">Vue d’ensemble des outils et des services</a></td>
     </tr>
     <tr>
-        <td>Prise en main</td>
+        <td>Mise en route</td>
         <td><a href="https://api.playfab.com/docs/general-getting-started">Guide de mise en route général</a></td>
     </tr>
     <tr>
@@ -674,7 +674,7 @@ Unity offre une plateforme permettant de créer des applications et des jeux 2D,
     </tr>
     <tr>
         <td>Comment ajouter une interactivité à votre jeu à l’aide de la fenêtre interactive mixer</td>
-        <td><a href="https://github.com/mixer/interactive-unity-plugin/wiki/Getting-started">Guide de démarrage</a></td>
+        <td><a href="https://github.com/mixer/interactive-unity-plugin/wiki/Getting-started">Guide de mise en route</a></td>
     </tr>
     <tr>
         <td>Kit de développement logiciel (SDK) mixer pour Unity</td>
@@ -706,7 +706,7 @@ Unity offre une plateforme permettant de créer des applications et des jeux 2D,
     </tr>
 </table>
  
-####Havok
+#### Havok
 
 Avec la suite modulaire d’outils et de technologies de Havok, les créateurs de jeux peuvent atteindre de nouveaux niveaux d’interactivité et d’immersion. Havok permet de fournir des données physiques réalistes, et de réaliser des simulations interactives ainsi que des animations remarquables. La version 2015,1 et les versions ultérieures prennent officiellement en charge UWP dans Visual Studio 2015 sur x86, 64 bits et ARM.
 
@@ -729,7 +729,7 @@ Avec la suite modulaire d’outils et de technologies de Havok, les créateurs d
     </tr>
 </table>
  
-####MonoGame
+#### MonoGame
 
 MonoGame est une infrastructure de développement open source inter-plateforme initialement basée sur Microsoft XNA Framework 4.0. Monogame prend actuellement en charge Windows, Windows Phone, Xbox, ainsi que Linux, Mac OS, iOS, Android et certaines autres plateformes.
 
@@ -909,7 +909,7 @@ Les guides indiqués ci-dessous sont excellents. Ils décrivent en détail les a
     </tr>
 </table>
  
-###Prise en main du développement UWP
+### Prise en main du développement UWP
 
 La préparation au développement d’une application Windows universelle est rapide et facile. Les guides suivants vous décrivent le processus étape par étape.
 
@@ -997,7 +997,7 @@ Voici quelques liens pour vous aider à migrer votre jeu de bureau Windows vers 
     </tr>
 </table>
  
-###Gestion de la durée de vie des processus
+### Gestion de la durée de vie des processus
 
 La gestion de la durée de vie des processus, ou cycle de vie des applications, décrit les différents états d’activation que peut traverser une application de plateforme Windows universelle. Votre jeu peut être activé, suspendu, rétabli ou arrêté, et il peut transiter par ces états de plusieurs manières.
 
@@ -1016,7 +1016,7 @@ La gestion de la durée de vie des processus, ou cycle de vie des applications, 
     </tr>
 </table>
  
-###Conception de l’expérience utilisateur des jeux
+### Conception de l’expérience utilisateur des jeux
 
 Une conception inspirée est à la source d’un jeu réussi.
 
@@ -1047,7 +1047,7 @@ Distincte de la conception de l’expérience utilisateur, la conception d’un 
     </tr>   
 </table>
  
-####Palette de couleurs et palette
+#### Palette de couleurs et palette
 
 Le respect de recommandations de couleur cohérentes dans votre jeu lui apporte esthétisme, simplifie la navigation et permet d’informer le joueur sur la fonctionnalité du menu et de l’affichage à tête haute. L’application de couleurs cohérentes aux éléments du jeu comme les avertissements, dommages, XP et scores peut permettre d’obtenir une interface utilisateur plus claire et de réduire l’emploi de libellés explicites.
 
@@ -1201,7 +1201,7 @@ Découvrez ce qui a changé dans Direct3D 12 et comment commencer à programmer
     </tr>
 </table>
  
-####Bibliothèques et kits d’outils DirectX
+#### Bibliothèques et kits d’outils DirectX
 
 Le kit de ressources DirectX, la bibliothèque de traitement des textures DirectX, la bibliothèque de traitement des géométries DirectXMesh, la bibliothèque UVAtlas et la bibliothèque DirectXMath fournissent des fonctionnalités de texture, maillage, sprite etc., ainsi que des classes d’assistance pour le développement avec DirectX. Ces bibliothèques peuvent vous faire gagner du temps et de l’énergie lors du développement.
 
@@ -1337,11 +1337,11 @@ Un module complémentaire (produit dans l’application) est un élément suppl�
     </tr>
 </table>
  
-###Débogage, optimisation des performances et surveillance
+### Débogage, optimisation des performances et surveillance
 
 Pour optimiser les performances, tirez parti du mode jeu dans Windows 10 afin de fournir à vos joueurs la meilleure expérience de jeu possible en utilisant pleinement la capacité de leur matériel actuel.
 
-Le Kit Windows Performance Toolkit est composé d’outils d’analyse des performances qui génèrent des profils de performances détaillés des applications et des systèmes d’exploitation Windows. Il s’avère particulièrement précieux pour surveiller l’utilisation de la mémoire et améliorer les performances des jeux. Le Kit Windows Performance Toolkit est inclus dans le Kit de développement logiciel Windows 10 et dans Windows ADK. Ce kit d’outils comprend deux outils indépendants : l’enregistreur de performance Windows et Windows Performance Analyzer. ProcDump, qui fait partie de [Windows Sysinternals](https://technet.microsoft.com/sysinternals/default), est un utilitaire de ligne de commande qui surveille les pics d’utilisation de l’UC et génère des fichiers de vidage pendant les pannes de jeu. 
+Le Kit Windows Performance Toolkit est composé d’outils d’analyse des performances qui génèrent des profils de performances détaillés des applications et des systèmes d’exploitation Windows. Il s’avère particulièrement précieux pour surveiller l’utilisation de la mémoire et améliorer les performances des jeux. Le Kit Windows Performance Toolkit est inclus dans le Kit de développement logiciel Windows 10 et dans Windows ADK. Ce kit d’outils comprend deux outils indépendants : l’enregistreur de performance Windows et Windows Performance Analyzer. ProcDump, qui fait partie de [Windows Sysinternals](/sysinternals/), est un utilitaire de ligne de commande qui surveille les pics d’utilisation de l’UC et génère des fichiers de vidage pendant les pannes de jeu. 
 
 <table>
     <colgroup>
@@ -1421,7 +1421,7 @@ Certaines parties du développement DirectX peuvent être complexes et nuancées
     </tr>
     <tr>
         <td>Combinaison de DirectX et XAML</td>
-        <td><a href="directx-and-xaml-interop.md">DirectX et interopérabilité XAML</a></td>
+        <td><a href="directx-and-xaml-interop.md">Technologie interop DirectX et XAML</a></td>
     </tr>
 </table>
 
@@ -1539,7 +1539,7 @@ Vous allez utiliser l' [espace partenaires](https://partner.microsoft.com/dashbo
     </tr>    
     <tr>
         <td>Chargement et contrôle de version de votre jeu</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/publish/upload-app-packages">Chargement de packages d’applications</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/publish/upload-app-packages">Chargement des packages d’application</a></td>
     </tr>
 </table>
 
@@ -1554,7 +1554,7 @@ Ne laissez pas les problèmes de certification retarder la publication de votre 
     </colgroup>
     <tr>
         <td>Contrat du développeur de l’application Microsoft Store</td>
-        <td><a href="https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement">Contrat du développeur d'application</a></td>
+        <td><a href="https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement">Contrat du développeur d’application</a></td>
     </tr>
     <tr>
         <td>Stratégies pour la publication d’applications dans le Microsoft Store</td>
@@ -1594,7 +1594,7 @@ Vous n’avez pas terminé une fois que vous avez développé et fourni votre je
     </colgroup>
     <tr>
         <td>Analyse de l’espace partenaires</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/publish/analytics">Analyser les performances des applications</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/publish/analytics">Analyser le niveau de performance de l’application</a></td>
     </tr>
     <tr>
         <td>Découvrez comment vos clients sont en contact avec les fonctionnalités Xbox de votre jeu</td>
@@ -1610,7 +1610,7 @@ Vous n’avez pas terminé une fois que vous avez développé et fourni votre je
     </tr>
 </table>
  
-###Application Insights Visual Studio
+### Application Insights Visual Studio
 
 Visual Studio Application Insights fournit des analyses de performance, de télémétrie et d’utilisation pour votre jeu publié. Application Insights vous permet de détecter et de résoudre les problèmes après publication de votre jeu, de surveiller et d’améliorer en continu son utilisation et de comprendre comment les joueurs ne cessent d’interagir avec votre jeu. Application Insights fonctionne par l’ajout d’un kit de développement logiciel (SDK) à votre application, qui envoie la télémétrie au [portail Azure](https://portal.azure.com/).
 
@@ -1686,7 +1686,7 @@ Pour mettre à jour votre jeu publié, soumettez un nouveau package d’applicat
 Xbox Live est un réseau de jeux Premier qui connecte des millions de joueurs dans le monde entier. Les développeurs ont accès à des fonctionnalités Xbox Live qui peuvent augmenter de façon naturelle le public de leur jeu, y compris la présence Xbox Live, Leaderboards, les enregistrements Cloud, les concentrateurs de jeux, les clubs, les conversations des tiers, les jeux DVR et bien plus encore.
 
 > [!Note]
-> Si vous souhaitez développer des titres Xbox Live, vous disposez de plusieurs options. Pour plus d’informations sur les différents programmes, consultez [vue d’ensemble du programme de développement](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview).
+> Si vous souhaitez développer des titres Xbox Live, vous disposez de plusieurs options. Pour plus d’informations sur les différents programmes, consultez [vue d’ensemble du programme de développement](/gaming/xbox-live/developer-program-overview).
 
 <table>
     <colgroup>

@@ -12,12 +12,12 @@ design-contact: conrwi
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ded09e2de6e3aafa0108d3f7ef66808cb02bfd8
-ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
+ms.openlocfilehash: 5eac1b5d95dff4887258278f9ff700adaf663194
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89043571"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175543"
 ---
 # <a name="parallax"></a>Parallaxe
 
@@ -56,14 +56,14 @@ Dans une interface utilisateur, vous pouvez créer un effet de parallaxe en dép
  
 ## <a name="using-the-parallaxview-control-to-create-a-parallax-effect"></a>Utilisation du contrôle ParallaxView pour créer un effet parallaxe
 
-Pour créer un effet de parallaxe, vous utilisez le contrôle [ParallaxView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview) . Ce contrôle lie la position de défilement d’un élément de premier plan, tel qu’une liste, à un élément d’arrière-plan, tel qu’une image. Lorsque vous faites défiler l’élément de premier plan, il anime l’élément d’arrière-plan pour créer un effet de parallaxe. 
+Pour créer un effet de parallaxe, vous utilisez le contrôle [ParallaxView](/uwp/api/Windows.UI.Xaml.Controls.Parallaxview) . Ce contrôle lie la position de défilement d’un élément de premier plan, tel qu’une liste, à un élément d’arrière-plan, tel qu’une image. Lorsque vous faites défiler l’élément de premier plan, il anime l’élément d’arrière-plan pour créer un effet de parallaxe. 
 
-Pour utiliser le contrôle ParallaxView, vous fournissez un élément source, un élément d’arrière-plan, puis définissez les propriétés [VerticalShift](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.VerticalShift) (pour le défilement vertical) et/ou [HorizontalShift](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.HorizontalShift) (pour le défilement horizontal) sur une valeur supérieure à zéro. 
-* La propriété source prend une référence à l’élément Foreground. Pour que l’effet parallaxe se produise, le premier plan doit être un [ScrollViewer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) ou un élément qui contient un ScrollViewer, tel qu’un [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) ou un [RichTextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox). 
+Pour utiliser le contrôle ParallaxView, vous fournissez un élément source, un élément d’arrière-plan, puis définissez les propriétés [VerticalShift](/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.VerticalShift) (pour le défilement vertical) et/ou [HorizontalShift](/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.HorizontalShift) (pour le défilement horizontal) sur une valeur supérieure à zéro. 
+* La propriété source prend une référence à l’élément Foreground. Pour que l’effet parallaxe se produise, le premier plan doit être un [ScrollViewer](/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) ou un élément qui contient un ScrollViewer, tel qu’un [ListView](/uwp/api/windows.ui.xaml.controls.listview) ou un [RichTextBox](/uwp/api/Windows.UI.Xaml.Controls.RichEditBox). 
 
-* Pour définir l’élément d’arrière-plan, ajoutez cet élément en tant qu’enfant du contrôle ParallaxView. L’élément d’arrière-plan peut être n’importe quel [UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement), tel qu’une [image](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) ou un panneau qui contient des éléments d’interface utilisateur supplémentaires. 
+* Pour définir l’élément d’arrière-plan, ajoutez cet élément en tant qu’enfant du contrôle ParallaxView. L’élément d’arrière-plan peut être n’importe quel [UIElement](/uwp/api/windows.ui.xaml.uielement), tel qu’une [image](/uwp/api/Windows.UI.Xaml.Controls.Image) ou un panneau qui contient des éléments d’interface utilisateur supplémentaires. 
 
-Pour créer un effet de parallaxe, ParallaxView doit se trouver derrière l’élément de premier plan. Les panneaux [grille](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid) et [canevas](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas) vous permettent de superposer des éléments les uns aux autres, afin qu’ils fonctionnent bien avec le contrôle ParallaxView.  
+Pour créer un effet de parallaxe, ParallaxView doit se trouver derrière l’élément de premier plan. Les panneaux [grille](/uwp/api/windows.ui.xaml.controls.grid) et [canevas](/uwp/api/windows.ui.xaml.controls.canvas) vous permettent de superposer des éléments les uns aux autres, afin qu’ils fonctionnent bien avec le contrôle ParallaxView.  
 
 Cet exemple crée un effet de parallaxe pour une liste :
  
@@ -123,6 +123,6 @@ Pour obtenir la liste complète des méthodes de personnalisation de la parallax
 
 ## <a name="related-articles"></a>Articles connexes
 
-- [ParallaxView, classe](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview) 
+- [ParallaxView, classe](/uwp/api/Windows.UI.Xaml.Controls.Parallaxview) 
 - [Fluent Design pour UWP](/windows/apps/fluent-design-system)
 - [Science in the System: Fluent Design and Depth](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)

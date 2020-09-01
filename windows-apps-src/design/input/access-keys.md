@@ -1,6 +1,6 @@
 ---
 Description: Apprenez à améliorer à la fois la convivialité et l’accessibilité de votre application Windows en fournissant aux utilisateurs un moyen intuitif de naviguer et d’interagir rapidement avec l’interface utilisateur visible d’une application par le biais d’un clavier au lieu d’un pointeur (par exemple, une pression tactile ou une souris).
-title: Règles de conception des clés d’accès
+title: Recommandations en matière de conception de touches d’accès rapide
 label: Access keys design guidelines
 keywords: clavier, touche d’accès, KeyTip, touche accélératrice, accessibilité, navigation, Focus, texte, entrée, interaction utilisateur
 template: detail.hbs
@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: c0d5808c462beb72341fd83c6fc4c1cfc0178b2f
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: ca8c21729f27e30e7703291c04a940301a3feb26
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970974"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173893"
 ---
 # <a name="access-keys"></a>Clés d'accès
 
@@ -25,7 +25,7 @@ Les touches d’accès rapide sont des raccourcis clavier qui améliorent la con
 Pour plus d’informations sur l’appel des actions courantes dans une application Windows à l’aide de raccourcis clavier, consultez la rubrique [touches accélérateur](keyboard-accelerators.md) . 
 
 > [!NOTE]
-> Un clavier est indispensable pour les utilisateurs présentant des handicaps (voir [accessibilité du clavier](https://docs.microsoft.com/windows/uwp/accessibility/keyboard-accessibility)). il est également un outil important pour les utilisateurs qui préfèrent le faire comme un moyen plus efficace d’interagir avec une application.
+> Un clavier est indispensable pour les utilisateurs présentant des handicaps (voir [accessibilité du clavier](../accessibility/keyboard-accessibility.md)). il est également un outil important pour les utilisateurs qui préfèrent le faire comme un moyen plus efficace d’interagir avec une application.
 
 L’application Windows fournit une prise en charge intégrée des contrôles de plateforme pour les touches d’accès clavier et les commentaires d’interface utilisateur associés via des signaux visuels appelés touches accélératrices.
 
@@ -72,11 +72,11 @@ Par exemple, Microsoft Word fournit deux étendues de clé d’accès : une ét
 
 Les images suivantes illustrent les deux étendues de clé d’accès dans Word. Le premier affiche les clés d’accès principales qui permettent à un utilisateur de sélectionner un onglet et d’autres commandes de niveau supérieur, tandis que le deuxième affiche les clés d’accès secondaires pour l’onglet dossier de base.
 
-![Clés d’accès principales dans les](images/accesskeys/primary-access-keys-word.png)
-_clés d’accès principal Microsoft Word dans Microsoft Word_
+![Clés d’accès principales dans les ](images/accesskeys/primary-access-keys-word.png)
+ _clés d’accès principal Microsoft Word dans Microsoft Word_
 
-![Clés d’accès secondaires dans les](images/accesskeys/secondary-access-keys-word.png)
-_clés d’accès secondaires Microsoft Word dans Microsoft Word_
+![Clés d’accès secondaires dans les ](images/accesskeys/secondary-access-keys-word.png)
+ _clés d’accès secondaires Microsoft Word dans Microsoft Word_
 
 Les clés d’accès peuvent être dupliquées pour des éléments dans différentes étendues. Dans l’exemple précédent, « 2 » est la clé d’accès pour l’annulation dans l’étendue principale et également « Italic » dans l’étendue secondaire.
 
@@ -241,7 +241,7 @@ Les clés d’accès localisées sont spécifiées dans le fichier Resources. re
 
 _Spécifiez la propriété AccessKey spécifiée dans le fichier Resources. resw_
 
-Pour plus d’informations, consultez [traduction des ressources de l’interface utilisateur](https://docs.microsoft.com/previous-versions/windows/apps/hh965329(v=win.10))
+Pour plus d’informations, consultez [traduction des ressources de l’interface utilisateur ](/previous-versions/windows/apps/hh965329(v=win.10))
 
 ## <a name="key-tip-positioning"></a>Positionnement des touches accélératrices
 
@@ -353,14 +353,12 @@ Cet exemple montre comment modifier les ressources de l’application :
 
 L’infrastructure XAML expose des propriétés Automation qui permettent aux clients UI Automation de découvrir des informations sur les éléments de l’interface utilisateur.
 
-Si vous spécifiez la propriété AccessKey sur un contrôle UIElement ou TextElement, vous pouvez utiliser la propriété [AutomationProperties. AccessKey](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.accesskey) pour obtenir cette valeur. Les clients d’accessibilité, tels que le narrateur, lisent la valeur de cette propriété chaque fois qu’un élément obtient le focus.
+Si vous spécifiez la propriété AccessKey sur un contrôle UIElement ou TextElement, vous pouvez utiliser la propriété [AutomationProperties. AccessKey](/dotnet/api/system.windows.automation.automationproperties.accesskey) pour obtenir cette valeur. Les clients d’accessibilité, tels que le narrateur, lisent la valeur de cette propriété chaque fois qu’un élément obtient le focus.
 
 ## <a name="related-articles"></a>Articles connexes
 
-* [Interactions du clavier](keyboard-interactions.md)
-* [Accélérateurs de clavier](keyboard-accelerators.md)
+* [Interactions avec le clavier](keyboard-interactions.md)
+* [Raccourcis clavier](keyboard-accelerators.md)
 
 **Exemples**
 * [Galerie de contrôles XAML (alias XamlUiBasics)](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)
-
-

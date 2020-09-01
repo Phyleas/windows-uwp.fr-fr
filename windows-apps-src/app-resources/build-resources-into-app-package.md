@@ -6,29 +6,29 @@ ms.date: 11/14/2017
 ms.topic: article
 keywords: windows 10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: d7a63c44ac8cb6f6b17951cf6515fad33fb83ee9
-ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
+ms.openlocfilehash: b975dcf88ecd26dc5a24d602c117b779fa2aada6
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74734944"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174523"
 ---
 # <a name="build-resources-into-your-app-package-instead-of-into-a-resource-pack"></a>Générer des ressources dans votre package d’application, plutôt que dans un pack de ressources
 
-Certains types d’applications (dictionnaires multilingues, outils de traduction, etc.) doivent remplacer le comportement par défaut d’un ensemble d’applications et générer des ressources dans le package d’application, plutôt que dans des packages de ressources distincts (ou des packs de ressources). Cette rubrique explique la procédure à suivre.
+Certains types d’applications (dictionnaires multilingues, outils de traduction, etc.) doivent remplacer le comportement par défaut d’un bundle d’applications et créer des ressources dans le package d’application au lieu de les faire dans des packages de ressources (ou des packs de ressources) distincts. Cette rubrique explique la procédure à suivre.
 
-Par défaut, lorsque vous générez un [ensemble d’applications (.appxbundle)](/windows/msix/package/packaging-uwp-apps), seules vos ressources par défaut pour la langue, la mise à l’échelle et le niveau de fonctionnalité DirectX sont intégrées dans le package d’application. Vos ressources traduites&mdash;et vos ressources adaptées aux échelles autres que celles par défaut et/ou aux niveaux de fonctionnalités DirectX&mdash;sont intégrées dans les packages de ressources et sont téléchargées uniquement sur les périphériques qui en ont besoin. Si un client achète votre application dans Microsoft Store à l’aide d’un périphérique dont la préférence linguistique a la valeur espagnol, seule votre application ainsi que le package de ressources en espagnol sont téléchargés et installés. Si ce même utilisateur change par la suite ses préférences linguistiques en français dans les **paramètres**, le package de ressources en français de votre application est téléchargé et installé. La même chose se produit avec vos ressources qualifiées pour la mise à l’échelle et le niveau de fonctionnalité DirectX. Pour la plupart des applications, ce comportement est très efficace : c’est exactement ce que le client et vous-même *souhaitez* voir se produire.
+Par défaut, lorsque vous générez un [bundle d’applications (. appxbundle)](/windows/msix/package/packaging-uwp-apps), seules vos ressources par défaut pour la langue, l’échelle et le niveau de fonctionnalité DirectX sont intégrées dans le package d’application. Vos ressources traduites &mdash; et vos ressources adaptées à des niveaux de fonctionnalités de mise à l’échelle non définie par défaut et/ou DirectX &mdash; sont intégrées aux packages de ressources, et elles sont uniquement téléchargées sur les appareils qui en ont besoin. Si un client achète votre application à partir de l’Microsoft Store à l’aide d’un appareil dont la langue est définie sur espagnol, seule votre application et le package de ressources espagnol sont téléchargés et installés. Si le même utilisateur modifie par la suite ses préférences de langue en français dans **paramètres**, le package de ressources français de votre application est téléchargé et installé. Des choses similaires se produisent avec vos ressources qualifiées pour le niveau de fonctionnalité de mise à l’échelle et de DirectX. Pour la majorité des applications, ce comportement constitue une efficacité importante et c’est exactement ce que vous et le client *souhaitez* faire.
 
-Mais si votre application autorise l’utilisateur à modifier la langue à la volée à partir de l’application (plutôt que via les **paramètres**), ce comportement par défaut n’est pas approprié. Il est en effet préférable que toutes vos ressources linguistiques soit téléchargées sans condition et installées avec l’application une fois, puis qu’elles restent sur le périphérique. Toutes ces ressources doivent alors être générées dans votre package d’application, plutôt que dans des packages de ressources distincts.
+Toutefois, si votre application permet à l’utilisateur de changer la langue à la volée à partir de l’application (au lieu des **paramètres**via), le comportement par défaut n’est pas approprié. Vous souhaitez en fait que toutes les ressources de votre langue soient téléchargées et installées de manière non conditionnelle avec l’application une fois, puis restent sur l’appareil. Vous souhaitez créer toutes ces ressources dans votre package d’application plutôt que dans des packages de ressources distincts.
 
-**Remarque** Le fait d’inclure des ressources dans un package d’application augmente substantiellement la taille de l’application. C’est pourquoi cette décision ne doit être prise que si la nature de l’application l’exige. Si ce n’est pas le cas, vous n’avez rien à faire, hormis générer un ensemble d’applications standard comme d’habitude.
+**Remarque** L’inclusion de ressources dans un package d’application augmente essentiellement la taille de l’application. C’est la raison pour laquelle elle ne s’avère utile que si la nature de l’application en a besoin. Si ce n’est pas le cas, vous n’avez rien à faire sauf créer un bundle d’applications standard comme d’habitude.
 
-Vous pouvez configurer Visual Studio pour qu’il génère des ressources dans votre package d’application de l’une ou l’autre des deux manières. Vous pouvez soit ajouter un fichier de configuration à votre projet, soit modifier votre fichier de projet directement. Utilisez l’option avec laquelle vous êtes le plus à l’aise, ou celle qui fonctionne le mieux avec votre système de génération.
+Vous pouvez configurer Visual Studio pour créer des ressources dans votre package d’application de deux manières. Vous pouvez ajouter un fichier de configuration à votre projet, ou vous pouvez modifier votre fichier projet directement. Utilisez l’option qui vous convient le mieux, ou celle qui convient le mieux à votre système de génération.
 
-## <a name="option-1-use-priconfigpackagingxml-to-build-resources-into-your-app-package"></a>Option 1. Utilisez priconfig.packaging.xml pour générer des ressources dans votre package d’application
+## <a name="option-1-use-priconfigpackagingxml-to-build-resources-into-your-app-package"></a>Option 1. Utiliser priconfig.packaging.xml pour créer des ressources dans votre package d’application
 
-1. Dans Visual Studio, ajoutez un nouvel élément à votre projet. Choisissez le fichier XML et nommez-le `priconfig.packaging.xml`.
-2. Dans l’Explorateur de solutions, sélectionnez `priconfig.packaging.xml`et vérifiez la fenêtre Propriétés. L’option Action de génération du fichier doit être définie sur Aucun, et Copier dans le répertoire de sortie sur Ne pas copier.
+1. Dans Visual Studio, ajoutez un nouvel élément à votre projet. Choisissez fichier XML, puis nommez le fichier `priconfig.packaging.xml` .
+2. Dans Explorateur de solutions, sélectionnez `priconfig.packaging.xml` et vérifiez le fenêtre Propriétés. L’action de génération du fichier doit avoir la valeur aucun et la valeur copier dans le répertoire de sortie doit être définie sur ne pas copier.
 3. Remplacez le contenu du fichier par ce code XML.
    ```xml
    <packaging>
@@ -37,18 +37,18 @@ Vous pouvez configurer Visual Studio pour qu’il génère des ressources dans v
       <autoResourcePackage qualifier="DXFeatureLevel" />
    </packaging>
    ```
-4. Chaque élément `<autoResourcePackage>` indique à Visual Studio qu’il doit fractionner automatiquement les ressources pour le nom de qualificateur donné en packages de ressources distincts. C’est ce que l’on appelle le *fractionnement automatique* . Avec le contenu du fichier que vous avez actuellement, vous n’avez pas véritablement modifié le comportement de Visual Studio. En d’autres termes, Visual Studio *se comportait déjà comme si* ce fichier était présent avec ce contenu, car c’est le comportement par défaut. Si vous ne voulez pas que Visual Studio effectue un fractionnement automatique sur un nom de qualificateur, supprimez cet élément `<autoResourcePackage>` du fichier. Voici à quoi ressemblerait le fichier si vous vouliez que toutes vos ressources linguistiques soient intégrées dans le package d’application au lieu d’être fractionnées automatiquement en packages de ressources distincts.
+4. Chaque `<autoResourcePackage>` élément indique à Visual Studio de fractionner automatiquement les ressources pour le nom de qualificateur donné en packages de ressources distincts. C’est ce que l’on appelle le *fractionnement automatique*. Avec le contenu du fichier que vous avez jusqu’à présent, vous n’avez pas réellement modifié le comportement de Visual Studio. En d’autres termes, Visual Studio se *comporte déjà comme si* ce fichier était présent avec ces contenus, car il s’agit des valeurs par défaut. Si vous ne souhaitez pas que Visual Studio se fractionne automatiquement sur un nom de qualificateur, supprimez cet `<autoResourcePackage>` élément du fichier. Voici à quoi ressemblerait le fichier si vous souhaitiez que toutes vos ressources linguistiques soient intégrées dans le package d’application au lieu d’être répartie automatiquement dans des packages de ressources distincts.
    ```xml
    <packaging>
       <autoResourcePackage qualifier="Scale" />
       <autoResourcePackage qualifier="DXFeatureLevel" />
    </packaging>
    ```
-5. Enregistrez le fichier et fermez-le, puis générez une nouvelle fois votre projet.
+5. Enregistrez et fermez le fichier, puis régénérez votre projet.
 
-Pour vérifier que vos choix de fractionnement automatique sont pris en compte, recherchez le fichier `<ProjectFolder>\obj\<ReleaseConfiguration folder>\split.priconfig.xml`et confirmez que son contenu correspond à vos choix. Si tel est le cas, vous avez correctement configuré Visual Studio pour générer les ressources de votre choix dans le package d’application.
+Pour confirmer que vos choix de fractionnement automatique sont pris en compte, recherchez le fichier `<ProjectFolder>\obj\<ReleaseConfiguration folder>\split.priconfig.xml` et vérifiez que son contenu correspond à vos choix. Si c’est le cas, vous avez correctement configuré Visual Studio pour créer les ressources de votre choix dans le package d’application.
 
-Vous devez effectuer une étape finale. **Ceci est valable uniquement si vous avez supprimé le nom de qualificateur `Language`** . Vous devez spécifier l’union de toutes les langues prises en charge par votre application comme langue par défaut de votre application. Pour plus d’informations, consultez [Préciser les ressources par défaut que votre application utilise](specify-default-resources-installed.md). Voici ce que contiendrait votre fichier `priconfig.default.xml` si vous englobiez des ressources pour l’anglais, l’espagnol et le français dans votre package d’application.
+Vous devez effectuer une dernière étape. **Mais uniquement si vous avez supprimé le `Language` nom du qualificateur**. Vous devez spécifier l’Union de l’ensemble de la langue prise en charge par votre application comme langue par défaut de votre application. Pour plus d’informations, consultez [spécifier les ressources par défaut que votre application utilise](specify-default-resources-installed.md). C’est ce que `priconfig.default.xml` vous contiendra si vous incluiez des ressources pour l’anglais, l’espagnol et le français dans votre package d’application.
 
 ```xml
    <default>
@@ -59,37 +59,37 @@ Vous devez effectuer une étape finale. **Ceci est valable uniquement si vous av
 
 ### <a name="how-does-this-work"></a>Comment cela fonctionne ?
 
-En coulisse, Visual Studio lance un outil nommé `MakePri.exe` pour générer un fichier appelé un index de ressource de package, qui décrit toutes les ressources de votre application et qui indique notamment sur quels noms de qualificateurs de ressources effectuer le fractionnement automatique. Pour plus d’informations sur cet outil, consultez [Compiler des ressources manuellement avec MakePri.exe ](compile-resources-manually-with-makepri.md). Visual Studio envoie un fichier de configuration à `MakePri.exe`. Le contenu de votre fichier `priconfig.packaging.xml` est utilisé en tant qu’élément `<packaging>` de ce fichier de configuration, qui correspond à la partie qui détermine le fractionnement automatique. Ainsi, si vous ajoutez et modifiez `priconfig.packaging.xml`, vous influencez en fin de compte le contenu du fichier d’index de ressource de package que Visual Studio génère pour votre application, ainsi que le contenu des packages dans votre ensemble d’application.
+En arrière-plan, Visual Studio lance un outil nommé `MakePri.exe` pour générer un fichier connu sous le nom d’index de ressources de package, qui décrit toutes les ressources de votre application, notamment l’indication des noms de qualificateurs de ressources à fractionner automatiquement. Pour plus d’informations sur cet outil, consultez [compiler des ressources manuellement avec MakePri.exe](compile-resources-manually-with-makepri.md). Visual Studio transmet un fichier de configuration à `MakePri.exe` . Le contenu de votre `priconfig.packaging.xml` fichier est utilisé en tant qu' `<packaging>` élément de ce fichier de configuration, qui est la partie qui détermine le fractionnement automatique. Ainsi, l’ajout et `priconfig.packaging.xml` la modification influencent finalement le contenu du fichier d’index de ressources de package généré par Visual Studio pour votre application, ainsi que le contenu des packages dans votre offre groupée d’applications.
 
-### <a name="using-a-different-file-name-than-priconfigpackagingxml"></a>Utilisation d’un nom de fichier différent de `priconfig.packaging.xml`
+### <a name="using-a-different-file-name-than-priconfigpackagingxml"></a>Utilisation d’un nom de fichier différent de celui de `priconfig.packaging.xml`
 
-Si vous nommez votre fichier `priconfig.packaging.xml`, Visual Studio le reconnaît et l’utilise automatiquement. Si vous lui donnez un nom différent, vous devez l’indiquer à Visual Studio. Dans votre fichier de projet, entre les balises d’ouverture et de fermeture du premier élément `<PropertyGroup>`, ajoutez ce fichier XML.
+Si vous nommez votre fichier `priconfig.packaging.xml` , Visual Studio le reconnaît et l’utilise automatiquement. Si vous lui donnez un autre nom, vous devez laisser Visual Studio le savoir. Dans votre fichier projet, entre les balises d’ouverture et de fermeture du premier `<PropertyGroup>` élément, ajoutez ce code XML.
 
 ```xml
 <AppxPriConfigXmlPackagingSnippetPath>FILE-PATH-AND-NAME</AppxPriConfigXmlPackagingSnippetPath>
 ```
 
-Remplacez `FILE-PATH-AND-NAME` par le chemin d’accès à votre fichier et son nom.
+Remplacez `FILE-PATH-AND-NAME` par le chemin d’accès et le nom de votre fichier.
 
-## <a name="option-2-use-your-project-file-to-build-resources-into-your-app-package"></a>Option 2. Utilisez votre fichier de projet pour générer des ressources dans votre package d’application
+## <a name="option-2-use-your-project-file-to-build-resources-into-your-app-package"></a>Option 2. Utiliser votre fichier projet pour créer des ressources dans votre package d’application
 
-Ceci est une alternative à l’option 1. Une fois que vous comprenez le fonctionnement de l’option 1, vous pouvez choisir d’utiliser l’option 2 à la place, si elle correspond mieux à votre flux de travail de développement et/ou de génération.
+Il s’agit d’une alternative à l’option 1. Une fois que vous avez compris le fonctionnement de l’option 1, vous pouvez opter pour l’option 2, si cela convient mieux à votre flux de travail de développement et/ou de génération.
 
-Dans votre fichier de projet, entre les balises d’ouverture et de fermeture du premier élément `<PropertyGroup>`, ajoutez ce fichier XML.
+Dans votre fichier projet, entre les balises d’ouverture et de fermeture du premier `<PropertyGroup>` élément, ajoutez ce code XML.
 
 ```xml
 <AppxBundleAutoResourcePackageQualifiers>Language|Scale|DXFeatureLevel</AppxBundleAutoResourcePackageQualifiers>
 ```
 
-Voici à quoi ressemble le fichier une fois que vous avez supprimé le premier nom de qualificateur.
+Voici à quoi cela ressemble une fois que vous avez supprimé le premier nom de qualificateur.
 
 ```xml
 <AppxBundleAutoResourcePackageQualifiers>Scale|DXFeatureLevel</AppxBundleAutoResourcePackageQualifiers>
 ```
 
-Enregistrez et fermez-le, puis générez une nouvelle fois votre projet.
+Enregistrez et fermez, puis régénérez votre projet.
 
-Vous devez effectuer une étape finale. **Ceci est valable uniquement si vous avez supprimé le nom de qualificateur `Language`** . Vous devez spécifier l’union de toutes les langues prises en charge par votre application comme langue par défaut de votre application. Pour plus d’informations, consultez [Préciser les ressources par défaut que votre application utilise](specify-default-resources-installed.md). Voici ce que contiendrait votre fichier de projet si vous englobiez des ressources pour l’anglais, l’espagnol et le français dans votre package d’application.
+Vous devez effectuer une dernière étape. **Mais uniquement si vous avez supprimé le `Language` nom du qualificateur**. Vous devez spécifier l’Union de l’ensemble de la langue prise en charge par votre application comme langue par défaut de votre application. Pour plus d’informations, consultez [spécifier les ressources par défaut que votre application utilise](specify-default-resources-installed.md). C’est ce que votre fichier projet doit contenir si vous avez inclus des ressources pour l’anglais, l’espagnol et le français dans votre package d’application.
 
 ```xml
 <AppxDefaultResourceQualifiers>Language=en;es;fr</AppxDefaultResourceQualifiers>
@@ -97,6 +97,6 @@ Vous devez effectuer une étape finale. **Ceci est valable uniquement si vous av
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Créer un package d’application UWP avec Visual Studio](../packaging/packaging-uwp-apps.md)
+* [Créer un package d’application UWP avec Visual Studio](/windows/msix/package/packaging-uwp-apps)
 * [Compiler des ressources manuellement avec MakePri.exe](compile-resources-manually-with-makepri.md)
 * [Préciser les ressources par défaut que votre application utilise](specify-default-resources-installed.md)

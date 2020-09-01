@@ -4,14 +4,14 @@ description: Découvrez les solutions aux problèmes de développement courants 
 title: Guide de résolution des problèmes pour HTML et JavaScript
 ms.date: 02/18/2020
 ms.topic: article
-keywords: windows 10, uwp, annonces publicitaires, publicité, AdControl, résolution des problèmes, HTML, javascript
+keywords: Windows 10, UWP, ADS, publicité, classe AdControl, dépannage, HTML, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: e9427218bc2ee6e7de7d5cb367da21d7b4bbfe30
-ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
+ms.openlocfilehash: 53c2d18c56626d4a71b4326b1ab7e292a2267dca
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77507093"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174983"
 ---
 # <a name="html-and-javascript-troubleshooting-guide"></a>Guide de résolution des problèmes pour HTML et JavaScript
 
@@ -20,15 +20,15 @@ ms.locfileid: "77507093"
 
 Cette rubrique contient des solutions aux problèmes de développement courants liés aux bibliothèques de publicités Microsoft dans les applications JavaScript/HTML.
 
-* [PAGE](#html)
-  * [Classe AdControl ne s’affiche pas](#html-notappearing)
-  * [La boîte noire clignote et disparaît](#html-blackboxblinksdisappears)
-  * [Annonces non actualisées](#html-adsnotrefreshing)
+* [HTML](#html)
+  * [AdControl invisible](#html-notappearing)
+  * [Une boîte noire clignote et disparaît](#html-blackboxblinksdisappears)
+  * [Non-actualisation des publicités](#html-adsnotrefreshing)
 
 * [JavaScript](#js)
-  * [Classe AdControl ne s’affiche pas](#js-adcontrolnotappearing)
-  * [La boîte noire clignote et disparaît](#js-blackboxblinksdisappears)
-  * [Annonces non actualisées](#js-adsnotrefreshing)
+  * [AdControl invisible](#js-adcontrolnotappearing)
+  * [Une boîte noire clignote et disparaît](#js-blackboxblinksdisappears)
+  * [Non-actualisation des publicités](#js-adsnotrefreshing)
 
 ## <a name="html"></a>HTML
 
@@ -61,7 +61,7 @@ Cette rubrique contient des solutions aux problèmes de développement courants 
     </div>
     ```
 
-4.  Vérifiez les propriétés **height** et **width**. Elles doivent être définies sur l’une des [tailles de bannières publicitaires prises en charge](supported-ad-sizes-for-banner-ads.md).
+4.  Vérifiez les propriétés **height** et **width**. Celles-ci doivent être définies sur l’une des [tailles de publicités prises en charge pour les bannières publicitaires](supported-ad-sizes-for-banner-ads.md).
 
     > [!div class="tabbedCodeSnippets"]
     ``` html
@@ -73,9 +73,9 @@ Cette rubrique contient des solutions aux problèmes de développement courants 
     </div>
     ```
 
-5.  Vérifiez la position des éléments. Le contrôle [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) doit se situer à l’intérieur de la zone d’affichage.
+5.  Vérifiez la position des éléments. Le contrôle [AdControl](/uwp/api/microsoft.advertising.winrt.ui.adcontrol) doit se situer à l’intérieur de la zone d’affichage.
 
-6.  Vérifiez la propriété **visibility**. Cette propriété ne doit pas être définie sur collapsed ou hidden. Cette propriété peut être incluse (comme illustré ci-dessous) ou définie dans une feuille de style externe.
+6.  Vérifiez la propriété **Visibility** . Cette propriété ne doit pas être définie sur collapsed ou hidden. Cette propriété peut être incluse (comme illustré ci-dessous) ou définie dans une feuille de style externe.
 
     > [!div class="tabbedCodeSnippets"]
     ``` html
@@ -139,7 +139,7 @@ Cette rubrique contient des solutions aux problèmes de développement courants 
 
 11. Vérifiez que le **AdControl** n’est pas masqué dans la fenêtre d’affichage. Le **AdControl** doit être visible afin que les publicités s’affichent correctement.
 
-12. Les valeurs dynamiques des paramètres [ApplicationId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) et [AdUnitId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.adunitid) ne doivent pas être testées dans l’émulateur. Pour vous assurer du bon fonctionnement du contrôle **AdControl**, utilisez les [valeurs de test](set-up-ad-units-in-your-app.md#test-ad-units) pour **ApplicationId** et **AdUnitId**.
+12. Les valeurs dynamiques des paramètres [ApplicationId](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) et [AdUnitId](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.adunitid) ne doivent pas être testées dans l’émulateur. Pour vous assurer que le **classe AdControl** fonctionne comme prévu, utilisez les [valeurs de test](set-up-ad-units-in-your-app.md#test-ad-units) pour **ApplicationID** et **AdUnitId**.
 
 <span id="html-blackboxblinksdisappears"/>
 
@@ -172,7 +172,7 @@ Cette rubrique contient des solutions aux problèmes de développement courants 
 
 ### <a name="ads-not-refreshing"></a>Non-actualisation des publicités
 
-1.  Vérifiez la propriété **isAutoRefreshEnabled**. Par défaut, cette propriété facultative est définie sur true. Si elle est définie sur false, la méthode **refresh** doit être utilisée pour récupérer une autre publicité.
+1.  Vérifiez la propriété **isAutoRefreshEnabled**. Par défaut, cette propriété facultative est définie sur true. Lorsque la valeur est false, la méthode **Refresh** doit être utilisée pour récupérer une autre publicité.
 
     > [!div class="tabbedCodeSnippets"]
     ``` html
@@ -186,7 +186,7 @@ Cette rubrique contient des solutions aux problèmes de développement courants 
     </div>
     ```
 
-2.  Vérifiez les appels à la méthode **refresh**. Si vous utilisez l’actualisation automatique, la méthode **refresh** ne permet pas de récupérer une autre publicité. Si vous utilisez l’actualisation manuelle, la méthode **refresh** doit être appelée uniquement après un minimum de 30 à 60 secondes en fonction de la connexion de données actuelle de l’appareil.
+2.  Vérifiez les appels à la méthode **refresh**. Lors de l’utilisation de l’actualisation automatique, l' **actualisation** ne peut pas être utilisée pour récupérer une autre publicité. Lors de l’utilisation d’une actualisation manuelle, l' **actualisation** ne doit être appelée qu’après un minimum de 30 à 60 secondes, en fonction de la connexion de données actuelle de l’appareil.
 
     Cet exemple montre comment utiliser la méthode **refresh**. Le code HTML suivant montre un exemple d’instanciation du contrôle **AdControl** avec la propriété **isAutoRefreshEnabled** définie sur false.
 
@@ -228,7 +228,7 @@ Cette rubrique contient des solutions aux problèmes de développement courants 
 
 1.  Assurez-vous que la fonctionnalité **Internet (client)** est sélectionnée dans le fichier Package.appxmanifest.
 
-2.  Vérifiez que le contrôle **AdControl** est instancié. Si le contrôle **AdControl** n’est pas instancié, c’est qu’il n’est pas disponible.
+2.  Vérifiez que le contrôle **AdControl** est instancié. Si le **classe AdControl** n’est pas instancié. c’est qu’il n’est pas disponible.
 
     Les extraits de code suivants illustrent un exemple d’instanciation du contrôle **AdControl**. Le code HTML suivant montre un exemple de configuration de l’interface utilisateur pour le contrôle **AdControl**
 
@@ -263,7 +263,7 @@ Cette rubrique contient des solutions aux problèmes de développement courants 
     }
     ```
 
-3.  Vérifiez l’élément parent. L’élément **&lt;div&gt;** parent doit être correctement affecté, actif et visible.
+3.  Vérifiez l’élément parent. La ** &lt; balise &gt; div** parente doit être correctement assignée, active et visible.
 
     > [!div class="tabbedCodeSnippets"]
     ``` javascript
@@ -286,7 +286,7 @@ Cette rubrique contient des solutions aux problèmes de développement courants 
 
 5.  Vérifiez l’élément parent du **AdControl**. Le parent doit être actif et visible.
 
-6.  Les valeurs dynamiques des paramètres **ApplicationId** et **AdUnitId** ne doivent pas être testées dans l’émulateur. Pour vous assurer du bon fonctionnement du contrôle **AdControl**, utilisez les [valeurs de test](set-up-ad-units-in-your-app.md#test-ad-units) pour **ApplicationId** et **AdUnitId**.
+6.  Les valeurs dynamiques des paramètres **ApplicationId** et **AdUnitId** ne doivent pas être testées dans l’émulateur. Pour vous assurer que le **classe AdControl** fonctionne comme prévu, utilisez les [valeurs de test](set-up-ad-units-in-your-app.md#test-ad-units) pour **ApplicationID** et **AdUnitId**.
 
 <span id="js-blackboxblinksdisappears"/>
 
@@ -341,9 +341,9 @@ Cette rubrique contient des solutions aux problèmes de développement courants 
 
 ### <a name="ads-not-refreshing"></a>Non-actualisation des publicités
 
-1.  Vérifiez si la propriété [IsAutoRefreshEnabled](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled.aspx) de votre **AdControl** est définie sur false. Par défaut, cette propriété facultative est définie sur **true**. Si elle est définie sur **false**, la méthode **Refresh** doit être utilisée pour récupérer une autre publicité.
+1.  Vérifiez si la propriété [IsAutoRefreshEnabled](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled.aspx) de votre **AdControl** est définie sur false. Par défaut, cette propriété facultative a la valeur **true**. Lorsque la valeur est **false**, la méthode **Refresh** doit être utilisée pour récupérer une autre publicité.
 
-2.  Vérifiez les appels à la méthode [Refresh](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.refresh.aspx). Si vous utilisez l’actualisation automatique (**IsAutoRefreshEnabled** est définie sur **true**), la méthode **Refresh** ne permet pas de récupérer une autre publicité. Si vous utilisez l’actualisation manuelle (**IsAutoRefreshEnabled** est définie sur **false**), la méthode **Refresh** doit être appelée uniquement après un minimum de 30 à 60 secondes en fonction de la connexion de données actuelle de l’appareil.
+2.  Vérifiez les appels à la méthode [Refresh](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.refresh.aspx) . Si vous utilisez l’actualisation automatique (**IsAutoRefreshEnabled** est définie sur **true**), la méthode **Refresh** ne permet pas de récupérer une autre publicité. Si vous utilisez l’actualisation manuelle (**IsAutoRefreshEnabled** est définie sur **false**), la méthode **Refresh** doit être appelée uniquement après un minimum de 30 à 60 secondes en fonction de la connexion de données actuelle de l’appareil.
 
     Cet exemple montre comment créer l’élément **div** pour le contrôle **AdControl**.
 

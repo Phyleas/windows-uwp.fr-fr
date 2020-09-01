@@ -5,12 +5,12 @@ ms.date: 10/03/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c07a3bbff4b29d2b59ef7d6d8a5912ce3675a4e
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: 2e13c656f02531d500a72aa74b2d3c5d6cc29aa4
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82730352"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174933"
 ---
 # <a name="move-from-a-desktop-application-to-uwp"></a>Passer d’une application de bureau à UWP
 
@@ -70,7 +70,7 @@ Utilisez ces mêmes outils pour analyser votre code. Téléchargez les outils ic
 &nbsp;
 > [!VIDEO https://www.youtube-nocookie.com/embed/rzs_FGPyAlY?list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY&amp;ecver=2]
 
-Si votre code n’est pas compatible avec la norme, pensez à d’autres façons d’implémenter ce code. Commencez par ouvrir le [navigateur de l’API .net](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0). Vous pouvez utiliser ce navigateur pour passer en revue les API disponibles dans le .NET Standard 2,0. Veillez à étendre la liste à la .NET Standard 2,0.
+Si votre code n’est pas compatible avec la norme, pensez à d’autres façons d’implémenter ce code. Commencez par ouvrir le [navigateur de l’API .net](/dotnet/api/?view=netstandard-2.0). Vous pouvez utiliser ce navigateur pour passer en revue les API disponibles dans le .NET Standard 2,0. Veillez à étendre la liste à la .NET Standard 2,0.
 
 ![point net (option)](images/desktop-to-uwp/dot-net-option.png)
 
@@ -82,7 +82,7 @@ Supposons que nous disposons d’une application Windows Forms de base qui montr
 
 ![Application Windows Forms](images/desktop-to-uwp/win-forms-app.png)
 
-Le projet contient une bibliothèque de classes .NET Standard 2,0 avec une classe statique nommée **Northwind**. Si nous déplaçons ce code dans la classe **Northwind** , il ne sera pas compilé, ``SQLConnection``car ``SqlCommand``il utilise ``SqlDataReader`` les classes, et, ainsi que les classes qui ne sont pas disponibles dans le .NET standard 2,0.
+Le projet contient une bibliothèque de classes .NET Standard 2,0 avec une classe statique nommée **Northwind**. Si nous déplaçons ce code dans la classe **Northwind** , il ne sera pas compilé, car il utilise les ``SQLConnection`` ``SqlCommand`` classes, et ``SqlDataReader`` , ainsi que les classes qui ne sont pas disponibles dans le .NET standard 2,0.
 
 ```csharp
 public static ArrayList GetCustomerNames()
@@ -112,9 +112,9 @@ public static ArrayList GetCustomerNames()
 }
 
 ```
-Nous pouvons utiliser le [navigateur de l’API .net](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0) pour trouver une alternative. Les ``DbConnection``classes ``DbCommand``, et ``DbDataReader`` sont toutes disponibles dans le .NET standard 2,0 afin de pouvoir les utiliser à la place.  
+Nous pouvons utiliser le [navigateur de l’API .net](/dotnet/api/?view=netstandard-2.0) pour trouver une alternative. Les ``DbConnection`` ``DbCommand`` classes, et ``DbDataReader`` sont toutes disponibles dans le .NET standard 2,0 afin de pouvoir les utiliser à la place.  
 
-Cette version révisée utilise ces classes pour obtenir une liste de clients, mais pour créer ``DbConnection`` une classe, nous devrons passer un objet de fabrique que nous créons dans l’application cliente.
+Cette version révisée utilise ces classes pour obtenir une liste de clients, mais pour créer une ``DbConnection`` classe, nous devrons passer un objet de fabrique que nous créons dans l’application cliente.
 
 ```csharp
 public static ArrayList GetCustomerNames(DbProviderFactory factory)
@@ -216,7 +216,7 @@ public sealed partial class MainPage : Page
 }
 ```
 
-Pour commencer à utiliser UWP, voir [qu’est-ce qu’une application UWP ?](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
+Pour commencer à utiliser UWP, voir [qu’est-ce qu’une application UWP ?](../get-started/universal-application-platform-guide.md)
 
 ### <a name="reach-ios-and-android-devices"></a>Atteindre des appareils iOS et Android
 
@@ -239,7 +239,7 @@ Ces modèles se trouvent dans la boîte de dialogue **Ajouter un nouveau projet*
 ![Applications Xamarin](images/desktop-to-uwp/xamarin-projects.png)
 
 >[!NOTE]
->Les projets multiplateformes sont très utiles pour les applications avec peu de fonctionnalités spécifiques à la plateforme. Vous pouvez les utiliser pour créer une interface utilisateur XAML native qui s’exécute sur iOS, Android et Windows. En savoir plus [ici](https://docs.microsoft.com/xamarin/xamarin-forms/).
+>Les projets multiplateformes sont très utiles pour les applications avec peu de fonctionnalités spécifiques à la plateforme. Vous pouvez les utiliser pour créer une interface utilisateur XAML native qui s’exécute sur iOS, Android et Windows. En savoir plus [ici](/xamarin/xamarin-forms/).
 
 Ensuite, à partir de votre projet Android, iOS ou multiplateforme, ajoutez une référence au projet de bibliothèque de classes.
 
@@ -278,13 +278,13 @@ public class MainActivity : ListActivity
 }
 ```
 
-Pour vous familiariser avec les projets Android, iOS et multiplateforme, consultez le [portail des développeurs Xamarin](https://docs.microsoft.com/xamarin).
+Pour vous familiariser avec les projets Android, iOS et multiplateforme, consultez le [portail des développeurs Xamarin](/xamarin).
 
 ## <a name="next-steps"></a>Étapes suivantes
 
 **Trouvez les réponses à vos questions**
 
-Vous avez des questions ? Posez-nous des questions sur Stack Overflow. Notre équipe surveille ces [balises](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Vous pouvez également nous contacter [ici](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
+Des questions ? Contactez-nous sur Stack Overflow. Notre équipe supervise ces [étiquettes](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Vous pouvez également nous poser vos questions [ici](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
 
 **Envoyer des commentaires ou apporter des suggestions de fonctionnalités**
 

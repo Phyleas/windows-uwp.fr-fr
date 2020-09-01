@@ -1,17 +1,17 @@
 ---
 title: Comment désactiver la mise à l’échelle
-description: Instructions pour la désactivation du facteur d’échelle par défaut.
+description: Découvrez comment désactiver le facteur d’échelle par défaut et faire en sorte que votre application utilise les dimensions réelles de l’appareil 1910 x 1080 pixels.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 6e68c1fc-a407-4c0b-b0f4-e445ccb72ff3
 ms.localizationpriority: medium
-ms.openlocfilehash: 44688ff40792ba2ee72cbd1d96bae1ac59834efa
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 404bdd9a4b25254c1941928dbfb0b548492f03a5
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57604744"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174703"
 ---
 # <a name="how-to-turn-off-scaling"></a>Comment désactiver la mise à l’échelle   
 Par défaut, les applications sont mises à une échelle de 200 % pour XAML et de 150 % pour les applications HTML. Il est possible de désactiver le facteur d’échelle par défaut. Votre application utilisera ainsi les dimensions en pixels réelles de l’appareil (1910 x 1080 pixels).   
@@ -43,6 +43,6 @@ bool result = Windows.UI.ViewManagement.ApplicationViewScaling.TrySetDisableLayo
 ## <a name="directxc"></a>DirectX/C++   
 Les applications DirectX/C++ ne sont pas mises à l’échelle. La mise à l’échelle automatique s’applique uniquement aux applications HTML et XAML.  
 
-## <a name="see-also"></a>Voir également
-- [Meilleures pratiques pour Xbox](tailoring-for-xbox.md)
+## <a name="see-also"></a>Voir aussi
+- [Bonnes pratiques pour Xbox](tailoring-for-xbox.md)
 - [UWP sur Xbox One](index.md)

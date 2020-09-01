@@ -1,17 +1,17 @@
 ---
 ms.assetid: bf0a8b01-79f1-4944-9d78-9741e235dbe9
 title: Device Portal pour Xbox
-description: Découvrez comment activer le portail d’appareils pour Xbox, qui vous donne un accès à distance à votre Xbox de développement.
+description: Découvrez comment activer le portail d’appareil Xbox pour Xbox One, qui vous permet d’accéder à distance à votre Xbox de développement.
 ms.date: 04/09/2019
 ms.topic: article
 keywords: windows 10, uwp, portail d’appareil
 ms.localizationpriority: medium
-ms.openlocfilehash: 485cd9dc5a7ecb437cacf4a2c9c6eee57c3717f1
-ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
+ms.openlocfilehash: ed490b0474b919d4439e5b74b676d5974a3c6a30
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89043481"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174783"
 ---
 # <a name="device-portal-for-xbox"></a>Device Portal pour Xbox
 
@@ -53,7 +53,7 @@ Sous **comptes Xbox Live test**, vous pouvez gérer les comptes associés à vot
 
 ### <a name="xbox-live-game-saves"></a>Xbox Live (enregistrements de jeux)
 
-Le portail de l’appareil Windows et le portail de l’appareil Xbox disposent d’une page **Xbox Live** . Toutefois, le portail de l’appareil Xbox a une section unique, **Xbox Live, enregistre**, dans laquelle vous pouvez enregistrer des données pour les jeux installés sur votre Xbox. Entrez l' **ID de configuration de service (SCID)** (consultez [configuration du service Xbox Live](https://docs.microsoft.com/gaming/xbox-live/xbox-live-service-configuration.md#get-your-ids) pour plus d’informations), **MemberName (MSA)** et nom de la **famille de packages (PFN)** associés au titre et à l’enregistrement du jeu, recherchez le **fichier d’entrée (. JSON ou. Xml)**, puis sélectionnez l’un des boutons (**Réinitialiser**, **Importer**, **Exporter**et **supprimer**).
+Le portail de l’appareil Windows et le portail de l’appareil Xbox disposent d’une page **Xbox Live** . Toutefois, le portail de l’appareil Xbox a une section unique, **Xbox Live, enregistre**, dans laquelle vous pouvez enregistrer des données pour les jeux installés sur votre Xbox. Entrez l' **ID de configuration de service (SCID)** (consultez [configuration du service Xbox Live](/gaming/xbox-live/xbox-live-service-configuration.md#get-your-ids) pour plus d’informations), **MemberName (MSA)** et nom de la **famille de packages (PFN)** associés au titre et à l’enregistrement du jeu, recherchez le **fichier d’entrée (. JSON ou. Xml)**, puis sélectionnez l’un des boutons (**Réinitialiser**, **Importer**, **Exporter**et **supprimer**).
 
 Dans la section **générer** , vous pouvez générer des données factices et les enregistrer dans le fichier d’entrée spécifié. Entrez simplement les **conteneurs (par défaut 2)**, les **objets BLOB (valeur par défaut 3)** et la taille de l' **objet BLOB (par défaut 1024)**, puis sélectionnez **générer**.
 
@@ -187,7 +187,7 @@ Un capteur Kinect doit être connecté à la console pour pouvoir modifier ces p
 
 Ici, vous pouvez modifier le bac à sable Xbox Live dans lequel se trouve l’appareil. Entrez le nom du bac à sable (sandbox) dans la zone, puis sélectionnez **modifier**.
 
-### <a name="scratch"></a>Zéro
+### <a name="scratch"></a>Vide
 
 Il s’agit d’un espace de travail vide que vous pouvez personnaliser à votre convenance. Vous pouvez utiliser le menu (cliquez sur le bouton de menu en haut à gauche) pour ajouter des outils (sélectionnez **Ajouter des outils à l’espace de travail**, puis les outils que vous souhaitez ajouter, puis **Ajouter**). Notez que vous pouvez utiliser ce menu pour ajouter des outils à n’importe quel espace de travail, ainsi que pour gérer les espaces de travail eux-mêmes.
 
@@ -202,4 +202,4 @@ Sur la page **données d’événement de jeu** , vous pouvez afficher un graphi
 ## <a name="see-also"></a>Voir aussi
 
 * [Vue d’ensemble du Portail d'appareil Windows](../debug-test-perf/device-portal.md)
-* [Informations de référence sur les API principales Device Portal](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)
+* [Informations de référence sur les API principales Device Portal](../debug-test-perf/device-portal-api-core.md)

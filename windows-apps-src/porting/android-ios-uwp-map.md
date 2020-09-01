@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 082736c8-2ac3-41b3-b246-e705edc23f34
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f8afe892b7b8e91e72c1be7c655c8bc00998dd4
-ms.sourcegitcommit: 45dec3dc0f14934b8ecf1ee276070b553f48074d
+ms.openlocfilehash: 0591b32671c7e1e74b47a41448f3b77b915a7dc7
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89094616"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174903"
 ---
 # <a name="windows-apps-concept-mapping-for-android-and-ios-developers"></a>Mappage de concepts d’applications Windows pour développeurs iOS et Android
 
@@ -354,7 +354,7 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 <td align="left"><strong>Optimisation de la vue liste.</strong> <br><br>Modèles intégrés permettant d’optimiser des listes de données, qui sont souvent peu performantes pour l’affichage de grandes quantités de données</td>
 <td align="left">Le modèle de conception <strong>ViewHolder</strong> est utilisé pour éviter les multiples recherches de vues, et vous permet d’utiliser des éléments d’interface utilisateur réutilisables.</td>
 <td align="left">Diverses optimisations peuvent être effectuées pour améliorer les performances de <strong>UITableView</strong>. Rien n’est intégré.</td>
-<td align="left">Vous pouvez utiliser les contrôles <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview">ListView</a> et <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview">GridView</a> qui assurent la <strong>virtualisation de l’interface utilisateur</strong> offrant un mouvement panoramique fluide, une expérience de défilement expérience et un démarrage plus rapide. Vous pouvez également implémenter <a href="https://docs.microsoft.com/dotnet/api/system.collections.ilist">IList</a> et <a href="https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged">INotifyCollectionChanged</a> dans votre source de données, pour <strong>virtualiser les données</strong> et améliorer les performances.<br/><br/><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview">Optimisation des options d’interface ListView et GridView</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/listview-and-gridview-data-optimization">Virtualisation des données ListView et GridView</a></td>
+<td align="left">Vous pouvez utiliser les contrôles <a href="/uwp/api/windows.ui.xaml.controls.listview">ListView</a> et <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview">GridView</a> qui assurent la <strong>virtualisation de l’interface utilisateur</strong> offrant un mouvement panoramique fluide, une expérience de défilement expérience et un démarrage plus rapide. Vous pouvez également implémenter <a href="/dotnet/api/system.collections.ilist">IList</a> et <a href="https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged">INotifyCollectionChanged</a> dans votre source de données, pour <strong>virtualiser les données</strong> et améliorer les performances.<br/><br/><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview">Optimisation des options d’interface ListView et GridView</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/listview-and-gridview-data-optimization">Virtualisation des données ListView et GridView</a></td>
 </tr>
 </tbody>
 </table>
@@ -482,7 +482,7 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>Planification des notifications locales.</strong> <br><br>Notifications locales envoyées par votre application à une heure prévue.</td>
 <td align="left">Les notifications et actions sont définies à l’aide d’un <strong>NotificationCompat.Builder</strong> et peuvent être planifiées et gérées dans l’application à l’aide d’<strong>AlarmManager</strong> et de <strong>BroadcastReceiver</strong>.</td>
-<td align="left">Les notifications locales sont créées à l’aide de <strong>UILocalNotification</strong>et peuvent être planifiées avec <b> UILocalNotification. scheduleLocalNotification :<strong>. | Vous pouvez planifier une notification toast à l’aide de </strong> <a href="https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ScheduledToastNotification">ScheduledToastNotification</a><strong>. Vous pouvez envoyer une notification de vignette à partir de votre application à l’aide de la </strong> <a href="https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileNotification">classe TileNotification</a> <strong> , ou planifier une notification par vignette avec <a href="https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ScheduledTileNotification">ScheduledTileNotification</a>.<br/><br/><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-adaptive-interactive-toasts">Notifications toast adaptatives et interactives</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-sending-a-local-tile-notification">Envoyer une notification de vignette locale</a> | | </strong>Envoi de notifications push.</b> Notification envoyée à partir d’un serveur de notifications push et éventuellement gérée dans l’application.</td>
+<td align="left">Les notifications locales sont créées à l’aide de <strong>UILocalNotification</strong>et peuvent être planifiées avec <b> UILocalNotification. scheduleLocalNotification :<strong>. | Vous pouvez planifier une notification toast à l’aide de </strong> <a href="https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ScheduledToastNotification">ScheduledToastNotification</a><strong>. Vous pouvez envoyer une notification de vignette à partir de votre application à l’aide de la </strong> <a href="https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileNotification">classe TileNotification</a> <strong> , ou planifier une notification par vignette avec <a href="https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ScheduledTileNotification">ScheduledTileNotification</a>.<br/><br/><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-adaptive-interactive-toasts">Notifications toast adaptatives et interactives</a><br/><br/><a href="/windows/uwp/controls-and-patterns/tiles-and-notifications-sending-a-local-tile-notification">Envoyer une notification de vignette locale</a> | | </strong>Envoi de notifications push.</b> Notification envoyée à partir d’un serveur de notifications push et éventuellement gérée dans l’application.</td>
 <td align="left"><strong>Google Cloud Messaging</strong> fournit une prise en charge des notifications push pour Android.</td>
 </tr>
 </tbody>

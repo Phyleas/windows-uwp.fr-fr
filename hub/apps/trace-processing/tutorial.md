@@ -5,12 +5,12 @@ author: maiak
 ms.author: maiak
 ms.date: 02/23/2020
 ms.topic: tutorial
-ms.openlocfilehash: 170a8c3084e180714a319d67dca2b6a5756ea474
-ms.sourcegitcommit: 4fdab7be28aca18cb3879fc205eb49edc4f9a96b
+ms.openlocfilehash: ef4d3df6e5a5dd93dbcb2caadc8e3f299aad581c
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77629110"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173693"
 ---
 # <a name="access-trace-data"></a>Accéder aux données de trace
 
@@ -18,7 +18,7 @@ ms.locfileid: "77629110"
 
 Microsoft. Windows. EventTracing. Processing. All
 
-Ce package vous permet d’accéder aux données d’un fichier de trace. Si vous n’avez pas encore de fichier de trace, vous pouvez utiliser l' [enregistreur de performances Windows](https://docs.microsoft.com/windows-hardware/test/wpt/start-a-recording) pour en créer un.
+Ce package vous permet d’accéder aux données d’un fichier de trace. Si vous n’avez pas encore de fichier de trace, vous pouvez utiliser l' [enregistreur de performances Windows](/windows-hardware/test/wpt/start-a-recording) pour en créer un.
 
 L’exemple d’application console suivant montre comment accéder aux lignes de commande de tous les processus contenus dans la trace :
 
@@ -56,13 +56,13 @@ class Program
 
 ## <a name="using-traceprocessor"></a>Utilisation de TraceProcessor
 
-Pour traiter une trace, appelez [TraceProcessor. Create](https://docs.microsoft.com/dotnet/api/microsoft.windows.eventtracing.traceprocessor.create). L’interface principale est [ITraceProcessor](https://docs.microsoft.com/dotnet/api/microsoft.windows.eventtracing.itraceprocessor)et l’utilisation de cette interface implique le modèle suivant :
+Pour traiter une trace, appelez [TraceProcessor. Create](/dotnet/api/microsoft.windows.eventtracing.traceprocessor.create). L’interface principale est [ITraceProcessor](/dotnet/api/microsoft.windows.eventtracing.itraceprocessor)et l’utilisation de cette interface implique le modèle suivant :
 
 1. Tout d’abord, indiquez au processeur les données que vous souhaitez utiliser à partir d’une trace
 2. Ensuite, traitez la trace. les
 3. Enfin, accédez aux résultats.
 
-En indiquant au processeur les genres de données que vous voulez, vous n’avez pas besoin de consacrer du temps à traiter de gros volumes de tous les types de données de trace possibles. Au lieu de cela, [TraceProcessor](https://docs.microsoft.com/dotnet/api/microsoft.windows.eventtracing.traceprocessor) effectue simplement le travail nécessaire pour fournir les types de données spécifiques que vous demandez.
+En indiquant au processeur les genres de données que vous voulez, vous n’avez pas besoin de consacrer du temps à traiter de gros volumes de tous les types de données de trace possibles. Au lieu de cela, [TraceProcessor](/dotnet/api/microsoft.windows.eventtracing.traceprocessor) effectue simplement le travail nécessaire pour fournir les types de données spécifiques que vous demandez.
 
 ## <a name="recommended-project-settings"></a>Paramètres de projet recommandés
 
@@ -70,11 +70,11 @@ Il existe deux paramètres de projet que nous vous recommandons d’utiliser ave
 
 1. Nous vous recommandons d’exécuter les fichiers exe comme 64 bits.
 
-    La valeur par défaut de Visual Studio C# pour une nouvelle application console .NET Framework est Any CPU avec l’option préférer 32 bits activée. La valeur par défaut pour .NET Core est peut-être déjà la valeur recommandée.
+    La valeur par défaut de Visual Studio pour une nouvelle application console de .NET Framework C# est Any CPU avec l’option préférer 32 bits activée. La valeur par défaut pour .NET Core est peut-être déjà la valeur recommandée.
 
     Le traitement des traces peut nécessiter beaucoup de mémoire, surtout avec des traces plus importantes. nous vous recommandons de changer la plateforme cible en x64 (ou de décocher préférer 32 bits) dans les fichiers exe qui utilisent TraceProcessor. Pour modifier ces paramètres, reportez-vous à l’onglet générer sous propriétés du projet. Pour modifier ces paramètres pour toutes les configurations, assurez-vous que la liste déroulante Configuration est définie sur toutes les configurations, plutôt que sur la configuration par défaut uniquement.
 
-2. Nous vous suggérons d’utiliser NuGet avec le mode PackageReference de style plus récent au lieu de l’ancien mode packages. config.
+2. Nous vous suggérons d’utiliser NuGet avec le mode PackageReference de style plus récent plutôt que l’ancien mode de packages.config.
 
     Pour modifier la valeur par défaut pour les nouveaux projets, consultez outils, gestionnaire de package NuGet, paramètres du gestionnaire de package, Package Management, format de gestion des packages par défaut.
 
@@ -143,7 +143,7 @@ Un fichier. etl peut capturer de nombreux types de données dans une trace. Note
 | trace. UseWinINetData()                    | Fournit des données à partir d’une trace sur l’activité Internet via Windows Internet (WinINet).                                         | Tableau des détails du téléchargement                                               |
 | trace. UseWorkingSetData()                 | Fournit des données à partir d’une trace sur les pages de mémoire virtuelle qui se trouvaient dans la plage de travail de chaque processus ou catégorie de noyau. | Table des instantanés de la mémoire virtuelle                                       |
 
-Consultez également les méthodes d’extension sur [ITraceSource](https://docs.microsoft.com/dotnet/api/microsoft.windows.eventtracing.itracesource) pour toutes les données de trace disponibles, ou examinez la méthode disponible dans « trace ». affiché par IntelliSense.
+Consultez également les méthodes d’extension sur [ITraceSource](/dotnet/api/microsoft.windows.eventtracing.itracesource) pour toutes les données de trace disponibles, ou examinez la méthode disponible dans « trace ». affiché par IntelliSense.
 
 ## <a name="next-steps"></a>Étapes suivantes
 

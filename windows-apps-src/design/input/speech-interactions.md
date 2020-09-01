@@ -8,23 +8,23 @@ keywords: voix, vocal, reconnaissance vocale, langage naturel, dictée, saisie, 
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: fd33720255a04ffd8669673f027973afb4369086
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 94a93f9b1506d2b4dfcdad260bf86bf39c15d875
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684211"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173343"
 ---
 # <a name="speech-interactions"></a>Interactions vocales
 
 Intégrez la reconnaissance vocale et la conversion de texte par synthèse vocale (également appelée TTS ou synthèse vocale) directement dans l’expérience utilisateur de votre application.
 
-**Reconnaissance vocale** La reconnaissance vocale convertit en texte les mots prononcés par l’utilisateur pour remplir des formulaires, dicter du texte, spécifier une action/commande ou accomplir des tâches. Les deux grammaires prédéfinies pour la dictée de texte libre et la recherche web, ainsi que les grammaires personnalisées basées sur la norme SRGS (Speech Recognition Grammar Specification) version 1.0, sont prises en charge.
+**Reconnaissance vocale** La reconnaissance vocale convertit les mots prononcés par l’utilisateur en texte pour l’entrée de formulaire, pour la dictée de texte, pour spécifier une action ou une commande, et pour accomplir des tâches. Les deux grammaires prédéfinies pour la dictée de texte libre et la recherche web, ainsi que les grammaires personnalisées basées sur la norme SRGS (Speech Recognition Grammar Specification) version 1.0, sont prises en charge.
 
-**Conversion de texte par synthèse vocale (TTS)** La conversion de texte par synthèse vocale (TTS) utilise un moteur de synthèse vocale (voix) pour convertir une chaîne de texte en parole. La chaîne d’entrée peut être du texte basique sans fioriture ou un texte SSML (Speech Synthesis Markup Language) plus complexe. Le langage SSML fournit un moyen standard de contrôler les caractéristiques de la restitution vocale telles que la prononciation, le volume, la tonalité, le débit ou la vitesse et l’accentuation.
+**TTS** TTS utilise un moteur de synthèse vocale (voix) pour convertir une chaîne de texte en mots prononcés. La chaîne d’entrée peut être du texte basique sans fioriture ou un texte SSML (Speech Synthesis Markup Language) plus complexe. Le langage SSML fournit un moyen standard de contrôler les caractéristiques de la restitution vocale telles que la prononciation, le volume, la tonalité, le débit ou la vitesse et l’accentuation.
 
-**Autres composants de reconnaissance vocale :** 
-**Cortana** dans les applications Windows utilise des commandes vocales personnalisées (parlées ou écrites) pour lancer votre application au premier plan (l’application prend le focus, comme si elle avait été lancée à partir du menu Démarrer) ou l’activer en tant que service d’arrière-plan (**Cortana** conserve le focus, mais fournit les résultats de l’application). Consultez les [Recommandations en matière de commandes vocales Cortana (VCD)](https://docs.microsoft.com/cortana/voice-commands/vcd) si vous proposez des fonctionnalités d’application dans l’interface utilisateur **Cortana**.
+**Autres composants liés à la parole :** 
+ **Cortana** dans les applications Windows utilise des commandes vocales personnalisées (orales ou typées) pour lancer votre application au premier plan (l’application prend le focus, tout comme si elle était lancée à partir du menu Démarrer) ou l’activer en tant que service d’arrière-plan (**Cortana** conserve le focus, mais fournit les résultats de l’application). Consultez les [instructions relatives aux commandes vocales (VCD) Cortana](/cortana/voice-commands/vcd) si vous exposez les fonctionnalités de l’application dans l’interface utilisateur de **Cortana** .
 
 ## <a name="speech-interaction-design"></a>Conception de l’interaction vocale
 
@@ -164,7 +164,7 @@ Une grammaire personnalisée est conçue et créée par vous-même, et installé
     -   Limitez chaque grammaire. Les grammaires qui contiennent peu d’expressions ont tendance à offrir une reconnaissance plus précise que les grammaires complexes qui contiennent de nombreuses expressions. Il est préférable d’utiliser plusieurs grammaires de taille réduite pour les différents scénarios plutôt qu’une seule grammaire pour la totalité de l’application.
     -   Indiquez aux utilisateurs ce qu’ils doivent dire pour chaque contexte d’application, et activez et désactivez les grammaires selon les besoins.
     -   Concevez chaque grammaire de manière à ce que les utilisateurs puissent prononcer une commande de différentes manières. Par exemple, vous pouvez utiliser la règle **GARBAGE** pour accepter la saisie vocale que votre grammaire ne définit pas. Cela permet aux utilisateurs de prononcer des mots supplémentaires qui n’ont aucune signification pour votre application. Par exemple, « donnez-moi », « et », « euh », « peut-être », etc.
-    -   Utilisez l’élément [sapi:subset](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/jj572474(v=office.14)) pour faciliter la détection de l’entrée vocale. Il s’agit d’une extension Microsoft à la spécification SRGS permettant de mieux répondre aux expressions partielles.
+    -   Utilisez l’élément [sapi:subset](/previous-versions/office/developer/speech-technologies/jj572474(v=office.14)) pour faciliter la détection de l’entrée vocale. Il s’agit d’une extension Microsoft à la spécification SRGS permettant de mieux répondre aux expressions partielles.
     -   Évitez de définir des expressions dans votre grammaire qui ne contiennent qu’une seule syllabe. La reconnaissance tend à être plus précise pour les expressions contenant au moins deux syllabes.
     -   Évitez d’utiliser des expressions qui se ressemblent. Par exemple, les expressions telles que « matin », « châtain » et « latin » peuvent induire en erreur le module de reconnaissance et affecter le degré de précision de la reconnaissance.
 
@@ -175,9 +175,9 @@ Une grammaire personnalisée est conçue et créée par vous-même, et installé
 
 Si votre application contient un vocabulaire spécialisé avec des mots inhabituels, fictifs ou dont la prononciation est particulière, vous pouvez améliorer leur reconnaissance en définissant des prononciations personnalisées.
 
-Pour une petite liste de mots et d’expressions, ou une liste de mots et d’expressions rarement utilisés, vous pouvez créer des prononciations personnalisées dans une grammaire SRGS. Pour plus d’informations, voir [Élément token](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh361600(v=office.14)).
+Pour une petite liste de mots et d’expressions, ou une liste de mots et d’expressions rarement utilisés, vous pouvez créer des prononciations personnalisées dans une grammaire SRGS. Pour plus d’informations, voir [Élément token](/previous-versions/office/developer/speech-technologies/hh361600(v=office.14)).
 
-Pour les listes de mots et d’expressions plus conséquentes, ou pour les mots et les expressions fréquemment utilisés, vous pouvez créer des documents de lexique de prononciation distincte. Pour plus d’informations, voir [À propos des lexiques et des alphabets phonétiques](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh361646(v=office.14)).
+Pour les listes de mots et d’expressions plus conséquentes, ou pour les mots et les expressions fréquemment utilisés, vous pouvez créer des documents de lexique de prononciation distincte. Pour plus d’informations, voir [À propos des lexiques et des alphabets phonétiques](/previous-versions/office/developer/speech-technologies/hh361646(v=office.14)).
 
 ## <a name="testing"></a>Test
 
@@ -200,30 +200,27 @@ Vous devez écouter toutes les chaînes de texte TTS pour vous assurer qu’elle
 -   En reliant une séquence de mots inhabituels ou en prononçant des numéros de référence ou des signes de ponctuation, l’expression risque de devenir incompréhensible.
 -   La parole peut manquer de naturel lorsque la prosodie ou l’intonation est différente de la façon dont un locuteur natif prononcerait une expression.
 
-Les deux problèmes peuvent être résolus en utilisant SSML au lieu de texte brut comme entrée pour le synthétiseur vocal. Pour plus d’informations sur le langage SSML, voir [Utiliser le langage SSML pour contrôler la voix synthétisée](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378454(v=office.14)) et [Informations de référence sur le langage SSML (Speech Synthesis Markup Language)](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378377(v=office.14)).
+Les deux problèmes peuvent être résolus en utilisant SSML au lieu de texte brut comme entrée pour le synthétiseur vocal. Pour plus d’informations sur le langage SSML, voir [Utiliser le langage SSML pour contrôler la voix synthétisée](/previous-versions/office/developer/speech-technologies/hh378454(v=office.14)) et [Informations de référence sur le langage SSML (Speech Synthesis Markup Language)](/previous-versions/office/developer/speech-technologies/hh378377(v=office.14)).
 
 ## <a name="other-articles-in-this-section"></a>Autres articles de cette section 
 
-| Sujet | Description |
+| Rubrique | Description |
 | --- | --- |
 | [Reconnaissance vocale](speech-recognition.md) | La reconnaissance vocale permet de fournir une saisie vocale, de spécifier une action ou une commande et d’accomplir différentes tâches. |
-| [Spécifier la langue du module de reconnaissance vocale](specify-the-speech-recognizer-language.md) | Découvrez comment sélectionner une langue installée à utiliser pour la reconnaissance vocale. |
+| [Spécifier la langue de reconnaissance vocale](specify-the-speech-recognizer-language.md) | Découvrez comment sélectionner une langue installée à utiliser pour la reconnaissance vocale. |
 | [Définir des contraintes de reconnaissance vocale personnalisées](define-custom-recognition-constraints.md) | Découvrez comment définir et utiliser des contraintes personnalisées pour la reconnaissance vocale. |
 | [Activer la dictée continue](enable-continuous-dictation.md) |Découvrez comment capturer et reconnaître une entrée vocale dictée en continu et sur une longue durée. |
-| [Gérer les problèmes d’entrée audio](manage-issues-with-audio-input.md) | Découvrez comment gérer les problèmes liés à la précision de la reconnaissance vocale qu’entraîne une baisse de qualité des entrées audio. |
+| [Gérer les problèmes liés aux entrées audio](manage-issues-with-audio-input.md) | Découvrez comment gérer les problèmes liés à la précision de la reconnaissance vocale qu’entraîne une baisse de qualité des entrées audio. |
 | [Définir des délais d’expiration de reconnaissance vocale](set-speech-recognition-timeouts.md) | Définissez la durée pendant laquelle un moteur de reconnaissance vocale ignore les silences ou les sons incompréhensibles (brouhaha) et continue à écouter la saisie vocale. |
 
-## <a name="related-articles"></a>Articles associés
+## <a name="related-articles"></a>Articles connexes
 
-* [Interactions vocales](https://docs.microsoft.com/windows/uwp/input-and-devices/speech-interactions)
-* [Interactions avec Cortana](https://docs.microsoft.com/windows/uwp/input-and-devices/cortana-interactions)
+* [Interactions vocales]()
+* [Interactions avec Cortana](./cortana-interactions.md)
 
  **Exemples**
 
-* [Exemple de reconnaissance vocale et de synthèse vocale](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)
+* [Reconnaissance vocale et exemple de synthèse vocale](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)
  
 
  
-
-
-

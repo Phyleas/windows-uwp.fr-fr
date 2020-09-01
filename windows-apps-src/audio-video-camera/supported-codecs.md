@@ -4,18 +4,18 @@ description: Cet article répertorie la prise en charge des codecs et formats au
 title: Codecs pris en charge
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b122aa6436e55c80276cdd684b7c10cc3c47d28
-ms.sourcegitcommit: 49a34e957433966ac8d4822b5822f21087aa61c3
+ms.openlocfilehash: bf61935459d8b842a3d26fcfe546995427d98d3f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74153714"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175693"
 ---
 # <a name="supported-codecs"></a>Codecs pris en charge
 
-Cet article répertorie les codecs audio, vidéo et d’image, ainsi que la disponibilité par défaut des formats d’applications UWP, pour chaque famille d’appareils. Notez que ces tableaux répertorient les codecs inclus avec l’installation Windows 10 pour la famille considérée d’appareils. Les utilisateurs et les applications peuvent installer les codecs supplémentaires mis à disposition, le cas échéant. Durant l’exécution, vous pouvez identifier le jeu de codecs disponible pour un appareil spécifique. Pour plus d’informations, voir [Rechercher les codecs installés sur un appareil](codec-query.md).
+Cet article répertorie les codecs audio, vidéo et d’image et la disponibilité de format pour les applications UWP par défaut pour chaque famille d’appareils. Notez que ces tableaux répertorient les codecs inclus avec l’installation de Windows 10 pour la famille d’appareils spécifiée. Les utilisateurs et les applications peuvent installer des codecs supplémentaires qui peuvent être utilisables. Vous pouvez interroger au moment de l’exécution pour l’ensemble des codecs actuellement disponibles pour un appareil spécifique. Pour plus d’informations, consultez [requête pour les codecs installés sur un appareil](codec-query.md).
 
 Dans les tableaux ci-dessous, la lettre « D » indique la prise en charge de décodeurs et la lettre « E » la prise en charge d’encodeurs.
 
@@ -2749,12 +2749,12 @@ Les tableaux suivants indiquent la prise en charge des codecs et formats vidéo 
 <tr class="even">
 <td align="left">RAW (appareil photo)</td>
 <td align="left">D<sup>3</sup></td>
-<td align="left">non</td>
+<td align="left">Non</td>
 </tr>
 </table>
 
-<sup>1</sup> Les images DDS utilisant BC1 par le biais de la compression BC5 sont prises en charge.  
-<sup>2</sup> Les images DNG avec un aperçu incorporé non RAW sont prises en charge.  
-<sup>3</sup> Seuls certains formats RAW d’appareil photo sont pris en charge.  
+<sup>1</sup> les images DDS utilisant BC1 via la compression BC5 sont prises en charge.  
+<sup>2</sup> les images DNG avec un aperçu incorporé non brut sont prises en charge.  
+<sup>3</sup> seuls certains formats Camera Raw sont pris en charge.  
 
-Pour plus d’informations sur les codecs d’image, voir [Codecs WIC natifs](https://docs.microsoft.com/windows/desktop/wic/native-wic-codecs).
+Pour plus d’informations sur les codecs d’image, voir [Codecs WIC natifs](/windows/desktop/wic/native-wic-codecs).

@@ -1,61 +1,61 @@
 ---
 title: Présentation des outils Xbox One
-description: Outil Accueil du développeur propre à Xbox One, utilisant Windows Device Portal.
+description: Découvrez comment accéder au portail Xbox One Device à l’aide de l’application dev domotique dans le kit de développement Xbox One.
 ms.date: 10/04/2017
 ms.topic: article
-keywords: windows 10, uwp, xbox one, outils
+keywords: Windows 10, UWP, Xbox One, outils
 ms.assetid: 6eaf376f-0d7c-49de-ad78-38e689b43658
 ms.localizationpriority: medium
-ms.openlocfilehash: ed106095d83ed0c6e055d22a1a0cf229380cff71
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: ed9df02ba929d170eca5b37e4376220e93e4902f
+ms.sourcegitcommit: e273e5901bfa6596dfef4cc741bb1c42614c25ab
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57609324"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89238314"
 ---
 # <a name="introduction-to-xbox-one-tools"></a>Présentation des outils Xbox One
 
-Cette section décrit le mode d'accès au portail d'appareil Xbox via l'application Accueil du développeur.
+Cette section explique comment accéder au portail de l’appareil Xbox via l’application de démarrage.
 
 ## <a name="dev-home"></a>Accueil du développeur
 
 Accueil du développeur permet d’expérimenter des outils dans le Kit de développement Xbox One qui sont destinés à améliorer la productivité des développeurs. L’outil Accueil du développeur offre des fonctionnalités vous permettant de gérer et de configurer votre kit de développement.
 
-Accueil du développeur est l'application par défaut qui est ouverte lorsque votre console démarre en mode Développeur. Vous pouvez également ouvrir Accueil du développeur en sélectionnant la vignette **Accueil du développeur** sur l’écran d’accueil. Si cette vignette est absente, la console n’est pas en mode développeur.
+Dev orig est l’application par défaut qui s’ouvre lorsque votre console en mode développeur démarre. Vous pouvez également ouvrir la page d’accueil dev en sélectionnant la vignette **Accueil dev** sur l’écran d’accueil. Si cette vignette est absente, la console n’est pas en mode développeur.
 
-Pour plus d’informations concernant Dev Home, consultez [Accueil du développeur sur la Console (Dev Home)](dev-home.md).
+Pour plus d’informations sur dev orig, consultez page d’hébergement [des développeurs sur la console (dev orig)](dev-home.md).
 
-## <a name="xbox-device-portal"></a>Portail d'appareil Xbox
-Le portail d'appareil Xbox est un outil de gestion des périphériques sur navigateur. Il vous permet d'ajouter des jeux et applications, d'ajouter des comptes test Xbox Live, de modifier des bacs à sable, etc.
+## <a name="xbox-device-portal"></a>Portail de périphérique Xbox
+Le portail d’appareils Xbox est un outil de gestion des appareils basé sur un navigateur qui vous permet d’ajouter des jeux et des applications, d’ajouter des comptes de test Xbox Live, de modifier des bacs à sable et bien plus encore.
 
-Pour activer le portail d'appareil Xbox sur votre console Xbox One :
+Pour activer le portail d’appareil Xbox sur votre console Xbox One :
 
-1. Sélectionnez la vignette **Accueil du développeur** sur l’écran d’accueil.
+1. Sélectionnez la vignette **dev Accueil** sur l’écran d’accueil.
 
   ![Sélection de la vignette Accueil du développeur](images/introduction-to-xbox-one-tools-1.png)
 
-2. Dans Accueil du développeur, naviguez vers l'onglet **Accueil** et, dans la section **Accès à distance**, sélectionnez **Paramètres d'accès à distance**.
+2. Dans la page d’hébergement dev, accédez à l’onglet **démarrage** , puis dans la section **accès à distance** , sélectionnez **paramètres d’accès à distance**.
 
   ![Outil Gestion à distance](images/introduction-to-xbox-one-tools-2.png)
 
-3. Cochez la case **Activer le portail d'appareil Xbox**.
+3. Cochez la case **activer le portail du périphérique Xbox** .
 
-4. Sous **Authentification**, cochez la case **Nécessiter l'authentification pour accéder à cette console à distance depuis des outils web ou PC**.
+4. Sous **authentification**, activez la case à cocher **exiger l’authentification pour accéder à cette console à partir des outils Web ou PC** .
 
-5. Renseignez les champs **Nom d'utilisateur** et __Mot de passe__, puis sélectionnez **Enregistrer**. Ces identifiants sont utilisés pour authentifier l’accès à votre kit de développement à partir d’un navigateur.
+5. Entrez un **nom d’utilisateur** et un __mot de passe__, puis sélectionnez **Enregistrer**. Ces informations d’identification sont utilisées pour authentifier l’accès à votre kit de développement à partir d’un navigateur.
 
-6. Sélectionnez **Fermer**, puis sur l'onglet **Accueil**, prenez note de l'URL répertoriée dans l'outil **Accès à distance**.
+6. Sélectionnez **Fermer**, puis, sous l’onglet dossier de **démarrage** , notez l’URL indiquée dans l’outil **accès à distance** .
 
-7. Saisissez l'URL dans votre navigateur. Vous recevrez un avertissement concernant le certificat fourni, semblable à la capture d’écran ci-dessous. En effet, le certificat de sécurité signé par votre console Xbox One n’est pas considéré comme un éditeur approuvé bien connu. Sur Edge, cliquez sur **Détails**, puis sur **Accéder à la page Web** pour accéder au portail d’appareil Xbox.
+7. Entrez l’URL dans votre navigateur. Vous recevrez un avertissement sur le certificat qui a été fourni, comme dans la capture d’écran suivante, car le certificat de sécurité signé par votre Xbox One console n’est pas considéré comme un serveur de publication approuvé et connu. Sur Edge, cliquez sur **Détails** , puis **accédez à la page Web** pour accéder au portail de l’appareil Xbox.
 
     ![Avertissement concernant le certificat de sécurité](images/introduction-to-xbox-one-tools-3.png)
 
-8. Connectez-vous avec les identifiants que vous avez configurés.
+8. Connectez-vous avec les informations d’identification que vous avez configurées.
 
 ## <a name="xbox-dev-mode-companion"></a>Compagnon du mode de développement Xbox
 Le Compagnon du mode de développement Xbox est un outil qui vous permet de travailler sur votre console sans quitter votre PC. L’application vous permet d’afficher l’écran de la console et d’y envoyer des données. Pour plus d’informations, voir [Compagnon du mode de développement Xbox](xbox-dev-mode-companion.md).
 
-## <a name="see-also"></a>Voir également
-- [Comment utiliser Fiddler avec Xbox One lors du développement pour UWP](uwp-fiddler.md)
-- [Vue d’ensemble de Windows Device Portal](../debug-test-perf/device-portal.md)
+## <a name="see-also"></a>Voir aussi
+- [Utilisation de Fiddler avec Xbox One lors du développement pour UWP](uwp-fiddler.md)
+- [Vue d’ensemble du Portail d'appareil Windows](../debug-test-perf/device-portal.md)
 - [UWP sur Xbox One](index.md)

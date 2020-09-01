@@ -13,12 +13,12 @@ design-contact: jeffarn
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 5025a63f5c96365ba1f14311b9c68ed41f4fc5aa
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 491b67322c8b328c21446d50951daad61f15ad3d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234595"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175573"
 ---
 # <a name="designing-for-xbox-and-tv"></a>Conception pour Xbox et télévision
 
@@ -147,7 +147,7 @@ bool result =
     Windows.UI.ViewManagement.ApplicationViewScaling.TrySetDisableLayoutScaling(true);
 ```
 
-`result`vous indiquera si vous avez correctement choisi.
+`result` vous indiquera si vous avez correctement choisi.
 
 Pour plus d’informations et des exemples de code HTML/JavaScript, consultez [Comment désactiver la mise à l’échelle](../../xbox-apps/disable-scaling.md).
 
@@ -185,7 +185,7 @@ Ce n’est pas une solution optimale car elle crée un effet d’« encadré �
 
 ### <a name="drawing-ui-to-the-edge"></a>Étendre l’IU à l’ensemble de l’écran
 
-Nous vous recommandons d’étendre certains éléments d’interface utilisateur à l’ensemble de l’écran pour apporter à l’utilisateur une véritable expérience d’immersion. Cela comprend les classes [ScrollViewers](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) et [CommandBars](../controls-and-patterns/navigationview.md) ainsi que les [volets de navigation](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar).
+Nous vous recommandons d’étendre certains éléments d’interface utilisateur à l’ensemble de l’écran pour apporter à l’utilisateur une véritable expérience d’immersion. Cela comprend les classes [ScrollViewers](/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) et [CommandBars](../controls-and-patterns/navigationview.md) ainsi que les [volets de navigation](/uwp/api/Windows.UI.Xaml.Controls.CommandBar).
 
 En revanche, il est important que le texte et les éléments interactifs ne soient jamais près des bords de l’écran ; cela garantit qu’ils ne seront pas tronqués sur certaines télévisions. Nous recommandons d’étendre seulement les éléments visuels non essentiels à une distance de 5 % des bords de l’écran. Comme mentionné dans [Redimensionnement des éléments de l’interface utilisateur](#ui-element-sizing), une application UWP suivant le facteur d’échelle par défaut de la console Xbox One (200 %) utilise une zone de 960 x 540 epx. Vous devez donc éviter de placer l’interface utilisateur primordiale de votre application dans les zones suivantes :
 
@@ -205,7 +205,7 @@ Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMo
     (Windows.UI.ViewManagement.ApplicationViewBoundsMode.UseCoreWindow);
 ```
 
-Avec cette ligne de code, la fenêtre d’application remplit l’écran. Vous devez donc déplacer toutes les UI interactives et essentielles dans la zone adaptée à l’écran de TV décrite précédemment. L’interface utilisateur temporaire, telle que les menus contextuels et les classes [ComboBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox) ouvertes restent automatiquement à l’intérieur de la zone adaptée à l’écran de TV.
+Avec cette ligne de code, la fenêtre d’application remplit l’écran. Vous devez donc déplacer toutes les UI interactives et essentielles dans la zone adaptée à l’écran de TV décrite précédemment. L’interface utilisateur temporaire, telle que les menus contextuels et les classes [ComboBox](/uwp/api/Windows.UI.Xaml.Controls.ComboBox) ouvertes restent automatiquement à l’intérieur de la zone adaptée à l’écran de TV.
 
 ![Limites de fenêtre principale](images/designing-for-tv/core-window-bounds.png)
 
@@ -213,7 +213,7 @@ Avec cette ligne de code, la fenêtre d’application remplit l’écran. Vous d
 
 Les volets de navigation sont généralement placés près du bord de l’écran. L’arrière-plan doit donc s’étendre dans la zone inadaptée à l’écran de TV pour ne pas qu’il y ait d’espaces vides. Vous pouvez le faire en modifiant simplement la couleur d’arrière-plan du volet de navigation pour la rendre identique à la couleur d’arrière-plan de l’application.
 
-Les limites de fenêtre principale vous permettent d’étendre votre interface utilisateur aux bords de l’écran (comme décrit précédemment), mais vous devez ensuite utiliser des marges positives sur le contenu de [SplitView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SplitView) pour le conserver dans la zone adaptée à l’écran de TV.
+Les limites de fenêtre principale vous permettent d’étendre votre interface utilisateur aux bords de l’écran (comme décrit précédemment), mais vous devez ensuite utiliser des marges positives sur le contenu de [SplitView](/uwp/api/Windows.UI.Xaml.Controls.SplitView) pour le conserver dans la zone adaptée à l’écran de TV.
 
 ![Volet de navigation étendu aux bords de l’écran](images/designing-for-tv/tv-safe-areas-2.png)
 
@@ -239,7 +239,7 @@ L’extrait de code suivant permet de réaliser l’effet en question :
 </SplitView>
 ```
 
-[CommandBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar) est un autre exemple de volet généralement positionné près d’un ou plusieurs bords de l’application. Son arrière-plan doit donc s’étendre aux bords des écrans de TV. Il contient généralement un bouton **Plus** (...) sur le côté droit qui doit rester dans la zone adaptée à l’écran de TV. Voici quelques stratégies différentes permettant d’obtenir les interactions et effets visuels souhaités.
+[CommandBar](/uwp/api/Windows.UI.Xaml.Controls.CommandBar) est un autre exemple de volet généralement positionné près d’un ou plusieurs bords de l’application. Son arrière-plan doit donc s’étendre aux bords des écrans de TV. Il contient généralement un bouton **Plus** (...) sur le côté droit qui doit rester dans la zone adaptée à l’écran de TV. Voici quelques stratégies différentes permettant d’obtenir les interactions et effets visuels souhaités.
 
 **Option 1** : modifiez la couleur d’arrière-plan de `CommandBar` pour la définir sur transparent ou sur la même couleur que l’arrière-plan de la page :
 
@@ -280,7 +280,7 @@ Pendant qu’une liste ou une grille est étendue de la sorte, il est important 
 
 ![Le focus de la grille défilante doit être conservé à l’intérieur de la zone adaptée à l’écran de TV](images/designing-for-tv/scrolling-grid-focus.png)
 
-La plateforme UWP comporte des fonctionnalités qui permettent de conserver le visuel du focus à l’intérieur des [VisibleBounds](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.visiblebounds), mais vous devez ajouter du remplissage pour vous assurer que les éléments de liste/grille peuvent défiler à l’écran à l’intérieur de la zone adaptée à l’écran de TV. Plus précisément, vous ajoutez une marge positive au [ItemsPresenter](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsPresenter)de [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) ou de [GridView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView), comme dans l’extrait de code suivant :
+La plateforme UWP comporte des fonctionnalités qui permettent de conserver le visuel du focus à l’intérieur des [VisibleBounds](/uwp/api/windows.ui.viewmanagement.applicationview.visiblebounds), mais vous devez ajouter du remplissage pour vous assurer que les éléments de liste/grille peuvent défiler à l’écran à l’intérieur de la zone adaptée à l’écran de TV. Plus précisément, vous ajoutez une marge positive au [ItemsPresenter](/uwp/api/Windows.UI.Xaml.Controls.ItemsPresenter)de [ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView) ou de [GridView](/uwp/api/Windows.UI.Xaml.Controls.GridView), comme dans l’extrait de code suivant :
 
 ```xml
 <Style x:Key="TitleSafeListViewStyle"
@@ -331,9 +331,9 @@ Vous placez l’extrait de code précédent dans les ressources de la page ou de
 ```
 
 > [!NOTE]
-> Cet extrait de code est spécifiquement conçu pour les contrôles `ListView`. Pour un style `GridView`, définissez l’attribut [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype) des éléments [ControlTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) et [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) sur `GridView`.
+> Cet extrait de code est spécifiquement conçu pour les contrôles `ListView`. Pour un style `GridView`, définissez l’attribut [TargetType](/uwp/api/windows.ui.xaml.controls.controltemplate.targettype) des éléments [ControlTemplate](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) et [Style](/uwp/api/Windows.UI.Xaml.Style) sur `GridView`.
 
-Pour un contrôle plus précis de la façon dont les éléments sont mis en vue, si votre application cible la version 1803 ou une version ultérieure, vous pouvez utiliser l' [événement UIElement. BringIntoViewRequested](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested). Vous pouvez le placer sur le [ItemsPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) pour que **ListView**le contrôle / **GridView** ListView puisse l’intercepter avant que le **ScrollViewer** interne ne fasse, comme dans les extraits de code suivants :
+Pour un contrôle plus précis de la façon dont les éléments sont mis en vue, si votre application cible la version 1803 ou une version ultérieure, vous pouvez utiliser l' [événement UIElement. BringIntoViewRequested](/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested). Vous pouvez le placer sur le [ItemsPanel](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) pour que **ListView**le contrôle / **GridView** ListView puisse l’intercepter avant que le **ScrollViewer** interne ne fasse, comme dans les extraits de code suivants :
 
 ```xaml
 <GridView x:Name="gridView">
@@ -403,7 +403,7 @@ Dans la mesure où votre application appelle ces couleurs d’accentuation par l
 
 Notez également que l’ensemble des couleurs utilisateur sur Xbox One n’est pas le même que sur les PC, téléphones et autres appareils.
 
-Tant que votre application utilise une ressource pinceau telle que **SystemControlForegroundAccentBrush**ou une ressource de couleur (**SystemAccentColor**), ou qu’elle appelle à la place des couleurs d’accentuation directement via l’API [UIColorType. accent *](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.UIColorType) , ces couleurs sont remplacées par des couleurs d’accentuation disponibles sur Xbox One. Les couleurs du pinceau à contraste élevé sont également extraites du système de la même façon que sur un PC et un téléphone.
+Tant que votre application utilise une ressource pinceau telle que **SystemControlForegroundAccentBrush**ou une ressource de couleur (**SystemAccentColor**), ou qu’elle appelle à la place des couleurs d’accentuation directement via l’API [UIColorType. accent *](/uwp/api/Windows.UI.ViewManagement.UIColorType) , ces couleurs sont remplacées par des couleurs d’accentuation disponibles sur Xbox One. Les couleurs du pinceau à contraste élevé sont également extraites du système de la même façon que sur un PC et un téléphone.
 
 Pour en savoir plus sur la couleur d’accentuation en général, voir [Couleur d’accentuation](../style/color.md#accent-color).
 
@@ -420,9 +420,9 @@ Les valeurs RVB d’une couleur représentent l’intensité du rouge, du vert e
 Historiquement, les applications sur Xbox devaient adapter leurs couleurs pour qu’elles tombent dans cette plage de couleurs « sécurisée pour la télévision ». Toutefois, à partir de la mise à jour des créateurs de automne, Xbox One met automatiquement à l’échelle le contenu complet de la plage TV. Cela signifie que la plupart des développeurs d’applications n’ont plus à se soucier des couleurs TV-safe.
 
 > [!IMPORTANT]
-> Le contenu vidéo qui est déjà dans la plage de couleurs sécurisée pour la télévision n’a pas cet effet de mise à l’échelle des couleurs appliqué en cas de lecture à l’aide de [Media Foundation](https://docs.microsoft.com/windows/desktop/medfound/microsoft-media-foundation-sdk).
+> Le contenu vidéo qui est déjà dans la plage de couleurs sécurisée pour la télévision n’a pas cet effet de mise à l’échelle des couleurs appliqué en cas de lecture à l’aide de [Media Foundation](/windows/desktop/medfound/microsoft-media-foundation-sdk).
 
-Si vous développez une application à l’aide de DirectX 11 ou DirectX 12 et que vous créez votre propre chaîne de permutation pour afficher l’interface utilisateur ou la vidéo, vous pouvez spécifier l’espace de couleurs que vous utilisez en appelant [IDXGISwapChain3 :: SetColorSpace1](https://docs.microsoft.com/windows/desktop/api/dxgi1_4/nf-dxgi1_4-idxgiswapchain3-setcolorspace1), ce qui permet au système de savoir s’il doit mettre à l’échelle les couleurs.
+Si vous développez une application à l’aide de DirectX 11 ou DirectX 12 et que vous créez votre propre chaîne de permutation pour afficher l’interface utilisateur ou la vidéo, vous pouvez spécifier l’espace de couleurs que vous utilisez en appelant [IDXGISwapChain3 :: SetColorSpace1](/windows/desktop/api/dxgi1_4/nf-dxgi1_4-idxgiswapchain3-setcolorspace1), ce qui permet au système de savoir s’il doit mettre à l’échelle les couleurs.
 
 ## <a name="guidelines-for-ui-controls"></a>Recommandations en matière de contrôles d’interface utilisateur
 
@@ -430,13 +430,13 @@ Il existe plusieurs contrôles d’interface utilisateur qui fonctionnent correc
 
 ### <a name="pivot-control"></a>Contrôle Pivot
 
-Un contrôle [Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) permet une navigation rapide des affichages au sein d’une application en sélectionnant différents en-têtes ou onglets. Le contrôle souligne l’en-tête sur lequel se trouve le focus, ce qui rend plus visible l’en-tête sélectionné lorsque vous utilisez le boîtier de commande/la télécommande.
+Un contrôle [Pivot](/uwp/api/Windows.UI.Xaml.Controls.Pivot) permet une navigation rapide des affichages au sein d’une application en sélectionnant différents en-têtes ou onglets. Le contrôle souligne l’en-tête sur lequel se trouve le focus, ce qui rend plus visible l’en-tête sélectionné lorsque vous utilisez le boîtier de commande/la télécommande.
 
 ![Souligné par contrôle Pivot](images/designing-for-tv/pivot-underline.png)
 
-Vous pouvez régler la propriété [Pivot.IsHeaderItemsCarouselEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.isheaderitemscarouselenabledproperty) sur `true` pour que les pivots gardent toujours la même position, et éviter que l’en-tête de pivot sélectionné se place toujours en première position. Cette expérience est plus intéressante pour les grands écrans tels que les écrans de télévision, car le renvoi à la ligne des en-têtes peut gêner les utilisateurs. Si tous les en-têtes de pivot ne sont pas visibles à l’écran en même temps, une barre de défilement permet aux clients d’afficher les autres en-têtes. Toutefois, vous devez vous assurer qu’ils tiennent tous à l’écran pour offrir la meilleure expérience possible. Pour en savoir plus, consultez [Onglets et pivots](/windows/uwp/design/controls-and-patterns/pivot).
+Vous pouvez régler la propriété [Pivot.IsHeaderItemsCarouselEnabled](/uwp/api/windows.ui.xaml.controls.pivot.isheaderitemscarouselenabledproperty) sur `true` pour que les pivots gardent toujours la même position, et éviter que l’en-tête de pivot sélectionné se place toujours en première position. Cette expérience est plus intéressante pour les grands écrans tels que les écrans de télévision, car le renvoi à la ligne des en-têtes peut gêner les utilisateurs. Si tous les en-têtes de pivot ne sont pas visibles à l’écran en même temps, une barre de défilement permet aux clients d’afficher les autres en-têtes. Toutefois, vous devez vous assurer qu’ils tiennent tous à l’écran pour offrir la meilleure expérience possible. Pour en savoir plus, consultez [Onglets et pivots](../controls-and-patterns/pivot.md).
 
-### <a name="navigation-pane"></a>Volet de navigation<a name="navigation-pane" />
+### <a name="navigation-pane"></a>Volet de navigation <a name="navigation-pane" />
 
 Un volet de navigation (également appelé *menu hamburger*) est un contrôle de navigation couramment utilisé dans les applications UWP. En règle générale, il s’agit d’un volet comportant plusieurs options dans un menu de style de liste qui dirigera l’utilisateur vers différentes pages. En général, ce volet démarre en mode réduit pour économiser l’espace ; l’utilisateur peut l’ouvrir en cliquant sur un bouton.
 
@@ -444,7 +444,7 @@ Même si les volets de navigation sont très accessibles par souris et écran ta
 
 ### <a name="commandbar-labels"></a>Libellés CommandBar
 
-Il est judicieux de placer les libellés à droite des icônes sur une classe [CommandBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar) afin de réduire sa hauteur et garantir la cohérence de cette dernière. Vous pouvez le faire en définissant la propriété [CommandBar.DefaultLabelPosition](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar.defaultlabelpositionproperty) sur `CommandBarDefaultLabelPosition.Right`.
+Il est judicieux de placer les libellés à droite des icônes sur une classe [CommandBar](/uwp/api/Windows.UI.Xaml.Controls.CommandBar) afin de réduire sa hauteur et garantir la cohérence de cette dernière. Vous pouvez le faire en définissant la propriété [CommandBar.DefaultLabelPosition](/uwp/api/windows.ui.xaml.controls.commandbar.defaultlabelpositionproperty) sur `CommandBarDefaultLabelPosition.Right`.
 
 ![CommandBar comportant des libellés à droite des icônes](images/designing-for-tv/commandbar.png)
 
@@ -452,7 +452,7 @@ La définition de cette propriété provoquera également l’affichage permanen
 
 ### <a name="tooltip"></a>Info-bulle
 
-Le contrôle [Tooltip](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ToolTip) a été introduit pour fournir à l’utilisateur des informations supplémentaires dans l’interface utilisateur lorsqu’il pointe avec la souris ou maintient son doigt sur un élément. Pour le boîtier de commande et la télécommande, `Tooltip` s’affiche après un court instant lorsque l’élément obtient le focus, reste à l’écran pendant un court moment, puis disparaît. Ce comportement peut devenir gênant si trop de contrôles `Tooltip` sont utilisés. Essayez d’éviter `Tooltip` lors de la conception d’applications pour la télévision.
+Le contrôle [Tooltip](/uwp/api/Windows.UI.Xaml.Controls.ToolTip) a été introduit pour fournir à l’utilisateur des informations supplémentaires dans l’interface utilisateur lorsqu’il pointe avec la souris ou maintient son doigt sur un élément. Pour le boîtier de commande et la télécommande, `Tooltip` s’affiche après un court instant lorsque l’élément obtient le focus, reste à l’écran pendant un court moment, puis disparaît. Ce comportement peut devenir gênant si trop de contrôles `Tooltip` sont utilisés. Essayez d’éviter `Tooltip` lors de la conception d’applications pour la télévision.
 
 ### <a name="button-styles"></a>Styles de bouton
 
@@ -468,7 +468,7 @@ Pour plus d’informations sur l’interface utilisateur imbriquée, voir [Inter
 
 ### <a name="mediatransportcontrols"></a>MediaTransportControls
 
-L’élément [MediaTransportControls](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls) permet aux utilisateurs d’interagir avec leur média en fournissant une expérience de lecture par défaut grâce à laquelle ils peuvent lire le contenu, le mettre en pause, activer les sous-titres, etc. Ce contrôle est une propriété de l’objet [MediaPlayerElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement) et prend en charge deux options de disposition : *sur une ligne* et *sur deux lignes*. Dans la disposition sur une ligne, le curseur et les boutons de lecture se trouvent tous sur une même ligne, le bouton lecture/pause étant situé à gauche du curseur. Dans la disposition sur deux lignes, le curseur occupe sa propre ligne, les boutons de lecture se trouvant sur une ligne distincte en dessous. Lors de la conception pour l’expérience « 10-foot », la disposition sur deux lignes doit être utilisée, car elle assure une meilleure navigation avec une manette de jeu. Pour activer la disposition sur deux lignes, définissez `IsCompact="False"` pour l’élément `MediaTransportControls` dans la propriété [TransportControls](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.transportcontrols) de la `MediaPlayerElement`.
+L’élément [MediaTransportControls](/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls) permet aux utilisateurs d’interagir avec leur média en fournissant une expérience de lecture par défaut grâce à laquelle ils peuvent lire le contenu, le mettre en pause, activer les sous-titres, etc. Ce contrôle est une propriété de l’objet [MediaPlayerElement](/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement) et prend en charge deux options de disposition : *sur une ligne* et *sur deux lignes*. Dans la disposition sur une ligne, le curseur et les boutons de lecture se trouvent tous sur une même ligne, le bouton lecture/pause étant situé à gauche du curseur. Dans la disposition sur deux lignes, le curseur occupe sa propre ligne, les boutons de lecture se trouvant sur une ligne distincte en dessous. Lors de la conception pour l’expérience « 10-foot », la disposition sur deux lignes doit être utilisée, car elle assure une meilleure navigation avec une manette de jeu. Pour activer la disposition sur deux lignes, définissez `IsCompact="False"` pour l’élément `MediaTransportControls` dans la propriété [TransportControls](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.transportcontrols) de la `MediaPlayerElement`.
 
 ```xml
 <MediaPlayerElement x:Name="mediaPlayerElement1"  
@@ -482,7 +482,7 @@ L’élément [MediaTransportControls](https://docs.microsoft.com/uwp/api/Window
 
 Pour en savoir plus sur l’ajout de médias à votre application, consultez l’article [Lecteur multimédia](../controls-and-patterns/media-playback.md).
 
-> ![REMARQUE] L’objet `MediaPlayerElement` est uniquement disponible dans Windows 10, version 1607 et ultérieure. Si vous développez une application pour une version antérieure de Windows 10, vous devez utiliser l’objet [MediaElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement) à la place. Les recommandations ci-dessus s’appliquent également à l’objet `MediaElement` et la propriété `TransportControls` est accessible de la même manière.
+> ![REMARQUE] L’objet `MediaPlayerElement` est uniquement disponible dans Windows 10, version 1607 et ultérieure. Si vous développez une application pour une version antérieure de Windows 10, vous devez utiliser l’objet [MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) à la place. Les recommandations ci-dessus s’appliquent également à l’objet `MediaElement` et la propriété `TransportControls` est accessible de la même manière.
 
 ### <a name="search-experience"></a>Expérience de recherche
 

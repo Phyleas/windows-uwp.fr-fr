@@ -6,19 +6,19 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, UWP, jeux, contrôles, entrée
 ms.localizationpriority: medium
-ms.openlocfilehash: dfe864f0b8c16cce9cc8d413c41a4e3324cf2e9b
-ms.sourcegitcommit: 20969781aca50738792631f4b68326f9171a3980
+ms.openlocfilehash: 87a56c9213aabce23801f305d8a100f536f0889b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85409658"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175233"
 ---
 # <a name="add-controls"></a>Ajouter des contrôles
 
 > [!NOTE]
 > Cette rubrique fait partie de la série de didacticiels [créer un jeu de plateforme Windows universelle simple (UWP) avec DirectX](tutorial--create-your-first-uwp-directx-game.md) . La rubrique de ce lien définit le contexte de la série.
 
-\[Mise à jour pour les applications UWP sur Windows 10. Pour les articles Windows 8. x, consultez l' [Archive](/previous-versions/windows/apps/mt244353(v=win.10)?redirectedfrom=MSDN)\]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles Windows 8. x, consultez l' [Archive](/previous-versions/windows/apps/mt244353(v=win.10)?redirectedfrom=MSDN)\]
 
 Un bon jeu de plateforme Windows universelle (UWP) prend en charge un large éventail d’interfaces. Un joueur potentiel peut avoir Windows 10 sur une tablette sans boutons physiques, un PC équipé d’un contrôleur Xbox ou la dernière plate-forme Desktop Gaming, avec une souris et un clavier de jeu hautes performances. Dans notre jeu, les contrôles sont implémentés dans la classe [**MoveLookController**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp) . Cette classe agrège les trois types d’entrée (souris et clavier, Touch et manette) en un seul contrôleur. Le résultat final est un tir de première personne qui utilise des contrôles de déplacement standard de genre qui fonctionnent avec plusieurs appareils.
 
@@ -30,11 +30,11 @@ Un bon jeu de plateforme Windows universelle (UWP) prend en charge un large éve
 
 À ce stade, nous avons un jeu qui s’affiche, mais nous ne pouvons pas faire tourner le joueur ou faire tourner les cibles. Nous allons voir comment notre jeu implémente les contrôles de déplacement de la première personne pour les types d’entrée suivants dans notre jeu DirectX UWP.
 - Souris et clavier
-- Entrées tactiles
+- Toucher
 - Boîtier de commande
 
 >[!Note]
->Si vous n’avez pas téléchargé le dernier code de jeu pour cet exemple, accédez à l' [exemple de jeu Direct3D](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX). Cet exemple fait partie d’une grande collection d’exemples de fonctionnalités UWP. Pour obtenir des instructions sur le téléchargement de l’exemple, consultez [obtenir les exemples UWP à partir de GitHub](/windows/uwp/get-started/get-uwp-app-samples).
+>Si vous n’avez pas téléchargé le dernier code de jeu pour cet exemple, accédez à l' [exemple de jeu Direct3D](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX). Cet exemple fait partie d’une grande collection d’exemples de fonctionnalités UWP. Pour obtenir des instructions sur le téléchargement de l’exemple, consultez [obtenir les exemples UWP à partir de GitHub](../get-started/get-app-samples.md).
 
 ## <a name="common-control-behaviors"></a>Comportements de contrôles communs
 

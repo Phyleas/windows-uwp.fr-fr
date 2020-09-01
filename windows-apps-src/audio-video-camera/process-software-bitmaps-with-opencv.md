@@ -6,26 +6,26 @@ ms.date: 03/19/2018
 ms.topic: article
 keywords: Windows 10, UWP, OpenCV, softwarebitmap
 ms.localizationpriority: medium
-ms.openlocfilehash: 823468f7d18dcfb4c9379a981d6c2da7a250fe22
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: 9b1808c6940cbfc03c2572bd72ecf0c57cfd5010
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82730314"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173673"
 ---
 # <a name="process-bitmaps-with-opencv"></a>Traiter les images bitmap avec OpenCV
 
-Cet article explique comment utiliser la classe **[SoftwareBitmap](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap)** , qui est utilisée par de nombreuses API Windows Runtime différentes pour représenter des images, avec la bibliothèque open source vision par ordinateur Library (OpenCV), une bibliothèque de code natif Open source qui fournit un large éventail d’algorithmes de traitement d’image. 
+Cet article explique comment utiliser la classe **[SoftwareBitmap](/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap)** , qui est utilisée par de nombreuses API Windows Runtime différentes pour représenter des images, avec la bibliothèque open source vision par ordinateur Library (OpenCV), une bibliothèque de code natif Open source qui fournit un large éventail d’algorithmes de traitement d’image. 
 
 Les exemples de cet article vous guident dans la création d’un code natif Windows Runtime composant qui peut être utilisé à partir d’une application UWP, y compris les applications créées à l’aide de C#. Ce composant d’assistance expose une seule méthode, **flou**, qui utilise la fonction de traitement d’image de flou de OpenCV. Le composant implémente des méthodes privées qui obtiennent un pointeur vers la mémoire tampon de données d’image sous-jacente qui peut être utilisée directement par la bibliothèque OpenCV, ce qui simplifie l’extension du composant d’assistance afin d’implémenter d’autres fonctionnalités de traitement OpenCV. 
 
 * Pour une introduction à l’utilisation de **SoftwareBitmap**, consultez [créer, modifier et enregistrer des images bitmap](imaging.md). 
-* Pour savoir comment utiliser la bibliothèque OpenCV, accédez à [https://opencv.org](https://opencv.org).
-* Pour savoir comment utiliser le composant d’assistance OpenCV présenté dans cet article avec **[MediaFrameReader](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader)** pour implémenter le traitement d’image en temps réel des frames à partir d’un appareil photo, consultez [utilisation de OpenCV avec MediaFrameReader](use-opencv-with-mediaframereader.md).
+* Pour savoir comment utiliser la bibliothèque OpenCV, accédez à [https://opencv.org](https://opencv.org) .
+* Pour savoir comment utiliser le composant d’assistance OpenCV présenté dans cet article avec **[MediaFrameReader](/uwp/api/windows.media.capture.frames.mediaframereader)** pour implémenter le traitement d’image en temps réel des frames à partir d’un appareil photo, consultez [utilisation de OpenCV avec MediaFrameReader](use-opencv-with-mediaframereader.md).
 * Pour obtenir un exemple de code complet qui implémente des effets différents, consultez l' [exemple frames de caméra + OpenCV](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraOpenCV) dans le référentiel GitHub des exemples universels Windows.
 
 > [!NOTE] 
-> La technique utilisée par le composant OpenCVHelper, décrite en détail dans cet article, exige que les données de l’image soient traitées dans la mémoire de l’UC, et non dans la mémoire du GPU. Ainsi, pour les API qui vous permettent de demander l’emplacement de mémoire des images, telles que la classe **[MediaCapture](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture)** , vous devez spécifier la mémoire de l’UC.
+> La technique utilisée par le composant OpenCVHelper, décrite en détail dans cet article, exige que les données de l’image soient traitées dans la mémoire de l’UC, et non dans la mémoire du GPU. Ainsi, pour les API qui vous permettent de demander l’emplacement de mémoire des images, telles que la classe **[MediaCapture](/uwp/api/windows.media.capture.mediacapture)** , vous devez spécifier la mémoire de l’UC.
 
 ## <a name="create-a-helper-windows-runtime-component-for-opencv-interop"></a>Créer un composant d’assistance Windows Runtime pour l’interopérabilité OpenCV
 
@@ -61,16 +61,16 @@ Après les directives include, ajoutez les directives **using** suivantes.
 
 [!code-cpp[OpenCVHelperUsing](./code/ImagingWin10/cs/OpenCVBridge/OpenCVHelper.cpp#SnippetOpenCVHelperUsing)]
 
-Ensuite, ajoutez la méthode **GetPointerToPixelData** à OpenCVHelper. cpp. Cette méthode prend un **[SoftwareBitmap](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap)** et, via une série de conversions, obtient une représentation d’interface com des données de pixels via laquelle nous pouvons obtenir un pointeur vers la mémoire tampon de données sous-jacente sous la forme d’un tableau de **caractères** . 
+Ensuite, ajoutez la méthode **GetPointerToPixelData** à OpenCVHelper. cpp. Cette méthode prend un **[SoftwareBitmap](/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap)** et, via une série de conversions, obtient une représentation d’interface com des données de pixels via laquelle nous pouvons obtenir un pointeur vers la mémoire tampon de données sous-jacente sous la forme d’un tableau de **caractères** . 
 
-Tout d’abord, un **[BitmapBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer)** contenant les données de pixels est obtenu en appelant **[LockBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.lockbuffer)**, en demandant un tampon de lecture/écriture afin que la bibliothèque OpenCV puisse modifier ces données de pixels.  **[CreateReference](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer.CreateReference)** est appelé pour recevoir un objet **[IMemoryBufferReference](https://docs.microsoft.com/uwp/api/windows.foundation.imemorybufferreference)** . Ensuite, l’interface **IMemoryBufferByteAccess** est castée en **IInspectable**, l’interface de base de toutes les classes Windows Runtime, et **[QueryInterface](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))** est appelé pour obtenir une interface com **[IMemoryBufferByteAccess](https://docs.microsoft.com/previous-versions/mt297505(v=vs.85))** qui nous permettra d’obtenir la mémoire tampon de données en pixels sous la forme d’un tableau de **caractères** . Enfin, remplissez le tableau de **caractères** en appelant **[IMemoryBufferByteAccess :: GetBuffer](https://docs.microsoft.com/windows/desktop/WinRT/imemorybufferbyteaccess-getbuffer)**. Si l’une des étapes de conversion de cette méthode échoue, la méthode retourne la **valeur false**, ce qui indique que le traitement supplémentaire ne peut pas continuer.
+Tout d’abord, un **[BitmapBuffer](/uwp/api/windows.graphics.imaging.bitmapbuffer)** contenant les données de pixels est obtenu en appelant **[LockBuffer](/uwp/api/windows.graphics.imaging.softwarebitmap.lockbuffer)**, en demandant un tampon de lecture/écriture afin que la bibliothèque OpenCV puisse modifier ces données de pixels.  **[CreateReference](/uwp/api/windows.graphics.imaging.bitmapbuffer.CreateReference)** est appelé pour recevoir un objet **[IMemoryBufferReference](/uwp/api/windows.foundation.imemorybufferreference)** . Ensuite, l’interface **IMemoryBufferByteAccess** est castée en **IInspectable**, l’interface de base de toutes les classes Windows Runtime, et **[QueryInterface](/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))** est appelé pour obtenir une interface com **[IMemoryBufferByteAccess](/previous-versions/mt297505(v=vs.85))** qui nous permettra d’obtenir la mémoire tampon de données en pixels sous la forme d’un tableau de **caractères** . Enfin, remplissez le tableau de **caractères** en appelant **[IMemoryBufferByteAccess :: GetBuffer](/windows/desktop/WinRT/imemorybufferbyteaccess-getbuffer)**. Si l’une des étapes de conversion de cette méthode échoue, la méthode retourne la **valeur false**, ce qui indique que le traitement supplémentaire ne peut pas continuer.
 
 [!code-cpp[OpenCVHelperGetPointerToPixelData](./code/ImagingWin10/cs/OpenCVBridge/OpenCVHelper.cpp#SnippetOpenCVHelperGetPointerToPixelData)]
 
 Ajoutez ensuite la méthode **TryConvert** illustrée ci-dessous. Cette méthode prend un **SoftwareBitmap** et tente de la convertir en un objet **mat** , qui est l’objet Matrix que OpenCV utilise pour représenter des mémoires tampons de données image. Cette méthode appelle la méthode **GetPointerToPixelData** définie ci-dessus pour obtenir une représentation sous forme de tableau de **caractères** de la mémoire tampon de données de pixels. En cas de réussite, le constructeur de la classe **mat** est appelé, passant la largeur et la hauteur en pixels obtenues à partir de l’objet **SoftwareBitmap** source. 
 
 > [!NOTE] 
-> Cet exemple spécifie la constante CV_8UC4 comme format de pixel pour l’objet **mat** créé. Cela signifie que les **SoftwareBitmap** passés dans cette méthode doivent avoir une valeur de propriété **[BitmapPixelFormat](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.BitmapPixelFormat)** de **[BGRA8](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.BitmapPixelFormat)** avec une valeur alpha prémultipliée, l’équivalent de CV_8UC4, pour fonctionner avec cet exemple.
+> Cet exemple spécifie la constante CV_8UC4 comme format de pixel pour l’objet **mat** créé. Cela signifie que les **SoftwareBitmap** passés dans cette méthode doivent avoir une valeur de propriété **[BitmapPixelFormat](/uwp/api/windows.graphics.imaging.softwarebitmap.BitmapPixelFormat)** de  **[BGRA8](/uwp/api/Windows.Graphics.Imaging.BitmapPixelFormat)** avec une valeur alpha prémultipliée, l’équivalent de CV_8UC4, pour fonctionner avec cet exemple.
 
 Une copie superficielle de l’objet **mat** créé est retournée à partir de la méthode afin que le traitement ultérieur fonctionne sur le même tampon de données de pixels de données référencé par **SoftwareBitmap** et non une copie de cette mémoire tampon.
 
@@ -84,9 +84,9 @@ Enfin, cet exemple de classe d’assistance implémente une méthode de traiteme
 ## <a name="a-simple-softwarebitmap-opencv-example-using-the-helper-component"></a>Exemple simple de OpenCV SoftwareBitmap à l’aide du composant d’assistance
 Maintenant que le composant OpenCVBridge a été créé, nous pouvons créer une application C# simple qui utilise la méthode OpenCV **Blur** pour modifier un **SoftwareBitmap**. Pour accéder au composant Windows Runtime à partir de votre application UWP, vous devez d’abord ajouter une référence au composant. Dans Explorateur de solutions, cliquez avec le bouton droit sur le nœud **références** dans votre projet d’application UWP, puis sélectionnez **Ajouter une référence...**. Dans la boîte de dialogue Gestionnaire de références, sélectionnez **projets->solution**. Cochez la case en regard du projet OpenCVBridge et cliquez sur **OK**.
 
-L’exemple de code ci-dessous permet à l’utilisateur de sélectionner un fichier image, puis utilise **[BitmapDecoder](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapencoder)** pour créer une représentation **SoftwareBitmap** de l’image. Pour plus d’informations sur l’utilisation de **SoftwareBitmap**, consultez [créer, modifier et enregistrer des images bitmap](https://docs.microsoft.com/windows/uwp/audio-video-camera/imaging).
+L’exemple de code ci-dessous permet à l’utilisateur de sélectionner un fichier image, puis utilise **[BitmapDecoder](/uwp/api/windows.graphics.imaging.bitmapencoder)** pour créer une représentation **SoftwareBitmap** de l’image. Pour plus d’informations sur l’utilisation de **SoftwareBitmap**, consultez [créer, modifier et enregistrer des images bitmap](./imaging.md).
 
-Comme décrit précédemment dans cet article, la classe **OpenCVHelper** exige que toutes les images **SoftwareBitmap** fournies soient encodées à l’aide du format de pixel BGRA8 avec des valeurs alpha prémultipliées. par conséquent, si l’image n’est pas déjà dans ce format, l’exemple de code appelle **[Convert](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.BitmapAlphaMode)** pour convertir l’image au format attendu.
+Comme décrit précédemment dans cet article, la classe **OpenCVHelper** exige que toutes les images **SoftwareBitmap** fournies soient encodées à l’aide du format de pixel BGRA8 avec des valeurs alpha prémultipliées. par conséquent, si l’image n’est pas déjà dans ce format, l’exemple de code appelle **[Convert](/uwp/api/windows.graphics.imaging.softwarebitmap.BitmapAlphaMode)** pour convertir l’image au format attendu.
 
 Ensuite, un **SoftwareBitmap** est créé pour être utilisé comme cible de l’opération de flou. Les propriétés de l’image d’entrée sont utilisées comme arguments du constructeur pour créer une image bitmap avec le format correspondant.
 
@@ -101,11 +101,7 @@ Cet exemple de code utilise des API provenant des espaces de noms suivants, en p
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Référence des options BitmapEncoder](bitmapencoder-options-reference.md)
-* [Métadonnées d’image](image-metadata.md)
+* [Métadonnées de l’image](image-metadata.md)
  
 
  
-
-
-
-

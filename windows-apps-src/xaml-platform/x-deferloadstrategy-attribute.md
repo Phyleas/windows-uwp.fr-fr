@@ -1,26 +1,26 @@
 ---
 title: Attribut xDeferLoadStrategy
-description: xDeferLoadStrategy retarde la création d’un élément et ses enfants. Cela réduit le temps de démarrage, mais augmente légèrement l’utilisation de la mémoire. Chaque élément affecté ajoute environ 600 octets à l’utilisation de la mémoire.
+description: xDeferLoadStrategy retarde la création d’un élément et ses enfants. Cela réduit le temps de démarrage, mais augmente légèrement l’utilisation de la mémoire.Chaque élément affecté ajoute environ 600 octets à l’utilisation de la mémoire.
 ms.assetid: E763898E-13FF-4412-B502-B54DBFE2D4E4
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f445b186c42095bfdf6d10fa7960b78691ced792
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: f37c04af132e742a54df8e88e5c875a32fa94beb
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371091"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173773"
 ---
 # <a name="xdeferloadstrategy-attribute"></a>attribut x: DeferLoadStrategy
 
 > [!IMPORTANT]
-> À compter de Windows 10, version 1703 (Creators Update), **x:DeferLoadStrategy** est remplacé par l’[**attribut x:Load**](x-load-attribute.md). Utiliser `x:Load="False"` équivaut à utiliser `x:DeferLoadStrategy="Lazy"`, mais permet de décharger l’interface utilisateur si nécessaire. Voir l’[attribut x:Load](x-load-attribute.md) pour plus d’informations.
+> À compter de Windows 10, version 1703 (Creators Update), **x :DeferLoadStrategy** est remplacé par l' [**attribut x :Load**](x-load-attribute.md). L’utilisation `x:Load="False"` de est équivalente à `x:DeferLoadStrategy="Lazy"` , mais permet de décharger l’interface utilisateur si nécessaire. Pour plus d’informations, consultez l' [attribut x :Load](x-load-attribute.md) .
 
-Vous pouvez utiliser **x:DeferLoadStrategy="Lazy"** pour optimiser le démarrage ou les performances de création d’arborescence de votre application XAML. Lorsque vous utilisez **x:DeferLoadStrategy="Lazy"** , la création d’un élément et de ses enfants est retardée, ce qui réduit le temps de démarrage et les coûts mémoire. Cela permet de réduire les coûts des éléments qui sont affichés rarement ou dans certaines conditions. L’élément est réalisé lorsqu’il est référencé dans le code ou dans VisualStateManager.
+Vous pouvez utiliser **x :DeferLoadStrategy = "Lazy"** pour optimiser les performances de démarrage ou de création de l’arborescence de votre application XAML. Quand vous utilisez **x :DeferLoadStrategy = "Lazy"**, la création d’un élément et de ses enfants est différée, ce qui réduit les coûts de temps de démarrage et de mémoire. Cela permet de réduire les coûts des éléments qui s’affichent rarement ou de manière conditionnelle. L’élément est réalisé quand il est référencé à partir du code ou de VisualStateManager.
 
-Toutefois, le suivi des éléments différés par l’infrastructure XAML ajoute environ 600 octets à l’utilisation de la mémoire pour chaque élément affecté. Plus l’arborescence d’éléments que vous reportez est importante, plus vous économisez de temps de démarrage, mais au prix d’une plus grande empreinte mémoire. Par conséquent, un usage abusif de cet attribut peut entraîner une diminution des performances.
+Toutefois, le suivi des éléments différés par l’infrastructure XAML ajoute environ 600 octets à l’utilisation de la mémoire pour chaque élément affecté. Plus l’arborescence d’éléments que vous reportez est importante, plus vous économisez de temps de démarrage, mais au prix d’une plus grande empreinte mémoire. Par conséquent, il est possible d’abuser de cet attribut dans la mesure où vos performances diminuent.
 
 ## <a name="xaml-attribute-usage"></a>Utilisation des attributs XAML
 
@@ -28,42 +28,42 @@ Toutefois, le suivi des éléments différés par l’infrastructure XAML ajoute
 <object x:DeferLoadStrategy="Lazy" .../>
 ```
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarques
 
 Les restrictions pour l’utilisation de **x:DeferLoadStrategy** sont les suivantes :
 
-- Vous devez définir un [x : Name](x-name-attribute.md) pour l’élément, en tant que cet emplacement doit être un moyen pour rechercher l’élément plus tard.
-- Vous pouvez différer uniquement les types qui dérivent de [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) ou de [**FlyoutBase**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase).
-- Vous ne pouvez pas différer d’éléments racines dans un objet [**Page**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page), [**UserControls**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol) ou [**DataTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate).
-- Vous ne pouvez pas différer d’éléments dans un [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary).
-- Vous ne pouvez pas différer un XAML libre chargé avec [**XamlReader.Load**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup.xamlreader.load).
+- Vous devez définir un [x :Name](x-name-attribute.md)   pour l’élément, car il doit exister un moyen de Rechercher l’élément ultérieurement.
+- Vous pouvez différer uniquement les types qui dérivent de [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) ou [**FlyoutBase**](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase).
+- Vous ne pouvez pas différer des éléments racine dans une [**page**](/uwp/api/windows.ui.xaml.controls.page), un [**UserControl**](/uwp/api/windows.ui.xaml.controls.usercontrol)ou un [**DataTemplate**](/uwp/api/Windows.UI.Xaml.DataTemplate).
+- Vous ne pouvez pas différer des éléments dans un [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary).
+- Vous ne pouvez pas différer le XAML libre chargé avec [**XamlReader. Load**](/uwp/api/windows.ui.xaml.markup.xamlreader.load).
 - Le déplacement d’un élément parent efface tous les éléments qui n’ont pas été réalisés.
 
 Il existe plusieurs manières de réaliser les éléments différés :
 
-- Appelez [**FindName**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.findname) avec le nom que vous avez défini sur l’élément.
-- Appelez [**GetTemplateChild**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.gettemplatechild) avec le nom que vous avez défini sur l’élément.
-- Dans un [**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState), utilisez une animation [**Setter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter) ou **Storyboard** qui cible l’élément différé.
+- Appelez [**FindName**](/uwp/api/windows.ui.xaml.frameworkelement.findname) avec le nom que vous avez défini sur l’élément.
+- Appelez [**GetTemplateChild**](/uwp/api/windows.ui.xaml.controls.control.gettemplatechild) avec le nom que vous avez défini sur l’élément.
+- Dans un [**VisualState**](/uwp/api/Windows.UI.Xaml.VisualState), utilisez une animation d' [**accesseur Set**](/uwp/api/Windows.UI.Xaml.Setter) ou de **Storyboard** qui cible l’élément différé.
 - Cibler l’élément différé dans un **Storyboard**.
 - Utilisez une liaison qui cible l’élément différé.
 
-> REMARQUE : Une fois que l’instanciation d’un élément a démarré, il est créé sur le thread d’interface utilisateur, il risquerait de provoquer l’interface utilisateur pour être perturbée si trop que grande partie est créée en même temps.
+> NOTE : une fois que l’instanciation d’un élément a démarré, celui-ci est créé sur le thread de l’interface utilisateur, au risque que celle-ci s’interrompe si ce qui est créé en une fois est trop important.
 
-Une fois qu’un élément différé est créé par une des méthodes répertoriées précédemment, plusieurs choses se passent :
+Une fois qu’un élément différé est créé dans l’une des manières mentionnées précédemment, plusieurs choses se produisent :
 
-- L’événement [**Loaded**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.loaded) sur l’élément est déclenché.
+- L’événement [**Loaded**](/uwp/api/windows.ui.xaml.frameworkelement.loaded) est déclenché sur l’élément.
 - Toutes les liaisons sur l’élément sont évaluées.
 - Si vous vous êtes inscrit pour recevoir des notifications de modification de propriété sur la propriété contenant les éléments différés, la notification est déclenchée.
 
-Vous pouvez imbriquer des éléments différés, mais ils doivent être réalisés à partir de l’élément le plus éloigné.  Si vous tentez de réaliser un élément enfant avant que le parent soit réalisé, une exception est levée.
+Vous pouvez imbriquer des éléments différés, mais ils doivent être réalisés à partir de l’élément le plus éloigné. Si vous essayez de réaliser un élément enfant avant que le parent soit réalisé, une exception est levée.
 
-En règle générale, nous vous conseillons de différer les éléments qui ne sont pas visibles dans la première image. Une bonne indication pour identifier les éléments à différer consiste à rechercher des éléments créés avec une [**Visibility**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.visibility) réduite. De même, une interface utilisateur déclenchée par l’utilisateur est également un bon endroit où rechercher des éléments à différer.
+En règle générale, nous vous recommandons de différer les éléments qui ne sont pas visibles dans le premier frame.Une bonne indication pour la recherche des candidats à retarder consiste à rechercher les éléments qui sont créés avec une [**visibilité**](/uwp/api/windows.ui.xaml.uielement.visibility)réduite. En outre, l’interface utilisateur qui est déclenchée par l’intervention de l’utilisateur est un bon emplacement pour rechercher les éléments que vous pouvez différer.
 
-Soyez prudent avant de différer des éléments dans un contrôle [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), car si le temps de démarrage s’en trouve réduit, cela peut également réduire les performances des mouvements panoramiques, selon ce que vous créez. Si vous cherchez à accroître les performances des mouvements panoramiques, consultez la documentation sur [l’extension de balisage {x:Bind}](x-bind-markup-extension.md) et [l’attribut x:Phase](x-phase-attribute.md).
+Méfiez-vous du report des éléments dans un [**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView), car cela réduit le temps de démarrage, mais peut également réduire vos performances de panorama en fonction de ce que vous créez. Si vous cherchez à augmenter les performances de panorama, consultez la documentation sur l' [extension de balisage {x :bind}](x-bind-markup-extension.md) et l' [attribut x :phase](x-phase-attribute.md) .
 
-Si l’[attribut x:Phase](x-phase-attribute.md) est utilisé en association avec **x:DeferLoadStrategy**, lors de la réalisation d’un élément ou d’une arborescence d’éléments, les liaisons sont appliquées jusqu’à la phase actuelle, celle-ci étant elle-même incluse. La phase spécifiée pour **x:Phase** n’affecte pas et ne contrôle pas le report de l’élément. Lorsqu’un élément de liste est recyclé dans le cadre d’un mouvement panoramique, les éléments réalisés se comportent de la même manière que les autres éléments actifs, et les liaisons compilées (liaisons **{x:Bind}** ) sont traitées à l’aide des mêmes règles, y compris l’exécution par phases.
+Si l' [attribut x :phase](x-phase-attribute.md) est utilisé conjointement avec **x :DeferLoadStrategy** , quand un élément ou une arborescence d’éléments est réalisé, les liaisons sont appliquées jusqu’à la phase actuelle, y compris. La phase spécifiée pour **x :phase** n’affecte ni ne contrôle le report de l’élément. Lorsqu’un élément de liste est recyclé dans le cadre de la panoramisation, les éléments réalisés se comportent de la même façon que d’autres éléments actifs, et les liaisons compilées (**{x :bind}** Bindings) sont traitées à l’aide des mêmes règles, y compris la mise à l’étape.
 
-Il est généralement conseillé de mesurer les performances de votre application avant et après afin de vous assurer d’obtenir les performances souhaitées.
+Une recommandation générale consiste à mesurer les performances de votre application avant et après pour vous assurer que vous obtenez les performances souhaitées.
 
 ## <a name="example"></a>Exemple
 

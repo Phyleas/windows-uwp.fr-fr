@@ -6,12 +6,12 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, ADS, publicité, notes de publication
 ms.localizationpriority: medium
-ms.openlocfilehash: 10762d28191dfe59ae6f63f06cbeb0dd3e8a9f51
-ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
+ms.openlocfilehash: 8faf352040b9d7bdc9fc8bc79804d5903573d41d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969917"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174963"
 ---
 # <a name="release-notes-for-the-advertising-libraries"></a>Notes de publication pour les bibliothèques de publicité
 
@@ -35,7 +35,7 @@ Lorsque vous utilisez les bibliothèques de publicités Microsoft, vous ne pouve
 
 ## <a name="c-support"></a>Support C++
 
-Les bibliothèques de publicités Microsoft (qui incluent les classes **AdControl** et **InterstitialAd**) prennent en charge les applications écrites en C++ et DirectX à l’aide de l’interopérabilité de Windows Runtime (*interop*). Pour plus d’informations et d’exemples sur la programmation en C++ et XAML, voir [Système de types](https://docs.microsoft.com/cpp/cppcx/type-system-c-cx).
+Les bibliothèques de publicités Microsoft (qui incluent les classes **AdControl** et **InterstitialAd**) prennent en charge les applications écrites en C++ et DirectX à l’aide de l’interopérabilité de Windows Runtime (*interop*). Pour plus d’informations et d’exemples sur la programmation en C++ et XAML, voir [Système de types](/cpp/cppcx/type-system-c-cx).
 
 ## <a name="no-toolbox-control"></a>Aucun contrôle de boîte à outils
 

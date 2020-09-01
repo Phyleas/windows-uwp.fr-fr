@@ -4,14 +4,14 @@ description: Utilisez les API de boîtier de commande Windows.Gaming.Input pour 
 ms.assetid: BB03BB8E-255F-4AE8-AC43-1E519CA860FE
 ms.date: 09/06/2018
 ms.topic: article
-keywords: windows 10, uwp, jeux, boîtier de commande, vibration
+keywords: Windows 10, UWP, jeux, boîtier en boîtier, vibration
 ms.localizationpriority: medium
-ms.openlocfilehash: e65b22039c381bd333516bd9f98c60bbddb9621c
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 66844b78893ffa8cb92b6b17bd11d87c1d4b1aa0
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79210595"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175323"
 ---
 # <a name="gamepad-and-vibration"></a>Boîtier de commande et vibration
 
@@ -27,7 +27,7 @@ Voici ce que vous allez apprendre à la lecture de cet article :
 
 ## <a name="gamepad-overview"></a>Vue d’ensemble des boîtiers de commande
 
-Les boîtiers de commande tels que les manettes sans fil Xbox Wireless Controller et Xbox Wireless Controller S sont des périphériques d’entrée de jeu à usage général. Ils représentent le périphérique d’entrée standard sur Xbox One et ils sont couramment choisis par les joueurs Windows qui ne préfèrent pas utiliser un clavier et une souris. Les boîtiers de commande sont pris en charge dans les applications UWP Windows 10 et Xbox par l’espace de noms [Windows. Gaming. Input][].
+Les boîtiers de commande tels que les manettes sans fil Xbox Wireless Controller et Xbox Wireless Controller S sont des périphériques d’entrée de jeu à usage général. Ils représentent le périphérique d’entrée standard sur Xbox One et ils sont couramment choisis par les joueurs Windows qui ne préfèrent pas utiliser un clavier et une souris. Les boîtiers de commande sont pris en charge dans les applications UWP Windows 10 et Xbox par l’espace de noms [Windows.Gaming.Input][].
 
 Les boîtiers de manette Xbox One sont équipés d’un pavé directionnel (ou D-PAD). Les boutons **A**, **B**, **X**, **Y**, **vue**et **menu** ; Thumbsticks, champignons et déclencheurs de gauche et de droite ; et un total de quatre moteurs vibratoires. Les deux sticks analogiques fournissent des valeurs analogiques doubles sur les axes X et Y, et fonctionnent également comme un bouton quand l’utilisateur appuie dessus vers l’intérieur. Chaque déclencheur fournit une lecture analogique qui représente la distance à laquelle il est extrait.
 
@@ -48,13 +48,13 @@ Pour plus d’informations, consultez [Vue d’ensemble des gâchettes de vibrat
 
 ### <a name="thumbstick-deadzones"></a>Zones mortes (ou « dead zones ») des sticks analogiques
 
-Quand un stick analogique se trouve à la position centrale, il devrait idéalement toujours fournir la même valeur neutre sur les axes X et Y. Or, en raison de certaines forces mécaniques et de la sensibilité du stick analogique, les valeurs réelles fournies à la position centrale ne correspondent pas exactement à la valeur neutre idéale et peuvent varier d’une lecture de valeur à une autre. Pour cette raison, vous devez toujours utiliser un petit _deadzone_&mdash;une plage de valeurs près de la position centrale idéale ignorées&mdash;pour compenser les différences de fabrication, l’usure mécanique ou d’autres problèmes de boîtier de manette.
+Quand un stick analogique se trouve à la position centrale, il devrait idéalement toujours fournir la même valeur neutre sur les axes X et Y. Or, en raison de certaines forces mécaniques et de la sensibilité du stick analogique, les valeurs réelles fournies à la position centrale ne correspondent pas exactement à la valeur neutre idéale et peuvent varier d’une lecture de valeur à une autre. Pour cette raison, vous devez toujours utiliser un petit _deadzone_ &mdash; une plage de valeurs près de la position centrale idéale qui est ignorée &mdash; pour compenser les différences de fabrication, l’usure mécanique ou d’autres problèmes de boîtier de manette.
 
 L’utilisation de zones mortes plus larges est une solution simple pour faire la distinction entre les entrées intentionnelles et les entrées accidentelles.
 
 Pour plus d’informations, consultez [Lecture des entrées des sticks analogiques](#reading-the-thumbsticks).
 
-### <a name="ui-navigation"></a>Navigation dans l'interface utilisateur
+### <a name="ui-navigation"></a>Navigation d’interface utilisateur
 
 Pour réduire la difficulté associée à la prise en charge de plusieurs périphériques d’entrée différents lors de la navigation dans l’interface utilisateur, et pour favoriser la cohérence entre les jeux et les périphériques, la plupart des périphériques d’entrée _physiques_ agissent en tant que périphérique d’entrée _logique_ distinct, appelé [contrôleur de navigation d’interface utilisateur](ui-navigation-controller.md). Le contrôleur de navigation d’interface utilisateur fournit un vocabulaire commun pour les commandes de navigation dans l’interface utilisateur, sur plusieurs périphériques d’entrée.
 
@@ -62,13 +62,13 @@ En tant que contrôleur de navigation de l’interface utilisateur, les boîtier
 
 | Commande de navigation | Entrée boîtier de commande                       |
 | ------------------:| ----------------------------------- |
-|                 Monter | Stick analogique gauche vers le haut / bouton multidirectionnel vers le haut       |
-|               Bas | Stick analogique gauche vers le bas / bouton multidirectionnel vers le bas   |
-|               Left | Stick analogique gauche vers la gauche / bouton multidirectionnel vers la gauche   |
-|              Droit | Stick analogique gauche vers la droite / bouton multidirectionnel vers la droite |
+|                 Haut | Stick analogique gauche vers le haut / bouton multidirectionnel vers le haut       |
+|               Descendre | Stick analogique gauche vers le bas / bouton multidirectionnel vers le bas   |
+|               Gauche | Stick analogique gauche vers la gauche / bouton multidirectionnel vers la gauche   |
+|              Right | Stick analogique gauche vers la droite / bouton multidirectionnel vers la droite |
 |               Affichage | Bouton Afficher                         |
 |               Menu | Bouton Menu                         |
-|             Accepter | Bouton A                            |
+|             Acceptation | Bouton A                            |
 |             Annuler | Bouton B                            |
 
 De plus, les boîtiers de commande mappent toutes les commandes de navigation de l’[ensemble facultatif](ui-navigation-controller.md#optional-set) aux entrées restantes.
@@ -94,7 +94,7 @@ Comme les boîtiers de commande sont gérés par le système, vous n’avez pas 
 
 ### <a name="the-gamepads-list"></a>Liste des boîtiers de commande
 
-La classe [Gamepad][] fournit la propriété statique [Gamepads][], qui correspond à une liste en lecture seule de tous les boîtiers de commande qui sont actuellement connectés. Étant donné que vous pouvez être intéressé uniquement par certains des boîtiers connectés, il est recommandé de conserver votre propre collection au lieu d’y accéder via la propriété `Gamepads`.
+La classe [Gamepad][] fournit la propriété statique [Gamepads][], qui correspond à une liste en lecture seule de tous les boîtiers de commande qui sont actuellement connectés. Étant donné que vous pouvez être intéressé uniquement par certains des boîtiers connectés, il est recommandé de conserver votre propre collection au lieu d’y accéder via la `Gamepads` propriété.
 
 L’exemple de code suivant copie tous les boîtiers de commande connectés dans une nouvelle collection. Notez que, étant donné que les autres threads en arrière-plan accèdent à cette collection (dans les événements [GamepadAdded][] et [GamepadRemoved][] ), vous devez placer un verrou autour du code qui lit ou met à jour la collection.
 
@@ -179,7 +179,7 @@ Gamepad.GamepadAdded += (object sender, Gamepad e) =>
 };
 ```
 
-L’exemple suivant arrête le suivi d’un boîtier de commande qui a été supprimé. Vous devez également gérer ce qui se passe aux boîtiers de souscription que vous suivez lorsqu’ils sont supprimés. par exemple, ce code effectue uniquement le suivi de l’entrée d’un boîtier de sélection et le définit simplement sur `nullptr` lorsqu’il est supprimé. Vous devez vérifier chaque frame si votre boîtier de connexion est actif, puis mettre à jour le boîtier d’enregistrement à partir duquel vous collectez des données lorsque les contrôleurs sont connectés et déconnectés.
+L’exemple suivant arrête le suivi d’un boîtier de commande qui a été supprimé. Vous devez également gérer ce qui se passe aux boîtiers de souscription que vous suivez lorsqu’ils sont supprimés. par exemple, ce code suit uniquement les entrées d’un boîtier de sélection et le définit simplement `nullptr` lorsqu’il est supprimé. Vous devez vérifier chaque frame si votre boîtier de connexion est actif, puis mettre à jour le boîtier d’enregistrement à partir duquel vous collectez des données lorsque les contrôleurs sont connectés et déconnectés.
 
 ```cpp
 Gamepad::GamepadRemoved += ref new EventHandler<Gamepad^>(Platform::Object^, Gamepad^ args)
@@ -231,7 +231,7 @@ Une fois que vous avez identifié le boîtier de commande qui vous intéresse, v
 
 ### <a name="polling-the-gamepad"></a>Interrogation du boîtier de commande
 
-Le processus d’interrogation capture un instantané du périphérique de navigation à un moment précis. Cette approche de collecte des entrées convient à la plupart des jeux, dont la logique s’exécute généralement selon une boucle déterministe plutôt que sur la base des événements. Par ailleurs, elle facilite l’interprétation des commandes de jeu, car toutes les entrées sont collectées en même temps, et non pas les unes après les autres.
+Le processus d’interrogation capture un instantané du périphérique de navigation à un moment précis. Cette approche de la collecte des entrées est adaptée à la plupart des jeux, car leur logique s’exécute généralement dans une boucle déterministe plutôt que d’être pilotée par des événements. en général, il est généralement plus simple d’interpréter les commandes de jeu provenant d’entrées rassemblées en une seule fois par rapport à de nombreuses entrées collectées au fil du temps.
 
 Vous interrogez un boîtier de commande en appelant la fonction [GetCurrentReading][]. Cette fonction renvoie un élément [GamepadReading][] qui contient l’état du boîtier de commande.
 
@@ -271,7 +271,7 @@ double rightStickX = reading.RightThumbstickX; // returns a value between -1.0 a
 double rightStickY = reading.RightThumbstickY; // returns a value between -1.0 and +1.0
 ```
 
-Si vous examinez les valeurs que les sticks analogiques fournissent, vous remarquerez qu’ils ne fournissent pas toujours la valeur neutre 0.0 quand ils se trouvent à la position centrale. Les sticks analogiques fournissent différentes valeurs proches de 0.0 chaque fois qu’ils sont déplacés, puis remis à la position centrale. Pour compenser ces variations, vous pouvez implémenter une petite _zone morte_, qui correspond à une plage de valeurs proches de la position centrale idéale à ignorer. Pour implémenter une zone morte, vous pouvez déterminer de quelle distance le stick analogique a été déplacé à partir de sa position centrale, en ignorant les valeurs qui sont plus proches que la distance de référence spécifiée. Vous pouvez calculer la distance à peu près&mdash;ce n’est pas exact, car les valeurs de Stick analogiques sont essentiellement des valeurs polaires, non planaires,&mdash;simplement à l’aide du Pythagorean. Vous obtenez ainsi une zone morte radiale.
+Si vous examinez les valeurs que les sticks analogiques fournissent, vous remarquerez qu’ils ne fournissent pas toujours la valeur neutre 0.0 quand ils se trouvent à la position centrale. Les sticks analogiques fournissent différentes valeurs proches de 0.0 chaque fois qu’ils sont déplacés, puis remis à la position centrale. Pour compenser ces variations, vous pouvez implémenter une petite _zone morte_, qui correspond à une plage de valeurs proches de la position centrale idéale à ignorer. Pour implémenter une zone morte, vous pouvez déterminer de quelle distance le stick analogique a été déplacé à partir de sa position centrale, en ignorant les valeurs qui sont plus proches que la distance de référence spécifiée. Vous pouvez calculer la distance &mdash; de façon à ce qu’elle ne soit pas exacte, car les lectures de sticks sont essentiellement des valeurs polaires, non planaires, &mdash; simplement à l’aide du Pythagorean. Vous obtenez ainsi une zone morte radiale.
 
 L’exemple suivant illustre une zone morte radiale simple calculée à l’aide du théorème de Pythagore.
 
@@ -331,12 +331,12 @@ double rightTrigger = reading.RightTrigger; // returns a value between 0.0 and 1
 
 ### <a name="reading-the-buttons"></a>Lecture des boutons
 
-Chacun des boutons de la manette&mdash;les quatre directions des champignons D-Pad, de gauche et de droite, de gauche et de droite Press, **A**, **B**, **X**, **Y**, **View**et **menu**&mdash;fournit une lecture numérique qui indique s’il est appuyé (enfoncé) ou relâché (haut). Pour plus d’efficacité, les lectures de bouton ne sont pas représentées sous forme de valeurs booléennes individuelles. au lieu de cela, ils sont tous regroupés dans un seul champ de champ qui est représenté par l’énumération [GamepadButtons][] .
+Chacun des boutons du boîtier de la manette des &mdash; quatre directions des champignons D-Pad, gauche et droite, pression du stick analogique gauche et droite, **a**, **B**, **X**, **Y**, **vue**et **menu** &mdash; fournit une lecture numérique qui indique s’il est appuyé (enfoncé) ou relâché (haut). Pour plus d’efficacité, les lectures de bouton ne sont pas représentées sous forme de valeurs booléennes individuelles. au lieu de cela, ils sont tous regroupés dans un seul champ de champ qui est représenté par l’énumération [GamepadButtons][] .
 
 <!-- > [!NOTE]
 > The Xbox Elite Wireless Controller is equipped with four additional **paddle** buttons on its underside. These buttons are also represented in the `GamepadButtons` enumeration and their values are read in the same way as the standard gamepad buttons. -->
 
-Les valeurs des boutons sont lues à partir de la propriété `Buttons` de la structure [GamepadReading][]. Comme cette propriété est un champ de bits, un masquage au niveau du bit est effectué pour isoler la valeur du bouton qui vous intéresse. Le bouton est à l’état enfoncé (position basse) lorsque le bit correspondant est défini ; dans le cas contraire, il se trouve à l’état relâché (position haute).
+Les valeurs des boutons sont lues à partir de la propriété `Buttons` de la structure [GamepadReading][]. Comme cette propriété est un champ de bits, un masquage au niveau du bit est effectué pour isoler la valeur du bouton qui vous intéresse. Le bouton est enfoncé (enfoncé) lorsque le bit correspondant est défini ; dans le cas contraire, elle est libérée (haut).
 
 L’exemple suivant détermine si le bouton A est à l’état appuyé.
 
@@ -370,11 +370,11 @@ if (GamepadButtons.None == (reading.Buttons & GamepadButtons.A))
 }
 ```
 
-Parfois, vous souhaiterez peut-être déterminer à quel moment un bouton passe de enfoncé à relâché ou relâché, si plusieurs boutons sont enfoncés ou relâché, ou si un ensemble de boutons est organisé d’une façon particulière&mdash;certains enfoncés, d’autres non. Pour plus d’informations sur la détection de chacun de ces états, consultez [Détecter les changements d’état des boutons](input-practices-for-games.md#detecting-button-transitions) et [Détecter les dispositions de boutons complexes](input-practices-for-games.md#detecting-complex-button-arrangements).
+Parfois, vous souhaiterez peut-être déterminer quand un bouton passe de enfoncé à relâché ou relâché, si plusieurs boutons sont enfoncés ou relâché, ou si un ensemble de boutons est organisé d’une façon particulière &mdash; , d’autres non. Pour plus d’informations sur la détection de chacun de ces états, consultez [Détecter les changements d’état des boutons](input-practices-for-games.md#detecting-button-transitions) et [Détecter les dispositions de boutons complexes](input-practices-for-games.md#detecting-complex-button-arrangements).
 
 ## <a name="run-the-gamepad-input-sample"></a>Exécuter l’exemple d’entrée de boîtier de commande
 
-L’[exemple GamepadUWP _(github)_ ](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/UWPSamples/System/GamepadUWP) montre comment connecter un boîtier de commande et lire son état.
+L’[exemple GamepadUWP _(github)_](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/UWPSamples/System/GamepadUWP) montre comment connecter un boîtier de commande et lire son état.
 
 ## <a name="vibration-and-impulse-triggers-overview"></a>Vue d’ensemble des gâchettes de vibration et à impulsions
 
@@ -386,7 +386,7 @@ Les boîtiers de commande Xbox One comportent au total quatre moteurs de vibrat
 
 Les vibrations du boîtier de commande sont contrôlées par la propriété [Vibration][] de la classe [Gamepad][]. `Vibration` est une instance de la structure [GamepadVibration][] qui est constituée de quatre valeurs à virgule flottante ; chaque valeur représente l’intensité de l’un des moteurs.
 
-Bien que les membres de la propriété `Gamepad.Vibration` puissent être modifiés directement, il est recommandé d’initialiser une instance `GamepadVibration` distincte aux valeurs souhaitées, puis de la copier dans la propriété `Gamepad.Vibration` pour modifier simultanément les véritables inintensités de moteur.
+Bien que les membres de la `Gamepad.Vibration` propriété puissent être modifiés directement, il est recommandé d’initialiser une instance distincte aux valeurs souhaitées, puis de la `GamepadVibration` copier dans la `Gamepad.Vibration` propriété pour modifier simultanément les véritables inintensités de moteur.
 
 L’exemple suivant montre comment modifier simultanément toutes les intensités de moteur.
 
@@ -436,7 +436,7 @@ vibration.RightMotor = 0.25; // sets the intensity of the right motor to 25%
 mainGamepad.Vibration = vibration;
 ```
 
-N’oubliez pas que ces deux moteurs ne sont pas identiques. La définition de leurs propriétés à la même valeur ne produit donc pas la même vibration dans ces moteurs. Pour toute valeur, le moteur de gauche produit une vibration plus élevée à une fréquence inférieure à celle du moteur de droite qui&mdash;pour la même valeur&mdash;produit une vibration plus élevée à une fréquence plus élevée. Même avec une valeur maximale, le moteur gauche ne peut pas produire une vibration à des fréquences aussi élevées que le moteur droit, et le moteur droit ne peut pas produire une vibration aussi forte que le moteur gauche. Toutefois, du fait que les deux moteurs sont connectés physiquement par le même boîtier de commande, les joueurs ne ressentent pas les vibrations de chaque moteur de manière totalement indépendante, et ce même si les moteurs présentent des caractéristiques distinctes et des intensités de vibration différentes. Cette disposition permet d’offrir aux joueurs une plus grande palette de sensations tactiles qu’avec deux moteurs identiques.
+N’oubliez pas que ces deux moteurs ne sont pas identiques. La définition de leurs propriétés à la même valeur ne produit donc pas la même vibration dans ces moteurs. Pour toute valeur, le moteur de gauche produit une vibration plus élevée à une fréquence inférieure à celle du moteur approprié qui &mdash; , pour la même valeur &mdash; , produit une vibration plus élevée à une fréquence plus élevée. Même avec une valeur maximale, le moteur gauche ne peut pas produire une vibration à des fréquences aussi élevées que le moteur droit, et le moteur droit ne peut pas produire une vibration aussi forte que le moteur gauche. Toutefois, du fait que les deux moteurs sont connectés physiquement par le même boîtier de commande, les joueurs ne ressentent pas les vibrations de chaque moteur de manière totalement indépendante, et ce même si les moteurs présentent des caractéristiques distinctes et des intensités de vibration différentes. Cette disposition permet d’offrir aux joueurs une plus grande palette de sensations tactiles qu’avec deux moteurs identiques.
 
 ### <a name="using-the-impulse-triggers"></a>Utilisation des gâchettes à impulsions
 
@@ -462,23 +462,23 @@ Contrairement aux autres moteurs, les deux moteurs de vibration intégrés aux g
 
 ## <a name="run-the-gamepad-vibration-sample"></a>Exécuter l’exemple de vibration du boîtier de commande
 
-L’[exemple GamepadVibrationUWP _(github)_ ](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/UWPSamples/System/GamepadVibrationUWP) montre comment utiliser les moteurs de vibration et les gâchettes à impulsions du boîtier de commande pour produire des effets variés.
+L’[exemple GamepadVibrationUWP _(github)_](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/UWPSamples/System/GamepadVibrationUWP) montre comment utiliser les moteurs de vibration et les gâchettes à impulsions du boîtier de commande pour produire des effets variés.
 
 ## <a name="see-also"></a>Voir aussi
 
 * [Windows.Gaming.Input.UINavigationController][]
-* [Windows. Gaming. Input. IGameController][]
+* [Windows.Gaming.Input.IGameController][]
 * [Pratiques d’entrée pour les jeux](input-practices-for-games.md)
 
-[Windows. Gaming. Input]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.aspx
-[Windows.Gaming.Input.UINavigationController]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.uinavigationcontroller.aspx
-[Windows. Gaming. Input. IGameController]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.aspx
-[Gamepad]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.gamepad.aspx
-[Gamepads]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.gamepad.gamepads.aspx
-[gamepadadded]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.gamepad.gamepadadded.aspx
-[gamepadremoved]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.gamepad.gamepadremoved.aspx
-[getcurrentreading]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.gamepad.getcurrentreading.aspx
-[Vibration]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.gamepad.vibration.aspx
-[gamepadreading]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.gamepadreading.aspx
-[gamepadbuttons]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.gamepadbuttons.aspx
-[gamepadvibration]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.gamepadvibration.aspx
+[Windows. Gaming. Input]: /uwp/api/Windows.Gaming.Input
+[Windows.Gaming.Input.UINavigationController]: /uwp/api/Windows.Gaming.Input.UINavigationController
+[Windows.Gaming.Input.IGameController]: /uwp/api/Windows.Gaming.Input.IGameController
+[manette]: /uwp/api/Windows.Gaming.Input.Gamepad
+[gamepads]: /uwp/api/Windows.Gaming.Input.Gamepad
+[gamepadadded]: /uwp/api/Windows.Gaming.Input.Gamepad
+[gamepadremoved]: /uwp/api/Windows.Gaming.Input.Gamepad
+[getcurrentreading]: /uwp/api/Windows.Gaming.Input.Gamepad
+[vibration]: /uwp/api/Windows.Gaming.Input.Gamepad
+[gamepadreading]: /uwp/api/Windows.Gaming.Input.GamepadReading
+[gamepadbuttons]: /uwp/api/Windows.Gaming.Input.GamepadButtons
+[gamepadvibration]: /uwp/api/Windows.Gaming.Input.GamepadVibration

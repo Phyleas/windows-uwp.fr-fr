@@ -1,64 +1,64 @@
 ---
-title: Animations de mouvement naturelles
-description: En savoir plus sur les animations de mouvement naturelles et leur utilisation dans l’interface utilisateur de votre application.
+title: Animations de mouvement naturel
+description: Découvrez les animations de mouvement naturel et comment les utiliser dans l’interface utilisateur de votre application.
 ms.date: 10/10/2017
 ms.topic: article
-keywords: windows 10, uwp, animation
+keywords: Windows 10, UWP, animation
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fde0cbf5335b4f5c3da2f21f692fc2c23455776
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 02c76991a60205042642f57fed475755db8c8071
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57630374"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174083"
 ---
-# <a name="natural-motion-animations"></a>Animations de mouvement naturelles
+# <a name="natural-motion-animations"></a>Animations de mouvement naturel
 
-Cet article fait une brève présentation de l’espace NaturalMotionAnimation et indique comment envisager d'un point de vue conceptuel d'utiliser ces types d’animations dans votre interface utilisateur.
+Cet article fournit une brève vue d’ensemble de l’espace NaturalMotionAnimation et explique de manière conceptuelle comment utiliser ces types d’animations dans votre interface utilisateur.
 
-## <a name="making-motion-feel-familiar-and-natural"></a>Rendre le mouvement naturel et familier
+## <a name="making-motion-feel-familiar-and-natural"></a>Rendre le mouvement familier et naturel
 
-Les applications les plus réussies créent des expériences qui captent et retiennent l’attention de l’utilisateur et les aident à accomplir des tâches. Le mouvement est le facteur de différenciation essentiel entre une Interface utilisateur et une Expérience utilisateur : qui suscite une connexion entre les utilisateurs et l’application avec laquelle ils interagissent. Plus la connexion est bonne, plus l'engagement et la satisfaction des utilisateurs finaux sont élevés.
+Les applications intéressantes créent des expériences qui capturent et conservent l’attention de l’utilisateur et aident les utilisateurs à effectuer des tâches. Motion est le facteur de différenciation clé qui sépare une interface utilisateur de l’expérience utilisateur, ce qui permet d’établir une connexion entre les utilisateurs et l’application avec laquelle ils interagissent. Plus la connexion est efficace, plus l’engagement et la satisfaction des utilisateurs finaux sont élevés.
 
-Pour qu'un mouvement contribue à créer cette connexion, l'un des moyens consiste à créer des expériences qui paraissent familières aux utilisateurs. Les utilisateurs s'attendent inconsciemment à une certaine perception du mouvement basée sur les expériences de la vie réelle. Nous voyons comment les objets glissent sur le sol, tombent d'une table, rebondissent l'un contre l'autre et oscillent sous l'effet d'un ressort. Un mouvement qui tire parti de cette attente en se basant sur la physique réelle nous paraît plus naturel. Le mouvement devient plus naturel et interactif, mais plus important encore, l’expérience entière devient plus mémorable et agréable.
+Pour créer cette connexion, vous pouvez créer des expériences qui semblent familières aux utilisateurs. Les utilisateurs ont des attentes inconscientes quant à la façon dont ils perçoivent motion en se basant sur les expériences réelles. Nous voyons comment les objets s’impriment à l’étage, à tomber dans le tableau, à rebondir les uns sur les autres et à osciller avec un ressort. Le mouvement qui tire parti de cette attente en se basant sur la physique réelle ressemble à la réalité et semble plus naturel dans nos yeux. Le mouvement devient plus naturel et plus interactif, mais plus important encore, l’expérience complète devient plus mémorable et délicieuse.
 
-![Mettre à l’échelle de mouvement sans animation](images/animation/scale-no-animation.gif)
-![mettre à l’échelle de mouvement de Bézier cubique](images/animation/scale-cubic-bezier.gif)
-![mettre à l’échelle de mouvement avec l’animation spring](images/animation/scale-spring.gif)
+![Mettre à l’échelle le mouvement sans mouvement de mise à l’échelle avec un mouvement de mise à l’échelle ](images/animation/scale-no-animation.gif)
+ ![ cubique ](images/animation/scale-cubic-bezier.gif)
+ ![ avec une animation Spring](images/animation/scale-spring.gif)
 
-Le résultat obtenu est un engagement et une rétention améliorés des utilisateurs avec l’application.
+Le résultat net est un engagement utilisateur et une rétention plus élevés avec l’application.
 
-## <a name="balancing-control-and-dynamism"></a>Équilibrer contrôle et dynamisme
+## <a name="balancing-control-and-dynamism"></a>Contrôle d’équilibrage et dynamisme
 
-Dans une interface utilisateur classique, les objets [KeyFrameAnimation](https://docs.microsoft.com/uwp/api/windows.ui.composition.keyframeanimation) constituent la méthode prédominante pour décrire un mouvement. Les images clés offrent aux concepteurs et aux développeurs un contrôle supérieur pour définir le début, la fin et l'interpolation. Bien qu'elles soient très utiles dans de nombreux cas, les animations par images clés ne sont pas très dynamiques : le mouvement n’est pas adaptatif et semble le même dans n’importe quelle condition.
+Dans l’interface utilisateur traditionnelle, [KeyFrameAnimation](/uwp/api/windows.ui.composition.keyframeanimation)est le moyen le plus dominant pour décrire motion. Les images clés offraient le plus grand contrôle aux concepteurs et aux développeurs pour définir le début, la fin et l’interpolation. Bien que cela soit très utile dans de nombreux cas, les animations d’images clés ne sont pas très dynamiques. le mouvement n’est pas adaptable et se présente sous n’importe quelle condition.
 
-À l’autre extrémité du spectre, il existe des simulations souvent utilisées dans les moteurs de jeux et de physique. Ces expériences sont souvent celles qui offrent aux utilisateurs les interactions les plus réalistes et dynamiques : elles créent le sentiment d'atmosphère et de caractère aléatoire que les utilisateurs voient tous les jours. Bien qu'elles fassent paraître le mouvement plus vivant et dynamique, elles donnent moins de contrôle aux concepteurs et aux développeurs, ce qui les rend plus difficiles à intégrer dans une interface utilisateur classique.
+À l’autre extrémité du spectre, des simulations sont souvent observées dans les moteurs de jeux et physiques. Ces expériences sont souvent les plus réalistes et dynamiques avec lesquelles les utilisateurs interagissent, créant ainsi un sens de la ambiance et de la randomisation que les utilisateurs voient quotidiennement. Bien que cela rende la sensation de mouvement plus active et dynamique, les concepteurs et les développeurs ont moins de contrôle, ce qui rend plus difficile l’intégration de l’interface utilisateur traditionnelle.
 
 ![Diagramme du spectre de contrôle](images/animation/natural-motion-diagram.png)
 
-Les [NaturalMotionAnimation](https://docs.microsoft.com/uwp/api/windows.ui.composition.naturalmotionanimation)s permettent de combler ce fossé : elles permettent d'équilibrer le contrôle des éléments importants d’une animation comme le début/la fin, tout en conservant un mouvement d'aspect naturel et dynamique.
+[NaturalMotionAnimation](/uwp/api/windows.ui.composition.naturalmotionanimation)existe pour aider à combler cette division, ce qui permet d’obtenir un équilibre entre les éléments importants d’une animation, tels que le début et la fin, tout en conservant le mouvement qui ressemble et semble naturel et dynamique.
 
 > [!NOTE]
-> Les NaturalMotionAnimations ne sont pas destinées à remplacer les animations par images clés : il reste des endroits dans le langage de conception Fluent où les images clés sont recommandées. Les NaturalMotionAnimations sont destinées à être utilisées dans les cas où un mouvement est nécessaire, mais les animations par images clés ne sont pas suffisamment dynamiques.
+> Les NaturalMotionAnimations ne sont pas destinés à remplacer les animations d’images clés. dans ce cas, les images clés sont toujours placées dans le langage de conception Fluent. Les NaturalMotionAnimations sont conçus pour être utilisés dans des endroits où le mouvement est nécessaire, mais les animations d’images clés ne sont pas suffisamment dynamiques.
 
 ## <a name="using-naturalmotionanimations"></a>Utilisation de NaturalMotionAnimations
 
-À partir de Fall Creators Update, vous avez accès à une nouvelle expérience de mouvement : **les animations à effet ressort**. Voir [Animations à effet ressort](spring-animations.md) pour un examen approfondi des effets ressort.
+À partir de la mise à jour des créateurs de automne, vous avez accès à une nouvelle expérience de mouvement : les **animations de ressort**. Pour plus d’informations sur les ressorts, consultez [animations Springs](spring-animations.md) .
 
-Ce type de mouvement s'obtient à l’aide de la nouvelle NaturalMotionAnimation : une nouveau type d'animation destiné à permettre aux développeurs de créer une sensation de mouvement plus naturelle et familière dans leur interface utilisateur, avec un équilibre entre contrôle et dynamisme. Elle permet les fonctionnalités suivantes :
+Ce type de mouvement est obtenu à l’aide du nouveau NaturalMotionAnimation – un nouveau type d’animation centré sur l’activation des développeurs pour créer des mouvements de sensation plus familiers et plus naturels dans leur interface utilisateur, avec un équilibre entre contrôle et dynamisme. Ils exposent les fonctionnalités suivantes :
 
-- Définition de valeurs de début et de fin.
-- Définition d'une InitialVelocity et liaison avec une entrée avec InteractionTracker.
-- Définition de propriétés de mouvement spécifiques (par exemple, DampingRatio pour les effets ressort.)
+- Définissez les valeurs de début et de fin.
+- Définissez InitialVelocity et liez à Input avec InteractionTracker.
+- Définir des propriétés spécifiques aux mouvements (telles que DampingRatio pour les ressorts.)
 
-Formule générale pour la prise en main :
+Formule générale pour commencer :
 
-1. Créez la NaturalMotionAnimation à partir du Compositeur à l’aide de l'une des méthodes **Créer**.
+1. Créez le NaturalMotionAnimation à partir du compositeur à l’aide de l’une des méthodes **Create** .
 1. Définissez les propriétés de l’animation.
-1. Transmettez la NaturalMotionAnimation en tant que paramètre à l’appel StartAnimation d'un CompositionObject.
-    - Ou définissez la valeur à la propriété de Mouvement d’un InertiaModifier d'InteractionTracker.
+1. Transmettez le NaturalMotionAnimation en tant que paramètre à l’appel StartAnimation d’un CompositionObject.
+    - Ou défini sur la propriété motion d’un InertiaModifier InteractionTracker.
 
-Exemple de base utilisant une NaturalMotionAnimation à effet ressort pour faire « sauter » un élément visuel vers un nouvel emplacement de décalage X :
+Exemple de base utilisant un Spring NaturalMotionAnimation pour créer un « ressort » visuel sur un nouvel emplacement de décalage X :
 
 ```csharp
 _springAnimation = _compositor.CreateSpringScalarAnimation();

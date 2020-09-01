@@ -10,12 +10,12 @@ pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 694ab7a3897bdf13189d61ab70ed05b9169b834c
-ms.sourcegitcommit: 020d0ff0e5abf46b2ed660eac61251b32bf150bc
+ms.openlocfilehash: 785047b3ee5f18fa4f6ea8fd78f6d8ab7a92e8e6
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84716037"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173423"
 ---
 # <a name="keyboard-accelerators"></a>Raccourcis clavier
 
@@ -26,7 +26,7 @@ Les touches accélérateur (ou accélérateurs clavier) sont des raccourcis clav
 Pour plus d’informations sur la navigation dans l’interface utilisateur d’une application Windows à l’aide de raccourcis clavier, consultez la rubrique [clés d’accès](access-keys.md) .
 
 > [!NOTE]
-> Un clavier est indispensable pour les utilisateurs présentant des handicaps (voir [accessibilité du clavier](https://docs.microsoft.com/windows/uwp/accessibility/keyboard-accessibility)). il est également un outil important pour les utilisateurs qui préfèrent le faire comme un moyen plus efficace d’interagir avec une application.
+> Un clavier est indispensable pour les utilisateurs présentant des handicaps (voir [accessibilité du clavier](../accessibility/keyboard-accessibility.md)). il est également un outil important pour les utilisateurs qui préfèrent le faire comme un moyen plus efficace d’interagir avec une application.
 
 ## <a name="overview"></a>Vue d’ensemble
 
@@ -54,7 +54,7 @@ Nous vous recommandons de spécifier des accélérateurs de clavier à chaque fo
 
 ## <a name="specify-a-keyboard-accelerator"></a>Spécifier une touche d’accès rapide
 
-Utilisez les API [KeyboardAccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator.-ctor) pour créer des accélérateurs de clavier dans des applications UWP. Avec ces API, vous n’êtes pas obligé de gérer plusieurs événements KeyOut pour détecter la combinaison de touches et vous pouvez localiser des accélérateurs dans les ressources de l’application.
+Utilisez les API [KeyboardAccelerator](/uwp/api/windows.ui.xaml.input.keyboardaccelerator.-ctor) pour créer des accélérateurs de clavier dans des applications UWP. Avec ces API, vous n’êtes pas obligé de gérer plusieurs événements KeyOut pour détecter la combinaison de touches et vous pouvez localiser des accélérateurs dans les ressources de l’application.
 
 Nous vous recommandons de définir des accélérateurs de clavier pour les actions les plus courantes dans votre application et de les documenter à l’aide de l’étiquette ou de l’info-bulle de l’élément de menu. Dans cet exemple, nous déclarons les accélérateurs de clavier uniquement pour les commandes de renommage et de copie.
 
@@ -129,11 +129,11 @@ Nous vous recommandons de définir des accélérateurs de clavier pour les actio
 ![Accélérateur clavier décrit dans une info-bulle](images/accelerators/accelerators_tooltip.png)  
 ***Accélérateur clavier décrit dans une info-bulle***
 
-L’objet [UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) a une collection [KeyboardAccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator) , [KeyboardAccelerators](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.KeyboardAccelerators), où vous spécifiez vos objets KeyboardAccelerator personnalisés et définissez les séquences de touches pour l’accélérateur clavier :
+L’objet [UIElement](/uwp/api/windows.ui.xaml.uielement) a une collection [KeyboardAccelerator](/uwp/api/windows.ui.xaml.input.keyboardaccelerator) , [KeyboardAccelerators](/uwp/api/windows.ui.xaml.uielement.KeyboardAccelerators), où vous spécifiez vos objets KeyboardAccelerator personnalisés et définissez les séquences de touches pour l’accélérateur clavier :
 
--   **[Key](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Key)** : [VirtualKey](https://docs.microsoft.com/uwp/api/windows.system.virtualkey) utilisé pour l’accélérateur clavier.
+-   **[Key](/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Key)** : [VirtualKey](/uwp/api/windows.system.virtualkey) utilisé pour l’accélérateur clavier.
 
--   **[Modificateurs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Modifiers)** : [VirtualKeyModifiers](https://docs.microsoft.com/uwp/api/windows.system.virtualkeymodifiers) utilisé pour l’accélérateur clavier. Si le modificateur n’est pas défini, la valeur par défaut est None.
+-   **[Modificateurs](/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Modifiers)** : [VirtualKeyModifiers](/uwp/api/windows.system.virtualkeymodifiers) utilisé pour l’accélérateur clavier. Si le modificateur n’est pas défini, la valeur par défaut est None.
 
 > [!NOTE]
 > Les accélérateurs et les accélérateurs à plusieurs clés (Ctrl + Maj + M) sont pris en charge dans une seule clé (A, Delete, F2, espace, ESC, clé multimédia). Toutefois, les clés virtuelles de manette ne sont pas prises en charge.
@@ -146,11 +146,11 @@ Par exemple, Microsoft Outlook comprend les accélérateurs suivants :
 -   CTRL + B, Ctrl + I et ESC ne fonctionnent que dans l’étendue du formulaire envoyer un e-mail
 -   CTRL + 1 et CTRL + 2 travail à l’ensemble de l’application
 
-### <a name="context-menus"></a>Les menus contextuels :
+### <a name="context-menus"></a>Menu contextuels
 
 Les actions du menu contextuel affectent uniquement des zones ou des éléments spécifiques, tels que les caractères sélectionnés dans un éditeur de texte ou une chanson dans une sélection. Pour cette raison, nous vous recommandons de définir l’étendue des accélérateurs clavier pour les éléments de menu contextuel sur le parent du menu contextuel.
 
-Utilisez la propriété [ScopeOwner](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator.ScopeOwner) pour spécifier l’étendue de l’accélérateur clavier. Ce code montre comment implémenter un menu contextuel sur un ListView avec des accélérateurs de clavier délimités :
+Utilisez la propriété [ScopeOwner](/uwp/api/windows.ui.xaml.input.keyboardaccelerator.ScopeOwner) pour spécifier l’étendue de l’accélérateur clavier. Ce code montre comment implémenter un menu contextuel sur un ListView avec des accélérateurs de clavier délimités :
 
 ``` xaml
 <ListView x:Name="MyList">
@@ -193,9 +193,9 @@ L’attribut ScopeOwner de l’élément MenuFlyoutItem. KeyboardAccelerators ma
 
 ## <a name="invoke-a-keyboard-accelerator"></a>Appeler une touche d’accès rapide 
 
-L’objet [KeyboardAccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator) utilise le [modèle de contrôle UI Automation (UIA)](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-controlpatternsoverview) pour agir lorsqu’un accélérateur est appelé.
+L’objet [KeyboardAccelerator](/uwp/api/windows.ui.xaml.input.keyboardaccelerator) utilise le [modèle de contrôle UI Automation (UIA)](/windows/desktop/WinAuto/uiauto-controlpatternsoverview) pour agir lorsqu’un accélérateur est appelé.
 
-UIA [modèles de contrôle] exposent les fonctionnalités de contrôle courantes. Par exemple, le contrôle Button implémente le modèle de contrôle [Invoke](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-implementinginvoke) pour prendre en charge l’événement Click (en général, un contrôle est appelé en cliquant, en double-cliquant, ou en appuyant sur entrée, sur un raccourci clavier prédéfini ou sur une autre combinaison de touches). Quand un accélérateur clavier est utilisé pour appeler un contrôle, l’infrastructure XAML recherche si le contrôle implémente le modèle de contrôle Invoke et, si tel est le cas, l’active (il n’est pas nécessaire d’écouter l’événement KeyboardAcceleratorInvoked).
+UIA [modèles de contrôle] exposent les fonctionnalités de contrôle courantes. Par exemple, le contrôle Button implémente le modèle de contrôle [Invoke](/windows/desktop/WinAuto/uiauto-implementinginvoke) pour prendre en charge l’événement Click (en général, un contrôle est appelé en cliquant, en double-cliquant, ou en appuyant sur entrée, sur un raccourci clavier prédéfini ou sur une autre combinaison de touches). Quand un accélérateur clavier est utilisé pour appeler un contrôle, l’infrastructure XAML recherche si le contrôle implémente le modèle de contrôle Invoke et, si tel est le cas, l’active (il n’est pas nécessaire d’écouter l’événement KeyboardAcceleratorInvoked).
 
 Dans l’exemple suivant, CTRL + S déclenche l’événement Click, car le bouton implémente le modèle Invoke.
 
@@ -217,11 +217,11 @@ Si aucune correspondance n’est identifiée, l’accélérateur n’est pas val
 
 ## <a name="custom-keyboard-accelerator-behavior"></a>Comportement de l’accélérateur de clavier personnalisé
 
-L’événement appelé de l’objet [KeyboardAccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator) est déclenché lors de l’exécution de l’accélérateur. L’objet d’événement [KeyboardAcceleratorInvokedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs) comprend les propriétés suivantes :
+L’événement appelé de l’objet [KeyboardAccelerator](/uwp/api/windows.ui.xaml.input.keyboardaccelerator) est déclenché lors de l’exécution de l’accélérateur. L’objet d’événement [KeyboardAcceleratorInvokedEventArgs](/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs) comprend les propriétés suivantes :
 
-- [**Géré**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.handled) (booléen) : l’affectation de la valeur true empêche l’événement qui déclenche le modèle de contrôle et arrête la propagation des événements d’accélérateur. La valeur par défaut est false.
-- [**Element**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.element) (DependencyObject) : objet associé à l’accélérateur.
-- [**KeyboardAccelerator**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.keyboardaccelerator): raccourci clavier utilisé pour déclencher l’événement appelé.
+- [**Géré**](/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.handled) (booléen) : l’affectation de la valeur true empêche l’événement qui déclenche le modèle de contrôle et arrête la propagation des événements d’accélérateur. La valeur par défaut est false.
+- [**Element**](/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.element) (DependencyObject) : objet associé à l’accélérateur.
+- [**KeyboardAccelerator**](/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.keyboardaccelerator): raccourci clavier utilisé pour déclencher l’événement appelé.
 
 Ici, nous montrons comment définir une collection d’accélérateurs de clavier pour les éléments d’un ListView et comment gérer l’événement appelé pour chaque accélérateur.
 
@@ -251,9 +251,9 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 ## <a name="override-default-keyboard-behavior"></a>Remplacer le comportement du clavier par défaut
 
-Certains contrôles, lorsqu’ils ont le focus, prennent en charge les accélérateurs de clavier intégrés qui remplacent tout accélérateur défini par l’application. Par exemple, lorsqu’une [zone](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox) de texte a le focus, l’accélérateur Ctrl + C copie uniquement le texte actuellement sélectionné (les accélérateurs définis par l’application sont ignorés et aucune autre fonctionnalité n’est exécutée).
+Certains contrôles, lorsqu’ils ont le focus, prennent en charge les accélérateurs de clavier intégrés qui remplacent tout accélérateur défini par l’application. Par exemple, lorsqu’une [zone](/uwp/api/windows.ui.xaml.controls.textbox) de texte a le focus, l’accélérateur Ctrl + C copie uniquement le texte actuellement sélectionné (les accélérateurs définis par l’application sont ignorés et aucune autre fonctionnalité n’est exécutée).
 
-Bien que nous ne recommandons pas de substituer les comportements de contrôle par défaut en raison de la familiarité et des attentes des utilisateurs, vous pouvez remplacer l’accélérateur clavier intégré d’un contrôle. L’exemple suivant montre comment substituer l’accélérateur clavier Ctrl + C pour une [zone de texte](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox) via le gestionnaire d’événements [PreviewKeyDown](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeydown) : 
+Bien que nous ne recommandons pas de substituer les comportements de contrôle par défaut en raison de la familiarité et des attentes des utilisateurs, vous pouvez remplacer l’accélérateur clavier intégré d’un contrôle. L’exemple suivant montre comment substituer l’accélérateur clavier Ctrl + C pour une [zone de texte](/uwp/api/windows.ui.xaml.controls.textbox) via le gestionnaire d’événements [PreviewKeyDown](/uwp/api/windows.ui.xaml.uielement.previewkeydown) : 
 
 ``` csharp
  private void TextBlock_PreviewKeyDown(object sender, KeyRoutedEventArgs e)
@@ -299,7 +299,7 @@ Les contrôles parents et enfants peuvent partager le même accélérateur. Dans
 
 ## <a name="screen-readers-and-keyboard-accelerators"></a>Lecteurs d’écran et accélérateurs de clavier 
 
-Les lecteurs d’écran tels que le narrateur peuvent annoncer la combinaison de touches d’accélérateur clavier aux utilisateurs. Par défaut, il s’agit de chaque modificateur (dans l’ordre d’énumération VirtualModifiers) suivi de la clé (et séparées par des signes « + »). Vous pouvez personnaliser ce à l’aide de la propriété jointe [AcceleratorKey](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.AcceleratorKeyProperty) AutomationProperties. Si plusieurs accélérateurs sont spécifiés, seul le premier est annoncé.
+Les lecteurs d’écran tels que le narrateur peuvent annoncer la combinaison de touches d’accélérateur clavier aux utilisateurs. Par défaut, il s’agit de chaque modificateur (dans l’ordre d’énumération VirtualModifiers) suivi de la clé (et séparées par des signes « + »). Vous pouvez personnaliser ce à l’aide de la propriété jointe [AcceleratorKey](/uwp/api/windows.ui.xaml.automation.automationproperties.AcceleratorKeyProperty) AutomationProperties. Si plusieurs accélérateurs sont spécifiés, seul le premier est annoncé.
 
 Dans cet exemple, AutomationProperty. AcceleratorKey retourne la chaîne « Control + Shift + A » :
 
@@ -365,7 +365,7 @@ Cela peut ne pas être toujours possible en raison de différences de fonctionna
 | Zoomer sur la vue par défaut | Ctrl + 0 | 
 | Enregistrer | Ctrl+S | 
 | Fermer | Ctrl+W | 
-| Print | Ctrl+P | 
+| Impression | Ctrl+P | 
 
 Notez que certaines combinaisons ne sont pas valides pour les versions localisées de Windows. Par exemple, dans la version espagnole de Windows, CTRL + N est utilisé pour le gras au lieu de CTRL + B. Nous vous recommandons de fournir des accélérateurs de clavier localisés si l’application est localisée.
 
@@ -377,7 +377,7 @@ Comme les accélérateurs de clavier ne sont généralement pas décrits directe
 
 **Windows 10, version 1803 (mise à jour d’avril 2018) et versions ultérieures**
 
-Par défaut, lorsque des accélérateurs de clavier sont déclarés, tous les contrôles (à l’exception de [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem) et [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) présentent les combinaisons de touches correspondantes dans une info-bulle.
+Par défaut, lorsque des accélérateurs de clavier sont déclarés, tous les contrôles (à l’exception de [MenuFlyoutItem](/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem) et [ToggleMenuFlyoutItem](/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) présentent les combinaisons de touches correspondantes dans une info-bulle.
 
 > [!NOTE] 
 > Si plusieurs accélérateurs sont définis pour un contrôle, seul le premier est présenté.
@@ -386,7 +386,7 @@ Par défaut, lorsque des accélérateurs de clavier sont déclarés, tous les co
 
 *Combinaison de touches d’accès rapide dans l’info-bulle*
 
-Pour les objets [Button](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button), [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)et [AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton) , l’accélérateur clavier est ajouté à l’info-bulle par défaut du contrôle. Pour les objets [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton) et [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)), l’accélérateur clavier est affiché avec le texte du menu volant.
+Pour les objets [Button](/uwp/api/windows.ui.xaml.controls.button), [AppBarButton](/uwp/api/windows.ui.xaml.controls.appbarbutton)et [AppBarToggleButton](/uwp/api/windows.ui.xaml.controls.appbartogglebutton) , l’accélérateur clavier est ajouté à l’info-bulle par défaut du contrôle. Pour les objets [MenuFlyoutItem](/uwp/api/windows.ui.xaml.controls.appbarbutton) et [ToggleMenuFlyoutItem](/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)), l’accélérateur clavier est affiché avec le texte du menu volant.
 
 > [!NOTE]
 > La spécification d’une info-bulle (voir Button1 dans l’exemple suivant) remplace ce comportement.
@@ -460,7 +460,7 @@ Pour les objets [Button](https://docs.microsoft.com/uwp/api/windows.ui.xaml.cont
 
 *Combinaison de touches d’accès rapide ajoutée au texte de MenuFlyoutItem*
 
-Contrôlez le comportement de présentation à l’aide de la propriété [KeyboardAcceleratorPlacementMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.KeyboardAcceleratorPlacementMode) , qui accepte deux valeurs : [auto](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorplacementmode) ou [Hidden](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorplacementmode).    
+Contrôlez le comportement de présentation à l’aide de la propriété [KeyboardAcceleratorPlacementMode](/uwp/api/windows.ui.xaml.uielement.KeyboardAcceleratorPlacementMode) , qui accepte deux valeurs : [auto](/uwp/api/windows.ui.xaml.input.keyboardacceleratorplacementmode) ou [Hidden](/uwp/api/windows.ui.xaml.input.keyboardacceleratorplacementmode).    
 
 ```xaml
 <Button Content="Save" Click="OnSave" KeyboardAcceleratorPlacementMode="Auto">
@@ -491,15 +491,15 @@ Ici, nous expliquons comment utiliser la propriété KeyboardAcceleratorPlacemen
 
 Dans certains cas, nous vous recommandons d’utiliser l’étiquette d’un contrôle pour déterminer si le contrôle est associé à un accélérateur clavier et, le cas échéant, la combinaison de touches accélérateur. 
 
-Certains contrôles de plateforme effectuent cette opération par défaut, en particulier les objets [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem) et [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem) , tandis que le [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton) et le [AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton) le font lorsqu’ils apparaissent dans le menu de dépassement de capacité de la [barre de commandes](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar).
+Certains contrôles de plateforme effectuent cette opération par défaut, en particulier les objets [MenuFlyoutItem](/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem) et [ToggleMenuFlyoutItem](/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem) , tandis que le [AppBarButton](/uwp/api/windows.ui.xaml.controls.appbarbutton) et le [AppBarToggleButton](/uwp/api/windows.ui.xaml.controls.appbartogglebutton) le font lorsqu’ils apparaissent dans le menu de dépassement de capacité de la [barre de commandes](/uwp/api/windows.ui.xaml.controls.commandbar).
 
 ![Raccourcis clavier décrits dans une étiquette d’élément de menu](images/accelerators/accelerators_menuitemlabel.png)  
 *Raccourcis clavier décrits dans une étiquette d’élément de menu*
 
-Vous pouvez remplacer le texte d’accélérateur par défaut de l’étiquette par le biais de la propriété [KeyboardAcceleratorTextOverride](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton.KeyboardAcceleratorTextOverride) des contrôles [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem), [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem), [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)et [AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton) (n’utilisez qu’un seul espace pour aucun texte). 
+Vous pouvez remplacer le texte d’accélérateur par défaut de l’étiquette par le biais de la propriété [KeyboardAcceleratorTextOverride](/uwp/api/windows.ui.xaml.controls.appbarbutton.KeyboardAcceleratorTextOverride) des contrôles [MenuFlyoutItem](/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem), [ToggleMenuFlyoutItem](/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem), [AppBarButton](/uwp/api/windows.ui.xaml.controls.appbarbutton)et [AppBarToggleButton](/uwp/api/windows.ui.xaml.controls.appbartogglebutton) (n’utilisez qu’un seul espace pour aucun texte). 
 
 > [!NOTE] 
-> Le texte de remplacement n’est pas présenté si le système ne parvient pas à détecter un clavier attaché (vous pouvez le vérifier vous-même à l’aide de la propriété [KeyboardPresent](https://docs.microsoft.com/uwp/api/windows.devices.input.keyboardcapabilities.KeyboardPresent) ).
+> Le texte de remplacement n’est pas présenté si le système ne parvient pas à détecter un clavier attaché (vous pouvez le vérifier vous-même à l’aide de la propriété [KeyboardPresent](/uwp/api/windows.devices.input.keyboardcapabilities.KeyboardPresent) ).
 
 ## <a name="advanced-concepts"></a>Concepts avancés
 
@@ -507,7 +507,7 @@ Ici, nous allons examiner certains aspects de bas niveau des accélérateurs cla
 
 ### <a name="when-an-accelerator-is-invoked"></a>Quand un accélérateur est appelé
 
-Les accélérateurs sont composés de deux types de clés : les modificateurs et les non-modificateurs. Les touches de modification incluent Maj, menu, contrôle et la touche Windows, qui sont exposées par le biais de [VirtualKeyModifiers](https://docs.microsoft.com/uwp/api/Windows.System.VirtualKeyModifiers). Les non-modificateurs sont des clés virtuelles, telles que Delete, F3, la barre d’espace, ÉCHAP et toutes les touches de ponctuation et alphanumériques. Une touche d’accès rapide est appelée quand l’utilisateur appuie sur une touche non modificatrice tout en maintenant enfoncée une ou plusieurs touches de modification. Par exemple, si l’utilisateur appuie sur Ctrl + Maj + M, quand l’utilisateur appuie sur M, le Framework vérifie les modificateurs (Ctrl et Maj) et déclenche l’accélérateur, s’il existe.
+Les accélérateurs sont composés de deux types de clés : les modificateurs et les non-modificateurs. Les touches de modification incluent Maj, menu, contrôle et la touche Windows, qui sont exposées par le biais de [VirtualKeyModifiers](/uwp/api/Windows.System.VirtualKeyModifiers). Les non-modificateurs sont des clés virtuelles, telles que Delete, F3, la barre d’espace, ÉCHAP et toutes les touches de ponctuation et alphanumériques. Une touche d’accès rapide est appelée quand l’utilisateur appuie sur une touche non modificatrice tout en maintenant enfoncée une ou plusieurs touches de modification. Par exemple, si l’utilisateur appuie sur Ctrl + Maj + M, quand l’utilisateur appuie sur M, le Framework vérifie les modificateurs (Ctrl et Maj) et déclenche l’accélérateur, s’il existe.
 
 > [!NOTE]
 > Par défaut, l’accélérateur se répète (par exemple, lorsque l’utilisateur appuie sur Ctrl + Maj, puis maintient la touche M enfoncée, l’accélérateur est appelé à plusieurs reprises jusqu’à ce que M soit relâché). Ce comportement ne peut pas être modifié.
@@ -519,11 +519,11 @@ Les événements d’entrée se produisent dans une séquence spécifique que vo
 
 En XAML, une séquence de touches est traitée comme s’il s’agissait d’un seul pipeline de propagation d’entrée. Ce pipeline d’entrée est utilisé par les événements KEYpoint/KeyUp et l’entrée de caractère. Par exemple, si un élément a le focus et que l’utilisateur appuie sur une touche enfoncée, un événement keyverse est déclenché sur l’élément, suivi du parent de l’élément, et ainsi de suite jusqu’à l’arborescence, jusqu’aux arguments. La propriété gérée a la valeur true.
 
-L’événement KeyOut est également utilisé par certains contrôles pour implémenter les accélérateurs de contrôle intégrés. Lorsqu’un contrôle a une touche d’accès rapide, il gère l’événement KeyOut, ce qui signifie qu’il n’y aura pas de propagation d’événements KeyOut. Par exemple, le RichEditBox prend en charge la copie avec Ctrl + C. Quand la touche CTRL est enfoncée, l’événement KeyOut est déclenché et se propage, mais lorsque l’utilisateur appuie sur C en même temps, l’événement keyverse est marqué comme géré et n’est pas déclenché (sauf si le paramètre handledEventsToo de [UIElement. AddHandler](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler) a la valeur true).
+L’événement KeyOut est également utilisé par certains contrôles pour implémenter les accélérateurs de contrôle intégrés. Lorsqu’un contrôle a une touche d’accès rapide, il gère l’événement KeyOut, ce qui signifie qu’il n’y aura pas de propagation d’événements KeyOut. Par exemple, le RichEditBox prend en charge la copie avec Ctrl + C. Quand la touche CTRL est enfoncée, l’événement KeyOut est déclenché et se propage, mais lorsque l’utilisateur appuie sur C en même temps, l’événement keyverse est marqué comme géré et n’est pas déclenché (sauf si le paramètre handledEventsToo de [UIElement. AddHandler](/uwp/api/windows.ui.xaml.uielement.addhandler) a la valeur true).
 
 #### <a name="the-characterreceived-event"></a>Événement CharacterReceived
 
-Lorsque l’événement [CharacterReceived](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.CharacterReceived) est déclenché après l’événement KeyOut [pour les contrôles](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.KeyDown) de texte tels que TextBox, vous pouvez annuler l’entrée de caractères dans le gestionnaire d’événements KeyOut.
+Lorsque l’événement [CharacterReceived](/uwp/api/windows.ui.core.corewindow.CharacterReceived) est déclenché après l’événement KeyOut [pour les contrôles](/uwp/api/windows.ui.core.corewindow.KeyDown) de texte tels que TextBox, vous pouvez annuler l’entrée de caractères dans le gestionnaire d’événements KeyOut.
 
 #### <a name="the-previewkeydown-and-previewkeyup-events"></a>Événements PreviewKeyDown et PreviewKeyUp
 
@@ -551,9 +551,9 @@ Les accélérateurs de clavier délimités sont appelés uniquement lorsque le f
 
 ### <a name="scoping-accelerators-programmatically"></a>Étendue des accélérateurs par programmation
 
-La méthode [UIElement. TryInvokeKeyboardAccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.tryinvokekeyboardaccelerator) appelle tous les accélérateurs correspondants dans la sous-arborescence de l’élément.
+La méthode [UIElement. TryInvokeKeyboardAccelerator](/uwp/api/windows.ui.xaml.uielement.tryinvokekeyboardaccelerator) appelle tous les accélérateurs correspondants dans la sous-arborescence de l’élément.
 
-La méthode [UIElement. OnProcessKeyboardAccelerators](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.onprocesskeyboardaccelerators) est exécutée avant l’accélérateur clavier. Cette méthode passe un objet [ProcessKeyboardAcceleratorArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.processkeyboardacceleratoreventargs) qui contient la clé, le modificateur et une valeur booléenne indiquant si l’accélérateur clavier est géré. S’il est marqué comme étant géré, l’accélérateur de clavier se propage (l’accélérateur de clavier externe n’est donc jamais appelé).
+La méthode [UIElement. OnProcessKeyboardAccelerators](/uwp/api/windows.ui.xaml.uielement.onprocesskeyboardaccelerators) est exécutée avant l’accélérateur clavier. Cette méthode passe un objet [ProcessKeyboardAcceleratorArgs](/uwp/api/windows.ui.xaml.input.processkeyboardacceleratoreventargs) qui contient la clé, le modificateur et une valeur booléenne indiquant si l’accélérateur clavier est géré. S’il est marqué comme étant géré, l’accélérateur de clavier se propage (l’accélérateur de clavier externe n’est donc jamais appelé).
 
 > [!NOTE]
 > OnProcessKeyboardAccelerators se déclenche toujours, qu’il soit géré ou non (semblable à l’événement OnKeyDown). Vous devez vérifier si l’événement a été marqué comme géré.
@@ -612,7 +612,7 @@ void AddAccelerator(
 
 ### <a name="override-keyboard-accelerator-behavior"></a>Remplacer le comportement de l’accélérateur du clavier
 
-Vous pouvez gérer l’événement [KeyboardAccelerator. invoked](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Invoked) pour remplacer le comportement de KeyboardAccelerator par défaut.
+Vous pouvez gérer l’événement [KeyboardAccelerator. invoked](/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Invoked) pour remplacer le comportement de KeyboardAccelerator par défaut.
 
 Cet exemple montre comment remplacer la commande « Sélectionner tout » (raccourci clavier Ctrl + A) dans un contrôle ListView personnalisé. Nous définissons également la propriété Handled sur true pour arrêter davantage la propagation des événements.
 
@@ -635,7 +635,7 @@ public class MyListView : ListView
 
 ## <a name="related-articles"></a>Articles connexes
 
-- [Interactions du clavier](keyboard-interactions.md)
+- [Interactions avec le clavier](keyboard-interactions.md)
 - [Clés d’accès](access-keys.md)
 
 ### <a name="samples"></a>Exemples

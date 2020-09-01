@@ -4,14 +4,14 @@ description: Utilisez les API de casque Windows.Gaming.Input pour détecter les 
 ms.assetid: 021CCA26-D339-4C8B-B084-0D499BD83ABE
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp, jeux, casque
+keywords: Windows 10, UWP, jeux, casque
 ms.localizationpriority: medium
-ms.openlocfilehash: 73815fb3f1b732537e9f08932639a1eccd7ed1b0
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 5e5b0894dbab03490cb74bdae8c231b57d397cb4
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368625"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175293"
 ---
 # <a name="headset"></a>Casque
 
@@ -65,12 +65,12 @@ inputDevice.HeadsetDisconnected += ref new TypedEventHandler<IGameController^, H
 
 La classe [Headset][] est constituée de deux chaînes qui représentent les ID du point de terminaison XAudio : l’un pour la capture audio (enregistrement à partir du microphone sur casque) et l’autre pour la restitution audio (lecture via l’écouteur du casque).
 
-Les détails de l’utilisation du point de terminaison XAudio ne sont pas couverts ici. Pour en savoir plus, voir le [Guide de programmation XAudio2](https://docs.microsoft.com/windows/desktop/xaudio2/programming-guide) et les [informations de référence sur l’API XAudio2](https://docs.microsoft.com/windows/desktop/xaudio2/programming-reference).
+Les détails de l’utilisation du point de terminaison XAudio ne sont pas couverts ici. Pour en savoir plus, voir le [Guide de programmation XAudio2](/windows/desktop/xaudio2/programming-guide) et les [informations de référence sur l’API XAudio2](/windows/desktop/xaudio2/programming-reference).
 
 
-[Windows.Gaming.Input]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.aspx
-[igamecontroller]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.aspx
-[igamecontroller.headset]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.headset.aspx
-[igamecontroller.headsetconnected]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.headsetconnected.aspx
-[igamecontroller.headsetdisconnected]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.headsetdisconnected.aspx
-[headset]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.headset.aspx
+[Windows. Gaming. Input]: /uwp/api/Windows.Gaming.Input
+[igamecontroller]: /uwp/api/Windows.Gaming.Input.IGameController
+[igamecontroller.headset]: /uwp/api/Windows.Gaming.Input.IGameController
+[igamecontroller.headsetconnected]: /uwp/api/Windows.Gaming.Input.IGameController
+[igamecontroller.headsetdisconnected]: /uwp/api/Windows.Gaming.Input.IGameController
+[combiné]: /uwp/api/Windows.Gaming.Input.Headset

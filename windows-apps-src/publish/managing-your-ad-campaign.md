@@ -6,19 +6,19 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a2cccf0392c4e71cc76449d1cfe505af092871e
-ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
+ms.openlocfilehash: 92f670fbacef8c3e87cf1b3389a3d8ab9a9db444
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88970147"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174773"
 ---
 # <a name="manage-your-ad-campaign"></a>Gérer votre campagne de publicité
 
 >[!WARNING]
 > Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
-Pour gérer les campagnes de publicité pour votre application dans l' [espace partenaires](https://partner.microsoft.com/dashboard), développez **attirer** dans le menu de navigation de gauche, puis sélectionnez **campagnes Active Directory**. Vous verrez toutes les campagnes publicitaires associées à vos applications, ainsi que les impressions, les clics et les installations pour chaque campagne publicitaire. Pour plus d’informations sur les impressions, les clics et les installations, consultez les définitions de ces termes dans le [rapport des campagnes Active Directory](promote-your-app-report.md).
+Pour gérer les campagnes de publicité pour votre application dans l' [espace partenaires](https://partner.microsoft.com/dashboard), développez **attirer** dans le menu de navigation de gauche, puis sélectionnez **campagnes Active Directory**. Vous verrez toutes les campagnes publicitaires associées à vos applications, ainsi que les impressions, les clics et les installations pour chaque campagne publicitaire. Pour plus d’informations sur les impressions, les clics et les installations, consultez les définitions de ces termes dans le [rapport des campagnes Active Directory](/windows/uwp/publish/ad-campaign-report).
 
 Pour filtrer la liste des campagnes de publicité, cliquez sur la liste déroulante **Filtres de section** et faites votre choix parmi les filtres suivants :
 
@@ -33,7 +33,7 @@ Pour filtrer la liste des campagnes de publicité, cliquez sur la liste déroula
 ## <a name="reporting"></a>Rapports
 
 
-Les détails du rapport sont affichés dans cette page. Pour plus d’informations, consultez [rapport des campagnes Active Directory](promote-your-app-report.md).
+Les détails du rapport sont affichés dans cette page. Pour plus d’informations, consultez [rapport des campagnes Active Directory](/windows/uwp/publish/ad-campaign-report).
 
 
 ## <a name="edit-an-ad-campaign"></a>Modifier une campagne de publicité
@@ -46,12 +46,8 @@ Pour apporter des modifications à une campagne de publicité, cliquez sur son n
 
 * [Création d’une campagne de publicité pour votre application](create-an-ad-campaign-for-your-app.md)
 * [À propos des publicités maison](about-house-ads.md)
-* [Rapport de publicité sur l’installation d’applications](app-install-ads-reports.md)
+* [Rapport de publicité sur l’installation d’applications](/windows/uwp/publish/ad-campaign-report)
 * [Questions courantes](common-questions.md)
  
 
  
-
-
-
-

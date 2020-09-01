@@ -9,12 +9,12 @@ ms.date: 12/07/2018
 ms.topic: article
 keywords: Windows 10, UWP, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
-ms.openlocfilehash: d60f0e825cefec0ba6ad5bcdd6a705f0992019b4
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 479b5d21e40b998fac9380d34be1a50d7d87e9e0
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82967914"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173473"
 ---
 # <a name="globalization-and-localization"></a>Globalisation et localisation
 
@@ -38,7 +38,7 @@ Votre code doit fonctionner tout aussi bien dans les cultures que vous avez déc
 - Tri des règles
 
 >[!NOTE]
-> Pour obtenir la liste des noms de paramètres régionaux pris en charge par la version du système d’exploitation Windows, consultez la colonne balise de langue du tableau de l' [annexe a : comportement du produit](https://docs.microsoft.com/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c) dans la [référence LCID (Language code identifier) de Windows](https://docs.microsoft.com/openspecs/windows_protocols/ms-lcid/70feba9f-294e-491e-b6eb-56532684c37f).
+> Pour obtenir la liste des noms de paramètres régionaux pris en charge par la version du système d’exploitation Windows, consultez la colonne balise de langue du tableau de l' [annexe a : comportement du produit](/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c) dans la [référence LCID (Language code identifier) de Windows](/openspecs/windows_protocols/ms-lcid/70feba9f-294e-491e-b6eb-56532684c37f).
 
 L' **adaptabilité** est le processus qui consiste à préparer une application globalisée pour la localisation et/ou à vérifier que l’application est prête pour la localisation. Le fait de rendre une application localisable de manière appropriée signifie que le processus de localisation ultérieur ne dévoilera pas les défauts fonctionnels de l’application. La propriété la plus essentielle d’une application localisable est que son code exécutable a été séparé proprement des ressources localisables de l’application.
 
@@ -58,7 +58,7 @@ La plupart des équipes de localisation utilisent des outils spéciaux pour faci
 | Article | Description |
 |---------|-------------|
 | [Directives relatives à la globalisation](guidelines-and-checklist-for-globalizing-your-app.md) | Concevez et développez votre application de façon à ce qu’elle fonctionne correctement sur les systèmes avec des configurations de langue et de culture différentes. |
-| [Comprendre les langages de profil utilisateur et les langages du manifeste d’application](manage-language-and-region.md) | Cette rubrique définit les termes « liste des langues du profil utilisateur », « liste des langues du manifeste de l’application » et « liste des langues du runtime de l’application ». Nous utiliserons ces termes dans cette rubrique et d’autres sujets dans ce domaine de fonctionnalités. il est donc important de savoir ce qu’ils signifient. |
+| [Comprendre les langues de profil utilisateur et les langues du manifeste de l’application](manage-language-and-region.md) | Cette rubrique définit les termes « liste des langues du profil utilisateur », « liste des langues du manifeste de l’application » et « liste des langues du runtime de l’application ». Nous utiliserons ces termes dans cette rubrique et d’autres sujets dans ce domaine de fonctionnalités. il est donc important de savoir ce qu’ils signifient. |
 | [Globaliser vos formats de date/heure/chiffres](use-global-ready-formats.md) | Concevez votre application pour qu’elle soit prête à l’international en mettant en forme de manière appropriée les dates, les heures, les nombres, les numéros de téléphone et les devises. Vous pourrez ensuite adapter votre application à des cultures, régions et langues supplémentaires sur le marché mondial. |
 | [Utiliser des modèles de format des dates et heures](use-patterns-to-format-dates-and-times.md) | Utilisez les classes de l’espace de noms [**Windows. Globalization. DateTimeFormatting**](/uwp/api/windows.globalization.datetimeformatting?branch=live) avec des modèles et modèles personnalisés pour afficher les dates et les heures exactement au format de votre choix. |
 | [Ajuster la disposition et les polices, et prendre en charge le sens du flux DàG](adjust-layout-and-fonts--and-support-rtl.md) | Concevez votre application pour prendre en charge les dispositions et les polices de plusieurs langues, y compris le sens du déroulement de droite à gauche. |

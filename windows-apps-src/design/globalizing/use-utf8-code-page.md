@@ -1,21 +1,21 @@
 ---
-Description: Utilisez l’encodage de caractères UTF-8 pour une compatibilité optimale entre les applications Web et d’autres plateformes basées sur \*Nix (UNIX, Linux et variantes), réduisez les bogues de localisation et réduisez la charge de test.
+Description: Utilisez l’encodage de caractères UTF-8 pour une compatibilité optimale entre les applications Web et d’autres \* plateformes Nix (UNIX, Linux et variantes), réduisez les bogues de localisation et réduisez la charge de test.
 title: Utiliser la page de codes Windows UTF-8
 template: detail.hbs
 ms.date: 06/12/2019
 ms.topic: article
-keywords: windows 10, uwp, globalisation, adaptabilité, localisation
+keywords: Windows 10, UWP, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b4050dfea1589fbe79db08061bcc56e392173f1
-ms.sourcegitcommit: 13ce25364201223e21e2e5e89f99bc7aa4d93f56
+ms.openlocfilehash: 72e422ee3e1a911658b2fe4957967aeba116c353
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73847599"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173463"
 ---
 # <a name="use-the-utf-8-code-page"></a>Utiliser la page de codes UTF-8
 
-Utilisez l’encodage de caractères [UTF-8](http://www.utf-8.com/) pour une compatibilité optimale entre les applications Web et d’autres plateformes basées sur \*Nix (UNIX, Linux et variantes), réduisez les bogues de localisation et réduisez la charge de test.
+Utilisez l’encodage de caractères [UTF-8](http://www.utf-8.com/) pour une compatibilité optimale entre les applications Web et d’autres \* plateformes Nix (UNIX, Linux et variantes), réduisez les bogues de localisation et réduisez la charge de test.
 
 UTF-8 est la page de codes universelle pour l’internationalisation et peut encoder l’ensemble du jeu de caractères Unicode. Il est utilisé de façon omniprésente sur le Web et est la valeur par défaut pour les plateformes * nix.
 
@@ -26,7 +26,7 @@ UTF-8 est la page de codes universelle pour l’internationalisation et peut enc
   
 Les API Win32 prennent souvent en charge les variantes-A et-W.
 
--Les variantes reconnaissent la page de codes ANSI configurée sur le système et prennent en charge les `char*`, tandis que les variantes-W fonctionnent en UTF-16 et prennent en charge les `WCHAR`.
+-Les variantes reconnaissent la page de codes ANSI configurée sur le système et la prise en charge `char*` , tandis que les variantes-W fonctionnent en UTF-16 et prennent en charge `WCHAR` .
 
 Jusqu’à récemment, Windows a mis en évidence « Unicode »-W variantes par rapport à des API. Toutefois, les versions récentes ont utilisé la page de codes ANSI et les API-A comme moyen d’introduire la prise en charge d’UTF-8 pour les applications. Si la page de codes ANSI est configurée pour UTF-8,-les API fonctionnent en UTF-8. Ce modèle présente l’avantage de prendre en charge le code existant généré à l’aide d’API-A sans modification du code.
 
@@ -78,15 +78,15 @@ Vous pouvez déclarer cette propriété et la cible/exécuter sur des versions p
 
 ## <a name="code-page-conversion"></a>Conversion de page de codes
 
-Comme Windows fonctionne en mode natif au format UTF-16 (`WCHAR`), vous devrez peut-être convertir les données UTF-8 en UTF-16 (ou vice versa) pour interagir avec les API Windows.
+Comme Windows fonctionne en mode natif dans UTF-16 ( `WCHAR` ), vous devrez peut-être convertir les données UTF-8 en UTF-16 (ou vice versa) pour interagir avec les API Windows.
 
-[MultiByteToWideChar](https://docs.microsoft.com/windows/desktop/api/stringapiset/nf-stringapiset-multibytetowidechar) et [WideCharToMultiByte](https://docs.microsoft.com/windows/desktop/api/stringapiset/nf-stringapiset-widechartomultibyte) vous permettent d’effectuer une conversion entre UTF-8 et utf-16 (`WCHAR`) (et d’autres pages de codes). Cela s’avère particulièrement utile quand une API Win32 héritée peut uniquement comprendre `WCHAR`. Ces fonctions vous permettent de convertir une entrée UTF-8 en `WCHAR` à transmettre dans une API-W, puis de convertir tous les résultats si nécessaire.
-Lors de l’utilisation de ces fonctions avec `CodePage` défini sur `CP_UTF8`, utilisez `dwFlags` de `0` ou de `MB_ERR_INVALID_CHARS`, sinon une `ERROR_INVALID_FLAGS` se produit.
+[MultiByteToWideChar](/windows/desktop/api/stringapiset/nf-stringapiset-multibytetowidechar) et [WideCharToMultiByte](/windows/desktop/api/stringapiset/nf-stringapiset-widechartomultibyte) vous permettent de convertir des pages de codes UTF-8 et UTF-16 ( `WCHAR` ). Cela s’avère particulièrement utile quand une API Win32 héritée peut uniquement comprendre `WCHAR` . Ces fonctions vous permettent de convertir une entrée UTF-8 en `WCHAR` valeur pour passer à l’API a-W, puis de convertir tous les résultats si nécessaire.
+Lors de l’utilisation de ces fonctions avec la `CodePage` valeur `CP_UTF8` , l’utilisation `dwFlags` de `0` ou de `MB_ERR_INVALID_CHARS` , sinon, `ERROR_INVALID_FLAGS` se produit.
 
 > [!NOTE]
-> `CP_ACP` équivaut à `CP_UTF8` uniquement si l’exécution sur Windows version 1903 (mise à jour 2019 mai) ou supérieure et que la propriété ActiveCodePage décrite ci-dessus est définie sur UTF-8. Dans le cas contraire, elle honore la page de codes système héritée. Nous vous recommandons d’utiliser `CP_UTF8` explicitement.
+> `CP_ACP` équivaut à `CP_UTF8` uniquement en cas d’exécution sur Windows Version 1903 (mise à jour de mai 2019) ou version ultérieure et que la propriété ActiveCodePage décrite ci-dessus est définie sur UTF-8. Dans le cas contraire, elle honore la page de codes système héritée. Nous vous recommandons d’utiliser `CP_UTF8` explicitement.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-- [Pages de codes](https://docs.microsoft.com/windows/desktop/Intl/code-pages)
-- [Identificateurs de page de codes](https://docs.microsoft.com/windows/desktop/Intl/code-page-identifiers)
+- [Pages de codes](/windows/desktop/Intl/code-pages)
+- [Identificateurs de page de codes](/windows/desktop/Intl/code-page-identifiers)

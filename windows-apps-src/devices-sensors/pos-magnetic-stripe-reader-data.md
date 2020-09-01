@@ -1,16 +1,16 @@
 ---
 title: Obtenir et comprendre les données de bande magnétique
-description: Découvrez comment obtenir et interpréter les données à partir d’une bande magnétique.
+description: Découvrez comment obtenir et interpréter les données à partir d’un lecteur de bande magnétique à l’aide d’API de point de service (UWP) plateforme Windows universelle (UWP).
 ms.date: 10/04/2018
 ms.topic: article
 keywords: Windows 10, UWP, point de service, pos, lecteur de bande magnétique
 ms.localizationpriority: medium
-ms.openlocfilehash: eb4238d35497bdd90671dd0b6fa63d589c0ec740
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 2a405a66fbc243925c4c9bbd5b1ee499a9a7b9f8
+ms.sourcegitcommit: e273e5901bfa6596dfef4cc741bb1c42614c25ab
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173263"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89238274"
 ---
 # <a name="obtain-and-understand-magnetic-stripe-data"></a>Obtenir et comprendre les données de bande magnétique
 

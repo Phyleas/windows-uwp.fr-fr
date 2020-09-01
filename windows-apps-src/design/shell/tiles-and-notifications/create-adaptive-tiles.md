@@ -8,21 +8,21 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bbc0f23ad712850e565814febe5b7e681e58a85d
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 7cee236b385b6129e7ab1a9cacd549f217f6e734
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234574"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175603"
 ---
 # <a name="create-adaptive-tiles"></a>Créer des vignettes adaptatives
 
 Les modèles de vignette adaptative sont une nouvelle fonctionnalité de Windows 10, qui vous permet de concevoir votre propre contenu de notification par vignette à l’aide d’un langage de balisage simple et flexible adapté à différentes densités d’écran. Cet article vous indique comment créer des vignettes dynamiques adaptatives pour votre application Windows. Pour obtenir la liste complète des éléments et attributs adaptatifs, voir [Schéma des vignettes adaptatives](../tiles-and-notifications/tile-schema.md).
 
-(Si vous le souhaitez, vous pouvez toujours utiliser les modèles prédéfinis du [catalogue de modèles de vignette Windows 8](https://docs.microsoft.com/previous-versions/windows/apps/hh761491(v=win.10)) lors de la conception de notifications pour Windows 10.)
+(Si vous le souhaitez, vous pouvez toujours utiliser les modèles prédéfinis du [catalogue de modèles de vignette Windows 8](/previous-versions/windows/apps/hh761491(v=win.10)) lors de la conception de notifications pour Windows 10.)
 
 
-## <a name="getting-started"></a>Prise en main
+## <a name="getting-started"></a>Mise en route
 
 **Installez la bibliothèque Notifications.** Si vous préférez utiliser C# plutôt que XML pour générer les notifications, installez le package NuGet [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) (recherchez « notifications uwp ». Les exemples de code C# indiqués dans cet article utilisent la version 1.0.0 du package NuGet.
 
@@ -107,7 +107,7 @@ TileContent content = new TileContent()
 };
 ```
 
-**Résultat :**
+**Résultat :**
 
 ![exemple de vignette rapide](images/adaptive-tiles-quicksample.png)
 
@@ -199,7 +199,7 @@ TileContent content = new TileContent()
 };
 ```
 
-**Résultat :**
+**Résultat :**
 
 ![tailles de vignettes adaptatives : petite, moyenne, large et grande](images/adaptive-tiles-sizes.png)
 
@@ -226,7 +226,7 @@ new TileVisual()
 }
 ```
 
-**Résultat :**
+**Résultat :**
 
 ![Vignettes adaptatives, nom et logo](images/adaptive-tiles-namelogo.png)
 
@@ -284,7 +284,7 @@ Si vous ne spécifiez aucune personnalisation dans votre charge utile de notific
 
  
 
-## <a name="display-name"></a>Nom complet
+## <a name="display-name"></a>Nom d’affichage
 
 
 Vous pouvez remplacer le nom d’affichage d’une notification en entrant la chaîne de texte de votre choix avec l’attribut **displayName**. Comme pour la personnalisation, vous pouvez spécifier cela sur l’élément [TileVisual](../tiles-and-notifications/tile-schema.md#tilevisual) , ce qui affecte l’intégralité de la charge utile de notification, ou sur l’élément [TileBinding](../tiles-and-notifications/tile-schema.md#tilebinding) , qui affecte uniquement les vignettes individuelles.
@@ -331,11 +331,11 @@ TileContent content = new TileContent()
 };
 ```
 
-**Résultat :**
+**Résultat :**
 
 ![Nom d’affichage des vignettes adaptatives](images/adaptive-tiles-displayname.png)
 
-## <a name="text"></a>Texte
+## <a name="text"></a>Text
 
 
 L’élément [AdaptiveText](../tiles-and-notifications/tile-schema.md#adaptivetext) est utilisé pour afficher le texte. Vous pouvez utiliser des indications pour en modifier l’apparence.
@@ -352,7 +352,7 @@ new AdaptiveText()
 };
 ```
 
-**Résultat :**
+**Résultat :**
 
 ![Texte de vignette adaptative](images/adaptive-tiles-text.png)
 
@@ -374,7 +374,7 @@ new AdaptiveText()
 };
 ```
 
-**Résultat :**
+**Résultat :**
 
 ![Vignette adaptative avec renvoi de texte à la ligne](images/adaptive-tiles-textwrapping.png)
 
@@ -402,7 +402,7 @@ new AdaptiveText()
 }
 ```
 
-**Résultat :**
+**Résultat :**
 
 ![Styles de texte des vignettes adaptatives](images/adaptive-tiles-textstyles.png)
 
@@ -420,8 +420,8 @@ new AdaptiveText()
 | base                           | 15 epx                    | Demi-gras    |
 | subtitle                       | 20 epx                    | Normal     |
 | title                          | 24 epx                    | Semilight   |
-| sous-titre                      | 34 epx                    | Léger       |
-| en-tête                         | 46 epx                    | Léger       |
+| sous-titre                      | 34 epx                    | Clair       |
+| en-tête                         | 46 epx                    | Clair       |
 
  
 
@@ -474,7 +474,7 @@ new AdaptiveText()
 };
 ```
 
-**Résultat :**
+**Résultat :**
 
 ![Alignement du texte des vignettes adaptatives](images/adaptive-tiles-textalignment.png)
 
@@ -569,7 +569,7 @@ private static AdaptiveGroup CreateGroup(string from, string subject, string bod
 }
 ```
 
-**Résultat :**
+**Résultat :**
 
 ![Groupes et sous-groupes de vignettes adaptatives](images/adaptive-tiles-groups-subgroups.png)
 
@@ -592,19 +592,19 @@ L’attribut **hint-weight** vous permet de contrôler la largeur des colonnes. 
 </tr>
 <tr class="even">
 <td align="left">1</td>
-<td align="left">25 %</td>
+<td align="left">25%</td>
 </tr>
 <tr class="odd">
 <td align="left">1</td>
-<td align="left">25 %</td>
+<td align="left">25%</td>
 </tr>
 <tr class="even">
 <td align="left">1</td>
-<td align="left">25 %</td>
+<td align="left">25%</td>
 </tr>
 <tr class="odd">
 <td align="left">1</td>
-<td align="left">25 %</td>
+<td align="left">25%</td>
 </tr>
 <tr class="even">
 <td align="left">Pondération totale : 4</td>
@@ -631,11 +631,11 @@ Pour qu’une colonne soit deux fois plus large qu’une autre colonne, attribue
 </tr>
 <tr class="even">
 <td align="left">1</td>
-<td align="left">33,3 %</td>
+<td align="left">33,3 %</td>
 </tr>
 <tr class="odd">
 <td align="left">2</td>
-<td align="left">66,7 %</td>
+<td align="left">66,7 %</td>
 </tr>
 <tr class="even">
 <td align="left">Pondération totale : 3</td>
@@ -666,7 +666,7 @@ Si vous souhaitez que les première et seconde colonnes occupent respectivement 
 </tr>
 <tr class="odd">
 <td align="left">80</td>
-<td align="left">80 %</td>
+<td align="left">80 %</td>
 </tr>
 <tr class="even">
 <td align="left">Pondération totale : 100</td>
@@ -783,7 +783,7 @@ private static AdaptiveSubgroup CreateSubgroup(string day, string image, string 
 }
 ```
 
-**Résultat :**
+**Résultat :**
 
 ![Exemple d’une vignette météo](images/adaptive-tiles-weathertile.png)
 
@@ -871,7 +871,7 @@ private static AdaptiveSubgroup CreateSubgroup(string day, string image, string 
 }
 ```
 
-**Résultat :**
+**Résultat :**
 
 ![Exemple d’image](images/adaptive-tiles-images01.png)
 
@@ -904,7 +904,7 @@ TileLarge = new TileBinding()
 }
 ```
 
-**Résultat :**
+**Résultat :**
 
 ![Exemple d’alignement d’images (à gauche, au centre, à droite)](images/adaptive-tiles-imagealignment.png)
 
@@ -1052,7 +1052,7 @@ TileLarge = new TileBinding()
 }
 ```
 
-**Résultat :**
+**Résultat :**
 
 ![exemple de rognage d’image](images/adaptive-tiles-imagecropping.png)
 
@@ -1134,7 +1134,7 @@ private static AdaptiveSubgroup CreateSubgroup(string day, string image, string 
 }
 ```
 
-**Résultat :**
+**Résultat :**
 
 ![exemple d’image d’arrière-plan](images/adaptive-tiles-backgroundimage.png)
 
@@ -1399,7 +1399,3 @@ TileWide = new TileBinding()
  
 
  
-
-
-
-

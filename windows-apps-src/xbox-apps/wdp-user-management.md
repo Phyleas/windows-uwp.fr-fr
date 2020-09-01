@@ -1,16 +1,16 @@
 ---
 title: Informations de référence sur les API de gestion des utilisateurs test Xbox Live
-description: Découvrez comment accéder par programme aux API de gestion des utilisateurs.
+description: Découvrez comment obtenir ou mettre à jour la liste des utilisateurs sur la console à l’aide de l’API REST du portail d’appareils Xbox.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.assetid: 70876ab6-8222-4940-b4fb-65b581a77d6a
-ms.openlocfilehash: 52f333af73084ed14982b9d09b6770c8294980f7
-ms.sourcegitcommit: 6169660ea437915265165c4631d9702587e4793d
+ms.openlocfilehash: 0f05bc84469585fc10bfff6a7f0d0f0976a0080d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74902525"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174673"
 ---
 # <a name="xbox-live-user-management"></a>Gestion des utilisateurs Xbox Live
 
@@ -18,19 +18,19 @@ ms.locfileid: "74902525"
 
 Vous pouvez obtenir la liste des utilisateurs sur la console, ou mettre à jour la liste en ajoutant des utilisateurs ou en supprimant, connectant, déconnectant ou modifiant des utilisateurs existants.
 
-| Méthode        | URI de requête     | 
+| Méthode        | URI de demande     | 
 | ------------- |-----------------|
 | GET           | /ext/user |
 | PUT           | /ext/user |
 
 
-**Paramètres URI**
+**Paramètres d’URI**
 
-* Aucun(e)
+* Aucune
 
 **En-têtes de requête**
 
-* Aucun(e)
+* Aucune
 
 **Corps de la demande**
 
@@ -45,7 +45,7 @@ Les appels à PUT doivent inclure un tableau JSON ayant la structure suivante :
   * SponsoredUser (facultatif) : valeur booléenne indiquant s’il convient d’ajouter un utilisateur sponsorisé.
   * Delete (facultatif) : bool en spécifiant pour supprimer cet utilisateur de la console
 
-## <a name="response"></a>Réponse
+## <a name="response"></a>response
 
 **Corps de la réponse**
 
@@ -60,11 +60,11 @@ Les appels à GET renvoient un tableau JSON ayant les propriétés suivantes :
   * XboxUserId
   * SponsoredUser (facultatif)
   
-**Code d’État**
+**Code d’état**
 
 Cette API comporte les codes d’état attendus suivants.
 
-| Code d’état HTTP   | Description     | 
+| Code d'état HTTP   | Description     | 
 | ------------------ |-----------------|
 | 200                | L’appel à GET a réussi et le tableau JSON des utilisateurs a été renvoyé dans le corps de réponse. |
 | 204                | L’appel à PUT a réussi et les utilisateurs sur la console ont été mis à jour. |
