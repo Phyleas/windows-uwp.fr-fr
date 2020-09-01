@@ -1,37 +1,37 @@
 ---
-Description: Découvrez comment utiliser la puissante fonctionnalité de suivi des visites pour améliorer le suivi de l’emplacement.
-title: Instructions pour l'utilisation du suivi des visites
+Description: Découvrez comment utiliser la puissante fonctionnalité de suivi des visites pour rendre plus pratique le suivi de l’emplacement.
+title: Instructions pour l’utilisation du suivi des visites
 ms.assetid: 0c101684-48a9-4592-9ed5-6c20f3b830f2
 ms.date: 05/18/2017
 ms.topic: article
-keywords: windows 10, uwp, carte, emplacement, geovisit
+keywords: Windows 10, UWP, carte, emplacement, géoséjour, géoséjours
 ms.localizationpriority: medium
-ms.openlocfilehash: db351660722cd13a4e8f14bebb651d60f33d1671
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3b1766d0f883fa42b005908dcc63102e97ff0d4f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57640774"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89162513"
 ---
-# <a name="guidelines-for-using-visits-tracking"></a>Instructions pour l'utilisation du suivi des visites
+# <a name="guidelines-for-using-visits-tracking"></a>Instructions pour l’utilisation du suivi des visites
 
-La fonctionnalité de suivi des visites simplifie le processus de suivi d’emplacement afin de le rendre plus efficace dans le cadre pratique de nombreuses applications. Une visite est définie comme une zone géographique importante dans laquelle l’utilisateur entre et sort. Les visites sont similaires aux [limites géographiques](guidelines-for-geofencing.md) dans la mesure où elles permettent à l’application d’être notifiée uniquement lorsque l’utilisateur entre dans certaines zones d’intérêt ou en sort, évitant ainsi un suivi continu de l’emplacement qui peut entraîner le déchargement de la batterie. Cependant, contrairement aux limites géographiques, les zones de visite sont identifiées dynamiquement au niveau de la plateforme et n’ont pas besoin d’être définies de façon explicite par les applications individuelles. En outre, la sélection des visites suivies par une application est gérée par un paramètre de granularité unique, plutôt qu'au moyen d’abonnements à des emplacements individuels.
+La fonctionnalité de visites rationalise le processus de suivi des emplacements afin de la rendre plus efficace pour les besoins pratiques de nombreuses applications. Une visite est définie comme une zone géographique significative que l’utilisateur entre et quitte. Les visites sont similaires aux [limites géographiques](guidelines-for-geofencing.md) dans la mesure où elles permettent à l’application d’être notifiée uniquement lorsque l’utilisateur entre ou quitte certaines zones d’intérêt, éliminant ainsi la nécessité d’un suivi de l’emplacement continu, qui peut constituer un drain sur la durée de vie de la batterie. Toutefois, contrairement aux limites géographiques, les zones de visite sont identifiées de manière dynamique au niveau de la plateforme et n’ont pas besoin d’être définies explicitement par des applications individuelles. En outre, la sélection des visites d’une application est gérée par un seul paramètre de granularité, plutôt que par l’abonnement à des emplacements individuels.
 
-## <a name="preliminary-setup"></a>Configuration préliminaire
+## <a name="preliminary-setup"></a>Installation préliminaire
 
-Avant de poursuivre, assurez-vous que votre application est capable d’accéder à l’emplacement de l’appareil. Vous devrez déclarer la fonctionnalité `Location` dans le manifeste et appeler la méthode **[Geolocator.RequestAccessAsync](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator.RequestAccessAsync)** pour vous assurer que les utilisateurs accordent à l’application des autorisations d’emplacement. Voir [Obtenir l’emplacement de l’utilisateur](get-location.md) pour plus d’informations sur la procédure à suivre. 
+Avant de poursuivre, assurez-vous que votre application est en charge de l’accès à l’emplacement de l’appareil. Vous devez déclarer la `Location` fonctionnalité dans le manifeste et appeler la méthode **[géolocator. RequestAccessAsync](/uwp/api/Windows.Devices.Geolocation.Geolocator.RequestAccessAsync)** pour vous assurer que les utilisateurs accordent des autorisations d’emplacement à l’application. Pour plus d’informations sur la façon de procéder, consultez [obtenir l’emplacement de l’utilisateur](get-location.md) . 
 
-N’oubliez pas d’ajouter l’espace de noms `Geolocation` à votre classe. Il sera nécessaire au bon fonctionnement de tous les extraits de code dans ce guide.
+N’oubliez pas d’ajouter l' `Geolocation` espace de noms à votre classe. Cela sera nécessaire pour que tous les extraits de code de ce guide fonctionnent.
 
 ```csharp
 using Windows.Devices.Geolocation;
 ```
 
 ## <a name="check-the-latest-visit"></a>Vérifier la dernière visite
-Le moyen le plus simple d’utiliser la fonctionnalité de suivi des visites consiste à récupérer le dernier changement d’état connu lié à la visite. Un changement d’état est un événement consigné par la plateforme, dans lequel l’utilisateur entre dans un emplacement important ou en sort, un mouvement significatif est détecté depuis le dernier rapport ou l’emplacement de l’utilisateur est perdu (voir l'énumération **[VisitStateChange](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.visitstatechange)**). Les changements d’état sont représentés par les instances **[Geovisit](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geovisit)**. Pour récupérer l’instance **Geovisit** pour le dernier changement d’état enregistré, il vous suffit d’utiliser la méthode désignée dans la classe **[GeovisitMonitor](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geovisitmonitor)**.
+La façon la plus simple d’utiliser la fonctionnalité de suivi des visites consiste à récupérer la dernière modification connue de l’état relatif à la visite. Un changement d’État est un événement qui se connecte à la plateforme dans lequel l’utilisateur entre/quitte un emplacement de signification, il y a un déplacement important depuis le dernier rapport ou l’emplacement de l’utilisateur est perdu (Voir l’énumération **[VisitStateChange](/uwp/api/windows.devices.geolocation.visitstatechange)** ). Les modifications d’État sont représentées par les instances de **[géovisite](/uwp/api/windows.devices.geolocation.geovisit)** . Pour récupérer l’instance de **géovisite** pour le dernier changement d’état enregistré, utilisez simplement la méthode désignée dans la classe **[GeovisitMonitor](/uwp/api/windows.devices.geolocation.geovisitmonitor)** .
 
 > [!NOTE]
-> Vérifier la dernière visite consignée ne garantit pas que les visites sont actuellement suivies par le système. Afin de suivre les visites quand elles se produisent, vous devez les surveiller au premier plan ou inscrire le suivi en arrière-plan (voir les sections ci-dessous).
+> La vérification de la dernière visite enregistrée ne garantit pas que les visites sont actuellement suivies par le système. Pour effectuer le suivi des visites à mesure qu’elles se produisent, vous devez soit les surveiller au premier plan, soit vous inscrire pour le suivi en arrière-plan (voir les sections ci-dessous).
 
 ```csharp
 private async void GetLatestStateChange() {
@@ -44,8 +44,8 @@ private async void GetLatestStateChange() {
 }
 ```
 
-### <a name="parse-a-geovisit-instance-optional"></a>Analyser une instance Geovisit (facultatif)
-La méthode suivante convertit toutes les informations stockées dans une instance **Geovisit** en une chaîne facilement lisible. Elle peut être utilisée dans n'importe quel scénario de ce guide afin d’aider à fournir des commentaires pour les visites consignées.
+### <a name="parse-a-geovisit-instance-optional"></a>Analyser une instance de géovisite (facultatif)
+La méthode suivante convertit toutes les informations stockées dans une instance de **géovisite** en une chaîne facilement lisible. Il peut être utilisé dans n’importe quel scénario de ce guide pour vous aider à fournir des commentaires sur les visites signalées.
 
 ```csharp
 private string ParseGeovisit(Geovisit visit){
@@ -81,7 +81,7 @@ private string ParseGeovisit(Geovisit visit){
 
 ## <a name="monitor-visits-in-the-foreground"></a>Surveiller les visites au premier plan
 
-La classe **GeovisitMonitor** utilisée dans la section précédente gère également le scénario d’écoute des changements d’état sur une période de temps. Pour ce faire, vous pouvez instancier cette classe, inscrire une méthode de gestionnaire pour cet événement et appeler la méthode `Start`.
+La classe **GeovisitMonitor** utilisée dans la section précédente gère également le scénario d’écoute des modifications d’État sur une période donnée. Pour ce faire, vous pouvez instancier cette classe, inscrire une méthode de gestionnaire pour son événement et appeler la `Start` méthode.
 
 ```csharp
 // this GeovisitMonitor instance will belong to the class scope
@@ -102,7 +102,7 @@ public void RegisterForVisits() {
 }
 ```
 
-Dans cet exemple, la méthode `OnVisitStateChanged` gérera les rapports de visites entrantes. L'instance **Geovisit** correspondante est transférée via le paramètre d’événement.
+Dans cet exemple, la `OnVisitStateChanged` méthode gère les rapports de visite entrants. L’instance de **géovisite** correspondante est transmise par le biais du paramètre d’événement.
 
 ```csharp
 private void OnVisitStateChanged(GeoVisitWatcher sender, GeoVisitStateChangedEventArgs args) {
@@ -113,7 +113,7 @@ private void OnVisitStateChanged(GeoVisitWatcher sender, GeoVisitStateChangedEve
     // and the type of state change.
 }
 ```
-Lorsque l’application a terminé de surveiller les changements d’état liés à la visite, il doit arrêter la surveillance et annuler l’inscription du ou des gestionnaires d’événements. Cela doit être fait également chaque fois que l’application est suspendue ou fermée.
+Lorsque l’application a terminé la surveillance des modifications d’État liées à la visite, elle doit arrêter le moniteur et annuler l’inscription du ou des gestionnaires d’événements. Cela doit également être fait chaque fois que l’application est suspendue ou fermée.
 
 ```csharp
 public void UnregisterFromVisits() {
@@ -129,15 +129,15 @@ public void UnregisterFromVisits() {
 
 ## <a name="monitor-visits-in-the-background"></a>Surveiller les visites en arrière-plan
 
-Vous pouvez également implémenter la surveillance des visites dans une tâche en arrière-plan, afin que l’activité liée à la visite puisse être gérée sur l’appareil, même lorsque votre application n’est pas ouverte. Il s’agit de la méthode recommandée, car elle est la plus polyvalente et la plus économe en énergie. 
+Vous pouvez également implémenter la surveillance de visite dans une tâche en arrière-plan, afin que l’activité relative à la visite puisse être gérée sur l’appareil, même lorsque votre application n’est pas ouverte. Il s’agit de la méthode recommandée, car elle est plus polyvalente et économe en énergie. 
 
-Ce guide utilise le modèle fourni dans [Créer et inscrire une tâche en arrière-plan hors processus](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task), dans lequel les fichiers de l’application principale se trouvent dans un projet et le fichier de la tâche en arrière-plan se trouve dans un projet distinct de la même solution. Si vous ne connaissez pas l’implémentation des tâches en arrière-plan, il est recommandé de suivre ce conseil principal, en faisant les substitutions ci-dessous nécessaires pour créer une tâche en arrière-plan de gestion des visites.
+Ce guide utilise le modèle dans [créer et inscrire une tâche en arrière-plan out-of-process](../launch-resume/create-and-register-a-background-task.md), dans laquelle les fichiers de l’application principale résident dans un projet et le fichier de tâche en arrière-plan se trouvent dans un projet distinct de la même solution. Si vous débutez avec l’implémentation de tâches en arrière-plan, il est recommandé de suivre les instructions ci-dessous, en effectuant les substitutions nécessaires ci-dessous pour créer une tâche en arrière-plan de gestion des visites.
 
 > [!NOTE]
-> Dans les extraits de code suivants, certaines fonctionnalités importantes, telles que la gestion des erreurs et le stockage local, sont absentes par souci de simplicité. Pour une implémentation fiable de la gestion des visites en arrière-plan, voir l’[exemple d’application](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Geolocation).
+> Dans les extraits de code suivants, certaines fonctionnalités importantes telles que la gestion des erreurs et le stockage local sont absentes pour des raisons de simplicité. Pour une implémentation fiable du traitement des visites en arrière-plan, consultez l' [exemple d’application](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Geolocation).
 
 
-Tout d’abord, assurez-vous que votre application a déclaré des autorisations de tâches en arrière-plan. Dans l’élément `Application/Extensions` de votre fichier *Package.appxmanifest*, ajoutez l’extension suivante (ajoutez un élément `Extensions` s’il n’existe pas déjà).
+Tout d’abord, assurez-vous que votre application a déclaré des autorisations de tâche en arrière-plan. Dans l' `Application/Extensions` élément de votre fichier *Package. appxmanifest* , ajoutez l’extension suivante (ajoutez un `Extensions` élément s’il n’en existe pas déjà un).
 
 ```xml
 <Extension Category="windows.backgroundTasks" EntryPoint="Tasks.VisitBackgroundTask">
@@ -147,7 +147,7 @@ Tout d’abord, assurez-vous que votre application a déclaré des autorisations
 </Extension>
 ```
 
-Ensuite, dans la définition de la classe de tâche en arrière-plan, collez le code suivant. La méthode `Run` de cette tâche en arrière-plan transmettra simplement les détails du déclencheur (qui contiennent les informations de visites) dans une méthode distincte.
+Ensuite, dans la définition de la classe de tâche en arrière-plan, collez le code suivant. La `Run` méthode de cette tâche d’arrière-plan passera simplement les détails du déclencheur (qui contiennent les informations de visite) dans une méthode distincte.
 
 ```csharp
 using Windows.ApplicationModel.Background;
@@ -175,7 +175,7 @@ namespace Tasks {
 }
 ```
 
-Définissez la méthode `GetVisitReports` quelque part dans cette même classe.
+Définissez la `GetVisitReports` méthode quelque part dans cette même classe.
 
 ```csharp
 private void GetVisitReports(GeovisitTriggerDetails triggerDetails) {
@@ -264,11 +264,11 @@ private async void RegisterBackgroundTask(object sender, RoutedEventArgs e) {
 }
 ```
 
-Cela établit qu’une classe de tâche en arrière-plan appelée `VisitBackgroundTask` dans l’espace de noms `Tasks` fera quelque chose avec le type de déclencheur `location`. 
+Cela établit qu’une classe de tâche en arrière-plan appelée `VisitBackgroundTask` dans l’espace de noms fera une action `Tasks` avec le `location` type de déclencheur. 
 
-Votre application doit maintenant être capable d’inscrire la tâche en arrière-plan de gestion des visites, et cette tâche doit être activée chaque fois que l’appareil consigne un changement d’état lié à la visite. Vous devrez renseigner la logique dans votre classe de tâche en arrière-plan afin de déterminer ce qu'il faut faire avec ces informations de changement d’état.
+Votre application doit maintenant être en mesure d’inscrire la tâche en arrière-plan de gestion des visites. cette tâche doit être activée chaque fois que l’appareil enregistre une modification d’État liée à la visite. Vous devrez renseigner la logique de votre classe de tâche en arrière-plan pour déterminer ce que vous devez faire avec ces informations de changement d’État.
 
 ## <a name="related-topics"></a>Rubriques connexes
-* [Créer et inscrire une tâche en arrière-plan hors processus](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)
-* [Obtenir l’emplacement de l’utilisateur](get-location.md)
-* [Espace de noms Windows.Devices.Geolocation](https://docs.microsoft.com/uwp/api/windows.devices.geolocation)
+* [Créer et inscrire une tâche en arrière-plan hors processus](../launch-resume/create-and-register-a-background-task.md)
+* [Obtenir la localisation de l’utilisateur](get-location.md)
+* [Espace de noms Windows. Devices. géolocalisation](/uwp/api/windows.devices.geolocation)

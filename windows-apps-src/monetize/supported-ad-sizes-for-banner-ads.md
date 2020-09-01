@@ -1,24 +1,24 @@
 ---
 ms.assetid: f54ae666-d609-49d6-90ba-e2e62ebc3652
-description: En savoir plus sur les tailles des bannières publicitaires prises en charge.
+description: Découvrez les tailles des bannières publicitaires prises en charge pour les applications plateforme Windows universelle (UWP) et des exemples de tailles de bannières publicitaires.
 title: Tailles des bannières prises en charge
 ms.date: 02/18/2020
 ms.topic: article
-keywords: windows 10, uwp, annonces, publicités, tailles, bannière
+keywords: Windows 10, UWP, ADS, publicité, tailles, bannière
 ms.localizationpriority: medium
-ms.openlocfilehash: ec96d744f7a9d2e91b27feae1fe5f3b0c322a450
-ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
+ms.openlocfilehash: 2ed20f6307b5bbf833dc321cd44354e4fe79c046
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77506853"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89162403"
 ---
 # <a name="supported-banner-ad-sizes"></a>Tailles des bannières prises en charge
 
 >[!WARNING]
 > Depuis le 1er juin 2020, la plateforme de monétisation Microsoft AD pour les applications Windows UWP sera arrêtée. [En savoir plus](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
-Les tailles des bannières publicitaires suivantes sont prises en charge pour les applications de plateforme Windows universelle (UWP). Lorsque vous instanciez votre objet **classe AdControl** dans votre application, veillez à définir les propriétés Width et Height pour qu’elles correspondent à l’une de ces tailles prises en charge.
+Les tailles d’enchaînement de bannière suivantes sont prises en charge pour les applications plateforme Windows universelle (UWP). Lorsque vous instanciez votre objet **classe AdControl** dans votre application, veillez à définir les propriétés Width et Height pour qu’elles correspondent à l’une de ces tailles prises en charge.
 
 Les tailles sont de largeur x hauteur.
 
@@ -31,7 +31,7 @@ Les tailles sont de largeur x hauteur.
 * 728x90
 
 > [!NOTE]
-> Pour une expérience optimale, nous recommandons d’utiliser les tailles suivantes sur les appareils Windows 10 Mobile : 300x50, 320x50 et 640x100.
+> Pour une expérience optimale, nous vous recommandons d’utiliser les tailles suivantes sur les appareils Windows 10 Mobile : 300x50, 320x50 et 640x100.
 
 Le tableau suivant fournit des exemples qui illustrent chaque taille de bannière publicitaire.
 
@@ -42,7 +42,7 @@ Le tableau suivant fournit des exemples qui illustrent chaque taille de bannièr
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Taille de publicité</th>
+<th align="left">Taille de la publicité</th>
 <th align="left">Exemple</th>
 </tr>
 </thead>

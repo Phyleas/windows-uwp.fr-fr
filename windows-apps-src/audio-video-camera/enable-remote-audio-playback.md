@@ -5,12 +5,12 @@ ms.date: 05/03/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d4a4ab7664833308fe059e8bf07f68adea82b3e
-ms.sourcegitcommit: cc645386b996f6e59f1ee27583dcd4310f8fb2a6
+ms.openlocfilehash: 8a23758612b3c595f808fe2ffe4f38e558cf0740
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84262750"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89163963"
 ---
 # <a name="enable-audio-playback-from-remote-bluetooth-connected-devices"></a>Activer la lecture audio à partir d’appareils connectés en Bluetooth à distance
 
@@ -32,7 +32,7 @@ La classe [DeviceWatcher](/uwp/api/windows.devices.enumeration.devicewatcher) vo
 
 L’événement [DeviceWatcher. Added](/uwp/api/windows.devices.enumeration.devicewatcher.added) est déclenché pour chaque périphérique connecté lorsque l’observateur de périphérique est démarré, ainsi que pour tout périphérique connecté pendant l’exécution de l’observateur de périphérique. L’événement [DeviceWatcher. removed](/uwp/api/windows.devices.enumeration.devicewatcher.removed) est déclenché si un appareil précédemment connecté se déconnecte. 
 
-Appelez [DeviceWatcher. Start](/uwp/api/windows.devices.enumeration.devicewatcher.start) pour commencer à regarder les appareils connectés qui prennent en charge les connexions de lecture audio. Dans cet exemple, nous allons démarrer le gestionnaire de périphériques lorsque le contrôle de **grille** principal de l’interface utilisateur est chargé. Pour plus d’informations sur l’utilisation de **DeviceWatcher**, consultez [énumérer des appareils](/windows/uwp/devices-sensors/enumerate-devices).
+Appelez [DeviceWatcher. Start](/uwp/api/windows.devices.enumeration.devicewatcher.start) pour commencer à regarder les appareils connectés qui prennent en charge les connexions de lecture audio. Dans cet exemple, nous allons démarrer le gestionnaire de périphériques lorsque le contrôle de **grille** principal de l’interface utilisateur est chargé. Pour plus d’informations sur l’utilisation de **DeviceWatcher**, consultez [énumérer des appareils](../devices-sensors/enumerate-devices.md).
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioPlaybackConnectionExample/cs/MainPage.xaml.cs" id="snippet_MainGridLoaded":::
 
@@ -87,7 +87,3 @@ Vous devez gérer le cas où un appareil est supprimé lors de l’activation ou
 
 
  
-
-
-
-

@@ -1,24 +1,24 @@
 ---
-title: Créer un jeu de plateforme Windows universelle DirectX (UWP)
-description: Dans cet ensemble de didacticiels, vous apprendrez à utiliser DirectX et [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) pour créer l’exemple de jeu de base plateforme Windows universelle (UWP) nommé **Simple3DGameDX**.
+title: Créer un jeu de plateforme Windows universelle (UWP) DirectX
+description: Dans cet ensemble de didacticiels, vous apprendrez à utiliser DirectX et [C++/WinRT](../cpp-and-winrt-apis/index.md) pour créer l’exemple de jeu de base plateforme Windows universelle (UWP) nommé **Simple3DGameDX**.
 ms.assetid: 9edc5868-38cf-58cc-1fb3-8fb85a7ab2c9
 keywords: Exemple de jeu DirectX, exemple de jeu, plateforme Windows universelle (UWP), jeu Direct3D 11
 ms.date: 06/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e3007cd79546cba8961000cb2aae44b0b0536fe
-ms.sourcegitcommit: 20969781aca50738792631f4b68326f9171a3980
+ms.openlocfilehash: 284aa821cc58a49f45bed3b0d7e28c20f9d19ba1
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85409568"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89163023"
 ---
 # <a name="create-a-simple-universal-windows-platform-uwp-game-with-directx"></a>Créer un jeu de plateforme Windows universelle (UWP) simple avec DirectX
 
-Dans cet ensemble de didacticiels, vous apprendrez à utiliser DirectX et [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) pour créer l’exemple de jeu de base plateforme Windows universelle (UWP) nommé **Simple3DGameDX**. Le jeu a lieu dans une simple galerie de tournage 3D de première personne.
+Dans cet ensemble de didacticiels, vous apprendrez à utiliser DirectX et [C++/WinRT](../cpp-and-winrt-apis/index.md) pour créer l’exemple de jeu de base plateforme Windows universelle (UWP) nommé **Simple3DGameDX**. Le jeu a lieu dans une simple galerie de tournage 3D de première personne.
 
 > [!NOTE]
-> Le lien à partir duquel vous pouvez télécharger l’exemple de jeu **Simple3DGameDX** lui-même est le [jeu d’exemples Direct3D](/samples/microsoft/windows-universal-samples/simple3dgamedx/). Le code source C++/WinRT se trouve dans le dossier nommé `cppwinrt` . Pour plus d’informations sur d’autres exemples d’applications UWP, consultez [obtenir des exemples](/windows/uwp/get-started/get-uwp-app-samples)d’applications UWP.
+> Le lien à partir duquel vous pouvez télécharger l’exemple de jeu **Simple3DGameDX** lui-même est le [jeu d’exemples Direct3D](/samples/microsoft/windows-universal-samples/simple3dgamedx/). Le code source C++/WinRT se trouve dans le dossier nommé `cppwinrt` . Pour plus d’informations sur d’autres exemples d’applications UWP, consultez [obtenir des exemples](../get-started/get-app-samples.md)d’applications UWP.
 
 Ces didacticiels couvrent tous les aspects majeurs d’un jeu, y compris les processus de chargement des ressources telles que les arts et les mailles, la création d’une boucle de jeu principale, l’implémentation d’un pipeline de rendu simple et l’ajout de sons et de contrôles.
 
@@ -28,11 +28,11 @@ Vous y verrez également les techniques et les considérations relatives au dév
 
 Pour en savoir plus sur les concepts de base et les composants d’un jeu DirectX UWP, et pour vous familiariser avec la conception de jeux UWP avec DirectX.
 
-## <a name="what-you-need-to-know"></a>Bon à savoir
+## <a name="what-you-need-to-know"></a>Ce que vous devez savoir
 
 Pour ce didacticiel, vous devez vous familiariser avec ces sujets.
 
-- [/WinRT C++](/windows/uwp/cpp-and-winrt-apis/). C++/WinRT est une projection de langage C++ 17 moderne standard pour les API Windows Runtime (WinRT), implémentée en tant que bibliothèque basée sur un fichier d’en-tête et conçue pour vous fournir un accès de première classe aux API Windows modernes.
+- [/WinRT C++](../cpp-and-winrt-apis/index.md). C++/WinRT est une projection de langage C++ 17 moderne standard pour les API Windows Runtime (WinRT), implémentée en tant que bibliothèque basée sur un fichier d’en-tête et conçue pour vous fournir un accès de première classe aux API Windows modernes.
 - Algèbre linéaire de base et concepts physiques newtoniens.
 - Terminologie de programmation de graphiques de base.
 - Concepts de programmation Windows de base.
@@ -65,4 +65,4 @@ L’exemple illustre ces concepts de jeu.
 |[Ajouter une interface utilisateur](tutorial--adding-a-user-interface.md)|Découvrez comment ajouter une superposition d’interface utilisateur 2D à un jeu DirectX UWP.|
 |[Ajouter des contrôles](tutorial--adding-controls.md)|À présent, nous voyons comment l’exemple de jeu implémente les contrôles de déplacement et d’apparence dans un jeu 3D et comment développer des contrôles tactiles, de souris et de contrôleurs de jeu de base.|
 |[Ajouter du son](tutorial--adding-sound.md)|Développez un moteur audio simple à l’aide des API XAudio2 pour lire la musique et les effets sonores du jeu.|
-|[Étendre l’exemple de jeu](tutorial-resources.md)|Découvrez comment implémenter une superposition XAML pour un jeu DirectX UWP.|
+|[Développer l’exemple de jeu](tutorial-resources.md)|Découvrez comment implémenter une superposition XAML pour un jeu DirectX UWP.|

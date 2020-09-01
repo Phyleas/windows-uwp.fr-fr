@@ -1,97 +1,97 @@
 ---
 title: Manipulations personnalisées avec InteractionTracker
-description: Utilisez les API InteractionTracker pour créer des expériences personnalisées de manipulation.
+description: Utilisez les API InteractionTracker pour créer des expériences de manipulation personnalisées.
 ms.date: 10/10/2017
 ms.topic: article
-keywords: windows 10, uwp, animation
+keywords: Windows 10, UWP, animation
 ms.localizationpriority: medium
-ms.openlocfilehash: 89b393120657b7c02ccfe10ce6aca16be80118aa
-ms.sourcegitcommit: f282c906cddf0d57217484e61a5cbd2fe8469421
+ms.openlocfilehash: 8a4b682f009a4ac1350ceee3b8c23fe5e772150d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65852262"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89163593"
 ---
-# <a name="custom-manipulation-experiences-with-interactiontracker"></a>Expériences personnalisées de manipulation avec InteractionTracker
+# <a name="custom-manipulation-experiences-with-interactiontracker"></a>Expériences de manipulation personnalisées avec InteractionTracker
 
-Dans cet article, nous vous montrons comment utiliser InteractionTracker pour créer des expériences personnalisées de manipulation.
+Dans cet article, nous expliquons comment utiliser InteractionTracker pour créer des expériences de manipulation personnalisées.
 
 ## <a name="prerequisites"></a>Prérequis
 
-À ce stade, nous partons du principe que vous êtes familiarisé avec les concepts abordés dans les articles suivants :
+Ici, nous partons du principe que vous êtes familiarisé avec les concepts abordés dans les articles suivants :
 
-- [Animations contrôlée par l’entrée](input-driven-animations.md)
-- [Animations en fonction de relation](relation-animations.md)
+- [Animations pilotées par une entrée](input-driven-animations.md)
+- [Animations basées sur les relations](relation-animations.md)
 
-## <a name="why-create-custom-manipulation-experiences"></a>Pourquoi créer des expériences personnalisées de manipulation ?
+## <a name="why-create-custom-manipulation-experiences"></a>Pourquoi créer des expériences de manipulation personnalisées ?
 
-Dans la plupart des cas, l'utilisation de contrôles de manipulation prédéfinis suffit pour créer des expériences d’interface utilisateur. Mais si vous vous démarquiez des contrôles courants ? Que se passe-t-il si vous souhaitez créer une expérience spécifique pilotée par une entrée ou disposer d’une interface utilisateur dans laquelle un mouvement de manipulation classique n’est pas suffisant ? C'est là qu'intervient la création d'expériences personnalisées. Elles permettent aux développeurs et aux concepteurs d’application de faire preuve de davantage de créativité, de donner vie à des expériences de mouvement qui illustrent mieux leur image de marque et leur langage de conception personnalisée. Vous avez accès à un ensemble approprié de blocs de construction pour personnaliser complètement une expérience de manipulation, depuis la réponse du mouvement au contact du doigt sur l'écran, jusqu'aux points d’ancrage et au chaînage d’entrée.
+Dans la plupart des cas, l’utilisation des contrôles de manipulation prédéfinis est suffisamment bonne pour créer des expériences d’interface utilisateur. Mais que se passe-t-il si vous souhaitez distinguer les contrôles communs ? Que se passe-t-il si vous souhaitez créer une expérience spécifique basée sur l’entrée ou si vous avez une interface utilisateur où un mouvement de manipulation traditionnel n’est pas suffisant ? C’est là qu’intervient la création d’expériences personnalisées. Ils permettent aux développeurs d’applications et aux concepteurs d’être plus créatifs : apportez à des expériences de mouvement qui mieux illustrer leur personnalisation et leur langage de conception personnalisé. Dès le départ, vous avez accès à l’ensemble approprié de blocs de construction pour personnaliser complètement une expérience de manipulation, de la façon dont le mouvement doit répondre avec le doigt sur l’écran pour aligner les points et le chaînage d’entrée.
 
-Voici quelques exemples courants de cas où la création d'une expérience personnalisée de manipulation est appropriée :
+Voici quelques exemples courants de la création d’une expérience de manipulation personnalisée :
 
-- Ajout d’un balayage personnalisé, comportement visant à supprimer/ignorer
-- Entrée pilotée par des effets (un mouvement panoramique rend le contenu flou)
-- Contrôles personnalisés avec des mouvements de manipulation personnalisés (ListView personnalisé, ScrollViewer, etc.).
+- Ajout d’un comportement de balayage, de suppression et d’ignorer personnalisé
+- Effets pilotés par entrée (panoramique entraînant le flou du contenu)
+- Contrôles personnalisés avec mouvements de manipulation personnalisés (ListView personnalisé, ScrollViewer, etc.)
 
-![Exemple de barre de défilement de balayage](images/animation/swipe-scroller.gif)
+![Exemple de défilement par balayage](images/animation/swipe-scroller.gif)
 
-![Exemple tirer pour animer](images/animation/pull-to-animate.gif)
+![Exemple d’extraction vers l’animation](images/animation/pull-to-animate.gif)
 
 ## <a name="why-use-interactiontracker"></a>Pourquoi utiliser InteractionTracker ?
 
-InteractionTracker a été introduit dans l'espace de noms Windows.UI.Composition.Interactions dans la version du SDK 10586. Avantages d'InteractionTracker :
+InteractionTracker a été introduit dans l’espace de noms Windows. UI. composition. interactions dans la version 10586 du kit de développement logiciel (SDK). InteractionTracker permet :
 
-- **Flexibilité totale** : nous voulons vous permettre de personnaliser et d'adapter tous les aspects d’une expérience de manipulation, plus précisément, les mouvements exacts qui se produisent pendant ou en réponse à une entrée. Lorsque vous créez une expérience de manipulation personnalisée avec InteractionTracker, tous les boutons dont vous avez besoin sont à votre disposition.
-- **Performances efficaces** : une des difficultés des expériences de manipulation est que leurs performances dépendent du thread d’interface utilisateur. Cela peut nuire à l'expérience de manipulation si l’interface utilisateur est occupée. InteractionTracker a été conçu pour utiliser le nouveau moteur Animation qui ne fonctionne que sur un thread indépendant à 60 FPS, ce qui permet d'obtenir un mouvement fluide.
+- **Flexibilité totale** : nous souhaitons pouvoir personnaliser et adapter chaque aspect d’une expérience de manipulation ; plus précisément, les mouvements exacts qui se produisent pendant ou en réponse à l’entrée. Lorsque vous créez une expérience de manipulation personnalisée avec InteractionTracker, tous les boutons dont vous avez besoin sont à votre disposition.
+- **Performances fluides** : l’un des défis liés aux manipulations est que leurs performances dépendent du thread d’interface utilisateur. Cela peut avoir un impact négatif sur les manipulations lorsque l’interface utilisateur est occupée. InteractionTracker a été conçu pour utiliser le nouveau moteur d’animation qui fonctionne sur un thread indépendant à 60 FPS, ce qui se traduit par un mouvement en douceur.
 
-## <a name="overview-interactiontracker"></a>Vue d'ensemble : InteractionTracker
+## <a name="overview-interactiontracker"></a>Vue d’ensemble : InteractionTracker
 
-Lorsque vous créez des expériences personnalisées de manipulation, vous interagissez avec deux composants principaux. Nous allons aborder ceux-ci en premier :
+Lorsque vous créez des expériences de manipulation personnalisées, il existe deux principaux composants avec lesquels vous interagissez. Nous aborderons les éléments suivants :
 
-- [InteractionTracker](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactiontracker) : objet principal qui maintient une machine à états dont les propriétés sont pilotées par une entrée utilisateur active ou par des mises à jour directes et des animations. Il est destiné à se lier ensuite à une CompositionAnimation pour créer le mouvement personnalisé de manipulation.
-- [VisualInteractionSource](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.visualinteractionsource) : objet de complément qui définit quand et dans quelles conditions l’entrée est envoyée à InteractionTracker. Il définit à la fois le CompositionVisual utilisé pour le test de positionnement et les autres propriétés de configuration d’entrée.
+- [InteractionTracker](/uwp/api/windows.ui.composition.interactions.interactiontracker) : objet principal conservant un ordinateur d’État dont les propriétés sont pilotées par une entrée d’utilisateur active ou des mises à jour directes et des animations. Elle est ensuite liée à un CompositionAnimation pour créer le mouvement de manipulation personnalisé.
+- [VisualInteractionSource](/uwp/api/windows.ui.composition.interactions.visualinteractionsource) : objet de complément qui définit quand et dans quelles conditions l’entrée est envoyée à InteractionTracker. Il définit à la fois le CompositionVisual utilisé pour le test de positionnement, ainsi que d’autres propriétés de configuration d’entrée.
 
-En tant que machine à états, les propriétés d'InteractionTracker peuvent être déterminées par les éléments suivants :
+En tant que machine d’État, les propriétés de InteractionTracker peuvent être pilotées par l’un des éléments suivants :
 
-- Interaction utilisateur directe : l’utilisateur final manipule directement dans la zone de test de positionnement VisualInteractionSource
-- Inertie : à partir d'une vitesse par programmation ou d'un mouvement de l’utilisateur, les propriétés d'InteractionTracker s'animent selon une courbe d'inertie
-- CustomAnimation : animation personnalisée ciblant directement une propriété d'InteractionTracker
+- Interaction directe de l’utilisateur : l’utilisateur final manipule directement dans la région de test de positionnement VisualInteractionSource
+- Inertie : à partir d’une vélocité par programme ou d’un mouvement utilisateur, propriétés de InteractionTracker animer sous une courbe d’inertie
+- CustomAnimation : animation personnalisée ciblant directement une propriété de InteractionTracker
 
-### <a name="interactiontracker-state-machine"></a>Machine à états InteractionTracker
+### <a name="interactiontracker-state-machine"></a>Machine à États InteractionTracker
 
-Comme mentionné précédemment, InteractionTracker est une machine à états avec 4 états : chacun d’eux peut passer à une des quatre autres États. (Pour plus d’informations sur le passage d'InteractionTracker d'un état à l'autre, voir la documentation de la classe [InteractionTracker](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactiontracker).)
+Comme mentionné précédemment, InteractionTracker est une machine à États avec 4 États, chacun d’entre eux pouvant passer à l’un des quatre autres États. (Pour plus d’informations sur la façon dont InteractionTracker passe d’un État à l’autre, consultez la documentation relative à la classe [InteractionTracker](/uwp/api/windows.ui.composition.interactions.interactiontracker) .)
 
-| État | Description |
+| State | Description |
 |-------|-------------|
-| Idle | Non actif, pilotant des entrées ou des animations |
+| Idle | Pas d’entrée active, de conduite ou d’animations |
 | Interaction | Entrée utilisateur active détectée |
-| Inertie | Mouvement actif résultant d’une entrée active ou d'une vitesse de programmation |
+| Inertie | Mouvement actif résultant d’une vitesse d’entrée ou de programmation active |
 | CustomAnimation | Mouvement actif résultant d’une animation personnalisée |
 
-Dans chacun des cas où l’état d'InteractionTracker change, un événement (ou un rappel) est généré que vous pouvez détecter. Pour détecter ces événements, vous devez implémenter l'interface [IInteractionTrackerOwner](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.iinteractiontrackerowner) et créer son objet InteractionTracker avec la méthode CreateWithOwner. Le diagramme suivant présente également les différents événements déclenchés.
+Dans chacun des cas où l’état de InteractionTracker change, un événement (ou un rappel) est généré que vous pouvez écouter. Pour que vous puissiez écouter ces événements, ils doivent implémenter l’interface [IInteractionTrackerOwner](/uwp/api/windows.ui.composition.interactions.iinteractiontrackerowner) et créer leur objet InteractionTracker avec la méthode CreateWithOwner. Le diagramme suivant présente également le moment où les différents événements sont déclenchés.
 
-![Machine à états InteractionTracker](images/animation/interaction-tracker-diagram.png)
+![Machine à États InteractionTracker](images/animation/interaction-tracker-diagram.png)
 
 ## <a name="using-the-visualinteractionsource"></a>Utilisation de VisualInteractionSource
 
-Pour qu'InteractionTracker soit piloté par une entrée, vous devez lui connecter une VisualInteractionSource (VIS). La VIS est créée en tant qu’objet de complément à l’aide d’un CompositionVisual pour définir :
+Pour que InteractionTracker soit piloté par l’entrée, vous devez connecter un VisualInteractionSource (VIS) à celui-ci. L’VIS est créée en tant qu’objet de complément à l’aide d’un CompositionVisual pour définir :
 
-1. la zone de test de positionnement que l'entrée va suivre et l’espace de coordonnées dans lequel les mouvements sont détectés ;
-1. les configurations d’entrée qui seront détectées et routées, notamment les suivantes :
-    - Mouvements détectables : Position X et Y (horizontale et verticale de panoramique), mise à l’échelle (pincement)
+1. La région de test d’atteinte dans laquelle l’entrée sera suivie et les mouvements de l’espace de coordonnées sont détectés dans
+1. Les configurations d’entrée qui vont être détectées et routées sont les suivantes :
+    - Mouvements détectables : position X et Y (panoramique horizontal et vertical), mise à l’échelle (pincement)
     - Inertie
-    - Rails et chaînage
-    - Modes de redirection : les données d’entrée qui sont redirigées automatiquement vers InteractionTracker
+    - Rail & chaînage
+    - Modes de redirection : données d’entrée redirigées automatiquement vers InteractionTracker
 
 > [!NOTE]
-> Dans la mesure où le VisualInteractionSource est créé en fonction de la position de test de positionnement et de l’espace de coordonnées d’un élément visuel, il recommandé de ne pas utiliser un élément visuel qui sera en mouvement ou dans une position changeante.
+> Étant donné que le VisualInteractionSource est créé en fonction de la position du test d’atteinte et de l’espace de coordonnées d’un visuel, il est recommandé de ne pas utiliser un visuel qui sera en mouvement ou en changeant de position.
 
 > [!NOTE]
-> Vous pouvez utiliser plusieurs instances VisualInteractionSource avec le même InteractionTracker s’il existe plusieurs zones de test de positionnement. Toutefois, le cas le plus courant consiste à n'utiliser qu’une seule VIS.
+> Vous pouvez utiliser plusieurs instances VisualInteractionSource avec le même InteractionTracker s’il existe plusieurs régions de test de positionnement. Toutefois, le cas le plus courant consiste à n’utiliser qu’un seul VIS.
 
-La VisualInteractionSource est également responsable de la gestion du moment où les données d’entrée de différentes modalités (tactile, PTP, stylet) sont acheminées vers InteractionTracker. Ce comportement est défini par la propriété ManipulationRedirectionMode. Par défaut, toutes les entrées de pointeur sont envoyées au thread d’interface utilisateur et les entrées du pavé tactile de précision sont envoyées à VisualInteractionSource et InteractionTracker.
+Le VisualInteractionSource est également chargé de gérer le moment où les données d’entrée issues de différentes modalités (tactiles, PTP, Pen) sont routées vers InteractionTracker. Ce comportement est défini par la propriété ManipulationRedirectionMode. Par défaut, toutes les entrées de pointeur sont envoyées au thread d’interface utilisateur et l’entrée du pavé tactile de précision passe à VisualInteractionSource et InteractionTracker.
 
-Par conséquent, si vous souhaitez disposer de l'interface tactile et d'un stylet (Creators Update) pour piloter une manipulation via une VisualInteractionSource et InteractionTracker, vous devez appeler la méthode VisualInteractionSource.TryRedirectForManipulation. Dans le court extrait ci-dessous d’une application XAML, la méthode est appelée lorsqu’un événement de touche enfoncée se produit dans la Grille UIElement située tout en haut :
+Par conséquent, si vous souhaitez que le toucher et le stylet (Creators Update) effectuent une manipulation via un VisualInteractionSource et InteractionTracker, vous devez appeler la méthode VisualInteractionSource. TryRedirectForManipulation. Dans l’extrait de code abrégé ci-dessous d’une application XAML, la méthode est appelée lorsqu’un événement tactile appuyé se produit dans la grille du plus haut UIElement :
 
 ```csharp
 private void root_PointerPressed(object sender, PointerRoutedEventArgs e)
@@ -103,11 +103,11 @@ private void root_PointerPressed(object sender, PointerRoutedEventArgs e)
 }
 ```
 
-## <a name="tie-in-with-expressionanimations"></a>Raccordement avec ExpressionAnimations
+## <a name="tie-in-with-expressionanimations"></a>Associer à ExpressionAnimations
 
-Lorsque vous utilisez InteractionTracker pour piloter une expérience de manipulation, vous interagissez principalement avec les propriétés Échelle et Position. Comme les autres propriétés CompositionObject, ces propriétés peuvent à la fois être la cible et être référencées dans une CompositionAnimation, plus communément ExpressionAnimations.
+Lors de l’utilisation de InteractionTracker pour piloter une expérience de manipulation, vous interagissez principalement avec les propriétés de mise à l’échelle et de position. Comme les autres propriétés CompositionObject, ces propriétés peuvent être à la fois la cible et référencées dans un CompositionAnimation, le plus souvent ExpressionAnimations.
 
-Pour utiliser InteractionTracker au sein d’une Expression, faites référence à la propriété Position (ou Échelle) du suivi comme dans l’exemple ci-dessous. Comme la propriété d'InteractionTracker est modifiée en raison d’une des conditions décrites précédemment, la sortie de l’Expression change également.
+Pour utiliser InteractionTracker dans une expression, référencez la propriété position (ou mise à l’échelle) du dispositif de suivi comme dans l’exemple ci-dessous. Comme la propriété de InteractionTracker est modifiée en raison de l’une des conditions décrites précédemment, la sortie de l’expression change également.
 
 ```csharp
 // With Strings
@@ -119,27 +119,27 @@ var opacityExp = -_tracker.GetReference().Position;
 ```
 
 > [!NOTE]
-> Lorsque vous référencez la position de d'InteractionTracker dans une Expression, vous devez rendre négative la valeur de l’Expression obtenue pour vous déplacer dans la bonne direction. Cela est dû à la progression de l'InteractionTracker à partir de l'origine sur un graphique et vous permet d’envisager la progression de l'InteractionTracker en coordonnées « réalistes », par exemple, la distance à partir de son origine.
+> Lorsque vous faites référence à la position de InteractionTracker dans une expression, vous devez nier la valeur de l’expression résultante pour se déplacer dans le sens approprié. En effet, la progression de InteractionTracker de l’origine sur un graphique et vous permet de réfléchir à la progression de InteractionTracker dans les coordonnées réelles, telles que la distance par rapport à son origine.
 
-## <a name="get-started"></a>Prise en main
+## <a name="get-started"></a>Démarrer
 
-Pour apprendre à utiliser InteractionTracker pour créer des expériences personnalisées de manipulation :
+Pour commencer à utiliser InteractionTracker pour créer des expériences de manipulation personnalisées :
 
-1. Créez votre objet InteractionTracker à l’aide d'InteractionTracker.Create ou d'InteractionTracker.CreateWithOwner.
-    - (Si vous utilisez CreateWithOwner, assurez-vous d'implémenter l’interface IInteractionTrackerOwner.)
-1. Définissez la position Minimum et Maximum de votre InteractionTracker nouvellement créé.
+1. Créez votre objet InteractionTracker à l’aide de InteractionTracker. Create ou InteractionTracker. CreateWithOwner.
+    - (Si vous utilisez CreateWithOwner, veillez à implémenter l’interface IInteractionTrackerOwner.)
+1. Définissez la position minimale et maximale de votre InteractionTracker nouvellement créée.
 1. Créez votre VisualInteractionSource avec un CompositionVisual.
-    - Assurez-vous que l’élément visuel que vous transmettez a une taille différente de zéro. Sinon, il ne passera pas correctement le test de positionnement.
-1. Définissez les propriétés de la VisualInteractionSource.
+    - Assurez-vous que le visuel que vous transmettez a une taille différente de zéro. Dans le cas contraire, il n’obtiendra pas de test de positionnement correct.
+1. Définissez les propriétés de VisualInteractionSource.
     - VisualInteractionSourceRedirectionMode
     - PositionXSourceMode, PositionYSourceMode, ScaleSourceMode
-    - Rails et chaînage
-1. Ajoutez la VisualInteractionSource à InteractionTracker à l’aide d'InteractionTracker.InteractionSources.Add.
-1. Configurez TryRedirectForManipulation pour le moment de la détection d'une entrée tactile et du stylet.
-    - Pour XAML, cela s'effectue généralement sur l'événement PointerPressed de l’élément UIElement.
-1. Créez une ExpressionAnimation qui fait référence à la position de l'InteractionTracker et cible une propriété de CompositionObject.
+    - Rail & chaînage
+1. Ajoutez VisualInteractionSource à InteractionTracker à l’aide de InteractionTracker. InteractionSources. Add.
+1. Configurer TryRedirectForManipulation pour la détection de l’entrée tactile et du stylet.
+    - Pour XAML, cette opération est généralement effectuée sur l’événement PointerPressed de l’UIElement.
+1. Créez un ExpressionAnimation qui fait référence à la position de InteractionTracker et ciblez la propriété d’un CompositionObject.
 
-Voici un court extrait de code qui montre les n° 1 à 5 en action :
+Voici un extrait de code succinct qui indique #1-5 en action :
 
 ```csharp
 private void InteractionTrackerSetup(Compositor compositor, Visual hitTestRoot)
@@ -165,7 +165,7 @@ private void InteractionTrackerSetup(Compositor compositor, Visual hitTestRoot)
 }
 ```
 
-Pour des utilisations plus avancées d'InteractionTracker, consultez les articles suivants :
+Pour obtenir des utilisations plus avancées de InteractionTracker, consultez les articles suivants :
 
-- [Créer des points d’ancrage avec InertiaModifiers](inertia-modifiers.md)
-- [Extraire pour actualiser avec SourceModifiers](source-modifiers.md)
+- [Créer des points d’alignement avec InertiaModifiers](inertia-modifiers.md)
+- [Extraction à actualiser avec SourceModifiers](source-modifiers.md)

@@ -5,12 +5,12 @@ ms.date: 06/14/2018
 ms.topic: article
 keywords: Windows 10, UWP, point de service, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: 5416628b88a070c7bd4f361f9f438fe690951d34
-ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
+ms.openlocfilehash: 4fad9bc75ed0ff79be1596a3c99445c7e9f97b1f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89054159"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89163263"
 ---
 # <a name="pointofservice-device-sharing"></a>Partage d’appareils PointOfService
 
@@ -54,11 +54,11 @@ if (printer != null)
 
 ## <a name="api-methods-used"></a>Méthodes d’API utilisées 
 
-+ [BarcodeScanner. dispose](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.dispose) 
-+ [CashDrawer. dispose](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.cashdrawer.dispose) 
-+ [LineDisplay. dispose](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.linedisplay.dispose) 
-+ [MagneticStripeReader. dispose](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereader.dispose)  
-+ [PosPrinter. dispose](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.posprinter.dispose) 
++ [BarcodeScanner. dispose](/uwp/api/windows.devices.pointofservice.barcodescanner.dispose) 
++ [CashDrawer. dispose](/uwp/api/windows.devices.pointofservice.cashdrawer.dispose) 
++ [LineDisplay. dispose](/uwp/api/windows.devices.pointofservice.linedisplay.dispose) 
++ [MagneticStripeReader. dispose](/uwp/api/windows.devices.pointofservice.magneticstripereader.dispose)  
++ [PosPrinter. dispose](/uwp/api/windows.devices.pointofservice.posprinter.dispose) 
 
 
 [!INCLUDE [feedback](./includes/pos-feedback.md)]

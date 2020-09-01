@@ -5,12 +5,12 @@ ms.date: 05/22/2020
 ms.topic: article
 keywords: Windows 10 s, Always connected, ARM, ARM64, émulation x86
 ms.localizationpriority: medium
-ms.openlocfilehash: 679afeb1915bfcb84445ca97453a884654249a0e
-ms.sourcegitcommit: 2aa82d60d7f9edf7ae7f9a550a8d044e2040c08a
+ms.openlocfilehash: 39ff5b2aa6c72feaeaea0a7a61100196c109257c
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87443349"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89162293"
 ---
 # <a name="windows-10-on-arm"></a>Windows 10 sur ARM
 À l’origine, Windows 10 (distingué de Windows 10 mobile) pouvait s’exécuter uniquement sur des PC qui étaient équipés de processeurs x86 et x64. Désormais, Windows 10 Desktop peut s’exécuter sur des machines qui sont alimentées par des processeurs ARM64 avec la mise à jour des créateurs de automne ou une version plus récente. La nature de l’économie d’énergie de l’architecture de l’UC ARM permet à ces PC d’avoir une autonomie de batterie et une prise en charge de tous les jours pour les réseaux de données mobiles. Ces PC offrent une excellente compatibilité des applications et vous permettent d’exécuter vos applications Win32 x86 existantes sans les modifier. Pour plus d’informations ou pour obtenir une démonstration, consultez la [vidéo Channel 9 pour le PC Always Connected](https://channel9.msdn.com/Events/Build/2017/P4171).
@@ -59,5 +59,5 @@ Outils de contrôle à distance de Visual Studio sont disponibles pour les appli
 ## <a name="related-topics"></a>Rubriques connexes
 |Rubrique | Description |
 |-----|-----|
-|[Génération de pilotes ARM64 avec le kit WDK](https://docs.microsoft.com/windows-hardware/drivers/develop/building-arm64-drivers)|Instructions pour la création d’un pilote ARM64. |
-| [Débogage des applications x86 sur ARM](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugging-arm64) | Conseils pour le débogage des applications x86 sur ARM. |
+|[Génération de pilotes ARM64 avec le kit WDK](/windows-hardware/drivers/develop/building-arm64-drivers)|Instructions pour la création d’un pilote ARM64. |
+| [Débogage des applications x86 sur ARM](/windows-hardware/drivers/debugger/debugging-arm64) | Conseils pour le débogage des applications x86 sur ARM. |

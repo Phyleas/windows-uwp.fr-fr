@@ -7,12 +7,12 @@ manager: jken
 ms.topic: article
 keywords: Android sur Windows, PWA, Android, Cordova, ionique, PhoneGap, application Web hybride
 ms.date: 04/28/2020
-ms.openlocfilehash: c0ff9acf1d8e93e82f1db424d7a356c974988683
-ms.sourcegitcommit: 24b19e7ee06e5bb11a0dae334806741212490ee9
+ms.openlocfilehash: 482fd02ed7b5d978d81ec52309006034f70b7e47
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82255213"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89163983"
 ---
 # <a name="get-started-developing-a-pwa-or-hybrid-web-app-for-android"></a>Prise en main du développement d’une application Web PWA ou hybride pour Android
 
@@ -61,7 +61,7 @@ Il existe deux distributions populaires de Cordova :
 
 Pour commencer à créer une application Web PWA ou hybride avec PhoneGap, vous devez d’abord installer les outils suivants :
 
-- Node. js pour interagir avec l’écosystème ionique. [Téléchargez NodeJS pour Windows](https://nodejs.org/en/) ou suivez le [Guide d’installation de NodeJS](https://docs.microsoft.com/windows/nodejs/setup-on-wsl2) à l’aide du sous-système Windows pour Linux (WSL). Vous pouvez envisager d’utiliser [node version Manager (NVM)](https://docs.microsoft.com/windows/nodejs/setup-on-wsl2#install-nvm-nodejs-and-npm) si vous prévoyez d’utiliser plusieurs projets et la version de NodeJS.
+- Node.js pour interagir avec l’écosystème ionique. [Téléchargez NodeJS pour Windows](https://nodejs.org/en/) ou suivez le [Guide d’installation de NodeJS](../nodejs/setup-on-wsl2.md) à l’aide du sous-système Windows pour Linux (WSL). Vous pouvez envisager d’utiliser [node version Manager (NVM)](../nodejs/setup-on-wsl2.md#install-nvm-nodejs-and-npm) si vous prévoyez d’utiliser plusieurs projets et la version de NodeJS.
 
 Installez PhoneGap en entrant ce qui suit dans la ligne de commande :
 
@@ -82,7 +82,7 @@ Pour créer un projet PhoneGap, suivez les étapes de la section [prise en main]
 
 Pour commencer à créer une application Web PWA ou hybride avec ionique, vous devez d’abord installer les outils suivants :
 
-- Node. js pour interagir avec l’écosystème ionique. [Téléchargez NodeJS pour Windows](https://nodejs.org/en/) ou suivez le [Guide d’installation de NodeJS](https://docs.microsoft.com/windows/nodejs/setup-on-wsl2) à l’aide du sous-système Windows pour Linux (WSL). Vous pouvez envisager d’utiliser [node version Manager (NVM)](https://docs.microsoft.com/windows/nodejs/setup-on-wsl2#install-nvm-nodejs-and-npm) si vous prévoyez d’utiliser plusieurs projets et la version de NodeJS.
+- Node.js pour interagir avec l’écosystème ionique. [Téléchargez NodeJS pour Windows](https://nodejs.org/en/) ou suivez le [Guide d’installation de NodeJS](../nodejs/setup-on-wsl2.md) à l’aide du sous-système Windows pour Linux (WSL). Vous pouvez envisager d’utiliser [node version Manager (NVM)](../nodejs/setup-on-wsl2.md#install-nvm-nodejs-and-npm) si vous prévoyez d’utiliser plusieurs projets et la version de NodeJS.
 
 - VS Code pour l’écriture de votre code. [Téléchargez vs code pour Windows](https://code.visualstudio.com/). Vous pouvez également installer l' [extension distante WSL](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) si vous préférez générer votre application avec une ligne de commande Linux.
 
@@ -144,7 +144,7 @@ Ajouter des composants pour rendre l’application PWA :
 npm install @ionic/pwa-elements
 ```
 
-Importez @ionic/pwa-elements en ajoutant le code `src/main.ts` suivant à votre fichier :
+Importez @ionic/pwa-elements en ajoutant le code suivant à votre `src/main.ts` fichier :
 
 ```typescript
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
@@ -203,7 +203,7 @@ Pour tester votre application ionique sur un émulateur d’appareil Android, vo
 
 2. [Créer un appareil virtuel Android (AVD)](https://developer.android.com/studio/run/managing-avds.html).
 
-3. Entrez la commande pour ionique pour générer et déployer votre application sur l’émulateur : `ionic cordova emulate [<platform>] [options]`. Dans ce cas, la commande doit être :
+3. Entrez la commande pour ionique pour générer et déployer votre application sur l’émulateur : `ionic cordova emulate [<platform>] [options]` . Dans ce cas, la commande doit être :
 
 ```bash
 ionic cordova emulate android --list
@@ -213,7 +213,7 @@ Pour plus d’informations, consultez l' [émulateur Cordova](https://ionicframe
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- [Développer des applications à deux écrans pour Android et obtenir le kit de développement logiciel (SDK) d’appareil surface Duo](https://docs.microsoft.com/dual-screen/android/)
+- [Développer des applications à deux écrans pour Android et obtenir le kit de développement logiciel (SDK) d’appareil surface Duo](/dual-screen/android/)
 
 - [Ajouter des exclusions Windows Defender pour améliorer les performances](defender-settings.md)
 

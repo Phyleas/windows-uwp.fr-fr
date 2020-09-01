@@ -5,12 +5,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2532683c7f5762f35640ef7e80180827404cde73
-ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
+ms.openlocfilehash: b6ffbbb13646fe085fa81c99f4ecf45e328a01f7
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88943029"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89164263"
 ---
 # <a name="attract-customers-and-promote-your-apps"></a>Attirer les clients et promouvoir vos applications
 
@@ -105,21 +105,21 @@ Les publicités natives permettent d'envoyer tous les composants individuels d'u
 
 [Créer une campagne de publicité dans le tableau de bord](create-an-ad-campaign-for-your-app.md)
 
-[Créer une campagne de publicité à l'aide de notre API REST](https://docs.microsoft.com/windows/uwp/monetize/run-ad-campaigns-using-windows-store-services)
+[Créer une campagne de publicité à l'aide de notre API REST](../monetize/run-ad-campaigns-using-windows-store-services.md)
 
-[Passer en revue les données de performances de campagne dans le tableau de bord](promote-your-app-report.md)
+[Passer en revue les données de performances de campagne dans le tableau de bord](/windows/uwp/publish/ad-campaign-report)
 
-[Extraire les données de performances de campagne à l'aide de notre API REST](https://docs.microsoft.com/windows/uwp/monetize/)
+[Extraire les données de performances de campagne à l'aide de notre API REST](../monetize/index.md)
 
 ## <a name="promotion-analytics"></a>Analyse de promotion
 
 ![Analyse de promotion](images/ads-promotion-analytics.png)
 
-[Rapport de campagne de publicité](promote-your-app-report.md)
+[Rapport de campagne de publicité](/windows/uwp/publish/ad-campaign-report)
 
 [Rapport sur les acquisitions](acquisitions-report.md)
 
-[Recevoir des données analytiques à l’aide de notre API REST](https://docs.microsoft.com/windows/uwp/monetize/access-analytics-data-using-windows-store-services)
+[Recevoir des données analytiques à l’aide de notre API REST](../monetize/access-analytics-data-using-windows-store-services.md)
 
 ## <a name="other-ways-to-promote-your-app"></a>Autres méthodes de promotion de votre application
 

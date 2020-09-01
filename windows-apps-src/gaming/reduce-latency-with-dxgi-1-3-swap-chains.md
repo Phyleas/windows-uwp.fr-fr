@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, jeux, latence, DXGI, chaînes de permutation, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: 27ecce9d95d3c2e852b049e3cac9579850022df9
-ms.sourcegitcommit: d2aabe027a2fff8a624111a00864d8986711cae6
+ms.openlocfilehash: 41d11865daadacf8ff90971836cab7cd941c4182
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82880859"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89163043"
 ---
 # <a name="reduce-latency-with-dxgi-13-swap-chains"></a>Réduire la latence avec des chaînes d’échange DXGI 1.3
 
@@ -21,11 +21,11 @@ Utilisez DXGI 1.3 pour réduire la latence d’image effective en attendant que 
 
 Avec la chaîne de permutation du modèle, les « retournements » de la mémoire tampon d’arrière-plan sont mis en file d’attente chaque fois que votre jeu appelle [**IDXGISwapChain ::P renvoyé**](/windows/win32/api/dxgi/nf-dxgi-idxgiswapchain-present). Quand la boucle de rendu appelle Present(), le système bloque le thread jusqu’à ce qu’il ait fini de présenter une image précédente, ce qui libère de l’espace pour la mise en file d’attente de la nouvelle image, avant la présentation réelle. Cela entraîne une latence supplémentaire entre le moment où le jeu dessine une image et le moment où le système lui permet d’afficher cette image. Bien souvent, le système atteint un état d’équilibre quand le jeu attend une image supplémentaire complète entre le moment du rendu et la présentation de chaque image. Il est préférable d’attendre que le système soit prêt à accepter une nouvelle image, puis d’effectuer le rendu en fonction des données actuelles et de mettre immédiatement l’image en file d’attente.
 
-Créer une chaîne de permutation qui est attendue avec l’indicateur d' [**\_\_\_objet d’attente de la latence de la\_chaîne\_\_\_d’échange dxgi**](/windows/win32/api/dxgi/ne-dxgi-dxgi_swap_chain_flag) . Les chaînes d’échange créées de cette manière peuvent informer votre boucle de rendu, une fois que le système est prêt à accepter une nouvelle image. Cela permet à votre jeu d’effectuer le rendu en fonction des données actuelles, puis de placer le résultat immédiatement en file d’attente de présentation.
+Créer une chaîne de permutation qui est attendue avec l’indicateur d’objet d’attente de la latence de la [** \_ chaîne d’échange \_ \_ \_ \_ \_ \_ dxgi**](/windows/win32/api/dxgi/ne-dxgi-dxgi_swap_chain_flag) . Les chaînes d’échange créées de cette manière peuvent informer votre boucle de rendu, une fois que le système est prêt à accepter une nouvelle image. Cela permet à votre jeu d’effectuer le rendu en fonction des données actuelles, puis de placer le résultat immédiatement en file d’attente de présentation.
 
 ## <a name="step-1-create-a-waitable-swap-chain"></a>Étape 1. Créer une chaîne de permutation qui est attendue
 
-Spécifiez l’indicateur d' [**\_\_\_\_objet\_de\_\_latence**](/windows/win32/api/dxgi/ne-dxgi-dxgi_swap_chain_flag) d’un frame de la chaîne d’échange dxgi quand vous appelez [**CreateSwapChainForCoreWindow**](/windows/win32/api/dxgi1_2/nf-dxgi1_2-idxgifactory2-createswapchainforcorewindow).
+Spécifiez l’indicateur d' [** \_ \_ \_ \_ \_ \_ \_ objet de latence**](/windows/win32/api/dxgi/ne-dxgi-dxgi_swap_chain_flag) d’un frame de la chaîne d’échange dxgi quand vous appelez [**CreateSwapChainForCoreWindow**](/windows/win32/api/dxgi1_2/nf-dxgi1_2-idxgifactory2-createswapchainforcorewindow).
 
 ```cpp
 swapChainDesc.Flags = DXGI_SWAP_CHAIN_FLAG_FRAME_LATENCY_WAITABLE_OBJECT; // Enable GetFrameLatencyWaitableObject().
@@ -73,7 +73,7 @@ Appelez [**IDXGISwapChain2 :: GetFrameLatencyWaitableObject**](/windows/win32/a
 m_frameLatencyWaitableObject = swapChain2->GetFrameLatencyWaitableObject();
 ```
 
-## <a name="step-4-wait-before-rendering-each-frame"></a>Étape 4. Attendre avant de restituer chaque frame
+## <a name="step-4-wait-before-rendering-each-frame"></a>Étape 4. Attendre avant de restituer chaque frame
 
 Votre boucle de rendu doit attendre le signal de la chaîne de permutation via l’objet d’attente avant de commencer à effectuer le rendu de chaque image. Cela inclut la première image rendue avec la chaîne d’échange. Utilisez [**WaitForSingleObjectEx**](/windows/win32/api/synchapi/nf-synchapi-waitforsingleobjectex), en fournissant le handle d’attente récupéré à l’étape 2, pour signaler le début de chaque image.
 
@@ -141,7 +141,7 @@ Pour plus d’informations sur la programmation multithread dans Windows, voir l
 * [**IDXGISwapChain2::GetFrameLatencyWaitableObject**](/windows/win32/api/dxgi1_3/nf-dxgi1_3-idxgiswapchain2-getframelatencywaitableobject)
 * [**WaitForSingleObjectEx**](/windows/win32/api/synchapi/nf-synchapi-waitforsingleobjectex)
 * [**Windows.System.Threading**](/uwp/api/Windows.System.Threading)
-* [Programmation asynchrone en C++](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)
+* [Programmation asynchrone en C++](../threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md)
 * [Processus et threads](/windows/win32/procthread/processes-and-threads)
-* [Synchronization](/windows/win32/sync/synchronization)
+* [Synchronisation](/windows/win32/sync/synchronization)
 * [Utilisation d’objets Event (Windows)](/windows/win32/sync/using-event-objects)

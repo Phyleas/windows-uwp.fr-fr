@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, prix, disponible, détectable, version d’évaluation gratuite, versions d’évaluation, applications, date de publication
 ms.localizationpriority: medium
-ms.openlocfilehash: e9f516aeabae142c1975de2f9df343a43e642bab
-ms.sourcegitcommit: c0a859e4b8b46dea33e381ed5ae5197437902a41
+ms.openlocfilehash: 9956463471b310835aedf517817878d526cc810d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87120113"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89164103"
 ---
 # <a name="set-app-pricing-and-availability"></a>Définir la tarification et la disponibilité d’une application
 
@@ -23,7 +23,7 @@ La page **Tarification et disponibilité** du [processus de soumission d’appli
 
 Le Microsoft Store atteint les clients dans plus de 240 pays et régions du monde entier. Par défaut, nous proposons votre application sur tous les marchés possibles. Si vous préférez, vous pouvez choisir les marchés spécifiques dans lesquels vous souhaitez proposer votre application. 
 
-Pour plus d’informations, consultez [définir la sélection de marché](define-pricing-and-market-selection.md).
+Pour plus d’informations, consultez [définir la sélection de marché](./define-market-selection.md).
 
 
 ## <a name="visibility"></a>Visibilité
@@ -90,5 +90,3 @@ Pour plus d’informations, voir [Options de gestion des licences organisationne
 ## <a name="publish-date"></a>Date de publication
 
 Auparavant, la section **Date de publication** apparaissait sur cette page. Cette fonctionnalité est désormais disponible sur la page [options d’envoi](manage-submission-options.md) , dans la section **options de conservation de publication** . (Notez que pour contrôler le moment où votre application doit être publiée dans le Windows Store, nous vous recommandons d’utiliser la section [planification](configure-precise-release-scheduling.md) de la page **tarification et disponibilité** .)
-
-

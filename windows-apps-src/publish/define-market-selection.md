@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, marchés, pays, régions
 ms.localizationpriority: medium
-ms.openlocfilehash: ed80d8ef727d3c9be276b295a504b8cc02b373aa
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 63650ad15f4a3083b4f500bc16591bb6bd8d8185
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234653"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89162023"
 ---
 # <a name="define-market-selection"></a>Définir la sélection du marché
 
@@ -96,12 +96,12 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
   <tr>
     <td>Bosnie-Herzégovine</td>
     <td>Botswana</td>
-    <td>Bouvet (île)</td>
+    <td>Bouvet (Île)</td>
     <td>Brésil</td>
   </tr>
   <tr>
-    <td>Territoires britanniques de l’océan Indien</td>
-    <td>Îles Vierges britanniques</td>
+    <td>Territoire britannique de l’Océan Indien</td>
+    <td>Vierges britanniques (îles)</td>
     <td>Brunéi Darussalam</td>
     <td>Bulgarie</td>
   </tr>
@@ -114,24 +114,24 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
   <tr>
     <td>Cameroun</td>
     <td>Canada</td>
-    <td>Caïmans (îles)</td>
+    <td>Cayman (îles)</td>
     <td>République centrafricaine</td>
   </tr>
   <tr>
     <td>Tchad</td>
     <td>Chili</td>
     <td>Chine</td>
-    <td>Christmas (île)</td>
+    <td>Christmas (Île)</td>
   </tr>
   <tr>
-    <td>Îles Cocos (Keeling)</td>
+    <td>Cocos-Keeling (îles)</td>
     <td>Colombie</td>
-    <td>Comores</td>
+    <td>Comores (Les)</td>
     <td>Congo</td>
   </tr>
   <tr>
     <td>Congo (RDC)</td>
-    <td>Cook (îles)</td>
+    <td>Cook (Îles)</td>
     <td>Costa Rica</td>
     <td>Côte d’Ivoire</td>
   </tr>
@@ -157,16 +157,16 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
     <td>Érythrée</td>
     <td>Estonie</td>
     <td>Éthiopie</td>
-    <td>Îles Malouines</td>
+    <td>Malouines (îles)</td>
   </tr>
   <tr>
     <td>Féroé (îles)</td>
-    <td>Fidji</td>
+    <td>Fidji (îles)</td>
     <td>Finland</td>
     <td>Espagne</td>
   </tr>
   <tr>
-    <td>Guyane française</td>
+    <td>Guyane</td>
     <td>Polynésie française</td>
     <td>Terres australes et antarctiques françaises</td>
     <td>Gabon</td>
@@ -209,7 +209,7 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
   </tr>
   <tr>
     <td>Irlandais</td>
-    <td>Île de Man</td>
+    <td>Man (Île de)</td>
     <td>Israël</td>
     <td>Italiens</td>
   </tr>
@@ -234,14 +234,14 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
   <tr>
     <td>Liban</td>
     <td>Lesotho</td>
-    <td>Liberia</td>
+    <td>Libéria</td>
     <td>Libye</td>
   </tr>
   <tr>
     <td>Liechtenstein</td>
     <td>Lituanie</td>
     <td>Luxembourg</td>
-    <td>Macao R.A.S.</td>
+    <td>Macao (R.A.S.)</td>
   </tr>
   <tr>
     <td>Macédoine du Nord</td>
@@ -253,12 +253,12 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
     <td>Maldives</td>
     <td>Mali</td>
     <td>Malte</td>
-    <td>Marshall (îles)</td>
+    <td>Marshall (Îles)</td>
   </tr>
   <tr>
     <td>Martinique</td>
     <td>Mauritanie</td>
-    <td>Maurice (île)</td>
+    <td>Maurice</td>
     <td>Mayotte</td>
   </tr>
   <tr>
@@ -282,18 +282,18 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
   <tr>
     <td>Népal</td>
     <td>Territoire</td>
-    <td>Nouvelle-Calédonie</td>
+    <td>Nouvelle Calédonie</td>
     <td>Nouvelle-Zélande *</td>
   </tr>
   <tr>
     <td>Nicaragua</td>
     <td>Niger</td>
-    <td>Nigeria</td>
+    <td>Nigéria</td>
     <td>Niue</td>
   </tr>
   <tr>
-    <td>Norfolk (île)</td>
-    <td>Îles Marianne du Nord</td>
+    <td>Norfolk (Île)</td>
+    <td>Mariannes du Nord (Îles)</td>
     <td>Norvégien</td>
     <td>Oman</td>
   </tr>
@@ -304,7 +304,7 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
     <td>Panama</td>
   </tr>
   <tr>
-    <td>Papouasie Nouvelle Guinée</td>
+    <td>Papouasie-Nouvelle-Guinée</td>
     <td>Paraguay</td>
     <td>Pérou</td>
     <td>Philippines</td>
@@ -324,13 +324,13 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
   <tr>
     <td>Saint-Barthélemy</td>
     <td>Sainte-Hélène, Ascension et Tristan da Cunha</td>
-    <td>Saint-Christophe-et-Niévès</td>
+    <td>Saint-Kitts-et-Nevis</td>
     <td>Sainte-Lucie</td>
   </tr>
   <tr>
     <td>Saint-Martin (partie française)</td>
-    <td>Saint-Pierre-et-Miquelon</td>
-    <td>Saint-Vincent-et-les-Grenadines</td>
+    <td>Saint Pierre et Miquelon</td>
+    <td>Saint-Vincent-et-les Grenadines</td>
     <td>Samoa</td>
   </tr>
   <tr>
@@ -349,17 +349,17 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
     <td>Sint-Maarten (partie néerlandaise)</td>
     <td>République</td>
     <td>Slovénie</td>
-    <td>Salomon (îles)</td>
+    <td>Salomon (Îles)</td>
   </tr>
   <tr>
     <td>Somalie</td>
     <td>Afrique du Sud *</td>
-    <td>Géorgie du Sud et îles Sandwich du Sud</td>
+    <td>Géorgie du Sud et Sandwich du Sud (Îles)</td>
     <td>Espagne</td>
   </tr>
   <tr>
     <td>Sri Lanka</td>
-    <td>Surinam</td>
+    <td>Suriname</td>
     <td>Svalbard et Jan Mayen</td>
     <td>Swaziland</td>
   </tr>
@@ -384,7 +384,7 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
   <tr>
     <td>Faculté</td>
     <td>Turkménistan</td>
-    <td>Turques-et-Caïques (îles)</td>
+    <td>Turks et Caicos (îles)</td>
     <td>Tuvalu</td>
   </tr>
   <tr>
@@ -422,7 +422,7 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
 
 ## <a name="price-considerations-for-specific-markets"></a>Considérations de prix pour des marchés spécifiques
 
-Les moyens de paiement tels que la facturation d’opérateur mobile peuvent aider à augmenter les ventes d’applications payantes et d’articles in-app. En raison des coûts plus élevés engendrés pour autoriser ces moyens de paiement, un Ajustement du développement commercial est ajouté à la redevance du Store pour calculer les revenus de l’application à payer pour des transactions d’applications payantes et d’achats in-app dans les pays/régions et en utilisant les moyens de paiement du tableau ci-dessous. Vous pouvez analyser si l’Ajustement du développement commercial s’applique dans un pays/région où votre application est disponible et en tenir compte dans votre stratégie de fixation des prix du marché. Vous pouvez trouver des détails sur l’Ajustement du développement commercial dans le [Contrat du développeur de l’application](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement).
+Les moyens de paiement tels que la facturation d’opérateur mobile peuvent aider à augmenter les ventes d’applications payantes et d’articles in-app. En raison des coûts plus élevés engendrés pour autoriser ces moyens de paiement, un Ajustement du développement commercial est ajouté à la redevance du Store pour calculer les revenus de l’application à payer pour des transactions d’applications payantes et d’achats in-app dans les pays/régions et en utilisant les moyens de paiement du tableau ci-dessous. Vous pouvez analyser si l’Ajustement du développement commercial s’applique dans un pays/région où votre application est disponible et en tenir compte dans votre stratégie de fixation des prix du marché. Vous pouvez trouver des détails sur l’Ajustement du développement commercial dans le [Contrat du développeur de l’application](/legal/windows/agreements/app-developer-agreement).
 
 L’Ajustement du développement commercial sera appliqué à toutes les transactions traitées pour les pays/régions et moyens de paiement spécifiés à compter de la date d’entrée en vigueur. Ces informations seront mises à jour mensuellement ; de nouveaux pays/régions et moyens de paiement seront répertoriés dans les trente (30) jours qui suivent la prise d’effet de l’Ajustement du développement commercial pour ce pays/région et moyen de paiement.
 
@@ -430,47 +430,47 @@ L’Ajustement du développement commercial sera appliqué à toutes les transac
 
 | Pays/région       | Mode de paiement  | Ajustement du développement commercial | Date d’entrée en vigueur |
 |----------------------|-----------------|-------------------------------|----------------|
-| Argentine            | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Australie            | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Autriche              | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Belgique              | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Brésil               | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Canada               | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Chili                | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Chine                | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Colombie             | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Tchéquie              | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Danemark              | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Finlande              | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| France               | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Allemagne              | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Grèce               | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Hong Kong (R.A.S.)            | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Hongrie              | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Inde                | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Irlande              | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Israël               | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Italie                | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Japon                | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Mexique               | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Pays-Bas          | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Nouvelle-Zélande          | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Pologne               | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Portugal             | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Russie               | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Arabie Saoudite         | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Singapour            | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Slovaquie             | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Afrique du Sud         | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Corée du Sud          | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Espagne                | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Suède               | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Suisse          | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Taïwan               | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Turquie               | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Émirats Arabes Unis | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Royaume-Uni       | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| États-Unis        | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Argentine            | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Australie            | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Autriche              | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Belgique              | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Brésil               | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Canada               | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Chili                | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Chine                | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Colombie             | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Tchéquie              | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Danemark              | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Finlande              | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| France               | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Allemagne              | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Grèce               | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Hong Kong (R.A.S.)            | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Hongrie              | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Inde                | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Irlande              | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Israël               | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Italie                | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Japon                | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Mexique               | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Pays-Bas          | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Nouvelle-Zélande          | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Pologne               | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Portugal             | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Russie               | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Arabie saoudite         | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Singapour            | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Slovaquie             | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Afrique du Sud         | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Corée du Sud          | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Espagne                | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Suède               | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Suisse          | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Taïwan               | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Turquie               | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Émirats arabes unis | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Royaume-Uni       | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| États-Unis        | Carte cadeau       | 2,24 %                         | Mars 2016     |
 
  
 
@@ -520,9 +520,9 @@ Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants 
     <td>Botswana</td>
   </tr>
   <tr>
-    <td>Bouvet (île)</td>
-    <td>Territoires britanniques de l’océan Indien</td>
-    <td>Îles Vierges britanniques</td>
+    <td>Bouvet (Île)</td>
+    <td>Territoire britannique de l’Océan Indien</td>
+    <td>Vierges britanniques (îles)</td>
     <td>Brunéi Darussalam</td>
   </tr>
   <tr>
@@ -533,19 +533,19 @@ Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants 
   </tr>
   <tr>
     <td>Cameroun</td>
-    <td>Caïmans (îles)</td>
+    <td>Cayman (îles)</td>
     <td>République centrafricaine</td>
     <td>Tchad</td>
   </tr>
   <tr>
-    <td>Christmas (île)</td>
-    <td>Îles Cocos (Keeling)</td>
-    <td>Comores</td>
+    <td>Christmas (Île)</td>
+    <td>Cocos-Keeling (îles)</td>
+    <td>Comores (Les)</td>
     <td>Congo</td>
   </tr>
   <tr>
     <td>Congo (RDC)</td>
-    <td>Cook (îles)</td>
+    <td>Cook (Îles)</td>
     <td>Côte d’Ivoire</td>
     <td>Curaçao</td>
   </tr>
@@ -562,10 +562,10 @@ Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants 
     <td>Éthiopie</td>
   </tr>
   <tr>
-    <td>Îles Malouines</td>
+    <td>Malouines (îles)</td>
     <td>Féroé (îles)</td>
-    <td>Fidji</td>
-    <td>Guyane française</td>
+    <td>Fidji (îles)</td>
+    <td>Guyane</td>
   </tr>
   <tr>
     <td>Polynésie française</td>
@@ -598,7 +598,7 @@ Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants 
     <td>Islande</td>
   </tr>
   <tr>
-    <td>Île de Man</td>
+    <td>Man (Île de)</td>
     <td>Jamaïque</td>
     <td>Jersey</td>
     <td>Kenya</td>
@@ -610,9 +610,9 @@ Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants 
     <td>Lesotho</td>
   </tr>
   <tr>
-    <td>Liberia</td>
+    <td>Libéria</td>
     <td>Liechtenstein</td>
-    <td>Macao R.A.S.</td>
+    <td>Macao (R.A.S.)</td>
     <td>Macédoine du Nord</td>
   </tr>
   <tr>
@@ -622,10 +622,10 @@ Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants 
     <td>Mali</td>
   </tr>
   <tr>
-    <td>Marshall (îles)</td>
+    <td>Marshall (Îles)</td>
     <td>Martinique</td>
     <td>Mauritanie</td>
-    <td>Maurice (île)</td>
+    <td>Maurice</td>
   </tr>
   <tr>
     <td>Mayotte</td>
@@ -647,21 +647,21 @@ Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants 
   </tr>
   <tr>
     <td>Népal</td>
-    <td>Nouvelle-Calédonie</td>
+    <td>Nouvelle Calédonie</td>
     <td>Nicaragua</td>
     <td>Niger</td>
   </tr>
   <tr>
-    <td>Nigeria</td>
+    <td>Nigéria</td>
     <td>Niue</td>
-    <td>Norfolk (île)</td>
-    <td>Îles Marianne du Nord</td>
+    <td>Norfolk (Île)</td>
+    <td>Mariannes du Nord (Îles)</td>
   </tr>
   <tr>
     <td>Palau</td>
     <td>Autorité palestinienne</td>
     <td>Panama</td>
-    <td>Papouasie Nouvelle Guinée</td>
+    <td>Papouasie-Nouvelle-Guinée</td>
   </tr>
   <tr>
     <td>Paraguay</td>
@@ -672,13 +672,13 @@ Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants 
   <tr>
     <td>Saint-Barthélemy</td>
     <td>Sainte-Hélène, Ascension et Tristan da Cunha</td>
-    <td>Saint-Christophe-et-Niévès</td>
+    <td>Saint-Kitts-et-Nevis</td>
     <td>Sainte-Lucie</td>
   </tr>
   <tr>
     <td>Saint-Martin (partie française)</td>
-    <td>Saint-Pierre-et-Miquelon</td>
-    <td>Saint-Vincent-et-les-Grenadines</td>
+    <td>Saint Pierre et Miquelon</td>
+    <td>Saint-Vincent-et-les Grenadines</td>
     <td>Samoa</td>
   </tr>
   <tr>
@@ -690,12 +690,12 @@ Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants 
   <tr>
     <td>Sierra Leone</td>
     <td>Sint-Maarten (partie néerlandaise)</td>
-    <td>Salomon (îles)</td>
+    <td>Salomon (Îles)</td>
     <td>Somalie</td>
   </tr>
   <tr>
-    <td>Géorgie du Sud et îles Sandwich du Sud</td>
-    <td>Surinam</td>
+    <td>Géorgie du Sud et Sandwich du Sud (Îles)</td>
+    <td>Suriname</td>
     <td>Svalbard et Jan Mayen</td>
     <td>Swaziland</td>
   </tr>
@@ -709,7 +709,7 @@ Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants 
     <td>Tokelau</td>
     <td>Tonga</td>
     <td>Turkménistan</td>
-    <td>Turques-et-Caïques (îles)</td>
+    <td>Turks et Caicos (îles)</td>
   </tr>
   <tr>
     <td>Tuvalu</td>

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, jeux, mise en réseau, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b0dd6168d932d1c131ca6bcd4530795c6ed1ba3
-ms.sourcegitcommit: b408494ebe8489b9ba84fb8bfd893d90c8524020
+ms.openlocfilehash: 6d6d9d927c60cb74f1b19de607480e0811f47cbb
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88576852"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89162933"
 ---
 # <a name="networking-for-games"></a>Mise en réseau pour les jeux
 
@@ -27,7 +27,7 @@ Dans le cas de jeux pair à pair, chaque application de joueur gère les entrée
 
 Dans les jeux pour joueur unique, un service ou serveur Web central est souvent utilisé pour stocker les noms d’utilisateurs, les scores de jeu et d’autres informations diverses. Dans ces jeux, la vitesse et la latence des transferts réseau sont moins préoccupantes car elles ne gênent pas directement le jeu.
 
-Les conditions du réseau peuvent changer à tout moment. Un jeu qui utilise les API de réseau doit pouvoir gérer les exceptions réseau qui sont susceptibles de se produire. Pour plus d’informations sur la gestion des exceptions réseau, voir [Notions de base en matière de réseau](/windows/uwp/networking/networking-basics).
+Les conditions du réseau peuvent changer à tout moment. Un jeu qui utilise les API de réseau doit pouvoir gérer les exceptions réseau qui sont susceptibles de se produire. Pour plus d’informations sur la gestion des exceptions réseau, voir [Notions de base en matière de réseau](../networking/networking-basics.md).
 
 Les pare-feu et les proxys web sont courants et peuvent limiter l’utilisation des fonctionnalités réseau. Un jeu qui utilise le réseau doit être préparé pour gérer convenablement les pare-feux et les proxys.
 
@@ -362,7 +362,7 @@ using namespace Windows::Web::Http;
 * [Connexion à une ressource réseau avec un socket de flux](/previous-versions/windows/apps/jj150599(v=win.10))
 * [Connexion aux services réseau](/previous-versions/windows/apps/hh452976(v=win.10))
 * [Connexion aux services Web](/previous-versions/windows/apps/hh761504(v=win.10))
-* [Notions de base en matière de réseau](/windows/uwp/networking/networking-basics)
+* [Notions de base en matière de réseau](../networking/networking-basics.md)
 * [Comment configurer les fonctionnalités d’isolement réseau](/previous-versions/windows/apps/hh770532(v=win.10))
 * [Comment activer le bouclage et déboguer l’isolement réseau](/previous-versions/windows/apps/hh780593(v=win.10))
 

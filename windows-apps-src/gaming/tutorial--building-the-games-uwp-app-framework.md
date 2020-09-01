@@ -6,12 +6,12 @@ ms.date: 06/24/2020
 ms.topic: article
 keywords: windows 10, uwp, jeux, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 5052b4e71196950b6a8a91aaa271b5550fb448b5
-ms.sourcegitcommit: 20969781aca50738792631f4b68326f9171a3980
+ms.openlocfilehash: 2d762aebeaa5c97c1b23a91f0765cb5c09a91b46
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85409618"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89163053"
 ---
 #  <a name="define-the-games-uwp-app-framework"></a>Définir l’infrastructure d’application UWP du jeu
 
@@ -124,7 +124,7 @@ Le constructeur **GameMain** (et les autres fonctions membres qu’il appelle) c
 
 Windows impose une limite au moment où votre jeu peut être nécessaire avant de commencer le traitement de l’entrée. L’utilisation de asynchrone, comme nous le faisons ici, signifie que la **charge** peut retourner rapidement pendant que le travail qu’elle a commencé continue en arrière-plan. Si le chargement prend beaucoup de temps, ou s’il y a beaucoup de ressources, fournir à vos utilisateurs une barre de progression fréquemment mise à jour est une bonne idée. 
 
-Si vous débutez en programmation asynchrone, consultez [opérations simultanées et asynchrones avec C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency).
+Si vous débutez en programmation asynchrone, consultez [opérations simultanées et asynchrones avec C++/WinRT](../cpp-and-winrt-apis/concurrency.md).
 
 ```cppwinrt
 GameMain::GameMain(std::shared_ptr<DX::DeviceResources> const& deviceResources) :

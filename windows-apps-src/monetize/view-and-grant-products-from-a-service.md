@@ -6,12 +6,12 @@ ms.date: 08/01/2018
 ms.topic: article
 keywords: API de collection Windows 10, UWP, Microsoft Store, Microsoft Store achat d’API, afficher les produits, autoriser les produits
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e4bfa74b693c9571d9bb2818e0d8527388600a2
-ms.sourcegitcommit: 720413d2053c8d5c5b34d6873740be6e913a4857
+ms.openlocfilehash: 769366cd45b4734987e3f558c11a6e0e105cfe21
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88846709"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89164453"
 ---
 # <a name="manage-product-entitlements-from-a-service"></a>Gérer les droits sur les produits à partir d’un service
 
@@ -23,7 +23,7 @@ Ces API sont constituées des méthodes REST, qui sont conçues pour être utili
 -   API d’achat de Microsoft Store : [accorder un produit gratuit à un utilisateur](grant-free-products.md), [obtenir des abonnements pour un utilisateur](get-subscriptions-for-a-user.md)et [modifier l’état de facturation d’un abonnement pour un utilisateur](change-the-billing-state-of-a-subscription-for-a-user.md).
 
 > [!NOTE]
-> L’API de collection Microsoft Store et l’API d’achat utilisent l’authentification Azure Active Directory (Azure AD) pour accéder aux informations de possession du client. Pour utiliser ces API, vous (ou votre organisation) devez disposer d’un répertoire Azure AD et vous devez disposer d’une autorisation d' [administrateur général](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) pour l’annuaire. Si vous utilisez déjà Microsoft 365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’un annuaire Azure AD.
+> L’API de collection Microsoft Store et l’API d’achat utilisent l’authentification Azure Active Directory (Azure AD) pour accéder aux informations de possession du client. Pour utiliser ces API, vous (ou votre organisation) devez disposer d’un répertoire Azure AD et vous devez disposer d’une autorisation d' [administrateur général](/azure/active-directory/users-groups-roles/directory-assign-admin-roles) pour l’annuaire. Si vous utilisez déjà Microsoft 365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’un annuaire Azure AD.
 
 ## <a name="overview"></a>Vue d’ensemble
 
@@ -49,14 +49,14 @@ Avant de pouvoir utiliser l’API de collection Microsoft Store ou l’API d’a
 > [!NOTE]
 > Vous devez uniquement effectuer les tâches de cette section une seule fois. Une fois que vous avez mis à jour votre manifeste d’application Azure AD et que vous avez l’ID de locataire, l’ID d’application et la clé secrète client, vous pouvez réutiliser ces valeurs chaque fois que vous avez besoin de créer un nouveau jeton d’accès Azure AD.
 
-1.  Si vous ne l’avez pas déjà fait, suivez les instructions de la procédure d' [intégration d’applications avec Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications) pour inscrire une application **Web/API** avec Azure ad.
+1.  Si vous ne l’avez pas déjà fait, suivez les instructions de la procédure d' [intégration d’applications avec Azure Active Directory](/azure/active-directory/develop/active-directory-integrating-applications) pour inscrire une application **Web/API** avec Azure ad.
     > [!NOTE]
     > Lorsque vous inscrivez votre application, vous devez choisir application **Web/API** comme type d’application afin de pouvoir récupérer une clé (également appelée clé *secrète client*) pour votre application. Pour appeler l’API de collection Microsoft Store ou l’API d’achat, vous devez fournir une clé secrète client lorsque vous demandez un jeton d’accès à partir d’Azure AD dans une étape ultérieure.
 
 2.  Dans le [portail de gestion Azure](https://portal.azure.com/), accédez à **Azure Active Directory**. Sélectionnez votre annuaire, cliquez sur **inscriptions d’applications** dans le volet de navigation gauche, puis sélectionnez votre application.
 3.  Vous accédez à la page d’inscription principale de l’application. Dans cette page, copiez la valeur ID de l' **application** pour l’utiliser ultérieurement.
-4.  Créez une clé dont vous aurez besoin plus tard (il s’agit d’une clé *secrète client*). Dans le volet gauche, cliquez sur **paramètres** , puis sur **clés**. Dans cette page, suivez les étapes pour [créer une clé](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications#to-add-application-credentials-or-permissions-to-access-web-apis). Copiez cette clé pour une utilisation ultérieure.
-5.  Ajoutez plusieurs URI d’audience requis à votre [manifeste d’application](https://docs.microsoft.com/azure/active-directory/develop/active-directory-application-manifest). Dans le volet gauche, cliquez sur **Manifeste**. Cliquez sur **modifier**, remplacez la `"identifierUris"` section par le texte suivant, puis cliquez sur **Enregistrer**.
+4.  Créez une clé dont vous aurez besoin plus tard (il s’agit d’une clé *secrète client*). Dans le volet gauche, cliquez sur **paramètres** , puis sur **clés**. Dans cette page, suivez les étapes pour [créer une clé](/azure/active-directory/develop/active-directory-integrating-applications#to-add-application-credentials-or-permissions-to-access-web-apis). Copiez cette clé pour une utilisation ultérieure.
+5.  Ajoutez plusieurs URI d’audience requis à votre [manifeste d’application](/azure/active-directory/develop/active-directory-application-manifest). Dans le volet gauche, cliquez sur **Manifeste**. Cliquez sur **modifier**, remplacez la `"identifierUris"` section par le texte suivant, puis cliquez sur **Enregistrer**.
 
     ```json
     "identifierUris" : [                                
@@ -107,7 +107,7 @@ Selon les méthodes que vous souhaitez appeler dans le Microsoft Store API de co
 
 ### <a name="create-the-tokens"></a>Créer les jetons
 
-Pour créer les jetons d’accès, utilisez l’API OAuth 2,0 dans votre service en suivant les instructions des [appels de service à service à l’aide des informations d’identification du client](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/) pour envoyer une requête HTTP Après au ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` point de terminaison. Voici un exemple de requête.
+Pour créer les jetons d’accès, utilisez l’API OAuth 2,0 dans votre service en suivant les instructions des [appels de service à service à l’aide des informations d’identification du client](/azure/active-directory/azuread-dev/v1-oauth2-client-creds-grant-flow) pour envoyer une requête HTTP Après au ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` point de terminaison. Voici un exemple de requête.
 
 ``` syntax
 POST https://login.microsoftonline.com/<tenant_id>/oauth2/token HTTP/1.1
@@ -126,7 +126,7 @@ Pour chaque jeton, spécifiez les données de paramètre suivantes :
 
 * Pour le paramètre de *ressource* , spécifiez l’un des URI d’audience répertoriés dans la [section précédente](#access-tokens), en fonction du type de jeton d’accès que vous créez.
 
-Une fois votre jeton d’accès arrivé à expiration, vous pouvez l’actualiser en suivant les instructions fournies [ici](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens). Pour plus d’informations sur la structure d’un jeton d’accès, voir [Jeton et types de réclamations pris en charge](https://docs.microsoft.com/azure/active-directory/develop/id-tokens).
+Une fois votre jeton d’accès arrivé à expiration, vous pouvez l’actualiser en suivant les instructions fournies [ici](/azure/active-directory/azuread-dev/v1-protocols-oauth-code#refreshing-the-access-tokens). Pour plus d’informations sur la structure d’un jeton d’accès, voir [Jeton et types de réclamations pris en charge](/azure/active-directory/develop/id-tokens).
 
 <span id="step-4"/>
 
@@ -149,9 +149,9 @@ Procédez comme suit pour créer une clé d’ID de Microsoft Store que vous pou
 
 2.  Dans votre code d’application, appelez l’une des méthodes suivantes pour récupérer une clé d’ID de Microsoft Store :
 
-  * Si votre application utilise la classe [StoreContext](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreContext) dans l’espace de noms [Windows. services. Store](https://docs.microsoft.com/uwp/api/windows.services.store) pour gérer les achats dans l’application, utilisez la méthode [StoreContext. GetCustomerCollectionsIdAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getcustomercollectionsidasync) .
+  * Si votre application utilise la classe [StoreContext](/uwp/api/Windows.Services.Store.StoreContext) dans l’espace de noms [Windows. services. Store](/uwp/api/windows.services.store) pour gérer les achats dans l’application, utilisez la méthode [StoreContext. GetCustomerCollectionsIdAsync](/uwp/api/windows.services.store.storecontext.getcustomercollectionsidasync) .
 
-  * Si votre application utilise la classe [CurrentApp](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp) dans l’espace de noms [Windows. ApplicationModel. Store](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store) pour gérer les achats dans l’application, utilisez la méthode [CurrentApp. GetCustomerCollectionsIdAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.getcustomercollectionsidasync) .
+  * Si votre application utilise la classe [CurrentApp](/uwp/api/Windows.ApplicationModel.Store.CurrentApp) dans l’espace de noms [Windows. ApplicationModel. Store](/uwp/api/windows.applicationmodel.store) pour gérer les achats dans l’application, utilisez la méthode [CurrentApp. GetCustomerCollectionsIdAsync](/uwp/api/windows.applicationmodel.store.currentapp.getcustomercollectionsidasync) .
 
     Transmettez votre jeton d’accès Azure AD au paramètre *serviceTicket* de la méthode. Si vous conservez des ID d’utilisateur anonymes dans le contexte des services que vous gérez en tant que serveur de publication de l’application actuelle, vous pouvez également transmettre un ID utilisateur au paramètre *publisherUserId* pour associer l’utilisateur actuel à la nouvelle clé d’id de Microsoft Store (l’ID utilisateur sera incorporé dans la clé). Dans le cas contraire, si vous n’avez pas besoin d’associer un ID utilisateur à la clé d’ID de Microsoft Store, vous pouvez transmettre n’importe quelle valeur de chaîne au paramètre *publisherUserId* .
 
@@ -167,9 +167,9 @@ Suivez ces étapes pour créer une clé d’ID de Microsoft Store que vous pouve
 
 2.  Dans votre code d’application, appelez l’une des méthodes suivantes pour récupérer une clé d’ID de Microsoft Store :
 
-  * Si votre application utilise la classe [StoreContext](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreContext) dans l’espace de noms [Windows. services. Store](https://docs.microsoft.com/uwp/api/windows.services.store) pour gérer les achats dans l’application, utilisez la méthode [StoreContext. GetCustomerPurchaseIdAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getcustomerpurchaseidasync) .
+  * Si votre application utilise la classe [StoreContext](/uwp/api/Windows.Services.Store.StoreContext) dans l’espace de noms [Windows. services. Store](/uwp/api/windows.services.store) pour gérer les achats dans l’application, utilisez la méthode [StoreContext. GetCustomerPurchaseIdAsync](/uwp/api/windows.services.store.storecontext.getcustomerpurchaseidasync) .
 
-  * Si votre application utilise la classe [CurrentApp](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp) dans l’espace de noms [Windows. ApplicationModel. Store](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store) pour gérer les achats dans l’application, utilisez la méthode [CurrentApp. GetCustomerPurchaseIdAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.getcustomerpurchaseidasync) .
+  * Si votre application utilise la classe [CurrentApp](/uwp/api/Windows.ApplicationModel.Store.CurrentApp) dans l’espace de noms [Windows. ApplicationModel. Store](/uwp/api/windows.applicationmodel.store) pour gérer les achats dans l’application, utilisez la méthode [CurrentApp. GetCustomerPurchaseIdAsync](/uwp/api/windows.applicationmodel.store.currentapp.getcustomerpurchaseidasync) .
 
     Transmettez votre jeton d’accès Azure AD au paramètre *serviceTicket* de la méthode. Si vous conservez des ID d’utilisateur anonymes dans le contexte des services que vous gérez en tant que serveur de publication de l’application actuelle, vous pouvez également transmettre un ID utilisateur au paramètre *publisherUserId* pour associer l’utilisateur actuel à la nouvelle clé d’id de Microsoft Store (l’ID utilisateur sera incorporé dans la clé). Dans le cas contraire, si vous n’avez pas besoin d’associer un ID utilisateur à la clé d’ID de Microsoft Store, vous pouvez transmettre n’importe quelle valeur de chaîne au paramètre *publisherUserId* .
 
@@ -252,6 +252,6 @@ Voici un exemple de jeu de revendications de clé d’ID Microsoft Store décod�
 * [Obtenir les abonnements d’un utilisateur](get-subscriptions-for-a-user.md)
 * [Modifier l’état de facturation de l’abonnement d’un utilisateur](change-the-billing-state-of-a-subscription-for-a-user.md)
 * [Renouveler une clé d’ID du Microsoft Store](renew-a-windows-store-id-key.md)
-* [Intégration d’applications dans Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app)
+* [Intégration d’applications dans Azure Active Directory](/azure/active-directory/develop/quickstart-register-app)
 * [Connaître le manifeste d’application Azure Active Directory]( https://go.microsoft.com/fwlink/?LinkId=722500)
-* [Types de jeton et de revendication pris en charge](https://docs.microsoft.com/azure/active-directory/develop/id-tokens)
+* [Types de jeton et de revendication pris en charge](/azure/active-directory/develop/id-tokens)

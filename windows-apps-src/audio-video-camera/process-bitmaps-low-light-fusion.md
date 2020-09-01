@@ -1,64 +1,64 @@
 ---
-description: Cet article explique comment utiliser la classe LowLightFusion pour traiter des images bitmap.
-title: Traiter des images bitmap avec l’API Low Light Fusion
+description: Cet article explique comment utiliser la classe LowLightFusion pour traiter des bitmaps.
+title: Traiter les bitmaps avec l’API de fusion faible légère
 ms.date: 03/22/2018
 ms.topic: article
-keywords: Windows 10, uwp, low light fusion, bitmaps, traitement d’image
+keywords: Windows 10, UWP, fusion faible légère, bitmaps, traitement d’image
 ms.localizationpriority: medium
-ms.openlocfilehash: e0677d2e4ce5e412c158b8a00da3a6338bae6c46
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 6c1ae98b12d9ddb83f5109212d91ae2aa804e32a
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57656214"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89163643"
 ---
 # <a name="process-bitmaps-with-the-lowlightfusion-api"></a>Traiter des images bitmap avec l’API LowLightFusion
 
-Les images à basse lumière sont difficiles à capturer en bonne qualité, notamment avec des appareils mobiles à ouverture et taille de capteur fixes. Pour compenser un faible éclairage, les appareils peuvent augmenter la durée d'exposition ou le gain du capteur, ce qui peut entraîner un flou de mouvement et une augmentation du bruit dans les images. 
+Les images de faible luminosité sont difficiles à capturer avec une qualité d’image correcte, en particulier sur les appareils mobiles avec une ouverture fixe et une taille de capteur. Pour compenser le faible éclairage, les appareils peuvent augmenter le temps d’exposition ou le gain de capteur, ce qui peut entraîner un flou directionnel et un bruit accru dans les images. 
 
-La [classe LowLightFusion](https://docs.microsoft.com/uwp/api/windows.media.core.lowlightfusion) améliore la qualité des images à basse lumière en échantillonnant les informations des pixels à partir de plusieurs images prises dans un court intervalle de temps, c'est-à-dire, des images prises en rafale rapide, afin de réduire le bruit et le flou de mouvement. Cette fonction est utile à ajouter à une application de retouche photo, par exemple.
+La [classe LowLightFusion](/uwp/api/windows.media.core.lowlightfusion) améliore la qualité des images de faible luminosité en échantillonnant des informations de pixel à partir de plusieurs frames dans une proximité temporelle étroite, c’est-à-dire des images de rafales courtes, afin de réduire le bruit et le flou du mouvement. Il s’agit d’une fonctionnalité utile à ajouter à une application de modification de photos, par exemple.
 
-Cette fonctionnalité est également mise à disposition par le biais de la [classe AdvancedPhotoCapture](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.AdvancedPhotoCapture), qui applique l’algorithme Low Light Fusion à une séquence d’images directement après la capture des images, si nécessaire. Voir la capture de [photo en basse lumière](https://docs.microsoft.com/windows/uwp/audio-video-camera/high-dynamic-range-hdr-photo-capture#low-light-photo-capture) pour savoir comment implémenter cette fonctionnalité.
+Cette fonctionnalité est également mise à disposition par le biais de la [classe AdvancedPhotoCapture](/uwp/api/Windows.Media.Capture.AdvancedPhotoCapture), qui applique l’algorithme de fusion faible légère à une séquence d’images directement après la capture des images, si nécessaire. Pour découvrir comment implémenter cette fonctionnalité, consultez capture de [photos faible-clair](./high-dynamic-range-hdr-photo-capture.md#low-light-photo-capture) .
 
-## <a name="prepare-the-images-for-processing"></a>Préparer les images pour le traitement
+## <a name="prepare-the-images-for-processing"></a>Préparer les images à traiter
 
-Dans cet exemple, nous allons montrer comment utiliser la [classe LowLightFusion](https://docs.microsoft.com/uwp/api/windows.media.core.lowlightfusion), ainsi que la classe [FileOpenPicker](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) pour qu'un utilisateur puisse sélectionner plusieurs images et leur appliquer la fonctionnalité Low Light Fusion.
+Dans cet exemple, nous allons montrer comment utiliser la [classe LowLightFusion](/uwp/api/windows.media.core.lowlightfusion), ainsi que le [FileOpenPicker](/uwp/api/Windows.Storage.Pickers.FileOpenPicker) pour permettre à un utilisateur de sélectionner plusieurs images sur lesquelles effectuer une fusion faible.
 
-Tout d’abord, nous devons déterminer le nombre d’images (également appelées trames) acceptées par l’algorithme et créer une liste pour contenir ces images.
+Tout d’abord, nous devrons déterminer le nombre d’images acceptées par l’algorithme et créer une liste pour contenir ces frames.
 
 [!code-cs[SnippetGetMaxLLFFrames](./code/LowLightFusionSample/cs/MainPage.xaml.cs#SnippetGetMaxLLFFrames)]
 
-Une fois déterminé le nombre de trames acceptées par l’algorithme Low Light Fusion, nous pouvons utiliser la classe [FileOpenPicker](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) pour permettre à l’utilisateur de choisir les images à utiliser dans l’algorithme.
+Une fois que nous avons déterminé le nombre de trames acceptées par l’algorithme de fusion faible légère, nous pouvons utiliser le [FileOpenPicker](/uwp/api/Windows.Storage.Pickers.FileOpenPicker) pour permettre à l’utilisateur de choisir les images à utiliser dans l’algorithme.
 
 [!code-cs[SnippetGetFrames](./code/LowLightFusionSample/cs/MainPage.xaml.cs#SnippetGetFrames)]
 
-Maintenant que le nombre correct de trames est sélectionné, nous devons décoder les images en [SoftwareBitmaps](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap) et vérifier que les SoftwareBitmaps sont au format approprié pour LowLightFusion.
+Maintenant que nous avons sélectionné le nombre correct de frames, nous devons décoder les images en [SoftwareBitmaps](/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap) et vérifier que le format de SoftwareBitmaps est correct pour LowLightFusion.
 
 [!code-cs[SnippetDecodeFrames](./code/LowLightFusionSample/cs/MainPage.xaml.cs#SnippetDecodeFrames)]
 
 
-## <a name="fuse-the-bitmaps-into-a-single-bitmap"></a>Fusionner les bitmaps en une seule image bitmap
+## <a name="fuse-the-bitmaps-into-a-single-bitmap"></a>Fusible des bitmaps en une seule bitmap
 
-Maintenant que nous avons un nombre approprié de trames dans un format acceptable, nous pouvons utiliser la méthode **[FuseAsync](https://docs.microsoft.com/uwp/api/windows.media.core.lowlightfusion.fuseasync)** pour appliquer l’algorithme Low Light Fusion. Notre résultat sera l’image traitée, avec une netteté améliorée, sous la forme d’un élément SoftwareBitmap. 
+Maintenant que nous avons un nombre correct de frames dans un format acceptable, nous pouvons utiliser la méthode **[FuseAsync](/uwp/api/windows.media.core.lowlightfusion.fuseasync)** pour appliquer l’algorithme de fusion faible légère. Notre résultat est l’image traitée, avec une clarté améliorée, sous la forme d’un SoftwareBitmap. 
 
 [!code-cs[SnippetFuseFrames](./code/LowLightFusionSample/cs/MainPage.xaml.cs#SnippetFuseFrames)]
 
-Enfin, nous allons nettoyer le SoftwareBitmap obtenu en l'encodant et en l’enregistrant sous la forme d'une image « normale » et conviviale, semblable aux images d’entrée du départ.
+Enfin, nous allons nettoyer les SoftwareBitmap résultants en encodant et en les enregistrant dans une image « normale » conviviale, semblable aux images d’entrée que nous avons démarrées avec.
 
 [!code-cs[SnippetEncodeFrame](./code/LowLightFusionSample/cs/MainPage.xaml.cs#SnippetEncodeFrame)]
 
 
 ## <a name="before-and-after"></a>Avant et après
 
-Voici un exemple d’image d’entrée et de l’image de sortie qui en résulte après l’application de l’algorithme Low Light Fusion.
+Voici un exemple d’image d’entrée et l’image de sortie obtenue après l’application de l’algorithme de fusion faible légère.
 
 > [!div class="mx-tableFixed"] 
-| Image d’entrée | Sortie de Low Light Fusion | 
+| Frame d’entrée | Sortie de fusion légère faible | 
 |-------------|-------------------------|
-| ![Image d’entrée de l’algorithme Low Light Fusion](./images/LLF-Input.png) | ![Image de résultat de l’algorithme Low Light Fusion](./images/LLF-Output.png) |
+| ![Trame d’entrée pour l’algorithme de fusion faible légère](./images/LLF-Input.png) | ![Trame de résultat de l’algorithme de fusion faible légère](./images/LLF-Output.png) |
 
-À partir de l’image d’entrée, vous pouvez voir que l’éclairage et la clarté des ombres autour de la bannière ont été améliorés.
+Vous pouvez voir à partir du frame d’entrée que l’éclairage et la clarté des ombres entourant la bannière ont été améliorés.
 
 ## <a name="related-topics"></a>Rubriques connexes 
-[Classe de LowLightFusion](https://docs.microsoft.com/uwp/api/windows.media.core.lowlightfusion)  
-[Classe de LowLightFusionResult](https://docs.microsoft.com/uwp/api/windows.media.core.lowlightfusionresult)
+[LowLightFusion, classe](/uwp/api/windows.media.core.lowlightfusion)  
+[LowLightFusionResult, classe](/uwp/api/windows.media.core.lowlightfusionresult)

@@ -1,24 +1,24 @@
 ---
 title: Présentation du développement d’applications Windows sécurisées
-description: Cet article d’introduction aide les architectes et les développeurs d’applications à mieux comprendre les différentes fonctionnalités de la plateforme Windows 10 qui accélèrent la création d’applications de plateforme Windows universelle sécurisée (UWP).
+description: Cet article introductif aide les architectes et développeurs d’applications à se familiariser avec les diverses fonctionnalités de plateforme Windows 10 qui accélèrent la création d’applications de plateforme Windows universelle (UWP).
 ms.assetid: 6AFF9D09-77C2-4811-BB1A-BBF4A6FF511E
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, sécurité
 ms.localizationpriority: medium
-ms.openlocfilehash: 98ef721c2068927733648d494a086160f23baab9
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 891c177879aff35f741ea9cc819ca4fd771a9437
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258947"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89161953"
 ---
 # <a name="intro-to-secure-windows-app-development"></a>Présentation du développement d’applications Windows sécurisées
 
 
 
 
-Cet article d’introduction aide les architectes et les développeurs d’applications à mieux comprendre les différentes fonctionnalités de la plateforme Windows 10 qui accélèrent la création d’applications de plateforme Windows universelle sécurisée (UWP). Il explique en détail comment utiliser les fonctionnalités de sécurité Windows disponibles à chacune des phases suivantes : authentification, données en transit et données au repos. Vous pourrez accéder à des informations plus détaillées sur les différents sujets en consultant les ressources supplémentaires mentionnées dans chaque chapitre.
+Cet article introductif aide les architectes et développeurs d’applications à se familiariser avec les diverses fonctionnalités de plateforme Windows 10 qui accélèrent la création d’applications de plateforme Windows universelle (UWP). Il explique en détail comment utiliser les fonctionnalités de sécurité Windows disponibles à chacune des phases suivantes : authentification, données en transit et données au repos. Vous pourrez accéder à des informations plus détaillées sur les différents sujets en consultant les ressources supplémentaires mentionnées dans chaque chapitre.
 
 ## <a name="1-introduction"></a>1 Introduction
 
@@ -31,7 +31,7 @@ Voici quelques-uns des avantages que vous procurent les fonctionnalités de séc
 -   Vous écrivez, testez et gérez moins de code que si vous implémentiez du code personnalisé pour prendre en compte ces scénarios de sécurité.
 -   Vos applications se révèlent plus stables et sécurisées, car vous utilisez le système d’exploitation pour contrôler la façon dont l’application accède à ses ressources, ainsi qu’aux ressources système locales ou distantes.
 
-Au cours de l’authentification, l’identité d’un utilisateur demandant l’accès à un service spécifique est validée. Windows Hello est le composant de Windows 10 qui permet de créer un mécanisme d’authentification plus sécurisé dans les applications Windows. Ces composants vous permettent d’utiliser un code confidentiel (PIN) ou des caractéristiques biométriques comme les empreintes digitales, le visage ou l’iris de l’utilisateur pour implémenter une authentification multifacteur pour vos applications.
+Au cours de l’authentification, l’identité d’un utilisateur demandant l’accès à un service spécifique est validée. Windows Hello est le composant de Windows 10 qui permet de créer un mécanisme d’authentification plus sécurisé dans les applications Windows. Avec elle, vous pouvez utiliser un code confidentiel ou une biométrie telle que les empreintes digitales de l’utilisateur, le visage ou l’iris pour implémenter l’authentification multifacteur pour vos applications.
 
 Les données en transit font référence à la connexion et aux messages transférés pendant cette dernière. La récupération de données à partir d’un serveur distant au moyen de services web en constituent un exemple. L’utilisation des protocoles SSL (Secure Sockets Layer) et S-HTTP (Secure Hypertext Transfer Protocol) garantit la sécurité de la connexion. La capacité à empêcher des tiers d’accéder à ces messages ou des applications non autorisées de communiquer avec les services web constitue un aspect primordial de la sécurisation des données en transit.
 
@@ -81,17 +81,17 @@ Le protocole OAuth permet aux services informatiques de « sous-traiter » effic
 
 Les utilisateurs disposent d’un contrôle total sur leur identité sur ces plateformes, mais une fois qu’ils ont été authentifiés, les applications peuvent demander un jeton au fournisseur d’identité avec le consentement de l’utilisateur, afin d’utiliser ce jeton pour autoriser les utilisateurs authentifiés.
 
-Le service Broker d’authentification web de Windows 10 fournit un ensemble d’API et l’infrastructure qui permettent aux applications d’utiliser des protocoles d’authentification et d’autorisation tels qu’OAuth et OpenID. Les applications peuvent initier des opérations d’authentification par le biais de l’API [**WebAuthenticationBroker**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web.WebAuthenticationBroker), ce qui génère le renvoi d’un élément [**WebAuthenticationResult**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web.WebAuthenticationResult). La figure ci-après illustre une vue d’ensemble du flux de communications.
+Le service Broker d’authentification web de Windows 10 fournit un ensemble d’API et l’infrastructure qui permettent aux applications d’utiliser des protocoles d’authentification et d’autorisation tels qu’OAuth et OpenID. Les applications peuvent lancer des opérations d’authentification via l’API [**WebAuthenticationBroker**](/uwp/api/Windows.Security.Authentication.Web.WebAuthenticationBroker) , ce qui entraîne le retour d’un [**WebAuthenticationResult**](/uwp/api/Windows.Security.Authentication.Web.WebAuthenticationResult). La figure ci-après illustre une vue d’ensemble du flux de communications.
 
 ![flux de travail du service Broker d’authentification web](images/secure-wab.png)
 
-L’application joue le rôle d’intermédiaire en initiant l’authentification auprès du fournisseur d’identité par le biais d’un élément [**WebView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView) dans l’application. Une fois que le fournisseur d’identité a authentifié l’utilisateur, il renvoie à l’application un jeton qui permettra de demander des informations sur l’utilisateur au fournisseur d’identité. Par mesure de sécurité, l’application doit être inscrite auprès du fournisseur d’identité avant de pouvoir faire office d’intermédiaire pour les processus d’authentification auprès du fournisseur d’identité. Cette procédure d’inscription diffère pour chaque fournisseur.
+L’application joue le rôle d’intermédiaire en initiant l’authentification auprès du fournisseur d’identité par le biais d’un élément [**WebView**](/uwp/api/Windows.UI.Xaml.Controls.WebView) dans l’application. Une fois que le fournisseur d’identité a authentifié l’utilisateur, il renvoie à l’application un jeton qui permettra de demander des informations sur l’utilisateur au fournisseur d’identité. Par mesure de sécurité, l’application doit être inscrite auprès du fournisseur d’identité avant de pouvoir faire office d’intermédiaire pour les processus d’authentification auprès du fournisseur d’identité. Cette procédure d’inscription diffère pour chaque fournisseur.
 
-Voici le flux de travail général concernant l’appel de l’API [**WebAuthenticationBroker**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web.WebAuthenticationBroker) pour communiquer avec le fournisseur.
+Voici le flux de travail général concernant l’appel de l’API [**WebAuthenticationBroker**](/uwp/api/Windows.Security.Authentication.Web.WebAuthenticationBroker) pour communiquer avec le fournisseur.
 
 -   Construction des chaînes de demande à envoyer au fournisseur d’identité. Le nombre de chaînes et les informations figurant dans chacune d’elles diffèrent selon chaque service web, mais comprennent généralement deux chaînes d’URI contenant chacune une URL : l’une à laquelle la demande d’authentification est envoyée, et l’autre vers laquelle l’utilisateur est redirigé une fois l’autorisation effectuée.
--   Appel de [**WebAuthenticationBroker.AuthenticateAsync**](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync), transmission des chaînes de demande, puis attente de la réponse du fournisseur d’identité.
--   Appel de [**WebAuthenticationResult.ResponseStatus**](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.webauthenticationresult.responsestatus) pour obtenir l’état lors de la réception de la réponse.
+-   Appel de [**WebAuthenticationBroker.AuthenticateAsync**](/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync), transmission des chaînes de demande, puis attente de la réponse du fournisseur d’identité.
+-   Appel de [**WebAuthenticationResult.ResponseStatus**](/uwp/api/windows.security.authentication.web.webauthenticationresult.responsestatus) pour obtenir l’état lors de la réception de la réponse.
 -   Si la communication aboutit, traitement de la chaîne de réponse renvoyée par le fournisseur d’identité. Si la communication échoue, traitement de l’erreur.
 
 Si la communication aboutit, traitement de la chaîne de réponse renvoyée par le fournisseur d’identité. Si la communication échoue, traitement de l’erreur.
@@ -158,24 +158,24 @@ Bien qu’Azure AD puisse également implémenter l’authentification à un seu
 
 En outre, Azure AD peut jouer le rôle de fournisseur OAuth, en offrant à l’utilisateur standard un mécanisme d’authentification et d’autorisation pour des applications exécutées sur différentes plateformes. Pour plus d’informations, voir [Azure Active Directory](https://azure.microsoft.com/services/active-directory/) et [Azure Multi-Factor Authentication](https://azure.microsoft.com/services/multi-factor-authentication/).
 
-## <a name="24-windows-hello"></a>2.4 Windows Hello
+## <a name="24-windows-hello"></a>2,4 Windows Hello
 
 
-Le système d’exploitation Windows 10 intègre un mécanisme d’authentification multifacteur d’une grande simplicité. Windows Hello est le nouveau système de connexion biométrique intégré à Windows 10. Étant donné qu’il est directement intégré au système d’exploitation, Windows Hello peut identifier le visage ou les empreintes digitales pour déverrouiller les appareils des utilisateurs. Le magasin d’informations d’identification sécurisées Windows protège les données biométriques sur l’appareil.
+Le système d’exploitation Windows 10 intègre un mécanisme d’authentification multifacteur d’une grande simplicité. Windows Hello est le nouveau système de connexion biométrique intégré à Microsoft 10. Étant donné qu’il est directement intégré au système d’exploitation, Windows Hello peut identifier le visage ou les empreintes digitales pour déverrouiller les appareils des utilisateurs. Le magasin d’informations d’identification sécurisées Windows protège les données biométriques figurant sur l’appareil.
 
-Avec Windows Hello, un appareil dispose d’une méthode fiable de reconnaissance de l’utilisateur, ce qui permet de traiter la première partie du chemin d’accès entre un utilisateur et un service ou un élément de données demandé. Une fois que l’appareil a reconnu l’utilisateur, il doit toujours authentifier ce dernier avant de déterminer s’il lui accorde l’accès à une ressource demandée. Windows Hello propose une authentification à 2 facteurs (2FA) forte, entièrement intégrée à Windows, qui remplace les mots de passe réutilisables par la combinaison d’un appareil spécifique et d’un mouvement biométrique ou d’un code confidentiel. Le code PIN est spécifié par l’utilisateur dans le cadre de son inscription au compte Microsoft.
+Avec Windows Hello, un appareil dispose d’une méthode fiable de reconnaissance de l’utilisateur, ce qui permet de traiter la première partie du chemin d’accès entre un utilisateur et un service ou un élément de données demandé. Une fois que l’appareil a reconnu l’utilisateur, il doit toujours authentifier ce dernier avant de déterminer s’il lui accorde l’accès à une ressource demandée. Windows Hello offre également une puissante authentification à deux facteurs (2FA) qui est entièrement intégrée à Windows et remplace les mots de passe réutilisables par la combinaison d’un appareil spécifique et d’un mouvement biométrique ou d’un code confidentiel. Le code PIN est spécifié par l’utilisateur dans le cadre de l’inscription de compte Microsoft.
 
-Toutefois, Windows Hello n’est pas un simple substitut aux systèmes 2FA traditionnels. Sa conception est similaire aux cartes à puce : l’authentification est effectuée à l’aide de primitives cryptographiques plutôt que des comparaisons de chaînes, et le document de clé de l’utilisateur est protégé à l’intérieur d’un matériel inviolable. Microsoft Hello ne nécessite pas non plus les composants d’infrastructure supplémentaires requis par le déploiement de cartes à puce. Par exemple, vous n’avez pas besoin d’une infrastructure à clé publique (PKI) pour gérer les certificats, si vous n’en êtes pas encore équipé. Windows Hello offre les principaux avantages des cartes à puce (flexibilité de déploiement pour les cartes à puce virtuelles et sécurité fiable pour les cartes à puce physiques), sans aucun de leurs inconvénients.
+Cependant, Windows Hello ne se contente pas de remplacer les systèmes 2FA traditionnels. Sa conception est similaire aux cartes à puce : l’authentification est effectuée à l’aide de primitives cryptographiques plutôt que des comparaisons de chaînes, et le document de clé de l’utilisateur est protégé à l’intérieur d’un matériel inviolable. Microsoft Hello n’a pas besoin des composants d’infrastructure supplémentaires requis pour le déploiement de cartes à puce. Par exemple, vous n’avez pas besoin d’une infrastructure à clé publique (PKI) pour gérer les certificats, si vous n’en êtes pas encore équipé. Windows Hello allie les principaux avantages des cartes à puce : flexibilité de déploiement pour les cartes à puce virtuelles et sécurité robuste pour les cartes à puce physiques, sans aucun inconvénient.
 
-Un appareil doit être inscrit auprès de Windows Hello pour que les utilisateurs puissent s’authentifier sur cet appareil. Windows Hello utilise un chiffrement asymétrique (clé publique/privée) dans le cadre duquel l’une des parties utilise une clé publique pour chiffrer des données que l’autre partie peut déchiffrer à l’aide d’une clé privée. Windows Hello crée un ensemble de paires de clés publique/privée et écrit les clés privées sur le processeur du module de plateforme sécurisée (TPM) de l’appareil. Une fois qu’un appareil est inscrit, les applications UWP peuvent appeler les API système pour récupérer la clé publique de l’utilisateur, qui peut être utilisée pour inscrire l’utilisateur sur le serveur.
+Un appareil doit être inscrit auprès de Windows Hello pour que les utilisateurs puissent s’authentifier auprès de celui-ci. Windows Hello utilise le chiffrement asymétrique (clé publique/privée) dans lequel un tiers utilise une clé publique pour chiffrer les données que l’autre partie peut déchiffrer à l’aide d’une clé privée. Dans le cas de Windows Hello, il crée un ensemble de paires de clés publiques/privées et écrit les clés privées sur la puce de la Module de plateforme sécurisée (TPM) du périphérique (TPM). Une fois qu’un appareil est inscrit, les applications UWP peuvent appeler les API système pour récupérer la clé publique de l’utilisateur, qui peut être utilisée pour inscrire l’utilisateur sur le serveur.
 
 Le flux de travail d’inscription d’une application peut ressembler à ce qui suit :
 
-![Inscription à Windows hello](images/secure-passport.png)
+![inscription à Windows Hello](images/secure-passport.png)
 
-Les informations d’inscription que vous collectez peuvent inclure beaucoup plus informations d’identification que dans le cas de ce scénario simple. Par exemple, si votre application accède à un service sécurisé tel qu’un service bancaire, votre processus d’inscription doit demander une preuve d’identité et d’autres informations. Une fois toutes les conditions remplies, la clé publique de cet utilisateur est stockée dans le système principal et utilisée pour la validation lors de l’utilisation suivante du service par l’utilisateur.
+Les informations d’inscription que vous collectez peuvent inclure beaucoup d’autres informations d’identification que dans le cas de ce scénario simple. Par exemple, si votre application accède à un service sécurisé tel qu’un service bancaire, votre processus d’inscription doit demander une preuve d’identité et d’autres informations. Une fois toutes les conditions remplies, la clé publique de cet utilisateur est stockée dans le système principal et utilisée pour la validation lors de l’utilisation suivante du service par l’utilisateur.
 
-Pour en savoir plus sur Windows Hello, voir le [guide Windows Hello](https://docs.microsoft.com/windows/keep-secure/microsoft-passport-guide) et le [guide du développeur de Windows Hello](microsoft-passport.md).
+Pour plus d’informations sur Windows Hello, reportez-vous au [Guide Windows Hello](/windows/keep-secure/microsoft-passport-guide) et au [Guide du développeur Windows Hello](microsoft-passport.md).
 
 ## <a name="3-data-in-flight-security-methods"></a>3 Méthodes de sécurité des données en transit
 
@@ -214,7 +214,7 @@ Il existe différentes méthodes pour implémenter l’épinglage SSL dans les a
 
 Afin d’offrir un contrôle accru sur la logique de validation, des API sont disponibles pour valider les certificats renvoyés par le serveur en réponse à une requête HTTPS. Notez que cette méthode nécessite l’envoi d’une requête et l’inspection de la réponse. Par conséquent, prenez soin d’ajouter cette tâche en tant qu’opération de validation avant de commencer à envoyer des informations sensibles dans une requête.
 
-Le code C# ci-après illustre cette méthode d’épinglage SSL. La méthode **ValidateSSLRoot** utilise la classe [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) pour exécuter une requête HTTP. Une fois que le client a envoyé la réponse, il utilise la collection [**RequestMessage.TransportInformation.ServerIntermediateCertificates**](https://docs.microsoft.com/uwp/api/windows.web.http.httptransportinformation.serverintermediatecertificates) pour inspecter les certificats renvoyés par le serveur. Le client peut ensuite valider la totalité de la chaîne de certificats avec les empreintes numériques qu’il a incluses. Cette méthode n’exige pas que les empreintes numériques des certificats soient mises à jour dans l’application lorsque le certificat de serveur arrive à expiration et fait l’objet d’un renouvellement.
+Le code C# ci-après illustre cette méthode d’épinglage SSL. La méthode **ValidateSSLRoot** utilise la classe [**HttpClient**](/uwp/api/Windows.Web.Http.HttpClient) pour exécuter une requête HTTP. Une fois que le client a envoyé la réponse, il utilise la collection [**RequestMessage.TransportInformation.ServerIntermediateCertificates**](/uwp/api/windows.web.http.httptransportinformation.serverintermediatecertificates) pour inspecter les certificats renvoyés par le serveur. Le client peut ensuite valider la totalité de la chaîne de certificats avec les empreintes numériques qu’il a incluses. Cette méthode n’exige pas que les empreintes numériques des certificats soient mises à jour dans l’application lorsque le certificat de serveur arrive à expiration et fait l’objet d’un renouvellement.
 
 ```cs
 private async Task ValidateSSLRoot()
@@ -286,7 +286,7 @@ Lorsque les données arrivent sur un appareil, nous les désignons sous le terme
 
 Par le passé, Windows n’a jamais présenté de définition d’une application. Ce terme désignait le plus souvent un exécutable (.exe), et ceci n’englobait jamais l’installation, le stockage d’état, la durée d’exécution, le contrôle de version, l’intégration du système d’exploitation et la communication entre les applications. Le modèle de plateforme Windows universelle définit un modèle d’application qui couvre l’installation, l’environnement d’exécution, la gestion des ressources, les mises à jour, le modèle de données et la désinstallation.
 
-Les applications Windows 10 s’exécutent dans un conteneur, ce qui signifie qu’elles ont des privilèges limités par défaut (des privilèges supplémentaires peuvent être demandés et accordés par l’utilisateur). Par exemple, si une application souhaite accéder à des fichiers du système, il convient d’utiliser un sélecteur de fichiers à partir de l’espace de noms [**Windows.Storage.Pickers**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers) pour permettre à l’utilisateur de sélectionner un fichier (aucun accès direct aux fichiers n’est autorisé). De même, si une application a besoin d’accéder aux données d’emplacement de l’utilisateur, il convient d’activer et de déclarer la fonctionnalité de localisation des appareils, en informant l’utilisateur lors du téléchargement que cette application demandera l’accès à l’emplacement de l’utilisateur. En outre, lorsque l’application doit accéder pour la première fois à l’emplacement de l’utilisateur, elle présente une invite de consentement supplémentaire à l’utilisateur pour demander l’autorisation d’accéder à ces données.
+Les applications Windows 10 s’exécutent dans un conteneur, ce qui signifie qu’elles disposent de privilèges limités par défaut (des privilèges supplémentaires peuvent être demandés et accordés par l’utilisateur). Par exemple, si une application souhaite accéder à des fichiers du système, il convient d’utiliser un sélecteur de fichiers à partir de l’espace de noms [**Windows.Storage.Pickers**](/uwp/api/Windows.Storage.Pickers) pour permettre à l’utilisateur de sélectionner un fichier (aucun accès direct aux fichiers n’est autorisé). De même, si une application a besoin d’accéder aux données d’emplacement de l’utilisateur, il convient d’activer et de déclarer la fonctionnalité de localisation des appareils, en informant l’utilisateur lors du téléchargement que cette application demandera l’accès à l’emplacement de l’utilisateur. En outre, lorsque l’application doit accéder pour la première fois à l’emplacement de l’utilisateur, elle présente une invite de consentement supplémentaire à l’utilisateur pour demander l’autorisation d’accéder à ces données.
 
 Notez que ce modèle d’application agit à la façon d’une « prison » pour les applications (empêchant ces dernières d’atteindre l’extérieur), mais non à la manière d’un « château » inaccessible depuis l’extérieur (les applications avec des privilèges administratifs peuvent bien entendu accéder à l’intérieur). La fonctionnalité Device Guard disponible dans Windows 10 contribue à restreindre davantage cet accès en permettant aux organisations/services informatiques de spécifier les applications (Win32) qui sont autorisées à s’exécuter.
 
@@ -301,14 +301,14 @@ Pour plus d’informations, voir [Plateforme Windows universelle : présentation
 
 Les applications Windows qui accèdent aux services authentifiés offrent souvent aux utilisateurs la possibilité de stocker leurs informations d’identification sur leur appareil local. Cela simplifie la tâche des utilisateurs, car lorsque ces derniers fournissent leur nom d’utilisateur et leur mot de passe, l’application réutilise automatiquement ces informations à chacun de ses lancements ultérieurs. Cette fonctionnalité risquant de poser un problème de sécurité si un attaquant parvient à accéder à ces données stockées, Windows 10 permet aux applications Windows de stocker les informations d’identification des utilisateurs dans un stockage sécurisé des informations d’identification. L’application appelle l’API Stockage sécurisé des informations d’identification pour stocker et récupérer les informations d’identification dans cet espace sécurisé plutôt que de les conserver dans le conteneur de stockage de l’application. Le Stockage sécurisé des informations d’identification est géré par le système d’exploitation, mais son accès est limité à l’application qui stocke ces informations, offrant ainsi une solution gérée en toute sécurité pour le stockage des informations d’identification.
 
-Lorsqu’un utilisateur fournit les informations d’identification à stocker, l’application obtient une référence au stockage sécurisé des informations d’identification à l’aide de l’objet [**PasswordVault**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.PasswordVault) dans l’espace de noms [**Windows.Security.Credentials**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials). Elle crée ensuite un objet [**PasswordCredential**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.PasswordCredential) contenant un identificateur pour l’application Windows, le nom d’utilisateur et le mot de passe. Cet objet est transmis à la méthode [**PasswordVault.Add**](https://docs.microsoft.com/uwp/api/windows.security.credentials.passwordvault.add) pour stocker les informations d’identification dans le stockage sécurisé. L’exemple de code C# ci-après illustre cette procédure.
+Lorsqu’un utilisateur fournit les informations d’identification à stocker, l’application obtient une référence au stockage sécurisé des informations d’identification à l’aide de l’objet [**PasswordVault**](/uwp/api/Windows.Security.Credentials.PasswordVault) dans l’espace de noms [**Windows.Security.Credentials**](/uwp/api/Windows.Security.Credentials). Elle crée ensuite un objet [**PasswordCredential**](/uwp/api/Windows.Security.Credentials.PasswordCredential) contenant un identificateur pour l’application Windows, le nom d’utilisateur et le mot de passe. Cet objet est transmis à la méthode [**PasswordVault.Add**](/uwp/api/windows.security.credentials.passwordvault.add) pour stocker les informations d’identification dans le stockage sécurisé. L’exemple de code C# ci-après illustre cette procédure.
 
 ```cs
 var vault = new PasswordVault();
 vault.Add(new PasswordCredential("My App", username, password));
 ```
 
-Dans l’exemple de code C# suivant, l’application demande toutes les informations d’identification correspondant à l’application en appelant la méthode [**FindAllByResource**](https://docs.microsoft.com/uwp/api/windows.security.credentials.passwordvault.findallbyresource) de l’objet [**PasswordVault**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.PasswordVault). Si plusieurs informations sont renvoyées, l’utilisateur est invité à entrer son nom d’utilisateur. Si les informations d’identification ne figurent pas dans le Stockage sécurisé, l’application demande à l’utilisateur de les lui fournir. L’utilisateur est alors connecté au serveur à l’aide de ces informations d’identification.
+Dans l’exemple de code C# suivant, l’application demande toutes les informations d’identification correspondant à l’application en appelant la méthode [**FindAllByResource**](/uwp/api/windows.security.credentials.passwordvault.findallbyresource) de l’objet [**PasswordVault**](/uwp/api/Windows.Security.Credentials.PasswordVault) . Si plusieurs informations sont renvoyées, l’utilisateur est invité à entrer son nom d’utilisateur. Si les informations d’identification ne figurent pas dans le Stockage sécurisé, l’application demande à l’utilisateur de les lui fournir. L’utilisateur est alors connecté au serveur à l’aide de ces informations d’identification.
 
 ```cs
 private string resourceName = "My App";
@@ -374,7 +374,7 @@ Avec le chiffrement symétrique, l’expéditeur et le destinataire disposent de
 
 L’un des moyens de résoudre cette difficulté correspond au chiffrement asymétrique, impliquant l’utilisation d’une paire de clés publique/privée. La clé publique est partagée librement avec toute personne souhaitant chiffrer un message. La clé privée est systématiquement gardée secrète afin que vous seul puissiez l’utiliser pour déchiffrer les données. L’une des techniques courantes pour autoriser la découverte de la clé publique consiste à utiliser des certificats numériques, également désignés simplement sous le terme de certificats. Le certificat inclut des informations concernant la clé publique, ainsi que des informations sur l’utilisateur ou le serveur, telles que le nom, l’émetteur, l’adresse e-mail et le pays.
 
-Les développeurs d’applications Windows peuvent implémenter le chiffrement symétrique et asymétrique dans leurs applications UWP à l’aide des classes [**SymmetricKeyAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.SymmetricKeyAlgorithmProvider) et [**AsymmetricKeyAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.AsymmetricKeyAlgorithmProvider). En outre, la classe [**CryptographicEngine**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.CryptographicEngine) permet de chiffrer et déchiffrer des données, signer du contenu et vérifier les signatures numériques. Les applications peuvent également utiliser la classe [**DataProtectionProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection.DataProtectionProvider) de l’espace de noms [**Windows.Security.Cryptography.DataProtection**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection) pour chiffrer et déchiffrer les données locales stockées.
+Les développeurs d’applications Windows peuvent utiliser les classes [**SymmetricKeyAlgorithmProvider**](/uwp/api/Windows.Security.Cryptography.Core.SymmetricKeyAlgorithmProvider) et [**AsymmetricKeyAlgorithmProvider**](/uwp/api/Windows.Security.Cryptography.Core.AsymmetricKeyAlgorithmProvider) pour mettre en œuvre un chiffrement symétrique et asymétrique dans leurs applications UWP. En outre, la classe [**CryptographicEngine**](/uwp/api/Windows.Security.Cryptography.Core.CryptographicEngine) permet de chiffrer et déchiffrer des données, signer du contenu et vérifier les signatures numériques. Les applications peuvent également utiliser la classe [**DataProtectionProvider**](/uwp/api/Windows.Security.Cryptography.DataProtection.DataProtectionProvider) de l’espace de noms [**Windows.Security.Cryptography.DataProtection**](/uwp/api/Windows.Security.Cryptography.DataProtection) pour chiffrer et déchiffrer les données locales stockées.
 
 ## <a name="432-detecting-message-tampering-macs-hashes-and-signatures"></a>4.3.2 Détection des falsifications de message (codes MAC, codes de hachage et signatures)
 
@@ -390,14 +390,14 @@ Les codes MAC vérifient les messages en procédant comme suit.
 
 ![vérification de code MAC](images/secure-macs.png)
 
-Les applications Windows peuvent implémenter la vérification des messages MAC en appelant la classe [**MacAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.MacAlgorithmProvider) pour générer la clé et la classe [**CryptographicEngine**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.CryptographicEngine) pour exécuter l’algorithme de chiffrement MAC.
+Les applications Windows peuvent implémenter la vérification des messages MAC en appelant la classe [**MacAlgorithmProvider**](/uwp/api/Windows.Security.Cryptography.Core.MacAlgorithmProvider) pour générer la clé et la classe [**CryptographicEngine**](/uwp/api/Windows.Security.Cryptography.Core.CryptographicEngine) pour exécuter l’algorithme de chiffrement MAC.
 
 ## <a name="433-using-hashes"></a>4.3.3 Utilisation de codes de hachage
 
 
 Une fonction de hachage est un algorithme de chiffrement qui sélectionne un long bloc de données au hasard et renvoie une chaîne de bits de taille fixe, appelée valeur de hachage. Une famille complète de fonctions de hachage permet d’effectuer cette opération.
 
-Il est possible d’utiliser une valeur de hachage à la place d’un code MAC dans le scénario de transfert de message décrit ci-dessus. L’expéditeur envoie une valeur de hachage et un message, puis le destinataire dérive sa propre valeur de hachage de celle de l’expéditeur et du message associé et compare les deux valeurs de hachage. Les applications qui s’exécutent sur Windows 10 peuvent appeler la classe [**HashAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.HashAlgorithmProvider) pour énumérer les algorithmes de hachage disponibles et exécuter l’un d’eux. La classe [**CryptographicHash**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.CryptographicHash) représente la valeur de hachage. La méthode [**CryptographicHash.GetValueAndReset**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.core.cryptographichash.getvalueandreset) peut être utilisée pour hacher différentes données de manière répétée sans avoir à recréer l’objet pour chaque utilisation. La méthode Append de la classe **CryptographicHash** ajoute de nouvelles données à une mémoire tampon pour qu’elles soient hachées. L’ensemble de ce processus est illustré dans l’exemple de code C# suivant.
+Il est possible d’utiliser une valeur de hachage à la place d’un code MAC dans le scénario de transfert de message décrit ci-dessus. L’expéditeur envoie une valeur de hachage et un message, puis le destinataire dérive sa propre valeur de hachage de celle de l’expéditeur et du message associé et compare les deux valeurs de hachage. Les applications qui s’exécutent sur Windows 10 peuvent appeler la classe [**HashAlgorithmProvider**](/uwp/api/Windows.Security.Cryptography.Core.HashAlgorithmProvider) pour énumérer les algorithmes de hachage qui sont disponibles et exécuter l’un d’eux. La classe [**CryptographicHash**](/uwp/api/Windows.Security.Cryptography.Core.CryptographicHash) représente la valeur de hachage. La méthode [**CryptographicHash.GetValueAndReset**](/uwp/api/windows.security.cryptography.core.cryptographichash.getvalueandreset) peut être utilisée pour hacher différentes données de manière répétée sans avoir à recréer l’objet pour chaque utilisation. La méthode Append de la classe **CryptographicHash** ajoute de nouvelles données à une mémoire tampon pour qu’elles soient hachées. L’ensemble de ce processus est illustré dans l’exemple de code C# suivant.
 
 ```cs
 public void SampleReusableHash()
@@ -445,12 +445,12 @@ La vérification de l’intégrité des données d’un message stocké signé n
 
 Grâce à la grande rapidité des algorithmes de hachage, les valeurs de hachage peuvent être dérivées en un temps record, même pour les messages volumineux. La valeur de hachage obtenue présente une longueur arbitraire et peut être plus courte que le message complet ; par conséquent, l’utilisation de clés publiques et privées pour chiffrer et déchiffrer uniquement la synthèse plutôt que la totalité du message constitue une optimisation.
 
-Pour plus d’informations, voir les articles [Signatures numériques](https://docs.microsoft.com/windows/desktop/SecCrypto/digital-signatures), [Codes d’authentification des messages, hachages et signatures](macs-hashes-and-signatures.md) et [Chiffrement.](cryptography.md)
+Pour plus d’informations, voir les articles [Signatures numériques](/windows/desktop/SecCrypto/digital-signatures), [Codes d’authentification des messages, hachages et signatures](macs-hashes-and-signatures.md) et [Chiffrement.](cryptography.md)
 
 ## <a name="5-summary"></a>5 Récapitulatif
 
 
-La plateforme Windows universelle de Windows 10 offre de nombreuses techniques pour tirer parti des fonctionnalités du système d’exploitation afin de créer des applications plus sécurisées. Dans les différents scénarios d’authentification, tels que l’authentification à un seul facteur, multifacteur ou par le biais du service Broker avec un fournisseur d’identité OAuth, des API sont disponibles pour atténuer les difficultés les plus courantes en matière d’authentification. Windows Hello fournit un nouveau système d’identification biométrique qui reconnaît l’utilisateur et décourage activement les tentatives de contournement des identifications. Le service peut également fournir plusieurs couches de clés et de certificats qui ne peuvent en aucun cas être divulguées ou utilisées en dehors du module de plateforme sécurisée. Par ailleurs, une couche supplémentaire de sécurité est disponible par le biais de l’utilisation facultative de certificats et de clés d’identité d’attestation.
+La plateforme Windows universelle de Windows 10 offre de nombreuses techniques pour tirer parti des fonctionnalités du système d’exploitation afin de créer des applications plus sécurisées. Dans les différents scénarios d’authentification, tels que l’authentification à un seul facteur, multifacteur ou par le biais du service Broker avec un fournisseur d’identité OAuth, des API sont disponibles pour atténuer les difficultés les plus courantes en matière d’authentification. Windows Hello fournit un nouveau système d’identification biométrique qui reconnaît l’utilisateur et décourage activement les tentatives de contournement des identifications. Il fournit également plusieurs couches de clés et de certificats qui ne peuvent jamais être révélés ni utilisés en dehors du module de plateforme sécurisée. Par ailleurs, une couche supplémentaire de sécurité est disponible par le biais de l’utilisation facultative de certificats et de clés d’identité d’attestation.
 
 Pour sécuriser les données en transit, des API sont proposées pour communiquer avec les systèmes distants en toute sécurité sur SSL, tout en offrant la possibilité de valider l’authenticité du serveur avec l’épinglage SSL. Le service Azure Gestion des API facilite la publication d’API de manière sécurisée et contrôlée en offrant de puissantes options de configuration pour l’exposition d’API sur le web au moyen d’un proxy assurant une obfuscation supplémentaire du point de terminaison des API. L’accès à ces API est sécurisé par l’utilisation de clés API, et le nombre d’appels d’API peut être limité pour contrôler les performances.
 
@@ -462,43 +462,43 @@ Lorsque les données arrivent sur l’appareil, le modèle d’application Windo
 ### <a name="61-how-to-articles"></a>6.1 Articles sur les procédures
 
 -   [Authentification et identité des utilisateurs](authentication-and-user-identity.md)
--   [Windows Hello](microsoft-passport.md)
+-   [Windows Hello](microsoft-passport.md)
 -   [Stockage sécurisé des informations d’identification](credential-locker.md)
 -   [Service Broker d’authentification web](web-authentication-broker.md)
--   [Biométrie de l’empreinte digitale](fingerprint-biometrics.md)
+-   [Empreinte digitale biométrique](fingerprint-biometrics.md)
 -   [Cartes à puce](smart-cards.md)
 -   [Certificats partagés](share-certificates.md)
--   [Chiffrement](cryptography.md)
--   [Certificats](certificates.md)
+-   [Cryptographie](cryptography.md)
+-   [Certificates](certificates.md)
 -   [Clés de chiffrement](cryptographic-keys.md)
 -   [Protection des données](data-protection.md)
--   [Codes d’authentification des messages, codes de hachage et signatures](macs-hashes-and-signatures.md)
--   [Restrictions à l’exportation pour le chiffrement](export-restrictions-on-cryptography.md)
+-   [Codes d’authentification des messages, hachages et signatures](macs-hashes-and-signatures.md)
+-   [Restrictions à l’exportation liées à l’utilisation du chiffrement](export-restrictions-on-cryptography.md)
 -   [Tâches courantes de chiffrement](common-cryptography-tasks.md)
 
 ### <a name="62-code-samples"></a>6.2 Exemples de code
 
 -   [Stockage sécurisé des informations d’identification](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/PasswordVault)
 -   [Sélecteur d’informations d’identification](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CredentialPicker)
--   [Verrouillage des appareils avec la connexion Azure](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/DeviceLockdownAzureLogin)
+-   [Verrouillage de l’appareil avec la connexion Azure](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/DeviceLockdownAzureLogin)
 -   [Protection des données d'entreprise](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/EnterpriseDataProtection)
 -   [KeyCredentialManager](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/KeyCredentialManager)
 -   [Cartes à puce](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SmartCard)
--   [Gestion des comptes Web](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAccountManagement)
+-   [Gestion de comptes web](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAccountManagement)
 -   [WebAuthenticationBroker](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAuthenticationBroker)
 
 ### <a name="63-api-reference"></a>6.3 Informations de référence sur les API
 
--   [**Windows. Security. Authentication. OnlineId**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.OnlineId)
--   [**Windows. Security. Authentication. Web**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web)
--   [**Windows. Security. Authentication. Web. Core**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web.Core)
--   [**Windows. Security. Authentication. Web. Provider**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web.Provider)
--   [**Windows. Security. Credentials**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials)
--   [**Windows. Security. Credentials**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials)
--   [**Windows. Security. Credentials. UI**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.UI)
--   [**Windows. Security. Cryptography**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography)
--   [**Windows. Security. Cryptography. Certificates**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Certificates)
--   [**Windows. Security. Cryptography. Core**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core)
--   [**Windows. Security. Cryptography. DataProtection**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection)
--   [**Windows. Security. ExchangeActiveSyncProvisioning**](https://docs.microsoft.com/uwp/api/Windows.Security.ExchangeActiveSyncProvisioning)
--   [**Windows. Security. EnterpriseData**](https://docs.microsoft.com/uwp/api/Windows.Security.EnterpriseData)
+-   [**Windows. Security. Authentication. OnlineId**](/uwp/api/Windows.Security.Authentication.OnlineId)
+-   [**Windows.Security.Authentication.Web**](/uwp/api/Windows.Security.Authentication.Web)
+-   [**Windows.Security.Authentication.Web.Core**](/uwp/api/Windows.Security.Authentication.Web.Core)
+-   [**Windows. Security. Authentication. Web. Provider**](/uwp/api/Windows.Security.Authentication.Web.Provider)
+-   [**Windows. Security. Credentials**](/uwp/api/Windows.Security.Credentials)
+-   [**Windows. Security. Credentials**](/uwp/api/Windows.Security.Credentials)
+-   [**Windows.Security.Credentials.UI**](/uwp/api/Windows.Security.Credentials.UI)
+-   [**Windows.Security.Cryptography**](/uwp/api/Windows.Security.Cryptography)
+-   [**Windows. Security. Cryptography. Certificates**](/uwp/api/Windows.Security.Cryptography.Certificates)
+-   [**Windows.Security.Cryptography.Core**](/uwp/api/Windows.Security.Cryptography.Core)
+-   [**Windows.Security.Cryptography.DataProtection**](/uwp/api/Windows.Security.Cryptography.DataProtection)
+-   [**Windows.Security.ExchangeActiveSyncProvisioning**](/uwp/api/Windows.Security.ExchangeActiveSyncProvisioning)
+-   [**Windows. Security. EnterpriseData**](/uwp/api/Windows.Security.EnterpriseData)

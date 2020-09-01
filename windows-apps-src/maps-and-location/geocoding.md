@@ -4,39 +4,39 @@ description: Ce guide vous montre comment convertir des adresses postales en emp
 ms.assetid: B912BE80-3E1D-43BB-918F-7A43327597D2
 ms.date: 07/02/2018
 ms.topic: article
-keywords: windows 10, uwp, géocodage, carte, emplacement
+keywords: Windows 10, UWP, géocodage, carte, emplacement
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d7e1dda355cf87a2c8e26c11327cfff32e9d0b5
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 011a901e2baa9ff4b8f4a5bd8018b9b7790b1852
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259370"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89162563"
 ---
 # <a name="perform-geocoding-and-reverse-geocoding"></a>Effectuer un géocodage et un géocodage inverse
 
-Ce guide vous montre comment convertir des adresses postales en emplacements géographiques (géocodage) et convertir des emplacements géographiques en adresses postales (le géocodage inversé) en appelant les méthodes de la classe [**MapLocationFinder**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinder) dans l’espace de noms [**Windows. services. Maps**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps) .
+Ce guide vous montre comment convertir des adresses postales en emplacements géographiques (géocodage) et convertir des emplacements géographiques en adresses postales (le géocodage inversé) en appelant les méthodes de la classe [**MapLocationFinder**](/uwp/api/Windows.Services.Maps.MapLocationFinder) dans l’espace de noms [**Windows. services. Maps**](/uwp/api/Windows.Services.Maps) .
 
 > [!TIP]
-> Pour en savoir plus sur l’utilisation de Maps dans votre application, téléchargez l’exemple [collection MapControl](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl) à partir du [référentiel des exemples Windows universels](h https://github.com/Microsoft/Windows-universal-samples) sur GitHub.
+> Pour en savoir plus sur l’utilisation de Maps dans votre application, téléchargez l’exemple [collection MapControl](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl) à partir du [référentiel des exemples Windows universels](hhttps://github.com/Microsoft/Windows-universal-samples) sur GitHub.
 
 Les classes impliquées dans le géocodage et le géocodage inversé sont organisées comme suit.
 
--   La classe [**MapLocationFinder**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinder) contient des méthodes qui gèrent le géocodage ([**FindLocationsAsync**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsasync)) et le géocodage inversé ([**FindLocationsAtAsync**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsatasync)).
--   Ces méthodes retournent toutes deux une instance [**MapLocationFinderResult**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinderResult) .
--   La propriété [**locations**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinderresult.locations) de l' [**MapLocationFinderResult**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinderResult) expose une collection d’objets [**MapLocation**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocation) . 
--   Les objets [**MapLocation**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocation) ont à la fois une propriété [**Address**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocation.address) , qui expose un objet [**mapaddress**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapAddress) représentant une adresse postale, et une propriété [**point**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocation.point) , qui expose un objet [**géopoint**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geopoint) représentant un emplacement géographique.
+-   La classe [**MapLocationFinder**](/uwp/api/Windows.Services.Maps.MapLocationFinder) contient des méthodes qui gèrent le géocodage ([**FindLocationsAsync**](/uwp/api/windows.services.maps.maplocationfinder.findlocationsasync)) et le géocodage inversé ([**FindLocationsAtAsync**](/uwp/api/windows.services.maps.maplocationfinder.findlocationsatasync)).
+-   Ces méthodes retournent toutes deux une instance [**MapLocationFinderResult**](/uwp/api/Windows.Services.Maps.MapLocationFinderResult) .
+-   La propriété [**locations**](/uwp/api/windows.services.maps.maplocationfinderresult.locations) de l' [**MapLocationFinderResult**](/uwp/api/Windows.Services.Maps.MapLocationFinderResult) expose une collection d’objets [**MapLocation**](/uwp/api/Windows.Services.Maps.MapLocation) . 
+-   Les objets [**MapLocation**](/uwp/api/Windows.Services.Maps.MapLocation) ont à la fois une propriété [**Address**](/uwp/api/windows.services.maps.maplocation.address) , qui expose un objet [**mapaddress**](/uwp/api/Windows.Services.Maps.MapAddress) représentant une adresse postale, et une propriété [**point**](/uwp/api/windows.services.maps.maplocation.point) , qui expose un objet [**géopoint**](/uwp/api/windows.devices.geolocation.geopoint) représentant un emplacement géographique.
 
 > [!IMPORTANT]
-> vous devez spécifier une clé d’authentification Maps pour pouvoir utiliser les services de mappage. Pour plus d’informations, voir [Demander une clé d’authentification pour Cartes](authentication-key.md).
+> Vous devez spécifier une clé d’authentification Maps pour pouvoir utiliser les services de mappage. Pour plus d’informations, voir [Demander une clé d’authentification pour Cartes](authentication-key.md).
 
 ## <a name="get-a-location-geocode"></a>Obtenir un emplacement (géocode)
 
 Cette section montre comment convertir une adresse postale ou un nom de lieu en emplacement géographique (géocodage).
 
-1.  Appelez l’une des surcharges de la méthode [**FindLocationsAsync**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsasync) de la classe [**MapLocationFinder**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinder) avec un nom de lieu ou une adresse postale.
-2.  La méthode [**FindLocationsAsync**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsasync) retourne un objet [**MapLocationFinderResult**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinderResult) .
-3.  Utilisez la propriété [**locations**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinderresult.locations) de [**MapLocationFinderResult**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinderResult) pour exposer une collection d’objets [**MapLocation**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocation) . Il peut y avoir plusieurs objets [**MapLocation**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocation) , car le système peut trouver plusieurs emplacements qui correspondent à l’entrée donnée.
+1.  Appelez l’une des surcharges de la méthode [**FindLocationsAsync**](/uwp/api/windows.services.maps.maplocationfinder.findlocationsasync) de la classe [**MapLocationFinder**](/uwp/api/Windows.Services.Maps.MapLocationFinder) avec un nom de lieu ou une adresse postale.
+2.  La méthode [**FindLocationsAsync**](/uwp/api/windows.services.maps.maplocationfinder.findlocationsasync) retourne un objet [**MapLocationFinderResult**](/uwp/api/Windows.Services.Maps.MapLocationFinderResult) .
+3.  Utilisez la propriété [**locations**](/uwp/api/windows.services.maps.maplocationfinderresult.locations) de [**MapLocationFinderResult**](/uwp/api/Windows.Services.Maps.MapLocationFinderResult) pour exposer une collection d’objets [**MapLocation**](/uwp/api/Windows.Services.Maps.MapLocation) . Il peut y avoir plusieurs objets [**MapLocation**](/uwp/api/Windows.Services.Maps.MapLocation) , car le système peut trouver plusieurs emplacements qui correspondent à l’entrée donnée.
 
 ```csharp
 using Windows.Services.Maps;
@@ -82,10 +82,10 @@ result = (47.6406099647284,-122.129339994863)
 
 Cette section montre comment convertir un emplacement géographique en adresse (le géocodage inversé).
 
-1.  Appelez la méthode [**FindLocationsAtAsync**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsatasync) de la classe [**MapLocationFinder**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinder).
-2.  La méthode [**FindLocationsAtAsync**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsatasync) renvoie un objet [**MapLocationFinderResult**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinderResult) contenant une collection d’objets [**MapLocation**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocation) correspondants.
-3.  Utilisez la propriété [**locations**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinderresult.locations) de [**MapLocationFinderResult**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinderResult) pour exposer une collection d’objets [**MapLocation**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocation) . Il peut y avoir plusieurs objets [**MapLocation**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocation) , car le système peut trouver plusieurs emplacements qui correspondent à l’entrée donnée.
-4.  Accédez aux objets [**mapaddress**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapAddress) via la propriété [**Address**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocation.address) de chaque [**MapLocation**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocation).
+1.  Appelez la méthode [**FindLocationsAtAsync**](/uwp/api/windows.services.maps.maplocationfinder.findlocationsatasync) de la classe [**MapLocationFinder**](/uwp/api/Windows.Services.Maps.MapLocationFinder) .
+2.  La méthode [**FindLocationsAtAsync**](/uwp/api/windows.services.maps.maplocationfinder.findlocationsatasync) renvoie un objet [**MapLocationFinderResult**](/uwp/api/Windows.Services.Maps.MapLocationFinderResult) contenant une collection d’objets [**MapLocation**](/uwp/api/Windows.Services.Maps.MapLocation) correspondants.
+3.  Utilisez la propriété [**locations**](/uwp/api/windows.services.maps.maplocationfinderresult.locations) de [**MapLocationFinderResult**](/uwp/api/Windows.Services.Maps.MapLocationFinderResult) pour exposer une collection d’objets [**MapLocation**](/uwp/api/Windows.Services.Maps.MapLocation) . Il peut y avoir plusieurs objets [**MapLocation**](/uwp/api/Windows.Services.Maps.MapLocation) , car le système peut trouver plusieurs emplacements qui correspondent à l’entrée donnée.
+4.  Accédez aux objets [**mapaddress**](/uwp/api/Windows.Services.Maps.MapAddress) via la propriété [**Address**](/uwp/api/windows.services.maps.maplocation.address) de chaque [**MapLocation**](/uwp/api/Windows.Services.Maps.MapLocation).
 
 ```csharp
 using Windows.Services.Maps;
@@ -123,9 +123,9 @@ town = Redmond
 
 * [Exemple de carte UWP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
 * [Exemple d’application de trafic UWP](https://github.com/Microsoft/Windows-appsample-trafficapp)
-* [Recommandations de conception pour les cartes](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
+* [Recommandations de conception pour les cartes](./display-maps.md)
 * [Vidéo : utilisation des cartes et de l’emplacement sur les téléphones, les tablettes et les PC dans vos applications Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [Espace partenaires Bing Cartes](https://www.bingmapsportal.com/)
-* [**MapLocationFinder** , classe](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinder)
-* [Méthode **FindLocationsAsync**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsasync)
-* [Méthode **FindLocationsAtAsync**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsatasync)
+* [**MapLocationFinder** , classe](/uwp/api/Windows.Services.Maps.MapLocationFinder)
+* [Méthode **FindLocationsAsync**](/uwp/api/windows.services.maps.maplocationfinder.findlocationsasync)
+* [Méthode **FindLocationsAtAsync**](/uwp/api/windows.services.maps.maplocationfinder.findlocationsatasync)

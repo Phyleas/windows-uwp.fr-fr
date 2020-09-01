@@ -1,28 +1,28 @@
 ---
 title: Informations de référence sur les API Fiddler Device Portal
-description: Apprenez à activer/désactiver le suivi de Fiddler par programmation.
+description: Découvrez comment activer et désactiver le traçage réseau Fiddler sur vos DevKit à l’aide de l’API REST du portail d’appareils Xbox.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: e7d4225e-ac2c-41dc-aca7-9b1a95ec590b
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cbdae1084f96901e90f8237d71bd59bf2d4c592
-ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.openlocfilehash: f431adae41021432dfcfca6b4e79df5237fcb283
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59240017"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89163993"
 ---
 # <a name="fiddler-settings-api-reference"></a>Informations de référence sur les API des paramètres Fiddler   
 Vous pouvez activer et désactiver le suivi réseau de Fiddler sur votre kit de développement à l’aide de cette API REST.
 
-## <a name="determine-if-fiddler-tracing-is-enabled"></a>Déterminez si le suivi de Fiddler est activé
+## <a name="determine-if-fiddler-tracing-is-enabled"></a>Déterminer si le suivi Fiddler est activé
 
-**Demande**
+**Requête**
 
-La requête suivante vous permet de vérifier si le suivi de Fiddler est activé sur l’appareil.
+Vous pouvez vérifier si le suivi Fiddler est activé sur l’appareil à l’aide de la requête suivante.
 
-Méthode      | URI de requête
+Méthode      | URI de demande
 :------     | :-----
 GET | /ext/fiddler
 
@@ -35,33 +35,33 @@ GET | /ext/fiddler
 
 - Aucune
 
-**Corps de la requête**   
+**Corps de la demande**   
 
 - Aucune
 
 **Réponse**   
 
-- La propriété booléenne JSON IsProxyEnabled spécifie si le proxy est activé ou non.
+- Propriété JSON bool IsProxyEnabled qui spécifie si le proxy est activé ou non.
 
 **Code d’état**
 
 Cette API comporte les codes d’état attendus suivants.
 
-Code d’état HTTP      | Description
+Code d'état HTTP      | Description
 :------     | :-----
-200 | Opération réussie
+200 | Succès
 4XX | Codes d’erreur
 5XX | Codes d’erreur
 
 ## <a name="enable-fiddler-tracing"></a>Activer le suivi de Fiddler
 
-**Demande**
+**Requête**
 
 Vous pouvez activer le suivi de Fiddler pour le kit de développement à l’aide de la demande suivante.  Notez que l’appareil doit être redémarré avant que cela ne prenne effet.
 
-Méthode      | URI de requête
+Méthode      | URI de demande
 :------     | :-----
-PUBLIER | /ext/fiddler
+POST | /ext/fiddler
 
 **Paramètres d’URI**
 
@@ -78,7 +78,7 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucun si updateCert est false ou n’est pas fourni. Corps HTTP à parties multiples conforme contenant le fichier FiddlerRoot.cer dans le cas contraire.
 
@@ -90,7 +90,7 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 Cette API comporte les codes d’état attendus suivants.
 
-Code d’état HTTP      | Description
+Code d'état HTTP      | Description
 :------     | :-----
 204 | La demande d’activation de Fiddler a été acceptée. Fiddler va être activé au prochain redémarrage de l’appareil.
 4XX | Codes d’erreur
@@ -98,11 +98,11 @@ Code d’état HTTP      | Description
 
 ## <a name="disable-fiddler-tracing-on-the-devkit"></a>Désactiver le suivi de Fiddler sur le kit de développement
 
-**Demande**
+**Requête**
 
 Vous pouvez désactiver le suivi de Fiddler sur l’appareil à l’aide de la demande suivante. Notez que l’appareil doit être redémarré avant que cela ne prenne effet.
 
-Méthode      | URI de requête
+Méthode      | URI de demande
 :------     | :-----
 Suppression | /ext/fiddler
 
@@ -114,7 +114,7 @@ Suppression | /ext/fiddler
 
 - Aucune
 
-**Corps de la requête**   
+**Corps de la demande**   
 
 - Aucune
 
@@ -126,7 +126,7 @@ Suppression | /ext/fiddler
 
 Cette API comporte les codes d’état attendus suivants.
 
-Code d’état HTTP      | Description
+Code d'état HTTP      | Description
 :------     | :-----
 204 | La demande de désactivation du suivi de Fiddler a réussi. Le suivi va être désactivé au prochain redémarrage de l’appareil.
 4XX | Codes d’erreur

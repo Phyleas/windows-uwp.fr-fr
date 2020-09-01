@@ -6,12 +6,12 @@ ms.date: 03/13/2019
 ms.topic: article
 keywords: Windows 10, UWP, liste, description, page Store, notes de publication, title
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e8ba40129197f77b2bbbd3950a6bcf214bae787
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 6124ea17d8c1c348e9093882df901c829f2cd90e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493014"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89164193"
 ---
 # <a name="create-app-store-listings"></a>Créer des annonces d’application dans le Windows Store
 
@@ -153,7 +153,7 @@ Si vous voulez fournir des informations supplémentaires de droits d’auteur et
 
 ### <a name="additional-license-terms"></a>Termes de licence supplémentaires
 
-Laissez ce champ vide si vous voulez que votre application possède une licence conforme aux **Termes du contrat de licence d’application standard** (vers lesquels pointe un lien situé dans le [Contrat du développeur de l’application](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)).
+Laissez ce champ vide si vous voulez que votre application possède une licence conforme aux **Termes du contrat de licence d’application standard** (vers lesquels pointe un lien situé dans le [Contrat du développeur de l’application](/legal/windows/agreements/app-developer-agreement)).
 
 Si vos termes de contrat de licence diffèrent de ceux du **Contrat de licence d’application standard**, entrez-les ici.
 

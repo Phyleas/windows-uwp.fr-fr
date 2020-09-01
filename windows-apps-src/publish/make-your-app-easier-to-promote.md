@@ -1,50 +1,46 @@
 ---
-Description: Faites en sorte que votre application soit remarquée ! En plus de faire le nécessaire pour que votre application soit la meilleure possible, il y a des choses que vous pouvez faire pour faciliter la promotion de votre application dans le Microsoft Store et sur d’autres sites, afin qu’elle retienne davantage l’attention.
+Description: Faites en sorte que votre application soit remarquée ! En plus de rendre votre application le mieux possible, vous pouvez le faire pour que les Microsoft Store et d’autres sites présentent facilement votre application et l’aident à attirer l’attention.
 title: Faciliter la promotion de votre application
 ms.assetid: 375A73EB-A010-4319-AEFF-3DC3E3691220
 ms.date: 10/31/2018
 ms.topic: article
-keywords: windows 10, uwp, promotionnel, promotion, recommandé, présenter, store
+keywords: Windows 10, UWP, promotion, promotion, proposé, vitrine, boutique
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ea3123ac5a971c42547f8542143b88a6f2a2ab4
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: c2503dbd6d585452c8bfec0ac217e2144a4da384
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63807414"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89161903"
 ---
 # <a name="make-your-app-easier-to-promote"></a>Faciliter la promotion de votre application
 
 
-Faites en sorte que votre application soit remarquée ! En plus de faire le nécessaire pour que votre application soit la meilleure possible, il y a des choses que vous pouvez faire pour faciliter la promotion de votre application dans le Microsoft Store et sur d’autres sites, afin qu’elle retienne davantage l’attention.
+Faites en sorte que votre application soit remarquée ! En plus de rendre votre application le mieux possible, vous pouvez le faire pour que les Microsoft Store et d’autres sites présentent facilement votre application et l’aident à attirer l’attention.
 
 
-## <a name="microsoft-store-requirements-for-featured-apps"></a>Conditions requises par le Microsoft Store pour les applications recommandées
+## <a name="microsoft-store-requirements-for-featured-apps"></a>Microsoft Store configuration requise pour les applications proposées
 
-Le Microsoft Store présente différentes applications regroupées par catégorie ou par thème. Les applications réussies sont trop nombreuses pour être toutes proposées, et il n’existe aucun moyen de garantir que votre application sera sélectionnée. Cependant, il y a certaines actions à effectuer pour garantir que la promotion de votre application sera prise en considération dans le Windows Store. Le fait de suivre ces recommandations peut également permettre à d’autres personnes de promouvoir votre application dans des journaux, sur les réseaux sociaux et dans d’autres lieux.
+Le Microsoft Store présente différentes applications regroupées par catégorie ou thème. Les applications réussies sont trop nombreuses pour être toutes proposées, et il n’existe aucun moyen de garantir que votre application sera sélectionnée. Cependant, il y a certaines actions à effectuer pour garantir que la promotion de votre application sera prise en considération dans le Windows Store. Les instructions suivantes peuvent également faciliter la promotion de votre application dans des revues, des médias sociaux ou d’autres lieux.
 
--   **Inclure des images et des captures d’écran**
+-   **Inclure des captures d’écran et des images exceptionnelles**
 
-    Pour recommander les applications, le Microsoft Store peut afficher les [images et captures d'écran de votre application](app-screenshots-and-images.md) dans différentes dispositions. Veillez à concevoir des captures d'écran attrayantes qui reflètent fidèlement votre application et assurez-vous que la première capture d'écran est particulièrement représentative et percutante. Vous pouvez fournir différents ensembles de captures d’écran afin d’illustrer l’apparence de l’application sur chaque type d’appareil que cette dernière prend en charge.
+    Lorsque vous disposez d’applications, les Microsoft Store peuvent utiliser les [captures d’écran et les images](app-screenshots-and-images.md) de votre application dans différentes dispositions. Veillez à concevoir des captures d'écran attrayantes qui reflètent fidèlement votre application et assurez-vous que la première capture d'écran est particulièrement représentative et percutante. Vous pouvez fournir différents jeux de captures d’écran pour montrer comment l’application recherche sur chaque type d’appareil qu’elle prend en charge.
 
-    Pour optimiser les chances de votre application d’être recommandée dans le Store, fournissez toutes les images applicables dans les sections **Logos Store** et **Illustrations supplémentaires** de votre description dans le Store. Le **9:16 art Poster (pixels 720 x 1080 ou 1440 x 2160)** et **art Super héros de 16:9 (pixels de 1920 x 1080 ou 3840 x 2160)** images sont particulièrement importantes. Si votre application prend en charge la famille d’appareils Xbox et/ou Holographique, nous vous recommandons de fournir également toutes les images applicables pour ces familles d’appareils. Pour obtenir plus d’informations ainsi que des instructions, voir [Captures d’écran, images et bandes-annonces de l’application](app-screenshots-and-images.md).
+    Pour optimiser le potentiel de votre application dans le Windows Store, fournissez toutes les images applicables dans les sections **logos** de la boutique et **ressources art supplémentaires** de la liste de votre boutique. Les images 9:16 de l' **affiche (720 x 1080 ou 1440 x 2160 pixels)** et **16:9 super héros art (1920 x 1080 ou 3840 x 2160 pixels)** sont particulièrement importantes. Si votre application prend en charge la famille de périphériques Xbox et/ou holographique, nous vous recommandons également de fournir toutes les images applicables à ces familles d’appareils. Pour plus d’informations et des instructions, consultez [captures d’écran, images et codes](app-screenshots-and-images.md)de fin de l’application.
 
--   **Générer une version de votre application, pas une version gratuite et une version payante distincte**
+-   **Générer une seule version de votre application, et non pas une version gratuite et une version payante distincte**
 
-    Au lieu de publier une version gratuite et une version payante distinctes de la même application, proposez un essai gratuit de votre application payante, ou proposez une application gratuite et offrez des extensions pour permettre aux clients d’acheter des fonctionnalités avancées. Ainsi, tous les clients (aussi bien ceux qui sont intéressés par des téléchargements gratuits que ceux qui sont peut-être prêts à effectuer un achat) auront accès à une seule et même description de votre application.
+    Plutôt que de publier des versions gratuites et payantes différentes de la même application, proposez une version d’évaluation gratuite pour votre application payante, ou faites-en une application gratuite et proposez des modules complémentaires pour permettre aux clients d’acheter des fonctionnalités améliorées. De cette façon, votre application disposera d’une liste qui fonctionne pour tous les clients : uniquement les téléchargements gratuits et ceux qui peuvent être prêts à effectuer un achat.
 
--   **Répertorier votre application dans tous les marchés et langues**
+-   **Répertorier votre application dans tous les marchés pertinents et la localiser dans les langues appropriées**
 
-    Le fait de soumettre votre application à tous les [marchés](define-pricing-and-market-selection.md) pertinents peut vous aider à accroître sa visibilité. Vous devrez bien sûr vous assurer que votre application est adaptée aux marchés sélectionnés et qu’elle respecte toutes les réglementations locales. La localisation du contenu de votre application et des informations relatives à sa description dans le Store dans le plus de [langues](supported-languages.md) possible peut aussi avoir des conséquences positives.
+    Le fait de soumettre votre application à tous les [marchés](./define-market-selection.md) pertinents peut vous aider à accroître sa visibilité. Vous devrez bien sûr vous assurer que votre application est adaptée aux marchés sélectionnés et qu’elle respecte toutes les réglementations locales. Il peut également vous aider à localiser le contenu de votre application et à stocker des informations dans des [langues](supported-languages.md) supplémentaires.
 
--   **Activer les filtres pour les applications contenant le contenu de 16 et 18 +**
+-   **Activer des filtres pour les applications comportant du contenu classifié 16+ et 18+**
 
-    Dans la plupart des cas, le Microsoft Store ne propose des applications comportant du contenu classifié 16+ que si l'application utilise le filtrage de contenu. Ainsi, tout le contenu destiné à un public âgé de plus de 16 ans sera masqué aux utilisateurs jusqu'à ce qu'ils décident explicitement de l'afficher. Le filtre de contenu doit être activé par défaut, protégé par mot de passe et disponible dans l'application proprement dite (et non pas sur un site web distinct).
+    Dans la plupart des cas, le Microsoft Store ne tient pas compte des applications avec 16 contenus +, sauf si l’application utilise le filtrage de contenu afin que tout contenu qui ne soit approprié qu’à l’âge de 16 ans soit masqué des utilisateurs jusqu’à ce qu’ils choisissent explicitement de l’afficher. Le filtre de contenu doit être activé par défaut, protégé par mot de passe et disponible dans l'application proprement dite (et non pas sur un site web distinct).
 
 
 
  
-
-
-
-

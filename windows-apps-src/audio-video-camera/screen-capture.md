@@ -9,16 +9,16 @@ dev_langs:
 - vb
 keywords: Windows 10, UWP, capture d’écran
 ms.localizationpriority: medium
-ms.openlocfilehash: fce0dbad0e36fe2470d8e07944afa80054cfb3d7
-ms.sourcegitcommit: a5031e95b90ee72babace8e80370551f3fa88593
+ms.openlocfilehash: 829b99932c8035c2e9d493ed7319f640386f88ed
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88722024"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89163623"
 ---
 # <a name="screen-capture"></a>Capture d'écran
 
-À partir de Windows 10, version 1803, l’espace de noms [Windows. Graphics. capture](https://docs.microsoft.com/uwp/api/windows.graphics.capture) fournit des API pour obtenir des frames à partir d’une fenêtre d’affichage ou d’application, pour créer des flux de vidéos ou des captures instantanées afin de créer des expériences collaboratives et interactives.
+À partir de Windows 10, version 1803, l’espace de noms [Windows. Graphics. capture](/uwp/api/windows.graphics.capture) fournit des API pour obtenir des frames à partir d’une fenêtre d’affichage ou d’application, pour créer des flux de vidéos ou des captures instantanées afin de créer des expériences collaboratives et interactives.
 
 Avec la capture d’écran, les développeurs appellent une interface utilisateur de système sécurisée pour permettre aux utilisateurs finaux de sélectionner la fenêtre d’affichage ou d’application à capturer, et une bordure jaune de notification est dessinée par le système autour de l’élément activement capturé. Dans le cas de plusieurs sessions de capture simultanées, une bordure jaune est dessinée autour de chaque élément capturé.
 
@@ -37,7 +37,7 @@ Les API trouvées dans l’espace de noms **Windows. Graphics. capture** nécess
 
 ## <a name="launch-the-system-ui-to-start-screen-capture"></a>Lancer l’interface utilisateur du système pour démarrer la capture d’écran
 
-Avant de lancer l’interface utilisateur du système, vous pouvez vérifier si votre application est actuellement en mesure de prendre des captures d’écran. Il existe plusieurs raisons pour lesquelles votre application peut ne pas être en mesure d’utiliser la capture d’écran, notamment si l’appareil ne répond pas à la configuration matérielle requise ou si l’application cible la capture d’écran des blocs de capture. Utilisez la méthode **IsSupported** dans la classe [GraphicsCaptureSession](https://docs.microsoft.com/uwp/api/windows.graphics.capture.graphicscapturesession) pour déterminer si la capture d’écran UWP est prise en charge :
+Avant de lancer l’interface utilisateur du système, vous pouvez vérifier si votre application est actuellement en mesure de prendre des captures d’écran. Il existe plusieurs raisons pour lesquelles votre application peut ne pas être en mesure d’utiliser la capture d’écran, notamment si l’appareil ne répond pas à la configuration matérielle requise ou si l’application cible la capture d’écran des blocs de capture. Utilisez la méthode **IsSupported** dans la classe [GraphicsCaptureSession](/uwp/api/windows.graphics.capture.graphicscapturesession) pour déterminer si la capture d’écran UWP est prise en charge :
 
 ```csharp
 // This runs when the application starts.
@@ -59,7 +59,7 @@ Public Sub OnInitialization()
 End Sub
 ```
 
-Une fois que vous avez vérifié que la capture d’écran est prise en charge, utilisez la classe [GraphicsCapturePicker](https://docs.microsoft.com/uwp/api/windows.graphics.capture.graphicscapturepicker) pour appeler l’interface utilisateur du sélecteur de système. L’utilisateur final utilise cette interface utilisateur pour sélectionner la fenêtre d’affichage ou d’application dont les captures d’écran doivent être applicatives. Le sélecteur renverra un [GraphicsCaptureItem](https://docs.microsoft.com/uwp/api/windows.graphics.capture.graphicscaptureitem) qui sera utilisé pour créer un **GraphicsCaptureSession**:
+Une fois que vous avez vérifié que la capture d’écran est prise en charge, utilisez la classe [GraphicsCapturePicker](/uwp/api/windows.graphics.capture.graphicscapturepicker) pour appeler l’interface utilisateur du sélecteur de système. L’utilisateur final utilise cette interface utilisateur pour sélectionner la fenêtre d’affichage ou d’application dont les captures d’écran doivent être applicatives. Le sélecteur renverra un [GraphicsCaptureItem](/uwp/api/windows.graphics.capture.graphicscaptureitem) qui sera utilisé pour créer un **GraphicsCaptureSession**:
 
 ```csharp
 public async Task StartCaptureAsync()
@@ -113,7 +113,7 @@ Await window.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
 
 ## <a name="create-a-capture-frame-pool-and-capture-session"></a>Créer un pool de frames de capture et une session de capture
 
-À l’aide de **GraphicsCaptureItem**, vous allez créer un [Direct3D11CaptureFramePool](https://docs.microsoft.com/uwp/api/windows.graphics.capture.direct3d11captureframepool) avec votre appareil D3D, le format de pixel pris en charge (**dxgi \_ format \_ B8G8R8A8 \_ UNORM**), le nombre de frames souhaités (qui peut être n’importe quel entier) et la taille du frame. La propriété de **contenu** de la classe **GraphicsCaptureItem** peut être utilisée comme taille de votre Frame :
+À l’aide de **GraphicsCaptureItem**, vous allez créer un [Direct3D11CaptureFramePool](/uwp/api/windows.graphics.capture.direct3d11captureframepool) avec votre appareil D3D, le format de pixel pris en charge (**dxgi \_ format \_ B8G8R8A8 \_ UNORM**), le nombre de frames souhaités (qui peut être n’importe quel entier) et la taille du frame. La propriété de **contenu** de la classe **GraphicsCaptureItem** peut être utilisée comme taille de votre Frame :
 
 ```csharp
 private GraphicsCaptureItem _item;
@@ -176,7 +176,7 @@ _session.StartCapture();
 _session.StartCapture()
 ```
 
-Pour acquérir ces frames de capture, qui sont des objets [Direct3D11CaptureFrame](https://docs.microsoft.com/uwp/api/windows.graphics.capture.direct3d11captureframe) , vous pouvez utiliser l’événement **Direct3D11CaptureFramePool. FrameArrived** :
+Pour acquérir ces frames de capture, qui sont des objets [Direct3D11CaptureFrame](/uwp/api/windows.graphics.capture.direct3d11captureframe) , vous pouvez utiliser l’événement **Direct3D11CaptureFramePool. FrameArrived** :
 
 ```csharp
 _framePool.FrameArrived += (s, a) =>
@@ -216,15 +216,15 @@ Il est recommandé d’éviter d’utiliser le thread d’interface utilisateur 
 
 Vous pouvez également extraire manuellement des frames avec la méthode **Direct3D11CaptureFramePool. TryGetNextFrame** jusqu’à ce que vous obteniez tous les frames dont vous avez besoin.
 
-L’objet **Direct3D11CaptureFrame** contient les propriétés **contentive**, **surface**et **SystemRelativeTime**. **SystemRelativeTime** est l’heure QPC ([QueryPerformanceCounter](https://docs.microsoft.com/windows/desktop/api/profileapi/nf-profileapi-queryperformancecounter)) qui peut être utilisée pour synchroniser d’autres éléments multimédias.
+L’objet **Direct3D11CaptureFrame** contient les propriétés **contentive**, **surface**et **SystemRelativeTime**. **SystemRelativeTime** est l’heure QPC ([QueryPerformanceCounter](/windows/desktop/api/profileapi/nf-profileapi-queryperformancecounter)) qui peut être utilisée pour synchroniser d’autres éléments multimédias.
 
 ## <a name="process-capture-frames"></a>Traiter les frames de capture
 
-Chaque frame du **Direct3D11CaptureFramePool** est extrait lors de l’appel de **TryGetNextFrame**, puis réintégré en fonction de la durée de vie de l’objet **Direct3D11CaptureFrame** . Pour les applications natives, la libération de l’objet **Direct3D11CaptureFrame** suffit pour réactiver le frame dans le pool de frames. Pour les applications managées, il est recommandé d’utiliser la méthode **Direct3D11CaptureFrame. dispose** (**Close** en C++). **Direct3D11CaptureFrame** implémente l’interface [IClosable](https://docs.microsoft.com/uwp/api/Windows.Foundation.IClosable) , qui est projetée comme [IDisposable](https://docs.microsoft.com/dotnet/api/system.idisposable) pour les appelants C#.
+Chaque frame du **Direct3D11CaptureFramePool** est extrait lors de l’appel de **TryGetNextFrame**, puis réintégré en fonction de la durée de vie de l’objet **Direct3D11CaptureFrame** . Pour les applications natives, la libération de l’objet **Direct3D11CaptureFrame** suffit pour réactiver le frame dans le pool de frames. Pour les applications managées, il est recommandé d’utiliser la méthode **Direct3D11CaptureFrame. dispose** (**Close** en C++). **Direct3D11CaptureFrame** implémente l’interface [IClosable](/uwp/api/Windows.Foundation.IClosable) , qui est projetée comme [IDisposable](/dotnet/api/system.idisposable) pour les appelants C#.
 
 Les applications ne doivent pas enregistrer les références aux objets **Direct3D11CaptureFrame** , ni enregistrer les références à la surface Direct3D sous-jacente une fois que le frame a été réintégré.
 
-Lors du traitement d’un frame, il est recommandé que les applications prennent le verrou [ID3D11Multithread](https://docs.microsoft.com/windows/desktop/api/d3d11_4/nn-d3d11_4-id3d11multithread) sur le même appareil que celui associé à l’objet **Direct3D11CaptureFramePool** .
+Lors du traitement d’un frame, il est recommandé que les applications prennent le verrou [ID3D11Multithread](/windows/desktop/api/d3d11_4/nn-d3d11_4-id3d11multithread) sur le même appareil que celui associé à l’objet **Direct3D11CaptureFramePool** .
 
 La surface Direct3D sous-jacente sera toujours la taille spécifiée lors de la création (ou de la recréation) du **Direct3D11CaptureFramePool**. Si le contenu est plus grand que le cadre, le contenu est découpé à la taille du cadre. Si le contenu est plus petit que le frame, le reste du frame contient des données non définies. Il est recommandé que les applications copient un sous-rectangle à l’aide de la propriété de **contenu** pour ce **Direct3D11CaptureFrame** afin d’éviter d’avoir un contenu non défini.
 
@@ -686,8 +686,8 @@ End Class
 
 ## <a name="record-a-video"></a>Enregistrer une vidéo
 
-Si vous souhaitez enregistrer une vidéo de votre application, vous pouvez le faire plus facilement avec l' [espace de noms Windows. Media. AppRecording](https://docs.microsoft.com/uwp/api/windows.media.apprecording). Cela fait partie du kit de développement logiciel (SDK) d’extension de bureau. il ne fonctionne donc que sur Desktop et requiert que vous y ajoutiez une référence à partir de votre projet. Pour plus d’informations, consultez [Présentation des familles d’appareils](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview) .
+Si vous souhaitez enregistrer une vidéo de votre application, vous pouvez le faire plus facilement avec l' [espace de noms Windows. Media. AppRecording](/uwp/api/windows.media.apprecording). Cela fait partie du kit de développement logiciel (SDK) d’extension de bureau. il ne fonctionne donc que sur Desktop et requiert que vous y ajoutiez une référence à partir de votre projet. Pour plus d’informations, consultez [Présentation des familles d’appareils](/uwp/extension-sdks/device-families-overview) .
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Espace de noms Windows. Graphics. capture](https://docs.microsoft.com/uwp/api/windows.graphics.capture)
+* [Espace de noms Windows. Graphics. capture](/uwp/api/windows.graphics.capture)

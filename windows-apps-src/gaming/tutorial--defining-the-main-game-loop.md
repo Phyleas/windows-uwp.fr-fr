@@ -6,12 +6,12 @@ ms.date: 06/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, jeux, objet principal
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a6d087be6df93ee6798c29147f7fd1c820bd225
-ms.sourcegitcommit: 20969781aca50738792631f4b68326f9171a3980
+ms.openlocfilehash: 497a1f0dc16308b4b9360aff958b94f04b6283ae
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85409558"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89162993"
 ---
 # <a name="define-the-main-game-object"></a>Définir l’objet jeu principal
 
@@ -249,7 +249,7 @@ Les fonctions membres publiques définies par **Simple3DGame** incluent celles c
 
 - **Initialisation**en cours. Définit les valeurs de départ des variables globales et initialise les objets de jeu. Ce sujet est abordé dans la section [Initialize and Start The Game](#initialize-and-start-the-game) .
 - **LoadGame**. Initialise un nouveau niveau et commence à le charger.
-- **LoadLevelAsync**. Coroutine qui initialise le niveau, puis appelle une autre Coroutine sur le convertisseur pour charger les ressources de niveau spécifique à l’appareil. Cette méthode s’exécute dans un thread séparé ; seules les méthodes [**ID3D11Device**](/windows/desktop/api/d3d11/nn-d3d11-id3d11device) (par opposition aux méthodes [**ID3D11DeviceContext**](/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext)) peuvent être appelées à partir de ce thread. Toutes les méthodes de contexte de périphérique sont appelées dans la méthode **FinalizeLoadLevel**. Si vous débutez en programmation asynchrone, consultez [opérations simultanées et asynchrones avec C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency).
+- **LoadLevelAsync**. Coroutine qui initialise le niveau, puis appelle une autre Coroutine sur le convertisseur pour charger les ressources de niveau spécifique à l’appareil. Cette méthode s’exécute dans un thread séparé ; seules les méthodes [**ID3D11Device**](/windows/desktop/api/d3d11/nn-d3d11-id3d11device) (par opposition aux méthodes [**ID3D11DeviceContext**](/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext)) peuvent être appelées à partir de ce thread. Toutes les méthodes de contexte de périphérique sont appelées dans la méthode **FinalizeLoadLevel**. Si vous débutez en programmation asynchrone, consultez [opérations simultanées et asynchrones avec C++/WinRT](../cpp-and-winrt-apis/concurrency.md).
 - **FinalizeLoadLevel**. Finit tout travail de chargement de niveau à effectuer sur le thread principal. Cela comprend tout appel aux méthodes ([**ID3D11DeviceContext**](/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext)) de contexte de périphérique Direct3D 11.
 - **StartLevel**. Démarre le jeu pour un nouveau niveau.
 - **PauseGame**. Suspend le jeu.
