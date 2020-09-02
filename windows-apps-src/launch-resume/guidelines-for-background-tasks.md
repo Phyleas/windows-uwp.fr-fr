@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, tâche en arrière-plan
 ms.localizationpriority: medium
-ms.openlocfilehash: fb585b46399d7b24eaafa531b2aae34f397dbeb2
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 00717a64135ef32a99b06c61b31e2ff59a587878
+ms.sourcegitcommit: b66796c73f14da63794efa66c8ded2caa25da0f7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89155843"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89285450"
 ---
 # <a name="guidelines-for-background-tasks"></a>Recommandations en matière de tâches en arrière-plan
 
@@ -61,7 +61,7 @@ Les tâches en arrière-plan qui s’exécutent dans le même processus que l’
 
 > **Important**    À compter de Windows 10, les applications ne sont plus obligées de se trouver sur l’écran de verrouillage comme condition préalable à l’exécution des tâches en arrière-plan.
 
-Les applications de plateforme Windows universelle (UWP) peuvent exécuter tous les types de tâches prises en charge, sans être épinglées à l’écran de verrouillage. Toutefois, les applications doivent appeler [**GetAccessState**](/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.getaccessstatus) et vérifier que l’exécution de l’application en arrière-plan n’est pas refusée. Assurez-vous que [**GetAccessStatus**] ne retourne pas l’une des énumérations [**BackgroundAccessStatus**](/uwp/api/windows.applicationmodel.background.backgroundaccessstatus) refusées. Par exemple, cette méthode retourne ( https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundAccessStatus) si l’utilisateur a refusé explicitement des autorisations de tâche en arrière-plan pour votre application dans les paramètres de l’appareil.
+Les applications de plateforme Windows universelle (UWP) peuvent exécuter tous les types de tâches prises en charge, sans être épinglées à l’écran de verrouillage. Toutefois, les applications doivent appeler [**GetAccessState**](/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.getaccessstatus) et vérifier que l’exécution de l’application en arrière-plan n’est pas refusée. Vérifiez que **GetAccessStatus** ne retourne pas l’une des énumérations [**BackgroundAccessStatus**](/uwp/api/windows.applicationmodel.background.backgroundaccessstatus) refusées. Par exemple, cette méthode retourne **BackgroundAccessStatus. DeniedByUser** si l’utilisateur a refusé explicitement des autorisations de tâche en arrière-plan pour votre application dans les paramètres de l’appareil.
 
 Si l’exécution de votre application est refusée en arrière-plan, votre application doit appeler [**RequestAccessAsync**](/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.getaccessstatus) et garantir que la réponse n’est pas refusée avant l’inscription des tâches en arrière-plan.
 
