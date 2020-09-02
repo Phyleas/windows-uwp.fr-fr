@@ -4,14 +4,14 @@ description: Cet article vous montre comment utiliser les contrôles des apparei
 title: Contrôles d’appareil photo manuel pour la capture vidéo
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d484571f69025ceb1ce8c6eeb827c46cacfa15ed
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ac3a286a8e3961b66a8fd0e4cf20fa7665b6b081
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160973"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89364012"
 ---
 # <a name="manual-camera-controls-for-video-capture"></a>Contrôles d’appareil photo manuel pour la capture vidéo
 
@@ -23,7 +23,7 @@ Les contrôles des appareils vidéo mentionnés dans cet article sont tous ajout
 
 Toutes les API de contrôle d’appareil décrites dans cet article sont des membres de l’espace de noms [**Windows. Media. Devices**](/uwp/api/Windows.Media.Devices) .
 
-[!code-cs[VideoControllersUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoControllersUsing)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetVideoControllersUsing":::
 
 > [!NOTE] 
 > Cet article repose sur les concepts et le code décrits dans [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md), qui décrit comment implémenter la capture photo et vidéo de base. Nous vous recommandons de vous familiariser avec le modèle de capture simple de contenu multimédia de cet article avant d’adopter des scénarios de capture plus avancés. Le code de cet article part du principe que votre application possède déjà une instance de MediaCapture initialisée correctement.
@@ -36,7 +36,7 @@ Le contrôle vidéo HDR prend en charge trois modes : activé, désactivé et a
 
 Activez ou désactivez le traitement vidéo HDR en définissant le [**HdrVideoControl.Mode**](/uwp/api/windows.media.devices.hdrvideocontrol.mode) sur le mode de votre choix.
 
-[!code-cs[SetHdrVideoMode](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSetHdrVideoMode)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetSetHdrVideoMode":::
 
 ## <a name="exposure-priority"></a>Priorité d’exposition
 
@@ -46,7 +46,7 @@ Déterminez si le contrôle de priorité d’exposition est pris en charge sur l
 
 Activez ou désactivez le contrôle de priorité d’exposition en définissant [**ExposurePriorityVideoControl. Enabled**](/uwp/api/windows.media.devices.exposurepriorityvideocontrol.enabled) sur le mode souhaité.
 
-[!code-cs[EnableExposurePriority](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetEnableExposurePriority)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetEnableExposurePriority":::
 
 ## <a name="temporal-denoising"></a>Denoising temporelle
 À compter de Windows 10, version 1803, vous pouvez activer la denoising temporelle pour la vidéo sur les appareils qui le prennent en charge. Cette fonctionnalité fusionne les données d’image de plusieurs images adjacentes en temps réel pour produire des images vidéo qui présentent moins de bruit visuel.
@@ -55,32 +55,32 @@ Le [**VideoTemporalDenoisingControl**](/uwp/api/windows.media.devices.videotempo
 
 L’exemple suivant utilise une interface utilisateur simple pour fournir des cases d’option permettant à l’utilisateur de basculer entre les modes denoising.
 
-[!code-xml[SnippetDenoiseXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetDenoiseXAML)]
+:::code language="xml" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml" id="SnippetDenoiseXAML":::
 
 Dans la méthode suivante, la propriété [**VideoTemporalDenoisingControl. Supported**](/uwp/api/windows.media.devices.videotemporaldenoisingcontrol.supported) est vérifiée pour déterminer si le denoising temporel est pris en charge sur l’appareil actuel. Si c’est le cas, nous vérifions que **off** et **auto** ou **on** sont pris en charge. dans ce cas, nous rendons les cases d’option visibles. Ensuite, les boutons **auto** et **on** sont rendus visibles si ces méthodes sont prises en charge.
 
-[!code-cs[SnippetUpdateDenoiseCapabilities](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetUpdateDenoiseCapabilities)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs" id="SnippetUpdateDenoiseCapabilities":::
 
 Dans le gestionnaire d’événements **activés** pour les cases d’option, le nom du bouton est activé et le mode correspondant est défini en définissant la propriété [**VideoTemporalDenoisingControl. mode**](/uwp/api/windows.media.devices.videotemporaldenoisingcontrol.mode) .
 
-[!code-cs[SnippetDenoiseButtonChecked](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetDenoiseButtonChecked)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs" id="SnippetDenoiseButtonChecked":::
 
 ### <a name="disabling-temporal-denoising-while-processing-frames"></a>Désactivation des denoising temporelles pendant le traitement des frames
 La vidéo qui a été traitée à l’aide de denoising temporelles peut être plus agréable à l’oeil humain. Toutefois, étant donné que les denoising temporelles peuvent avoir un impact sur la cohérence des images et réduire la quantité de détails dans le frame, les applications qui effectuent le traitement d’image sur les frames, telles que l’enregistrement ou la reconnaissance optique de caractères, peuvent désactiver les denoising par programmation lorsque le traitement d’image est activé.
 
 L’exemple suivant détermine quels modes denoising sont pris en charge et stocke ces informations dans certaines variables de classe.
 
-[!code-cs[SnippetDenoiseFrameReaderVars](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetDenoiseFrameReaderVars)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs" id="SnippetDenoiseFrameReaderVars":::
 
-[!code-cs[SnippetDenoiseCapabilitiesForFrameProcessing](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetDenoiseCapabilitiesForFrameProcessing)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs" id="SnippetDenoiseCapabilitiesForFrameProcessing":::
 
 Lorsque l’application active le traitement des frames, elle définit le mode denoising sur **off** si ce mode est pris en charge, de sorte que le traitement des frames peut utiliser des frames bruts qui n’ont pas été débruyants.
 
-[!code-cs[SnippetEnableFrameProcessing](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetEnableFrameProcessing)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs" id="SnippetEnableFrameProcessing":::
 
 Lorsque l’application désactive le prcessing de frame, elle définit le mode denoising **sur on** ou **auto**, selon le mode pris en charge.
 
-[!code-cs[SnippetDisableFrameProcessing](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetDisableFrameProcessing)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs" id="SnippetDisableFrameProcessing":::
 
 Pour plus d’informations sur l’obtention de trames vidéo pour le traitement d’images, consultez [traiter des frames multimédias avec MediaFrameReader](process-media-frames-with-mediaframereader.md).
 

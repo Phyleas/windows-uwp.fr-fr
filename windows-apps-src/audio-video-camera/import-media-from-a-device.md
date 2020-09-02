@@ -4,14 +4,14 @@ description: Cet article vous décrit la procédure d’importation de fichiers 
 title: Importer des fichiers multimédias
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 71743459227b05fff23524a81d8d192c382d4973
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 626a80b1c3962f5bf12d7a906a61f2f600da5eed
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157433"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362532"
 ---
 # <a name="import-media-from-a-device"></a>Importer des fichiers multimédias à partir d’un appareil
 
@@ -29,22 +29,22 @@ L’exemple de cet article utilise une interface utilisateur épurée prenant en
 * Un élément **Button** permettant de lancer la suppression des éléments importés de la source sélectionnée.
 * Un élément **Button** permettant d’annuler une opération d’importation asynchrone d’éléments multimédias.
 
-[!code-xml[ImportXAML](./code/PhotoImport_Win10/cs/MainPage.xaml#SnippetImportXAML)]
+:::code language="xml" source="~/../snippets-windows/windows-uwp/audio-video-camera/PhotoImport_Win10/cs/MainPage.xaml" id="SnippetImportXAML":::
 
 ## <a name="set-up-your-code-behind-file"></a>Configurer votre fichier code-behind
 Ajoutez des directives *using* afin d’inclure les espaces de noms utilisés par cet exemple qui ne sont pas encore inclus dans le modèle de projet par défaut.
 
-[!code-cs[Using](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetUsing)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/PhotoImport_Win10/cs/MainPage.xaml.cs" id="SnippetUsing":::
 
 ## <a name="set-up-task-cancellation-for-media-import-operations"></a>Configurer l’annulation des tâches associées aux opérations d’importation des fichiers multimédias
 
 Étant donné que les opérations d’importation de média peuvent prendre beaucoup de temps, elles sont exécutées de façon asynchrone à l’aide de [**IAsyncOperationWithProgress**](/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_). Déclarez une variable de membre de classe de type [**CancellationTokenSource**](/dotnet/api/system.threading.cancellationtokensource) qui sera utilisée pour annuler une opération en cours si l’utilisateur clique sur le bouton Annuler.
 
-[!code-cs[DeclareCts](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetDeclareCts)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/PhotoImport_Win10/cs/MainPage.xaml.cs" id="SnippetDeclareCts":::
 
 Implémentez un gestionnaire pour le bouton d’annulation. L’exemple figurant plus loin dans cet article est dédié à l’initialisation de l’instance **CancellationTokenSource** au démarrage d’une opération. La valeur de cette dernière est définie sur null à l’issue. Dans le gestionnaire du bouton d’annulation, vérifiez si le jeton est défini sur null et si ce n’est pas le cas, appelez [**Cancel**](/dotnet/api/system.threading.cancellationtokensource.cancel#System_Threading_CancellationTokenSource_Cancel) afin d’annuler l’opération.
 
-[!code-cs[OnCancel](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetOnCancel)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/PhotoImport_Win10/cs/MainPage.xaml.cs" id="SnippetOnCancel":::
 
 ## <a name="data-binding-helper-classes"></a>Classes d’assistance de liaison de données
 
@@ -56,28 +56,28 @@ Dans un scénario d’importation standard d’éléments multimédias, vous pr�
 
 Ces classes sont fournies dans l' [**exemple MediaImport**](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MediaImport) et peuvent être ajoutées à votre projet sans modification. Une fois les classes d’assistance ajoutées à votre projet, déclarez une variable de membre de classe de type **GeneratorIncrementalLoadingClass**, qui sera utilisé plus loin dans cet exemple.
 
-[!code-cs[GeneratorIncrementalLoadingClass](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetGeneratorIncrementalLoadingClass)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/PhotoImport_Win10/cs/MainPage.xaml.cs" id="SnippetGeneratorIncrementalLoadingClass":::
 
 
 ## <a name="find-available-sources-from-which-media-can-be-imported"></a>Rechercher les sources disponibles à partir desquelles importer les fichiers multimédias
 
 Dans le gestionnaire de clic du bouton Rechercher des sources, appelez la méthode statique [**PhotoImportManager. FindAllSourcesAsync**](/uwp/api/windows.media.import.photoimportmanager.findallsourcesasync) pour démarrer le système de recherche des appareils à partir desquels les médias peuvent être importés. Après avoir attendu l’exécution de l’opération, parcourez chaque objet [**PhotoImportSource**](/uwp/api/Windows.Media.Import.PhotoImportSource) de la liste renvoyée et ajoutez une entrée à l’instance **ComboBox**, en définissant la propriété **Tag** sur l’objet source, afin qu’il puisse être facilement récupéré lorsque l’utilisateur effectue une sélection.
 
-[!code-cs[FindSourcesClick](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetFindSourcesClick)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/PhotoImport_Win10/cs/MainPage.xaml.cs" id="SnippetFindSourcesClick":::
 
 Déclarez une variable de membre de classe dédiée au stockage de la source d’importation sélectionnée de l’utilisateur.
 
-[!code-cs[DeclareImportSource](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetDeclareImportSource)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/PhotoImport_Win10/cs/MainPage.xaml.cs" id="SnippetDeclareImportSource":::
 
 Dans le gestionnaire [**SelectionChanged**](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) de la source d’importation **ComboBox**, définissez la variable de membre de classe sur la source sélectionnée, puis appelez la méthode d’assistance **FindItems**, décrite plus loin dans cet article. 
 
-[!code-cs[SourcesSelectionChanged](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetSourcesSelectionChanged)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/PhotoImport_Win10/cs/MainPage.xaml.cs" id="SnippetSourcesSelectionChanged":::
 
 ## <a name="find-items-to-import"></a>Rechercher des éléments à importer
 
 Ajoutez des variables de membre de classe de type [**PhotoImportSession**](/uwp/api/Windows.Media.Import.PhotoImportSession) et [**PhotoImportFindItemsResult**](/uwp/api/Windows.Media.Import.PhotoImportFindItemsResult) à utiliser dans les étapes suivantes.
 
-[!code-cs[DeclareImport](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetDeclareImport)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/PhotoImport_Win10/cs/MainPage.xaml.cs" id="SnippetDeclareImport":::
 
 Dans la méthode **FindItems** , initialisez la variable **CancellationTokenSource** afin qu’elle puisse être utilisée pour annuler l’opération de recherche si nécessaire. Dans un bloc **try**, créez une nouvelle session d’importation en appelant [**CreateImportSession**](/uwp/api/windows.media.import.photoimportsource.createimportsession) sur l’objet [**PhotoImportSource**](/uwp/api/Windows.Media.Import.PhotoImportSource) sélectionné par l’utilisateur. Créez un nouvel objet [**Progress**](/dotnet/api/system.progress-1) afin de fournir un rappel prenant en charge l’affichage de l’avancement de l’opération de recherche. Ensuite, appelez **[FindItemsAsync](/uwp/api/windows.media.import.photoimportsession.finditemsasync)** pour démarrer l’opération de recherche. Fournissez une valeur [**PhotoImportContentTypeFilter**](/uwp/api/Windows.Media.Import.PhotoImportContentTypeFilter) pour spécifier si des photos, des vidéos ou les deux doivent être retournés. Fournissez une valeur [**PhotoImportItemSelectionMode**](/uwp/api/Windows.Media.Import.PhotoImportItemSelectionMode) pour spécifier si tous, aucun, ou seuls les nouveaux éléments multimédias sont retournés avec leur propriété [**IsSelected**](/uwp/api/windows.media.import.photoimportitem.isselected) définie sur true. Cette propriété est liée à une case à cocher pour chaque élément multimédia de notre modèle d’élément ListBox.
 
@@ -87,13 +87,13 @@ En regard de la classe d’assistance de liaison des données, la classe **Gener
 
 Ensuite, les informations de statut de l’opération de recherche sont affichées. Une application standard affiche ces informations à l’utilisateur dans l’interface, mais cet exemple transmet simplement les informations à la console de débogage. Enfin, définissez le jeton d’annulation sur null, dans la mesure où l’opération est terminée.
 
-[!code-cs[FindItems](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetFindItems)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/PhotoImport_Win10/cs/MainPage.xaml.cs" id="SnippetFindItems":::
 
 ## <a name="import-media-items"></a>Importer des éléments multimédias
 
 Avant d’implémenter l’opération d’importation, déclarez un objet [**PhotoImportImportItemsResult**](/uwp/api/Windows.Media.Import.PhotoImportImportItemsResult) dédié au stockage des résultats de l’opération d’importation. Il sera utilisé plus tard pour supprimer les éléments multimédias importés à partir de la source.
 
-[!code-cs[DeclareImportResult](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetDeclareImportResult)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/PhotoImport_Win10/cs/MainPage.xaml.cs" id="SnippetDeclareImportResult":::
 
 Avant de démarrer l’opération d’importation d’éléments multimédias, initialisez la variable **CancellationTokenSource** en définissant la valeur du contrôle [**ProgressBar**](/uwp/api/Windows.UI.Xaml.Controls.ProgressBar) sur 0.
 
@@ -103,12 +103,12 @@ Appelez [**ImportItemsAsync**](/uwp/api/windows.media.import.photoimportfinditem
 
 Une fois l’opération d’importation terminée, l’état de l’opération peut être obtenu à partir de l’objet [**PhotoImportImportItemsResult**](/uwp/api/Windows.Media.Import.PhotoImportImportItemsResult) retourné par [**ImportItemsAsync**](/uwp/api/windows.media.import.photoimportfinditemsresult.importitemsasync). Cet exemple affiche les informations de statut sur la console de débogage puis, en définitive, définit le jeton d’annulation sur null.
 
-[!code-cs[ImportClick](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetImportClick)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/PhotoImport_Win10/cs/MainPage.xaml.cs" id="SnippetImportClick":::
 
 ## <a name="delete-imported-items"></a>Supprimer des éléments importés
 Pour supprimer les éléments importés de la source à partir de laquelle ils ont été importés, initialisez le jeton d’annulation, de manière à ce que l’opération de suppression puisse être annulée et définissez la valeur de la barre d’avancement sur 0. Assurez-vous que le [**PhotoImportImportItemsResult**](/uwp/api/Windows.Media.Import.PhotoImportImportItemsResult) retourné par [**ImportItemsAsync**](/uwp/api/windows.media.import.photoimportfinditemsresult.importitemsasync) n’est pas null. Si ce n’est pas le cas, créez de nouveau un objet [**Progress**](/dotnet/api/system.progress-1) afin de fournir un rappel de progression associé à l’opération de suppression. Appelez [**DeleteImportedItemsFromSourceAsync**](/uwp/api/windows.media.import.photoimportimportitemsresult.deleteimporteditemsfromsourceasync) pour commencer à supprimer les éléments importés. Utilisez **AsTask** pour convertir le résultat en une tâche pouvant être attendue à l’aide de fonctionnalités de progression et d’annulation. Après l’attente, l’objet [**PhotoImportDeleteImportedItemsFromSourceResult**](/uwp/api/Windows.Media.Import.PhotoImportDeleteImportedItemsFromSourceResult) retourné peut être utilisé pour obtenir et afficher des informations d’État sur l’opération de suppression.
 
-[!code-cs[DeleteClick](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetDeleteClick)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/PhotoImport_Win10/cs/MainPage.xaml.cs" id="SnippetDeleteClick":::
 
 
 

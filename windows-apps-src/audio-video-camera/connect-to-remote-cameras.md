@@ -5,14 +5,14 @@ title: Se connecter à des caméras à distance
 ms.date: 04/19/2019
 ms.topic: article
 ms.custom: 19H1
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5924ad4b969fbf29021b2b48440ce071a516fe09
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c0e94e0ddaba027b38ecc76b1c97126204990f1a
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175723"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363982"
 ---
 # <a name="connect-to-remote-cameras"></a>Se connecter à des caméras à distance
 
@@ -43,7 +43,7 @@ L’exemple suivant montre une classe d’assistance qui utilise un **DeviceWatc
 
 En outre, cet exemple gère l’événement [**DeviceWatcher. Updated**](/uwp/api/windows.devices.enumeration.devicewatcher.updated) en plus des événements **added** et **removed** . Dans le gestionnaire **mis à jour** , l’appareil photo distant associé est supprimé de, puis rajouté à la collection.
 
-[!code-cs[SnippetRemoteCameraPairingHelper](./code/Frames_Win10/Frames_Win10/RemoteCameraPairingHelper.cs#SnippetRemoteCameraPairingHelper)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/RemoteCameraPairingHelper.cs" id="SnippetRemoteCameraPairingHelper":::
 
 
 ## <a name="related-topics"></a>Rubriques connexes

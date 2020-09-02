@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, achats dans l’application, IAPs, reçus, Windows. ApplicationModel. Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 0bbdaa8164e5d3a7e660fc4667b7cfe3c090bc10
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ba818ffbe748a20491557f7404e3f06e10fd628a
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171323"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363032"
 ---
 # <a name="use-receipts-to-verify-product-purchases"></a>Utiliser des reçus pour vérifier les achats de produits
 
@@ -92,7 +92,7 @@ Pour valider l’authenticité d’un reçu, vous avez besoin de votre système 
 Voici un exemple de ce processus de validation. Ce code s’exécute dans une application de console .NET Framework, qui inclut une référence à l’assemblage **System.Security**.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[ReceiptVerificationSample](./code/ReceiptVerificationSample/cs/Program.cs#ReceiptVerificationSample)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/ReceiptVerificationSample/cs/Program.cs" id="ReceiptVerificationSample":::
 
 <span id="receipt-descriptions" />
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2018
 ms.topic: article
 keywords: Windows 10, UWP, achats dans l’application, IAPs, compléments, Windows. services. Store
 ms.localizationpriority: medium
-ms.openlocfilehash: a46d9b0049e0dc9456a36c726a611cbaf00e9616
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 63072c243e4528d4625fe300697b1edbff64383a
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89164603"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363132"
 ---
 # <a name="get-product-info-for-apps-and-add-ons"></a>Obtenir les informations produit des applications et des extensions
 
@@ -42,7 +42,7 @@ Le code de ces exemples respecte les présupposés suivants :
 Pour obtenir des informations du Windows Store concernant l’application actuelle, utilisez la méthode [GetStoreProductForCurrentAppAsync](/uwp/api/windows.services.store.storecontext.getstoreproductforcurrentappasync). Cette méthode asynchrone renvoie un objet [StoreProduct](/uwp/api/windows.services.store.storeproduct) que vous pouvez utiliser pour obtenir des informations telles que le prix.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetAppInfoPage.xaml.cs#GetAppInfo)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/cs/GetAppInfoPage.xaml.cs" id="GetAppInfo":::
 
 ## <a name="get-info-for-add-ons-with-known-store-ids-that-are-associated-with-the-current-app"></a>Obtenir des informations sur les modules complémentaires avec des ID de magasin connus associés à l’application actuelle
 
@@ -54,7 +54,7 @@ Pour obtenir les informations du produit du magasin pour les modules complément
 Cet exemple récupère des informations sur les modules complémentaires durables avec les ID de magasin spécifiés qui sont associés à l’application actuelle.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetProductInfoPage.xaml.cs#GetProductInfo)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/cs/GetProductInfoPage.xaml.cs" id="GetProductInfo":::
 
 ## <a name="get-info-for-add-ons-that-are-available-for-purchase-from-the-current-app"></a>Obtenir des informations sur les modules complémentaires qui peuvent être achetés à partir de l’application actuelle
 
@@ -66,7 +66,7 @@ Pour obtenir les informations du produit du magasin pour les modules complément
 L’exemple suivant récupère des informations pour tous les modules complémentaires durables, les modules complémentaires consommables gérés par le magasin et les modules complémentaires consommables gérés par le développeur qui peuvent être achetés à partir de l’application actuelle.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetAddOnInfoPage.xaml.cs#GetAddOnInfo)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/cs/GetAddOnInfoPage.xaml.cs" id="GetAddOnInfo":::
 
 
 ## <a name="get-info-for-add-ons-for-the-current-app-that-the-user-has-purchased"></a>Obtenir des informations sur les modules complémentaires pour l’application actuelle que l’utilisateur a achetée
@@ -79,7 +79,7 @@ Pour obtenir les informations du produit du magasin pour les modules complément
 L’exemple suivant récupère des informations pour les modules complémentaires durables avec les [ID de magasin](in-app-purchases-and-trials.md#store_ids)spécifiés.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetUserCollectionPage.xaml.cs#GetUserCollection)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/cs/GetUserCollectionPage.xaml.cs" id="GetUserCollection":::
 
 ## <a name="related-topics"></a>Rubriques connexes
 

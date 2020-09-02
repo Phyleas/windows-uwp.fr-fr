@@ -4,14 +4,14 @@ description: Vous saurez comment lire et écrire des propriétés de métadonné
 title: Métadonnées d’image
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ca2a5abe5c0a7f60246322dd81fad9af8f0def77
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c020a2ca66c81bee81813402e546fc01ce77c7f3
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157493"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362562"
 ---
 # <a name="image-metadata"></a>Métadonnées d’image
 
@@ -23,11 +23,11 @@ Cet article explique comment lire et écrire des propriétés de métadonnées d
 
 La propriété [**StorageFile. Properties**](/uwp/api/windows.storage.storagefile.properties) retourne un objet [**StorageItemContentProperties**](/uwp/api/Windows.Storage.FileProperties.StorageItemContentProperties) qui fournit l’accès aux informations relatives au contenu relatives au fichier. Obtenez les propriétés spécifiques de l’image en appelant [**GetImagePropertiesAsync**](/uwp/api/windows.storage.fileproperties.storageitemcontentproperties.getimagepropertiesasync). L’objet [**ImageProperties**](/uwp/api/Windows.Storage.FileProperties.ImageProperties) renvoyé indique les membres qui contiennent des champs de métadonnées d’image de base, tels que le titre de l’image et la date de capture.
 
-[!code-cs[GetImageProperties](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetGetImageProperties)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/MainPage.xaml.cs" id="SnippetGetImageProperties":::
 
 Pour accéder à un plus vaste ensemble de métadonnées de fichier, utilisez le système de propriétés Windows, qui est un ensemble de propriétés de métadonnées de fichier pouvant être récupéré à l’aide d’un identificateur de chaîne unique. Créez une liste de chaînes et ajoutez l’identificateur pour chaque propriété que vous souhaitez récupérer. La méthode [**ImageProperties.RetrievePropertiesAsync**](/uwp/api/windows.storage.fileproperties.imageproperties.retrievepropertiesasync) prend cette liste de chaînes et renvoie un dictionnaire de paires clé/valeur où la clé correspond à l’identificateur de propriété et la valeur à la valeur de propriété.
 
-[!code-cs[GetWindowsProperties](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetGetWindowsProperties)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/MainPage.xaml.cs" id="SnippetGetWindowsProperties":::
 
 -   Pour obtenir la liste complète des propriétés Windows, y compris les identificateurs et le type de chaque propriété, voir [Propriétés Windows](/windows/desktop/properties/props).
 
@@ -41,11 +41,11 @@ GeotagHelper est une classe utilitaire qui facilite la balise des images avec de
 
 Si vous possédez déjà un objet [**Geopoint**](/uwp/api/Windows.Devices.Geolocation.Geopoint) représentant l’emplacement que vous souhaitez baliser dans l’image, à partir d’une précédente utilisation d’API de géolocalisation ou d’une autre source, vous pouvez définir les données d’indication de la position géographique en appelant [**GeotagHelper.SetGeotagAsync**](/uwp/api/windows.storage.fileproperties.geotaghelper.setgeotagasync) et en transmettant [**StorageFile**](/uwp/api/Windows.Storage.StorageFile) et **Geopoint**.
 
-[!code-cs[SetGeoDataFromPoint](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetSetGeoDataFromPoint)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/MainPage.xaml.cs" id="SnippetSetGeoDataFromPoint":::
 
 Pour définir les données d’indication de la position géographique à l’aide de la localisation actuelle de l’appareil, créez un objet [**Geolocator**](/uwp/api/Windows.Devices.Geolocation.Geolocator) et appelez [**GeotagHelper.SetGeotagFromGeolocatorAsync**](/uwp/api/windows.storage.fileproperties.geotaghelper.setgeotagfromgeolocatorasync) en transmettant **Geolocator** et le fichier à baliser.
 
-[!code-cs[SetGeoDataFromGeolocator](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetSetGeoDataFromGeolocator)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/MainPage.xaml.cs" id="SnippetSetGeoDataFromGeolocator":::
 
 -   Vous devez inclure la fonctionnalité de **localisation** de l’appareil dans le manifeste de votre application afin d’utiliser l’API [**SetGeotagFromGeolocatorAsync**](/uwp/api/windows.storage.fileproperties.geotaghelper.setgeotagfromgeolocatorasync).
 
@@ -55,7 +55,7 @@ Pour définir les données d’indication de la position géographique à l’ai
 
 Pour obtenir un GeoPoint indiquant la position géographique d’un fichier image, appelez [**GetGeotagAsync**](/uwp/api/windows.storage.fileproperties.geotaghelper.getgeotagasync).
 
-[!code-cs[GetGeoData](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetGetGeoData)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/MainPage.xaml.cs" id="SnippetGetGeoData":::
 
 ## <a name="decode-and-encode-image-metadata"></a>Décoder et encoder des métadonnées d’image
 
@@ -65,7 +65,7 @@ La lecture des métadonnées d’image à l’aide de cette technique nécessite
 
 Une fois que vous disposez du décodeur, créez une liste de chaînes et ajoutez une entrée pour chaque propriété de métadonnées que vous souhaitez récupérer, à l’aide de la chaîne d’identificateur de propriété Windows ou d’une requête de métadonnées WIC. Appelez la méthode [**BitmapPropertiesView.GetPropertiesAsync**](/uwp/api/windows.graphics.imaging.bitmappropertiesview.getpropertiesasync) sur le membre du décodeur [**BitmapProperties**](/uwp/api/Windows.Graphics.Imaging.BitmapProperties) pour demander les propriétés spécifiées. Les propriétés sont renvoyées dans un dictionnaire de paires clé/valeur contenant le nom de la propriété ou son chemin d’accès et sa valeur.
 
-[!code-cs[ReadImageMetadata](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetReadImageMetadata)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/MainPage.xaml.cs" id="SnippetReadImageMetadata":::
 
 -   Pour plus d’informations sur le langage de requête de métadonnées WIC et les propriétés prises en charge, voir [Requêtes de métadonnées natives au format d’image WIC](/windows/desktop/wic/-wic-native-image-format-metadata-queries).
 
@@ -76,7 +76,7 @@ L’écriture de métadonnées d’image dans le flux nécessite un élément **
 
 Créez un objet [**BitmapPropertySet**](/uwp/api/Windows.Graphics.Imaging.BitmapPropertySet) destiné à contenir les valeurs de propriété que vous voulez définir. Créez un objet [**BitmapTypedValue**](/uwp/api/Windows.Graphics.Imaging.BitmapTypedValue) pour représenter la valeur de la propriété. Cet objet utilise un **object** comme valeur et membre de l’énumération [**PropertyType**](/uwp/api/Windows.Foundation.PropertyType) qui définit le type de valeur. Ajoutez l’élément **BitmapTypedValue** à **BitmapPropertySet**, puis appelez [**BitmapProperties.SetPropertiesAsync**](/uwp/api/windows.graphics.imaging.bitmapproperties.setpropertiesasync) pour que l’encodeur écrive les propriétés dans le flux.
 
-[!code-cs[WriteImageMetadata](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetWriteImageMetadata)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/MainPage.xaml.cs" id="SnippetWriteImageMetadata":::
 
 -   Pour obtenir plus d’informations sur les propriétés prises en charge par type de fichier image, voir [Propriétés Windows](/windows/desktop/properties/props), [Stratégies de métadonnées de photos](/windows/desktop/wic/photo-metadata-policies) et [Requêtes de métadonnées natives au format d’image WIC](/windows/desktop/wic/-wic-native-image-format-metadata-queries).
 

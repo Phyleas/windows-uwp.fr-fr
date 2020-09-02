@@ -4,14 +4,14 @@ description: Vous pouvez utiliser les API Windows.Media.Transcoding pour transco
 title: Transcoder des fichiers multimédias
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 927ff8ceb8dc29400f5a7d0ede42b3ee8b703efb
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 28ed15ab49f3ec33e382d28c14ffd43bb5c8779d
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175663"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363742"
 ---
 # <a name="transcode-media-files"></a>Transcoder des fichiers multimédias
 
@@ -25,13 +25,13 @@ Le *transcodage* consiste à convertir un fichier multimédia numérique, tel qu
 
 Outre les espaces de noms référencés par le modèle de projet par défaut, vous devrez référencer ces espaces de noms pour transcoder les fichiers multimédias en utilisant le code dans cet article.
 
-[!code-cs[Using](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetUsing)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/TranscodeWin10/cs/MainPage.xaml.cs" id="SnippetUsing":::
 
 ## <a name="select-source-and-destination-files"></a>Sélectionner les fichiers source et de destination
 
 La façon dont votre application détermine les fichiers source et de destination pour le transcodage dépend de votre implémentation. Cet exemple utilise un [**FileOpenPicker**](/uwp/api/Windows.Storage.Pickers.FileOpenPicker) et un [**FileSavePicker**](/uwp/api/Windows.Storage.Pickers.FileSavePicker) pour permettre à l’utilisateur de choisir un fichier source et un fichier de destination.
 
-[!code-cs[TranscodeGetFile](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetTranscodeGetFile)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/TranscodeWin10/cs/MainPage.xaml.cs" id="SnippetTranscodeGetFile":::
 
 ## <a name="create-a-media-encoding-profile"></a>Créer un profil d’encodage multimédia
 
@@ -62,7 +62,7 @@ Méthode  |Profil  |
 
 Le code suivant crée un profil pour la vidéo MP4.
 
-[!code-cs[TranscodeMediaProfile](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetTranscodeMediaProfile)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/TranscodeWin10/cs/MainPage.xaml.cs" id="SnippetTranscodeMediaProfile":::
 
 La méthode statique [**CreateMp4**](/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createmp4) permet de créer un profil d’encodage MP4. Le paramètre de cette méthode détermine la résolution cible de la vidéo. Dans ce cas, [**VideoEncodingQuality.hd720p**](/uwp/api/Windows.Media.MediaProperties.VideoEncodingQuality) signifie 1 280 x 720 pixels à 30 images par seconde. (« 720p » correspond à un balayage progressif de 720 lignes par image.) Les autres méthodes de création de profils prédéfinis suivent toutes ce modèle.
 
@@ -72,10 +72,10 @@ Une autre possibilité consiste à créer un profil qui correspond à un fichier
 
 Pour Transcoder le fichier, créez un nouvel objet [**MediaTranscoder**](/uwp/api/Windows.Media.Transcoding.MediaTranscoder) et appelez la méthode [**MediaTranscoder. PrepareFileTranscodeAsync**](/uwp/api/windows.media.transcoding.mediatranscoder.preparefiletranscodeasync) . Transmettez le fichier source, le fichier de destination et le profil d’encodage. Appelez ensuite la méthode [**TranscodeAsync**](/uwp/api/windows.media.transcoding.preparetranscoderesult.transcodeasync) sur l’objet [**PrepareTranscodeResult**](/uwp/api/Windows.Media.Transcoding.PrepareTranscodeResult) qui a été retourné à partir de l’opération de transcodage asynchrone.
 
-[!code-cs[TranscodeTranscodeFile](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetTranscodeTranscodeFile)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/TranscodeWin10/cs/MainPage.xaml.cs" id="SnippetTranscodeTranscodeFile":::
 
 ## <a name="respond-to-transcoding-progress"></a>Répondre à la progression du transcodage
 
 Vous pouvez enregistrer des événements pour répondre en cas de modification de la progression de l’élément [**TranscodeAsync**](/uwp/api/windows.media.transcoding.preparetranscoderesult.transcodeasync) asynchrone. Ces événements font partie de l’infrastructure de programmation asynchrone pour les applications de plateforme Windows universelle (UWP) et ne sont pas propres à l’API de transcodage.
 
-[!code-cs[TranscodeCallbacks](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetTranscodeCallbacks)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/TranscodeWin10/cs/MainPage.xaml.cs" id="SnippetTranscodeCallbacks":::

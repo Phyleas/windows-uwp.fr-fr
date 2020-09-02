@@ -6,12 +6,12 @@ keywords: Windows 10, UWP, consommable, modules complémentaires, achats dans l�
 ms.date: 05/09/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f09b9a5c1f53c6a33f830c72514e061dc893348
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 01f1646c05b66d354a403e2621e3b032c22734d3
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171583"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363652"
 ---
 # <a name="enable-consumable-add-on-purchases"></a>Activer les achats de modules complémentaires consommables
 
@@ -73,7 +73,7 @@ Lorsque l’utilisateur [achète le module complémentaire](enable-in-app-purcha
 Cet exemple montre comment signaler un consommable géré par le Windows Store comme épuisé.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[EnableConsumables](./code/InAppPurchasesAndLicenses_RS1/cs/ConsumeAddOnPage.xaml.cs#ConsumeAddOn)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/cs/ConsumeAddOnPage.xaml.cs" id="ConsumeAddOn":::
 
 <span id="get_balance" />
 
@@ -82,7 +82,7 @@ Cet exemple montre comment signaler un consommable géré par le Windows Store 
 Cet exemple montre comment utiliser la méthode [GetConsumableBalanceRemainingAsync](/uwp/api/windows.services.store.storecontext.getconsumablebalanceremainingasync) de la classe [StoreContext](/uwp/api/windows.services.store.storecontext) pour obtenir le solde restant d’un consommable géré par le Windows Store.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[EnableConsumables](./code/InAppPurchasesAndLicenses_RS1/cs/GetRemainingAddOnBalancePage.xaml.cs#GetRemainingAddOnBalance)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/cs/GetRemainingAddOnBalancePage.xaml.cs" id="GetRemainingAddOnBalance":::
 
 ## <a name="related-topics"></a>Rubriques connexes
 

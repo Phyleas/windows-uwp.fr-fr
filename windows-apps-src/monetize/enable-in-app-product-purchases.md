@@ -6,12 +6,12 @@ keywords: UWP, modules complémentaires, achats dans l’application, IAPs, Wind
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ab2b5937746f006c0f5efd296e9b4a4f3cb82696
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ac6fc8a6ac39c106e3d5d593a36595097c4bde45
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171573"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89364112"
 ---
 # <a name="enable-in-app-product-purchases"></a>Activer les achats de produits in-app
 
@@ -34,7 +34,7 @@ Que votre application soit gratuite ou non, vous pouvez vendre du contenu, d’a
 Lors de l’initialisation de votre application, obtenez l’objet [LicenseInformation](/uwp/api/Windows.ApplicationModel.Store.LicenseInformation) de votre application en initialisant l’élément [CurrentApp](/uwp/api/Windows.ApplicationModel.Store.CurrentApp) ou [CurrentAppSimulator](/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator) pour activer les achats d’un produit in-app.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[EnableInAppPurchases](./code/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs#InitializeLicenseTest)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs" id="InitializeLicenseTest":::
 
 ## <a name="step-2-add-the-in-app-offers-to-your-app"></a>Étape 2 : Ajout d’offres in-app à votre application
 
@@ -61,7 +61,7 @@ Pour chaque fonctionnalité que vous voulez proposer par le biais d’un produit
     Voici un exemple indiquant comment vous pouvez coder une fonctionnalité de produit nommée **featureName** dans le bloc conditionnel propre à une licence. La chaîne, **NomFonctionnalité**, est le jeton qui identifie de façon unique ce produit dans l’application et est également utilisé pour l’identifier dans le magasin.
 
     > [!div class="tabbedCodeSnippets"]
-    [!code-csharp[EnableInAppPurchases](./code/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs#CodeFeature)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs" id="CodeFeature":::
 
 3.  **Ajout de l’interface utilisateur d’achat pour cette fonctionnalité**
 
@@ -70,7 +70,7 @@ Pour chaque fonctionnalité que vous voulez proposer par le biais d’un produit
     Voici comment vérifier si votre client possède déjà un produit dans l’application et, si tel n’est pas le cas, comment afficher la boîte de dialogue d’achat lui permettant de l’acheter. Remplacez le commentaire « Afficher la boîte de dialogue d’achat » par votre code personnalisé pour la boîte de dialogue d’achat (par exemple, une page présentant un bouton « Acheter cette application » convivial).
 
     > [!div class="tabbedCodeSnippets"]
-    [!code-csharp[EnableInAppPurchases](./code/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs#BuyFeature)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs" id="BuyFeature":::
 
 ## <a name="step-3-change-the-test-code-to-the-final-calls"></a>Étape 3 : Modification du code de test jusqu’aux appels finaux
 
@@ -83,7 +83,7 @@ Dans l’espace partenaires, accédez à votre application et [créez un module 
   > [!NOTE]
   > Le jeton d’offre dans l’application que vous utilisez dans votre code doit correspondre à la valeur d' [ID de produit](../publish/set-your-add-on-product-id.md#product-id) que vous spécifiez pour le module complémentaire correspondant dans l’espace partenaires.
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Si vous envisagez de fournir à vos clients des options de produits consommables intégrés à l’application (éléments pouvant être achetés, utilisés, puis rachetés si nécessaire), passez à la rubrique [Activer les achats de produits consommables intégrés à l’application](enable-consumable-in-app-product-purchases.md).
 

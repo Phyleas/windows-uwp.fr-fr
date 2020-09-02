@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, UWP, services Store, API Microsoft Store Analytics
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 8becf9149d0afa888d0024619df06f2103c7bf8b
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: bf83105dc3b5a49746e0fb6e1d01db4accdb5c41
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158643"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363622"
 ---
 # <a name="access-analytics-data-using-store-services"></a>Accéder aux données d’analyse à l’aide des services Store
 
@@ -123,7 +123,7 @@ Les comptes de développeurs qui appartiennent au [programme de tableau de bord 
 L’exemple de code suivant montre comment obtenir un jeton d’accès Azure AD et appeler l’API Microsoft Store Analytics à partir d’une application console C#. Pour utiliser cet exemple de code, affectez les variables *tenantId*, *clientId*, *clientSecret*, et *appID* aux valeurs appropriées pour votre scénario. Cet exemple nécessite que le [package JSON.net](https://www.newtonsoft.com/json) de Newtonsoft désérialise les données JSON retournées par l’API Microsoft Store Analytics.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[AnalyticsApi](./code/StoreServicesExamples_Analytics/cs/Program.cs#AnalyticsApiExample)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_Analytics/cs/Program.cs" id="AnalyticsApiExample":::
 
 ## <a name="error-responses"></a>Réponses d’erreur
 

@@ -4,14 +4,14 @@ description: Cet article vous explique comment lire du contenu multimédia penda
 title: Lire du contenu multimédia en arrière-plan
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 72687db5bed8303b672ed8ed009108708cb126be
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a0c816470f4a6caf79cb3370a39bc76abb7ef878
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161183"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89364032"
 ---
 # <a name="play-media-in-the-background"></a>Lire du contenu multimédia en arrière-plan
 Cet article vous explique comment configurer votre application de telle sorte que le contenu multimédia continue à être lu quand votre application est déplacée du premier plan vers l’arrière-plan. Cela signifie que même après que l’utilisateur a réduit votre application, est revenu à l’écran d’accueil ou a quitté votre application d’une autre manière, votre application peut continuer à lire le contenu audio. 
@@ -68,19 +68,19 @@ Ensuite, ajoutez la fonctionnalité  *backgroundMediaPlayback* à l’élément 
 ## <a name="handle-transitioning-between-foreground-and-background"></a>Gérer la transition entre le premier plan et l’arrière-plan
 Lorsque votre application passe du premier plan à l’arrière-plan, l’événement [**EnteredBackground**](/uwp/api/windows.applicationmodel.core.coreapplication.enteredbackground) est déclenché. Et lorsque votre application revient au premier plan, l’événement [**LeavingBackground**](/uwp/api/windows.applicationmodel.core.coreapplication.leavingbackground) est déclenché. Ces événements étant liés au cycle de vie de l’application, vous devez enregistrer des gestionnaires dédiés lors de sa création. Dans le modèle de projet par défaut, vous devrez procéder à leur ajout dans le constructeur de la classe **App**, dans App.xaml.cs. 
 
-[!code-cs[RegisterEvents](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetRegisterEvents)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BackgroundAudio_RS1/cs/App.xaml.cs" id="SnippetRegisterEvents":::
 
 Créez une variable affectée à la détection de l’exécution en arrière-plan.
 
-[!code-cs[DeclareBackgroundMode](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetDeclareBackgroundMode)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BackgroundAudio_RS1/cs/App.xaml.cs" id="SnippetDeclareBackgroundMode":::
 
 Lorsque l’événement [**EnteredBackground**](/uwp/api/windows.applicationmodel.core.coreapplication.enteredbackground) est déclenché, définissez la variable de suivi pour indiquer que vous êtes en cours d’exécution en arrière-plan. Vous n’avez pas intérêt à effectuer de tâches longues dans l’événement **EnteredBackground**, dans la mesure où la transition vers l’arrière-plan pourrait apparaître lente pour l’utilisateur.
 
-[!code-cs[EnteredBackground](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetEnteredBackground)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BackgroundAudio_RS1/cs/App.xaml.cs" id="SnippetEnteredBackground":::
 
 Dans le gestionnaire d’événement [**LeavingBackground**](/uwp/api/windows.applicationmodel.core.coreapplication.leavingbackground), vous devez définir la variable de détection afin d’indiquer que votre application ne s’exécute plus en arrière-plan.
 
-[!code-cs[LeavingBackground](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetLeavingBackground)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BackgroundAudio_RS1/cs/App.xaml.cs" id="SnippetLeavingBackground":::
 
 ### <a name="memory-management-requirements"></a>Exigences en matière de gestion de mémoire
 La partie la plus importante du traitement de la transition entre le premier plan et l’arrière-plan consiste à gérer la mémoire utilisée par votre application. L’exécution en arrière-plan impliquant la réduction des ressources de mémoire que votre application est autorisée à conserver au niveau du système, vous devez également procéder à une inscription pour les événements [**AppMemoryUsageIncreased**](/uwp/api/windows.system.memorymanager.appmemoryusageincreased) et [**AppMemoryUsageLimitChanging**](/uwp/api/windows.system.memorymanager.appmemoryusagelimitchanging). Lorsque ces événements sont déclenchés, vous devez vérifier la quantité de mémoire actuellement utilisée par votre application ainsi que la limite actuelle, et réduire votre consommation de mémoire si nécessaire. Pour plus d’informations sur la manière de réduire votre consommation de mémoire pendant une exécution en arrière-plan, consultez la page [Libérer de la mémoire lorsque votre application bascule en arrière-plan](../launch-resume/reduce-memory-usage.md).

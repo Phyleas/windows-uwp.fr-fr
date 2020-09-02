@@ -4,14 +4,14 @@ description: Cet article montre comment énumérer des périphériques MIDI et e
 title: MIDI
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 871a8d1d8458decbd0b398847d7d9de57234ee3d
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 26026a0aadb52de27f98dea8a7c21bdc2d1c44f1
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163763"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363852"
 ---
 # <a name="midi"></a>MIDI
 
@@ -23,19 +23,19 @@ Cet article montre comment énumérer des périphériques MIDI et envoyer et rec
 
 Avant d’énumérer et d’utiliser des périphériques MIDI, ajoutez les espaces de noms suivants à votre projet.
 
-[!code-cs[Using](./code/MIDIWin10/cs/MainPage.xaml.cs#SnippetUsing)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MIDIWin10/cs/MainPage.xaml.cs" id="SnippetUsing":::
 
 Ajoutez un contrôle [**ListBox**](/uwp/api/Windows.UI.Xaml.Controls.ListBox) à votre page XAML qui permettra à l’utilisateur de sélectionner l’un des périphériques d’entrée MIDI attachés au système. Ajoutez-en un autre pour répertorier les périphériques de sortie MIDI.
 
-[!code-xml[MidiListBoxes](./code/MIDIWin10/cs/MainPage.xaml#SnippetMidiListBoxes)]
+:::code language="xml" source="~/../snippets-windows/windows-uwp/audio-video-camera/MIDIWin10/cs/MainPage.xaml" id="SnippetMidiListBoxes":::
 
 La classe [**DeviceInformation**](/uwp/api/Windows.Devices.Enumeration.DeviceInformation) de la méthode [**FindAllAsync**](/uwp/api/windows.devices.enumeration.deviceinformation.findallasync) est utilisée pour énumérer de nombreux types différents d’appareils reconnus par Windows. Pour spécifier que la méthode doit uniquement Rechercher les périphériques d’entrée MIDI, utilisez la chaîne de sélecteur retournée par [**MidiInPort. GetDeviceSelector**](/uwp/api/windows.devices.midi.midiinport.getdeviceselector). **FindAllAsync** renvoie une classe [**DeviceInformationCollection**](/uwp/api/Windows.Devices.Enumeration.DeviceInformationCollection) qui contient une classe **DeviceInformation** pour chaque périphérique d’entrée MIDI enregistré auprès du système. Si la collection renvoyée ne contient aucun élément, cela signifie qu’il n’y a aucun périphérique d’entrée MIDI disponible. Si la collection comporte des éléments, parcourez les objets **DeviceInformation** et ajoutez le nom de chaque périphérique au périphérique d’entrée MIDI **ListBox**.
 
-[!code-cs[EnumerateMidiInputDevices](./code/MIDIWin10/cs/MainPage.xaml.cs#SnippetEnumerateMidiInputDevices)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MIDIWin10/cs/MainPage.xaml.cs" id="SnippetEnumerateMidiInputDevices":::
 
 L’énumération des appareils de sortie MIDI fonctionne exactement comme l’énumération des appareils d’entrée, excepté le fait que vous devez spécifier la chaîne de sélecteur renvoyée par [**MidiOutPort.GetDeviceSelector**](/uwp/api/windows.devices.midi.midioutport.getdeviceselector) lors de l’appel de **FindAllAsync**.
 
-[!code-cs[EnumerateMidiOutputDevices](./code/MIDIWin10/cs/MainPage.xaml.cs#SnippetEnumerateMidiOutputDevices)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MIDIWin10/cs/MainPage.xaml.cs" id="SnippetEnumerateMidiOutputDevices":::
 
 
 
@@ -52,11 +52,11 @@ Ajoutez des variables de membre à la classe :
 -   Un contrôle [**ListBox**](/uwp/api/Windows.UI.Xaml.Controls.ListBox) qui comportera les noms des périphériques disponibles.
 -   Une classe [**CoreDispatcher**](/uwp/api/Windows.UI.Core.CoreDispatcher) requise pour mettre à jour l’interface utilisateur à partir d’un thread autre que le thread d’interface utilisateur.
 
-[!code-cs[WatcherVariables](./code/MIDIWin10/cs/MyMidiDeviceWatcher.cs#SnippetWatcherVariables)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MIDIWin10/cs/MyMidiDeviceWatcher.cs" id="SnippetWatcherVariables":::
 
 Ajoutez une propriété [**DeviceInformationCollection**](/uwp/api/Windows.Devices.Enumeration.DeviceInformationCollection) utilisée pour accéder à la liste actuelle des périphériques depuis l’extérieur de la classe d’assistance.
 
-[!code-cs[DeclareDeviceInformationCollection](./code/MIDIWin10/cs/MyMidiDeviceWatcher.cs#SnippetDeclareDeviceInformationCollection)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MIDIWin10/cs/MyMidiDeviceWatcher.cs" id="SnippetDeclareDeviceInformationCollection":::
 
 Dans le constructeur de classe, l’appelant transmet la chaîne de sélecteur de périphérique MIDI, l’élément **ListBox** nécessaire pour répertorier les périphériques et l’élément **Dispatcher** requis pour la mise à jour de l’interface utilisateur.
 
@@ -64,7 +64,7 @@ Appelez [**DeviceInformation.CreateWatcher**](/uwp/api/windows.devices.enumerati
 
 Enregistrez des gestionnaires pour les gestionnaires d’événements de l’observateur.
 
-[!code-cs[WatcherConstructor](./code/MIDIWin10/cs/MyMidiDeviceWatcher.cs#SnippetWatcherConstructor)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MIDIWin10/cs/MyMidiDeviceWatcher.cs" id="SnippetWatcherConstructor":::
 
 L’élément **DeviceWatcher** présente les événements suivants :
 
@@ -75,31 +75,31 @@ L’élément **DeviceWatcher** présente les événements suivants :
 
 Dans le gestionnaire d’événements, pour chacun de ces événements, une méthode d’assistance **UpdateDevices** est appelée pour mettre à jour l’élément **ListBox** en tenant compte de la liste actuelle des périphériques. Dans la mesure où **UpdateDevices** met à jour les éléments d’interface utilisateur et que ces gestionnaires d’événements ne sont pas appelés sur le thread d’interface utilisateur, chaque appel doit être encapsulé dans un appel à [**RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync), ce qui entraîne l’exécution du code sur le thread d’interface utilisateur.
 
-[!code-cs[WatcherEventHandlers](./code/MIDIWin10/cs/MyMidiDeviceWatcher.cs#SnippetWatcherEventHandlers)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MIDIWin10/cs/MyMidiDeviceWatcher.cs" id="SnippetWatcherEventHandlers":::
 
 La méthode d’assistance **UpdateDevices** appelle [**DeviceInformation.FindAllAsync**](/uwp/api/windows.devices.enumeration.deviceinformation.findallasync) et met à jour l’élément **ListBox** en tenant compte des noms des périphériques renvoyés comme décrit précédemment dans cet article.
 
-[!code-cs[WatcherUpdateDevices](./code/MIDIWin10/cs/MyMidiDeviceWatcher.cs#SnippetWatcherUpdateDevices)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MIDIWin10/cs/MyMidiDeviceWatcher.cs" id="SnippetWatcherUpdateDevices":::
 
 Ajoutez des méthodes pour démarrer l’observateur, à l’aide de la méthode [**Start**](/uwp/api/windows.devices.enumeration.devicewatcher.start) de l’objet **DeviceWatcher** et pour arrêter l’observateur à l’aide de la méthode [**Stop**](/uwp/api/windows.devices.enumeration.devicewatcher.stop).
 
-[!code-cs[WatcherStopStart](./code/MIDIWin10/cs/MyMidiDeviceWatcher.cs#SnippetWatcherStopStart)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MIDIWin10/cs/MyMidiDeviceWatcher.cs" id="SnippetWatcherStopStart":::
 
 Fournissez un destructeur pour annuler l’enregistrement des gestionnaires d’événements de l’observateur et définir l’observateur de périphériques sur null.
 
-[!code-cs[WatcherDestructor](./code/MIDIWin10/cs/MyMidiDeviceWatcher.cs#SnippetWatcherDestructor)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MIDIWin10/cs/MyMidiDeviceWatcher.cs" id="SnippetWatcherDestructor":::
 
 ## <a name="create-midi-ports-to-send-and-receive-messages"></a>Créer des ports MIDI pour envoyer et recevoir des messages
 
 Dans le code-behind de votre page, déclarez des variables de membre destinées à contenir deux instances de la classe d’assistance **MyMidiDeviceWatcher**, une pour les périphériques d’entrée et une autre pour les périphériques de sortie.
 
-[!code-cs[DeclareDeviceWatchers](./code/MIDIWin10/cs/MainPage.xaml.cs#SnippetDeclareDeviceWatchers)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MIDIWin10/cs/MainPage.xaml.cs" id="SnippetDeclareDeviceWatchers":::
 
 Créez une instance des classes d’assistance de l’observateur en transmettant la chaîne de sélecteur de périphérique, le **ListBox** à remplir et l’objet **CoreDispatcher** accessible par le biais de la propriété **Dispatcher** de la page. Appelez ensuite la méthode pour démarrer l’élément **DeviceWatcher** de chaque objet.
 
 Peu après avoir démarré chaque **DeviceWatcher**, elle terminera l’énumération des périphériques actuels connectés au système et générera son événement [**EnumerationCompleted**](/uwp/api/windows.devices.enumeration.devicewatcher.enumerationcompleted), qui entraînera la mise à jour de chaque **ListBox** avec les périphériques MIDI en cours.
 
-[!code-cs[StartWatchers](./code/MIDIWin10/cs/MainPage.xaml.cs#SnippetStartWatchers)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MIDIWin10/cs/MainPage.xaml.cs" id="SnippetStartWatchers":::
 
 La sélection par l’utilisateur d’un élément dans l’élément **ListBox** de l’entrée MIDI, déclenche l’événement [**SelectionChanged**](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged). Dans le gestionnaire, pour cet événement, accédez à la propriété **DeviceInformationCollection** de la classe d’assistance pour obtenir la liste des périphériques actuels. Si la liste comporte des entrées, sélectionnez l’objet **DeviceInformation** avec l’index correspondant à la propriété [**SelectedIndex**](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedindex) du contrôle **ListBox**.
 
@@ -107,25 +107,25 @@ Créez l’objet [**MidiInPort**](/uwp/api/Windows.Devices.Midi.MidiInPort) repr
 
 Inscrire un gestionnaire pour l’événement [**MessageReceived**](/uwp/api/windows.devices.midi.midiinport.messagereceived) , qui est déclenché chaque fois qu’un message MIDI est reçu via l’appareil spécifié.
 
-[!code-cs[DeclareMidiPorts](./code/MIDIWin10/cs/MainPage.xaml.cs#SnippetDeclareMidiPorts)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MIDIWin10/cs/MainPage.xaml.cs" id="SnippetDeclareMidiPorts":::
 
-[!code-cs[InPortSelectionChanged](./code/MIDIWin10/cs/MainPage.xaml.cs#SnippetInPortSelectionChanged)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MIDIWin10/cs/MainPage.xaml.cs" id="SnippetInPortSelectionChanged":::
 
 Lorsque le gestionnaire **MessageReceived** est appelé, le message est contenu dans la propriété [**Message**](/uwp/api/Windows.Devices.Midi.MidiMessageReceivedEventArgs) de la classe **MidiMessageReceivedEventArgs**. Le [**type**](/uwp/api/windows.devices.midi.imidimessage.type) de l’objet message est une valeur de l’énumération [**MidiMessageType**](/uwp/api/Windows.Devices.Midi.MidiMessageType) indiquant le type de message qui a été reçu. Les données du message dépendent de son type. Cet exemple vérifie si le message est une note figurant sur un message et, si tel est le cas, génère le canal midi, la note et la vitesse du message.
 
-[!code-cs[MessageReceived](./code/MIDIWin10/cs/MainPage.xaml.cs#SnippetMessageReceived)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MIDIWin10/cs/MainPage.xaml.cs" id="SnippetMessageReceived":::
 
 Le gestionnaire [**SelectionChanged**](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) de l’élément **ListBox** du périphérique de sortie fonctionne comme le gestionnaire des périphériques d’entrée, excepté qu’aucun gestionnaire d’événements n’est enregistré.
 
-[!code-cs[OutPortSelectionChanged](./code/MIDIWin10/cs/MainPage.xaml.cs#SnippetOutPortSelectionChanged)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MIDIWin10/cs/MainPage.xaml.cs" id="SnippetOutPortSelectionChanged":::
 
 Une fois le périphérique de sortie créé, vous pouvez envoyer un message en créant un nouveau [**IMidiMessage**](/uwp/api/Windows.Devices.Midi.IMidiMessage) pour le type de message que vous souhaitez envoyer. Dans cet exemple, le message est un [**NoteOnMessage**](/uwp/api/Windows.Devices.Midi.MidiNoteOnMessage). La méthode [**SendMessage**](/uwp/api/windows.devices.midi.imidioutport.sendmessage) de l’objet [**IMidiOutPort**](/uwp/api/Windows.Devices.Midi.IMidiOutPort) est appelée pour envoyer le message.
 
-[!code-cs[SendMessage](./code/MIDIWin10/cs/MainPage.xaml.cs#SnippetSendMessage)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MIDIWin10/cs/MainPage.xaml.cs" id="SnippetSendMessage":::
 
 Lorsque votre application est désactivée, veillez à nettoyer les ressources de vos applications. Annulez l’enregistrement de vos gestionnaires d’événements et définissez les objets des ports MIDI d’entrée et de sortie sur null. Arrêtez les observateurs de périphériques et affectez-leur la valeur null.
 
-[!code-cs[CleanUp](./code/MIDIWin10/cs/MainPage.xaml.cs#SnippetCleanUp)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MIDIWin10/cs/MainPage.xaml.cs" id="SnippetCleanUp":::
 
 ## <a name="using-the-built-in-windows-general-midi-synth"></a>Utilisation du synthétiseur General MIDI Windows intégré
 

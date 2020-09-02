@@ -4,14 +4,14 @@ title: Glisser-déposer
 ms.assetid: A15ED2F5-1649-4601-A761-0F6C707A8B7E
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9958aab20c13f0104ca1a52c6fccda33c00f6281
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 0e661eb0859e9720e31fabb6e5a7b33857de28b7
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89159963"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363672"
 ---
 # <a name="drag-and-drop"></a>Glisser-déposer
 
@@ -43,7 +43,7 @@ Soyez précis sur ce qui peut être glissé. Les utilisateurs ne veulent pas fai
 
 Voici comment définir [**CanDrag**](/uwp/api/windows.ui.xaml.uielement.candrag).
 
-[!code-xml[Main](./code/drag_drop/cs/MainPage.xaml#SnippetDragArea)]
+:::code language="xml" source="~/../snippets-windows/windows-uwp/design/input/drag_drop/cs/MainPage.xaml" id="SnippetDragArea":::
 
 Vous n’avez besoin d’effectuer aucune autre action pour autoriser le glissement, sauf si vous souhaitez personnaliser l’interface utilisateur (le sujet est abordé plus loin dans cet article). L’opération Déplacer nécessite quelques étapes supplémentaires.
 
@@ -51,7 +51,7 @@ Vous n’avez besoin d’effectuer aucune autre action pour autoriser le glissem
 
 Dans la plupart des cas, le système créera un package de données pour vous. Le système gère automatiquement les éléments suivants :
 * Images
-* Text 
+* Texte 
 
 Pour d’autres contenus, vous devez gérer les événements **DragStarted** et **DragCompleted** et les utiliser pour construire votre propre [DataPackage](/uwp/api/windows.applicationmodel.datatransfer.datapackage).
 
@@ -59,14 +59,14 @@ Pour d’autres contenus, vous devez gérer les événements **DragStarted** et 
 
 Le balisage suivant montre comment définir une zone spécifique de l’application valide pour l’opération Déplacer à l’aide de l’élément [**AllowDrop**](/uwp/api/windows.ui.xaml.uielement.allowdrop) en XAML. Si un utilisateur tente d’effectuer le déplacement vers un autre emplacement, le système l’en empêche. Si vous souhaitez que les utilisateurs puissent déplacer des éléments n’importe où dans votre application, définissez l’ensemble de l’arrière-plan en tant que cible de l’opération Déplacer.
 
-[!code-xml[Main](./code/drag_drop/cs/MainPage.xaml#SnippetDropArea)]
+:::code language="xml" source="~/../snippets-windows/windows-uwp/design/input/drag_drop/cs/MainPage.xaml" id="SnippetDropArea":::
 
 
 ## <a name="handle-the-dragover-event"></a>Gérer l’événement DragOver
 
 L’événement [**DragOver**](/uwp/api/windows.ui.xaml.uielement.dragover) se déclenche lorsqu’un utilisateur a fait glisser un élément sur votre application, mais pas encore de le supprimer. Dans ce gestionnaire, vous devez spécifier le type d’opérations que votre application prend en charge à l’aide de la propriété [**AcceptedOperation**](/uwp/api/windows.ui.xaml.drageventargs.acceptedoperation). L’opération Copier est la plus courante.
 
-[!code-cs[Main](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_DragOver)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/design/input/drag_drop/cs/MainPage.xaml.cs" id="SnippetGrid_DragOver":::
 
 ## <a name="process-the-drop-event"></a>Traiter l’événement Drop
 
@@ -74,13 +74,13 @@ L’événement [**Drop**](/uwp/api/windows.ui.xaml.uielement.drop) se produit l
 
 Par souci de simplicité dans l’exemple ci-dessous, nous supposons que l’utilisateur a déposé une photo unique et y accède directement. En réalité, les utilisateurs peuvent déplacer plusieurs éléments de formats divers simultanément. Votre application doit gérer cette possibilité en vérifiant les types de fichiers qui ont été supprimés et le nombre de fichiers qui ont été supprimés, et traiter chacun d’eux en conséquence. Vous devez également envisager de notifier l’utilisateur s’il tente d’effectuer une action que votre application ne prend pas en charge.
 
-[!code-cs[Main](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_Drop)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/design/input/drag_drop/cs/MainPage.xaml.cs" id="SnippetGrid_Drop":::
 
 ## <a name="customize-the-ui"></a>Personnaliser l’interface utilisateur
 
 Le système fournit une interface utilisateur par défaut pour le glisser-déposer. Toutefois, vous pouvez également choisir de personnaliser les différentes parties de l’interface utilisateur en définissant des légendes et des glyphes personnalisés, ou en choisissant de ne pas afficher d’interface utilisateur du tout. Pour personnaliser l’interface utilisateur, utilisez la propriété [**DragEventArgs.DragUIOverride**](/uwp/api/windows.ui.xaml.drageventargs.draguioverride).
 
-[!code-cs[Main](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_DragOverCustom)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/design/input/drag_drop/cs/MainPage.xaml.cs" id="SnippetGrid_DragOverCustom":::
 
 ## <a name="open-a-context-menu-on-an-item-you-can-drag-with-touch"></a>Ouvrir un menu contextuel sur un élément que vous pouvez faire glisser avec une interface tactile
 
@@ -100,7 +100,7 @@ Le système montre automatiquement les animations appropriées pour le déplacem
 
 La classe [UIElement](/uwp/api/windows.ui.xaml.uielement) effectue la plupart des tâches d’implémentation du glisser-déplacer pour vous. Toutefois, si vous le souhaitez, vous pouvez implémenter votre propre version à l’aide des API de l' [espace de noms Windows. ApplicationModel. datatransfer. DragDrop. Core](/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core).
 
-| Fonctionnalité | API WinRT |
+| Fonctionnalités | API WinRT |
 | --- | --- |
 |  Activer le glissement | [CoreDragOperation](/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragoperation)  |
 |  Créer un package de données | [DataPackage](/uwp/api/windows.applicationmodel.datatransfer.datapackage)  |

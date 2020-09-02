@@ -6,12 +6,12 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, ADS, publicité, interstitiel, JavaScript, exemple de code
 ms.localizationpriority: medium
-ms.openlocfilehash: 764d5dd3f48afa7c446c51ff88090cba88654eba
-ms.sourcegitcommit: e273e5901bfa6596dfef4cc741bb1c42614c25ab
+ms.openlocfilehash: 07a61bfde1fc6a77f87617ee553408c71f79cbc3
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89238264"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363632"
 ---
 # <a name="interstitial-ad-sample-code-in-javascript"></a>Exemple de code pour spot publicitaire en JavaScript
 
@@ -34,17 +34,17 @@ Remplacez les valeurs des ```applicationId``` variables et ```adUnitId``` par de
 ### <a name="indexhtml"></a>index.html
 
 > [!div class="tabbedCodeSnippets"]
-[!code-html[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/index.html#L1-L21)]
+:::code language="html" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/js/index.html" range="1-21":::
 
 ### <a name="scriptjs"></a>script.js
 
 > [!div class="tabbedCodeSnippets"]
-[!code-javascript[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/script.js#script)]
+:::code language="javascript" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/js/script.js" id="script":::
 
 ### <a name="mainjs"></a>main.js
 
 > [!div class="tabbedCodeSnippets"]
-[!code-javascript[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/main.js#main)]
+:::code language="javascript" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/js/main.js" id="main":::
 
 ## <a name="related-topics"></a>Rubriques connexes
 

@@ -4,14 +4,14 @@ description: Les API de l’espace de noms Windows.Media.Editing permettent de d
 title: Compositions multimédias et modification
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b1ae11d8f065cf72202365c36a9d69164fc2daa3
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 91b0418555e4d46c15bd43816ec6b01ebbd27d8b
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163873"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363872"
 ---
 # <a name="media-compositions-and-editing"></a>Compositions multimédias et modification
 
@@ -23,22 +23,22 @@ Cet article explique comment utiliser les API de l’espace de noms [**Windows. 
 
 La classe [**MediaComposition**](/uwp/api/Windows.Media.Editing.MediaComposition) est le conteneur de tous les clips multimédias qui composent la composition et est responsable du rendu de la composition finale, du chargement et de l’enregistrement des compositions sur le disque et de la fourniture d’un flux d’aperçu de la composition afin que l’utilisateur puisse l’afficher dans l’interface utilisateur. Pour utiliser **MediaComposition** dans votre application, vous devez inclure l’espace de noms [**Windows.Media.Editing**](/uwp/api/Windows.Media.Editing), ainsi que l’espace de noms [**Windows.Media.Core**](/uwp/api/Windows.Media.Core) qui fournit les API associées dont vous aurez besoin.
 
-[!code-cs[Namespace1](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetNamespace1)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaEditing/cs/MainPage.xaml.cs" id="SnippetNamespace1":::
 
 
 L’objet **MediaComposition** est accessible à partir de plusieurs points dans votre code. Vous allez généralement déclarer une variable de membre qui permettra de le stocker.
 
-[!code-cs[DeclareMediaComposition](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetDeclareMediaComposition)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaEditing/cs/MainPage.xaml.cs" id="SnippetDeclareMediaComposition":::
 
 Le constructeur de **MediaComposition** ne prend pas d’arguments.
 
-[!code-cs[MediaCompositionConstructor](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetMediaCompositionConstructor)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaEditing/cs/MainPage.xaml.cs" id="SnippetMediaCompositionConstructor":::
 
 ## <a name="add-media-clips-to-a-composition"></a>Ajouter des clips multimédias à une composition
 
 Les compositions multimédia contiennent généralement un ou plusieurs clips vidéo. Vous pouvez utiliser un [**FileOpenPicker**](/uwp/schemas/appxpackage/appxmanifestschema/element-fileopenpicker) pour permettre à l’utilisateur de sélectionner un fichier vidéo. Une fois le fichier sélectionné, créez un nouvel objet [**MediaClip**](/uwp/api/Windows.Media.Editing.MediaClip) pour contenir le clip vidéo en appelant [**MediaClip. CreateFromFileAsync**](/uwp/api/windows.media.editing.mediaclip.createfromfileasync). Ajoutez ensuite le clip à la liste [**Clips**](/uwp/api/windows.media.editing.mediacomposition.clips) de l’objet **MediaComposition**.
 
-[!code-cs[PickFileAndAddClip](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetPickFileAndAddClip)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaEditing/cs/MainPage.xaml.cs" id="SnippetPickFileAndAddClip":::
 
 -   Les clips multimédias s’affichent dans l’élément **MediaComposition** dans l’ordre dans lequel ils apparaissent dans la liste [**Clips**](/uwp/api/windows.media.editing.mediacomposition.clips).
 
@@ -60,17 +60,17 @@ Les compositions multimédia contiennent généralement un ou plusieurs clips vi
 
 Pour permettre à l’utilisateur d’afficher la composition multimédia, ajoutez une classe [**MediaPlayerElement**](/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement) au fichier XAML qui définit votre interface utilisateur.
 
-[!code-xml[MediaElement](./code/MediaEditing/cs/MainPage.xaml#SnippetMediaElement)]
+:::code language="xml" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaEditing/cs/MainPage.xaml" id="SnippetMediaElement":::
 
 Déclarez une variable de membre de type [**MediaStreamSource**](/uwp/api/Windows.Media.Core.MediaStreamSource).
 
 
-[!code-cs[DeclareMediaStreamSource](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetDeclareMediaStreamSource)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaEditing/cs/MainPage.xaml.cs" id="SnippetDeclareMediaStreamSource":::
 
 Appelez la méthode [**GeneratePreviewMediaStreamSource**](/uwp/api/windows.media.editing.mediacomposition.generatepreviewmediastreamsource) de l’objet **MediaComposition** pour créer un élément **MediaStreamSource**. Créez un objet [**MediaSource**](/uwp/api/Windows.Media.Core.MediaSource) en appelant la méthode de fabrique [**CreateFromMediaStreamSource**](/uwp/api/windows.media.core.mediasource.createfrommediastreamsource) et affectez-le à la propriété [**Source**](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) de **MediaPlayerElement**. La composition peut désormais être affichée dans l’interface utilisateur.
 
 
-[!code-cs[UpdateMediaElementSource](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetUpdateMediaElementSource)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaEditing/cs/MainPage.xaml.cs" id="SnippetUpdateMediaElementSource":::
 
 -   L’élément **MediaComposition** doit contenir au moins un clip multimédia avant d’appeler [**GeneratePreviewMediaStreamSource**](/uwp/api/windows.media.editing.mediacomposition.generatepreviewmediastreamsource), sans quoi l’objet renvoyé sera null.
 
@@ -78,17 +78,17 @@ Appelez la méthode [**GeneratePreviewMediaStreamSource**](/uwp/api/windows.medi
 
 Il est recommandé de définir l’objet **MediaStreamSource** et la propriété [**Source**](/uwp/api/windows.ui.xaml.controls.mediaelement.source) de **MediaPlayerElement** sur null lorsque l’utilisateur quitte la page afin de libérer les ressources associées.
 
-[!code-cs[OnNavigatedFrom](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetOnNavigatedFrom)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaEditing/cs/MainPage.xaml.cs" id="SnippetOnNavigatedFrom":::
 
 ## <a name="render-the-composition-to-a-video-file"></a>Restituer la composition dans un fichier vidéo
 
 Pour afficher une composition de média dans un fichier vidéo plat afin qu’elle puisse être partagée et affichée sur d’autres appareils, vous devez utiliser des API de l’espace de noms [**Windows. Media. transcodage**](/uwp/api/Windows.Media.Transcoding) . Pour mettre à jour l’interface utilisateur en fonction de la progression de l’opération asynchrone, vous aurez également besoin des API de l’espace de noms [**Windows.UI.Core**](/uwp/api/Windows.UI.Core).
 
-[!code-cs[Namespace2](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetNamespace2)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaEditing/cs/MainPage.xaml.cs" id="SnippetNamespace2":::
 
 Après avoir autorisé l’utilisateur à sélectionner un fichier de sortie à l’aide d’une classe [**FileSavePicker**](/uwp/api/Windows.Storage.Pickers.FileSavePicker), restituez la composition dans le fichier sélectionné en appelant la méthode [**RenderToFileAsync**](/uwp/api/windows.media.editing.mediacomposition.rendertofileasync) de l’objet **MediaComposition**. Le reste du code de l’exemple suivant suit simplement le modèle de gestion d’un [**AsyncOperationWithProgress**](/previous-versions/br205807(v=vs.85)).
 
-[!code-cs[RenderCompositionToFile](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetRenderCompositionToFile)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaEditing/cs/MainPage.xaml.cs" id="SnippetRenderCompositionToFile":::
 
 -   Le [**MediaTrimmingPreference**](/uwp/api/Windows.Media.Editing.MediaTrimmingPreference) vous permet de hiérarchiser la vitesse de l’opération de transcodage par rapport à la précision de la suppression des clips multimédias adjacents. **Fast** accélère le transcodage par un découpage moins précis et **Precise** le ralentit par une augmentation de la précision du découpage.
 
@@ -96,7 +96,7 @@ Après avoir autorisé l’utilisateur à sélectionner un fichier de sortie à 
 
 Ajustez la durée d’un clip vidéo dans une composition en définissant la propriété [**TrimTimeFromStart**](/uwp/api/windows.media.editing.mediaclip.trimtimefromstart) des objets [**MediaClip**](/uwp/api/Windows.Media.Editing.MediaClip) , la propriété [**TrimTimeFromEnd**](/uwp/api/windows.media.editing.mediaclip.trimtimefromend) , ou les deux.
 
-[!code-cs[TrimClipBeforeCurrentPosition](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetTrimClipBeforeCurrentPosition)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaEditing/cs/MainPage.xaml.cs" id="SnippetTrimClipBeforeCurrentPosition":::
 
 -   Vous pouvez utiliser l’interface utilisateur que vous souhaitez pour permettre à l’utilisateur de spécifier les valeurs de découpage de début et de fin. L’exemple ci-dessus utilise la propriété [**Position**](/uwp/api/windows.media.playback.mediaplaybacksession.position) de l’objet [**MediaPlaybackSession**](/uwp/api/Windows.Media.Playback.MediaPlaybackSession) associé à l’élément **MediaPlayerElement**, pour commencer par déterminer quel **MediaClip** est lu au niveau de la position actuelle de la composition en vérifiant les propriétés [**StartTimeInComposition**](/uwp/api/windows.media.editing.mediaclip.starttimeincomposition) et [**EndTimeInComposition**](/uwp/api/windows.media.editing.mediaclip.endtimeincomposition). Les propriétés **Position** et **StartTimeInComposition** servent à nouveau pour calculer la durée à découper depuis le début du clip. La méthode **FirstOrDefault** est une méthode d’extension à partir de l’espace de noms **System.Linq** qui simplifie le code permettant de sélectionner les éléments d’une liste.
 -   La propriété [**OriginalDuration**](/uwp/api/windows.media.editing.mediaclip.originalduration) de l’objet **MediaClip** vous permet de connaître la durée du clip multimédia sans découpage.
@@ -107,7 +107,7 @@ Ajustez la durée d’un clip vidéo dans une composition en définissant la pro
 
 Pour ajouter une piste d’arrière-plan à une composition, chargez un fichier audio, puis créez un objet [**BackgroundAudioTrack**](/uwp/api/Windows.Media.Editing.BackgroundAudioTrack) en appelant la méthode de fabrique [**BackgroundAudioTrack. CreateFromFileAsync**](/uwp/api/windows.media.editing.backgroundaudiotrack.createfromfileasync). Ajoutez ensuite l’élément **BackgroundAudioTrack** à la propriété [**BackgroundAudioTracks**](/uwp/api/windows.media.editing.mediacomposition.backgroundaudiotracks) de la composition.
 
-[!code-cs[AddBackgroundAudioTrack](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetAddBackgroundAudioTrack)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaEditing/cs/MainPage.xaml.cs" id="SnippetAddBackgroundAudioTrack":::
 
 -   Un élément **MediaComposition** prend en charge les pistes audio en arrière-plan aux formats suivants : MP3, WAV, FLAC.
 
@@ -123,7 +123,7 @@ Pour ajouter une piste d’arrière-plan à une composition, chargez un fichier 
 
 Les superpositions permettent d’empiler plusieurs couches de vidéos les unes sur les autres au sein d’une composition. Une composition peut contenir plusieurs couches de superposition, qui peuvent elles-mêmes inclure plusieurs superpositions. Créez un objet [**MediaOverlay**](/uwp/api/Windows.Media.Editing.MediaOverlay) en transmettant un élément **MediaClip** à son constructeur. Définissez la position et l’opacité de la superposition, puis créez une classe [**MediaOverlayLayer**](/uwp/api/Windows.Media.Editing.MediaOverlayLayer) et ajoutez l’élément **MediaOverlay** à sa liste [**Overlays**](/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgioutput2-supportsoverlays). Ajoutez enfin l’élément **MediaOverlayLayer** à la liste [**OverlayLayers**](/uwp/api/windows.media.editing.mediacomposition.overlaylayers) de la composition.
 
-[!code-cs[AddOverlay](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetAddOverlay)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaEditing/cs/MainPage.xaml.cs" id="SnippetAddOverlay":::
 
 -   Les superpositions au sein d’une couche sont classées selon l’ordre-z en fonction de leur ordre dans la liste **Overlays** de la couche qui les contient. Les indices supérieurs de la liste sont restitués au-dessus des indices inférieurs. Il en va de même pour les couches de superposition d’une composition. Une couche dont l’indice est supérieur dans la liste **OverlayLayers** de la composition sera restituée au-dessus des couches à indice inférieur.
 
@@ -133,19 +133,19 @@ Les superpositions permettent d’empiler plusieurs couches de vidéos les unes 
 
 Chaque **MediaClip** d’une composition possède une liste d’effets audio et vidéo auxquels plusieurs effets peuvent être ajoutés. Les effets doivent implémenter respectivement [**IAudioEffectDefinition**](/uwp/api/Windows.Media.Effects.IAudioEffectDefinition) et [**IVideoEffectDefinition**](/uwp/api/Windows.Media.Effects.IVideoEffectDefinition) . L’exemple suivant utilise la position actuelle de l’élément **MediaPlayerElement** de manière à choisir l’élément **MediaClip** affiché actuellement, puis crée une nouvelle instance de la classe [**VideoStabilizationEffectDefinition**](/uwp/api/Windows.Media.Core.VideoStabilizationEffectDefinition) et l’ajoute à la liste [**VideoEffectDefinitions**](/uwp/api/windows.media.editing.mediaclip.videoeffectdefinitions) du clip multimédia.
 
-[!code-cs[AddVideoEffect](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetAddVideoEffect)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaEditing/cs/MainPage.xaml.cs" id="SnippetAddVideoEffect":::
 
 ## <a name="save-a-composition-to-a-file"></a>Enregistrer une composition dans un fichier
 
 Les compositions multimédia peuvent être sérialisées dans un fichier pour être modifiées ultérieurement. Sélectionnez un fichier de sortie, puis appelez la méthode [**MediaComposition**](/uwp/api/Windows.Media.Editing.MediaComposition) [**SaveAsync**](/uwp/api/windows.media.editing.mediacomposition.saveasync) pour enregistrer la composition.
 
-[!code-cs[SaveComposition](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetSaveComposition)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaEditing/cs/MainPage.xaml.cs" id="SnippetSaveComposition":::
 
 ## <a name="load-a-composition-from-a-file"></a>Charger une composition à partir d’un fichier
 
 Les compositions multimédia peuvent être désérialisées à partir d’un fichier pour permettre à l’utilisateur d’afficher et de modifier la composition. Sélectionnez un fichier de composition, puis appelez la méthode [**MediaComposition**](/uwp/api/Windows.Media.Editing.MediaComposition) [**LoadAsync**](/uwp/api/windows.media.editing.mediacomposition.loadasync) pour charger la composition.
 
-[!code-cs[OpenComposition](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetOpenComposition)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaEditing/cs/MainPage.xaml.cs" id="SnippetOpenComposition":::
 
 -   Si un fichier multimédia de la composition ne se trouve pas dans un emplacement auquel votre application a accès et ne se trouve pas dans la propriété [**FutureAccessList**](/uwp/api/windows.storage.accesscache.storageapplicationpermissions.futureaccesslist) de la classe [**StorageApplicationPermissions**](/uwp/api/Windows.Storage.AccessCache.StorageApplicationPermissions) pour votre application, une erreur sera générée lors du chargement de la composition.
 

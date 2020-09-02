@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Hub de commentaires, lancement
 ms.localizationpriority: medium
-ms.openlocfilehash: efdc4a4b39f71b26658e3fbaf57287098b23e4be
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 71ecb104f1864eefcf1e38f793a4af53a977f693
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158493"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363102"
 ---
 # <a name="launch-feedback-hub-from-your-app"></a>Lancer le Hub de commentaires à partir de votre application
 
@@ -48,13 +48,13 @@ Pour lancer le Hub de commentaires à partir de votre application :
 
     Si cette propriété renvoie la valeur **true**, définissez le contrôle comme étant visible. Le code suivant montre comment procéder pour un élément [Button](/uwp/api/windows.ui.xaml.controls.button).
 
-    [!code-csharp[LaunchFeedback](./code/StoreSDKSamples/cs/FeedbackPage.xaml.cs#ToggleFeedbackVisibility)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/FeedbackPage.xaml.cs" id="ToggleFeedbackVisibility":::
       > [!NOTE]
       > Bien que le hub de commentaires ne soit pas pris en charge sur les appareils Xbox pour l’instant, la propriété **IsSupported** renvoie actuellement la **valeur true** sur les appareils Xbox qui exécutent la version 10.0.14271 ou ultérieure de Windows 10. Il s’agit d’un problème connu qui sera résolu dans une prochaine version de Microsoft Store Services SDK.  
 
 8. Dans le gestionnaire d’événements qui s’exécute quand l’utilisateur clique sur le contrôle, obtenez un objet [StoreServicesFeedbackLauncher](/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher) et appelez la méthode [LaunchAsync](/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher.launchasync) pour lancer l’application Hub de commentaires. Il existe deux surcharges pour cette méthode : une sans paramètre et une autre qui accepte un dictionnaire de paires clé/valeur contenant les métadonnées que vous voulez associer au commentaire. L’exemple suivant montre comment lancer le Hub de commentaires dans le gestionnaire d’événements [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) d’un élément [Button](/uwp/api/Windows.UI.Xaml.Controls.Button).
 
-    [!code-csharp[LaunchFeedback](./code/StoreSDKSamples/cs/FeedbackPage.xaml.cs#FeedbackButtonClick)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/FeedbackPage.xaml.cs" id="FeedbackButtonClick":::
 
 ## <a name="design-recommendations-for-your-feedback-ui"></a>Recommandations en matière de conception pour votre interface utilisateur de commentaires
 

@@ -4,14 +4,14 @@ title: Partager des données
 ms.assetid: 32287F5E-EB86-4B98-97FF-8F6228D06782
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c11c4b630e6b38dd567fece782686743925e214
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 4ed74149552e6582bf133550d4db1a45625e8c39
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161323"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89364042"
 ---
 # <a name="share-data"></a>Partager des données
 
@@ -25,11 +25,11 @@ Cet article explique comment prendre en charge le contrat de partage dans une ap
 
 Ajoutez un gestionnaire d’événements [**DataRequested**](/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.datarequested) à appeler chaque fois qu’un utilisateur appelle share. Cela peut se produire lorsque l’utilisateur appuie sur un contrôle dans votre application (par exemple, une commande de barre d’application ou un bouton) ou automatiquement dans un scénario spécifique (par exemple, si l’utilisateur a terminé un niveau et obtient un score élevé).
 
-[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetPrepareToShare)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/app-to-app/share_data/cs/MainPage.xaml.cs" id="SnippetPrepareToShare":::
 
 Lorsqu’un événement [**DataRequested**](/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.datarequested) survient, votre application reçoit un objet [**DataRequest**](/uwp/api/Windows.ApplicationModel.DataTransfer.DataRequest). Cet objet contient une classe [**DataPackage**](/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackage) que vous pouvez utiliser pour fournir le contenu qu’un utilisateur souhaite partager. Vous devez fournir un titre et des données à partager. La description est facultative, mais recommandée.
 
-[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetCreateRequest)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/app-to-app/share_data/cs/MainPage.xaml.cs" id="SnippetCreateRequest":::
 
 ## <a name="choose-data"></a>Choisir les données
 
@@ -45,7 +45,7 @@ Vous pouvez partager différents types de données, notamment :
 
 L’objet [**DataPackage**](/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackage) peut contenir un ou plusieurs de ces formats, dans n’importe quelle combinaison. L’exemple suivant illustre le partage de texte.
 
-[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetSetContent)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/app-to-app/share_data/cs/MainPage.xaml.cs" id="SnippetSetContent":::
 
 ## <a name="set-properties"></a>Définir des propriétés
 
@@ -53,13 +53,13 @@ Lorsque vous créez un package de données en vue de le partager, vous pouvez d�
 
 Toutes les propriétés sont facultatives, à l’exception du titre. La propriété title est obligatoire et doit être définie.
 
-[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetSetProperties)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/app-to-app/share_data/cs/MainPage.xaml.cs" id="SnippetSetProperties":::
 
 ## <a name="launch-the-share-ui"></a>Lancer l’interface utilisateur de partage
 
 Une interface utilisateur pour le partage est fournie par le système. Pour le lancer, appelez la méthode [**ShowShareUI**](/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.showshareui) .
 
-[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetShowUI)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/app-to-app/share_data/cs/MainPage.xaml.cs" id="SnippetShowUI":::
 
 ## <a name="handle-errors"></a>Gérer les erreurs
 

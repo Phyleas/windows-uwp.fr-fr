@@ -4,14 +4,14 @@ description: La classe SystemMediaTransportControls permet à votre application 
 title: Contrôle manuel des contrôles de transport de média système
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8650ed0d7dc5caceca5d58de61f48f254a571914
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d592b516db32c2602c8b51d82f3ea56c037e5164
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175683"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363782"
 ---
 # <a name="manual-control-of-the-system-media-transport-controls"></a>Contrôle manuel des contrôles de transport de média système
 
@@ -26,19 +26,19 @@ Si vous utilisez **MediaPlayer** pour lire du contenu multimédia, vous pouvez o
 > [!NOTE] 
 > Si vous désactivez l’élément [**MediaPlaybackCommandManager**](/uwp/api/Windows.Media.Playback.MediaPlaybackCommandManager) de l’instance [**MediaPlayer**](/uwp/api/Windows.Media.Playback.MediaPlayer) en définissant [**IsEnabled**](/uwp/api/windows.media.playback.mediaplaybackcommandmanager.isenabled) sur false, le lien entre **MediaPlayer** et [**TransportControls**](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.transportcontrols) fourni par **MediaPlayerElement** est rompu ; autrement dit, les contrôles de transport intégrés ne contrôleront plus automatiquement la lecture du lecteur. Vous devrez donc implémenter vos propres contrôles pour pouvoir contrôler le **MediaPlayer**.
 
-[!code-cs[InitSMTCMediaPlayer](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetInitSMTCMediaPlayer)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SMTCWin10/cs/MainPage.xaml.cs" id="SnippetInitSMTCMediaPlayer":::
 
 Vous pouvez également récupérer une instance de la classe [**SystemMediaTransportControls**](/uwp/api/Windows.Media.SystemMediaTransportControls) en appelant [**GetForCurrentView**](/uwp/api/windows.media.systemmediatransportcontrols.getforcurrentview). Vous devez récupérer l’objet avec cette méthode si vous utilisez **MediaElement** pour lire du contenu multimédia.
 
-[!code-cs[InitSMTCMediaElement](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetInitSMTCMediaElement)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SMTCWin10/cs/MainPage.xaml.cs" id="SnippetInitSMTCMediaElement":::
 
 Activez les boutons utilisés par votre application en définissant la propriété « is enabled » correspondante de l’objet **SystemMediaTransportControls**, telle que [**IsPlayEnabled**](/uwp/api/windows.media.systemmediatransportcontrols.isplayenabled), [**IsPauseEnabled**](/uwp/api/windows.media.systemmediatransportcontrols.ispauseenabled), [**IsNextEnabled**](/uwp/api/windows.media.systemmediatransportcontrols.isnextenabled) et [**IsPreviousEnabled**](/uwp/api/windows.media.systemmediatransportcontrols.ispreviousenabled). Voir la documentation de référence de **SystemMediaTransportControls** pour obtenir la liste complète des contrôles disponibles.
 
-[!code-cs[EnableContols](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetEnableContols)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SMTCWin10/cs/MainPage.xaml.cs" id="SnippetEnableContols":::
 
 Inscrire un gestionnaire pour l’événement [**ButtonPressed**](/uwp/api/windows.media.systemmediatransportcontrols.buttonpressed) pour recevoir des notifications lorsque l’utilisateur appuie sur un bouton.
 
-[!code-cs[RegisterButtonPressed](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetRegisterButtonPressed)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SMTCWin10/cs/MainPage.xaml.cs" id="SnippetRegisterButtonPressed":::
 
 ## <a name="handle-system-media-transport-controls-button-presses"></a>Gérer les pressions sur les boutons de contrôles de transport de média système
 
@@ -46,13 +46,13 @@ L’événement [**ButtonPressed**](/uwp/api/windows.media.systemmediatransportc
 
 Pour mettre à jour des objets sur le thread d’interface utilisateur à partir du gestionnaire d’événements [**ButtonPressed**](/uwp/api/windows.media.systemmediatransportcontrols.buttonpressed) , tel qu’un objet [**MediaElement**](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) , vous devez marshaler les appels par le biais de [**CoreDispatcher**](/uwp/api/Windows.UI.Core.CoreDispatcher). Cela vient du fait que le gestionnaire d’événements **ButtonPressed** n’est pas appelé à partir du thread d’interface utilisateur. Par conséquent, une exception est générée si vous tentez de modifier directement l’interface utilisateur.
 
-[!code-cs[SystemMediaTransportControlsButtonPressed](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetSystemMediaTransportControlsButtonPressed)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SMTCWin10/cs/MainPage.xaml.cs" id="SnippetSystemMediaTransportControlsButtonPressed":::
 
 ## <a name="update-the-system-media-transport-controls-with-the-current-media-status"></a>Mettre à jour les contrôles de transport de média système en tenant compte de l’état actuel du média
 
 Vous devez avertir le [**SystemMediaTransportControls**](/uwp/api/Windows.Media.SystemMediaTransportControls) lorsque l’état du média a changé afin que le système puisse mettre à jour les contrôles pour refléter l’état actuel. Pour ce faire, définissez la propriété [**PlaybackStatus**](/uwp/api/windows.media.systemmediatransportcontrols.playbackstatus) sur la valeur [**MediaPlaybackStatus**](/uwp/api/Windows.Media.MediaPlaybackStatus) appropriée depuis l’événement [**CurrentStateChanged**](/uwp/api/windows.ui.xaml.controls.mediaelement.currentstatechanged) de la classe [**MediaElement**](/uwp/api/Windows.UI.Xaml.Controls.MediaElement), qui est déclenché dès que l’état du média change.
 
-[!code-cs[SystemMediaTransportControlsStateChange](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetSystemMediaTransportControlsStateChange)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SMTCWin10/cs/MainPage.xaml.cs" id="SnippetSystemMediaTransportControlsStateChange":::
 
 ## <a name="update-the-system-media-transport-controls-with-media-info-and-thumbnails"></a>Mettre à jour les contrôles de transport de média système en tenant compte des informations relatives au média et des miniatures
 
@@ -60,11 +60,11 @@ Utilisez la classe [**SystemMediaTransportControlsDisplayUpdater**](/uwp/api/Win
 
 Appelez la [**mise à jour**](/uwp/api/windows.media.systemmediatransportcontrolsdisplayupdater.update) pour obliger les contrôles du transport du système multimédia à mettre à jour son interface utilisateur avec les nouvelles métadonnées et miniatures.
 
-[!code-cs[SystemMediaTransportControlsUpdater](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetSystemMediaTransportControlsUpdater)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SMTCWin10/cs/MainPage.xaml.cs" id="SnippetSystemMediaTransportControlsUpdater":::
 
 Si votre scénario l’exige, vous pouvez mettre à jour manuellement les métadonnées affichées par les contrôles de transport de média système en définissant les valeurs des objets [**MusicProperties**](/uwp/api/windows.media.systemmediatransportcontrolsdisplayupdater.musicproperties), [**ImageProperties**](/uwp/api/windows.media.systemmediatransportcontrolsdisplayupdater.imageproperties) ou [**VideoProperties**](/uwp/api/windows.media.systemmediatransportcontrolsdisplayupdater.videoproperties) exposés par la classe [**DisplayUpdater**](/uwp/api/windows.media.systemmediatransportcontrols.displayupdater).
 
-[!code-cs[SystemMediaTransportControlsUpdaterManual](./code/SMTCWin10/cs/MainPage.xaml.cs#SystemMediaTransportControlsUpdaterManual)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SMTCWin10/cs/MainPage.xaml.cs" id="SystemMediaTransportControlsUpdaterManual":::
 
 > [!Note]
 > Les applications doivent définir une valeur pour la propriété [SystemMediaTransportControlsDisplayUpdater. type](/uwp/api/windows.media.systemmediatransportcontrolsdisplayupdater.type#Windows_Media_SystemMediaTransportControlsDisplayUpdater_Type
@@ -75,7 +75,7 @@ Si votre scénario l’exige, vous pouvez mettre à jour manuellement les métad
 
 Les contrôles de transport système affichent des informations sur la chronologie de l’élément multimédia en cours de lecture, y compris la position de lecture actuelle, son heure de début et son heure de fin. Pour mettre à jour les propriétés de chronologie des contrôles de transport système, créez un nouvel objet [**SystemMediaTransportControlsTimelineProperties**](/uwp/api/Windows.Media.SystemMediaTransportControlsTimelineProperties). Définissez les propriétés de l’objet afin de refléter l’état actuel de l’élément multimédia en cours de lecture. Appelez [**SystemMediaTransportControls. UpdateTimelineProperties**](/uwp/api/windows.media.systemmediatransportcontrols.updatetimelineproperties) pour obliger les contrôles à mettre à jour la chronologie.
 
-[!code-cs[UpdateTimelineProperties](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetUpdateTimelineProperties)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SMTCWin10/cs/MainPage.xaml.cs" id="SnippetUpdateTimelineProperties":::
 
 -   Vous devez fournir une valeur pour les [**StartTime**](/uwp/api/windows.media.systemmediatransportcontrolstimelineproperties.starttime), [**EndTime**](/uwp/api/windows.media.systemmediatransportcontrolstimelineproperties.endtime) et [**position**](/uwp/api/windows.media.systemmediatransportcontrols.playbackpositionchangerequested) afin que les contrôles système affichent une chronologie pour votre élément en cours d’exécution.
 
@@ -98,11 +98,11 @@ Il existe un ensemble de propriétés de contrôles de transport système qui se
  
 Pour gérer l’interaction de l’utilisateur avec un de ces contrôles, commencez par enregistrer un gestionnaire pour l’événement associé.
 
-[!code-cs[RegisterPlaybackChangedHandler](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetRegisterPlaybackChangedHandler)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SMTCWin10/cs/MainPage.xaml.cs" id="SnippetRegisterPlaybackChangedHandler":::
 
 Dans le gestionnaire de cet événement, commencez par vérifier que la valeur demandée est comprise dans une plage valide et attendue. Si c’est le cas, définissez la propriété correspondante sur [**MediaElement**](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) , puis définissez la propriété correspondante sur l’objet [**SystemMediaTransportControls**](/uwp/api/Windows.Media.SystemMediaTransportControls) .
 
-[!code-cs[PlaybackChangedHandler](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetPlaybackChangedHandler)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SMTCWin10/cs/MainPage.xaml.cs" id="SnippetPlaybackChangedHandler":::
 
 -   Afin de déclencher un de ces événements de propriété de lecteur, vous devez définir une valeur initiale pour cette propriété. Par exemple, [**PlaybackRateChangeRequested**](/uwp/api/windows.media.systemmediatransportcontrols.playbackratechangerequested) n’est pas déclenché tant que vous n’avez pas défini une valeur pour la propriété [**PlaybackRate**](/uwp/api/windows.media.systemmediatransportcontrols.playbackrate) au moins une fois.
 

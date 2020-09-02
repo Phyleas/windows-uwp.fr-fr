@@ -1,22 +1,22 @@
 ---
 ms.assetid: CC0D6E9B-128D-488B-912F-318F5EE2B8D3
 description: Cet article explique comment utiliser la classe [**CameraCaptureUI**](/uwp/api/windows.media.capture.cameracaptureui) pour capturer des photos ou des vidéos à l’aide de l’interface utilisateur de l’appareil photo intégrée à Windows.
-title: Capturez des photos et des vidéos avec l’interface utilisateur de l’appareil photo intégré Windows
+title: Capturer des photos et des vidéos à l’aide de l’interface utilisateur de l’appareil photo intégré à Windows
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: a512f72c01f2082dd067fc867f7434c92d2aa0c8
-ms.sourcegitcommit: 79e4b3a9c53060b64513e2e240f0a4f073cc5dab
+ms.openlocfilehash: 5b5e1369e37fc683a3a09c8f404b1998ee06bdab
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84978934"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89364002"
 ---
-# <a name="capture-photos-and-video-with-the-windows-built-in-camera-ui"></a>Capturez des photos et des vidéos avec l’interface utilisateur de l’appareil photo intégré Windows
+# <a name="capture-photos-and-video-with-the-windows-built-in-camera-ui"></a>Capturer des photos et des vidéos à l’aide de l’interface utilisateur de l’appareil photo intégré à Windows
 
 Cet article explique comment utiliser la classe [**CameraCaptureUI**](/uwp/api/windows.media.capture.cameracaptureui) pour capturer des photos ou des vidéos à l’aide de l’interface utilisateur de l’appareil photo intégrée à Windows. Cette fonctionnalité est facile à utiliser. Il permet à votre application d’obtenir une photo ou une vidéo capturée par l’utilisateur avec seulement quelques lignes de code.
 
@@ -62,8 +62,8 @@ Appelez [**OpenAsync**](/uwp/api/windows.storage.istoragefile.openasync) pour ob
 
 Pour afficher l’image dans votre interface utilisateur, déclarez un contrôle [**image**](/uwp/api/Windows.UI.Xaml.Controls.Image) dans votre page XAML.
 
-:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/CameraCaptureUIWin10/cs/MainPage.xaml.cs" id="SnippetImageControl":::
-:::code language="cppwinrt" source="~/../snippets-windows/windows-uwp/audio-video-camera/CameraCaptureUIWin10/cppwinrt/MainPage.cpp" id="SnippetImageControl":::
+:::code language="xml" source="~/../snippets-windows/windows-uwp/audio-video-camera/CameraCaptureUIWin10/cs/MainPage.xaml" id="SnippetImageControl":::
+:::code language="xml" source="~/../snippets-windows/windows-uwp/audio-video-camera/CameraCaptureUIWin10/cppwinrt/MainPage.xaml" id="SnippetImageControl":::
 
 Pour utiliser l’image bitmap logicielle dans votre page XAML, incluez l’espace de noms using [**Windows.UI.Xaml.Media.Imaging**](/uwp/api/Windows.UI.Xaml.Media.Imaging) dans votre projet.
 

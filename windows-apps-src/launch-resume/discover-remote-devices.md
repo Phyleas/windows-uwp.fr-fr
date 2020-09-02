@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, appareils connectés, systèmes distants, Rome, projet Rome
 ms.localizationpriority: medium
-ms.openlocfilehash: 01c13a30c8869643badc69c546b0a5212308956f
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a479cb20943b9c4b2df53b22751c9de2f5a8402c
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89155923"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363732"
 ---
 # <a name="discover-remote-devices"></a>Détecter des appareils distants
 Votre application peut utiliser le réseau sans fil, la connexion Bluetooth et le Cloud pour détecter les appareils Windows qui sont connectés avec le même compte Microsoft que l’appareil qui découvre. Aucun logiciel particulier n’est nécessaire sur les appareils distants pour qu’ils soient détectables.
@@ -27,7 +27,7 @@ Les objets de filtre doivent être construits avant ou pendant l’initialisatio
 > [!NOTE]
 > Le code de ces exemples exige que vous disposiez `using Windows.System.RemoteSystems` d’une instruction dans votre fichier.
 
-[!code-cs[Main](./code/DiscoverDevices/MainPage.xaml.cs#SnippetMakeFilterList)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/DiscoverDevices/cs/MainPage.xaml.cs" id="SnippetMakeFilterList":::
 
 > [!NOTE]
 > La valeur de filtre « proximal » ne garantit pas le degré de proximité physique. Pour les scénarios qui nécessitent une proximité physique fiable, utilisez la valeur [**RemoteSystemDiscoveryType. SpatiallyProximal**](/uwp/api/windows.system.remotesystems.remotesystemdiscoverytype) dans votre filtre. Actuellement, ce filtre autorise uniquement les appareils qui sont détectés par Bluetooth. À mesure que de nouveaux mécanismes et protocoles de découverte garantissant une proximité physique sont pris en charge, ils sont également inclus ici.  
@@ -38,7 +38,7 @@ Il existe également une propriété dans la classe [**RemoteSystem**](/uwp/api/
 
 Une fois créée, la liste des objets [**IRemoteSystemFilter**](/uwp/api/Windows.System.RemoteSystems.IRemoteSystemFilter) peut être transmise au constructeur d’un **RemoteSystemWatcher**.
 
-[!code-cs[Main](./code/DiscoverDevices/MainPage.xaml.cs#SnippetCreateWatcher)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/DiscoverDevices/cs/MainPage.xaml.cs" id="SnippetCreateWatcher":::
 
 Quand la méthode [**Start**](/uwp/api/windows.system.remotesystems.remotesystemwatcher.start) de l’observateur est appelée, elle déclenche l’événement [**RemoteSystemAdded**](/uwp/api/windows.system.remotesystems.remotesystemwatcher.remotesystemadded) uniquement si un appareil détecté répond à tous les critères suivants :
 * L’appareil est détectable par une connexion proximale.
@@ -52,7 +52,7 @@ Certains appareils ne peuvent pas être associés à un utilisateur ou détecté
 
 Un objet **RemoteSystem** est récupéré si un objet **HostName** valide est fourni. Si l’adresse n’est pas valide, une référence d’objet `null` est renvoyée.
 
-[!code-cs[Main](./code/DiscoverDevices/MainPage.xaml.cs#SnippetFindByHostName)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/DiscoverDevices/cs/MainPage.xaml.cs" id="SnippetFindByHostName":::
 
 ## <a name="querying-a-capability-on-a-remote-system"></a>Interrogation d’une fonctionnalité sur un système distant
 

@@ -4,14 +4,14 @@ description: Cet article vous présente le moyen le plus simple de capturer des 
 title: Capture photo, vidéo et audio de base à l’aide de MediaCapture
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a1bdb033d9c0d47973c26b28dc357a4000d4099
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: aecd25eb7f3d9c9f08e2b07d6bd425a00686e0ea
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161123"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362952"
 ---
 # <a name="basic-photo-video-and-audio-capture-with-mediacapture"></a>Capture photo, vidéo et audio de base à l’aide de MediaCapture
 
@@ -37,9 +37,9 @@ Afin que votre application puisse accéder à l’appareil photo d’un appareil
 ## <a name="initialize-the-mediacapture-object"></a>Initialiser l’objet MediaCapture
 Toutes les méthodes de capture décrites dans cet article nécessitent la première étape d’initialisation de l’objet [**MediaCapture**](/uwp/api/Windows.Media.Capture.MediaCapture), exécutée via l’appel du constructeur, puis de [**InitializeAsync**](/uwp/api/windows.media.capture.mediacapture.initializeasync). Dans la mesure où l’objet **MediaCapture** est accessible depuis plusieurs emplacements de votre application, déclarez une variable de classe pour stocker l’objet.  Implémentez un gestionnaire pour l’objet [**Failed**](/uwp/api/windows.media.capture.mediacapture.failed) de la classe **MediaCapture** afin d’être informé d’un éventuel échec de l’opération de capture.
 
-[!code-cs[DeclareMediaCapture](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetDeclareMediaCapture)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetDeclareMediaCapture":::
 
-[!code-cs[InitMediaCapture](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetInitMediaCapture)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetInitMediaCapture":::
 
 ## <a name="set-up-the-camera-preview"></a>Définissez l’aperçu de l’appareil photo
 Il est possible de capturer des photos, vidéos et audio à l’aide de **MediaCapture** sans afficher l’aperçu de l’appareil photo, mais en règle générale, vous souhaitez afficher le flux d’aperçu de manière à ce que l’utilisateur n’ait aucune visibilité sur le contenu capturé. Par ailleurs, quelques fonctions **MediaCapture** nécessitent l’exécution du flux d’aperçu pour être activées. Il s’agit notamment la mise au point, l’exposition et la balance des blancs automatiques. Pour savoir comment configurer l’aperçu de l’appareil photo, consultez la page [**Afficher l’aperçu de l’appareil photo**](simple-camera-preview-access.md).
@@ -51,7 +51,7 @@ Après l’initialisation de l’objet **MediaCapture**, vous pouvez capturer un
 
 Si vous le souhaitez, vous pouvez capturer plusieurs photos en appelant à plusieurs reprises **CaptureAsync**. Quand vous avez terminé la capture, appelez [**FinishAsync**](/uwp/api/windows.media.capture.advancedphotocapture.finishasync) afin d’arrêter la session **LowLagPhotoCapture** et de libérer les ressources associées. Après avoir appelé **FinishAsync**, pour recommencer à capturer les photos, vous devrez rappeler [**PrepareLowLagPhotoCaptureAsync**](/uwp/api/windows.media.capture.mediacapture.preparelowlagphotocaptureasync) afin de réinitialiser la session de capture avant d’appeler [**CaptureAsync**](/uwp/api/windows.media.capture.lowlagphotocapture.captureasync).
 
-[!code-cs[CaptureToSoftwareBitmap](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetCaptureToSoftwareBitmap)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetCaptureToSoftwareBitmap":::
 
 À compter de Windows, version 1803, vous pouvez accéder à la propriété [**BitmapProperties**](/uwp/api/windows.media.capture.capturedframe.bitmapproperties) de la classe **CapturedFrame** retournée à partir de **CaptureAsync** pour récupérer les métadonnées relatives à la photo capturée. Vous pouvez transmettre ces données dans un **BitmapEncoder** pour enregistrer les métadonnées dans un fichier. Auparavant, il n’existait aucun moyen d’accéder à ces données pour les formats d’image non compressés. Vous pouvez également accéder à la propriété [**ControlValues**](/uwp/api/windows.media.capture.capturedframe.controlvalues) pour récupérer un objet [**CapturedFrameControlValues**](/uwp/api/windows.media.capture.capturedframecontrolvalues) qui décrit les valeurs du contrôle, telles que l’exposition et l’équilibre des blancs, pour le frame capturé.
 
@@ -72,34 +72,34 @@ Vous pouvez éventuellement créer un objet [**BitmapPropertySet**](/uwp/api/Win
 
 Enfin, appelez [**FlushAsync**](/uwp/api/windows.graphics.imaging.bitmapencoder.flushasync) sur l’objet encodeur pour transcoder la photo du flux en mémoire dans le fichier.
 
-[!code-cs[CaptureToFile](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetCaptureToFile)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetCaptureToFile":::
 
 Pour plus d’utilisation sur l’utilisation des fichiers et des dossiers, consultez la section [**Fichiers, dossiers et bibliothèques**](../files/index.md).
 
 ## <a name="capture-a-video"></a>Capturer une vidéo
 Ajoutez rapidement une capture vidéo à votre application à l’aide de la classe [**LowLagMediaRecording**](/uwp/api/Windows.Media.Capture.LowLagMediaRecording). Tout d’abord, déclarez une variable de classe associée à l’objet.
 
-[!code-cs[LowLagMediaRecording](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetLowLagMediaRecording)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetLowLagMediaRecording":::
 
 Ensuite, créez un objet **StorageFile** sur lequel enregistrer la vidéo. Notez que pour procéder à un enregistrement sur la vidéothèque de l’utilisateur, vous devez ajouter la fonctionnalité **Vidéothèque** à votre manifeste d’application. Appelez [**PrepareLowLagRecordToStorageFileAsync**](/uwp/api/windows.media.capture.mediacapture.preparelowlagrecordtostoragefileasync) afin d’initialiser l’enregistrement du contenu multimédia, en passant un fichier de stockage et un objet [**MediaEncodingProfile**](/uwp/api/Windows.Media.MediaProperties.MediaEncodingProfile) spécifiant l’encodage pour la vidéo. La classe fournit des méthodes statiques, comme [**CreateMp4**](/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createmp4), pour créer des profils d’encodage vidéo courants.
 
 Enfin, appelez [**StartAsync**](/uwp/api/windows.media.capture.lowlagmediarecording.startasync) afin de commencer à capturer la vidéo.
 
-[!code-cs[StartVideoCapture](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStartVideoCapture)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetStartVideoCapture":::
 
 Pour arrêter l’enregistrement de la vidéo, appelez [**StopAsync**](/uwp/api/windows.media.capture.lowlagmediarecording.stopasync).
 
-[!code-cs[StopRecording](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStopRecording)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetStopRecording":::
 
 Vous pouvez continuer à appeler **StartAsync** et **StopAsync** pour capturer des vidéos supplémentaires. Lorsque vous avez terminé de capturer des vidéos, appelez [**FinishAsync**](/uwp/api/windows.media.capture.lowlagmediarecording.finishasync) pour supprimer la session de capture et nettoyer les ressources associées. Après cet appel, vous devez appeler de nouveau **PrepareLowLagRecordToStorageFileAsync** pour réinitialiser la session de capture avant d’appeler **StartAsync**.
 
-[!code-cs[FinishAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetFinishAsync)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetFinishAsync":::
 
 Lorsque vous capturez de la vidéo, vous devez enregistrer un gestionnaire pour l’événement [**RecordLimitationExceeded**](/uwp/api/windows.media.capture.mediacapture.recordlimitationexceeded) de l’objet **MediaCapture**, qui sera déclenché par la système d’exploitation si vous dépassez la limite d’un enregistrement unique, généralement de trois heures. Dans le gestionnaire de l’événement, vous devez finaliser votre enregistrement en appelant [**StopAsync**](/uwp/api/windows.media.capture.lowlagmediarecording.stopasync).
 
-[!code-cs[RecordLimitationExceeded](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetRecordLimitationExceeded)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetRecordLimitationExceeded":::
 
-[!code-cs[RecordLimitationExceededHandler](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetRecordLimitationExceededHandler)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetRecordLimitationExceededHandler":::
 
 ### <a name="play-and-edit-captured-video-files"></a>Lire et modifier les fichiers vidéo capturés
 Une fois que vous avez capturé une vidéo dans un fichier, vous souhaiterez peut-être charger le fichier et le lire dans l’interface utilisateur de votre application. Pour ce faire, vous pouvez utiliser le contrôle XAML **[MediaPlayerElement](/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement)** et un **[MediaPlayer](/uwp/api/windows.media.playback.mediaplayer)** associé. Pour plus d’informations sur la lecture de médias dans une page XAML, consultez [lire des fichiers audio et vidéo avec MediaPlayer](play-audio-and-video-with-mediaplayer.md).
@@ -109,19 +109,19 @@ Vous pouvez également créer un objet **[MediaClip](/uwp/api/windows.media.edit
 ## <a name="pause-and-resume-video-recording"></a>Interrompre et reprendre l’enregistrement vidéo
 Vous pouvez suspendre un enregistrement vidéo, puis reprendre l’enregistrement sans créer de fichier de sortie distinct en appelant [**PauseAsync**](/uwp/api/windows.media.capture.lowlagmediarecording.pauseasync) , puis en appelant [**ResumeAsync**](/uwp/api/windows.media.capture.lowlagmediarecording.resumeasync).
 
-[!code-cs[PauseRecordingSimple](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetPauseRecordingSimple)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetPauseRecordingSimple":::
 
-[!code-cs[ResumeRecordingSimple](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetResumeRecordingSimple)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetResumeRecordingSimple":::
 
 À partir de Windows 10, version 1607, vous pouvez suspendre un enregistrement vidéo et recevoir la dernière image capturée avant l’interruption. Vous pouvez alors superposer cette image sur l’aperçu de l’appareil photo afin de permettre à l’utilisateur d’aligner l’appareil photo avec l’image interrompue avant de reprendre l’enregistrement. L’appel de [**PauseWithResultAsync**](/uwp/api/windows.media.capture.lowlagmediarecording.pausewithresultasync) retourne un objet [**MediaCapturePauseResult**](/uwp/api/Windows.Media.Capture.MediaCapturePauseResult) . La propriété [**LastFrame**](/uwp/api/windows.media.capture.mediacapturepauseresult.lastframe) est un objet [**VideoFrame**](/uwp/api/Windows.Media.VideoFrame) qui représente le dernier frame. Pour afficher l’image au format XAML, récupérez la représentation **SoftwareBitmap** de l’image vidéo. Actuellement, seules les images au format BGRA8 avec un canal alpha prémultiplié ou vide sont prises en charge, aussi appelez [**Convert**](/uwp/api/windows.graphics.imaging.softwarebitmap.convert) pour récupérer le format approprié, si nécessaire.  Créez un nouvel objet [**SoftwareBitmapSource**](/uwp/api/Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource), puis appelez [**SetBitmapAsync**](/uwp/api/windows.ui.xaml.media.imaging.softwarebitmapsource.setbitmapasync) pour l’initialiser. Enfin, définissez la propriété **Source** d’un contrôle XAML [**Image**](/uwp/api/Windows.UI.Xaml.Controls.Image) afin d’afficher l’image. Pour que cette astuce fonctionne, votre image doit être alignée sur le contrôle **CaptureElement** et présenter une valeur d’opacité inférieure à 1. N’oubliez pas que vous ne pouvez modifier l’interface utilisateur que sur le thread d’interface utilisateur, par conséquent, effectuez cet appel à l’intérieur de [**RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync).
 
 **PauseWithResultAsync** renvoie également la durée de la vidéo enregistrée dans le segment précédent, si vous souhaitez effectuer un suivi de la durée totale enregistrée.
 
-[!code-cs[PauseCaptureWithResult](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetPauseCaptureWithResult)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetPauseCaptureWithResult":::
 
 Quand vous reprenez l’enregistrement, vous pouvez définir la source de l’image sur Null, puis la masquer.
 
-[!code-cs[ResumeCaptureWithResult](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetResumeCaptureWithResult)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetResumeCaptureWithResult":::
 
 Notez que vous pouvez également récupérer une image résultante quand vous arrêtez la vidéo en appelant [**StopWithResultAsync**](/uwp/api/windows.media.capture.lowlagmediarecording.stopwithresultasync).
 
@@ -129,7 +129,7 @@ Notez que vous pouvez également récupérer une image résultante quand vous ar
 ## <a name="capture-audio"></a>Capturer l’audio 
 Vous pouvez rapidement ajouter la capture audio à votre application en appliquant la technique décrite ci-dessus relative à la capture vidéo. L’exemple ci-dessous est relatif à la création d’un élément **StorageFile** dans le dossier des données de l’application. Appelez [**PrepareLowLagRecordToStorageFileAsync**](/uwp/api/windows.media.capture.mediacapture.preparelowlagrecordtostoragefileasync) pour initialiser la session de capture, en passant le fichier et une classe [**MediaEncodingProfile**](/uwp/api/Windows.Media.MediaProperties.MediaEncodingProfile) générée dans l’exemple par la méthode statique [**CreateMp3**](/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createmp3). Pour démarrer l’enregistrement, appelez [**StartAsync**](/uwp/api/windows.media.capture.lowlagmediarecording.startasync).
 
-[!code-cs[StartAudioCapture](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStartAudioCapture)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetStartAudioCapture":::
 
 
 Appelez [**StopAsync**](/uwp/api/windows.media.capture.lowlagphotosequencecapture.stopasync) pour arrêter l’enregistrement audio.
@@ -137,29 +137,29 @@ Appelez [**StopAsync**](/uwp/api/windows.media.capture.lowlagphotosequencecaptur
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Appareil photo](camera.md)  
-[!code-cs[StopRecording](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStopRecording)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetStopRecording":::
 
 Vous pouvez appeler **StartAsync** et **StopAsync** à plusieurs reprises pour enregistrer plusieurs fichiers audio. Quand vous avez terminé la capture audio, appelez [**FinishAsync**](/uwp/api/windows.media.capture.lowlagmediarecording.finishasync) pour supprimer la session de capture et nettoyer les ressources associées. Après cet appel, vous devez appeler de nouveau **PrepareLowLagRecordToStorageFileAsync** pour réinitialiser la session de capture avant d’appeler **StartAsync**.
 
-[!code-cs[FinishAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetFinishAsync)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetFinishAsync":::
 
 
 ## <a name="detect-and-respond-to-audio-level-changes-by-the-system"></a>Détecter les modifications de niveau audio et y répondre par le système
 À compter de Windows 10, version 1803, votre application peut détecter le moment où le système diminue ou désactive le niveau audio de la capture audio de votre application et des flux de rendu audio. Par exemple, le système peut désactiver les flux de votre application lorsqu’il passe en arrière-plan. La classe [**AudioStateMonitor**](/uwp/api/windows.media.audio.audiostatemonitor) vous permet de vous inscrire pour recevoir un événement lorsque le système modifie le volume d’un flux audio. Obtenir une instance de **AudioStateMonitor** pour la surveillance des flux de capture audio en appelant [**CreateForCaptureMonitoring**](/uwp/api/windows.media.audio.audiostatemonitor.createforcapturemonitoring#Windows_Media_Audio_AudioStateMonitor_CreateForCaptureMonitoring). Obtenir une instance pour la surveillance des flux de rendu audio en appelant [**CreateForRenderMonitoring**](/uwp/api/windows.media.audio.audiostatemonitor.createforrendermonitoring). Inscrire un gestionnaire pour l’événement [**SoundLevelChanged**](/uwp/api/windows.media.audio.audiostatemonitor.soundlevelchanged) de chaque analyse à notifier lorsque le système audio pour la catégorie de flux correspondante est modifié par le système.
 
-[!code-cs[AudioStateMonitorUsing](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetAudioStateMonitorUsing)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetAudioStateMonitorUsing":::
 
-[!code-cs[AudioStateVars](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetAudioStateVars)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetAudioStateVars":::
 
-[!code-cs[RegisterAudioStateMonitor](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetRegisterAudioStateMonitor)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetRegisterAudioStateMonitor":::
 
 Dans le gestionnaire **SoundLevelChanged** du flux de capture, vous pouvez vérifier la propriété [**SoundLevel**](/uwp/api/windows.media.audio.audiostatemonitor.soundlevel) de l’expéditeur **AudioStateMonitor** pour déterminer le nouveau niveau sonore. Notez qu’un flux de capture ne doit jamais être abaissé, ou « normalement », par le système. Elle doit uniquement être désactivée ou basculée sur le volume complet. Si le flux audio est muet, vous pouvez arrêter une capture en cours. Si le flux audio est restauré en volume complet, vous pouvez recommencer la capture. L’exemple suivant utilise des variables de classe booléennes pour déterminer si l’application capture actuellement l’audio et si la capture a été arrêtée en raison de la modification de l’État audio. Ces variables sont utilisées pour déterminer quand il est approprié d’arrêter ou de démarrer la capture audio par programmation.
 
-[!code-cs[CaptureSoundLevelChanged](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetCaptureSoundLevelChanged)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetCaptureSoundLevelChanged":::
 
 L’exemple de code suivant illustre une implémentation du gestionnaire **SoundLevelChanged** pour le rendu audio. En fonction de votre scénario d’application et du type de contenu que vous jouez, vous souhaiterez peut-être suspendre la lecture audio lorsque le niveau sonore est projeté. Pour plus d’informations sur la gestion des modifications de niveau sonore pour la lecture de médias, consultez [lire des fichiers audio et vidéo avec MediaPlayer](play-audio-and-video-with-mediaplayer.md).
 
-[!code-cs[RenderSoundLevelChanged](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetRenderSoundLevelChanged)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetRenderSoundLevelChanged":::
 
 
 * [Capturer des photos et des vidéos à l’aide de l’interface utilisateur de l’appareil photo intégré à Windows](capture-photos-and-video-with-cameracaptureui.md)

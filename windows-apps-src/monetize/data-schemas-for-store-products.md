@@ -5,12 +5,12 @@ ms.date: 09/26/2017
 ms.topic: article
 keywords: Windows 10, UWP, ExtendedJsonData, produits du Store, schéma
 ms.localizationpriority: medium
-ms.openlocfilehash: 46feac06745cd875aaf99985d45ea1b5b126b540
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e09e02d12afc436f5d22d11fad85fb0bad3507f6
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175093"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363182"
 ---
 # <a name="data-schemas-for-store-products"></a>Schémas de données des produits du Store
 
@@ -37,7 +37,7 @@ Le schéma suivant décrit la chaîne au format JSON retournée par [StoreProduc
 
 Pour obtenir un exemple de chaîne au format JSON retournée par [StoreProduct. ExtendedJsonData](/uwp/api/windows.services.store.storeproduct.ExtendedJsonData), consultez [cette section](#product-example).
 
-[!code-json[ExtendedJsonDataSchema](./code/InAppPurchasesAndLicenses_RS1/json/StoreProduct.ExtendedJsonData.json#L1-L729)]
+:::code language="json" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/json/StoreProduct.ExtendedJsonData.json" range="1-729":::
 
 <span id="product-example" />
 
@@ -45,7 +45,7 @@ Pour obtenir un exemple de chaîne au format JSON retournée par [StoreProduct. 
 
 L’exemple suivant illustre une chaîne au format JSON retournée par la propriété [StoreProduct. ExtendedJsonData](/uwp/api/windows.services.store.storeproduct.ExtendedJsonData) pour l’application.
 
-[!code-json[ExtendedJsonDataSchema](./code/InAppPurchasesAndLicenses_RS1/json/StoreProduct.ExtendedJsonDataExample.json#L1-L268)]
+:::code language="json" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/json/StoreProduct.ExtendedJsonDataExample.json" range="1-268":::
 
 ## <a name="schema-for-storeapplicense-and-storelicense"></a>Schéma pour StoreAppLicense et StoreLicense
 
@@ -53,7 +53,7 @@ Le schéma suivant décrit la chaîne au format JSON retournée par [StoreAppLic
 
 Pour obtenir un exemple de chaîne au format JSON retournée par [StoreAppLicense. ExtendedJsonData](/uwp/api/windows.services.store.storeapplicense.ExtendedJsonData), consultez [cette section](#license-example).
 
-[!code-json[ExtendedJsonDataSchema](./code/InAppPurchasesAndLicenses_RS1/json/StoreAppLicense.ExtendedJsonData.json#L1-L80)]
+:::code language="json" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/json/StoreAppLicense.ExtendedJsonData.json" range="1-80":::
 
 <span id="license-example" />
 
@@ -61,13 +61,13 @@ Pour obtenir un exemple de chaîne au format JSON retournée par [StoreAppLicens
 
 L’exemple suivant illustre une chaîne au format JSON retournée par la propriété [StoreAppLicense. ExtendedJsonData](/uwp/api/windows.services.store.storeapplicense.ExtendedJsonData) pour l’application.
 
-[!code-json[ExtendedJsonDataSchema](./code/InAppPurchasesAndLicenses_RS1/json/StoreAppLicense.ExtendedJsonDataExample.json#L1-L28)]
+:::code language="json" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/json/StoreAppLicense.ExtendedJsonDataExample.json" range="1-28":::
 
 ## <a name="schema-for-storepurchaseproperties"></a>Schéma pour StorePurchaseProperties
 
 Le schéma suivant décrit la chaîne au format JSON retournée par [StorePurchaseProperties. ExtendedJsonData](/uwp/api/windows.services.store.storepurchaseproperties.ExtendedJsonData).
 
-[!code-json[ExtendedJsonDataSchema](./code/InAppPurchasesAndLicenses_RS1/json/StorePurchaseProperties.ExtendedJsonData.json#L1-L12)]
+:::code language="json" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/json/StorePurchaseProperties.ExtendedJsonData.json" range="1-12":::
 
 ## <a name="related-topics"></a>Rubriques connexes
 

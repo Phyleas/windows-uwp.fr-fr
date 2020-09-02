@@ -5,12 +5,12 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, ADS, publicité, contrôle AD, Native ad
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d3f26049350ce2cc2fc2c16f85989e9ebd5633c
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 417560c9099937324b39a8cdfafb7d62ec7e64e6
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171373"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89364082"
 ---
 # <a name="native-ads"></a>Publicités natives
 
@@ -46,21 +46,21 @@ Suivez ces instructions pour intégrer une Active Directory native dans votre ap
 
 4. Dans le fichier de code approprié de votre application (par exemple, dans MainPage.xaml.cs ou dans un fichier de code pour une autre page), ajoutez les références d’espace de noms suivantes.
 
-    [!code-csharp[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#Namespaces)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs" id="Namespaces":::
 
 5.  À un emplacement approprié dans votre application (par exemple, dans ```MainPage``` ou une autre page), déclarez un objet [NativeAdsManagerV2](/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2) et plusieurs champs de chaîne qui représentent l’ID d’application et l’ID d’unité Active Directory pour votre ad natif. L’exemple de code suivant affecte les `myAppId` `myAdUnitId` champs et aux [valeurs de test](set-up-ad-units-in-your-app.md#test-ad-units) pour les publicités natives.
     > [!NOTE]
     > Chaque **NativeAdsManagerV2** a une *unité publicitaire* correspondante qui est utilisée par nos services pour servir les publicités au contrôle AD natif, et chaque unité Active Directory se compose d’un *ID d’unité Active Directory* et d’un *ID d’application*. Dans ces étapes, vous attribuez des valeurs d’ID d’unité ad et d’ID d’application de test à votre contrôle. Ces valeurs de test ne peuvent être utilisées que dans une version test de votre application. Avant de publier votre application dans le Windows Store, vous devez [remplacer ces valeurs de test par des valeurs dynamiques](#release) de l’espace partenaires.
 
-    [!code-csharp[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#Variables)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs" id="Variables":::
 
 6.  Dans le code qui s’exécute au démarrage (par exemple, dans le constructeur de la page), instanciez l’objet **NativeAdsManagerV2** et connectez les gestionnaires d’événements pour les événements **AdReady** et **ErrorOccurred** de l’objet.
 
-    [!code-csharp[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#ConfigureNativeAd)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs" id="ConfigureNativeAd":::
 
 7.  Lorsque vous êtes prêt à afficher une publicité native, appelez la méthode **RequestAd** pour extraire une publicité.
 
-    [!code-csharp[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#RequestAd)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs" id="RequestAd":::
 
 8.  Quand une Active Directory native est prête pour votre application, votre gestionnaire d’événements [AdReady](/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2.adready) est appelé, et un objet [NativeAdV2](/uwp/api/microsoft.advertising.winrt.ui.nativeadv2) qui représente la valeur Active Directory native est passé au paramètre *e* . Utilisez les propriétés **NativeAdV2** pour obtenir chaque élément de la publicité native et afficher ces éléments sur votre page. Veillez à appeler également la méthode **RegisterAdContainer** pour inscrire l’élément d’interface utilisateur qui joue le rôle de conteneur pour la publicité native. Cela est nécessaire pour suivre correctement les impressions et les clics sur les annonces.
     > [!NOTE]
@@ -96,11 +96,11 @@ Suivez ces instructions pour intégrer une Active Directory native dans votre ap
 
     L’exemple de code suivant montre un gestionnaire d’événements **AdReady** qui affiche chaque élément de la publicité native dans les contrôles de l’élément **StackPanel** , puis appelle la méthode **RegisterAdContainer** pour inscrire le **StackPanel**. Ce code part du principe qu’il est exécuté à partir du fichier code-behind de la page qui contient l' **StackPanel**.
 
-    [!code-csharp[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#AdReady)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs" id="AdReady":::
 
 9.  Définissez un gestionnaire d’événements pour l’événement **ErrorOccurred** afin de gérer les erreurs liées à la publicité native. L’exemple suivant écrit les informations d’erreur dans la fenêtre **sortie** de Visual Studio pendant le test.
 
-    [!code-csharp[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#ErrorOccurred)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs" id="ErrorOccurred":::
 
 10.  Compilez et exécutez l’application pour la voir avec une publicité de test.
 

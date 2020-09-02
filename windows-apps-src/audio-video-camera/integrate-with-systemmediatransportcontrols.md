@@ -4,14 +4,14 @@ description: Cet article vous explique comment interagir avec les contrôles de 
 title: Intégration avec les contrôles de transport de média système
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 449c8b445e70ffb68d0bc95f96e2b33c57e3b38f
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1e443c87e9bc20de5c5ce9bc8486f760df6b312c
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163933"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362632"
 ---
 # <a name="integrate-with-the-system-media-transport-controls"></a>Intégration avec les contrôles de transport de média système
 
@@ -36,9 +36,9 @@ Pour plus d’informations sur l’utilisation de **MediaSource**, **MediaPlayba
 ## <a name="add-metadata-to-be-displayed-by-the-smtc"></a>Ajouter des métadonnées à afficher par les contrôles de transport de média système
 Si vous souhaitez ajouter ou modifier des métadonnées affichées pour vos éléments multimédias dans les contrôles de transport de média système, comme une vidéo ou un morceau de musique, vous devez mettre à jour les propriétés d’affichage de l’objet **MediaPlaybackItem** représentant votre élément multimédia. Commencez par obtenir une référence à l’objet [**MediaItemDisplayProperties**](/uwp/api/Windows.Media.Playback.MediaItemDisplayProperties) en appelant [**GetDisplayProperties**](/uwp/api/windows.media.playback.mediaplaybackitem.getdisplayproperties). Ensuite, définissez le type de média, de musique ou de vidéo pour l’élément avec la propriété [**type**](/uwp/api/windows.media.playback.mediaitemdisplayproperties.type) . Vous pouvez ensuite remplir les champs [**MusicProperties**](/uwp/api/windows.media.playback.mediaitemdisplayproperties.musicproperties) ou [**VideoProperties**](/uwp/api/windows.media.playback.mediaitemdisplayproperties.videoproperties), en fonction du type de média spécifié. Enfin, mettez à jour les métadonnées associées à l’élément multimédia en appelant [**ApplyDisplayProperties**](/uwp/api/windows.media.playback.mediaplaybackitem.applydisplayproperties).
 
-[!code-cs[SetVideoProperties](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetSetVideoProperties)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaSource_RS1/cs/MainPage.xaml.cs" id="SnippetSetVideoProperties":::
 
-[!code-cs[SetMusicProperties](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetSetMusicProperties)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaSource_RS1/cs/MainPage.xaml.cs" id="SnippetSetMusicProperties":::
 
 
 > [!Note]
@@ -52,25 +52,25 @@ Pour chaque commande, comme la commande *Next*, qui par défaut passe à l’él
 
 L’exemple suivant enregistre un gestionnaire pour l’événement **NextReceived** et pour l’événement [**IsEnabledChanged**](/uwp/api/windows.media.playback.mediaplaybackcommandmanagercommandbehavior.isenabledchanged) de **NextBehavior**.
 
-[!code-cs[AddNextHandler](./code/SMTC_RS1/cs/MainPage.xaml.cs#SnippetAddNextHandler)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SMTC_RS1/cs/MainPage.xaml.cs" id="SnippetAddNextHandler":::
 
 L’exemple suivant illustre un scénario au cours duquel une application tente de désactiver la commande *Next* après que l’utilisateur a cliqué sur cinq éléments de la playlist, en nécessitant peut-être un certain niveau d’interaction de l’utilisateur avant de poursuivre la lecture du contenu. Chaque fois qu’un événement **NextReceived** est déclenché, un compteur est incrémenté. Une fois que le compteur atteint le nombre cible, l’objet [**EnablingRule**](/uwp/api/windows.media.playback.mediaplaybackcommandmanagercommandbehavior.enablingrule) de la commande *Next* est défini sur [**Never**](/uwp/api/Windows.Media.Playback.MediaCommandEnablingRule), auquel cas la commande est désactivée. 
 
-[!code-cs[NextReceived](./code/SMTC_RS1/cs/MainPage.xaml.cs#SnippetNextReceived)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SMTC_RS1/cs/MainPage.xaml.cs" id="SnippetNextReceived":::
 
 Vous pouvez également définir la commande sur **Always**, ce qui signifieu qu’elle sera toujours activée même si, comme c’est le cas avec l’exemple de la commande *Next*, la playlist ne comporte plus d’éléments. Sinon, vous pouvez définir la commande sur **Auto**, auquel cas le système détermine si la commande doit être activée en fonction du contenu actuellement lu.
 
 Pour le scénario décrit ci-dessus, à un moment donné l’application tentera de réactiver la commande *Next* en définissant **EnablingRule** sur **Auto**.
 
-[!code-cs[EnableNextButton](./code/SMTC_RS1/cs/MainPage.xaml.cs#SnippetEnableNextButton)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SMTC_RS1/cs/MainPage.xaml.cs" id="SnippetEnableNextButton":::
 
 Étant donné que votre application peut avoir sa propre interface utilisateur pour contrôler la lecture pendant qu’elle se trouve au premier plan, vous pouvez utiliser les événements [**IsEnabledChanged**](/uwp/api/windows.media.playback.mediaplaybackcommandmanagercommandbehavior.isenabledchanged) pour mettre à jour votre propre interface utilisateur afin qu’elle corresponde au SMTC, car les commandes sont activées ou désactivées en accédant au [**IsEnabled**](/uwp/api/windows.media.playback.mediaplaybackcommandmanagercommandbehavior.isenabled) du [**MediaPlaybackCommandManagerCommandBehavior**](/uwp/api/Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior) passé dans le gestionnaire.
 
-[!code-cs[IsEnabledChanged](./code/SMTC_RS1/cs/MainPage.xaml.cs#SnippetIsEnabledChanged)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SMTC_RS1/cs/MainPage.xaml.cs" id="SnippetIsEnabledChanged":::
 
 Dans certains cas, vous voudrez remplacer complètement le comportement de la commande des contrôles de transport de média système. L’exemple suivant illustre un scénario dans lequel une application utilise les commandes *Next* et *Previous* pour basculer entre les différentes stations de radio sur Internet, au lieu de transiter entre les pistes de la playlist actuelle. Comme dans l’exemple précédent, un gestionnaire est inscrit pour lors de la réception d’une commande. dans ce cas, il s’agit de l’événement [**PreviousReceived**](/uwp/api/windows.media.playback.mediaplaybackcommandmanager.previousreceived) .
 
-[!code-cs[AddPreviousHandler](./code/SMTC_RS1/cs/MainPage.xaml.cs#SnippetAddPreviousHandler)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SMTC_RS1/cs/MainPage.xaml.cs" id="SnippetAddPreviousHandler":::
 
 Dans le gestionnaire **PreviousReceived** , un [**Report**](/uwp/api/Windows.Foundation.Deferral) est obtenu en appelant le  [**GetDeferral**](/uwp/api/windows.media.playback.mediaplaybackcommandmanagerpreviousreceivedeventargs.getdeferral) du [**MediaPlaybackCommandManagerPreviousReceivedEventArgs**](/uwp/api/Windows.Media.Playback.MediaPlaybackCommandManagerPreviousReceivedEventArgs) passé dans le gestionnaire. Cela signale au système d’attendre la fin du report pour exécuter la commande. Cette procédure est extrêmement importante si vous envisagez de passer des appels asynchrones dans le gestionnaire. À ce stade, l’exemple appelle une méthode personnalisée qui renvoie une classe **MediaPlaybackItem** représentant la station de radio précédente.
 
@@ -78,7 +78,7 @@ Ensuite, la propriété [**Handled**](/uwp/api/windows.media.playback.mediaplayb
 
 Enfin, la commande [**Complete**](/uwp/api/windows.foundation.deferral.complete) est appelée sur l’objet de report, afin d’indiquer au système que le traitement de la commande est terminé.
 
-[!code-cs[PreviousReceived](./code/SMTC_RS1/cs/MainPage.xaml.cs#SnippetPreviousReceived)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SMTC_RS1/cs/MainPage.xaml.cs" id="SnippetPreviousReceived":::
                  
 ## <a name="manual-control-of-the-smtc"></a>Contrôle manuel des contrôles de transport de média système
 Comme mentionné précédemment dans cet article, les contrôles de transport de média système détectent et affichent automatiquement les informations pour chaque instance de **MediaPlayer** créée par votre application. SI vous souhaitez utiliser plusieurs instances de **MediaPlayer** mais voulez que les contrôles de transport de média système fournissent une seule entrée pour votre application, vous devez définir manuellement le comportement des contrôles de transport de média système, au lieu de vous appuyer sur l’intégration automatique. En outre, si vous utilisez [**MediaTimelineController**](/uwp/api/Windows.Media.MediaTimelineController) pour contrôler un ou plusieurs lecteurs multimédias, vous devez utiliser l’intégration SMTC manuelle. En outre, si votre application utilise une API différente de **MediaPlayer**, comme la classe [**AudioGraph**](/uwp/api/Windows.Media.Audio.AudioGraph) pour lire du contenu multimédia, vous devez implémenter l’intégration manuelle des contrôles de transport de média système pour que l’utilisateur les utilise pour contrôler votre application. Pour plus d’informations sur le contrôle manuel des contrôles de transport de média système, consultez la section [Contrôle manuel des contrôles de transport de média système](system-media-transport-controls.md).

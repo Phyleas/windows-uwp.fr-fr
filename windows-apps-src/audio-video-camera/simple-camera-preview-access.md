@@ -4,14 +4,14 @@ description: Cet article décrit comment afficher rapidement le flux d’aperçu
 title: Afficher l’aperçu de l’appareil photo
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f30611d649e0485a9cc89a162ae49768b05e00d7
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 3487e79b689e5c47cc94ffc29a559a333fe66f47
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174503"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363772"
 ---
 # <a name="display-the-camera-preview"></a>Afficher l’aperçu de l’appareil photo
 
@@ -34,7 +34,7 @@ Afin que votre application puisse accéder à l’appareil photo d’un appareil
 
 Utilisez un [**CaptureElement**](/uwp/api/Windows.UI.Xaml.Controls.CaptureElement) pour afficher le flux d’aperçu dans votre page XAML.
 
-[!code-xml[CaptureElement](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml#SnippetCaptureElement)]
+:::code language="xml" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml" id="SnippetCaptureElement":::
 
 
 
@@ -44,15 +44,15 @@ L’objet [**MediaCapture**](/uwp/api/Windows.Media.Capture.MediaCapture) est l�
 
 Ajoutez des directives using pour inclure les espaces de noms suivants dans le fichier .cs de votre page.
 
-[!code-cs[SimpleCameraPreviewUsing](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetSimpleCameraPreviewUsing)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetSimpleCameraPreviewUsing":::
 
 Déclarez une variable de membre de classe pour l’objet **MediaCapture** et une valeur booléenne afin de détecter l’activation de l’aperçu sur l’appareil photo. 
 
-[!code-cs[DeclareMediaCapture](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetDeclareMediaCapture)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetDeclareMediaCapture":::
 
 Déclarez une variable de type [**DisplayRequest**](/uwp/api/Windows.System.Display.DisplayRequest), qui sera utilisée pour garantir que l’affichage ne s’éteindra pas pendant l’aperçu.
 
-[!code-cs[DeclareDisplayRequest](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetDeclareDisplayRequest)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetDeclareDisplayRequest":::
 
 Créez une méthode d’assistance pour démarrer la version préliminaire de l’appareil photo, appelée **StartPreviewAsync** dans cet exemple. Selon le scénario de votre application, vous pouvez l’appeler à partir du gestionnaire d’événements **OnNavigatedTo** qui est appelé lorsque la page est chargée ou attendre et lancer la version préliminaire en réponse aux événements de l’interface utilisateur.
 
@@ -64,12 +64,12 @@ Connectez **MediaCapture** à **CaptureElement** en définissant la propriété 
 
 Appelez la méthode [**RequestActive**](/uwp/api/windows.system.display.displayrequest.requestactive) afin de vous assurer que l’appareil ne se met pas en veille pendant l’aperçu. Enfin, définissez la propriété [**DisplayInformation.AutoRotationPreferences**](/uwp/api/windows.graphics.display.displayinformation.autorotationpreferences) sur [**Landscape**](/uwp/api/Windows.Graphics.Display.DisplayOrientations) afin de prévenir toute rotation de l’interface utilisateur et de **CaptureElement** lorsque l’utilisateur modifie l’orientation de l’appareil. Pour plus d’informations sur la gestion des modifications de l’orientation des appareils, consultez [**gérer l’orientation de l’appareil avec MediaCapture**](handle-device-orientation-with-mediacapture.md).  
 
-[!code-cs[StartPreviewAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStartPreviewAsync)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetStartPreviewAsync":::
 
 ## <a name="handle-changes-in-exclusive-control"></a>Gérer les modifications dans le contrôle exclusif
 Comme indiqué dans la section précédente, **StartPreviewAsync** lèvera un **FileLoadException** si une autre application a le contrôle exclusif du périphérique de capture. À compter de Windows 10, version 1703, vous pouvez inscrire un gestionnaire pour l’événement [MediaCapture. CaptureDeviceExclusiveControlStatusChanged](/uwp/api/Windows.Media.Capture.MediaCapture.CaptureDeviceExclusiveControlStatusChanged) , qui est déclenché chaque fois que l’état du contrôle exclusif de l’appareil change. Dans le gestionnaire de cet événement, vérifiez la propriété [MediaCaptureDeviceExclusiveControlStatusChangedEventArgs. Status](/uwp/api/windows.media.capture.mediacapturedeviceexclusivecontrolstatuschangedeventargs.Status) pour voir l’état actuel. Si le nouvel État est **SharedReadOnlyAvailable**, vous savez que vous ne pouvez pas démarrer la version préliminaire pour l’instant et que vous souhaitez mettre à jour votre interface utilisateur pour alerter l’utilisateur. Si le nouvel État est **ExclusiveControlAvailable**, vous pouvez recommencer l’aperçu de la caméra.
 
-[!code-cs[ExclusiveControlStatusChanged](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetExclusiveControlStatusChanged)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetExclusiveControlStatusChanged":::
 
 ## <a name="shut-down-the-preview-stream"></a>Arrêter le flux d’aperçu
 
@@ -81,19 +81,19 @@ Lorsque vous avez fini d’utiliser le flux d’aperçu, vous devez toujours arr
 -   Définissez la variable membre **MediaCapture** sur null.
 -   Appelez [**RequestRelease**](/uwp/api/windows.system.display.displayrequest.requestrelease) pour permettre à l’écran de s’éteindre lorsqu’il est inactif.
 
-[!code-cs[CleanupCameraAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetCleanupCameraAsync)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetCleanupCameraAsync":::
 
 Vous devez arrêter le flux d’aperçu lorsque l’utilisateur quitte votre page en remplaçant la méthode [**OnNavigatedFrom**](/uwp/api/windows.ui.xaml.controls.page.onnavigatedfrom).
 
-[!code-cs[OnNavigatedFrom](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetOnNavigatedFrom)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetOnNavigatedFrom":::
 
 Vous devez également arrêter le flux d’aperçu correctement si votre application est interrompue. Pour ce faire, inscrivez un gestionnaire pour l’événement [**application. suspending**](/uwp/api/windows.applicationmodel.core.coreapplication.suspending) dans le constructeur de votre page.
 
-[!code-cs[RegisterSuspending](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetRegisterSuspending)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetRegisterSuspending":::
 
 Dans le gestionnaire d’événements **Suspending**, vérifiez que la page est affichée par le [**Frame**](/uwp/api/Windows.UI.Xaml.Controls.Frame) de l’application en comparant le type de page à la propriété [**CurrentSourcePageType**](/uwp/api/windows.ui.xaml.controls.frame.currentsourcepagetype). Si la page n’est pas affichée, l’événement **OnNavigatedFrom** doit déjà avoir été déclenché et le flux d’aperçu arrêté. Si la page est actuellement affichée, récupérez un objet [**SuspendingDeferral**](/uwp/api/Windows.ApplicationModel.SuspendingDeferral) à partir des arguments d’événement transmis au gestionnaire pour vous assurer que le système n’interrompt pas votre application tant que le flux d’aperçu n’a pas été arrêté. Après l’arrêt du flux, appelez la méthode [**Complete**](/uwp/api/windows.applicationmodel.suspendingdeferral.complete) de report afin que le système continue d’interrompre votre application.
 
-[!code-cs[SuspendingHandler](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetSuspendingHandler)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetSuspendingHandler":::
 
 
 ## <a name="related-topics"></a>Rubriques connexes

@@ -4,34 +4,34 @@ title: Créer et exécuter votre première expérience
 ms.assetid: 16A2B129-14E1-4C68-86E8-52F1BE58F256
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp, Microsoft Store Services SDK, tests A/B, expériences
+keywords: Windows 10, UWP, kit de développement logiciel (SDK) Microsoft Store services, tests A/B, expériences
 ms.localizationpriority: medium
-ms.openlocfilehash: 463eb17d341ccad494058861b2e6d1cfd276005e
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: de68b779fe8f02af6afdcb4d42ce0da77aeecc7d
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334677"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362452"
 ---
 # <a name="create-and-run-your-first-experiment"></a>Créer et exécuter votre première expérience
 
-Dans cette procédure pas à pas, vous allez :
-* Créer une expérimentation [projet](run-app-experiments-with-a-b-testing.md#terms) dans partenaires qui définit plusieurs variables à distance qui représentent le texte et la couleur d’un bouton de l’application.
-* Créer une application avec du code qui Récupère les valeurs des variables à distance, utilise ces données pour modifier la couleur d’arrière-plan d’un bouton et afficher les journaux et données d’événement de conversion vers les partenaires.
+Lors de cette procédure pas à pas, vous allez :
+* Créez un [projet](run-app-experiments-with-a-b-testing.md#terms) d’expérimentation dans l’espace partenaires qui définit plusieurs variables distantes qui représentent le texte et la couleur d’un bouton d’application.
+* Créer une application avec du code qui récupère les valeurs de la variable distante, utilise ces données pour modifier la couleur d’arrière-plan d’un bouton, et journalise les données d’événement d’affichage et de conversion dans l’espace partenaires.
 * créer une expérience dans le projet pour tester si la modification de la couleur d’arrière-plan du bouton d’application augmente effectivement le nombre de clics de bouton ;
 * exécuter l’application pour collecter des données d’expérience ;
-* Passez en revue les résultats de l’expérience dans l’espace partenaires, choisissez une variante à activer pour tous les utilisateurs de l’application et terminer l’expérience.
+* Passez en revue les résultats de l’expérience dans l’espace partenaires, choisissez une variation à activer pour tous les utilisateurs de l’application, puis terminez l’expérience.
 
-Pour une vue d’ensemble de A / B test avec des partenaires, consultez [exécuter des expériences d’application avec un test a / B](run-app-experiments-with-a-b-testing.md).
+Pour obtenir une vue d’ensemble du test A/B avec l’espace partenaires, consultez [exécuter des expériences d’application avec un test a/b](run-app-experiments-with-a-b-testing.md).
 
 ## <a name="prerequisites"></a>Prérequis
 
-Pour suivre cette procédure pas à pas, vous devez disposer d’un compte espace partenaires et vous devez configurer votre ordinateur de développement comme décrit dans [exécuter des expériences d’application avec un test a / B](run-app-experiments-with-a-b-testing.md).
+Pour suivre cette procédure pas à pas, vous devez disposer d’un compte espace partenaires et vous devez configurer votre ordinateur de développement comme décrit dans [exécuter des expériences d’application avec un test a/B](run-app-experiments-with-a-b-testing.md).
 
-## <a name="create-a-project-with-remote-variables-in-partner-center"></a>Créer un projet avec des variables à distance dans le centre de partenaires
+## <a name="create-a-project-with-remote-variables-in-partner-center"></a>Créer un projet avec des variables distantes dans l’espace partenaires
 
-1. Connectez-vous à l'[Espace partenaires](https://partner.microsoft.com/dashboard).
-2. Si vous disposez déjà d’une application dans le centre de partenaires que vous souhaitez utiliser pour créer une expérience, sélectionnez cette application dans le centre de partenaires. Si vous n’avez pas encore d’une application dans le centre de partenaires, [créer une application en réservant un nom](../publish/create-your-app-by-reserving-a-name.md) , puis sélectionnez cette application dans le centre de partenaires.
+1. Connectez-vous à l’[Espace partenaires](https://partner.microsoft.com/dashboard).
+2. Si vous disposez déjà d’une application dans l’espace partenaires que vous souhaitez utiliser pour créer une expérience, sélectionnez cette application dans l’espace partenaires. Si vous n’avez pas encore d’application dans l’espace partenaires, [créez une nouvelle application en la réservant](../publish/create-your-app-by-reserving-a-name.md) , puis sélectionnez cette application dans l’espace partenaires.
 3. Dans le volet de navigation, cliquez sur **Services**, puis sur **Expérimentation**.
 4. Dans la section **Projets** de la page suivante, cliquez sur le bouton **Nouveau projet**.
 5. Dans la page **Nouveau projet**, entrez le nom **Expériences sur les clics de bouton** pour votre nouveau projet.
@@ -44,21 +44,21 @@ Pour suivre cette procédure pas à pas, vous devez disposer d’un compte espac
 
 ## <a name="code-the-experiment-in-your-app"></a>Coder l’expérience dans votre application
 
-1. Dans Visual Studio, créez un projet de plateforme Windows universelle à l’aide de Visual C#. Nommez le projet **SampleExperiment**.
+1. Dans Visual Studio, créez un projet de plateforme Windows universelle à l’aide de Visual C#. Nommez le projet **SampleExperiment**.
 2. Dans l’Explorateur de solutions, développez votre nœud de projet, cliquez avec le bouton droit sur **Références**, puis sélectionnez **Ajouter une référence**.
 3. Dans le **Gestionnaire de références**, développez **Windows universel**, puis cliquez sur **Extensions**.
 4. Dans la liste des kits de développement logiciel (SDK), cochez la case en regard de **Microsoft Engagement Framework** et cliquez sur **OK**.
 5. Dans l’**Explorateur de solutions**, double-cliquez sur MainPage.xaml pour ouvrir le concepteur pour la page principale de l’application.
 6. Faites glisser un **Bouton** de la **Boîte à outils** vers la page.
 7. Double-cliquez sur le bouton dans le concepteur pour ouvrir le fichier de code et ajoutez un gestionnaire d’événements pour l’événement **Click**.  
-8. Remplacez l’ensemble du contenu du fichier de code par le code ci-après. Affecter le ```projectId``` à la variable le [ID de projet](run-app-experiments-with-a-b-testing.md#terms) valeur que vous avez obtenue à partir du centre de partenaires dans la section précédente.
-    [!code-csharp[SampleExperiment](./code/StoreSDKSamples/cs/ExperimentPage.xaml.cs#SampleExperiment)]
+8. Remplacez l’ensemble du contenu du fichier de code par le code ci-après. Affectez la ```projectId``` variable à la valeur d' [ID de projet](run-app-experiments-with-a-b-testing.md#terms) que vous avez obtenue à partir de l’espace partenaires dans la section précédente.
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/ExperimentPage.xaml.cs" id="SampleExperiment":::
 
 9. Enregistrez le fichier de code et créez le projet.
 
-## <a name="create-the-experiment-in-partner-center"></a>Création de l’expérience dans l’espace partenaires
+## <a name="create-the-experiment-in-partner-center"></a>Créer l’expérience dans l’espace partenaires
 
-1. Retour à la **expériences de cliquez sur bouton** page de projet dans l’espace partenaires.
+1. Revenez au **bouton cliquez sur** la page expériences du projet dans l’espace partenaires.
 2. Dans la section **Expériences**, cliquez sur le bouton **Nouvelle expérience**.
 3. Dans la section **Experiment details (Détails de l’expérience)**, tapez le nom **Optimiser les clics de bouton** dans le champ **Experiment name (Nom de l’expérience)**.
 4. Dans la section **View event (Événement d’affichage)**, tapez **userViewedButton** dans le champ **View event name (Nom de l’événement d’affichage)**. Notez que ce nom correspond à la chaîne de l’événement d’affichage enregistré dans le code que vous avez ajoutée dans la section précédente.
@@ -75,7 +75,7 @@ Pour suivre cette procédure pas à pas, vous devez disposer d’un compte espac
 8. Cliquez sur **Enregistrer**, puis sur **Activer**.
 
 > [!IMPORTANT]
-> Une fois que vous avez activé une expérience, vous ne pouvez plus en modifier les paramètres, sauf si vous avez cliqué sur la case **Editable experiment (Expérience modifiable)** quand vous avez créé l’expérience. D’habitude, nous vous recommandons de coder l’expérience dans votre application avant de l’activer.
+> Une fois que vous avez activé une expérience, vous ne pouvez plus modifier les paramètres d’expérimentation, sauf si vous avez cliqué sur la case à cocher **expérience modifiable** lors de la création de l’expérience. D’habitude, nous vous recommandons de coder l’expérience dans votre application avant de l’activer.
 
 ## <a name="run-the-app-to-gather-experiment-data"></a>Exécuter l’application pour collecter des données d’expérience
 
@@ -88,13 +88,13 @@ Pour suivre cette procédure pas à pas, vous devez disposer d’un compte espac
 Laissez s’écouler plusieurs heures après avoir terminé la section précédente, puis suivez ces étapes pour passer en revue les résultats de votre expérience et terminer l’expérience.
 
 > [!NOTE]
-> Dès que vous activez une expérience, partenaires commence immédiatement la collecte de données à partir de toutes les applications instrumentés pour consigner les données de votre expérience. Toutefois, il peut prendre plusieurs heures pour données expérience s’affichent dans l’espace partenaires.
+> Dès que vous activez une expérience, l’espace partenaires commence immédiatement à collecter des données à partir de toutes les applications instrumentées pour enregistrer les données de votre expérience. Toutefois, plusieurs heures peuvent être nécessaires pour que les données d’expérimentation s’affichent dans l’espace partenaires.
 
-1. De partenaires, revenez à la **expérimentation** page de votre application.
+1. Dans l’espace partenaires, revenez à la page **expérimentation** de votre application.
 2. Dans la section **Active experiments** (Expériences actives), cliquez sur **Optimize Button Clicks** (Optimiser les clics de bouton) pour accéder à la page de cette expérience.
-3. Vérifiez que les résultats affichés dans les sections **Résumé des résultats** et **Détails des résultats** correspondent à ce que vous attendez. Pour plus d’informations sur ces sections, consultez [gérer votre expérience dans partenaires](manage-your-experiment.md#review-the-results-of-your-experiment).
+3. Vérifiez que les résultats affichés dans les sections **Résumé des résultats** et **Détails des résultats** correspondent à ce que vous attendez. Pour plus d’informations sur ces sections, consultez [gérer votre expérience dans l’espace partenaires](manage-your-experiment.md#review-the-results-of-your-experiment).
     > [!NOTE]
-    > Partenaires signale uniquement le premier événement de conversion pour chaque utilisateur sur une période de 24 heures. Si un utilisateur déclenche plusieurs événements de conversion dans votre application au cours d’une période de 24 heures, seul le premier événement de conversion est signalé. Cette approche est destinée à éviter qu’un utilisateur unique avec de nombreux événements de conversion ne fausse les résultats de l’expérience pour un groupe représentatif d’utilisateurs.
+    > L’espace partenaires signale uniquement le premier événement de conversion pour chaque utilisateur sur une période de 24 heures. Si un utilisateur déclenche plusieurs événements de conversion dans votre application au cours d’une période de 24 heures, seul le premier événement de conversion est signalé. Cette approche est destinée à éviter qu’un utilisateur unique avec de nombreux événements de conversion ne fausse les résultats de l’expérience pour un groupe représentatif d’utilisateurs.
 
 4. Vous êtes désormais prêt à terminer l’expérience. Dans la section **Résumé des résultats**, cliquez sur **Basculer** dans la colonne **Variante B**. Cela permet de basculer tous les utilisateurs de votre application sur le bouton bleu.
 5. Cliquez sur **OK** pour confirmer que vous souhaitez mettre fin à l’expérience.
@@ -103,8 +103,8 @@ Laissez s’écouler plusieurs heures après avoir terminé la section précéde
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Créer un projet et définir des variables à distance dans Partner Center](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
-* [Coder votre application pour l’expérimentation](code-your-experiment-in-your-app.md)
-* [Définir votre expérience dans l’espace partenaires](define-your-experiment-in-the-dev-center-dashboard.md)
-* [Gérer votre expérience dans l’espace partenaires](manage-your-experiment.md)
-* [Exécuter des expériences d’application avec un test a / B](run-app-experiments-with-a-b-testing.md)
+* [Créer un projet et définir des variables distantes dans l’espace partenaires](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
+* [Coder votre application à des fins d’expérimentation](code-your-experiment-in-your-app.md)
+* [Définir votre expérience dans l’Espace partenaires](define-your-experiment-in-the-dev-center-dashboard.md)
+* [Gérer votre expérience dans l’Espace partenaires](manage-your-experiment.md)
+* [Exécuter des expériences d’application avec des tests A/B](run-app-experiments-with-a-b-testing.md)

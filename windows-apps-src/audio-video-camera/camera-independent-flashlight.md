@@ -4,14 +4,14 @@ description: Cet article montre comment accéder à la lampe d’un appareil et 
 title: Lampe torche indépendante de l’appareil photo
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e682aabea061ad89cd36e135d5c6a83245c6cbb
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 281cede94ee587cc86509a9f32ed34857a5ae620
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161073"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362922"
 ---
 # <a name="camera-independent-flashlight"></a>Lampe torche indépendante de l’appareil photo
 
@@ -23,13 +23,13 @@ Cet article montre comment accéder à la lampe d’un appareil et comment l’u
 
 Pour obtenir l’appareil LAMP par défaut d’un appareil, appelez [**LAMP. GetDefaultAsync**](/uwp/api/windows.devices.lights.lamp.getdefaultasync). Les API LAMP se trouvent dans l’espace de noms [**Windows. Devices. Lights**](/uwp/api/Windows.Devices.Lights) . Veillez à ajouter une directive d’utilisation pour cet espace de noms avant d’essayer d’accéder à ces API.
 
-[!code-cs[LightsNamespace](./code/Lamp/cs/MainPage.xaml.cs#SnippetLightsNamespace)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Lamp/cs/MainPage.xaml.cs" id="SnippetLightsNamespace":::
 
 
-[!code-cs[DeclareLamp](./code/Lamp/cs/MainPage.xaml.cs#SnippetDeclareLamp)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Lamp/cs/MainPage.xaml.cs" id="SnippetDeclareLamp":::
 
 
-[!code-cs[GetDefaultLamp](./code/Lamp/cs/MainPage.xaml.cs#SnippetGetDefaultLamp)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Lamp/cs/MainPage.xaml.cs" id="SnippetGetDefaultLamp":::
 
 Si l’objet renvoyé est **null**, l’API **Lamp** n’est pas prise en charge sur l’appareil. Certains appareils ne peuvent pas prendre en charge l’API **Lamp**, même si la lampe est physiquement présente sur l’appareil.
 
@@ -39,39 +39,39 @@ Certains appareils possèdent plusieurs lampes. Pour obtenir la liste des lampes
 
 Les API [**DeviceInformation**](/uwp/api/Windows.Devices.Enumeration.DeviceInformation) se trouvent dans l’espace de noms [**Windows.Devices.Enumeration**](/uwp/api/Windows.Devices.Enumeration).
 
-[!code-cs[EnumerationNamespace](./code/Lamp/cs/MainPage.xaml.cs#SnippetEnumerationNamespace)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Lamp/cs/MainPage.xaml.cs" id="SnippetEnumerationNamespace":::
 
-[!code-cs[GetLampWithSelectionString](./code/Lamp/cs/MainPage.xaml.cs#SnippetGetLampWithSelectionString)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Lamp/cs/MainPage.xaml.cs" id="SnippetGetLampWithSelectionString":::
 
 ## <a name="adjust-lamp-settings"></a>Régler les paramètres de la lampe
 
 Une fois que vous avez une instance de la classe [**Lamp**](/uwp/api/Windows.Devices.Lights.Lamp), activez la lampe en définissant la propriété [**IsEnabled**](/uwp/api/windows.devices.lights.lamp.isenabled) sur **true**.
 
-[!code-cs[LampSettingsOn](./code/Lamp/cs/MainPage.xaml.cs#SnippetLampSettingsOn)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Lamp/cs/MainPage.xaml.cs" id="SnippetLampSettingsOn":::
 
 Éteignez la lampe en définissant la propriété [**IsEnabled**](/uwp/api/windows.devices.lights.lamp.isenabled) sur **false**.
 
-[!code-cs[LampSettingsOff](./code/Lamp/cs/MainPage.xaml.cs#SnippetLampSettingsOff)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Lamp/cs/MainPage.xaml.cs" id="SnippetLampSettingsOff":::
 
 Certains appareils sont équipés de lampes qui prennent en charge les valeurs de couleur. Vérifiez si une lampe prend en charge la couleur en vérifiant la propriété [**IsColorSettable**](/uwp/api/windows.devices.lights.lamp.iscolorsettable) . Si cette valeur est **true**, vous pouvez définir la couleur de la lampe avec la propriété [**Color**](/uwp/api/windows.devices.lights.lamp.color).
 
-[!code-cs[LampSettingsColor](./code/Lamp/cs/MainPage.xaml.cs#SnippetLampSettingsColor)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Lamp/cs/MainPage.xaml.cs" id="SnippetLampSettingsColor":::
 
 ## <a name="register-to-be-notified-if-the-lamp-availability-changes"></a>S’inscrire pour être averti en cas de modification de la disponibilité de la lampe
 
 L’accès à la lampe est accordé à l’application l’ayant demandé en dernier. Par conséquent, si une seconde application est lancée et qu’elle demande une ressource de lampe déjà utilisée par une première application, celle-ci ne sera plus en mesure de contrôler la lampe jusqu’à ce que la seconde application libère la ressource. Pour recevoir une notification lorsque la disponibilité de la lampe change, inscrivez un gestionnaire pour l’événement [**LAMP. AvailabilityChanged**](/uwp/api/windows.devices.lights.lamp.availabilitychanged) .
 
-[!code-cs[AvailabilityChanged](./code/Lamp/cs/MainPage.xaml.cs#SnippetAvailabilityChanged)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Lamp/cs/MainPage.xaml.cs" id="SnippetAvailabilityChanged":::
 
 Dans le gestionnaire de l’événement, vérifiez la propriété [**LampAvailabilityChanged.IsAvailable**](/uwp/api/windows.devices.lights.lampavailabilitychangedeventargs.isavailable) pour déterminer si la lampe est disponible. Dans cet exemple, un bouton bascule permettant d’allumer ou d’éteindre la lampe est activé ou désactivé en fonction de la disponibilité de la lampe.
 
-[!code-cs[AvailabilityChangedHandler](./code/Lamp/cs/MainPage.xaml.cs#SnippetAvailabilityChangedHandler)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Lamp/cs/MainPage.xaml.cs" id="SnippetAvailabilityChangedHandler":::
 
 ## <a name="properly-dispose-of-the-lamp-resource-when-not-in-use"></a>Libérer correctement la ressource de lampe quand elle n’est pas en cours d’utilisation
 
 Lorsque vous n’utilisez plus la lampe, vous devez la désactiver et appeler [**Lamp.Close**](/uwp/api/windows.devices.lights.lamp.close) pour libérer les ressources et permettre aux autres applications d’accéder à la lampe. Cette propriété est mappée à la méthode **Dispose** si vous utilisez C#. Si vous êtes inscrit à [**AvailabilityChanged**](/uwp/api/windows.devices.lights.lamp.availabilitychanged), vous devez vous désinscrire du gestionnaire lorsque vous libérez la ressource de la lampe. L’emplacement idéal dans le code pour procéder à une telle opération dépend de l’application. Pour limiter l’accès à la lampe sur une seule page, libérez la ressource dans l’événement [**OnNavigatingFrom**](/uwp/api/windows.ui.xaml.controls.page.onnavigatingfrom).
 
-[!code-cs[DisposeLamp](./code/Lamp/cs/MainPage.xaml.cs#SnippetDisposeLamp)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Lamp/cs/MainPage.xaml.cs" id="SnippetDisposeLamp":::
 
 ## <a name="related-topics"></a>Rubriques connexes
 - [Lecture de contenu multimédia](media-playback.md)

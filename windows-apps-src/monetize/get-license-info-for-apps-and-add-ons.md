@@ -6,12 +6,12 @@ ms.date: 12/04/2017
 ms.topic: article
 keywords: Windows 10, UWP, licences, applications, modules complémentaires, achats dans l’application, IAPs, Windows. services. Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c83ecc7b5bfc8158d80469eab12710719fa0834
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 29f2e5ceee6d7d9c779c7fb544d507e31456b3fd
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89164673"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363162"
 ---
 # <a name="get-license-info-for-apps-and-add-ons"></a>Obtenir les informations de licence des applications et des modules complémentaires
 
@@ -42,7 +42,7 @@ Pour récupérer les informations de licence pour l’application actuelle, util
 Pour accéder aux licences des modules complémentaires durables de l’application actuelle pour laquelle l’utilisateur a le droit d’utiliser, utilisez la propriété [AddOnLicenses](/uwp/api/windows.services.store.storeapplicense.addonlicenses) de l’objet [StoreAppLicense](/uwp/api/windows.services.store.storeapplicense) . Cette propriété retourne une collection d’objets [StoreLicense](/uwp/api/windows.services.store.storelicense) qui représentent les licences du module complémentaire.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[GetLicenseInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetLicenseInfoPage.xaml.cs#GetLicenseInfo)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/cs/GetLicenseInfoPage.xaml.cs" id="GetLicenseInfo":::
 
 Pour obtenir un exemple d’application complète, consultez [Exemple Windows Store](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store).
 

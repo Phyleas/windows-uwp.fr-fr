@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, kit de développement logiciel (SDK) Microsoft Store services, notifications push ciblées, espace partenaires
 ms.assetid: 30c832b7-5fbe-4852-957f-7941df8eb85a
 ms.localizationpriority: medium
-ms.openlocfilehash: d6a420befac980574cf64e8a599d122df4c99ef4
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: abb901c1b067dcf3609cbfb5c4cf3f81c9dc465c
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89155653"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89364132"
 ---
 # <a name="configure-your-app-for-targeted-push-notifications"></a>Configurer votre application pour les notifications Push ciblées
 
@@ -36,19 +36,19 @@ Pour inscrire votre application afin de recevoir des notifications push ciblées
 1. Dans votre projet, localisez une section de code qui s’exécute au démarrage, dans laquelle vous pouvez inscrire votre application pour recevoir des notifications.
 2. Ajoutez l’instruction suivante en haut du fichier de code.
 
-    [!code-csharp[DevCenterNotifications](./code/StoreSDKSamples/cs/DevCenterNotifications.cs#EngagementNamespace)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/DevCenterNotifications.cs" id="EngagementNamespace":::
 
 3. Récupérez un objet [StoreServicesEngagementManager](/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager) et appelez l’une des surcharges [RegisterNotificationChannelAsync](/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync) dans le code de démarrage identifié plus tôt. Cette méthode doit être appelée à chaque lancement de l’application.
 
   * Si vous souhaitez que l’espace partenaires crée son propre URI de canal pour les notifications, appelez la surcharge [RegisterNotificationChannelAsync ()](/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync) .
 
-      [!code-csharp[DevCenterNotifications](./code/StoreSDKSamples/cs/DevCenterNotifications.cs#RegisterNotificationChannelAsync1)]
+      :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/DevCenterNotifications.cs" id="RegisterNotificationChannelAsync1":::
       > [!IMPORTANT]
       > Si votre application appelle également [CreatePushNotificationChannelForApplicationAsync](/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanager.createpushnotificationchannelforapplicationasync) pour créer un canal de notification pour WNS, assurez-vous que votre code n’appelle pas [CreatePushNotificationChannelForApplicationAsync](/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanager.createpushnotificationchannelforapplicationasync) et la surcharge [RegisterNotificationChannelAsync ()](/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync) simultanément. Si vous devez appeler les deux méthodes, assurez-vous de les appeler séquentiellement et d’attendre le retour d’une méthode avant d’appeler l’autre.
 
   * Si vous souhaitez spécifier l’URI de canal à utiliser pour les notifications push ciblées à partir de l’espace partenaires, appelez la surcharge [RegisterNotificationChannelAsync (StoreServicesNotificationChannelParameters)](/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync) . Par exemple, vous pouvez procéder ainsi si votre application utilise déjà les services de notifications Push Windows (WNS) et que vous souhaitez utiliser le même URI de canal. Vous devez dans un premier temps créer l’objet [StoreServicesNotificationChannelParameters](/uwp/api/microsoft.services.store.engagement.storeservicesnotificationchannelparameters) et affecter la propriété [CustomNotificationChannelUri](/uwp/api/microsoft.services.store.engagement.storeservicesnotificationchannelparameters.customnotificationchanneluri) à votre URI de canal.
 
-      [!code-csharp[DevCenterNotifications](./code/StoreSDKSamples/cs/DevCenterNotifications.cs#RegisterNotificationChannelAsync2)]
+      :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/DevCenterNotifications.cs" id="RegisterNotificationChannelAsync2":::
 
 > [!NOTE]
 > Quand vous appelez la méthode **RegisterNotificationChannelAsync** , un fichier nommé MicrosoftStoreEngagementSDKId.txt est créé dans le magasin de données de l’application locale pour votre application (le dossier renvoyé par la propriété [ApplicationData. LocalFolder](/uwp/api/Windows.Storage.ApplicationData.LocalFolder) ). Ce fichier contient un ID qui est utilisé par l’infrastructure de notifications push ciblée. Assurez-vous que votre application ne modifie pas ou ne supprime pas ce fichier. Dans le cas contraire, vos utilisateurs peuvent recevoir plusieurs instances de notifications, ou les notifications peuvent ne pas se comporter correctement d’une autre manière.
@@ -81,11 +81,11 @@ La façon dont vous appelez cette méthode dépend du type d’activation de la 
 
 * Si la notification Push présente un type d’activation au premier plan, appelez cette méthode depuis la substitution de méthode [OnActivated](/uwp/api/windows.ui.xaml.application.onactivated) de votre application et communiquez les arguments disponibles dans l’objet [ToastNotificationActivatedEventArgs](/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs) transmis à cette méthode. L’exemple de code suivant suppose que votre fichier de code **utilise** des instructions pour les espaces de noms **Microsoft. services. Store. engagement** et  **Windows. ApplicationModel. activation** .
 
-  [!code-csharp[DevCenterNotifications](./code/StoreSDKSamples/cs/App.xaml.cs#OnActivated)]
+  :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/App.xaml.cs" id="OnActivated":::
 
 * Si la notification Push présente un type d’activation en arrière-plan, appelez cette méthode depuis la méthode [Run](/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) de votre [tâche en arrière-plan](../launch-resume/support-your-app-with-background-tasks.md) et transmettez les arguments qui sont disponibles dans l’objet [ToastNotificationActionTriggerDetail](/uwp/api/Windows.UI.Notifications.ToastNotificationActionTriggerDetail) transmis à cette méthode. L’exemple de code suivant suppose que votre fichier de code contient des instructions **using** pour les espaces de noms **Microsoft.Services.Store.Engagement**, **Windows.ApplicationModel.Background** et **Windows.UI.Notifications**.
 
-  [!code-csharp[DevCenterNotifications](./code/StoreSDKSamples/cs/DevCenterNotifications.cs#Run)]
+  :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/DevCenterNotifications.cs" id="Run":::
 
 <span id="unregister" />
 
@@ -93,7 +93,7 @@ La façon dont vous appelez cette méthode dépend du type d’activation de la 
 
 Si vous souhaitez que votre application cesse de recevoir des notifications push ciblées à partir de l’espace partenaires, appelez la méthode [UnregisterNotificationChannelAsync](/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.unregisternotificationchannelasync) .
 
-[!code-csharp[DevCenterNotifications](./code/StoreSDKSamples/cs/DevCenterNotifications.cs#UnregisterNotificationChannelAsync)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/DevCenterNotifications.cs" id="UnregisterNotificationChannelAsync":::
 
 Notez que cette méthode invalide le canal utilisé pour les notifications et donc que l’application ne reçoit plus de notifications Push d’*aucun* service. Une fois fermé, le canal ne peut plus être réutilisé pour aucun service, y compris les notifications push ciblées de l’espace partenaires et d’autres notifications utilisant WNS. Pour réactiver l’envoi des notifications Push à cette application, l’application doit demander un nouveau canal.
 

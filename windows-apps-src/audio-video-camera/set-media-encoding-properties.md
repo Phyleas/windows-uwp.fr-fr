@@ -4,14 +4,14 @@ description: Cet article vous montre comment utiliser l’interface IMediaEncodi
 title: Définir le format, la résolution et la fréquence d’images pour MediaCapture
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 388d1bc2af9d39d08087c7ec5b9dcbc710e74bba
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 2b847b7162de19b81c83be2f3769042a5acc8a3a
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163573"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363792"
 ---
 # <a name="set-format-resolution-and-frame-rate-for-mediacapture"></a>Définir le format, la résolution et la fréquence d’images pour MediaCapture
 
@@ -36,15 +36,15 @@ La classe d’assistance définie ci-dessous gère le contrôle de type et le ca
 
 Vous devez inclure l’espace de noms [**Windows. Media. MediaProperties**](/uwp/api/Windows.Media.MediaProperties) dans le fichier source pour la classe d’assistance.
 
-[!code-cs[MediaEncodingPropertiesUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetMediaEncodingPropertiesUsing)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetMediaEncodingPropertiesUsing":::
 
-[!code-cs[StreamPropertiesHelper](./code/BasicMediaCaptureWin10/cs/StreamPropertiesHelper.cs#SnippetStreamPropertiesHelper)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/StreamPropertiesHelper.cs" id="SnippetStreamPropertiesHelper":::
 
 ## <a name="determine-if-the-preview-and-capture-streams-are-independent"></a>Déterminer si les flux de capture et d’aperçu sont indépendants
 
 Sur certains appareils, le même code confidentiel de matériel est utilisé pour afficher et capturer des flux. Sur ces appareils, la définition des propriétés d’encodage d’un flux a pour effet de définir l’autre. Sur les appareils utilisant différents codes de matériel pour la capture et l’aperçu, il est possible de définir les propriétés de chaque flux de manière indépendante. Utilisez le code suivant pour déterminer si les flux de capture et d’aperçu sont indépendants. Vous devez ajuster votre interface utilisateur pour activer ou désactiver le paramètre des flux de manière indépendante en fonction du résultat de ce test.
 
-[!code-cs[CheckIfStreamsAreIdentical](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCheckIfStreamsAreIdentical)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetCheckIfStreamsAreIdentical":::
 
 ## <a name="get-a-list-of-available-stream-properties"></a>Obtenir une liste des propriétés de flux disponibles
 
@@ -52,17 +52,17 @@ Obtenez une liste des propriétés de flux disponibles pour un appareil de captu
 
 Si votre application exige une résolution ou une fréquence d’images spécifique, vous pouvez sélectionner un ensemble de propriétés d’encodage du média par programme. Une application de caméra classique expose plutôt la liste des propriétés disponibles dans l’interface utilisateur et permet à l’utilisateur de sélectionner les paramètres qu’il souhaite. Un **ComboBoxItem** est créé pour chaque élément dans la liste des objets **StreamPropertiesHelper** de la liste. Le contenu est défini sur le nom convivial renvoyé par la classe d’assistance, et la balise est définie sur la classe d’assistance elle-même pour une utilisation ultérieure à des fins de récupération des propriétés d’encodage associées. Chaque **ComboBoxItem** est ensuite ajouté à l’élément **ComboBox** transmis à la méthode.
 
-[!code-cs[PopulateStreamPropertiesUI](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPopulateStreamPropertiesUI)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetPopulateStreamPropertiesUI":::
 
 ## <a name="set-the-desired-stream-properties"></a>Définir les propriétés de flux souhaitées
 
 Indiquez au contrôleur d’appareil vidéo d’utiliser les propriétés d’encodage voulues en appelant [**SetMediaStreamPropertiesAsync**](/uwp/api/windows.media.devices.videodevicecontroller.setmediastreampropertiesasync) et en transmettant la valeur **MediaStreamType** indiquant si les propriétés de photo, de vidéo ou d’aperçu doivent être définies. Cet exemple définit les propriétés d’encodage demandées lorsque l’utilisateur sélectionne un élément dans l’un des objets **ComboBox** remplis à l’aide de la méthode d’assistance **PopulateStreamPropertiesUI**.
 
-[!code-cs[PreviewSettingsChanged](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPreviewSettingsChanged)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetPreviewSettingsChanged":::
 
-[!code-cs[PhotoSettingsChanged](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPhotoSettingsChanged)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetPhotoSettingsChanged":::
 
-[!code-cs[VideoSettingsChanged](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoSettingsChanged)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetVideoSettingsChanged":::
 
 ## <a name="match-the-aspect-ratio-of-the-preview-and-capture-streams"></a>Faire correspondre les proportions des flux d’aperçu et de la capture
 
@@ -79,7 +79,7 @@ Une application de caméra classique fournira l’interface utilisateur permetta
 
 Pour vous assurer que les flux de capture de photo ou de vidéo correspondent aux proportions du flux d’aperçu, cet exemple appelle [**VideoDeviceController.GetMediaStreamProperties**](/uwp/api/windows.media.devices.videodevicecontroller.getmediastreamproperties) et transmet la valeur enum **VideoPreview** pour demander les propriétés de flux actuelles du flux d’aperçu. Ensuite, une faible plage de tolérance des proportions est définie afin de pouvoir inclure des proportions qui ne sont pas exactement identiques au flux d’aperçu, tant qu’elles sont proches. Ensuite, une méthode d’extension Linq est utilisée pour sélectionner uniquement les objets **StreamPropertiesHelper** où les proportions sont comprises dans la plage de tolérance définie du flux d’aperçu.
 
-[!code-cs[MatchPreviewAspectRatio](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetMatchPreviewAspectRatio)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetMatchPreviewAspectRatio":::
 
  
 
