@@ -1,26 +1,22 @@
 ---
-title: Support et commentaires
-description: Fichier include de support et de commentaires
-ms.date: 06/12/2018
 ms.topic: include
-keywords: Windows 10, UWP, point de service, pos
-ms.localizationpriority: medium
-ms.openlocfilehash: e1b6850c294e0427ac05ad4a4d7b2945df0dc34f
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+author: mattwojo
+ms.author: mattwoj
+ms.date: 08/31/2020
+ms.prod: uwp
+ms.openlocfilehash: 2077423518755c674fcc2e7dfa3962ab1945f244
+ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260731"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89323913"
 ---
 ## <a name="support-and-feedback"></a>Support et commentaires
 
 ### <a name="find-answers-to-your-questions"></a>Trouvez des réponses à vos questions
 
-Des questions ? Posez-nous un [Stack Overflow](https://stackoverflow.com/questions/tagged/pointofservice) ou un [forum MSDN UWP](https://social.msdn.microsoft.com/Forums/en-US/home?forum=wpdevelop&filter=alltypes&sort=relevancedesc&searchTerm=%5Bpointofservice%5D)
+Des questions ? Contactez-nous sur notre document [Q&un forum contenant la balise UWP](https://social.msdn.microsoft.com/Forums/en-US/home?category=&forum=&filter=alltypes&sort=relevancedesc&brandIgnore=true&filter=alltypes&searchTerm=%5BUWP%5D) ou sur [Stack Overflow avec la balise PointOfService](https://stackoverflow.com/questions/tagged/pointofservice).
 
 Aidez-nous à localiser vos questions :
 - Ajoutez la balise [PointOfService](https://stackoverflow.com/questions/tagged/pointofservice) à votre question sur Stack overflow. 
-- Inclure le terme [« PointOfService »](https://social.msdn.microsoft.com/Forums/en-US/home?forum=wpdevelop&filter=alltypes&sort=relevancedesc&searchTerm=%5Bpointofservice%5D) dans votre publication sur le forum MSDN UWP
-
-### <a name="make-feature-suggestions-or-give-feedback"></a>Apporter des suggestions de fonctionnalités ou envoyer des commentaires
-Consultez les [commentaires des développeurs UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform?category_id=202594).
+- Incluez le terme [« UWP »](https://social.msdn.microsoft.com/Forums/en-US/home?category=&forum=&filter=alltypes&sort=relevancedesc&brandIgnore=true&filter=alltypes&searchTerm=%5BUWP%5D) dans votre billet sur le Q&un forum
