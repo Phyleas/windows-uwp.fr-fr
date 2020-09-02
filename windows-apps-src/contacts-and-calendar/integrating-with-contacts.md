@@ -1,5 +1,5 @@
 ---
-description: Cet article vous explique comment ajouter votre application en regard des actions dans une carte de visite
+description: Découvrez comment connecter votre application à des actions sur une carte de visite afin que les utilisateurs puissent choisir votre application pour ouvrir une page de profil, passer un appel ou envoyer un message.
 MSHAttr: PreferredLib:/library/windows/apps
 title: Connecter votre application à des actions sur une carte de visite
 ms.date: 02/08/2017
@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, UWP, contacts, carte de visite, annotation
 ms.assetid: 0edabd9c-ecfb-4525-bc38-53f219d744ff
 ms.localizationpriority: medium
-ms.openlocfilehash: 246a74ca008e1b8c89460aabb652accf35c842b1
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 92c8517bca9bdfda9e8f8d01e07e4ca3918d03a1
+ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154713"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304751"
 ---
 # <a name="connect-your-app-to-actions-on-a-contact-card"></a>Connecter votre application à des actions sur une carte de visite
 

@@ -1,17 +1,17 @@
 ---
 title: Déployer des profils de scanneur de codes-barres avec MDM
-description: Les profils de scanneur de codes-barres peuvent être déployés avec un serveur MDM.
+description: Découvrez comment déployer des profils de scanneur de codes-barres avec un serveur de gestion des appareils mobiles (MDM) à l’aide du fournisseur de services de configuration (CSP) EnterpriseExtFileSystem.
 ms.assetid: 99ED3BD8-022C-40C2-9C65-F599186548FE
 ms.date: 09/26/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bac497ec52dd0897af8c6c606bcdc041007c579
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: de3a43386e37c9bb997340c35c8f16977871916d
+ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173273"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304721"
 ---
 # <a name="deploy-barcode-scanner-profiles-with-mdm"></a>Déployer des profils de scanneur de codes-barres avec MDM
 

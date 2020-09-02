@@ -1,15 +1,15 @@
 ---
 title: Shell compatible avec Voice (VES) sur Xbox
-description: Découvrez comment ajouter une prise en charge du contrôle vocal à vos applications UWP sur Xbox.
+description: Découvrez comment ajouter une prise en charge du contrôle vocal à vos applications de plateforme Windows universelle (UWP) sur Xbox en utilisant le shell compatible avec Voice (VES).
 ms.date: 10/19/2017
 ms.topic: article
 keywords: Windows 10, UWP, Xbox, Speech, Shell avec voix activée
-ms.openlocfilehash: db846e906917f29781200f3c312f6dbd6e2b2dd1
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 38afa2473dd74ab580cf38cc21d1f2b192f9b72a
+ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161663"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304651"
 ---
 # <a name="using-speech-to-invoke-ui-elements"></a>Utilisation de la reconnaissance vocale pour appeler des éléments d’interface utilisateur
 

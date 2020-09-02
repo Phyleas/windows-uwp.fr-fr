@@ -1,17 +1,17 @@
 ---
 ms.assetid: 7a16b0ca-6b8e-4ade-9853-85690e06bda6
-description: Découvrez comment lancer un spot publicitaire en C#.
+description: Apprenez à afficher et à lancer une publicité interstitielle dans une application plateforme Windows universelle (UWP) à l’aide de C# et XAML.
 title: Exemple de code pour spot publicitaire en C#
 ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, ADS, publicité, interstitiel, c#, exemple de code
 ms.localizationpriority: medium
-ms.openlocfilehash: 18e38e9b672b5e96733131c33b3a632cd7a95aeb
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 63804fea6fc1657ead6c658814dfc7e0694f114f
+ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89164593"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304731"
 ---
 # <a name="interstitial-ad-sample-code-in-c"></a>Exemple de code de publicité interstitielle en C\# #  
 

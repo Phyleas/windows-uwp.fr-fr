@@ -1,17 +1,17 @@
 ---
-description: Lorsque vous commencez le processus de portage, vous avez le choix entre deux options.
+description: Découvrez comment déplacer un projet Windows Runtime 8. x vers un projet plateforme Windows universelle (UWP) sur Windows 10.
 title: Portage d’un projet Windows Runtime 8.x vers un projet UWP
 ms.assetid: 2dee149f-d81e-45e0-99a4-209a178d415a
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cac5e66fe6d940ec73cc0e898924b4398382466
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: aded2752db5328ea101ee78c681cd4697bd39242
+ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174833"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304581"
 ---
 # <a name="porting-a-windows-runtime-8x-project-to-a-uwp-project"></a>Portage d’un projet Windows Runtime 8.x vers un projet UWP
 

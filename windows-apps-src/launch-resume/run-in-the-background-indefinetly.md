@@ -6,12 +6,12 @@ keywords: tâche en arrière-plan, exécution étendue, ressources, limites, tâ
 ms.date: 10/03/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ec77b0f4777f12d20ec13bcfbac864993afd441
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 33b41c432edde42bc31daa1d5631f60fb38d8397
+ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175113"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304501"
 ---
 # <a name="run-in-the-background-indefinitely"></a>Exécuter indéfiniment en arrière-plan
 
@@ -27,9 +27,14 @@ Si vous développez une application qui n’est pas destinée à être envoyée 
 
 La `extendedExecutionUnconstrained` fonctionnalité est ajoutée en tant que fonctionnalité restreinte dans le manifeste de votre application. Pour plus d’informations sur les fonctionnalités restreintes, consultez déclarations de fonctionnalités d' [application](../packaging/app-capability-declarations.md) .
 
-> **Remarque :** Ajoutez la déclaration d’espace de noms XML *xmlns : ResCap* et utilisez le préfixe *ResCap* pour déclarer la fonctionnalité.
+> [!NOTE]
+> Ajoutez la déclaration d’espace de noms XML *xmlns : ResCap* et utilisez le préfixe *ResCap* pour déclarer la fonctionnalité.
+>
+> Pour plus d’informations, consultez la section fonctionnalités restreintes des [déclarations de fonctionnalités d’application](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).
+>
 
 _Package.appxmanifest_
+
 ```xml
 <Package
     ...
@@ -71,9 +76,14 @@ L’inscription de l’événement **révoqué** permettra à votre application 
 
 Dans le plateforme Windows universelle, les tâches en arrière-plan sont des processus qui s’exécutent en arrière-plan sans aucune forme d’interface utilisateur. Les tâches en arrière-plan peuvent généralement s’exécuter pendant vingt-cinq secondes au maximum avant d’être annulées. Certaines des tâches dont l’exécution est plus longue ont également une vérification pour s’assurer que la tâche en arrière-plan n’est pas inactive ou utilise la mémoire. Dans Windows Creators Update (version 1703), la fonctionnalité [extendedBackgroundTaskTime](../packaging/app-capability-declarations.md) Restricted a été introduite pour supprimer ces limites. La fonctionnalité **extendedBackgroundTaskTime** est ajoutée en tant que fonctionnalité restreinte dans le fichier manifeste de votre application :
 
-> **Remarque :** Ajoutez la déclaration d’espace de noms XML *xmlns : ResCap* et utilisez le préfixe *ResCap* pour déclarer la fonctionnalité.
+> [!NOTE]
+> Ajoutez la déclaration d’espace de noms XML *xmlns : ResCap* et utilisez le préfixe *ResCap* pour déclarer la fonctionnalité.
+>
+> Pour plus d’informations, consultez la section fonctionnalités restreintes des [déclarations de fonctionnalités d’application](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).
+>
 
 _Package.appxmanifest_
+
 ```xml
 <Package
     ... 

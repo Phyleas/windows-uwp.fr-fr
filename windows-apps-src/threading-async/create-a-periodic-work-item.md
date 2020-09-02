@@ -1,17 +1,17 @@
 ---
 ms.assetid: 1B077801-0A58-4A34-887C-F1E85E9A37B0
 title: Créer un élément de travail périodique
-description: Découvrez comment créer un élément de travail qui se reproduit régulièrement.
+description: Découvrez comment créer un élément de travail qui se répète régulièrement à l’aide de la méthode CreatePeriodicTimer de l’API ThreadPoolTimer plateforme Windows universelle (UWP).
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, élément de travail périodique, Threading, minuteurs
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a69ddc9afd051808a047af0e34b4e33d4250dc1
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e1b50858b2c7e3ce4cd60f9401cedb75eb950c7d
+ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89155233"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304441"
 ---
 # <a name="create-a-periodic-work-item"></a>Créer un élément de travail périodique
 
@@ -196,7 +196,7 @@ Si nécessaire, appelez la méthode [**Cancel**](/uwp/api/windows.system.threadi
 > PeriodicTimer->Cancel();
 > ```
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Pour obtenir des informations sur les minuteurs à déclenchement unique, voir [Utiliser un minuteur pour envoyer un élément de travail](use-a-timer-to-submit-a-work-item.md).
 

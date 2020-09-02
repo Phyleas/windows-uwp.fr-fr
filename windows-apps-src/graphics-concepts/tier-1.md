@@ -1,18 +1,18 @@
 ---
 title: Niveau 1
-description: Cette section décrit la prise en charge de niveau 1.
+description: Découvrez les limitations générales et spécifiques qui affectent la prise en charge de niveau 1 pour les fonctionnalités de ressources de streaming dans Direct3D.
 ms.assetid: 153DA429-0C99-4691-AEB4-124FD9B17BE2
 keywords:
 - Niveau 1
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fcd5debb367b73ad23492cf63d3acdd1797c23a
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 2ff90c75e3f4aefa28ddad5528d39d2f2d541bb0
+ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162703"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304641"
 ---
 # <a name="tier-1"></a>Niveau 1
 

@@ -4,18 +4,18 @@ description: Découvrez comment lancer l’application Paramètres Windows à pa
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
 ms.date: 04/19/2019
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: 19H1
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: 5f62fa915c7a00d2e359989e6e10718f704854ab
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d90669e03ae15acdc826d9e0b227f12d4ecf3cbc
+ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173003"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304711"
 ---
 # <a name="launch-the-windows-settings-app"></a>Lancer l’application Paramètres Windows
 
@@ -151,7 +151,7 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 | Souris | ms-settings:easeofaccess-mouse |
 | Narrateur | ms-settings:easeofaccess-narrator |
 | Autres options | MS-Settings : easeofaccess-otheroptions (**déconseillé dans Windows 10, version 1809 et versions ultérieures**) |
-| Speech | MS-Settings : easeofaccess-speechrecognition |
+| Voix | MS-Settings : easeofaccess-speechrecognition |
 
 ## <a name="extras"></a>Extras
 
@@ -168,7 +168,7 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 | Jeux DVR | MS-Settings : jeu-gamedvr |
 | Mode jeu | MS-Settings : jeu-GameMode |
 | Jouer en mode plein écran | MS-paramètres : quietmomentsgame |
-| TruePlay | MS-Settings : jeu-trueplay (**déconseillé dans Windows 10, version 1809 et versions ultérieures**) |
+| TruePlay | MS-Settings : jeu-trueplay (**à partir de Windows 10, version 1809 (10,0 ; Build 17763), cette fonctionnalité est supprimée de Windows**) |
 | Réseau Xbox | MS-Settings : jeu-xboxnetworking |
 
 ## <a name="home-page"></a>page d'accueil
@@ -203,7 +203,7 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 | Point d’accès sans fil mobile | ms-settings:network-mobilehotspot |
 | NFC | ms-settings:nfctransactions |
 | Proxy | ms-settings:network-proxy |
-| Statut | ms-settings:network-status<br/>MS-Settings : réseau |
+| État | ms-settings:network-status<br/>MS-Settings : réseau |
 | VPN | MS-Settings : réseau-VPN |
 | Wi-Fi | MS-Settings : Network-WiFi (disponible uniquement si l’appareil possède un adaptateur Wi-Fi) |
 | Appel Wi-Fi | MS-Settings : Network-wificalling (disponible uniquement si l’appel Wi-Fi est activé) |
@@ -245,7 +245,7 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 | Appareil photo | ms-settings:privacy-webcam |
 | Contacts | ms-settings:privacy-contacts |
 | Documents | MS-Settings : confidentialité-documents |
-| E-mail | ms-settings:privacy-email |
+| Courrier | ms-settings:privacy-email |
 | Dispositif de suivi oculaire | MS-Settings : privacy-Eyetracker (nécessite un matériel Eyetracker) |
 | Commentaires et diagnostics | ms-settings:privacy-feedback |
 | Système de fichiers | MS-Settings : confidentialité-broadfilesystemaccess |
@@ -260,7 +260,7 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 | Appels téléphoniques | MS-Settings : confidentialité-phonecalls |
 | Images | MS-Settings : confidentialité-images |
 | Radios | ms-settings:privacy-radios |
-| Speech | MS-Settings : confidentialité-reconnaissance vocale |
+| Voix | MS-Settings : confidentialité-reconnaissance vocale |
 | Tâches | MS-Settings : confidentialité-tâches |
 | Vidéos | MS-Settings : confidentialité-vidéos |
 | Activation vocale | MS-Settings : confidentialité-voiceactivation |
@@ -319,7 +319,7 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 | Région | MS-paramètres : regionformatting |
 | Langage | MS-Settings : clavier<br/>ms-settings:regionlanguage<br/>MS-Settings : regionlanguage-bpmfime<br/>MS-Settings : regionlanguage-cangjieime<br/>MS-Settings : regionlanguage-chsime-pinyin-domainlexicon<br/>MS-Settings : regionlanguage-chsime-pinyin-keyconfig<br/>MS-Settings : regionlanguage-chsime-pinyin-UDP<br/>MS-Settings : regionlanguage-chsime-Wubi-UDP<br/>MS-Settings : regionlanguage-quickime |
 | Paramètres IME pinyin | MS-Settings : regionlanguage-chsime-pinyin (disponible si l’éditeur de méthode d’entrée pinyin Microsoft est installé) |
-| Speech | ms-settings:speech |
+| Voix | ms-settings:speech |
 | Paramètres IME Wubi  | MS-Settings : regionlanguage-chsime-Wubi (disponible si l’éditeur de méthode d’entrée Microsoft Wubi est installé) |
 
 ## <a name="update--security"></a>Mise à jour et sécurité

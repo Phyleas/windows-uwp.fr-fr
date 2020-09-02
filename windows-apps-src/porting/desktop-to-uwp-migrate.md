@@ -1,16 +1,16 @@
 ---
-Description: Partager du code entre une application de bureau et une application UWP
 title: Partager du code entre une application de bureau et une application UWP
+description: Découvrez comment déplacer une application de bureau à partir de .NET Framework (avec des API WPF et Windows Forms) ou C++ Win32 vers plateforme Windows universelle (UWP) et Windows 10.
 ms.date: 10/03/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e13c656f02531d500a72aa74b2d3c5d6cc29aa4
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ed23f77936378f2348abf868a67041be84978123
+ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174933"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304681"
 ---
 # <a name="move-from-a-desktop-application-to-uwp"></a>Passer d’une application de bureau à UWP
 
