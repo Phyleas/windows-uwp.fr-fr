@@ -9,12 +9,12 @@ dev_langs:
 - vb
 keywords: Windows 10, UWP, capture d’écran
 ms.localizationpriority: medium
-ms.openlocfilehash: 829b99932c8035c2e9d493ed7319f640386f88ed
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b57be844e5ee10d384046aac651ab4f198f37d9e
+ms.sourcegitcommit: 14c0b1ea2447a81ddf31982b40e19a74ecc6d59e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163623"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89310070"
 ---
 # <a name="screen-capture"></a>Capture d'écran
 
@@ -24,6 +24,8 @@ Avec la capture d’écran, les développeurs appellent une interface utilisateu
 
 > [!NOTE]
 > Les API de capture d’écran sont uniquement prises en charge sur les casques et les casques immersifs de Windows Mixed Reality.
+
+Cet article décrit la capture d’une seule image de la fenêtre d’affichage ou d’application. Pour plus d’informations sur l’encodage des frames capturés à partir de l’écran dans un fichier vidéo, voir [capture d’écran sur vidéo](screen-capture-video.md)
 
 ## <a name="add-the-screen-capture-capability"></a>Ajouter la fonctionnalité de capture d’écran
 
@@ -686,8 +688,9 @@ End Class
 
 ## <a name="record-a-video"></a>Enregistrer une vidéo
 
-Si vous souhaitez enregistrer une vidéo de votre application, vous pouvez le faire plus facilement avec l' [espace de noms Windows. Media. AppRecording](/uwp/api/windows.media.apprecording). Cela fait partie du kit de développement logiciel (SDK) d’extension de bureau. il ne fonctionne donc que sur Desktop et requiert que vous y ajoutiez une référence à partir de votre projet. Pour plus d’informations, consultez [Présentation des familles d’appareils](/uwp/extension-sdks/device-families-overview) .
+Si vous souhaitez enregistrer une vidéo de votre application, vous pouvez suivre la procédure pas à pas présentée dans la [capture d’écran](screen-capture-video.md)de l’article à la vidéo. Vous pouvez utiliser l' [espace de noms Windows. Media. AppRecording](/uwp/api/windows.media.apprecording). Cela fait partie du kit de développement logiciel (SDK) d’extension de bureau. il ne fonctionne donc que sur Desktop et requiert que vous y ajoutiez une référence à partir de votre projet. Pour plus d’informations, consultez [Présentation des familles d’appareils](/uwp/extension-sdks/device-families-overview) .
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Espace de noms Windows. Graphics. capture](/uwp/api/windows.graphics.capture)
+* [Espace de noms Windows. Graphics. capture](https://docs.microsoft.com/uwp/api/windows.graphics.capture)
+* [Capture d’écran sur vidéo](screen-capture-video.md)

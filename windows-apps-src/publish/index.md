@@ -1,17 +1,17 @@
 ---
-Description: Découvrez comment publier vos applications Windows sur le Microsoft Store.
+description: Découvrez comment s’inscrire à l’Espace partenaires et comment l’utiliser pour publier vos jeux et vos applications Windows sur le Microsoft Store.
 title: Publier des applications Windows
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, publication, publier, vente, vendre, distribuer, distribution, store, tableau de bord
 ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d30eb37e9633496e510a2e05ec48cc819bd51c9
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: 19607823ce98aa71a8e3abecb94b82ff06a08352
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80614977"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89164123"
 ---
 # <a name="publish-windows-apps-and-games"></a>Publier des applications et jeux Windows  
 
@@ -85,7 +85,7 @@ Vous pouvez utiliser l’[Espace partenaires](https://partner.microsoft.com/dash
     :::column:::
         <img src="https://docs.microsoft.com/media/illustrations/bcs-user-management-add-customer-1.svg" alt="Account icon" />
         <h3 style="margin-top: 10px; margin-bottom: 0px">Gestion des utilisateurs de compte</h3>
-        <a href="associate-azure-ad-with-dev-center.md">Configurer Azure AD</a><br/>
+        <a href="associate-azure-ad-with-dev-center.md">Configurer Azure AD</a><br/>
         <a href="add-users-groups-and-azure-ad-applications.md">Ajouter des utilisateurs de compte</a><br/>
         <a href="set-custom-permissions-for-account-users.md">Rôles et autorisations</a><br/>
     :::column-end:::
@@ -99,7 +99,7 @@ Vous pouvez utiliser l’[Espace partenaires](https://partner.microsoft.com/dash
         <img src="https://docs.microsoft.com/media/illustrations/team-services-dev-ops-test.svg" alt="Test icon" />
         <h3 style="margin-top: 10px; margin-bottom: 0px">Stratégies de test</h3>
         <a href="beta-testing-and-targeted-distribution.md">Tests bêta et distribution ciblée</a></br/> <a href="choose-visibility-options.md#audience">Audience privée</a><br/>
-        <a href="package-flights.md">Versions d’évaluation du package</a><br/>
+        <a href="package-flights.md">Versions d’évaluation de package</a><br/>
         <a href="gradual-package-rollout.md">Lancement progressif</a><br/>
     :::column-end:::
 :::row-end:::
