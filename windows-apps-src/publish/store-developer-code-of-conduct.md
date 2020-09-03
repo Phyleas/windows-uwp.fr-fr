@@ -6,16 +6,16 @@ ms.topic: article
 keywords: contrat définissant les politiques du microsoft store
 ms.localizationpriority: high
 ms.assetid: 2B84B877-794A-468F-A478-DA09E4694513
-ms.openlocfilehash: d81333b38908a10f88d886d766353aae455b1f47
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: 5eab37c828483cea1e8343c953d155edab422e0f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "77607237"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170983"
 ---
 # <a name="developer-code-of-conduct"></a>Code de conduite du développeur
 
-En tant que développeur d’applications pour le Microsoft Store, vous êtes tenu de respecter les conditions du [Contrat du développeur d’application](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) et toute autre licence ou tout autre contrat vous liant à Microsoft. Ce Code de conduite vous est fourni à titre d’information et ne se substitue à aucun contrat.
+En tant que développeur d’applications pour le Microsoft Store, vous êtes tenu de respecter les conditions du [Contrat du développeur d’application](/legal/windows/agreements/app-developer-agreement) et toute autre licence ou tout autre contrat vous liant à Microsoft. Ce Code de conduite vous est fourni à titre d’information et ne se substitue à aucun contrat.
 
 
 ## <a name="1-publisher-name"></a>1. Nom de l’éditeur
@@ -36,4 +36,4 @@ Vous ne pouvez vous livrer à aucune activité frauduleuse ou malhonnête sur le
 ### <a name="see-also"></a>Voir aussi
 
 - [Politiques et code de conduite du Microsoft Store](store-policies-and-code-of-conduct.md)
-- [Contrat du développeur d’application](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)
+- [Contrat du développeur d’application](/legal/windows/agreements/app-developer-agreement)

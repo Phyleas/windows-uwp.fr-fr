@@ -5,12 +5,12 @@ keywords: nouveautés, mise à jour, fonctionnalités, conseils aux développeur
 ms.date: 01/17/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7947fb6e71a9f2ddbedcd8e3ee8bab7b720dc444
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: f1811e3b99077a3be676c57dc3420e88658f1d73
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74902469"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174363"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-january-2019"></a>Nouveautés apportées dans la documentation du développeur Windows en janvier 2019
 
@@ -64,7 +64,7 @@ Notre [Forum aux questions](/windows/communitytoolkit/controls/wpf-winforms/webv
 
 ### <a name="japanese-era-change"></a>Changement d’ère impériale japonaise
 
-La rubrique [Préparer votre application pour le changement d’ère du Japon](../design/globalizing/japanese-era-change.md) explique comment vous assurer que votre application Windows est prête pour le changement d’ère impériale japonaise le 1er mai 2019. [Cette page est également disponible en japonais](/windows/uwp/design/globalizing/japanese-era-change).
+La rubrique [Préparer votre application pour le changement d’ère du Japon](../design/globalizing/japanese-era-change.md) explique comment vous assurer que votre application Windows est prête pour le changement d’ère impériale japonaise le 1er mai 2019. [Cette page est également disponible en japonais](../design/globalizing/japanese-era-change.md).
 
 ## <a name="videos"></a>Vidéos
 

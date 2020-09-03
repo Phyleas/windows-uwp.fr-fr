@@ -9,12 +9,12 @@ ms.technology: windows-nodejs
 keywords: Microsoft, Windows, développeur, conseils, performances, WSL
 ms.localizationpriority: medium
 ms.date: 07/24/2020
-ms.openlocfilehash: 8c094e7871e9de4fdf7eca2e0e1b425af295f252
-ms.sourcegitcommit: 5ba2524d237be82d3621551e48cac938fe81d2ea
+ms.openlocfilehash: 1135be4797893a74e398e69fcbc1c43d60e9fdb9
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87255024"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172663"
 ---
 # <a name="tips-for-improving-performance-and-development-workflows"></a>Conseils pour l’amélioration des performances et des workflows de développement
 
@@ -28,7 +28,7 @@ Vous pouvez lancer VS Code à partir de votre ligne de commande dans le projet q
 
 ## <a name="use-the-credential-manager-to-your-streamline-authentication-process"></a>Utiliser le gestionnaire d’informations d’identification pour simplifier le processus d’authentification
 
-Si vous utilisez Git pour la gestion de versions et la collaboration, vous pouvez simplifier le processus d’authentification en [configurant Git Credential Manager](https://docs.microsoft.com/windows/wsl/tutorials/wsl-git#git-credential-manager-setup) pour stocker vos jetons dans le Gestionnaire d’informations d’identification Windows. Nous vous recommandons également d’[ajouter un fichier .gitignore](https://docs.microsoft.com/windows/wsl/tutorials/wsl-git#adding-a-git-ignore-file) à votre projet.
+Si vous utilisez Git pour la gestion de versions et la collaboration, vous pouvez simplifier le processus d’authentification en [configurant Git Credential Manager](/windows/wsl/tutorials/wsl-git#git-credential-manager-setup) pour stocker vos jetons dans le Gestionnaire d’informations d’identification Windows. Nous vous recommandons également d’[ajouter un fichier .gitignore](/windows/wsl/tutorials/wsl-git#adding-a-git-ignore-file) à votre projet.
 
 ## <a name="use-wsl-for-testing-your-production-pipeline-before-deploying-to-the-cloud"></a>Utiliser WSL pour tester votre pipeline de production avant le déploiement sur le cloud
 
@@ -40,17 +40,17 @@ Pour connaître d’autres manières d’utiliser WSL, consultez l’[épisode T
 
 ## <a name="improve-performance-speed-for-wsl-by-not-crossing-over-file-systems"></a>Optimiser la vitesse de performance de WSL en évitant de passer d’un système de fichiers à un autre
 
-Si vous utilisez à la fois Windows et le Sous-système Windows pour Linux, deux systèmes de fichiers sont installés : NTSF (Windows) et WSL (votre distribution Linux). Pour optimiser les performances, assurez-vous que les fichiers de votre projet sont stockés sur le même système que les outils que vous utilisez. Pour en savoir plus, consultez [Utiliser le système de fichiers approprié pour des performances plus rapides](https://docs.microsoft.com/windows/wsl/compare-versions#use-the-linux-file-system-for-faster-performance).
+Si vous utilisez à la fois Windows et le Sous-système Windows pour Linux, deux systèmes de fichiers sont installés : NTSF (Windows) et WSL (votre distribution Linux). Pour optimiser les performances, assurez-vous que les fichiers de votre projet sont stockés sur le même système que les outils que vous utilisez. Pour en savoir plus, consultez [Utiliser le système de fichiers approprié pour des performances plus rapides](/windows/wsl/compare-versions#use-the-linux-file-system-for-faster-performance).
 
 ## <a name="improve-build-speeds-by-adding-windows-defender-exclusions"></a>Améliorer les vitesses de génération en ajoutant des exclusions Windows Defender
 
-Vous pouvez améliorer la vitesse de génération en mettant à jour vos paramètres Windows Defender afin d’ajouter des exclusions pour les dossiers de projet ou types de fichier que vous considérez comme fiables et ainsi éviter les recherches de menaces de sécurité. Pour en savoir plus, consultez [Mettre à jour les paramètres Windows Defender pour améliorer les performances](https://docs.microsoft.com/windows/android/defender-settings).
+Vous pouvez améliorer la vitesse de génération en mettant à jour vos paramètres Windows Defender afin d’ajouter des exclusions pour les dossiers de projet ou types de fichier que vous considérez comme fiables et ainsi éviter les recherches de menaces de sécurité. Pour en savoir plus, consultez [Mettre à jour les paramètres Windows Defender pour améliorer les performances](../android/defender-settings.md).
 
 ![Capture d’écran de Windows Defender](../images/windows-defender-exclusions.png)
 
 ## <a name="launch-all-your-command-lines-in-windows-terminal-at-once"></a>Lancer toutes vos lignes de commande dans le Terminal Windows en même temps
 
-* Vous pouvez lancer plusieurs outils en ligne de commande comme PowerShell, Ubuntu et Azure CLI dans une unique fenêtre à plusieurs volets en utilisant les [arguments de ligne de commande du Terminal Windows](https://docs.microsoft.com/windows/terminal/command-line-arguments?tabs=powershell#multiple-panes). Après avoir installé le [Terminal Windows ](https://docs.microsoft.com/windows/terminal/get-started), [WSL/Ubuntu](https://docs.microsoft.com/windows/wsl/install-win10)et [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest), entrez cette commande dans PowerShell pour ouvrir une nouvelle fenêtre à plusieurs volets avec les trois outils :
+* Vous pouvez lancer plusieurs outils en ligne de commande comme PowerShell, Ubuntu et Azure CLI dans une unique fenêtre à plusieurs volets en utilisant les [arguments de ligne de commande du Terminal Windows](/windows/terminal/command-line-arguments?tabs=powershell#multiple-panes). Après avoir installé le [Terminal Windows ](/windows/terminal/get-started), [WSL/Ubuntu](/windows/wsl/install-win10)et [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest), entrez cette commande dans PowerShell pour ouvrir une nouvelle fenêtre à plusieurs volets avec les trois outils :
 
     ```powershell
     wt -p "Command Prompt" `; split-pane -p "Windows PowerShell" `; split-pane -H wsl.exe

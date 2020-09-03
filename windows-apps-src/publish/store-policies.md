@@ -6,12 +6,12 @@ ms.topic: article
 keywords: contrat définissant les politiques du microsoft store
 ms.localizationpriority: high
 ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
-ms.openlocfilehash: a68247637395c3f68bf1140479bc94cb8e0fcc33
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: 4d7c30b49ea0e6276e1d7959a17086f7ff829915
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79209354"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170909"
 ---
 # <a name="microsoft-store-policies"></a>Politiques du Microsoft Store
 
@@ -113,7 +113,7 @@ Votre produit ne doit pas tenter de modifier ou d'étendre sa fonctionnalité d�
 
 **10.2.3**
 
-Votre produit ne doit pas contenir ou activer des programmes malveillants, tels que définis par les critères de Microsoft relatifs aux [logiciels indésirables et malveillants](https://docs.microsoft.com/windows/security/threat-protection/intelligence/criteria).
+Votre produit ne doit pas contenir ou activer des programmes malveillants, tels que définis par les critères de Microsoft relatifs aux [logiciels indésirables et malveillants](/windows/security/threat-protection/intelligence/criteria).
 
 **10.2.4**
 
@@ -296,7 +296,7 @@ Si vous achetez ou créez des campagnes publicitaires visant à promouvoir vos p
 
 Tout contenu publicitaire affiché par votre produit doit être conforme à la [Politique d'acceptation créative](https://about.ads.microsoft.com/solutions/ad-products/display-advertising/creative-acceptance-policies) de Microsoft.
 
-Si votre produit affiche des publicités, l'intégralité du contenu affiché doit être conforme aux critères publicitaires du [Contrat du développeur de l'application](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement), notamment les critères suivants :
+Si votre produit affiche des publicités, l'intégralité du contenu affiché doit être conforme aux critères publicitaires du [Contrat du développeur de l'application](/legal/windows/agreements/app-developer-agreement), notamment les critères suivants :
 
 **10.10.4**
 
@@ -355,7 +355,7 @@ Les produits de jeux utilisant Xbox Live doivent :
 
 Les produits de jeux utilisant Xbox Live et proposant un mode de jeu multijoueur, du contenu généré par les utilisateurs ou un système de communication entre les utilisateurs :
 - Ne doivent pas permettre de jouer tant que l’utilisateur ne s’est pas connecté à Xbox Live.
-- Doivent respecter les [contrôles parentaux et de service](https://docs.microsoft.com/gaming/xbox-live/get-started/setup-ide/creators/unity-win10/check-user-privileges-in-unity).
+- Doivent respecter les [contrôles parentaux et de service](/gaming/xbox-live/get-started/setup-ide/creators/unity-win10/check-user-privileges-in-unity).
 
 **10.13.7**
 
@@ -477,4 +477,4 @@ Le contenu généré par l’utilisateur est du contenu que les utilisateurs ajo
 
 - [Historique des modifications des politiques du Microsoft Store](store-policies-change-history.md)
 - [Politiques et code de conduite du Microsoft Store](store-policies-and-code-of-conduct.md)
-- [Contrat du développeur d’application](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)
+- [Contrat du développeur d’application](/legal/windows/agreements/app-developer-agreement)

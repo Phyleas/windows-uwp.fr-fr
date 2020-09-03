@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: b97041e305cfaac2a5fe202212741a282dccdb54
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 8138256dbde751768e5d9a707ffc1ad23ace7494
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968874"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173523"
 ---
 # <a name="contextual-commanding-for-collections-and-lists"></a>Commandes contextuelles pour les collections et les listes
 
@@ -25,7 +25,7 @@ ms.locfileid: "82968874"
 
 De nombreuses applications contiennent des collections de contenu sous forme de listes, de grilles et d’arborescences, que les utilisateurs peuvent manipuler. Les utilisateurs peuvent par exemple supprimer, renommer, marquer ou actualiser des éléments. Cet article vous montre comment utiliser des commandes contextuelles pour implémenter ces types d’actions d’une manière qui optimise l’utilisation de tous les types d’entrée.  
 
-> **API importantes** : [Interface ICommand](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand), [propriété UIElement.ContextFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout), [interface INotifyPropertyChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.inotifypropertychanged)
+> **API importantes** : [Interface ICommand](/uwp/api/Windows.UI.Xaml.Input.ICommand), [propriété UIElement.ContextFlyout](/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout), [interface INotifyPropertyChanged](/uwp/api/windows.ui.xaml.data.inotifypropertychanged)
 
 ![Utiliser différentes entrées pour exécuter la commande FavoriteCommand](images/ContextualCommand_AddFavorites.png)
 
@@ -94,13 +94,13 @@ public class PodcastObject : INotifyPropertyChanged
 }
 ```
 
-Notez que le PodcastObject implémente [INotifyPropertyChanged](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.INotifyPropertyChanged) pour répondre aux modifications de propriété lorsque l’utilisateur active ou désactive la propriété IsFavorite.
+Notez que le PodcastObject implémente [INotifyPropertyChanged](/uwp/api/Windows.UI.Xaml.Data.INotifyPropertyChanged) pour répondre aux modifications de propriété lorsque l’utilisateur active ou désactive la propriété IsFavorite.
 
 ## <a name="defining-commands-with-the-icommand-interface"></a>Définition de commandes avec l’interface ICommand
 
-L’[interface ICommand](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand) vous permet de définir une commande disponible pour plusieurs types d’entrée. Par exemple, au lieu d’écrire le même code pour une commande de suppression dans deux gestionnaires d’événements différents lorsque l’utilisateur appuie sur la touche Suppr et lorsque l’utilisateur clique avec le bouton droit sur « Supprimer » dans un menu contextuel, vous pouvez implémenter votre logique de suppression une seule fois à l’aide d’une [ICommand](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand), puis la rendre disponible à différents types d’entrée.
+L’[interface ICommand](/uwp/api/Windows.UI.Xaml.Input.ICommand) vous permet de définir une commande disponible pour plusieurs types d’entrée. Par exemple, au lieu d’écrire le même code pour une commande de suppression dans deux gestionnaires d’événements différents lorsque l’utilisateur appuie sur la touche Suppr et lorsque l’utilisateur clique avec le bouton droit sur « Supprimer » dans un menu contextuel, vous pouvez implémenter votre logique de suppression une seule fois à l’aide d’une [ICommand](/uwp/api/Windows.UI.Xaml.Input.ICommand), puis la rendre disponible à différents types d’entrée.
 
-Nous devons définir l’ICommand qui représente l’action « Mettre en favori ». Nous allons utiliser la méthode [Execute](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand.Execute) de la commande pour mettre un podcast en favori. Ce podcast sera fourni à la méthode d’exécution via le paramètre de la commande, qu’il est possible de lier à l’aide de la propriété CommandParameter.
+Nous devons définir l’ICommand qui représente l’action « Mettre en favori ». Nous allons utiliser la méthode [Execute](/uwp/api/Windows.UI.Xaml.Input.ICommand.Execute) de la commande pour mettre un podcast en favori. Ce podcast sera fourni à la méthode d’exécution via le paramètre de la commande, qu’il est possible de lier à l’aide de la propriété CommandParameter.
 
 ```csharp
 public class FavoriteCommand: ICommand
@@ -127,7 +127,7 @@ Pour utiliser la même commande avec plusieurs collections et éléments, vous p
 </Application.Resources>
 ```
 
-Pour exécuter la commande, vous devez appeler sa méthode [Execute](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand.Execute).
+Pour exécuter la commande, vous devez appeler sa méthode [Execute](/uwp/api/Windows.UI.Xaml.Input.ICommand.Execute).
 
 ```csharp
 // Favorite the item using the defined command
@@ -138,7 +138,7 @@ favoriteCommand.Execute(PodcastObject);
 
 ## <a name="creating-a-usercontrol-to-respond-to-a-variety-of-inputs"></a>Création d’un UserControl pour répondre à différentes entrées
 
-Lorsque vous avez une liste d’éléments et que chacun de ces éléments doit répondre à plusieurs entrées, vous pouvez simplifier votre code en définissant un [UserControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.UserControl) pour l’élément et l’utiliser pour définir le menu et les gestionnaires d’événements de vos éléments. 
+Lorsque vous avez une liste d’éléments et que chacun de ces éléments doit répondre à plusieurs entrées, vous pouvez simplifier votre code en définissant un [UserControl](/uwp/api/Windows.UI.Xaml.Controls.UserControl) pour l’élément et l’utiliser pour définir le menu et les gestionnaires d’événements de vos éléments. 
 
 Pour créer un UserControl dans Visual Studio :
 1. Dans l’Explorateur de solutions, cliquez avec le bouton droit sur le projet. Un menu contextuel s’affiche.
@@ -151,7 +151,7 @@ Dans notre exemple, chaque podcast s’affichera dans une liste, qui exposera le
 - Afficher un bouton sensitif
 - Effectuer un mouvement de balayage
 
-Afin d’encapsuler ces comportements et d’utiliser la commande FavoriteCommand, nous allons créer un nouvel objet [UserControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.UserControl) nommé « PodcastUserControl » pour représenter un podcast dans la liste.
+Afin d’encapsuler ces comportements et d’utiliser la commande FavoriteCommand, nous allons créer un nouvel objet [UserControl](/uwp/api/Windows.UI.Xaml.Controls.UserControl) nommé « PodcastUserControl » pour représenter un podcast dans la liste.
 
 Le PodcastUserControl affiche les champs du PodcastObject sous forme de TextBlocks et répond aux différentes interactions avec l’utilisateur. Le PodcastUserControl sera abordé en détail tout au long de cet article.
 
@@ -246,7 +246,7 @@ L’utilisateur peut appeler des menus contextuels à l’aide de ces « action
 
 ### <a name="contextflyout"></a>ContextFlyout
 
-La [propriété ContextFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout), définie par la classe UIElement, facilite la création d’un menu contextuel qui fonctionne avec tous les types d’entrée. Vous fournissez un menu volant représentant votre menu contextuel à l’aide du contrôle MenuFlyout. Lorsque l’utilisateur effectuera une « action contextuelle », comme indiqué ci-dessus, le contrôle MenuFlyout correspondant à l’élément s’affichera.
+La [propriété ContextFlyout](/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout), définie par la classe UIElement, facilite la création d’un menu contextuel qui fonctionne avec tous les types d’entrée. Vous fournissez un menu volant représentant votre menu contextuel à l’aide du contrôle MenuFlyout. Lorsque l’utilisateur effectuera une « action contextuelle », comme indiqué ci-dessus, le contrôle MenuFlyout correspondant à l’élément s’affichera.
 
 Nous allons ajouter un ContextFlyout au PodcastUserControl. Le MenuFlyout spécifié comme ContextFlyout contient un seul élément pour mettre un podcast en favori. Notez que ce MenuFlyoutItem utilise la commande favoriteCommand définie ci-dessus, avec le CommandParamter lié au PodcastObject.
 
@@ -265,7 +265,7 @@ Nous allons ajouter un ContextFlyout au PodcastUserControl. Le MenuFlyout spéci
 
 ```
 
-Notez que vous pouvez également utiliser l’[événement ContextRequested](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextRequested) pour répondre aux actions contextuelles. L’événement ContextRequested ne se déclenchera pas si un ContextFlyout a été spécifié.
+Notez que vous pouvez également utiliser l’[événement ContextRequested](/uwp/api/Windows.UI.Xaml.UIElement.ContextRequested) pour répondre aux actions contextuelles. L’événement ContextRequested ne se déclenchera pas si un ContextFlyout a été spécifié.
 
 ## <a name="creating-input-accelerators"></a>Création d’accélérateurs d’entrée
 
@@ -281,7 +281,7 @@ Dans l’application de podcast, la commande fréquemment exécutée est la comm
 
 Selon le type de contenu, vous pouvez identifier certaines combinaisons de touches qui doivent effectuer une action. Dans une application de messagerie, par exemple, il est possible d’utiliser la touche Suppr pour supprimer l’e-mail sélectionné. Dans une application de podcast, les touches Ctrl + S ou F peuvent permettre de mettre un podcast en favori pour le retrouver ultérieurement. Bien que certaines commandes présentent des raccourcis clavier courants, comme Suppr pour supprimer, d’autres commandes présentent des raccourcis propres à l’application ou au domaine. Si possible, utilisez des raccourcis bien connus. Sinon, pensez à fournir un texte de rappel dans une info-bulle pour former l’utilisateur à la commande de raccourci.
 
-Vous pouvez utiliser l’événement [KeyDown](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.KeyDownEvent) pour permettre à votre application de répondre lorsque l’utilisateur appuie sur une touche. En général, les utilisateurs s’attendent à ce que l’application réponde lorsqu’ils appuient sur la touche, et non lorsqu’ils la relâchent.
+Vous pouvez utiliser l’événement [KeyDown](/uwp/api/Windows.UI.Xaml.UIElement.KeyDownEvent) pour permettre à votre application de répondre lorsque l’utilisateur appuie sur une touche. En général, les utilisateurs s’attendent à ce que l’application réponde lorsqu’ils appuient sur la touche, et non lorsqu’ils la relâchent.
 
 Cet exemple montre comment ajouter le gestionnaire KeyDown au PodcastUserControl pour mettre un podcast en favori lorsque l’utilisateur appuie sur Ctrl + S ou F. Il utilise la même commande qu’avant.
 
@@ -343,7 +343,7 @@ Dans cet exemple, la commande de mise en favori est représentée par un bouton 
 </UserControl>
 ```
 
-Les boutons sensitifs doivent apparaître et disparaître lorsque la souris entre et quitte l’élément. Pour répondre aux événements de souris, vous pouvez utiliser les événements [PointerEntered](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.PointerEnteredEvent) et [PointerExited](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.PointerExitedEvent) sur le PodcastUserControl.
+Les boutons sensitifs doivent apparaître et disparaître lorsque la souris entre et quitte l’élément. Pour répondre aux événements de souris, vous pouvez utiliser les événements [PointerEntered](/uwp/api/Windows.UI.Xaml.UIElement.PointerEnteredEvent) et [PointerExited](/uwp/api/Windows.UI.Xaml.UIElement.PointerExitedEvent) sur le PodcastUserControl.
 
 **PodcastUserControl.xaml.cs**
 ```csharp
@@ -448,10 +448,10 @@ Afin d’optimiser votre application pour une entrée à l’aide d’un stylet,
 * Vérifiez que les utilisateurs peuvent accéder à toutes les commandes à partir de n’importe quel type d’appareil Windows.
 * Intégrez un menu contextuel donnant accès à toutes les commandes disponibles pour un élément de collection. 
 * Fournissez des accélérateurs d’entrée pour les commandes fréquemment utilisées. 
-* Utilisez l’[interface ICommand](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand) pour implémenter des commandes. 
+* Utilisez l’[interface ICommand](/uwp/api/Windows.UI.Xaml.Input.ICommand) pour implémenter des commandes. 
 
 ## <a name="related-topics"></a>Rubriques connexes
-* [ICommand, interface](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand)
+* [ICommand, interface](/uwp/api/Windows.UI.Xaml.Input.ICommand)
 * [Menus et menus contextuels](menus.md)
 * [Balayer](swipe.md)
 * [Tirer pour actualiser](pull-to-refresh.md)

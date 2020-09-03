@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, certification des applications
 ms.localizationpriority: medium
-ms.openlocfilehash: 9de761a0b127d7218c7dc2bb4c6862626b7c60e4
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: bb647d844c32286a2d612231b3069430f11fcad0
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "77089425"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174013"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Tests du Kit de certification des applications Windows
 
@@ -34,7 +34,7 @@ Les applications ne doivent pas répertorier les DLL à charger dans la clé de 
 
 Nous testons la résilience et la stabilité de l’application tout au long des tests de certification.
 
-Le Kit de certification des applications Windows appelle la méthode [**IApplicationActivationManager::ActivateApplication**](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication) pour lancer les applications. Pour que la méthode **ActivateApplication** lance une application, il faut que le contrôle de compte d’utilisateur (UAC) soit activé et que la résolution de l’écran soit d’au moins 1 024 × 768 ou 768 × 1 024. Si l’une de ces conditions n’est pas respectée, votre application échouera à ce test.
+Le Kit de certification des applications Windows appelle la méthode [**IApplicationActivationManager::ActivateApplication**](/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication) pour lancer les applications. Pour que la méthode **ActivateApplication** lance une application, il faut que le contrôle de compte d’utilisateur (UAC) soit activé et que la résolution de l’écran soit d’au moins 1 024 × 768 ou 768 × 1 024. Si l’une de ces conditions n’est pas respectée, votre application échouera à ce test.
 
 ### <a name="corrective-actions"></a>Actions correctives
 
@@ -42,7 +42,7 @@ Assurez-vous que le contrôle UAC est activé sur l’ordinateur de test.
 
 Veillez à exécuter le test sur un ordinateur dont l’écran est suffisamment grand.
 
-Si le lancement de votre application échoue et que votre plateforme de test satisfait aux exigences liées à la méthode [**ActivateApplication**](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication), vous pouvez résoudre le problème en examinant le journal des événements d’activation. Pour rechercher ces entrées dans le journal des événements :
+Si le lancement de votre application échoue et que votre plateforme de test satisfait aux exigences liées à la méthode [**ActivateApplication**](/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication), vous pouvez résoudre le problème en examinant le journal des événements d’activation. Pour rechercher ces entrées dans le journal des événements :
 
 1.  Ouvrez eventvwr.exe et accédez au dossier Log\\Microsoft\\Windows\\Immersive-Shell des Applications et services.
 2.  Filtrez la vue de manière à afficher les ID d’événement 5900 à 6000.
@@ -64,7 +64,7 @@ Le Kit de certification des applications Windows utilise le test HighVersionLie 
 
 ### <a name="corrective-action"></a>Action corrective
 
-Les applications doivent utiliser les fonctions d’assistance de l’API Version pour effectuer cette vérification. Pour plus d’informations, voir [Version du système d’exploitation](https://docs.microsoft.com/windows/desktop/SysInfo/operating-system-version).
+Les applications doivent utiliser les fonctions d’assistance de l’API Version pour effectuer cette vérification. Pour plus d’informations, voir [Version du système d’exploitation](/windows/desktop/SysInfo/operating-system-version).
 
 ## <a name="background-tasks-cancellation-handler-validation"></a>Validation du gestionnaire d’annulation de tâches en arrière-plan
 
@@ -80,7 +80,7 @@ L’application est lancée, suspendue et les tâches de l’application qui ne 
 
 ### <a name="corrective-action"></a>Action corrective
 
-Ajoutez le gestionnaire d’annulation à votre application. Pour plus d’informations, voir [Définir des tâches en arrière-plan pour les besoins de votre application](https://docs.microsoft.com/windows/uwp/launch-resume/support-your-app-with-background-tasks).
+Ajoutez le gestionnaire d’annulation à votre application. Pour plus d’informations, voir [Définir des tâches en arrière-plan pour les besoins de votre application](../launch-resume/support-your-app-with-background-tasks.md).
 
 ## <a name="app-count"></a>Nombre d’applications
 
@@ -110,7 +110,7 @@ Les applications doivent avoir un manifeste d’application correctement mis en 
 
 ### <a name="test-details"></a>Détails du test
 
-Examine le manifeste de l’application afin de vérifier que son contenu est correct, comme décrit dans [Exigences relatives aux packages d’applications](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements).
+Examine le manifeste de l’application afin de vérifier que son contenu est correct, comme décrit dans [Exigences relatives aux packages d’applications](../publish/app-package-requirements.md).
 
 -   **Extensions de fichiers et protocoles**
 
@@ -124,11 +124,11 @@ Examine le manifeste de l’application afin de vérifier que son contenu est co
 
 -   **Vérification de la communication entre processus (IPC)**
 
-    Ce test applique la spécification selon laquelle les applications UWP ne communiquent pas en dehors du conteneur d’application avec des composants de bureau. La communication entre processus ne concerne que les applications chargées latéralement. Les applications qui spécifient l’attribut [**ActivatableClassAttribute**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-activatableclassattribute) avec « DesktopApplicationPath » comme nom échouent à ce test.
+    Ce test applique la spécification selon laquelle les applications UWP ne communiquent pas en dehors du conteneur d’application avec des composants de bureau. La communication entre processus ne concerne que les applications chargées latéralement. Les applications qui spécifient l’attribut [**ActivatableClassAttribute**](/uwp/schemas/appxpackage/appxmanifestschema/element-activatableclassattribute) avec « DesktopApplicationPath » comme nom échouent à ce test.
 
 ### <a name="corrective-action"></a>Action corrective
 
-Confrontez le manifeste de l’application aux exigences décrites dans [Exigences relatives aux packages d’applications](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements).
+Confrontez le manifeste de l’application aux exigences décrites dans [Exigences relatives aux packages d’applications](../publish/app-package-requirements.md).
 
 ## <a name="windows-security-features-test"></a>Test des fonctionnalités de sécurité Windows
 
@@ -224,11 +224,11 @@ Ce test est réalisé uniquement sur les applications écrites dans des langages
 
 **Message d’erreur du Kit de certification des applications Windows :** Échec du test SharedSectionsCheck.
 
-Les fichiers binaires avec des sections accessibles en écriture qui sont marquées comme étant partagées constituent faille de sécurité. Ne générez pas d’applications avec des sections accessibles en écriture partagées sauf en cas d’absolue nécessité. Utilisez [**CreateFileMapping**](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-createfilemappinga) ou [**MapViewOfFile**](https://docs.microsoft.com/windows/desktop/api/memoryapi/nf-memoryapi-mapviewoffile) pour créer un objet mémoire partagée correctement sécurisé.
+Les fichiers binaires avec des sections accessibles en écriture qui sont marquées comme étant partagées constituent faille de sécurité. Ne générez pas d’applications avec des sections accessibles en écriture partagées sauf en cas d’absolue nécessité. Utilisez [**CreateFileMapping**](/windows/desktop/api/winbase/nf-winbase-createfilemappinga) ou [**MapViewOfFile**](/windows/desktop/api/memoryapi/nf-memoryapi-mapviewoffile) pour créer un objet mémoire partagée correctement sécurisé.
 
 **Ce que vous devez faire si votre application échoue à ce test**
 
-Supprimez toutes les sections partagées de l’application et créez des objets mémoire partagée en appelant [**CreateFileMapping**](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-createfilemappinga) ou [**MapViewOfFile**](https://docs.microsoft.com/windows/desktop/api/memoryapi/nf-memoryapi-mapviewoffile)avec les attributs de sécurité appropriés, puis regénérez votre application.
+Supprimez toutes les sections partagées de l’application et créez des objets mémoire partagée en appelant [**CreateFileMapping**](/windows/desktop/api/winbase/nf-winbase-createfilemappinga) ou [**MapViewOfFile**](/windows/desktop/api/memoryapi/nf-memoryapi-mapviewoffile)avec les attributs de sécurité appropriés, puis regénérez votre application.
 
 **Remarques**
 
@@ -315,11 +315,11 @@ Les applications doivent utiliser les API pour applications UPW (API Windows Run
 
 Vérifiez que l’application a été compilée en tant que version de publication et non en tant que version de débogage.
 
-> **Remarque**  La version de débogage d’une application échoue à ce test même si l’application utilise uniquement des [API pour applications UPW](https://docs.microsoft.com/uwp/).
+> **Remarque**  La version de débogage d’une application échoue à ce test même si l’application utilise uniquement des [API pour applications UPW](/uwp/).
 
-Passez en revue les messages d’erreur pour identifier l’API utilisée par l’application qui n’est pas une [API pour applications UPW](https://docs.microsoft.com/uwp/).
+Passez en revue les messages d’erreur pour identifier l’API utilisée par l’application qui n’est pas une [API pour applications UPW](/uwp/).
 
-> **Remarque**  Les applications C++ générées dans une configuration de débogage échouent à ce test même si la configuration utilise uniquement des API du SDK Windows pour les applications UPW. Pour plus d’informations, consultez [Alternatives aux API Windows dans les applications UWP](https://msdn.microsoft.com/library/windows/apps/hh464945.aspx).
+> **Remarque**  Les applications C++ générées dans une configuration de débogage échouent à ce test même si la configuration utilise uniquement des API du SDK Windows pour les applications UPW. Pour plus d’informations, consultez [Alternatives aux API Windows dans les applications UWP](/uwp/win32-and-com/win32-and-com-for-uwp-apps).
 
 ## <a name="performance-tests"></a>Tests de performances
 
@@ -543,7 +543,7 @@ Le test est validé si les applications assurent un rendu précis au niveau de f
 
 ### <a name="corrective-action"></a>Action corrective
 
-Assurez-vous que votre application s’affiche correctement au niveau de fonctionnalité Direct3D 9\-1, même si vous vous attendez à ce qu’elle s’exécute à un niveau de fonctionnalité supérieur. Pour plus d’informations, voir [Développement pour différents niveaux de fonctionnalités Direct3D](https://msdn.microsoft.com/library/windows/apps/hh994923.aspx).
+Assurez-vous que votre application s’affiche correctement au niveau de fonctionnalité Direct3D 9\-1, même si vous vous attendez à ce qu’elle s’exécute à un niveau de fonctionnalité supérieur. Pour plus d’informations, voir [Développement pour différents niveaux de fonctionnalités Direct3D](/previous-versions/windows/apps/hh994923(v=win.10)).
 
 ### <a name="direct3d-trim-after-suspend"></a>Découpage Direct3D après suspension
 
@@ -551,15 +551,15 @@ Assurez-vous que votre application s’affiche correctement au niveau de fonctio
 
 ### <a name="background"></a>Arrière-plan
 
-Si l’application n’appelle pas [**Trim**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim) sur son périphérique Direct3D, elle ne libère pas la mémoire allouée pour sa précédente tâche 3D. Cela augmente le risque que les applications soient arrêtées en raison de la sollicitation de la mémoire système.
+Si l’application n’appelle pas [**Trim**](/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim) sur son périphérique Direct3D, elle ne libère pas la mémoire allouée pour sa précédente tâche 3D. Cela augmente le risque que les applications soient arrêtées en raison de la sollicitation de la mémoire système.
 
 ### <a name="test-details"></a>Détails du test
 
-Vérifie la conformité des applications avec les spécifications D3D et s’assure que les applications appellent une nouvelle API [**Trim**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim) lors de leur rappel de suspension.
+Vérifie la conformité des applications avec les spécifications D3D et s’assure que les applications appellent une nouvelle API [**Trim**](/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim) lors de leur rappel de suspension.
 
 ### <a name="corrective-action"></a>Action corrective
 
-L’application doit appeler l’API [**Trim**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim) sur son interface [**IDXGIDevice3**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nn-dxgi1_3-idxgidevice3) chaque fois qu’elle est sur le point d’être suspendue.
+L’application doit appeler l’API [**Trim**](/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim) sur son interface [**IDXGIDevice3**](/windows/desktop/api/dxgi1_3/nn-dxgi1_3-idxgidevice3) chaque fois qu’elle est sur le point d’être suspendue.
 
 ## <a name="app-capabilities-test"></a>Test des fonctionnalités de l’application
 
@@ -668,5 +668,5 @@ Mettez à jour le code JavaScript en arrière-plan pour appeler Close() correcte
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Tests d’application Pont du bureau Windows](windows-desktop-bridge-app-tests.md)
-* [Politiques du Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies)
+* [Politiques du Microsoft Store](/legal/windows/agreements/store-policies)
  

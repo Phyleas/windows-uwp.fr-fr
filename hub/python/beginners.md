@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, windows 10, microsoft, learning python, python sur windows pour les débutants, installer python avec le microsoft store, python avec vs code, pygame sur windows
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 5dee553fedc81f0b482d4b79f4d7d8be3a7bb106
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 076c62658431ba75bdbd7f385ced86f27fb2f7d0
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493494"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174143"
 ---
 # <a name="get-started-using-python-on-windows-for-beginners"></a>Prise en main de Python sur Windows pour les débutants
 
@@ -190,7 +190,7 @@ Nous vous recommandons de consulter les ressources suivantes pour vous familiari
 
 ### <a name="online-courses-for-learning-python"></a>Cours en ligne pour apprendre à utiliser Python
 
-- [Présentation de Python sur Microsoft Learn](https://docs.microsoft.com/learn/modules/intro-to-python/) : essayez la plateforme interactive Microsoft Learn et gagnez des points d’expérience en complétant ce module, qui couvre les notions de base concernant l’écriture de code Python de base, la déclaration de variables et l’utilisation des entrées et sorties de la console. L’environnement de bac à sable interactif permet aux personnes dont l’environnement de développement Python n’est pas encore installé de démarrer facilement.
+- [Présentation de Python sur Microsoft Learn](/learn/modules/intro-to-python/) : essayez la plateforme interactive Microsoft Learn et gagnez des points d’expérience en complétant ce module, qui couvre les notions de base concernant l’écriture de code Python de base, la déclaration de variables et l’utilisation des entrées et sorties de la console. L’environnement de bac à sable interactif permet aux personnes dont l’environnement de développement Python n’est pas encore installé de démarrer facilement.
 
 - [Python sur Pluralsight : 8 cours, 29 heures](https://app.pluralsight.com/paths/skills/python) : le parcours d’apprentissage Python sur Pluralsight offre des cours en ligne couvrant une variété de sujets liés à Python, notamment un outil permettant de mesurer vos compétences et de trouver vos lacunes.
 
@@ -208,4 +208,4 @@ Nous vous recommandons de consulter les ressources suivantes pour vous familiari
 
 - [Débogage de Python](https://code.visualstudio.com/docs/python/debugging) : Le débogage est le processus qui consiste à identifier et à supprimer les erreurs d’un programme informatique. Cet article explique comment initialiser et configurer le débogage de Python avec VS Code, comment définir et valider des points d’arrêt, comment joindre un script local, effectuer un débogage pour différents types d’applications ou sur un ordinateur distant, et donne des conseils de base relatifs à la résolution des problèmes.
 
-- [Effectuer des tests unitaires sur Python](https://code.visualstudio.com/docs/python/unit-testing) : Fournit des explications sur le fonctionnement des tests unitaires, un exemple de procédure pas à pas, l’activation d’une infrastructure de test, la création et l’exécution de vos tests, le débogage des tests et les paramètres de configuration de test. 
+- [Effectuer des tests unitaires sur Python](https://code.visualstudio.com/docs/python/unit-testing) : Fournit des explications sur le fonctionnement des tests unitaires, un exemple de procédure pas à pas, l’activation d’une infrastructure de test, la création et l’exécution de vos tests, le débogage des tests et les paramètres de configuration de test.

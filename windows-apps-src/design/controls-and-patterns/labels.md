@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b642f1d6c3f2a04bacdf293858492ea095af1a8
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 68b062dc4bd70c81b1b8b57808fad8e9c7498d75
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "67319520"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172613"
 ---
 # <a name="labels"></a>Étiquettes
 
@@ -24,9 +24,9 @@ ms.locfileid: "67319520"
 
 Une étiquette correspond au nom ou au titre d’un contrôle ou d’un groupe de contrôles associés.
 
-> **API importantes** : propriété Header, [classe TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
+> **API importantes** : propriété Header, [classe TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
 
-En XAML, de nombreux contrôles disposent d’une propriété Header intégrée que vous utilisez pour afficher l’étiquette. Pour les contrôles qui n’ont pas de propriété Header, ou pour étiqueter des groupes de contrôles, vous pouvez utiliser un élément [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock).
+En XAML, de nombreux contrôles disposent d’une propriété Header intégrée que vous utilisez pour afficher l’étiquette. Pour les contrôles qui n’ont pas de propriété Header, ou pour étiqueter des groupes de contrôles, vous pouvez utiliser un élément [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock).
 
 ![capture d’écran du contrôle d’étiquette standard](images/label-standard.png)
 
@@ -43,20 +43,16 @@ En XAML, de nombreux contrôles disposent d’une propriété Header intégrée 
 
 ## <a name="related-topics"></a>Rubriques connexes
 * [Contrôles de texte](text-controls.md)
-* [TextBox.Header, propriété](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.header)
-* [PasswordBox.Header, propriété](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.header)
-* [ToggleSwitch.Header, propriété](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.header)
-* [DatePicker.Header, propriété](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.datepicker.header)
-* [TimePicker.Header, propriété](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.timepicker.header)
-* [Slider.Header, propriété](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.slider.header)
-* [ComboBox.Header, propriété](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox.header)
-* [RichEditBox.Header, propriété](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.header)
-* [TextBlock, classe](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
+* [TextBox.Header, propriété](/uwp/api/windows.ui.xaml.controls.textbox.header)
+* [PasswordBox.Header, propriété](/uwp/api/windows.ui.xaml.controls.passwordbox.header)
+* [ToggleSwitch.Header, propriété](/uwp/api/windows.ui.xaml.controls.toggleswitch.header)
+* [DatePicker.Header, propriété](/uwp/api/windows.ui.xaml.controls.datepicker.header)
+* [TimePicker.Header, propriété](/uwp/api/windows.ui.xaml.controls.timepicker.header)
+* [Slider.Header, propriété](/uwp/api/windows.ui.xaml.controls.slider.header)
+* [ComboBox.Header, propriété](/uwp/api/windows.ui.xaml.controls.combobox.header)
+* [RichEditBox.Header, propriété](/uwp/api/windows.ui.xaml.controls.richeditbox.header)
+* [TextBlock, classe](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
 
  
 
  
-
-
-
-

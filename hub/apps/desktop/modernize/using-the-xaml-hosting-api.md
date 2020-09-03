@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 36c3aeb7a51c84e92c5bca461aee7efe50740237
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 8427519dd010553eb1f4f00f951dcc747a94b0c0
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80218459"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174183"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-c-win32-app"></a>Utilisation de l’API d’hébergement XAML UWP dans une application Win32 C++
 
@@ -56,11 +56,11 @@ Les exemples suivants montrent comment utiliser l’API d’hébergement XAML UW
 
 ### <a name="wpf-and-windows-forms"></a>WPF et Windows Forms
 
-Le contrôle [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) dans le Kit de ressources Communauté Windows fait référence pour l’utilisation de l’API d’hébergement UWP dans des applications WPF et Windows Forms. Le code source est disponible aux emplacements suivants :
+Le contrôle [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) dans le Kit de ressources Communauté Windows fait référence pour l’utilisation de l’API d’hébergement UWP dans des applications WPF et Windows Forms. Le code source est disponible aux emplacements suivants :
 
-* Pour la version WPF du contrôle, [accédez ici](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Wpf.UI.XamlHost). La version WPF dérive de [System.Windows.Interop.HwndHost](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost).
+* Pour la version WPF du contrôle, [accédez ici](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Wpf.UI.XamlHost). La version WPF dérive de [System.Windows.Interop.HwndHost](/dotnet/api/system.windows.interop.hwndhost).
 
-* Pour la version Windows Forms du contrôle, [cliquez ici](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Forms.UI.XamlHost). La version Windows Forms dérive de [System.Windows.Forms.Control](https://docs.microsoft.com/dotnet/api/system.windows.forms.control).
+* Pour la version Windows Forms du contrôle, [cliquez ici](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Forms.UI.XamlHost). La version Windows Forms dérive de [System.Windows.Forms.Control](/dotnet/api/system.windows.forms.control).
 
 > [!NOTE]
 > Nous vous recommandons vivement d’utiliser les [contrôles .NET d’îlots XAML](xaml-islands.md#wpf-and-windows-forms-applications) disponibles dans le Kit de ressources Communauté Windows au lieu d’utiliser l’API d’hébergement XAML UWP directement dans des applications WPF et Windows Forms. Les exemples de liens WPF et Windows Forms dans cet article sont fournis uniquement à titre d’illustration.
@@ -71,25 +71,25 @@ L’API d’hébergement XAML UWP comprend les principaux types de Windows Runti
 
 |  Type ou interface | Description |
 |--------------------|-------------|
-| [WindowsXamlManager](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager) | Cette classe représente l’infrastructure XAML UWP. Cette classe fournit une méthode statique [InitializeForCurrentThread](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager.initializeforcurrentthread) unique qui initialise l’infrastructure XAML UWP sur le thread actuel de l’application de bureau. |
-| [DesktopWindowXamlSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) | Cette classe représente une instance du contenu XAML UWP que vous hébergez dans votre application de bureau. Le membre le plus important de cette classe est la propriété [Content](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.content). Vous attribuez cette propriété à un objet [Windows.UI.Xaml.UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) que vous souhaitez héberger. Cette classe comprend également d’autres membres pour le routage de la navigation en mode focus au clavier à destination et à partir des îlots XAML. |
+| [WindowsXamlManager](/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager) | Cette classe représente l’infrastructure XAML UWP. Cette classe fournit une méthode statique [InitializeForCurrentThread](/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager.initializeforcurrentthread) unique qui initialise l’infrastructure XAML UWP sur le thread actuel de l’application de bureau. |
+| [DesktopWindowXamlSource](/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) | Cette classe représente une instance du contenu XAML UWP que vous hébergez dans votre application de bureau. Le membre le plus important de cette classe est la propriété [Content](/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.content). Vous attribuez cette propriété à un objet [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement) que vous souhaitez héberger. Cette classe comprend également d’autres membres pour le routage de la navigation en mode focus au clavier à destination et à partir des îlots XAML. |
 | IDesktopWindowXamlSourceNative | Cette interface COM fournit la méthode **AttachToWindow** que vous utilisez pour attacher un îlot XAML dans votre application à un élément d’interface utilisateur parent. Chaque objet **DesktopWindowXamlSource** implémente cette interface. Cette interface est déclarée dans windows.ui.xaml.hosting.desktopwindowxamlsource.h. |
 | IDesktopWindowXamlSourceNative2 | Cette interface COM fournit la méthode **PreTranslateMessage** qui permet à l’infrastructure XAML UWP de traiter correctement certains messages Windows. Chaque objet **DesktopWindowXamlSource** implémente cette interface. Cette interface est déclarée dans windows.ui.xaml.hosting.desktopwindowxamlsource.h. |
 
 Le diagramme suivant illustre la hiérarchie d’objets dans un îlot XAML hébergé dans une application de bureau.
 
-* Au niveau de base se trouve l’élément d’interface utilisateur dans votre application où vous souhaitez héberger l’îlot XAML. Cet élément d’interface utilisateur doit avoir un identificateur de fenêtre (HWND). Les exemples d’éléments d’interface utilisateur dans lesquels vous pouvez héberger un îlot XAML incluent une [fenêtre](https://docs.microsoft.com/windows/desktop/winmsg/about-windows) pour les applications Win32 C++, un [System.Windows.Interop.HwndHost](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost) pour les applications WPF, et un [System.Windows.Interop.HwndHost](https://docs.microsoft.com/dotnet/api/system.windows.forms.control) pour les applications Windows Forms.
+* Au niveau de base se trouve l’élément d’interface utilisateur dans votre application où vous souhaitez héberger l’îlot XAML. Cet élément d’interface utilisateur doit avoir un identificateur de fenêtre (HWND). Les exemples d’éléments d’interface utilisateur dans lesquels vous pouvez héberger un îlot XAML incluent une [fenêtre](/windows/desktop/winmsg/about-windows) pour les applications Win32 C++, un [System.Windows.Interop.HwndHost](/dotnet/api/system.windows.interop.hwndhost) pour les applications WPF, et un [System.Windows.Interop.HwndHost](/dotnet/api/system.windows.forms.control) pour les applications Windows Forms.
 
 * Au niveau suivant se trouve un objet **DesktopWindowXamlSource**. Cet objet fournit l’infrastructure pour l’hébergement de l’îlot XAML. Votre code est chargé de créer cet objet et de l’attacher à l’élément d’interface utilisateur parent.
 
 * Lorsque vous créez un objet **DesktopWindowXamlSource**, celui-ci crée automatiquement une fenêtre enfant native pour héberger votre contrôle UWP. Cette fenêtre enfant native est principalement abstraite de votre code, mais vous pouvez accéder à son identificateur (HWND) si nécessaire.
 
-* Enfin, au niveau supérieur figure le contrôle UWP que vous souhaitez héberger dans votre application de bureau. Il peut s’agir de n’importe quel objet UWP dérivant de [Windows.UI.Xaml.UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement), notamment de tout contrôle UWP fourni par le SDK Windows, ainsi que de contrôles utilisateur personnalisés.
+* Enfin, au niveau supérieur figure le contrôle UWP que vous souhaitez héberger dans votre application de bureau. Il peut s’agir de n’importe quel objet UWP dérivant de [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement), notamment de tout contrôle UWP fourni par le SDK Windows, ainsi que de contrôles utilisateur personnalisés.
 
 ![Architecture de DesktopWindowXamlSource](images/xaml-islands/xaml-hosting-api-rev2.png)
 
 > [!NOTE]
-> Quand vous hébergez XAML Islands dans une application de bureau, plusieurs arborescences de contenu XAML peuvent s’exécuter simultanément sur le même thread. Pour accéder à l’élément racine d’une arborescence de contenu XAML dans un XAML Islands et obtenir des informations connexes sur le contexte de son hébergement, utilisez la classe [XamlRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.xamlroot). Les classes [CoreWindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow), [ApplicationView](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview) et [Window](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window) ne fournissent pas les informations correctes pour les îlots XAML. Pour plus d’informations, consultez [cette section](xaml-islands.md#window-host-context-for-xaml-islands).
+> Quand vous hébergez XAML Islands dans une application de bureau, plusieurs arborescences de contenu XAML peuvent s’exécuter simultanément sur le même thread. Pour accéder à l’élément racine d’une arborescence de contenu XAML dans un XAML Islands et obtenir des informations connexes sur le contexte de son hébergement, utilisez la classe [XamlRoot](/uwp/api/windows.ui.xaml.xamlroot). Les classes [CoreWindow](/uwp/api/windows.ui.core.corewindow), [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview) et [Window](/uwp/api/windows.ui.xaml.window) ne fournissent pas les informations correctes pour les îlots XAML. Pour plus d’informations, consultez [cette section](xaml-islands.md#window-host-context-for-xaml-islands).
 
 ## <a name="troubleshooting"></a>Résolution des problèmes
 
@@ -97,7 +97,7 @@ Le diagramme suivant illustre la hiérarchie d’objets dans un îlot XAML hébe
 
 | Problème | Solution |
 |-------|------------|
-| Votre application reçoit une **COMException** avec le message suivant : « Impossible d’activer DesktopWindowXamlSource. Ce type ne peut pas être utilisé dans une application UWP. » Ou « impossible d’activer WindowsXamlManager. Ce type ne peut pas être utilisé dans une application UWP. » | Cette erreur indique que vous essayez d’utiliser l’API d’hébergement XAML UWP (en particulier, vous essayez d’instancier les types [DesktopWindowXamlSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) ou [WindowsXamlManager](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager)) dans une application UWP. L’API d’hébergement XAML UWP est destinée à être utilisée uniquement dans les applications de bureau non UWP, telles que les applications WPF, Windows Forms et Win32 C++. |
+| Votre application reçoit une **COMException** avec le message suivant : « Impossible d’activer DesktopWindowXamlSource. Ce type ne peut pas être utilisé dans une application UWP. » Ou « impossible d’activer WindowsXamlManager. Ce type ne peut pas être utilisé dans une application UWP. » | Cette erreur indique que vous essayez d’utiliser l’API d’hébergement XAML UWP (en particulier, vous essayez d’instancier les types [DesktopWindowXamlSource](/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) ou [WindowsXamlManager](/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager)) dans une application UWP. L’API d’hébergement XAML UWP est destinée à être utilisée uniquement dans les applications de bureau non UWP, telles que les applications WPF, Windows Forms et Win32 C++. |
 
 ### <a name="error-trying-to-use-the-windowsxamlmanager-or-desktopwindowxamlsource-types"></a>Erreur lors de la tentative d’utilisation des types WindowsXamlManager ou DesktopWindowXamlSource
 
@@ -115,7 +115,7 @@ Le diagramme suivant illustre la hiérarchie d’objets dans un îlot XAML hébe
 
 | Problème | Solution |
 |-------|------------|
-| Votre application reçoit une **COMException** avec le message suivant : « La méthode AttachToWindow a échoué parce que le HWND spécifié descend d’une fenêtre de niveau supérieur différente du HWND qui était précédemment passé à la méthode AttachToWindow sur le même thread. » | Cette erreur indique que votre application a appelé la méthode **IDesktopWindowXamlSourceNative::AttachToWindow** et lui a passé le HWND d’une fenêtre qui descend d’une fenêtre de niveau supérieur différente d’une fenêtre que vous avez spécifiée dans un appel précédent à cette méthode sur le même thread.</p></p>Après que votre application appelle la méthode **AttachToWindow** sur un thread particulier, tous les autres objets [DesktopWindowXamlSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) sur le même thread peuvent être attachés uniquement à des fenêtres qui descendent de la fenêtre de niveau supérieur qui a été passée dans le premier appel à la méthode **AttachToWindow**. Lorsque tous les objets **DesktopWindowXamlSource** sont fermés pour un thread particulier, l’objet **DesktopWindowXamlSource** suivant est libre de s’attacher à nouveau à toute fenêtre.</p></p>Pour résoudre ce problème, fermez tous les objets **DesktopWindowXamlSource** liés à d’autres fenêtres de niveau supérieur sur ce thread, ou créez un thread pour cet objet **DesktopWindowXamlSource**. |
+| Votre application reçoit une **COMException** avec le message suivant : « La méthode AttachToWindow a échoué parce que le HWND spécifié descend d’une fenêtre de niveau supérieur différente du HWND qui était précédemment passé à la méthode AttachToWindow sur le même thread. » | Cette erreur indique que votre application a appelé la méthode **IDesktopWindowXamlSourceNative::AttachToWindow** et lui a passé le HWND d’une fenêtre qui descend d’une fenêtre de niveau supérieur différente d’une fenêtre que vous avez spécifiée dans un appel précédent à cette méthode sur le même thread.</p></p>Après que votre application appelle la méthode **AttachToWindow** sur un thread particulier, tous les autres objets [DesktopWindowXamlSource](/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) sur le même thread peuvent être attachés uniquement à des fenêtres qui descendent de la fenêtre de niveau supérieur qui a été passée dans le premier appel à la méthode **AttachToWindow**. Lorsque tous les objets **DesktopWindowXamlSource** sont fermés pour un thread particulier, l’objet **DesktopWindowXamlSource** suivant est libre de s’attacher à nouveau à toute fenêtre.</p></p>Pour résoudre ce problème, fermez tous les objets **DesktopWindowXamlSource** liés à d’autres fenêtres de niveau supérieur sur ce thread, ou créez un thread pour cet objet **DesktopWindowXamlSource**. |
 
 ## <a name="related-topics"></a>Rubriques connexes
 

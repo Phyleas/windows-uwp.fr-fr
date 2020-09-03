@@ -8,16 +8,16 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 5f3e4eee486edd47901fc2b97a6e10c880cb04b1
-ms.sourcegitcommit: 2571af6bf781a464a4beb5f1aca84ae7c850f8f9
+ms.openlocfilehash: b7f46679e03f367f8521630365362a4eb110332d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82606298"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170563"
 ---
 # <a name="host-a-custom-uwp-control-in-a-wpf-app-using-xaml-islands"></a>Héberger un contrôle UWP personnalisé dans une application WPF avec XAML Islands
 
-Cet article montre comment utiliser le contrôle [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) du Kit de ressources Communauté Windows pour héberger un contrôle UWP personnalisé dans une application WPF qui cible .NET Core 3. Le contrôle personnalisé contient plusieurs contrôles UWP internes du SDK Windows et lie une propriété de l’un des contrôles UWP à une chaîne dans l’application WPF. Cet article montre également comment héberger un contrôle UWP à partir de la [bibliothèque WinUI](https://docs.microsoft.com/uwp/toolkits/winui/).
+Cet article montre comment utiliser le contrôle [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) du Kit de ressources Communauté Windows pour héberger un contrôle UWP personnalisé dans une application WPF qui cible .NET Core 3. Le contrôle personnalisé contient plusieurs contrôles UWP internes du SDK Windows et lie une propriété de l’un des contrôles UWP à une chaîne dans l’application WPF. Cet article montre également comment héberger un contrôle UWP à partir de la [bibliothèque WinUI](/uwp/toolkits/winui/).
 
 Bien que cet article montre comment effectuer cette opération dans une application WPF, le processus est similaire pour une application Windows Forms. Pour une vue d’ensemble de l’hébergement de contrôles UWP dans des applications WPF et Windows Forms, consultez [cet article](xaml-islands.md#wpf-and-windows-forms-applications).
 
@@ -25,7 +25,7 @@ Bien que cet article montre comment effectuer cette opération dans une applicat
 
 Pour héberger un contrôle UWP Personnalisé dans une application WPF (ou Windows Forms), vous avez besoin des composants suivants dans votre solution. Cet article fournit des instructions sur la création de chacun de ces composants.
 
-* **Le projet et le code source de votre application**. L’utilisation du contrôle [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) pour héberger des contrôles UWP personnalisés est uniquement prise en charge dans les applications ciblant .NET Core 3. Ce scénario n’est pas pris en charge dans les applications qui ciblent le .NET Framework.
+* **Le projet et le code source de votre application**. L’utilisation du contrôle [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) pour héberger des contrôles UWP personnalisés est uniquement prise en charge dans les applications ciblant .NET Core 3. Ce scénario n’est pas pris en charge dans les applications qui ciblent le .NET Framework.
 
 * **Le contrôle UWP personnalisé**. Vous aurez besoin du code source du contrôle UWP personnalisé que vous souhaitez héberger pour pouvoir le compiler avec votre application. En général, le contrôle personnalisé est défini dans un projet de bibliothèque de classes UWP que vous référencez dans la même solution que votre projet WPF ou Windows Forms.
 
@@ -45,7 +45,7 @@ Avant de commencer, suivez ces instructions pour créer un projet WPF et le conf
 
 2. Dans Visual Studio 2019, créez un projet **Application WPF (.NET Core)** .
 
-3. Assurez-vous que les [références de package](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files) sont activées :
+3. Assurez-vous que les [références de package](/nuget/consume-packages/package-references-in-project-files) sont activées :
 
     1. Dans Visual Studio, cliquez sur **Outils -> Gestionnaire de package NuGet-> Paramètres du Gestionnaire de package**.
     2. Assurez-vous que **PackageReference** est sélectionné pour **Format de gestion de package par défaut**.
@@ -67,7 +67,7 @@ Avant de commencer, suivez ces instructions pour créer un projet WPF et le conf
 
 ## <a name="define-a-xamlapplication-class-in-a-uwp-app-project"></a>Définir une classe XamlApplication dans un projet d’application UWP
 
-Ensuite, ajoutez un projet d’application UWP à votre solution et modifiez la classe `App` par défaut de ce projet afin de la dériver de la classe [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) fournie par le Windows Community Toolkit. Cette classe prend en charge l’interface [IXamlMetadaraProvider](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Markup.IXamlMetadataProvider), qui permet à votre application de découvrir et de charger des métadonnées pour les contrôles XAML UWP personnalisés dans les assemblys du répertoire actif de votre application au moment de l’exécution. Cette classe initialise également le framework XAML UWP pour le thread actuel. 
+Ensuite, ajoutez un projet d’application UWP à votre solution et modifiez la classe `App` par défaut de ce projet afin de la dériver de la classe [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) fournie par le Windows Community Toolkit. Cette classe prend en charge l’interface [IXamlMetadaraProvider](/uwp/api/Windows.UI.Xaml.Markup.IXamlMetadataProvider), qui permet à votre application de découvrir et de charger des métadonnées pour les contrôles XAML UWP personnalisés dans les assemblys du répertoire actif de votre application au moment de l’exécution. Cette classe initialise également le framework XAML UWP pour le thread actuel. 
 
 1. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le nœud de la solution, puis sélectionnez **Ajouter** -> **Nouveau projet**.
 2. Ajoutez un projet **Application vide (Windows universelle)** à votre solution. Assurez-vous que la version cible et la version minimale sont toutes les deux définies sur **Windows 10, version 1903** ou ultérieure.
@@ -231,14 +231,14 @@ Si vous disposez déjà d’un contrôle personnalisé, vous pouvez l’utiliser
 
 ## <a name="add-a-control-from-the-winui-library-to-the-custom-control"></a>Ajouter au contrôle personnalisé un contrôle de la bibliothèque WinUI
 
-Traditionnellement, les contrôles UWP ont été publiés dans le cadre du système d’exploitation Windows 10 et mis à la disposition des développeurs via le SDK Windows. La [bibliothèque WinUI](https://docs.microsoft.com/uwp/toolkits/winui/) est une autre approche, dans laquelle les versions mises à jour des contrôles UWP du SDK Windows sont distribuées dans un package NuGet qui n’est pas lié aux versions de SDK Windows. Cette bibliothèque comprend également de nouveaux contrôles qui ne font pas partie du SDK Windows et de la plateforme UWP par défaut. Pour plus d’informations, consultez notre [feuille de route de la bibliothèque WinUI](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md).
+Traditionnellement, les contrôles UWP ont été publiés dans le cadre du système d’exploitation Windows 10 et mis à la disposition des développeurs via le SDK Windows. La [bibliothèque WinUI](/uwp/toolkits/winui/) est une autre approche, dans laquelle les versions mises à jour des contrôles UWP du SDK Windows sont distribuées dans un package NuGet qui n’est pas lié aux versions de SDK Windows. Cette bibliothèque comprend également de nouveaux contrôles qui ne font pas partie du SDK Windows et de la plateforme UWP par défaut. Pour plus d’informations, consultez notre [feuille de route de la bibliothèque WinUI](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md).
 
 Cette section montre comment ajouter un contrôle UWP de la bibliothèque WinUI à votre contrôle utilisateur afin de pouvoir héberger ce contrôle dans votre application WPF.
 
 1. Dans le projet d’application UWP, installez la dernière version publiée ou prépubliée du package NuGet [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml).
 
     > [!NOTE]
-    > Si votre application de bureau est empaquetée dans un [package MSIX](https://docs.microsoft.com/windows/msix), vous pouvez utiliser une version prépubliée ou publiée du package NugGet [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml). Si votre application de bureau n’est pas empaquetée à l’aide de MSIX, vous devez installer une version préliminaire du package NuGet [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml).
+    > Si votre application de bureau est empaquetée dans un [package MSIX](/windows/msix), vous pouvez utiliser une version prépubliée ou publiée du package NugGet [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml). Si votre application de bureau n’est pas empaquetée à l’aide de MSIX, vous devez installer une version préliminaire du package NuGet [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml).
 
 2. Dans le fichier App.xaml de ce projet, ajoutez l’élément enfant suivant à l’élément `<xaml:XamlApplication>`.
 
@@ -271,7 +271,7 @@ Cette section montre comment ajouter un contrôle UWP de la bibliothèque WinUI 
     xmlns:winui="using:Microsoft.UI.Xaml.Controls"
     ```
 
-5. Dans le même fichier, ajoutez un élément `<winui:RatingControl />` en tant qu’enfant de l’élément `<StackPanel>`. Cet élément ajoute une instance de la classe [RatingControl](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.ratingcontrol) issue de la bibliothèque WinUI. Après avoir ajouté cet élément, l’élément `<StackPanel>` devrait maintenant ressembler à ce qui suit.
+5. Dans le même fichier, ajoutez un élément `<winui:RatingControl />` en tant qu’enfant de l’élément `<StackPanel>`. Cet élément ajoute une instance de la classe [RatingControl](/uwp/api/microsoft.ui.xaml.controls.ratingcontrol) issue de la bibliothèque WinUI. Après avoir ajouté cet élément, l’élément `<StackPanel>` devrait maintenant ressembler à ce qui suit.
 
     ```xml
     <StackPanel Background="LightCoral">
@@ -286,14 +286,14 @@ Cette section montre comment ajouter un contrôle UWP de la bibliothèque WinUI 
 
 ## <a name="package-the-app"></a>Empaqueter l’application
 
-Vous pouvez empaqueter l’application WPF dans un [package MSIX](https://docs.microsoft.com/windows/msix) pour la déployer. MSIX est une technologie d’empaquetage moderne pour Windows, basée sur une combinaison des technologies d’installation MSI, .appx, App-V et ClickOnce.
+Vous pouvez empaqueter l’application WPF dans un [package MSIX](/windows/msix) pour la déployer. MSIX est une technologie d’empaquetage moderne pour Windows, basée sur une combinaison des technologies d’installation MSI, .appx, App-V et ClickOnce.
 
-Les instructions suivantes montrent comment empaqueter tous les composants de la solution dans un package MSIX en utilisant le [Projet de création de package d’application Windows](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) dans Visual Studio 2019. Ces étapes sont nécessaires uniquement si vous souhaitez empaqueter l’application WPF dans un package MSIX. Notez que ces étapes incluent actuellement des solutions de contournement spécifiques au scénario d’hébergement de contrôles UWP personnalisés.
+Les instructions suivantes montrent comment empaqueter tous les composants de la solution dans un package MSIX en utilisant le [Projet de création de package d’application Windows](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) dans Visual Studio 2019. Ces étapes sont nécessaires uniquement si vous souhaitez empaqueter l’application WPF dans un package MSIX. Notez que ces étapes incluent actuellement des solutions de contournement spécifiques au scénario d’hébergement de contrôles UWP personnalisés.
 
 > [!NOTE]
-> Si vous choisissez de ne pas empaqueter votre application dans un [package MSIX](https://docs.microsoft.com/windows/msix) pour la déployer, [Visual C++ Runtime](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) doit être installé sur les ordinateurs qui exécutent votre application.
+> Si vous choisissez de ne pas empaqueter votre application dans un [package MSIX](/windows/msix) pour la déployer, [Visual C++ Runtime](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) doit être installé sur les ordinateurs qui exécutent votre application.
 
-1. Ajoutez un nouveau [projet d’empaquetage d’application Windows](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) à votre solution. À mesure que vous créez le projet, sélectionnez **Windows 10, version 1903 (10.0; Build 18362)** pour la **Version cible** et la **Version minimale**.
+1. Ajoutez un nouveau [projet d’empaquetage d’application Windows](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) à votre solution. À mesure que vous créez le projet, sélectionnez **Windows 10, version 1903 (10.0; Build 18362)** pour la **Version cible** et la **Version minimale**.
 
 2. Dans le projet d’empaquetage, cliquez avec le bouton droit sur le nœud **Applications**, puis choisissez **Ajouter une référence**. Dans la liste des projets, sélectionnez le projet WPF dans votre solution, puis cliquez sur **OK**.
 
@@ -318,4 +318,4 @@ Les instructions suivantes montrent comment empaqueter tous les composants de la
 
 * [Héberger des contrôles XAML UWP dans des applications de bureau (îlots XAML)](xaml-islands.md)
 * [Exemples de code XAML Islands](https://github.com/microsoft/Xaml-Islands-Samples)
-* [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)
+* [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)

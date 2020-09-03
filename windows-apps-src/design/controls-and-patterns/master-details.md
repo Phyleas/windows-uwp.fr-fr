@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ae8094ac3fbb1de8958b1cc138953d3e1b887cc
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: b414a1177bbfad670e3b623babce068a299a713e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970384"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172593"
 ---
 # <a name="masterdetails-pattern"></a>Modèle Maître/détails
 
@@ -21,7 +21,7 @@ ms.locfileid: "82970384"
 
 Le modèle Maître/détails a un volet principal (généralement avec un [affichage de liste](lists.md)) et un volet des détails pour le contenu. Quand un élément de la liste principale est sélectionné, le volet des détails est mis à jour. Ce modèle est souvent utilisé pour la messagerie et les carnets d’adresses.
 
-> **API importantes** : [classe ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), [classe SplitView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.splitview)
+> **API importantes** : [classe ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView), [classe SplitView](/uwp/api/windows.ui.xaml.controls.splitview)
 
 ![Exemple de modèle Maître/détails](images/HIGSecOne_MasterDetail.png)
 
@@ -91,7 +91,7 @@ Pour implémenter un modèle Maître/Détails pour n’importe quelle taille d�
 ![disposition adaptative Maître/Détails](images/patterns_masterdetail.png)
 
 ### <a name="create-an-adaptive-masterdetails-pattern"></a>Créer un modèle Maître/Détails adaptatif
-Pour créer une disposition adaptative, définissez différents [**VisualStates**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.visualstate) pour votre interface utilisateur et déclarez des points d’arrêt pour les différents états avec des [**AdaptiveTriggers**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.AdaptiveTrigger).
+Pour créer une disposition adaptative, définissez différents [**VisualStates**](/uwp/api/windows.ui.xaml.visualstate) pour votre interface utilisateur et déclarez des points d’arrêt pour les différents états avec des [**AdaptiveTriggers**](/uwp/api/Windows.UI.Xaml.AdaptiveTrigger).
 
 ## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
 
@@ -110,5 +110,5 @@ Les exemples suivants implémentent le modèle Maître/Détails avec des disposi
 - [Listes](lists.md)
 - [Recherche](search.md)
 - [Barre de l’application et barre de commandes](app-bars.md)
-- [Classe ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)
-- [Classe SplitView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.splitview)
+- [Classe ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView)
+- [Classe SplitView](/uwp/api/windows.ui.xaml.controls.splitview)

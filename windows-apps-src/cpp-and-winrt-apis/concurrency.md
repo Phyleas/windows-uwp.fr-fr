@@ -5,19 +5,19 @@ ms.date: 07/08/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, concurrence, asynchrone, async
 ms.localizationpriority: medium
-ms.openlocfilehash: 048d6fe455f7c3e77922ef8b937a9cb1d6cbb21c
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: a10962740d3f723a855914595ea02d0688ff9707
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81266897"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170373"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrt"></a>Opérations concurrentes et asynchrones avec C++/WinRT
 
 > [!IMPORTANT]
 > Cette rubrique présente les concepts liés aux *coroutines* et à `co_await`, que nous vous recommandons d’utiliser à la fois dans vos applications d’interface utilisateur *et* vos autres applications. Dans un souci de simplification, la plupart des exemples de code utilisés dans cette présentation concernent des projets **Application console Windows (C++/WinRT)** . Les exemples de code fournis plus loin dans cette rubrique utilisent des coroutines, mais pour des raisons pratiques, les exemples d’application console continuent aussi d’utiliser l’appel de la fonction de blocage **get** juste avant de quitter, ceci afin que l’application ne quitte pas avant d’avoir terminé d’afficher sa sortie. Vous n’allez pas appeler cette fonction de blocage **get** à partir d’un thread d’interface utilisateur. À la place, vous utiliserez l’instruction `co_await`. Les techniques dont vous aurez besoin dans vos applications d’interface utilisateur sont décrites dans la rubrique [Concurrence et opérations asynchrones plus avancées](concurrency-2.md).
 
-Cette rubrique de présentation décrit quelques-unes des méthodes possibles pour créer et utiliser des objets asynchrones Windows Runtime avec [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt). Après avoir lu cette rubrique, en particulier ce qui a trait aux techniques que vous utiliserez dans vos applications d’interface utilisateur, consultez également [Concurrence et opérations asynchrones plus avancées](concurrency-2.md).
+Cette rubrique de présentation décrit quelques-unes des méthodes possibles pour créer et utiliser des objets asynchrones Windows Runtime avec [C++/WinRT](./intro-to-using-cpp-with-winrt.md). Après avoir lu cette rubrique, en particulier ce qui a trait aux techniques que vous utiliserez dans vos applications d’interface utilisateur, consultez également [Concurrence et opérations asynchrones plus avancées](concurrency-2.md).
 
 ## <a name="asynchronous-operations-and-windows-runtime-async-functions"></a>Opérations asynchrones et fonctions « Async » Windows Runtime
 
@@ -30,7 +30,7 @@ Les API Windows Runtime dont l’exécution est susceptible de prendre plus de 5
 
 Chacun de ces types d’opérations asynchrones est projeté en un type correspondant dans l’espace de noms C++/WinRT **winrt::Windows::Foundation**. C++/WinRT contient également un struct d’adaptateur await interne. Vous ne l’utilisez pas directement, mais avec cette structure, vous pouvez écrire une instruction `co_await` pour attendre de manière coopérative le résultat de n’importe quelle fonction qui retourne l’un de ces types d’opérations asynchrones. Et vous pouvez créer vos propres coroutines qui retournent ces types.
 
-Un exemple de fonction Windows asynchrone est [**SyndicationClient::RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync), qui retourne un objet d’opération asynchrone de type [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;** ](/uwp/api/windows.foundation.iasyncoperationwithprogress-2).
+Un exemple de fonction Windows asynchrone est [**SyndicationClient::RetrieveFeedAsync**](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync), qui retourne un objet d’opération asynchrone de type [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;** ](/uwp/api/windows.foundation.iasyncoperationwithprogress-2).
 
 Examinons des façons, tout d’abord bloquantes, puis non bloquantes, d’utiliser C++/WinRT pour appeler une API similaire. Pour illustrer les notions de base, nous utiliserons un projet **Application console Windows (C++/WinRT)** dans les prochains exemples de code. Les techniques plus appropriées pour une application d’interface utilisateur sont abordées dans [Concurrence et opérations asynchrones plus avancées](concurrency-2.md).
 
@@ -287,7 +287,7 @@ IASyncAction DoWorkAsync(Param const& value)
 
 ## <a name="safely-accessing-the-this-pointer-in-a-class-member-coroutine"></a>Accès sécurisé au pointeur *this* dans une coroutine de membre de classe
 
-Consultez [Références fortes et faibles en C++/WinRT](/windows/uwp/cpp-and-winrt-apis/weak-references#safely-accessing-the-this-pointer-in-a-class-member-coroutine).
+Consultez [Références fortes et faibles en C++/WinRT](./weak-references.md#safely-accessing-the-this-pointer-in-a-class-member-coroutine).
 
 ## <a name="important-apis"></a>API importantes
 * [concurrency::task, classe](/cpp/parallel/concrt/reference/task-class)

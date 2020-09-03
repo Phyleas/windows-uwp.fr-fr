@@ -6,16 +6,16 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, collection
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 4f1b15ec377b030a467dded634abe3fdde717896
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 886086dbc9e39490c87ee289623d9540910cf08d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "68270154"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170403"
 ---
 # <a name="collections-with-cwinrt"></a>Collections avec C++/WinRT
 
-En interne, une collection Windows Runtime comporte un grand nombre d’éléments mobiles compliqués. Mais si vous souhaitez passer un objet de collection à une fonction Windows Runtime ou implémenter vos propres propriétés et types de collection, il existe des fonctions et classes de base [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) pour vous aider. Ces fonctionnalités vous simplifient la tâche et vous font gagner économiser beaucoup de temps et d’efforts.
+En interne, une collection Windows Runtime comporte un grand nombre d’éléments mobiles compliqués. Mais si vous souhaitez passer un objet de collection à une fonction Windows Runtime ou implémenter vos propres propriétés et types de collection, il existe des fonctions et classes de base [C++/WinRT](./intro-to-using-cpp-with-winrt.md) pour vous aider. Ces fonctionnalités vous simplifient la tâche et vous font gagner économiser beaucoup de temps et d’efforts.
 
 [**IVector**](/uwp/api/windows.foundation.collections.ivector_t_) est l’interface Windows Runtime implémentée par n’importe quelle collection d’éléments à accès aléatoire. Si vous deviez implémenter **IVector** vous-même, vous devriez également implémenter [**IIterable**](/uwp/api/windows.foundation.collections.iiterable_t_), [**IVectorView**](/uwp/api/windows.foundation.collections.ivectorview_t_) et [**IIterator**](/uwp/api/windows.foundation.collections.iiterator_t_). Même si vous *avez besoin* d’un type de collection personnalisé, cela représente beaucoup de travail. Mais si vos données sont stockées dans un **std::vector** (un **std::map** ou un **std::unordered_map**) et que vous souhaitez simplement passer ces données à une API Windows Runtime, vous devez éviter si possible une charge de travail aussi importante. Et cela *est* possible car C++/WinRT vous aide à créer des collections efficacement et sans effort.
 

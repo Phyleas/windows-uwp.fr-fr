@@ -8,23 +8,23 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 4175fdf2cbb10912c22e0b0058629819c87dbc63
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: 019121441daa5c40157471d48be19cd29f2b3a77
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83579916"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174173"
 ---
 # <a name="host-uwp-xaml-controls-in-desktop-apps-xaml-islands"></a>Héberger des contrôles XAML UWP dans des applications de bureau (XAML Islands)
 
 À compter de Windows 10 version 1903, vous pouvez héberger des contrôles UWP dans des applications de bureau non conçues pour UWP à l’aide d’une fonctionnalité appelée *XAML Islands* (îles XAML). Vous pouvez ainsi améliorer l’apparence, le comportement et les fonctionnalités de vos applications WPF, Windows Forms et Win32 C++ existantes, mais aussi bénéficier des dernières nouveautés de l’interface utilisateur Windows 10 qui sont uniquement disponibles par le biais de contrôles UWP. Cela signifie que vous pouvez utiliser des fonctionnalités UWP telles que [Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions) et des contrôles prenant en charge le [système Fluent Design](/windows/uwp/design/fluent-design-system/index) dans vos applications WPF, Windows Forms et Win32 C++ existantes.
 
-Vous pouvez héberger n’importe quel contrôle UWP qui dérive de [Windows.UI.Xaml.UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement), notamment :
+Vous pouvez héberger n’importe quel contrôle UWP qui dérive de [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement), notamment :
 
 * Tout contrôle UWP de première partie fourni par le SDK Windows.
 * Tout contrôle UWP personnalisé (par exemple, un contrôle utilisateur qui se compose de plusieurs contrôles UWP fonctionnant ensemble). Vous devez disposer du code source du contrôle personnalisé pour pouvoir le compiler avec votre application.
 
-À la base, les îles XAML sont créées à l’aide de l’*API d’hébergement XAML UWP*. Cette API comprend plusieurs classes Windows Runtime et interfaces COM qui ont été introduites dans le SDK Windows 10 version 1903. Nous fournissons également dans le [Windows Community Toolkit](https://docs.microsoft.com/windows/uwpcommunitytoolkit/) un ensemble de contrôles .NET XAML Island qui utilisent l’API d’hébergement XAML UWP en interne et qui offrent une expérience de développement plus pratique pour les applications WPF et Windows Forms.
+À la base, les îles XAML sont créées à l’aide de l’*API d’hébergement XAML UWP*. Cette API comprend plusieurs classes Windows Runtime et interfaces COM qui ont été introduites dans le SDK Windows 10 version 1903. Nous fournissons également dans le [Windows Community Toolkit](/windows/uwpcommunitytoolkit/) un ensemble de contrôles .NET XAML Island qui utilisent l’API d’hébergement XAML UWP en interne et qui offrent une expérience de développement plus pratique pour les applications WPF et Windows Forms.
 
 La façon dont vous utilisez XAML Islands dépend du type de votre application et des types de contrôles UWP que vous souhaitez héberger.
 
@@ -36,7 +36,7 @@ La façon dont vous utilisez XAML Islands dépend du type de votre application e
 Les conditions requises du runtime pour XAML Islands sont les suivantes :
 
 * Windows 10, version 1903 ou ultérieure.
-* Si votre application n’est pas empaquetée dans un [package MSIX](https://docs.microsoft.com/windows/msix) pour la déployer, [Visual C++ Runtime](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) doit être installé sur l’ordinateur.
+* Si votre application n’est pas empaquetée dans un [package MSIX](/windows/msix) pour la déployer, [Visual C++ Runtime](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) doit être installé sur l’ordinateur.
 
 ## <a name="wpf-and-windows-forms-applications"></a>Applications WPF et Windows Forms
 
@@ -52,19 +52,19 @@ Les contrôles UWP wrappés suivants sont actuellement disponibles dans le Windo
 
 | Contrôler | Système d’exploitation minimal pris en charge | Description |
 |-----------------|-------------------------------|-------------|
-| [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)<br>[InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) | Windows 10 version 1903 | Fournissent une surface et les barres d’outils associées pour l’interaction utilisateur basée sur Windows Ink dans votre application de bureau Windows Forms ou WPF. |
-| [MediaPlayerElement](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement) | Windows 10 version 1903 | Incorpore une vue qui diffuse en streaming du contenu multimédia tel que des vidéos dans votre application de bureau Windows Forms ou WPF. |
-| [MapControl](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mapcontrol) | Windows 10 version 1903 | Permet d’afficher une carte symbolique ou photoréaliste dans votre application de bureau Windows Forms ou WPF. |
+| [InkCanvas](/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)<br>[InkToolbar](/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) | Windows 10 version 1903 | Fournissent une surface et les barres d’outils associées pour l’interaction utilisateur basée sur Windows Ink dans votre application de bureau Windows Forms ou WPF. |
+| [MediaPlayerElement](/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement) | Windows 10 version 1903 | Incorpore une vue qui diffuse en streaming du contenu multimédia tel que des vidéos dans votre application de bureau Windows Forms ou WPF. |
+| [MapControl](/windows/communitytoolkit/controls/wpf-winforms/mapcontrol) | Windows 10 version 1903 | Permet d’afficher une carte symbolique ou photoréaliste dans votre application de bureau Windows Forms ou WPF. |
 
 Pour découvrir pas à pas comment utiliser les contrôles UWP wrappés, consultez [Héberger un contrôle UWP standard dans une application WPF](host-standard-control-with-xaml-islands.md).
 
 ### <a name="host-controls"></a>Contrôles hôtes
 
-Pour les contrôles personnalisés et des scénarios autres que ceux couverts par les contrôles wrappés disponibles, les applications WPF et Windows Forms peuvent également utiliser le contrôle [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) proposé dans le Windows Community Toolkit.
+Pour les contrôles personnalisés et des scénarios autres que ceux couverts par les contrôles wrappés disponibles, les applications WPF et Windows Forms peuvent également utiliser le contrôle [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) proposé dans le Windows Community Toolkit.
 
 | Contrôler | Système d’exploitation minimal pris en charge | Description |
 |-----------------|-------------------------------|-------------|
-| [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) | Windows 10 version 1903 | Peut héberger n’importe quel contrôle UWP dérivé de [Windows.UI.Xaml.UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement), notamment tout contrôle UWP de première partie fourni par le SDK Windows ainsi que des contrôles personnalisés. |
+| [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) | Windows 10 version 1903 | Peut héberger n’importe quel contrôle UWP dérivé de [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement), notamment tout contrôle UWP de première partie fourni par le SDK Windows ainsi que des contrôles personnalisés. |
 
 Pour découvrir pas à pas comment utiliser le contrôle **WindowsXamlHost**, consultez [Héberger un contrôle UWP standard dans une application WPF](host-standard-control-with-xaml-islands.md) et [Héberger un contrôle UWP personnalisé dans une application WPF avec XAML Islands](host-custom-control-with-xaml-islands.md).
 
@@ -94,8 +94,8 @@ Le Windows Community Toolkit fournit également les contrôles .NET suivants pou
 
 | Contrôler | Système d’exploitation minimal pris en charge | Description |
 |-----------------|-------------------------------|-------------|
-| [WebView](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webview) | Windows 10 version 1803 | Utilise le moteur de rendu Microsoft Edge pour afficher le contenu web. |
-| [WebViewCompatible](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webviewcompatible) | Windows 7 | Fournit une version de **WebView** compatible avec d’autres versions de système d’exploitation. Ce contrôle utilise le moteur de rendu Microsoft Edge pour afficher le contenu web sur Windows 10 versions 1803 et ultérieures, et le moteur de rendu Internet Explorer pour afficher le contenu web sur les versions antérieures de Windows 10, Windows 8.x et Windows 7. |
+| [WebView](/windows/communitytoolkit/controls/wpf-winforms/webview) | Windows 10 version 1803 | Utilise le moteur de rendu Microsoft Edge pour afficher le contenu web. |
+| [WebViewCompatible](/windows/communitytoolkit/controls/wpf-winforms/webviewcompatible) | Windows 7 | Fournit une version de **WebView** compatible avec d’autres versions de système d’exploitation. Ce contrôle utilise le moteur de rendu Microsoft Edge pour afficher le contenu web sur Windows 10 versions 1803 et ultérieures, et le moteur de rendu Internet Explorer pour afficher le contenu web sur les versions antérieures de Windows 10, Windows 8.x et Windows 7. |
 
 Pour utiliser ces contrôles, installez l’un des packages NuGet suivants :
 
@@ -106,7 +106,7 @@ Pour utiliser ces contrôles, installez l’un des packages NuGet suivants :
 
 Les contrôles .NET XAML Island ne sont pas pris en charge dans les applications Win32 C++. Ces applications doivent utiliser à la place l’*API d’hébergement XAML UWP* fournie par le SDK Windows 10 (versions 1903 et ultérieures).
 
-L’API d’hébergement XAML UWP se compose de plusieurs classes Windows Runtime et d’interfaces COM que votre application Win32 C++ peut utiliser pour héberger n’importe quel contrôle UWP dérivé de [Windows.UI.Xaml.UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement). Vous pouvez héberger des contrôles UWP dans n’importe quel élément d’interface utilisateur de votre application avec un handle de fenêtre (HWND) associé. Pour plus d’informations sur cette API, consultez les articles suivants.
+L’API d’hébergement XAML UWP se compose de plusieurs classes Windows Runtime et d’interfaces COM que votre application Win32 C++ peut utiliser pour héberger n’importe quel contrôle UWP dérivé de [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement). Vous pouvez héberger des contrôles UWP dans n’importe quel élément d’interface utilisateur de votre application avec un handle de fenêtre (HWND) associé. Pour plus d’informations sur cette API, consultez les articles suivants.
 
 * [Utilisation de l’API d’hébergement XAML UWP dans une application Win32 C++](using-the-xaml-hosting-api.md)
 * [Héberger un contrôle UWP standard dans une application Win32 C++](host-standard-control-with-xaml-islands-cpp.md)
@@ -129,50 +129,50 @@ Les sections suivantes présentent les limitations et solutions de contournement
 
 ### <a name="supported-only-with-workarounds"></a>Prise en charge uniquement avec des solutions de contournement
 
-:heavy_check_mark: L’hébergement de contrôles de la [bibliothèque WinUI 2.x](../../winui/index.md) dans un îlot XAML est pris en charge de manière conditionnelle dans la version actuelle de XAML Islands. Si votre application de bureau utilise un [package MSIX](https://docs.microsoft.com/windows/msix) pour le déploiement, vous pouvez héberger les contrôles WinUI des versions prépubliées et publiées du package NugGet [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml). Si votre application de bureau n’est pas empaquetée avec MSIX, vous pouvez héberger les contrôles WinUI uniquement si vous installez une version prépubliée du package NuGet [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml). La prise en charge de l’hébergement des contrôles de la [bibliothèque WinUI 3.0](../../winui/winui3/index.md) sera disponible dans une version ultérieure.
+:heavy_check_mark: L’hébergement de contrôles de la [bibliothèque WinUI 2.x](../../winui/index.md) dans un îlot XAML est pris en charge de manière conditionnelle dans la version actuelle de XAML Islands. Si votre application de bureau utilise un [package MSIX](/windows/msix) pour le déploiement, vous pouvez héberger les contrôles WinUI des versions prépubliées et publiées du package NugGet [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml). Si votre application de bureau n’est pas empaquetée avec MSIX, vous pouvez héberger les contrôles WinUI uniquement si vous installez une version prépubliée du package NuGet [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml). La prise en charge de l’hébergement des contrôles de la [bibliothèque WinUI 3.0](../../winui/winui3/index.md) sera disponible dans une version ultérieure.
 
-:heavy_check_mark: Pour accéder à l’élément racine d’une arborescence de contenu XAML dans un îlot XAML et obtenir des informations connexes sur le contexte de son hébergement, n’utilisez pas les classes [CoreWindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow), [ApplicationView](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview), et [Window](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window). Utilisez plutôt la classe [XamlRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.xamlroot). Pour plus d’informations, consultez [cette section](#window-host-context-for-xaml-islands).
+:heavy_check_mark: Pour accéder à l’élément racine d’une arborescence de contenu XAML dans un îlot XAML et obtenir des informations connexes sur le contexte de son hébergement, n’utilisez pas les classes [CoreWindow](/uwp/api/windows.ui.core.corewindow), [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview), et [Window](/uwp/api/windows.ui.xaml.window). Utilisez plutôt la classe [XamlRoot](/uwp/api/windows.ui.xaml.xamlroot). Pour plus d’informations, consultez [cette section](#window-host-context-for-xaml-islands).
 
-:heavy_check_mark: Pour prendre en charge le [contrat de partage](/windows/uwp/app-to-app/share-data) d’une application WPF, Windows Forms ou Win32 C++, votre application doit utiliser l’interface [IDataTransferManagerInterop](https://docs.microsoft.com/windows/win32/api/shobjidl_core/nn-shobjidl_core-idatatransfermanagerinterop) pour obtenir l’objet [DataTransferManager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager) afin de lancer l’opération de partage pour une fenêtre spécifique. Pour obtenir un exemple qui illustre l’utilisation de cette interface dans une application WPF, consultez [l’exemple ShareSource](https://github.com/microsoft/Windows-classic-samples/tree/master/Samples/ShareSource).
+:heavy_check_mark: Pour prendre en charge le [contrat de partage](/windows/uwp/app-to-app/share-data) d’une application WPF, Windows Forms ou Win32 C++, votre application doit utiliser l’interface [IDataTransferManagerInterop](/windows/win32/api/shobjidl_core/nn-shobjidl_core-idatatransfermanagerinterop) pour obtenir l’objet [DataTransferManager](/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager) afin de lancer l’opération de partage pour une fenêtre spécifique. Pour obtenir un exemple qui illustre l’utilisation de cette interface dans une application WPF, consultez [l’exemple ShareSource](https://github.com/microsoft/Windows-classic-samples/tree/master/Samples/ShareSource).
 
 :heavy_check_mark: L’utilisation de `x:Bind` avec des contrôles hébergés dans XAML Islands n’est pas prise en charge. Vous devrez déclarer le modèle de données dans une bibliothèque .NET Standard.
 
 ### <a name="not-supported"></a>Non prise en charge
 
-:no_entry_sign : Utilisation du contrôle [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) pour héberger des contrôles UWP tiers C# dans des applications WPF et Windows Forms ciblant le .NET Framework. Ce scénario est uniquement pris en charge dans les applications qui ciblent .NET Core 3.
+:no_entry_sign : Utilisation du contrôle [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) pour héberger des contrôles UWP tiers C# dans des applications WPF et Windows Forms ciblant le .NET Framework. Ce scénario est uniquement pris en charge dans les applications qui ciblent .NET Core 3.
 
 :no_entry_sign : Le contenu XAML UWP dans XAML Islands ne répond pas aux modifications de thème Windows du mode sombre au mode clair, ou vice versa, au moment de l’exécution. Le contenu répond aux modifications de contraste élevé au moment de l’exécution.
 
 :no_entry_sign : ajout d'un contrôle **WebView** à un contrôle utilisateur personnalisé (sur thread, hors thread ou hors processus).
 
-:no_entry_sign : Le contrôle [MediaPlayer](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer) et le contrôle hôte [MediaPlayerElement](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement) ne sont pas pris en charge en mode plein écran.
+:no_entry_sign : Le contrôle [MediaPlayer](/uwp/api/Windows.Media.Playback.MediaPlayer) et le contrôle hôte [MediaPlayerElement](/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement) ne sont pas pris en charge en mode plein écran.
 
-:no_entry_sign : Entrée de texte avec la vue de l’écriture manuscrite. Pour en savoir plus sur cette fonctionnalité, consultez [cet article](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/text-handwriting-view).
+:no_entry_sign : Entrée de texte avec la vue de l’écriture manuscrite. Pour en savoir plus sur cette fonctionnalité, consultez [cet article](/windows/uwp/design/controls-and-patterns/text-handwriting-view).
 
-:no_entry_sign : Contrôles de texte qui utilisent des liens de contenu `@Places` et `@People`. Pour en savoir plus sur cette fonctionnalité, consultez [cet article](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/content-links).
+:no_entry_sign : Contrôles de texte qui utilisent des liens de contenu `@Places` et `@People`. Pour en savoir plus sur cette fonctionnalité, consultez [cet article](/windows/uwp/design/controls-and-patterns/content-links).
 
-:no_entry_sign : Les îles XAML ne prennent pas en charge l’hébergement d’un [ContentDialog](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentDialog) contenant un contrôle qui accepte une entrée de texte, comme [TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox), [RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox) ou [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox). Si vous procédez ainsi, le contrôle d’entrée ne répond pas correctement aux pressions sur les touches. Pour obtenir des fonctionnalités similaires à l’aide d’une île XAML, nous vous recommandons d’héberger un [Popup](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Popup) contenant le contrôle d’entrée.
+:no_entry_sign : Les îles XAML ne prennent pas en charge l’hébergement d’un [ContentDialog](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog) contenant un contrôle qui accepte une entrée de texte, comme [TextBox](/uwp/api/windows.ui.xaml.controls.textbox), [RichEditBox](/uwp/api/windows.ui.xaml.controls.richeditbox) ou [AutoSuggestBox](/uwp/api/windows.ui.xaml.controls.autosuggestbox). Si vous procédez ainsi, le contrôle d’entrée ne répond pas correctement aux pressions sur les touches. Pour obtenir des fonctionnalités similaires à l’aide d’une île XAML, nous vous recommandons d’héberger un [Popup](/uwp/api/Windows.UI.Xaml.Controls.Primitives.Popup) contenant le contrôle d’entrée.
 
-:no_entry_sign : Actuellement, les îles XAML ne prennent pas en charge l’affichage des fichiers SVG dans un contrôle [Windows.UI.Xaml.Controls.Image](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) hébergé ou en utilisant un objet [Windows.UI.Xaml.Media.Imaging.SvgImageSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.svgimagesource). Pour contourner ce problème, convertissez les fichiers image que vous souhaitez afficher au format raster, comme JPG ou PNG.
+:no_entry_sign : Actuellement, les îles XAML ne prennent pas en charge l’affichage des fichiers SVG dans un contrôle [Windows.UI.Xaml.Controls.Image](/uwp/api/Windows.UI.Xaml.Controls.Image) hébergé ou en utilisant un objet [Windows.UI.Xaml.Media.Imaging.SvgImageSource](/uwp/api/windows.ui.xaml.media.imaging.svgimagesource). Pour contourner ce problème, convertissez les fichiers image que vous souhaitez afficher au format raster, comme JPG ou PNG.
 
 ### <a name="window-host-context-for-xaml-islands"></a>Contexte de l’hôte de fenêtrage pour XAML Islands
 
-Quand vous hébergez XAML Islands dans une application de bureau, plusieurs arborescences de contenu XAML peuvent s’exécuter simultanément sur le même thread. Pour accéder à l’élément racine d’une arborescence de contenu XAML dans un XAML Islands et obtenir des informations connexes sur le contexte de son hébergement, utilisez la classe [XamlRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.xamlroot). Les classes [CoreWindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow), [ApplicationView](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview) et [Window](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window) ne fournissent pas les informations correctes pour XAML Islands. Les objets [CoreWindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow) et [Window](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window) existent sur le thread et sont accessibles à votre application, mais ils ne retournent pas de limites ou de visibilité significatives (ils restent toujours invisibles et ont une taille de 1x1). Pour plus d’informations, consultez [Hôtes de fenêtrage](/windows/uwp/design/layout/show-multiple-views#windowing-hosts).
+Quand vous hébergez XAML Islands dans une application de bureau, plusieurs arborescences de contenu XAML peuvent s’exécuter simultanément sur le même thread. Pour accéder à l’élément racine d’une arborescence de contenu XAML dans un XAML Islands et obtenir des informations connexes sur le contexte de son hébergement, utilisez la classe [XamlRoot](/uwp/api/windows.ui.xaml.xamlroot). Les classes [CoreWindow](/uwp/api/windows.ui.core.corewindow), [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview) et [Window](/uwp/api/windows.ui.xaml.window) ne fournissent pas les informations correctes pour XAML Islands. Les objets [CoreWindow](/uwp/api/windows.ui.core.corewindow) et [Window](/uwp/api/windows.ui.xaml.window) existent sur le thread et sont accessibles à votre application, mais ils ne retournent pas de limites ou de visibilité significatives (ils restent toujours invisibles et ont une taille de 1x1). Pour plus d’informations, consultez [Hôtes de fenêtrage](/windows/uwp/design/layout/show-multiple-views#windowing-hosts).
 
-Par exemple, pour obtenir le rectangle englobant de la fenêtre qui contient un contrôle UWP hébergé dans un XAML Island, utilisez la propriété [XamlRoot.Size](https://docs.microsoft.com/uwp/api/windows.ui.xaml.xamlroot.size) du contrôle. Étant donné que chaque contrôle UWP qui peut être hébergé dans un XAML Island est dérivé de [Windows.UI.Xaml.UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement), vous pouvez utiliser la propriété [XamlRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.xamlroot) du contrôle pour accéder à l’objet **XamlRoot**.
+Par exemple, pour obtenir le rectangle englobant de la fenêtre qui contient un contrôle UWP hébergé dans un XAML Island, utilisez la propriété [XamlRoot.Size](/uwp/api/windows.ui.xaml.xamlroot.size) du contrôle. Étant donné que chaque contrôle UWP qui peut être hébergé dans un XAML Island est dérivé de [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement), vous pouvez utiliser la propriété [XamlRoot](/uwp/api/windows.ui.xaml.uielement.xamlroot) du contrôle pour accéder à l’objet **XamlRoot**.
 
 ```csharp
 Size windowSize = myUWPControl.XamlRoot.Size;
 ```
 
-N’utilisez pas la propriété [CoreWindows.Bounds](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.bounds) pour obtenir le rectangle englobant.
+N’utilisez pas la propriété [CoreWindows.Bounds](/uwp/api/windows.ui.core.corewindow.bounds) pour obtenir le rectangle englobant.
 
 ```csharp
 // This will return incorrect information for a UWP control that is hosted in a XAML Island.
 Rect windowSize = CoreWindow.GetForCurrentThread().Bounds;
 ```
 
-Pour avoir la liste des API de fenêtrage courantes à proscrire dans le contexte de XAML Islands et connaître le code de remplacement [XamlRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.xamlroot) recommandé, consultez le tableau dans [cette section](/windows/uwp/design/layout/show-multiple-views#make-code-portable-across-windowing-hosts).
+Pour avoir la liste des API de fenêtrage courantes à proscrire dans le contexte de XAML Islands et connaître le code de remplacement [XamlRoot](/uwp/api/windows.ui.xaml.xamlroot) recommandé, consultez le tableau dans [cette section](/windows/uwp/design/layout/show-multiple-views#make-code-portable-across-windowing-hosts).
 
 Pour obtenir un exemple qui illustre l’utilisation de cette interface dans une application WPF, consultez [l’exemple ShareSource](https://github.com/microsoft/Windows-classic-samples/tree/master/Samples/ShareSource).
 

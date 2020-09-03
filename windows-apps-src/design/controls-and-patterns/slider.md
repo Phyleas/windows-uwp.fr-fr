@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a51bfb262e81668d167a380a9f3572011dbf7e2c
-ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
+ms.openlocfilehash: 484fb64497443708ec80f3d6ad80b40d14371af5
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88943099"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173913"
 ---
 # <a name="sliders"></a>Curseurs
 
@@ -29,9 +29,9 @@ Un curseur est un contrôle qui permet à l’utilisateur d’effectuer une sél
 
 |  |  |
 | - | - |
-| ![Logo WinUI](images/winui-logo-64x64.png) | La bibliothèque d’interface utilisateur Windows version 2.2 ou ultérieure inclut pour ce contrôle un nouveau modèle qui utilise des angles arrondis. Pour plus d’informations, consultez [Rayons des angles](/windows/uwp/design/style/rounded-corner). WinUI est un package NuGet qui contient de nouveaux contrôles et des fonctionnalités d’interface utilisateur pour les applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![Logo WinUI](images/winui-logo-64x64.png) | La bibliothèque d’interface utilisateur Windows version 2.2 ou ultérieure inclut pour ce contrôle un nouveau modèle qui utilise des angles arrondis. Pour plus d’informations, consultez [Rayons des angles](../style/rounded-corner.md). WinUI est un package NuGet qui contient de nouveaux contrôles et des fonctionnalités d’interface utilisateur pour les applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/). |
 
-> **API de plateforme** : [classe Slider](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.slider), [propriété Value](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.value), [événement ValueChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged)
+> **API de plateforme** : [classe Slider](/uwp/api/windows.ui.xaml.controls.slider), [propriété Value](/uwp/api/windows.ui.xaml.controls.primitives.rangebase.value), [événement ValueChanged](/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
@@ -99,7 +99,7 @@ volumeSlider.ValueChanged += Slider_ValueChanged;
 stackPanel1.Children.Add(volumeSlider);
 ```
 
-Vous obtenez et définissez la valeur du curseur à partir de la propriété [Value](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.value). En réponse aux changements de valeur, vous pouvez utiliser la liaison de données pour créer une liaison avec la propriété Value ou gérer l’événement [ValueChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged).
+Vous obtenez et définissez la valeur du curseur à partir de la propriété [Value](/uwp/api/windows.ui.xaml.controls.primitives.rangebase.value). En réponse aux changements de valeur, vous pouvez utiliser la liaison de données pour créer une liaison avec la propriété Value ou gérer l’événement [ValueChanged](/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged).
 
 ```csharp
 private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
@@ -191,4 +191,4 @@ Au moment de concevoir un curseur personnalisé, réfléchissez à la meilleure 
 
 ## <a name="related-topics"></a>Rubriques connexes
 - [Boutons bascule](toggles.md)
-- [Slider, classe](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider)
+- [Slider, classe](/uwp/api/Windows.UI.Xaml.Controls.Slider)

@@ -5,12 +5,12 @@ keywords: nouveautés, mise à jour, fonctionnalités, conseils aux développeur
 ms.date: 05/07/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: cd84892f9d90a69379ac5a7f84dfa188adf1211e
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: d9864c59a8bb8569861e9c239710a09602ffdcba
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74258787"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174353"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-may-2018"></a>Nouveautés apportées dans la documentation du développeur Windows en mai 2018
 
@@ -38,7 +38,7 @@ Des mises à jour visuelles et des modifications mineures ont été apportées a
 * [Alignement, marge, remplissage](../design/layout/alignment-margin-padding.md)
 * [Couleur](../design/style/color.md)
 * [Notions de base sur les commandes](../design/basics/commanding-basics.md)
-* [Système Fluent Design pour créateurs d’applications Windows](../design/fluent-design-system/index.md)
+* [Système Fluent Design pour créateurs d’applications Windows](/windows/apps/fluent-design-system)
 * [Présentation de la conception des applications UWP](../design/basics/design-and-ui-intro.md)
 * [Notions de base sur la navigation](../design/basics/navigation-basics.md)
 * [Techniques de conception réactive](../design/layout/responsive-design.md)
@@ -55,13 +55,13 @@ En outre, nous avons réécrit les pages suivantes avec de toutes nouvelles info
 
 ### <a name="app-installer-files-in-visual-studio"></a>Fichiers du Programme d’installation d’application dans Visual Studio
 
-Il est désormais possible de créer des fichiers Programme d’installation d’application avec Visual Studio 2017, Update 15.7 et versions ultérieures. [Découvrez comment utiliser Visual Studio pour créer un fichier Programme d’installation d’application](../packaging/create-appinstallerfile-vs.md) et activer les mises à jour automatiques pour vos applications. Si vous rencontrez des problèmes, consultez la page [Résoudre les problèmes d’installation avec le fichier du programme d’installation d’application](../packaging/troubleshoot-appinstaller-issues.md) pour afficher les problèmes courants et les solutions afférentes.
+Il est désormais possible de créer des fichiers Programme d’installation d’application avec Visual Studio 2017, Update 15.7 et versions ultérieures. [Découvrez comment utiliser Visual Studio pour créer un fichier Programme d’installation d’application](/windows/msix/app-installer/create-appinstallerfile-vs) et activer les mises à jour automatiques pour vos applications. Si vous rencontrez des problèmes, consultez la page [Résoudre les problèmes d’installation avec le fichier du programme d’installation d’application](/windows/msix/app-installer/troubleshoot-appinstaller-issues) pour afficher les problèmes courants et les solutions afférentes.
 
 ### <a name="edge-webview-control-for-windows-forms-and-wpf-applications"></a>Contrôle Edge WebView pour les applications Windows Forms et WPF
 
-Affichez le contenu web dans votre application de bureau en utilisant le contrôle WebView, auparavant disponible uniquement pour les applications UWP. Ce contrôle utilise le moteur de rendu Microsoft Edge pour incorporer l’affichage de contenus HTML présentant une mise en forme riche à partir d’un serveur web distant, de code généré dynamiquement ou de fichiers de contenu. Le contrôle WebView est disponible dans la dernière version du [Kit de ressources de la Communauté Windows](https://docs.microsoft.com/windows/uwpcommunitytoolkit/).
+Affichez le contenu web dans votre application de bureau en utilisant le contrôle WebView, auparavant disponible uniquement pour les applications UWP. Ce contrôle utilise le moteur de rendu Microsoft Edge pour incorporer l’affichage de contenus HTML présentant une mise en forme riche à partir d’un serveur web distant, de code généré dynamiquement ou de fichiers de contenu. Le contrôle WebView est disponible dans la dernière version du [Kit de ressources de la Communauté Windows](/windows/uwpcommunitytoolkit/).
 
-Recherchez d’autres contrôles de type WebView dans les futures versions du Kit de ressources de la Communauté Windows. Pour plus d’informations, consultez [Héberger des contrôles UWP dans les applications WPF et Windows Forms.](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)
+Recherchez d’autres contrôles de type WebView dans les futures versions du Kit de ressources de la Communauté Windows. Pour plus d’informations, consultez [Héberger des contrôles UWP dans les applications WPF et Windows Forms.](/windows/apps/desktop/modernize/xaml-islands)
 
 ### <a name="gaze-input-and-interactions"></a>Entrées et interactions liées au pointage du regard
 
@@ -91,7 +91,7 @@ Les [transitions de page](../design/motion/page-transitions.md) permettent aux u
 
 ### <a name="project-rome"></a>Projet Rome
 
-L’équipe Projet Rome a repensé les Kits de développement logiciel (SDK) iOS et Android, en ajoutant des fonctionnalités telles que les activités de l’utilisateur et en refactorisant une grande partie du code en vue d’offrir une expérience de programmation cohérente entre les différents SDK. [Les références API et les documents de procédure](https://docs.microsoft.com/windows/project-rome/) seront publiés au cours de la conférence Build 2018 destinée aux développeurs.
+L’équipe Projet Rome a repensé les Kits de développement logiciel (SDK) iOS et Android, en ajoutant des fonctionnalités telles que les activités de l’utilisateur et en refactorisant une grande partie du code en vue d’offrir une expérience de programmation cohérente entre les différents SDK. [Les références API et les documents de procédure](/windows/project-rome/) seront publiés au cours de la conférence Build 2018 destinée aux développeurs.
 
 ### <a name="sets"></a>Jeux
 

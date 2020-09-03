@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fca2695cbb57375964beff0f8a3fd9be603228c
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 5c5784490da53f15f4b7ac79d83b59391031748d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968924"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173563"
 ---
 # <a name="check-boxes"></a>Cases à cocher
 
@@ -29,7 +29,7 @@ Une case à cocher permet de sélectionner ou de désélectionner des éléments
 
 |  |  |
 | - | - |
-| ![Logo WinUI](images/winui-logo-64x64.png) | La bibliothèque d’interface utilisateur Windows version 2.2 ou ultérieure inclut pour ce contrôle un nouveau modèle qui utilise des angles arrondis. Pour plus d’informations, consultez [Rayons des angles](/windows/uwp/design/style/rounded-corner). WinUI est un package NuGet qui contient de nouveaux contrôles et des fonctionnalités d’interface utilisateur pour les applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![Logo WinUI](images/winui-logo-64x64.png) | La bibliothèque d’interface utilisateur Windows version 2.2 ou ultérieure inclut pour ce contrôle un nouveau modèle qui utilise des angles arrondis. Pour plus d’informations, consultez [Rayons des angles](../style/rounded-corner.md). WinUI est un package NuGet qui contient de nouveaux contrôles et des fonctionnalités d’interface utilisateur pour les applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/). |
 
 > **API de plateforme :** [classe CheckBox](/uwp/api/Windows.UI.Xaml.Controls.CheckBox), [événement Checked](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked), [propriété IsChecked](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked)
 
@@ -71,7 +71,7 @@ Les deux contrôles **case à cocher** et **case d’option** permettent à l’
 
 ## <a name="create-a-checkbox"></a>Créer une case à cocher
 
-Pour attribuer une étiquette à la case à cocher, définissez la propriété [Content](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.content). L’étiquette s’affiche en regard de la case à cocher.
+Pour attribuer une étiquette à la case à cocher, définissez la propriété [Content](/uwp/api/windows.ui.xaml.controls.contentcontrol.content). L’étiquette s’affiche en regard de la case à cocher.
 
 Ce code XAML crée une case à cocher unique qui sert à accepter les conditions d’utilisation avant l’envoi d’un formulaire. 
 
@@ -89,14 +89,14 @@ checkBox1.Content = "I agree to the terms of service.";
 
 ### <a name="bind-to-ischecked"></a>Lier à IsChecked
 
-Utilisez la propriété [IsChecked](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked) pour déterminer si la case à cocher est activée ou désactivée. Vous pouvez lier la valeur de la propriété IsChecked à une autre valeur binaire.
-Toutefois, IsChecked étant une valeur booléenne [Nullable](https://docs.microsoft.com/dotnet/api/system.nullable-1), vous devez utiliser un cast ou un convertisseur de valeur pour la lier à une propriété booléenne. Cela dépend du type de liaison réel que vous utilisez ; vous trouverez des exemples ci-dessous pour chaque type possible. 
+Utilisez la propriété [IsChecked](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked) pour déterminer si la case à cocher est activée ou désactivée. Vous pouvez lier la valeur de la propriété IsChecked à une autre valeur binaire.
+Toutefois, IsChecked étant une valeur booléenne [Nullable](/dotnet/api/system.nullable-1), vous devez utiliser un cast ou un convertisseur de valeur pour la lier à une propriété booléenne. Cela dépend du type de liaison réel que vous utilisez ; vous trouverez des exemples ci-dessous pour chaque type possible. 
 
-Dans cet exemple, la propriété **IsChecked** de la case à cocher pour accepter les conditions d’utilisation est liée à la propriété [IsEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.isenabled) du bouton Envoyer. Le bouton Envoyer est activé uniquement si l’utilisateur accepte les conditions d’utilisation.
+Dans cet exemple, la propriété **IsChecked** de la case à cocher pour accepter les conditions d’utilisation est liée à la propriété [IsEnabled](/uwp/api/windows.ui.xaml.controls.control.isenabled) du bouton Envoyer. Le bouton Envoyer est activé uniquement si l’utilisateur accepte les conditions d’utilisation.
 
 #### <a name="using-xbind"></a>Utilisation de x:Bind
 
-> Remarque&nbsp;&nbsp;Nous affichons ici uniquement le code approprié. Pour plus d’informations sur la liaison de données, consultez [Vue d’ensemble de la liaison de données](../../data-binding/data-binding-quickstart.md). Les informations propres à {x:Bind} (telles que la réalisation d’un cas) sont détaillées [ici](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension).
+> Remarque&nbsp;&nbsp;Nous affichons ici uniquement le code approprié. Pour plus d’informations sur la liaison de données, consultez [Vue d’ensemble de la liaison de données](../../data-binding/data-binding-quickstart.md). Les informations propres à {x:Bind} (telles que la réalisation d’un cas) sont détaillées [ici](../../xaml-platform/x-bind-markup-extension.md).
 
 ```xaml
 <StackPanel Grid.Column="2" Margin="40">
@@ -106,7 +106,7 @@ Dans cet exemple, la propriété **IsChecked** de la case à cocher pour accepte
 </StackPanel>
 ```
 
-Si la case à cocher peut également être dans l’état **indéterminé**, nous utilisons la propriété [FallbackValue](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.fallbackvalue) de la liaison pour spécifier la valeur booléenne représentant cet état. Dans ce cas, nous ne souhaitons pas que le bouton Envoyer soit également activé :
+Si la case à cocher peut également être dans l’état **indéterminé**, nous utilisons la propriété [FallbackValue](/uwp/api/windows.ui.xaml.data.binding.fallbackvalue) de la liaison pour spécifier la valeur booléenne représentant cet état. Dans ce cas, nous ne souhaitons pas que le bouton Envoyer soit également activé :
 
 ```xaml
 <Button Content="Submit" 
@@ -157,7 +157,7 @@ public class NullableBooleanToBooleanConverter : IValueConverter
 
 ### <a name="handle-click-and-checked-events"></a>Gérer les événements Click et Checked
 
-Pour effectuer une action lorsque l’état de la case à cocher change, vous pouvez gérer soit l’événement [Click](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click), soit les événements [Checked](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked) et [Unchecked](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.unchecked). 
+Pour effectuer une action lorsque l’état de la case à cocher change, vous pouvez gérer soit l’événement [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click), soit les événements [Checked](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked) et [Unchecked](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.unchecked). 
 
 Les événements **Click** se produisent chaque fois que l’état d’activation change. Si vous gérez l’événement Click, utilisez la propriété **IsChecked** pour déterminer l’état de la case à cocher.
 
@@ -210,7 +210,7 @@ private void toppingsCheckbox_Click(object sender, RoutedEventArgs e)
 
 ### <a name="use-the-indeterminate-state"></a>Utiliser l’état indéterminé
 
-Le contrôle CheckBox hérite de [ToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton) et peut avoir trois états : 
+Le contrôle CheckBox hérite de [ToggleButton](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton) et peut avoir trois états : 
 
 État | Propriété | Value
 ------|----------|------
@@ -218,7 +218,7 @@ checked | IsChecked | **true**
 unchecked | IsChecked | **false** 
 indeterminate | IsChecked | **null** 
 
-Pour que la case à cocher indique l’état indéterminé, vous devez définir la propriété [IsThreeState](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.isthreestate) sur **true**. 
+Pour que la case à cocher indique l’état indéterminé, vous devez définir la propriété [IsThreeState](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.isthreestate) sur **true**. 
 
 Lorsque les options peuvent être regroupées, vous pouvez utiliser une case à cocher indéterminée pour représenter le groupe entier. Utilisez l’état indéterminé de la case à cocher quand un utilisateur sélectionne une partie, et non l’ensemble, des éléments dans le groupe.
 
@@ -331,6 +331,6 @@ private void SetCheckedState()
 
 ## <a name="related-articles"></a>Articles connexes
 
-- [Classe CheckBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 
+- [Classe CheckBox](/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 
 - [Boutons de radio](radio-button.md)
 - [Commutateur bascule](toggles.md)

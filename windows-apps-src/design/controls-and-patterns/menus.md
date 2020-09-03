@@ -13,12 +13,12 @@ design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 884bd2e1eded5e3c0dfa92f1488fe0b8661af18d
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: fab3cf710b50d3c8d643b3036eb1589a0fc113e3
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970354"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172563"
 ---
 # <a name="menus-and-context-menus"></a>Menus et menus contextuels
 
@@ -30,17 +30,17 @@ Les menus et les menus contextuels affichent une liste de commandes ou d’optio
 
 |  |  |
 | - | - |
-| ![Logo WinUI](images/winui-logo-64x64.png) | Le contrôle **MenuBar** est inclus dans la bibliothèque d’interface utilisateur Windows, package NuGet qui contient les nouveaux contrôles et fonctionnalités d’interface utilisateur pour les applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez [Vue d’ensemble de la bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![Logo WinUI](images/winui-logo-64x64.png) | Le contrôle **MenuBar** est inclus dans la bibliothèque d’interface utilisateur Windows, package NuGet qui contient les nouveaux contrôles et fonctionnalités d’interface utilisateur pour les applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez [Vue d’ensemble de la bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/). |
 
 > **API de la bibliothèque d’interface utilisateur Windows** : [MenuBar, classe](/uwp/api/microsoft.ui.xaml.controls.menubar)
 >
-> **API de plateforme :** [classe MenuFlyout](/uwp/api/windows.ui.xaml.controls.menuflyout), [classe MenuBar](/uwp/api/windows.ui.xaml.controls.menubar), [propriété ContextFlyout](/uwp/api/windows.ui.xaml.uielement.contextflyout), [propriété FlyoutBase.AttachedFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase#xaml-attached-properties)
+> **API de plateforme :** [classe MenuFlyout](/uwp/api/windows.ui.xaml.controls.menuflyout), [classe MenuBar](/uwp/api/windows.ui.xaml.controls.menubar), [propriété ContextFlyout](/uwp/api/windows.ui.xaml.uielement.contextflyout), [propriété FlyoutBase.AttachedFlyout](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase#xaml-attached-properties)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
 Les menus et les menus contextuels permettent de gagner de l’espace en organisant les commandes et en les masquant jusqu’à ce que l’utilisateur en ait besoin. Si une commande particulière doit être utilisée fréquemment et que vous disposez de l’espace disponible, envisagez de le placer directement dans son propre élément, plutôt que dans un menu, afin que les utilisateurs n’aient pas à passer par un menu afin d’y accéder.
 
-Les menus et les menus contextuels permettent d’organiser les commandes. Pour afficher du contenu arbitraire, comme une notification ou une demande de confirmation, utilisez une [boîte de dialogue ou un menu volant](dialogs.md).
+Les menus et les menus contextuels permettent d’organiser les commandes. Pour afficher du contenu arbitraire, comme une notification ou une demande de confirmation, utilisez une [boîte de dialogue ou un menu volant](./dialogs-and-flyouts/index.md).
 
 ### <a name="menubar-vs-menuflyout"></a>Différences entre MenuBar et MenuFlyout
 
@@ -72,7 +72,7 @@ Vous pouvez également utiliser un MenuBar conjointement à un CommandBar. Utili
 
 ## <a name="menus-vs-context-menus"></a>Menus par rapport aux menus contextuels
 
-Les menus et les menus contextuels ont une apparence et un contenu similaires. D’ailleurs, vous pouvez utiliser le même contrôle ([MenuFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyout)) pour les créer. La seule différence réside dans la façon dont vous permettez à l’utilisateur d’y accéder.
+Les menus et les menus contextuels ont une apparence et un contenu similaires. D’ailleurs, vous pouvez utiliser le même contrôle ([MenuFlyout](/uwp/api/Windows.UI.Xaml.Controls.MenuFlyout)) pour les créer. La seule différence réside dans la façon dont vous permettez à l’utilisateur d’y accéder.
 
 Quand utiliser un menu ou un menu contextuel ?
 
@@ -92,13 +92,13 @@ Si vous voulez ajouter des commandes (telles que couper, copier et coller) à un
 - Ont un point d’entrée unique (un menu Fichier en haut de l’écran, par exemple) qui est toujours affiché.
 - Sont généralement attachés à un bouton ou un élément de menu parent.
 - Sont appelés en cliquant avec le bouton gauche de la souris (ou par le biais d’une action équivalente, telles que l’appui avec votre doigt).
-- Sont associés à un élément via ses propriétés [Flyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button.flyout) ou [FlyoutBase.AttachedFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase#xaml-attached-properties), ou sont regroupés dans une barre de menus en haut de la fenêtre d’application.
+- Sont associés à un élément via ses propriétés [Flyout](/uwp/api/windows.ui.xaml.controls.button.flyout) ou [FlyoutBase.AttachedFlyout](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase#xaml-attached-properties), ou sont regroupés dans une barre de menus en haut de la fenêtre d’application.
 
 ### <a name="context-menus"></a>Les menus contextuels :
 
 - Sont attachés à un élément unique et affichent les commandes secondaires.
 - Sont appelés en cliquant avec le bouton droit de la souris (ou par le biais d’une action équivalente, telle que l’appui prolongé avec votre doigt).
-- Sont associés à un élément via sa propriété [ContextFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout).
+- Sont associés à un élément via sa propriété [ContextFlyout](/uwp/api/windows.ui.xaml.uielement.contextflyout).
 
 ## <a name="icons"></a>Icônes
 
@@ -132,17 +132,17 @@ Ne vous sentez pas obligé de fournir des icônes pour les commandes qui n’ont
 
 ## <a name="create-a-menu-flyout-or-a-context-menu"></a>Créer un menu volant ou un menu contextuel
 
-Pour créer un menu volant ou un menu contextuel, utilisez la [classe MenuFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyout). Vous définissez le contenu du menu en ajoutant des objets [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyoutitem), [MenuFlyoutSubItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyoutsubitem), [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem), [RadioMenuFlyoutItem](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.radiomenuflyoutitem) et [MenuFlyoutSeparator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyoutseparator) à MenuFlyout.
+Pour créer un menu volant ou un menu contextuel, utilisez la [classe MenuFlyout](/uwp/api/windows.ui.xaml.controls.menuflyout). Vous définissez le contenu du menu en ajoutant des objets [MenuFlyoutItem](/uwp/api/windows.ui.xaml.controls.menuflyoutitem), [MenuFlyoutSubItem](/uwp/api/windows.ui.xaml.controls.menuflyoutsubitem), [ToggleMenuFlyoutItem](/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem), [RadioMenuFlyoutItem](/uwp/api/microsoft.ui.xaml.controls.radiomenuflyoutitem) et [MenuFlyoutSeparator](/uwp/api/windows.ui.xaml.controls.menuflyoutseparator) à MenuFlyout.
 
 Voici le rôle de ces objets :
 
-- [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyoutitem) : effectuer une action immédiate.
-- [MenuFlyoutSubItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyoutsubitem) : contient une liste d’éléments de menu en cascade.
-- [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem) : activer ou désactiver une option.
-- [RadioMenuFlyoutItem](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.radiomenuflyoutitem) : basculer entre des éléments de menu qui s’excluent l’un l’autre.
-- [MenuFlyoutSeparator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyoutseparator) : séparer visuellement des éléments de menu.
+- [MenuFlyoutItem](/uwp/api/windows.ui.xaml.controls.menuflyoutitem) : effectuer une action immédiate.
+- [MenuFlyoutSubItem](/uwp/api/windows.ui.xaml.controls.menuflyoutsubitem) : contient une liste d’éléments de menu en cascade.
+- [ToggleMenuFlyoutItem](/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem) : activer ou désactiver une option.
+- [RadioMenuFlyoutItem](/uwp/api/microsoft.ui.xaml.controls.radiomenuflyoutitem) : basculer entre des éléments de menu qui s’excluent l’un l’autre.
+- [MenuFlyoutSeparator](/uwp/api/windows.ui.xaml.controls.menuflyoutseparator) : séparer visuellement des éléments de menu.
 
-Cet exemple crée un [MenuFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyout) et utilise la propriété [ContextFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout) (qui est disponible pour la plupart des contrôles) pour afficher le MenuFlyout sous la forme d’un menu contextuel.
+Cet exemple crée un [MenuFlyout](/uwp/api/windows.ui.xaml.controls.menuflyout) et utilise la propriété [ContextFlyout](/uwp/api/windows.ui.xaml.uielement.contextflyout) (qui est disponible pour la plupart des contrôles) pour afficher le MenuFlyout sous la forme d’un menu contextuel.
 
 ````xaml
 <Rectangle
@@ -173,7 +173,7 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 }
 ````
 
-L’exemple qui suit est presque identique, mais au lieu d’utiliser la propriété [ContextFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout) pour afficher la [classe MenuFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyout) sous forme de menu contextuel, l’exemple utilise la propriété [FlyoutBase.ShowAttachedFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.showattachedflyout) pour l’afficher sous forme de menu.
+L’exemple qui suit est presque identique, mais au lieu d’utiliser la propriété [ContextFlyout](/uwp/api/windows.ui.xaml.uielement.contextflyout) pour afficher la [classe MenuFlyout](/uwp/api/windows.ui.xaml.controls.menuflyout) sous forme de menu contextuel, l’exemple utilise la propriété [FlyoutBase.ShowAttachedFlyout](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.showattachedflyout) pour l’afficher sous forme de menu.
 
 ````xaml
 <Rectangle
@@ -212,7 +212,7 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 
 ### <a name="light-dismiss"></a>Abandon interactif
 
-Les contrôles d’abandon interactif, tels que les menus, les menus contextuels et les menus volants, interceptent le focus du clavier et du boîtier de commande à l’intérieur de l’interface utilisateur temporaire, jusqu’à le faire disparaître. Pour fournir une indication visuelle de ce comportement, les contrôles de la Xbox permettant de faire disparaître la luminosité dessinent une superposition qui assombrit l’interface utilisateur hors de portée. Ce comportement peut être modifié à l’aide de la propriété [LightDismissOverlayMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.lightdismissoverlaymode). Par défaut, les interfaces utilisateur temporaires dessinent la superposition de l’abandon interactif sur Xbox (**Automatique**), mais pas sur les autres familles d’appareils. Vous pouvez forcer la superposition à être toujours **Activée** ou **Désactivée**.
+Les contrôles d’abandon interactif, tels que les menus, les menus contextuels et les menus volants, interceptent le focus du clavier et du boîtier de commande à l’intérieur de l’interface utilisateur temporaire, jusqu’à le faire disparaître. Pour fournir une indication visuelle de ce comportement, les contrôles de la Xbox permettant de faire disparaître la luminosité dessinent une superposition qui assombrit l’interface utilisateur hors de portée. Ce comportement peut être modifié à l’aide de la propriété [LightDismissOverlayMode](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.lightdismissoverlaymode). Par défaut, les interfaces utilisateur temporaires dessinent la superposition de l’abandon interactif sur Xbox (**Automatique**), mais pas sur les autres familles d’appareils. Vous pouvez forcer la superposition à être toujours **Activée** ou **Désactivée**.
 
 ```xaml
 <MenuFlyout LightDismissOverlayMode="Off" />
@@ -221,7 +221,7 @@ Les contrôles d’abandon interactif, tels que les menus, les menus contextuels
 ## <a name="create-a-menu-bar"></a>Créer une barre de menus
 
 > [!IMPORTANT]
-> MenuBar nécessite Windows 10 version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) ou ultérieure, ou la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
+> MenuBar nécessite Windows 10 version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) ou ultérieure, ou la [bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/).
 
 Vous utilisez les mêmes éléments pour créer les menus d’une barre de menus que pour créer un menu volant. Toutefois, au lieu de regrouper les objets MenuFlyoutItem dans un MenuFlyout, vous les regroupez dans un élément MenuBarItem. Chaque MenuBarItem est ajouté au MenuBar en tant que menu de niveau supérieur.
 
@@ -275,5 +275,5 @@ Vous utilisez les mêmes éléments pour créer les menus d’une barre de menus
 
 ## <a name="related-articles"></a>Articles connexes
 
-- [MenuFlyout, classe](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyout)
-- [MenuBar, classe](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.menubar)
+- [MenuFlyout, classe](/uwp/api/windows.ui.xaml.controls.menuflyout)
+- [MenuBar, classe](/uwp/api/microsoft.ui.xaml.controls.menubar)

@@ -7,12 +7,12 @@ ms.date: 04/19/2019
 ms.topic: article
 keywords: windows 10, uwp, Portail d’appareil
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e091cc7ad62f69b9e76541101555493609b8a06
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: c8615620e09d6f00881c1bb229d98f876a95978c
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75955312"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173613"
 ---
 # <a name="device-portal-core-api-reference"></a>Informations de référence sur les API principales Device Portal
 
@@ -73,7 +73,7 @@ Cette API comporte les codes d’état attendus suivants.
 
 **Demande**
 
-Vous pouvez installer un [ensemble connexe](https://blogs.msdn.microsoft.com/appinstaller/2017/05/12/tooling-to-create-a-related-set/) en utilisant le format de demande suivant.
+Vous pouvez installer un [ensemble connexe](/windows/msix/) en utilisant le format de demande suivant.
 
 | Méthode      | URI de requête |
 | :------     | :------ |
@@ -174,7 +174,7 @@ Cette API comporte les codes d’état attendus suivants.
 
 **Demande**
 
-Vous pouvez inscrire un [ensemble connexe](https://blogs.msdn.microsoft.com/appinstaller/2017/05/12/tooling-to-create-a-related-set/) dans des dossiers isolés en utilisant le format de demande suivant.
+Vous pouvez inscrire un [ensemble connexe](/windows/msix/) dans des dossiers isolés en utilisant le format de demande suivant.
 
 | Méthode      | URI de requête |
 | :------     | :----- |
@@ -1373,7 +1373,7 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 | Paramètre d’URI | Description |
 | :---          | :--- |
 | autoreboot   | (**facultatif**) True ou false. Cette valeur indique si le système redémarre automatiquement suite à un échec ou à un verrouillage. |
-| dumptype   | (**facultatif**) Type de vidage. Pour les valeurs prises en charge, consultez [Énumération CrashDumpType](https://docs.microsoft.com/previous-versions/azure/reference/dn802457(v=azure.100)).|
+| dumptype   | (**facultatif**) Type de vidage. Pour les valeurs prises en charge, consultez [Énumération CrashDumpType](/previous-versions/azure/reference/dn802457(v=azure.100)).|
 | maxdumpcount   | (**facultatif**) Le nombre maximal de vidages à enregistrer. |
 | overwrite   | (**facultatif**) True ou false. Cela indique s’il convient d’écraser ou non les anciens vidages lorsque le seuil du nombre de vidages défini par *maxdumpcount* est atteint. |
 

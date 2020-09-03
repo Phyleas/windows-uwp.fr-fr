@@ -5,12 +5,12 @@ keywords: nouveautés, mise à jour, fonctionnalités, conseils aux développeur
 ms.date: 12/14/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f785ad5d7898f838435e0a05cf8dea5c778e70f3
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 8d58fe1662c5ba13c2952fbd96414ab201f5ba27
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684750"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174383"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-december-2017"></a>Nouveautés apportées dans la documentation du développeur Windows en décembre 2017
 
@@ -22,7 +22,7 @@ La documentation du développeur Windows est constamment mise à jour avec des i
 
 ### <a name="windows-mixed-reality-enthusiasts-guide"></a>Windows Mixed Reality : Guide pour les fans
 
-Particulièrement destiné aux passionnés de technologie immergés dans l'univers de la réalité mixte, le [Guide des fans](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/) répond aux principales questions posées sur Windows Mixed Reality. 
+Particulièrement destiné aux passionnés de technologie immergés dans l'univers de la réalité mixte, le [Guide des fans](/windows/mixed-reality/enthusiast-guide/) répond aux principales questions posées sur Windows Mixed Reality. 
 
 Vous trouverez dans ce guide : 
 - un forum aux questions préalable à l'achat ; 
@@ -38,13 +38,13 @@ Vous trouverez dans ce guide :
 
 Concevez et optimisez vos applications UWP pour offrir des fonctionnalités et une expérience accessible aux utilisateurs avancés, avec la mise à jour des [interactions avec le clavier](../design/input/keyboard-interactions.md). Nous avons mis à jour nos recommandations et nos conseils pour prendre en compte les nouvelles améliorations de ces interactions, apportées dans la mise à jour Fall Creators Update.
 
-Pour étendre les fonctionnalités au clavier de vos applications, consultez [Raccourcis clavier](../design/input/keyboard-accelerators.md) et [Personnaliser les interactions clavier](../design/input/custom-keyboard-interactions.md).
+Pour étendre les fonctionnalités au clavier de vos applications, consultez [Raccourcis clavier](../design/input/keyboard-accelerators.md) et [Personnaliser les interactions clavier](../design/input/focus-navigation.md).
 
 Sur les appareils qui prennent en charge les interactions tactiles, ajoutez des fonctionnalités au clavier en vous inspirant des articles [Répondre à la présence du clavier tactile](../design/input/respond-to-the-presence-of-the-touch-keyboard.md) et [Utiliser l'étendue des entrées pour modifier le clavier tactile](../design/input/use-input-scope-to-change-the-touch-keyboard.md).
 
 ### <a name="microsoft-collaborate"></a>Microsoft Collaborate
 
-Le portail Microsoft Collaborate fournit des outils et des services qui permettent de simplifier la collaboration en ingénierie au sein de l'écosystème Microsoft. Il permet de partager des éléments de travail (bogues, demandes de fonctionnalités, etc.) et de diffuser du contenu (builds, documents, spécifications). [En savoir plus](https://docs.microsoft.com/collaborate/)
+Le portail Microsoft Collaborate fournit des outils et des services qui permettent de simplifier la collaboration en ingénierie au sein de l'écosystème Microsoft. Il permet de partager des éléments de travail (bogues, demandes de fonctionnalités, etc.) et de diffuser du contenu (builds, documents, spécifications). [En savoir plus](/collaborate/)
 
 ![Microsoft Collaborate dans l'Espace partenaires](images/microsoft_collaborate_screenshot.PNG)
 
@@ -52,9 +52,9 @@ Le portail Microsoft Collaborate fournit des outils et des services qui permett
 
 Visual Studio 2017 version 15.5 a mis à jour le modèle **Projet de création de packages d'application Windows** afin qu'il soit beaucoup plus facile d'y inclure un projet UWP. Il n'est plus nécessaire d'utiliser un projet de création de package JavaScript, puis d'ajuster manuellement le manifeste du package.  
 
-Pour obtenir des conseils sur l'utilisation de ce nouveau modèle pour empaqueter votre application de bureau, consultez [Créer un package d'application à l'aide de Visual Studio](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net).
+Pour obtenir des conseils sur l'utilisation de ce nouveau modèle pour empaqueter votre application de bureau, consultez [Créer un package d'application à l'aide de Visual Studio](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net).
 
-Pour obtenir des instructions sur l'ajout d'un projet UWP à votre package, consultez [Étendre votre application de bureau avec des composants UWP modernes](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-extend).
+Pour obtenir des instructions sur l'ajout d'un projet UWP à votre package, consultez [Étendre votre application de bureau avec des composants UWP modernes](/windows/apps/desktop/modernize/desktop-to-uwp-extend).
 
 ### <a name="subscription-add-ons-are-now-available-to-developers-in-the-windows-dev-center-insider-program"></a>Les extensions d'abonnement sont désormais disponibles pour les développeurs dans le programme Insider du Centre de développement Windows
 
@@ -97,4 +97,4 @@ L'exemple de [base de données de commandes client](https://github.com/Microsoft
 
 ### <a name="package-a-net-app-in-visual-studio"></a>Créer un package d'application .NET dans Visual Studio
 
-Porter votre application pour poste de travail vers la plateforme Windows universelle (UWP) est plus simple que jamais. [Regardez la vidéo](https://www.youtube.com/watch?v=fJkbYPyd08w) pour savoir comment empaqueter votre application .NET pour la distribution, puis [consultez cette page](../porting/desktop-to-uwp-packaging-dot-net.md) pour plus d'informations.
+Porter votre application pour poste de travail vers la plateforme Windows universelle (UWP) est plus simple que jamais. [Regardez la vidéo](https://www.youtube.com/watch?v=fJkbYPyd08w) pour savoir comment empaqueter votre application .NET pour la distribution, puis [consultez cette page](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) pour plus d'informations.

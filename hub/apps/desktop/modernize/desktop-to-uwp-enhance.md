@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: fd561096dc53f85186698c981693693a6d3b9e64
-ms.sourcegitcommit: d95ccb47c616bd32c56e491490a6baf30185c8c5
+ms.openlocfilehash: 5a7c77f6c553408d2631fb3e324e67d79318f9b4
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85295536"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170693"
 ---
 # <a name="call-windows-runtime-apis-in-desktop-apps"></a>Appeler des API Windows Runtime dans les applications de bureau
 
@@ -36,7 +36,7 @@ Il existe deux options pour les projets .NET :
 
 #### <a name="to-use-the-nuget-option"></a>Pour utiliser l’option NuGet
 
-1. Assurez-vous que les [références de package](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files) sont activées :
+1. Assurez-vous que les [références de package](/nuget/consume-packages/package-references-in-project-files) sont activées :
 
     1. Dans Visual Studio, cliquez sur **Outils -> Gestionnaire de package NuGet-> Paramètres du Gestionnaire de package**.
     2. Assurez-vous que **PackageReference** est sélectionné pour **Format de gestion de package par défaut**.
@@ -76,7 +76,7 @@ Il existe deux options pour les projets .NET :
 
 ### <a name="modify-a-c-win32-project-to-use-windows-runtime-apis"></a>Modifier un C++ projet Win32 pour utiliser des API d’exécution Windows
 
-Utilisez [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/) pour utiliser des d’exécution Windows. C++/WinRT est une projection de langage C++17 moderne entièrement standard pour les API Windows Runtime (WinRT), implémentée en tant que bibliothèque basée sur un fichier d’en-tête et conçue pour vous fournir un accès de première classe à l’API Windows moderne.
+Utilisez [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) pour utiliser des d’exécution Windows. C++/WinRT est une projection de langage C++17 moderne entièrement standard pour les API Windows Runtime (WinRT), implémentée en tant que bibliothèque basée sur un fichier d’en-tête et conçue pour vous fournir un accès de première classe à l’API Windows moderne.
 
 Pour configurer votre projet pour C++/WinRT :
 
@@ -186,7 +186,7 @@ void UWP::ShowToast()
 }
 ```
 
-Pour en savoir plus sur les notifications, voir [Notifications toast adaptatives et interactives](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts).
+Pour en savoir plus sur les notifications, voir [Notifications toast adaptatives et interactives](/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts).
 
 ## <a name="support-windows-xp-windows-vista-and-windows-78-install-bases"></a>Prise en charge des bases d’installation Windows XP, Windows Vista et Windows 7/8
 
@@ -243,7 +243,7 @@ Le compilateur génère ce code uniquement si cette constante est définie dans 
 
 Vous pouvez compiler un ensemble de fichiers binaires pour l’ensemble de vos utilisateurs Windows, quelle que soit la version de Windows exécutée. Votre application appelle des API d’exécution Windows uniquement si l’utilisateur l’exécute en tant qu’application empaquetée sur Windows 10.
 
-Le moyen le plus simple d’ajouter à votre code des vérifications à l’exécution consiste à installer le package NuGet [Desktop Bridge Helpers](https://www.nuget.org/packages/DesktopBridge.Helpers/), puis à utiliser la méthode ``IsRunningAsUWP()`` pour désactiver tout le code qui appelle les API d’exécution Windows. Pour plus de détails, consultez ce billet de blog : [Pont du bureau : identifier le contexte de l’application](https://blogs.msdn.microsoft.com/appconsult/2016/11/03/desktop-bridge-identify-the-applications-context/).
+Le moyen le plus simple d’ajouter à votre code des vérifications à l’exécution consiste à installer le package NuGet [Desktop Bridge Helpers](https://www.nuget.org/packages/DesktopBridge.Helpers/), puis à utiliser la méthode ``IsRunningAsUWP()`` pour désactiver tout le code qui appelle les API d’exécution Windows. Pour plus de détails, consultez ce billet de blog : [Pont du bureau : identifier le contexte de l’application](/archive/blogs/appconsult/desktop-bridge-identify-the-applications-context).
 
 ## <a name="related-samples"></a>Exemples connexes
 

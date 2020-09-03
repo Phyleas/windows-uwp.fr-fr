@@ -6,12 +6,12 @@ ms.date: 04/09/2019
 ms.topic: article
 keywords: windows 10, uwp, portail d’appareil
 ms.localizationpriority: medium
-ms.openlocfilehash: 2292d97166d34905bb895aa3f53f864510a21f46
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: a4fc5cc5b8bc99e830d3c31604e581f8e57c1007
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74254760"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173633"
 ---
 # <a name="windows-device-portal-overview"></a>Vue d’ensemble de Windows Device Portal
 
@@ -45,8 +45,8 @@ Téléphone | Activer dans le mode de développement | 80| 443 | http://127.0.0.
 
 Pour obtenir des instructions d’installation propres à chaque appareil, consultez :
 
-- [Portail d’appareil pour HoloLens](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-hololens)
-- [Portail d’appareil pour IoT](https://docs.microsoft.com/windows/iot-core/manage-your-device/DevicePortal)
+- [Portail d’appareil pour HoloLens](./device-portal-hololens.md)
+- [Portail d’appareil pour IoT](/windows/iot-core/manage-your-device/DevicePortal)
 - [Portail d’appareil pour appareils mobiles](device-portal-mobile.md)
 - [Portail d’appareil pour Xbox](../xbox-apps/device-portal-xbox.md)
 - [Portail d’appareil pour Bureau](device-portal-desktop.md#set-up-device-portal-on-windows-desktop)
@@ -169,7 +169,7 @@ Pour plus d’informations sur l’utilisation de la journalisation ETW, consult
 
 ### <a name="performance-tracing"></a>Suivi des performances
 
-La page Suivi des performances vous permet d’afficher les suivis de l’[Enregistreur de performances Windows (WPR)](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh448205(v=win.10)) à partir de l’appareil hôte.
+La page Suivi des performances vous permet d’afficher les suivis de l’[Enregistreur de performances Windows (WPR)](/previous-versions/windows/it-pro/windows-8.1-and-8/hh448205(v=win.10)) à partir de l’appareil hôte.
 
 ![Page de suivi des performances du Portail d'appareil](images/device-portal/mob-device-portal-perf-tracing.png)
 
@@ -178,7 +178,7 @@ La page Suivi des performances vous permet d’afficher les suivis de l’[Enreg
 
 Pour arrêter le suivi, cliquez sur **Arrêter**. Restez sur cette page jusqu’à ce que le fichier de suivi (.ETL) soit entièrement téléchargé.
 
-Les fichiers .ETL capturés peuvent être ouverts pour analyse dans [Windows Performance Analyzer](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh448170(v=win.10)).
+Les fichiers .ETL capturés peuvent être ouverts pour analyse dans [Windows Performance Analyzer](/previous-versions/windows/it-pro/windows-8.1-and-8/hh448170(v=win.10)).
 
 ### <a name="device-manager"></a>Gestionnaire de périphériques
 

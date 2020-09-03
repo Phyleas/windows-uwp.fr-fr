@@ -6,12 +6,12 @@ ms.topic: article
 keywords: contrat définissant les politiques du microsoft store
 ms.localizationpriority: high
 ms.assetid: B15D4F19-4E6A-4C27-AD64-F03014D11BA9
-ms.openlocfilehash: d093a7b49a8c5ac00ca927614365d1b548e2f63a
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: ae4ade3cd7bef5434c8f5c9d9c6905c039e7e806
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "77607256"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172843"
 ---
 # <a name="app-quality"></a>Qualité des applications
 
@@ -42,7 +42,7 @@ Choisissez un **titre** instructif et marquant. Un titre de qualité attire plus
 
 - Soyez original. Par exemple, une variation sur le titre d'une autre application est source de confusion. Un titre unique permet à votre application de se distinguer.
 - Choisissez un titre instructif. Par exemple, le titre « Ma première application » ou « Application client » est trop générique.
-- Lisez l'article [Choix du nom de votre application](https://docs.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name#choosing-your-apps-name) pour d'autres suggestions utiles concernant les titres.
+- Lisez l'article [Choix du nom de votre application](./create-your-app-by-reserving-a-name.md#choosing-your-apps-name) pour d'autres suggestions utiles concernant les titres.
 
 La **description** vous permet de décrire les principales fonctionnalités de votre application. Elle doit être claire, précise et attrayante.
 
@@ -51,7 +51,7 @@ La **description** vous permet de décrire les principales fonctionnalités de v
 - Répertoriez les fonctionnalités de l'application dans la section correspondante des métadonnées et résumez les meilleures fonctionnalités dans la description de l'application afin que les clients sachent ce qu'ils obtiendront. Par exemple, ne vous contentez pas d'énumérer les planètes lorsque vous décrivez votre application d'astronomie ; mettez en évidence la fonctionnalité de suivi des satellites spécifique à votre application. Sur des segments du Windows Store déjà encombrés, efforcez-vous d'indiquer à vos clients en quoi votre application se distingue des autres et en quoi elle est meilleure.
 - Dites la vérité à vos clients. Décrivez le contenu réel de votre application. Par exemple, ne décrivez pas des fonctionnalités que votre application n'offre pas pour le moment (à moins d'indiquer qu'elles sont en projet).
 - Si votre application requiert une autre application pour fonctionner, dites-le au début de votre description. Cela permet aux clients de savoir de quels autres logiciels et applications ils ont besoin pour utiliser votre application.
-- Pour obtenir d'autres conseils utiles, consultez l'article [Rédaction d'une description convaincante de l'application](https://docs.microsoft.com/windows/uwp/publish/write-a-great-app-description).
+- Pour obtenir d'autres conseils utiles, consultez l'article [Rédaction d'une description convaincante de l'application](./write-a-great-app-description.md).
 
 Les **captures d’écran** et les **bandes-annonces** sont l’occasion de fournir un aperçu des extraordinaires fonctionnalités de votre application. Utilisez-les de manière pertinente pour souligner la qualité de votre application :
 
@@ -88,4 +88,4 @@ Les clients apprécient l'attention apportée à leurs commentaires comme à leu
 ### <a name="see-also"></a>Voir aussi
 
 - [Politiques et code de conduite du Microsoft Store](store-policies-and-code-of-conduct.md)
-- [Contrat du développeur d’application](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)
+- [Contrat du développeur d’application](/legal/windows/agreements/app-developer-agreement)

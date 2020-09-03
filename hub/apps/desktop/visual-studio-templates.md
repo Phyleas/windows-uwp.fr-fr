@@ -7,12 +7,12 @@ keywords: windows 10, uwp, windows forms, wpf, xaml islands, îles xaml
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
-ms.openlocfilehash: 30f190b43b9156a92cdaf2ad533ededfc79c3a74
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 7e8500aab3c6eeaa1552dc61a95ea7404bf4d5d5
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493981"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174203"
 ---
 # <a name="visual-studio-project-and-item-templates-for-windows-apps"></a>Modèles de projet et d’élément Visual Studio pour les applications Windows
 
@@ -44,28 +44,28 @@ Vous pouvez utiliser ces modèles de projet pour créer des applications C# UW
 
 | Modèle | Description |
 |----------|-------------|
-| Application vide (Windows universel) | Créez une application UWP. Le projet généré comprend une page de base qui est dérivée de la classe [Windows.UI.Xaml.Controls.Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page) que vous pouvez utiliser pour créer votre interface utilisateur. |
-| Application de test unitaire (Windows universel) | Crée un projet de test unitaire en C# pour une application UWP. Pour plus d’informations, consultez [Tests unitaires du code C#](https://docs.microsoft.com/visualstudio/test/unit-testing-visual-csharp-code-in-a-store-app). |
+| Application vide (Windows universel) | Créez une application UWP. Le projet généré comprend une page de base qui est dérivée de la classe [Windows.UI.Xaml.Controls.Page](/uwp/api/windows.ui.xaml.controls.page) que vous pouvez utiliser pour créer votre interface utilisateur. |
+| Application de test unitaire (Windows universel) | Crée un projet de test unitaire en C# pour une application UWP. Pour plus d’informations, consultez [Tests unitaires du code C#](/visualstudio/test/unit-testing-visual-csharp-code-in-a-store-app). |
 
 Vous pouvez utiliser ces modèles de projet pour créer certaines parties d’une application UWP C#.
 
 | Modèle | Description |
 |----------|-------------|
 | Bibliothèque statique (Windows universel) | Crée une bibliothèque de classes managées (DLL) en C# qui peut être utilisée par d’autres applications UWP écrites à l’aide de code managé. |
-| Composant Windows Runtime (Windows universel) | Crée un [composant Windows Runtime](https://docs.microsoft.com/windows/uwp/winrt-components/) écrit en C# qui peut être consommé par n’importe quelle application UWP, quel que soit le langage de programmation dans lequel elle a été écrite. |
-| Package de code facultatif (Windows universel) | Crée un package facultatif avec du code C# exécutable qui peut être chargé par une application. Pour plus d’informations, consultez [Packages facultatifs avec code exécutable](https://docs.microsoft.com/windows/msix/package/optional-packages-with-executable-code).  |
+| Composant Windows Runtime (Windows universel) | Crée un [composant Windows Runtime](/windows/uwp/winrt-components/) écrit en C# qui peut être consommé par n’importe quelle application UWP, quel que soit le langage de programmation dans lequel elle a été écrite. |
+| Package de code facultatif (Windows universel) | Crée un package facultatif avec du code C# exécutable qui peut être chargé par une application. Pour plus d’informations, consultez [Packages facultatifs avec code exécutable](/windows/msix/package/optional-packages-with-executable-code).  |
 
 ### <a name="project-templates-for-c-and-uwp"></a>Modèles de projet pour C++ et UWP
 
 Vous pouvez créer des applications UWP C++ à l’aide de deux technologies :
 
-* La technologie recommandée est [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/). Il s’agit d’une projection du langage C++ qui est implémentée uniquement dans les fichiers d’en-tête, et qui est conçue pour fournir un accès de première classe à l’API WinRT moderne.
-* Vous pouvez également utiliser l’ancien ensemble d’extensions [C++/CX](https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx). C++/CX est toujours pris en charge, toutefois, nous vous recommandons d’utiliser C++/WinRT.
+* La technologie recommandée est [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/). Il s’agit d’une projection du langage C++ qui est implémentée uniquement dans les fichiers d’en-tête, et qui est conçue pour fournir un accès de première classe à l’API WinRT moderne.
+* Vous pouvez également utiliser l’ancien ensemble d’extensions [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx). C++/CX est toujours pris en charge, toutefois, nous vous recommandons d’utiliser C++/WinRT.
 
 Pour accéder aux modèles de projet C++ UWP lorsque vous créez un projet dans Visual Studio, filtrez le langage sur **C++** , la plateforme sur **Windows** et le type de projet sur **UWP**. 
 
 > [!NOTE]
-> Par défaut, la charge de travail **Développement pour la plateforme Windows universelle** de Visual Studio permet uniquement l’accès aux modèles de projet C++/CX. Pour accéder aux modèles de projet C++/WinRT, vous devez installer le package [VSIX C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+> Par défaut, la charge de travail **Développement pour la plateforme Windows universelle** de Visual Studio permet uniquement l’accès aux modèles de projet C++/CX. Pour accéder aux modèles de projet C++/WinRT, vous devez installer le package [VSIX C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 ![Modèles de projet C++ UWP](images/uwp-projects-cpp.png)
 
@@ -73,22 +73,22 @@ Vous pouvez utiliser ces modèles de projet pour créer des applications C++ U
 
 | Modèle | Description |
 |----------|-------------|
-| Application vide (C++/WinRT) | Crée une application UWP C++/WinRT avec une interface utilisateur XAML. Le projet généré comprend une page de base qui est dérivée de la classe [Windows.UI.Xaml.Controls.Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page) que vous pouvez utiliser pour créer votre interface utilisateur. |
-| Application Core (C++/WinRT) | Crée une application UWP C++/WinRT qui utilise [CoreApplication](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.CoreApplication) pour s’intégrer à divers frameworks d’interface utilisateur plutôt qu’une interface utilisateur XAML. Pour obtenir une procédure pas à pas sur l’utilisation de ce modèle de projet en vue de créer un jeu simple qui utilise DirectX, consultez [Créer un jeu UWP simple avec DirectX](https://docs.microsoft.com/windows/uwp/gaming/tutorial--create-your-first-uwp-directx-game). |
-| Application vide (Windows universel - C++/CX) | Crée une application UWP C++/WinRT avec une interface utilisateur XAML. Le projet généré comprend une page de base qui est dérivée de la classe [Windows.UI.Xaml.Controls.Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page) de la bibliothèque WinUI et que vous pouvez utiliser pour créer votre interface utilisateur. |
-| Application DirectX 11 et XAML (Windows universel - C++/CX) | Crée une application UWP qui utilise DirectX 11 et un **SwapChainPanel** pour vous permettre d’utiliser des contrôles d’interface utilisateur XAML. Pour plus d’informations, consultez [Modèles de projet de jeu DirectX](https://docs.microsoft.com/windows/uwp/gaming/user-interface). |
-| Application DirectX 11 (Windows universel - C++/CX) | Crée une application UWP qui utilise DirectX 11. Pour plus d’informations, consultez [Modèles de projet de jeu DirectX](https://docs.microsoft.com/windows/uwp/gaming/user-interface). |
-| Application DirectX 12 (Windows universel - C++/CX) | Crée une application UWP qui utilise DirectX 12. Pour plus d’informations, consultez [Modèles de projet de jeu DirectX](https://docs.microsoft.com/windows/uwp/gaming/user-interface). |
-| Application de test unitaire (Windows universel - C++/CX) | Crée un projet de test unitaire en C++/CX pour une application UWP. Pour plus d’informations, consultez [Tester une DLL UWP C++](https://docs.microsoft.com/visualstudio/test/unit-testing-a-visual-cpp-dll-for-store-apps). |
+| Application vide (C++/WinRT) | Crée une application UWP C++/WinRT avec une interface utilisateur XAML. Le projet généré comprend une page de base qui est dérivée de la classe [Windows.UI.Xaml.Controls.Page](/uwp/api/windows.ui.xaml.controls.page) que vous pouvez utiliser pour créer votre interface utilisateur. |
+| Application Core (C++/WinRT) | Crée une application UWP C++/WinRT qui utilise [CoreApplication](/uwp/api/Windows.ApplicationModel.Core.CoreApplication) pour s’intégrer à divers frameworks d’interface utilisateur plutôt qu’une interface utilisateur XAML. Pour obtenir une procédure pas à pas sur l’utilisation de ce modèle de projet en vue de créer un jeu simple qui utilise DirectX, consultez [Créer un jeu UWP simple avec DirectX](/windows/uwp/gaming/tutorial--create-your-first-uwp-directx-game). |
+| Application vide (Windows universel - C++/CX) | Crée une application UWP C++/WinRT avec une interface utilisateur XAML. Le projet généré comprend une page de base qui est dérivée de la classe [Windows.UI.Xaml.Controls.Page](/uwp/api/windows.ui.xaml.controls.page) de la bibliothèque WinUI et que vous pouvez utiliser pour créer votre interface utilisateur. |
+| Application DirectX 11 et XAML (Windows universel - C++/CX) | Crée une application UWP qui utilise DirectX 11 et un **SwapChainPanel** pour vous permettre d’utiliser des contrôles d’interface utilisateur XAML. Pour plus d’informations, consultez [Modèles de projet de jeu DirectX](/windows/uwp/gaming/user-interface). |
+| Application DirectX 11 (Windows universel - C++/CX) | Crée une application UWP qui utilise DirectX 11. Pour plus d’informations, consultez [Modèles de projet de jeu DirectX](/windows/uwp/gaming/user-interface). |
+| Application DirectX 12 (Windows universel - C++/CX) | Crée une application UWP qui utilise DirectX 12. Pour plus d’informations, consultez [Modèles de projet de jeu DirectX](/windows/uwp/gaming/user-interface). |
+| Application de test unitaire (Windows universel - C++/CX) | Crée un projet de test unitaire en C++/CX pour une application UWP. Pour plus d’informations, consultez [Tester une DLL UWP C++](/visualstudio/test/unit-testing-a-visual-cpp-dll-for-store-apps). |
 
 Vous pouvez utiliser ces modèles de projet pour créer certaines parties d’une application UWP C++.
 
 | Modèle | Description |
 |----------|-------------|
-| Composant Windows Runtime (C++/WinRT) | Crée un [composant Windows Runtime](https://docs.microsoft.com/windows/uwp/winrt-components/) écrit en C++/WinRT qui peut être consommé par n’importe quelle application UWP, quel que soit le langage de programmation dans lequel elle a été écrite. |
-| Composant Windows Runtime (Windows universel) | Crée un [composant Windows Runtime](https://docs.microsoft.com/windows/uwp/winrt-components/) écrit en C++/CX qui peut être consommé par n’importe quelle application UWP, quel que soit le langage de programmation dans lequel elle a été écrite. |
-| DLL (Windows universel) | Projet de création d’une bibliothèque de liens dynamiques (DLL) en C++/CX pouvant être utilisée dans une application UWP. Pour plus d’informations, consultez [DLL (C++/CX)](https://docs.microsoft.com/cpp/cppcx/dlls-c-cx). |
-| Bibliothèque statique (Universal Windows) | Projet de création d’une bibliothèque statique (LIB) en C++/CX pouvant être utilisée dans une application UWP. Pour plus d’informations, consultez [Bibliothèques statiques (C++/CX)](https://docs.microsoft.com/cpp/cppcx/static-libraries-c-cx). |
+| Composant Windows Runtime (C++/WinRT) | Crée un [composant Windows Runtime](/windows/uwp/winrt-components/) écrit en C++/WinRT qui peut être consommé par n’importe quelle application UWP, quel que soit le langage de programmation dans lequel elle a été écrite. |
+| Composant Windows Runtime (Windows universel) | Crée un [composant Windows Runtime](/windows/uwp/winrt-components/) écrit en C++/CX qui peut être consommé par n’importe quelle application UWP, quel que soit le langage de programmation dans lequel elle a été écrite. |
+| DLL (Windows universel) | Projet de création d’une bibliothèque de liens dynamiques (DLL) en C++/CX pouvant être utilisée dans une application UWP. Pour plus d’informations, consultez [DLL (C++/CX)](/cpp/cppcx/dlls-c-cx). |
+| Bibliothèque statique (Universal Windows) | Projet de création d’une bibliothèque statique (LIB) en C++/CX pouvant être utilisée dans une application UWP. Pour plus d’informations, consultez [Bibliothèques statiques (C++/CX)](/cpp/cppcx/static-libraries-c-cx). |
 
 ## <a name="cwin32-templates"></a>Modèles C++/Win32
 
@@ -102,9 +102,9 @@ Si vous devez accéder aux modèles de projet C++ pour la création d’applica
 
 | Modèle | Description |
 |----------|----------|
-| Application de bureau Windows | Crée une application de bureau Windows classique à l’aide du langage C++. Pour plus d'informations, consultez [Démonstration : Créer une application de bureau Windows traditionnelle](https://docs.microsoft.com/cpp/windows/walkthrough-creating-windows-desktop-applications-cpp). |
-| Assistant Windows Desktop | Fournit un Assistant pas à pas que vous pouvez utiliser pour créer l’un des types de projets suivants : une application de bureau Windows classique, une application console, une bibliothèque de liens dynamiques (DLL) ou une bibliothèque statique. Pour plus d’informations, consultez [Assistant Windows Desktop](https://docs.microsoft.com/cpp/windows/windows-desktop-wizard) et [Démonstration : Créer une application de bureau Windows traditionnelle](https://docs.microsoft.com/cpp/windows/walkthrough-creating-windows-desktop-applications-cpp).         |
-| Projet de création de package d’application Windows | Crée un projet que vous pouvez utiliser pour créer une application de bureau dans un [package MSIX](https://docs.microsoft.com/windows/msix/overview). Vous bénéficiez ainsi d’une expérience de déploiement moderne, de la possibilité de l’intégrer aux fonctionnalités de Windows 10 par le biais d’extensions de package et bien plus encore. Pour plus d’informations, consultez [Projet de création de packages d’applications Windows](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net).  |
+| Application de bureau Windows | Crée une application de bureau Windows classique à l’aide du langage C++. Pour plus d'informations, consultez [Démonstration : Créer une application de bureau Windows traditionnelle](/cpp/windows/walkthrough-creating-windows-desktop-applications-cpp). |
+| Assistant Windows Desktop | Fournit un Assistant pas à pas que vous pouvez utiliser pour créer l’un des types de projets suivants : une application de bureau Windows classique, une application console, une bibliothèque de liens dynamiques (DLL) ou une bibliothèque statique. Pour plus d’informations, consultez [Assistant Windows Desktop](/cpp/windows/windows-desktop-wizard) et [Démonstration : Créer une application de bureau Windows traditionnelle](/cpp/windows/walkthrough-creating-windows-desktop-applications-cpp).         |
+| Projet de création de package d’application Windows | Crée un projet que vous pouvez utiliser pour créer une application de bureau dans un [package MSIX](/windows/msix/overview). Vous bénéficiez ainsi d’une expérience de déploiement moderne, de la possibilité de l’intégrer aux fonctionnalités de Windows 10 par le biais d’extensions de package et bien plus encore. Pour plus d’informations, consultez [Projet de création de packages d’applications Windows](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net).  |
 
 ### <a name="project-templates-for-console-apps"></a>Modèles de projet pour applications console
 
@@ -114,8 +114,8 @@ Si vous devez accéder aux modèles de projet C++ pour les applications console
 
 | Modèle | Description |
 |----------|----------|
-| Application console Windows (C++/WinRT) | Crée une application console [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/) sans interface utilisateur. Pour plus d’informations, consultez [Guide de démarrage rapide C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/get-started#a-cwinrt-quick-start). Ce modèle de projet nécessite le package [VSIX C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).  |
-| Application console | Crée une application console sans interface utilisateur. Pour plus d'informations, consultez [Démonstration : Création d’un programme C++ standard](https://docs.microsoft.com/cpp/windows/walkthrough-creating-a-standard-cpp-program-cpp). |
+| Application console Windows (C++/WinRT) | Crée une application console [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) sans interface utilisateur. Pour plus d’informations, consultez [Guide de démarrage rapide C++/WinRT](/windows/uwp/cpp-and-winrt-apis/get-started#a-cwinrt-quick-start). Ce modèle de projet nécessite le package [VSIX C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).  |
+| Application console | Crée une application console sans interface utilisateur. Pour plus d'informations, consultez [Démonstration : Création d’un programme C++ standard](/cpp/windows/walkthrough-creating-a-standard-cpp-program-cpp). |
 | Projet vide | Projet vide pour créer une application, une bibliothèque ou une DLL. Vous devez ajouter le code ou les ressources nécessaires. |
 
 ### <a name="project-templates-for-libraries"></a>Modèles de projet pour bibliothèques
@@ -126,12 +126,12 @@ Si vous devez accéder aux modèles de projet C++ pour les bibliothèques, filt
 
 | Modèle | Description |
 |----------|----------|
-| Bibliothèque de liens dynamiques (DLL) | Projet pour la création d’une bibliothèque de liens dynamiques (DLL). Pour plus d'informations, consultez [Démonstration : Création et utilisation d’une bibliothèque de liens dynamiques](https://docs.microsoft.com/cpp/build/walkthrough-creating-and-using-a-dynamic-link-library-cpp). |
-| Bibliothèque statique | Projet pour la création d’une bibliothèque statique (LIB). Pour plus d'informations, consultez [Démonstration : Créer et utiliser une bibliothèque statique](https://docs.microsoft.com/cpp/build/walkthrough-creating-and-using-a-static-library-cpp). |
+| Bibliothèque de liens dynamiques (DLL) | Projet pour la création d’une bibliothèque de liens dynamiques (DLL). Pour plus d'informations, consultez [Démonstration : Création et utilisation d’une bibliothèque de liens dynamiques](/cpp/build/walkthrough-creating-and-using-a-dynamic-link-library-cpp). |
+| Bibliothèque statique | Projet pour la création d’une bibliothèque statique (LIB). Pour plus d'informations, consultez [Démonstration : Créer et utiliser une bibliothèque statique](/cpp/build/walkthrough-creating-and-using-a-static-library-cpp). |
 
 ### <a name="item-templates-for-native-c-and-win32"></a>Modèles d’élément pour le C++ natif et Win32
 
-Les modèles de projet C++ incluent de nombreux modèles d’élément que vous pouvez utiliser pour effectuer des tâches telles que l’ajout de fichiers et de ressources à votre projet. Pour obtenir une liste complète, consultez [Utilisation de modèles Ajouter un nouvel élément de Visual C++](https://docs.microsoft.com/cpp/build/reference/using-visual-cpp-add-new-item-templates).
+Les modèles de projet C++ incluent de nombreux modèles d’élément que vous pouvez utiliser pour effectuer des tâches telles que l’ajout de fichiers et de ressources à votre projet. Pour obtenir une liste complète, consultez [Utilisation de modèles Ajouter un nouvel élément de Visual C++](/cpp/build/reference/using-visual-cpp-add-new-item-templates).
 
 ## <a name="net-templates"></a>Modèles .NET
 
@@ -145,8 +145,8 @@ Vous pouvez utiliser ces modèles de projet pour créer des applications à l’
 
 | Modèle | Description |
 |----------|----------|
-| Application WPF (.NET Core) | Crée une application [WPF](https://docs.microsoft.com/dotnet/framework/wpf/) qui cible [.NET Core](https://docs.microsoft.com/dotnet/core/). Pour obtenir une procédure pas à pas de ce modèle de projet, consultez [Créer une application WPF](https://docs.microsoft.com/visualstudio/get-started/csharp/tutorial-wpf). |
-| Application WPF (.NET Framework) | Crée une application [WPF](https://docs.microsoft.com/dotnet/framework/wpf/) qui cible [.NET Framework](https://docs.microsoft.com/dotnet/framework/). Pour obtenir une procédure pas à pas de ce modèle de projet, consultez [Tutoriel : Créer votre première application WPF](https://docs.microsoft.com/dotnet/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application). |
-| Application Windows Forms (.NET Core) | Crée une application [Windows Forms](https://docs.microsoft.com/dotnet/framework/winforms/) qui cible [.NET Core](https://docs.microsoft.com/dotnet/core/).  |
-| Application Windows Forms (.NET Framework) | Crée une application [Windows Forms](https://docs.microsoft.com/dotnet/framework/winforms/) qui cible [.NET Framework](https://docs.microsoft.com/dotnet/framework/). Pour obtenir une procédure pas à pas de ce modèle de projet, consultez [Créer une application Windows Forms dans Visual Studio avec C#](https://docs.microsoft.com/visualstudio/ide/create-csharp-winform-visual-studio). |
-| Projet de création de package d’application Windows | Crée un projet que vous pouvez utiliser pour créer une application WPF ou Windows Forms dans un [package MSIX](https://docs.microsoft.com/windows/msix/overview). Vous bénéficiez ainsi d’une expérience de déploiement moderne, de la possibilité de l’intégrer aux fonctionnalités de Windows 10 par le biais d’extensions de package et bien plus encore. Pour plus d’informations, consultez [Projet de création de packages d’applications Windows](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net). |
+| Application WPF (.NET Core) | Crée une application [WPF](/dotnet/framework/wpf/) qui cible [.NET Core](/dotnet/core/). Pour obtenir une procédure pas à pas de ce modèle de projet, consultez [Créer une application WPF](/visualstudio/get-started/csharp/tutorial-wpf). |
+| Application WPF (.NET Framework) | Crée une application [WPF](/dotnet/framework/wpf/) qui cible [.NET Framework](/dotnet/framework/). Pour obtenir une procédure pas à pas de ce modèle de projet, consultez [Tutoriel : Créer votre première application WPF](/dotnet/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application). |
+| Application Windows Forms (.NET Core) | Crée une application [Windows Forms](/dotnet/framework/winforms/) qui cible [.NET Core](/dotnet/core/).  |
+| Application Windows Forms (.NET Framework) | Crée une application [Windows Forms](/dotnet/framework/winforms/) qui cible [.NET Framework](/dotnet/framework/). Pour obtenir une procédure pas à pas de ce modèle de projet, consultez [Créer une application Windows Forms dans Visual Studio avec C#](/visualstudio/ide/create-csharp-winform-visual-studio). |
+| Projet de création de package d’application Windows | Crée un projet que vous pouvez utiliser pour créer une application WPF ou Windows Forms dans un [package MSIX](/windows/msix/overview). Vous bénéficiez ainsi d’une expérience de déploiement moderne, de la possibilité de l’intégrer aux fonctionnalités de Windows 10 par le biais d’extensions de package et bien plus encore. Pour plus d’informations, consultez [Projet de création de packages d’applications Windows](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net). |

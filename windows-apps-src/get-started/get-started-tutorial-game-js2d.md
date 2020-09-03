@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ef4255c8ea1eb9db34f652e5974a4f341e5500d
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: ac9e572da995da644cab1fbc997ee79fc3a11560
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80759453"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172013"
 ---
 # <a name="create-a-uwp-game-in-javascript"></a>Créer un jeu UWP en JavaScript
 
@@ -52,7 +52,7 @@ Pour démarrer, le plus simple est de visiter le site GitHub, de cliquer sur le 
 
 ![Clonage du référentiel](images/JS2D_2.png)
 
-Vous pouvez également télécharger le projet sous forme de fichier zip ou utiliser une autre méthode standard pour travailler avec des [projets GitHub](https://docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples).
+Vous pouvez également télécharger le projet sous forme de fichier zip ou utiliser une autre méthode standard pour travailler avec des [projets GitHub](./get-app-samples.md).
 
 Une fois la solution chargée dans Visual Studio, vous y verrez plusieurs fichiers, notamment les suivants :
 
@@ -261,10 +261,10 @@ Maintenant que vous disposez d'une application UWP, vous pouvez la publier dans 
 La procédure se décompose en plusieurs étapes.
 
 1. Vous devez être [enregistré](https://developer.microsoft.com/store/register) en tant que développeur Windows.
-2. Vous devez utiliser la [liste de vérification](https://docs.microsoft.com/windows/uwp/publish/app-submissions) de soumission d'applications.
-3. L'application doit être soumise pour [certification](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process).
+2. Vous devez utiliser la [liste de vérification](../publish/app-submissions.md) de soumission d'applications.
+3. L'application doit être soumise pour [certification](../publish/the-app-certification-process.md).
 
-Pour plus d'informations, consultez [Publication de votre application UWP](https://docs.microsoft.com/windows/uwp/publish/).
+Pour plus d'informations, consultez [Publication de votre application UWP](../publish/index.md).
 
 ## <a name="suggestions-for-other-features"></a>Suggestions pour d'autres fonctionnalités.
 

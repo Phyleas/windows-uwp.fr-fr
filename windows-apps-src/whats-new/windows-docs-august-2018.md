@@ -5,12 +5,12 @@ keywords: nouveautés, mise à jour, fonctionnalités, conseils aux développeur
 ms.date: 08/14/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 723cae783ba16fe5be9bb2076f96d4a5f823d733
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: eb6900b4d5ad529ee2e94f09439dda6abcaebac8
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74258836"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174393"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2018"></a>Nouveautés apportées dans la documentation du développeur Windows en août 2018
 
@@ -24,7 +24,7 @@ La documentation du développeur Windows est constamment mise à jour avec des i
 
 Les fonctionnalités suivantes ont été ajoutées aux builds Windows Insider Preview, disponibles via le programme [Windows Insider](https://insider.windows.com/).
 
-* La [bibliothèque de l'interface utilisateur de Windows](https://docs.microsoft.com/uwp/toolkits/winui/) est un ensemble de packages NuGet qui fournissent des contrôles et autres éléments d'interface utilisateur pour les applications UWP. Ces packages sont également compatibles avec les versions antérieures de Windows 10, pour que votre application fonctionne même si vos utilisateurs ne disposent pas de la dernière version du système d'exploitation.
+* La [bibliothèque de l'interface utilisateur de Windows](/uwp/toolkits/winui/) est un ensemble de packages NuGet qui fournissent des contrôles et autres éléments d'interface utilisateur pour les applications UWP. Ces packages sont également compatibles avec les versions antérieures de Windows 10, pour que votre application fonctionne même si vos utilisateurs ne disposent pas de la dernière version du système d'exploitation.
 
 * [DropDownButton](../design/controls-and-patterns/buttons.md#create-a-drop-down-button), [SplitButton](../design/controls-and-patterns/buttons.md#create-a-split-button) et [ToggleSplitButton](../design/controls-and-patterns/buttons.md#create-a-toggle-split-button) fournissent des commandes de bouton avec des fonctionnalités spécialisées permettant d'améliorer l'interface utilisateur de votre application.
 
@@ -38,7 +38,7 @@ Les fonctionnalités suivantes ont été ajoutées aux builds Windows Insider Pr
 
 La Framework de prise en charge de package est un kit open source qui vous aide à appliquer des correctifs à votre application win32 lorsque vous n'avez pas accès au code source, afin qu'il puisse être exécuté dans un conteneur MSIX.
 
-Pour en savoir plus, consultez [Appliquer des correctifs à l'exécution à un package MSIX à l'aide du Framework de prise en charge de package](../porting/package-support-framework.md).
+Pour en savoir plus, consultez [Appliquer des correctifs à l'exécution à un package MSIX à l'aide du Framework de prise en charge de package](/windows/msix/psf/package-support-framework).
 
 ## <a name="developer-guidance"></a>Conseils aux développeurs
 
@@ -52,7 +52,7 @@ Nous avons ajouté 250 listes de code [C++/WinRT](../cpp-and-winrt-apis/index.md
 
 ### <a name="project-rome"></a>Projet Rome
 
-Le site [Documents du projet Rome](https://docs.microsoft.com/windows/project-rome/) a été réorganisé pour adopter une approche axée sur les fonctionnalités. Cela devrait permettre aux développeurs d'accéder plus facilement à ce qu'ils cherchent et d'implémenter les fonctionnalités de leur choix sur différentes plateformes.
+Le site [Documents du projet Rome](/windows/project-rome/) a été réorganisé pour adopter une approche axée sur les fonctionnalités. Cela devrait permettre aux développeurs d'accéder plus facilement à ce qu'ils cherchent et d'implémenter les fonctionnalités de leur choix sur différentes plateformes.
 
 ## <a name="videos"></a>Vidéos
 

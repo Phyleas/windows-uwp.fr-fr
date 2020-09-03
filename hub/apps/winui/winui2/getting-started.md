@@ -4,12 +4,12 @@ description: Guide pratique pour installer et utiliser la bibliothèque d’inte
 ms.topic: reference
 ms.date: 07/15/2020
 keywords: windows 10, uwp, sdk kit de ressources
-ms.openlocfilehash: 336439d35c74073db490772dbfdae4ca3e580625
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 94c23ab9573df576af89d9211ced70938fd5105f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86492954"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174133"
 ---
 # <a name="getting-started-with-the-windows-ui-2x-library"></a>Bien démarrer avec la bibliothèque d’IU Windows 2.x
 
@@ -64,7 +64,7 @@ Vous pouvez éventuellement cocher la case « Inclure la version préliminaire�
     ```
 
     > [!IMPORTANT]
-    > L’ordre des ressources ajoutées à ResourceDictionary affecte l’ordre dans lequel elles sont appliquées. Le dictionnaire `XamlControlsResources` remplace de nombreuses clés de ressources par défaut et doit donc être ajouté à `Application.Resources` d’abord afin qu’il ne remplace pas d’autres styles ou ressources personnalisés dans votre application. Pour plus d’informations sur le chargement des ressources, consultez [Références aux ressources ResourceDictionary et XAML](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/resourcedictionary-and-xaml-resource-references).
+    > L’ordre des ressources ajoutées à ResourceDictionary affecte l’ordre dans lequel elles sont appliquées. Le dictionnaire `XamlControlsResources` remplace de nombreuses clés de ressources par défaut et doit donc être ajouté à `Application.Resources` d’abord afin qu’il ne remplace pas d’autres styles ou ressources personnalisés dans votre application. Pour plus d’informations sur le chargement des ressources, consultez [Références aux ressources ResourceDictionary et XAML](/windows/uwp/design/controls-and-patterns/resourcedictionary-and-xaml-resource-references).
 
 5. Ajoutez une référence au kit de ressources dans les pages XAML et vos pages code-behind.
 

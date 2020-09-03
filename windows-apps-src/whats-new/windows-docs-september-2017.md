@@ -5,12 +5,12 @@ keywords: nouveautés, mise à jour, fonctionnalités, conseils aux développeur
 ms.date: 09/06/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: fb63a5f7cefbccbedc09b0c74d9daea9d26b63a8
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 529dc61885f6bb0086432cd1d6209d9519a0114c
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74734954"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174333"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-september-2017"></a>Nouveautés apportées dans la documentation du développeur Windows en septembre 2017
 
@@ -24,30 +24,30 @@ Bien entendu, la mise à jour Fall Creators Update est imminente. Par conséquen
 
 ### <a name="xbox-live-creators-program"></a>Programme Créateurs Xbox Live
 
-Le programme Créateurs Xbox Live est désormais lancé. Il vous permet de créer et de publier facilement des jeux UWP pouvant s’exécuter tant sur des consoles Xbox One que sur des PC sous Windows 10. Pour plus d’informations, voir [Prise en main du programme Créateurs Xbox Live](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md).
+Le programme Créateurs Xbox Live est désormais lancé. Il vous permet de créer et de publier facilement des jeux UWP pouvant s’exécuter tant sur des consoles Xbox One que sur des PC sous Windows 10. Pour plus d’informations, voir [Prise en main du programme Créateurs Xbox Live](/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md).
 
 ## <a name="developer-guidance"></a>Conseils aux développeurs
 
 ### <a name="xaml-basics-tutorials"></a>Didacticiels sur les concepts de base de XAML
 
-Nous avons écrit quatre [didacticiels sur les concepts de base de XAML](https://docs.microsoft.com/windows/uwp/design/basics/xaml-basics-ui) pour accompagner le nouvel [exemple PhotoLab](https://github.com/Microsoft/Windows-appsample-photo-lab). Ils couvrent quatre aspects fondamentaux de la programmation XAML : interfaces utilisateur, liaison de données, styles personnalisés et dispositions adaptatives. Chaque partie du didacticiel commence par une version partielle ou complète de l’exemple PhotoLab et explique la procédure pour générer un composant manquant de l’application finale. 
+Nous avons écrit quatre [didacticiels sur les concepts de base de XAML](../design/basics/xaml-basics-ui.md) pour accompagner le nouvel [exemple PhotoLab](https://github.com/Microsoft/Windows-appsample-photo-lab). Ils couvrent quatre aspects fondamentaux de la programmation XAML : interfaces utilisateur, liaison de données, styles personnalisés et dispositions adaptatives. Chaque partie du didacticiel commence par une version partielle ou complète de l’exemple PhotoLab et explique la procédure pour générer un composant manquant de l’application finale. 
 
 ![Capture d’écran de l’exemple PhotoLab montrant la page Galerie de photos](images/PhotoLab-gallery-page.png)  
 
 Voici une rapide vue d’ensemble des nouveaux articles :
 
-+ [**Créer des interfaces utilisateur**](https://docs.microsoft.com/windows/uwp/design/basics/xaml-basics-ui) montre comment créer une interface simple de galerie de photos.
-+ [**Créer des liaisons de données**](https://docs.microsoft.com/windows/uwp/data-binding/xaml-basics-data-binding) montre comment ajouter des liaisons de données à la galerie de photos, en la remplissant avec des données d’images réelles.
++ [**Créer des interfaces utilisateur**](../design/basics/xaml-basics-ui.md) montre comment créer une interface simple de galerie de photos.
++ [**Créer des liaisons de données**](../data-binding/xaml-basics-data-binding.md) montre comment ajouter des liaisons de données à la galerie de photos, en la remplissant avec des données d’images réelles.
 + [**Créer des styles personnalisés**](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-basics-style) montre comment ajouter des styles personnalisés fantaisistes au menu d’édition de photo.
-+ [**Créer des dispositions adaptatives**](https://docs.microsoft.com/windows/uwp/design/basics/xaml-basics-adaptive-layout) montre comment rendre la disposition de la galerie adaptive, pour qu’elle s’affiche correctement sur tous les appareils et sur toutes les tailles d’écran.
++ [**Créer des dispositions adaptatives**](../design/basics/xaml-basics-adaptive-layout.md) montre comment rendre la disposition de la galerie adaptive, pour qu’elle s’affiche correctement sur tous les appareils et sur toutes les tailles d’écran.
 
 ### <a name="get-started-tutorials"></a>Didacticiels de prise en main
 
-La section Prise en main de la documentation UWP a été mise à jour avec une [nouvelle page d’accueil de la section des didacticiels](https://docs.microsoft.com/windows/uwp/get-started/create-uwp-apps). Cette section offre une structure de prise en main renouvelée et améliorée. Celle-ci aide les utilisateurs à trouver et à utiliser facilement des didacticiels qui leur conviennent, notamment ceux sur les concepts de base de XAML mentionnés ci-dessus.
+La section Prise en main de la documentation UWP a été mise à jour avec une [nouvelle page d’accueil de la section des didacticiels](../get-started/create-uwp-apps.md). Cette section offre une structure de prise en main renouvelée et améliorée. Celle-ci aide les utilisateurs à trouver et à utiliser facilement des didacticiels qui leur conviennent, notamment ceux sur les concepts de base de XAML mentionnés ci-dessus.
 
 ### <a name="voice-and-tone"></a>Voix et ton
 
-Nous avons ajouté des [instructions sur la voix et le ton dans les applications UWP](https://docs.microsoft.com/windows/uwp/in-app-help/voice-and-tone) afin de vous donner des conseils sur l’écriture du texte dans votre application. Quelle que soit l’application que vous créez, il est important que votre langage soit direct, informatif et convivial.
+Nous avons ajouté des [instructions sur la voix et le ton dans les applications UWP](../design/style/writing-style.md) afin de vous donner des conseils sur l’écriture du texte dans votre application. Quelle que soit l’application que vous créez, il est important que votre langage soit direct, informatif et convivial.
 
 ## <a name="samples"></a>exemples
 

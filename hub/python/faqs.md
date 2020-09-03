@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, windows 10, microsoft, pip, py.exe, chemins d’accès aux fichiers, PYTHONPATH, déploiement python, création de package python
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 2541186a1dd0f205d88e1e14c146934490afff55
-ms.sourcegitcommit: b6138f9565252460ace6fa0acdc2a902e591681a
+ms.openlocfilehash: 4504e7550d19d2cc713284abebed43b6305b5dbd
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88243261"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174123"
 ---
 # <a name="frequently-asked-questions-about-using-python-on-windows"></a>Questions fréquemment posées sur l’utilisation de Python sur Windows
 
@@ -65,7 +65,7 @@ La définition globale de cette variable via les paramètres de **variables d’
 
 [Docker](https://code.visualstudio.com/docs/azure/docker) : [VSCode extension](https://code.visualstudio.com/docs/azure/docker) vous aide à créer rapidement des pacakges et à les déployer avec des modèles fichier Dockerfile et docker-compose.yml (générez les fichiers Docker appropriés pour votre projet).
 
-[Azure Kubernetes Service (AKS)](https://docs.microsoft.com/azure/aks/) permet de déployer et de gérer des applications conteneurisées tout en effectuant la montée en charge des ressources à la demande.
+[Azure Kubernetes Service (AKS)](/azure/aks/) permet de déployer et de gérer des applications conteneurisées tout en effectuant la montée en charge des ressources à la demande.
 
 ## <a name="what-if-i-need-to-work-across-different-machines"></a>Que se passe-t-il si je dois travailler sur différents ordinateurs ?
 

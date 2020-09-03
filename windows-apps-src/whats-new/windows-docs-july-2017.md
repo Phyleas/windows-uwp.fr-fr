@@ -5,12 +5,12 @@ keywords: nouveautés, mise à jour, fonctionnalités, conseils aux développeur
 ms.date: 07/05/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 65c3c2fb4b7a5a7f0b5f4b3c89773f3e21bd654d
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: acec4384b5ce04548818a512270e66d7b4500e16
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684740"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174403"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2017"></a>Nouveautés apportées dans la documentation du développeur Windows en juillet 2017
 
@@ -98,21 +98,21 @@ Disponible pour les [Windows Insiders](https://insider.windows.com/) dans les ve
 
 ### <a name="media-playback"></a>Lecture de contenu multimédia
 
-De nouvelles sections ont été ajoutées à l’article relatif à la lecture de contenu multimédia de base, [Lire du contenu audio et vidéo avec MediaPlayer](../audio-video-camera/play-audio-and-video-with-mediaplayer.md). La section [Lire du contenu vidéo sphérique avec MediaPlayer](../audio-video-camera/play-audio-and-video-with-mediaplayer.md) vous explique comment lire des vidéos encodées de façon sphérique, y compris ajuster le champ de vue et l’orientation de vue pour les formats pris en charge. La section [Utiliser MediaPlayer en mode serveur d’images](../audio-video-camera/play-audio-and-video-with-mediaplayer.md#use-mediaplayer-in-frame-server-mode) vous indique comment copier des images à partir du média lu avec [MediaPlayer](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer) sur une surface Direct3D. Cela permet des scénarios tels que l’application d’effets en temps réel avec des nuanceurs de pixels. L’exemple de code montre une implémentation rapide d’un effet de flou pour la lecture vidéo à l’aide de Win2D.
+De nouvelles sections ont été ajoutées à l’article relatif à la lecture de contenu multimédia de base, [Lire du contenu audio et vidéo avec MediaPlayer](../audio-video-camera/play-audio-and-video-with-mediaplayer.md). La section [Lire du contenu vidéo sphérique avec MediaPlayer](../audio-video-camera/play-audio-and-video-with-mediaplayer.md) vous explique comment lire des vidéos encodées de façon sphérique, y compris ajuster le champ de vue et l’orientation de vue pour les formats pris en charge. La section [Utiliser MediaPlayer en mode serveur d’images](../audio-video-camera/play-audio-and-video-with-mediaplayer.md#use-mediaplayer-in-frame-server-mode) vous indique comment copier des images à partir du média lu avec [MediaPlayer](/uwp/api/Windows.Media.Playback.MediaPlayer) sur une surface Direct3D. Cela permet des scénarios tels que l’application d’effets en temps réel avec des nuanceurs de pixels. L’exemple de code montre une implémentation rapide d’un effet de flou pour la lecture vidéo à l’aide de Win2D.
 
 ### <a name="media-capture"></a>Capture multimédia
 
-L’article [Traiter des images multimédias avec MediaFrameReader](../audio-video-camera/process-media-frames-with-mediaframereader.md) a été mis à jour pour présenter l’utilisation de la nouvelle classe [MultiSourceMediaFrameReader](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader), qui vous permet d’obtenir des images corrélées dans le temps à partir de plusieurs sources multimédias. Cela est utile si vous devez traiter des images provenant de différentes sources, telles qu’un appareil photo couleur et de profondeur, et que vous devez vérifier que les images de chaque source ont été capturées dans un intervalle proche. Pour plus d’informations, voir [Utiliser MultiSourceMediaFrameReader pour obtenir des images corrélées dans le temps à partir de plusieurs sources](../audio-video-camera/process-media-frames-with-mediaframereader.md#use-multisourcemediaframereader-to-get-time-corellated-frames-from-multiple-sources).
+L’article [Traiter des images multimédias avec MediaFrameReader](../audio-video-camera/process-media-frames-with-mediaframereader.md) a été mis à jour pour présenter l’utilisation de la nouvelle classe [MultiSourceMediaFrameReader](/uwp/api/windows.media.capture.frames.multisourcemediaframereader), qui vous permet d’obtenir des images corrélées dans le temps à partir de plusieurs sources multimédias. Cela est utile si vous devez traiter des images provenant de différentes sources, telles qu’un appareil photo couleur et de profondeur, et que vous devez vérifier que les images de chaque source ont été capturées dans un intervalle proche. Pour plus d’informations, voir [Utiliser MultiSourceMediaFrameReader pour obtenir des images corrélées dans le temps à partir de plusieurs sources](../audio-video-camera/process-media-frames-with-mediaframereader.md#use-multisourcemediaframereader-to-get-time-corellated-frames-from-multiple-sources).
 
 ### <a name="scoped-search"></a>Étendue de recherche
 
-Une étendue « UWP » a été ajoutée à la [documentation conceptuelle UWP](../get-started/universal-application-platform-guide.md) et aux [Informations de référence sur les API](https://docs.microsoft.com/uwp/api/) sur docs.microsoft.com. Sauf si cette étendue est désactivée, les recherches effectuées dans ces domaines retourneront uniquement des documents UWP.
+Une étendue « UWP » a été ajoutée à la [documentation conceptuelle UWP](../get-started/universal-application-platform-guide.md) et aux [Informations de référence sur les API](/uwp/api/) sur docs.microsoft.com. Sauf si cette étendue est désactivée, les recherches effectuées dans ces domaines retourneront uniquement des documents UWP.
 
 ![Étendue de recherche](images/scoped-search.png)
 
 ### <a name="test-your-windows-app-for-windows-10-s"></a>Tester votre application Windows pour Windows 10 S
 
-Testez votre application Windows afin de vous assurer qu’elle fonctionnera correctement sur les appareils qui exécutent Windows S. Utilisez [ce nouveau guide](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-test-windows-s) pour savoir comment procéder.
+Testez votre application Windows afin de vous assurer qu’elle fonctionnera correctement sur les appareils qui exécutent Windows S. Utilisez [ce nouveau guide](/windows/msix/desktop/desktop-to-uwp-test-windows-s) pour savoir comment procéder.
 
 ## <a name="samples"></a>exemples
 
@@ -124,7 +124,7 @@ Testez votre application Windows afin de vous assurer qu’elle fonctionnera cor
 
 ### <a name="shopping-app-sample"></a>Exemple d’application d’achat
 
-[Mini-application qui présente une expérience d’achat de base où un utilisateur peut acheter des emojis](https://github.com/Microsoft/Windows-appsample-shopping). Cette application montre comment utiliser les [API de demande de paiement](https://docs.microsoft.com/uwp/api/windows.applicationmodel.payments) pour implémenter l’expérience de validation d’achat.
+[Mini-application qui présente une expérience d’achat de base où un utilisateur peut acheter des emojis](https://github.com/Microsoft/Windows-appsample-shopping). Cette application montre comment utiliser les [API de demande de paiement](/uwp/api/windows.applicationmodel.payments) pour implémenter l’expérience de validation d’achat.
 
 ![Capture d’écran de l’exemple d’application d’achat](images/shoppingcart.png)  
 

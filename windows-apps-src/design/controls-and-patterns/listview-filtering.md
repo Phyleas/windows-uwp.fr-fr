@@ -7,15 +7,15 @@ ms.date: 12/3/2019
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: anawish
-ms.openlocfilehash: 24669b81c244339509e30a43a0da8a2b27e67eeb
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: b1ffa6374753343321f34d388eb994a62614cb15
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75302653"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172602"
 ---
 # <a name="filtering-collections-and-lists-through-user-input"></a>Filtrage de collections et de listes par entrée utilisateur
-Si votre collection affiche de nombreux éléments ou qu’elle est fortement liée à l’interaction utilisateur, le filtrage est une fonctionnalité utile à implémenter. Vous pouvez implémenter le filtrage selon la méthode décrite dans cet article pour la plupart des contrôles de collection, notamment [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), [GridView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview) et [ItemsRepeater](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2). De nombreux types d’entrée utilisateur peuvent être utilisés pour filtrer une collection : cases à cocher, cases d’option, curseurs, etc. Cet article décrit comment utiliser une recherche d’utilisateur entrée au format texte pour mettre à jour un ListView en temps réel. 
+Si votre collection affiche de nombreux éléments ou qu’elle est fortement liée à l’interaction utilisateur, le filtrage est une fonctionnalité utile à implémenter. Vous pouvez implémenter le filtrage selon la méthode décrite dans cet article pour la plupart des contrôles de collection, notamment [ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView), [GridView](/uwp/api/windows.ui.xaml.controls.gridview) et [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2). De nombreux types d’entrée utilisateur peuvent être utilisés pour filtrer une collection : cases à cocher, cases d’option, curseurs, etc. Cet article décrit comment utiliser une recherche d’utilisateur entrée au format texte pour mettre à jour un ListView en temps réel. 
 
 > [!NOTE]
 > Cet article est centré sur le filtrage avec un ListView. Sachez que la méthode de filtrage peut également être appliquée à d’autres contrôles de collection tels que GridView, ItemsRepeater ou TreeView.
@@ -64,7 +64,7 @@ Pour que le filtrage fonctionne, le ListView doit avoir une source de données p
 </Grid>
 ```
 ## <a name="filtering-the-data"></a>Filtrage des données
-Les requêtes [LINQ](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/linq/introduction-to-linq-queries) vous permettent de regrouper, d’organiser et de sélectionner certains éléments dans une collection. Pour filtrer une liste, nous créons une requête LINQ qui sélectionne uniquement les termes correspondant à la requête de recherche ou au terme de filtrage entré par l’utilisateur dans le TextBox `FilterByLName`. Le résultat de la requête peut être affecté à un objet de collection [IEnumerable<T>](https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1). Nous pouvons ensuite utiliser cette collection pour la comparer à la liste d’origine : les éléments sans correspondance sont supprimés et ceux pour lesquels une correspondance existe sont rajoutés (en cas de retour arrière).
+Les requêtes [LINQ](/dotnet/csharp/programming-guide/concepts/linq/introduction-to-linq-queries) vous permettent de regrouper, d’organiser et de sélectionner certains éléments dans une collection. Pour filtrer une liste, nous créons une requête LINQ qui sélectionne uniquement les termes correspondant à la requête de recherche ou au terme de filtrage entré par l’utilisateur dans le TextBox `FilterByLName`. Le résultat de la requête peut être affecté à un objet de collection [IEnumerable<T>](/dotnet/api/system.collections.generic.ienumerable-1). Nous pouvons ensuite utiliser cette collection pour la comparer à la liste d’origine : les éléments sans correspondance sont supprimés et ceux pour lesquels une correspondance existe sont rajoutés (en cas de retour arrière).
 
 > [!NOTE]
 > Pour que le ListView s’anime de la manière la plus intuitive qui soit lors de l’ajout et de la soustraction d’éléments, il est important d’effectuer ces opérations sur la collection ItemsSource de ListView elle-même (plutôt que de créer une collection d’objets filtrés et de l’affecter à la propriété ItemsSource de ListView).

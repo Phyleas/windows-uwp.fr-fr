@@ -6,12 +6,12 @@ ms.date: 01/03/2019
 ms.topic: article
 keywords: windows 10, uwp, portail d’appareil
 ms.localizationpriority: medium
-ms.openlocfilehash: 059ce14f85ebe7d955ba2da8897ab47109f74a72
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 5cf8dc0912420895091815e54f6399235fca552f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79401968"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173583"
 ---
 # <a name="device-portal-for-hololens"></a>Device Portal pour HoloLens
 
@@ -21,8 +21,8 @@ ms.locfileid: "79401968"
 ### <a name="enable-device-portal"></a>Activer Device Portal
 
 1. Mettez HoloLens sous tension et allumez l’appareil.
-2. Pour lancer le menu principal, effectuez le [mouvement associé au menu Démarrer](https://docs.microsoft.com/hololens/hololens2-basic-usage#start-gesture) ou [écartez les doigts paume vers le haut](https://developer.microsoft.com/mixed-reality#Bloom) sur un appareil HoloLens (1ère génération).
-3. Pointez avec le regard sur la vignette **Paramètres**, puis effectuez le geste [appuyer](https://developer.microsoft.com/mixed-reality#Press_and_release) sur un appareil HoloLens (1re génération), ou sélectionnez la vignette [en la touchant ou en effectuant le geste de rayon émanant de la main](https://docs.microsoft.com/hololens/hololens2-basic-usage) sur un appareil HoloLens 2. L’application Paramètres démarre une fois sélectionnée.
+2. Pour lancer le menu principal, effectuez le [mouvement associé au menu Démarrer](/hololens/hololens2-basic-usage#start-gesture) ou [écartez les doigts paume vers le haut](https://developer.microsoft.com/mixed-reality#Bloom) sur un appareil HoloLens (1ère génération).
+3. Pointez avec le regard sur la vignette **Paramètres**, puis effectuez le geste [appuyer](https://developer.microsoft.com/mixed-reality#Press_and_release) sur un appareil HoloLens (1re génération), ou sélectionnez la vignette [en la touchant ou en effectuant le geste de rayon émanant de la main](/hololens/hololens2-basic-usage) sur un appareil HoloLens 2. L’application Paramètres démarre une fois sélectionnée.
 4. Sélectionnez l’élément de menu **Mettre à jour**.
 5. Sélectionnez l’élément de menu **Pour les développeurs**.
 6. Activez **Mode développeur**.
@@ -177,5 +177,5 @@ Cliquez ou appuyez sur la zone située sous le clavier virtuel pour permettre l�
 ## <a name="see-also"></a>Voir aussi
 
 * [Vue d’ensemble du Portail d’appareil Windows](device-portal.md)
-* [Référence API principale du Portail d’appareil](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core) (API communes à tous les appareils Windows 10)
-* [Référence API de réalité mixte du portail d’appareil](https://docs.microsoft.com/windows/mixed-reality/device-portal-api-reference) (liste étendue de toutes les API REST disponibles pour HoloLens)
+* [Référence API principale du Portail d’appareil](./device-portal-api-core.md) (API communes à tous les appareils Windows 10)
+* [Référence API de réalité mixte du portail d’appareil](/windows/mixed-reality/device-portal-api-reference) (liste étendue de toutes les API REST disponibles pour HoloLens)

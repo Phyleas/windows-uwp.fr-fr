@@ -6,16 +6,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, certification des applications
 ms.localizationpriority: medium
-ms.openlocfilehash: 174ff4e588d75293ecb729312883f4792196c87a
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 06ac1525a91426f6d39e20c9a9416154ad3d6f3e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79110107"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174023"
 ---
 # <a name="windows-app-certification-kit"></a>Kit de certification des applications Windows
 
-Pour faire [certifier votre application par Windows](/windows/win32/win_cert/windows-certification-portal) et préparer sa [publication sur le Microsoft Store](/windows/uwp/publish/app-submissions), vous devez d’abord la valider et la tester localement. Cette rubrique explique comment installer et exécuter le [Kit de certification des applications Windows](https://developer.microsoft.com/windows/develop/app-certification-kit) pour veiller à ce que votre application soit aussi sûre qu'efficace.
+Pour faire [certifier votre application par Windows](/windows/win32/win_cert/windows-certification-portal) et préparer sa [publication sur le Microsoft Store](../publish/app-submissions.md), vous devez d’abord la valider et la tester localement. Cette rubrique explique comment installer et exécuter le [Kit de certification des applications Windows](https://developer.microsoft.com/windows/develop/app-certification-kit) pour veiller à ce que votre application soit aussi sûre qu'efficace.
 
 ## <a name="prerequisites"></a>Prérequis
 
@@ -23,7 +23,7 @@ Conditions préalables pour tester une application Windows universelle :
 
 - Vous devez installer et exécuter Windows 10.
 - Vous devez installer le [Kit de certification des applications Windows](https://developer.microsoft.com/windows/downloads/app-certification-kit/), qui est inclus dans le kit de développement logiciel (SDK) Windows pour Windows 10.
-- Vous devez [activer votre appareil pour le développement](/windows/uwp/get-started/enable-your-device-for-development).
+- Vous devez [activer votre appareil pour le développement](../get-started/enable-your-device-for-development.md).
 - Vous devez déployer l’application Windows que vous voulez tester sur votre ordinateur.
 
 > [!NOTE]
@@ -83,11 +83,11 @@ Conditions préalables pour tester une application Windows universelle :
 
 Les seuils du test de performances du Kit de certification des applications Windows sont basés sur les performances d’un ordinateur à faible consommation d’énergie.
 
-Les caractéristiques de l’ordinateur sur lequel le test est exécuté peuvent influencer les résultats du test. Pour déterminer si les performances de votre application répondent aux [Politiques du Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies), nous vous recommandons de tester votre application sur un ordinateur à faible consommation d’énergie, tel qu’un ordinateur équipé d’un processeur Intel Atom, d’une résolution d’écran de 1366 x 768 (ou supérieure) et d’un disque dur rotatif (par opposition à un disque SSD).
+Les caractéristiques de l’ordinateur sur lequel le test est exécuté peuvent influencer les résultats du test. Pour déterminer si les performances de votre application répondent aux [Politiques du Microsoft Store](/legal/windows/agreements/store-policies), nous vous recommandons de tester votre application sur un ordinateur à faible consommation d’énergie, tel qu’un ordinateur équipé d’un processeur Intel Atom, d’une résolution d’écran de 1366 x 768 (ou supérieure) et d’un disque dur rotatif (par opposition à un disque SSD).
 
-À mesure que les ordinateurs à faible consommation d’énergie évoluent, leurs caractéristiques de performances peuvent elles aussi varier. Reportez-vous aux [Politiques du Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies) les plus récentes et testez votre application avec la dernière version du Kit de certification des applications Windows pour vous assurer que votre application est conforme aux dernières spécifications en matière de performances.
+À mesure que les ordinateurs à faible consommation d’énergie évoluent, leurs caractéristiques de performances peuvent elles aussi varier. Reportez-vous aux [Politiques du Microsoft Store](/legal/windows/agreements/store-policies) les plus récentes et testez votre application avec la dernière version du Kit de certification des applications Windows pour vous assurer que votre application est conforme aux dernières spécifications en matière de performances.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
 - [Tests du Kit de certification des applications Windows](windows-app-certification-kit-tests.md)
-- [Politiques du Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies)
+- [Politiques du Microsoft Store](/legal/windows/agreements/store-policies)
