@@ -1,16 +1,16 @@
 ---
-Description: Une fois vos packages téléchargés, vous verrez une table qui indique quels packages seront proposés à des familles d’appareils Windows 10 spécifiques (et des versions de système d’exploitation antérieures, le cas échéant), dans l’ordre de classement.
+description: Une fois vos packages téléchargés, vous verrez une table qui indique quels packages seront proposés à des familles d’appareils Windows 10 spécifiques (et des versions de système d’exploitation antérieures, le cas échéant), dans l’ordre de classement.
 title: Disponibilité de la famille d’appareils
 ms.date: 03/21/2019
 ms.topic: article
 keywords: Windows 10, UWP, packages, téléchargement, disponibilité de la famille d’appareils
 ms.localizationpriority: medium
-ms.openlocfilehash: f0b30b5805ffaf0cd591147bcfed9744b64afdb7
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 48cbb0fd9ecf27c9926d55e22abc17d039d3674b
+ms.sourcegitcommit: efa5f793607481dcae24cd1b886886a549e8d6e5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161973"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89411963"
 ---
 # <a name="device-family-availability"></a>Disponibilité de la famille d’appareils
 
@@ -55,7 +55,7 @@ Si votre soumission pour une application précédemment publiée comprend des pa
 
 Il est important de savoir que les sélections que vous effectuez dans la section disponibilité de la **famille d’appareils** s’appliquent uniquement aux nouvelles acquisitions. Toute personne qui dispose déjà de votre application peut continuer à l’utiliser et obtiendra les mises à jour que vous soumettez, même si vous supprimez la famille de périphériques ici. Cela s’applique même aux clients ayant acquis votre application avant la mise à niveau vers Windows 10. Par exemple, si vous avez une application publiée avec des packages Windows Phone 8,1, et que vous ajoutez un package Windows 10 (UWP) ciblant la famille de périphériques Windows. Universal, les clients Windows 10 mobile qui disposaient de votre package Windows Phone 8,1 recevront une mise à jour de ce package Windows 10 (UWP), même si vous avez désactivé la case à cocher pour **Windows 10 Mobile**.
 
-Pour plus d’informations sur les familles d’appareils, consultez [**vue d’ensemble des familles d’appareils**](/uwp/extension-sdks/device-families-overview).
+Pour plus d’informations sur les familles d’appareils, consultez [programmation avec les kits de développement logiciel (SDK) d’extension](/uwp/extension-sdks/device-families-overview).
 
 
 ## <a name="understanding-ranking"></a>Compréhension du classement

@@ -9,12 +9,12 @@ dev_langs:
 - vb
 keywords: Windows 10, UWP, capture d’écran
 ms.localizationpriority: medium
-ms.openlocfilehash: b57be844e5ee10d384046aac651ab4f198f37d9e
-ms.sourcegitcommit: 14c0b1ea2447a81ddf31982b40e19a74ecc6d59e
+ms.openlocfilehash: 96b8c52d8c1c6b6947b7b151df0b1b8bbfe42869
+ms.sourcegitcommit: efa5f793607481dcae24cd1b886886a549e8d6e5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89310070"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89411923"
 ---
 # <a name="screen-capture"></a>Capture d'écran
 
@@ -688,7 +688,7 @@ End Class
 
 ## <a name="record-a-video"></a>Enregistrer une vidéo
 
-Si vous souhaitez enregistrer une vidéo de votre application, vous pouvez suivre la procédure pas à pas présentée dans la [capture d’écran](screen-capture-video.md)de l’article à la vidéo. Vous pouvez utiliser l' [espace de noms Windows. Media. AppRecording](/uwp/api/windows.media.apprecording). Cela fait partie du kit de développement logiciel (SDK) d’extension de bureau. il ne fonctionne donc que sur Desktop et requiert que vous y ajoutiez une référence à partir de votre projet. Pour plus d’informations, consultez [Présentation des familles d’appareils](/uwp/extension-sdks/device-families-overview) .
+Si vous souhaitez enregistrer une vidéo de votre application, vous pouvez suivre la procédure pas à pas présentée dans la [capture d’écran](screen-capture-video.md)de l’article à la vidéo. Vous pouvez utiliser l' [espace de noms Windows. Media. AppRecording](/uwp/api/windows.media.apprecording). Cela fait partie du kit de développement logiciel (SDK) d’extension de bureau. il ne fonctionne donc que sur Desktop et requiert que vous y ajoutiez une référence à partir de votre projet. Pour plus d’informations, consultez [programmation avec les kits de développement](/uwp/extension-sdks/device-families-overview) logiciel (SDK) d’extension.
 
 ## <a name="see-also"></a>Voir aussi
 

@@ -1,17 +1,17 @@
 ---
-Description: Découvrez comment les packages de votre application sont mis à la disposition de vos clients, et comment gérer des scénarios de package spécifiques.
+description: Découvrez comment les packages de votre application sont mis à la disposition de vos clients, et comment gérer des scénarios de package spécifiques.
 title: Aide sur la gestion des packages d’application
 ms.assetid: 55405D0B-5C1E-43C8-91A1-4BFDD336E6AB
 ms.date: 10/31/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ecd8cc96196c31615eac032183956de3bee9e4b
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 6035f5f21cd1b704415193c393ae0637d3e5dc37
+ms.sourcegitcommit: efa5f793607481dcae24cd1b886886a549e8d6e5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171053"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89411973"
 ---
 # <a name="guidance-for-app-package-management"></a>Aide sur la gestion des packages d’application
 
@@ -49,15 +49,13 @@ Après l’indisponibilité de l’application, vous la verrez toujours dans l�
 > [!NOTE]
 > Si vous souhaitez que votre application reste disponible, mais que vous ne souhaitiez pas la proposer aux nouveaux clients sur une version particulière du système d’exploitation, vous pouvez créer une soumission et supprimer tous les packages pour la version du système d’exploitation sur laquelle vous souhaitez empêcher les nouvelles acquisitions. Par exemple, si vous aviez précédemment des packages pour Windows Phone 8,1 et Windows 10, et que vous ne souhaitez pas continuer à proposer l’application aux nouveaux clients sur Windows Phone 8,1, supprimez tous vos packages Windows Phone 8,1 de la soumission. Une fois la mise à jour publiée, aucun nouveau client sur Windows Phone 8,1 ne pourra acquérir l’application si les clients qui l’ont déjà peut continuer à l’utiliser. Toutefois, l’application est toujours disponible pour les nouveaux clients sur Windows 10.
 
-
 ## <a name="removing-packages-for-a-previously-supported-device-family"></a>Suppression de packages pour une famille d'appareils précédemment prise en charge
 
-Si vous supprimez tous les packages pour une certaine [famille d’appareils](/uwp/extension-sdks/device-families-overview) déjà prise en charge par votre application, vous êtes invité à confirmer qu’il s’agit de votre intention avant de pouvoir enregistrer vos modifications sur la page **packages** .
+Si vous supprimez tous les packages pour une certaine famille d’appareils (voir [programmation avec les kits de développement](/uwp/extension-sdks/device-families-overview)logiciel (SDK) d’extension) pris en charge par votre application, vous êtes invité à confirmer qu’il s’agit de votre intention avant de pouvoir enregistrer vos modifications sur la page **packages** .
 
 Lorsque vous publiez une soumission qui supprime tous les packages qui peuvent s’exécuter sur une famille d’appareils que votre application prenait déjà en charge, les nouveaux clients ne peuvent pas acquérir l’application sur cette famille d’appareils. Vous pouvez toujours publier une autre mise à jour pour proposer de nouveau des packages pour cette famille d'appareils.
 
 Gardez à l'esprit que même si vous supprimez tous les packages prenant en charge une certaine famille d'appareils, tous les clients existants ayant déjà installé l'application sur ce type d'appareil pourra encore l'utiliser et obtenir les mises à jour que vous proposerez ultérieurement.
-
 
 <a name="adding-packages-for-windows-10-to-a-previously-published-app"></a>
 

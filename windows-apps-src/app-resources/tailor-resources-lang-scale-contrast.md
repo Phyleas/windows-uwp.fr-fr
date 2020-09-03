@@ -1,17 +1,17 @@
 ---
-Description: Cette rubrique explique le concept général des qualificateurs, comment les utiliser et l’objectif de chacun des noms de qualificateurs.
+description: Cette rubrique explique le concept général des qualificateurs, comment les utiliser et l’objectif de chacun des noms de qualificateurs.
 title: Personnaliser vos ressources pour la langue, l’échelle, le contraste élevé et d’autres qualificateurs
 template: detail.hbs
 ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: 3678d525fa00df07408b9d85af34a3dd825b4fcf
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 59f0b636384ba133e985f0704e2033c1acc5f15e
+ms.sourcegitcommit: efa5f793607481dcae24cd1b886886a549e8d6e5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161333"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89412013"
 ---
 # <a name="tailor-your-resources-for-language-scale-high-contrast-and-other-qualifiers"></a>Personnaliser vos ressources pour la langue, l’échelle, le contraste élevé et d’autres qualificateurs
 
@@ -128,7 +128,7 @@ Le `configuration` qualificateur est utilisé pour charger une ressource qui cor
 
 Le `contrast` qualificateur est utilisé pour fournir les ressources qui correspondent le mieux aux paramètres de contraste élevé.
 
-## <a name="custom"></a>Personnalisé
+## <a name="custom"></a>Custom
 
 Votre application peut définir une valeur pour le `custom` qualificateur, puis les ressources chargées qui correspondent le mieux à cette valeur. Par exemple, vous pouvez charger des ressources en fonction de la licence de votre application. Lorsque votre application démarre, elle vérifie sa licence et l’utilise comme valeur pour le `custom` qualificateur en appelant [SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue), comme indiqué dans l’exemple de code.
 
@@ -286,7 +286,7 @@ Les applications ne doivent pas utiliser le `theme-light` qualificateur avec le 
 * [Système de gestion des ressources](resource-management-system.md)
 * [Comment préparer la localisation](/previous-versions/windows/apps/hh967762(v=win.10))
 * [Détection de la plateforme d’exécution de votre application](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on)
-* [Vue d’ensemble des familles d’appareils](/uwp/extension-sdks/device-families-overview)
+* [Programmation avec les SDK d’extension](/uwp/extension-sdks/device-families-overview)
 * [Localiser vos chaînes d’interface utilisateur](localize-strings-ui-manifest.md)
 * [BCP-47](https://tools.ietf.org/html/bcp47)
 * [Composition statistique des Nations Unies M49 composition des codes de région](https://unstats.un.org/unsd/methods/m49/m49regin.htm)
