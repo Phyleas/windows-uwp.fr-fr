@@ -6,12 +6,12 @@ ms.date: 04/08/2019
 ms.topic: article
 keywords: windows 10, uwp, déboguer, test, performances
 ms.localizationpriority: medium
-ms.openlocfilehash: d948af1ce10b3752ba9f20454d8dea72916de692
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 0f1ff6a98182f4832a2a1b82bf8ceca4aa176c36
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75683852"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157262"
 ---
 # <a name="deploying-and-debugging-uwp-apps"></a>Déploiement et débogage des applications UWP
 
@@ -92,13 +92,13 @@ Pour effectuer un déploiement sur un PC distant exécutant une version antérie
 
 Pour ce faire, recherchez **Débogueur distant** dans le menu **Démarrer**, ouvrez-le et, si vous y êtes invité, autorisez le débogueur à configurer vos paramètres de pare-feu. Par défaut, le débogueur est lancé avec l’authentification Windows. Vous avez donc besoin des informations d’identification de l’utilisateur si ce dernier n’est pas le même sur les deux PC.
 
-Pour opter pour **Aucune authentification**, dans le **Débogueur distant**, accédez à **Outils** -&gt; **Options**, puis sélectionnez **Aucune authentification**. Une fois que le débogueur distant est configuré, vous devez également vérifier que vous avez défini l’appareil hôte sur [Mode développeur](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development). Ensuite, vous pouvez effectuer le déploiement à partir de votre ordinateur de développement.
+Pour opter pour **Aucune authentification**, dans le **Débogueur distant**, accédez à **Outils** -&gt; **Options**, puis sélectionnez **Aucune authentification**. Une fois que le débogueur distant est configuré, vous devez également vérifier que vous avez défini l’appareil hôte sur [Mode développeur](../get-started/enable-your-device-for-development.md). Ensuite, vous pouvez effectuer le déploiement à partir de votre ordinateur de développement.
 
 Pour plus d’informations, consultez la page [Centre de téléchargement Visual Studio](https://visualstudio.microsoft.com/downloads/).
 
 ## <a name="passing-command-line-debug-arguments"></a>Transmission d’arguments de ligne de commande pour le débogage
 
-Dans Visual Studio 2019, vous pouvez transmettre des arguments de ligne de commande pour le débogage lorsque vous commencez à déboguer des applications UWP. Vous pouvez accéder aux arguments de ligne de commande relatifs au débogage à partir du paramètre *args* de la méthode **OnLaunched** de la classe [**Application**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application). Pour spécifier des arguments de ligne de commande pour le débogage, ouvrez les propriétés du projet et accédez à l’onglet **Déboguer**.
+Dans Visual Studio 2019, vous pouvez transmettre des arguments de ligne de commande pour le débogage lorsque vous commencez à déboguer des applications UWP. Vous pouvez accéder aux arguments de ligne de commande relatifs au débogage à partir du paramètre *args* de la méthode **OnLaunched** de la classe [**Application**](/uwp/api/windows.ui.xaml.application). Pour spécifier des arguments de ligne de commande pour le débogage, ouvrez les propriétés du projet et accédez à l’onglet **Déboguer**.
 
 > [!NOTE]
 > Cette fonctionnalité est disponible dans Visual Studio 2017 (version 15.1) pour C#, VB et C++. JavaScript est disponible dans les versions ultérieures. Les arguments de ligne de commande relatifs au débogage sont disponibles pour tous les types de déploiements, à l’exception du Simulateur.
@@ -111,7 +111,7 @@ Dans le cas des projets UWP C++ et JS, le champ **Arguments de la ligne de comma
 
 ![Arguments de ligne de commande C++ et JS](images/command-line-arguments-cpp.png)
 
-Après avoir spécifié les arguments de ligne de commande, vous pouvez accéder à la valeur de l’argument dans la méthode **OnLaunched** de l’application. L’objet *args* de la classe [**LaunchActivatedEventArgs**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs) présente une propriété **Arguments** dont la valeur est définie sur le texte figurant dans le champ **Arguments de la ligne de commande**.
+Après avoir spécifié les arguments de ligne de commande, vous pouvez accéder à la valeur de l’argument dans la méthode **OnLaunched** de l’application. L’objet *args* de la classe [**LaunchActivatedEventArgs**](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs) présente une propriété **Arguments** dont la valeur est définie sur le texte figurant dans le champ **Arguments de la ligne de commande**.
 
 ![Arguments de ligne de commande C++ et JS](images/command-line-arguments-debugging.png)
 
@@ -189,7 +189,7 @@ Sur l'appareil distant, la disposition est inscrite à l'emplacement par défaut
 
 ## <a name="debugging-options"></a>Options de débogage
 
-Dans Windows 10, les performances de démarrage des applications UWP sont améliorées en les lançant de manière proactive, puis en les suspendant dans une technique dite de [prélancement](https://docs.microsoft.com/windows/uwp/launch-resume/handle-app-prelaunch). De nombreuses applications fonctionnent dans ce mode sans configuration particulière, mais certaines doivent peut-être ajuster leur comportement. Pour permettre le débogage des problèmes dans ces chemins de code, vous pouvez commencer à déboguer l’application à partir de Visual Studio en mode de prélancement.
+Dans Windows 10, les performances de démarrage des applications UWP sont améliorées en les lançant de manière proactive, puis en les suspendant dans une technique dite de [prélancement](../launch-resume/handle-app-prelaunch.md). De nombreuses applications fonctionnent dans ce mode sans configuration particulière, mais certaines doivent peut-être ajuster leur comportement. Pour permettre le débogage des problèmes dans ces chemins de code, vous pouvez commencer à déboguer l’application à partir de Visual Studio en mode de prélancement.
 
 Le débogage est pris en charge à la fois à partir d’un projet Visual Studio (**Déboguer** -&gt; **Autres cibles de débogage** -&gt; **Déboguer le prélancement d’application Windows universelle**) et pour les applications déjà installées sur l’ordinateur (**Déboguer** -&gt; **Autres cibles de débogage** -&gt; **Déboguer le package d’application installé**, puis cochez la case **Activer l’application par prélancement**). Pour plus d’informations, voir [Déboguer le prélancement d’applications UWP](https://blogs.msdn.com/b/visualstudioalm/archive/2015/11/30/debug-uwp-prelaunch-with-vs2015.aspx).
 
@@ -213,7 +213,7 @@ Vous pouvez définir les options de déploiement suivantes dans la page de propr
 
 ## <a name="symbols"></a>symboles
 
-Les fichiers de symboles contiennent une variété de données très utiles lors du débogage du code, notamment des variables, des noms de fonctions et des adresses de points d’entrée, ce qui vous permet de mieux comprendre les exceptions et l’ordre d’exécution de la pile des appels. Les symboles sont disponibles par le biais du [serveur de symboles Microsoft](https://msdl.microsoft.com/download/symbols) pour la plupart des variantes de Windows. Pour des recherches hors connexion plus rapides, vous pouvez également les télécharger à partir de la page [Télécharger des packages de symboles Windows](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-download-symbols).
+Les fichiers de symboles contiennent une variété de données très utiles lors du débogage du code, notamment des variables, des noms de fonctions et des adresses de points d’entrée, ce qui vous permet de mieux comprendre les exceptions et l’ordre d’exécution de la pile des appels. Les symboles sont disponibles par le biais du [serveur de symboles Microsoft](https://msdl.microsoft.com/download/symbols) pour la plupart des variantes de Windows. Pour des recherches hors connexion plus rapides, vous pouvez également les télécharger à partir de la page [Télécharger des packages de symboles Windows](/windows-hardware/drivers/debugger/debugger-download-symbols).
 
 Pour définir les options de symbole de Visual Studio, sélectionnez **Outils &gt; Options**, puis accédez à **Débogage &gt; Symboles** dans la boîte de dialogue.
 
@@ -226,7 +226,7 @@ Pour charger les symboles dans une session de débogage avec [WinDbg](#windbg), 
 .reload
 ```
 
-Vous pouvez ajouter des chemins en utilisant le délimiteur `‘;’`. Vous pouvez également utiliser la commande `.sympath+`. Pour les opérations de symbole plus avancées qui utilisent WinDbg, voir [Symboles publics et privés](https://docs.microsoft.com/windows-hardware/drivers/debugger/public-and-private-symbols).
+Vous pouvez ajouter des chemins en utilisant le délimiteur `‘;’`. Vous pouvez également utiliser la commande `.sympath+`. Pour les opérations de symbole plus avancées qui utilisent WinDbg, voir [Symboles publics et privés](/windows-hardware/drivers/debugger/public-and-private-symbols).
 
 ## <a name="windbg"></a>WinDbg
 
@@ -246,7 +246,7 @@ Contrairement à Visual Studio, WinDbg a pour principale fonctionnalité de four
 - EXCEPTION_RECORD : adresse, code et indicateurs de l’exception actuelle
 - STACK_TEXT : arborescence des appels de procédure avant l’exception
 
-Pour obtenir la liste complète de toutes les commandes de WinDbg, consultez [Commandes du débogueur](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-commands).
+Pour obtenir la liste complète de toutes les commandes de WinDbg, consultez [Commandes du débogueur](/windows-hardware/drivers/debugger/debugger-commands).
 
 ## <a name="related-topics"></a>Rubriques connexes
 

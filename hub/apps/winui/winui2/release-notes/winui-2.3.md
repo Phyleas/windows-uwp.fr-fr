@@ -3,12 +3,12 @@ title: Notes de publication de WinUI 2.3
 description: Notes de publication de WinUI 2.3, nouvelles fonctionnalités et corrections de bogues incluses.
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: 9540f5314e6df02e95943279647d643bdbbef3c5
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 63091f927f63a708c5a5e4d41e9d81fd9f528cb1
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493484"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154783"
 ---
 # <a name="windows-ui-library-23"></a>Bibliothèque d’IU Windows 2.3
 
@@ -40,9 +40,9 @@ Indique la progression d’une quantité de travail connue.
 
 ![Barre de progression déterminée](../images/DeterminateProgressBar.gif)
 
-[Lien vers la documentation](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/progress-controls)
+[Lien vers la documentation](/windows/uwp/design/controls-and-patterns/progress-controls)
 
-[Lien vers des exemples](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/progress-controls#examples)
+[Lien vers des exemples](/windows/uwp/design/controls-and-patterns/progress-controls#examples)
 
 ### <a name="numberbox"></a>NumberBox
 
@@ -50,7 +50,7 @@ Indique la progression d’une quantité de travail connue.
 
 ![NumberBox](../images/NumberBoxGif.gif)
 
-[Lien vers la documentation et des exemples](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/number-box)
+[Lien vers la documentation et des exemples](/windows/uwp/design/controls-and-patterns/number-box)
 
 ### <a name="radiobuttons"></a>RadioButtons
 

@@ -8,12 +8,12 @@ author: mcleanbyron
 keywords: windows 10, uwp, windows forms, wpf, xaml islands, îles xaml
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 21049c995d467209b22fe8ea5c40d303911f2c2c
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: aa8991e7fd0bbb825ff5280f01693f092125f573
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "77521281"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89161373"
 ---
 # <a name="tutorial-modernize-a-wpf-app"></a>Tutoriel : Moderniser une application WPF 
 
@@ -111,13 +111,13 @@ Pour plus d’informations, consultez ces articles :
 
 Pour plus d’informations, consultez [Contrôles UWP dans les applications de bureau (XAML Islands)](/windows/uwp/xaml-platform/xaml-host-controls). Ce tutoriel vous guide tout au long du processus d’utilisation de deux types différents de contrôles XAML Island :
 
-* Contrôles [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) et [MapControl](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mapcontrol) dans le kit de ressources de la communauté Windows. Ces contrôles WPF incluent l’interface et les fonctionnalités des contrôles UWP correspondants dans un wrapper et peuvent être utilisés comme n’importe quel autre contrôle WPF dans le concepteur Visual Studio.
+* Contrôles [InkCanvas](/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) et [MapControl](/windows/communitytoolkit/controls/wpf-winforms/mapcontrol) dans le kit de ressources de la communauté Windows. Ces contrôles WPF incluent l’interface et les fonctionnalités des contrôles UWP correspondants dans un wrapper et peuvent être utilisés comme n’importe quel autre contrôle WPF dans le concepteur Visual Studio.
 
-* Contrôle [Affichage du calendrier](/windows/uwp/design/controls-and-patterns/calendar-view). Il s’agit d’un contrôle UWP standard que vous allez héberger à l’aide du contrôle [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) dans le kit de ressources de la communauté Windows.
+* Contrôle [Affichage du calendrier](/windows/uwp/design/controls-and-patterns/calendar-view). Il s’agit d’un contrôle UWP standard que vous allez héberger à l’aide du contrôle [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) dans le kit de ressources de la communauté Windows.
 
 ### <a name="net-core-3"></a>.NET Core 3
 
-[.NET Core](https://docs.microsoft.com/dotnet/core/) est un framework open source qui implémente une version multiplateforme, légère et facilement extensible de l’intégralité de .NET Framework. Par rapport à l’intégralité de .NET Framework, le temps de démarrage de .NET Core est beaucoup plus rapide et la plupart des API ont été optimisées.
+[.NET Core](/dotnet/core/) est un framework open source qui implémente une version multiplateforme, légère et facilement extensible de l’intégralité de .NET Framework. Par rapport à l’intégralité de .NET Framework, le temps de démarrage de .NET Core est beaucoup plus rapide et la plupart des API ont été optimisées.
 
 Dès les premières versions, l’objectif de .NET Core a été de prendre en charge les applications web ou principales. Avec .NET Core, vous pouvez facilement créer des applications web évolutives ou des API qui peuvent être hébergées sur Windows, Linux, ou dans des architectures de microservices telles que des conteneurs Docker.
 
@@ -126,4 +126,4 @@ Dès les premières versions, l’objectif de .NET Core a été de prendre en ch
 > [!NOTE]
 > WPF et Windows Forms ne deviennent pas des multiplateformes, et vous ne pouvez pas exécuter WPF ou Windows Forms sur Linux et MacOS. Les composants de l’interface utilisateur de WPF et de Windows Forms ont toujours une dépendance sur le système de rendu Windows.
 
-Pour plus d’informations, consultez [Nouveautés de .NET Core 3.0](https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0).
+Pour plus d’informations, consultez [Nouveautés de .NET Core 3.0](/dotnet/core/whats-new/dotnet-core-3-0).

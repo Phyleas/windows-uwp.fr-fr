@@ -5,18 +5,18 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, données, types
 ms.localizationpriority: medium
-ms.openlocfilehash: 8cb62f8386798fcb78a11be35ba951616c47039c
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: d61de7acdfa2fc3b563aa77630a9eb8043bce3d7
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "68270070"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154333"
 ---
 # <a name="standard-c-data-types-and-cwinrt"></a>Types de données C++ standard et C++/WinRT
 
-Avec [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), vous pouvez appeler des API Windows Runtime à l’aide de types de données C++ standard, y compris certains types de données de la bibliothèque C++ standard. Vous pouvez passer des chaînes standard aux API (consultez [Gestion des chaînes en C++/WinRT](strings.md)), et passer des listes d’initialiseurs et des conteneurs standard aux API qui attendent une collection sémantiquement équivalente.
+Avec [C++/WinRT](./intro-to-using-cpp-with-winrt.md), vous pouvez appeler des API Windows Runtime à l’aide de types de données C++ standard, y compris certains types de données de la bibliothèque C++ standard. Vous pouvez passer des chaînes standard aux API (consultez [Gestion des chaînes en C++/WinRT](strings.md)), et passer des listes d’initialiseurs et des conteneurs standard aux API qui attendent une collection sémantiquement équivalente.
 
-Consultez également [Passage de paramètres à la frontière ABI](/windows/uwp/cpp-and-winrt-apis/pass-parms-to-abi).
+Consultez également [Passage de paramètres à la frontière ABI](./pass-parms-to-abi.md).
 
 ## <a name="standard-initializer-lists"></a>Listes d’initialiseurs standard
 Une liste d’initialiseurs (**std::initializer_list**) est une construction de la bibliothèque C++ standard. Vous pouvez utiliser des listes d’initialiseurs lorsque vous appelez certains constructeurs et méthodes Windows Runtime. Par exemple, vous pouvez appeler [**DataWriter::WriteBytes**](/uwp/api/windows.storage.streams.datawriter.writebytes) avec une telle liste.

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, winui
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 0b62595850c2b3354c59d199f879d7e3b55cd3a2
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 88b17500527b5f52d7e020e1c37a72e932ec225b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493952"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157733"
 ---
 # <a name="get-started-with-winui-3-for-uwp-apps"></a>Bien démarrer avec WinUI 3 pour les applications UWP
 
@@ -52,7 +52,7 @@ Pour utiliser les modèles de projet WinUI 3 pour les applications UWP décrits
 
     :::image type="content" source="images/WinUI-and-UWP/vs2019-project.png" alt-text="Visual Studio 2019 - Boîte de dialogue Configurer un nouveau projet":::
 
-    - **Package.appxmanifest** : contient les informations dont le système a besoin pour déployer, afficher ou mettre à jour votre application. Pour plus d’informations, consultez [Manifeste du package d’application](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest).
+    - **Package.appxmanifest** : contient les informations dont le système a besoin pour déployer, afficher ou mettre à jour votre application. Pour plus d’informations, consultez [Manifeste du package d’application](/uwp/schemas/appxpackage/appx-package-manifest).
 
     :::image type="content" source="images/WinUI-and-UWP/vs2019-file-package-manifest.png" alt-text="Visual Studio 2019 - Manifeste du package d’application":::
 

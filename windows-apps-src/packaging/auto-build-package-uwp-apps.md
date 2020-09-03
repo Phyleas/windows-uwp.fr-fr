@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
-ms.openlocfilehash: 70415c9f3d58625cfdc651ec67c8a9f37c23cffa
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 32054a30e56102b9c0642392d78ac75b78fb99e9
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "77089495"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89158223"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>Configuration de builds automatisées pour votre application UWP
 
@@ -19,9 +19,9 @@ Vous pouvez utiliser Azure Pipelines pour créer des builds automatisées pour l
 
 ## <a name="create-a-new-azure-pipeline"></a>Créer un pipeline Azure
 
-Commencez par [vous inscrire à Azure Pipelines](https://docs.microsoft.com/azure/devops/pipelines/get-started/pipelines-sign-up) si vous ne l’avez pas déjà fait.
+Commencez par [vous inscrire à Azure Pipelines](/azure/devops/pipelines/get-started/pipelines-sign-up) si vous ne l’avez pas déjà fait.
 
-Ensuite, créez un pipeline que vous pouvez utiliser pour générer votre code source. Pour obtenir un tutoriel sur la création d’un pipeline en vue de créer un dépôt GitHub, consultez [Créer votre premier pipeline](https://docs.microsoft.com/azure/devops/pipelines/get-started-yaml). Azure Pipelines prend en charge les types de dépôts listés [dans cet article](https://docs.microsoft.com/azure/devops/pipelines/repos).
+Ensuite, créez un pipeline que vous pouvez utiliser pour générer votre code source. Pour obtenir un tutoriel sur la création d’un pipeline en vue de créer un dépôt GitHub, consultez [Créer votre premier pipeline](/azure/devops/pipelines/get-started-yaml). Azure Pipelines prend en charge les types de dépôts listés [dans cet article](/azure/devops/pipelines/repos).
 
 ## <a name="set-up-an-automated-build"></a>Configuration d’une build automatisée
 
@@ -66,7 +66,7 @@ Le modèle par défaut essaie de signer le package à l'aide du certificat spéc
 
 ## <a name="add-your-project-certificate-to-the-secure-files-library"></a>Ajouter votre certificat de projet à la bibliothèque de fichiers sécurisés
 
-Vous devez dans la mesure du possible éviter de soumettre des certificats à votre dépôt, et Git les ignore par défaut. Pour gérer de manière sécurisée les fichiers sensibles tels que les certificats, Azure DevOps prend en charge la fonctionnalité [Fichiers sécurisés](https://docs.microsoft.com/azure/devops/pipelines/library/secure-files?view=azure-devops).
+Vous devez dans la mesure du possible éviter de soumettre des certificats à votre dépôt, et Git les ignore par défaut. Pour gérer de manière sécurisée les fichiers sensibles tels que les certificats, Azure DevOps prend en charge la fonctionnalité [Fichiers sécurisés](/azure/devops/pipelines/library/secure-files?view=azure-devops).
 
 Pour charger un certificat pour votre build automatisée
 
@@ -80,7 +80,7 @@ Pour charger un certificat pour votre build automatisée
 
     ![Charger un fichier sécurisé](images/secure-file2.png)
 
-5. Si la clé privée dans le certificat a un mot de passe, nous vous recommandons de stocker votre mot de passe dans [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) puis de le lier à un [groupe de variables](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups). Vous pouvez utiliser la variable pour accéder au mot de passe à partir du pipeline. Notez qu’un mot de passe est pris en charge uniquement pour la clé privée. L’utilisation d’un fichier de certificat qui est lui-même protégé par mot de passe n’est pas prise en charge actuellement.
+5. Si la clé privée dans le certificat a un mot de passe, nous vous recommandons de stocker votre mot de passe dans [Azure Key Vault](/azure/key-vault/about-keys-secrets-and-certificates) puis de le lier à un [groupe de variables](/azure/devops/pipelines/library/variable-groups). Vous pouvez utiliser la variable pour accéder au mot de passe à partir du pipeline. Notez qu’un mot de passe est pris en charge uniquement pour la clé privée. L’utilisation d’un fichier de certificat qui est lui-même protégé par mot de passe n’est pas prise en charge actuellement.
 
 > [!NOTE]
 > À partir de Visual Studio 2019, un certificat temporaire n’est plus généré dans les projets UWP. Pour créer ou exporter des certificats, utilisez les applets de commande PowerShell décrites dans [cet article](/windows/msix/package/create-certificate-package-signing).
@@ -100,7 +100,7 @@ Cette tâche compile toutes les solutions se trouvant dans le dossier de travail
 | AppxPackageSigningEnabled | true | Active la signature du package. |
 | PackageCertificateThumbprint | Empreinte de certificat | Cette valeur **doit** correspondre à l’empreinte numérique du certificat de signature, ou être une chaîne vide. |
 | PackageCertificateKeyFile | Path | Chemin du certificat à utiliser. Il est extrait des métadonnées de fichier sécurisé. |
-| PackageCertificatePassword | Password | Mot de passe de la clé privée dans le certificat. Nous vous recommandons de stocker votre mot de passe dans [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) et de le lier à un [groupe de variables](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups). Vous pouvez passer la variable à cet argument. |
+| PackageCertificatePassword | Password | Mot de passe de la clé privée dans le certificat. Nous vous recommandons de stocker votre mot de passe dans [Azure Key Vault](/azure/key-vault/about-keys-secrets-and-certificates) et de le lier à un [groupe de variables](/azure/devops/pipelines/library/variable-groups). Vous pouvez passer la variable à cet argument. |
 
 ### <a name="configure-the-build"></a>Configurer la build
 
@@ -152,7 +152,7 @@ Les paramètres définis avec la syntaxe `$()` sont des variables définies dans
 
 ![variables par défaut](images/building-screen5.png)
 
-Pour afficher toutes les variables prédéfinies, consultez [Variables de build prédéfinies](https://docs.microsoft.com/azure/devops/pipelines/build/variables).
+Pour afficher toutes les variables prédéfinies, consultez [Variables de build prédéfinies](/azure/devops/pipelines/build/variables).
 
 ## <a name="configure-the-publish-build-artifacts-task"></a>Configurer la tâche Publier des artefacts de build
 
@@ -195,7 +195,7 @@ Ensuite, supprimez l’argument MSBuild `AppxBundle` de l’étape de générati
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-- [Créer votre application .NET pour Windows](https://docs.microsoft.com/vsts/build-release/get-started/dot-net)
+- [Créer votre application .NET pour Windows](/vsts/build-release/get-started/dot-net)
 - [Création de packages d’application UWP](/windows/msix/package/packaging-uwp-apps)
-- [Chargement indépendant d’applications métier dans Windows 10](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10)
+- [Chargement indépendant d’applications métier dans Windows 10](/windows/deploy/sideload-apps-in-windows-10)
 - [Créer un certificat de signature de package](/windows/msix/package/create-certificate-package-signing)

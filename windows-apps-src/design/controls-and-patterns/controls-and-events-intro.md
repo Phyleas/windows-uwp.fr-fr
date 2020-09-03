@@ -11,18 +11,18 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: addb4e7d929fb0222deda63494546d731f01cecd
-ms.sourcegitcommit: 3a7f9f05f0127bc8e38139b219e30a8df584cad3
+ms.openlocfilehash: ae53810dee72638eb89467098000988c3baaf047
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83775796"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160533"
 ---
 # <a name="intro-to-controls-and-patterns"></a>Présentation des contrôles et des modèles
 
 Dans le développement d’applications Windows, un *contrôle* est un élément d’interface utilisateur qui affiche du contenu ou permet une interaction. Pour créer l’interface utilisateur de votre application, utilisez des contrôles tels que des boutons, des zones de texte et des zones de liste modifiable pour afficher les données et obtenir les entrées utilisateur.
 
-> **API importantes** : [Espace de noms Windows.UI.Xaml.Controls](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls)
+> **API importantes** : [Espace de noms Windows.UI.Xaml.Controls](/uwp/api/windows.ui.xaml.controls)
 
 Un *modèle* est en quelque sorte une recette qui permet de modifier un contrôle ou d’associer plusieurs contrôles pour créer un élément nouveau. Par exemple, le modèle [Maître/détails](master-details.md) est une façon d’utiliser un contrôle [SplitView](split-view.md) pour la navigation dans l’application. De la même façon, vous pouvez personnaliser le modèle d’un contrôle [NavigationView](navigationview.md) pour implémenter le modèle d’onglet.
 
@@ -169,7 +169,7 @@ Button1().Click({ this, &MainPage::Button1_Click });
 ## <a name="related-topics"></a>Rubriques connexes
 
 -   [Index des contrôles par fonction](controls-by-function.md)
--   [Espace de noms Windows.UI.Xaml.Controls](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls)
+-   [Espace de noms Windows.UI.Xaml.Controls](/uwp/api/windows.ui.xaml.controls)
 -   [Disposition](../layout/index.md)
 -   [Style](../style/index.md)
 -   [Facilité d’utilisation](../usability/index.md)

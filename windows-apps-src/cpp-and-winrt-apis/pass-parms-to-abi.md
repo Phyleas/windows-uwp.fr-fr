@@ -5,16 +5,16 @@ ms.date: 07/10/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, passer, paramètres, ABI
 ms.localizationpriority: medium
-ms.openlocfilehash: 51cde2332d3d9df9d1f488aa7f8246f9e1e2ed36
-ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
+ms.openlocfilehash: 05a627349ad2c4fda890a4f5280f5d33454ea910
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997976"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154453"
 ---
 # <a name="passing-parameters-into-the-abi-boundary"></a>Passage de paramètres à la frontière ABI
 
-Étant donné que les types se trouvent dans l’espace de noms **winrt::param**, C++/ WinRT simplifie le passage de paramètres à la frontière ABI en fournissant des conversions automatiques pour les cas courants. Pour obtenir plus de détails et des exemples de code, consultez [Gestion des chaînes](/windows/uwp/cpp-and-winrt-apis/strings) et [Types de données C++ standard et C++/WinRT](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types).
+Étant donné que les types se trouvent dans l’espace de noms **winrt::param**, C++/ WinRT simplifie le passage de paramètres à la frontière ABI en fournissant des conversions automatiques pour les cas courants. Pour obtenir plus de détails et des exemples de code, consultez [Gestion des chaînes](./strings.md) et [Types de données C++ standard et C++/WinRT](./std-cpp-data-types.md).
 
 > [!IMPORTANT]
 > Vous ne devez pas utiliser vous-même les types de l’espace de noms **winrt::param**. Ils sont au profit de la projection.

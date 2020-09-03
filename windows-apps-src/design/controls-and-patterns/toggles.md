@@ -12,20 +12,20 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d9cb44c91bcd556a10059005a8f19a75f90d3d9
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 5c8df28335bf67c00f0429d6967e9013c73ec351
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80081471"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154193"
 ---
 # <a name="toggle-switches"></a>Boutons bascule
 
 Le bouton bascule représente un commutateur physique qui permet à l’utilisateur d’activer ou de désactiver des options. Utilisez les contrôles de bouton bascule pour présenter aux utilisateurs deux options qui s’excluent mutuellement (comme activé/désactivé), de sorte que la sélection d’une option produise immédiatement un résultat.
 
-Pour créer un contrôle de bouton bascule, utilisez la [classe ToggleSwitch](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch).
+Pour créer un contrôle de bouton bascule, utilisez la [classe ToggleSwitch](/uwp/api/windows.ui.xaml.controls.toggleswitch).
 
-> **API de plateforme** : [classe ToggleSwitch](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch), [propriété IsOn](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.ison), [événement Toggled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.toggled)
+> **API de plateforme** : [classe ToggleSwitch](/uwp/api/windows.ui.xaml.controls.toggleswitch), [propriété IsOn](/uwp/api/windows.ui.xaml.controls.toggleswitch.ison), [événement Toggled](/uwp/api/windows.ui.xaml.controls.toggleswitch.toggled)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
@@ -97,7 +97,7 @@ stackPanel1.Children.Add(lightToggle);
 
 ### <a name="ison"></a>IsOn
 
-Le commutateur peut être activé ou désactivé. Utilisez la propriété [IsOn](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.ison) pour déterminer l’état du commutateur. Lorsque le commutateur est utilisé pour contrôler l’état d’une autre propriété binaire, vous pouvez utiliser une liaison, comme illustré ici.
+Le commutateur peut être activé ou désactivé. Utilisez la propriété [IsOn](/uwp/api/windows.ui.xaml.controls.toggleswitch.ison) pour déterminer l’état du commutateur. Lorsque le commutateur est utilisé pour contrôler l’état d’une autre propriété binaire, vous pouvez utiliser une liaison, comme illustré ici.
 
 ```xaml
 <StackPanel Orientation="Horizontal">
@@ -108,7 +108,7 @@ Le commutateur peut être activé ou désactivé. Utilisez la propriété [IsOn]
 
 ### <a name="toggled"></a>Toggled
 
-Dans les autres cas, vous pouvez gérer l’événement [Toggled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.toggled) afin de répondre aux modifications de l’état.
+Dans les autres cas, vous pouvez gérer l’événement [Toggled](/uwp/api/windows.ui.xaml.controls.toggleswitch.toggled) afin de répondre aux modifications de l’état.
 
 Cet exemple indique comment ajouter un gestionnaire d’événements Toggled en XAML et à l’aide de code. L’événement Toggled est géré de façon à activer ou désactiver un anneau de progression et à en modifier la visibilité.
 
@@ -152,7 +152,7 @@ private void ToggleSwitch_Toggled(object sender, RoutedEventArgs e)
 
 ### <a name="onoff-labels"></a>Étiquettes On/Off
 
-Par défaut, le bouton bascule inclut des étiquettes On et Off littérales, qui sont localisées automatiquement. Vous pouvez remplacer ces étiquettes en définissant les propriétés [OnContent](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.oncontent) et [OffContent](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.offcontent).
+Par défaut, le bouton bascule inclut des étiquettes On et Off littérales, qui sont localisées automatiquement. Vous pouvez remplacer ces étiquettes en définissant les propriétés [OnContent](/uwp/api/windows.ui.xaml.controls.toggleswitch.oncontent) et [OffContent](/uwp/api/windows.ui.xaml.controls.toggleswitch.offcontent).
 
 Cet exemple remplace les étiquettes On/Off par des étiquettes Show/Hide.
 
@@ -162,7 +162,7 @@ Cet exemple remplace les étiquettes On/Off par des étiquettes Show/Hide.
               Toggled="ToggleSwitch_Toggled"/>
 ```
 
-Vous pouvez également utiliser un contenu plus complexe en définissant les propriétés [OnContentTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.oncontenttemplate) et [OffContentTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.offcontenttemplate).
+Vous pouvez également utiliser un contenu plus complexe en définissant les propriétés [OnContentTemplate](/uwp/api/windows.ui.xaml.controls.toggleswitch.oncontenttemplate) et [OffContentTemplate](/uwp/api/windows.ui.xaml.controls.toggleswitch.offcontenttemplate).
 
 ## <a name="recommendations"></a>Recommandations
 
@@ -175,7 +175,7 @@ Vous pouvez également utiliser un contenu plus complexe en définissant les pro
 
 ## <a name="related-articles"></a>Articles connexes
 
-- [Classe ToggleSwitch](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch)
+- [Classe ToggleSwitch](/uwp/api/windows.ui.xaml.controls.toggleswitch)
 - [Cases d’option](radio-button.md)
 - [Boutons bascule](toggles.md)
 - [Cases à cocher](checkbox.md)

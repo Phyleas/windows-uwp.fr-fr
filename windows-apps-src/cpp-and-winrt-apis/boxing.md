@@ -5,23 +5,23 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, XAML, contrôle, conversion boxing, scalaire, valeur
 ms.localizationpriority: medium
-ms.openlocfilehash: 29263260217de154f1a942d37d1e18fece15e3d0
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 3c1a64b97b40608e877f18b764ae92835d2bc4a7
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79038092"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154373"
 ---
 # <a name="boxing-and-unboxing-scalar-values-to-iinspectable-with-cwinrt"></a>Conversions boxing et unboxing de valeurs scalaires vers IInspectable avec C++/WinRT
  
-L’[**interface IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) est l’interface racine de chaque classe runtime dans Windows Runtime (WinRT). Il s’agit d’un concept analogue à [**IUnknown**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown) se trouvant à la racine de chaque interface et classe COM et de **System.Object** se trouvant à la racine de chaque classe [Common Type System](https://docs.microsoft.com/dotnet/standard/base-types/common-type-system).
+L’[**interface IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) est l’interface racine de chaque classe runtime dans Windows Runtime (WinRT). Il s’agit d’un concept analogue à [**IUnknown**](/windows/desktop/api/unknwn/nn-unknwn-iunknown) se trouvant à la racine de chaque interface et classe COM et de **System.Object** se trouvant à la racine de chaque classe [Common Type System](/dotnet/standard/base-types/common-type-system).
 
 En d’autres termes, une fonction qui attend **IInspectable** peut se voir transmettre une instance de n’importe quelle classe runtime. Mais vous ne pouvez pas transmettre directement une valeur scalaire, comme une valeur numérique ou une valeur de texte, vers une telle fonction. Au lieu de cela, une valeur scalaire doit être encapsulée dans un objet de classe de référence. Ce processus d’encapsulation est appelé *boxing* de la valeur.
 
 > [!IMPORTANT]
 > Vous pouvez convertir (boxing et unboxing) tout type qu’il est possible de passer à une API Windows Runtime. En somme, il s’agit d’un type Windows Runtime. Les valeurs numériques et textuelles (chaînes) correspondent aux exemples ci-dessus. Un autre exemple est un `struct` que vous définissez dans IDL. Si vous essayez de faire une conversion boxing d’un `struct` C++ standard (qui n’est pas défini dans IDL), le compilateur vous rappelle que cette conversion est possible uniquement pour un type Windows Runtime. Une classe runtime est un type Windows Runtime, mais vous pouvez bien sûr passer des classes runtime aux API Windows Runtime sans les convertir.
 
-[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) fournit la fonction [**winrt::box_value**](/uwp/cpp-ref-for-winrt/box-value), qui prend une valeur scalaire et retourne la valeur convertie dans un **IInspectable**. Pour annuler la conversion d’un **IInspectable** et revenir à une valeur scalaire, il existe les fonctions [**winrt::unbox_value**](/uwp/cpp-ref-for-winrt/unbox-value) et [**winrt::unbox_value_or**](/uwp/cpp-ref-for-winrt/unbox-value-or).
+[C++/WinRT](./intro-to-using-cpp-with-winrt.md) fournit la fonction [**winrt::box_value**](/uwp/cpp-ref-for-winrt/box-value), qui prend une valeur scalaire et retourne la valeur convertie dans un **IInspectable**. Pour annuler la conversion d’un **IInspectable** et revenir à une valeur scalaire, il existe les fonctions [**winrt::unbox_value**](/uwp/cpp-ref-for-winrt/unbox-value) et [**winrt::unbox_value_or**](/uwp/cpp-ref-for-winrt/unbox-value-or).
 
 ## <a name="examples-of-boxing-a-value"></a>Exemples de conversion boxing d’une valeur
 La fonction accesseur [**LaunchActivatedEventArgs::Arguments**](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.Arguments) renvoie un [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring), qui est une valeur scalaire. Nous pouvons convertir cette valeur **hstring** et la transmettre à une fonction qui attend **IInspectable** comme suit.

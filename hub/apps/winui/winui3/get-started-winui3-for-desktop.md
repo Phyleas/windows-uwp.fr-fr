@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 7393d4d1bae227bf3b586a54fba5d43ca2dcb53e
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 2b946047602013704b27fb5c5565155d38dbb7f8
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493404"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154823"
 ---
 # <a name="get-started-with-winui-3-for-desktop-apps"></a>Bien démarrer avec WinUI 3 pour les applications de bureau
 
@@ -45,7 +45,7 @@ Pour utiliser les modèles de projet WinUI 3 pour applications de bureau décri
 
         ![Ajouter un projet](images/WinUI-csharp-appproject.png)
 
-    * ***Nom du projet* (Package)**  : il s’agit d’un [Projet de création de packages d’applications Windows](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) configuré pour générer l’application dans un [package MSIX](https://docs.microsoft.com/windows/msix/overview). Vous bénéficiez ainsi d’une expérience de déploiement moderne, de la possibilité de l’intégrer aux fonctionnalités de Windows 10 par le biais d’extensions de package et bien plus encore. Ce projet contient le [manifeste du package](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root) pour votre application, et il s’agit du projet de démarrage de votre solution par défaut.
+    * ***Nom du projet* (Package)**  : il s’agit d’un [Projet de création de packages d’applications Windows](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) configuré pour générer l’application dans un [package MSIX](/windows/msix/overview). Vous bénéficiez ainsi d’une expérience de déploiement moderne, de la possibilité de l’intégrer aux fonctionnalités de Windows 10 par le biais d’extensions de package et bien plus encore. Ce projet contient le [manifeste du package](/uwp/schemas/appxpackage/uapmanifestschema/schema-root) pour votre application, et il s’agit du projet de démarrage de votre solution par défaut.
 
         ![Ajouter un projet](images/WinUI-csharp-packageproject.png)
 
@@ -77,7 +77,7 @@ Pour utiliser les modèles de projet WinUI 3 pour applications de bureau décri
 
         ![Ajouter un projet](images/WinUI-cpp-appproject.png)
 
-    * ***Nom du projet* (Package)**  : il s’agit d’un [Projet de création de packages d’applications Windows](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) configuré pour générer l’application dans un [package MSIX](https://docs.microsoft.com/windows/msix/overview). Vous bénéficiez ainsi d’une expérience de déploiement moderne, de la possibilité de l’intégrer aux fonctionnalités de Windows 10 par le biais d’extensions de package et bien plus encore. Ce projet contient le [manifeste du package](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root) pour votre application, et il s’agit du projet de démarrage de votre solution par défaut.
+    * ***Nom du projet* (Package)**  : il s’agit d’un [Projet de création de packages d’applications Windows](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) configuré pour générer l’application dans un [package MSIX](/windows/msix/overview). Vous bénéficiez ainsi d’une expérience de déploiement moderne, de la possibilité de l’intégrer aux fonctionnalités de Windows 10 par le biais d’extensions de package et bien plus encore. Ce projet contient le [manifeste du package](/uwp/schemas/appxpackage/uapmanifestschema/schema-root) pour votre application, et il s’agit du projet de démarrage de votre solution par défaut.
 
         ![Projet du package](images/WinUI-cpp-packageproject.png)
 

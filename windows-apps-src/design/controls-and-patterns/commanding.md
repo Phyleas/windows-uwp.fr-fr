@@ -4,16 +4,16 @@ description: Comment utiliser les classes XamlUICommand et StandardUICommand (ai
 ms.service: ''
 ms.topic: overview
 ms.date: 09/13/2019
-ms.openlocfilehash: 5ab46a479e882b9975f24731dfcbb6e433126f80
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 767172fe3384fc74687b239768b277b6147c0fd4
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83233765"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160633"
 ---
 # <a name="commanding-in-windows-apps-using-standarduicommand-xamluicommand-and-icommand"></a>Utilisation des commandes dans les applications Windows avec StandardUICommand, XamlUICommand et ICommand
 
-Dans cette rubrique, nous décrivons l’utilisation des commandes dans les applications Windows. Nous expliquons particulièrement comment utiliser les classes [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) et [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) (ainsi que l’interface ICommand) pour partager et gérer les commandes entre les différents types de contrôles, quels que soient l’appareil et le type d’entrée utilisés.
+Dans cette rubrique, nous décrivons l’utilisation des commandes dans les applications Windows. Nous expliquons particulièrement comment utiliser les classes [XamlUICommand](/uwp/api/windows.ui.xaml.input.xamluicommand) et [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand) (ainsi que l’interface ICommand) pour partager et gérer les commandes entre les différents types de contrôles, quels que soient l’appareil et le type d’entrée utilisés.
 
 ![Diagramme illustrant l’utilisation courante d’une commande partagée : plusieurs surfaces d’interface utilisateur avec une commande « favori »](images/commanding/generic-commanding.png)
 
@@ -21,9 +21,9 @@ Dans cette rubrique, nous décrivons l’utilisation des commandes dans les appl
 
 ## <a name="important-apis"></a>API importantes
 
-- [Windows.UI.Xaml.Input.ICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand) et [System.Windows.Input.ICommand](https://docs.microsoft.com/dotnet/api/system.windows.input.icommand)
-- [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand)
-- [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand)
+- [Windows.UI.Xaml.Input.ICommand](/uwp/api/windows.ui.xaml.input.icommand) et [System.Windows.Input.ICommand](/dotnet/api/system.windows.input.icommand)
+- [XamlUICommand](/uwp/api/windows.ui.xaml.input.xamluicommand)
+- [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand)
 
 ## <a name="overview"></a>Vue d’ensemble
 
@@ -73,20 +73,20 @@ Il existe plusieurs façons de partager et gérer des expériences d’utilisati
 
 Pour fournir des expériences utilisateur riches et complètes sur les surfaces de commande efficacement et avec une duplication de code minimale, utilisez de préférence les fonctionnalités de liaison de commande décrites dans cette rubrique (pour la gestion des événements standard, consultez la rubrique consacrée à l’événement concerné).
 
-Pour lier un contrôle à une ressource de commande partagée, vous pouvez implémenter les interfaces ICommand vous-même, ou vous pouvez générer votre commande à partir de la classe de base [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) ou d’une des commandes de plateforme définies par la classe dérivée [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand).
+Pour lier un contrôle à une ressource de commande partagée, vous pouvez implémenter les interfaces ICommand vous-même, ou vous pouvez générer votre commande à partir de la classe de base [XamlUICommand](/uwp/api/windows.ui.xaml.input.xamluicommand) ou d’une des commandes de plateforme définies par la classe dérivée [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand).
 
-- L’interface ICommand ([Windows.UI.Xaml.Input.ICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand) ou [System.Windows.Input.ICommand](https://docs.microsoft.com/dotnet/api/system.windows.input.icommand)) vous permet de créer des commandes entièrement personnalisées et réutilisables dans votre application.
-- [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) offre également cette possibilité, mais simplifie le développement en exposant un ensemble de propriétés de commande intégrées, comme le comportement de la commande, les raccourcis clavier (touche d’accès rapide et touche accélérateur), l’icône, l’étiquette et la description.
-- [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) simplifie davantage les choses en vous permettant de choisir parmi un ensemble de commandes de plateforme standard dotées de propriétés prédéfinies.
+- L’interface ICommand ([Windows.UI.Xaml.Input.ICommand](/uwp/api/windows.ui.xaml.input.icommand) ou [System.Windows.Input.ICommand](/dotnet/api/system.windows.input.icommand)) vous permet de créer des commandes entièrement personnalisées et réutilisables dans votre application.
+- [XamlUICommand](/uwp/api/windows.ui.xaml.input.xamluicommand) offre également cette possibilité, mais simplifie le développement en exposant un ensemble de propriétés de commande intégrées, comme le comportement de la commande, les raccourcis clavier (touche d’accès rapide et touche accélérateur), l’icône, l’étiquette et la description.
+- [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand) simplifie davantage les choses en vous permettant de choisir parmi un ensemble de commandes de plateforme standard dotées de propriétés prédéfinies.
 
 > [!Important]
-> Dans les applications UWP, les commandes sont des implémentations de l’interface [Windows.UI.Xaml.Input.ICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand) (C++) ou [System.Windows.Input.ICommand](https://docs.microsoft.com/dotnet/api/system.windows.input.icommand) (C#), selon le framework de langage que vous avez choisi.
+> Dans les applications UWP, les commandes sont des implémentations de l’interface [Windows.UI.Xaml.Input.ICommand](/uwp/api/windows.ui.xaml.input.icommand) (C++) ou [System.Windows.Input.ICommand](/dotnet/api/system.windows.input.icommand) (C#), selon le framework de langage que vous avez choisi.
 
 ## <a name="command-experiences-using-the-standarduicommand-class"></a>Expériences de commande à l’aide de la classe StandardUICommand
 
-Dérivée de [XamlUiCommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) (de [Windows.UI.Xaml.Input.ICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand) pour C++ ou de [System.Windows.Input.ICommand](https://docs.microsoft.com/dotnet/api/system.windows.input.icommand) pour C#), la classe [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) expose un ensemble de commandes de plateforme standard dotées de propriétés prédéfinies telles que l’icône, la touche d’accès rapide et la description.
+Dérivée de [XamlUiCommand](/uwp/api/windows.ui.xaml.input.xamluicommand) (de [Windows.UI.Xaml.Input.ICommand](/uwp/api/windows.ui.xaml.input.icommand) pour C++ ou de [System.Windows.Input.ICommand](/dotnet/api/system.windows.input.icommand) pour C#), la classe [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand) expose un ensemble de commandes de plateforme standard dotées de propriétés prédéfinies telles que l’icône, la touche d’accès rapide et la description.
 
-Une classe [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) offre un moyen rapide et cohérent pour définir des commandes courantes telles que `Save` ou `Delete`. Il vous suffit de fournir les fonctions execute et canExecute.
+Une classe [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand) offre un moyen rapide et cohérent pour définir des commandes courantes telles que `Save` ou `Delete`. Il vous suffit de fournir les fonctions execute et canExecute.
 
 ### <a name="example"></a>Exemple
 
@@ -98,14 +98,14 @@ Une classe [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xam
 | -------------------- |
 | [Exemple d’utilisation de commandes UWP (StandardUICommand)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-standarduicommand.zip) |
 
-Dans cet exemple, nous montrons comment améliorer un [ListView](listview-and-gridview.md) de base avec une commande de suppression d’élément implémentée par le biais de la classe [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand), tout en optimisant l’expérience utilisateur pour une variété de types d’entrée à l’aide d’un [MenuBar](menus.md), d’un contrôle [Swipe](swipe.md), de boutons de pointage et d’un [menu contextuel](menus.md).
+Dans cet exemple, nous montrons comment améliorer un [ListView](listview-and-gridview.md) de base avec une commande de suppression d’élément implémentée par le biais de la classe [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand), tout en optimisant l’expérience utilisateur pour une variété de types d’entrée à l’aide d’un [MenuBar](menus.md), d’un contrôle [Swipe](swipe.md), de boutons de pointage et d’un [menu contextuel](menus.md).
 
 > [!NOTE]
-> Cet exemple nécessite le package NuGet Microsoft.UI.Xaml.Controls, qui fait partie de la [bibliothèque d’interface utilisateur Microsoft Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
+> Cet exemple nécessite le package NuGet Microsoft.UI.Xaml.Controls, qui fait partie de la [bibliothèque d’interface utilisateur Microsoft Windows](/uwp/toolkits/winui/).
 
 **Xaml**
 
-L’exemple d’interface utilisateur présente un [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) de cinq éléments. La [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) de suppression est liée à un [MenuBarItem](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.menubaritem), un [SwipeItem](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.swipeitem), un [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton) et un [menu ContextFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout).
+L’exemple d’interface utilisateur présente un [ListView](/uwp/api/windows.ui.xaml.controls.listview) de cinq éléments. La [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand) de suppression est liée à un [MenuBarItem](/uwp/api/microsoft.ui.xaml.controls.menubaritem), un [SwipeItem](/uwp/api/microsoft.ui.xaml.controls.swipeitem), un [AppBarButton](/uwp/api/windows.ui.xaml.controls.appbarbutton) et un [menu ContextFlyout](/uwp/api/windows.ui.xaml.uielement.contextflyout).
 
 ``` xaml
 <Page
@@ -241,7 +241,7 @@ public class ListItemData
 }
 ```
 
-2. Dans la classe MainPage, nous définissons une collection d’objets `ListItemData` pour le [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.datatemplate) de l’[ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) du [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview). Ensuite, nous la remplissons avec une collection initiale de cinq éléments (avec du texte et la commande de suppression [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) associée).
+2. Dans la classe MainPage, nous définissons une collection d’objets `ListItemData` pour le [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate) de l’[ItemTemplate](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) du [ListView](/uwp/api/windows.ui.xaml.controls.listview). Ensuite, nous la remplissons avec une collection initiale de cinq éléments (avec du texte et la commande de suppression [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand) associée).
 
 ```csharp
 /// <summary>
@@ -315,7 +315,7 @@ private void DeleteCommand_ExecuteRequested(
 }
 ```
 
-4. Enfin, nous définissons des gestionnaires pour divers événements ListView, notamment les événements [PointerEntered](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered), [PointerExited](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited) et [SelectionChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged). Les gestionnaires d’événements de pointeur sont utilisés pour afficher ou masquer le bouton de suppression pour chaque élément.
+4. Enfin, nous définissons des gestionnaires pour divers événements ListView, notamment les événements [PointerEntered](/uwp/api/windows.ui.xaml.uielement.pointerentered), [PointerExited](/uwp/api/windows.ui.xaml.uielement.pointerexited) et [SelectionChanged](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged). Les gestionnaires d’événements de pointeur sont utilisés pour afficher ou masquer le bouton de suppression pour chaque élément.
 
 ```csharp
 /// <summary>
@@ -367,9 +367,9 @@ private void ListViewSwipeContainer_PointerExited(
 
 ## <a name="command-experiences-using-the-xamluicommand-class"></a>Expériences de commande à l’aide de la classe XamlUICommand
 
-Si vous avez besoin de créer une commande qui n’est pas définie par la classe [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) ou que vous souhaitez mieux contrôler l’apparence des commandes, la classe [XamlUiCommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) dérive de l’interface [ICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand), ajoutant diverses propriétés d’interface utilisateur (par exemple, une icône, une étiquette, une description et des raccourcis clavier), des méthodes et des événements qui permettent de définir rapidement l’interface utilisateur et le comportement d’une commande personnalisée.
+Si vous avez besoin de créer une commande qui n’est pas définie par la classe [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand) ou que vous souhaitez mieux contrôler l’apparence des commandes, la classe [XamlUiCommand](/uwp/api/windows.ui.xaml.input.xamluicommand) dérive de l’interface [ICommand](/uwp/api/windows.ui.xaml.input.icommand), ajoutant diverses propriétés d’interface utilisateur (par exemple, une icône, une étiquette, une description et des raccourcis clavier), des méthodes et des événements qui permettent de définir rapidement l’interface utilisateur et le comportement d’une commande personnalisée.
 
-Avec [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand), vous pouvez spécifier l’interface utilisateur par le biais de la liaison de contrôle, par exemple, une icône, une étiquette, une description et des raccourcis clavier (à la fois une touche d’accès rapide et un accélérateur clavier), sans avoir à définir les différentes propriétés.
+Avec [XamlUICommand](/uwp/api/windows.ui.xaml.input.xamluicommand), vous pouvez spécifier l’interface utilisateur par le biais de la liaison de contrôle, par exemple, une icône, une étiquette, une description et des raccourcis clavier (à la fois une touche d’accès rapide et un accélérateur clavier), sans avoir à définir les différentes propriétés.
 
 ### <a name="example"></a>Exemple
 
@@ -381,16 +381,16 @@ Avec [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xa
 | -------------------- |
 | [Exemple d’utilisation de commandes UWP (XamlUICommand)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-xamluicommand.zip) |
 
-Cet exemple partage les fonctionnalités de suppression de l’exemple [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) précédent, mais montre comment la classe [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) vous permet de définir une commande de suppression personnalisée avec vos propres icône de police, étiquette, accélérateur clavier et description. Comme l’exemple [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand), nous améliorons un [ListView](listview-and-gridview.md) de base avec une commande de suppression d’élément implémentée par le biais de la classe [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand), tout en optimisant l’expérience utilisateur pour une variété de types d’entrée à l’aide d’un [MenuBar](menus.md), d’un contrôle [Swipe](swipe.md), de boutons de pointage et d’un [menu contextuel](menus.md).
+Cet exemple partage les fonctionnalités de suppression de l’exemple [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand) précédent, mais montre comment la classe [XamlUICommand](/uwp/api/windows.ui.xaml.input.xamluicommand) vous permet de définir une commande de suppression personnalisée avec vos propres icône de police, étiquette, accélérateur clavier et description. Comme l’exemple [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand), nous améliorons un [ListView](listview-and-gridview.md) de base avec une commande de suppression d’élément implémentée par le biais de la classe [XamlUICommand](/uwp/api/windows.ui.xaml.input.xamluicommand), tout en optimisant l’expérience utilisateur pour une variété de types d’entrée à l’aide d’un [MenuBar](menus.md), d’un contrôle [Swipe](swipe.md), de boutons de pointage et d’un [menu contextuel](menus.md).
 
 De nombreux contrôles de plateforme utilisent les propriétés XamlUICommand en coulisses, tout comme notre exemple StandardUICommand dans la section précédente. 
 
 > [!NOTE]
-> Cet exemple nécessite le package NuGet Microsoft.UI.Xaml.Controls, qui fait partie de la [bibliothèque d’interface utilisateur Microsoft Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
+> Cet exemple nécessite le package NuGet Microsoft.UI.Xaml.Controls, qui fait partie de la [bibliothèque d’interface utilisateur Microsoft Windows](/uwp/toolkits/winui/).
 
 **Xaml**
 
-L’exemple d’interface utilisateur présente un [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) de cinq éléments. La commande de suppression [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) personnalisée est liée à un [MenuBarItem](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.menubaritem), un [SwipeItem](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.swipeitem), un [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton) et un [menu ContextFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout).
+L’exemple d’interface utilisateur présente un [ListView](/uwp/api/windows.ui.xaml.controls.listview) de cinq éléments. La commande de suppression [XamlUICommand](/uwp/api/windows.ui.xaml.input.xamluicommand) personnalisée est liée à un [MenuBarItem](/uwp/api/microsoft.ui.xaml.controls.menubaritem), un [SwipeItem](/uwp/api/microsoft.ui.xaml.controls.swipeitem), un [AppBarButton](/uwp/api/windows.ui.xaml.controls.appbarbutton) et un [menu ContextFlyout](/uwp/api/windows.ui.xaml.uielement.contextflyout).
 
 ``` xaml
 <Page
@@ -540,7 +540,7 @@ public class ListItemData
 }
 ```
 
-2. Dans la classe MainPage, nous définissons une collection d’objets `ListItemData` pour le [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.datatemplate) de l’[ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) du [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview). Ensuite, nous la remplissons avec une collection initiale de cinq éléments (avec du texte et la commande [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) associée).
+2. Dans la classe MainPage, nous définissons une collection d’objets `ListItemData` pour le [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate) de l’[ItemTemplate](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) du [ListView](/uwp/api/windows.ui.xaml.controls.listview). Ensuite, nous la remplissons avec une collection initiale de cinq éléments (avec du texte et la commande [XamlUICommand](/uwp/api/windows.ui.xaml.input.xamluicommand) associée).
 
 ```csharp
 ObservableCollection<ListItemData> collection = new ObservableCollection<ListItemData>();
@@ -585,7 +585,7 @@ private void DeleteCommand_ExecuteRequested(
 }
 ```
 
-4. Enfin, nous définissons des gestionnaires pour divers événements ListView, notamment les événements [PointerEntered](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered), [PointerExited](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited) et [SelectionChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged). Les gestionnaires d’événements de pointeur sont utilisés pour afficher ou masquer le bouton de suppression pour chaque élément.
+4. Enfin, nous définissons des gestionnaires pour divers événements ListView, notamment les événements [PointerEntered](/uwp/api/windows.ui.xaml.uielement.pointerentered), [PointerExited](/uwp/api/windows.ui.xaml.uielement.pointerexited) et [SelectionChanged](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged). Les gestionnaires d’événements de pointeur sont utilisés pour afficher ou masquer le bouton de suppression pour chaque élément.
 
 ```csharp
 private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -616,7 +616,7 @@ private void ListViewSwipeContainer_PointerExited(object sender, PointerRoutedEv
 
 Les contrôles UWP standard (bouton, liste, sélection, calendrier, texte prédictif) fournissent la base de nombreuses expériences de commande courantes. Pour obtenir la liste complète des types de contrôle, consultez [Contrôles et modèles pour applications Windows](index.md).
 
-La façon la plus simple de prendre en charge une expérience d’utilisation de commandes structurée consiste à définir une implémentation de l’interface ICommand ([Windows.UI.Xaml.Input.ICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand) pour C++ ou [System.Windows.Input.ICommand](https://docs.microsoft.com/dotnet/api/system.windows.input.icommand) pour C#).  Cette instance ICommand peut ensuite être liée à des contrôles tels que des boutons.
+La façon la plus simple de prendre en charge une expérience d’utilisation de commandes structurée consiste à définir une implémentation de l’interface ICommand ([Windows.UI.Xaml.Input.ICommand](/uwp/api/windows.ui.xaml.input.icommand) pour C++ ou [System.Windows.Input.ICommand](/dotnet/api/system.windows.input.icommand) pour C#).  Cette instance ICommand peut ensuite être liée à des contrôles tels que des boutons.
 
 > [!NOTE]
 > Dans certains cas, il peut suffire de lier une méthode à l’événement Click et une propriété à la propriété IsEnabled.
@@ -633,7 +633,7 @@ La façon la plus simple de prendre en charge une expérience d’utilisation de
 
 Dans cet exemple de base, nous allons montrer comment une seule commande peut être appelée avec un clic de bouton, un accélérateur clavier et en actionnant la roulette de la souris.
 
-Nous utilisons deux [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview), un rempli avec cinq éléments et l’autre vide, et deux boutons, un pour le déplacement des éléments depuis le ListView de gauche vers le ListView de droite, et l’autre pour le déplacement des éléments de droite à gauche. Chaque bouton est lié à une commande correspondante (ViewModel.MoveRightCommand et ViewModel.MoveLeftCommand, respectivement) et est activé et désactivé automatiquement en fonction du nombre d’éléments dans son ListView associée.
+Nous utilisons deux [ListView](/uwp/api/windows.ui.xaml.controls.listview), un rempli avec cinq éléments et l’autre vide, et deux boutons, un pour le déplacement des éléments depuis le ListView de gauche vers le ListView de droite, et l’autre pour le déplacement des éléments de droite à gauche. Chaque bouton est lié à une commande correspondante (ViewModel.MoveRightCommand et ViewModel.MoveLeftCommand, respectivement) et est activé et désactivé automatiquement en fonction du nombre d’éléments dans son ListView associée.
 
 **Le code XAML suivant définit l’interface utilisateur de notre exemple.**
 
@@ -994,7 +994,7 @@ namespace UICommand1.ViewModel
 
 **Pour finir, voici notre implémentation de l’interface ICommand**
 
-Ici, nous définissons une commande qui implémente l’interface [ICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand) et relaie simplement ses fonctionnalités à d’autres objets.
+Ici, nous définissons une commande qui implémente l’interface [ICommand](/uwp/api/windows.ui.xaml.input.icommand) et relaie simplement ses fonctionnalités à d’autres objets.
 
 ```csharp
 using System;
@@ -1097,7 +1097,7 @@ Utilisez les approches suivantes quand vous générez des commandes pour vos app
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Pour obtenir une illustration complète d’une implémentation de [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) et [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand), consultez l’exemple [Galerie de contrôles XAML](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics).
+Pour obtenir une illustration complète d’une implémentation de [XamlUICommand](/uwp/api/windows.ui.xaml.input.xamluicommand) et [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand), consultez l’exemple [Galerie de contrôles XAML](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics).
 
 ## <a name="see-also"></a>Voir aussi
 

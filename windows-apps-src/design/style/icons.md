@@ -11,12 +11,12 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 7c44baee7d3201e2e554604405afe337007dd510
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: e35041cce7e43f6eebed06b39f3ae2dbda55a4ae
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970954"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156793"
 ---
 # <a name="icons-for-windows-apps"></a>Icônes pour les applications Windows
 
@@ -39,7 +39,7 @@ Les icônes peuvent apparaître dans les applications, ainsi qu'à l’extérieu
     :::column-end:::
 :::row-end:::
 
-Cet article décrit les icônes au sein de votre application. Pour en savoir plus sur les icônes en dehors de votre application (icônes d’application), voir [l’article Icônes d'application et de vignette](/windows/uwp/design/shell/tiles-and-notifications/app-assets).
+Cet article décrit les icônes au sein de votre application. Pour en savoir plus sur les icônes en dehors de votre application (icônes d’application), voir [l’article Icônes d'application et de vignette](./app-icons-and-logos.md).
 
 ## <a name="when-to-use-icons"></a>Quand utiliser les icônes
 
@@ -100,7 +100,7 @@ Vous n’êtes pas obligé d’utiliser la police Segoe MDL2 Assets : vous pouv
 ### <a name="use-a-scalable-vector-graphics-svg-file"></a>Utilisez un fichier SVG (Scalable Vector Graphics).
 :::row:::
     :::column:::
-Les ressources SVG sont idéales pour les icônes, car elles paraissent toujours nettes à n’importe quelle taille ou résolution. La plupart des applications de dessin peuvent s'exporter au format SVG. Pour obtenir des instructions, voir [SVGImageSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.svgimagesource).
+Les ressources SVG sont idéales pour les icônes, car elles paraissent toujours nettes à n’importe quelle taille ou résolution. La plupart des applications de dessin peuvent s'exporter au format SVG. Pour obtenir des instructions, voir [SVGImageSource](/uwp/api/windows.ui.xaml.media.imaging.svgimagesource).
     :::column-end:::
     :::column:::
         ![Image SVG](images/icons/icon-scale.gif)
@@ -156,7 +156,7 @@ Définissez la famille de polices du bouton sur `Segoe MDL2 Assets` et sa propri
 :::row:::
     :::column span="2":::
         <b>Étape 2</b><br>
-Vous pouvez utiliser l’un des objets d’élément d’icône : [BitmapIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.bitmapicon), [FontIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon), [PathIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pathicon) ou [SymbolIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbolicon). Cela vous donne davantage de choix de types d'icônes et vous permet de combiner les icônes et d'autres types de contenu, tels que le texte, si vous le souhaitez :
+Vous pouvez utiliser l’un des objets d’élément d’icône : [BitmapIcon](/uwp/api/windows.ui.xaml.controls.bitmapicon), [FontIcon](/uwp/api/windows.ui.xaml.controls.fonticon), [PathIcon](/uwp/api/windows.ui.xaml.controls.pathicon) ou [SymbolIcon](/uwp/api/windows.ui.xaml.controls.symbolicon). Cela vous donne davantage de choix de types d'icônes et vous permet de combiner les icônes et d'autres types de contenu, tels que le texte, si vous le souhaitez :
     :::column-end:::
     :::column:::
         ![Créer un bouton d’icône - Étape 2](images/icons/icon-text-step-2.svg)
@@ -176,7 +176,7 @@ Vous pouvez utiliser l’un des objets d’élément d’icône : [BitmapIcon](
 
 :::row:::
     :::column span:::
-Lorsque vous avez une série de commandes qui vont ensemble, telles que couper/copier/coller ou un ensemble de commandes de dessin pour un programme de retouche photo, placez-les ensemble dans une [barre de commandes](../controls-and-patterns/app-bars.md). Une barre de commandes contient un ou plusieurs boutons ou boutons bascule de la barre de l’application, chacun d'entre eux représentant une action. Chaque bouton a une propriété [Icône](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton#Windows_UI_Xaml_Controls_AppBarButton_Icon) qui vous permet de contrôler l’icône à afficher. Il existe plusieurs façons de spécifier l'icône. 
+Lorsque vous avez une série de commandes qui vont ensemble, telles que couper/copier/coller ou un ensemble de commandes de dessin pour un programme de retouche photo, placez-les ensemble dans une [barre de commandes](../controls-and-patterns/app-bars.md). Une barre de commandes contient un ou plusieurs boutons ou boutons bascule de la barre de l’application, chacun d'entre eux représentant une action. Chaque bouton a une propriété [Icône](/uwp/api/windows.ui.xaml.controls.appbarbutton#Windows_UI_Xaml_Controls_AppBarButton_Icon) qui vous permet de contrôler l’icône à afficher. Il existe plusieurs façons de spécifier l'icône. 
     :::column-end:::
     :::column:::
         ![Exemple d’une barre de commandes avec des icônes](images/icons/create-icon-command-bar.svg)
@@ -197,13 +197,13 @@ Le moyen le plus simple consiste à utiliser la liste des icônes prédéfinies 
 </CommandBar>
 
 ```
-Pour obtenir la liste complète des noms d’icônes, voir [Énumération Symbol](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol). 
+Pour obtenir la liste complète des noms d’icônes, voir [Énumération Symbol](/uwp/api/windows.ui.xaml.controls.symbol). 
 
 Il existe d'autres façons de fournir des icônes pour un bouton dans une barre de commandes :
 
-+ [FontIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon) : l’icône est basée sur un glyphe à partir de la famille de polices spécifiée.
-+ [BitmapIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.bitmapicon) : l’icône est basée sur un fichier image bitmap avec **l’Uri** spécifié.
-+ [PathIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pathicon) : l’icône est basée sur des données de [Path](/uwp/api/windows.ui.xaml.shapes.path).
++ [FontIcon](/uwp/api/windows.ui.xaml.controls.fonticon) : l’icône est basée sur un glyphe à partir de la famille de polices spécifiée.
++ [BitmapIcon](/uwp/api/windows.ui.xaml.controls.bitmapicon) : l’icône est basée sur un fichier image bitmap avec **l’Uri** spécifié.
++ [PathIcon](/uwp/api/windows.ui.xaml.controls.pathicon) : l’icône est basée sur des données de [Path](/uwp/api/windows.ui.xaml.shapes.path).
 
 Pour plus d’informations sur les barres de commandes, voir [l’article Barre de commandes](../controls-and-patterns/app-bars.md). 
 

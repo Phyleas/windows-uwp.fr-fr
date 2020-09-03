@@ -6,20 +6,20 @@ ms.date: 06/03/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 42913aae69e5d049530d649c031351f4f3ab9ace
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 6ccf994e273c683ec458b9a2eded0b13cb58c41c
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684972"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89158213"
 ---
 # <a name="sockets"></a>Sockets
 Les sockets constituent une technologie de transfert de données de bas niveau sur laquelle repose l’implémentation d’un grand nombre de protocoles réseau. UWP propose des classes de socket TCP et UDP pour les applications client/serveur ou (P2P) pair à pair, qu’il s’agisse de connexions longue durée ou non établies.
 
-Cette rubrique se concentre sur la façon d’utiliser les classes de socket de plateforme Windows universelle (UWP) qui se trouvent dans l’espace de noms [**Windows.Networking.Sockets**](/uwp/api/Windows.Networking.Sockets). Vous pouvez également utiliser [Windows Sockets 2 (Winsock)](https://docs.microsoft.com/windows/desktop/WinSock/windows-sockets-start-page-2) dans une application UWP.
+Cette rubrique se concentre sur la façon d’utiliser les classes de socket de plateforme Windows universelle (UWP) qui se trouvent dans l’espace de noms [**Windows.Networking.Sockets**](/uwp/api/Windows.Networking.Sockets). Vous pouvez également utiliser [Windows Sockets 2 (Winsock)](/windows/desktop/WinSock/windows-sockets-start-page-2) dans une application UWP.
 
 > [!NOTE]
-> En conséquence de l’[isolement réseau](https://docs.microsoft.com/previous-versions/windows/apps/hh770532(v=win.10)), Windows refuse l’établissement d’une connexion de socket (Sockets ou WinSock) entre deux applications UWP qui s’exécutent sur le même ordinateur soit via l’adresse de bouclage locale (127.0.0.0) ou en spécifiant explicitement l’adresse IP locale. Pour plus d’informations sur les mécanismes par lesquels les applications UWP peuvent communiquer entre elles, voir [Communication entre les applications](/windows/uwp/app-to-app/index).
+> En conséquence de l’[isolement réseau](/previous-versions/windows/apps/hh770532(v=win.10)), Windows refuse l’établissement d’une connexion de socket (Sockets ou WinSock) entre deux applications UWP qui s’exécutent sur le même ordinateur soit via l’adresse de bouclage locale (127.0.0.0) ou en spécifiant explicitement l’adresse IP locale. Pour plus d’informations sur les mécanismes par lesquels les applications UWP peuvent communiquer entre elles, voir [Communication entre les applications](../app-to-app/index.md).
 
 ## <a name="build-a-basic-tcp-socket-client-and-server"></a>Générer un client et un serveur de socket TCP de base
 Un socket TCP fournit des transferts de données réseau de bas niveau dans chaque direction pour des connexions à longue durée de vie. Les sockets TCP sont la fonctionnalité sous-jacente utilisée par la plupart des protocoles réseau utilisés sur Internet. Pour illustrer les opérations TCP de base, l’exemple de code ci-dessus affiche un [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket) et un [**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener) envoyant et recevant des données via TCP pour former un écho client et serveur.
@@ -503,7 +503,7 @@ private:
 
 ## <a name="references-to-streamsockets-in-c-ppl-continuations-applies-to-ccx-primarily"></a>Références à StreamSockets dans les continuations PPL C++ (s’applique surtout à C++/CX)
 > [!NOTE]
-> Si vous utilisez des coroutines C++/WinRT et passez des paramètres par valeur, ce problème ne se pose pas. Pour des recommandations sur le passage de paramètres, voir [Opérations concurrentes et asynchrones avec C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing).
+> Si vous utilisez des coroutines C++/WinRT et passez des paramètres par valeur, ce problème ne se pose pas. Pour des recommandations sur le passage de paramètres, voir [Opérations concurrentes et asynchrones avec C++/WinRT](../cpp-and-winrt-apis/concurrency.md#parameter-passing).
 
 Un [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live) reste actif tant qu’une lecture/écriture active se trouve sur son flux d’entrée/sortie (prenons l’exemple de [**StreamSocketListenerConnectionReceivedEventArgs.Socket**](/uwp/api/windows.networking.sockets.streamsocketlistenerconnectionreceivedeventargs.Socket) auquel vous avez accès dans votre gestionnaire d’événement [**StreamSocketListener.ConnectionReceived**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener.ConnectionReceived)). Lorsque vous appelez [**DataReader.LoadAsync**](/uwp/api/windows.storage.streams.datareader.loadasync) (ou `ReadAsync/WriteAsync/StoreAsync`), celui-ci contient une référence au socket (via le flux d’entrée du socket) jusqu’à ce que le gestionnaire d’événement **Completed** (le cas échéant) de la méthode **LoadAsync** ait fini de s’exécuter.
 
@@ -1277,7 +1277,7 @@ Certaines limitations importantes découlent de l’utilisation d’envois par l
 -   Vous ne pouvez pas modifier le contenu des instances **IBuffer** en cours d’écriture tant que l’écriture asynchrone n’est pas terminée.
 -   Le modèle **FlushAsync** fonctionne uniquement sur **StreamSocket.OutputStream** et **DatagramSocket.OutputStream**.
 -   Le modèle **FlushAsync** fonctionne uniquement à partir de Windows 10.
--   Dans les autres cas, utilisez [**Task.WaitAll**](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task.waitall?view=netcore-2.0#System_Threading_Tasks_Task_WaitAll_System_Threading_Tasks_Task___) au lieu du modèle **FlushAsync**.
+-   Dans les autres cas, utilisez [**Task.WaitAll**](/dotnet/api/system.threading.tasks.task.waitall?view=netcore-2.0#System_Threading_Tasks_Task_WaitAll_System_Threading_Tasks_Task___) au lieu du modèle **FlushAsync**.
 
 ## <a name="port-sharing-for-datagramsocket"></a>Partage de port pour DatagramSocket
 Vous pouvez configurer un [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket) pour qu’il coexiste avec d’autres sockets Win32 ou UWP en multidiffusion, liés à la même adresse et au même port. Pour cela, définissez la [**DatagramSocketControl.MulticastOnly**](/uwp/api/Windows.Networking.Sockets.DatagramSocketControl.MulticastOnly) sur `true` avant de lier ou de connecter le socket. Vous accédez à une instance de **DatagramSocketControl** à partir de l’objet **DatagramSocket** proprement dit via sa propriété [**DatagramSocket.Control**](/uwp/api/windows.networking.sockets.datagramsocket.Control).
@@ -1378,10 +1378,10 @@ Le constructeur [**HostName**](/uwp/api/Windows.Networking.HostName) peut lever 
 * [Windows.Networking.Sockets](/uwp/api/Windows.Networking.Sockets)
 
 ## <a name="related-topics"></a>Rubriques connexes
-* [Communication entre applications](/windows/uwp/app-to-app/index)
-* [Opérations concurrentes et asynchrones avec C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)
-* [Comment définir les fonctionnalités de réseau](https://docs.microsoft.com/previous-versions/windows/apps/hh770532(v=win.10))
-* [Windows Sockets 2 (Winsock)](https://docs.microsoft.com/windows/desktop/WinSock/windows-sockets-start-page-2)
+* [Communication entre applications](../app-to-app/index.md)
+* [Opérations concurrentes et asynchrones avec C++/WinRT](../cpp-and-winrt-apis/concurrency.md)
+* [Comment définir les fonctionnalités de réseau](/previous-versions/windows/apps/hh770532(v=win.10))
+* [Windows Sockets 2 (Winsock)](/windows/desktop/WinSock/windows-sockets-start-page-2)
 
 ## <a name="samples"></a>exemples
 * [Exemple StreamSocket](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/StreamSocket)

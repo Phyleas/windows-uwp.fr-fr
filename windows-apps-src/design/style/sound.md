@@ -12,12 +12,12 @@ design-contact: mattben
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ed1344b5ee49244a6c1afcbb873b54fcc28624f
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 6c479a47a53c5f52bab1febf490957355264bfc4
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684885"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159873"
 ---
 # <a name="sound"></a>Son
 
@@ -45,7 +45,7 @@ Il existe de nombreuses façons d’utiliser le son pour améliorer votre applic
 
 UWP fournit un système audio aisément accessible, qui vous permet de bénéficier d’une expérience audio immersive dans l’ensemble de votre application par le simple actionnement d’un commutateur.
 
-[**ElementSoundPlayer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.elementsoundplayer) est un système audio intégré dans le code XAML qui, une fois activé, déclenche la lecture automatique de sons par tous les contrôles par défaut.
+[**ElementSoundPlayer**](/uwp/api/windows.ui.xaml.elementsoundplayer) est un système audio intégré dans le code XAML qui, une fois activé, déclenche la lecture automatique de sons par tous les contrôles par défaut.
 ```C#
 ElementSoundPlayer.State = ElementSoundPlayerState.On;
 ```
@@ -64,12 +64,12 @@ La propriété **SpatialAudioMode** peut accepter les valeurs suivantes :
 - **Off** : l’audio spatial est toujours désactivé, même si le son est activé.
 - **On** : l’audio spatial est toujours émis.
 
-Pour plus d’informations sur l’audio spatial et la façon dont XAML le gère, voir [AudioGraph - Audio spatial](/windows/uwp/audio-video-camera/audio-graphs#spatial-audio).
+Pour plus d’informations sur l’audio spatial et la façon dont XAML le gère, voir [AudioGraph - Audio spatial](../../audio-video-camera/audio-graphs.md#spatial-audio).
 
 ### <a name="sound-for-tv-and-xbox"></a>Son pour télévision et Xbox
 
 Le son constitue un aspect essentiel de l’expérience d’interface à 3 mètres (« 10-foot ») et par défaut, l’état de **ElementSoundPlayer** est **Auto**, ce qui signifie que vous n’entendrez le son que si votre application est exécutée sur Xbox.
-Pour plus d’informations sur la conception pour Xbox et la télévision, consultez [Conception pour Xbox et la télévision](https://docs.microsoft.com/windows/uwp/design/devices/designing-for-tv?redirectedfrom=MSDN).
+Pour plus d’informations sur la conception pour Xbox et la télévision, consultez [Conception pour Xbox et la télévision](../devices/designing-for-tv.md).
 
 ## <a name="sound-volume-override"></a>Remplacement du volume sonore
 
@@ -173,5 +173,5 @@ Cette fonctionnalité de lecture successive est destinée à empêcher que les s
 
 ## <a name="related-articles"></a>Articles connexes
 
-* [Conception pour Xbox et TV](/windows/uwp/design/devices/designing-for-tv)
+* [Conception pour Xbox et TV](../devices/designing-for-tv.md)
 * [Documentation de la classe ElementSoundPlayer](/uwp/api/windows.ui.xaml.elementsoundplayer)

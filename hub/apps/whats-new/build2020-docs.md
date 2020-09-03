@@ -6,12 +6,12 @@ ms.date: 05/11/2020
 ms.localizationpriority: medium
 ms.author: jken
 author: grantmestrength
-ms.openlocfilehash: 0880d7e7299db2a1a0f7de69400b7bb9c5d0efd9
-ms.sourcegitcommit: 10ec5a20dd1152a1037ebc4fba1a28cc96593586
+ms.openlocfilehash: 22dddfaea4297ef12fe449f08cda7723c2b52642
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83665861"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157633"
 ---
 # <a name="microsoft-build---the-windows-documentation"></a>Microsoft Build - Documentation Windows
 
@@ -25,36 +25,36 @@ Nous avons rassemblé des liens vers la documentation qui prend en charge les pr
 
 ## <a name="windows-terminal"></a>Terminal Windows
 
-* [Installer et configurer le Terminal Windows](https://docs.microsoft.com/windows/terminal/get-started)
-* [Configurer des combinaisons de touches personnalisées](https://docs.microsoft.com/windows/terminal/customize-settings/key-bindings)
-* [Galerie de terminaux personnalisés](https://docs.microsoft.com/windows/terminal/custom-terminal-gallery/retro-command-prompt)
+* [Installer et configurer le Terminal Windows](/windows/terminal/get-started)
+* [Configurer des combinaisons de touches personnalisées](/windows/terminal/customize-settings/key-bindings)
+* [Galerie de terminaux personnalisés](/windows/terminal/custom-terminal-gallery/retro-command-prompt)
 
 ## <a name="windows-subsystem-for-linux-wsl"></a>Sous-système Windows pour Linux (WSL)
 
-* [Qu’est-ce que WSL ? (Qu’est-ce que WSL 2 ?)](https://docs.microsoft.com/windows/wsl/about)
-* [Installer WSL 2](https://docs.microsoft.com/windows/wsl/install-win10)
-* [Comparaison de WSL2 et WSL 1](https://docs.microsoft.com/windows/wsl/compare-versions)
+* [Qu’est-ce que WSL ? (Qu’est-ce que WSL 2 ?)](/windows/wsl/about)
+* [Installer WSL 2](/windows/wsl/install-win10)
+* [Comparaison de WSL2 et WSL 1](/windows/wsl/compare-versions)
 
 ## <a name="windows-package-manager"></a>Gestionnaire de package Windows
 
-* [Gestionnaire de package Windows](https://docs.microsoft.com/windows/package-manager) 
-* [Envoyer vos packages](https://docs.microsoft.com/windows/package-manager/package)
-* [Utiliser l’outil winget](https://docs.microsoft.com/windows/package-manager/winget)
+* [Gestionnaire de package Windows](../../package-manager/index.md) 
+* [Envoyer vos packages](../../package-manager/package/index.md)
+* [Utiliser l’outil winget](../../package-manager/winget/index.md)
 
 ## <a name="winui"></a>WinUI
 
-* [Vue d’ensemble de WinUI](https://docs.microsoft.com/windows/apps/winui/)
-* [WinUI 3.0 Preview Mise en production 1](https://docs.microsoft.com/windows/apps/winui/winui3) 
-* [WinUI 3.0 pour les applications de bureau](https://docs.microsoft.com/windows/apps/winui/winui3/get-started-winui3-for-desktop)
+* [Vue d’ensemble de WinUI](../winui/index.md)
+* [WinUI 3.0 Preview Mise en production 1](../winui/winui3/index.md) 
+* [WinUI 3.0 pour les applications de bureau](../winui/winui3/get-started-winui3-for-desktop.md)
 
 ## <a name="developing-for-android-on-windows"></a>Développement pour Android sur Windows
 
-* [Vue d’ensemble du développement Android](https://docs.microsoft.com/windows/android/overview)
-* [Bien démarrer](https://docs.microsoft.com/windows/android/native-android)
-* [Tester sur un appareil Android](https://docs.microsoft.com/windows/android/emulator)
+* [Vue d’ensemble du développement Android](../../android/overview.md)
+* [Bien démarrer](../../android/native-android.md)
+* [Tester sur un appareil Android](../../android/emulator.md)
 
 ## <a name="dual-screen-device-development"></a>Développement pour appareils double écran
 
 * [Présentation de Surface Duo](https://www.microsoft.com/surface/devices/surface-duo)
-* [Obtenir les outils Surface Duo](https://docs.microsoft.com/dual-screen/android/get-duo-sdk?tabs=windows)
-* [Utiliser l’émulateur Surface Duo](https://docs.microsoft.com/dual-screen/android/use-emulator?tabs=java%2Cwindows)
+* [Obtenir les outils Surface Duo](/dual-screen/android/get-duo-sdk?tabs=windows)
+* [Utiliser l’émulateur Surface Duo](/dual-screen/android/use-emulator?tabs=java%252cwindows)

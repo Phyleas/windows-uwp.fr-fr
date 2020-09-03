@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, introduction
 ms.localizationpriority: medium
-ms.openlocfilehash: 41ded061a1111c55eb2c71b80cba34c0ce0fc50e
-ms.sourcegitcommit: 7c6cc0d972213bb3abab600423c27db50a7c702b
+ms.openlocfilehash: 980194d396bb6fa20b1d11456edee221d224b011
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87477491"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157353"
 ---
 # <a name="introduction-to-cwinrt"></a>Introduction à C++/WinRT
 &nbsp;
@@ -30,7 +30,7 @@ C++/WinRT constitue le remplacement recommandé par Microsoft pour la projection
 Windows Runtime est basé sur les API COM (Component Object Model) et est conçu pour être accessible par le biais de *projections de langage*. Une projection masque les détails COM et fournit une expérience de programmation plus naturelle pour un langage donné.
 
 ### <a name="the-cwinrt-language-projection-in-the-windows-runtime-api-reference-content"></a>La projection de langage C++/WinRT dans le contenu de référence des API Windows Runtime Windows
-Quand vous naviguez dans des [API Windows Runtime](https://docs.microsoft.com/uwp/api/), cliquez sur la zone de liste **Langage** en haut à droite, puis sélectionnez **C++/WinRT** pour afficher les blocs de syntaxe d’API tels qu’ils apparaissent dans la projection de langage C++/WinRT.
+Quand vous naviguez dans des [API Windows Runtime](/uwp/api/), cliquez sur la zone de liste **Langage** en haut à droite, puis sélectionnez **C++/WinRT** pour afficher les blocs de syntaxe d’API tels qu’ils apparaissent dans la projection de langage C++/WinRT.
 
 ## <a name="visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package"></a>Prise en charge Visual Studio pour C++/WinRT, XAML, l’extension VSIX et le package NuGet
 Pour la prise en charge Visual Studio, vous aurez besoin de Visual Studio 2019 ou de Visual Studio 2017 (au moins la version 15.6 ; nous recommandons au moins la version 15.7). À partir de Visual Studio Installer, installez la charge de travail **Développement pour la plateforme Windows universelle**. Dans **Détails de l’installation** > **Développement pour la plateforme Windows universelle**, cochez la ou les options des **Outils de plateforme Windows universelle C++ (v14x)** , si vous ne l’avez pas déjà fait. Et, dans **Paramètres Windows** > **Mise à jour et \&Sécurité** > **Pour les développeurs**, choisissez l’option **Mode développeur** plutôt que l’option **Charger la version des applications de façon indépendante**.
@@ -71,7 +71,7 @@ Voici les modèles de projet Visual Studio fournis par l’extension VSIX.
 ### <a name="blank-app-cwinrt"></a>Application vide (C++/WinRT)
 Modèle de projet pour une application de plateforme Windows universelle (UWP) qui possède une interface utilisateur XAML.
 
-Visual Studio fournit la prise en charge du compilateur XAML pour générer des stubs d’implémentation et d’en-tête à partir du fichier IDL (Interface Definition Language) (`.idl`) qui se trouve derrière chaque fichier de balisage XAML. Dans un fichier IDL, définissez toutes les classes runtime locales que vous souhaitez référencer dans les pages XAML de votre application, puis générez une fois le projet pour générer les modèles d’implémentation dans `Generated Files` et les définitions de type de stub dans `Generated Files\sources`. Utilisez ensuite les définitions de type de stub comme référence pour implémenter vos classes runtime locales. Consultez [Factorisation des classes runtime dans des fichiers Midl (.idl)](/windows/uwp/cpp-and-winrt-apis/author-apis#factoring-runtime-classes-into-midl-files-idl).
+Visual Studio fournit la prise en charge du compilateur XAML pour générer des stubs d’implémentation et d’en-tête à partir du fichier IDL (Interface Definition Language) (`.idl`) qui se trouve derrière chaque fichier de balisage XAML. Dans un fichier IDL, définissez toutes les classes runtime locales que vous souhaitez référencer dans les pages XAML de votre application, puis générez une fois le projet pour générer les modèles d’implémentation dans `Generated Files` et les définitions de type de stub dans `Generated Files\sources`. Utilisez ensuite les définitions de type de stub comme référence pour implémenter vos classes runtime locales. Consultez [Factorisation des classes runtime dans des fichiers Midl (.idl)](./author-apis.md#factoring-runtime-classes-into-midl-files-idl).
 
 La prise en charge de l’aire de conception XAML dans Visual Studio 2019 pour C++/WinRT est proche de la parité avec C#. Dans Visual Studio 2019, vous pouvez utiliser l’onglet **Événements** de la fenêtre **Propriétés** pour ajouter des gestionnaires d’événements dans un projet C++/WinRT. Vous pouvez également ajouter manuellement des gestionnaires d’événements à votre code. Pour plus d’informations, consultez [Gérer des événements en utilisant des délégués en C++/WinRT](handle-events.md).
 
@@ -91,7 +91,7 @@ Modèle de projet pour un composant, en général pour une consommation à parti
 
 Ce modèle illustre la chaîne d’outils `midl.exe` > `cppwinrt.exe` où les métadonnées Windows Runtime (`.winmd`) sont générées à partir du fichier IDL, puis où les stubs d’implémentation et d’en-tête sont générés à partir des métadonnées Windows Runtime.
 
-Dans un fichier IDL, définissez les classes runtime dans votre composant, leur interface par défaut et toute autre interface qu’elles implémentent. Générez une fois le projet pour générer `module.g.cpp`, `module.h.cpp`, les modèles d’implémentation dans `Generated Files` et les définitions de type de stub dans `Generated Files\sources`. Utilisez ensuite ces définitions de type de stub comme référence pour implémenter les classes runtime dans votre composant. Consultez [Factorisation des classes runtime dans des fichiers Midl (.idl)](/windows/uwp/cpp-and-winrt-apis/author-apis#factoring-runtime-classes-into-midl-files-idl).
+Dans un fichier IDL, définissez les classes runtime dans votre composant, leur interface par défaut et toute autre interface qu’elles implémentent. Générez une fois le projet pour générer `module.g.cpp`, `module.h.cpp`, les modèles d’implémentation dans `Generated Files` et les définitions de type de stub dans `Generated Files\sources`. Utilisez ensuite ces définitions de type de stub comme référence pour implémenter les classes runtime dans votre composant. Consultez [Factorisation des classes runtime dans des fichiers Midl (.idl)](./author-apis.md#factoring-runtime-classes-into-midl-files-idl).
 
 Regroupez le fichier binaire du composant Windows Runtime intégré et son fichier `.winmd` avec l’application UWP qui les consomme.
 
@@ -139,7 +139,7 @@ Dans votre programmation C++/WinRT, vous pouvez utiliser les fonctionnalités de
 > [!WARNING]
 > Il existe également des types que vous pouvez voir si vous étudiez attentivement les en-têtes d’espace de noms Windows C++/WinRT. Il s’agit, par exemple, de **winrt::param::hstring**, mais il existe également des exemples de collection. Ces types servent uniquement à optimiser la liaison des paramètres d’entrée. Ils génèrent d’importantes améliorations des performances et assurent le « simple fonctionnement » de la plupart des modèles d’appel pour les conteneurs et les types C++ standard associés. Ces types ne sont utilisés par la projection que dans les cas où ils ajoutent de la valeur. Ils sont hautement optimisés et ne sont pas destinés à une utilisation générale ; ne tentez pas de les utiliser vous-même. N’utilisez pas non plus d’éléments de l’espace de noms `winrt::impl`, car il s’agit de types d’implémentation susceptibles, donc, d’être modifiés. Vous devez continuer à utiliser les types standard, ou des types de l’[espace de noms winrt](/uwp/cpp-ref-for-winrt/winrt).
 >
-> Consultez également [Passage de paramètres à la frontière ABI](/windows/uwp/cpp-and-winrt-apis/pass-parms-to-abi).
+> Consultez également [Passage de paramètres à la frontière ABI](./pass-parms-to-abi.md).
 
 ## <a name="important-apis"></a>API importantes
 * [winrt::hstring struct](/uwp/cpp-ref-for-winrt/hstring)
@@ -151,4 +151,4 @@ Dans votre programmation C++/WinRT, vous pouvez utiliser les fonctionnalités de
 * [Prise en main de C++/WinRT](get-started.md)
 * [Types de données C++ standard et C++/WinRT](std-cpp-data-types.md)
 * [Gestion des chaînes en C++/WinRT](strings.md)
-* [API Windows Runtime](https://docs.microsoft.com/uwp/api/)
+* [API Windows Runtime](/uwp/api/)

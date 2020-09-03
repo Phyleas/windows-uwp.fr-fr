@@ -6,20 +6,20 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, forte, faible, référence
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: c8ca914737698c22d52657d20ee655d20491b3e8
-ms.sourcegitcommit: a9f44bbb23f0bc3ceade3af7781d012b9d6e5c9a
+ms.openlocfilehash: 2176fe1ee5893b7150b27edf4ea753ae368b41ee
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88180764"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154268"
 ---
 # <a name="strong-and-weak-references-in-cwinrt"></a>Références fortes et faibles en C++/WinRT
 
-L’environnement Windows Runtime est un système avec décompte des références. Dans un tel système, il est important de connaître la signification des références fortes et faibles (ainsi que des références qui ne sont ni fortes ni faibles, comme le pointeur implicite *this*), et de faire la distinction entre elles. Comme vous le verrez dans cette rubrique, le fait de savoir gérer ces références correctement est indispensable pour bénéficier d’un système fiable qui s’exécute correctement et éviter les plantages imprévisibles. En fournissant des fonctions d’assistance qui prennent entièrement en charge la projection de langage, [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) fait la moitié du travail nécessaire à la création de systèmes plus complexes, simplement et correctement.
+L’environnement Windows Runtime est un système avec décompte des références. Dans un tel système, il est important de connaître la signification des références fortes et faibles (ainsi que des références qui ne sont ni fortes ni faibles, comme le pointeur implicite *this*), et de faire la distinction entre elles. Comme vous le verrez dans cette rubrique, le fait de savoir gérer ces références correctement est indispensable pour bénéficier d’un système fiable qui s’exécute correctement et éviter les plantages imprévisibles. En fournissant des fonctions d’assistance qui prennent entièrement en charge la projection de langage, [C++/WinRT](./intro-to-using-cpp-with-winrt.md) fait la moitié du travail nécessaire à la création de systèmes plus complexes, simplement et correctement.
 
 ## <a name="safely-accessing-the-this-pointer-in-a-class-member-coroutine"></a>Accès sécurisé au pointeur *this* dans une coroutine de membre de classe
 
-Pour plus d’informations sur les coroutines et les exemples de code, consultez [Opérations concurrentes et asynchrones avec C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency).
+Pour plus d’informations sur les coroutines et les exemples de code, consultez [Opérations concurrentes et asynchrones avec C++/WinRT](./concurrency.md).
 
 Le listing de code ci-dessous montre un exemple typique d’une coroutine, qui est une fonction membre d’une classe. Vous pouvez copier-coller cet exemple dans les fichiers spécifiés, dans un nouveau projet **Windows Console Application (C++/WinRT)**
 
@@ -108,7 +108,7 @@ IAsyncOperation<winrt::hstring> RetrieveValueAsync()
 Une classe C++/WinRT dérive directement ou indirectement d’un modèle [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements). Pour cette raison, l’objet C++/WinRT peut appeler sa fonction membre protégée [**implements::get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function) pour récupérer une référence forte à son pointeur *this*. Notez qu’il est inutile d’utiliser la variable `strong_this` dans l’exemple de code ci-dessus. Il vous suffit d’appeler **get_strong** pour incrémenter le nombre de références de l’objet C++/WinRT et pour que son pointeur implicite *this* reste valide.
 
 > [!IMPORTANT]
-> Étant donné que **get_strong** est une fonction membre du modèle struct **winrt::implements**, vous pouvez l’appeler uniquement à partir d’une classe qui dérive directement ou indirectement de **winrt::implements**, comme la classe C++/WinRT. Pour plus d’informations sur la dérivation à partir de **winrt::implements**, et pour obtenir des exemples, consultez [Créer des API avec C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis).
+> Étant donné que **get_strong** est une fonction membre du modèle struct **winrt::implements**, vous pouvez l’appeler uniquement à partir d’une classe qui dérive directement ou indirectement de **winrt::implements**, comme la classe C++/WinRT. Pour plus d’informations sur la dérivation à partir de **winrt::implements**, et pour obtenir des exemples, consultez [Créer des API avec C++/WinRT](./author-apis.md).
 
 Cela résout le problème que nous avons eu à l’étape 4. Même si toutes les autres références à l’instance de classe disparaissent, la coroutine a pris la précaution de garantir la stabilité de ses dépendances.
 
@@ -256,7 +256,7 @@ Dans les deux cas, nous allons simplement capturer le pointeur *this* brut. Cela
 La solution consiste à capturer une référence forte (ou, comme nous le verrons, une référence faible si celle-ci est plus appropriée). Une référence forte *incrémente* le nombre de références et *préserve* l’objet actuel. Il vous suffit de déclarer une variable de capture (appelée `strong_this` dans cet exemple) et de l’initialiser avec un appel à [**implements::get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function), qui récupère une référence forte à notre pointeur *this*.
 
 > [!IMPORTANT]
-> Étant donné que **get_strong** est une fonction membre du modèle struct **winrt::implements**, vous pouvez l’appeler uniquement à partir d’une classe qui dérive directement ou indirectement de **winrt::implements**, comme la classe C++/WinRT. Pour plus d’informations sur la dérivation à partir de **winrt::implements**, et pour obtenir des exemples, consultez [Créer des API avec C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis).
+> Étant donné que **get_strong** est une fonction membre du modèle struct **winrt::implements**, vous pouvez l’appeler uniquement à partir d’une classe qui dérive directement ou indirectement de **winrt::implements**, comme la classe C++/WinRT. Pour plus d’informations sur la dérivation à partir de **winrt::implements**, et pour obtenir des exemples, consultez [Créer des API avec C++/WinRT](./author-apis.md).
 
 ```cppwinrt
 event_source.Event([this, strong_this { get_strong()}](auto&& ...)

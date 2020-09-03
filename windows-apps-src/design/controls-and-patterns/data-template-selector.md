@@ -7,12 +7,12 @@ ms.date: 10/18/2019
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: anawish
-ms.openlocfilehash: d388e1f4b3f1b1be4e265185934a02b6ccd20064
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 382e28b38347a4901e781a12637423260c4bd3e3
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "76123851"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160383"
 ---
 # <a name="data-template-selection-styling-items-based-on-their-properties"></a>Sélection du modèle de données : Stylisation d’éléments en fonction de leurs propriétés
 
@@ -128,7 +128,7 @@ Une fois votre code compilé, chaque élément de la collection passe la méthod
 
 ## <a name="datatemplateselector-performance-considerations"></a>Considérations relatives aux performances de DataTemplateSelector
 
-Quand vous utilisez un ListView ou un GridView avec une grande collection de données, les performances associées aux défilements et aux panoramiques peuvent être un sujet de préoccupation. Pour que les grandes collections continuent de bien fonctionner, vous pouvez effectuer certaines étapes pour améliorer les performances de vos modèles de données. Celles-ci sont décrites plus en détail dans [Optimisation des options d’interface ListView et GridView](/windows/uwp/debug-test-perf/optimize-gridview-and-listview).
+Quand vous utilisez un ListView ou un GridView avec une grande collection de données, les performances associées aux défilements et aux panoramiques peuvent être un sujet de préoccupation. Pour que les grandes collections continuent de bien fonctionner, vous pouvez effectuer certaines étapes pour améliorer les performances de vos modèles de données. Celles-ci sont décrites plus en détail dans [Optimisation des options d’interface ListView et GridView](../../debug-test-perf/optimize-gridview-and-listview.md).
 
 - _Réduction des éléments par élément_ : maintenez le nombre d’éléments d’interface utilisateur dans un modèle de données à un niveau minimum raisonnable.
 - Recyclage de conteneurs avec des collections hétérogènes

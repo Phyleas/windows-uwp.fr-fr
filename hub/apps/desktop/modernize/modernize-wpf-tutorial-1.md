@@ -8,12 +8,12 @@ author: mcleanbyron
 keywords: windows 10, uwp, windows forms, wpf, xaml islands, îles xaml
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 9d08dd0f43f1c505124203028c69326e10eea26c
-ms.sourcegitcommit: 6cdba316bdbd85a2429259ebfb59ff94440e234a
+ms.openlocfilehash: c11f1cab37e79fc320f1fb38f5b909d2cecd1ad4
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85882880"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89161583"
 ---
 # <a name="part-1-migrate-the-contoso-expenses-app-to-net-core-3"></a>Partie 1 : Effectuer une migration de l'application Contoso Expenses vers .NET Core 3
 
@@ -134,7 +134,7 @@ Pour configurer les packages NuGet pour le projet **ContosoExpenses.Data** :
     ```
 
     > [!NOTE]
-    > Vous pouvez également remarquer que vous installez les mêmes packages pour ce projet .NET Core 3 que ceux utilisés par les projets NET Framework 4.7.2. Les packages NuGet prennent en charge le multi-ciblage. Les auteurs de bibliothèques peuvent inclure différentes versions d’une bibliothèque dans le même package, compilées pour diverses architectures et plateformes. Ces packages prennent en charge le .NET Framework complet ainsi que .NET Standard 2.0, qui est compatible avec les projets .NET Core 3. Pour plus d’informations sur les différences entre .NET Framework, .NET Core et .NET Standard, consultez [.NET Standard](https://docs.microsoft.com/dotnet/standard/net-standard).
+    > Vous pouvez également remarquer que vous installez les mêmes packages pour ce projet .NET Core 3 que ceux utilisés par les projets NET Framework 4.7.2. Les packages NuGet prennent en charge le multi-ciblage. Les auteurs de bibliothèques peuvent inclure différentes versions d’une bibliothèque dans le même package, compilées pour diverses architectures et plateformes. Ces packages prennent en charge le .NET Framework complet ainsi que .NET Standard 2.0, qui est compatible avec les projets .NET Core 3. Pour plus d’informations sur les différences entre .NET Framework, .NET Core et .NET Standard, consultez [.NET Standard](/dotnet/standard/net-standard).
 
 Pour configurer les packages NuGet pour le projet **ContosoExpenses.Core** :
 

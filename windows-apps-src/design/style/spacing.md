@@ -6,12 +6,12 @@ ms.date: 04/19/2019
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 634393e700538dc5db43b2d4065c6742fd7673f1
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 37bc5688321249428405e730d366eb987a81bd66
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234333"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159843"
 ---
 # <a name="control-size-and-density"></a>Taille et densité du contrôle
 
@@ -72,7 +72,7 @@ La taille Compact permet d’obtenir des groupes de contrôles denses et riches 
 
 ### <a name="examples"></a>Exemples
 
-La taille Compact est implémentée via un dictionnaire de ressources spécial qui peut être spécifié dans votre application au niveau de la page ou dans une mise en forme spécifique. Le dictionnaire de ressources est disponible dans le package Nuget [WinUI](https://docs.microsoft.com/uwp/toolkits/winui/).
+La taille Compact est implémentée via un dictionnaire de ressources spécial qui peut être spécifié dans votre application au niveau de la page ou dans une mise en forme spécifique. Le dictionnaire de ressources est disponible dans le package Nuget [WinUI](/uwp/toolkits/winui/).
 
 Les exemples suivants montrent comment le style `Compact` peut être appliqué pour la page et un contrôle de grille individuel.
 
@@ -101,6 +101,6 @@ Les exemples suivants montrent comment le style `Compact` peut être appliqué p
 ## <a name="related-articles"></a>Articles connexes
 
 - [Instructions pour les cibles tactiles](../input/guidelines-for-targeting.md)
-- [Références aux ressources ResourceDictionary et XAML](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/resourcedictionary-and-xaml-resource-references)
-- [Dictionnaire de ressources](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary)
-- [Styles XAML](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-styles) 
+- [Références aux ressources ResourceDictionary et XAML](../controls-and-patterns/resourcedictionary-and-xaml-resource-references.md)
+- [Dictionnaire de ressources](/uwp/api/windows.ui.xaml.resourcedictionary)
+- [Styles XAML](../controls-and-patterns/xaml-styles.md)

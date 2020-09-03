@@ -10,12 +10,12 @@ design-contact: kimsea
 dev-contact: niallm
 ms.custom: 19H1
 ms.localizationpriority: medium
-ms.openlocfilehash: 479a289ff15ab6a3db7a51d52f4bf3b075e8a64b
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 31ced6c31b126986171c81e03b68a0a1cccc44f2
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968779"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160353"
 ---
 # <a name="teaching-tip"></a>Conseil éducatif
 
@@ -27,12 +27,12 @@ La fermeture d’un conseil d’apprentissage peut résulter d’un abandon inte
 
 |  |  |
 | - | - |
-| ![Logo WinUI](../images/winui-logo-64x64.png) | Le contrôle **TeachingTip** nécessite la bibliothèque d’interface utilisateur Windows, package NuGet qui contient les nouveaux contrôles et fonctionnalités d’interface utilisateur destinés aux applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![Logo WinUI](../images/winui-logo-64x64.png) | Le contrôle **TeachingTip** nécessite la bibliothèque d’interface utilisateur Windows, package NuGet qui contient les nouveaux contrôles et fonctionnalités d’interface utilisateur destinés aux applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/). |
 
 > **API de la bibliothèque d’interface utilisateur Windows :** [Classe TeachingTip](/uwp/api/microsoft.ui.xaml.controls.teachingtip)
 
 > [!TIP]
-> Tout au long de ce document, nous utilisons l’alias **muxc** en XAML pour représenter les API de la bibliothèque d’interface utilisateur Windows que nous avons incluses dans notre projet. Nous l’avons ajouté à notre élément [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page) : `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
+> Tout au long de ce document, nous utilisons l’alias **muxc** en XAML pour représenter les API de la bibliothèque d’interface utilisateur Windows que nous avons incluses dans notre projet. Nous l’avons ajouté à notre élément [Page](/uwp/api/windows.ui.xaml.controls.page) : `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
 >
 >Dans le code-behind, nous utilisons également l’alias **muxc** en C# pour représenter les API de la bibliothèque d’interface utilisateur Windows que nous avons incluses dans notre projet. Nous avons ajouté cette instruction **using** en haut du fichier : `using muxc = Microsoft.UI.Xaml.Controls;`
 
@@ -125,9 +125,9 @@ Notez que, dans cet exemple, le conseil d’apprentissage figure dans l’arbore
 
 ### <a name="preferred-placement"></a>Positionnement par défaut
 
-Le conseil d’apprentissage reproduit le comportement de positionnement [FlyoutPlacementMode](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode) du menu volant avec la propriété TeachingTipPlacementMode. Le mode de positionnement par défaut tente de placer un conseil d’apprentissage ciblé au-dessus de sa cible, et un conseil d’apprentissage non ciblés centré en bas de la racine XAML. Comme avec un menu volant, si le mode de positionnement par défaut n’offre pas suffisamment d’espace pour l’affichage du conseil d’apprentissage, un autre mode de positionnement est automatiquement sélectionné.
+Le conseil d’apprentissage reproduit le comportement de positionnement [FlyoutPlacementMode](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode) du menu volant avec la propriété TeachingTipPlacementMode. Le mode de positionnement par défaut tente de placer un conseil d’apprentissage ciblé au-dessus de sa cible, et un conseil d’apprentissage non ciblés centré en bas de la racine XAML. Comme avec un menu volant, si le mode de positionnement par défaut n’offre pas suffisamment d’espace pour l’affichage du conseil d’apprentissage, un autre mode de positionnement est automatiquement sélectionné.
 
-Pour les applications qui prévoient l’utilisation d’une manette de jeu, voir [Interactions avec manette de jeu et télécommande]( https://docs.microsoft.com/windows/uwp/design/input/gamepad-and-remote-interactions#xy-focus-navigation-and-interaction). Nous vous conseillons de tester l’accessibilité à la manette de jeu de chaque conseil d’apprentissage en utilisant toutes les configurations possibles de l’interface utilisateur d’une application.
+Pour les applications qui prévoient l’utilisation d’une manette de jeu, voir [Interactions avec manette de jeu et télécommande]( ../../input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction). Nous vous conseillons de tester l’accessibilité à la manette de jeu de chaque conseil d’apprentissage en utilisant toutes les configurations possibles de l’interface utilisateur d’une application.
 
 Un conseil d’apprentissage ciblé avec le mode PreferredPlacement défini sur « BottomLeft » s’affiche avec l’extension centrée au bas de sa cible et le corps décalé vers la gauche.
 
@@ -168,7 +168,7 @@ Le diagramme ci-dessous illustre le résultat des 13 modes PreferredPlacement q
 
 ### <a name="add-a-placement-margin"></a>Ajouter une marge de positionnement
 
-Vous pouvez contrôler l’écart séparant un conseil d’apprentissage ciblé de sa cible, et séparant un conseil d’apprentissage non ciblé des bords de la racine XAML à l’aide de la propriété PlacementMargin. Comme la propriété [Margin](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.margin), la propriété PlacementMargin peut prendre quatre valeurs : left, right, top et bottom. Seules les valeurs pertinentes sont donc utilisées. Par exemple, la propriété PlacementMargin.Left s’applique lorsque le conseil se trouve à gauche de la cible ou sur le bord gauche de la racine XAML.
+Vous pouvez contrôler l’écart séparant un conseil d’apprentissage ciblé de sa cible, et séparant un conseil d’apprentissage non ciblé des bords de la racine XAML à l’aide de la propriété PlacementMargin. Comme la propriété [Margin](/uwp/api/windows.ui.xaml.frameworkelement.margin), la propriété PlacementMargin peut prendre quatre valeurs : left, right, top et bottom. Seules les valeurs pertinentes sont donc utilisées. Par exemple, la propriété PlacementMargin.Left s’applique lorsque le conseil se trouve à gauche de la cible ou sur le bord gauche de la racine XAML.
 
 L’exemple suivant présente un conseil non ciblé avec les valeurs Left/Top/Right/Bottom de la propriété PlacementMargin définies sur 80.
 
@@ -357,7 +357,7 @@ private void OnTipClosing(muxc.TeachingTip sender, muxc.TeachingTipClosingEventA
 * Les conseils sont impermanents et ne doivent pas contenir d’informations ou d’options critiques pour l’expérience d’une application.
 * Essayez d’éviter l’affichage trop fréquent de conseils d’apprentissage. Les conseils d’apprentissage ont plus de chance d’attirer l’attention quand ils sont espacés sur de longues sessions, voire sur plusieurs sessions.
 * Veillez à ce qu’ils restent concis et à ce que leur thème soit clairement identifiable. La recherche a montré que les utilisateurs ne lisent en moyenne que de 3 à 5 mots et n’en comprennent que 2 ou 3 avant de décider d’interagir avec un conseil.
-* L’accessibilité à la manette de jeu d’un conseil d’apprentissage n’est pas garantie. Pour les applications qui prévoient l’utilisation d’une manette de jeu, voir [Interactions avec manette de jeu et télécommande]( https://docs.microsoft.com/windows/uwp/design/input/gamepad-and-remote-interactions#xy-focus-navigation-and-interaction). Nous vous conseillons de tester l’accessibilité à la manette de jeu de chaque conseil d’apprentissage en utilisant toutes les configurations possibles de l’interface utilisateur d’une application.
+* L’accessibilité à la manette de jeu d’un conseil d’apprentissage n’est pas garantie. Pour les applications qui prévoient l’utilisation d’une manette de jeu, voir [Interactions avec manette de jeu et télécommande]( ../../input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction). Nous vous conseillons de tester l’accessibilité à la manette de jeu de chaque conseil d’apprentissage en utilisant toutes les configurations possibles de l’interface utilisateur d’une application.
 * Lorsque vous activez un conseil d’apprentissage pour échapper la racine XAML, il est conseillé d’activer la propriété IsLightDismissEnabled et de définir le mode PreferredPlacement le plus proche du centre de la racine XAML.
 
 ## <a name="reconfiguring-an-open-teaching-tip"></a>Reconfiguration d’un conseil d’apprentissage ouvert
@@ -366,4 +366,4 @@ Il est possible de reconfigurer certains contenus et propriétés lorsque le con
 
 ## <a name="related-articles"></a>Articles connexes
 
-* [Boîtes de dialogue et menus volants](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/dialogs-and-flyouts/index)
+* [Boîtes de dialogue et menus volants](./index.md)

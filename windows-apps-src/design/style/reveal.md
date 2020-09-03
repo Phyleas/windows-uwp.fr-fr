@@ -10,12 +10,12 @@ design-contact: conrwi
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 26e756b52d4faf18eff2fc684c7db94bca058642
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 24ac07b8caacd4369bcbadf2a4019bbcbde59c6b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82971074"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159973"
 ---
 # <a name="reveal-highlight"></a>Effet Révéler
 
@@ -23,7 +23,7 @@ ms.locfileid: "82971074"
 
 Révéler est un effet lumineux qui met en évidence les éléments interactifs, comme les barres de commandes, quand l’utilisateur place le pointeur à leur proximité. 
 
-> **API importantes** : [classe RevealBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush), [classe RevealBackgroundBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush), [classe RevealBorderBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush), [classe RevealBrushHelper](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper), [classe VisualState](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState)
+> **API importantes** : [classe RevealBrush](/uwp/api/windows.ui.xaml.media.revealbrush), [classe RevealBackgroundBrush](/uwp/api/windows.ui.xaml.media.revealbackgroundbrush), [classe RevealBorderBrush](/uwp/api/windows.ui.xaml.media.revealborderbrush), [classe RevealBrushHelper](/uwp/api/windows.ui.xaml.media.revealbrushhelper), [classe VisualState](/uwp/api/Windows.UI.Xaml.VisualState)
 
 ## <a name="how-it-works"></a>Fonctionnement
 L’effet Révéler attire l’attention sur des éléments interactifs en révélant le conteneur de l’élément quand le pointeur se trouve à proximité, comme présenté dans l’illustration suivante :
@@ -142,7 +142,7 @@ Dans la plupart des cas, nous gérons l’utilisation des deux effets en activan
 ### <a name="when-to-add-reveal"></a>Quand ajouter l’effet Révéler
 Vous pouvez ajouter Révéler à vos contrôles personnalisés, mais avant de le faire, examinez le type de contrôle ainsi que son comportement. 
 * Si votre contrôle personnalisé est un élément interactif unique et qu’aucun contrôle similaire ne partage son espace (comme des éléments de menu dans un menu), il est probable que votre contrôle personnalisé n’ait pas besoin de Révéler.  
-* Si vous avez un regroupement de contenus ou d’éléments interactifs associés, il est alors probable que cette zone de votre application ait besoin de l’effet Révéler. Cette zone est communément appelée une surface [Commandes](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/collection-commanding).
+* Si vous avez un regroupement de contenus ou d’éléments interactifs associés, il est alors probable que cette zone de votre application ait besoin de l’effet Révéler. Cette zone est communément appelée une surface [Commandes](../controls-and-patterns/collection-commanding.md).
 
 Par exemple, vous ne devez pas utiliser Révéler sur un bouton seul, mais vous devez l’utiliser sur un ensemble de boutons d’une barre de commandes.
 
@@ -286,9 +286,9 @@ Quand vous activez Révéler sur un contrôle personnalisé, un contrôle remod�
 
 ## <a name="related-articles"></a>Articles connexes
 
-- [RevealBrush, classe](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)
+- [RevealBrush, classe](/uwp/api/windows.ui.xaml.media.revealbrush)
 - [Acrylique](acrylic.md)
-- [Effets de composition](https://docs.microsoft.com/windows/uwp/graphics/composition-effects)
+- [Effets de composition](../../composition/composition-effects.md)
 - [Fluent Design pour UWP](/windows/apps/fluent-design-system)
 - [Science in the System: Fluent Design and Depth](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
 - [Science in the System: Fluent Design and Light](https://medium.com/microsoft-design/the-science-in-the-system-fluent-design-and-light-94a17e0b3a4f)

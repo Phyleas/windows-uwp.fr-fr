@@ -5,16 +5,16 @@ ms.date: 06/21/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, XAML, contrôle, liaison, propriété
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ba06ece905e6a91a2279f0fe78e867a8f943bb3
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: b6e663ec77c66d4a018d388da350794771312b77
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86492934"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154383"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrt-property"></a>Contrôles XAML ; liaison à une propriété C++/WinRT
 
-Une propriété qui peut être efficacement liée à un contrôle XAML est appelée propriété *observable*. Ce concept est basé sur le modèle de conception logicielle appelé *modèle observateur*. Cette rubrique montre comment implémenter des propriétés observables en [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) et y lier des contrôles XAML (pour des informations de référence, consultez [Liaison de données](/windows/uwp/data-binding).
+Une propriété qui peut être efficacement liée à un contrôle XAML est appelée propriété *observable*. Ce concept est basé sur le modèle de conception logicielle appelé *modèle observateur*. Cette rubrique montre comment implémenter des propriétés observables en [C++/WinRT](./intro-to-using-cpp-with-winrt.md) et y lier des contrôles XAML (pour des informations de référence, consultez [Liaison de données](../data-binding/index.md).
 
 > [!IMPORTANT]
 > Pour obtenir les principaux concepts et termes facilitant votre compréhension pour utiliser et créer des classes runtime avec C++/WinRT, voir [Utiliser des API avec C++/WinRT](consume-apis.md) et [Créer des API avec C++/WinRT](author-apis.md).
@@ -136,7 +136,7 @@ Dans la fonction mutateur **Titre**, nous vérifions si une valeur définie est 
 ## <a name="declare-and-implement-bookstoreviewmodel"></a>Déclarer et implémenter **BookstoreViewModel**
 Notre page XAML principale va établir une liaison à un modèle d’affichage principal. Et ce modèle d’affichage va avoir plusieurs propriétés, y compris une de type **BookSku**. Dans cette étape, nous allons déclarer et implémenter la classe runtime de notre modèle d’affichage principal.
 
-Ajoutez un nouvel élément **Fichier Midl (.idl)** nommé `BookstoreViewModel.idl`. Consultez également [Factorisation des classes runtime dans des fichiers Midl (.idl)](/windows/uwp/cpp-and-winrt-apis/author-apis#factoring-runtime-classes-into-midl-files-idl).
+Ajoutez un nouvel élément **Fichier Midl (.idl)** nommé `BookstoreViewModel.idl`. Consultez également [Factorisation des classes runtime dans des fichiers Midl (.idl)](./author-apis.md#factoring-runtime-classes-into-midl-files-idl).
 
 ```idl
 // BookstoreViewModel.idl
@@ -306,11 +306,11 @@ runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
 }
 ```
 
-La raison est la suivante : tous les types que le compilateur XAML doit valider (notamment ceux utilisés dans [{x:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)) sont lus à partir de métadonnées Windows (WinMD). Il vous suffit donc d’ajouter la propriété en lecture seule à votre fichier Midl. Ne l’implémentez pas, car le code-behind XAML généré automatiquement fournit l’implémentation pour vous.
+La raison est la suivante : tous les types que le compilateur XAML doit valider (notamment ceux utilisés dans [{x:Bind}](../xaml-platform/x-bind-markup-extension.md)) sont lus à partir de métadonnées Windows (WinMD). Il vous suffit donc d’ajouter la propriété en lecture seule à votre fichier Midl. Ne l’implémentez pas, car le code-behind XAML généré automatiquement fournit l’implémentation pour vous.
 
 ## <a name="consuming-objects-from-xaml-markup"></a>Utilisation d’objets à partir du balisage XAML
 
-Toutes les entités utilisées via [**l’extension de balisage {x:Bind}** ](/windows/uwp/xaml-platform/x-bind-markup-extension) XAML doivent être exposées publiquement dans IDL. De plus, si le balisage XAML contient une référence à un autre élément qui se trouve également dans un balisage, la méthode getter de ce balisage doit être présente dans IDL.
+Toutes les entités utilisées via [**l’extension de balisage {x:Bind}** ](../xaml-platform/x-bind-markup-extension.md) XAML doivent être exposées publiquement dans IDL. De plus, si le balisage XAML contient une référence à un autre élément qui se trouve également dans un balisage, la méthode getter de ce balisage doit être présente dans IDL.
 
 ```xaml
 <Page x:Name="MyPage">

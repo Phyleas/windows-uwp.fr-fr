@@ -8,12 +8,12 @@ author: mcleanbyron
 keywords: windows 10, uwp, windows forms, wpf, xaml islands, îles xaml
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 8443ac25ba678986046b967a90a8899eaffb76aa
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 30b41cf0d22d8f8c2c4ce7f774eab9d2aa479d78
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "67420124"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89161463"
 ---
 # <a name="part-4-add-windows-10-user-activities-and-notifications"></a>Partie 4 : Ajouter des activités et des notifications utilisateur Windows 10
 
@@ -33,11 +33,11 @@ Les activités utilisateur sont suivies à l’aide de [Microsoft Graph](https:/
 
 ### <a name="introduction-to-adaptive-cards"></a>Présentation des cartes adaptatives
 
-Cette section fournit une brève présentation des [cartes adaptatives](https://docs.microsoft.com/adaptive-cards/). Si vous n’avez pas besoin de ces informations, vous pouvez accéder directement aux instructions fournies dans [Ajouter une carte adaptative](#add-an-adaptive-card).
+Cette section fournit une brève présentation des [cartes adaptatives](/adaptive-cards/). Si vous n’avez pas besoin de ces informations, vous pouvez accéder directement aux instructions fournies dans [Ajouter une carte adaptative](#add-an-adaptive-card).
 
 Les cartes adaptatives permettent aux développeurs d’échanger du contenu de carte de manière commune et cohérente. Une carte adaptative est décrite par une charge utile JSON qui définit son contenu (par exemple, du texte, des images, des actions, etc.).
 
-Une carte adaptative définit uniquement le contenu et non l’apparence visuelle de celui-ci. La plateforme qui reçoit la carte adaptative peut restituer le contenu à l’aide du style le plus approprié. Les cartes adaptatives sont conçues à l’aide d’un [convertisseur](https://docs.microsoft.com/adaptive-cards/rendering-cards/getting-started) (renderer), qui permet de convertir la charge utile JSON en interface utilisateur native. Par exemple, l’interface utilisateur peut être au format XAML pour une application WPF ou UWP, au format AXML pour une application Android, ou au format HTML pour un site web ou une conversation de chatbot.
+Une carte adaptative définit uniquement le contenu et non l’apparence visuelle de celui-ci. La plateforme qui reçoit la carte adaptative peut restituer le contenu à l’aide du style le plus approprié. Les cartes adaptatives sont conçues à l’aide d’un [convertisseur](/adaptive-cards/rendering-cards/getting-started) (renderer), qui permet de convertir la charge utile JSON en interface utilisateur native. Par exemple, l’interface utilisateur peut être au format XAML pour une application WPF ou UWP, au format AXML pour une application Android, ou au format HTML pour un site web ou une conversation de chatbot.
 
 Voici un exemple simple de charge utile de carte adaptative.
 
@@ -391,7 +391,7 @@ Pour ajouter une notification à l’application :
     }
     ```
 
-    Les notifications toast sont représentées par une charge utile XML, qui peut inclure du texte, des images, des actions, etc. Vous trouverez tous les éléments pris en charge [ici](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/toast-schema). Ce code utilise un schéma très simple comprenant deux lignes de texte : le titre et le corps. Une fois que le code a défini la charge utile XML et l’a chargée dans un objet **XmlDocument**, il wrappe le code XML dans un objet **ToastNotification** et l’affiche à l’aide d’une classe **ToastNotificationManager**.
+    Les notifications toast sont représentées par une charge utile XML, qui peut inclure du texte, des images, des actions, etc. Vous trouverez tous les éléments pris en charge [ici](/windows/uwp/design/shell/tiles-and-notifications/toast-schema). Ce code utilise un schéma très simple comprenant deux lignes de texte : le titre et le corps. Une fois que le code a défini la charge utile XML et l’a chargée dans un objet **XmlDocument**, il wrappe le code XML dans un objet **ToastNotification** et l’affiche à l’aide d’une classe **ToastNotificationManager**.
 
 5. Dans le projet **ContosoExpenses.Core**, développez le dossier **ViewModels** et ouvrez le fichier **AddNewExpenseViewModel.cs**. 
 
