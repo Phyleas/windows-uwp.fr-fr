@@ -5,12 +5,12 @@ ms.date: 01/10/2017
 ms.topic: article
 keywords: windows 10, uwp, API WinRT, indexation, recherche, uwp
 localizationpriority: medium
-ms.openlocfilehash: 2a77bfc37d853efd28bde9bc3043d072888822f2
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 3103074e7d691897e9a8982a254ba36ee331a2b6
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "66369266"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175393"
 ---
 # <a name="using-supplemental-properties"></a>Utilisation des propriétés supplémentaires  
 
@@ -27,7 +27,7 @@ La disponibilité instantanée de ces métadonnées accroît la productivité de
 Depuis des décennies, la solution de recherche rapide sous Windows a été l'indexeur, et dans la mise à jour de Creators Update, celui-ci a été mis à jour pour prendre en charge ces nouveaux scénarios. Les applications sont maintenant capables d’étiqueter les fichiers avec des propriétés supplémentaires en plus de celles qui sont extraites par le système. Ces propriétés sont traitées comme des citoyens de première classe  
 
 ## <a name="windows-properties"></a>Propriétés Windows 
-Le [système de propriétés Windows](https://docs.microsoft.com/windows/desktop/properties/windows-properties-system) a été un élément clé de l’interaction avec les fichiers pendant des années. Il permet aux applications de lire les propriétés des fichiers sans qu’il soit nécessaire de comprendre le fonctionnement interne des formats ou des langages dans lesquels les fichiers sont enregistrés. Tout ce qui est abstrait pour vous en tant que développeur, tout ce que vous avez à faire est de demander une liste et de spécifier si vous souhaitez que l’ordre soit croissant ou décroissant.  
+Le [système de propriétés Windows](/windows/desktop/properties/windows-properties-system) a été un élément clé de l’interaction avec les fichiers pendant des années. Il permet aux applications de lire les propriétés des fichiers sans qu’il soit nécessaire de comprendre le fonctionnement interne des formats ou des langages dans lesquels les fichiers sont enregistrés. Tout ce qui est abstrait pour vous en tant que développeur, tout ce que vous avez à faire est de demander une liste et de spécifier si vous souhaitez que l’ordre soit croissant ou décroissant.  
 
 Le système de propriétés est étroitement associé à l'indexeur Windows - il lit toutes les propriétés des fichiers dans son étendue et les stocke. Plus tard, lorsqu’une application demande qu’une liste de tous les fichiers .docx d’un dossier soit triée par date de modification à l’exception de ceux écrits par John Smith, l’indexeur peut renvoyer la liste instantanément.  
 
@@ -158,4 +158,4 @@ Bien qu’il s’agisse d’une fonctionnalité potentiellement intéressante po
 ## <a name="conclusions"></a>Conclusions 
 Les propriétés supplémentaires permettent de stocker ainsi une quantité plus grande de propriétés de fichiers dans le système. Bien que facultative, leur utilisation peut donner à votre application un avantage sur d’autres applications qui ne sont pas en mesure de trier et de rechercher leurs données aussi rapidement. 
 
-Nous sommes impatients que des applications commencent à utiliser ces propriétés. Si vous avez des questions sur l’utilisation de l'en-tête, veuillez nous en faire part dans les commentaires ci-dessous 
+Nous sommes impatients que des applications commencent à utiliser ces propriétés. Si vous avez des questions sur l’utilisation de l'en-tête, veuillez nous en faire part dans les commentaires ci-dessous

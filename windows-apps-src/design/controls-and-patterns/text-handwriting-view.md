@@ -11,18 +11,18 @@ design-contact: minah.kim
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: ccd21481a8488a101ee79ae0b0224651a94461a7
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: e7c25a77b552ffc187a4e49a02b7facd771e8258
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82967964"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175583"
 ---
 # <a name="text-input-with-the-handwriting-view"></a>Entrée de texte avec la vue de l’écriture manuscrite
 
 ![La zone de texte s’agrandit quand l’utilisateur appuie dessus avec un stylet](images/handwritingview/handwritingview2.gif)
 
-Personnalisez la vue de l’écriture manuscrite intégrée en entrée de texte qui est prise en charge par les contrôles de texte Windows comme [TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox), [RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox) et les contrôles qui en dérivent tels qu’[AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox).
+Personnalisez la vue de l’écriture manuscrite intégrée en entrée de texte qui est prise en charge par les contrôles de texte Windows comme [TextBox](/uwp/api/windows.ui.xaml.controls.textbox), [RichEditBox](/uwp/api/windows.ui.xaml.controls.richeditbox) et les contrôles qui en dérivent tels qu’[AutoSuggestBox](/uwp/api/windows.ui.xaml.controls.autosuggestbox).
 
 ## <a name="overview"></a>Vue d’ensemble
 
@@ -50,7 +50,7 @@ La vue de l’écriture manuscrite intégrée est activée par défaut.
 
 Vous souhaiterez peut-être désactiver la vue de l’écriture manuscrite si vous fournissez déjà des fonctionnalités équivalentes de conversion de l’entrée manuscrite en texte dans votre application, ou si votre expérience d’entrée de texte s’appuie sur une sorte de mise en forme ou caractère spécial (par exemple, une tabulation) non disponible dans l’écriture manuscrite.
 
-Dans cet exemple, nous désactivons la vue de l’écriture manuscrite en affectant à la propriété [IsHandwritingViewEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.ishandwritingviewenabled) du contrôle [TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox) la valeur false. Tous les contrôles de texte qui prennent en charge la vue de l’écriture manuscrite acceptent une propriété similaire.
+Dans cet exemple, nous désactivons la vue de l’écriture manuscrite en affectant à la propriété [IsHandwritingViewEnabled](/uwp/api/windows.ui.xaml.controls.textbox.ishandwritingviewenabled) du contrôle [TextBox](/uwp/api/windows.ui.xaml.controls.textbox) la valeur false. Tous les contrôles de texte qui prennent en charge la vue de l’écriture manuscrite acceptent une propriété similaire.
 
 ```xaml
 <TextBox Name="SampleTextBox"
@@ -67,7 +67,7 @@ La vue de l’écriture manuscrite est située au-dessus du contrôle de texte s
 
 L’interface utilisateur de l’application n’étant pas réorganisée pour prendre en compte le plus grand contrôle, le système peut amener la vue à masquer des éléments importants de l’interface utilisateur.
 
-Ici, nous montrons comment utiliser la propriété [PlacementAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview.placementalignment) d’un [TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox)[HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) pour spécifier le point d’ancrage sur le contrôle de texte sous-jacent qui est utilisé pour aligner la vue de l’écriture manuscrite.
+Ici, nous montrons comment utiliser la propriété [PlacementAlignment](/uwp/api/windows.ui.xaml.controls.handwritingview.placementalignment) d’un [TextBox](/uwp/api/windows.ui.xaml.controls.textbox)[HandwritingView](/uwp/api/windows.ui.xaml.controls.handwritingview) pour spécifier le point d’ancrage sur le contrôle de texte sous-jacent qui est utilisé pour aligner la vue de l’écriture manuscrite.
 
 ```xaml
 <TextBox Name="SampleTextBox"
@@ -84,7 +84,7 @@ Ici, nous montrons comment utiliser la propriété [PlacementAlignment](https://
 
 La fenêtre contextuelle de suggestion de texte est activée par défaut pour fournir une liste des principaux candidats à la reconnaissance des entrées manuscrites à partir de laquelle l’utilisateur peut effectuer son choix si le premier candidat est incorrect.
 
-Si votre application propose déjà une fonctionnalité de reconnaissance fiable et personnalisée, vous pouvez utiliser la propriété [AreCandidatesEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview.arecandidatesenabled) pour désactiver les suggestions intégrées, comme illustré dans l’exemple suivant.
+Si votre application propose déjà une fonctionnalité de reconnaissance fiable et personnalisée, vous pouvez utiliser la propriété [AreCandidatesEnabled](/uwp/api/windows.ui.xaml.controls.handwritingview.arecandidatesenabled) pour désactiver les suggestions intégrées, comme illustré dans l’exemple suivant.
 
 ```xaml
 <TextBox Name="SampleTextBox"
@@ -107,7 +107,7 @@ Un utilisateur peut choisir parmi un ensemble prédéfini de polices d’écritu
 
 Votre application peut accéder à ce paramètre et utiliser la police sélectionnée pour le texte reconnu dans le contrôle de texte.
 
-Dans cet exemple, nous écoutons l’événement [TextChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanged) d’un [TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox) et appliquons la police sélectionnée de l’utilisateur si la modification du texte provient du HandwritingView (ou une police par défaut dans le cas contraire).
+Dans cet exemple, nous écoutons l’événement [TextChanged](/uwp/api/windows.ui.xaml.controls.textbox.textchanged) d’un [TextBox](/uwp/api/windows.ui.xaml.controls.textbox) et appliquons la police sélectionnée de l’utilisateur si la modification du texte provient du HandwritingView (ou une police par défaut dans le cas contraire).
 
 ```csharp
 private void SampleTextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -121,11 +121,11 @@ private void SampleTextBox_TextChanged(object sender, TextChangedEventArgs e)
 
 ## <a name="access-the-handwritingview-in-composite-controls"></a>Accéder au HandwritingView dans des contrôles composites
 
-Les contrôles composites qui utilisent les contrôles [TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox) ou [RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox), comme [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox), prennent également en charge un [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview).
+Les contrôles composites qui utilisent les contrôles [TextBox](/uwp/api/windows.ui.xaml.controls.textbox) ou [RichEditBox](/uwp/api/windows.ui.xaml.controls.richeditbox), comme [AutoSuggestBox](/uwp/api/windows.ui.xaml.controls.autosuggestbox), prennent également en charge un [HandwritingView](/uwp/api/windows.ui.xaml.controls.handwritingview).
 
-Pour accéder au [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) dans un contrôle composite, utilisez l’API [VisualTreeHelper](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.visualtreehelper).
+Pour accéder au [HandwritingView](/uwp/api/windows.ui.xaml.controls.handwritingview) dans un contrôle composite, utilisez l’API [VisualTreeHelper](/uwp/api/windows.ui.xaml.media.visualtreehelper).
 
-L’extrait de code XAML suivant affiche un contrôle [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox).
+L’extrait de code XAML suivant affiche un contrôle [AutoSuggestBox](/uwp/api/windows.ui.xaml.controls.autosuggestbox).
 
 ```xaml
 <AutoSuggestBox Name="SampleAutoSuggestBox" 
@@ -136,7 +136,7 @@ L’extrait de code XAML suivant affiche un contrôle [AutoSuggestBox](https://d
 </AutoSuggestBox>
 ```
 
-Dans le code-behind correspondant, nous montrons comment désactiver le [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) dans le contrôle [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox).
+Dans le code-behind correspondant, nous montrons comment désactiver le [HandwritingView](/uwp/api/windows.ui.xaml.controls.handwritingview) dans le contrôle [AutoSuggestBox](/uwp/api/windows.ui.xaml.controls.autosuggestbox).
 
 1. Tout d’abord, nous gérons l’événement Loaded de l’application où nous appelons une fonction FindInnerTextBox pour démarrer la traversée de l’arborescence d’éléments visuels.
 
@@ -190,17 +190,17 @@ Dans le code-behind correspondant, nous montrons comment désactiver le [Handwri
 
 ## <a name="reposition-the-handwritingview"></a>Repositionner le HandwritingView
 
-Dans certains cas, vous devez vous assurer que le [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) couvre les éléments d’interface utilisateur qui ne le seraient pas sinon.
+Dans certains cas, vous devez vous assurer que le [HandwritingView](/uwp/api/windows.ui.xaml.controls.handwritingview) couvre les éléments d’interface utilisateur qui ne le seraient pas sinon.
 
 Ici, nous créons un TextBox qui prend en charge la dictée (implémenté en plaçant un TextBox et un bouton de dictée dans un StackPanel).
 
 ![TextBox avec dictée](images/handwritingview/textbox-with-dictation.png)
 
-Comme le StackPanel est désormais plus grand que le TextBox, le [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) peut ne pas masquer tous les contrôles composites.
+Comme le StackPanel est désormais plus grand que le TextBox, le [HandwritingView](/uwp/api/windows.ui.xaml.controls.handwritingview) peut ne pas masquer tous les contrôles composites.
 
 ![TextBox avec dictée](images/handwritingview/textbox-with-dictation-handwritingview.png)
 
-Pour résoudre ce problème, affectez à la propriété PlacementTarget du [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) l’élément d’interface utilisateur sur lequel il doit être aligné.
+Pour résoudre ce problème, affectez à la propriété PlacementTarget du [HandwritingView](/uwp/api/windows.ui.xaml.controls.handwritingview) l’élément d’interface utilisateur sur lequel il doit être aligné.
 
 ```xaml
 <StackPanel Name="DictationBox" 
@@ -227,7 +227,7 @@ Pour résoudre ce problème, affectez à la propriété PlacementTarget du [Hand
 
 ## <a name="resize-the-handwritingview"></a>Redimensionner le HandwritingView
 
-Vous pouvez également définir la taille du [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview), ce qui peut être utile quand vous devez vous assurer que la vue ne masque pas des éléments importants de l’interface utilisateur.
+Vous pouvez également définir la taille du [HandwritingView](/uwp/api/windows.ui.xaml.controls.handwritingview), ce qui peut être utile quand vous devez vous assurer que la vue ne masque pas des éléments importants de l’interface utilisateur.
 
 Comme dans l’exemple précédent, nous créons un TextBox qui prend en charge la dictée (implémenté en plaçant un TextBox et un bouton de dictée dans un StackPanel).
 
@@ -237,7 +237,7 @@ Dans ce cas, nous voulons vérifier que le bouton de dictée est toujours visibl
 
 ![TextBox avec dictée](images/handwritingview/textbox-with-dictation-handwritingview-resize.png)
 
-Pour ce faire, nous lions la propriété MaxWidth du [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) à la largeur de l’élément d’interface utilisateur qu’il doit masquer.
+Pour ce faire, nous lions la propriété MaxWidth du [HandwritingView](/uwp/api/windows.ui.xaml.controls.handwritingview) à la largeur de l’élément d’interface utilisateur qu’il doit masquer.
 
 ```xaml
 <StackPanel Name="DictationBox" 
@@ -275,7 +275,7 @@ Si vous disposez d’une interface utilisateur personnalisée qui apparaît en r
 
 ![TextBox avec interface utilisateur personnalisée](images/handwritingview/textbox-with-customui.png)
 
-L’exemple suivant montre comment écouter les événements [Opened](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview.opened), [Closed](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview.closed) et [SizeChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.sizechanged) du [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) pour définir la position d’un [Popup](https://docs.microsoft.com/uwp/api/windows.ui.popups).
+L’exemple suivant montre comment écouter les événements [Opened](/uwp/api/windows.ui.xaml.controls.handwritingview.opened), [Closed](/uwp/api/windows.ui.xaml.controls.handwritingview.closed) et [SizeChanged](/uwp/api/windows.ui.xaml.frameworkelement.sizechanged) du [HandwritingView](/uwp/api/windows.ui.xaml.controls.handwritingview) pour définir la position d’un [Popup](/uwp/api/windows.ui.popups).
 
 ```csharp
 private void Search_HandwritingViewOpened(
@@ -313,10 +313,9 @@ private double GetPopupVerticalOffset()
 
 ## <a name="retemplate-the-handwritingview-control"></a>Redéfinir le modèle du contrôle HandwritingView
 
-Comme avec tous les contrôles de framework XAML, vous pouvez personnaliser la structure visuelle et le comportement visuel d’un [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) selon vos besoins spécifiques.
+Comme avec tous les contrôles de framework XAML, vous pouvez personnaliser la structure visuelle et le comportement visuel d’un [HandwritingView](/uwp/api/windows.ui.xaml.controls.handwritingview) selon vos besoins spécifiques.
 
-Pour voir un exemple complet de la création d’un modèle personnalisé, consultez la procédure [Créer des contrôles de transport personnalisés](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/custom-transport-controls) ou [Exemple de contrôle d’édition personnalisé](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomEditControl).
-
+Pour voir un exemple complet de la création d’un modèle personnalisé, consultez la procédure [Créer des contrôles de transport personnalisés](./custom-transport-controls.md) ou [Exemple de contrôle d’édition personnalisé](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomEditControl).
 
 
 

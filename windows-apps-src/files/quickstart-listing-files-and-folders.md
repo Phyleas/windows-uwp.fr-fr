@@ -11,12 +11,12 @@ dev_langs:
 - cppwinrt
 - cpp
 - vb
-ms.openlocfilehash: 33b03ae1538001a2a9e77d3d72afd7bb67e9f3dc
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 34498bbcfbb2f79090dbd23231b26692b94065d7
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74258580"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175403"
 ---
 # <a name="enumerate-and-query-files-and-folders"></a>Énumérer et interroger des fichiers et dossiers
 
@@ -31,7 +31,7 @@ Pour obtenir des conseils sur le stockage des données de votre application de p
 
 -   **Comprendre la programmation asynchrone pour les applications pour la plateforme Windows universelle (UWP)**
 
-    Pour apprendre à écrire des applications asynchrones en C# ou Visual Basic, voir [Appeler des API asynchrones en C# ou Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). Pour apprendre à écrire des applications asynchrones en C++/WinRT, voir [Opérations concurrentes et asynchrones avec C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency). Pour apprendre à écrire des applications asynchrones en C++/CX, voir [Programmation asynchrone en C++/CX](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
+    Pour apprendre à écrire des applications asynchrones en C# ou Visual Basic, voir [Appeler des API asynchrones en C# ou Visual Basic](../threading-async/call-asynchronous-apis-in-csharp-or-visual-basic.md). Pour apprendre à écrire des applications asynchrones en C++/WinRT, voir [Opérations concurrentes et asynchrones avec C++/WinRT](../cpp-and-winrt-apis/concurrency.md). Pour apprendre à écrire des applications asynchrones en C++/CX, voir [Programmation asynchrone en C++/CX](../threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md).
 
 -   **Autorisations d'accès à l'emplacement**
 

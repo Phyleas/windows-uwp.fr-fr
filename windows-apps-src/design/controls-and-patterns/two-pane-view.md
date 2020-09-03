@@ -6,12 +6,12 @@ ms.date: 01/22/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bc080a58bc3e381fc26ddcc6a42af28e2dacaa65
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 9c2fd792b9652e38637810b4ccd0aee94075895b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970444"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174693"
 ---
 # <a name="two-pane-view"></a>Vue à deux volets
 
@@ -23,18 +23,18 @@ ms.locfileid: "82970444"
 Bien qu’il fonctionne sur tous les appareils Windows, le contrôle TwoPaneView est conçu pour vous aider à tirer pleinement parti des appareils double écran de manière automatique, sans aucune programmation spéciale. Sur un appareil double écran, la vue à deux volets garantit que l’interface utilisateur est correctement divisée pour prendre en charge l’espace entre les écrans et que le contenu est présenté de chaque côté de cet espace.
 
 > [!NOTE]
-> Un _appareil double écran_ est un type spécial d’appareil qui présente des fonctionnalités uniques. Il ne s’agit pas d’un appareil de bureau équipé de plusieurs moniteurs. Pour plus d’informations, consultez cette [présentation des appareils double écran](/dual-screen/introduction). (Pour plus d’informations sur les façons dont vous pouvez optimiser votre application pour plusieurs moniteurs, consultez [Afficher plusieurs vues](/windows/uwp/design/layout/show-multiple-views).)
+> Un _appareil double écran_ est un type spécial d’appareil qui présente des fonctionnalités uniques. Il ne s’agit pas d’un appareil de bureau équipé de plusieurs moniteurs. Pour plus d’informations, consultez cette [présentation des appareils double écran](/dual-screen/introduction). (Pour plus d’informations sur les façons dont vous pouvez optimiser votre application pour plusieurs moniteurs, consultez [Afficher plusieurs vues](../layout/show-multiple-views.md).)
 
 **Obtenir la bibliothèque d’interface utilisateur Windows**
 
 |  |  |
 | - | - |
-| ![Logo WinUI](images/winui-logo-64x64.png) | Le contrôle **TwoPaneView** est inclus dans la bibliothèque d’interface utilisateur Windows, package NuGet contenant de nouveaux contrôles et fonctionnalités d’interface utilisateur destinés aux applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![Logo WinUI](images/winui-logo-64x64.png) | Le contrôle **TwoPaneView** est inclus dans la bibliothèque d’interface utilisateur Windows, package NuGet contenant de nouveaux contrôles et fonctionnalités d’interface utilisateur destinés aux applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/). |
 
 > **API de la bibliothèque d’interface utilisateur Windows :** [TwoPaneView, classe](/uwp/api/microsoft.ui.xaml.controls.twopaneview)
 
 > [!TIP]
-> Tout au long de ce document, nous utilisons l’alias **muxc** en XAML pour représenter les API de la bibliothèque d’interface utilisateur Windows que nous avons incluses dans notre projet. Nous l’avons ajouté à notre élément [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page) : `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
+> Tout au long de ce document, nous utilisons l’alias **muxc** en XAML pour représenter les API de la bibliothèque d’interface utilisateur Windows que nous avons incluses dans notre projet. Nous l’avons ajouté à notre élément [Page](/uwp/api/windows.ui.xaml.controls.page) : `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
 >
 >Dans le code-behind, nous utilisons également l’alias **muxc** en C# pour représenter les API de la bibliothèque d’interface utilisateur Windows que nous avons incluses dans notre projet. Nous avons ajouté cette instruction **using** en haut du fichier : `using muxc = Microsoft.UI.Xaml.Controls;`
 
@@ -74,7 +74,7 @@ La vue à deux volets se compose de deux volets où vous placez votre contenu. E
 
 Pour configurer la vue à deux volets, commencez par définir [PanePriority](/uwp/api/microsoft.ui.xaml.controls.twopaneview.panepriority) pour spécifier le volet à afficher s’il n’y a de la place que pour un seul volet. Indiquez ensuite si le volet `Pane1` apparaît en haut ou en bas dans les fenêtres en mode vertical, ou à gauche ou à droite dans les fenêtres en mode horizontal.
 
-La vue à deux volets gère la taille et la disposition des volets, mais vous devez toujours faire en sorte que le contenu à l’intérieur du volet s’adapte aux changements de taille et d’orientation. Pour plus d’informations sur la création d’une interface utilisateur adaptative, consultez [Dispositions dynamiques avec XAML](/windows/uwp/design/layout/layouts-with-xaml) et [Panneaux de disposition](/windows/uwp/design/layout/layout-panels).
+La vue à deux volets gère la taille et la disposition des volets, mais vous devez toujours faire en sorte que le contenu à l’intérieur du volet s’adapte aux changements de taille et d’orientation. Pour plus d’informations sur la création d’une interface utilisateur adaptative, consultez [Dispositions dynamiques avec XAML](../layout/layouts-with-xaml.md) et [Panneaux de disposition](../layout/layout-panels.md).
 
 [TwoPaneView](/uwp/api/microsoft.ui.xaml.controls.twopaneview) gère l’affichage des volets en fonction de l’état de répartition de l’application.
 
@@ -92,7 +92,7 @@ La vue à deux volets gère la taille et la disposition des volets, mais vous de
 
 ### <a name="add-content-to-the-panes"></a>Ajouter du contenu aux volets
 
-Chaque volet d’une vue à deux volets peut contenir un seul `UIElement` XAML. Pour ajouter du contenu, vous placez généralement un panneau de disposition XAML dans chaque volet, puis vous ajoutez d’autres contrôles et du contenu au panneau. Les volets pouvant changer de taille et alterner entre mode horizontal et mode vertical, vous devez vérifier que le contenu de chaque volet peut s’adapter à ces changements. Pour plus d’informations sur la création d’une interface utilisateur adaptative, consultez [Dispositions dynamiques avec XAML](/windows/uwp/design/layout/layouts-with-xaml) et [Panneaux de disposition](/windows/uwp/design/layout/layout-panels).
+Chaque volet d’une vue à deux volets peut contenir un seul `UIElement` XAML. Pour ajouter du contenu, vous placez généralement un panneau de disposition XAML dans chaque volet, puis vous ajoutez d’autres contrôles et du contenu au panneau. Les volets pouvant changer de taille et alterner entre mode horizontal et mode vertical, vous devez vérifier que le contenu de chaque volet peut s’adapter à ces changements. Pour plus d’informations sur la création d’une interface utilisateur adaptative, consultez [Dispositions dynamiques avec XAML](../layout/layouts-with-xaml.md) et [Panneaux de disposition](../layout/layout-panels.md).
 
 L’exemple présenté ici crée l’interface utilisateur d’une application simple avec une image et des informations (celle que vous avez vue précédemment dans la section _Exemples_). Quand l’application est répartie sur deux écrans, l’image et les informations sont affichées sur des écrans distincts. Sur un seul écran, le contenu peut être affiché dans deux volets ou combiné dans un volet unique en fonction de la place disponible. (S’il n’y a de la place que pour un seul volet, le contenu de Pane2 est déplacé dans Pane1 et l’utilisateur doit faire défiler le volet pour voir le contenu masqué. Ce code est présenté plus loin dans la section _Répondre aux changements de mode_.)
 
@@ -190,7 +190,7 @@ MyTwoPaneView.PanePriority = Microsoft.UI.Xaml.Controls.TwoPaneViewPriority.Pane
 
 ### <a name="pane-sizing"></a>Dimensionnement des volets
 
-Sur un seul écran, la taille des volets est déterminée par les propriétés [Pane1Length](/uwp/api/microsoft.ui.xaml.controls.twopaneview.pane1length) et [Pane2Length](/uwp/api/microsoft.ui.xaml.controls.twopaneview.pane2length). Celles-ci utilisent les valeurs de [GridLength](/uwp/api/windows.ui.xaml.gridlength) qui prennent en charge les redimensionnements _auto_ et \* (_étoile_ ou proportionnel). Pour obtenir une explication des redimensionnements auto et *, consultez la section _Propriétés de disposition_ de l’article [Dispositions dynamiques avec XAML](/windows/uwp/design/layout/layouts-with-xaml#layout-properties).
+Sur un seul écran, la taille des volets est déterminée par les propriétés [Pane1Length](/uwp/api/microsoft.ui.xaml.controls.twopaneview.pane1length) et [Pane2Length](/uwp/api/microsoft.ui.xaml.controls.twopaneview.pane2length). Celles-ci utilisent les valeurs de [GridLength](/uwp/api/windows.ui.xaml.gridlength) qui prennent en charge les redimensionnements _auto_ et \* (_étoile_ ou proportionnel). Pour obtenir une explication des redimensionnements auto et *, consultez la section _Propriétés de disposition_ de l’article [Dispositions dynamiques avec XAML](../layout/layouts-with-xaml.md#layout-properties).
 
 Par défaut, `Pane1Length` est défini sur `Auto` et se redimensionne automatiquement en fonction de son contenu. `Pane2Length` est défini sur `*` et utilise tout l’espace restant.
 

@@ -7,16 +7,16 @@ ms.date: 04/09/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 705b0ecb474c0bb821c3a21f4b8b66073984827f
-ms.sourcegitcommit: 015291bdf2e7d67076c1c85fc025f49c840ba475
+ms.openlocfilehash: fe9cbb9fdc9d73a38642a4f5894b1ef0f8182e69
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85469574"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174513"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-windows-apps"></a>Historique de navigation et navigation vers l’arrière pour les applications Windows
 
-> **API importantes** : [événement BackRequested](https://docs.microsoft.com/uwp/api/Windows.UI.Core.SystemNavigationManager.BackRequested), [classe SystemNavigationManager](https://docs.microsoft.com/uwp/api/Windows.UI.Core.SystemNavigationManager), [OnNavigatedTo](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_)
+> **API importantes** : [événement BackRequested](/uwp/api/Windows.UI.Core.SystemNavigationManager.BackRequested), [classe SystemNavigationManager](/uwp/api/Windows.UI.Core.SystemNavigationManager), [OnNavigatedTo](/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_)
 
 L’application Windows fournit un système de navigation vers l’arrière cohérent afin de parcourir l’historique de navigation de l’utilisateur dans une application et, en fonction de l’appareil, d’une application à l’autre.
 
@@ -74,7 +74,7 @@ Pour réduire le déplacement des éléments d’interface utilisateur dans votr
 
 ## <a name="code-example"></a>Exemple de code
 
-L’exemple de code suivant montre comment implémenter le comportement de navigation vers l’arrière avec un bouton Précédent. Le code répond à l’événement [**ClickButton**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.Click) et désactive/active la visibilité du bouton dans [**OnNavigatedTo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_), lequel est appelé lors de la navigation vers une nouvelle page. L’exemple de code gère également les entrées provenant de l’utilisation des touches Précédent des systèmes matériels et logiciels en inscrivant un écouteur pour l’événement [**BackRequested**](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested).
+L’exemple de code suivant montre comment implémenter le comportement de navigation vers l’arrière avec un bouton Précédent. Le code répond à l’événement [**ClickButton**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.Click) et désactive/active la visibilité du bouton dans [**OnNavigatedTo**](/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_), lequel est appelé lors de la navigation vers une nouvelle page. L’exemple de code gère également les entrées provenant de l’utilisation des touches Précédent des systèmes matériels et logiciels en inscrivant un écouteur pour l’événement [**BackRequested**](/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested).
 
 ```xaml
 <!-- MainPage.xaml -->
@@ -194,7 +194,7 @@ namespace winrt::PageNavTest::implementation
 
 Nous gérons ci-dessus la navigation vers l’arrière pour une seule page. Vous pouvez gérer la navigation dans chaque page si vous souhaitez exclure des pages spécifiques de la navigation vers l’arrière, ou si vous souhaitez exécuter du code de niveau page avant d’afficher la page.
 
-Pour gérer la navigation vers l’arrière pour toute une application, vous allez inscrire un écouteur global pour l’événement [**BackRequested**](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested) dans le fichier code-behind `App.xaml`.
+Pour gérer la navigation vers l’arrière pour toute une application, vous allez inscrire un écouteur global pour l’événement [**BackRequested**](/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested) dans le fichier code-behind `App.xaml`.
 
 Fichier code-behind app.xaml :
 
@@ -307,9 +307,9 @@ Les exemples de code ci-dessus montrent comment gérer toutes ces entrées.
 
 ## <a name="system-back-behavior-for-backward-compatibilities"></a>Comportement vers l’arrière du système pour la compatibilité descendante
 
-Auparavant, les applications UWP utilisaient [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility) pour la navigation vers l’arrière. L’API continuera d’être prise en charge pour assurer la compatibilité descendante, mais nous vous recommandons de ne plus utiliser [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility). Au lieu de cela, votre application doit représenter son propre bouton Précédent.
+Auparavant, les applications UWP utilisaient [AppViewBackButtonVisibility](/uwp/api/windows.ui.core.appviewbackbuttonvisibility) pour la navigation vers l’arrière. L’API continuera d’être prise en charge pour assurer la compatibilité descendante, mais nous vous recommandons de ne plus utiliser [AppViewBackButtonVisibility](/uwp/api/windows.ui.core.appviewbackbuttonvisibility). Au lieu de cela, votre application doit représenter son propre bouton Précédent.
 
-Si votre application continue d’utiliser [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility), l’interface utilisateur du système affichera le bouton Précédent du système à l’intérieur de la barre de titre. (Les interactions utilisateur et l’apparence du bouton Précédent sont identiques à celles des builds précédentes.)
+Si votre application continue d’utiliser [AppViewBackButtonVisibility](/uwp/api/windows.ui.core.appviewbackbuttonvisibility), l’interface utilisateur du système affichera le bouton Précédent du système à l’intérieur de la barre de titre. (Les interactions utilisateur et l’apparence du bouton Précédent sont identiques à celles des builds précédentes.)
 
 ![Bouton Précédent de la barre de titre](images/nav-back-pc.png)
 

@@ -9,12 +9,12 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0ad8b78538a2b047501361072a017658ba152e73
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 5c39ded4157181581412f01e54772db2bf9a1732
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82971004"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174623"
 ---
 # <a name="app-icons-and-logos"></a>Icônes et logos d’application 
 
@@ -52,7 +52,7 @@ Par défaut, Visual Studio stocke vos ressources d’icône dans un sous-répert
 | Logo du badge | Vignettes de l’application | BadgeLogo.png  |
 | Logo de package/Logo du Store | Programme d’installation, Espace partenaires, option « Signaler une application » dans le Store, option « Rédiger un avis » dans le Store | StoreLogo.png  |
 
-\* Utilisé, sauf si vous choisissez d’[afficher uniquement des images chargées dans le Store](/windows/uwp/publish/app-screenshots-and-images#display-only-uploaded-logo-images-in-the-store). 
+\* Utilisé, sauf si vous choisissez d’[afficher uniquement des images chargées dans le Store](../../publish/app-screenshots-and-images.md#display-only-uploaded-logo-images-in-the-store). 
 
 Pour garantir que ces icônes s’affichent nettement sur chaque écran, vous pouvez créer plusieurs versions d’une même icône en fonction de différents facteurs d’échelle. 
 
@@ -75,13 +75,13 @@ Le facteur d’échelle détermine la taille d’éléments d’interface, tels 
 
 « Comment spécifier des images pour mes applications dans la Description dans le Store ? »
 
-Par défaut, nous utilisons certaines images de vos packages dans le Store, comme décrit dans le tableau en haut de cette page (ainsi que d’autres [images que vous fournissez pendant le processus de soumission](https://docs.microsoft.com/windows/uwp/publish/app-screenshots-and-images)). Cependant, lorsque vous présentez votre description aux clients sur Windows 10 (y compris Xbox), vous avez également la possibilité d’empêcher le Store d’utiliser les images de logo disponibles dans les packages de votre application et de faire en sorte qu’il utilise uniquement les images que vous chargez. Cela vous permet de mieux contrôler l’apparence des différents affichages de votre application au sein du Store (notez que, si votre produit prend en charge des versions antérieures du système d’exploitation, certains clients pourraient continuer à voir les images extraites de vos packages, même si vous utilisez cette option). Vous pouvez faire cela dans la section **Logos du Store** de l’étape **Description dans le Store** du processus de soumission.
+Par défaut, nous utilisons certaines images de vos packages dans le Store, comme décrit dans le tableau en haut de cette page (ainsi que d’autres [images que vous fournissez pendant le processus de soumission](../../publish/app-screenshots-and-images.md)). Cependant, lorsque vous présentez votre description aux clients sur Windows 10 (y compris Xbox), vous avez également la possibilité d’empêcher le Store d’utiliser les images de logo disponibles dans les packages de votre application et de faire en sorte qu’il utilise uniquement les images que vous chargez. Cela vous permet de mieux contrôler l’apparence des différents affichages de votre application au sein du Store (notez que, si votre produit prend en charge des versions antérieures du système d’exploitation, certains clients pourraient continuer à voir les images extraites de vos packages, même si vous utilisez cette option). Vous pouvez faire cela dans la section **Logos du Store** de l’étape **Description dans le Store** du processus de soumission.
 
 ![Spécification des Logos du Store pendant le processus de soumission d’application](images/app-icons/storelogodisplay.png)
 
 Lorsque vous activez cette case, une nouvelle section appelée **Affichage des images par le Windows Store** s’affiche. Vous pouvez y charger 3 tailles d’image que le Store utilisera à la place des images de logo extraites des packages de votre application : 300 x 300, 150 x 150 et 71 x 71 pixels. Seule la taille de 300 x 300 est requise, mais nous vous conseillons de fournir les 3 tailles.
 
-Pour plus d’informations, voir [Afficher uniquement des images de logo chargées dans le Store](/windows/uwp/publish/app-screenshots-and-images#display-only-uploaded-logo-images-in-the-store).
+Pour plus d’informations, voir [Afficher uniquement des images de logo chargées dans le Store](../../publish/app-screenshots-and-images.md#display-only-uploaded-logo-images-in-the-store).
 
 <!-- ### Fallback images for the Store
 
@@ -96,7 +96,7 @@ If these images aren't provided, the Store will search all matching images of th
 
 The Store may also use your app's tile and other images that you include in your app's package. 
 
-For more information, see [App screenshots, images, and trailers in the Microsoft Store](/windows/uwp/publish/app-screenshots-and-images). -->
+For more information, see [App screenshots, images, and trailers in the Microsoft Store](../../publish/app-screenshots-and-images.md). -->
 
 
 ## <a name="managing-app-icons-with-the-visual-studio-manifest-designer"></a>Gestion des icônes d’application avec le Concepteur de manifeste Visual Studio
@@ -185,7 +185,7 @@ Par exemple,
 
 Square150x150Logo-scale-100.png, Square150x150Logo-scale-200.png, Square150x150Logo-scale-400.png
 
-Notez que Visual Studio ne génère pas de logo du badge par défaut. C’est parce que votre logo du badge est unique et ne doit probablement pas correspondre à vos autres icônes d’application. Pour plus d’informations, voir l’article [Notifications de badge pour les applications Windows](/windows/uwp/design/shell/tiles-and-notifications/badges). 
+Notez que Visual Studio ne génère pas de logo du badge par défaut. C’est parce que votre logo du badge est unique et ne doit probablement pas correspondre à vos autres icônes d’application. Pour plus d’informations, voir l’article [Notifications de badge pour les applications Windows](../shell/tiles-and-notifications/badges.md). 
 
 
 ## <a name="more-about-app-icon-assets"></a>Informations supplémentaires sur les ressources d’icônes d’application
@@ -253,13 +253,13 @@ Voici des recommandations de taille pour les ressources basées sur une cible, �
 
 
 ## <a name="more-about-splash-screen-assets"></a>Informations supplémentaires sur les ressources d’écran de démarrage
-Pour plus d’informations sur les écrans de démarrage, consultez [Écrans de démarrage des applications Windows](/windows/uwp/launch-resume/splash-screens).
+Pour plus d’informations sur les écrans de démarrage, consultez [Écrans de démarrage des applications Windows](../../launch-resume/splash-screens.md).
 
 ## <a name="more-about-badge-logo-assets"></a>Informations supplémentaires sur les ressources de logo de badge
 
 Lorsque vous utilisez le Générateur de ressources pour générer toutes les ressources dont vous avez besoin, il ne génère pas les logos de badge par défaut  parce qu’ils sont très différents d’autres ressources d’application. Le logo de badge est une image d’état qui s’affiche dans les notifications et sur les vignettes de l’application. 
 
-Pour plus d’informations, consultez [Notifications de badge pour les applications Windows](/windows/uwp/design/shell/tiles-and-notifications/badges).
+Pour plus d’informations, consultez [Notifications de badge pour les applications Windows](../shell/tiles-and-notifications/badges.md).
 
 
 ## <a name="customizing-asset-padding"></a>Personnalisation de la marge intérieure de ressource
@@ -313,16 +313,3 @@ Dans cet exemple, les marges sont trop étroites :
 Cet article décrit comment créer des ressources pour des facteurs d’échelle spécifiques, mais vous pouvez également créer des ressources pour un vaste éventail de conditions et combinaisons de conditions. Par exemple, vous pouvez peut créer des icônes pour des écrans très contrastés ou pour des thèmes clairs et sombres. Vous pouvez même créer des ressources pour des langues spécifiques.
 
 Pour en savoir plus, voir [Personnaliser vos ressources pour la langue, l’échelle, le contraste élevé et d’autres qualificateurs](../../app-resources/tailor-resources-lang-scale-contrast.md).
-
-
-
-
-
-
-
-
-
-
-
-
-

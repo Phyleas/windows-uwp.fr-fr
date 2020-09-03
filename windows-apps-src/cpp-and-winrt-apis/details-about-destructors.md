@@ -5,16 +5,16 @@ ms.date: 09/26/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, destruction différée, requêtes sécurisées
 ms.localizationpriority: medium
-ms.openlocfilehash: 76068ffc655c20aa13b50cce9ac49af9afd50805
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 6b15c32bb35bec1f6a8e8d59e6aefe17ebf74b5d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "71329560"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170326"
 ---
 # <a name="extension-points-for-your-implementation-types"></a>Points d’extension pour vos types d’implémentation
 
-Le modèle [modèle de struct winrt::implements](/uwp/cpp-ref-for-winrt/implements) est la base à partir de laquelle vos propres implémentations [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) (de classes runtime et de fabriques d’activation) dérivent directement ou indirectement.
+Le modèle [modèle de struct winrt::implements](/uwp/cpp-ref-for-winrt/implements) est la base à partir de laquelle vos propres implémentations [C++/WinRT](./intro-to-using-cpp-with-winrt.md) (de classes runtime et de fabriques d’activation) dérivent directement ou indirectement.
 
 Cette rubrique décrit les points d’extension de **winrt::implements** dans C++/WinRT 2.0. Vous pouvez choisir d’implémenter ces points d’extension sur vos types d’implémentation pour personnaliser le comportement par défaut des objets inspectable (*inspectable* au sens de l’interface [IInspectable](/windows/win32/api/inspectable/nn-inspectable-iinspectable)).
 
@@ -22,7 +22,7 @@ Ces points d’extension vous permettent de différer la destruction de vos type
 
 ## <a name="deferred-destruction"></a>Destruction différée
 
-Dans la rubrique [Diagnostic des allocations directes](/windows/uwp/cpp-and-winrt-apis/diag-direct-alloc), nous avons souligné le fait que votre type d’implémentation ne peut avoir de destructeur privé.
+Dans la rubrique [Diagnostic des allocations directes](./diag-direct-alloc.md), nous avons souligné le fait que votre type d’implémentation ne peut avoir de destructeur privé.
 
 Un destructeur public présente l'avantage de permettre une destruction différée, à savoir la possibilité de détecter le dernier appel [**IUnknown::Release**](/windows/win32/api/unknwn/nf-unknwn-iunknown-release) sur votre objet, puis de s'approprier cet objet pour différer indéfiniment sa destruction.
 

@@ -6,12 +6,12 @@ ms.date: 03/06/2017
 ms.topic: article
 keywords: windows 10, uwp, première application, hello world
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c4d4ba374c68509c0378e769262afda0dae7422
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 9b39efb7aa90499f6d238306ad079f1969907f46
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86492834"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175253"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>Créer une application « Hello, World! » (XAML)
 
@@ -74,7 +74,7 @@ Même si le modèle **Application vide (Windows universel)** est dépouillé, il
 
 Pour afficher et modifier un fichier de votre projet, double-cliquez dessus dans l’**Explorateur de solutions**. Développez un fichier XAML à la manière d’un dossier pour afficher le fichier de code qui lui est associé. Les fichiers XAML s’ouvrent en mode Fractionné avec l’aire de conception et l’éditeur XAML tous deux affichés.
 > [!NOTE]
-> Qu’est-ce que le XAML ? XAML (Extensible Application Markup Language) est le langage utilisé pour définir l’interface utilisateur de votre application. Vous pouvez entrer son code manuellement ou le créer avec les outils de conception Visual Studio. Un fichier .xaml s’accompagne d’un fichier code-behind .xaml.cs qui contient la logique. Ensemble, les fichiers XAML et code-behind forment une classe à part entière. Pour plus d’informations, voir [Vue d’ensemble du langage XAML](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-overview).
+> Qu’est-ce que le XAML ? XAML (Extensible Application Markup Language) est le langage utilisé pour définir l’interface utilisateur de votre application. Vous pouvez entrer son code manuellement ou le créer avec les outils de conception Visual Studio. Un fichier .xaml s’accompagne d’un fichier code-behind .xaml.cs qui contient la logique. Ensemble, les fichiers XAML et code-behind forment une classe à part entière. Pour plus d’informations, voir [Vue d’ensemble du langage XAML](../xaml-platform/xaml-overview.md).
 
 *App.xaml et App.xaml.cs*
 
@@ -87,7 +87,7 @@ Pour afficher et modifier un fichier de votre projet, double-cliquez dessus dans
 
 -   MainPage.xaml est le fichier dans lequel vous définissez l’interface utilisateur de votre application. Vous pouvez y ajouter directement des éléments en utilisant du balisage XAML ou vous pouvez utiliser les outils de conception fournis avec Visual Studio.
 -   MainPage.xaml.cs est la page code-behind de MainPage.xaml. Cette page vous permet d’ajouter la logique de votre application et les gestionnaires d’événements.
--   Ces deux fichiers définissent ensemble une nouvelle classe appelée `MainPage`, qui hérite de l’élément [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page), dans l’espace de noms `HelloWorld`.
+-   Ces deux fichiers définissent ensemble une nouvelle classe appelée `MainPage`, qui hérite de l’élément [**Page**](/uwp/api/Windows.UI.Xaml.Controls.Page), dans l’espace de noms `HelloWorld`.
 
 *Package.appxmanifest*
 -   Fichier manifeste qui décrit votre application : nom, description, vignette, page de démarrage, etc.
@@ -224,7 +224,7 @@ Veillez aussi à inclure le mot clé **async**, car à défaut, vous obtiendrez 
 
 ### <a name="what-did-we-just-do"></a>Que venons-nous de faire ?
 
-Ce code utilise certaines API Windows pour créer un objet de synthèse vocale et lui donne du texte à prononcer. (Pour plus d’informations sur l’utilisation de SpeechSynthesis, voir la documentation [Espace de noms SpeechSynthesis](https://docs.microsoft.com/uwp/api/windows.media.speechsynthesis).)
+Ce code utilise certaines API Windows pour créer un objet de synthèse vocale et lui donne du texte à prononcer. (Pour plus d’informations sur l’utilisation de SpeechSynthesis, voir la documentation [Espace de noms SpeechSynthesis](/uwp/api/windows.media.speechsynthesis).)
 
 Quand vous exécutez l’application et que vous cliquez sur le bouton, votre ordinateur (ou téléphone) prononce « Hello World ! ».
 
@@ -233,13 +233,13 @@ Quand vous exécutez l’application et que vous cliquez sur le bouton, votre or
 
 Félicitations ! Vous venez de créer votre première application pour Windows 10 et l’application UWP.
 
-Pour apprendre à utiliser XAML et mettre en place les contrôles utilisés par votre application, essayez le [didacticiel de grille](../design/layout/grid-tutorial.md) ou passez directement aux [étapes suivantes](learn-more.md).
+Pour apprendre à utiliser XAML et mettre en place les contrôles utilisés par votre application, essayez le [didacticiel de grille](../design/layout/grid-tutorial.md) ou passez directement aux [étapes suivantes](./create-uwp-apps.md).
 
 ## <a name="see-also"></a>Voir aussi
 
 * [Votre première application](your-first-app.md)
-* [Publier votre application UWP](https://docs.microsoft.com/windows/uwp/publish/)
-* [Articles sur les procédures de développement d’applications UWP](https://docs.microsoft.com/windows/uwp/develop/)
+* [Publier votre application UWP](../publish/index.md)
+* [Articles sur les procédures de développement d’applications UWP](../develop/index.md)
 * [Exemples de code pour les développeurs UWP](https://developer.microsoft.com/windows/samples)
 * [Qu’est-ce qu’une application Windows universelle ?](universal-application-platform-guide.md)
 * [Créer un compte Windows](sign-up.md)

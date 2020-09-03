@@ -5,26 +5,26 @@ ms.date: 07/11/2020
 ms.topic: article
 keywords: windows 10, uwp, cppwinrt, C++/WinRT
 ms.localizationpriority: medium
-ms.openlocfilehash: e2f4e6b808d0169f4c9f8f7142f218c00f124ae3
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: bb6a76f2e8096d63907daf5ededdb6a22eb72a6c
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493713"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175203"
 ---
 # <a name="create-a-hello-world-app-using-cwinrt"></a>Créer une application « Hello, World! » en utilisant C++/WinRT
 
 Cette rubrique vous guide tout au long de la création d’une application de plateforme Windows universelle (UWP) Windows 10 « Hello, World! » en utilisant C++/WinRT. L’interface utilisateur de l’application est définie en utilisant le langage XAML (eXtensible Application Markup Language).
 
-C++/WinRT est une projection du langage C++17 moderne entièrement standard pour les API Windows Runtime (WinRT). Pour obtenir des informations, des procédures pas à pas et des exemples de code supplémentaires, consultez la documentation [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/). La rubrique [Bien démarrer avec C++/WinRT](/windows/uwp/cpp-and-winrt-apis/get-started) constitue un bon point de départ.
+C++/WinRT est une projection du langage C++17 moderne entièrement standard pour les API Windows Runtime (WinRT). Pour obtenir des informations, des procédures pas à pas et des exemples de code supplémentaires, consultez la documentation [C++/WinRT](../cpp-and-winrt-apis/index.md). La rubrique [Bien démarrer avec C++/WinRT](../cpp-and-winrt-apis/get-started.md) constitue un bon point de départ.
 
 ## <a name="set-up-visual-studio-for-cwinrt"></a>Configurer Visual Studio pour C++/WinRT
 
-Pour plus d’informations sur la configuration du développement Visual Studio pour C++/WinRT&mdash;notamment l’installation et l’utilisation de l’extension VSIX (Visual Studio Extension) C++/WinRT et du package NuGet (qui fournissent ensemble la prise en charge des modèles et des builds de projet)&mdash;, consultez [Prise en charge de Visual Studio pour C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+Pour plus d’informations sur la configuration du développement Visual Studio pour C++/WinRT&mdash;notamment l’installation et l’utilisation de l’extension VSIX (Visual Studio Extension) C++/WinRT et du package NuGet (qui fournissent ensemble la prise en charge des modèles et des builds de projet)&mdash;, consultez [Prise en charge de Visual Studio pour C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 Pour télécharger Visual Studio, consultez [Téléchargements](https://visualstudio.microsoft.com/downloads/).
 
-Pour obtenir une présentation de XAML, consultez [Vue d’ensemble du langage XAML](/windows/uwp/xaml-platform/xaml-overview).
+Pour obtenir une présentation de XAML, consultez [Vue d’ensemble du langage XAML](../xaml-platform/xaml-overview.md).
 
 ## <a name="create-a-blank-app-helloworldcppwinrt"></a>Créer une application vide (HelloWorldCppWinRT)
 
@@ -38,7 +38,7 @@ Dans une section ultérieure de cette rubrique, il vous sera demandé de génér
 
 En général, dans le dossier du projet, chaque fichier `.xaml` (balisage XAML) a un fichier `.idl`, `.h` et `.cpp` correspondant. Réunis, ces fichiers sont compilés en un type de page XAML.
 
-Vous pouvez modifier un fichier de balisage XAML pour créer des éléments d’interface utilisateur, et vous pouvez lier ces éléments à des sources de données (une tâche appelée [liaison de données](/windows/uwp/data-binding/)). Vous modifiez les fichiers `.h` et `.cpp` (et parfois le fichier `.idl`) pour ajouter une logique personnalisée pour votre page XAML (des gestionnaires d’événements, par exemple).
+Vous pouvez modifier un fichier de balisage XAML pour créer des éléments d’interface utilisateur, et vous pouvez lier ces éléments à des sources de données (une tâche appelée [liaison de données](../data-binding/index.md)). Vous modifiez les fichiers `.h` et `.cpp` (et parfois le fichier `.idl`) pour ajouter une logique personnalisée pour votre page XAML (des gestionnaires d’événements, par exemple).
 
 Examinons certains des fichiers de projet.
 
@@ -52,7 +52,7 @@ Examinons certains des fichiers de projet.
 
 Comme vous le savez peut-être, toutes les classes d’une application de plateforme Windows universelle (UWP) écrites en C# sont des types Windows Runtime. Cependant, quand vous créez un type dans une application C++/WinRT, vous pouvez choisir si ce type est un type Windows Runtime ou une classe/structure/énumération C++ normale.
 
-Toutes les pages XAML de votre projet doivent être de type Windows Runtime. Par conséquent, **MainPage** est un type Windows Runtime. Plus précisément, il s’agit d’une *classe de runtime*. Tout type qui est consommé par une page XAML doit également être un type Windows Runtime. Quand vous écrivez un [composant Windows Runtime](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt) et que vous voulez créer un type qui peut être consommé à partir d’une autre application, vous créez alors un type Windows Runtime. Dans d’autres cas, votre type peut être un type C++ normal. En général, un type Windows Runtime peut être consommé avec n’importe quel langage Windows Runtime.
+Toutes les pages XAML de votre projet doivent être de type Windows Runtime. Par conséquent, **MainPage** est un type Windows Runtime. Plus précisément, il s’agit d’une *classe de runtime*. Tout type qui est consommé par une page XAML doit également être un type Windows Runtime. Quand vous écrivez un [composant Windows Runtime](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md) et que vous voulez créer un type qui peut être consommé à partir d’une autre application, vous créez alors un type Windows Runtime. Dans d’autres cas, votre type peut être un type C++ normal. En général, un type Windows Runtime peut être consommé avec n’importe quel langage Windows Runtime.
 
 Le fait qu’un type soit défini dans [MIDL (Microsoft Interface Definition Language)](/uwp/midl-3/) à l’intérieur d’un fichier `.idl` (Interface Definition Language) constitue une bonne indication qu’il est de type Windows Runtime. Prenons **MainPage** comme exemple.
 
@@ -94,7 +94,7 @@ namespace winrt::HelloWorldCppWinRT::factory_implementation
 }
 ```    
 
-Pour plus d’informations sur le choix de créer ou pas une classe de runtime pour un type donné, consultez la rubrique [Créer des API avec C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis). Pour plus d’informations sur la connexion entre les classes runtime et IDL (fichiers `.idl`), vous pouvez lire et suivre la rubrique [Contrôles XAML - Liaison à une propriété C++/WinRT](/windows/uwp/cpp-and-winrt-apis/binding-property). Cette rubrique vous guide tout au long du processus de création d’une classe de runtime, dont la première étape consiste à ajouter un nouvel élément **Fichier Midl (.idl)** au projet.
+Pour plus d’informations sur le choix de créer ou pas une classe de runtime pour un type donné, consultez la rubrique [Créer des API avec C++/WinRT](../cpp-and-winrt-apis/author-apis.md). Pour plus d’informations sur la connexion entre les classes runtime et IDL (fichiers `.idl`), vous pouvez lire et suivre la rubrique [Contrôles XAML - Liaison à une propriété C++/WinRT](../cpp-and-winrt-apis/binding-property.md). Cette rubrique vous guide tout au long du processus de création d’une classe de runtime, dont la première étape consiste à ajouter un nouvel élément **Fichier Midl (.idl)** au projet.
 
 Ajoutons maintenant des fonctionnalités au projet **HelloWorldCppWinRT**.
 
@@ -159,7 +159,7 @@ namespace winrt::HelloWorldCppWinRT::implementation
 }
 ```
 
-Pour plus d’informations, consultez [Gérer des événements en utilisant des délégués](/windows/uwp/cpp-and-winrt-apis/handle-events).
+Pour plus d’informations, consultez [Gérer des événements en utilisant des délégués](../cpp-and-winrt-apis/handle-events.md).
 
 L’implémentation récupère le nom de l’utilisateur à partir de la zone de texte, puis il utilise pour créer un message d’accueil qu’il l’affiche dans le bloc de texte *greetingOutput*.
 

@@ -4,12 +4,12 @@ description: Si vous voulez soumettre un package logiciel au dépôt du Gestionn
 ms.date: 04/29/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 960caede306228c492bc88c81ac3c1c841b6c18c
-ms.sourcegitcommit: 9c2b21081158e712a856158d25dce76b3e213a9c
+ms.openlocfilehash: 4b2c42fb8a9f8eb741ce253c3ea110fe4eeb10a3
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88129746"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166493"
 ---
 # <a name="create-your-package-manifest"></a>Créer votre manifeste de package
 
@@ -169,7 +169,7 @@ Vous pouvez souvent déterminer quels sont les commutateurs (`Switches`) silenci
 
 | Programme d’installation | Commande  | Documentation |  
 | :--- | :-- | :--- |  
-| MSI | `/q` | [Options de ligne de commande MSI](https://docs.microsoft.com/windows/win32/msi/command-line-options) |
+| MSI | `/q` | [Options de ligne de commande MSI](/windows/win32/msi/command-line-options) |
 | InstallShield | `/s`  | [Paramètres de ligne de commande InstallShield](https://docs.flexera.com/installshield19helplib/helplibrary/IHelpSetup_EXECmdLine.htm) |
 | Inno Setup | `/SILENT or /VERYSILENT` | [Documentation Inno Setup](https://jrsoftware.org/ishelp/) |
 | Nullsoft | `/S` | [Programmes d’installation/de désinstallation sans assistance Nullsoft](https://nsis.sourceforge.io/Docs/Chapter4.html#silent) |

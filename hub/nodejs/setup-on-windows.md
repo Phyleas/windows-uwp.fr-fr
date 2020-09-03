@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Node.js, windows 10, environnement windows natif, directement sous windows
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: fe1943da8c1de4f4fced5dec67079522d83f9a19
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 8c865610ba2678c1c5ab1b25ff7a2c7410d11f15
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82173465"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166583"
 ---
 # <a name="set-up-your-nodejs-development-environment-directly-on-windows"></a>Configurer votre environnement de développement Node.js directement sous Windows
 
@@ -64,7 +64,7 @@ windows-nvm est actuellement le gestionnaire de versions le plus couramment util
 Pour installer Volta en tant que gestionnaire de versions (plutôt que windows-nvm), accédez à la section **Installation sous Windows** de son [Guide de démarrage](https://docs.volta.sh/guide/getting-started), puis téléchargez et exécutez le programme d'installation Windows, en suivant les instructions d'installation.
 
 > [!IMPORTANT]
-> Avant d'installer Volta, vous devez vous assurer que le [Mode développeur](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#accessing-settings-for-developers) est activé sur votre ordinateur Windows.
+> Avant d'installer Volta, vous devez vous assurer que le [Mode développeur](/windows/uwp/get-started/enable-your-device-for-development#accessing-settings-for-developers) est activé sur votre ordinateur Windows.
 
 Pour en savoir plus sur l'utilisation de Volta pour installer plusieurs versions de Node.js sous Windows, consultez la [documentation Volta](https://docs.volta.sh/guide/understanding#managing-your-toolchain).
 
@@ -101,4 +101,4 @@ Si vous envisagez de collaborer avec d'autres personnes ou d'héberger votre pro
 L'utilisation directe de Node.js sous Windows est idéale pour l'apprentissage et l'expérimentation des possibilités qui s'offrent à vous. Si vous souhaitez créer des applications web prêtes pour la production, lesquelles sont généralement déployées sur un serveur Linux, nous vous recommandons d'utiliser le Sous-système Windows pour Linux version 2 (WSL 2) afin de développer des applications web Node.js. De nombreux packages et frameworks Node.js sont créés avec un environnement *nix à l'esprit, et la plupart des applications Node.js sont déployées sous Linux. Par conséquent, le développement sous WSL garantit la cohérence entre vos environnements de développement et de production. Pour configurer un environnement de développement WSL, consultez [Configurer votre environnement de développement Node.js avec WSL 2](./setup-on-wsl2.md).
 
 > [!NOTE]
-> Si vous devez héberger une application Node.js sur un serveur Windows (ce qui est peu fréquent), le scénario le plus courant semble être l'[utilisation d'un proxy inverse](https://medium.com/intrinsic/why-should-i-use-a-reverse-proxy-if-node-js-is-production-ready-5a079408b2ca). Deux méthodes sont disponibles : 1) [utilisation d'iisnode](https://harveywilliams.net/blog/installing-iisnode) ou [méthode directe](https://dev.to/petereysermans/hosting-a-node-js-application-on-windows-with-iis-as-reverse-proxy-397b). Nous ne fournissons pas ces ressources et vous recommandons d'[utiliser des serveurs Linux pour héberger vos applications Node.js](https://docs.microsoft.com/azure/app-service/app-service-web-get-started-nodejs).
+> Si vous devez héberger une application Node.js sur un serveur Windows (ce qui est peu fréquent), le scénario le plus courant semble être l'[utilisation d'un proxy inverse](https://medium.com/intrinsic/why-should-i-use-a-reverse-proxy-if-node-js-is-production-ready-5a079408b2ca). Deux méthodes sont disponibles : 1) [utilisation d'iisnode](https://harveywilliams.net/blog/installing-iisnode) ou [méthode directe](https://dev.to/petereysermans/hosting-a-node-js-application-on-windows-with-iis-as-reverse-proxy-397b). Nous ne fournissons pas ces ressources et vous recommandons d'[utiliser des serveurs Linux pour héberger vos applications Node.js](/azure/app-service/app-service-web-get-started-nodejs).

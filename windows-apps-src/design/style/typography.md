@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 3a5b6df7a5d8333e0f4834c256a38fc912f8f51e
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 555459d427eae045d3cf7eda45a97ec806717380
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970624"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175513"
 ---
 # <a name="typography-in-windows-apps"></a>Typographie des applications Windows
 
@@ -106,7 +106,7 @@ Utiliser « En-tête » ou « Sous-titre » si le texte doit faire l’objet
 
 ## <a name="alignment"></a>Alignement
 
-La valeur [TextAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.textalignment) par défaut est Left, et dans la plupart des cas, cette approche d’alignement à gauche et de non-alignement à droite garantit un ancrage cohérent du contenu et une disposition uniforme. Pour les langues RTL, voir [Ajuster la disposition et les polices pour prendre en charge la globalisation](../globalizing/adjust-layout-and-fonts--and-support-rtl.md).
+La valeur [TextAlignment](/uwp/api/windows.ui.xaml.textalignment) par défaut est Left, et dans la plupart des cas, cette approche d’alignement à gauche et de non-alignement à droite garantit un ancrage cohérent du contenu et une disposition uniforme. Pour les langues RTL, voir [Ajuster la disposition et les polices pour prendre en charge la globalisation](../globalizing/adjust-layout-and-fonts--and-support-rtl.md).
 
 ![Montre un texte aligné à gauche.](images/type/alignment.svg)
 
@@ -152,7 +152,7 @@ Segoe UI est notre police pour l’anglais, les langues européennes, le grec, l
 
 ### <a name="globalizinglocalizing-fonts"></a>Polices de globalisation/localisation
 
-Utilisez les API de [mappage de police LanguageFont](https://docs.microsoft.com/uwp/api/Windows.Globalization.Fonts.LanguageFont) pour l’accès par programmation à la gamme de polices, à la taille, à l’épaisseur et au style recommandés pour une langue particulière. L’objet LanguageFont assure l’accès aux informations de police appropriées pour diverses catégories de contenu, notamment les en-têtes d’interface utilisateur, les notifications, le texte de corps et les polices de corps de document modifiables par l’utilisateur. Pour plus d’informations, voir [Ajuster la disposition et les polices pour prendre en charge la globalisation](../globalizing/adjust-layout-and-fonts--and-support-rtl.md).
+Utilisez les API de [mappage de police LanguageFont](/uwp/api/Windows.Globalization.Fonts.LanguageFont) pour l’accès par programmation à la gamme de polices, à la taille, à l’épaisseur et au style recommandés pour une langue particulière. L’objet LanguageFont assure l’accès aux informations de police appropriées pour diverses catégories de contenu, notamment les en-têtes d’interface utilisateur, les notifications, le texte de corps et les polices de corps de document modifiables par l’utilisateur. Pour plus d’informations, voir [Ajuster la disposition et les polices pour prendre en charge la globalisation](../globalizing/adjust-layout-and-fonts--and-support-rtl.md).
 
 ### <a name="fonts-for-non-latin-languages"></a>Polices pour les langues non latines
 
@@ -340,4 +340,4 @@ Les polices serif sont parfaites pour présenter de grandes quantités de texte.
 * [Contrôles de texte](../controls-and-patterns/text-controls.md)
 * [Ressources de thème XAML](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp)
 * [Styles XAML](../controls-and-patterns/xaml-styles.md)
-* [Typographie Microsoft](https://docs.microsoft.com/typography/)
+* [Typographie Microsoft](/typography/)

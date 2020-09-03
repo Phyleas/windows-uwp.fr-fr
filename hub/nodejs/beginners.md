@@ -8,12 +8,12 @@ ms.topic: article
 keywords: NodeJS, Node.js, windows 10, microsoft, découvrir nodejs, node sous windows, node sous windows pour les débutants, développer avec node sous windows, développer avec nodejs sous windows
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: d40d701dc3ae973e0834d0b329527e69854b9e36
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 5737316ae2de0520e5443f69cefaec25679a228f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86492864"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166633"
 ---
 # <a name="get-started-using-nodejs-on-windows-for-beginners"></a>Prise en main de Node.js sous Windows pour les débutants
 
@@ -148,5 +148,5 @@ Utilisons le module de système d’exploitation intégré pour obtenir des info
 Dans ce guide, vous avez découvert les bases de ce que vous pouvez accomplir avec Node.js, vous avez essayé d'utiliser l'interface de ligne de commande de Node.js dans VS Code, vous avez créé une application web simple à l'aide d'Express.js avant de l'exécuter localement dans votre navigateur web, puis vous avez essayé d'utiliser quelques-uns des modules Node.js intégrés. Pour en savoir plus sur l'installation et l'utilisation des frameworks web les plus populaires de Node.js, passez au guide suivant qui couvre Next.js (framework web de rendu coté serveur basé sur React), Nuxt.js (framework web de rendu coté serveur basé sur Vue) et Gatsby (framework web de rendu statique basé sur React). Vous pouvez également apprendre à utiliser des bases de données MongoDB ou PostgreSQL, ou des conteneurs Docker.
 
 - [Prise en main des frameworks web Node.js sous Windows](./web-frameworks.md)
-- [Prise en main de la connexion des applications Node.js à une base de données](https://docs.microsoft.com/windows/wsl/tutorials/wsl-database)
+- [Prise en main de la connexion des applications Node.js à une base de données](/windows/wsl/tutorials/wsl-database)
 - [Prise en main des conteneurs Docker avec Node.js](./containers.md)

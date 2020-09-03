@@ -5,15 +5,15 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, questions, fréquentes, FAQ, forum aux questions
 ms.localizationpriority: medium
-ms.openlocfilehash: 23f1733f5710d86c8481899f5865d0c190e21885
-ms.sourcegitcommit: 1e8f51d5730fe748e9fe18827895a333d94d337f
+ms.openlocfilehash: e37f5b585554f4ec214f7f72a896545d66dde3d5
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87296194"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170203"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>Forum aux questions sur C++/WinRT
-Réponses aux questions que vous êtes susceptibles de vous poser sur la création et l’utilisation d’API Windows Runtime avec [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
+Réponses aux questions que vous êtes susceptibles de vous poser sur la création et l’utilisation d’API Windows Runtime avec [C++/WinRT](./intro-to-using-cpp-with-winrt.md).
 
 > [!IMPORTANT]
 > Pour obtenir les notes de publication C++/WinRT, consultez [Nouveautés et changements dans C++/WinRT 2.0](news.md#news-and-changes-in-cwinrt-20).
@@ -54,7 +54,7 @@ Uniquement si la classe runtime est conçue pour être utilisée à partir de l�
 ## <a name="why-is-the-linker-giving-me-a-lnk2019-unresolved-external-symbol-error"></a>Pourquoi l’éditeur de liens retourne-t-il une erreur « LNK2019 : symbole externe non résolu » ?
 Si le symbole non résolu est une API des en-têtes d’espace de noms Windows pour la projection C++/WinRT (dans l’espace de noms **winrt**), l’API est déclarée en avance dans un en-tête que vous avez inclus, mais sa définition se trouve dans un en-tête que vous n’avez pas encore inclus. Incluez l’en-tête nommé pour l’espace de noms de l’API et régénérez. Pour plus d’informations, consultez [En-têtes de projection C++/WinRT](consume-apis.md#cwinrt-projection-headers).
 
-Si le symbole non résolu est une fonction libre de Windows Runtime, telle que [RoInitialize](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roinitialize), vous devez inclure explicitement la bibliothèque parapluie [WindowsApp.lib](/uwp/win32-and-com/win32-apis) dans votre projet. La projection C++/WinRT dépend de certains de ces points d’entrée et fonctions libres (non-membres). Si vous utilisez l’un des modèles de projet [extension Visual Studio (VSIX) C++/WinRT](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) pour votre application, `WindowsApp.lib` est lié automatiquement pour vous. Dans le cas contraire, vous pouvez utiliser des paramètres de lien entre projets pour l’inclure, ou le faire dans le code source.
+Si le symbole non résolu est une fonction libre de Windows Runtime, telle que [RoInitialize](/windows/desktop/api/roapi/nf-roapi-roinitialize), vous devez inclure explicitement la bibliothèque parapluie [WindowsApp.lib](/uwp/win32-and-com/win32-apis) dans votre projet. La projection C++/WinRT dépend de certains de ces points d’entrée et fonctions libres (non-membres). Si vous utilisez l’un des modèles de projet [extension Visual Studio (VSIX) C++/WinRT](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) pour votre application, `WindowsApp.lib` est lié automatiquement pour vous. Dans le cas contraire, vous pouvez utiliser des paramètres de lien entre projets pour l’inclure, ou le faire dans le code source.
 
 ```cppwinrt
 #pragma comment(lib, "windowsapp")
@@ -70,7 +70,7 @@ L’une des causes de cette exception provient de l’impossibilité de charger 
 
 ### <a name="uniform-construction"></a>Construction uniforme
 
-Cette erreur peut également se produire si vous essayez d’instancier une classe runtime implémentée localement par le biais de l’un des constructeurs du type projeté (autre que son constructeur **std::nullptr_t**). Pour ce faire, vous avez besoin de la fonctionnalité C++/WinRT 2.0, souvent appelée « construction uniforme ». Si vous souhaitez vous abonner à cette fonctionnalité, pour plus d'informations et des exemples de code, consultez [Accepter la construction uniforme et l'accès à l’implémentation direct](/windows/uwp/cpp-and-winrt-apis/author-apis#opt-in-to-uniform-construction-and-direct-implementation-access).
+Cette erreur peut également se produire si vous essayez d’instancier une classe runtime implémentée localement par le biais de l’un des constructeurs du type projeté (autre que son constructeur **std::nullptr_t**). Pour ce faire, vous avez besoin de la fonctionnalité C++/WinRT 2.0, souvent appelée « construction uniforme ». Si vous souhaitez vous abonner à cette fonctionnalité, pour plus d'informations et des exemples de code, consultez [Accepter la construction uniforme et l'accès à l’implémentation direct](./author-apis.md#opt-in-to-uniform-construction-and-direct-implementation-access).
 
 Pour instancier vos classes runtime implémentées localement *sans* faire appel à la construction uniforme, consultez [Contrôles XAML ; liaison à une propriété C++/WinRT](binding-property.md).
 
@@ -177,7 +177,7 @@ a.f();
 Le modèle recommandé ci-dessus s’applique non seulement à C++/WinRT, mais aussi à toutes les projections de langage Windows Runtime.
 
 ## <a name="how-do-i-turn-a-string-into-a-typemdashfor-navigation-for-example"></a>Comment convertir une chaîne en type, par exemple pour la navigation ?
-À la fin de l’[exemple de code d’affichage Navigation](/windows/uwp/design/controls-and-patterns/navigationview#code-example) (qui est pour la plupart en C#) se trouve un extrait de code C++/WinRT illustrant comment procéder.
+À la fin de l’[exemple de code d’affichage Navigation](../design/controls-and-patterns/navigationview.md#code-example) (qui est pour la plupart en C#) se trouve un extrait de code C++/WinRT illustrant comment procéder.
 
 ## <a name="how-do-i-resolve-ambiguities-with-getcurrenttime-andor-try"></a>Comment faire pour résoudre les ambiguïtés avec GetCurrentTime et/ou TRY ?
 

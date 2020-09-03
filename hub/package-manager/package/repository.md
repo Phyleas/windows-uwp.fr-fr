@@ -4,12 +4,12 @@ description: Une fois que vous avez créé un manifeste de package qui décrit v
 ms.date: 04/29/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 19a66b2d0724eb0f4f8c3f171033e4e616751717
-ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
+ms.openlocfilehash: ef94a77d5012adcedf31ae1ecfddc036bcc3a059
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85334590"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166503"
 ---
 # <a name="submit-your-manifest-to-the-repository"></a>Envoyer votre manifeste au dépôt
 
@@ -122,7 +122,7 @@ Pendant la validation, nous appliquons une série d’étiquettes à notre deman
 
 * **Needs: author feedback** : une erreur s’est produite lors de l’envoi. Nous allons vous réassigner la demande de tirage. Si vous ne résolvez pas le problème dans les 10 jours, nous fermerons la demande de tirage.
 * **Manifest-Validation-Error** : le manifeste envoyé contient une erreur de syntaxe.
-* **URL-Validation-Error** : une ou plusieurs URL dans l’envoi ont échoué lors de la validation [SmartScreen](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-smartscreen/microsoft-defender-smartscreen-overview).
+* **URL-Validation-Error** : une ou plusieurs URL dans l’envoi ont échoué lors de la validation [SmartScreen](/windows/security/threat-protection/microsoft-defender-smartscreen/microsoft-defender-smartscreen-overview).
 * **Binary-Validation-Error** : le programme d’installation d’application envoyé a échoué au test d’analyse antivirus, ou il y a une incompatibilité de hachage.
 * **Pull-Request-Error** : il y a un problème avec la demande de tirage. Par exemple, la structure de dossiers n’a pas le [format requis](#step-3-add-your-manifest-to-the-local-repository).
 * **Validation-Error** : l’application envoyée a échoué à un test de validation générale.

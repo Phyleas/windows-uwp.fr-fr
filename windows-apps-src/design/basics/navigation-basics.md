@@ -10,12 +10,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: ed38be070263bbd619e44daf5c747a97299b3cf7
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 01ccd7a7ead6bd79b79e8beb3de7f3208b616b7c
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83233858"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174533"
 ---
 # <a name="navigation-design-basics-for-windows-apps"></a>Notions de base de la conception de la navigation dans les applications Windows
 
@@ -168,7 +168,7 @@ Une fois que vous avez choisi votre structure de page, vous devez déterminer co
         ![Image de trame](images/nav/thumbnail-frame.svg)
     :::column-end:::
     :::column span="2":::
-        [**Trame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)
+        [**Trame**](/uwp/api/Windows.UI.Xaml.Controls.Frame)
 
 À quelques exceptions près, toutes les applications dotées de plusieurs pages utilisent une trame. Généralement, l’application est dotée d’une page principale qui contient la trame et un élément de navigation principal, comme un contrôle d’affichage de la navigation. Lorsque l’utilisateur sélectionne une page, la trame se charge et l’affiche.
 :::row-end:::

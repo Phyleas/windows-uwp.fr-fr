@@ -11,12 +11,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b16ad72541f34e40d1b0cf534082eb68b0843141
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: dff964fe33f0a4b1e68e12d0c300871274c28f93
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234720"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174663"
 ---
 # <a name="xaml-theme-resources"></a>Ressources de thème XAML
 
@@ -42,13 +42,13 @@ Windows Runtime n’utilise pas ces fichiers physiques pour la recherche du runt
 
 Respectez ces recommandations quand vous définissez et que vous consommez vos propres ressources de thème personnalisées :
 
-- Spécifiez des dictionnaires pour les thèmes « Light » et « Dark », en plus de votre dictionnaire « HighContrast ». Bien que vous puissiez créer un élément [ResourceDictionary](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) avec la clé « Default », nous vous recommandons d’être explicite et d’utiliser « Light », « Dark » et « HighContrast ».
+- Spécifiez des dictionnaires pour les thèmes « Light » et « Dark », en plus de votre dictionnaire « HighContrast ». Bien que vous puissiez créer un élément [ResourceDictionary](/uwp/api/Windows.UI.Xaml.ResourceDictionary) avec la clé « Default », nous vous recommandons d’être explicite et d’utiliser « Light », « Dark » et « HighContrast ».
 
 - Utilisez l’[extension de balisage {ThemeResource}](../../xaml-platform/themeresource-markup-extension.md) dans les éléments suivants : styles, méthodes setter, modèles de contrôle, méthodes setter de propriété et animations.
 
-- N’utilisez pas l’[extension de balisage {ThemeResource}](../../xaml-platform/themeresource-markup-extension.md) dans les définitions de ressources de votre [ThemeDictionaries](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries). Utilisez plutôt l’[extension de balisage {StaticResource}](../../xaml-platform/staticresource-markup-extension.md)
+- N’utilisez pas l’[extension de balisage {ThemeResource}](../../xaml-platform/themeresource-markup-extension.md) dans les définitions de ressources de votre [ThemeDictionaries](/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries). Utilisez plutôt l’[extension de balisage {StaticResource}](../../xaml-platform/staticresource-markup-extension.md)
 
-    EXCEPTION : Vous pouvez utiliser l’extension de balisage [{ThemeResource}](../../xaml-platform/themeresource-markup-extension.md) pour référencer les ressources indépendantes du thème de l’application dans votre [ThemeDictionaries](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries). Il peut s’agir par exemple des ressources de couleur d’accentuation comme `SystemAccentColor`, ou des ressources de couleur système, qui présentent généralement le préfixe SystemColor, comme `SystemColorButtonFaceColor`.
+    EXCEPTION : Vous pouvez utiliser l’extension de balisage [{ThemeResource}](../../xaml-platform/themeresource-markup-extension.md) pour référencer les ressources indépendantes du thème de l’application dans votre [ThemeDictionaries](/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries). Il peut s’agir par exemple des ressources de couleur d’accentuation comme `SystemAccentColor`, ou des ressources de couleur système, qui présentent généralement le préfixe SystemColor, comme `SystemColorButtonFaceColor`.
 
 > [!CAUTION]
 > Si vous ne suivez pas ces recommandations, vous constaterez peut-être un comportement inattendu lié aux thèmes dans votre application. Pour plus d’informations, voir la section [Résolution des problèmes de ressources de thème](#troubleshooting-theme-resources).
@@ -166,7 +166,7 @@ Windows propose différents thèmes à contraste élevé, et permet à l’utili
 
 ![Interface utilisateur Windows des paramètres de contraste élevé](images/high-contrast-settings.png)
 
-Pour plus d’informations sur la prise en charge des thèmes à contraste élevé, consultez [Thèmes à contraste élevé](https://docs.microsoft.com/windows/uwp/accessibility/high-contrast-themes).
+Pour plus d’informations sur la prise en charge des thèmes à contraste élevé, consultez [Thèmes à contraste élevé](../accessibility/high-contrast-themes.md).
 
 ### <a name="system-accent-color"></a>Couleur d’accentuation système
 
@@ -206,11 +206,11 @@ For many examples of how the brushes are used in the XAML control templates, see
 
 ## <a name="the-xaml-type-ramp"></a>Gamme de type XAML
 
-Le fichier themeresources.xaml définit plusieurs ressources, qui définissent elles-mêmes un [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) que vous pouvez appliquer à des conteneurs de texte dans votre interface utilisateur, plus spécifiquement pour [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) ou [RichTextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock). Il ne s’agit pas des styles implicites par défaut. Ils sont fournis pour faciliter la création de définitions XAML d’interface utilisateur qui correspondent à la *gamme de type Windows* explicitée dans [Recommandations en matière de polices](../style/typography.md).
+Le fichier themeresources.xaml définit plusieurs ressources, qui définissent elles-mêmes un [Style](/uwp/api/Windows.UI.Xaml.Style) que vous pouvez appliquer à des conteneurs de texte dans votre interface utilisateur, plus spécifiquement pour [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) ou [RichTextBlock](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock). Il ne s’agit pas des styles implicites par défaut. Ils sont fournis pour faciliter la création de définitions XAML d’interface utilisateur qui correspondent à la *gamme de type Windows* explicitée dans [Recommandations en matière de polices](../style/typography.md).
 
-Ces styles concernent les attributs de texte à appliquer à l’ensemble du conteneur de texte. Si vous souhaitez appliquer des styles uniquement à certaines parties du texte, définissez des attributs sur les éléments de texte dans le conteneur, par exemple sur [Run](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Run) dans [TextBlock.Inlines](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.inlines) ou sur [Paragraph](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Paragraph) dans [RichTextBlock.Blocks](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richtextblock.blocks).
+Ces styles concernent les attributs de texte à appliquer à l’ensemble du conteneur de texte. Si vous souhaitez appliquer des styles uniquement à certaines parties du texte, définissez des attributs sur les éléments de texte dans le conteneur, par exemple sur [Run](/uwp/api/Windows.UI.Xaml.Documents.Run) dans [TextBlock.Inlines](/uwp/api/windows.ui.xaml.controls.textblock.inlines) ou sur [Paragraph](/uwp/api/Windows.UI.Xaml.Documents.Paragraph) dans [RichTextBlock.Blocks](/uwp/api/windows.ui.xaml.controls.richtextblock.blocks).
 
-Les styles ressemblent à ceci quand ils sont appliqués à un élément [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) :
+Les styles ressemblent à ceci quand ils sont appliqués à un élément [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) :
 
 ![Styles de bloc de texte](../style/images/type/text-block-type-ramp.svg)
 
@@ -228,9 +228,9 @@ Pour de l’aide sur l’utilisation de la gamme de caractères Windows dans vot
 
 ### <a name="basetextblockstyle"></a>BaseTextBlockStyle
 
-**TargetType** : [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
+**TargetType** : [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
 
-Fournit les propriétés communes à tous les autres styles de conteneur [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock).
+Fournit les propriétés communes à tous les autres styles de conteneur [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock).
 
 ```XAML
 <!-- Usage -->
@@ -338,9 +338,9 @@ Fournit les propriétés communes à tous les autres styles de conteneur [TextBl
 
 ### <a name="baserichtextblockstyle"></a>BaseRichTextBlockStyle
 
-**TargetType** : [RichTextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)
+**TargetType** : [RichTextBlock](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)
 
-Fournit les propriétés communes à tous les autres styles de conteneur [RichTextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock).
+Fournit les propriétés communes à tous les autres styles de conteneur [RichTextBlock](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock).
 
 ```XAML
 <!-- Usage -->
@@ -375,21 +375,21 @@ Fournit les propriétés communes à tous les autres styles de conteneur [RichTe
 </Style>
 ```
 
-**Remarque** :  Les styles [RichTextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) n’ont pas tous les styles de gamme de texte de [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock), principalement car il est plus facile de définir des attributs sur les éléments de texte individuels avec le modèle d’objet de document basé sur des blocs pour **RichTextBlock**. Par ailleurs, si vous définissez [TextBlock.Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text) à l’aide de la propriété de contenu XAML, vous ne pouvez pas appliquer de style à un élément de texte, ce qui vous oblige à appliquer un style au conteneur. Ceci ne constitue pas un problème pour **RichTextBlock**, car son contenu de texte doit toujours figurer dans des éléments de texte spécifiques comme [Paragraph](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Paragraph), c’est-à-dire l’emplacement où vous pouvez définir des styles XAML pour un en-tête de page, un sous-en-tête de page et des définitions de gamme de texte semblables.
+**Remarque** :  Les styles [RichTextBlock](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) n’ont pas tous les styles de gamme de texte de [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock), principalement car il est plus facile de définir des attributs sur les éléments de texte individuels avec le modèle d’objet de document basé sur des blocs pour **RichTextBlock**. Par ailleurs, si vous définissez [TextBlock.Text](/uwp/api/windows.ui.xaml.controls.textblock.text) à l’aide de la propriété de contenu XAML, vous ne pouvez pas appliquer de style à un élément de texte, ce qui vous oblige à appliquer un style au conteneur. Ceci ne constitue pas un problème pour **RichTextBlock**, car son contenu de texte doit toujours figurer dans des éléments de texte spécifiques comme [Paragraph](/uwp/api/Windows.UI.Xaml.Documents.Paragraph), c’est-à-dire l’emplacement où vous pouvez définir des styles XAML pour un en-tête de page, un sous-en-tête de page et des définitions de gamme de texte semblables.
 
 ## <a name="miscellaneous-named-styles"></a>Divers styles nommés
 
-Il existe un ensemble supplémentaire de définitions [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) à clé que vous pouvez appliquer pour donner à un [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) un style autre que le style implicite par défaut.
+Il existe un ensemble supplémentaire de définitions [Style](/uwp/api/Windows.UI.Xaml.Style) à clé que vous pouvez appliquer pour donner à un [Button](/uwp/api/Windows.UI.Xaml.Controls.Button) un style autre que le style implicite par défaut.
 
 ### <a name="textblockbuttonstyle"></a>TextBlockButtonStyle
 
-**TargetType** : [ButtonBase](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ButtonBase)
+**TargetType** : [ButtonBase](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ButtonBase)
 
-Appliquez ce style à un [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) lorsque vous avez besoin d’afficher du texte sur lequel l’utilisateur peut cliquer pour déclencher une action. Le style du texte est défini en utilisant la couleur d’accentuation actuelle pour l’identifier comme interactif. Des rectangles de focus, bien adaptés au texte, sont également ajoutés. Contrairement au style implicite d’un [HyperlinkButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton), le **TextBlockButtonStyle** ne souligne pas le texte.
+Appliquez ce style à un [Button](/uwp/api/Windows.UI.Xaml.Controls.Button) lorsque vous avez besoin d’afficher du texte sur lequel l’utilisateur peut cliquer pour déclencher une action. Le style du texte est défini en utilisant la couleur d’accentuation actuelle pour l’identifier comme interactif. Des rectangles de focus, bien adaptés au texte, sont également ajoutés. Contrairement au style implicite d’un [HyperlinkButton](/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton), le **TextBlockButtonStyle** ne souligne pas le texte.
 
 Le modèle applique également des styles au texte présenté de manière à utiliser **SystemControlHyperlinkBaseMediumBrush** (pour l’état « PointerOver »), **SystemControlHighlightBaseMediumLowBrush** (pour l’état « Pressed ») et **SystemControlDisabledBaseLowBrush** (pour l’état « Disabled »).
 
-Voici un [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) auquel la ressource **TextBlockButtonStyle** est appliquée.
+Voici un [Button](/uwp/api/Windows.UI.Xaml.Controls.Button) auquel la ressource **TextBlockButtonStyle** est appliquée.
 
 ```XAML
 <Button Content="Clickable text" Style="{StaticResource TextBlockButtonStyle}"
@@ -402,11 +402,11 @@ Il se présente comme suit :
 
 ### <a name="navigationbackbuttonnormalstyle"></a>NavigationBackButtonNormalStyle
 
-**TargetType** : [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)
+**TargetType** : [Button](/uwp/api/Windows.UI.Xaml.Controls.Button)
 
-Ce [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) fournit un modèle complet pour un [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) qui peut servir de bouton de navigation Précédent pour une application de navigation. Les dimensions par défaut sont de 40 × 40 pixels. Pour adapter le style, vous pouvez définir explicitement [Height](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height), [Width](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width), [FontSize](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.fontsize) et d’autres propriétés sur votre **Button**, ou créer un style dérivé à l’aide de [BasedOn](https://docs.microsoft.com/uwp/api/windows.ui.xaml.style.basedon).
+Ce [Style](/uwp/api/Windows.UI.Xaml.Style) fournit un modèle complet pour un [Button](/uwp/api/Windows.UI.Xaml.Controls.Button) qui peut servir de bouton de navigation Précédent pour une application de navigation. Les dimensions par défaut sont de 40 × 40 pixels. Pour adapter le style, vous pouvez définir explicitement [Height](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height), [Width](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width), [FontSize](/uwp/api/windows.ui.xaml.controls.control.fontsize) et d’autres propriétés sur votre **Button**, ou créer un style dérivé à l’aide de [BasedOn](/uwp/api/windows.ui.xaml.style.basedon).
 
-Voici un [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) auquel la ressource **NavigationBackButtonNormalStyle** est appliquée.
+Voici un [Button](/uwp/api/Windows.UI.Xaml.Controls.Button) auquel la ressource **NavigationBackButtonNormalStyle** est appliquée.
 
 ```XAML
 <Button Style="{StaticResource NavigationBackButtonNormalStyle}" />
@@ -418,11 +418,11 @@ Il se présente comme suit :
 
 ### <a name="navigationbackbuttonsmallstyle"></a>NavigationBackButtonSmallStyle
 
-**TargetType** : [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)
+**TargetType** : [Button](/uwp/api/Windows.UI.Xaml.Controls.Button)
 
-Ce [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) fournit un modèle complet pour un [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) qui peut servir de bouton de navigation Précédent pour une application de navigation. Il est similaire à **NavigationBackButtonNormalStyle**, mais les dimensions sont de 30 x 30 pixels.
+Ce [Style](/uwp/api/Windows.UI.Xaml.Style) fournit un modèle complet pour un [Button](/uwp/api/Windows.UI.Xaml.Controls.Button) qui peut servir de bouton de navigation Précédent pour une application de navigation. Il est similaire à **NavigationBackButtonNormalStyle**, mais les dimensions sont de 30 x 30 pixels.
 
-Voici un [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) auquel la ressource **NavigationBackButtonSmallStyle** est appliquée.
+Voici un [Button](/uwp/api/Windows.UI.Xaml.Controls.Button) auquel la ressource **NavigationBackButtonSmallStyle** est appliquée.
 
 ```XAML
 <Button Style="{StaticResource NavigationBackButtonSmallStyle}" />
@@ -452,7 +452,7 @@ Prenons l’exemple de cette définition de dictionnaire de thème :
 </ResourceDictionary>
 ```
 
-Au premier abord, elle semble correcte. Vous souhaitez modifier la couleur vers laquelle pointe `myBrush` lorsque vous utilisez le contraste élevé, mais lorsque vous n’êtes pas en contraste élevé, vous vous appuyez sur l’extension de balisage [{ThemeResource}](../../xaml-platform/themeresource-markup-extension.md) pour vous assurer que `myBrush` pointe vers la bonne couleur pour votre thème. Si votre application n’a jamais d’ensemble [FrameworkElement.RequestedTheme](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.requestedtheme) sur les éléments au sein de son arborescence visuelle, elle fonctionne généralement comme prévu. Toutefois, vous rencontrez des problèmes avec votre application dès que vous commencez à modifier le thème de différentes parties de votre arborescence visuelle.
+Au premier abord, elle semble correcte. Vous souhaitez modifier la couleur vers laquelle pointe `myBrush` lorsque vous utilisez le contraste élevé, mais lorsque vous n’êtes pas en contraste élevé, vous vous appuyez sur l’extension de balisage [{ThemeResource}](../../xaml-platform/themeresource-markup-extension.md) pour vous assurer que `myBrush` pointe vers la bonne couleur pour votre thème. Si votre application n’a jamais d’ensemble [FrameworkElement.RequestedTheme](/uwp/api/windows.ui.xaml.frameworkelement.requestedtheme) sur les éléments au sein de son arborescence visuelle, elle fonctionne généralement comme prévu. Toutefois, vous rencontrez des problèmes avec votre application dès que vous commencez à modifier le thème de différentes parties de votre arborescence visuelle.
 
 Ce problème est dû au fait que les pinceaux sont des ressources partagées, contrairement à la plupart des autres types XAML. Si vous avez 2 éléments dans des sous-arborescences XAML avec différents thèmes qui font référence à la même ressource de pinceau, lorsque l’infrastructure parcourt chaque sous-arborescence pour mettre à jour les expressions d’[extension de balisage {ThemeResource}](../../xaml-platform/themeresource-markup-extension.md), les modifications apportées à la ressource de pinceau partagée sont reflétées dans l’autre sous-arborescence, ce qui n’est pas le résultat souhaité.
 
@@ -475,7 +475,7 @@ Pour résoudre ce problème, remplacez le dictionnaire « Default » par des d
 </ResourceDictionary>
 ```
 
-Toutefois, vous rencontrerez toujours des problèmes si l’une de ces ressources est référencée dans les propriétés héritées comme [Foreground](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.foreground). Votre modèle de contrôle personnalisé peut spécifier la couleur de premier plan d’un élément à l’aide de l’[extension de balisage {ThemeResource}](../../xaml-platform/themeresource-markup-extension.md), mais lorsque l’infrastructure propage la valeur héritée aux éléments enfants, elle fournit une référence directe à la ressource qui a été résolue par l’expression d’extension de balisage {ThemeResource}. Cela crée des problèmes lorsque l’infrastructure traite les modifications du thème au fur et à mesure qu’elle parcourt l’arborescence visuelle de votre contrôle. Elle évalue de nouveau l’expression d’extension de balisage {ThemeResource} afin d’obtenir une nouvelle ressource de pinceau, mais ne propage pas encore cette référence vers les enfants de votre contrôle ; cela se produit plus tard, par exemple pendant la passe de mesure suivante.
+Toutefois, vous rencontrerez toujours des problèmes si l’une de ces ressources est référencée dans les propriétés héritées comme [Foreground](/uwp/api/windows.ui.xaml.controls.control.foreground). Votre modèle de contrôle personnalisé peut spécifier la couleur de premier plan d’un élément à l’aide de l’[extension de balisage {ThemeResource}](../../xaml-platform/themeresource-markup-extension.md), mais lorsque l’infrastructure propage la valeur héritée aux éléments enfants, elle fournit une référence directe à la ressource qui a été résolue par l’expression d’extension de balisage {ThemeResource}. Cela crée des problèmes lorsque l’infrastructure traite les modifications du thème au fur et à mesure qu’elle parcourt l’arborescence visuelle de votre contrôle. Elle évalue de nouveau l’expression d’extension de balisage {ThemeResource} afin d’obtenir une nouvelle ressource de pinceau, mais ne propage pas encore cette référence vers les enfants de votre contrôle ; cela se produit plus tard, par exemple pendant la passe de mesure suivante.
 
 Par conséquent, après avoir parcouru l’arborescence visuelle du contrôle suite à un changement de thème, l’infrastructure parcourt les enfants et met à jour les expressions d’[extension de balisage {ThemeResource}](../../xaml-platform/themeresource-markup-extension.md) définies sur chacun d’eux, ou sur les objets définis à partir de leurs propriétés. C’est à ce moment que le problème survient ; l’infrastructure parcourt la ressource de pinceau et, dans la mesure où elle spécifie sa couleur à l’aide d’une extension de balisage {ThemeResource}, une réévaluation est effectuée.
 

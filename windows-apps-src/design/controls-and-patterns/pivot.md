@@ -10,16 +10,16 @@ design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: bb3d8fc251a357f4251552ba80e4c922878fe805
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: a927e7fa81499ef9eb5a8b798679f13b6d838d17
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970814"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174453"
 ---
 # <a name="pivot"></a>Pivot
 
-Le contrôle [Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) permet d’utiliser le balayage tactile dans un petit ensemble de sections de contenu.
+Le contrôle [Pivot](/uwp/api/Windows.UI.Xaml.Controls.Pivot) permet d’utiliser le balayage tactile dans un petit ensemble de sections de contenu.
 
 ![Le focus par défaut souligne l’en-tête sélectionné](images/pivot_focus_selectedHeader.png)
 
@@ -27,9 +27,9 @@ Le contrôle [Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls
 
 |  |  |
 | - | - |
-| ![Logo WinUI](images/winui-logo-64x64.png) | La bibliothèque d’interface utilisateur Windows version 2.2 ou ultérieure inclut pour ce contrôle un nouveau modèle qui utilise des angles arrondis. Pour plus d’informations, consultez [Rayons des angles](/windows/uwp/design/style/rounded-corner). WinUI est un package NuGet qui contient de nouveaux contrôles et des fonctionnalités d’interface utilisateur pour les applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![Logo WinUI](images/winui-logo-64x64.png) | La bibliothèque d’interface utilisateur Windows version 2.2 ou ultérieure inclut pour ce contrôle un nouveau modèle qui utilise des angles arrondis. Pour plus d’informations, consultez [Rayons des angles](../style/rounded-corner.md). WinUI est un package NuGet qui contient de nouveaux contrôles et des fonctionnalités d’interface utilisateur pour les applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/). |
 
-> **API de plateforme** : [Classe Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot), [Classe NavigationView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.NavigationView)
+> **API de plateforme** : [Classe Pivot](/uwp/api/Windows.UI.Xaml.Controls.Pivot), [Classe NavigationView](/uwp/api/Windows.UI.Xaml.Controls.NavigationView)
 
 ## <a name="examples"></a>Exemples
 
@@ -145,15 +145,15 @@ Ce code crée un contrôle Pivot de base avec trois sections de contenu.
 
 ### <a name="pivot-items"></a>Éléments du contrôle Pivot
 
-Le contrôle Pivot est un [ItemsControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsControl). Il peut donc contenir une collection d’éléments de n’importe quel type. Tout élément que vous ajoutez au contrôle Pivot qui n’est pas explicitement un élément [PivotItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PivotItem) est implicitement encapsulé dans un PivotItem. Un sélecteur de vue est souvent utilisé pour naviguer entre des pages de contenu. Il est donc courant de remplir la collection [Items](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.items) directement avec des éléments d’interface utilisateur XAML. Vous pouvez également affecter à la propriété [ItemsSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) une source de données. Les éléments liés dans la propriété ItemsSource peuvent être de n’importe quel type. Cependant, s’il ne s’agit pas explicitement d’éléments PivotItem, vous devez définir un [ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) et un [HeaderTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.headertemplate) pour spécifier leur mode d’affichage.
+Le contrôle Pivot est un [ItemsControl](/uwp/api/Windows.UI.Xaml.Controls.ItemsControl). Il peut donc contenir une collection d’éléments de n’importe quel type. Tout élément que vous ajoutez au contrôle Pivot qui n’est pas explicitement un élément [PivotItem](/uwp/api/Windows.UI.Xaml.Controls.PivotItem) est implicitement encapsulé dans un PivotItem. Un sélecteur de vue est souvent utilisé pour naviguer entre des pages de contenu. Il est donc courant de remplir la collection [Items](/uwp/api/windows.ui.xaml.controls.itemscontrol.items) directement avec des éléments d’interface utilisateur XAML. Vous pouvez également affecter à la propriété [ItemsSource](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) une source de données. Les éléments liés dans la propriété ItemsSource peuvent être de n’importe quel type. Cependant, s’il ne s’agit pas explicitement d’éléments PivotItem, vous devez définir un [ItemTemplate](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) et un [HeaderTemplate](/uwp/api/windows.ui.xaml.controls.pivot.headertemplate) pour spécifier leur mode d’affichage.
 
-Vous pouvez utiliser la propriété [SelectedItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.selecteditem) pour obtenir ou définir l’élément actif du sélecteur de vue. Utilisez la propriété [SelectedItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.selectedindex) pour obtenir ou définir l’index de l’élément actif.
+Vous pouvez utiliser la propriété [SelectedItem](/uwp/api/windows.ui.xaml.controls.pivot.selecteditem) pour obtenir ou définir l’élément actif du sélecteur de vue. Utilisez la propriété [SelectedItem](/uwp/api/windows.ui.xaml.controls.pivot.selectedindex) pour obtenir ou définir l’index de l’élément actif.
 
 ### <a name="pivot-headers"></a>En-têtes de sélecteur de vue
 
-Vous pouvez utiliser les propriétés [LeftHeader](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.leftheader) et [RightHeader](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.rightheader) pour ajouter d’autres contrôles à l’en-tête du sélecteur de vue.
+Vous pouvez utiliser les propriétés [LeftHeader](/uwp/api/windows.ui.xaml.controls.pivot.leftheader) et [RightHeader](/uwp/api/windows.ui.xaml.controls.pivot.rightheader) pour ajouter d’autres contrôles à l’en-tête du sélecteur de vue.
 
-Par exemple, vous pouvez ajouter une [CommandBar](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/app-bars) dans le RightHeader du contrôle Pivot.
+Par exemple, vous pouvez ajouter une [CommandBar](./app-bars.md) dans le RightHeader du contrôle Pivot.
 
 ```xaml
 <Pivot>
@@ -191,7 +191,7 @@ Le contrôle est disponible en deux modes :
 - Un appui sur une étiquette de sélecteur de vue permet d’accéder à la page correspondante. L’étiquette du sélecteur de vue actif passe en première position par rotation.
 - Placez les éléments sélecteur de vue dans une boucle carrousel de la dernière à la première section de sélecteur de vue.
 
-> **Remarque** Dans un [environnement de type « 10-foot »](../devices/designing-for-tv.md), les en-têtes Pivot ne doivent pas s’afficher dans une vue Carrousel. Définissez la propriété [IsHeaderItemsCarouselEnabled](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot.IsHeaderItemsCarouselEnabled) sur **false** si votre application doit s’exécuter sur Xbox.
+> **Remarque** Dans un [environnement de type « 10-foot »](../devices/designing-for-tv.md), les en-têtes Pivot ne doivent pas s’afficher dans une vue Carrousel. Définissez la propriété [IsHeaderItemsCarouselEnabled](/uwp/api/Windows.UI.Xaml.Controls.Pivot.IsHeaderItemsCarouselEnabled) sur **false** si votre application doit s’exécuter sur Xbox.
 
 ## <a name="recommendations"></a>Recommandations
 
@@ -203,5 +203,5 @@ Le contrôle est disponible en deux modes :
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-- [Classe Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot)
+- [Classe Pivot](/uwp/api/Windows.UI.Xaml.Controls.Pivot)
 - [Informations de base relatives à la conception de la navigation](../basics/navigation-basics.md)
