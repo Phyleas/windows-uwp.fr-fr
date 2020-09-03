@@ -7,22 +7,22 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 9794a04d-e67f-472c-8ba8-8ebe442f6ef2
 ms.localizationpriority: medium
-ms.openlocfilehash: 9848fc9e330a725f52ce2a7fae8b13f300476cf7
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: b4cd240882b920f06d06bf1143924a075e7cde53
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970194"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165543"
 ---
 # <a name="tutorial-use-grid-and-stackpanel-to-create-a-simple-weather-app"></a>Tutoriel : Utiliser Grid et StackPanel pour créer une application météo simple
 
 Utilisez XAML pour créer la disposition d’une application Météo simple à l’aide des éléments **Grid** et **StackPanel**. Ces outils vous permettent de créer des applications esthétiques qui fonctionnent sur tous les appareils exécutant Windows 10. Ce didacticiel dure 10 à 20 minutes.
 
-> **API importantes** : [Grid (classe)](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid), [StackPanel (classe)](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.stackpanel)
+> **API importantes** : [Grid (classe)](/uwp/api/windows.ui.xaml.controls.grid), [StackPanel (classe)](/uwp/api/windows.ui.xaml.controls.stackpanel)
 
 ## <a name="prerequisites"></a>Prérequis
 - Windows 10 et Microsoft Visual Studio 2015 (ou version ultérieure). (Version la plus récente de Visual Studio recommandée pour le développement et les mises à jour de sécurité) [Cliquez ici pour vous familiariser avec Visual Studio](../../get-started/get-set-up.md).
-- Savoir créer une application « Hello World » de base à l’aide de XAML et de C#. Le cas échéant, [cliquez ici pour apprendre à créer une application « Hello World »](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
+- Savoir créer une application « Hello World » de base à l’aide de XAML et de C#. Le cas échéant, [cliquez ici pour apprendre à créer une application « Hello World »](../../get-started/create-a-hello-world-app-xaml-universal.md).
 
 ## <a name="step-1-create-a-blank-app"></a>Étape 1 : Créer une application vide
 1. Dans Visual Studio, sélectionnez **Fichier** > **Nouveau projet**.
@@ -51,7 +51,7 @@ Pour commencer à créer une disposition, ouvrez **MainPage.xaml** à l’aide d
 
 Le nouvel élément **Grid** crée un ensemble de deux lignes et colonnes, qui définit la disposition de l’interface de l’application. La **largeur** est de « 3\* » pour la première colonne et de « 5\* » pour la seconde, ce qui divise l'espace horizontal entre les deux colonnes à un rapport de 3:5. De la même manière, la **hauteur** des deux lignes est respectivement de « 2\* » et « \* ». Par conséquent, l'élément **Grid** alloue deux fois plus d'espace à la première ligne qu'à la seconde (« \* » est identique à « 1\* »). Ces rapports sont conservés même si la fenêtre est redimensionnée ou si l’appareil est modifié.
 
-Pour en savoir plus sur les autres méthodes de dimensionnement des lignes et des colonnes, consultez [Définir des dispositions avec XAML](https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml).
+Pour en savoir plus sur les autres méthodes de dimensionnement des lignes et des colonnes, consultez [Définir des dispositions avec XAML](./layouts-with-xaml.md).
 
 Si vous exécutez l’application maintenant, vous ne verrez rien d’autre qu’une page vide, car aucune des zones de la **grille** ne contient d’informations. Pour afficher la **grille**, donnons-lui de la couleur.
 
@@ -120,6 +120,6 @@ C’est tout ! Vous venez de créer la disposition d’une application Météo 
 Si vous le souhaitez, testez la disposition ci-dessus et explorez les différentes façons de représenter des données météorologiques.
 
 ## <a name="related-articles"></a>Articles connexes
-Pour une introduction à la conception de dispositions d’application Windows, consultez [Introduction à la conception d’une application Windows](https://docs.microsoft.com/windows/uwp/layout/design-and-ui-intro).
+Pour une introduction à la conception de dispositions d’application Windows, consultez [Introduction à la conception d’une application Windows](../basics/design-and-ui-intro.md).
 
-Pour apprendre à créer des dispositions réactives adaptables à différentes tailles d’écran, consultez [Définir des dispositions de pages avec XAML](https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml).
+Pour apprendre à créer des dispositions réactives adaptables à différentes tailles d’écran, consultez [Définir des dispositions de pages avec XAML](./layouts-with-xaml.md).

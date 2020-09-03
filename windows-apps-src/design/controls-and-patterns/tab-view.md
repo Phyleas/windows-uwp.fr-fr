@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 489215c0289695832cb895d8566063a93ae2336c
-ms.sourcegitcommit: 577a54d36145f91c8ade8e4509d4edddd8319137
+ms.openlocfilehash: f59bb821b65eda89aa1fbc88e9c38d5789f61f6e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83867349"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89163423"
 ---
 # <a name="tabview"></a>TabView
 
@@ -24,12 +24,12 @@ Le contrôle TabView permet d’afficher un ensemble d’onglets et leur contenu
 
 |  |  |
 | - | - |
-| ![Logo WinUI](images/winui-logo-64x64.png) | Le contrôle **TabView** nécessite la bibliothèque d’interface utilisateur Windows, package NuGet qui contient les nouveaux contrôles et fonctionnalités d’interface utilisateur destinés aux applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![Logo WinUI](images/winui-logo-64x64.png) | Le contrôle **TabView** nécessite la bibliothèque d’interface utilisateur Windows, package NuGet qui contient les nouveaux contrôles et fonctionnalités d’interface utilisateur destinés aux applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/). |
 
 > **API de la bibliothèque d’interface utilisateur Windows** : [Classe TabView](/uwp/api/microsoft.ui.xaml.controls.tabview), [Classe TabViewItem](/uwp/api/microsoft.ui.xaml.controls.tabviewitem)
 
 > [!TIP]
-> Tout au long de ce document, nous utilisons l’alias **muxc** en XAML pour représenter les API de la bibliothèque d’interface utilisateur Windows que nous avons incluses dans notre projet. Nous l’avons ajouté à notre élément [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page) : `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
+> Tout au long de ce document, nous utilisons l’alias **muxc** en XAML pour représenter les API de la bibliothèque d’interface utilisateur Windows que nous avons incluses dans notre projet. Nous l’avons ajouté à notre élément [Page](/uwp/api/windows.ui.xaml.controls.page) : `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
 >
 >Dans le code-behind, nous utilisons également l’alias **muxc** en C# pour représenter les API de la bibliothèque d’interface utilisateur Windows que nous avons incluses dans notre projet. Nous avons ajouté cette instruction **using** en haut du fichier : `using muxc = Microsoft.UI.Xaml.Controls;`
 
@@ -44,7 +44,7 @@ Les **onglets de document** sont le type d’onglets présents dans un navigateu
 - Les utilisateurs pourront ouvrir des documents ou des pages web directement dans des onglets.
 - Les utilisateurs pourront glisser-déplacer des onglets entre les fenêtres.
 
-Si un TabView n’est pas approprié pour votre application, utilisez des contrôles tels que [Pivot](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/pivot) ou [NavigationView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview).
+Si un TabView n’est pas approprié pour votre application, utilisez des contrôles tels que [Pivot](./pivot.md) ou [NavigationView](./navigationview.md).
 
 ## <a name="anatomy"></a>Anatomie
 
@@ -104,7 +104,7 @@ Au lieu de faire en sorte que les onglets occupent leur propre ligne sous la bar
 
 Étant donné qu’un utilisateur peut faire glisser une fenêtre par sa barre de titre pour la repositionner, il est important que la barre de titre ne soit pas complètement remplie avec des onglets. Ainsi, lors de l’affichage d’onglets dans une barre de titre, vous devez spécifier une partie de la barre de titre à réserver comme zone qui peut être glissée. Si vous ne spécifiez pas de zone pouvant être glissée, l’intégralité de la barre de titre pourra être glissée, ce qui empêchera vos onglets de recevoir des événements d’entrée. Si votre TabView s’affiche dans la barre de titre d’une fenêtre, vous devez toujours inclure un [TabStripFooter](/uwp/api/microsoft.ui.xaml.controls.tabview.tabstripfooter) dans votre [TabView](/uwp/api/microsoft.ui.xaml.controls.tabview) et le marquer en tant que zone pouvant être glissée.
 
-Pour plus d’informations, consultez [Personnalisation de la barre de titre](https://docs.microsoft.com/windows/uwp/design/shell/title-bar).
+Pour plus d’informations, consultez [Personnalisation de la barre de titre](../shell/title-bar.md).
 
 ![Onglets dans la barre de titre](images/tabview/tab-extend-to-title.png)
 
@@ -329,6 +329,6 @@ private void NavigateToNumberedTabKeyboardAccelerator_Invoked(KeyboardAccelerato
 
 ## <a name="related-articles"></a>Articles connexes
 
-- [MasterDetails](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/master-details)
-- [NavigationView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview)
-- [Pivot](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/pivot)
+- [MasterDetails](./master-details.md)
+- [NavigationView](./navigationview.md)
+- [Pivot](./pivot.md)

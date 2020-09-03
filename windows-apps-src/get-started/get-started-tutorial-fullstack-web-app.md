@@ -5,12 +5,12 @@ keywords: application web hébergée, HWA, API REST, application avec page uniqu
 ms.date: 05/10/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b9a6b80034dc8272226c9563960079434dff8e41
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 3b2c8da824896b838776174cb22423181aae0e06
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684781"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168233"
 ---
 # <a name="create-a-single-page-web-app-with-rest-api-backend"></a>Créer une application web avec page unique avec une API REST principale
 
@@ -274,9 +274,9 @@ Avec cette modification, la méthode **OBTENIR /jeu** retourne toutes les valeur
 
 La documentation Azure vous guide à travers les étapes suivantes :
 
- - [Enregistrement d’une nouvelle *application API* dans le portail Azure](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-rest-api#createapiapp)
- - [Configurer le déploiement Git pour votre application API](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-rest-api#deploy-the-api-with-git), et
- - [Déployer votre code d’application API vers Azure](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-rest-api#deploy-the-api-with-git)
+ - [Enregistrement d’une nouvelle *application API* dans le portail Azure](/azure/app-service/app-service-web-tutorial-rest-api#createapiapp)
+ - [Configurer le déploiement Git pour votre application API](/azure/app-service/app-service-web-tutorial-rest-api#deploy-the-api-with-git), et
+ - [Déployer votre code d’application API vers Azure](/azure/app-service/app-service-web-tutorial-rest-api#deploy-the-api-with-git)
 
 Lorsque vous enregistrez votre application, essayez de différencier le *nom de l’application* (pour éviter les conflits de nom avec d’autres utilisateurs demandant des variantes sur l’ *http://memorygameapi.azurewebsites.net* URL).
 
@@ -290,7 +290,7 @@ Voici quelques ressources utiles pour aller plus loin :
 
  - [Débogage Node.js avancé avec Visual Studio Code](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)
 
- - [Documentation Azure Web + Mobile](https://docs.microsoft.com/azure/#pivot=services&panel=web)
+ - [Documentation Azure Web + Mobile](/azure/#pivot=services&panel=web)
 
  - [Documentation Azure DocumentDB](https://azure.microsoft.com/blog/dear-documentdb-customers-welcome-to-azure-cosmos-db/)
 
@@ -635,13 +635,13 @@ Vous pouvez désormais déployer votre application Azure (ou tout autre service 
 La procédure de base pour la publication dans le Microsoft Store est la suivante :
 
  1. Créer un compte [Développeur Windows](https://developer.microsoft.com/store/register)
- 2. Utiliser la [liste de vérification](https://docs.microsoft.com/windows/uwp/publish/app-submissions) de soumission d’applications
- 3. Soumettre votre application en vue d’une [certification](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process)
+ 2. Utiliser la [liste de vérification](../publish/app-submissions.md) de soumission d’applications
+ 3. Soumettre votre application en vue d’une [certification](../publish/the-app-certification-process.md)
 
 Voici quelques ressources utiles pour aller plus loin :
 
- - [Déployer votre projet de développement d’applications pour les sites web Azure](https://docs.microsoft.com/azure/cosmos-db/documentdb-nodejs-application#_Toc395783182)
+ - [Déployer votre projet de développement d’applications pour les sites web Azure](/azure/cosmos-db/documentdb-nodejs-application#_Toc395783182)
 
- - [Convertir votre application web en une application UWP (plateforme Windows universelle)](https://docs.microsoft.com/microsoft-edge/progressive-web-apps)
+ - [Convertir votre application web en une application UWP (plateforme Windows universelle)](/microsoft-edge/progressive-web-apps)
 
- - [Publier des applications Windows](https://docs.microsoft.com/windows/uwp/publish/)
+ - [Publier des applications Windows](../publish/index.md)

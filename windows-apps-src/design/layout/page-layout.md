@@ -5,18 +5,18 @@ ms.date: 03/19/2018
 ms.topic: article
 keywords: windows 10, uwp
 localizationpriority: medium
-ms.openlocfilehash: 3dbdf8d006472c288369fd528e89663aca5a9e10
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 551d937836f0dcf0094e54a503d2a8cd80a2f28b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970884"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169523"
 ---
 # <a name="page-layout"></a>Mise en page
 
-Dans les applications Windows, chaque [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) comprend généralement des éléments de navigation, de commande et de contenu. 
+Dans les applications Windows, chaque [**Page**](/uwp/api/Windows.UI.Xaml.Controls.Page) comprend généralement des éléments de navigation, de commande et de contenu. 
 
-Votre application peut compter plusieurs pages. Quand un utilisateur lance une application Windows, le code de l’application crée un [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) à placer dans la [**fenêtre**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window) de l’application. Le Frame peut ensuite [naviguer](../basics/navigate-between-two-pages.md) entre les instances [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) de l’application. 
+Votre application peut compter plusieurs pages. Quand un utilisateur lance une application Windows, le code de l’application crée un [**Frame**](/uwp/api/Windows.UI.Xaml.Controls.Frame) à placer dans la [**fenêtre**](/uwp/api/windows.ui.xaml.window) de l’application. Le Frame peut ensuite [naviguer](../basics/navigate-between-two-pages.md) entre les instances [**Page**](/uwp/api/Windows.UI.Xaml.Controls.Page) de l’application. 
 
 La plupart des pages présentent une structure de disposition commune et cet article décrit les éléments d’interface utilisateur dont vous aurez besoin, ainsi que leur emplacement sur une page. 
 
@@ -33,7 +33,7 @@ La navigation gauche, ou le modèle de [volet de navigation](../controls-and-pat
 - Point d’entrée dans les paramètres de l’application
 - Point d’entrée dans les paramètres du compte
 
-Le contrôle [NavigationView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview) implémente le modèle de navigation supérieure pour les plateforme Windows universelle.
+Le contrôle [NavigationView](/uwp/api/windows.ui.xaml.controls.navigationview) implémente le modèle de navigation supérieure pour les plateforme Windows universelle.
 
 Quand un élément de navigation est sélectionné, le Frame doit accéder à la page de l’élément sélectionné.
 

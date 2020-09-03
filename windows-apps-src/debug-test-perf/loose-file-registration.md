@@ -5,12 +5,12 @@ ms.date: 06/01/2018
 ms.topic: article
 keywords: windows 10, uwp, portail d’appareil, gestionnaire d’applications, déploiement, sdk
 ms.localizationpriority: medium
-ms.openlocfilehash: 7bf3dab97be67a3b97aca4b3132bd9fe18691d15
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 0fd5bf6be691974d956de0c71f4a1d11aa1a229f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75681930"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166093"
 ---
 # <a name="deploy-an-app-through-loose-file-registration"></a>Déployer une application par le biais de l’inscription de fichiers libres 
 
@@ -31,10 +31,10 @@ Une disposition de fichier libre est simplement l’acte de placer le contenu de
 
 ## <a name="how-to-register-a-loose-file-layout"></a>Comment inscrire une disposition de fichier libre
 
-Windows fournit plusieurs outils de développement pour inscrire des dispositions de fichiers libres sur des appareils locaux et distants. Vous avez le choix entre `WinDeployAppCmd` (Outil SDK Windows), Portail d’appareil Windows, PowerShell et [Visual Studio](https://docs.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps#register-layout-from-network). Nous allons voir comment inscrire des fichiers libres à l’aide de ces outils. Mais d’abord, assurez-vous que vous avez la configuration suivante :
+Windows fournit plusieurs outils de développement pour inscrire des dispositions de fichiers libres sur des appareils locaux et distants. Vous avez le choix entre `WinDeployAppCmd` (Outil SDK Windows), Portail d’appareil Windows, PowerShell et [Visual Studio](./deploying-and-debugging-uwp-apps.md#register-layout-from-network). Nous allons voir comment inscrire des fichiers libres à l’aide de ces outils. Mais d’abord, assurez-vous que vous avez la configuration suivante :
 
 - Vos appareils doivent être sur Windows 10 Creators Update (Build 14965) ou version ultérieure.
-- Vous devez activer le [mode développeur](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development) et la [découverte d’appareils](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#device-discovery) sur tous les appareils.
+- Vous devez activer le [mode développeur](../get-started/enable-your-device-for-development.md) et la [découverte d’appareils](../get-started/enable-your-device-for-development.md#device-discovery) sur tous les appareils.
 
 > [!IMPORTANT]
 > L’inscription de fichier libre est disponible uniquement sur les des appareils qui prennent en charge le protocole de partage réseau (SMB) : Ordinateur de bureau et Xbox. 
@@ -51,7 +51,7 @@ WinAppDeployCmd.exe registerfiles -remotedeploydir <Network Path> -ip <IP Addres
 
 **Adresse IP** : adresse IP de la machine cible.
 
-**PIN de la machine cible** : code confidentiel, si nécessaire, pour établir une connexion avec l’appareil cible. Vous serez invité à réessayer avec l’option `-pin` si une authentification est requise. Pour savoir comment obtenir un code PIN, consultez [Découverte d’appareils](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#device-discovery).
+**PIN de la machine cible** : code confidentiel, si nécessaire, pour établir une connexion avec l’appareil cible. Vous serez invité à réessayer avec l’option `-pin` si une authentification est requise. Pour savoir comment obtenir un code PIN, consultez [Découverte d’appareils](../get-started/enable-your-device-for-development.md#device-discovery).
 
 ### <a name="windows-device-portal"></a>Portail d’appareil Windows
 

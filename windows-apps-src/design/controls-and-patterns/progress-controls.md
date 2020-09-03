@@ -12,12 +12,12 @@ design-contact: jeffarn
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 25ca05dc6c604d40092cdc28d186de4b835774b2
-ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
+ms.openlocfilehash: d5756c4cfff05b666eae245de76c1813f9a834df
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997996"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169673"
 ---
 # <a name="progress-controls"></a>Contrôles de progression
 
@@ -27,15 +27,15 @@ Un contrôle de progression offre un retour à l’utilisateur lorsqu’une long
 
 |  |  |
 | - | - |
-| ![Logo WinUI](images/winui-logo-64x64.png) | Le contrôle **ProgressBar** est inclus dans la bibliothèque d’interface utilisateur Windows, package NuGet qui contient de nouveaux contrôles et fonctionnalités d’interface utilisateur destinés aux applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![Logo WinUI](images/winui-logo-64x64.png) | Le contrôle **ProgressBar** est inclus dans la bibliothèque d’interface utilisateur Windows, package NuGet qui contient de nouveaux contrôles et fonctionnalités d’interface utilisateur destinés aux applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/). |
 
-> **API de la bibliothèque d’interface utilisateur Windows :** [classe ProgressBar](https://docs.microsoft.com/uwp/api/Microsoft.UI.Xaml.Controls.ProgressBar), [propriété IsIndeterminate](https://docs.microsoft.com/uwp/api/Microsoft.ui.xaml.controls.progressbar.isindeterminate), [classe ProgressRing](https://docs.microsoft.com/uwp/api/Microsoft.UI.Xaml.Controls.ProgressRing), [propriété IsActive](https://docs.microsoft.com/uwp/api/Microsoft.ui.xaml.controls.progressring.isactive)
+> **API de la bibliothèque d’interface utilisateur Windows :** [classe ProgressBar](/uwp/api/Microsoft.UI.Xaml.Controls.ProgressBar), [propriété IsIndeterminate](/uwp/api/Microsoft.ui.xaml.controls.progressbar.isindeterminate), [classe ProgressRing](/uwp/api/Microsoft.UI.Xaml.Controls.ProgressRing), [propriété IsActive](/uwp/api/Microsoft.ui.xaml.controls.progressring.isactive)
 >
-> **API de plateforme :** [classe ProgressBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar), [propriété IsIndeterminate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressbar.isindeterminate), [classe ProgressRing](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing), [propriété IsActive](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressring.isactive)
+> **API de plateforme :** [classe ProgressBar](/uwp/api/Windows.UI.Xaml.Controls.ProgressBar), [propriété IsIndeterminate](/uwp/api/windows.ui.xaml.controls.progressbar.isindeterminate), [classe ProgressRing](/uwp/api/Windows.UI.Xaml.Controls.ProgressRing), [propriété IsActive](/uwp/api/windows.ui.xaml.controls.progressring.isactive)
 
 > [!NOTE]
 > Il existe deux versions des contrôles ProgressBar et ProgressRing : l’une dans la plateforme représentée par l’espace de noms Windows.UI.Xaml et l’autre dans la bibliothèque d’interface utilisateur Windows, l’espace de noms Microsoft.UI.Xaml. Bien que les API pour ProgressRing et ProgressBar soient identiques, les apparences du contrôle diffèrent entre les deux versions. Ce document montre des images de la version la plus récente de la bibliothèque d’interface utilisateur Windows.
-Tout au long de ce document, nous allons utiliser l’alias **muxc** en XAML pour représenter les API de la bibliothèque d’interface utilisateur Windows que nous avons incluses dans notre projet. Nous l’avons ajouté à notre élément [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page) :
+Tout au long de ce document, nous allons utiliser l’alias **muxc** en XAML pour représenter les API de la bibliothèque d’interface utilisateur Windows que nous avons incluses dans notre projet. Nous l’avons ajouté à notre élément [Page](/uwp/api/windows.ui.xaml.controls.page) :
 
 ```xaml
 xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
@@ -211,5 +211,5 @@ Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows
 
 ## <a name="related-articles"></a>Articles connexes
 
-- [Classe ProgressBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar)
-- [Classe ProgressRing](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing)
+- [Classe ProgressBar](/uwp/api/Windows.UI.Xaml.Controls.ProgressBar)
+- [Classe ProgressRing](/uwp/api/Windows.UI.Xaml.Controls.ProgressRing)

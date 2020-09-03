@@ -6,12 +6,12 @@ ms.date: 09/12/2019
 keywords: Accessibilité dans Windows 10, Accessibilité, conception d’applications win32 accessibles, conception d’applications UWP accessibles, conception d’applications WPF accessibles, conception d’applications WinForms accessibles
 ms.author: kbridge
 author: Karl-Bridge-Microsoft
-ms.openlocfilehash: 04dc3571f6b2d8ddf57a3695330070d7c5b5061e
-ms.sourcegitcommit: 9beb6cce7375b726ad90ee84b72754268ae2819a
+ms.openlocfilehash: 7cdfa91bec648ab6f3d09d0aeff0d62e2962db86
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88047786"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169043"
 ---
 # <a name="accessibility-in-windows-10"></a>Accessibilité dans Windows 10
 
@@ -37,13 +37,13 @@ Cette page fournit des informations sur la façon dont les différentes infrastr
 
       Développez des applications et des outils accessibles sur la plateforme moderne pour les applications et jeux Windows 10 de n’importe quel appareil Windows (notamment les PC, les téléphones, Xbox One, HoloLens, etc.) et publiez-les sur le Microsoft Store.
 
-      [Conception de logiciels inclusifs](https://docs.microsoft.com/windows/uwp/accessibility/designing-inclusive-software)
+      [Conception de logiciels inclusifs](/windows/uwp/accessibility/designing-inclusive-software)
 
-      [Développement d’applications Windows inclusives](https://docs.microsoft.com/windows/uwp/accessibility/developing-inclusive-windows-apps)
+      [Développement d’applications Windows inclusives](/windows/uwp/accessibility/developing-inclusive-windows-apps)
 
-      [Test de l’accessibilité](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-testing)
+      [Test de l’accessibilité](/windows/uwp/accessibility/accessibility-testing)
 
-      [Accessibilité dans le Store](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-in-the-store)
+      [Accessibilité dans le Store](/windows/uwp/accessibility/accessibility-in-the-store)
    :::column-end:::
    :::column:::
       ![Applications de plateforme Win32](images/platform-win32.png)
@@ -52,21 +52,21 @@ Cette page fournit des informations sur la façon dont les différentes infrastr
 
       Développez des applications et des outils accessibles sur la plateforme d’origine pour les applications Windows C/C++.
 
-      [Nouveautés concernant l’accessibilité et l’automatisation de Windows](https://docs.microsoft.com/windows/desktop/accessibility-whatsnew)
+      [Nouveautés concernant l’accessibilité et l’automatisation de Windows](/windows/desktop/accessibility-whatsnew)
 
-      [Développement d’applications accessibles pour Windows](https://docs.microsoft.com/windows/desktop/accessibility-appdev)
+      [Développement d’applications accessibles pour Windows](/windows/desktop/accessibility-appdev)
 
-      [Développement d’infrastructures d’interface utilisateur accessibles pour Windows](https://docs.microsoft.com/windows/desktop/accessibility-uiframeworkdev)
+      [Développement d’infrastructures d’interface utilisateur accessibles pour Windows](/windows/desktop/accessibility-uiframeworkdev)
 
-      [Développement des technologies d’assistance pour Windows](https://docs.microsoft.com/windows/desktop/accessibility-atdev)
+      [Développement des technologies d’assistance pour Windows](/windows/desktop/accessibility-atdev)
 
-      [Tests d’accessibilité](https://docs.microsoft.com/windows/desktop/accessibility-testwithuia)
+      [Tests d’accessibilité](/windows/desktop/accessibility-testwithuia)
 
-      [Technologies d’accessibilité et d’automatisation héritées : MSAA vers UI Automation](https://docs.microsoft.com/windows/desktop/accessibility-legacy)
+      [Technologies d’accessibilité et d’automatisation héritées : MSAA vers UI Automation](/windows/desktop/accessibility-legacy)
 
-      [Fonctionnalités d’accessibilité Windows](https://docs.microsoft.com/windows/desktop/winauto/about-windows-accessibility-features)
+      [Fonctionnalités d’accessibilité Windows](/windows/desktop/winauto/about-windows-accessibility-features)
 
-      [Recommandations en matière de conception d’applications accessibles](https://docs.microsoft.com/windows/desktop/uxguide/inter-accessibility)
+      [Recommandations en matière de conception d’applications accessibles](/windows/desktop/uxguide/inter-accessibility)
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -77,21 +77,21 @@ Cette page fournit des informations sur la façon dont les différentes infrastr
 
       Développez des applications et des outils accessibles sur la plateforme établie pour les applications Windows gérées avec un modèle d’interface utilisateur XAML et le .NET Framework.
 
-      [Meilleures pratiques en matière d’accessibilité](https://docs.microsoft.com/dotnet/framework/ui-automation/accessibility-best-practices)
+      [Meilleures pratiques en matière d’accessibilité](/dotnet/framework/ui-automation/accessibility-best-practices)
 
-      [Notions de base d’UI Automation](https://docs.microsoft.com/dotnet/framework/ui-automation/index)
+      [Notions de base d’UI Automation](/dotnet/framework/ui-automation/index)
 
-      [Fournisseurs UI Automation pour le code managé](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-providers-for-managed-code)
+      [Fournisseurs UI Automation pour le code managé](/dotnet/framework/ui-automation/ui-automation-providers-for-managed-code)
 
-      [Clients UI Automation pour le code managé](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-clients-for-managed-code)
+      [Clients UI Automation pour le code managé](/dotnet/framework/ui-automation/ui-automation-clients-for-managed-code)
 
-      [Modèles de contrôle UI Automation](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-control-patterns)
+      [Modèles de contrôle UI Automation](/dotnet/framework/ui-automation/ui-automation-control-patterns)
 
-      [Modèles de texte UI Automation](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-text-pattern)
+      [Modèles de texte UI Automation](/dotnet/framework/ui-automation/ui-automation-text-pattern)
 
-      [Types de contrôle UI Automation](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-control-types)
+      [Types de contrôle UI Automation](/dotnet/framework/ui-automation/ui-automation-control-types)
 
-      [Spécification UI Automation et promesse communautaire](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-specification-and-community-promise)
+      [Spécification UI Automation et promesse communautaire](/dotnet/framework/ui-automation/ui-automation-specification-and-community-promise)
    :::column-end:::
    :::column:::
       ![Applications de plateforme Windows Forms](images/platform-winforms.png)
@@ -100,13 +100,13 @@ Cette page fournit des informations sur la façon dont les différentes infrastr
 
       Développez des applications et des outils accessibles pour les applications Windows gérées avec un modèle d’interface utilisateur XAML et le .NET Framework.
 
-      [Accessibilité des Windows Forms](https://docs.microsoft.com/dotnet/framework/winforms/advanced/windows-forms-accessibility)
+      [Accessibilité des Windows Forms](/dotnet/framework/winforms/advanced/windows-forms-accessibility)
 
-      [Création d’une application Windows accessible](https://docs.microsoft.com/dotnet/framework/winforms/advanced/walkthrough-creating-an-accessible-windows-based-application)
+      [Création d’une application Windows accessible](/dotnet/framework/winforms/advanced/walkthrough-creating-an-accessible-windows-based-application)
 
-      [Propriétés des contrôles Windows Forms qui prennent en charge les recommandations relatives à l’accessibilité](https://docs.microsoft.com/dotnet/framework/winforms/advanced/properties-on-windows-forms-controls-that-support-accessibility-guidelines)
+      [Propriétés des contrôles Windows Forms qui prennent en charge les recommandations relatives à l’accessibilité](/dotnet/framework/winforms/advanced/properties-on-windows-forms-controls-that-support-accessibility-guidelines)
 
-      [Informations d’accessibilité sur les contrôles d’un Windows Form](https://docs.microsoft.com/dotnet/framework/winforms/controls/providing-accessibility-information-for-controls-on-a-windows-form)
+      [Informations d’accessibilité sur les contrôles d’un Windows Form](/dotnet/framework/winforms/controls/providing-accessibility-information-for-controls-on-a-windows-form)
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -118,14 +118,14 @@ Cette page fournit des informations sur la façon dont les différentes infrastr
 :::row-end:::
 :::row:::
    :::column:::
-      [Présentation de l’accessibilité web](https://docs.microsoft.com/microsoft-edge/accessibility)
+      [Présentation de l’accessibilité web](/microsoft-edge/accessibility)
 
-      [Conception de sites web accessibles](https://docs.microsoft.com/microsoft-edge/accessibility/design)
+      [Conception de sites web accessibles](/microsoft-edge/accessibility/design)
    :::column-end:::
    :::column:::
-      [Développement de sites web accessibles](https://docs.microsoft.com/microsoft-edge/accessibility/build)
+      [Développement de sites web accessibles](/microsoft-edge/accessibility/build)
 
-      [Test de sites web accessibles](https://docs.microsoft.com/microsoft-edge/accessibility/test)
+      [Test de sites web accessibles](/microsoft-edge/accessibility/test)
    :::column-end:::
 :::row-end:::
 
@@ -135,7 +135,7 @@ Téléchargez et exécutez des exemples Windows complets qui illustrent diverses
 
 :::row:::
    :::column:::
-      [Navigateur d’exemples de code](https://docs.microsoft.com/samples/browse/)
+      [Navigateur d’exemples de code](/samples/browse/)
 
       Le nouveau navigateur d’exemples qui remplace MSDN Code Gallery.
    :::column-end:::
@@ -253,7 +253,7 @@ Différentes vidéos abordant la création des applications Windows accessibles,
       [Blogs relatifs à l’accessibilité](https://blogs.microsoft.com/accessibility/)
    :::column-end:::
    :::column:::
-      [Blogs Windows UI Automation](https://blogs.msdn.microsoft.com/winuiautomation/)
+      [Blogs Windows UI Automation](/archive/blogs/winuiautomation/)
    :::column-end:::
 :::row-end:::
 :::row:::

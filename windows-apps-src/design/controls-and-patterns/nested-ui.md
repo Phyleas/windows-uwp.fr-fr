@@ -11,12 +11,12 @@ pm-contact: chigy
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a8b53eef3538ca637fa5b351b74125eebdfe2b3
-ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
+ms.openlocfilehash: e2d727c9b5e4c7e2912f0bcae8848149c8073f3b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88942839"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169743"
 ---
 # <a name="nested-ui-in-list-items"></a>Interface utilisateur imbriquée dans des éléments de liste
 
@@ -26,9 +26,9 @@ L’interface utilisateur imbriquée est une interface utilisateur (UI) qui expo
 
 Vous pouvez utiliser l’interface utilisateur imbriquée pour présenter des options supplémentaires permettant d’accélérer la réalisation d’actions importantes. Toutefois, plus le nombre d’actions exposées augmente, plus votre interface utilisateur devient compliquée. Vous devez être particulièrement vigilant lorsque vous choisissez d’utiliser ce modèle d’interface utilisateur. Cet article fournit des recommandations qui vont vous permettre de déterminer le meilleur mode de fonctionnement de votre interface utilisateur spécifique.
 
-> **API importantes** : [classe ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview), [classe GridView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview)
+> **API importantes** : [classe ListView](/uwp/api/windows.ui.xaml.controls.listview), [classe GridView](/uwp/api/windows.ui.xaml.controls.gridview)
 
-Dans cet article, nous abordons la création d’une interface utilisateur imbriquée dans les éléments [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) et [GridView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview). Bien que les autres cas d’interface utilisateur imbriquée ne soient pas abordés dans cette section, ces concepts sont transférables. Avant de commencer, vous devez être familiarisé avec les instructions générales concernant l’utilisation des contrôles ListView ou GridView dans votre interface utilisateur, qui se trouvent dans les articles [Listes](lists.md) et [Affichage Liste et affichage Grille](listview-and-gridview.md).
+Dans cet article, nous abordons la création d’une interface utilisateur imbriquée dans les éléments [ListView](/uwp/api/windows.ui.xaml.controls.listview) et [GridView](/uwp/api/windows.ui.xaml.controls.gridview). Bien que les autres cas d’interface utilisateur imbriquée ne soient pas abordés dans cette section, ces concepts sont transférables. Avant de commencer, vous devez être familiarisé avec les instructions générales concernant l’utilisation des contrôles ListView ou GridView dans votre interface utilisateur, qui se trouvent dans les articles [Listes](lists.md) et [Affichage Liste et affichage Grille](listview-and-gridview.md).
 
 Dans cet article, nous utilisons les termes *liste*, *élément de liste*, et *interface utilisateur imbriquée*, comme suit :
 - *Liste* fait référence à une collection d’éléments contenus dans un affichage Liste ou Grille.
@@ -37,7 +37,7 @@ Dans cet article, nous utilisons les termes *liste*, *élément de liste*, et *i
 
 ![Parties de l’interface utilisateur imbriquée](images/nested-ui-example-1.png)
 
-> REMARQUE&nbsp;&nbsp;ListView et GridView dérivent tous deux de la classe [ListViewBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase) ; ils ont donc les mêmes fonctionnalités, mais affichent les données différemment. Dans cet article, lorsque nous parlons de listes, les informations s’appliquent aux contrôles ListView et GridView.
+> REMARQUE&nbsp;&nbsp;ListView et GridView dérivent tous deux de la classe [ListViewBase](/uwp/api/windows.ui.xaml.controls.listviewbase) ; ils ont donc les mêmes fonctionnalités, mais affichent les données différemment. Dans cet article, lorsque nous parlons de listes, les informations s’appliquent aux contrôles ListView et GridView.
 
 ## <a name="primary-and-secondary-actions"></a>Actions principales et secondaires
 
@@ -137,7 +137,7 @@ Lorsque la saisie s’effectue à partir d’un clavier, voici ce qu’obtient u
 - À partir de l’élément d’interface utilisateur situé à gauche de l’élément de liste, la touche TABULATION met le focus sur l’élément **A**.
 - À partir de l’élément d’interface utilisateur situé à droite de l’élément de liste, la touche TABULATION met le focus sur l’élément **C**.
 
-Pour obtenir cette interface utilisateur, définissez [IsItemClickEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.isitemclickenabled) sur **true** sur votre liste. [SelectionMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selectionmode) peut être n’importe quelle valeur.
+Pour obtenir cette interface utilisateur, définissez [IsItemClickEnabled](/uwp/api/windows.ui.xaml.controls.listviewbase.isitemclickenabled) sur **true** sur votre liste. [SelectionMode](/uwp/api/windows.ui.xaml.controls.listviewbase.selectionmode) peut être n’importe quelle valeur.
 
 Pour obtenir le code permettant d’implémenter ceci, reportez-vous à la section [Exemple](#example) de cet article.
 
@@ -151,9 +151,9 @@ Ce type d’interface utilisateur a tendance à être beaucoup plus compliqué q
 
 
 Pour terminer cette interface utilisateur, définissez les propriétés suivantes sur votre liste :
-- [SelectionMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selectionmode) sur **Aucun**.
-- [IsItemClickEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.isitemclickenabled) sur **false**.
-- [IsFocusEngagementEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.isfocusengagementenabled) sur **true**.
+- [SelectionMode](/uwp/api/windows.ui.xaml.controls.listviewbase.selectionmode) sur **Aucun**.
+- [IsItemClickEnabled](/uwp/api/windows.ui.xaml.controls.listviewbase.isitemclickenabled) sur **false**.
+- [IsFocusEngagementEnabled](/uwp/api/windows.ui.xaml.controls.control.isfocusengagementenabled) sur **true**.
 
 ```xaml
 <ListView SelectionMode="None" IsItemClickEnabled="False" >

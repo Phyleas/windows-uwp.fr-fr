@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a74d98298f2c51059d8293022817e91ba573cf45
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 5e3bcbfc338d629bbda1036ef722d75ed6df37cd
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970694"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169753"
 ---
 # <a name="number-box"></a>Zone de nombre
 
@@ -22,18 +22,18 @@ Représente un contrôle qui permet d’afficher et de modifier des nombres. Il 
 
 |  |  |
 | - | - |
-| ![Logo WinUI](images/winui-logo-64x64.png) | Le contrôle **NumberBox** nécessite la bibliothèque d’interface utilisateur Windows, package NuGet qui contient les nouveaux contrôles et fonctionnalités d’interface utilisateur destinés aux applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez [Vue d’ensemble de la bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![Logo WinUI](images/winui-logo-64x64.png) | Le contrôle **NumberBox** nécessite la bibliothèque d’interface utilisateur Windows, package NuGet qui contient les nouveaux contrôles et fonctionnalités d’interface utilisateur destinés aux applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez [Vue d’ensemble de la bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/). |
 
-**API de la bibliothèque d'interface utilisateur Windows :** [NumberBox, classe](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.NumberBox)
+**API de la bibliothèque d'interface utilisateur Windows :** [NumberBox, classe](/uwp/api/microsoft.ui.xaml.controls.NumberBox)
 
 > [!TIP]
-> Tout au long de ce document, nous utilisons l’alias **muxc** en XAML pour représenter les API de la bibliothèque d’interface utilisateur Windows que nous avons incluses dans notre projet. Nous l’avons ajouté à notre élément [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page) : `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
+> Tout au long de ce document, nous utilisons l’alias **muxc** en XAML pour représenter les API de la bibliothèque d’interface utilisateur Windows que nous avons incluses dans notre projet. Nous l’avons ajouté à notre élément [Page](/uwp/api/windows.ui.xaml.controls.page) : `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
 >
 >Dans le code-behind, nous utilisons également l’alias **muxc** en C# pour représenter les API de la bibliothèque d’interface utilisateur Windows que nous avons incluses dans notre projet. Nous avons ajouté cette instruction **using** en haut du fichier : `using muxc = Microsoft.UI.Xaml.Controls;`
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
-Vous pouvez utiliser un contrôle NumberBox pour capturer et afficher des entrées mathématiques. Si vous avez besoin d’une zone de texte modifiable qui n’accepte pas que des nombres, utilisez le contrôle [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox). Si vous avez besoin d’une zone de texte modifiable qui accepte les mots de passe ou d’autres entrées sensibles, consultez [PasswordBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox). Si vous avez besoin d’une zone de texte pour entrer des termes de recherche, consultez [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox). Si vous avez besoin d’entrer ou de modifier du texte mis en forme, consultez [RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox).
+Vous pouvez utiliser un contrôle NumberBox pour capturer et afficher des entrées mathématiques. Si vous avez besoin d’une zone de texte modifiable qui n’accepte pas que des nombres, utilisez le contrôle [TextBox](/uwp/api/Windows.UI.Xaml.Controls.TextBox). Si vous avez besoin d’une zone de texte modifiable qui accepte les mots de passe ou d’autres entrées sensibles, consultez [PasswordBox](/uwp/api/windows.ui.xaml.controls.passwordbox). Si vous avez besoin d’une zone de texte pour entrer des termes de recherche, consultez [AutoSuggestBox](/uwp/api/windows.ui.xaml.controls.autosuggestbox). Si vous avez besoin d’entrer ou de modifier du texte mis en forme, consultez [RichEditBox](/uwp/api/windows.ui.xaml.controls.richeditbox).
 
 ## <a name="examples"></a>Exemples
 
@@ -53,7 +53,7 @@ Vous pouvez utiliser un contrôle NumberBox pour capturer et afficher des entré
 
 ### <a name="create-a-simple-numberbox"></a>Créer un NumberBox simple
 
-Le code XAML ci-dessous montre l’apparence par défaut d’un NumberBox de base. Utilisez [x:Bind](/windows/uwp/xaml-platform/x-bind-markup-extension#property-path) pour vérifier que les données présentées à l’utilisateur sont synchronisées avec celles stockées dans votre application.
+Le code XAML ci-dessous montre l’apparence par défaut d’un NumberBox de base. Utilisez [x:Bind](../../xaml-platform/x-bind-markup-extension.md#property-path) pour vérifier que les données présentées à l’utilisateur sont synchronisées avec celles stockées dans votre application.
 
 ```xaml
 <muxc:NumberBox Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}" />

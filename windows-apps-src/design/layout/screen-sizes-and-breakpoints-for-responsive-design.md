@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 2e385f6b9977eead6aed52215080588e4f9d8c27
-ms.sourcegitcommit: cc645386b996f6e59f1ee27583dcd4310f8fb2a6
+ms.openlocfilehash: 32a66c92d4c079c99aed213d0e1aeae66b808d56
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84262770"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169403"
 ---
 #  <a name="screen-sizes-and-breakpoints"></a>Tailles d’écran et points d’arrêt
 
@@ -90,7 +90,7 @@ Les applications UWP mettent automatiquement à l’échelle votre interface uti
 - Utilisez jusqu’à deux colonnes/zones.
 - Affichez la zone de recherche.
 - Placez le [volet de navigation](../controls-and-patterns/navigationview.md) en mode partiel de manière à ce qu’une bande étroite d’icônes soit toujours affichée.
-- Pensez à personnaliser davantage votre application pour les [expériences télévisuelles](https://docs.microsoft.com/windows/uwp/design/devices/designing-for-tv?redirectedfrom=MSDN).
+- Pensez à personnaliser davantage votre application pour les [expériences télévisuelles](../devices/designing-for-tv.md).
 
 ### <a name="large"></a>Grande
 - Définissez une marge de 24 px de part et d’autre de la fenêtre afin de créer une séparation visuelle au niveau des bords gauche et droit de la fenêtre de l’application.

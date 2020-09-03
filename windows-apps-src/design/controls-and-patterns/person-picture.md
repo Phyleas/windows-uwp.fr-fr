@@ -11,16 +11,16 @@ design-contact: kimsea
 dev-contact: kefodero
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a43c6592b5a9b243a19f3491ea54c05d10e7b0f7
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 0f2c9a80dbe821feb910636eb26e783ec7eb309a
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970834"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169643"
 ---
 # <a name="person-picture-control"></a>Contrôle de la photo de la personne
 
-Le contrôle de photo de la personne affiche l’image d’avatar d’une personne, si celle-ci est disponible. Dans le cas contraire, il affiche les initiales de la personne ou un glyphe générique. Vous pouvez utiliser ce contrôle pour afficher un [objet Contact](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact), un objet qui gère les coordonnées d’une personne, ou vous pouvez fournir manuellement des coordonnées, par exemple un nom d’affichage et une photo de profil.
+Le contrôle de photo de la personne affiche l’image d’avatar d’une personne, si celle-ci est disponible. Dans le cas contraire, il affiche les initiales de la personne ou un glyphe générique. Vous pouvez utiliser ce contrôle pour afficher un [objet Contact](/uwp/api/Windows.ApplicationModel.Contacts.Contact), un objet qui gère les coordonnées d’une personne, ou vous pouvez fournir manuellement des coordonnées, par exemple un nom d’affichage et une photo de profil.
 
 ![Contrôle de la photo de la personne](images/person-picture/person-picture_hero.png)
 
@@ -30,9 +30,9 @@ Le contrôle de photo de la personne affiche l’image d’avatar d’une person
 
 |  |  |
 | - | - |
-| ![Logo WinUI](images/winui-logo-64x64.png) | Le contrôle **PersonPicture** est inclus dans la bibliothèque d’interface utilisateur Windows, package NuGet contenant de nouveaux contrôles et fonctionnalités d’interface utilisateur destinés aux applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![Logo WinUI](images/winui-logo-64x64.png) | Le contrôle **PersonPicture** est inclus dans la bibliothèque d’interface utilisateur Windows, package NuGet contenant de nouveaux contrôles et fonctionnalités d’interface utilisateur destinés aux applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/). |
 
-> **API de plateforme** : [classe PersonPicture](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.personpicture), [classe Contact](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact), [classe ContactManager](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.ContactManager)
+> **API de plateforme** : [classe PersonPicture](/uwp/api/windows.ui.xaml.controls.personpicture), [classe Contact](/uwp/api/Windows.ApplicationModel.Contacts.Contact), [classe ContactManager](/uwp/api/Windows.ApplicationModel.Contacts.ContactManager)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
@@ -86,7 +86,7 @@ La classe PersonPicture vous permet de créer une photo de la personne. Cet exem
 
 ## <a name="using-the-person-picture-control-to-display-a-contact-object"></a>Utilisation du contrôle de photo de la personne pour afficher un objet Contact
 
-Vous pouvez utiliser le contrôle de sélecteur de personnes pour afficher un objet [Contact](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact) :
+Vous pouvez utiliser le contrôle de sélecteur de personnes pour afficher un objet [Contact](/uwp/api/Windows.ApplicationModel.Contacts.Contact) :
 
 ```xaml
 <Page
@@ -174,11 +174,11 @@ namespace SampleApp
 ```
 
 > [!NOTE]
-> Pour conserver un code simple, cet exemple crée un objet Contact. Dans une application réelle, vous permettriez à l’utilisateur de sélectionner un contact ou vous utiliseriez un [ContactManager](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.ContactManager) pour une liste de contacts. Pour plus d’informations sur la récupération et la gestion des contacts, consultez les [articles Contacts et calendriers](../../contacts-and-calendar/index.md).
+> Pour conserver un code simple, cet exemple crée un objet Contact. Dans une application réelle, vous permettriez à l’utilisateur de sélectionner un contact ou vous utiliseriez un [ContactManager](/uwp/api/Windows.ApplicationModel.Contacts.ContactManager) pour une liste de contacts. Pour plus d’informations sur la récupération et la gestion des contacts, consultez les [articles Contacts et calendriers](../../contacts-and-calendar/index.md).
 
 ## <a name="determining-which-info-to-display"></a>Détermination des informations à afficher
 
-Quand vous fournissez un objet [Contact](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact), le contrôle de photo de la personne l’évalue afin de déterminer les informations qu’il peut afficher.
+Quand vous fournissez un objet [Contact](/uwp/api/Windows.ApplicationModel.Contacts.Contact), le contrôle de photo de la personne l’évalue afin de déterminer les informations qu’il peut afficher.
 
 Si une photo est disponible, le contrôle affiche la première image qu’il trouve, dans cet ordre :
 

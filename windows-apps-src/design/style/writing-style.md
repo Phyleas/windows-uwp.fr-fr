@@ -6,12 +6,12 @@ ms.date: 05/07/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 8d79d4f3394bcf8f7892f2c6dc3d4e0ca72972ab
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: c17d4c0aca4c59e18a13bf42bad16e6739938717
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970604"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168673"
 ---
 # <a name="writing-style"></a>Style d’écriture
 
@@ -76,7 +76,7 @@ Les utilisateurs survolent le texte et en ignorent souvent des blocs entiers. Ne
 
 ## <a name="style-conventions"></a>Conventions de style
 
-Si vous ne vous considérez pas comme un écrivain, il peut être intimidant d’essayer de mettre en œuvre ces principes et recommandations. Mais ne vous inquiétez pas, l’utilisation d’un langage simple et direct est un excellent moyen de fournir une expérience utilisateur efficace. Et si vous ne savez toujours pas comment structurer vos mots, voici quelques conseils utiles. Et si vous souhaitez plus d’informations, consultez le [Guide de Style Microsoft](https://docs.microsoft.com/style-guide/welcome/).
+Si vous ne vous considérez pas comme un écrivain, il peut être intimidant d’essayer de mettre en œuvre ces principes et recommandations. Mais ne vous inquiétez pas, l’utilisation d’un langage simple et direct est un excellent moyen de fournir une expérience utilisateur efficace. Et si vous ne savez toujours pas comment structurer vos mots, voici quelques conseils utiles. Et si vous souhaitez plus d’informations, consultez le [Guide de Style Microsoft](/style-guide/welcome/).
 
 ### <a name="addressing-the-user"></a>S’adresser à l’utilisateur
 
@@ -228,7 +228,7 @@ Les mêmes recommandations et principes généraux s’appliquent à l’écritu
 
 ## <a name="accessibility-and-localization"></a>Accessibilité et localisation
 
-Votre application peut atteindre un public plus large si elle est écrite en tenant compte de l’accessibilité et de la localisation. Cela n’est possible qu’au moyen de texte, même si un langage simple et convivial est un très bon début. Pour plus d’informations, consultez notre [vue d’ensemble de l’accessibilité](https://docs.microsoft.com/windows/uwp/design/accessibility/accessibility-overview) et nos [recommandations en matière de localisation](https://docs.microsoft.com/windows/uwp/design/globalizing/globalizing-portal).
+Votre application peut atteindre un public plus large si elle est écrite en tenant compte de l’accessibilité et de la localisation. Cela n’est possible qu’au moyen de texte, même si un langage simple et convivial est un très bon début. Pour plus d’informations, consultez notre [vue d’ensemble de l’accessibilité](../accessibility/accessibility-overview.md) et nos [recommandations en matière de localisation](../globalizing/globalizing-portal.md).
 
 * **Soyez prêt à aider** en tenant compte de la multiplicité des expériences. Évitez les expressions qui peuvent ne pas avoir de sens pour un public international et n’utilisez pas de mots qui créent des hypothèses sur ce que l’utilisateur peut ou ne peut pas faire.
 

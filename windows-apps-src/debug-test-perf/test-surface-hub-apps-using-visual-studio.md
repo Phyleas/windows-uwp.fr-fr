@@ -6,17 +6,17 @@ ms.date: 10/26/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 37c7f9edbaee008b6e16ef2ca202ff5cbcf39ca2
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 5a10a8a6e5b4e5188d28c0f75aace50f7465e5f4
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "67317505"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89163483"
 ---
 # <a name="test-surface-hub-apps-using-visual-studio"></a>Tester les applications de Surface Hub à l’aide de Visual Studio
 Le simulateur de Visual Studio fournit un environnement dans lequel vous pouvez concevoir, développer, déboguer et tester des applications de plateforme Windows universelle (UWP), y compris les applications que vous avez conçues pour Microsoft Surface Hub. Le simulateur n’utilise pas la même interface utilisateur que Surface Hub, mais il permet de tester l’apparence et le comportement de votre application par rapport à la taille d’écran et à la résolution du Surface Hub.
 
-Pour plus d’informations sur l’outil simulateur en général, consultez [Exécuter des applications UWP dans le simulateur](https://docs.microsoft.com/visualstudio/debugger/run-windows-store-apps-in-the-simulator).
+Pour plus d’informations sur l’outil simulateur en général, consultez [Exécuter des applications UWP dans le simulateur](/visualstudio/debugger/run-windows-store-apps-in-the-simulator).
 
 ## <a name="add-surface-hub-resolutions-to-the-simulator"></a>Ajouter des résolutions de Surface Hub au simulateur
 Pour ajouter des résolutions de Surface Hub au simulateur :
@@ -90,7 +90,7 @@ Par défaut, les applications installées sur Surface Hub sont issues uniquement
 3. Choisissez **Mode développeur** et acceptez le message d’avertissement.
 
 ### <a name="deploy-your-app-from-visual-studio"></a>Déployer votre application à partir de Visual Studio
-Pour plus d’informations sur le processus de déploiement en général, consultez [Déploiement et débogage d’applications UWP](https://docs.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps).
+Pour plus d’informations sur le processus de déploiement en général, consultez [Déploiement et débogage d’applications UWP](./deploying-and-debugging-uwp-apps.md).
 
    > [!NOTE]
    > Cette fonctionnalité nécessite Visual Studio 2015 Update 1 ou ultérieur, mais nous vous recommandons d’utiliser la version la plus récente de Visual Studio avec les dernières mises à jour. Une instance de Visual Studio à jour vous fera bénéficier de toutes les dernières mises à jour de sécurité et de développement.

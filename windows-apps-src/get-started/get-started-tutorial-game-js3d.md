@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: fb4249b2-f93c-4993-9e4d-57a62c04be66
 ms.localizationpriority: medium
-ms.openlocfilehash: b4ce91e32b14bdf81b40b24e810e0bd86bcaa99b
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 4ee8eb8ea34205f2e597bf41da61f5ab63714566
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "67321090"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89162833"
 ---
 # <a name="creating-a-3d-javascript-game-using-threejs"></a>Création d’un jeu JavaScript 3D à l’aide de three.js
 
@@ -442,7 +442,7 @@ scene.add(controls.getObject());
 
 La caméra est maintenant connectée, mais nous devons permettre à la souris et au contrôleur d’interagir afin que nous puissions regarder les environs. 
 
-Dans cette situation, l’[API Pointer Lock](https://docs.microsoft.com/microsoft-edge/dev-guide/dom/pointer-lock) vient à la rescousse en nous permettant de raccorder les mouvements de la souris à la caméra. L’API Pointer Lock fait également disparaître la souris pour que le joueur soit mieux immergé dans le jeu. Une pression sur ÉCHAP, met fin à la connexion entre la caméra et la souris pour faire réapparaître la souris. L’ajout des fonctions `getPointerLock()` et `lockChange()` nous permettra d’atteindre cet objectif.
+Dans cette situation, l’[API Pointer Lock](/microsoft-edge/dev-guide/dom/pointer-lock) vient à la rescousse en nous permettant de raccorder les mouvements de la souris à la caméra. L’API Pointer Lock fait également disparaître la souris pour que le joueur soit mieux immergé dans le jeu. Une pression sur ÉCHAP, met fin à la connexion entre la caméra et la souris pour faire réapparaître la souris. L’ajout des fonctions `getPointerLock()` et `lockChange()` nous permettra d’atteindre cet objectif.
 
 La fonction `getPointerLock()` permet de détecter un clic de souris. Après le clic, notre jeu rendu (dans l’élément `container`) tente de prendre le contrôle de la souris. Nous avons également ajouté un détecteur d’événements pour détecter l’activation ou la désactivation du verrouillage par le joueur, qui appelle ensuite `lockChange()`. 
 
@@ -1084,7 +1084,6 @@ Revenez en haut de la page pour voir le [CodePen final](#introduction) !
 Maintenant que vous disposez d'une application UWP, vous pouvez la publier dans le Microsoft Store (à condition toutefois de l'avoir préalablement améliorée !). La procédure se décompose en plusieurs étapes.
 
 1.  Vous devez être [enregistré](https://developer.microsoft.com/store/register) en tant que développeur Windows.
-2.  Vous devez utiliser la [liste de vérification](https://docs.microsoft.com/windows/uwp/publish/app-submissions) de soumission d'applications.
-3.  L'application doit être soumise pour [certification](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process).
-Pour plus d’informations, voir [Publication de votre application UWP](https://docs.microsoft.com/windows/uwp/publish/).
-
+2.  Vous devez utiliser la [liste de vérification](../publish/app-submissions.md) de soumission d'applications.
+3.  L'application doit être soumise pour [certification](../publish/the-app-certification-process.md).
+Pour plus d’informations, voir [Publication de votre application UWP](../publish/index.md).

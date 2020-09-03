@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 14b6ab96ac5423d1811618c6a3c91ccf56645664
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: adcdb638a2ccfb9684676eb205592a25b24c8432
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74255127"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169963"
 ---
 # <a name="bind-hierarchical-data-and-create-a-masterdetails-view"></a>Lier des données hiérarchiques et créer un affichage maître/détails
 
@@ -19,9 +19,9 @@ ms.locfileid: "74255127"
 
 > **Remarque**  Consultez également l’[exemple Maître/Détails](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlMasterDetail).
 
-Vous pouvez effectuer un affichage maître/détails (également appelé affichage liste/détails) de données hiérarchiques sur plusieurs niveaux en liant les contrôles d’éléments aux instances [**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) qui sont liées dans une chaîne. Dans cette rubrique, nous utilisons l’[extension de balisage {x:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) lorsque cela est possible et l’[extension de balisage {Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension), plus souple (mais moins performante), si nécessaire.
+Vous pouvez effectuer un affichage maître/détails (également appelé affichage liste/détails) de données hiérarchiques sur plusieurs niveaux en liant les contrôles d’éléments aux instances [**CollectionViewSource**](/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) qui sont liées dans une chaîne. Dans cette rubrique, nous utilisons l’[extension de balisage {x:Bind}](../xaml-platform/x-bind-markup-extension.md) lorsque cela est possible et l’[extension de balisage {Binding}](../xaml-platform/binding-markup-extension.md), plus souple (mais moins performante), si nécessaire.
 
-Une structure commune aux applications de plateforme Windows universelle (UWP) est la navigation vers différentes pages de détails quand un utilisateur effectue une sélection dans une liste principale. Cette technique est utile quand vous souhaitez fournir une représentation visuelle complète de chaque élément à tous les niveaux d’une hiérarchie. Une autre option consiste à afficher plusieurs niveaux de données sur une seule page. Cette technique est utile si vous voulez afficher un petit nombre de listes simples, que l’utilisateur peut parcourir rapidement pour trouver l’élément qui l’intéresse. Cette rubrique explique comment implémenter cette interaction. Les instances [**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) assurent le suivi de la sélection actuelle à chaque niveau hiérarchique.
+Une structure commune aux applications de plateforme Windows universelle (UWP) est la navigation vers différentes pages de détails quand un utilisateur effectue une sélection dans une liste principale. Cette technique est utile quand vous souhaitez fournir une représentation visuelle complète de chaque élément à tous les niveaux d’une hiérarchie. Une autre option consiste à afficher plusieurs niveaux de données sur une seule page. Cette technique est utile si vous voulez afficher un petit nombre de listes simples, que l’utilisateur peut parcourir rapidement pour trouver l’élément qui l’intéresse. Cette rubrique explique comment implémenter cette interaction. Les instances [**CollectionViewSource**](/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) assurent le suivi de la sélection actuelle à chaque niveau hiérarchique.
 
 Nous allons créer un affichage d’une hiérarchie d’équipes sportives organisé en plusieurs listes correspondant aux ligues, aux divisions et aux équipes, et qui inclut un affichage Détails pour chaque équipe. Lorsque vous sélectionnez un élément dans une de ces listes, les affichages suivants sont automatiquement actualisés.
 
@@ -29,7 +29,7 @@ Nous allons créer un affichage d’une hiérarchie d’équipes sportives organ
 
 ## <a name="prerequisites"></a>Prérequis
 
-Dans cette rubrique, nous partons du principe que vous savez créer une application UWP de base. Pour obtenir des instructions pour la création de votre première application UWP, consultez [Créer votre première application UWP en C# ou Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/hh974581(v=win.10)).
+Dans cette rubrique, nous partons du principe que vous savez créer une application UWP de base. Pour obtenir des instructions pour la création de votre première application UWP, consultez [Créer votre première application UWP en C# ou Visual Basic](/previous-versions/windows/apps/hh974581(v=win.10)).
 
 ## <a name="create-the-project"></a>Créer le projet
 
@@ -130,7 +130,7 @@ namespace MasterDetailsBinding
 }
 ```
 
-Enfin, remplacez le contenu du fichier MainPage.xaml avec le balisage suivant, qui déclare trois instances [**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) et les lie dans une chaîne. Les contrôles suivants peuvent être liés à la classe **CollectionViewSource** appropriée, selon son niveau dans la hiérarchie.
+Enfin, remplacez le contenu du fichier MainPage.xaml avec le balisage suivant, qui déclare trois instances [**CollectionViewSource**](/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) et les lie dans une chaîne. Les contrôles suivants peuvent être liés à la classe **CollectionViewSource** appropriée, selon son niveau dans la hiérarchie.
 
 ```xml
 <Page
@@ -220,9 +220,8 @@ Enfin, remplacez le contenu du fichier MainPage.xaml avec le balisage suivant, q
 </Page>
 ```
 
-Notez qu’en effectuant une liaison directe à la classe [**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource), vous signifiez que vous souhaitez créer une liaison à l’élément actuel dans les liaisons où le chemin est introuvable au sein même de la collection. Il est inutile de spécifier la propriété **CurrentItem** en tant que chemin de la liaison, bien que vous puissiez le faire s’il existe la moindre ambiguïté. Par exemple, la classe [**ContentControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentControl) de l’affichage de l’équipe a sa propriété [**Content**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.content) liée à la classe `Teams`**CollectionViewSource**. Cependant, les contrôles de la classe [**DataTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate) sont liés aux propriétés de la classe `Team`, car la classe **CollectionViewSource** fournit automatiquement l’équipe actuellement sélectionnée à partir de la liste des équipes dès que nécessaire.
+Notez qu’en effectuant une liaison directe à la classe [**CollectionViewSource**](/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource), vous signifiez que vous souhaitez créer une liaison à l’élément actuel dans les liaisons où le chemin est introuvable au sein même de la collection. Il est inutile de spécifier la propriété **CurrentItem** en tant que chemin de la liaison, bien que vous puissiez le faire s’il existe la moindre ambiguïté. Par exemple, la classe [**ContentControl**](/uwp/api/Windows.UI.Xaml.Controls.ContentControl) de l’affichage de l’équipe a sa propriété [**Content**](/uwp/api/windows.ui.xaml.controls.contentcontrol.content) liée à la classe `Teams`**CollectionViewSource**. Cependant, les contrôles de la classe [**DataTemplate**](/uwp/api/Windows.UI.Xaml.DataTemplate) sont liés aux propriétés de la classe `Team`, car la classe **CollectionViewSource** fournit automatiquement l’équipe actuellement sélectionnée à partir de la liste des équipes dès que nécessaire.
 
  
 
  
-

@@ -8,18 +8,18 @@ ms.author: drewbat
 author: drewbatgit
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 7e2d69390ac9a0f564c99a94151dd967759477a3
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: e4cec3a0493bdea1c4e232e57cdd669ba19bc5ae
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493947"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168753"
 ---
 # <a name="templated-xaml-controls-for-uwp-and-winui-3-apps-with-cwinrt"></a>Contrôles XAML basés sur un modèle pour les applications UWP et WinUI 3 avec C++/WinRT
 
 Cet article vous guide dans la création d’un contrôle XAML basé sur un modèle pour WinUI 3 avec C++/WinRT. Les contrôles basés sur un modèle héritent de **Microsoft.UI.Xaml.Controls.Control**, et ont une structure visuelle et un comportement visuel qui peuvent être personnalisés à l’aide de modèles de contrôle XAML. Cet article décrit le même scénario que l’article [Contrôles XAML personnalisés (basés sur un modèle) avec C++/WinRT](/windows/uwp/cpp-and-winrt-apis/xaml-cust-ctrl) mais il a été adapté pour utiliser WinUI 3.
 
-Avant de suivre les étapes décrites dans cet article, vous devez vous assurer que votre environnement de développement est configuré pour créer des applications WinUI 3. Pour obtenir des informations sur la configuration, consultez [Bien démarrer avec WinUI 3 pour les applications de bureau](/windows/apps/winui/winui3/get-started-winui3-for-desktop).
+Avant de suivre les étapes décrites dans cet article, vous devez vous assurer que votre environnement de développement est configuré pour créer des applications WinUI 3. Pour obtenir des informations sur la configuration, consultez [Bien démarrer avec WinUI 3 pour les applications de bureau](./get-started-winui3-for-desktop.md).
 
 ## <a name="create-a-blank-app-bglabelcontrolapp"></a>Créer une application vide (BgLabelControlApp)
 

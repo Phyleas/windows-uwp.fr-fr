@@ -6,18 +6,18 @@ ms.date: 07/06/2020
 ms.topic: article
 keywords: windows 10, uwp, portail d’appareil
 ms.localizationpriority: medium
-ms.openlocfilehash: b806344fa7e0517caf4d04efaaa605371a200202
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: f66650291e2966d6a3a6ac2b5d794006382d2fbf
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493204"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170023"
 ---
 # <a name="write-a-custom-plugin-for-device-portal"></a>Écrire un plug-in personnalisé pour le portail d’appareil
 
 Découvrez comment écrire une application UWP qui utilise le Portail d'appareil Windows pour héberger une page web et fournir des informations de diagnostic.
 
-À compter de Windows 10 Creators Update (version 1703, build 15063), vous pouvez utiliser le Portail d’appareil pour héberger les interfaces de diagnostic de votre application. Cet article décrit les trois tâches nécessaires pour créer un DevicePortalProvider pour votre application : les changements du [manifeste du package d’application](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest), la configuration de la connexion de votre application au [service Portail d’appareil](/windows/uwp/debug-test-perf/device-portal) et la gestion d’une demande entrante.
+À compter de Windows 10 Creators Update (version 1703, build 15063), vous pouvez utiliser le Portail d’appareil pour héberger les interfaces de diagnostic de votre application. Cet article décrit les trois tâches nécessaires pour créer un DevicePortalProvider pour votre application : les changements du [manifeste du package d’application](/uwp/schemas/appxpackage/appx-package-manifest), la configuration de la connexion de votre application au [service Portail d’appareil](./device-portal.md) et la gestion d’une demande entrante.
 
 ## <a name="create-a-new-uwp-app-project"></a>Créer un projet d’application UWP
 
@@ -75,10 +75,10 @@ Cette approche requiert deux nouvelles fonctionnalités. que vous devrez égalem
 ```
 
 > [!NOTE]
-> La fonctionnalité « devicePortalProvider » est restreinte (« rescap »), ce qui signifie que vous devez obtenir une approbation préalable auprès du Windows Store avant de pouvoir y publier votre application. Toutefois, ceci ne vous empêche pas de tester votre application localement par le biais d’un chargement indépendant. Pour plus d’informations sur les fonctionnalités restreintes, consultez l’article [Déclarations des fonctionnalités d’application](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).
+> La fonctionnalité « devicePortalProvider » est restreinte (« rescap »), ce qui signifie que vous devez obtenir une approbation préalable auprès du Windows Store avant de pouvoir y publier votre application. Toutefois, ceci ne vous empêche pas de tester votre application localement par le biais d’un chargement indépendant. Pour plus d’informations sur les fonctionnalités restreintes, consultez l’article [Déclarations des fonctionnalités d’application](../packaging/app-capability-declarations.md).
 
 ## <a name="set-up-your-background-task-and-winrt-component"></a>Configurer votre tâche en arrière-plan et le composant WinRT
-Pour la configuration de la connexion du Portail d'appareil, votre application doit raccorder une connexion de service d’application à partir du service Device Portal à l’instance Device Portal en cours d’exécution au sein de votre application. Pour effectuer cette opération, ajoutez un nouveau composant WinRT à votre application avec une classe qui implémente [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask).
+Pour la configuration de la connexion du Portail d'appareil, votre application doit raccorder une connexion de service d’application à partir du service Device Portal à l’instance Device Portal en cours d’exécution au sein de votre application. Pour effectuer cette opération, ajoutez un nouveau composant WinRT à votre application avec une classe qui implémente [**IBackgroundTask**](/uwp/api/windows.applicationmodel.background.ibackgroundtask).
 
 ```csharp
 namespace MySampleProvider {
@@ -88,7 +88,7 @@ namespace MySampleProvider {
     }
 ```
 
-Assurez-vous que son nom correspond à l’espace de noms et au nom de classe configurés par AppService EntryPoint (« MySampleProvider.SampleProvider »). Lorsque vous adressez votre première requête à votre fournisseur du Portail d'appareil, le Portail d'appareil remise (stash) la requête, lance la tâche en arrière-plan de votre application, appelle sa méthode **Run** et transmet une interface [**IBackgroundTaskInstance**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance). Votre application l’utilise ensuite pour configurer une instance [**DevicePortalConnection**](https://docs.microsoft.com/uwp/api/windows.system.diagnostics.deviceportal.deviceportalconnection).
+Assurez-vous que son nom correspond à l’espace de noms et au nom de classe configurés par AppService EntryPoint (« MySampleProvider.SampleProvider »). Lorsque vous adressez votre première requête à votre fournisseur du Portail d'appareil, le Portail d'appareil remise (stash) la requête, lance la tâche en arrière-plan de votre application, appelle sa méthode **Run** et transmet une interface [**IBackgroundTaskInstance**](/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance). Votre application l’utilise ensuite pour configurer une instance [**DevicePortalConnection**](/uwp/api/windows.system.diagnostics.deviceportal.deviceportalconnection).
 
 ```csharp
 // Implement background task handler with a DevicePortalConnection
@@ -108,10 +108,10 @@ public void Run(IBackgroundTaskInstance taskInstance) {
 }
 ```
 
-Deux événements doivent être gérés par l’application pour terminer la boucle de traitement de la demande : **Fermé** à chaque fois que le service du portail d’appareil s’arrête et [**RequestReceived**](https://docs.microsoft.com/uwp/api/windows.system.diagnostics.deviceportal.deviceportalconnectionrequestreceivedeventargs), qui regroupe les requêtes HTTP entrantes et fournit la fonctionnalité principale du fournisseur du portail d’appareil. 
+Deux événements doivent être gérés par l’application pour terminer la boucle de traitement de la demande : **Fermé** à chaque fois que le service du portail d’appareil s’arrête et [**RequestReceived**](/uwp/api/windows.system.diagnostics.deviceportal.deviceportalconnectionrequestreceivedeventargs), qui regroupe les requêtes HTTP entrantes et fournit la fonctionnalité principale du fournisseur du portail d’appareil. 
 
 ## <a name="handle-the-requestreceived-event"></a>Gérer l’événement RequestReceived
-L’événement **RequestReceived** se déclenche chaque fois qu’une requête HTTP est effectuée sur l’itinéraire du gestionnaire spécifié de votre plug-in. La boucle de gestion des requêtes pour les fournisseurs du Portail d'appareil est comparable à celle de NodeJS Express : les objets de requête et de réponse sont fournis en même temps que l’événement, et le gestionnaire répond en remplissant l’objet de réponse. Dans les fournisseurs du Portail d'appareil, l’événement **RequestReceived** et ses gestionnaires utilisent les objets [**Windows.Web.Http.HttpRequestMessage**](https://docs.microsoft.com/uwp/api/windows.web.http.httprequestmessage) et [**HttpResponseMessage**](https://docs.microsoft.com/uwp/api/windows.web.http.httpresponsemessage).   
+L’événement **RequestReceived** se déclenche chaque fois qu’une requête HTTP est effectuée sur l’itinéraire du gestionnaire spécifié de votre plug-in. La boucle de gestion des requêtes pour les fournisseurs du Portail d'appareil est comparable à celle de NodeJS Express : les objets de requête et de réponse sont fournis en même temps que l’événement, et le gestionnaire répond en remplissant l’objet de réponse. Dans les fournisseurs du Portail d'appareil, l’événement **RequestReceived** et ses gestionnaires utilisent les objets [**Windows.Web.Http.HttpRequestMessage**](/uwp/api/windows.web.http.httprequestmessage) et [**HttpResponseMessage**](/uwp/api/windows.web.http.httpresponsemessage).   
 
 ```csharp
 // Sample RequestReceived echo handler: respond with an HTML page including the query and some additional process information. 
@@ -136,7 +136,7 @@ private void DevicePortalConnection_RequestReceived(DevicePortalConnection sende
 }
 ```
 
-Dans cet exemple de gestionnaire de requêtes, nous commençons par extraire les objets de requête et de réponse du paramètre *args*, puis nous créons une chaîne contenant l’URL de la requête et une mise en forme HTML supplémentaire. Cette chaîne est ajoutée à l’objet Response sous la forme d’une instance [**HttpStringContent**](https://docs.microsoft.com/uwp/api/windows.web.http.httpstringcontent). D’autres classes [**IHttpContent**](https://docs.microsoft.com/uwp/api/windows.web.http.ihttpcontent), telles que celles pour « String » et « Buffer », sont également autorisées.
+Dans cet exemple de gestionnaire de requêtes, nous commençons par extraire les objets de requête et de réponse du paramètre *args*, puis nous créons une chaîne contenant l’URL de la requête et une mise en forme HTML supplémentaire. Cette chaîne est ajoutée à l’objet Response sous la forme d’une instance [**HttpStringContent**](/uwp/api/windows.web.http.httpstringcontent). D’autres classes [**IHttpContent**](/uwp/api/windows.web.http.ihttpcontent), telles que celles pour « String » et « Buffer », sont également autorisées.
 
 La réponse est ensuite définie en tant que réponse HTTP et reçoit un code d’état 200 (OK). Elle devrait s’afficher comme prévu dans le navigateur qui a effectué l’appel d’origine. Notez que lorsque le gestionnaire d’événements **RequestReceived** répond, le message de réponse est automatiquement renvoyé à l’agent utilisateur : aucune méthode « send » supplémentaire n’est nécessaire.
 
@@ -176,7 +176,7 @@ Le contenu statique traité par un fournisseur du Portail d'appareil est traité
 
 ![sortie du plug-in du Portail d'appareil](images/device-portal/plugin-output.png)
  
-Plus important encore, l’utilisation des méthodes HttpPost/DeleteExpect200 sur webbRest assurera automatiquement la [gestion des attaques de falsification de requête intersites (CSRF, Cross Site Request Forgery)](https://docs.microsoft.com/aspnet/web-api/overview/security/preventing-cross-site-request-forgery-csrf-attacks) à votre intention, ce qui permet à votre page web d’appeler les API REST de modification d’état.  
+Plus important encore, l’utilisation des méthodes HttpPost/DeleteExpect200 sur webbRest assurera automatiquement la [gestion des attaques de falsification de requête intersites (CSRF, Cross Site Request Forgery)](/aspnet/web-api/overview/security/preventing-cross-site-request-forgery-csrf-attacks) à votre intention, ce qui permet à votre page web d’appeler les API REST de modification d’état.  
 
 > [!NOTE] 
 > Le contenu statique fourni dans le Portail d'appareil n’est pas protégé contre les changements importants. Bien que les API ne soient pas susceptibles de changer fréquemment, il peut arriver qu’elles le soient, notamment dans les fichiers *common.js* et *controls.js*, que votre fournisseur ne doit pas utiliser. 
@@ -197,6 +197,4 @@ Pour déboguer votre tâche en arrière-plan, vous devez modifier la façon dont
 
 ## <a name="related-topics"></a>Rubriques connexes
 * [Vue d’ensemble du Portail d'appareil Windows](device-portal.md)
-* [Créer et consommer un service d’application](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)
-
-
+* [Créer et consommer un service d’application](../launch-resume/how-to-create-and-consume-an-app-service.md)

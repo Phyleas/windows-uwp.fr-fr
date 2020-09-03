@@ -12,12 +12,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: b68b5bc5fc6042d7abeae6944c351af178b70874
-ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
+ms.openlocfilehash: 2bca2777145dd513cd19bfe1b002b5ec81d78c62
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86998016"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169733"
 ---
 # <a name="password-box"></a>Zone de mot de passe
 
@@ -29,9 +29,9 @@ Par défaut, la zone de mot de passe permet à l’utilisateur d’afficher son 
 
 |  |  |
 | - | - |
-| ![Logo WinUI](images/winui-logo-64x64.png) | La bibliothèque d’interface utilisateur Windows version 2.2 ou ultérieure inclut pour ce contrôle un nouveau modèle qui utilise des angles arrondis. Pour plus d’informations, consultez [Rayons des angles](/windows/uwp/design/style/rounded-corner). WinUI est un package NuGet qui contient de nouveaux contrôles et des fonctionnalités d’interface utilisateur pour les applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![Logo WinUI](images/winui-logo-64x64.png) | La bibliothèque d’interface utilisateur Windows version 2.2 ou ultérieure inclut pour ce contrôle un nouveau modèle qui utilise des angles arrondis. Pour plus d’informations, consultez [Rayons des angles](../style/rounded-corner.md). WinUI est un package NuGet qui contient de nouveaux contrôles et des fonctionnalités d’interface utilisateur pour les applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/). |
 
-> **API de plateforme** : [classe PasswordBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox), [propriété Password](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.password), [propriété PasswordChar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchar), [propriété PasswordRevealMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode), [événement PasswordChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchanged)
+> **API de plateforme** : [classe PasswordBox](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox), [propriété Password](/uwp/api/windows.ui.xaml.controls.passwordbox.password), [propriété PasswordChar](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchar), [propriété PasswordRevealMode](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode), [événement PasswordChanged](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchanged)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
@@ -71,7 +71,7 @@ Le bouton d’« affichage » sur la droite permet de jeter un coup d’œil au 
 
 ## <a name="create-a-password-box"></a>Créer une zone de mot de passe
 
-Utilisez la propriété [Password](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.password) pour obtenir ou définir le contenu de PasswordBox. Vous pouvez effectuer cette opération dans le gestionnaire pour que l’événement [PasswordChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchanged) procède à la validation lorsque l’utilisateur entre le mot de passe. Vous pouvez aussi utiliser un autre événement, comme un bouton [Click](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click), pour effectuer la validation dès que l’utilisateur a fini de saisir du texte.
+Utilisez la propriété [Password](/uwp/api/windows.ui.xaml.controls.passwordbox.password) pour obtenir ou définir le contenu de PasswordBox. Vous pouvez effectuer cette opération dans le gestionnaire pour que l’événement [PasswordChanged](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchanged) procède à la validation lorsque l’utilisateur entre le mot de passe. Vous pouvez aussi utiliser un autre événement, comme un bouton [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click), pour effectuer la validation dès que l’utilisateur a fini de saisir du texte.
 
 Vous trouverez ci-dessous le code XAML d’un contrôle de zone de mot de passe montrant l’apparence par défaut de PasswordBox. Lorsque l’utilisateur saisit un mot de passe, vous vérifiez s’il s’agit de la valeur littérale « Password ». Si tel est le cas, vous affichez un message à l’attention de l’utilisateur.
 
@@ -103,7 +103,7 @@ Résultat obtenu lorsque ce code est exécuté et que l’utilisateur saisit «�
 
 ### <a name="password-character"></a>Caractère de mot de passe
 
-Vous pouvez modifier le caractère utilisé pour masquer le mot de passe en définissant la propriété [PasswordChar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchar). Ici, la puce par défaut est remplacée par un astérisque.
+Vous pouvez modifier le caractère utilisé pour masquer le mot de passe en définissant la propriété [PasswordChar](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchar). Ici, la puce par défaut est remplacée par un astérisque.
 
 ```xaml
 <PasswordBox x:Name="passwordBox" Width="200" PasswordChar="*"/>
@@ -115,7 +115,7 @@ Le résultat se présente ainsi :
 
 ### <a name="headers-and-placeholder-text"></a>En-têtes et texte d’espace réservé
 
-Vous pouvez utiliser les propriétés [Header](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.header) et [PlaceholderText](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.placeholdertext) pour fournir du contexte à l’élément PasswordBox. Cela est particulièrement utile lorsque vous avez plusieurs zones, comme dans un formulaire, pour modifier un mot de passe.
+Vous pouvez utiliser les propriétés [Header](/uwp/api/windows.ui.xaml.controls.passwordbox.header) et [PlaceholderText](/uwp/api/windows.ui.xaml.controls.passwordbox.placeholdertext) pour fournir du contexte à l’élément PasswordBox. Cela est particulièrement utile lorsque vous avez plusieurs zones, comme dans un formulaire, pour modifier un mot de passe.
 
 ```xaml
 <PasswordBox x:Name="passwordBox" Width="200" Header="Password" PlaceholderText="Enter your password"/>
@@ -125,7 +125,7 @@ Vous pouvez utiliser les propriétés [Header](https://docs.microsoft.com/uwp/ap
 
 ### <a name="maximum-length"></a>Longueur maximale
 
-Spécifiez le nombre maximal de caractères que l’utilisateur peut saisir en définissant la propriété [MaxLength](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.maxlength). Il n’existe aucune propriété permettant de spécifier une longueur minimale. Toutefois vous pouvez vérifier la longueur de mot de passe et effectuer toute autre validation, dans le code de votre application.
+Spécifiez le nombre maximal de caractères que l’utilisateur peut saisir en définissant la propriété [MaxLength](/uwp/api/windows.ui.xaml.controls.passwordbox.maxlength). Il n’existe aucune propriété permettant de spécifier une longueur minimale. Toutefois vous pouvez vérifier la longueur de mot de passe et effectuer toute autre validation, dans le code de votre application.
 
 ## <a name="password-reveal-mode"></a>Mode d’affichage du mot de passe
 
@@ -137,17 +137,17 @@ PasswordBox dispose d’un bouton intégré sur lequel l’utilisateur peut appu
 
 Par défaut, le bouton d’affichage du mot de passe (ou « bouton d’aperçu ») s’affiche. L’utilisateur doit rester appuyé sur le bouton pour afficher le mot de passe, afin de maintenir un niveau élevé de sécurité.
 
-La valeur de la propriété [PasswordRevealMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode) n’est pas le seul facteur déterminant si un bouton d’affichage du mot de passe est visible à l’utilisateur. Parmi les autres facteurs, figurent ceux indiquant si le contrôle est affiché au-dessus d’une largeur minimale, si le focus porte sur PasswordBox et si le champ de texte contient au moins un caractère. Le bouton d’affichage du mot de passe apparaît uniquement lorsque le focus porte sur PasswordBox pour la première fois et si un caractère est saisi. Si PasswordBox perd le focus, puis le reprend, le bouton d’affichage n’apparaît plus, sauf si le mot de passe est effacé et que la saisie de caractères recommence.
+La valeur de la propriété [PasswordRevealMode](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode) n’est pas le seul facteur déterminant si un bouton d’affichage du mot de passe est visible à l’utilisateur. Parmi les autres facteurs, figurent ceux indiquant si le contrôle est affiché au-dessus d’une largeur minimale, si le focus porte sur PasswordBox et si le champ de texte contient au moins un caractère. Le bouton d’affichage du mot de passe apparaît uniquement lorsque le focus porte sur PasswordBox pour la première fois et si un caractère est saisi. Si PasswordBox perd le focus, puis le reprend, le bouton d’affichage n’apparaît plus, sauf si le mot de passe est effacé et que la saisie de caractères recommence.
 
 > **Attention**&nbsp;&nbsp;Dans les versions antérieures à Windows 10, le bouton d’affichage du mot de passe ne s’affichait pas par défaut. Si la sécurité de votre application nécessite que le mot de passe soit toujours masqué, définissez PasswordRevealMode sur Hidden.
 
 ### <a name="hidden-and-visible-modes"></a>Modes Masqué et Visible
 
-Les autres valeurs d’énumération [PasswordRevealMode](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordRevealMode), **Hidden** et **Visible**, masquent le bouton d’affichage du mot de passe et vous permettent de gérer par programme si le mot de passe est masqué.
+Les autres valeurs d’énumération [PasswordRevealMode](/uwp/api/Windows.UI.Xaml.Controls.PasswordRevealMode), **Hidden** et **Visible**, masquent le bouton d’affichage du mot de passe et vous permettent de gérer par programme si le mot de passe est masqué.
 
-Pour toujours masquer le mot de passe, définissez PasswordRevealMode sur Hidden. Sauf si vous avez besoin que le mot de passe soit toujours masqué, vous pouvez fournir une interface utilisateur personnalisée pour permettre à l’utilisateur de faire basculer PasswordRevealMode de la valeur Hidden à Visible. Par exemple, vous pouvez utiliser une case à cocher pour choisir d’afficher ou de masquer le mot de passe, comme illustré dans l’exemple suivant. Vous pouvez également utiliser d’autres contrôles, tels que [ToggleButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton), pour permettre à l’utilisateur de basculer entre les modes.
+Pour toujours masquer le mot de passe, définissez PasswordRevealMode sur Hidden. Sauf si vous avez besoin que le mot de passe soit toujours masqué, vous pouvez fournir une interface utilisateur personnalisée pour permettre à l’utilisateur de faire basculer PasswordRevealMode de la valeur Hidden à Visible. Par exemple, vous pouvez utiliser une case à cocher pour choisir d’afficher ou de masquer le mot de passe, comme illustré dans l’exemple suivant. Vous pouvez également utiliser d’autres contrôles, tels que [ToggleButton](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton), pour permettre à l’utilisateur de basculer entre les modes.
 
-Cet exemple montre comment utiliser un élément [CheckBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox) pour permettre à un utilisateur de changer le mode d’affichage d’un élément PasswordBox.
+Cet exemple montre comment utiliser un élément [CheckBox](/uwp/api/Windows.UI.Xaml.Controls.CheckBox) pour permettre à un utilisateur de changer le mode d’affichage d’un élément PasswordBox.
 
 ```xaml
 <StackPanel Width="200">
@@ -181,7 +181,7 @@ Cet élément PasswordBox se présente comme suit :
 
 Pour faciliter la saisie de données par les utilisateurs au moyen du clavier tactile, ou panneau de saisie, définissez l’étendue des entrées du contrôle de texte de sorte qu’elle corresponde au type de données attendu de la part de l’utilisateur. PasswordBox prend en charge uniquement les valeurs d’étendue des entrées **Password** et **NumericPin**. Toute autre valeur est ignorée.
 
-Pour en savoir plus sur l’utilisation des étendues des entrées, voir [Utiliser l’étendue des entrées pour modifier le clavier tactile](https://docs.microsoft.com/windows/uwp/design/input/use-input-scope-to-change-the-touch-keyboard).
+Pour en savoir plus sur l’utilisation des étendues des entrées, voir [Utiliser l’étendue des entrées pour modifier le clavier tactile](../input/use-input-scope-to-change-the-touch-keyboard.md).
 
 ## <a name="recommendations"></a>Recommandations
 
@@ -201,8 +201,8 @@ Pour en savoir plus sur l’utilisation des étendues des entrées, voir [Utilis
 [Contrôles de texte](text-controls.md)
 
 - [Recommandations sur la vérification orthographique](text-controls.md)
-- [Ajout de la fonctionnalité de recherche](https://docs.microsoft.com/previous-versions/windows/apps/hh465231(v=win.10))
+- [Ajout de la fonctionnalité de recherche](/previous-versions/windows/apps/hh465231(v=win.10))
 - [Recommandations sur la saisie de texte](text-controls.md)
-- [TextBox, classe](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
-- [PasswordBox Windows.UI.Xaml.Controls, classe](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
-- [String.Length, propriété](https://docs.microsoft.com/dotnet/api/system.string.length)
+- [TextBox, classe](/uwp/api/Windows.UI.Xaml.Controls.TextBox)
+- [PasswordBox Windows.UI.Xaml.Controls, classe](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
+- [String.Length, propriété](/dotnet/api/system.string.length)

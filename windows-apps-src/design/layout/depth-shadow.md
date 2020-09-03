@@ -9,12 +9,12 @@ ms.custom: 19H1
 keywords: windows 10, uwp
 pm-contact: chigy
 ms.localizationpriority: medium
-ms.openlocfilehash: 2655abd69f0f02efada9de5bab22e463c86b5d7e
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: fc2adb295df97cf1af49608d15c135b9f56b4594
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970184"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165563"
 ---
 # <a name="z-depth-and-shadow"></a>Profondeur Z et ombre
 
@@ -54,7 +54,7 @@ Voici comment ThemeShadow a été implémenté sur un MenuFlyout. MenuFlyout pro
 Les contrôles communs suivants utilisent automatiquement ThemeShadow pour projeter des ombres à partir d’une profondeur de 32px, sauf indication contraire :
 
 - [Menu contextuel](../controls-and-patterns/menus.md), [barre de commandes](../controls-and-patterns/app-bars.md), [menu volant de barre de commandes](../controls-and-patterns/command-bar-flyout.md), [MenuBar](../controls-and-patterns/menus.md#create-a-menu-bar)
-- [Boîtes de dialogue et menus volants](../controls-and-patterns/dialogs.md) (boîte de dialogue à 64px)
+- [Boîtes de dialogue et menus volants](../controls-and-patterns/dialogs-and-flyouts/index.md) (boîte de dialogue à 64px)
 - [NavigationView](../controls-and-patterns/navigationview.md)
 - [ComboBox](../controls-and-patterns/combo-box.md), [DropDownButton, SplitButton, ToggleSplitButton](../controls-and-patterns/buttons.md)
 - [TeachingTip](../controls-and-patterns/dialogs-and-flyouts/teaching-tip.md)
@@ -96,9 +96,9 @@ PopupRectangle.Translation += new Vector3(0, 0, 32);
 
 ### <a name="disabling-default-themeshadow-on-custom-flyout-controls"></a>Désactivation de ThemeShadow par défaut sur des contrôles Flyout personnalisés
 
-Les contrôles basés sur [Flyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.flyout), [DatePickerFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.datepickerflyout), [MenuFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.menuflyout) ou [TimePickerFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.timepickerflyout) utilisent automatiquement ThemeShadow pour projeter une ombre.
+Les contrôles basés sur [Flyout](/uwp/api/Windows.UI.Xaml.Controls.flyout), [DatePickerFlyout](/uwp/api/windows.ui.xaml.controls.datepickerflyout), [MenuFlyout](/uwp/api/Windows.UI.Xaml.Controls.menuflyout) ou [TimePickerFlyout](/uwp/api/windows.ui.xaml.controls.timepickerflyout) utilisent automatiquement ThemeShadow pour projeter une ombre.
 
-Si l’ombre par défaut ne semble pas correcte sur le contenu de votre contrôle, vous pouvez la désactiver en affectant à la propriété [IsDefaultShadowEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flyoutpresenter.isdefaultshadowenabled) la valeur `false` sur le FlyoutPresenter associé :
+Si l’ombre par défaut ne semble pas correcte sur le contenu de votre contrôle, vous pouvez la désactiver en affectant à la propriété [IsDefaultShadowEnabled](/uwp/api/windows.ui.xaml.controls.flyoutpresenter.isdefaultshadowenabled) la valeur `false` sur le FlyoutPresenter associé :
 
 ```xaml
 <Flyout>
@@ -154,7 +154,7 @@ Rectangle2.Translation += new Vector3(120, 0, 32);
 
 ## <a name="drop-shadow"></a>Ombre portée
 
-DropShadow ne répond pas automatiquement à son environnement et n’utilise aucune source de lumière. Pour obtenir des exemples d’implémentation, consultez la [classe DropShadow](https://docs.microsoft.com/uwp/api/windows.ui.composition.dropshadow).
+DropShadow ne répond pas automatiquement à son environnement et n’utilise aucune source de lumière. Pour obtenir des exemples d’implémentation, consultez la [classe DropShadow](/uwp/api/windows.ui.composition.dropshadow).
 
 ## <a name="which-shadow-should-i-use"></a>Quelle ombre dois-je utiliser ?
 

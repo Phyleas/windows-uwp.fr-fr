@@ -7,12 +7,12 @@ ms.date: 03/13/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ee88e32ed0ce0fd193fe79e48814a11f494d062
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 9f36035bea91f39d60f44ca9e16c768eb5d75e78
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970214"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165633"
 ---
 # <a name="attached-layouts"></a>Dispositions attachées
 
@@ -22,12 +22,12 @@ Dans cette rubrique, nous aborderons ce qu’implique la création d’une dispo
 
 | **Obtenir la bibliothèque d’interface utilisateur Windows** |
 | - |
-| Ce contrôle est inclus dans la bibliothèque d’interface utilisateur Windows, package NuGet qui contient les nouveaux contrôles et fonctionnalités d’interface utilisateur pour les applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez [Vue d’ensemble de la bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| Ce contrôle est inclus dans la bibliothèque d’interface utilisateur Windows, package NuGet qui contient les nouveaux contrôles et fonctionnalités d’interface utilisateur pour les applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez [Vue d’ensemble de la bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/). |
 
 > **API importantes** :
 
 > * [ScrollViewer](/uwp/api/windows.ui.xaml.controls.scrollviewer)
-> * [ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater)
+> * [ItemsRepeater](../controls-and-patterns/items-repeater.md)
 > * [Disposition](/uwp/api/microsoft.ui.xaml.controls.layout)
 >     * [NonVirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout)
 >     * [VirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout)
@@ -44,7 +44,7 @@ Pour effectuer une disposition, il faut répondre à deux questions pour chaque 
 
 2. Quelle sera la ***position*** de cet élément ?
 
-Le système de disposition XAML, qui répond à ces questions, est brièvement abordé dans le cadre de la discussion sur les [Panneaux personnalisés](/windows/uwp/design/layout/custom-panels-overview).
+Le système de disposition XAML, qui répond à ces questions, est brièvement abordé dans le cadre de la discussion sur les [Panneaux personnalisés](./custom-panels-overview.md).
 
 ### <a name="containers-and-context"></a>Conteneurs et contexte
 
@@ -55,7 +55,7 @@ D’un point de vue conceptuel, le [Panel](/uwp/api/windows.ui.xaml.controls.pan
 
 C’est pour cette raison que le Panel en XAML a souvent été synonyme de disposition, alors que, techniquement parlant, il va au-delà.
 
-[ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater) se comporte également comme Panel, à la différence près qu’il n’expose pas de propriété Children permettant d’ajouter ou de supprimer programmatiquement des enfants UIElement.  La durée de vie de ses enfants est en effet gérée automatiquement par le framework pour correspondre à une collection d’éléments de données.  Bien qu’il ne soit pas dérivé de Panel, il se comporte et est traité par le framework comme un Panel.
+[ItemsRepeater](../controls-and-patterns/items-repeater.md) se comporte également comme Panel, à la différence près qu’il n’expose pas de propriété Children permettant d’ajouter ou de supprimer programmatiquement des enfants UIElement.  La durée de vie de ses enfants est en effet gérée automatiquement par le framework pour correspondre à une collection d’éléments de données.  Bien qu’il ne soit pas dérivé de Panel, il se comporte et est traité par le framework comme un Panel.
 
 > [!NOTE]
 > [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel) est un conteneur, dérivé de Panel, qui délègue sa logique à l’objet [Layout](/uwp/api/microsoft.ui.xaml.controls.layoutpanel.layout) attaché.  LayoutPanel, actuellement en *préversion*, n’est disponible que dans les *préversions* du package WinUI.
@@ -128,7 +128,7 @@ Tout d’abord, déterminez si la disposition que vous allez créer doit prendre
 **Quelques points à garder à l’esprit…**
 
 1. Les dispositions sans virtualisation sont plus faciles à créer. Si le nombre d’éléments doit rester toujours faible, il est recommandé de créer une disposition sans virtualisation.
-2. La plateforme fournit un jeu de dispositions attachées qui fonctionnent avec [ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater#change-the-layout-of-items) et [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel) pour couvrir les besoins courants.  Familiarisez-vous avec elles avant de décider de définir une disposition personnalisée.
+2. La plateforme fournit un jeu de dispositions attachées qui fonctionnent avec [ItemsRepeater](../controls-and-patterns/items-repeater.md#change-the-layout-of-items) et [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel) pour couvrir les besoins courants.  Familiarisez-vous avec elles avant de décider de définir une disposition personnalisée.
 3. Les dispositions avec virtualisation présentent toujours un coût, une complexité et une charge supplémentaires en matière de processeur et de mémoire par rapport à une disposition sans virtualisation.  En règle générale, si les enfants que devra gérer la disposition ont de bonnes chances de tenir dans une zone faisant trois fois la taille de la fenêtre d’affichage, une disposition avec virtualisation n’apportera vraisemblablement pas grand-chose de plus. Cette taille trois fois supérieure, traitée en détail plus loin dans ce document, est due à la nature asynchrone du défilement sur Windows et à son impact sur la virtualisation.
 
 > [!TIP]
@@ -145,7 +145,7 @@ Le type [Layout](/uwp/api/microsoft.ui.xaml.controls.layout) de base présente d
 
 ## <a name="non-virtualizing-layout"></a>Disposition sans virtualisation
 
-L’approche permettant de créer une disposition sans virtualisation devrait sembler familière à tous ceux qui ont créé un [Panel personnalisé](/windows/uwp/design/layout/custom-panels-overview).  Les mêmes concepts s’appliquent.  La principale différence réside dans le fait qu’un [NonVirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayoutcontext) est utilisé pour accéder à la collection [Children](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayoutcontext.children) et que la disposition peut choisir de stocker l’état.
+L’approche permettant de créer une disposition sans virtualisation devrait sembler familière à tous ceux qui ont créé un [Panel personnalisé](./custom-panels-overview.md).  Les mêmes concepts s’appliquent.  La principale différence réside dans le fait qu’un [NonVirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayoutcontext) est utilisé pour accéder à la collection [Children](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayoutcontext.children) et que la disposition peut choisir de stocker l’état.
 
 1. Dérivez du type de base [NonVirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout) (au lieu de Panel).
 2. *(Facultatif)* Définissez des propriétés de dépendance qui, en cas de modification, invalideront la disposition.
@@ -246,7 +246,7 @@ Le défilement sur Windows se produit de façon asynchrone sur le thread d’int
 
 ![Rectangle de réalisation](images/xaml-attached-layout-realizationrect.png)
 
-La création d’éléments étant coûteuse, les conteneurs avec virtualisation (par exemple, [ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater)) fournissent initialement à la disposition attachée un [RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect) correspondant à la fenêtre d’affichage. Pendant la durée d’inactivité, le conteneur peut augmenter la mémoire tampon de contenu préparé en effectuant des appels répétés à la disposition à l’aide d’un rectangle de réalisation de plus en plus grand. Ce comportement représente une optimisation des performances dont l’objectif est de trouver un juste équilibre entre vitesse de démarrage et qualité de l’expérience de défilement. La taille maximale de la mémoire tampon générée par ItemsRepeater est contrôlée par ses propriétés [VerticalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength) et [HorizontalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength).
+La création d’éléments étant coûteuse, les conteneurs avec virtualisation (par exemple, [ItemsRepeater](../controls-and-patterns/items-repeater.md)) fournissent initialement à la disposition attachée un [RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect) correspondant à la fenêtre d’affichage. Pendant la durée d’inactivité, le conteneur peut augmenter la mémoire tampon de contenu préparé en effectuant des appels répétés à la disposition à l’aide d’un rectangle de réalisation de plus en plus grand. Ce comportement représente une optimisation des performances dont l’objectif est de trouver un juste équilibre entre vitesse de démarrage et qualité de l’expérience de défilement. La taille maximale de la mémoire tampon générée par ItemsRepeater est contrôlée par ses propriétés [VerticalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength) et [HorizontalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength).
 
 **Réutilisation d’éléments (recyclage)**
 

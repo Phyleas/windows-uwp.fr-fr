@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 59397f12ec66bfa2864d830eaf80a9dcaaf06592
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 51786f907da5ddf0b4a52b8c9bea61a8756c78d9
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74257881"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89163503"
 ---
 # <a name="planning-for-performance"></a>Planification des performances
 
@@ -82,15 +82,15 @@ Vous pouvez désormais utiliser vos objectifs de performances pour déterminer l
 **Interface utilisateur**
 
 -   Optimisez le temps d’analyse et de chargement ainsi que l’efficacité de la mémoire de chaque page de l'interface utilisateur de votre application (surtout la page d’accueil) en [optimisant votre balisage XAML](optimize-xaml-loading.md). Autrement dit, différez le chargement de l’interface utilisateur et du code jusqu’à ce que cela soit nécessaire.
--   Pour [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) et [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView), faites en sorte que tous les éléments aient la même taille et utilisez autant de [techniques d'optimisation des commandes ListView et GridView](optimize-gridview-and-listview.md) que possible.
+-   Pour [**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView) et [**GridView**](/uwp/api/Windows.UI.Xaml.Controls.GridView), faites en sorte que tous les éléments aient la même taille et utilisez autant de [techniques d'optimisation des commandes ListView et GridView](optimize-gridview-and-listview.md) que possible.
 -   Déclarez l’interface utilisateur sous forme de balisage, pouvant être chargé et réutilisé sous forme de segments par l’infrastructure, au lieu de vouloir à tout prix la construire dans le code.
 -   Différez la création des éléments de l’interface utilisateur jusqu’à ce que l’utilisateur en ait besoin. Consultez l’attribut [**x:Load**](../xaml-platform/x-load-attribute.md).
--   Préférez les transitions et les animations thématiques aux animations dans une table de montage. Pour plus d’informations, voir [Vue d’ensemble des animations](https://docs.microsoft.com/windows/uwp/graphics/animations-overview). Rappelez-vous que les animations dans une table de montage nécessitent que l’affichage soit en permanence mis à jour et que le processeur et les transformations graphiques restent actifs. Pour préserver la batterie, ne lancez pas d’animations si l’utilisateur n’interagit pas avec l’application.
--   Les images doivent être chargées à une taille appropriée à la vue dans laquelle vous les présentez, à l’aide de la méthode [**GetThumbnailAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getthumbnailasync).
+-   Préférez les transitions et les animations thématiques aux animations dans une table de montage. Pour plus d’informations, voir [Vue d’ensemble des animations](../design/motion/xaml-animation.md). Rappelez-vous que les animations dans une table de montage nécessitent que l’affichage soit en permanence mis à jour et que le processeur et les transformations graphiques restent actifs. Pour préserver la batterie, ne lancez pas d’animations si l’utilisateur n’interagit pas avec l’application.
+-   Les images doivent être chargées à une taille appropriée à la vue dans laquelle vous les présentez, à l’aide de la méthode [**GetThumbnailAsync**](/uwp/api/windows.storage.storagefile.getthumbnailasync).
 
 **Processeur, mémoire et alimentation**
 
--   Planifiez des tâches de priorité inférieure à exécuter sur les threads de priorité inférieure et/ou les programmes principaux. Voir [Programmation asynchrone](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-universal-windows-platform-apps), la propriété [**Dispatcher**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.dispatcher) et la classe [**CoreDispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher).
+-   Planifiez des tâches de priorité inférieure à exécuter sur les threads de priorité inférieure et/ou les programmes principaux. Voir [Programmation asynchrone](../threading-async/asynchronous-programming-universal-windows-platform-apps.md), la propriété [**Dispatcher**](/uwp/api/windows.ui.xaml.window.dispatcher) et la classe [**CoreDispatcher**](/uwp/api/Windows.UI.Core.CoreDispatcher).
 -   Minimisez l’encombrement mémoire de votre application en mettant les ressources coûteuses (le contenu multimédia, par exemple) en suspens.
 -   Réduisez la plage de travail de votre code.
 -   Évitez les fuites de mémoire en désinscrivant les gestionnaires d’événements et en déréférençant les éléments d’interface utilisateur quand cela est possible.
@@ -98,29 +98,29 @@ Vous pouvez désormais utiliser vos objectifs de performances pour déterminer l
 
 **Accès aux données**
 
--   Dans la mesure du possible, préchargez le contenu. Pour une prérécupération automatique, voir la classe [**ContentPrefetcher**](https://docs.microsoft.com/uwp/api/Windows.Networking.BackgroundTransfer.ContentPrefetcher). Pour une prérécupération manuelle, reportez-vous à l’espace de noms [**Windows.ApplicationModel.Background**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background) et la classe [**MaintenanceTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.MaintenanceTrigger).
--   Dans la mesure du possible, placez en cache le contenu coûteux d’accès. Consultez les propriétés [**LocalFolder**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localfolder) et [**LocalSettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localsettings).
+-   Dans la mesure du possible, préchargez le contenu. Pour une prérécupération automatique, voir la classe [**ContentPrefetcher**](/uwp/api/Windows.Networking.BackgroundTransfer.ContentPrefetcher). Pour une prérécupération manuelle, reportez-vous à l’espace de noms [**Windows.ApplicationModel.Background**](/uwp/api/Windows.ApplicationModel.Background) et la classe [**MaintenanceTrigger**](/uwp/api/Windows.ApplicationModel.Background.MaintenanceTrigger).
+-   Dans la mesure du possible, placez en cache le contenu coûteux d’accès. Consultez les propriétés [**LocalFolder**](/uwp/api/windows.storage.applicationdata.localfolder) et [**LocalSettings**](/uwp/api/windows.storage.applicationdata.localsettings).
 -   En cas d’échecs de mise en cache, affichez aussi rapidement que possible une interface utilisateur d’espace réservé indiquant que l’application est toujours en train de charger le contenu. Passez de l’espace réservé au contenu en direct d’une façon qui ne soit pas déplaisante pour l’utilisateur. Par exemple, ne modifiez pas la position du contenu sous le doigt de l’utilisateur ou le pointeur de la souris quand l’application charge le contenu en direct.
 
 **Lancer et reprendre l’application**
 
--   Retardez l’écran de démarrage de l’application et ne l’étendez que si cela est nécessaire. Pour plus d’informations, voir [Création d’une expérience de lancement d’application rapide et fluide](https://blogs.msdn.com/b/windowsappdev/archive/2012/05/21/creating-a-fast-and-fluid-app-launch-experience.aspx) et [Afficher un écran de démarrage plus longtemps](https://docs.microsoft.com/windows/uwp/launch-resume/create-a-customized-splash-screen).
+-   Retardez l’écran de démarrage de l’application et ne l’étendez que si cela est nécessaire. Pour plus d’informations, voir [Création d’une expérience de lancement d’application rapide et fluide](https://blogs.msdn.com/b/windowsappdev/archive/2012/05/21/creating-a-fast-and-fluid-app-launch-experience.aspx) et [Afficher un écran de démarrage plus longtemps](../launch-resume/create-a-customized-splash-screen.md).
 -   Désactivez les animations qui se produisent immédiatement après la disparition de l’écran de démarrage, car celles-ci entraînent uniquement une perception de retard du moment du démarrage de l’application.
 
 **Interface utilisateur adaptative et orientation**
 
--   Utilisez la classe [**VisualStateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateManager).
+-   Utilisez la classe [**VisualStateManager**](/uwp/api/Windows.UI.Xaml.VisualStateManager).
 -   Effectuez uniquement les tâches requises immédiatement, en différant les tâches d’application intensives pour plus tard. Votre application dispose de 200 à 800 millisecondes pour effectuer les tâches avant que l’interface utilisateur de votre application n’apparaisse rognée pour l’utilisateur.
 
 Une fois la conception liée aux performances en place, vous pouvez commencer à coder votre application.
 
 ## <a name="instrument-for-performance"></a>Instrumenter des applications performantes
 
-Lorsque vous développez du code, ajoutez du code qui enregistre les messages et les événements à différents moments lors de l’exécution de votre application. Ensuite, lors du test de votre application, vous pouvez utiliser des outils de profilage tels que l’Enregistreur de performance Windows et Windows Performance Analyzer (inclus dans le [Windows Performance Toolkit](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh162945(v=win.10))) pour créer et afficher un rapport sur les performances de votre application. Dans ce rapport, vous pouvez rechercher ces messages et événements qui vous permettent une meilleure analyse des résultats du rapport.
+Lorsque vous développez du code, ajoutez du code qui enregistre les messages et les événements à différents moments lors de l’exécution de votre application. Ensuite, lors du test de votre application, vous pouvez utiliser des outils de profilage tels que l’Enregistreur de performance Windows et Windows Performance Analyzer (inclus dans le [Windows Performance Toolkit](/previous-versions/windows/it-pro/windows-8.1-and-8/hh162945(v=win.10))) pour créer et afficher un rapport sur les performances de votre application. Dans ce rapport, vous pouvez rechercher ces messages et événements qui vous permettent une meilleure analyse des résultats du rapport.
 
-La plateforme Windows universelle (UWP) fournit des API d’enregistrement, basées sur le [Suivi des événements pour Windows (ETW)](https://docs.microsoft.com/windows/desktop/ETW/event-tracing-portal), qui proposent un enregistrement détaillé et une solution de suivi complète. Ces API, qui font partie de l’espace de noms [**Windows.Foundation.Diagnostics**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Diagnostics), comprennent les classes [**FileLoggingSession**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Diagnostics.FileLoggingSession), [**LoggingActivity**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Diagnostics.LoggingActivity), [**LoggingChannel**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Diagnostics.LoggingChannel) et [**LoggingSession**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Diagnostics.LoggingSession).
+La plateforme Windows universelle (UWP) fournit des API d’enregistrement, basées sur le [Suivi des événements pour Windows (ETW)](/windows/desktop/ETW/event-tracing-portal), qui proposent un enregistrement détaillé et une solution de suivi complète. Ces API, qui font partie de l’espace de noms [**Windows.Foundation.Diagnostics**](/uwp/api/Windows.Foundation.Diagnostics), comprennent les classes [**FileLoggingSession**](/uwp/api/Windows.Foundation.Diagnostics.FileLoggingSession), [**LoggingActivity**](/uwp/api/Windows.Foundation.Diagnostics.LoggingActivity), [**LoggingChannel**](/uwp/api/Windows.Foundation.Diagnostics.LoggingChannel) et [**LoggingSession**](/uwp/api/Windows.Foundation.Diagnostics.LoggingSession).
 
-Pour enregistrer un message dans le rapport à un point spécifique de l’exécution de l’application, créez un objet **LoggingChannel**, puis appelez la méthode [**LogMessage**](https://docs.microsoft.com/uwp/api/windows.foundation.diagnostics.loggingchannel.logmessage) de l’objet, ainsi.
+Pour enregistrer un message dans le rapport à un point spécifique de l’exécution de l’application, créez un objet **LoggingChannel**, puis appelez la méthode [**LogMessage**](/uwp/api/windows.foundation.diagnostics.loggingchannel.logmessage) de l’objet, ainsi.
 
 ```csharp
 // using Windows.Foundation.Diagnostics;
@@ -133,7 +133,7 @@ myLoggingChannel.LogMessage(LoggingLevel.Information, "Here' s my logged message
 // ...
 ```
 
-Pour enregistrer les événements de démarrage et d’arrêt dans le rapport pendant une durée donnée pendant l’exécution de l’application, créez un objet **LoggingActivity**, puis appelez le constructeur [**LoggingActivity**](https://docs.microsoft.com/uwp/api/windows.foundation.diagnostics.loggingactivity.loggingactivity) de l’objet, ainsi.
+Pour enregistrer les événements de démarrage et d’arrêt dans le rapport pendant une durée donnée pendant l’exécution de l’application, créez un objet **LoggingActivity**, puis appelez le constructeur [**LoggingActivity**](/uwp/api/windows.foundation.diagnostics.loggingactivity.loggingactivity) de l’objet, ainsi.
 
 ```csharp
 // using Windows.Foundation.Diagnostics;
@@ -171,13 +171,13 @@ Utilisez les techniques et les outils suivants pour tester les performances de l
     -   Exécutez l’application plusieurs fois pour mieux éliminer les variables de test aléatoires et garantir des mesures cohérentes.
 -   Effectuez des tests en condition de faible alimentation électrique. Il se peut que l’appareil de vos utilisateurs ne bénéficie pas d’une alimentation aussi puissante que votre ordinateur de développement. Windows a été conçu pour fonctionner de manière optimale avec des appareils à faible consommation, tels que des appareils mobiles. Vous devez vous assurer que les applications qui s’exécutent sur la plateforme fonctionnent correctement sur ces périphériques. Pour bien définir vos objectifs, gardez à l’esprit qu’un appareil à faible consommation d’énergie est environ 4 fois plus lent qu’un ordinateur de bureau.
 -   Utilisez plusieurs outils, tels que Microsoft Visual Studio et Windows Performance Analyzer pour mesurer les performances de l’application. Visual Studio est conçu pour fournir des analyses sur l’application, par exemple les liaisons de code source. Windows Performance Analyzer est conçu pour fournir des analyses sur le système, par exemple des informations sur le système, des informations sur les événements de manipulation tactile, des informations sur les entrées/sorties disque et le coût de l’unité centrale graphique. Ces deux outils permettent de capturer et d’exporter les résultats, et peuvent rouvrir des suivis post-mortem et partagés.
--   Avant de soumettre votre application sur le Store pour certification, incorporez dans vos plans de test les tests liés aux performances décrits dans la section « Tests de performances » des [tests du Kit de certification des applications Windows](windows-app-certification-kit-tests.md) et dans la section « Performances et stabilité » des [cas de test des applications UWP](https://docs.microsoft.com/previous-versions/windows/apps/dn275879(v=win.10)).
+-   Avant de soumettre votre application sur le Store pour certification, incorporez dans vos plans de test les tests liés aux performances décrits dans la section « Tests de performances » des [tests du Kit de certification des applications Windows](windows-app-certification-kit-tests.md) et dans la section « Performances et stabilité » des [cas de test des applications UWP](/previous-versions/windows/apps/dn275879(v=win.10)).
 
 Pour en savoir plus, consultez ces ressources et outils de profilage.
 
--   [Windows Performance Analyzer](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh448170(v=win.10))
--   [Windows Performance Toolkit](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh162945(v=win.10))
--   [Analysez les performances à l’aide des outils de diagnostic de Visual Studio](https://docs.microsoft.com/visualstudio/profiling/profiling-tools?view=vs-2015)
+-   [Windows Performance Analyzer](/previous-versions/windows/it-pro/windows-8.1-and-8/hh448170(v=win.10))
+-   [Windows Performance Toolkit](/previous-versions/windows/it-pro/windows-8.1-and-8/hh162945(v=win.10))
+-   [Analysez les performances à l’aide des outils de diagnostic de Visual Studio](/visualstudio/profiling/profiling-tools?view=vs-2015)
 -   La session //build/ [Performances XAML](https://channel9.msdn.com/Events/Build/2015/3-698)
 -   La session //build/ [Nouveaux outils XAML dans Visual Studio 2015](https://channel9.msdn.com/Events/Build/2015/2-697)
 

@@ -9,23 +9,23 @@ pm-contact: chphilip
 design-contact: ''
 dev-contact: stevenki
 ms.localizationpriority: medium
-ms.openlocfilehash: 098c46499e65c34e3699b09e137ea94c40590ef7
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 6afed2347bb3944c8ea5bd9b43e83d429973dc15
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968005"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169163"
 ---
 # <a name="reveal-focus"></a>Révéler focus
 
 ![Image Hero](images/header-reveal-focus.svg)
 
-Révéler focus est un effet visuel pour les [expériences à 3 mètres](/windows/uwp/design/devices/designing-for-tv), comme Xbox One et les écrans de télévision. Cet effet anime la bordure des éléments susceptibles d’être activés, comme les boutons, quand l’utilisateur déplace le focus du clavier ou du boîtier de commande sur ces derniers. Il est désactivé par défaut, mais il est facile de l’activer. 
+Révéler focus est un effet visuel pour les [expériences à 3 mètres](../devices/designing-for-tv.md), comme Xbox One et les écrans de télévision. Cet effet anime la bordure des éléments susceptibles d’être activés, comme les boutons, quand l’utilisateur déplace le focus du clavier ou du boîtier de commande sur ces derniers. Il est désactivé par défaut, mais il est facile de l’activer. 
 
-(Pour plus d’informations sur l’effet Révéler, un effet visuel qui met en évidence les éléments interactifs, consulter l’[article sur l’effet Révéler](/windows/uwp/design/style/reveal).)
+(Pour plus d’informations sur l’effet Révéler, un effet visuel qui met en évidence les éléments interactifs, consulter l’[article sur l’effet Révéler](./reveal.md).)
 
 
-> **API importantes** : [propriété Application.FocusVisualKind](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.FocusVisualKind), [énumération FocusVisualKind](https://docs.microsoft.com/uwp/api/windows.ui.xaml.focusvisualkind), [propriété Control.UseSystemFocusVisuals](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals)
+> **API importantes** : [propriété Application.FocusVisualKind](/uwp/api/windows.ui.xaml.application.FocusVisualKind), [énumération FocusVisualKind](/uwp/api/windows.ui.xaml.focusvisualkind), [propriété Control.UseSystemFocusVisuals](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals)
 
 ## <a name="how-it-works"></a>Fonctionnement
 L’effet Révéler focus attire l’attention sur les éléments où se trouve le focus en ajoutant une lumière animée autour de la bordure de l’élément :
@@ -70,7 +70,7 @@ Comme vous pouvez le constater, il est relativement facile d’activer Révéler
 
 ## <a name="customizing-reveal-focus"></a>Personnaliser l’effet Révéler focus
 
-Vous pouvez personnaliser l’effet Révéler focus en modifiant les propriétés visuelles du focus pour chaque contrôle : [FocusVisualPrimaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness), [FocusVisualSecondaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness), [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) et [FocusVisualSecondaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush). Ces propriétés vous permettent de personnaliser la couleur et l’épaisseur du rectangle de focus. (Ce sont les mêmes propriétés que vous utilisez pour la création de [visuels de focus à haute visibilité](https://docs.microsoft.com/windows/uwp/design/input/guidelines-for-visualfeedback#high-visibility-focus-visuals).) 
+Vous pouvez personnaliser l’effet Révéler focus en modifiant les propriétés visuelles du focus pour chaque contrôle : [FocusVisualPrimaryThickness](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness), [FocusVisualSecondaryThickness](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness), [FocusVisualPrimaryBrush](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) et [FocusVisualSecondaryBrush](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush). Ces propriétés vous permettent de personnaliser la couleur et l’épaisseur du rectangle de focus. (Ce sont les mêmes propriétés que vous utilisez pour la création de [visuels de focus à haute visibilité](../input/guidelines-for-visualfeedback.md#high-visibility-focus-visuals).) 
 
 Mais avant de commencer la personnalisation, il est utile de connaître un peu plus les composants de l’effet Révéler focus.
 
@@ -86,8 +86,8 @@ Pour modifier l’épaisseur des types de bordures d’un contrôle, utilisez ce
 
 | Type de bordure | Propriété |
 | --- | --- |
-| Principale, Lumière   | [FocusVisualPrimaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness)<br/> (Le fait de modifier la bordure principale modifie de façon proportionnelle l’épaisseur de la lumière.)   |
-| Secondaire   | [FocusVisualSecondaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness)   |
+| Principale, Lumière   | [FocusVisualPrimaryThickness](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness)<br/> (Le fait de modifier la bordure principale modifie de façon proportionnelle l’épaisseur de la lumière.)   |
+| Secondaire   | [FocusVisualSecondaryThickness](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness)   |
 
 
 Cet exemple modifie l’épaisseur de la bordure du visuel du focus d’un bouton :
@@ -98,7 +98,7 @@ Cet exemple modifie l’épaisseur de la bordure du visuel du focus d’un bouto
 
 ## <a name="customize-the-margin"></a>Personnaliser la marge
 
-La marge est l’espace entre les limites de l’élément visuel du contrôle et le début de la bordure secondaire des visuels du focus. La marge par défaut est à 1 px des limites du contrôle. Vous pouvez modifier cette marge pour chaque contrôle, en modifiant la propriété [FocusVisualMargin](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualMargin) :
+La marge est l’espace entre les limites de l’élément visuel du contrôle et le début de la bordure secondaire des visuels du focus. La marge par défaut est à 1 px des limites du contrôle. Vous pouvez modifier cette marge pour chaque contrôle, en modifiant la propriété [FocusVisualMargin](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualMargin) :
 
 ```xaml
 <Button FocusVisualPrimaryThickness="2" FocusVisualSecondaryThickness="1" FocusVisualMargin="-3"/>
@@ -108,12 +108,12 @@ Une marge négative éloigne la bordure du centre du contrôle, tandis qu’une 
 
 ## <a name="customize-the-color"></a>Personnaliser la couleur
 
-Pour modifier la couleur du visuel Révéler focus, utilisez les propriétés [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) et [FocusVisualSecondaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush).
+Pour modifier la couleur du visuel Révéler focus, utilisez les propriétés [FocusVisualPrimaryBrush](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) et [FocusVisualSecondaryBrush](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush).
 
 | Propriété | Ressource par défaut | Valeur de la ressource par défaut |
 | ---- | ---- | --- | 
-| [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) | SystemControlRevealFocusVisualBrush  | SystemAccentColor |
-| [FocusVisualSecondaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush)  | SystemControlFocusVisualSecondaryBrush  | SystemAltMediumColor |
+| [FocusVisualPrimaryBrush](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) | SystemControlRevealFocusVisualBrush  | SystemAccentColor |
+| [FocusVisualSecondaryBrush](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush)  | SystemControlFocusVisualSecondaryBrush  | SystemAltMediumColor |
 
 (La propriété FocusPrimaryBrush a seulement pour valeur par défaut les ressources **SystemControlRevealFocusVisualBrush** quand **FocusVisualKind** est défini sur **Reveal**. Dans le cas contraire, elle utilise **SystemControlFocusVisualPrimaryBrush**.)
 
@@ -145,12 +145,12 @@ Pour changer la couleur de tous les visuels du focus dans l’ensemble de votre 
 </Application.Resources>
 ```
 
-Pour plus d’informations sur la modification de la couleur du visuel du focus, consultez [Personnalisation des couleurs et des visuels du focus](https://docs.microsoft.com/windows/uwp/design/input/guidelines-for-visualfeedback#color-branding--customizing).
+Pour plus d’informations sur la modification de la couleur du visuel du focus, consultez [Personnalisation des couleurs et des visuels du focus](../input/guidelines-for-visualfeedback.md#color-branding--customizing).
 
 
 ## <a name="show-just-the-glow"></a>Afficher uniquement la lumière
 
-Si vous voulez utiliser seulement la lumière sans le visuel du focus principal ou secondaire, définissez simplement la propriété [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) du contrôle sur `Transparent` et [FocusVisualSecondaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness) sur `0`. Dans ce cas, la lumière adopte la couleur de l’arrière-plan du contrôle pour offrir un aspect sans bordure. Vous pouvez modifier l’épaisseur de la lumière avec [FocusVisualPrimaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness).
+Si vous voulez utiliser seulement la lumière sans le visuel du focus principal ou secondaire, définissez simplement la propriété [FocusVisualPrimaryBrush](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) du contrôle sur `Transparent` et [FocusVisualSecondaryThickness](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness) sur `0`. Dans ce cas, la lumière adopte la couleur de l’arrière-plan du contrôle pour offrir un aspect sans bordure. Vous pouvez modifier l’épaisseur de la lumière avec [FocusVisualPrimaryThickness](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness).
 
 ```xaml
 
@@ -172,10 +172,10 @@ Révéler focus est un composant du système Fluent Design qui ajoute des effets
 
 ## <a name="related-articles"></a>Articles connexes
 
-- [Effet Révéler](https://docs.microsoft.com/windows/uwp/design/style/reveal)
-- [Conception pour Xbox et TV](/windows/uwp/design/devices/designing-for-tv)
-- [Interactions entre le boîtier de commande et la télécommande](https://docs.microsoft.com/windows/uwp/design/input/gamepad-and-remote-interactions)
+- [Effet Révéler](./reveal.md)
+- [Conception pour Xbox et TV](../devices/designing-for-tv.md)
+- [Interactions entre le boîtier de commande et la télécommande](../input/gamepad-and-remote-interactions.md)
 - [Exemples de visuels de focus](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
-- [Effets de composition](https://docs.microsoft.com/windows/uwp/graphics/composition-effects)
+- [Effets de composition](../../composition/composition-effects.md)
 - [Science in the System: Fluent Design and Depth](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
 - [Science in the System: Fluent Design and Light](https://medium.com/microsoft-design/the-science-in-the-system-fluent-design-and-light-94a17e0b3a4f)

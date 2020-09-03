@@ -11,12 +11,12 @@ dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: b1f3881081b22fd98e9956f3c2fe45922531677b
-ms.sourcegitcommit: 48e047a581fcfcc9a4084d65a78b89f2c01cf4f3
+ms.openlocfilehash: 7f71a11c76bc6318c9000a9468c7bd9574e0c5d0
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85448409"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170033"
 ---
 # <a name="navigation-view"></a>Affichage de navigation
 
@@ -152,7 +152,7 @@ Le volet NavigationView peut contenir :
 - Objets [NavigationViewItemSeparator](/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator). Séparateurs pour regrouper des éléments de navigation. Définissez la propriété [Opacité](/uwp/api/windows.ui.xaml.uielement.opacity) sur 0 pour afficher le séparateur comme un espace.
 - Objets [NavigationViewItemHeader](/uwp/api/windows.ui.xaml.controls.navigationviewitemheader). En-têtes pour l’étiquetage de groupes d’éléments.
 - Un contrôle [AutoSuggestBox](auto-suggest-box.md) facultatif permettant d'effectuer des recherches au niveau de l’application. Attribuez le contrôle à la propriété [NavigationView.AutoSuggestBox](/uwp/api/windows.ui.xaml.controls.navigationview.autosuggestbox).
-- Un point d’entrée facultatif pour les [paramètres d’application](../app-settings/app-settings-and-data.md). Pour masquer l’élément relatif aux paramètres, définissez la propriété [IsSettingsVisible](/uwp/api/windows.ui.xaml.controls.navigationview.IsSettingsVisible) sur **false**.
+- Un point d’entrée facultatif pour les [paramètres d’application](../app-settings/guidelines-for-app-settings.md). Pour masquer l’élément relatif aux paramètres, définissez la propriété [IsSettingsVisible](/uwp/api/windows.ui.xaml.controls.navigationview.IsSettingsVisible) sur **false**.
 
 Le volet gauche contient également les éléments suivants :
 
@@ -639,7 +639,7 @@ private void On_Navigated(object sender, NavigationEventArgs e)
 ```
 
 > [!NOTE]
-> Pour la version [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/index) de cet exemple de code, commencez par créer un projet basé sur le modèle de projet **Application vide ( C++/WinRT)** , puis ajoutez le code de la liste dans les fichiers de code source indiqués. Pour utiliser le code source exactement comme indiqué dans la liste, nommez votre nouveau projet *NavigationViewCppWinRT*
+> Pour la version [C++/WinRT](../../cpp-and-winrt-apis/index.md) de cet exemple de code, commencez par créer un projet basé sur le modèle de projet **Application vide ( C++/WinRT)** , puis ajoutez le code de la liste dans les fichiers de code source indiqués. Pour utiliser le code source exactement comme indiqué dans la liste, nommez votre nouveau projet *NavigationViewCppWinRT*
 
 ```cppwinrt
 // MainPage.idl
@@ -945,7 +945,7 @@ namespace winrt::NavigationViewCppWinRT::implementation
 
 Le code C# et C++/WinRT montré ci-dessus est conçu pour vous permettre d’utiliser le même balisage XAML pour les deux versions. Toutefois, il existe une autre façon d’implémenter la version C++/WinRT décrite dans cette section, que vous préférerez peut-être.
 
-Vous trouverez ci-dessous une autre version du gestionnaire **NavView_ItemInvoked**. La technique de cette version du gestionnaire consiste d'abord à stocker (dans la balise de [**NavigationViewItem**](/uwp/api/windows.ui.xaml.controls.navigationviewitem)) le nom de type complet de la page vers laquelle vous voulez naviguer. Dans le gestionnaire, vous effectuez une conversion unboxing de cette valeur, la convertissez en un objet [**Windows::UI::Xaml::Interop::TypeName**](/uwp/api/windows.ui.xaml.interop.typename) et l’utilisez pour accéder à la page de destination. Il n’est pas nécessaire de mapper la variable nommée `_pages` que vous voyez dans l’exemple ci-dessus, et vous pourrez créer des tests unitaires confirmant que les valeurs à l’intérieur de vos balises sont d’un type valide. Voir aussi [Conversions boxing et unboxing de valeurs scalaires vers IInspectable avec C++/WinRT](/windows/uwp/cpp-and-winrt-apis/boxing).
+Vous trouverez ci-dessous une autre version du gestionnaire **NavView_ItemInvoked**. La technique de cette version du gestionnaire consiste d'abord à stocker (dans la balise de [**NavigationViewItem**](/uwp/api/windows.ui.xaml.controls.navigationviewitem)) le nom de type complet de la page vers laquelle vous voulez naviguer. Dans le gestionnaire, vous effectuez une conversion unboxing de cette valeur, la convertissez en un objet [**Windows::UI::Xaml::Interop::TypeName**](/uwp/api/windows.ui.xaml.interop.typename) et l’utilisez pour accéder à la page de destination. Il n’est pas nécessaire de mapper la variable nommée `_pages` que vous voyez dans l’exemple ci-dessus, et vous pourrez créer des tests unitaires confirmant que les valeurs à l’intérieur de vos balises sont d’un type valide. Voir aussi [Conversions boxing et unboxing de valeurs scalaires vers IInspectable avec C++/WinRT](../../cpp-and-winrt-apis/boxing.md).
 
 ```cppwinrt
 void MainPage::NavView_ItemInvoked(
@@ -1575,7 +1575,7 @@ MainPage::MainPage()
 
 ### <a name="keyboarding-within-hierarchical-navigationview"></a>Utilisation du clavier avec un NavigationView hiérarchique
 
-Les utilisateurs peuvent déplacer le focus dans la vue de navigation à l’aide du [clavier](/windows/uwp/design/input/keyboard-interactions). Les touches de direction exposent la « navigation interne » dans le volet et suivent les interactions fournies dans l’[arborescence](/windows/uwp/design/controls-and-patterns/tree-view). Les actions des touches changent quand vous naviguez dans le NavigationView ou dans son menu volant, qui s’affiche dans les modes Top and LeftCompact de HierarchicalNavigationView. Voici les actions spécifiques que chaque touche peut effectuer dans un NavigationView hiérarchique :
+Les utilisateurs peuvent déplacer le focus dans la vue de navigation à l’aide du [clavier](../input/keyboard-interactions.md). Les touches de direction exposent la « navigation interne » dans le volet et suivent les interactions fournies dans l’[arborescence](./tree-view.md). Les actions des touches changent quand vous naviguez dans le NavigationView ou dans son menu volant, qui s’affiche dans les modes Top and LeftCompact de HierarchicalNavigationView. Voici les actions spécifiques que chaque touche peut effectuer dans un NavigationView hiérarchique :
 
 | Clé      |      En mode Left      |  En mode Top | Dans le menu volant  |
 |----------|------------------------|--------------|------------|
@@ -1659,7 +1659,7 @@ Cet exemple montre comment remplacer les ressources de thème dans App.xaml. Lor
 
 > La propriété `IsTitleBarAutoPaddingEnabled` nécessite la [bibliothèque d’IU Windows](/uwp/toolkits/winui/) 2.2 ou version ultérieure.
 
-Certaines applications choisissent de [personnaliser la barre de titre de leur fenêtre](/windows/uwp/design/shell/title-bar), en étendant éventuellement leur contenu dans la zone de barre de titre. Quand NavigationView est l’élément racine dans les applications qui étendent dans la barre de titre  **en utilisant l’API [ExtendViewIntoTitleBar](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.extendviewintotitlebar)** ,le contrôle ajuste automatiquement la position de ses éléments interactifs pour éviter le chevauchement avec la [zone pouvant être glissée](/windows/uwp/design/shell/title-bar#draggable-regions).
+Certaines applications choisissent de [personnaliser la barre de titre de leur fenêtre](../shell/title-bar.md), en étendant éventuellement leur contenu dans la zone de barre de titre. Quand NavigationView est l’élément racine dans les applications qui étendent dans la barre de titre  **en utilisant l’API [ExtendViewIntoTitleBar](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.extendviewintotitlebar)** ,le contrôle ajuste automatiquement la position de ses éléments interactifs pour éviter le chevauchement avec la [zone pouvant être glissée](../shell/title-bar.md#draggable-regions).
 
 ![Application qui s’étend dans la barre de titre](images/navigation-view-with-titlebar-padding.png)
 
