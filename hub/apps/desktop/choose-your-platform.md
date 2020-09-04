@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 keywords: développement d’applications de bureau Win32 pour Windows
-ms.openlocfilehash: 778c15bc511404fad9cf5713876f89c7fef56165
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: d4415bc703acf0b94f6f8a6fe8aab053620336c6
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493004"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168903"
 ---
 # <a name="choose-your-app-platform"></a>Choisir votre plateforme d’application
 
@@ -51,12 +51,12 @@ WPF est la plateforme établie pour les applications Windows managées. Elle off
 
 Pour plus d’informations sur WPF, consultez les articles suivants :
 
-* [Bien démarrer (WPF)](https://docs.microsoft.com/dotnet/framework/wpf/getting-started/)
+* [Bien démarrer (WPF)](/dotnet/framework/wpf/getting-started/)
 * [Modèles de projet](visual-studio-templates.md#net-templates)
 * [Créer votre première application (.NET Core)](/visualstudio/get-started/csharp/tutorial-wpf/)
 * [Créer votre première application (.NET Framework)](/dotnet/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application/)
 * [Migrer des applications WPF vers .NET Core](/dotnet/desktop-wpf/migration/convert-project-from-net-framework/)
-* [Informations de référence sur les API (.NET)](https://docs.microsoft.com/dotnet/api/index)
+* [Informations de référence sur les API (.NET)](/dotnet/api/index)
 * [Exemples](https://github.com/Microsoft/WPF-Samples)
 
 ## <a name="windows-forms"></a>Windows Forms
@@ -65,11 +65,11 @@ Windows Forms est la plateforme d’origine pour les applications Windows manag�
 
 Pour plus d’informations sur Windows Forms, consultez les articles suivants :
 
-* [Bien démarrer avec Windows Forms](https://docs.microsoft.com/dotnet/framework/winforms/getting-started-with-windows-forms)
+* [Bien démarrer avec Windows Forms](/dotnet/framework/winforms/getting-started-with-windows-forms)
 * [Modèles de projet](visual-studio-templates.md#net-templates)
 * [Créer votre première application Windows Forms](/dotnet/framework/winforms/creating-a-new-windows-form)
 * [Tutoriel : Créer une visionneuse d’images](/visualstudio/ide/tutorial-1-create-a-picture-viewer?view=vs-2019)
-* [Informations de référence sur les API (.NET)](https://docs.microsoft.com/dotnet/api/index)
+* [Informations de référence sur les API (.NET)](/dotnet/api/index)
 * [Amélioration des applications Windows Forms](/dotnet/framework/winforms/advanced/)
 
 ## <a name="win32"></a>Win32
@@ -125,8 +125,12 @@ Le tableau suivant compare en détail les caractéristiques de Windows Forms, de
 
 ### <a name="progressive-web-apps-pwas"></a>Applications web progressives (PWA)
 
-Les PWA permettent aux développeurs d’empaqueter le code de leur site web pour pouvoir l’installer et l’exécuter comme une application sur des PC Windows 10. Pour plus d’informations, consultez [Applications web progressives](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/get-started).
+Les PWA permettent aux développeurs d’empaqueter le code de leur site web pour pouvoir l’installer et l’exécuter comme une application sur des PC Windows 10. Pour plus d’informations, consultez [Applications web progressives](/microsoft-edge/progressive-web-apps/get-started).
 
 ### <a name="xamarin"></a>Xamarin
 
 Utilisez Xamarin pour créer des applications multiplateformes pour Windows 10 pouvant s’exécuter également sur iOS et Android. Pour plus d’informations, consultez [Xamarin](https://docs.microsoft.com/xamarin/xamarin-forms/get-started/index).
+
+### <a name="uno-platform"></a>Plateforme Uno
+
+La plateforme Uno permet au code Windows UWP (C# et XAML) de s’exécuter sur iOS, Android et WebAssembly. Elle fournit des définitions d’API complètes pour UWP dans [Windows 10 2004 (19041)](/windows/uwp/whats-new/windows-10-build-19041), ainsi que l’implémentation de certaines parties de l’API UWP, comme [Windows.UI.Xaml](/uwp/api/windows.ui.xaml.documents?view=winrt-19041), pour permettre aux applications UWP de s’exécuter sur ces plateformes. Pour plus d’informations, consultez la [documentation relative à la plateforme Uno](https://platform.uno/docs/articles/intro.html).

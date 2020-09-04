@@ -6,24 +6,24 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 3293e91e-6888-4cc3-bad3-61e5a7a7ab4e
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c03475c0c4007508a18c17645dbe99eeb7d6cb0
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 6ad06288e389812fdcb03848dca7ce9b881621df
+ms.sourcegitcommit: efa5f793607481dcae24cd1b886886a549e8d6e5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75681980"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89411983"
 ---
 # <a name="version-adaptive-code"></a>Code adaptatif de version
 
-Vous pouvez considérer l’écriture de code adaptatif de la même façon que vous envisagez la [création d’une interface utilisateur adaptative](https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml). Vous pouvez concevoir une interface utilisateur de base qui s’exécute sur l’écran le plus petit, puis déplacer ou ajouter des éléments lorsque vous détectez un écran plus grand pendant l’exécution de votre application. Avec le code adaptatif, vous écrivez votre code de base pour qu’il s’exécute sur la version du système d’exploitation minimale, et vous pouvez ajouter des fonctionnalités choisies lorsque vous détectez une version supérieure pour laquelle la nouvelle fonctionnalité est disponible.
+Vous pouvez considérer l’écriture de code adaptatif de la même façon que vous envisagez la [création d’une interface utilisateur adaptative](../design/layout/layouts-with-xaml.md). Vous pouvez concevoir une interface utilisateur de base qui s’exécute sur l’écran le plus petit, puis déplacer ou ajouter des éléments lorsque vous détectez un écran plus grand pendant l’exécution de votre application. Avec le code adaptatif, vous écrivez votre code de base pour qu’il s’exécute sur la version du système d’exploitation minimale, et vous pouvez ajouter des fonctionnalités choisies lorsque vous détectez une version supérieure pour laquelle la nouvelle fonctionnalité est disponible.
 
 Pour obtenir des informations générales importantes sur ApiInformation, les contrats API et la configuration de Visual Studio, voir [Applications adaptatives de version](version-adaptive-apps.md).
 
 ### <a name="runtime-api-checks"></a>Vérification des API à l’exécution
 
-Vous utilisez la classe [Windows.Foundation.Metadata.ApiInformation](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation) dans une condition à l’intérieur de votre code pour tester la présence de l’API que vous voulez appeler. Cette condition est évaluée à chaque exécution de votre application, mais sa valeur est **true** uniquement sur les appareils sur lesquels l’API est présente et donc disponible pour un appel. Cela vous permet d’écrire du code adaptatif de version afin de créer des applications utilisant des API disponibles uniquement sur certaines versions de système d’exploitation.
+Vous utilisez la classe [Windows.Foundation.Metadata.ApiInformation](/uwp/api/windows.foundation.metadata.apiinformation) dans une condition à l’intérieur de votre code pour tester la présence de l’API que vous voulez appeler. Cette condition est évaluée à chaque exécution de votre application, mais sa valeur est **true** uniquement sur les appareils sur lesquels l’API est présente et donc disponible pour un appel. Cela vous permet d’écrire du code adaptatif de version afin de créer des applications utilisant des API disponibles uniquement sur certaines versions de système d’exploitation.
 
-Nous allons examiner ici des exemples spécifiques de ciblage des nouvelles fonctionnalités dans Windows Insider Preview. Pour obtenir une vue d’ensemble de l’utilisation d’**ApiInformation**, voir [Vue d’ensemble des familles d’appareils](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview#writing-code) et le billet de blog [Détection dynamique des fonctionnalités avec les contrats API](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/).
+Nous allons examiner ici des exemples spécifiques de ciblage des nouvelles fonctionnalités dans Windows Insider Preview. Pour obtenir une vision globale de l’utilisation d’**ApiInformation**, consultez [Programmation avec les kits SDK d’extension](/uwp/extension-sdks/device-families-overview), ainsi que le billet de blog [Dynamically detecting features with API contracts](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/).
 
 > [!TIP]
 > De nombreuses vérifications des API à l’exécution peuvent affecter les performances de votre application. Les vérifications sont incluses dans ces exemples. Dans le code de production, vous devez effectuer la vérification une seule fois et mettre en cache les résultats, puis utiliser le résultat mis en cache dans toute votre application. 
@@ -34,7 +34,7 @@ Dans la plupart des cas, vous pouvez conserver la version Minimum du Kit de dév
 
 Vous devez choisir une version supérieure à la version Minimum de votre application si vous utilisez :
 - une nouvelle API nécessitant une fonctionnalité qui n’est pas disponible dans une version antérieure. Vous devez choisir une version supérieure qui inclut cette fonctionnalité. Pour plus d’informations, voir [Déclarations des fonctionnalités d’application](../packaging/app-capability-declarations.md).
-- toutes les nouvelles clés de ressources ajoutées à generic.xaml et qui ne sont pas disponibles dans une version antérieure. La version de generic.xaml utilisée lors de l’exécution est déterminée par la version du système d’exploitation sur laquelle l’appareil s’exécute. Vous ne pouvez pas utiliser les vérifications API à l’exécution pour déterminer la présence de ressources XAML. Par conséquent, vous devez uniquement utiliser des clés de ressources disponibles dans la version Minimum que votre application prend en charge, sans quoi [XAMLParseException](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup.xamlparseexception) entraînera le blocage de votre application à l’exécution.
+- toutes les nouvelles clés de ressources ajoutées à generic.xaml et qui ne sont pas disponibles dans une version antérieure. La version de generic.xaml utilisée lors de l’exécution est déterminée par la version du système d’exploitation sur laquelle l’appareil s’exécute. Vous ne pouvez pas utiliser les vérifications API à l’exécution pour déterminer la présence de ressources XAML. Par conséquent, vous devez uniquement utiliser des clés de ressources disponibles dans la version Minimum que votre application prend en charge, sans quoi [XAMLParseException](/uwp/api/windows.ui.xaml.markup.xamlparseexception) entraînera le blocage de votre application à l’exécution.
 
 ### <a name="adaptive-code-options"></a>Options de code adaptatif
 
@@ -73,9 +73,9 @@ Cette section présente plusieurs exemples de code adaptatif qui utilisent des A
 
 ### <a name="example-1-new-enum-value"></a>Exemple 1 : Nouvelle valeur d’énumération
 
-Windows 10, version 1607 ajoute une nouvelle valeur à l’énumération [InputScopeNameValue](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.inputscopenamevalue) : **ChatWithoutEmoji**. Cette nouvelle étendue des entrées affiche le même comportement d’entrée que l’étendue des entrées **Chat** (vérification de l’orthographe, saisie semi-automatique, mise en majuscules automatique), mais elle est mappée à un clavier tactile sans bouton emoji. Elle est utile si vous créez votre propre sélecteur d’emoji et souhaitez désactiver le bouton emoji du clavier tactile. 
+Windows 10, version 1607 ajoute une nouvelle valeur à l’énumération [InputScopeNameValue](/uwp/api/windows.ui.xaml.input.inputscopenamevalue) : **ChatWithoutEmoji**. Cette nouvelle étendue des entrées affiche le même comportement d’entrée que l’étendue des entrées **Chat** (vérification de l’orthographe, saisie semi-automatique, mise en majuscules automatique), mais elle est mappée à un clavier tactile sans bouton emoji. Elle est utile si vous créez votre propre sélecteur d’emoji et souhaitez désactiver le bouton emoji du clavier tactile. 
 
-Cet exemple explique comment vérifier la présence de la valeur d’énumération **ChatWithoutEmoji** et définit la propriété [InputScope](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.inputscope) d’une classe **TextBox** le cas échéant. En cas d’absence sur le système sur lequel l’application est exécutée, **InputScope** prend alors la valeur **Chat**. Le code présenté peut être placé dans un constructeur de page ou un gestionnaire d’événements Page.Loaded.
+Cet exemple explique comment vérifier la présence de la valeur d’énumération **ChatWithoutEmoji** et définit la propriété [InputScope](/uwp/api/windows.ui.xaml.controls.textbox.inputscope) d’une classe **TextBox** le cas échéant. En cas d’absence sur le système sur lequel l’application est exécutée, **InputScope** prend alors la valeur **Chat**. Le code présenté peut être placé dans un constructeur de page ou un gestionnaire d’événements Page.Loaded.
 
 > [!TIP]
 > Lorsque vous vérifiez une API, utilisez des chaînes statiques au lieu de vous appuyer sur les fonctionnalités de langage .NET. Sinon, votre application pourrait tenter d’accéder à un type qui n’est pas défini et se bloquer au moment de l’exécution.
@@ -156,20 +156,20 @@ Si vous utilisez la valeur ChatWithoutEmoji dans un code XAML, ou dans un code 
 
 ### <a name="example-2-new-control"></a>Exemple 2 : Nouveau contrôle
 
-Une nouvelle version de Windows offre en règle générale de nouveaux contrôles à la surface d’API UWP apportant de nouvelles fonctionnalités à la plateforme. Pour tirer parti d’un nouveau contrôle, utilisez la méthode [ApiInformation.IsTypePresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.istypepresent).
+Une nouvelle version de Windows offre en règle générale de nouveaux contrôles à la surface d’API UWP apportant de nouvelles fonctionnalités à la plateforme. Pour tirer parti d’un nouveau contrôle, utilisez la méthode [ApiInformation.IsTypePresent](/uwp/api/windows.foundation.metadata.apiinformation.istypepresent).
 
-Windows 10, version 1607 introduit un nouveau contrôle multimédia appelé [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement). Ce contrôle est basé sur la classe [MediaPlayer](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer) et apporte donc des fonctionnalités telles que la capacité à s’adapter à la lecture audio en arrière-plan, et elle se sert des améliorations architecturales de Media stack.
+Windows 10, version 1607 introduit un nouveau contrôle multimédia appelé [**MediaPlayerElement**](/uwp/api/windows.ui.xaml.controls.mediaplayerelement). Ce contrôle est basé sur la classe [MediaPlayer](/uwp/api/windows.media.playback.mediaplayer) et apporte donc des fonctionnalités telles que la capacité à s’adapter à la lecture audio en arrière-plan, et elle se sert des améliorations architecturales de Media stack.
 
-Toutefois, si l’application s’exécute sur un appareil exécutant lui-même une version de Windows 10 antérieure à la version 1607, vous devez choisir le contrôle [**MediaElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaelement) et non le nouveau contrôle **MediaPlayerElement**. Vous pouvez vous servir de la méthode [**ApiInformation.IsTypePresent**](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.istypepresent) pour vérifier la présence du contrôle MediaPlayerElement lors de l’exécution, puis charger les contrôles adaptés au système dans lequel l’application est en cours d’exécution.
+Toutefois, si l’application s’exécute sur un appareil exécutant lui-même une version de Windows 10 antérieure à la version 1607, vous devez choisir le contrôle [**MediaElement**](/uwp/api/windows.ui.xaml.controls.mediaelement) et non le nouveau contrôle **MediaPlayerElement**. Vous pouvez vous servir de la méthode [**ApiInformation.IsTypePresent**](/uwp/api/windows.foundation.metadata.apiinformation.istypepresent) pour vérifier la présence du contrôle MediaPlayerElement lors de l’exécution, puis charger les contrôles adaptés au système dans lequel l’application est en cours d’exécution.
 
-Cet exemple montre comment créer une application qui utilise le nouveau contrôle MediaPlayerElement ou l’ancien contrôle MediaElement en fonction de la présence du type MediaPlayerElement. Dans ce code, vous utilisez la classe [UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol) pour agencer les contrôles et leur code et interface utilisateur associés pour être en mesure de passer de l’un à l’autre en fonction de la version du système d’exploitation. Vous pouvez aussi utiliser un contrôle personnalisé qui offrira plus de fonctionnalités et de personnalisations que nécessaire dans cet exemple simple.
+Cet exemple montre comment créer une application qui utilise le nouveau contrôle MediaPlayerElement ou l’ancien contrôle MediaElement en fonction de la présence du type MediaPlayerElement. Dans ce code, vous utilisez la classe [UserControl](/uwp/api/windows.ui.xaml.controls.usercontrol) pour agencer les contrôles et leur code et interface utilisateur associés pour être en mesure de passer de l’un à l’autre en fonction de la version du système d’exploitation. Vous pouvez aussi utiliser un contrôle personnalisé qui offrira plus de fonctionnalités et de personnalisations que nécessaire dans cet exemple simple.
  
 **MediaPlayerUserControl** 
 
 `MediaPlayerUserControl` encapsule un contrôle **MediaPlayerElement** et plusieurs boutons permettant d’ignorer le média image par image. UserControl vous permet de traiter ces contrôles sous forme d’entité unique et de passer plus facilement à un contrôle MediaElement sur les systèmes plus anciens. Ce contrôle utilisateur doit être utilisé uniquement sur les systèmes où MediaPlayerElement est présent, afin que vous n’utilisiez pas les vérifications ApiInformation dans le code situé à l’intérieur de ce contrôle utilisateur.
 
 > [!NOTE]
-> Pour que cet exemple reste simple et ciblé, les boutons d’étape d’image sont placés en dehors du lecteur multimédia. Pour améliorer l’expérience utilisateur, vous devez personnaliser MediaTransportControls afin d’inclure des boutons personnalisés. Voir [Contrôles de transport personnalisés](https://docs.microsoft.com/windows/uwp/controls-and-patterns/custom-transport-controls) pour plus d’informations. 
+> Pour que cet exemple reste simple et ciblé, les boutons d’étape d’image sont placés en dehors du lecteur multimédia. Pour améliorer l’expérience utilisateur, vous devez personnaliser MediaTransportControls afin d’inclure des boutons personnalisés. Voir [Contrôles de transport personnalisés](../design/controls-and-patterns/custom-transport-controls.md) pour plus d’informations. 
 
 **XAML**
 ```xaml
@@ -305,7 +305,7 @@ Vous devez utiliser des déclencheurs d’état pour le code adaptatif uniquemen
 
 ### <a name="example-1-new-property"></a>Exemple 1 : Nouvelle propriété
 
-La première étape de la configuration d’un déclencheur d’état extensible consiste à sous-classer la classe [StateTriggerBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.statetriggerbase) afin de créer un déclencheur personnalisé dont l’activité dépendra de la présence d’une API. Cet exemple montre un déclencheur qui s’active si la présence de la propriété correspond à la variable `_isPresent` définie dans le code XAML.
+La première étape de la configuration d’un déclencheur d’état extensible consiste à sous-classer la classe [StateTriggerBase](/uwp/api/windows.ui.xaml.statetriggerbase) afin de créer un déclencheur personnalisé dont l’activité dépendra de la présence d’une API. Cet exemple montre un déclencheur qui s’active si la présence de la propriété correspond à la variable `_isPresent` définie dans le code XAML.
 
 **C#**
 ```csharp
@@ -339,7 +339,7 @@ class IsPropertyPresentTrigger : StateTriggerBase
 
 L’étape suivante consiste à configurer le déclencheur d’état visuel dans XAML pour obtenir deux états visuels différents en fonction de la présence de l’API. 
 
-Windows 10, version 1607 introduit une nouvelle propriété sur la classe [FrameworkElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement), appelée [AllowFocusOnInteraction](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.allowfocusoninteraction), qui détermine si un contrôle prend le focus quand un utilisateur interagit avec lui. Cette fonction est utile si vous souhaitez conserver le focus sur une zone de texte pour l’entrée de données (et garder le clavier tactile visible) pendant que l’utilisateur clique sur un bouton.
+Windows 10, version 1607 introduit une nouvelle propriété sur la classe [FrameworkElement](/uwp/api/windows.ui.xaml.frameworkelement), appelée [AllowFocusOnInteraction](/uwp/api/windows.ui.xaml.frameworkelement.allowfocusoninteraction), qui détermine si un contrôle prend le focus quand un utilisateur interagit avec lui. Cette fonction est utile si vous souhaitez conserver le focus sur une zone de texte pour l’entrée de données (et garder le clavier tactile visible) pendant que l’utilisateur clique sur un bouton.
 
 Dans cet exemple, le déclencheur vérifie si la propriété est présente. Si la propriété est présente, il définit la propriété **AllowFocusOnInteraction** d’un Bouton sur **false**. Mais si la propriété n’est pas présente, le bouton conserve son état d’origine. La zone de texte est incluse pour permettre de mieux visualiser les effets de cette propriété lorsque vous exécutez le code.
 
@@ -445,5 +445,5 @@ class IsEnumPresentTrigger : StateTriggerBase
 
 ## <a name="related-articles"></a>Articles connexes
 
-- [Présentation des familles d’appareils](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)
+- [Programmation avec les kits SDK d’extension](/uwp/extension-sdks/device-families-overview)
 - [Dynamically detecting features with API contracts](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)

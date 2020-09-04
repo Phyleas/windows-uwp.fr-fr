@@ -1,5 +1,5 @@
 ---
-description: Type de pinceau qui crée une texture translucide.
+description: Apprenez à utiliser le pinceau acrylique, qui crée une texture translucide pour ajouter de la profondeur et établir une hiérarchie visuelle.
 title: Matière acrylique
 template: detail.hbs
 ms.date: 08/09/2017
@@ -10,20 +10,20 @@ design-contact: rybick
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d969c5282fa03fb11d108d2b2c8e0fe44dfde49
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 6f7d431950e17b9908d079db9247d997ef8adadb
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968454"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174583"
 ---
 # <a name="acrylic-material"></a>Matière acrylique
 
 ![Image Hero](images/header-acrylic.svg)
 
-Acrylique est un type de [pinceau](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Brush) qui produit une texture translucide. Vous pouvez appliquer l’acrylique à des surfaces d’application pour ajouter de la profondeur et établir une hiérarchie visuelle.  <!-- By allowing user-selected wallpaper or colors to shine through, acrylic keeps users in touch with the OS personalization they've chosen. -->
+Acrylique est un type de [pinceau](/uwp/api/Windows.UI.Xaml.Media.Brush) qui produit une texture translucide. Vous pouvez appliquer l’acrylique à des surfaces d’application pour ajouter de la profondeur et établir une hiérarchie visuelle.  <!-- By allowing user-selected wallpaper or colors to shine through, acrylic keeps users in touch with the OS personalization they've chosen. -->
 
-> **API importantes** : [classe AcrylicBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.acrylicbrush), [propriété Background](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.Background)
+> **API importantes** : [classe AcrylicBrush](/uwp/api/windows.ui.xaml.media.acrylicbrush), [propriété Background](/uwp/api/windows.ui.xaml.controls.control.Background)
 
 :::row:::
     :::column:::
@@ -87,7 +87,7 @@ Pour les applications utilisant des menus volants, des menus contextuels non mod
 
 ![Modèle d’application de courrier utilisant un menu volant informatif](images/Mail_TransientContextMenu.png)
 
-La plupart de nos contrôles utilisent l’acrylique par défaut. Des contrôles tels que [MenuFlyouts](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus), [AutoSuggestBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/auto-suggest-box), [ComboBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox) et autres contrôles similaires avec des fenêtres contextuelles disparaissant par abandon interactif utilisent tous l’acrylique temporaire.
+La plupart de nos contrôles utilisent l’acrylique par défaut. Des contrôles tels que [MenuFlyouts](../controls-and-patterns/menus.md), [AutoSuggestBox](../controls-and-patterns/auto-suggest-box.md), [ComboBox](/uwp/api/windows.ui.xaml.controls.combobox) et autres contrôles similaires avec des fenêtres contextuelles disparaissant par abandon interactif utilisent tous l’acrylique temporaire.
 
 > [!Note]
 > Le rendu des surfaces acryliques sollicite les ressources du processeur graphique de manière intensive, ce qui peut accroître la consommation d’énergie de l’appareil et réduire l’autonomie de sa batterie. Les effets acryliques sont automatiquement désactivés lorsque les appareils entrent en mode Économiseur de batterie, et les utilisateurs peuvent désactiver les effets acryliques pour toutes les applications s’ils le souhaitent.
@@ -246,7 +246,7 @@ else
 
 ## <a name="extend-acrylic-into-the-title-bar"></a>Étendre l’acrylique dans la barre de titre
 
-Pour donner à la fenêtre de votre application un aspect épuré, vous pouvez utiliser l’acrylique dans la zone de la barre de titre. Cet exemple étend l’acrylique dans la barre de titre en définissant les propriétés [ButtonBackgroundColor](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonBackgroundColor) et [ButtonInactiveBackgroundColor](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonInactiveBackgroundColor) de l’objet [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar) sur [Colors.Transparent](https://docs.microsoft.com/uwp/api/Windows.UI.Colors.Transparent).
+Pour donner à la fenêtre de votre application un aspect épuré, vous pouvez utiliser l’acrylique dans la zone de la barre de titre. Cet exemple étend l’acrylique dans la barre de titre en définissant les propriétés [ButtonBackgroundColor](/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonBackgroundColor) et [ButtonInactiveBackgroundColor](/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonInactiveBackgroundColor) de l’objet [ApplicationViewTitleBar](/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar) sur [Colors.Transparent](/uwp/api/Windows.UI.Colors.Transparent).
 
 ```csharp
 private void ExtendAcrylicIntoTitleBar()
@@ -258,7 +258,7 @@ private void ExtendAcrylicIntoTitleBar()
 }
 ```
 
-Ce code peut être placé dans la méthode [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) de votre application (_App.xaml.cs_), après l’appel de [Window.Activate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.Activate), comme illustré ici, ou dans la première page de votre application.
+Ce code peut être placé dans la méthode [OnLaunched](/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) de votre application (_App.xaml.cs_), après l’appel de [Window.Activate](/uwp/api/windows.ui.xaml.window.Activate), comme illustré ici, ou dans la première page de votre application.
 
 ```csharp
 // Call your extend acrylic code in the OnLaunched event, after

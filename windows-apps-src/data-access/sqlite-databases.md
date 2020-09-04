@@ -1,16 +1,16 @@
 ---
 title: Utiliser une base de données SQLite dans une application UWP
-description: Utilisez une base de données SQLite dans une application UWP.
+description: Découvrez comment utiliser une base de données SQLite dans une application UWP pour stocker et récupérer des données dans une base de données légère sur l’appareil de l’utilisateur.
 ms.date: 06/26/2020
 ms.topic: article
 keywords: windows 10, uwp, SQLite, base de données
 ms.localizationpriority: medium
-ms.openlocfilehash: 0db89408d5bc0af8b9101768a6498e70f9be6147
-ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
+ms.openlocfilehash: 15a6cd4313a13abfa7897de62c80024a09ad1f71
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997936"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154533"
 ---
 # <a name="use-a-sqlite-database-in-a-uwp-app"></a>Utiliser une base de données SQLite dans une application UWP
 Vous pouvez utiliser SQLite pour stocker et récupérer des données dans une base de données légère sur l’appareil de l’utilisateur. Ce guide vous explique comment procéder.
@@ -35,11 +35,11 @@ Nous vous recommandons d’utiliser Entity Framework Core ou la [bibliothèque
 
 Entity Framework (EF) est un mappeur relationnel objet qui vous permet de travailler avec des données relationnelles en utilisant des objets propres au domaine. Si vous avez déjà utilisé cette infrastructure pour travailler avec des données dans d’autres applications .NET, vous pouvez migrer ce code vers une application UWP. Il fonctionnera avec les changements appropriés apportés à la chaîne de connexion.
 
-Pour essayer, consultez [Bien démarrer avec EF Core sur la plateforme Windows universelle (UWP) avec une nouvelle base de données](https://docs.microsoft.com/ef/core/get-started/uwp/getting-started).
+Pour essayer, consultez [Bien démarrer avec EF Core sur la plateforme Windows universelle (UWP) avec une nouvelle base de données](/ef/core/get-started/uwp/getting-started).
 
 ### <a name="sqlite-library"></a>Bibliothèque SQLite
 
-La bibliothèque [Microsoft.Data.Sqlite](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite?view=msdata-sqlite-2.0.0) implémente les interfaces dans l’espace de noms [System.Data.Common](https://docs.microsoft.com/dotnet/api/system.data.common). Microsoft gère activement ces implémentations, qui fournissent un wrapper intuitif autour de l’API SQLite native de bas niveau.
+La bibliothèque [Microsoft.Data.Sqlite](/dotnet/api/microsoft.data.sqlite?view=msdata-sqlite-2.0.0) implémente les interfaces dans l’espace de noms [System.Data.Common](/dotnet/api/system.data.common). Microsoft gère activement ces implémentations, qui fournissent un wrapper intuitif autour de l’API SQLite native de bas niveau.
 
 Le reste de ce guide vous aide à utiliser cette bibliothèque.
 
@@ -75,7 +75,7 @@ Choisissez l’onglet **Parcourir**, puis recherchez le package **Microsoft.Data
 
 ![Package SQLite](images/sqlite-package.png)
 
-Accédez à la section [Ajouter et récupérer des données dans une base de données SQLite](/windows/uwp/data-access/sqlite-databases#add-and-retrieve-data-in-a-sqlite-database) de ce guide.
+Accédez à la section [Ajouter et récupérer des données dans une base de données SQLite](#add-and-retrieve-data-in-a-sqlite-database) de ce guide.
 
 ### <a name="the-minimum-version-of-your-project-targets-the-fall-creators-update"></a>La version minimale de votre projet cible Fall Creators Update
 
@@ -200,7 +200,7 @@ public async static void InitializeDatabase()
 
 Ce code crée la base de données SQLite et la stocke dans le magasin de données local de l’application.
 
-Dans cet exemple, nous appelons la base de données ``sqlliteSample.db``, mais vous pouvez choisir le nom que vous souhaitez tant que vous l’utilisez dans tous les objets [SqliteConnection](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite.sqliteconnection?view=msdata-sqlite-2.0.0) que vous instanciez.
+Dans cet exemple, nous appelons la base de données ``sqlliteSample.db``, mais vous pouvez choisir le nom que vous souhaitez tant que vous l’utilisez dans tous les objets [SqliteConnection](/dotnet/api/microsoft.data.sqlite.sqliteconnection?view=msdata-sqlite-2.0.0) que vous instanciez.
 
 Dans le constructeur du fichier **App.xaml.cs** de votre projet UWP, appelez la méthode ``InitializeDatabase`` de la classe **DataAccess**.
 
@@ -277,9 +277,9 @@ public static List<String> GetData()
 }
 ```
 
-La méthode [Read](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite.sqlitedatareader.read?view=msdata-sqlite-2.0.0#Microsoft_Data_Sqlite_SqliteDataReader_Read) avance dans les lignes de données retournées. Elle retourne **true** s’il reste des lignes ; sinon, elle retourne **false**.
+La méthode [Read](/dotnet/api/microsoft.data.sqlite.sqlitedatareader.read?view=msdata-sqlite-2.0.0#Microsoft_Data_Sqlite_SqliteDataReader_Read) avance dans les lignes de données retournées. Elle retourne **true** s’il reste des lignes ; sinon, elle retourne **false**.
 
-La méthode [GetString](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite.sqlitedatareader.getstring?view=msdata-sqlite-2.0.0#Microsoft_Data_Sqlite_SqliteDataReader_GetString_System_Int32_) retourne la valeur de la colonne spécifiée sous forme de chaîne. Elle accepte une valeur entière qui représente l’ordinal de colonne de base zéro des données que vous voulez. Vous pouvez utiliser des méthodes similaires comme [GetDataTime](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite.sqlitedatareader.getdatetime?view=msdata-sqlite-2.0.0#Microsoft_Data_Sqlite_SqliteDataReader_GetDateTime_System_Int32_) et [GetBoolean](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite.sqlitedatareader.getboolean?view=msdata-sqlite-2.0.0#Microsoft_Data_Sqlite_SqliteDataReader_GetBoolean_System_Int32_). Choisissez une méthode basée sur le type de données contenues dans la colonne.
+La méthode [GetString](/dotnet/api/microsoft.data.sqlite.sqlitedatareader.getstring?view=msdata-sqlite-2.0.0#Microsoft_Data_Sqlite_SqliteDataReader_GetString_System_Int32_) retourne la valeur de la colonne spécifiée sous forme de chaîne. Elle accepte une valeur entière qui représente l’ordinal de colonne de base zéro des données que vous voulez. Vous pouvez utiliser des méthodes similaires comme [GetDataTime](/dotnet/api/microsoft.data.sqlite.sqlitedatareader.getdatetime?view=msdata-sqlite-2.0.0#Microsoft_Data_Sqlite_SqliteDataReader_GetDateTime_System_Int32_) et [GetBoolean](/dotnet/api/microsoft.data.sqlite.sqlitedatareader.getboolean?view=msdata-sqlite-2.0.0#Microsoft_Data_Sqlite_SqliteDataReader_GetBoolean_System_Int32_). Choisissez une méthode basée sur le type de données contenues dans la colonne.
 
 Le paramètre ordinal n’est pas aussi important dans cet exemple, car nous allons sélectionner toutes les entrées d’une même colonne. Toutefois, si plusieurs colonnes font partie de votre requête, utilisez la valeur ordinale pour obtenir la colonne de laquelle vous souhaitez extraire des données.
 
@@ -316,7 +316,7 @@ private void AddData(object sender, RoutedEventArgs e)
 }
 ```
 
-C’est terminé. Explorez [Microsoft.Data.Sqlite](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite?view=msdata-sqlite-2.0.0) pour découvrir ce que vous pouvez faire d’autre avec votre base de données SQLite. Consultez les liens ci-dessous pour en savoir plus sur les autres façons d’utiliser des données dans votre application UWP.
+C’est terminé. Explorez [Microsoft.Data.Sqlite](/dotnet/api/microsoft.data.sqlite?view=msdata-sqlite-2.0.0) pour découvrir ce que vous pouvez faire d’autre avec votre base de données SQLite. Consultez les liens ci-dessous pour en savoir plus sur les autres façons d’utiliser des données dans votre application UWP.
 
 ## <a name="next-steps"></a>Étapes suivantes
 
@@ -326,7 +326,7 @@ Consultez [Utiliser une base de données SQL Server dans une application UWP](sq
 
 **Partager du code entre différentes applications sur différentes plateformes**
 
-Consultez [Partager du code entre une application de bureau et une application UWP](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-migrate).
+Consultez [Partager du code entre une application de bureau et une application UWP](../porting/desktop-to-uwp-migrate.md).
 
 **Ajouter des pages maître/détail avec les back-ends Azure SQL**
 

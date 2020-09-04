@@ -1,21 +1,21 @@
 ---
 title: Utiliser une base de données SQL Server dans une application UWP
-description: Utilisez une base de données SQL Server dans une application UWP.
+description: Découvrez comment connecter une application UWP directement à une base de données SQL Server, et comment stocker et récupérer des données à l’aide de System.Data.SqlClient.
 ms.date: 06/26/2020
 ms.topic: article
 keywords: windows 10, uwp, SQL Server, base de données
 ms.localizationpriority: medium
-ms.openlocfilehash: d5c5c0f107a9e9a2adb0587b544a2c74b8321886
-ms.sourcegitcommit: 48e047a581fcfcc9a4084d65a78b89f2c01cf4f3
+ms.openlocfilehash: b775f1b6f7850b1e7c0b951c0126fcb97ceec8a2
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85448339"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170183"
 ---
 # <a name="use-a-sql-server-database-in-a-uwp-app"></a>Utiliser une base de données SQL Server dans une application UWP
-Votre application peut se connecter directement à une base de données SQL Server, puis stocker et récupérer des données à l’aide de classes de l’espace de noms [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient).
+Votre application peut se connecter directement à une base de données SQL Server, puis stocker et récupérer des données à l’aide de classes de l’espace de noms [System.Data.SqlClient](/dotnet/api/system.data.sqlclient).
 
-Dans ce guide, nous vous proposerons une méthode pour y parvenir. Si vous installez la base de données exemple [Northwind](https://docs.microsoft.com/dotnet/framework/data/adonet/sql/linq/downloading-sample-databases) sur votre instance de SQL Server, puis que vous utilisez ces extraits de code, vous obtiendrez une interface utilisateur de base qui montre les produits de la base de données exemple.
+Dans ce guide, nous vous proposerons une méthode pour y parvenir. Si vous installez la base de données exemple [Northwind](/dotnet/framework/data/adonet/sql/linq/downloading-sample-databases) sur votre instance de SQL Server, puis que vous utilisez ces extraits de code, vous obtiendrez une interface utilisateur de base qui montre les produits de la base de données exemple.
 
 ![Produits Northwind](images/products-northwind.png)
 
@@ -53,7 +53,7 @@ Dans cette section, nous allons effectuer les opérations suivantes :
 : cinq : Remplir l’interface utilisateur avec des produits.
 
 >[!NOTE]
-> Cette section illustre une façon d’organiser votre code d’accès aux données. Vous y trouverez un exemple illustrant la façon dont vous pouvez utiliser [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient) pour stocker et récupérer des données à partir d’une base de données SQL Server. Vous pouvez organiser votre code d’une manière plus appropriée pour la conception de votre application.
+> Cette section illustre une façon d’organiser votre code d’accès aux données. Vous y trouverez un exemple illustrant la façon dont vous pouvez utiliser [System.Data.SqlClient](/dotnet/api/system.data.sqlclient) pour stocker et récupérer des données à partir d’une base de données SQL Server. Vous pouvez organiser votre code d’une manière plus appropriée pour la conception de votre application.
 
 ### <a name="add-a-connection-string"></a>Ajouter une chaîne de connexion
 
@@ -80,7 +80,7 @@ sealed partial class App : Application
 
 ### <a name="create-a-class-to-hold-product-data"></a>Créer une classe pour contenir des données sur les produits
 
-Nous allons créer une classe qui implémente l’événement [INotifyPropertyChanged](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged) pour pouvoir lier des attributs de notre interface utilisateur XAML aux propriétés de cette classe.
+Nous allons créer une classe qui implémente l’événement [INotifyPropertyChanged](/dotnet/api/system.componentmodel.inotifypropertychanged) pour pouvoir lier des attributs de notre interface utilisateur XAML aux propriétés de cette classe.
 
 ```csharp
 public class Product : INotifyPropertyChanged
@@ -106,7 +106,7 @@ public class Product : INotifyPropertyChanged
 
 ### <a name="retrieve-products-from-the-sql-server-database"></a>Récupérer les produits à partir de la base de données SQL Server
 
-Créez une méthode qui obtient des produits à partir de l’exemple de base de données, Northwind, puis les retourne sous la forme d’une collection [ObservableCollection](https://docs.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1) d’instances ``Product``.
+Créez une méthode qui obtient des produits à partir de l’exemple de base de données, Northwind, puis les retourne sous la forme d’une collection [ObservableCollection](/dotnet/api/system.collections.objectmodel.observablecollection-1) d’instances ``Product``.
 
 ```csharp
 public ObservableCollection<Product> GetProducts(string connectionString)
@@ -158,7 +158,7 @@ public ObservableCollection<Product> GetProducts(string connectionString)
 
  Ajoutez le code XAML suivant au fichier **MainPage.xaml** du projet UWP.
 
- Ce code XAML crée un [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) pour afficher chaque produit renvoyé dans l’extrait de code précédent et lie les attributs de chaque ligne dans le [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) aux propriétés que nous avons définies dans la classe ``Product``.
+ Ce code XAML crée un [ListView](/uwp/api/windows.ui.xaml.controls.listview) pour afficher chaque produit renvoyé dans l’extrait de code précédent et lie les attributs de chaque ligne dans le [ListView](/uwp/api/windows.ui.xaml.controls.listview) aux propriétés que nous avons définies dans la classe ``Product``.
 
 ```xml
 <Grid Background="{ThemeResource SystemControlAcrylicWindowBrush}">
@@ -208,7 +208,7 @@ public ObservableCollection<Product> GetProducts(string connectionString)
 
 ### <a name="show-products-in-the-listview"></a>Afficher les produits dans le contrôle ListView
 
-Ouvrez le fichier **MainPage.xaml.cs** et ajoutez du code au constructeur de la classe ``MainPage`` qui définit la propriété **ItemSource** de l’élément [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) sur [ObservableCollection](https://docs.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1) de ``Product`` instances.
+Ouvrez le fichier **MainPage.xaml.cs** et ajoutez du code au constructeur de la classe ``MainPage`` qui définit la propriété **ItemSource** de l’élément [ListView](/uwp/api/windows.ui.xaml.controls.listview) sur [ObservableCollection](/dotnet/api/system.collections.objectmodel.observablecollection-1) de ``Product`` instances.
 
 ```csharp
 public MainPage()
@@ -222,7 +222,7 @@ Démarrez le projet pour afficher les produits de la base de données exemple No
 
 ![Produits Northwind](images/products-northwind.png)
 
-Explorez l’espace de noms [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient) pour voir les autres actions que vous pouvez effectuer avec les données dans votre base de données SQL Server.
+Explorez l’espace de noms [System.Data.SqlClient](/dotnet/api/system.data.sqlclient) pour voir les autres actions que vous pouvez effectuer avec les données dans votre base de données SQL Server.
 
 ## <a name="trouble-connecting-to-your-database"></a>Problèmes de connexion à votre base de données ?
 
@@ -242,7 +242,7 @@ Voir [Utiliser une base de données SQLite dans une application UWP](sqlite-dat
 
 **Partager du code entre différentes applications sur différentes plateformes**
 
-Consultez [Partager du code entre une application de bureau et une application UWP](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-migrate).
+Consultez [Partager du code entre une application de bureau et une application UWP](../porting/desktop-to-uwp-migrate.md).
 
 **Ajouter des pages maître/détail avec les back-ends Azure SQL**
 

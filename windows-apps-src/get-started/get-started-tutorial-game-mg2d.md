@@ -1,17 +1,17 @@
 ---
 title: Créer un jeu UWP dans MonoGame 2D
-description: Un jeu UWP simple pour le Microsoft Store, écrit en C# et MonoGame
+description: Suivez ce tutoriel afin de créer un jeu UWP de base pour le Microsoft Store, à l’aide du langage C# et du framework MonoGame.
 ms.date: 03/06/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 5d5f7af2-41a9-4749-ad16-4503c64bb80c
 ms.localizationpriority: medium
-ms.openlocfilehash: 4300bdc0224a18874a7ff9153195f81f8bb8d101
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: b6e4b5bd75e0aff96cfc61f9b1bac380c61ae46f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75685052"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89162873"
 ---
 # <a name="create-a-uwp-game-in-monogame-2d"></a>Créer un jeu UWP dans MonoGame 2D
 
@@ -25,9 +25,9 @@ ms.locfileid: "75685052"
 MonoGame est une infrastructure légère de développement de jeux. Ce didacticiel vous explique les notions de base du développement de jeux dans MonoGame, notamment comment charger du contenu, dessiner des sprites, les animer et gérer les entrées utilisateur. Vous trouverez également des concepts plus avancés, tels que la détection des collisions et la prise en charge des écrans haute résolution. Ce didacticiel dure 30 à 60 minutes.
 
 ## <a name="prerequisites"></a>Prérequis
-+   Windows 10 et Microsoft Visual Studio 2019.  [Cliquez ici pour découvrir comment prendre en main Visual Studio](https://docs.microsoft.com/windows/uwp/get-started/get-set-up).
++   Windows 10 et Microsoft Visual Studio 2019.  [Cliquez ici pour découvrir comment prendre en main Visual Studio](./get-set-up.md).
 + L’infrastructure de développement de bureau .NET. Si vous ne l’avez pas encore installée, vous pouvez l’obtenir en réexécutant le programme d’installation de Visual Studio et en modifiant votre installation de Visual Studio 2019.
-+   Connaissances de base de C# ou d’un langage de programmation orienté objet similaire. [Cliquez ici pour savoir comment commencer en C#](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
++   Connaissances de base de C# ou d’un langage de programmation orienté objet similaire. [Cliquez ici pour savoir comment commencer en C#](./create-a-hello-world-app-xaml-universal.md).
 +   La connaissance de concepts informatiques élémentaires tels que les classes, les méthodes ou les variables sera un plus.
 
 ## <a name="why-monogame"></a>Pourquoi MonoGame ?
@@ -694,8 +694,8 @@ Puisque nous avons créé ce jeu sous forme d’application UWP, nous pouvons pu
 
 Vous devez être [enregistré](https://developer.microsoft.com/store/register) en tant que développeur Windows.
 
-Vous devez utiliser la [liste de vérification de soumission d’applications](https://docs.microsoft.com/windows/uwp/publish/app-submissions).
+Vous devez utiliser la [liste de vérification de soumission d’applications](../publish/app-submissions.md).
 
-L’application doit être soumise pour [certification](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process).
+L’application doit être soumise pour [certification](../publish/the-app-certification-process.md).
 
-Pour plus d’informations, voir [Publication de votre application UWP](https://docs.microsoft.com/windows/uwp/publish/).
+Pour plus d’informations, voir [Publication de votre application UWP](../publish/index.md).

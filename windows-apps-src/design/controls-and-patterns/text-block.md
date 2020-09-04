@@ -1,6 +1,6 @@
 ---
 ms.assetid: DA562509-D893-425A-AAE6-B2AE9E9F8A19
-Description: Le bloc de texte est le contrôle principalement utilisé pour afficher du texte en lecture seule dans les applications.
+description: Le bloc de texte est le contrôle principalement utilisé pour afficher du texte en lecture seule dans les applications.
 title: Bloc de texte
 label: Text block
 template: detail.hbs
@@ -11,24 +11,22 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f609f7ec989cf334d6b21a32ee8bde0e43203f0
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 83e27ef72aea195268d5163dea3b050f48547d5c
+ms.sourcegitcommit: efa5f793607481dcae24cd1b886886a549e8d6e5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80081498"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89412023"
 ---
 # <a name="text-block"></a>Bloc de texte
 
+Le bloc de texte est le contrôle principalement utilisé pour afficher du texte en lecture seule dans les applications. Ce contrôle vous permet d’afficher une ou plusieurs lignes de texte, des liens hypertexte inclus et du texte avec mise en forme de type gras, italique ou souligné.
  
-
- Le bloc de texte est le contrôle principalement utilisé pour afficher du texte en lecture seule dans les applications. Ce contrôle vous permet d’afficher une ou plusieurs lignes de texte, des liens hypertexte inclus et du texte avec mise en forme de type gras, italique ou souligné.
- 
- > **API de plateforme** : [Classe TextBlock class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock), [propriété Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text), [propriété Inlines](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.inlines)
+ > **API de plateforme** : [Classe TextBlock class](/uwp/api/Windows.UI.Xaml.Controls.TextBlock), [propriété Text](/uwp/api/windows.ui.xaml.controls.textblock.text), [propriété Inlines](/uwp/api/windows.ui.xaml.controls.textblock.inlines)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
-Un bloc de texte est généralement plus facile à utiliser et offre de meilleures performances en termes de rendu de texte qu’un bloc de texte enrichi. C’est pourquoi il est recommandé pour la plupart des textes d’interface utilisateur d’application. Vous pouvez facilement visualiser et utiliser le texte d’un bloc de texte dans votre application en obtenant la valeur de la propriété [Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text). Il propose également de nombreuses options de mise en forme similaires pour personnaliser la manière dont votre texte est restitué.
+Un bloc de texte est généralement plus facile à utiliser et offre de meilleures performances en termes de rendu de texte qu’un bloc de texte enrichi. C’est pourquoi il est recommandé pour la plupart des textes d’interface utilisateur d’application. Vous pouvez facilement visualiser et utiliser le texte d’un bloc de texte dans votre application en obtenant la valeur de la propriété [Text](/uwp/api/windows.ui.xaml.controls.textblock.text). Il propose également de nombreuses options de mise en forme similaires pour personnaliser la manière dont votre texte est restitué.
 
 Même si vous pouvez placer des sauts de ligne dans le texte, un bloc de texte est conçu pour afficher un seul paragraphe et ne prend pas en charge le retrait du texte. Utilisez un contrôle **RichTextBlock** si vous devez prendre en charge plusieurs paragraphes, du texte sur plusieurs colonnes, d’autres dispositions de texte complexes ou des éléments d’interface utilisateur inclus, tels que des images.
 
@@ -63,14 +61,9 @@ TextBlock textBlock1 = new TextBlock();
 textBlock1.Text = "Hello, world!";
 ```
 
-    <TextBlock Text="Hello, world!" />
-
-    TextBlock textBlock1 = new TextBlock();
-    textBlock1.Text = "Hello, world!";
-
 ### <a name="content-model"></a>Modèle de contenu
 
-Vous pouvez utiliser deux propriétés pour ajouter du contenu à un élément TextBlock : [Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text) et [Inlines](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.inlines).
+Vous pouvez utiliser deux propriétés pour ajouter du contenu à un élément TextBlock : [Text](/uwp/api/windows.ui.xaml.controls.textblock.text) et [Inlines](/uwp/api/windows.ui.xaml.controls.textblock.inlines).
 
 La méthode la plus courante pour afficher du texte est de définir la propriété Text sur une valeur de chaîne, comme illustré dans l’exemple précédent.
 
@@ -88,22 +81,22 @@ Les éléments dérivés de la classe Inline, tels que Bold, Italic, Run, Span e
 Dans la mesure du possible, XAML utilise un chemin de code plus efficace pour la disposition du texte. Ce chemin rapide permet à la fois de diminuer l’utilisation de mémoire globale et de réduire considérablement le temps processeur requis pour mesurer et organiser le texte. Ce chemin rapide s’applique uniquement au contrôle TextBlock. Celui-ci doit donc être préféré au contrôle RichTextBlock dans la mesure du possible.
 
 Certaines conditions exigent un contrôle TextBlock afin de revenir à un chemin de code plus riche en fonctionnalités et exigeant en ressources de processeur pour le rendu du texte. Pour conserver le rendu du texte sur le chemin rapide, veillez à suivre ces recommandations lors de la définition des propriétés répertoriées ici.
-- [Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text) : La condition la plus importante est que le chemin rapide soit utilisé seulement quand vous définissez le texte en définissant explicitement la propriété Text en XAML ou dans le code (comme illustré dans les exemples précédents). La définition du texte via la collection Inlines du contrôle TextBlock (telle que `<TextBlock>Inline text</TextBlock>`) désactive le chemin rapide en raison de la complexité potentielle liée à de multiples formats.
-- [CharacterSpacing](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.characterspacing) : Seule la valeur par défaut 0 permet d’utiliser le chemin rapide.
-- [TextTrimming](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.texttrimming) : Seules les valeurs **None**, **CharacterEllipsis** et **WordEllipsis** permettent d’utiliser le chemin rapide. La valeur **Clip** désactive le chemin rapide.
+- [Text](/uwp/api/windows.ui.xaml.controls.textblock.text) : La condition la plus importante est que le chemin rapide soit utilisé seulement quand vous définissez le texte en définissant explicitement la propriété Text en XAML ou dans le code (comme illustré dans les exemples précédents). La définition du texte via la collection Inlines du contrôle TextBlock (telle que `<TextBlock>Inline text</TextBlock>`) désactive le chemin rapide en raison de la complexité potentielle liée à de multiples formats.
+- [CharacterSpacing](/uwp/api/windows.ui.xaml.controls.textblock.characterspacing) : Seule la valeur par défaut 0 permet d’utiliser le chemin rapide.
+- [TextTrimming](/uwp/api/windows.ui.xaml.controls.textblock.texttrimming) : Seules les valeurs **None**, **CharacterEllipsis** et **WordEllipsis** permettent d’utiliser le chemin rapide. La valeur **Clip** désactive le chemin rapide.
 
-> **Remarque**&nbsp;&nbsp;Dans les versions antérieures à Windows 10, version 1607, des propriétés supplémentaires ont également un impact sur le chemin rapide. Si votre application est exécutée dans une version antérieure de Windows, ces conditions entraînent également l’affichage de votre texte sur le chemin lent. Pour plus d’informations sur les versions, voir Code adaptatif de version.
-- [Typography](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Typography) : Seules les valeurs par défaut des différentes propriétés Typography permettent d’utiliser le chemin rapide.
-- [LineStackingStrategy](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.linestackingstrategy) : Si [LineHeight](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.lineheight) est différent de 0, les valeurs **BaselineToBaseline** et **MaxHeight** désactivent le chemin rapide.
-- [IsTextSelectionEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.istextselectionenabled) : Seul **false** permet d’utiliser le chemin rapide. La définition de cette propriété sur **true** désactive le chemin rapide.
+> **Remarque**&nbsp;&nbsp;Dans les versions antérieures à Windows 10, version 1607, des propriétés supplémentaires ont également un impact sur le chemin rapide. Si votre application est exécutée dans une version antérieure de Windows, ces conditions entraînent également l’affichage de votre texte sur le chemin lent. Pour plus d’informations sur les versions, consultez [Code adaptatif de version](/windows/uwp/debug-test-perf/version-adaptive-code).
+- [Typography](/uwp/api/Windows.UI.Xaml.Documents.Typography) : Seules les valeurs par défaut des différentes propriétés Typography permettent d’utiliser le chemin rapide.
+- [LineStackingStrategy](/uwp/api/windows.ui.xaml.controls.textblock.linestackingstrategy) : Si [LineHeight](/uwp/api/windows.ui.xaml.controls.textblock.lineheight) est différent de 0, les valeurs **BaselineToBaseline** et **MaxHeight** désactivent le chemin rapide.
+- [IsTextSelectionEnabled](/uwp/api/windows.ui.xaml.controls.textblock.istextselectionenabled) : Seul **false** permet d’utiliser le chemin rapide. La définition de cette propriété sur **true** désactive le chemin rapide.
 
-Vous pouvez définir la propriété [DebugSettings.IsTextPerformanceVisualizationEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.debugsettings.istextperformancevisualizationenabled) sur **true** pendant le débogage pour déterminer si le texte utilise le chemin rapide pour le rendu. Quand cette propriété est définie sur true, le texte qui utilise le chemin rapide s’affiche en vert clair.
+Vous pouvez définir la propriété [DebugSettings.IsTextPerformanceVisualizationEnabled](/uwp/api/windows.ui.xaml.debugsettings.istextperformancevisualizationenabled) sur **true** pendant le débogage pour déterminer si le texte utilise le chemin rapide pour le rendu. Quand cette propriété est définie sur true, le texte qui utilise le chemin rapide s’affiche en vert clair.
 
 >**Conseil**&nbsp;&nbsp;Cette fonctionnalité est expliquée en détail dans cette session à partir de la build 2015 - [Performances de XAML : Techniques d’optimisation des expériences d’application Windows universelles générées avec XAML](https://channel9.msdn.com/Events/Build/2015/3-698).
 
 
 
-Vous définissez généralement les paramètres de débogage dans la substitution de méthode [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched) dans la page code-behind pour App.xaml, comme ceci :
+Vous définissez généralement les paramètres de débogage dans la substitution de méthode [OnLaunched](/uwp/api/windows.ui.xaml.application.onlaunched) dans la page code-behind pour App.xaml, comme ceci :
 ```csharp
 protected override void OnLaunched(LaunchActivatedEventArgs e)
 {
@@ -142,7 +135,7 @@ Bien que la propriété Text stocke du texte brut, vous pouvez appliquer différ
 
 ### <a name="inline-elements"></a>Éléments inline
 
-L’espace de noms [Windows.UI.Xaml.Documents](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents) propose une variété d’éléments de texte inline utilisables pour mettre en forme votre texte, par exemple Bold, Italic, Run, Span, et LineBreak.
+L’espace de noms [Windows.UI.Xaml.Documents](/uwp/api/Windows.UI.Xaml.Documents) propose une variété d’éléments de texte inline utilisables pour mettre en forme votre texte, par exemple Bold, Italic, Run, Span, et LineBreak.
 
 Vous pouvez afficher, dans un contrôle TextBlock, une série de chaînes présentant chacune une mise en forme différente. Pour ce faire, utilisez un élément Run pour afficher chaque chaîne avec sa mise en forme et séparez chaque élément Run par un élément LineBreak.
 
@@ -170,7 +163,7 @@ Résultat :
 
 ### <a name="typography"></a>Typographie
 
-Les propriétés associées de la classe [Typography](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Typography) donnent accès à un ensemble de propriétés typographiques Microsoft OpenType. Vous pouvez définir ces propriétés associées sur TextBlock ou sur des éléments de texte inline individuels. Ces exemples portent sur les deux types.
+Les propriétés associées de la classe [Typography](/uwp/api/Windows.UI.Xaml.Documents.Typography) donnent accès à un ensemble de propriétés typographiques Microsoft OpenType. Vous pouvez définir ces propriétés associées sur TextBlock ou sur des éléments de texte inline individuels. Ces exemples portent sur les deux types.
 ```xaml
 <TextBlock Text="Hello, world!"
            Typography.Capitals="SmallCaps"
@@ -198,6 +191,6 @@ Windows.UI.Xaml.Documents.Typography.SetStylisticSet4(textBlock1, true);
 - [Recommandations sur la vérification orthographique](text-controls.md)
 - [Ajout de la fonctionnalité de recherche](search.md)
 - [Recommandations sur la saisie de texte](text-controls.md)
-- [TextBox, classe](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
-- [PasswordBox Windows.UI.Xaml.Controls, classe](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
-- [String.Length, propriété](https://docs.microsoft.com/dotnet/api/system.string.length)
+- [TextBox, classe](/uwp/api/Windows.UI.Xaml.Controls.TextBox)
+- [PasswordBox Windows.UI.Xaml.Controls, classe](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
+- [String.Length, propriété](/dotnet/api/system.string.length)

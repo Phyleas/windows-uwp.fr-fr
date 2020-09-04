@@ -1,5 +1,5 @@
 ---
-description: Découvrez comment utiliser des couleurs d’accentuation et des thèmes dans vos applications Windows.
+description: Découvrez comment utiliser efficacement les couleurs dans votre application UWP, à l’aide des couleurs d’accentuation et des ressources de thème.
 title: Couleur dans les applications Windows
 ms.date: 04/07/2019
 ms.topic: article
@@ -10,12 +10,12 @@ ms.custom: RS5
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: c87dfbdc00df36c75a5b0b865376af352edcabbb
-ms.sourcegitcommit: 577a54d36145f91c8ade8e4509d4edddd8319137
+ms.openlocfilehash: 06b566abf3fa20ca15e28a72b88e7c6e5a5cc4d5
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83867359"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169333"
 ---
 # <a name="color"></a>Couleur
 
@@ -190,7 +190,7 @@ Ces nuances sont accessibles en tant que [ressources de thème](../controls-and-
 - `SystemAccentColorDark3`
 
 <!-- check this is true -->
-Vous pouvez également accéder à la palette de couleurs d’accentuation par programmation avec la méthode [**UISettings.GetColorValue**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.UISettings#Windows_UI_ViewManagement_UISettings_GetColorValue_Windows_UI_ViewManagement_UIColorType_) et l’énumération [**UIColorType**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.UIColorType).
+Vous pouvez également accéder à la palette de couleurs d’accentuation par programmation avec la méthode [**UISettings.GetColorValue**](/uwp/api/Windows.UI.ViewManagement.UISettings#Windows_UI_ViewManagement_UISettings_GetColorValue_Windows_UI_ViewManagement_UIColorType_) et l’énumération [**UIColorType**](/uwp/api/Windows.UI.ViewManagement.UIColorType).
 
 Vous pouvez utiliser la palette de couleurs d’accentuation pour les thèmes de couleur de votre application. Voici un exemple de l’utilisation de la palette de couleurs d’accentuation sur un bouton.
 
@@ -222,13 +222,13 @@ Pour plus d’informations sur l’application de styles aux contrôles, voir [S
 
 ## <a name="color-api"></a>API de couleur
 
-Vous pouvez utiliser plusieurs API pour ajouter de la couleur à votre application. Il y a d’abord la classe [**Colors**](https://docs.microsoft.com/uwp/api/windows.ui.colors), qui implémente une longue liste de couleurs prédéfinies. Celles-ci sont accessibles automatiquement avec les propriétés XAML. Dans l’exemple ci-dessous, nous créons un bouton et nous définissons les propriétés de couleur d’arrière-plan et de premier plan pour les membres de la classe **Colors**.
+Vous pouvez utiliser plusieurs API pour ajouter de la couleur à votre application. Il y a d’abord la classe [**Colors**](/uwp/api/windows.ui.colors), qui implémente une longue liste de couleurs prédéfinies. Celles-ci sont accessibles automatiquement avec les propriétés XAML. Dans l’exemple ci-dessous, nous créons un bouton et nous définissons les propriétés de couleur d’arrière-plan et de premier plan pour les membres de la classe **Colors**.
 
 ```xaml
 <Button Background="MediumSlateBlue" Foreground="White">Button text</Button>
 ```
 
-Vous pouvez créer vos propres couleurs à partir des valeurs RVB ou hexadécimales en utilisant la structure [**Color**](https://docs.microsoft.com/uwp/api/windows.ui.color) en XAML.
+Vous pouvez créer vos propres couleurs à partir des valeurs RVB ou hexadécimales en utilisant la structure [**Color**](/uwp/api/windows.ui.color) en XAML.
 
 ```xaml
 <Color x:Key="LightBlue">#FF36C0FF</Color>
@@ -246,9 +246,9 @@ Windows::UI::Color LightBlue = Windows::UI::ColorHelper::FromArgb(255,54,192,255
 Les lettres « Arvb » signifient Alpha (opacité), Rouge, Vert et Bleu, qui sont les quatre composants d’une couleur. Chaque argument peut être compris entre 0 et 255. Vous pouvez choisir d’omettre la première valeur, ce qui vous donne une opacité par défaut de 255, c’est-à-dire 100 % opaque.
 
 > [!Note]
-> Si vous utilisez C++, vous devez créer des couleurs à l’aide de la classe [**ColorHelper**](https://docs.microsoft.com/uwp/api/windows.ui.colorhelper).
+> Si vous utilisez C++, vous devez créer des couleurs à l’aide de la classe [**ColorHelper**](/uwp/api/windows.ui.colorhelper).
 
-Un objet **Color** est le plus souvent utilisé comme argument d’un objet [**SolidColorBrush**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.solidcolorbrush), qui peut être utilisé pour peindre les éléments de l’interface utilisateur dans une seule couleur unie. Ces pinceaux sont généralement définis dans un objet [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) : ils peuvent donc être réutilisés pour plusieurs éléments.
+Un objet **Color** est le plus souvent utilisé comme argument d’un objet [**SolidColorBrush**](/uwp/api/windows.ui.xaml.media.solidcolorbrush), qui peut être utilisé pour peindre les éléments de l’interface utilisateur dans une seule couleur unie. Ces pinceaux sont généralement définis dans un objet [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary) : ils peuvent donc être réutilisés pour plusieurs éléments.
 
 ```xaml
 <ResourceDictionary>
@@ -272,19 +272,19 @@ En plus de définir vos propres couleurs dans votre application, vous pouvez ég
 
 ### <a name="how-to-use-colorpaletteresources"></a>Comment utiliser ColorPaletteResources
 
-ColorPaletteResources est une API qui indique au système quelles ressources sont dans l’étendue. ColorPaletteResources doit prendre un [x:Key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute), qui peut être un des trois choix suivants :
+ColorPaletteResources est une API qui indique au système quelles ressources sont dans l’étendue. ColorPaletteResources doit prendre un [x:Key](../../xaml-platform/x-key-attribute.md), qui peut être un des trois choix suivants :
 - Par défaut
-  * Affiche vos modifications de couleur dans les thèmes [Light](https://docs.microsoft.com/windows/uwp/design/style/color#light-theme) et [Dark](https://docs.microsoft.com/windows/uwp/design/style/color#dark-theme)
+  * Affiche vos modifications de couleur dans les thèmes [Light](#light-theme) et [Dark](#dark-theme)
 - Léger
-  * Affiche vos modifications de couleur seulement dans le thème [Light](https://docs.microsoft.com/windows/uwp/design/style/color#light-theme)
+  * Affiche vos modifications de couleur seulement dans le thème [Light](#light-theme)
 - Foncé
-  * Affiche vos modifications de couleur seulement dans le thème [Dark](https://docs.microsoft.com/windows/uwp/design/style/color#dark-theme)
+  * Affiche vos modifications de couleur seulement dans le thème [Dark](#dark-theme)
 
 La définition de ce x:Key garantit que vos couleurs changent de façon appropriée pour le thème système ou le thème de l’application dans le cas où vous voulez une apparence personnalisée différente dans l’un ou l’autre thème.
 
 ### <a name="how-to-apply-scoped-colors"></a>Comment appliquer des couleurs délimitées
 
-La délimitation des ressources via l’API **ColorPaletteResources** dans XAML vous permet de prendre n’importe quelle couleur ou pinceau système qui se trouve dans notre bibliothèque de [ressources de thème](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-theme-resources), et de les redéfinir dans l’étendue d’une page ou d’un conteneur.
+La délimitation des ressources via l’API **ColorPaletteResources** dans XAML vous permet de prendre n’importe quelle couleur ou pinceau système qui se trouve dans notre bibliothèque de [ressources de thème](../controls-and-patterns/xaml-theme-resources.md), et de les redéfinir dans l’étendue d’une page ou d’un conteneur.
 
 Par exemple, si vous avez défini deux couleurs système - **BaseLow** et **BaseMediumLow** dans une grille, puis que vous avez placé deux boutons sur votre page, un à l’intérieur de cette grille et un à l’extérieur :
 

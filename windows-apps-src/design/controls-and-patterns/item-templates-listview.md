@@ -1,25 +1,25 @@
 ---
-Description: Modèles d’éléments d’affichage Liste
+description: Obtenez des modèles d’éléments que vous pouvez utiliser avec un contrôle ListView pour afficher des éléments de liste unique, double, triple et tabulaire.
 title: Modèles d’éléments d’affichage Liste
 template: detail.hbs
 ms.date: 11/03/2017
 ms.topic: article
 keywords: windows 10, uwp, fluent
-ms.openlocfilehash: 9328c3f156acd13fd8947e01e924bf0d6849c0a6
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: fb4e45721c1da399e8b51974bef9f55b0c70e16c
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684402"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172673"
 ---
 # <a name="item-templates-for-list-view"></a>Modèles d’éléments d’affichage Liste
 
-Cette section contient des modèles d’éléments que vous pouvez utiliser avec un contrôle [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView). Utilisez ces modèles pour obtenir l’apparence des types d’applications courants. 
+Cette section contient des modèles d’éléments que vous pouvez utiliser avec un contrôle [**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView). Utilisez ces modèles pour obtenir l’apparence des types d’applications courants. 
 
 Pour illustrer la liaison de données, ces modèles lient des **ListViewItems** à l’exemple de classe Recording de la [vue d’ensemble de la liaison de données](../../data-binding/data-binding-quickstart.md).
 
 > [!NOTE] 
-> Quand un **DataTemplate** contient plusieurs contrôles (par exemple, plusieurs **TextBlock**), le nom accessible par défaut pour les lecteurs d’écran est issu de .ToString() sur l’élément. Par commodité, vous pouvez plutôt définir l’[**AutomationProperties.Name**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties) sur l’élément racine du **DataTemplate**. Pour en savoir plus sur l’accessibilité, consultez [Vue d’ensemble de l’accessibilité](../accessibility/accessibility-overview.md).
+> Quand un **DataTemplate** contient plusieurs contrôles (par exemple, plusieurs **TextBlock**), le nom accessible par défaut pour les lecteurs d’écran est issu de .ToString() sur l’élément. Par commodité, vous pouvez plutôt définir l’[**AutomationProperties.Name**](/uwp/api/windows.ui.xaml.automation.automationproperties) sur l’élément racine du **DataTemplate**. Pour en savoir plus sur l’accessibilité, consultez [Vue d’ensemble de l’accessibilité](../accessibility/accessibility-overview.md).
 
 ## <a name="single-line-list-item"></a>Élément de liste monoligne
 Utilisez ce modèle pour afficher une liste d’éléments avec une image et une seule ligne de texte.
@@ -129,7 +129,7 @@ Utilisez ce modèle pour afficher une liste d’éléments avec du texte dans de
 ```
 
 ## <a name="related-articles"></a>Articles connexes
-- [Classe ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)
+- [Classe ListView](/uwp/api/windows.ui.xaml.controls.listview)
 - [Vue d’ensemble de la liaison de données](../../data-binding/data-binding-quickstart.md)
 - [Vue d’ensemble de l’accessibilité](../accessibility/accessibility-overview.md)
 - [Exemple de ListView et GridView (Windows 10)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)

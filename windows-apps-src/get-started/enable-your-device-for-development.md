@@ -1,17 +1,17 @@
 ---
 ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD
 title: Activer votre appareil pour le développement
-description: Configurez votre appareil Windows 10 pour le développement et le débogage.
+description: Découvrez comment activer votre appareil Windows 10 pour le développement et le débogage en activant le mode Développeur dans Visual Studio.
 keywords: Commencer avec une licence de développeur Visual Studio, appareil avec licence de développeur activée
 ms.date: 05/22/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4402200726da93bb820946c9849d8c15bd1c5d8d
-ms.sourcegitcommit: 48e047a581fcfcc9a4084d65a78b89f2c01cf4f3
+ms.openlocfilehash: 702e3aa166501c3e9974398ae5b89e832cfa7391
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85448389"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159053"
 ---
 # <a name="enable-your-device-for-development"></a>Activer votre appareil pour le développement
 
@@ -62,9 +62,9 @@ Cette image montre les fonctionnalités du mode développeur pour Windows 10 :
 Pour en savoir plus sur Portail d’appareil, consultez [Vue d’ensemble du portail d’appareil Windows](../debug-test-perf/device-portal.md).
 
 Pour obtenir des instructions d’installation spécifiques pour l’appareil, voir :
-- [Portail d’appareil pour Bureau](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-desktop)
-- [Portail d’appareil pour HoloLens](https://docs.microsoft.com/windows/mixed-reality/using-the-windows-device-portal)
-- [Portail d’appareil pour IoT](https://developer.microsoft.com/windows/iot/docs/DevicePortal)
+- [Portail d’appareil pour Bureau](../debug-test-perf/device-portal-desktop.md)
+- [Portail d’appareil pour HoloLens](/windows/mixed-reality/using-the-windows-device-portal)
+- [Portail d’appareil pour IoT](/windows/iot-core/manage-your-device/DevicePortal)
 - [Portail d’appareil pour appareils mobiles](../debug-test-perf/device-portal-mobile.md)
 - [Portail d’appareil pour Xbox](../xbox-apps/device-portal-xbox.md)
 
@@ -75,7 +75,7 @@ Si vous rencontrez des difficultés pour activer le mode développeur ou le port
 > [!NOTE]
 > Depuis la dernière mise à jour de Windows 10, le chargement indépendant est activé par défaut. Désormais, vous pouvez déployer un package MSIX signé sur un appareil sans configuration particulière. Si vous utilisez une version précédente de Windows 10, vos paramètres par défaut vous permettent uniquement d’exécuter les applications du Microsoft Store, et vous devez activer le chargement indépendant pour installer des applications issues d’autres sources que Microsoft.
 
-Le paramètre Charger la version test des applications est généralement utilisé par des sociétés ou des écoles qui ont besoin d’installer des applications personnalisées sur des appareils gérés, sans passer par le Microsoft Store, ou par toute personne devant exécuter des applications à partir de sources tierces. Dans ce cas, l’organisation applique généralement une stratégie visant à désactiver le paramètre *Applications UWP*, comme le montre l’image précédente de la page des paramètres. L’organisation fournit aussi le certificat nécessaire et l’emplacement d’installation pour le chargement indépendant des applications. Pour plus d’informations, consultez les articles TechNet [Chargement indépendant d’applications dans Windows 10](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10) et [Notions de base de Microsoft Intune](https://docs.microsoft.com/mem/intune/fundamentals/).
+Le paramètre Charger la version test des applications est généralement utilisé par des sociétés ou des écoles qui ont besoin d’installer des applications personnalisées sur des appareils gérés, sans passer par le Microsoft Store, ou par toute personne devant exécuter des applications à partir de sources tierces. Dans ce cas, l’organisation applique généralement une stratégie visant à désactiver le paramètre *Applications UWP*, comme le montre l’image précédente de la page des paramètres. L’organisation fournit aussi le certificat nécessaire et l’emplacement d’installation pour le chargement indépendant des applications. Pour plus d’informations, consultez les articles TechNet [Chargement indépendant d’applications dans Windows 10](/windows/deploy/sideload-apps-in-windows-10) et [Notions de base de Microsoft Intune](/mem/intune/fundamentals/).
 
 Informations spécifiques à la famille d’appareils
 
@@ -122,7 +122,7 @@ Dans les versions antérieures de Windows 10 Mobile, une option de vidage sur in
 
 Vous pouvez utiliser plusieurs outils pour déployer une application à partir d’un PC Windows 10 sur un appareil Windows 10. Les deux appareils doivent être connectés au même sous-réseau du réseau par une connexion filaire ou sans fil, ou ils doivent être connectés par USB. Dans les deux cas, seul le package d’application (.appx/.appxbundle) est installé, et non les certificats.
 
--   Utilisez l’outil de déploiement d’applications Windows 10 (WinAppDeployCmd). En savoir plus sur [l’outil WinAppDeployCmd](https://docs.microsoft.com/previous-versions/windows/apps/mt203806(v=vs.140)).
+-   Utilisez l’outil de déploiement d’applications Windows 10 (WinAppDeployCmd). En savoir plus sur [l’outil WinAppDeployCmd](/previous-versions/windows/apps/mt203806(v=vs.140)).
 -   Vous pouvez utiliser [Portail d’appareil](../debug-test-perf/device-portal.md) pour effectuer un déploiement de votre navigateur vers un appareil mobile exécutant Windows 10 version 1511 ou ultérieure. Utilisez la page **[Applications](../debug-test-perf/device-portal.md#apps-manager)** dans Device Portal pour charger un package d’application (.appx) sur le serveur et l’installer sur l’appareil.
 
 ## <a name="failure-to-install-developer-mode-package"></a>Échec de l’installation du package Mode développeur
@@ -231,8 +231,8 @@ Erreur : DEP0700 : Échec de l’inscription de l’application.
 ## <a name="see-also"></a>Voir aussi
 
 * [Votre première application](your-first-app.md)
-* [Publier votre application UWP](https://docs.microsoft.com/windows/uwp/publish/)
-* [Articles sur les procédures de développement d’applications UWP](https://docs.microsoft.com/windows/uwp/develop/)
+* [Publier votre application UWP](../publish/index.md)
+* [Articles sur les procédures de développement d’applications UWP](../develop/index.md)
 * [Exemples de code pour les développeurs UWP](https://developer.microsoft.com/windows/samples)
 * [Qu’est-ce qu’une application UWP ?](universal-application-platform-guide.md)
 * [Créer un compte Windows](sign-up.md)

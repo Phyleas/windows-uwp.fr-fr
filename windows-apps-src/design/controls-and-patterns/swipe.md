@@ -3,7 +3,7 @@ pm-contact: kisai
 design-contact: ksulliv
 dev-contact: Shmazlou
 doc-status: Published
-Description: La commande de balayage permet un accès rapide tactile aux menus contextuels.
+description: Découvrez comment utiliser la commande de balayage comme un accélérateur tactile pour les menus contextuels, afin de permettre aux utilisateurs d’effectuer rapidement la même opération sur plusieurs éléments.
 title: Balayer
 label: Swipe
 template: detail.hbs
@@ -11,12 +11,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 315edbddccc51b7e742bf9beffad8497a104ce03
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: f81e440670ccee34269ddbe5d55d93637b8d89df
+ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80614096"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89043551"
 ---
 # <a name="swipe"></a>Balayer
 

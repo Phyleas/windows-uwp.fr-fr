@@ -1,18 +1,18 @@
 ---
-Description: Étendre votre application de bureau avec des interfaces utilisateur et des composants Windows
 title: Étendre votre application avec une interface utilisateur et des composants Windows
+description: Pour ajouter des expériences Windows 10 modernes, étendez votre application de bureau avec des projets UWP et des composants Windows Runtime.
 ms.date: 06/08/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 73e867071058dfde71979318d6d711d79460f30b
-ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
+ms.openlocfilehash: 29064390e4e198d1220d40ff5ce58a63ea41e29a
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85334554"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172783"
 ---
 # <a name="extend-your-desktop-app-with-modern-uwp-components"></a>Étendre votre application de bureau avec des composants UWP modernes
 
@@ -21,7 +21,7 @@ Certaines expériences Windows 10 (par exemple, une page d’interface utilisat
 Dans de nombreux cas, vous pouvez appeler des API d’exécution Windows directement à partir de votre application de bureau. Par conséquent, avant de lire ce guide, consultez [Optimiser pour Windows 10](desktop-to-uwp-enhance.md).
 
 > [!NOTE]
-> Les fonctionnalités décrites dans cet article nécessitent que votre application de bureau comporte une [identité de package](modernize-packaged-apps.md), soit en [empaquetant votre application de bureau dans un package MSIX](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root), soit en [accordant l’identité de votre application à l’aide d’un package partiellement alloué](grant-identity-to-nonpackaged-apps.md).
+> Les fonctionnalités décrites dans cet article nécessitent que votre application de bureau comporte une [identité de package](modernize-packaged-apps.md), soit en [empaquetant votre application de bureau dans un package MSIX](/windows/msix/desktop/desktop-to-uwp-root), soit en [accordant l’identité de votre application à l’aide d’un package partiellement alloué](grant-identity-to-nonpackaged-apps.md).
 
 Si vous êtes prêt, commençons.
 
@@ -37,7 +37,7 @@ Cette image illustre un exemple de solution.
 
 ![Démarrer un projet de façon étendue](images/desktop-to-uwp/extend-start-project.png)
 
-Si votre solution ne contient aucun projet de création de package, consultez [Empaqueter votre application à l’aide de Visual Studio](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net).
+Si votre solution ne contient aucun projet de création de package, consultez [Empaqueter votre application à l’aide de Visual Studio](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net).
 
 ### <a name="configure-the-desktop-application"></a>Configurer l’application de bureau
 
@@ -175,7 +175,7 @@ Vous pouvez également ouvrir le **package.appxmanifest** dans le concepteur, ch
 
 ### <a name="start-the-uwp-app"></a>Démarrer l’application UWP
 
-Tout d’abord, à partir de votre application de bureau créez un [Uri](https://docs.microsoft.com/dotnet/api/system.uri) qui inclut le nom du protocole et les paramètres que vous souhaitez passer à l’application UWP. Appelez ensuite la méthode [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync).
+Tout d’abord, à partir de votre application de bureau créez un [Uri](/dotnet/api/system.uri) qui inclut le nom du protocole et les paramètres que vous souhaitez passer à l’application UWP. Appelez ensuite la méthode [LaunchUriAsync](/uwp/api/windows.system.launcher.launchuriasync).
 
 ```csharp
 
@@ -366,7 +366,7 @@ Modifiez votre application de bureau pour rechercher et traiter le fichier parta
 Photos.Path = Windows.Storage.ApplicationData.Current.LocalFolder.Path;
 ```
 
-Pour des instances de l’application de bureau déjà ouvertes par l’utilisateur, nous pouvons également gérer l’événement [FileSystemWatcher](https://docs.microsoft.com/dotnet/api/system.io.filesystemwatcher) et transmettre le chemin d’accès à l’emplacement du fichier. Ainsi, toutes les instances ouvertes de l’application de bureau affichent la photo partagée.
+Pour des instances de l’application de bureau déjà ouvertes par l’utilisateur, nous pouvons également gérer l’événement [FileSystemWatcher](/dotnet/api/system.io.filesystemwatcher) et transmettre le chemin d’accès à l’emplacement du fichier. Ainsi, toutes les instances ouvertes de l’application de bureau affichent la photo partagée.
 
 ```csharp
 ...

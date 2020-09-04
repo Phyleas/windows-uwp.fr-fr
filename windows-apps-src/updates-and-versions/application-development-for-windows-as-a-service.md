@@ -1,17 +1,17 @@
 ---
 title: Développement d’applications pour Windows as a service
-description: Dissociez la publication et le support des applications des builds Windows spécifiques.
+description: Découvrez l’approche Windows as a Service (WaaS) concernant l’innovation, le développement et la distribution, ainsi que le programme de test Windows Insider centré sur la communauté.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: f384ca56-f2b2-4793-b251-f7f5735376bb
 ms.localizationpriority: medium
-ms.openlocfilehash: 47be38c6d7a5374b06789beede02647ef9b264d8
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: c035a97b1750c8f285689f2b2f82f3766a6c06ad
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75737632"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173793"
 ---
 # <a name="application-development-for-windows-as-a-service"></a>Développement d’applications pour Windows as a service
 
@@ -20,7 +20,7 @@ ms.locfileid: "75737632"
 -   Windows 10 Mobile
 -   Windows 10 IoT Standard 
 
-Dans l’environnement d’aujourd’hui, où les attentes des utilisateurs sont souvent déterminées par des expériences liées à des appareils spécifiques, les cycles de produit complets se mesurent en mois plutôt qu’en années. En outre, de nouvelles versions doivent être rendues disponibles en permanence, dont le déploiement ne doit avoir qu’un impact minimal sur les utilisateurs. Microsoft a conçu Windows 10 pour répondre à ces exigences, en implémentant une nouvelle approche en termes d’innovation, de développement et de livraison appelée [Windows as a service (WaaS)](https://docs.microsoft.com/windows/deployment/update/waas-overview). La clé de la mise en place de cycles produit sensiblement plus courts tout en conservant des niveaux élevés de qualité est une approche innovante de la phase de test, centrée sur une communauté d’initiés, que Microsoft a implémentée pour Windows 10. Cette communauté d’initiés, appelés « Windows Insiders », compte des millions d’utilisateurs dans le monde entier. Les Windows Insiders qui décident de rejoindre la communauté testent de nombreuses builds tout au long du cycle d’un produit, et leur feedback apporte à Microsoft un retour d’expérience via une méthodologie itérative nommée distribution de version d’évaluation.
+Dans l’environnement d’aujourd’hui, où les attentes des utilisateurs sont souvent déterminées par des expériences liées à des appareils spécifiques, les cycles de produit complets se mesurent en mois plutôt qu’en années. En outre, de nouvelles versions doivent être rendues disponibles en permanence, dont le déploiement ne doit avoir qu’un impact minimal sur les utilisateurs. Microsoft a conçu Windows 10 pour répondre à ces exigences, en implémentant une nouvelle approche en termes d’innovation, de développement et de livraison appelée [Windows as a service (WaaS)](/windows/deployment/update/waas-overview). La clé de la mise en place de cycles produit sensiblement plus courts tout en conservant des niveaux élevés de qualité est une approche innovante de la phase de test, centrée sur une communauté d’initiés, que Microsoft a implémentée pour Windows 10. Cette communauté d’initiés, appelés « Windows Insiders », compte des millions d’utilisateurs dans le monde entier. Les Windows Insiders qui décident de rejoindre la communauté testent de nombreuses builds tout au long du cycle d’un produit, et leur feedback apporte à Microsoft un retour d’expérience via une méthodologie itérative nommée distribution de version d’évaluation.
 
 Les builds distribuées en tant que versions d’évaluation permettent à l’équipe d’ingénieurs de Windows de recueillir des données importantes relatives aux performances des builds dans des conditions d’utilisation réelle. La distribution de version d’évaluation, avec la collaboration des Windows Insiders, permet également à Microsoft de tester les builds dans des environnements matériels, d’applications et de réseau sensiblement plus variés que par le passé, et d’identifier les problèmes beaucoup plus rapidement. Par conséquent, Microsoft estime que la phase de distribution de version d’évaluation axée sur la communauté permettra plus que jamais d’accélérer le rythme des innovations et d’améliorer la qualité des versions publiques.
 
@@ -42,7 +42,7 @@ Le tableau ci-après décrit les différents canaux de maintenance et leurs prin
 | Canal semi-annuel | Environ 4 mois après la première publication par Microsoft | 18 mois à compter de la première publication | Offre plus de temps pour tester les nouvelles mises à niveau de fonctionnalités avant le déploiement | Professionnel, Éducation, Entreprise, Mobile Entreprise, IoT Standard Professionnel |
 | Canal de maintenance à long terme (LTSC) | Immédiatement après la publication par Microsoft | 10 ans | Permet le déploiement à long terme de versions sélectionnées de Windows 10 dans des configurations impliquant peu de changements | Entreprise LTSB |
 
-Pour plus d’informations, consultez [Options de maintenance de Windows 10 pour les mises à jour et les mises à niveau](https://docs.microsoft.com/windows/deployment/update/waas-overview#servicing-channels).
+Pour plus d’informations, consultez [Options de maintenance de Windows 10 pour les mises à jour et les mises à niveau](/windows/deployment/update/waas-overview#servicing-channels).
 
 ## <a name="supporting-apps-in-windows-as-a-service"></a>Prise en charge des applications dans Windows as a service
 
@@ -90,7 +90,7 @@ Certaines applications effectuent une vérification de version et transmettent s
 -   Si l’application dépend de fonctionnalités d’API spécifiques, veillez à cibler la version d’API correcte.
 -   Veillez à détecter la modification via APISet ou une autre API publique, et n’utilisez pas la version comme proxy pour certaines fonctionnalités ou certains correctifs. En cas de changements cassants, et si une vérification correcte n’est pas exposée, il s’agit d’un bogue.
 -   Veillez à ce que l’application ne vérifie PAS la version de façon non standard, par exemple via le Registre, les versions des fichiers, des décalages, le mode noyau, les pilotes ou d’autres façons. Si l’application doit absolument vérifier la version, utilisez les API GetVersion, qui doivent retourner le numéro majeur, le numéro mineur et le numéro de build.
--   Si vous utilisez l’API [GetVersion](https://docs.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getversion?redirectedfrom=MSDN), n’oubliez pas que le comportement de cette API a changé depuis Windows 8.1.
+-   Si vous utilisez l’API [GetVersion](/windows/win32/api/sysinfoapi/nf-sysinfoapi-getversion), n’oubliez pas que le comportement de cette API a changé depuis Windows 8.1.
 
 Si vous avez des applications comme des applications anti-programme malveillant ou de pare-feu, vous devez utiliser vos canaux de feedback habituels et le programme Windows Insider.
 
@@ -158,4 +158,4 @@ Faites-nous savoir comment votre application se comporte par rapport aux builds 
 
 
 ## <a name="related-topics"></a>Rubriques connexes
-[Options de maintenance de Windows 10 pour les mises à jour et les mises à niveau](https://docs.microsoft.com/windows/manage/introduction-to-windows-10-servicing)
+[Options de maintenance de Windows 10 pour les mises à jour et les mises à niveau](/windows/manage/introduction-to-windows-10-servicing)

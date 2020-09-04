@@ -1,20 +1,20 @@
 ---
-Description: Utilisez les panneaux de disposition pour organiser et regrouper des éléments d’interface utilisateur dans votre application.
+description: Découvrez comment utiliser les panneaux de disposition XAML intégrés, tels que RelativePanel, StackPanel, Grid et Canvas, pour organiser et regrouper des éléments d’interface utilisateur dans votre application.
 title: Panneaux de disposition des applications Windows
 ms.date: 04/02/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e5a796f95efb418f7d70062ca2d73bbea7220d95
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 22fa8ef8df6f97ed63465df0cb3e62cbb14e2ced
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234857"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172443"
 ---
 # <a name="layout-panels"></a>Panneaux de disposition
 
-Les panneaux de disposition sont des conteneurs qui vous permettent d’organiser et de regrouper des éléments d’interface utilisateur dans votre application. Les panneaux de disposition XAML intégrés incluent [**RelativePanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RelativePanel), [**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel), [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid), [**VariableSizedWrapGrid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.VariableSizedWrapGrid) et [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas). Nous décrivons ici chaque panneau et la manière de les utiliser pour disposer des éléments d'interface utilisateur XAML.
+Les panneaux de disposition sont des conteneurs qui vous permettent d’organiser et de regrouper des éléments d’interface utilisateur dans votre application. Les panneaux de disposition XAML intégrés incluent [**RelativePanel**](/uwp/api/Windows.UI.Xaml.Controls.RelativePanel), [**StackPanel**](/uwp/api/Windows.UI.Xaml.Controls.StackPanel), [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid), [**VariableSizedWrapGrid**](/uwp/api/Windows.UI.Xaml.Controls.VariableSizedWrapGrid) et [**Canvas**](/uwp/api/Windows.UI.Xaml.Controls.Canvas). Nous décrivons ici chaque panneau et la manière de les utiliser pour disposer des éléments d'interface utilisateur XAML.
 
 Plusieurs éléments sont à prendre en considération lors du choix d’un panneau de disposition :
 - la manière dont le panneau positionne ses éléments enfants ;
@@ -46,7 +46,7 @@ Avant d’aborder les panneaux individuels, étudions certaines propriétés com
 
 La plupart des panneaux de disposition XAML utilisent des propriétés jointes pour permettre à leurs éléments enfants d’informer le panneau parent sur la manière dont ils doivent être placés dans l’interface utilisateur. Les propriétés jointes utilisent la syntaxe *AttachedPropertyProvider.PropertyName*. Si des panneaux sont imbriqués dans d’autres panneaux, les propriétés jointes des éléments d’interface utilisateur spécifiant les caractéristiques de disposition à un parent sont interprétées par le panneau parent le plus proche uniquement.
 
-Voici un exemple de la façon dont vous pouvez définir la propriété jointe [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left) sur un contrôle Button en XAML. Cela informe l’élément Canvas parent que le contrôle Button doit être positionné à 50 pixels effectifs du bord gauche de l’élément Canvas.
+Voici un exemple de la façon dont vous pouvez définir la propriété jointe [**Canvas.Left**](/dotnet/api/system.windows.controls.canvas.left) sur un contrôle Button en XAML. Cela informe l’élément Canvas parent que le contrôle Button doit être positionné à 50 pixels effectifs du bord gauche de l’élément Canvas.
 
 ```xaml
 <Canvas>
@@ -70,22 +70,22 @@ Voici un exemple illustrant comment définir les propriétés de bordure sur un 
 
 ![Un élément Grid avec des bordures](images/layout-panel-grid-border.png)
 
-L’utilisation des propriétés de bordure intégrées réduit le nombre d’éléments XAML, ce qui peut améliorer les performances de l’interface utilisateur de votre application. Pour plus d’informations sur les panneaux de disposition et les performances de l’interface utilisateur, voir [Optimiser votre disposition XAML](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-your-xaml-layout).
+L’utilisation des propriétés de bordure intégrées réduit le nombre d’éléments XAML, ce qui peut améliorer les performances de l’interface utilisateur de votre application. Pour plus d’informations sur les panneaux de disposition et les performances de l’interface utilisateur, voir [Optimiser votre disposition XAML](../../debug-test-perf/optimize-your-xaml-layout.md).
 
 ## <a name="relativepanel"></a>RelativePanel
 
-Le panneau [**RelativePanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RelativePanel) vous permet de disposer des éléments d’interface utilisateur en spécifiant leur emplacement en fonction d’autres éléments et par rapport au panneau. Par défaut, un élément est positionné dans le coin supérieur gauche du panneau. Vous pouvez utiliser RelativePanel avec [**VisualStateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateManager) et [**AdaptiveTrigger**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.AdaptiveTrigger) pour réorganiser votre interface utilisateur pour différentes tailles de fenêtre.
+Le panneau [**RelativePanel**](/uwp/api/Windows.UI.Xaml.Controls.RelativePanel) vous permet de disposer des éléments d’interface utilisateur en spécifiant leur emplacement en fonction d’autres éléments et par rapport au panneau. Par défaut, un élément est positionné dans le coin supérieur gauche du panneau. Vous pouvez utiliser RelativePanel avec [**VisualStateManager**](/uwp/api/Windows.UI.Xaml.VisualStateManager) et [**AdaptiveTrigger**](/uwp/api/Windows.UI.Xaml.AdaptiveTrigger) pour réorganiser votre interface utilisateur pour différentes tailles de fenêtre.
 
 Ce tableau indique les propriétés jointes que vous pouvez utiliser pour aligner un élément par rapport au panneau ou à d’autres éléments.
 
 Alignement du panneau | Alignement frère | Position sœur
 ----------------|-------------------|-----------------
-[**AlignTopWithPanel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.aligntopwithpanelproperty) | [**AlignTopWith**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.aligntopwithproperty) | [**Above**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel)  
-[**AlignBottomWithPanel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.alignbottomwithpanelproperty) | [**AlignBottomWith**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.alignbottomwithproperty) | [**Below**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.belowproperty)  
-[**AlignLeftWithPanel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel) | [**AlignLeftWith**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.getalignleftwith) | [**LeftOf**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.leftofproperty)  
-[**AlignRightWithPanel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.alignrightwithpanelproperty) | [**AlignRightWith**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.alignrightwithproperty) | [**RightOf**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.setrightof)  
-[**AlignHorizontalCenterWithPanel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.alignhorizontalcenterwithpanelproperty) | [**AlignHorizontalCenterWith**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.alignhorizontalcenterwithproperty) | &nbsp;   
-[**AlignVerticalCenterWithPanel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.alignverticalcenterwithpanelproperty) | [**AlignVerticalCenterWith**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.alignverticalcenterwithproperty) | &nbsp;   
+[**AlignTopWithPanel**](/uwp/api/windows.ui.xaml.controls.relativepanel.aligntopwithpanelproperty) | [**AlignTopWith**](/uwp/api/windows.ui.xaml.controls.relativepanel.aligntopwithproperty) | [**Above**](/uwp/api/windows.ui.xaml.controls.relativepanel)  
+[**AlignBottomWithPanel**](/uwp/api/windows.ui.xaml.controls.relativepanel.alignbottomwithpanelproperty) | [**AlignBottomWith**](/uwp/api/windows.ui.xaml.controls.relativepanel.alignbottomwithproperty) | [**Below**](/uwp/api/windows.ui.xaml.controls.relativepanel.belowproperty)  
+[**AlignLeftWithPanel**](/uwp/api/windows.ui.xaml.controls.relativepanel) | [**AlignLeftWith**](/uwp/api/windows.ui.xaml.controls.relativepanel.getalignleftwith) | [**LeftOf**](/uwp/api/windows.ui.xaml.controls.relativepanel.leftofproperty)  
+[**AlignRightWithPanel**](/uwp/api/windows.ui.xaml.controls.relativepanel.alignrightwithpanelproperty) | [**AlignRightWith**](/uwp/api/windows.ui.xaml.controls.relativepanel.alignrightwithproperty) | [**RightOf**](/uwp/api/windows.ui.xaml.controls.relativepanel.setrightof)  
+[**AlignHorizontalCenterWithPanel**](/uwp/api/windows.ui.xaml.controls.relativepanel.alignhorizontalcenterwithpanelproperty) | [**AlignHorizontalCenterWith**](/uwp/api/windows.ui.xaml.controls.relativepanel.alignhorizontalcenterwithproperty) | &nbsp;   
+[**AlignVerticalCenterWithPanel**](/uwp/api/windows.ui.xaml.controls.relativepanel.alignverticalcenterwithpanelproperty) | [**AlignVerticalCenterWith**](/uwp/api/windows.ui.xaml.controls.relativepanel.alignverticalcenterwithproperty) | &nbsp;   
 
  
 Ce code XAML montre comment organiser des éléments dans un élément RelativePanel.
@@ -121,9 +121,9 @@ Voici quelques informations à noter concernant le dimensionnement des rectangle
 
 ## <a name="stackpanel"></a>StackPanel
 
-[ **StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) organise ses éléments enfants sur une seule ligne orientable horizontalement ou verticalement. StackPanel est généralement utilisé pour organiser une petite sous-section de l’interface utilisateur sur une page.
+[ **StackPanel**](/uwp/api/Windows.UI.Xaml.Controls.StackPanel) organise ses éléments enfants sur une seule ligne orientable horizontalement ou verticalement. StackPanel est généralement utilisé pour organiser une petite sous-section de l’interface utilisateur sur une page.
 
-Vous pouvez utiliser la propriété [**Orientation**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.stackpanel.orientation) pour préciser l’orientation des éléments enfants. L’orientation par défaut est [**Vertical**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Orientation).
+Vous pouvez utiliser la propriété [**Orientation**](/uwp/api/windows.ui.xaml.controls.stackpanel.orientation) pour préciser l’orientation des éléments enfants. L’orientation par défaut est [**Vertical**](/uwp/api/Windows.UI.Xaml.Controls.Orientation).
 
 Le code XAML suivant indique comment créer un empilement StackPanel vertical des éléments.
 
@@ -145,11 +145,11 @@ Dans un panneau StackPanel, si la taille d’un élément enfant n’est pas dé
 
 ## <a name="grid"></a>Grille
 
-Le panneau [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) prend en charge les dispositions fluides et vous permet d’organiser des contrôles dans des dispositions constituées de plusieurs lignes et colonnes. Vous pouvez spécifier les lignes et les colonnes d’un panneau Grid à l’aide des propriétés [**RowDefinitions**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid.rowdefinitions) et [**ColumnDefinitions**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid.columndefinitions).
+Le panneau [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid) prend en charge les dispositions fluides et vous permet d’organiser des contrôles dans des dispositions constituées de plusieurs lignes et colonnes. Vous pouvez spécifier les lignes et les colonnes d’un panneau Grid à l’aide des propriétés [**RowDefinitions**](/uwp/api/windows.ui.xaml.controls.grid.rowdefinitions) et [**ColumnDefinitions**](/uwp/api/windows.ui.xaml.controls.grid.columndefinitions).
 
-Pour positionner les objets dans des cellules spécifiques du panneau Grid, utilisez les propriétés jointes [**Grid.Column**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.column) et [**Grid.Row**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.row).
+Pour positionner les objets dans des cellules spécifiques du panneau Grid, utilisez les propriétés jointes [**Grid.Column**](/dotnet/api/system.windows.controls.grid.column) et [**Grid.Row**](/dotnet/api/system.windows.controls.grid.row).
 
-Pour forcer le contenu à s’étendre sur plusieurs lignes et colonnes, utilisez les propriétés jointes [**Grid.RowSpan**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms605035(v=vs.95)) et [**Grid.ColumnSpan**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.columnspan).
+Pour forcer le contenu à s’étendre sur plusieurs lignes et colonnes, utilisez les propriétés jointes [**Grid.RowSpan**](/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms605035(v=vs.95)) et [**Grid.ColumnSpan**](/dotnet/api/system.windows.controls.grid.columnspan).
 
 Cet exemple XAML montre comment créer un élément Grid à deux lignes et deux colonnes.
 
@@ -182,9 +182,9 @@ Dans cet exemple, le dimensionnement fonctionne comme suit.
 
 Vous pouvez répartir l’espace au sein d’une colonne ou d’une ligne en utilisant le redimensionnement **Auto** ou proportionnel. Le dimensionnement automatique permet de redimensionner les éléments d’interface pour qu’ils s’adaptent à leur contenu ou à leur conteneur parent. Vous pouvez également utiliser le dimensionnement automatique avec les lignes et les colonnes d’une grille. Pour utiliser le dimensionnement automatique, définissez la propriété Height et/ou Width des éléments d’interface utilisateur sur **Auto**.
 
-Le *dimensionnement proportionnel* sert à répartir l’espace disponible entre les lignes et les colonnes d’une grille par proportions pondérées. En XAML, les valeurs proportionnelles sont exprimées par \* (ou *n*\* pour le dimensionnement proportionnel pondéré). À titre d’exemple, dans une disposition à deux colonnes, pour spécifier qu’une colonne est cinq fois plus large que l’autre colonne, utilisez « 5\* » et « \* » pour les propriétés [**Width**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.columndefinition.width) des éléments [**ColumnDefinition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ColumnDefinition).
+Le *dimensionnement proportionnel* sert à répartir l’espace disponible entre les lignes et les colonnes d’une grille par proportions pondérées. En XAML, les valeurs proportionnelles sont exprimées par \* (ou *n*\* pour le dimensionnement proportionnel pondéré). À titre d’exemple, dans une disposition à deux colonnes, pour spécifier qu’une colonne est cinq fois plus large que l’autre colonne, utilisez « 5\* » et « \* » pour les propriétés [**Width**](/uwp/api/windows.ui.xaml.controls.columndefinition.width) des éléments [**ColumnDefinition**](/uwp/api/Windows.UI.Xaml.Controls.ColumnDefinition).
 
-Cet exemple combine le dimensionnement fixe, automatique et proportionnel dans un élément [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) avec 4 colonnes.
+Cet exemple combine le dimensionnement fixe, automatique et proportionnel dans un élément [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid) avec 4 colonnes.
 
 &nbsp;|&nbsp;|&nbsp;
 ------|------|------
@@ -213,13 +213,13 @@ Dans le concepteur XAML de Visual Studio, le résultat se présente comme suit.
 
 ## <a name="variablesizedwrapgrid"></a>VariableSizedWrapGrid
 
-[ **VariableSizedWrapGrid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.VariableSizedWrapGrid) est un panneau de disposition de style Grid dans lequel les lignes ou les colonnes sont automatiquement renvoyées à la ligne ou dans une nouvelle colonne lorsque la valeur [**MaximumRowsOrColumns**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.variablesizedwrapgrid.maximumrowsorcolumns) est atteinte. 
+[ **VariableSizedWrapGrid**](/uwp/api/Windows.UI.Xaml.Controls.VariableSizedWrapGrid) est un panneau de disposition de style Grid dans lequel les lignes ou les colonnes sont automatiquement renvoyées à la ligne ou dans une nouvelle colonne lorsque la valeur [**MaximumRowsOrColumns**](/uwp/api/windows.ui.xaml.controls.variablesizedwrapgrid.maximumrowsorcolumns) est atteinte. 
 
-La propriété [**Orientation**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.variablesizedwrapgrid.orientation) spécifie si la grille ajoute ses éléments en lignes ou en colonnes avant leur renvoi. L’orientation par défaut est **Vertical**, ce qui signifie que la grille ajoute des éléments de haut en bas jusqu’à ce qu’une colonne soit remplie, puis passe à une nouvelle colonne. Lorsque la valeur est **Horizontal**, la grille ajoute des éléments de gauche à droite, puis passe à la ligne suivante.
+La propriété [**Orientation**](/uwp/api/windows.ui.xaml.controls.variablesizedwrapgrid.orientation) spécifie si la grille ajoute ses éléments en lignes ou en colonnes avant leur renvoi. L’orientation par défaut est **Vertical**, ce qui signifie que la grille ajoute des éléments de haut en bas jusqu’à ce qu’une colonne soit remplie, puis passe à une nouvelle colonne. Lorsque la valeur est **Horizontal**, la grille ajoute des éléments de gauche à droite, puis passe à la ligne suivante.
 
-Les dimensions des cellules sont spécifiées par [**ItemHeight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.variablesizedwrapgrid.itemheight) et [**ItemWidth**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.variablesizedwrapgrid.itemwidth). Chaque cellule a la même taille. Si les valeurs ItemHeight ou ItemWidth ne sont pas spécifiées, la première cellule est redimensionnée pour s’adapter à son contenu, et toutes les autres cellules prennent la même taille.
+Les dimensions des cellules sont spécifiées par [**ItemHeight**](/uwp/api/windows.ui.xaml.controls.variablesizedwrapgrid.itemheight) et [**ItemWidth**](/uwp/api/windows.ui.xaml.controls.variablesizedwrapgrid.itemwidth). Chaque cellule a la même taille. Si les valeurs ItemHeight ou ItemWidth ne sont pas spécifiées, la première cellule est redimensionnée pour s’adapter à son contenu, et toutes les autres cellules prennent la même taille.
 
-Vous pouvez utiliser les propriétés jointes [**VariableSizedWrapGrid.ColumnSpan**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.variablesizedwrapgrid) et [**VariableSizedWrapGrid.RowSpan**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.variablesizedwrapgrid.getrowspan) pour spécifier le nombre de cellules adjacentes devant être remplies par un élément enfant.
+Vous pouvez utiliser les propriétés jointes [**VariableSizedWrapGrid.ColumnSpan**](/uwp/api/windows.ui.xaml.controls.variablesizedwrapgrid) et [**VariableSizedWrapGrid.RowSpan**](/uwp/api/windows.ui.xaml.controls.variablesizedwrapgrid.getrowspan) pour spécifier le nombre de cellules adjacentes devant être remplies par un élément enfant.
 
 Voici comment utiliser un élément VariableSizedWrapGrid en XAML.
 
@@ -245,9 +245,9 @@ Dans cet exemple, le nombre maximal de lignes dans chaque colonne est 3. La prem
 
 ## <a name="canvas"></a>Canevas
 
-Le panneau [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) positionne ses éléments enfants à l’aide de points de coordonnées fixes et ne prend pas en charge les dispositions fluides. Vous spécifiez les points des éléments enfants individuels en définissant les propriétés jointes [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left) et [**Canvas.Top**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.top) de chaque élément. L’élément Canvas parent lit les valeurs des propriétés jointes de ses enfants pendant la transmission de disposition [Arrange](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange).
+Le panneau [**Canvas**](/uwp/api/Windows.UI.Xaml.Controls.Canvas) positionne ses éléments enfants à l’aide de points de coordonnées fixes et ne prend pas en charge les dispositions fluides. Vous spécifiez les points des éléments enfants individuels en définissant les propriétés jointes [**Canvas.Left**](/dotnet/api/system.windows.controls.canvas.left) et [**Canvas.Top**](/dotnet/api/system.windows.controls.canvas.top) de chaque élément. L’élément Canvas parent lit les valeurs des propriétés jointes de ses enfants pendant la transmission de disposition [Arrange](/uwp/api/windows.ui.xaml.uielement.arrange).
 
-Dans un élément Canvas, les objets peuvent se chevaucher, auquel cas un objet est dessiné sur un autre objet. Par défaut, l’élément Canvas restitue les objets enfants dans l’ordre dans lequel ils sont déclarés, de sorte que le dernier enfant est restitué en haut (chaque élément a une valeur ZIndex par défaut de 0). Il en va de même pour les autres panneaux intégrés. Toutefois, l’élément Canvas prend également en charge la propriété jointe [**Canvas.ZIndex**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc190397(v=vs.95)) que vous pouvez définir sur chacun des éléments enfants. Vous pouvez définir cette propriété dans le code pour changer l’ordre de dessin des éléments pendant l’exécution. L’élément avec la valeur Canvas.ZIndex la plus élevée est dessiné en dernier. Ainsi, il est dessiné au-dessus des autres éléments qui partagent le même espace ou qui se chevauchent. Notez que la valeur alpha (transparence) est respectée. Ainsi, même si des éléments se chevauchent, le contenu affiché dans les zones de chevauchement peut être fusionné si le contenu supérieur a une valeur alpha non maximale.
+Dans un élément Canvas, les objets peuvent se chevaucher, auquel cas un objet est dessiné sur un autre objet. Par défaut, l’élément Canvas restitue les objets enfants dans l’ordre dans lequel ils sont déclarés, de sorte que le dernier enfant est restitué en haut (chaque élément a une valeur ZIndex par défaut de 0). Il en va de même pour les autres panneaux intégrés. Toutefois, l’élément Canvas prend également en charge la propriété jointe [**Canvas.ZIndex**](/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc190397(v=vs.95)) que vous pouvez définir sur chacun des éléments enfants. Vous pouvez définir cette propriété dans le code pour changer l’ordre de dessin des éléments pendant l’exécution. L’élément avec la valeur Canvas.ZIndex la plus élevée est dessiné en dernier. Ainsi, il est dessiné au-dessus des autres éléments qui partagent le même espace ou qui se chevauchent. Notez que la valeur alpha (transparence) est respectée. Ainsi, même si des éléments se chevauchent, le contenu affiché dans les zones de chevauchement peut être fusionné si le contenu supérieur a une valeur alpha non maximale.
 
 L’élément Canvas ne procède à aucun redimensionnement de ses enfants. Chaque élément doit spécifier sa taille.
 
@@ -270,7 +270,7 @@ Utilisez le panneau Canvas en fonction de vos besoins. Bien qu’il soit pratiqu
 
 ## <a name="panels-for-itemscontrol"></a>Panneaux pour ItemsControl
 
-Il existe plusieurs panneaux à usage spécifique qui peuvent être utilisés uniquement comme un contrôle [**ItemsPanel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) pour afficher des éléments dans un contrôle [**ItemsControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsControl). Il s’agit de [**ItemsStackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsStackPanel), [**ItemsWrapGrid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsWrapGrid), [**VirtualizingStackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.VirtualizingStackPanel) et [**WrapGrid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WrapGrid). Vous ne pouvez pas utiliser ces panneaux pour créer une disposition générale de l’interface utilisateur.
+Il existe plusieurs panneaux à usage spécifique qui peuvent être utilisés uniquement comme un contrôle [**ItemsPanel**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) pour afficher des éléments dans un contrôle [**ItemsControl**](/uwp/api/Windows.UI.Xaml.Controls.ItemsControl). Il s’agit de [**ItemsStackPanel**](/uwp/api/Windows.UI.Xaml.Controls.ItemsStackPanel), [**ItemsWrapGrid**](/uwp/api/Windows.UI.Xaml.Controls.ItemsWrapGrid), [**VirtualizingStackPanel**](/uwp/api/Windows.UI.Xaml.Controls.VirtualizingStackPanel) et [**WrapGrid**](/uwp/api/Windows.UI.Xaml.Controls.WrapGrid). Vous ne pouvez pas utiliser ces panneaux pour créer une disposition générale de l’interface utilisateur.
 
 ## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
 

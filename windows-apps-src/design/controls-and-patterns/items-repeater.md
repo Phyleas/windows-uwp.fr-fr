@@ -7,12 +7,12 @@ ms.date: 02/01/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c66fc2b07b5ee5ce87b6c1f37657b3eec49f3105
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 20aeda53af3b4b11c1562d2ed22b099a3377d3c7
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970404"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172633"
 ---
 # <a name="itemsrepeater"></a>ItemsRepeater
 
@@ -26,7 +26,7 @@ D’un point de vue conceptuel, vous pouvez voir [ItemsRepeater](/uwp/api/micros
 
 |  |  |
 | - | - |
-| ![Logo WinUI](images/winui-logo-64x64.png) | Le contrôle **ItemsRepeater** est inclus dans la bibliothèque d’interface utilisateur Windows, package NuGet contenant les nouveaux contrôles et fonctionnalités d’interface utilisateur destinés aux applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![Logo WinUI](images/winui-logo-64x64.png) | Le contrôle **ItemsRepeater** est inclus dans la bibliothèque d’interface utilisateur Windows, package NuGet contenant les nouveaux contrôles et fonctionnalités d’interface utilisateur destinés aux applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/). |
 
 > **API de la bibliothèque d’interface utilisateur Windows :** [Classe ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)
 >
@@ -95,7 +95,7 @@ ItemsRepeater itemsRepeater1 = new ItemsRepeater();
 itemsRepeater1.ItemsSource = Items;
 ```
 
-Vous pouvez aussi lier la propriété **ItemsSource** à une collection en XAML. Pour plus d’informations sur la liaison de données, consultez [Vue d’ensemble de la liaison de données](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-quickstart).
+Vous pouvez aussi lier la propriété **ItemsSource** à une collection en XAML. Pour plus d’informations sur la liaison de données, consultez [Vue d’ensemble de la liaison de données](../../data-binding/data-binding-quickstart.md).
 
 
 ```xaml
@@ -111,7 +111,7 @@ Or, vous souhaiterez probablement enrichir la présentation de vos données à l
 Dans cet exemple, l’objet de données est une chaîne simple. Le **DataTemplate** comporte une image à gauche du texte et ajoute un style au **TextBlock** pour afficher la chaîne dans une couleur bleu-vert.
 
 > [!NOTE]
-> Si vous utilisez l’[extension de balisage x:Bind](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) dans un **DataTemplate**, vous devez spécifier le DataType (`x:DataType`) sur le DataTemplate.
+> Si vous utilisez l’[extension de balisage x:Bind](../../xaml-platform/x-bind-markup-extension.md) dans un **DataTemplate**, vous devez spécifier le DataType (`x:DataType`) sur le DataTemplate.
 
 ```xaml
 <DataTemplate x:DataType="x:String">
@@ -774,14 +774,14 @@ public class MyPage : Page
 
 ## <a name="enable-accessibility"></a>Permettre l’accessibilité
 
-[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) n’offre pas d’expérience d’accessibilité par défaut. La documentation intitulée [Facilité d’utilisation des applications Windows](/windows/uwp/design/usability) est une mine d’informations grâce à laquelle vous pourrez vérifier que votre application offre une expérience utilisateur inclusive. Si vous utilisez ItemsRepeater pour créer un contrôle personnalisé, veillez à consulter la documentation relative aux [Homologues d’automatisation personnalisés](/windows/uwp/design/accessibility/custom-automation-peers).
+[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) n’offre pas d’expérience d’accessibilité par défaut. La documentation intitulée [Facilité d’utilisation des applications Windows](../usability/index.md) est une mine d’informations grâce à laquelle vous pourrez vérifier que votre application offre une expérience utilisateur inclusive. Si vous utilisez ItemsRepeater pour créer un contrôle personnalisé, veillez à consulter la documentation relative aux [Homologues d’automatisation personnalisés](../accessibility/custom-automation-peers.md).
 
 ### <a name="keyboarding"></a>Clavier
-La prise en charge minimale du clavier pour le déplacement du focus que propose ItemsRepeater s’appuie sur la [Navigation directionnelle 2D pour le clavier](/windows/uwp/design/input/focus-navigation#2d-directional-navigation-for-keyboard) de XAML.
+La prise en charge minimale du clavier pour le déplacement du focus que propose ItemsRepeater s’appuie sur la [Navigation directionnelle 2D pour le clavier](../input/focus-navigation.md#2d-directional-navigation-for-keyboard) de XAML.
 
 ![Navigation directionnelle](/windows/uwp/design/input/images/keyboard/directional-navigation.png)
 
-Le [mode XYFocusKeyboardNavigation](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode) du contrôle ItemsRepeater est _activé_ par défaut. Selon l’expérience voulue, envisagez d’ajouter la prise en charge des [interactions avec le clavier](/windows/uwp/design/input/keyboard-interactions) courantes, comme les touches Début, Fin, Pg. préc, Pg. suiv.
+Le [mode XYFocusKeyboardNavigation](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode) du contrôle ItemsRepeater est _activé_ par défaut. Selon l’expérience voulue, envisagez d’ajouter la prise en charge des [interactions avec le clavier](../input/keyboard-interactions.md) courantes, comme les touches Début, Fin, Pg. préc, Pg. suiv.
 
 ItemsRepeater ne vérifie pas automatiquement que l’ordre de tabulation par défaut de ses éléments (qu’ils soient virtualisés ou non) suit celui attribué aux éléments dans les données. Par défaut, la propriété [TabFocusNavigation](/uwp/api/windows.ui.xaml.uielement.tabfocusnavigation) du contrôle ItemsRepeater est définie sur [Once](/uwp/api/windows.ui.xaml.input.keyboardnavigationmode) et non sur la valeur par défaut commune _Local_.
 

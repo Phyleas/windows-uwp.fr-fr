@@ -1,16 +1,16 @@
 ---
 title: Créer des styles personnalisés
-description: Cet article décrit les principes fondamentaux des éléments d'interface utilisateur de stylisation en XAML
+description: Suivez ce tutoriel pour apprendre à créer des styles personnalisés et des contrôles de curseur afin de personnaliser l’interface utilisateur de votre application XAML.
 keywords: XAML, UWP, Bien démarrer
 ms.date: 08/20/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 60a62a80017b2c77acfc2604daf909ae1ec9fd36
-ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
+ms.openlocfilehash: 6d3423e9d78e2519f2d3c9ad1fc2c0b099de0349
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88942959"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160772"
 ---
 # <a name="tutorial-create-custom-styles"></a>Tutoriel : Créer des styles personnalisés
 
@@ -76,11 +76,11 @@ Appuyez sur la touche F5 pour compiler et exécuter l’application. Le premier 
 
 1. Utilisez un élément `Polygon` pour créer une forme d’arrière-plan pour le curseur d’exposition.
 
-    [L’espace de noms Windows.UI.Xaml.Shapes](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Shapes) fournit sept formes au choix. Vous pouvez choisir une ellipse, un rectangle, et un objet appelé Path, qui permet de réaliser toutes sortes de formes, et oui, même une licorne !
+    [L’espace de noms Windows.UI.Xaml.Shapes](/uwp/api/Windows.UI.Xaml.Shapes) fournit sept formes au choix. Vous pouvez choisir une ellipse, un rectangle, et un objet appelé Path, qui permet de réaliser toutes sortes de formes, et oui, même une licorne !
 
     ![Une licorne](../basics/images/xaml-basics/unicorn.png)
 
-    > **En savoir plus :** L'article [Dessiner des formes](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/shapes) vous explique tout ce que vous devez savoir sur les formes XAML.
+    > **En savoir plus :** L'article [Dessiner des formes](../controls-and-patterns/shapes.md) vous explique tout ce que vous devez savoir sur les formes XAML.
 
     Nous voulons créer un widget d'aspect triangulaire, qui ressemble à la forme dessinée sur le contrôle de volume d’une chaîne stéréo.
 
@@ -200,7 +200,7 @@ Félicitations, vous avez terminé la partie 1 ! Si vous êtes bloqué ou que 
 
 Un des avantages des styles XAML est qu’ils permettent de réduire considérablement la quantité de code que vous devez écrire et d'actualiser beaucoup plus facilement l’apparence de votre application.
 
-Pour définir un style, vous ajoutez un élément [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) à la propriété [Ressources](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Resources) d’un élément qui contient le contrôle que vous souhaitez pour le style.  Si vous ajoutez votre style à la propriété `Page.Resources`, vos styles seront accessibles à la page entière. Si vous ajoutez votre style à la propriété `Application.Resources` dans votre fichier App.xaml, le style sera accessible à l’ensemble de l’application.
+Pour définir un style, vous ajoutez un élément [Style](/uwp/api/Windows.UI.Xaml.Style) à la propriété [Ressources](/uwp/api/windows.ui.xaml.frameworkelement.Resources) d’un élément qui contient le contrôle que vous souhaitez pour le style.  Si vous ajoutez votre style à la propriété `Page.Resources`, vos styles seront accessibles à la page entière. Si vous ajoutez votre style à la propriété `Application.Resources` dans votre fichier App.xaml, le style sera accessible à l’ensemble de l’application.
 
 Vous pouvez créer des styles nommés et des styles généraux. Un style nommé doit être explicitement appliqué à des contrôles spécifiques ; un style général est appliqué à tout contrôle qui correspond au `TargetType` spécifié.
 

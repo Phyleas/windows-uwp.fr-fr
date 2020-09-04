@@ -1,18 +1,18 @@
 ---
-Description: Comment utiliser des images miniatures pour permettre aux utilisateurs d'afficher un aperçu des fichiers dans les applications UWP.
 title: Recommandations en matière d'images miniatures dans les applications UWP
+description: Découvrez comment utiliser des images miniatures pour permettre aux utilisateurs d’afficher un aperçu des fichiers lorsqu’ils parcourent une application UWP.
 label: Thumbnail images
 template: detail.hbs
 ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 15984e00b036bf44d6e4a7f60cb6435ea1add291
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: df0d2364762d75793f3f00856b06e8ae506cb327
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "63808715"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165595"
 ---
 # <a name="thumbnail-images"></a>Images miniatures
 
@@ -20,7 +20,7 @@ Ces recommandations expliquent comment utiliser des images miniatures pour perme
 
 **API importantes**
 
--   [**ThumbnailMode**](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.thumbnailmode)
+-   [**ThumbnailMode**](/uwp/api/windows.storage.fileproperties.thumbnailmode)
 
 ## <a name="should-my-app-include-thumbnails"></a>Mon application doit-elle inclure des miniatures ?
 
@@ -36,7 +36,7 @@ Utilisez des miniatures dans les cas suivants :
     ![Aperçu d'une vidéo](images/thumbnail-preview.png)
 
 ## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
-- Spécifiez le [mode d'affichage des images miniatures](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.thumbnailmode) (PicturesView, VideosView, DocumentsView, MusicView, ListView ou SingleItem) lorsque vous récupérez des miniatures. Cela garantit que les images miniatures sont optimisées pour afficher le type de fichiers que les utilisateurs souhaitent consulter. 
+- Spécifiez le [mode d'affichage des images miniatures](/uwp/api/windows.storage.fileproperties.thumbnailmode) (PicturesView, VideosView, DocumentsView, MusicView, ListView ou SingleItem) lorsque vous récupérez des miniatures. Cela garantit que les images miniatures sont optimisées pour afficher le type de fichiers que les utilisateurs souhaitent consulter. 
     - Utilisez le mode SingleItem pour récupérer la miniature d'un élément unique, quel que soit le type de fichier. Les autres modes d'affichage des images miniatures sont destinés à afficher les aperçus de plusieurs fichiers. 
 
 - Affichez des images génériques d'espaces réservés à la place des miniatures lors du chargement de ces dernières. Le recours à des espaces réservés permet à votre application de sembler plus réactive, car les utilisateurs peuvent interagir avec les aperçus avant le chargement des miniatures. 
@@ -55,7 +55,7 @@ Utilisez des miniatures dans les cas suivants :
 - N'affichez aucune information supplémentaire pour les fichiers d'images et de vidéos. Dans la plupart des cas, une image miniature suffit pour les utilisateurs qui parcourent des images et des vidéos. 
 
 ## <a name="additional-usage-guidelines"></a>Recommandations d'utilisation supplémentaires
-[Modes d'affichage recommandés pour les images miniatures](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.thumbnailmode) et fonctionnalités associées :
+[Modes d'affichage recommandés pour les images miniatures](/uwp/api/windows.storage.fileproperties.thumbnailmode) et fonctionnalités associées :
 
 <table>
 <tr>
@@ -163,8 +163,8 @@ Sinon, aucune miniature n'est récupérée.</td>
 </div>
 
 ## <a name="related-topics"></a>Rubriques connexes
-- [Énumération ThumbnailMode](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.thumbnailmode)
-- [Classe StorageItemThumbnail](https://docs.microsoft.com/uwp/api/Windows.Storage.FileProperties.StorageItemThumbnail)
-- [Classe StorageFile](https://docs.microsoft.com/uwp/api/windows.storage.storagefile)
+- [Énumération ThumbnailMode](/uwp/api/windows.storage.fileproperties.thumbnailmode)
+- [Classe StorageItemThumbnail](/uwp/api/Windows.Storage.FileProperties.StorageItemThumbnail)
+- [Classe StorageFile](/uwp/api/windows.storage.storagefile)
 - [Exemple de miniature de fichier et de dossier (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileThumbnails)
 - [Affichage Liste et affichage Grille](../design/controls-and-patterns/lists.md)

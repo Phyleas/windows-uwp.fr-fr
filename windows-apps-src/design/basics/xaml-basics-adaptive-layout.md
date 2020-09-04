@@ -1,16 +1,16 @@
 ---
 title: Tutoriel Créer des dispositions adaptatives
-description: Cet article décrit les concepts de base de la disposition adaptative en XAML
+description: Découvrez comment utiliser les fonctionnalités de disposition adaptative en XAML pour créer des applications qui s’affichent correctement, quelle que soit la taille de la fenêtre.
 keywords: XAML, UWP, Bien démarrer
 ms.date: 08/20/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b172f2da7fa8953045db4eab3818df02ce43e00c
-ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
+ms.openlocfilehash: 8e1498836772c3c279a1b9d85d76070b29593f5e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88942889"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174473"
 ---
 # <a name="tutorial-create-adaptive-layouts"></a>Tutoriel : Créer des dispositions adaptatives
 
@@ -60,11 +60,11 @@ Exécutez l'application. Son apparence est bonne en mode plein écran, mais l’
 
 ![Petite fenêtre : avant](../basics/images/xaml-basics/adaptive-layout-small-before.png)
 
-Pour plus d’informations sur la disposition des applications, consultez la section [Disposition](/windows/uwp/design/layout/) de la documentation.
+Pour plus d’informations sur la disposition des applications, consultez la section [Disposition](../layout/index.md) de la documentation.
 
 ### <a name="add-window-breakpoints"></a>Ajouter des points d’arrêt de fenêtre
 
-La première étape consiste à définir les _points d’arrêt_ auxquels différents états visuels sont appliqués. Pour plus d’informations sur les points d’arrêt pour les écrans de taille petite, moyenne et grande, consultez [Tailles d’écran et points d’arrêt](/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-design).
+La première étape consiste à définir les _points d’arrêt_ auxquels différents états visuels sont appliqués. Pour plus d’informations sur les points d’arrêt pour les écrans de taille petite, moyenne et grande, consultez [Tailles d’écran et points d’arrêt](../layout/screen-sizes-and-breakpoints-for-responsive-design.md).
 
 Ouvrez App.xaml à partir de l’Explorateur de solutions, puis ajoutez le code suivant après le `MergedDictionaries`, juste avant la balise `</ResourceDictionary>` de fermeture.
 
@@ -264,12 +264,12 @@ Exécutez l'application. Lors du chargement de l’application, essayez de modif
 
 ## <a name="going-further"></a>Aller plus loin
 
-Maintenant que vous avez terminé ce laboratoire, vous avez suffisamment de connaissances en disposition adaptative pour étendre l’expérience par vous-même. Pour aller plus loin, essayez d’optimiser la disposition pour des tailles d’écran plus grandes (par exemple Surface Hub). Si vous souhaitez tester une disposition Surface Hub, consultez [Tester les applications de Surface Hub à l’aide de Visual Studio](/windows/uwp/debug-test-perf/test-surface-hub-apps-using-visual-studio).
+Maintenant que vous avez terminé ce laboratoire, vous avez suffisamment de connaissances en disposition adaptative pour étendre l’expérience par vous-même. Pour aller plus loin, essayez d’optimiser la disposition pour des tailles d’écran plus grandes (par exemple Surface Hub). Si vous souhaitez tester une disposition Surface Hub, consultez [Tester les applications de Surface Hub à l’aide de Visual Studio](../../debug-test-perf/test-surface-hub-apps-using-visual-studio.md).
 
 Si vous êtes bloqué, vous trouverez des instructions supplémentaires dans les sections suivantes de [Définir des dispositions de pages avec XAML](../layout/layouts-with-xaml.md).
 
-+ [États visuels et déclencheurs d’état](/windows/uwp/design/layout/layouts-with-xaml#visual-states-and-state-triggers)
-+ [Dispositions personnalisées](/windows/uwp/design/layout/layouts-with-xaml#tailored-layouts)
++ [États visuels et déclencheurs d’état](../layout/layouts-with-xaml.md#visual-states-and-state-triggers)
++ [Dispositions personnalisées](../layout/layouts-with-xaml.md#tailored-layouts)
 
 Si vous souhaitez en savoir plus sur la manière dont l’application de retouche photo initiale a été générée, vous pouvez également consulter les tutoriels sur les [interfaces utilisateur](../basics/xaml-basics-ui.md) et la [liaison de données](../../data-binding/xaml-basics-data-binding.md) XAML.
 

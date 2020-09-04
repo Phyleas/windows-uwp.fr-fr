@@ -1,5 +1,5 @@
 ---
-Description: Un bouton permet à l’utilisateur de déclencher une action immédiate.
+description: Découvrez comment utiliser des cartes de visite pour permettre aux utilisateurs d’afficher et de modifier des informations de contact, telles que des noms, des numéros de téléphone et des adresses.
 title: Carte de visite
 ms.date: 03/07/2018
 ms.topic: article
@@ -9,12 +9,12 @@ design-contact: tbd
 dev-contact: tbd
 doc-status: not-published
 ms.localizationpriority: medium
-ms.openlocfilehash: 274481b2a282b025a637f7f6cc54dc0161c3e61d
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 2817977533b63df8498faa1ecbc5cc57a4987c30
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968754"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160593"
 ---
 # <a name="contact-card"></a>Carte de visite
 
@@ -174,12 +174,12 @@ private void onUserClickShowContactCard()
 
 ## <a name="retrieving-real-contacts"></a>Récupération de contacts existants
 
-Les exemples de cet article créent un contact simple. Dans une application réelle, vous devrez probablement récupérer un contact existant. Pour obtenir des instructions, consultez l’article [Contacts et calendriers](/windows/uwp/contacts-and-calendar/).
+Les exemples de cet article créent un contact simple. Dans une application réelle, vous devrez probablement récupérer un contact existant. Pour obtenir des instructions, consultez l’article [Contacts et calendriers](../../contacts-and-calendar/index.md).
 
 
 
 
 ## <a name="related-articles"></a>Articles connexes
-- [Contacts et calendrier](/windows/uwp/contacts-and-calendar/)
+- [Contacts et calendrier](../../contacts-and-calendar/index.md)
 - [Exemples de cartes de visite](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCards)
 - [Contrôle de photo de personne](/windows/uwp/controls-and-patterns/person-picture/)

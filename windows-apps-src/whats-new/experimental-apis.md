@@ -1,16 +1,16 @@
 ---
 title: API expérimentales
-description: Comprendre les API expérimentales
+description: Découvrez comment les API expérimentales sont fournies en externe à des fins d’évaluation dans le cadre des SDK Windows Insider, afin que les développeurs puissent les essayer.
 ms.date: 11/13/2017
 ms.topic: article
 keywords: windows 10, uwp, expérimentales, api
 ms.localizationpriority: medium
-ms.openlocfilehash: 542e007d07d490c2f18077e646f7598bfd2587c3
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 5a4813e7b4ae1e3dd16017066758aa8a35d0570a
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684914"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170803"
 ---
 # <a name="experimental-apis"></a>API expérimentales
 
@@ -25,7 +25,7 @@ Ces avertissements contribuent à vous protéger contre la création de dépenda
 
 Par défaut, ces API sont désactivées au moment de l’exécution et les appeler entraîne une exception d’exécution. Il s’agit d’une autre protection contribuant à empêcher les dépendances involontaires et une large distribution d’applications qui utilisent des API expérimentales.
 
-Afin d’activer ces API pour expérimentation, utilisez le module de fonctionnalités du [Portail d’appareil Windows (WDP)](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal) sur l’appareil cible pour activer la fonctionnalité correspondant à l’API que vous souhaitez appeler.
+Afin d’activer ces API pour expérimentation, utilisez le module de fonctionnalités du [Portail d’appareil Windows (WDP)](../debug-test-perf/device-portal.md) sur l’appareil cible pour activer la fonctionnalité correspondant à l’API que vous souhaitez appeler.
 
 La documentation dédiée à une API expérimentale spécifique est à la discrétion de l’équipe qui en est propriétaire.
 

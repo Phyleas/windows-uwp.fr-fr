@@ -1,5 +1,5 @@
 ---
-Description: Zone de texte qui fournit une suggestion à mesure que l’utilisateur tape.
+description: Découvrez comment utiliser des zones de liste et des zones de liste modifiable, également appelées « listes déroulantes », pour permettre aux utilisateurs de sélectionner des élément dans des listes.
 title: Zone de liste modifiable et zone de liste
 label: Combo box and list box
 template: detail.hbs
@@ -10,12 +10,12 @@ pm-contact: stmoy
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 65f65fc62f839e379535f4e1a3df8a188620fed9
-ms.sourcegitcommit: 99100b58a5b49d8ba78905b15b076b2c5cffbe49
+ms.openlocfilehash: 911585d4e00c5e6c6aea66a72488c48f4d6ffb6d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88502357"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173493"
 ---
 # <a name="combo-box-and-list-box"></a>Zone de liste modifiable et zone de liste
 
@@ -31,7 +31,7 @@ Quand la liste déroulante est fermée, elle affiche la sélection actuelle ou e
 
 |  |  |
 | - | - |
-| ![Logo WinUI](images/winui-logo-64x64.png) | La bibliothèque d’interface utilisateur Windows version 2.2 ou ultérieure inclut pour ce contrôle un nouveau modèle qui utilise des angles arrondis. Pour plus d’informations, consultez [Rayons des angles](/windows/uwp/design/style/rounded-corner). WinUI est un package NuGet qui contient de nouveaux contrôles et des fonctionnalités d’interface utilisateur pour les applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![Logo WinUI](images/winui-logo-64x64.png) | La bibliothèque d’interface utilisateur Windows version 2.2 ou ultérieure inclut pour ce contrôle un nouveau modèle qui utilise des angles arrondis. Pour plus d’informations, consultez [Rayons des angles](../style/rounded-corner.md). WinUI est un package NuGet qui contient de nouveaux contrôles et des fonctionnalités d’interface utilisateur pour les applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/). |
 
 > **API de plateforme :** [classe ComboBox](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [propriété IsEditable](/uwp/api/windows.ui.xaml.controls.combobox.iseditable), [propriété Text](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [événement TextSubmitted](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
 
@@ -337,6 +337,6 @@ Une zone de liste permet à l’utilisateur de choisir un ou plusieurs élément
 - [Contrôles de texte](text-controls.md)
 - [Vérification de l’orthographe](text-controls.md)
 - [Recherche](search.md)
-- [TextBox, classe](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
-- [PasswordBox Windows.UI.Xaml.Controls, classe](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
-- [String.Length, propriété](https://docs.microsoft.com/dotnet/api/system.string.length)
+- [TextBox, classe](/uwp/api/Windows.UI.Xaml.Controls.TextBox)
+- [PasswordBox Windows.UI.Xaml.Controls, classe](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
+- [String.Length, propriété](/dotnet/api/system.string.length)

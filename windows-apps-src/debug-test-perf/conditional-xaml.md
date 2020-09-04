@@ -5,16 +5,16 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ef518c9974fb4c8bc0f09f442f4b78be1c9c85d2
-ms.sourcegitcommit: 3a7f9f05f0127bc8e38139b219e30a8df584cad3
+ms.openlocfilehash: f4d2e4c2c1cfde922e46ddea189ab93447f2b323
+ms.sourcegitcommit: efa5f793607481dcae24cd1b886886a549e8d6e5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83775833"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89411953"
 ---
 # <a name="conditional-xaml"></a>XAML conditionnel
 
-Le *XAML conditionnel* permet d'utiliser la méthode [ApiInformation.IsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent) dans le balisage XAML. Cela vous permet de définir des propriétés et d’instancier des objets sur la base de la présence d’une API sans avoir à utiliser le code-behind. Il analyse de façon sélective les éléments ou attributs pour déterminer s’ils seront disponibles au moment de l’exécution. Les instructions conditionnelles sont évaluées au moment de l’exécution, et les éléments qualifiés associés à une balise XAML conditionnelle sont analysés si leur valeur est évaluée à **true** (vrai) ; sinon, ils sont ignorés.
+Le *XAML conditionnel* permet d'utiliser la méthode [ApiInformation.IsApiContractPresent](/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent) dans le balisage XAML. Cela vous permet de définir des propriétés et d’instancier des objets sur la base de la présence d’une API sans avoir à utiliser le code-behind. Il analyse de façon sélective les éléments ou attributs pour déterminer s’ils seront disponibles au moment de l’exécution. Les instructions conditionnelles sont évaluées au moment de l’exécution, et les éléments qualifiés associés à une balise XAML conditionnelle sont analysés si leur valeur est évaluée à **true** (vrai) ; sinon, ils sont ignorés.
 
 Le XAML conditionnel est disponible depuis Creators Update (version 1703, build 15063). Pour utiliser le XAML conditionnel, la version minimale de votre projet Visual Studio doit correspondre à la build 15063 (Creators Update) ou ultérieur, et la version cible doit correspondre à une version postérieure à la version minimale. Pour plus d’informations sur la configuration de votre projet Visual Studio, consultez [Applications adaptatives de version](version-adaptive-apps.md).
 
@@ -59,7 +59,7 @@ Nous discuterons de ces méthodes plus en détail dans les sections suivantes de
 
 Dans cet exemple, vous allez afficher « Bonjour, XAML conditionnel » comme contenu d’un bloc de texte si l’application s’exécute sur Fall Creators Update ou version ultérieure. Par défaut, aucun contenu ne sera affiché si l’application s’exécute sur une version antérieure.
 
-Tout d’abord, définissez un espace de noms personnalisé avec le préfixe « contract5Present » et utilisez l’espace de noms XAML par défaut https://schemas.microsoft.com/winfx/2006/xaml/presentation) comme schéma contenant la propriété [TextBlock.Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.Text). Pour en faire un espace de noms conditionnel, ajoutez le séparateur « ? » après le schéma.
+Tout d’abord, définissez un espace de noms personnalisé avec le préfixe « contract5Present » et utilisez l’espace de noms XAML par défaut https://schemas.microsoft.com/winfx/2006/xaml/presentation) comme schéma contenant la propriété [TextBlock.Text](/uwp/api/windows.ui.xaml.controls.textblock.Text). Pour en faire un espace de noms conditionnel, ajoutez le séparateur « ? » après le schéma.
 
 Définissez ensuite une instruction conditionnelle qui retourne **true** sur les appareils exécutant Fall Creators Update ou une version ultérieure. Utilisez la méthode ApiInformation **IsApiContractPresent** pour rechercher la version 5 de UniversalApiContract. La version 5 de UniversalApiContract a été publiée avec Fall Creators Update (SDK 16299).
 
@@ -159,7 +159,7 @@ Voici un autre exemple qui définit l’arrière-plan d’un bouton. La fonction
 
 Jusqu’ici, nous avons vu comment définir des propriétés à l’aide du XAML conditionnel, mais il est aussi possible d’instancier de manière conditionnelle des contrôles basés sur le contrat API disponible au moment de l’exécution.
 
-Ici, un contrôle [ColorPicker](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker) est instancié quand l’application s’exécute sur Fall Creators Update où le contrôle est disponible. ColorPicker n’étant pas disponible avant Fall Creators Update, utilisez une zone de liste déroulante ([ComboBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox)) quand l’application s’exécute sur des versions antérieures de façon à proposer des choix de couleurs simplifiés à l’utilisateur.
+Ici, un contrôle [ColorPicker](/uwp/api/windows.ui.xaml.controls.colorpicker) est instancié quand l’application s’exécute sur Fall Creators Update où le contrôle est disponible. ColorPicker n’étant pas disponible avant Fall Creators Update, utilisez une zone de liste déroulante ([ComboBox](/uwp/api/windows.ui.xaml.controls.combobox)) quand l’application s’exécute sur des versions antérieures de façon à proposer des choix de couleurs simplifiés à l’utilisateur.
 
 ```xaml
 <contract5Present:ColorPicker x:Name="colorPicker"
@@ -244,7 +244,7 @@ Quand l’application s’exécute sur Fall Creators Update, vous utilisez un 
 
 ## <a name="related-articles"></a>Articles connexes
 
-- [Guide des applications UWP](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
+- [Guide des applications UWP](../get-started/universal-application-platform-guide.md)
 - [Dynamically detecting features with API contracts](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)
 - [API Contracts](https://channel9.msdn.com/Events/Build/2015/3-733) (Vidéo Build 2015)
-- [Contrats d’API de la famille d’appareils universelle](/uwp/extension-sdks/windows-universal-sdk)
+- [Programmation avec les kits SDK d’extension](/uwp/extension-sdks/device-families-overview)

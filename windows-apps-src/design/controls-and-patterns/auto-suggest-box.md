@@ -1,6 +1,6 @@
 ---
-Description: Zone de texte qui fournit une suggestion à mesure que l’utilisateur tape.
 title: Recommandations concernant les zones de suggestion automatique
+description: Découvrez comment utiliser un objet AutoSuggestBox pour fournir une liste de suggestions afin que les utilisateurs puissent sélectionner des options au fil de leur saisie.
 ms.assetid: 1F608477-F795-4F33-92FA-F200CC243B6B
 dev.assetid: 54F8DB8A-120A-4D79-8B5A-9315A3764C2F
 label: Auto-suggest box
@@ -12,12 +12,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 59fef3ea55d6aa0ddfa2ef809634be7565d54f90
-ms.sourcegitcommit: db48036af630f33f0a2f7a908bfdfec945f3c241
+ms.openlocfilehash: 6eaa57aa5e3ae9d60a9c199c8011da95cd7147e2
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84437167"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160653"
 ---
 # <a name="auto-suggest-box"></a>Zone de suggestion automatique
 
@@ -29,9 +29,9 @@ Utilisez un objet AutoSuggestBox pour fournir une liste de suggestions afin que 
 
 |  |  |
 | - | - |
-| ![Logo WinUI](images/winui-logo-64x64.png) | La bibliothèque d’interface utilisateur Windows version 2.2 ou ultérieure inclut pour ce contrôle un nouveau modèle qui utilise des angles arrondis. Pour plus d’informations, consultez [Rayons des angles](/windows/uwp/design/style/rounded-corner). WinUI est un package NuGet qui contient de nouveaux contrôles et des fonctionnalités d’interface utilisateur pour les applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![Logo WinUI](images/winui-logo-64x64.png) | La bibliothèque d’interface utilisateur Windows version 2.2 ou ultérieure inclut pour ce contrôle un nouveau modèle qui utilise des angles arrondis. Pour plus d’informations, consultez [Rayons des angles](../style/rounded-corner.md). WinUI est un package NuGet qui contient de nouveaux contrôles et des fonctionnalités d’interface utilisateur pour les applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/). |
 
-> **API de plateforme** : [classe AutoSuggestBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox), [événement TextChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.textchanged), [événement SuggestionChose](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.suggestionchosen), [événement QuerySubmitted](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.querysubmitted)
+> **API de plateforme** : [classe AutoSuggestBox](/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox), [événement TextChanged](/uwp/api/windows.ui.xaml.controls.autosuggestbox.textchanged), [événement SuggestionChose](/uwp/api/windows.ui.xaml.controls.autosuggestbox.suggestionchosen), [événement QuerySubmitted](/uwp/api/windows.ui.xaml.controls.autosuggestbox.querysubmitted)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
@@ -78,9 +78,9 @@ Pour utiliser un objet AutoSuggestBox, vous devez répondre à 3 actions effect
 
 ### <a name="text-changed"></a>Texte modifié
 
-L’événement [TextChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.textchanged) se produit chaque fois que le contenu de la zone de texte est mis à jour. Utilisez la propriété [Reason](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestboxtextchangedeventargs.reason) d’arguments d’événement pour déterminer si la modification est due à une entrée utilisateur. Si la raison de la modification est **UserInput**, filtrez vos données en fonction de l’entrée. Ensuite, définissez les données filtrées comme [ItemsSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) de l’objet AutoSuggestBox pour mettre à jour la liste de suggestions.
+L’événement [TextChanged](/uwp/api/windows.ui.xaml.controls.autosuggestbox.textchanged) se produit chaque fois que le contenu de la zone de texte est mis à jour. Utilisez la propriété [Reason](/uwp/api/windows.ui.xaml.controls.autosuggestboxtextchangedeventargs.reason) d’arguments d’événement pour déterminer si la modification est due à une entrée utilisateur. Si la raison de la modification est **UserInput**, filtrez vos données en fonction de l’entrée. Ensuite, définissez les données filtrées comme [ItemsSource](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) de l’objet AutoSuggestBox pour mettre à jour la liste de suggestions.
 
-Pour contrôler la façon dont les éléments sont affichés dans la liste de suggestions, vous pouvez utiliser [DisplayMemberPath](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.displaymemberpath) ou [ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate).
+Pour contrôler la façon dont les éléments sont affichés dans la liste de suggestions, vous pouvez utiliser [DisplayMemberPath](/uwp/api/windows.ui.xaml.controls.itemscontrol.displaymemberpath) ou [ItemTemplate](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate).
 
 - Pour afficher le texte d’une seule propriété de votre élément de données, définissez la propriété DisplayMemberPath pour choisir la propriété de votre objet à afficher dans la liste de suggestions.
 - Pour définir une apparence personnalisée pour chaque élément dans la liste, utilisez la propriété ItemTemplate.
@@ -89,19 +89,19 @@ Pour contrôler la façon dont les éléments sont affichés dans la liste de su
 
 Lorsqu’un utilisateur navigue dans la liste de suggestions à l’aide du clavier, vous devez mettre à jour le texte dans la zone de texte pour assurer la correspondance.
 
-Vous pouvez définir la propriété [TextMemberPath](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.textmemberpath) pour choisir la propriété de votre objet de données à afficher dans la zone de texte. Si vous spécifiez un TextMemberPath, la zone de texte est automatiquement mise à jour. Vous devez généralement spécifier la même valeur pour DisplayMemberPath et TextMemberPath afin que le texte soit identique dans la liste de suggestions et dans la zone de texte.
+Vous pouvez définir la propriété [TextMemberPath](/uwp/api/windows.ui.xaml.controls.autosuggestbox.textmemberpath) pour choisir la propriété de votre objet de données à afficher dans la zone de texte. Si vous spécifiez un TextMemberPath, la zone de texte est automatiquement mise à jour. Vous devez généralement spécifier la même valeur pour DisplayMemberPath et TextMemberPath afin que le texte soit identique dans la liste de suggestions et dans la zone de texte.
 
-Si vous avez besoin d’afficher plus qu’une simple propriété, gérez l’événement [SuggestionChosen](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.suggestionchosen) pour remplir la zone de texte avec du texte personnalisé basé sur l’élément sélectionné.
+Si vous avez besoin d’afficher plus qu’une simple propriété, gérez l’événement [SuggestionChosen](/uwp/api/windows.ui.xaml.controls.autosuggestbox.suggestionchosen) pour remplir la zone de texte avec du texte personnalisé basé sur l’élément sélectionné.
 
 ### <a name="query-submitted"></a>Requête envoyée
 
-Gérez l’événement [QuerySubmitted](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.querysubmitted) pour effectuer une action de requête appropriée sur votre application et montrer les résultats à l’utilisateur.
+Gérez l’événement [QuerySubmitted](/uwp/api/windows.ui.xaml.controls.autosuggestbox.querysubmitted) pour effectuer une action de requête appropriée sur votre application et montrer les résultats à l’utilisateur.
 
 L’événement QuerySubmitted se produit lorsqu’un utilisateur valide une chaîne de requête. L’utilisateur peut valider une requête de l’une de ces manières :
-- Lorsque le focus est sur la zone de texte, appuyez sur Entrée ou cliquez sur l’icône de requête. La propriété [ChosenSuggestion](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.chosensuggestion) des arguments d’événement est **null**.
+- Lorsque le focus est sur la zone de texte, appuyez sur Entrée ou cliquez sur l’icône de requête. La propriété [ChosenSuggestion](/uwp/api/windows.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.chosensuggestion) des arguments d’événement est **null**.
 - Lorsque le focus est sur la liste de suggestions, appuyez sur Entrée, puis cliquez ou appuyez sur un élément. La propriété ChosenSuggestion des arguments d’événement contient l’élément sélectionné dans la liste.
 
-Dans tous les cas, la propriété [QueryText](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.querytext) des arguments d’événement contient le texte de la zone de texte.
+Dans tous les cas, la propriété [QueryText](/uwp/api/windows.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.querytext) des arguments d’événement contient le texte de la zone de texte.
 
 Voici un simple élément AutoSuggestBox avec les gestionnaires d’événements requis.
 
@@ -149,7 +149,7 @@ private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBox
 
 Utilisez un objet AutoSuggestBox pour fournir une liste de suggestions afin que les utilisateurs puissent sélectionner des options au fil de leur saisie.
 
-Par défaut, la zone de texte n’affiche pas de bouton de requête. Vous pouvez définir la propriété [QueryIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.queryicon) pour ajouter un bouton avec l’icône spécifiée sur le côté droit de la zone de texte. Par exemple, pour rendre AutoSuggestBox similaire à une zone de recherche classique, ajoutez une icône « Rechercher » comme suit.
+Par défaut, la zone de texte n’affiche pas de bouton de requête. Vous pouvez définir la propriété [QueryIcon](/uwp/api/windows.ui.xaml.controls.autosuggestbox.queryicon) pour ajouter un bouton avec l’icône spécifiée sur le côté droit de la zone de texte. Par exemple, pour rendre AutoSuggestBox similaire à une zone de recherche classique, ajoutez une icône « Rechercher » comme suit.
 
 ```xaml
 <AutoSuggestBox QueryIcon="Find"/>
@@ -190,6 +190,6 @@ Voici AutoSuggestBox avec une icône Rechercher.
 - [Contrôles de texte](text-controls.md)
 - [Vérification de l’orthographe](text-controls.md)
 - [Recherche](search.md)
-- [TextBox, classe](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
-- [PasswordBox Windows.UI.Xaml.Controls, classe](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
-- [String.Length, propriété](https://docs.microsoft.com/dotnet/api/system.string.length)
+- [TextBox, classe](/uwp/api/Windows.UI.Xaml.Controls.TextBox)
+- [PasswordBox Windows.UI.Xaml.Controls, classe](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
+- [String.Length, propriété](/dotnet/api/system.string.length)

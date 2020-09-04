@@ -1,16 +1,16 @@
 ---
 title: Créer des liaisons de données
-description: Cet article décrit les concepts de base de la liaison de données en XAML.
+description: Dans ce tutoriel, découvrez comment créer des liaisons de données à l’aide de code XAML et C# pour établir un lien direct entre votre interface utilisateur et vos données.
 keywords: XAML, UWP, Bien démarrer
 ms.date: 08/20/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ac0603aab5abdc9aef54264c7e8d5bf9ae848889
-ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
+ms.openlocfilehash: 5d3363dcc47ef43fe65b3c954b213a81cc5165e1
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88943119"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166283"
 ---
 # <a name="tutorial-create-data-bindings"></a>Tutoriel : Créer des liaisons de données
 
@@ -627,5 +627,5 @@ Comme vous l'avez peut-être remarqué, si vous modifiez le niveau de zoom sur l
 
 Vous disposez normalement de toutes les informations nécessaires dans ce tutoriel, mais, si vous avez besoin d’une aide supplémentaire, il suffit d'un clic pour accéder à la documentation sur la liaison de données. Commencez ici :
 
-+ [Extension de balisage {x:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)
-+ [Présentation détaillée de la liaison de données](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)
++ [Extension de balisage {x:Bind}](../xaml-platform/x-bind-markup-extension.md)
++ [Présentation détaillée de la liaison de données](./data-binding-in-depth.md)

@@ -1,25 +1,25 @@
 ---
-Description: Modèles d’éléments d’affichage Grille
+description: Obtenez des modèles d’éléments que vous pouvez utiliser avec un contrôle GridView pour afficher des galeries d’images, des images et du texte, ainsi que des images avec du texte superposé.
 title: Modèles d’éléments d’affichage Grille
 template: detail.hbs
 ms.date: 11/03/2017
 ms.topic: article
 keywords: windows 10, uwp, fluent
-ms.openlocfilehash: 17c14d7147cafa17e78bd13bf6684a99d87cbdfd
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 08849436f88dd9698f349f7fde64b51324212244
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684409"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172683"
 ---
 # <a name="item-templates-for-grid-view"></a>Modèles d’éléments d’affichage Grille
 
-Cette section contient des modèles d’éléments que vous pouvez utiliser avec un contrôle [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView). Utilisez ces modèles pour obtenir l’apparence des types d’applications courants.
+Cette section contient des modèles d’éléments que vous pouvez utiliser avec un contrôle [**GridView**](/uwp/api/Windows.UI.Xaml.Controls.GridView). Utilisez ces modèles pour obtenir l’apparence des types d’applications courants.
 
 Pour illustrer la liaison de données, ces modèles lient des **GridViewItems** à l’exemple de classe Recording de la [vue d’ensemble de la liaison de données](../../data-binding/data-binding-quickstart.md).
 
 > [!NOTE] 
-> Quand un **DataTemplate** contient plusieurs contrôles (par exemple, plusieurs **TextBlock**), le nom accessible par défaut pour les lecteurs d’écran est issu de .ToString() sur l’élément. Par commodité, vous pouvez plutôt définir l’[**AutomationProperties.Name**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties) sur l’élément racine du **DataTemplate**. Pour en savoir plus sur l’accessibilité, consultez [Vue d’ensemble de l’accessibilité](../accessibility/accessibility-overview.md).
+> Quand un **DataTemplate** contient plusieurs contrôles (par exemple, plusieurs **TextBlock**), le nom accessible par défaut pour les lecteurs d’écran est issu de .ToString() sur l’élément. Par commodité, vous pouvez plutôt définir l’[**AutomationProperties.Name**](/uwp/api/windows.ui.xaml.automation.automationproperties) sur l’élément racine du **DataTemplate**. Pour en savoir plus sur l’accessibilité, consultez [Vue d’ensemble de l’accessibilité](../accessibility/accessibility-overview.md).
 
 ## <a name="icon-and-text"></a>Icône et texte
 Utilisez ces modèles pour afficher une collection d’applications dans une grille avec une icône et du texte.
@@ -156,7 +156,7 @@ Utilisez ce modèle pour afficher une collection multimédia avec une superposit
 ```
 
 ## <a name="related-articles"></a>Articles connexes
-- [GridView, classe](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)
+- [GridView, classe](/uwp/api/Windows.UI.Xaml.Controls.GridView)
 - [Vue d’ensemble de la liaison de données](../../data-binding/data-binding-quickstart.md)
 - [Vue d’ensemble de l’accessibilité](../accessibility/accessibility-overview.md)
 - [Exemple de ListView et GridView (Windows 10)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)

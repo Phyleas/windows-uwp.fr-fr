@@ -1,16 +1,16 @@
 ---
 title: 'Tutoriel : Créer une interface utilisateur'
-description: Cet article décrit les principes fondamentaux de la création d’interfaces utilisateur en XAML
+description: Suivez ce tutoriel afin d’apprendre à créer une interface utilisateur de base pour un programme de modification d’image à l’aide des outils XAML de Visual Studio.
 keywords: XAML, UWP, Bien démarrer
 ms.date: 08/20/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 22cf8dc09022f841ff1f4e149232a949e7b82d20
-ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
+ms.openlocfilehash: e4c2c8d52069bf074897ec09fa44f550066b28b5
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88942879"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160753"
 ---
 # <a name="tutorial-create-a-user-interface"></a>Tutoriel : Créer une interface utilisateur
 
@@ -185,7 +185,7 @@ Pour ajouter un contrôle à l’aide de l’éditeur XAML
     </RelativePanel>
     ```
 
-    Pour plus d’informations sur les dispositions utilisant `RelativePanel`, consultez [Panneaux de disposition](/windows/uwp/layout/layout-panels#relativepanel).
+    Pour plus d’informations sur les dispositions utilisant `RelativePanel`, consultez [Panneaux de disposition](../layout/layout-panels.md#relativepanel).
 
 2. Sous l’élément `TextBlock`, ajoutez un contrôle `GridView` nommé **ImageGridView**. Définissez les _propriétés jointes_ `RelativePanel` pour placer le contrôle sous le texte du titre et l’étirer sur toute la largeur de l’écran.
 
@@ -213,7 +213,7 @@ Pour ajouter un contrôle à l’aide de l’éditeur XAML
     </RelativePanel>
     ```
 
-    Pour plus d’informations sur les propriétés jointes du panneau, consultez [Panneaux de disposition](/windows/uwp/layout/layout-panels).
+    Pour plus d’informations sur les propriétés jointes du panneau, consultez [Panneaux de disposition](../layout/layout-panels.md).
 
 3. Pour que le contrôle `GridView` affiche quelque chose, vous devez lui donner une collection de données à afficher. Ouvrez **MainPage.xaml.cs** et recherchez la méthode `GetItemsAsync`. Cette méthode remplit une collection appelée **Images**, qui est une propriété que nous avons ajoutée à **MainPage**.
 
@@ -232,7 +232,7 @@ C’est le moment idéal pour exécuter l’application et vérifier que tout fo
 Vous remarquerez que l’application ne montre pas encore d’images. Par défaut, elle affiche la valeur `ToString` du type de données qui se trouvent dans la collection. Ensuite, vous allez créer un modèle de données pour définir la façon dont les données s’affichent.
 
 > [!NOTE]
-> Vous pouvez en savoir plus sur les dispositions utilisant `RelativePanel` dans l’article [Panneaux de disposition](/windows/uwp/layout/layout-panels#relativepanel). Jetez un coup d’œil, puis essayez quelques dispositions différentes en définissant les propriétés jointes `RelativePanel` sur `TextBlock` et `GridView`.
+> Vous pouvez en savoir plus sur les dispositions utilisant `RelativePanel` dans l’article [Panneaux de disposition](../layout/layout-panels.md#relativepanel). Jetez un coup d’œil, puis essayez quelques dispositions différentes en définissant les propriétés jointes `RelativePanel` sur `TextBlock` et `GridView`.
 
 ## <a name="part-3-add-a-datatemplate-object-to-display-your-data"></a>Partie 3 : Ajouter un objet DataTemplate pour afficher vos données
 
@@ -267,7 +267,7 @@ Pour ajouter un modèle de données à une vue Grille
       NavigationCacheMode="Enabled">
     ```
 
-    Pour plus d’informations sur les espaces de noms XAML, consultez [Espaces de noms XAML et mappage d’espaces de noms](/windows/uwp/xaml-platform/xaml-namespaces-and-namespace-mapping).
+    Pour plus d’informations sur les espaces de noms XAML, consultez [Espaces de noms XAML et mappage d’espaces de noms](../../xaml-platform/xaml-namespaces-and-namespace-mapping.md).
 
 3. Dans Structure du document, cliquez avec le bouton droit sur **ImageGridView**. Dans le menu contextuel, sélectionnez **Modifier les modèles supplémentaires** > **Modifier les éléments générés (ItemTemplate)**  > **Créer vide**. La boîte de dialogue **Créer une ressource** s’ouvre.
 
@@ -317,7 +317,7 @@ Pour ajouter un modèle de données à une vue Grille
     </Grid>
     ```
 
-    Pour plus d’informations sur les dispositions de `Grid`, consultez [Panneaux de disposition](https://docs.microsoft.com/windows/uwp/layout/layout-panels#grid).
+    Pour plus d’informations sur les dispositions de `Grid`, consultez [Panneaux de disposition](../layout/layout-panels.md#grid).
 
 6. Ajoutez des contrôles à la disposition de `Grid`.
 
@@ -325,7 +325,7 @@ Pour ajouter un modèle de données à une vue Grille
 
     b. Ajoutez des contrôles `TextBlock` pour afficher le nom, le type de fichier et les dimensions de l’image. Pour ce faire, vous utilisez des contrôles `StackPanel` pour organiser les blocs de texte. Utilisez la propriété jointe `Grid.Row` pour placer le `StackPanel` le plus à l’extérieur sur la deuxième ligne (ligne 1).
 
-    Pour plus d’informations sur la disposition `StackPanel`, consultez [Panneaux de disposition](https://docs.microsoft.com/windows/uwp/layout/layout-panels#stackpanel).
+    Pour plus d’informations sur la disposition `StackPanel`, consultez [Panneaux de disposition](../layout/layout-panels.md#stackpanel).
 
     c. Ajoutez le `RatingControl` au contrôle `StackPanel` externe (vertical). Placez-le après le contrôle `StackPanel` interne (horizontal).
 

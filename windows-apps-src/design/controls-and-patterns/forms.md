@@ -1,16 +1,16 @@
 ---
-Description: Recommandations de disposition pour les formulaires dans les applications Windows
 title: Formulaires
+description: Découvrez les instructions relatives à la conception et à la création de dispositions XAML pour les formulaires d’une application UWP.
 template: detail.hbs
 ms.date: 11/07/2017
 ms.topic: article
 keywords: windows 10, uwp, fluent
-ms.openlocfilehash: 69ffaf4ff67d4ee78e78c195d759ae242a069e8e
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 0113cbf50601a3db717753ab2e12524fa281daba
+ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968510"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304691"
 ---
 # <a name="forms"></a>Formulaires
 Un formulaire est un groupe de contrôles qui collectent des données auprès de l’utilisateur et les envoient. Les formulaires sont généralement utilisés pour les pages de paramètres, les enquêtes, la création de comptes et bien plus encore. 
@@ -45,8 +45,8 @@ L’autre type de formulaire permet à l’utilisateur de choisir à quel moment
 Ce type de formulaire permet à l’utilisateur de répondre avec une certaine souplesse. En règle générale, ce type de formulaire contient plusieurs champs d’entrée libre et reçoit donc une plus grande variété de réponses. Pour vous assurer que l’entrée utilisateur est valide et que les données sont correctement mises en forme au moment de l’envoi, tenez compte des recommandations suivantes :
 
 - Rendez impossible l’envoi d’informations non valides en utilisant le contrôle approprié (par exemple, utilisez un CalendarDatePicker plutôt qu’un TextBox pour les dates du calendrier). Pour plus d’informations sur la sélection des contrôles d’entrée appropriés dans votre formulaire, consultez la section Contrôles d’entrée plus loin.
-- Quand vous utilisez des contrôles TextBox, fournissez aux utilisateurs une indication du format d’entrée souhaité avec la propriété [PlaceholderText](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox.PlaceholderText).
-- Fournissez aux utilisateurs le bon clavier visuel en indiquant l’entrée attendue d’un contrôle avec la propriété [InputScope](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.inputscope).
+- Quand vous utilisez des contrôles TextBox, fournissez aux utilisateurs une indication du format d’entrée souhaité avec la propriété [PlaceholderText](/uwp/api/Windows.UI.Xaml.Controls.TextBox.PlaceholderText).
+- Fournissez aux utilisateurs le bon clavier visuel en indiquant l’entrée attendue d’un contrôle avec la propriété [InputScope](/uwp/api/windows.ui.xaml.input.inputscope).
 - Marquez une entrée obligatoire d’un astérisque * sur l’étiquette.
 - Désactivez le bouton d’envoi jusqu’à ce que toutes les informations requises soient renseignées.
 - S’il existe des données non valides au moment de l’envoi, marquez les contrôles ayant une entrée non valide en mettant en valeur les champs ou bordures correspondants et obligez l’utilisateur à renvoyer le formulaire.
@@ -58,7 +58,7 @@ Ce type de formulaire permet à l’utilisateur de répondre avec une certaine s
 Pour faciliter l’expérience utilisateur et vous assurer que les utilisateurs peuvent fournir l’entrée correcte, tenez compte des recommandations suivantes sur la conception des dispositions des formulaires. 
 
 ### <a name="labels"></a>Étiquettes
-Les [étiquettes](labels.md) doivent être alignées à gauche et placées au-dessus du contrôle d’entrée. De nombreux contrôles disposent d’une propriété Header intégrée pour afficher l’étiquette. Pour les contrôles qui n’ont pas de propriété Header, ou pour étiqueter des groupes de contrôles, vous pouvez utiliser un élément [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock).
+Les [étiquettes](labels.md) doivent être alignées à gauche et placées au-dessus du contrôle d’entrée. De nombreux contrôles disposent d’une propriété Header intégrée pour afficher l’étiquette. Pour les contrôles qui n’ont pas de propriété Header, ou pour étiqueter des groupes de contrôles, vous pouvez utiliser un élément [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock).
 
 Pour [faciliter l’accessibilité](../accessibility/accessibility.md), étiquetez chaque contrôle et groupe de contrôles afin qu’il soit clairement identifiable par les lecteurs humains et les lecteurs d’écran. 
 
@@ -128,8 +128,8 @@ Contrôler | Utiliser | Exemple
 Contrôler | Utiliser | Exemple
 - | - | -
 [ComboBox](combo-box.md) | Démarrer dans un état compact et développer pour afficher la liste des éléments sélectionnables | Sélectionner dans une longue liste d’éléments, tels que des États ou des pays
-[ListView](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists#list-views) | Catégoriser des éléments et affecter des en-têtes de groupe, glisser-déplacer des éléments, traiter du contenu et réorganiser des éléments | Options de classement
-[GridView](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists#grid-views) | Organiser et parcourir des collections basées sur des images | Choisir une photo, une couleur, un thème d’affichage
+[ListView](./lists.md#list-views) | Catégoriser des éléments et affecter des en-têtes de groupe, glisser-déplacer des éléments, traiter du contenu et réorganiser des éléments | Options de classement
+[GridView](./lists.md#grid-views) | Organiser et parcourir des collections basées sur des images | Choisir une photo, une couleur, un thème d’affichage
 
 ### <a name="numeric-input"></a>Entrée numérique
 Contrôler | Utiliser | Exemple

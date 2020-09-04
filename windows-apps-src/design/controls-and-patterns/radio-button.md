@@ -1,5 +1,5 @@
 ---
-Description: Les cases d’option permettent aux utilisateurs de faire un choix parmi au moins deux possibilités.
+description: Découvrez comment utiliser les cases d’option qui permettent aux utilisateurs de sélectionner une option dans une collection constituée d’au moins deux options apparentées, mais qui s’excluent mutuellement.
 title: Recommandations en matière de cases d’option
 ms.assetid: 41E3F928-AA55-42A2-9281-EC3907C4F898
 label: Radio buttons
@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: dc6f5eb32cdedf442b6866e1e53be85edfb98dcb
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 7d09eaefff193a8283fd4bad68528b8976e0b63b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493434"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169783"
 ---
 # <a name="radio-buttons"></a>Cases d’option
 
@@ -33,7 +33,7 @@ Le comportement singulier d’un groupe RadioButtons le distingue des [cases à 
 
 | &nbsp; | &nbsp; |
 | - | - |
-| ![Logo WinUI](images/winui-logo-64x64.png) | Le contrôle RadioButtons est inclus dans la bibliothèque d’IU Windows, package NuGet qui contient les nouveaux contrôles et fonctionnalités d’interface utilisateur pour les applications Windows. Pour plus d’informations et pour obtenir des instructions d’installation, consultez la [bibliothèque d’IU Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![Logo WinUI](images/winui-logo-64x64.png) | Le contrôle RadioButtons est inclus dans la bibliothèque d’IU Windows, package NuGet qui contient les nouveaux contrôles et fonctionnalités d’interface utilisateur pour les applications Windows. Pour plus d’informations et pour obtenir des instructions d’installation, consultez la [bibliothèque d’IU Windows](/uwp/toolkits/winui/). |
 
 **API de la bibliothèque d’interface utilisateur Windows** : 
 * [Classe RadioButtons](/uwp/api/microsoft.ui.xaml.controls.radiobuttons)
@@ -42,9 +42,9 @@ Le comportement singulier d’un groupe RadioButtons le distingue des [cases à 
 * [Propriété SelectedIndex](/uwp/api/microsoft.ui.xaml.controls.radiobuttons.selectedindex)
 
 **API de plateforme** : 
-* [Classe RadioButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RadioButton)
-* [Événement Checked](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.Checked)
-* [Propriété IsChecked](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked)
+* [Classe RadioButton](/uwp/api/Windows.UI.Xaml.Controls.RadioButton)
+* [Événement Checked](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.Checked)
+* [Propriété IsChecked](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
@@ -129,7 +129,7 @@ Dans l’ordre column-major, le focus se déplace de haut en bas et de gauche à
 
 Dans un ordre « row-major » (où les éléments sont renseignés de gauche à droite et de haut en bas), quand le focus est sur le dernier élément d’une ligne et que la touche de direction droite est enfoncée, le focus se déplace sur le premier élément de la ligne suivante. Ce comportement concerne également l’ordre inverse : quand le focus est placé sur le premier élément d’une ligne et que la touche de direction gauche est enfoncée, le focus se place sur le dernier élément de la ligne précédente.
 
-Pour plus d’informations, consultez [Interactions avec le clavier](https://docs.microsoft.com/windows/uwp/design/input/keyboard-interactions#wrapping-homogeneous-list-and-grid-view-items).
+Pour plus d’informations, consultez [Interactions avec le clavier](../input/keyboard-interactions.md#wrapping-homogeneous-list-and-grid-view-items).
 
 ##### <a name="wrapping"></a>Renvoi à la ligne
 
@@ -377,4 +377,4 @@ Les images suivantes montrent la meilleure organisation possible des cases d’o
 
 ### <a name="for-developers-xaml"></a>Pour les développeurs (XAML)
 
-- [Classe RadioButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.radiobutton)
+- [Classe RadioButton](/uwp/api/windows.ui.xaml.controls.radiobutton)

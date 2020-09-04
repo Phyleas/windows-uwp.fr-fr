@@ -1,6 +1,6 @@
 ---
-Description: Distribuer une application empaquetée avec Pont du bureau
 title: Publiez votre application de bureau empaquetée sur le Microsoft Store ou chargez sa version test sur un ou plusieurs appareils.
+description: Découvrez comment utiliser le Pont du bureau pour distribuer une application de bureau packagée sur le Microsoft Store ou la charger de façon indépendante sur un ou plusieurs appareils.
 ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10, uwp
@@ -8,12 +8,12 @@ ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 7eb57e8cea83a4d45087be4c4685ada8d108fa7a
-ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
+ms.openlocfilehash: 469ed71fcb42894b2dfd179ce21f44da3702705e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85334498"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170643"
 ---
 # <a name="distribute-your-packaged-desktop-app"></a>Distribuer votre application de bureau empaquetée
 
@@ -166,4 +166,4 @@ private void RemoveDesktopApp()
 
 Des questions ? Contactez-nous sur Stack Overflow. Notre équipe supervise ces [étiquettes](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Vous pouvez également nous poser vos questions [ici](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
 
-Si vous rencontrez des problèmes lors de la publication de votre application sur le Store, ce [billet de blog](https://blogs.msdn.microsoft.com/appconsult/2017/09/25/preparing-a-desktop-bridge-application-for-the-store-submission/) contient des conseils utiles.
+Si vous rencontrez des problèmes lors de la publication de votre application sur le Store, ce [billet de blog](/archive/blogs/appconsult/preparing-a-desktop-bridge-application-for-the-store-submission) contient des conseils utiles.

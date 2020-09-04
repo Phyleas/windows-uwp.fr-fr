@@ -1,5 +1,5 @@
 ---
-Description: Description des outils Encre
+description: Découvrez les contrôles InkCanvas et InkToolbar qui facilitent les entrées manuscrites et les fonctionnalités liées à l’écriture manuscrite dans les applications Windows.
 title: Contrôles pour l’entrée manuscrite
 label: Inking Controls
 template: detail.hbs
@@ -8,18 +8,18 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
 ms.localizationpriority: medium
-ms.openlocfilehash: 56104dd5608356b47a405c37eba71e544c5ba23c
-ms.sourcegitcommit: 37e4af3ba203295c7e88448414cf7ea537ab5402
+ms.openlocfilehash: a856d0ef6864b70a2927c35205fb0addca3e4056
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84257426"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173963"
 ---
 # <a name="inking-controls"></a>Contrôles pour l’entrée manuscrite
 
 
 
-Il existe deux contrôles différents qui facilitent l’entrée manuscrite dans les applications Windows : [InkCanvas](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) et [InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar).
+Il existe deux contrôles différents qui facilitent l’entrée manuscrite dans les applications Windows : [InkCanvas](/uwp/api/windows.ui.xaml.controls.inkcanvas) et [InkToolbar](/uwp/api/windows.ui.xaml.controls.inktoolbar).
 
 Le contrôle InkCanvas permet de restituer une entrée de stylet sous la forme d’un trait d’encre (via les paramètres par défaut de couleur et d’épaisseur) ou d’un trait d’effacement. Ce contrôle est une superposition transparente qui n’inclut pas d’interface utilisateur intégrée permettant de modifier les propriétés de traits d’encre par défaut.
 
@@ -35,7 +35,7 @@ Par défaut, le contrôle InkToolbar comprend des boutons pour dessiner, effacer
 
 <img src="images/ink-tools-invoked-toolbar.png" width="300" alt="InkToolbar palette flyout">
 
-> **API importantes** : [classe InkCanvas](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas), [classe InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar), [classe InkPresenter](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter), [Windows.UI.Input.Inking](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking)
+> **API importantes** : [classe InkCanvas](/uwp/api/windows.ui.xaml.controls.inkcanvas), [classe InkToolbar](/uwp/api/windows.ui.xaml.controls.inktoolbar), [classe InkPresenter](/uwp/api/windows.ui.input.inking.inkpresenter), [Windows.UI.Input.Inking](/uwp/api/Windows.UI.Input.Inking)
 
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
@@ -47,7 +47,7 @@ Par défaut, les traits sont rendus sous forme d’entrée manuscrite lors de l�
 Associez InkCanvas avec un élément InkToolbar pour fournir une interface utilisateur permettant l’activation des fonctionnalités d’entrée manuscrite et la définition de propriétés d’entrée manuscrite de base, telles que la taille du trait, la couleur et la forme de la pointe du stylet.
 
 > [!NOTE] 
-> Pour une personnalisation plus complète du rendu des traits d’encre sur un élément InkCanvas, utilisez l’objet [InkPresenter](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter) sous-jacent.
+> Pour une personnalisation plus complète du rendu des traits d’encre sur un élément InkCanvas, utilisez l’objet [InkPresenter](/uwp/api/windows.ui.input.inking.inkpresenter) sous-jacent.
 
 ## <a name="examples"></a>Exemples
 
@@ -84,7 +84,7 @@ L’ajout d’un InkCanvas à votre application nécessite une seule ligne de ba
 ```
 
 > [!NOTE]
-> Pour la personnalisation détaillée d’InkCanvas à l’aide d’InkPresenter, consultez l’article [« Interactions avec le stylet et Windows Ink dans les applications Windows »](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions).
+> Pour la personnalisation détaillée d’InkCanvas à l’aide d’InkPresenter, consultez l’article [« Interactions avec le stylet et Windows Ink dans les applications Windows »](../input/pen-and-stylus-interactions.md).
 
 Le contrôle InkToolbar doit être utilisé en association avec un contrôle InkCanvas. L’intégration d’un contrôle InkToolbar (et de tous les outils intégrés) dans votre application nécessite une ligne supplémentaire de balisage :
 
@@ -170,6 +170,6 @@ La gomme dispose également d’un menu volant proposant la commande **Supprimer
 
 ## <a name="related-articles"></a>Articles connexes
 
-- [Interactions avec le stylet et Windows Ink dans les applications Windows](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions)
-- [Reconnaître les traits Windows Ink en tant que texte et formes](https://docs.microsoft.com/windows/uwp/design/input/convert-ink-to-text)
-- [Stocker et récupérer les données de traits Windows Ink](https://docs.microsoft.com/windows/uwp/design/input/save-and-load-ink)
+- [Interactions avec le stylet et Windows Ink dans les applications Windows](../input/pen-and-stylus-interactions.md)
+- [Reconnaître les traits Windows Ink en tant que texte et formes](../input/convert-ink-to-text.md)
+- [Stocker et récupérer les données de traits Windows Ink](../input/save-and-load-ink.md)

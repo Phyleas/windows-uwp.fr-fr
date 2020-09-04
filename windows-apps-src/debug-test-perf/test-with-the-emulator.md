@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b38cf60f1f890649af33ad34f244bc348af2832
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: a837dc025023d529d9090fade401726a670c7561
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82148690"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166193"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>Tester à l’aide de l’émulateur Microsoft pour Windows 10 Mobile
 
@@ -41,7 +41,7 @@ Système d’exploitation
 -   64 bits
 -   Édition Professionnelle ou version supérieure
 
-Pour vérifier la configuration requise du BIOS, voir [Activation d’Hyper-V pour l’émulateur pour Windows Phone 8](https://docs.microsoft.com/previous-versions/windows/apps/jj863509(v=vs.105)).
+Pour vérifier la configuration requise du BIOS, voir [Activation d’Hyper-V pour l’émulateur pour Windows Phone 8](/previous-versions/windows/apps/jj863509(v=vs.105)).
 
 Pour vérifier la configuration requise en termes de RAM et de système d’exploitation, dans le Panneau de configuration, sélectionnez **Système et sécurité**, puis **Système**.
 
@@ -215,7 +215,7 @@ En utilisant le mode de proximité, vous pouvez injecter des messages comme s’
 -   NDEF:URI
 -   NDEF:wkt.U
 
-Vous pouvez créer ces messages en effectuant des modifications dans les fenêtres **Charge utile** ou en les fournissant dans un fichier. Pour plus d’informations sur ces types et sur leur utilisation, voir la section Remarques de la page de référence[**ProximityDevice.PublishBinaryMessage**](https://docs.microsoft.com/uwp/api/windows.networking.proximity.proximitydevice.publishbinarymessage).
+Vous pouvez créer ces messages en effectuant des modifications dans les fenêtres **Charge utile** ou en les fournissant dans un fichier. Pour plus d’informations sur ces types et sur leur utilisation, voir la section Remarques de la page de référence[**ProximityDevice.PublishBinaryMessage**](/uwp/api/windows.networking.proximity.proximitydevice.publishbinarymessage).
 
 Windows 8 Driver Kit (WDK) inclut un exemple de pilote présentant le même protocole que l’émulateur Windows Phone 8. Vous devez télécharger le DDK, créer cet exemple de pilote, l’installer sur un appareil Windows 8, ajouter l’adresse IP ou le nom d’hôte de l’appareil Windows 8 à la liste d’appareils, puis l’approcher d’un autre appareil Windows 8 ou d’un émulateur Windows Phone 8.
 
@@ -268,7 +268,7 @@ Vous trouverez ci-dessous une référence sur les fonctionnalités disponibles :
 
 ### <a name="smart-card-reader-mode"></a>Mode Lecteur de carte à puce
 
-L’émulateur peut être connecté à un lecteur de carte à puce sur votre ordinateur hôte, de sorte que les cartes à puce insérées ou approchées s’affichent dans l’application de votre téléphone et puissent communiquer avec des commandes APDU à l’aide de la classe [**Windows.Devices.SmartCards.SmartCardConnection**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardConnection). Pour cela, un lecteur de carte à puce compatible doit être connecté à votre ordinateur. Des lecteurs de carte à puce USB (NFC/sans contact et de type insertion/contact) sont largement disponibles sur le marché. Pour permettre à l’émulateur de fonctionner avec un lecteur de carte à puce connecté, vous devez d’abord choisir le mode **Lecteur de carte**. Dans ce mode, une zone de liste déroulante répertoriant tous les lecteurs de carte à puce compatibles connectés au système hôte s’affiche. Choisissez le lecteur de carte à puce à connecter dans la liste déroulante.
+L’émulateur peut être connecté à un lecteur de carte à puce sur votre ordinateur hôte, de sorte que les cartes à puce insérées ou approchées s’affichent dans l’application de votre téléphone et puissent communiquer avec des commandes APDU à l’aide de la classe [**Windows.Devices.SmartCards.SmartCardConnection**](/uwp/api/Windows.Devices.SmartCards.SmartCardConnection). Pour cela, un lecteur de carte à puce compatible doit être connecté à votre ordinateur. Des lecteurs de carte à puce USB (NFC/sans contact et de type insertion/contact) sont largement disponibles sur le marché. Pour permettre à l’émulateur de fonctionner avec un lecteur de carte à puce connecté, vous devez d’abord choisir le mode **Lecteur de carte**. Dans ce mode, une zone de liste déroulante répertoriant tous les lecteurs de carte à puce compatibles connectés au système hôte s’affiche. Choisissez le lecteur de carte à puce à connecter dans la liste déroulante.
 
 Notez que certains lecteurs de carte à puce NFC ne prennent pas en charge les commandes APDU de carte de stockage PC/SC standard et certains types de cartes NFC.
 
@@ -319,7 +319,7 @@ Testez les applications qui utilisent la navigation ou le géorepérage à l’a
 
 Vous pouvez tester votre application tandis que vous simulez le déplacement d’un lieu vers un autre à différentes vitesses et selon différents profils de précision. Le simulateur d’emplacement peut vous aider à identifier les modifications de votre utilisation des API d’emplacement qui améliorent l’expérience utilisateur. Par exemple, l’outil peut vous permettre d’identifier que vous devez régler les paramètres de géorepérage, comme la taille ou la durée de résidence, pour détecter correctement les géorepérages des différents scénarios.
 
-L’onglet **Emplacement** prend en charge trois modes. Dans tous les modes, quand l’émulateur reçoit une nouvelle position, celle-ci est disponible pour déclencher l’événement [**PositionChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.positionchanged) ou pour répondre à un appel [**GetGeopositionAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync) de votre application de géolocalisation.
+L’onglet **Emplacement** prend en charge trois modes. Dans tous les modes, quand l’émulateur reçoit une nouvelle position, celle-ci est disponible pour déclencher l’événement [**PositionChanged**](/uwp/api/windows.devices.geolocation.geolocator.positionchanged) ou pour répondre à un appel [**GetGeopositionAsync**](/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync) de votre application de géolocalisation.
 
 -   Dans le mode **Punaise**, vous placez des punaises sur la carte. Lorsque vous cliquez sur **Lire tous les points**, le simulateur d’emplacement envoie l’emplacement de chaque punaise à l’émulateur l’un après l’autre, selon l’intervalle spécifié dans la zone de texte **Secondes par punaise**.
 
@@ -635,9 +635,9 @@ L’émulateur Microsoft inclut XDECleanup.exe, un outil qui supprime tous les o
 
 ### <a name="uninstall-windows-10-for-mobile-image"></a>Désinstaller l’image système Windows 10 pour Mobile
 
-Lorsque vous installez l’émulateur, une image système Windows 10 pour Mobile de disque dur virtuel est installée. Elle possède sa propre entrée dans la liste **Programmes et fonctionnalités** du Panneau de configuration. Pour désinstaller l’image, recherchez **Image système Windows 10 pour Mobile - \<version\>** dans la liste des programmes installés, cliquez dessus avec le bouton droit, puis choisissez **Désinstaller**.
+Lorsque vous installez l’émulateur, une image système Windows 10 pour Mobile de disque dur virtuel est installée. Elle possède sa propre entrée dans la liste **Programmes et fonctionnalités** du Panneau de configuration. Pour désinstaller l’image, recherchez **Image système Windows 10 pour Mobile -\<version\>** dans la liste des programmes installés, cliquez dessus avec le bouton droit, puis choisissez **Désinstaller**.
 
-Dans la version actuelle, vous devez alors supprimer manuellement le fichier de disque dur virtuel correspondant à l’émulateur. Si vous avez choisi le chemin d’accès par défaut pour l’installation de l’émulateur, le fichier de disque dur virtuel est situé à l’emplacement suivant : \\Program Files (x86)\\Windows Kits\\10\\Emulation\\Mobile\\\<version\>\\flash.vhd.
+Dans la version actuelle, vous devez alors supprimer manuellement le fichier de disque dur virtuel correspondant à l’émulateur. Si vous avez choisi le chemin par défaut pour l’installation de l’émulateur, le fichier du disque dur virtuel est situé à l’emplacement suivant : C:\\Program Files (x86)\\Windows Kits\\10\\Emulation\\Mobile\\\<version\>\\flash.vhd.
 
 ### <a name="how-to-disable-hardware-accelerated-graphics"></a>Procédure de désactivation des graphiques à accélération matérielle
 
@@ -660,7 +660,6 @@ Pour trouver des réponses à vos questions et résoudre vos problèmes lorsque 
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Exécuter les applications du Windows Phone dans l’émulateur](https://docs.microsoft.com/visualstudio/debugger/run-windows-phone-apps-in-the-emulator?view=vs-2015)
+* [Exécuter les applications du Windows Phone dans l’émulateur](/visualstudio/debugger/run-windows-phone-apps-in-the-emulator?view=vs-2015)
 * [Archive du Kit de développement logiciel (SDK) Windows et Windows Phone](https://developer.microsoft.com/windows/downloads/sdk-archive)
  
-

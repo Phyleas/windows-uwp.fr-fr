@@ -1,16 +1,16 @@
 ---
-description: L’extension de balisage xBind permet d’utiliser des fonctions dans le balisage.
+description: Découvrez comment utiliser les fonctions comme l’étape feuille du chemin de liaison de données dans l’extension de balisage xBind.
 title: Fonctions dans x:Bind
 ms.date: 02/06/2019
 ms.topic: article
 keywords: windows 10, uwp, xBind
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d74e99526ed5531db92ba88a1053e07a3fc993b
-ms.sourcegitcommit: c7f33dbe9516d28664df1b91e03edca3cb9fb0c8
+ms.openlocfilehash: 4d677767f7eb73bf46784b3f256b511e54013548
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87871685"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170043"
 ---
 # <a name="functions-in-xbind"></a>Fonctions dans x:Bind
 
@@ -23,7 +23,7 @@ ms.locfileid: "87871685"
 - Permet aux liaisons de dépendre de plus d’un paramètre
 
 > [!NOTE]
-> Pour utiliser des fonctions avec **{x:Bind}** , la version du SDK cible de votre application doit être 14393 ou une version ultérieure. Vous ne pouvez pas utiliser des fonctions si votre application cible des versions antérieures de Windows 10. Pour plus d’informations sur les versions cibles, voir [Code adaptatif de version](https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
+> Pour utiliser des fonctions avec **{x:Bind}** , la version du SDK cible de votre application doit être 14393 ou une version ultérieure. Vous ne pouvez pas utiliser des fonctions si votre application cible des versions antérieures de Windows 10. Pour plus d’informations sur les versions cibles, voir [Code adaptatif de version](../debug-test-perf/version-adaptive-code.md).
 
 Dans l’exemple suivant, l’arrière-plan et le premier plan de l’élément sont liés à des fonctions de conversion reposant sur le paramètre de couleur :
 

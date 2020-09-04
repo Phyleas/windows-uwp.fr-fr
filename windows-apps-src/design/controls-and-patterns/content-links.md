@@ -1,6 +1,6 @@
 ---
-Description: Utilisez les liens de contenu pour incorporer des données riches dans vos contrôles de texte.
 title: Liens de contenu dans les contrôles de texte
+description: Découvrez comment utiliser des liens de contenu pour incorporer des données enrichies dans les contrôles TextBlock, RichTextBlock et RichEditBox.
 label: Content links
 template: detail.hbs
 ms.date: 03/07/2018
@@ -10,12 +10,12 @@ pm-contact: miguelrb
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: b72d7fced63a4c3ef4b1b233afcbb9f9874d9a3f
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 8a35e065a44eb55b84f6b70f5833c8652188a8c9
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "68796718"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174643"
 ---
 # <a name="content-links-in-text-controls"></a>Liens de contenu dans les contrôles de texte
 
@@ -162,7 +162,7 @@ Le sélecteur People crée un ContentLinkInfo avec un Uri qui utilise le protoco
 - Si LinkContentKind n’est pas « People », il ouvre l'application **Contacts**. Par exemple, cela peut se produire si vous avez modifié le LinkContentKind dans le Gestionnaire d’événements ContentLinkChanged.
 
 > [!TIP]
-> Pour plus d’informations sur l’ouverture d’autres applications et sites Web à partir de votre application, consultez les rubriques sous [Lancer une application avec un Uri](/windows/uwp/launch-resume/launch-app-with-uri).
+> Pour plus d’informations sur l’ouverture d’autres applications et sites Web à partir de votre application, consultez les rubriques sous [Lancer une application avec un Uri](../../launch-resume/launch-app-with-uri.md).
 
 #### <a name="invoked"></a>Invoked
 
@@ -303,7 +303,7 @@ private void Button_Click(object sender, RoutedEventArgs e)
 ```
 
 > [!TIP]
-> Quand vous utilisez un ContentLink dans un contrôle de texte avec d’autres éléments de texte en XAML, placez le contenu dans un conteneur [Span](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.span) et appliquez l’attribut `xml:space="preserve"` au conteneur Span pour conserver l’espace entre le ContentLink et d'autres éléments.
+> Quand vous utilisez un ContentLink dans un contrôle de texte avec d’autres éléments de texte en XAML, placez le contenu dans un conteneur [Span](/uwp/api/windows.ui.xaml.documents.span) et appliquez l’attribut `xml:space="preserve"` au conteneur Span pour conserver l’espace entre le ContentLink et d'autres éléments.
 
 ## <a name="examples"></a>Exemples
 
