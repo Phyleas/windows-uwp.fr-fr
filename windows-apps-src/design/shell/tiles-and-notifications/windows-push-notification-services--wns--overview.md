@@ -1,5 +1,5 @@
 ---
-Description: Les services de notification Push Windows (WNS) permettent aux développeurs tiers d’envoyer des mises à jour de toast, de vignette et de badge, ainsi que des mises à jour brutes à partir de leur propre service cloud. Il en résulte un mécanisme fiable et optimal de remise des nouvelles mises à jour aux utilisateurs.
+description: Les services de notification Push Windows (WNS) permettent aux développeurs tiers d’envoyer des mises à jour de toast, de vignette et de badge, ainsi que des mises à jour brutes à partir de leur propre service cloud. Il en résulte un mécanisme fiable et optimal de remise des nouvelles mises à jour aux utilisateurs.
 title: Vue d’ensemble des services de notifications Push Windows (WNS)
 ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 03/06/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 98248aff8f16305b9fa335d4c77ca1a03bc46686
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: bd910c42743577a83491386f5c667dd09722ba9b
+ms.sourcegitcommit: 8171695ade04a762f19723f0b88e46e407375800
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89156743"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89494375"
 ---
 # <a name="windows-push-notification-services-wns-overview"></a>Vue d’ensemble des services de notifications Push Windows (WNS) 
 
@@ -184,7 +184,6 @@ Le diagramme ci-après illustre le flux de données :
 
 ## <a name="expiration-of-tile-and-badge-notifications"></a>Expiration des notifications par vignette et par badge
 
-
 Par défaut, les notifications par vignette et par badge arrivent à expiration trois jours après avoir été téléchargées. Quand une notification arrive à expiration, le contenu est supprimé de la vignette ou de la file d’attente et n’est plus présenté à l’utilisateur. Il est préférable de définir une expiration (en utilisant un délai approprié pour votre application) pour toutes les notifications par vignette et par badge, afin de vous assurer que le contenu de votre vignette ne persiste pas plus longtemps que nécessaire. Un délai d’expiration explicite est essentiel pour les contenus dont la durée de vie est limitée. Cette approche assure également la suppression du contenu périmé si votre service cloud arrête d’envoyer des notifications, ou que l’utilisateur se déconnecte du réseau pour une période prolongée.
 
 Votre service Cloud peut définir un délai d’expiration pour chaque notification en définissant l’en-tête HTTP X-WNS-TTL pour spécifier la durée (en secondes) pendant laquelle votre notification restera valide après son envoi. Pour plus d’informations, consultez [en-têtes de demande et de réponse du service de notification push](/previous-versions/windows/apps/hh465435(v=win.10)).
@@ -192,7 +191,6 @@ Votre service Cloud peut définir un délai d’expiration pour chaque notificat
 Par exemple, au cours d’une journée active d’échanges sur le marché boursier, vous pouvez doubler le délai d’expiration de la mise à jour du cours d’une action par rapport à l’intervalle d’envoi (par exemple une heure après la réception du contenu, si vous envoyez des notifications chaque demi-heure). Autre exemple, dans une application d’infos, le délai d’expiration approprié pour la mise à jour quotidienne des vignettes d’infos est d’une journée.
 
 ## <a name="push-notifications-and-battery-saver"></a>Notifications Push et économiseur de batterie
-
 
 L’économiseur de batterie prolonge l’autonomie en limitant l’activité en arrière-plan sur l’appareil. Windows 10 permet à l’utilisateur de configurer l’économiseur de batterie de sorte qu’il s’active automatiquement lorsque le niveau de la batterie descend en dessous d’un seuil défini. Lorsque l’économiseur de batterie est activé, la réception de notifications Push est désactivée afin de réduire la consommation d’énergie. Il y a toutefois quelques exceptions. Les paramètres d’économiseur de batterie Windows 10 suivants (disponibles dans l’application **Paramètres**) permettent à votre application de recevoir des notifications Push même lorsque l’économiseur de batterie est activé.
 
@@ -206,11 +204,9 @@ Si votre application s’appuie en grande partie sur les notifications Push, nou
 > [!TIP]
 > Lors de la notification de l’utilisateur sur les paramètres de l’économiseur de batterie, nous vous recommandons de fournir un moyen de supprimer le message à l’avenir. Par exemple, la `dontAskMeAgainBox` case à cocher dans l’exemple suivant rend persistante la préférence de l’utilisateur dans [**LocalSettings**](/uwp/api/Windows.Storage.ApplicationData.LocalSettings).
 
- 
+Voici un exemple de vérification de l’activation de l’économiseur de batterie dans Windows 10. Cet exemple avertit l’utilisateur et ouvre l’application Paramètres au niveau des **paramètres de l’économiseur de batterie**. L’élément `dontAskAgainSetting` permet à l’utilisateur de supprimer le message s’il ne souhaite plus être averti.
 
-Voici un exemple illustrant comment vérifier si l’économiseur de batterie est activé dans Windows 10. Cet exemple avertit l’utilisateur et ouvre l’application Paramètres au niveau des **paramètres de l’économiseur de batterie**. L’élément `dontAskAgainSetting` permet à l’utilisateur de supprimer le message s’il ne souhaite plus être averti.
-
-```cs
+```csharp
 using System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -255,6 +251,62 @@ async public void CheckForEnergySaving()
 }
 ```
 
+```cppwinrt
+#include <winrt/Windows.Foundation.h>
+#include <winrt/Windows.Storage.h>
+#include <winrt/Windows.System.h>
+#include <winrt/Windows.System.Power.h>
+#include <winrt/Windows.UI.Xaml.h>
+#include <winrt/Windows.UI.Xaml.Controls.h>
+#include <winrt/Windows.UI.Xaml.Navigation.h>
+using namespace winrt;
+using namespace winrt::Windows::Foundation;
+using namespace winrt::Windows::Storage;
+using namespace winrt::Windows::System;
+using namespace winrt::Windows::System::Power;
+using namespace winrt::Windows::UI::Xaml;
+using namespace winrt::Windows::UI::Xaml::Controls;
+using namespace winrt::Windows::UI::Xaml::Navigation;
+...
+winrt::fire_and_forget CheckForEnergySaving()
+{
+    // Get reminder preference from LocalSettings.
+    bool dontAskAgain{ false };
+    auto localSettings = ApplicationData::Current().LocalSettings();
+    IInspectable dontAskSetting = localSettings.Values().Lookup(L"dontAskAgainSetting");
+    if (!dontAskSetting)
+    {
+        // Setting doesn't exist.
+        dontAskAgain = false;
+    }
+    else
+    {
+        // Retrieve setting value
+        dontAskAgain = winrt::unbox_value<bool>(dontAskSetting);
+    }
+
+    // Check whether battery saver is on, and whether it's okay to raise dialog.
+    if ((PowerManager::EnergySaverStatus() == EnergySaverStatus::On) && (!dontAskAgain))
+    {
+        // Check dialog results.
+        ContentDialogResult dialogResult = co_await saveEnergyDialog().ShowAsync();
+        if (dialogResult == ContentDialogResult::Primary)
+        {
+            // Launch battery saver settings
+            // (settings are available only when a battery is present).
+            co_await Launcher::LaunchUriAsync(Uri(L"ms-settings:batterysaver-settings"));
+        }
+
+        // Save reminder preference.
+        if (dontAskAgainBox().IsChecked())
+        {
+            // Don't raise the dialog again.
+            localSettings.Values().Insert(L"dontAskAgainSetting", winrt::box_value(true));
+        }
+    }
+}
+```
+
 Il s’agit du code XAML pour les [**ContentDialog**](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog) proposés dans cet exemple.
 
 ```xaml
@@ -277,7 +329,6 @@ Il s’agit du code XAML pour les [**ContentDialog**](/uwp/api/Windows.UI.Xaml.C
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-
 * [Envoyer une notification par vignette locale](sending-a-local-tile-notification.md)
 * [Démarrage rapide : envoi d’une notification Push](/previous-versions/windows/apps/hh868252(v=win.10))
 * [Comment mettre à jour un badge via des notifications Push](/previous-versions/windows/apps/hh465450(v=win.10))
@@ -287,6 +338,3 @@ Il s’agit du code XAML pour les [**ContentDialog**](/uwp/api/Windows.UI.Xaml.C
 * [En-têtes des demandes et des réponses du service de notifications Push](/previous-versions/windows/apps/hh465435(v=win.10))
 * [Recommandations et liste de vérification sur les notifications Push]()
 * [Notifications brutes](/previous-versions/windows/apps/hh761488(v=win.10))
- 
-
- 
