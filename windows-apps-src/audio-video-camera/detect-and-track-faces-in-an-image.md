@@ -4,20 +4,18 @@ description: Cette rubrique montre comment utiliser FaceDetector pour détecter 
 title: Détecter les visages dans des images ou des vidéos
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6232a8003140284956319728e16b3b953aff3177
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: 753ac6894a8ab863255b6023636fad54b7568f4a
+ms.sourcegitcommit: bea08ea0eea53cd3f002b04a081a96400f6759ae
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89362732"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89558472"
 ---
 # <a name="detect-faces-in-images-or-videos"></a>Détecter les visages dans des images ou des vidéos
 
 
-
-\[Certaines informations relatives aux produits précommercialisés peuvent être substantiellement modifiées avant leur commercialisation. Microsoft exclut toute garantie, expresse ou implicite, concernant les informations fournies ici.\]
 
 Cette rubrique montre comment utiliser [**FaceDetector**](/uwp/api/Windows.Media.FaceAnalysis.FaceDetector) pour détecter des visages dans une image. Le [**FaceTracker**](/uwp/api/Windows.Media.FaceAnalysis.FaceTracker) est optimisé pour le suivi des visages dans le temps dans une séquence de trames vidéo.
 
