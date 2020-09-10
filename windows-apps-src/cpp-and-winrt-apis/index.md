@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection
 ms.localizationpriority: medium
-ms.openlocfilehash: 1719b959b3c22bfac93215607785bd4634934407
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 3f05bbd1ad5ea770e96ebbbd74c3a980ae0585b7
+ms.sourcegitcommit: 6009896ead442b378106d82870f249dc8b55b886
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166213"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89643778"
 ---
 # <a name="cwinrt"></a>C++/WinRT
 
@@ -39,6 +39,8 @@ Pour plus d’informations sur le portage vers C++/WinRT, consultez ces ressourc
 - [Passer de C++/CX à C++/WinRT](./move-to-winrt-from-cx.md)
 - [Passer de WRL à C++/WinRT](./move-to-winrt-from-wrl.md)
 - [Passer de C# à C++/WinRT](./move-to-winrt-from-csharp.md)
+
+Consultez aussi [Où trouver des exemples d’applications C++/WinRT ?](/windows/uwp/cpp-and-winrt-apis/faq#where-can-i-find-cwinrt-sample-apps).
 
 ### <a name="topics-about-cwinrt"></a>Rubriques sur C++/WinRT
 
