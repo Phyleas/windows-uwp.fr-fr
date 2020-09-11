@@ -1,5 +1,5 @@
 ---
-Description: Améliorez votre application de bureau pour les utilisateurs de Windows 10 avec les API Windows Runtime.
+description: Améliorez votre application de bureau pour les utilisateurs de Windows 10 avec les API Windows Runtime.
 title: Appeler des API Windows Runtime dans les applications de bureau
 ms.date: 08/20/2019
 ms.topic: article
@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 5a7c77f6c553408d2631fb3e324e67d79318f9b4
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e58315ed70b889e1369e8c13a563f320c0ca1948
+ms.sourcegitcommit: a222ad0e2d97e35a60000c473808c678395376ee
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89170693"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89479079"
 ---
 # <a name="call-windows-runtime-apis-in-desktop-apps"></a>Appeler des API Windows Runtime dans les applications de bureau
 
@@ -72,7 +72,7 @@ Il existe deux options pour les projets .NET :
 
 3. Dans la fenêtre **Propriétés**, définissez le champ **Copie locale** de chaque fichier *.winmd* sur **False**.
 
-    ![copy-local-field](images/desktop-to-uwp/copy-local-field.png)
+    ![Champ Copie locale](images/desktop-to-uwp/copy-local-field.png)
 
 ### <a name="modify-a-c-win32-project-to-use-windows-runtime-apis"></a>Modifier un C++ projet Win32 pour utiliser des API d’exécution Windows
 
@@ -93,7 +93,7 @@ Vous êtes maintenant prêt à ajouter des expériences modernes qui s’activen
 
 Le est vaste. Par exemple, vous pouvez simplifier votre flux de bons de commande à l’aide d’[API de monétisation](/windows/uwp/monetize) ou [attirer l’attention sur votre application](/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts) lorsque vous avez quelque chose d’intéressant à partager, par exemple, une nouvelle image publiée par un autre utilisateur.
 
-![Toast](images/desktop-to-uwp/toast.png)
+![Notification toast](images/desktop-to-uwp/toast.png)
 
 Même si les utilisateurs ignorent ou ferment votre message, ils peuvent le revoir dans le centre de notifications et cliquer dessus pour ouvrir votre application. Cela rend votre application plus attractive et présente l’avantage supplémentaire de la faire paraître profondément intégrée avec le système d’exploitation. Nous vous présentons le code de cette expérience un peu plus loin dans cet article.
 
@@ -156,7 +156,41 @@ private void ShowToast()
 }
 ```
 
-```C++
+```cppwinrt
+#include <sstream>
+#include <winrt/Windows.Data.Xml.Dom.h>
+#include <winrt/Windows.UI.Notifications.h>
+
+using namespace winrt::Windows::Foundation;
+using namespace winrt::Windows::System;
+using namespace winrt::Windows::UI::Notifications;
+using namespace winrt::Windows::Data::Xml::Dom;
+
+void UWP::ShowToast()
+{
+    std::wstring const title = L"featured picture of the day";
+    std::wstring const content = L"beautiful scenery";
+    std::wstring const image = L"https://picsum.photos/360/180?image=104";
+    std::wstring const logo = L"https://picsum.photos/64?image=883";
+
+    std::wostringstream xmlString;
+    xmlString << L"<toast><visual><binding template='ToastGeneric'>" <<
+        L"<text>" << title << L"</text>" <<
+        L"<text>" << content << L"</text>" <<
+        L"<image src='" << image << L"'/>" <<
+        L"<image src='" << logo << L"'" <<
+        L" placement='appLogoOverride' hint-crop='circle'/>" <<
+        L"</binding></visual></toast>";
+
+    XmlDocument toastXml;
+
+    toastXml.LoadXml(xmlString.str().c_str());
+
+    ToastNotificationManager::CreateToastNotifier().Show(ToastNotification(toastXml));
+}
+```
+
+```cppcx
 using namespace Windows::Foundation;
 using namespace Windows::System;
 using namespace Windows::UI::Notifications;
@@ -208,33 +242,29 @@ Pour cette configuration de build, créez une constante pour identifier le code 
 
 Pour les projets .NET, la constante s’appelle **Constante de compilation conditionnelle**.
 
-![préprocesseur](images/desktop-to-uwp/compilation-constants.png)
+![Constante de compilation conditionnelle](images/desktop-to-uwp/compilation-constants.png)
 
 Pour les projets C++, la constante s’appelle **Définition du préprocesseur**.
 
-![préprocesseur](images/desktop-to-uwp/pre-processor.png)
+![Constante de définition de préprocesseur](images/desktop-to-uwp/pre-processor.png)
 
 Ajoutez cette constante devant un bloc de code UWP.
 
 ```csharp
-
 [System.Diagnostics.Conditional("_UWP")]
 private void ShowToast()
 {
  ...
 }
-
 ```
 
 ```C++
-
 #if _UWP
 void UWP::ShowToast()
 {
  ...
 }
 #endif
-
 ```
 
 Le compilateur génère ce code uniquement si cette constante est définie dans votre configuration de build active.

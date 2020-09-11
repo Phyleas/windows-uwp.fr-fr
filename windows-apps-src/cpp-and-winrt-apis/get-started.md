@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, norme, c++, cpp, winrt, projection, bien démarrer, prise en main
 ms.localizationpriority: medium
-ms.openlocfilehash: 412f34d21ddb24f637450fdfc71214c360445841
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d7dc6455219510d75307df02571fc506b909553c
+ms.sourcegitcommit: 6009896ead442b378106d82870f249dc8b55b886
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89170193"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89643829"
 ---
 # <a name="get-started-with-cwinrt"></a>Bien démarrer avec C++/WinRT
 
@@ -180,6 +180,10 @@ La création d’API avec C++/WinRT est un peu plus complexe que leur consommati
 Ce scénario traite de la création d’applications et de contrôles sur l’infrastructure d’interface utilisateur XAML. L'utilisation d'une application XAML revient à combiner consommation et création. Mais XAML étant aujourd'hui l'infrastructure d'interface utilisateur dominante sur Windows, et son influence sur Windows Runtime étant proportionnelle, il mérite sa propre catégorie de scénario.
 
 Sachez que XAML fonctionne mieux avec les langages de programmation qui offrent une réflexion. Dans C++/WinRT, vous pouvez être amené à effectuer quelques manipulations supplémentaires pour interagir avec l’infrastructure XAML. Ces différents cas sont traités dans la documentation. Consultez notamment [Contrôles XAML ; liaison à une propriété C++/WinRT](./binding-property.md) et [Contrôles XAML personnalisés (basés sur un modèle) avec C++/WinRT](./xaml-cust-ctrl.md).
+
+## <a name="sample-apps-written-in-cwinrt"></a>Exemples d’applications écrites en C++/WinRT
+
+Consultez [Où trouver des exemples d’applications C++/WinRT ?](/windows/uwp/cpp-and-winrt-apis/faq#where-can-i-find-cwinrt-sample-apps).
 
 ## <a name="important-apis"></a>API importantes
 * [SyndicationClient::RetrieveFeedAsync, méthode](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)
