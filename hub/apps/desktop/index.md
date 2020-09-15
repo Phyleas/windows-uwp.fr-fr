@@ -1,18 +1,18 @@
 ---
-Description: Découvrez comment commencer à créer des applications de bureau pour les PC Windows, notamment comment choisir la plateforme idéale pour les nouvelles applications et comment moderniser des applications existantes pour Windows 10.
+description: Découvrez comment commencer à créer des applications de bureau pour les PC Windows, notamment comment choisir la plateforme idéale pour les nouvelles applications et comment moderniser des applications existantes pour Windows 10.
 title: Créer des applications de bureau pour les PC Windows
 ms.topic: article
-ms.date: 11/04/2019
+ms.date: 9/10/2020
 keywords: développement d’applications de bureau Win32 pour Windows
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f4b790978449bd6d5c279a5405c22db51cd0724
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 6539f436e46f351efc355d361c0677b9fedee546
+ms.sourcegitcommit: 2bb975d5df38d294277f57bf8b6a06d9bf87ca9b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89170723"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90046815"
 ---
 # <a name="build-desktop-apps-for-windows-pcs"></a>Créer des applications de bureau pour les PC Windows
 
@@ -100,8 +100,9 @@ Si vous créez une application de bureau pour Windows, voici des ressources pour
 
 | Resource | Description |
 |---------|-------------|
-| [.NET Core 3.0](/dotnet/core/whats-new/dotnet-core-3-0) | Découvrez les dernières fonctionnalités de .NET Core 3,0, y compris les améliorations apportées aux applications WPF et Windows Forms. |
-| [Guide du bureau pour WPF et .NET Core 3.0](/dotnet/desktop-wpf/overview/index) | Développez des applications WPF qui ciblent .NET Core 3.0 au lieu du .NET Framework complet.  |
+| [.NET Core 3.1](/dotnet/core/whats-new/dotnet-core-3-1) | Découvrez les dernières fonctionnalités de .NET Core 3.1, notamment les améliorations pour les applications WPF et Windows Forms. |
+| [.NET 5](/dotnet/core/dotnet-five) | Cet article détaille ce que vous trouverez dans .NET 5, prochaine version de .NET Core après la version 3.1. |
+| [Guide du bureau pour WPF et .NET Core](/dotnet/desktop-wpf/overview/index) | Développez des applications WPF qui ciblent .NET Core au lieu du .NET Framework complet.  |
 | [Azure](/azure/) | Étendez la portée de vos applications avec les services cloud Azure. |
 | [Visual Studio](/visualstudio/) | Découvrez comment utiliser Visual Studio pour développer des applications et des services. |
 | [MSIX](/windows/msix/) | Empaquetez et déployez une application Windows dans un format de package moderne et universel. |
