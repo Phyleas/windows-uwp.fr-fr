@@ -6,12 +6,12 @@ ms.date: 11/26/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a80c130de1966973fe928480009eaa3bd0a8887
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e359fd18da67da15bb33e8980f0e0e7419001460
+ms.sourcegitcommit: b99e2f4dffa603b68c2a8273fe6313432f91b353
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171246"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90569358"
 ---
 # <a name="networking-and-web-services"></a>Réseau et services web
 
@@ -20,7 +20,7 @@ Les technologies de réseau et services web suivantes sont disponibles pour les 
 | Rubrique | Description |
 | - | - |
 | [Notions de base en matière de réseau](networking-basics.md) | Ce que vous devez faire pour toute application réseau. |
-| [Quelle technologie de réseau ?](which-networking-technology.md) | Un aperçu rapide des technologies de réseau disponibles pour un développeur UWP, avec des suggestions sur la façon de choisir les technologies appropriées pour votre application. |
+| [Quelle technologie de réseau ?](which-networking-technology.md) | Vue d’ensemble des technologies de réseau disponibles pour un développeur UWP, avec des suggestions sur la façon de choisir les technologies appropriées pour votre application. |
 | [Communications réseau en arrière-plan](network-communications-in-the-background.md) | Pour qu’une application puisse poursuivre la communication quand elle n’est pas en arrière-plan, elle doit utiliser des tâches en arrière-plan et un répartiteur de socket ou des déclencheurs de chaîne de contrôle. |
 | [Sockets](sockets.md) | Les sockets constituent une technologie de transfert de données de bas niveau sur laquelle repose l’implémentation d’un grand nombre de protocoles réseau. UWP propose des classes de socket TCP et UDP pour les applications client/serveur ou (P2P) pair à pair, qu’il s’agisse de connexions longue durée ou non établies. |
 | [WebSockets](websockets.md) | Les WebSockets fournissent un mécanisme de communication bidirectionnelle sécurisée et rapide entre un client et un serveur sur le web, à l’aide du protocole HTTP(S) et avec une prise en charge des messages UTF-8 et binaires. |
