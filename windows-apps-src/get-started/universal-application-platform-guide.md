@@ -2,24 +2,28 @@
 title: Qu’est-ce qu’une application de plateforme Windows universelle (UWP) ?
 description: Découvrez les applications de plateforme Windows universelle (UWP) qui peuvent s’exécuter sur un large éventail d’appareils exécutant Windows 10.
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
-ms.date: 08/21/2020
+ms.date: 09/15/2020
 ms.topic: article
+ms.custom: contperfq1
 keywords: windows 10, uwp, universelle
 ms.localizationpriority: medium
-ms.openlocfilehash: e0c8a059708babf3f0224cefac156cc3c1407e61
-ms.sourcegitcommit: 696f90cc95311ee3a74ce70881c7bb277b666e46
+ms.openlocfilehash: 29e5171d0c6737bdf3d8064566b8ec2731e68978
+ms.sourcegitcommit: b99e2f4dffa603b68c2a8273fe6313432f91b353
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89429120"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90569392"
 ---
 # <a name="whats-a-universal-windows-platform-uwp-app"></a>Qu’est-ce qu’une application de plateforme Windows universelle (UWP) ?
 
+UWP est l’un des nombreux moyens de créer des applications clientes pour Windows. Les applications UWP utilisent des API WinRT pour fournir une interface utilisateur puissante et des fonctionnalités asynchrones avancées qui sont idéales pour les appareils connectés à Internet.
+
+Pour télécharger les outils dont vous avez besoin afin de commencer à créer des applications UWP, consultez [Se préparer](get-set-up.md), puis [Développer votre première application](your-first-app.md).
 
 
 ## <a name="where-does-uwp-fit-in-the-microsoft-development-story"></a>Quelle est la place de UWP dans le développement Microsoft ?
 
-UWP est l’un des nombreux moyens de créer des applications clientes pour Windows. Les applications UWP utilisent des API WinRT pour fournir une interface utilisateur puissante et des fonctionnalités asynchrones avancées qui sont idéales pour les appareils connectés à Internet. Les applications UWP peuvent toujours utiliser des API Win32 et des classes .NET (consultez [Jeux d’API pour les applications UWP](https://docs.microsoft.com/previous-versions/mt186421(v=vs.85)), [Dll pour les applications UWP](https://docs.microsoft.com/previous-versions/mt186422(v=vs.85)) et [.NET pour les applications UWP](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0)).
+UWP est l’un des choix possibles pour créer des applications qui s’exécuteront sur des appareils Windows 10, et peut être combiné avec d’autres plateformes. Les applications UWP peuvent utiliser des API Win32 et des classes .NET (consultez [Jeux d’API pour les applications UWP](https://docs.microsoft.com/previous-versions/mt186421(v=vs.85)), [DLL pour les applications UWP](https://docs.microsoft.com/previous-versions/mt186422(v=vs.85)) et [.NET pour les applications UWP](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0)).
 
 Le développement Microsoft continue à évoluer et, avec des initiatives telles que [WinUI](https://docs.microsoft.com/windows/apps/winui/), [MSIX](https://docs.microsoft.com/windows/msix/) et [Project Reunion](https://github.com/microsoft/ProjectReunion), UWP est un outil puissant pour la création d’applications clientes.
 
@@ -34,21 +38,21 @@ Description :
 - Disponible à partir du Microsoft Store sur tous les appareils (ou uniquement ceux que vous spécifiez) qui s’exécutent sur Windows 10. Le Microsoft Store offre plusieurs moyens de gagner de l’argent sur votre application.
 - Possibilité d’installation et de désinstallation sans risque pour l’ordinateur et sans « détérioration» de ce dernier.
 - Attrayante : possibilité d’utiliser des vignettes dynamiques, des notifications push et des activités des utilisateurs qui interagissent avec la Chronologie de Windows et la fonctionnalité Pick Up Where I Left Off de Cortana pour fidéliser les utilisateurs.
-- Programmable en C#, C++, Visual Basic et JavaScript. Pour l’interface utilisateur, possibilité d’utiliser DirectX, HTML ou XAML.
+- Programmable en C#, C++, Visual Basic et JavaScript. Pour l’interface utilisateur, vous avez la possibilité d’utiliser WinUI, XAML, HTML ou DirectX.
 
 Examinons cela plus en détail.
 
-## <a name="secure"></a>Sécurisé
+### <a name="secure"></a>Sécurisé
 
 Les applications UWP déclarent dans leur manifeste les fonctionnalités de l’appareil dont elles ont besoin, comme l’accès au microphone, l’emplacement, la webcam, les périphériques USB, les fichiers et ainsi de suite. L’utilisateur doit confirmer et autoriser cet accès pour que la fonctionnalité soit accordée à l’application.
 
-## <a name="a-common-api-surface-across-all-devices"></a>Surface d’API commune à tous les appareils
+### <a name="a-common-api-surface-across-all-devices"></a>Surface d’API commune à tous les appareils
 
 Windows 10 introduit la plateforme Windows universelle (UWP), qui fournit une plateforme d’application commune sur chaque appareil exécutant Windows 10. Les API au cœur d’UWP sont les mêmes pour toutes les familles d’appareils Windows. Si votre application utilise uniquement les API principales, elle s’exécutera sur n’importe quel appareil Windows 10, que vous cibliez un PC de bureau, une Xbox, un casque de réalité mixte, etc.
 
 Une application UWP ou un composant Windows Runtime écrits en C++/WinRT ou C++/CX ont accès aux API Win32 faisant partie de l’UWP. Ces API Win32 sont implémentées par tous les appareils Windows 10.
 
-## <a name="extension-sdks-expose-the-unique-capabilities-of-specific-device-types"></a>Les kits de développement logiciel (SDK) d’extension exposent les fonctionnalités uniques des types spécifiques d’appareils
+### <a name="extension-sdks-expose-the-unique-capabilities-of-specific-device-types"></a>Les kits de développement logiciel (SDK) d’extension exposent les fonctionnalités uniques des types spécifiques d’appareils
 
 Si vous ciblez des API universelles, votre application peut être lancée sur tous les appareils exécutant Windows 10. Si vous souhaitez que votre application UWP tire parti d’API propres aux appareils, c’est possible également.
 
@@ -59,7 +63,7 @@ Vous pouvez écrire votre application afin qu’elle s’exécute uniquement sur
 La vidéo suivante présente les familles d’appareils et le code adaptatif :
 <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Introduction-to-UWP-and-Device-Families/player" width="640" height="360" allowFullScreen frameBorder="0"></iframe>
 
-## <a name="adaptive-controls-and-input"></a>Contrôles adaptatifs et entrée
+### <a name="adaptive-controls-and-input"></a>Contrôles adaptatifs et entrée
 
 Les éléments d’interface utilisateur s’adaptent à la taille et à la résolution de l’écran de l’application en cours d’exécution en ajustant leur disposition et leur mise à l’échelle. Les applications UWP fonctionnent bien avec plusieurs types d’entrée, par exemple, le clavier, la souris, les impulsions tactiles, le stylet et les manettes Xbox One. Si vous avez besoin d’adapter davantage votre interface utilisateur à une taille d’écran ou à un appareil spécifique, de nouveaux panneaux de disposition sont là pour vous aider à adapter votre interface utilisateur aux appareils et aux facteurs de forme sur lesquels votre application s’exécute.
 
@@ -73,11 +77,13 @@ Windows vous aide à cibler votre interface utilisateur sur plusieurs appareils 
 
 Certains aspects de l’interface utilisateur de votre application s’adaptent automatiquement aux différents appareils. La conception de l’expérience utilisateur de votre application peut cependant nécessiter une adaptation en fonction de l’appareil sur lequel l’application s’exécute. Par exemple, une application de photos doit adapter son interface utilisateur quand elle s’exécute sur un appareil portatif de petite taille, afin d’être utilisable d’une seule main. Quand une application de photographie s’exécute sur un ordinateur de bureau, l’interface utilisateur doit s’adapter pour tirer parti de l’espace d’écran supplémentaire.
 
-## <a name="theres-one-store-for-all-devices"></a>Il existe un seul magasin pour tous les appareils
+### <a name="theres-one-store-for-all-devices"></a>Il existe un seul magasin pour tous les appareils
 
 Un magasin d’applications unifié rend votre application disponible sur les appareils Windows 10 tels que PC, tablette, Xbox, HoloLens, Surface Hub, et Internet des objets (IoT). Vous pouvez soumettre votre application au Store et la rendre disponible sur tous les types d’appareils ou uniquement sur ceux que vous choisissez. Vous soumettez et vous gérez toutes vos applications pour appareils Windows au même endroit. Vous avez une application de bureau C++ que vous souhaitez moderniser grâce aux fonctionnalités UWP et commercialiser dans le Microsoft Store ? Cela ne pose aucun problème.
 
 À des fins de télémétrie et d’analyse détaillées, les applications UWP s’intègrent avec [Application Insights](https://azure.microsoft.com/services/application-insights/) : un outil crucial pour comprendre vos utilisateurs et améliorer vos applications.
+
+Les applications UWP peuvent être empaquetées avec [MSIX](https://docs.microsoft.com/windows/msix/) et distribuées via le Microsoft Store ou par un autre moyen. MSIX permet la mise à jour des applications, quel que soit leur mode de distribution. Consultez [Mettre à jour des packages d’applications publiés hors Store à partir de votre code](https://docs.microsoft.com/windows/msix/non-store-developer-updates).
 
 ### <a name="monetize-your-app"></a>Monétiser votre application
 
@@ -88,13 +94,8 @@ Vous pouvez choisir la manière de monétiser votre application. Il existe plusi
 - Prix de vente à prix réduit pour inciter les utilisateurs.
 - Achats dans l’application.
 
-### <a name="apps-from-the-microsoft-store-provide-a-seamless-install-uninstall-and-upgrade-experience"></a>Les applications du Microsoft Store fournissent une expérience d’installation, de désinstallation et de mise à niveau transparente
 
-Toutes les applications UWP sont distribuées à l’aide d’un système de création de packages qui protège l’utilisateur, l’appareil et le système. Les utilisateurs n’ont pas à regretter d’avoir installé une application, en effet les applications UWP peuvent être désinstallées sans laisser de trace, à l’exception des documents créés avec l’application.
-
-Les applications peuvent être déployées et mises à jour en toute transparence. Les packages d’application sont modulables, vous pouvez donc télécharger le contenu et les extensions à la demande.
-
-## <a name="deliver-relevant-real-time-info-to-your-users-to-keep-them-coming-back"></a>Possibilité de fournir des informations pertinentes en temps réel à vos utilisateurs afin de les fidéliser
+### <a name="deliver-relevant-real-time-info-to-your-users-to-keep-them-coming-back"></a>Possibilité de fournir des informations pertinentes en temps réel à vos utilisateurs afin de les fidéliser
 
 Il existe plusieurs façons de fidéliser les utilisateurs avec votre application UWP :
 
@@ -113,6 +114,8 @@ Les applications UWP peuvent utiliser Windows Runtime, l’API native fournie pa
 - XAML UI et C#, VB ou C++
 - DirectX UI et C++
 - JavaScript et HTML
+- WinUI
+-
 
 ## <a name="links-to-help-you-get-going"></a>Liens pour vous aider à commencer
 

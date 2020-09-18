@@ -1,19 +1,19 @@
 ---
 description: Vous pouvez utiliser des extensions pour intégrer votre application de bureau empaquetée avec Windows 10 de manière prédéfinie.
 title: Moderniser des applications de bureau existantes à l’aide de Desktop Bridge
-ms.date: 08/25/2020
+ms.date: 09/11/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: b18afdeecb3e70f958b3d8908027e59f8c4c1f9e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e0a8a7bf38fbf44fd3544d7912729bbd42672f34
+ms.sourcegitcommit: 7c49f789f5b382b5b12efed6a81cbb4a25d44bd9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172723"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90026324"
 ---
 # <a name="integrate-your-desktop-app-with-windows-10-and-uwp"></a>Intégrer votre application de bureau à Windows 10 et UWP
 
@@ -1164,8 +1164,8 @@ La lecture automatique peut présenter votre application en tant qu’option lor
 |ProviderDisplayName | Une chaîne qui représente votre application ou service (par exemple : « Lecteur vidéo Contoso »). |
 |ContentEvent |Le nom d’un événement de contenu qui envoie une invite aux utilisateurs avec vos éléments ``ActionDisplayName`` et ``ProviderDisplayName``. Les événements de contenu se déclenchent lorsqu’un périphérique de volume, tel que la carte mémoire d’un appareil photo, une clé USB ou un DVD, est inséré dans le PC. Vous trouverez la liste complète de ces événements [ici](/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference).  |
 |Verbe |Le paramètre Verbe identifie une valeur qui est transmise à votre application pour l’option sélectionnée. Vous pouvez spécifier plusieurs options de lancement pour un événement de lecture automatique et utiliser le paramètre Verbe pour déterminer l’option sélectionnée par l’utilisateur pour votre application. Vous pouvez vérifier quelle option a été sélectionnée par l’utilisateur par le biais de la propriété verb des arguments d’événement de démarrage transmis à votre application. Vous pouvez attribuer n’importe quelle valeur au paramètre Verbe, sauf la valeur open qui est réservée. |
-|DropTargetHandler |L’ID de classe de l’application qui implémente l'interface [IDropTarget](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017). Les fichiers du média amovibles sont transmis à la méthode [Drop](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget.drop?view=visualstudiosdk-2017#Microsoft_VisualStudio_OLE_Interop_IDropTarget_Drop_Microsoft_VisualStudio_OLE_Interop_IDataObject_System_UInt32_Microsoft_VisualStudio_OLE_Interop_POINTL_System_UInt32__) de votre implémentation [IDropTarget](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017).  |
-|Paramètres |Vous n'êtes pas obligé d'implémenter l'interface [IDropTarget](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) pour tous les événements de contenu. Pour tous les événements de contenu, vous avez la possibilité de fournir des paramètres de ligne de commande au lieu d'implémenter l'interface [IDropTarget](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017). Pour ces événements, la lecture automatique démarre votre application en utilisant ces paramètres de ligne de commande. Vous pouvez analyser ces paramètres dans le code d'initialisation de votre application afin de déterminer s'il a été démarré par la lecture automatique, puis fournir votre implémentation par défaut. |
+|DropTargetHandler |L’ID de classe de l’application qui implémente l'interface [IDropTarget](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget). Les fichiers du média amovibles sont transmis à la méthode [Drop](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget.drop#Microsoft_VisualStudio_OLE_Interop_IDropTarget_Drop_Microsoft_VisualStudio_OLE_Interop_IDataObject_System_UInt32_Microsoft_VisualStudio_OLE_Interop_POINTL_System_UInt32__) de votre implémentation [IDropTarget](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget).  |
+|Paramètres |Vous n'êtes pas obligé d'implémenter l'interface [IDropTarget](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget) pour tous les événements de contenu. Pour tous les événements de contenu, vous avez la possibilité de fournir des paramètres de ligne de commande au lieu d'implémenter l'interface [IDropTarget](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget). Pour ces événements, la lecture automatique démarre votre application en utilisant ces paramètres de ligne de commande. Vous pouvez analyser ces paramètres dans le code d'initialisation de votre application afin de déterminer s'il a été démarré par la lecture automatique, puis fournir votre implémentation par défaut. |
 |DeviceEvent |Le nom d’un événement d'appareil qui envoie une invite aux utilisateurs avec vos éléments ``ActionDisplayName`` et ``ProviderDisplayName``. Un événement d'appareil est déclenché lorsqu’un appareil est connecté au PC. Les événements d'appareil commencent par la chaîne ``WPD``. Ils sont répertoriés [ici](/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference). |
 |HWEventHandler |L’ID de classe de l’application qui implémente l'interface [IHWEventHandler](/windows/desktop/api/shobjidl/nn-shobjidl-ihweventhandler). |
 |InitCmdLine |Le paramètre de chaîne que vous souhaitez transmettre dans la méthode [Initialiser](/windows/desktop/api/shobjidl/nf-shobjidl-ihweventhandler-initialize) de l'interface [IHWEventHandler](/windows/desktop/api/shobjidl/nn-shobjidl-ihweventhandler). |
@@ -1277,6 +1277,9 @@ Trouver un exemple qui utilise cette extension [ici](https://github.com/Microsof
 ### <a name="share-fonts-with-other-windows-applications"></a>Partager des polices avec d’autres applications Windows
 
 Partagez vos polices personnalisées avec d’autres applications Windows.
+
+> [!NOTE]
+> Avant de pouvoir soumettre au Store une application qui utilise cette extension, vous devez obtenir l’approbation de l’équipe du Store. Pour cela, accédez à [https://aka.ms/storesupport](https://aka.ms/storesupport), cliquez sur **Nous contacter**, puis choisissez les options qui concernent la soumission d’applications au tableau de bord. Ce processus d’approbation permet de s’assurer qu’il n’y a pas de conflits entre les polices installées par votre application et celles installées avec le système d’exploitation. Si vous n’obtenez pas d’approbation, vous recevrez une erreur semblable à la suivante quand vous soumettrez votre application : « Erreur de validation de l’acceptation du package : Vous ne pouvez pas utiliser l’extension windows.sharedFonts avec ce compte. Contactez notre équipe du support technique si vous souhaitez demander des autorisations pour l’utiliser. »
 
 #### <a name="xml-namespaces"></a>espaces de noms XML
 

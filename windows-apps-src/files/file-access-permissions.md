@@ -2,7 +2,7 @@
 ms.assetid: 3A404CC0-A997-45C8-B2E8-44745539759D
 title: Autorisations d’accès aux fichiers
 description: Les applications peuvent accéder à certains emplacements du système de fichiers par défaut. Les applications peuvent également accéder à des emplacements supplémentaires par le biais du sélecteur de fichiers, ou en déclarant des fonctionnalités.
-ms.date: 12/19/2018
+ms.date: 09/10/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -11,18 +11,19 @@ dev_langs:
 - cppwinrt
 - cpp
 - javascript
-ms.openlocfilehash: d12ff61858d6d1434d07e00c70868697fefa1832
-ms.sourcegitcommit: b66796c73f14da63794efa66c8ded2caa25da0f7
+ms.custom: contperfq1
+ms.openlocfilehash: 6bb0e44fa5ea31d73feebdfb9ced9951cc2bc937
+ms.sourcegitcommit: 2050175043c8c175be3312f17769b4af241b3275
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89285440"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90027648"
 ---
 # <a name="file-access-permissions"></a>Autorisations d’accès aux fichiers
 
 Les applications de plateforme Windows universelle (UWP) peuvent accéder à certains emplacements de systèmes de fichiers par défaut. Les applications peuvent également accéder à des emplacements supplémentaires par le biais du sélecteur de fichiers, ou en déclarant des fonctionnalités.
 
-## <a name="the-locations-that-all-apps-can-access"></a>Emplacements accessibles à toutes les applications
+## <a name="locations-that-all-apps-can-access"></a>Emplacements accessibles à toutes les applications
 
 Lorsque vous créez une application, vous pouvez accéder par défaut aux emplacements suivants du système de fichiers :
 

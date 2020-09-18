@@ -1,22 +1,21 @@
 ---
 ms.assetid: 2CC2E526-DACB-4008-9539-DA3D0C190290
-description: Un aperçu rapide des technologies de réseau disponibles pour un développeur UWP, avec des suggestions sur la façon de choisir les technologies appropriées pour votre application.
+description: Vue d’ensemble des technologies de réseau disponibles pour un développeur UWP, avec des suggestions sur la façon de choisir les technologies appropriées pour votre application.
 title: Quelle technologie de réseau ?
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 05aec42d4a8eef1d78ddd425f1e90e06cb610c0a
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b3f14e06f5e6f7508c90df9f04265740daaccb49
+ms.sourcegitcommit: b99e2f4dffa603b68c2a8273fe6313432f91b353
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158163"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90569382"
 ---
 # <a name="which-networking-technology"></a>Quelle technologie de réseau ?
 
-
-Un aperçu rapide des technologies de réseau disponibles pour un développeur UWP, avec des suggestions sur la façon de choisir les technologies appropriées pour votre application.
+Vue d’ensemble des technologies de réseau disponibles pour un développeur UWP, avec des suggestions sur la façon de choisir les technologies appropriées pour votre application.
 
 ## <a name="sockets"></a>Sockets
 
@@ -87,7 +86,7 @@ Pour le transfert en arrière-plan dans Windows 10, il est désormais possible d
 
 ### <a name="connection-quality"></a>Qualité de la connexion
 
-L’API [**Windows.Networking.Connectivity**](/uwp/api/Windows.Networking.Connectivity) vous permet d’accéder aux informations de connectivité, de coût et d’utilisation du réseau. Pour plus d’informations sur l’utilisation de cette API, voir [Accès aux informations d’état de la connexion réseau et gestion des coûts de la connexion réseau](/previous-versions/windows/apps/hh452983(v=win.10)).
+Les API dans l’espace de noms [**Windows.Networking.Connectivity**](/uwp/api/Windows.Networking.Connectivity) vous permettent d’accéder aux informations de connectivité, de coût et d’utilisation du réseau. Pour plus d’informations sur l’utilisation de ces API, consultez [Accès aux informations d’état de la connexion réseau et gestion des coûts de la connexion réseau](/previous-versions/windows/apps/hh452985(v=win.10)).
 
 ### <a name="dns-service-discovery"></a>Découverte de service DNS
 
@@ -103,7 +102,7 @@ L’API [**Windows.Networking.PushNotifications**](/uwp/api/Windows.Networking.P
 
 ### <a name="near-field-communications"></a>Communication en champ proche (NFC)
 
-L’API [**Windows.Networking.Proximity**](/uwp/api/Windows.Networking.Proximity) vous permet d’utiliser la technologie de communication en champ proche pour des applications qui font appel à la fonctionnalité de proximité ou d’effleurement avec des appareils pour permettre un transfert aisé des données. Pour plus d’informations sur l’utilisation de cette API, voir [Prise en charge de la fonctionnalité de proximité et du geste tactile](/previous-versions/windows/apps/hh465229(v=win.10)).
+L’API [**Windows.Networking.Proximity**](/uwp/api/Windows.Networking.Proximity) vous permet d’utiliser la technologie de communication en champ proche pour des applications qui font appel à la fonctionnalité de proximité ou d’effleurement avec des appareils pour permettre un transfert aisé des données. Pour plus d’informations sur l’utilisation de cette API, consultez [Proximité et geste tactile](/previous-versions/windows/apps/hh465221(v=win.10)).
 
 ### <a name="rssatom-feeds"></a>Flux RSS/Atom
 

@@ -1,5 +1,5 @@
 ---
-Description: Un contrôle de progression offre un retour à l’utilisateur lorsqu’une longue opération est en cours.
+description: Un contrôle de progression offre un retour à l’utilisateur lorsqu’une longue opération est en cours.
 title: Recommandations en matière de contrôles de progression
 ms.assetid: FD53B716-C43D-408D-8B07-522BC1F3DF9D
 label: Progress controls
@@ -12,12 +12,12 @@ design-contact: jeffarn
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d5756c4cfff05b666eae245de76c1813f9a834df
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: fbd9ed95137263f4ddad44e2272d4d77aced241f
+ms.sourcegitcommit: 234bb7c896b990f624b2b8789820b92426e52291
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89169673"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90013374"
 ---
 # <a name="progress-controls"></a>Contrôles de progression
 
@@ -61,13 +61,12 @@ Deux contrôles permettent d’indiquer à l’utilisateur qu’une opération e
 
 De plus, un contrôle de progression est en lecture seule et n’est pas interactif. Ce qui signifie que l’utilisateur ne peut pas appeler ou utiliser ces contrôles directement.
 
-![États ProgressBar](images/progress-bar-two-states.png)
+|Control|Afficher|
+|---|---|
+| ProgressBar indéterminé | ![ProgressBar - Indéterminé](images/progressbar-indeterminate.gif) |
+| ProgressBar déterminé | ![ProgressBar - Déterminé](images/progressbar-determinate.png)|
+| ProgressRing indéterminé | ![État ProgressRing](images/progressring-indeterminate.gif)|
 
-*De haut en bas - ProgressBar indéterminé et ProgressBar déterminé*
-
-![État ProgressRing](images/ProgressRing_SingleState.png)
-
-*ProgressRing indéterminé*
 
 ## <a name="examples"></a>Exemples
 

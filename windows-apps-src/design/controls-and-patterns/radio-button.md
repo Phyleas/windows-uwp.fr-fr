@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 4953b5adc1953bac83b90271b4042e3b9f13c3f2
-ms.sourcegitcommit: 083ddf840ab42bb48b4892fc2876ecbf698e481b
+ms.openlocfilehash: ee933bd28594263e61e654b14b0541c6fa9ed41b
+ms.sourcegitcommit: 875bd348608547e7a66fa4b460efe64b3246807e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89615525"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90080841"
 ---
 # <a name="radio-buttons"></a>Cases d’option
 
@@ -125,17 +125,35 @@ Quand aucune case d’option n’est sélectionnée, la première case d’optio
 > [!NOTE]
 > L’élément qui reçoit le focus au début de la navigation par touche de tabulation n’est pas sélectionné.
 
-|Liste sans le focus de tabulation | Liste avec le focus de tabulation initial|
-|:--:|:--:|
-| ![Liste sans le focus de tabulation et aucun élément sélectionné](images/radiobutton-no-selected-item-no-tab-focus.png) | ![Liste avec le focus de tabulation initial et aucun élément sélectionné](images/radiobutton-no-selected-item-tab-focus.png)|
+:::row:::
+   :::column span="":::
+     **_Liste sans le focus de tabulation, aucune sélection_**
+
+     ![Liste sans le focus de tabulation et aucun élément sélectionné](images/radiobutton-no-selected-item-no-tab-focus.png)
+   :::column-end:::
+   :::column span="":::
+      **_Liste avec le focus de tabulation initial, aucune sélection_**
+
+      ![Liste avec le focus de tabulation initial et aucun élément sélectionné](images/radiobutton-no-selected-item-tab-focus.png)
+   :::column-end:::
+:::row-end:::
 
 ##### <a name="one-radio-button-is-selected"></a>Une case d’option est sélectionnée.
 
 Quand un utilisateur accède à l’aide de la touche de tabulation à une liste où une case d’option est déjà sélectionnée, la case d’option sélectionnée obtient le focus.
 
-|Liste sans le focus de tabulation | Liste avec le focus de tabulation initial |
-|:--:|:--:|
-| ![Liste sans le focus de tabulation et un élément sélectionné](images/radiobutton-selected-item-no-tab-focus.png) | ![Liste avec le focus de tabulation initial et un élément sélectionné](images/radiobutton-selected-item-tab-focus.png)|
+:::row:::
+   :::column span="":::
+     **_Liste sans le focus de tabulation_**
+
+     ![Liste sans le focus de tabulation et un élément sélectionné](images/radiobutton-selected-item-no-tab-focus.png)
+   :::column-end:::
+   :::column span="":::
+      **_Liste avec le focus de tabulation initial_**
+
+      ![Liste avec le focus de tabulation initial et un élément sélectionné](images/radiobutton-selected-item-tab-focus.png)
+   :::column-end:::
+:::row-end:::
 
 #### <a name="keyboard-navigation"></a>Navigation au clavier
 
@@ -147,18 +165,58 @@ Lorsqu’un élément d’un groupe `RadioButtons` a déjà le focus, l’utilis
 
 Dans une disposition à une seule colonne ou à une seule ligne, la navigation au clavier entraîne le comportement suivant :
 
-|Une seule colonne | Ligne unique|
-|:--|:--|
-| ![Exemple de navigation au clavier dans un groupe RadioButtons à une seule colonne](images/radiobutton-keyboard-navigation-single-column.png)</br>Les touches de direction Haut et Bas permettent de se déplacer entre les éléments.</br>Les touches de direction Gauche et Droite ne font rien. | ![Exemple de navigation au clavier dans un groupe RadioButtons à une seule ligne](images/radiobutton-keyboard-navigation-single-row.png)<br/>Les touches de direction Gauche et Haut permettent d’accéder à l’élément précédent, tandis que les touches de direction Droite et Bas permettent d’accéder à l’élément suivant. |
+:::row:::
+   :::column span="":::
+     **_Une seule colonne_**
+
+     ![Exemple de navigation au clavier dans un groupe RadioButtons à une seule colonne](images/radiobutton-keyboard-navigation-single-column.png)
+
+     Les touches de direction Haut et Bas permettent de se déplacer entre les éléments.</br>Les touches de direction Gauche et Droite ne font rien.
+   :::column-end:::
+   :::column span="":::
+      **_Ligne unique_**
+
+      ![Exemple de navigation au clavier dans un groupe RadioButtons à une seule ligne](images/radiobutton-keyboard-navigation-single-row.png)
+
+      Les touches de direction Gauche et Haut permettent d’accéder à l’élément précédent, tandis que les touches de direction Droite et Bas permettent d’accéder à l’élément suivant.
+   :::column-end:::
+:::row-end:::
 
 ##### <a name="navigation-within-multi-column-multi-row-layouts"></a>Navigation dans les dispositions à plusieurs colonnes ou plusieurs lignes
 
 Dans une disposition en grille à plusieurs colonnes et à plusieurs lignes, la navigation au clavier entraîne ce comportement :
 
-|Touches de direction Gauche/Droite| Touches de direction Haut/Bas |
-|:--|:--|
-| ![Exemple de navigation horizontale au clavier dans un groupe RadioButtons à plusieurs colonnes/lignes](images/radiobutton-keyboard-navigation-multi-column-row-1.png)</br>Les touches de direction Gauche et Droite déplacent le focus horizontalement entre les éléments d’une ligne. | ![Exemple de navigation verticale au clavier dans un groupe RadioButtons à plusieurs colonnes/lignes](images/radiobutton-keyboard-navigation-multi-column-row-2.png)<br/>Les touches de direction Haut et Bas permettent de déplacer le focus verticalement entre les éléments d’une colonne. |
-| ![Exemple de navigation horizontale au clavier avec focus sur le dernier élément d’une colonne](images/radiobutton-keyboard-navigation-multi-column-row-3.png)</br> Lorsque le focus se trouve sur le dernier élément d’une colonne et que la touche de direction Droite ou Gauche est enfoncée, le focus se déplace vers le dernier élément de la colonne suivante ou précédente (s’il y en a une). | ![Exemple de navigation verticale au clavier avec focus sur le dernier élément d’une colonne](images/radiobutton-keyboard-navigation-multi-column-row-4.png)<br/>Lorsque le focus se trouve sur le dernier élément d’une colonne et que la touche de direction Bas est enfoncée, le focus se déplace vers le premier élément de la colonne suivante (s’il y en a une). Lorsque le focus se trouve sur le premier élément d’une colonne et que la touche de direction Haut est enfoncée, le focus se déplace vers le dernier élément de la colonne précédente (s’il y en a une). |
+**_Touches de direction Gauche/Droite_**
+
+:::row:::
+   :::column span="":::
+      ![Exemple de navigation horizontale au clavier dans un groupe RadioButtons à plusieurs colonnes/lignes](images/radiobutton-keyboard-navigation-multi-column-row-1.png)
+
+      
+
+      Les touches de direction Gauche et Droite déplacent le focus horizontalement entre les éléments d’une ligne.
+   :::column-end:::
+   :::column span="":::
+     ![Exemple de navigation horizontale au clavier avec focus sur le dernier élément d’une colonne](images/radiobutton-keyboard-navigation-multi-column-row-3.png)
+
+      Lorsque le focus se trouve sur le dernier élément d’une colonne et que la touche de direction Droite ou Gauche est enfoncée, le focus se déplace vers le dernier élément de la colonne suivante ou précédente (s’il y en a une).
+   :::column-end:::
+:::row-end:::
+
+**_Touches de direction Haut/Bas_**
+
+:::row:::
+   :::column span="":::
+      ![Exemple de navigation verticale au clavier dans un groupe RadioButtons à plusieurs colonnes/lignes](images/radiobutton-keyboard-navigation-multi-column-row-2.png)
+
+      Les touches de direction Haut et Bas permettent de déplacer le focus verticalement entre les éléments d’une colonne.
+   :::column-end:::
+   :::column span="":::
+     ![Exemple de navigation verticale au clavier avec focus sur le dernier élément d’une colonne](images/radiobutton-keyboard-navigation-multi-column-row-4.png)
+
+      Lorsque le focus se trouve sur le dernier élément d’une colonne et que la touche de direction Bas est enfoncée, le focus se déplace vers le premier élément de la colonne suivante (s’il y en a une). Lorsque le focus se trouve sur le premier élément d’une colonne et que la touche de direction Haut est enfoncée, le focus se déplace vers le dernier élément de la colonne précédente (s’il y en a une).
+   :::column-end:::
+:::row-end:::
 
 Pour plus d’informations, consultez [Interactions avec le clavier](../input/keyboard-interactions.md#wrapping-homogeneous-list-and-grid-view-items).
 
@@ -172,9 +230,22 @@ Le contrôle `RadioButtons` ne prend pas non plus en charge l’énumération, c
 
 Lorsque vous utilisez le clavier pour naviguer entre les éléments d’un groupe `RadioButtons`, quand le focus passe d’un élément au suivant, l’élément qui prend le focus est sélectionné et l’élément qui le perd est désactivé.
 
-|Avant la navigation au clavier | Après la navigation au clavier|
-|:--|:--|
-| ![Exemple de focus et de sélection avant la navigation au clavier](images/radiobutton-two-selected-before-keyboard-navigation.png)</br>*Exemple de focus et de sélection avant la navigation au clavier* | ![Exemple de focus et de sélection après la navigation au clavier](images/radiobutton-three-selected-after-keyboard-navigation.png)<br/>*Exemple de focus et de sélection après la navigation au clavier, où la touche de direction Bas déplace le focus sur la case d’option 3, la sélectionne et désactive la case d’option 2* |
+:::row:::
+   :::column span="":::
+      **_Avant la navigation au clavier_**
+
+      ![Exemple de focus et de sélection avant la navigation au clavier](images/radiobutton-two-selected-before-keyboard-navigation.png)
+
+      Focus et sélection avant la navigation au clavier.
+   :::column-end:::
+   :::column span="":::
+     **_Après la navigation au clavier_**
+
+      ![Exemple de focus et de sélection après la navigation au clavier](images/radiobutton-three-selected-after-keyboard-navigation.png)
+
+      Focus et sélection après la navigation au clavier, où la touche de direction Bas déplace le focus sur la case d’option 3, la sélectionne et désactive la case d’option 2.
+   :::column-end:::
+:::row-end:::
 
 Vous pouvez déplacer le focus sans changer la sélection en naviguant à l’aide de Ctrl+touches de direction. Une fois le focus déplacé, vous pouvez utiliser la barre d’espace pour sélectionner l’élément qui a actuellement le focus.
 
