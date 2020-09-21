@@ -55,6 +55,8 @@
                   href: desktop/modernize/modernize-packaged-apps.md
                 - name: Intégrer avec des extensions de package
                   href: desktop/modernize/desktop-to-uwp-extensions.md
+                - name: Obtenir des informations d’activation pour les applications empaquetées
+                  href: desktop/modernize/get-activation-info-for-packaged-apps.md
                 - name: Étendre à l’aide de composants UWP
                   href: desktop/modernize/desktop-to-uwp-extend.md
                 - name: Distribuer votre application empaquetée
