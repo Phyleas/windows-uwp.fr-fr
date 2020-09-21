@@ -7,12 +7,12 @@ ms.date: 05/20/2019
 ms.topic: article
 keywords: Windows 10, UWP, WNS, service de notification Windows, notification, Windows, pare-feu, dépannage, IP, trafic, entreprise, réseau, IPv4, VIP, nom de domaine complet, adresse IP publique
 ms.localizationpriority: medium
-ms.openlocfilehash: a2eb09a0b1cc6f135a23b038207bb442eb741bf8
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 4277b46728464630bf478b1f78008e92b4e3fe99
+ms.sourcegitcommit: 41dbee78d827107c224a9136c26f90be4dfe12ad
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89169203"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90845528"
 ---
 # <a name="enterprise-firewall-and-proxy-configurations-to-support-wns-traffic"></a>Pare-feu d’entreprise et configurations de proxy pour prendre en charge le trafic WNS
 
@@ -22,9 +22,9 @@ De nombreuses entreprises utilisent des pare-feu pour bloquer le trafic réseau 
 ## <a name="proxy-support"></a>Prise en charge du proxy
 
 > [!Note]
-> Les clients Windows **ne prennent pas** en charge tous les proxies, la connexion à WNS doit être une connexion directe.
+> Les notifications push WNS sur Windows ne prennent pas en charge tous les proxys actuellement. Pour de meilleurs résultats, la connexion à WNS doit être une connexion directe.
 
-**À venir!** Nous étudions activement différentes configurations réseau, proxies et pare-feu. Nous mettrons à jour cette page avec plus de détails sur les scénarios d’entreprise courants et la prise en charge de WNS rapidement.
+Nous étudions activement différentes configurations réseau, proxies et pare-feu. Nous mettrons à jour cette page avec plus de détails sur les scénarios d’entreprise courants et la prise en charge de WNS rapidement.
 
 
 ## <a name="what-information-should-be-added-to-the-allowlist"></a>Les informations qui doivent être ajoutées à allowlist
