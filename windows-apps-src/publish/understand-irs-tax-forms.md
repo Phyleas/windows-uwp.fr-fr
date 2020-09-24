@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, fiscalité, IRS, Internal Revenue Service, taxes, impôt sur les revenus, 1099
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a385c9c351dc0bb5db857fe7d1f5f267347f1f1
-ms.sourcegitcommit: 31c925736391ab166c06f34258564b00aeebd83a
+ms.openlocfilehash: 6493e20dbc0e38405a7cd30fc22acb9973098431
+ms.sourcegitcommit: 97002cc3e5942f43ab0f14f4ad70543a63db0c03
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84428918"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91128978"
 ---
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>Présentation des déclarations fiscales de l’IRS envoyées par Microsoft
 
@@ -39,14 +39,15 @@ Les formulaires fiscaux vous seront envoyés à partir des adresses suivantes :
 | Publicité            | Microsoft Online Inc. | 6880 Sierra Center Parkway<br>Reno, NV 98511 USA |
 
 **Citoyens non américains :**
+
 | Groupe professionnel         | Entité légale          | Adresse                                          |
 |------------------------|-----------------------|--------------------------------------------------|
-| Windows, Office, Azure | Microsoft Ireland Operations Limited (le paiement est effectué par Microsoft Corporation via Microsoft Ireland, agissant comme intermédiaire qualifié pour Microsoft Corporation) | One Microsoft Place<br>&nbsp;Parc d' &nbsp; affaires du comté du Sud &nbsp;<br>Leopardstown, Dublin 18 Irlande|
-| Publicité\*          | Microsoft Ireland Operations Limited (le paiement est effectué par Microsoft Online Inc. par le biais de Microsoft Ireland comme agent de paiement pour Microsoft Online Inc.) | One Microsoft Place<br>&nbsp;Parc d' &nbsp; affaires du comté du Sud &nbsp;<br>Leopardstown, Dublin 18 Irlande |
+| Windows, Office, Azure | Microsoft Ireland Operations Limited (le paiement est effectué par Microsoft Corporation via Microsoft Ireland, agissant comme intermédiaire qualifié pour Microsoft Corporation) | One Microsoft Place<br>&nbsp;Parc d' &nbsp; affaires du comté du Sud &nbsp;<br>Leopardstown, Dublin 18, D18 P521, Irlande|
+| Publicité\*          | Microsoft Ireland Operations Limited (le paiement est effectué par Microsoft Online Inc. par le biais de Microsoft Ireland comme agent de paiement pour Microsoft Online Inc.) | One Microsoft Place<br>&nbsp;Parc d' &nbsp; affaires du comté du Sud &nbsp;<br>Leopardstown, Dublin 18, D18 P521, Irlande |
 | Publicité            | Microsoft Online Inc. | 6880 Sierra Center Parkway<br>Reno, NV 98511 USA |
 
 >[!NOTE]
-> \*Les citoyens des pays suivants recevant des recettes publicitaires seront payés par le biais de Microsoft Ireland Operations Limited : Autriche, Belgique, Bulgarie, Croatie, Chypre, Czechia, Danemark, Estonie, Finlande, France, Allemagne, Grèce, Hongrie, Irlande, île de Man, Italie, Lettonie, Liechtenstein, Lituanie, Luxembourg, Malte, Monaco, Pays-Bas, Norvège, Pologne, Portugal, Roumanie, République slovaque, Roumanie, Slovaquie, Norvège, Royaume-Uni, Suède, Suisse
+> \* Les citoyens des pays suivants recevant des recettes publicitaires seront payés par le biais de Microsoft Ireland Operations Limited : Autriche, Belgique, Bulgarie, Croatie, Chypre, Czechia, Danemark, Estonie, Finlande, France, Allemagne, Grèce, Hongrie, Irlande, île de Man, Italie, Lettonie, Liechtenstein, Lituanie, Luxembourg, Malte, Monaco, Pays-Bas, Norvège, Pologne, Portugal, Roumanie, République slovaque, Roumanie, Slovaquie, Norvège, Royaume-Uni, Suède, Suisse
 
 ## <a name="for-developers-located-in-the-united-states"></a>Pour les développeurs résidant aux États-Unis
 
@@ -69,7 +70,7 @@ J’ai reçu au moins $600 paiements non liés aux ventes d’applications de Mi
   </tr>
   <tr>
     <td valign="top">Aucun des deux ne s’applique.</td>
-    <td valign="top">Aucune</td>
+    <td valign="top">None</td>
   </tr>
   <tr>
     <td valign="top">&nbsp;</td>
@@ -85,7 +86,7 @@ J’ai reçu au moins $600 paiements non liés aux ventes d’applications de Mi
   </tr>
   <tr> 
      <td valign="top">J’ai reçu <b>moins de $600 de paiements</b> des publicités dans les applications de l’année fiscale en vigueur</td>
-     <td valign="top">Aucune</td>
+     <td valign="top">None</td>
   </tr>
 </table>
 
@@ -104,8 +105,8 @@ J’ai reçu au moins $600 paiements non liés aux ventes d’applications de Mi
   <tr>
     <td valign="top"><b>Pourquoi des taxes ont-elles été retenues sur mes paiements quand j’ai rempli la déclaration W8 ?</b></td>
     <td valign="top">Les taxes sont retenues dans les cas suivants :<br>
-     1.Vous n’avez pas terminé la section du traité fiscal du W8 correctement, ou<br>
-     2.Vous résidez dans un pays qui ne dispose pas d’un traité fiscal avec la États-Unis.<br><br>Vous pouvez visiter le centre partenaires à tout moment pour envoyer un formulaire W8 mis à jour.<br><br><b>Remarque</b>: tous les revenus ne sont pas soumis à la retenue fiscale.</td>
+     1. Vous n’avez pas terminé la section du traité fiscal du W8 correctement, ou<br>
+     2. Vous résidez dans un pays qui ne dispose pas d’un traité fiscal avec la États-Unis.<br><br>Vous pouvez visiter le centre partenaires à tout moment pour envoyer un formulaire W8 mis à jour.<br><br><b>Remarque</b>: tous les revenus ne sont pas soumis à la retenue fiscale.</td>
   </tr>
   <tr>
     <td valign="top"><b>J’ai envoyé un formulaire W8 mis à jour avec des informations de traité valides. Microsoft peut-il rembourser les taxes qui ont été retenues ?</b></td>
