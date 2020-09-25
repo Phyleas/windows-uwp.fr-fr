@@ -5,18 +5,18 @@ ms.assetid: FF819BAC-67C0-4EC9-8921-F087BE188138
 label: Keyboard interactions
 template: detail.hbs
 keywords: clavier, accessibilité, navigation, Focus, texte, entrée, interactions utilisateur, boîtier de commande, à distance
-ms.date: 03/29/2017
+ms.date: 09/24/2020
 ms.topic: article
 pm-contact: chigy
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
-ms.openlocfilehash: f4f2e9e13f492dd9a38d737c0c86dd3b1e632279
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ae3d4826c4468cabea318ed230da0cfbb4d5f24b
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173483"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219112"
 ---
 # <a name="keyboard-interactions"></a>Interactions avec le clavier
 
@@ -284,7 +284,7 @@ Le tableau suivant est un petit exemple de raccourcis clavier fréquemment utili
 | Sélection continue                  | Maj+touche de direction                                  |
 | Enregistrer                                 | Ctrl+S                                           |
 | Rechercher                                 | Ctrl+F                                           |
-| Impression                                | Ctrl+P                                           |
+| Imprimer                                | Ctrl+P                                           |
 | Copier                                 | Ctrl+C                                           |
 | Couper                                  | Ctrl+X                                           |
 | Coller                                | Ctrl+V                                           |
@@ -547,7 +547,7 @@ Voici la liste des contrôles autres que d’édition qui peuvent recevoir le fo
 -   Barre de menus
 -   Élément de menu
 -   Barre d’outils
--   Liste
+-   List
 -   Élément de liste
 
 Voici quelques exemples des différents modes disponibles pour le clavier tactile. La première image représente la disposition classique, la seconde représente la disposition ergonomique (qui n’est pas forcément disponible dans toutes les langues).

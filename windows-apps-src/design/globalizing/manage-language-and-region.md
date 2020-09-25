@@ -3,16 +3,16 @@ Description: Cette rubrique définit les termes liste des langues du profil util
 title: Comprendre les langues de profil utilisateur et les langues du manifeste de l’application
 ms.assetid: 22D3A937-736A-4121-8285-A55DED56E594
 template: detail.hbs
-ms.date: 11/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
-ms.openlocfilehash: c4f1857ba4afe5eba271f7022c64aca26eb6b6b8
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ee2ba09c9b8b307a56bd71e720a9f6db8f45a813
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89156933"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220242"
 ---
 # <a name="understand-user-profile-languages-and-app-manifest-languages"></a>Comprendre les langues de profil utilisateur et les langues du manifeste de l’application
 Un utilisateur Windows peut utiliser des **paramètres**  >  **&**  >  **région de langue & langue** pour configurer une liste triée de langues d’affichage préférées, ou simplement une langue d’affichage par défaut unique. Une langue peut avoir une variante régionale. Par exemple, vous pouvez sélectionner la langue espagnole telle qu’elle est parlée en Espagne, espagnole parlée au Mexique, espagnol comme parlé dans le États-Unis, entre autres.
@@ -170,7 +170,7 @@ Le tableau suivant contient des exemples de ce que l’utilisateur peut voir dan
 </tr>
 <tr>
 <td align="left">Espagnol (Espagne) (par défaut) ; espagnol (Mexique) ; espagnol (Amérique latine) ; portugais (Brésil)</td>
-<td align="left">Anglais (États-Unis)</td>
+<td align="left">Anglais (US)</td>
 <td align="left">aucun</td>
 <td align="left">Espagnol (Espagne)</td>
 <td align="left">Interface utilisateur : espagnol (Espagne) (utilise le paramètre par défaut car aucune langue de base n’est disponible pour l’anglais)<br>Dates/Heures/Nombres : espagnol (Espagne)</td>

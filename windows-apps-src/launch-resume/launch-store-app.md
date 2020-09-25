@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a31c762c002e711a87e99e2f97de6c26e2c8b48
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 5d9571fa5abc07272d1b48c40274cbb952c0d754
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172983"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216352"
 ---
 # <a name="launch-the-microsoft-store-app"></a>Lancer l’application Microsoft Store
 
 
 
-Cette rubrique décrit le schéma d’URI **ms-windows-store:**. Votre application peut utiliser ce schéma d’URI pour lancer l’application Microsoft Store sur des pages spécifiques du magasin à l’aide de la méthode [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync) .
+Cette rubrique décrit le schéma **MS-Windows-Store :** URI. Votre application peut utiliser ce schéma d’URI pour lancer l’application Microsoft Store sur des pages spécifiques du magasin à l’aide de la méthode [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync) .
 
 Cet exemple montre comment ouvrir le magasin sur la page de jeux :
 
@@ -41,7 +41,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-s
 </tr>
 <tr>
 <td rowspan="4">Lance la page de détails d’un produit (PDP). <p>L’ID Windows Store est recommandé pour les clients Windows 10 et fonctionne sur toutes les versions du système d’exploitation, mais les méthodes antérieures de lancement (ex : PFN) sont toujours prises en charge.</p>
-<p>Ces valeurs se trouvent dans l' <a href="https://partner.microsoft.com/dashboard">espace partenaires</a> sur la page identité de l' <a href="https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details">application</a> de la section gestion des applications pour chaque application.</p>
+<p>Ces valeurs se trouvent dans l' <a href="https://partner.microsoft.com/dashboard">espace partenaires</a> sur la page identité de l' <a href="/windows/uwp/publish/view-app-identity-details">application</a> de la section gestion des applications pour chaque application.</p>
 </td>
 <td>
 ID Windows Store <p>(Recommandé)</p>

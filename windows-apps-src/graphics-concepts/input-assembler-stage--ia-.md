@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b1ba0205a837383e1c646664c0550e055227412
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 12a7c7ebd250fec8d944c4cba467a92ff67bd33d
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173063"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219792"
 ---
 # <a name="input-assembler-ia-stage"></a>Étape de l’assembleur d’entrée (IA)
 
@@ -61,7 +61,7 @@ L’étape IA assemble les données dans des primitives et attache des valeurs g
 </tr>
 <tr class="even">
 <td align="left"><p><a href="using-system-generated-values.md">Utilisation de valeurs générées par le système</a></p></td>
-<td align="left"><p>Les valeurs générées par le système sont générées par l’étape de l’assembleur d’entrée (en fonction de la <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics">sémantique</a>d’entrée fournie par l’utilisateur) pour permettre une certaine efficacité dans les opérations de nuanceur. En joignant des données, telles qu’un ID d’instance (visible à l' <a href="vertex-shader-stage--vs-.md">étape de nuanceur de sommets (vs)</a>), un ID de vertex (visible pour vs) ou un ID primitif (visible pour la phase de nuanceur de pixels de <a href="geometry-shader-stage--gs-.md">géométrie (GS</a>) de l’étape de / <a href="pixel-shader-stage--ps-.md">Pixel</a>), une étape de nuanceur ultérieure peut rechercher ces valeurs système afin d’optimiser le traitement.</p></td>
+<td align="left"><p>Les valeurs générées par le système sont générées par l’étape de l’assembleur d’entrée (en fonction de la <a href="/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics">sémantique</a>d’entrée fournie par l’utilisateur) pour permettre une certaine efficacité dans les opérations de nuanceur. En joignant des données, telles qu’un ID d’instance (visible à l' <a href="vertex-shader-stage--vs-.md">étape de nuanceur de sommets (vs)</a>), un ID de vertex (visible pour vs) ou un ID primitif (visible pour la phase de nuanceur de pixels de <a href="geometry-shader-stage--gs-.md">géométrie (GS</a>) de l’étape de / <a href="pixel-shader-stage--ps-.md">Pixel</a>), une étape de nuanceur ultérieure peut rechercher ces valeurs système afin d’optimiser le traitement.</p></td>
 </tr>
 </tbody>
 </table>

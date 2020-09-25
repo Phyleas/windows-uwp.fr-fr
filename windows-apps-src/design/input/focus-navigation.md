@@ -4,19 +4,19 @@ Description: Apprenez à utiliser la navigation de focus pour fournir des expér
 label: ''
 template: detail.hbs
 keywords: clavier, contrôleur de jeu, contrôle à distance, navigation, navigation interne directionnelle, zone directionnelle, stratégie de navigation, entrée, interaction utilisateur, accessibilité, convivialité
-ms.date: 03/02/2018
+ms.date: 09/24/2020
 ms.topic: article
 pm-contact: miguelrb
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ad0e986de3f3084cd33f217df7715c955cb6b57
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 6119a6b7d7621857e3317589a3b4a64ba3d5d2ea
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172573"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91217222"
 ---
 # <a name="focus-navigation-for-keyboard-gamepad-remote-control-and-accessibility-tools"></a>Navigation centrée sur le clavier, le boîtier, le contrôle à distance et les outils d’accessibilité
 
@@ -125,7 +125,7 @@ Dans cet exemple, **XYFocusKeyboardNavigation** ( [ContainerPrimary](/uwp/api/Wi
 </Grid>
 ```
 
-### <a name="enabled"></a>[Enabled](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)
+### <a name="enabled"></a>[Activé](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)
 
 Affectez la valeur **activé** à **XYFocusKeyboardNavigation** pour prendre en charge la navigation directionnelle 2D vers un contrôle et chacun de ses objets enfants [UIElement](/uwp/api/Windows.UI.Xaml.UIElement) .
 

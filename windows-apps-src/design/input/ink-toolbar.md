@@ -4,16 +4,16 @@ title: Ajouter un élément InkToolbar à une application Windows
 label: Add an InkToolbar to a Windows app
 template: detail.hbs
 keywords: Windows Ink, entrée manuscrite Windows Ink, DirectInk, InkPresenter, InkCanvas, InkToolbar, plateforme Windows universelle, UWP, interaction utilisateur, entrée
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 ms.assetid: d888f75f-c2a0-4134-81db-907b5e24fcc5
 ms.localizationpriority: medium
-ms.openlocfilehash: 721e54fc7e0fc9d6e6dc18109ea39b1326534646
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 20446af1f0d62f0c6b18a0ff675818fe41db1740
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89156983"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219742"
 ---
 # <a name="add-an-inktoolbar-to-a-windows-app"></a>Ajouter un élément InkToolbar à une application Windows
 
@@ -87,7 +87,7 @@ Quand vous ajoutez une barre d’outils Ink à votre application, vous pouvez ac
 
 Spécifiez explicitement l’emplacement et l’orientation de la barre d’outils par le biais de ses propriétés [VerticalAlignment](/uwp/api/windows.ui.xaml.frameworkelement.VerticalAlignment), [HorizontalAlignment](/uwp/api/windows.ui.xaml.frameworkelement.HorizontalAlignment)et [orientation](/uwp/api/windows.ui.xaml.controls.inktoolbar?branch=rs3.Orientation) .
 
-| Default | Explicite |
+| Par défaut | Explicite |
 | --- | --- |
 | ![Emplacement et orientation de la barre d’outils d’encre par défaut](./images/ink/location-default-small.png) | ![Emplacement et orientation de la barre d’outils encre explicite](./images/ink/location-explicit-small.png) |
 | *Emplacement et orientation par défaut de la barre d’outils Windows Ink* | *Emplacement et orientation explicites de la barre d’outils Windows Ink* |

@@ -6,12 +6,12 @@ ms.date: 06/26/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ff40b506ef305ac4bc651864da34fe746f6229a3
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ad25d4ba5d8dfe638d3de3e210f69ea204c48a14
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89164853"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220012"
 ---
 # <a name="launch-the-default-app-for-a-uri"></a>Lancer l’application par défaut pour un URI
 
@@ -56,7 +56,7 @@ En général, votre application ne peut pas sélectionner l’application à lan
 
 Utilisez la méthode [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync) pour lancer un URI. Lors de l’appel de cette méthode, votre application doit être au premier plan, c’est-à-dire qu’elle doit être visible pour l’utilisateur. Cette conditions contribue à garantir que l’utilisateur conserve le contrôle. Pour pouvoir la respecter, assurez-vous que vous avez relié directement tous les lancements d’URI à l’interface utilisateur de votre application. L’utilisateur doit toujours exercer une action pour initier un lancement d’URI. Si vous tentez de lancer un URI alors que votre application n’est pas au premier plan, le lancement échoue et votre rappel d’erreur est appelé.
 
-Commencez par créer un objet [**System.Uri**](https://docs.microsoft.com/dotnet/api/system.uri) pour représenter l’URI, puis passez-le à la méthode [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync). Utilisez le résultat renvoyé pour voir si l’appel a réussi, comme illustré dans l’exemple suivant.
+Commencez par créer un objet [**System.Uri**](/dotnet/api/system.uri) pour représenter l’URI, puis passez-le à la méthode [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync). Utilisez le résultat renvoyé pour voir si l’appel a réussi, comme illustré dans l’exemple suivant.
 
 ```cs
 private async void launchURI_Click(object sender, RoutedEventArgs e)
@@ -82,7 +82,7 @@ Dans certains cas, le système d’exploitation invite l’utilisateur à déter
 
 ![boîte de dialogue d’avertissement sur un arrière-plan grisé de l’application. la boîte de dialogue demande à l’utilisateur s’il souhaite basculer entre les applications et a des boutons « oui » et « non » dans le coin inférieur droit. le bouton « non » est mis en surbrillance.](images/warningdialog.png)
 
-Si vous souhaitez toujours que cette invite se produise, utilisez le [**Windows.SysTEM. Propriété LauncherOptions. TreatAsUntrusted**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.treatasuntrusted) pour indiquer au système d’exploitation d’afficher un avertissement.
+Si vous souhaitez toujours que cette invite se produise, utilisez le [**Windows.SysTEM. Propriété LauncherOptions. TreatAsUntrusted**](/uwp/api/windows.system.launcheroptions.treatasuntrusted) pour indiquer au système d’exploitation d’afficher un avertissement.
 
 ```cs
 // The URI to launch
@@ -102,7 +102,7 @@ L’utilisateur ne dispose pas toujours d’une application capable de gérer l�
 
 Les recommandations sont également utiles quand plusieurs applications sont inscrites pour gérer un schéma d’URI. Si vous recommandez une application spécifique, Windows ouvre celle-ci si elle est installée.
 
-Pour faire une recommandation, appelez le [**Windows.SysTEM. Méthode Launcher. LaunchUriAsync (Uri, LauncherOptions)**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_Windows_System_LauncherOptions_) avec [**LauncherOptions. preferredApplicationPackageFamilyName**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.preferredapplicationpackagefamilyname) défini sur le nom de la famille de packages de l’application dans le magasin que vous souhaitez recommander. Le système d’exploitation utilise cette information pour remplacer l’option générale permettant de rechercher une application dans le Windows Store par une option spécifique permettant d’acquérir l’application recommandée dans le Windows Store.
+Pour faire une recommandation, appelez le [**Windows.SysTEM. Méthode Launcher. LaunchUriAsync (Uri, LauncherOptions)**](/uwp/api/windows.system.launcher.launchuriasync#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_Windows_System_LauncherOptions_) avec [**LauncherOptions. preferredApplicationPackageFamilyName**](/uwp/api/windows.system.launcheroptions.preferredapplicationpackagefamilyname) défini sur le nom de la famille de packages de l’application dans le magasin que vous souhaitez recommander. Le système d’exploitation utilise cette information pour remplacer l’option générale permettant de rechercher une application dans le Windows Store par une option spécifique permettant d’acquérir l’application recommandée dans le Windows Store.
 
 ```cs
 // Set the recommended app
@@ -206,7 +206,7 @@ Pour plus d’informations, voir [Lancer l’application Contacts](launch-people
 
 ### <a name="photos-app-uri-scheme"></a>Modèle URI de l’application photos
 
-Utilisez le schéma **MS-photos :** URI pour lancer l’application photos et afficher une image ou modifier une vidéo. Par exemple :  
+Utilisez le schéma **MS-photos :** URI pour lancer l’application photos et afficher une image ou modifier une vidéo. Exemple :  
 Pour afficher une image : `ms-photos:viewer?fileName=c:\users\userName\Pictures\image.jpg`  
 Ou pour modifier une vidéo : `ms-photos:videoedit?InputToken=123abc&Action=Trim&StartTime=01:02:03`  
 
@@ -215,7 +215,7 @@ Ou pour modifier une vidéo : `ms-photos:videoedit?InputToken=123abc&Action=Tri
 
 | Schéma d’URI |Résultats |
 |------------|--------|
-| MS-photos : visionneuse ? fileName = {filename} | Lance l’application photos pour afficher l’image spécifiée où {filename} est un nom de chemin d’accès complet. Exemple : `c:\users\userName\Pictures\ImageToView.jpg`. |
+| MS-photos : visionneuse ? fileName = {filename} | Lance l’application photos pour afficher l’image spécifiée où {filename} est un nom de chemin d’accès complet. Par exemple : `c:\users\userName\Pictures\ImageToView.jpg` |
 | MS-photos : VideoEdit ? InputToken = {jeton d’entrée} | Lance l’application photos en mode d’édition vidéo pour le fichier représenté par le jeton de fichier. **InputToken** est obligatoire. Utilisez  [SharedStorageAccessManager](/uwp/api/Windows.ApplicationModel.DataTransfer.SharedStorageAccessManager) pour obtenir un jeton pour un fichier. |
 | MS-photos : VideoEdit ? Action = {action} | Paramètre qui indique le mode d’édition vidéo dans lequel l’application photos est ouverte, où {action} est l’un des suivants : **SlowMotion**, **FrameExtraction**, **Trim**, **View**, **Ink**. **Action** requise. |
 | MS-photos : VideoEdit ? StartTime = {TimeSpan} | Paramètre facultatif qui spécifie où commencer la vidéo. `{timespan}` doit être au format `"hh:mm:ss.ffff"` . S’il n’est pas spécifié, la valeur par défaut est `00:00:00.0000` |
@@ -228,7 +228,7 @@ Utilisez le schéma **MS-Settings :** URI pour [lancer l’application Paramèt
 
 ![paramètres de confidentialité de l’appareil photo.](images/privacyawarenesssettingsapp.png)
 
-Pour plus d’informations, voir [Lancer l’application Paramètres Windows](launch-settings-app.md) et [Recommandations en matière d’applications prenant en charge la confidentialité](https://docs.microsoft.com/windows/uwp/security/index).
+Pour plus d’informations, voir [Lancer l’application Paramètres Windows](launch-settings-app.md) et [Recommandations en matière d’applications prenant en charge la confidentialité](../security/index.md).
 
 ### <a name="store-app-uri-scheme"></a>Schéma d’URI pour l’application du Windows Store
 

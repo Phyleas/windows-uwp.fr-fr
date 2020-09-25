@@ -4,19 +4,19 @@ title: Recommandations en matière de conception de touches d’accès rapide
 label: Access keys design guidelines
 keywords: clavier, touche d’accès, KeyTip, touche accélératrice, accessibilité, navigation, Focus, texte, entrée, interaction utilisateur
 template: detail.hbs
-ms.date: 06/08/2018
+ms.date: 09/24/2020
 ms.topic: article
 pm-contact: miguelrb
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ca8c21729f27e30e7703291c04a940301a3feb26
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 77986569ec224ba36471f60c0200dfb1825472a0
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173893"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218412"
 ---
 # <a name="access-keys"></a>Clés d'accès
 

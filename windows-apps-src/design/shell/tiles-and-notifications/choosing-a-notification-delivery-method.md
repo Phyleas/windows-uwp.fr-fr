@@ -4,16 +4,16 @@ title: Choisir une méthode de remise de notification
 ms.assetid: FDB43EDE-C5F2-493F-952C-55401EC5172B
 label: Choose a notification delivery method
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 166ff20e792c5cf4a5969e954ed1b7d04e5c5c9f
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a7a929cb88e20cc47562ab4920fd0fc94304fae2
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173293"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219152"
 ---
 # <a name="choose-a-notification-delivery-method"></a>Choisir une méthode de remise de notification
 
@@ -79,7 +79,7 @@ Ce tableau récapitule les types de remise des notifications.
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left">Envoi (push)</td>
+<td align="left">Envoi de données (push)</td>
 <td align="left">Vignette, badge, toast, brut</td>
 <td align="left">Notifications envoyées depuis un serveur cloud, même si votre application n’est pas en cours d’exécution.</td>
 <td align="left"><ul>

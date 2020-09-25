@@ -1,27 +1,27 @@
 ---
 title: Accès du pipeline aux ressources de diffusion en continu
-description: Les ressources de diffusion en continu peuvent être utilisés dans les vues de ressource de nuanceur (SRV), les vues de cible de rendu (RTV), les vues de gabarit/profondeur (DSV) et les affichages des accès sans ordre (UAV), ainsi que dans certains points de liaison où les vues ne sont pas utilisées, notamment les liaisons de tampon de sommet.
+description: Les ressources de streaming peuvent être utilisées dans les vues de ressource de nuanceur (SRV), les vues de cible de rendu (RTV), les vues de stencil de profondeur (DSV) et les vues d’accès non ordonnées (UAV), ainsi que certains points de liaison où les vues ne sont pas utilisées, telles que les liaisons de mémoire tampon de vertex.
 ms.assetid: 18DA5D61-930D-4466-8EFE-0CED566EA4A6
 keywords:
 - Accès du pipeline aux ressources de diffusion en continu
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b10ba23db301a675bf102fd8fb6e278dbba11da8
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 15b37e471e45a1c2ca604c1a5bf28ace69e35ad3
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371020"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220322"
 ---
 # <a name="pipeline-access-to-streaming-resources"></a>Accès du pipeline aux ressources de diffusion en continu
 
 
-Les ressources de diffusion en continu peuvent être utilisés dans les vues de ressource de nuanceur (SRV), les vues de cible de rendu (RTV), les vues de gabarit/profondeur (DSV) et les affichages des accès sans ordre (UAV), ainsi que dans certains points de liaison où les vues ne sont pas utilisées, notamment les liaisons de tampon de sommet. Pour obtenir la liste des liaisons prises en charge, consultez l’article [Paramètres de création de ressources de diffusion en continu](streaming-resource-creation-parameters.md). Les diverses opérations de copie de D3D fonctionnent également sur les ressources de diffusion en continu.
+Les ressources de streaming peuvent être utilisées dans les vues de ressource de nuanceur (SRV), les vues de cible de rendu (RTV), les vues de stencil de profondeur (DSV) et les vues d’accès non ordonnées (UAV), ainsi que certains points de liaison où les vues ne sont pas utilisées, telles que les liaisons de mémoire tampon de vertex. Pour obtenir la liste des liaisons prises en charge, consultez [paramètres de création de ressources de streaming](streaming-resource-creation-parameters.md). Les différentes opérations de copie D3D fonctionnent également sur les ressources de streaming.
 
-Si plusieurs coordonnées de vignettes dans une ou plusieurs vues sont liées au même emplacement mémoire, les lectures et écritures à partir de chemins d’accès différents vers la même mémoire se produisent dans un ordre non déterministe et non reproductible d’accès mémoire.
+Si plusieurs coordonnées de mosaïque dans une ou plusieurs vues sont liées au même emplacement de mémoire, les lectures et écritures à partir de différents chemins d’accès à la même mémoire se produisent dans un ordre non déterministe et non reproductible d’accès à la mémoire.
 
-Si toutes les vignettes situées derrière l’encombrement d’accès mémoire d’un nuanceur sont mappées vers des vignettes uniques, le comportement est identique sur toutes les implémentations à la surface possédant les mêmes contenus de mémoire, mais non découpés en vignettes.
+Si toutes les vignettes derrière un encombrement d’accès à la mémoire à partir d’un nuanceur sont mappées à des vignettes uniques, le comportement est identique sur toutes les implémentations à la surface ayant le même contenu de mémoire en mode non en mosaïque.
 
 ## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>Dans cette section
 
@@ -39,28 +39,28 @@ Si toutes les vignettes situées derrière l’encombrement d’accès mémoire 
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="srv-behavior-with-non-mapped-tiles.md">Comportement SRV avec des vignettes non mappés</a></p></td>
-<td align="left"><p>Le comportement des lectures d'une vue de ressource du nuanceur (SRV) impliquant des vignettes non mappées varie selon le niveau de prise en charge matérielle.</p></td>
+<td align="left"><p><a href="srv-behavior-with-non-mapped-tiles.md">Comportement du SRV avec les vignettes non mappées</a></p></td>
+<td align="left"><p>Le comportement des lectures de la vue de ressource de nuanceur (SRV) qui impliquent des vignettes non mappées dépend du niveau de support matériel.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="uav-behavior-with-non-mapped-tiles.md">Comportement UAV avec des vignettes non mappés</a></p></td>
-<td align="left"><p>Le comportement des lectures et écritures d'un accès sans ordre (UAV) varie selon le niveau de prise en charge du matériel.</p></td>
+<td align="left"><p><a href="uav-behavior-with-non-mapped-tiles.md">Comportement de l’UAV avec les vignettes non mappées</a></p></td>
+<td align="left"><p>Le comportement des lectures et écritures de la vue d’accès non triée (UAV) dépend du niveau de support matériel.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="rasterizer-behavior-with-non-mapped-tiles.md">Comportement du rastériseur avec des vignettes non mappés</a></p></td>
+<td align="left"><p><a href="rasterizer-behavior-with-non-mapped-tiles.md">Comportement du rastériseur avec les vignettes non mappées</a></p></td>
 <td align="left"><p>Cette section décrit le comportement du rastériseur avec les vignettes non mappées.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="tile-access-limitations-with-duplicate-mappings.md">Limitations d’accès de vignette avec les mappages en double</a></p></td>
-<td align="left"><p>Il existe des restrictions d’accès aux tuiles avec des mappages en double, par exemple en cas de copie de ressources de diffusion en continu avec une source et une destination se superposant, ou lors du rendu de tuiles partagées dans la zone de rendu.</p></td>
+<td align="left"><p><a href="tile-access-limitations-with-duplicate-mappings.md">Restrictions d’accès aux vignettes avec des mappages en double</a></p></td>
+<td align="left"><p>Il existe des limitations en matière d’accès aux vignettes avec des mappages dupliqués, par exemple lors de la copie de ressources de streaming avec source et destination qui se chevauchent, ou lors du rendu de vignettes partagées dans la zone de rendu.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="streaming-resources-texture-sampling-features.md">Les fonctionnalités d’échantillonnage de texture de diffusion en continu de ressources</a></p></td>
-<td align="left"><p>Les fonctionnalités d'échantillonnage de texture des ressources de diffusion en continu incluent l'obtention des commentaires sur l'état du nuanceur concernant les zones mappées, la possibilité de vérifier que toutes les données auxquelles vous accédez ont été mappées dans la ressource, l'utilisation du déplacement de couleur pour aider les nuanceurs à éviter les zones mipmappées dans les ressources de diffusion en continu connues pour ne pas être mappées, et la détection de la LOD minimale mappée entièrement pour un encombrement de filtre de texture entier.</p></td>
+<td align="left"><p><a href="streaming-resources-texture-sampling-features.md">Fonctionnalités d’échantillonnage de texture des ressources de diffusion en continu</a></p></td>
+<td align="left"><p>Ressources de streaming les fonctionnalités d’échantillonnage de texture incluent l’obtention de commentaires sur l’état du nuanceur sur les zones mappées, la vérification de la mise en correspondance de toutes les données qui ont été consultées dans la ressource, le verrouillage pour aider les nuanceurs à éviter les zones dans les ressources de streaming mipmapped qui ne sont pas mappées, et la découverte de ce que le LOD minimal est</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="hlsl-streaming-resources-exposure.md">Exposition de ressources de diffusion en continu HLSL</a></p></td>
-<td align="left"><p>La prise en charge des ressources de diffusion en continu dans <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/d3d11-graphics-reference-sm5">Shader Model 5</a> requiert une syntaxe Microsoft HLSL (High Level Shader Language, langage de nuanceur de haut niveau) spécifique.</p></td>
+<td align="left"><p><a href="hlsl-streaming-resources-exposure.md">Exposition des ressources de diffusion en continu HLSL</a></p></td>
+<td align="left"><p>Une syntaxe HLSL (High Level Shader Language) spécifique est requise pour prendre en charge les ressources de streaming dans le <a href="/windows/desktop/direct3dhlsl/d3d11-graphics-reference-sm5">nuancier Model 5</a>.</p></td>
 </tr>
 </tbody>
 </table>
@@ -70,12 +70,8 @@ Si toutes les vignettes situées derrière l’encombrement d’accès mémoire 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
-[Ressources de streaming](streaming-resources.md)
+[Ressources de diffusion en continu](streaming-resources.md)
 
  
 
  
-
-
-
-

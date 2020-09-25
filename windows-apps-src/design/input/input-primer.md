@@ -4,16 +4,16 @@ title: Notions fondamentales sur les interactions
 ms.assetid: 73008F80-FE62-457D-BAEC-412ED6BAB0C8
 label: Interaction primer
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: dc220d1b5489faf96653472880dc06124c10b047
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: dde0e5479533aed225dbadc68b325afede050dbb
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173443"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219672"
 ---
 # <a name="interaction-primer"></a>Notions fondamentales sur les interactions
 
@@ -89,7 +89,7 @@ L’intégration des fonctionnalités de base de votre application et la fournit
 [Instructions de conception de Cortana](/cortana/skills/cortana-design-guidelines)
  
 
-## <a name="speech"></a>Speech
+## <a name="speech"></a>Voix
 
 Les fonctions vocales offrent un moyen efficace et naturel d’interagir avec les applications. Elles assurent une communication simple et précise avec les applications et permettent aux utilisateurs d’être productifs et de se tenir informés dans diverses situations.
 
@@ -171,7 +171,7 @@ Il est recommandé de fournir des commandes d’interface utilisateur spécifiqu
 [Recommandations en matière de conception pour le stylet](./pen-and-stylus-interactions.md)
  
 
-## <a name="touch"></a>Toucher
+## <a name="touch"></a>Entrées tactiles
 
 Avec une interface tactile, les mouvements physiques avec un ou plusieurs doigts peuvent servir à émuler la manipulation directe d’éléments d’interface utilisateur (par exemple, le mouvement panoramique, la rotation, le redimensionnement ou le déplacement), ou faire office de méthode d’entrée alternative (semblable à la souris ou au stylet) ou complémentaire (pour modifier l’aspect d’autres entrées, comme par exemple maculer un trait d’encre dessiné avec un stylet). Les expériences tactiles peuvent fournir des sensations plus naturelles et proches de celles du monde réel pour les utilisateurs lorsqu’ils interagissent avec des éléments sur un écran.
 

@@ -5,16 +5,16 @@ title: Globalisation et localisation
 ms.assetid: c0791eec-5bb8-4a13-8977-61d7d98e35ce
 label: Intro
 template: detail.hbs
-ms.date: 12/07/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
-ms.openlocfilehash: 479b5d21e40b998fac9380d34be1a50d7d87e9e0
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 2b288a4d0ceaa97a4f6357d99f9937e21305bf3f
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173473"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218332"
 ---
 # <a name="globalization-and-localization"></a>Globalisation et localisation
 

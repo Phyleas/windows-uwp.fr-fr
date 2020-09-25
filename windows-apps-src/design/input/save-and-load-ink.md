@@ -5,15 +5,15 @@ ms.assetid: C96C9D2F-DB69-4883-9809-4A0DF7CEC506
 label: Store and retrieve Windows Ink stroke data
 template: detail.hbs
 keywords: Windows Ink, Windows encrage, DirectInk, InkPresenter, InkCanvas, ISF, Ink Serialized Format, interaction utilisateur, entrée
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 72076ffb27046a5c5e804cf30e8cb6c78b88cd69
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 66ac039774abc2322ab8b5e9a6a264af25156406
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173333"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216762"
 ---
 # <a name="store-and-retrieve-windows-ink-stroke-data"></a>Stocker et récupérer les données de traits Windows Ink
 

@@ -4,15 +4,15 @@ title: Simuler une entrée utilisateur par une injection d’entrée
 label: Input injection
 template: detail.hbs
 keywords: appareil, digitaliseur, entrée, interaction, injection
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f06414362b6a821233eabfb396ae59001f35c30d
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e4e1497ea30400c550cb0cbb2309801ff8145fd6
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89156893"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219682"
 ---
 # <a name="simulate-user-input-through-input-injection"></a>Simuler une entrée utilisateur par une injection d’entrée
 
@@ -26,7 +26,7 @@ L’injection d’entrée permet à votre application Windows de simuler l’ent
 
 L’injection d’entrée est utile pour les applications et les outils Windows qui doivent fournir des fonctionnalités qui incluent l’accessibilité, le test (ad hoc, automatisé) et l’accès à distance et les fonctionnalités de prise en charge.
 
-## <a name="setup"></a>Programme d’installation
+## <a name="setup"></a>Installation
 
 Pour utiliser les API d’injection d’entrée dans votre application Windows, vous devez ajouter le code suivant au manifeste de l’application :
 

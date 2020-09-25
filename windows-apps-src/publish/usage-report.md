@@ -2,16 +2,16 @@
 Description: Le rapport d’utilisation de l’espace partenaires vous permet de voir comment les clients utilisent votre application.
 title: Rapport d’utilisation
 ms.assetid: 5F0E7F94-D121-4AD3-A6E5-9C0DEC437BD3
-ms.date: 10/31/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, utilisation, événement personnalisé, rapport, télémétrie, sessions utilisateur
 ms.localizationpriority: medium
-ms.openlocfilehash: d2839112d36822be5eb8297b838cdc38bab5c71b
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a794018b2fcdd07017ee3441e65c6200e7436304
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89167273"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220202"
 ---
 # <a name="usage-report"></a>Rapport d’utilisation
 
@@ -35,7 +35,7 @@ Les informations de tous les graphiques répertoriés ci-dessous reflètent la p
 > Ce rapport inclut uniquement les données d’utilisation des clients sur Windows 10 (y compris la Xbox) qui n’ont pas choisi de fournir des informations de télémétrie. Les données d’utilisation pour les jeux Xbox sont incluses ici, que le client ait été connecté à Xbox Live ou non. 
 
 
-## <a name="usage"></a>Utilisation
+## <a name="usage"></a>Usage
 
 Le graphique **utilisation** affiche des détails sur la façon dont vos clients utilisent votre application pendant la période sélectionnée. Notez que ce graphique n’effectue pas le suivi des utilisateurs uniques pour votre application ou des sessions utilisateur uniques (autrement dit, un utilisateur est représenté dans ce graphique, qu’il ait utilisé votre application une seule fois ou plusieurs fois).
 

@@ -3,16 +3,16 @@ description: Décrit les étapes nécessaires pour garantir que votre applicatio
 ms.assetid: FD7CA6F6-A8F1-47D8-AA6C-3F2EC3168C45
 title: Thèmes à contraste élevé
 template: detail.hbs
-ms.date: 09/28/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 79ade0e3a823282fb970f470e1a902b1bc30c592
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b5e9b823ca335370f6cde22ef6417a6823851c18
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157053"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219872"
 ---
 # <a name="high-contrast-themes"></a>Thèmes à contraste élevé  
 
@@ -95,7 +95,7 @@ La page *Paramètres &gt; Options d’ergonomie &gt; Contraste élevé* comporte
 
 Chaque ressource de **couleur SystemColor *** est une variable qui met à jour automatiquement la couleur lorsque l’utilisateur bascule les thèmes à contraste élevé. Vous trouverez ci-après des recommandations vous indiquant quand et où utiliser chaque ressource.
 
-Ressource | Utilisation |
+Ressource | Usage |
 |--------|-------|
 **SystemColorWindowTextColor** | Copie de texte de corps, titres, listes ; tout texte ne pouvant faire l’objet d’aucune interaction |
 | **SystemColorHotlightColor** | Liens hypertexte |

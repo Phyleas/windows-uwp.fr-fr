@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, jeux, DirectX, interopérabilité XAML
 ms.localizationpriority: medium
-ms.openlocfilehash: fc5e5323f509759754822849bd7dc93e7a45eaee
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a34510939b84c885bf90ac2b6b42ffa158decc8e
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89156473"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216572"
 ---
 # <a name="directx-and-xaml-interop"></a>Technologie interop DirectX et XAML
 
@@ -49,11 +49,11 @@ Voici le processus de base pour la création et la mise à jour d’un objet [Su
 
 1.  Définissez la taille de la surface partagée en passant la hauteur et la largeur au constructeur [SurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource). Vous pouvez également indiquer si la surface a besoin d’une prise en charge alpha (opacité).
 
-    Par exemple :
+    Exemple :
 
     `SurfaceImageSource^ surfaceImageSource = ref new SurfaceImageSource(400, 300);`
 
-2.  Obtient un pointeur vers [ISurfaceImageSourceNativeWithD2D](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nn-windows-ui-xaml-media-dxinterop-isurfaceimagesourcenativewithd2d). Effectuez un cast de l’objet [SurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource) en [IInspectable](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (ou **IUnknown**), puis appelez **QueryInterface** dessus pour accéder à l’implémentation **ISurfaceImageSourceNativeWithD2D** sous-jacente. Les méthodes définies dans cette implémentation permettent de définir l’appareil et d’exécuter les opérations de dessin.
+2.  Obtient un pointeur vers [ISurfaceImageSourceNativeWithD2D](/windows/desktop/api/windows.ui.xaml.media.dxinterop/nn-windows-ui-xaml-media-dxinterop-isurfaceimagesourcenativewithd2d). Effectuez un cast de l’objet [SurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource) en [IInspectable](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (ou **IUnknown**), puis appelez **QueryInterface** dessus pour accéder à l’implémentation **ISurfaceImageSourceNativeWithD2D** sous-jacente. Les méthodes définies dans cette implémentation permettent de définir l’appareil et d’exécuter les opérations de dessin.
 
     ```cpp
     Microsoft::WRL::ComPtr<ISurfaceImageSourceNativeWithD2D> m_sisNativeWithD2D;
@@ -68,12 +68,12 @@ Voici le processus de base pour la création et la mise à jour d’un objet [Su
         (void **)&m_sisNativeWithD2D);
     ```
 
-3.  Créez les périphériques DXGI et D2D en appelant d’abord [D3D11CreateDevice](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice) et [D2D1CreateDevice](https://docs.microsoft.com/windows/desktop/api/d2d1_1/nf-d2d1_1-d2d1createdevice) , puis en passant l’appareil et le contexte à [ISurfaceImageSourceNativeWithD2D :: SetDevice](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-isurfaceimagesourcenativewithd2d-setdevice). 
+3.  Créez les périphériques DXGI et D2D en appelant d’abord [D3D11CreateDevice](/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice) et [D2D1CreateDevice](/windows/desktop/api/d2d1_1/nf-d2d1_1-d2d1createdevice) , puis en passant l’appareil et le contexte à [ISurfaceImageSourceNativeWithD2D :: SetDevice](/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-isurfaceimagesourcenativewithd2d-setdevice). 
 
     > [!NOTE]
     > Si vous dessinez dans votre **SurfaceImageSource** à partir d’un thread d’arrière-plan, vous devrez également vous assurer que l’appareil dxgi a activé l’accès multithread. Cette opération ne doit être effectuée que si vous dessinez à partir d’un thread d’arrière-plan, pour des raisons de performances.
 
-    Par exemple :
+    Exemple :
 
     ```cpp
     Microsoft::WRL::ComPtr<ID3D11Device> m_d3dDevice;
@@ -112,7 +112,7 @@ Voici le processus de base pour la création et la mise à jour d’un objet [Su
     m_sisNativeWithD2D->SetDevice(m_d2dDevice.Get());
     ```
 
-4.  Fournissez un pointeur vers l’objet [ID2D1DeviceContext](https://docs.microsoft.com/windows/desktop/api/dxgi/nn-dxgi-idxgisurface) à [ISurfaceImageSourceNativeWithD2D :: BeginDraw](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-isurfaceimagesourcenativewithd2d-begindraw), puis utilisez le contexte de dessin retourné pour dessiner le contenu du rectangle souhaité dans le **SurfaceImageSource**. **ISurfaceImageSourceNativeWithD2D :: BeginDraw** et les commandes de dessin peuvent être appelées à partir d’un thread d’arrière-plan. Seule est dessinée la zone désignée pour la mise à jour dans le paramètre *updateRect*.
+4.  Fournissez un pointeur vers l’objet [ID2D1DeviceContext](/windows/desktop/api/dxgi/nn-dxgi-idxgisurface) à [ISurfaceImageSourceNativeWithD2D :: BeginDraw](/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-isurfaceimagesourcenativewithd2d-begindraw), puis utilisez le contexte de dessin retourné pour dessiner le contenu du rectangle souhaité dans le **SurfaceImageSource**. **ISurfaceImageSourceNativeWithD2D :: BeginDraw** et les commandes de dessin peuvent être appelées à partir d’un thread d’arrière-plan. Seule est dessinée la zone désignée pour la mise à jour dans le paramètre *updateRect*.
 
     Cette méthode retourne le décalage de points (x,y) du rectangle cible mis à jour dans le paramètre *offset*. Vous utilisez ce décalage pour déterminer où dessiner le contenu mis à jour avec **ID2D1DeviceContext**.
 
@@ -149,7 +149,7 @@ Voici le processus de base pour la création et la mise à jour d’un objet [Su
     }
     ```
 
-5. Appelez [ISurfaceImageSourceNativeWithD2D :: EndDraw](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-isurfaceimagesourcenativewithd2d-enddraw) pour terminer l’image bitmap. L’image bitmap peut être utilisée en tant que source pour un élément XAML [Image](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image) ou [ImageBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.ImageBrush). **ISurfaceImageSourceNativeWithD2D :: EndDraw** doit être appelé uniquement à partir du thread d’interface utilisateur.
+5. Appelez [ISurfaceImageSourceNativeWithD2D :: EndDraw](/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-isurfaceimagesourcenativewithd2d-enddraw) pour terminer l’image bitmap. L’image bitmap peut être utilisée en tant que source pour un élément XAML [Image](/uwp/api/windows.ui.xaml.controls.image) ou [ImageBrush](/uwp/api/Windows.UI.Xaml.Media.ImageBrush). **ISurfaceImageSourceNativeWithD2D :: EndDraw** doit être appelé uniquement à partir du thread d’interface utilisateur.
 
     ```cpp
     m_sisNative->EndDraw();
@@ -163,27 +163,27 @@ Voici le processus de base pour la création et la mise à jour d’un objet [Su
     ```
 
     > [!NOTE]
-    > L’appel de [SurfaceImageSource :: SetSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsource) (héritée de **IBitmapSource :: SetSource**) lève actuellement une exception. Ne l’appelez pas à partir de votre objet [SurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource).
+    > L’appel de [SurfaceImageSource :: SetSource](/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsource) (héritée de **IBitmapSource :: SetSource**) lève actuellement une exception. Ne l’appelez pas à partir de votre objet [SurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource).
 
     > [!NOTE]
-    > Les applications doivent éviter les dessins sur **SurfaceImageSource** tandis que leur [fenêtre](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window) associée est masquée, sinon les API **ISurfaceImageSourceNativeWithD2D** échouent. Pour ce faire, inscrivez-vous en tant qu’écouteur d’événements pour l’événement [Window. VisibilityChanged](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window.VisibilityChanged) pour suivre les modifications de visibilité.
+    > Les applications doivent éviter les dessins sur **SurfaceImageSource** tandis que leur [fenêtre](/uwp/api/Windows.UI.Xaml.Window) associée est masquée, sinon les API **ISurfaceImageSourceNativeWithD2D** échouent. Pour ce faire, inscrivez-vous en tant qu’écouteur d’événements pour l’événement [Window. VisibilityChanged](/uwp/api/Windows.UI.Xaml.Window.VisibilityChanged) pour suivre les modifications de visibilité.
 
 ## <a name="virtualsurfaceimagesource"></a>VirtualSurfaceImageSource
 
 [VirtualSurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource) étend [SurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource) lorsque le contenu est potentiellement plus volumineux pour l’écran et donc que le contenu doit être virtualisé pour un rendu optimal.
 
-[VirtualSurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource) est différent de [SurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource) dans le sens où il utilise un rappel, [IVirtualSurfaceImageSourceCallbacksNative::UpdatesNeeded](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-ivirtualsurfaceupdatescallbacknative-updatesneeded), que vous implémentez pour mettre à jour des régions de la surface à mesure qu’elles s’affichent à l’écran. Vous n’avez pas besoin d’effacer les régions masquées, car l’infrastructure XAML s’en charge à votre place.
+[VirtualSurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource) est différent de [SurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource) dans le sens où il utilise un rappel, [IVirtualSurfaceImageSourceCallbacksNative::UpdatesNeeded](/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-ivirtualsurfaceupdatescallbacknative-updatesneeded), que vous implémentez pour mettre à jour des régions de la surface à mesure qu’elles s’affichent à l’écran. Vous n’avez pas besoin d’effacer les régions masquées, car l’infrastructure XAML s’en charge à votre place.
 
 Voici le processus de base pour la création et la mise à jour d’un objet [VirtualSurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource) dans le code-behind :
 
-1.  Créez une instance de [VirtualSurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource) avec la taille de votre choix. Par exemple :
+1.  Créez une instance de [VirtualSurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource) avec la taille de votre choix. Exemple :
 
     ```cpp
     VirtualSurfaceImageSource^ virtualSIS = 
         ref new VirtualSurfaceImageSource(2000, 2000);
     ```
 
-2.  Obtient les pointeurs vers [IVirtualSurfaceImageSourceNative](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nn-windows-ui-xaml-media-dxinterop-ivirtualsurfaceimagesourcenative) et [ISurfaceImageSourceNativeWithD2D](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nn-windows-ui-xaml-media-dxinterop-isurfaceimagesourcenativewithd2d). Effectuez un cast de l’objet [VirtualSurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource) en [IInspectable](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) ou [IUnknown](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown), puis appelez [QueryInterface](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)) sur ce dernier pour accéder aux implémentations **IVirtualSurfaceImageSourceNative** et **ISurfaceImageSourceNativeWithD2D** sous-jacentes. Vous utilisez les méthodes définies sur ces implémentations pour définir le périphérique et exécuter les opérations de dessin.
+2.  Obtient les pointeurs vers [IVirtualSurfaceImageSourceNative](/windows/desktop/api/windows.ui.xaml.media.dxinterop/nn-windows-ui-xaml-media-dxinterop-ivirtualsurfaceimagesourcenative) et [ISurfaceImageSourceNativeWithD2D](/windows/desktop/api/windows.ui.xaml.media.dxinterop/nn-windows-ui-xaml-media-dxinterop-isurfaceimagesourcenativewithd2d). Effectuez un cast de l’objet [VirtualSurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource) en [IInspectable](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) ou [IUnknown](/windows/desktop/api/unknwn/nn-unknwn-iunknown), puis appelez [QueryInterface](/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)) sur ce dernier pour accéder aux implémentations **IVirtualSurfaceImageSourceNative** et **ISurfaceImageSourceNativeWithD2D** sous-jacentes. Vous utilisez les méthodes définies sur ces implémentations pour définir le périphérique et exécuter les opérations de dessin.
 
     ```cpp
     Microsoft::WRL::ComPtr<IVirtualSurfaceImageSourceNative>  m_vsisNative;
@@ -208,7 +208,7 @@ Voici le processus de base pour la création et la mise à jour d’un objet [Vi
     > [!NOTE]
     > Si vous dessinez dans votre **VirtualSurfaceImageSource** à partir d’un thread d’arrière-plan, vous devrez également vous assurer que l’appareil dxgi a activé l’accès multithread. Cette opération ne doit être effectuée que si vous dessinez à partir d’un thread d’arrière-plan, pour des raisons de performances.
 
-    Par exemple :
+    Exemple :
 
     ```cpp
     Microsoft::WRL::ComPtr<ID3D11Device> m_d3dDevice;
@@ -249,7 +249,7 @@ Voici le processus de base pour la création et la mise à jour d’un objet [Vi
     m_vsisNative->SetDevice(dxgiDevice.Get());
     ```
 
-4.  Appelez [IVirtualSurfaceImageSourceNative::RegisterForUpdatesNeeded](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-ivirtualsurfaceimagesourcenative-registerforupdatesneeded) en passant une référence à votre implémentation de [IVirtualSurfaceUpdatesCallbackNative](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nn-windows-ui-xaml-media-dxinterop-ivirtualsurfaceupdatescallbacknative).
+4.  Appelez [IVirtualSurfaceImageSourceNative::RegisterForUpdatesNeeded](/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-ivirtualsurfaceimagesourcenative-registerforupdatesneeded) en passant une référence à votre implémentation de [IVirtualSurfaceUpdatesCallbackNative](/windows/desktop/api/windows.ui.xaml.media.dxinterop/nn-windows-ui-xaml-media-dxinterop-ivirtualsurfaceupdatescallbacknative).
 
     ```cpp
     class MyContentImageSource : public IVirtualSurfaceUpdatesCallbackNative
@@ -274,11 +274,11 @@ Voici le processus de base pour la création et la mise à jour d’un objet [Vi
     }
     ```
 
-    L’infrastructure appelle votre implémentation de [IVirtualSurfaceUpdatesCallbackNative::UpdatesNeeded](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-ivirtualsurfaceimagesourcenative-registerforupdatesneeded) lorsqu’une région de [VirtualSurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource) doit être mise à jour.
+    L’infrastructure appelle votre implémentation de [IVirtualSurfaceUpdatesCallbackNative::UpdatesNeeded](/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-ivirtualsurfaceimagesourcenative-registerforupdatesneeded) lorsqu’une région de [VirtualSurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource) doit être mise à jour.
 
-    Cela se produit lorsque l’infrastructure détermine que la région doit être dessinée (par exemple, lorsque l’utilisateur recentre ou zoome la vue de la surface) ou après que l’application a appelé [IVirtualSurfaceImageSourceNative::Invalidate](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-ivirtualsurfaceimagesourcenative-invalidate) sur cette région.
+    Cela se produit lorsque l’infrastructure détermine que la région doit être dessinée (par exemple, lorsque l’utilisateur recentre ou zoome la vue de la surface) ou après que l’application a appelé [IVirtualSurfaceImageSourceNative::Invalidate](/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-ivirtualsurfaceimagesourcenative-invalidate) sur cette région.
 
-5.  Dans [IVirtualSurfaceImageSourceNative::UpdatesNeeded](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-ivirtualsurfaceupdatescallbacknative-updatesneeded), utilisez les méthodes [IVirtualSurfaceImageSourceNative::GetUpdateRectCount](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-ivirtualsurfaceimagesourcenative-getupdaterectcount) et [IVirtualSurfaceImageSourceNative::GetUpdateRects](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-ivirtualsurfaceimagesourcenative-getupdaterects) pour déterminer la ou les régions de la surface à dessiner.
+5.  Dans [IVirtualSurfaceImageSourceNative::UpdatesNeeded](/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-ivirtualsurfaceupdatescallbacknative-updatesneeded), utilisez les méthodes [IVirtualSurfaceImageSourceNative::GetUpdateRectCount](/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-ivirtualsurfaceimagesourcenative-getupdaterectcount) et [IVirtualSurfaceImageSourceNative::GetUpdateRects](/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-ivirtualsurfaceimagesourcenative-getupdaterects) pour déterminer la ou les régions de la surface à dessiner.
 
     ```cpp
     HRESULT STDMETHODCALLTYPE MyContentImageSource::UpdatesNeeded()
@@ -355,7 +355,7 @@ Voici le processus de base pour la création et la mise à jour d’un objet [Vi
     3.  Appelez **ISurfaceImageSourceNativeWithD2D :: EndDraw**. Le résultat est une image bitmap.
 
 > [!NOTE]
-> Les applications doivent éviter les dessins sur **SurfaceImageSource** tandis que leur [fenêtre](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window) associée est masquée, sinon les API **ISurfaceImageSourceNativeWithD2D** échouent. Pour ce faire, inscrivez-vous en tant qu’écouteur d’événements pour l’événement [Window. VisibilityChanged](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window.VisibilityChanged) pour suivre les modifications de visibilité.
+> Les applications doivent éviter les dessins sur **SurfaceImageSource** tandis que leur [fenêtre](/uwp/api/Windows.UI.Xaml.Window) associée est masquée, sinon les API **ISurfaceImageSourceNativeWithD2D** échouent. Pour ce faire, inscrivez-vous en tant qu’écouteur d’événements pour l’événement [Window. VisibilityChanged](/uwp/api/Windows.UI.Xaml.Window.VisibilityChanged) pour suivre les modifications de visibilité.
 
 ## <a name="swapchainpanel-and-gaming"></a>SwapChainPanel et jeux
 
@@ -365,16 +365,16 @@ Voici le processus de base pour la création et la mise à jour d’un objet [Vi
 Afin de garantir de bonnes performances, le type [SwapChainPanel](/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) impose certaines limitations :
 
 -   Le nombre maximal d’instances de [SwapChainPanel](/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) par application est de 4.
--   Vous devez définir la hauteur et la largeur de la chaîne d’échange DirectX (dans la [ \_ chaîne de permutation dxgi \_ \_ DESC1](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/ns-dxgi1_2-dxgi_swap_chain_desc1)) sur les dimensions actuelles de l’élément de chaîne de permutation. Si vous ne le faites pas, le contenu d’affichage sera mis à l’échelle (à l’aide de l' ** \_ \_ étirement dxgi**).
--   Vous devez définir le mode de mise à l’échelle de la chaîne d’échange DirectX (dans la [ \_ chaîne de permutation dxgi \_ \_ DESC1](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/ns-dxgi1_2-dxgi_swap_chain_desc1)) sur **dxgi \_ \_ Stretch**.
--   Vous devez créer la chaîne de permutation DirectX en appelant [IDXGIFactory2::CreateSwapChainForComposition](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgifactory2-createswapchainforcomposition).
+-   Vous devez définir la hauteur et la largeur de la chaîne d’échange DirectX (dans la [ \_ chaîne de permutation dxgi \_ \_ DESC1](/windows/desktop/api/dxgi1_2/ns-dxgi1_2-dxgi_swap_chain_desc1)) sur les dimensions actuelles de l’élément de chaîne de permutation. Si vous ne le faites pas, le contenu d’affichage sera mis à l’échelle (à l’aide de l' ** \_ \_ étirement dxgi**).
+-   Vous devez définir le mode de mise à l’échelle de la chaîne d’échange DirectX (dans la [ \_ chaîne de permutation dxgi \_ \_ DESC1](/windows/desktop/api/dxgi1_2/ns-dxgi1_2-dxgi_swap_chain_desc1)) sur **dxgi \_ \_ Stretch**.
+-   Vous devez créer la chaîne de permutation DirectX en appelant [IDXGIFactory2::CreateSwapChainForComposition](/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgifactory2-createswapchainforcomposition).
 
-Vous mettez à jour [SwapChainPanel](/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) en fonction des besoins de votre application et non des mises à jour de l’infrastructure XAML. Si vous avez besoin de synchroniser les mises à jour de **SwapChainPanel** avec celles de l’infrastructure XAML, inscrivez-vous à l’événement [Windows::UI::Xaml::Media::CompositionTarget::Rendering](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.compositiontarget.rendering). Sinon, vous devez prévoir des problèmes inter-threads si vous essayez de mettre à jour les éléments XAML à partir d’un thread différent de celui qui met à jour **SwapChainPanel**.
+Vous mettez à jour [SwapChainPanel](/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) en fonction des besoins de votre application et non des mises à jour de l’infrastructure XAML. Si vous avez besoin de synchroniser les mises à jour de **SwapChainPanel** avec celles de l’infrastructure XAML, inscrivez-vous à l’événement [Windows::UI::Xaml::Media::CompositionTarget::Rendering](/uwp/api/windows.ui.xaml.media.compositiontarget.rendering). Sinon, vous devez prévoir des problèmes inter-threads si vous essayez de mettre à jour les éléments XAML à partir d’un thread différent de celui qui met à jour **SwapChainPanel**.
 
-Si vous avez besoin de recevoir des entrées de pointeur à faible latence sur votre élément **SwapChainPanel**, utilisez [SwapChainPanel::CreateCoreIndependentInputSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.swapchainpanel.createcoreindependentinputsource). Cette méthode retourne un objet [CoreIndependentInputSource](https://docs.microsoft.com/uwp/api/windows.ui.core.coreindependentinputsource) qui peut être utilisé pour recevoir les événements d’entrée avec une latence minimale sur un thread d’arrière-plan. Notez qu’une fois cette méthode appelée, les événements d’entrée de pointeur XAML normaux ne sont pas déclenchés pour l’élément **SwapChainPanel**, car toutes les entrées sont redirigées vers le thread d’arrière-plan.
+Si vous avez besoin de recevoir des entrées de pointeur à faible latence sur votre élément **SwapChainPanel**, utilisez [SwapChainPanel::CreateCoreIndependentInputSource](/uwp/api/windows.ui.xaml.controls.swapchainpanel.createcoreindependentinputsource). Cette méthode retourne un objet [CoreIndependentInputSource](/uwp/api/windows.ui.core.coreindependentinputsource) qui peut être utilisé pour recevoir les événements d’entrée avec une latence minimale sur un thread d’arrière-plan. Notez qu’une fois cette méthode appelée, les événements d’entrée de pointeur XAML normaux ne sont pas déclenchés pour l’élément **SwapChainPanel**, car toutes les entrées sont redirigées vers le thread d’arrière-plan.
 
 
-> **Remarque**   En général, vos applications DirectX doivent créer des chaînes de permutation en orientation paysage et égal à la taille de la fenêtre d’affichage (généralement la résolution d’écran native dans la plupart des Microsoft Store jeux). Cela garantit que votre application utilise l’implémentation de chaîne de permutation optimale lorsqu’elle ne possède aucune superposition XAML visible. Si l’application est pivotée en mode portrait, elle doit appeler [IDXGISwapChain1::SetRotation](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-setrotation) sur la chaîne de permutation existante, appliquer une transformation au contenu, si nécessaire, puis appeler de nouveau [SetSwapChain](/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-iswapchainpanelnative-setswapchain) sur la même chaîne de permutation. De même, votre application doit appeler de nouveau **SetSwapChain** sur la même chaîne de permutation chaque fois que celle-ci est redimensionnée à la suite d’un appel de [IDXGISwapChain::ResizeBuffers](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgiswapchain-resizebuffers).
+> **Remarque**   En général, vos applications DirectX doivent créer des chaînes de permutation en orientation paysage et égal à la taille de la fenêtre d’affichage (généralement la résolution d’écran native dans la plupart des Microsoft Store jeux). Cela garantit que votre application utilise l’implémentation de chaîne de permutation optimale lorsqu’elle ne possède aucune superposition XAML visible. Si l’application est pivotée en mode portrait, elle doit appeler [IDXGISwapChain1::SetRotation](/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-setrotation) sur la chaîne de permutation existante, appliquer une transformation au contenu, si nécessaire, puis appeler de nouveau [SetSwapChain](/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-iswapchainpanelnative-setswapchain) sur la même chaîne de permutation. De même, votre application doit appeler de nouveau **SetSwapChain** sur la même chaîne de permutation chaque fois que celle-ci est redimensionnée à la suite d’un appel de [IDXGISwapChain::ResizeBuffers](/windows/desktop/api/dxgi/nf-dxgi-idxgiswapchain-resizebuffers).
 
 
  

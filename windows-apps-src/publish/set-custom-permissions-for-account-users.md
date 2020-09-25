@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, rôles d’utilisateur, autorisation utilisateur, rôles personnalisés, accès utilisateur, autorisations personnaliser, rôles standard
 ms.localizationpriority: medium
-ms.openlocfilehash: 10c75d117320a947ce33ebd732c1956a9b3ae0e6
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 6aa88bd5af2e878fa702c3faff2d2677a23f33f2
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172853"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219752"
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>Définir des rôles ou des autorisations personnalisées pour les utilisateurs de comptes
 
@@ -101,7 +101,7 @@ Les autorisations de cette section ne peuvent pas être limitées à des produit
     </tr>
     </thead>
     <tbody>
-<tr><td align="left">    <b>Paramètres du compte</b>                    </td><td align="left">  Peut afficher toutes les pages de la section <b>Paramètres du compte</b>, y compris les <a href="managing-your-profile.md">coordonnées</a>.       </td><td align="left">  Peut afficher toutes les pages de la section <b>Paramètres du compte</b>. Peut modifier les <a href="/windows/uwp/publish/manage-account-settings-and-profile">coordonnées</a> et d’autres pages, mais ne peut pas apporter de modifications au compte de revenu ou au profil fiscal (à moins que l’autorisation ne soit accordée séparément).            </td></tr>
+<tr><td align="left">    <b>Paramètres du compte</b>                    </td><td align="left">  Peut afficher toutes les pages de la section <b>Paramètres du compte</b>, y compris les <a href="/windows/uwp/publish/manage-account-settings-and-profile">coordonnées</a>.       </td><td align="left">  Peut afficher toutes les pages de la section <b>Paramètres du compte</b>. Peut modifier les <a href="/windows/uwp/publish/manage-account-settings-and-profile">coordonnées</a> et d’autres pages, mais ne peut pas apporter de modifications au compte de revenu ou au profil fiscal (à moins que l’autorisation ne soit accordée séparément).            </td></tr>
 <tr><td align="left">    <b>Utilisateurs du compte</b>                       </td><td align="left">  Peut afficher les utilisateurs qui ont été ajoutés au compte dans la section <b>utilisateurs</b> .          </td><td align="left">  Peut ajouter des utilisateurs au compte et apporter des modifications aux utilisateurs existants dans la section <b>utilisateurs</b> .             </td></tr>
 <tr><td align="left">    <b>Rapport des performances de l’AD au niveau du compte</b> </td><td align="left">  Peut afficher le <a href="advertising-performance-report.md">Rapport sur les performances publicitaires</a> au niveau du compte.      </td><td align="left">  N/A   </td></tr>
 <tr><td align="left">    <b>Campagnes Active Directory</b>                        </td><td align="left">  Peut afficher les <a href="create-an-ad-campaign-for-your-app.md">campagnes publicitaires</a> créées dans le compte.      </td><td align="left">  Peut créer, gérer et afficher les <a href="create-an-ad-campaign-for-your-app.md">campagnes publicitaires</a> créées dans le compte.          </td></tr>
@@ -111,7 +111,7 @@ Les autorisations de cette section ne peuvent pas être limitées à des produit
 <tr><td align="left">    <b>Unités ad</b>                            </td><td align="left">  Peut afficher les <a href="in-app-ads.md">unités publicitaires</a> qui ont été créées pour le compte.    </td><td align="left">  Peut créer, gérer et afficher les <a href="in-app-ads.md">unités publicitaires</a> du compte.             </td></tr>
 <tr><td align="left">    <b>Publicités associées</b>                       </td><td align="left">  Peut afficher l’utilisation de l’<a href="/windows/uwp/publish/in-app-ads">annonce des affiliés</a> dans tous les produits du compte.    </td><td align="left">  Peut gérer et afficher l’utilisation de l’<a href="/windows/uwp/publish/in-app-ads">annonce des affiliés</a> dans tous les produits du compte.                </td></tr>
 <tr><td align="left">    <b>Rapports de performances des filiales</b>      </td><td align="left">  Peut afficher le <a href="/windows/uwp/publish/advertising-performance-report">rapport sur les performances des annonces des affiliés</a> de tous les produits dans le compte.   </td><td align="left">  N/A   </td></tr>
-<tr><td align="left">    <b>Rapports d’installation de publicités de l’application</b>             </td><td align="left">  Permet d’afficher le rapport de la <a href="promote-your-app-report.md">campagne Active Directory</a>.           </td><td align="left">  N/A   </td></tr>
+<tr><td align="left">    <b>Rapports d’installation de publicités de l’application</b>             </td><td align="left">  Permet d’afficher le rapport de la <a href="/windows/uwp/publish/ad-campaign-report">campagne Active Directory</a>.           </td><td align="left">  N/A   </td></tr>
 <tr><td align="left">    <b>Annonces de la communauté</b>                       </td><td align="left">  Peut afficher l’utilisation des <a href="about-community-ads.md">annonces gratuites de la communauté</a> de tous les produits dans le compte.          </td><td align="left">  Peut créer, gérer et afficher l’utilisation des <a href="about-community-ads.md">annonces gratuites de la communauté</a> de tous les produits dans le compte.               </td></tr>
 <tr><td align="left">    <b>Informations de contact</b>                        </td><td align="left">  Peut afficher les <a href="/windows/uwp/publish/manage-account-settings-and-profile">coordonnées</a> dans la section Paramètres du compte.        </td><td align="left">  Peut modifier et afficher les <a href="/windows/uwp/publish/manage-account-settings-and-profile">coordonnées</a> dans la section Paramètres du compte.            </td></tr>
 <tr><td align="left">    <b>Conformité à la réglementation COPPA</b>                    </td><td align="left">  Peut afficher les sélections de <a href="in-app-ads.md#coppa-compliance">conformité avec la réglementation COPPA</a> (qui indique si les produits sont adaptés aux enfants de moins de 13 ans) pour tous les produits dans le compte.                                            </td><td align="left">  Peut modifier et afficher les sélections de <a href="in-app-ads.md#coppa-compliance">conformité Coppa</a>  (indiquant si les produits sont destinés aux enfants âgés de plus de 13 ans) pour tous les produits du compte.         </td></tr>

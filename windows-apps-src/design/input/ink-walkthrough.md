@@ -3,15 +3,15 @@ ms.assetid: ''
 title: Entrée manuscrite prise en charge dans votre application Windows
 description: Découvrez comment prendre en charge l’écriture et le dessin avec Windows Ink dans une application de plateforme Windows universelle de base (UWP) en suivant ce didacticiel pas à pas.
 keywords: encre, entrée manuscrite, didacticiel
-ms.date: 01/25/2018
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ed230fc9beb158df050f314a0142f250c2a8691
-ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
+ms.openlocfilehash: a0660312746a88a61ccb7b2ca9c01d720ebb2be3
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304601"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219692"
 ---
 # <a name="tutorial-support-ink-in-your-windows-app"></a>Didacticiel : prendre en charge l’encre dans votre application Windows
 
@@ -119,7 +119,7 @@ Pour ajouter la fonctionnalité de base de l’encrage, placez simplement un con
     <InkCanvas x:Name="inkCanvas" />
 ```
 
-C’est tout ! 
+Et voilà ! 
 
 Vous pouvez maintenant réexécuter l’application. Poursuivez avec Scribble, écrivez votre nom ou (si vous conservez un miroir ou si vous avez une très bonne mémoire) dessinez votre portrait.
 

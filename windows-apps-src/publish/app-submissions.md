@@ -3,15 +3,15 @@ Description: Après avoir créé votre application en réservant un nom, vous po
 title: Soumissions d’application
 ms.assetid: 363BB9E4-4437-4238-A80F-ABDFC70D96E4
 keywords: liste de vérification, Windows, UWP, envoi, envoi, jeu, application, envoi
-ms.date: 10/31/2018
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1359fb530dec1a35b2ab2994442b65ec441cc0ac
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 99b4d7412727e5f195c32d3f3c21fe82b284e658
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158063"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219972"
 ---
 # <a name="app-submissions"></a>Soumissions d’application
 
@@ -62,7 +62,7 @@ Les éléments que vous devez obligatoirement fournir ou spécifier sont signal�
 | **Paramètres du jeu**             | Facultatif (applicable uniquement aux jeux)         | [Paramètres du jeu](enter-app-properties.md#game-settings) |
 | **Mode d’affichage**             | Facultatif                   | [Mode d’affichage](enter-app-properties.md#display-mode) |
 | **Déclarations de produit**          | Par défaut : les clients peuvent installer cette application sur un autre lecteur ou dispositif de stockage. Windows peut inclure les données de cette application dans les sauvegardes automatiques sur OneDrive | [Déclarations de produit](./product-declarations.md) |
-| **Configuration système requise**      | Facultatif                                    | [Configuration système requise](enter-app-properties.md#system-requirements)      |
+| **Configuration exigée**      | Facultatif                                    | [Configuration exigée](enter-app-properties.md#system-requirements)      |
 
 <span/>
 

@@ -2,16 +2,16 @@
 Description: Vous pouvez épingler votre application par programmation à la barre des tâches, BND vous pouvez vérifier si elle est actuellement épinglée.
 title: Épingler votre application à la barre des tâches
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, barre des tâches, gestionnaire de barre des tâches, épingler à la barre des tâches, vignette principale
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c5bba4a3bd6ebf1c4cbe0ef59a21c0e6ce44c79
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c2090d038bb3999112e8d2fa3824968916e5d7dc
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173833"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219332"
 ---
 # <a name="pin-your-app-to-the-taskbar"></a>Épingler votre application à la barre des tâches
 

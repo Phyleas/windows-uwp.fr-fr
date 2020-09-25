@@ -6,12 +6,12 @@ keywords: tâche en arrière-plan, exécution étendue, ressources, limites, tâ
 ms.date: 10/03/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 33b41c432edde42bc31daa1d5631f60fb38d8397
-ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
+ms.openlocfilehash: f843c23a4a1e0738cfc05e96009b2597f4919809
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304501"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91217652"
 ---
 # <a name="run-in-the-background-indefinitely"></a>Exécuter indéfiniment en arrière-plan
 
@@ -30,7 +30,7 @@ La `extendedExecutionUnconstrained` fonctionnalité est ajoutée en tant que fon
 > [!NOTE]
 > Ajoutez la déclaration d’espace de noms XML *xmlns : ResCap* et utilisez le préfixe *ResCap* pour déclarer la fonctionnalité.
 >
-> Pour plus d’informations, consultez la section fonctionnalités restreintes des [déclarations de fonctionnalités d’application](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).
+> Pour plus d’informations, consultez la section fonctionnalités restreintes des [déclarations de fonctionnalités d’application](../packaging/app-capability-declarations.md).
 >
 
 _Package.appxmanifest_
@@ -79,7 +79,7 @@ Dans le plateforme Windows universelle, les tâches en arrière-plan sont des pr
 > [!NOTE]
 > Ajoutez la déclaration d’espace de noms XML *xmlns : ResCap* et utilisez le préfixe *ResCap* pour déclarer la fonctionnalité.
 >
-> Pour plus d’informations, consultez la section fonctionnalités restreintes des [déclarations de fonctionnalités d’application](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).
+> Pour plus d’informations, consultez la section fonctionnalités restreintes des [déclarations de fonctionnalités d’application](../packaging/app-capability-declarations.md).
 >
 
 _Package.appxmanifest_

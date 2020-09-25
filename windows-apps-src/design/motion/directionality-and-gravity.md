@@ -3,7 +3,7 @@ title: Orientation et gravité-animation dans les applications Windows
 description: En savoir plus sur l’utilisation de la direction du mouvement, la direction de navigation et la gravité dans des scènes animées en affichant des exemples.
 label: Directionality and gravity
 template: detail.hbs
-ms.date: 10/02/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: stmoy
@@ -11,12 +11,12 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: a9b6fbc639ac225e68a6ae1b008537cba6f72ead
-ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
+ms.openlocfilehash: 649fb9e2833a425ccad78f5f0bcb69ccb4091bca
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88943109"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91217802"
 ---
 # <a name="directionality-and-gravity"></a>Direction et gravité
 

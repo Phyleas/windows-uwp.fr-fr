@@ -4,16 +4,16 @@ ms.assetid: 272D9C9E-B179-4F5A-8493-926D007A0225
 title: Test de l’accessibilité
 label: Accessibility testing
 template: detail.hbs
-ms.date: 05/18/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1144f6edfab73069a8645e464a2aa8de3e5e2ed6
-ms.sourcegitcommit: e51f9489d8c977c3498afb1a75c91f96ac3a642b
+ms.openlocfilehash: 1da900732257babc0d53453fa4b9b2c9196e7e6d
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83854755"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216412"
 ---
 # <a name="accessibility-testing"></a>Test de l’accessibilité  
 
@@ -131,6 +131,6 @@ La présence d’éléments apparaissant à tort dans l’affichage des élémen
 
 - [Accessibilité](accessibility.md)
 - [Pratiques à éviter](practices-to-avoid.md)
-- [Automatisation de l’interface utilisateur](/windows/desktop/WinAuto/entry-uiauto-win32)
+- [UI Automation](/windows/desktop/WinAuto/entry-uiauto-win32)
 - [Accessibilité dans Windows](https://www.microsoft.com/accessibility/)
 - [Prise en main du narrateur](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator)

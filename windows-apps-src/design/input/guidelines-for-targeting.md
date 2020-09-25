@@ -4,16 +4,16 @@ title: Ciblage
 ms.assetid: 93ad2232-97f3-42f5-9e45-3fc2143ac4d2
 label: Targeting
 template: detail.hbs
-ms.date: 03/18/2019
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8608c1ff607c76c3f121fe5ed5fded9098911c9d
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 64142b1ec35040ded890d837245ecae36e03fdc1
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172433"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216982"
 ---
 # <a name="guidelines-for-touch-targets"></a>Instructions pour les cibles tactiles
 

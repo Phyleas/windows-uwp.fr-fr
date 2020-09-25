@@ -1,16 +1,16 @@
 ---
 title: Autres canaux Push utilisant VAPID dans UWP
 description: Instructions pour l’utilisation de canaux de transmission alternatifs avec le protocole VAPID à partir d’une application Windows
-ms.date: 01/10/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, API WinRT, WNS
 localizationpriority: medium
-ms.openlocfilehash: 4bca7e4159c0a4950c95d5d5ef2f34362175a8a7
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 79ea88cb457e9a0d7ba33ef51a184e6f52ab19c4
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173303"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219272"
 ---
 # <a name="alternate-push-channels-using-vapid-in-windows"></a>Autres canaux Push utilisant VAPID dans Windows 
 À partir de la mise à jour des créateurs de automne, les applications Windows peuvent utiliser l’authentification VAPID pour envoyer des notifications push.  

@@ -5,15 +5,15 @@ ms.assetid: bf2f3672-95f0-4c8c-9a72-0934f2d3b767
 label: Visual feedback
 template: detail.hbs
 keywords: retour visuel, retour de focus, retour tactile, visualisation de contact, entrées, interaction
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ced83ca771f4954f8e42dc42e0882d1a5b7c6b1
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1afc1c884a7a01ef1021f37476d1e29430c62e3c
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172453"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219832"
 ---
 # <a name="guidelines-for-visual-feedback"></a>Recommandations en matière de retour visuel
 
@@ -58,7 +58,7 @@ Voici quelques exemples de visualisations de contact intégrées à Windows :
 
 Toutes les applications Windows comportent un visuel du focus plus défini autour des contrôles interactifs de l’application. Ces nouveaux visuels du focus sont entièrement personnalisables, mais peuvent également être désactivés si nécessaire.
 
-Pour l' **expérience de 10 pieds** typique de l’utilisation de la Xbox et de la télévision, Windows prend en charge le **focus**, un effet d’éclairage qui anime la bordure d’éléments pouvant être actifs, tels qu’un bouton, lorsqu’ils se concentrent sur le boîtier ou l’entrée au clavier. Pour plus d’informations, consultez [conception pour la Xbox et la télévision](../devices/designing-for-tv.md#reveal-focus).
+Pour l' **expérience de 10 pieds** typique de l’utilisation de la Xbox et de la télévision, Windows prend en charge le **focus**, un effet d’éclairage qui anime la bordure d’éléments pouvant être actifs, tels qu’un bouton, lorsqu’ils se concentrent sur le boîtier ou l’entrée au clavier.
 
 ## <a name="color-branding--customizing"></a>Personnalisation des couleurs et des visuels du focus
 

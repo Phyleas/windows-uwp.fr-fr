@@ -9,12 +9,12 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 57d46ea1f88395624943135247a8f610112aaf90
-ms.sourcegitcommit: 21eb13a50402bf5442a5f0a4bf34800d1dc679c4
+ms.openlocfilehash: e78171fa182d44f1699bc35643265fddb87824f4
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "90804729"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220292"
 ---
 # <a name="windows-runtime-components-with-c-and-visual-basic"></a>Composants Windows Runtime avec C# et Visual Basic
 
@@ -282,11 +282,11 @@ Une fois que vous avez créé un composant Windows Runtime pour votre propre usa
 Pour plus d’informations sur les fonctionnalités du langage Visual Basic et C#, ainsi que sur la prise en charge de .NET pour l’Windows Runtime, consultez [Visual Basic et référence du langage c#](/visualstudio/welcome-to-visual-studio-2015?view=vs-2015).
 
 
-## <a name="troubleshooting"></a>Résolution des problèmes
+## <a name="troubleshooting"></a>Dépannage
 
 | Symptôme | Solution |
 |---------|--------|
-|Dans une application C++/WinRT, lors de l’utilisation d’un [composant C# Windows Runtime](/windows/uwp/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic) qui utilise XAML, le compilateur génère une erreur au format «*MyNamespace_XamlTypeInfo » : n’est pas membre de « WinRT :: MyNamespace »*, &mdash; où *MyNamespace* est le nom de l’espace de noms du composant Windows Runtime. | Dans `pch.h` , dans l’application/WinRT C++ consommatrice, ajoutez `#include <winrt/MyNamespace.MyNamespace_XamlTypeInfo.h>` &mdash; en remplaçant *MyNamespace* , le cas échéant. |
+|Dans une application C++/WinRT, lors de l’utilisation d’un [composant C# Windows Runtime]() qui utilise XAML, le compilateur génère une erreur au format «*MyNamespace_XamlTypeInfo » : n’est pas membre de « WinRT :: MyNamespace »*, &mdash; où *MyNamespace* est le nom de l’espace de noms du composant Windows Runtime. | Dans `pch.h` , dans l’application/WinRT C++ consommatrice, ajoutez `#include <winrt/MyNamespace.MyNamespace_XamlTypeInfo.h>` &mdash; en remplaçant *MyNamespace* , le cas échéant. |
 
 ## <a name="related-topics"></a>Rubriques connexes
 * [.NET pour les applications UWP](/dotnet/api/index?view=dotnet-uwp-10.0)

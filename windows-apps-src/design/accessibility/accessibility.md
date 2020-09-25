@@ -4,16 +4,16 @@ ms.assetid: C89D79C2-B830-493D-B020-F3FF8EB5FFDD
 title: Accessibilité
 label: Accessibility
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8af42f2d2ddeecffef914339e748acf05558b8ae
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 67f98db338d201dd4ef80c7b5f265aba3f6fbfd4
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163373"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216372"
 ---
 # <a name="accessibility"></a>Accessibilité  
 
@@ -28,7 +28,7 @@ L’accessibilité concerne la création d’expériences qui rendent votre appl
 | [Développement d’applications Windows inclusives](developing-inclusive-windows-apps.md) | Cet article est une feuille de route pour le développement d’applications Windows accessibles. |
 | [Test de l’accessibilité](accessibility-testing.md) | Procédures de test à suivre pour vous assurer que votre application Windows est accessible. |
 | [Accessibilité dans le Store](accessibility-in-the-store.md) | Décrit la configuration requise pour déclarer votre application Windows comme accessible dans le Microsoft Store. |
-| [Liste de contrôle de l’accessibilité](accessibility-checklist.md) | Fournit une liste de vérification pour vous aider à vous assurer que votre application Windows est accessible. |
+| [Liste de vérification de l’accessibilité](accessibility-checklist.md) | Fournit une liste de vérification pour vous aider à vous assurer que votre application Windows est accessible. |
 | [Présenter des informations d’accessibilité élémentaires](basic-accessibility-information.md) | Les informations d’accessibilité élémentaires sont souvent classées en trois catégories : nom, rôle et valeur. Cette rubrique décrit le code qui aide votre application à exposer les informations de base nécessaires aux technologies d’assistance. |
 | [Accessibilité du clavier](keyboard-accessibility.md) | Si votre application ne fournit pas un bon accès par le clavier, les non-voyants ou les utilisateurs ayant des problèmes de mobilité peuvent rencontrer des difficultés à utiliser votre application ou risquent de ne pas pouvoir l’utiliser du tout. |
 | [Lecteurs d’écran et boutons système matériels](system-button-narration.md) | Les lecteurs d’écran, tels que le [narrateur](https://support.microsoft.com/en-us/help/22798/windows-10-complete-guide-to-narrator), doivent être en mesure de reconnaître et de gérer les événements de bouton du système matériel et de communiquer leur État aux utilisateurs. Dans certains cas, le lecteur d’écran peut avoir besoin de gérer des événements de bouton en mode exclusif et de ne pas les laisser se propager à d’autres gestionnaires. |

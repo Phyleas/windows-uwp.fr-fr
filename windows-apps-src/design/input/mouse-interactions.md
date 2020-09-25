@@ -4,16 +4,16 @@ title: Interactions avec la souris
 ms.assetid: C8A158EF-70A9-4BA2-A270-7D08125700AC
 label: Mouse
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 242f7c30260956bc84478153f39b0da4d8461e12
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 84390e7b929412e4058c1a7e6507ff171344bd53
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173403"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218932"
 ---
 # <a name="mouse-interactions"></a>Interactions avec la souris
 
@@ -86,7 +86,7 @@ Un ensemble concis d’interactions avec la souris est utilisé de façon unifor
 
 ## <a name="mouse-input-events"></a>Événements d’entrée de la souris
 
-La plupart des entrées de la souris peuvent être gérées par le biais des événements d’entrée routés communs pris en charge par tous les objets [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) . notamment :
+La plupart des entrées de la souris peuvent être gérées par le biais des événements d’entrée routés communs pris en charge par tous les objets [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) . Elles incluent notamment :
 
 - [**BringIntoViewRequested**](/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)
 - [**CharacterReceived**](/uwp/api/windows.ui.xaml.uielement.characterreceived)

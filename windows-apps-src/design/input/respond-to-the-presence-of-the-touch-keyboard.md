@@ -5,14 +5,14 @@ ms.assetid: 70C6130E-23A2-4F9D-88E7-7060062DA988
 label: Respond to the presence of the touch keyboard
 template: detail.hbs
 keywords: clavier, accessibilité, navigation, Focus, texte, entrée, interactions de l’utilisateur
-ms.date: 07/13/2018
+ms.date: 09/24/2020
 ms.topic: article
-ms.openlocfilehash: cc3577a116e47ca054e7dea5dbbb657fa37cb8b6
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 4af7e7533ebd985a22eedd2e11f35d8bf5f5dc8a
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173353"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216902"
 ---
 # <a name="respond-to-the-presence-of-the-touch-keyboard"></a>Répondre à la présence du clavier tactile
 
@@ -66,7 +66,7 @@ Voici quelques recommandations de base concernant les contrôles de saisie de te
 
     ![formulaire avec et sans clavier tactile apparent](images/touch-keyboard-pan1.png)
 
-    Dans certains cas, il existe des éléments d’interface utilisateur qui doivent rester tout le temps à l’écran. Concevez l’interface utilisateur de sorte que les contrôles de formulaire se trouvent dans une région panoramique et que les éléments d’interface utilisateur importants soient statiques. Par exemple :
+    Dans certains cas, il existe des éléments d’interface utilisateur qui doivent rester tout le temps à l’écran. Concevez l’interface utilisateur de sorte que les contrôles de formulaire se trouvent dans une région panoramique et que les éléments d’interface utilisateur importants soient statiques. Exemple :
 
     ![formulaire contenant des zones devant toujours rester affichées](images/touch-keyboard-pan2.png)
 

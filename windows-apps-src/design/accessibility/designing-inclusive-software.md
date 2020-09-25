@@ -4,16 +4,16 @@ ms.assetid: A6393A57-53F2-4F06-89AF-0D806FD76DB0
 title: Conception de logiciels inclusifs dans Windows 10
 label: Designing inclusive software
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f7286394f68d6cda82581a825117f12ce98493ba
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 795344a7a03344c5f8aeea26252e1e0610d9d8c3
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234087"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219862"
 ---
 # <a name="designing-inclusive-software-for-windows-10"></a>Conception de logiciels inclusifs pour Windows 10  
 

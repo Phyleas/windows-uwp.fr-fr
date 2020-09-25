@@ -4,16 +4,16 @@ title: Notifications de badge pour les applications Windows
 ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
 label: Tiles, badges, and notifications
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d3aa9658e8a57a7993eb79d164b1e17ac23b9ac
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: e8d3cf69da80b13ff334d89027f3ea366ac3accd
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970874"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219392"
 ---
 # <a name="badge-notifications-for-windows-apps"></a>Notifications de badge pour les applications Windows
 
@@ -60,7 +60,7 @@ Au lieu d’un nombre, un badge peut afficher l’un des ensembles de glyphes d�
     <th>XML</th>
 </tr>
 <tr>
-    <td>Aucun</td>
+    <td>aucun</td>
     <td>(Aucun badge affiché)</td>
     <td>`<badge value="none"/>`</td>
 </tr>
@@ -100,7 +100,7 @@ Au lieu d’un nombre, un badge peut afficher l’un des ensembles de glyphes d�
     <td>`<badge value="busy"/>`</td>
 </tr>
 <tr>
-    <td>erreur</td>
+    <td>error</td>
     <td><img src="images/badges/badge-error.png" alt="Glyph" /></td>
     <td>`<badge value="error"/>`</td>
 </tr>
@@ -194,7 +194,7 @@ private void clearBadge()
 }
 ````
 
-## <a name="get-the-sample-code"></a>Obtention de l'exemple de code
+## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
 
 * [Exemples de notification](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)<br/> Montre comment créer des vignettes dynamiques, envoyer des mises à jour de badge et afficher des notifications toast. 
 

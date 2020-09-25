@@ -3,16 +3,16 @@ Description: Découvrez quand et où vous devez utiliser des vignettes secondair
 title: Conseils de conception des vignettes secondaires
 label: Secondary tiles
 template: detail.hbs
-ms.date: 05/25/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, vignettes secondaires, conseils, recommandations, meilleures pratiques
 ms.localizationpriority: medium
-ms.openlocfilehash: 83f8a095a4e15c3ec0ebb02eebc183cf4beb01ea
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 5414c9d8437ee77e2a4a584dea26f7bf1fadef4a
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172333"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220232"
 ---
 # <a name="secondary-tile-guidance"></a>Aide sur les vignettes secondaires
 

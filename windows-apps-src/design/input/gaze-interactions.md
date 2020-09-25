@@ -4,19 +4,19 @@ Description: Découvrez comment concevoir et optimiser vos applications Windows 
 label: Gaze interactions
 template: detail.hbs
 keywords: regard, suivi oculaire, suivi des têtes, point de regard, entrée, interaction utilisateur, accessibilité, convivialité
-ms.date: 05/01/2018
+ms.date: 09/24/2020
 ms.topic: article
 pm-contact: Jake Cohen
 dev-contact: Austin Hodges
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: c91de7eb0200780b04bad1853cb49caf41a22bc0
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: fa08cb65afc46069e48263344270e1e3b1a3d5f5
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172503"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91217022"
 ---
 # <a name="gaze-interactions-and-eye-tracking-in-windows-apps"></a>Interactions de regard et suivi oculaire dans les applications Windows
 
@@ -44,7 +44,7 @@ En raison des données personnelles potentiellement sensibles collectées par le
 
 En outre, si votre application collecte, stocke ou transfère des données de suivi oculaire, vous devez la décrire dans la déclaration de confidentialité de votre application et respecter toutes les autres exigences relatives aux **informations personnelles** dans le [contrat de développement d’application](/legal/windows/agreements/app-developer-agreement) et les stratégies de [Microsoft Store](/legal/windows/agreements/store-policies).
 
-## <a name="setup"></a>Configuration
+## <a name="setup"></a>Installation
 
 Pour utiliser les API de saisie en regard de votre application Windows, vous devez : 
 

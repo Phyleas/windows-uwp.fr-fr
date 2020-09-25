@@ -1,16 +1,16 @@
 ---
 Description: Windows Push Notification Services (WNS) permet aux développeurs tiers d’envoyer des toasts, des vignettes, des badges et des mises à jour brutes à partir de leur propre service Cloud. Il existe de nombreuses façons d’envoyer les notifications en fonction des besoins de votre application
 title: Choix du type de canal de notification Push adapté
-ms.date: 07/07/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 166abeb792e86fc44568a5ee29263262214657cf
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 326012a38f2d4a8cd7d5c406c160db5168c9877d
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173823"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219222"
 ---
 # <a name="choosing-the-right-push-notification-channel-type"></a>Choix du type de canal de notification Push adapté
 

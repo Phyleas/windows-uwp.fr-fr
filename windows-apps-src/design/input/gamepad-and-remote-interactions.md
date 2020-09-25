@@ -5,16 +5,16 @@ ms.assetid: 784a08dc-2736-4bd3-bea0-08da16b1bd47
 label: Gamepad and remote interactions
 template: detail.hbs
 isNew: true
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f5efe2fe1e8a4e24df175a0d019834cd0ba90388
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 7f11cde619b783292e4880927c68b6ae8ff38323
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172553"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91217183"
 ---
 # <a name="gamepad-and-remote-control-interactions"></a>Interactions entre le boîtier de commande et la télécommande
 
@@ -158,10 +158,10 @@ Le tableau suivant répertorie la prise en charge intégrée des accélérateurs
 | Interaction   | Clavier/souris   | Boîtier de commande      | Intégrée pour :  | Recommandée pour : |
 |---------------|------------|--------------|----------------|------------------|
 | Page vers le haut/bas  | Page vers le haut/bas | Gâchette gauche/droite | [CalendarView](/uwp/api/Windows.UI.Xaml.Controls.CalendarView), [ListBox](/uwp/api/Windows.UI.Xaml.Controls.ListBox), [ListViewBase](/uwp/api/Windows.UI.Xaml.Controls.ListViewBase), [ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView), `ScrollViewer`, [Selector](/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector), [LoopingSelector](/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector), [ComboBox](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [FlipView](/uwp/api/Windows.UI.Xaml.Controls.FlipView) | Affichages qui prennent en charge le défilement vertical
-| Page vers la gauche/droite | Aucune | Gâchettes hautes gauche/droite | [Pivot](/uwp/api/Windows.UI.Xaml.Controls.Pivot), [ListBox](/uwp/api/Windows.UI.Xaml.Controls.ListBox), [ListViewBase](/uwp/api/Windows.UI.Xaml.Controls.ListViewBase), [ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView), `ScrollViewer`, [Selector](/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector), [LoopingSelector](/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector), [FlipView](/uwp/api/Windows.UI.Xaml.Controls.FlipView) | Affichages qui prennent en charge le défilement horizontal
-| Zoom avant/arrière        | Ctrl +/- | Gâchette gauche/droite | Aucune | `ScrollViewer`, les affichages qui prennent en charge le zoom avant et arrière |
-| Ouvrir/fermer le volet de navigation | Aucune | Affichage | Aucune | Volets de navigation |
-| Recherche | Aucune | Bouton Y | Aucune | Raccourci pour la fonction de recherche principale dans l’application |
+| Page vers la gauche/droite | None | Gâchettes hautes gauche/droite | [Pivot](/uwp/api/Windows.UI.Xaml.Controls.Pivot), [ListBox](/uwp/api/Windows.UI.Xaml.Controls.ListBox), [ListViewBase](/uwp/api/Windows.UI.Xaml.Controls.ListViewBase), [ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView), `ScrollViewer`, [Selector](/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector), [LoopingSelector](/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector), [FlipView](/uwp/api/Windows.UI.Xaml.Controls.FlipView) | Affichages qui prennent en charge le défilement horizontal
+| Zoom avant/arrière        | Ctrl +/- | Gâchette gauche/droite | None | `ScrollViewer`, les affichages qui prennent en charge le zoom avant et arrière |
+| Ouvrir/fermer le volet de navigation | None | Affichage | None | Volets de navigation |
+| Recherche | None | Bouton Y | None | Raccourci pour la fonction de recherche principale dans l’application |
 | [Ouvrir le menu contextuel](#commandbar-and-contextflyout) | Cliquez avec le bouton droit sur | Bouton Menu | [ContextFlyout](/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout) | Menu contextuels |
 
 ## <a name="xy-focus-navigation-and-interaction"></a>Interaction et navigation en mode focus XY
@@ -552,7 +552,7 @@ Certains contrôles provoquent une interruption du focus assez fréquente pour j
 | FlipView              | Désactivé                       |
 | Affichage de grille              | Désactivé                       |
 | ListBox               | Désactivé                       |
-| Affichage de liste              | Désactivé                       |
+| ListView              | Désactivé                       |
 | ScrollViewer          | Désactivé                       |
 | SemanticZoom          | Désactivé                       |
 | Curseur                | Activé                        |

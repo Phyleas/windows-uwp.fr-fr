@@ -4,16 +4,16 @@ title: Créer des vignettes adaptatives
 ms.assetid: 1246B58E-D6E3-48C7-AD7F-475D113600F9
 label: Create adaptive tiles
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cee236b385b6129e7ab1a9cacd549f217f6e734
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c60794a52c3d8a5f597d4ab2d09490405c98f85a
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175603"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218372"
 ---
 # <a name="create-adaptive-tiles"></a>Créer des vignettes adaptatives
 
@@ -22,7 +22,7 @@ Les modèles de vignette adaptative sont une nouvelle fonctionnalité de Windows
 (Si vous le souhaitez, vous pouvez toujours utiliser les modèles prédéfinis du [catalogue de modèles de vignette Windows 8](/previous-versions/windows/apps/hh761491(v=win.10)) lors de la conception de notifications pour Windows 10.)
 
 
-## <a name="getting-started"></a>Mise en route
+## <a name="getting-started"></a>Prise en main
 
 **Installez la bibliothèque Notifications.** Si vous préférez utiliser C# plutôt que XML pour générer les notifications, installez le package NuGet [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) (recherchez « notifications uwp ». Les exemples de code C# indiqués dans cet article utilisent la version 1.0.0 du package NuGet.
 
@@ -284,7 +284,7 @@ Si vous ne spécifiez aucune personnalisation dans votre charge utile de notific
 
  
 
-## <a name="display-name"></a>Nom d’affichage
+## <a name="display-name"></a>Nom complet
 
 
 Vous pouvez remplacer le nom d’affichage d’une notification en entrant la chaîne de texte de votre choix avec l’attribut **displayName**. Comme pour la personnalisation, vous pouvez spécifier cela sur l’élément [TileVisual](../tiles-and-notifications/tile-schema.md#tilevisual) , ce qui affecte l’intégralité de la charge utile de notification, ou sur l’élément [TileBinding](../tiles-and-notifications/tile-schema.md#tilebinding) , qui affecte uniquement les vignettes individuelles.
@@ -335,7 +335,7 @@ TileContent content = new TileContent()
 
 ![Nom d’affichage des vignettes adaptatives](images/adaptive-tiles-displayname.png)
 
-## <a name="text"></a>Text
+## <a name="text"></a>Texte
 
 
 L’élément [AdaptiveText](../tiles-and-notifications/tile-schema.md#adaptivetext) est utilisé pour afficher le texte. Vous pouvez utiliser des indications pour en modifier l’apparence.
@@ -666,7 +666,7 @@ Si vous souhaitez que les première et seconde colonnes occupent respectivement 
 </tr>
 <tr class="odd">
 <td align="left">80</td>
-<td align="left">80 %</td>
+<td align="left">80 %</td>
 </tr>
 <tr class="even">
 <td align="left">Pondération totale : 100</td>

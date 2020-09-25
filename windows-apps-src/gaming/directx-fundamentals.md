@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, jeu, DirectX, charge, pixellisation, maille, bitmap, 2D, 3D
 ms.localizationpriority: medium
-ms.openlocfilehash: 1718677dce325cccc535e603aca1910eb83d1de0
-ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
+ms.openlocfilehash: a982c1a57733e8ea9fc4d53974e4c5aec8e373dd
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89053579"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218022"
 ---
 # <a name="fundamentals-of-directx-programming"></a>Notions de base de la programmation DirectX
 
@@ -42,7 +42,7 @@ La rubrique charger des ressources dans votre jeu DirectX vous guide tout au lon
 <td align="left"><p>Créez des graphiques 2D à l’aide de DirectX.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/uwp/graphics-concepts/index">Guide d’apprentissage du graphisme Direct3D</a></p></td>
+<td align="left"><p><a href="/windows/uwp/graphics-concepts/index">Guide d’apprentissage du graphisme Direct3D</a></p></td>
 <td align="left"><p>Comprendre les concepts graphiques Direct3D.</p></td>
 </tr>
 <tr class="odd">

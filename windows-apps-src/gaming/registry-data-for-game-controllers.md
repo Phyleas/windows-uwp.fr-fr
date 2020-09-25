@@ -6,12 +6,12 @@ ms.date: 04/08/2019
 ms.topic: article
 keywords: Windows 10, UWP, jeux, entrée, registre, personnalisé
 ms.localizationpriority: medium
-ms.openlocfilehash: ac2ca98a067fb88dfcdc86c4e4ee4047b82206bc
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1f3a49ae2c6fc283d479086759744eb51d8b33ce
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89159273"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220063"
 ---
 # <a name="registry-data-for-game-controllers"></a>Données de Registre pour les contrôleurs de jeu
 
@@ -30,7 +30,7 @@ Le tableau ci-dessous décrit les valeurs attendues sous l’emplacement racine 
 
 <table>
     <tr>
-        <th>Nom</th>
+        <th>Name</th>
         <th>Type</th>
         <th>Requis ?</th>
         <th>Info</th>
@@ -54,7 +54,7 @@ Le tableau ci-dessous décrit les valeurs attendues sous l’emplacement racine 
     </tr>
 </table>
 
-Votre programme d’installation de l’appareil doit ajouter ces données au registre (via le programme d’installation ou un [fichier INF](https://docs.microsoft.com/windows-hardware/drivers/install/inf-files)).
+Votre programme d’installation de l’appareil doit ajouter ces données au registre (via le programme d’installation ou un [fichier INF](/windows-hardware/drivers/install/inf-files)).
 
 Les sous-clés sous l’emplacement racine de l’appareil sont détaillées dans les sections suivantes.
 
@@ -65,7 +65,7 @@ Le tableau ci-dessous répertorie les sous-clés obligatoires et facultatives so
 <table>
     <tr>
         <th>Sous-clé</th>
-        <th>Requis ?</th>
+        <th>Nécessaire ?</th>
         <th>Info</th>
     </tr>
     <tr>
@@ -178,7 +178,7 @@ Le tableau ci-dessous répertorie les sous-clés obligatoires et facultatives so
 <table>
     <tr>
         <th>Sous-clé</th>
-        <th>Requis ?</th>
+        <th>Nécessaire ?</th>
         <th>Info</th>
     </tr>
     <tr>
@@ -337,7 +337,7 @@ Le tableau ci-dessous répertorie les sous-clés obligatoires et facultatives so
 <table>
     <tr>
         <th>Sous-clé</th>
-        <th>Requis ?</th>
+        <th>Nécessaire ?</th>
         <th>Info</th>
     </tr>
     <tr>
@@ -398,7 +398,7 @@ Le tableau ci-dessous répertorie les sous-clés obligatoires et facultatives so
 <table>
     <tr>
         <th>Sous-clé</th>
-        <th>Requis ?</th>
+        <th>Nécessaire ?</th>
         <th>Info</th>
     </tr>
     <tr>
@@ -441,7 +441,7 @@ Le tableau ci-dessous répertorie les sous-clés obligatoires et facultatives so
 <table>
     <tr>
         <th>Sous-clé</th>
-        <th>Requis ?</th>
+        <th>Nécessaire ?</th>
         <th>Info</th>
     </tr>
     <tr>
@@ -454,7 +454,7 @@ Le tableau ci-dessous répertorie les sous-clés obligatoires et facultatives so
         <td>Oui</td>
     </tr>
     <tr>
-        <td>Acceptation</td>
+        <td>Accepter</td>
         <td>Oui</td>
     </tr>
     <tr>
@@ -543,7 +543,7 @@ Le tableau ci-dessous répertorie les sous-clés obligatoires et facultatives so
     </tr>
 </table>
 
-Pour plus d’informations sur les contrôleurs de navigation de l’interface utilisateur et les commandes ci-dessus, consultez [contrôleur de navigation d’interface utilisateur](https://docs.microsoft.com/windows/uwp/gaming/ui-navigation-controller).
+Pour plus d’informations sur les contrôleurs de navigation de l’interface utilisateur et les commandes ci-dessus, consultez [contrôleur de navigation d’interface utilisateur](./ui-navigation-controller.md).
 
 ## <a name="keys"></a>Keys
 
@@ -558,7 +558,7 @@ Le tableau ci-dessous répertorie les valeurs nécessaires pour mapper un bouton
         <th>Source</th>
         <th>Nom de la valeur</th>
         <th>Type de valeur</th>
-        <th>Requis ?</th>
+        <th>Nécessaire ?</th>
         <th>Informations sur la valeur</th>
     </tr>
     <tr>
@@ -597,7 +597,7 @@ Le tableau ci-dessous répertorie les valeurs nécessaires pour mapper un bouton
         </td>
     </tr>
     <tr>
-        <td rowspan="3" style="vertical-align: middle;">Basculer</td>
+        <td rowspan="3" style="vertical-align: middle;">Commutateur</td>
         <td>SwitchIndex</td>
         <td>DWORD</td>
         <td>Oui</td>
@@ -638,7 +638,7 @@ Le tableau ci-dessous répertorie les valeurs nécessaires pour mapper un axe :
         <th>Source</th>
         <th>Nom de la valeur</th>
         <th>Type de valeur</th>
-        <th>Requis ?</th>
+        <th>Nécessaire ?</th>
         <th>Informations sur la valeur</th>
     </tr>
     <tr>
@@ -654,7 +654,7 @@ Le tableau ci-dessous répertorie les valeurs nécessaires pour mapper un axe :
                     <th>AxisValue</th>
                 </tr>
                 <tr>
-                    <td>FALSE</td>
+                    <td>false</td>
                     <td>0,0</td>
                 </tr>
                 <tr>
@@ -677,9 +677,9 @@ Le tableau ci-dessous répertorie les valeurs nécessaires pour mapper un axe :
                     <th>AxisValue</th>
                 </tr>
                 <tr>
-                    <td>FALSE</td>
-                    <td>FALSE</td>
-                    <td>0.5</td>
+                    <td>false</td>
+                    <td>false</td>
+                    <td>0,5</td>
                 </tr>
                 <tr>
                     <td>false</td>
@@ -688,13 +688,13 @@ Le tableau ci-dessous répertorie les valeurs nécessaires pour mapper un axe :
                 </tr>
                 <tr>
                     <td>TRUE</td>
-                    <td>FALSE</td>
+                    <td>false</td>
                     <td>0,0</td>
                 </tr>
                 <tr>
                     <td>TRUE</td>
                     <td>TRUE</td>
-                    <td>0.5</td>
+                    <td>0,5</td>
                 </tr>
             </table>
         </td>
@@ -713,7 +713,7 @@ Le tableau ci-dessous répertorie les valeurs nécessaires pour mapper un axe :
         <td>Indique que la valeur de l’axe mappé doit être inversée avant d’être retournée.</td>
     </tr>
     <tr>
-        <td rowspan="3" style="vertical-align: middle;">Basculer</td>
+        <td rowspan="3" style="vertical-align: middle;">Commutateur</td>
         <td>SwitchIndex</td>
         <td>DWORD</td>
         <td>Oui</td>
@@ -747,7 +747,7 @@ Le tableau ci-dessous répertorie les valeurs nécessaires pour mapper un axe :
                 </tr>
                 <tr>
                     <td>Center</td>
-                    <td>0.5</td>
+                    <td>0,5</td>
                 </tr>
                 <tr>
                     <td>Descendre</td>
@@ -781,7 +781,7 @@ Le tableau ci-dessous répertorie les valeurs nécessaires pour mapper un axe :
                 </tr>
                 <tr>
                     <td>Center</td>
-                    <td>0.5</td>
+                    <td>0,5</td>
                 </tr>
                 <tr>
                     <td>Descendre</td>
@@ -898,7 +898,7 @@ Les positions de commutateur peuvent être mappées à partir d’un ensemble de
         <td>DWORD</td>
     </tr>
     <tr>
-        <td rowspan="3" style="vertical-align: middle;">Basculer</td>
+        <td rowspan="3" style="vertical-align: middle;">Commutateur</td>
         <td>SwitchIndex</td>
         <td>DWORD</td>
         <td>Index dans le tableau du commutateur <b>RawGameController</b> .
@@ -1051,7 +1051,7 @@ Les étiquettes doivent être présentes sous la clé des **étiquettes** sous l
 
 ### <a name="button-labels"></a>Libellé des boutons
 
-La touche **boutons** mappe chaque position de bouton du tableau de boutons de **RawGameController**sur une chaîne. Chaque chaîne est mappée en interne à la valeur d’énumération [GameControllerButtonLabel](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel) correspondante. Par exemple, si un boîtier de commande comporte dix boutons et que l’ordre dans lequel le **RawGameController** analyse les boutons et les affiche dans le rapport boutons, cela se présente comme suit :
+La touche **boutons** mappe chaque position de bouton du tableau de boutons de **RawGameController**sur une chaîne. Chaque chaîne est mappée en interne à la valeur d’énumération [GameControllerButtonLabel](/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel) correspondante. Par exemple, si un boîtier de commande comporte dix boutons et que l’ordre dans lequel le **RawGameController** analyse les boutons et les affiche dans le rapport boutons, cela se présente comme suit :
 
 ```cpp
 Menu,               // Index 0
@@ -1070,7 +1070,7 @@ Les étiquettes doivent apparaître dans cet ordre sous la clé **Buttons** :
 
 <table>
     <tr>
-        <th>Nom</th>
+        <th>Name</th>
         <th>Valeur (type : REG_SZ)</th>
     </tr>
     <tr>
@@ -1117,7 +1117,7 @@ Les étiquettes doivent apparaître dans cet ordre sous la clé **Buttons** :
 
 ### <a name="axis-labels"></a>Étiquettes de l’axe
 
-La touche **axes** mappe chaque position d’axe dans le tableau d’axes de **RawGameController**à l’une des étiquettes listées dans l' [énumération GameControllerButtonLabel](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel) , comme les étiquettes de bouton. Consultez l’exemple dans [étiquettes de bouton](#button-labels).
+La touche **axes** mappe chaque position d’axe dans le tableau d’axes de **RawGameController**à l’une des étiquettes listées dans l' [énumération GameControllerButtonLabel](/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel) , comme les étiquettes de bouton. Consultez l’exemple dans [étiquettes de bouton](#button-labels).
 
 ### <a name="switch-labels"></a>Changer les étiquettes
 
@@ -1136,7 +1136,7 @@ Le tableau suivant présente un exemple de jeu d’étiquettes pour les position
 
 <table>
     <tr>
-        <th>Nom</th>
+        <th>Name</th>
         <th>Valeur (type : REG_SZ)</th>
     </tr>
     <tr>

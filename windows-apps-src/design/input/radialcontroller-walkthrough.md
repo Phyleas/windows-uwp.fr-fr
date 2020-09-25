@@ -3,15 +3,15 @@ ms.assetid: ''
 title: Prise en charge de Surface Dial (et autres périphériques à molette) dans votre application Windows
 description: Un didacticiel pas à pas pour l’ajout de la prise en charge de l’accès en surface (et des autres appareils volants) à votre application Windows.
 keywords: composer, radial, didacticiel
-ms.date: 03/11/2019
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8edd7a9345f93d3cf0abe76f68c321a977ee2e50
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: cc1618432d35687fe1bfa619396bc2b798dd40bf
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173373"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216922"
 ---
 # <a name="tutorial-support-the-surface-dial-and-other-wheel-devices-in-your-windows-app"></a>Didacticiel : prendre en charge la numérotation en surface (et les autres appareils volants) dans votre application Windows
 
@@ -617,7 +617,7 @@ Félicitations, vous avez terminé le *didacticiel de prise en main : prendre e
 
 [Interactions avec Surface Dial](windows-wheel-interactions.md)
 
-### <a name="api-reference"></a>Informations de référence sur les API
+### <a name="api-reference"></a>Informations de référence sur l'API
 
 - [**RadialController** , classe](/uwp/api/Windows.UI.Input.RadialController)
 - [**RadialControllerButtonClickedEventArgs** , classe](/uwp/api/Windows.UI.Input.RadialControllerButtonClickedEventArgs)

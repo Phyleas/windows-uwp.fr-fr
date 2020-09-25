@@ -2,16 +2,16 @@
 Description: Utilisez les animations de pointeur pour fournir un retour visuel lorsqu’un utilisateur appuie sur un élément.
 title: Animations de clic avec le pointeur
 ms.assetid: EEB10A2C-629A-4705-8468-4D019D74DDFF
-ms.date: 08/09/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cfd507be6ca09818ec07d12a83c2a272514b08f6
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d429f55b6c8004ea0b5e16f842f5c7ee492d754d
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172393"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218846"
 ---
 # <a name="pointer-click-animations"></a>Animations de clic avec le pointeur
 

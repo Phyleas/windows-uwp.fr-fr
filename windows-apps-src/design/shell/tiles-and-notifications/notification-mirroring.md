@@ -3,16 +3,16 @@ description: Découvrez comment utiliser la mise en miroir des notifications, op
 title: Mise en miroir des notifications
 label: Notification mirroring
 template: detail.hbs
-ms.date: 12/15/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, toast, centre de maintenance dans le Cloud, mise en miroir des notifications, notification, Cross Device
 ms.localizationpriority: medium
-ms.openlocfilehash: 13e3e9f0b675ef0e5f9e0787f0544f87689cf74a
-ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
+ms.openlocfilehash: 6add4799a810a0b7216b6292bf5f172ddb8a3ee2
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89054009"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219912"
 ---
 # <a name="notification-mirroring"></a>Mise en miroir des notifications
 

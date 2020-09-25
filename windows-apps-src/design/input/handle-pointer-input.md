@@ -5,15 +5,15 @@ ms.assetid: BDBC9E33-4037-4671-9596-471DCF855C82
 label: Handle pointer input
 template: detail.hbs
 keywords: stylet, souris, pavé tactile, entrées tactiles, pointeur, entrées, interactions avec l’utilisateur
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f544b73e069827f3c680db45797081605ce41b63
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 11402ae9f2ea99c583d82d1998ad238eac44576c
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173453"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219852"
 ---
 # <a name="handle-pointer-input"></a>Gérer les entrées du pointeur
 
@@ -58,7 +58,7 @@ Les applications Windows peuvent écouter les événements de pointeur suivants�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled"><strong>PointerCanceled</strong></a></p></td>
+<td align="left"><p><a href="/uwp/api/windows.ui.xaml.uielement.pointercanceled"><strong>PointerCanceled</strong></a></p></td>
 <td align="left"><p>Se produit lorsqu’un pointeur est annulé par la plateforme. Cela peut se produire dans les circonstances suivantes :</p>
 <ul>
 <li>Les pointeurs tactiles sont annulés quand un stylet est détecté dans la plage de la surface d’entrée.</li>
@@ -69,7 +69,7 @@ Les applications Windows peuvent écouter les événements de pointeur suivants�
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost"><strong>PointerCaptureLost</strong></a></p></td>
+<td align="left"><p><a href="/uwp/api/windows.ui.xaml.uielement.pointercapturelost"><strong>PointerCaptureLost</strong></a></p></td>
 <td align="left"><p>Se produit lorsqu’un autre élément d’interface utilisateur capture le pointeur, lorsque le pointeur est libéré ou lorsqu’un autre pointeur est capturé par programme.</p>
 <div class="alert">
 <strong>Remarque</strong>    Il n’y a pas d’événement de capture de pointeur correspondant.
@@ -79,43 +79,43 @@ Les applications Windows peuvent écouter les événements de pointeur suivants�
 </div></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered"><strong>PointerEntered</strong></a></p></td>
+<td align="left"><p><a href="/uwp/api/windows.ui.xaml.uielement.pointerentered"><strong>PointerEntered</strong></a></p></td>
 <td align="left"><p>Se produit lorsqu’un pointeur entre dans la zone de délimitation d’un élément. Cela peut se produire de manière légèrement différente pour les entrées par interaction tactile, pavé tactile, souris et stylet.</p>
 <ul>
 <li>Pour déclencher cet événement, l’interaction tactile requiert un contact du doigt directement sur l’élément ou par déplacement dans la zone de délimitation de l’élément.</li>
 <li>La souris et le pavé tactile ont un curseur à l’écran qui est toujours visible et qui déclenche cet événement même si aucun bouton de la souris ni aucun bouton du pavé tactile n'est enfoncé.</li>
-<li>Comme l’interaction tactile, le stylet déclenche cet événement par contact direct du stylet sur l’élément ou par déplacement dans la zone de délimitation de l’élément. Toutefois, Pen a également un état de survol (<a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointer.isinrange">IsInRange</a>) qui, lorsqu’il a la valeur true, déclenche cet événement.</li>
+<li>Comme l’interaction tactile, le stylet déclenche cet événement par contact direct du stylet sur l’élément ou par déplacement dans la zone de délimitation de l’élément. Toutefois, Pen a également un état de survol (<a href="/uwp/api/windows.ui.xaml.input.pointer.isinrange">IsInRange</a>) qui, lorsqu’il a la valeur true, déclenche cet événement.</li>
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited"><strong>PointerExited</strong></a></p></td>
+<td align="left"><p><a href="/uwp/api/windows.ui.xaml.uielement.pointerexited"><strong>PointerExited</strong></a></p></td>
 <td align="left"><p>Se produit lorsqu’un pointeur quitte la zone de délimitation d’un élément. Cela peut se produire de manière légèrement différente pour les entrées par interaction tactile, pavé tactile, souris et stylet.</p>
 <ul>
 <li>L’interaction tactile nécessite un contact du doigt et déclenche cet événement lorsque le pointeur se déplace hors de la zone de délimitation de l’élément.</li>
 <li>La souris et le pavé tactile ont un curseur à l’écran qui est toujours visible et qui déclenche cet événement même si aucun bouton de la souris ni aucun bouton du pavé tactile n'est enfoncé.</li>
-<li>Comme l’interaction tactile, le stylet déclenche cet événement lorsqu’il sort de la zone de délimitation de l’élément. Toutefois, Pen a également un état de survol (<a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointer.isinrange">IsInRange</a>) qui déclenche cet événement lorsque l’état passe de true à false.</li>
+<li>Comme l’interaction tactile, le stylet déclenche cet événement lorsqu’il sort de la zone de délimitation de l’élément. Toutefois, Pen a également un état de survol (<a href="/uwp/api/windows.ui.xaml.input.pointer.isinrange">IsInRange</a>) qui déclenche cet événement lorsque l’état passe de true à false.</li>
 </ul></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved"><strong>PointerMoved</strong></a></p></td>
+<td align="left"><p><a href="/uwp/api/windows.ui.xaml.uielement.pointermoved"><strong>PointerMoved</strong></a></p></td>
 <td align="left"><p>Se produit lorsqu’un pointeur change les coordonnées, l’état d’un bouton, la pression, l’inclinaison ou la géométrie de contact (par exemple, largeur et hauteur) dans la zone de délimitation d’un élément. Cela peut se produire de manière légèrement différente pour les entrées par interaction tactile, pavé tactile, souris et stylet.</p>
 <ul>
 <li>L’interaction tactile nécessite un contact du doigt et déclenche cet événement uniquement en cas de contact au sein de la zone de délimitation de l’élément.</li>
 <li>La souris et le pavé tactile ont un curseur à l’écran qui est toujours visible et qui déclenche cet événement même si aucun bouton de la souris ni aucun bouton du pavé tactile n'est enfoncé.</li>
-<li>Comme l’interaction tactile, le stylet déclenche cet événement en cas de contact au sein de la zone de délimitation de l’élément. Toutefois, Pen a également un état de survol (<a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointer.isinrange">IsInRange</a>) qui, lorsque la valeur est true et dans la zone englobante de l’élément, déclenche cet événement.</li>
+<li>Comme l’interaction tactile, le stylet déclenche cet événement en cas de contact au sein de la zone de délimitation de l’élément. Toutefois, Pen a également un état de survol (<a href="/uwp/api/windows.ui.xaml.input.pointer.isinrange">IsInRange</a>) qui, lorsque la valeur est true et dans la zone englobante de l’élément, déclenche cet événement.</li>
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed"><strong>PointerPressed</strong></a></p></td>
+<td align="left"><p><a href="/uwp/api/windows.ui.xaml.uielement.pointerpressed"><strong>PointerPressed</strong></a></p></td>
 <td align="left"><p>Se produit lorsque le pointeur indique une action d’appui (par exemple, une pression par interaction tactile, sur un bouton de souris, sur un stylet ou sur un bouton du pavé tactile) dans la zone de délimitation d’un élément.</p>
 <p><a href="/uwp/api/windows.ui.xaml.uielement.capturepointer">CapturePointer</a> doit être appelé à partir du gestionnaire pour cet événement.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased"><strong>PointerReleased</strong></a></p></td>
+<td align="left"><p><a href="/uwp/api/windows.ui.xaml.uielement.pointerreleased"><strong>PointerReleased</strong></a></p></td>
 <td align="left"><p>Se produit lorsque le pointeur indique une action de libération (par exemple, arrêt de l’interaction tactile, relâchement du bouton de la souris, du stylet ou du bouton du pavé tactile) dans la zone de délimitation d’un élément ou, lorsque le pointeur est capturé, en dehors de la zone de délimitation.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged"><strong>PointerWheelChanged</strong></a></p></td>
+<td align="left"><p><a href="/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged"><strong>PointerWheelChanged</strong></a></p></td>
 <td align="left"><p>Se produit lorsque la roulette de la souris est actionnée.</p>
 <p>L’entrée de la souris est associée à un seul pointeur affecté lors de la première détection de l’entrée de la souris. Lorsque vous cliquez sur le bouton de la souris (gauche, roulette ou droite), une association secondaire est créée entre le pointeur et ce bouton via l’événement <a href="/uwp/api/windows.ui.xaml.uielement.pointermoved">PointerMoved</a> .</p></td>
 </tr>

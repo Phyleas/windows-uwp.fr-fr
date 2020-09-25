@@ -4,16 +4,16 @@ title: Mise à l’échelle du texte
 label: Text scaling
 template: detail.hbs
 keywords: UWP, texte, mise à l’échelle, accessibilité, « facilité d’accès », affichage, « rendre le texte plus grand », interaction utilisateur, entrée
-ms.date: 08/02/2018
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 386920532f4598ee2d1519d292454b47c285555b
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d8f7536da045514471c1af1c2f0cfac74af91a7a
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165833"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219942"
 ---
 # <a name="text-scaling"></a>Mise à l’échelle du texte
 
@@ -175,7 +175,7 @@ Cette rubrique fournit une vue d’ensemble de la prise en charge de la mise à 
 
 ## <a name="related-articles"></a>Articles connexes
 
-### <a name="api-reference"></a>Informations de référence sur les API
+### <a name="api-reference"></a>Informations de référence sur l'API
 
 - [IsTextScaleFactorEnabled](/uwp/api/windows.ui.xaml.controls.control.istextscalefactorenabled)
 - [TextScaleFactorChanged](/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactorchanged)

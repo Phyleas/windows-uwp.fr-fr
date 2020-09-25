@@ -2,16 +2,16 @@
 Description: L’API JavaScript pour Microsoft Examen vous permet de sécuriser les évaluations. L’application Examen inclut un navigateur sécurisé qui empêche les étudiants d’utiliser un autre ordinateur ou des ressources Internet pendant l’examen.
 title: API JavaScript Examen.
 ms.assetid: 9bff6318-504c-4d0e-ba80-1a5ea45743da
-ms.date: 08/08/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, éducation
 ms.localizationpriority: medium
-ms.openlocfilehash: f5894e80c11d69c91be8492b80c3200e15a3dc31
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 2eeb190fc95e46a95813affd432948d38c0328a4
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161263"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218392"
 ---
 # <a name="take-a-test-javascript-api"></a>API JavaScript Examen
 
@@ -36,7 +36,7 @@ L’espace de noms de sécurité vous permet de verrouiller l’appareil, de vé
 |[isEnvironmentSecure](#isEnvironmentSecure) | Détermine si le contexte de verrouillage est toujours appliqué à l’appareil. |
 |[getDeviceInfo](#getDeviceInfo) | Obtient des détails sur la plateforme sur laquelle l’application de test s’exécute. |
 |[examineProcessList](#examineProcessList)|Obtient la liste des processus utilisateur et système en cours d’exécution.|
-|[plus](#close) | Ferme le navigateur et déverrouille l’appareil. |
+|[close](#close) | Ferme le navigateur et déverrouille l’appareil. |
 |[getPermissiveMode](#getPermissiveMode)|Vérifie si le mode permissif est activé ou désactivé.|
 |[setPermissiveMode](#setPermissiveMode)|Active ou désactive le mode permissif.|
 |[emptyClipBoard](#emptyClipBoard)|Efface le presse-papiers du système.|
@@ -58,7 +58,7 @@ Verrouille l’appareil. Également utilisé pour déverrouiller l’appareil. L
 `void SecureBrowser.security.lockDown(Boolean enable, Function onSuccess, Function onError);`
 
 **Paramètres**  
-* `enable` - **true** pour exécuter l’application Take-a-test au-dessus de l’écran de verrouillage et appliquer les stratégies présentées dans ce [document](https://docs.microsoft.com/education/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396). **false** arrête l’exécution de Take-a-test au-dessus de l’écran de verrouillage et le ferme à moins que l’application ne soit verrouillée ; dans ce cas, il n’y a aucun effet.  
+* `enable` - **true** pour exécuter l’application Take-a-test au-dessus de l’écran de verrouillage et appliquer les stratégies présentées dans ce [document](/education/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396). **false** arrête l’exécution de Take-a-test au-dessus de l’écran de verrouillage et le ferme à moins que l’application ne soit verrouillée ; dans ce cas, il n’y a aucun effet.  
 * `onSuccess` -[facultatif] fonction à appeler après l’activation ou la désactivation du verrouillage. Elle doit être au format `Function(Boolean currentlockdownstate)` .  
 * `onError` -[facultatif] fonction à appeler en cas d’échec de l’opération de verrouillage. Elle doit être au format `Function(Boolean currentlockdownstate)` .  
 
@@ -240,7 +240,7 @@ Interroge si une fonctionnalité est activée ou désactivée.
 **Paramètres**  
 `feature` -Chaîne permettant de déterminer la capacité à interroger. Les chaînes de fonctionnalité valides sont « screenMonitoring », « Printing » et « textSuggestions » (non-respect de la casse).
 
-**Valeur de retour**  
+**Valeur renvoyée**  
 Cette fonction retourne soit un objet JavaScript, soit un littéral au format : `{<feature>:true|false}` . **true** si la fonctionnalité d’interrogation est activée, **false** si la fonctionnalité n’est pas activée ou si la chaîne de capacité n’est pas valide.
 
 **Configuration requise** Windows 10, version 1703

@@ -1,18 +1,18 @@
 ---
-Description: Le visualiseur de notifications est une nouvelle application Windows dans le Store qui aide les développeurs à concevoir des vignettes dynamiques adaptatives pour Windows 10.
+Description: Notifications Visualizer est une nouvelle application Windows du Store qui permet aux développeurs de concevoir des vignettes dynamiques adaptatives pour Windows 10.
 title: Notifications Visualizer
 ms.assetid: FCBB7BB1-2C79-484B-8FFC-26FE1934EC1C
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f9dc51a8ba387018a50e95702db1c539e889a5d
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: b50dc41a52d478afc9ed2fc9cf94d94dedb18ef4
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234688"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219922"
 ---
 # <a name="notifications-visualizer"></a>Notifications Visualizer
 

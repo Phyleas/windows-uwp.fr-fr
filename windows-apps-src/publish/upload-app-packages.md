@@ -2,16 +2,16 @@
 Description: La page packages vous permet de télécharger tous les fichiers de package (. appxupload,. AppX,. appxbundle et/ou. xap) pour l’application que vous envoyez.
 title: Chargement des packages d’application
 ms.assetid: B1BB810D-3EAA-4FB5-B03C-1F01AFB2DE36
-ms.date: 10/02/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, packages, téléchargement, téléchargement de packages
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c3c55d351ebd3b956d57c6c7e623e88e7fa88c1
-ms.sourcegitcommit: 96b7be654a0922eeb421b5fa51ebfc586abe74fe
+ms.openlocfilehash: 0b4fc0c9dfeed1183a1653b525d0f8cc8a62a4c1
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84945937"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220212"
 ---
 # <a name="upload-app-packages"></a>Chargement des packages d’application
 

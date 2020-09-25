@@ -4,16 +4,16 @@ ms.assetid: BB8399E2-7013-4F77-AF2C-C1A0E5412856
 title: Liste de vérification de l’accessibilité
 label: Accessibility checklist
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 44864a0743443d976456f73a3bae5041fd63770e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d6b9340f55064ff89c0b047cbb6d7407574da3d6
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163463"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216392"
 ---
 # <a name="accessibility-checklist"></a>Liste de vérification de l’accessibilité
 
@@ -41,7 +41,7 @@ Nous fournissons ici une liste de vérification qui vous permet de vous assurer 
 
 3. Vérifier que le texte est une taille lisible
 
-    * Windows comprend différents outils et paramètres d’accessibilité dont les utilisateurs peuvent tirer parti et s’adapter à leurs propres besoins et préférences pour lire du texte. notamment :
+    * Windows comprend différents outils et paramètres d’accessibilité dont les utilisateurs peuvent tirer parti et s’adapter à leurs propres besoins et préférences pour lire du texte. Elles incluent notamment :
         * L’outil loupe, qui agrandit la zone sélectionnée de l’interface utilisateur. Vous devez vous assurer que la disposition du texte dans votre application ne complique pas l’utilisation de la loupe pour la lecture.
         * Les paramètres de mise à l’échelle et de résolution globaux dans **paramètres->>système d’affichage->de l’échelle et de la disposition**. Les options de dimensionnement disponibles peuvent varier en fonction des capacités du périphérique d’affichage.
         * Paramètres de taille du texte dans **paramètres->facilité d’accès->affichage**. Ajustez le paramètre **agrandir le texte** pour spécifier uniquement la taille du texte dans les contrôles de prise en charge pour l’ensemble des applications et écrans (tous les contrôles de texte UWP prennent en charge l’expérience de mise à l’échelle du texte sans personnalisation ni création de modèles).

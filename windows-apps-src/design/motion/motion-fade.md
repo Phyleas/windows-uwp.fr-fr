@@ -4,16 +4,16 @@ title: Afficher et masquer les animations en fondu
 ms.assetid: 975E5EE3-EFBE-4159-8D10-3C94143DD07F
 label: Motion--fades
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b33cee13e37f55fd69229c6e41311a41806c987
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 6ae8afb291a2ba6012c55c2f22290f51b7eb76f0
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172413"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220152"
 ---
 # <a name="fade-animations"></a>Afficher et masquer les animations en fondu
 

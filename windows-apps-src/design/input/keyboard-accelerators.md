@@ -4,18 +4,18 @@ title: Raccourcis clavier
 label: Keyboard accelerators
 template: detail.hbs
 keywords: clavier, accélérateur, touche accélérateur, raccourcis clavier, accessibilité, navigation, Focus, texte, entrée, interactions utilisateur, boîtier de commande, à distance
-ms.date: 10/10/2017
+ms.date: 09/24/2020
 ms.topic: article
 pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a3231f608984c9d1f67df71de9cab4cfecd9a13
-ms.sourcegitcommit: deb2867924ce16efcabfa011892157b7aa4fa2d2
+ms.openlocfilehash: 02fba8027c5bddec5e5c501783b32dbab5642db9
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187894"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219952"
 ---
 # <a name="keyboard-accelerators"></a>Raccourcis clavier
 
@@ -365,7 +365,7 @@ Cela peut ne pas être toujours possible en raison de différences de fonctionna
 | Zoomer sur la vue par défaut | Ctrl + 0 | 
 | Enregistrer | Ctrl+S | 
 | Fermer | Ctrl+W | 
-| Impression | Ctrl+P | 
+| Imprimer | Ctrl+P | 
 
 Notez que certaines combinaisons ne sont pas valides pour les versions localisées de Windows. Par exemple, dans la version espagnole de Windows, CTRL + N est utilisé pour le gras au lieu de CTRL + B. Nous vous recommandons de fournir des accélérateurs de clavier localisés si l’application est localisée.
 

@@ -2,19 +2,19 @@
 description: Les animations connectées vous permettent de créer une expérience de navigation dynamique et intéressante en animant la transition d’un élément entre deux vues.
 title: Animation connectée
 template: detail.hbs
-ms.date: 10/04/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ff252faf4dd49929ec46c2ceaa02f94011e6b225
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 770f859cfb90dde4f3960492479beb6192c12c8f
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89169323"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91217782"
 ---
 # <a name="connected-animation-for-windows-apps"></a>Animation connectée pour les applications Windows
 
@@ -102,7 +102,7 @@ Pour obtenir les différents effets, certaines configurations ignorent ces propr
 | - | - | - |
 | Gravité | Oui | Oui* <br/> **La traduction de base de A à B utilise cette fonction d’accélération, mais le « DIP de gravité » a sa propre fonction d’accélération.*  |
 | Direct | Non <br/> *Anime plus de 150 mètres.*| Non <br/> *Utilise la fonction d’accélération de décélération.* |
-| De base | Oui | Oui |
+| Basic | Oui | Oui |
 
 ## <a name="how-to-implement-connected-animation"></a>Comment implémenter une animation connectée
 

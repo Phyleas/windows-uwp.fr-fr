@@ -1,17 +1,17 @@
 ---
 Description: Multilingual App Toolkit (MAT) 4,0 s’intègre à Microsoft Visual Studio 2019 pour fournir aux applications Windows une prise en charge de la traduction, la gestion des fichiers de traduction et des outils d’édition.
-title: Utiliser la boîte à outils d’application multilingue
+title: Utiliser le kit de ressources pour application multilingue
 template: detail.hbs
-ms.date: 01/23/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
-ms.openlocfilehash: f11ee858be112db899e0fd25dd2fe274d5a092fd
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 4759be8b4e386620243cd587df1ac0bd3e6b0033
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970964"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91217102"
 ---
 # <a name="use-the-multilingual-app-toolkit-40"></a>Utiliser le Kit de ressources Multilingual App Toolkit 4.0
 
@@ -30,7 +30,7 @@ Multilingual App Toolkit (MAT) 4,0 s’intègre à Microsoft Visual Studio 2019 
 
 Avant de pouvoir utiliser le fond efficacement, votre application doit être localisable. Plus précisément, votre projet doit contenir un ou plusieurs fichiers de ressources (. resw) contenant les chaînes de votre application dans la langue par défaut. Pour plus d’informations, consultez [localiser des chaînes dans votre interface utilisateur et le manifeste du package d’application](../../app-resources/localize-strings-ui-manifest.md). Une fois que vous avez terminé, le Toolkit facilite et simplifie l’ajout de langues supplémentaires.
 
-Pour obtenir la proposition de valeur de globalisation et de localisation&mdash;, ainsi que les définitions des termes de **globalisation**, d' **adaptabilité**et de **localisation**&mdash;, consultez [globalisation et localisation](globalizing-portal.md).
+Pour obtenir la proposition de valeur de globalisation et de localisation, ainsi &mdash; que les définitions des termes de **globalisation**, d' **adaptabilité**et de **localisation**, &mdash; consultez [globalisation et localisation](globalizing-portal.md).
 
 Consultez également [les instructions pour la globalisation](guidelines-and-checklist-for-globalizing-your-app.md) et [rendre votre application localisable](prepare-your-app-for-localization.md).
 
@@ -49,27 +49,27 @@ Pour que vous puissiez commencer à localiser l’application, vous devez active
 
 - Ouvrez la solution de projet dans Visual Studio.
 - Sélectionnez le projet souhaité dans Explorateur de solutions.
-- Dans le menu **Outils** , sélectionnez **Pack d’outils** > d’application multilingue**activer la sélection**. 
+- Dans le menu **Outils** , sélectionnez **Pack d’outils d’application multilingue**  >  **activer la sélection**. 
 
-Dans la fenêtre sortie (affichage de la sortie de la boîte à outils d’application multilingue `Project '<project-name>' was enabled. The project's source culture is '<language-tag>' <language-name>`), observez le message. Si ce message s’affiche, le tapis est prêt à être utilisé.
+Dans la fenêtre sortie (affichage de la sortie de la boîte à outils d’application multilingue), observez le message `Project '<project-name>' was enabled. The project's source culture is '<language-tag>' <language-name>` . Si ce message s’affiche, le tapis est prêt à être utilisé.
 
-### <a name="step-4-add-languages-to-your-project"></a>Étape 4. Ajouter des langues à votre projet
+### <a name="step-4-add-languages-to-your-project"></a>Étape 4. Ajouter des langues à votre projet
 
 Procédez comme suit pour ajouter des langues à votre projet.
 
 1. Cliquez avec le bouton droit sur le nœud du projet dans l'Explorateur de solutions.
-2. Cliquez sur boîte à >  **Outils d’application multilingue****Ajouter des langues de traduction...**.
+2. Cliquez sur **boîte à outils d’application multilingue**  >  **Ajouter des langues de traduction...**.
 3. Dans la boîte de dialogue langues de traduction, sélectionnez la ou les langues que vous souhaitez prendre en charge, puis cliquez sur OK.
 
 Le Toolkit effectue ces actions en réponse.
 
 - Pour chaque langue que vous avez ajoutée, un nouveau dossier est créé nommé pour la [balise de langue BCP-47](https://tools.ietf.org/html/bcp47) de la langue. À l’intérieur de ce dossier, de nouveaux fichiers de ressources (. resw) sont créés pour correspondre à un ou plusieurs fichiers contenant les chaînes de langue par défaut.
-- S’il s’agit de la première fois que vous ajoutez une langue, un nouveau `MultilingualResources` dossier nommé est ajouté au projet. À l’intérieur de ce dossier, un fichier. XLF est ajouté pour chaque langue. Les fichiers. XLF contiennent une unité de traduction pour chaque chaîne dans chaque fichier de ressources (. resw) de votre projet.
+- S’il s’agit de la première fois que vous ajoutez une langue, un nouveau dossier nommé `MultilingualResources` est ajouté au projet. À l’intérieur de ce dossier, un fichier. XLF est ajouté pour chaque langue. Les fichiers. XLF contiennent une unité de traduction pour chaque chaîne dans chaque fichier de ressources (. resw) de votre projet.
 - La fenêtre Sortie confirme l’ajout de la ou des langues que vous avez ajoutées.
 
 Chaque fois que vous ajoutez/supprimez un fichier de ressources de langue par défaut (. resw), ou que vous ajoutez/supprimez une chaîne dans un fichier de ressources de langue par défaut (. resw), régénérez le projet pour resynchroniser les fichiers. XLF. Cela permet de s’assurer que les fichiers. XLF contiennent l’Union des chaînes dans la langue par défaut.
 
-Des fournisseurs&mdash;de traduction installés tels que le [portail linguistique Microsoft](https://www.microsoft.com/Language/) et [Microsoft Translator](https://www.microsofttranslator.com/)&mdash;peuvent être utilisés pour traduire les ressources de votre application. Lorsqu’un fournisseur prend en charge une langue spécifique, l’icône du fournisseur s’affiche à côté du nom de la langue dans la boîte de dialogue langues de traduction.
+Des fournisseurs de traduction installés &mdash; tels que le [portail linguistique Microsoft](https://www.microsoft.com/Language/) et [Microsoft Translator](https://www.microsofttranslator.com/) &mdash; peuvent être utilisés pour traduire les ressources de votre application. Lorsqu’un fournisseur prend en charge une langue spécifique, l’icône du fournisseur s’affiche à côté du nom de la langue dans la boîte de dialogue langues de traduction.
 
 Dans la boîte de dialogue langues de traduction, la zone de sélection de tous les langages. XLF existants détectés par la boîte à outils est précochée pour indiquer que la langue est déjà incluse dans le projet.
 
@@ -82,14 +82,14 @@ Le Pseudo-langage est une modification artificielle du produit logiciel destiné
 Procédez comme suit pour Pseudo-localiser et tester votre projet.
 
 1. Utilisez la boîte de dialogue langues de traduction pour ajouter le Pseudo-langage (Pseudo) [RPS-Ploc] à votre projet.
-2. Dans Explorateur de solutions, cliquez `<project-name>.qps-ploc.xlf` avec le bouton droit sur le fichier, puis cliquez sur boîte à outils > d' **application multilingue****générer des traductions de machine**.
-3. Dans **paramètres** > de l'**heure & langue** > **&** > **langues**, cliquez sur **Ajouter une langue**.
+2. Dans Explorateur de solutions, cliquez avec le bouton droit sur le `<project-name>.qps-ploc.xlf` fichier, puis cliquez sur **boîte à outils d’application multilingue**  >  **générer des traductions de machine**.
+3. Dans **paramètres**de l'  >  **heure & langue**  >  **&**  >  **langues**, cliquez sur **Ajouter une langue**.
 5. Dans la zone de recherche, tapez `qps-ploc`.
 6. Cliquez `English (qps-ploc)` pour l’ajouter.
-7. Dans la liste langue, sélectionnez `English (qps-ploc)` , puis cliquez sur **définir par défaut**.
+7. Dans la liste langue, sélectionnez, `English (qps-ploc)` puis cliquez sur **définir par défaut**.
 8. Testez votre application Pseudo-localisée. Par exemple, recherchez les problèmes de disposition de l’interface utilisateur où la totalité d’une chaîne n’est pas affichée (la chaîne est tronquée) ou les chaînes qui ne sont pas traduites (mais à code dur).
 
-Outre le remplacement et l’expansion de caractères, le Pseudo-moteur fournit un identificateur de suivi unique pour chaque ressource. Ce dispositif de suivi est ajouté au début de chaque chaîne et placé entre `[xxxxx]`crochets. Vous pouvez utiliser ces suivis pendant le test d’inspection de l’interface utilisateur de Visual. Ils peuvent faciliter le suivi des ressources spécifiques dans le produit, en particulier si plusieurs ressources ont un texte similaire ou dupliqué.
+Outre le remplacement et l’expansion de caractères, le Pseudo-moteur fournit un identificateur de suivi unique pour chaque ressource. Ce dispositif de suivi est ajouté au début de chaque chaîne et placé entre crochets `[xxxxx]` . Vous pouvez utiliser ces suivis pendant le test d’inspection de l’interface utilisateur de Visual. Ils peuvent faciliter le suivi des ressources spécifiques dans le produit, en particulier si plusieurs ressources ont un texte similaire ou dupliqué.
 
 Dans ce « Hello, World ! » exemple de texte, la Pseudo traduction se développe pour prendre environ 30 pour cent d’espace d’écran, puis applique le dispositif de suivi des ressources.
 
@@ -115,11 +115,11 @@ Vous pouvez également lancer l’éditeur multilingue comme celui-ci. Accédez 
 
 #### <a name="option-2-send-the-xlf-files-to-a-third-party-for-translation"></a>Option 2. Envoyer les fichiers. XLF à un tiers pour la traduction
 
-Pour répartir le travail de traduction et de modification sur les localisateurs, sélectionnez les fichiers. XLF souhaités dans Explorateur de solutions, cliquez dessus avec le bouton droit, puis cliquez sur la boîte à >  **Outils d’application multilingue**exporter les**traductions...**.
+Pour répartir le travail de traduction et de modification sur les localisateurs, sélectionnez les fichiers. XLF souhaités dans Explorateur de solutions, cliquez dessus avec le bouton droit, puis cliquez sur la **boîte à outils d’application multilingue**  >  **Exporter les traductions...**.
 
 Sélectionnez **sortie : destinataire du courrier** dans la boîte de dialogue Exporter les ressources de chaîne, puis cliquez sur OK. vos fichiers sont compressés et joints à un nouvel e-mail. Sélectionnez **sortie : emplacement du dossier de fichiers**, navigateur pour un dossier, cliquez sur OK, choisissez éventuellement pour les fichiers à compresser, cliquez à nouveau sur OK. vos fichiers seront (zippés et) enregistrés à l’emplacement que vous avez choisi, à l’intérieur d’un nouveau dossier nommé pour votre projet.
 
-Une fois que vos localisateurs ont terminé le travail de traduction et vous a envoyé les fichiers. XLF traduits, vous pouvez les importer dans votre projet. Sélectionnez les fichiers. XLF souhaités dans Explorateur de solutions, cliquez dessus avec le bouton droit, puis cliquez sur **multilingue application Toolkit** > **Importer/recycler les traductions...**. Cliquez sur **Ajouter**, accédez aux fichiers. XLF ou. zip, puis cliquez sur **Importer**.
+Une fois que vos localisateurs ont terminé le travail de traduction et vous a envoyé les fichiers. XLF traduits, vous pouvez les importer dans votre projet. Sélectionnez les fichiers. XLF souhaités dans Explorateur de solutions, cliquez dessus avec le bouton droit, puis cliquez sur **multilingue application Toolkit**  >  **Importer/recycler les traductions...**. Cliquez sur **Ajouter**, accédez aux fichiers. XLF ou. zip, puis cliquez sur **Importer**.
 
 **Remarque** Le processus d’importation effectue une validation de base avant l’importation. Cela permet de s’assurer que les informations de culture cible dans les fichiers importés correspondent à celles des fichiers. XLF existants.
 
@@ -150,13 +150,13 @@ Deux fournisseurs sont fournis avec le kit d’outils d’application multilingu
 - Le fournisseur du [portail de langage Microsoft](https://www.microsoft.com/Language/) permet la prise en charge de la traduction et du recyclage en fonction des traductions du texte de l’interface utilisateur pour les produits et services Microsoft.
 - Le fournisseur [Microsoft Translator](https://www.microsofttranslator.com/) active les services de traduction automatique à la demande.
 
-Vous et vos traducteurs pouvez gérer l’état des traductions dans l’éditeur multilingue pour revoir ultérieurement les traductions incertaines. Vous pouvez définir l’état de chaque chaîne sous l’onglet **Propriétés** . les valeurs d’État sont : **nouveau**, **révision**, **traduit**, **final**et **déconnecté**. L’indicateur à gauche de la ligne indique l’État. Lorsque toutes les lignes affichent le vert dans l’éditeur multilingue, votre travail de traduction est terminé.
+Vous et vos traducteurs pouvez gérer l’état des traductions dans l’éditeur multilingue pour revoir ultérieurement les traductions incertaines. Vous pouvez définir l’état de chaque chaîne sous l’onglet **Propriétés** . Les valeurs d’État sont les suivantes : **nouveau**, **révision**, **traduction**, **final**et **approuvé**. L’indicateur à gauche de la ligne indique l’État. Lorsque toutes les lignes affichent le vert dans l’éditeur multilingue, votre travail de traduction est terminé.
 
 Régénérez votre projet pour que les chaînes traduites soient copiées dans le ou les fichiers de ressources (. resw) qui correspondent au (x) fichier (s). XLF que vous venez de modifier.
 
 ### <a name="step-7-upload-your-app-to-the-microsoft-store"></a>Étape 7. Téléchargez votre application sur le Microsoft Store
 
-Avant de commencer le processus de certification Microsoft Store, vous devez exclure `<project-name>.qps-ploc.xlf` le fichier de votre projet. Le Pseudo-langage est utilisé pour détecter les problèmes potentiels d’adaptabilité ou les bogues, mais il ne s’agit pas d’un langage de Microsoft Store valide. S’il n’est pas supprimé, votre application échouera au cours du processus de certification Microsoft Store.
+Avant de commencer le processus de certification Microsoft Store, vous devez exclure le `<project-name>.qps-ploc.xlf` fichier de votre projet. Le Pseudo-langage est utilisé pour détecter les problèmes potentiels d’adaptabilité ou les bogues, mais il ne s’agit pas d’un langage de Microsoft Store valide. S’il n’est pas supprimé, votre application échouera au cours du processus de certification Microsoft Store.
 
 ## <a name="related-topics"></a>Rubriques connexes
 

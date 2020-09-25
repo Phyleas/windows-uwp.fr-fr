@@ -4,16 +4,16 @@ title: Rotation
 ms.assetid: f098bc05-35b3-46b2-9e9b-9ff292d067ca
 label: Rotation
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 98ba886ffd74f03b4b502e1f7351c75c76646147
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 135f7773a94491e1e6470c84ad428265273bc79d
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172473"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91217002"
 ---
 # <a name="rotation"></a>Rotation
 
@@ -22,7 +22,7 @@ Cet article décrit la nouvelle interface utilisateur Windows pour la rotation e
 
 > **API importantes**: [**Windows. UI. Input**](/uwp/api/Windows.UI.Input), [**Windows. UI. Xaml. Input**](/uwp/api/Windows.UI.Xaml.Input)
 
-## <a name="dos-and-donts"></a>Choses à faire et à ne pas faire
+## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
 
 -   Utilisez la rotation pour permettre aux utilisateurs de faire pivoter directement des éléments d’interface utilisateur.
 

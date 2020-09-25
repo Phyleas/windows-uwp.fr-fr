@@ -4,16 +4,16 @@ title: Mouvement panoramique
 ms.assetid: b419f538-c7fb-4e7c-9547-5fb2494c0b71
 label: Panning
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e77485bd2febe2ee032f9a0c3ceada31c2807ee0
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 3a5e26d48ef74631e732fb043e909869945a6366
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172493"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91217049"
 ---
 # <a name="guidelines-for-panning"></a>Recommandations en matière de mouvement panoramique
 
@@ -23,7 +23,7 @@ Le mouvement panoramique ou défilement permet à l’utilisateur de naviguer au
 > **API importantes**: [**Windows. UI. Input**](/uwp/api/Windows.UI.Input), [**Windows. UI. Xaml. Input**](/uwp/api/Windows.UI.Xaml.Input)
 
 
-## <a name="dos-and-donts"></a>Choses à faire et à ne pas faire
+## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
 
 
 **Indicateurs de mouvement panoramique et barres de défilement**
@@ -80,7 +80,7 @@ Le mouvement panoramique tactile, par un mouvement de glissement ou de balayage 
 
 > <div id="main">
 > <strong>Mise à jour des créateurs de automne Windows 10-modification du comportement</strong> Par défaut, au lieu de sélectionner du texte, un stylet actif défile à présent/panoramiques dans les applications Windows (par exemple, Touch, pavé tactile et stylet passif).  
-> Si votre application repose sur le comportement précédent, vous pouvez remplacer le défilement du stylet et rétablir le comportement précédent. Pour plus d’informations, consultez la rubrique de référence de l’API pour la <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer">classe ScrollViewer</a>.
+> Si votre application repose sur le comportement précédent, vous pouvez remplacer le défilement du stylet et rétablir le comportement précédent. Pour plus d’informations, consultez la rubrique de référence de l’API pour la <a href="/uwp/api/windows.ui.xaml.controls.scrollviewer">classe ScrollViewer</a>.
 > </div>
 
 Selon le périphérique d’entrée utilisé, l’utilisateur effectue un mouvement panoramique au sein d’une région de mouvement panoramique à l’aide de l’un des éléments suivants :

@@ -3,16 +3,16 @@ Description: Découvrez comment les applications Win32 C++ WRL peuvent envoyer d
 title: Envoyer une notification toast locale depuis des applications WRL de bureau en C++
 label: Send a local toast notification from desktop C++ WRL apps
 template: detail.hbs
-ms.date: 03/07/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, Win32, Desktop, notifications Toast, envoyer un toast, envoyer un toast local, Desktop Bridge, msix, package fragmenté, C++, CPP, Cplusplus, WRL
 ms.localizationpriority: medium
-ms.openlocfilehash: e1aae390cf9047c8c93b4d24084c87bc90af8d80
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: f90733cb4b549b7b8f088d6ecfa652941b0769b1
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172303"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220142"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-wrl-apps"></a>Envoyer une notification toast locale depuis des applications WRL de bureau en C++
 
@@ -420,8 +420,8 @@ Windows 8 a introduit les notifications Toast, mais a utilisé les [modèles Toa
 
 | Système d''exploitation | ToastGeneric | Activateur COM | Modèles Toast hérités |
 | -- | ------------ | ------------- | ---------------------- |
-| Windows 10 | Pris en charge | Pris en charge | Pris en charge (mais n’active pas le serveur COM) |
-| Windows 8.1/8 | N/A | N/A | Pris en charge |
+| Windows 10 | Prise en charge | Prise en charge | Pris en charge (mais n’active pas le serveur COM) |
+| Windows 8.1/8 | N/A | N/A | Prise en charge |
 | Windows 7 et versions antérieures | N/A | N/A | N/A |
 
 Pour vérifier si vous exécutez sur Windows 10, incluez l' `<VersionHelpers.h>` en-tête et vérifiez la méthode **IsWindows10OrGreater** . Si cette propriété retourne la valeur true, continuez à appeler toutes les méthodes décrites dans cette documentation. 

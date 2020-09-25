@@ -5,12 +5,12 @@ ms.date: 07/06/2020
 ms.topic: article
 keywords: Windows 10, UWP, Windows, Runtime, composant, composants Windows Runtime composant, WRC, C++/WinRT
 ms.localizationpriority: medium
-ms.openlocfilehash: 25286260c4abd6686939393b3bf81df818879bf9
-ms.sourcegitcommit: 21eb13a50402bf5442a5f0a4bf34800d1dc679c4
+ms.openlocfilehash: adf13308b1a2c360d7db53ded4edfe866de6c260
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "90804749"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220312"
 ---
 # <a name="windows-runtime-components-with-cwinrt"></a>Composants Windows Runtime avec C++/WinRT
 
@@ -141,8 +141,8 @@ Pour ajouter encore plus de fonctionnalités, ou de nouveaux types de Windows Ru
 
 Pour obtenir un exemple d’ajout d’un événement à votre composant Windows Runtime, consultez [créer des événements en C++/WinRT](../cpp-and-winrt-apis/author-events.md).
 
-## <a name="troubleshooting"></a>Résolution des problèmes
+## <a name="troubleshooting"></a>Dépannage
 
 | Symptôme | Solution |
 |---------|--------|
-|Dans une application C++/WinRT, lors de l’utilisation d’un [composant C# Windows Runtime](/windows/uwp/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic) qui utilise XAML, le compilateur génère une erreur au format «*MyNamespace_XamlTypeInfo » : n’est pas membre de « WinRT :: MyNamespace »*, &mdash; où *MyNamespace* est le nom de l’espace de noms du composant Windows Runtime. | Dans `pch.h` , dans l’application/WinRT C++ consommatrice, ajoutez `#include <winrt/MyNamespace.MyNamespace_XamlTypeInfo.h>` &mdash; en remplaçant *MyNamespace* , le cas échéant. |
+|Dans une application C++/WinRT, lors de l’utilisation d’un [composant C# Windows Runtime](./creating-windows-runtime-components-in-csharp-and-visual-basic.md) qui utilise XAML, le compilateur génère une erreur au format «*MyNamespace_XamlTypeInfo » : n’est pas membre de « WinRT :: MyNamespace »*, &mdash; où *MyNamespace* est le nom de l’espace de noms du composant Windows Runtime. | Dans `pch.h` , dans l’application/WinRT C++ consommatrice, ajoutez `#include <winrt/MyNamespace.MyNamespace_XamlTypeInfo.h>` &mdash; en remplaçant *MyNamespace* , le cas échéant. |

@@ -5,15 +5,15 @@ ms.assetid: d973ffd8-602e-47b5-ab0b-4b2a964ec53d
 label: Selecting text and images
 template: detail.hbs
 keywords: clavier, texte, entrées, interactions avec l’utilisateur
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a779053f0e14317c4142158fdface4c806a02aa
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 179eeffd014cb614fb5314826068d9690fc29807
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172463"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216972"
 ---
 # <a name="selecting-text-and-images"></a>Sélection de texte et d’images
 
@@ -24,7 +24,7 @@ Cet article décrit la sélection et la manipulation de texte, d’images et de 
  
 
 
-## <a name="dos-and-donts"></a>Choses à faire et à ne pas faire
+## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
 
 
 -   Utilisez des glyphes de police lors de l’implémentation de votre propre interface utilisateur de barre de redimensionnement. Le symbole de sélection est une combinaison de deux polices Segoe UI disponibles à l’échelle du système. L’utilisation de ressources de police simplifie les problèmes de rendu pour différentes valeurs de ppp et fonctionne bien avec les divers plateaux d’échelle d’interface utilisateur. Lorsque vous implémentez vos propres barres de redimensionnement, elles doivent partager les caractéristiques d’interface utilisateur suivantes :
