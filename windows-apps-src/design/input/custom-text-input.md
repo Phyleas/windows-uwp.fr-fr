@@ -5,15 +5,15 @@ ms.assetid: 58F5F7AC-6A4B-45FC-8C2A-942730FD7B74
 label: Custom text input
 template: detail.hbs
 keywords: clavier, texte, Core Text, texte personnalisé, Text Services Framework, entrées, interactions utilisateur
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8cde343a77c41a9bb833a7484610e1c324916f8c
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 8a6183dcc690a8fe3b9d13cfa0e471f41f04ff30
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160143"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220572"
 ---
 # <a name="custom-text-input"></a>Saisie de texte personnalisé
 

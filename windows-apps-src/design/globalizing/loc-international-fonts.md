@@ -2,16 +2,16 @@
 Description: Cette rubrique répertorie les polices disponibles pour les applications Windows localisées dans des langues autres que l’anglais (États-Unis).
 title: Polices internationales
 template: detail.hbs
-ms.date: 11/02/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
-ms.openlocfilehash: aa0b560ad684ba230e0a498b9069d24d510f49c0
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 1200b80347a67bb1c9a6414a18697ca9d30bc29f
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970904"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220602"
 ---
 # <a name="international-fonts"></a>Polices internationales
 
@@ -19,7 +19,7 @@ Cette rubrique répertorie les polices disponibles pour les applications Windows
 
 Dans le tableau suivant, la colonne « balise de langue » répertorie la [balise de langue BCP-47](https://tools.ietf.org/html/bcp47) du langage. Pour afficher la liste des balises de langue spécifiquement prises en charge par le Microsoft Store, consultez [langues prises en charge](../../publish/supported-languages.md).
 
-| Langage | Balise de langue | Police utilisée dans Windows |
+| Langue | Balise de langue | Police utilisée dans Windows |
 | --------- | ----------- | -------------------- |
 | Afrikaans | af-ZA | Segoe UI |
 | Albanais | sq-AL | Segoe UI |
@@ -54,7 +54,7 @@ Dans le tableau suivant, la colonne « balise de langue » répertorie la [bal
 | Géorgien | ka-GE | Segoe UI |
 | Allemand | de-DE | Segoe UI |
 | Grec | el-GR | Segoe UI |
-| Goudjrati | gu-IN | Nirmala UI |
+| Gujarati | gu-IN | Nirmala UI |
 | Haoussa (latin) | ha-Latn-NG | Segoe UI |
 | Hébreu | he-IL | Segoe UI |
 | Hindi | hi-IN | Nirmala UI |

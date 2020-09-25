@@ -2,16 +2,16 @@
 Description: Si vous avez fourni des packages ciblant différents systèmes d’exploitation, vous pouvez personnaliser certaines parties de votre description dans le Windows Store pour ces différents systèmes.
 title: Création d’annonces Windows Store spécifiques à la plateforme
 ms.assetid: 5BE66BE2-669C-49E0-8915-60F1027EF94A
-ms.date: 10/31/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, personnaliser, liste, description, plus haut
 ms.localizationpriority: medium
-ms.openlocfilehash: 475526662737eaa5b95267e36016e342c6652a89
-ms.sourcegitcommit: 96b7be654a0922eeb421b5fa51ebfc586abe74fe
+ms.openlocfilehash: b0008095ac027a1ef1d17b655610a3ad50a6596b
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84945957"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220502"
 ---
 # <a name="create-platform-specific-store-listings"></a>Création d’annonces Windows Store spécifiques à la plateforme
 
