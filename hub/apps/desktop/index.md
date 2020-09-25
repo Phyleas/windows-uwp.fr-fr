@@ -7,12 +7,12 @@ keywords: développement d’applications de bureau Win32 pour Windows
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 6539f436e46f351efc355d361c0677b9fedee546
-ms.sourcegitcommit: 2bb975d5df38d294277f57bf8b6a06d9bf87ca9b
+ms.openlocfilehash: 34b860916b90d1adc8ae9e7ae8c8ac7950125ce7
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2020
-ms.locfileid: "90046815"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216742"
 ---
 # <a name="build-desktop-apps-for-windows-pcs"></a>Créer des applications de bureau pour les PC Windows
 
@@ -39,24 +39,24 @@ Il existe quatre plateformes principales pour créer des applications de bureau 
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="https://docs.microsoft.com/windows/uwp/">Plateforme Windows universelle (UWP)</a></td>
+<td><a href="/windows/uwp/">Plateforme Windows universelle (UWP)</a></td>
 <td><p>La plateforme de pointe pour les applications et jeux Windows 10. Vous pouvez créer des applications UWP qui utilisent exclusivement des contrôles et des API UWP, ou vous pouvez utiliser des contrôles et des API UWP dans des applications de bureau qui sont créées à l’aide de l’une des autres plateformes.</p></td>
 <td><a href="/windows/uwp/get-started/">Bien démarrer</a><br/><a href="/uwp/">Informations de référence sur les API</a><br/><a href="https://github.com/Microsoft/Windows-universal-samples">Exemples</a></td>
 </tr>
 <tr class="even">
-<td><a href="https://docs.microsoft.com/windows/win32/">C++/Win32</a></td>
+<td><a href="/windows/win32/">C++/Win32</a></td>
 <td><p>Plateforme préférée pour les applications Windows natives qui nécessitent un accès direct à Windows et à du matériel.</p></td>
 <td><a href="/windows/win32/desktop-programming/">Bien démarrer</a><br/><a href="/windows/win32/apiindex/windows-api-list/">Informations de référence sur les API</a><br/><a href="https://github.com/Microsoft/Windows-classic-samples">Exemples</a></td>
 </tr>
 <tr class="odd">
 <td><a href="/dotnet/framework/wpf/">WPF</a></td>
-<td><p>Plateforme .NET établie pour les applications Windows managées graphiquement riches avec un modèle d’interface utilisateur XAML. Ces applications peuvent cibler <a href="https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0">.NET Core 3</a> ou le .NET Framework complet.</p></td>
-<td><a href="/dotnet/framework/wpf/getting-started/">Bien démarrer</a><br/><a href="https://docs.microsoft.com/dotnet/api/index">Informations de référence sur les API (.NET)</a><br/><a href="https://github.com/Microsoft/WPF-Samples">Exemples</a></td>
+<td><p>Plateforme .NET établie pour les applications Windows managées graphiquement riches avec un modèle d’interface utilisateur XAML. Ces applications peuvent cibler <a href="/dotnet/core/whats-new/dotnet-core-3-0">.NET Core 3</a> ou le .NET Framework complet.</p></td>
+<td><a href="/dotnet/framework/wpf/getting-started/">Bien démarrer</a><br/><a href="/dotnet/api/index">Informations de référence sur les API (.NET)</a><br/><a href="https://github.com/Microsoft/WPF-Samples">Exemples</a></td>
 </tr>
 <tr class="even">
 <td><a href="/dotnet/framework/winforms/">Windows Forms</a></td>
-<td><p>Une plateforme .NET conçue pour les applications métier managées qui offre un modèle d’interface utilisateur léger. Ces applications peuvent cibler <a href="https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0">.NET Core 3</a> ou le .NET Framework complet.</p></td>
-<td><a href="/dotnet/framework/winforms/getting-started-with-windows-forms">Bien démarrer</a><br/><a href="https://docs.microsoft.com/dotnet/api/index">Informations de référence sur les API (.NET)</a></td>
+<td><p>Une plateforme .NET conçue pour les applications métier managées qui offre un modèle d’interface utilisateur léger. Ces applications peuvent cibler <a href="/dotnet/core/whats-new/dotnet-core-3-0">.NET Core 3</a> ou le .NET Framework complet.</p></td>
+<td><a href="/dotnet/framework/winforms/getting-started-with-windows-forms">Bien démarrer</a><br/><a href="/dotnet/api/index">Informations de référence sur les API (.NET)</a></td>
 </tr>
 </tbody>
 </table>

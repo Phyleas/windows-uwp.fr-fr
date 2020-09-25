@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, sécurité
 ms.localizationpriority: medium
-ms.openlocfilehash: 3169ee9b2674112964ced83bc3a34637846eb225
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9a565c9bdec6932d0e8ca376f677c309991773d6
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89167193"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219722"
 ---
 # <a name="security"></a>Sécurité
 
@@ -31,7 +31,7 @@ La [section sur l’authentification et l’identité des utilisateurs](authenti
 <tr><th>Rubrique</th><th>Description</th></tr>
 <tr><td><a href="credential-locker.md">Stockage sécurisé des informations d’identification</a></td><td>Cet article décrit comment des applications peuvent utiliser le stockage sécurisé des informations d’identification pour stocker et récupérer des informations d’identification utilisateur en toute sécurité et les déplacer entre des appareils avec le compte Microsoft de l’utilisateur.</td></tr>
 
-<tr><td><a href="fingerprint-biometrics.md">Empreinte digitale biométrique</a> </td><td>Cet article explique comment ajouter des empreintes digitales biométrique à votre application. L’inclusion d’une demande d’authentification par empreinte digitale (biométrique) lorsque l’utilisateur doit valider une action particulière renforce la sécurité de votre application. Par exemple, vous pouvez exiger une authentification par empreinte digitale avant d’autoriser un achat in-app ou avant l’accès à des ressources restreintes. L’authentification par empreinte digitale est gérée par l’intermédiaire de la classe <a href="/uwp/api/Windows.Security.Credentials.UI.UserConsentVerifier">UserConsentVerifier</a> dans l’espace de noms <a href="https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.UI">Windows.Security.Credentials.UI</a>.</td></tr>
+<tr><td><a href="fingerprint-biometrics.md">Empreinte digitale biométrique</a> </td><td>Cet article explique comment ajouter des empreintes digitales biométrique à votre application. L’inclusion d’une demande d’authentification par empreinte digitale (biométrique) lorsque l’utilisateur doit valider une action particulière renforce la sécurité de votre application. Par exemple, vous pouvez exiger une authentification par empreinte digitale avant d’autoriser un achat in-app ou avant l’accès à des ressources restreintes. L’authentification par empreinte digitale est gérée par l’intermédiaire de la classe <a href="/uwp/api/Windows.Security.Credentials.UI.UserConsentVerifier">UserConsentVerifier</a> dans l’espace de noms <a href="/uwp/api/Windows.Security.Credentials.UI">Windows.Security.Credentials.UI</a>.</td></tr>
 <tr><td><a href="microsoft-passport.md">Microsoft Passport et Windows Hello</a></td><td>Cet article décrit la nouvelle technologie Microsoft Passport de Windows 10 et explique comment les développeurs peuvent implémenter cette technologie pour protéger leurs applications et services principaux. Il présente des fonctionnalités spécifiques de ces technologies qui contribuent à atténuer les menaces liées aux informations d’identification classiques et fournit des recommandations sur la conception et le déploiement de ces technologies dans le cadre de votre lancement de Windows 10. </td></tr>
 <tr><td><a href="microsoft-passport-login.md">Créer une application de connexion Microsoft Passport</a></td><td>Première partie de la procédure complète sur la création d’une application UWP Windows 10 qui utilise Microsoft Passport comme alternative aux systèmes d’authentification par nom d’utilisateur et mot de passe traditionnels.</td></tr>
 <tr><td><a href="microsoft-passport-login-auth-service.md">Créer un service de connexion Microsoft Passport</a></td><td>Deuxième partie de la procédure complète sur l’utilisation de Microsoft Passport comme alternative aux systèmes d’authentification par nom d’utilisateur et mot de passe traditionnels dans des applications UWP Windows 10.</td></tr>

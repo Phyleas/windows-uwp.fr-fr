@@ -5,15 +5,15 @@ ms.assetid: 7665044E-F007-495D-8D56-CE7C2361CDC4
 label: Device primer
 template: detail.hbs
 keywords: appareil, entrées, interactions
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a4d34db2b6782f3b660bb88e3b3a07f6e2d01b5
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 5d32fd2ba2ee35c19aeaa66d2c6b2c1f81be2a59
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157043"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91217832"
 ---
 #  <a name="ui-considerations-for-windows-devices"></a>Considérations relatives à l’interface utilisateur des appareils Windows
 

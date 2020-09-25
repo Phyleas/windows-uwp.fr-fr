@@ -2,16 +2,16 @@
 description: Découvrez comment concevoir et programmer une application Windows intuitive qui s’affiche parfaitement sur un grand nombre d’appareils et sur des écrans de différentes tailles.
 title: Vue d’ensemble des dispositions pour les applications Windows
 keywords: disposition d’application uwp, plateforme windows universelle, conception d’application, interface
-ms.date: 03/07/2018
+ms.date: 09/24/2020
 ms.topic: article
 ms.assetid: 1aa12606-8a99-4db3-8311-90e02fde9cf1
 ms.localizationpriority: medium
-ms.openlocfilehash: c3647f6a4c3bbc3951fab45380762de472d13533
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 680533d1f2907ef724810ca073e1dc56a0b01fb5
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970774"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219602"
 ---
 # <a name="layout"></a>Disposition
 
