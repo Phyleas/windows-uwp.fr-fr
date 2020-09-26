@@ -1,17 +1,17 @@
 ---
 title: FAQ sur le Bluetooth pour les développeurs
 description: Cet article contient des réponses aux questions fréquentes relatives à l’API de bluetooth UWP.
-ms.date: 02/08/2017
+ms.date: 09/25/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: e7dee32d-3756-430d-a026-32c1ee288a85
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d41e49f599e1fe5e835443f7c8cb732e625491e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1a5ff129afcee21b0b1b41212fb900235d5b21b4
+ms.sourcegitcommit: 662fcfdc08b050947e289a57520a2f99fad1a620
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89168593"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91353719"
 ---
 # <a name="bluetooth-developer-faq"></a>FAQ sur le Bluetooth pour les développeurs
 
@@ -32,7 +32,7 @@ Utilisez les API du GATT lorsque vous communiquez avec un appareil qui prend en 
 Les API RFCOMM offrent aux développeurs un socket pour effectuer une communication bidirectionnelle de type port série. Une fois que vous disposez d’un socket, les méthodes d’écriture et de lecture sont relativement standard. Une implémentation de ce est présentée dans l' [exemple de conversation RFCOMM](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/BluetoothRfcommChat). 
 
 **Quand ne pas utiliser Bluetooth RFCOMM** 
-- Fonctionnalité. Le protocole Bluetooth GATT a une commande spécifique pour cela, ce qui se traduira par un temps de réponse beaucoup moins important et des temps de réponse plus rapides. 
+- Notifications. Le protocole Bluetooth GATT a une commande spécifique pour cela, ce qui se traduira par un temps de réponse beaucoup moins important et des temps de réponse plus rapides. 
 - Vérification de la détection de proximité ou de présence. Il est préférable d’utiliser les [API de publication](/uwp/api/windows.devices.bluetooth.advertisement) et de se connecter via Bluetooth le. 
 
 
@@ -76,10 +76,12 @@ Non. Il s’agit d’une fonctionnalité dépendante du matériel, mais une mét
 
 ## <a name="can-i-access-these-apis-from-win32"></a>Puis-je accéder à ces API à partir de Win32 ?
 
-Oui, toutes ces API doivent fonctionner. Ce blog détaille la façon d’appeler [des API Windows à partir d’applications de bureau](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application/). 
-## <a name="is-this-functionality-supposed-to-exist-on--insert-sku-here-"></a>Cette fonctionnalité est-elle censée exister sur *-Insert SKU ici-*?
+Oui, toutes ces API doivent fonctionner. Ce blog détaille la façon d’appeler [des API Windows à partir d’applications de bureau](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application/).
 
-**Bluetooth le**: Oui, toutes les fonctionnalités se trouvent dans OneCore et doivent être disponibles sur les appareils les plus récents w/a qui fonctionnent avec la pile Bluetooth le. 
-> Inconvénient : le rôle périphérique dépend du matériel et certaines éditions de Windows Server ne prennent pas en charge Bluetooth. 
+## <a name="is-this-functionality-supposed-to-exist-on-a-specific-sku"></a>Cette fonctionnalité est-elle censée exister sur une référence (SKU) spécifique ?
+
+**Bluetooth le**: Oui, toutes les fonctionnalités se trouvent dans OneCore et doivent être disponibles sur les appareils les plus récents w/a qui fonctionnent avec la pile Bluetooth le.
+
+> Inconvénient : le rôle périphérique dépend du matériel et certaines éditions de Windows Server ne prennent pas en charge Bluetooth.
 
 **Bluetooth br/EDR (Classic)**: certaines variantes existent mais, en général, elles ont une prise en charge de niveau de profil très similaire. Consultez la documentation sur [RFCOMM](send-or-receive-files-with-rfcomm.md) et les documents de ce profil pris en charge pour [PC](https://support.microsoft.com/help/10568/windows-10-supported-bluetooth-profiles) et [téléphone](https://support.microsoft.com/help/10569/windows-10-mobile-supported-bluetooth-profiles)

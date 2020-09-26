@@ -5,12 +5,12 @@ ms.date: 06/26/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fd5f2b76af856dd66e2dfd0ee2b3e429199e6a19
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 2d4ec2c3d849833b4a1673c4a4f425f32c42d00f
+ms.sourcegitcommit: 662fcfdc08b050947e289a57520a2f99fad1a620
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172283"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91353759"
 ---
 # <a name="bluetooth-gatt-client"></a>Client GATT Bluetooth
 
@@ -110,6 +110,14 @@ bluetoothLeDevice.Dispose();
 
 Si l’application doit à nouveau accéder à l’appareil, il suffit de recréer l’objet d’appareil et d’accéder à une caractéristique (décrite dans la section suivante) pour que le système d’exploitation se reconnecte en cas de besoin. Si l’appareil est proche, vous obtiendrez un accès à l’appareil. sinon, il renverra une erreur DeviceUnreachable.  
 
+> [!NOTE]
+> La création d’un objet [BluetoothLEDevice](/uwp/api/windows.devices.bluetooth.bluetoothledevice) en appelant cette méthode seule n’initie pas (nécessairement) une connexion. Pour initier une connexion, définissez [GattSession. MaintainConnection](/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattsession.maintainconnection) sur `true` , ou appelez une méthode de découverte de service non mise en cache sur **BluetoothLEDevice**, ou effectuez une opération de lecture/écriture sur l’appareil.
+>
+> - Si **GattSession. MaintainConnection** a la valeur true, le système attend indéfiniment une connexion et se connecte lorsque l’appareil est disponible. Il n’y a rien à attendre pour votre application, car **GattSession. MaintainConnection** est une propriété.
+> - Pour la découverte de service et les opérations de lecture/écriture dans le cadre du GATT, le système attend une durée limitée mais variable. Quoi que ce soit de l’instantané à quelques minutes. Les facteurs composent le trafic sur la pile et la façon dont la demande est mise en file d’attente. S’il n’existe aucune autre demande en attente et que l’appareil distant est inaccessible, le système attendra sept (7) secondes avant d’expirer. S’il y a d’autres demandes en attente, chacune des demandes de la file d’attente peut prendre sept (7) secondes pour le traitement, si bien que la plus proche est vers l’arrière de la file d’attente, plus vous attendez.
+>
+> Actuellement, vous ne pouvez pas annuler le processus de connexion.
+
 ## <a name="enumerating-supported-services-and-characteristics"></a>Énumération des services et caractéristiques pris en charge
 
 Maintenant que vous avez un objet BluetoothLEDevice, l’étape suivante consiste à découvrir les données exposées par l’appareil. Pour ce faire, la première étape consiste à interroger les services :
@@ -201,7 +209,7 @@ Il y a deux choses à prendre en charge avant d’obtenir des notifications :
 - Écrire dans le descripteur de configuration de caractéristiques du client (CCCD)
 - Gérer l’événement caractéristique. ValueChanged
 
-L’écriture dans le CCCD indique à l’appareil serveur que ce client souhaite connaître chaque fois que cette valeur caractéristique particulière change. Pour cela :
+L’écriture dans le CCCD indique à l’appareil serveur que ce client souhaite connaître chaque fois que cette valeur caractéristique particulière change. Pour ce faire :
 
 ```csharp
 GattCommunicationStatus status = await selectedCharacteristic.WriteClientCharacteristicConfigurationDescriptorAsync(
