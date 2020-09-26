@@ -5,14 +5,15 @@ ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
 template: detail.hbs
 ms.date: 03/06/2020
 ms.topic: article
+ms.custom: contperfq1
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bd910c42743577a83491386f5c667dd09722ba9b
-ms.sourcegitcommit: 8171695ade04a762f19723f0b88e46e407375800
+ms.openlocfilehash: 22d891253074387223dba1ad9084a2105cf530dd
+ms.sourcegitcommit: 651a6b9769fad1736ab16e2a4e423258889b248e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2020
-ms.locfileid: "89494375"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91366885"
 ---
 # <a name="windows-push-notification-services-wns-overview"></a>Vue d’ensemble des services de notifications Push Windows (WNS) 
 
@@ -33,50 +34,7 @@ Le diagramme ci-après présente l’intégralité du flux de données impliqué
 
 ## <a name="registering-your-app-and-receiving-the-credentials-for-your-cloud-service"></a>Inscription de votre application et réception des informations d’identification de votre service cloud
 
-Pour que vous puissiez envoyer des notifications à l’aide des services WNS, votre application doit au préalable être inscrite auprès du Tableau de bord du Store. 
-
-Chaque application dispose de son propre ensemble d’informations d’identification pour son service cloud. Ces informations d’identification ne peuvent pas être utilisées pour envoyer des notifications à une autre application.
-
-### <a name="step-1-register-your-app-with-the-dashboard"></a>Étape 1 : inscrire votre application avec le tableau de bord
-
-Avant de pouvoir envoyer des notifications via WNS, votre application doit être inscrite auprès du tableau de bord de l’espace partenaires. Cela vous fournit les informations d’identification de votre application que votre service cloud utilisera lors de l’authentification à l’aide des services WNS. Ces informations d’identification se composent d’un identificateur de sécurité du package (SID) et d’une clé secrète. Pour effectuer cette inscription, connectez-vous à l' [espace partenaires](https://partner.microsoft.com/dashboard). Après avoir créé votre application, consultez [gestion de produit-WNS/MPNs](https://apps.dev.microsoft.com/) pour instrunctions sur la façon de récupérer les informations d’identification (si vous souhaitez utiliser la solution de services Live, suivez le lien vers le **site Live services** sur cette page).
-
-Pour vous inscrire :
-1.    Accédez à la page applications du Windows Store de l’espace partenaires et connectez-vous à l’aide de votre compte Microsoft personnelle (ex : johndoe@outlook.com , janedoe@xboxlive.com ).
-2.    Une fois que vous êtes connecté, cliquez sur le lien tableau de bord.
-3.    Dans le tableau de bord, sélectionnez créer une application.
-
-![inscription de l’application WNS](../images/wns-create-new-app.png)
-
-4.    Créez votre application en réservant un nom d’application. Donnez un nom unique à votre application. Entrez le nom et cliquez sur le bouton réserver un nom de produit. Si le nom est disponible, il est réservé à votre application. Une fois que vous avez réservé un nom pour votre application, les autres détails peuvent être modifiés si vous le souhaitez pour l’instant.
-
-![nom du produit de réserve WNS](../images/wns-reserve-poduct-name.png)
- 
-### <a name="step-2-obtain-the-identity-values-and-credentials-for-your-app"></a>Étape 2 : obtenir les valeurs d’identité et les informations d’identification de votre application
-
-Quand vous avez réservé un nom pour votre application, le Windows Store a créé les informations d’identification qui lui sont associées. Elle a également affecté des valeurs d’identité associées (nom et éditeur) qui doivent être présentes dans le fichier manifeste de votre application (package. appxmanifest). Si vous avez déjà téléchargé votre application dans le Windows Store, ces valeurs sont automatiquement ajoutées à votre manifeste. Si vous n’avez pas téléchargé votre application, vous devrez ajouter les valeurs d’identité à votre manifeste manuellement.
-
-1.    Sélectionner la flèche déroulante gestion du produit
-
-![gestion des produits WNS](../images/wns-product-management.png)
-
-2.    Dans la liste déroulante gestion du produit, sélectionnez le lien WNS/MPNS.
-
-![continuted de gestion des produits WNS](../images/wns-product-management2.png)
- 
-3.    Sur la page WNS/MPNS, cliquez sur le lien vers le site Live Services situé sous la section Windows Push Notification Services (WNS) et Microsoft Azure Mobile Services.
-
-![services WNS en direct](../images/wns-live-services-page.png)
- 
-4.    Le portail d’inscription des applications (précédemment la page Live Services) vous fournit un élément d’identité à inclure dans le manifeste de votre application. Cela comprend le ou les secrets de l’application, l’identificateur de sécurité du package et l’identité de l’application. Ouvrez votre manifeste dans un éditeur de texte et ajoutez cet élément comme l’indique la page.    
-
-> [!NOTE]
-> Si vous êtes connecté avec un compte AAD, vous devez contacter le propriétaire de compte Microsoft qui a inscrit l’application pour obtenir les secrets d’application associés. Si vous avez besoin d’aide pour trouver ce contact, cliquez sur l’engrenage dans le coin supérieur droit de votre écran, puis cliquez sur paramètres de développeur et l’adresse de messagerie de l’utilisateur qui a créé l’application avec son compte Microsoft s’affichera ici.
- 
-5.    Chargez le SID et la clé secrète client sur votre serveur Cloud.
-
-> [!Important]
-> Le SID et la clé secrète client doivent être stockés et consultés en toute sécurité par votre service Cloud. La divulgation ou le vol de ces informations pourraient permettre à une personne malveillante d’envoyer des notifications à vos utilisateurs sans autorisation ou connaissance.
+Avant de pouvoir envoyer des notifications à l’aide de WNS, votre application doit être inscrite auprès du tableau de bord du magasin, comme décrit [ici](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-windows-store-dotnet-get-started-wns-push-notification).
 
 ## <a name="requesting-a-notification-channel"></a>Demande d’un canal de notification
 
