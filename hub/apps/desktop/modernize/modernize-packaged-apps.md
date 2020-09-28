@@ -1,5 +1,5 @@
 ---
-Description: Découvrez comment ajouter des expériences modernes pour les utilisateurs de Windows 10 dans une application de bureau intégrée à un package d’application Windows.
+description: Découvrez comment ajouter des expériences modernes pour les utilisateurs de Windows 10 dans une application de bureau intégrée à un package d’application Windows.
 title: Modernisation des applications de bureau packagées
 ms.date: 04/22/2019
 ms.topic: article
@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: d1ce2e7dc434558ac1efd52f6def99d63b38c57e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: adcf1e26ba5ebd2d4fb3b901e27e49da4b6d89dd
+ms.sourcegitcommit: 5d7168ebc9f43aa13051446aff45a46600e6aafe
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161513"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90783041"
 ---
 # <a name="features-that-require-package-identity"></a>Fonctionnalités nécessitant l’identité du package
 
@@ -33,6 +33,12 @@ Les API Windows Runtime de [cette liste](desktop-to-uwp-supported-api.md#list-of
 Si votre application a besoin de s’intégrer au système (par exemple, pour établir des règles de pare-feu), décrivez ces éléments dans le manifeste du package de votre application et le système s’occupera du reste. Pour la plupart de ces tâches, vous n’avez pas à écrire de code. Avec un peu de XML dans le manifeste, vous pouvez faire des choses comme démarrer un processus quand l’utilisateur ouvre une session, intégrer votre application dans l’Explorateur de fichiers et ajouter à votre application la liste des cibles d’impression qui s’affichent dans d’autres applications.
 
 Pour plus d’informations, consultez [Intégration d’une application de bureau à des extensions de package](desktop-to-uwp-extensions.md).
+
+## <a name="get-activation-info-for-packaged-apps"></a>Obtenir des informations d’activation pour les applications empaquetées
+
+À compter de la version 1809 de Windows 10, les applications de bureau empaquetées peuvent récupérer certains types d’informations d’activation lors du démarrage. Par exemple, vous pouvez obtenir des informations relatives à l’activation des applications concernant l’ouverture d’un fichier, un clic sur un toast interactif ou l’utilisation d’un protocole.
+
+Pour plus d’informations, consultez [Obtenir des informations sur l’activation pour les applications empaquetées](get-activation-info-for-packaged-apps.md).
 
 ## <a name="extend-with-uwp-components"></a>Étendre à l’aide de composants UWP
 
