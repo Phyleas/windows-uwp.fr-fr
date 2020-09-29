@@ -5,12 +5,12 @@ ms.date: 03/23/2018
 ms.topic: article
 keywords: bien démarrer, windows 10, uwp, xaml, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: 39f45b7604e71c4b57439f8c3e89548614758484
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: e832ac783c43058b24cb0d341d17ad52ff7dcc05
+ms.sourcegitcommit: 9940ed6431aadbd8d4e54ca23d8ae44d3a2d048d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80614986"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91403884"
 ---
 # <a name="get-started-with-windows-10-apps"></a>Bien démarrer avec les applications Windows 10
 
@@ -25,7 +25,7 @@ Générez des applications qui fonctionnent sur tous les appareils Windows 10, 
         <p style="margin-top: 0px; margin-bottom: 50px">Windows 10 et la plateforme Windows universelle vous permettent de générer des applications qui fonctionnent et s’affichent de manière optimale sur tous les types d’appareil Windows, ou de mettre à jour des applications existantes avec des fonctionnalités modernes.</p>
         <br>
         <a href="//docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide">Qu’est-ce qu’une application Windows ?</a><br/>
-        <a href="//developer.microsoft.com/windows/apps/design">Conception et interface utilisateur</a><br/>
+        <a href="https://docs.microsoft.com/windows/uwp/design/">Conception et interface utilisateur</a><br/>
     :::column-end:::
     :::column:::
         <img src="https://docs.microsoft.com/media/illustrations/biztalk-host-integration-install-configure.svg" alt="Setup illustration" />
@@ -40,7 +40,7 @@ Générez des applications qui fonctionnent sur tous les appareils Windows 10, 
         <p style="margin-top: 0px; margin-bottom: 50px">Que vous soyez développeur expérimenté ou que vous génériez votre première application, bénéficiez d’une expérience pratique avec la plateforme et la documentation Windows 10.</p>
         <br>
         <a href="//docs.microsoft.com/windows/uwp/get-started/create-uwp-apps">Commencer le codage</a><br/>
-        <a href="//docs.microsoft.com/uwp/">Informations de référence sur les API</a><br/>
+        <a href="//docs.microsoft.com/uwp/">Référence sur l’API</a><br/>
     :::column-end:::
 :::row-end:::
 
@@ -49,7 +49,7 @@ Générez des applications qui fonctionnent sur tous les appareils Windows 10, 
 :::row:::
     :::column:::
         <img src="https://docs.microsoft.com/media/illustrations/biztalk-get-started-get-started.svg" alt="Tutorials illustration" />
-        <h3 style="margin-top: 10px; margin-bottom: 0px">Didacticiels</h3>
+        <h3 style="margin-top: 10px; margin-bottom: 0px">Tutoriels</h3>
         <p style="margin-top: 0px; margin-bottom: 50px">Vous recherchez une expérience de formation interactive ? Ces tutoriels vont vous aider.</p>
         <br>
         <a href="//docs.microsoft.com/windows/uwp/design/basics/xaml-basics-ui">Notions de base relatives à l’IU</a><br/>
@@ -58,7 +58,7 @@ Générez des applications qui fonctionnent sur tous les appareils Windows 10, 
     :::column-end:::
     :::column:::
         <img src="https://docs.microsoft.com/media/illustrations/biztalk-get-started-scenarios.svg" alt="Samples illustration" />
-        <h3 style="margin-top: 10px; margin-bottom: 0px">exemples</h3>
+        <h3 style="margin-top: 10px; margin-bottom: 0px">Exemples</h3>
         <p style="margin-top: 0px; margin-bottom: 50px">Bénéficiez d’une expérience directe avec la plateforme Windows 10 et découvrez les API en action.</p>
         <br>
         <a href="//docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples">Utilisation d’exemples d’application Windows</a><br/>
@@ -80,19 +80,19 @@ Générez des applications qui fonctionnent sur tous les appareils Windows 10, 
 
 :::row:::
     :::column:::
-        <h3 style="margin-top: 10px; margin-bottom: 0px">Outils de développement</h3>
+        <h3 style="margin-top: 10px; margin-bottom: 0px">Outils de développeur</h3>
         <a href="https://github.com/Microsoft/WindowsTemplateStudio/">Windows Template Studio</a><br/>
-        <a href="//docs.microsoft.com/windows/uwpcommunitytoolkit/">Kit de ressources Communauté Windows</a><br/>
+        <a href="//docs.microsoft.com/windows/uwpcommunitytoolkit/">Windows Community Toolkit</a><br/>
         <a href="//developer.microsoft.com/windows/downloads/virtual-machines">Machines virtuelles</a><br/>
         <a href="//docs.microsoft.com/windows/wsl/about">Bash sur Ubuntu sur Windows</a><br/>
     :::column-end:::
     :::column:::
         <h3 style="margin-top: 10px; margin-bottom: 0px">Vous débutez dans le développement ?</h3>
-        <a href="//docs.microsoft.com/learn/browse/?products=windows&resource_type=module">Windows sur Microsoft Learn</a><br/>
+        <a href="//docs.microsoft.com/learn/browse/%3Fproducts=windows&resource_type=module">Windows sur Microsoft Learn</a><br/>
     :::column-end:::
     :::column:::
         <h3 style="margin-top: 10px; margin-bottom: 0px">Explorer les documents connexes</h3>
-        <a href="//docs.microsoft.com/dotnet/csharp/">Guide C#</a><br/>
-        <a href="//docs.microsoft.com/visualstudio/ide/">Visual Studio</a><br/>
+        <a href="//docs.microsoft.com/dotnet/csharp/">C# Guide</a><br/>
+        <a href="//docs.microsoft.com/visualstudio/ide/">Visual Studio</a><br/>
     :::column-end:::
 :::row-end:::
