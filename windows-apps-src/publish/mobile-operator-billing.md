@@ -6,12 +6,12 @@ ms.date: 05/29/2020
 ms.topic: article
 keywords: Windows 10, UWP, opérateurs mobiles, facturation mobile, facturation opérateur mobile
 ms.localizationpriority: medium
-ms.openlocfilehash: 2be7938faddaf50c96005f32c77f523ebf4061e3
-ms.sourcegitcommit: ae195892efb9d3abd1190776617984d4219c6777
+ms.openlocfilehash: 9dbdd2a86d33cf1392844294952eb9223676e256
+ms.sourcegitcommit: 426ccbdaa26bd16c7f0b270e8a51ac4ba87a5b60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85913229"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91590648"
 ---
 # <a name="mobile-operator-billing"></a>Facturation de l’opérateur mobile
 
@@ -52,6 +52,5 @@ La facturation de l’opérateur mobile est actuellement prise en charge par ces
 | Suisse          | Aube, Swisscom                                       |
 | Taïwan               | FarEasTone                                              |
 | Turquie               | Turkcell                                                |
-| Émirats Arabes Unis | Etisalat                                                |
 | États-Unis        | Sprint, Verizon                                         |
 | Royaume-Uni       | 3 ru, EE, O2, Vodaphone                                 |
