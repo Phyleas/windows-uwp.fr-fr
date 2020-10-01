@@ -2,17 +2,17 @@
 Description: NumberBox est un contrôle qui permet d’afficher et de modifier des nombres.
 title: Zone de nombre
 template: detail.hbs
-ms.date: 11/27/2019
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e3bcbfc338d629bbda1036ef722d75ed6df37cd
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9e0cd1979ca1929adc35537dfd3efccc97466391
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89169753"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91217972"
 ---
 # <a name="number-box"></a>Zone de nombre
 
@@ -174,7 +174,7 @@ En ce qui concerne les points décimaux et les virgules, la mise en forme utilis
 
 ### <a name="input-scope"></a>Étendue d’entrée
 
-`Number` est utilisé pour l’[étendue d’entrée](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.InputScopeNameValue). Cette étendue d’entrée est conçue pour fonctionner avec des chiffres compris entre 0 et 9. Il est possible de la remplacer, mais les autres types InputScope ne sont pas explicitement pris en charge.
+`Number` est utilisé pour l’[étendue d’entrée](/uwp/api/Windows.UI.Xaml.Input.InputScopeNameValue). Cette étendue d’entrée est conçue pour fonctionner avec des chiffres compris entre 0 et 9. Il est possible de la remplacer, mais les autres types InputScope ne sont pas explicitement pris en charge.
 
 ### <a name="not-a-number"></a>N’est pas un nombre
 

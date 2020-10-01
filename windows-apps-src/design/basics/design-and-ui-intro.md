@@ -2,17 +2,17 @@
 Description: Les fonctionnalités de conception universelle incluses dans chaque application UWP vous aident à créer des applications qui s’adaptent parfaitement à toute une gamme d’appareils.
 title: Introduction à la conception d’applications Windows
 ms.assetid: 50A5605E-3A91-41DB-800A-9180717C1E86
-ms.date: 05/05/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: add292dd5b58c3e8da1a0ce2c2371bf211b2a617
-ms.sourcegitcommit: 7704c888a28edc7ab0515a75afac93d1dda4d693
+ms.openlocfilehash: 75d8dfe44c9296fbaf1d8caf5127db0244fc1d8d
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84151948"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216512"
 ---
 # <a name="introduction-to-windows-app-design"></a>Introduction à la conception d’applications Windows
 

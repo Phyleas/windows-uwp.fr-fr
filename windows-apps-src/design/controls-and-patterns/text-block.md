@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 83e27ef72aea195268d5163dea3b050f48547d5c
-ms.sourcegitcommit: efa5f793607481dcae24cd1b886886a549e8d6e5
+ms.openlocfilehash: aa72b01e6c567e55e36e7f182ca962367346980c
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89412023"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220422"
 ---
 # <a name="text-block"></a>Bloc de texte
 
@@ -85,7 +85,7 @@ Certaines conditions exigent un contrôle TextBlock afin de revenir à un chemin
 - [CharacterSpacing](/uwp/api/windows.ui.xaml.controls.textblock.characterspacing) : Seule la valeur par défaut 0 permet d’utiliser le chemin rapide.
 - [TextTrimming](/uwp/api/windows.ui.xaml.controls.textblock.texttrimming) : Seules les valeurs **None**, **CharacterEllipsis** et **WordEllipsis** permettent d’utiliser le chemin rapide. La valeur **Clip** désactive le chemin rapide.
 
-> **Remarque**&nbsp;&nbsp;Dans les versions antérieures à Windows 10, version 1607, des propriétés supplémentaires ont également un impact sur le chemin rapide. Si votre application est exécutée dans une version antérieure de Windows, ces conditions entraînent également l’affichage de votre texte sur le chemin lent. Pour plus d’informations sur les versions, consultez [Code adaptatif de version](/windows/uwp/debug-test-perf/version-adaptive-code).
+> **Remarque**&nbsp;&nbsp;Dans les versions antérieures à Windows 10, version 1607, des propriétés supplémentaires ont également un impact sur le chemin rapide. Si votre application est exécutée dans une version antérieure de Windows, ces conditions entraînent également l’affichage de votre texte sur le chemin lent. Pour plus d’informations sur les versions, consultez [Code adaptatif de version](../../debug-test-perf/version-adaptive-code.md).
 - [Typography](/uwp/api/Windows.UI.Xaml.Documents.Typography) : Seules les valeurs par défaut des différentes propriétés Typography permettent d’utiliser le chemin rapide.
 - [LineStackingStrategy](/uwp/api/windows.ui.xaml.controls.textblock.linestackingstrategy) : Si [LineHeight](/uwp/api/windows.ui.xaml.controls.textblock.lineheight) est différent de 0, les valeurs **BaselineToBaseline** et **MaxHeight** désactivent le chemin rapide.
 - [IsTextSelectionEnabled](/uwp/api/windows.ui.xaml.controls.textblock.istextselectionenabled) : Seul **false** permet d’utiliser le chemin rapide. La définition de cette propriété sur **true** désactive le chemin rapide.

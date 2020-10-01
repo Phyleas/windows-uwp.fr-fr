@@ -1,16 +1,16 @@
 ---
 title: Mise en page pour les applications Windows
 description: Lors de la conception de votre application, la première chose à prendre en compte est la structure de la disposition. Cet article présente la structure commune des mises en page de base, à savoir les éléments d’interface utilisateur dont vous aurez besoin et leur emplacement sur une page. Dans les applications Windows, chaque page comprend généralement des éléments de navigation, de commande et de contenu.
-ms.date: 03/19/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 localizationpriority: medium
-ms.openlocfilehash: 551d937836f0dcf0094e54a503d2a8cd80a2f28b
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 5473542019a4f8afa3e916b914127e41a4fe05d4
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89169523"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218622"
 ---
 # <a name="page-layout"></a>Mise en page
 

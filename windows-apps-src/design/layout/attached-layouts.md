@@ -3,16 +3,16 @@ Description: Vous pouvez définir des dispositions attachées pour les utiliser 
 title: Disposition attachée
 label: AttachedLayout
 template: detail.hbs
-ms.date: 03/13/2019
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f36035bea91f39d60f44ca9e16c768eb5d75e78
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 5be16e22a30f0b366ad55f323a0f3f2aa2b7b837
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165633"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220302"
 ---
 # <a name="attached-layouts"></a>Dispositions attachées
 

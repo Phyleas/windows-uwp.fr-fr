@@ -2,16 +2,16 @@
 Description: TwoPaneView est un contrôle de disposition vous permettant de gérer l’affichage d’applications ayant 2 zones de contenu distinctes.
 title: Vue à deux volets
 template: detail.hbs
-ms.date: 01/22/2020
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c2fd792b9652e38637810b4ccd0aee94075895b
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d43c9b7f5674ed7f56f6f2d05bef44521095f56e
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174693"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91217232"
 ---
 # <a name="two-pane-view"></a>Vue à deux volets
 

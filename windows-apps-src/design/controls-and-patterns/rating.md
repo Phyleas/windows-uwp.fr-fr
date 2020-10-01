@@ -2,7 +2,7 @@
 description: Permet aux utilisateurs de visualiser et définir des évaluations qui reflètent la satisfaction vis-à-vis du contenu et des services.
 title: Contrôle d’évaluation
 template: detail.hbs
-ms.date: 10/25/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: abarlow
@@ -10,12 +10,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: b93938b6a967f503c2699347979f300eb34e1635
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 989ecf4aec60b6a9c4324d97b33dd4b55a7251a6
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89169613"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218862"
 ---
 # <a name="rating-control"></a>Contrôle d’évaluation
 

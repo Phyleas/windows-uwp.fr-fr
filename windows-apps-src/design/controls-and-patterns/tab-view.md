@@ -2,17 +2,17 @@
 Description: TabView offre un moyen flexible d’organiser plusieurs documents dans des onglets dynamiques
 title: Vue d’onglets
 template: detail.hbs
-ms.date: 09/12/2019
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: f59bb821b65eda89aa1fbc88e9c38d5789f61f6e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 62e2156dc9988d458520648751c67cd71292f72c
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163423"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220482"
 ---
 # <a name="tabview"></a>TabView
 

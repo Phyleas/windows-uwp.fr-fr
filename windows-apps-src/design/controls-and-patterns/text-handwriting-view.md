@@ -3,7 +3,7 @@ Description: Personnalisez la vue de l’écriture manuscrite intégrée en entr
 title: Entrée de texte avec la vue de l’écriture manuscrite
 label: Text input with the handwriting view
 template: detail.hbs
-ms.date: 10/13/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: sewen
@@ -11,12 +11,12 @@ design-contact: minah.kim
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: e7c25a77b552ffc187a4e49a02b7facd771e8258
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 64963128679f3bb50afe1ba4c939ec6367ad9561
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175583"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218802"
 ---
 # <a name="text-input-with-the-handwriting-view"></a>Entrée de texte avec la vue de l’écriture manuscrite
 
@@ -316,6 +316,7 @@ private double GetPopupVerticalOffset()
 Comme avec tous les contrôles de framework XAML, vous pouvez personnaliser la structure visuelle et le comportement visuel d’un [HandwritingView](/uwp/api/windows.ui.xaml.controls.handwritingview) selon vos besoins spécifiques.
 
 Pour voir un exemple complet de la création d’un modèle personnalisé, consultez la procédure [Créer des contrôles de transport personnalisés](./custom-transport-controls.md) ou [Exemple de contrôle d’édition personnalisé](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomEditControl).
+
 
 
 

@@ -2,15 +2,15 @@
 title: Formulaires
 description: Découvrez les instructions relatives à la conception et à la création de dispositions XAML pour les formulaires d’une application UWP.
 template: detail.hbs
-ms.date: 11/07/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, fluent
-ms.openlocfilehash: 0113cbf50601a3db717753ab2e12524fa281daba
-ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
+ms.openlocfilehash: 0c55d98d0680142ad1d4f319b8910fd335fe8d5f
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304691"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219462"
 ---
 # <a name="forms"></a>Formulaires
 Un formulaire est un groupe de contrôles qui collectent des données auprès de l’utilisateur et les envoient. Les formulaires sont généralement utilisés pour les pages de paramètres, les enquêtes, la création de comptes et bien plus encore. 

@@ -2,16 +2,16 @@
 title: Style d’écriture
 description: Utiliser une voix et un ton adaptés est essentiel pour que le texte de votre application semble faire naturellement partie de sa conception.
 keywords: UWP, Windows 10, texte, écriture, voix, ton, conception, interface utilisateur, expérience utilisateur
-ms.date: 05/07/2018
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: c17d4c0aca4c59e18a13bf42bad16e6739938717
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 324aae957d53c7ec63817c8f0e80909d25dc1c0a
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89168673"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216622"
 ---
 # <a name="writing-style"></a>Style d’écriture
 

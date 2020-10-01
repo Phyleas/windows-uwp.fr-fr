@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 keywords: développement d’applications de bureau Win32 pour Windows
-ms.openlocfilehash: d4415bc703acf0b94f6f8a6fe8aab053620336c6
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 0aa439010138af80f91c4e02776163577658d6cc
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89168903"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216732"
 ---
 # <a name="choose-your-app-platform"></a>Choisir votre plateforme d’application
 
@@ -129,7 +129,7 @@ Les PWA permettent aux développeurs d’empaqueter le code de leur site web pou
 
 ### <a name="xamarin"></a>Xamarin
 
-Utilisez Xamarin pour créer des applications multiplateformes pour Windows 10 pouvant s’exécuter également sur iOS et Android. Pour plus d’informations, consultez [Xamarin](https://docs.microsoft.com/xamarin/xamarin-forms/get-started/index).
+Utilisez Xamarin pour créer des applications multiplateformes pour Windows 10 pouvant s’exécuter également sur iOS et Android. Pour plus d’informations, consultez [Xamarin](/xamarin/xamarin-forms/get-started/index).
 
 ### <a name="uno-platform"></a>Plateforme Uno
 

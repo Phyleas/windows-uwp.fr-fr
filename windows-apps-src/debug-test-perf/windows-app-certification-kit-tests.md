@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, certification des applications
 ms.localizationpriority: medium
-ms.openlocfilehash: bb647d844c32286a2d612231b3069430f11fcad0
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 3205ef65922cfe9cf44fbf0a24c90b4e592ca663
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174013"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216422"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Tests du Kit de certification des applications Windows
 
@@ -412,7 +412,7 @@ Inspirez-vous du tableau suivant.
 <tr><td>
 <p>L’image doit définir au moins un type Variant sans qualificateur TargetSize. Elle doit définir un qualificateur Scale ou laisser Scale et TargetSize non spécifiés, ce qui donne la valeur par défaut Scale-100.</p>
 </td><td>
-<p>Pour plus d’informations, voir <a href="https://docs.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design">Conception réactive 101 pour les applications UWP</a> et <a href="https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data">Recommandations en matière de ressources d’application</a>.</p>
+<p>Pour plus d’informations, voir <a href="/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design">Conception réactive 101 pour les applications UWP</a> et <a href="/windows/uwp/app-settings/store-and-retrieve-app-data">Recommandations en matière de ressources d’application</a>.</p>
 </td></tr>
 <tr><td>
 <p>Un fichier « resources.pri » manque dans le package.</p>
@@ -434,7 +434,7 @@ Inspirez-vous du tableau suivant.
 <tr><td>
 <p>La chaîne « {string} » ne respecte pas la limite maximale de {number} caractères.</p>
 </td><td>
-<p>Consultez les <a href="https://docs.microsoft.com/windows/uwp/publish/app-package-requirements">Exigences relatives aux packages d’applications</a>.</p>
+<p>Consultez les <a href="/windows/uwp/publish/app-package-requirements">Exigences relatives aux packages d’applications</a>.</p>
 <p>Dans le message réel, {string} est remplacé par la chaîne affectée par l’erreur et {number} représente la longueur maximale.</p>
 </td></tr>
 <tr><td>
@@ -447,12 +447,12 @@ Inspirez-vous du tableau suivant.
 <tr><td>
 <p>La chaîne ne doit pas être vide (sa longueur doit être supérieure à zéro).</p>
 </td><td>
-<p>Pour plus d’informations, voir <a href="https://docs.microsoft.com/windows/uwp/publish/app-package-requirements">Exigences relatives aux packages d’applications</a>.</p>
+<p>Pour plus d’informations, voir <a href="/windows/uwp/publish/app-package-requirements">Exigences relatives aux packages d’applications</a>.</p>
 </td></tr>
 <tr><td>
 <p>Il n’y a aucune ressource par défaut spécifiée dans le fichier « resources.pri ».</p>
 </td><td>
-<p>Pour plus d’informations, voir <a href="https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data">Recommandations en matière de ressources de l’application</a>.</p>
+<p>Pour plus d’informations, voir <a href="/windows/uwp/app-settings/store-and-retrieve-app-data">Recommandations en matière de ressources de l’application</a>.</p>
 <p>Dans la configuration de build par défaut, Visual Studio inclut uniquement les ressources d’image avec qualificateur « Scale-200 » dans le package d’application lors de la génération des offres groupées, et place les autres ressources dans le package de ressources. Prenez soin d’inclure les ressources d’image avec qualificateur « Scale-200 » ou de configurer votre projet pour qu’il intègre les ressources dont vous disposez.</p>
 </td></tr>
 <tr><td>

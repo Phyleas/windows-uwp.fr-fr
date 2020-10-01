@@ -5,12 +5,12 @@ keywords: nouveautés, mise à jour, fonctionnalités, conseils aux développeur
 ms.date: 08/14/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: eb6900b4d5ad529ee2e94f09439dda6abcaebac8
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 92ed09940800160af8fcff6aec7dde26144cffe9
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174393"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220332"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2018"></a>Nouveautés apportées dans la documentation du développeur Windows en août 2018
 
@@ -58,7 +58,7 @@ Le site [Documents du projet Rome](/windows/project-rome/) a été réorganisé 
 
 ### <a name="xbox-live-unity-plugin"></a>Plug-in Xbox Live Unity
 
-Le plug-in Xbox Live pour Unity prend en charge l'ajout de signatures, de statistiques, de listes d'amis, de stockage cloud et de classements Xbox Live à votre titre. [Regardez la vidéo](https://youtu.be/fVQZ-YgwNpY) pour en savoir plus, puis [téléchargez le package GitHub](https://aka.ms/UnityPlugin) pour démarrer.
+Le plug-in Xbox Live pour Unity prend en charge l'ajout de signatures, de statistiques, de listes d'amis, de stockage cloud et de classements Xbox Live à votre titre. [Regardez la vidéo](https://youtu.be/fVQZ-YgwNpY) pour en savoir plus, puis [téléchargez le package GitHub](/gaming/xbox-live/get-started/setup-ide/creators/unity-win10/live-cr-unity-win10-nav?WT.mc_id=windowsdocs-twi) pour démarrer.
 
 ### <a name="one-dev-question"></a>One Dev Question
 

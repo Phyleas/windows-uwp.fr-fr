@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, introduction
 ms.localizationpriority: medium
-ms.openlocfilehash: 39606a1797f56e8bb63f0afb99d7c86d78934662
-ms.sourcegitcommit: 6009896ead442b378106d82870f249dc8b55b886
+ms.openlocfilehash: c4ce44b942f577e6b1a24a9a078b75cec77dfad4
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89643784"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219882"
 ---
 # <a name="introduction-to-cwinrt"></a>Introduction à C++/WinRT
 &nbsp;
@@ -26,7 +26,7 @@ C++/WinRT constitue le remplacement recommandé par Microsoft pour la projection
 > [!IMPORTANT]
 > Certains des éléments les plus importants de C++/WinRT à connaître sont décrits dans les sections [Prise en charge du SDK pour C++/WinRT](#sdk-support-for-cwinrt) et [Prise en charge Visual Studio pour C++/WinRT, XAML, l’extension VSIX et le package NuGet](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
-Consultez également [Où trouver des exemples d’applications C++/WinRT ?](/windows/uwp/cpp-and-winrt-apis/faq#where-can-i-find-cwinrt-sample-apps).
+Consultez également [Où trouver des exemples d’applications C++/WinRT ?](./faq.md#where-can-i-find-cwinrt-sample-apps).
 
 ## <a name="language-projections"></a>Projections de langage
 Windows Runtime est basé sur les API COM (Component Object Model) et est conçu pour être accessible par le biais de *projections de langage*. Une projection masque les détails COM et fournit une expérience de programmation plus naturelle pour un langage donné.

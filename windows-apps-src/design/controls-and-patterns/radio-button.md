@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ee933bd28594263e61e654b14b0541c6fa9ed41b
-ms.sourcegitcommit: 875bd348608547e7a66fa4b460efe64b3246807e
+ms.openlocfilehash: 9d6fe34d9f53142cfe2148f79bf936a473012a49
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90080841"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219052"
 ---
 # <a name="radio-buttons"></a>Cases d’option
 
@@ -45,41 +45,41 @@ Le comportement singulier d’un groupe RadioButtons le distingue des [cases à 
 >Il existe deux façons de créer des groupes de cases d’option.
 >
 >- À compter de WinUI 2.3, nous vous recommandons d’utiliser le contrôle **[RadioButtons](/uwp/api/microsoft.ui.xaml.controls.radiobuttons)** . Ce contrôle simplifie la disposition, gère la navigation au clavier et l’accessibilité, et prend en charge la liaison à une source de données.
->- Vous pouvez utiliser des groupes de contrôles **[RadioButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RadioButton)** individuels. Si votre application n’utilise pas WinUI 2.3 ou une version ultérieure, il s’agit de la seule option.
+>- Vous pouvez utiliser des groupes de contrôles **[RadioButton](/uwp/api/Windows.UI.Xaml.Controls.RadioButton)** individuels. Si votre application n’utilise pas WinUI 2.3 ou une version ultérieure, il s’agit de la seule option.
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
 Utilisez des cases d’option pour permettre aux utilisateurs d’effectuer une sélection parmi au moins deux options qui s’excluent mutuellement.
 
-:::image type="content" source="images/radiobutton_basic.png" alt-text="Groupe RadioButtons avec une case d’option sélectionnée":::
+:::image type="content" source="images/radiobutton_basic.png" alt-text="Exemple de groupe RadioButtons avec une case d’option sélectionnée":::
 
 Utilisez les cases d’option quand les utilisateurs ont besoin de voir toutes les options avant d’effectuer une sélection. Les cases d’option mettent en évidence toutes les options de la même manière. Ainsi, elles peuvent donner plus d’importance à une option qu’elle n’en a vraiment ou que vous voulez lui en donner.
 
 À moins que les options méritent toutes la même attention, envisagez d’utiliser d’autres contrôles. Par exemple, pour recommander l’option convenant le mieux à la plupart des utilisateurs dans la plupart des cas, utilisez une [zone de liste modifiable](combo-box.md) pour l’afficher comme option par défaut.
 
-:::image type="content" source="images/combo_box_collapsed.png" alt-text="Zone de liste modifiable affichant une option par défaut":::
+:::image type="content" source="images/combo_box_collapsed.png" alt-text="Exemple de groupe RadioButtons avec une case d’option sélectionnée":::
 
 S’il n’existe que deux options possibles qui peuvent être exprimées clairement en tant que choix binaire unique, par exemple activé/désactivé ou oui/non, combinez-les dans un contrôle [case à cocher](checkbox.md) ou [bouton bascule](toggles.md) unique. Par exemple, utilisez une case à cocher unique pour « J’accepte », plutôt que deux cases d’option pour « J’accepte » et « Je n’accepte pas ».
 
 N’utilisez pas deux cases d’option pour un choix binaire unique :
 
-:::image type="content" source="images/radiobutton-vs-checkbox-rb.png" alt-text="Deux cases d’option présentant un choix binaire":::
+:::image type="content" source="images/radiobutton-vs-checkbox-rb.png" alt-text="Exemple de groupe RadioButtons avec une case d’option sélectionnée":::
 
 Utilisez plutôt une case à cocher :
 
-:::image type="content" source="images/radiobutton-vs-checkbox-cb.png" alt-text="Une case à cocher est une bonne alternative pour présenter un choix binaire.":::
+:::image type="content" source="images/radiobutton-vs-checkbox-cb.png" alt-text="Exemple de groupe RadioButtons avec une case d’option sélectionnée":::
 
 Quand les utilisateurs peuvent sélectionner plusieurs options, utilisez des [cases à cocher](checkbox.md).
 
-:::image type="content" source="images/checkbox2.png" alt-text="Les cases à cocher prennent en charge la sélection multiple.":::
+:::image type="content" source="images/checkbox2.png" alt-text="Exemple de groupe RadioButtons avec une case d’option sélectionnée":::
 
 Quand les utilisateurs doivent choisir une valeur dans une plage de valeurs (par exemple, *10, 20, 30,... 100*), utilisez un contrôle de [curseur](slider.md).
 
-:::image type="content" source="images/controls/slider.png" alt-text="Contrôle de curseur affichant une valeur dans une plage de valeurs":::
+:::image type="content" source="images/controls/slider.png" alt-text="Exemple de groupe RadioButtons avec une case d’option sélectionnée":::
 
 S’il y a plus de huit options, utilisez une [zone de liste modifiable](combo-box.md).
 
-:::image type="content" source="images/combo_box_scroll.png" alt-text="Zone de liste affichant plusieurs options":::
+:::image type="content" source="images/combo_box_scroll.png" alt-text="Exemple de groupe RadioButtons avec une case d’option sélectionnée":::
 
 Si les options disponibles dépendent du contexte actuel d’une application ou si elles peuvent changer de façon dynamique, utilisez un contrôle de liste.
 
@@ -294,7 +294,7 @@ Ici, vous déclarez un contrôle `RadioButtons` simple avec trois options. La pr
 
 Le résultat ressemble à ceci :
 
-:::image type="content" source="images/radiobuttons-default-group.png" alt-text="Groupe de trois cases d’option":::
+:::image type="content" source="images/radiobuttons-default-group.png" alt-text="Exemple de groupe RadioButtons avec une case d’option sélectionnée":::
 
 Pour effectuer une action lorsque l’utilisateur sélectionne une option, gérez l’événement [SelectionChanged](/uwp/api/microsoft.ui.xaml.controls.radiobuttons.selectionchanged). Ici, vous changez la couleur d’arrière-plan d’un élément [Border](/uwp/api/windows.ui.xaml.controls.border) nommé « ExampleBorder » (`<Border x:Name="ExampleBorder" Width="100" Height="100"/>`).
 
@@ -344,7 +344,7 @@ Ici, les éléments [SymbolIcon](/uwp/api/windows.ui.xaml.controls.symbolicon) s
 </muxc:RadioButtons>
 ```
 
-:::image type="content" source="images/radiobuttons-symbolicon.png" alt-text="Un groupe de cases d’option avec icônes de symboles":::
+:::image type="content" source="images/radiobuttons-symbolicon.png" alt-text="Exemple de groupe RadioButtons avec une case d’option sélectionnée":::
 
 Vous pouvez également utiliser des contrôles [RadioButton](/uwp/api/Windows.UI.Xaml.Controls.RadioButton) individuels pour remplir les éléments `RadioButtons`. Il s’agit d’un cas particulier que nous aborderons plus loin. Consultez [Contrôles RadioButton dans un groupe RadioButtons]().
 
@@ -443,7 +443,7 @@ Par défaut, le contrôle `RadioButtons` dispose ses cases d’option verticalem
 </muxc:RadioButtons>
 ```
 
-:::image type="content" source="images/radiobuttons-multi-column.png" alt-text="Cases d’option dans deux groupes à trois colonnes":::
+:::image type="content" source="images/radiobuttons-multi-column.png" alt-text="Exemple de groupe RadioButtons avec une case d’option sélectionnée":::
 
 > [!TIP]
 > Pour que les éléments soient disposés sur une seule ligne horizontale, affectez à `MaxColumns` une valeur égale au nombre d’éléments dans le groupe.
@@ -552,7 +552,7 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 
 Ces deux groupes de contrôles `RadioButton` ressemblent à ceci :
 
-:::image type="content" source="images/radio-button-groups.png" alt-text="Cases d’option en deux groupes":::
+:::image type="content" source="images/radio-button-groups.png" alt-text="Exemple de groupe RadioButtons avec une case d’option sélectionnée":::
 
 ### <a name="radio-button-states"></a>États des cases d’option
 
@@ -578,9 +578,9 @@ L’espacement par défaut des contrôles `RadioButton` individuels est différe
 
 Les images suivantes montrent l’espacement préféré des cases d’option dans un groupe.
 
-:::image type="content" source="images/radiobutton-layout.png" alt-text="Image montrant un ensemble de cases d’option organisées verticalement":::
+:::image type="content" source="images/radiobutton-layout.png" alt-text="Exemple de groupe RadioButtons avec une case d’option sélectionnée":::
 
-:::image type="content" source="images/radiobutton-redline.png" alt-text="Image montrant les recommandations d’espacement des cases d’option":::
+:::image type="content" source="images/radiobutton-redline.png" alt-text="Exemple de groupe RadioButtons avec une case d’option sélectionnée":::
 
 > [!NOTE]
 > Si vous utilisez un contrôle RadioButtons de WinUI, l’espacement, les marges et l’orientation sont déjà optimisés.

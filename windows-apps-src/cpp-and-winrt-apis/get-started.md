@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, norme, c++, cpp, winrt, projection, bien démarrer, prise en main
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b1ec459875b909e62c1d4a615db57343d660e9b
-ms.sourcegitcommit: 41dbee78d827107c224a9136c26f90be4dfe12ad
+ms.openlocfilehash: f38269acd9f1d6e2e830b51b3fcfa3a9014f2d7e
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90845558"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219902"
 ---
 # <a name="get-started-with-cwinrt"></a>Bien démarrer avec C++/WinRT
 
@@ -183,7 +183,7 @@ Sachez que XAML fonctionne mieux avec les langages de programmation qui offrent 
 
 ## <a name="sample-apps-written-in-cwinrt"></a>Exemples d’applications écrites en C++/WinRT
 
-Consultez [Où trouver des exemples d’applications C++/WinRT ?](/windows/uwp/cpp-and-winrt-apis/faq#where-can-i-find-cwinrt-sample-apps).
+Consultez [Où trouver des exemples d’applications C++/WinRT ?](./faq.md#where-can-i-find-cwinrt-sample-apps).
 
 ## <a name="important-apis"></a>API importantes
 * [SyndicationClient::RetrieveFeedAsync, méthode](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)

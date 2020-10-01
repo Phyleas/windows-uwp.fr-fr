@@ -6,12 +6,12 @@ ms.date: 04/08/2019
 ms.topic: article
 keywords: windows 10, uwp, déboguer, test, performances
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f1ff6a98182f4832a2a1b82bf8ceca4aa176c36
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c18cb3c5b8a979e7c7c6485e6989736d818613ba
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157262"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220352"
 ---
 # <a name="deploying-and-debugging-uwp-apps"></a>Déploiement et débogage des applications UWP
 
@@ -178,7 +178,7 @@ Pour obtenir de l’aide, voir les exemples suivants :
   - **Chemin du dossier de disposition** = `\\NETWORK-SHARE\Layouts\App1`
   - **Chemin d’inscription du package** = `\\NETWORK-SHARE\Layouts\App1`
 
-Quand vous inscrivez la disposition à partir du réseau pour la première fois, vos informations d’identification sont mises en cache sur l’appareil cible, vous n’avez donc pas besoin de vous connecter chaque fois. Pour supprimer les informations d’identification mises en cache, vous pouvez utiliser l’[outil WinAppDeployCmd.exe](https://docs.microsoft.com/windows/uwp/packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool) du SDK Windows 10 avec la commande **deletecreds**.
+Quand vous inscrivez la disposition à partir du réseau pour la première fois, vos informations d’identification sont mises en cache sur l’appareil cible, vous n’avez donc pas besoin de vous connecter chaque fois. Pour supprimer les informations d’identification mises en cache, vous pouvez utiliser l’[outil WinAppDeployCmd.exe](../packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool.md) du SDK Windows 10 avec la commande **deletecreds**.
 
 Vous ne pouvez pas sélectionner **conserver tous les fichiers sur l’appareil** quand vous inscrivez la disposition à partir du réseau, car aucun fichier n’est copié physiquement sur l’appareil distant.
 
