@@ -116,17 +116,6 @@
   items:
     - name: Générer des codes promotionnels
       href: ../publish/generate-promotional-codes.md
-    - name: Création d’une campagne de publicité pour votre application
-      href: ../publish/create-an-ad-campaign-for-your-app.md
-      items:
-        - name: Gérer votre campagne de publicité
-          href: ../publish/managing-your-ad-campaign.md
-        - name: À propos des publicités maison
-          href: ../publish/about-house-ads.md
-        - name: À propos des annonces de la communauté
-          href: ../publish/about-community-ads.md
-        - name: Questions courantes sur les campagnes de publicité
-          href: ../publish/common-questions.md
     - name: Créer une campagne personnalisée de promotion d’applications
       href: ../publish/create-a-custom-app-promotion-campaign.md
     - name: Commercialiser des applications et composants additionnels
