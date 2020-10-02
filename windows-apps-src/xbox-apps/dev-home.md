@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 permalink: en-us/docs/xdk/dev-home.html
 ms.localizationpriority: medium
-ms.openlocfilehash: 40100adb1bd9337d933b8ebd155847bde71e341a
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 291b25e962aa8ac37705fd0db544f138036949d2
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172813"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636609"
 ---
 # <a name="developer-home-on-the-console-dev-home"></a>Page d’hébergement pour développeurs sur la console (dev orig)
    
@@ -30,10 +30,10 @@ Pour lancer la page d’hébergement dev à partir de la récupération de novem
    1. Sélectionner **tous les paramètres**  
    1. Dans la page **développeur** par défaut, sélectionnez page d' **hébergement des développeurs** (l’icône de démarrage)   
 
- ![](images/dev_home_icons.png)   
+ ![Capture d’écran de la page développeur dans paramètres.](images/dev_home_icons.png)   
   
 Sur les récupérations antérieures, sélectionnez la vignette dev Accueil sur le côté droit de l’écran d’accueil dans **contenu proposé** ou affichez la liste des applications dans Xbox One Manager et lancez **dev Accueil**.   
- ![](images/dev_home_1.png) 
+ ![Capture d’écran de l’onglet APPLICATIONS, avec l’option de lancement mise en surbrillance.](images/dev_home_1.png) 
 <a id="ID4EBC"></a>
 
    
@@ -53,12 +53,12 @@ L’en-tête de l’interface utilisateur de l’hébergement dev contient les i
   
 Le reste de l’interface utilisateur de la page d’hébergement dev est divisé en pages suivantes. Pour plus d’informations sur les outils de ces pages, consultez leurs rubriques individuelles.   
  
-   *  [Page d'accueil](devhome-home.md)  
+   *  [Accueil](devhome-home.md)  
    *  [Xbox Live](devhome-live.md)  
    *  [Paramètres](devhome-settings.md)  
    *  [Capture de média](devhome-capture.md)  
    *  [Mise en réseau](devhome-networking.md)  
-   *  [Niveau de performance](devhome-performance.md)  
+   *  [Performances](devhome-performance.md)  
 
   
 <a id="ID4EKE"></a>
@@ -81,10 +81,10 @@ Plusieurs outils existants et à venir dans dev orig, tels que la mise en résea
    
   
 Pour accéder au mode alignement, mettez en surbrillance le titre de l’outil approprié, appuyez sur le bouton **Afficher** sur votre contrôleur, puis sélectionnez **Aligner** dans le menu contextuel :  
- ![](images/dev_home_4.png)   
+ ![Capture d’écran de la page d’hébergement DEV montrant l’option magnétisme mise en surbrillance.](images/dev_home_4.png)   
   
 L’outil Accueil du développeur s’ancrera à droite de l’écran. Vous pouvez changer de contexte en appuyant comme d’habitude deux fois sur le bouton Nexus.  
- ![](images/dev_home_5.png)  
+ ![Capture d’écran montrant la page d’hébergement DEV alignée à droite montrant que vous avez accès à vos outils pendant que vous effectuez des tests.](images/dev_home_5.png)  
 <a id="ID4EKF"></a>
 
    
@@ -102,7 +102,7 @@ L’outil Accueil du développeur a été conçu pour être modulable et personn
    
   
 Pour modifier la taille ou la position d’un outil, utilisez le bouton de menu contextuel (bouton afficher sur votre contrôleur), tandis que le titre a le focus. Dans le menu contextuel, sélectionnez **déplacer** ou **Redimensionner**.   
- ![](images/dev_home_6.png)  
+ ![Capture d’écran de la page d’hébergement DEV alignée à droite montrant l’option déplacer en surbrillance.](images/dev_home_6.png)  
 <a id="ID4EEG"></a>
 
    
@@ -111,7 +111,7 @@ Pour modifier la taille ou la position d’un outil, utilisez le bouton de menu 
    
   
 Dans le menu principal, vous pouvez sélectionner **espace de travail** , puis **modifier la couleur du thème**. Sélectionnez une nouvelle couleur et sélectionnez **Enregistrer** pour mettre à jour la couleur de thème utilisée pour la mise en surbrillance du focus.   
- ![](images/dev_home_7.png)  
+ ![Capture d’écran de la page d’hébergement DEV montrant l’espace de travail et les options de couleur de thème sélectionnées.](images/dev_home_7.png)  
 <a id="ID4EVG"></a>
 
    
@@ -120,7 +120,7 @@ Dans le menu principal, vous pouvez sélectionner **espace de travail** , puis *
    
   
 Si un package contient plusieurs applications, la page d’hébergement dev vous permet de définir l’application par défaut à lancer. Mettez en surbrillance le package dans le lanceur et appuyez sur le bouton **A** pour ouvrir la liste des applications disponibles. Mettez en surbrillance celui que vous souhaitez définir comme valeur par défaut et appuyez sur le bouton **Afficher** , puis choisissez **définir comme valeur par défaut** dans le menu contextuel.   
- ![](images/dev_home_setdefault.png)  
+ ![Capture d’écran de la page d’hébergement DEV avec l’option définir en tant que valeur par défaut mise en surbrillance.](images/dev_home_setdefault.png)  
 <a id="ID4EGH"></a>
 
    
@@ -129,13 +129,13 @@ Si un package contient plusieurs applications, la page d’hébergement dev vous
    
   
 À partir du lanceur, en bas de la liste applications et jeux installés, vous pouvez sélectionner l’option **inscrire un jeu sur un partage réseau** pour exécuter une version libre de fichier d’un titre à distance.   
- ![](images/dev_home_8.png)   
+ ![Capture d’écran de la page d’hébergement DEV avec l’option inscrire un jeu à partir d’un partage réseau mise en surbrillance.](images/dev_home_8.png)   
   
 Vous pouvez ensuite entrer le chemin d’accès réseau vers le fichier appxmanifest.xml pour le titre que vous souhaitez inscrire. La page d’hébergement dev tente d’enregistrer le titre à l’aide des informations d’identification existantes pour ce partage et, si nécessaire, vous invite à entrer de nouvelles informations d’identification réseau. Si vous avez besoin d’accéder à des partages supplémentaires (par exemple, pour accéder à des ressources liées symboliquement sur un serveur distinct), vous devez les ajouter à l’aide de l’option ci-dessous.   
    
   
 Vous pouvez gérer ces informations d’identification stockées (et en ajouter d’autres) sur la console via l’option **gérer les informations d’identification réseau** du menu principal.   
- ![](images/dev_home_9.png)   
+ ![Capture d’écran de la page d’hébergement DEV avec l’option gérer les informations d’identification réseau mise en surbrillance.](images/dev_home_9.png)   
   
 Vous pouvez afficher les informations d’identification actuellement sur la console, modifier les informations d’identification en sélectionnant le chemin d’accès et en cliquant sur **un** bouton et en supprimant les informations d’identification en sélectionnant le lien supprimer et en cliquant sur **un** bouton.   
    
@@ -143,7 +143,7 @@ Vous pouvez afficher les informations d’identification actuellement sur la con
 
    
 
-## <a name="in-this-section"></a>Contenu de cette section  
+## <a name="in-this-section"></a>Dans cette section  
   
 [Page d’hébergement (dev orig)](devhome-home.md)  
 

@@ -1,20 +1,20 @@
 ---
 title: Utilisation du MRT pour les applications de bureau et les jeux convertis
-description: En empaquetant votre application ou votre jeu .NET ou Win32 sous la forme d’un package. msix ou. AppX, vous pouvez tirer parti du système de gestion des ressources pour charger les ressources d’application adaptées au contexte d’exécution. Cette rubrique détaillée décrit ces techniques.
+description: En incluant votre application ou jeu .NET ou Win32 dans un package .msix ou .appx, vous pouvez exploiter le système de gestion des ressources pour charger des ressources d’application adaptées au contexte d’exécution. Cette rubrique détaillée décrit ces techniques.
 ms.date: 10/25/2017
 ms.topic: article
 keywords: Windows 10, UWP, MRT, PRI. ressources, jeux, Centennial, convertisseur d’applications de bureau, MUI, assembly satellite
 ms.localizationpriority: medium
-ms.openlocfilehash: dafce15fa259fdbc8a0afab90b6617dc6cc37cf4
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b86cbcfcc5a6c6284b993dcad1325b108b1ab353
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157613"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636489"
 ---
 # <a name="use-the-windows-10-resource-management-system-in-a-legacy-app-or-game"></a>Utiliser le système de gestion des ressources Windows 10 dans une application ou un jeu hérité
 
-Les applications et les jeux .NET et Win32 sont souvent localisés dans différentes langues pour étendre leur marché complet adressable. Pour plus d’informations sur la proposition de valeur de la localisation de votre application, consultez [Internationalisation et localisation](../design/globalizing/globalizing-portal.md). En empaquetant votre application ou votre jeu .NET ou Win32 sous la forme d’un package. msix ou. AppX, vous pouvez tirer parti du système de gestion des ressources pour charger les ressources d’application adaptées au contexte d’exécution. Cette rubrique détaillée décrit ces techniques.
+Les applications et les jeux .NET et Win32 sont souvent localisés dans différentes langues pour étendre leur marché complet adressable. Pour plus d’informations sur la proposition de valeur de la localisation de votre application, consultez [Internationalisation et localisation](../design/globalizing/globalizing-portal.md). En incluant votre application ou jeu .NET ou Win32 dans un package .msix ou .appx, vous pouvez exploiter le système de gestion des ressources pour charger des ressources d’application adaptées au contexte d’exécution. Cette rubrique détaillée décrit ces techniques.
 
 Il existe de nombreuses façons de localiser une application Win32 traditionnelle, mais Windows 8 a introduit un [nouveau système de gestion des ressources](/previous-versions/windows/apps/jj552947(v=win.10)) qui fonctionne dans des langages de programmation, entre différents types d’applications, et fournit des fonctionnalités au-delà de la localisation simple. Ce système sera appelé « MRT » dans cette rubrique. Historiquement, qui conpensée pour « technologie de ressources moderne », mais le terme « moderne » a été abandonné. Le gestionnaire de ressources peut également être appelé MRM (moderne Gestionnaire des ressources) ou PRI (index de ressources de package).
 
@@ -38,7 +38,7 @@ Dans de nombreux cas, vous pouvez continuer à utiliser vos formats de localisat
 <tr>
 <td>Utiliser le MRT pour identifier et localiser des ressources</td>
 <td>Conditions préalables à la réduction des tailles de téléchargement et d’installation ; langue de secours automatique</td>
-<td>Moyenne</td>
+<td>Medium</td>
 </tr>
 <tr>
 <td>Créer des packs de ressources</td>
@@ -58,11 +58,11 @@ La plupart des applications non triviales contiennent des éléments d’interfa
 
 Ainsi, l’objectif principal de toute technologie de gestion des ressources est de traduire, lors de l’exécution, une demande de *nom de ressource* logique ou symbolique (telle que `SAVE_BUTTON_LABEL` ) en la meilleure *valeur* réelle possible (par exemple, « enregistrer ») à partir d’un ensemble de *candidats* possibles (par exemple, « enregistrer », « Speichern » ou « 저장 »). Le MRT fournit une fonction de ce type et permet aux applications d’identifier les candidats aux ressources à l’aide d’un large éventail d’attributs, appelés *qualificateurs*, tels que la langue de l’utilisateur, le facteur d’échelle d’affichage, le thème sélectionné par l’utilisateur et d’autres facteurs environnementaux. Le programme MRT prend même en charge les qualificateurs personnalisés pour les applications qui en ont besoin (par exemple, une application peut fournir des ressources graphiques différentes aux utilisateurs ayant ouvert une session avec un compte ou des utilisateurs invités, sans ajouter explicitement ce contrôle dans chaque partie de leur application). MRT fonctionne avec les ressources de type chaîne et les ressources basées sur des fichiers, où les ressources basées sur les fichiers sont implémentées en tant que références aux données externes (les fichiers eux-mêmes).
 
-### <a name="example"></a>Exemple
+### <a name="example"></a> Exemple
 
 Voici un exemple simple d’une application avec des étiquettes de texte sur deux boutons ( `openButton` et `saveButton` ) et un fichier PNG utilisé pour un logo ( `logoImage` ). Les étiquettes de texte sont localisées en anglais et en allemand, et le logo est optimisé pour les affichages de bureau normaux (facteur d’échelle de 100%) et les téléphones haute résolution (facteur d’échelle de 300%). Notez que ce diagramme présente une vue conceptuelle de haut niveau du modèle. elle ne correspond pas exactement à l’implémentation.
 
-<p><img src="images\conceptual-resource-model.png"/></p>
+:::image type="content" source="images\conceptual-resource-model.png" alt-text="Capture d’écran d’une étiquette de code source, d’une étiquette de table de recherche et d’un nom de fichier sur le disque.":::
 
 Dans le graphique, le code de l’application fait référence aux trois noms de ressource logique. Lors de l’exécution, la `GetResource` Pseudo-fonction utilise MRT pour rechercher les noms de ressources dans la table de ressources (appelée fichier PRI) et trouver le candidat le plus approprié en fonction des conditions ambiantes (la langue de l’utilisateur et le facteur d’échelle de l’affichage). Dans le cas des étiquettes, les chaînes sont utilisées directement. Dans le cas de l’image du logo, les chaînes sont interprétées comme des noms de fichiers et les fichiers sont lus sur le disque. 
 
@@ -198,7 +198,7 @@ Si vous souhaitez utiliser le concepteur dans Visual Studio :
 1. Créez le `Strings\en-us` dossier (ou un autre langage approprié) dans votre projet et ajoutez un **nouvel élément** au dossier racine de votre projet, en utilisant le nom par défaut `resources.resw` . Veillez à choisir le **fichier de ressources (. resw)** et non le **dictionnaire de ressources** . un dictionnaire de ressources est un fichier utilisé par les applications XAML.
 2. À l’aide du concepteur, entrez les chaînes suivantes (utilisez le même, `Names` mais remplacez le `Values` par le texte approprié pour votre application) :
 
-<img src="images\editing-resources-resw.png"/>
+:::image type="content" source="images\editing-resources-resw.png" alt-text="Capture d’écran d’une étiquette de code source, d’une étiquette de table de recherche et d’un nom de fichier sur le disque." :::
 
 > [!NOTE]
 > Si vous démarrez avec le concepteur Visual Studio, vous pouvez toujours modifier directement le code XML en appuyant sur `F7` . Toutefois, si vous démarrez avec un fichier XML minimal, *le concepteur ne reconnaît pas le fichier* , car il manque beaucoup de métadonnées supplémentaires ; vous pouvez résoudre ce problème en copiant les informations XSD réutilisables à partir d’un fichier généré par le concepteur dans votre fichier XML modifié manuellement.
@@ -236,8 +236,9 @@ Si vous modifiez directement le code XML, ouvrez le `AppxManifest.xml` fichier e
 
 Si vous utilisez le concepteur de manifeste Visual Studio, ouvrez le fichier. appxmanifest et modifiez les valeurs des <span style="background-color: lightgreen">valeurs en surbrillance</span> dans l’onglet **application* et l’onglet *Packaging* :
 
-<img src="images\editing-application-info.png"/>
-<img src="images\editing-packaging-info.png"/>
+:::image type="content" source="images\editing-application-info.png" alt-text="Capture d’écran d’une étiquette de code source, d’une étiquette de table de recherche et d’un nom de fichier sur le disque." :::
+
+:::image type="content" source="images\editing-packaging-info.png" alt-text="Capture d’écran d’une étiquette de code source, d’une étiquette de table de recherche et d’un nom de fichier sur le disque." :::
 
 ### <a name="step-12-build-pri-file-make-an-msix-package-and-verify-its-working"></a>Étape 1,2 : générer un fichier PRI, créer un package MSIX et vérifier qu’il fonctionne
 
@@ -462,7 +463,7 @@ D’autres sections du manifeste de package peuvent être localisées. Par exemp
 
 Vous pouvez également ajouter ces informations à l’aide du concepteur de manifeste de Visual Studio, à l’aide `Declarations` de l’onglet, en tenant compte des <span style="background-color: lightgreen">valeurs en surbrillance</span>:
 
-<p><img src="images\editing-declarations-info.png"/></p>
+:::image type="content" source="images\editing-declarations-info.png" alt-text="Capture d’écran d’une étiquette de code source, d’une étiquette de table de recherche et d’un nom de fichier sur le disque." :::
 
 Ajoutez à présent les noms de ressources correspondants à chacun de vos `.resw` fichiers, en remplaçant le <span style="background-color: yellow">texte mis en surbrillance</span> par le texte approprié pour votre application (n’oubliez pas d’effectuer cette opération pour *chaque langue prise en charge !*) :
 
@@ -478,7 +479,7 @@ Ajoutez à présent les noms de ressources correspondants à chacun de vos `.res
 
 Elle s’affiche alors dans des parties de l’interpréteur de commandes Windows, telles que l’Explorateur de fichiers :
 
-<p><img src="images\file-type-tool-tip.png"/></p>
+:::image type="content" source="images\file-type-tool-tip.png" alt-text="Capture d’écran d’une étiquette de code source, d’une étiquette de table de recherche et d’un nom de fichier sur le disque.":::
 
 Générez et testez le package comme précédemment, en exerçant tous les nouveaux scénarios qui doivent afficher les nouvelles chaînes d’interface utilisateur.
 

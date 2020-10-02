@@ -4,12 +4,12 @@ description: Découvrez comment ajouter une prise en charge du contrôle vocal �
 ms.date: 10/19/2017
 ms.topic: article
 keywords: Windows 10, UWP, Xbox, Speech, Shell avec voix activée
-ms.openlocfilehash: 38afa2473dd74ab580cf38cc21d1f2b192f9b72a
-ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
+ms.openlocfilehash: b59b578a13145910be30c3f228305b874f9e9734
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304651"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636479"
 ---
 # <a name="using-speech-to-invoke-ui-elements"></a>Utilisation de la reconnaissance vocale pour appeler des éléments d’interface utilisateur
 
@@ -83,7 +83,7 @@ L’application narrateur est également un client UI Automation et utilise la `
 
 Pour résoudre ce dernier, à compter de Windows 10 Creators Update, Narrator a été mis à jour pour examiner également la `AutomationProperties.HelpText` propriété.  Si cette propriété n’est pas vide, Narrator parle son contenu en plus de `AutomationProperties.Name` .  Si `HelpText` est vide, Narrator lira uniquement le contenu du nom.  Cela permet d’utiliser des chaînes descriptives plus longues lorsque cela est nécessaire, mais conserve une expression plus rapide et conviviale de reconnaissance vocale dans la `Name` propriété.
 
-![](images/ves_narrator.jpg)
+![Un diagramme montrant le code derrière le bouton qui comprend AutomationProperties.Name et AutomationProperties. HelpText montrant que le shell activé pour la voix écoute le nom configure.](images/ves_narrator.jpg)
 
 Pour plus d’informations [, consultez Propriétés d’Automation pour la prise en charge de l’accessibilité dans l’interface utilisateur](/previous-versions/windows/silverlight/dotnet-windows-silverlight/ff400332(v=vs.95) "Propriétés d’Automation pour la prise en charge de l’accessibilité dans l’interface utilisateur").
 
@@ -101,7 +101,7 @@ L’entrée de ALM aura les effets suivants :
 - La superposition Cortana s’affiche dans l’angle supérieur droit, indiquant à l’utilisateur qu’il peut dire ce qu’il voit.  Pendant que l’utilisateur parle, les fragments d’expression reconnus par le module de reconnaissance vocale s’affichent également à cet emplacement.
 - VES analyse l’arborescence UIA, recherche tous les contrôles actionnables, inscrit son texte dans la grammaire de la reconnaissance vocale et démarre une session d’écoute continue.
 
-    ![](images/ves_overlay.png)
+    ![Capture d’écran avec l’option pour voir l’étiquette afficher les étiquettes en surbrillance.](images/ves_overlay.png)
 
 ### <a name="exiting-alm"></a>Quitter ALM ###
 Le système restera en ALM pendant que l’utilisateur interagit avec l’interface utilisateur à l’aide de la voix.  Il existe deux façons de quitter ALM :
@@ -129,41 +129,41 @@ Une fois que les étiquettes de Conseil vocal sont affichées, il n’y a aucune
 ## <a name="location-of-voice-tip-labels"></a>Emplacement des étiquettes de Conseil vocal ##
 Les étiquettes de pourboire vocal sont centrées horizontalement et verticalement dans le BoundingRectangle du contrôle.  Lorsque les contrôles sont petits et étroitement regroupés, les étiquettes peuvent se chevaucher/être masquées par d’autres et VES tente de pousser ces étiquettes pour les séparer et s’assurer qu’elles sont visibles.  Toutefois, il n’est pas garanti qu’il fonctionne 100% du temps.  S’il existe une interface utilisateur très encombrée, il est probable que certaines étiquettes soient masquées par d’autres. Vérifiez votre interface utilisateur avec « afficher les étiquettes » pour vous assurer qu’il y a suffisamment d’espace pour la visibilité de l’info-bulle.
 
-![](images/ves_labels.png)
+![Capture d’écran des étiquettes de Conseil vocal horizontalement et verticalement centrées dans le rectangle englobant du contrôle.](images/ves_labels.png)
 
 ## <a name="combo-boxes"></a>Zones de liste modifiable ##
 Lorsqu’une zone de liste déroulante est développée, chaque élément individuel de la zone de liste déroulante reçoit son propre étiquette de Conseil vocale et, souvent, les contrôles existants de la liste déroulante.  Pour éviter de présenter un muddle encombré et confus d’étiquettes (où les étiquettes des éléments de zone de liste déroulante sont mélangées avec les étiquettes des contrôles situés derrière la zone de liste déroulante) lorsqu’une zone de liste déroulante est développée, seules les étiquettes de ses éléments enfants sont affichées.  toutes les autres étiquettes de Conseil vocal sont masquées.  L’utilisateur peut ensuite sélectionner l’un des éléments de liste déroulante ou « fermer » la zone de liste déroulante.
 
 - Étiquettes sur les zones de liste déroulante réduites :
 
-    ![](images/ves_combo_closed.png)
+    ![Capture d’écran de la fenêtre de sortie vidéo et d’affichage avec des étiquettes sur des zones de liste déroulante réduites.](images/ves_combo_closed.png)
 
 - Étiquettes sur la zone de liste déroulante développée :
 
-    ![](images/ves_combo_open.png)
+    ![Capture d’écran de la fenêtre de sortie vidéo et d’affichage avec des étiquettes sur une zone de liste déroulante développée.](images/ves_combo_open.png)
 
 
 ## <a name="scrollable-controls"></a>Contrôles à défilement ##
 Pour les contrôles à défilement, les conseils vocaux pour les commandes de défilement sont centrés sur chacun des bords du contrôle.  Les conseils vocaux s’affichent uniquement pour les directions de défilement qui sont actionnables. ainsi, par exemple, si le défilement vertical n’est pas disponible, le fait de faire défiler vers le haut et de faire défiler vers le haut ne s’affiche pas.  Lorsque plusieurs régions défilantes sont présentes, le système VES utilise des ordinaux pour les différencier (par exemple, « Faire défiler vers la droite 1 », « faire défiler vers la droite 2 », etc.).
 
-![](images/ves_scroll.png) 
+![Capture d’écran des conseils de défilement vers la gauche et de défilement vers la droite sur un point I de défilement horizontal.](images/ves_scroll.png) 
 
 ## <a name="disambiguation"></a>Lever les ambiguïtés ##
 Quand plusieurs éléments d’interface utilisateur ont le même nom ou que le module de reconnaissance vocale a mis en correspondance plusieurs candidats, le système VES entrera en mode de désambiguïsation.  Dans ce mode, les étiquettes vocales s’affichent pour les éléments impliqués afin que l’utilisateur puisse sélectionner celui qui convient. L’utilisateur peut annuler le mode de désambiguation en disant « annuler ».
 
-Par exemple :
+Exemple :
 
 - En mode d’écoute active, avant toute ambiguïté ; l’utilisateur dit « AM I ambigu » :
 
-    ![](images/ves_disambig1.png) 
+    ![Capture d’écran du mode d’écoute actif avec l’option maintenant vous pouvez indiquer ce que vous voyez s’afficher et aucune étiquette sur les boutons.](images/ves_disambig1.png) 
 
 - Les deux boutons correspondent ; désambiguation démarrée :
 
-    ![](images/ves_disambig2.png) 
+    ![Capture d’écran du mode d’écoute actif avec l’option que vous souhaitez afficher et les étiquettes élément 1 et élément 2 sur les boutons.](images/ves_disambig2.png) 
 
 - Indication de l’action de clic lorsque l’option « Sélectionner 2 » a été choisie :
 
-    ![](images/ves_disambig3.png) 
+    ![Capture d’écran du mode d’écoute actif avec l’option maintenant vous pouvez indiquer ce que vous voyez s’afficher et l’étiquette est ambiguë sur le premier bouton.](images/ves_disambig3.png) 
  
 ## <a name="sample-ui"></a>Exemple d’interface utilisateur ##
 Voici un exemple d’interface utilisateur XAML, qui définit le AutomationProperties.Name de différentes manières :
@@ -203,11 +203,11 @@ L’exemple ci-dessus présente l’interface utilisateur, ainsi que les étique
  
 - En mode d’écoute active, sans étiquettes affichées :
 
-    ![](images/ves_alm_nolabels.png) 
+    ![Capture d’écran du mode d’écoute actif avec l’option pour afficher les étiquettes, disons afficher les étiquettes affichées et aucune étiquette affichée.](images/ves_alm_nolabels.png) 
 
 - En mode d’écoute active, après que l’utilisateur a dit « afficher les étiquettes » :
 
-    ![](images/ves_alm_labels.png) 
+    ![Capture d’écran du mode d’écoute actif avec l’option si vous avez terminé, par exemple l’option arrêter l’écoute affichée et les étiquettes affichées sur les contrôles U I.](images/ves_alm_labels.png) 
 
 Dans le cas de `button1` , XAML remplit automatiquement la `AutomationProperties.Name` propriété à l’aide du texte du contenu textuel visible du contrôle.  C’est pour cette raison qu’il existe une étiquette de Conseil vocal, bien qu’il n’y ait pas de `AutomationProperties.Name` jeu explicite.
 

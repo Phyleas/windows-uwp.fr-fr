@@ -6,18 +6,18 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, barre des tâches, gestionnaire de barre des tâches, épingler à la barre des tâches, vignette principale
 ms.localizationpriority: medium
-ms.openlocfilehash: c2090d038bb3999112e8d2fa3824968916e5d7dc
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: e43dd7084c042b7480aa98c638f1fc5d216e64c7
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219332"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636629"
 ---
 # <a name="pin-your-app-to-the-taskbar"></a>Épingler votre application à la barre des tâches
 
 Vous pouvez épingler votre application à la barre des tâches par programmation, tout comme vous pouvez [l’épingler à votre application dans le menu Démarrer](tiles-and-notifications/primary-tile-apis.md). Vous pouvez aussi vérifier si votre application est actuellement épinglée et si la barre des tâches autorise l’épinglage. 
 
-![Barre des tâches](images/taskbar/taskbar.png)
+![Capture d’écran d’une barre des tâches Windows 10 montrant l’application épinglée.](images/taskbar/taskbar.png)
 
 > [!IMPORTANT]
 > **Nécessite la mise à jour des créateurs de automne**: vous devez cibler le SDK 16299 et exécuter la version 16299 ou une version ultérieure pour utiliser les API de la barre des tâches.
