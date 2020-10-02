@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ce19fdca0ff79c430fcae7353cda595702f260c0
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 580edca578a0d518d89b5d2fdb30c9304be35cef
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218432"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636619"
 ---
 # <a name="tiles-badges-and-notifications-for-windows-apps"></a>Vignettes, badges et notifications pour les applications Windows
  
@@ -22,7 +22,7 @@ Découvrez comment utiliser les vignettes, badges, toasts et notifications pour 
 
 > **API importantes** : [Package NuGet UWP Community Toolkit Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
-<p><img style="float: left; margin: 0px 15px 15px 0px;" src="images/tile-and-live-tile.png" />
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="images/tile-and-live-tile.png" alt="Screenshot of a static tile and a live tile displaying a notification and a badge." />
 Une vignette est la représentation d’une application dans le menu Démarrer. Chaque application Windows a une vignette. Vous pouvez activer différentes tailles de vignettes (petite, moyenne, large et grande).</p>
 
 <p>Vous pouvez utiliser une <em>notification par vignette</em> pour mettre à jour la vignette afin de communiquer de nouvelles informations à l’utilisateur, telles que des titres d’actualités ou l’objet du dernier message non lu.</p>
