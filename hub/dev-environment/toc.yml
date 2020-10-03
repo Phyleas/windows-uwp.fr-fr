@@ -63,8 +63,8 @@
           href: /cpp/
         - name: Bien démarrer avec C#
           href: /dotnet/csharp/
-        - name: Bien démarrer avec Java sur Azure
-          href: /azure/developer/java/
+        - name: Prise en main de Docker
+          href: ../dev-environment/docker/overview.md
         - name: Bien démarrer avec PowerShell
           href: /powershell/
         - name: Bien démarrer avec les bases de données sur WSL
