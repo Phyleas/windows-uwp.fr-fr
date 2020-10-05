@@ -3,21 +3,24 @@ ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD
 title: Activer votre appareil pour le développement
 description: Découvrez comment activer votre appareil Windows 10 pour le développement et le débogage en activant le mode Développeur dans Visual Studio.
 keywords: Commencer avec une licence de développeur Visual Studio, appareil avec licence de développeur activée
-ms.date: 05/22/2020
+ms.date: 09/28/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 702e3aa166501c3e9974398ae5b89e832cfa7391
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 2a227494bb597b25c090d4ff57982e5d5c739184
+ms.sourcegitcommit: 9940ed6431aadbd8d4e54ca23d8ae44d3a2d048d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89159053"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91403914"
 ---
 # <a name="enable-your-device-for-development"></a>Activer votre appareil pour le développement
 
 ## <a name="activate-developer-mode-sideload-apps-and-access-other-developer-features"></a>Activer le Mode développeur, charger une version test des applications et accéder à d’autres fonctionnalités de développement
 
 ![Activer vos appareils pour le développement](images/developer-poster.png)
+
+> [!IMPORTANT]
+> Si vous ne créez pas vos propres applications sur votre ordinateur, vous n’avez pas besoin d’activer le mode développeur. Si vous essayez de résoudre un problème sur votre ordinateur, consultez l’[aide de Windows](https://support.microsoft.com/hub/4338813/windows-help?os=windows-10). Si vous effectuez un développement pour la première fois, vous souhaiterez également [vous préparer](get-set-up.md) en téléchargeant les outils dont vous avez besoin.
 
 Si vous utilisez votre ordinateur pour des activités quotidiennes ordinaires, comme les jeux, la navigation sur le web, la messagerie ou les applications Office, vous n’avez *pas* besoin d’activer le Mode développeur et vous ne devez pas le faire. Les autres informations de cette page ne sont pas importantes pour vous, et vous pouvez en toute sécurité revenir à ce que vous faisiez précédemment. Merci de votre attention !
 

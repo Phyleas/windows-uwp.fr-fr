@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projeté, projection, implémentation, classe runtime, activation
 ms.localizationpriority: medium
-ms.openlocfilehash: 81c8edc65f78de14c1c42611ea1e8d97046128ae
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1b3d9e4be7c45d4d2b9b5063087a78556497dc9b
+ms.sourcegitcommit: bcf60b6d460dc4855f207ba21da2e42644651ef6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89170363"
+ms.lasthandoff: 09/26/2020
+ms.locfileid: "91376247"
 ---
 # <a name="consume-apis-with-cwinrt"></a>Utiliser des API avec C++/WinRT
 
@@ -186,7 +186,7 @@ runtimeclass Gift
 }
 ```
 
-Nous souhaitons créer un **Gift** qui ne se trouve pas dans une boîte (un **Gift** construit avec un **GiftBox** non initialisé). Commençons par examiner la *mauvaise* façon de procéder. Nous savons qu’il existe un constructeur **Gift** qui accepte un **GiftBox**. Mais si nous sommes tentés de passer un **GiftBox** ayant une valeur null (en appelant le constructeur du **Gift** via une initialisation uniforme, comme nous le faisons ci-dessous), nous n’allons *pas* obtenir le résultat souhaité.
+Nous souhaitons créer un **Gift** qui ne se trouve pas dans une boîte (un **Gift** construit avec un **GiftBox** non initialisé). Commençons par examiner la *mauvaise* façon de procéder. Nous savons qu’il existe un constructeur **Gift** qui accepte un **GiftBox**. Mais si nous sommes tentés de passer un **GiftBox** ayant une valeur null (en appelant le constructeur **Gift** à l’aide d’une initialisation uniforme, comme nous le faisons ci-dessous), nous n’obtiendrons *pas* le résultat souhaité.
 
 ```cppwinrt
 // These are *not* what you intended. Doing it in one of these two ways
@@ -283,13 +283,26 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 Pour obtenir plus d’informations, du code ainsi que la procédure de consommation d’API implémentées dans un composant Windows Runtime, consultez [Composants Windows Runtime avec C++/WinRT](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md) et [Créer des événements en C++/WinRT](./author-events.md).
 
 ## <a name="if-the-api-is-implemented-in-the-consuming-project"></a>Si l’API est implémentée dans le projet d’utilisation
-Un type qui est utilisé à partir de l’interface utilisateur XAML doit être une classe runtime, même s’il est dans le même projet que le code XAML.
+L’exemple de code présenté dans cette section est extrait de la rubrique [Contrôles XAML - Liaison à une propriété C++/WinRT](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage). Consultez cette rubrique pour obtenir plus d’informations, du code et la procédure de consommation d’une classe runtime implémentée dans le même projet que celui qui la consomme.
 
-Pour ce scénario, vous allez générer un type projeté à partir des métadonnées Windows Runtime de la classe runtime (`.winmd`). Là encore, vous incluez un en-tête, mais cette fois vous construisez le type projeté via son constructeur **std::nullptr_t**. Ce constructeur n’effectuant aucune initialisation, vous devez ensuite affecter une valeur à l’instance via la fonction d’assistance [**winrt::make**](/uwp/cpp-ref-for-winrt/make), en transmettant tous les arguments constructeur nécessaires. Une classe runtime implémentée dans le même projet que le code d’utilisation n’a pas besoin d’être inscrite, ni instanciée via l’activation de Windows Runtime/COM.
+Un type qui est utilisé à partir de l’interface utilisateur XAML doit être une classe runtime, même s’il est dans le même projet que le code XAML. Pour ce scénario, vous allez générer un type projeté à partir des métadonnées Windows Runtime de la classe runtime (`.winmd`). Là encore, vous allez inclure un en-tête, mais cette fois, vous avez le choix entre les façons de construire l’instance de la classe runtime de C++/WinRT version 1.0 ou 2.0. La méthode de la version 1.0 utilise [**winrt::make**](/uwp/cpp-ref-for-winrt/make) ; la méthode de la version 2.0 est appelée *construction uniforme*. Examinons chacune de ces méthodes.
 
-Vous aurez besoin d’un projet **Blank App (C++/WinRT)** pour cet exemple de code.
+### <a name="constructing-by-using-winrtmake"></a>Construction à l’aide de **winrt::make**
+Commençons par la méthode par défaut (C++/WinRT version 1.0), car il est recommandé d’être au moins familiarisé avec ce modèle. Vous construisez le type projeté par le biais de son constructeur **std::nullptr_t**. Ce constructeur n’effectuant aucune initialisation, vous devez ensuite affecter une valeur à l’instance via la fonction d’assistance [**winrt::make**](/uwp/cpp-ref-for-winrt/make), en transmettant tous les arguments constructeur nécessaires. Une classe runtime implémentée dans le même projet que le code d’utilisation n’a pas besoin d’être inscrite, ni instanciée via l’activation de Windows Runtime/COM.
+
+Pour connaître la procédure pas-à-pas complète, consultez [Contrôles XAML - Liaison à une propriété C++/WinRT](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage). Cette section présente des extraits de cette procédure pas à pas.
 
 ```cppwinrt
+// MainPage.idl
+import "BookstoreViewModel.idl";
+namespace Bookstore
+{
+    runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
+    {
+        BookstoreViewModel MainViewModel{ get; };
+    }
+}
+
 // MainPage.h
 ...
 struct MainPage : MainPageT<MainPage>
@@ -297,10 +310,9 @@ struct MainPage : MainPageT<MainPage>
     ...
     private:
         Bookstore::BookstoreViewModel m_mainViewModel{ nullptr };
-        ...
-    };
-}
+};
 ...
+
 // MainPage.cpp
 ...
 #include "BookstoreViewModel.h"
@@ -312,7 +324,45 @@ MainPage::MainPage()
 }
 ```
 
-Pour obtenir plus d’informations, du code et la procédure d’utilisation d’une classe runtime implémentée dans le projet d’utilisation, voir [Contrôles XAML ; liaison à une propriété C++/WinRT](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage).
+### <a name="uniform-construction"></a>Construction uniforme
+Avec C++ /WinRT version 2.0 et les versions ultérieures, vous disposez d’une forme optimisée de construction, connue sous le nom de *construction uniforme* (consultez [Nouveautés et changements dans C++/WinRT 2.0.](./news.md#news-and-changes-in-cwinrt-20)).
+
+Pour connaître la procédure pas-à-pas complète, consultez [Contrôles XAML - Liaison à une propriété C++/WinRT](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage). Cette section présente des extraits de cette procédure pas à pas.
+
+Pour utiliser la construction uniforme au lieu de [**winrt::make**](/uwp/cpp-ref-for-winrt/make), vous avez besoin d’une fabrique d’activation. Ajouter un constructeur à votre IDL constitue un bon moyen d’en générer une.
+
+```idl
+// MainPage.idl
+import "BookstoreViewModel.idl";
+namespace Bookstore
+{
+    runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
+    {
+        MainPage();
+        BookstoreViewModel MainViewModel{ get; };
+    }
+}
+```
+
+Ensuite, dans `MainPage.h`, déclarez et initialisez *m_mainViewModel* en une seule étape, comme indiqué ci-dessous.
+
+```cppwinrt
+// MainPage.h
+...
+struct MainPage : MainPageT<MainPage>
+{
+    ...
+    private:
+        Bookstore::BookstoreViewModel m_mainViewModel;
+        ...
+    };
+}
+...
+```
+
+Puis, dans le constructeur **MainPage** dans `MainPage.cpp`, le code `m_mainViewModel = winrt::make<Bookstore::implementation::BookstoreViewModel>();` n’est pas nécessaire.
+
+Pour obtenir plus d’informations sur la construction uniforme et des exemples de code, consultez [Accepter la construction uniforme et l’accès direct à l’implémentation](./author-apis.md#opt-in-to-uniform-construction-and-direct-implementation-access).
 
 ## <a name="instantiating-and-returning-projected-types-and-interfaces"></a>Instanciation et retour des types et interfaces projetés
 Voici un exemple de ce à quoi peuvent ressembler les types et interfaces projetés dans votre projet d’utilisation. Rappelez-vous qu'un type projeté (tel que celui de cet exemple), est généré par un outil, et n'est pas un élément que vous auriez créé vous-même.

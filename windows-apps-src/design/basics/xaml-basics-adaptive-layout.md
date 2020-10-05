@@ -5,12 +5,12 @@ keywords: XAML, UWP, Bien démarrer
 ms.date: 08/20/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e1498836772c3c279a1b9d85d76070b29593f5e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: aabad7a731bd0654468d7b9849d3b9a5bf6bead6
+ms.sourcegitcommit: 662fcfdc08b050947e289a57520a2f99fad1a620
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174473"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91353729"
 ---
 # <a name="tutorial-create-adaptive-layouts"></a>Tutoriel : Créer des dispositions adaptatives
 
@@ -165,17 +165,17 @@ Ajoutez le code suivant à l’élément racine de la page, `RelativePanel`.
     ...
 
         <!-- Large window VisualState -->
-        <VisualState x:Key="LargeWindow">
+        <VisualState>
 
         </VisualState>
 
         <!-- Medium window VisualState -->
-        <VisualState x:Key="MediumWindow">
+        <VisualState>
 
         </VisualState>
 
         <!-- Small window VisualState -->
-        <VisualState x:Key="SmallWindow">
+        <VisualState>
 
         </VisualState>
 
@@ -185,7 +185,7 @@ Ajoutez le code suivant à l’élément racine de la page, `RelativePanel`.
 
 ### <a name="create-statetriggers-to-apply-the-visual-state"></a>Créer des StateTriggers pour appliquer l’état visuel
 
-Ensuite, créez les `StateTriggers` qui correspondent à chaque point d’ancrage. Dans MainPage.xaml, ajoutez le code suivant au `VisualStateManager` que vous avez créé dans la Partie 2.
+Ensuite, créez les `StateTriggers` qui correspondent à chaque point d’ancrage. Dans MainPage.xaml, ajoutez le code suivant à chaque `VisualState`.
 
 ```xaml
 <VisualStateManager.VisualStateGroups>
@@ -193,7 +193,7 @@ Ensuite, créez les `StateTriggers` qui correspondent à chaque point d’ancrag
     ...
 
         <!-- Large window VisualState -->
-        <VisualState x:Key="LargeWindow">
+        <VisualState>
 
             <!-- Large window trigger -->
             <VisualState.StateTriggers>
@@ -203,7 +203,7 @@ Ensuite, créez les `StateTriggers` qui correspondent à chaque point d’ancrag
         </VisualState>
 
         <!-- Medium window VisualState -->
-        <VisualState x:Key="MediumWindow">
+        <VisualState>
 
             <!-- Medium window trigger -->
             <VisualState.StateTriggers>
@@ -213,7 +213,7 @@ Ensuite, créez les `StateTriggers` qui correspondent à chaque point d’ancrag
         </VisualState>
 
         <!-- Small window VisualState -->
-        <VisualState x:Key="SmallWindow">
+        <VisualState>
 
             <!-- Small window trigger -->
             <VisualState.StateTriggers >
@@ -266,9 +266,9 @@ Exécutez l'application. Lors du chargement de l’application, essayez de modif
 
 Maintenant que vous avez terminé ce laboratoire, vous avez suffisamment de connaissances en disposition adaptative pour étendre l’expérience par vous-même. Pour aller plus loin, essayez d’optimiser la disposition pour des tailles d’écran plus grandes (par exemple Surface Hub). Si vous souhaitez tester une disposition Surface Hub, consultez [Tester les applications de Surface Hub à l’aide de Visual Studio](../../debug-test-perf/test-surface-hub-apps-using-visual-studio.md).
 
-Si vous êtes bloqué, vous trouverez des instructions supplémentaires dans les sections suivantes de [Définir des dispositions de pages avec XAML](../layout/layouts-with-xaml.md).
+Si vous êtes bloqué, vous trouverez des instructions supplémentaires dans les sections suivantes de [Dispositions réactives avec XAML](../layout/layouts-with-xaml.md).
 
-+ [États visuels et déclencheurs d’état](../layout/layouts-with-xaml.md#visual-states-and-state-triggers)
++ [États visuels et déclencheurs d’état](../layout/layouts-with-xaml.md#adaptive-layouts-with-visual-states-and-state-triggers)
 + [Dispositions personnalisées](../layout/layouts-with-xaml.md#tailored-layouts)
 
 Si vous souhaitez en savoir plus sur la manière dont l’application de retouche photo initiale a été générée, vous pouvez également consulter les tutoriels sur les [interfaces utilisateur](../basics/xaml-basics-ui.md) et la [liaison de données](../../data-binding/xaml-basics-data-binding.md) XAML.

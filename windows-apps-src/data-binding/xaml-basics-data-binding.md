@@ -5,12 +5,12 @@ keywords: XAML, UWP, Bien démarrer
 ms.date: 08/20/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d3363dcc47ef43fe65b3c954b213a81cc5165e1
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 10615c3bb9a137655f32ca4b5cc174ddba1ee5ef
+ms.sourcegitcommit: 662fcfdc08b050947e289a57520a2f99fad1a620
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166283"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91353769"
 ---
 # <a name="tutorial-create-data-bindings"></a>Tutoriel : Créer des liaisons de données
 
@@ -457,7 +457,7 @@ Toutefois, il faut d’abord lier la `DetailPage` pour que l’application y acc
 
 ### <a name="attach-the-detailpage"></a>Lier la DetailPage
 
-1. Dans MainPage.xaml, recherchez le `GridView` nommé `ImageGridView` et ajoutez une valeur `ItemClick`.
+1. Dans MainPage.xaml, recherchez le `GridView` nommé `ImageGridView`. Pour rendre les éléments interactifs, définissez `IsItemClickEnabled` sur `True`, puis ajoutez un gestionnaire d’événements `ItemClick`.
 
     > [!TIP]
     > Si vous tapez la modification ci-dessous au lieu de la copier/coller, vous verrez s’afficher une fenêtre contextuelle IntelliSense indiquant « \<New Event Handler\> ». Si vous appuyez sur la touche Tab, un nom de gestionnaire de méthode par défaut sera choisi comme valeur et la méthode présentée à l’étape suivante sera automatiquement remplacée. Vous pourrez ensuite appuyer sur F12 pour accéder à la méthode dans le code-behind.
@@ -465,14 +465,15 @@ Toutefois, il faut d’abord lier la `DetailPage` pour que l’application y acc
     **Avant :**
 
     ```xaml
-    <GridView x:Name="ImageGridView"
+    <GridView x:Name="ImageGridView">
     ```
 
     **Après :**
 
     ```xaml
     <GridView x:Name="ImageGridView"
-              ItemClick="ImageGridView_ItemClick"
+              IsItemClickEnabled="True"
+              ItemClick="ImageGridView_ItemClick">
     ```
 
     > [!NOTE]

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: fb4249b2-f93c-4993-9e4d-57a62c04be66
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ee8eb8ea34205f2e597bf41da61f5ab63714566
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e3f46e0d1837f391ffc7cc6ca361a2c92212565b
+ms.sourcegitcommit: 9940ed6431aadbd8d4e54ca23d8ae44d3a2d048d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162833"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91403924"
 ---
 # <a name="creating-a-3d-javascript-game-using-threejs"></a>Création d’un jeu JavaScript 3D à l’aide de three.js
 
@@ -433,7 +433,7 @@ var blocker = document.getElementById('blocker');
 ```
 
 
-Dans notre fonction `init()`, nous pouvons maintenant créer un nouvel objet `PoinerLockControls`, le transmettre à notre `camera` et ajouter la `camera` (accessible avec `controls.getObject()`).
+Dans notre fonction `init()`, nous pouvons maintenant créer un nouvel objet `PointerLockControls`, le transmettre à notre `camera` et ajouter la `camera` (accessible avec `controls.getObject()`).
 
 ```javascript
 controls = new THREE.PointerLockControls(camera);
