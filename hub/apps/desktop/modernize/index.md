@@ -2,16 +2,16 @@
 Description: Ajoutez des interfaces utilisateur XAML modernes, créez des packages MSIX et incorporez d’autres composants modernes dans votre application de bureau.
 title: Moderniser vos applications de bureau pour Windows
 ms.topic: article
-ms.date: 04/17/2019
+ms.date: 10/02/2020
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: d2ae73cc32fd4e3717fe40b8a6ec8c3397b40619
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 5df07995c2e4175bc9a67010a78c353cbd9d8cfa
+ms.sourcegitcommit: b8d0e2c6186ab28fe07eddeec372fb2814bd4a55
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161533"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91671498"
 ---
 # <a name="modernize-your-desktop-apps"></a>Moderniser vos applications de bureau
 
@@ -24,7 +24,7 @@ Cet article décrit les fonctionnalités Windows 10 et UWP que vous pouvez util
 
 ## <a name="windows-ui-library"></a>Bibliothèque d’IU Windows
 
-La bibliothèque d’interface utilisateur Windows est un ensemble de packages NuGet qui fournissent des contrôles et autres éléments d’interface utilisateur pour les applications Windows 10. WinUI était initialement une boîte à outils qui offrait des versions nouvelles et mises à jour des contrôles UWP pour les applications UWP ciblant des versions de bas niveau de Windows 10. WinUI s’est depuis étendue et est devenue la plateforme d’interface utilisateur native moderne pour les applications Windows 10 sur UWP, .NET et Win32.
+La bibliothèque d’interface utilisateur Windows est un ensemble de packages NuGet qui fournissent des contrôles et autres éléments d’interface utilisateur pour les applications Windows 10. Au départ, WinUI était une boîte à outils qui offrait des versions nouvelles et mises à jour des contrôles XAML WinRT pour les applications UWP ciblant des versions de bas niveau de Windows 10. WinUI s’est depuis étendue et est devenue la plateforme d’interface utilisateur native moderne pour les applications Windows 10 sur UWP, .NET et Win32 natif.
 
 Vous pouvez utiliser WinUI des manières suivantes dans les applications de bureau :
 
@@ -43,7 +43,7 @@ Pour plus d’informations, consultez [Empaqueter des applications de bureau](/w
 
 ## <a name="net-core-3"></a>.NET Core 3
 
-.NET Core 3 est la dernière version majeure de .NET Core. La grande nouveauté de cette version est la prise en charge des applications de bureau Windows, notamment les applications Windows Forms et WPF. Vous pouvez exécuter vos applications de bureau Windows, nouvelles et existantes, sur .NET Core 3 et tirer pleinement parti de cette nouvelle version de .NET Core. De plus, vous pourrez utiliser les contrôles UWP hébergés dans [XAML Islands](xaml-islands.md) dans toutes les applications Windows Forms et WPF qui ciblent .NET Core 3.
+.NET Core 3 est la dernière version majeure de .NET Core. La grande nouveauté de cette version est la prise en charge des applications de bureau Windows, notamment les applications Windows Forms et WPF. Vous pouvez exécuter vos applications de bureau Windows, nouvelles et existantes, sur .NET Core 3 et tirer pleinement parti de cette nouvelle version de .NET Core. De plus, vous pourrez utiliser les contrôles XAML WinRT hébergés dans [XAML Islands](xaml-islands.md) dans toutes les applications Windows Forms et WPF qui ciblent .NET Core 3.
 
 Pour plus d’informations, consultez [Nouveautés de .NET Core 3.0](/dotnet/core/whats-new/dotnet-core-3-0).
 
@@ -53,15 +53,15 @@ Vous pouvez appeler de nombreuses API Windows Runtime directement dans votre app
 
 Pour plus d’informations, consultez [Utiliser des API Windows Runtime dans les applications de bureau](desktop-to-uwp-enhance.md).
 
-## <a name="host-uwp-controls-xaml-islands"></a>Héberger des contrôles UWP (XAML Islands)
+## <a name="host-winrt-xaml-controls-xaml-islands"></a>Héberger des contrôles XAML WinRT (XAML Islands)
 
 À partir de Windows 10, version 1903, vous pouvez ajouter des [contrôles XAML UWP](/windows/uwp/design/controls-and-patterns/controls-by-function) directement dans n’importe quel élément d’interface utilisateur d’une application WPF, Windows Forms ou Win32 C++ qui est associé à un handle de fenêtre (HWND). Cela vous permet d’intégrer entièrement les dernières fonctionnalités UWP comme [Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions) et les contrôles qui prennent en charge le [système Fluent Design](/windows/uwp/design/fluent-design-system/index) dans les fenêtres et autres aires d’affichage dans vos applications de bureau. Ce scénario de développement est parfois appelé *XAML Islands*.
 
-Pour plus d’informations, consultez [Contrôles UWP dans les applications de bureau](xaml-islands.md).
+Pour plus d’informations, consultez [Contrôles XAML WinRT dans les applications de bureau](xaml-islands.md).
 
 ## <a name="use-the-visual-layer-in-desktop-apps"></a>Utiliser la couche Visuel dans les applications de bureau
 
-Vous pouvez maintenant utiliser des API Windows Runtime dans des applications de bureau non conçues pour UWP. Ces API vous permettent d’améliorer l’apparence, le comportement et les fonctionnalités de vos applications WPF, Windows Forms et Win32 C++, mais aussi de bénéficier des toutes dernières fonctionnalités d’interface utilisateur de Windows 10 qui sont disponibles uniquement par le biais d’UWP. C’est utile pour créer des expériences utilisateur personnalisées plus avancées que les contrôles UWP intégrés que vous pouvez héberger en utilisant XAML Islands.
+Vous pouvez maintenant utiliser des API Windows Runtime dans des applications de bureau non conçues pour UWP. Ces API vous permettent d’améliorer l’apparence, le comportement et les fonctionnalités de vos applications WPF, Windows Forms et Win32 C++, mais aussi de bénéficier des toutes dernières fonctionnalités d’interface utilisateur de Windows 10 qui sont disponibles uniquement par le biais d’UWP. C’est utile pour créer des expériences utilisateur personnalisées plus avancées que les contrôles XAML WinRT intégrés que vous pouvez héberger en utilisant XAML Islands.
 
 Pour plus d’informations, consultez [Moderniser votre application de bureau à l’aide de la couche Visuel](visual-layer-in-desktop-apps.md).
 
@@ -76,9 +76,9 @@ Il existe plusieurs façons d’accorder une identité à une application de bur
 
 <a id="desktop-uwp-controls"></a>
 
-## <a name="uwp-controls-optimized-for-desktop-apps"></a>Contrôles UWP optimisés pour les applications de bureau
+## <a name="winrt-xaml-controls-optimized-for-desktop-apps"></a>Contrôles XAML WinRT optimisés pour les applications de bureau
 
-Que vous développiez une application UWP ciblant exclusivement la famille d’appareils de bureau ou que vous souhaitiez utiliser des contrôles UWP dans vos applications de bureau WPF, Windows Forms ou Win32 C++, les contrôles UWP nouveaux et mis à jour suivants sont conçus pour offrir des expériences de bureau optimisées avec le système [Fluent Design](/windows/uwp/design/fluent-design-system/index). Ces contrôles ont été introduits dans Windows 10, version 1809 (mise à jour d’octobre 2018 ou version 10.0.17763).
+Que vous développiez une application UWP ciblant exclusivement la famille d’appareils de bureau ou que vous souhaitiez utiliser des contrôles XAML WinRT dans vos applications de bureau WPF, Windows Forms ou Win32 C++, les contrôles XAML WinRT nouveaux et mis à jour suivants sont conçus pour offrir des expériences de bureau optimisées avec le système [Fluent Design](/windows/uwp/design/fluent-design-system/index). Ces contrôles ont été introduits dans Windows 10, version 1809 (mise à jour d’octobre 2018 ou version 10.0.17763).
 
 | Contrôler |  Description |
 |------ |--------------|

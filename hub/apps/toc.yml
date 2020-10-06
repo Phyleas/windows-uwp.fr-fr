@@ -19,23 +19,23 @@
                   href: desktop/modernize/desktop-to-uwp-enhance.md
                 - name: API Windows Runtime disponibles
                   href: desktop/modernize/desktop-to-uwp-supported-api.md
-            - name: Héberger des contrôles XAML UWP (XAML Islands)
+            - name: Héberger des contrôles XAML WinRT (XAML Islands)
               items:
                 - name: Vue d’ensemble
                   href: desktop/modernize/xaml-islands.md
                 - name: XAML Islands dans les applications WPF et Windows Forms
                   items:
-                    - name: Héberger un contrôle UWP standard
+                    - name: Héberger un contrôle XAML WinRT standard
                       href: desktop/modernize/host-standard-control-with-xaml-islands.md
-                    - name: Héberger un contrôle UWP personnalisé
+                    - name: Héberger un contrôle XAML WinRT personnalisé
                       href: desktop/modernize/host-custom-control-with-xaml-islands.md
                 - name: XAML Islands dans les applications Win32 C++
                   items:
-                    - name: Utilisation de l’API d’hébergement XAML UWP
+                    - name: Utilisation de l’API d’hébergement XAML WinRT
                       href: desktop/modernize/using-the-xaml-hosting-api.md
-                    - name: Héberger un contrôle UWP standard
+                    - name: Héberger un contrôle XAML WinRT standard
                       href: desktop/modernize/host-standard-control-with-xaml-islands-cpp.md
-                    - name: Héberger un contrôle UWP personnalisé
+                    - name: Héberger un contrôle XAML WinRT personnalisé
                       href: desktop/modernize/host-custom-control-with-xaml-islands-cpp.md
                     - name: Scénarios avancés
                       href: desktop/modernize/advanced-scenarios-xaml-islands-cpp.md
