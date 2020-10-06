@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, tâche en arrière-plan
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b5daec3f4d0fa823341ff7590094463ef412b88
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e7d008a6956c3acd22dcb99e6bf4e1cda1442545
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89156003"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750165"
 ---
 # <a name="debug-a-background-task"></a>Déboguer une tâche en arrière-plan
 
@@ -42,16 +42,16 @@ Les tâches en arrière-plan peuvent être déclenchées manuellement par le bia
 
 2.  Exécutez votre application dans le débogueur, puis déclenchez la tâche en arrière-plan à l’aide de la barre d’outils **Événements de cycle de vie**. Ce menu déroulant affiche le nom des tâches en arrière-plan qu’il est possible d’activer à l’aide de Visual Studio.
 
-> [!NOTE]
-> Les options de la barre d’outils événements de cycle de vie ne sont pas affichées par défaut dans Visual Studio. Pour afficher ces options, cliquez avec le bouton droit sur la barre d’outils actuelle dans Visual Studio et assurez-vous que l’option **emplacement de débogage** est activée.
+    > [!NOTE]
+    > Les options de la barre d’outils événements de cycle de vie ne sont pas affichées par défaut dans Visual Studio. Pour afficher ces options, cliquez avec le bouton droit sur la barre d’outils actuelle dans Visual Studio et assurez-vous que l’option **emplacement de débogage** est activée.
 
-    For this to work, the background task must already be registered and it must still be waiting for the trigger. For example, if a background task was registered with a one-shot TimeTrigger and that trigger has already fired, launching the task through Visual Studio will have no effect.
+    Pour que cette opération fonctionne, la tâche en arrière-plan, doit déjà être inscrite et doit toujours attendre le déclencheur. Par exemple, si une tâche en arrière-plan a été inscrite avec un TimeTrigger à déclenchement unique qui a déjà été déclenché, le lancement de la tâche via Visual Studio n’aura aucun effet.
 
-> [!Note]
-> Les tâches en arrière-plan utilisant les déclencheurs suivants ne peuvent pas être activées de cette manière : [**déclencheur d’application**](/uwp/api/windows.applicationmodel.background.applicationtrigger), [**déclencheur MediaProcessing**](/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger),  [**ControlChannelTrigger**](/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger),  [**PushNotificationTrigger**](/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger)et tâches en arrière-plan à l’aide d’un [**événement systemtrigger**](/uwp/api/Windows.ApplicationModel.Background.SystemTrigger) avec le type de déclencheur [**SmsReceived**](/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) .  
-> Les déclencheurs **ApplicationTrigger** et **MediaProcessingTrigger** peuvent être déclarés manuellement dans le code avec `trigger.RequestAsync()`.
+    > [!Note]
+    > Les tâches en arrière-plan utilisant les déclencheurs suivants ne peuvent pas être activées de cette manière : [**déclencheur d’application**](/uwp/api/windows.applicationmodel.background.applicationtrigger), [**déclencheur MediaProcessing**](/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger),  [**ControlChannelTrigger**](/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger),  [**PushNotificationTrigger**](/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger)et tâches en arrière-plan à l’aide d’un [**événement systemtrigger**](/uwp/api/Windows.ApplicationModel.Background.SystemTrigger) avec le type de déclencheur [**SmsReceived**](/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) .  
+    > Les déclencheurs **ApplicationTrigger** et **MediaProcessingTrigger** peuvent être déclarés manuellement dans le code avec `trigger.RequestAsync()`.
 
-![débogage des tâches en arrière-plan](images/debugging-activation.png)
+    ![débogage des tâches en arrière-plan](images/debugging-activation.png)
 
 3.  Lorsque la tâche en arrière-plan est activée, le débogueur s’y associe et affiche la sortie de débogage dans Visual Studio.
 
@@ -98,7 +98,7 @@ Si vous déployez une application utilisant des tâches en arrière-plan à l’
 -   Vous pouvez sélectionner l’option de débogage « Toujours réinstaller mon package » pour éviter cela dans des projets C#.
 -   Patientez jusqu’à ce que l’application soit prête pour un déploiement final avant d’incrémenter la version du package (ne la changez pas pendant le débogage).
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 -   Assurez-vous que votre application vérifie la présence d’inscriptions de tâches en arrière-plan existantes avant d’inscrire de nouveau la tâche en arrière-plan. Plusieurs inscriptions de la même tâche en arrière-plan peuvent entraîner des résultats inattendus si vous exécutez plusieurs fois la tâche en arrière-plan à chacun de ses déclenchements.
 -   Si la tâche en arrière-plan requiert un accès à l’écran de verrouillage, veillez à placer l’application sur l’écran de verrouillage avant d’essayer de déboguer la tâche en arrière-plan. Pour plus d’informations sur la spécification des options de manifeste pour les applications compatibles avec l’écran de verrouillage, consultez [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md).

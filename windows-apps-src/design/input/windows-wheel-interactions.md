@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 ms.assetid: e7deb1d6-feeb-471e-9a83-26386d1aaf37
 ms.localizationpriority: medium
-ms.openlocfilehash: e9a619fc58b1b84755e33fd36ebacd99f98d6b7f
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 29a054299b933e523f8594419c4e954c3a0bf1e4
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220412"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91749965"
 ---
 # <a name="surface-dial-interactions"></a>Interactions avec Surface Dial
 
@@ -27,10 +27,18 @@ Les appareils volants Windows, tels que la surface d’exposition, sont une nouv
 > [!IMPORTANT]
 > Dans cette rubrique, nous faisons spécifiquement référence aux interactions entre les appels en surface, mais les informations s’appliquent à tous les appareils Windows Wheel. 
 
-| Vidéos |   |
-| --- | --- |
-| <iframe src="https://www.youtube-nocookie.com/embed/WMklcdzcNcU" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe> | <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Programming-the-Microsoft-Surface-Dial/player" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe> |
-| *Partenaires d’applications Surface Dial* | *Surface Dial pour les développeurs* |
+:::row:::
+   :::column:::
+      <iframe src="https://www.youtube-nocookie.com/embed/WMklcdzcNcU" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe>
+
+      *Partenaires d’applications Surface Dial*
+   :::column-end:::
+   :::column:::
+      <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Programming-the-Microsoft-Surface-Dial/player" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe>
+
+      *Surface Dial pour les développeurs*
+   :::column-end:::
+:::row-end:::
 
 Avec un format appelant à une action de *rotation* (ou de mouvement), Surface Dial est conçu à la manière d’un appareil d’entrée secondaire multimode venant compléter la saisie à partir d’un appareil principal. Dans la plupart des cas, l’utilisateur manipule l’appareil avec sa main non dominante tout en effectuant une tâche avec sa main dominante (par exemple, l’entrée manuscrite avec un stylet). L’appareil n’est pas conçu pour effectuer des entrées d’un pointeur de précision (par exemple, interaction tactile, stylet ou souris). 
 
@@ -45,9 +53,18 @@ Surface Dial prend également en charge les actions *Appui prolongé* et *Clic*.
 >
 >Le système utilise les informations de détection de l’emplacement de contact et des limites de Surface Dial pour traiter l’occlusion par l’appareil et afficher une version plus grande du menu encerclant la partie extérieure de Surface Dial. Ces mêmes informations peuvent également être utilisées par votre application pour adapter l’interface utilisateur à la présence de l’appareil et à son utilisation prévue, notamment au placement de la main et du bras de l’utilisateur.
 
-| Menu hors écran Surface Dial | | Menu à l’écran Surface Dial |
-| --- | --- | --- |
-| ![Menu hors écran Surface Dial](images/windows-wheel/surface-dial-menu-offscreen.png) | | ![Menu à l’écran Surface Dial](images/windows-wheel/surface-dial-menu-onscreen.png) |
+:::row:::
+   :::column:::
+      **Menu hors écran Surface Dial**
+
+      ![Menu hors écran Surface Dial](images/windows-wheel/surface-dial-menu-offscreen.png)
+   :::column-end:::
+   :::column:::
+      **Menu à l’écran Surface Dial**
+
+      ![Menu à l’écran Surface Dial](images/windows-wheel/surface-dial-menu-onscreen.png)
+   :::column-end:::
+:::row-end:::
 
 ## <a name="system-integration"></a>Intégration du système
 
@@ -113,10 +130,23 @@ Les icônes transmettent un message de professionnalisme et d’excellence et su
 - L’icône doit remplir la majeure partie de l’image
 - Une icône blanche doit avoir un contour noir pour être visible en mode de contraste élevé
 
-|   |   |   |
-| --- | --- | --- |
-| ![Icône avec arrière-plan alpha](images/windows-wheel/surface-dial-menu-icon1.png) | ![Icône affichée dans le menu wheel avec le thème par défaut](images/windows-wheel/surface-dial-menu-icon2.png) | ![Menu à l’écran Surface Dial](images/windows-wheel/surface-dial-menu-icon3.png) |
-| *Icône avec arrière-plan alpha* | *Icône affichée dans le menu wheel avec le thème par défaut* | *Icône affichée dans le menu wheel avec le thème contraste blanc élevé par défaut* |
+:::row:::
+   :::column:::
+      ![Icône avec arrière-plan alpha](images/windows-wheel/surface-dial-menu-icon1.png)
+
+      *Icône avec arrière-plan alpha*
+   :::column-end:::
+   :::column:::
+      ![Icône affichée dans le menu wheel avec le thème par défaut](images/windows-wheel/surface-dial-menu-icon2.png)
+
+      *Icône affichée dans le menu wheel avec le thème par défaut*
+   :::column-end:::
+   :::column:::
+      ![Menu à l’écran Surface Dial](images/windows-wheel/surface-dial-menu-icon3.png)
+
+      *Icône affichée dans le menu wheel avec le thème contraste blanc élevé par défaut*
+   :::column-end:::
+:::row-end:::
 
 **Utiliser des noms concis et descriptifs**  
 Le nom de l’outil s’affiche dans le menu des outils, de même que l’icône de l’outil et est également utilisé par les lecteurs d’écran. 
@@ -316,15 +346,30 @@ Optimisez la satisfaction client en tenant compte et en adaptant vos interaction
 
 Les outils et commandes intégrés au menu Surface Dial suivent ces recommandations pour les interactions basées sur la rotation :
 
-|   |   |   |
-| --- | --- | --- |
-| Gauche<br/>Haut<br/>Sortie | ![Image de Surface Dial](images/windows-wheel/surface-dial-rotate.png) | Right<br/>Descendre<br/>Dans |
-|   |   |   |
+:::row:::
+   :::column:::
+      Gauche
+
+      Haut
+
+      Sortie 
+   :::column-end:::
+   :::column span="2":::
+      ![Image de Surface Dial](images/windows-wheel/surface-dial-rotate.png)
+   :::column-end:::
+   :::column:::
+      Right
+
+      Bas
+
+      Dans
+   :::column-end:::
+:::row-end:::
 
 | Direction conceptuelle | Mappage sur Surface Dial | Rotation dans le sens des aiguilles d’une montre | Rotation dans le sens inverse des aiguilles d’une montre |
 | --- | --- | --- | --- |
 | Horizontal | Mappage gauche et droit basé sur le haut de Surface Dial | Right | Gauche |
-| Vertical | Mappage supérieur et inférieur basé sur le côté gauche de Surface Dial | Descendre | Haut |
+| Vertical | Mappage supérieur et inférieur basé sur le côté gauche de Surface Dial | Bas | Haut |
 | Axe Z | Vers l’intérieur (plus près), mappage sur le haut/la droite<br/>Vers l’extérieur (plus loin), mappage sur le bas/la gauche | Dans | Sortie |
 
 #### <a name="developer-guidance"></a>Guide pour développeurs
@@ -366,7 +411,7 @@ private void MyController_ButtonClicked(RadialController sender,
 }
 ```
 
-### <a name="click"></a>Cliquez
+### <a name="click"></a>Cliquez sur
 
 Cliquer sur Surface Dial équivaut à cliquer sur le bouton gauche de la souris (l’état de rotation de l’appareil ne produit aucun effet sur cette action).
 

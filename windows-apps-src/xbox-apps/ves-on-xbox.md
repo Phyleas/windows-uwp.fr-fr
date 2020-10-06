@@ -4,12 +4,12 @@ description: Découvrez comment ajouter une prise en charge du contrôle vocal �
 ms.date: 10/19/2017
 ms.topic: article
 keywords: Windows 10, UWP, Xbox, Speech, Shell avec voix activée
-ms.openlocfilehash: b59b578a13145910be30c3f228305b874f9e9734
-ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
+ms.openlocfilehash: fa0f56a6821fd8858cab317654cd0ead5d731693
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91636479"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750265"
 ---
 # <a name="using-speech-to-invoke-ui-elements"></a>Utilisation de la reconnaissance vocale pour appeler des éléments d’interface utilisateur
 
@@ -20,31 +20,31 @@ Vous trouverez ci-dessous une vue d’ensemble de ce qu’un utilisateur peut re
 
 - L’utilisateur active la console Xbox et souhaite parcourir ses applications pour trouver un intérêt :
 
-        User: "Hey Cortana, open My Games and Apps"
+    > Utilisateur : « Hey Cortana, ouvrir mes jeux et applications »
 
 - L’utilisateur reste en mode d’écoute active (ALM), ce qui signifie que la console est à l’écoute de l’utilisateur pour appeler un contrôle visible à l’écran, sans qu’il soit nécessaire de dire « Hey Cortana » à chaque fois.  L’utilisateur peut maintenant basculer vers afficher les applications et faire défiler la liste des applications :
 
-        User: "applications"
+    > Utilisateur : « applications »
 
 - Pour faire défiler la vue, l’utilisateur peut simplement indiquer :
 
-        User: "scroll down"
+    > Utilisateur : « défilement vers le dessous »
 
 - L’utilisateur voit l’image de la boîte de l’application qui l’intéresse, mais a oublié le nom.  L’utilisateur demande l’affichage des étiquettes de pourboires vocaux :
 
-        User: "show labels"
+    > Utilisateur : « afficher les étiquettes »
 
 - Maintenant qu’il est clair que vous pouvez indiquer, l’application peut être lancée :
 
-        User: "movies and TV"
+    > Utilisateur : « films et TV »
 
 - Pour quitter le mode d’écoute active, l’utilisateur demande à Xbox d’arrêter l’écoute :
 
-        User: "stop listening"
+    > Utilisateur : « arrêter l’écoute »
 
 - Plus tard, une nouvelle session d’écoute active peut être démarrée avec :
 
-        User: "Hey Cortana, make a selection" or "Hey Cortana, select"
+    > Utilisateur : « Hey Cortana, effectuer une sélection » ou « Hey Cortana, Select »
 
 ## <a name="ui-automation-dependency"></a>Dépendance UI Automation ##
 Le système VES est un client UI Automation et s’appuie sur les informations exposées par l’application par le biais de ses fournisseurs UI Automation. Il s’agit de la même infrastructure que celle déjà utilisée par la fonctionnalité narrateur sur les plateformes Windows.  UI Automation permet l’accès par programmation aux éléments de l’interface utilisateur, y compris le nom du contrôle, son type et les modèles de contrôle qu’il implémente.  Lorsque l’interface utilisateur est modifiée dans l’application, VES réagit aux événements de mise à jour UIA et réanalyse l’arborescence UI Automation mise à jour pour trouver tous les éléments actionnables, à l’aide de ces informations pour générer une grammaire de reconnaissance vocale. 
@@ -151,7 +151,7 @@ Pour les contrôles à défilement, les conseils vocaux pour les commandes de d�
 ## <a name="disambiguation"></a>Lever les ambiguïtés ##
 Quand plusieurs éléments d’interface utilisateur ont le même nom ou que le module de reconnaissance vocale a mis en correspondance plusieurs candidats, le système VES entrera en mode de désambiguïsation.  Dans ce mode, les étiquettes vocales s’affichent pour les éléments impliqués afin que l’utilisateur puisse sélectionner celui qui convient. L’utilisateur peut annuler le mode de désambiguation en disant « annuler ».
 
-Exemple :
+Par exemple :
 
 - En mode d’écoute active, avant toute ambiguïté ; l’utilisateur dit « AM I ambigu » :
 
@@ -168,36 +168,37 @@ Exemple :
 ## <a name="sample-ui"></a>Exemple d’interface utilisateur ##
 Voici un exemple d’interface utilisateur XAML, qui définit le AutomationProperties.Name de différentes manières :
 
-    <Page
-        x:Class="VESSampleCSharp.MainPage"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:local="using:VESSampleCSharp"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d">
-        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-            <Button x:Name="button1" Content="Hello World" HorizontalAlignment="Left" Margin="44,56,0,0" VerticalAlignment="Top"/>
-            <Button x:Name="button2" AutomationProperties.Name="Launch Game" Content="Launch" HorizontalAlignment="Left" Margin="44,106,0,0" VerticalAlignment="Top" Width="99"/>
-            <TextBlock AutomationProperties.Name="Day of Week" x:Name="label1" HorizontalAlignment="Left" Height="22" Margin="168,62,0,0" TextWrapping="Wrap" Text="Select Day of Week:" VerticalAlignment="Top" Width="137"/>
-            <ComboBox AutomationProperties.LabeledBy="{Binding ElementName=label1}" x:Name="comboBox" HorizontalAlignment="Left" Margin="310,57,0,0" VerticalAlignment="Top" Width="120">
-                <ComboBoxItem Content="Monday" IsSelected="True"/>
-                <ComboBoxItem Content="Tuesday"/>
-                <ComboBoxItem Content="Wednesday"/>
-                <ComboBoxItem Content="Thursday"/>
-                <ComboBoxItem Content="Friday"/>
-                <ComboBoxItem Content="Saturday"/>
-                <ComboBoxItem Content="Sunday"/>
-            </ComboBox>
-            <Button x:Name="button3" HorizontalAlignment="Left" Margin="44,156,0,0" VerticalAlignment="Top" Width="213">
-                <Grid>
-                    <TextBlock AutomationProperties.Name="Accept">Accept Offer</TextBlock>
-                    <TextBlock Margin="0,25,0,0" Foreground="#FF5A5A5A">Exclusive offer just for you</TextBlock>
-                </Grid>
-            </Button>
-        </Grid>
-    </Page>
-
+```xaml
+<Page
+    x:Class="VESSampleCSharp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VESSampleCSharp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button x:Name="button1" Content="Hello World" HorizontalAlignment="Left" Margin="44,56,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="button2" AutomationProperties.Name="Launch Game" Content="Launch" HorizontalAlignment="Left" Margin="44,106,0,0" VerticalAlignment="Top" Width="99"/>
+        <TextBlock AutomationProperties.Name="Day of Week" x:Name="label1" HorizontalAlignment="Left" Height="22" Margin="168,62,0,0" TextWrapping="Wrap" Text="Select Day of Week:" VerticalAlignment="Top" Width="137"/>
+        <ComboBox AutomationProperties.LabeledBy="{Binding ElementName=label1}" x:Name="comboBox" HorizontalAlignment="Left" Margin="310,57,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="Monday" IsSelected="True"/>
+            <ComboBoxItem Content="Tuesday"/>
+            <ComboBoxItem Content="Wednesday"/>
+            <ComboBoxItem Content="Thursday"/>
+            <ComboBoxItem Content="Friday"/>
+            <ComboBoxItem Content="Saturday"/>
+            <ComboBoxItem Content="Sunday"/>
+        </ComboBox>
+        <Button x:Name="button3" HorizontalAlignment="Left" Margin="44,156,0,0" VerticalAlignment="Top" Width="213">
+            <Grid>
+                <TextBlock AutomationProperties.Name="Accept">Accept Offer</TextBlock>
+                <TextBlock Margin="0,25,0,0" Foreground="#FF5A5A5A">Exclusive offer just for you</TextBlock>
+            </Grid>
+        </Button>
+    </Grid>
+</Page>
+```
 
 L’exemple ci-dessus présente l’interface utilisateur, ainsi que les étiquettes vocales.
  

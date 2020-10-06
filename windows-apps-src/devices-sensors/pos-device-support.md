@@ -5,12 +5,12 @@ ms.date: 06/13/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bf5d6a2413ba6aeb2e3fd86122e865e34b8729fa
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9e89011086e6c6d318d589226400789b41f8fe64
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172203"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750345"
 ---
 # <a name="supported-point-of-service-peripherals"></a>Périphériques de point de service pris en charge
 
@@ -75,12 +75,12 @@ ms.locfileid: "89172203"
 <hr>
 
 ### <a name="windows-devices-with-built-in-barcode-scanner"></a>Appareils Windows avec un scanneur de codes-barres intégré
-| Fabricant   | Modèle | Système d'exploitation |
+| Fabricant   | Modèle | Système d’exploitation |
 |----------------|-------|------------------|
 | Innowi         | ChecOut-M | Windows 10   |
 
 ### <a name="windows-mobile-devices-with-built-in-barcode-scanner"></a>Appareils Windows Mobile avec un scanneur de codes-barres intégré
-| Fabricant   | Modèle | Système d'exploitation |
+| Fabricant   | Modèle | Système d’exploitation |
 |----------------|-------|------------------|
 | Bluebird       | EF400 | Windows Mobile   |
 | Bluebird       | EF500 | Windows Mobile   |
@@ -123,7 +123,7 @@ Windows assure la prise en charge des lecteurs de bandes magnétiques suivants �
 ## <a name="receipt-printer-posprinter"></a>Imprimante d’accusés de réception (POSPrinter)
 | Connectivité | Support |
 | -------------|-------------|
-| Réseau et Bluetooth | <p>Windows prend en charge les imprimantes de réception connectées au réseau et à Bluetooth à l’aide du langage de contrôle d’imprimante EPSON ESC/POS.  Les imprimantes répertoriées ci-dessous sont découvertes automatiquement à l’aide des API POSPrinter. Des imprimantes de réception supplémentaires qui fournissent une émulation ESC/POS peuvent également fonctionner, mais doivent être associées à l’aide d’un processus de [couplage hors bande](./point-of-service.md#out-of-band-pairing) .</p><p>Remarque : les stations de la station Slip et du journal ne sont pas prises en charge par cette méthode.</p> |
+| Réseau et Bluetooth | <p>Windows prend en charge les imprimantes de réception connectées au réseau et à Bluetooth à l’aide du langage de contrôle d’imprimante EPSON ESC/POS.  Les imprimantes répertoriées ci-dessous sont découvertes automatiquement à l’aide des API POSPrinter. Des imprimantes de réception supplémentaires qui fournissent une émulation ESC/POS peuvent également fonctionner, mais doivent être associées à l’aide d’un processus de [couplage hors bande](./point-of-service.md) .</p><p>Remarque : les stations de la station Slip et du journal ne sont pas prises en charge par cette méthode.</p> |
 | OPOS    | <p> Prend en charge toutes les imprimantes de réception compatibles OPOS via les objets de service OPOS. Installez les pilotes OPOS conformément aux instructions d’installation du fabricant de l’appareil. </p> |
 
 ### <a name="stationary-receipt-printers-networkbluetooth"></a>Imprimantes à réception stationnaire (réseau/Bluetooth)

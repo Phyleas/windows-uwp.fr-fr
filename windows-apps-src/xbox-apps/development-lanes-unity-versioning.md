@@ -4,12 +4,12 @@ description: Découvrez comment utiliser le contrôle de version avec un jeu Uni
 ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
-ms.openlocfilehash: 3e4d98892b9bd738eca788d166ef79f81ea1b047
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1c0eb9bfc6ee758b854754b0531299fb30b51d1c
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173743"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91749855"
 ---
 # <a name="unity-version-control-your-uwp-project"></a>Unity : Gestion de version de votre projet UWP
 
@@ -31,19 +31,21 @@ Dans ce répertoire, un seul dossier nous intéresse : le dossier ***ScrapyardP
 
 ***Vous ne connaissez pas ce qu’est un fichier. gitignore ?  Consultez [gitignore](https://git-scm.com/docs/gitignore).***
 
-    ##################################################################
-    # The original .gitignore file can be found at
-    # https://github.com/github/gitignore/blob/master/Unity.gitignore
-    ##################################################################
+```console
+##################################################################
+# The original .gitignore file can be found at
+# https://github.com/github/gitignore/blob/master/Unity.gitignore
+##################################################################
 
-    # standard ignores for a Unity Project
-    ...
+# standard ignores for a Unity Project
+...
 
-    # ignore the whole UWP directory
-    /UWP/**
+# ignore the whole UWP directory
+/UWP/**
 
-    # except we want to keep... (this line will be modified and removed further down)
-    !/UWP/ScrapyardPhoenix/
+# except we want to keep... (this line will be modified and removed further down)
+!/UWP/ScrapyardPhoenix/
+```
 
 Nous allons sélectionner quelques fichiers et dossiers différents dans le dossier **UWP/ScrapyardPhoenix** à ajouter à notre gestion de version.  Tout d’abord, examinons la chose dans son intégralité et en détail :
 
@@ -57,7 +59,7 @@ Nous allons sélectionner quelques fichiers et dossiers différents dans le doss
 `Properties` | ***Inclure*** | Contient des paramètres plus avancés qui peuvent être modifiés par le développeur  
 `Unprocessed` | ***Ignorer*** | Contient Unity `.dll` et des `.pdb` fichiers  
 
-## <a name="files"></a>Fichiers  
+## <a name="files"></a>Files  
 
 `App.cs` | ***Inclure*** | Point d’entrée pour votre application UWP ; Cela peut être modifié et étendu avec d’autres fichiers sources.  
 `Package.appxmanifest` | ***Inclure*** | Fichier source du manifeste du package d’application pour votre package. msix ou. AppX  
@@ -67,25 +69,27 @@ Nous allons sélectionner quelques fichiers et dossiers différents dans le doss
 
 ## <a name="resulting-gitignore"></a>Fichier .gitignore obtenu
 
-    ##################################################################
-    # The original .gitignore file can be found at
-    # https://github.com/github/gitignore/blob/master/Unity.gitignore
-    ##################################################################
+```console
+##################################################################
+# The original .gitignore file can be found at
+# https://github.com/github/gitignore/blob/master/Unity.gitignore
+##################################################################
 
-    # standard ignores for a Unity Project
-    ...
+# standard ignores for a Unity Project
+...
 
-    # ignore the whole UWP directory
-    /UWP/**
+# ignore the whole UWP directory
+/UWP/**
 
-    # except we want to keep...
-    !/UWP/ScrapyardPhoenix/Assets/*
-    !/UWP/ScrapyardPhoenix/Dependencies/*
-    !/UWP/ScrapyardPhoenix/Properties/*
-    !/UWP/ScrapyardPhoenix/App.cs
-    !/UWP/ScrapyardPhoenix/Package.appxmanifest
-    !/UWP/ScrapyardPhoenix/project.json
-    !/UWP/ScrapyardPhoenix/ScrapyardPhoenix.csproj
+# except we want to keep...
+!/UWP/ScrapyardPhoenix/Assets/*
+!/UWP/ScrapyardPhoenix/Dependencies/*
+!/UWP/ScrapyardPhoenix/Properties/*
+!/UWP/ScrapyardPhoenix/App.cs
+!/UWP/ScrapyardPhoenix/Package.appxmanifest
+!/UWP/ScrapyardPhoenix/project.json
+!/UWP/ScrapyardPhoenix/ScrapyardPhoenix.csproj
+```
 
 Et voilà, maintenant vos coéquipiers seront synchronisés avec le projet UWP que vous avez généré. Maintenant, n’hésitez pas à ajouter des ressources, sources et dépendances supplémentaires à votre projet UWP.
 

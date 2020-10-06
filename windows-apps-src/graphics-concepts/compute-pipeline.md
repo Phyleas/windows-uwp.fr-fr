@@ -1,35 +1,37 @@
 ---
 title: Pipeline de calcul
-description: Le pipeline de calcul Direct 3D est conçu pour traiter les calculs pouvant être effectués principalement en parallèle du pipeline graphique.
+description: Le pipeline de calcul Direct3D est conçu pour traiter les calculs pouvant être effectués principalement en parallèle du pipeline graphique.
 ms.assetid: 355B66C6-C0DF-47BA-A9C9-7AFA50B5B614
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 911546f1c2973a79aea4b597a47352149a4e4210
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 36d1bd524d6e71b0a1aa9477d7a2b7a5f27544aa
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57651114"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750045"
 ---
 # <a name="compute-pipeline"></a>Pipeline de calcul
 
 
-\[Certaines informations sont relatives à la version préliminaire du produit qui peut être substantiellement modifié avant sa commercialisation. Microsoft exclut toute garantie, expresse ou implicite, concernant les informations fournies ici.\]
+\[Certaines informations relatives aux produits précommercialisés peuvent être substantiellement modifiées avant leur commercialisation. Microsoft exclut toute garantie, expresse ou implicite, concernant les informations fournies ici.\]
 
 
-Le pipeline de calcul Direct 3D est conçu pour traiter les calculs pouvant être effectués principalement en parallèle du pipeline graphique. Le pipeline de calcul comporte seulement quelques étapes, où des données sont transmises de l’entrée vers la sortie via l’étape du nuanceur de calcul programmable.
+Le pipeline de calcul Direct3D est conçu pour traiter les calculs pouvant être effectués principalement en parallèle du pipeline graphique. Il n’y a que quelques étapes dans le pipeline de calcul, les données passant de l’entrée à la sortie via l’étape de nuanceur de calcul programmable.
 
-| | |
-|-|-|
-|Objectif|Comme les autres nuanceurs programmables, l'[étape Compute Shader (CS)](compute-shader-stage--cs-.md) est conçue et implémentée avec HLSL. Un nuanceur de calcul assure des opérations de calcul général à haut débit et tire parti du grand nombre de processeurs parallèles sur le processeur graphique (GPU). Le nuanceur de calcul fournit des fonctionnalités de partage de mémoire et de synchronisation de threads pour prendre en charge des méthodes de programmation parallèles plus efficaces.|
-|Entrée|Contrairement à d’autres nuanceurs programmables, la définition d’entrée est abstraite. L’entrée peut, par nature, avoir une, deux ou trois dimensions, qui déterminent le nombre d’appels du nuanceur de calcul à exécuter. Il est possible de définir des données partagées pour un ensemble d’appels à lire.|
-|Sortie|Les données de sortie du nuanceur de calcul, qui peuvent être extrêmement variées, peuvent être synchronisées avec le pipeline de rendu graphique lorsque les données calculées sont requises.|
-| | |
+## <a name="purpose"></a>Objectif
 
+Comme les autres nuanceurs programmables, l' [étape de nuanceur de calcul (CS)](compute-shader-stage--cs-.md) est conçue et implémentée en HLSL. Un nuanceur de calcul fournit un calcul universel à grande vitesse et tire parti du grand nombre de processeurs parallèles sur l’unité de traitement graphique (GPU). Le nuanceur de calcul fournit des fonctionnalités de partage de mémoire et de synchronisation de threads pour permettre des méthodes de programmation parallèles plus efficaces. |
 
+## <a name="input"></a>Entrée
 
+Contrairement à d’autres nuanceurs programmables, la définition de l’entrée est abstraite. L’entrée peut être de type un, deux ou trois dimensions, déterminant le nombre d’appels du nuanceur de calcul à exécuter. Il est possible de définir des données partagées pour un ensemble d’appels à lire. |
+
+## <a name="output"></a>Output
+
+Les données de sortie du nuanceur de calcul, qui peuvent être très variées, peuvent être synchronisées avec le pipeline de rendu graphique lorsque les données calculées sont requises.
 
 <!---
 <table>
@@ -57,7 +59,7 @@ Le pipeline de calcul Direct 3D est conçu pour traiter les calculs pouvant ê
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
-[Guide d’apprentissage graphiques Direct3D](index.md)
+[Guide d’apprentissage graphique Direct3D](index.md)
 
  
 

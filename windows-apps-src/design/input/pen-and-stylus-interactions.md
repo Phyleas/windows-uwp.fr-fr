@@ -8,12 +8,12 @@ keywords: Windows Ink, entrée manuscrite Windows, DirectInk, InkPresenter, InkC
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 34e41ff4b6fa402e8a1857a2ea406c9e63e7c868
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: a877fabfd34bcbe16afb70c012d403d489e3a6e0
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216962"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91749915"
 ---
 # <a name="pen-interactions-and-windows-ink-in-windows-apps"></a>Interactions avec le stylet et Windows Ink dans les applications Windows
 
@@ -27,10 +27,18 @@ Optimisez votre application Windows pour l’entrée de stylet afin de fournir d
 > [!NOTE]
 > Cette rubrique est dédiée à la plateforme Windows Ink. Pour en savoir plus sur la gestion des entrées au pointeur (similaires aux fonctionnalités tactiles, de la souris et du pavé tactile), consultez [Gérer les entrées du pointeur](handle-pointer-input.md).
 
-| Vidéos |   |
-| --- | --- |
-| <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Ink-in-Your-UWP-App/player" width="300" height="200" allowFullScreen frameBorder="0"></iframe> | <iframe src="https://channel9.msdn.com/Events/Ignite/2016/BRK2060/player" width="300" height="200" allowFullScreen frameBorder="0"></iframe> |
-| *Utilisation de l’encre dans votre application Windows* | *Utiliser le stylet et l’entrée manuscrite Windows pour créer des applications d’entreprise plus conviviales* |
+:::row:::
+   :::column:::
+      <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Ink-in-Your-UWP-App/player" width="300" height="200" allowFullScreen frameBorder="0"></iframe>
+
+      *Utilisation de l’encre dans votre application Windows*
+   :::column-end:::
+   :::column:::
+      <iframe src="https://channel9.msdn.com/Events/Ignite/2016/BRK2060/player" width="300" height="200" allowFullScreen frameBorder="0"></iframe>
+
+      *Utiliser le stylet et l’entrée manuscrite Windows pour créer des applications d’entreprise plus conviviales*
+   :::column-end:::
+:::row-end:::
 
 La plateforme Windows Ink, associée à un stylet, permet de créer des notes manuscrites, des dessins et des annotations plus naturellement. La plateforme prend en charge la capture d’entrée du numériseur sous forme de données d’entrée manuscrite, la génération et la gestion de données d’entrée manuscrite, la restitution de ces données sous forme de traits et la conversion de l’encre en texte via la reconnaissance d’écriture manuscrite.
 

@@ -6,12 +6,12 @@ ms.date: 05/14/2018
 ms.topic: article
 keywords: Windows 10, UWP, threads, asynchrone, C++
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e3810b25ac35cbf5e16f49a86affb4792089d1e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e08a73c7617a5b24af49d5b3665303124e28d257
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161793"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750155"
 ---
 # <a name="asynchronous-programming-in-ccx"></a>Programmation asynchrone en C++/CX
 > [!NOTE]
@@ -119,9 +119,8 @@ Dans une continuation de tâche, le type de retour de la fonction lambda est enc
 
 Dans l’exemple précédent, Notez que la tâche retourne une **tâche <void> ** , même si son lambda a retourné un objet [**IAsyncInfo**][IAsyncInfo] . Le tableau suivant résume les conversions de types qui se produisent entre une fonction lambda et la tâche englobante :
 
-| | |
-|--------------------------------------------------------|---------------------|
-| type de retour de la fonction lambda                                     | `.then` type de retour |
+| type de retour de la fonction lambda | `.then` type de retour |
+| ------------------ | ------------------- |
 | TResult                                                | tâche<TResult> |
 | IAsyncOperation<TResult>^                        | tâche<TResult> |
 | IAsyncOperationWithProgress&lt;TResult, TProgress&gt;^ | tâche<TResult> |

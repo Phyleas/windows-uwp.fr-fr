@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c60794a52c3d8a5f597d4ab2d09490405c98f85a
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 5ec8832d4e0e8c72954bf4d0582aac8240da2efe
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218372"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750685"
 ---
 # <a name="create-adaptive-tiles"></a>Créer des vignettes adaptatives
 
@@ -284,7 +284,7 @@ Si vous ne spécifiez aucune personnalisation dans votre charge utile de notific
 
  
 
-## <a name="display-name"></a>Nom complet
+## <a name="display-name"></a>Nom d’affichage
 
 
 Vous pouvez remplacer le nom d’affichage d’une notification en entrant la chaîne de texte de votre choix avec l’attribut **displayName**. Comme pour la personnalisation, vous pouvez spécifier cela sur l’élément [TileVisual](../tiles-and-notifications/tile-schema.md#tilevisual) , ce qui affecte l’intégralité de la charge utile de notification, ou sur l’élément [TileBinding](../tiles-and-notifications/tile-schema.md#tilebinding) , qui affecte uniquement les vignettes individuelles.
@@ -412,16 +412,15 @@ new AdaptiveText()
 
 **Styles de texte de base**
 
-|                                |                           |             |
-|--------------------------------|---------------------------|-------------|
 | &lt;indicateur de texte-style = " \* "/&gt; | Hauteur de police               | Épaisseur de police |
+|--------------------------------|---------------------------|-------------|
 | caption                        | 12 pixels effectifs (epx) | Normal     |
 | body                           | 15 epx                    | Normal     |
 | base                           | 15 epx                    | Demi-gras    |
 | subtitle                       | 20 epx                    | Normal     |
 | title                          | 24 epx                    | Semilight   |
-| sous-titre                      | 34 epx                    | Clair       |
-| en-tête                         | 46 epx                    | Clair       |
+| sous-titre                      | 34 epx                    | Léger       |
+| en-tête                         | 46 epx                    | Léger       |
 
  
 
@@ -429,11 +428,11 @@ new AdaptiveText()
 
 Ces variations réduisent la hauteur de ligne afin que le contenu situé au-dessus et au-dessous soit beaucoup plus proche du texte.
 
-|                  |
-|------------------|
-| titleNumeral     |
-| subheaderNumeral |
-| headerNumeral    |
+- titleNumeral
+
+- subheaderNumeral
+
+- headerNumeral
 
  
 
@@ -441,18 +440,25 @@ Ces variations réduisent la hauteur de ligne afin que le contenu situé au-dess
 
 Chaque style dispose d’une variation de sous-titre qui octroie au texte une opacité de 60 %, qui transforme généralement la couleur du texte en nuance de gris clair.
 
-|                        |
-|------------------------|
-| captionSubtle          |
-| bodySubtle             |
-| baseSubtle             |
-| subtitleSubtle         |
-| titleSubtle            |
-| titleNumeralSubtle     |
-| subheaderSubtle        |
-| subheaderNumeralSubtle |
-| headerSubtle           |
-| headerNumeralSubtle    |
+- captionSubtle
+
+- bodySubtle
+
+- baseSubtle
+
+- subtitleSubtle
+
+- titleSubtle
+
+- titleNumeralSubtle
+
+- subheaderSubtle
+
+- subheaderNumeralSubtle
+
+- headerSubtle
+
+- headerNumeralSubtle
 
  
 
@@ -592,19 +598,19 @@ L’attribut **hint-weight** vous permet de contrôler la largeur des colonnes. 
 </tr>
 <tr class="even">
 <td align="left">1</td>
-<td align="left">25%</td>
+<td align="left">25 %</td>
 </tr>
 <tr class="odd">
 <td align="left">1</td>
-<td align="left">25%</td>
+<td align="left">25 %</td>
 </tr>
 <tr class="even">
 <td align="left">1</td>
-<td align="left">25%</td>
+<td align="left">25 %</td>
 </tr>
 <tr class="odd">
 <td align="left">1</td>
-<td align="left">25%</td>
+<td align="left">25 %</td>
 </tr>
 <tr class="even">
 <td align="left">Pondération totale : 4</td>
@@ -666,7 +672,7 @@ Si vous souhaitez que les première et seconde colonnes occupent respectivement 
 </tr>
 <tr class="odd">
 <td align="left">80</td>
-<td align="left">80 %</td>
+<td align="left">80 %</td>
 </tr>
 <tr class="even">
 <td align="left">Pondération totale : 100</td>

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d3b032b735b8985ae87ce78e100442085cce55e7
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 603cdfe0c35d559ca3f2acacbce491ce3f54c35d
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163703"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91749995"
 ---
 # <a name="playready-drm"></a>Gestion des droits numériques PlayReady
 
@@ -87,7 +87,7 @@ Un nouvel exemple a été créé pour montrer comment utiliser les nouvelles fon
 -   Pour tirer parti de certaines nouvelles fonctionnalités de PlayReady 3.0 (SL3000 pour les clients matériels, acquisition de plusieurs licences non persistantes en un message d’acquisition de licence, restrictions temporelles sur les licences non persistantes, etc.), le serveur PlayReady doit être la version commerciale du Kit de développement logiciel serveur Microsoft PlayReady v3.0.2769 ou version ultérieure.
 -   Selon la stratégie de protection de sortie spécifiée dans la licence de contenu, la lecture multimédia peut échouer pour les utilisateurs finaux si leur sortie connectée ne prend pas en charge ces exigences. Le tableau suivant répertorie l’ensemble des erreurs courantes qui se produisent en conséquence. Pour plus d’informations, voir les [Règles de conformité et de robustesse de PlayReady](https://www.microsoft.com/playready/licensing/compliance/).
 
-| Erreur                                                   | Valeur      | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| Error                                                   | Valeur      | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |---------------------------------------------------------|------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | ERREUR \_ Graphics la \_ \_ sortie OPM \_ ne \_ \_ prend pas en charge \_ HDCP  | 0xC0262513 | La stratégie de protection de contenu de la licence requiert que le moniteur enclenche la protection HDCP, mais celle-ci n’a pas pu être enclenchée.                                                                                                                                                                                                                                                                                                                                                                                              |
 | \_stratégie MF \_ E \_ non prise en charge                              | 0xC00D7159 | La stratégie de protection de contenu de la licence requiert que le moniteur enclenche la protection HDCP de type 1, mais celle-ci n’a pas pu être enclenchée.                                                                                                                                                                                                                                                                                                                                                                                |
@@ -472,30 +472,30 @@ Dans les versions précédentes de la gestion des droits numériques par PlayRea
 ## <a name="query-for-protection-capabilities"></a>Requête sur les fonctionnalités de protection
 À compter de Windows 10, version 1703, vous pouvez interroger les fonctionnalités DRM MATÉRIELles, telles que le décodage des codecs, la résolution et la protection de sortie (HDCP). Les requêtes sont exécutées avec la méthode [**IsTypeSupported**](/uwp/api/windows.media.protection.protectioncapabilities.istypesupported) qui prend une chaîne représentant les fonctionnalités pour lesquelles la prise en charge est interrogée et une chaîne spécifiant le système de clé auquel la requête s’applique. Pour obtenir la liste des valeurs de chaîne prises en charge, consultez la page de référence des API pour [**IsTypeSupported**](/uwp/api/windows.media.protection.protectioncapabilities.istypesupported). L’exemple de code suivant illustre l’utilisation de cette méthode.  
 
-    ```cs
-    using namespace Windows::Media::Protection;
+```cs
+using namespace Windows::Media::Protection;
 
-    ProtectionCapabilities^ sr = ref new ProtectionCapabilities();
+ProtectionCapabilities^ sr = ref new ProtectionCapabilities();
 
-    ProtectionCapabilityResult result = sr->IsTypeSupported(
-    L"video/mp4; codecs=\"avc1.640028\"; features=\"decode-bpp=10,decode-fps=29.97,decode-res-x=1920,decode-res-y=1080\"",
-    L"com.microsoft.playready");
+ProtectionCapabilityResult result = sr->IsTypeSupported(
+L"video/mp4; codecs=\"avc1.640028\"; features=\"decode-bpp=10,decode-fps=29.97,decode-res-x=1920,decode-res-y=1080\"",
+L"com.microsoft.playready");
 
-    switch (result)
-    {
-        case ProtectionCapabilityResult::Probably:
-        // Queue up UHD HW DRM video
-        break;
+switch (result)
+{
+    case ProtectionCapabilityResult::Probably:
+    // Queue up UHD HW DRM video
+    break;
 
-        case ProtectionCapabilityResult::Maybe:
-        // Check again after UI or poll for more info.
-        break;
+    case ProtectionCapabilityResult::Maybe:
+    // Check again after UI or poll for more info.
+    break;
 
-        case ProtectionCapabilityResult::NotSupported:
-        // Do not queue up UHD HW DRM video.
-        break;
-    }
-    ```
+    case ProtectionCapabilityResult::NotSupported:
+    // Do not queue up UHD HW DRM video.
+    break;
+}
+```
 ## <a name="add-secure-stop"></a>Ajouter un arrêt sécurisé
 
 Cette section explique comment ajouter un arrêt sécurisé à votre application pour UWP.
@@ -526,7 +526,7 @@ Une fois que vous recevez d’autorisation, vous devrez ajouter un objet `<Devic
     <DeviceCapability Name="6a7e5907-885c-4bcb-b40a-073c067bd3d5" />
     ```
 
-4. Enregistrez le fichier .
+4. Enregistrez le fichier.
 
 Vous devez tenir compte d’un dernier aspect lors de l’utilisation de PlayReady sur Xbox One : les kits de développement sont limités au contenu SL150 (autrement dit, ils ne peuvent pas lire du contenu SL2000 ou SL3000). Les appareils du commerce peuvent lire du contenu associé à des niveaux de sécurité plus élevés, mais pour tester votre application sur un kit de développement, vous devrez utiliser du contenu SL150. Vous pouvez tester ce contenu de l’une des manières suivantes :
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, sécurité
 ms.localizationpriority: medium
-ms.openlocfilehash: ecb35a262f02576f0425460c8e27ce0016a08d1a
-ms.sourcegitcommit: 651a6b9769fad1736ab16e2a4e423258889b248e
+ms.openlocfilehash: bcb43748baeeb7f68ec246cb0277fbef0944fc47
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91366895"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750354"
 ---
 # <a name="windows-hello"></a>Windows Hello
 
@@ -411,13 +411,13 @@ Mission accomplie ! Vous venez de contribuer à rendre Internet plus sûr !
 
 ### <a name="62-terminology"></a>6.2 Terminologie
 
-| | |
-|-|-|
+| Terme | Définition |
+| ---- | ---------- |
 | AIK | Une clé d’identité d’attestation sert à fournir une preuve par chiffrement (attestation de clé TPM) en signant les propriétés de la clé non migrable et en fournissant les propriétés et la signature à la partie de confiance pour la vérification. La signature qui en résulte est appelée « déclaration d’attestation ». Dans la mesure où la signature est créée à l’aide de la clé privée AIK (qui n’est utilisable que dans le TPM qui l’a créée), la partie de confiance peut être certaine que la clé attestée ne peut vraiment pas faire l’objet d’une migration ni être utilisée en dehors de ce TPM. |
 | Certificat AIK | Un certificat AIK permet d’attester de la présence d’un AIK au sein d’un module de plateforme sécurisée (TPM). Il permet également d’attester que les autres clés certifiées par la clé d’identité d’attestation provenaient de ce TPM spécifique. |
 | IdP | Un IDP est un fournisseur d’identité. Il peut par exemple s’agir de l’IdP généré par Microsoft pour les comptes Microsoft. Chaque fois qu’une application doit s’authentifier auprès d’un compte Microsoft (MSA), elle peut appeler l’IdP MSA. |
 | PKI | L’infrastructure à clé publique est couramment utilisée pour pointer vers un environnement hébergé par une organisation proprement dite et responsable de la création de clés, de la révocation de clés, etc. |
-| Module de plateforme sécurisée | Le module de plateforme sécurisée peut être utilisé pour créer des paires de clés de chiffrement publiques/privées de façon à ce que la clé privée ne puisse jamais être révélée ni utilisée en dehors du TPM (autrement dit, la clé ne peut pas faire l’objet d’une migration). |
+| Module de plateforme sécurisée (TPM) | Le module de plateforme sécurisée peut être utilisé pour créer des paires de clés de chiffrement publiques/privées de façon à ce que la clé privée ne puisse jamais être révélée ni utilisée en dehors du TPM (autrement dit, la clé ne peut pas faire l’objet d’une migration). |
 | Attestation de clé TPM | Protocole qui prouve par le biais du chiffrement qu’une clé est liée au TPM. Vous pouvez utiliser ce type d’attestation pour vérifier si une certaine opération de chiffrement s’est produite dans le TPM d’un ordinateur donné. |
 
 ## <a name="related-topics"></a>Rubriques connexes

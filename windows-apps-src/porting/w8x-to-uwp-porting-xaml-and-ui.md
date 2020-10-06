@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a20463414f0b96ea51bdf9796c48759975bfc43e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 62085377da89d64c8ba0799dc6bab13c17675f90
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162213"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750675"
 ---
 # <a name="porting-windows-runtime-8x-xaml-and-ui-to-uwp"></a>Portage du balisage XAML et de la couche interface utilisateur de Windows Runtime 8.x vers UWP
 
@@ -93,7 +93,7 @@ Si vous voulez avoir l’assurance que vos styles/modèles personnalisés utilis
 
 Voici quelques exemples plus spécifiques de modifications apportées aux contrôles.
 
-| Nom du contrôle | Changement |
+| Nom du contrôle | Modifier |
 |--------------|--------|
 | **AppBar**   | Si vous utilisez le contrôle **AppBar** (qu’il est préférable de remplacer par [**CommandBar**](/uwp/api/Windows.UI.Xaml.Controls.AppBar)), il n’est pas masqué par défaut dans une application Windows 10. Vous pouvez contrôler cela à l’aide de la propriété [**appbar. ClosedDisplayMode**](/uwp/api/windows.ui.xaml.controls.appbar.closeddisplaymode) . |
 | **AppBar**, [**CommandBar**](/uwp/api/Windows.UI.Xaml.Controls.AppBar) | Dans une application Windows 10, **AppBar** et [**CommandBar**](/uwp/api/Windows.UI.Xaml.Controls.AppBar) comportent un bouton **Voir plus** (ellipse). |
@@ -103,9 +103,9 @@ Voici quelques exemples plus spécifiques de modifications apportées aux contr�
 | [**DatePicker**](/uwp/api/Windows.UI.Xaml.Controls.DatePicker),[**TimePicker**](/uwp/api/Windows.UI.Xaml.Controls.TimePicker) | Passez en revue l’apparence de votre application avec les changements visuels apportés à [**DatePicker**](/uwp/api/Windows.UI.Xaml.Controls.DatePicker) et [**TimePicker**](/uwp/api/Windows.UI.Xaml.Controls.TimePicker). Pour une application Windows 10 s’exécutant sur un appareil mobile, ces contrôles n’accèdent plus à une page de sélection, mais à une fenêtre contextuelle révocable à l’aide d’un léger mouvement. |
 | [**DatePicker**](/uwp/api/Windows.UI.Xaml.Controls.DatePicker),[**TimePicker**](/uwp/api/Windows.UI.Xaml.Controls.TimePicker) | Dans une application Windows 10, vous ne pouvez pas mettre [**DatePicker**](/uwp/api/Windows.UI.Xaml.Controls.DatePicker) ou [**timepicker**](/uwp/api/Windows.UI.Xaml.Controls.TimePicker) à l’intérieur d’un volant. Si vous souhaitez que ces contrôles s’affichent dans un contrôle de type popup, vous pouvez utiliser [**DatePickerFlyout**](/uwp/api/Windows.UI.Xaml.Controls.DatePickerFlyout) et [**TimePickerFlyout**](/uwp/api/Windows.UI.Xaml.Controls.TimePickerFlyout). |
 | **GridView**, **ListView** | Pour **GridView** / **ListView**, consultez [modifications de GridView et de ListView](#gridview-and-listview-changes). |
-| [**Hub**](/uwp/api/Windows.UI.Xaml.Controls.Hub) | Dans une application du Windows Store Windows Phone, un contrôle de [**concentrateur**](/uwp/api/Windows.UI.Xaml.Controls.Hub) encapsule la dernière section jusqu’au premier. Dans une application Windows Runtime 8. x et dans une application Windows 10, les sections de concentrateur ne sont pas entourées. |
-| [**Hub**](/uwp/api/Windows.UI.Xaml.Controls.Hub) | Dans une application du Windows Phone Store, l’image d’arrière-plan d’un contrôle [**Hub**](/uwp/api/Windows.UI.Xaml.Controls.Hub) se déplace en parallaxe par rapport aux sections de hub. Dans une application Windows Runtime 8. x et dans une application Windows 10, la parallaxe n’est pas utilisée. |
-| [**Hub**](/uwp/api/Windows.UI.Xaml.Controls.Hub)  | Dans une application 8.1 universelle, la propriété [**HubSection.IsHeaderInteractive**](/uwp/api/windows.ui.xaml.controls.hubsection.isheaderinteractive) rend interactifs l’en-tête de section et le glyphe de chevron rendu en regard de ce dernier. Dans une application Windows 10, il existe une affordance interactive « Voir plus » à côté de l’en-tête, mais l’en-tête proprement dit n’est pas interactif. **IsHeaderInteractive** détermine toujours si l’interaction déclenche l’événement [**Hub.SectionHeaderClick**](/uwp/api/windows.ui.xaml.controls.hub.sectionheaderclick). |
+| [**Principal**](/uwp/api/Windows.UI.Xaml.Controls.Hub) | Dans une application du Windows Store Windows Phone, un contrôle de [**concentrateur**](/uwp/api/Windows.UI.Xaml.Controls.Hub) encapsule la dernière section jusqu’au premier. Dans une application Windows Runtime 8. x et dans une application Windows 10, les sections de concentrateur ne sont pas entourées. |
+| [**Principal**](/uwp/api/Windows.UI.Xaml.Controls.Hub) | Dans une application du Windows Phone Store, l’image d’arrière-plan d’un contrôle [**Hub**](/uwp/api/Windows.UI.Xaml.Controls.Hub) se déplace en parallaxe par rapport aux sections de hub. Dans une application Windows Runtime 8. x et dans une application Windows 10, la parallaxe n’est pas utilisée. |
+| [**Principal**](/uwp/api/Windows.UI.Xaml.Controls.Hub)  | Dans une application 8.1 universelle, la propriété [**HubSection.IsHeaderInteractive**](/uwp/api/windows.ui.xaml.controls.hubsection.isheaderinteractive) rend interactifs l’en-tête de section et le glyphe de chevron rendu en regard de ce dernier. Dans une application Windows 10, il existe une affordance interactive « Voir plus » à côté de l’en-tête, mais l’en-tête proprement dit n’est pas interactif. **IsHeaderInteractive** détermine toujours si l’interaction déclenche l’événement [**Hub.SectionHeaderClick**](/uwp/api/windows.ui.xaml.controls.hub.sectionheaderclick). |
 | **MessageDialog** | Si vous utilisez **MessageDialog**, préférez [**ContentDialog**](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog), plus flexible. Voir également l’[exemple d’éléments de base d’une interface utilisateur XAML](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) (en anglais). |
 | **ListPickerFlyout**, **PickerFlyout**  | **ListPickerFlyout** et **PickerFlyout** sont déconseillés pour une application Windows 10. Dans le cas d’un menu volant à sélection unique, utilisez [**MenuFlyout**](/uwp/api/Windows.UI.Xaml.Controls.MenuFlyout) ; pour des expériences plus complexes, préférez [**Flyout**](/uwp/api/Windows.UI.Xaml.Controls.Flyout). |
 | [**Zone de mot de passe**](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox) | La propriété [**PasswordBox. IsPasswordRevealButtonEnabled**](/uwp/api/windows.ui.xaml.controls.passwordbox.ispasswordrevealbuttonenabled) est déconseillée dans une application Windows 10 et son paramétrage n’a aucun effet. Utilisez [**PasswordBox. PasswordRevealMode**](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode) à la place, qui prend par défaut la valeur **Peek** (dans laquelle un glyphe visuel est affiché, comme dans une application Windows Runtime 8. x). Voir également l’article [Recommandations en matière de zones de mot de passe](../design/controls-and-patterns/password-box.md). |
@@ -187,7 +187,7 @@ ListViewItemPresenter avec case à cocher superposée
 
 Le tableau suivant décrit les modifications apportées aux états visuels et aux groupes d’états visuels dans les modèles de contrôle [**ListViewItem**](/uwp/api/Windows.UI.Xaml.Controls.ListViewItem) et [**GridViewItem**](/uwp/api/Windows.UI.Xaml.Controls.GridViewItem).
 
-| 8.1                 |                         | Windows 10        |                     |
+| 8.1                 | État de la fonctionnalité           | Windows 10        | État de la fonctionnalité       |
 |---------------------|-------------------------|-------------------|---------------------|
 | CommonStates        |                         | CommonStates      |                     |
 |                     | Normal                  |                   | Normal              |
@@ -196,7 +196,7 @@ Le tableau suivant décrit les modifications apportées aux états visuels et au
 |                     | PointerOverPressed      |                   | [non disponible]       |
 |                     | Désactivé                |                   | [non disponible]       |
 |                     | [non disponible]           |                   | PointerOverSelected |
-|                     | [non disponible]           |                   | Sélectionnée            |
+|                     | [non disponible]           |                   | Selected            |
 |                     | [non disponible]           |                   | PressedSelected     |
 | [non disponible]       |                         | DisabledStates    |                     |
 |                     | [non disponible]           |                   | Désactivé            |
@@ -214,7 +214,7 @@ Le tableau suivant décrit les modifications apportées aux états visuels et au
 |                     | UnselectedPointerOver   |                   | [non disponible]       |
 |                     | UnselectedSwiping       |                   | [non disponible]       |
 |                     | Sélectionnez               |                   | [non disponible]       |
-|                     | Sélectionnée                |                   | [non disponible]       |
+|                     | Selected                |                   | [non disponible]       |
 |                     | SelectedSwiping         |                   | [non disponible]       |
 |                     | SelectedUnfocused       |                   | [non disponible]       |
 
@@ -450,7 +450,7 @@ Il est déconseillé de reléguer l’élément Paramètres dans un volet maîtr
 
 Votre page Paramètres doit remplir la totalité de la fenêtre de votre application, et doit également contenir les options À propos de et Commentaires. Pour obtenir des conseils sur la conception de votre page Paramètres, voir [Recommandations en matière de paramètres d’application](../design/app-settings/guidelines-for-app-settings.md).
 
-## <a name="text"></a>Text
+## <a name="text"></a>Texte
 
 Le texte (ou la typographie) constitue un aspect important d’une application UWP et, pendant le portage, il vous sera peut-être utile de revoir les conceptions visuelles de vos vues afin de les harmoniser avec le nouveau langage de conception. Utilisez ces illustrations pour trouver les styles  **TextBlock** système de plateforme Windows universelle (UWP) qui sont disponibles. Recherchez ceux qui correspondent aux styles de Silverlight pour Windows Phone que vous avez utilisés. Vous pouvez également créer vos propres styles universels et y copier les propriétés des styles système de Silverlight pour Windows Phone.
 

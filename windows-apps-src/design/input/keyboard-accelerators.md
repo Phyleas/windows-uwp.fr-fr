@@ -10,12 +10,12 @@ pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 02fba8027c5bddec5e5c501783b32dbab5642db9
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 8ec5791c212e2fdfbafd40131d96ace6c88fb519
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219952"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91749955"
 ---
 # <a name="keyboard-accelerators"></a>Raccourcis clavier
 
@@ -350,14 +350,10 @@ Cela peut ne pas être toujours possible en raison de différences de fonctionna
 | Gras | Ctrl + B |
 | Souligner | Ctrl + U |
 | Italique | Ctrl + I |
-
 | **Navigation** | |
-| ------------- | ----------------------------------- |
 | Rechercher du contenu dans un contrôle ou une fenêtre ayant le focus | Ctrl+F |
 | Atteindre le résultat de la recherche suivant | F3 |
-
 | **Autres actions** | |
-| ------------- | ----------------------------------- |
 | Ajouter des favoris | Ctrl + D | 
 | Actualiser | F5 ou Ctrl + R | 
 | Zoom avant | Ctrl + + | 

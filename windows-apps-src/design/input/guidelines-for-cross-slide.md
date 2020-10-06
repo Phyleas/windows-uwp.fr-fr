@@ -6,12 +6,12 @@ ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e5f86da29900e0ef83fb0bf41d2c8d9fe59727f2
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 2b16c957991889cb5f39a775397de72ff56beffc
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172513"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91749976"
 ---
 # <a name="guidelines-for-cross-slide"></a>Recommandations en matière de glisser transversal
 
@@ -58,14 +58,18 @@ Utilisez le glisser transversal pour les listes ou les collections qui défilent
 
 **Remarque**    Dans les cas où la zone de contenu peut être panoramique dans deux directions, telles que des navigateurs Web ou des lecteurs e-Reader, l’interaction avec chronométrage de type « appuyer et maintenir » doit être utilisée pour appeler le menu contextuel pour des objets tels que des images et des liens hypertexte.
 
- 
+:::row:::
+   :::column:::
+     ![mouvement panoramique horizontal, liste à deux dimensions](images/groupedlistview1.png)
 
-|                                                                                         |                                                                                         |
-|-----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|
-| ![mouvement panoramique horizontal, liste à deux dimensions](images/groupedlistview1.png)                | ![mouvement panoramique vertical, liste à une dimension](images/listviewlistlayout.png)                |
-| Un mouvement panoramique horizontal sur une liste à deux dimensions. Glisser vertical pour sélectionner ou déplacer un élément. | Un mouvement panoramique vertical sur une liste à une dimension. Glisser horizontal pour sélectionner ou déplacer un élément. |
+     Un mouvement panoramique horizontal sur une liste à deux dimensions. Glisser vertical pour sélectionner ou déplacer un élément. 
+   :::column-end:::
+   :::column:::
+      ![mouvement panoramique vertical, liste à une dimension](images/listviewlistlayout.png)
 
- 
+      Un mouvement panoramique vertical sur une liste à une dimension. Glisser horizontal pour sélectionner ou déplacer un élément.
+   :::column-end:::
+:::row-end:::
 
 ### <span id="selection"></span><span id="SELECTION"></span>
 

@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a5e26d48ef74631e732fb043e909869945a6366
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 596a9f2f3f234ba90b799eae982523c3a9de9732
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217049"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91749935"
 ---
 # <a name="guidelines-for-panning"></a>Recommandations en matière de mouvement panoramique
 
@@ -139,12 +139,23 @@ Les points d’ancrage de mouvement panoramique sont utiles pour des application
 
 Le schéma suivant montre comment l’action qui consiste à effectuer un mouvement panoramique jusqu’à un certain point, puis à relâcher le mouvement entraîne le contenu à défiler en panoramique jusqu’à un emplacement logique.
 
-|                                                                |                                                                                         |                                                                                                                 |
-|----------------------------------------------------------------|-----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
-| ![image d’une zone de mouvement panoramique.](images/ux-panning-snap1.png) | ![image d’une zone de mouvement panoramique en cours de défilement vers la gauche.](images/ux-panning-snap2.png) | ![image d’une zone de mouvement panoramique qui a arrêté le défilement à un point d’ancrage logique.](images/ux-panning-snap3.png) |
-| Balayez pour faire défiler.                                                  | Relâchez le contact.                                                                     | La région de mouvement panoramique prend fin au point d’ancrage, et non à l’endroit où le contact a été relâché.                                |
+:::row:::
+   :::column:::
+      ![image d’une zone de mouvement panoramique.](images/ux-panning-snap1.png)
 
- 
+      Balayez pour faire défiler.
+   :::column-end:::
+   :::column:::
+      ![image d’une zone de mouvement panoramique en cours de défilement vers la gauche.](images/ux-panning-snap2.png)
+
+      Relâchez le contact.
+   :::column-end:::
+   :::column:::
+      ![image d’une zone de mouvement panoramique qui a arrêté le défilement à un point d’ancrage logique.](images/ux-panning-snap3.png)
+
+      La région de mouvement panoramique prend fin au point d’ancrage, et non à l’endroit où le contact a été relâché.
+   :::column-end:::
+:::row-end:::
 
 **Rails** Le contenu peut être plus large et plus grand que les dimensions et la résolution d’un périphérique d’affichage. C’est pourquoi le mouvement panoramique en deux dimensions (horizontale et verticale) est souvent nécessaire. Des rails améliorent l’expérience utilisateur dans ces cas précis en mettant l’accent sur le mouvement panoramique le long de l’axe de mouvement (vertical ou horizontal).
 

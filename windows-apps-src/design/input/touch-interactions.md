@@ -8,12 +8,12 @@ keywords: entrées tactiles, pointeur, entrées, interactions avec l’utilisate
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 14be47fa701742c73048e70c0842cb421c52a7e5
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 302a1f39d85902b229642b60f483b40f51209a72
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220512"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750385"
 ---
 # <a name="touch-interactions"></a>Interactions tactiles
 
@@ -56,7 +56,7 @@ En offrant des expériences d’interactions uniques et différenciées pour tou
 Le tableau suivant présente quelques-unes des différences entre les périphériques d’entrée que vous devez prendre en compte lors de la conception d’applications Windows optimisées tactiles.
 
 <table>
-<tbody><tr><th>Facteur</th><th>Interactions tactiles</th><th>Interactions à l’aide de la souris, du clavier, du stylo/stylet</th><th>Pavé tactile</th></tr>
+<tbody><tr><th>Factor</th><th>Interactions tactiles</th><th>Interactions à l’aide de la souris, du clavier, du stylo/stylet</th><th>Pavé tactile</th></tr>
 <tr><td rowspan="3">Precision</td><td>La zone de contact au bout du doigt est plus importante qu’une simple coordonnées x-y, ce qui augmente le risque d’activations involontaires de commandes.</td><td>La souris et le stylo/stylet répondent à une coordonnée x-y précise.</td><td>Comme la souris.</td></tr>
 <tr><td>La forme de la zone de contact change tout au long du mouvement.  </td><td>Les mouvements de la souris et les traits du stylo/stylet répondent à des coordonnées x-y précises. Le focus du clavier est explicite.</td><td>Comme la souris.</td></tr>
 <tr><td>Il n’y a pas de curseur de souris pour aider au ciblage.</td><td>Le curseur de la souris, le curseur du stylo/stylet et le focus du clavier constituent tous une aide au ciblage.</td><td>Comme la souris.</td></tr>
@@ -150,10 +150,8 @@ En outre, nous vous encourageons vivement à tenir compte des recommandations su
 -   Les interactions doivent prendre en charge les manipulations composées. Par exemple, resserrez les doigts pour zoomer tout en les faisant glisser pour effectuer un mouvement panoramique.
 -   Ne classez pas les interactions en fonction du temps. Une même interaction doit avoir le même résultat, quel que soit le temps pris pour l’effectuer. Les activations temporelles impliquent des délais obligatoires à respecter par l’utilisateur. Par ailleurs, elles portent atteinte non seulement à la nature immersive des manipulations directes, mais également à la perception de la réactivité du système.
 
-   > [!NOTE]
-   > Une exception à cette question est l’endroit où vous utilisez des interactions chronométrées spécifiques pour faciliter l’apprentissage et l’exploration (par exemple, appuyez et maintenez).
-
-     
+    > [!NOTE]
+    > Une exception à cette question est l’endroit où vous utilisez des interactions chronométrées spécifiques pour faciliter l’apprentissage et l’exploration (par exemple, appuyez et maintenez).
 
 -   Les descriptions appropriées et les signaux visuels influent très favorablement sur l’utilisation des interactions avancées.
 
@@ -192,7 +190,7 @@ Pour assurer une prise en charge personnalisée des entrées tactiles, vous pouv
 
 Voici l’ensemble de mouvements tactiles de base pris en charge par la plateforme UWP.
 
-| Name           | Type                 | Description                                                                            |
+| Nom           | Type                 | Description                                                                            |
 |----------------|----------------------|----------------------------------------------------------------------------------------|
 | Taper            | Action statique       | Brève pression de l’écran avec un doigt.                                            |
 | Appuyer de manière prolongée | Action statique       | Pression prolongée de l’écran avec un doigt.                                      |

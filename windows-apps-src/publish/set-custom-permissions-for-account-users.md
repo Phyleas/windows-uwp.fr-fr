@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, rôles d’utilisateur, autorisation utilisateur, rôles personnalisés, accès utilisateur, autorisations personnaliser, rôles standard
 ms.localizationpriority: medium
-ms.openlocfilehash: 6aa88bd5af2e878fa702c3faff2d2677a23f33f2
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: f8454587e31751e3653d983dbb1d45e21a2808d9
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219752"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750175"
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>Définir des rôles ou des autorisations personnalisées pour les utilisateurs de comptes
 
@@ -53,13 +53,13 @@ Le tableau ci-dessous présente certaines fonctionnalités spécifiques disponib
 
 |                                                       |    Propriétaire du compte                 |    Manager                       |    Développeur                     |    Contributeur commercial    |    Contributeur financier    |    Distributeur                      |
 |-------------------------------------------------------|----------------------------------|----------------------------------|----------------------------------|----------------------------|---------------------------|----------------------------------|
-|    Rapport d'acquisition (y compris les données en temps quasi réel) |    Affichage                      |    Affichage                      |    Aucun accès                     |    Aucun accès               |    Affichage               |    Aucun accès                     |
-|    Rapport de commentaires/réponses                          |    Peut afficher et envoyer des commentaires    |    Peut afficher et envoyer des commentaires    |    Peut afficher et envoyer des commentaires    |    Aucun accès               |    Aucun accès              |    Peut afficher et envoyer des commentaires    |
-|    Rapport d’intégrité (y compris les données en temps quasi réel)      |    Affichage                      |    Affichage                      |    Affichage                      |    Affichage                |    Aucun accès              |    Aucun accès                     |
-|    Rapport d’utilisation                                       |    Affichage                      |    Affichage                      |    Affichage                      |    Affichage                |    Aucun accès              |    Aucun accès                     |
-|    Compte de paiement                                     |    Peut mettre à jour                    |    Aucun accès                     |    Aucun accès                     |    Aucun accès               |    Peut mettre à jour             |    Aucun accès                     |
-|    Profil fiscal                                        |    Peut mettre à jour                    |    Aucun accès                     |    Aucun accès                     |    Aucun accès               |    Peut mettre à jour             |    Aucun accès                     |
-|    Récapitulatif des paiements                                     |    Affichage                      |    Aucun accès                     |    Aucun accès                     |    Aucun accès               |    Affichage               |    Aucun accès                     |
+|    **Rapport d'acquisition (y compris les données en temps quasi réel)** |    Affichage                      |    Affichage                      |    Aucun accès                     |    Aucun accès               |    Affichage               |    Aucun accès                     |
+|    **Rapport de commentaires/réponses**                          |    Peut afficher et envoyer des commentaires    |    Peut afficher et envoyer des commentaires    |    Peut afficher et envoyer des commentaires    |    Aucun accès               |    Aucun accès              |    Peut afficher et envoyer des commentaires    |
+|    **Rapport d’intégrité (y compris les données en temps quasi réel)**      |    Affichage                      |    Affichage                      |    Affichage                      |    Affichage                |    Aucun accès              |    Aucun accès                     |
+|    **Rapport d’utilisation**                                       |    Affichage                      |    Affichage                      |    Affichage                      |    Affichage                |    Aucun accès              |    Aucun accès                     |
+|    **Compte de paiement**                                     |    Peut mettre à jour                    |    Aucun accès                     |    Aucun accès                     |    Aucun accès               |    Peut mettre à jour             |    Aucun accès                     |
+|    **Profil fiscal**                                        |    Peut mettre à jour                    |    Aucun accès                     |    Aucun accès                     |    Aucun accès               |    Peut mettre à jour             |    Aucun accès                     |
+|    **Récapitulatif des paiements**                                     |    Affichage                      |    Aucun accès                     |    Aucun accès                     |    Aucun accès               |    Affichage               |    Aucun accès                     |
 
 Si aucun des rôles standard n’est approprié ou si vous souhaitez limiter l’accès à des applications et/ou à des modules complémentaires spécifiques, vous pouvez accorder des autorisations personnalisées à l’utilisateur en sélectionnant **personnaliser les autorisations**, comme décrit ci-dessous.
 
