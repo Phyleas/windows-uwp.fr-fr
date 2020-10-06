@@ -11,12 +11,12 @@ pm-contact: chigy
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
-ms.openlocfilehash: ae3d4826c4468cabea318ed230da0cfbb4d5f24b
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 005ec4883eeb52a84e458ba917439d093ab0041f
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219112"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91763075"
 ---
 # <a name="keyboard-interactions"></a>Interactions avec le clavier
 
@@ -507,11 +507,13 @@ Nous vous recommandons d’émuler ces mêmes comportements dans vos contrôles 
 Testez votre application avec tous les périphériques d’entrée pris en charge pour vous assurer que les éléments d’interface utilisateur peuvent être parcourus de manière cohérente et intuitive et qu’aucun élément inattendu n’interfère avec l’ordre de tabulation souhaité.
 
 ## <a name="related-articles"></a>Articles connexes
+
 * [Événements de clavier](keyboard-events.md)
 * [Identification des périphériques d’entrée](identify-input-devices.md)
 * [Répondre à la présence du clavier tactile](respond-to-the-presence-of-the-touch-keyboard.md)
 * [Exemples de visuels de focus](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
-* [Caractéristiques de la carte de contrôle NavigationView](../controls-and-patterns/navigationview.md#hierarchical-navigation) 
+* [Caractéristiques de la carte de contrôle NavigationView](../controls-and-patterns/navigationview.md#hierarchical-navigation)
+* [Accessibilité du clavier](../accessibility/keyboard-accessibility.md)
 
 ## <a name="appendix"></a>Annexe
 
@@ -547,7 +549,7 @@ Voici la liste des contrôles autres que d’édition qui peuvent recevoir le fo
 -   Barre de menus
 -   Élément de menu
 -   Barre d’outils
--   List
+-   Liste
 -   Élément de liste
 
 Voici quelques exemples des différents modes disponibles pour le clavier tactile. La première image représente la disposition classique, la seconde représente la disposition ergonomique (qui n’est pas forcément disponible dans toutes les langues).
@@ -576,7 +578,3 @@ Il peut être activé depuis la page Clavier dans Paramètres &gt; Options d’e
 ***Clavier visuel***
 
 Visitez la [page du clavier visuel](https://support.microsoft.com/help/10762/windows-use-on-screen-keyboard) pour plus d’informations sur le clavier visuel.
-
-## <a name="related-articles"></a>Articles connexes
-
-- [Accessibilité du clavier](../accessibility/keyboard-accessibility.md)

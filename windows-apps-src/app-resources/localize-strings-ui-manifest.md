@@ -8,12 +8,12 @@ ms.date: 11/01/2017
 ms.topic: article
 keywords: windows 10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: 0cf6bc95eef416b481642d84eef8315451916604
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 411ecb63189084ba83f9971ded2bbe02d899aabd
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174103"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91762864"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>Localiser les chaînes dans l’interface utilisateur et le manifeste du package d’application
 
@@ -40,7 +40,7 @@ Contrairement aux ressources d’image, où une seule ressource d’image est co
 
     `Strings/en-US/Resources.resw`
 
-    ![Ajouter une ressource, anglais](images/addresource-en-us.png)
+    ![Capture d’écran de la table ajouter une ressource des chaînes > E N U S > fichier Resources. resw.](images/addresource-en-us.png)
 
     Dans cet exemple, « Greeting » est un identificateur de ressource de chaîne auquel vous pouvez faire référence à partir de votre balisage, comme nous allons le voir. Pour l’identificateur « salutation », une chaîne est fournie pour une propriété de texte, et une chaîne est fournie pour une propriété de largeur. « Greeting. Text » est un exemple d’identificateur de propriété, car il correspond à une propriété d’un élément d’interface utilisateur. Vous pouvez également, par exemple, ajouter « salutation. Foreground » dans la colonne nom et définir sa valeur sur « rouge ». L’identificateur « adieu » est un identificateur de ressource de chaîne simple ; Il n’a pas de sous-propriétés et il peut être chargé à partir du code impératif, comme nous allons le voir. La colonne commentaire est un bon endroit pour fournir des instructions spéciales aux traducteurs.
 
@@ -108,13 +108,13 @@ En cas de doute, vous pouvez utiliser [MakePri.exe](makepri-exe-command-options.
 
 1. Ouvrez le fichier source du manifeste du package d’application (le `Package.appxmanifest` fichier), dans lequel la valeur par défaut de votre application `Display name` est exprimée sous la forme d’un littéral de chaîne.
 
-   ![Ajouter une ressource, anglais](images/display-name-before.png)
+   ![Capture d’écran du fichier Package. appxmanifest affichant l’onglet application avec le nom complet défini sur Adventure Works cycles.](images/display-name-before.png)
 
 2. Pour rendre une version localisable de cette chaîne, ouvrez `Resources.resw` et ajoutez une nouvelle ressource de type chaîne portant le nom « AppDisplayName » et la valeur « Adventure Works cycles ».
 
 3. Remplacez le littéral de chaîne de nom complet par une référence à l’identificateur de ressource de chaîne que vous venez de créer (« AppDisplayName »). Pour ce faire, vous utilisez le `ms-resource` schéma URI (Uniform Resource Identifier).
 
-   ![Ajouter une ressource, anglais](images/display-name-after.png)
+   ![Capture d’écran du fichier Package. appxmanifest affichant l’onglet application avec le nom complet défini sur M S ressource nom complet de l’application.](images/display-name-after.png)
 
 4. Répétez ce processus pour chaque chaîne du manifeste que vous souhaitez localiser. Par exemple, le nom abrégé de votre application (que vous pouvez configurer pour apparaître sur la vignette de votre application au démarrage). Pour obtenir la liste de tous les éléments du manifeste de package d’application que vous pouvez localiser, consultez [éléments de manifeste localisables](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live).
 
@@ -147,7 +147,7 @@ Testez l’application dans votre langue d’affichage par défaut. Vous pouvez 
 
 Vous pouvez conserver toutes vos chaînes dans un fichier de ressources unique (resw), ou vous pouvez les factoriser sur plusieurs fichiers de ressources. Par exemple, vous souhaiterez peut-être conserver vos messages d’erreur dans un fichier de ressources, les chaînes de votre package d’application dans un autre et vos chaînes d’interface utilisateur dans un troisième. Voici à quoi ressemblera votre structure de dossiers dans ce cas.
 
-![Ajouter une ressource, anglais](images/manifest-resources.png)
+![Capture d’écran du panneau solution montrant le dossier Adventure Works Cycles > Strings avec les dossiers et fichiers locaux allemand, U S et français.](images/manifest-resources.png)
 
 Pour étendre une référence d’identificateur de ressource de chaîne à un fichier particulier, vous ajoutez simplement `/<resources-file-name>/` avant l’identificateur. L’exemple de balisage ci-dessous suppose que `ErrorMessages.resw` contient une ressource dont le nom est « PasswordTooWeak. Text » et dont la valeur décrit l’erreur.
 

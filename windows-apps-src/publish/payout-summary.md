@@ -6,12 +6,12 @@ ms.date: 08/02/2019
 ms.topic: article
 keywords: Windows 10, UWP, Résumé du paiement, relevé, paiements, bénéfices, versements, paiement, frais
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c68c82ab463f0c4f12038597b4746ab4e695405
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 7eab86cc1856f5ad206aa8bbceb2f2e04f5410d2
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89167433"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91763106"
 ---
 # <a name="payout-reports"></a>Rapports de revenu
 
@@ -38,7 +38,7 @@ Cette page affiche tous vos bénéfices individuels avec pour chacun la date, le
 
 Pour afficher plus de détails sur un bénéfice, sélectionnez la flèche vers le bas située dans la partie droite de la page. Vous obtenez alors le levier, le montant de chiffre d’affaires et le produit. Si, pour une raison quelconque, ces données ne sont pas disponibles, mais que vous avez besoin d’y accéder, contactez le [support technique](https://developer.microsoft.com/windows/support). Si le résultat est le résultat d’un ajustement et non d’une transaction, les champs de produit ne sont pas affichés.
 
-Pour exporter les données de transaction sur cette page, utilisez la page **exporter des données** .
+Pour exporter les données de transaction sur cette page, sélectionnez Exporter, puis suivez les instructions de la page exporter des données. Les fichiers exportés à partir de la page historique des transactions affichent les données dans la devise de la transaction, les bénéfices dans la devise de la transaction et le dollar des États-Unis, et la valeur payée dans paiement à la devise
 
 ## <a name="payments-page"></a>Page Paiements
 
@@ -53,14 +53,6 @@ Les totaux de cette page représentent tous les programmes auxquels vous partici
 | Paiements               | Sélectionnez payant ou en attente, puis triez comme vous le souhaitez. Pour plus d’informations sur un paiement spécifique, sélectionnez Afficher. Pour télécharger une copie du relevé des envois de paiements, sélectionnez Télécharger. Notez que les données de l’historique des transactions peuvent prendre jusqu’à 24 heures pour apparaître. vous risquez donc de ne pas voir les bénéfices associés immédiatement. |
 
 Pour exporter les données de cette page, sélectionnez Exporter, puis suivez les instructions de la page exporter des données.
-
-## <a name="transaction-history-page"></a>Page Historique des transactions
-
-Cette page affiche tous vos bénéfices individuels avec pour chacun la date, le type et le montant. Vous pouvez afficher ces informations pour une période déterminée, mais aussi filtrer par ID d’inscription, Programme, ID de paiement, Type de bénéfice, Levier et Statut. Les données sont disponibles pour l’exercice actuel (du 1er juillet au 30 juin) et les deux exercices précédents.
-
-Pour afficher plus de détails sur un bénéfice, sélectionnez la flèche vers le bas située dans la partie droite de la page. Vous obtenez alors le levier, le montant de chiffre d’affaires et le produit. Si, pour une raison quelconque, ces données ne sont pas disponibles, mais que vous avez besoin d’y accéder, contactez le [support technique](https://developer.microsoft.com/windows/support). Si le résultat est le résultat d’un ajustement et non d’une transaction, les champs de produit ne sont pas affichés.
-
-Pour exporter les données de transaction sur cette page, sélectionnez Exporter, puis suivez les instructions de la page exporter des données. Les fichiers exportés à partir de la page historique des transactions affichent les données dans la devise de la transaction, les bénéfices dans la devise de la transaction et le dollar des États-Unis, et la valeur payée dans paiement à la devise
 
 ## <a name="payment-status"></a>État du paiement
 

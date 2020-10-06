@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 ms.assetid: e7deb1d6-feeb-471e-9a83-26386d1aaf37
 ms.localizationpriority: medium
-ms.openlocfilehash: 29a054299b933e523f8594419c4e954c3a0bf1e4
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: fd21ca0a27979a5febbc5a3a76a02a1beb2138fd
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/06/2020
-ms.locfileid: "91749965"
+ms.locfileid: "91763018"
 ---
 # <a name="surface-dial-interactions"></a>Interactions avec Surface Dial
 
@@ -57,12 +57,12 @@ Surface Dial prend également en charge les actions *Appui prolongé* et *Clic*.
    :::column:::
       **Menu hors écran Surface Dial**
 
-      ![Menu hors écran Surface Dial](images/windows-wheel/surface-dial-menu-offscreen.png)
+      ![Capture d’écran du menu de la connexion à l’écran.](images/windows-wheel/surface-dial-menu-offscreen.png)
    :::column-end:::
    :::column:::
       **Menu à l’écran Surface Dial**
 
-      ![Menu à l’écran Surface Dial](images/windows-wheel/surface-dial-menu-onscreen.png)
+      ![Capture d’écran du menu à l’écran de la surface d’exposition.](images/windows-wheel/surface-dial-menu-onscreen.png)
    :::column-end:::
 :::row-end:::
 
@@ -132,17 +132,17 @@ Les icônes transmettent un message de professionnalisme et d’excellence et su
 
 :::row:::
    :::column:::
-      ![Icône avec arrière-plan alpha](images/windows-wheel/surface-dial-menu-icon1.png)
+      ![Capture d’écran d’une icône avec l’arrière-plan alpha.](images/windows-wheel/surface-dial-menu-icon1.png)
 
       *Icône avec arrière-plan alpha*
    :::column-end:::
    :::column:::
-      ![Icône affichée dans le menu wheel avec le thème par défaut](images/windows-wheel/surface-dial-menu-icon2.png)
+      ![Capture d’écran d’une icône affichée sur le menu volant avec le thème par défaut.](images/windows-wheel/surface-dial-menu-icon2.png)
 
       *Icône affichée dans le menu wheel avec le thème par défaut*
    :::column-end:::
    :::column:::
-      ![Menu à l’écran Surface Dial](images/windows-wheel/surface-dial-menu-icon3.png)
+      ![Capture d’écran d’une icône affichée sur le menu volant avec contraste élevé thème blanc.](images/windows-wheel/surface-dial-menu-icon3.png)
 
       *Icône affichée dans le menu wheel avec le thème contraste blanc élevé par défaut*
    :::column-end:::
@@ -171,7 +171,7 @@ Dans cet exemple, nous ajoutons un outil personnalisé de base qui transmet les 
 
 1. Tout d’abord, nous déclarons notre interface utilisateur (un curseur et un bouton bascule) en XAML.
 
-   ![Image de l’interface utilisateur de l’exemple d’application](images/windows-wheel/surface-dial-snippet-customtool1.png)  
+   ![Capture d’écran de l’exemple de contrôleur radial avec le curseur horizontal défini sur la gauche.](images/windows-wheel/surface-dial-snippet-customtool1.png)  
    *L’interface utilisateur de l’exemple d’application*
 
     ```Xaml
@@ -272,7 +272,7 @@ Dans cet exemple, nous ajoutons un outil personnalisé de base qui transmet les 
 
 Lorsque nous exécutons l’application, nous utilisons Surface Dial pour interagir avec celle-ci. Tout d’abord, nous appuyons de manière prolongée pour ouvrir le menu et sélectionner notre outil personnalisé. Une fois que l’outil personnalisé est activé, le contrôle du curseur peut être ajusté en tournant Surface Dial, et le commutateur peut être basculé en cliquant sur Surface Dial.
 
-![Image de l’interface utilisateur de l’exemple d’application activée à l’aide de l’outil personnalisé de Surface Dial](images/windows-wheel/surface-dial-snippet-customtool2.png)  
+![Capture d’écran de l’exemple de contrôleur radial avec le curseur horizontal défini sur le milieu.](images/windows-wheel/surface-dial-snippet-customtool2.png)  
 *L’interface utilisateur de l’exemple d’application activée à l’aide de l’outil personnalisé de Surface Dial*
 
 **Spécifier les boutons intégrés**
@@ -480,7 +480,7 @@ Dans l’exemple suivant, nous avons créé une application de base avec quatre 
 
 1. Tout d’abord, nous déclarons notre interface utilisateur (quatre sections, chacune avec un curseur et un bouton bascule) en XAML.
 
-   ![Image de l’interface utilisateur de l’exemple d’application](images/windows-wheel/surface-dial-snippet-customtool3.png)  
+   ![Capture d’écran de l’exemple de contrôleur radial avec quatre curseurs horizontaux définis sur la gauche.](images/windows-wheel/surface-dial-snippet-customtool3.png)  
    *L’interface utilisateur de l’exemple d’application*
 
    ```xaml 
@@ -680,14 +680,12 @@ private void ActivateGridAtLocation(Point Location)
 
 Lorsque nous exécutons l’application, nous utilisons Surface Dial pour interagir avec celle-ci. Tout d’abord, nous plaçons l’appareil sur l’écran de Surface Studio. L’application le détecte et l’associe à la section inférieure droite (voir image). Ensuite, nous appuyons de manière prolongée sur Surface Dial pour ouvrir le menu et sélectionner notre outil personnalisé. Une fois que l’outil personnalisé est activé, le contrôle du curseur peut être ajusté en tournant Surface Dial, et le commutateur peut être basculé en cliquant sur Surface Dial.
 
-![Image de l’interface utilisateur de l’exemple d’application activée à l’aide de l’outil personnalisé de Surface Dial](images/windows-wheel/surface-dial-snippet-customtool4.png)  
+![Capture d’écran de l’exemple de contrôleur radial avec quatre curseurs horizontaux définis sur la gauche et le quatrième contrôleur mis en surbrillance.](images/windows-wheel/surface-dial-snippet-customtool4.png)  
 *L’interface utilisateur de l’exemple d’application activée à l’aide de l’outil personnalisé de Surface Dial*
 
 ## <a name="summary"></a>Résumé
 
 Cette rubrique fournit une vue d’ensemble de l’appareil d’entrée Surface Dial, assortie de recommandations en matière d’expérience utilisateur et de conseils aux développeurs sur la manière de personnaliser l’expérience utilisateur pour des scénarios hors écran et sur l’écran, lors de l’utilisation avec Surface Studio.
-
-## <a name="feedback"></a>Commentaires
 
 Veuillez envoyer vos questions, vos suggestions et vos commentaires à [radialcontroller@microsoft.com](mailto:radialcontroller@microsoft.com) .
 
