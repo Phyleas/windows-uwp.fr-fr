@@ -1,5 +1,5 @@
 ---
-Description: Apprenez à améliorer à la fois la convivialité et l’accessibilité de votre application Windows en fournissant aux utilisateurs un moyen intuitif de naviguer et d’interagir rapidement avec l’interface utilisateur visible d’une application par le biais d’un clavier au lieu d’un pointeur (par exemple, une pression tactile ou une souris).
+description: Apprenez à améliorer à la fois la convivialité et l’accessibilité de votre application Windows en fournissant aux utilisateurs un moyen intuitif de naviguer et d’interagir rapidement avec l’interface utilisateur visible d’une application par le biais d’un clavier au lieu d’un pointeur (par exemple, une pression tactile ou une souris).
 title: Recommandations en matière de conception de touches d’accès rapide
 label: Access keys design guidelines
 keywords: clavier, touche d’accès, KeyTip, touche accélératrice, accessibilité, navigation, Focus, texte, entrée, interaction utilisateur
@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 77986569ec224ba36471f60c0200dfb1825472a0
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 48f1d3bd69b10a8d500bb2d29b64c0eb91c9900b
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218412"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829541"
 ---
 # <a name="access-keys"></a>Clés d'accès
 
@@ -276,7 +276,7 @@ Utilisez la propriété **KeyTipPlacementMode** pour personnaliser le placement 
 
 Les modes de placement sont les suivants : haut, bas, droite, gauche, masqué, Centre et automatique.
 
-![Modes de positionnement des touches accélératrices](images/accesskeys/keytip-postion-modes.png)
+![Capture d’écran montrant les positions relatives des modes de positionnement des touches accélératrices](images/accesskeys/keytip-postion-modes.png)
 
 _Modes de positionnement des touches accélératrices_
 
@@ -299,11 +299,11 @@ Utilisez les propriétés KeyTipHorizontalOffset et KeyTipVerticalOffset d’un 
 > [!NOTE]
 > Les offsets ne peuvent pas être définis lorsque KeyTipPlacementMode a la valeur auto.
 
-La propriété KeyTipHorizontalOffset indique jusqu’à quel point l’info-bulle doit être déplacée vers la gauche ou la droite. montre comment définir des décalages d’info-bulle pour un bouton.
+La propriété KeyTipHorizontalOffset indique jusqu’à quel point l’info-bulle doit être déplacée vers la gauche ou la droite.
 
-![Modes de positionnement des touches accélératrices](images/accesskeys/keytip-offsets.png)
+![Capture d’écran des décalages de l’info-bulle verticale et horizontale pour un bouton](images/accesskeys/keytip-offsets.png)
 
-_Définir des décalages verticaux et horizontaux pour une touche accélératrice_
+_Définir des décalages d’info-bulle verticaux et horizontaux pour un bouton_
 
 ``` xaml
 <Button
@@ -318,9 +318,9 @@ _Définir des décalages verticaux et horizontaux pour une touche accélératric
 
 L’emplacement d’une info-bulle est ajusté automatiquement en fonction du bord de l’écran pour vérifier que l’info-bulle est entièrement visible. Lorsque cela se produit, la distance entre le contrôle et le point d’alignement de l’extrémité de clé peut différer des valeurs spécifiées pour les décalages horizontal et vertical.
 
-![Modes de positionnement des touches accélératrices](images/accesskeys/keytips-screen-edge.png)
+![Capture d’écran de l’alignement du bord de l’écran d’info-bulle](images/accesskeys/keytips-screen-edge.png)
 
-_Le bord de l’écran provoque le repositionnement automatique de l’info-bulle_
+_Les touches accélératrices sont automatiquement positionnées en fonction du bord de l’écran_
 
 ## <a name="key-tip-style"></a>Style d’info-bulle
 
@@ -328,7 +328,7 @@ Nous vous recommandons d’utiliser la prise en charge intégrée des touches ac
 
 Si vous devez spécifier vos propres styles d’info-bulle, utilisez des ressources d’application telles que KeyTipFontSize (taille de police), KeyTipFontFamily (famille de polices), KeyTipBackground (arrière-plan), KeyTipForeground (premier plan), KeyTipPadding (remplissage), KeyTipBorderBrush (couleur de bordure) et KeyTipBorderThemeThickness (épaisseur de bordure).
 
-![Modes de positionnement des touches accélératrices](images/accesskeys/keytip-customization.png)
+![Capture d’écran des options de personnalisation des touches accélératrices, y compris la police, l’ordre et la couleur](images/accesskeys/keytip-customization.png)
 
 _Options de personnalisation des touches accélératrices_
 

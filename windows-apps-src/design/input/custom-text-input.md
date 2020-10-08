@@ -1,5 +1,5 @@
 ---
-Description: Les API de texte de base de l’espace de noms Windows. UI. Text. Core permettent à une application Windows de recevoir des entrées de texte de n’importe quel service de texte pris en charge sur les appareils Windows.
+description: Les API de texte de base de l’espace de noms Windows. UI. Text. Core permettent à une application Windows de recevoir des entrées de texte de n’importe quel service de texte pris en charge sur les appareils Windows.
 title: Vue d’ensemble de la saisie de texte personnalisé
 ms.assetid: 58F5F7AC-6A4B-45FC-8C2A-942730FD7B74
 label: Custom text input
@@ -8,12 +8,12 @@ keywords: clavier, texte, Core Text, texte personnalisé, Text Services Framewor
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a6183dcc690a8fe3b9d13cfa0e471f41f04ff30
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 95dbd6de78cb6670ea7e904252bbc1f9f14edb77
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220572"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829637"
 ---
 # <a name="custom-text-input"></a>Saisie de texte personnalisé
 
@@ -38,7 +38,7 @@ Voici une représentation simple du système de saisie de texte.
 -   « Application » représente une application Windows hébergeant un contrôle d’édition personnalisé créé à l’aide des API de texte de base.
 -   Les API [**Windows.UI.Text.Core**](/uwp/api/Windows.UI.Text.Core) facilitent la communication avec les services de texte via Windows. La communication entre le contrôle d’édition de texte et les services de texte est gérée principalement via un objet [**CoreTextEditContext**](/uwp/api/Windows.UI.Text.Core.CoreTextEditContext) qui fournit les méthodes et événements visant à faciliter la communication.
 
-![diagramme de l’architecture core text](images/coretext/architecture.png)
+![Diagramme de l’architecture CoreText](images/coretext/architecture.png)
 
 ## <a name="text-ranges-and-selection"></a>Sélection et plages de texte
 
@@ -49,7 +49,8 @@ Les contrôles d’édition fournissent un espace pour la saisie de texte et les
 
 Les plages de texte utilisées avec les API Core Text sont exprimées en termes de position d’insertion. La « position d’insertion de l’application (ACP) » est un nombre (basé sur zéro) indiquant le nombre de caractères à partir du début du texte, juste avant le point d’insertion, comme indiqué ici.
 
-![exemple de diagramme de flux de texte](images/coretext/stream-1.png)
+![Capture d’écran montrant le nombre de caractères de la position du signe insertion de l’application (ACP)](images/coretext/stream-1.png)
+
 ### <a name="text-ranges-and-selection"></a>Sélection et plages de texte
 
 Les plages de texte et les sélections sont représentées par la structure [**CoreTextRange**](/uwp/api/Windows.UI.Text.Core.CoreTextRange) qui contient deux champs :
@@ -69,11 +70,11 @@ La position d’insertion actuelle, souvent appelée « point d’insertion »
 
 ### <a name="noncontiguous-selection"></a>Sélection non contiguë
 
-Certains contrôles d’édition prennent en charge les sélections non contiguës. Par exemple, les applications Microsoft Office prennent en charge les sélections arbitraires multiples, et de nombreux éditeurs de code source permettent la sélection de colonnes. Toutefois, les API Core Text n’acceptent pas les sélections non contiguës. Les contrôles d’édition doivent uniquement signaler une sélection contiguë, qui correspond le plus souvent à la sous-plage active des sélections non contiguës.
+Certains contrôles d’édition prennent en charge les sélections non contiguës. Par exemple, les applications Microsoft Office prennent en charge les sélections arbitraires multiples, et de nombreux éditeurs de code source permettent la sélection de colonnes. Toutefois, les API de texte de base ne prennent pas en charge les sélections non contiguës. Les contrôles d’édition doivent uniquement signaler une sélection contiguë, qui correspond le plus souvent à la sous-plage active des sélections non contiguës.
 
-Prenons l’exemple du flux de texte suivant :
+Par exemple, l’image suivante montre un flux de texte avec deux sélections non contiguës : \[ 0, 1 \] et \[ 6, 11 \] pour lesquelles le contrôle d’édition doit signaler un seul ( \[ 0, 1 \] ou \[ 6, 11 \] ).
 
-![exemple de diagramme de flux de texte ](images/coretext/stream-2.png) il y a deux sélections : \[ 0, 1 \] et \[ 6, 11 \] . Le contrôle d’édition ne doit signaler qu’un seul d’entre eux ; \[0, 1 \] ou \[ 6, 11 \] .
+![Capture d’écran montrant une sélection de texte non contiguë, où le premier caractère et les cinq derniers caractères sont sélectionnés.](images/coretext/stream-2.png)
 
 ## <a name="working-with-text"></a>Utilisation du texte
 
@@ -96,7 +97,9 @@ Votre système de contrôle d’édition accepte généralement les demandes de 
 
 Par exemple, voici l’état d’un contrôle d’édition avant que l’utilisateur tape « d ». Le point d’insertion est \[ 10, 10 \] .
 
-![exemple de diagramme de flux de texte ](images/coretext/stream-3.png) quand l’utilisateur tape « d », un événement [**TextUpdating**](/uwp/api/windows.ui.text.core.coretexteditcontext.textupdating) est déclenché avec les données [**CoreTextTextUpdatingEventArgs**](/uwp/api/Windows.UI.Text.Core.CoreTextTextUpdatingEventArgs) suivantes :
+![Capture d’écran d’un diagramme de flux de texte montrant le point d’insertion à \[ 10, 10 \] avant une insertion](images/coretext/stream-3.png)
+
+Lorsque l’utilisateur tape « d », un événement [**TextUpdating**](/uwp/api/windows.ui.text.core.coretexteditcontext.textupdating) est déclenché avec les données [**CoreTextTextUpdatingEventArgs**](/uwp/api/Windows.UI.Text.Core.CoreTextTextUpdatingEventArgs) suivantes :
 
 -   [**Range**](/uwp/api/windows.ui.text.core.coretexttextupdatingeventargs.range)  =  Plage \[ 10, 10\]
 -   [**Text**](/uwp/api/windows.ui.text.core.coretexttextupdatingeventargs.text) = "d"
@@ -104,7 +107,8 @@ Par exemple, voici l’état d’un contrôle d’édition avant que l’utilisa
 
 Dans votre système de contrôle d’édition, appliquez les modifications indiquées et définissez [**Result**](/uwp/api/windows.ui.text.core.coretexttextupdatingeventargs.result) sur **Succeeded**. Voici l’état du contrôle une fois que les modifications sont appliquées.
 
-![exemple de diagramme de flux de texte](images/coretext/stream-4.png)
+:::image type="content" source="images/coretext/stream-4.png" alt-text="Capture d’écran d’un diagramme de flux de texte montrant le point d’insertion à \[ 11, 11 \] après une insertion":::
+
 ### <a name="rejecting-text-updates"></a>Refuser des mises à jour de texte
 
 Il vous est parfois impossible d’appliquer les mises à jour de texte, car la plage concernée est une zone du contrôle d’édition qui ne doit pas être modifiée. Dans ce cas, vous ne devez pas appliquer les modifications. Au lieu de cela, indiquez au système que la mise à jour a échoué en définissant [**CoreTextTextUpdatingEventArgs.Result**](/uwp/api/windows.ui.text.core.coretexttextupdatingeventargs.result) sur [**CoreTextTextUpdatingResult.Failed**](/uwp/api/Windows.UI.Text.Core.CoreTextTextUpdatingResult).
@@ -117,9 +121,13 @@ Parfois, votre système de contrôle d’édition apporte des modifications au t
 
 Par exemple, voici l’état d’un contrôle d’édition avant que l’utilisateur colle le mot « World ». Le point d’insertion est à \[ 6, 6 \] .
 
-![exemple de diagramme de flux de texte ](images/coretext/stream-5.png) l’utilisateur exécute l’action coller et le contrôle d’édition finit par le texte suivant :
+![Capture d’écran d’un diagramme de flux de texte montrant le point d’insertion à \[ 6, 6 \] avant une insertion](images/coretext/stream-5.png)
 
-![exemple ](images/coretext/stream-4.png) de diagramme de flux de texte lorsque cela se produit, vous devez appeler [**NotifyTextChanged**](/uwp/api/windows.ui.text.core.coretexteditcontext.notifytextchanged) avec les arguments suivants :
+L’utilisateur exécute l’action coller et le contrôle d’édition après l’application des modifications :
+
+:::image type="content" source="images/coretext/stream-4.png" alt-text="Capture d’écran d’un diagramme de flux de texte montrant le point d’insertion à \[ 11, 11 \] après une insertion":::
+
+Dans ce cas, vous devez appeler [**NotifyTextChanged**](/uwp/api/windows.ui.text.core.coretexteditcontext.notifytextchanged) avec les arguments suivants :
 
 -   *modifiedRange*  =  modifiedRange \[ 6, 6\]
 -   *newLength* = 5
@@ -133,11 +141,17 @@ Dans votre système de contrôle d’édition, vous souhaiterez peut-être ignor
 
 Par exemple, imaginons un système de contrôle d’édition qui fournit une fonctionnalité de correction qui formalise les contractions. Voici l’état du contrôle d’édition avant que l’utilisateur appuie sur la touche Espace pour déclencher la correction. Le point d’insertion est à \[ 3, 3 \] .
 
-![exemple de diagramme de flux ](images/coretext/stream-6.png) de texte l’utilisateur appuie sur la touche espace et un événement [**TextUpdating**](/uwp/api/windows.ui.text.core.coretexteditcontext.textupdating) correspondant est déclenché. Le système de contrôle d’édition accepte la mise à jour de texte. Voici l’état que le contrôle d’édition affiche pendant un court instant avant la fin de la correction. Le point d’insertion est à \[ 4, 4 \] .
+![Capture d’écran d’un diagramme de flux de texte montrant le point d’insertion à \[ 3, 3 \] avant une insertion](images/coretext/stream-6.png)
 
-![exemple ](images/coretext/stream-7.png) de diagramme de flux de texte en dehors du gestionnaire d’événements [**TextUpdating**](/uwp/api/windows.ui.text.core.coretexteditcontext.textupdating) , le contrôle d’édition effectue la correction suivante. Voici l’état du contrôle d’édition après la fin de la correction. Le point d’insertion est à \[ 5, 5 \] .
+L’utilisateur appuie sur la touche espace et un événement [**TextUpdating**](/uwp/api/windows.ui.text.core.coretexteditcontext.textupdating) correspondant est déclenché. Le système de contrôle d’édition accepte la mise à jour de texte. Voici l’état que le contrôle d’édition affiche pendant un court instant avant la fin de la correction. Le point d’insertion est à \[ 4, 4 \] .
 
-![exemple ](images/coretext/stream-8.png) de diagramme de flux de texte lorsque cela se produit, vous devez appeler [**NotifyTextChanged**](/uwp/api/windows.ui.text.core.coretexteditcontext.notifytextchanged) avec les arguments suivants :
+![Capture d’écran d’un diagramme de flux de texte montrant le point d’insertion à \[ 4, 4 \] après une insertion](images/coretext/stream-7.png)
+
+En dehors du gestionnaire d’événements [**TextUpdating**](/uwp/api/windows.ui.text.core.coretexteditcontext.textupdating) , le contrôle d’édition effectue la correction suivante. Voici l’état du contrôle d’édition après la fin de la correction. Le point d’insertion est à \[ 5, 5 \] .
+
+![Capture d’écran d’un diagramme de flux de texte montrant le point d’insertion à \[ 5, 5\]](images/coretext/stream-8.png)
+
+Dans ce cas, vous devez appeler [**NotifyTextChanged**](/uwp/api/windows.ui.text.core.coretexteditcontext.notifytextchanged) avec les arguments suivants :
 
 -   *modifiedRange*  =  modifiedRange \[ 1, 2\]
 -   *newLength* = 2
