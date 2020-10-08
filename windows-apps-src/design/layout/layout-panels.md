@@ -5,12 +5,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e3915fca3b459d259e83c9c9ce5ef19aa413e2e
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 3fd8d57db92b8a59f32935586edfc247ec3c281f
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218672"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750455"
 ---
 # <a name="layout-panels"></a>Panneaux de disposition
 
@@ -186,8 +186,8 @@ Le *dimensionnement proportionnel* sert à répartir l’espace disponible entre
 
 Cet exemple combine le dimensionnement fixe, automatique et proportionnel dans un élément [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid) avec 4 colonnes.
 
-&nbsp;|&nbsp;|&nbsp;
-------|------|------
+| Colonne | Dimensionnement | Description |
+| ------ | ------ | ----------- |
 Colonne_1 | **Auto** | La taille de la colonne s’adaptera à son contenu.
 Colonne_2 | * | Une fois les colonnes Auto calculées, la colonne conserve une partie de la largeur restante. Colonne_2 sera deux fois moins large que Colonne_4.
 Colonne_3 | **44** | La colonne aura une largeur de 44 pixels.

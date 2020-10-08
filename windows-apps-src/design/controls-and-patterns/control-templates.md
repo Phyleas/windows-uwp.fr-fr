@@ -11,12 +11,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 773079129b5e05e26501f78fe177f4b5367902da
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: c1d712e9d4a12800542184cf37fb504d6f7d20d7
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217272"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750505"
 ---
 # <a name="control-templates"></a>Modèles de contrôles
 
@@ -170,10 +170,9 @@ Le code XAML suivant montre les objets [**VisualState**](/uwp/api/Windows.UI.Xam
 
 Pour mieux comprendre le fonctionnement des objets [**VisualState**](/uwp/api/Windows.UI.Xaml.VisualState), observez ce qui se produit lorsque le contrôle [**CheckBox**](/uwp/api/Windows.UI.Xaml.Controls.CheckBox) passe de l’état `Unchecked` à l’état `Checked`, puis à l’état `Indeterminate`, pour revenir ensuite à l’état `Unchecked`. Voici les transitions entre les états :
 
-|                                      |                                                                                                                                                                                                                                                                                                                                                |                                                   |
-|--------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------|
-| Transition d'état                     | Action                                                                                                                                                                                                                                                                                                                                   | Apparence du contrôle CheckBox en fin de transition |
-| De `Unchecked` à `Checked`       | La valeur [**Setter**](/uwp/api/Windows.UI.Xaml.Setter) de l’état [**VisualState**](/uwp/api/Windows.UI.Xaml.VisualState) `Checked` est appliquée. Ainsi, la valeur [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) de l’élément `CheckGlyph` est 1.                                                                                                                                                         | Un X s’affiche.                                |
+| Transition d'état | Action | Apparence du contrôle CheckBox en fin de transition |
+| ---------------- | ------------ | ------------------------------------------------- |
+| De `Unchecked` à `Checked`       | La valeur [**Setter**](/uwp/api/Windows.UI.Xaml.Setter) de l’état [**VisualState**](/uwp/api/Windows.UI.Xaml.VisualState) `Checked` est appliquée. Ainsi, la valeur [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) de l’élément `CheckGlyph` est 1.                                                                                                                                                          | Un X s’affiche.                                |
 | De `Checked` à `Indeterminate`   | La valeur [**Setter**](/uwp/api/Windows.UI.Xaml.Setter) de l’état [**VisualState**](/uwp/api/Windows.UI.Xaml.VisualState) `Indeterminate` est appliquée. Ainsi, la valeur [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) de l’élément `IndeterminateGlyph` est 1. La valeur **Setter** de l’état **VisualState** `Checked` est supprimée. Ainsi, la valeur [**Opacity**](/uwp/api/windows.ui.xaml.media.brush.opacity) de l’élément `CheckGlyph` est 0. | Un cercle s’affiche.                            |
 | De `Indeterminate` à `Unchecked` | La valeur [**Setter**](/uwp/api/Windows.UI.Xaml.Setter) de l’état [**VisualState**](/uwp/api/Windows.UI.Xaml.VisualState) `Indeterminate` est supprimée. Ainsi, la valeur [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) de l’élément `IndeterminateGlyph` est 0.                                                                                                                                           | Rien ne s’affiche.                             |
 

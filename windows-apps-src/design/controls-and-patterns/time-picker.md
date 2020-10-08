@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f9fe89d14da884d7cce25771bc67ecf3fec6abc
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: ec500eaeb634e82342dcc6ac5a393c1d06969797
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218772"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750635"
 ---
 # <a name="time-picker"></a>Sélecteur d’heure
  
@@ -28,9 +28,17 @@ Le sélecteur d’heure offre aux utilisateurs une méthode standard de sélecti
 
 **Obtenir la bibliothèque d’interface utilisateur Windows**
 
-|  |  |
-| - | - |
-| ![Logo WinUI](images/winui-logo-64x64.png) | La bibliothèque d’interface utilisateur Windows version 2.2 ou ultérieure inclut pour ce contrôle un nouveau modèle qui utilise des angles arrondis. Pour plus d’informations, consultez [Rayons des angles](../style/rounded-corner.md). WinUI est un package NuGet qui contient de nouveaux contrôles et des fonctionnalités d’interface utilisateur pour les applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/). |
+:::row:::
+   :::column:::
+      ![Logo WinUI](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+       La bibliothèque d’interface utilisateur Windows version 2.2 ou ultérieure inclut pour ce contrôle un nouveau modèle qui utilise des angles arrondis. Pour plus d’informations, consultez [Rayons des angles](../style/rounded-corner.md). WinUI est un package NuGet qui contient de nouveaux contrôles et des fonctionnalités d’interface utilisateur pour les applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/).
+   :::column-end:::
+   :::column:::
+
+   :::column-end:::
+:::row-end:::
 
 > **API de plateforme** : [classe TimePicker](/uwp/api/Windows.UI.Xaml.Controls.TimePicker), [propriété Time](/uwp/api/windows.ui.xaml.controls.timepicker.time)
 

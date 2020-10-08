@@ -6,12 +6,12 @@ ms.date: 06/11/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: acdc8d5bb9a73bf5851dfd8f75f777c2a13bcdb1
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: edaa15aa2e88252c328a368df1b7698a9b74f5e0
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173133"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750445"
 ---
 # <a name="create-a-hello-world-app-in-ccx"></a>Créer une application « Hello, World! » en C++/CX
 
@@ -279,24 +279,24 @@ Il est très simple de personnaliser l’apparence d’une application. Par déf
 1.  Ouvrez App.xaml.
 2.  Dans la balise de début [**Application**](/uwp/api/Windows.UI.Xaml.Application), modifiez la propriété [**RequestedTheme**](/uwp/api/windows.ui.xaml.application.requestedtheme) et attribuez-lui la valeur **Dark** :
 
-```xaml
-RequestedTheme="Dark"
-```
+    ```xaml
+    RequestedTheme="Dark"
+    ```
 
-    Here's the full [**Application**](/uwp/api/Windows.UI.Xaml.Application) tag with the dark theme :
+    Voici l’intégralité de la balise [**Application**](/uwp/api/Windows.UI.Xaml.Application) avec le thème foncé :
 
-```xaml
+    ```xaml
     <Application
     x:Class="HelloWorld.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:HelloWorld"
     RequestedTheme="Dark">
-```
+    ```
 
 3.  Appuyez sur la touche F5 pour générer et exécuter l’application. Remarquez qu’elle utilise le thème à dominante foncée.
 
-![Écran de l’application avec un thème à dominante foncée](images/xaml-hw-app3.png)
+    ![Écran de l’application avec un thème à dominante foncée](images/xaml-hw-app3.png)
 
 Quel thème utiliser ? Tout est question de goût personnel. Toutefois, nous recommandons le thème à dominante foncée pour les applications qui affichent essentiellement des images ou de la vidéo, et le thème à dominante claire pour les applications qui contiennent beaucoup de texte. Si vous recourez à un modèle de couleurs personnalisé, utilisez le thème qui s’accorde le mieux à l’apparence de votre application. Dans le reste de ce didacticiel, nous utilisons le thème à dominante claire dans les captures d’écran.
 

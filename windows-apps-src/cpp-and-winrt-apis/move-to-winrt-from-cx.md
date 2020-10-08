@@ -5,12 +5,12 @@ ms.date: 01/17/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, porter, migrer, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 94ffa80700cea640d63f63344991144a2ac00ab6
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 0e25f9cdb091f96b648ddc00d5f5cc96bf18d1d1
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157313"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750595"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>Passer de C++/CX à C++/WinRT
 
@@ -39,7 +39,7 @@ Excepté les projets de composant Windows Runtime, comme indiqué dans la sectio
 
 Pour préparer un projet en vue d’un processus de déplacement progressif, vous pouvez ajouter le support C++/WinRT à votre projet C++/CX. Les étapes que vous suivez sont décrites dans [Prise en charge du projet et ajout du support C++/WinRT](./interop-winrt-cx.md#taking-a-ccx-project-and-adding-cwinrt-support). Vous pouvez ensuite procéder à un déplacement progressif à partir de là.
 
-Une autre option consiste à créer un nouveau projet dans Visual Studio à l’aide de l’un des modèles de projet C++/WinRT (consultez [Support Visual Studio pour C++ /WinRT](./intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)). Puis ajoutez le support C++/CX à ce projet. Les étapes que vous suivez sont décrites dans [Prise en charge du projet C++/WinRT et ajout du support C++/CX](./interop-winrt-cx.md#taking-a-cwinrt-project-and-adding-cx-support). Vous pouvez alors commencer à déplacer votre code source et déplacer *certains* codes sources C++/CX vers C++/WinRT ce faisant.
+Une autre option consiste à créer un nouveau projet dans Visual Studio à l’aide de l’un des modèles de projet C++/WinRT (consultez [Support Visual Studio pour C++ /WinRT](./intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)). Puis ajoutez le support C++/CX à ce projet. Les étapes que vous suivez sont décrites dans [Prise en charge du projet C++/WinRT et ajout du support C++/CX](./interop-winrt-cx.md#taking-a-cwinrt-project-and-adding-ccx-support). Vous pouvez alors commencer à déplacer votre code source et déplacer *certains* codes sources C++/CX vers C++/WinRT ce faisant.
 
 Dans les deux cas, vous interagissez (des deux façons) entre votre code C++/WinRT et tout code C++/CX que vous n’avez pas encore déplacé.
 
@@ -64,7 +64,7 @@ Sinon, vous pouvez utiliser un composant Windows Runtime pour factoriser le code
 Quelle que soit votre stratégie de déplacement (déplacement en une seule passe ou déplacement graduel), la première étape consiste à préparer votre projet pour le déplacement. Voici un récapitulatif de ce que nous avons décrit dans [Stratégies de déplacement](#strategies-for-porting) en termes de type de projet sur lequel vous allez commencer à travailler et comment le configurer.
 
 - **Déplacement en une seule passe**. Créez un nouveau projet dans Visual Studio à l’aide de l’un des exemples de projet C++/WinRT. Déplacez les fichiers de votre projet C++/CX vers ce nouveau projet, puis déplacez le code source C++/CX.
-- **Déplacement progressif d’un projet non XAML**. Vous pouvez choisir d’ajouter le support C++/WinRT vers votre projet C++/CX (consultez [Prise en charge d’un projet C++/CX et ajout du support C++/WinRT](./interop-winrt-cx.md#taking-a-ccx-project-and-adding-cwinrt-support)) et déplacement progressif. Vous pouvez choisir de créer un nouveau projet C++/WinRT et d’y ajouter le support C++/CX (consultez [Prise en charge d’un projet C++/WinRT et ajout du support C++/CX](./interop-winrt-cx.md#taking-a-cwinrt-project-and-adding-cx-support)), y déplacer des fichiers de façon progressive.
+- **Déplacement progressif d’un projet non XAML**. Vous pouvez choisir d’ajouter le support C++/WinRT vers votre projet C++/CX (consultez [Prise en charge d’un projet C++/CX et ajout du support C++/WinRT](./interop-winrt-cx.md#taking-a-ccx-project-and-adding-cwinrt-support)) et déplacement progressif. Vous pouvez choisir de créer un nouveau projet C++/WinRT et d’y ajouter le support C++/CX (consultez [Prise en charge d’un projet C++/WinRT et ajout du support C++/CX](./interop-winrt-cx.md#taking-a-cwinrt-project-and-adding-ccx-support)), y déplacer des fichiers de façon progressive.
 - **Déplacement progressif d’un projet XAML**. Créez un nouveau projet C++/WinRT, y déplacez des fichiers de façon progressive. À un moment donné, vos types de pages XAML doivent être *soit* tous les C++/WinRT *soit* tous les C++/CX.
 
 Le reste de cette rubrique s’applique quelle que soit la stratégie de déplacement choisie. Elle contient un catalogue de détails techniques impliqués dans le déplacement du code source de C++/CX vers C++/WinRT. Si vous effectuez un déplacement progressif, vous souhaiterez peut-être également consulter [Interopérabilité entre C++/WinRT et C++/CX](./interop-winrt-cx.md) et [Asynchronisme et interopérabilité entre C++/WinRT et C++/CX](./interop-winrt-cx-async.md).

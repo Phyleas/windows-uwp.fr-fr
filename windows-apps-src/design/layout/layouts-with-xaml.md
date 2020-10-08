@@ -8,12 +8,12 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: 9aee0f0e91528258b0591f2e3c7e0ea10353b5b7
-ms.sourcegitcommit: ef3cdca5e9b8f032f46174da4574cb5593d32d56
+ms.openlocfilehash: fd2f755153b29c9be766d39fb685a3f923868946
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90593453"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750416"
 ---
 # <a name="responsive-layouts-with-xaml"></a>Dispositions réactives avec XAML
 
@@ -47,8 +47,8 @@ Le *dimensionnement proportionnel* répartit l’espace disponible entre les lig
 
 Cet exemple combine le dimensionnement fixe, automatique et proportionnel dans un élément [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid) avec 4 colonnes.
 
-&nbsp;|&nbsp;|&nbsp;
-------|------|------
+| Colonne | Dimensionnement | Description |
+| ------ | ------ | ----------- |
 Colonne_1 | **Auto** | La taille de la colonne s’adaptera à son contenu.
 Colonne_2 | * | Une fois les colonnes Auto calculées, la colonne conserve une partie de la largeur restante. Colonne_2 sera deux fois moins large que Colonne_4.
 Colonne_3 | **44** | La colonne aura une largeur de 44 pixels.

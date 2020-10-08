@@ -10,12 +10,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 989ecf4aec60b6a9c4324d97b33dd4b55a7251a6
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 5835993984bd0e080a1a049d20f19c96020f80f9
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218862"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91749665"
 ---
 # <a name="rating-control"></a>Contrôle d’évaluation
 
@@ -25,9 +25,17 @@ Le contrôle d’évaluation permet aux utilisateurs de visualiser et de défini
 
 **Obtenir la bibliothèque d’interface utilisateur Windows**
 
-|  |  |
-| - | - |
-| ![Logo WinUI](images/winui-logo-64x64.png) | Le contrôle **RatingControl** est inclus dans la bibliothèque d’interface utilisateur Windows, package NuGet contenant de nouveaux contrôles et fonctionnalités d’interface utilisateur destinés aux applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/). |
+:::row:::
+   :::column:::
+      ![Logo WinUI](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      Le contrôle **RatingControl** est inclus dans la bibliothèque d’interface utilisateur Windows, package NuGet contenant de nouveaux contrôles et fonctionnalités d’interface utilisateur destinés aux applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/).
+   :::column-end:::
+   :::column:::
+
+   :::column-end:::
+:::row-end:::
 
 > **API de la bibliothèque d’interface utilisateur Windows :** [Classe RatingControl](/uwp/api/microsoft.ui.xaml.controls.ratingcontrol)
 >

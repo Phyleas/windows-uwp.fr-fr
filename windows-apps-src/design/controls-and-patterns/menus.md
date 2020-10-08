@@ -13,12 +13,12 @@ design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: e44da32b5eec603ed9a334b4b870ca1176047a97
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 29f7f1420e8f4284f1a4ed0c835a70e15958f95f
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218652"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91749925"
 ---
 # <a name="menus-and-context-menus"></a>Menus et menus contextuels
 
@@ -28,9 +28,17 @@ Les menus et les menus contextuels affichent une liste de commandes ou d’optio
 
 **Obtenir la bibliothèque d’interface utilisateur Windows**
 
-|  |  |
-| - | - |
-| ![Logo WinUI](images/winui-logo-64x64.png) | Le contrôle **MenuBar** est inclus dans la bibliothèque d’interface utilisateur Windows, package NuGet qui contient les nouveaux contrôles et fonctionnalités d’interface utilisateur pour les applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez [Vue d’ensemble de la bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/). |
+:::row:::
+   :::column:::
+      ![Logo WinUI](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      Le contrôle **MenuBar** est inclus dans la bibliothèque d’interface utilisateur Windows, package NuGet qui contient les nouveaux contrôles et fonctionnalités d’interface utilisateur pour les applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez [Vue d’ensemble de la bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/).
+   :::column-end:::
+   :::column:::
+
+   :::column-end:::
+:::row-end:::
 
 > **API de la bibliothèque d’interface utilisateur Windows** : [MenuBar, classe](/uwp/api/microsoft.ui.xaml.controls.menubar)
 >

@@ -12,12 +12,12 @@ dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: f412b3db0595013a8952fa20d385178eedf6c1d8
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: a2f6e61373ae343d8d683d6e5f9169cc399f1594
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218502"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750545"
 ---
 # <a name="command-bar-flyout"></a>Menu volant de barre de commandes
 
@@ -34,9 +34,17 @@ Le menu volant de barre de commandes a deux modes d’affichage : *réduit* et 
 
 **Obtenir la bibliothèque d’interface utilisateur Windows**
 
-|  |  |
-| - | - |
-| ![Logo WinUI](images/winui-logo-64x64.png) | Le contrôle **CommandBarFlyout** est inclus dans la bibliothèque d’interface utilisateur Windows, package NuGet qui contient les nouveaux contrôles et fonctionnalités d’interface utilisateur pour les applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/). |
+:::row:::
+   :::column:::
+      ![Logo WinUI](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      Le contrôle **CommandBarFlyout** est inclus dans la bibliothèque d’interface utilisateur Windows, package NuGet qui contient les nouveaux contrôles et fonctionnalités d’interface utilisateur pour les applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/).
+   :::column-end:::
+   :::column:::
+
+   :::column-end:::
+:::row-end:::
 
 >**API de la bibliothèque d’interface utilisateur Windows** : [classe CommandBarFlyout](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout), [classe TextCommandBarFlyout](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout)
 >

@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projeté, projection, gérer, événement, délégué
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d2470b1aa52f8aa4be7e07bf1dfe5213054b005
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: fefc7f72fb91a61ae924ac082dcac6d3cf9c044b
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166243"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750125"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>Gérer des événements en utilisant des délégués en C++/WinRT
 
@@ -112,12 +112,12 @@ La syntaxe de l’opérateur d’appel de fonction est également intéressante.
 > ```
 >
 > Ces informations nous indiquent que l’événement **UIElement.KeyDown** (la rubrique active) a un type de délégué **KeyEventHandler**, puisque c’est le type que vous transmettez lorsque vous inscrivez un délégué avec ce type d’événement. Donc, maintenant, suivez le lien dans la rubrique vers le type [Délégué KeyEventHandler](/uwp/api/windows.ui.xaml.input.keyeventhandler). Ici, le bloc de syntaxe contient un opérateur d’appel de fonction. Et, comme mentionné ci-dessus, elle vous indique ce que doivent être les paramètres de votre délégué.
-> 
-> ```cppwinrt
-> void operator()(
-    winrt::Windows::Foundation::IInspectable const& sender,
-    winrt::Windows::UI::Xaml::Input::KeyRoutedEventArgs const& e) const;
-> ```
+>
+>```cppwinrt
+>void operator()(
+>   winrt::Windows::Foundation::IInspectable const& sender,
+>   winrt::Windows::UI::Xaml::Input::KeyRoutedEventArgs const& e) const;
+>```
 >
 >  Comme vous pouvez le voir, le délégué doit être déclaré avec un **IInspectable** comme expéditeur et une instance de la [classe KeyRoutedEventArgs](/uwp/api/windows.ui.xaml.input.keyroutedeventargs) comme arguments.
 >

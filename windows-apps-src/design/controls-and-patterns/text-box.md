@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: f28e3e26d56f5741ceb0e5be13288c7dbd6c722f
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 794bf6e99701dd73ee74b07c289fe9a2e5ca9744
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220472"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91749776"
 ---
 # <a name="text-box"></a>Zone de texte
 
@@ -26,9 +26,17 @@ Le contrôle TextBox comporte différentes fonctionnalités destinées à simpli
 
 **Obtenir la bibliothèque d’interface utilisateur Windows**
 
-|  |  |
-| - | - |
-| ![Logo WinUI](images/winui-logo-64x64.png) | La bibliothèque d’interface utilisateur Windows version 2.2 ou ultérieure inclut pour ce contrôle un nouveau modèle qui utilise des angles arrondis. Pour plus d’informations, consultez [Rayons des angles](../style/rounded-corner.md). WinUI est un package NuGet qui contient de nouveaux contrôles et des fonctionnalités d’interface utilisateur pour les applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/). |
+:::row:::
+   :::column:::
+      ![Logo WinUI](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      La bibliothèque d’interface utilisateur Windows version 2.2 ou ultérieure inclut pour ce contrôle un nouveau modèle qui utilise des angles arrondis. Pour plus d’informations, consultez [Rayons des angles](../style/rounded-corner.md). WinUI est un package NuGet qui contient de nouveaux contrôles et des fonctionnalités d’interface utilisateur pour les applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/).
+   :::column-end:::
+   :::column:::
+
+   :::column-end:::
+:::row-end:::
 
 > **API de plateforme** : [classe TextBox class](/uwp/api/Windows.UI.Xaml.Controls.TextBox), [propriété Text](/uwp/api/windows.ui.xaml.controls.textbox.text)
 

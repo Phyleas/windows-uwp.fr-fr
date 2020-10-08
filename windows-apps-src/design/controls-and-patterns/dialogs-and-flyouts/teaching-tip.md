@@ -10,12 +10,12 @@ design-contact: kimsea
 dev-contact: niallm
 ms.custom: 19H1
 ms.localizationpriority: medium
-ms.openlocfilehash: 741b8d26c37befa4f2497474d7cc3d663001e2ad
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: fbe23101861429f3aef9298f854a600521d20613
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219592"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750525"
 ---
 # <a name="teaching-tip"></a>Conseil éducatif
 
@@ -25,9 +25,17 @@ La fermeture d’un conseil d’apprentissage peut résulter d’un abandon inte
 
 **Obtenir la bibliothèque d’interface utilisateur Windows**
 
-|  |  |
-| - | - |
-| ![Logo WinUI](../images/winui-logo-64x64.png) | Le contrôle **TeachingTip** nécessite la bibliothèque d’interface utilisateur Windows, package NuGet qui contient les nouveaux contrôles et fonctionnalités d’interface utilisateur destinés aux applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/). |
+:::row:::
+   :::column:::
+      ![Logo WinUI](../images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      Le contrôle **TeachingTip** nécessite la bibliothèque d’interface utilisateur Windows, package NuGet qui contient les nouveaux contrôles et fonctionnalités d’interface utilisateur destinés aux applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/).
+   :::column-end:::
+   :::column:::
+
+   :::column-end:::
+:::row-end:::
 
 > **API de la bibliothèque d’interface utilisateur Windows :** [Classe TeachingTip](/uwp/api/microsoft.ui.xaml.controls.teachingtip)
 

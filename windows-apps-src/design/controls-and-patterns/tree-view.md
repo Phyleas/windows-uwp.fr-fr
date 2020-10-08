@@ -14,12 +14,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: RS5, 19H1
-ms.openlocfilehash: ceade84d60b4e2f01c51c4570bb9ce425848a2d8
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: e033c98aa9336c544219786a254cebaedfcd9f29
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217202"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750145"
 ---
 # <a name="treeview"></a>TreeView
 
@@ -36,9 +36,17 @@ Les API **TreeView** prennent en charge les fonctionnalités suivantes :
 
 **Obtenir la bibliothèque d’interface utilisateur Windows**
 
-|  |  |
-| - | - |
-| ![Logo WinUI](images/winui-logo-64x64.png) | Le contrôle **TreeView** est inclus dans la bibliothèque d’interface utilisateur Windows, package NuGet contenant de nouveaux contrôles et fonctionnalités d’interface utilisateur destinés aux applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/). |
+:::row:::
+   :::column:::
+      ![Logo WinUI](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      Le contrôle **TreeView** est inclus dans la bibliothèque d’interface utilisateur Windows, package NuGet contenant de nouveaux contrôles et fonctionnalités d’interface utilisateur destinés aux applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/).
+   :::column-end:::
+   :::column:::
+
+   :::column-end:::
+:::row-end:::
 
 > **API de la bibliothèque d’interface utilisateur Windows :** [Classe TreeView](/uwp/api/microsoft.ui.xaml.controls.treeview), [classe TreeViewNode](/uwp/api/microsoft.ui.xaml.controls.treeviewnode), [propriété TreeView.ItemsSource](/uwp/api/microsoft.ui.xaml.controls.treeview.itemssource)
 >
@@ -134,13 +142,13 @@ Pour obtenir le code complet, consultez [Arborescence utilisant la liaison de do
 
 Si vous utilisez **TreeView.ItemsSource**, ces API permettent d’obtenir l’élément de données ou le nœud à partir du conteneur et vice versa.
 
-| **[TreeViewItem](/uwp/api/windows.ui.xaml.controls.treeviewitem)** | |
-| - | - |
+| [TreeViewItem](/uwp/api/windows.ui.xaml.controls.treeviewitem) | Description |
+| ------------------------------------------------------------------ | ----------- |
 | [TreeView.ItemFromContainer](/uwp/api/windows.ui.xaml.controls.treeview.itemfromcontainer) | Obtient l’élément de données pour le conteneur **TreeViewItem** spécifié. |
 | [TreeView.ContainerFromItem](/uwp/api/windows.ui.xaml.controls.treeview.containerfromitem) | Obtient le conteneur **TreeViewItem** pour l’élément de données spécifié. |
 
-| **[TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode)** | |
-| - | - |
+| [TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode) | Description |
+| -------------------------------------------------------------- | ----------- |
 | [TreeView.NodeFromContainer](/uwp/api/windows.ui.xaml.controls.treeview.nodefromcontainer) | Obtient le **TreeViewItem** pour le conteneur **TreeViewItem** spécifié. |
 | [TreeView.ContainerFromNode](/uwp/api/windows.ui.xaml.controls.treeview.containerfromnode) | Obtient le conteneur **TreeViewItem** pour le **TreeViewNode** spécifié. |
 
@@ -179,12 +187,12 @@ End Sub
 
 Ces API sont disponibles pour la gestion de la hiérarchie de données de votre arborescence.
 
-| **[TreeView](/uwp/api/windows.ui.xaml.controls.treeview)** | |
-| - | - |
+| [TreeView](/uwp/api/windows.ui.xaml.controls.treeview) | Description |
+| ------------------------------------------------------ | ----------- |
 | [RootNodes](/uwp/api/windows.ui.xaml.controls.treeview.rootnodes) | Une arborescence peut avoir un ou plusieurs nœuds racine. Ajoutez un objet **TreeViewNode** à la collection **RootNodes** pour créer un nœud racine. Le **Parent** d’un nœud racine est toujours **null**. La **Profondeur** d’un nœud racine est 0. |
 
-| **[TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode)** | |
-| - | - |
+| [TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode) | Description |
+| -------------------------------------------------------------- | ----------- |
 | [Children](/uwp/api/windows.ui.xaml.controls.treeviewnode.children) | Ajoutez des objets **TreeViewNode** à la collection **Children** d’un nœud parent pour créer votre hiérarchie de nœuds. Un nœud est le **Parent** de tous les nœuds de sa collection **Children**. |
 | [HasChildren](/uwp/api/windows.ui.xaml.controls.treeviewnode.haschildren) | **true** si le nœud a réalisé des enfants. **false** indique un dossier ou un élément vide. |
 | [HasUnrealizedChildren](/uwp/api/windows.ui.xaml.controls.treeviewnode.hasunrealizedchildren) | Utilisez cette propriété si vous remplissez des nœuds quand ils sont développés. Consultez [Remplir un nœud quand il est développé](#fill-a-node-when-its-expanding) plus loin dans cet article. |

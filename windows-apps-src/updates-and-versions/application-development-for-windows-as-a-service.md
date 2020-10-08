@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: f384ca56-f2b2-4793-b251-f7f5735376bb
 ms.localizationpriority: medium
-ms.openlocfilehash: c035a97b1750c8f285689f2b2f82f3766a6c06ad
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d301a2dfcc478f6d90b8aa562bfbd34cf79493c1
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173793"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750135"
 ---
 # <a name="application-development-for-windows-as-a-service"></a>Développement d’applications pour Windows as a service
 
@@ -54,9 +54,9 @@ Dans la perspective de ce changement, nous recommandons à nos partenaires édit
 
 Cette approche permet de réduire la charge de la maintenance d’une planification d’application qui s’aligne sur les publications de Windows. Les partenaires éditeurs de logiciels indépendants doivent pouvoir publier librement des fonctionnalités ou des mises à jour à leur propre rythme. Nous pensons que nos partenaires peuvent tenir informée leur clientèle des dernières mises à jour des applications indépendamment d’une publication de Windows. Par ailleurs, nos clients n’ont pas à rechercher une déclaration de prise en charge explicite à chaque publication d’une build Windows. Voici un exemple de déclaration de prise en charge qui indique dans quelle mesure une application peut être prise en charge dans différentes versions du système d’exploitation :
 
-| Exemple de déclaration de prise en charge du cycle de vie d’une application | |
-| --- | --- |
-| La société de développement logiciel Contoso est propriétaire de l’application populaire Mojave, qui occupe une place importante dans l’entreprise. Contoso publie sa prochaine version majeure de Mojave 14.0 et déclare une prise en charge standard de trois ans à compter de la date de publication. Pendant la prise en charge standard, toutes les mises à jour et le support sont gratuits pour le produit sous licence. Contoso déclare également deux années supplémentaires de support étendu, pendant lesquelles les clients peuvent acheter des mises à jour et bénéficier du support pendant une période de grâce. Au-delà de la date de fin du support étendu, le support de cette version du produit n’est plus assuré. Pendant la période de prise en charge standard, Contoso prend en charge Mojave 14.0 sur l’ensemble des builds de Windows publiées. Contoso publie également des mises à jour pour Mojave selon les besoins et indépendamment des versions du produit Windows. | |
+> **Exemple de déclaration de prise en charge du cycle de vie d’une application**
+>
+> La société de développement logiciel Contoso est propriétaire de l’application populaire Mojave, qui occupe une place importante dans l’entreprise. Contoso publie sa prochaine version majeure de Mojave 14.0 et déclare une prise en charge standard de trois ans à compter de la date de publication. Pendant la prise en charge standard, toutes les mises à jour et le support sont gratuits pour le produit sous licence. Contoso déclare également deux années supplémentaires de support étendu, pendant lesquelles les clients peuvent acheter des mises à jour et bénéficier du support pendant une période de grâce. Au-delà de la date de fin du support étendu, le support de cette version du produit n’est plus assuré. Pendant la période de prise en charge standard, Contoso prend en charge Mojave 14.0 sur l’ensemble des builds de Windows publiées. Contoso publie également des mises à jour pour Mojave selon les besoins et indépendamment des versions du produit Windows.
 
 Les sections suivantes contiennent des informations supplémentaires sur les mesures prises par Microsoft pour maintenir la compatibilité du système d’exploitation sous-jacent. Vous y trouverez également des conseils sur les mesures que vous pouvez prendre pour maintenir la compatibilité du système d’exploitation et de l’écosystème des applications. Une section indique également comment tirer parti des builds de distribution de version d’évaluation de Windows afin de détecter les régressions d’application avant la publication d’une build Windows. Pour finir, nous expliquons comment utiliser une approche pilotée par l’instrumentation et la télémétrie afin d’augmenter la qualité des builds Windows. Nous recommandons aux éditeurs de logiciels indépendants d’adopter une approche similaire avec leur portefeuille d’applications.
 

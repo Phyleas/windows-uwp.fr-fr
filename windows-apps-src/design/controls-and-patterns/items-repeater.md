@@ -7,12 +7,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: efc50a15e4f7aa45d7df63d2e53748ce9aa22c6a
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 52938a03e7e0287a200cedc5b8edb98169483425
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220622"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750665"
 ---
 # <a name="itemsrepeater"></a>ItemsRepeater
 
@@ -24,9 +24,17 @@ D’un point de vue conceptuel, vous pouvez voir [ItemsRepeater](/uwp/api/micros
 
 **Obtenir la bibliothèque d’interface utilisateur Windows**
 
-|  |  |
-| - | - |
-| ![Logo WinUI](images/winui-logo-64x64.png) | Le contrôle **ItemsRepeater** est inclus dans la bibliothèque d’interface utilisateur Windows, package NuGet contenant les nouveaux contrôles et fonctionnalités d’interface utilisateur destinés aux applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/). |
+:::row:::
+   :::column:::
+      ![Logo WinUI](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      Le contrôle **ItemsRepeater** est inclus dans la bibliothèque d’interface utilisateur Windows, package NuGet contenant les nouveaux contrôles et fonctionnalités d’interface utilisateur destinés aux applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/).
+   :::column-end:::
+   :::column:::
+
+   :::column-end:::
+:::row-end:::
 
 > **API de la bibliothèque d’interface utilisateur Windows :** [Classe ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)
 >

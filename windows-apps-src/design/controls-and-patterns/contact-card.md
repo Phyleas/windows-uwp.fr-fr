@@ -9,12 +9,12 @@ design-contact: tbd
 dev-contact: tbd
 doc-status: not-published
 ms.localizationpriority: medium
-ms.openlocfilehash: e31b698189e5dc8c59b1c10a6aa6b5bb02190e55
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: d31c1a22260b8d98e767fba6b6d6e0db20fdbbb8
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217312"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829596"
 ---
 # <a name="contact-card"></a>Carte de visite
 
@@ -28,12 +28,12 @@ Vous pouvez afficher la carte de visite de deux façons :
 
 
 <figure>
-    <img src="images/contact-card/contact-card-standard.png" alt="The full contact card">
+    <img src="images/contact-card/contact-card-standard.png" alt="Screenshot showing a standard contact card.">
     <figcaption>Carte de visite standard</figcaption>
 </figure>
 
 <figure>
-    <img src="images/contact-card/contact-card-full.png" alt="The full contact card">
+    <img src="images/contact-card/contact-card-full.png" alt="Screenshot showing a full contact card.">
     <figcaption>Carte de visite complète</figcaption>
 </figure>
 

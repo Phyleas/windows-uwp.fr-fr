@@ -7,12 +7,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f3eb7ff033a81e358cb74e670b3235ade17e8a87
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 50f87c02f726512f54830f8678fa8bbec5ecee4f
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220042"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91763044"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-windows-apps"></a>Historique de navigation et navigation vers l’arrière pour les applications Windows
 
@@ -330,9 +330,9 @@ Si vous choisissez de fournir votre propre navigation de pile Back, l’expérie
 <td style="vertical-align:top;"><strong>Page à page, différents groupes d’homologues</strong></td>
 <td style="vertical-align:top;"><strong>Oui</strong>
 <p>Dans cette illustration, l’utilisateur navigue du niveau 1 de l’application vers le niveau 2, en traversant des groupes d’homologues. La navigation est donc ajoutée à l’historique de navigation.</p>
-<p><img src="images/back-nav/nav-pagetopage-diffpeers-imageonly1.png" alt="Navigation across peer groups" /></p>
+<p><img src="images/back-nav/nav-pagetopage-diffpeers-imageonly1.png" alt="Diagram of navigation across peer groups showing the user navigating from group one to group two and the back to group one." /></p>
 <p>Dans l’illustration suivante, l’utilisateur navigue entre deux groupes d’homologues du même niveau. La navigation est donc ajoutée à l’historique de navigation.</p>
-<p><img src="images/back-nav/nav-pagetopage-diffpeers-imageonly2.png" alt="Navigation across peer groups" /></p></td>
+<p><img src="images/back-nav/nav-pagetopage-diffpeers-imageonly2.png" alt="Diagram of navigation across peer groups showing the user navigating from group one to group two then on to group three and back to group two." /></p></td>
 </tr>
 <tr class="even">
 <td style="vertical-align:top;"><strong>Page à page, même groupe d’homologues, pas d’élément de navigation à l’écran</strong>
