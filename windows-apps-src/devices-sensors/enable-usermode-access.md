@@ -6,16 +6,16 @@ ms.topic: article
 keywords: Windows 10, UWP, ACPI, GPIO, I2C, SPI, UEFI
 ms.assetid: 2fbdfc78-3a43-4828-ae55-fd3789da7b34
 ms.localizationpriority: medium
-ms.openlocfilehash: a5841a8a53c18969e8ca9171bb7b3e1af0273170
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 76ef3c6b75a5d1a4bd8daebba3a392062c845215
+ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216793"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91860189"
 ---
 # <a name="enable-user-mode-access-to-gpio-i2c-and-spi"></a>Activer l’accès en mode utilisateur à GPIO, I2C et SPI
 
-Windows 10 contient de nouvelles API pour l’accès direct à partir du mode utilisateur de l’entrée/sortie à usage général (GPIO), du circuit intégré (I2C), de l’interface de périphérique série (SPI) et de l’émetteur-récepteur asynchrone universel (UART). Les tableaux de développement tels que Raspberry pi 2 exposent un sous-ensemble de ces connexions, ce qui vous permet d’étendre un module de calcul de base avec des circuits personnalisés pour traiter une application particulière. Ces bus de bas niveau sont généralement partagés avec d’autres fonctions critiques intégrées, et seul un sous-ensemble des broches et des bus GPIO sont exposés sur les en-têtes. Pour préserver la stabilité du système, il est nécessaire de spécifier les broches et les bus qui peuvent être modifiés par les applications en mode utilisateur.
+Windows 10 contient de nouvelles API pour un accès direct à partir du mode utilisateur de l’entrée/sortie à usage général (GPIO), du circuit Inter-Integrated (I2C), de l’interface de périphérique série (SPI) et de l’émetteur-récepteur asynchrone universel (UART). Les tableaux de développement tels que Raspberry pi 2 exposent un sous-ensemble de ces connexions, ce qui vous permet d’étendre un module de calcul de base avec des circuits personnalisés pour traiter une application particulière. Ces bus de bas niveau sont généralement partagés avec d’autres fonctions critiques intégrées, et seul un sous-ensemble des broches et des bus GPIO sont exposés sur les en-têtes. Pour préserver la stabilité du système, il est nécessaire de spécifier les broches et les bus qui peuvent être modifiés par les applications en mode utilisateur.
 
 Ce document explique comment spécifier cette configuration dans ACPI (Advanced Configuration and Power Interface) et fournit des outils pour valider que la configuration a été correctement spécifiée.
 
@@ -347,7 +347,7 @@ Le multiplexage de broche est accompli via l’utilisation conjointe de plusieur
 - Clients du multiplexage de broche : il s’agit des pilotes qui utilisent le multiplexage de broche. Les clients du multiplexage de broche reçoivent des ressources de multiplexage de broche à partir du microprogramme ACPI. Les ressources de multiplexage de broche sont un type de ressource de connexion et sont gérées par le concentrateur de ressources. Les clients du multiplexage de broche réservent des ressources de multiplexage de broche en ouvrant un handle vers la ressource. Pour appliquer un changement de matériel, les clients doivent valider la configuration en envoyant une requête *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS*. Les clients libèrent les ressources de multiplexage de broche en fermant le handle, auquel cas la configuration du multiplexage est rétablie à son état par défaut.
 - Microprogramme ACPI : spécifie la configuration du multiplexage avec des ressources `MsftFunctionConfig()`. Les ressources MsftFunctionConfig expriment quelles broches sont requises par un client, et dans quelle configuration de multiplexage. Les ressources MsftFunctionConfig contiennent le numéro de fonction, la configuration de la résistance pull et la liste des numéros de broche. Les ressources MsftFunctionConfig sont fournies aux clients du multiplexage de broche en tant que ressources matérielles, qui sont reçues par les pilotes dans leur rappel PrepareHardware de la même manière que les ressources de connexion GPIO et SPB. Les clients reçoivent un ID de concentrateur de ressource qui peut être utilisé pour ouvrir un handle vers la ressource.
 
-> Vous devez faire passer le commutateur de ligne de commande `/MsftInternal` à `asl.exe` pour compiler les fichiers ASL contenant les descripteurs `MsftFunctionConfig()`, car ces descripteurs sont actuellement examinés par le comité de travail ACPI. Par exemple : `asl.exe /MsftInternal dsdt.asl`
+> Vous devez faire passer le commutateur de ligne de commande `/MsftInternal` à `asl.exe` pour compiler les fichiers ASL contenant les descripteurs `MsftFunctionConfig()`, car ces descripteurs sont actuellement examinés par le comité de travail ACPI. Par exemple : `asl.exe /MsftInternal dsdt.asl`
 
 La séquence des opérations impliquées dans le multiplexage de broche est présentée ci-dessous.
 
@@ -823,11 +823,11 @@ Lorsque vous sélectionnez le nœud d’appareil rhproxy dans le gestionnaire HL
 
 Dans le gestionnaire HLK, sélectionnez « Appareil proxy du concentrateur de ressources » :
 
-![Capture d’écran du Gestionnaire HLK](images/usermode-hlk-1.png)
+![Capture d’écran du kit de laboratoire matériel Windows montrant l’onglet sélection avec l’option de périphérique proxy du Hub de ressources sélectionnée.](images/usermode-hlk-1.png)
 
 Cliquez sur l’onglet Tests, puis sélectionnez les tests I2C WinRT, Gpio WinRT et Spi WinRT.
 
-![Capture d’écran du Gestionnaire HLK](images/usermode-hlk-2.png)
+![Capture d’écran du kit de laboratoire matériel Windows montrant l’onglet tests avec l’option G P I O victoire R T et tests de contrainte sélectionnée.](images/usermode-hlk-2.png)
 
 Cliquez sur Exécuter la sélection. Vous pouvez accéder à une documentation supplémentaire sur chaque test en cliquant avec le bouton droit sur le test et en cliquant sur « Description du test ».
 

@@ -1,5 +1,5 @@
 ---
-Description: Générez des applications Windows et des contrôles personnalisés/basés sur des modèles qui prennent en charge la mise à l’échelle du texte de la plateforme.
+description: Générez des applications Windows et des contrôles personnalisés/basés sur des modèles qui prennent en charge la mise à l’échelle du texte de la plateforme.
 title: Mise à l’échelle du texte
 label: Text scaling
 template: detail.hbs
@@ -8,16 +8,16 @@ ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: d8f7536da045514471c1af1c2f0cfac74af91a7a
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 0d47523ca69f8088d5e13ab944c5dd2be2d1d8ba
+ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219942"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91860162"
 ---
 # <a name="text-scaling"></a>Mise à l’échelle du texte
 
-![Exemple de mise à l’échelle du texte 100% à 225%](images/coretext/text-scaling-news-hero-small.png)  
+![Image de héros présentant un exemple de mise à l’échelle du texte de 100% à 225%.](images/coretext/text-scaling-news-hero-small.png)  
 *Exemple de mise à l’échelle du texte dans Windows 10 (100% à 225%)*
 
 ## <a name="overview"></a>Vue d’ensemble
@@ -40,7 +40,7 @@ DirectWrite, GDI et XAML SwapChainPanels ne prennent pas en charge la mise à l�
 
 Les utilisateurs peuvent ajuster la mise à l’échelle du texte à l’aide du curseur augmenter la taille du texte sur les paramètres-> faciliter l’accès-> écran visuel/affichage.
 
-![Exemple de mise à l’échelle du texte 100% à 225%](images/coretext/text-scaling-settings-100-small.png)  
+![Capture d’écran de la page Options d’ergonomie/paramètres d’affichage montrant le curseur agrandir le texte.](images/coretext/text-scaling-settings-100-small.png)  
 *Paramètre de mise à l’échelle du texte à partir des paramètres-> facilité d’accès-> écran vision/affichage*
 
 ## <a name="ux-guidance"></a>Recommandations en matière d’expérience utilisateur
@@ -93,7 +93,7 @@ Voici un extrait de code d’une application UWP de base qui comprend deux contr
 </Grid>
 ```
 
-![Mise à l’échelle du texte animé 100% à 225%](images/coretext/text-scaling.gif)  
+![Animation de la mise à l’échelle du texte 100% à 225%.](images/coretext/text-scaling.gif)  
 *Mise à l’échelle du texte animé*
 
 ### <a name="use-auto-sizing"></a>Utiliser le dimensionnement automatique
@@ -123,7 +123,7 @@ Ici, nous utilisons les `AcceptsReturn` `TextWrapping` Propriétés de zone de t
           AcceptsReturn="True" TextWrapping="Wrap" />
 ```
 
-![Mise à l’échelle du texte animé 100% à 225% avec habillage du texte](images/coretext/text-scaling-textwrap.gif)  
+![Animation de la mise à l’échelle du texte 100% à 225% avec habillage du texte.](images/coretext/text-scaling-textwrap.gif)  
 *Mise à l’échelle du texte animé avec habillage du texte*
 
 ### <a name="specify-text-trimming-behavior"></a>Spécifier le comportement de suppression de texte
@@ -141,7 +141,7 @@ Dans cet exemple, nous montrons comment découper du texte dans un TextBlock à 
 </TextBlock>
 ```
 
-![Mise à l’échelle du texte de 100% à 225% avec découpage du texte](images/coretext/text-scaling-clipping-small.png)  
+![Capture d’écran de la mise à l’échelle du texte 100% à 225% avec découpage de texte.](images/coretext/text-scaling-clipping-small.png)  
 *Mise à l’échelle du texte avec le découpage de texte*
 
 ### <a name="use-a-tooltip"></a>Utiliser une info-bulle

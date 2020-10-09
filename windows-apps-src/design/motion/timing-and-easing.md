@@ -11,12 +11,12 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: fe776361276341e368db1fbdf8e332a1e5dc70b5
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 336b49c999d135908fb54490b7b33057d4527079
+ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220192"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91860154"
 ---
 # <a name="timing-and-easing"></a>Minutage et accélération
 
@@ -49,7 +49,7 @@ Le minutage est un élément important pour rendre le mouvement naturel pour des
 
 Le minutage du mouvement dans Fluent utilise 500 ms (ou une demi-seconde) comme base de référence, car il s’agit de la durée maximale que l’utilisateur perçoit comme instantanée.
 
-![Image Hero](images/time.gif)
+![Brève vidéo qui affiche trois cercles, empilés verticalement, en se déplaçant à gauche et à droite à des vitesses différentes : 150 millisecondes, 300 millisecondes et 500 millisecondes.](images/time.gif)
 
 ### <a name="150ms-exit"></a>**150 m** (sortie)
 
@@ -90,7 +90,7 @@ Permet de consacrer un peu de temps à la fête du contenu au fur et à mesure d
 
 L’accélération est un moyen de manipuler la vélocité d’un objet lors de son déplacement. C’est la colle qui associe toutes les expériences de mouvement Fluent. Bien qu’extrême, l’accélération utilisée dans le système permet d’unifier la sensation physique des objets qui se déplacent dans le système. Il s’agit d’une façon d’imiter le monde réel et de faire en sorte que les objets se sentent dans leur environnement.
 
-![Image Hero](images/easing.gif)
+![Une brève vidéo affichant un cercle s’affiche à partir du coin inférieur droit du cadre et s’arrête près de l’angle supérieur gauche du cadre.](images/easing.gif)
 
 ## <a name="apply-easing-to-motion"></a>Appliquer une accélération à motion
 

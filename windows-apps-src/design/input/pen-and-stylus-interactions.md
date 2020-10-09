@@ -1,5 +1,5 @@
 ---
-Description: Créez des applications Windows qui prennent en charge des interactions personnalisées à partir d’appareils Pen et Stylus, y compris l’encre numérique pour les expériences d’écriture et de dessin naturelles.
+description: Créez des applications Windows qui prennent en charge des interactions personnalisées à partir d’appareils Pen et Stylus, y compris l’encre numérique pour les expériences d’écriture et de dessin naturelles.
 title: Interactions avec le stylet et Windows Ink dans les applications Windows
 ms.assetid: 3DA4F2D2-5405-42A1-9ED9-3A87BCD84C43
 label: Pen interactions and Windows Ink in Windows apps
@@ -8,16 +8,16 @@ keywords: Windows Ink, entrée manuscrite Windows, DirectInk, InkPresenter, InkC
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a877fabfd34bcbe16afb70c012d403d489e3a6e0
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 7a29a7ed497fdcd463df0855b4aad3b65ce6408a
+ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91749915"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91860175"
 ---
 # <a name="pen-interactions-and-windows-ink-in-windows-apps"></a>Interactions avec le stylet et Windows Ink dans les applications Windows
 
-![Stylet Surface](images/ink/hero-small.png)  
+![Image de héros du stylet de surface.](images/ink/hero-small.png)  
 *Stylet Surface* (disponible à l’achat dans la [Boutique Microsoft](https://www.microsoft.com/p/surface-pen/8zl5c82qmg6b)).
 
 ## <a name="overview"></a>Vue d’ensemble
@@ -95,7 +95,7 @@ Dans cet exemple, un [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas
 
 Cette série d’images montre comment une entrée manuscrite de stylet est restituée par ce contrôle [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas).
 
-| ![InkCanvas vide avec une image d’arrière-plan](images/ink_basic_1_small.png) | ![InkCanvas avec des traits d’encre](images/ink_basic_2_small.png) | ![InkCanvas avec un trait effacé](images/ink_basic_3_small.png) |
+| ![Capture d’écran de l’InkCanvas vide avec une image d’arrière-plan.](images/ink_basic_1_small.png) | ![Capture d’écran de l’InkCanvas avec traits d’encre.](images/ink_basic_2_small.png) | ![Capture d’écran de l’InkCanvas avec un trait effacé.](images/ink_basic_3_small.png) |
 | --- | --- | ---|
 | [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) vide avec une image d’arrière-plan. | [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) avec des traits d’encre. | [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) avec un trait effacé (notez comment fonctionne l’effacement sur un trait complet et non seulement sur une partie). |
 
@@ -206,7 +206,7 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
 
 Ces images montrent comment l’élément [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) traite et personnalise l’entrée de stylet.
 
-| ![InkCanvas avec des traits d’encre noire par défaut](images/ink-basic-custom-1-small.png) | ![InkCanvas avec des traits d’encre rouge sélectionnés par l’utilisateur.](images/ink-basic-custom-2-small.png) |
+| ![Capture d’écran montrant le InkCanvas avec les traits d’encre noire par défaut.](images/ink-basic-custom-1-small.png) | ![Capture d’écran de l’InkCanvas avec les traits d’encre rouge sélectionnés par l’utilisateur.](images/ink-basic-custom-2-small.png) |
 | --- | --- |
 | [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) avec traits d’encre noire par défaut. | [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) avec les traits d’encre rouge sélectionnés par l’utilisateur. | 
 
@@ -230,7 +230,7 @@ L’exemple de code suivant (tout le code se trouve dans les fichiers MainPage. 
 
     Ici, nous ajoutons une zone de dessin (sous l' [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)) pour dessiner le trait de sélection. Une couche distincte permet de dessiner le trait de sélection sans modifier l’élément **InkCanvas** ni son contenu.
 
-    ![InkCanvas vide avec un canevas de sélection sous-jacent](images/ink-unprocessed-1-small.png)
+    ![Capture d’écran de l’InkCanvas vide avec un canevas de sélection sous-jacent.](images/ink-unprocessed-1-small.png)
 
       ```xaml
         <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -271,7 +271,7 @@ L’exemple de code suivant (tout le code se trouve dans les fichiers MainPage. 
 
     Enfin, nous attribuons des écouteurs pour les événements [**StrokeStarted**](/uwp/api/windows.ui.input.inking.inkstrokeinput.strokestarted) et [**StrokesErased**](/uwp/api/windows.ui.input.inking.inkpresenter.strokeserased) de l' [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter). Nous utilisons les gestionnaires de ces événements pour nettoyer l’interface utilisateur de sélection si un nouveau trait est commencé ou un trait existant effacé.
 
-    ![InkCanvas avec des traits d’encre noire par défaut](images/ink-unprocessed-2-small.png)
+    ![Capture d’écran de l’exemple d’application de personnalisation de l’encre avancée montrant l’InkCanvas avec les traits d’encre noire par défaut.](images/ink-unprocessed-2-small.png)
 
       ```csharp
         public MainPage()
@@ -320,7 +320,7 @@ L’exemple de code suivant (tout le code se trouve dans les fichiers MainPage. 
 
     Toutes les fonctionnalités de sélection sont implémentées dans ces gestionnaires, y compris le trait de lasso et le rectangle englobant.
 
-    ![Lasso de sélection](images/ink-unprocessed-3-small.png)
+    ![Capture d’écran du lasso de sélection.](images/ink-unprocessed-3-small.png)
 
       ```csharp
         // Handle unprocessed pointer events from modified input.
@@ -368,7 +368,7 @@ L’exemple de code suivant (tout le code se trouve dans les fichiers MainPage. 
 
 5.  Pour conclure le gestionnaire d’événements PointerReleased, nous effaçons tout le contenu de la couche de sélection (le trait du lasso), puis dessinons un rectangle englobant unique autour des traits d’encre englobés par la zone du lasso.
 
-    ![Rectangle englobant de sélection](images/ink-unprocessed-4-small.png)
+    ![Capture d’écran du rectangle englobant de sélection.](images/ink-unprocessed-4-small.png)
 
       ```csharp
         // Draw a bounding rectangle, on the selection canvas, encompassing
@@ -488,7 +488,7 @@ Pour obtenir un exemple complet de cette fonctionnalité, consultez [l’exemple
 - [**Windows.UI.Input.Inking**](/uwp/api/Windows.UI.Input.Inking)
 - [**Windows. UI. Input. encrage. Core**](/uwp/api/Windows.UI.Input.Inking.Core)
 
-### <a name="samples"></a>Exemples
+### <a name="samples"></a>exemples
 
 - [Didacticiel de prise en main : écriture manuscrite dans votre application Windows](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-Ink)
 - [Exemple d’encre simple (C#/C + +)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk)

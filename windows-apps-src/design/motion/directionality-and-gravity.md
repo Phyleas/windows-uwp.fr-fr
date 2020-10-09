@@ -11,12 +11,12 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 649fb9e2833a425ccad78f5f0bcb69ccb4091bca
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 87047e20d4513c9120c79bb329c008dad104a352
+ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217802"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91860083"
 ---
 # <a name="directionality-and-gravity"></a>Direction et gravité
 
@@ -47,7 +47,7 @@ La direction du mouvement correspond au mouvement physique. À l’instar de la 
 Lorsque vous déplacez des objets, évitez les collisions innaturelles. Gardez à l’esprit que les objets proviennent de et que vous accédez à, et que vous prenez toujours en charge des constructions de niveau supérieur qui peuvent être utilisées dans la scène, telles que la direction de défilement ou la hiérarchie de disposition.
     :::column-end:::
     :::column:::
-        ![direction vers l’arrière](images/Direction.gif)
+        ![Brève vidéo avec un cercle, puis l’ajout d’un axe X, un axe Y et un axe Z.](images/Direction.gif)
     :::column-end:::
 :::row-end:::
 
@@ -94,7 +94,7 @@ Il existe 4 directions de navigation discrètes à prendre en compte.
 Vers **l’arrière** Identique à Forward-in, mais inversé.
     :::column-end:::
     :::column:::
-        ![direction vers l’arrière](images/backwardIN.gif)
+        ![Brève vidéo présentant un cercle entrant à partir de la droite du cadre et s’arrêtant au milieu du cadre.](images/backwardIN.gif)
     :::column-end:::
 :::row-end:::
 :::row:::
@@ -114,7 +114,7 @@ La gravité se manifeste généralement lorsqu’un objet doit passer d’une sc
 
 Ici, un élément dans la ligne supérieure de la grille est affecté par gravité, ce qui entraîne un léger déplacement à mesure qu’il quitte sa place et se déplace vers l’avant.
 
-![direction vers l’arrière](images/continuity-photos.gif)
+![Brève vidéo présentant un élément Rectangle qui laisse la ligne supérieure d’une grille, qui se dépose légèrement, puis effectue un zoom avant de la fenêtre.](images/continuity-photos.gif)
 
 ## <a name="related-articles"></a>Articles connexes
 

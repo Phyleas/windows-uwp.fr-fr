@@ -1,5 +1,5 @@
 ---
-Description: Les modèles de vignette spéciaux sont des modèles uniques qui sont animés, ou qui vous permettent simplement d’effectuer des opérations qui ne sont pas possibles avec des vignettes adaptatives.
+description: Les modèles de vignette spéciaux sont des modèles uniques qui sont animés, ou qui vous permettent simplement d’effectuer des opérations qui ne sont pas possibles avec des vignettes adaptatives.
 title: Modèles de vignette spéciaux
 ms.assetid: 1322C9BA-D5B2-45E2-B813-865884A467FF
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4368c3d504b01a48b05fcaffdb01a71b916d9d43
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1aac8997492eba2d591d0f80f89dbc9a8f5830ba
+ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89169303"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91860207"
 ---
 # <a name="special-tile-templates"></a>Modèles de vignette spéciaux
  
@@ -50,9 +50,9 @@ Pour les ressources carrées, un centrage automatique est effectué dans le cont
 
 Pour les ressources non carrées, un centrage horizontal/vertical automatique et un alignement de la largeur/hauteur sont effectués dans le conteneur :
 
-![Dimensionnement des ressources non carrées, avec et sans badge](images/assetguidance26a.png)
+![Capture d’écran montrant automatiquement le dimensionnement horizontal des ressources non carrées centré, avec et sans badge.](images/assetguidance26a.png)
 
-![Dimensionnement des ressources non carrées, avec et sans badge](images/assetguidance26b.png)
+![Capture d’écran montrant automatiquement le dimensionnement vertical des ressources non carrées centré, avec et sans badge.](images/assetguidance26b.png)
 
 **Étape 2 : créez votre vignette de base**
 
