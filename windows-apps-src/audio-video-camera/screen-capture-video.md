@@ -7,16 +7,16 @@ dev_langs:
 - csharp
 keywords: Windows 10, UWP, capture d’écran, vidéo
 ms.localizationpriority: medium
-ms.openlocfilehash: d8f70748d025d50d19dbf2cb184ae841cced7f8a
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 9f95e310fb93292db7dc348493487fada9c6d66e
+ms.sourcegitcommit: 83eb36047380501fd1e4d023d593904ad783365b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218632"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91852376"
 ---
 # <a name="screen-capture-to-video"></a>Capture d’écran sur vidéo
 
-Cet article explique comment encoder des frames capturés à partir de l’écran avec les API Windows. Graphics. capture dans un fichier vidéo. Pour plus d’informations sur la capture d’écran d’images fixes, consultez [screeen capture](./screen-capture.md).
+Cet article explique comment encoder des frames capturés à partir de l’écran avec les API Windows. Graphics. capture dans un fichier vidéo. Pour plus d’informations sur la capture d’écran d’images fixes, consultez [screeen capture](./screen-capture.md). Pour obtenir un exemple d’application de bout en bout simple qui utilise les concepts et les techniques présentés dans cet article, consultez [SimpleRecorder](https://github.com/MicrosoftDocs/SimpleRecorder/).
 
 ## <a name="overview-of-the-video-capture-process"></a>Vue d’ensemble du processus de capture vidéo
 Cet article fournit une procédure pas à pas d’un exemple d’application qui enregistre le contenu d’une fenêtre dans un fichier vidéo. Bien qu’il semble qu’il y ait un grand nombre de code requis pour implémenter ce scénario, la structure de haut niveau d’une application d’enregistreur d’écran est relativement simple. Le processus de capture d’écran utilise trois fonctionnalités UWP principales :
