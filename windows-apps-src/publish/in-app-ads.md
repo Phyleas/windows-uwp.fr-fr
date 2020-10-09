@@ -6,12 +6,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c8d01042fec7435652c819f29e3a791a5623a947
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 724a9b6bc34d38a5addfd0e0123f26e1d98c9caf
+ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220262"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91878592"
 ---
 # <a name="in-app-ads"></a>Publicités dans l’application
 
@@ -48,7 +48,7 @@ Pour créer une unité ad pour une [bannière](../monetize/banner-ads.md)publici
 6. Configurez les paramètres supplémentaires suivants comme vous le souhaitez :
 
     * Si vous sélectionnez la famille d’appareils **UWP (Windows 10)** pour l’unité ad, vous pouvez éventuellement configurer des [paramètres de médiation](#mediation) pour l’unité ad.
-    * Si vous sélectionnez la famille d’appareils **PC/tablette (Windows 8.1)** ou **mobile (Windows Phone 8. x)** pour une unité publicitaire à bannière, vous pouvez éventuellement sélectionner **afficher les publicités de la Communauté dans votre application** pour vous abonner aux publicités de la [communauté](about-community-ads.md).
+    * Si vous sélectionnez la famille d’appareils **PC/tablette (Windows 8.1)** ou **mobile (Windows Phone 8. x)** pour une unité publicitaire à bannière, vous pouvez éventuellement sélectionner **afficher les publicités de la Communauté dans votre application** pour vous abonner aux publicités de la [communauté](../monetize/index.md).
 
 7.  Si vous n’avez pas encore défini la compatibilité COPPA pour l’application sélectionnée, choisissez une option dans la section conformité de la réglementation [Coppa](#coppa) .
 8.  Cliquez sur **Créer une publicité**.
@@ -115,7 +115,7 @@ Le tableau suivant répertorie les réseaux payants actuellement pris en charge 
 |--------------|---------------|---------------------|
 | Serment et AppNexus |  Il s’agit d’un réseau ad géré par Microsoft qui fournit des publicités via nos réseaux partenaires, serment et AppNexus.<p/>**Remarque**: serment et AppNexus sont toujours classés en premier dans la liste des **réseaux ad payants** pour les unités publicitaires de bannières, et il n’est pas possible de les remplacer par un classement plus bas pour ces types de publicités. | Bannière, vidéo |
 | AppNexus (direct) | Sélectionnez cette option pour fournir des publicités à partir de [AppNexus](https://www.appnexus.com). | Vidéo, en mode natif  |
-| Annonces d’installation d’applications Microsoft | Sélectionnez cette option pour traiter les publicités d’installation d’application ou les publicités de réengagement d’applications créées par d’autres développeurs dans l’écosystème Windows qui [créent des campagnes publicitaires promotionnelles pour leurs applications](create-an-ad-campaign-for-your-app.md).  |  Bannière, interstitiel de bannière, Native  |
+| Annonces d’installation d’applications Microsoft | Sélectionnez cette option pour traiter les publicités d’installation d’application ou les publicités de réengagement d’applications créées par d’autres développeurs dans l’écosystème Windows qui [créent des campagnes publicitaires promotionnelles pour leurs applications](../monetize/index.md).  |  Bannière, interstitiel de bannière, Native  |
 | Recommandations relatives au contenu MSN |  Sélectionnez cette option pour traiter les publicités des recommandations du contenu MSN. |  Bannière, bannière  |
 | Cerveau |  Sélectionnez cette option pour traiter les publicités contre le [cerveau](https://www.outbrain.com/). |  Bannière, bannière  |
 | Revcontent |  Sélectionnez cette option pour fournir des publicités à partir de [Revcontent](https://www.revcontent.com/). |  Bannière, Native  |
@@ -135,8 +135,8 @@ Le tableau suivant répertorie les autres réseaux actuellement pris en charge p
 
 |  Réseau ad  |  Description  |  Types ad pris en charge  |
 |--------------|---------------|---------------------|
-| Annonces de la communauté Microsoft |  Si vous [créez une campagne publicitaire promotionnelle pour l’une de vos applications](create-an-ad-campaign-for-your-app.md) et configurez cette campagne en tant que [campagne ad](about-community-ads.md)de la Communauté, sélectionnez cette option pour afficher les publicités de cette campagne. | Bannière, bannière |
-| Publicités maison Microsoft | Si vous [créez une campagne publicitaire promotionnelle pour l’une de vos applications](create-an-ad-campaign-for-your-app.md) et configurez cette campagne comme une [campagne publicitaire maison](about-house-ads.md), sélectionnez cette option pour afficher les publicités de cette campagne. | Bannière, bannière  |
+| Annonces de la communauté Microsoft |  Si vous [créez une campagne publicitaire promotionnelle pour l’une de vos applications](../monetize/index.md) et configurez cette campagne en tant que [campagne ad](../monetize/index.md)de la Communauté, sélectionnez cette option pour afficher les publicités de cette campagne. | Bannière, bannière |
+| Publicités maison Microsoft | Si vous [créez une campagne publicitaire promotionnelle pour l’une de vos applications](../monetize/index.md) et configurez cette campagne comme une [campagne publicitaire maison](../monetize/index.md), sélectionnez cette option pour afficher les publicités de cette campagne. | Bannière, bannière  |
 
 
 <span id="network-markets" />

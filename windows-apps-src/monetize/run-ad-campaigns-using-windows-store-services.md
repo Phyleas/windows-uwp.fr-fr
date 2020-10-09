@@ -6,12 +6,12 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: API de promotion Windows 10, UWP, Microsoft Store, campagnes ad
 ms.localizationpriority: medium
-ms.openlocfilehash: 74afbda1cc93aa0602618d6d94efe6baadf59ecb
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: 2be721137e6c09913eafd2c58bab07f1ae6f2728
+ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89363702"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91878512"
 ---
 # <a name="run-ad-campaigns-using-store-services"></a>Exécuter des campagnes Active Directory à l’aide des services Store
 
@@ -23,7 +23,7 @@ Les étapes suivantes décrivent le processus de bout en bout :
 2.  Avant d’appeler une méthode dans l’API Microsoft Store promotions, [obtenez un jeton d’accès Azure ad](#obtain-an-azure-ad-access-token). Une fois que vous avez obtenu un jeton, vous avez 60 minutes pour utiliser ce jeton dans les appels à l’API Microsoft Store promotions avant l’expiration du jeton. Une fois le jeton arrivé à expiration, vous pouvez en générer un nouveau.
 3.  [Appelez l’API Microsoft Store promotions](#call-the-windows-store-promotions-api).
 
-Vous pouvez également créer et gérer des campagnes Active Directory à l’aide de l’espace partenaires. vous pouvez également accéder aux campagnes de publicité que vous créez par programme par le biais de l’API Microsoft Store promotions dans l’espace partenaires. Pour plus d’informations sur la gestion des campagnes Active Directory dans l’espace partenaires, consultez [créer une campagne publicitaire pour votre application](../publish/create-an-ad-campaign-for-your-app.md).
+Vous pouvez également créer et gérer des campagnes Active Directory à l’aide de l’espace partenaires. vous pouvez également accéder aux campagnes de publicité que vous créez par programme par le biais de l’API Microsoft Store promotions dans l’espace partenaires. Pour plus d’informations sur la gestion des campagnes Active Directory dans l’espace partenaires, consultez [créer une campagne publicitaire pour votre application](./index.md).
 
 > [!NOTE]
 > Tout développeur disposant d’un compte espace partenaires peut utiliser l’API Microsoft Store promotions pour gérer les campagnes Active Directory pour ses applications. Les agences multimédias peuvent également demander l’accès à cette API pour exécuter des campagnes AD pour le compte de leurs annonceurs. Si vous êtes une Agence multimédia qui souhaite en savoir plus sur cette API ou en demander l’accès, envoyez votre demande à storepromotionsapi@microsoft.com .
@@ -34,7 +34,7 @@ Vous pouvez également créer et gérer des campagnes Active Directory à l’ai
 
 Avant de commencer à écrire du code pour appeler l’API de promotions Microsoft Store, assurez-vous que vous avez rempli les conditions préalables suivantes.
 
-* Avant de pouvoir créer et démarrer correctement une campagne publicitaire à l’aide de cette API, vous devez [d’abord créer une campagne publicitaire payante à l’aide de la page **campagnes publicitaires** dans l’espace partenaires](../publish/create-an-ad-campaign-for-your-app.md). vous devez ajouter au moins un instrument de paiement sur cette page. Après cela, vous serez en mesure de créer avec succès des lignes de livraison facturables pour les campagnes Active Directory à l’aide de cette API. Les lignes de livraison des campagnes de publicité que vous créez à l’aide de cette API facturent automatiquement l’instrument de paiement par défaut choisi dans la page **campagnes publicitaires** de l’espace partenaires.
+* Avant de pouvoir créer et démarrer correctement une campagne publicitaire à l’aide de cette API, vous devez [d’abord créer une campagne publicitaire payante à l’aide de la page **campagnes publicitaires** dans l’espace partenaires](./index.md). vous devez ajouter au moins un instrument de paiement sur cette page. Après cela, vous serez en mesure de créer avec succès des lignes de livraison facturables pour les campagnes Active Directory à l’aide de cette API. Les lignes de livraison des campagnes de publicité que vous créez à l’aide de cette API facturent automatiquement l’instrument de paiement par défaut choisi dans la page **campagnes publicitaires** de l’espace partenaires.
 
 * Vous (ou votre organisation) devez disposer d’un annuaire Azure AD et de l’autorisation [Administrateur général](/azure/active-directory/users-groups-roles/directory-assign-admin-roles) sur l’annuaire. Si vous utilisez déjà Microsoft 365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’un annuaire Azure AD. Dans le cas contraire, vous pouvez [créer un nouveau Azure ad dans l’espace partenaires](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) sans frais supplémentaires.
 

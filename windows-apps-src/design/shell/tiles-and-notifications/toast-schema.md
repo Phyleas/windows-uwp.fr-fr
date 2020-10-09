@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: eab81d7a2898b76ed241a985c953849ed581d804
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c095e48e24a06caf9e31066b21f9e2b023ed51cf
+ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89156673"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91878472"
 ---
 # <a name="toast-content-schema"></a>Schéma du contenu de notification toast
 
@@ -21,7 +21,7 @@ ms.locfileid: "89156673"
 
 Les éléments suivants décrivent toutes les propriétés et tous les éléments du contenu Toast.
 
-Si vous préférez utiliser du code XML brut au lieu de la [bibliothèque de notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/), consultez [le schéma XML](toast-xml-schema.md).
+Si vous préférez utiliser du code XML brut au lieu de la [bibliothèque de notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/), consultez [le schéma XML]().
 
 [ToastContent](#toastcontent)
 * [ToastVisual](#toastvisual)
@@ -238,7 +238,7 @@ Nouveauté de Creators Update : barre de progression. Pris en charge uniquement
 | **Titre** | chaîne ou [BindableString](#bindablestring) | false | Obtient ou définit une chaîne de titre facultative. Prend en charge la liaison de données. |
 | **Valeur** | double ou [AdaptiveProgressBarValue](#adaptiveprogressbarvalue) ou [BindableProgressBarValue](#bindableprogressbarvalue) | false | Obtient ou définit la valeur de la barre de progression. Prend en charge la liaison de données. La valeur par défaut est 0. |
 | **ValueStringOverride** | chaîne ou [BindableString](#bindablestring) | false | Obtient ou définit une chaîne facultative à afficher à la place de la chaîne de pourcentage par défaut. Si cette valeur n’est pas fournie, un nom similaire à « 70% » s’affiche. |
-| **Statut** | chaîne ou [BindableString](#bindablestring) | true | Obtient ou définit une chaîne d’État (obligatoire), qui s’affiche sous la barre de progression sur la gauche. Cette chaîne doit refléter l’état de l’opération, par exemple « téléchargement... » ou « installation... » |
+| **État** | chaîne ou [BindableString](#bindablestring) | true | Obtient ou définit une chaîne d’État (obligatoire), qui s’affiche sous la barre de progression sur la gauche. Cette chaîne doit refléter l’état de l’opération, par exemple « téléchargement... » ou « installation... » |
 
 
 ### <a name="adaptiveprogressbarvalue"></a>AdaptiveProgressBarValue

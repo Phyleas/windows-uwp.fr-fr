@@ -1,64 +1,64 @@
 ---
 ms.assetid: dc632a4c-ce48-400b-8e6e-1dddbd13afff
-description: Utilisez cette méthode dans l’API des promotions du Microsoft Store pour gérer les lignes de livraison des campagnes publicitaires.
+description: Utilisez cette méthode dans l’API Microsoft Store promotions pour gérer les lignes de livraison des campagnes publicitaires promotionnelles.
 title: Gérer les lignes de livraison
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp, API de promotions du Microsoft Store, campagnes de publicité
+keywords: API de promotion Windows 10, UWP, Microsoft Store, campagnes ad
 ms.localizationpriority: medium
-ms.openlocfilehash: 363f7034d7e353d9ee110637971e7b848dbca1bb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e7b370d8eea61033092d833cdf751f1dade86c6d
+ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57625634"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91878562"
 ---
 # <a name="manage-delivery-lines"></a>Gérer les lignes de livraison
 
-Utilisez ces méthodes dans l’API des promotions du Microsoft Store pour créer une ou plusieurs *lignes de livraison* afin d'acheter l’inventaire et fournir vos annonces pour une campagne publicitaires. Pour chaque chaîne de distribution, vous pouvez définir le ciblage, définir votre prix de soumission et définir le montant que vous souhaitez dépenser en spécifiant le budget et en lui associant les contenus que vous souhaitez utiliser.
+Utilisez ces méthodes dans l’API Microsoft Store promotions pour créer une ou plusieurs *lignes de livraison* pour acheter un inventaire et fournir vos annonces pour une campagne publicitaire promotionnelle. Pour chaque ligne de livraison, vous pouvez définir le ciblage, définir le prix de votre offre et déterminer le montant que vous souhaitez dépenser en définissant un budget et en établissant un lien vers les éléments créatifs que vous souhaitez utiliser.
 
-Pour plus d’informations sur la relation entre les lignes de livraison et les campagnes de publicité, les profils ciblage et les contenus créatifs, voir [Exécuter des campagnes publicitaires à l’aide des services du Microsoft Store](run-ad-campaigns-using-windows-store-services.md#call-the-windows-store-promotions-api).
+Pour plus d’informations sur la relation entre les lignes de livraison et les campagnes publicitaires, les profils de ciblage et les éléments créatifs, consultez [exécuter des campagnes publicitaires à l’aide des services Microsoft Store](run-ad-campaigns-using-windows-store-services.md#call-the-windows-store-promotions-api).
 
->**Remarque**&nbsp;&nbsp;avant que vous pouvez créer des lignes de livraison pour les campagnes de publicité à l’aide de cette API, vous devez d’abord [créer une campagne ad payée à l’aide du **campagnes de publicité** page Partenaires](../publish/create-an-ad-campaign-for-your-app.md), et vous devez ajouter au moins un instrument de paiement sur cette page. Après cela, vous serez en mesure de créer des lignes de livraison facturables pour les campagnes publicitaires à l’aide de cette API. Vous créez à l’aide de l’API des campagnes de publicité vous facturera automatiquement l’instrument de paiement par défaut choisi sur le **campagnes de publicité** page dans l’espace partenaires.
+>**Note** &nbsp; Remarque &nbsp; Avant de pouvoir créer correctement des lignes de livraison pour des campagnes Active Directory à l’aide de cette API, vous devez [d’abord créer une campagne publicitaire payante à l’aide de la page **campagnes publicitaires** dans l’espace partenaires](./index.md). vous devez ajouter au moins un instrument de paiement sur cette page. Après cela, vous serez en mesure de créer avec succès des lignes de livraison facturables pour les campagnes Active Directory à l’aide de cette API. Les campagnes Active Directory que vous créez à l’aide de l’API facturent automatiquement le mode de paiement par défaut choisi dans la page **campagnes publicitaires** de l’espace partenaires.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Pour utiliser ces méthodes, vous devez d’abord effectuer les opérations suivantes :
 
-* Si ce n’est pas déjà le cas, remplissez toutes les [conditions préalables](run-ad-campaigns-using-windows-store-services.md#prerequisites) relatives à l’API de promotions du Microsoft Store.
+* Si vous ne l’avez pas déjà fait, renseignez toutes les [conditions préalables](run-ad-campaigns-using-windows-store-services.md#prerequisites) pour l’API Microsoft Store promotions.
 
   > [!NOTE]
-  > Dans le cadre de la configuration requise, n’oubliez pas que vous avez [créer au moins une campagne payant dans partenaires](../publish/create-an-ad-campaign-for-your-app.md) et que vous ajoutez au moins un instrument de paiement pour la campagne de publicité dans Partner Center. Les lignes de livraison vous créez à l’aide de cette API facture automatiquement l’instrument de paiement par défaut choisi sur le **campagnes de publicité** page dans l’espace partenaires.
+  > Dans le cadre des conditions préalables, assurez-vous de [créer au moins une campagne publicitaire payante dans l’espace partenaires](./index.md) et d’ajouter au moins un instrument de paiement pour la campagne publicitaire dans l’espace partenaires. Les lignes de livraison que vous créez à l’aide de cette API facturent automatiquement le mode de paiement par défaut choisi dans la page **campagnes publicitaires** de l’espace partenaires.
 
-* [Obtenez un jeton d’accès Azure AD](run-ad-campaigns-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de ces méthodes. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
+* [Obtenez un jeton d’accès Azure ad](run-ad-campaigns-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de demande pour ces méthodes. Une fois que vous avez récupéré le jeton d’accès, vous avez 60 minutes pour l’utiliser avant qu’il n’expire. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 
 ## <a name="request"></a>Requête
 
-Ces méthodes présentent les URI suivants.
+Ces méthodes ont les URI suivants.
 
 | Type de méthode | URI de requête         |  Description  |
 |--------|---------------------------|---------------|
-| POST   | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/line``` |  Crée une nouvelle chaîne de distribution.  |
-| PUT    | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/line/{lineId}``` |  Modifie la chaîne de distribution définie par *lineId*.  |
-| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/line/{lineId}``` |  Obtient la chaîne de distribution définie par *lineId*.  |
+| POST   | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/line``` |  Crée une nouvelle ligne de remise.  |
+| PUT    | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/line/{lineId}``` |  Modifie la ligne de remise spécifiée par *lineId*.  |
+| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/line/{lineId}``` |  Obtient la ligne de remise spécifiée par *lineId*.  |
 
 
 ### <a name="header"></a>En-tête
 
 | En-tête        | Type   | Description         |
 |---------------|--------|---------------------|
-| Authorization | chaîne | Obligatoire. Le jeton d’accès Azure AD sous la forme **PORTEUR** &lt; *jeton*&gt;. |
-| ID de suivi   | GUID   | Facultatif. ID de suivi du flux d’appels.                                  |
+| Autorisation | string | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer** &lt;*jeton*&gt;. |
+| ID de suivi   | GUID   | facultatif. ID qui effectue le suivi du workflow d’appel.                                  |
 
 
-### <a name="request-body"></a>Corps de la requête
+### <a name="request-body"></a>Corps de la demande
 
-Les méthodes POST et PUT nécessitent un corps de requête JSON avec les champs requis d’un objet de [chaîne de distribution](#line) et tous les champs que vous souhaitez définir ou modifier.
+Les méthodes de publication et de placement requièrent un corps de requête JSON avec les champs requis d’un objet de [ligne de remise](#line) et tous les champs supplémentaires que vous souhaitez définir ou modifier.
 
 
 ### <a name="request-examples"></a>Exemples de demande
 
-L’exemple suivant vous explique comment appeler la méthode POST pour créer une chaîne de distribution.
+L’exemple suivant montre comment appeler la méthode de publication pour créer une ligne de remise.
 
 ```json
 POST https://manage.devcenter.microsoft.com/v1.0/my/promotion/line HTTP/1.1
@@ -84,16 +84,16 @@ Authorization: Bearer <your access token>
 }
 ```
 
-L’exemple suivant vous explique comment appeler la méthode GET pour récupérer une chaîne de distribution.
+L’exemple suivant montre comment appeler la méthode d’obtention pour récupérer une ligne de remise.
 
 ```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/promotion/line/31019990  HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-## <a name="response"></a>Réponse
+## <a name="response"></a>response
 
-Ces méthodes renvoient un corps de réponse JSON avec un objet de [chaîne de distribution](#line) qui comporte les informations sur la chaîne de distribution créée, mise à jour ou récupérée. L’exemple suivant représente un corps de réponse associé à ces méthodes.
+Ces méthodes retournent un corps de réponse JSON avec un objet de [ligne de remise](#line) qui contient des informations sur la ligne de remise qui a été créée, mise à jour ou récupérée. L’exemple suivant illustre un corps de réponse pour ces méthodes.
 
 ```json
 {
@@ -131,36 +131,36 @@ Ces méthodes renvoient un corps de réponse JSON avec un objet de [chaîne de 
 
 <span id="line"/>
 
-## <a name="delivery-line-object"></a>Objet de chaîne de distribution
+## <a name="delivery-line-object"></a>Objet de ligne de remise
 
-Les corps de requête et de réponse associés à ces méthodes comportent les champs suivants. Ce tableau signale les champs en lecture seule (qui ne peuvent être modifiés dans la méthode PUT) et les champs requis dans le corps de requête associé aux méthodes POST et PUT.
+Les corps de demande et de réponse pour ces méthodes contiennent les champs suivants. Ce tableau indique les champs qui sont en lecture seule (ce qui signifie qu’ils ne peuvent pas être modifiés dans la méthode PUT) et les champs requis dans le corps de la demande pour les méthodes POSTÉRIEURes ou PUT.
 
-| Champ        | Type   |  Description      |  Lecture seule  | Default  | Requis pour les méthodes POST/PUT |   
+| Champ        | Type   |  Description      |  Lecture seule  | Default  | Requis pour la publication/la mise en place |   
 |--------------|--------|---------------|------|-------------|------------|
-|  id   |  Entier   |  L’ID de la chaîne de distribution.     |   Oui    |      |  Non      |    
-|  name   |  chaîne   |   Nom de la chaîne de distribution.    |    Non   |      |  POST     |     
-|  configuredStatus   |  chaîne   |  L’une des valeurs suivantes qui spécifie le statut de la chaîne de distribution définie par le développeur : <ul><li>**Active**</li><li>**inactif**</li></ul>     |  Non     |      |   POST    |       
-|  effectiveStatus   |  chaîne   |   L’une des valeurs suivantes qui spécifie le statut effectif de la chaîne de distribution, suivant la validation du système : <ul><li>**Active**</li><li>**inactif**</li><li>**Traitement**</li><li>**Échec**</li></ul>    |    Oui   |      |  Non      |      
-|  effectiveStatusReasons   |  tableau   |  L’une ou plusieurs des valeurs suivantes qui spécifient le motif du statut effectif de la chaîne de distribution : <ul><li>**AdCreativesInactive**</li><li>**ValidationFailed**</li></ul>      |  Oui     |     |    Non    |           
-|  startDatetime   |  chaîne   |  L’heure et la date de début de la chaîne de distribution, au format ISO 8601. Cette valeur ne peut pas être modifiée si elle se situe dans le passé.     |    Non   |      |    POST, PUT     |
-|  endDatetime   |  chaîne   |  L’heure et la date de fin de la chaîne de distribution, au format ISO 8601. Cette valeur ne peut pas être modifiée si elle se situe dans le passé.     |   Non    |      |  POST, PUT     |
-|  createdDatetime   |  chaîne   |  L’heure et la date de la chaîne de distribution créée, au format ISO 8601.      |    Oui   |      |  Non      |
-|  bidType   |  chaîne   |  Une valeur spécifiant le type d’enchères de la chaîne de distribution. Actuellement, la seule valeur prise en charge est **CPM**.      |    Non   |  CPM    |  Non     |
-|  bidAmount   |  décimal   |  Le montant misé sur une requête publicitaire.      |    Non   |  La valeur CPM moyenne suivant les marchés cibles (cette valeur est régulièrement revue).    |    Non    |  
-|  dailyBudget   |  décimal   |  Le budget quotidien de la chaîne de distribution. Les valeurs *dailyBudget* ou *lifetimeBudget* doivent être définies.      |    Non   |      |   POST, PUT (si *lifetimeBudget* n’est pas définie)       |
-|  lifetimeBudget   |  décimal   |   Le budget à vie de la chaîne de distribution. Les valeurs lifetimeBudget* ou *dailyBudget* doivent être définies.      |    Non   |      |   POST, PUT (si *dailyBudget* n’est pas définie)    |
-|  targetingProfileId   |  objet   |  Sur l’objet identifiant le [profil de ciblage](manage-targeting-profiles-for-ad-campaigns.md#targeting-profile) décrivant les utilisateurs, les zones géographiques et les types d’inventaire que vous souhaitez cibler pour cette chaîne de distribution. Cet objet est composé d’un seul champ *id* qui définit l’ID du profil de ciblage.     |    Non   |      |  Non      |  
-|  creatives   |  tableau   |  Un ou plusieurs objets représentant les [contenus](manage-creatives-for-ad-campaigns.md#creative) associés à la chaîne de distribution. Chacun des objets de ce champ est composé d’un seul champ *id* définissant l’ID d’un contenu.      |    Non   |      |   Non     |  
-|  campaignId   |  Entier   |  L’ID de la campagne publicitaire parente.      |    Non   |      |   Non     |  
-|  minMinutesPerImp   |  Entier   |  Spécifie l’intervalle minimum (en minutes) entre 2 impressions communiquées à un utilisateur de cette chaîne de distribution.      |    Non   |  4000    |  Non      |  
-|  pacingType   |  chaîne   |  Une des valeurs suivantes spécifiant le type d’allure : <ul><li>**SpendEvenly**</li><li>**SpendAsFastAsPossible**</li></ul>      |    Non   |  SpendEvenly    |  Non      |
-|  currencyId   |  Entier   |  ID de la devise de la campagne.      |    Oui   |  Devise du compte développeur (il n’est pas nécessaire de renseigner ce champ dans les appels POST et PUT).    |   Non     |      |
+|  id   |  entier   |  ID de la ligne de remise.     |   Oui    |      |  Non      |    
+|  name   |  string   |   Nom de la ligne de remise.    |    Non   |      |  POST     |     
+|  configuredStatus   |  string   |  L’une des valeurs suivantes qui spécifie l’état de la ligne de remise spécifiée par le développeur : <ul><li>**Actif**</li><li>**Inactif**</li></ul>     |  Non     |      |   POST    |       
+|  effectiveStatus   |  string   |   L’une des valeurs suivantes qui spécifie l’État effectif de la ligne de livraison en fonction de la validation du système : <ul><li>**Actif**</li><li>**Inactif**</li><li>**Traitement en cours**</li><li>**Échec**</li></ul>    |    Oui   |      |  Non      |      
+|  effectiveStatusReasons   |  tableau   |  Une ou plusieurs des valeurs suivantes qui spécifient la raison de l’État effectif de la ligne de livraison : <ul><li>**AdCreativesInactive**</li><li>**ValidationFailed**</li></ul>      |  Oui     |     |    Non    |           
+|  startDatetime   |  string   |  Date et heure de début de la ligne de remise, au format ISO 8601. Cette valeur ne peut pas être modifiée si elle est déjà passée.     |    Non   |      |    APRÈS, PUT     |
+|  endDatetime   |  string   |  Date et heure de fin de la ligne de remise, au format ISO 8601. Cette valeur ne peut pas être modifiée si elle est déjà passée.     |   Non    |      |  APRÈS, PUT     |
+|  createdDatetime   |  string   |  Date et heure de création de la ligne de remise, au format ISO 8601.      |    Oui   |      |  Non      |
+|  bidType   |  string   |  Valeur qui spécifie le type d’enchère de la ligne de remise. Actuellement, la seule valeur prise en charge est **CPM**.      |    Non   |  CPM    |  Non     |
+|  bidAmount   |  Décimal   |  Montant de l’enchère à utiliser pour faire l’enchère d’une demande de publicité.      |    Non   |  Valeur CPM moyenne basée sur les marchés cibles (cette valeur est révisée régulièrement).    |    Non    |  
+|  dailyBudget   |  Décimal   |  Budget journalier pour la ligne de livraison. *DailyBudget* ou *lifetimeBudget* doit être défini.      |    Non   |      |   APRÈS, PUT (si *lifetimeBudget* n’est pas défini)       |
+|  lifetimeBudget   |  Décimal   |   Budget à long terme de la ligne de livraison. LifetimeBudget * ou *dailyBudget* doit être défini.      |    Non   |      |   APRÈS, PUT (si *dailyBudget* n’est pas défini)    |
+|  targetingProfileId   |  object   |  Sur l’objet qui identifie le [profil de ciblage](manage-targeting-profiles-for-ad-campaigns.md#targeting-profile) qui décrit les utilisateurs, les zones géographiques et les types d’inventaire que vous souhaitez cibler pour cette ligne de livraison. Cet objet est constitué d’un champ d' *ID* unique qui spécifie l’ID du profil de ciblage.     |    Non   |      |  Non      |  
+|  éléments créatifs   |  tableau   |  Un ou plusieurs objets qui représentent les [éléments créatifs](manage-creatives-for-ad-campaigns.md#creative) associés à la ligne de livraison. Chaque objet de ce champ est constitué d’un champ d' *ID* unique qui spécifie l’ID d’un élément créatif.      |    Non   |      |   Non     |  
+|  campaignId   |  entier   |  ID de la campagne parent Active Directory.      |    Non   |      |   Non     |  
+|  minMinutesPerImp   |  entier   |  Spécifie l’intervalle de temps minimal (en minutes) entre deux impressions présentées au même utilisateur à partir de cette ligne de livraison.      |    Non   |  4000    |  Non      |  
+|  pacingType   |  string   |  L’une des valeurs suivantes qui spécifient le type de rythme : <ul><li>**SpendEvenly**</li><li>**SpendAsFastAsPossible**</li></ul>      |    Non   |  SpendEvenly    |  Non      |
+|  currencyId   |  entier   |  ID de la devise de la campagne.      |    Oui   |  La devise du compte de développeur (vous n’avez pas besoin de spécifier ce champ dans les appels de publication ou de placement)    |   Non     |      |
 
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Exécuter des campagnes marketing à l’aide des Services de Microsoft Store](run-ad-campaigns-using-windows-store-services.md)
-* [Gérer des campagnes de publicité](manage-ad-campaigns.md)
-* [Gérer les profils de ciblage pour les campagnes de publicité](manage-targeting-profiles-for-ad-campaigns.md)
-* [Gérer des campagnes de publicité créatifs](manage-creatives-for-ad-campaigns.md)
-* [Obtenir des données de performances de campagne ad](get-ad-campaign-performance-data.md)
+* [Exécuter des campagnes Active Directory à l’aide des services Microsoft Store](run-ad-campaigns-using-windows-store-services.md)
+* [Gérer les campagnes publicitaires](manage-ad-campaigns.md)
+* [Gérer les profils de ciblage pour les campagnes ad](manage-targeting-profiles-for-ad-campaigns.md)
+* [Gérer les éléments créatifs pour les campagnes ad](manage-creatives-for-ad-campaigns.md)
+* [Obtenir les données relatives aux performances de la campagne publicitaire](get-ad-campaign-performance-data.md)

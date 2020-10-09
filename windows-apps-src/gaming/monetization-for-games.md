@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, jeux, monétisation
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f2d5ceef5ef15ac81e43447e24e2eaf61e4a22a
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c827c257947ea0f365bafe497e627841b501d40d
+ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89159363"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91878582"
 ---
 #  <a name="monetization-for-games"></a>Monétisation pour les jeux
 
@@ -213,15 +213,15 @@ Pour plus d’informations sur l’intégration du Kit de développement logicie
 
 ## <a name="maximize-your-games-potential-through-ad-campaigns"></a>Optimiser le potentiel de votre jeu par le biais de campagnes de publicité
 
-Passez au niveau supérieur de la promotion de votre jeu à l’aide des publicités. Lorsque vous [créez une campagne de publicité](../publish/create-an-ad-campaign-for-your-app.md) pour votre jeu, les autres applications et jeux affichent des publicités de promotion de votre jeu.
+Passez au niveau supérieur de la promotion de votre jeu à l’aide des publicités. Lorsque vous [créez une campagne de publicité](../monetize/index.md) pour votre jeu, les autres applications et jeux affichent des publicités de promotion de votre jeu.
 
 Faites votre choix parmi plusieurs types de campagnes qui peuvent aider à augmenter votre base de joueurs.
 
 |Type de campagne             | Les publicités pour votre jeu s’affichent dans...                                                                                                                                                                   |
 |--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |Payé                      |Applications qui correspondent à l’appareil ou à la catégorie de votre jeu.                                                                                                                                                   |
-|Communauté gratuite            |Applications publiées par d’autres développeurs qui ont également adhéré aux campagnes publicitaires de la communauté. Pour en savoir plus, voir [À propos des annonces de la communauté](../publish/about-community-ads.md).|
-|Campagne gratuite                |Seulement les applications que vous avez publiées. Pour plus d’informations, voir [À propos des publicités maison](../publish/about-house-ads.md).                                                            |
+|Communauté gratuite            |Applications publiées par d’autres développeurs qui ont également adhéré aux campagnes publicitaires de la communauté. Pour en savoir plus, voir [À propos des annonces de la communauté](../monetize/index.md).|
+|Campagne gratuite                |Seulement les applications que vous avez publiées. Pour plus d’informations, voir [À propos des publicités maison](../monetize/index.md).                                                            |
 
 ## <a name="related-links"></a>Liens connexes
 

@@ -5,12 +5,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b6ffbbb13646fe085fa81c99f4ecf45e328a01f7
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 3b768fa4a2506004527ba38256a7ff1849570ca1
+ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89164263"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91878492"
 ---
 # <a name="attract-customers-and-promote-your-apps"></a>Attirer les clients et promouvoir vos applications
 
@@ -27,7 +27,7 @@ Une fois que votre application se trouve dans le Microsoft Store, il est temps d
 
 Ces campagnes exécutent des publicités dans n'importe quelle autre application correspondant à l'appareil et à la catégorie de votre application. Vous pouvez également choisir une campagne universelle, où les publicités seront affichées également dans MSN.com, Outlook.com, Skype et d'autres produits majeurs de Microsoft.
 
-[EXPLOREZ PLUS >](create-an-ad-campaign-for-your-app.md)
+[EXPLOREZ PLUS >](../monetize/index.md)
     :::column-end:::
 :::row-end:::
 
@@ -40,7 +40,7 @@ Ces campagnes exécutent des publicités dans n'importe quelle autre application
 
 Ces campagnes n'exécutent de publicités que dans vos autres applications, gratuitement.
 
-[EXPLOREZ PLUS >](about-house-ads.md)
+[EXPLOREZ PLUS >](../monetize/index.md)
     :::column-end:::
 :::row-end:::
 
@@ -54,7 +54,7 @@ Ces campagnes n'exécutent de publicités que dans vos autres applications, grat
 
 Ces campagnes exécutent des publicités dans les applications publiées par d’autres développeurs qui contribuent également aux campagnes de publicité de la communauté, gratuitement.
 
-[EXPLOREZ PLUS >](create-an-ad-campaign-for-your-app.md)
+[EXPLOREZ PLUS >](../monetize/index.md)
     :::column-end:::
 :::row-end:::
 
@@ -103,7 +103,7 @@ Les publicités natives permettent d'envoyer tous les composants individuels d'u
 
 ![En savoir plus sur les campagnes de promotion d'application](images/app-promotion-campaigns.png)
 
-[Créer une campagne de publicité dans le tableau de bord](create-an-ad-campaign-for-your-app.md)
+[Créer une campagne de publicité dans le tableau de bord](../monetize/index.md)
 
 [Créer une campagne de publicité à l'aide de notre API REST](../monetize/run-ad-campaigns-using-windows-store-services.md)
 
@@ -119,7 +119,7 @@ Les publicités natives permettent d'envoyer tous les composants individuels d'u
 
 [Rapport sur les acquisitions](acquisitions-report.md)
 
-[Recevoir des données analytiques à l’aide de notre API REST](../monetize/access-analytics-data-using-windows-store-services.md)
+[Extraire des données d’analyse à l’aide de notre API REST](../monetize/access-analytics-data-using-windows-store-services.md)
 
 ## <a name="other-ways-to-promote-your-app"></a>Autres méthodes de promotion de votre application
 

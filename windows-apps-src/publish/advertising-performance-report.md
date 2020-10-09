@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bb9c6a43b9411b2297cc4cbf35dfdb2177e5dab7
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ea0fe6f29059a2b9ef8e5ce728d883d5349d0468
+ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89155373"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91878422"
 ---
 # <a name="advertising-performance-report"></a>Rapport sur les performances publicitaires
 
@@ -59,8 +59,8 @@ Le rapport de **performances de publicité** comprend des données pour les mesu
 | Clicks  |  Nombre de fois où un utilisateur a cliqué sur une publicité dans votre application. |
 | CTR  |  Taux de clics, qui correspond au nombre de clics effectués sur une publicité, divisé par le nombre d’impressions. |
 | Affichage | Pourcentage d’impressions publicitaires visibles dans votre application. Pour plus d’informations sur la façon dont cette valeur est calculée, consultez [optimiser la vue de vos unités ad](../monetize/optimize-ad-unit-viewability.md). |
-| Crédits acquis  | Si vous exécutez une campagne de [publicité communautaire](./about-community-ads.md) , cela indique le nombre de crédits que vous avez gagnés pour l’espace publicitaire promotionnel en présentant les publicités de la Communauté dans votre application.  |
-| Crédits dépensé  | Si vous exécutez une campagne de [publicité communautaire](./about-community-ads.md) , cela indique le nombre de crédits que vous avez consacrés aux publicités pour votre application.  |
+| Crédits acquis  | Si vous exécutez une campagne de [publicité communautaire](../monetize/index.md) , cela indique le nombre de crédits que vous avez gagnés pour l’espace publicitaire promotionnel en présentant les publicités de la Communauté dans votre application.  |
+| Crédits dépensé  | Si vous exécutez une campagne de [publicité communautaire](../monetize/index.md) , cela indique le nombre de crédits que vous avez consacrés aux publicités pour votre application.  |
 
 ## <a name="related-topics"></a>Rubriques connexes
 

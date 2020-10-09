@@ -6,16 +6,16 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, personnalisé, application, promotion, campagne
 ms.localizationpriority: medium
-ms.openlocfilehash: 4015ee5372c2068d7a9ead389fe7eb07aa50a466
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c04a9705797e69543e9aec8f4e6205c815f76800
+ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171123"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91878432"
 ---
 # <a name="create-a-custom-app-promotion-campaign"></a>Créer une campagne personnalisée de promotion d’applications
 
-En plus de créer une [campagne publicitaire pour votre application](create-an-ad-campaign-for-your-app.md) qui s’exécutera dans des applications Windows, vous pouvez également promouvoir votre application à l’aide d’autres canaux. Par exemple, vous pouvez promouvoir votre application en faisant appel à un fournisseur de commercialisation d’applications tiers, ou en publiant des liens vers votre application sur des médias sociaux. Ces activités sont appelées *campagnes personnalisées*.
+En plus de créer une [campagne publicitaire pour votre application](../monetize/index.md) qui s’exécutera dans des applications Windows, vous pouvez également promouvoir votre application à l’aide d’autres canaux. Par exemple, vous pouvez promouvoir votre application en faisant appel à un fournisseur de commercialisation d’applications tiers, ou en publiant des liens vers votre application sur des médias sociaux. Ces activités sont appelées *campagnes personnalisées*.
 
 Si vous exécutez des campagnes personnalisées pour votre application, vous pouvez suivre les performances relatives de chaque campagne en créant une URL différente pour chaque campagne personnalisée, où chaque URL contient un *ID de campagne*différent. Quand un client exécutant Windows 10 clique sur une URL qui contient un ID de campagne, Microsoft associe le clic à la campagne personnalisée correspondante et met ces données à votre disposition dans l' [espace partenaires](https://partner.microsoft.com/dashboard).
 

@@ -8,12 +8,12 @@ ms.topic: article
 ms.custom: contperfq1
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e2fc69f49308164307bc3c6c23479aae991d0ff7
-ms.sourcegitcommit: f46edb85d523a4a1f5006787d357cdc9d090aefe
+ms.openlocfilehash: b63e88f6d83e84bbe07fc4c5cbe7befba6dc3c8a
+ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91414849"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91878502"
 ---
 # <a name="windows-push-notification-services-wns-overview"></a>Vue d’ensemble des services de notifications Push Windows (WNS) 
 
@@ -34,7 +34,7 @@ Le diagramme ci-après présente l’intégralité du flux de données impliqué
 
 ## <a name="registering-your-app-and-receiving-the-credentials-for-your-cloud-service"></a>Inscription de votre application et réception des informations d’identification de votre service cloud
 
-Avant de pouvoir envoyer des notifications à l’aide de WNS, votre application doit être inscrite auprès du tableau de bord du magasin, comme décrit [ici](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-windows-store-dotnet-get-started-wns-push-notification).
+Avant de pouvoir envoyer des notifications à l’aide de WNS, votre application doit être inscrite auprès du tableau de bord du magasin, comme décrit [ici](/azure/notification-hubs/notification-hubs-windows-store-dotnet-get-started-wns-push-notification).
 
 ## <a name="requesting-a-notification-channel"></a>Demande d’un canal de notification
 
