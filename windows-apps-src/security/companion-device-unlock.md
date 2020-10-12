@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, sécurité
 ms.assetid: 89f3d331-20cd-457b-83e8-1a22aaab2658
 ms.localizationpriority: medium
-ms.openlocfilehash: d9d9041b5e90ce8ffc16fe0158dda597f99b41bc
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 96aea61073cf0c62f0c9636519018e1f19d0c8b3
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157943"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933090"
 ---
 # <a name="windows-unlock-with-windows-hello-companion-iot-devices"></a>Déverrouillage Windows avec les appareils (IoT) complémentaires
 
@@ -29,7 +29,7 @@ Un appareil complémentaire Windows Hello est un appareil pouvant agir en conjon
 
 > Pour obtenir des exemples de code, voir le [référentiel Github de l’infrastructure du dispositif complémentaire Windows Hello](https://github.com/Microsoft/companion-device-framework).
 
-### <a name="use-cases"></a>Cas d'utilisation
+### <a name="use-cases"></a>Cas d’usage
 
 Il existe de nombreuses façons de créer une excellente expérience de déverrouillage Windows avec un dispositif complémentaire à l’aide de l’infrastructure du dispositif complémentaire Windows Hello. Les utilisateurs peuvent, par exemple :
 
@@ -102,7 +102,7 @@ Remarques :
 
 Le schéma suivant illustre la façon dont le dispositif complémentaire Windows Hello interagit avec le service d’authentification par dispositif complémentaire pendant l’inscription.  
 
-![flux d’inscription](images/companion-device-2.png)
+![Diagramme du workflow d’inscription.](images/companion-device-2.png)
 
 Deux clés sont utilisées dans notre protocole :
 
@@ -145,7 +145,7 @@ Une fois la tâche en arrière-plan associée à une application de dispositif c
 
 La seconde valeur calculée est utilisée par le service pour authentifier l’appareil et pour empêcher les attaques par relecture dans le canal de transport.
 
-![flux d’inscription](images/companion-device-3.png)
+![Diagramme du workflow d’inscription mis à jour.](images/companion-device-3.png)
 
 ## <a name="lifecycle-management"></a>Gestion du cycle de vie
 

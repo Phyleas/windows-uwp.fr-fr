@@ -1,17 +1,17 @@
 ---
-Description: Vous pouvez encourager vos clients à laisser des commentaires en lançant le Hub de commentaires à partir de votre application.
+description: Vous pouvez encourager vos clients à laisser des commentaires en lançant le Hub de commentaires à partir de votre application.
 title: Lancer le Hub de commentaires à partir de votre application
 ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Hub de commentaires, lancement
 ms.localizationpriority: medium
-ms.openlocfilehash: 71ecb104f1864eefcf1e38f793a4af53a977f693
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: 511612911d180459bd7c732803d3a98e3d4580c8
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89363102"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933130"
 ---
 # <a name="launch-feedback-hub-from-your-app"></a>Lancer le Hub de commentaires à partir de votre application
 
@@ -60,16 +60,16 @@ Pour lancer le Hub de commentaires à partir de votre application :
 
 Pour lancer le Hub de commentaires, nous vous recommandons d’ajouter à votre application un élément d’interface utilisateur (tel qu’un bouton) affichant l’icône de commentaires standard suivante avec la police Segoe MDL2 Assets et le code de caractère E939.
 
-![Icône de commentaires](images/feedback_icon.PNG)
+:::image type="icon" source="images/feedback_icon.PNG":::
 
 Nous vous recommandons également d’utiliser une ou plusieurs des options de placement suivantes pour créer un lien vers le Hub de commentaires dans votre application.
 * **Directement dans la barre de l’application**. Selon votre implémentation, vous voudrez utiliser l’icône seule ou y ajouter du texte (comme illustré ci-dessous).
 
-  ![Icône de commentaires](images/feedback_appbar_placement.png)
+  ![Capture d’écran d’une application qui a l’icône de commentaires dans le coin supérieur droit avec les commentaires d’étiquette en regard de celle-ci.](images/feedback_appbar_placement.png)
 
 * **Dans les paramètres de votre application**. Cette méthode constitue un moyen plus subtil de fournir un accès au Hub de commentaires. Dans l’exemple ci-dessous, le lien Commentaires apparaît comme l’un des liens disponibles sous Application.
 
-  ![Icône de commentaires](images/feedback_settings_placement.png)
+  ![Capture d’écran d’une page de paramètres où le lien de commentaires s’affiche sous application.](images/feedback_settings_placement.png)
 
 * **Dans un menu volant basé sur l’événement**. Cette méthode est utile lorsque vous souhaitez interroger vos clients sur un sujet spécifique avant de lancer le Hub de commentaires Windows. Par exemple, après avoir intégré une nouvelle fonctionnalité à votre application, vous pouvez poser une question spécifique aux clients concernant leur niveau de satisfaction vis-à-vis de cette fonctionnalité. Si les clients choisissent d’y répondre, votre application lance le Hub de commentaires.
 

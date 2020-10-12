@@ -3,14 +3,14 @@ title: Partager du code entre une application de bureau et une application UWP
 description: Découvrez comment déplacer une application de bureau à partir de .NET Framework (avec des API WPF et Windows Forms) ou C++ Win32 vers plateforme Windows universelle (UWP) et Windows 10.
 ms.date: 10/03/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ed23f77936378f2348abf868a67041be84978123
-ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
+ms.openlocfilehash: 62f1c6462e56b14396e3fdaed16221698c0333fd
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304681"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933160"
 ---
 # <a name="move-from-a-desktop-application-to-uwp"></a>Passer d’une application de bureau à UWP
 
@@ -56,7 +56,7 @@ Ce paramètre se trouve dans les pages de propriétés du projet de bibliothèqu
 
 À partir de votre projet d’application de bureau, ajoutez une référence au projet de bibliothèque de classes.
 
-![Référence de la bibliothèque de classes](images/desktop-to-uwp/class-library-reference.png)
+![Capture d’écran du volet Explorateur de solutions qui appelle la référence de la bibliothèque de classes pour le projet point NET.](images/desktop-to-uwp/class-library-reference.png)
 
 Ensuite, utilisez les outils pour déterminer la quantité de code conforme à la norme. De cette façon, avant de déplacer du code dans la bibliothèque, vous pouvez choisir les parties que vous pouvez réutiliser, les parties qui nécessitent une modification minimale et les parties qui resteront spécifiques à l’application.
 
@@ -186,7 +186,7 @@ Tout d’abord, ajoutez un projet UWP à votre solution.
 
 Ensuite, à partir de votre projet UWP, ajoutez une référence au projet de bibliothèque .NET Standard 2,0.
 
-![Référence de la bibliothèque de classes](images/desktop-to-uwp/class-library-reference2.png)
+![Capture d’écran du volet de Explorateur de solutions UWP qui appelle la référence à la référence de la bibliothèque de classes pour le projet DOT NET.](images/desktop-to-uwp/class-library-reference2.png)
 
 #### <a name="build-your-pages"></a>Créer vos pages
 
@@ -222,7 +222,7 @@ Pour commencer à utiliser UWP, voir [qu’est-ce qu’une application UWP ?](.
 
 Vous pouvez atteindre des appareils Android et iOS en ajoutant des projets Xamarin.  
 
-![Applications Xamarin](images/desktop-to-uwp/xamarin-apps.png)
+![Image qui montre un appareil Android et un appareil i O S affichant des applications Xamarin.](images/desktop-to-uwp/xamarin-apps.png)
 
 Ces projets vous permettent d’utiliser C# pour créer des applications Android et iOS avec un accès complet aux API spécifiques aux plateformes et aux appareils. Ces applications tirent parti de l’accélération matérielle spécifique à la plateforme et sont compilées pour les performances natives.
 
@@ -236,14 +236,14 @@ Tout d’abord, ajoutez un projet **Android**, **iOS**ou **multiplateforme** à 
 
 Ces modèles se trouvent dans la boîte de dialogue **Ajouter un nouveau projet** , sous le groupe **Visual C#** .
 
-![Applications Xamarin](images/desktop-to-uwp/xamarin-projects.png)
+![Capture d’écran de la boîte de dialogue Ajouter un nouveau projet, qui indique les options d’installation de l' > Visual C Sharp et Android, Cross Platform et i O S.](images/desktop-to-uwp/xamarin-projects.png)
 
 >[!NOTE]
->Les projets multiplateformes sont très utiles pour les applications avec peu de fonctionnalités spécifiques à la plateforme. Vous pouvez les utiliser pour créer une interface utilisateur XAML native qui s’exécute sur iOS, Android et Windows. En savoir plus [ici](/xamarin/xamarin-forms/).
+>Les projets multiplateformes sont très utiles pour les applications avec peu de fonctionnalités spécifiques à la plateforme. Vous pouvez les utiliser pour créer une interface utilisateur XAML native qui s’exécute sur iOS, Android et Windows. Pour en savoir plus, cliquez [ici](/xamarin/xamarin-forms/).
 
 Ensuite, à partir de votre projet Android, iOS ou multiplateforme, ajoutez une référence au projet de bibliothèque de classes.
 
-![Référence de la bibliothèque de classes](images/desktop-to-uwp/class-library-reference3.png)
+![Capture d’écran du volet de Explorateur de solutions qui appelle la référence de la bibliothèque de classes pour le projet Android, i O S ou multiplateforme.](images/desktop-to-uwp/class-library-reference3.png)
 
 #### <a name="build-your-pages"></a>Créer vos pages
 

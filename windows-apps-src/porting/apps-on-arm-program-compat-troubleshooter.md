@@ -1,60 +1,60 @@
 ---
 title: Utilitaire de résolution de problèmes de compatibilité des programmes sur ARM
-description: Conseils de réglage des paramètres de compatibilité si votre application ne fonctionne pas correctement sur ARM
+description: Aide pour l’ajustement des paramètres de compatibilité si votre application ne fonctionne pas correctement sur ARM
 ms.date: 02/15/2018
 ms.topic: article
-keywords: windows 10 s, toujours connecté, résolution des problèmes de compatibilité, windows sur ARM
+keywords: Windows 10 s, Always connected, résolution des problèmes de compatibilité, Windows on ARM
 ms.localizationpriority: medium
-ms.openlocfilehash: 6573bedb97a7081681e5ecc600bb473f6d0b83bf
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 24ae6e7c12fde1dfbb9e5395b3fa3aa4901adb3d
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75683952"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933020"
 ---
 # <a name="program-compatibility-troubleshooter-on-arm"></a>Utilitaire de résolution de problèmes de compatibilité des programmes sur ARM
-L'émulation visant à la prises en charge des applications x86 constitue la nouvelle fonctionnalité, créée pour Windows 10 sur ARM64. Il arrive que l'émulation réalise des tâches d'optimisation qui ne parviennent pas à rendre la meilleure expérience. Vous pouvez utiliser l'utilitaire de résolution des problèmes de compatibilité des programmes pour permuter les paramètres d'émulation de votre application x86 et ainsi réduire les optimisations par défaut et potentiellement augmenter la compatibilité.
+L’émulation pour la prise en charge des applications x86 est une nouvelle fonctionnalité créée pour Windows 10 sur ARM64. Parfois, l’émulation effectue des optimisations qui n’entraînent pas la meilleure expérience. Vous pouvez utiliser l’utilitaire de résolution des problèmes de compatibilité des programmes pour activer/désactiver les paramètres d’émulation de votre application x86, ce qui réduit les optimisations par défaut et peut potentiellement améliorer la compatibilité.
 
-## <a name="start-the-program-compatibility-troubleshooter"></a>Démarrer l’utilitaire Résolution de problèmes de compatibilité des programmes
-Vous démarrez manuellement l'[utilitaire de résolution des problèmes de compatibilité des programmes](https://support.microsoft.com/help/15078/windows-make-older-programs-compatible) de la même manière que sur tout PC Windows 10 : cliquez avec le bouton droit sur le fichier d'exécution (.exe) et sélectionnez **Résoudre les problèmes de compatibilité**. Cet écran s’affiche.
+## <a name="start-the-program-compatibility-troubleshooter"></a>Démarrer l’utilitaire de résolution des problèmes de compatibilité des programmes
+Vous démarrez l' [utilitaire de résolution des problèmes de compatibilité des programmes](https://support.microsoft.com/help/15078/windows-make-older-programs-compatible) manuellement de la même façon sur un PC Windows 10 : cliquez avec le bouton droit sur un fichier exécutable (. exe) et sélectionnez **résoudre les problèmes de compatibilité**. Cet écran s’affiche.
 
-![Capture d'écran de l'option Résoudre les problèmes de compatibilité](images/arm/Capture4.png)
+![Capture d’écran des options de résolution des problèmes de compatibilité.](images/arm/Capture4.png)
 
-Si vous cliquez sur **Résoudre les problèmes du programme**, vous obtenez les options suivantes.
+Si vous cliquez sur **dépanner le programme** , les options suivantes s’affichent.
 
-![Capture d'écran de l'option Résoudre les problèmes de compatibilité](images/arm/Capture5.png)
+![Capture d’écran des options quels sont les problèmes que vous pouvez remarquer.](images/arm/Capture5.png)
 
-Toutes les options activent les paramètres qui sont applicables et appliquées à tous les PC de bureau Windows 10. En outre, la première, deuxième et la quatrième option appliquent les paramètres d'émulation [Désactiver le cache d’application](#disable-app-cache) et [Désactiver le mode d’exécution hybride](#disable-hybrid-exec-mode).
+Toutes les options activent les paramètres applicables et appliqués sur tous les ordinateurs de bureau Windows 10. En outre, les première, deuxième et quatrième options appliquent le [cache de désactivation](#disable-app-cache) de l’application et désactivent les paramètres d’émulation [en mode d’exécution hybride](#disable-hybrid-exec-mode) .
 
-## <a name="toggling-emulation-settings"></a>Activation/désactivation des paramètres d'émulation
+## <a name="toggling-emulation-settings"></a>Basculement des paramètres d’émulation
 > [!WARNING]
-> La modification des paramètres d'émulation peut provoquer l'arrêt inattendu ou empêcher totalement le lancement de l'application.
+> La modification des paramètres d’émulation peut entraîner une panne inattendue de votre application ou son lancement.
 
-Vous pouvez basculer les paramètres d’émulation de cliquant avec le bouton droit sur le fichier d'exécution et en sélectionnant **Propriétés**.
+Vous pouvez activer ou désactiver les paramètres d’émulation en cliquant avec le bouton droit sur le fichier exécutable et en sélectionnant **Propriétés**.
 
-Sur l'ARM, une section intitulée **Windows 10 sur ARM** sera disponible dans l'onglet **Compatibilité**. Cliquez sur **Modifier les paramètres d'émulation** pour lancer une deuxième fenêtre, comme ci-après.
+Sur ARM, une section intitulée **Windows 10 on Arm** sera disponible sous l’onglet **compatibilité** . Cliquez sur **modifier les paramètres d’émulation** pour lancer une deuxième fenêtre comme ici.
 
-![Modifier les paramètres d'émulation, Capture d'écran](images/arm/Capture.png)
+![Capture d’écran modifier les paramètres d’émulation](images/arm/Capture.png)
 
-Cette fenêtre offre deux possibilité pour modifier les paramètres d'émulation. Vous pouvez sélectionnez un groupe prédéfini de paramètres d'émulation, ou cliquer sur l'option **Utiliser les paramètres avancés** pour activer le choix des paramètres individuels.
+Cette fenêtre offre deux façons de modifier les paramètres d’émulation. Vous pouvez sélectionner un groupe prédéfini de paramètres d’émulation, ou vous pouvez cliquer sur l’option **utiliser les paramètres avancés** pour activer le choix des paramètres individuels.
 
-Les paramètres d'émulation groupés réduisent les optimisations de performance en faveur de la qualité. Vous trouverez ci-dessus certains des paramètres groupés que vous avez sélectionnés.
+Les paramètres d’émulation groupés réduisent les optimisations de performances en faveur de la qualité. Voici quelques paramètres groupés que vous pouvez sélectionner.
 
-![Modifier les paramètres d'émulation, Capture d'écran n°2](images/arm/Capture2.png)
+![Modifier les paramètres d’émulation screenshot2](images/arm/Capture2.png)
 
-Sélectionnez **Utiliser les paramètres avancés** pour choisir les paramètres individuels, comme décrit dans le tableau suivant.
+Sélectionnez **utiliser les paramètres avancés** pour choisir des paramètres individuels comme décrit dans ce tableau.
 
-| Paramètre d’émulation | Résultat |
+| Paramètre d’émulation | Résultats |
 | ----------------- | ----------- |
-| <p id="disable-app-cache">Désactiver le cache d'application</p> | Le système d'exploitation met en cache les blocs de code compilés afin de réduire le traitement d'émulation sur les exécutions qui suivent. Ce paramètre nécessite que l'émulateur recompile tous les codes d'application lors de l'exécution. |
-| <p id="disable-hybrid-exec-mode">Désactiver le mode d’exécution hybride</p> | L'exécution portable hybride compilé (CHPE), les binaires sont compatibles avec les applications x86 qui incluent le code ARM64 natif pour améliorer la performance, mais sont parfois incompatibles avec certaines applications. Ce paramètre force l'utilisation des binaires uniquement de type x86. |
-| Prise en charge du code à modification automatique stricte | Activez cette option pour assurer que le code à modification automatique soit correctement pris en charge dans l'émulation. Les scénarios les plus courants concernant le code à modification automatique sont couverts par le comportement de l'émulateur par défaut. L'activation de cette option réduit grandement la performance du code à modification automatique lors de l'exécution. |
-| Désactiver l'optimisation de la performance de page RWX | Cette optimisation améliore la performance du code sur des pages lisibles, inscriptibles et exécutables (RWX), mais n'est pas compatible avec certaine applications. |
+| <p id="disable-app-cache">Désactiver le cache d’application</p> | Le système d’exploitation mettra en cache des blocs de code compilés pour réduire la surcharge d’émulation lors des exécutions suivantes. Ce paramètre requiert que l’émulateur RECOMPILE tout le code de l’application au moment de l’exécution. |
+| <p id="disable-hybrid-exec-mode">Désactiver le mode d’exécution hybride</p> | L’exécutable portable hybride compilé (CHPE), les fichiers binaires sont des binaires compatibles x86 qui incluent du code ARM64 natif pour améliorer les performances, mais qui ne sont peut-être pas compatibles avec certaines applications. Ce paramètre force l’utilisation de fichiers binaires x86 uniquement. |
+| Prise en charge stricte du code de modification automatique | Activez cette valeur pour vous assurer que tout code à modification automatique est correctement pris en charge dans l’émulation. Les scénarios de code à modification automatique les plus courants sont couverts par le comportement de l’émulateur par défaut. L’activation de cette option réduit considérablement les performances du code à modification automatique pendant l’exécution. |
+| Désactiver l’optimisation des performances de la page RWX | Cette optimisation améliore les performances du code sur les pages lisibles, accessibles en écriture et exécutables (RWX), mais peut être incompatible avec certaines applications. |
 
-Vous pouvez également sélectionner les paramètres multicœurs, comme illustré ici.
+Vous pouvez également sélectionner des paramètres multicœurs, comme illustré ici.
 
-![Paramètres multicœurs, Capture d'écran](images/arm/Capture3.png)
+![Capture d’écran des paramètres multicœurs](images/arm/Capture3.png)
 
-Ces paramètres modifient la quantité de barrières mémoires utilisées pour synchroniser les accès à la mémoire ente les cœurs dans les applications lors de l'émulation. Le mode par défaut est **Rapide**, mais les options **strict** et **très strict** augmentent le nombre de barrières. Cela a pour effet de ralentir l'application, mais également de réduire le risque d'erreurs de l'application. L'option **Cœur unique** supprime toutes les barrières, mais force les threads d'application à s'exécuter sur un cœur unique.
+Ces paramètres modifient le nombre de barrières de mémoire utilisées pour synchroniser les accès à la mémoire entre les cœurs dans les applications lors de l’émulation. **Fast** est le mode par défaut, mais les options **strict** et **strict** vous permettront d’augmenter le nombre de barrières. Cela ralentit l’application, mais réduit le risque d’erreurs d’application. L’option **Single-Core** supprime toutes les barrières, mais force tous les threads d’application à s’exécuter sur un seul cœur.
 
-Si la modification d'un paramètre spécifique permet de résoudre votre problème, merci d'envoyer un e-mail détaillé à l'adresse *woafeedback@microsoft.com* afin que nous puissions agir en conséquence de votre commentaire.
+Si la modification d’un paramètre spécifique résout votre problème, envoyez *woafeedback@microsoft.com* -nous un e-mail avec les détails pour pouvoir incorporer vos commentaires.

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, sécurité
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
-ms.openlocfilehash: 69e60d8ef919a05493f47f086ee992afe8bfeb4c
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 0a67c88eb7eb70308e6dcbbd096289c0617793b1
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172833"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933070"
 ---
 # <a name="web-account-manager"></a>Gestionnaire de comptes web
 
@@ -71,7 +71,7 @@ private void LoginButton_Click(object sender, RoutedEventArgs e)
 
 Si vous exécutez votre application et cliquez sur le bouton « Se connecter », elle affiche une fenêtre vide. 
 
-![Volet Paramètres du compte](images/tb-1.png)
+![Capture d’écran de la fenêtre choisir un compte sans compte.](images/tb-1.png)
 
 Le volet est vide, car le système propose uniquement un interpréteur de commandes de l’interface utilisateur. Il revient au développeur de programmer le remplissage du volet avec les fournisseurs d’identité. 
 
@@ -156,7 +156,7 @@ La méthode GetMsaToken que nous avons transmise à notre nouveau **WebAccountPr
 
 Exécutez le code ci-dessus pour que votre volet ressemble à ceci : 
 
-![Volet Paramètres du compte](images/tb-2.png)
+![Capture d’écran de la fenêtre choisir un compte avec des comptes listés.](images/tb-2.png)
 
 ### <a name="request-a-token"></a>Demander un jeton
 
@@ -390,7 +390,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 }
 ```
 
-![Volet Paramètres du compte](images/tb-3.png)
+![Capture d’écran de la fenêtre choisir un compte sans compte listé et un message indiquant que mon application Isard fonctionne mieux si vous êtes connecté.](images/tb-3.png)
 
 Ne développez pas trop le texte de l’en-tête ; il doit rester bref et concis. Si votre processus de connexion est compliqué et que vous avez besoin d’afficher plus d’informations, renvoyez l’utilisateur à une page distincte à l’aide d’un lien personnalisé. 
 
@@ -416,7 +416,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 }
 ```
 
-![Volet Paramètres du compte](images/tb-4.png)
+![Capture d’écran de la fenêtre choisir un compte sans compte listé et un lien vers une politique de confidentialité.](images/tb-4.png)
 
 En théorie, vous pouvez utiliser les commandes de paramètres pour tout. Toutefois, nous vous recommandons d’en limiter l’utilisation aux scénarios intuitifs liés aux comptes, tels que ceux décrits ci-dessus. 
 

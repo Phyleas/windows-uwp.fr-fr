@@ -6,12 +6,12 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, ADS, publicité, bannière, contrôle publicitaire, interstitiel
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e9a67bb26d47d0bd9cc26c56df90efac5e2daa5
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c12d79b97010826b05bf42a9de46780dd2f93756
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89164833"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933120"
 ---
 # <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>Afficher des publicités dans votre application avec le SDK Microsoft Advertising
 
@@ -71,7 +71,7 @@ Il s’agit d’affichages de publicités statiques qui utilisent une partie rec
 
 Pour obtenir des instructions et des exemples de code, consultez [cet article](adcontrol-in-xaml-and--net.md).
 
-![addreferences](images/banner-ad.png)
+![Image illustrant une publicité de bannière sur une tablette.](images/banner-ad.png)
 
 ### <a name="interstitial-video-and-interstitial-banner-ads"></a>Vidéos interstitielles et publicités de bannières interstitielles
 
@@ -79,7 +79,7 @@ Il s’agit de publicités plein écran qui requièrent généralement que l’u
 
 Pour obtenir des instructions et des exemples de code, consultez [cet article](interstitial-ads.md).
 
-![addreferences](images/interstitial-ad.png)
+![Image représentant une publicité interstitielle dans un jeu qui est joué sur une tablette.](images/interstitial-ad.png)
 
 ### <a name="native-ads"></a>Publicités natives
 
@@ -87,7 +87,7 @@ Il s’agit de publicités basées sur les composants. Chaque élément créatif
 
 Pour obtenir des instructions et des exemples de code, consultez [cet article](native-ads.md).
 
-![addreferences](images/native-ad.png)
+![Image représentant une publication native qui peut être affichée sur différents appareils.](images/native-ad.png)
 
 <span id="ad-mediation"/>
 

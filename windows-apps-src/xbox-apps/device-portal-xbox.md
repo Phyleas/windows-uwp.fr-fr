@@ -6,12 +6,12 @@ ms.date: 04/09/2019
 ms.topic: article
 keywords: windows 10, uwp, portail d’appareil
 ms.localizationpriority: medium
-ms.openlocfilehash: ed490b0474b919d4439e5b74b676d5974a3c6a30
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a7df29b6c1446d65c8e5224eede3030a25888364
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174783"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933170"
 ---
 # <a name="device-portal-for-xbox"></a>Device Portal pour Xbox
 
@@ -43,13 +43,13 @@ Les étapes suivantes montrent comment activer le portail de périphérique Xbox
 
 Le portail d’appareils Xbox fournit un ensemble de pages standard similaires à celles disponibles sur le portail des appareils Windows, ainsi que plusieurs pages uniques. Pour obtenir une description détaillée de la première, consultez [vue d’ensemble du portail de périphériques Windows](../debug-test-perf/device-portal.md). Les sections suivantes décrivent les pages qui sont propres au portail de périphérique Xbox.
 
-### <a name="home"></a>Accueil
+### <a name="home"></a>page d'accueil
 
 À l’instar de la page **Gestionnaire d’applications** du portail de périphérique Windows, **la page d’installation du portail** de périphérique Xbox affiche la liste des jeux et applications installés sous **mes jeux & applications**. Vous pouvez cliquer sur le nom d’un jeu ou d’une application pour afficher plus de détails, tels que le nom de la **famille de packages**. Dans la liste déroulante **actions** , vous pouvez agir sur le jeu ou l’application, par exemple le **lancer** .
 
 Sous **comptes Xbox Live test**, vous pouvez gérer les comptes associés à votre Xbox. Vous pouvez ajouter des utilisateurs et des comptes invités, créer des utilisateurs, signer des utilisateurs et supprimer des comptes.
 
-![Accueil](images/device-portal-xbox-16.png)
+![page d'accueil](images/device-portal-xbox-16.png)
 
 ### <a name="xbox-live-game-saves"></a>Xbox Live (enregistrements de jeux)
 
@@ -89,9 +89,9 @@ Sur la page **paramètres** , vous pouvez afficher et modifier plusieurs paramè
 
 Il existe plusieurs sections avec différents paramètres pour afficher et/ou modifier, qui sont expliqués ci-dessous.
 
-![Paramètres](images/device-portal-xbox-20.png)
+![Capture d’écran de la page Paramètres affichant les sections informations sur l’appareil et paramètres d’affichage.](images/device-portal-xbox-20.png)
 
-![Paramètres](images/device-portal-xbox-21.png)
+![Capture d’écran de la page Paramètres montrant les sections paramètres de localisation, paramètres d’alimentation et paramètres utilisateur. ](images/device-portal-xbox-21.png)
 
 #### <a name="device-information"></a>Informations sur l’appareil
 

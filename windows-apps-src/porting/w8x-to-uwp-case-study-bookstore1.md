@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 98c74ac688707c6c80b9f3098760328fea0f852a
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ff8e095fc46d2c08771f3e2e002fe2d8b602ab71
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174853"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933060"
 ---
 # <a name="windows-runtime-8x-to-uwp-case-study-bookstore1"></a>Étude de cas de portage d’application Windows Runtime 8.x vers UWP : Bookstore1
 
@@ -68,11 +68,11 @@ Modifiez le code source et les fichiers de balisage que vous venez de copier, pu
 
 Vous pouvez maintenant générer l’application et l’exécuter. Voici à quoi ressemble notre nouvelle application UWP, sans aucun effort de portage vers Windows 10 pour l’instant.
 
-![Application Windows 10 avec le code source initial modifié](images/w8x-to-uwp-case-studies/c01-03-desk10-initial-source-code-changes.png)
+![Capture d’écran de l’application Windows 10 sans modification explicite.](images/w8x-to-uwp-case-studies/c01-03-desk10-initial-source-code-changes.png)
 
 Application Windows 10 avec le code source initial modifié, exécutée sur un appareil de bureau
 
-![Application Windows 10 avec le code source initial modifié](images/w8x-to-uwp-case-studies/c01-04-mob10-initial-source-code-changes.png)
+![Capture d’écran de l’application Windows 10 avec les modifications de code source initiales.](images/w8x-to-uwp-case-studies/c01-04-mob10-initial-source-code-changes.png)
 
 Application Windows 10 avec le code source initial modifié, exécutée sur un appareil mobile
 
@@ -91,11 +91,11 @@ L' \_ application Bookstore1 81 a utilisé deux dictionnaires de ressources diff
 
 Une fois cette séquence d’opérations de stylisation effectuée, l’application ressemble à ceci.
 
-![Application Windows 10 quasiment portée](images/w8x-to-uwp-case-studies/c01-05-desk10-almost-ported.png)
+![Capture d’écran de l’application avec la dernière séquence d’opérations de style.](images/w8x-to-uwp-case-studies/c01-05-desk10-almost-ported.png)
 
 Application Windows 10 quasiment portée, exécutée sur un appareil de bureau
 
-![Application Windows 10 quasiment portée](images/w8x-to-uwp-case-studies/c01-06-mob10-almost-ported.png)
+![Capture d’écran de l’application Windows 10 presque portée.](images/w8x-to-uwp-case-studies/c01-06-mob10-almost-ported.png)
 
 Application Windows 10 quasiment portée, exécutée sur un appareil mobile
 

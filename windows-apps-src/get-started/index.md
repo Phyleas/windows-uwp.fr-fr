@@ -5,12 +5,12 @@ ms.date: 03/23/2018
 ms.topic: article
 keywords: bien démarrer, windows 10, uwp, xaml, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: e832ac783c43058b24cb0d341d17ad52ff7dcc05
-ms.sourcegitcommit: 9940ed6431aadbd8d4e54ca23d8ae44d3a2d048d
+ms.openlocfilehash: 21eda55755682680109f0862775f2c3bf13adf2e
+ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91403884"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91878571"
 ---
 # <a name="get-started-with-windows-10-apps"></a>Bien démarrer avec les applications Windows 10
 
@@ -25,7 +25,7 @@ Générez des applications qui fonctionnent sur tous les appareils Windows 10, 
         <p style="margin-top: 0px; margin-bottom: 50px">Windows 10 et la plateforme Windows universelle vous permettent de générer des applications qui fonctionnent et s’affichent de manière optimale sur tous les types d’appareil Windows, ou de mettre à jour des applications existantes avec des fonctionnalités modernes.</p>
         <br>
         <a href="//docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide">Qu’est-ce qu’une application Windows ?</a><br/>
-        <a href="https://docs.microsoft.com/windows/uwp/design/">Conception et interface utilisateur</a><br/>
+        <a href="/windows/uwp/design/">Conception et interface utilisateur</a><br/>
     :::column-end:::
     :::column:::
         <img src="https://docs.microsoft.com/media/illustrations/biztalk-host-integration-install-configure.svg" alt="Setup illustration" />

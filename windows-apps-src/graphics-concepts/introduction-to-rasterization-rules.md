@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 38522be28280c0a08f6cb065e5dfb5c2f26642a8
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 75cb520f97f68c06f8861b90ce1068fb136bd374
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162793"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933150"
 ---
 # <a name="introduction-to-rasterization-rules"></a>Introduction aux règles de rastérisation
 
@@ -42,11 +42,11 @@ La Convention de remplissage en haut à gauche détermine l’action effectuée 
 
 Si vous définissez un rectangle avec son coin supérieur gauche à (0,5, 0,5) et son coin inférieur droit à (2,5, 4,5), le point central de ce rectangle est (1,5, 2,5). Lorsque le rastériseur Direct3D tessellates ce rectangle, le centre de chaque pixel est sans ambiguïté à l’intérieur de chacun des quatre triangles, et la Convention de remplissage supérieure gauche n’est pas nécessaire. L’illustration suivante montre cela. Les pixels du rectangle sont étiquetés en fonction du triangle dans lequel Direct3D les intègre.
 
-![carré numéroté qui contient un rectangle divisé en quatre triangles](images/noambig.png)
+![Capture d’écran d’un carré numéroté contenant un rectangle divisé en quatre triangles.](images/noambig.png)
 
 Si vous déplacez le rectangle de l’illustration précédente afin que son coin supérieur gauche se trouve à l’emplacement (1,0, 1,0), à l’angle inférieur droit à (3,0, 5,0) et à son point central à (2,0, 3,0), Direct3D applique la Convention de remplissage en haut à gauche. La plupart des pixels de ce rectangle chevauchent la bordure entre deux ou plusieurs triangles, comme le montre l’illustration suivante.
 
-![carré numéroté qui contient un rectangle divisé en quatre triangles](images/fillrule.png)
+![Capture d’écran du carré numéroté avec le rectangle déplacé vers le dessous et vers la droite.](images/fillrule.png)
 
 Pour les deux rectangles, les mêmes pixels sont affectés, comme indiqué dans l’illustration suivante.
 
